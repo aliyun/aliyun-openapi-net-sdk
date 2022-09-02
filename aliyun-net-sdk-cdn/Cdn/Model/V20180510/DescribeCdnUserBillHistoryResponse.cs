@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -115,37 +115,25 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			public class DescribeCdnUserBillHistory_BillingDataItem
 			{
 
-				private string chargeType;
-
-				private string cdnRegion;
+				private float? flow;
 
 				private float? bandwidth;
 
-				private float? flow;
-
 				private float? count;
 
-				public string ChargeType
-				{
-					get
-					{
-						return chargeType;
-					}
-					set	
-					{
-						chargeType = value;
-					}
-				}
+				private string cdnRegion;
 
-				public string CdnRegion
+				private string chargeType;
+
+				public float? Flow
 				{
 					get
 					{
-						return cdnRegion;
+						return flow;
 					}
 					set	
 					{
-						cdnRegion = value;
+						flow = value;
 					}
 				}
 
@@ -161,18 +149,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 					}
 				}
 
-				public float? Flow
-				{
-					get
-					{
-						return flow;
-					}
-					set	
-					{
-						flow = value;
-					}
-				}
-
 				public float? Count
 				{
 					get
@@ -182,6 +158,30 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 					set	
 					{
 						count = value;
+					}
+				}
+
+				public string CdnRegion
+				{
+					get
+					{
+						return cdnRegion;
+					}
+					set	
+					{
+						cdnRegion = value;
+					}
+				}
+
+				public string ChargeType
+				{
+					get
+					{
+						return chargeType;
+					}
+					set	
+					{
+						chargeType = value;
 					}
 				}
 			}

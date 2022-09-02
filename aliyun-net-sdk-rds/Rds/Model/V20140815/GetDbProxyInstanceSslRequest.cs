@@ -41,7 +41,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			Method = MethodType.POST;
         }
 
+		private string dBProxyEngineType;
+
 		private string dbInstanceId;
+
+		[JsonProperty(PropertyName = "DBProxyEngineType")]
+		public string DBProxyEngineType
+		{
+			get
+			{
+				return dBProxyEngineType;
+			}
+			set	
+			{
+				dBProxyEngineType = value;
+				DictionaryUtil.Add(QueryParameters, "DBProxyEngineType", value);
+			}
+		}
 
 		[JsonProperty(PropertyName = "DbInstanceId")]
 		public string DbInstanceId

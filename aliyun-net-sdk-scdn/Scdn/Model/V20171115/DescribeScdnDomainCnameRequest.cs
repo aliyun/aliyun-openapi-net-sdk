@@ -42,8 +42,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 
 		private string domainName;
 
-		private long? ownerId;
-
 		public string DomainName
 		{
 			get
@@ -54,19 +52,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

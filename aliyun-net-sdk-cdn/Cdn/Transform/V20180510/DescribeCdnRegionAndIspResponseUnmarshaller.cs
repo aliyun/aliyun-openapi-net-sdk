@@ -36,8 +36,8 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			List<DescribeCdnRegionAndIspResponse.DescribeCdnRegionAndIsp_Region> describeCdnRegionAndIspResponse_regions = new List<DescribeCdnRegionAndIspResponse.DescribeCdnRegionAndIsp_Region>();
 			for (int i = 0; i < _ctx.Length("DescribeCdnRegionAndIsp.Regions.Length"); i++) {
 				DescribeCdnRegionAndIspResponse.DescribeCdnRegionAndIsp_Region region = new DescribeCdnRegionAndIspResponse.DescribeCdnRegionAndIsp_Region();
-				region.NameZh = _ctx.StringValue("DescribeCdnRegionAndIsp.Regions["+ i +"].NameZh");
 				region.NameEn = _ctx.StringValue("DescribeCdnRegionAndIsp.Regions["+ i +"].NameEn");
+				region.NameZh = _ctx.StringValue("DescribeCdnRegionAndIsp.Regions["+ i +"].NameZh");
 
 				describeCdnRegionAndIspResponse_regions.Add(region);
 			}
@@ -46,8 +46,8 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			List<DescribeCdnRegionAndIspResponse.DescribeCdnRegionAndIsp_Isp> describeCdnRegionAndIspResponse_isps = new List<DescribeCdnRegionAndIspResponse.DescribeCdnRegionAndIsp_Isp>();
 			for (int i = 0; i < _ctx.Length("DescribeCdnRegionAndIsp.Isps.Length"); i++) {
 				DescribeCdnRegionAndIspResponse.DescribeCdnRegionAndIsp_Isp isp = new DescribeCdnRegionAndIspResponse.DescribeCdnRegionAndIsp_Isp();
-				isp.NameZh = _ctx.StringValue("DescribeCdnRegionAndIsp.Isps["+ i +"].NameZh");
 				isp.NameEn = _ctx.StringValue("DescribeCdnRegionAndIsp.Isps["+ i +"].NameEn");
+				isp.NameZh = _ctx.StringValue("DescribeCdnRegionAndIsp.Isps["+ i +"].NameZh");
 
 				describeCdnRegionAndIspResponse_isps.Add(isp);
 			}

@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeDomainCustomLogConfigResponse describeDomainCustomLogConfigResponse = new DescribeDomainCustomLogConfigResponse();
 
 			describeDomainCustomLogConfigResponse.HttpResponse = _ctx.HttpResponse;
-			describeDomainCustomLogConfigResponse.RequestId = _ctx.StringValue("DescribeDomainCustomLogConfig.RequestId");
 			describeDomainCustomLogConfigResponse.ConfigId = _ctx.StringValue("DescribeDomainCustomLogConfig.ConfigId");
+			describeDomainCustomLogConfigResponse.Tag = _ctx.StringValue("DescribeDomainCustomLogConfig.Tag");
+			describeDomainCustomLogConfigResponse.RequestId = _ctx.StringValue("DescribeDomainCustomLogConfig.RequestId");
 			describeDomainCustomLogConfigResponse.Remark = _ctx.StringValue("DescribeDomainCustomLogConfig.Remark");
 			describeDomainCustomLogConfigResponse.Sample = _ctx.StringValue("DescribeDomainCustomLogConfig.Sample");
-			describeDomainCustomLogConfigResponse.Tag = _ctx.StringValue("DescribeDomainCustomLogConfig.Tag");
         
 			return describeDomainCustomLogConfigResponse;
         }

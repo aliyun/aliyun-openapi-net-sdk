@@ -40,9 +40,9 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			for (int i = 0; i < _ctx.Length("DescribeCdnSMCertificateList.CertificateListModel.CertList.Length"); i++) {
 				DescribeCdnSMCertificateListResponse.DescribeCdnSMCertificateList_CertificateListModel.DescribeCdnSMCertificateList_Cert cert = new DescribeCdnSMCertificateListResponse.DescribeCdnSMCertificateList_CertificateListModel.DescribeCdnSMCertificateList_Cert();
 				cert.CertName = _ctx.StringValue("DescribeCdnSMCertificateList.CertificateListModel.CertList["+ i +"].CertName");
+				cert.Issuer = _ctx.StringValue("DescribeCdnSMCertificateList.CertificateListModel.CertList["+ i +"].Issuer");
 				cert.CertIdentifier = _ctx.StringValue("DescribeCdnSMCertificateList.CertificateListModel.CertList["+ i +"].CertIdentifier");
 				cert.Common = _ctx.StringValue("DescribeCdnSMCertificateList.CertificateListModel.CertList["+ i +"].Common");
-				cert.Issuer = _ctx.StringValue("DescribeCdnSMCertificateList.CertificateListModel.CertList["+ i +"].Issuer");
 
 				certificateListModel_certList.Add(cert);
 			}

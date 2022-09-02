@@ -41,7 +41,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			Method = MethodType.POST;
         }
 
+		private string resourceGroupId;
+
 		private string gadInstanceName;
+
+		[JsonProperty(PropertyName = "ResourceGroupId")]
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
 
 		[JsonProperty(PropertyName = "GadInstanceName")]
 		public string GadInstanceName

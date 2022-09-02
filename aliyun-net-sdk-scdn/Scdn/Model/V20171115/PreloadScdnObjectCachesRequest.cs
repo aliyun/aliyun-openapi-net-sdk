@@ -41,26 +41,15 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			Method = MethodType.POST;
         }
 
-		private string area;
-
 		private string objectPath;
-
-		private long? ownerId;
 
 		private string securityToken;
 
-		public string Area
-		{
-			get
-			{
-				return area;
-			}
-			set	
-			{
-				area = value;
-				DictionaryUtil.Add(QueryParameters, "Area", value);
-			}
-		}
+		private bool? l2Preload;
+
+		private string area;
+
+		private long? ownerId;
 
 		public string ObjectPath
 		{
@@ -75,19 +64,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
 		public string SecurityToken
 		{
 			get
@@ -98,6 +74,45 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public bool? L2Preload
+		{
+			get
+			{
+				return l2Preload;
+			}
+			set	
+			{
+				l2Preload = value;
+				DictionaryUtil.Add(QueryParameters, "L2Preload", value.ToString());
+			}
+		}
+
+		public string Area
+		{
+			get
+			{
+				return area;
+			}
+			set	
+			{
+				area = value;
+				DictionaryUtil.Add(QueryParameters, "Area", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

@@ -31,17 +31,17 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 			DescribeScdnDomainRealTimeSrcBpsDataResponse describeScdnDomainRealTimeSrcBpsDataResponse = new DescribeScdnDomainRealTimeSrcBpsDataResponse();
 
 			describeScdnDomainRealTimeSrcBpsDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeScdnDomainRealTimeSrcBpsDataResponse.EndTime = _ctx.StringValue("DescribeScdnDomainRealTimeSrcBpsData.EndTime");
+			describeScdnDomainRealTimeSrcBpsDataResponse.StartTime = _ctx.StringValue("DescribeScdnDomainRealTimeSrcBpsData.StartTime");
 			describeScdnDomainRealTimeSrcBpsDataResponse.RequestId = _ctx.StringValue("DescribeScdnDomainRealTimeSrcBpsData.RequestId");
 			describeScdnDomainRealTimeSrcBpsDataResponse.DomainName = _ctx.StringValue("DescribeScdnDomainRealTimeSrcBpsData.DomainName");
-			describeScdnDomainRealTimeSrcBpsDataResponse.StartTime = _ctx.StringValue("DescribeScdnDomainRealTimeSrcBpsData.StartTime");
-			describeScdnDomainRealTimeSrcBpsDataResponse.EndTime = _ctx.StringValue("DescribeScdnDomainRealTimeSrcBpsData.EndTime");
 			describeScdnDomainRealTimeSrcBpsDataResponse.DataInterval = _ctx.StringValue("DescribeScdnDomainRealTimeSrcBpsData.DataInterval");
 
 			List<DescribeScdnDomainRealTimeSrcBpsDataResponse.DescribeScdnDomainRealTimeSrcBpsData_DataModule> describeScdnDomainRealTimeSrcBpsDataResponse_realTimeSrcBpsDataPerInterval = new List<DescribeScdnDomainRealTimeSrcBpsDataResponse.DescribeScdnDomainRealTimeSrcBpsData_DataModule>();
 			for (int i = 0; i < _ctx.Length("DescribeScdnDomainRealTimeSrcBpsData.RealTimeSrcBpsDataPerInterval.Length"); i++) {
 				DescribeScdnDomainRealTimeSrcBpsDataResponse.DescribeScdnDomainRealTimeSrcBpsData_DataModule dataModule = new DescribeScdnDomainRealTimeSrcBpsDataResponse.DescribeScdnDomainRealTimeSrcBpsData_DataModule();
-				dataModule.TimeStamp = _ctx.StringValue("DescribeScdnDomainRealTimeSrcBpsData.RealTimeSrcBpsDataPerInterval["+ i +"].TimeStamp");
 				dataModule._Value = _ctx.StringValue("DescribeScdnDomainRealTimeSrcBpsData.RealTimeSrcBpsDataPerInterval["+ i +"].Value");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeScdnDomainRealTimeSrcBpsData.RealTimeSrcBpsDataPerInterval["+ i +"].TimeStamp");
 
 				describeScdnDomainRealTimeSrcBpsDataResponse_realTimeSrcBpsDataPerInterval.Add(dataModule);
 			}

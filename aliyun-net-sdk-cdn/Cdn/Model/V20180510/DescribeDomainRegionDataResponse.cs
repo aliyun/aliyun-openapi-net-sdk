@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -25,17 +25,41 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 	public class DescribeDomainRegionDataResponse : AcsResponse
 	{
 
+		private string endTime;
+
+		private string startTime;
+
 		private string requestId;
 
 		private string domainName;
 
 		private string dataInterval;
 
-		private string startTime;
-
-		private string endTime;
-
 		private List<DescribeDomainRegionData_RegionProportionData> _value;
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -73,30 +97,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
-
 		public List<DescribeDomainRegionData_RegionProportionData> _Value
 		{
 			get
@@ -112,75 +112,63 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeDomainRegionData_RegionProportionData
 		{
 
-			private string region;
+			private string totalQuery;
 
-			private string proportion;
+			private string totalBytes;
 
-			private string regionEname;
-
-			private string avgObjectSize;
+			private string avgResponseRate;
 
 			private string avgResponseTime;
+
+			private string reqErrRate;
+
+			private string avgObjectSize;
 
 			private string bps;
 
 			private string qps;
 
-			private string avgResponseRate;
+			private string regionEname;
 
-			private string reqErrRate;
+			private string region;
 
-			private string totalBytes;
+			private string proportion;
 
 			private string bytesProportion;
 
-			private string totalQuery;
-
-			public string Region
+			public string TotalQuery
 			{
 				get
 				{
-					return region;
+					return totalQuery;
 				}
 				set	
 				{
-					region = value;
+					totalQuery = value;
 				}
 			}
 
-			public string Proportion
+			public string TotalBytes
 			{
 				get
 				{
-					return proportion;
+					return totalBytes;
 				}
 				set	
 				{
-					proportion = value;
+					totalBytes = value;
 				}
 			}
 
-			public string RegionEname
+			public string AvgResponseRate
 			{
 				get
 				{
-					return regionEname;
+					return avgResponseRate;
 				}
 				set	
 				{
-					regionEname = value;
-				}
-			}
-
-			public string AvgObjectSize
-			{
-				get
-				{
-					return avgObjectSize;
-				}
-				set	
-				{
-					avgObjectSize = value;
+					avgResponseRate = value;
 				}
 			}
 
@@ -193,6 +181,30 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					avgResponseTime = value;
+				}
+			}
+
+			public string ReqErrRate
+			{
+				get
+				{
+					return reqErrRate;
+				}
+				set	
+				{
+					reqErrRate = value;
+				}
+			}
+
+			public string AvgObjectSize
+			{
+				get
+				{
+					return avgObjectSize;
+				}
+				set	
+				{
+					avgObjectSize = value;
 				}
 			}
 
@@ -220,39 +232,39 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public string AvgResponseRate
+			public string RegionEname
 			{
 				get
 				{
-					return avgResponseRate;
+					return regionEname;
 				}
 				set	
 				{
-					avgResponseRate = value;
+					regionEname = value;
 				}
 			}
 
-			public string ReqErrRate
+			public string Region
 			{
 				get
 				{
-					return reqErrRate;
+					return region;
 				}
 				set	
 				{
-					reqErrRate = value;
+					region = value;
 				}
 			}
 
-			public string TotalBytes
+			public string Proportion
 			{
 				get
 				{
-					return totalBytes;
+					return proportion;
 				}
 				set	
 				{
-					totalBytes = value;
+					proportion = value;
 				}
 			}
 
@@ -265,18 +277,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					bytesProportion = value;
-				}
-			}
-
-			public string TotalQuery
-			{
-				get
-				{
-					return totalQuery;
-				}
-				set	
-				{
-					totalQuery = value;
 				}
 			}
 		}

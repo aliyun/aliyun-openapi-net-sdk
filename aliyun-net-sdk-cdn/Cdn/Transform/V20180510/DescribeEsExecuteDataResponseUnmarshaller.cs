@@ -38,17 +38,17 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 				DescribeEsExecuteDataResponse.DescribeEsExecuteData_Content content = new DescribeEsExecuteDataResponse.DescribeEsExecuteData_Content();
 				content.Name = _ctx.StringValue("DescribeEsExecuteData.Contents["+ i +"].Name");
 
-				List<string> content_columns = new List<string>();
-				for (int j = 0; j < _ctx.Length("DescribeEsExecuteData.Contents["+ i +"].Columns.Length"); j++) {
-					content_columns.Add(_ctx.StringValue("DescribeEsExecuteData.Contents["+ i +"].Columns["+ j +"]"));
-				}
-				content.Columns = content_columns;
-
 				List<string> content_points = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeEsExecuteData.Contents["+ i +"].Points.Length"); j++) {
 					content_points.Add(_ctx.StringValue("DescribeEsExecuteData.Contents["+ i +"].Points["+ j +"]"));
 				}
 				content.Points = content_points;
+
+				List<string> content_columns = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeEsExecuteData.Contents["+ i +"].Columns.Length"); j++) {
+					content_columns.Add(_ctx.StringValue("DescribeEsExecuteData.Contents["+ i +"].Columns["+ j +"]"));
+				}
+				content.Columns = content_columns;
 
 				describeEsExecuteDataResponse_contents.Add(content);
 			}

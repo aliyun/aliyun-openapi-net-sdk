@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -25,29 +25,17 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 	public class DescribeIpInfoResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string cdnIp;
 
-		private string iSP;
-
-		private string ispEname;
-
-		private string region;
+		private string requestId;
 
 		private string regionEname;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string region;
+
+		private string ispEname;
+
+		private string iSP;
 
 		public string CdnIp
 		{
@@ -61,27 +49,27 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string ISP
+		public string RequestId
 		{
 			get
 			{
-				return iSP;
+				return requestId;
 			}
 			set	
 			{
-				iSP = value;
+				requestId = value;
 			}
 		}
 
-		public string IspEname
+		public string RegionEname
 		{
 			get
 			{
-				return ispEname;
+				return regionEname;
 			}
 			set	
 			{
-				ispEname = value;
+				regionEname = value;
 			}
 		}
 
@@ -97,15 +85,27 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string RegionEname
+		public string IspEname
 		{
 			get
 			{
-				return regionEname;
+				return ispEname;
 			}
 			set	
 			{
-				regionEname = value;
+				ispEname = value;
+			}
+		}
+
+		public string ISP
+		{
+			get
+			{
+				return iSP;
+			}
+			set	
+			{
+				iSP = value;
 			}
 		}
 	}

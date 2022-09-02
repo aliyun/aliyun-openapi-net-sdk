@@ -31,12 +31,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeIpInfoResponse describeIpInfoResponse = new DescribeIpInfoResponse();
 
 			describeIpInfoResponse.HttpResponse = _ctx.HttpResponse;
-			describeIpInfoResponse.RequestId = _ctx.StringValue("DescribeIpInfo.RequestId");
 			describeIpInfoResponse.CdnIp = _ctx.StringValue("DescribeIpInfo.CdnIp");
-			describeIpInfoResponse.ISP = _ctx.StringValue("DescribeIpInfo.ISP");
-			describeIpInfoResponse.IspEname = _ctx.StringValue("DescribeIpInfo.IspEname");
-			describeIpInfoResponse.Region = _ctx.StringValue("DescribeIpInfo.Region");
+			describeIpInfoResponse.RequestId = _ctx.StringValue("DescribeIpInfo.RequestId");
 			describeIpInfoResponse.RegionEname = _ctx.StringValue("DescribeIpInfo.RegionEname");
+			describeIpInfoResponse.Region = _ctx.StringValue("DescribeIpInfo.Region");
+			describeIpInfoResponse.IspEname = _ctx.StringValue("DescribeIpInfo.IspEname");
+			describeIpInfoResponse.ISP = _ctx.StringValue("DescribeIpInfo.ISP");
         
 			return describeIpInfoResponse;
         }

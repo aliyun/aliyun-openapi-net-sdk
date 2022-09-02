@@ -27,6 +27,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string requestId;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get

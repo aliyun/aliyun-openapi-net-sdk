@@ -31,27 +31,27 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 			DescribeScdnDomainIspDataResponse describeScdnDomainIspDataResponse = new DescribeScdnDomainIspDataResponse();
 
 			describeScdnDomainIspDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeScdnDomainIspDataResponse.EndTime = _ctx.StringValue("DescribeScdnDomainIspData.EndTime");
+			describeScdnDomainIspDataResponse.StartTime = _ctx.StringValue("DescribeScdnDomainIspData.StartTime");
 			describeScdnDomainIspDataResponse.RequestId = _ctx.StringValue("DescribeScdnDomainIspData.RequestId");
 			describeScdnDomainIspDataResponse.DomainName = _ctx.StringValue("DescribeScdnDomainIspData.DomainName");
 			describeScdnDomainIspDataResponse.DataInterval = _ctx.StringValue("DescribeScdnDomainIspData.DataInterval");
-			describeScdnDomainIspDataResponse.StartTime = _ctx.StringValue("DescribeScdnDomainIspData.StartTime");
-			describeScdnDomainIspDataResponse.EndTime = _ctx.StringValue("DescribeScdnDomainIspData.EndTime");
 
 			List<DescribeScdnDomainIspDataResponse.DescribeScdnDomainIspData_ISPProportionData> describeScdnDomainIspDataResponse_value = new List<DescribeScdnDomainIspDataResponse.DescribeScdnDomainIspData_ISPProportionData>();
 			for (int i = 0; i < _ctx.Length("DescribeScdnDomainIspData.Value.Length"); i++) {
 				DescribeScdnDomainIspDataResponse.DescribeScdnDomainIspData_ISPProportionData iSPProportionData = new DescribeScdnDomainIspDataResponse.DescribeScdnDomainIspData_ISPProportionData();
-				iSPProportionData.ISP = _ctx.StringValue("DescribeScdnDomainIspData.Value["+ i +"].ISP");
-				iSPProportionData.Proportion = _ctx.StringValue("DescribeScdnDomainIspData.Value["+ i +"].Proportion");
-				iSPProportionData.IspEname = _ctx.StringValue("DescribeScdnDomainIspData.Value["+ i +"].IspEname");
-				iSPProportionData.AvgObjectSize = _ctx.StringValue("DescribeScdnDomainIspData.Value["+ i +"].AvgObjectSize");
+				iSPProportionData.TotalQuery = _ctx.StringValue("DescribeScdnDomainIspData.Value["+ i +"].TotalQuery");
+				iSPProportionData.TotalBytes = _ctx.StringValue("DescribeScdnDomainIspData.Value["+ i +"].TotalBytes");
+				iSPProportionData.AvgResponseRate = _ctx.StringValue("DescribeScdnDomainIspData.Value["+ i +"].AvgResponseRate");
 				iSPProportionData.AvgResponseTime = _ctx.StringValue("DescribeScdnDomainIspData.Value["+ i +"].AvgResponseTime");
+				iSPProportionData.ReqErrRate = _ctx.StringValue("DescribeScdnDomainIspData.Value["+ i +"].ReqErrRate");
+				iSPProportionData.AvgObjectSize = _ctx.StringValue("DescribeScdnDomainIspData.Value["+ i +"].AvgObjectSize");
 				iSPProportionData.Bps = _ctx.StringValue("DescribeScdnDomainIspData.Value["+ i +"].Bps");
 				iSPProportionData.Qps = _ctx.StringValue("DescribeScdnDomainIspData.Value["+ i +"].Qps");
-				iSPProportionData.AvgResponseRate = _ctx.StringValue("DescribeScdnDomainIspData.Value["+ i +"].AvgResponseRate");
-				iSPProportionData.ReqErrRate = _ctx.StringValue("DescribeScdnDomainIspData.Value["+ i +"].ReqErrRate");
-				iSPProportionData.TotalBytes = _ctx.StringValue("DescribeScdnDomainIspData.Value["+ i +"].TotalBytes");
+				iSPProportionData.Proportion = _ctx.StringValue("DescribeScdnDomainIspData.Value["+ i +"].Proportion");
+				iSPProportionData.IspEname = _ctx.StringValue("DescribeScdnDomainIspData.Value["+ i +"].IspEname");
+				iSPProportionData.ISP = _ctx.StringValue("DescribeScdnDomainIspData.Value["+ i +"].ISP");
 				iSPProportionData.BytesProportion = _ctx.StringValue("DescribeScdnDomainIspData.Value["+ i +"].BytesProportion");
-				iSPProportionData.TotalQuery = _ctx.StringValue("DescribeScdnDomainIspData.Value["+ i +"].TotalQuery");
 
 				describeScdnDomainIspDataResponse_value.Add(iSPProportionData);
 			}

@@ -40,26 +40,11 @@ namespace Aliyun.Acs.scdn.Model.V20171115
             }
         }
 
-		private string startTime;
-
 		private string domainName;
 
 		private string endTime;
 
-		private long? ownerId;
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
+		private string startTime;
 
 		public string DomainName
 		{
@@ -87,16 +72,16 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public long? OwnerId
+		public string StartTime
 		{
 			get
 			{
-				return ownerId;
+				return startTime;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 

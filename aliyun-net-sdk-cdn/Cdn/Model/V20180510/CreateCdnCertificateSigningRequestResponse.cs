@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -27,11 +27,11 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private string requestId;
 
-		private string commonName;
+		private string pubMd5;
 
 		private string csr;
 
-		private string pubMd5;
+		private string commonName;
 
 		public string RequestId
 		{
@@ -45,15 +45,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string CommonName
+		public string PubMd5
 		{
 			get
 			{
-				return commonName;
+				return pubMd5;
 			}
 			set	
 			{
-				commonName = value;
+				pubMd5 = value;
 			}
 		}
 
@@ -69,15 +69,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string PubMd5
+		public string CommonName
 		{
 			get
 			{
-				return pubMd5;
+				return commonName;
 			}
 			set	
 			{
-				pubMd5 = value;
+				commonName = value;
 			}
 		}
 	}

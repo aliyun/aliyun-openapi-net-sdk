@@ -36,16 +36,16 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 			List<DescribeScdnDomainCertificateInfoResponse.DescribeScdnDomainCertificateInfo_CertInfo> describeScdnDomainCertificateInfoResponse_certInfos = new List<DescribeScdnDomainCertificateInfoResponse.DescribeScdnDomainCertificateInfo_CertInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeScdnDomainCertificateInfo.CertInfos.Length"); i++) {
 				DescribeScdnDomainCertificateInfoResponse.DescribeScdnDomainCertificateInfo_CertInfo certInfo = new DescribeScdnDomainCertificateInfoResponse.DescribeScdnDomainCertificateInfo_CertInfo();
-				certInfo.DomainName = _ctx.StringValue("DescribeScdnDomainCertificateInfo.CertInfos["+ i +"].DomainName");
-				certInfo.CertName = _ctx.StringValue("DescribeScdnDomainCertificateInfo.CertInfos["+ i +"].CertName");
-				certInfo.CertDomainName = _ctx.StringValue("DescribeScdnDomainCertificateInfo.CertInfos["+ i +"].CertDomainName");
-				certInfo.CertExpireTime = _ctx.StringValue("DescribeScdnDomainCertificateInfo.CertInfos["+ i +"].CertExpireTime");
-				certInfo.CertLife = _ctx.StringValue("DescribeScdnDomainCertificateInfo.CertInfos["+ i +"].CertLife");
-				certInfo.CertOrg = _ctx.StringValue("DescribeScdnDomainCertificateInfo.CertInfos["+ i +"].CertOrg");
-				certInfo.CertType = _ctx.StringValue("DescribeScdnDomainCertificateInfo.CertInfos["+ i +"].CertType");
-				certInfo.SSLProtocol = _ctx.StringValue("DescribeScdnDomainCertificateInfo.CertInfos["+ i +"].SSLProtocol");
 				certInfo.Status = _ctx.StringValue("DescribeScdnDomainCertificateInfo.CertInfos["+ i +"].Status");
+				certInfo.CertLife = _ctx.StringValue("DescribeScdnDomainCertificateInfo.CertInfos["+ i +"].CertLife");
+				certInfo.CertExpireTime = _ctx.StringValue("DescribeScdnDomainCertificateInfo.CertInfos["+ i +"].CertExpireTime");
 				certInfo.SSLPub = _ctx.StringValue("DescribeScdnDomainCertificateInfo.CertInfos["+ i +"].SSLPub");
+				certInfo.SSLProtocol = _ctx.StringValue("DescribeScdnDomainCertificateInfo.CertInfos["+ i +"].SSLProtocol");
+				certInfo.CertType = _ctx.StringValue("DescribeScdnDomainCertificateInfo.CertInfos["+ i +"].CertType");
+				certInfo.CertDomainName = _ctx.StringValue("DescribeScdnDomainCertificateInfo.CertInfos["+ i +"].CertDomainName");
+				certInfo.CertName = _ctx.StringValue("DescribeScdnDomainCertificateInfo.CertInfos["+ i +"].CertName");
+				certInfo.CertOrg = _ctx.StringValue("DescribeScdnDomainCertificateInfo.CertInfos["+ i +"].CertOrg");
+				certInfo.DomainName = _ctx.StringValue("DescribeScdnDomainCertificateInfo.CertInfos["+ i +"].DomainName");
 
 				describeScdnDomainCertificateInfoResponse_certInfos.Add(certInfo);
 			}

@@ -35,6 +35,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeDBProxyPerformanceResponse.StartTime = _ctx.StringValue("DescribeDBProxyPerformance.StartTime");
 			describeDBProxyPerformanceResponse.DBInstanceId = _ctx.StringValue("DescribeDBProxyPerformance.DBInstanceId");
 			describeDBProxyPerformanceResponse.RequestId = _ctx.StringValue("DescribeDBProxyPerformance.RequestId");
+			describeDBProxyPerformanceResponse.DBProxyEngineType = _ctx.StringValue("DescribeDBProxyPerformance.DBProxyEngineType");
 
 			List<DescribeDBProxyPerformanceResponse.DescribeDBProxyPerformance_PerformanceKey> describeDBProxyPerformanceResponse_performanceKeys = new List<DescribeDBProxyPerformanceResponse.DescribeDBProxyPerformance_PerformanceKey>();
 			for (int i = 0; i < _ctx.Length("DescribeDBProxyPerformance.PerformanceKeys.Length"); i++) {

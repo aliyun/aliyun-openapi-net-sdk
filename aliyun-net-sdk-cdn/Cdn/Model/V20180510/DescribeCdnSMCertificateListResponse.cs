@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -89,11 +89,11 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 				private string certName;
 
+				private string issuer;
+
 				private string certIdentifier;
 
 				private string common;
-
-				private string issuer;
 
 				public string CertName
 				{
@@ -104,6 +104,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 					set	
 					{
 						certName = value;
+					}
+				}
+
+				public string Issuer
+				{
+					get
+					{
+						return issuer;
+					}
+					set	
+					{
+						issuer = value;
 					}
 				}
 
@@ -128,18 +140,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 					set	
 					{
 						common = value;
-					}
-				}
-
-				public string Issuer
-				{
-					get
-					{
-						return issuer;
-					}
-					set	
-					{
-						issuer = value;
 					}
 				}
 			}

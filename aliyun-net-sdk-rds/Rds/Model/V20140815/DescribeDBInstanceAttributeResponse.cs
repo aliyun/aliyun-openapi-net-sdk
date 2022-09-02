@@ -216,6 +216,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private bool? deletionProtection;
 
+			private string kindCode;
+
 			private List<DescribeDBInstanceAttribute_SlaveZone> slaveZones;
 
 			private List<DescribeDBInstanceAttribute_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
@@ -1253,6 +1255,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "KindCode")]
+			public string KindCode
+			{
+				get
+				{
+					return kindCode;
+				}
+				set	
+				{
+					kindCode = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "SlaveZones")]
 			public List<DescribeDBInstanceAttribute_SlaveZone> SlaveZones
 			{
@@ -1427,6 +1442,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 				private double? scaleMax;
 
+				private bool? autoPause;
+
+				private bool? switchForce;
+
 				[JsonProperty(PropertyName = "ScaleMin")]
 				public double? ScaleMin
 				{
@@ -1450,6 +1469,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					set	
 					{
 						scaleMax = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "AutoPause")]
+				public bool? AutoPause
+				{
+					get
+					{
+						return autoPause;
+					}
+					set	
+					{
+						autoPause = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "SwitchForce")]
+				public bool? SwitchForce
+				{
+					get
+					{
+						return switchForce;
+					}
+					set	
+					{
+						switchForce = value;
 					}
 				}
 			}

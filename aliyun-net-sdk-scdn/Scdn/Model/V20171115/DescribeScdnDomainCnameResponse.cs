@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
@@ -56,11 +56,23 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 		public class DescribeScdnDomainCname_Data
 		{
 
+			private int? status;
+
 			private string domain;
 
 			private string cname;
 
-			private int? status;
+			public int? Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
 
 			public string Domain
 			{
@@ -83,18 +95,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				set	
 				{
 					cname = value;
-				}
-			}
-
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
 				}
 			}
 		}

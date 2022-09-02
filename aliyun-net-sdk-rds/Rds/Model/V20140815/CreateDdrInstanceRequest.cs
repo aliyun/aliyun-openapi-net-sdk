@@ -47,8 +47,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string systemDBCharset;
 
-		private string binlogRole;
-
 		private string engineVersion;
 
 		private string resourceGroupId;
@@ -68,8 +66,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string vSwitchId;
 
 		private string privateIpAddress;
-
-		private string binlogName;
 
 		private string zoneId;
 
@@ -94,8 +90,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string ownerAccount;
 
 		private string usedTime;
-
-		private string binlogPosition;
 
 		private string restoreType;
 
@@ -144,20 +138,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				systemDBCharset = value;
 				DictionaryUtil.Add(QueryParameters, "SystemDBCharset", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "BinlogRole")]
-		public string BinlogRole
-		{
-			get
-			{
-				return binlogRole;
-			}
-			set	
-			{
-				binlogRole = value;
-				DictionaryUtil.Add(QueryParameters, "BinlogRole", value);
 			}
 		}
 
@@ -298,20 +278,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				privateIpAddress = value;
 				DictionaryUtil.Add(QueryParameters, "PrivateIpAddress", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "BinlogName")]
-		public string BinlogName
-		{
-			get
-			{
-				return binlogName;
-			}
-			set	
-			{
-				binlogName = value;
-				DictionaryUtil.Add(QueryParameters, "BinlogName", value);
 			}
 		}
 
@@ -480,20 +446,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				usedTime = value;
 				DictionaryUtil.Add(QueryParameters, "UsedTime", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "BinlogPosition")]
-		public string BinlogPosition
-		{
-			get
-			{
-				return binlogPosition;
-			}
-			set	
-			{
-				binlogPosition = value;
-				DictionaryUtil.Add(QueryParameters, "BinlogPosition", value);
 			}
 		}
 

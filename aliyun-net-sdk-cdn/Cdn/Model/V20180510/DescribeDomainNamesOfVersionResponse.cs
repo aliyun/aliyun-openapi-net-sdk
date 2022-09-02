@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 	public class DescribeDomainNamesOfVersionResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalCount;
 
-		private List<DescribeDomainNamesOfVersion_Content> contents;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeDomainNamesOfVersion_Content> contents;
 
 		public int? TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,21 +70,9 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeDomainNamesOfVersion_Content
 		{
 
-			private string domainId;
-
 			private string domainName;
 
-			public string DomainId
-			{
-				get
-				{
-					return domainId;
-				}
-				set	
-				{
-					domainId = value;
-				}
-			}
+			private string domainId;
 
 			public string DomainName
 			{
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					domainName = value;
+				}
+			}
+
+			public string DomainId
+			{
+				get
+				{
+					return domainId;
+				}
+				set	
+				{
+					domainId = value;
 				}
 			}
 		}

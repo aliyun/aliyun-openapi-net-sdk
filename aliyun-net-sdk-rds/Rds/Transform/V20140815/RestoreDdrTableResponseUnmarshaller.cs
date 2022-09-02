@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 
 			restoreDdrTableResponse.HttpResponse = _ctx.HttpResponse;
 			restoreDdrTableResponse.RequestId = _ctx.StringValue("RestoreDdrTable.RequestId");
+			restoreDdrTableResponse.DBInstanceId = _ctx.StringValue("RestoreDdrTable.DBInstanceId");
         
 			return restoreDdrTableResponse;
         }

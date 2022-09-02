@@ -31,27 +31,27 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeDomainISPDataResponse describeDomainISPDataResponse = new DescribeDomainISPDataResponse();
 
 			describeDomainISPDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainISPDataResponse.EndTime = _ctx.StringValue("DescribeDomainISPData.EndTime");
+			describeDomainISPDataResponse.StartTime = _ctx.StringValue("DescribeDomainISPData.StartTime");
 			describeDomainISPDataResponse.RequestId = _ctx.StringValue("DescribeDomainISPData.RequestId");
 			describeDomainISPDataResponse.DomainName = _ctx.StringValue("DescribeDomainISPData.DomainName");
 			describeDomainISPDataResponse.DataInterval = _ctx.StringValue("DescribeDomainISPData.DataInterval");
-			describeDomainISPDataResponse.StartTime = _ctx.StringValue("DescribeDomainISPData.StartTime");
-			describeDomainISPDataResponse.EndTime = _ctx.StringValue("DescribeDomainISPData.EndTime");
 
 			List<DescribeDomainISPDataResponse.DescribeDomainISPData_ISPProportionData> describeDomainISPDataResponse_value = new List<DescribeDomainISPDataResponse.DescribeDomainISPData_ISPProportionData>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainISPData.Value.Length"); i++) {
 				DescribeDomainISPDataResponse.DescribeDomainISPData_ISPProportionData iSPProportionData = new DescribeDomainISPDataResponse.DescribeDomainISPData_ISPProportionData();
-				iSPProportionData.ISP = _ctx.StringValue("DescribeDomainISPData.Value["+ i +"].ISP");
-				iSPProportionData.Proportion = _ctx.StringValue("DescribeDomainISPData.Value["+ i +"].Proportion");
-				iSPProportionData.IspEname = _ctx.StringValue("DescribeDomainISPData.Value["+ i +"].IspEname");
-				iSPProportionData.AvgObjectSize = _ctx.StringValue("DescribeDomainISPData.Value["+ i +"].AvgObjectSize");
+				iSPProportionData.TotalQuery = _ctx.StringValue("DescribeDomainISPData.Value["+ i +"].TotalQuery");
+				iSPProportionData.TotalBytes = _ctx.StringValue("DescribeDomainISPData.Value["+ i +"].TotalBytes");
+				iSPProportionData.AvgResponseRate = _ctx.StringValue("DescribeDomainISPData.Value["+ i +"].AvgResponseRate");
 				iSPProportionData.AvgResponseTime = _ctx.StringValue("DescribeDomainISPData.Value["+ i +"].AvgResponseTime");
+				iSPProportionData.ReqErrRate = _ctx.StringValue("DescribeDomainISPData.Value["+ i +"].ReqErrRate");
+				iSPProportionData.AvgObjectSize = _ctx.StringValue("DescribeDomainISPData.Value["+ i +"].AvgObjectSize");
 				iSPProportionData.Bps = _ctx.StringValue("DescribeDomainISPData.Value["+ i +"].Bps");
 				iSPProportionData.Qps = _ctx.StringValue("DescribeDomainISPData.Value["+ i +"].Qps");
-				iSPProportionData.AvgResponseRate = _ctx.StringValue("DescribeDomainISPData.Value["+ i +"].AvgResponseRate");
-				iSPProportionData.ReqErrRate = _ctx.StringValue("DescribeDomainISPData.Value["+ i +"].ReqErrRate");
-				iSPProportionData.TotalBytes = _ctx.StringValue("DescribeDomainISPData.Value["+ i +"].TotalBytes");
+				iSPProportionData.Proportion = _ctx.StringValue("DescribeDomainISPData.Value["+ i +"].Proportion");
+				iSPProportionData.IspEname = _ctx.StringValue("DescribeDomainISPData.Value["+ i +"].IspEname");
+				iSPProportionData.ISP = _ctx.StringValue("DescribeDomainISPData.Value["+ i +"].ISP");
 				iSPProportionData.BytesProportion = _ctx.StringValue("DescribeDomainISPData.Value["+ i +"].BytesProportion");
-				iSPProportionData.TotalQuery = _ctx.StringValue("DescribeDomainISPData.Value["+ i +"].TotalQuery");
 
 				describeDomainISPDataResponse_value.Add(iSPProportionData);
 			}

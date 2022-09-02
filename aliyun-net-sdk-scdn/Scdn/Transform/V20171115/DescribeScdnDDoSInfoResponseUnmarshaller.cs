@@ -31,8 +31,8 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 			DescribeScdnDDoSInfoResponse describeScdnDDoSInfoResponse = new DescribeScdnDDoSInfoResponse();
 
 			describeScdnDDoSInfoResponse.HttpResponse = _ctx.HttpResponse;
-			describeScdnDDoSInfoResponse.RequestId = _ctx.StringValue("DescribeScdnDDoSInfo.RequestId");
 			describeScdnDDoSInfoResponse.SecBandwidth = _ctx.IntegerValue("DescribeScdnDDoSInfo.SecBandwidth");
+			describeScdnDDoSInfoResponse.RequestId = _ctx.StringValue("DescribeScdnDDoSInfo.RequestId");
 			describeScdnDDoSInfoResponse.ElasticBandwidth = _ctx.IntegerValue("DescribeScdnDDoSInfo.ElasticBandwidth");
         
 			return describeScdnDDoSInfoResponse;

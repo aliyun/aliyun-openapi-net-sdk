@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -98,113 +98,31 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeUserDomains_PageData
 		{
 
-			private string domainName;
-
-			private string cname;
-
-			private string cdnType;
-
-			private string domainStatus;
-
-			private string gmtCreated;
-
-			private string gmtModified;
-
-			private string description;
-
 			private string sslProtocol;
-
-			private string resourceGroupId;
 
 			private string sandbox;
 
+			private string gmtModified;
+
+			private string domainName;
+
+			private long? domainId;
+
+			private string gmtCreated;
+
+			private string description;
+
 			private string coverage;
 
+			private string resourceGroupId;
+
+			private string cname;
+
+			private string domainStatus;
+
+			private string cdnType;
+
 			private List<DescribeUserDomains_Source> sources;
-
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
-
-			public string Cname
-			{
-				get
-				{
-					return cname;
-				}
-				set	
-				{
-					cname = value;
-				}
-			}
-
-			public string CdnType
-			{
-				get
-				{
-					return cdnType;
-				}
-				set	
-				{
-					cdnType = value;
-				}
-			}
-
-			public string DomainStatus
-			{
-				get
-				{
-					return domainStatus;
-				}
-				set	
-				{
-					domainStatus = value;
-				}
-			}
-
-			public string GmtCreated
-			{
-				get
-				{
-					return gmtCreated;
-				}
-				set	
-				{
-					gmtCreated = value;
-				}
-			}
-
-			public string GmtModified
-			{
-				get
-				{
-					return gmtModified;
-				}
-				set	
-				{
-					gmtModified = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
 
 			public string SslProtocol
 			{
@@ -215,18 +133,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					sslProtocol = value;
-				}
-			}
-
-			public string ResourceGroupId
-			{
-				get
-				{
-					return resourceGroupId;
-				}
-				set	
-				{
-					resourceGroupId = value;
 				}
 			}
 
@@ -242,6 +148,66 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
+			public string GmtModified
+			{
+				get
+				{
+					return gmtModified;
+				}
+				set	
+				{
+					gmtModified = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
+				}
+			}
+
+			public long? DomainId
+			{
+				get
+				{
+					return domainId;
+				}
+				set	
+				{
+					domainId = value;
+				}
+			}
+
+			public string GmtCreated
+			{
+				get
+				{
+					return gmtCreated;
+				}
+				set	
+				{
+					gmtCreated = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
 			public string Coverage
 			{
 				get
@@ -251,6 +217,54 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					coverage = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public string Cname
+			{
+				get
+				{
+					return cname;
+				}
+				set	
+				{
+					cname = value;
+				}
+			}
+
+			public string DomainStatus
+			{
+				get
+				{
+					return domainStatus;
+				}
+				set	
+				{
+					domainStatus = value;
+				}
+			}
+
+			public string CdnType
+			{
+				get
+				{
+					return cdnType;
+				}
+				set	
+				{
+					cdnType = value;
 				}
 			}
 
@@ -271,13 +285,13 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 				private string type;
 
-				private string content;
-
-				private int? port;
+				private string weight;
 
 				private string priority;
 
-				private string weight;
+				private int? port;
+
+				private string content;
 
 				public string Type
 				{
@@ -291,27 +305,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 					}
 				}
 
-				public string Content
+				public string Weight
 				{
 					get
 					{
-						return content;
+						return weight;
 					}
 					set	
 					{
-						content = value;
-					}
-				}
-
-				public int? Port
-				{
-					get
-					{
-						return port;
-					}
-					set	
-					{
-						port = value;
+						weight = value;
 					}
 				}
 
@@ -327,15 +329,27 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 					}
 				}
 
-				public string Weight
+				public int? Port
 				{
 					get
 					{
-						return weight;
+						return port;
 					}
 					set	
 					{
-						weight = value;
+						port = value;
+					}
+				}
+
+				public string Content
+				{
+					get
+					{
+						return content;
+					}
+					set	
+					{
+						content = value;
 					}
 				}
 			}

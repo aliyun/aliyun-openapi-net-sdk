@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 	public class DescribeScdnDDoSInfoResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? secBandwidth;
 
-		private int? elasticBandwidth;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private int? elasticBandwidth;
 
 		public int? SecBandwidth
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			set	
 			{
 				secBandwidth = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

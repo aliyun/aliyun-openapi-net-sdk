@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dbInstanceId;
 
+		private string dBProxyEngineType;
+
 		private string dbProxyEndpointId;
 
 		[JsonProperty(PropertyName = "DbProxySslEnabled")]
@@ -88,6 +90,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dbInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DbInstanceId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBProxyEngineType")]
+		public string DBProxyEngineType
+		{
+			get
+			{
+				return dBProxyEngineType;
+			}
+			set	
+			{
+				dBProxyEngineType = value;
+				DictionaryUtil.Add(QueryParameters, "DBProxyEngineType", value);
 			}
 		}
 

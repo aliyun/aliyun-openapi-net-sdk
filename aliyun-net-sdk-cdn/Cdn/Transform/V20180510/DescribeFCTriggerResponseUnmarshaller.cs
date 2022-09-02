@@ -34,12 +34,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			describeFCTriggerResponse.RequestId = _ctx.StringValue("DescribeFCTrigger.RequestId");
 
 			DescribeFCTriggerResponse.DescribeFCTrigger_FCTrigger fCTrigger = new DescribeFCTriggerResponse.DescribeFCTrigger_FCTrigger();
-			fCTrigger.EventMetaName = _ctx.StringValue("DescribeFCTrigger.FCTrigger.EventMetaName");
-			fCTrigger.EventMetaVersion = _ctx.StringValue("DescribeFCTrigger.FCTrigger.EventMetaVersion");
 			fCTrigger.TriggerARN = _ctx.StringValue("DescribeFCTrigger.FCTrigger.TriggerARN");
 			fCTrigger.RoleARN = _ctx.StringValue("DescribeFCTrigger.FCTrigger.RoleARN");
 			fCTrigger.SourceArn = _ctx.StringValue("DescribeFCTrigger.FCTrigger.SourceArn");
 			fCTrigger.Notes = _ctx.StringValue("DescribeFCTrigger.FCTrigger.Notes");
+			fCTrigger.EventMetaName = _ctx.StringValue("DescribeFCTrigger.FCTrigger.EventMetaName");
+			fCTrigger.EventMetaVersion = _ctx.StringValue("DescribeFCTrigger.FCTrigger.EventMetaVersion");
 			describeFCTriggerResponse.FCTrigger = fCTrigger;
         
 			return describeFCTriggerResponse;

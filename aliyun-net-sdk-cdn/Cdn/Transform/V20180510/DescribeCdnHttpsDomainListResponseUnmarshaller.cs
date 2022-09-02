@@ -31,20 +31,20 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeCdnHttpsDomainListResponse describeCdnHttpsDomainListResponse = new DescribeCdnHttpsDomainListResponse();
 
 			describeCdnHttpsDomainListResponse.HttpResponse = _ctx.HttpResponse;
-			describeCdnHttpsDomainListResponse.RequestId = _ctx.StringValue("DescribeCdnHttpsDomainList.RequestId");
 			describeCdnHttpsDomainListResponse.TotalCount = _ctx.IntegerValue("DescribeCdnHttpsDomainList.TotalCount");
+			describeCdnHttpsDomainListResponse.RequestId = _ctx.StringValue("DescribeCdnHttpsDomainList.RequestId");
 
 			List<DescribeCdnHttpsDomainListResponse.DescribeCdnHttpsDomainList_CertInfo> describeCdnHttpsDomainListResponse_certInfos = new List<DescribeCdnHttpsDomainListResponse.DescribeCdnHttpsDomainList_CertInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeCdnHttpsDomainList.CertInfos.Length"); i++) {
 				DescribeCdnHttpsDomainListResponse.DescribeCdnHttpsDomainList_CertInfo certInfo = new DescribeCdnHttpsDomainListResponse.DescribeCdnHttpsDomainList_CertInfo();
-				certInfo.CertCommonName = _ctx.StringValue("DescribeCdnHttpsDomainList.CertInfos["+ i +"].CertCommonName");
-				certInfo.CertName = _ctx.StringValue("DescribeCdnHttpsDomainList.CertInfos["+ i +"].CertName");
 				certInfo.CertStartTime = _ctx.StringValue("DescribeCdnHttpsDomainList.CertInfos["+ i +"].CertStartTime");
 				certInfo.CertExpireTime = _ctx.StringValue("DescribeCdnHttpsDomainList.CertInfos["+ i +"].CertExpireTime");
-				certInfo.CertStatus = _ctx.StringValue("DescribeCdnHttpsDomainList.CertInfos["+ i +"].CertStatus");
-				certInfo.CertType = _ctx.StringValue("DescribeCdnHttpsDomainList.CertInfos["+ i +"].CertType");
-				certInfo.DomainName = _ctx.StringValue("DescribeCdnHttpsDomainList.CertInfos["+ i +"].DomainName");
 				certInfo.CertUpdateTime = _ctx.StringValue("DescribeCdnHttpsDomainList.CertInfos["+ i +"].CertUpdateTime");
+				certInfo.CertType = _ctx.StringValue("DescribeCdnHttpsDomainList.CertInfos["+ i +"].CertType");
+				certInfo.CertName = _ctx.StringValue("DescribeCdnHttpsDomainList.CertInfos["+ i +"].CertName");
+				certInfo.CertStatus = _ctx.StringValue("DescribeCdnHttpsDomainList.CertInfos["+ i +"].CertStatus");
+				certInfo.DomainName = _ctx.StringValue("DescribeCdnHttpsDomainList.CertInfos["+ i +"].DomainName");
+				certInfo.CertCommonName = _ctx.StringValue("DescribeCdnHttpsDomainList.CertInfos["+ i +"].CertCommonName");
 
 				describeCdnHttpsDomainListResponse_certInfos.Add(certInfo);
 			}

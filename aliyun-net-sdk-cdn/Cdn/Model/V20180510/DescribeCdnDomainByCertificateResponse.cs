@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -56,57 +56,33 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeCdnDomainByCertificate_CertInfo
 		{
 
-			private string issuer;
-
-			private string certType;
-
-			private string certSubjectCommonName;
+			private string certStartTime;
 
 			private string certExpireTime;
 
-			private string certStartTime;
+			private string certCaIsLegacy;
+
+			private string certSubjectCommonName;
+
+			private string certType;
 
 			private string domainNames;
 
-			private string domainList;
-
 			private string certExpired;
 
-			private string certCaIsLegacy;
+			private string issuer;
 
-			public string Issuer
+			private string domainList;
+
+			public string CertStartTime
 			{
 				get
 				{
-					return issuer;
+					return certStartTime;
 				}
 				set	
 				{
-					issuer = value;
-				}
-			}
-
-			public string CertType
-			{
-				get
-				{
-					return certType;
-				}
-				set	
-				{
-					certType = value;
-				}
-			}
-
-			public string CertSubjectCommonName
-			{
-				get
-				{
-					return certSubjectCommonName;
-				}
-				set	
-				{
-					certSubjectCommonName = value;
+					certStartTime = value;
 				}
 			}
 
@@ -122,15 +98,39 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public string CertStartTime
+			public string CertCaIsLegacy
 			{
 				get
 				{
-					return certStartTime;
+					return certCaIsLegacy;
 				}
 				set	
 				{
-					certStartTime = value;
+					certCaIsLegacy = value;
+				}
+			}
+
+			public string CertSubjectCommonName
+			{
+				get
+				{
+					return certSubjectCommonName;
+				}
+				set	
+				{
+					certSubjectCommonName = value;
+				}
+			}
+
+			public string CertType
+			{
+				get
+				{
+					return certType;
+				}
+				set	
+				{
+					certType = value;
 				}
 			}
 
@@ -146,18 +146,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public string DomainList
-			{
-				get
-				{
-					return domainList;
-				}
-				set	
-				{
-					domainList = value;
-				}
-			}
-
 			public string CertExpired
 			{
 				get
@@ -170,15 +158,27 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public string CertCaIsLegacy
+			public string Issuer
 			{
 				get
 				{
-					return certCaIsLegacy;
+					return issuer;
 				}
 				set	
 				{
-					certCaIsLegacy = value;
+					issuer = value;
+				}
+			}
+
+			public string DomainList
+			{
+				get
+				{
+					return domainList;
+				}
+				set	
+				{
+					domainList = value;
 				}
 			}
 		}

@@ -33,18 +33,6 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 			describeScdnDDoSTrafficInfoResponse.HttpResponse = _ctx.HttpResponse;
 			describeScdnDDoSTrafficInfoResponse.RequestId = _ctx.StringValue("DescribeScdnDDoSTrafficInfo.RequestId");
 
-			List<string> describeScdnDDoSTrafficInfoResponse_bpsDrops = new List<string>();
-			for (int i = 0; i < _ctx.Length("DescribeScdnDDoSTrafficInfo.BpsDrops.Length"); i++) {
-				describeScdnDDoSTrafficInfoResponse_bpsDrops.Add(_ctx.StringValue("DescribeScdnDDoSTrafficInfo.BpsDrops["+ i +"]"));
-			}
-			describeScdnDDoSTrafficInfoResponse.BpsDrops = describeScdnDDoSTrafficInfoResponse_bpsDrops;
-
-			List<string> describeScdnDDoSTrafficInfoResponse_bpsTotals = new List<string>();
-			for (int i = 0; i < _ctx.Length("DescribeScdnDDoSTrafficInfo.BpsTotals.Length"); i++) {
-				describeScdnDDoSTrafficInfoResponse_bpsTotals.Add(_ctx.StringValue("DescribeScdnDDoSTrafficInfo.BpsTotals["+ i +"]"));
-			}
-			describeScdnDDoSTrafficInfoResponse.BpsTotals = describeScdnDDoSTrafficInfoResponse_bpsTotals;
-
 			List<string> describeScdnDDoSTrafficInfoResponse_ppsTotals = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeScdnDDoSTrafficInfo.PpsTotals.Length"); i++) {
 				describeScdnDDoSTrafficInfoResponse_ppsTotals.Add(_ctx.StringValue("DescribeScdnDDoSTrafficInfo.PpsTotals["+ i +"]"));
@@ -56,6 +44,18 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 				describeScdnDDoSTrafficInfoResponse_ppsDrops.Add(_ctx.StringValue("DescribeScdnDDoSTrafficInfo.PpsDrops["+ i +"]"));
 			}
 			describeScdnDDoSTrafficInfoResponse.PpsDrops = describeScdnDDoSTrafficInfoResponse_ppsDrops;
+
+			List<string> describeScdnDDoSTrafficInfoResponse_bpsDrops = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeScdnDDoSTrafficInfo.BpsDrops.Length"); i++) {
+				describeScdnDDoSTrafficInfoResponse_bpsDrops.Add(_ctx.StringValue("DescribeScdnDDoSTrafficInfo.BpsDrops["+ i +"]"));
+			}
+			describeScdnDDoSTrafficInfoResponse.BpsDrops = describeScdnDDoSTrafficInfoResponse_bpsDrops;
+
+			List<string> describeScdnDDoSTrafficInfoResponse_bpsTotals = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeScdnDDoSTrafficInfo.BpsTotals.Length"); i++) {
+				describeScdnDDoSTrafficInfoResponse_bpsTotals.Add(_ctx.StringValue("DescribeScdnDDoSTrafficInfo.BpsTotals["+ i +"]"));
+			}
+			describeScdnDDoSTrafficInfoResponse.BpsTotals = describeScdnDDoSTrafficInfoResponse_bpsTotals;
 
 			List<DescribeScdnDDoSTrafficInfoResponse.DescribeScdnDDoSTrafficInfo_TimeScope> describeScdnDDoSTrafficInfoResponse_timeScopes = new List<DescribeScdnDDoSTrafficInfoResponse.DescribeScdnDDoSTrafficInfo_TimeScope>();
 			for (int i = 0; i < _ctx.Length("DescribeScdnDDoSTrafficInfo.TimeScopes.Length"); i++) {

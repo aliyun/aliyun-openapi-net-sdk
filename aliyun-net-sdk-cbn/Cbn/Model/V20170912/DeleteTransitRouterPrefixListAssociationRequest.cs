@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private string prefixListId;
 
+		private string nextHopType;
+
 		private bool? dryRun;
 
 		private string resourceOwnerAccount;
@@ -97,6 +99,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				prefixListId = value;
 				DictionaryUtil.Add(QueryParameters, "PrefixListId", value);
+			}
+		}
+
+		public string NextHopType
+		{
+			get
+			{
+				return nextHopType;
+			}
+			set	
+			{
+				nextHopType = value;
+				DictionaryUtil.Add(QueryParameters, "NextHopType", value);
 			}
 		}
 

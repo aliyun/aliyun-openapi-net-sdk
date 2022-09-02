@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -58,9 +58,9 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 			private string countriesAndRegions;
 
-			private string countriesAndRegionsName;
-
 			private string continent;
+
+			private string countriesAndRegionsName;
 
 			public string CountriesAndRegions
 			{
@@ -74,18 +74,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public string CountriesAndRegionsName
-			{
-				get
-				{
-					return countriesAndRegionsName;
-				}
-				set	
-				{
-					countriesAndRegionsName = value;
-				}
-			}
-
 			public string Continent
 			{
 				get
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					continent = value;
+				}
+			}
+
+			public string CountriesAndRegionsName
+			{
+				get
+				{
+					return countriesAndRegionsName;
+				}
+				set	
+				{
+					countriesAndRegionsName = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 	public class DescribeDomainRealTimeDetailDataResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string data;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string Data
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				data = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

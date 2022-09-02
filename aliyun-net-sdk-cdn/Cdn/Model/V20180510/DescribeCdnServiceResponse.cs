@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -25,19 +25,31 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 	public class DescribeCdnServiceResponse : AcsResponse
 	{
 
+		private string changingAffectTime;
+
 		private string requestId;
-
-		private string instanceId;
-
-		private string internetChargeType;
-
-		private string openingTime;
 
 		private string changingChargeType;
 
-		private string changingAffectTime;
+		private string openingTime;
+
+		private string internetChargeType;
+
+		private string instanceId;
 
 		private List<DescribeCdnService_LockReason> operationLocks;
+
+		public string ChangingAffectTime
+		{
+			get
+			{
+				return changingAffectTime;
+			}
+			set	
+			{
+				changingAffectTime = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -48,42 +60,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-			}
-		}
-
-		public string InternetChargeType
-		{
-			get
-			{
-				return internetChargeType;
-			}
-			set	
-			{
-				internetChargeType = value;
-			}
-		}
-
-		public string OpeningTime
-		{
-			get
-			{
-				return openingTime;
-			}
-			set	
-			{
-				openingTime = value;
 			}
 		}
 
@@ -99,15 +75,39 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string ChangingAffectTime
+		public string OpeningTime
 		{
 			get
 			{
-				return changingAffectTime;
+				return openingTime;
 			}
 			set	
 			{
-				changingAffectTime = value;
+				openingTime = value;
+			}
+		}
+
+		public string InternetChargeType
+		{
+			get
+			{
+				return internetChargeType;
+			}
+			set	
+			{
+				internetChargeType = value;
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
 			}
 		}
 

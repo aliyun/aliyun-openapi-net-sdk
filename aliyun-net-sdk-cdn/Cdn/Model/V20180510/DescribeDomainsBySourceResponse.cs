@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 	public class DescribeDomainsBySourceResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string sources;
 
-		private List<DescribeDomainsBySource_DomainsData> domainsList;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeDomainsBySource_DomainsData> domainsList;
 
 		public string Sources
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				sources = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -115,51 +115,27 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			public class DescribeDomainsBySource_DomainInfo
 			{
 
-				private string domainName;
-
-				private string domainCname;
-
-				private string createTime;
+				private string status;
 
 				private string updateTime;
 
-				private string status;
+				private string createTime;
+
+				private string domainCname;
 
 				private string cdnType;
 
-				public string DomainName
-				{
-					get
-					{
-						return domainName;
-					}
-					set	
-					{
-						domainName = value;
-					}
-				}
+				private string domainName;
 
-				public string DomainCname
+				public string Status
 				{
 					get
 					{
-						return domainCname;
+						return status;
 					}
 					set	
 					{
-						domainCname = value;
-					}
-				}
-
-				public string CreateTime
-				{
-					get
-					{
-						return createTime;
-					}
-					set	
-					{
-						createTime = value;
+						status = value;
 					}
 				}
 
@@ -175,15 +151,27 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 					}
 				}
 
-				public string Status
+				public string CreateTime
 				{
 					get
 					{
-						return status;
+						return createTime;
 					}
 					set	
 					{
-						status = value;
+						createTime = value;
+					}
+				}
+
+				public string DomainCname
+				{
+					get
+					{
+						return domainCname;
+					}
+					set	
+					{
+						domainCname = value;
 					}
 				}
 
@@ -196,6 +184,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 					set	
 					{
 						cdnType = value;
+					}
+				}
+
+				public string DomainName
+				{
+					get
+					{
+						return domainName;
+					}
+					set	
+					{
+						domainName = value;
 					}
 				}
 			}

@@ -53,6 +53,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string endTime;
 
+		private string dBProxyEngineType;
+
 		private long? ownerId;
 
 		private string dBProxyInstanceType;
@@ -138,6 +140,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				endTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBProxyEngineType")]
+		public string DBProxyEngineType
+		{
+			get
+			{
+				return dBProxyEngineType;
+			}
+			set	
+			{
+				dBProxyEngineType = value;
+				DictionaryUtil.Add(QueryParameters, "DBProxyEngineType", value);
 			}
 		}
 

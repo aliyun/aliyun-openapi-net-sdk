@@ -187,6 +187,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string checksum;
 
+			private string resourceGroupId;
+
 			private List<DescribeBackups_BackupDownloadLinkByDBItem> backupDownloadLinkByDB;
 
 			[JsonProperty(PropertyName = "StorageClass")]
@@ -537,6 +539,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					checksum = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ResourceGroupId")]
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 

@@ -31,14 +31,14 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeDomainNamesOfVersionResponse describeDomainNamesOfVersionResponse = new DescribeDomainNamesOfVersionResponse();
 
 			describeDomainNamesOfVersionResponse.HttpResponse = _ctx.HttpResponse;
-			describeDomainNamesOfVersionResponse.RequestId = _ctx.StringValue("DescribeDomainNamesOfVersion.RequestId");
 			describeDomainNamesOfVersionResponse.TotalCount = _ctx.IntegerValue("DescribeDomainNamesOfVersion.TotalCount");
+			describeDomainNamesOfVersionResponse.RequestId = _ctx.StringValue("DescribeDomainNamesOfVersion.RequestId");
 
 			List<DescribeDomainNamesOfVersionResponse.DescribeDomainNamesOfVersion_Content> describeDomainNamesOfVersionResponse_contents = new List<DescribeDomainNamesOfVersionResponse.DescribeDomainNamesOfVersion_Content>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainNamesOfVersion.Contents.Length"); i++) {
 				DescribeDomainNamesOfVersionResponse.DescribeDomainNamesOfVersion_Content content = new DescribeDomainNamesOfVersionResponse.DescribeDomainNamesOfVersion_Content();
-				content.DomainId = _ctx.StringValue("DescribeDomainNamesOfVersion.Contents["+ i +"].DomainId");
 				content.DomainName = _ctx.StringValue("DescribeDomainNamesOfVersion.Contents["+ i +"].DomainName");
+				content.DomainId = _ctx.StringValue("DescribeDomainNamesOfVersion.Contents["+ i +"].DomainId");
 
 				describeDomainNamesOfVersionResponse_contents.Add(content);
 			}

@@ -31,18 +31,18 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 			DescribeScdnDomainOriginTrafficDataResponse describeScdnDomainOriginTrafficDataResponse = new DescribeScdnDomainOriginTrafficDataResponse();
 
 			describeScdnDomainOriginTrafficDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeScdnDomainOriginTrafficDataResponse.EndTime = _ctx.StringValue("DescribeScdnDomainOriginTrafficData.EndTime");
+			describeScdnDomainOriginTrafficDataResponse.StartTime = _ctx.StringValue("DescribeScdnDomainOriginTrafficData.StartTime");
 			describeScdnDomainOriginTrafficDataResponse.RequestId = _ctx.StringValue("DescribeScdnDomainOriginTrafficData.RequestId");
 			describeScdnDomainOriginTrafficDataResponse.DomainName = _ctx.StringValue("DescribeScdnDomainOriginTrafficData.DomainName");
-			describeScdnDomainOriginTrafficDataResponse.StartTime = _ctx.StringValue("DescribeScdnDomainOriginTrafficData.StartTime");
-			describeScdnDomainOriginTrafficDataResponse.EndTime = _ctx.StringValue("DescribeScdnDomainOriginTrafficData.EndTime");
 			describeScdnDomainOriginTrafficDataResponse.DataInterval = _ctx.StringValue("DescribeScdnDomainOriginTrafficData.DataInterval");
 
 			List<DescribeScdnDomainOriginTrafficDataResponse.DescribeScdnDomainOriginTrafficData_DataModule> describeScdnDomainOriginTrafficDataResponse_originTrafficDataPerInterval = new List<DescribeScdnDomainOriginTrafficDataResponse.DescribeScdnDomainOriginTrafficData_DataModule>();
 			for (int i = 0; i < _ctx.Length("DescribeScdnDomainOriginTrafficData.OriginTrafficDataPerInterval.Length"); i++) {
 				DescribeScdnDomainOriginTrafficDataResponse.DescribeScdnDomainOriginTrafficData_DataModule dataModule = new DescribeScdnDomainOriginTrafficDataResponse.DescribeScdnDomainOriginTrafficData_DataModule();
-				dataModule.TimeStamp = _ctx.StringValue("DescribeScdnDomainOriginTrafficData.OriginTrafficDataPerInterval["+ i +"].TimeStamp");
 				dataModule.TrafficValue = _ctx.StringValue("DescribeScdnDomainOriginTrafficData.OriginTrafficDataPerInterval["+ i +"].TrafficValue");
 				dataModule.HttpTrafficValue = _ctx.StringValue("DescribeScdnDomainOriginTrafficData.OriginTrafficDataPerInterval["+ i +"].HttpTrafficValue");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeScdnDomainOriginTrafficData.OriginTrafficDataPerInterval["+ i +"].TimeStamp");
 				dataModule.HttpsTrafficValue = _ctx.StringValue("DescribeScdnDomainOriginTrafficData.OriginTrafficDataPerInterval["+ i +"].HttpsTrafficValue");
 
 				describeScdnDomainOriginTrafficDataResponse_originTrafficDataPerInterval.Add(dataModule);

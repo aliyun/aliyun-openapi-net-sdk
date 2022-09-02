@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeDomainRealTimeHttpCodeDataResponse describeDomainRealTimeHttpCodeDataResponse = new DescribeDomainRealTimeHttpCodeDataResponse();
 
 			describeDomainRealTimeHttpCodeDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainRealTimeHttpCodeDataResponse.EndTime = _ctx.StringValue("DescribeDomainRealTimeHttpCodeData.EndTime");
+			describeDomainRealTimeHttpCodeDataResponse.StartTime = _ctx.StringValue("DescribeDomainRealTimeHttpCodeData.StartTime");
 			describeDomainRealTimeHttpCodeDataResponse.RequestId = _ctx.StringValue("DescribeDomainRealTimeHttpCodeData.RequestId");
 			describeDomainRealTimeHttpCodeDataResponse.DomainName = _ctx.StringValue("DescribeDomainRealTimeHttpCodeData.DomainName");
-			describeDomainRealTimeHttpCodeDataResponse.StartTime = _ctx.StringValue("DescribeDomainRealTimeHttpCodeData.StartTime");
-			describeDomainRealTimeHttpCodeDataResponse.EndTime = _ctx.StringValue("DescribeDomainRealTimeHttpCodeData.EndTime");
 			describeDomainRealTimeHttpCodeDataResponse.DataInterval = _ctx.StringValue("DescribeDomainRealTimeHttpCodeData.DataInterval");
 
 			List<DescribeDomainRealTimeHttpCodeDataResponse.DescribeDomainRealTimeHttpCodeData_UsageData> describeDomainRealTimeHttpCodeDataResponse_realTimeHttpCodeData = new List<DescribeDomainRealTimeHttpCodeDataResponse.DescribeDomainRealTimeHttpCodeData_UsageData>();

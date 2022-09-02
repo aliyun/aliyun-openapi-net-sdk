@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 	public class DescribeIllegalUrlExportTaskResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string status;
 
-		private string downloadUrl;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string downloadUrl;
 
 		public string Status
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				status = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

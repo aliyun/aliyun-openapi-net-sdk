@@ -36,8 +36,8 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 			List<BatchSetScdnDomainConfigsResponse.BatchSetScdnDomainConfigs_DomainConfigModel> batchSetScdnDomainConfigsResponse_domainConfigList = new List<BatchSetScdnDomainConfigsResponse.BatchSetScdnDomainConfigs_DomainConfigModel>();
 			for (int i = 0; i < _ctx.Length("BatchSetScdnDomainConfigs.DomainConfigList.Length"); i++) {
 				BatchSetScdnDomainConfigsResponse.BatchSetScdnDomainConfigs_DomainConfigModel domainConfigModel = new BatchSetScdnDomainConfigsResponse.BatchSetScdnDomainConfigs_DomainConfigModel();
-				domainConfigModel.DomainName = _ctx.StringValue("BatchSetScdnDomainConfigs.DomainConfigList["+ i +"].DomainName");
 				domainConfigModel.ConfigId = _ctx.LongValue("BatchSetScdnDomainConfigs.DomainConfigList["+ i +"].ConfigId");
+				domainConfigModel.DomainName = _ctx.StringValue("BatchSetScdnDomainConfigs.DomainConfigList["+ i +"].DomainName");
 				domainConfigModel.FunctionName = _ctx.StringValue("BatchSetScdnDomainConfigs.DomainConfigList["+ i +"].FunctionName");
 
 				batchSetScdnDomainConfigsResponse_domainConfigList.Add(domainConfigModel);

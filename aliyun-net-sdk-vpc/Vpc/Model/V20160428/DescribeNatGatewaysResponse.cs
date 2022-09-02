@@ -142,7 +142,11 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string privateLinkMode;
 
+			private string eipBindMode;
+
 			private List<DescribeNatGateways_IpList> ipLists;
+
+			private List<DescribeNatGateways_Tag> tags;
 
 			private List<string> forwardTableIds;
 
@@ -418,6 +422,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string EipBindMode
+			{
+				get
+				{
+					return eipBindMode;
+				}
+				set	
+				{
+					eipBindMode = value;
+				}
+			}
+
 			public List<DescribeNatGateways_IpList> IpLists
 			{
 				get
@@ -427,6 +443,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					ipLists = value;
+				}
+			}
+
+			public List<DescribeNatGateways_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
 				}
 			}
 
@@ -574,6 +602,38 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					set	
 					{
 						privateIpAddress = value;
+					}
+				}
+			}
+
+			public class DescribeNatGateways_Tag
+			{
+
+				private string tagKey;
+
+				private string tagValue;
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
+					}
+				}
+
+				public string TagValue
+				{
+					get
+					{
+						return tagValue;
+					}
+					set	
+					{
+						tagValue = value;
 					}
 				}
 			}

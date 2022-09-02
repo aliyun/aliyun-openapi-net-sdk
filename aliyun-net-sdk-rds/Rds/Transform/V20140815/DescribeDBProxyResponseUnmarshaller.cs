@@ -40,6 +40,9 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeDBProxyResponse.DBProxyServiceStatus = _ctx.StringValue("DescribeDBProxy.DBProxyServiceStatus");
 			describeDBProxyResponse.DBProxyInstanceName = _ctx.StringValue("DescribeDBProxy.DBProxyInstanceName");
 			describeDBProxyResponse.DBProxyInstanceSize = _ctx.StringValue("DescribeDBProxy.DBProxyInstanceSize");
+			describeDBProxyResponse.DBProxyEngineType = _ctx.StringValue("DescribeDBProxy.DBProxyEngineType");
+			describeDBProxyResponse.AccountName = _ctx.StringValue("DescribeDBProxy.AccountName");
+			describeDBProxyResponse.ResourceGroupId = _ctx.StringValue("DescribeDBProxy.ResourceGroupId");
 
 			List<DescribeDBProxyResponse.DescribeDBProxy_DBProxyConnectStringItemsItem> describeDBProxyResponse_dBProxyConnectStringItems = new List<DescribeDBProxyResponse.DescribeDBProxy_DBProxyConnectStringItemsItem>();
 			for (int i = 0; i < _ctx.Length("DescribeDBProxy.DBProxyConnectStringItems.Length"); i++) {

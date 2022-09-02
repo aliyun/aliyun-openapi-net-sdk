@@ -31,15 +31,15 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeDomainBpsDataByTimeStampResponse describeDomainBpsDataByTimeStampResponse = new DescribeDomainBpsDataByTimeStampResponse();
 
 			describeDomainBpsDataByTimeStampResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainBpsDataByTimeStampResponse.TimeStamp = _ctx.StringValue("DescribeDomainBpsDataByTimeStamp.TimeStamp");
 			describeDomainBpsDataByTimeStampResponse.RequestId = _ctx.StringValue("DescribeDomainBpsDataByTimeStamp.RequestId");
 			describeDomainBpsDataByTimeStampResponse.DomainName = _ctx.StringValue("DescribeDomainBpsDataByTimeStamp.DomainName");
-			describeDomainBpsDataByTimeStampResponse.TimeStamp = _ctx.StringValue("DescribeDomainBpsDataByTimeStamp.TimeStamp");
 
 			List<DescribeDomainBpsDataByTimeStampResponse.DescribeDomainBpsDataByTimeStamp_BpsDataModel> describeDomainBpsDataByTimeStampResponse_bpsDataList = new List<DescribeDomainBpsDataByTimeStampResponse.DescribeDomainBpsDataByTimeStamp_BpsDataModel>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainBpsDataByTimeStamp.BpsDataList.Length"); i++) {
 				DescribeDomainBpsDataByTimeStampResponse.DescribeDomainBpsDataByTimeStamp_BpsDataModel bpsDataModel = new DescribeDomainBpsDataByTimeStampResponse.DescribeDomainBpsDataByTimeStamp_BpsDataModel();
-				bpsDataModel.TimeStamp = _ctx.StringValue("DescribeDomainBpsDataByTimeStamp.BpsDataList["+ i +"].TimeStamp");
 				bpsDataModel.LocationName = _ctx.StringValue("DescribeDomainBpsDataByTimeStamp.BpsDataList["+ i +"].LocationName");
+				bpsDataModel.TimeStamp = _ctx.StringValue("DescribeDomainBpsDataByTimeStamp.BpsDataList["+ i +"].TimeStamp");
 				bpsDataModel.IspName = _ctx.StringValue("DescribeDomainBpsDataByTimeStamp.BpsDataList["+ i +"].IspName");
 				bpsDataModel.Bps = _ctx.LongValue("DescribeDomainBpsDataByTimeStamp.BpsDataList["+ i +"].Bps");
 

@@ -43,15 +43,17 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
+		private string dBInstanceId;
+
+		private string switchTime;
+
 		private string resourceOwnerAccount;
+
+		private string dBProxyEngineType;
 
 		private long? ownerId;
 
 		private string upgradeTime;
-
-		private string dBInstanceId;
-
-		private string switchTime;
 
 		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
@@ -64,48 +66,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "OwnerId")]
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		[JsonProperty(PropertyName = "UpgradeTime")]
-		public string UpgradeTime
-		{
-			get
-			{
-				return upgradeTime;
-			}
-			set	
-			{
-				upgradeTime = value;
-				DictionaryUtil.Add(QueryParameters, "UpgradeTime", value);
 			}
 		}
 
@@ -134,6 +94,62 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				switchTime = value;
 				DictionaryUtil.Add(QueryParameters, "SwitchTime", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBProxyEngineType")]
+		public string DBProxyEngineType
+		{
+			get
+			{
+				return dBProxyEngineType;
+			}
+			set	
+			{
+				dBProxyEngineType = value;
+				DictionaryUtil.Add(QueryParameters, "DBProxyEngineType", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "OwnerId")]
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "UpgradeTime")]
+		public string UpgradeTime
+		{
+			get
+			{
+				return upgradeTime;
+			}
+			set	
+			{
+				upgradeTime = value;
+				DictionaryUtil.Add(QueryParameters, "UpgradeTime", value);
 			}
 		}
 

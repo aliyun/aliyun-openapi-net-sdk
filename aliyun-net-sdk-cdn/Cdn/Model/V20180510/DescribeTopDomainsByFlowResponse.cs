@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -25,39 +25,27 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 	public class DescribeTopDomainsByFlowResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string startTime;
+		private long? domainOnlineCount;
 
 		private string endTime;
 
-		private long? domainCount;
+		private string startTime;
 
-		private long? domainOnlineCount;
+		private string requestId;
+
+		private long? domainCount;
 
 		private List<DescribeTopDomainsByFlow_TopDomain> topDomains;
 
-		public string RequestId
+		public long? DomainOnlineCount
 		{
 			get
 			{
-				return requestId;
+				return domainOnlineCount;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
+				domainOnlineCount = value;
 			}
 		}
 
@@ -73,6 +61,30 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public long? DomainCount
 		{
 			get
@@ -82,18 +94,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				domainCount = value;
-			}
-		}
-
-		public long? DomainOnlineCount
-		{
-			get
-			{
-				return domainOnlineCount;
-			}
-			set	
-			{
-				domainOnlineCount = value;
 			}
 		}
 
@@ -112,29 +112,29 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeTopDomainsByFlow_TopDomain
 		{
 
-			private string domainName;
+			private float? maxBps;
 
 			private long? rank;
 
-			private string totalTraffic;
+			private long? totalAccess;
 
 			private string trafficPercent;
 
-			private float? maxBps;
+			private string domainName;
+
+			private string totalTraffic;
 
 			private string maxBpsTime;
 
-			private long? totalAccess;
-
-			public string DomainName
+			public float? MaxBps
 			{
 				get
 				{
-					return domainName;
+					return maxBps;
 				}
 				set	
 				{
-					domainName = value;
+					maxBps = value;
 				}
 			}
 
@@ -150,15 +150,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public string TotalTraffic
+			public long? TotalAccess
 			{
 				get
 				{
-					return totalTraffic;
+					return totalAccess;
 				}
 				set	
 				{
-					totalTraffic = value;
+					totalAccess = value;
 				}
 			}
 
@@ -174,15 +174,27 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public float? MaxBps
+			public string DomainName
 			{
 				get
 				{
-					return maxBps;
+					return domainName;
 				}
 				set	
 				{
-					maxBps = value;
+					domainName = value;
+				}
+			}
+
+			public string TotalTraffic
+			{
+				get
+				{
+					return totalTraffic;
+				}
+				set	
+				{
+					totalTraffic = value;
 				}
 			}
 
@@ -195,18 +207,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					maxBpsTime = value;
-				}
-			}
-
-			public long? TotalAccess
-			{
-				get
-				{
-					return totalAccess;
-				}
-				set	
-				{
-					totalAccess = value;
 				}
 			}
 		}

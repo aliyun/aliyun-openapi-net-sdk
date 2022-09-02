@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -70,21 +70,9 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeCdnRegionAndIsp_Region
 		{
 
-			private string nameZh;
-
 			private string nameEn;
 
-			public string NameZh
-			{
-				get
-				{
-					return nameZh;
-				}
-				set	
-				{
-					nameZh = value;
-				}
-			}
+			private string nameZh;
 
 			public string NameEn
 			{
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					nameEn = value;
+				}
+			}
+
+			public string NameZh
+			{
+				get
+				{
+					return nameZh;
+				}
+				set	
+				{
+					nameZh = value;
 				}
 			}
 		}
@@ -102,21 +102,9 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeCdnRegionAndIsp_Isp
 		{
 
-			private string nameZh;
-
 			private string nameEn;
 
-			public string NameZh
-			{
-				get
-				{
-					return nameZh;
-				}
-				set	
-				{
-					nameZh = value;
-				}
-			}
+			private string nameZh;
 
 			public string NameEn
 			{
@@ -127,6 +115,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					nameEn = value;
+				}
+			}
+
+			public string NameZh
+			{
+				get
+				{
+					return nameZh;
+				}
+				set	
+				{
+					nameZh = value;
 				}
 			}
 		}

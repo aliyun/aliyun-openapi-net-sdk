@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -25,65 +25,65 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 	public class DescribeRefreshQuotaResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string preloadRemain;
 
-		private string urlQuota;
+		private string blockRemain;
 
-		private string dirQuota;
+		private string regexRemain;
 
 		private string urlRemain;
 
 		private string dirRemain;
 
-		private string preloadQuota;
+		private string urlQuota;
 
 		private string blockQuota;
 
-		private string preloadRemain;
+		private string requestId;
 
-		private string blockRemain;
-
-		private string regexQuota;
-
-		private string regexRemain;
+		private string dirQuota;
 
 		private string preloadEdgeQuota;
 
 		private string preloadEdgeRemain;
 
-		public string RequestId
+		private string preloadQuota;
+
+		private string regexQuota;
+
+		public string PreloadRemain
 		{
 			get
 			{
-				return requestId;
+				return preloadRemain;
 			}
 			set	
 			{
-				requestId = value;
+				preloadRemain = value;
 			}
 		}
 
-		public string UrlQuota
+		public string BlockRemain
 		{
 			get
 			{
-				return urlQuota;
+				return blockRemain;
 			}
 			set	
 			{
-				urlQuota = value;
+				blockRemain = value;
 			}
 		}
 
-		public string DirQuota
+		public string RegexRemain
 		{
 			get
 			{
-				return dirQuota;
+				return regexRemain;
 			}
 			set	
 			{
-				dirQuota = value;
+				regexRemain = value;
 			}
 		}
 
@@ -111,15 +111,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string PreloadQuota
+		public string UrlQuota
 		{
 			get
 			{
-				return preloadQuota;
+				return urlQuota;
 			}
 			set	
 			{
-				preloadQuota = value;
+				urlQuota = value;
 			}
 		}
 
@@ -135,51 +135,27 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string PreloadRemain
+		public string RequestId
 		{
 			get
 			{
-				return preloadRemain;
+				return requestId;
 			}
 			set	
 			{
-				preloadRemain = value;
+				requestId = value;
 			}
 		}
 
-		public string BlockRemain
+		public string DirQuota
 		{
 			get
 			{
-				return blockRemain;
+				return dirQuota;
 			}
 			set	
 			{
-				blockRemain = value;
-			}
-		}
-
-		public string RegexQuota
-		{
-			get
-			{
-				return regexQuota;
-			}
-			set	
-			{
-				regexQuota = value;
-			}
-		}
-
-		public string RegexRemain
-		{
-			get
-			{
-				return regexRemain;
-			}
-			set	
-			{
-				regexRemain = value;
+				dirQuota = value;
 			}
 		}
 
@@ -204,6 +180,30 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				preloadEdgeRemain = value;
+			}
+		}
+
+		public string PreloadQuota
+		{
+			get
+			{
+				return preloadQuota;
+			}
+			set	
+			{
+				preloadQuota = value;
+			}
+		}
+
+		public string RegexQuota
+		{
+			get
+			{
+				return regexQuota;
+			}
+			set	
+			{
+				regexQuota = value;
 			}
 		}
 	}

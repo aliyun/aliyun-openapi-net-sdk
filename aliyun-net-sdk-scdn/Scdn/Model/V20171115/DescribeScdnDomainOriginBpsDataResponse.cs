@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
@@ -25,17 +25,41 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 	public class DescribeScdnDomainOriginBpsDataResponse : AcsResponse
 	{
 
+		private string endTime;
+
+		private string startTime;
+
 		private string requestId;
 
 		private string domainName;
 
-		private string startTime;
-
-		private string endTime;
-
 		private string dataInterval;
 
 		private List<DescribeScdnDomainOriginBpsData_DataModule> originBpsDataPerInterval;
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -58,30 +82,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			set	
 			{
 				domainName = value;
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
 			}
 		}
 
@@ -112,37 +112,13 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 		public class DescribeScdnDomainOriginBpsData_DataModule
 		{
 
-			private string timeStamp;
-
-			private string originBpsValue;
-
 			private string httpOriginBpsValue;
+
+			private string timeStamp;
 
 			private string httpsOriginBpsValue;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
-
-			public string OriginBpsValue
-			{
-				get
-				{
-					return originBpsValue;
-				}
-				set	
-				{
-					originBpsValue = value;
-				}
-			}
+			private string originBpsValue;
 
 			public string HttpOriginBpsValue
 			{
@@ -156,6 +132,18 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				}
 			}
 
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
+				}
+			}
+
 			public string HttpsOriginBpsValue
 			{
 				get
@@ -165,6 +153,18 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				set	
 				{
 					httpsOriginBpsValue = value;
+				}
+			}
+
+			public string OriginBpsValue
+			{
+				get
+				{
+					return originBpsValue;
+				}
+				set	
+				{
+					originBpsValue = value;
 				}
 			}
 		}

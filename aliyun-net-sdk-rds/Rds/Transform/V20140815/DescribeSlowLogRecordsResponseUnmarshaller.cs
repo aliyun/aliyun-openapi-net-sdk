@@ -67,6 +67,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				sQLSlowRecord.ClientHostName = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].ClientHostName");
 				sQLSlowRecord.UserName = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].UserName");
 				sQLSlowRecord.LastRowsAffectedCount = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].LastRowsAffectedCount");
+				sQLSlowRecord.SQLHash = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].SQLHash");
 
 				describeSlowLogRecordsResponse_items.Add(sQLSlowRecord);
 			}

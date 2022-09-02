@@ -42,6 +42,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeDBProxyEndpointResponse.DBProxyEndpointId = _ctx.StringValue("DescribeDBProxyEndpoint.DBProxyEndpointId");
 			describeDBProxyEndpointResponse.DBProxyConnectStringPort = _ctx.StringValue("DescribeDBProxyEndpoint.DBProxyConnectStringPort");
 			describeDBProxyEndpointResponse.DBProxyConnectString = _ctx.StringValue("DescribeDBProxyEndpoint.DBProxyConnectString");
+			describeDBProxyEndpointResponse.DBProxyEngineType = _ctx.StringValue("DescribeDBProxyEndpoint.DBProxyEngineType");
 
 			List<DescribeDBProxyEndpointResponse.DescribeDBProxyEndpoint_EndpointConnectItemsItem> describeDBProxyEndpointResponse_endpointConnectItems = new List<DescribeDBProxyEndpointResponse.DescribeDBProxyEndpoint_EndpointConnectItemsItem>();
 			for (int i = 0; i < _ctx.Length("DescribeDBProxyEndpoint.EndpointConnectItems.Length"); i++) {

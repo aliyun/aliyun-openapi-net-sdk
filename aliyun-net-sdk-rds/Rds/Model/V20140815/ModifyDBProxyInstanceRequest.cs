@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string resourceOwnerAccount;
 
+		private string dBProxyEngineType;
+
 		private long? ownerId;
 
 		private string dBProxyInstanceNum;
@@ -124,6 +126,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBProxyEngineType")]
+		public string DBProxyEngineType
+		{
+			get
+			{
+				return dBProxyEngineType;
+			}
+			set	
+			{
+				dBProxyEngineType = value;
+				DictionaryUtil.Add(QueryParameters, "DBProxyEngineType", value);
 			}
 		}
 

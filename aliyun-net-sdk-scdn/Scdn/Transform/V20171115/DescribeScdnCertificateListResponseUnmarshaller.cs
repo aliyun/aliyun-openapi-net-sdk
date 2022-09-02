@@ -39,12 +39,12 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 			List<DescribeScdnCertificateListResponse.DescribeScdnCertificateList_CertificateListModel.DescribeScdnCertificateList_Cert> certificateListModel_certList = new List<DescribeScdnCertificateListResponse.DescribeScdnCertificateList_CertificateListModel.DescribeScdnCertificateList_Cert>();
 			for (int i = 0; i < _ctx.Length("DescribeScdnCertificateList.CertificateListModel.CertList.Length"); i++) {
 				DescribeScdnCertificateListResponse.DescribeScdnCertificateList_CertificateListModel.DescribeScdnCertificateList_Cert cert = new DescribeScdnCertificateListResponse.DescribeScdnCertificateList_CertificateListModel.DescribeScdnCertificateList_Cert();
-				cert.CertName = _ctx.StringValue("DescribeScdnCertificateList.CertificateListModel.CertList["+ i +"].CertName");
-				cert.CertId = _ctx.LongValue("DescribeScdnCertificateList.CertificateListModel.CertList["+ i +"].CertId");
-				cert.Fingerprint = _ctx.StringValue("DescribeScdnCertificateList.CertificateListModel.CertList["+ i +"].Fingerprint");
-				cert.Common = _ctx.StringValue("DescribeScdnCertificateList.CertificateListModel.CertList["+ i +"].Common");
-				cert.Issuer = _ctx.StringValue("DescribeScdnCertificateList.CertificateListModel.CertList["+ i +"].Issuer");
 				cert.LastTime = _ctx.LongValue("DescribeScdnCertificateList.CertificateListModel.CertList["+ i +"].LastTime");
+				cert.Fingerprint = _ctx.StringValue("DescribeScdnCertificateList.CertificateListModel.CertList["+ i +"].Fingerprint");
+				cert.CertName = _ctx.StringValue("DescribeScdnCertificateList.CertificateListModel.CertList["+ i +"].CertName");
+				cert.Issuer = _ctx.StringValue("DescribeScdnCertificateList.CertificateListModel.CertList["+ i +"].Issuer");
+				cert.CertId = _ctx.LongValue("DescribeScdnCertificateList.CertificateListModel.CertList["+ i +"].CertId");
+				cert.Common = _ctx.StringValue("DescribeScdnCertificateList.CertificateListModel.CertList["+ i +"].Common");
 
 				certificateListModel_certList.Add(cert);
 			}

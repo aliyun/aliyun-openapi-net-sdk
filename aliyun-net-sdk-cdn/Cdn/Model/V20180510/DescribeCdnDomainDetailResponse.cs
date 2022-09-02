@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -56,101 +56,29 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeCdnDomainDetail_GetDomainDetailModel
 		{
 
-			private string domainName;
-
-			private string cname;
-
-			private string httpsCname;
-
-			private string domainStatus;
-
-			private string cdnType;
-
-			private string serverCertificateStatus;
-
 			private string gmtCreated;
-
-			private string gmtModified;
-
-			private string resourceGroupId;
 
 			private string description;
 
+			private string httpsCname;
+
+			private string resourceGroupId;
+
+			private string serverCertificateStatus;
+
 			private string scope;
 
+			private string domainStatus;
+
+			private string cname;
+
+			private string gmtModified;
+
+			private string cdnType;
+
+			private string domainName;
+
 			private List<DescribeCdnDomainDetail_SourceModel> sourceModels;
-
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
-
-			public string Cname
-			{
-				get
-				{
-					return cname;
-				}
-				set	
-				{
-					cname = value;
-				}
-			}
-
-			public string HttpsCname
-			{
-				get
-				{
-					return httpsCname;
-				}
-				set	
-				{
-					httpsCname = value;
-				}
-			}
-
-			public string DomainStatus
-			{
-				get
-				{
-					return domainStatus;
-				}
-				set	
-				{
-					domainStatus = value;
-				}
-			}
-
-			public string CdnType
-			{
-				get
-				{
-					return cdnType;
-				}
-				set	
-				{
-					cdnType = value;
-				}
-			}
-
-			public string ServerCertificateStatus
-			{
-				get
-				{
-					return serverCertificateStatus;
-				}
-				set	
-				{
-					serverCertificateStatus = value;
-				}
-			}
 
 			public string GmtCreated
 			{
@@ -161,30 +89,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					gmtCreated = value;
-				}
-			}
-
-			public string GmtModified
-			{
-				get
-				{
-					return gmtModified;
-				}
-				set	
-				{
-					gmtModified = value;
-				}
-			}
-
-			public string ResourceGroupId
-			{
-				get
-				{
-					return resourceGroupId;
-				}
-				set	
-				{
-					resourceGroupId = value;
 				}
 			}
 
@@ -200,6 +104,42 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
+			public string HttpsCname
+			{
+				get
+				{
+					return httpsCname;
+				}
+				set	
+				{
+					httpsCname = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public string ServerCertificateStatus
+			{
+				get
+				{
+					return serverCertificateStatus;
+				}
+				set	
+				{
+					serverCertificateStatus = value;
+				}
+			}
+
 			public string Scope
 			{
 				get
@@ -209,6 +149,66 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					scope = value;
+				}
+			}
+
+			public string DomainStatus
+			{
+				get
+				{
+					return domainStatus;
+				}
+				set	
+				{
+					domainStatus = value;
+				}
+			}
+
+			public string Cname
+			{
+				get
+				{
+					return cname;
+				}
+				set	
+				{
+					cname = value;
+				}
+			}
+
+			public string GmtModified
+			{
+				get
+				{
+					return gmtModified;
+				}
+				set	
+				{
+					gmtModified = value;
+				}
+			}
+
+			public string CdnType
+			{
+				get
+				{
+					return cdnType;
+				}
+				set	
+				{
+					cdnType = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
 				}
 			}
 
@@ -227,29 +227,17 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			public class DescribeCdnDomainDetail_SourceModel
 			{
 
-				private string content;
-
 				private string type;
 
-				private int? port;
+				private string weight;
 
 				private string enabled;
 
 				private string priority;
 
-				private string weight;
+				private int? port;
 
-				public string Content
-				{
-					get
-					{
-						return content;
-					}
-					set	
-					{
-						content = value;
-					}
-				}
+				private string content;
 
 				public string Type
 				{
@@ -263,15 +251,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 					}
 				}
 
-				public int? Port
+				public string Weight
 				{
 					get
 					{
-						return port;
+						return weight;
 					}
 					set	
 					{
-						port = value;
+						weight = value;
 					}
 				}
 
@@ -299,15 +287,27 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 					}
 				}
 
-				public string Weight
+				public int? Port
 				{
 					get
 					{
-						return weight;
+						return port;
 					}
 					set	
 					{
-						weight = value;
+						port = value;
+					}
+				}
+
+				public string Content
+				{
+					get
+					{
+						return content;
+					}
+					set	
+					{
+						content = value;
 					}
 				}
 			}

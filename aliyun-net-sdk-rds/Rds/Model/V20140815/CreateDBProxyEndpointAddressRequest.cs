@@ -45,9 +45,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dBProxyConnectStringNetType;
 
+		private string resourceGroupId;
+
 		private string dBInstanceId;
 
 		private string dBProxyNewConnectStringPort;
+
+		private string dBProxyEngineType;
 
 		private string vSwitchId;
 
@@ -83,6 +87,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceGroupId")]
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
 		[JsonProperty(PropertyName = "DBInstanceId")]
 		public string DBInstanceId
 		{
@@ -108,6 +126,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBProxyNewConnectStringPort = value;
 				DictionaryUtil.Add(QueryParameters, "DBProxyNewConnectStringPort", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBProxyEngineType")]
+		public string DBProxyEngineType
+		{
+			get
+			{
+				return dBProxyEngineType;
+			}
+			set	
+			{
+				dBProxyEngineType = value;
+				DictionaryUtil.Add(QueryParameters, "DBProxyEngineType", value);
 			}
 		}
 

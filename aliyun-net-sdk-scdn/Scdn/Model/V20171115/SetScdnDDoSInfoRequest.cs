@@ -40,22 +40,7 @@ namespace Aliyun.Acs.scdn.Model.V20171115
             }
         }
 
-		private long? ownerId;
-
 		private int? elasticBandwidth;
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
 
 		public int? ElasticBandwidth
 		{

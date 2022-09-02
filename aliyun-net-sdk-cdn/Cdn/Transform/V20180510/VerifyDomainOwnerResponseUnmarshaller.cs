@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			VerifyDomainOwnerResponse verifyDomainOwnerResponse = new VerifyDomainOwnerResponse();
 
 			verifyDomainOwnerResponse.HttpResponse = _ctx.HttpResponse;
-			verifyDomainOwnerResponse.RequestId = _ctx.StringValue("VerifyDomainOwner.RequestId");
 			verifyDomainOwnerResponse.Content = _ctx.StringValue("VerifyDomainOwner.Content");
+			verifyDomainOwnerResponse.RequestId = _ctx.StringValue("VerifyDomainOwner.RequestId");
         
 			return verifyDomainOwnerResponse;
         }

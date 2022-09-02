@@ -33,6 +33,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeDBInstanceMetricsResponse.HttpResponse = _ctx.HttpResponse;
 			describeDBInstanceMetricsResponse.TotalRecordCount = _ctx.IntegerValue("DescribeDBInstanceMetrics.TotalRecordCount");
 			describeDBInstanceMetricsResponse.RequestId = _ctx.StringValue("DescribeDBInstanceMetrics.RequestId");
+			describeDBInstanceMetricsResponse.DBInstanceName = _ctx.StringValue("DescribeDBInstanceMetrics.DBInstanceName");
 
 			List<DescribeDBInstanceMetricsResponse.DescribeDBInstanceMetrics_Metrics> describeDBInstanceMetricsResponse_items = new List<DescribeDBInstanceMetricsResponse.DescribeDBInstanceMetrics_Metrics>();
 			for (int i = 0; i < _ctx.Length("DescribeDBInstanceMetrics.Items.Length"); i++) {

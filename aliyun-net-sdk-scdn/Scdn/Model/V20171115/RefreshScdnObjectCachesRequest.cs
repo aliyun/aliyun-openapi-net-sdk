@@ -43,11 +43,11 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 
 		private string objectPath;
 
-		private long? ownerId;
-
 		private string securityToken;
 
 		private string objectType;
+
+		private long? ownerId;
 
 		public string ObjectPath
 		{
@@ -59,19 +59,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			{
 				objectPath = value;
 				DictionaryUtil.Add(QueryParameters, "ObjectPath", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -98,6 +85,19 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			{
 				objectType = value;
 				DictionaryUtil.Add(QueryParameters, "ObjectType", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

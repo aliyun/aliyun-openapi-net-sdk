@@ -41,8 +41,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			Method = MethodType.POST;
         }
 
-		private string functionMatches;
-
 		private string versionId;
 
 		private string securityToken;
@@ -58,19 +56,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		private long? functionId;
 
 		private string configId;
-
-		public string FunctionMatches
-		{
-			get
-			{
-				return functionMatches;
-			}
-			set	
-			{
-				functionMatches = value;
-				DictionaryUtil.Add(QueryParameters, "FunctionMatches", value);
-			}
-		}
 
 		public string VersionId
 		{

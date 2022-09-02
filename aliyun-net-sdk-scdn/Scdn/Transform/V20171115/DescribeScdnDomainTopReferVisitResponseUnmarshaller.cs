@@ -31,18 +31,18 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 			DescribeScdnDomainTopReferVisitResponse describeScdnDomainTopReferVisitResponse = new DescribeScdnDomainTopReferVisitResponse();
 
 			describeScdnDomainTopReferVisitResponse.HttpResponse = _ctx.HttpResponse;
+			describeScdnDomainTopReferVisitResponse.StartTime = _ctx.StringValue("DescribeScdnDomainTopReferVisit.StartTime");
 			describeScdnDomainTopReferVisitResponse.RequestId = _ctx.StringValue("DescribeScdnDomainTopReferVisit.RequestId");
 			describeScdnDomainTopReferVisitResponse.DomainName = _ctx.StringValue("DescribeScdnDomainTopReferVisit.DomainName");
-			describeScdnDomainTopReferVisitResponse.StartTime = _ctx.StringValue("DescribeScdnDomainTopReferVisit.StartTime");
 
 			List<DescribeScdnDomainTopReferVisitResponse.DescribeScdnDomainTopReferVisit_ReferList> describeScdnDomainTopReferVisitResponse_topReferList = new List<DescribeScdnDomainTopReferVisitResponse.DescribeScdnDomainTopReferVisit_ReferList>();
 			for (int i = 0; i < _ctx.Length("DescribeScdnDomainTopReferVisit.TopReferList.Length"); i++) {
 				DescribeScdnDomainTopReferVisitResponse.DescribeScdnDomainTopReferVisit_ReferList referList = new DescribeScdnDomainTopReferVisitResponse.DescribeScdnDomainTopReferVisit_ReferList();
-				referList.ReferDetail = _ctx.StringValue("DescribeScdnDomainTopReferVisit.TopReferList["+ i +"].ReferDetail");
-				referList.VisitData = _ctx.StringValue("DescribeScdnDomainTopReferVisit.TopReferList["+ i +"].VisitData");
-				referList.VisitProportion = _ctx.FloatValue("DescribeScdnDomainTopReferVisit.TopReferList["+ i +"].VisitProportion");
 				referList.Flow = _ctx.StringValue("DescribeScdnDomainTopReferVisit.TopReferList["+ i +"].Flow");
 				referList.FlowProportion = _ctx.FloatValue("DescribeScdnDomainTopReferVisit.TopReferList["+ i +"].FlowProportion");
+				referList.VisitData = _ctx.StringValue("DescribeScdnDomainTopReferVisit.TopReferList["+ i +"].VisitData");
+				referList.ReferDetail = _ctx.StringValue("DescribeScdnDomainTopReferVisit.TopReferList["+ i +"].ReferDetail");
+				referList.VisitProportion = _ctx.FloatValue("DescribeScdnDomainTopReferVisit.TopReferList["+ i +"].VisitProportion");
 
 				describeScdnDomainTopReferVisitResponse_topReferList.Add(referList);
 			}

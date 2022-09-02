@@ -31,15 +31,15 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeCdnSMCertificateDetailResponse describeCdnSMCertificateDetailResponse = new DescribeCdnSMCertificateDetailResponse();
 
 			describeCdnSMCertificateDetailResponse.HttpResponse = _ctx.HttpResponse;
-			describeCdnSMCertificateDetailResponse.RequestId = _ctx.StringValue("DescribeCdnSMCertificateDetail.RequestId");
-			describeCdnSMCertificateDetailResponse.SignCertificate = _ctx.StringValue("DescribeCdnSMCertificateDetail.SignCertificate");
-			describeCdnSMCertificateDetailResponse.EncryptCertificate = _ctx.StringValue("DescribeCdnSMCertificateDetail.EncryptCertificate");
-			describeCdnSMCertificateDetailResponse.CertIdentifier = _ctx.StringValue("DescribeCdnSMCertificateDetail.CertIdentifier");
-			describeCdnSMCertificateDetailResponse.CertName = _ctx.StringValue("DescribeCdnSMCertificateDetail.CertName");
-			describeCdnSMCertificateDetailResponse.CommonName = _ctx.StringValue("DescribeCdnSMCertificateDetail.CommonName");
-			describeCdnSMCertificateDetailResponse.Sans = _ctx.StringValue("DescribeCdnSMCertificateDetail.Sans");
-			describeCdnSMCertificateDetailResponse.CertOrg = _ctx.StringValue("DescribeCdnSMCertificateDetail.CertOrg");
 			describeCdnSMCertificateDetailResponse.CertExpireTime = _ctx.StringValue("DescribeCdnSMCertificateDetail.CertExpireTime");
+			describeCdnSMCertificateDetailResponse.CertIdentifier = _ctx.StringValue("DescribeCdnSMCertificateDetail.CertIdentifier");
+			describeCdnSMCertificateDetailResponse.RequestId = _ctx.StringValue("DescribeCdnSMCertificateDetail.RequestId");
+			describeCdnSMCertificateDetailResponse.CommonName = _ctx.StringValue("DescribeCdnSMCertificateDetail.CommonName");
+			describeCdnSMCertificateDetailResponse.CertName = _ctx.StringValue("DescribeCdnSMCertificateDetail.CertName");
+			describeCdnSMCertificateDetailResponse.Sans = _ctx.StringValue("DescribeCdnSMCertificateDetail.Sans");
+			describeCdnSMCertificateDetailResponse.SignCertificate = _ctx.StringValue("DescribeCdnSMCertificateDetail.SignCertificate");
+			describeCdnSMCertificateDetailResponse.CertOrg = _ctx.StringValue("DescribeCdnSMCertificateDetail.CertOrg");
+			describeCdnSMCertificateDetailResponse.EncryptCertificate = _ctx.StringValue("DescribeCdnSMCertificateDetail.EncryptCertificate");
         
 			return describeCdnSMCertificateDetailResponse;
         }

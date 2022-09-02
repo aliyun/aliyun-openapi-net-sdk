@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
@@ -25,263 +25,83 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 	public class DescribeScdnServiceResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string changingAffectTime;
-
-		private string internetChargeType;
-
-		private string changingChargeType;
-
-		private string instanceId;
-
-		private string openTime;
-
-		private string endTime;
-
-		private string protectType;
-
-		private string protectTypeValue;
-
-		private string bandwidth;
-
-		private string ccProtection;
-
-		private string dDoSBasic;
-
-		private string domainCount;
-
-		private string elasticProtection;
-
-		private string bandwidthValue;
-
-		private string ccProtectionValue;
+		private string domainCountValue;
 
 		private string dDoSBasicValue;
 
-		private string domainCountValue;
+		private string changingAffectTime;
 
-		private string elasticProtectionValue;
-
-		private string currentProtectType;
-
-		private string currentProtectTypeValue;
-
-		private string currentBandwidth;
-
-		private string currentCcProtection;
-
-		private string currentDDoSBasic;
+		private string ccProtection;
 
 		private string currentDomainCount;
 
-		private string currentElasticProtection;
+		private string pricingCycle;
+
+		private string openTime;
+
+		private string changingChargeType;
+
+		private string requestId;
 
 		private string currentBandwidthValue;
 
-		private string currentCcProtectionValue;
+		private string bandwidth;
 
-		private string currentDDoSBasicValue;
+		private string domainCount;
 
-		private string currentDomainCountValue;
+		private string protectTypeValue;
 
-		private string currentElasticProtectionValue;
+		private string currentBandwidth;
 
 		private string priceType;
 
-		private string pricingCycle;
+		private string ccProtectionValue;
+
+		private string currentDDoSBasic;
+
+		private string protectType;
+
+		private string currentElasticProtection;
+
+		private string currentElasticProtectionValue;
+
+		private string instanceId;
+
+		private string currentProtectType;
+
+		private string elasticProtection;
+
+		private string endTime;
+
+		private string currentDDoSBasicValue;
+
+		private string bandwidthValue;
+
+		private string dDoSBasic;
+
+		private string currentDomainCountValue;
+
+		private string elasticProtectionValue;
+
+		private string currentCcProtection;
+
+		private string internetChargeType;
+
+		private string currentProtectTypeValue;
+
+		private string currentCcProtectionValue;
 
 		private List<DescribeScdnService_LockReason> operationLocks;
 
-		public string RequestId
+		public string DomainCountValue
 		{
 			get
 			{
-				return requestId;
+				return domainCountValue;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string ChangingAffectTime
-		{
-			get
-			{
-				return changingAffectTime;
-			}
-			set	
-			{
-				changingAffectTime = value;
-			}
-		}
-
-		public string InternetChargeType
-		{
-			get
-			{
-				return internetChargeType;
-			}
-			set	
-			{
-				internetChargeType = value;
-			}
-		}
-
-		public string ChangingChargeType
-		{
-			get
-			{
-				return changingChargeType;
-			}
-			set	
-			{
-				changingChargeType = value;
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-			}
-		}
-
-		public string OpenTime
-		{
-			get
-			{
-				return openTime;
-			}
-			set	
-			{
-				openTime = value;
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
-
-		public string ProtectType
-		{
-			get
-			{
-				return protectType;
-			}
-			set	
-			{
-				protectType = value;
-			}
-		}
-
-		public string ProtectTypeValue
-		{
-			get
-			{
-				return protectTypeValue;
-			}
-			set	
-			{
-				protectTypeValue = value;
-			}
-		}
-
-		public string Bandwidth
-		{
-			get
-			{
-				return bandwidth;
-			}
-			set	
-			{
-				bandwidth = value;
-			}
-		}
-
-		public string CcProtection
-		{
-			get
-			{
-				return ccProtection;
-			}
-			set	
-			{
-				ccProtection = value;
-			}
-		}
-
-		public string DDoSBasic
-		{
-			get
-			{
-				return dDoSBasic;
-			}
-			set	
-			{
-				dDoSBasic = value;
-			}
-		}
-
-		public string DomainCount
-		{
-			get
-			{
-				return domainCount;
-			}
-			set	
-			{
-				domainCount = value;
-			}
-		}
-
-		public string ElasticProtection
-		{
-			get
-			{
-				return elasticProtection;
-			}
-			set	
-			{
-				elasticProtection = value;
-			}
-		}
-
-		public string BandwidthValue
-		{
-			get
-			{
-				return bandwidthValue;
-			}
-			set	
-			{
-				bandwidthValue = value;
-			}
-		}
-
-		public string CcProtectionValue
-		{
-			get
-			{
-				return ccProtectionValue;
-			}
-			set	
-			{
-				ccProtectionValue = value;
+				domainCountValue = value;
 			}
 		}
 
@@ -297,87 +117,27 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string DomainCountValue
+		public string ChangingAffectTime
 		{
 			get
 			{
-				return domainCountValue;
+				return changingAffectTime;
 			}
 			set	
 			{
-				domainCountValue = value;
+				changingAffectTime = value;
 			}
 		}
 
-		public string ElasticProtectionValue
+		public string CcProtection
 		{
 			get
 			{
-				return elasticProtectionValue;
+				return ccProtection;
 			}
 			set	
 			{
-				elasticProtectionValue = value;
-			}
-		}
-
-		public string CurrentProtectType
-		{
-			get
-			{
-				return currentProtectType;
-			}
-			set	
-			{
-				currentProtectType = value;
-			}
-		}
-
-		public string CurrentProtectTypeValue
-		{
-			get
-			{
-				return currentProtectTypeValue;
-			}
-			set	
-			{
-				currentProtectTypeValue = value;
-			}
-		}
-
-		public string CurrentBandwidth
-		{
-			get
-			{
-				return currentBandwidth;
-			}
-			set	
-			{
-				currentBandwidth = value;
-			}
-		}
-
-		public string CurrentCcProtection
-		{
-			get
-			{
-				return currentCcProtection;
-			}
-			set	
-			{
-				currentCcProtection = value;
-			}
-		}
-
-		public string CurrentDDoSBasic
-		{
-			get
-			{
-				return currentDDoSBasic;
-			}
-			set	
-			{
-				currentDDoSBasic = value;
+				ccProtection = value;
 			}
 		}
 
@@ -393,15 +153,51 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string CurrentElasticProtection
+		public string PricingCycle
 		{
 			get
 			{
-				return currentElasticProtection;
+				return pricingCycle;
 			}
 			set	
 			{
-				currentElasticProtection = value;
+				pricingCycle = value;
+			}
+		}
+
+		public string OpenTime
+		{
+			get
+			{
+				return openTime;
+			}
+			set	
+			{
+				openTime = value;
+			}
+		}
+
+		public string ChangingChargeType
+		{
+			get
+			{
+				return changingChargeType;
+			}
+			set	
+			{
+				changingChargeType = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -417,51 +213,51 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string CurrentCcProtectionValue
+		public string Bandwidth
 		{
 			get
 			{
-				return currentCcProtectionValue;
+				return bandwidth;
 			}
 			set	
 			{
-				currentCcProtectionValue = value;
+				bandwidth = value;
 			}
 		}
 
-		public string CurrentDDoSBasicValue
+		public string DomainCount
 		{
 			get
 			{
-				return currentDDoSBasicValue;
+				return domainCount;
 			}
 			set	
 			{
-				currentDDoSBasicValue = value;
+				domainCount = value;
 			}
 		}
 
-		public string CurrentDomainCountValue
+		public string ProtectTypeValue
 		{
 			get
 			{
-				return currentDomainCountValue;
+				return protectTypeValue;
 			}
 			set	
 			{
-				currentDomainCountValue = value;
+				protectTypeValue = value;
 			}
 		}
 
-		public string CurrentElasticProtectionValue
+		public string CurrentBandwidth
 		{
 			get
 			{
-				return currentElasticProtectionValue;
+				return currentBandwidth;
 			}
 			set	
 			{
-				currentElasticProtectionValue = value;
+				currentBandwidth = value;
 			}
 		}
 
@@ -477,15 +273,219 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string PricingCycle
+		public string CcProtectionValue
 		{
 			get
 			{
-				return pricingCycle;
+				return ccProtectionValue;
 			}
 			set	
 			{
-				pricingCycle = value;
+				ccProtectionValue = value;
+			}
+		}
+
+		public string CurrentDDoSBasic
+		{
+			get
+			{
+				return currentDDoSBasic;
+			}
+			set	
+			{
+				currentDDoSBasic = value;
+			}
+		}
+
+		public string ProtectType
+		{
+			get
+			{
+				return protectType;
+			}
+			set	
+			{
+				protectType = value;
+			}
+		}
+
+		public string CurrentElasticProtection
+		{
+			get
+			{
+				return currentElasticProtection;
+			}
+			set	
+			{
+				currentElasticProtection = value;
+			}
+		}
+
+		public string CurrentElasticProtectionValue
+		{
+			get
+			{
+				return currentElasticProtectionValue;
+			}
+			set	
+			{
+				currentElasticProtectionValue = value;
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+			}
+		}
+
+		public string CurrentProtectType
+		{
+			get
+			{
+				return currentProtectType;
+			}
+			set	
+			{
+				currentProtectType = value;
+			}
+		}
+
+		public string ElasticProtection
+		{
+			get
+			{
+				return elasticProtection;
+			}
+			set	
+			{
+				elasticProtection = value;
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
+
+		public string CurrentDDoSBasicValue
+		{
+			get
+			{
+				return currentDDoSBasicValue;
+			}
+			set	
+			{
+				currentDDoSBasicValue = value;
+			}
+		}
+
+		public string BandwidthValue
+		{
+			get
+			{
+				return bandwidthValue;
+			}
+			set	
+			{
+				bandwidthValue = value;
+			}
+		}
+
+		public string DDoSBasic
+		{
+			get
+			{
+				return dDoSBasic;
+			}
+			set	
+			{
+				dDoSBasic = value;
+			}
+		}
+
+		public string CurrentDomainCountValue
+		{
+			get
+			{
+				return currentDomainCountValue;
+			}
+			set	
+			{
+				currentDomainCountValue = value;
+			}
+		}
+
+		public string ElasticProtectionValue
+		{
+			get
+			{
+				return elasticProtectionValue;
+			}
+			set	
+			{
+				elasticProtectionValue = value;
+			}
+		}
+
+		public string CurrentCcProtection
+		{
+			get
+			{
+				return currentCcProtection;
+			}
+			set	
+			{
+				currentCcProtection = value;
+			}
+		}
+
+		public string InternetChargeType
+		{
+			get
+			{
+				return internetChargeType;
+			}
+			set	
+			{
+				internetChargeType = value;
+			}
+		}
+
+		public string CurrentProtectTypeValue
+		{
+			get
+			{
+				return currentProtectTypeValue;
+			}
+			set	
+			{
+				currentProtectTypeValue = value;
+			}
+		}
+
+		public string CurrentCcProtectionValue
+		{
+			get
+			{
+				return currentCcProtectionValue;
+			}
+			set	
+			{
+				currentCcProtectionValue = value;
 			}
 		}
 

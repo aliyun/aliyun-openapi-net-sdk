@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 	public class DescribeRefreshTaskByIdResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? totalCount;
 
-		private List<DescribeRefreshTaskById_CDNTask> tasks;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeRefreshTaskById_CDNTask> tasks;
 
 		public long? TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,55 +70,19 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeRefreshTaskById_CDNTask
 		{
 
-			private string taskId;
-
-			private string objectPath;
-
-			private string process;
-
 			private string status;
 
 			private string creationTime;
 
-			private string description;
-
 			private string objectType;
 
-			public string TaskId
-			{
-				get
-				{
-					return taskId;
-				}
-				set	
-				{
-					taskId = value;
-				}
-			}
+			private string process;
 
-			public string ObjectPath
-			{
-				get
-				{
-					return objectPath;
-				}
-				set	
-				{
-					objectPath = value;
-				}
-			}
+			private string description;
 
-			public string Process
-			{
-				get
-				{
-					return process;
-				}
-				set	
-				{
-					process = value;
-				}
-			}
+			private string objectPath;
+
+			private string taskId;
 
 			public string Status
 			{
@@ -144,6 +108,30 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
+			public string ObjectType
+			{
+				get
+				{
+					return objectType;
+				}
+				set	
+				{
+					objectType = value;
+				}
+			}
+
+			public string Process
+			{
+				get
+				{
+					return process;
+				}
+				set	
+				{
+					process = value;
+				}
+			}
+
 			public string Description
 			{
 				get
@@ -156,15 +144,27 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public string ObjectType
+			public string ObjectPath
 			{
 				get
 				{
-					return objectType;
+					return objectPath;
 				}
 				set	
 				{
-					objectType = value;
+					objectPath = value;
+				}
+			}
+
+			public string TaskId
+			{
+				get
+				{
+					return taskId;
+				}
+				set	
+				{
+					taskId = value;
 				}
 			}
 		}

@@ -33,6 +33,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string lastModifyStatus;
 
+		private string dBInstanceId;
+
 		private List<DescribePGHbaConfig_HbaItem> defaultHbaItems;
 
 		private List<DescribePGHbaConfig_HbaItem> runningHbaItems;
@@ -86,6 +88,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				lastModifyStatus = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBInstanceId")]
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
 			}
 		}
 

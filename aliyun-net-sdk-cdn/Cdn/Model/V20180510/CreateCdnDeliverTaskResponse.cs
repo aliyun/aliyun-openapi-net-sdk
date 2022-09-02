@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -25,7 +25,21 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 	public class CreateCdnDeliverTaskResponse : AcsResponse
 	{
 
+		private string deliverId;
+
 		private string requestId;
+
+		public string DeliverId
+		{
+			get
+			{
+				return deliverId;
+			}
+			set	
+			{
+				deliverId = value;
+			}
+		}
 
 		public string RequestId
 		{

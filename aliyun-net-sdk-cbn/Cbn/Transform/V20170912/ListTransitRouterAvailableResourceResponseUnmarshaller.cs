@@ -44,6 +44,12 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 				listTransitRouterAvailableResourceResponse_masterZones.Add(_ctx.StringValue("ListTransitRouterAvailableResource.MasterZones["+ i +"]"));
 			}
 			listTransitRouterAvailableResourceResponse.MasterZones = listTransitRouterAvailableResourceResponse_masterZones;
+
+			List<string> listTransitRouterAvailableResourceResponse_availableZones = new List<string>();
+			for (int i = 0; i < _ctx.Length("ListTransitRouterAvailableResource.AvailableZones.Length"); i++) {
+				listTransitRouterAvailableResourceResponse_availableZones.Add(_ctx.StringValue("ListTransitRouterAvailableResource.AvailableZones["+ i +"]"));
+			}
+			listTransitRouterAvailableResourceResponse.AvailableZones = listTransitRouterAvailableResourceResponse_availableZones;
         
 			return listTransitRouterAvailableResourceResponse;
         }

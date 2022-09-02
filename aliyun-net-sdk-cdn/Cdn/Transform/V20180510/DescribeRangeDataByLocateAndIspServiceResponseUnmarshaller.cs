@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeRangeDataByLocateAndIspServiceResponse describeRangeDataByLocateAndIspServiceResponse = new DescribeRangeDataByLocateAndIspServiceResponse();
 
 			describeRangeDataByLocateAndIspServiceResponse.HttpResponse = _ctx.HttpResponse;
-			describeRangeDataByLocateAndIspServiceResponse.RequestId = _ctx.StringValue("DescribeRangeDataByLocateAndIspService.RequestId");
 			describeRangeDataByLocateAndIspServiceResponse.JsonResult = _ctx.StringValue("DescribeRangeDataByLocateAndIspService.JsonResult");
+			describeRangeDataByLocateAndIspServiceResponse.RequestId = _ctx.StringValue("DescribeRangeDataByLocateAndIspService.RequestId");
         
 			return describeRangeDataByLocateAndIspServiceResponse;
         }

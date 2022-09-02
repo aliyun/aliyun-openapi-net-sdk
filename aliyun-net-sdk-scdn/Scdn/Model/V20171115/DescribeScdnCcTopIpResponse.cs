@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
@@ -84,21 +84,9 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 		public class DescribeScdnCcTopIp_AttackIpDatas
 		{
 
-			private string ip;
-
 			private string attackCount;
 
-			public string Ip
-			{
-				get
-				{
-					return ip;
-				}
-				set	
-				{
-					ip = value;
-				}
-			}
+			private string ip;
 
 			public string AttackCount
 			{
@@ -109,6 +97,18 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				set	
 				{
 					attackCount = value;
+				}
+			}
+
+			public string Ip
+			{
+				get
+				{
+					return ip;
+				}
+				set	
+				{
+					ip = value;
 				}
 			}
 		}

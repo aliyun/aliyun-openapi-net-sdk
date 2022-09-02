@@ -39,23 +39,23 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 			List<DescribeScdnUserDomainsResponse.DescribeScdnUserDomains_PageData> describeScdnUserDomainsResponse_domains = new List<DescribeScdnUserDomainsResponse.DescribeScdnUserDomains_PageData>();
 			for (int i = 0; i < _ctx.Length("DescribeScdnUserDomains.Domains.Length"); i++) {
 				DescribeScdnUserDomainsResponse.DescribeScdnUserDomains_PageData pageData = new DescribeScdnUserDomainsResponse.DescribeScdnUserDomains_PageData();
-				pageData.DomainName = _ctx.StringValue("DescribeScdnUserDomains.Domains["+ i +"].DomainName");
-				pageData.Cname = _ctx.StringValue("DescribeScdnUserDomains.Domains["+ i +"].Cname");
-				pageData.DomainStatus = _ctx.StringValue("DescribeScdnUserDomains.Domains["+ i +"].DomainStatus");
 				pageData.GmtCreated = _ctx.StringValue("DescribeScdnUserDomains.Domains["+ i +"].GmtCreated");
-				pageData.GmtModified = _ctx.StringValue("DescribeScdnUserDomains.Domains["+ i +"].GmtModified");
 				pageData.Description = _ctx.StringValue("DescribeScdnUserDomains.Domains["+ i +"].Description");
 				pageData.SSLProtocol = _ctx.StringValue("DescribeScdnUserDomains.Domains["+ i +"].SSLProtocol");
 				pageData.ResourceGroupId = _ctx.StringValue("DescribeScdnUserDomains.Domains["+ i +"].ResourceGroupId");
 				pageData.Sandbox = _ctx.StringValue("DescribeScdnUserDomains.Domains["+ i +"].Sandbox");
+				pageData.DomainStatus = _ctx.StringValue("DescribeScdnUserDomains.Domains["+ i +"].DomainStatus");
+				pageData.Cname = _ctx.StringValue("DescribeScdnUserDomains.Domains["+ i +"].Cname");
+				pageData.GmtModified = _ctx.StringValue("DescribeScdnUserDomains.Domains["+ i +"].GmtModified");
+				pageData.DomainName = _ctx.StringValue("DescribeScdnUserDomains.Domains["+ i +"].DomainName");
 
 				List<DescribeScdnUserDomainsResponse.DescribeScdnUserDomains_PageData.DescribeScdnUserDomains_Source> pageData_sources = new List<DescribeScdnUserDomainsResponse.DescribeScdnUserDomains_PageData.DescribeScdnUserDomains_Source>();
 				for (int j = 0; j < _ctx.Length("DescribeScdnUserDomains.Domains["+ i +"].Sources.Length"); j++) {
 					DescribeScdnUserDomainsResponse.DescribeScdnUserDomains_PageData.DescribeScdnUserDomains_Source source = new DescribeScdnUserDomainsResponse.DescribeScdnUserDomains_PageData.DescribeScdnUserDomains_Source();
 					source.Type = _ctx.StringValue("DescribeScdnUserDomains.Domains["+ i +"].Sources["+ j +"].Type");
-					source.Content = _ctx.StringValue("DescribeScdnUserDomains.Domains["+ i +"].Sources["+ j +"].Content");
-					source.Port = _ctx.IntegerValue("DescribeScdnUserDomains.Domains["+ i +"].Sources["+ j +"].Port");
 					source.Priority = _ctx.StringValue("DescribeScdnUserDomains.Domains["+ i +"].Sources["+ j +"].Priority");
+					source.Port = _ctx.IntegerValue("DescribeScdnUserDomains.Domains["+ i +"].Sources["+ j +"].Port");
+					source.Content = _ctx.StringValue("DescribeScdnUserDomains.Domains["+ i +"].Sources["+ j +"].Content");
 
 					pageData_sources.Add(source);
 				}

@@ -36,9 +36,9 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 			List<DescribeScdnDomainCnameResponse.DescribeScdnDomainCname_Data> describeScdnDomainCnameResponse_cnameDatas = new List<DescribeScdnDomainCnameResponse.DescribeScdnDomainCname_Data>();
 			for (int i = 0; i < _ctx.Length("DescribeScdnDomainCname.CnameDatas.Length"); i++) {
 				DescribeScdnDomainCnameResponse.DescribeScdnDomainCname_Data data = new DescribeScdnDomainCnameResponse.DescribeScdnDomainCname_Data();
+				data.Status = _ctx.IntegerValue("DescribeScdnDomainCname.CnameDatas["+ i +"].Status");
 				data.Domain = _ctx.StringValue("DescribeScdnDomainCname.CnameDatas["+ i +"].Domain");
 				data.Cname = _ctx.StringValue("DescribeScdnDomainCname.CnameDatas["+ i +"].Cname");
-				data.Status = _ctx.IntegerValue("DescribeScdnDomainCname.CnameDatas["+ i +"].Status");
 
 				describeScdnDomainCnameResponse_cnameDatas.Add(data);
 			}

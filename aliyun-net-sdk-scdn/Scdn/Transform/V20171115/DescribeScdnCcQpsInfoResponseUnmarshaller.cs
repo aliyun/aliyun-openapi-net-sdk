@@ -33,17 +33,17 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 			describeScdnCcQpsInfoResponse.HttpResponse = _ctx.HttpResponse;
 			describeScdnCcQpsInfoResponse.RequestId = _ctx.StringValue("DescribeScdnCcQpsInfo.RequestId");
 
-			List<string> describeScdnCcQpsInfoResponse_totals = new List<string>();
-			for (int i = 0; i < _ctx.Length("DescribeScdnCcQpsInfo.Totals.Length"); i++) {
-				describeScdnCcQpsInfoResponse_totals.Add(_ctx.StringValue("DescribeScdnCcQpsInfo.Totals["+ i +"]"));
-			}
-			describeScdnCcQpsInfoResponse.Totals = describeScdnCcQpsInfoResponse_totals;
-
 			List<string> describeScdnCcQpsInfoResponse_attacks = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeScdnCcQpsInfo.Attacks.Length"); i++) {
 				describeScdnCcQpsInfoResponse_attacks.Add(_ctx.StringValue("DescribeScdnCcQpsInfo.Attacks["+ i +"]"));
 			}
 			describeScdnCcQpsInfoResponse.Attacks = describeScdnCcQpsInfoResponse_attacks;
+
+			List<string> describeScdnCcQpsInfoResponse_totals = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeScdnCcQpsInfo.Totals.Length"); i++) {
+				describeScdnCcQpsInfoResponse_totals.Add(_ctx.StringValue("DescribeScdnCcQpsInfo.Totals["+ i +"]"));
+			}
+			describeScdnCcQpsInfoResponse.Totals = describeScdnCcQpsInfoResponse_totals;
 
 			List<DescribeScdnCcQpsInfoResponse.DescribeScdnCcQpsInfo_TimeScope> describeScdnCcQpsInfoResponse_timeScopes = new List<DescribeScdnCcQpsInfoResponse.DescribeScdnCcQpsInfo_TimeScope>();
 			for (int i = 0; i < _ctx.Length("DescribeScdnCcQpsInfo.TimeScopes.Length"); i++) {

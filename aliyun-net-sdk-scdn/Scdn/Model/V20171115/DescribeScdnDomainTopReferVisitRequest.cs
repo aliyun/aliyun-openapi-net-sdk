@@ -41,26 +41,11 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			Method = MethodType.POST;
         }
 
-		private string startTime;
-
 		private string domainName;
-
-		private long? ownerId;
 
 		private string sortBy;
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
+		private string startTime;
 
 		public string DomainName
 		{
@@ -75,19 +60,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
 		public string SortBy
 		{
 			get
@@ -98,6 +70,19 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			{
 				sortBy = value;
 				DictionaryUtil.Add(QueryParameters, "SortBy", value);
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 

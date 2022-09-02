@@ -31,8 +31,8 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 			PreloadScdnObjectCachesResponse preloadScdnObjectCachesResponse = new PreloadScdnObjectCachesResponse();
 
 			preloadScdnObjectCachesResponse.HttpResponse = _ctx.HttpResponse;
-			preloadScdnObjectCachesResponse.RequestId = _ctx.StringValue("PreloadScdnObjectCaches.RequestId");
 			preloadScdnObjectCachesResponse.PreloadTaskId = _ctx.StringValue("PreloadScdnObjectCaches.PreloadTaskId");
+			preloadScdnObjectCachesResponse.RequestId = _ctx.StringValue("PreloadScdnObjectCaches.RequestId");
         
 			return preloadScdnObjectCachesResponse;
         }

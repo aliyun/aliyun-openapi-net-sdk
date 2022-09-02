@@ -36,8 +36,8 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			List<ListRealtimeLogDeliveryInfosResponse.ListRealtimeLogDeliveryInfos_RealtimeLogDeliveryInfos> listRealtimeLogDeliveryInfosResponse_content = new List<ListRealtimeLogDeliveryInfosResponse.ListRealtimeLogDeliveryInfos_RealtimeLogDeliveryInfos>();
 			for (int i = 0; i < _ctx.Length("ListRealtimeLogDeliveryInfos.Content.Length"); i++) {
 				ListRealtimeLogDeliveryInfosResponse.ListRealtimeLogDeliveryInfos_RealtimeLogDeliveryInfos realtimeLogDeliveryInfos = new ListRealtimeLogDeliveryInfosResponse.ListRealtimeLogDeliveryInfos_RealtimeLogDeliveryInfos();
-				realtimeLogDeliveryInfos.Project = _ctx.StringValue("ListRealtimeLogDeliveryInfos.Content["+ i +"].Project");
 				realtimeLogDeliveryInfos.Logstore = _ctx.StringValue("ListRealtimeLogDeliveryInfos.Content["+ i +"].Logstore");
+				realtimeLogDeliveryInfos.Project = _ctx.StringValue("ListRealtimeLogDeliveryInfos.Content["+ i +"].Project");
 				realtimeLogDeliveryInfos.Region = _ctx.StringValue("ListRealtimeLogDeliveryInfos.Content["+ i +"].Region");
 
 				listRealtimeLogDeliveryInfosResponse_content.Add(realtimeLogDeliveryInfos);

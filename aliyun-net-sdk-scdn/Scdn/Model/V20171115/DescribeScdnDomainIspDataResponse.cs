@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
@@ -25,17 +25,41 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 	public class DescribeScdnDomainIspDataResponse : AcsResponse
 	{
 
+		private string endTime;
+
+		private string startTime;
+
 		private string requestId;
 
 		private string domainName;
 
 		private string dataInterval;
 
-		private string startTime;
-
-		private string endTime;
-
 		private List<DescribeScdnDomainIspData_ISPProportionData> _value;
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -73,30 +97,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
-
 		public List<DescribeScdnDomainIspData_ISPProportionData> _Value
 		{
 			get
@@ -112,75 +112,63 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 		public class DescribeScdnDomainIspData_ISPProportionData
 		{
 
-			private string iSP;
+			private string totalQuery;
 
-			private string proportion;
+			private string totalBytes;
 
-			private string ispEname;
-
-			private string avgObjectSize;
+			private string avgResponseRate;
 
 			private string avgResponseTime;
+
+			private string reqErrRate;
+
+			private string avgObjectSize;
 
 			private string bps;
 
 			private string qps;
 
-			private string avgResponseRate;
+			private string proportion;
 
-			private string reqErrRate;
+			private string ispEname;
 
-			private string totalBytes;
+			private string iSP;
 
 			private string bytesProportion;
 
-			private string totalQuery;
-
-			public string ISP
+			public string TotalQuery
 			{
 				get
 				{
-					return iSP;
+					return totalQuery;
 				}
 				set	
 				{
-					iSP = value;
+					totalQuery = value;
 				}
 			}
 
-			public string Proportion
+			public string TotalBytes
 			{
 				get
 				{
-					return proportion;
+					return totalBytes;
 				}
 				set	
 				{
-					proportion = value;
+					totalBytes = value;
 				}
 			}
 
-			public string IspEname
+			public string AvgResponseRate
 			{
 				get
 				{
-					return ispEname;
+					return avgResponseRate;
 				}
 				set	
 				{
-					ispEname = value;
-				}
-			}
-
-			public string AvgObjectSize
-			{
-				get
-				{
-					return avgObjectSize;
-				}
-				set	
-				{
-					avgObjectSize = value;
+					avgResponseRate = value;
 				}
 			}
 
@@ -193,6 +181,30 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				set	
 				{
 					avgResponseTime = value;
+				}
+			}
+
+			public string ReqErrRate
+			{
+				get
+				{
+					return reqErrRate;
+				}
+				set	
+				{
+					reqErrRate = value;
+				}
+			}
+
+			public string AvgObjectSize
+			{
+				get
+				{
+					return avgObjectSize;
+				}
+				set	
+				{
+					avgObjectSize = value;
 				}
 			}
 
@@ -220,39 +232,39 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				}
 			}
 
-			public string AvgResponseRate
+			public string Proportion
 			{
 				get
 				{
-					return avgResponseRate;
+					return proportion;
 				}
 				set	
 				{
-					avgResponseRate = value;
+					proportion = value;
 				}
 			}
 
-			public string ReqErrRate
+			public string IspEname
 			{
 				get
 				{
-					return reqErrRate;
+					return ispEname;
 				}
 				set	
 				{
-					reqErrRate = value;
+					ispEname = value;
 				}
 			}
 
-			public string TotalBytes
+			public string ISP
 			{
 				get
 				{
-					return totalBytes;
+					return iSP;
 				}
 				set	
 				{
-					totalBytes = value;
+					iSP = value;
 				}
 			}
 
@@ -265,18 +277,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				set	
 				{
 					bytesProportion = value;
-				}
-			}
-
-			public string TotalQuery
-			{
-				get
-				{
-					return totalQuery;
-				}
-				set	
-				{
-					totalQuery = value;
 				}
 			}
 		}

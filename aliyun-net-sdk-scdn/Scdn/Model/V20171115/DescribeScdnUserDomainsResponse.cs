@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
@@ -98,15 +98,7 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 		public class DescribeScdnUserDomains_PageData
 		{
 
-			private string domainName;
-
-			private string cname;
-
-			private string domainStatus;
-
 			private string gmtCreated;
-
-			private string gmtModified;
 
 			private string description;
 
@@ -116,43 +108,15 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 
 			private string sandbox;
 
+			private string domainStatus;
+
+			private string cname;
+
+			private string gmtModified;
+
+			private string domainName;
+
 			private List<DescribeScdnUserDomains_Source> sources;
-
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
-
-			public string Cname
-			{
-				get
-				{
-					return cname;
-				}
-				set	
-				{
-					cname = value;
-				}
-			}
-
-			public string DomainStatus
-			{
-				get
-				{
-					return domainStatus;
-				}
-				set	
-				{
-					domainStatus = value;
-				}
-			}
 
 			public string GmtCreated
 			{
@@ -163,18 +127,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				set	
 				{
 					gmtCreated = value;
-				}
-			}
-
-			public string GmtModified
-			{
-				get
-				{
-					return gmtModified;
-				}
-				set	
-				{
-					gmtModified = value;
 				}
 			}
 
@@ -226,6 +178,54 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				}
 			}
 
+			public string DomainStatus
+			{
+				get
+				{
+					return domainStatus;
+				}
+				set	
+				{
+					domainStatus = value;
+				}
+			}
+
+			public string Cname
+			{
+				get
+				{
+					return cname;
+				}
+				set	
+				{
+					cname = value;
+				}
+			}
+
+			public string GmtModified
+			{
+				get
+				{
+					return gmtModified;
+				}
+				set	
+				{
+					gmtModified = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
+				}
+			}
+
 			public List<DescribeScdnUserDomains_Source> Sources
 			{
 				get
@@ -243,11 +243,11 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 
 				private string type;
 
-				private string content;
+				private string priority;
 
 				private int? port;
 
-				private string priority;
+				private string content;
 
 				public string Type
 				{
@@ -261,15 +261,15 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 					}
 				}
 
-				public string Content
+				public string Priority
 				{
 					get
 					{
-						return content;
+						return priority;
 					}
 					set	
 					{
-						content = value;
+						priority = value;
 					}
 				}
 
@@ -285,15 +285,15 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 					}
 				}
 
-				public string Priority
+				public string Content
 				{
 					get
 					{
-						return priority;
+						return content;
 					}
 					set	
 					{
-						priority = value;
+						content = value;
 					}
 				}
 			}

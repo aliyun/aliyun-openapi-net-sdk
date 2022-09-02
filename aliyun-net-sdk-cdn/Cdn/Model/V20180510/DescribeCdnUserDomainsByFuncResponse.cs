@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -98,73 +98,25 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeCdnUserDomainsByFunc_PageData
 		{
 
-			private string domainName;
-
-			private string cname;
-
-			private string cdnType;
-
-			private string domainStatus;
-
 			private string gmtCreated;
-
-			private string gmtModified;
-
-			private string description;
 
 			private string sslProtocol;
 
+			private string description;
+
 			private string resourceGroupId;
 
+			private string domainStatus;
+
+			private string cname;
+
+			private string gmtModified;
+
+			private string cdnType;
+
+			private string domainName;
+
 			private List<DescribeCdnUserDomainsByFunc_Source> sources;
-
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
-
-			public string Cname
-			{
-				get
-				{
-					return cname;
-				}
-				set	
-				{
-					cname = value;
-				}
-			}
-
-			public string CdnType
-			{
-				get
-				{
-					return cdnType;
-				}
-				set	
-				{
-					cdnType = value;
-				}
-			}
-
-			public string DomainStatus
-			{
-				get
-				{
-					return domainStatus;
-				}
-				set	
-				{
-					domainStatus = value;
-				}
-			}
 
 			public string GmtCreated
 			{
@@ -175,30 +127,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					gmtCreated = value;
-				}
-			}
-
-			public string GmtModified
-			{
-				get
-				{
-					return gmtModified;
-				}
-				set	
-				{
-					gmtModified = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
 				}
 			}
 
@@ -214,6 +142,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
 			public string ResourceGroupId
 			{
 				get
@@ -223,6 +163,66 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					resourceGroupId = value;
+				}
+			}
+
+			public string DomainStatus
+			{
+				get
+				{
+					return domainStatus;
+				}
+				set	
+				{
+					domainStatus = value;
+				}
+			}
+
+			public string Cname
+			{
+				get
+				{
+					return cname;
+				}
+				set	
+				{
+					cname = value;
+				}
+			}
+
+			public string GmtModified
+			{
+				get
+				{
+					return gmtModified;
+				}
+				set	
+				{
+					gmtModified = value;
+				}
+			}
+
+			public string CdnType
+			{
+				get
+				{
+					return cdnType;
+				}
+				set	
+				{
+					cdnType = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
 				}
 			}
 
@@ -243,13 +243,13 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 				private string type;
 
-				private string content;
-
-				private int? port;
+				private string weight;
 
 				private string priority;
 
-				private string weight;
+				private int? port;
+
+				private string content;
 
 				public string Type
 				{
@@ -263,27 +263,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 					}
 				}
 
-				public string Content
+				public string Weight
 				{
 					get
 					{
-						return content;
+						return weight;
 					}
 					set	
 					{
-						content = value;
-					}
-				}
-
-				public int? Port
-				{
-					get
-					{
-						return port;
-					}
-					set	
-					{
-						port = value;
+						weight = value;
 					}
 				}
 
@@ -299,15 +287,27 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 					}
 				}
 
-				public string Weight
+				public int? Port
 				{
 					get
 					{
-						return weight;
+						return port;
 					}
 					set	
 					{
-						weight = value;
+						port = value;
+					}
+				}
+
+				public string Content
+				{
+					get
+					{
+						return content;
+					}
+					set	
+					{
+						content = value;
 					}
 				}
 			}

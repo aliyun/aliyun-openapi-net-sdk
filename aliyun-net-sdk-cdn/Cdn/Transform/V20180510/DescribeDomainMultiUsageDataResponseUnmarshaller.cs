@@ -31,17 +31,17 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeDomainMultiUsageDataResponse describeDomainMultiUsageDataResponse = new DescribeDomainMultiUsageDataResponse();
 
 			describeDomainMultiUsageDataResponse.HttpResponse = _ctx.HttpResponse;
-			describeDomainMultiUsageDataResponse.RequestId = _ctx.StringValue("DescribeDomainMultiUsageData.RequestId");
-			describeDomainMultiUsageDataResponse.StartTime = _ctx.StringValue("DescribeDomainMultiUsageData.StartTime");
 			describeDomainMultiUsageDataResponse.EndTime = _ctx.StringValue("DescribeDomainMultiUsageData.EndTime");
+			describeDomainMultiUsageDataResponse.StartTime = _ctx.StringValue("DescribeDomainMultiUsageData.StartTime");
+			describeDomainMultiUsageDataResponse.RequestId = _ctx.StringValue("DescribeDomainMultiUsageData.RequestId");
 
 			List<DescribeDomainMultiUsageDataResponse.DescribeDomainMultiUsageData_RequestDataModule> describeDomainMultiUsageDataResponse_requestPerInterval = new List<DescribeDomainMultiUsageDataResponse.DescribeDomainMultiUsageData_RequestDataModule>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainMultiUsageData.RequestPerInterval.Length"); i++) {
 				DescribeDomainMultiUsageDataResponse.DescribeDomainMultiUsageData_RequestDataModule requestDataModule = new DescribeDomainMultiUsageDataResponse.DescribeDomainMultiUsageData_RequestDataModule();
+				requestDataModule.Type = _ctx.StringValue("DescribeDomainMultiUsageData.RequestPerInterval["+ i +"].Type");
 				requestDataModule.TimeStamp = _ctx.StringValue("DescribeDomainMultiUsageData.RequestPerInterval["+ i +"].TimeStamp");
 				requestDataModule.Domain = _ctx.StringValue("DescribeDomainMultiUsageData.RequestPerInterval["+ i +"].Domain");
 				requestDataModule.Request = _ctx.LongValue("DescribeDomainMultiUsageData.RequestPerInterval["+ i +"].Request");
-				requestDataModule.Type = _ctx.StringValue("DescribeDomainMultiUsageData.RequestPerInterval["+ i +"].Type");
 
 				describeDomainMultiUsageDataResponse_requestPerInterval.Add(requestDataModule);
 			}
@@ -50,11 +50,11 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			List<DescribeDomainMultiUsageDataResponse.DescribeDomainMultiUsageData_TrafficDataModule> describeDomainMultiUsageDataResponse_trafficPerInterval = new List<DescribeDomainMultiUsageDataResponse.DescribeDomainMultiUsageData_TrafficDataModule>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainMultiUsageData.TrafficPerInterval.Length"); i++) {
 				DescribeDomainMultiUsageDataResponse.DescribeDomainMultiUsageData_TrafficDataModule trafficDataModule = new DescribeDomainMultiUsageDataResponse.DescribeDomainMultiUsageData_TrafficDataModule();
-				trafficDataModule.TimeStamp = _ctx.StringValue("DescribeDomainMultiUsageData.TrafficPerInterval["+ i +"].TimeStamp");
-				trafficDataModule.Domain = _ctx.StringValue("DescribeDomainMultiUsageData.TrafficPerInterval["+ i +"].Domain");
-				trafficDataModule.Bps = _ctx.FloatValue("DescribeDomainMultiUsageData.TrafficPerInterval["+ i +"].Bps");
 				trafficDataModule.Type = _ctx.StringValue("DescribeDomainMultiUsageData.TrafficPerInterval["+ i +"].Type");
+				trafficDataModule.Domain = _ctx.StringValue("DescribeDomainMultiUsageData.TrafficPerInterval["+ i +"].Domain");
+				trafficDataModule.TimeStamp = _ctx.StringValue("DescribeDomainMultiUsageData.TrafficPerInterval["+ i +"].TimeStamp");
 				trafficDataModule.Area = _ctx.StringValue("DescribeDomainMultiUsageData.TrafficPerInterval["+ i +"].Area");
+				trafficDataModule.Bps = _ctx.FloatValue("DescribeDomainMultiUsageData.TrafficPerInterval["+ i +"].Bps");
 
 				describeDomainMultiUsageDataResponse_trafficPerInterval.Add(trafficDataModule);
 			}

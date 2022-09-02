@@ -31,10 +31,10 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 			DescribeScdnDomainRealTimeHttpCodeDataResponse describeScdnDomainRealTimeHttpCodeDataResponse = new DescribeScdnDomainRealTimeHttpCodeDataResponse();
 
 			describeScdnDomainRealTimeHttpCodeDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeScdnDomainRealTimeHttpCodeDataResponse.EndTime = _ctx.StringValue("DescribeScdnDomainRealTimeHttpCodeData.EndTime");
+			describeScdnDomainRealTimeHttpCodeDataResponse.StartTime = _ctx.StringValue("DescribeScdnDomainRealTimeHttpCodeData.StartTime");
 			describeScdnDomainRealTimeHttpCodeDataResponse.RequestId = _ctx.StringValue("DescribeScdnDomainRealTimeHttpCodeData.RequestId");
 			describeScdnDomainRealTimeHttpCodeDataResponse.DomainName = _ctx.StringValue("DescribeScdnDomainRealTimeHttpCodeData.DomainName");
-			describeScdnDomainRealTimeHttpCodeDataResponse.StartTime = _ctx.StringValue("DescribeScdnDomainRealTimeHttpCodeData.StartTime");
-			describeScdnDomainRealTimeHttpCodeDataResponse.EndTime = _ctx.StringValue("DescribeScdnDomainRealTimeHttpCodeData.EndTime");
 			describeScdnDomainRealTimeHttpCodeDataResponse.DataInterval = _ctx.StringValue("DescribeScdnDomainRealTimeHttpCodeData.DataInterval");
 
 			List<DescribeScdnDomainRealTimeHttpCodeDataResponse.DescribeScdnDomainRealTimeHttpCodeData_UsageData> describeScdnDomainRealTimeHttpCodeDataResponse_realTimeHttpCodeData = new List<DescribeScdnDomainRealTimeHttpCodeDataResponse.DescribeScdnDomainRealTimeHttpCodeData_UsageData>();

@@ -37,8 +37,8 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			for (int i = 0; i < _ctx.Length("DescribeRealtimeDeliveryAcc.ReatTimeDeliveryAccData.Length"); i++) {
 				DescribeRealtimeDeliveryAccResponse.DescribeRealtimeDeliveryAcc_AccData accData = new DescribeRealtimeDeliveryAccResponse.DescribeRealtimeDeliveryAcc_AccData();
 				accData.TimeStamp = _ctx.StringValue("DescribeRealtimeDeliveryAcc.ReatTimeDeliveryAccData["+ i +"].TimeStamp");
-				accData.SuccessNum = _ctx.IntegerValue("DescribeRealtimeDeliveryAcc.ReatTimeDeliveryAccData["+ i +"].SuccessNum");
 				accData.FailedNum = _ctx.IntegerValue("DescribeRealtimeDeliveryAcc.ReatTimeDeliveryAccData["+ i +"].FailedNum");
+				accData.SuccessNum = _ctx.IntegerValue("DescribeRealtimeDeliveryAcc.ReatTimeDeliveryAccData["+ i +"].SuccessNum");
 
 				describeRealtimeDeliveryAccResponse_reatTimeDeliveryAccData.Add(accData);
 			}

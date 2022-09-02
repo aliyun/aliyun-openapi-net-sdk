@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
@@ -25,37 +25,25 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 	public class CheckScdnServiceResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? enabled;
+		private bool? inDebt;
 
 		private bool? onService;
 
-		private bool? inDebt;
+		private string requestId;
 
 		private bool? inDebtOverdue;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private bool? enabled;
 
-		public bool? Enabled
+		public bool? InDebt
 		{
 			get
 			{
-				return enabled;
+				return inDebt;
 			}
 			set	
 			{
-				enabled = value;
+				inDebt = value;
 			}
 		}
 
@@ -71,15 +59,15 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public bool? InDebt
+		public string RequestId
 		{
 			get
 			{
-				return inDebt;
+				return requestId;
 			}
 			set	
 			{
-				inDebt = value;
+				requestId = value;
 			}
 		}
 
@@ -92,6 +80,18 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			set	
 			{
 				inDebtOverdue = value;
+			}
+		}
+
+		public bool? Enabled
+		{
+			get
+			{
+				return enabled;
+			}
+			set	
+			{
+				enabled = value;
 			}
 		}
 	}

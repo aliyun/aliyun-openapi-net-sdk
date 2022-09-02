@@ -31,11 +31,11 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 			CheckScdnServiceResponse checkScdnServiceResponse = new CheckScdnServiceResponse();
 
 			checkScdnServiceResponse.HttpResponse = _ctx.HttpResponse;
-			checkScdnServiceResponse.RequestId = _ctx.StringValue("CheckScdnService.RequestId");
-			checkScdnServiceResponse.Enabled = _ctx.BooleanValue("CheckScdnService.Enabled");
-			checkScdnServiceResponse.OnService = _ctx.BooleanValue("CheckScdnService.OnService");
 			checkScdnServiceResponse.InDebt = _ctx.BooleanValue("CheckScdnService.InDebt");
+			checkScdnServiceResponse.OnService = _ctx.BooleanValue("CheckScdnService.OnService");
+			checkScdnServiceResponse.RequestId = _ctx.StringValue("CheckScdnService.RequestId");
 			checkScdnServiceResponse.InDebtOverdue = _ctx.BooleanValue("CheckScdnService.InDebtOverdue");
+			checkScdnServiceResponse.Enabled = _ctx.BooleanValue("CheckScdnService.Enabled");
         
 			return checkScdnServiceResponse;
         }

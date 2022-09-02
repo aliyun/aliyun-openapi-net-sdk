@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeDomainRealTimeDetailDataResponse describeDomainRealTimeDetailDataResponse = new DescribeDomainRealTimeDetailDataResponse();
 
 			describeDomainRealTimeDetailDataResponse.HttpResponse = _ctx.HttpResponse;
-			describeDomainRealTimeDetailDataResponse.RequestId = _ctx.StringValue("DescribeDomainRealTimeDetailData.RequestId");
 			describeDomainRealTimeDetailDataResponse.Data = _ctx.StringValue("DescribeDomainRealTimeDetailData.Data");
+			describeDomainRealTimeDetailDataResponse.RequestId = _ctx.StringValue("DescribeDomainRealTimeDetailData.RequestId");
         
 			return describeDomainRealTimeDetailDataResponse;
         }

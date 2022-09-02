@@ -37,8 +37,8 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			for (int i = 0; i < _ctx.Length("DescribeBlockedRegions.InfoList.Length"); i++) {
 				DescribeBlockedRegionsResponse.DescribeBlockedRegions_InfoItem infoItem = new DescribeBlockedRegionsResponse.DescribeBlockedRegions_InfoItem();
 				infoItem.CountriesAndRegions = _ctx.StringValue("DescribeBlockedRegions.InfoList["+ i +"].CountriesAndRegions");
-				infoItem.CountriesAndRegionsName = _ctx.StringValue("DescribeBlockedRegions.InfoList["+ i +"].CountriesAndRegionsName");
 				infoItem.Continent = _ctx.StringValue("DescribeBlockedRegions.InfoList["+ i +"].Continent");
+				infoItem.CountriesAndRegionsName = _ctx.StringValue("DescribeBlockedRegions.InfoList["+ i +"].CountriesAndRegionsName");
 
 				describeBlockedRegionsResponse_infoList.Add(infoItem);
 			}

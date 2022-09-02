@@ -31,8 +31,8 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 			RefreshScdnObjectCachesResponse refreshScdnObjectCachesResponse = new RefreshScdnObjectCachesResponse();
 
 			refreshScdnObjectCachesResponse.HttpResponse = _ctx.HttpResponse;
-			refreshScdnObjectCachesResponse.RequestId = _ctx.StringValue("RefreshScdnObjectCaches.RequestId");
 			refreshScdnObjectCachesResponse.RefreshTaskId = _ctx.StringValue("RefreshScdnObjectCaches.RefreshTaskId");
+			refreshScdnObjectCachesResponse.RequestId = _ctx.StringValue("RefreshScdnObjectCaches.RequestId");
         
 			return refreshScdnObjectCachesResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
@@ -29,13 +29,13 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 
 		private List<DescribeScdnDDoSTrafficInfo_TimeScope> timeScopes;
 
-		private List<string> bpsDrops;
-
-		private List<string> bpsTotals;
-
 		private List<string> ppsTotals;
 
 		private List<string> ppsDrops;
+
+		private List<string> bpsDrops;
+
+		private List<string> bpsTotals;
 
 		public string RequestId
 		{
@@ -61,30 +61,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public List<string> BpsDrops
-		{
-			get
-			{
-				return bpsDrops;
-			}
-			set	
-			{
-				bpsDrops = value;
-			}
-		}
-
-		public List<string> BpsTotals
-		{
-			get
-			{
-				return bpsTotals;
-			}
-			set	
-			{
-				bpsTotals = value;
-			}
-		}
-
 		public List<string> PpsTotals
 		{
 			get
@@ -106,6 +82,30 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			set	
 			{
 				ppsDrops = value;
+			}
+		}
+
+		public List<string> BpsDrops
+		{
+			get
+			{
+				return bpsDrops;
+			}
+			set	
+			{
+				bpsDrops = value;
+			}
+		}
+
+		public List<string> BpsTotals
+		{
+			get
+			{
+				return bpsTotals;
+			}
+			set	
+			{
+				bpsTotals = value;
 			}
 		}
 

@@ -41,24 +41,9 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			Method = MethodType.POST;
         }
 
-		private string functionName;
-
 		private string domainName;
 
 		private long? ownerId;
-
-		public string FunctionName
-		{
-			get
-			{
-				return functionName;
-			}
-			set	
-			{
-				functionName = value;
-				DictionaryUtil.Add(QueryParameters, "FunctionName", value);
-			}
-		}
 
 		public string DomainName
 		{

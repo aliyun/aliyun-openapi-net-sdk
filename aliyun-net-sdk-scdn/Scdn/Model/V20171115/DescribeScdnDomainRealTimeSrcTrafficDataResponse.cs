@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
@@ -25,17 +25,41 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 	public class DescribeScdnDomainRealTimeSrcTrafficDataResponse : AcsResponse
 	{
 
+		private string endTime;
+
+		private string startTime;
+
 		private string requestId;
 
 		private string domainName;
 
-		private string startTime;
-
-		private string endTime;
-
 		private string dataInterval;
 
 		private List<DescribeScdnDomainRealTimeSrcTrafficData_DataModule> realTimeSrcTrafficDataPerInterval;
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -58,30 +82,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			set	
 			{
 				domainName = value;
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
 			}
 		}
 
@@ -112,21 +112,9 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 		public class DescribeScdnDomainRealTimeSrcTrafficData_DataModule
 		{
 
-			private string timeStamp;
-
 			private string _value;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+			private string timeStamp;
 
 			public string _Value
 			{
@@ -137,6 +125,18 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				set	
 				{
 					_value = value;
+				}
+			}
+
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
 				}
 			}
 		}

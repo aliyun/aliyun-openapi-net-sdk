@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -56,25 +56,13 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeCdnDomainLogs_DomainLogDetail
 		{
 
-			private string domainName;
-
 			private long? logCount;
+
+			private string domainName;
 
 			private List<DescribeCdnDomainLogs_LogInfoDetail> logInfos;
 
 			private DescribeCdnDomainLogs_PageInfos pageInfos;
-
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
 
 			public long? LogCount
 			{
@@ -85,6 +73,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					logCount = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
 				}
 			}
 
@@ -115,37 +115,25 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			public class DescribeCdnDomainLogs_LogInfoDetail
 			{
 
-				private string logName;
-
-				private string logPath;
+				private string endTime;
 
 				private long? logSize;
 
 				private string startTime;
 
-				private string endTime;
+				private string logName;
 
-				public string LogName
+				private string logPath;
+
+				public string EndTime
 				{
 					get
 					{
-						return logName;
+						return endTime;
 					}
 					set	
 					{
-						logName = value;
-					}
-				}
-
-				public string LogPath
-				{
-					get
-					{
-						return logPath;
-					}
-					set	
-					{
-						logPath = value;
+						endTime = value;
 					}
 				}
 
@@ -173,15 +161,27 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 					}
 				}
 
-				public string EndTime
+				public string LogName
 				{
 					get
 					{
-						return endTime;
+						return logName;
 					}
 					set	
 					{
-						endTime = value;
+						logName = value;
+					}
+				}
+
+				public string LogPath
+				{
+					get
+					{
+						return logPath;
+					}
+					set	
+					{
+						logPath = value;
 					}
 				}
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
@@ -25,37 +25,25 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 	public class DescribeScdnCertificateDetailResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string cert;
+		private string certName;
 
 		private string key;
 
+		private string cert;
+
 		private long? certId;
 
-		private string certName;
+		private string requestId;
 
-		public string RequestId
+		public string CertName
 		{
 			get
 			{
-				return requestId;
+				return certName;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string Cert
-		{
-			get
-			{
-				return cert;
-			}
-			set	
-			{
-				cert = value;
+				certName = value;
 			}
 		}
 
@@ -71,6 +59,18 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
+		public string Cert
+		{
+			get
+			{
+				return cert;
+			}
+			set	
+			{
+				cert = value;
+			}
+		}
+
 		public long? CertId
 		{
 			get
@@ -83,15 +83,15 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string CertName
+		public string RequestId
 		{
 			get
 			{
-				return certName;
+				return requestId;
 			}
 			set	
 			{
-				certName = value;
+				requestId = value;
 			}
 		}
 	}

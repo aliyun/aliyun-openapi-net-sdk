@@ -31,23 +31,23 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeDomainQpsDataByLayerResponse describeDomainQpsDataByLayerResponse = new DescribeDomainQpsDataByLayerResponse();
 
 			describeDomainQpsDataByLayerResponse.HttpResponse = _ctx.HttpResponse;
-			describeDomainQpsDataByLayerResponse.RequestId = _ctx.StringValue("DescribeDomainQpsDataByLayer.RequestId");
-			describeDomainQpsDataByLayerResponse.DomainName = _ctx.StringValue("DescribeDomainQpsDataByLayer.DomainName");
-			describeDomainQpsDataByLayerResponse.StartTime = _ctx.StringValue("DescribeDomainQpsDataByLayer.StartTime");
 			describeDomainQpsDataByLayerResponse.EndTime = _ctx.StringValue("DescribeDomainQpsDataByLayer.EndTime");
-			describeDomainQpsDataByLayerResponse.DataInterval = _ctx.StringValue("DescribeDomainQpsDataByLayer.DataInterval");
+			describeDomainQpsDataByLayerResponse.StartTime = _ctx.StringValue("DescribeDomainQpsDataByLayer.StartTime");
+			describeDomainQpsDataByLayerResponse.RequestId = _ctx.StringValue("DescribeDomainQpsDataByLayer.RequestId");
 			describeDomainQpsDataByLayerResponse.Layer = _ctx.StringValue("DescribeDomainQpsDataByLayer.Layer");
+			describeDomainQpsDataByLayerResponse.DomainName = _ctx.StringValue("DescribeDomainQpsDataByLayer.DomainName");
+			describeDomainQpsDataByLayerResponse.DataInterval = _ctx.StringValue("DescribeDomainQpsDataByLayer.DataInterval");
 
 			List<DescribeDomainQpsDataByLayerResponse.DescribeDomainQpsDataByLayer_DataModule> describeDomainQpsDataByLayerResponse_qpsDataInterval = new List<DescribeDomainQpsDataByLayerResponse.DescribeDomainQpsDataByLayer_DataModule>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainQpsDataByLayer.QpsDataInterval.Length"); i++) {
 				DescribeDomainQpsDataByLayerResponse.DescribeDomainQpsDataByLayer_DataModule dataModule = new DescribeDomainQpsDataByLayerResponse.DescribeDomainQpsDataByLayer_DataModule();
-				dataModule.TimeStamp = _ctx.StringValue("DescribeDomainQpsDataByLayer.QpsDataInterval["+ i +"].TimeStamp");
 				dataModule._Value = _ctx.StringValue("DescribeDomainQpsDataByLayer.QpsDataInterval["+ i +"].Value");
-				dataModule.DomesticValue = _ctx.StringValue("DescribeDomainQpsDataByLayer.QpsDataInterval["+ i +"].DomesticValue");
-				dataModule.OverseasValue = _ctx.StringValue("DescribeDomainQpsDataByLayer.QpsDataInterval["+ i +"].OverseasValue");
 				dataModule.AccValue = _ctx.StringValue("DescribeDomainQpsDataByLayer.QpsDataInterval["+ i +"].AccValue");
 				dataModule.AccDomesticValue = _ctx.StringValue("DescribeDomainQpsDataByLayer.QpsDataInterval["+ i +"].AccDomesticValue");
+				dataModule.OverseasValue = _ctx.StringValue("DescribeDomainQpsDataByLayer.QpsDataInterval["+ i +"].OverseasValue");
 				dataModule.AccOverseasValue = _ctx.StringValue("DescribeDomainQpsDataByLayer.QpsDataInterval["+ i +"].AccOverseasValue");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeDomainQpsDataByLayer.QpsDataInterval["+ i +"].TimeStamp");
+				dataModule.DomesticValue = _ctx.StringValue("DescribeDomainQpsDataByLayer.QpsDataInterval["+ i +"].DomesticValue");
 
 				describeDomainQpsDataByLayerResponse_qpsDataInterval.Add(dataModule);
 			}

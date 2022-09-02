@@ -39,8 +39,8 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			List<DescribeCdnDeletedDomainsResponse.DescribeCdnDeletedDomains_PageData> describeCdnDeletedDomainsResponse_domains = new List<DescribeCdnDeletedDomainsResponse.DescribeCdnDeletedDomains_PageData>();
 			for (int i = 0; i < _ctx.Length("DescribeCdnDeletedDomains.Domains.Length"); i++) {
 				DescribeCdnDeletedDomainsResponse.DescribeCdnDeletedDomains_PageData pageData = new DescribeCdnDeletedDomainsResponse.DescribeCdnDeletedDomains_PageData();
-				pageData.DomainName = _ctx.StringValue("DescribeCdnDeletedDomains.Domains["+ i +"].DomainName");
 				pageData.GmtModified = _ctx.StringValue("DescribeCdnDeletedDomains.Domains["+ i +"].GmtModified");
+				pageData.DomainName = _ctx.StringValue("DescribeCdnDeletedDomains.Domains["+ i +"].DomainName");
 
 				describeCdnDeletedDomainsResponse_domains.Add(pageData);
 			}

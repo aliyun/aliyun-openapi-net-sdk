@@ -55,6 +55,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dbEndpointAliases;
 
+		private string dBProxyEngineType;
+
 		private string dbEndpointOperator;
 
 		private string dbEndpointType;
@@ -162,6 +164,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dbEndpointAliases = value;
 				DictionaryUtil.Add(QueryParameters, "DbEndpointAliases", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBProxyEngineType")]
+		public string DBProxyEngineType
+		{
+			get
+			{
+				return dBProxyEngineType;
+			}
+			set	
+			{
+				dBProxyEngineType = value;
+				DictionaryUtil.Add(QueryParameters, "DBProxyEngineType", value);
 			}
 		}
 

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -87,11 +87,23 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			public class DescribeUserConfigs_OssLogConfig
 			{
 
+				private string prefix;
+
 				private string enable;
 
 				private string bucket;
 
-				private string prefix;
+				public string Prefix
+				{
+					get
+					{
+						return prefix;
+					}
+					set	
+					{
+						prefix = value;
+					}
+				}
 
 				public string Enable
 				{
@@ -114,18 +126,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 					set	
 					{
 						bucket = value;
-					}
-				}
-
-				public string Prefix
-				{
-					get
-					{
-						return prefix;
-					}
-					set	
-					{
-						prefix = value;
 					}
 				}
 			}

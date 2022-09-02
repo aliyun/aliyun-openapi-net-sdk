@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -25,25 +25,49 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 	public class DescribeActiveVersionOfConfigGroupResponse : AcsResponse
 	{
 
+		private string status;
+
+		private string updateTime;
+
 		private string requestId;
+
+		private long? seqId;
+
+		private string description;
+
+		private string createTime;
 
 		private string versionId;
 
 		private string configGroupId;
 
-		private string baseVersionId;
-
-		private string description;
-
-		private long? seqId;
-
-		private string status;
-
 		private string _operator;
 
-		private string createTime;
+		private string baseVersionId;
 
-		private string updateTime;
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+			}
+		}
+
+		public string UpdateTime
+		{
+			get
+			{
+				return updateTime;
+			}
+			set	
+			{
+				updateTime = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -54,6 +78,42 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public long? SeqId
+		{
+			get
+			{
+				return seqId;
+			}
+			set	
+			{
+				seqId = value;
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+			}
+		}
+
+		public string CreateTime
+		{
+			get
+			{
+				return createTime;
+			}
+			set	
+			{
+				createTime = value;
 			}
 		}
 
@@ -81,54 +141,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string BaseVersionId
-		{
-			get
-			{
-				return baseVersionId;
-			}
-			set	
-			{
-				baseVersionId = value;
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-			}
-		}
-
-		public long? SeqId
-		{
-			get
-			{
-				return seqId;
-			}
-			set	
-			{
-				seqId = value;
-			}
-		}
-
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-			}
-		}
-
 		public string _Operator
 		{
 			get
@@ -141,27 +153,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string CreateTime
+		public string BaseVersionId
 		{
 			get
 			{
-				return createTime;
+				return baseVersionId;
 			}
 			set	
 			{
-				createTime = value;
-			}
-		}
-
-		public string UpdateTime
-		{
-			get
-			{
-				return updateTime;
-			}
-			set	
-			{
-				updateTime = value;
+				baseVersionId = value;
 			}
 		}
 	}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
@@ -58,25 +58,25 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 
 			private string gmtCreated;
 
-			private string gmtModified;
-
-			private string domainStatus;
-
-			private string cname;
-
-			private string domainName;
+			private string sSLPub;
 
 			private string description;
 
 			private string sSLProtocol;
 
-			private string sSLPub;
-
-			private string scope;
+			private string resourceGroupId;
 
 			private string certName;
 
-			private string resourceGroupId;
+			private string scope;
+
+			private string cname;
+
+			private string domainStatus;
+
+			private string gmtModified;
+
+			private string domainName;
 
 			private List<DescribeScdnDomainDetail_Source> sources;
 
@@ -92,51 +92,15 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				}
 			}
 
-			public string GmtModified
+			public string SSLPub
 			{
 				get
 				{
-					return gmtModified;
+					return sSLPub;
 				}
 				set	
 				{
-					gmtModified = value;
-				}
-			}
-
-			public string DomainStatus
-			{
-				get
-				{
-					return domainStatus;
-				}
-				set	
-				{
-					domainStatus = value;
-				}
-			}
-
-			public string Cname
-			{
-				get
-				{
-					return cname;
-				}
-				set	
-				{
-					cname = value;
-				}
-			}
-
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
+					sSLPub = value;
 				}
 			}
 
@@ -164,27 +128,15 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				}
 			}
 
-			public string SSLPub
+			public string ResourceGroupId
 			{
 				get
 				{
-					return sSLPub;
+					return resourceGroupId;
 				}
 				set	
 				{
-					sSLPub = value;
-				}
-			}
-
-			public string Scope
-			{
-				get
-				{
-					return scope;
-				}
-				set	
-				{
-					scope = value;
+					resourceGroupId = value;
 				}
 			}
 
@@ -200,15 +152,63 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				}
 			}
 
-			public string ResourceGroupId
+			public string Scope
 			{
 				get
 				{
-					return resourceGroupId;
+					return scope;
 				}
 				set	
 				{
-					resourceGroupId = value;
+					scope = value;
+				}
+			}
+
+			public string Cname
+			{
+				get
+				{
+					return cname;
+				}
+				set	
+				{
+					cname = value;
+				}
+			}
+
+			public string DomainStatus
+			{
+				get
+				{
+					return domainStatus;
+				}
+				set	
+				{
+					domainStatus = value;
+				}
+			}
+
+			public string GmtModified
+			{
+				get
+				{
+					return gmtModified;
+				}
+				set	
+				{
+					gmtModified = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
 				}
 			}
 
@@ -227,27 +227,15 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			public class DescribeScdnDomainDetail_Source
 			{
 
-				private string content;
-
 				private string type;
-
-				private int? port;
-
-				private string enabled;
 
 				private string priority;
 
-				public string Content
-				{
-					get
-					{
-						return content;
-					}
-					set	
-					{
-						content = value;
-					}
-				}
+				private int? port;
+
+				private string content;
+
+				private string enabled;
 
 				public string Type
 				{
@@ -258,6 +246,18 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 					set	
 					{
 						type = value;
+					}
+				}
+
+				public string Priority
+				{
+					get
+					{
+						return priority;
+					}
+					set	
+					{
+						priority = value;
 					}
 				}
 
@@ -273,6 +273,18 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 					}
 				}
 
+				public string Content
+				{
+					get
+					{
+						return content;
+					}
+					set	
+					{
+						content = value;
+					}
+				}
+
 				public string Enabled
 				{
 					get
@@ -282,18 +294,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 					set	
 					{
 						enabled = value;
-					}
-				}
-
-				public string Priority
-				{
-					get
-					{
-						return priority;
-					}
-					set	
-					{
-						priority = value;
 					}
 				}
 			}

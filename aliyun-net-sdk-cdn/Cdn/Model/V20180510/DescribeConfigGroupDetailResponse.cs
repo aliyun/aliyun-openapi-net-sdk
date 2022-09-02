@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -25,19 +25,31 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 	public class DescribeConfigGroupDetailResponse : AcsResponse
 	{
 
+		private string updateTime;
+
 		private string requestId;
-
-		private string configGroupId;
-
-		private string configGroupName;
 
 		private string description;
 
-		private string bizName;
+		private string configGroupName;
 
 		private string createTime;
 
-		private string updateTime;
+		private string bizName;
+
+		private string configGroupId;
+
+		public string UpdateTime
+		{
+			get
+			{
+				return updateTime;
+			}
+			set	
+			{
+				updateTime = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -48,30 +60,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string ConfigGroupId
-		{
-			get
-			{
-				return configGroupId;
-			}
-			set	
-			{
-				configGroupId = value;
-			}
-		}
-
-		public string ConfigGroupName
-		{
-			get
-			{
-				return configGroupName;
-			}
-			set	
-			{
-				configGroupName = value;
 			}
 		}
 
@@ -87,15 +75,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string BizName
+		public string ConfigGroupName
 		{
 			get
 			{
-				return bizName;
+				return configGroupName;
 			}
 			set	
 			{
-				bizName = value;
+				configGroupName = value;
 			}
 		}
 
@@ -111,15 +99,27 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string UpdateTime
+		public string BizName
 		{
 			get
 			{
-				return updateTime;
+				return bizName;
 			}
 			set	
 			{
-				updateTime = value;
+				bizName = value;
+			}
+		}
+
+		public string ConfigGroupId
+		{
+			get
+			{
+				return configGroupId;
+			}
+			set	
+			{
+				configGroupId = value;
 			}
 		}
 	}

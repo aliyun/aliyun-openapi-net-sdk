@@ -31,6 +31,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			CreateCdnDeliverTaskResponse createCdnDeliverTaskResponse = new CreateCdnDeliverTaskResponse();
 
 			createCdnDeliverTaskResponse.HttpResponse = _ctx.HttpResponse;
+			createCdnDeliverTaskResponse.DeliverId = _ctx.StringValue("CreateCdnDeliverTask.DeliverId");
 			createCdnDeliverTaskResponse.RequestId = _ctx.StringValue("CreateCdnDeliverTask.RequestId");
         
 			return createCdnDeliverTaskResponse;

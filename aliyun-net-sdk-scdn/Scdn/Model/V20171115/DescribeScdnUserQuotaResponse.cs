@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
@@ -25,71 +25,35 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 	public class DescribeScdnUserQuotaResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? domainQuota;
-
-		private int? refreshUrlQuota;
-
-		private int? refreshDirQuota;
+		private int? blockQuota;
 
 		private int? refreshUrlRemain;
 
-		private int? refreshDirRemain;
-
-		private int? preloadQuota;
-
-		private int? preloadRemain;
-
-		private int? blockQuota;
+		private int? domainQuota;
 
 		private int? blockRemain;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private int? preloadRemain;
 
-		public int? DomainQuota
-		{
-			get
-			{
-				return domainQuota;
-			}
-			set	
-			{
-				domainQuota = value;
-			}
-		}
+		private string requestId;
 
-		public int? RefreshUrlQuota
-		{
-			get
-			{
-				return refreshUrlQuota;
-			}
-			set	
-			{
-				refreshUrlQuota = value;
-			}
-		}
+		private int? refreshUrlQuota;
 
-		public int? RefreshDirQuota
+		private int? preloadQuota;
+
+		private int? refreshDirQuota;
+
+		private int? refreshDirRemain;
+
+		public int? BlockQuota
 		{
 			get
 			{
-				return refreshDirQuota;
+				return blockQuota;
 			}
 			set	
 			{
-				refreshDirQuota = value;
+				blockQuota = value;
 			}
 		}
 
@@ -105,27 +69,27 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public int? RefreshDirRemain
+		public int? DomainQuota
 		{
 			get
 			{
-				return refreshDirRemain;
+				return domainQuota;
 			}
 			set	
 			{
-				refreshDirRemain = value;
+				domainQuota = value;
 			}
 		}
 
-		public int? PreloadQuota
+		public int? BlockRemain
 		{
 			get
 			{
-				return preloadQuota;
+				return blockRemain;
 			}
 			set	
 			{
-				preloadQuota = value;
+				blockRemain = value;
 			}
 		}
 
@@ -141,27 +105,63 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public int? BlockQuota
+		public string RequestId
 		{
 			get
 			{
-				return blockQuota;
+				return requestId;
 			}
 			set	
 			{
-				blockQuota = value;
+				requestId = value;
 			}
 		}
 
-		public int? BlockRemain
+		public int? RefreshUrlQuota
 		{
 			get
 			{
-				return blockRemain;
+				return refreshUrlQuota;
 			}
 			set	
 			{
-				blockRemain = value;
+				refreshUrlQuota = value;
+			}
+		}
+
+		public int? PreloadQuota
+		{
+			get
+			{
+				return preloadQuota;
+			}
+			set	
+			{
+				preloadQuota = value;
+			}
+		}
+
+		public int? RefreshDirQuota
+		{
+			get
+			{
+				return refreshDirQuota;
+			}
+			set	
+			{
+				refreshDirQuota = value;
+			}
+		}
+
+		public int? RefreshDirRemain
+		{
+			get
+			{
+				return refreshDirRemain;
+			}
+			set	
+			{
+				refreshDirRemain = value;
 			}
 		}
 	}

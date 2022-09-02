@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
@@ -56,71 +56,35 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 		public class DescribeScdnDomainCertificateInfo_CertInfo
 		{
 
-			private string domainName;
-
-			private string certName;
-
-			private string certDomainName;
-
-			private string certExpireTime;
+			private string status;
 
 			private string certLife;
 
-			private string certOrg;
-
-			private string certType;
-
-			private string sSLProtocol;
-
-			private string status;
+			private string certExpireTime;
 
 			private string sSLPub;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
+			private string sSLProtocol;
 
-			public string CertName
-			{
-				get
-				{
-					return certName;
-				}
-				set	
-				{
-					certName = value;
-				}
-			}
+			private string certType;
 
-			public string CertDomainName
-			{
-				get
-				{
-					return certDomainName;
-				}
-				set	
-				{
-					certDomainName = value;
-				}
-			}
+			private string certDomainName;
 
-			public string CertExpireTime
+			private string certName;
+
+			private string certOrg;
+
+			private string domainName;
+
+			public string Status
 			{
 				get
 				{
-					return certExpireTime;
+					return status;
 				}
 				set	
 				{
-					certExpireTime = value;
+					status = value;
 				}
 			}
 
@@ -136,27 +100,27 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				}
 			}
 
-			public string CertOrg
+			public string CertExpireTime
 			{
 				get
 				{
-					return certOrg;
+					return certExpireTime;
 				}
 				set	
 				{
-					certOrg = value;
+					certExpireTime = value;
 				}
 			}
 
-			public string CertType
+			public string SSLPub
 			{
 				get
 				{
-					return certType;
+					return sSLPub;
 				}
 				set	
 				{
-					certType = value;
+					sSLPub = value;
 				}
 			}
 
@@ -172,27 +136,63 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				}
 			}
 
-			public string Status
+			public string CertType
 			{
 				get
 				{
-					return status;
+					return certType;
 				}
 				set	
 				{
-					status = value;
+					certType = value;
 				}
 			}
 
-			public string SSLPub
+			public string CertDomainName
 			{
 				get
 				{
-					return sSLPub;
+					return certDomainName;
 				}
 				set	
 				{
-					sSLPub = value;
+					certDomainName = value;
+				}
+			}
+
+			public string CertName
+			{
+				get
+				{
+					return certName;
+				}
+				set	
+				{
+					certName = value;
+				}
+			}
+
+			public string CertOrg
+			{
+				get
+				{
+					return certOrg;
+				}
+				set	
+				{
+					certOrg = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
 				}
 			}
 		}

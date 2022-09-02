@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 	public class PreloadScdnObjectCachesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string preloadTaskId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string PreloadTaskId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			set	
 			{
 				preloadTaskId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

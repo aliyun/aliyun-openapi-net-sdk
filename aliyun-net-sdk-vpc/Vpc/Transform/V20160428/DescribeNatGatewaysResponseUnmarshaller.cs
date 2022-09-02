@@ -61,6 +61,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				natGateway.Name = _ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].Name");
 				natGateway.PrivateLinkEnabled = _ctx.BooleanValue("DescribeNatGateways.NatGateways["+ i +"].PrivateLinkEnabled");
 				natGateway.PrivateLinkMode = _ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].PrivateLinkMode");
+				natGateway.EipBindMode = _ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].EipBindMode");
 
 				List<string> natGateway_forwardTableIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeNatGateways.NatGateways["+ i +"].ForwardTableIds.Length"); j++) {
@@ -110,6 +111,16 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 					natGateway_ipLists.Add(ipList);
 				}
 				natGateway.IpLists = natGateway_ipLists;
+
+				List<DescribeNatGatewaysResponse.DescribeNatGateways_NatGateway.DescribeNatGateways_Tag> natGateway_tags = new List<DescribeNatGatewaysResponse.DescribeNatGateways_NatGateway.DescribeNatGateways_Tag>();
+				for (int j = 0; j < _ctx.Length("DescribeNatGateways.NatGateways["+ i +"].Tags.Length"); j++) {
+					DescribeNatGatewaysResponse.DescribeNatGateways_NatGateway.DescribeNatGateways_Tag tag = new DescribeNatGatewaysResponse.DescribeNatGateways_NatGateway.DescribeNatGateways_Tag();
+					tag.TagKey = _ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].Tags["+ j +"].TagKey");
+					tag.TagValue = _ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].Tags["+ j +"].TagValue");
+
+					natGateway_tags.Add(tag);
+				}
+				natGateway.Tags = natGateway_tags;
 
 				describeNatGatewaysResponse_natGateways.Add(natGateway);
 			}

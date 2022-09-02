@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 	public class DescribeDomainCcActivityLogResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? pageIndex;
+
+		private string requestId;
 
 		private long? pageSize;
 
 		private long? total;
 
 		private List<DescribeDomainCcActivityLog_LogInfo> activityLog;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public long? PageIndex
 		{
@@ -56,6 +44,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				pageIndex = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -98,31 +98,19 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeDomainCcActivityLog_LogInfo
 		{
 
-			private string timeStamp;
-
 			private string _value;
-
-			private string triggerObject;
-
-			private string domainName;
 
 			private long? ttl;
 
 			private string action;
 
-			private string ruleName;
+			private string triggerObject;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+			private string timeStamp;
+
+			private string domainName;
+
+			private string ruleName;
 
 			public string _Value
 			{
@@ -133,30 +121,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					_value = value;
-				}
-			}
-
-			public string TriggerObject
-			{
-				get
-				{
-					return triggerObject;
-				}
-				set	
-				{
-					triggerObject = value;
-				}
-			}
-
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
 				}
 			}
 
@@ -181,6 +145,42 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					action = value;
+				}
+			}
+
+			public string TriggerObject
+			{
+				get
+				{
+					return triggerObject;
+				}
+				set	
+				{
+					triggerObject = value;
+				}
+			}
+
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
 				}
 			}
 

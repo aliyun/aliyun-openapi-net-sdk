@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -56,67 +56,31 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeDomainCertificateInfo_CertInfo
 		{
 
-			private string domainName;
-
-			private string certName;
-
-			private string certDomainName;
-
 			private string certExpireTime;
 
 			private string certLife;
 
-			private string certOrg;
-
-			private string certType;
-
-			private string serverCertificateStatus;
-
 			private string status;
-
-			private string serverCertificate;
 
 			private string certUpdateTime;
 
+			private string certDomainName;
+
+			private string serverCertificateStatus;
+
+			private string certOrg;
+
+			private string domainName;
+
 			private string certStartTime;
+
+			private string certType;
+
+			private string certName;
 
 			private string domainCnameStatus;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
-
-			public string CertName
-			{
-				get
-				{
-					return certName;
-				}
-				set	
-				{
-					certName = value;
-				}
-			}
-
-			public string CertDomainName
-			{
-				get
-				{
-					return certDomainName;
-				}
-				set	
-				{
-					certDomainName = value;
-				}
-			}
+			private string serverCertificate;
 
 			public string CertExpireTime
 			{
@@ -142,42 +106,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public string CertOrg
-			{
-				get
-				{
-					return certOrg;
-				}
-				set	
-				{
-					certOrg = value;
-				}
-			}
-
-			public string CertType
-			{
-				get
-				{
-					return certType;
-				}
-				set	
-				{
-					certType = value;
-				}
-			}
-
-			public string ServerCertificateStatus
-			{
-				get
-				{
-					return serverCertificateStatus;
-				}
-				set	
-				{
-					serverCertificateStatus = value;
-				}
-			}
-
 			public string Status
 			{
 				get
@@ -187,18 +115,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					status = value;
-				}
-			}
-
-			public string ServerCertificate
-			{
-				get
-				{
-					return serverCertificate;
-				}
-				set	
-				{
-					serverCertificate = value;
 				}
 			}
 
@@ -214,6 +130,54 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
+			public string CertDomainName
+			{
+				get
+				{
+					return certDomainName;
+				}
+				set	
+				{
+					certDomainName = value;
+				}
+			}
+
+			public string ServerCertificateStatus
+			{
+				get
+				{
+					return serverCertificateStatus;
+				}
+				set	
+				{
+					serverCertificateStatus = value;
+				}
+			}
+
+			public string CertOrg
+			{
+				get
+				{
+					return certOrg;
+				}
+				set	
+				{
+					certOrg = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
+				}
+			}
+
 			public string CertStartTime
 			{
 				get
@@ -226,6 +190,30 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
+			public string CertType
+			{
+				get
+				{
+					return certType;
+				}
+				set	
+				{
+					certType = value;
+				}
+			}
+
+			public string CertName
+			{
+				get
+				{
+					return certName;
+				}
+				set	
+				{
+					certName = value;
+				}
+			}
+
 			public string DomainCnameStatus
 			{
 				get
@@ -235,6 +223,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					domainCnameStatus = value;
+				}
+			}
+
+			public string ServerCertificate
+			{
+				get
+				{
+					return serverCertificate;
+				}
+				set	
+				{
+					serverCertificate = value;
 				}
 			}
 		}

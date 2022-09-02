@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -25,23 +25,23 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 	public class CreateUserUsageDataExportTaskResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string endTime;
 
 		private string startTime;
 
-		private string endTime;
+		private string requestId;
 
 		private string taskId;
 
-		public string RequestId
+		public string EndTime
 		{
 			get
 			{
-				return requestId;
+				return endTime;
 			}
 			set	
 			{
-				requestId = value;
+				endTime = value;
 			}
 		}
 
@@ -57,15 +57,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string EndTime
+		public string RequestId
 		{
 			get
 			{
-				return endTime;
+				return requestId;
 			}
 			set	
 			{
-				endTime = value;
+				requestId = value;
 			}
 		}
 

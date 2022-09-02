@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -25,57 +25,33 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 	public class DescribeCdnSMCertificateDetailResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string signCertificate;
-
-		private string encryptCertificate;
+		private string certExpireTime;
 
 		private string certIdentifier;
 
-		private string certName;
+		private string requestId;
 
 		private string commonName;
 
+		private string certName;
+
 		private string sans;
+
+		private string signCertificate;
 
 		private string certOrg;
 
-		private string certExpireTime;
+		private string encryptCertificate;
 
-		public string RequestId
+		public string CertExpireTime
 		{
 			get
 			{
-				return requestId;
+				return certExpireTime;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string SignCertificate
-		{
-			get
-			{
-				return signCertificate;
-			}
-			set	
-			{
-				signCertificate = value;
-			}
-		}
-
-		public string EncryptCertificate
-		{
-			get
-			{
-				return encryptCertificate;
-			}
-			set	
-			{
-				encryptCertificate = value;
+				certExpireTime = value;
 			}
 		}
 
@@ -91,15 +67,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string CertName
+		public string RequestId
 		{
 			get
 			{
-				return certName;
+				return requestId;
 			}
 			set	
 			{
-				certName = value;
+				requestId = value;
 			}
 		}
 
@@ -115,6 +91,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
+		public string CertName
+		{
+			get
+			{
+				return certName;
+			}
+			set	
+			{
+				certName = value;
+			}
+		}
+
 		public string Sans
 		{
 			get
@@ -124,6 +112,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				sans = value;
+			}
+		}
+
+		public string SignCertificate
+		{
+			get
+			{
+				return signCertificate;
+			}
+			set	
+			{
+				signCertificate = value;
 			}
 		}
 
@@ -139,15 +139,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string CertExpireTime
+		public string EncryptCertificate
 		{
 			get
 			{
-				return certExpireTime;
+				return encryptCertificate;
 			}
 			set	
 			{
-				certExpireTime = value;
+				encryptCertificate = value;
 			}
 		}
 	}

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeCdnSubListResponse describeCdnSubListResponse = new DescribeCdnSubListResponse();
 
 			describeCdnSubListResponse.HttpResponse = _ctx.HttpResponse;
-			describeCdnSubListResponse.RequestId = _ctx.StringValue("DescribeCdnSubList.RequestId");
 			describeCdnSubListResponse.Content = _ctx.StringValue("DescribeCdnSubList.Content");
+			describeCdnSubListResponse.RequestId = _ctx.StringValue("DescribeCdnSubList.RequestId");
         
 			return describeCdnSubListResponse;
         }
