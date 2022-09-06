@@ -28,10 +28,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class SpeechByCombinationRequest : RpcAcsRequest<SpeechByCombinationResponse>
+    public class ReBindLicenseDeviceRequest : RpcAcsRequest<ReBindLicenseDeviceResponse>
     {
-        public SpeechByCombinationRequest()
-            : base("Iot", "2018-01-20", "SpeechByCombination")
+        public ReBindLicenseDeviceRequest()
+            : base("Iot", "2018-01-20", "ReBindLicenseDevice")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,74 +41,27 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string speechId;
-
-		private string audioFormat;
-
-		private string iotId;
-
-		private List<string> combinationLists = new List<string>(){ };
+		private List<string> deviceNameLists = new List<string>(){ };
 
 		private string iotInstanceId;
 
-		private bool? enforceFlag;
-
 		private string productKey;
 
-		private string deviceName;
+		private string licenseCode;
 
-		public string SpeechId
+		public List<string> DeviceNameLists
 		{
 			get
 			{
-				return speechId;
-			}
-			set	
-			{
-				speechId = value;
-				DictionaryUtil.Add(BodyParameters, "SpeechId", value);
-			}
-		}
-
-		public string AudioFormat
-		{
-			get
-			{
-				return audioFormat;
-			}
-			set	
-			{
-				audioFormat = value;
-				DictionaryUtil.Add(BodyParameters, "AudioFormat", value);
-			}
-		}
-
-		public string IotId
-		{
-			get
-			{
-				return iotId;
-			}
-			set	
-			{
-				iotId = value;
-				DictionaryUtil.Add(BodyParameters, "IotId", value);
-			}
-		}
-
-		public List<string> CombinationLists
-		{
-			get
-			{
-				return combinationLists;
+				return deviceNameLists;
 			}
 
 			set
 			{
-				combinationLists = value;
-				for (int i = 0; i < combinationLists.Count; i++)
+				deviceNameLists = value;
+				for (int i = 0; i < deviceNameLists.Count; i++)
 				{
-					DictionaryUtil.Add(BodyParameters,"CombinationList." + (i + 1) , combinationLists[i]);
+					DictionaryUtil.Add(BodyParameters,"DeviceNameList." + (i + 1) , deviceNameLists[i]);
 				}
 			}
 		}
@@ -122,20 +75,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				iotInstanceId = value;
-				DictionaryUtil.Add(BodyParameters, "IotInstanceId", value);
-			}
-		}
-
-		public bool? EnforceFlag
-		{
-			get
-			{
-				return enforceFlag;
-			}
-			set	
-			{
-				enforceFlag = value;
-				DictionaryUtil.Add(BodyParameters, "EnforceFlag", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 
@@ -148,26 +88,26 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				productKey = value;
-				DictionaryUtil.Add(BodyParameters, "ProductKey", value);
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 
-		public string DeviceName
+		public string LicenseCode
 		{
 			get
 			{
-				return deviceName;
+				return licenseCode;
 			}
 			set	
 			{
-				deviceName = value;
-				DictionaryUtil.Add(BodyParameters, "DeviceName", value);
+				licenseCode = value;
+				DictionaryUtil.Add(QueryParameters, "LicenseCode", value);
 			}
 		}
 
-        public override SpeechByCombinationResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ReBindLicenseDeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SpeechByCombinationResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ReBindLicenseDeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

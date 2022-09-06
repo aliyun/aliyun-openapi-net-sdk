@@ -28,10 +28,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class SpeechByCombinationRequest : RpcAcsRequest<SpeechByCombinationResponse>
+    public class QueryShareTaskDeviceListRequest : RpcAcsRequest<QueryShareTaskDeviceListResponse>
     {
-        public SpeechByCombinationRequest()
-            : base("Iot", "2018-01-20", "SpeechByCombination")
+        public QueryShareTaskDeviceListRequest()
+            : base("Iot", "2018-01-20", "QueryShareTaskDeviceList")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,75 +41,26 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string speechId;
-
-		private string audioFormat;
-
-		private string iotId;
-
-		private List<string> combinationLists = new List<string>(){ };
+		private int? pageId;
 
 		private string iotInstanceId;
 
-		private bool? enforceFlag;
+		private int? pageSize;
 
-		private string productKey;
+		private string shareTaskId;
 
 		private string deviceName;
 
-		public string SpeechId
+		public int? PageId
 		{
 			get
 			{
-				return speechId;
+				return pageId;
 			}
 			set	
 			{
-				speechId = value;
-				DictionaryUtil.Add(BodyParameters, "SpeechId", value);
-			}
-		}
-
-		public string AudioFormat
-		{
-			get
-			{
-				return audioFormat;
-			}
-			set	
-			{
-				audioFormat = value;
-				DictionaryUtil.Add(BodyParameters, "AudioFormat", value);
-			}
-		}
-
-		public string IotId
-		{
-			get
-			{
-				return iotId;
-			}
-			set	
-			{
-				iotId = value;
-				DictionaryUtil.Add(BodyParameters, "IotId", value);
-			}
-		}
-
-		public List<string> CombinationLists
-		{
-			get
-			{
-				return combinationLists;
-			}
-
-			set
-			{
-				combinationLists = value;
-				for (int i = 0; i < combinationLists.Count; i++)
-				{
-					DictionaryUtil.Add(BodyParameters,"CombinationList." + (i + 1) , combinationLists[i]);
-				}
+				pageId = value;
+				DictionaryUtil.Add(BodyParameters, "PageId", value.ToString());
 			}
 		}
 
@@ -126,29 +77,29 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public bool? EnforceFlag
+		public int? PageSize
 		{
 			get
 			{
-				return enforceFlag;
+				return pageSize;
 			}
 			set	
 			{
-				enforceFlag = value;
-				DictionaryUtil.Add(BodyParameters, "EnforceFlag", value.ToString());
+				pageSize = value;
+				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public string ProductKey
+		public string ShareTaskId
 		{
 			get
 			{
-				return productKey;
+				return shareTaskId;
 			}
 			set	
 			{
-				productKey = value;
-				DictionaryUtil.Add(BodyParameters, "ProductKey", value);
+				shareTaskId = value;
+				DictionaryUtil.Add(BodyParameters, "ShareTaskId", value);
 			}
 		}
 
@@ -165,9 +116,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-        public override SpeechByCombinationResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryShareTaskDeviceListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SpeechByCombinationResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryShareTaskDeviceListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

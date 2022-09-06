@@ -28,10 +28,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class BindLicenseDeviceRequest : RpcAcsRequest<BindLicenseDeviceResponse>
+    public class GetSpeechLicenseDeviceStatisticsRequest : RpcAcsRequest<GetSpeechLicenseDeviceStatisticsResponse>
     {
-        public BindLicenseDeviceRequest()
-            : base("Iot", "2018-01-20", "BindLicenseDevice")
+        public GetSpeechLicenseDeviceStatisticsRequest()
+            : base("Iot", "2018-01-20", "GetSpeechLicenseDeviceStatistics")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,32 +41,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private List<string> deviceNameLists = new List<string>(){ };
-
 		private string iotInstanceId;
-
-		private List<string> iotIdLists = new List<string>(){ };
-
-		private string productKey;
-
-		private string licenseCode;
-
-		public List<string> DeviceNameLists
-		{
-			get
-			{
-				return deviceNameLists;
-			}
-
-			set
-			{
-				deviceNameLists = value;
-				for (int i = 0; i < deviceNameLists.Count; i++)
-				{
-					DictionaryUtil.Add(BodyParameters,"DeviceNameList." + (i + 1) , deviceNameLists[i]);
-				}
-			}
-		}
 
 		public string IotInstanceId
 		{
@@ -77,56 +52,13 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+				DictionaryUtil.Add(BodyParameters, "IotInstanceId", value);
 			}
 		}
 
-		public List<string> IotIdLists
-		{
-			get
-			{
-				return iotIdLists;
-			}
-
-			set
-			{
-				iotIdLists = value;
-				for (int i = 0; i < iotIdLists.Count; i++)
-				{
-					DictionaryUtil.Add(BodyParameters,"IotIdList." + (i + 1) , iotIdLists[i]);
-				}
-			}
-		}
-
-		public string ProductKey
-		{
-			get
-			{
-				return productKey;
-			}
-			set	
-			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
-			}
-		}
-
-		public string LicenseCode
-		{
-			get
-			{
-				return licenseCode;
-			}
-			set	
-			{
-				licenseCode = value;
-				DictionaryUtil.Add(QueryParameters, "LicenseCode", value);
-			}
-		}
-
-        public override BindLicenseDeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetSpeechLicenseDeviceStatisticsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BindLicenseDeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetSpeechLicenseDeviceStatisticsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
