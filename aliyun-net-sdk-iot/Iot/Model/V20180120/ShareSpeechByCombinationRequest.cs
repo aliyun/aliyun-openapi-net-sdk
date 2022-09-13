@@ -28,10 +28,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class SpeechByCombinationRequest : RpcAcsRequest<SpeechByCombinationResponse>
+    public class ShareSpeechByCombinationRequest : RpcAcsRequest<ShareSpeechByCombinationResponse>
     {
-        public SpeechByCombinationRequest()
-            : base("Iot", "2018-01-20", "SpeechByCombination")
+        public ShareSpeechByCombinationRequest()
+            : base("Iot", "2018-01-20", "ShareSpeechByCombination")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -50,8 +50,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private List<string> combinationLists = new List<string>(){ };
 
 		private string iotInstanceId;
-
-		private bool? enforceFlag;
 
 		private string productKey;
 
@@ -126,19 +124,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public bool? EnforceFlag
-		{
-			get
-			{
-				return enforceFlag;
-			}
-			set	
-			{
-				enforceFlag = value;
-				DictionaryUtil.Add(BodyParameters, "EnforceFlag", value.ToString());
-			}
-		}
-
 		public string ProductKey
 		{
 			get
@@ -165,9 +150,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-        public override SpeechByCombinationResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ShareSpeechByCombinationResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SpeechByCombinationResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ShareSpeechByCombinationResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -28,10 +28,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class BindLicenseDeviceRequest : RpcAcsRequest<BindLicenseDeviceResponse>
+    public class DeleteShareTaskDeviceRequest : RpcAcsRequest<DeleteShareTaskDeviceResponse>
     {
-        public BindLicenseDeviceRequest()
-            : base("Iot", "2018-01-20", "BindLicenseDevice")
+        public DeleteShareTaskDeviceRequest()
+            : base("Iot", "2018-01-20", "DeleteShareTaskDevice")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,32 +41,11 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private List<string> deviceNameLists = new List<string>(){ };
-
 		private string iotInstanceId;
 
 		private List<string> iotIdLists = new List<string>(){ };
 
-		private string productKey;
-
-		private string licenseCode;
-
-		public List<string> DeviceNameLists
-		{
-			get
-			{
-				return deviceNameLists;
-			}
-
-			set
-			{
-				deviceNameLists = value;
-				for (int i = 0; i < deviceNameLists.Count; i++)
-				{
-					DictionaryUtil.Add(BodyParameters,"DeviceNameList." + (i + 1) , deviceNameLists[i]);
-				}
-			}
-		}
+		private string shareTaskId;
 
 		public string IotInstanceId
 		{
@@ -77,7 +56,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+				DictionaryUtil.Add(BodyParameters, "IotInstanceId", value);
 			}
 		}
 
@@ -98,35 +77,22 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string ProductKey
+		public string ShareTaskId
 		{
 			get
 			{
-				return productKey;
+				return shareTaskId;
 			}
 			set	
 			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+				shareTaskId = value;
+				DictionaryUtil.Add(BodyParameters, "ShareTaskId", value);
 			}
 		}
 
-		public string LicenseCode
-		{
-			get
-			{
-				return licenseCode;
-			}
-			set	
-			{
-				licenseCode = value;
-				DictionaryUtil.Add(QueryParameters, "LicenseCode", value);
-			}
-		}
-
-        public override BindLicenseDeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteShareTaskDeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BindLicenseDeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteShareTaskDeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

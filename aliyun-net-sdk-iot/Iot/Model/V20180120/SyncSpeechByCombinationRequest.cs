@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string iotInstanceId;
 
+		private bool? enforceFlag;
+
 		private string productKey;
 
 		private string deviceName;
@@ -121,6 +123,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(BodyParameters, "IotInstanceId", value);
+			}
+		}
+
+		public bool? EnforceFlag
+		{
+			get
+			{
+				return enforceFlag;
+			}
+			set	
+			{
+				enforceFlag = value;
+				DictionaryUtil.Add(BodyParameters, "EnforceFlag", value.ToString());
 			}
 		}
 
