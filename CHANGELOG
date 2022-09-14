@@ -1,3 +1,6 @@
+2022-09-14 Version: 3.2.2
+- Add spInstanceId and spInstanceType for api OnsInstanceBaseInfo.
+
 2022-09-08 Version: 2.1.1
 - Add API BatchAddFeishuUsers.
 

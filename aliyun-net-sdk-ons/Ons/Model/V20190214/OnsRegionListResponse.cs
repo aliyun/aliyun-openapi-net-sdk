@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ons.Model.V20190214
@@ -70,41 +70,29 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 		public class OnsRegionList_RegionDo
 		{
 
-			private long? id;
-
-			private string onsRegionId;
+			private long? updateTime;
 
 			private string regionName;
-
-			private int? channelId;
 
 			private string channelName;
 
 			private long? createTime;
 
-			private long? updateTime;
+			private int? channelId;
 
-			public long? Id
+			private long? id;
+
+			private string onsRegionId;
+
+			public long? UpdateTime
 			{
 				get
 				{
-					return id;
+					return updateTime;
 				}
 				set	
 				{
-					id = value;
-				}
-			}
-
-			public string OnsRegionId
-			{
-				get
-				{
-					return onsRegionId;
-				}
-				set	
-				{
-					onsRegionId = value;
+					updateTime = value;
 				}
 			}
 
@@ -117,18 +105,6 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				set	
 				{
 					regionName = value;
-				}
-			}
-
-			public int? ChannelId
-			{
-				get
-				{
-					return channelId;
-				}
-				set	
-				{
-					channelId = value;
 				}
 			}
 
@@ -156,15 +132,39 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				}
 			}
 
-			public long? UpdateTime
+			public int? ChannelId
 			{
 				get
 				{
-					return updateTime;
+					return channelId;
 				}
 				set	
 				{
-					updateTime = value;
+					channelId = value;
+				}
+			}
+
+			public long? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public string OnsRegionId
+			{
+				get
+				{
+					return onsRegionId;
+				}
+				set	
+				{
+					onsRegionId = value;
 				}
 			}
 		}
