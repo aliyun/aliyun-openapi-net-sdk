@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -58,6 +59,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private int? interval;
 
+		[JsonProperty(PropertyName = "OssEndpoint")]
 		public string OssEndpoint
 		{
 			get
@@ -71,6 +73,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OssObject")]
 		public string OssObject
 		{
 			get
@@ -84,6 +87,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Scene")]
 		public List<string> Scenes
 		{
 			get
@@ -94,13 +98,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set
 			{
 				scenes = value;
-				for (int i = 0; i < scenes.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Scene." + (i + 1) , scenes[i]);
-				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "AppName")]
 		public string AppName
 		{
 			get
@@ -114,6 +115,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecurityToken")]
 		public string SecurityToken
 		{
 			get
@@ -127,6 +129,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OssBucket")]
 		public string OssBucket
 		{
 			get
@@ -140,6 +143,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DomainName")]
 		public string DomainName
 		{
 			get
@@ -153,6 +157,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -166,6 +171,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Interval")]
 		public int? Interval
 		{
 			get

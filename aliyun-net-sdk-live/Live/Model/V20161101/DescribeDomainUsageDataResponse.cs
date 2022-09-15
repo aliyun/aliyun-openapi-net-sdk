@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,58 +25,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeDomainUsageDataResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string domainName;
+		private string endTime;
 
 		private string startTime;
 
-		private string endTime;
+		private string requestId;
+
+		private string area;
 
 		private string field;
 
-		private string area;
+		private string domainName;
 
 		private string dataInterval;
 
 		private List<DescribeDomainUsageData_DataModule> usageDataPerInterval;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "EndTime")]
 		public string EndTime
 		{
 			get
@@ -89,18 +54,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string Field
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
 		{
 			get
 			{
-				return field;
+				return startTime;
 			}
 			set	
 			{
-				field = value;
+				startTime = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Area")]
 		public string Area
 		{
 			get
@@ -113,6 +93,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Field")]
+		public string Field
+		{
+			get
+			{
+				return field;
+			}
+			set	
+			{
+				field = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DomainName")]
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DataInterval")]
 		public string DataInterval
 		{
 			get
@@ -125,6 +132,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "UsageDataPerInterval")]
 		public List<DescribeDomainUsageData_DataModule> UsageDataPerInterval
 		{
 			get
@@ -140,22 +148,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeDomainUsageData_DataModule
 		{
 
-			private string timeStamp;
-
 			private string _value;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+			private string timeStamp;
 
+			[JsonProperty(PropertyName = "_Value")]
 			public string _Value
 			{
 				get
@@ -165,6 +162,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					_value = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TimeStamp")]
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
 				}
 			}
 		}

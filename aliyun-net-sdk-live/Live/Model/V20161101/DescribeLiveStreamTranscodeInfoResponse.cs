@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo> domainTranscodeList;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DomainTranscodeList")]
 		public List<DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo> DomainTranscodeList
 		{
 			get
@@ -58,14 +60,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string transcodeApp;
 
-			private string transcodeName;
-
 			private string transcodeTemplate;
+
+			private bool? isLazy;
+
+			private string transcodeName;
 
 			private DescribeLiveStreamTranscodeInfo_CustomTranscodeParameters customTranscodeParameters;
 
 			private DescribeLiveStreamTranscodeInfo_EncryptParameters encryptParameters;
 
+			[JsonProperty(PropertyName = "TranscodeApp")]
 			public string TranscodeApp
 			{
 				get
@@ -78,18 +83,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string TranscodeName
-			{
-				get
-				{
-					return transcodeName;
-				}
-				set	
-				{
-					transcodeName = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "TranscodeTemplate")]
 			public string TranscodeTemplate
 			{
 				get
@@ -102,6 +96,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "IsLazy")]
+			public bool? IsLazy
+			{
+				get
+				{
+					return isLazy;
+				}
+				set	
+				{
+					isLazy = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TranscodeName")]
+			public string TranscodeName
+			{
+				get
+				{
+					return transcodeName;
+				}
+				set	
+				{
+					transcodeName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CustomTranscodeParameters")]
 			public DescribeLiveStreamTranscodeInfo_CustomTranscodeParameters CustomTranscodeParameters
 			{
 				get
@@ -114,6 +135,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "EncryptParameters")]
 			public DescribeLiveStreamTranscodeInfo_EncryptParameters EncryptParameters
 			{
 				get
@@ -129,118 +151,35 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeLiveStreamTranscodeInfo_CustomTranscodeParameters
 			{
 
-				private string rtsFlag;
-
-				private string bframes;
-
-				private int? videoBitrate;
-
-				private int? fPS;
-
-				private int? height;
-
-				private int? width;
-
-				private string templateType;
-
 				private string videoProfile;
-
-				private string gop;
 
 				private int? audioBitrate;
 
-				private string audioProfile;
+				private string rtsFlag;
 
-				private string audioCodec;
+				private int? height;
+
+				private string templateType;
+
+				private string bframes;
 
 				private int? audioRate;
 
+				private int? fPS;
+
+				private string audioCodec;
+
+				private string gop;
+
+				private int? videoBitrate;
+
+				private int? width;
+
 				private int? audioChannelNum;
 
-				public string RtsFlag
-				{
-					get
-					{
-						return rtsFlag;
-					}
-					set	
-					{
-						rtsFlag = value;
-					}
-				}
+				private string audioProfile;
 
-				public string Bframes
-				{
-					get
-					{
-						return bframes;
-					}
-					set	
-					{
-						bframes = value;
-					}
-				}
-
-				public int? VideoBitrate
-				{
-					get
-					{
-						return videoBitrate;
-					}
-					set	
-					{
-						videoBitrate = value;
-					}
-				}
-
-				public int? FPS
-				{
-					get
-					{
-						return fPS;
-					}
-					set	
-					{
-						fPS = value;
-					}
-				}
-
-				public int? Height
-				{
-					get
-					{
-						return height;
-					}
-					set	
-					{
-						height = value;
-					}
-				}
-
-				public int? Width
-				{
-					get
-					{
-						return width;
-					}
-					set	
-					{
-						width = value;
-					}
-				}
-
-				public string TemplateType
-				{
-					get
-					{
-						return templateType;
-					}
-					set	
-					{
-						templateType = value;
-					}
-				}
-
+				[JsonProperty(PropertyName = "VideoProfile")]
 				public string VideoProfile
 				{
 					get
@@ -253,18 +192,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				public string Gop
-				{
-					get
-					{
-						return gop;
-					}
-					set	
-					{
-						gop = value;
-					}
-				}
-
+				[JsonProperty(PropertyName = "AudioBitrate")]
 				public int? AudioBitrate
 				{
 					get
@@ -277,30 +205,59 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				public string AudioProfile
+				[JsonProperty(PropertyName = "RtsFlag")]
+				public string RtsFlag
 				{
 					get
 					{
-						return audioProfile;
+						return rtsFlag;
 					}
 					set	
 					{
-						audioProfile = value;
+						rtsFlag = value;
 					}
 				}
 
-				public string AudioCodec
+				[JsonProperty(PropertyName = "Height")]
+				public int? Height
 				{
 					get
 					{
-						return audioCodec;
+						return height;
 					}
 					set	
 					{
-						audioCodec = value;
+						height = value;
 					}
 				}
 
+				[JsonProperty(PropertyName = "TemplateType")]
+				public string TemplateType
+				{
+					get
+					{
+						return templateType;
+					}
+					set	
+					{
+						templateType = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Bframes")]
+				public string Bframes
+				{
+					get
+					{
+						return bframes;
+					}
+					set	
+					{
+						bframes = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "AudioRate")]
 				public int? AudioRate
 				{
 					get
@@ -313,6 +270,72 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
+				[JsonProperty(PropertyName = "FPS")]
+				public int? FPS
+				{
+					get
+					{
+						return fPS;
+					}
+					set	
+					{
+						fPS = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "AudioCodec")]
+				public string AudioCodec
+				{
+					get
+					{
+						return audioCodec;
+					}
+					set	
+					{
+						audioCodec = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Gop")]
+				public string Gop
+				{
+					get
+					{
+						return gop;
+					}
+					set	
+					{
+						gop = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "VideoBitrate")]
+				public int? VideoBitrate
+				{
+					get
+					{
+						return videoBitrate;
+					}
+					set	
+					{
+						videoBitrate = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Width")]
+				public int? Width
+				{
+					get
+					{
+						return width;
+					}
+					set	
+					{
+						width = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "AudioChannelNum")]
 				public int? AudioChannelNum
 				{
 					get
@@ -324,6 +347,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 						audioChannelNum = value;
 					}
 				}
+
+				[JsonProperty(PropertyName = "AudioProfile")]
+				public string AudioProfile
+				{
+					get
+					{
+						return audioProfile;
+					}
+					set	
+					{
+						audioProfile = value;
+					}
+				}
 			}
 
 			public class DescribeLiveStreamTranscodeInfo_EncryptParameters
@@ -331,10 +367,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private string encryptType;
 
-				private string kmsKeyExpireInterval;
-
 				private string kmsKeyID;
 
+				private string kmsKeyExpireInterval;
+
+				[JsonProperty(PropertyName = "EncryptType")]
 				public string EncryptType
 				{
 					get
@@ -347,18 +384,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				public string KmsKeyExpireInterval
-				{
-					get
-					{
-						return kmsKeyExpireInterval;
-					}
-					set	
-					{
-						kmsKeyExpireInterval = value;
-					}
-				}
-
+				[JsonProperty(PropertyName = "KmsKeyID")]
 				public string KmsKeyID
 				{
 					get
@@ -368,6 +394,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						kmsKeyID = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "KmsKeyExpireInterval")]
+				public string KmsKeyExpireInterval
+				{
+					get
+					{
+						return kmsKeyExpireInterval;
+					}
+					set	
+					{
+						kmsKeyExpireInterval = value;
 					}
 				}
 			}

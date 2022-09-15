@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,22 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class EditShowAndReplaceResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string jobInfo;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
+		[JsonProperty(PropertyName = "JobInfo")]
 		public string JobInfo
 		{
 			get
@@ -50,6 +39,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				jobInfo = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

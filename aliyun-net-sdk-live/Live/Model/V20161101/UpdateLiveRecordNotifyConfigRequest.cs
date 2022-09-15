@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -52,6 +53,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private long? ownerId;
 
+		[JsonProperty(PropertyName = "OnDemandUrl")]
 		public string OnDemandUrl
 		{
 			get
@@ -65,6 +67,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecurityToken")]
 		public string SecurityToken
 		{
 			get
@@ -78,6 +81,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "NotifyUrl")]
 		public string NotifyUrl
 		{
 			get
@@ -91,6 +95,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "NeedStatusNotify")]
 		public bool? NeedStatusNotify
 		{
 			get
@@ -104,6 +109,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DomainName")]
 		public string DomainName
 		{
 			get
@@ -117,6 +123,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get

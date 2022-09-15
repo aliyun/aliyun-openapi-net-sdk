@@ -31,13 +31,13 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveEdgeTransferResponse describeLiveEdgeTransferResponse = new DescribeLiveEdgeTransferResponse();
 
 			describeLiveEdgeTransferResponse.HttpResponse = _ctx.HttpResponse;
-			describeLiveEdgeTransferResponse.RequestId = _ctx.StringValue("DescribeLiveEdgeTransfer.RequestId");
-			describeLiveEdgeTransferResponse.DomainName = _ctx.StringValue("DescribeLiveEdgeTransfer.DomainName");
+			describeLiveEdgeTransferResponse.HttpDns = _ctx.StringValue("DescribeLiveEdgeTransfer.HttpDns");
 			describeLiveEdgeTransferResponse.AppName = _ctx.StringValue("DescribeLiveEdgeTransfer.AppName");
+			describeLiveEdgeTransferResponse.RequestId = _ctx.StringValue("DescribeLiveEdgeTransfer.RequestId");
+			describeLiveEdgeTransferResponse.TransferArgs = _ctx.StringValue("DescribeLiveEdgeTransfer.TransferArgs");
 			describeLiveEdgeTransferResponse.StreamName = _ctx.StringValue("DescribeLiveEdgeTransfer.StreamName");
 			describeLiveEdgeTransferResponse.TargetDomainList = _ctx.StringValue("DescribeLiveEdgeTransfer.TargetDomainList");
-			describeLiveEdgeTransferResponse.TransferArgs = _ctx.StringValue("DescribeLiveEdgeTransfer.TransferArgs");
-			describeLiveEdgeTransferResponse.HttpDns = _ctx.StringValue("DescribeLiveEdgeTransfer.HttpDns");
+			describeLiveEdgeTransferResponse.DomainName = _ctx.StringValue("DescribeLiveEdgeTransfer.DomainName");
         
 			return describeLiveEdgeTransferResponse;
         }

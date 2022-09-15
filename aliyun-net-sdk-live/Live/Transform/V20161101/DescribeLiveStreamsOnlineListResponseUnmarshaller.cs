@@ -31,35 +31,35 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveStreamsOnlineListResponse describeLiveStreamsOnlineListResponse = new DescribeLiveStreamsOnlineListResponse();
 
 			describeLiveStreamsOnlineListResponse.HttpResponse = _ctx.HttpResponse;
-			describeLiveStreamsOnlineListResponse.RequestId = _ctx.StringValue("DescribeLiveStreamsOnlineList.RequestId");
+			describeLiveStreamsOnlineListResponse.TotalPage = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.TotalPage");
 			describeLiveStreamsOnlineListResponse.PageNum = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.PageNum");
 			describeLiveStreamsOnlineListResponse.PageSize = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.PageSize");
+			describeLiveStreamsOnlineListResponse.RequestId = _ctx.StringValue("DescribeLiveStreamsOnlineList.RequestId");
 			describeLiveStreamsOnlineListResponse.TotalNum = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.TotalNum");
-			describeLiveStreamsOnlineListResponse.TotalPage = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.TotalPage");
 
 			List<DescribeLiveStreamsOnlineListResponse.DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo> describeLiveStreamsOnlineListResponse_onlineInfo = new List<DescribeLiveStreamsOnlineListResponse.DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveStreamsOnlineList.OnlineInfo.Length"); i++) {
 				DescribeLiveStreamsOnlineListResponse.DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo liveStreamOnlineInfo = new DescribeLiveStreamsOnlineListResponse.DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo();
-				liveStreamOnlineInfo.DomainName = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].DomainName");
-				liveStreamOnlineInfo.AppName = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].AppName");
-				liveStreamOnlineInfo.StreamName = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].StreamName");
-				liveStreamOnlineInfo.PublishTime = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].PublishTime");
+				liveStreamOnlineInfo.AudioDataRate = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].AudioDataRate");
+				liveStreamOnlineInfo.FrameRate = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].FrameRate");
 				liveStreamOnlineInfo.PublishUrl = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].PublishUrl");
-				liveStreamOnlineInfo.PublishDomain = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].PublishDomain");
-				liveStreamOnlineInfo.StreamUrlArgs = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].StreamUrlArgs");
-				liveStreamOnlineInfo.PublishType = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].PublishType");
-				liveStreamOnlineInfo.Transcoded = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].Transcoded");
+				liveStreamOnlineInfo.StreamName = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].StreamName");
+				liveStreamOnlineInfo.AudioCodecId = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].AudioCodecId");
+				liveStreamOnlineInfo.Height = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].Height");
+				liveStreamOnlineInfo.VideoDataRate = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].VideoDataRate");
+				liveStreamOnlineInfo.DomainName = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].DomainName");
 				liveStreamOnlineInfo.TranscodeId = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].TranscodeId");
 				liveStreamOnlineInfo.TranscodeDrm = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].TranscodeDrm");
-				liveStreamOnlineInfo.ServerIp = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].ServerIp");
-				liveStreamOnlineInfo.ClientIp = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].ClientIp");
+				liveStreamOnlineInfo.PublishDomain = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].PublishDomain");
+				liveStreamOnlineInfo.PublishTime = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].PublishTime");
+				liveStreamOnlineInfo.AppName = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].AppName");
+				liveStreamOnlineInfo.PublishType = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].PublishType");
 				liveStreamOnlineInfo.VideoCodecId = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].VideoCodecId");
-				liveStreamOnlineInfo.VideoDataRate = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].VideoDataRate");
-				liveStreamOnlineInfo.FrameRate = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].FrameRate");
+				liveStreamOnlineInfo.Transcoded = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].Transcoded");
 				liveStreamOnlineInfo.Width = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].Width");
-				liveStreamOnlineInfo.Height = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].Height");
-				liveStreamOnlineInfo.AudioCodecId = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].AudioCodecId");
-				liveStreamOnlineInfo.AudioDataRate = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].AudioDataRate");
+				liveStreamOnlineInfo.ClientIp = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].ClientIp");
+				liveStreamOnlineInfo.ServerIp = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].ServerIp");
+				liveStreamOnlineInfo.StreamUrlArgs = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].StreamUrlArgs");
 
 				describeLiveStreamsOnlineListResponse_onlineInfo.Add(liveStreamOnlineInfo);
 			}

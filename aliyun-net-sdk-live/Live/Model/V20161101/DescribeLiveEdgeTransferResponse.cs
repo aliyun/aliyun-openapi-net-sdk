@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,44 +25,34 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveEdgeTransferResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string domainName;
+		private string httpDns;
 
 		private string appName;
+
+		private string requestId;
+
+		private string transferArgs;
 
 		private string streamName;
 
 		private string targetDomainList;
 
-		private string transferArgs;
+		private string domainName;
 
-		private string httpDns;
-
-		public string RequestId
+		[JsonProperty(PropertyName = "HttpDns")]
+		public string HttpDns
 		{
 			get
 			{
-				return requestId;
+				return httpDns;
 			}
 			set	
 			{
-				requestId = value;
+				httpDns = value;
 			}
 		}
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "AppName")]
 		public string AppName
 		{
 			get
@@ -75,30 +65,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string StreamName
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return streamName;
+				return requestId;
 			}
 			set	
 			{
-				streamName = value;
+				requestId = value;
 			}
 		}
 
-		public string TargetDomainList
-		{
-			get
-			{
-				return targetDomainList;
-			}
-			set	
-			{
-				targetDomainList = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "TransferArgs")]
 		public string TransferArgs
 		{
 			get
@@ -111,15 +91,42 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string HttpDns
+		[JsonProperty(PropertyName = "StreamName")]
+		public string StreamName
 		{
 			get
 			{
-				return httpDns;
+				return streamName;
 			}
 			set	
 			{
-				httpDns = value;
+				streamName = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TargetDomainList")]
+		public string TargetDomainList
+		{
+			get
+			{
+				return targetDomainList;
+			}
+			set	
+			{
+				targetDomainList = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DomainName")]
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
 			}
 		}
 	}

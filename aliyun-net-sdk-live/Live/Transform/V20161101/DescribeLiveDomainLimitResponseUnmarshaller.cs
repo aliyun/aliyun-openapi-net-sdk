@@ -36,9 +36,13 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeLiveDomainLimitResponse.DescribeLiveDomainLimit_LiveDomainLimit> describeLiveDomainLimitResponse_liveDomainLimitList = new List<DescribeLiveDomainLimitResponse.DescribeLiveDomainLimit_LiveDomainLimit>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveDomainLimit.LiveDomainLimitList.Length"); i++) {
 				DescribeLiveDomainLimitResponse.DescribeLiveDomainLimit_LiveDomainLimit liveDomainLimit = new DescribeLiveDomainLimitResponse.DescribeLiveDomainLimit_LiveDomainLimit();
-				liveDomainLimit.DomainName = _ctx.StringValue("DescribeLiveDomainLimit.LiveDomainLimitList["+ i +"].DomainName");
-				liveDomainLimit.LimitNum = _ctx.IntegerValue("DescribeLiveDomainLimit.LiveDomainLimitList["+ i +"].LimitNum");
 				liveDomainLimit.LimitTranscodeNum = _ctx.IntegerValue("DescribeLiveDomainLimit.LiveDomainLimitList["+ i +"].LimitTranscodeNum");
+				liveDomainLimit.CurrentTranscodeNum = _ctx.IntegerValue("DescribeLiveDomainLimit.LiveDomainLimitList["+ i +"].CurrentTranscodeNum");
+				liveDomainLimit.LimitNum = _ctx.IntegerValue("DescribeLiveDomainLimit.LiveDomainLimitList["+ i +"].LimitNum");
+				liveDomainLimit.LimitTransferNum = _ctx.IntegerValue("DescribeLiveDomainLimit.LiveDomainLimitList["+ i +"].LimitTransferNum");
+				liveDomainLimit.CurrentNum = _ctx.IntegerValue("DescribeLiveDomainLimit.LiveDomainLimitList["+ i +"].CurrentNum");
+				liveDomainLimit.CurrentTransferNum = _ctx.IntegerValue("DescribeLiveDomainLimit.LiveDomainLimitList["+ i +"].CurrentTransferNum");
+				liveDomainLimit.DomainName = _ctx.StringValue("DescribeLiveDomainLimit.LiveDomainLimitList["+ i +"].DomainName");
 
 				describeLiveDomainLimitResponse_liveDomainLimitList.Add(liveDomainLimit);
 			}

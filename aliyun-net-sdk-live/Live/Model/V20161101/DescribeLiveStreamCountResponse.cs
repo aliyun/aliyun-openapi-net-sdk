@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeLiveStreamCount_StreamCountInfo> streamCountInfos;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "StreamCountInfos")]
 		public List<DescribeLiveStreamCount_StreamCountInfo> StreamCountInfos
 		{
 			get
@@ -56,38 +58,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamCount_StreamCountInfo
 		{
 
+			private string type;
+
 			private long? count;
 
 			private long? limit;
 
-			private string type;
-
 			private List<DescribeLiveStreamCount_StreamCountDetail> streamCountDetails;
 
-			public long? Count
-			{
-				get
-				{
-					return count;
-				}
-				set	
-				{
-					count = value;
-				}
-			}
-
-			public long? Limit
-			{
-				get
-				{
-					return limit;
-				}
-				set	
-				{
-					limit = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Type")]
 			public string Type
 			{
 				get
@@ -100,6 +79,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Count")]
+			public long? Count
+			{
+				get
+				{
+					return count;
+				}
+				set	
+				{
+					count = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Limit")]
+			public long? Limit
+			{
+				get
+				{
+					return limit;
+				}
+				set	
+				{
+					limit = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StreamCountDetails")]
 			public List<DescribeLiveStreamCount_StreamCountDetail> StreamCountDetails
 			{
 				get
@@ -115,24 +121,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeLiveStreamCount_StreamCountDetail
 			{
 
-				private string format;
-
 				private long? videoDataRate;
+
+				private string format;
 
 				private long? count;
 
-				public string Format
-				{
-					get
-					{
-						return format;
-					}
-					set	
-					{
-						format = value;
-					}
-				}
-
+				[JsonProperty(PropertyName = "VideoDataRate")]
 				public long? VideoDataRate
 				{
 					get
@@ -145,6 +140,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
+				[JsonProperty(PropertyName = "Format")]
+				public string Format
+				{
+					get
+					{
+						return format;
+					}
+					set	
+					{
+						format = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Count")]
 				public long? Count
 				{
 					get

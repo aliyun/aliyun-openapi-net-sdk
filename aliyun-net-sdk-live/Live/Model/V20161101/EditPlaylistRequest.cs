@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -48,6 +49,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string programConfig;
 
+		[JsonProperty(PropertyName = "ProgramItems")]
 		public string ProgramItems
 		{
 			get
@@ -61,6 +63,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ProgramId")]
 		public string ProgramId
 		{
 			get
@@ -74,6 +77,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -87,6 +91,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ProgramConfig")]
 		public string ProgramConfig
 		{
 			get

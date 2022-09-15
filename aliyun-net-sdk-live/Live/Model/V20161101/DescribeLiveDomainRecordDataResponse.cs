@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeLiveDomainRecordData_RecordDataInfo> recordDataInfos;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RecordDataInfos")]
 		public List<DescribeLiveDomainRecordData_RecordDataInfo> RecordDataInfos
 		{
 			get
@@ -62,6 +64,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private DescribeLiveDomainRecordData_Detail detail;
 
+			[JsonProperty(PropertyName = "Date")]
 			public string Date
 			{
 				get
@@ -74,6 +77,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Total")]
 			public int? Total
 			{
 				get
@@ -86,6 +90,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Detail")]
 			public DescribeLiveDomainRecordData_Detail Detail
 			{
 				get
@@ -101,24 +106,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeLiveDomainRecordData_Detail
 			{
 
-				private int? mP4;
-
 				private int? fLV;
 
 				private int? tS;
 
-				public int? MP4
-				{
-					get
-					{
-						return mP4;
-					}
-					set	
-					{
-						mP4 = value;
-					}
-				}
+				private int? mP4;
 
+				[JsonProperty(PropertyName = "FLV")]
 				public int? FLV
 				{
 					get
@@ -131,6 +125,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
+				[JsonProperty(PropertyName = "TS")]
 				public int? TS
 				{
 					get
@@ -140,6 +135,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						tS = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "MP4")]
+				public int? MP4
+				{
+					get
+					{
+						return mP4;
+					}
+					set	
+					{
+						mP4 = value;
 					}
 				}
 			}

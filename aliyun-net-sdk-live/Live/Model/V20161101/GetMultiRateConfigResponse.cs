@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,21 +25,21 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class GetMultiRateConfigResponse : AcsResponse
 	{
 
+		private string domain;
+
 		private string requestId;
 
-		private string message;
-
-		private int? code;
-
-		private string domain;
+		private string groupId;
 
 		private string app;
 
-		private string stream;
-
 		private string avFormat;
 
-		private string groupId;
+		private string stream;
+
+		private int? code;
+
+		private string message;
 
 		private string isLazy;
 
@@ -47,42 +47,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<GetMultiRateConfig_Detail> templatesInfo;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public int? Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Domain")]
 		public string Domain
 		{
 			get
@@ -95,42 +60,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string App
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return app;
+				return requestId;
 			}
 			set	
 			{
-				app = value;
+				requestId = value;
 			}
 		}
 
-		public string Stream
-		{
-			get
-			{
-				return stream;
-			}
-			set	
-			{
-				stream = value;
-			}
-		}
-
-		public string AvFormat
-		{
-			get
-			{
-				return avFormat;
-			}
-			set	
-			{
-				avFormat = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "GroupId")]
 		public string GroupId
 		{
 			get
@@ -143,6 +86,72 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "App")]
+		public string App
+		{
+			get
+			{
+				return app;
+			}
+			set	
+			{
+				app = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "AvFormat")]
+		public string AvFormat
+		{
+			get
+			{
+				return avFormat;
+			}
+			set	
+			{
+				avFormat = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Stream")]
+		public string Stream
+		{
+			get
+			{
+				return stream;
+			}
+			set	
+			{
+				stream = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Code")]
+		public int? Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Message")]
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "IsLazy")]
 		public string IsLazy
 		{
 			get
@@ -155,6 +164,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "IsTimeAlign")]
 		public string IsTimeAlign
 		{
 			get
@@ -167,6 +177,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "TemplatesInfo")]
 		public List<GetMultiRateConfig_Detail> TemplatesInfo
 		{
 			get
@@ -182,166 +193,35 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class GetMultiRateConfig_Detail
 		{
 
-			private string template;
+			private int? audioBitrate;
 
-			private string templateType;
+			private string template;
 
 			private int? height;
 
-			private int? width;
-
-			private int? fps;
-
-			private string gop;
-
-			private int? videoBitrate;
-
-			private int? profile;
-
-			private string audioProfile;
-
-			private string audioCodec;
-
-			private int? audioRate;
-
-			private int? audioBitrate;
-
-			private int? audioChannelNum;
+			private string templateType;
 
 			private int? bandWidth;
 
-			public string Template
-			{
-				get
-				{
-					return template;
-				}
-				set	
-				{
-					template = value;
-				}
-			}
+			private int? profile;
 
-			public string TemplateType
-			{
-				get
-				{
-					return templateType;
-				}
-				set	
-				{
-					templateType = value;
-				}
-			}
+			private int? audioRate;
 
-			public int? Height
-			{
-				get
-				{
-					return height;
-				}
-				set	
-				{
-					height = value;
-				}
-			}
+			private string audioCodec;
 
-			public int? Width
-			{
-				get
-				{
-					return width;
-				}
-				set	
-				{
-					width = value;
-				}
-			}
+			private string gop;
 
-			public int? Fps
-			{
-				get
-				{
-					return fps;
-				}
-				set	
-				{
-					fps = value;
-				}
-			}
+			private int? width;
 
-			public string Gop
-			{
-				get
-				{
-					return gop;
-				}
-				set	
-				{
-					gop = value;
-				}
-			}
+			private int? videoBitrate;
 
-			public int? VideoBitrate
-			{
-				get
-				{
-					return videoBitrate;
-				}
-				set	
-				{
-					videoBitrate = value;
-				}
-			}
+			private int? audioChannelNum;
 
-			public int? Profile
-			{
-				get
-				{
-					return profile;
-				}
-				set	
-				{
-					profile = value;
-				}
-			}
+			private int? fps;
 
-			public string AudioProfile
-			{
-				get
-				{
-					return audioProfile;
-				}
-				set	
-				{
-					audioProfile = value;
-				}
-			}
+			private string audioProfile;
 
-			public string AudioCodec
-			{
-				get
-				{
-					return audioCodec;
-				}
-				set	
-				{
-					audioCodec = value;
-				}
-			}
-
-			public int? AudioRate
-			{
-				get
-				{
-					return audioRate;
-				}
-				set	
-				{
-					audioRate = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "AudioBitrate")]
 			public int? AudioBitrate
 			{
 				get
@@ -354,6 +234,137 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Template")]
+			public string Template
+			{
+				get
+				{
+					return template;
+				}
+				set	
+				{
+					template = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Height")]
+			public int? Height
+			{
+				get
+				{
+					return height;
+				}
+				set	
+				{
+					height = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TemplateType")]
+			public string TemplateType
+			{
+				get
+				{
+					return templateType;
+				}
+				set	
+				{
+					templateType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "BandWidth")]
+			public int? BandWidth
+			{
+				get
+				{
+					return bandWidth;
+				}
+				set	
+				{
+					bandWidth = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Profile")]
+			public int? Profile
+			{
+				get
+				{
+					return profile;
+				}
+				set	
+				{
+					profile = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AudioRate")]
+			public int? AudioRate
+			{
+				get
+				{
+					return audioRate;
+				}
+				set	
+				{
+					audioRate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AudioCodec")]
+			public string AudioCodec
+			{
+				get
+				{
+					return audioCodec;
+				}
+				set	
+				{
+					audioCodec = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Gop")]
+			public string Gop
+			{
+				get
+				{
+					return gop;
+				}
+				set	
+				{
+					gop = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Width")]
+			public int? Width
+			{
+				get
+				{
+					return width;
+				}
+				set	
+				{
+					width = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "VideoBitrate")]
+			public int? VideoBitrate
+			{
+				get
+				{
+					return videoBitrate;
+				}
+				set	
+				{
+					videoBitrate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AudioChannelNum")]
 			public int? AudioChannelNum
 			{
 				get
@@ -366,15 +377,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public int? BandWidth
+			[JsonProperty(PropertyName = "Fps")]
+			public int? Fps
 			{
 				get
 				{
-					return bandWidth;
+					return fps;
 				}
 				set	
 				{
-					bandWidth = value;
+					fps = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AudioProfile")]
+			public string AudioProfile
+			{
+				get
+				{
+					return audioProfile;
+				}
+				set	
+				{
+					audioProfile = value;
 				}
 			}
 		}

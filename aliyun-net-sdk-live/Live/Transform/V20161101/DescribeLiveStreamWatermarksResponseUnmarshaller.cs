@@ -36,18 +36,18 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeLiveStreamWatermarksResponse.DescribeLiveStreamWatermarks_Watermark> describeLiveStreamWatermarksResponse_watermarkList = new List<DescribeLiveStreamWatermarksResponse.DescribeLiveStreamWatermarks_Watermark>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveStreamWatermarks.WatermarkList.Length"); i++) {
 				DescribeLiveStreamWatermarksResponse.DescribeLiveStreamWatermarks_Watermark watermark = new DescribeLiveStreamWatermarksResponse.DescribeLiveStreamWatermarks_Watermark();
-				watermark.TemplateId = _ctx.StringValue("DescribeLiveStreamWatermarks.WatermarkList["+ i +"].TemplateId");
-				watermark.Name = _ctx.StringValue("DescribeLiveStreamWatermarks.WatermarkList["+ i +"].Name");
 				watermark.Type = _ctx.IntegerValue("DescribeLiveStreamWatermarks.WatermarkList["+ i +"].Type");
-				watermark.Description = _ctx.StringValue("DescribeLiveStreamWatermarks.WatermarkList["+ i +"].Description");
-				watermark.RefWidth = _ctx.IntegerValue("DescribeLiveStreamWatermarks.WatermarkList["+ i +"].RefWidth");
-				watermark.RefHeight = _ctx.IntegerValue("DescribeLiveStreamWatermarks.WatermarkList["+ i +"].RefHeight");
 				watermark.XOffset = _ctx.FloatValue("DescribeLiveStreamWatermarks.WatermarkList["+ i +"].XOffset");
+				watermark.RefWidth = _ctx.IntegerValue("DescribeLiveStreamWatermarks.WatermarkList["+ i +"].RefWidth");
 				watermark.YOffset = _ctx.FloatValue("DescribeLiveStreamWatermarks.WatermarkList["+ i +"].YOffset");
 				watermark.Height = _ctx.IntegerValue("DescribeLiveStreamWatermarks.WatermarkList["+ i +"].Height");
-				watermark.Transparency = _ctx.IntegerValue("DescribeLiveStreamWatermarks.WatermarkList["+ i +"].Transparency");
-				watermark.OffsetCorner = _ctx.StringValue("DescribeLiveStreamWatermarks.WatermarkList["+ i +"].OffsetCorner");
+				watermark.RefHeight = _ctx.IntegerValue("DescribeLiveStreamWatermarks.WatermarkList["+ i +"].RefHeight");
 				watermark.PictureUrl = _ctx.StringValue("DescribeLiveStreamWatermarks.WatermarkList["+ i +"].PictureUrl");
+				watermark.Transparency = _ctx.IntegerValue("DescribeLiveStreamWatermarks.WatermarkList["+ i +"].Transparency");
+				watermark.Description = _ctx.StringValue("DescribeLiveStreamWatermarks.WatermarkList["+ i +"].Description");
+				watermark.OffsetCorner = _ctx.StringValue("DescribeLiveStreamWatermarks.WatermarkList["+ i +"].OffsetCorner");
+				watermark.Name = _ctx.StringValue("DescribeLiveStreamWatermarks.WatermarkList["+ i +"].Name");
+				watermark.TemplateId = _ctx.StringValue("DescribeLiveStreamWatermarks.WatermarkList["+ i +"].TemplateId");
 
 				describeLiveStreamWatermarksResponse_watermarkList.Add(watermark);
 			}

@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -48,6 +49,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private int? pageSize;
 
+		private string normType;
+
 		private string casterId;
 
 		private string endTime;
@@ -60,6 +63,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private int? status;
 
+		[JsonProperty(PropertyName = "StartTime")]
 		public string StartTime
 		{
 			get
@@ -73,6 +77,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNum")]
 		public int? PageNum
 		{
 			get
@@ -86,6 +91,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "CasterName")]
 		public string CasterName
 		{
 			get
@@ -99,6 +105,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get
@@ -112,6 +119,21 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "NormType")]
+		public string NormType
+		{
+			get
+			{
+				return normType;
+			}
+			set	
+			{
+				normType = value;
+				DictionaryUtil.Add(QueryParameters, "NormType", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "CasterId")]
 		public string CasterId
 		{
 			get
@@ -125,6 +147,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "EndTime")]
 		public string EndTime
 		{
 			get
@@ -138,6 +161,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -151,6 +175,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OrderByModifyAsc")]
 		public string OrderByModifyAsc
 		{
 			get
@@ -164,6 +189,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ChargeType")]
 		public int? ChargeType
 		{
 			get
@@ -177,6 +203,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Status")]
 		public int? Status
 		{
 			get

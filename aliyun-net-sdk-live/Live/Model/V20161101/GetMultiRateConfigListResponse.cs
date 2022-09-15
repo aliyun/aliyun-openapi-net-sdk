@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,38 +25,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class GetMultiRateConfigListResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? code;
 
 		private string message;
 
-		private int? code;
+		private string requestId;
 
 		private List<GetMultiRateConfigList_Info> groupInfo;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Code")]
 		public int? Code
 		{
 			get
@@ -69,6 +46,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "GroupInfo")]
 		public List<GetMultiRateConfigList_Info> GroupInfo
 		{
 			get
@@ -84,38 +88,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class GetMultiRateConfigList_Info
 		{
 
-			private string app;
-
-			private string avFormat;
-
 			private string groupId;
 
 			private int? count;
 
-			public string App
-			{
-				get
-				{
-					return app;
-				}
-				set	
-				{
-					app = value;
-				}
-			}
+			private string app;
 
-			public string AvFormat
-			{
-				get
-				{
-					return avFormat;
-				}
-				set	
-				{
-					avFormat = value;
-				}
-			}
+			private string avFormat;
 
+			[JsonProperty(PropertyName = "GroupId")]
 			public string GroupId
 			{
 				get
@@ -128,6 +109,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Count")]
 			public int? Count
 			{
 				get
@@ -137,6 +119,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					count = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "App")]
+			public string App
+			{
+				get
+				{
+					return app;
+				}
+				set	
+				{
+					app = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AvFormat")]
+			public string AvFormat
+			{
+				get
+				{
+					return avFormat;
+				}
+				set	
+				{
+					avFormat = value;
 				}
 			}
 		}

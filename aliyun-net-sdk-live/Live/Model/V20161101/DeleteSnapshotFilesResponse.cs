@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,38 +25,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DeleteSnapshotFilesResponse : AcsResponse
 	{
 
+		private int? failureCount;
+
 		private string requestId;
 
 		private int? successCount;
 
-		private int? failureCount;
-
 		private List<DeleteSnapshotFiles_SnapshotDeleteInfo> snapshotDeleteInfoList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? SuccessCount
-		{
-			get
-			{
-				return successCount;
-			}
-			set	
-			{
-				successCount = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "FailureCount")]
 		public int? FailureCount
 		{
 			get
@@ -69,6 +46,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "SuccessCount")]
+		public int? SuccessCount
+		{
+			get
+			{
+				return successCount;
+			}
+			set	
+			{
+				successCount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "SnapshotDeleteInfoList")]
 		public List<DeleteSnapshotFiles_SnapshotDeleteInfo> SnapshotDeleteInfoList
 		{
 			get
@@ -84,22 +88,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DeleteSnapshotFiles_SnapshotDeleteInfo
 		{
 
-			private long? createTimestamp;
-
 			private string message;
 
-			public long? CreateTimestamp
-			{
-				get
-				{
-					return createTimestamp;
-				}
-				set	
-				{
-					createTimestamp = value;
-				}
-			}
+			private long? createTimestamp;
 
+			[JsonProperty(PropertyName = "Message")]
 			public string Message
 			{
 				get
@@ -109,6 +102,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					message = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CreateTimestamp")]
+			public long? CreateTimestamp
+			{
+				get
+				{
+					return createTimestamp;
+				}
+				set	
+				{
+					createTimestamp = value;
 				}
 			}
 		}

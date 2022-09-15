@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,24 +25,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class ListPlaylistResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? total;
+
+		private string requestId;
 
 		private List<ListPlaylist_ProgramInfo> programList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Total")]
 		public int? Total
 		{
 			get
@@ -55,6 +44,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ProgramList")]
 		public List<ListPlaylist_ProgramInfo> ProgramList
 		{
 			get
@@ -70,66 +73,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class ListPlaylist_ProgramInfo
 		{
 
-			private string programId;
+			private int? status;
+
+			private int? repeatNumber;
 
 			private string programName;
+
+			private string programId;
 
 			private string casterId;
 
 			private string domainName;
 
-			private int? repeatNumber;
-
-			private int? status;
-
-			public string ProgramId
+			[JsonProperty(PropertyName = "Status")]
+			public int? Status
 			{
 				get
 				{
-					return programId;
+					return status;
 				}
 				set	
 				{
-					programId = value;
+					status = value;
 				}
 			}
 
-			public string ProgramName
-			{
-				get
-				{
-					return programName;
-				}
-				set	
-				{
-					programName = value;
-				}
-			}
-
-			public string CasterId
-			{
-				get
-				{
-					return casterId;
-				}
-				set	
-				{
-					casterId = value;
-				}
-			}
-
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "RepeatNumber")]
 			public int? RepeatNumber
 			{
 				get
@@ -142,15 +111,55 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public int? Status
+			[JsonProperty(PropertyName = "ProgramName")]
+			public string ProgramName
 			{
 				get
 				{
-					return status;
+					return programName;
 				}
 				set	
 				{
-					status = value;
+					programName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ProgramId")]
+			public string ProgramId
+			{
+				get
+				{
+					return programId;
+				}
+				set	
+				{
+					programId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CasterId")]
+			public string CasterId
+			{
+				get
+				{
+					return casterId;
+				}
+				set	
+				{
+					casterId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
 				}
 			}
 		}

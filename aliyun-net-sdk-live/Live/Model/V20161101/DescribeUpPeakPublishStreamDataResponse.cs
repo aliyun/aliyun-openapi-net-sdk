@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeUpPeakPublishStreamData_DescribeUpPeakPublishStreamData> describeUpPeakPublishStreamDatas;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DescribeUpPeakPublishStreamDatas")]
 		public List<DescribeUpPeakPublishStreamData_DescribeUpPeakPublishStreamData> DescribeUpPeakPublishStreamDatas
 		{
 			get
@@ -56,40 +58,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeUpPeakPublishStreamData_DescribeUpPeakPublishStreamData
 		{
 
-			private int? publishStreamNum;
-
-			private string peakTime;
-
 			private string queryTime;
-
-			private string statName;
 
 			private string bandWidth;
 
-			public int? PublishStreamNum
-			{
-				get
-				{
-					return publishStreamNum;
-				}
-				set	
-				{
-					publishStreamNum = value;
-				}
-			}
+			private string statName;
 
-			public string PeakTime
-			{
-				get
-				{
-					return peakTime;
-				}
-				set	
-				{
-					peakTime = value;
-				}
-			}
+			private string peakTime;
 
+			private int? publishStreamNum;
+
+			[JsonProperty(PropertyName = "QueryTime")]
 			public string QueryTime
 			{
 				get
@@ -102,6 +81,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "BandWidth")]
+			public string BandWidth
+			{
+				get
+				{
+					return bandWidth;
+				}
+				set	
+				{
+					bandWidth = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StatName")]
 			public string StatName
 			{
 				get
@@ -114,15 +107,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string BandWidth
+			[JsonProperty(PropertyName = "PeakTime")]
+			public string PeakTime
 			{
 				get
 				{
-					return bandWidth;
+					return peakTime;
 				}
 				set	
 				{
-					bandWidth = value;
+					peakTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PublishStreamNum")]
+			public int? PublishStreamNum
+			{
+				get
+				{
+					return publishStreamNum;
+				}
+				set	
+				{
+					publishStreamNum = value;
 				}
 			}
 		}

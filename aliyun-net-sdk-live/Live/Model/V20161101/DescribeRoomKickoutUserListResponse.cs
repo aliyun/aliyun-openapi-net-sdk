@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,38 +25,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeRoomKickoutUserListResponse : AcsResponse
 	{
 
+		private int? totalPage;
+
 		private string requestId;
 
 		private int? totalNum;
 
-		private int? totalPage;
-
 		private List<DescribeRoomKickoutUserList_User> userList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? TotalNum
-		{
-			get
-			{
-				return totalNum;
-			}
-			set	
-			{
-				totalNum = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "TotalPage")]
 		public int? TotalPage
 		{
 			get
@@ -69,6 +46,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TotalNum")]
+		public int? TotalNum
+		{
+			get
+			{
+				return totalNum;
+			}
+			set	
+			{
+				totalNum = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "UserList")]
 		public List<DescribeRoomKickoutUserList_User> UserList
 		{
 			get
@@ -84,24 +88,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeRoomKickoutUserList_User
 		{
 
-			private string appUid;
-
 			private string opStartTime;
 
 			private string opEndTime;
 
-			public string AppUid
-			{
-				get
-				{
-					return appUid;
-				}
-				set	
-				{
-					appUid = value;
-				}
-			}
+			private string appUid;
 
+			[JsonProperty(PropertyName = "OpStartTime")]
 			public string OpStartTime
 			{
 				get
@@ -114,6 +107,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "OpEndTime")]
 			public string OpEndTime
 			{
 				get
@@ -123,6 +117,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					opEndTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AppUid")]
+			public string AppUid
+			{
+				get
+				{
+					return appUid;
+				}
+				set	
+				{
+					appUid = value;
 				}
 			}
 		}

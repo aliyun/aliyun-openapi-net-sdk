@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeLiveStreamsControlHistory_LiveStreamControlInfo> controlInfo;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ControlInfo")]
 		public List<DescribeLiveStreamsControlHistory_LiveStreamControlInfo> ControlInfo
 		{
 			get
@@ -56,26 +58,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamsControlHistory_LiveStreamControlInfo
 		{
 
-			private string streamName;
-
 			private string clientIP;
-
-			private string action;
 
 			private string timeStamp;
 
-			public string StreamName
-			{
-				get
-				{
-					return streamName;
-				}
-				set	
-				{
-					streamName = value;
-				}
-			}
+			private string action;
 
+			private string streamName;
+
+			[JsonProperty(PropertyName = "ClientIP")]
 			public string ClientIP
 			{
 				get
@@ -88,6 +79,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "TimeStamp")]
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Action")]
 			public string Action
 			{
 				get
@@ -100,15 +105,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string TimeStamp
+			[JsonProperty(PropertyName = "StreamName")]
+			public string StreamName
 			{
 				get
 				{
-					return timeStamp;
+					return streamName;
 				}
 				set	
 				{
-					timeStamp = value;
+					streamName = value;
 				}
 			}
 		}

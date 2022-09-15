@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,24 +25,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveStreamSnapshotInfoResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string nextStartTime;
+
+		private string requestId;
 
 		private List<DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo> liveStreamSnapshotInfoList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "NextStartTime")]
 		public string NextStartTime
 		{
 			get
@@ -55,6 +44,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "LiveStreamSnapshotInfoList")]
 		public List<DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo> LiveStreamSnapshotInfoList
 		{
 			get
@@ -70,38 +73,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo
 		{
 
-			private string ossEndpoint;
+			private string ossObject;
 
 			private string ossBucket;
 
-			private string ossObject;
-
 			private string createTime;
 
-			public string OssEndpoint
-			{
-				get
-				{
-					return ossEndpoint;
-				}
-				set	
-				{
-					ossEndpoint = value;
-				}
-			}
+			private string ossEndpoint;
 
-			public string OssBucket
-			{
-				get
-				{
-					return ossBucket;
-				}
-				set	
-				{
-					ossBucket = value;
-				}
-			}
+			private bool? isOverlay;
 
+			private long? createTimestamp;
+
+			[JsonProperty(PropertyName = "OssObject")]
 			public string OssObject
 			{
 				get
@@ -114,6 +98,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "OssBucket")]
+			public string OssBucket
+			{
+				get
+				{
+					return ossBucket;
+				}
+				set	
+				{
+					ossBucket = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CreateTime")]
 			public string CreateTime
 			{
 				get
@@ -123,6 +121,45 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					createTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OssEndpoint")]
+			public string OssEndpoint
+			{
+				get
+				{
+					return ossEndpoint;
+				}
+				set	
+				{
+					ossEndpoint = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "IsOverlay")]
+			public bool? IsOverlay
+			{
+				get
+				{
+					return isOverlay;
+				}
+				set	
+				{
+					isOverlay = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CreateTimestamp")]
+			public long? CreateTimestamp
+			{
+				get
+				{
+					return createTimestamp;
+				}
+				set	
+				{
+					createTimestamp = value;
 				}
 			}
 		}

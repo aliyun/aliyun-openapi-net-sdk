@@ -36,13 +36,13 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeLiveDomainStreamTranscodeDataResponse.DescribeLiveDomainStreamTranscodeData_TranscodeData> describeLiveDomainStreamTranscodeDataResponse_transcodeDataList = new List<DescribeLiveDomainStreamTranscodeDataResponse.DescribeLiveDomainStreamTranscodeData_TranscodeData>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveDomainStreamTranscodeData.TranscodeDataList.Length"); i++) {
 				DescribeLiveDomainStreamTranscodeDataResponse.DescribeLiveDomainStreamTranscodeData_TranscodeData transcodeData = new DescribeLiveDomainStreamTranscodeDataResponse.DescribeLiveDomainStreamTranscodeData_TranscodeData();
-				transcodeData.TimeStamp = _ctx.StringValue("DescribeLiveDomainStreamTranscodeData.TranscodeDataList["+ i +"].TimeStamp");
+				transcodeData.TanscodeType = _ctx.StringValue("DescribeLiveDomainStreamTranscodeData.TranscodeDataList["+ i +"].TanscodeType");
 				transcodeData.Domain = _ctx.StringValue("DescribeLiveDomainStreamTranscodeData.TranscodeDataList["+ i +"].Domain");
 				transcodeData.Region = _ctx.StringValue("DescribeLiveDomainStreamTranscodeData.TranscodeDataList["+ i +"].Region");
-				transcodeData.TanscodeType = _ctx.StringValue("DescribeLiveDomainStreamTranscodeData.TranscodeDataList["+ i +"].TanscodeType");
-				transcodeData.Resolution = _ctx.StringValue("DescribeLiveDomainStreamTranscodeData.TranscodeDataList["+ i +"].Resolution");
-				transcodeData.Fps = _ctx.StringValue("DescribeLiveDomainStreamTranscodeData.TranscodeDataList["+ i +"].Fps");
 				transcodeData.Duration = _ctx.IntegerValue("DescribeLiveDomainStreamTranscodeData.TranscodeDataList["+ i +"].Duration");
+				transcodeData.TimeStamp = _ctx.StringValue("DescribeLiveDomainStreamTranscodeData.TranscodeDataList["+ i +"].TimeStamp");
+				transcodeData.Fps = _ctx.StringValue("DescribeLiveDomainStreamTranscodeData.TranscodeDataList["+ i +"].Fps");
+				transcodeData.Resolution = _ctx.StringValue("DescribeLiveDomainStreamTranscodeData.TranscodeDataList["+ i +"].Resolution");
 
 				describeLiveDomainStreamTranscodeDataResponse_transcodeDataList.Add(transcodeData);
 			}

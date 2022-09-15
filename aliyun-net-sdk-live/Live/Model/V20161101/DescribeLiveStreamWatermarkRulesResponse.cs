@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeLiveStreamWatermarkRules_RuleInfo> ruleInfoList;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RuleInfoList")]
 		public List<DescribeLiveStreamWatermarkRules_RuleInfo> RuleInfoList
 		{
 			get
@@ -56,44 +58,21 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamWatermarkRules_RuleInfo
 		{
 
-			private string ruleId;
-
-			private string name;
-
 			private string domain;
+
+			private string description;
 
 			private string app;
 
 			private string stream;
 
+			private string name;
+
 			private string templateId;
 
-			private string description;
+			private string ruleId;
 
-			public string RuleId
-			{
-				get
-				{
-					return ruleId;
-				}
-				set	
-				{
-					ruleId = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Domain")]
 			public string Domain
 			{
 				get
@@ -106,6 +85,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Description")]
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "App")]
 			public string App
 			{
 				get
@@ -118,6 +111,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Stream")]
 			public string Stream
 			{
 				get
@@ -130,6 +124,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Name")]
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TemplateId")]
 			public string TemplateId
 			{
 				get
@@ -142,15 +150,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string Description
+			[JsonProperty(PropertyName = "RuleId")]
+			public string RuleId
 			{
 				get
 				{
-					return description;
+					return ruleId;
 				}
 				set	
 				{
-					description = value;
+					ruleId = value;
 				}
 			}
 		}

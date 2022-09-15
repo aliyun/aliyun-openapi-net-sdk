@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,24 +25,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveStreamMonitorListResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? total;
+
+		private string requestId;
 
 		private List<DescribeLiveStreamMonitorList_LiveStreamMonitorInfo> liveStreamMonitorList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Total")]
 		public int? Total
 		{
 			get
@@ -55,6 +44,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "LiveStreamMonitorList")]
 		public List<DescribeLiveStreamMonitorList_LiveStreamMonitorInfo> LiveStreamMonitorList
 		{
 			get
@@ -70,21 +73,21 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamMonitorList_LiveStreamMonitorInfo
 		{
 
-			private string monitorId;
+			private int? status;
 
-			private string monitorName;
+			private string startTime;
+
+			private string monitorId;
 
 			private string domain;
 
 			private string outputTemplate;
 
-			private int? status;
-
 			private string region;
 
 			private int? audioFrom;
 
-			private string startTime;
+			private string monitorName;
 
 			private string stopTime;
 
@@ -92,54 +95,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private DescribeLiveStreamMonitorList_OutputUrls outputUrls;
 
-			public string MonitorId
-			{
-				get
-				{
-					return monitorId;
-				}
-				set	
-				{
-					monitorId = value;
-				}
-			}
-
-			public string MonitorName
-			{
-				get
-				{
-					return monitorName;
-				}
-				set	
-				{
-					monitorName = value;
-				}
-			}
-
-			public string Domain
-			{
-				get
-				{
-					return domain;
-				}
-				set	
-				{
-					domain = value;
-				}
-			}
-
-			public string OutputTemplate
-			{
-				get
-				{
-					return outputTemplate;
-				}
-				set	
-				{
-					outputTemplate = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Status")]
 			public int? Status
 			{
 				get
@@ -152,30 +108,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string Region
-			{
-				get
-				{
-					return region;
-				}
-				set	
-				{
-					region = value;
-				}
-			}
-
-			public int? AudioFrom
-			{
-				get
-				{
-					return audioFrom;
-				}
-				set	
-				{
-					audioFrom = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "StartTime")]
 			public string StartTime
 			{
 				get
@@ -188,6 +121,85 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "MonitorId")]
+			public string MonitorId
+			{
+				get
+				{
+					return monitorId;
+				}
+				set	
+				{
+					monitorId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Domain")]
+			public string Domain
+			{
+				get
+				{
+					return domain;
+				}
+				set	
+				{
+					domain = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OutputTemplate")]
+			public string OutputTemplate
+			{
+				get
+				{
+					return outputTemplate;
+				}
+				set	
+				{
+					outputTemplate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Region")]
+			public string Region
+			{
+				get
+				{
+					return region;
+				}
+				set	
+				{
+					region = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AudioFrom")]
+			public int? AudioFrom
+			{
+				get
+				{
+					return audioFrom;
+				}
+				set	
+				{
+					audioFrom = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MonitorName")]
+			public string MonitorName
+			{
+				get
+				{
+					return monitorName;
+				}
+				set	
+				{
+					monitorName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StopTime")]
 			public string StopTime
 			{
 				get
@@ -200,6 +212,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "InputList")]
 			public List<DescribeLiveStreamMonitorList_InputConfig> InputList
 			{
 				get
@@ -212,6 +225,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "OutputUrls")]
 			public DescribeLiveStreamMonitorList_OutputUrls OutputUrls
 			{
 				get
@@ -229,16 +243,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private int? index;
 
+				private string inputUrl;
+
 				private int? layoutId;
 
 				private string streamName;
-
-				private string inputUrl;
 
 				private DescribeLiveStreamMonitorList_LayoutConfig layoutConfig;
 
 				private DescribeLiveStreamMonitorList_PlayConfig playConfig;
 
+				[JsonProperty(PropertyName = "Index")]
 				public int? Index
 				{
 					get
@@ -251,30 +266,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				public int? LayoutId
-				{
-					get
-					{
-						return layoutId;
-					}
-					set	
-					{
-						layoutId = value;
-					}
-				}
-
-				public string StreamName
-				{
-					get
-					{
-						return streamName;
-					}
-					set	
-					{
-						streamName = value;
-					}
-				}
-
+				[JsonProperty(PropertyName = "InputUrl")]
 				public string InputUrl
 				{
 					get
@@ -287,6 +279,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
+				[JsonProperty(PropertyName = "LayoutId")]
+				public int? LayoutId
+				{
+					get
+					{
+						return layoutId;
+					}
+					set	
+					{
+						layoutId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "StreamName")]
+				public string StreamName
+				{
+					get
+					{
+						return streamName;
+					}
+					set	
+					{
+						streamName = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "LayoutConfig")]
 				public DescribeLiveStreamMonitorList_LayoutConfig LayoutConfig
 				{
 					get
@@ -299,6 +318,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
+				[JsonProperty(PropertyName = "PlayConfig")]
 				public DescribeLiveStreamMonitorList_PlayConfig PlayConfig
 				{
 					get
@@ -322,6 +342,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 					private List<string> sizeNormalized;
 
+					[JsonProperty(PropertyName = "FillMode")]
 					public string FillMode
 					{
 						get
@@ -334,6 +355,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 						}
 					}
 
+					[JsonProperty(PropertyName = "PositionRefer")]
 					public string PositionRefer
 					{
 						get
@@ -346,6 +368,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 						}
 					}
 
+					[JsonProperty(PropertyName = "PositionNormalized")]
 					public List<string> PositionNormalized
 					{
 						get
@@ -358,6 +381,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 						}
 					}
 
+					[JsonProperty(PropertyName = "SizeNormalized")]
 					public List<string> SizeNormalized
 					{
 						get
@@ -376,6 +400,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 					private float? volumeRate;
 
+					[JsonProperty(PropertyName = "VolumeRate")]
 					public float? VolumeRate
 					{
 						get
@@ -393,22 +418,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeLiveStreamMonitorList_OutputUrls
 			{
 
-				private string rtmpUrl;
-
 				private string flvUrl;
 
-				public string RtmpUrl
-				{
-					get
-					{
-						return rtmpUrl;
-					}
-					set	
-					{
-						rtmpUrl = value;
-					}
-				}
+				private string rtmpUrl;
 
+				[JsonProperty(PropertyName = "FlvUrl")]
 				public string FlvUrl
 				{
 					get
@@ -418,6 +432,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						flvUrl = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "RtmpUrl")]
+				public string RtmpUrl
+				{
+					get
+					{
+						return rtmpUrl;
+					}
+					set	
+					{
+						rtmpUrl = value;
 					}
 				}
 			}

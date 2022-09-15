@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private DescribeLiveRecordNotifyConfig_LiveRecordNotifyConfig liveRecordNotifyConfig;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "LiveRecordNotifyConfig")]
 		public DescribeLiveRecordNotifyConfig_LiveRecordNotifyConfig LiveRecordNotifyConfig
 		{
 			get
@@ -56,38 +58,28 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveRecordNotifyConfig_LiveRecordNotifyConfig
 		{
 
+			private bool? needStatusNotify;
+
+			private string onDemandUrl;
+
 			private string domainName;
 
 			private string notifyUrl;
 
-			private string onDemandUrl;
-
-			private bool? needStatusNotify;
-
-			public string DomainName
+			[JsonProperty(PropertyName = "NeedStatusNotify")]
+			public bool? NeedStatusNotify
 			{
 				get
 				{
-					return domainName;
+					return needStatusNotify;
 				}
 				set	
 				{
-					domainName = value;
+					needStatusNotify = value;
 				}
 			}
 
-			public string NotifyUrl
-			{
-				get
-				{
-					return notifyUrl;
-				}
-				set	
-				{
-					notifyUrl = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "OnDemandUrl")]
 			public string OnDemandUrl
 			{
 				get
@@ -100,15 +92,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public bool? NeedStatusNotify
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
 			{
 				get
 				{
-					return needStatusNotify;
+					return domainName;
 				}
 				set	
 				{
-					needStatusNotify = value;
+					domainName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "NotifyUrl")]
+			public string NotifyUrl
+			{
+				get
+				{
+					return notifyUrl;
+				}
+				set	
+				{
+					notifyUrl = value;
 				}
 			}
 		}

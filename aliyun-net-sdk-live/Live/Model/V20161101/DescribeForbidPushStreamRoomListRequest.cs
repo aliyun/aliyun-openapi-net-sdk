@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -50,6 +51,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string appId;
 
+		[JsonProperty(PropertyName = "PageNum")]
 		public int? PageNum
 		{
 			get
@@ -63,6 +65,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get
@@ -76,6 +79,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Order")]
 		public string Order
 		{
 			get
@@ -89,6 +93,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -102,6 +107,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "AppId")]
 		public string AppId
 		{
 			get

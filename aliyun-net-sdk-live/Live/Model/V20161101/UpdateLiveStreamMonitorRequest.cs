@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -56,6 +57,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string domain;
 
+		[JsonProperty(PropertyName = "MonitorId")]
 		public string MonitorId
 		{
 			get
@@ -69,6 +71,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "MonitorName")]
 		public string MonitorName
 		{
 			get
@@ -82,6 +85,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Stream")]
 		public string Stream
 		{
 			get
@@ -95,6 +99,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OutputTemplate")]
 		public string OutputTemplate
 		{
 			get
@@ -108,6 +113,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "App")]
 		public string App
 		{
 			get
@@ -121,6 +127,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "InputList")]
 		public string InputList
 		{
 			get
@@ -134,6 +141,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -147,6 +155,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Domain")]
 		public string Domain
 		{
 			get

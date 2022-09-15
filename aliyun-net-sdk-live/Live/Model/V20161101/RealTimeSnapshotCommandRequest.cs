@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -40,6 +41,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
+		private int? source;
+
 		private int? mode;
 
 		private string appName;
@@ -54,6 +57,21 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private int? interval;
 
+		[JsonProperty(PropertyName = "Source")]
+		public int? Source
+		{
+			get
+			{
+				return source;
+			}
+			set	
+			{
+				source = value;
+				DictionaryUtil.Add(QueryParameters, "Source", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "Mode")]
 		public int? Mode
 		{
 			get
@@ -67,6 +85,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "AppName")]
 		public string AppName
 		{
 			get
@@ -80,6 +99,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "StreamName")]
 		public string StreamName
 		{
 			get
@@ -93,6 +113,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DomainName")]
 		public string DomainName
 		{
 			get
@@ -106,6 +127,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -119,6 +141,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Command")]
 		public string Command
 		{
 			get
@@ -132,6 +155,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Interval")]
 		public int? Interval
 		{
 			get

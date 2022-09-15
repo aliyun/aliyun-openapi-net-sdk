@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -52,6 +53,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<string> recordIds = new List<string>(){ };
 
+		[JsonProperty(PropertyName = "RemoveFile")]
 		public string RemoveFile
 		{
 			get
@@ -65,6 +67,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "AppName")]
 		public string AppName
 		{
 			get
@@ -78,6 +81,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "StreamName")]
 		public string StreamName
 		{
 			get
@@ -91,6 +95,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DomainName")]
 		public string DomainName
 		{
 			get
@@ -104,6 +109,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -117,6 +123,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RecordId")]
 		public List<string> RecordIds
 		{
 			get
@@ -127,10 +134,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set
 			{
 				recordIds = value;
-				for (int i = 0; i < recordIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"RecordId." + (i + 1) , recordIds[i]);
-				}
 			}
 		}
 

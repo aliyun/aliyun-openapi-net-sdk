@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeLiveStreamBitRateData_FrameRateAndBitRateInfo> frameRateAndBitRateInfos;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "FrameRateAndBitRateInfos")]
 		public List<DescribeLiveStreamBitRateData_FrameRateAndBitRateInfo> FrameRateAndBitRateInfos
 		{
 			get
@@ -56,28 +58,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamBitRateData_FrameRateAndBitRateInfo
 		{
 
-			private string streamUrl;
+			private string time;
 
 			private float? videoFrameRate;
 
 			private float? audioFrameRate;
 
+			private string streamUrl;
+
 			private float? bitRate;
 
-			private string time;
-
-			public string StreamUrl
+			[JsonProperty(PropertyName = "Time")]
+			public string Time
 			{
 				get
 				{
-					return streamUrl;
+					return time;
 				}
 				set	
 				{
-					streamUrl = value;
+					time = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "VideoFrameRate")]
 			public float? VideoFrameRate
 			{
 				get
@@ -90,6 +94,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "AudioFrameRate")]
 			public float? AudioFrameRate
 			{
 				get
@@ -102,6 +107,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "StreamUrl")]
+			public string StreamUrl
+			{
+				get
+				{
+					return streamUrl;
+				}
+				set	
+				{
+					streamUrl = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "BitRate")]
 			public float? BitRate
 			{
 				get
@@ -111,18 +130,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					bitRate = value;
-				}
-			}
-
-			public string Time
-			{
-				get
-				{
-					return time;
-				}
-				set	
-				{
-					time = value;
 				}
 			}
 		}

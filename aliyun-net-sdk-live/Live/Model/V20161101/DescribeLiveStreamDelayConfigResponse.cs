@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -33,6 +33,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private DescribeLiveStreamDelayConfig_LiveStreamRtmpDelayConfig liveStreamRtmpDelayConfig;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -45,6 +46,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "LiveStreamHlsDelayConfig")]
 		public DescribeLiveStreamDelayConfig_LiveStreamHlsDelayConfig LiveStreamHlsDelayConfig
 		{
 			get
@@ -57,6 +59,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "LiveStreamFlvDelayConfig")]
 		public DescribeLiveStreamDelayConfig_LiveStreamFlvDelayConfig LiveStreamFlvDelayConfig
 		{
 			get
@@ -69,6 +72,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "LiveStreamRtmpDelayConfig")]
 		public DescribeLiveStreamDelayConfig_LiveStreamRtmpDelayConfig LiveStreamRtmpDelayConfig
 		{
 			get
@@ -84,22 +88,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamDelayConfig_LiveStreamHlsDelayConfig
 		{
 
-			private string level;
-
 			private int? delay;
 
-			public string Level
-			{
-				get
-				{
-					return level;
-				}
-				set	
-				{
-					level = value;
-				}
-			}
+			private string level;
 
+			[JsonProperty(PropertyName = "Delay")]
 			public int? Delay
 			{
 				get
@@ -109,6 +102,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					delay = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Level")]
+			public string Level
+			{
+				get
+				{
+					return level;
+				}
+				set	
+				{
+					level = value;
 				}
 			}
 		}
@@ -116,22 +122,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamDelayConfig_LiveStreamFlvDelayConfig
 		{
 
-			private string level;
-
 			private int? delay;
 
-			public string Level
-			{
-				get
-				{
-					return level;
-				}
-				set	
-				{
-					level = value;
-				}
-			}
+			private string level;
 
+			[JsonProperty(PropertyName = "Delay")]
 			public int? Delay
 			{
 				get
@@ -141,6 +136,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					delay = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Level")]
+			public string Level
+			{
+				get
+				{
+					return level;
+				}
+				set	
+				{
+					level = value;
 				}
 			}
 		}
@@ -148,22 +156,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamDelayConfig_LiveStreamRtmpDelayConfig
 		{
 
-			private string level;
-
 			private int? delay;
 
-			public string Level
-			{
-				get
-				{
-					return level;
-				}
-				set	
-				{
-					level = value;
-				}
-			}
+			private string level;
 
+			[JsonProperty(PropertyName = "Delay")]
 			public int? Delay
 			{
 				get
@@ -173,6 +170,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					delay = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Level")]
+			public string Level
+			{
+				get
+				{
+					return level;
+				}
+				set	
+				{
+					level = value;
 				}
 			}
 		}

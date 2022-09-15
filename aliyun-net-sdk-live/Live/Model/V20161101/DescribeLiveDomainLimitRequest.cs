@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -40,25 +41,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private string liveapiRequestFrom;
-
 		private string domainName;
 
 		private long? ownerId;
 
-		public string LiveapiRequestFrom
-		{
-			get
-			{
-				return liveapiRequestFrom;
-			}
-			set	
-			{
-				liveapiRequestFrom = value;
-				DictionaryUtil.Add(QueryParameters, "LiveapiRequestFrom", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "DomainName")]
 		public string DomainName
 		{
 			get
@@ -72,6 +59,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get

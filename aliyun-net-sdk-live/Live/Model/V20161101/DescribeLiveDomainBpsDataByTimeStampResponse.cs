@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,38 +25,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveDomainBpsDataByTimeStampResponse : AcsResponse
 	{
 
+		private string timeStamp;
+
 		private string requestId;
 
 		private string domainName;
 
-		private string timeStamp;
-
 		private List<DescribeLiveDomainBpsDataByTimeStamp_BpsDataModel> bpsDataList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "TimeStamp")]
 		public string TimeStamp
 		{
 			get
@@ -69,6 +46,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DomainName")]
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "BpsDataList")]
 		public List<DescribeLiveDomainBpsDataByTimeStamp_BpsDataModel> BpsDataList
 		{
 			get
@@ -84,26 +88,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDomainBpsDataByTimeStamp_BpsDataModel
 		{
 
-			private string timeStamp;
-
 			private string locationName;
+
+			private string timeStamp;
 
 			private string ispName;
 
 			private long? bps;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "LocationName")]
 			public string LocationName
 			{
 				get
@@ -116,6 +109,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "TimeStamp")]
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "IspName")]
 			public string IspName
 			{
 				get
@@ -128,6 +135,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Bps")]
 			public long? Bps
 			{
 				get

@@ -31,15 +31,15 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveDomainBpsDataByTimeStampResponse describeLiveDomainBpsDataByTimeStampResponse = new DescribeLiveDomainBpsDataByTimeStampResponse();
 
 			describeLiveDomainBpsDataByTimeStampResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveDomainBpsDataByTimeStampResponse.TimeStamp = _ctx.StringValue("DescribeLiveDomainBpsDataByTimeStamp.TimeStamp");
 			describeLiveDomainBpsDataByTimeStampResponse.RequestId = _ctx.StringValue("DescribeLiveDomainBpsDataByTimeStamp.RequestId");
 			describeLiveDomainBpsDataByTimeStampResponse.DomainName = _ctx.StringValue("DescribeLiveDomainBpsDataByTimeStamp.DomainName");
-			describeLiveDomainBpsDataByTimeStampResponse.TimeStamp = _ctx.StringValue("DescribeLiveDomainBpsDataByTimeStamp.TimeStamp");
 
 			List<DescribeLiveDomainBpsDataByTimeStampResponse.DescribeLiveDomainBpsDataByTimeStamp_BpsDataModel> describeLiveDomainBpsDataByTimeStampResponse_bpsDataList = new List<DescribeLiveDomainBpsDataByTimeStampResponse.DescribeLiveDomainBpsDataByTimeStamp_BpsDataModel>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveDomainBpsDataByTimeStamp.BpsDataList.Length"); i++) {
 				DescribeLiveDomainBpsDataByTimeStampResponse.DescribeLiveDomainBpsDataByTimeStamp_BpsDataModel bpsDataModel = new DescribeLiveDomainBpsDataByTimeStampResponse.DescribeLiveDomainBpsDataByTimeStamp_BpsDataModel();
-				bpsDataModel.TimeStamp = _ctx.StringValue("DescribeLiveDomainBpsDataByTimeStamp.BpsDataList["+ i +"].TimeStamp");
 				bpsDataModel.LocationName = _ctx.StringValue("DescribeLiveDomainBpsDataByTimeStamp.BpsDataList["+ i +"].LocationName");
+				bpsDataModel.TimeStamp = _ctx.StringValue("DescribeLiveDomainBpsDataByTimeStamp.BpsDataList["+ i +"].TimeStamp");
 				bpsDataModel.IspName = _ctx.StringValue("DescribeLiveDomainBpsDataByTimeStamp.BpsDataList["+ i +"].IspName");
 				bpsDataModel.Bps = _ctx.LongValue("DescribeLiveDomainBpsDataByTimeStamp.BpsDataList["+ i +"].Bps");
 

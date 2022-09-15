@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,24 +25,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeMixStreamListResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? total;
+
+		private string requestId;
 
 		private List<DescribeMixStreamList_MixStreamInfo> mixStreamList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Total")]
 		public int? Total
 		{
 			get
@@ -55,6 +44,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "MixStreamList")]
 		public List<DescribeMixStreamList_MixStreamInfo> MixStreamList
 		{
 			get
@@ -70,96 +73,25 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeMixStreamList_MixStreamInfo
 		{
 
-			private string mixstreamId;
-
-			private string domainName;
+			private string mixStreamTemplate;
 
 			private string appName;
 
-			private string streamName;
-
 			private string layoutId;
 
-			private int? inputStreamNumber;
-
-			private string mixStreamTemplate;
+			private string streamName;
 
 			private string gmtCreate;
 
+			private string mixstreamId;
+
 			private string gmtModified;
 
-			public string MixstreamId
-			{
-				get
-				{
-					return mixstreamId;
-				}
-				set	
-				{
-					mixstreamId = value;
-				}
-			}
+			private int? inputStreamNumber;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
+			private string domainName;
 
-			public string AppName
-			{
-				get
-				{
-					return appName;
-				}
-				set	
-				{
-					appName = value;
-				}
-			}
-
-			public string StreamName
-			{
-				get
-				{
-					return streamName;
-				}
-				set	
-				{
-					streamName = value;
-				}
-			}
-
-			public string LayoutId
-			{
-				get
-				{
-					return layoutId;
-				}
-				set	
-				{
-					layoutId = value;
-				}
-			}
-
-			public int? InputStreamNumber
-			{
-				get
-				{
-					return inputStreamNumber;
-				}
-				set	
-				{
-					inputStreamNumber = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "MixStreamTemplate")]
 			public string MixStreamTemplate
 			{
 				get
@@ -172,6 +104,46 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "AppName")]
+			public string AppName
+			{
+				get
+				{
+					return appName;
+				}
+				set	
+				{
+					appName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LayoutId")]
+			public string LayoutId
+			{
+				get
+				{
+					return layoutId;
+				}
+				set	
+				{
+					layoutId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StreamName")]
+			public string StreamName
+			{
+				get
+				{
+					return streamName;
+				}
+				set	
+				{
+					streamName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "GmtCreate")]
 			public string GmtCreate
 			{
 				get
@@ -184,6 +156,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "MixstreamId")]
+			public string MixstreamId
+			{
+				get
+				{
+					return mixstreamId;
+				}
+				set	
+				{
+					mixstreamId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "GmtModified")]
 			public string GmtModified
 			{
 				get
@@ -193,6 +179,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					gmtModified = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InputStreamNumber")]
+			public int? InputStreamNumber
+			{
+				get
+				{
+					return inputStreamNumber;
+				}
+				set	
+				{
+					inputStreamNumber = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
 				}
 			}
 		}

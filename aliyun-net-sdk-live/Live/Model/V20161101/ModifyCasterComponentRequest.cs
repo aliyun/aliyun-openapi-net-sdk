@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -60,6 +61,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string textLayerContent;
 
+		[JsonProperty(PropertyName = "ImageLayerContent")]
 		public string ImageLayerContent
 		{
 			get
@@ -73,6 +75,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ComponentName")]
 		public string ComponentName
 		{
 			get
@@ -86,6 +89,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ComponentId")]
 		public string ComponentId
 		{
 			get
@@ -99,6 +103,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "CasterId")]
 		public string CasterId
 		{
 			get
@@ -112,6 +117,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ComponentLayer")]
 		public string ComponentLayer
 		{
 			get
@@ -125,6 +131,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -138,6 +145,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ComponentType")]
 		public string ComponentType
 		{
 			get
@@ -151,6 +159,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Effect")]
 		public string Effect
 		{
 			get
@@ -164,6 +173,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "CaptionLayerContent")]
 		public string CaptionLayerContent
 		{
 			get
@@ -177,6 +187,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "TextLayerContent")]
 		public string TextLayerContent
 		{
 			get

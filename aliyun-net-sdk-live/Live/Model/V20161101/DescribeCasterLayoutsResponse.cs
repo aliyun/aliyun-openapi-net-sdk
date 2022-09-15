@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,24 +25,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeCasterLayoutsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? total;
+
+		private string requestId;
 
 		private List<DescribeCasterLayouts_Layout> layouts;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Total")]
 		public int? Total
 		{
 			get
@@ -55,6 +44,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Layouts")]
 		public List<DescribeCasterLayouts_Layout> Layouts
 		{
 			get
@@ -76,10 +79,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private List<DescribeCasterLayouts_AudioLayer> audioLayers;
 
-			private List<string> blendList;
-
 			private List<string> mixList;
 
+			private List<string> blendList;
+
+			[JsonProperty(PropertyName = "LayoutId")]
 			public string LayoutId
 			{
 				get
@@ -92,6 +96,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "VideoLayers")]
 			public List<DescribeCasterLayouts_VideoLayer> VideoLayers
 			{
 				get
@@ -104,6 +109,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "AudioLayers")]
 			public List<DescribeCasterLayouts_AudioLayer> AudioLayers
 			{
 				get
@@ -116,18 +122,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public List<string> BlendList
-			{
-				get
-				{
-					return blendList;
-				}
-				set	
-				{
-					blendList = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "MixList")]
 			public List<string> MixList
 			{
 				get
@@ -140,45 +135,35 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "BlendList")]
+			public List<string> BlendList
+			{
+				get
+				{
+					return blendList;
+				}
+				set	
+				{
+					blendList = value;
+				}
+			}
+
 			public class DescribeCasterLayouts_VideoLayer
 			{
 
-				private string fillMode;
-
-				private float? heightNormalized;
-
 				private float? widthNormalized;
-
-				private string positionRefer;
 
 				private int? fixedDelayDuration;
 
+				private float? heightNormalized;
+
+				private string fillMode;
+
+				private string positionRefer;
+
 				private List<string> positionNormalizeds;
 
-				public string FillMode
-				{
-					get
-					{
-						return fillMode;
-					}
-					set	
-					{
-						fillMode = value;
-					}
-				}
-
-				public float? HeightNormalized
-				{
-					get
-					{
-						return heightNormalized;
-					}
-					set	
-					{
-						heightNormalized = value;
-					}
-				}
-
+				[JsonProperty(PropertyName = "WidthNormalized")]
 				public float? WidthNormalized
 				{
 					get
@@ -191,18 +176,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				public string PositionRefer
-				{
-					get
-					{
-						return positionRefer;
-					}
-					set	
-					{
-						positionRefer = value;
-					}
-				}
-
+				[JsonProperty(PropertyName = "FixedDelayDuration")]
 				public int? FixedDelayDuration
 				{
 					get
@@ -215,6 +189,46 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
+				[JsonProperty(PropertyName = "HeightNormalized")]
+				public float? HeightNormalized
+				{
+					get
+					{
+						return heightNormalized;
+					}
+					set	
+					{
+						heightNormalized = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "FillMode")]
+				public string FillMode
+				{
+					get
+					{
+						return fillMode;
+					}
+					set	
+					{
+						fillMode = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "PositionRefer")]
+				public string PositionRefer
+				{
+					get
+					{
+						return positionRefer;
+					}
+					set	
+					{
+						positionRefer = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "PositionNormalizeds")]
 				public List<string> PositionNormalizeds
 				{
 					get
@@ -233,10 +247,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private float? volumeRate;
 
-				private string validChannel;
-
 				private int? fixedDelayDuration;
 
+				private string validChannel;
+
+				[JsonProperty(PropertyName = "VolumeRate")]
 				public float? VolumeRate
 				{
 					get
@@ -249,18 +264,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				public string ValidChannel
-				{
-					get
-					{
-						return validChannel;
-					}
-					set	
-					{
-						validChannel = value;
-					}
-				}
-
+				[JsonProperty(PropertyName = "FixedDelayDuration")]
 				public int? FixedDelayDuration
 				{
 					get
@@ -270,6 +274,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						fixedDelayDuration = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "ValidChannel")]
+				public string ValidChannel
+				{
+					get
+					{
+						return validChannel;
+					}
+					set	
+					{
+						validChannel = value;
 					}
 				}
 			}

@@ -36,9 +36,9 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeLiveDomainTimeShiftDataResponse.DescribeLiveDomainTimeShiftData_DataModule> describeLiveDomainTimeShiftDataResponse_timeShiftData = new List<DescribeLiveDomainTimeShiftDataResponse.DescribeLiveDomainTimeShiftData_DataModule>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveDomainTimeShiftData.TimeShiftData.Length"); i++) {
 				DescribeLiveDomainTimeShiftDataResponse.DescribeLiveDomainTimeShiftData_DataModule dataModule = new DescribeLiveDomainTimeShiftDataResponse.DescribeLiveDomainTimeShiftData_DataModule();
+				dataModule.Type = _ctx.StringValue("DescribeLiveDomainTimeShiftData.TimeShiftData["+ i +"].Type");
 				dataModule.TimeStamp = _ctx.StringValue("DescribeLiveDomainTimeShiftData.TimeShiftData["+ i +"].TimeStamp");
 				dataModule.Size = _ctx.StringValue("DescribeLiveDomainTimeShiftData.TimeShiftData["+ i +"].Size");
-				dataModule.Type = _ctx.StringValue("DescribeLiveDomainTimeShiftData.TimeShiftData["+ i +"].Type");
 
 				describeLiveDomainTimeShiftDataResponse_timeShiftData.Add(dataModule);
 			}

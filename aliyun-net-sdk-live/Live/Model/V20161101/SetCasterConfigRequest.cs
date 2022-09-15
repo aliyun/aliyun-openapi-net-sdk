@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -54,6 +55,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string casterName;
 
+		private string urgentLiveStreamUrl;
+
 		private string sideOutputUrl;
 
 		private string syncGroupsConfig;
@@ -70,6 +73,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string callbackUrl;
 
+		[JsonProperty(PropertyName = "ChannelEnable")]
 		public int? ChannelEnable
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ProgramEffect")]
 		public int? ProgramEffect
 		{
 			get
@@ -96,6 +101,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ProgramName")]
 		public string ProgramName
 		{
 			get
@@ -109,6 +115,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RecordConfig")]
 		public string RecordConfig
 		{
 			get
@@ -122,6 +129,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "UrgentMaterialId")]
 		public string UrgentMaterialId
 		{
 			get
@@ -135,6 +143,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "TranscodeConfig")]
 		public string TranscodeConfig
 		{
 			get
@@ -148,6 +157,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "CasterName")]
 		public string CasterName
 		{
 			get
@@ -161,6 +171,21 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "UrgentLiveStreamUrl")]
+		public string UrgentLiveStreamUrl
+		{
+			get
+			{
+				return urgentLiveStreamUrl;
+			}
+			set	
+			{
+				urgentLiveStreamUrl = value;
+				DictionaryUtil.Add(QueryParameters, "UrgentLiveStreamUrl", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "SideOutputUrl")]
 		public string SideOutputUrl
 		{
 			get
@@ -174,6 +199,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "SyncGroupsConfig")]
 		public string SyncGroupsConfig
 		{
 			get
@@ -187,6 +213,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "SideOutputUrlList")]
 		public string SideOutputUrlList
 		{
 			get
@@ -200,6 +227,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "CasterId")]
 		public string CasterId
 		{
 			get
@@ -213,6 +241,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DomainName")]
 		public string DomainName
 		{
 			get
@@ -226,6 +255,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -239,6 +269,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Delay")]
 		public float? Delay
 		{
 			get
@@ -252,6 +283,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "CallbackUrl")]
 		public string CallbackUrl
 		{
 			get

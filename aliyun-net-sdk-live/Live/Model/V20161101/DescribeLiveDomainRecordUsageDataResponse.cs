@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeLiveDomainRecordUsageData_DataModule> recordUsageData;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RecordUsageData")]
 		public List<DescribeLiveDomainRecordUsageData_DataModule> RecordUsageData
 		{
 			get
@@ -56,40 +58,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDomainRecordUsageData_DataModule
 		{
 
-			private string timeStamp;
-
-			private string domain;
-
 			private string type;
 
 			private long? duration;
 
+			private string domain;
+
+			private string timeStamp;
+
 			private long? count;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
-
-			public string Domain
-			{
-				get
-				{
-					return domain;
-				}
-				set	
-				{
-					domain = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Type")]
 			public string Type
 			{
 				get
@@ -102,6 +81,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Duration")]
 			public long? Duration
 			{
 				get
@@ -114,6 +94,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Domain")]
+			public string Domain
+			{
+				get
+				{
+					return domain;
+				}
+				set	
+				{
+					domain = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TimeStamp")]
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Count")]
 			public long? Count
 			{
 				get

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			GetAllCustomTemplatesResponse getAllCustomTemplatesResponse = new GetAllCustomTemplatesResponse();
 
 			getAllCustomTemplatesResponse.HttpResponse = _ctx.HttpResponse;
-			getAllCustomTemplatesResponse.RequestId = _ctx.StringValue("GetAllCustomTemplates.RequestId");
 			getAllCustomTemplatesResponse.CustomTemplates = _ctx.StringValue("GetAllCustomTemplates.CustomTemplates");
+			getAllCustomTemplatesResponse.RequestId = _ctx.StringValue("GetAllCustomTemplates.RequestId");
         
 			return getAllCustomTemplatesResponse;
         }

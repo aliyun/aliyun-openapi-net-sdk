@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeLiveRealtimeDeliveryAcc_AccData> realTimeDeliveryAccData;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RealTimeDeliveryAccData")]
 		public List<DescribeLiveRealtimeDeliveryAcc_AccData> RealTimeDeliveryAccData
 		{
 			get
@@ -58,10 +60,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string timeStamp;
 
-			private int? successNum;
-
 			private int? failedNum;
 
+			private int? successNum;
+
+			[JsonProperty(PropertyName = "TimeStamp")]
 			public string TimeStamp
 			{
 				get
@@ -74,18 +77,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public int? SuccessNum
-			{
-				get
-				{
-					return successNum;
-				}
-				set	
-				{
-					successNum = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "FailedNum")]
 			public int? FailedNum
 			{
 				get
@@ -95,6 +87,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					failedNum = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SuccessNum")]
+			public int? SuccessNum
+			{
+				get
+				{
+					return successNum;
+				}
+				set	
+				{
+					successNum = value;
 				}
 			}
 		}

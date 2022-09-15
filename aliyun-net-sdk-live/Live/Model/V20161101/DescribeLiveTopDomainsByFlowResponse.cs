@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,66 +25,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveTopDomainsByFlowResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string startTime;
+		private long? domainOnlineCount;
 
 		private string endTime;
 
-		private long? domainCount;
+		private string startTime;
 
-		private long? domainOnlineCount;
+		private string requestId;
+
+		private long? domainCount;
 
 		private List<DescribeLiveTopDomainsByFlow_TopDomain> topDomains;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
-
-		public long? DomainCount
-		{
-			get
-			{
-				return domainCount;
-			}
-			set	
-			{
-				domainCount = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "DomainOnlineCount")]
 		public long? DomainOnlineCount
 		{
 			get
@@ -97,6 +50,59 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "EndTime")]
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DomainCount")]
+		public long? DomainCount
+		{
+			get
+			{
+				return domainCount;
+			}
+			set	
+			{
+				domainCount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TopDomains")]
 		public List<DescribeLiveTopDomainsByFlow_TopDomain> TopDomains
 		{
 			get
@@ -112,68 +118,21 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveTopDomainsByFlow_TopDomain
 		{
 
-			private string domainName;
+			private long? maxBps;
 
 			private long? rank;
 
-			private string totalTraffic;
+			private long? totalAccess;
 
 			private string trafficPercent;
 
-			private long? maxBps;
+			private string domainName;
+
+			private string totalTraffic;
 
 			private string maxBpsTime;
 
-			private long? totalAccess;
-
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
-
-			public long? Rank
-			{
-				get
-				{
-					return rank;
-				}
-				set	
-				{
-					rank = value;
-				}
-			}
-
-			public string TotalTraffic
-			{
-				get
-				{
-					return totalTraffic;
-				}
-				set	
-				{
-					totalTraffic = value;
-				}
-			}
-
-			public string TrafficPercent
-			{
-				get
-				{
-					return trafficPercent;
-				}
-				set	
-				{
-					trafficPercent = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "MaxBps")]
 			public long? MaxBps
 			{
 				get
@@ -186,18 +145,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string MaxBpsTime
+			[JsonProperty(PropertyName = "Rank")]
+			public long? Rank
 			{
 				get
 				{
-					return maxBpsTime;
+					return rank;
 				}
 				set	
 				{
-					maxBpsTime = value;
+					rank = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "TotalAccess")]
 			public long? TotalAccess
 			{
 				get
@@ -207,6 +168,58 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					totalAccess = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TrafficPercent")]
+			public string TrafficPercent
+			{
+				get
+				{
+					return trafficPercent;
+				}
+				set	
+				{
+					trafficPercent = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TotalTraffic")]
+			public string TotalTraffic
+			{
+				get
+				{
+					return totalTraffic;
+				}
+				set	
+				{
+					totalTraffic = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MaxBpsTime")]
+			public string MaxBpsTime
+			{
+				get
+				{
+					return maxBpsTime;
+				}
+				set	
+				{
+					maxBpsTime = value;
 				}
 			}
 		}

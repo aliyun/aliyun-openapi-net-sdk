@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeLiveDomainTimeShiftData_DataModule> timeShiftData;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "TimeShiftData")]
 		public List<DescribeLiveDomainTimeShiftData_DataModule> TimeShiftData
 		{
 			get
@@ -56,12 +58,26 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDomainTimeShiftData_DataModule
 		{
 
+			private string type;
+
 			private string timeStamp;
 
 			private string size;
 
-			private string type;
+			[JsonProperty(PropertyName = "Type")]
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
+				}
+			}
 
+			[JsonProperty(PropertyName = "TimeStamp")]
 			public string TimeStamp
 			{
 				get
@@ -74,6 +90,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Size")]
 			public string Size
 			{
 				get
@@ -83,18 +100,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					size = value;
-				}
-			}
-
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
 				}
 			}
 		}

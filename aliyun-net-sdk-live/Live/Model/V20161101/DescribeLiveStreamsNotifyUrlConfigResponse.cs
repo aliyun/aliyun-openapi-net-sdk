@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private DescribeLiveStreamsNotifyUrlConfig_LiveStreamsNotifyConfig liveStreamsNotifyConfig;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "LiveStreamsNotifyConfig")]
 		public DescribeLiveStreamsNotifyUrlConfig_LiveStreamsNotifyConfig LiveStreamsNotifyConfig
 		{
 			get
@@ -56,42 +58,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamsNotifyUrlConfig_LiveStreamsNotifyConfig
 		{
 
-			private string domainName;
-
-			private string notifyUrl;
-
 			private string notifyReqAuth;
-
-			private string notifyAuthKey;
 
 			private string authType;
 
+			private string notifyUrl;
+
+			private string notifyAuthKey;
+
 			private string authKey;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
+			private string domainName;
 
-			public string NotifyUrl
-			{
-				get
-				{
-					return notifyUrl;
-				}
-				set	
-				{
-					notifyUrl = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "NotifyReqAuth")]
 			public string NotifyReqAuth
 			{
 				get
@@ -104,18 +83,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string NotifyAuthKey
-			{
-				get
-				{
-					return notifyAuthKey;
-				}
-				set	
-				{
-					notifyAuthKey = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "AuthType")]
 			public string AuthType
 			{
 				get
@@ -128,6 +96,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "NotifyUrl")]
+			public string NotifyUrl
+			{
+				get
+				{
+					return notifyUrl;
+				}
+				set	
+				{
+					notifyUrl = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "NotifyAuthKey")]
+			public string NotifyAuthKey
+			{
+				get
+				{
+					return notifyAuthKey;
+				}
+				set	
+				{
+					notifyAuthKey = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AuthKey")]
 			public string AuthKey
 			{
 				get
@@ -137,6 +132,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					authKey = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
 				}
 			}
 		}

@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -54,6 +55,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string appId;
 
+		[JsonProperty(PropertyName = "Data")]
 		public string Data
 		{
 			get
@@ -67,6 +69,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ToAppUid")]
 		public string ToAppUid
 		{
 			get
@@ -80,6 +83,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "AppUid")]
 		public string AppUid
 		{
 			get
@@ -93,6 +97,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -106,6 +111,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Priority")]
 		public int? Priority
 		{
 			get
@@ -119,6 +125,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RoomId")]
 		public string RoomId
 		{
 			get
@@ -132,6 +139,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "AppId")]
 		public string AppId
 		{
 			get

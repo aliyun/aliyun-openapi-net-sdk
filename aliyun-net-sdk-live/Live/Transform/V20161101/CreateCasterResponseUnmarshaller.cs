@@ -31,8 +31,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			CreateCasterResponse createCasterResponse = new CreateCasterResponse();
 
 			createCasterResponse.HttpResponse = _ctx.HttpResponse;
-			createCasterResponse.RequestId = _ctx.StringValue("CreateCaster.RequestId");
 			createCasterResponse.CasterId = _ctx.StringValue("CreateCaster.CasterId");
+			createCasterResponse.RequestId = _ctx.StringValue("CreateCaster.RequestId");
         
 			return createCasterResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,24 +25,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeCasterSyncGroupResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string casterId;
+
+		private string requestId;
 
 		private List<DescribeCasterSyncGroup_SyncGroup> syncGroups;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "CasterId")]
 		public string CasterId
 		{
 			get
@@ -55,6 +44,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "SyncGroups")]
 		public List<DescribeCasterSyncGroup_SyncGroup> SyncGroups
 		{
 			get
@@ -70,24 +73,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeCasterSyncGroup_SyncGroup
 		{
 
-			private int? mode;
-
 			private string hostResourceId;
+
+			private int? mode;
 
 			private List<string> resourceIds;
 
-			public int? Mode
-			{
-				get
-				{
-					return mode;
-				}
-				set	
-				{
-					mode = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "HostResourceId")]
 			public string HostResourceId
 			{
 				get
@@ -100,6 +92,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Mode")]
+			public int? Mode
+			{
+				get
+				{
+					return mode;
+				}
+				set	
+				{
+					mode = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ResourceIds")]
 			public List<string> ResourceIds
 			{
 				get

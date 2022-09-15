@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -62,6 +63,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private long? ownerId;
 
+		[JsonProperty(PropertyName = "StartTime")]
 		public string StartTime
 		{
 			get
@@ -75,6 +77,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -88,6 +91,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "AppName")]
 		public string AppName
 		{
 			get
@@ -101,6 +105,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get
@@ -114,6 +119,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "StreamName")]
 		public string StreamName
 		{
 			get
@@ -127,6 +133,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "QueryType")]
 		public string QueryType
 		{
 			get
@@ -140,6 +147,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "StreamType")]
 		public string StreamType
 		{
 			get
@@ -153,6 +161,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DomainName")]
 		public string DomainName
 		{
 			get
@@ -166,6 +175,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "EndTime")]
 		public string EndTime
 		{
 			get
@@ -179,6 +189,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OrderBy")]
 		public string OrderBy
 		{
 			get
@@ -192,6 +203,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get

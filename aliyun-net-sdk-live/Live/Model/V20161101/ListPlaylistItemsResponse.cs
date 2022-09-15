@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,24 +25,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class ListPlaylistItemsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? total;
+
+		private string requestId;
 
 		private List<ListPlaylistItems_ProgramItem> programItems;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Total")]
 		public int? Total
 		{
 			get
@@ -55,6 +44,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ProgramItems")]
 		public List<ListPlaylistItems_ProgramItem> ProgramItems
 		{
 			get
@@ -70,54 +73,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class ListPlaylistItems_ProgramItem
 		{
 
-			private string programId;
-
-			private string programItemId;
-
-			private string programItemName;
+			private int? index;
 
 			private string resourceType;
 
+			private string programItemId;
+
+			private string programId;
+
+			private string programItemName;
+
 			private string resourceValue;
 
-			private int? index;
-
-			public string ProgramId
+			[JsonProperty(PropertyName = "Index")]
+			public int? Index
 			{
 				get
 				{
-					return programId;
+					return index;
 				}
 				set	
 				{
-					programId = value;
+					index = value;
 				}
 			}
 
-			public string ProgramItemId
-			{
-				get
-				{
-					return programItemId;
-				}
-				set	
-				{
-					programItemId = value;
-				}
-			}
-
-			public string ProgramItemName
-			{
-				get
-				{
-					return programItemName;
-				}
-				set	
-				{
-					programItemName = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "ResourceType")]
 			public string ResourceType
 			{
 				get
@@ -130,6 +111,46 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "ProgramItemId")]
+			public string ProgramItemId
+			{
+				get
+				{
+					return programItemId;
+				}
+				set	
+				{
+					programItemId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ProgramId")]
+			public string ProgramId
+			{
+				get
+				{
+					return programId;
+				}
+				set	
+				{
+					programId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ProgramItemName")]
+			public string ProgramItemName
+			{
+				get
+				{
+					return programItemName;
+				}
+				set	
+				{
+					programItemName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ResourceValue")]
 			public string ResourceValue
 			{
 				get
@@ -139,18 +160,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					resourceValue = value;
-				}
-			}
-
-			public int? Index
-			{
-				get
-				{
-					return index;
-				}
-				set	
-				{
-					index = value;
 				}
 			}
 		}

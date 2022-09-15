@@ -31,15 +31,15 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveDomainBpsDataByLayerResponse describeLiveDomainBpsDataByLayerResponse = new DescribeLiveDomainBpsDataByLayerResponse();
 
 			describeLiveDomainBpsDataByLayerResponse.HttpResponse = _ctx.HttpResponse;
-			describeLiveDomainBpsDataByLayerResponse.RequestId = _ctx.StringValue("DescribeLiveDomainBpsDataByLayer.RequestId");
 			describeLiveDomainBpsDataByLayerResponse.DataInterval = _ctx.StringValue("DescribeLiveDomainBpsDataByLayer.DataInterval");
+			describeLiveDomainBpsDataByLayerResponse.RequestId = _ctx.StringValue("DescribeLiveDomainBpsDataByLayer.RequestId");
 
 			List<DescribeLiveDomainBpsDataByLayerResponse.DescribeLiveDomainBpsDataByLayer_DataModule> describeLiveDomainBpsDataByLayerResponse_bpsDataInterval = new List<DescribeLiveDomainBpsDataByLayerResponse.DescribeLiveDomainBpsDataByLayer_DataModule>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveDomainBpsDataByLayer.BpsDataInterval.Length"); i++) {
 				DescribeLiveDomainBpsDataByLayerResponse.DescribeLiveDomainBpsDataByLayer_DataModule dataModule = new DescribeLiveDomainBpsDataByLayerResponse.DescribeLiveDomainBpsDataByLayer_DataModule();
-				dataModule.TimeStamp = _ctx.StringValue("DescribeLiveDomainBpsDataByLayer.BpsDataInterval["+ i +"].TimeStamp");
 				dataModule._Value = _ctx.StringValue("DescribeLiveDomainBpsDataByLayer.BpsDataInterval["+ i +"].Value");
 				dataModule.TrafficValue = _ctx.StringValue("DescribeLiveDomainBpsDataByLayer.BpsDataInterval["+ i +"].TrafficValue");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeLiveDomainBpsDataByLayer.BpsDataInterval["+ i +"].TimeStamp");
 
 				describeLiveDomainBpsDataByLayerResponse_bpsDataInterval.Add(dataModule);
 			}

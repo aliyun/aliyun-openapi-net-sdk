@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,22 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class VerifyLiveDomainOwnerResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string content;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
+		[JsonProperty(PropertyName = "Content")]
 		public string Content
 		{
 			get
@@ -50,6 +39,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				content = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeLiveShiftConfigs_Config> content;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Content")]
 		public List<DescribeLiveShiftConfigs_Config> Content
 		{
 			get
@@ -66,6 +68,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private bool? ignoreTranscode;
 
+			[JsonProperty(PropertyName = "AppName")]
 			public string AppName
 			{
 				get
@@ -78,6 +81,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Vision")]
 			public int? Vision
 			{
 				get
@@ -90,6 +94,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "DomainName")]
 			public string DomainName
 			{
 				get
@@ -102,6 +107,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "StreamName")]
 			public string StreamName
 			{
 				get
@@ -114,6 +120,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "IgnoreTranscode")]
 			public bool? IgnoreTranscode
 			{
 				get

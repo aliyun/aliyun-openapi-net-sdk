@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private DescribeLiveDetectNotifyConfig_LiveDetectNotifyConfig liveDetectNotifyConfig;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "LiveDetectNotifyConfig")]
 		public DescribeLiveDetectNotifyConfig_LiveDetectNotifyConfig LiveDetectNotifyConfig
 		{
 			get
@@ -60,6 +62,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string notifyUrl;
 
+			[JsonProperty(PropertyName = "DomainName")]
 			public string DomainName
 			{
 				get
@@ -72,6 +75,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "NotifyUrl")]
 			public string NotifyUrl
 			{
 				get

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeLiveDomainSnapshotData_SnapshotDataInfo> snapshotDataInfos;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "SnapshotDataInfos")]
 		public List<DescribeLiveDomainSnapshotData_SnapshotDataInfo> SnapshotDataInfos
 		{
 			get
@@ -60,6 +62,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private int? total;
 
+			[JsonProperty(PropertyName = "Date")]
 			public string Date
 			{
 				get
@@ -72,6 +75,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Total")]
 			public int? Total
 			{
 				get

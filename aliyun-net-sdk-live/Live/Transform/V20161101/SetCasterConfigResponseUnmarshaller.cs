@@ -31,8 +31,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			SetCasterConfigResponse setCasterConfigResponse = new SetCasterConfigResponse();
 
 			setCasterConfigResponse.HttpResponse = _ctx.HttpResponse;
-			setCasterConfigResponse.RequestId = _ctx.StringValue("SetCasterConfig.RequestId");
 			setCasterConfigResponse.CasterId = _ctx.StringValue("SetCasterConfig.CasterId");
+			setCasterConfigResponse.RequestId = _ctx.StringValue("SetCasterConfig.RequestId");
         
 			return setCasterConfigResponse;
         }

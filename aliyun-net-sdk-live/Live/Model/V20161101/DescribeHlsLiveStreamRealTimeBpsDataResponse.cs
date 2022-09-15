@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -31,6 +31,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeHlsLiveStreamRealTimeBpsData_UsageDataPerDomain> usageData;
 
+		[JsonProperty(PropertyName = "Time")]
 		public string Time
 		{
 			get
@@ -43,6 +44,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -55,6 +57,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "UsageData")]
 		public List<DescribeHlsLiveStreamRealTimeBpsData_UsageDataPerDomain> UsageData
 		{
 			get
@@ -74,6 +77,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private List<DescribeHlsLiveStreamRealTimeBpsData_StreamInfo> streamInfos;
 
+			[JsonProperty(PropertyName = "DomainName")]
 			public string DomainName
 			{
 				get
@@ -86,6 +90,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "StreamInfos")]
 			public List<DescribeHlsLiveStreamRealTimeBpsData_StreamInfo> StreamInfos
 			{
 				get
@@ -105,6 +110,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private List<DescribeHlsLiveStreamRealTimeBpsData_Info> infos;
 
+				[JsonProperty(PropertyName = "StreamName")]
 				public string StreamName
 				{
 					get
@@ -117,6 +123,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
+				[JsonProperty(PropertyName = "Infos")]
 				public List<DescribeHlsLiveStreamRealTimeBpsData_Info> Infos
 				{
 					get
@@ -138,6 +145,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 					private float? online;
 
+					[JsonProperty(PropertyName = "DownFlow")]
 					public float? DownFlow
 					{
 						get
@@ -150,6 +158,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 						}
 					}
 
+					[JsonProperty(PropertyName = "Rate")]
 					public string Rate
 					{
 						get
@@ -162,6 +171,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 						}
 					}
 
+					[JsonProperty(PropertyName = "Online")]
 					public float? Online
 					{
 						get

@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -40,13 +41,14 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private List<Episode> episodes = new List<Episode>(){ };
+		private List<string> episodes = new List<string>(){ };
 
 		private string casterId;
 
 		private long? ownerId;
 
-		public List<Episode> Episodes
+		[JsonProperty(PropertyName = "Episode")]
+		public List<string> Episodes
 		{
 			get
 			{
@@ -56,23 +58,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set
 			{
 				episodes = value;
-				for (int i = 0; i < episodes.Count; i++)
+				if(episodes != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"Episode." + (i + 1) + ".EpisodeId", episodes[i].EpisodeId);
-					DictionaryUtil.Add(QueryParameters,"Episode." + (i + 1) + ".EpisodeType", episodes[i].EpisodeType);
-					DictionaryUtil.Add(QueryParameters,"Episode." + (i + 1) + ".EpisodeName", episodes[i].EpisodeName);
-					DictionaryUtil.Add(QueryParameters,"Episode." + (i + 1) + ".ResourceId", episodes[i].ResourceId);
-					for (int j = 0; j < episodes[i].ComponentIds.Count; j++)
+					for (int depth1 = 0; depth1 < episodes.Count; depth1++)
 					{
-						DictionaryUtil.Add(QueryParameters,"Episode." + (i + 1) + ".ComponentId." +(j + 1), episodes[i].ComponentIds[j]);
+						DictionaryUtil.Add(QueryParameters,"Episode." + (depth1 + 1), episodes[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Episode." + (depth1 + 1), episodes[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Episode." + (depth1 + 1), episodes[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Episode." + (depth1 + 1), episodes[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Episode." + (depth1 + 1), episodes[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Episode." + (depth1 + 1), episodes[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Episode." + (depth1 + 1), episodes[depth1]);
 					}
-					DictionaryUtil.Add(QueryParameters,"Episode." + (i + 1) + ".StartTime", episodes[i].StartTime);
-					DictionaryUtil.Add(QueryParameters,"Episode." + (i + 1) + ".EndTime", episodes[i].EndTime);
-					DictionaryUtil.Add(QueryParameters,"Episode." + (i + 1) + ".SwitchType", episodes[i].SwitchType);
 				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "CasterId")]
 		public string CasterId
 		{
 			get
@@ -86,6 +88,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -102,94 +105,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class Episode
 		{
 
-			private string episodeId;
+			private string endTime;
+
+			private string startTime;
+
+			private string episodeName;
 
 			private string episodeType;
 
-			private string episodeName;
+			private string episodeId;
 
 			private string resourceId;
 
 			private List<string> componentIds = new List<string>(){ };
 
-			private string startTime;
-
-			private string endTime;
-
 			private string switchType;
 
-			public string EpisodeId
-			{
-				get
-				{
-					return episodeId;
-				}
-				set	
-				{
-					episodeId = value;
-				}
-			}
-
-			public string EpisodeType
-			{
-				get
-				{
-					return episodeType;
-				}
-				set	
-				{
-					episodeType = value;
-				}
-			}
-
-			public string EpisodeName
-			{
-				get
-				{
-					return episodeName;
-				}
-				set	
-				{
-					episodeName = value;
-				}
-			}
-
-			public string ResourceId
-			{
-				get
-				{
-					return resourceId;
-				}
-				set	
-				{
-					resourceId = value;
-				}
-			}
-
-			public List<string> ComponentIds
-			{
-				get
-				{
-					return componentIds;
-				}
-				set	
-				{
-					componentIds = value;
-				}
-			}
-
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "EndTime")]
 			public string EndTime
 			{
 				get
@@ -202,6 +134,85 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "StartTime")]
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EpisodeName")]
+			public string EpisodeName
+			{
+				get
+				{
+					return episodeName;
+				}
+				set	
+				{
+					episodeName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EpisodeType")]
+			public string EpisodeType
+			{
+				get
+				{
+					return episodeType;
+				}
+				set	
+				{
+					episodeType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EpisodeId")]
+			public string EpisodeId
+			{
+				get
+				{
+					return episodeId;
+				}
+				set	
+				{
+					episodeId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ResourceId")]
+			public string ResourceId
+			{
+				get
+				{
+					return resourceId;
+				}
+				set	
+				{
+					resourceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ComponentId")]
+			public List<string> ComponentIds
+			{
+				get
+				{
+					return componentIds;
+				}
+				set	
+				{
+					componentIds = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SwitchType")]
 			public string SwitchType
 			{
 				get

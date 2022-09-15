@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeLiveDomainLimit_LiveDomainLimit> liveDomainLimitList;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "LiveDomainLimitList")]
 		public List<DescribeLiveDomainLimit_LiveDomainLimit> LiveDomainLimitList
 		{
 			get
@@ -56,24 +58,47 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDomainLimit_LiveDomainLimit
 		{
 
-			private string domainName;
+			private int? limitTranscodeNum;
+
+			private int? currentTranscodeNum;
 
 			private int? limitNum;
 
-			private int? limitTranscodeNum;
+			private int? limitTransferNum;
 
-			public string DomainName
+			private int? currentNum;
+
+			private int? currentTransferNum;
+
+			private string domainName;
+
+			[JsonProperty(PropertyName = "LimitTranscodeNum")]
+			public int? LimitTranscodeNum
 			{
 				get
 				{
-					return domainName;
+					return limitTranscodeNum;
 				}
 				set	
 				{
-					domainName = value;
+					limitTranscodeNum = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "CurrentTranscodeNum")]
+			public int? CurrentTranscodeNum
+			{
+				get
+				{
+					return currentTranscodeNum;
+				}
+				set	
+				{
+					currentTranscodeNum = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LimitNum")]
 			public int? LimitNum
 			{
 				get
@@ -86,15 +111,55 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public int? LimitTranscodeNum
+			[JsonProperty(PropertyName = "LimitTransferNum")]
+			public int? LimitTransferNum
 			{
 				get
 				{
-					return limitTranscodeNum;
+					return limitTransferNum;
 				}
 				set	
 				{
-					limitTranscodeNum = value;
+					limitTransferNum = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CurrentNum")]
+			public int? CurrentNum
+			{
+				get
+				{
+					return currentNum;
+				}
+				set	
+				{
+					currentNum = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CurrentTransferNum")]
+			public int? CurrentTransferNum
+			{
+				get
+				{
+					return currentTransferNum;
+				}
+				set	
+				{
+					currentTransferNum = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
 				}
 			}
 		}

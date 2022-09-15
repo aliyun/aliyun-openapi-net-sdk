@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,9 +25,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveRecordVodConfigsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? pageNum;
+
+		private string requestId;
 
 		private int? pageSize;
 
@@ -35,18 +35,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeLiveRecordVodConfigs_LiveRecordVodConfig> liveRecordVodConfigs;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "PageNum")]
 		public int? PageNum
 		{
 			get
@@ -59,6 +48,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Total")]
 		public string Total
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "LiveRecordVodConfigs")]
 		public List<DescribeLiveRecordVodConfigs_LiveRecordVodConfig> LiveRecordVodConfigs
 		{
 			get
@@ -98,46 +103,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveRecordVodConfigs_LiveRecordVodConfig
 		{
 
-			private string createTime;
-
-			private string domainName;
-
 			private string appName;
 
+			private string autoCompose;
+
 			private string streamName;
+
+			private string createTime;
 
 			private string vodTranscodeGroupId;
 
 			private int? cycleDuration;
 
-			private string autoCompose;
+			private string domainName;
 
 			private string composeVodTranscodeGroupId;
 
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "AppName")]
 			public string AppName
 			{
 				get
@@ -150,42 +132,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string StreamName
-			{
-				get
-				{
-					return streamName;
-				}
-				set	
-				{
-					streamName = value;
-				}
-			}
-
-			public string VodTranscodeGroupId
-			{
-				get
-				{
-					return vodTranscodeGroupId;
-				}
-				set	
-				{
-					vodTranscodeGroupId = value;
-				}
-			}
-
-			public int? CycleDuration
-			{
-				get
-				{
-					return cycleDuration;
-				}
-				set	
-				{
-					cycleDuration = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "AutoCompose")]
 			public string AutoCompose
 			{
 				get
@@ -198,6 +145,72 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "StreamName")]
+			public string StreamName
+			{
+				get
+				{
+					return streamName;
+				}
+				set	
+				{
+					streamName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CreateTime")]
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "VodTranscodeGroupId")]
+			public string VodTranscodeGroupId
+			{
+				get
+				{
+					return vodTranscodeGroupId;
+				}
+				set	
+				{
+					vodTranscodeGroupId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CycleDuration")]
+			public int? CycleDuration
+			{
+				get
+				{
+					return cycleDuration;
+				}
+				set	
+				{
+					cycleDuration = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ComposeVodTranscodeGroupId")]
 			public string ComposeVodTranscodeGroupId
 			{
 				get

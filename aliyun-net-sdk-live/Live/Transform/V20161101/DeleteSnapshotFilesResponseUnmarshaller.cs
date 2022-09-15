@@ -31,15 +31,15 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DeleteSnapshotFilesResponse deleteSnapshotFilesResponse = new DeleteSnapshotFilesResponse();
 
 			deleteSnapshotFilesResponse.HttpResponse = _ctx.HttpResponse;
+			deleteSnapshotFilesResponse.FailureCount = _ctx.IntegerValue("DeleteSnapshotFiles.FailureCount");
 			deleteSnapshotFilesResponse.RequestId = _ctx.StringValue("DeleteSnapshotFiles.RequestId");
 			deleteSnapshotFilesResponse.SuccessCount = _ctx.IntegerValue("DeleteSnapshotFiles.SuccessCount");
-			deleteSnapshotFilesResponse.FailureCount = _ctx.IntegerValue("DeleteSnapshotFiles.FailureCount");
 
 			List<DeleteSnapshotFilesResponse.DeleteSnapshotFiles_SnapshotDeleteInfo> deleteSnapshotFilesResponse_snapshotDeleteInfoList = new List<DeleteSnapshotFilesResponse.DeleteSnapshotFiles_SnapshotDeleteInfo>();
 			for (int i = 0; i < _ctx.Length("DeleteSnapshotFiles.SnapshotDeleteInfoList.Length"); i++) {
 				DeleteSnapshotFilesResponse.DeleteSnapshotFiles_SnapshotDeleteInfo snapshotDeleteInfo = new DeleteSnapshotFilesResponse.DeleteSnapshotFiles_SnapshotDeleteInfo();
-				snapshotDeleteInfo.CreateTimestamp = _ctx.LongValue("DeleteSnapshotFiles.SnapshotDeleteInfoList["+ i +"].CreateTimestamp");
 				snapshotDeleteInfo.Message = _ctx.StringValue("DeleteSnapshotFiles.SnapshotDeleteInfoList["+ i +"].Message");
+				snapshotDeleteInfo.CreateTimestamp = _ctx.LongValue("DeleteSnapshotFiles.SnapshotDeleteInfoList["+ i +"].CreateTimestamp");
 
 				deleteSnapshotFilesResponse_snapshotDeleteInfoList.Add(snapshotDeleteInfo);
 			}
