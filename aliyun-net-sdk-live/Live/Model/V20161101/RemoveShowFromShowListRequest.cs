@@ -41,11 +41,43 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
+		private bool? isBatchMode;
+
+		private List<string> showIdLists = new List<string>(){ };
+
 		private string casterId;
 
 		private long? ownerId;
 
 		private string showId;
+
+		[JsonProperty(PropertyName = "isBatchMode")]
+		public bool? IsBatchMode
+		{
+			get
+			{
+				return isBatchMode;
+			}
+			set	
+			{
+				isBatchMode = value;
+				DictionaryUtil.Add(QueryParameters, "isBatchMode", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "showIdList")]
+		public List<string> ShowIdLists
+		{
+			get
+			{
+				return showIdLists;
+			}
+
+			set
+			{
+				showIdLists = value;
+			}
+		}
 
 		[JsonProperty(PropertyName = "CasterId")]
 		public string CasterId

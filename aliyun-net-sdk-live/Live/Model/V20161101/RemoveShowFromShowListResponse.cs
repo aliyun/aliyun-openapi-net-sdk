@@ -25,9 +25,26 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class RemoveShowFromShowListResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string showId;
 
-		private string requestId;
+		private string successfulShowIds;
+
+		private string failedList;
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		[JsonProperty(PropertyName = "ShowId")]
 		public string ShowId
@@ -42,16 +59,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "RequestId")]
-		public string RequestId
+		[JsonProperty(PropertyName = "SuccessfulShowIds")]
+		public string SuccessfulShowIds
 		{
 			get
 			{
-				return requestId;
+				return successfulShowIds;
 			}
 			set	
 			{
-				requestId = value;
+				successfulShowIds = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "FailedList")]
+		public string FailedList
+		{
+			get
+			{
+				return failedList;
+			}
+			set	
+			{
+				failedList = value;
 			}
 		}
 	}

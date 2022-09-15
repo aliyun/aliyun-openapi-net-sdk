@@ -25,9 +25,25 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class AddShowIntoShowListResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string showId;
 
-		private string requestId;
+		private string successfulShowIds;
+
+		private string failedList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string ShowId
 		{
@@ -41,15 +57,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string RequestId
+		public string SuccessfulShowIds
 		{
 			get
 			{
-				return requestId;
+				return successfulShowIds;
 			}
 			set	
 			{
-				requestId = value;
+				successfulShowIds = value;
+			}
+		}
+
+		public string FailedList
+		{
+			get
+			{
+				return failedList;
+			}
+			set	
+			{
+				failedList = value;
 			}
 		}
 	}
