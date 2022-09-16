@@ -32,6 +32,11 @@ namespace Aliyun.Acs.antiddos_public.Model.V20170518
         public ModifyIpDefenseThresholdRequest()
             : base("antiddos-public", "2017-05-18", "ModifyIpDefenseThreshold", "ddosbasic", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.antiddos_public.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.antiddos_public.Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
