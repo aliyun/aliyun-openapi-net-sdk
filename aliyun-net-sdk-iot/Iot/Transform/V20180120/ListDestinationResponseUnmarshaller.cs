@@ -49,6 +49,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				destinationsItem.IsFailover = _ctx.BooleanValue("ListDestination.Destinations["+ i +"].IsFailover");
 				destinationsItem.UtcCreated = _ctx.StringValue("ListDestination.Destinations["+ i +"].UtcCreated");
 				destinationsItem.Description = _ctx.StringValue("ListDestination.Destinations["+ i +"].Description");
+				destinationsItem.Status = _ctx.StringValue("ListDestination.Destinations["+ i +"].Status");
 
 				listDestinationResponse_destinations.Add(destinationsItem);
 			}

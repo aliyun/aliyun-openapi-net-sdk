@@ -110,6 +110,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string utcCreated;
 
+			private string status;
+
 			public string DestinationId
 			{
 				get
@@ -179,6 +181,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					utcCreated = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 		}

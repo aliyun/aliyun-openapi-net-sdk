@@ -43,6 +43,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			destination.Configuration = _ctx.StringValue("GetDestination.Destination.Configuration");
 			destination.IsFailover = _ctx.BooleanValue("GetDestination.Destination.IsFailover");
 			destination.UtcCreated = _ctx.StringValue("GetDestination.Destination.UtcCreated");
+			destination.Status = _ctx.StringValue("GetDestination.Destination.Status");
 			getDestinationResponse.Destination = destination;
         
 			return getDestinationResponse;

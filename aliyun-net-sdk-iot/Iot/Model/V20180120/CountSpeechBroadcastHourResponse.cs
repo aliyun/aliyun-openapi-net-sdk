@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class ListRuleActionsResponse : AcsResponse
+	public class CountSpeechBroadcastHourResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private List<ListRuleActions_RuleActionInfo> ruleActionList;
+		private int? data;
 
 		public string RequestId
 		{
@@ -83,103 +83,15 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public List<ListRuleActions_RuleActionInfo> RuleActionList
+		public int? Data
 		{
 			get
 			{
-				return ruleActionList;
+				return data;
 			}
 			set	
 			{
-				ruleActionList = value;
-			}
-		}
-
-		public class ListRuleActions_RuleActionInfo
-		{
-
-			private long? id;
-
-			private long? ruleId;
-
-			private string type;
-
-			private string configuration;
-
-			private bool? errorActionFlag;
-
-			private string status;
-
-			public long? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
-
-			public long? RuleId
-			{
-				get
-				{
-					return ruleId;
-				}
-				set	
-				{
-					ruleId = value;
-				}
-			}
-
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
-
-			public string Configuration
-			{
-				get
-				{
-					return configuration;
-				}
-				set	
-				{
-					configuration = value;
-				}
-			}
-
-			public bool? ErrorActionFlag
-			{
-				get
-				{
-					return errorActionFlag;
-				}
-				set	
-				{
-					errorActionFlag = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
+				data = value;
 			}
 		}
 	}
