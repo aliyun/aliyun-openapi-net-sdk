@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.antiddos_public;
 using Aliyun.Acs.antiddos_public.Transform;
 using Aliyun.Acs.antiddos_public.Transform.V20170518;
 
@@ -31,8 +30,13 @@ namespace Aliyun.Acs.antiddos_public.Model.V20170518
     public class DescribeBgpPackByIpRequest : RpcAcsRequest<DescribeBgpPackByIpResponse>
     {
         public DescribeBgpPackByIpRequest()
-            : base("antiddos-public", "2017-05-18", "DescribeBgpPackByIp")
+            : base("antiddos-public", "2017-05-18", "DescribeBgpPackByIp", "ddosbasic", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.antiddos_public.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.antiddos_public.Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
