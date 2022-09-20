@@ -1,3 +1,6 @@
+2022-09-20 Version: 1.0.1
+- Remove useless Agent parameters.
+
 2022-09-20 Version: 3.0.12
 - DescribeSnatTableEntries DescribeSnatTableEntries ListFullnatEntries support query --by natGatewayId.
 
