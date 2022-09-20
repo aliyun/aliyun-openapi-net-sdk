@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.threedvision;
 using Aliyun.Acs.threedvision.Transform;
 using Aliyun.Acs.threedvision.Transform.V20210131;
 
@@ -31,8 +30,13 @@ namespace Aliyun.Acs.threedvision.Model.V20210131
     public class GetAsyncJobResultRequest : RpcAcsRequest<GetAsyncJobResultResponse>
     {
         public GetAsyncJobResultRequest()
-            : base("threedvision", "2021-01-31", "GetAsyncJobResult")
+            : base("threedvision", "2021-01-31", "GetAsyncJobResult", "threedvision", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.threedvision.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.threedvision.Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
