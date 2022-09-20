@@ -27,10 +27,10 @@ using Aliyun.Acs.Vpc.Transform.V20160428;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-    public class ListFullNatEntriesRequest : RpcAcsRequest<ListFullNatEntriesResponse>
+    public class TagResourcesForExpressConnectRequest : RpcAcsRequest<TagResourcesForExpressConnectResponse>
     {
-        public ListFullNatEntriesRequest()
-            : base("Vpc", "2016-04-28", "ListFullNatEntries", "vpc", "openAPI")
+        public TagResourcesForExpressConnectRequest()
+            : base("Vpc", "2016-04-28", "TagResourcesForExpressConnect", "vpc", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,29 +42,17 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? resourceOwnerId;
 
-		private string clientToken;
+		private List<string> tags = new List<string>(){ };
 
-		private List<string> networkInterfaceIdss = new List<string>(){ };
-
-		private string fullNatEntryId;
-
-		private string fullNatTableId;
-
-		private string nextToken;
-
-		private List<string> fullNatEntryNamess = new List<string>(){ };
-
-		private string natGatewayId;
+		private List<string> resourceIds = new List<string>(){ };
 
 		private string resourceOwnerAccount;
-
-		private string ipProtocol;
 
 		private string ownerAccount;
 
 		private long? ownerId;
 
-		private long? maxResults;
+		private string resourceType;
 
 		public long? ResourceOwnerId
 		{
@@ -79,94 +67,37 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string ClientToken
+		public List<string> Tags
 		{
 			get
 			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public List<string> NetworkInterfaceIdss
-		{
-			get
-			{
-				return networkInterfaceIdss;
+				return tags;
 			}
 
 			set
 			{
-				networkInterfaceIdss = value;
+				tags = value;
+				if(tags != null)
+				{
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
+				}
 			}
 		}
 
-		public string FullNatEntryId
+		public List<string> ResourceIds
 		{
 			get
 			{
-				return fullNatEntryId;
-			}
-			set	
-			{
-				fullNatEntryId = value;
-				DictionaryUtil.Add(QueryParameters, "FullNatEntryId", value);
-			}
-		}
-
-		public string FullNatTableId
-		{
-			get
-			{
-				return fullNatTableId;
-			}
-			set	
-			{
-				fullNatTableId = value;
-				DictionaryUtil.Add(QueryParameters, "FullNatTableId", value);
-			}
-		}
-
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
-				DictionaryUtil.Add(QueryParameters, "NextToken", value);
-			}
-		}
-
-		public List<string> FullNatEntryNamess
-		{
-			get
-			{
-				return fullNatEntryNamess;
+				return resourceIds;
 			}
 
 			set
 			{
-				fullNatEntryNamess = value;
-			}
-		}
-
-		public string NatGatewayId
-		{
-			get
-			{
-				return natGatewayId;
-			}
-			set	
-			{
-				natGatewayId = value;
-				DictionaryUtil.Add(QueryParameters, "NatGatewayId", value);
+				resourceIds = value;
 			}
 		}
 
@@ -180,19 +111,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string IpProtocol
-		{
-			get
-			{
-				return ipProtocol;
-			}
-			set	
-			{
-				ipProtocol = value;
-				DictionaryUtil.Add(QueryParameters, "IpProtocol", value);
 			}
 		}
 
@@ -222,27 +140,54 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public long? MaxResults
+		public string ResourceType
 		{
 			get
 			{
-				return maxResults;
+				return resourceType;
 			}
 			set	
 			{
-				maxResults = value;
-				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		public class Tag
 		{
-			return false;
+
+			private string value_;
+
+			private string key;
+
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
 		}
 
-        public override ListFullNatEntriesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override TagResourcesForExpressConnectResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListFullNatEntriesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TagResourcesForExpressConnectResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

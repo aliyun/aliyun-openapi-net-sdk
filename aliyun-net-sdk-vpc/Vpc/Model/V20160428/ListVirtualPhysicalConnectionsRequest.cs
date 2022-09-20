@@ -52,6 +52,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private bool? isConfirmed;
 
+		private List<string> tagss = new List<string>(){ };
+
 		private List<string> virtualPhysicalConnectionStatusess = new List<string>(){ };
 
 		private string physicalConnectionId;
@@ -136,6 +138,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public List<string> Tagss
+		{
+			get
+			{
+				return tagss;
+			}
+
+			set
+			{
+				tagss = value;
+				if(tagss != null)
+				{
+					for (int depth1 = 0; depth1 < tagss.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tags." + (depth1 + 1), tagss[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tags." + (depth1 + 1), tagss[depth1]);
+					}
+				}
+			}
+		}
+
 		public List<string> VirtualPhysicalConnectionStatusess
 		{
 			get
@@ -172,6 +195,38 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				maxResults = value;
 				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+			}
+		}
+
+		public class Tags
+		{
+
+			private string key;
+
+			private string value_;
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
 			}
 		}
 

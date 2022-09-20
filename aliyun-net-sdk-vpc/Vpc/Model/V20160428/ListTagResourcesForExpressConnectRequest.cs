@@ -27,10 +27,10 @@ using Aliyun.Acs.Vpc.Transform.V20160428;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-    public class DescribeForwardTableEntriesRequest : RpcAcsRequest<DescribeForwardTableEntriesResponse>
+    public class ListTagResourcesForExpressConnectRequest : RpcAcsRequest<ListTagResourcesForExpressConnectResponse>
     {
-        public DescribeForwardTableEntriesRequest()
-            : base("Vpc", "2016-04-28", "DescribeForwardTableEntries", "vpc", "openAPI")
+        public ListTagResourcesForExpressConnectRequest()
+            : base("Vpc", "2016-04-28", "ListTagResourcesForExpressConnect", "vpc", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,33 +42,21 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? resourceOwnerId;
 
-		private string forwardTableId;
+		private string nextToken;
 
-		private string internalIp;
+		private List<string> tags = new List<string>(){ };
 
-		private int? pageNumber;
-
-		private string forwardEntryId;
-
-		private int? pageSize;
-
-		private string natGatewayId;
-
-		private string externalIp;
+		private List<string> resourceIds = new List<string>(){ };
 
 		private string resourceOwnerAccount;
-
-		private string ipProtocol;
-
-		private string forwardEntryName;
 
 		private string ownerAccount;
 
 		private long? ownerId;
 
-		private string internalPort;
+		private string resourceType;
 
-		private string externalPort;
+		private int? maxResults;
 
 		public long? ResourceOwnerId
 		{
@@ -83,94 +71,50 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string ForwardTableId
+		public string NextToken
 		{
 			get
 			{
-				return forwardTableId;
+				return nextToken;
 			}
 			set	
 			{
-				forwardTableId = value;
-				DictionaryUtil.Add(QueryParameters, "ForwardTableId", value);
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
 			}
 		}
 
-		public string InternalIp
+		public List<string> Tags
 		{
 			get
 			{
-				return internalIp;
+				return tags;
 			}
-			set	
+
+			set
 			{
-				internalIp = value;
-				DictionaryUtil.Add(QueryParameters, "InternalIp", value);
+				tags = value;
+				if(tags != null)
+				{
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
+				}
 			}
 		}
 
-		public int? PageNumber
+		public List<string> ResourceIds
 		{
 			get
 			{
-				return pageNumber;
+				return resourceIds;
 			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
 
-		public string ForwardEntryId
-		{
-			get
+			set
 			{
-				return forwardEntryId;
-			}
-			set	
-			{
-				forwardEntryId = value;
-				DictionaryUtil.Add(QueryParameters, "ForwardEntryId", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string NatGatewayId
-		{
-			get
-			{
-				return natGatewayId;
-			}
-			set	
-			{
-				natGatewayId = value;
-				DictionaryUtil.Add(QueryParameters, "NatGatewayId", value);
-			}
-		}
-
-		public string ExternalIp
-		{
-			get
-			{
-				return externalIp;
-			}
-			set	
-			{
-				externalIp = value;
-				DictionaryUtil.Add(QueryParameters, "ExternalIp", value);
+				resourceIds = value;
 			}
 		}
 
@@ -184,32 +128,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string IpProtocol
-		{
-			get
-			{
-				return ipProtocol;
-			}
-			set	
-			{
-				ipProtocol = value;
-				DictionaryUtil.Add(QueryParameters, "IpProtocol", value);
-			}
-		}
-
-		public string ForwardEntryName
-		{
-			get
-			{
-				return forwardEntryName;
-			}
-			set	
-			{
-				forwardEntryName = value;
-				DictionaryUtil.Add(QueryParameters, "ForwardEntryName", value);
 			}
 		}
 
@@ -239,35 +157,67 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string InternalPort
+		public string ResourceType
 		{
 			get
 			{
-				return internalPort;
+				return resourceType;
 			}
 			set	
 			{
-				internalPort = value;
-				DictionaryUtil.Add(QueryParameters, "InternalPort", value);
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
-		public string ExternalPort
+		public int? MaxResults
 		{
 			get
 			{
-				return externalPort;
+				return maxResults;
 			}
 			set	
 			{
-				externalPort = value;
-				DictionaryUtil.Add(QueryParameters, "ExternalPort", value);
+				maxResults = value;
+				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
 			}
 		}
 
-        public override DescribeForwardTableEntriesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+		}
+
+        public override ListTagResourcesForExpressConnectResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeForwardTableEntriesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListTagResourcesForExpressConnectResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

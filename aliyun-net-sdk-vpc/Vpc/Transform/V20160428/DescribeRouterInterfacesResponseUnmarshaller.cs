@@ -77,6 +77,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				routerInterfaceType.HasReservationData = _ctx.StringValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].HasReservationData");
 				routerInterfaceType.AccessPointId = _ctx.StringValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].AccessPointId");
 				routerInterfaceType.Ipv6Status = _ctx.StringValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].Ipv6Status");
+				routerInterfaceType.FastLinkMode = _ctx.BooleanValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].FastLinkMode");
 
 				describeRouterInterfacesResponse_routerInterfaceSet.Add(routerInterfaceType);
 			}

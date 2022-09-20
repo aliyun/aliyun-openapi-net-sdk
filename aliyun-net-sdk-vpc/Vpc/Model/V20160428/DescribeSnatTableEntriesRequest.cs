@@ -54,6 +54,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string snatEntryId;
 
+		private string natGatewayId;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -152,6 +154,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				snatEntryId = value;
 				DictionaryUtil.Add(QueryParameters, "SnatEntryId", value);
+			}
+		}
+
+		public string NatGatewayId
+		{
+			get
+			{
+				return natGatewayId;
+			}
+			set	
+			{
+				natGatewayId = value;
+				DictionaryUtil.Add(QueryParameters, "NatGatewayId", value);
 			}
 		}
 
