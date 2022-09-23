@@ -46,6 +46,7 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 				prefixList.NextHopInstanceId = _ctx.StringValue("ListTransitRouterPrefixListAssociation.PrefixLists["+ i +"].NextHopInstanceId");
 				prefixList.NextHopType = _ctx.StringValue("ListTransitRouterPrefixListAssociation.PrefixLists["+ i +"].NextHopType");
 				prefixList.TransitRouterTableId = _ctx.StringValue("ListTransitRouterPrefixListAssociation.PrefixLists["+ i +"].TransitRouterTableId");
+				prefixList.TransitRouterId = _ctx.StringValue("ListTransitRouterPrefixListAssociation.PrefixLists["+ i +"].TransitRouterId");
 
 				listTransitRouterPrefixListAssociationResponse_prefixLists.Add(prefixList);
 			}

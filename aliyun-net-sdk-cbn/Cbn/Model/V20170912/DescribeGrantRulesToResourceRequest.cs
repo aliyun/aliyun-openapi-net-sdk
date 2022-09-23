@@ -28,10 +28,10 @@ using Aliyun.Acs.Cbn.Transform.V20170912;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
 {
-    public class DescribeGrantRulesToCenRequest : RpcAcsRequest<DescribeGrantRulesToCenResponse>
+    public class DescribeGrantRulesToResourceRequest : RpcAcsRequest<DescribeGrantRulesToResourceResponse>
     {
-        public DescribeGrantRulesToCenRequest()
-            : base("Cbn", "2017-09-12", "DescribeGrantRulesToCen")
+        public DescribeGrantRulesToResourceRequest()
+            : base("Cbn", "2017-09-12", "DescribeGrantRulesToResource")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,11 +43,11 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private long? resourceOwnerId;
 
-		private string cenId;
-
 		private string productType;
 
 		private string nextToken;
+
+		private string resourceId;
 
 		private string resourceOwnerAccount;
 
@@ -55,7 +55,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private long? ownerId;
 
-		private long? maxResults;
+		private int? maxResults;
 
 		public long? ResourceOwnerId
 		{
@@ -67,19 +67,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string CenId
-		{
-			get
-			{
-				return cenId;
-			}
-			set	
-			{
-				cenId = value;
-				DictionaryUtil.Add(QueryParameters, "CenId", value);
 			}
 		}
 
@@ -106,6 +93,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				nextToken = value;
 				DictionaryUtil.Add(QueryParameters, "NextToken", value);
+			}
+		}
+
+		public string ResourceId
+		{
+			get
+			{
+				return resourceId;
+			}
+			set	
+			{
+				resourceId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
 			}
 		}
 
@@ -148,7 +148,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public long? MaxResults
+		public int? MaxResults
 		{
 			get
 			{
@@ -161,9 +161,14 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-        public override DescribeGrantRulesToCenResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeGrantRulesToResourceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeGrantRulesToCenResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeGrantRulesToResourceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

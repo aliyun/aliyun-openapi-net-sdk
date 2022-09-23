@@ -28,10 +28,10 @@ using Aliyun.Acs.Cbn.Transform.V20170912;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
 {
-    public class DescribeGrantRulesToCenRequest : RpcAcsRequest<DescribeGrantRulesToCenResponse>
+    public class RemoveTrafficMatchRuleFromTrafficMarkingPolicyRequest : RpcAcsRequest<RemoveTrafficMatchRuleFromTrafficMarkingPolicyResponse>
     {
-        public DescribeGrantRulesToCenRequest()
-            : base("Cbn", "2017-09-12", "DescribeGrantRulesToCen")
+        public RemoveTrafficMatchRuleFromTrafficMarkingPolicyRequest()
+            : base("Cbn", "2017-09-12", "RemoveTrafficMatchRuleFromTrafficMarkingPolicy")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,19 +43,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private long? resourceOwnerId;
 
-		private string cenId;
+		private string clientToken;
 
-		private string productType;
+		private string trafficMarkingPolicyId;
 
-		private string nextToken;
+		private bool? dryRun;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private long? ownerId;
+		private List<string> trafficMarkRuleIdss = new List<string>(){ };
 
-		private long? maxResults;
+		private long? ownerId;
 
 		public long? ResourceOwnerId
 		{
@@ -70,42 +70,42 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string CenId
+		public string ClientToken
 		{
 			get
 			{
-				return cenId;
+				return clientToken;
 			}
 			set	
 			{
-				cenId = value;
-				DictionaryUtil.Add(QueryParameters, "CenId", value);
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
-		public string ProductType
+		public string TrafficMarkingPolicyId
 		{
 			get
 			{
-				return productType;
+				return trafficMarkingPolicyId;
 			}
 			set	
 			{
-				productType = value;
-				DictionaryUtil.Add(QueryParameters, "ProductType", value);
+				trafficMarkingPolicyId = value;
+				DictionaryUtil.Add(QueryParameters, "TrafficMarkingPolicyId", value);
 			}
 		}
 
-		public string NextToken
+		public bool? DryRun
 		{
 			get
 			{
-				return nextToken;
+				return dryRun;
 			}
 			set	
 			{
-				nextToken = value;
-				DictionaryUtil.Add(QueryParameters, "NextToken", value);
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
 			}
 		}
 
@@ -135,6 +135,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
+		public List<string> TrafficMarkRuleIdss
+		{
+			get
+			{
+				return trafficMarkRuleIdss;
+			}
+
+			set
+			{
+				trafficMarkRuleIdss = value;
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -148,22 +161,14 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public long? MaxResults
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
-				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
-			}
+			return false;
 		}
 
-        public override DescribeGrantRulesToCenResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override RemoveTrafficMatchRuleFromTrafficMarkingPolicyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeGrantRulesToCenResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RemoveTrafficMatchRuleFromTrafficMarkingPolicyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

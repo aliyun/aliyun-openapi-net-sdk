@@ -27,6 +27,12 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private string requestId;
 
+		private long? totalCount;
+
+		private long? maxResults;
+
+		private string nextToken;
+
 		private List<DescribeGrantRulesToCen_GrantRule> grantRules;
 
 		public string RequestId
@@ -38,6 +44,42 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public long? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
+		public long? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+			}
+		}
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
 			}
 		}
 
@@ -67,6 +109,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			private string cenId;
 
 			private string orderType;
+
+			private long? cenOwnerId;
 
 			public string ChildInstanceType
 			{
@@ -137,6 +181,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					orderType = value;
+				}
+			}
+
+			public long? CenOwnerId
+			{
+				get
+				{
+					return cenOwnerId;
+				}
+				set	
+				{
+					cenOwnerId = value;
 				}
 			}
 		}

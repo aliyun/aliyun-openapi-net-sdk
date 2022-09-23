@@ -28,10 +28,10 @@ using Aliyun.Acs.Cbn.Transform.V20170912;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
 {
-    public class DescribeGrantRulesToCenRequest : RpcAcsRequest<DescribeGrantRulesToCenResponse>
+    public class CreateCenInterRegionTrafficQosQueueRequest : RpcAcsRequest<CreateCenInterRegionTrafficQosQueueResponse>
     {
-        public DescribeGrantRulesToCenRequest()
-            : base("Cbn", "2017-09-12", "DescribeGrantRulesToCen")
+        public CreateCenInterRegionTrafficQosQueueRequest()
+            : base("Cbn", "2017-09-12", "CreateCenInterRegionTrafficQosQueue")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,13 +41,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			Method = MethodType.POST;
         }
 
+		private List<string> dscpss = new List<string>(){ };
+
 		private long? resourceOwnerId;
 
-		private string cenId;
+		private string clientToken;
 
-		private string productType;
+		private string qosQueueName;
 
-		private string nextToken;
+		private string remainBandwidthPercent;
+
+		private bool? dryRun;
+
+		private string trafficQosPolicyId;
 
 		private string resourceOwnerAccount;
 
@@ -55,7 +61,20 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private long? ownerId;
 
-		private long? maxResults;
+		private string qosQueueDescription;
+
+		public List<string> Dscpss
+		{
+			get
+			{
+				return dscpss;
+			}
+
+			set
+			{
+				dscpss = value;
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -70,42 +89,68 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string CenId
+		public string ClientToken
 		{
 			get
 			{
-				return cenId;
+				return clientToken;
 			}
 			set	
 			{
-				cenId = value;
-				DictionaryUtil.Add(QueryParameters, "CenId", value);
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
-		public string ProductType
+		public string QosQueueName
 		{
 			get
 			{
-				return productType;
+				return qosQueueName;
 			}
 			set	
 			{
-				productType = value;
-				DictionaryUtil.Add(QueryParameters, "ProductType", value);
+				qosQueueName = value;
+				DictionaryUtil.Add(QueryParameters, "QosQueueName", value);
 			}
 		}
 
-		public string NextToken
+		public string RemainBandwidthPercent
 		{
 			get
 			{
-				return nextToken;
+				return remainBandwidthPercent;
 			}
 			set	
 			{
-				nextToken = value;
-				DictionaryUtil.Add(QueryParameters, "NextToken", value);
+				remainBandwidthPercent = value;
+				DictionaryUtil.Add(QueryParameters, "RemainBandwidthPercent", value);
+			}
+		}
+
+		public bool? DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
+			}
+		}
+
+		public string TrafficQosPolicyId
+		{
+			get
+			{
+				return trafficQosPolicyId;
+			}
+			set	
+			{
+				trafficQosPolicyId = value;
+				DictionaryUtil.Add(QueryParameters, "TrafficQosPolicyId", value);
 			}
 		}
 
@@ -148,22 +193,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public long? MaxResults
+		public string QosQueueDescription
 		{
 			get
 			{
-				return maxResults;
+				return qosQueueDescription;
 			}
 			set	
 			{
-				maxResults = value;
-				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+				qosQueueDescription = value;
+				DictionaryUtil.Add(QueryParameters, "QosQueueDescription", value);
 			}
 		}
 
-        public override DescribeGrantRulesToCenResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override CreateCenInterRegionTrafficQosQueueResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeGrantRulesToCenResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateCenInterRegionTrafficQosQueueResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
