@@ -39,6 +39,10 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private int? logBackupRetentionPeriod;
 
+		private string snapshotBackupType;
+
+		private int? backupInterval;
+
 		public string PreferredBackupPeriod
 		{
 			get
@@ -120,6 +124,30 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				logBackupRetentionPeriod = value;
+			}
+		}
+
+		public string SnapshotBackupType
+		{
+			get
+			{
+				return snapshotBackupType;
+			}
+			set	
+			{
+				snapshotBackupType = value;
+			}
+		}
+
+		public int? BackupInterval
+		{
+			get
+			{
+				return backupInterval;
+			}
+			set	
+			{
+				backupInterval = value;
 			}
 		}
 	}

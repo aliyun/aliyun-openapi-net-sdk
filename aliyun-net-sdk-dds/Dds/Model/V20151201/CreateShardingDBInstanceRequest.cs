@@ -37,7 +37,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
-		private string clientToken;
+		private string secondaryZoneId;
 
 		private string engineVersion;
 
@@ -45,25 +45,13 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private List<int?> replicaSets = new List<int?>(){ };
 
-		private string storageEngine;
-
 		private string resourceGroupId;
 
 		private string securityToken;
 
-		private string engine;
-
 		private string dBInstanceDescription;
 
 		private int? period;
-
-		private string restoreTime;
-
-		private string resourceOwnerAccount;
-
-		private string srcDBInstanceId;
-
-		private string ownerAccount;
 
 		private List<int?> configServers = new List<int?>(){ };
 
@@ -75,13 +63,29 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private List<string> mongoss = new List<string>(){ };
 
-		private string accountPassword;
-
 		private string autoRenew;
 
-		private string vpcId;
-
 		private string zoneId;
+
+		private string clientToken;
+
+		private string storageEngine;
+
+		private string engine;
+
+		private string hiddenZoneId;
+
+		private string restoreTime;
+
+		private string resourceOwnerAccount;
+
+		private string srcDBInstanceId;
+
+		private string ownerAccount;
+
+		private string accountPassword;
+
+		private string vpcId;
 
 		private string protocolType;
 
@@ -100,16 +104,16 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string ClientToken
+		public string SecondaryZoneId
 		{
 			get
 			{
-				return clientToken;
+				return secondaryZoneId;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+				secondaryZoneId = value;
+				DictionaryUtil.Add(QueryParameters, "SecondaryZoneId", value);
 			}
 		}
 
@@ -161,19 +165,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string StorageEngine
-		{
-			get
-			{
-				return storageEngine;
-			}
-			set	
-			{
-				storageEngine = value;
-				DictionaryUtil.Add(QueryParameters, "StorageEngine", value);
-			}
-		}
-
 		public string ResourceGroupId
 		{
 			get
@@ -200,19 +191,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
-				DictionaryUtil.Add(QueryParameters, "Engine", value);
-			}
-		}
-
 		public string DBInstanceDescription
 		{
 			get
@@ -236,58 +214,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				period = value;
 				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
-			}
-		}
-
-		public string RestoreTime
-		{
-			get
-			{
-				return restoreTime;
-			}
-			set	
-			{
-				restoreTime = value;
-				DictionaryUtil.Add(QueryParameters, "RestoreTime", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string SrcDBInstanceId
-		{
-			get
-			{
-				return srcDBInstanceId;
-			}
-			set	
-			{
-				srcDBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "SrcDBInstanceId", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -371,19 +297,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string AccountPassword
-		{
-			get
-			{
-				return accountPassword;
-			}
-			set	
-			{
-				accountPassword = value;
-				DictionaryUtil.Add(QueryParameters, "AccountPassword", value);
-			}
-		}
-
 		public string AutoRenew
 		{
 			get
@@ -397,19 +310,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string VpcId
-		{
-			get
-			{
-				return vpcId;
-			}
-			set	
-			{
-				vpcId = value;
-				DictionaryUtil.Add(QueryParameters, "VpcId", value);
-			}
-		}
-
 		public string ZoneId
 		{
 			get
@@ -420,6 +320,136 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				zoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string StorageEngine
+		{
+			get
+			{
+				return storageEngine;
+			}
+			set	
+			{
+				storageEngine = value;
+				DictionaryUtil.Add(QueryParameters, "StorageEngine", value);
+			}
+		}
+
+		public string Engine
+		{
+			get
+			{
+				return engine;
+			}
+			set	
+			{
+				engine = value;
+				DictionaryUtil.Add(QueryParameters, "Engine", value);
+			}
+		}
+
+		public string HiddenZoneId
+		{
+			get
+			{
+				return hiddenZoneId;
+			}
+			set	
+			{
+				hiddenZoneId = value;
+				DictionaryUtil.Add(QueryParameters, "HiddenZoneId", value);
+			}
+		}
+
+		public string RestoreTime
+		{
+			get
+			{
+				return restoreTime;
+			}
+			set	
+			{
+				restoreTime = value;
+				DictionaryUtil.Add(QueryParameters, "RestoreTime", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string SrcDBInstanceId
+		{
+			get
+			{
+				return srcDBInstanceId;
+			}
+			set	
+			{
+				srcDBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "SrcDBInstanceId", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string AccountPassword
+		{
+			get
+			{
+				return accountPassword;
+			}
+			set	
+			{
+				accountPassword = value;
+				DictionaryUtil.Add(QueryParameters, "AccountPassword", value);
+			}
+		}
+
+		public string VpcId
+		{
+			get
+			{
+				return vpcId;
+			}
+			set	
+			{
+				vpcId = value;
+				DictionaryUtil.Add(QueryParameters, "VpcId", value);
 			}
 		}
 

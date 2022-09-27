@@ -66,6 +66,12 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 									availableResource.InstanceClassRemark = _ctx.StringValue("DescribeAvailableResource.SupportedDBTypes["+ i +"].AvailableZones["+ j +"].SupportedEngineVersions["+ k +"].SupportedEngines["+ l +"].SupportedNodeTypes["+ m +"].AvailableResources["+ n +"].InstanceClassRemark");
 									availableResource.InstanceClass = _ctx.StringValue("DescribeAvailableResource.SupportedDBTypes["+ i +"].AvailableZones["+ j +"].SupportedEngineVersions["+ k +"].SupportedEngines["+ l +"].SupportedNodeTypes["+ m +"].AvailableResources["+ n +"].InstanceClass");
 
+									DescribeAvailableResourceResponse.DescribeAvailableResource_SupportedDBType.DescribeAvailableResource_AvailableZone.DescribeAvailableResource_SupportedEngineVersion.DescribeAvailableResource_SupportedEngine.DescribeAvailableResource_SupportedNodeType.DescribeAvailableResource_AvailableResource.DescribeAvailableResource_DBInstanceStorageRange dBInstanceStorageRange = new DescribeAvailableResourceResponse.DescribeAvailableResource_SupportedDBType.DescribeAvailableResource_AvailableZone.DescribeAvailableResource_SupportedEngineVersion.DescribeAvailableResource_SupportedEngine.DescribeAvailableResource_SupportedNodeType.DescribeAvailableResource_AvailableResource.DescribeAvailableResource_DBInstanceStorageRange();
+									dBInstanceStorageRange.Min = _ctx.IntegerValue("DescribeAvailableResource.SupportedDBTypes["+ i +"].AvailableZones["+ j +"].SupportedEngineVersions["+ k +"].SupportedEngines["+ l +"].SupportedNodeTypes["+ m +"].AvailableResources["+ n +"].DBInstanceStorageRange.Min");
+									dBInstanceStorageRange.Max = _ctx.IntegerValue("DescribeAvailableResource.SupportedDBTypes["+ i +"].AvailableZones["+ j +"].SupportedEngineVersions["+ k +"].SupportedEngines["+ l +"].SupportedNodeTypes["+ m +"].AvailableResources["+ n +"].DBInstanceStorageRange.Max");
+									dBInstanceStorageRange.Step = _ctx.IntegerValue("DescribeAvailableResource.SupportedDBTypes["+ i +"].AvailableZones["+ j +"].SupportedEngineVersions["+ k +"].SupportedEngines["+ l +"].SupportedNodeTypes["+ m +"].AvailableResources["+ n +"].DBInstanceStorageRange.Step");
+									availableResource.DBInstanceStorageRange = dBInstanceStorageRange;
+
 									supportedNodeType_availableResources.Add(availableResource);
 								}
 								supportedNodeType.AvailableResources = supportedNodeType_availableResources;

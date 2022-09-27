@@ -38,7 +38,6 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance dBInstance = new DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance();
 				dBInstance.CreationTime = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].CreationTime");
 				dBInstance.ReplacateId = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ReplacateId");
-				dBInstance.ChargeType = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ChargeType");
 				dBInstance.VpcAuthMode = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].VpcAuthMode");
 				dBInstance.NetworkType = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].NetworkType");
 				dBInstance.LockMode = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].LockMode");
@@ -72,7 +71,12 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				dBInstance.KindCode = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].KindCode");
 				dBInstance.CapacityUnit = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].CapacityUnit");
 				dBInstance.CloudType = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].CloudType");
+				dBInstance.ChargeType = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ChargeType");
 				dBInstance.StorageType = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].StorageType");
+				dBInstance.SecondaryZoneId = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].SecondaryZoneId");
+				dBInstance.HiddenZoneId = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].HiddenZoneId");
+				dBInstance.DestroyTime = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].DestroyTime");
+				dBInstance.PaymentType = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].PaymentType");
 
 				List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_ReplicaSet> dBInstance_replicaSets = new List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_ReplicaSet>();
 				for (int j = 0; j < _ctx.Length("DescribeDBInstanceAttribute.DBInstances["+ i +"].ReplicaSets.Length"); j++) {
@@ -152,6 +156,24 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 					dBInstance_configserverList.Add(configserverAttribute);
 				}
 				dBInstance.ConfigserverList = dBInstance_configserverList;
+
+				List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_NetworkAddress> dBInstance_networkAddresses = new List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_NetworkAddress>();
+				for (int j = 0; j < _ctx.Length("DescribeDBInstanceAttribute.DBInstances["+ i +"].NetworkAddresses.Length"); j++) {
+					DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_NetworkAddress networkAddress = new DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_NetworkAddress();
+					networkAddress.NodeType = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].NetworkAddresses["+ j +"].NodeType");
+					networkAddress.VSwitchId = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].NetworkAddresses["+ j +"].VSwitchId");
+					networkAddress.ExpiredTime = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].NetworkAddresses["+ j +"].ExpiredTime");
+					networkAddress.NetworkType = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].NetworkAddresses["+ j +"].NetworkType");
+					networkAddress.Role = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].NetworkAddresses["+ j +"].Role");
+					networkAddress.Port = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].NetworkAddresses["+ j +"].Port");
+					networkAddress.VPCId = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].NetworkAddresses["+ j +"].VPCId");
+					networkAddress.NetworkAddress = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].NetworkAddresses["+ j +"].NetworkAddress");
+					networkAddress.NodeId = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].NetworkAddresses["+ j +"].NodeId");
+					networkAddress.IPAddress = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].NetworkAddresses["+ j +"].IPAddress");
+
+					dBInstance_networkAddresses.Add(networkAddress);
+				}
+				dBInstance.NetworkAddresses = dBInstance_networkAddresses;
 
 				describeDBInstanceAttributeResponse_dBInstances.Add(dBInstance);
 			}

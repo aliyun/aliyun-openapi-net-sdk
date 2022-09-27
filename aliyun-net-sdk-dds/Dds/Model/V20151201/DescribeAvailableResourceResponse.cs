@@ -243,6 +243,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 								private string instanceClass;
 
+								private DescribeAvailableResource_DBInstanceStorageRange dBInstanceStorageRange;
+
 								public string InstanceClassRemark
 								{
 									get
@@ -264,6 +266,64 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 									set	
 									{
 										instanceClass = value;
+									}
+								}
+
+								public DescribeAvailableResource_DBInstanceStorageRange DBInstanceStorageRange
+								{
+									get
+									{
+										return dBInstanceStorageRange;
+									}
+									set	
+									{
+										dBInstanceStorageRange = value;
+									}
+								}
+
+								public class DescribeAvailableResource_DBInstanceStorageRange
+								{
+
+									private int? min;
+
+									private int? max;
+
+									private int? step;
+
+									public int? Min
+									{
+										get
+										{
+											return min;
+										}
+										set	
+										{
+											min = value;
+										}
+									}
+
+									public int? Max
+									{
+										get
+										{
+											return max;
+										}
+										set	
+										{
+											max = value;
+										}
+									}
+
+									public int? Step
+									{
+										get
+										{
+											return step;
+										}
+										set	
+										{
+											step = value;
+										}
 									}
 								}
 							}

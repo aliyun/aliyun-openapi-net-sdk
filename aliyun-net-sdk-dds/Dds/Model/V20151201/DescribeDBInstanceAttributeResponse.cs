@@ -60,8 +60,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string replacateId;
 
-			private string chargeType;
-
 			private string vpcAuthMode;
 
 			private string networkType;
@@ -128,7 +126,17 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string cloudType;
 
+			private string chargeType;
+
 			private string storageType;
+
+			private string secondaryZoneId;
+
+			private string hiddenZoneId;
+
+			private string destroyTime;
+
+			private string paymentType;
 
 			private List<DescribeDBInstanceAttribute_ReplicaSet> replicaSets;
 
@@ -139,6 +147,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			private List<DescribeDBInstanceAttribute_ShardAttribute> shardList;
 
 			private List<DescribeDBInstanceAttribute_ConfigserverAttribute> configserverList;
+
+			private List<DescribeDBInstanceAttribute_NetworkAddress> networkAddresses;
 
 			public string CreationTime
 			{
@@ -161,18 +171,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					replacateId = value;
-				}
-			}
-
-			public string ChargeType
-			{
-				get
-				{
-					return chargeType;
-				}
-				set	
-				{
-					chargeType = value;
 				}
 			}
 
@@ -572,6 +570,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
+			public string ChargeType
+			{
+				get
+				{
+					return chargeType;
+				}
+				set	
+				{
+					chargeType = value;
+				}
+			}
+
 			public string StorageType
 			{
 				get
@@ -581,6 +591,54 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					storageType = value;
+				}
+			}
+
+			public string SecondaryZoneId
+			{
+				get
+				{
+					return secondaryZoneId;
+				}
+				set	
+				{
+					secondaryZoneId = value;
+				}
+			}
+
+			public string HiddenZoneId
+			{
+				get
+				{
+					return hiddenZoneId;
+				}
+				set	
+				{
+					hiddenZoneId = value;
+				}
+			}
+
+			public string DestroyTime
+			{
+				get
+				{
+					return destroyTime;
+				}
+				set	
+				{
+					destroyTime = value;
+				}
+			}
+
+			public string PaymentType
+			{
+				get
+				{
+					return paymentType;
+				}
+				set	
+				{
+					paymentType = value;
 				}
 			}
 
@@ -641,6 +699,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					configserverList = value;
+				}
+			}
+
+			public List<DescribeDBInstanceAttribute_NetworkAddress> NetworkAddresses
+			{
+				get
+				{
+					return networkAddresses;
+				}
+				set	
+				{
+					networkAddresses = value;
 				}
 			}
 
@@ -1206,6 +1276,150 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						status = value;
+					}
+				}
+			}
+
+			public class DescribeDBInstanceAttribute_NetworkAddress
+			{
+
+				private string nodeType;
+
+				private string vSwitchId;
+
+				private string expiredTime;
+
+				private string networkType;
+
+				private string role;
+
+				private string port;
+
+				private string vPCId;
+
+				private string networkAddress;
+
+				private string nodeId;
+
+				private string iPAddress;
+
+				public string NodeType
+				{
+					get
+					{
+						return nodeType;
+					}
+					set	
+					{
+						nodeType = value;
+					}
+				}
+
+				public string VSwitchId
+				{
+					get
+					{
+						return vSwitchId;
+					}
+					set	
+					{
+						vSwitchId = value;
+					}
+				}
+
+				public string ExpiredTime
+				{
+					get
+					{
+						return expiredTime;
+					}
+					set	
+					{
+						expiredTime = value;
+					}
+				}
+
+				public string NetworkType
+				{
+					get
+					{
+						return networkType;
+					}
+					set	
+					{
+						networkType = value;
+					}
+				}
+
+				public string Role
+				{
+					get
+					{
+						return role;
+					}
+					set	
+					{
+						role = value;
+					}
+				}
+
+				public string Port
+				{
+					get
+					{
+						return port;
+					}
+					set	
+					{
+						port = value;
+					}
+				}
+
+				public string VPCId
+				{
+					get
+					{
+						return vPCId;
+					}
+					set	
+					{
+						vPCId = value;
+					}
+				}
+
+				public string NetworkAddress
+				{
+					get
+					{
+						return networkAddress;
+					}
+					set	
+					{
+						networkAddress = value;
+					}
+				}
+
+				public string NodeId
+				{
+					get
+					{
+						return nodeId;
+					}
+					set	
+					{
+						nodeId = value;
+					}
+				}
+
+				public string IPAddress
+				{
+					get
+					{
+						return iPAddress;
+					}
+					set	
+					{
+						iPAddress = value;
 					}
 				}
 			}
