@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.imageseg.Model.V20191230
@@ -75,13 +75,13 @@ namespace Aliyun.Acs.imageseg.Model.V20191230
 
 				private string imageURL;
 
-				private int? x;
-
-				private int? y;
-
 				private int? width;
 
 				private int? height;
+
+				private int? y;
+
+				private int? x;
 
 				public string ImageURL
 				{
@@ -92,30 +92,6 @@ namespace Aliyun.Acs.imageseg.Model.V20191230
 					set	
 					{
 						imageURL = value;
-					}
-				}
-
-				public int? X
-				{
-					get
-					{
-						return x;
-					}
-					set	
-					{
-						x = value;
-					}
-				}
-
-				public int? Y
-				{
-					get
-					{
-						return y;
-					}
-					set	
-					{
-						y = value;
 					}
 				}
 
@@ -140,6 +116,30 @@ namespace Aliyun.Acs.imageseg.Model.V20191230
 					set	
 					{
 						height = value;
+					}
+				}
+
+				public int? Y
+				{
+					get
+					{
+						return y;
+					}
+					set	
+					{
+						y = value;
+					}
+				}
+
+				public int? X
+				{
+					get
+					{
+						return x;
+					}
+					set	
+					{
+						x = value;
 					}
 				}
 			}

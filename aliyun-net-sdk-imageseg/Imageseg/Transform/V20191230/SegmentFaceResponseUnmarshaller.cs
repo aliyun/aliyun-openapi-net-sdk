@@ -39,10 +39,10 @@ namespace Aliyun.Acs.imageseg.Transform.V20191230
 			for (int i = 0; i < _ctx.Length("SegmentFace.Data.Elements.Length"); i++) {
 				SegmentFaceResponse.SegmentFace_Data.SegmentFace_Element element = new SegmentFaceResponse.SegmentFace_Data.SegmentFace_Element();
 				element.ImageURL = _ctx.StringValue("SegmentFace.Data.Elements["+ i +"].ImageURL");
-				element.X = _ctx.IntegerValue("SegmentFace.Data.Elements["+ i +"].X");
-				element.Y = _ctx.IntegerValue("SegmentFace.Data.Elements["+ i +"].Y");
 				element.Width = _ctx.IntegerValue("SegmentFace.Data.Elements["+ i +"].Width");
 				element.Height = _ctx.IntegerValue("SegmentFace.Data.Elements["+ i +"].Height");
+				element.Y = _ctx.IntegerValue("SegmentFace.Data.Elements["+ i +"].Y");
+				element.X = _ctx.IntegerValue("SegmentFace.Data.Elements["+ i +"].X");
 
 				data_elements.Add(element);
 			}

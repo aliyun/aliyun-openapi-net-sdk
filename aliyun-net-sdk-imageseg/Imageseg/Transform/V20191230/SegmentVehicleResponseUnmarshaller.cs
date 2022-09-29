@@ -38,8 +38,8 @@ namespace Aliyun.Acs.imageseg.Transform.V20191230
 			List<SegmentVehicleResponse.SegmentVehicle_Data.SegmentVehicle_Element> data_elements = new List<SegmentVehicleResponse.SegmentVehicle_Data.SegmentVehicle_Element>();
 			for (int i = 0; i < _ctx.Length("SegmentVehicle.Data.Elements.Length"); i++) {
 				SegmentVehicleResponse.SegmentVehicle_Data.SegmentVehicle_Element element = new SegmentVehicleResponse.SegmentVehicle_Data.SegmentVehicle_Element();
-				element.OriginImageURL = _ctx.StringValue("SegmentVehicle.Data.Elements["+ i +"].OriginImageURL");
 				element.ImageURL = _ctx.StringValue("SegmentVehicle.Data.Elements["+ i +"].ImageURL");
+				element.OriginImageURL = _ctx.StringValue("SegmentVehicle.Data.Elements["+ i +"].OriginImageURL");
 
 				data_elements.Add(element);
 			}

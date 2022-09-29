@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.imageseg.Model.V20191230
@@ -56,25 +56,25 @@ namespace Aliyun.Acs.imageseg.Model.V20191230
 		public class GetAsyncJobResult_Data
 		{
 
-			private string errorCode;
+			private string status;
 
 			private string errorMessage;
 
-			private string jobId;
-
 			private string result;
 
-			private string status;
+			private string errorCode;
 
-			public string ErrorCode
+			private string jobId;
+
+			public string Status
 			{
 				get
 				{
-					return errorCode;
+					return status;
 				}
 				set	
 				{
-					errorCode = value;
+					status = value;
 				}
 			}
 
@@ -90,18 +90,6 @@ namespace Aliyun.Acs.imageseg.Model.V20191230
 				}
 			}
 
-			public string JobId
-			{
-				get
-				{
-					return jobId;
-				}
-				set	
-				{
-					jobId = value;
-				}
-			}
-
 			public string Result
 			{
 				get
@@ -114,15 +102,27 @@ namespace Aliyun.Acs.imageseg.Model.V20191230
 				}
 			}
 
-			public string Status
+			public string ErrorCode
 			{
 				get
 				{
-					return status;
+					return errorCode;
 				}
 				set	
 				{
-					status = value;
+					errorCode = value;
+				}
+			}
+
+			public string JobId
+			{
+				get
+				{
+					return jobId;
+				}
+				set	
+				{
+					jobId = value;
 				}
 			}
 		}
