@@ -31,9 +31,9 @@ namespace Aliyun.Acs.videoenhan.Transform.V20200320
 			MergeVideoModelFaceResponse mergeVideoModelFaceResponse = new MergeVideoModelFaceResponse();
 
 			mergeVideoModelFaceResponse.HttpResponse = _ctx.HttpResponse;
-			mergeVideoModelFaceResponse.Message = _ctx.StringValue("MergeVideoModelFace.Message");
 			mergeVideoModelFaceResponse.RequestId = _ctx.StringValue("MergeVideoModelFace.RequestId");
 			mergeVideoModelFaceResponse.Code = _ctx.StringValue("MergeVideoModelFace.Code");
+			mergeVideoModelFaceResponse.Message = _ctx.StringValue("MergeVideoModelFace.Message");
 
 			MergeVideoModelFaceResponse.MergeVideoModelFace_Data data = new MergeVideoModelFaceResponse.MergeVideoModelFace_Data();
 			data.VideoURL = _ctx.StringValue("MergeVideoModelFace.Data.VideoURL");

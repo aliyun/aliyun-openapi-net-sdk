@@ -40,11 +40,11 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			Method = MethodType.POST;
         }
 
-		private List<Boxes> boxess = new List<Boxes>(){ };
+		private List<float?> boxess = new List<float?>(){ };
 
 		private string videoUrl;
 
-		public List<Boxes> Boxess
+		public List<float?> Boxess
 		{
 			get
 			{
@@ -54,12 +54,15 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			set
 			{
 				boxess = value;
-				for (int i = 0; i < boxess.Count; i++)
+				if(boxess != null)
 				{
-					DictionaryUtil.Add(BodyParameters,"Boxes." + (i + 1) + ".W", boxess[i].W);
-					DictionaryUtil.Add(BodyParameters,"Boxes." + (i + 1) + ".H", boxess[i].H);
-					DictionaryUtil.Add(BodyParameters,"Boxes." + (i + 1) + ".X", boxess[i].X);
-					DictionaryUtil.Add(BodyParameters,"Boxes." + (i + 1) + ".Y", boxess[i].Y);
+					for (int depth1 = 0; depth1 < boxess.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"Boxes." + (depth1 + 1), boxess[depth1]);
+						DictionaryUtil.Add(BodyParameters,"Boxes." + (depth1 + 1), boxess[depth1]);
+						DictionaryUtil.Add(BodyParameters,"Boxes." + (depth1 + 1), boxess[depth1]);
+						DictionaryUtil.Add(BodyParameters,"Boxes." + (depth1 + 1), boxess[depth1]);
+					}
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.videoenhan.Model.V20200320
@@ -56,21 +56,9 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 		public class ChangeVideoSize_Data
 		{
 
-			private string videoUrl;
-
 			private string videoCoverUrl;
 
-			public string VideoUrl
-			{
-				get
-				{
-					return videoUrl;
-				}
-				set	
-				{
-					videoUrl = value;
-				}
-			}
+			private string videoUrl;
 
 			public string VideoCoverUrl
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 				set	
 				{
 					videoCoverUrl = value;
+				}
+			}
+
+			public string VideoUrl
+			{
+				get
+				{
+					return videoUrl;
+				}
+				set	
+				{
+					videoUrl = value;
 				}
 			}
 		}

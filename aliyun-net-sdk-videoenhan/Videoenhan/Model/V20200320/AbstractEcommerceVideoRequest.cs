@@ -42,11 +42,11 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 
 		private float? duration;
 
+		private int? height;
+
 		private string videoUrl;
 
 		private int? width;
-
-		private int? height;
 
 		public float? Duration
 		{
@@ -58,6 +58,19 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			{
 				duration = value;
 				DictionaryUtil.Add(BodyParameters, "Duration", value.ToString());
+			}
+		}
+
+		public int? Height
+		{
+			get
+			{
+				return height;
+			}
+			set	
+			{
+				height = value;
+				DictionaryUtil.Add(BodyParameters, "Height", value.ToString());
 			}
 		}
 
@@ -84,19 +97,6 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			{
 				width = value;
 				DictionaryUtil.Add(BodyParameters, "Width", value.ToString());
-			}
-		}
-
-		public int? Height
-		{
-			get
-			{
-				return height;
-			}
-			set	
-			{
-				height = value;
-				DictionaryUtil.Add(BodyParameters, "Height", value.ToString());
 			}
 		}
 

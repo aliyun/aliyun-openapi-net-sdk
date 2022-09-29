@@ -40,24 +40,11 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			Method = MethodType.POST;
         }
 
-		private string recolorModel;
-
 		private int? bitrate;
 
-		private string videoURL;
+		private string recolorModel;
 
-		public string RecolorModel
-		{
-			get
-			{
-				return recolorModel;
-			}
-			set	
-			{
-				recolorModel = value;
-				DictionaryUtil.Add(BodyParameters, "RecolorModel", value);
-			}
-		}
+		private string videoURL;
 
 		public int? Bitrate
 		{
@@ -69,6 +56,19 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			{
 				bitrate = value;
 				DictionaryUtil.Add(BodyParameters, "Bitrate", value.ToString());
+			}
+		}
+
+		public string RecolorModel
+		{
+			get
+			{
+				return recolorModel;
+			}
+			set	
+			{
+				recolorModel = value;
+				DictionaryUtil.Add(BodyParameters, "RecolorModel", value);
 			}
 		}
 

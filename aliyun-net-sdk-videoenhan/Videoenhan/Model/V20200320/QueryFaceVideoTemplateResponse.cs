@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.videoenhan.Model.V20200320
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 	public class QueryFaceVideoTemplateResponse : AcsResponse
 	{
 
-		private string message;
-
 		private string requestId;
 
 		private string code;
 
-		private QueryFaceVideoTemplate_Data data;
+		private string message;
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
+		private QueryFaceVideoTemplate_Data data;
 
 		public string RequestId
 		{
@@ -66,6 +54,18 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			set	
 			{
 				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 
@@ -101,39 +101,15 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			public class QueryFaceVideoTemplate_ElementsItem
 			{
 
-				private string templateURL;
-
-				private string userId;
-
 				private string createTime;
 
 				private string updateTime;
 
+				private string userId;
+
 				private string templateId;
 
-				public string TemplateURL
-				{
-					get
-					{
-						return templateURL;
-					}
-					set	
-					{
-						templateURL = value;
-					}
-				}
-
-				public string UserId
-				{
-					get
-					{
-						return userId;
-					}
-					set	
-					{
-						userId = value;
-					}
-				}
+				private string templateURL;
 
 				public string CreateTime
 				{
@@ -159,6 +135,18 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 					}
 				}
 
+				public string UserId
+				{
+					get
+					{
+						return userId;
+					}
+					set	
+					{
+						userId = value;
+					}
+				}
+
 				public string TemplateId
 				{
 					get
@@ -168,6 +156,18 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 					set	
 					{
 						templateId = value;
+					}
+				}
+
+				public string TemplateURL
+				{
+					get
+					{
+						return templateURL;
+					}
+					set	
+					{
+						templateURL = value;
 					}
 				}
 			}

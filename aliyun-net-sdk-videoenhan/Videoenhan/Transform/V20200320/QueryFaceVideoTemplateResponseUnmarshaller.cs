@@ -31,20 +31,20 @@ namespace Aliyun.Acs.videoenhan.Transform.V20200320
 			QueryFaceVideoTemplateResponse queryFaceVideoTemplateResponse = new QueryFaceVideoTemplateResponse();
 
 			queryFaceVideoTemplateResponse.HttpResponse = _ctx.HttpResponse;
-			queryFaceVideoTemplateResponse.Message = _ctx.StringValue("QueryFaceVideoTemplate.Message");
 			queryFaceVideoTemplateResponse.RequestId = _ctx.StringValue("QueryFaceVideoTemplate.RequestId");
 			queryFaceVideoTemplateResponse.Code = _ctx.StringValue("QueryFaceVideoTemplate.Code");
+			queryFaceVideoTemplateResponse.Message = _ctx.StringValue("QueryFaceVideoTemplate.Message");
 
 			QueryFaceVideoTemplateResponse.QueryFaceVideoTemplate_Data data = new QueryFaceVideoTemplateResponse.QueryFaceVideoTemplate_Data();
 
 			List<QueryFaceVideoTemplateResponse.QueryFaceVideoTemplate_Data.QueryFaceVideoTemplate_ElementsItem> data_elements = new List<QueryFaceVideoTemplateResponse.QueryFaceVideoTemplate_Data.QueryFaceVideoTemplate_ElementsItem>();
 			for (int i = 0; i < _ctx.Length("QueryFaceVideoTemplate.Data.Elements.Length"); i++) {
 				QueryFaceVideoTemplateResponse.QueryFaceVideoTemplate_Data.QueryFaceVideoTemplate_ElementsItem elementsItem = new QueryFaceVideoTemplateResponse.QueryFaceVideoTemplate_Data.QueryFaceVideoTemplate_ElementsItem();
-				elementsItem.TemplateURL = _ctx.StringValue("QueryFaceVideoTemplate.Data.Elements["+ i +"].TemplateURL");
-				elementsItem.UserId = _ctx.StringValue("QueryFaceVideoTemplate.Data.Elements["+ i +"].UserId");
 				elementsItem.CreateTime = _ctx.StringValue("QueryFaceVideoTemplate.Data.Elements["+ i +"].CreateTime");
 				elementsItem.UpdateTime = _ctx.StringValue("QueryFaceVideoTemplate.Data.Elements["+ i +"].UpdateTime");
+				elementsItem.UserId = _ctx.StringValue("QueryFaceVideoTemplate.Data.Elements["+ i +"].UserId");
 				elementsItem.TemplateId = _ctx.StringValue("QueryFaceVideoTemplate.Data.Elements["+ i +"].TemplateId");
+				elementsItem.TemplateURL = _ctx.StringValue("QueryFaceVideoTemplate.Data.Elements["+ i +"].TemplateURL");
 
 				data_elements.Add(elementsItem);
 			}
