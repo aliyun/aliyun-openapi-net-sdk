@@ -51,8 +51,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? ownerId;
 
-		private string chargeType;
-
 		public long? ResourceOwnerId
 		{
 			get
@@ -154,19 +152,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string ChargeType
-		{
-			get
-			{
-				return chargeType;
-			}
-			set	
-			{
-				chargeType = value;
-				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
 			}
 		}
 
