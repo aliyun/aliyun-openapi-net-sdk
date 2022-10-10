@@ -22,24 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.eais.Model.V20190624
 {
-	public class CreateEaiResponse : AcsResponse
+	public class CreateEaiJupyterResponse : AcsResponse
 	{
-
-		private string elasticAcceleratedInstanceId;
 
 		private string requestId;
 
-		public string ElasticAcceleratedInstanceId
-		{
-			get
-			{
-				return elasticAcceleratedInstanceId;
-			}
-			set	
-			{
-				elasticAcceleratedInstanceId = value;
-			}
-		}
+		private string elasticAcceleratedInstanceId;
 
 		public string RequestId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.eais.Model.V20190624
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ElasticAcceleratedInstanceId
+		{
+			get
+			{
+				return elasticAcceleratedInstanceId;
+			}
+			set	
+			{
+				elasticAcceleratedInstanceId = value;
 			}
 		}
 	}

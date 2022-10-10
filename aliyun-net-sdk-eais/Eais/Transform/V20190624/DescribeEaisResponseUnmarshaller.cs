@@ -31,31 +31,35 @@ namespace Aliyun.Acs.eais.Transform.V20190624
 			DescribeEaisResponse describeEaisResponse = new DescribeEaisResponse();
 
 			describeEaisResponse.HttpResponse = _ctx.HttpResponse;
-			describeEaisResponse.PageNumber = _ctx.IntegerValue("DescribeEais.PageNumber");
-			describeEaisResponse.TotalCount = _ctx.IntegerValue("DescribeEais.TotalCount");
-			describeEaisResponse.PageSize = _ctx.IntegerValue("DescribeEais.PageSize");
 			describeEaisResponse.RequestId = _ctx.StringValue("DescribeEais.RequestId");
+			describeEaisResponse.PageNumber = _ctx.IntegerValue("DescribeEais.PageNumber");
+			describeEaisResponse.PageSize = _ctx.IntegerValue("DescribeEais.PageSize");
+			describeEaisResponse.TotalCount = _ctx.IntegerValue("DescribeEais.TotalCount");
 
 			List<DescribeEaisResponse.DescribeEais_Instance> describeEaisResponse_instances = new List<DescribeEaisResponse.DescribeEais_Instance>();
 			for (int i = 0; i < _ctx.Length("DescribeEais.Instances.Length"); i++) {
 				DescribeEaisResponse.DescribeEais_Instance instance = new DescribeEaisResponse.DescribeEais_Instance();
-				instance.RegionId = _ctx.StringValue("DescribeEais.Instances["+ i +"].RegionId");
-				instance.ZoneId = _ctx.StringValue("DescribeEais.Instances["+ i +"].ZoneId");
-				instance.CreationTime = _ctx.StringValue("DescribeEais.Instances["+ i +"].CreationTime");
-				instance.InstanceName = _ctx.StringValue("DescribeEais.Instances["+ i +"].InstanceName");
-				instance.Description = _ctx.StringValue("DescribeEais.Instances["+ i +"].Description");
 				instance.Status = _ctx.StringValue("DescribeEais.Instances["+ i +"].Status");
-				instance.ElasticAcceleratedInstanceId = _ctx.StringValue("DescribeEais.Instances["+ i +"].ElasticAcceleratedInstanceId");
-				instance.ClientInstanceId = _ctx.StringValue("DescribeEais.Instances["+ i +"].ClientInstanceId");
-				instance.InstanceType = _ctx.StringValue("DescribeEais.Instances["+ i +"].InstanceType");
-				instance.ClientInstanceType = _ctx.StringValue("DescribeEais.Instances["+ i +"].ClientInstanceType");
+				instance.CreationTime = _ctx.StringValue("DescribeEais.Instances["+ i +"].CreationTime");
 				instance.ClientInstanceName = _ctx.StringValue("DescribeEais.Instances["+ i +"].ClientInstanceName");
+				instance.Description = _ctx.StringValue("DescribeEais.Instances["+ i +"].Description");
+				instance.ElasticAcceleratedInstanceId = _ctx.StringValue("DescribeEais.Instances["+ i +"].ElasticAcceleratedInstanceId");
+				instance.InstanceName = _ctx.StringValue("DescribeEais.Instances["+ i +"].InstanceName");
+				instance.ClientInstanceType = _ctx.StringValue("DescribeEais.Instances["+ i +"].ClientInstanceType");
+				instance.ClientInstanceId = _ctx.StringValue("DescribeEais.Instances["+ i +"].ClientInstanceId");
+				instance.ZoneId = _ctx.StringValue("DescribeEais.Instances["+ i +"].ZoneId");
+				instance.InstanceType = _ctx.StringValue("DescribeEais.Instances["+ i +"].InstanceType");
+				instance.RegionId = _ctx.StringValue("DescribeEais.Instances["+ i +"].RegionId");
+				instance.Category = _ctx.StringValue("DescribeEais.Instances["+ i +"].Category");
+				instance.JupyterUrl = _ctx.StringValue("DescribeEais.Instances["+ i +"].JupyterUrl");
+				instance.VSwitchId = _ctx.StringValue("DescribeEais.Instances["+ i +"].VSwitchId");
+				instance.SecurityGroupId = _ctx.StringValue("DescribeEais.Instances["+ i +"].SecurityGroupId");
 
 				List<DescribeEaisResponse.DescribeEais_Instance.DescribeEais_Tag> instance_tags = new List<DescribeEaisResponse.DescribeEais_Instance.DescribeEais_Tag>();
 				for (int j = 0; j < _ctx.Length("DescribeEais.Instances["+ i +"].Tags.Length"); j++) {
 					DescribeEaisResponse.DescribeEais_Instance.DescribeEais_Tag tag = new DescribeEaisResponse.DescribeEais_Instance.DescribeEais_Tag();
-					tag.TagValue = _ctx.StringValue("DescribeEais.Instances["+ i +"].Tags["+ j +"].TagValue");
 					tag.TagKey = _ctx.StringValue("DescribeEais.Instances["+ i +"].Tags["+ j +"].TagKey");
+					tag.TagValue = _ctx.StringValue("DescribeEais.Instances["+ i +"].Tags["+ j +"].TagValue");
 
 					instance_tags.Add(tag);
 				}

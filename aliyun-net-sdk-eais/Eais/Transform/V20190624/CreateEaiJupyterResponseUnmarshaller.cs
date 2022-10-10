@@ -16,41 +16,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.eais.Model.V20190624
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.eais.Model.V20190624;
+
+namespace Aliyun.Acs.eais.Transform.V20190624
 {
-	public class CreateEaiResponse : AcsResponse
-	{
+    public class CreateEaiJupyterResponseUnmarshaller
+    {
+        public static CreateEaiJupyterResponse Unmarshall(UnmarshallerContext _ctx)
+        {
+			CreateEaiJupyterResponse createEaiJupyterResponse = new CreateEaiJupyterResponse();
 
-		private string elasticAcceleratedInstanceId;
-
-		private string requestId;
-
-		public string ElasticAcceleratedInstanceId
-		{
-			get
-			{
-				return elasticAcceleratedInstanceId;
-			}
-			set	
-			{
-				elasticAcceleratedInstanceId = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+			createEaiJupyterResponse.HttpResponse = _ctx.HttpResponse;
+			createEaiJupyterResponse.RequestId = _ctx.StringValue("CreateEaiJupyter.RequestId");
+			createEaiJupyterResponse.ElasticAcceleratedInstanceId = _ctx.StringValue("CreateEaiJupyter.ElasticAcceleratedInstanceId");
+        
+			return createEaiJupyterResponse;
+        }
+    }
 }

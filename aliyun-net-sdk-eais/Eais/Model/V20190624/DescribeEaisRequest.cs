@@ -42,7 +42,11 @@ namespace Aliyun.Acs.eais.Model.V20190624
 
 		private string elasticAcceleratedInstanceIds;
 
+		private int? pageNumber;
+
 		private string instanceName;
+
+		private int? pageSize;
 
 		private string instanceType;
 
@@ -61,6 +65,19 @@ namespace Aliyun.Acs.eais.Model.V20190624
 			}
 		}
 
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
 		public string InstanceName
 		{
 			get
@@ -71,6 +88,19 @@ namespace Aliyun.Acs.eais.Model.V20190624
 			{
 				instanceName = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceName", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

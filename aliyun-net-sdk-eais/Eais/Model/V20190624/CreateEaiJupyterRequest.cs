@@ -27,10 +27,10 @@ using Aliyun.Acs.eais.Transform.V20190624;
 
 namespace Aliyun.Acs.eais.Model.V20190624
 {
-    public class CreateEaiRequest : RpcAcsRequest<CreateEaiResponse>
+    public class CreateEaiJupyterRequest : RpcAcsRequest<CreateEaiJupyterResponse>
     {
-        public CreateEaiRequest()
-            : base("eais", "2019-06-24", "CreateEai", "eais", "openAPI")
+        public CreateEaiJupyterRequest()
+            : base("eais", "2019-06-24", "CreateEaiJupyter", "eais", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,11 +44,9 @@ namespace Aliyun.Acs.eais.Model.V20190624
 
 		private string securityGroupId;
 
+		private string eaisType;
+
 		private string vSwitchId;
-
-		private string instanceName;
-
-		private string instanceType;
 
 		public string ClientToken
 		{
@@ -76,6 +74,19 @@ namespace Aliyun.Acs.eais.Model.V20190624
 			}
 		}
 
+		public string EaisType
+		{
+			get
+			{
+				return eaisType;
+			}
+			set	
+			{
+				eaisType = value;
+				DictionaryUtil.Add(QueryParameters, "EaisType", value);
+			}
+		}
+
 		public string VSwitchId
 		{
 			get
@@ -89,40 +100,14 @@ namespace Aliyun.Acs.eais.Model.V20190624
 			}
 		}
 
-		public string InstanceName
-		{
-			get
-			{
-				return instanceName;
-			}
-			set	
-			{
-				instanceName = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceName", value);
-			}
-		}
-
-		public string InstanceType
-		{
-			get
-			{
-				return instanceType;
-			}
-			set	
-			{
-				instanceType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override CreateEaiResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateEaiJupyterResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateEaiResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateEaiJupyterResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

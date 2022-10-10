@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.eais.Model.V20190624
@@ -56,23 +56,11 @@ namespace Aliyun.Acs.eais.Model.V20190624
 		public class DescribeRegions_Region
 		{
 
-			private string regionId;
-
 			private string regionEndpoint;
 
 			private string localName;
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+			private string regionId;
 
 			public string RegionEndpoint
 			{
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.eais.Model.V20190624
 				set	
 				{
 					localName = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 		}
