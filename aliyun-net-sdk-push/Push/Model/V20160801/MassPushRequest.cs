@@ -118,6 +118,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
 						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
 						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
 					}
 				}
 			}
@@ -229,6 +231,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string iOSExtParameters;
 
+			private string androidNotificationHonorChannel;
+
 			private string androidXiaomiImageUrl;
 
 			private string androidPopupBody;
@@ -236,6 +240,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			private string androidBigPictureUrl;
 
 			private bool? iOSSilentNotification;
+
+			private string androidNotificationGroup;
 
 			private string sendChannels;
 
@@ -797,6 +803,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
+			public string AndroidNotificationHonorChannel
+			{
+				get
+				{
+					return androidNotificationHonorChannel;
+				}
+				set	
+				{
+					androidNotificationHonorChannel = value;
+				}
+			}
+
 			public string AndroidXiaomiImageUrl
 			{
 				get
@@ -842,6 +860,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					iOSSilentNotification = value;
+				}
+			}
+
+			public string AndroidNotificationGroup
+			{
+				get
+				{
+					return androidNotificationGroup;
+				}
+				set	
+				{
+					androidNotificationGroup = value;
 				}
 			}
 
