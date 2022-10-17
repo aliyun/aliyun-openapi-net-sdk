@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.videoseg;
 using Aliyun.Acs.videoseg.Transform;
 using Aliyun.Acs.videoseg.Transform.V20200320;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.videoseg.Model.V20200320
     public class GetAsyncJobResultRequest : RpcAcsRequest<GetAsyncJobResultResponse>
     {
         public GetAsyncJobResultRequest()
-            : base("videoseg", "2020-03-20", "GetAsyncJobResult", "videoseg", "openAPI")
+            : base("videoseg", "2020-03-20", "GetAsyncJobResult")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

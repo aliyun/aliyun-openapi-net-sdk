@@ -31,9 +31,9 @@ namespace Aliyun.Acs.videoseg.Transform.V20200320
 			SegmentGreenScreenVideoResponse segmentGreenScreenVideoResponse = new SegmentGreenScreenVideoResponse();
 
 			segmentGreenScreenVideoResponse.HttpResponse = _ctx.HttpResponse;
-			segmentGreenScreenVideoResponse.Message = _ctx.StringValue("SegmentGreenScreenVideo.Message");
 			segmentGreenScreenVideoResponse.RequestId = _ctx.StringValue("SegmentGreenScreenVideo.RequestId");
 			segmentGreenScreenVideoResponse.Code = _ctx.StringValue("SegmentGreenScreenVideo.Code");
+			segmentGreenScreenVideoResponse.Message = _ctx.StringValue("SegmentGreenScreenVideo.Message");
 
 			SegmentGreenScreenVideoResponse.SegmentGreenScreenVideo_Data data = new SegmentGreenScreenVideoResponse.SegmentGreenScreenVideo_Data();
 			data.VideoURL = _ctx.StringValue("SegmentGreenScreenVideo.Data.VideoURL");
