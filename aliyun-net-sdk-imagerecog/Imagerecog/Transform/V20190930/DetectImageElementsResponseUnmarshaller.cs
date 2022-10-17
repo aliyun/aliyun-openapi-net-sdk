@@ -39,11 +39,11 @@ namespace Aliyun.Acs.imagerecog.Transform.V20190930
 			for (int i = 0; i < _ctx.Length("DetectImageElements.Data.Elements.Length"); i++) {
 				DetectImageElementsResponse.DetectImageElements_Data.DetectImageElements_Element element = new DetectImageElementsResponse.DetectImageElements_Data.DetectImageElements_Element();
 				element.Type = _ctx.StringValue("DetectImageElements.Data.Elements["+ i +"].Type");
-				element.X = _ctx.IntegerValue("DetectImageElements.Data.Elements["+ i +"].X");
-				element.Y = _ctx.IntegerValue("DetectImageElements.Data.Elements["+ i +"].Y");
 				element.Width = _ctx.IntegerValue("DetectImageElements.Data.Elements["+ i +"].Width");
 				element.Height = _ctx.IntegerValue("DetectImageElements.Data.Elements["+ i +"].Height");
+				element.Y = _ctx.IntegerValue("DetectImageElements.Data.Elements["+ i +"].Y");
 				element.Score = _ctx.FloatValue("DetectImageElements.Data.Elements["+ i +"].Score");
+				element.X = _ctx.IntegerValue("DetectImageElements.Data.Elements["+ i +"].X");
 
 				data_elements.Add(element);
 			}

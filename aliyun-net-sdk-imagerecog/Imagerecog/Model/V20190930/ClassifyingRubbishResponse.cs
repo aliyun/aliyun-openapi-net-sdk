@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.imagerecog.Model.V20190930
@@ -87,25 +87,13 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 			public class ClassifyingRubbish_Element
 			{
 
-				private string category;
-
 				private float? categoryScore;
 
 				private string rubbish;
 
 				private float? rubbishScore;
 
-				public string Category
-				{
-					get
-					{
-						return category;
-					}
-					set	
-					{
-						category = value;
-					}
-				}
+				private string category;
 
 				public float? CategoryScore
 				{
@@ -140,6 +128,18 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 					set	
 					{
 						rubbishScore = value;
+					}
+				}
+
+				public string Category
+				{
+					get
+					{
+						return category;
+					}
+					set	
+					{
+						category = value;
 					}
 				}
 			}

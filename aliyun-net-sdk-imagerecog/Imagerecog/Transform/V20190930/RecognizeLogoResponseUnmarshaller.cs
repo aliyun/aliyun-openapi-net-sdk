@@ -38,25 +38,25 @@ namespace Aliyun.Acs.imagerecog.Transform.V20190930
 			List<RecognizeLogoResponse.RecognizeLogo_Data.RecognizeLogo_Element> data_elements = new List<RecognizeLogoResponse.RecognizeLogo_Data.RecognizeLogo_Element>();
 			for (int i = 0; i < _ctx.Length("RecognizeLogo.Data.Elements.Length"); i++) {
 				RecognizeLogoResponse.RecognizeLogo_Data.RecognizeLogo_Element element = new RecognizeLogoResponse.RecognizeLogo_Data.RecognizeLogo_Element();
-				element.TaskId = _ctx.StringValue("RecognizeLogo.Data.Elements["+ i +"].TaskId");
 				element.ImageURL = _ctx.StringValue("RecognizeLogo.Data.Elements["+ i +"].ImageURL");
+				element.TaskId = _ctx.StringValue("RecognizeLogo.Data.Elements["+ i +"].TaskId");
 
 				List<RecognizeLogoResponse.RecognizeLogo_Data.RecognizeLogo_Element.RecognizeLogo_Result> element_results = new List<RecognizeLogoResponse.RecognizeLogo_Data.RecognizeLogo_Element.RecognizeLogo_Result>();
 				for (int j = 0; j < _ctx.Length("RecognizeLogo.Data.Elements["+ i +"].Results.Length"); j++) {
 					RecognizeLogoResponse.RecognizeLogo_Data.RecognizeLogo_Element.RecognizeLogo_Result result = new RecognizeLogoResponse.RecognizeLogo_Data.RecognizeLogo_Element.RecognizeLogo_Result();
-					result.Label = _ctx.StringValue("RecognizeLogo.Data.Elements["+ i +"].Results["+ j +"].Label");
 					result.Suggestion = _ctx.StringValue("RecognizeLogo.Data.Elements["+ i +"].Results["+ j +"].Suggestion");
+					result.Label = _ctx.StringValue("RecognizeLogo.Data.Elements["+ i +"].Results["+ j +"].Label");
 					result.Rate = _ctx.FloatValue("RecognizeLogo.Data.Elements["+ i +"].Results["+ j +"].Rate");
 
 					List<RecognizeLogoResponse.RecognizeLogo_Data.RecognizeLogo_Element.RecognizeLogo_Result.RecognizeLogo_LogoData> result_logosData = new List<RecognizeLogoResponse.RecognizeLogo_Data.RecognizeLogo_Element.RecognizeLogo_Result.RecognizeLogo_LogoData>();
 					for (int k = 0; k < _ctx.Length("RecognizeLogo.Data.Elements["+ i +"].Results["+ j +"].LogosData.Length"); k++) {
 						RecognizeLogoResponse.RecognizeLogo_Data.RecognizeLogo_Element.RecognizeLogo_Result.RecognizeLogo_LogoData logoData = new RecognizeLogoResponse.RecognizeLogo_Data.RecognizeLogo_Element.RecognizeLogo_Result.RecognizeLogo_LogoData();
-						logoData.Name = _ctx.StringValue("RecognizeLogo.Data.Elements["+ i +"].Results["+ j +"].LogosData["+ k +"].Name");
 						logoData.Type = _ctx.StringValue("RecognizeLogo.Data.Elements["+ i +"].Results["+ j +"].LogosData["+ k +"].Type");
-						logoData.X = _ctx.FloatValue("RecognizeLogo.Data.Elements["+ i +"].Results["+ j +"].LogosData["+ k +"].X");
-						logoData.Y = _ctx.FloatValue("RecognizeLogo.Data.Elements["+ i +"].Results["+ j +"].LogosData["+ k +"].Y");
-						logoData.H = _ctx.FloatValue("RecognizeLogo.Data.Elements["+ i +"].Results["+ j +"].LogosData["+ k +"].H");
 						logoData.W = _ctx.FloatValue("RecognizeLogo.Data.Elements["+ i +"].Results["+ j +"].LogosData["+ k +"].W");
+						logoData.H = _ctx.FloatValue("RecognizeLogo.Data.Elements["+ i +"].Results["+ j +"].LogosData["+ k +"].H");
+						logoData.Y = _ctx.FloatValue("RecognizeLogo.Data.Elements["+ i +"].Results["+ j +"].LogosData["+ k +"].Y");
+						logoData.Name = _ctx.StringValue("RecognizeLogo.Data.Elements["+ i +"].Results["+ j +"].LogosData["+ k +"].Name");
+						logoData.X = _ctx.FloatValue("RecognizeLogo.Data.Elements["+ i +"].Results["+ j +"].LogosData["+ k +"].X");
 
 						result_logosData.Add(logoData);
 					}

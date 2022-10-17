@@ -39,8 +39,8 @@ namespace Aliyun.Acs.imagerecog.Transform.V20190930
 			for (int i = 0; i < _ctx.Length("RecognizeImageColor.Data.ColorTemplateList.Length"); i++) {
 				RecognizeImageColorResponse.RecognizeImageColor_Data.RecognizeImageColor_ColorTemplate colorTemplate = new RecognizeImageColorResponse.RecognizeImageColor_Data.RecognizeImageColor_ColorTemplate();
 				colorTemplate.Color = _ctx.StringValue("RecognizeImageColor.Data.ColorTemplateList["+ i +"].Color");
-				colorTemplate.Label = _ctx.StringValue("RecognizeImageColor.Data.ColorTemplateList["+ i +"].Label");
 				colorTemplate.Percentage = _ctx.FloatValue("RecognizeImageColor.Data.ColorTemplateList["+ i +"].Percentage");
+				colorTemplate.Label = _ctx.StringValue("RecognizeImageColor.Data.ColorTemplateList["+ i +"].Label");
 
 				data_colorTemplateList.Add(colorTemplate);
 			}

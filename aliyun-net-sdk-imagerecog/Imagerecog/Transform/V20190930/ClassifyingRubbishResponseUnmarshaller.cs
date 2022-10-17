@@ -39,10 +39,10 @@ namespace Aliyun.Acs.imagerecog.Transform.V20190930
 			List<ClassifyingRubbishResponse.ClassifyingRubbish_Data.ClassifyingRubbish_Element> data_elements = new List<ClassifyingRubbishResponse.ClassifyingRubbish_Data.ClassifyingRubbish_Element>();
 			for (int i = 0; i < _ctx.Length("ClassifyingRubbish.Data.Elements.Length"); i++) {
 				ClassifyingRubbishResponse.ClassifyingRubbish_Data.ClassifyingRubbish_Element element = new ClassifyingRubbishResponse.ClassifyingRubbish_Data.ClassifyingRubbish_Element();
-				element.Category = _ctx.StringValue("ClassifyingRubbish.Data.Elements["+ i +"].Category");
 				element.CategoryScore = _ctx.FloatValue("ClassifyingRubbish.Data.Elements["+ i +"].CategoryScore");
 				element.Rubbish = _ctx.StringValue("ClassifyingRubbish.Data.Elements["+ i +"].Rubbish");
 				element.RubbishScore = _ctx.FloatValue("ClassifyingRubbish.Data.Elements["+ i +"].RubbishScore");
+				element.Category = _ctx.StringValue("ClassifyingRubbish.Data.Elements["+ i +"].Category");
 
 				data_elements.Add(element);
 			}

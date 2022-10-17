@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.imagerecog.Model.V20190930
@@ -87,21 +87,9 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 			public class RecognizeVehicleType_Element
 			{
 
-				private string name;
-
 				private float? score;
 
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
+				private string name;
 
 				public float? Score
 				{
@@ -112,6 +100,18 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 					set	
 					{
 						score = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
 					}
 				}
 			}
