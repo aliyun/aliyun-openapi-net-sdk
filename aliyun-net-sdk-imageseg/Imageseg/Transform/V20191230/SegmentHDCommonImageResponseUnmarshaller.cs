@@ -32,6 +32,8 @@ namespace Aliyun.Acs.imageseg.Transform.V20191230
 
 			segmentHDCommonImageResponse.HttpResponse = _ctx.HttpResponse;
 			segmentHDCommonImageResponse.RequestId = _ctx.StringValue("SegmentHDCommonImage.RequestId");
+			segmentHDCommonImageResponse.Code = _ctx.StringValue("SegmentHDCommonImage.Code");
+			segmentHDCommonImageResponse.Message = _ctx.StringValue("SegmentHDCommonImage.Message");
 
 			SegmentHDCommonImageResponse.SegmentHDCommonImage_Data data = new SegmentHDCommonImageResponse.SegmentHDCommonImage_Data();
 			data.ImageUrl = _ctx.StringValue("SegmentHDCommonImage.Data.ImageUrl");
