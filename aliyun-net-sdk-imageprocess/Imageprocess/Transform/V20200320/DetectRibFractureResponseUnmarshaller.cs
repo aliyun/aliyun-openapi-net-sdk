@@ -32,6 +32,8 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 
 			detectRibFractureResponse.HttpResponse = _ctx.HttpResponse;
 			detectRibFractureResponse.RequestId = _ctx.StringValue("DetectRibFracture.RequestId");
+			detectRibFractureResponse.Code = _ctx.StringValue("DetectRibFracture.Code");
+			detectRibFractureResponse.Message = _ctx.StringValue("DetectRibFracture.Message");
 
 			DetectRibFractureResponse.DetectRibFracture_Data data = new DetectRibFractureResponse.DetectRibFracture_Data();
 			data.ResultURL = _ctx.StringValue("DetectRibFracture.Data.ResultURL");

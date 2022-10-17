@@ -32,6 +32,8 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 
 			runCTRegistrationResponse.HttpResponse = _ctx.HttpResponse;
 			runCTRegistrationResponse.RequestId = _ctx.StringValue("RunCTRegistration.RequestId");
+			runCTRegistrationResponse.Code = _ctx.StringValue("RunCTRegistration.Code");
+			runCTRegistrationResponse.Message = _ctx.StringValue("RunCTRegistration.Message");
 
 			RunCTRegistrationResponse.RunCTRegistration_Data data = new RunCTRegistrationResponse.RunCTRegistration_Data();
 			data.DUrl = _ctx.StringValue("RunCTRegistration.Data.DUrl");

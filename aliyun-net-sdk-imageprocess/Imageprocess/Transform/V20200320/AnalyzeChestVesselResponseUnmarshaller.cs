@@ -31,52 +31,6 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 			AnalyzeChestVesselResponse analyzeChestVesselResponse = new AnalyzeChestVesselResponse();
 
 			analyzeChestVesselResponse.HttpResponse = _ctx.HttpResponse;
-			analyzeChestVesselResponse.RequestId = _ctx.StringValue("AnalyzeChestVessel.RequestId");
-			analyzeChestVesselResponse.Code = _ctx.StringValue("AnalyzeChestVessel.Code");
-			analyzeChestVesselResponse.Message = _ctx.StringValue("AnalyzeChestVessel.Message");
-
-			AnalyzeChestVesselResponse.AnalyzeChestVessel_Data data = new AnalyzeChestVesselResponse.AnalyzeChestVessel_Data();
-			data.ResultURL = _ctx.StringValue("AnalyzeChestVessel.Data.ResultURL");
-
-			AnalyzeChestVesselResponse.AnalyzeChestVessel_Data.AnalyzeChestVessel_AortaInfo aortaInfo = new AnalyzeChestVesselResponse.AnalyzeChestVessel_Data.AnalyzeChestVessel_AortaInfo();
-			aortaInfo.MaxAreaIndex = _ctx.LongValue("AnalyzeChestVessel.Data.AortaInfo.MaxAreaIndex");
-			aortaInfo.MaxArea = _ctx.FloatValue("AnalyzeChestVessel.Data.AortaInfo.MaxArea");
-			aortaInfo.MaxDiameter = _ctx.FloatValue("AnalyzeChestVessel.Data.AortaInfo.MaxDiameter");
-			aortaInfo.LabelValue = _ctx.LongValue("AnalyzeChestVessel.Data.AortaInfo.LabelValue");
-
-			List<string> aortaInfo_coordinates = new List<string>();
-			for (int i = 0; i < _ctx.Length("AnalyzeChestVessel.Data.AortaInfo.Coordinates.Length"); i++) {
-				aortaInfo_coordinates.Add(_ctx.StringValue("AnalyzeChestVessel.Data.AortaInfo.Coordinates["+ i +"]"));
-			}
-			aortaInfo.Coordinates = aortaInfo_coordinates;
-
-			List<string> aortaInfo_area = new List<string>();
-			for (int i = 0; i < _ctx.Length("AnalyzeChestVessel.Data.AortaInfo.Area.Length"); i++) {
-				aortaInfo_area.Add(_ctx.StringValue("AnalyzeChestVessel.Data.AortaInfo.Area["+ i +"]"));
-			}
-			aortaInfo.Area = aortaInfo_area;
-			data.AortaInfo = aortaInfo;
-
-			AnalyzeChestVesselResponse.AnalyzeChestVessel_Data.AnalyzeChestVessel_PulmonaryInfo pulmonaryInfo = new AnalyzeChestVesselResponse.AnalyzeChestVessel_Data.AnalyzeChestVessel_PulmonaryInfo();
-			pulmonaryInfo.MaxAreaIndex = _ctx.LongValue("AnalyzeChestVessel.Data.PulmonaryInfo.MaxAreaIndex");
-			pulmonaryInfo.MaxArea = _ctx.FloatValue("AnalyzeChestVessel.Data.PulmonaryInfo.MaxArea");
-			pulmonaryInfo.MaxDiameter = _ctx.FloatValue("AnalyzeChestVessel.Data.PulmonaryInfo.MaxDiameter");
-			pulmonaryInfo.LabelValue = _ctx.LongValue("AnalyzeChestVessel.Data.PulmonaryInfo.LabelValue");
-			pulmonaryInfo.NearestAortaArea = _ctx.FloatValue("AnalyzeChestVessel.Data.PulmonaryInfo.NearestAortaArea");
-
-			List<string> pulmonaryInfo_coordinates1 = new List<string>();
-			for (int i = 0; i < _ctx.Length("AnalyzeChestVessel.Data.PulmonaryInfo.Coordinates.Length"); i++) {
-				pulmonaryInfo_coordinates1.Add(_ctx.StringValue("AnalyzeChestVessel.Data.PulmonaryInfo.Coordinates["+ i +"]"));
-			}
-			pulmonaryInfo.Coordinates1 = pulmonaryInfo_coordinates1;
-
-			List<string> pulmonaryInfo_area2 = new List<string>();
-			for (int i = 0; i < _ctx.Length("AnalyzeChestVessel.Data.PulmonaryInfo.Area.Length"); i++) {
-				pulmonaryInfo_area2.Add(_ctx.StringValue("AnalyzeChestVessel.Data.PulmonaryInfo.Area["+ i +"]"));
-			}
-			pulmonaryInfo.Area2 = pulmonaryInfo_area2;
-			data.PulmonaryInfo = pulmonaryInfo;
-			analyzeChestVesselResponse.Data = data;
         
 			return analyzeChestVesselResponse;
         }

@@ -32,6 +32,8 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 
 			detectLungNoduleResponse.HttpResponse = _ctx.HttpResponse;
 			detectLungNoduleResponse.RequestId = _ctx.StringValue("DetectLungNodule.RequestId");
+			detectLungNoduleResponse.Code = _ctx.StringValue("DetectLungNodule.Code");
+			detectLungNoduleResponse.Message = _ctx.StringValue("DetectLungNodule.Message");
 
 			DetectLungNoduleResponse.DetectLungNodule_Data data = new DetectLungNoduleResponse.DetectLungNodule_Data();
 
