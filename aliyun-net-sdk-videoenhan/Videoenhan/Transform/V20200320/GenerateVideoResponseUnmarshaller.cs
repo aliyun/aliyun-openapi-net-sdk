@@ -32,6 +32,8 @@ namespace Aliyun.Acs.videoenhan.Transform.V20200320
 
 			generateVideoResponse.HttpResponse = _ctx.HttpResponse;
 			generateVideoResponse.RequestId = _ctx.StringValue("GenerateVideo.RequestId");
+			generateVideoResponse.Code = _ctx.StringValue("GenerateVideo.Code");
+			generateVideoResponse.Message = _ctx.StringValue("GenerateVideo.Message");
 
 			GenerateVideoResponse.GenerateVideo_Data data = new GenerateVideoResponse.GenerateVideo_Data();
 			data.VideoCoverUrl = _ctx.StringValue("GenerateVideo.Data.VideoCoverUrl");

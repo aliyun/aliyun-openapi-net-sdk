@@ -32,6 +32,8 @@ namespace Aliyun.Acs.videoenhan.Transform.V20200320
 
 			enhanceVideoQualityResponse.HttpResponse = _ctx.HttpResponse;
 			enhanceVideoQualityResponse.RequestId = _ctx.StringValue("EnhanceVideoQuality.RequestId");
+			enhanceVideoQualityResponse.Code = _ctx.StringValue("EnhanceVideoQuality.Code");
+			enhanceVideoQualityResponse.Message = _ctx.StringValue("EnhanceVideoQuality.Message");
 
 			EnhanceVideoQualityResponse.EnhanceVideoQuality_Data data = new EnhanceVideoQualityResponse.EnhanceVideoQuality_Data();
 			data.VideoURL = _ctx.StringValue("EnhanceVideoQuality.Data.VideoURL");

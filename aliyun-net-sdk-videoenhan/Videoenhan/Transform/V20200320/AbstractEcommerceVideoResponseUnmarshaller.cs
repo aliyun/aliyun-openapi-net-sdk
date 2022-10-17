@@ -32,6 +32,8 @@ namespace Aliyun.Acs.videoenhan.Transform.V20200320
 
 			abstractEcommerceVideoResponse.HttpResponse = _ctx.HttpResponse;
 			abstractEcommerceVideoResponse.RequestId = _ctx.StringValue("AbstractEcommerceVideo.RequestId");
+			abstractEcommerceVideoResponse.Code = _ctx.StringValue("AbstractEcommerceVideo.Code");
+			abstractEcommerceVideoResponse.Message = _ctx.StringValue("AbstractEcommerceVideo.Message");
 
 			AbstractEcommerceVideoResponse.AbstractEcommerceVideo_Data data = new AbstractEcommerceVideoResponse.AbstractEcommerceVideo_Data();
 			data.VideoCoverUrl = _ctx.StringValue("AbstractEcommerceVideo.Data.VideoCoverUrl");

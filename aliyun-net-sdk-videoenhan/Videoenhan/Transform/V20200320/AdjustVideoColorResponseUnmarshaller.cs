@@ -32,6 +32,8 @@ namespace Aliyun.Acs.videoenhan.Transform.V20200320
 
 			adjustVideoColorResponse.HttpResponse = _ctx.HttpResponse;
 			adjustVideoColorResponse.RequestId = _ctx.StringValue("AdjustVideoColor.RequestId");
+			adjustVideoColorResponse.Code = _ctx.StringValue("AdjustVideoColor.Code");
+			adjustVideoColorResponse.Message = _ctx.StringValue("AdjustVideoColor.Message");
 
 			AdjustVideoColorResponse.AdjustVideoColor_Data data = new AdjustVideoColorResponse.AdjustVideoColor_Data();
 			data.VideoUrl = _ctx.StringValue("AdjustVideoColor.Data.VideoUrl");

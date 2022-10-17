@@ -32,6 +32,8 @@ namespace Aliyun.Acs.videoenhan.Transform.V20200320
 
 			eraseVideoLogoResponse.HttpResponse = _ctx.HttpResponse;
 			eraseVideoLogoResponse.RequestId = _ctx.StringValue("EraseVideoLogo.RequestId");
+			eraseVideoLogoResponse.Code = _ctx.StringValue("EraseVideoLogo.Code");
+			eraseVideoLogoResponse.Message = _ctx.StringValue("EraseVideoLogo.Message");
 
 			EraseVideoLogoResponse.EraseVideoLogo_Data data = new EraseVideoLogoResponse.EraseVideoLogo_Data();
 			data.VideoUrl = _ctx.StringValue("EraseVideoLogo.Data.VideoUrl");

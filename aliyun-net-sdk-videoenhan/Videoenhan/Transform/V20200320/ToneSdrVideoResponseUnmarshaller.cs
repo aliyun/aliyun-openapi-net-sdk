@@ -32,6 +32,8 @@ namespace Aliyun.Acs.videoenhan.Transform.V20200320
 
 			toneSdrVideoResponse.HttpResponse = _ctx.HttpResponse;
 			toneSdrVideoResponse.RequestId = _ctx.StringValue("ToneSdrVideo.RequestId");
+			toneSdrVideoResponse.Code = _ctx.StringValue("ToneSdrVideo.Code");
+			toneSdrVideoResponse.Message = _ctx.StringValue("ToneSdrVideo.Message");
 
 			ToneSdrVideoResponse.ToneSdrVideo_Data data = new ToneSdrVideoResponse.ToneSdrVideo_Data();
 			data.VideoURL = _ctx.StringValue("ToneSdrVideo.Data.VideoURL");
