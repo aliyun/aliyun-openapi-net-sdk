@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private List<int?> replicaSets = new List<int?>(){ };
 
+		private string storageType;
+
 		private string resourceGroupId;
 
 		private string securityToken;
@@ -162,6 +164,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 						DictionaryUtil.Add(QueryParameters,"ReplicaSet." + (depth1 + 1), replicaSets[depth1]);
 					}
 				}
+			}
+		}
+
+		public string StorageType
+		{
+			get
+			{
+				return storageType;
+			}
+			set	
+			{
+				storageType = value;
+				DictionaryUtil.Add(QueryParameters, "StorageType", value);
 			}
 		}
 
