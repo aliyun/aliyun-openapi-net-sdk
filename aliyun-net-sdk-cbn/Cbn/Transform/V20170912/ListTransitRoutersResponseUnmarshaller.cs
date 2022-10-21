@@ -51,6 +51,19 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 				transitRouter.ServiceMode = _ctx.StringValue("ListTransitRouters.TransitRouters["+ i +"].ServiceMode");
 				transitRouter.SupportMulticast = _ctx.BooleanValue("ListTransitRouters.TransitRouters["+ i +"].SupportMulticast");
 
+				List<ListTransitRoutersResponse.ListTransitRouters_TransitRouter.ListTransitRouters_TransitRouterCidrListItem> transitRouter_transitRouterCidrList = new List<ListTransitRoutersResponse.ListTransitRouters_TransitRouter.ListTransitRouters_TransitRouterCidrListItem>();
+				for (int j = 0; j < _ctx.Length("ListTransitRouters.TransitRouters["+ i +"].TransitRouterCidrList.Length"); j++) {
+					ListTransitRoutersResponse.ListTransitRouters_TransitRouter.ListTransitRouters_TransitRouterCidrListItem transitRouterCidrListItem = new ListTransitRoutersResponse.ListTransitRouters_TransitRouter.ListTransitRouters_TransitRouterCidrListItem();
+					transitRouterCidrListItem.Cidr = _ctx.StringValue("ListTransitRouters.TransitRouters["+ i +"].TransitRouterCidrList["+ j +"].Cidr");
+					transitRouterCidrListItem.Name = _ctx.StringValue("ListTransitRouters.TransitRouters["+ i +"].TransitRouterCidrList["+ j +"].Name");
+					transitRouterCidrListItem.Description = _ctx.StringValue("ListTransitRouters.TransitRouters["+ i +"].TransitRouterCidrList["+ j +"].Description");
+					transitRouterCidrListItem.TransitRouterCidrId = _ctx.StringValue("ListTransitRouters.TransitRouters["+ i +"].TransitRouterCidrList["+ j +"].TransitRouterCidrId");
+					transitRouterCidrListItem.PublishCidrRoute = _ctx.BooleanValue("ListTransitRouters.TransitRouters["+ i +"].TransitRouterCidrList["+ j +"].PublishCidrRoute");
+
+					transitRouter_transitRouterCidrList.Add(transitRouterCidrListItem);
+				}
+				transitRouter.TransitRouterCidrList = transitRouter_transitRouterCidrList;
+
 				listTransitRoutersResponse_transitRouters.Add(transitRouter);
 			}
 			listTransitRoutersResponse.TransitRouters = listTransitRoutersResponse_transitRouters;

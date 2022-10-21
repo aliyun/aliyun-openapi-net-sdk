@@ -120,6 +120,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private bool? supportMulticast;
 
+			private List<ListTransitRouters_TransitRouterCidrListItem> transitRouterCidrList;
+
 			public string CreationTime
 			{
 				get
@@ -249,6 +251,92 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					supportMulticast = value;
+				}
+			}
+
+			public List<ListTransitRouters_TransitRouterCidrListItem> TransitRouterCidrList
+			{
+				get
+				{
+					return transitRouterCidrList;
+				}
+				set	
+				{
+					transitRouterCidrList = value;
+				}
+			}
+
+			public class ListTransitRouters_TransitRouterCidrListItem
+			{
+
+				private string cidr;
+
+				private string name;
+
+				private string description;
+
+				private string transitRouterCidrId;
+
+				private bool? publishCidrRoute;
+
+				public string Cidr
+				{
+					get
+					{
+						return cidr;
+					}
+					set	
+					{
+						cidr = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public string Description
+				{
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
+					}
+				}
+
+				public string TransitRouterCidrId
+				{
+					get
+					{
+						return transitRouterCidrId;
+					}
+					set	
+					{
+						transitRouterCidrId = value;
+					}
+				}
+
+				public bool? PublishCidrRoute
+				{
+					get
+					{
+						return publishCidrRoute;
+					}
+					set	
+					{
+						publishCidrRoute = value;
+					}
 				}
 			}
 		}

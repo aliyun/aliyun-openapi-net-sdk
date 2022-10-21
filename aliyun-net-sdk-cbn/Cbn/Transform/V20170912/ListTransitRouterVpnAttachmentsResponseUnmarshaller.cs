@@ -43,7 +43,7 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 				transitRouterAttachment.Status = _ctx.StringValue("ListTransitRouterVpnAttachments.TransitRouterAttachments["+ i +"].Status");
 				transitRouterAttachment.TransitRouterAttachmentId = _ctx.StringValue("ListTransitRouterVpnAttachments.TransitRouterAttachments["+ i +"].TransitRouterAttachmentId");
 				transitRouterAttachment.TransitRouterId = _ctx.StringValue("ListTransitRouterVpnAttachments.TransitRouterAttachments["+ i +"].TransitRouterId");
-				transitRouterAttachment.ResourceType = _ctx.IntegerValue("ListTransitRouterVpnAttachments.TransitRouterAttachments["+ i +"].ResourceType");
+				transitRouterAttachment.ResourceType = _ctx.StringValue("ListTransitRouterVpnAttachments.TransitRouterAttachments["+ i +"].ResourceType");
 				transitRouterAttachment.VpnOwnerId = _ctx.LongValue("ListTransitRouterVpnAttachments.TransitRouterAttachments["+ i +"].VpnOwnerId");
 				transitRouterAttachment.VpnId = _ctx.StringValue("ListTransitRouterVpnAttachments.TransitRouterAttachments["+ i +"].VpnId");
 				transitRouterAttachment.TransitRouterAttachmentDescription = _ctx.StringValue("ListTransitRouterVpnAttachments.TransitRouterAttachments["+ i +"].TransitRouterAttachmentDescription");

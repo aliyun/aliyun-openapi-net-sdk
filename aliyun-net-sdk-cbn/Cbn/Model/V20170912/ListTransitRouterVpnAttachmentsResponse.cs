@@ -106,7 +106,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private string transitRouterId;
 
-			private int? resourceType;
+			private string resourceType;
 
 			private long? vpnOwnerId;
 
@@ -170,7 +170,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public int? ResourceType
+			public string ResourceType
 			{
 				get
 				{

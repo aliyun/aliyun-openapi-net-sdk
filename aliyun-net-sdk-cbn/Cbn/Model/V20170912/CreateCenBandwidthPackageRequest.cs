@@ -67,6 +67,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private long? ownerId;
 
+		private string serviceType;
+
 		private bool? autoRenew;
 
 		private string name;
@@ -239,6 +241,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string ServiceType
+		{
+			get
+			{
+				return serviceType;
+			}
+			set	
+			{
+				serviceType = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceType", value);
 			}
 		}
 

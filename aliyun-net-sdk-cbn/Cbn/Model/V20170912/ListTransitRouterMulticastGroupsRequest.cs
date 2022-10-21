@@ -49,6 +49,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private string transitRouterMulticastDomainId;
 
+		private List<string> connectPeerIdss = new List<string>(){ };
+
 		private string nextToken;
 
 		private string groupIpAddress;
@@ -118,6 +120,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				transitRouterMulticastDomainId = value;
 				DictionaryUtil.Add(QueryParameters, "TransitRouterMulticastDomainId", value);
+			}
+		}
+
+		public List<string> ConnectPeerIdss
+		{
+			get
+			{
+				return connectPeerIdss;
+			}
+
+			set
+			{
+				connectPeerIdss = value;
 			}
 		}
 

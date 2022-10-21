@@ -60,6 +60,7 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 				cenBandwidthPackage.BusinessStatus = _ctx.StringValue("DescribeCenBandwidthPackages.CenBandwidthPackages["+ i +"].BusinessStatus");
 				cenBandwidthPackage.Name = _ctx.StringValue("DescribeCenBandwidthPackages.CenBandwidthPackages["+ i +"].Name");
 				cenBandwidthPackage.HasReservationData = _ctx.StringValue("DescribeCenBandwidthPackages.CenBandwidthPackages["+ i +"].HasReservationData");
+				cenBandwidthPackage.ServiceType = _ctx.StringValue("DescribeCenBandwidthPackages.CenBandwidthPackages["+ i +"].ServiceType");
 
 				List<string> cenBandwidthPackage_cenIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeCenBandwidthPackages.CenBandwidthPackages["+ i +"].CenIds.Length"); j++) {
