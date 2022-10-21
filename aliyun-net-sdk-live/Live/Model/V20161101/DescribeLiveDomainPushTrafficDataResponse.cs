@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,54 +25,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveDomainPushTrafficDataResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string domainName;
+		private string endTime;
 
 		private string startTime;
 
-		private string endTime;
+		private string requestId;
+
+		private string domainName;
 
 		private string dataInterval;
 
 		private List<DescribeLiveDomainPushTrafficData_DataModule> trafficDataPerInterval;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "EndTime")]
 		public string EndTime
 		{
 			get
@@ -85,6 +50,46 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DomainName")]
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DataInterval")]
 		public string DataInterval
 		{
 			get
@@ -97,6 +102,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "TrafficDataPerInterval")]
 		public List<DescribeLiveDomainPushTrafficData_DataModule> TrafficDataPerInterval
 		{
 			get
@@ -112,22 +118,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDomainPushTrafficData_DataModule
 		{
 
-			private string timeStamp;
-
 			private string trafficValue;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+			private string timeStamp;
 
+			[JsonProperty(PropertyName = "TrafficValue")]
 			public string TrafficValue
 			{
 				get
@@ -137,6 +132,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					trafficValue = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TimeStamp")]
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
 				}
 			}
 		}

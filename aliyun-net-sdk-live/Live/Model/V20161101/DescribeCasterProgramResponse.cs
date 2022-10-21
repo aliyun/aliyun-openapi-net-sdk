@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,42 +25,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeCasterProgramResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string casterId;
-
 		private string programName;
 
+		private string requestId;
+
 		private int? programEffect;
+
+		private string casterId;
 
 		private int? total;
 
 		private List<DescribeCasterProgram_Episode> episodes;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string CasterId
-		{
-			get
-			{
-				return casterId;
-			}
-			set	
-			{
-				casterId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "ProgramName")]
 		public string ProgramName
 		{
 			get
@@ -73,6 +50,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ProgramEffect")]
 		public int? ProgramEffect
 		{
 			get
@@ -85,6 +76,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "CasterId")]
+		public string CasterId
+		{
+			get
+			{
+				return casterId;
+			}
+			set	
+			{
+				casterId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Total")]
 		public int? Total
 		{
 			get
@@ -97,6 +102,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Episodes")]
 		public List<DescribeCasterProgram_Episode> Episodes
 		{
 			get
@@ -112,108 +118,25 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeCasterProgram_Episode
 		{
 
-			private string episodeId;
-
-			private string episodeType;
-
-			private string episodeName;
-
-			private string resourceId;
-
-			private string startTime;
+			private int? status;
 
 			private string endTime;
 
-			private string switchType;
+			private string startTime;
 
-			private int? status;
+			private string episodeName;
+
+			private string episodeType;
+
+			private string episodeId;
+
+			private string resourceId;
+
+			private string switchType;
 
 			private List<string> componentIds;
 
-			public string EpisodeId
-			{
-				get
-				{
-					return episodeId;
-				}
-				set	
-				{
-					episodeId = value;
-				}
-			}
-
-			public string EpisodeType
-			{
-				get
-				{
-					return episodeType;
-				}
-				set	
-				{
-					episodeType = value;
-				}
-			}
-
-			public string EpisodeName
-			{
-				get
-				{
-					return episodeName;
-				}
-				set	
-				{
-					episodeName = value;
-				}
-			}
-
-			public string ResourceId
-			{
-				get
-				{
-					return resourceId;
-				}
-				set	
-				{
-					resourceId = value;
-				}
-			}
-
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
-
-			public string EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
-				}
-			}
-
-			public string SwitchType
-			{
-				get
-				{
-					return switchType;
-				}
-				set	
-				{
-					switchType = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Status")]
 			public int? Status
 			{
 				get
@@ -226,6 +149,98 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "EndTime")]
+			public string EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StartTime")]
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EpisodeName")]
+			public string EpisodeName
+			{
+				get
+				{
+					return episodeName;
+				}
+				set	
+				{
+					episodeName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EpisodeType")]
+			public string EpisodeType
+			{
+				get
+				{
+					return episodeType;
+				}
+				set	
+				{
+					episodeType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EpisodeId")]
+			public string EpisodeId
+			{
+				get
+				{
+					return episodeId;
+				}
+				set	
+				{
+					episodeId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ResourceId")]
+			public string ResourceId
+			{
+				get
+				{
+					return resourceId;
+				}
+				set	
+				{
+					resourceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SwitchType")]
+			public string SwitchType
+			{
+				get
+				{
+					return switchType;
+				}
+				set	
+				{
+					switchType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ComponentIds")]
 			public List<string> ComponentIds
 			{
 				get

@@ -35,10 +35,10 @@ namespace Aliyun.Acs.imagerecog.Transform.V20190930
 
 			GetAsyncJobResultResponse.GetAsyncJobResult_Data data = new GetAsyncJobResultResponse.GetAsyncJobResult_Data();
 			data.Status = _ctx.StringValue("GetAsyncJobResult.Data.Status");
-			data.ErrorCode = _ctx.StringValue("GetAsyncJobResult.Data.ErrorCode");
 			data.ErrorMessage = _ctx.StringValue("GetAsyncJobResult.Data.ErrorMessage");
-			data.JobId = _ctx.StringValue("GetAsyncJobResult.Data.JobId");
 			data.Result = _ctx.StringValue("GetAsyncJobResult.Data.Result");
+			data.ErrorCode = _ctx.StringValue("GetAsyncJobResult.Data.ErrorCode");
+			data.JobId = _ctx.StringValue("GetAsyncJobResult.Data.JobId");
 			getAsyncJobResultResponse.Data = data;
         
 			return getAsyncJobResultResponse;

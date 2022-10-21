@@ -31,8 +31,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			AddLiveStreamWatermarkResponse addLiveStreamWatermarkResponse = new AddLiveStreamWatermarkResponse();
 
 			addLiveStreamWatermarkResponse.HttpResponse = _ctx.HttpResponse;
-			addLiveStreamWatermarkResponse.RequestId = _ctx.StringValue("AddLiveStreamWatermark.RequestId");
 			addLiveStreamWatermarkResponse.TemplateId = _ctx.StringValue("AddLiveStreamWatermark.TemplateId");
+			addLiveStreamWatermarkResponse.RequestId = _ctx.StringValue("AddLiveStreamWatermark.RequestId");
         
 			return addLiveStreamWatermarkResponse;
         }

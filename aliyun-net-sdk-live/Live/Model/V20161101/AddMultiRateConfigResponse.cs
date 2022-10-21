@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,23 +25,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class AddMultiRateConfigResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? code;
 
 		private string message;
 
-		private int? code;
+		private string requestId;
 
 		private List<AddMultiRateConfig_FailedTemplates> body;
 
-		public string RequestId
+		public int? Code
 		{
 			get
 			{
-				return requestId;
+				return code;
 			}
 			set	
 			{
-				requestId = value;
+				code = value;
 			}
 		}
 
@@ -57,15 +57,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? Code
+		public string RequestId
 		{
 			get
 			{
-				return code;
+				return requestId;
 			}
 			set	
 			{
-				code = value;
+				requestId = value;
 			}
 		}
 
@@ -84,33 +84,45 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class AddMultiRateConfig_FailedTemplates
 		{
 
-			private string template;
+			private int? audioBitrate;
 
-			private string templateType;
+			private string template;
 
 			private int? height;
 
-			private int? width;
+			private string templateType;
 
-			private int? fps;
-
-			private string gop;
-
-			private int? videoBitrate;
+			private int? bandWidth;
 
 			private int? profile;
 
-			private string audioProfile;
+			private int? audioRate;
 
 			private string audioCodec;
 
-			private int? audioRate;
+			private string gop;
 
-			private int? audioBitrate;
+			private int? width;
+
+			private int? videoBitrate;
 
 			private int? audioChannelNum;
 
-			private int? bandWidth;
+			private int? fps;
+
+			private string audioProfile;
+
+			public int? AudioBitrate
+			{
+				get
+				{
+					return audioBitrate;
+				}
+				set	
+				{
+					audioBitrate = value;
+				}
+			}
 
 			public string Template
 			{
@@ -121,18 +133,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					template = value;
-				}
-			}
-
-			public string TemplateType
-			{
-				get
-				{
-					return templateType;
-				}
-				set	
-				{
-					templateType = value;
 				}
 			}
 
@@ -148,51 +148,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public int? Width
+			public string TemplateType
 			{
 				get
 				{
-					return width;
+					return templateType;
 				}
 				set	
 				{
-					width = value;
+					templateType = value;
 				}
 			}
 
-			public int? Fps
+			public int? BandWidth
 			{
 				get
 				{
-					return fps;
+					return bandWidth;
 				}
 				set	
 				{
-					fps = value;
-				}
-			}
-
-			public string Gop
-			{
-				get
-				{
-					return gop;
-				}
-				set	
-				{
-					gop = value;
-				}
-			}
-
-			public int? VideoBitrate
-			{
-				get
-				{
-					return videoBitrate;
-				}
-				set	
-				{
-					videoBitrate = value;
+					bandWidth = value;
 				}
 			}
 
@@ -208,15 +184,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string AudioProfile
+			public int? AudioRate
 			{
 				get
 				{
-					return audioProfile;
+					return audioRate;
 				}
 				set	
 				{
-					audioProfile = value;
+					audioRate = value;
 				}
 			}
 
@@ -232,27 +208,39 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public int? AudioRate
+			public string Gop
 			{
 				get
 				{
-					return audioRate;
+					return gop;
 				}
 				set	
 				{
-					audioRate = value;
+					gop = value;
 				}
 			}
 
-			public int? AudioBitrate
+			public int? Width
 			{
 				get
 				{
-					return audioBitrate;
+					return width;
 				}
 				set	
 				{
-					audioBitrate = value;
+					width = value;
+				}
+			}
+
+			public int? VideoBitrate
+			{
+				get
+				{
+					return videoBitrate;
+				}
+				set	
+				{
+					videoBitrate = value;
 				}
 			}
 
@@ -268,15 +256,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public int? BandWidth
+			public int? Fps
 			{
 				get
 				{
-					return bandWidth;
+					return fps;
 				}
 				set	
 				{
-					bandWidth = value;
+					fps = value;
+				}
+			}
+
+			public string AudioProfile
+			{
+				get
+				{
+					return audioProfile;
+				}
+				set	
+				{
+					audioProfile = value;
 				}
 			}
 		}

@@ -63,6 +63,8 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				dBInstance.CloudType = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].CloudType");
 				dBInstance.CapacityUnit = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].CapacityUnit");
 				dBInstance.StorageType = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].StorageType");
+				dBInstance.SecondaryZoneId = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].SecondaryZoneId");
+				dBInstance.HiddenZoneId = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].HiddenZoneId");
 
 				List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_Tag> dBInstance_tags = new List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_Tag>();
 				for (int j = 0; j < _ctx.Length("DescribeDBInstances.DBInstances["+ i +"].Tags.Length"); j++) {

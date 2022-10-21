@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeLiveDomainCertificateInfo_CertInfo> certInfos;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "CertInfos")]
 		public List<DescribeLiveDomainCertificateInfo_CertInfo> CertInfos
 		{
 			get
@@ -56,122 +58,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDomainCertificateInfo_CertInfo
 		{
 
-			private string domainName;
-
-			private string certName;
-
-			private string certDomainName;
-
-			private string certExpireTime;
+			private string status;
 
 			private string certLife;
 
-			private string certOrg;
-
-			private string certType;
-
-			private string sSLProtocol;
-
-			private string status;
+			private string certExpireTime;
 
 			private string sSLPub;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
+			private string sSLProtocol;
 
-			public string CertName
-			{
-				get
-				{
-					return certName;
-				}
-				set	
-				{
-					certName = value;
-				}
-			}
+			private string certType;
 
-			public string CertDomainName
-			{
-				get
-				{
-					return certDomainName;
-				}
-				set	
-				{
-					certDomainName = value;
-				}
-			}
+			private string certDomainName;
 
-			public string CertExpireTime
-			{
-				get
-				{
-					return certExpireTime;
-				}
-				set	
-				{
-					certExpireTime = value;
-				}
-			}
+			private string certName;
 
-			public string CertLife
-			{
-				get
-				{
-					return certLife;
-				}
-				set	
-				{
-					certLife = value;
-				}
-			}
+			private string certOrg;
 
-			public string CertOrg
-			{
-				get
-				{
-					return certOrg;
-				}
-				set	
-				{
-					certOrg = value;
-				}
-			}
+			private string domainName;
 
-			public string CertType
-			{
-				get
-				{
-					return certType;
-				}
-				set	
-				{
-					certType = value;
-				}
-			}
-
-			public string SSLProtocol
-			{
-				get
-				{
-					return sSLProtocol;
-				}
-				set	
-				{
-					sSLProtocol = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Status")]
 			public string Status
 			{
 				get
@@ -184,6 +91,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "CertLife")]
+			public string CertLife
+			{
+				get
+				{
+					return certLife;
+				}
+				set	
+				{
+					certLife = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CertExpireTime")]
+			public string CertExpireTime
+			{
+				get
+				{
+					return certExpireTime;
+				}
+				set	
+				{
+					certExpireTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SSLPub")]
 			public string SSLPub
 			{
 				get
@@ -193,6 +127,84 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					sSLPub = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SSLProtocol")]
+			public string SSLProtocol
+			{
+				get
+				{
+					return sSLProtocol;
+				}
+				set	
+				{
+					sSLProtocol = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CertType")]
+			public string CertType
+			{
+				get
+				{
+					return certType;
+				}
+				set	
+				{
+					certType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CertDomainName")]
+			public string CertDomainName
+			{
+				get
+				{
+					return certDomainName;
+				}
+				set	
+				{
+					certDomainName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CertName")]
+			public string CertName
+			{
+				get
+				{
+					return certName;
+				}
+				set	
+				{
+					certName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CertOrg")]
+			public string CertOrg
+			{
+				get
+				{
+					return certOrg;
+				}
+				set	
+				{
+					certOrg = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
 				}
 			}
 		}

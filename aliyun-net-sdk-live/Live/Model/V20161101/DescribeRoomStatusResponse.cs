@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,22 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeRoomStatusResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? roomStatus;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
+		[JsonProperty(PropertyName = "RoomStatus")]
 		public int? RoomStatus
 		{
 			get
@@ -50,6 +39,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				roomStatus = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

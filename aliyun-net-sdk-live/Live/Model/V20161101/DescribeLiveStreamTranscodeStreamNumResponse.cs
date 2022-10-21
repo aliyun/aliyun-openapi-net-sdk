@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,52 +25,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveStreamTranscodeStreamNumResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private long? total;
-
-		private long? transcodedNumber;
-
 		private long? untranscodeNumber;
 
 		private long? lazyTranscodedNumber;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private long? transcodedNumber;
 
-		public long? Total
-		{
-			get
-			{
-				return total;
-			}
-			set	
-			{
-				total = value;
-			}
-		}
+		private string requestId;
 
-		public long? TranscodedNumber
-		{
-			get
-			{
-				return transcodedNumber;
-			}
-			set	
-			{
-				transcodedNumber = value;
-			}
-		}
+		private long? total;
 
+		[JsonProperty(PropertyName = "UntranscodeNumber")]
 		public long? UntranscodeNumber
 		{
 			get
@@ -83,6 +48,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "LazyTranscodedNumber")]
 		public long? LazyTranscodedNumber
 		{
 			get
@@ -92,6 +58,45 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				lazyTranscodedNumber = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TranscodedNumber")]
+		public long? TranscodedNumber
+		{
+			get
+			{
+				return transcodedNumber;
+			}
+			set	
+			{
+				transcodedNumber = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Total")]
+		public long? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
 			}
 		}
 	}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,24 +25,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class StartPlaylistResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string programId;
+
+		private string requestId;
 
 		private StartPlaylist_StreamInfo streamInfo;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "ProgramId")]
 		public string ProgramId
 		{
 			get
@@ -55,6 +44,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "StreamInfo")]
 		public StartPlaylist_StreamInfo StreamInfo
 		{
 			get
@@ -70,26 +73,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class StartPlaylist_StreamInfo
 		{
 
-			private string domainName;
-
 			private string appName;
+
+			private string domainName;
 
 			private string streamName;
 
 			private List<StartPlaylist_Stream> streams;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "AppName")]
 			public string AppName
 			{
 				get
@@ -102,6 +94,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StreamName")]
 			public string StreamName
 			{
 				get
@@ -114,6 +120,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Streams")]
 			public List<StartPlaylist_Stream> Streams
 			{
 				get
@@ -129,14 +136,28 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class StartPlaylist_Stream
 			{
 
-				private string pullFlvUrl;
+				private string quality;
 
-				private string pullRtmpUrl;
+				private string pullFlvUrl;
 
 				private string pullM3U8Url;
 
-				private string quality;
+				private string pullRtmpUrl;
 
+				[JsonProperty(PropertyName = "Quality")]
+				public string Quality
+				{
+					get
+					{
+						return quality;
+					}
+					set	
+					{
+						quality = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "PullFlvUrl")]
 				public string PullFlvUrl
 				{
 					get
@@ -149,18 +170,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				public string PullRtmpUrl
-				{
-					get
-					{
-						return pullRtmpUrl;
-					}
-					set	
-					{
-						pullRtmpUrl = value;
-					}
-				}
-
+				[JsonProperty(PropertyName = "PullM3U8Url")]
 				public string PullM3U8Url
 				{
 					get
@@ -173,15 +183,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				public string Quality
+				[JsonProperty(PropertyName = "PullRtmpUrl")]
+				public string PullRtmpUrl
 				{
 					get
 					{
-						return quality;
+						return pullRtmpUrl;
 					}
 					set	
 					{
-						quality = value;
+						pullRtmpUrl = value;
 					}
 				}
 			}

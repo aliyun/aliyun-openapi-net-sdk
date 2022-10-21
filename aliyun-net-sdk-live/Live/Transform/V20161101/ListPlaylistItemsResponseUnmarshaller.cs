@@ -31,18 +31,18 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			ListPlaylistItemsResponse listPlaylistItemsResponse = new ListPlaylistItemsResponse();
 
 			listPlaylistItemsResponse.HttpResponse = _ctx.HttpResponse;
-			listPlaylistItemsResponse.RequestId = _ctx.StringValue("ListPlaylistItems.RequestId");
 			listPlaylistItemsResponse.Total = _ctx.IntegerValue("ListPlaylistItems.Total");
+			listPlaylistItemsResponse.RequestId = _ctx.StringValue("ListPlaylistItems.RequestId");
 
 			List<ListPlaylistItemsResponse.ListPlaylistItems_ProgramItem> listPlaylistItemsResponse_programItems = new List<ListPlaylistItemsResponse.ListPlaylistItems_ProgramItem>();
 			for (int i = 0; i < _ctx.Length("ListPlaylistItems.ProgramItems.Length"); i++) {
 				ListPlaylistItemsResponse.ListPlaylistItems_ProgramItem programItem = new ListPlaylistItemsResponse.ListPlaylistItems_ProgramItem();
-				programItem.ProgramId = _ctx.StringValue("ListPlaylistItems.ProgramItems["+ i +"].ProgramId");
-				programItem.ProgramItemId = _ctx.StringValue("ListPlaylistItems.ProgramItems["+ i +"].ProgramItemId");
-				programItem.ProgramItemName = _ctx.StringValue("ListPlaylistItems.ProgramItems["+ i +"].ProgramItemName");
-				programItem.ResourceType = _ctx.StringValue("ListPlaylistItems.ProgramItems["+ i +"].ResourceType");
-				programItem.ResourceValue = _ctx.StringValue("ListPlaylistItems.ProgramItems["+ i +"].ResourceValue");
 				programItem.Index = _ctx.IntegerValue("ListPlaylistItems.ProgramItems["+ i +"].Index");
+				programItem.ResourceType = _ctx.StringValue("ListPlaylistItems.ProgramItems["+ i +"].ResourceType");
+				programItem.ProgramItemId = _ctx.StringValue("ListPlaylistItems.ProgramItems["+ i +"].ProgramItemId");
+				programItem.ProgramId = _ctx.StringValue("ListPlaylistItems.ProgramItems["+ i +"].ProgramId");
+				programItem.ProgramItemName = _ctx.StringValue("ListPlaylistItems.ProgramItems["+ i +"].ProgramItemName");
+				programItem.ResourceValue = _ctx.StringValue("ListPlaylistItems.ProgramItems["+ i +"].ResourceValue");
 
 				listPlaylistItemsResponse_programItems.Add(programItem);
 			}

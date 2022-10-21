@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,24 +25,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveDomainBpsDataByLayerResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string dataInterval;
+
+		private string requestId;
 
 		private List<DescribeLiveDomainBpsDataByLayer_DataModule> bpsDataInterval;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "DataInterval")]
 		public string DataInterval
 		{
 			get
@@ -55,6 +44,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "BpsDataInterval")]
 		public List<DescribeLiveDomainBpsDataByLayer_DataModule> BpsDataInterval
 		{
 			get
@@ -70,24 +73,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDomainBpsDataByLayer_DataModule
 		{
 
-			private string timeStamp;
-
 			private string _value;
 
 			private string trafficValue;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+			private string timeStamp;
 
+			[JsonProperty(PropertyName = "_Value")]
 			public string _Value
 			{
 				get
@@ -100,6 +92,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "TrafficValue")]
 			public string TrafficValue
 			{
 				get
@@ -109,6 +102,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					trafficValue = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TimeStamp")]
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
 				}
 			}
 		}

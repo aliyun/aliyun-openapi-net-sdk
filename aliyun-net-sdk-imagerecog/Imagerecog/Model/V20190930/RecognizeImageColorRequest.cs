@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.imagerecog;
 using Aliyun.Acs.imagerecog.Transform;
 using Aliyun.Acs.imagerecog.Transform.V20190930;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
     public class RecognizeImageColorRequest : RpcAcsRequest<RecognizeImageColorResponse>
     {
         public RecognizeImageColorRequest()
-            : base("imagerecog", "2019-09-30", "RecognizeImageColor", "imagerecog", "openAPI")
+            : base("imagerecog", "2019-09-30", "RecognizeImageColor")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,22 +41,9 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 			Method = MethodType.POST;
         }
 
-		private string url;
-
 		private int? colorCount;
 
-		public string Url
-		{
-			get
-			{
-				return url;
-			}
-			set	
-			{
-				url = value;
-				DictionaryUtil.Add(BodyParameters, "Url", value);
-			}
-		}
+		private string url;
 
 		public int? ColorCount
 		{
@@ -67,6 +55,19 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 			{
 				colorCount = value;
 				DictionaryUtil.Add(BodyParameters, "ColorCount", value.ToString());
+			}
+		}
+
+		public string Url
+		{
+			get
+			{
+				return url;
+			}
+			set	
+			{
+				url = value;
+				DictionaryUtil.Add(BodyParameters, "Url", value);
 			}
 		}
 

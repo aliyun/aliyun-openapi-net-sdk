@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.videoenhan.Model.V20200320
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 	public class DeleteFaceVideoTemplateResponse : AcsResponse
 	{
 
-		private string message;
-
 		private string requestId;
 
 		private string code;
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
+		private string message;
 
 		public string RequestId
 		{
@@ -64,6 +52,18 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			set	
 			{
 				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 	}

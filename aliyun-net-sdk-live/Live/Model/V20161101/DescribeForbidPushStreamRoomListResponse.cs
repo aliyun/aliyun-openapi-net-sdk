@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,38 +25,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeForbidPushStreamRoomListResponse : AcsResponse
 	{
 
+		private int? totalPage;
+
 		private string requestId;
 
 		private int? totalNum;
 
-		private int? totalPage;
-
 		private List<DescribeForbidPushStreamRoomList_Room> roomList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? TotalNum
-		{
-			get
-			{
-				return totalNum;
-			}
-			set	
-			{
-				totalNum = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "TotalPage")]
 		public int? TotalPage
 		{
 			get
@@ -69,6 +46,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TotalNum")]
+		public int? TotalNum
+		{
+			get
+			{
+				return totalNum;
+			}
+			set	
+			{
+				totalNum = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RoomList")]
 		public List<DescribeForbidPushStreamRoomList_Room> RoomList
 		{
 			get
@@ -84,26 +88,28 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeForbidPushStreamRoomList_Room
 		{
 
-			private string roomId;
+			private string opEndTime;
 
 			private string anchorId;
 
 			private string opStartTime;
 
-			private string opEndTime;
+			private string roomId;
 
-			public string RoomId
+			[JsonProperty(PropertyName = "OpEndTime")]
+			public string OpEndTime
 			{
 				get
 				{
-					return roomId;
+					return opEndTime;
 				}
 				set	
 				{
-					roomId = value;
+					opEndTime = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "AnchorId")]
 			public string AnchorId
 			{
 				get
@@ -116,6 +122,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "OpStartTime")]
 			public string OpStartTime
 			{
 				get
@@ -128,15 +135,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string OpEndTime
+			[JsonProperty(PropertyName = "RoomId")]
+			public string RoomId
 			{
 				get
 				{
-					return opEndTime;
+					return roomId;
 				}
 				set	
 				{
-					opEndTime = value;
+					roomId = value;
 				}
 			}
 		}

@@ -36,14 +36,14 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeLivePullStreamConfigResponse.DescribeLivePullStreamConfig_LiveAppRecord> describeLivePullStreamConfigResponse_liveAppRecordList = new List<DescribeLivePullStreamConfigResponse.DescribeLivePullStreamConfig_LiveAppRecord>();
 			for (int i = 0; i < _ctx.Length("DescribeLivePullStreamConfig.LiveAppRecordList.Length"); i++) {
 				DescribeLivePullStreamConfigResponse.DescribeLivePullStreamConfig_LiveAppRecord liveAppRecord = new DescribeLivePullStreamConfigResponse.DescribeLivePullStreamConfig_LiveAppRecord();
-				liveAppRecord.DomainName = _ctx.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].DomainName");
-				liveAppRecord.AppName = _ctx.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].AppName");
-				liveAppRecord.StreamName = _ctx.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].StreamName");
-				liveAppRecord.SourceUrl = _ctx.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].SourceUrl");
-				liveAppRecord.SourceUsing = _ctx.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].SourceUsing");
-				liveAppRecord.StartTime = _ctx.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].StartTime");
 				liveAppRecord.EndTime = _ctx.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].EndTime");
+				liveAppRecord.AppName = _ctx.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].AppName");
+				liveAppRecord.SourceUrl = _ctx.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].SourceUrl");
+				liveAppRecord.StartTime = _ctx.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].StartTime");
 				liveAppRecord.Always = _ctx.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].Always");
+				liveAppRecord.StreamName = _ctx.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].StreamName");
+				liveAppRecord.SourceUsing = _ctx.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].SourceUsing");
+				liveAppRecord.DomainName = _ctx.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].DomainName");
 
 				describeLivePullStreamConfigResponse_liveAppRecordList.Add(liveAppRecord);
 			}

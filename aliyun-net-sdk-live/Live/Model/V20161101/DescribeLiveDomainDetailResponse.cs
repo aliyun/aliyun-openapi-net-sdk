@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private DescribeLiveDomainDetail_DomainDetail domainDetail;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DomainDetail")]
 		public DescribeLiveDomainDetail_DomainDetail DomainDetail
 		{
 			get
@@ -56,138 +58,31 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDomainDetail_DomainDetail
 		{
 
-			private string gmtCreated;
+			private string sSLPub;
 
 			private string gmtModified;
+
+			private string domainName;
+
+			private string gmtCreated;
+
+			private string liveDomainType;
+
+			private string description;
+
+			private string region;
+
+			private string sSLProtocol;
+
+			private string certName;
 
 			private string domainStatus;
 
 			private string cname;
 
-			private string domainName;
-
-			private string liveDomainType;
-
-			private string region;
-
-			private string description;
-
-			private string sSLProtocol;
-
-			private string sSLPub;
-
 			private string scope;
 
-			private string certName;
-
-			public string GmtCreated
-			{
-				get
-				{
-					return gmtCreated;
-				}
-				set	
-				{
-					gmtCreated = value;
-				}
-			}
-
-			public string GmtModified
-			{
-				get
-				{
-					return gmtModified;
-				}
-				set	
-				{
-					gmtModified = value;
-				}
-			}
-
-			public string DomainStatus
-			{
-				get
-				{
-					return domainStatus;
-				}
-				set	
-				{
-					domainStatus = value;
-				}
-			}
-
-			public string Cname
-			{
-				get
-				{
-					return cname;
-				}
-				set	
-				{
-					cname = value;
-				}
-			}
-
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
-
-			public string LiveDomainType
-			{
-				get
-				{
-					return liveDomainType;
-				}
-				set	
-				{
-					liveDomainType = value;
-				}
-			}
-
-			public string Region
-			{
-				get
-				{
-					return region;
-				}
-				set	
-				{
-					region = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string SSLProtocol
-			{
-				get
-				{
-					return sSLProtocol;
-				}
-				set	
-				{
-					sSLProtocol = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "SSLPub")]
 			public string SSLPub
 			{
 				get
@@ -200,18 +95,98 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string Scope
+			[JsonProperty(PropertyName = "GmtModified")]
+			public string GmtModified
 			{
 				get
 				{
-					return scope;
+					return gmtModified;
 				}
 				set	
 				{
-					scope = value;
+					gmtModified = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "GmtCreated")]
+			public string GmtCreated
+			{
+				get
+				{
+					return gmtCreated;
+				}
+				set	
+				{
+					gmtCreated = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LiveDomainType")]
+			public string LiveDomainType
+			{
+				get
+				{
+					return liveDomainType;
+				}
+				set	
+				{
+					liveDomainType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Description")]
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Region")]
+			public string Region
+			{
+				get
+				{
+					return region;
+				}
+				set	
+				{
+					region = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SSLProtocol")]
+			public string SSLProtocol
+			{
+				get
+				{
+					return sSLProtocol;
+				}
+				set	
+				{
+					sSLProtocol = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CertName")]
 			public string CertName
 			{
 				get
@@ -221,6 +196,45 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					certName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DomainStatus")]
+			public string DomainStatus
+			{
+				get
+				{
+					return domainStatus;
+				}
+				set	
+				{
+					domainStatus = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Cname")]
+			public string Cname
+			{
+				get
+				{
+					return cname;
+				}
+				set	
+				{
+					cname = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Scope")]
+			public string Scope
+			{
+				get
+				{
+					return scope;
+				}
+				set	
+				{
+					scope = value;
 				}
 			}
 		}

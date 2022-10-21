@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.eais.Model.V20190624
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.eais.Model.V20190624
 	public class DescribeEaisResponse : AcsResponse
 	{
 
-		private int? pageNumber;
+		private string requestId;
 
-		private int? totalCount;
+		private int? pageNumber;
 
 		private int? pageSize;
 
-		private string requestId;
+		private int? totalCount;
 
 		private List<DescribeEais_Instance> instances;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? PageNumber
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.eais.Model.V20190624
 			set	
 			{
 				pageNumber = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.eais.Model.V20190624
 			}
 		}
 
-		public string RequestId
+		public int? TotalCount
 		{
 			get
 			{
-				return requestId;
+				return totalCount;
 			}
 			set	
 			{
-				requestId = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,51 +98,47 @@ namespace Aliyun.Acs.eais.Model.V20190624
 		public class DescribeEais_Instance
 		{
 
-			private string regionId;
-
-			private string zoneId;
+			private string status;
 
 			private string creationTime;
 
-			private string instanceName;
+			private string clientInstanceName;
 
 			private string description;
 
-			private string status;
-
 			private string elasticAcceleratedInstanceId;
 
-			private string clientInstanceId;
-
-			private string instanceType;
+			private string instanceName;
 
 			private string clientInstanceType;
 
-			private string clientInstanceName;
+			private string clientInstanceId;
+
+			private string zoneId;
+
+			private string instanceType;
+
+			private string regionId;
+
+			private string category;
+
+			private string jupyterUrl;
+
+			private string vSwitchId;
+
+			private string securityGroupId;
 
 			private List<DescribeEais_Tag> tags;
 
-			public string RegionId
+			public string Status
 			{
 				get
 				{
-					return regionId;
+					return status;
 				}
 				set	
 				{
-					regionId = value;
-				}
-			}
-
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
+					status = value;
 				}
 			}
 
@@ -158,15 +154,15 @@ namespace Aliyun.Acs.eais.Model.V20190624
 				}
 			}
 
-			public string InstanceName
+			public string ClientInstanceName
 			{
 				get
 				{
-					return instanceName;
+					return clientInstanceName;
 				}
 				set	
 				{
-					instanceName = value;
+					clientInstanceName = value;
 				}
 			}
 
@@ -182,18 +178,6 @@ namespace Aliyun.Acs.eais.Model.V20190624
 				}
 			}
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
 			public string ElasticAcceleratedInstanceId
 			{
 				get
@@ -206,27 +190,15 @@ namespace Aliyun.Acs.eais.Model.V20190624
 				}
 			}
 
-			public string ClientInstanceId
+			public string InstanceName
 			{
 				get
 				{
-					return clientInstanceId;
+					return instanceName;
 				}
 				set	
 				{
-					clientInstanceId = value;
-				}
-			}
-
-			public string InstanceType
-			{
-				get
-				{
-					return instanceType;
-				}
-				set	
-				{
-					instanceType = value;
+					instanceName = value;
 				}
 			}
 
@@ -242,15 +214,99 @@ namespace Aliyun.Acs.eais.Model.V20190624
 				}
 			}
 
-			public string ClientInstanceName
+			public string ClientInstanceId
 			{
 				get
 				{
-					return clientInstanceName;
+					return clientInstanceId;
 				}
 				set	
 				{
-					clientInstanceName = value;
+					clientInstanceId = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
+			public string InstanceType
+			{
+				get
+				{
+					return instanceType;
+				}
+				set	
+				{
+					instanceType = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
+				}
+			}
+
+			public string JupyterUrl
+			{
+				get
+				{
+					return jupyterUrl;
+				}
+				set	
+				{
+					jupyterUrl = value;
+				}
+			}
+
+			public string VSwitchId
+			{
+				get
+				{
+					return vSwitchId;
+				}
+				set	
+				{
+					vSwitchId = value;
+				}
+			}
+
+			public string SecurityGroupId
+			{
+				get
+				{
+					return securityGroupId;
+				}
+				set	
+				{
+					securityGroupId = value;
 				}
 			}
 
@@ -269,21 +325,9 @@ namespace Aliyun.Acs.eais.Model.V20190624
 			public class DescribeEais_Tag
 			{
 
-				private string tagValue;
-
 				private string tagKey;
 
-				public string TagValue
-				{
-					get
-					{
-						return tagValue;
-					}
-					set	
-					{
-						tagValue = value;
-					}
-				}
+				private string tagValue;
 
 				public string TagKey
 				{
@@ -294,6 +338,18 @@ namespace Aliyun.Acs.eais.Model.V20190624
 					set	
 					{
 						tagKey = value;
+					}
+				}
+
+				public string TagValue
+				{
+					get
+					{
+						return tagValue;
+					}
+					set	
+					{
+						tagValue = value;
 					}
 				}
 			}

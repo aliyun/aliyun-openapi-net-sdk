@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.imagerecog.Model.V20190930
@@ -58,13 +58,13 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 
 			private string status;
 
-			private string errorCode;
-
 			private string errorMessage;
 
-			private string jobId;
-
 			private string result;
+
+			private string errorCode;
+
+			private string jobId;
 
 			public string Status
 			{
@@ -75,18 +75,6 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 				set	
 				{
 					status = value;
-				}
-			}
-
-			public string ErrorCode
-			{
-				get
-				{
-					return errorCode;
-				}
-				set	
-				{
-					errorCode = value;
 				}
 			}
 
@@ -102,18 +90,6 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 				}
 			}
 
-			public string JobId
-			{
-				get
-				{
-					return jobId;
-				}
-				set	
-				{
-					jobId = value;
-				}
-			}
-
 			public string Result
 			{
 				get
@@ -123,6 +99,30 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 				set	
 				{
 					result = value;
+				}
+			}
+
+			public string ErrorCode
+			{
+				get
+				{
+					return errorCode;
+				}
+				set	
+				{
+					errorCode = value;
+				}
+			}
+
+			public string JobId
+			{
+				get
+				{
+					return jobId;
+				}
+				set	
+				{
+					jobId = value;
 				}
 			}
 		}

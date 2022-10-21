@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private DescribeLiveCertificateList_CertificateListModel certificateListModel;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "CertificateListModel")]
 		public DescribeLiveCertificateList_CertificateListModel CertificateListModel
 		{
 			get
@@ -60,6 +62,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private List<DescribeLiveCertificateList_Cert> certList;
 
+			[JsonProperty(PropertyName = "Count")]
 			public int? Count
 			{
 				get
@@ -72,6 +75,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "CertList")]
 			public List<DescribeLiveCertificateList_Cert> CertList
 			{
 				get
@@ -87,42 +91,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeLiveCertificateList_Cert
 			{
 
-				private string certName;
-
-				private long? certId;
+				private long? lastTime;
 
 				private string fingerprint;
 
-				private string common;
+				private string certName;
 
 				private string issuer;
 
-				private long? lastTime;
+				private long? certId;
 
-				public string CertName
+				private string common;
+
+				[JsonProperty(PropertyName = "LastTime")]
+				public long? LastTime
 				{
 					get
 					{
-						return certName;
+						return lastTime;
 					}
 					set	
 					{
-						certName = value;
+						lastTime = value;
 					}
 				}
 
-				public long? CertId
-				{
-					get
-					{
-						return certId;
-					}
-					set	
-					{
-						certId = value;
-					}
-				}
-
+				[JsonProperty(PropertyName = "Fingerprint")]
 				public string Fingerprint
 				{
 					get
@@ -135,18 +129,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				public string Common
+				[JsonProperty(PropertyName = "CertName")]
+				public string CertName
 				{
 					get
 					{
-						return common;
+						return certName;
 					}
 					set	
 					{
-						common = value;
+						certName = value;
 					}
 				}
 
+				[JsonProperty(PropertyName = "Issuer")]
 				public string Issuer
 				{
 					get
@@ -159,15 +155,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				public long? LastTime
+				[JsonProperty(PropertyName = "CertId")]
+				public long? CertId
 				{
 					get
 					{
-						return lastTime;
+						return certId;
 					}
 					set	
 					{
-						lastTime = value;
+						certId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Common")]
+				public string Common
+				{
+					get
+					{
+						return common;
+					}
+					set	
+					{
+						common = value;
 					}
 				}
 			}

@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -54,6 +55,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private int? spot;
 
+		[JsonProperty(PropertyName = "RepeatTimes")]
 		public int? RepeatTimes
 		{
 			get
@@ -67,6 +69,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "HighPriorityShowStartTime")]
 		public string HighPriorityShowStartTime
 		{
 			get
@@ -80,6 +83,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "CasterId")]
 		public string CasterId
 		{
 			get
@@ -93,6 +97,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "HighPriorityShowId")]
 		public string HighPriorityShowId
 		{
 			get
@@ -106,6 +111,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -119,6 +125,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ShowId")]
 		public string ShowId
 		{
 			get
@@ -132,6 +139,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Spot")]
 		public int? Spot
 		{
 			get

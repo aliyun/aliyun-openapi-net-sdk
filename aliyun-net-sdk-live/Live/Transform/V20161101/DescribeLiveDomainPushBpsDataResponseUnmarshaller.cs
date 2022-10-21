@@ -31,17 +31,17 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveDomainPushBpsDataResponse describeLiveDomainPushBpsDataResponse = new DescribeLiveDomainPushBpsDataResponse();
 
 			describeLiveDomainPushBpsDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveDomainPushBpsDataResponse.EndTime = _ctx.StringValue("DescribeLiveDomainPushBpsData.EndTime");
+			describeLiveDomainPushBpsDataResponse.StartTime = _ctx.StringValue("DescribeLiveDomainPushBpsData.StartTime");
 			describeLiveDomainPushBpsDataResponse.RequestId = _ctx.StringValue("DescribeLiveDomainPushBpsData.RequestId");
 			describeLiveDomainPushBpsDataResponse.DomainName = _ctx.StringValue("DescribeLiveDomainPushBpsData.DomainName");
-			describeLiveDomainPushBpsDataResponse.StartTime = _ctx.StringValue("DescribeLiveDomainPushBpsData.StartTime");
-			describeLiveDomainPushBpsDataResponse.EndTime = _ctx.StringValue("DescribeLiveDomainPushBpsData.EndTime");
 			describeLiveDomainPushBpsDataResponse.DataInterval = _ctx.StringValue("DescribeLiveDomainPushBpsData.DataInterval");
 
 			List<DescribeLiveDomainPushBpsDataResponse.DescribeLiveDomainPushBpsData_DataModule> describeLiveDomainPushBpsDataResponse_bpsDataPerInterval = new List<DescribeLiveDomainPushBpsDataResponse.DescribeLiveDomainPushBpsData_DataModule>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveDomainPushBpsData.BpsDataPerInterval.Length"); i++) {
 				DescribeLiveDomainPushBpsDataResponse.DescribeLiveDomainPushBpsData_DataModule dataModule = new DescribeLiveDomainPushBpsDataResponse.DescribeLiveDomainPushBpsData_DataModule();
-				dataModule.TimeStamp = _ctx.StringValue("DescribeLiveDomainPushBpsData.BpsDataPerInterval["+ i +"].TimeStamp");
 				dataModule.BpsValue = _ctx.StringValue("DescribeLiveDomainPushBpsData.BpsDataPerInterval["+ i +"].BpsValue");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeLiveDomainPushBpsData.BpsDataPerInterval["+ i +"].TimeStamp");
 
 				describeLiveDomainPushBpsDataResponse_bpsDataPerInterval.Add(dataModule);
 			}

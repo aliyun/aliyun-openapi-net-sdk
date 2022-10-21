@@ -108,6 +108,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private bool? errorActionFlag;
 
+			private string status;
+
 			public long? Id
 			{
 				get
@@ -165,6 +167,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					errorActionFlag = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 		}

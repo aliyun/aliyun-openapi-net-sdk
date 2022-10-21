@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,38 +25,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DeleteLiveStreamRecordIndexFilesResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string code;
 
 		private string message;
 
-		private string code;
+		private string requestId;
 
 		private List<DeleteLiveStreamRecordIndexFiles_RecordDeleteInfo> recordDeleteInfoList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -69,6 +46,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RecordDeleteInfoList")]
 		public List<DeleteLiveStreamRecordIndexFiles_RecordDeleteInfo> RecordDeleteInfoList
 		{
 			get
@@ -84,22 +88,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DeleteLiveStreamRecordIndexFiles_RecordDeleteInfo
 		{
 
-			private string recordId;
-
 			private string message;
 
-			public string RecordId
-			{
-				get
-				{
-					return recordId;
-				}
-				set	
-				{
-					recordId = value;
-				}
-			}
+			private string recordId;
 
+			[JsonProperty(PropertyName = "Message")]
 			public string Message
 			{
 				get
@@ -109,6 +102,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					message = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RecordId")]
+			public string RecordId
+			{
+				get
+				{
+					return recordId;
+				}
+				set	
+				{
+					recordId = value;
 				}
 			}
 		}

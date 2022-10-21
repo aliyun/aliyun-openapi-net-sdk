@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.imagerecog;
 using Aliyun.Acs.imagerecog.Transform;
 using Aliyun.Acs.imagerecog.Transform.V20190930;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
     public class RecognizeLogoRequest : RpcAcsRequest<RecognizeLogoResponse>
     {
         public RecognizeLogoRequest()
-            : base("imagerecog", "2019-09-30", "RecognizeLogo", "imagerecog", "openAPI")
+            : base("imagerecog", "2019-09-30", "RecognizeLogo")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,9 +41,9 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 			Method = MethodType.POST;
         }
 
-		private List<Tasks> taskss = new List<Tasks>(){ };
+		private List<string> taskss = new List<string>(){ };
 
-		public List<Tasks> Taskss
+		public List<string> Taskss
 		{
 			get
 			{
@@ -52,9 +53,12 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 			set
 			{
 				taskss = value;
-				for (int i = 0; i < taskss.Count; i++)
+				if(taskss != null)
 				{
-					DictionaryUtil.Add(BodyParameters,"Tasks." + (i + 1) + ".ImageURL", taskss[i].ImageURL);
+					for (int depth1 = 0; depth1 < taskss.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"Tasks." + (depth1 + 1), taskss[depth1]);
+					}
 				}
 			}
 		}

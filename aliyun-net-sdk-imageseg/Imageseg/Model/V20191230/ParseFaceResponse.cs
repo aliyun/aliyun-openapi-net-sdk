@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.imageseg.Model.V20191230
@@ -87,21 +87,9 @@ namespace Aliyun.Acs.imageseg.Model.V20191230
 			public class ParseFace_Element
 			{
 
-				private string name;
-
 				private string imageURL;
 
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
+				private string name;
 
 				public string ImageURL
 				{
@@ -112,6 +100,18 @@ namespace Aliyun.Acs.imageseg.Model.V20191230
 					set	
 					{
 						imageURL = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
 					}
 				}
 			}

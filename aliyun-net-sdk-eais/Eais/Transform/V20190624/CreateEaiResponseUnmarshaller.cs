@@ -31,8 +31,8 @@ namespace Aliyun.Acs.eais.Transform.V20190624
 			CreateEaiResponse createEaiResponse = new CreateEaiResponse();
 
 			createEaiResponse.HttpResponse = _ctx.HttpResponse;
-			createEaiResponse.RequestId = _ctx.StringValue("CreateEai.RequestId");
 			createEaiResponse.ElasticAcceleratedInstanceId = _ctx.StringValue("CreateEai.ElasticAcceleratedInstanceId");
+			createEaiResponse.RequestId = _ctx.StringValue("CreateEai.RequestId");
         
 			return createEaiResponse;
         }

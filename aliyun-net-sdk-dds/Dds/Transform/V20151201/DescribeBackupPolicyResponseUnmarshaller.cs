@@ -38,6 +38,8 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			describeBackupPolicyResponse.PreferredNextBackupTime = _ctx.StringValue("DescribeBackupPolicy.PreferredNextBackupTime");
 			describeBackupPolicyResponse.EnableBackupLog = _ctx.IntegerValue("DescribeBackupPolicy.EnableBackupLog");
 			describeBackupPolicyResponse.LogBackupRetentionPeriod = _ctx.IntegerValue("DescribeBackupPolicy.LogBackupRetentionPeriod");
+			describeBackupPolicyResponse.SnapshotBackupType = _ctx.StringValue("DescribeBackupPolicy.SnapshotBackupType");
+			describeBackupPolicyResponse.BackupInterval = _ctx.IntegerValue("DescribeBackupPolicy.BackupInterval");
         
 			return describeBackupPolicyResponse;
         }

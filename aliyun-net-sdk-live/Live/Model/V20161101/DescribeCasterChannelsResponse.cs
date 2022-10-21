@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,24 +25,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeCasterChannelsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? total;
+
+		private string requestId;
 
 		private List<DescribeCasterChannels_Channel> channels;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Total")]
 		public int? Total
 		{
 			get
@@ -55,6 +44,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Channels")]
 		public List<DescribeCasterChannels_Channel> Channels
 		{
 			get
@@ -70,80 +73,21 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeCasterChannels_Channel
 		{
 
+			private int? inputType;
+
+			private string rtmpUrl;
+
 			private string channelId;
+
+			private string rtsUrl;
+
+			private string faceBeauty;
 
 			private string resourceId;
 
 			private string streamUrl;
 
-			private string rtmpUrl;
-
-			private string rtsUrl;
-
-			private int? inputType;
-
-			private string faceBeauty;
-
-			public string ChannelId
-			{
-				get
-				{
-					return channelId;
-				}
-				set	
-				{
-					channelId = value;
-				}
-			}
-
-			public string ResourceId
-			{
-				get
-				{
-					return resourceId;
-				}
-				set	
-				{
-					resourceId = value;
-				}
-			}
-
-			public string StreamUrl
-			{
-				get
-				{
-					return streamUrl;
-				}
-				set	
-				{
-					streamUrl = value;
-				}
-			}
-
-			public string RtmpUrl
-			{
-				get
-				{
-					return rtmpUrl;
-				}
-				set	
-				{
-					rtmpUrl = value;
-				}
-			}
-
-			public string RtsUrl
-			{
-				get
-				{
-					return rtsUrl;
-				}
-				set	
-				{
-					rtsUrl = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "InputType")]
 			public int? InputType
 			{
 				get
@@ -156,6 +100,46 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "RtmpUrl")]
+			public string RtmpUrl
+			{
+				get
+				{
+					return rtmpUrl;
+				}
+				set	
+				{
+					rtmpUrl = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ChannelId")]
+			public string ChannelId
+			{
+				get
+				{
+					return channelId;
+				}
+				set	
+				{
+					channelId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RtsUrl")]
+			public string RtsUrl
+			{
+				get
+				{
+					return rtsUrl;
+				}
+				set	
+				{
+					rtsUrl = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "FaceBeauty")]
 			public string FaceBeauty
 			{
 				get
@@ -165,6 +149,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					faceBeauty = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ResourceId")]
+			public string ResourceId
+			{
+				get
+				{
+					return resourceId;
+				}
+				set	
+				{
+					resourceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StreamUrl")]
+			public string StreamUrl
+			{
+				get
+				{
+					return streamUrl;
+				}
+				set	
+				{
+					streamUrl = value;
 				}
 			}
 		}

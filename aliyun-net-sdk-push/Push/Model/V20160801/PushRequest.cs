@@ -87,9 +87,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private bool? storeOffline;
 
-		private string smsParams;
-
 		private double? iOSRelevanceScore;
+
+		private string smsParams;
 
 		private int? androidVivoPushMode;
 
@@ -137,6 +137,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string iOSExtParameters;
 
+		private string androidNotificationHonorChannel;
+
 		private string androidXiaomiImageUrl;
 
 		private string smsTemplateName;
@@ -146,6 +148,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 		private string androidBigPictureUrl;
 
 		private bool? iOSSilentNotification;
+
+		private string androidNotificationGroup;
 
 		private string sendChannels;
 
@@ -167,9 +171,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string targetValue;
 
-		private string androidXiaoMiActivity;
-
 		private string androidXiaoMiNotifyTitle;
+
+		private string androidXiaoMiActivity;
 
 		public int? AndroidNotificationBarType
 		{
@@ -470,19 +474,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public string SmsParams
-		{
-			get
-			{
-				return smsParams;
-			}
-			set	
-			{
-				smsParams = value;
-				DictionaryUtil.Add(QueryParameters, "SmsParams", value);
-			}
-		}
-
 		public double? IOSRelevanceScore
 		{
 			get
@@ -493,6 +484,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				iOSRelevanceScore = value;
 				DictionaryUtil.Add(QueryParameters, "iOSRelevanceScore", value.ToString());
+			}
+		}
+
+		public string SmsParams
+		{
+			get
+			{
+				return smsParams;
+			}
+			set	
+			{
+				smsParams = value;
+				DictionaryUtil.Add(QueryParameters, "SmsParams", value);
 			}
 		}
 
@@ -795,6 +799,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
+		public string AndroidNotificationHonorChannel
+		{
+			get
+			{
+				return androidNotificationHonorChannel;
+			}
+			set	
+			{
+				androidNotificationHonorChannel = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidNotificationHonorChannel", value);
+			}
+		}
+
 		public string AndroidXiaomiImageUrl
 		{
 			get
@@ -857,6 +874,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				iOSSilentNotification = value;
 				DictionaryUtil.Add(QueryParameters, "iOSSilentNotification", value.ToString());
+			}
+		}
+
+		public string AndroidNotificationGroup
+		{
+			get
+			{
+				return androidNotificationGroup;
+			}
+			set	
+			{
+				androidNotificationGroup = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidNotificationGroup", value);
 			}
 		}
 
@@ -990,19 +1020,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public string AndroidXiaoMiActivity
-		{
-			get
-			{
-				return androidXiaoMiActivity;
-			}
-			set	
-			{
-				androidXiaoMiActivity = value;
-				DictionaryUtil.Add(QueryParameters, "AndroidXiaoMiActivity", value);
-			}
-		}
-
 		public string AndroidXiaoMiNotifyTitle
 		{
 			get
@@ -1013,6 +1030,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				androidXiaoMiNotifyTitle = value;
 				DictionaryUtil.Add(QueryParameters, "AndroidXiaoMiNotifyTitle", value);
+			}
+		}
+
+		public string AndroidXiaoMiActivity
+		{
+			get
+			{
+				return androidXiaoMiActivity;
+			}
+			set	
+			{
+				androidXiaoMiActivity = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidXiaoMiActivity", value);
 			}
 		}
 

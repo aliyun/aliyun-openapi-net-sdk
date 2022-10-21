@@ -31,9 +31,9 @@ namespace Aliyun.Acs.videoenhan.Transform.V20200320
 			AddFaceVideoTemplateResponse addFaceVideoTemplateResponse = new AddFaceVideoTemplateResponse();
 
 			addFaceVideoTemplateResponse.HttpResponse = _ctx.HttpResponse;
-			addFaceVideoTemplateResponse.Message = _ctx.StringValue("AddFaceVideoTemplate.Message");
 			addFaceVideoTemplateResponse.RequestId = _ctx.StringValue("AddFaceVideoTemplate.RequestId");
 			addFaceVideoTemplateResponse.Code = _ctx.StringValue("AddFaceVideoTemplate.Code");
+			addFaceVideoTemplateResponse.Message = _ctx.StringValue("AddFaceVideoTemplate.Message");
 
 			AddFaceVideoTemplateResponse.AddFaceVideoTemplate_Date date = new AddFaceVideoTemplateResponse.AddFaceVideoTemplate_Date();
 			date.TemplateId = _ctx.StringValue("AddFaceVideoTemplate.Date.TemplateId");

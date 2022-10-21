@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.imagerecog.Model.V20190930
@@ -73,23 +73,11 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 			public class RecognizeLogo_Element
 			{
 
-				private string taskId;
-
 				private string imageURL;
 
-				private List<RecognizeLogo_Result> results;
+				private string taskId;
 
-				public string TaskId
-				{
-					get
-					{
-						return taskId;
-					}
-					set	
-					{
-						taskId = value;
-					}
-				}
+				private List<RecognizeLogo_Result> results;
 
 				public string ImageURL
 				{
@@ -100,6 +88,18 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 					set	
 					{
 						imageURL = value;
+					}
+				}
+
+				public string TaskId
+				{
+					get
+					{
+						return taskId;
+					}
+					set	
+					{
+						taskId = value;
 					}
 				}
 
@@ -118,25 +118,13 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 				public class RecognizeLogo_Result
 				{
 
-					private string label;
-
 					private string suggestion;
+
+					private string label;
 
 					private float? rate;
 
 					private List<RecognizeLogo_LogoData> logosData;
-
-					public string Label
-					{
-						get
-						{
-							return label;
-						}
-						set	
-						{
-							label = value;
-						}
-					}
 
 					public string Suggestion
 					{
@@ -147,6 +135,18 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 						set	
 						{
 							suggestion = value;
+						}
+					}
+
+					public string Label
+					{
+						get
+						{
+							return label;
+						}
+						set	
+						{
+							label = value;
 						}
 					}
 
@@ -177,29 +177,17 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 					public class RecognizeLogo_LogoData
 					{
 
-						private string name;
-
 						private string type;
-
-						private float? x;
-
-						private float? y;
-
-						private float? h;
 
 						private float? w;
 
-						public string Name
-						{
-							get
-							{
-								return name;
-							}
-							set	
-							{
-								name = value;
-							}
-						}
+						private float? h;
+
+						private float? y;
+
+						private string name;
+
+						private float? x;
 
 						public string Type
 						{
@@ -213,27 +201,15 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 							}
 						}
 
-						public float? X
+						public float? W
 						{
 							get
 							{
-								return x;
+								return w;
 							}
 							set	
 							{
-								x = value;
-							}
-						}
-
-						public float? Y
-						{
-							get
-							{
-								return y;
-							}
-							set	
-							{
-								y = value;
+								w = value;
 							}
 						}
 
@@ -249,15 +225,39 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 							}
 						}
 
-						public float? W
+						public float? Y
 						{
 							get
 							{
-								return w;
+								return y;
 							}
 							set	
 							{
-								w = value;
+								y = value;
+							}
+						}
+
+						public string Name
+						{
+							get
+							{
+								return name;
+							}
+							set	
+							{
+								name = value;
+							}
+						}
+
+						public float? X
+						{
+							get
+							{
+								return x;
+							}
+							set	
+							{
+								x = value;
 							}
 						}
 					}

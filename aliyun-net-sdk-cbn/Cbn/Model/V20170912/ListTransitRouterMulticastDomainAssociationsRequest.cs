@@ -53,8 +53,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private string resourceId;
 
-		private bool? dryRun;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -142,19 +140,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				resourceId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
-			}
-		}
-
-		public bool? DryRun
-		{
-			get
-			{
-				return dryRun;
-			}
-			set	
-			{
-				dryRun = value;
-				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
 			}
 		}
 

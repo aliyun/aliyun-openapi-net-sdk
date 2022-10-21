@@ -146,6 +146,10 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string storageType;
 
+			private string secondaryZoneId;
+
+			private string hiddenZoneId;
+
 			private List<DescribeDBInstances_Tag> tags;
 
 			private List<DescribeDBInstances_MongosAttribute> mongosList;
@@ -437,6 +441,30 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					storageType = value;
+				}
+			}
+
+			public string SecondaryZoneId
+			{
+				get
+				{
+					return secondaryZoneId;
+				}
+				set	
+				{
+					secondaryZoneId = value;
+				}
+			}
+
+			public string HiddenZoneId
+			{
+				get
+				{
+					return hiddenZoneId;
+				}
+				set	
+				{
+					hiddenZoneId = value;
 				}
 			}
 

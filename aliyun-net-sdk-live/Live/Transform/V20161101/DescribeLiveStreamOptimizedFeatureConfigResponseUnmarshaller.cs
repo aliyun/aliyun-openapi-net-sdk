@@ -36,9 +36,9 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeLiveStreamOptimizedFeatureConfigResponse.DescribeLiveStreamOptimizedFeatureConfig_LiveStreamOptimizedFeatureConfig> describeLiveStreamOptimizedFeatureConfigResponse_liveStreamOptimizedFeatureConfigList = new List<DescribeLiveStreamOptimizedFeatureConfigResponse.DescribeLiveStreamOptimizedFeatureConfig_LiveStreamOptimizedFeatureConfig>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveStreamOptimizedFeatureConfig.LiveStreamOptimizedFeatureConfigList.Length"); i++) {
 				DescribeLiveStreamOptimizedFeatureConfigResponse.DescribeLiveStreamOptimizedFeatureConfig_LiveStreamOptimizedFeatureConfig liveStreamOptimizedFeatureConfig = new DescribeLiveStreamOptimizedFeatureConfigResponse.DescribeLiveStreamOptimizedFeatureConfig_LiveStreamOptimizedFeatureConfig();
-				liveStreamOptimizedFeatureConfig.DomainName = _ctx.StringValue("DescribeLiveStreamOptimizedFeatureConfig.LiveStreamOptimizedFeatureConfigList["+ i +"].DomainName");
 				liveStreamOptimizedFeatureConfig.ConfigName = _ctx.StringValue("DescribeLiveStreamOptimizedFeatureConfig.LiveStreamOptimizedFeatureConfigList["+ i +"].ConfigName");
 				liveStreamOptimizedFeatureConfig.ConfigStatus = _ctx.StringValue("DescribeLiveStreamOptimizedFeatureConfig.LiveStreamOptimizedFeatureConfigList["+ i +"].ConfigStatus");
+				liveStreamOptimizedFeatureConfig.DomainName = _ctx.StringValue("DescribeLiveStreamOptimizedFeatureConfig.LiveStreamOptimizedFeatureConfigList["+ i +"].DomainName");
 				liveStreamOptimizedFeatureConfig.ConfigValue = _ctx.StringValue("DescribeLiveStreamOptimizedFeatureConfig.LiveStreamOptimizedFeatureConfigList["+ i +"].ConfigValue");
 
 				describeLiveStreamOptimizedFeatureConfigResponse_liveStreamOptimizedFeatureConfigList.Add(liveStreamOptimizedFeatureConfig);

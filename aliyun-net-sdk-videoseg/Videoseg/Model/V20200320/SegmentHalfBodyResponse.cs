@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.videoseg.Model.V20200320
@@ -26,6 +26,10 @@ namespace Aliyun.Acs.videoseg.Model.V20200320
 	{
 
 		private string requestId;
+
+		private string code;
+
+		private string message;
 
 		private SegmentHalfBody_Data data;
 
@@ -38,6 +42,30 @@ namespace Aliyun.Acs.videoseg.Model.V20200320
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 

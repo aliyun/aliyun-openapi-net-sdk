@@ -31,25 +31,25 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveRecordConfigResponse describeLiveRecordConfigResponse = new DescribeLiveRecordConfigResponse();
 
 			describeLiveRecordConfigResponse.HttpResponse = _ctx.HttpResponse;
-			describeLiveRecordConfigResponse.RequestId = _ctx.StringValue("DescribeLiveRecordConfig.RequestId");
 			describeLiveRecordConfigResponse.PageNum = _ctx.IntegerValue("DescribeLiveRecordConfig.PageNum");
-			describeLiveRecordConfigResponse.PageSize = _ctx.IntegerValue("DescribeLiveRecordConfig.PageSize");
+			describeLiveRecordConfigResponse.RequestId = _ctx.StringValue("DescribeLiveRecordConfig.RequestId");
 			describeLiveRecordConfigResponse.Order = _ctx.StringValue("DescribeLiveRecordConfig.Order");
-			describeLiveRecordConfigResponse.TotalNum = _ctx.IntegerValue("DescribeLiveRecordConfig.TotalNum");
 			describeLiveRecordConfigResponse.TotalPage = _ctx.IntegerValue("DescribeLiveRecordConfig.TotalPage");
+			describeLiveRecordConfigResponse.PageSize = _ctx.IntegerValue("DescribeLiveRecordConfig.PageSize");
+			describeLiveRecordConfigResponse.TotalNum = _ctx.IntegerValue("DescribeLiveRecordConfig.TotalNum");
 
 			List<DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord> describeLiveRecordConfigResponse_liveAppRecordList = new List<DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveRecordConfig.LiveAppRecordList.Length"); i++) {
 				DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord liveAppRecord = new DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord();
-				liveAppRecord.DomainName = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].DomainName");
+				liveAppRecord.EndTime = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].EndTime");
+				liveAppRecord.StartTime = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].StartTime");
 				liveAppRecord.AppName = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].AppName");
 				liveAppRecord.StreamName = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].StreamName");
-				liveAppRecord.OssEndpoint = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].OssEndpoint");
-				liveAppRecord.OssBucket = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].OssBucket");
 				liveAppRecord.CreateTime = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].CreateTime");
-				liveAppRecord.StartTime = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].StartTime");
-				liveAppRecord.EndTime = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].EndTime");
 				liveAppRecord.OnDemond = _ctx.IntegerValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].OnDemond");
+				liveAppRecord.OssBucket = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].OssBucket");
+				liveAppRecord.DomainName = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].DomainName");
+				liveAppRecord.OssEndpoint = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].OssEndpoint");
 
 				List<string> liveAppRecord_transcodeTemplates = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].TranscodeTemplates.Length"); j++) {
@@ -60,11 +60,11 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				List<DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord.DescribeLiveRecordConfig_RecordFormat> liveAppRecord_recordFormatList = new List<DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord.DescribeLiveRecordConfig_RecordFormat>();
 				for (int j = 0; j < _ctx.Length("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].RecordFormatList.Length"); j++) {
 					DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord.DescribeLiveRecordConfig_RecordFormat recordFormat = new DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord.DescribeLiveRecordConfig_RecordFormat();
-					recordFormat.Format = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].Format");
-					recordFormat.OssObjectPrefix = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].OssObjectPrefix");
-					recordFormat.SliceOssObjectPrefix = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].SliceOssObjectPrefix");
-					recordFormat.CycleDuration = _ctx.IntegerValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].CycleDuration");
 					recordFormat.SliceDuration = _ctx.IntegerValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].SliceDuration");
+					recordFormat.CycleDuration = _ctx.IntegerValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].CycleDuration");
+					recordFormat.SliceOssObjectPrefix = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].SliceOssObjectPrefix");
+					recordFormat.OssObjectPrefix = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].OssObjectPrefix");
+					recordFormat.Format = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].Format");
 
 					liveAppRecord_recordFormatList.Add(recordFormat);
 				}
@@ -73,11 +73,11 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				List<DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord.DescribeLiveRecordConfig_RecordFormat> liveAppRecord_transcodeRecordFormatList = new List<DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord.DescribeLiveRecordConfig_RecordFormat>();
 				for (int j = 0; j < _ctx.Length("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].TranscodeRecordFormatList.Length"); j++) {
 					DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord.DescribeLiveRecordConfig_RecordFormat recordFormat = new DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord.DescribeLiveRecordConfig_RecordFormat();
-					recordFormat.Format = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].TranscodeRecordFormatList["+ j +"].Format");
-					recordFormat.OssObjectPrefix = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].TranscodeRecordFormatList["+ j +"].OssObjectPrefix");
-					recordFormat.SliceOssObjectPrefix = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].TranscodeRecordFormatList["+ j +"].SliceOssObjectPrefix");
-					recordFormat.CycleDuration = _ctx.IntegerValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].TranscodeRecordFormatList["+ j +"].CycleDuration");
 					recordFormat.SliceDuration = _ctx.IntegerValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].TranscodeRecordFormatList["+ j +"].SliceDuration");
+					recordFormat.CycleDuration = _ctx.IntegerValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].TranscodeRecordFormatList["+ j +"].CycleDuration");
+					recordFormat.SliceOssObjectPrefix = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].TranscodeRecordFormatList["+ j +"].SliceOssObjectPrefix");
+					recordFormat.OssObjectPrefix = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].TranscodeRecordFormatList["+ j +"].OssObjectPrefix");
+					recordFormat.Format = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].TranscodeRecordFormatList["+ j +"].Format");
 
 					liveAppRecord_transcodeRecordFormatList.Add(recordFormat);
 				}

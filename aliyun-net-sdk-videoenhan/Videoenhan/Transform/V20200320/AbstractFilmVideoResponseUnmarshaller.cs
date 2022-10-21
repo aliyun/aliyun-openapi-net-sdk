@@ -32,6 +32,8 @@ namespace Aliyun.Acs.videoenhan.Transform.V20200320
 
 			abstractFilmVideoResponse.HttpResponse = _ctx.HttpResponse;
 			abstractFilmVideoResponse.RequestId = _ctx.StringValue("AbstractFilmVideo.RequestId");
+			abstractFilmVideoResponse.Code = _ctx.StringValue("AbstractFilmVideo.Code");
+			abstractFilmVideoResponse.Message = _ctx.StringValue("AbstractFilmVideo.Message");
 
 			AbstractFilmVideoResponse.AbstractFilmVideo_Data data = new AbstractFilmVideoResponse.AbstractFilmVideo_Data();
 			data.VideoUrl = _ctx.StringValue("AbstractFilmVideo.Data.VideoUrl");

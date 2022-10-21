@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeLiveUserTags_Tag> tags;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tags")]
 		public List<DescribeLiveUserTags_Tag> Tags
 		{
 			get
@@ -60,6 +62,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private List<string> _value;
 
+			[JsonProperty(PropertyName = "Key")]
 			public string Key
 			{
 				get
@@ -72,6 +75,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "_Value")]
 			public List<string> _Value
 			{
 				get

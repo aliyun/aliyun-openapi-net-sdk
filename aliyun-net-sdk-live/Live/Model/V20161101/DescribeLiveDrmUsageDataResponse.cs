@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeLiveDrmUsageData_DataModule> drmUsageData;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DrmUsageData")]
 		public List<DescribeLiveDrmUsageData_DataModule> DrmUsageData
 		{
 			get
@@ -56,28 +58,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDrmUsageData_DataModule
 		{
 
-			private string timeStamp;
-
 			private string domain;
 
-			private string region;
-
-			private string drmType;
+			private string timeStamp;
 
 			private long? count;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+			private string drmType;
 
+			private string region;
+
+			[JsonProperty(PropertyName = "Domain")]
 			public string Domain
 			{
 				get
@@ -90,18 +81,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string Region
+			[JsonProperty(PropertyName = "TimeStamp")]
+			public string TimeStamp
 			{
 				get
 				{
-					return region;
+					return timeStamp;
 				}
 				set	
 				{
-					region = value;
+					timeStamp = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "Count")]
+			public long? Count
+			{
+				get
+				{
+					return count;
+				}
+				set	
+				{
+					count = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DrmType")]
 			public string DrmType
 			{
 				get
@@ -114,15 +120,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public long? Count
+			[JsonProperty(PropertyName = "Region")]
+			public string Region
 			{
 				get
 				{
-					return count;
+					return region;
 				}
 				set	
 				{
-					count = value;
+					region = value;
 				}
 			}
 		}

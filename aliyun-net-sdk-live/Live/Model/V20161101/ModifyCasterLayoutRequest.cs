@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -48,12 +49,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private long? ownerId;
 
-		private List<AudioLayer> audioLayers = new List<AudioLayer>(){ };
+		private List<float?> audioLayers = new List<float?>(){ };
 
-		private List<VideoLayer> videoLayers = new List<VideoLayer>(){ };
+		private List<int?> videoLayers = new List<int?>(){ };
 
 		private List<string> mixLists = new List<string>(){ };
 
+		[JsonProperty(PropertyName = "BlendList")]
 		public List<string> BlendLists
 		{
 			get
@@ -64,13 +66,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set
 			{
 				blendLists = value;
-				for (int i = 0; i < blendLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"BlendList." + (i + 1) , blendLists[i]);
-				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "LayoutId")]
 		public string LayoutId
 		{
 			get
@@ -84,6 +83,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "CasterId")]
 		public string CasterId
 		{
 			get
@@ -97,6 +97,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -110,7 +111,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public List<AudioLayer> AudioLayers
+		[JsonProperty(PropertyName = "AudioLayer")]
+		public List<float?> AudioLayers
 		{
 			get
 			{
@@ -120,16 +122,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set
 			{
 				audioLayers = value;
-				for (int i = 0; i < audioLayers.Count; i++)
+				if(audioLayers != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"AudioLayer." + (i + 1) + ".VolumeRate", audioLayers[i].VolumeRate);
-					DictionaryUtil.Add(QueryParameters,"AudioLayer." + (i + 1) + ".ValidChannel", audioLayers[i].ValidChannel);
-					DictionaryUtil.Add(QueryParameters,"AudioLayer." + (i + 1) + ".FixedDelayDuration", audioLayers[i].FixedDelayDuration);
+					for (int depth1 = 0; depth1 < audioLayers.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"AudioLayer." + (depth1 + 1), audioLayers[depth1]);
+						DictionaryUtil.Add(QueryParameters,"AudioLayer." + (depth1 + 1), audioLayers[depth1]);
+						DictionaryUtil.Add(QueryParameters,"AudioLayer." + (depth1 + 1), audioLayers[depth1]);
+					}
 				}
 			}
 		}
 
-		public List<VideoLayer> VideoLayers
+		[JsonProperty(PropertyName = "VideoLayer")]
+		public List<int?> VideoLayers
 		{
 			get
 			{
@@ -139,21 +145,21 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set
 			{
 				videoLayers = value;
-				for (int i = 0; i < videoLayers.Count; i++)
+				if(videoLayers != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"VideoLayer." + (i + 1) + ".FillMode", videoLayers[i].FillMode);
-					DictionaryUtil.Add(QueryParameters,"VideoLayer." + (i + 1) + ".HeightNormalized", videoLayers[i].HeightNormalized);
-					DictionaryUtil.Add(QueryParameters,"VideoLayer." + (i + 1) + ".WidthNormalized", videoLayers[i].WidthNormalized);
-					DictionaryUtil.Add(QueryParameters,"VideoLayer." + (i + 1) + ".PositionRefer", videoLayers[i].PositionRefer);
-					for (int j = 0; j < videoLayers[i].PositionNormalizeds.Count; j++)
+					for (int depth1 = 0; depth1 < videoLayers.Count; depth1++)
 					{
-						DictionaryUtil.Add(QueryParameters,"VideoLayer." + (i + 1) + ".PositionNormalized." +(j + 1), videoLayers[i].PositionNormalizeds[j]);
+						DictionaryUtil.Add(QueryParameters,"VideoLayer." + (depth1 + 1), videoLayers[depth1]);
+						DictionaryUtil.Add(QueryParameters,"VideoLayer." + (depth1 + 1), videoLayers[depth1]);
+						DictionaryUtil.Add(QueryParameters,"VideoLayer." + (depth1 + 1), videoLayers[depth1]);
+						DictionaryUtil.Add(QueryParameters,"VideoLayer." + (depth1 + 1), videoLayers[depth1]);
+						DictionaryUtil.Add(QueryParameters,"VideoLayer." + (depth1 + 1), videoLayers[depth1]);
 					}
-					DictionaryUtil.Add(QueryParameters,"VideoLayer." + (i + 1) + ".FixedDelayDuration", videoLayers[i].FixedDelayDuration);
 				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "MixList")]
 		public List<string> MixLists
 		{
 			get
@@ -164,10 +170,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set
 			{
 				mixLists = value;
-				for (int i = 0; i < mixLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"MixList." + (i + 1) , mixLists[i]);
-				}
 			}
 		}
 
@@ -176,10 +178,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private float? volumeRate;
 
-			private string validChannel;
-
 			private int? fixedDelayDuration;
 
+			private string validChannel;
+
+			[JsonProperty(PropertyName = "VolumeRate")]
 			public float? VolumeRate
 			{
 				get
@@ -192,18 +195,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string ValidChannel
-			{
-				get
-				{
-					return validChannel;
-				}
-				set	
-				{
-					validChannel = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "FixedDelayDuration")]
 			public int? FixedDelayDuration
 			{
 				get
@@ -215,23 +207,50 @@ namespace Aliyun.Acs.live.Model.V20161101
 					fixedDelayDuration = value;
 				}
 			}
+
+			[JsonProperty(PropertyName = "ValidChannel")]
+			public string ValidChannel
+			{
+				get
+				{
+					return validChannel;
+				}
+				set	
+				{
+					validChannel = value;
+				}
+			}
 		}
 
 		public class VideoLayer
 		{
 
+			private int? fixedDelayDuration;
+
 			private string fillMode;
 
 			private float? heightNormalized;
 
-			private float? widthNormalized;
-
 			private string positionRefer;
 
-			private List<float?> positionNormalizeds = new List<float?>(){ };
+			private List<string> positionNormalizeds = new List<string>(){ };
 
-			private int? fixedDelayDuration;
+			private float? widthNormalized;
 
+			[JsonProperty(PropertyName = "FixedDelayDuration")]
+			public int? FixedDelayDuration
+			{
+				get
+				{
+					return fixedDelayDuration;
+				}
+				set	
+				{
+					fixedDelayDuration = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "FillMode")]
 			public string FillMode
 			{
 				get
@@ -244,6 +263,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "HeightNormalized")]
 			public float? HeightNormalized
 			{
 				get
@@ -256,18 +276,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public float? WidthNormalized
-			{
-				get
-				{
-					return widthNormalized;
-				}
-				set	
-				{
-					widthNormalized = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "PositionRefer")]
 			public string PositionRefer
 			{
 				get
@@ -280,7 +289,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public List<float?> PositionNormalizeds
+			[JsonProperty(PropertyName = "PositionNormalized")]
+			public List<string> PositionNormalizeds
 			{
 				get
 				{
@@ -292,15 +302,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public int? FixedDelayDuration
+			[JsonProperty(PropertyName = "WidthNormalized")]
+			public float? WidthNormalized
 			{
 				get
 				{
-					return fixedDelayDuration;
+					return widthNormalized;
 				}
 				set	
 				{
-					fixedDelayDuration = value;
+					widthNormalized = value;
 				}
 			}
 		}

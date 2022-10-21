@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
+		private string backupInterval;
+
 		private string securityToken;
 
 		private string dBInstanceId;
@@ -50,6 +52,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string snapshotBackupType;
 
 		private string preferredBackupTime;
 
@@ -67,6 +71,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string BackupInterval
+		{
+			get
+			{
+				return backupInterval;
+			}
+			set	
+			{
+				backupInterval = value;
+				DictionaryUtil.Add(QueryParameters, "BackupInterval", value);
 			}
 		}
 
@@ -158,6 +175,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string SnapshotBackupType
+		{
+			get
+			{
+				return snapshotBackupType;
+			}
+			set	
+			{
+				snapshotBackupType = value;
+				DictionaryUtil.Add(QueryParameters, "SnapshotBackupType", value);
 			}
 		}
 

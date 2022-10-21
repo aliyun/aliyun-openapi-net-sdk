@@ -34,10 +34,10 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			describeLiveRecordNotifyConfigResponse.RequestId = _ctx.StringValue("DescribeLiveRecordNotifyConfig.RequestId");
 
 			DescribeLiveRecordNotifyConfigResponse.DescribeLiveRecordNotifyConfig_LiveRecordNotifyConfig liveRecordNotifyConfig = new DescribeLiveRecordNotifyConfigResponse.DescribeLiveRecordNotifyConfig_LiveRecordNotifyConfig();
+			liveRecordNotifyConfig.NeedStatusNotify = _ctx.BooleanValue("DescribeLiveRecordNotifyConfig.LiveRecordNotifyConfig.NeedStatusNotify");
+			liveRecordNotifyConfig.OnDemandUrl = _ctx.StringValue("DescribeLiveRecordNotifyConfig.LiveRecordNotifyConfig.OnDemandUrl");
 			liveRecordNotifyConfig.DomainName = _ctx.StringValue("DescribeLiveRecordNotifyConfig.LiveRecordNotifyConfig.DomainName");
 			liveRecordNotifyConfig.NotifyUrl = _ctx.StringValue("DescribeLiveRecordNotifyConfig.LiveRecordNotifyConfig.NotifyUrl");
-			liveRecordNotifyConfig.OnDemandUrl = _ctx.StringValue("DescribeLiveRecordNotifyConfig.LiveRecordNotifyConfig.OnDemandUrl");
-			liveRecordNotifyConfig.NeedStatusNotify = _ctx.BooleanValue("DescribeLiveRecordNotifyConfig.LiveRecordNotifyConfig.NeedStatusNotify");
 			describeLiveRecordNotifyConfigResponse.LiveRecordNotifyConfig = liveRecordNotifyConfig;
         
 			return describeLiveRecordNotifyConfigResponse;

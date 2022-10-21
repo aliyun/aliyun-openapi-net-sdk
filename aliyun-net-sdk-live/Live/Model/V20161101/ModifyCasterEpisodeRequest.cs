@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -58,6 +59,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string switchType;
 
+		[JsonProperty(PropertyName = "EpisodeName")]
 		public string EpisodeName
 		{
 			get
@@ -71,6 +73,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "StartTime")]
 		public string StartTime
 		{
 			get
@@ -84,6 +87,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceId")]
 		public string ResourceId
 		{
 			get
@@ -97,6 +101,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ComponentId")]
 		public List<string> ComponentIds
 		{
 			get
@@ -107,13 +112,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set
 			{
 				componentIds = value;
-				for (int i = 0; i < componentIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ComponentId." + (i + 1) , componentIds[i]);
-				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "CasterId")]
 		public string CasterId
 		{
 			get
@@ -127,6 +129,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "EndTime")]
 		public string EndTime
 		{
 			get
@@ -140,6 +143,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -153,6 +157,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "EpisodeId")]
 		public string EpisodeId
 		{
 			get
@@ -166,6 +171,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "SwitchType")]
 		public string SwitchType
 		{
 			get

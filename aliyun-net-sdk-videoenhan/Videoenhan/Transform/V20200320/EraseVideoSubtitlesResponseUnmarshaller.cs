@@ -32,6 +32,8 @@ namespace Aliyun.Acs.videoenhan.Transform.V20200320
 
 			eraseVideoSubtitlesResponse.HttpResponse = _ctx.HttpResponse;
 			eraseVideoSubtitlesResponse.RequestId = _ctx.StringValue("EraseVideoSubtitles.RequestId");
+			eraseVideoSubtitlesResponse.Code = _ctx.StringValue("EraseVideoSubtitles.Code");
+			eraseVideoSubtitlesResponse.Message = _ctx.StringValue("EraseVideoSubtitles.Message");
 
 			EraseVideoSubtitlesResponse.EraseVideoSubtitles_Data data = new EraseVideoSubtitlesResponse.EraseVideoSubtitles_Data();
 			data.VideoUrl = _ctx.StringValue("EraseVideoSubtitles.Data.VideoUrl");

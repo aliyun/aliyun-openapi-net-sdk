@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.videoenhan.Model.V20200320
@@ -26,6 +26,10 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 	{
 
 		private string requestId;
+
+		private string code;
+
+		private string message;
 
 		private AbstractEcommerceVideo_Data data;
 
@@ -38,6 +42,30 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 
@@ -56,21 +84,9 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 		public class AbstractEcommerceVideo_Data
 		{
 
-			private string videoUrl;
-
 			private string videoCoverUrl;
 
-			public string VideoUrl
-			{
-				get
-				{
-					return videoUrl;
-				}
-				set	
-				{
-					videoUrl = value;
-				}
-			}
+			private string videoUrl;
 
 			public string VideoCoverUrl
 			{
@@ -81,6 +97,18 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 				set	
 				{
 					videoCoverUrl = value;
+				}
+			}
+
+			public string VideoUrl
+			{
+				get
+				{
+					return videoUrl;
+				}
+				set	
+				{
+					videoUrl = value;
 				}
 			}
 		}

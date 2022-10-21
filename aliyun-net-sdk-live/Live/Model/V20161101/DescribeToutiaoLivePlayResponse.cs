@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,24 +25,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeToutiaoLivePlayResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string description;
+
+		private string requestId;
 
 		private List<DescribeToutiaoLivePlay_ContentItem> content;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Description")]
 		public string Description
 		{
 			get
@@ -55,6 +44,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Content")]
 		public List<DescribeToutiaoLivePlay_ContentItem> Content
 		{
 			get
@@ -70,56 +73,21 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeToutiaoLivePlay_ContentItem
 		{
 
-			private string app;
+			private string domain;
 
 			private float? bandwidth;
 
-			private string cdnName;
+			private string streamName;
 
-			private string domain;
+			private string app;
 
 			private long? playNum;
 
-			private string streamName;
-
 			private long? timestamp;
 
-			public string App
-			{
-				get
-				{
-					return app;
-				}
-				set	
-				{
-					app = value;
-				}
-			}
+			private string cdnName;
 
-			public float? Bandwidth
-			{
-				get
-				{
-					return bandwidth;
-				}
-				set	
-				{
-					bandwidth = value;
-				}
-			}
-
-			public string CdnName
-			{
-				get
-				{
-					return cdnName;
-				}
-				set	
-				{
-					cdnName = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Domain")]
 			public string Domain
 			{
 				get
@@ -132,18 +100,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public long? PlayNum
+			[JsonProperty(PropertyName = "Bandwidth")]
+			public float? Bandwidth
 			{
 				get
 				{
-					return playNum;
+					return bandwidth;
 				}
 				set	
 				{
-					playNum = value;
+					bandwidth = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "StreamName")]
 			public string StreamName
 			{
 				get
@@ -156,6 +126,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "App")]
+			public string App
+			{
+				get
+				{
+					return app;
+				}
+				set	
+				{
+					app = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PlayNum")]
+			public long? PlayNum
+			{
+				get
+				{
+					return playNum;
+				}
+				set	
+				{
+					playNum = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Timestamp")]
 			public long? Timestamp
 			{
 				get
@@ -165,6 +162,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					timestamp = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CdnName")]
+			public string CdnName
+			{
+				get
+				{
+					return cdnName;
+				}
+				set	
+				{
+					cdnName = value;
 				}
 			}
 		}

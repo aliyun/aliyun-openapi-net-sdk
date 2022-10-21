@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -27,12 +27,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string requestId;
 
-		private int? streamCount;
-
 		private int? userCount;
+
+		private int? streamCount;
 
 		private List<DescribeLiveDomainOnlineUserNum_LiveStreamOnlineUserNumInfo> onlineUserInfo;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -45,18 +46,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? StreamCount
-		{
-			get
-			{
-				return streamCount;
-			}
-			set	
-			{
-				streamCount = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "UserCount")]
 		public int? UserCount
 		{
 			get
@@ -69,6 +59,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "StreamCount")]
+		public int? StreamCount
+		{
+			get
+			{
+				return streamCount;
+			}
+			set	
+			{
+				streamCount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "OnlineUserInfo")]
 		public List<DescribeLiveDomainOnlineUserNum_LiveStreamOnlineUserNumInfo> OnlineUserInfo
 		{
 			get
@@ -88,6 +92,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private List<DescribeLiveDomainOnlineUserNum_Info> infos;
 
+			[JsonProperty(PropertyName = "StreamName")]
 			public string StreamName
 			{
 				get
@@ -100,6 +105,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Infos")]
 			public List<DescribeLiveDomainOnlineUserNum_Info> Infos
 			{
 				get
@@ -115,22 +121,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeLiveDomainOnlineUserNum_Info
 			{
 
-				private string transcodeTemplate;
-
 				private long? userNumber;
 
-				public string TranscodeTemplate
-				{
-					get
-					{
-						return transcodeTemplate;
-					}
-					set	
-					{
-						transcodeTemplate = value;
-					}
-				}
+				private string transcodeTemplate;
 
+				[JsonProperty(PropertyName = "UserNumber")]
 				public long? UserNumber
 				{
 					get
@@ -140,6 +135,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						userNumber = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "TranscodeTemplate")]
+				public string TranscodeTemplate
+				{
+					get
+					{
+						return transcodeTemplate;
+					}
+					set	
+					{
+						transcodeTemplate = value;
 					}
 				}
 			}

@@ -31,16 +31,16 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeRoomKickoutUserListResponse describeRoomKickoutUserListResponse = new DescribeRoomKickoutUserListResponse();
 
 			describeRoomKickoutUserListResponse.HttpResponse = _ctx.HttpResponse;
+			describeRoomKickoutUserListResponse.TotalPage = _ctx.IntegerValue("DescribeRoomKickoutUserList.TotalPage");
 			describeRoomKickoutUserListResponse.RequestId = _ctx.StringValue("DescribeRoomKickoutUserList.RequestId");
 			describeRoomKickoutUserListResponse.TotalNum = _ctx.IntegerValue("DescribeRoomKickoutUserList.TotalNum");
-			describeRoomKickoutUserListResponse.TotalPage = _ctx.IntegerValue("DescribeRoomKickoutUserList.TotalPage");
 
 			List<DescribeRoomKickoutUserListResponse.DescribeRoomKickoutUserList_User> describeRoomKickoutUserListResponse_userList = new List<DescribeRoomKickoutUserListResponse.DescribeRoomKickoutUserList_User>();
 			for (int i = 0; i < _ctx.Length("DescribeRoomKickoutUserList.UserList.Length"); i++) {
 				DescribeRoomKickoutUserListResponse.DescribeRoomKickoutUserList_User user = new DescribeRoomKickoutUserListResponse.DescribeRoomKickoutUserList_User();
-				user.AppUid = _ctx.StringValue("DescribeRoomKickoutUserList.UserList["+ i +"].AppUid");
 				user.OpStartTime = _ctx.StringValue("DescribeRoomKickoutUserList.UserList["+ i +"].OpStartTime");
 				user.OpEndTime = _ctx.StringValue("DescribeRoomKickoutUserList.UserList["+ i +"].OpEndTime");
+				user.AppUid = _ctx.StringValue("DescribeRoomKickoutUserList.UserList["+ i +"].AppUid");
 
 				describeRoomKickoutUserListResponse_userList.Add(user);
 			}

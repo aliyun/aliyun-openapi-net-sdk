@@ -31,9 +31,9 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveStreamStateResponse describeLiveStreamStateResponse = new DescribeLiveStreamStateResponse();
 
 			describeLiveStreamStateResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveStreamStateResponse.Type = _ctx.StringValue("DescribeLiveStreamState.Type");
 			describeLiveStreamStateResponse.RequestId = _ctx.StringValue("DescribeLiveStreamState.RequestId");
 			describeLiveStreamStateResponse.StreamState = _ctx.StringValue("DescribeLiveStreamState.StreamState");
-			describeLiveStreamStateResponse.Type = _ctx.StringValue("DescribeLiveStreamState.Type");
         
 			return describeLiveStreamStateResponse;
         }

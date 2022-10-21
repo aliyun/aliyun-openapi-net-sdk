@@ -32,6 +32,8 @@ namespace Aliyun.Acs.videoenhan.Transform.V20200320
 
 			convertHdrVideoResponse.HttpResponse = _ctx.HttpResponse;
 			convertHdrVideoResponse.RequestId = _ctx.StringValue("ConvertHdrVideo.RequestId");
+			convertHdrVideoResponse.Code = _ctx.StringValue("ConvertHdrVideo.Code");
+			convertHdrVideoResponse.Message = _ctx.StringValue("ConvertHdrVideo.Message");
 
 			ConvertHdrVideoResponse.ConvertHdrVideo_Data data = new ConvertHdrVideoResponse.ConvertHdrVideo_Data();
 			data.VideoURL = _ctx.StringValue("ConvertHdrVideo.Data.VideoURL");

@@ -32,6 +32,8 @@ namespace Aliyun.Acs.videoseg.Transform.V20200320
 
 			segmentVideoBodyResponse.HttpResponse = _ctx.HttpResponse;
 			segmentVideoBodyResponse.RequestId = _ctx.StringValue("SegmentVideoBody.RequestId");
+			segmentVideoBodyResponse.Code = _ctx.StringValue("SegmentVideoBody.Code");
+			segmentVideoBodyResponse.Message = _ctx.StringValue("SegmentVideoBody.Message");
 
 			SegmentVideoBodyResponse.SegmentVideoBody_Data data = new SegmentVideoBodyResponse.SegmentVideoBody_Data();
 			data.VideoUrl = _ctx.StringValue("SegmentVideoBody.Data.VideoUrl");

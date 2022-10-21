@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.videoenhan.Model.V20200320
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 	public class MergeVideoModelFaceResponse : AcsResponse
 	{
 
-		private string message;
-
 		private string requestId;
 
 		private string code;
 
-		private MergeVideoModelFace_Data data;
+		private string message;
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
+		private MergeVideoModelFace_Data data;
 
 		public string RequestId
 		{
@@ -66,6 +54,18 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			set	
 			{
 				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 

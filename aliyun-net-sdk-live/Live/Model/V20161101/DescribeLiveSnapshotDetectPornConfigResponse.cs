@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,32 +25,21 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveSnapshotDetectPornConfigResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? pageNum;
 
-		private int? pageSize;
+		private string requestId;
 
 		private string order;
 
-		private int? totalNum;
-
 		private int? totalPage;
+
+		private int? pageSize;
+
+		private int? totalNum;
 
 		private List<DescribeLiveSnapshotDetectPornConfig_LiveSnapshotDetectPornConfig> liveSnapshotDetectPornConfigList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "PageNum")]
 		public int? PageNum
 		{
 			get
@@ -63,18 +52,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? PageSize
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return pageSize;
+				return requestId;
 			}
 			set	
 			{
-				pageSize = value;
+				requestId = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "Order")]
 		public string Order
 		{
 			get
@@ -87,18 +78,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? TotalNum
-		{
-			get
-			{
-				return totalNum;
-			}
-			set	
-			{
-				totalNum = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "TotalPage")]
 		public int? TotalPage
 		{
 			get
@@ -111,6 +91,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TotalNum")]
+		public int? TotalNum
+		{
+			get
+			{
+				return totalNum;
+			}
+			set	
+			{
+				totalNum = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "LiveSnapshotDetectPornConfigList")]
 		public List<DescribeLiveSnapshotDetectPornConfig_LiveSnapshotDetectPornConfig> LiveSnapshotDetectPornConfigList
 		{
 			get
@@ -126,68 +133,21 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveSnapshotDetectPornConfig_LiveSnapshotDetectPornConfig
 		{
 
-			private string domainName;
+			private string ossObject;
 
 			private string appName;
 
-			private string ossEndpoint;
+			private int? interval;
 
 			private string ossBucket;
 
-			private string ossObject;
+			private string domainName;
 
-			private int? interval;
+			private string ossEndpoint;
 
 			private List<string> scenes;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
-
-			public string AppName
-			{
-				get
-				{
-					return appName;
-				}
-				set	
-				{
-					appName = value;
-				}
-			}
-
-			public string OssEndpoint
-			{
-				get
-				{
-					return ossEndpoint;
-				}
-				set	
-				{
-					ossEndpoint = value;
-				}
-			}
-
-			public string OssBucket
-			{
-				get
-				{
-					return ossBucket;
-				}
-				set	
-				{
-					ossBucket = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "OssObject")]
 			public string OssObject
 			{
 				get
@@ -200,6 +160,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "AppName")]
+			public string AppName
+			{
+				get
+				{
+					return appName;
+				}
+				set	
+				{
+					appName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Interval")]
 			public int? Interval
 			{
 				get
@@ -212,6 +186,46 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "OssBucket")]
+			public string OssBucket
+			{
+				get
+				{
+					return ossBucket;
+				}
+				set	
+				{
+					ossBucket = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OssEndpoint")]
+			public string OssEndpoint
+			{
+				get
+				{
+					return ossEndpoint;
+				}
+				set	
+				{
+					ossEndpoint = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Scenes")]
 			public List<string> Scenes
 			{
 				get

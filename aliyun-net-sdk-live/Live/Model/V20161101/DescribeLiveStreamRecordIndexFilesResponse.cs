@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,32 +25,21 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveStreamRecordIndexFilesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? pageNum;
 
-		private int? pageSize;
+		private string requestId;
 
 		private string order;
 
-		private int? totalNum;
-
 		private int? totalPage;
+
+		private int? pageSize;
+
+		private int? totalNum;
 
 		private List<DescribeLiveStreamRecordIndexFiles_RecordIndexInfo> recordIndexInfoList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "PageNum")]
 		public int? PageNum
 		{
 			get
@@ -63,18 +52,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? PageSize
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return pageSize;
+				return requestId;
 			}
 			set	
 			{
-				pageSize = value;
+				requestId = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "Order")]
 		public string Order
 		{
 			get
@@ -87,18 +78,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? TotalNum
-		{
-			get
-			{
-				return totalNum;
-			}
-			set	
-			{
-				totalNum = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "TotalPage")]
 		public int? TotalPage
 		{
 			get
@@ -111,6 +91,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TotalNum")]
+		public int? TotalNum
+		{
+			get
+			{
+				return totalNum;
+			}
+			set	
+			{
+				totalNum = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RecordIndexInfoList")]
 		public List<DescribeLiveStreamRecordIndexFiles_RecordIndexInfo> RecordIndexInfoList
 		{
 			get
@@ -126,46 +133,35 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamRecordIndexFiles_RecordIndexInfo
 		{
 
-			private string recordId;
-
 			private string recordUrl;
-
-			private string domainName;
-
-			private string appName;
 
 			private string streamName;
 
-			private string ossBucket;
+			private string createTime;
 
-			private string ossEndpoint;
-
-			private string ossObject;
-
-			private string startTime;
-
-			private string endTime;
-
-			private float? duration;
+			private string recordId;
 
 			private int? height;
 
+			private string ossBucket;
+
+			private string domainName;
+
+			private string ossObject;
+
+			private string endTime;
+
+			private string appName;
+
+			private string startTime;
+
 			private int? width;
 
-			private string createTime;
+			private float? duration;
 
-			public string RecordId
-			{
-				get
-				{
-					return recordId;
-				}
-				set	
-				{
-					recordId = value;
-				}
-			}
+			private string ossEndpoint;
 
+			[JsonProperty(PropertyName = "RecordUrl")]
 			public string RecordUrl
 			{
 				get
@@ -178,30 +174,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
-
-			public string AppName
-			{
-				get
-				{
-					return appName;
-				}
-				set	
-				{
-					appName = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "StreamName")]
 			public string StreamName
 			{
 				get
@@ -214,78 +187,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string OssBucket
+			[JsonProperty(PropertyName = "CreateTime")]
+			public string CreateTime
 			{
 				get
 				{
-					return ossBucket;
+					return createTime;
 				}
 				set	
 				{
-					ossBucket = value;
+					createTime = value;
 				}
 			}
 
-			public string OssEndpoint
+			[JsonProperty(PropertyName = "RecordId")]
+			public string RecordId
 			{
 				get
 				{
-					return ossEndpoint;
+					return recordId;
 				}
 				set	
 				{
-					ossEndpoint = value;
+					recordId = value;
 				}
 			}
 
-			public string OssObject
-			{
-				get
-				{
-					return ossObject;
-				}
-				set	
-				{
-					ossObject = value;
-				}
-			}
-
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
-
-			public string EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
-				}
-			}
-
-			public float? Duration
-			{
-				get
-				{
-					return duration;
-				}
-				set	
-				{
-					duration = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Height")]
 			public int? Height
 			{
 				get
@@ -298,6 +226,85 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "OssBucket")]
+			public string OssBucket
+			{
+				get
+				{
+					return ossBucket;
+				}
+				set	
+				{
+					ossBucket = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OssObject")]
+			public string OssObject
+			{
+				get
+				{
+					return ossObject;
+				}
+				set	
+				{
+					ossObject = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EndTime")]
+			public string EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AppName")]
+			public string AppName
+			{
+				get
+				{
+					return appName;
+				}
+				set	
+				{
+					appName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StartTime")]
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Width")]
 			public int? Width
 			{
 				get
@@ -310,15 +317,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string CreateTime
+			[JsonProperty(PropertyName = "Duration")]
+			public float? Duration
 			{
 				get
 				{
-					return createTime;
+					return duration;
 				}
 				set	
 				{
-					createTime = value;
+					duration = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OssEndpoint")]
+			public string OssEndpoint
+			{
+				get
+				{
+					return ossEndpoint;
+				}
+				set	
+				{
+					ossEndpoint = value;
 				}
 			}
 		}

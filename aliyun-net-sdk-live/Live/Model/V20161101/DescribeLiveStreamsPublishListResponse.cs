@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,66 +25,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveStreamsPublishListResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? totalPage;
 
 		private int? pageNum;
 
 		private int? pageSize;
 
-		private int? totalNum;
+		private string requestId;
 
-		private int? totalPage;
+		private int? totalNum;
 
 		private List<DescribeLiveStreamsPublishList_LiveStreamPublishInfo> publishInfo;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public int? TotalNum
-		{
-			get
-			{
-				return totalNum;
-			}
-			set	
-			{
-				totalNum = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "TotalPage")]
 		public int? TotalPage
 		{
 			get
@@ -97,6 +50,59 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNum")]
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageSize")]
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TotalNum")]
+		public int? TotalNum
+		{
+			get
+			{
+				return totalNum;
+			}
+			set	
+			{
+				totalNum = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PublishInfo")]
 		public List<DescribeLiveStreamsPublishList_LiveStreamPublishInfo> PublishInfo
 		{
 			get
@@ -112,128 +118,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamsPublishList_LiveStreamPublishInfo
 		{
 
-			private string domainName;
-
-			private string appName;
-
-			private string streamName;
-
-			private string streamUrl;
-
-			private string publishTime;
-
-			private string stopTime;
+			private string edgeNodeAddr;
 
 			private string publishUrl;
 
-			private string clientAddr;
+			private string streamName;
 
-			private string edgeNodeAddr;
+			private string domainName;
+
+			private string stopTime;
+
+			private string transcodeId;
 
 			private string publishDomain;
+
+			private string appName;
+
+			private string publishTime;
 
 			private string publishType;
 
 			private string transcoded;
 
-			private string transcodeId;
+			private string clientAddr;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
+			private string streamUrl;
 
-			public string AppName
-			{
-				get
-				{
-					return appName;
-				}
-				set	
-				{
-					appName = value;
-				}
-			}
-
-			public string StreamName
-			{
-				get
-				{
-					return streamName;
-				}
-				set	
-				{
-					streamName = value;
-				}
-			}
-
-			public string StreamUrl
-			{
-				get
-				{
-					return streamUrl;
-				}
-				set	
-				{
-					streamUrl = value;
-				}
-			}
-
-			public string PublishTime
-			{
-				get
-				{
-					return publishTime;
-				}
-				set	
-				{
-					publishTime = value;
-				}
-			}
-
-			public string StopTime
-			{
-				get
-				{
-					return stopTime;
-				}
-				set	
-				{
-					stopTime = value;
-				}
-			}
-
-			public string PublishUrl
-			{
-				get
-				{
-					return publishUrl;
-				}
-				set	
-				{
-					publishUrl = value;
-				}
-			}
-
-			public string ClientAddr
-			{
-				get
-				{
-					return clientAddr;
-				}
-				set	
-				{
-					clientAddr = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "EdgeNodeAddr")]
 			public string EdgeNodeAddr
 			{
 				get
@@ -246,6 +157,72 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "PublishUrl")]
+			public string PublishUrl
+			{
+				get
+				{
+					return publishUrl;
+				}
+				set	
+				{
+					publishUrl = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StreamName")]
+			public string StreamName
+			{
+				get
+				{
+					return streamName;
+				}
+				set	
+				{
+					streamName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StopTime")]
+			public string StopTime
+			{
+				get
+				{
+					return stopTime;
+				}
+				set	
+				{
+					stopTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TranscodeId")]
+			public string TranscodeId
+			{
+				get
+				{
+					return transcodeId;
+				}
+				set	
+				{
+					transcodeId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PublishDomain")]
 			public string PublishDomain
 			{
 				get
@@ -258,6 +235,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "AppName")]
+			public string AppName
+			{
+				get
+				{
+					return appName;
+				}
+				set	
+				{
+					appName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PublishTime")]
+			public string PublishTime
+			{
+				get
+				{
+					return publishTime;
+				}
+				set	
+				{
+					publishTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PublishType")]
 			public string PublishType
 			{
 				get
@@ -270,6 +274,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Transcoded")]
 			public string Transcoded
 			{
 				get
@@ -282,15 +287,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string TranscodeId
+			[JsonProperty(PropertyName = "ClientAddr")]
+			public string ClientAddr
 			{
 				get
 				{
-					return transcodeId;
+					return clientAddr;
 				}
 				set	
 				{
-					transcodeId = value;
+					clientAddr = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StreamUrl")]
+			public string StreamUrl
+			{
+				get
+				{
+					return streamUrl;
+				}
+				set	
+				{
+					streamUrl = value;
 				}
 			}
 		}

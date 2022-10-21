@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.imagerecog.Model.V20190930
@@ -75,9 +75,9 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 
 				private string color;
 
-				private string label;
-
 				private float? percentage;
+
+				private string label;
 
 				public string Color
 				{
@@ -91,18 +91,6 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 					}
 				}
 
-				public string Label
-				{
-					get
-					{
-						return label;
-					}
-					set	
-					{
-						label = value;
-					}
-				}
-
 				public float? Percentage
 				{
 					get
@@ -112,6 +100,18 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 					set	
 					{
 						percentage = value;
+					}
+				}
+
+				public string Label
+				{
+					get
+					{
+						return label;
+					}
+					set	
+					{
+						label = value;
 					}
 				}
 			}

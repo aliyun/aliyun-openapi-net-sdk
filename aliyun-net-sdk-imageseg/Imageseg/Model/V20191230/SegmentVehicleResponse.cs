@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.imageseg.Model.V20191230
@@ -73,21 +73,9 @@ namespace Aliyun.Acs.imageseg.Model.V20191230
 			public class SegmentVehicle_Element
 			{
 
-				private string originImageURL;
-
 				private string imageURL;
 
-				public string OriginImageURL
-				{
-					get
-					{
-						return originImageURL;
-					}
-					set	
-					{
-						originImageURL = value;
-					}
-				}
+				private string originImageURL;
 
 				public string ImageURL
 				{
@@ -98,6 +86,18 @@ namespace Aliyun.Acs.imageseg.Model.V20191230
 					set	
 					{
 						imageURL = value;
+					}
+				}
+
+				public string OriginImageURL
+				{
+					get
+					{
+						return originImageURL;
+					}
+					set	
+					{
+						originImageURL = value;
 					}
 				}
 			}

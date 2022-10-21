@@ -44,13 +44,16 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 			instanceBaseInfo.InstanceStatus = _ctx.IntegerValue("OnsInstanceBaseInfo.InstanceBaseInfo.InstanceStatus");
 			instanceBaseInfo.InstanceId = _ctx.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.InstanceId");
 			instanceBaseInfo.InstanceType = _ctx.IntegerValue("OnsInstanceBaseInfo.InstanceBaseInfo.InstanceType");
+			instanceBaseInfo.CreateTime = _ctx.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.CreateTime");
+			instanceBaseInfo.SpInstanceId = _ctx.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.spInstanceId");
+			instanceBaseInfo.SpInstanceType = _ctx.IntegerValue("OnsInstanceBaseInfo.InstanceBaseInfo.spInstanceType");
 
 			OnsInstanceBaseInfoResponse.OnsInstanceBaseInfo_InstanceBaseInfo.OnsInstanceBaseInfo_Endpoints endpoints = new OnsInstanceBaseInfoResponse.OnsInstanceBaseInfo_InstanceBaseInfo.OnsInstanceBaseInfo_Endpoints();
 			endpoints.TcpEndpoint = _ctx.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.Endpoints.TcpEndpoint");
+			endpoints.TcpInternetEndpoint = _ctx.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.Endpoints.TcpInternetEndpoint");
 			endpoints.HttpInternetEndpoint = _ctx.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.Endpoints.HttpInternetEndpoint");
 			endpoints.HttpInternalEndpoint = _ctx.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.Endpoints.HttpInternalEndpoint");
 			endpoints.HttpInternetSecureEndpoint = _ctx.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.Endpoints.HttpInternetSecureEndpoint");
-			endpoints.TcpInternetEndpoint = _ctx.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.Endpoints.TcpInternetEndpoint");
 			instanceBaseInfo.Endpoints = endpoints;
 			onsInstanceBaseInfoResponse.InstanceBaseInfo = instanceBaseInfo;
         

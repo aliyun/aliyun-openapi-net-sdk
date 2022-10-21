@@ -27,6 +27,10 @@ namespace Aliyun.Acs.imageenhan.Model.V20190930
 
 		private string requestId;
 
+		private string code;
+
+		private string message;
+
 		private RecolorHDImage_Data data;
 
 		public string RequestId
@@ -38,6 +42,30 @@ namespace Aliyun.Acs.imageenhan.Model.V20190930
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 

@@ -31,18 +31,18 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveDomainPvUvDataResponse describeLiveDomainPvUvDataResponse = new DescribeLiveDomainPvUvDataResponse();
 
 			describeLiveDomainPvUvDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveDomainPvUvDataResponse.EndTime = _ctx.StringValue("DescribeLiveDomainPvUvData.EndTime");
+			describeLiveDomainPvUvDataResponse.StartTime = _ctx.StringValue("DescribeLiveDomainPvUvData.StartTime");
 			describeLiveDomainPvUvDataResponse.RequestId = _ctx.StringValue("DescribeLiveDomainPvUvData.RequestId");
 			describeLiveDomainPvUvDataResponse.DomainName = _ctx.StringValue("DescribeLiveDomainPvUvData.DomainName");
-			describeLiveDomainPvUvDataResponse.StartTime = _ctx.StringValue("DescribeLiveDomainPvUvData.StartTime");
-			describeLiveDomainPvUvDataResponse.EndTime = _ctx.StringValue("DescribeLiveDomainPvUvData.EndTime");
 			describeLiveDomainPvUvDataResponse.DataInterval = _ctx.StringValue("DescribeLiveDomainPvUvData.DataInterval");
 
 			List<DescribeLiveDomainPvUvDataResponse.DescribeLiveDomainPvUvData_PvUvDataInfo> describeLiveDomainPvUvDataResponse_pvUvDataInfos = new List<DescribeLiveDomainPvUvDataResponse.DescribeLiveDomainPvUvData_PvUvDataInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveDomainPvUvData.PvUvDataInfos.Length"); i++) {
 				DescribeLiveDomainPvUvDataResponse.DescribeLiveDomainPvUvData_PvUvDataInfo pvUvDataInfo = new DescribeLiveDomainPvUvDataResponse.DescribeLiveDomainPvUvData_PvUvDataInfo();
 				pvUvDataInfo.PV = _ctx.StringValue("DescribeLiveDomainPvUvData.PvUvDataInfos["+ i +"].PV");
-				pvUvDataInfo.UV = _ctx.StringValue("DescribeLiveDomainPvUvData.PvUvDataInfos["+ i +"].UV");
 				pvUvDataInfo.TimeStamp = _ctx.StringValue("DescribeLiveDomainPvUvData.PvUvDataInfos["+ i +"].TimeStamp");
+				pvUvDataInfo.UV = _ctx.StringValue("DescribeLiveDomainPvUvData.PvUvDataInfos["+ i +"].UV");
 
 				describeLiveDomainPvUvDataResponse_pvUvDataInfos.Add(pvUvDataInfo);
 			}

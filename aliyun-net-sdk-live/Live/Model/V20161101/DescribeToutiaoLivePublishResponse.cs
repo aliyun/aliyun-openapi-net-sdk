@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,24 +25,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeToutiaoLivePublishResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string description;
+
+		private string requestId;
 
 		private List<DescribeToutiaoLivePublish_ContentItem> content;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Description")]
 		public string Description
 		{
 			get
@@ -55,6 +44,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Content")]
 		public List<DescribeToutiaoLivePublish_ContentItem> Content
 		{
 			get
@@ -70,7 +73,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeToutiaoLivePublish_ContentItem
 		{
 
+			private string domain;
+
+			private string streamName;
+
 			private string app;
+
+			private float? fps;
+
+			private float? flr;
+
+			private long? timestamp;
 
 			private float? bitrate;
 
@@ -78,64 +91,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string cdnName;
 
-			private string domain;
-
-			private float? flr;
-
-			private float? fps;
-
-			private string streamName;
-
-			private long? timestamp;
-
-			public string App
-			{
-				get
-				{
-					return app;
-				}
-				set	
-				{
-					app = value;
-				}
-			}
-
-			public float? Bitrate
-			{
-				get
-				{
-					return bitrate;
-				}
-				set	
-				{
-					bitrate = value;
-				}
-			}
-
-			public float? BwDiff
-			{
-				get
-				{
-					return bwDiff;
-				}
-				set	
-				{
-					bwDiff = value;
-				}
-			}
-
-			public string CdnName
-			{
-				get
-				{
-					return cdnName;
-				}
-				set	
-				{
-					cdnName = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Domain")]
 			public string Domain
 			{
 				get
@@ -148,30 +104,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public float? Flr
-			{
-				get
-				{
-					return flr;
-				}
-				set	
-				{
-					flr = value;
-				}
-			}
-
-			public float? Fps
-			{
-				get
-				{
-					return fps;
-				}
-				set	
-				{
-					fps = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "StreamName")]
 			public string StreamName
 			{
 				get
@@ -184,6 +117,46 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "App")]
+			public string App
+			{
+				get
+				{
+					return app;
+				}
+				set	
+				{
+					app = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Fps")]
+			public float? Fps
+			{
+				get
+				{
+					return fps;
+				}
+				set	
+				{
+					fps = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Flr")]
+			public float? Flr
+			{
+				get
+				{
+					return flr;
+				}
+				set	
+				{
+					flr = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Timestamp")]
 			public long? Timestamp
 			{
 				get
@@ -193,6 +166,45 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					timestamp = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Bitrate")]
+			public float? Bitrate
+			{
+				get
+				{
+					return bitrate;
+				}
+				set	
+				{
+					bitrate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "BwDiff")]
+			public float? BwDiff
+			{
+				get
+				{
+					return bwDiff;
+				}
+				set	
+				{
+					bwDiff = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CdnName")]
+			public string CdnName
+			{
+				get
+				{
+					return cdnName;
+				}
+				set	
+				{
+					cdnName = value;
 				}
 			}
 		}

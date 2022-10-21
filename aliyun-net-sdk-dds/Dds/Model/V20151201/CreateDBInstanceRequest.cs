@@ -39,6 +39,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private int? dBInstanceStorage;
 
+		private string secondaryZoneId;
+
 		private string couponNo;
 
 		private string engineVersion;
@@ -83,6 +85,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string engine;
 
+		private string hiddenZoneId;
+
 		private string restoreTime;
 
 		private string resourceOwnerAccount;
@@ -122,6 +126,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				dBInstanceStorage = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceStorage", value.ToString());
+			}
+		}
+
+		public string SecondaryZoneId
+		{
+			get
+			{
+				return secondaryZoneId;
+			}
+			set	
+			{
+				secondaryZoneId = value;
+				DictionaryUtil.Add(QueryParameters, "SecondaryZoneId", value);
 			}
 		}
 
@@ -408,6 +425,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				engine = value;
 				DictionaryUtil.Add(QueryParameters, "Engine", value);
+			}
+		}
+
+		public string HiddenZoneId
+		{
+			get
+			{
+				return hiddenZoneId;
+			}
+			set	
+			{
+				hiddenZoneId = value;
+				DictionaryUtil.Add(QueryParameters, "HiddenZoneId", value);
 			}
 		}
 

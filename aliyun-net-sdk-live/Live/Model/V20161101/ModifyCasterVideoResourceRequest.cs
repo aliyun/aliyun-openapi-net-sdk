@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -62,6 +63,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private int? repeatNum;
 
+		[JsonProperty(PropertyName = "EndOffset")]
 		public int? EndOffset
 		{
 			get
@@ -75,6 +77,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "MaterialId")]
 		public string MaterialId
 		{
 			get
@@ -88,6 +91,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceId")]
 		public string ResourceId
 		{
 			get
@@ -101,6 +105,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "VodUrl")]
 		public string VodUrl
 		{
 			get
@@ -114,6 +119,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "CasterId")]
 		public string CasterId
 		{
 			get
@@ -127,6 +133,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -140,6 +147,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "BeginOffset")]
 		public int? BeginOffset
 		{
 			get
@@ -153,6 +161,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "LiveStreamUrl")]
 		public string LiveStreamUrl
 		{
 			get
@@ -166,6 +175,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PtsCallbackInterval")]
 		public int? PtsCallbackInterval
 		{
 			get
@@ -179,6 +189,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceName")]
 		public string ResourceName
 		{
 			get
@@ -192,6 +203,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RepeatNum")]
 		public int? RepeatNum
 		{
 			get

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeUpBpsPeakOfLine_DescribeUpBpsPeakOfLine> describeUpBpsPeakOfLines;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DescribeUpBpsPeakOfLines")]
 		public List<DescribeUpBpsPeakOfLine_DescribeUpBpsPeakOfLine> DescribeUpBpsPeakOfLines
 		{
 			get
@@ -56,38 +58,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeUpBpsPeakOfLine_DescribeUpBpsPeakOfLine
 		{
 
-			private float? bandWidth;
-
-			private string peakTime;
-
 			private string queryTime;
 
 			private string statName;
 
-			public float? BandWidth
-			{
-				get
-				{
-					return bandWidth;
-				}
-				set	
-				{
-					bandWidth = value;
-				}
-			}
+			private float? bandWidth;
 
-			public string PeakTime
-			{
-				get
-				{
-					return peakTime;
-				}
-				set	
-				{
-					peakTime = value;
-				}
-			}
+			private string peakTime;
 
+			[JsonProperty(PropertyName = "QueryTime")]
 			public string QueryTime
 			{
 				get
@@ -100,6 +79,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "StatName")]
 			public string StatName
 			{
 				get
@@ -109,6 +89,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					statName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "BandWidth")]
+			public float? BandWidth
+			{
+				get
+				{
+					return bandWidth;
+				}
+				set	
+				{
+					bandWidth = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PeakTime")]
+			public string PeakTime
+			{
+				get
+				{
+					return peakTime;
+				}
+				set	
+				{
+					peakTime = value;
 				}
 			}
 		}

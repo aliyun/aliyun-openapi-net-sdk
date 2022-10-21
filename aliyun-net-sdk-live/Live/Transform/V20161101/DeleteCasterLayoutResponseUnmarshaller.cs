@@ -32,8 +32,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 
 			deleteCasterLayoutResponse.HttpResponse = _ctx.HttpResponse;
 			deleteCasterLayoutResponse.RequestId = _ctx.StringValue("DeleteCasterLayout.RequestId");
-			deleteCasterLayoutResponse.CasterId = _ctx.StringValue("DeleteCasterLayout.CasterId");
 			deleteCasterLayoutResponse.LayoutId = _ctx.StringValue("DeleteCasterLayout.LayoutId");
+			deleteCasterLayoutResponse.CasterId = _ctx.StringValue("DeleteCasterLayout.CasterId");
         
 			return deleteCasterLayoutResponse;
         }

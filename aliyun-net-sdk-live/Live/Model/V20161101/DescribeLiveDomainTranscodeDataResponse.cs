@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeLiveDomainTranscodeData_TranscodeDataInfo> transcodeDataInfos;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "TranscodeDataInfos")]
 		public List<DescribeLiveDomainTranscodeData_TranscodeDataInfo> TranscodeDataInfos
 		{
 			get
@@ -62,6 +64,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string detail;
 
+			[JsonProperty(PropertyName = "Date")]
 			public string Date
 			{
 				get
@@ -74,6 +77,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Total")]
 			public int? Total
 			{
 				get
@@ -86,6 +90,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Detail")]
 			public string Detail
 			{
 				get

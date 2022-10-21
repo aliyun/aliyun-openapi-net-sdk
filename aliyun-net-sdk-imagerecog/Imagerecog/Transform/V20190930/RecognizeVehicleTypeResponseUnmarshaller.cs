@@ -39,8 +39,8 @@ namespace Aliyun.Acs.imagerecog.Transform.V20190930
 			List<RecognizeVehicleTypeResponse.RecognizeVehicleType_Data.RecognizeVehicleType_Element> data_elements = new List<RecognizeVehicleTypeResponse.RecognizeVehicleType_Data.RecognizeVehicleType_Element>();
 			for (int i = 0; i < _ctx.Length("RecognizeVehicleType.Data.Elements.Length"); i++) {
 				RecognizeVehicleTypeResponse.RecognizeVehicleType_Data.RecognizeVehicleType_Element element = new RecognizeVehicleTypeResponse.RecognizeVehicleType_Data.RecognizeVehicleType_Element();
-				element.Name = _ctx.StringValue("RecognizeVehicleType.Data.Elements["+ i +"].Name");
 				element.Score = _ctx.FloatValue("RecognizeVehicleType.Data.Elements["+ i +"].Score");
+				element.Name = _ctx.StringValue("RecognizeVehicleType.Data.Elements["+ i +"].Name");
 
 				data_elements.Add(element);
 			}

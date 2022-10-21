@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.imagerecog.Model.V20190930
@@ -75,15 +75,15 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 
 				private string type;
 
-				private int? x;
-
-				private int? y;
-
 				private int? width;
 
 				private int? height;
 
+				private int? y;
+
 				private float? score;
+
+				private int? x;
 
 				public string Type
 				{
@@ -94,30 +94,6 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 					set	
 					{
 						type = value;
-					}
-				}
-
-				public int? X
-				{
-					get
-					{
-						return x;
-					}
-					set	
-					{
-						x = value;
-					}
-				}
-
-				public int? Y
-				{
-					get
-					{
-						return y;
-					}
-					set	
-					{
-						y = value;
 					}
 				}
 
@@ -145,6 +121,18 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 					}
 				}
 
+				public int? Y
+				{
+					get
+					{
+						return y;
+					}
+					set	
+					{
+						y = value;
+					}
+				}
+
 				public float? Score
 				{
 					get
@@ -154,6 +142,18 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 					set	
 					{
 						score = value;
+					}
+				}
+
+				public int? X
+				{
+					get
+					{
+						return x;
+					}
+					set	
+					{
+						x = value;
 					}
 				}
 			}

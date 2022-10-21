@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,54 +25,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveDomainRealTimeHttpCodeDataResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string domainName;
+		private string endTime;
 
 		private string startTime;
 
-		private string endTime;
+		private string requestId;
+
+		private string domainName;
 
 		private string dataInterval;
 
 		private List<DescribeLiveDomainRealTimeHttpCodeData_UsageData> realTimeHttpCodeData;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "EndTime")]
 		public string EndTime
 		{
 			get
@@ -85,6 +50,46 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DomainName")]
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DataInterval")]
 		public string DataInterval
 		{
 			get
@@ -97,6 +102,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RealTimeHttpCodeData")]
 		public List<DescribeLiveDomainRealTimeHttpCodeData_UsageData> RealTimeHttpCodeData
 		{
 			get
@@ -116,6 +122,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private List<DescribeLiveDomainRealTimeHttpCodeData_RealTimeCodeProportionData> _value;
 
+			[JsonProperty(PropertyName = "TimeStamp")]
 			public string TimeStamp
 			{
 				get
@@ -128,6 +135,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "_Value")]
 			public List<DescribeLiveDomainRealTimeHttpCodeData_RealTimeCodeProportionData> _Value
 			{
 				get
@@ -149,6 +157,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private string count;
 
+				[JsonProperty(PropertyName = "Code")]
 				public string Code
 				{
 					get
@@ -161,6 +170,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
+				[JsonProperty(PropertyName = "Proportion")]
 				public string Proportion
 				{
 					get
@@ -173,6 +183,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
+				[JsonProperty(PropertyName = "Count")]
 				public string Count
 				{
 					get

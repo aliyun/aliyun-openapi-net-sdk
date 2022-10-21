@@ -32,6 +32,9 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 
 			describeGrantRulesToCenResponse.HttpResponse = _ctx.HttpResponse;
 			describeGrantRulesToCenResponse.RequestId = _ctx.StringValue("DescribeGrantRulesToCen.RequestId");
+			describeGrantRulesToCenResponse.TotalCount = _ctx.LongValue("DescribeGrantRulesToCen.TotalCount");
+			describeGrantRulesToCenResponse.MaxResults = _ctx.LongValue("DescribeGrantRulesToCen.MaxResults");
+			describeGrantRulesToCenResponse.NextToken = _ctx.StringValue("DescribeGrantRulesToCen.NextToken");
 
 			List<DescribeGrantRulesToCenResponse.DescribeGrantRulesToCen_GrantRule> describeGrantRulesToCenResponse_grantRules = new List<DescribeGrantRulesToCenResponse.DescribeGrantRulesToCen_GrantRule>();
 			for (int i = 0; i < _ctx.Length("DescribeGrantRulesToCen.GrantRules.Length"); i++) {
@@ -42,6 +45,7 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 				grantRule.ChildInstanceId = _ctx.StringValue("DescribeGrantRulesToCen.GrantRules["+ i +"].ChildInstanceId");
 				grantRule.CenId = _ctx.StringValue("DescribeGrantRulesToCen.GrantRules["+ i +"].CenId");
 				grantRule.OrderType = _ctx.StringValue("DescribeGrantRulesToCen.GrantRules["+ i +"].OrderType");
+				grantRule.CenOwnerId = _ctx.LongValue("DescribeGrantRulesToCen.GrantRules["+ i +"].CenOwnerId");
 
 				describeGrantRulesToCenResponse_grantRules.Add(grantRule);
 			}

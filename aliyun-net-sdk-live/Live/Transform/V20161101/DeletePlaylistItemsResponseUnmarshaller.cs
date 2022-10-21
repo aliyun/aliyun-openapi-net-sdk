@@ -31,8 +31,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DeletePlaylistItemsResponse deletePlaylistItemsResponse = new DeletePlaylistItemsResponse();
 
 			deletePlaylistItemsResponse.HttpResponse = _ctx.HttpResponse;
-			deletePlaylistItemsResponse.RequestId = _ctx.StringValue("DeletePlaylistItems.RequestId");
 			deletePlaylistItemsResponse.ProgramId = _ctx.StringValue("DeletePlaylistItems.ProgramId");
+			deletePlaylistItemsResponse.RequestId = _ctx.StringValue("DeletePlaylistItems.RequestId");
         
 			return deletePlaylistItemsResponse;
         }

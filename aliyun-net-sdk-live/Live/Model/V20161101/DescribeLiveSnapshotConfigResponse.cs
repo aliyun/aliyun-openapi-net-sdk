@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,32 +25,21 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveSnapshotConfigResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? pageNum;
 
-		private int? pageSize;
+		private string requestId;
 
 		private string order;
 
-		private int? totalNum;
-
 		private int? totalPage;
+
+		private int? pageSize;
+
+		private int? totalNum;
 
 		private List<DescribeLiveSnapshotConfig_LiveStreamSnapshotConfig> liveStreamSnapshotConfigList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "PageNum")]
 		public int? PageNum
 		{
 			get
@@ -63,18 +52,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? PageSize
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return pageSize;
+				return requestId;
 			}
 			set	
 			{
-				pageSize = value;
+				requestId = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "Order")]
 		public string Order
 		{
 			get
@@ -87,18 +78,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? TotalNum
-		{
-			get
-			{
-				return totalNum;
-			}
-			set	
-			{
-				totalNum = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "TotalPage")]
 		public int? TotalPage
 		{
 			get
@@ -111,6 +91,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TotalNum")]
+		public int? TotalNum
+		{
+			get
+			{
+				return totalNum;
+			}
+			set	
+			{
+				totalNum = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "LiveStreamSnapshotConfigList")]
 		public List<DescribeLiveSnapshotConfig_LiveStreamSnapshotConfig> LiveStreamSnapshotConfigList
 		{
 			get
@@ -126,84 +133,25 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveSnapshotConfig_LiveStreamSnapshotConfig
 		{
 
-			private string domainName;
-
-			private string appName;
+			private string overwriteOssObject;
 
 			private int? timeInterval;
 
-			private string ossEndpoint;
-
-			private string ossBucket;
-
-			private string overwriteOssObject;
-
-			private string sequenceOssObject;
+			private string appName;
 
 			private string createTime;
 
+			private string ossBucket;
+
+			private string domainName;
+
 			private string callback;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
+			private string sequenceOssObject;
 
-			public string AppName
-			{
-				get
-				{
-					return appName;
-				}
-				set	
-				{
-					appName = value;
-				}
-			}
+			private string ossEndpoint;
 
-			public int? TimeInterval
-			{
-				get
-				{
-					return timeInterval;
-				}
-				set	
-				{
-					timeInterval = value;
-				}
-			}
-
-			public string OssEndpoint
-			{
-				get
-				{
-					return ossEndpoint;
-				}
-				set	
-				{
-					ossEndpoint = value;
-				}
-			}
-
-			public string OssBucket
-			{
-				get
-				{
-					return ossBucket;
-				}
-				set	
-				{
-					ossBucket = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "OverwriteOssObject")]
 			public string OverwriteOssObject
 			{
 				get
@@ -216,18 +164,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string SequenceOssObject
+			[JsonProperty(PropertyName = "TimeInterval")]
+			public int? TimeInterval
 			{
 				get
 				{
-					return sequenceOssObject;
+					return timeInterval;
 				}
 				set	
 				{
-					sequenceOssObject = value;
+					timeInterval = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "AppName")]
+			public string AppName
+			{
+				get
+				{
+					return appName;
+				}
+				set	
+				{
+					appName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CreateTime")]
 			public string CreateTime
 			{
 				get
@@ -240,6 +203,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "OssBucket")]
+			public string OssBucket
+			{
+				get
+				{
+					return ossBucket;
+				}
+				set	
+				{
+					ossBucket = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Callback")]
 			public string Callback
 			{
 				get
@@ -249,6 +239,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					callback = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SequenceOssObject")]
+			public string SequenceOssObject
+			{
+				get
+				{
+					return sequenceOssObject;
+				}
+				set	
+				{
+					sequenceOssObject = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OssEndpoint")]
+			public string OssEndpoint
+			{
+				get
+				{
+					return ossEndpoint;
+				}
+				set	
+				{
+					ossEndpoint = value;
 				}
 			}
 		}

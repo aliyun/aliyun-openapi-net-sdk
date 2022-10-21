@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeLiveDetectPornData_DataModule> detectPornData;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DetectPornData")]
 		public List<DescribeLiveDetectPornData_DataModule> DetectPornData
 		{
 			get
@@ -56,46 +58,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDetectPornData_DataModule
 		{
 
-			private string timeStamp;
-
-			private string app;
-
 			private string domain;
-
-			private string stream;
-
-			private string fee;
-
-			private string scene;
 
 			private string region;
 
+			private string app;
+
+			private string stream;
+
+			private string timeStamp;
+
 			private long? count;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+			private string scene;
 
-			public string App
-			{
-				get
-				{
-					return app;
-				}
-				set	
-				{
-					app = value;
-				}
-			}
+			private string fee;
 
+			[JsonProperty(PropertyName = "Domain")]
 			public string Domain
 			{
 				get
@@ -108,42 +87,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string Stream
-			{
-				get
-				{
-					return stream;
-				}
-				set	
-				{
-					stream = value;
-				}
-			}
-
-			public string Fee
-			{
-				get
-				{
-					return fee;
-				}
-				set	
-				{
-					fee = value;
-				}
-			}
-
-			public string Scene
-			{
-				get
-				{
-					return scene;
-				}
-				set	
-				{
-					scene = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Region")]
 			public string Region
 			{
 				get
@@ -156,6 +100,46 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "App")]
+			public string App
+			{
+				get
+				{
+					return app;
+				}
+				set	
+				{
+					app = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Stream")]
+			public string Stream
+			{
+				get
+				{
+					return stream;
+				}
+				set	
+				{
+					stream = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TimeStamp")]
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Count")]
 			public long? Count
 			{
 				get
@@ -165,6 +149,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					count = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Scene")]
+			public string Scene
+			{
+				get
+				{
+					return scene;
+				}
+				set	
+				{
+					scene = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Fee")]
+			public string Fee
+			{
+				get
+				{
+					return fee;
+				}
+				set	
+				{
+					fee = value;
 				}
 			}
 		}

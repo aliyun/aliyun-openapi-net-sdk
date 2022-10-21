@@ -38,8 +38,8 @@ namespace Aliyun.Acs.imagerecog.Transform.V20190930
 			List<DetectFruitsResponse.DetectFruits_Data.DetectFruits_Element> data_elements = new List<DetectFruitsResponse.DetectFruits_Data.DetectFruits_Element>();
 			for (int i = 0; i < _ctx.Length("DetectFruits.Data.Elements.Length"); i++) {
 				DetectFruitsResponse.DetectFruits_Data.DetectFruits_Element element = new DetectFruitsResponse.DetectFruits_Data.DetectFruits_Element();
-				element.Name = _ctx.StringValue("DetectFruits.Data.Elements["+ i +"].Name");
 				element.Score = _ctx.FloatValue("DetectFruits.Data.Elements["+ i +"].Score");
+				element.Name = _ctx.StringValue("DetectFruits.Data.Elements["+ i +"].Name");
 
 				List<string> element_box = new List<string>();
 				for (int j = 0; j < _ctx.Length("DetectFruits.Data.Elements["+ i +"].Box.Length"); j++) {

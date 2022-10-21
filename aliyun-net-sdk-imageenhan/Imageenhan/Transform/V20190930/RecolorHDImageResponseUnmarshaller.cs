@@ -32,6 +32,8 @@ namespace Aliyun.Acs.imageenhan.Transform.V20190930
 
 			recolorHDImageResponse.HttpResponse = _ctx.HttpResponse;
 			recolorHDImageResponse.RequestId = _ctx.StringValue("RecolorHDImage.RequestId");
+			recolorHDImageResponse.Code = _ctx.StringValue("RecolorHDImage.Code");
+			recolorHDImageResponse.Message = _ctx.StringValue("RecolorHDImage.Message");
 
 			RecolorHDImageResponse.RecolorHDImage_Data data = new RecolorHDImageResponse.RecolorHDImage_Data();
 

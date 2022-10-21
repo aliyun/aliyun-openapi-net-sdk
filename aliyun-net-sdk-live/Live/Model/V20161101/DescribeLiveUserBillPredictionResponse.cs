@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,40 +25,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveUserBillPredictionResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string endTime;
 
 		private string startTime;
 
-		private string endTime;
+		private string requestId;
 
 		private string billType;
 
 		private List<DescribeLiveUserBillPrediction_BillPredictionDataItem> billPredictionData;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "EndTime")]
 		public string EndTime
 		{
 			get
@@ -71,6 +48,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "BillType")]
 		public string BillType
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "BillPredictionData")]
 		public List<DescribeLiveUserBillPrediction_BillPredictionDataItem> BillPredictionData
 		{
 			get
@@ -100,10 +105,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private float? _value;
 
-			private string area;
-
 			private string timeStp;
 
+			private string area;
+
+			[JsonProperty(PropertyName = "_Value")]
 			public float? _Value
 			{
 				get
@@ -116,18 +122,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string Area
-			{
-				get
-				{
-					return area;
-				}
-				set	
-				{
-					area = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "TimeStp")]
 			public string TimeStp
 			{
 				get
@@ -137,6 +132,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					timeStp = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Area")]
+			public string Area
+			{
+				get
+				{
+					return area;
+				}
+				set	
+				{
+					area = value;
 				}
 			}
 		}

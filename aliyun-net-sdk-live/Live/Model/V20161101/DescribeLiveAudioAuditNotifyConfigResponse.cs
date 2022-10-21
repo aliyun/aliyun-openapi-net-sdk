@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeLiveAudioAuditNotifyConfig_LiveAudioAuditNotifyConfig> liveAudioAuditNotifyConfigList;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "LiveAudioAuditNotifyConfigList")]
 		public List<DescribeLiveAudioAuditNotifyConfig_LiveAudioAuditNotifyConfig> LiveAudioAuditNotifyConfigList
 		{
 			get
@@ -56,12 +58,26 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveAudioAuditNotifyConfig_LiveAudioAuditNotifyConfig
 		{
 
+			private string callbackTemplate;
+
 			private string domainName;
 
 			private string callback;
 
-			private string callbackTemplate;
+			[JsonProperty(PropertyName = "CallbackTemplate")]
+			public string CallbackTemplate
+			{
+				get
+				{
+					return callbackTemplate;
+				}
+				set	
+				{
+					callbackTemplate = value;
+				}
+			}
 
+			[JsonProperty(PropertyName = "DomainName")]
 			public string DomainName
 			{
 				get
@@ -74,6 +90,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Callback")]
 			public string Callback
 			{
 				get
@@ -83,18 +100,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					callback = value;
-				}
-			}
-
-			public string CallbackTemplate
-			{
-				get
-				{
-					return callbackTemplate;
-				}
-				set	
-				{
-					callbackTemplate = value;
 				}
 			}
 		}

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveRealtimeLogAuthorizedResponse describeLiveRealtimeLogAuthorizedResponse = new DescribeLiveRealtimeLogAuthorizedResponse();
 
 			describeLiveRealtimeLogAuthorizedResponse.HttpResponse = _ctx.HttpResponse;
-			describeLiveRealtimeLogAuthorizedResponse.RequestId = _ctx.StringValue("DescribeLiveRealtimeLogAuthorized.RequestId");
 			describeLiveRealtimeLogAuthorizedResponse.AuthorizedStatus = _ctx.StringValue("DescribeLiveRealtimeLogAuthorized.AuthorizedStatus");
+			describeLiveRealtimeLogAuthorizedResponse.RequestId = _ctx.StringValue("DescribeLiveRealtimeLogAuthorized.RequestId");
         
 			return describeLiveRealtimeLogAuthorizedResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -35,6 +35,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<string> mixList;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "CasterId")]
 		public string CasterId
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "FollowEnable")]
 		public int? FollowEnable
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "AudioLayers")]
 		public List<DescribeCasterSceneAudio_AudioLayer> AudioLayers
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "MixList")]
 		public List<string> MixList
 		{
 			get
@@ -100,10 +105,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private float? volumeRate;
 
-			private string validChannel;
-
 			private int? fixedDelayDuration;
 
+			private string validChannel;
+
+			[JsonProperty(PropertyName = "VolumeRate")]
 			public float? VolumeRate
 			{
 				get
@@ -116,18 +122,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string ValidChannel
-			{
-				get
-				{
-					return validChannel;
-				}
-				set	
-				{
-					validChannel = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "FixedDelayDuration")]
 			public int? FixedDelayDuration
 			{
 				get
@@ -137,6 +132,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					fixedDelayDuration = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ValidChannel")]
+			public string ValidChannel
+			{
+				get
+				{
+					return validChannel;
+				}
+				set	
+				{
+					validChannel = value;
 				}
 			}
 		}

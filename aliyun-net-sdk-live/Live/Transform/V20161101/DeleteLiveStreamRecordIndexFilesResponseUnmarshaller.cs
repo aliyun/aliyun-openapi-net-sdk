@@ -31,15 +31,15 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DeleteLiveStreamRecordIndexFilesResponse deleteLiveStreamRecordIndexFilesResponse = new DeleteLiveStreamRecordIndexFilesResponse();
 
 			deleteLiveStreamRecordIndexFilesResponse.HttpResponse = _ctx.HttpResponse;
-			deleteLiveStreamRecordIndexFilesResponse.RequestId = _ctx.StringValue("DeleteLiveStreamRecordIndexFiles.RequestId");
-			deleteLiveStreamRecordIndexFilesResponse.Message = _ctx.StringValue("DeleteLiveStreamRecordIndexFiles.Message");
 			deleteLiveStreamRecordIndexFilesResponse.Code = _ctx.StringValue("DeleteLiveStreamRecordIndexFiles.Code");
+			deleteLiveStreamRecordIndexFilesResponse.Message = _ctx.StringValue("DeleteLiveStreamRecordIndexFiles.Message");
+			deleteLiveStreamRecordIndexFilesResponse.RequestId = _ctx.StringValue("DeleteLiveStreamRecordIndexFiles.RequestId");
 
 			List<DeleteLiveStreamRecordIndexFilesResponse.DeleteLiveStreamRecordIndexFiles_RecordDeleteInfo> deleteLiveStreamRecordIndexFilesResponse_recordDeleteInfoList = new List<DeleteLiveStreamRecordIndexFilesResponse.DeleteLiveStreamRecordIndexFiles_RecordDeleteInfo>();
 			for (int i = 0; i < _ctx.Length("DeleteLiveStreamRecordIndexFiles.RecordDeleteInfoList.Length"); i++) {
 				DeleteLiveStreamRecordIndexFilesResponse.DeleteLiveStreamRecordIndexFiles_RecordDeleteInfo recordDeleteInfo = new DeleteLiveStreamRecordIndexFilesResponse.DeleteLiveStreamRecordIndexFiles_RecordDeleteInfo();
-				recordDeleteInfo.RecordId = _ctx.StringValue("DeleteLiveStreamRecordIndexFiles.RecordDeleteInfoList["+ i +"].RecordId");
 				recordDeleteInfo.Message = _ctx.StringValue("DeleteLiveStreamRecordIndexFiles.RecordDeleteInfoList["+ i +"].Message");
+				recordDeleteInfo.RecordId = _ctx.StringValue("DeleteLiveStreamRecordIndexFiles.RecordDeleteInfoList["+ i +"].RecordId");
 
 				deleteLiveStreamRecordIndexFilesResponse_recordDeleteInfoList.Add(recordDeleteInfo);
 			}

@@ -1,3 +1,115 @@
+2022-10-19 Version: 3.7.3
+- Update by SDK platform.
+
+2022-10-17 Version: 0.0.7
+- Update MakeSuperResolutionImage.
+
+2022-10-17 Version: 0.0.8
+- Update RefineMask.
+
+2022-10-17 Version: 0.0.9
+- Update TaggingAdImage.
+
+2022-10-17 Version: 1.0.2
+- Release EstimateMonocularVideoDepth.
+
+2022-10-17 Version: 0.0.3
+- Update videoseg.
+
+2022-10-17 Version: 0.0.22
+- Release ScreenEC.
+
+2022-10-17 Version: 1.6.4
+- Release MergeVideoModelFace.
+
+2022-10-17 Version: 0.0.5
+- Update RecognizeVideoCastCrewList.
+
+2022-10-13 Version: 3.13.11
+- Supported AndroidNotificationGroup for Push and MassPush.
+- Add Honor channel support.
+
+2022-10-10 Version: 2.0.1
+- Add OpenAPI CreateEaiJupyter.
+- Fixd bugs for OpenAPI  DeleteEaiAll.
+
+2022-10-08 Version: 3.7.2
+- Update by SDK platform.
+
+2022-09-29 Version: 0.0.6
+- Update MakeSuperResolutionImage.
+
+2022-09-29 Version: 1.6.3
+- Release MergeVideoModelFace.
+
+2022-09-29 Version: 0.0.7
+- Update RefineMask.
+
+2022-09-29 Version: 0.0.4
+- Update RecognizeVideoCastCrewList.
+
+2022-09-27 Version: 3.7.1
+- Update by SDK platform.
+
+2022-09-23 Version: 1.0.26
+- Add new API DescribeGrantRulesToResource .
+- Update DescribeGrantRulesToCen support MaxResult and nextToken .
+- Update ListTransitRouterPrefixlistAssociation return TransitRouterId and TransitRouterTableId .
+
+2022-09-21 Version: 3.9.22
+- Generated 2016-11-01 for `live`.
+
+2022-09-21 Version: 1.0.8
+- Automatically generate sdk tasks.
+
+2022-09-21 Version: 0.0.21
+- Release ScreenEC.
+
+2022-09-20 Version: 1.0.1
+- Remove useless Agent parameters.
+
+2022-09-20 Version: 3.0.12
+- DescribeSnatTableEntries DescribeSnatTableEntries ListFullnatEntries support query --by natGatewayId.
+
+2022-09-20 Version: 1.0.1
+- Release EstimateMonocularVideoDepth.
+
+2022-09-19 Version: 1.0.0
+- Release CustomizeClassifyImage.
+
+2022-09-19 Version: 1.0.0
+- Release EstimateMonocularVideoDepth.
+
+2022-09-16 Version: 2.0.4
+- Add location endpoint.
+
+2022-09-16 Version: 2.0.3
+- Init amp.
+
+2022-09-16 Version: 2.0.2
+- Init amp.
+
+2022-09-16 Version: 2.0.1
+- Init amp.
+
+2022-09-16 Version: 2.0.0
+- Init amp.
+
+2022-09-16 Version: 3.7.5
+- Update DescribeCdnReport.
+
+2022-09-16 Version: 7.44.0
+- Iot_20180120 old version sdk.
+
+2022-09-15 Version: 3.9.21
+- Generated 2016-11-01 for `live`.
+
+2022-09-15 Version: 3.9.20
+- Generated 2016-11-01 for `live`.
+
+2022-09-14 Version: 3.2.2
+- Add spInstanceId and spInstanceType for api OnsInstanceBaseInfo.
+
 2022-09-08 Version: 2.1.1
 - Add API BatchAddFeishuUsers.
 

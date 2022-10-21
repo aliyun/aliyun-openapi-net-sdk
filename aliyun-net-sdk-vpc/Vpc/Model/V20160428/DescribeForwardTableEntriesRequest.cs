@@ -52,6 +52,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private int? pageSize;
 
+		private string natGatewayId;
+
 		private string externalIp;
 
 		private string resourceOwnerAccount;
@@ -143,6 +145,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string NatGatewayId
+		{
+			get
+			{
+				return natGatewayId;
+			}
+			set	
+			{
+				natGatewayId = value;
+				DictionaryUtil.Add(QueryParameters, "NatGatewayId", value);
 			}
 		}
 

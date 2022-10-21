@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -50,6 +51,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<string> tagKeys = new List<string>(){ };
 
+		[JsonProperty(PropertyName = "All")]
 		public bool? All
 		{
 			get
@@ -63,6 +65,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceId")]
 		public List<string> ResourceIds
 		{
 			get
@@ -73,13 +76,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set
 			{
 				resourceIds = value;
-				for (int i = 0; i < resourceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ResourceId." + (i + 1) , resourceIds[i]);
-				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -93,6 +93,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceType")]
 		public string ResourceType
 		{
 			get
@@ -106,6 +107,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "TagKey")]
 		public List<string> TagKeys
 		{
 			get
@@ -116,10 +118,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set
 			{
 				tagKeys = value;
-				for (int i = 0; i < tagKeys.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"TagKey." + (i + 1) , tagKeys[i]);
-				}
 			}
 		}
 

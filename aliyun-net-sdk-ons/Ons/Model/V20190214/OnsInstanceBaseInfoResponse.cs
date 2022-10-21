@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ons.Model.V20190214
@@ -87,6 +87,12 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 			private string instanceId;
 
 			private int? instanceType;
+
+			private string createTime;
+
+			private string spInstanceId;
+
+			private int? spInstanceType;
 
 			private OnsInstanceBaseInfo_Endpoints endpoints;
 
@@ -198,6 +204,42 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				}
 			}
 
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public string SpInstanceId
+			{
+				get
+				{
+					return spInstanceId;
+				}
+				set	
+				{
+					spInstanceId = value;
+				}
+			}
+
+			public int? SpInstanceType
+			{
+				get
+				{
+					return spInstanceType;
+				}
+				set	
+				{
+					spInstanceType = value;
+				}
+			}
+
 			public OnsInstanceBaseInfo_Endpoints Endpoints
 			{
 				get
@@ -215,13 +257,13 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 
 				private string tcpEndpoint;
 
+				private string tcpInternetEndpoint;
+
 				private string httpInternetEndpoint;
 
 				private string httpInternalEndpoint;
 
 				private string httpInternetSecureEndpoint;
-
-				private string tcpInternetEndpoint;
 
 				public string TcpEndpoint
 				{
@@ -232,6 +274,18 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 					set	
 					{
 						tcpEndpoint = value;
+					}
+				}
+
+				public string TcpInternetEndpoint
+				{
+					get
+					{
+						return tcpInternetEndpoint;
+					}
+					set	
+					{
+						tcpInternetEndpoint = value;
 					}
 				}
 
@@ -268,18 +322,6 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 					set	
 					{
 						httpInternetSecureEndpoint = value;
-					}
-				}
-
-				public string TcpInternetEndpoint
-				{
-					get
-					{
-						return tcpInternetEndpoint;
-					}
-					set	
-					{
-						tcpInternetEndpoint = value;
 					}
 				}
 			}

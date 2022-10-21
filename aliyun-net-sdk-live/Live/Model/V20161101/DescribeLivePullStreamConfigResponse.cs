@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeLivePullStreamConfig_LiveAppRecord> liveAppRecordList;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "LiveAppRecordList")]
 		public List<DescribeLivePullStreamConfig_LiveAppRecord> LiveAppRecordList
 		{
 			get
@@ -56,94 +58,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLivePullStreamConfig_LiveAppRecord
 		{
 
-			private string domainName;
+			private string endTime;
 
 			private string appName;
 
-			private string streamName;
-
 			private string sourceUrl;
-
-			private string sourceUsing;
 
 			private string startTime;
 
-			private string endTime;
-
 			private string always;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
+			private string streamName;
 
-			public string AppName
-			{
-				get
-				{
-					return appName;
-				}
-				set	
-				{
-					appName = value;
-				}
-			}
+			private string sourceUsing;
 
-			public string StreamName
-			{
-				get
-				{
-					return streamName;
-				}
-				set	
-				{
-					streamName = value;
-				}
-			}
+			private string domainName;
 
-			public string SourceUrl
-			{
-				get
-				{
-					return sourceUrl;
-				}
-				set	
-				{
-					sourceUrl = value;
-				}
-			}
-
-			public string SourceUsing
-			{
-				get
-				{
-					return sourceUsing;
-				}
-				set	
-				{
-					sourceUsing = value;
-				}
-			}
-
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "EndTime")]
 			public string EndTime
 			{
 				get
@@ -156,6 +87,46 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "AppName")]
+			public string AppName
+			{
+				get
+				{
+					return appName;
+				}
+				set	
+				{
+					appName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SourceUrl")]
+			public string SourceUrl
+			{
+				get
+				{
+					return sourceUrl;
+				}
+				set	
+				{
+					sourceUrl = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StartTime")]
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Always")]
 			public string Always
 			{
 				get
@@ -165,6 +136,45 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					always = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StreamName")]
+			public string StreamName
+			{
+				get
+				{
+					return streamName;
+				}
+				set	
+				{
+					streamName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SourceUsing")]
+			public string SourceUsing
+			{
+				get
+				{
+					return sourceUsing;
+				}
+				set	
+				{
+					sourceUsing = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
 				}
 			}
 		}

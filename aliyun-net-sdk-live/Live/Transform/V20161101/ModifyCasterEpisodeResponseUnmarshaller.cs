@@ -31,9 +31,9 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			ModifyCasterEpisodeResponse modifyCasterEpisodeResponse = new ModifyCasterEpisodeResponse();
 
 			modifyCasterEpisodeResponse.HttpResponse = _ctx.HttpResponse;
+			modifyCasterEpisodeResponse.EpisodeId = _ctx.StringValue("ModifyCasterEpisode.EpisodeId");
 			modifyCasterEpisodeResponse.RequestId = _ctx.StringValue("ModifyCasterEpisode.RequestId");
 			modifyCasterEpisodeResponse.CasterId = _ctx.StringValue("ModifyCasterEpisode.CasterId");
-			modifyCasterEpisodeResponse.EpisodeId = _ctx.StringValue("ModifyCasterEpisode.EpisodeId");
         
 			return modifyCasterEpisodeResponse;
         }

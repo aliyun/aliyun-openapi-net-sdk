@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeLiveDomainFrameRateAndBitRateData_FrameRateAndBitRateInfo> frameRateAndBitRateInfos;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "FrameRateAndBitRateInfos")]
 		public List<DescribeLiveDomainFrameRateAndBitRateData_FrameRateAndBitRateInfo> FrameRateAndBitRateInfos
 		{
 			get
@@ -56,38 +58,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDomainFrameRateAndBitRateData_FrameRateAndBitRateInfo
 		{
 
-			private float? audioFrameRate;
-
-			private float? bitRate;
-
 			private float? videoFrameRate;
 
 			private string streamUrl;
 
-			public float? AudioFrameRate
-			{
-				get
-				{
-					return audioFrameRate;
-				}
-				set	
-				{
-					audioFrameRate = value;
-				}
-			}
+			private float? audioFrameRate;
 
-			public float? BitRate
-			{
-				get
-				{
-					return bitRate;
-				}
-				set	
-				{
-					bitRate = value;
-				}
-			}
+			private float? bitRate;
 
+			[JsonProperty(PropertyName = "VideoFrameRate")]
 			public float? VideoFrameRate
 			{
 				get
@@ -100,6 +79,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "StreamUrl")]
 			public string StreamUrl
 			{
 				get
@@ -109,6 +89,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					streamUrl = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AudioFrameRate")]
+			public float? AudioFrameRate
+			{
+				get
+				{
+					return audioFrameRate;
+				}
+				set	
+				{
+					audioFrameRate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "BitRate")]
+			public float? BitRate
+			{
+				get
+				{
+					return bitRate;
+				}
+				set	
+				{
+					bitRate = value;
 				}
 			}
 		}

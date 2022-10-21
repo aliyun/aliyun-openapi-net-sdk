@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<ListLiveRealtimeLogDelivery_RealtimeLogDeliveryInfo> content;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Content")]
 		public List<ListLiveRealtimeLogDelivery_RealtimeLogDeliveryInfo> Content
 		{
 			get
@@ -56,66 +58,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class ListLiveRealtimeLogDelivery_RealtimeLogDeliveryInfo
 		{
 
-			private string project;
-
-			private string logstore;
-
-			private string region;
-
-			private string domainName;
+			private string status;
 
 			private int? dmId;
 
-			private string status;
+			private string region;
 
-			public string Project
+			private string logstore;
+
+			private string project;
+
+			private string domainName;
+
+			[JsonProperty(PropertyName = "Status")]
+			public string Status
 			{
 				get
 				{
-					return project;
+					return status;
 				}
 				set	
 				{
-					project = value;
+					status = value;
 				}
 			}
 
-			public string Logstore
-			{
-				get
-				{
-					return logstore;
-				}
-				set	
-				{
-					logstore = value;
-				}
-			}
-
-			public string Region
-			{
-				get
-				{
-					return region;
-				}
-				set	
-				{
-					region = value;
-				}
-			}
-
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "DmId")]
 			public int? DmId
 			{
 				get
@@ -128,15 +96,55 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string Status
+			[JsonProperty(PropertyName = "Region")]
+			public string Region
 			{
 				get
 				{
-					return status;
+					return region;
 				}
 				set	
 				{
-					status = value;
+					region = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Logstore")]
+			public string Logstore
+			{
+				get
+				{
+					return logstore;
+				}
+				set	
+				{
+					logstore = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Project")]
+			public string Project
+			{
+				get
+				{
+					return project;
+				}
+				set	
+				{
+					project = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
 				}
 			}
 		}

@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -44,8 +45,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private long? ownerId;
 
-		private List<SyncGroup> syncGroups = new List<SyncGroup>(){ };
+		private List<string> syncGroups = new List<string>(){ };
 
+		[JsonProperty(PropertyName = "CasterId")]
 		public string CasterId
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -72,7 +75,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public List<SyncGroup> SyncGroups
+		[JsonProperty(PropertyName = "SyncGroup")]
+		public List<string> SyncGroups
 		{
 			get
 			{
@@ -82,18 +86,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set
 			{
 				syncGroups = value;
-				for (int i = 0; i < syncGroups.Count; i++)
+				if(syncGroups != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"SyncGroup." + (i + 1) + ".Mode", syncGroups[i].Mode);
-					DictionaryUtil.Add(QueryParameters,"SyncGroup." + (i + 1) + ".SyncDelayThreshold", syncGroups[i].SyncDelayThreshold);
-					DictionaryUtil.Add(QueryParameters,"SyncGroup." + (i + 1) + ".HostResourceId", syncGroups[i].HostResourceId);
-					for (int j = 0; j < syncGroups[i].ResourceIdss.Count; j++)
+					for (int depth1 = 0; depth1 < syncGroups.Count; depth1++)
 					{
-						DictionaryUtil.Add(QueryParameters,"SyncGroup." + (i + 1) + ".ResourceIds." +(j + 1), syncGroups[i].ResourceIdss[j]);
-					}
-					for (int j = 0; j < syncGroups[i].SyncOffsetss.Count; j++)
-					{
-						DictionaryUtil.Add(QueryParameters,"SyncGroup." + (i + 1) + ".SyncOffsets." +(j + 1), syncGroups[i].SyncOffsetss[j]);
+						DictionaryUtil.Add(QueryParameters,"SyncGroup." + (depth1 + 1), syncGroups[depth1]);
+						DictionaryUtil.Add(QueryParameters,"SyncGroup." + (depth1 + 1), syncGroups[depth1]);
+						DictionaryUtil.Add(QueryParameters,"SyncGroup." + (depth1 + 1), syncGroups[depth1]);
 					}
 				}
 			}
@@ -102,40 +101,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class SyncGroup
 		{
 
-			private int? mode;
-
-			private long? syncDelayThreshold;
-
 			private string hostResourceId;
 
 			private List<string> resourceIdss = new List<string>(){ };
 
-			private List<int?> syncOffsetss = new List<int?>(){ };
+			private List<string> syncOffsetss = new List<string>(){ };
 
-			public int? Mode
-			{
-				get
-				{
-					return mode;
-				}
-				set	
-				{
-					mode = value;
-				}
-			}
+			private long? syncDelayThreshold;
 
-			public long? SyncDelayThreshold
-			{
-				get
-				{
-					return syncDelayThreshold;
-				}
-				set	
-				{
-					syncDelayThreshold = value;
-				}
-			}
+			private int? mode;
 
+			[JsonProperty(PropertyName = "HostResourceId")]
 			public string HostResourceId
 			{
 				get
@@ -148,6 +124,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "ResourceIds")]
 			public List<string> ResourceIdss
 			{
 				get
@@ -160,7 +137,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public List<int?> SyncOffsetss
+			[JsonProperty(PropertyName = "SyncOffsets")]
+			public List<string> SyncOffsetss
 			{
 				get
 				{
@@ -169,6 +147,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					syncOffsetss = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SyncDelayThreshold")]
+			public long? SyncDelayThreshold
+			{
+				get
+				{
+					return syncDelayThreshold;
+				}
+				set	
+				{
+					syncDelayThreshold = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Mode")]
+			public int? Mode
+			{
+				get
+				{
+					return mode;
+				}
+				set	
+				{
+					mode = value;
 				}
 			}
 		}

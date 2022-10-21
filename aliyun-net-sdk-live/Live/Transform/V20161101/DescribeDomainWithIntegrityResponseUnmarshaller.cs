@@ -38,17 +38,17 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				DescribeDomainWithIntegrityResponse.DescribeDomainWithIntegrity_ContentItem contentItem = new DescribeDomainWithIntegrityResponse.DescribeDomainWithIntegrity_ContentItem();
 				contentItem.Name = _ctx.StringValue("DescribeDomainWithIntegrity.Content["+ i +"].Name");
 
-				List<string> contentItem_columns = new List<string>();
-				for (int j = 0; j < _ctx.Length("DescribeDomainWithIntegrity.Content["+ i +"].Columns.Length"); j++) {
-					contentItem_columns.Add(_ctx.StringValue("DescribeDomainWithIntegrity.Content["+ i +"].Columns["+ j +"]"));
-				}
-				contentItem.Columns = contentItem_columns;
-
 				List<string> contentItem_points = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeDomainWithIntegrity.Content["+ i +"].Points.Length"); j++) {
 					contentItem_points.Add(_ctx.StringValue("DescribeDomainWithIntegrity.Content["+ i +"].Points["+ j +"]"));
 				}
 				contentItem.Points = contentItem_points;
+
+				List<string> contentItem_columns = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeDomainWithIntegrity.Content["+ i +"].Columns.Length"); j++) {
+					contentItem_columns.Add(_ctx.StringValue("DescribeDomainWithIntegrity.Content["+ i +"].Columns["+ j +"]"));
+				}
+				contentItem.Columns = contentItem_columns;
 
 				describeDomainWithIntegrityResponse_content.Add(contentItem);
 			}

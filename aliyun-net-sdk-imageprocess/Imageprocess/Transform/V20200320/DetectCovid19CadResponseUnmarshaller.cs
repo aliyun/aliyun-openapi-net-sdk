@@ -32,6 +32,8 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 
 			detectCovid19CadResponse.HttpResponse = _ctx.HttpResponse;
 			detectCovid19CadResponse.RequestId = _ctx.StringValue("DetectCovid19Cad.RequestId");
+			detectCovid19CadResponse.Code = _ctx.StringValue("DetectCovid19Cad.Code");
+			detectCovid19CadResponse.Message = _ctx.StringValue("DetectCovid19Cad.Message");
 
 			DetectCovid19CadResponse.DetectCovid19Cad_Data data = new DetectCovid19CadResponse.DetectCovid19Cad_Data();
 			data.NormalProbability = _ctx.StringValue("DetectCovid19Cad.Data.NormalProbability");

@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -50,8 +51,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private long? ownerId;
 
-		private List<long?> createTimestampLists = new List<long?>(){ };
+		private List<string> createTimestampLists = new List<string>(){ };
 
+		[JsonProperty(PropertyName = "RemoveFile")]
 		public bool? RemoveFile
 		{
 			get
@@ -65,6 +67,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "AppName")]
 		public string AppName
 		{
 			get
@@ -78,6 +81,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "StreamName")]
 		public string StreamName
 		{
 			get
@@ -91,6 +95,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DomainName")]
 		public string DomainName
 		{
 			get
@@ -104,6 +109,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -117,7 +123,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public List<long?> CreateTimestampLists
+		[JsonProperty(PropertyName = "CreateTimestampList")]
+		public List<string> CreateTimestampLists
 		{
 			get
 			{
@@ -127,10 +134,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set
 			{
 				createTimestampLists = value;
-				for (int i = 0; i < createTimestampLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"CreateTimestampList." + (i + 1) , createTimestampLists[i]);
-				}
 			}
 		}
 

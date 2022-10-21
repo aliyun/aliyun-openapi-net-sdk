@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeLiveDomainStagingConfig_DomainConfig> domainConfigs;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DomainConfigs")]
 		public List<DescribeLiveDomainStagingConfig_DomainConfig> DomainConfigs
 		{
 			get
@@ -64,6 +66,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private List<DescribeLiveDomainStagingConfig_FunctionArg> functionArgs;
 
+			[JsonProperty(PropertyName = "Status")]
 			public string Status
 			{
 				get
@@ -76,6 +79,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "ConfigId")]
 			public string ConfigId
 			{
 				get
@@ -88,6 +92,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "FunctionName")]
 			public string FunctionName
 			{
 				get
@@ -100,6 +105,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "FunctionArgs")]
 			public List<DescribeLiveDomainStagingConfig_FunctionArg> FunctionArgs
 			{
 				get
@@ -119,6 +125,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private string argValue;
 
+				[JsonProperty(PropertyName = "ArgName")]
 				public string ArgName
 				{
 					get
@@ -131,6 +138,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
+				[JsonProperty(PropertyName = "ArgValue")]
 				public string ArgValue
 				{
 					get

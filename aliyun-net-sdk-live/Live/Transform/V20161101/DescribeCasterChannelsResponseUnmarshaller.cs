@@ -31,19 +31,19 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeCasterChannelsResponse describeCasterChannelsResponse = new DescribeCasterChannelsResponse();
 
 			describeCasterChannelsResponse.HttpResponse = _ctx.HttpResponse;
-			describeCasterChannelsResponse.RequestId = _ctx.StringValue("DescribeCasterChannels.RequestId");
 			describeCasterChannelsResponse.Total = _ctx.IntegerValue("DescribeCasterChannels.Total");
+			describeCasterChannelsResponse.RequestId = _ctx.StringValue("DescribeCasterChannels.RequestId");
 
 			List<DescribeCasterChannelsResponse.DescribeCasterChannels_Channel> describeCasterChannelsResponse_channels = new List<DescribeCasterChannelsResponse.DescribeCasterChannels_Channel>();
 			for (int i = 0; i < _ctx.Length("DescribeCasterChannels.Channels.Length"); i++) {
 				DescribeCasterChannelsResponse.DescribeCasterChannels_Channel channel = new DescribeCasterChannelsResponse.DescribeCasterChannels_Channel();
+				channel.InputType = _ctx.IntegerValue("DescribeCasterChannels.Channels["+ i +"].InputType");
+				channel.RtmpUrl = _ctx.StringValue("DescribeCasterChannels.Channels["+ i +"].RtmpUrl");
 				channel.ChannelId = _ctx.StringValue("DescribeCasterChannels.Channels["+ i +"].ChannelId");
+				channel.RtsUrl = _ctx.StringValue("DescribeCasterChannels.Channels["+ i +"].RtsUrl");
+				channel.FaceBeauty = _ctx.StringValue("DescribeCasterChannels.Channels["+ i +"].FaceBeauty");
 				channel.ResourceId = _ctx.StringValue("DescribeCasterChannels.Channels["+ i +"].ResourceId");
 				channel.StreamUrl = _ctx.StringValue("DescribeCasterChannels.Channels["+ i +"].StreamUrl");
-				channel.RtmpUrl = _ctx.StringValue("DescribeCasterChannels.Channels["+ i +"].RtmpUrl");
-				channel.RtsUrl = _ctx.StringValue("DescribeCasterChannels.Channels["+ i +"].RtsUrl");
-				channel.InputType = _ctx.IntegerValue("DescribeCasterChannels.Channels["+ i +"].InputType");
-				channel.FaceBeauty = _ctx.StringValue("DescribeCasterChannels.Channels["+ i +"].FaceBeauty");
 
 				describeCasterChannelsResponse_channels.Add(channel);
 			}

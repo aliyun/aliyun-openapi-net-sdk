@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -64,6 +65,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private int? refHeight;
 
+		[JsonProperty(PropertyName = "YOffset")]
 		public float? YOffset
 		{
 			get
@@ -77,6 +79,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PictureUrl")]
 		public string PictureUrl
 		{
 			get
@@ -90,6 +93,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Description")]
 		public string Description
 		{
 			get
@@ -103,6 +107,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Height")]
 		public int? Height
 		{
 			get
@@ -116,6 +121,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "XOffset")]
 		public float? XOffset
 		{
 			get
@@ -129,6 +135,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -142,6 +149,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "TemplateId")]
 		public string TemplateId
 		{
 			get
@@ -155,6 +163,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RefWidth")]
 		public int? RefWidth
 		{
 			get
@@ -168,6 +177,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Transparency")]
 		public int? Transparency
 		{
 			get
@@ -181,6 +191,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Name")]
 		public string Name
 		{
 			get
@@ -194,6 +205,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OffsetCorner")]
 		public string OffsetCorner
 		{
 			get
@@ -207,6 +219,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RefHeight")]
 		public int? RefHeight
 		{
 			get

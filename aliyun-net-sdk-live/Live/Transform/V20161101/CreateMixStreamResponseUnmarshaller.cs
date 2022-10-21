@@ -31,8 +31,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			CreateMixStreamResponse createMixStreamResponse = new CreateMixStreamResponse();
 
 			createMixStreamResponse.HttpResponse = _ctx.HttpResponse;
-			createMixStreamResponse.RequestId = _ctx.StringValue("CreateMixStream.RequestId");
 			createMixStreamResponse.MixStreamId = _ctx.StringValue("CreateMixStream.MixStreamId");
+			createMixStreamResponse.RequestId = _ctx.StringValue("CreateMixStream.RequestId");
         
 			return createMixStreamResponse;
         }

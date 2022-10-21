@@ -39,8 +39,8 @@ namespace Aliyun.Acs.imageseg.Transform.V20191230
 			List<ParseFaceResponse.ParseFace_Data.ParseFace_Element> data_elements = new List<ParseFaceResponse.ParseFace_Data.ParseFace_Element>();
 			for (int i = 0; i < _ctx.Length("ParseFace.Data.Elements.Length"); i++) {
 				ParseFaceResponse.ParseFace_Data.ParseFace_Element element = new ParseFaceResponse.ParseFace_Data.ParseFace_Element();
-				element.Name = _ctx.StringValue("ParseFace.Data.Elements["+ i +"].Name");
 				element.ImageURL = _ctx.StringValue("ParseFace.Data.Elements["+ i +"].ImageURL");
+				element.Name = _ctx.StringValue("ParseFace.Data.Elements["+ i +"].Name");
 
 				data_elements.Add(element);
 			}

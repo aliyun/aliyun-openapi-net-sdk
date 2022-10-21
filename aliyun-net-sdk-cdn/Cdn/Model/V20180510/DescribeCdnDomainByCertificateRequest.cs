@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private long? ownerId;
 
+		private bool? sSLStatus;
+
 		private string sSLPub;
 
 		public long? OwnerId
@@ -55,6 +57,19 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public bool? SSLStatus
+		{
+			get
+			{
+				return sSLStatus;
+			}
+			set	
+			{
+				sSLStatus = value;
+				DictionaryUtil.Add(QueryParameters, "SSLStatus", value.ToString());
 			}
 		}
 

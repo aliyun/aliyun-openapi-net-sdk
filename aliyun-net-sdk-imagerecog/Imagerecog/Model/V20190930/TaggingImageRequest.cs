@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.imagerecog;
 using Aliyun.Acs.imagerecog.Transform;
 using Aliyun.Acs.imagerecog.Transform.V20190930;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
     public class TaggingImageRequest : RpcAcsRequest<TaggingImageResponse>
     {
         public TaggingImageRequest()
-            : base("imagerecog", "2019-09-30", "TaggingImage", "imagerecog", "openAPI")
+            : base("imagerecog", "2019-09-30", "TaggingImage")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

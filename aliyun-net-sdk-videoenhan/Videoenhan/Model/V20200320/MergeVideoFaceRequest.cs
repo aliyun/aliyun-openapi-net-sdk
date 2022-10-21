@@ -40,24 +40,11 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			Method = MethodType.POST;
         }
 
-		private string postURL;
-
 		private string referenceURL;
 
-		private string videoURL;
+		private string postURL;
 
-		public string PostURL
-		{
-			get
-			{
-				return postURL;
-			}
-			set	
-			{
-				postURL = value;
-				DictionaryUtil.Add(BodyParameters, "PostURL", value);
-			}
-		}
+		private string videoURL;
 
 		public string ReferenceURL
 		{
@@ -69,6 +56,19 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			{
 				referenceURL = value;
 				DictionaryUtil.Add(BodyParameters, "ReferenceURL", value);
+			}
+		}
+
+		public string PostURL
+		{
+			get
+			{
+				return postURL;
+			}
+			set	
+			{
+				postURL = value;
+				DictionaryUtil.Add(BodyParameters, "PostURL", value);
 			}
 		}
 

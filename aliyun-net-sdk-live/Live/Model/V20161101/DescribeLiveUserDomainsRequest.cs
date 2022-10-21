@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -48,7 +49,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string regionName;
 
-		private List<Tag> tags = new List<Tag>(){ };
+		private List<string> tags = new List<string>(){ };
 
 		private string domainName;
 
@@ -60,6 +61,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string liveDomainType;
 
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -73,6 +75,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecurityToken")]
 		public string SecurityToken
 		{
 			get
@@ -86,6 +89,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get
@@ -99,6 +103,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RegionName")]
 		public string RegionName
 		{
 			get
@@ -112,7 +117,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public List<Tag> Tags
+		[JsonProperty(PropertyName = "Tag")]
+		public List<string> Tags
 		{
 			get
 			{
@@ -122,14 +128,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set
 			{
 				tags = value;
-				for (int i = 0; i < tags.Count; i++)
+				if(tags != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
 				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "DomainName")]
 		public string DomainName
 		{
 			get
@@ -143,6 +153,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -156,6 +167,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DomainStatus")]
 		public string DomainStatus
 		{
 			get
@@ -169,6 +181,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DomainSearchType")]
 		public string DomainSearchType
 		{
 			get
@@ -182,6 +195,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "LiveDomainType")]
 		public string LiveDomainType
 		{
 			get
@@ -202,7 +216,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string key;
 
-			public string Value
+			[JsonProperty(PropertyName = "Value")]
+			public string Value_
 			{
 				get
 				{
@@ -214,6 +229,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Key")]
 			public string Key
 			{
 				get

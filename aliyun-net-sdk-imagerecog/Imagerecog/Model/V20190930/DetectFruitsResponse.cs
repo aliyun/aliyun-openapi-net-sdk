@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.imagerecog.Model.V20190930
@@ -73,23 +73,11 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 			public class DetectFruits_Element
 			{
 
-				private string name;
-
 				private float? score;
 
-				private List<string> box;
+				private string name;
 
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
+				private List<string> box;
 
 				public float? Score
 				{
@@ -100,6 +88,18 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 					set	
 					{
 						score = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
 					}
 				}
 

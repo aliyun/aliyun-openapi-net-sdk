@@ -154,6 +154,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string description;
 
+			private string status;
+
 			public long? DestinationId
 			{
 				get
@@ -235,6 +237,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					description = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 		}

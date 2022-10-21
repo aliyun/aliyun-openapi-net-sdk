@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -40,7 +41,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private List<Tag> tags = new List<Tag>(){ };
+		private List<string> tags = new List<string>(){ };
 
 		private List<string> resourceIds = new List<string>(){ };
 
@@ -48,7 +49,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string resourceType;
 
-		public List<Tag> Tags
+		[JsonProperty(PropertyName = "Tag")]
+		public List<string> Tags
 		{
 			get
 			{
@@ -58,14 +60,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set
 			{
 				tags = value;
-				for (int i = 0; i < tags.Count; i++)
+				if(tags != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
 				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceId")]
 		public List<string> ResourceIds
 		{
 			get
@@ -76,13 +82,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set
 			{
 				resourceIds = value;
-				for (int i = 0; i < resourceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ResourceId." + (i + 1) , resourceIds[i]);
-				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -96,6 +99,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceType")]
 		public string ResourceType
 		{
 			get
@@ -116,6 +120,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string value_;
 
+			[JsonProperty(PropertyName = "Key")]
 			public string Key
 			{
 				get
@@ -128,7 +133,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string Value
+			[JsonProperty(PropertyName = "Value")]
+			public string Value_
 			{
 				get
 				{

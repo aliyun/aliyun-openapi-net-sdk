@@ -31,8 +31,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeRoomStatusResponse describeRoomStatusResponse = new DescribeRoomStatusResponse();
 
 			describeRoomStatusResponse.HttpResponse = _ctx.HttpResponse;
-			describeRoomStatusResponse.RequestId = _ctx.StringValue("DescribeRoomStatus.RequestId");
 			describeRoomStatusResponse.RoomStatus = _ctx.IntegerValue("DescribeRoomStatus.RoomStatus");
+			describeRoomStatusResponse.RequestId = _ctx.StringValue("DescribeRoomStatus.RequestId");
         
 			return describeRoomStatusResponse;
         }

@@ -112,6 +112,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private string transitRouterTableId;
 
+			private string transitRouterId;
+
 			public string PrefixListId
 			{
 				get
@@ -193,6 +195,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					transitRouterTableId = value;
+				}
+			}
+
+			public string TransitRouterId
+			{
+				get
+				{
+					return transitRouterId;
+				}
+				set	
+				{
+					transitRouterId = value;
 				}
 			}
 		}

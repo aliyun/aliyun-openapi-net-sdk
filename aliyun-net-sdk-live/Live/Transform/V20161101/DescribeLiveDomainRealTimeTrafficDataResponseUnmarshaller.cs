@@ -31,17 +31,17 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveDomainRealTimeTrafficDataResponse describeLiveDomainRealTimeTrafficDataResponse = new DescribeLiveDomainRealTimeTrafficDataResponse();
 
 			describeLiveDomainRealTimeTrafficDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveDomainRealTimeTrafficDataResponse.EndTime = _ctx.StringValue("DescribeLiveDomainRealTimeTrafficData.EndTime");
+			describeLiveDomainRealTimeTrafficDataResponse.StartTime = _ctx.StringValue("DescribeLiveDomainRealTimeTrafficData.StartTime");
 			describeLiveDomainRealTimeTrafficDataResponse.RequestId = _ctx.StringValue("DescribeLiveDomainRealTimeTrafficData.RequestId");
 			describeLiveDomainRealTimeTrafficDataResponse.DomainName = _ctx.StringValue("DescribeLiveDomainRealTimeTrafficData.DomainName");
-			describeLiveDomainRealTimeTrafficDataResponse.StartTime = _ctx.StringValue("DescribeLiveDomainRealTimeTrafficData.StartTime");
-			describeLiveDomainRealTimeTrafficDataResponse.EndTime = _ctx.StringValue("DescribeLiveDomainRealTimeTrafficData.EndTime");
 			describeLiveDomainRealTimeTrafficDataResponse.DataInterval = _ctx.StringValue("DescribeLiveDomainRealTimeTrafficData.DataInterval");
 
 			List<DescribeLiveDomainRealTimeTrafficDataResponse.DescribeLiveDomainRealTimeTrafficData_DataModule> describeLiveDomainRealTimeTrafficDataResponse_realTimeTrafficDataPerInterval = new List<DescribeLiveDomainRealTimeTrafficDataResponse.DescribeLiveDomainRealTimeTrafficData_DataModule>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveDomainRealTimeTrafficData.RealTimeTrafficDataPerInterval.Length"); i++) {
 				DescribeLiveDomainRealTimeTrafficDataResponse.DescribeLiveDomainRealTimeTrafficData_DataModule dataModule = new DescribeLiveDomainRealTimeTrafficDataResponse.DescribeLiveDomainRealTimeTrafficData_DataModule();
-				dataModule.TimeStamp = _ctx.StringValue("DescribeLiveDomainRealTimeTrafficData.RealTimeTrafficDataPerInterval["+ i +"].TimeStamp");
 				dataModule._Value = _ctx.StringValue("DescribeLiveDomainRealTimeTrafficData.RealTimeTrafficDataPerInterval["+ i +"].Value");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeLiveDomainRealTimeTrafficData.RealTimeTrafficDataPerInterval["+ i +"].TimeStamp");
 
 				describeLiveDomainRealTimeTrafficDataResponse_realTimeTrafficDataPerInterval.Add(dataModule);
 			}

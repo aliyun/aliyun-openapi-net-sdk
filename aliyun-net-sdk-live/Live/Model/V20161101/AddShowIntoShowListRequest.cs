@@ -40,7 +40,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
+		private List<string> showLists = new List<string>(){ };
+
 		private int? liveInputType;
+
+		private bool? isBatchMode;
 
 		private long? duration;
 
@@ -60,6 +64,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private int? spot;
 
+		public List<string> ShowLists
+		{
+			get
+			{
+				return showLists;
+			}
+
+			set
+			{
+				showLists = value;
+				if(showLists != null)
+				{
+					for (int depth1 = 0; depth1 < showLists.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"showList." + (depth1 + 1), showLists[depth1]);
+						DictionaryUtil.Add(QueryParameters,"showList." + (depth1 + 1), showLists[depth1]);
+						DictionaryUtil.Add(QueryParameters,"showList." + (depth1 + 1), showLists[depth1]);
+						DictionaryUtil.Add(QueryParameters,"showList." + (depth1 + 1), showLists[depth1]);
+						DictionaryUtil.Add(QueryParameters,"showList." + (depth1 + 1), showLists[depth1]);
+						DictionaryUtil.Add(QueryParameters,"showList." + (depth1 + 1), showLists[depth1]);
+						DictionaryUtil.Add(QueryParameters,"showList." + (depth1 + 1), showLists[depth1]);
+					}
+				}
+			}
+		}
+
 		public int? LiveInputType
 		{
 			get
@@ -70,6 +100,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				liveInputType = value;
 				DictionaryUtil.Add(QueryParameters, "LiveInputType", value.ToString());
+			}
+		}
+
+		public bool? IsBatchMode
+		{
+			get
+			{
+				return isBatchMode;
+			}
+			set	
+			{
+				isBatchMode = value;
+				DictionaryUtil.Add(QueryParameters, "isBatchMode", value.ToString());
 			}
 		}
 
@@ -187,6 +230,108 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				spot = value;
 				DictionaryUtil.Add(QueryParameters, "Spot", value.ToString());
+			}
+		}
+
+		public class ShowList
+		{
+
+			private string showName;
+
+			private int? repeatTimes;
+
+			private string resourceType;
+
+			private string resourceUrl;
+
+			private int? liveInputType;
+
+			private long? duration;
+
+			private string resourceId;
+
+			public string ShowName
+			{
+				get
+				{
+					return showName;
+				}
+				set	
+				{
+					showName = value;
+				}
+			}
+
+			public int? RepeatTimes
+			{
+				get
+				{
+					return repeatTimes;
+				}
+				set	
+				{
+					repeatTimes = value;
+				}
+			}
+
+			public string ResourceType
+			{
+				get
+				{
+					return resourceType;
+				}
+				set	
+				{
+					resourceType = value;
+				}
+			}
+
+			public string ResourceUrl
+			{
+				get
+				{
+					return resourceUrl;
+				}
+				set	
+				{
+					resourceUrl = value;
+				}
+			}
+
+			public int? LiveInputType
+			{
+				get
+				{
+					return liveInputType;
+				}
+				set	
+				{
+					liveInputType = value;
+				}
+			}
+
+			public long? Duration
+			{
+				get
+				{
+					return duration;
+				}
+				set	
+				{
+					duration = value;
+				}
+			}
+
+			public string ResourceId
+			{
+				get
+				{
+					return resourceId;
+				}
+				set	
+				{
+					resourceId = value;
+				}
 			}
 		}
 

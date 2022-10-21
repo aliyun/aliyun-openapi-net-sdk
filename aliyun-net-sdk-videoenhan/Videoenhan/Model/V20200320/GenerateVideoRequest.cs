@@ -52,7 +52,7 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 
 		private bool? durationAdaption;
 
-		private List<FileList> fileLists = new List<FileList>(){ };
+		private List<string> fileLists = new List<string>(){ };
 
 		private bool? mute;
 
@@ -140,7 +140,7 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			}
 		}
 
-		public List<FileList> FileLists
+		public List<string> FileLists
 		{
 			get
 			{
@@ -150,11 +150,14 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			set
 			{
 				fileLists = value;
-				for (int i = 0; i < fileLists.Count; i++)
+				if(fileLists != null)
 				{
-					DictionaryUtil.Add(BodyParameters,"FileList." + (i + 1) + ".FileName", fileLists[i].FileName);
-					DictionaryUtil.Add(BodyParameters,"FileList." + (i + 1) + ".FileUrl", fileLists[i].FileUrl);
-					DictionaryUtil.Add(BodyParameters,"FileList." + (i + 1) + ".Type", fileLists[i].Type);
+					for (int depth1 = 0; depth1 < fileLists.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"FileList." + (depth1 + 1), fileLists[depth1]);
+						DictionaryUtil.Add(BodyParameters,"FileList." + (depth1 + 1), fileLists[depth1]);
+						DictionaryUtil.Add(BodyParameters,"FileList." + (depth1 + 1), fileLists[depth1]);
+					}
 				}
 			}
 		}

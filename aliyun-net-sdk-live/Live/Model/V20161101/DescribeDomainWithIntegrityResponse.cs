@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeDomainWithIntegrity_ContentItem> content;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Content")]
 		public List<DescribeDomainWithIntegrity_ContentItem> Content
 		{
 			get
@@ -58,10 +60,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string name;
 
-			private List<string> columns;
-
 			private List<string> points;
 
+			private List<string> columns;
+
+			[JsonProperty(PropertyName = "Name")]
 			public string Name
 			{
 				get
@@ -74,18 +77,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public List<string> Columns
-			{
-				get
-				{
-					return columns;
-				}
-				set	
-				{
-					columns = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Points")]
 			public List<string> Points
 			{
 				get
@@ -95,6 +87,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					points = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Columns")]
+			public List<string> Columns
+			{
+				get
+				{
+					return columns;
+				}
+				set	
+				{
+					columns = value;
 				}
 			}
 		}

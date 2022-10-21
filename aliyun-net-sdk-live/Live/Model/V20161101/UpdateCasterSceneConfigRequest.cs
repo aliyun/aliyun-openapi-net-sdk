@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -50,6 +51,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string sceneId;
 
+		[JsonProperty(PropertyName = "LayoutId")]
 		public string LayoutId
 		{
 			get
@@ -63,6 +65,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ComponentId")]
 		public List<string> ComponentIds
 		{
 			get
@@ -73,13 +76,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set
 			{
 				componentIds = value;
-				for (int i = 0; i < componentIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ComponentId." + (i + 1) , componentIds[i]);
-				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "CasterId")]
 		public string CasterId
 		{
 			get
@@ -93,6 +93,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -106,6 +107,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "SceneId")]
 		public string SceneId
 		{
 			get

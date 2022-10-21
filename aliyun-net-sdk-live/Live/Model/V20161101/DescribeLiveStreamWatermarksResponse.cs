@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeLiveStreamWatermarks_Watermark> watermarkList;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "WatermarkList")]
 		public List<DescribeLiveStreamWatermarks_Watermark> WatermarkList
 		{
 			get
@@ -56,54 +58,31 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamWatermarks_Watermark
 		{
 
-			private string templateId;
-
-			private string name;
-
 			private int? type;
 
-			private string description;
+			private float? xOffset;
 
 			private int? refWidth;
-
-			private int? refHeight;
-
-			private float? xOffset;
 
 			private float? yOffset;
 
 			private int? height;
 
-			private int? transparency;
-
-			private string offsetCorner;
+			private int? refHeight;
 
 			private string pictureUrl;
 
-			public string TemplateId
-			{
-				get
-				{
-					return templateId;
-				}
-				set	
-				{
-					templateId = value;
-				}
-			}
+			private int? transparency;
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+			private string description;
 
+			private string offsetCorner;
+
+			private string name;
+
+			private string templateId;
+
+			[JsonProperty(PropertyName = "Type")]
 			public int? Type
 			{
 				get
@@ -116,42 +95,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public int? RefWidth
-			{
-				get
-				{
-					return refWidth;
-				}
-				set	
-				{
-					refWidth = value;
-				}
-			}
-
-			public int? RefHeight
-			{
-				get
-				{
-					return refHeight;
-				}
-				set	
-				{
-					refHeight = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "XOffset")]
 			public float? XOffset
 			{
 				get
@@ -164,6 +108,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "RefWidth")]
+			public int? RefWidth
+			{
+				get
+				{
+					return refWidth;
+				}
+				set	
+				{
+					refWidth = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "YOffset")]
 			public float? YOffset
 			{
 				get
@@ -176,6 +134,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Height")]
 			public int? Height
 			{
 				get
@@ -188,6 +147,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "RefHeight")]
+			public int? RefHeight
+			{
+				get
+				{
+					return refHeight;
+				}
+				set	
+				{
+					refHeight = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PictureUrl")]
+			public string PictureUrl
+			{
+				get
+				{
+					return pictureUrl;
+				}
+				set	
+				{
+					pictureUrl = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Transparency")]
 			public int? Transparency
 			{
 				get
@@ -200,6 +186,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Description")]
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OffsetCorner")]
 			public string OffsetCorner
 			{
 				get
@@ -212,15 +212,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string PictureUrl
+			[JsonProperty(PropertyName = "Name")]
+			public string Name
 			{
 				get
 				{
-					return pictureUrl;
+					return name;
 				}
 				set	
 				{
-					pictureUrl = value;
+					name = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TemplateId")]
+			public string TemplateId
+			{
+				get
+				{
+					return templateId;
+				}
+				set	
+				{
+					templateId = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeLiveDomainMapping_LiveDomainModel> liveDomainModels;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "LiveDomainModels")]
 		public List<DescribeLiveDomainMapping_LiveDomainModel> LiveDomainModels
 		{
 			get
@@ -56,22 +58,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDomainMapping_LiveDomainModel
 		{
 
-			private string domainName;
-
 			private string type;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
+			private string domainName;
 
+			[JsonProperty(PropertyName = "Type")]
 			public string Type
 			{
 				get
@@ -81,6 +72,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					type = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeLiveStreamHistoryUserNum_LiveStreamUserNumInfo> liveStreamUserNumInfos;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "LiveStreamUserNumInfos")]
 		public List<DescribeLiveStreamHistoryUserNum_LiveStreamUserNumInfo> LiveStreamUserNumInfos
 		{
 			get
@@ -56,22 +58,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamHistoryUserNum_LiveStreamUserNumInfo
 		{
 
-			private string streamTime;
-
 			private string userNum;
 
-			public string StreamTime
-			{
-				get
-				{
-					return streamTime;
-				}
-				set	
-				{
-					streamTime = value;
-				}
-			}
+			private string streamTime;
 
+			[JsonProperty(PropertyName = "UserNum")]
 			public string UserNum
 			{
 				get
@@ -81,6 +72,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					userNum = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StreamTime")]
+			public string StreamTime
+			{
+				get
+				{
+					return streamTime;
+				}
+				set	
+				{
+					streamTime = value;
 				}
 			}
 		}

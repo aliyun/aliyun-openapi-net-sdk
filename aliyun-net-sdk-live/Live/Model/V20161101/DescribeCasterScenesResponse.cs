@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,24 +25,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeCasterScenesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? total;
+
+		private string requestId;
 
 		private List<DescribeCasterScenes_Scene> sceneList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Total")]
 		public int? Total
 		{
 			get
@@ -55,6 +44,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "SceneList")]
 		public List<DescribeCasterScenes_Scene> SceneList
 		{
 			get
@@ -70,96 +73,25 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeCasterScenes_Scene
 		{
 
+			private int? status;
+
+			private string layoutId;
+
+			private string outputType;
+
+			private string rtsUrl;
+
 			private string sceneId;
 
 			private string sceneName;
 
-			private string outputType;
-
-			private string layoutId;
-
 			private string streamUrl;
-
-			private string rtsUrl;
-
-			private int? status;
 
 			private List<DescribeCasterScenes_StreamInfo> streamInfos;
 
 			private List<string> componentIds;
 
-			public string SceneId
-			{
-				get
-				{
-					return sceneId;
-				}
-				set	
-				{
-					sceneId = value;
-				}
-			}
-
-			public string SceneName
-			{
-				get
-				{
-					return sceneName;
-				}
-				set	
-				{
-					sceneName = value;
-				}
-			}
-
-			public string OutputType
-			{
-				get
-				{
-					return outputType;
-				}
-				set	
-				{
-					outputType = value;
-				}
-			}
-
-			public string LayoutId
-			{
-				get
-				{
-					return layoutId;
-				}
-				set	
-				{
-					layoutId = value;
-				}
-			}
-
-			public string StreamUrl
-			{
-				get
-				{
-					return streamUrl;
-				}
-				set	
-				{
-					streamUrl = value;
-				}
-			}
-
-			public string RtsUrl
-			{
-				get
-				{
-					return rtsUrl;
-				}
-				set	
-				{
-					rtsUrl = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Status")]
 			public int? Status
 			{
 				get
@@ -172,6 +104,85 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "LayoutId")]
+			public string LayoutId
+			{
+				get
+				{
+					return layoutId;
+				}
+				set	
+				{
+					layoutId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OutputType")]
+			public string OutputType
+			{
+				get
+				{
+					return outputType;
+				}
+				set	
+				{
+					outputType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RtsUrl")]
+			public string RtsUrl
+			{
+				get
+				{
+					return rtsUrl;
+				}
+				set	
+				{
+					rtsUrl = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SceneId")]
+			public string SceneId
+			{
+				get
+				{
+					return sceneId;
+				}
+				set	
+				{
+					sceneId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SceneName")]
+			public string SceneName
+			{
+				get
+				{
+					return sceneName;
+				}
+				set	
+				{
+					sceneName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StreamUrl")]
+			public string StreamUrl
+			{
+				get
+				{
+					return streamUrl;
+				}
+				set	
+				{
+					streamUrl = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StreamInfos")]
 			public List<DescribeCasterScenes_StreamInfo> StreamInfos
 			{
 				get
@@ -184,6 +195,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "ComponentIds")]
 			public List<string> ComponentIds
 			{
 				get
@@ -199,24 +211,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeCasterScenes_StreamInfo
 			{
 
-				private string transcodeConfig;
-
 				private string videoFormat;
 
 				private string outputStreamUrl;
 
-				public string TranscodeConfig
-				{
-					get
-					{
-						return transcodeConfig;
-					}
-					set	
-					{
-						transcodeConfig = value;
-					}
-				}
+				private string transcodeConfig;
 
+				[JsonProperty(PropertyName = "VideoFormat")]
 				public string VideoFormat
 				{
 					get
@@ -229,6 +230,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
+				[JsonProperty(PropertyName = "OutputStreamUrl")]
 				public string OutputStreamUrl
 				{
 					get
@@ -238,6 +240,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						outputStreamUrl = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "TranscodeConfig")]
+				public string TranscodeConfig
+				{
+					get
+					{
+						return transcodeConfig;
+					}
+					set	
+					{
+						transcodeConfig = value;
 					}
 				}
 			}

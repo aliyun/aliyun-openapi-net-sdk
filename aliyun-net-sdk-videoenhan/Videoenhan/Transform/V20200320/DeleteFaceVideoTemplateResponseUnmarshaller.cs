@@ -31,9 +31,9 @@ namespace Aliyun.Acs.videoenhan.Transform.V20200320
 			DeleteFaceVideoTemplateResponse deleteFaceVideoTemplateResponse = new DeleteFaceVideoTemplateResponse();
 
 			deleteFaceVideoTemplateResponse.HttpResponse = _ctx.HttpResponse;
-			deleteFaceVideoTemplateResponse.Message = _ctx.StringValue("DeleteFaceVideoTemplate.Message");
 			deleteFaceVideoTemplateResponse.RequestId = _ctx.StringValue("DeleteFaceVideoTemplate.RequestId");
 			deleteFaceVideoTemplateResponse.Code = _ctx.StringValue("DeleteFaceVideoTemplate.Code");
+			deleteFaceVideoTemplateResponse.Message = _ctx.StringValue("DeleteFaceVideoTemplate.Message");
         
 			return deleteFaceVideoTemplateResponse;
         }

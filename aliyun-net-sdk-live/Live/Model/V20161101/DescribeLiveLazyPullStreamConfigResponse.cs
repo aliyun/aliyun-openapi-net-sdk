@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeLiveLazyPullStreamConfig_LiveLazyPullConfig> liveLazyPullConfigList;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "LiveLazyPullConfigList")]
 		public List<DescribeLiveLazyPullStreamConfig_LiveLazyPullConfig> LiveLazyPullConfigList
 		{
 			get
@@ -56,34 +58,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveLazyPullStreamConfig_LiveLazyPullConfig
 		{
 
-			private string domainName;
-
 			private string appName;
 
-			private string pullDomainName;
+			private string pullArgs;
 
 			private string pullAppName;
 
 			private string pullProtocol;
 
-			private string pullAuthType;
-
 			private string pullAuthKey;
 
-			private string pullArgs;
+			private string pullDomainName;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
+			private string domainName;
 
+			private string pullAuthType;
+
+			[JsonProperty(PropertyName = "AppName")]
 			public string AppName
 			{
 				get
@@ -96,18 +87,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string PullDomainName
+			[JsonProperty(PropertyName = "PullArgs")]
+			public string PullArgs
 			{
 				get
 				{
-					return pullDomainName;
+					return pullArgs;
 				}
 				set	
 				{
-					pullDomainName = value;
+					pullArgs = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "PullAppName")]
 			public string PullAppName
 			{
 				get
@@ -120,6 +113,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "PullProtocol")]
 			public string PullProtocol
 			{
 				get
@@ -132,18 +126,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string PullAuthType
-			{
-				get
-				{
-					return pullAuthType;
-				}
-				set	
-				{
-					pullAuthType = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "PullAuthKey")]
 			public string PullAuthKey
 			{
 				get
@@ -156,15 +139,42 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string PullArgs
+			[JsonProperty(PropertyName = "PullDomainName")]
+			public string PullDomainName
 			{
 				get
 				{
-					return pullArgs;
+					return pullDomainName;
 				}
 				set	
 				{
-					pullArgs = value;
+					pullDomainName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PullAuthType")]
+			public string PullAuthType
+			{
+				get
+				{
+					return pullAuthType;
+				}
+				set	
+				{
+					pullAuthType = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,38 +25,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeRoomListResponse : AcsResponse
 	{
 
+		private int? totalPage;
+
 		private string requestId;
 
 		private int? totalNum;
 
-		private int? totalPage;
-
 		private List<DescribeRoomList_Room> roomList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? TotalNum
-		{
-			get
-			{
-				return totalNum;
-			}
-			set	
-			{
-				totalNum = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "TotalPage")]
 		public int? TotalPage
 		{
 			get
@@ -69,6 +46,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TotalNum")]
+		public int? TotalNum
+		{
+			get
+			{
+				return totalNum;
+			}
+			set	
+			{
+				totalNum = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RoomList")]
 		public List<DescribeRoomList_Room> RoomList
 		{
 			get
@@ -84,52 +88,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeRoomList_Room
 		{
 
-			private string roomId;
+			private string forbidStream;
 
 			private string anchorId;
 
-			private int? roomStatus;
-
-			private string forbidStream;
+			private string roomId;
 
 			private string createTime;
 
-			public string RoomId
-			{
-				get
-				{
-					return roomId;
-				}
-				set	
-				{
-					roomId = value;
-				}
-			}
+			private int? roomStatus;
 
-			public string AnchorId
-			{
-				get
-				{
-					return anchorId;
-				}
-				set	
-				{
-					anchorId = value;
-				}
-			}
-
-			public int? RoomStatus
-			{
-				get
-				{
-					return roomStatus;
-				}
-				set	
-				{
-					roomStatus = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "ForbidStream")]
 			public string ForbidStream
 			{
 				get
@@ -142,6 +111,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "AnchorId")]
+			public string AnchorId
+			{
+				get
+				{
+					return anchorId;
+				}
+				set	
+				{
+					anchorId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RoomId")]
+			public string RoomId
+			{
+				get
+				{
+					return roomId;
+				}
+				set	
+				{
+					roomId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CreateTime")]
 			public string CreateTime
 			{
 				get
@@ -151,6 +147,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					createTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RoomStatus")]
+			public int? RoomStatus
+			{
+				get
+				{
+					return roomStatus;
+				}
+				set	
+				{
+					roomStatus = value;
 				}
 			}
 		}

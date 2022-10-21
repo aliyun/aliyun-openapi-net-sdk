@@ -31,17 +31,17 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveUserBillPredictionResponse describeLiveUserBillPredictionResponse = new DescribeLiveUserBillPredictionResponse();
 
 			describeLiveUserBillPredictionResponse.HttpResponse = _ctx.HttpResponse;
-			describeLiveUserBillPredictionResponse.RequestId = _ctx.StringValue("DescribeLiveUserBillPrediction.RequestId");
-			describeLiveUserBillPredictionResponse.StartTime = _ctx.StringValue("DescribeLiveUserBillPrediction.StartTime");
 			describeLiveUserBillPredictionResponse.EndTime = _ctx.StringValue("DescribeLiveUserBillPrediction.EndTime");
+			describeLiveUserBillPredictionResponse.StartTime = _ctx.StringValue("DescribeLiveUserBillPrediction.StartTime");
+			describeLiveUserBillPredictionResponse.RequestId = _ctx.StringValue("DescribeLiveUserBillPrediction.RequestId");
 			describeLiveUserBillPredictionResponse.BillType = _ctx.StringValue("DescribeLiveUserBillPrediction.BillType");
 
 			List<DescribeLiveUserBillPredictionResponse.DescribeLiveUserBillPrediction_BillPredictionDataItem> describeLiveUserBillPredictionResponse_billPredictionData = new List<DescribeLiveUserBillPredictionResponse.DescribeLiveUserBillPrediction_BillPredictionDataItem>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveUserBillPrediction.BillPredictionData.Length"); i++) {
 				DescribeLiveUserBillPredictionResponse.DescribeLiveUserBillPrediction_BillPredictionDataItem billPredictionDataItem = new DescribeLiveUserBillPredictionResponse.DescribeLiveUserBillPrediction_BillPredictionDataItem();
 				billPredictionDataItem._Value = _ctx.FloatValue("DescribeLiveUserBillPrediction.BillPredictionData["+ i +"].Value");
-				billPredictionDataItem.Area = _ctx.StringValue("DescribeLiveUserBillPrediction.BillPredictionData["+ i +"].Area");
 				billPredictionDataItem.TimeStp = _ctx.StringValue("DescribeLiveUserBillPrediction.BillPredictionData["+ i +"].TimeStp");
+				billPredictionDataItem.Area = _ctx.StringValue("DescribeLiveUserBillPrediction.BillPredictionData["+ i +"].Area");
 
 				describeLiveUserBillPredictionResponse_billPredictionData.Add(billPredictionDataItem);
 			}

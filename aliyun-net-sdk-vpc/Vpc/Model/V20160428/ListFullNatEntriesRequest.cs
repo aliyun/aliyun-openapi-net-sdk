@@ -54,6 +54,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private List<string> fullNatEntryNamess = new List<string>(){ };
 
+		private string natGatewayId;
+
 		private string resourceOwnerAccount;
 
 		private string ipProtocol;
@@ -152,6 +154,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set
 			{
 				fullNatEntryNamess = value;
+			}
+		}
+
+		public string NatGatewayId
+		{
+			get
+			{
+				return natGatewayId;
+			}
+			set	
+			{
+				natGatewayId = value;
+				DictionaryUtil.Add(QueryParameters, "NatGatewayId", value);
 			}
 		}
 

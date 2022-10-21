@@ -42,13 +42,13 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 
 		private float? bH;
 
-		private string videoUrl;
-
 		private float? bW;
 
 		private float? bX;
 
 		private float? bY;
+
+		private string videoUrl;
 
 		public float? BH
 		{
@@ -60,19 +60,6 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			{
 				bH = value;
 				DictionaryUtil.Add(BodyParameters, "BH", value.ToString());
-			}
-		}
-
-		public string VideoUrl
-		{
-			get
-			{
-				return videoUrl;
-			}
-			set	
-			{
-				videoUrl = value;
-				DictionaryUtil.Add(BodyParameters, "VideoUrl", value);
 			}
 		}
 
@@ -112,6 +99,19 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			{
 				bY = value;
 				DictionaryUtil.Add(BodyParameters, "BY", value.ToString());
+			}
+		}
+
+		public string VideoUrl
+		{
+			get
+			{
+				return videoUrl;
+			}
+			set	
+			{
+				videoUrl = value;
+				DictionaryUtil.Add(BodyParameters, "VideoUrl", value);
 			}
 		}
 

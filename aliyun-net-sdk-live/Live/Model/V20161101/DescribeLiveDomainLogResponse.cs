@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,24 +25,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveDomainLogResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string domainName;
+
+		private string requestId;
 
 		private List<DescribeLiveDomainLog_DomainLogDetail> domainLogDetails;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "DomainName")]
 		public string DomainName
 		{
 			get
@@ -55,6 +44,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DomainLogDetails")]
 		public List<DescribeLiveDomainLog_DomainLogDetail> DomainLogDetails
 		{
 			get
@@ -76,6 +79,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private DescribeLiveDomainLog_PageInfos pageInfos;
 
+			[JsonProperty(PropertyName = "LogCount")]
 			public long? LogCount
 			{
 				get
@@ -88,6 +92,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "LogInfos")]
 			public List<DescribeLiveDomainLog_LogInfoDetail> LogInfos
 			{
 				get
@@ -100,6 +105,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "PageInfos")]
 			public DescribeLiveDomainLog_PageInfos PageInfos
 			{
 				get
@@ -115,40 +121,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeLiveDomainLog_LogInfoDetail
 			{
 
-				private string logName;
-
-				private string logPath;
+				private string endTime;
 
 				private long? logSize;
 
 				private string startTime;
 
-				private string endTime;
+				private string logName;
 
-				public string LogName
+				private string logPath;
+
+				[JsonProperty(PropertyName = "EndTime")]
+				public string EndTime
 				{
 					get
 					{
-						return logName;
+						return endTime;
 					}
 					set	
 					{
-						logName = value;
+						endTime = value;
 					}
 				}
 
-				public string LogPath
-				{
-					get
-					{
-						return logPath;
-					}
-					set	
-					{
-						logPath = value;
-					}
-				}
-
+				[JsonProperty(PropertyName = "LogSize")]
 				public long? LogSize
 				{
 					get
@@ -161,6 +157,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
+				[JsonProperty(PropertyName = "StartTime")]
 				public string StartTime
 				{
 					get
@@ -173,15 +170,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				public string EndTime
+				[JsonProperty(PropertyName = "LogName")]
+				public string LogName
 				{
 					get
 					{
-						return endTime;
+						return logName;
 					}
 					set	
 					{
-						endTime = value;
+						logName = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "LogPath")]
+				public string LogPath
+				{
+					get
+					{
+						return logPath;
+					}
+					set	
+					{
+						logPath = value;
 					}
 				}
 			}
@@ -195,6 +206,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private long? total;
 
+				[JsonProperty(PropertyName = "PageIndex")]
 				public long? PageIndex
 				{
 					get
@@ -207,6 +219,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
+				[JsonProperty(PropertyName = "PageSize")]
 				public long? PageSize
 				{
 					get
@@ -219,6 +232,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
+				[JsonProperty(PropertyName = "Total")]
 				public long? Total
 				{
 					get

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeLiveTagResources_TagResource> tagResources;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "TagResources")]
 		public List<DescribeLiveTagResources_TagResource> TagResources
 		{
 			get
@@ -60,6 +62,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private List<DescribeLiveTagResources_TagItem> tag;
 
+			[JsonProperty(PropertyName = "ResourceId")]
 			public string ResourceId
 			{
 				get
@@ -72,6 +75,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Tag")]
 			public List<DescribeLiveTagResources_TagItem> Tag
 			{
 				get
@@ -91,6 +95,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private string _value;
 
+				[JsonProperty(PropertyName = "Key")]
 				public string Key
 				{
 					get
@@ -103,6 +108,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
+				[JsonProperty(PropertyName = "_Value")]
 				public string _Value
 				{
 					get

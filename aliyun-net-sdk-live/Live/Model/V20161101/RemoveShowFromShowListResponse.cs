@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string showId;
 
+		private string successfulShowIds;
+
+		private string failedList;
+
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +46,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ShowId")]
 		public string ShowId
 		{
 			get
@@ -50,6 +56,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				showId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "SuccessfulShowIds")]
+		public string SuccessfulShowIds
+		{
+			get
+			{
+				return successfulShowIds;
+			}
+			set	
+			{
+				successfulShowIds = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "FailedList")]
+		public string FailedList
+		{
+			get
+			{
+				return failedList;
+			}
+			set	
+			{
+				failedList = value;
 			}
 		}
 	}

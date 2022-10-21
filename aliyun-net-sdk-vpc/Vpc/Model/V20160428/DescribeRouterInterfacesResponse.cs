@@ -174,6 +174,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string ipv6Status;
 
+			private bool? fastLinkMode;
+
 			public string ReservationActiveTime
 			{
 				get
@@ -627,6 +629,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					ipv6Status = value;
+				}
+			}
+
+			public bool? FastLinkMode
+			{
+				get
+				{
+					return fastLinkMode;
+				}
+				set	
+				{
+					fastLinkMode = value;
 				}
 			}
 		}

@@ -43,6 +43,10 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string couponNo;
 
+		private bool? shardDirect;
+
+		private string accountName;
+
 		private string securityToken;
 
 		private string dBInstanceId;
@@ -58,6 +62,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string accountPassword;
 
 		public long? ResourceOwnerId
 		{
@@ -108,6 +114,32 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				couponNo = value;
 				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
+			}
+		}
+
+		public bool? ShardDirect
+		{
+			get
+			{
+				return shardDirect;
+			}
+			set	
+			{
+				shardDirect = value;
+				DictionaryUtil.Add(QueryParameters, "ShardDirect", value.ToString());
+			}
+		}
+
+		public string AccountName
+		{
+			get
+			{
+				return accountName;
+			}
+			set	
+			{
+				accountName = value;
+				DictionaryUtil.Add(QueryParameters, "AccountName", value);
 			}
 		}
 
@@ -212,6 +244,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccountPassword
+		{
+			get
+			{
+				return accountPassword;
+			}
+			set	
+			{
+				accountPassword = value;
+				DictionaryUtil.Add(QueryParameters, "AccountPassword", value);
 			}
 		}
 

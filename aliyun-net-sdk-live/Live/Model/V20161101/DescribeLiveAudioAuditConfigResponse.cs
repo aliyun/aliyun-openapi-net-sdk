@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeLiveAudioAuditConfig_LiveAudioAuditConfig> liveAudioAuditConfigList;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "LiveAudioAuditConfigList")]
 		public List<DescribeLiveAudioAuditConfig_LiveAudioAuditConfig> LiveAudioAuditConfigList
 		{
 			get
@@ -56,9 +58,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveAudioAuditConfig_LiveAudioAuditConfig
 		{
 
-			private string domainName;
-
 			private string appName;
+
+			private string domainName;
 
 			private string streamName;
 
@@ -66,18 +68,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private List<string> scenes;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "AppName")]
 			public string AppName
 			{
 				get
@@ -90,6 +81,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StreamName")]
 			public string StreamName
 			{
 				get
@@ -102,6 +107,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "BizType")]
 			public string BizType
 			{
 				get
@@ -114,6 +120,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Scenes")]
 			public List<string> Scenes
 			{
 				get

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,54 +25,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveDomainPvUvDataResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string domainName;
+		private string endTime;
 
 		private string startTime;
 
-		private string endTime;
+		private string requestId;
+
+		private string domainName;
 
 		private string dataInterval;
 
 		private List<DescribeLiveDomainPvUvData_PvUvDataInfo> pvUvDataInfos;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "EndTime")]
 		public string EndTime
 		{
 			get
@@ -85,6 +50,46 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DomainName")]
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DataInterval")]
 		public string DataInterval
 		{
 			get
@@ -97,6 +102,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PvUvDataInfos")]
 		public List<DescribeLiveDomainPvUvData_PvUvDataInfo> PvUvDataInfos
 		{
 			get
@@ -114,10 +120,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string pV;
 
-			private string uV;
-
 			private string timeStamp;
 
+			private string uV;
+
+			[JsonProperty(PropertyName = "PV")]
 			public string PV
 			{
 				get
@@ -130,18 +137,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string UV
-			{
-				get
-				{
-					return uV;
-				}
-				set	
-				{
-					uV = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "TimeStamp")]
 			public string TimeStamp
 			{
 				get
@@ -151,6 +147,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					timeStamp = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "UV")]
+			public string UV
+			{
+				get
+				{
+					return uV;
+				}
+				set	
+				{
+					uV = value;
 				}
 			}
 		}

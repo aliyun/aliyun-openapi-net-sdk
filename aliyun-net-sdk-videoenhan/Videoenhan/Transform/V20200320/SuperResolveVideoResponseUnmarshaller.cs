@@ -32,6 +32,8 @@ namespace Aliyun.Acs.videoenhan.Transform.V20200320
 
 			superResolveVideoResponse.HttpResponse = _ctx.HttpResponse;
 			superResolveVideoResponse.RequestId = _ctx.StringValue("SuperResolveVideo.RequestId");
+			superResolveVideoResponse.Code = _ctx.StringValue("SuperResolveVideo.Code");
+			superResolveVideoResponse.Message = _ctx.StringValue("SuperResolveVideo.Message");
 
 			SuperResolveVideoResponse.SuperResolveVideo_Data data = new SuperResolveVideoResponse.SuperResolveVideo_Data();
 			data.VideoUrl = _ctx.StringValue("SuperResolveVideo.Data.VideoUrl");

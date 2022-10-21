@@ -42,6 +42,10 @@ namespace Aliyun.Acs.eais.Model.V20190624
 
 		private string clientToken;
 
+		private string securityGroupId;
+
+		private string vSwitchId;
+
 		private string instanceName;
 
 		private string instanceType;
@@ -56,6 +60,32 @@ namespace Aliyun.Acs.eais.Model.V20190624
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string SecurityGroupId
+		{
+			get
+			{
+				return securityGroupId;
+			}
+			set	
+			{
+				securityGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
+			}
+		}
+
+		public string VSwitchId
+		{
+			get
+			{
+				return vSwitchId;
+			}
+			set	
+			{
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
 			}
 		}
 

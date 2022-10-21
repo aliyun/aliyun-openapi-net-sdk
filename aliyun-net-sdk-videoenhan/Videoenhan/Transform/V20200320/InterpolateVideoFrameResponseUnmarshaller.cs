@@ -32,6 +32,8 @@ namespace Aliyun.Acs.videoenhan.Transform.V20200320
 
 			interpolateVideoFrameResponse.HttpResponse = _ctx.HttpResponse;
 			interpolateVideoFrameResponse.RequestId = _ctx.StringValue("InterpolateVideoFrame.RequestId");
+			interpolateVideoFrameResponse.Code = _ctx.StringValue("InterpolateVideoFrame.Code");
+			interpolateVideoFrameResponse.Message = _ctx.StringValue("InterpolateVideoFrame.Message");
 
 			InterpolateVideoFrameResponse.InterpolateVideoFrame_Data data = new InterpolateVideoFrameResponse.InterpolateVideoFrame_Data();
 			data.VideoURL = _ctx.StringValue("InterpolateVideoFrame.Data.VideoURL");

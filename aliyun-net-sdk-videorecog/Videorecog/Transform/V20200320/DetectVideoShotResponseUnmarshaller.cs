@@ -32,6 +32,8 @@ namespace Aliyun.Acs.videorecog.Transform.V20200320
 
 			detectVideoShotResponse.HttpResponse = _ctx.HttpResponse;
 			detectVideoShotResponse.RequestId = _ctx.StringValue("DetectVideoShot.RequestId");
+			detectVideoShotResponse.Message = _ctx.StringValue("DetectVideoShot.Message");
+			detectVideoShotResponse.Code = _ctx.StringValue("DetectVideoShot.Code");
 
 			DetectVideoShotResponse.DetectVideoShot_Data data = new DetectVideoShotResponse.DetectVideoShot_Data();
 

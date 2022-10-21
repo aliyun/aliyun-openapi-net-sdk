@@ -37,13 +37,13 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 			List<OnsRegionListResponse.OnsRegionList_RegionDo> onsRegionListResponse_data = new List<OnsRegionListResponse.OnsRegionList_RegionDo>();
 			for (int i = 0; i < _ctx.Length("OnsRegionList.Data.Length"); i++) {
 				OnsRegionListResponse.OnsRegionList_RegionDo regionDo = new OnsRegionListResponse.OnsRegionList_RegionDo();
-				regionDo.Id = _ctx.LongValue("OnsRegionList.Data["+ i +"].Id");
-				regionDo.OnsRegionId = _ctx.StringValue("OnsRegionList.Data["+ i +"].OnsRegionId");
+				regionDo.UpdateTime = _ctx.LongValue("OnsRegionList.Data["+ i +"].UpdateTime");
 				regionDo.RegionName = _ctx.StringValue("OnsRegionList.Data["+ i +"].RegionName");
-				regionDo.ChannelId = _ctx.IntegerValue("OnsRegionList.Data["+ i +"].ChannelId");
 				regionDo.ChannelName = _ctx.StringValue("OnsRegionList.Data["+ i +"].ChannelName");
 				regionDo.CreateTime = _ctx.LongValue("OnsRegionList.Data["+ i +"].CreateTime");
-				regionDo.UpdateTime = _ctx.LongValue("OnsRegionList.Data["+ i +"].UpdateTime");
+				regionDo.ChannelId = _ctx.IntegerValue("OnsRegionList.Data["+ i +"].ChannelId");
+				regionDo.Id = _ctx.LongValue("OnsRegionList.Data["+ i +"].Id");
+				regionDo.OnsRegionId = _ctx.StringValue("OnsRegionList.Data["+ i +"].OnsRegionId");
 
 				onsRegionListResponse_data.Add(regionDo);
 			}

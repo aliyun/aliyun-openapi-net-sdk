@@ -56,6 +56,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? ownerId;
 
+		private List<string> tagss = new List<string>(){ };
+
 		private List<Filter> filters = new List<Filter>(){ };
 
 		public long? ResourceOwnerId
@@ -162,6 +164,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public List<string> Tagss
+		{
+			get
+			{
+				return tagss;
+			}
+
+			set
+			{
+				tagss = value;
+				if(tagss != null)
+				{
+					for (int depth1 = 0; depth1 < tagss.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tags." + (depth1 + 1), tagss[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tags." + (depth1 + 1), tagss[depth1]);
+					}
+				}
+			}
+		}
+
 		public List<Filter> Filters
 		{
 			get
@@ -178,6 +201,38 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					{
 						DictionaryUtil.Add(QueryParameters,"Filter." + (depth1 + 1), filters[depth1]);
 					}
+				}
+			}
+		}
+
+		public class Tags
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
 				}
 			}
 		}

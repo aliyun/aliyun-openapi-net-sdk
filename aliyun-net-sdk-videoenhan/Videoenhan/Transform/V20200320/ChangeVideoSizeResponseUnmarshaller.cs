@@ -32,10 +32,12 @@ namespace Aliyun.Acs.videoenhan.Transform.V20200320
 
 			changeVideoSizeResponse.HttpResponse = _ctx.HttpResponse;
 			changeVideoSizeResponse.RequestId = _ctx.StringValue("ChangeVideoSize.RequestId");
+			changeVideoSizeResponse.Code = _ctx.StringValue("ChangeVideoSize.Code");
+			changeVideoSizeResponse.Message = _ctx.StringValue("ChangeVideoSize.Message");
 
 			ChangeVideoSizeResponse.ChangeVideoSize_Data data = new ChangeVideoSizeResponse.ChangeVideoSize_Data();
-			data.VideoUrl = _ctx.StringValue("ChangeVideoSize.Data.VideoUrl");
 			data.VideoCoverUrl = _ctx.StringValue("ChangeVideoSize.Data.VideoCoverUrl");
+			data.VideoUrl = _ctx.StringValue("ChangeVideoSize.Data.VideoUrl");
 			changeVideoSizeResponse.Data = data;
         
 			return changeVideoSizeResponse;

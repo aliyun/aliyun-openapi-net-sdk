@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<DescribeLiveStreamRecordContent_RecordContentInfo> recordContentInfoList;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RecordContentInfoList")]
 		public List<DescribeLiveStreamRecordContent_RecordContentInfo> RecordContentInfoList
 		{
 			get
@@ -56,66 +58,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamRecordContent_RecordContentInfo
 		{
 
-			private string ossEndpoint;
+			private string endTime;
+
+			private string startTime;
+
+			private float? duration;
 
 			private string ossBucket;
 
 			private string ossObjectPrefix;
 
-			private string startTime;
+			private string ossEndpoint;
 
-			private string endTime;
-
-			private float? duration;
-
-			public string OssEndpoint
-			{
-				get
-				{
-					return ossEndpoint;
-				}
-				set	
-				{
-					ossEndpoint = value;
-				}
-			}
-
-			public string OssBucket
-			{
-				get
-				{
-					return ossBucket;
-				}
-				set	
-				{
-					ossBucket = value;
-				}
-			}
-
-			public string OssObjectPrefix
-			{
-				get
-				{
-					return ossObjectPrefix;
-				}
-				set	
-				{
-					ossObjectPrefix = value;
-				}
-			}
-
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "EndTime")]
 			public string EndTime
 			{
 				get
@@ -128,6 +83,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "StartTime")]
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Duration")]
 			public float? Duration
 			{
 				get
@@ -137,6 +106,45 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					duration = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OssBucket")]
+			public string OssBucket
+			{
+				get
+				{
+					return ossBucket;
+				}
+				set	
+				{
+					ossBucket = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OssObjectPrefix")]
+			public string OssObjectPrefix
+			{
+				get
+				{
+					return ossObjectPrefix;
+				}
+				set	
+				{
+					ossObjectPrefix = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OssEndpoint")]
+			public string OssEndpoint
+			{
+				get
+				{
+					return ossEndpoint;
+				}
+				set	
+				{
+					ossEndpoint = value;
 				}
 			}
 		}

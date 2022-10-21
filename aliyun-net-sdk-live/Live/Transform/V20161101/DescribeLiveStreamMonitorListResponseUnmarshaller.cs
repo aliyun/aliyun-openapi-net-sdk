@@ -31,34 +31,34 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveStreamMonitorListResponse describeLiveStreamMonitorListResponse = new DescribeLiveStreamMonitorListResponse();
 
 			describeLiveStreamMonitorListResponse.HttpResponse = _ctx.HttpResponse;
-			describeLiveStreamMonitorListResponse.RequestId = _ctx.StringValue("DescribeLiveStreamMonitorList.RequestId");
 			describeLiveStreamMonitorListResponse.Total = _ctx.IntegerValue("DescribeLiveStreamMonitorList.Total");
+			describeLiveStreamMonitorListResponse.RequestId = _ctx.StringValue("DescribeLiveStreamMonitorList.RequestId");
 
 			List<DescribeLiveStreamMonitorListResponse.DescribeLiveStreamMonitorList_LiveStreamMonitorInfo> describeLiveStreamMonitorListResponse_liveStreamMonitorList = new List<DescribeLiveStreamMonitorListResponse.DescribeLiveStreamMonitorList_LiveStreamMonitorInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveStreamMonitorList.LiveStreamMonitorList.Length"); i++) {
 				DescribeLiveStreamMonitorListResponse.DescribeLiveStreamMonitorList_LiveStreamMonitorInfo liveStreamMonitorInfo = new DescribeLiveStreamMonitorListResponse.DescribeLiveStreamMonitorList_LiveStreamMonitorInfo();
+				liveStreamMonitorInfo.Status = _ctx.IntegerValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].Status");
+				liveStreamMonitorInfo.StartTime = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].StartTime");
 				liveStreamMonitorInfo.MonitorId = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].MonitorId");
-				liveStreamMonitorInfo.MonitorName = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].MonitorName");
 				liveStreamMonitorInfo.Domain = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].Domain");
 				liveStreamMonitorInfo.OutputTemplate = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].OutputTemplate");
-				liveStreamMonitorInfo.Status = _ctx.IntegerValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].Status");
 				liveStreamMonitorInfo.Region = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].Region");
 				liveStreamMonitorInfo.AudioFrom = _ctx.IntegerValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].AudioFrom");
-				liveStreamMonitorInfo.StartTime = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].StartTime");
+				liveStreamMonitorInfo.MonitorName = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].MonitorName");
 				liveStreamMonitorInfo.StopTime = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].StopTime");
 
 				DescribeLiveStreamMonitorListResponse.DescribeLiveStreamMonitorList_LiveStreamMonitorInfo.DescribeLiveStreamMonitorList_OutputUrls outputUrls = new DescribeLiveStreamMonitorListResponse.DescribeLiveStreamMonitorList_LiveStreamMonitorInfo.DescribeLiveStreamMonitorList_OutputUrls();
-				outputUrls.RtmpUrl = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].OutputUrls.RtmpUrl");
 				outputUrls.FlvUrl = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].OutputUrls.FlvUrl");
+				outputUrls.RtmpUrl = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].OutputUrls.RtmpUrl");
 				liveStreamMonitorInfo.OutputUrls = outputUrls;
 
 				List<DescribeLiveStreamMonitorListResponse.DescribeLiveStreamMonitorList_LiveStreamMonitorInfo.DescribeLiveStreamMonitorList_InputConfig> liveStreamMonitorInfo_inputList = new List<DescribeLiveStreamMonitorListResponse.DescribeLiveStreamMonitorList_LiveStreamMonitorInfo.DescribeLiveStreamMonitorList_InputConfig>();
 				for (int j = 0; j < _ctx.Length("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].InputList.Length"); j++) {
 					DescribeLiveStreamMonitorListResponse.DescribeLiveStreamMonitorList_LiveStreamMonitorInfo.DescribeLiveStreamMonitorList_InputConfig inputConfig = new DescribeLiveStreamMonitorListResponse.DescribeLiveStreamMonitorList_LiveStreamMonitorInfo.DescribeLiveStreamMonitorList_InputConfig();
 					inputConfig.Index = _ctx.IntegerValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].InputList["+ j +"].Index");
+					inputConfig.InputUrl = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].InputList["+ j +"].InputUrl");
 					inputConfig.LayoutId = _ctx.IntegerValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].InputList["+ j +"].LayoutId");
 					inputConfig.StreamName = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].InputList["+ j +"].StreamName");
-					inputConfig.InputUrl = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].InputList["+ j +"].InputUrl");
 
 					DescribeLiveStreamMonitorListResponse.DescribeLiveStreamMonitorList_LiveStreamMonitorInfo.DescribeLiveStreamMonitorList_InputConfig.DescribeLiveStreamMonitorList_LayoutConfig layoutConfig = new DescribeLiveStreamMonitorListResponse.DescribeLiveStreamMonitorList_LiveStreamMonitorInfo.DescribeLiveStreamMonitorList_InputConfig.DescribeLiveStreamMonitorList_LayoutConfig();
 					layoutConfig.FillMode = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].InputList["+ j +"].LayoutConfig.FillMode");
