@@ -120,6 +120,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private string serviceMode;
 
+			private bool? autoPublishRouteEnabled;
+
 			private string chargeType;
 
 			private List<ListTransitRouterVpcAttachments_ZoneMapping> zoneMappings;
@@ -253,6 +255,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					serviceMode = value;
+				}
+			}
+
+			public bool? AutoPublishRouteEnabled
+			{
+				get
+				{
+					return autoPublishRouteEnabled;
+				}
+				set	
+				{
+					autoPublishRouteEnabled = value;
 				}
 			}
 

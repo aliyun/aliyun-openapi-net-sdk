@@ -1,3 +1,10 @@
+2022-10-21 Version: 1.0.27
+- Update ListTransitRouterVpnAttachments fix ResourceType .
+- Update CreateCenBandwidthPackage support service type .
+- Update DescribeCenBandwidthPackages support service type .
+- Update ModifyCenBandwidthpackageSpec support service type .
+- Update CreateTransitRouterVpcAttachment support  at most 10 avaliable zones.
+
 2022-10-19 Version: 3.7.3
 - Update by SDK platform.
 

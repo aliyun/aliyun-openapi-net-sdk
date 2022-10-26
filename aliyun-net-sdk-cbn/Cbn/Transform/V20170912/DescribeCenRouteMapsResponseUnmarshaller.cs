@@ -58,6 +58,7 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 				routeMap.NextPriority = _ctx.IntegerValue("DescribeCenRouteMaps.RouteMaps["+ i +"].NextPriority");
 				routeMap.MatchAddressType = _ctx.StringValue("DescribeCenRouteMaps.RouteMaps["+ i +"].MatchAddressType");
 				routeMap.GatewayZoneId = _ctx.StringValue("DescribeCenRouteMaps.RouteMaps["+ i +"].GatewayZoneId");
+				routeMap.GatewayRegionId = _ctx.StringValue("DescribeCenRouteMaps.RouteMaps["+ i +"].GatewayRegionId");
 
 				List<string> routeMap_sourceRegionIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeCenRouteMaps.RouteMaps["+ i +"].SourceRegionIds.Length"); j++) {

@@ -52,6 +52,7 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 				transitRouterMulticastGroup.ResourceType = _ctx.StringValue("ListTransitRouterMulticastGroups.TransitRouterMulticastGroups["+ i +"].ResourceType");
 				transitRouterMulticastGroup.ResourceOwnerId = _ctx.LongValue("ListTransitRouterMulticastGroups.TransitRouterMulticastGroups["+ i +"].ResourceOwnerId");
 				transitRouterMulticastGroup.ResourceId = _ctx.StringValue("ListTransitRouterMulticastGroups.TransitRouterMulticastGroups["+ i +"].ResourceId");
+				transitRouterMulticastGroup.ConnectPeerId = _ctx.StringValue("ListTransitRouterMulticastGroups.TransitRouterMulticastGroups["+ i +"].ConnectPeerId");
 
 				listTransitRouterMulticastGroupsResponse_transitRouterMulticastGroups.Add(transitRouterMulticastGroup);
 			}

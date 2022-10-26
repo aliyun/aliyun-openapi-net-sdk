@@ -116,6 +116,10 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private string transitRouterRouteEntryDescription;
 
+			private bool? operationalMode;
+
+			private string tag;
+
 			public string TransitRouterRouteEntryId
 			{
 				get
@@ -221,6 +225,30 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					transitRouterRouteEntryDescription = value;
+				}
+			}
+
+			public bool? OperationalMode
+			{
+				get
+				{
+					return operationalMode;
+				}
+				set	
+				{
+					operationalMode = value;
+				}
+			}
+
+			public string Tag
+			{
+				get
+				{
+					return tag;
+				}
+				set	
+				{
+					tag = value;
 				}
 			}
 		}

@@ -136,6 +136,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private string gatewayZoneId;
 
+			private string gatewayRegionId;
+
 			private List<string> sourceRegionIds;
 
 			private List<string> sourceChildInstanceTypes;
@@ -393,6 +395,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					gatewayZoneId = value;
+				}
+			}
+
+			public string GatewayRegionId
+			{
+				get
+				{
+					return gatewayRegionId;
+				}
+				set	
+				{
+					gatewayRegionId = value;
 				}
 			}
 

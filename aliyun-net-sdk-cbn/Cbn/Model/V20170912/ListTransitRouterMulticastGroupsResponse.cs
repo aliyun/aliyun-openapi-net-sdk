@@ -124,6 +124,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private string resourceId;
 
+			private string connectPeerId;
+
 			public string GroupIpAddress
 			{
 				get
@@ -277,6 +279,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					resourceId = value;
+				}
+			}
+
+			public string ConnectPeerId
+			{
+				get
+				{
+					return connectPeerId;
+				}
+				set	
+				{
+					connectPeerId = value;
 				}
 			}
 		}

@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 				transitRouterRouteEntry.TransitRouterRouteEntryNextHopType = _ctx.StringValue("ListTransitRouterRouteEntries.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryNextHopType");
 				transitRouterRouteEntry.TransitRouterRouteEntryNextHopId = _ctx.StringValue("ListTransitRouterRouteEntries.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryNextHopId");
 				transitRouterRouteEntry.TransitRouterRouteEntryDescription = _ctx.StringValue("ListTransitRouterRouteEntries.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryDescription");
+				transitRouterRouteEntry.OperationalMode = _ctx.BooleanValue("ListTransitRouterRouteEntries.TransitRouterRouteEntries["+ i +"].OperationalMode");
+				transitRouterRouteEntry.Tag = _ctx.StringValue("ListTransitRouterRouteEntries.TransitRouterRouteEntries["+ i +"].Tag");
 
 				listTransitRouterRouteEntriesResponse_transitRouterRouteEntries.Add(transitRouterRouteEntry);
 			}

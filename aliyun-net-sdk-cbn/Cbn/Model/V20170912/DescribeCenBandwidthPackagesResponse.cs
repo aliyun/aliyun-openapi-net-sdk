@@ -140,6 +140,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private string hasReservationData;
 
+			private string serviceType;
+
 			private List<DescribeCenBandwidthPackages_OrginInterRegionBandwidthLimit> orginInterRegionBandwidthLimits;
 
 			private List<DescribeCenBandwidthPackages_Tag> tags;
@@ -395,6 +397,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					hasReservationData = value;
+				}
+			}
+
+			public string ServiceType
+			{
+				get
+				{
+					return serviceType;
+				}
+				set	
+				{
+					serviceType = value;
 				}
 			}
 
