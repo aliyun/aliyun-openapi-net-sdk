@@ -1,3 +1,7 @@
+2022-10-27 Version: 2.16.11
+- Modify DescribeVodUserDomains api.
+- Modify CreateUploadImage api.
+
 2022-10-21 Version: 1.0.27
 - Update ListTransitRouterVpnAttachments fix ResourceType .
 - Update CreateCenBandwidthPackage support service type .

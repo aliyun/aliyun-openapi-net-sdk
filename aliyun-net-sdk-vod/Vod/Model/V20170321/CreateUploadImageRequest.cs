@@ -56,6 +56,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string tags;
 
+		private string originalFileName;
+
 		private string appId;
 
 		public string Description
@@ -159,6 +161,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				tags = value;
 				DictionaryUtil.Add(QueryParameters, "Tags", value);
+			}
+		}
+
+		public string OriginalFileName
+		{
+			get
+			{
+				return originalFileName;
+			}
+			set	
+			{
+				originalFileName = value;
+				DictionaryUtil.Add(QueryParameters, "OriginalFileName", value);
 			}
 		}
 
