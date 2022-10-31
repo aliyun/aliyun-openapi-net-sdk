@@ -28,10 +28,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class JoinMessageGroupRequest : RpcAcsRequest<JoinMessageGroupResponse>
+    public class GetMessageUserInfoRequest : RpcAcsRequest<GetMessageUserInfoResponse>
     {
-        public JoinMessageGroupRequest()
-            : base("live", "2016-11-01", "JoinMessageGroup", "live", "openAPI")
+        public GetMessageUserInfoRequest()
+            : base("live", "2016-11-01", "GetMessageUserInfo", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,83 +41,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private bool? broadCastStatistics;
+		private string cloudUid;
 
-		private string groupId;
-
-		private string userId;
-
-		private string appId;
-
-		private int? broadCastType;
-
-		[JsonProperty(PropertyName = "BroadCastStatistics")]
-		public bool? BroadCastStatistics
+		[JsonProperty(PropertyName = "CloudUid")]
+		public string CloudUid
 		{
 			get
 			{
-				return broadCastStatistics;
+				return cloudUid;
 			}
 			set	
 			{
-				broadCastStatistics = value;
-				DictionaryUtil.Add(BodyParameters, "BroadCastStatistics", value.ToString());
-			}
-		}
-
-		[JsonProperty(PropertyName = "GroupId")]
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(BodyParameters, "GroupId", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "UserId")]
-		public string UserId
-		{
-			get
-			{
-				return userId;
-			}
-			set	
-			{
-				userId = value;
-				DictionaryUtil.Add(BodyParameters, "UserId", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "AppId")]
-		public string AppId
-		{
-			get
-			{
-				return appId;
-			}
-			set	
-			{
-				appId = value;
-				DictionaryUtil.Add(BodyParameters, "AppId", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "BroadCastType")]
-		public int? BroadCastType
-		{
-			get
-			{
-				return broadCastType;
-			}
-			set	
-			{
-				broadCastType = value;
-				DictionaryUtil.Add(BodyParameters, "BroadCastType", value.ToString());
+				cloudUid = value;
+				DictionaryUtil.Add(BodyParameters, "CloudUid", value);
 			}
 		}
 
@@ -126,9 +62,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			return false;
 		}
 
-        public override JoinMessageGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetMessageUserInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return JoinMessageGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetMessageUserInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

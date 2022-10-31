@@ -24,25 +24,20 @@ using Aliyun.Acs.live.Model.V20161101;
 
 namespace Aliyun.Acs.live.Transform.V20161101
 {
-    public class GetMessageGroupResponseUnmarshaller
+    public class CancelMuteAllGroupUserResponseUnmarshaller
     {
-        public static GetMessageGroupResponse Unmarshall(UnmarshallerContext _ctx)
+        public static CancelMuteAllGroupUserResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			GetMessageGroupResponse getMessageGroupResponse = new GetMessageGroupResponse();
+			CancelMuteAllGroupUserResponse cancelMuteAllGroupUserResponse = new CancelMuteAllGroupUserResponse();
 
-			getMessageGroupResponse.HttpResponse = _ctx.HttpResponse;
-			getMessageGroupResponse.RequestId = _ctx.StringValue("GetMessageGroup.RequestId");
+			cancelMuteAllGroupUserResponse.HttpResponse = _ctx.HttpResponse;
+			cancelMuteAllGroupUserResponse.RequestId = _ctx.StringValue("CancelMuteAllGroupUser.RequestId");
 
-			GetMessageGroupResponse.GetMessageGroup_Result result = new GetMessageGroupResponse.GetMessageGroup_Result();
-			result.GroupId = _ctx.StringValue("GetMessageGroup.Result.GroupId");
-			result.CreateTime = _ctx.LongValue("GetMessageGroup.Result.CreateTime");
-			result.Status = _ctx.IntegerValue("GetMessageGroup.Result.Status");
-			result.CreatorId = _ctx.StringValue("GetMessageGroup.Result.CreatorId");
-			result.Extension = _ctx.StringValue("GetMessageGroup.Result.Extension");
-			result.IsMuteAll = _ctx.BooleanValue("GetMessageGroup.Result.IsMuteAll");
-			getMessageGroupResponse.Result = result;
+			CancelMuteAllGroupUserResponse.CancelMuteAllGroupUser_Result result = new CancelMuteAllGroupUserResponse.CancelMuteAllGroupUser_Result();
+			result.Success = _ctx.BooleanValue("CancelMuteAllGroupUser.Result.Success");
+			cancelMuteAllGroupUserResponse.Result = result;
         
-			return getMessageGroupResponse;
+			return cancelMuteAllGroupUserResponse;
         }
     }
 }

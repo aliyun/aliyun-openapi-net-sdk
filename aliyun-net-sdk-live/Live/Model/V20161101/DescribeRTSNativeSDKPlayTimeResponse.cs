@@ -22,12 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class GetMessageGroupResponse : AcsResponse
+	public class DescribeRTSNativeSDKPlayTimeResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private GetMessageGroup_Result result;
+		private string dataInterval;
+
+		private string startTime;
+
+		private string endTime;
+
+		private List<DescribeRTSNativeSDKPlayTime_Data> playTimeData;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -42,109 +48,103 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "Result")]
-		public GetMessageGroup_Result Result
+		[JsonProperty(PropertyName = "DataInterval")]
+		public string DataInterval
 		{
 			get
 			{
-				return result;
+				return dataInterval;
 			}
 			set	
 			{
-				result = value;
+				dataInterval = value;
 			}
 		}
 
-		public class GetMessageGroup_Result
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "EndTime")]
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PlayTimeData")]
+		public List<DescribeRTSNativeSDKPlayTime_Data> PlayTimeData
+		{
+			get
+			{
+				return playTimeData;
+			}
+			set	
+			{
+				playTimeData = value;
+			}
+		}
+
+		public class DescribeRTSNativeSDKPlayTime_Data
 		{
 
-			private string groupId;
+			private string timeStamp;
 
-			private long? createTime;
+			private string playTime;
 
-			private int? status;
+			private string stallTime;
 
-			private string creatorId;
-
-			private string extension;
-
-			private bool? isMuteAll;
-
-			[JsonProperty(PropertyName = "GroupId")]
-			public string GroupId
+			[JsonProperty(PropertyName = "TimeStamp")]
+			public string TimeStamp
 			{
 				get
 				{
-					return groupId;
+					return timeStamp;
 				}
 				set	
 				{
-					groupId = value;
+					timeStamp = value;
 				}
 			}
 
-			[JsonProperty(PropertyName = "CreateTime")]
-			public long? CreateTime
+			[JsonProperty(PropertyName = "PlayTime")]
+			public string PlayTime
 			{
 				get
 				{
-					return createTime;
+					return playTime;
 				}
 				set	
 				{
-					createTime = value;
+					playTime = value;
 				}
 			}
 
-			[JsonProperty(PropertyName = "Status")]
-			public int? Status
+			[JsonProperty(PropertyName = "StallTime")]
+			public string StallTime
 			{
 				get
 				{
-					return status;
+					return stallTime;
 				}
 				set	
 				{
-					status = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "CreatorId")]
-			public string CreatorId
-			{
-				get
-				{
-					return creatorId;
-				}
-				set	
-				{
-					creatorId = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Extension")]
-			public string Extension
-			{
-				get
-				{
-					return extension;
-				}
-				set	
-				{
-					extension = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "IsMuteAll")]
-			public bool? IsMuteAll
-			{
-				get
-				{
-					return isMuteAll;
-				}
-				set	
-				{
-					isMuteAll = value;
+					stallTime = value;
 				}
 			}
 		}

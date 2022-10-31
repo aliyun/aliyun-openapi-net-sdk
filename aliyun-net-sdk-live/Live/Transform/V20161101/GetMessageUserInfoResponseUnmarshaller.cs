@@ -24,25 +24,21 @@ using Aliyun.Acs.live.Model.V20161101;
 
 namespace Aliyun.Acs.live.Transform.V20161101
 {
-    public class GetMessageGroupResponseUnmarshaller
+    public class GetMessageUserInfoResponseUnmarshaller
     {
-        public static GetMessageGroupResponse Unmarshall(UnmarshallerContext _ctx)
+        public static GetMessageUserInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			GetMessageGroupResponse getMessageGroupResponse = new GetMessageGroupResponse();
+			GetMessageUserInfoResponse getMessageUserInfoResponse = new GetMessageUserInfoResponse();
 
-			getMessageGroupResponse.HttpResponse = _ctx.HttpResponse;
-			getMessageGroupResponse.RequestId = _ctx.StringValue("GetMessageGroup.RequestId");
+			getMessageUserInfoResponse.HttpResponse = _ctx.HttpResponse;
+			getMessageUserInfoResponse.RequestId = _ctx.StringValue("GetMessageUserInfo.RequestId");
 
-			GetMessageGroupResponse.GetMessageGroup_Result result = new GetMessageGroupResponse.GetMessageGroup_Result();
-			result.GroupId = _ctx.StringValue("GetMessageGroup.Result.GroupId");
-			result.CreateTime = _ctx.LongValue("GetMessageGroup.Result.CreateTime");
-			result.Status = _ctx.IntegerValue("GetMessageGroup.Result.Status");
-			result.CreatorId = _ctx.StringValue("GetMessageGroup.Result.CreatorId");
-			result.Extension = _ctx.StringValue("GetMessageGroup.Result.Extension");
-			result.IsMuteAll = _ctx.BooleanValue("GetMessageGroup.Result.IsMuteAll");
-			getMessageGroupResponse.Result = result;
+			GetMessageUserInfoResponse.GetMessageUserInfo_Result result = new GetMessageUserInfoResponse.GetMessageUserInfo_Result();
+			result.IsNewIMUser = _ctx.BooleanValue("GetMessageUserInfo.Result.IsNewIMUser");
+			result.HasOrderedIM = _ctx.BooleanValue("GetMessageUserInfo.Result.HasOrderedIM");
+			getMessageUserInfoResponse.Result = result;
         
-			return getMessageGroupResponse;
+			return getMessageUserInfoResponse;
         }
     }
 }

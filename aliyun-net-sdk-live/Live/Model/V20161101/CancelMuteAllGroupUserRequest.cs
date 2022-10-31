@@ -17,7 +17,6 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -28,10 +27,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class JoinMessageGroupRequest : RpcAcsRequest<JoinMessageGroupResponse>
+    public class CancelMuteAllGroupUserRequest : RpcAcsRequest<CancelMuteAllGroupUserResponse>
     {
-        public JoinMessageGroupRequest()
-            : base("live", "2016-11-01", "JoinMessageGroup", "live", "openAPI")
+        public CancelMuteAllGroupUserRequest()
+            : base("live", "2016-11-01", "CancelMuteAllGroupUser", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,31 +40,12 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private bool? broadCastStatistics;
-
 		private string groupId;
-
-		private string userId;
 
 		private string appId;
 
-		private int? broadCastType;
+		private string operatorUserId;
 
-		[JsonProperty(PropertyName = "BroadCastStatistics")]
-		public bool? BroadCastStatistics
-		{
-			get
-			{
-				return broadCastStatistics;
-			}
-			set	
-			{
-				broadCastStatistics = value;
-				DictionaryUtil.Add(BodyParameters, "BroadCastStatistics", value.ToString());
-			}
-		}
-
-		[JsonProperty(PropertyName = "GroupId")]
 		public string GroupId
 		{
 			get
@@ -79,21 +59,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "UserId")]
-		public string UserId
-		{
-			get
-			{
-				return userId;
-			}
-			set	
-			{
-				userId = value;
-				DictionaryUtil.Add(BodyParameters, "UserId", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "AppId")]
 		public string AppId
 		{
 			get
@@ -107,17 +72,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "BroadCastType")]
-		public int? BroadCastType
+		public string OperatorUserId
 		{
 			get
 			{
-				return broadCastType;
+				return operatorUserId;
 			}
 			set	
 			{
-				broadCastType = value;
-				DictionaryUtil.Add(BodyParameters, "BroadCastType", value.ToString());
+				operatorUserId = value;
+				DictionaryUtil.Add(BodyParameters, "OperatorUserId", value);
 			}
 		}
 
@@ -126,9 +90,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			return false;
 		}
 
-        public override JoinMessageGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CancelMuteAllGroupUserResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return JoinMessageGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CancelMuteAllGroupUserResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

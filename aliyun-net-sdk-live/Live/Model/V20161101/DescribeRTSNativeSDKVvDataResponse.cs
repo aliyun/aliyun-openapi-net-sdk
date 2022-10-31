@@ -22,12 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class GetMessageGroupResponse : AcsResponse
+	public class DescribeRTSNativeSDKVvDataResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private GetMessageGroup_Result result;
+		private string dataInterval;
+
+		private string startTime;
+
+		private string endTime;
+
+		private List<DescribeRTSNativeSDKVvData_Data> vvData;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -42,109 +48,103 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "Result")]
-		public GetMessageGroup_Result Result
+		[JsonProperty(PropertyName = "DataInterval")]
+		public string DataInterval
 		{
 			get
 			{
-				return result;
+				return dataInterval;
 			}
 			set	
 			{
-				result = value;
+				dataInterval = value;
 			}
 		}
 
-		public class GetMessageGroup_Result
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "EndTime")]
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "VvData")]
+		public List<DescribeRTSNativeSDKVvData_Data> VvData
+		{
+			get
+			{
+				return vvData;
+			}
+			set	
+			{
+				vvData = value;
+			}
+		}
+
+		public class DescribeRTSNativeSDKVvData_Data
 		{
 
-			private string groupId;
+			private string timeStamp;
 
-			private long? createTime;
+			private string vvTotal;
 
-			private int? status;
+			private string vvSuccess;
 
-			private string creatorId;
-
-			private string extension;
-
-			private bool? isMuteAll;
-
-			[JsonProperty(PropertyName = "GroupId")]
-			public string GroupId
+			[JsonProperty(PropertyName = "TimeStamp")]
+			public string TimeStamp
 			{
 				get
 				{
-					return groupId;
+					return timeStamp;
 				}
 				set	
 				{
-					groupId = value;
+					timeStamp = value;
 				}
 			}
 
-			[JsonProperty(PropertyName = "CreateTime")]
-			public long? CreateTime
+			[JsonProperty(PropertyName = "VvTotal")]
+			public string VvTotal
 			{
 				get
 				{
-					return createTime;
+					return vvTotal;
 				}
 				set	
 				{
-					createTime = value;
+					vvTotal = value;
 				}
 			}
 
-			[JsonProperty(PropertyName = "Status")]
-			public int? Status
+			[JsonProperty(PropertyName = "VvSuccess")]
+			public string VvSuccess
 			{
 				get
 				{
-					return status;
+					return vvSuccess;
 				}
 				set	
 				{
-					status = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "CreatorId")]
-			public string CreatorId
-			{
-				get
-				{
-					return creatorId;
-				}
-				set	
-				{
-					creatorId = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Extension")]
-			public string Extension
-			{
-				get
-				{
-					return extension;
-				}
-				set	
-				{
-					extension = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "IsMuteAll")]
-			public bool? IsMuteAll
-			{
-				get
-				{
-					return isMuteAll;
-				}
-				set	
-				{
-					isMuteAll = value;
+					vvSuccess = value;
 				}
 			}
 		}

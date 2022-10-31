@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class GetMessageGroupResponse : AcsResponse
+	public class GetMessageUserInfoResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private GetMessageGroup_Result result;
+		private GetMessageUserInfo_Result result;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -43,7 +43,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 		}
 
 		[JsonProperty(PropertyName = "Result")]
-		public GetMessageGroup_Result Result
+		public GetMessageUserInfo_Result Result
 		{
 			get
 			{
@@ -55,96 +55,36 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public class GetMessageGroup_Result
+		public class GetMessageUserInfo_Result
 		{
 
-			private string groupId;
+			private bool? isNewIMUser;
 
-			private long? createTime;
+			private bool? hasOrderedIM;
 
-			private int? status;
-
-			private string creatorId;
-
-			private string extension;
-
-			private bool? isMuteAll;
-
-			[JsonProperty(PropertyName = "GroupId")]
-			public string GroupId
+			[JsonProperty(PropertyName = "IsNewIMUser")]
+			public bool? IsNewIMUser
 			{
 				get
 				{
-					return groupId;
+					return isNewIMUser;
 				}
 				set	
 				{
-					groupId = value;
+					isNewIMUser = value;
 				}
 			}
 
-			[JsonProperty(PropertyName = "CreateTime")]
-			public long? CreateTime
+			[JsonProperty(PropertyName = "HasOrderedIM")]
+			public bool? HasOrderedIM
 			{
 				get
 				{
-					return createTime;
+					return hasOrderedIM;
 				}
 				set	
 				{
-					createTime = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Status")]
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "CreatorId")]
-			public string CreatorId
-			{
-				get
-				{
-					return creatorId;
-				}
-				set	
-				{
-					creatorId = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Extension")]
-			public string Extension
-			{
-				get
-				{
-					return extension;
-				}
-				set	
-				{
-					extension = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "IsMuteAll")]
-			public bool? IsMuteAll
-			{
-				get
-				{
-					return isMuteAll;
-				}
-				set	
-				{
-					isMuteAll = value;
+					hasOrderedIM = value;
 				}
 			}
 		}

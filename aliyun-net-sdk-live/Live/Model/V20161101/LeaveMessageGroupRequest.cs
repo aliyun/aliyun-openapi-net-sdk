@@ -41,11 +41,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
+		private bool? broadCastStatistics;
+
 		private string groupId;
 
 		private string userId;
 
 		private string appId;
+
+		private int? broadCastType;
+
+		[JsonProperty(PropertyName = "BroadCastStatistics")]
+		public bool? BroadCastStatistics
+		{
+			get
+			{
+				return broadCastStatistics;
+			}
+			set	
+			{
+				broadCastStatistics = value;
+				DictionaryUtil.Add(BodyParameters, "BroadCastStatistics", value.ToString());
+			}
+		}
 
 		[JsonProperty(PropertyName = "GroupId")]
 		public string GroupId
@@ -86,6 +104,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				appId = value;
 				DictionaryUtil.Add(BodyParameters, "AppId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "BroadCastType")]
+		public int? BroadCastType
+		{
+			get
+			{
+				return broadCastType;
+			}
+			set	
+			{
+				broadCastType = value;
+				DictionaryUtil.Add(BodyParameters, "BroadCastType", value.ToString());
 			}
 		}
 

@@ -28,10 +28,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class JoinMessageGroupRequest : RpcAcsRequest<JoinMessageGroupResponse>
+    public class DescribeRTSNativeSDKPlayTimeRequest : RpcAcsRequest<DescribeRTSNativeSDKPlayTimeResponse>
     {
-        public JoinMessageGroupRequest()
-            : base("live", "2016-11-01", "JoinMessageGroup", "live", "openAPI")
+        public DescribeRTSNativeSDKPlayTimeRequest()
+            : base("live", "2016-11-01", "DescribeRTSNativeSDKPlayTime", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,83 +41,74 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private bool? broadCastStatistics;
+		private string endTime;
 
-		private string groupId;
+		private List<string> domainNameList = new List<string>(){ };
 
-		private string userId;
+		private string startTime;
 
-		private string appId;
+		private string dataInterval;
 
-		private int? broadCastType;
-
-		[JsonProperty(PropertyName = "BroadCastStatistics")]
-		public bool? BroadCastStatistics
+		[JsonProperty(PropertyName = "EndTime")]
+		public string EndTime
 		{
 			get
 			{
-				return broadCastStatistics;
+				return endTime;
 			}
 			set	
 			{
-				broadCastStatistics = value;
-				DictionaryUtil.Add(BodyParameters, "BroadCastStatistics", value.ToString());
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "GroupId")]
-		public string GroupId
+		[JsonProperty(PropertyName = "DomainNameList")]
+		public List<string> DomainNameList
 		{
 			get
 			{
-				return groupId;
+				return domainNameList;
 			}
-			set	
+
+			set
 			{
-				groupId = value;
-				DictionaryUtil.Add(BodyParameters, "GroupId", value);
+				domainNameList = value;
+				if(domainNameList != null)
+				{
+					for (int depth1 = 0; depth1 < domainNameList.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"DomainNameList." + (depth1 + 1), domainNameList[depth1]);
+					}
+				}
 			}
 		}
 
-		[JsonProperty(PropertyName = "UserId")]
-		public string UserId
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
 		{
 			get
 			{
-				return userId;
+				return startTime;
 			}
 			set	
 			{
-				userId = value;
-				DictionaryUtil.Add(BodyParameters, "UserId", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "AppId")]
-		public string AppId
+		[JsonProperty(PropertyName = "DataInterval")]
+		public string DataInterval
 		{
 			get
 			{
-				return appId;
+				return dataInterval;
 			}
 			set	
 			{
-				appId = value;
-				DictionaryUtil.Add(BodyParameters, "AppId", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "BroadCastType")]
-		public int? BroadCastType
-		{
-			get
-			{
-				return broadCastType;
-			}
-			set	
-			{
-				broadCastType = value;
-				DictionaryUtil.Add(BodyParameters, "BroadCastType", value.ToString());
+				dataInterval = value;
+				DictionaryUtil.Add(QueryParameters, "DataInterval", value);
 			}
 		}
 
@@ -126,9 +117,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			return false;
 		}
 
-        public override JoinMessageGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeRTSNativeSDKPlayTimeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return JoinMessageGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeRTSNativeSDKPlayTimeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
