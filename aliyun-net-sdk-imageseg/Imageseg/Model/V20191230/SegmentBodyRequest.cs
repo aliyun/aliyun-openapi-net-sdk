@@ -43,8 +43,6 @@ namespace Aliyun.Acs.imageseg.Model.V20191230
 
 		private string returnForm;
 
-		private bool? async;
-
 		private string imageURL;
 
 		public string ReturnForm
@@ -57,19 +55,6 @@ namespace Aliyun.Acs.imageseg.Model.V20191230
 			{
 				returnForm = value;
 				DictionaryUtil.Add(QueryParameters, "ReturnForm", value);
-			}
-		}
-
-		public bool? Async
-		{
-			get
-			{
-				return async;
-			}
-			set	
-			{
-				async = value;
-				DictionaryUtil.Add(BodyParameters, "Async", value.ToString());
 			}
 		}
 
