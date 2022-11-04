@@ -35,6 +35,10 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 
 			DetectSkinDiseaseResponse.DetectSkinDisease_Data data = new DetectSkinDiseaseResponse.DetectSkinDisease_Data();
 			data.Results = _ctx.StringValue("DetectSkinDisease.Data.Results");
+			data.ResultsEnglish = _ctx.StringValue("DetectSkinDisease.Data.ResultsEnglish");
+			data.BodyPart = _ctx.StringValue("DetectSkinDisease.Data.BodyPart");
+			data.ImageQuality = _ctx.FloatValue("DetectSkinDisease.Data.ImageQuality");
+			data.ImageType = _ctx.StringValue("DetectSkinDisease.Data.ImageType");
 			detectSkinDiseaseResponse.Data = data;
         
 			return detectSkinDiseaseResponse;
