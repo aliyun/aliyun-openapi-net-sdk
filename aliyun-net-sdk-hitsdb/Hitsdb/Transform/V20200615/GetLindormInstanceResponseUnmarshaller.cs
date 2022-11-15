@@ -67,6 +67,23 @@ namespace Aliyun.Acs.hitsdb.Transform.V20200615
 			getLindormInstanceResponse.MaintainStartTime = _ctx.StringValue("GetLindormInstance.MaintainStartTime");
 			getLindormInstanceResponse.MaintainEndTime = _ctx.StringValue("GetLindormInstance.MaintainEndTime");
 			getLindormInstanceResponse.ResourceGroupId = _ctx.StringValue("GetLindormInstance.ResourceGroupId");
+			getLindormInstanceResponse.LocalCloudCategory = _ctx.StringValue("GetLindormInstance.LocalCloudCategory");
+			getLindormInstanceResponse.LocalCloudStorage = _ctx.IntegerValue("GetLindormInstance.LocalCloudStorage");
+			getLindormInstanceResponse.PrimaryZoneId = _ctx.StringValue("GetLindormInstance.PrimaryZoneId");
+			getLindormInstanceResponse.StandbyZoneId = _ctx.StringValue("GetLindormInstance.StandbyZoneId");
+			getLindormInstanceResponse.ArbiterZoneId = _ctx.StringValue("GetLindormInstance.ArbiterZoneId");
+			getLindormInstanceResponse.PrimaryVSwitchId = _ctx.StringValue("GetLindormInstance.PrimaryVSwitchId");
+			getLindormInstanceResponse.StandbyVSwitchId = _ctx.StringValue("GetLindormInstance.StandbyVSwitchId");
+			getLindormInstanceResponse.ArbiterVSwitchId = _ctx.StringValue("GetLindormInstance.ArbiterVSwitchId");
+			getLindormInstanceResponse.MultiZoneCombination = _ctx.StringValue("GetLindormInstance.MultiZoneCombination");
+			getLindormInstanceResponse.CoreDiskCategory = _ctx.StringValue("GetLindormInstance.CoreDiskCategory");
+			getLindormInstanceResponse.CoreSpec = _ctx.StringValue("GetLindormInstance.CoreSpec");
+			getLindormInstanceResponse.CoreNum = _ctx.IntegerValue("GetLindormInstance.CoreNum");
+			getLindormInstanceResponse.CoreSingleStorage = _ctx.IntegerValue("GetLindormInstance.CoreSingleStorage");
+			getLindormInstanceResponse.LogDiskCategory = _ctx.StringValue("GetLindormInstance.LogDiskCategory");
+			getLindormInstanceResponse.LogSpec = _ctx.StringValue("GetLindormInstance.LogSpec");
+			getLindormInstanceResponse.LogNum = _ctx.IntegerValue("GetLindormInstance.LogNum");
+			getLindormInstanceResponse.LogSingleStorage = _ctx.IntegerValue("GetLindormInstance.LogSingleStorage");
 
 			List<GetLindormInstanceResponse.GetLindormInstance_Engine> getLindormInstanceResponse_engineList = new List<GetLindormInstanceResponse.GetLindormInstance_Engine>();
 			for (int i = 0; i < _ctx.Length("GetLindormInstance.EngineList.Length"); i++) {
