@@ -122,6 +122,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private List<ListTransitRouters_TransitRouterCidrListItem> transitRouterCidrList;
 
+			private List<ListTransitRouters_Tag> tags;
+
 			public string CreationTime
 			{
 				get
@@ -266,6 +268,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
+			public List<ListTransitRouters_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
 			public class ListTransitRouters_TransitRouterCidrListItem
 			{
 
@@ -336,6 +350,38 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 					set	
 					{
 						publishCidrRoute = value;
+					}
+				}
+			}
+
+			public class ListTransitRouters_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
 					}
 				}
 			}

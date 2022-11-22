@@ -110,6 +110,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private string transitRouterRouteTableDescription;
 
+			private List<ListTransitRouterRouteTables_Tag> tags;
+
 			public string TransitRouterRouteTableStatus
 			{
 				get
@@ -179,6 +181,50 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					transitRouterRouteTableDescription = value;
+				}
+			}
+
+			public List<ListTransitRouterRouteTables_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public class ListTransitRouterRouteTables_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}

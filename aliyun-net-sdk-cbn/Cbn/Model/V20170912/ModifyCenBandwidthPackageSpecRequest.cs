@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Cbn;
 using Aliyun.Acs.Cbn.Transform;
 using Aliyun.Acs.Cbn.Transform.V20170912;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
     public class ModifyCenBandwidthPackageSpecRequest : RpcAcsRequest<ModifyCenBandwidthPackageSpecResponse>
     {
         public ModifyCenBandwidthPackageSpecRequest()
-            : base("Cbn", "2017-09-12", "ModifyCenBandwidthPackageSpec")
+            : base("Cbn", "2017-09-12", "ModifyCenBandwidthPackageSpec", "cbn", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -50,8 +49,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string serviceType;
 
 		private string cenBandwidthPackageId;
 
@@ -117,19 +114,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string ServiceType
-		{
-			get
-			{
-				return serviceType;
-			}
-			set	
-			{
-				serviceType = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceType", value);
 			}
 		}
 

@@ -126,6 +126,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private List<ListTransitRouterVpcAttachments_ZoneMapping> zoneMappings;
 
+			private List<ListTransitRouterVpcAttachments_Tag> tags;
+
 			public string CreationTime
 			{
 				get
@@ -294,6 +296,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
+			public List<ListTransitRouterVpcAttachments_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
 			public class ListTransitRouterVpcAttachments_ZoneMapping
 			{
 
@@ -336,6 +350,38 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 					set	
 					{
 						networkInterfaceId = value;
+					}
+				}
+			}
+
+			public class ListTransitRouterVpcAttachments_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
 					}
 				}
 			}

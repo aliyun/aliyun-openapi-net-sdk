@@ -44,6 +44,16 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 				transitRouterMulticastDomain.TransitRouterMulticastDomainDescription = _ctx.StringValue("ListTransitRouterMulticastDomains.TransitRouterMulticastDomains["+ i +"].TransitRouterMulticastDomainDescription");
 				transitRouterMulticastDomain.Status = _ctx.StringValue("ListTransitRouterMulticastDomains.TransitRouterMulticastDomains["+ i +"].Status");
 
+				List<ListTransitRouterMulticastDomainsResponse.ListTransitRouterMulticastDomains_TransitRouterMulticastDomain.ListTransitRouterMulticastDomains_Tag> transitRouterMulticastDomain_tags = new List<ListTransitRouterMulticastDomainsResponse.ListTransitRouterMulticastDomains_TransitRouterMulticastDomain.ListTransitRouterMulticastDomains_Tag>();
+				for (int j = 0; j < _ctx.Length("ListTransitRouterMulticastDomains.TransitRouterMulticastDomains["+ i +"].Tags.Length"); j++) {
+					ListTransitRouterMulticastDomainsResponse.ListTransitRouterMulticastDomains_TransitRouterMulticastDomain.ListTransitRouterMulticastDomains_Tag tag = new ListTransitRouterMulticastDomainsResponse.ListTransitRouterMulticastDomains_TransitRouterMulticastDomain.ListTransitRouterMulticastDomains_Tag();
+					tag.Key = _ctx.StringValue("ListTransitRouterMulticastDomains.TransitRouterMulticastDomains["+ i +"].Tags["+ j +"].Key");
+					tag._Value = _ctx.StringValue("ListTransitRouterMulticastDomains.TransitRouterMulticastDomains["+ i +"].Tags["+ j +"].Value");
+
+					transitRouterMulticastDomain_tags.Add(tag);
+				}
+				transitRouterMulticastDomain.Tags = transitRouterMulticastDomain_tags;
+
 				listTransitRouterMulticastDomainsResponse_transitRouterMulticastDomains.Add(transitRouterMulticastDomain);
 			}
 			listTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomains = listTransitRouterMulticastDomainsResponse_transitRouterMulticastDomains;

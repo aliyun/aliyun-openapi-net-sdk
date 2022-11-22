@@ -122,6 +122,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private List<ListTransitRouterVpnAttachments_ZoneMapping> zones;
 
+			private List<ListTransitRouterVpnAttachments_Tag> tags;
+
 			public string CreationTime
 			{
 				get
@@ -266,6 +268,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
+			public List<ListTransitRouterVpnAttachments_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
 			public class ListTransitRouterVpnAttachments_ZoneMapping
 			{
 
@@ -280,6 +294,38 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 					set	
 					{
 						zoneId = value;
+					}
+				}
+			}
+
+			public class ListTransitRouterVpnAttachments_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
 					}
 				}
 			}

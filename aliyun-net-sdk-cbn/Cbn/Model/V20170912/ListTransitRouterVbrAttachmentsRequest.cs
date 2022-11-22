@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Cbn;
 using Aliyun.Acs.Cbn.Transform;
 using Aliyun.Acs.Cbn.Transform.V20170912;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
     public class ListTransitRouterVbrAttachmentsRequest : RpcAcsRequest<ListTransitRouterVbrAttachmentsResponse>
     {
         public ListTransitRouterVbrAttachmentsRequest()
-            : base("Cbn", "2017-09-12", "ListTransitRouterVbrAttachments")
+            : base("Cbn", "2017-09-12", "ListTransitRouterVbrAttachments", "cbn", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -46,6 +45,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 		private string cenId;
 
 		private string nextToken;
+
+		private List<string> tags = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 
@@ -95,6 +96,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				nextToken = value;
 				DictionaryUtil.Add(QueryParameters, "NextToken", value);
+			}
+		}
+
+		public List<string> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				if(tags != null)
+				{
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
+				}
 			}
 		}
 
@@ -173,6 +195,38 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				maxResults = value;
 				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 
