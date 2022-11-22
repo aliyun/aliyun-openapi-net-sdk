@@ -40,24 +40,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			Method = MethodType.POST;
         }
 
-		private int? pageNo;
-
 		private int? pageSize;
 
-		private string status;
+		private int? pageNo;
 
-		public int? PageNo
-		{
-			get
-			{
-				return pageNo;
-			}
-			set	
-			{
-				pageNo = value;
-				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
-			}
-		}
+		private string status;
 
 		public int? PageSize
 		{
@@ -69,6 +56,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public int? PageNo
+		{
+			get
+			{
+				return pageNo;
+			}
+			set	
+			{
+				pageNo = value;
+				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
 			}
 		}
 

@@ -106,6 +106,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private string status;
 
+			private List<ListTransitRouterMulticastDomains_Tag> tags;
+
 			public string TransitRouterMulticastDomainId
 			{
 				get
@@ -151,6 +153,50 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public List<ListTransitRouterMulticastDomains_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public class ListTransitRouterMulticastDomains_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}

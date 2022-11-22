@@ -60,6 +60,16 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 				}
 				transitRouterAttachment.Zones = transitRouterAttachment_zones;
 
+				List<ListTransitRouterVpnAttachmentsResponse.ListTransitRouterVpnAttachments_TransitRouterAttachment.ListTransitRouterVpnAttachments_Tag> transitRouterAttachment_tags = new List<ListTransitRouterVpnAttachmentsResponse.ListTransitRouterVpnAttachments_TransitRouterAttachment.ListTransitRouterVpnAttachments_Tag>();
+				for (int j = 0; j < _ctx.Length("ListTransitRouterVpnAttachments.TransitRouterAttachments["+ i +"].Tags.Length"); j++) {
+					ListTransitRouterVpnAttachmentsResponse.ListTransitRouterVpnAttachments_TransitRouterAttachment.ListTransitRouterVpnAttachments_Tag tag = new ListTransitRouterVpnAttachmentsResponse.ListTransitRouterVpnAttachments_TransitRouterAttachment.ListTransitRouterVpnAttachments_Tag();
+					tag.Key = _ctx.StringValue("ListTransitRouterVpnAttachments.TransitRouterAttachments["+ i +"].Tags["+ j +"].Key");
+					tag._Value = _ctx.StringValue("ListTransitRouterVpnAttachments.TransitRouterAttachments["+ i +"].Tags["+ j +"].Value");
+
+					transitRouterAttachment_tags.Add(tag);
+				}
+				transitRouterAttachment.Tags = transitRouterAttachment_tags;
+
 				listTransitRouterVpnAttachmentsResponse_transitRouterAttachments.Add(transitRouterAttachment);
 			}
 			listTransitRouterVpnAttachmentsResponse.TransitRouterAttachments = listTransitRouterVpnAttachmentsResponse_transitRouterAttachments;

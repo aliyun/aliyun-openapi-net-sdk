@@ -97,6 +97,40 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 
 		private string resourceGroupId;
 
+		private string localCloudCategory;
+
+		private int? localCloudStorage;
+
+		private string primaryZoneId;
+
+		private string standbyZoneId;
+
+		private string arbiterZoneId;
+
+		private string primaryVSwitchId;
+
+		private string standbyVSwitchId;
+
+		private string arbiterVSwitchId;
+
+		private string multiZoneCombination;
+
+		private string coreDiskCategory;
+
+		private string coreSpec;
+
+		private int? coreNum;
+
+		private int? coreSingleStorage;
+
+		private string logDiskCategory;
+
+		private string logSpec;
+
+		private int? logNum;
+
+		private int? logSingleStorage;
+
 		private List<GetLindormInstance_Engine> engineList;
 
 		public string VpcId
@@ -528,6 +562,210 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			set	
 			{
 				resourceGroupId = value;
+			}
+		}
+
+		public string LocalCloudCategory
+		{
+			get
+			{
+				return localCloudCategory;
+			}
+			set	
+			{
+				localCloudCategory = value;
+			}
+		}
+
+		public int? LocalCloudStorage
+		{
+			get
+			{
+				return localCloudStorage;
+			}
+			set	
+			{
+				localCloudStorage = value;
+			}
+		}
+
+		public string PrimaryZoneId
+		{
+			get
+			{
+				return primaryZoneId;
+			}
+			set	
+			{
+				primaryZoneId = value;
+			}
+		}
+
+		public string StandbyZoneId
+		{
+			get
+			{
+				return standbyZoneId;
+			}
+			set	
+			{
+				standbyZoneId = value;
+			}
+		}
+
+		public string ArbiterZoneId
+		{
+			get
+			{
+				return arbiterZoneId;
+			}
+			set	
+			{
+				arbiterZoneId = value;
+			}
+		}
+
+		public string PrimaryVSwitchId
+		{
+			get
+			{
+				return primaryVSwitchId;
+			}
+			set	
+			{
+				primaryVSwitchId = value;
+			}
+		}
+
+		public string StandbyVSwitchId
+		{
+			get
+			{
+				return standbyVSwitchId;
+			}
+			set	
+			{
+				standbyVSwitchId = value;
+			}
+		}
+
+		public string ArbiterVSwitchId
+		{
+			get
+			{
+				return arbiterVSwitchId;
+			}
+			set	
+			{
+				arbiterVSwitchId = value;
+			}
+		}
+
+		public string MultiZoneCombination
+		{
+			get
+			{
+				return multiZoneCombination;
+			}
+			set	
+			{
+				multiZoneCombination = value;
+			}
+		}
+
+		public string CoreDiskCategory
+		{
+			get
+			{
+				return coreDiskCategory;
+			}
+			set	
+			{
+				coreDiskCategory = value;
+			}
+		}
+
+		public string CoreSpec
+		{
+			get
+			{
+				return coreSpec;
+			}
+			set	
+			{
+				coreSpec = value;
+			}
+		}
+
+		public int? CoreNum
+		{
+			get
+			{
+				return coreNum;
+			}
+			set	
+			{
+				coreNum = value;
+			}
+		}
+
+		public int? CoreSingleStorage
+		{
+			get
+			{
+				return coreSingleStorage;
+			}
+			set	
+			{
+				coreSingleStorage = value;
+			}
+		}
+
+		public string LogDiskCategory
+		{
+			get
+			{
+				return logDiskCategory;
+			}
+			set	
+			{
+				logDiskCategory = value;
+			}
+		}
+
+		public string LogSpec
+		{
+			get
+			{
+				return logSpec;
+			}
+			set	
+			{
+				logSpec = value;
+			}
+		}
+
+		public int? LogNum
+		{
+			get
+			{
+				return logNum;
+			}
+			set	
+			{
+				logNum = value;
+			}
+		}
+
+		public int? LogSingleStorage
+		{
+			get
+			{
+				return logSingleStorage;
+			}
+			set	
+			{
+				logSingleStorage = value;
 			}
 		}
 

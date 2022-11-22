@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Cbn;
 using Aliyun.Acs.Cbn.Transform;
 using Aliyun.Acs.Cbn.Transform.V20170912;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
     public class ListTransitRouterPrefixListAssociationRequest : RpcAcsRequest<ListTransitRouterPrefixListAssociationResponse>
     {
         public ListTransitRouterPrefixListAssociationRequest()
-            : base("Cbn", "2017-09-12", "ListTransitRouterPrefixListAssociation")
+            : base("Cbn", "2017-09-12", "ListTransitRouterPrefixListAssociation", "cbn", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -51,6 +50,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private long? ownerUid;
 
+		private string nextHopType;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -60,6 +61,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 		private string transitRouterId;
 
 		private string transitRouterTableId;
+
+		private string nextHop;
 
 		public long? ResourceOwnerId
 		{
@@ -126,6 +129,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
+		public string NextHopType
+		{
+			get
+			{
+				return nextHopType;
+			}
+			set	
+			{
+				nextHopType = value;
+				DictionaryUtil.Add(QueryParameters, "NextHopType", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -188,6 +204,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				transitRouterTableId = value;
 				DictionaryUtil.Add(QueryParameters, "TransitRouterTableId", value);
+			}
+		}
+
+		public string NextHop
+		{
+			get
+			{
+				return nextHop;
+			}
+			set	
+			{
+				nextHop = value;
+				DictionaryUtil.Add(QueryParameters, "NextHop", value);
 			}
 		}
 

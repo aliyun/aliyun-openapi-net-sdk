@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Cbn;
 using Aliyun.Acs.Cbn.Transform;
 using Aliyun.Acs.Cbn.Transform.V20170912;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
     public class CreateCenBandwidthPackageRequest : RpcAcsRequest<CreateCenBandwidthPackageResponse>
     {
         public CreateCenBandwidthPackageRequest()
-            : base("Cbn", "2017-09-12", "CreateCenBandwidthPackage")
+            : base("Cbn", "2017-09-12", "CreateCenBandwidthPackage", "cbn", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -51,6 +50,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private string bandwidthPackageChargeType;
 
+		private List<string> tags = new List<string>(){ };
+
 		private string geographicRegionBId;
 
 		private int? period;
@@ -66,8 +67,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string serviceType;
 
 		private bool? autoRenew;
 
@@ -137,6 +136,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				bandwidthPackageChargeType = value;
 				DictionaryUtil.Add(QueryParameters, "BandwidthPackageChargeType", value);
+			}
+		}
+
+		public List<string> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				if(tags != null)
+				{
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
+				}
 			}
 		}
 
@@ -244,19 +264,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string ServiceType
-		{
-			get
-			{
-				return serviceType;
-			}
-			set	
-			{
-				serviceType = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceType", value);
-			}
-		}
-
 		public bool? AutoRenew
 		{
 			get
@@ -293,6 +300,38 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				pricingCycle = value;
 				DictionaryUtil.Add(QueryParameters, "PricingCycle", value);
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

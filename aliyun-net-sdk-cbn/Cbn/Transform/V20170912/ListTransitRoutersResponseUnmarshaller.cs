@@ -64,6 +64,16 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 				}
 				transitRouter.TransitRouterCidrList = transitRouter_transitRouterCidrList;
 
+				List<ListTransitRoutersResponse.ListTransitRouters_TransitRouter.ListTransitRouters_Tag> transitRouter_tags = new List<ListTransitRoutersResponse.ListTransitRouters_TransitRouter.ListTransitRouters_Tag>();
+				for (int j = 0; j < _ctx.Length("ListTransitRouters.TransitRouters["+ i +"].Tags.Length"); j++) {
+					ListTransitRoutersResponse.ListTransitRouters_TransitRouter.ListTransitRouters_Tag tag = new ListTransitRoutersResponse.ListTransitRouters_TransitRouter.ListTransitRouters_Tag();
+					tag.Key = _ctx.StringValue("ListTransitRouters.TransitRouters["+ i +"].Tags["+ j +"].Key");
+					tag._Value = _ctx.StringValue("ListTransitRouters.TransitRouters["+ i +"].Tags["+ j +"].Value");
+
+					transitRouter_tags.Add(tag);
+				}
+				transitRouter.Tags = transitRouter_tags;
+
 				listTransitRoutersResponse_transitRouters.Add(transitRouter);
 			}
 			listTransitRoutersResponse.TransitRouters = listTransitRoutersResponse_transitRouters;

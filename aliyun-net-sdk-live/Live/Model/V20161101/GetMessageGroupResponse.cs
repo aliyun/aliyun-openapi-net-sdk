@@ -68,6 +68,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string extension;
 
+			private bool? isMuteAll;
+
 			[JsonProperty(PropertyName = "GroupId")]
 			public string GroupId
 			{
@@ -130,6 +132,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					extension = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "IsMuteAll")]
+			public bool? IsMuteAll
+			{
+				get
+				{
+					return isMuteAll;
+				}
+				set	
+				{
+					isMuteAll = value;
 				}
 			}
 		}

@@ -27,6 +27,8 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private string requestId;
 
+		private List<SetCdnDomainStagingConfig_DomainConfigModel> domainConfigList;
+
 		public string RequestId
 		{
 			get
@@ -36,6 +38,64 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public List<SetCdnDomainStagingConfig_DomainConfigModel> DomainConfigList
+		{
+			get
+			{
+				return domainConfigList;
+			}
+			set	
+			{
+				domainConfigList = value;
+			}
+		}
+
+		public class SetCdnDomainStagingConfig_DomainConfigModel
+		{
+
+			private long? configId;
+
+			private string domainName;
+
+			private string functionName;
+
+			public long? ConfigId
+			{
+				get
+				{
+					return configId;
+				}
+				set	
+				{
+					configId = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
+				}
+			}
+
+			public string FunctionName
+			{
+				get
+				{
+					return functionName;
+				}
+				set	
+				{
+					functionName = value;
+				}
 			}
 		}
 	}

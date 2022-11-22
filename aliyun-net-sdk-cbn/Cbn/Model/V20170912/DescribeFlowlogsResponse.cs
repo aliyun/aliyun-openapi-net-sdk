@@ -136,6 +136,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private long? interval;
 
+			private List<DescribeFlowlogs_Tag> tags;
+
 			public string Status
 			{
 				get
@@ -277,6 +279,50 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					interval = value;
+				}
+			}
+
+			public List<DescribeFlowlogs_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public class DescribeFlowlogs_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}

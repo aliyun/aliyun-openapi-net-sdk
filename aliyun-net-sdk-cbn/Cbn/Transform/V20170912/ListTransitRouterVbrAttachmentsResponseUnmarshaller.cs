@@ -51,6 +51,16 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 				transitRouterAttachment.VbrId = _ctx.StringValue("ListTransitRouterVbrAttachments.TransitRouterAttachments["+ i +"].VbrId");
 				transitRouterAttachment.TransitRouterAttachmentName = _ctx.StringValue("ListTransitRouterVbrAttachments.TransitRouterAttachments["+ i +"].TransitRouterAttachmentName");
 
+				List<ListTransitRouterVbrAttachmentsResponse.ListTransitRouterVbrAttachments_TransitRouterAttachment.ListTransitRouterVbrAttachments_Tag> transitRouterAttachment_tags = new List<ListTransitRouterVbrAttachmentsResponse.ListTransitRouterVbrAttachments_TransitRouterAttachment.ListTransitRouterVbrAttachments_Tag>();
+				for (int j = 0; j < _ctx.Length("ListTransitRouterVbrAttachments.TransitRouterAttachments["+ i +"].Tags.Length"); j++) {
+					ListTransitRouterVbrAttachmentsResponse.ListTransitRouterVbrAttachments_TransitRouterAttachment.ListTransitRouterVbrAttachments_Tag tag = new ListTransitRouterVbrAttachmentsResponse.ListTransitRouterVbrAttachments_TransitRouterAttachment.ListTransitRouterVbrAttachments_Tag();
+					tag.Key = _ctx.StringValue("ListTransitRouterVbrAttachments.TransitRouterAttachments["+ i +"].Tags["+ j +"].Key");
+					tag._Value = _ctx.StringValue("ListTransitRouterVbrAttachments.TransitRouterAttachments["+ i +"].Tags["+ j +"].Value");
+
+					transitRouterAttachment_tags.Add(tag);
+				}
+				transitRouterAttachment.Tags = transitRouterAttachment_tags;
+
 				listTransitRouterVbrAttachmentsResponse_transitRouterAttachments.Add(transitRouterAttachment);
 			}
 			listTransitRouterVbrAttachmentsResponse.TransitRouterAttachments = listTransitRouterVbrAttachmentsResponse_transitRouterAttachments;

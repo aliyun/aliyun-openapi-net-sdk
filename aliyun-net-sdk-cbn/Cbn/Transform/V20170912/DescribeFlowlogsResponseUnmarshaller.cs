@@ -53,6 +53,16 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 				flowLog.TransitRouterAttachmentId = _ctx.StringValue("DescribeFlowlogs.FlowLogs["+ i +"].TransitRouterAttachmentId");
 				flowLog.Interval = _ctx.LongValue("DescribeFlowlogs.FlowLogs["+ i +"].Interval");
 
+				List<DescribeFlowlogsResponse.DescribeFlowlogs_FlowLog.DescribeFlowlogs_Tag> flowLog_tags = new List<DescribeFlowlogsResponse.DescribeFlowlogs_FlowLog.DescribeFlowlogs_Tag>();
+				for (int j = 0; j < _ctx.Length("DescribeFlowlogs.FlowLogs["+ i +"].Tags.Length"); j++) {
+					DescribeFlowlogsResponse.DescribeFlowlogs_FlowLog.DescribeFlowlogs_Tag tag = new DescribeFlowlogsResponse.DescribeFlowlogs_FlowLog.DescribeFlowlogs_Tag();
+					tag.Key = _ctx.StringValue("DescribeFlowlogs.FlowLogs["+ i +"].Tags["+ j +"].Key");
+					tag._Value = _ctx.StringValue("DescribeFlowlogs.FlowLogs["+ i +"].Tags["+ j +"].Value");
+
+					flowLog_tags.Add(tag);
+				}
+				flowLog.Tags = flowLog_tags;
+
 				describeFlowlogsResponse_flowLogs.Add(flowLog);
 			}
 			describeFlowlogsResponse.FlowLogs = describeFlowlogsResponse_flowLogs;

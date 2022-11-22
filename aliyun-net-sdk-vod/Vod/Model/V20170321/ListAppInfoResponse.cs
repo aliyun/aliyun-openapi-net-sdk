@@ -84,6 +84,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string modificationTime;
 
+			private List<ListAppInfo_TagsItem> tags;
+
 			public string Type
 			{
 				get
@@ -165,6 +167,50 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					modificationTime = value;
+				}
+			}
+
+			public List<ListAppInfo_TagsItem> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public class ListAppInfo_TagsItem
+			{
+
+				private string tagKey;
+
+				private string tagValue;
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
+					}
+				}
+
+				public string TagValue
+				{
+					get
+					{
+						return tagValue;
+					}
+					set	
+					{
+						tagValue = value;
+					}
 				}
 			}
 		}

@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Cbn;
 using Aliyun.Acs.Cbn.Transform;
 using Aliyun.Acs.Cbn.Transform.V20170912;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
     public class CreateTransitRouterVbrAttachmentRequest : RpcAcsRequest<CreateTransitRouterVbrAttachmentResponse>
     {
         public CreateTransitRouterVbrAttachmentRequest()
-            : base("Cbn", "2017-09-12", "CreateTransitRouterVbrAttachment")
+            : base("Cbn", "2017-09-12", "CreateTransitRouterVbrAttachment", "cbn", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -50,6 +49,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 		private string vbrId;
 
 		private string transitRouterAttachmentName;
+
+		private List<string> tags = new List<string>(){ };
 
 		private bool? autoPublishRouteEnabled;
 
@@ -129,6 +130,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				transitRouterAttachmentName = value;
 				DictionaryUtil.Add(QueryParameters, "TransitRouterAttachmentName", value);
+			}
+		}
+
+		public List<string> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				if(tags != null)
+				{
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
+				}
 			}
 		}
 
@@ -233,6 +255,38 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				vbrOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "VbrOwnerId", value.ToString());
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

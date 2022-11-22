@@ -132,6 +132,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private string transitRouterAttachmentName;
 
+			private List<ListTransitRouterPeerAttachments_Tag> tags;
+
 			public string CreationTime
 			{
 				get
@@ -333,6 +335,50 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					transitRouterAttachmentName = value;
+				}
+			}
+
+			public List<ListTransitRouterPeerAttachments_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public class ListTransitRouterPeerAttachments_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}

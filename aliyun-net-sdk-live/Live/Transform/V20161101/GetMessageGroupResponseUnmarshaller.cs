@@ -39,6 +39,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			result.Status = _ctx.IntegerValue("GetMessageGroup.Result.Status");
 			result.CreatorId = _ctx.StringValue("GetMessageGroup.Result.CreatorId");
 			result.Extension = _ctx.StringValue("GetMessageGroup.Result.Extension");
+			result.IsMuteAll = _ctx.BooleanValue("GetMessageGroup.Result.IsMuteAll");
 			getMessageGroupResponse.Result = result;
         
 			return getMessageGroupResponse;

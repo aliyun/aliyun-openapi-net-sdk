@@ -58,6 +58,14 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 
 			private string results;
 
+			private string resultsEnglish;
+
+			private string bodyPart;
+
+			private float? imageQuality;
+
+			private string imageType;
+
 			public string Results
 			{
 				get
@@ -67,6 +75,54 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 				set	
 				{
 					results = value;
+				}
+			}
+
+			public string ResultsEnglish
+			{
+				get
+				{
+					return resultsEnglish;
+				}
+				set	
+				{
+					resultsEnglish = value;
+				}
+			}
+
+			public string BodyPart
+			{
+				get
+				{
+					return bodyPart;
+				}
+				set	
+				{
+					bodyPart = value;
+				}
+			}
+
+			public float? ImageQuality
+			{
+				get
+				{
+					return imageQuality;
+				}
+				set	
+				{
+					imageQuality = value;
+				}
+			}
+
+			public string ImageType
+			{
+				get
+				{
+					return imageType;
+				}
+				set	
+				{
+					imageType = value;
 				}
 			}
 		}

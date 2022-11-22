@@ -45,6 +45,16 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				appInfo.AppId = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].AppId");
 				appInfo.ModificationTime = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].ModificationTime");
 
+				List<ListAppInfoResponse.ListAppInfo_AppInfo.ListAppInfo_TagsItem> appInfo_tags = new List<ListAppInfoResponse.ListAppInfo_AppInfo.ListAppInfo_TagsItem>();
+				for (int j = 0; j < _ctx.Length("ListAppInfo.AppInfoList["+ i +"].Tags.Length"); j++) {
+					ListAppInfoResponse.ListAppInfo_AppInfo.ListAppInfo_TagsItem tagsItem = new ListAppInfoResponse.ListAppInfo_AppInfo.ListAppInfo_TagsItem();
+					tagsItem.TagKey = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].Tags["+ j +"].TagKey");
+					tagsItem.TagValue = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].Tags["+ j +"].TagValue");
+
+					appInfo_tags.Add(tagsItem);
+				}
+				appInfo.Tags = appInfo_tags;
+
 				listAppInfoResponse_appInfoList.Add(appInfo);
 			}
 			listAppInfoResponse.AppInfoList = listAppInfoResponse_appInfoList;
