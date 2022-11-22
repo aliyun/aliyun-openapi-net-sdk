@@ -28,10 +28,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeSecretsRequest : RpcAcsRequest<DescribeSecretsResponse>
+    public class ModifyDBInstanceEndpointAddressRequest : RpcAcsRequest<ModifyDBInstanceEndpointAddressResponse>
     {
-        public DescribeSecretsRequest()
-            : base("Rds", "2014-08-15", "DescribeSecrets", "rds", "openAPI")
+        public ModifyDBInstanceEndpointAddressRequest()
+            : base("Rds", "2014-08-15", "ModifyDBInstanceEndpointAddress", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,25 +41,39 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			Method = MethodType.POST;
         }
 
+		private string connectionStringPrefix;
+
 		private long? resourceOwnerId;
 
 		private string clientToken;
 
-		private long? pageNumber;
+		private string connectionString;
 
-		private string engine;
+		private string dBInstanceId;
 
-		private long? pageSize;
+		private string vSwitchId;
 
-		private string dbInstanceId;
+		private string privateIpAddress;
 
-		private string resourceOwnerAccount;
+		private string dBInstanceEndpointId;
 
-		private string ownerAccount;
+		private string port;
 
-		private long? ownerId;
+		private string vpcId;
 
-		private string acceptLanguage;
+		[JsonProperty(PropertyName = "ConnectionStringPrefix")]
+		public string ConnectionStringPrefix
+		{
+			get
+			{
+				return connectionStringPrefix;
+			}
+			set	
+			{
+				connectionStringPrefix = value;
+				DictionaryUtil.Add(QueryParameters, "ConnectionStringPrefix", value);
+			}
+		}
 
 		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
@@ -89,126 +103,107 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "PageNumber")]
-		public long? PageNumber
+		[JsonProperty(PropertyName = "ConnectionString")]
+		public string ConnectionString
 		{
 			get
 			{
-				return pageNumber;
+				return connectionString;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				connectionString = value;
+				DictionaryUtil.Add(QueryParameters, "ConnectionString", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "Engine")]
-		public string Engine
+		[JsonProperty(PropertyName = "DBInstanceId")]
+		public string DBInstanceId
 		{
 			get
 			{
-				return engine;
+				return dBInstanceId;
 			}
 			set	
 			{
-				engine = value;
-				DictionaryUtil.Add(QueryParameters, "Engine", value);
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "PageSize")]
-		public long? PageSize
+		[JsonProperty(PropertyName = "VSwitchId")]
+		public string VSwitchId
 		{
 			get
 			{
-				return pageSize;
+				return vSwitchId;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "DbInstanceId")]
-		public string DbInstanceId
+		[JsonProperty(PropertyName = "PrivateIpAddress")]
+		public string PrivateIpAddress
 		{
 			get
 			{
-				return dbInstanceId;
+				return privateIpAddress;
 			}
 			set	
 			{
-				dbInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DbInstanceId", value);
+				privateIpAddress = value;
+				DictionaryUtil.Add(QueryParameters, "PrivateIpAddress", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
-		public string ResourceOwnerAccount
+		[JsonProperty(PropertyName = "DBInstanceEndpointId")]
+		public string DBInstanceEndpointId
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return dBInstanceEndpointId;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				dBInstanceEndpointId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceEndpointId", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "OwnerAccount")]
-		public string OwnerAccount
+		[JsonProperty(PropertyName = "Port")]
+		public string Port
 		{
 			get
 			{
-				return ownerAccount;
+				return port;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				port = value;
+				DictionaryUtil.Add(QueryParameters, "Port", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "OwnerId")]
-		public long? OwnerId
+		[JsonProperty(PropertyName = "VpcId")]
+		public string VpcId
 		{
 			get
 			{
-				return ownerId;
+				return vpcId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				vpcId = value;
+				DictionaryUtil.Add(QueryParameters, "VpcId", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "AcceptLanguage")]
-		public string AcceptLanguage
-		{
-			get
-			{
-				return acceptLanguage;
-			}
-			set	
-			{
-				acceptLanguage = value;
-				DictionaryUtil.Add(QueryParameters, "AcceptLanguage", value);
-			}
-		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override DescribeSecretsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyDBInstanceEndpointAddressResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeSecretsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyDBInstanceEndpointAddressResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -24,19 +24,21 @@ using Aliyun.Acs.Rds.Model.V20140815;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class CopyDatabaseResponseUnmarshaller
+    public class DeleteDBInstanceEndpointResponseUnmarshaller
     {
-        public static CopyDatabaseResponse Unmarshall(UnmarshallerContext _ctx)
+        public static DeleteDBInstanceEndpointResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CopyDatabaseResponse copyDatabaseResponse = new CopyDatabaseResponse();
+			DeleteDBInstanceEndpointResponse deleteDBInstanceEndpointResponse = new DeleteDBInstanceEndpointResponse();
 
-			copyDatabaseResponse.HttpResponse = _ctx.HttpResponse;
-			copyDatabaseResponse.DBName = _ctx.StringValue("CopyDatabase.DBName");
-			copyDatabaseResponse.TaskId = _ctx.StringValue("CopyDatabase.TaskId");
-			copyDatabaseResponse.DBStatus = _ctx.StringValue("CopyDatabase.DBStatus");
-			copyDatabaseResponse.RequestId = _ctx.StringValue("CopyDatabase.RequestId");
+			deleteDBInstanceEndpointResponse.HttpResponse = _ctx.HttpResponse;
+			deleteDBInstanceEndpointResponse.RequestId = _ctx.StringValue("DeleteDBInstanceEndpoint.RequestId");
+
+			DeleteDBInstanceEndpointResponse.DeleteDBInstanceEndpoint_Data data = new DeleteDBInstanceEndpointResponse.DeleteDBInstanceEndpoint_Data();
+			data.DBInstanceName = _ctx.StringValue("DeleteDBInstanceEndpoint.Data.DBInstanceName");
+			data.DBInstanceEndpointId = _ctx.StringValue("DeleteDBInstanceEndpoint.Data.DBInstanceEndpointId");
+			deleteDBInstanceEndpointResponse.Data = data;
         
-			return copyDatabaseResponse;
+			return deleteDBInstanceEndpointResponse;
         }
     }
 }

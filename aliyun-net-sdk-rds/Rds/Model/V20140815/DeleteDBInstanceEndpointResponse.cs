@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeHistoryTasksStatResponse : AcsResponse
+	public class DeleteDBInstanceEndpointResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribeHistoryTasksStat_ItemsItem> items;
+		private DeleteDBInstanceEndpoint_Data data;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -42,49 +42,49 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "Items")]
-		public List<DescribeHistoryTasksStat_ItemsItem> Items
+		[JsonProperty(PropertyName = "Data")]
+		public DeleteDBInstanceEndpoint_Data Data
 		{
 			get
 			{
-				return items;
+				return data;
 			}
 			set	
 			{
-				items = value;
+				data = value;
 			}
 		}
 
-		public class DescribeHistoryTasksStat_ItemsItem
+		public class DeleteDBInstanceEndpoint_Data
 		{
 
-			private string status;
+			private string dBInstanceName;
 
-			private int? totalCount;
+			private string dBInstanceEndpointId;
 
-			[JsonProperty(PropertyName = "Status")]
-			public string Status
+			[JsonProperty(PropertyName = "DBInstanceName")]
+			public string DBInstanceName
 			{
 				get
 				{
-					return status;
+					return dBInstanceName;
 				}
 				set	
 				{
-					status = value;
+					dBInstanceName = value;
 				}
 			}
 
-			[JsonProperty(PropertyName = "TotalCount")]
-			public int? TotalCount
+			[JsonProperty(PropertyName = "DBInstanceEndpointId")]
+			public string DBInstanceEndpointId
 			{
 				get
 				{
-					return totalCount;
+					return dBInstanceEndpointId;
 				}
 				set	
 				{
-					totalCount = value;
+					dBInstanceEndpointId = value;
 				}
 			}
 		}

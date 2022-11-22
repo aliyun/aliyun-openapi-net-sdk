@@ -24,19 +24,22 @@ using Aliyun.Acs.Rds.Model.V20140815;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class CopyDatabaseResponseUnmarshaller
+    public class CreateDBInstanceEndpointResponseUnmarshaller
     {
-        public static CopyDatabaseResponse Unmarshall(UnmarshallerContext _ctx)
+        public static CreateDBInstanceEndpointResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CopyDatabaseResponse copyDatabaseResponse = new CopyDatabaseResponse();
+			CreateDBInstanceEndpointResponse createDBInstanceEndpointResponse = new CreateDBInstanceEndpointResponse();
 
-			copyDatabaseResponse.HttpResponse = _ctx.HttpResponse;
-			copyDatabaseResponse.DBName = _ctx.StringValue("CopyDatabase.DBName");
-			copyDatabaseResponse.TaskId = _ctx.StringValue("CopyDatabase.TaskId");
-			copyDatabaseResponse.DBStatus = _ctx.StringValue("CopyDatabase.DBStatus");
-			copyDatabaseResponse.RequestId = _ctx.StringValue("CopyDatabase.RequestId");
+			createDBInstanceEndpointResponse.HttpResponse = _ctx.HttpResponse;
+			createDBInstanceEndpointResponse.RequestId = _ctx.StringValue("CreateDBInstanceEndpoint.RequestId");
+
+			CreateDBInstanceEndpointResponse.CreateDBInstanceEndpoint_Data data = new CreateDBInstanceEndpointResponse.CreateDBInstanceEndpoint_Data();
+			data.DBInstanceName = _ctx.StringValue("CreateDBInstanceEndpoint.Data.DBInstanceName");
+			data.DBInstanceEndpointId = _ctx.StringValue("CreateDBInstanceEndpoint.Data.DBInstanceEndpointId");
+			data.ConnectionString = _ctx.StringValue("CreateDBInstanceEndpoint.Data.ConnectionString");
+			createDBInstanceEndpointResponse.Data = data;
         
-			return copyDatabaseResponse;
+			return createDBInstanceEndpointResponse;
         }
     }
 }

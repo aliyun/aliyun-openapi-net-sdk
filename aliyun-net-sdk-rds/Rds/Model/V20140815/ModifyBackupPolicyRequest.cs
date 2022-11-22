@@ -65,6 +65,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string preferredBackupPeriod;
 
+		private bool? enableIncrementDataBackup;
+
 		private string releasedKeepPolicy;
 
 		private string resourceOwnerAccount;
@@ -256,6 +258,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				preferredBackupPeriod = value;
 				DictionaryUtil.Add(QueryParameters, "PreferredBackupPeriod", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "EnableIncrementDataBackup")]
+		public bool? EnableIncrementDataBackup
+		{
+			get
+			{
+				return enableIncrementDataBackup;
+			}
+			set	
+			{
+				enableIncrementDataBackup = value;
+				DictionaryUtil.Add(QueryParameters, "EnableIncrementDataBackup", value.ToString());
 			}
 		}
 

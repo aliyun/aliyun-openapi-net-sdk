@@ -22,55 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class CopyDatabaseResponse : AcsResponse
+	public class ModifyDBInstanceEndpointAddressResponse : AcsResponse
 	{
-
-		private string dBName;
-
-		private string taskId;
-
-		private string dBStatus;
 
 		private string requestId;
 
-		[JsonProperty(PropertyName = "DBName")]
-		public string DBName
-		{
-			get
-			{
-				return dBName;
-			}
-			set	
-			{
-				dBName = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "TaskId")]
-		public string TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "DBStatus")]
-		public string DBStatus
-		{
-			get
-			{
-				return dBStatus;
-			}
-			set	
-			{
-				dBStatus = value;
-			}
-		}
+		private ModifyDBInstanceEndpointAddress_Data data;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -82,6 +39,53 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Data")]
+		public ModifyDBInstanceEndpointAddress_Data Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+
+		public class ModifyDBInstanceEndpointAddress_Data
+		{
+
+			private string dBInstanceName;
+
+			private string dBInstanceEndpointId;
+
+			[JsonProperty(PropertyName = "DBInstanceName")]
+			public string DBInstanceName
+			{
+				get
+				{
+					return dBInstanceName;
+				}
+				set	
+				{
+					dBInstanceName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBInstanceEndpointId")]
+			public string DBInstanceEndpointId
+			{
+				get
+				{
+					return dBInstanceEndpointId;
+				}
+				set	
+				{
+					dBInstanceEndpointId = value;
+				}
 			}
 		}
 	}

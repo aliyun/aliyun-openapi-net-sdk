@@ -24,19 +24,18 @@ using Aliyun.Acs.Rds.Model.V20140815;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class CopyDatabaseResponseUnmarshaller
+    public class DeleteDBNodesResponseUnmarshaller
     {
-        public static CopyDatabaseResponse Unmarshall(UnmarshallerContext _ctx)
+        public static DeleteDBNodesResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CopyDatabaseResponse copyDatabaseResponse = new CopyDatabaseResponse();
+			DeleteDBNodesResponse deleteDBNodesResponse = new DeleteDBNodesResponse();
 
-			copyDatabaseResponse.HttpResponse = _ctx.HttpResponse;
-			copyDatabaseResponse.DBName = _ctx.StringValue("CopyDatabase.DBName");
-			copyDatabaseResponse.TaskId = _ctx.StringValue("CopyDatabase.TaskId");
-			copyDatabaseResponse.DBStatus = _ctx.StringValue("CopyDatabase.DBStatus");
-			copyDatabaseResponse.RequestId = _ctx.StringValue("CopyDatabase.RequestId");
+			deleteDBNodesResponse.HttpResponse = _ctx.HttpResponse;
+			deleteDBNodesResponse.RequestId = _ctx.StringValue("DeleteDBNodes.RequestId");
+			deleteDBNodesResponse.DBInstanceId = _ctx.StringValue("DeleteDBNodes.DBInstanceId");
+			deleteDBNodesResponse.OrderId = _ctx.LongValue("DeleteDBNodes.OrderId");
         
-			return copyDatabaseResponse;
+			return deleteDBNodesResponse;
         }
     }
 }

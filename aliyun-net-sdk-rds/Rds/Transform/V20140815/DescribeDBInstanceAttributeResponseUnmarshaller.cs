@@ -116,6 +116,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstanceAttribute.Engine = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].Engine");
 				dBInstanceAttribute.DeletionProtection = _ctx.BooleanValue("DescribeDBInstanceAttribute.Items["+ i +"].DeletionProtection");
 				dBInstanceAttribute.KindCode = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].kindCode");
+				dBInstanceAttribute.InstructionSetArch = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].InstructionSetArch");
 
 				DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_Extra extra = new DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_Extra();
 				extra.ReplicaGroupStatus = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].Extra.ReplicaGroupStatus");
@@ -158,6 +159,19 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 					dBInstanceAttribute_readOnlyDBInstanceIds.Add(readOnlyDBInstanceId);
 				}
 				dBInstanceAttribute.ReadOnlyDBInstanceIds = dBInstanceAttribute_readOnlyDBInstanceIds;
+
+				List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_DBClusterNode> dBInstanceAttribute_dBClusterNodes = new List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_DBClusterNode>();
+				for (int j = 0; j < _ctx.Length("DescribeDBInstanceAttribute.Items["+ i +"].DBClusterNodes.Length"); j++) {
+					DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_DBClusterNode dBClusterNode = new DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_DBClusterNode();
+					dBClusterNode.NodeRegionId = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].DBClusterNodes["+ j +"].NodeRegionId");
+					dBClusterNode.NodeZoneId = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].DBClusterNodes["+ j +"].NodeZoneId");
+					dBClusterNode.NodeId = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].DBClusterNodes["+ j +"].NodeId");
+					dBClusterNode.NodeRole = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].DBClusterNodes["+ j +"].NodeRole");
+					dBClusterNode.ClassCode = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].DBClusterNodes["+ j +"].ClassCode");
+
+					dBInstanceAttribute_dBClusterNodes.Add(dBClusterNode);
+				}
+				dBInstanceAttribute.DBClusterNodes = dBInstanceAttribute_dBClusterNodes;
 
 				describeDBInstanceAttributeResponse_items.Add(dBInstanceAttribute);
 			}

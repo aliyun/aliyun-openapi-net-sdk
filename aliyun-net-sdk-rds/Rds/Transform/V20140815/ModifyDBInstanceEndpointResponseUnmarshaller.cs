@@ -24,19 +24,21 @@ using Aliyun.Acs.Rds.Model.V20140815;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class CopyDatabaseResponseUnmarshaller
+    public class ModifyDBInstanceEndpointResponseUnmarshaller
     {
-        public static CopyDatabaseResponse Unmarshall(UnmarshallerContext _ctx)
+        public static ModifyDBInstanceEndpointResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CopyDatabaseResponse copyDatabaseResponse = new CopyDatabaseResponse();
+			ModifyDBInstanceEndpointResponse modifyDBInstanceEndpointResponse = new ModifyDBInstanceEndpointResponse();
 
-			copyDatabaseResponse.HttpResponse = _ctx.HttpResponse;
-			copyDatabaseResponse.DBName = _ctx.StringValue("CopyDatabase.DBName");
-			copyDatabaseResponse.TaskId = _ctx.StringValue("CopyDatabase.TaskId");
-			copyDatabaseResponse.DBStatus = _ctx.StringValue("CopyDatabase.DBStatus");
-			copyDatabaseResponse.RequestId = _ctx.StringValue("CopyDatabase.RequestId");
+			modifyDBInstanceEndpointResponse.HttpResponse = _ctx.HttpResponse;
+			modifyDBInstanceEndpointResponse.RequestId = _ctx.StringValue("ModifyDBInstanceEndpoint.RequestId");
+
+			ModifyDBInstanceEndpointResponse.ModifyDBInstanceEndpoint_Data data = new ModifyDBInstanceEndpointResponse.ModifyDBInstanceEndpoint_Data();
+			data.DBInstanceName = _ctx.StringValue("ModifyDBInstanceEndpoint.Data.DBInstanceName");
+			data.DBInstanceEndpointId = _ctx.StringValue("ModifyDBInstanceEndpoint.Data.DBInstanceEndpointId");
+			modifyDBInstanceEndpointResponse.Data = data;
         
-			return copyDatabaseResponse;
+			return modifyDBInstanceEndpointResponse;
         }
     }
 }

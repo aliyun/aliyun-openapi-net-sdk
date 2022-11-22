@@ -134,6 +134,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string minorVersion;
 
+			private string communityMinorVersion;
+
+			private string tag;
+
 			[JsonProperty(PropertyName = "ReleaseNote")]
 			public string ReleaseNote
 			{
@@ -235,6 +239,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					minorVersion = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CommunityMinorVersion")]
+			public string CommunityMinorVersion
+			{
+				get
+				{
+					return communityMinorVersion;
+				}
+				set	
+				{
+					communityMinorVersion = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Tag")]
+			public string Tag
+			{
+				get
+				{
+					return tag;
+				}
+				set	
+				{
+					tag = value;
 				}
 			}
 		}

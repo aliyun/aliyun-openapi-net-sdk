@@ -24,19 +24,18 @@ using Aliyun.Acs.Rds.Model.V20140815;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class CopyDatabaseResponseUnmarshaller
+    public class CreateDBNodesResponseUnmarshaller
     {
-        public static CopyDatabaseResponse Unmarshall(UnmarshallerContext _ctx)
+        public static CreateDBNodesResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CopyDatabaseResponse copyDatabaseResponse = new CopyDatabaseResponse();
+			CreateDBNodesResponse createDBNodesResponse = new CreateDBNodesResponse();
 
-			copyDatabaseResponse.HttpResponse = _ctx.HttpResponse;
-			copyDatabaseResponse.DBName = _ctx.StringValue("CopyDatabase.DBName");
-			copyDatabaseResponse.TaskId = _ctx.StringValue("CopyDatabase.TaskId");
-			copyDatabaseResponse.DBStatus = _ctx.StringValue("CopyDatabase.DBStatus");
-			copyDatabaseResponse.RequestId = _ctx.StringValue("CopyDatabase.RequestId");
+			createDBNodesResponse.HttpResponse = _ctx.HttpResponse;
+			createDBNodesResponse.RequestId = _ctx.StringValue("CreateDBNodes.RequestId");
+			createDBNodesResponse.DBInstanceId = _ctx.StringValue("CreateDBNodes.DBInstanceId");
+			createDBNodesResponse.OrderId = _ctx.LongValue("CreateDBNodes.OrderId");
         
-			return copyDatabaseResponse;
+			return createDBNodesResponse;
         }
     }
 }

@@ -28,10 +28,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeSecretsRequest : RpcAcsRequest<DescribeSecretsResponse>
+    public class CreateDBNodesRequest : RpcAcsRequest<CreateDBNodesResponse>
     {
-        public DescribeSecretsRequest()
-            : base("Rds", "2014-08-15", "DescribeSecrets", "rds", "openAPI")
+        public CreateDBNodesRequest()
+            : base("Rds", "2014-08-15", "CreateDBNodes", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,13 +45,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string clientToken;
 
-		private long? pageNumber;
+		private string dBInstanceId;
 
-		private string engine;
-
-		private long? pageSize;
-
-		private string dbInstanceId;
+		private string sourceBiz;
 
 		private string resourceOwnerAccount;
 
@@ -59,7 +55,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? ownerId;
 
-		private string acceptLanguage;
+		private string dBNode;
 
 		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
@@ -89,59 +85,31 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "PageNumber")]
-		public long? PageNumber
+		[JsonProperty(PropertyName = "DBInstanceId")]
+		public string DBInstanceId
 		{
 			get
 			{
-				return pageNumber;
+				return dBInstanceId;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "Engine")]
-		public string Engine
+		[JsonProperty(PropertyName = "SourceBiz")]
+		public string SourceBiz
 		{
 			get
 			{
-				return engine;
+				return sourceBiz;
 			}
 			set	
 			{
-				engine = value;
-				DictionaryUtil.Add(QueryParameters, "Engine", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "PageSize")]
-		public long? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		[JsonProperty(PropertyName = "DbInstanceId")]
-		public string DbInstanceId
-		{
-			get
-			{
-				return dbInstanceId;
-			}
-			set	
-			{
-				dbInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DbInstanceId", value);
+				sourceBiz = value;
+				DictionaryUtil.Add(QueryParameters, "SourceBiz", value);
 			}
 		}
 
@@ -187,17 +155,17 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "AcceptLanguage")]
-		public string AcceptLanguage
+		[JsonProperty(PropertyName = "DBNode")]
+		public string DBNode
 		{
 			get
 			{
-				return acceptLanguage;
+				return dBNode;
 			}
 			set	
 			{
-				acceptLanguage = value;
-				DictionaryUtil.Add(QueryParameters, "AcceptLanguage", value);
+				dBNode = value;
+				DictionaryUtil.Add(QueryParameters, "DBNode", value);
 			}
 		}
 
@@ -206,9 +174,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			return false;
 		}
 
-        public override DescribeSecretsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateDBNodesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeSecretsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateDBNodesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

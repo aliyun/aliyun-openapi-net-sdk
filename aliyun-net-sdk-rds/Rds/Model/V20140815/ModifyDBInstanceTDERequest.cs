@@ -55,6 +55,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string ownerAccount;
 
+		private bool? isRotate;
+
 		private string encryptionKey;
 
 		private long? ownerId;
@@ -160,6 +162,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "IsRotate")]
+		public bool? IsRotate
+		{
+			get
+			{
+				return isRotate;
+			}
+			set	
+			{
+				isRotate = value;
+				DictionaryUtil.Add(QueryParameters, "IsRotate", value.ToString());
 			}
 		}
 

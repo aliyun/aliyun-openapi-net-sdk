@@ -16,27 +16,58 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+using Aliyun.Acs.Core;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Rds.Model.V20140815;
-
-namespace Aliyun.Acs.Rds.Transform.V20140815
+namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class CopyDatabaseResponseUnmarshaller
-    {
-        public static CopyDatabaseResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			CopyDatabaseResponse copyDatabaseResponse = new CopyDatabaseResponse();
+	public class CreateDBNodesResponse : AcsResponse
+	{
 
-			copyDatabaseResponse.HttpResponse = _ctx.HttpResponse;
-			copyDatabaseResponse.DBName = _ctx.StringValue("CopyDatabase.DBName");
-			copyDatabaseResponse.TaskId = _ctx.StringValue("CopyDatabase.TaskId");
-			copyDatabaseResponse.DBStatus = _ctx.StringValue("CopyDatabase.DBStatus");
-			copyDatabaseResponse.RequestId = _ctx.StringValue("CopyDatabase.RequestId");
-        
-			return copyDatabaseResponse;
-        }
-    }
+		private string requestId;
+
+		private string dBInstanceId;
+
+		private long? orderId;
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBInstanceId")]
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "OrderId")]
+		public long? OrderId
+		{
+			get
+			{
+				return orderId;
+			}
+			set	
+			{
+				orderId = value;
+			}
+		}
+	}
 }

@@ -77,6 +77,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string payType;
 
+		private string dBNode;
+
 		private string orderType;
 
 		[JsonProperty(PropertyName = "ResourceOwnerId")]
@@ -328,6 +330,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				payType = value;
 				DictionaryUtil.Add(QueryParameters, "PayType", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBNode")]
+		public string DBNode
+		{
+			get
+			{
+				return dBNode;
+			}
+			set	
+			{
+				dBNode = value;
+				DictionaryUtil.Add(QueryParameters, "DBNode", value);
 			}
 		}
 

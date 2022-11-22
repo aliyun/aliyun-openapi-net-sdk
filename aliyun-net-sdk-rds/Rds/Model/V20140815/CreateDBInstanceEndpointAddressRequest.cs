@@ -28,10 +28,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DeleteSecretRequest : RpcAcsRequest<DeleteSecretResponse>
+    public class CreateDBInstanceEndpointAddressRequest : RpcAcsRequest<CreateDBInstanceEndpointAddressResponse>
     {
-        public DeleteSecretRequest()
-            : base("Rds", "2014-08-15", "DeleteSecret", "rds", "openAPI")
+        public CreateDBInstanceEndpointAddressRequest()
+            : base("Rds", "2014-08-15", "CreateDBInstanceEndpointAddress", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,21 +41,33 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			Method = MethodType.POST;
         }
 
+		private string connectionStringPrefix;
+
 		private long? resourceOwnerId;
 
 		private string clientToken;
 
-		private string secretArn;
+		private string dBInstanceId;
 
-		private string engine;
+		private string ipType;
 
-		private string dbInstanceId;
+		private string dBInstanceEndpointId;
 
-		private string resourceOwnerAccount;
+		private string port;
 
-		private long? ownerId;
-
-		private string secretName;
+		[JsonProperty(PropertyName = "ConnectionStringPrefix")]
+		public string ConnectionStringPrefix
+		{
+			get
+			{
+				return connectionStringPrefix;
+			}
+			set	
+			{
+				connectionStringPrefix = value;
+				DictionaryUtil.Add(QueryParameters, "ConnectionStringPrefix", value);
+			}
+		}
 
 		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
@@ -85,98 +97,65 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "SecretArn")]
-		public string SecretArn
+		[JsonProperty(PropertyName = "DBInstanceId")]
+		public string DBInstanceId
 		{
 			get
 			{
-				return secretArn;
+				return dBInstanceId;
 			}
 			set	
 			{
-				secretArn = value;
-				DictionaryUtil.Add(QueryParameters, "SecretArn", value);
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "Engine")]
-		public string Engine
+		[JsonProperty(PropertyName = "IpType")]
+		public string IpType
 		{
 			get
 			{
-				return engine;
+				return ipType;
 			}
 			set	
 			{
-				engine = value;
-				DictionaryUtil.Add(QueryParameters, "Engine", value);
+				ipType = value;
+				DictionaryUtil.Add(QueryParameters, "IpType", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "DbInstanceId")]
-		public string DbInstanceId
+		[JsonProperty(PropertyName = "DBInstanceEndpointId")]
+		public string DBInstanceEndpointId
 		{
 			get
 			{
-				return dbInstanceId;
+				return dBInstanceEndpointId;
 			}
 			set	
 			{
-				dbInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DbInstanceId", value);
+				dBInstanceEndpointId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceEndpointId", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
-		public string ResourceOwnerAccount
+		[JsonProperty(PropertyName = "Port")]
+		public string Port
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return port;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				port = value;
+				DictionaryUtil.Add(QueryParameters, "Port", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "OwnerId")]
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		[JsonProperty(PropertyName = "SecretName")]
-		public string SecretName
-		{
-			get
-			{
-				return secretName;
-			}
-			set	
-			{
-				secretName = value;
-				DictionaryUtil.Add(QueryParameters, "SecretName", value);
-			}
-		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override DeleteSecretResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateDBInstanceEndpointAddressResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteSecretResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateDBInstanceEndpointAddressResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

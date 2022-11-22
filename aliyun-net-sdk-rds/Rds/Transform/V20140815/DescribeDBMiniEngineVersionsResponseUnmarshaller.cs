@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				minorVersionItemsItem.StatusDesc = _ctx.StringValue("DescribeDBMiniEngineVersions.MinorVersionItems["+ i +"].StatusDesc");
 				minorVersionItemsItem.EngineVersion = _ctx.StringValue("DescribeDBMiniEngineVersions.MinorVersionItems["+ i +"].EngineVersion");
 				minorVersionItemsItem.MinorVersion = _ctx.StringValue("DescribeDBMiniEngineVersions.MinorVersionItems["+ i +"].MinorVersion");
+				minorVersionItemsItem.CommunityMinorVersion = _ctx.StringValue("DescribeDBMiniEngineVersions.MinorVersionItems["+ i +"].CommunityMinorVersion");
+				minorVersionItemsItem.Tag = _ctx.StringValue("DescribeDBMiniEngineVersions.MinorVersionItems["+ i +"].Tag");
 
 				describeDBMiniEngineVersionsResponse_minorVersionItems.Add(minorVersionItemsItem);
 			}
