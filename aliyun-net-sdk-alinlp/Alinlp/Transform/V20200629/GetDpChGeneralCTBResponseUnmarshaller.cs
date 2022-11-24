@@ -31,8 +31,8 @@ namespace Aliyun.Acs.alinlp.Transform.V20200629
 			GetDpChGeneralCTBResponse getDpChGeneralCTBResponse = new GetDpChGeneralCTBResponse();
 
 			getDpChGeneralCTBResponse.HttpResponse = _ctx.HttpResponse;
-			getDpChGeneralCTBResponse.Data = _ctx.StringValue("GetDpChGeneralCTB.Data");
 			getDpChGeneralCTBResponse.RequestId = _ctx.StringValue("GetDpChGeneralCTB.RequestId");
+			getDpChGeneralCTBResponse.Data = _ctx.StringValue("GetDpChGeneralCTB.Data");
         
 			return getDpChGeneralCTBResponse;
         }

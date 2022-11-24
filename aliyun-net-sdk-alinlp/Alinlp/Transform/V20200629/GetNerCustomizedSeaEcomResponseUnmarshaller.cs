@@ -31,8 +31,8 @@ namespace Aliyun.Acs.alinlp.Transform.V20200629
 			GetNerCustomizedSeaEcomResponse getNerCustomizedSeaEcomResponse = new GetNerCustomizedSeaEcomResponse();
 
 			getNerCustomizedSeaEcomResponse.HttpResponse = _ctx.HttpResponse;
-			getNerCustomizedSeaEcomResponse.Data = _ctx.StringValue("GetNerCustomizedSeaEcom.Data");
 			getNerCustomizedSeaEcomResponse.RequestId = _ctx.StringValue("GetNerCustomizedSeaEcom.RequestId");
+			getNerCustomizedSeaEcomResponse.Data = _ctx.StringValue("GetNerCustomizedSeaEcom.Data");
         
 			return getNerCustomizedSeaEcomResponse;
         }

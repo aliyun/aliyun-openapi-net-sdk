@@ -31,8 +31,8 @@ namespace Aliyun.Acs.alinlp.Transform.V20200629
 			GetCheckDuplicationChMedicalResponse getCheckDuplicationChMedicalResponse = new GetCheckDuplicationChMedicalResponse();
 
 			getCheckDuplicationChMedicalResponse.HttpResponse = _ctx.HttpResponse;
-			getCheckDuplicationChMedicalResponse.Data = _ctx.StringValue("GetCheckDuplicationChMedical.Data");
 			getCheckDuplicationChMedicalResponse.RequestId = _ctx.StringValue("GetCheckDuplicationChMedical.RequestId");
+			getCheckDuplicationChMedicalResponse.Data = _ctx.StringValue("GetCheckDuplicationChMedical.Data");
         
 			return getCheckDuplicationChMedicalResponse;
         }

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.alinlp;
 using Aliyun.Acs.alinlp.Transform;
 using Aliyun.Acs.alinlp.Transform.V20200629;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.alinlp.Model.V20200629
     public class GetTcChGeneralRequest : RpcAcsRequest<GetTcChGeneralResponse>
     {
         public GetTcChGeneralRequest()
-            : base("alinlp", "2020-06-29", "GetTcChGeneral", "alinlp", "openAPI")
+            : base("alinlp", "2020-06-29", "GetTcChGeneral")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.alinlp.Transform.V20200629
 			GetSaSeaEcomResponse getSaSeaEcomResponse = new GetSaSeaEcomResponse();
 
 			getSaSeaEcomResponse.HttpResponse = _ctx.HttpResponse;
-			getSaSeaEcomResponse.Data = _ctx.StringValue("GetSaSeaEcom.Data");
 			getSaSeaEcomResponse.RequestId = _ctx.StringValue("GetSaSeaEcom.RequestId");
+			getSaSeaEcomResponse.Data = _ctx.StringValue("GetSaSeaEcom.Data");
         
 			return getSaSeaEcomResponse;
         }

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.alinlp.Transform.V20200629
 			GetSimilarityChMedicalResponse getSimilarityChMedicalResponse = new GetSimilarityChMedicalResponse();
 
 			getSimilarityChMedicalResponse.HttpResponse = _ctx.HttpResponse;
-			getSimilarityChMedicalResponse.Data = _ctx.StringValue("GetSimilarityChMedical.Data");
 			getSimilarityChMedicalResponse.RequestId = _ctx.StringValue("GetSimilarityChMedical.RequestId");
+			getSimilarityChMedicalResponse.Data = _ctx.StringValue("GetSimilarityChMedical.Data");
         
 			return getSimilarityChMedicalResponse;
         }

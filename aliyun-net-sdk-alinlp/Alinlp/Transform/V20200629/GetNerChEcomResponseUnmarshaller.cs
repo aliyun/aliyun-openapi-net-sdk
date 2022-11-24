@@ -31,8 +31,8 @@ namespace Aliyun.Acs.alinlp.Transform.V20200629
 			GetNerChEcomResponse getNerChEcomResponse = new GetNerChEcomResponse();
 
 			getNerChEcomResponse.HttpResponse = _ctx.HttpResponse;
-			getNerChEcomResponse.Data = _ctx.StringValue("GetNerChEcom.Data");
 			getNerChEcomResponse.RequestId = _ctx.StringValue("GetNerChEcom.RequestId");
+			getNerChEcomResponse.Data = _ctx.StringValue("GetNerChEcom.Data");
         
 			return getNerChEcomResponse;
         }

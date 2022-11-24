@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.alinlp;
 using Aliyun.Acs.alinlp.Transform;
 using Aliyun.Acs.alinlp.Transform.V20200629;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.alinlp.Model.V20200629
     public class GetKeywordEnEcomRequest : RpcAcsRequest<GetKeywordEnEcomResponse>
     {
         public GetKeywordEnEcomRequest()
-            : base("alinlp", "2020-06-29", "GetKeywordEnEcom", "alinlp", "openAPI")
+            : base("alinlp", "2020-06-29", "GetKeywordEnEcom")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

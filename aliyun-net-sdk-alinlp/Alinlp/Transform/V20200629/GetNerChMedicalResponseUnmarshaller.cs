@@ -31,8 +31,8 @@ namespace Aliyun.Acs.alinlp.Transform.V20200629
 			GetNerChMedicalResponse getNerChMedicalResponse = new GetNerChMedicalResponse();
 
 			getNerChMedicalResponse.HttpResponse = _ctx.HttpResponse;
-			getNerChMedicalResponse.Data = _ctx.StringValue("GetNerChMedical.Data");
 			getNerChMedicalResponse.RequestId = _ctx.StringValue("GetNerChMedical.RequestId");
+			getNerChMedicalResponse.Data = _ctx.StringValue("GetNerChMedical.Data");
         
 			return getNerChMedicalResponse;
         }

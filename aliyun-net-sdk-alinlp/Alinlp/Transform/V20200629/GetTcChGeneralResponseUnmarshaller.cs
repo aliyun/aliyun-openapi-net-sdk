@@ -31,8 +31,8 @@ namespace Aliyun.Acs.alinlp.Transform.V20200629
 			GetTcChGeneralResponse getTcChGeneralResponse = new GetTcChGeneralResponse();
 
 			getTcChGeneralResponse.HttpResponse = _ctx.HttpResponse;
-			getTcChGeneralResponse.Data = _ctx.StringValue("GetTcChGeneral.Data");
 			getTcChGeneralResponse.RequestId = _ctx.StringValue("GetTcChGeneral.RequestId");
+			getTcChGeneralResponse.Data = _ctx.StringValue("GetTcChGeneral.Data");
         
 			return getTcChGeneralResponse;
         }

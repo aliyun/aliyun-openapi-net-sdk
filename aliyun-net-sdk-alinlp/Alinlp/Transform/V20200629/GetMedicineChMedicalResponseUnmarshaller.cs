@@ -31,8 +31,8 @@ namespace Aliyun.Acs.alinlp.Transform.V20200629
 			GetMedicineChMedicalResponse getMedicineChMedicalResponse = new GetMedicineChMedicalResponse();
 
 			getMedicineChMedicalResponse.HttpResponse = _ctx.HttpResponse;
-			getMedicineChMedicalResponse.Data = _ctx.StringValue("GetMedicineChMedical.Data");
 			getMedicineChMedicalResponse.RequestId = _ctx.StringValue("GetMedicineChMedical.RequestId");
+			getMedicineChMedicalResponse.Data = _ctx.StringValue("GetMedicineChMedical.Data");
         
 			return getMedicineChMedicalResponse;
         }

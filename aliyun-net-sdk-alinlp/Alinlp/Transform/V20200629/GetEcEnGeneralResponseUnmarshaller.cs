@@ -31,8 +31,8 @@ namespace Aliyun.Acs.alinlp.Transform.V20200629
 			GetEcEnGeneralResponse getEcEnGeneralResponse = new GetEcEnGeneralResponse();
 
 			getEcEnGeneralResponse.HttpResponse = _ctx.HttpResponse;
-			getEcEnGeneralResponse.Data = _ctx.StringValue("GetEcEnGeneral.Data");
 			getEcEnGeneralResponse.RequestId = _ctx.StringValue("GetEcEnGeneral.RequestId");
+			getEcEnGeneralResponse.Data = _ctx.StringValue("GetEcEnGeneral.Data");
         
 			return getEcEnGeneralResponse;
         }

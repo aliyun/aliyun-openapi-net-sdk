@@ -31,8 +31,8 @@ namespace Aliyun.Acs.alinlp.Transform.V20200629
 			GetSummaryChEcomResponse getSummaryChEcomResponse = new GetSummaryChEcomResponse();
 
 			getSummaryChEcomResponse.HttpResponse = _ctx.HttpResponse;
-			getSummaryChEcomResponse.Data = _ctx.StringValue("GetSummaryChEcom.Data");
 			getSummaryChEcomResponse.RequestId = _ctx.StringValue("GetSummaryChEcom.RequestId");
+			getSummaryChEcomResponse.Data = _ctx.StringValue("GetSummaryChEcom.Data");
         
 			return getSummaryChEcomResponse;
         }

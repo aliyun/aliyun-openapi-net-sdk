@@ -31,8 +31,8 @@ namespace Aliyun.Acs.alinlp.Transform.V20200629
 			GetWeChEcomResponse getWeChEcomResponse = new GetWeChEcomResponse();
 
 			getWeChEcomResponse.HttpResponse = _ctx.HttpResponse;
-			getWeChEcomResponse.Data = _ctx.StringValue("GetWeChEcom.Data");
 			getWeChEcomResponse.RequestId = _ctx.StringValue("GetWeChEcom.RequestId");
+			getWeChEcomResponse.Data = _ctx.StringValue("GetWeChEcom.Data");
         
 			return getWeChEcomResponse;
         }
