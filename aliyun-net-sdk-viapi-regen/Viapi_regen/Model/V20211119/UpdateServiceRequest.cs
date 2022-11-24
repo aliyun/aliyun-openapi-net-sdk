@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -50,6 +51,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 
 		private string authorizedAccount;
 
+		[JsonProperty(PropertyName = "Description")]
 		public string Description
 		{
 			get
@@ -63,6 +65,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "Id")]
 		public long? Id
 		{
 			get
@@ -76,6 +79,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "AuthorizationType")]
 		public string AuthorizationType
 		{
 			get
@@ -89,6 +93,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "Name")]
 		public string Name
 		{
 			get
@@ -102,6 +107,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "AuthorizedAccount")]
 		public string AuthorizedAccount
 		{
 			get

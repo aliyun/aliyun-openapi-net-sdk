@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -42,6 +43,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 
 		private long? id;
 
+		[JsonProperty(PropertyName = "Id")]
 		public long? Id
 		{
 			get

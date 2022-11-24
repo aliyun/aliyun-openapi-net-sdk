@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -46,6 +47,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 
 		private long? workspaceId;
 
+		[JsonProperty(PropertyName = "PageSize")]
 		public long? PageSize
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "CurrentPage")]
 		public long? CurrentPage
 		{
 			get
@@ -72,6 +75,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "WorkspaceId")]
 		public long? WorkspaceId
 		{
 			get

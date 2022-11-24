@@ -17,7 +17,6 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -28,10 +27,10 @@ using Aliyun.Acs.viapi_regen.Transform.V20211119;
 
 namespace Aliyun.Acs.viapi_regen.Model.V20211119
 {
-    public class GetTrainTaskEstimatedTimeRequest : RpcAcsRequest<GetTrainTaskEstimatedTimeResponse>
+    public class DownloadDatasetRequest : RpcAcsRequest<DownloadDatasetResponse>
     {
-        public GetTrainTaskEstimatedTimeRequest()
-            : base("viapi-regen", "2021-11-19", "GetTrainTaskEstimatedTime", "selflearning", "openAPI")
+        public DownloadDatasetRequest()
+            : base("viapi-regen", "2021-11-19", "DownloadDataset", "selflearning", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,19 +40,18 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			Method = MethodType.POST;
         }
 
-		private long? id;
+		private long? datasetId;
 
-		[JsonProperty(PropertyName = "Id")]
-		public long? Id
+		public long? DatasetId
 		{
 			get
 			{
-				return id;
+				return datasetId;
 			}
 			set	
 			{
-				id = value;
-				DictionaryUtil.Add(BodyParameters, "Id", value.ToString());
+				datasetId = value;
+				DictionaryUtil.Add(BodyParameters, "DatasetId", value.ToString());
 			}
 		}
 
@@ -62,9 +60,9 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			return false;
 		}
 
-        public override GetTrainTaskEstimatedTimeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DownloadDatasetResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetTrainTaskEstimatedTimeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DownloadDatasetResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

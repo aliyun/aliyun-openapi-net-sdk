@@ -33,6 +33,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 
 		private GetTrainTask_Data data;
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -45,6 +46,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -57,6 +59,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -69,6 +72,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public GetTrainTask_Data Data
 		{
 			get
@@ -112,6 +116,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 
 			private long? trainUseTime;
 
+			[JsonProperty(PropertyName = "Id")]
 			public long? Id
 			{
 				get
@@ -124,6 +129,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "GmtCreate")]
 			public long? GmtCreate
 			{
 				get
@@ -136,6 +142,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "TaskName")]
 			public string TaskName
 			{
 				get
@@ -148,6 +155,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "Description")]
 			public string Description
 			{
 				get
@@ -160,6 +168,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "DatasetId")]
 			public long? DatasetId
 			{
 				get
@@ -172,6 +181,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "DatasetName")]
 			public string DatasetName
 			{
 				get
@@ -184,6 +194,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "LabelId")]
 			public long? LabelId
 			{
 				get
@@ -196,6 +207,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "LabelName")]
 			public string LabelName
 			{
 				get
@@ -208,6 +220,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "TrainMode")]
 			public string TrainMode
 			{
 				get
@@ -220,6 +233,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "TrainStatus")]
 			public string TrainStatus
 			{
 				get
@@ -232,6 +246,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "ModelId")]
 			public long? ModelId
 			{
 				get
@@ -244,6 +259,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "ModelEffect")]
 			public string ModelEffect
 			{
 				get
@@ -256,6 +272,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "FailureReason")]
 			public string FailureReason
 			{
 				get
@@ -268,6 +285,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "TrainUseTime")]
 			public long? TrainUseTime
 			{
 				get

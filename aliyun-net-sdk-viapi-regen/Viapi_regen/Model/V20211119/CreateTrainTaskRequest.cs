@@ -44,15 +44,15 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 
 		private string trainMode;
 
+		private string datasetIds;
+
 		private long? preTrainTaskId;
 
 		private string advancedParameters;
 
-		private long? labelId;
-
 		private string name;
 
-		private long? datasetId;
+		private string labelIds;
 
 		private long? workspaceId;
 
@@ -82,6 +82,19 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		public string DatasetIds
+		{
+			get
+			{
+				return datasetIds;
+			}
+			set	
+			{
+				datasetIds = value;
+				DictionaryUtil.Add(BodyParameters, "DatasetIds", value);
+			}
+		}
+
 		public long? PreTrainTaskId
 		{
 			get
@@ -108,19 +121,6 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
-		public long? LabelId
-		{
-			get
-			{
-				return labelId;
-			}
-			set	
-			{
-				labelId = value;
-				DictionaryUtil.Add(BodyParameters, "LabelId", value.ToString());
-			}
-		}
-
 		public string Name
 		{
 			get
@@ -134,16 +134,16 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
-		public long? DatasetId
+		public string LabelIds
 		{
 			get
 			{
-				return datasetId;
+				return labelIds;
 			}
 			set	
 			{
-				datasetId = value;
-				DictionaryUtil.Add(BodyParameters, "DatasetId", value.ToString());
+				labelIds = value;
+				DictionaryUtil.Add(BodyParameters, "LabelIds", value);
 			}
 		}
 

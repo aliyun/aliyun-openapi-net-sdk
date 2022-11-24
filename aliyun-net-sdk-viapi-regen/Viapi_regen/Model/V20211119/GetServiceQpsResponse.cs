@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.viapi_regen.Model.V20211119
 {
-	public class GetTrainTaskEstimatedTimeResponse : AcsResponse
+	public class GetServiceQpsResponse : AcsResponse
 	{
 
 		private string message;
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 
 		private string code;
 
-		private GetTrainTaskEstimatedTime_Data data;
+		private GetServiceQps_Data data;
 
 		[JsonProperty(PropertyName = "Message")]
 		public string Message
@@ -73,7 +73,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 		}
 
 		[JsonProperty(PropertyName = "Data")]
-		public GetTrainTaskEstimatedTime_Data Data
+		public GetServiceQps_Data Data
 		{
 			get
 			{
@@ -85,21 +85,21 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
-		public class GetTrainTaskEstimatedTime_Data
+		public class GetServiceQps_Data
 		{
 
-			private string estimatedTime;
+			private string userQps;
 
-			[JsonProperty(PropertyName = "EstimatedTime")]
-			public string EstimatedTime
+			[JsonProperty(PropertyName = "UserQps")]
+			public string UserQps
 			{
 				get
 				{
-					return estimatedTime;
+					return userQps;
 				}
 				set	
 				{
-					estimatedTime = value;
+					userQps = value;
 				}
 			}
 		}

@@ -33,6 +33,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 
 		private GetUploadPolicy_Data data;
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -45,6 +46,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -57,6 +59,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -69,6 +72,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public GetUploadPolicy_Data Data
 		{
 			get
@@ -102,6 +106,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 
 			private string signedHttpUrl;
 
+			[JsonProperty(PropertyName = "AccessId")]
 			public string AccessId
 			{
 				get
@@ -114,6 +119,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "Policy")]
 			public string Policy
 			{
 				get
@@ -126,6 +132,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "Signature")]
 			public string Signature
 			{
 				get
@@ -138,6 +145,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "ObjectKey")]
 			public string ObjectKey
 			{
 				get
@@ -150,6 +158,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "FileName")]
 			public string FileName
 			{
 				get
@@ -162,6 +171,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "BucketName")]
 			public string BucketName
 			{
 				get
@@ -174,6 +184,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "Endpoint")]
 			public string Endpoint
 			{
 				get
@@ -186,6 +197,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "OriginalFilename")]
 			public string OriginalFilename
 			{
 				get
@@ -198,6 +210,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "SignedHttpUrl")]
 			public string SignedHttpUrl
 			{
 				get

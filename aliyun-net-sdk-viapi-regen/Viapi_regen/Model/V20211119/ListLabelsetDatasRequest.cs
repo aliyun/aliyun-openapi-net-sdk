@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -46,12 +47,15 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 
 		private long? currentPage;
 
+		private bool? isAbandon;
+
 		private long? labelId;
 
 		private string name;
 
 		private string operation;
 
+		[JsonProperty(PropertyName = "PageSize")]
 		public long? PageSize
 		{
 			get
@@ -65,6 +69,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "Value")]
 		public string _Value
 		{
 			get
@@ -78,6 +83,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "CurrentPage")]
 		public long? CurrentPage
 		{
 			get
@@ -91,6 +97,21 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "IsAbandon")]
+		public bool? IsAbandon
+		{
+			get
+			{
+				return isAbandon;
+			}
+			set	
+			{
+				isAbandon = value;
+				DictionaryUtil.Add(BodyParameters, "IsAbandon", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "LabelId")]
 		public long? LabelId
 		{
 			get
@@ -104,6 +125,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "Name")]
 		public string Name
 		{
 			get
@@ -117,6 +139,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "Operation")]
 		public string Operation
 		{
 			get

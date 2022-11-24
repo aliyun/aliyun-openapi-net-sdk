@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.viapi_regen.Model.V20211119
 {
-	public class GetTrainTaskEstimatedTimeResponse : AcsResponse
+	public class DownloadDatasetResponse : AcsResponse
 	{
 
 		private string message;
@@ -31,9 +31,8 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 
 		private string code;
 
-		private GetTrainTaskEstimatedTime_Data data;
+		private DownloadDataset_Data data;
 
-		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -46,7 +45,6 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
-		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -59,7 +57,6 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
-		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -72,8 +69,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
-		[JsonProperty(PropertyName = "Data")]
-		public GetTrainTaskEstimatedTime_Data Data
+		public DownloadDataset_Data Data
 		{
 			get
 			{
@@ -85,21 +81,20 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
-		public class GetTrainTaskEstimatedTime_Data
+		public class DownloadDataset_Data
 		{
 
-			private string estimatedTime;
+			private string ossHttpUrl;
 
-			[JsonProperty(PropertyName = "EstimatedTime")]
-			public string EstimatedTime
+			public string OssHttpUrl
 			{
 				get
 				{
-					return estimatedTime;
+					return ossHttpUrl;
 				}
 				set	
 				{
-					estimatedTime = value;
+					ossHttpUrl = value;
 				}
 			}
 		}

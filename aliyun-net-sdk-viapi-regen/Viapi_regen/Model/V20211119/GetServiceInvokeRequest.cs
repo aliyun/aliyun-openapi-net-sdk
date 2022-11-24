@@ -28,10 +28,10 @@ using Aliyun.Acs.viapi_regen.Transform.V20211119;
 
 namespace Aliyun.Acs.viapi_regen.Model.V20211119
 {
-    public class GetTrainTaskEstimatedTimeRequest : RpcAcsRequest<GetTrainTaskEstimatedTimeResponse>
+    public class GetServiceInvokeRequest : RpcAcsRequest<GetServiceInvokeResponse>
     {
-        public GetTrainTaskEstimatedTimeRequest()
-            : base("viapi-regen", "2021-11-19", "GetTrainTaskEstimatedTime", "selflearning", "openAPI")
+        public GetServiceInvokeRequest()
+            : base("viapi-regen", "2021-11-19", "GetServiceInvoke", "selflearning", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,7 +41,27 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			Method = MethodType.POST;
         }
 
+		private long? startTime;
+
 		private long? id;
+
+		private long? endTime;
+
+		private List<string> callerParentIdList = new List<string>(){ };
+
+		[JsonProperty(PropertyName = "StartTime")]
+		public long? StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(BodyParameters, "StartTime", value.ToString());
+			}
+		}
 
 		[JsonProperty(PropertyName = "Id")]
 		public long? Id
@@ -57,14 +77,49 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "EndTime")]
+		public long? EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(BodyParameters, "EndTime", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "CallerParentIdList")]
+		public List<string> CallerParentIdList
+		{
+			get
+			{
+				return callerParentIdList;
+			}
+
+			set
+			{
+				callerParentIdList = value;
+				if(callerParentIdList != null)
+				{
+					for (int depth1 = 0; depth1 < callerParentIdList.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"CallerParentIdList." + (depth1 + 1), callerParentIdList[depth1]);
+					}
+				}
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override GetTrainTaskEstimatedTimeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetServiceInvokeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetTrainTaskEstimatedTimeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetServiceInvokeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
