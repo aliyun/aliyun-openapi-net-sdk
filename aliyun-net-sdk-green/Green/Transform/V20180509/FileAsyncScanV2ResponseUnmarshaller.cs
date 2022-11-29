@@ -16,13 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Green.Model.V20180509
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Green.Model.V20180509;
+
+namespace Aliyun.Acs.Green.Transform.V20180509
 {
-	public class VideoSyncScanResponse : AcsResponse
-	{
-	}
+    public class FileAsyncScanV2ResponseUnmarshaller
+    {
+        public static FileAsyncScanV2Response Unmarshall(UnmarshallerContext _ctx)
+        {
+			FileAsyncScanV2Response fileAsyncScanV2Response = new FileAsyncScanV2Response();
+
+			fileAsyncScanV2Response.HttpResponse = _ctx.HttpResponse;
+			fileAsyncScanV2Response.RequestId = _ctx.StringValue("FileAsyncScanV2.requestId");
+        
+			return fileAsyncScanV2Response;
+        }
+    }
 }

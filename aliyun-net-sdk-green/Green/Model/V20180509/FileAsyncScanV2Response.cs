@@ -22,7 +22,21 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Green.Model.V20180509
 {
-	public class VideoSyncScanResponse : AcsResponse
+	public class FileAsyncScanV2Response : AcsResponse
 	{
+
+		private string requestId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 	}
 }
