@@ -58,6 +58,7 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 				detectionsItem.FractureCategory = _ctx.StringValue("DetectRibFracture.Data.Detections["+ i +"].FractureCategory");
 				detectionsItem.FractureLocation = _ctx.StringValue("DetectRibFracture.Data.Detections["+ i +"].FractureLocation");
 				detectionsItem.FractureSegment = _ctx.LongValue("DetectRibFracture.Data.Detections["+ i +"].FractureSegment");
+				detectionsItem.FracSOPInstanceUID = _ctx.StringValue("DetectRibFracture.Data.Detections["+ i +"].FracSOPInstanceUID");
 
 				List<string> detectionsItem_coordinates = new List<string>();
 				for (int j = 0; j < _ctx.Length("DetectRibFracture.Data.Detections["+ i +"].Coordinates.Length"); j++) {
