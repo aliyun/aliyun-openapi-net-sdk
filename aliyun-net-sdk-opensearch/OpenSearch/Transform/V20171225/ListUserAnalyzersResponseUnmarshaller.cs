@@ -31,29 +31,29 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			ListUserAnalyzersResponse listUserAnalyzersResponse = new ListUserAnalyzersResponse();
 
 			listUserAnalyzersResponse.HttpResponse = _ctx.HttpResponse;
-			listUserAnalyzersResponse.RequestId = _ctx.StringValue("ListUserAnalyzers.requestId");
 			listUserAnalyzersResponse.TotalCount = _ctx.IntegerValue("ListUserAnalyzers.totalCount");
+			listUserAnalyzersResponse.RequestId = _ctx.StringValue("ListUserAnalyzers.requestId");
 
 			List<ListUserAnalyzersResponse.ListUserAnalyzers_ResultItem> listUserAnalyzersResponse_result = new List<ListUserAnalyzersResponse.ListUserAnalyzers_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListUserAnalyzers.Result.Length"); i++) {
 				ListUserAnalyzersResponse.ListUserAnalyzers_ResultItem resultItem = new ListUserAnalyzersResponse.ListUserAnalyzers_ResultItem();
-				resultItem.Id = _ctx.StringValue("ListUserAnalyzers.Result["+ i +"].id");
-				resultItem.Name = _ctx.StringValue("ListUserAnalyzers.Result["+ i +"].name");
-				resultItem.Business = _ctx.StringValue("ListUserAnalyzers.Result["+ i +"].business");
-				resultItem.Available = _ctx.BooleanValue("ListUserAnalyzers.Result["+ i +"].available");
 				resultItem.Created = _ctx.IntegerValue("ListUserAnalyzers.Result["+ i +"].created");
+				resultItem.Available = _ctx.BooleanValue("ListUserAnalyzers.Result["+ i +"].available");
+				resultItem.Name = _ctx.StringValue("ListUserAnalyzers.Result["+ i +"].name");
 				resultItem.Updated = _ctx.IntegerValue("ListUserAnalyzers.Result["+ i +"].updated");
+				resultItem.Id = _ctx.StringValue("ListUserAnalyzers.Result["+ i +"].id");
+				resultItem.Business = _ctx.StringValue("ListUserAnalyzers.Result["+ i +"].business");
 
 				List<ListUserAnalyzersResponse.ListUserAnalyzers_ResultItem.ListUserAnalyzers_DictsItem> resultItem_dicts = new List<ListUserAnalyzersResponse.ListUserAnalyzers_ResultItem.ListUserAnalyzers_DictsItem>();
 				for (int j = 0; j < _ctx.Length("ListUserAnalyzers.Result["+ i +"].Dicts.Length"); j++) {
 					ListUserAnalyzersResponse.ListUserAnalyzers_ResultItem.ListUserAnalyzers_DictsItem dictsItem = new ListUserAnalyzersResponse.ListUserAnalyzers_ResultItem.ListUserAnalyzers_DictsItem();
-					dictsItem.Id = _ctx.StringValue("ListUserAnalyzers.Result["+ i +"].Dicts["+ j +"].id");
+					dictsItem.Created = _ctx.IntegerValue("ListUserAnalyzers.Result["+ i +"].Dicts["+ j +"].created");
+					dictsItem.EntriesCount = _ctx.IntegerValue("ListUserAnalyzers.Result["+ i +"].Dicts["+ j +"].entriesCount");
 					dictsItem.Type = _ctx.StringValue("ListUserAnalyzers.Result["+ i +"].Dicts["+ j +"].type");
 					dictsItem.EntriesLimit = _ctx.IntegerValue("ListUserAnalyzers.Result["+ i +"].Dicts["+ j +"].entriesLimit");
-					dictsItem.EntriesCount = _ctx.IntegerValue("ListUserAnalyzers.Result["+ i +"].Dicts["+ j +"].entriesCount");
 					dictsItem.Available = _ctx.BooleanValue("ListUserAnalyzers.Result["+ i +"].Dicts["+ j +"].available");
-					dictsItem.Created = _ctx.IntegerValue("ListUserAnalyzers.Result["+ i +"].Dicts["+ j +"].created");
 					dictsItem.Updated = _ctx.IntegerValue("ListUserAnalyzers.Result["+ i +"].Dicts["+ j +"].updated");
+					dictsItem.Id = _ctx.StringValue("ListUserAnalyzers.Result["+ i +"].Dicts["+ j +"].id");
 
 					resultItem_dicts.Add(dictsItem);
 				}

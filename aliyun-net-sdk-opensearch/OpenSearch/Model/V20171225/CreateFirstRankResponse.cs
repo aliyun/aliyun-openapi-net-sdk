@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OpenSearch.Model.V20171225
@@ -56,23 +56,11 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 		public class CreateFirstRank_Result
 		{
 
-			private string name;
-
 			private bool? active;
 
-			private List<CreateFirstRank_MetaItem> meta;
+			private string name;
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+			private List<CreateFirstRank_MetaItem> meta;
 
 			public bool? Active
 			{
@@ -83,6 +71,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				set	
 				{
 					active = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 
@@ -101,23 +101,11 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 			public class CreateFirstRank_MetaItem
 			{
 
-				private string attribute;
-
 				private string arg;
 
-				private float? weight;
+				private string attribute;
 
-				public string Attribute
-				{
-					get
-					{
-						return attribute;
-					}
-					set	
-					{
-						attribute = value;
-					}
-				}
+				private float? weight;
 
 				public string Arg
 				{
@@ -128,6 +116,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 					set	
 					{
 						arg = value;
+					}
+				}
+
+				public string Attribute
+				{
+					get
+					{
+						return attribute;
+					}
+					set	
+					{
+						attribute = value;
 					}
 				}
 

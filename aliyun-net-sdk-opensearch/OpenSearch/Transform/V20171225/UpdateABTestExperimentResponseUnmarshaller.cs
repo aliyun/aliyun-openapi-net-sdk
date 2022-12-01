@@ -34,13 +34,13 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			updateABTestExperimentResponse.RequestId = _ctx.StringValue("UpdateABTestExperiment.requestId");
 
 			UpdateABTestExperimentResponse.UpdateABTestExperiment_Result result = new UpdateABTestExperimentResponse.UpdateABTestExperiment_Result();
-			result.Id = _ctx.StringValue("UpdateABTestExperiment.Result.id");
-			result.Name = _ctx.StringValue("UpdateABTestExperiment.Result.name");
-			result._Params = _ctx.StringValue("UpdateABTestExperiment.Result.params");
 			result.Created = _ctx.IntegerValue("UpdateABTestExperiment.Result.created");
-			result.Updated = _ctx.IntegerValue("UpdateABTestExperiment.Result.updated");
-			result.Online = _ctx.BooleanValue("UpdateABTestExperiment.Result.online");
+			result._Params = _ctx.StringValue("UpdateABTestExperiment.Result.params");
 			result.Traffic = _ctx.IntegerValue("UpdateABTestExperiment.Result.traffic");
+			result.Online = _ctx.BooleanValue("UpdateABTestExperiment.Result.online");
+			result.Name = _ctx.StringValue("UpdateABTestExperiment.Result.name");
+			result.Updated = _ctx.IntegerValue("UpdateABTestExperiment.Result.updated");
+			result.Id = _ctx.StringValue("UpdateABTestExperiment.Result.id");
 			updateABTestExperimentResponse.Result = result;
         
 			return updateABTestExperimentResponse;

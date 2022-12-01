@@ -36,10 +36,10 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			List<ListRamRolesResponse.ListRamRoles_ResultItem> listRamRolesResponse_result = new List<ListRamRolesResponse.ListRamRoles_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListRamRoles.Result.Length"); i++) {
 				ListRamRolesResponse.ListRamRoles_ResultItem resultItem = new ListRamRolesResponse.ListRamRoles_ResultItem();
-				resultItem.Name = _ctx.StringValue("ListRamRoles.Result["+ i +"].name");
-				resultItem.Service = _ctx.StringValue("ListRamRoles.Result["+ i +"].service");
 				resultItem.Template_id = _ctx.StringValue("ListRamRoles.Result["+ i +"].template_id");
+				resultItem.Service = _ctx.StringValue("ListRamRoles.Result["+ i +"].service");
 				resultItem.Assumed = _ctx.BooleanValue("ListRamRoles.Result["+ i +"].assumed");
+				resultItem.Name = _ctx.StringValue("ListRamRoles.Result["+ i +"].name");
 
 				listRamRolesResponse_result.Add(resultItem);
 			}

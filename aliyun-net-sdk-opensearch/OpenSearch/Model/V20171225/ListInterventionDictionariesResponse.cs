@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OpenSearch.Model.V20171225
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 	public class ListInterventionDictionariesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalCount;
 
-		private List<ListInterventionDictionaries_ResultItem> result;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<ListInterventionDictionaries_ResultItem> result;
 
 		public int? TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,39 +70,27 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 		public class ListInterventionDictionaries_ResultItem
 		{
 
-			private int? id;
-
-			private string name;
+			private int? created;
 
 			private string type;
 
 			private string analyzer;
 
-			private int? created;
+			private string name;
 
 			private int? updated;
 
-			public int? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+			private int? id;
 
-			public string Name
+			public int? Created
 			{
 				get
 				{
-					return name;
+					return created;
 				}
 				set	
 				{
-					name = value;
+					created = value;
 				}
 			}
 
@@ -130,15 +118,15 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
-			public int? Created
+			public string Name
 			{
 				get
 				{
-					return created;
+					return name;
 				}
 				set	
 				{
-					created = value;
+					name = value;
 				}
 			}
 
@@ -151,6 +139,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				set	
 				{
 					updated = value;
+				}
+			}
+
+			public int? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
 				}
 			}
 		}

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			RemoveDataCollectionResponse removeDataCollectionResponse = new RemoveDataCollectionResponse();
 
 			removeDataCollectionResponse.HttpResponse = _ctx.HttpResponse;
-			removeDataCollectionResponse.RequestId = _ctx.StringValue("RemoveDataCollection.requestId");
 			removeDataCollectionResponse.Result = _ctx.StringValue("RemoveDataCollection.result");
+			removeDataCollectionResponse.RequestId = _ctx.StringValue("RemoveDataCollection.requestId");
         
 			return removeDataCollectionResponse;
         }

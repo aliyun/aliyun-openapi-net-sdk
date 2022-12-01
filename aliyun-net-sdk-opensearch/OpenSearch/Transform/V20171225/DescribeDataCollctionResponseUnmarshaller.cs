@@ -34,15 +34,15 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			describeDataCollctionResponse.RequestId = _ctx.StringValue("DescribeDataCollction.requestId");
 
 			DescribeDataCollctionResponse.DescribeDataCollction_Result result = new DescribeDataCollctionResponse.DescribeDataCollction_Result();
-			result.Id = _ctx.StringValue("DescribeDataCollction.Result.id");
-			result.Name = _ctx.StringValue("DescribeDataCollction.Result.name");
-			result.Type = _ctx.StringValue("DescribeDataCollction.Result.type");
-			result.Status = _ctx.IntegerValue("DescribeDataCollction.Result.status");
-			result.DataCollectionType = _ctx.StringValue("DescribeDataCollction.Result.dataCollectionType");
-			result.IndustryName = _ctx.StringValue("DescribeDataCollction.Result.industryName");
 			result.Created = _ctx.IntegerValue("DescribeDataCollction.Result.created");
+			result.DataCollectionType = _ctx.StringValue("DescribeDataCollction.Result.dataCollectionType");
+			result.Type = _ctx.StringValue("DescribeDataCollction.Result.type");
+			result.IndustryName = _ctx.StringValue("DescribeDataCollction.Result.industryName");
+			result.Status = _ctx.IntegerValue("DescribeDataCollction.Result.status");
 			result.Updated = _ctx.IntegerValue("DescribeDataCollction.Result.updated");
+			result.Name = _ctx.StringValue("DescribeDataCollction.Result.name");
 			result.SundialId = _ctx.StringValue("DescribeDataCollction.Result.sundialId");
+			result.Id = _ctx.StringValue("DescribeDataCollction.Result.id");
 			describeDataCollctionResponse.Result = result;
         
 			return describeDataCollctionResponse;

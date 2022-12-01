@@ -34,15 +34,15 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			removeFirstRankResponse.RequestId = _ctx.StringValue("RemoveFirstRank.requestId");
 
 			RemoveFirstRankResponse.RemoveFirstRank_Result result = new RemoveFirstRankResponse.RemoveFirstRank_Result();
-			result.Name = _ctx.StringValue("RemoveFirstRank.Result.name");
 			result.Description = _ctx.StringValue("RemoveFirstRank.Result.description");
 			result.Active = _ctx.BooleanValue("RemoveFirstRank.Result.active");
+			result.Name = _ctx.StringValue("RemoveFirstRank.Result.name");
 
 			List<RemoveFirstRankResponse.RemoveFirstRank_Result.RemoveFirstRank_MetaItem> result_meta = new List<RemoveFirstRankResponse.RemoveFirstRank_Result.RemoveFirstRank_MetaItem>();
 			for (int i = 0; i < _ctx.Length("RemoveFirstRank.Result.Meta.Length"); i++) {
 				RemoveFirstRankResponse.RemoveFirstRank_Result.RemoveFirstRank_MetaItem metaItem = new RemoveFirstRankResponse.RemoveFirstRank_Result.RemoveFirstRank_MetaItem();
-				metaItem.Attribute = _ctx.StringValue("RemoveFirstRank.Result.Meta["+ i +"].attribute");
 				metaItem.Arg = _ctx.StringValue("RemoveFirstRank.Result.Meta["+ i +"].arg");
+				metaItem.Attribute = _ctx.StringValue("RemoveFirstRank.Result.Meta["+ i +"].attribute");
 				metaItem.Weight = _ctx.FloatValue("RemoveFirstRank.Result.Meta["+ i +"].weight");
 
 				result_meta.Add(metaItem);

@@ -37,9 +37,9 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			for (int i = 0; i < _ctx.Length("ListInterventionDictionaryNerResults.Result.Length"); i++) {
 				ListInterventionDictionaryNerResultsResponse.ListInterventionDictionaryNerResults_NerItem nerItem = new ListInterventionDictionaryNerResultsResponse.ListInterventionDictionaryNerResults_NerItem();
 				nerItem.Tag = _ctx.StringValue("ListInterventionDictionaryNerResults.Result["+ i +"].tag");
-				nerItem.TagLabel = _ctx.StringValue("ListInterventionDictionaryNerResults.Result["+ i +"].tagLabel");
 				nerItem.Token = _ctx.StringValue("ListInterventionDictionaryNerResults.Result["+ i +"].token");
 				nerItem.Order = _ctx.IntegerValue("ListInterventionDictionaryNerResults.Result["+ i +"].order");
+				nerItem.TagLabel = _ctx.StringValue("ListInterventionDictionaryNerResults.Result["+ i +"].tagLabel");
 
 				listInterventionDictionaryNerResultsResponse_result.Add(nerItem);
 			}

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			RemoveUserAnalyzerResponse removeUserAnalyzerResponse = new RemoveUserAnalyzerResponse();
 
 			removeUserAnalyzerResponse.HttpResponse = _ctx.HttpResponse;
-			removeUserAnalyzerResponse.RequestId = _ctx.StringValue("RemoveUserAnalyzer.requestId");
 			removeUserAnalyzerResponse.Result = _ctx.StringValue("RemoveUserAnalyzer.result");
+			removeUserAnalyzerResponse.RequestId = _ctx.StringValue("RemoveUserAnalyzer.requestId");
         
 			return removeUserAnalyzerResponse;
         }

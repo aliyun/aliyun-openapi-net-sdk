@@ -36,11 +36,11 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			List<ListQueryProcessorsResponse.ListQueryProcessors_ResultItem> listQueryProcessorsResponse_result = new List<ListQueryProcessorsResponse.ListQueryProcessors_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListQueryProcessors.Result.Length"); i++) {
 				ListQueryProcessorsResponse.ListQueryProcessors_ResultItem resultItem = new ListQueryProcessorsResponse.ListQueryProcessors_ResultItem();
-				resultItem.Name = _ctx.StringValue("ListQueryProcessors.Result["+ i +"].name");
-				resultItem.Active = _ctx.BooleanValue("ListQueryProcessors.Result["+ i +"].active");
-				resultItem.Domain = _ctx.StringValue("ListQueryProcessors.Result["+ i +"].domain");
 				resultItem.Created = _ctx.IntegerValue("ListQueryProcessors.Result["+ i +"].created");
+				resultItem.Active = _ctx.BooleanValue("ListQueryProcessors.Result["+ i +"].active");
 				resultItem.Updated = _ctx.IntegerValue("ListQueryProcessors.Result["+ i +"].updated");
+				resultItem.Name = _ctx.StringValue("ListQueryProcessors.Result["+ i +"].name");
+				resultItem.Domain = _ctx.StringValue("ListQueryProcessors.Result["+ i +"].domain");
 
 				List<string> resultItem_indexes = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListQueryProcessors.Result["+ i +"].Indexes.Length"); j++) {

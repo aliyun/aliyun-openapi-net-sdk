@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			ListDataSourceTableFieldsResponse listDataSourceTableFieldsResponse = new ListDataSourceTableFieldsResponse();
 
 			listDataSourceTableFieldsResponse.HttpResponse = _ctx.HttpResponse;
-			listDataSourceTableFieldsResponse.RequestId = _ctx.StringValue("ListDataSourceTableFields.requestId");
 			listDataSourceTableFieldsResponse.Result = _ctx.StringValue("ListDataSourceTableFields.result");
+			listDataSourceTableFieldsResponse.RequestId = _ctx.StringValue("ListDataSourceTableFields.requestId");
         
 			return listDataSourceTableFieldsResponse;
         }

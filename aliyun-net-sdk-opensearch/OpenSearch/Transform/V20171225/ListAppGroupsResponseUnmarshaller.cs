@@ -31,42 +31,52 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			ListAppGroupsResponse listAppGroupsResponse = new ListAppGroupsResponse();
 
 			listAppGroupsResponse.HttpResponse = _ctx.HttpResponse;
-			listAppGroupsResponse.RequestId = _ctx.StringValue("ListAppGroups.requestId");
 			listAppGroupsResponse.TotalCount = _ctx.IntegerValue("ListAppGroups.totalCount");
+			listAppGroupsResponse.RequestId = _ctx.StringValue("ListAppGroups.requestId");
 
 			List<ListAppGroupsResponse.ListAppGroups_ResultItem> listAppGroupsResponse_result = new List<ListAppGroupsResponse.ListAppGroups_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListAppGroups.Result.Length"); i++) {
 				ListAppGroupsResponse.ListAppGroups_ResultItem resultItem = new ListAppGroupsResponse.ListAppGroups_ResultItem();
-				resultItem.Id = _ctx.StringValue("ListAppGroups.Result["+ i +"].id");
-				resultItem.Name = _ctx.StringValue("ListAppGroups.Result["+ i +"].name");
+				resultItem.Created = _ctx.IntegerValue("ListAppGroups.Result["+ i +"].created");
 				resultItem.CurrentVersion = _ctx.StringValue("ListAppGroups.Result["+ i +"].currentVersion");
-				resultItem.SwitchedTime = _ctx.IntegerValue("ListAppGroups.Result["+ i +"].switchedTime");
+				resultItem.PendingSecondRankAlgoDeploymentId = _ctx.IntegerValue("ListAppGroups.Result["+ i +"].pendingSecondRankAlgoDeploymentId");
+				resultItem.LockMode = _ctx.StringValue("ListAppGroups.Result["+ i +"].lockMode");
+				resultItem.Updated = _ctx.IntegerValue("ListAppGroups.Result["+ i +"].updated");
+				resultItem.Id = _ctx.StringValue("ListAppGroups.Result["+ i +"].id");
+				resultItem.ChargeType = _ctx.StringValue("ListAppGroups.Result["+ i +"].chargeType");
+				resultItem.HasPendingQuotaReviewTask = _ctx.IntegerValue("ListAppGroups.Result["+ i +"].hasPendingQuotaReviewTask");
+				resultItem.SecondRankAlgoDeploymentId = _ctx.IntegerValue("ListAppGroups.Result["+ i +"].secondRankAlgoDeploymentId");
+				resultItem.Name = _ctx.StringValue("ListAppGroups.Result["+ i +"].name");
+				resultItem.InstanceId = _ctx.StringValue("ListAppGroups.Result["+ i +"].instanceId");
+				resultItem.ProcessingOrderId = _ctx.StringValue("ListAppGroups.Result["+ i +"].processingOrderId");
 				resultItem.ChargingWay = _ctx.IntegerValue("ListAppGroups.Result["+ i +"].chargingWay");
 				resultItem.Type = _ctx.StringValue("ListAppGroups.Result["+ i +"].type");
+				resultItem.Status = _ctx.StringValue("ListAppGroups.Result["+ i +"].status");
 				resultItem.ProjectId = _ctx.StringValue("ListAppGroups.Result["+ i +"].projectId");
-				resultItem.ChargeType = _ctx.StringValue("ListAppGroups.Result["+ i +"].chargeType");
-				resultItem.ExpireOn = _ctx.StringValue("ListAppGroups.Result["+ i +"].expireOn");
-				resultItem.InstanceId = _ctx.StringValue("ListAppGroups.Result["+ i +"].instanceId");
+				resultItem.SwitchedTime = _ctx.IntegerValue("ListAppGroups.Result["+ i +"].switchedTime");
 				resultItem.CommodityCode = _ctx.StringValue("ListAppGroups.Result["+ i +"].commodityCode");
-				resultItem.ProcessingOrderId = _ctx.StringValue("ListAppGroups.Result["+ i +"].processingOrderId");
-				resultItem.FirstRankAlgoDeploymentId = _ctx.IntegerValue("ListAppGroups.Result["+ i +"].firstRankAlgoDeploymentId");
-				resultItem.SecondRankAlgoDeploymentId = _ctx.IntegerValue("ListAppGroups.Result["+ i +"].secondRankAlgoDeploymentId");
-				resultItem.PendingSecondRankAlgoDeploymentId = _ctx.IntegerValue("ListAppGroups.Result["+ i +"].pendingSecondRankAlgoDeploymentId");
+				resultItem.ExpireOn = _ctx.StringValue("ListAppGroups.Result["+ i +"].expireOn");
+				resultItem.Domain = _ctx.StringValue("ListAppGroups.Result["+ i +"].domain");
 				resultItem.Description = _ctx.StringValue("ListAppGroups.Result["+ i +"].description");
+				resultItem.FirstRankAlgoDeploymentId = _ctx.IntegerValue("ListAppGroups.Result["+ i +"].firstRankAlgoDeploymentId");
 				resultItem.Produced = _ctx.IntegerValue("ListAppGroups.Result["+ i +"].produced");
 				resultItem.LockedByExpiration = _ctx.IntegerValue("ListAppGroups.Result["+ i +"].lockedByExpiration");
-				resultItem.HasPendingQuotaReviewTask = _ctx.IntegerValue("ListAppGroups.Result["+ i +"].hasPendingQuotaReviewTask");
-				resultItem.Created = _ctx.IntegerValue("ListAppGroups.Result["+ i +"].created");
-				resultItem.Updated = _ctx.IntegerValue("ListAppGroups.Result["+ i +"].updated");
-				resultItem.Status = _ctx.StringValue("ListAppGroups.Result["+ i +"].status");
-				resultItem.LockMode = _ctx.StringValue("ListAppGroups.Result["+ i +"].lockMode");
-				resultItem.Domain = _ctx.StringValue("ListAppGroups.Result["+ i +"].domain");
 
 				ListAppGroupsResponse.ListAppGroups_ResultItem.ListAppGroups_Quota quota = new ListAppGroupsResponse.ListAppGroups_ResultItem.ListAppGroups_Quota();
+				quota.Spec = _ctx.StringValue("ListAppGroups.Result["+ i +"].Quota.spec");
 				quota.DocSize = _ctx.IntegerValue("ListAppGroups.Result["+ i +"].Quota.docSize");
 				quota.ComputeResource = _ctx.IntegerValue("ListAppGroups.Result["+ i +"].Quota.computeResource");
-				quota.Spec = _ctx.StringValue("ListAppGroups.Result["+ i +"].Quota.spec");
 				resultItem.Quota = quota;
+
+				List<ListAppGroupsResponse.ListAppGroups_ResultItem.ListAppGroups_TagsItem> resultItem_tags = new List<ListAppGroupsResponse.ListAppGroups_ResultItem.ListAppGroups_TagsItem>();
+				for (int j = 0; j < _ctx.Length("ListAppGroups.Result["+ i +"].Tags.Length"); j++) {
+					ListAppGroupsResponse.ListAppGroups_ResultItem.ListAppGroups_TagsItem tagsItem = new ListAppGroupsResponse.ListAppGroups_ResultItem.ListAppGroups_TagsItem();
+					tagsItem.Key = _ctx.StringValue("ListAppGroups.Result["+ i +"].Tags["+ j +"].key");
+					tagsItem._Value = _ctx.StringValue("ListAppGroups.Result["+ i +"].Tags["+ j +"].value");
+
+					resultItem_tags.Add(tagsItem);
+				}
+				resultItem.Tags = resultItem_tags;
 
 				listAppGroupsResponse_result.Add(resultItem);
 			}

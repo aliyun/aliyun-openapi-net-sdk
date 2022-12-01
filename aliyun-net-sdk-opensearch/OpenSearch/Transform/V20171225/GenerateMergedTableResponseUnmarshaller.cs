@@ -34,9 +34,9 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			generateMergedTableResponse.RequestId = _ctx.StringValue("GenerateMergedTable.requestId");
 
 			GenerateMergedTableResponse.GenerateMergedTable_Result result = new GenerateMergedTableResponse.GenerateMergedTable_Result();
+			result.PrimaryKey = _ctx.StringValue("GenerateMergedTable.Result.primaryKey");
 			result.MergeTable = _ctx.StringValue("GenerateMergedTable.Result.mergeTable");
 			result.FromTable = _ctx.StringValue("GenerateMergedTable.Result.fromTable");
-			result.PrimaryKey = _ctx.StringValue("GenerateMergedTable.Result.primaryKey");
 			generateMergedTableResponse.Result = result;
         
 			return generateMergedTableResponse;

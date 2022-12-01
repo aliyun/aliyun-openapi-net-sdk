@@ -34,11 +34,11 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			updateABTestGroupResponse.RequestId = _ctx.StringValue("UpdateABTestGroup.requestId");
 
 			UpdateABTestGroupResponse.UpdateABTestGroup_Result result = new UpdateABTestGroupResponse.UpdateABTestGroup_Result();
-			result.Id = _ctx.StringValue("UpdateABTestGroup.Result.id");
-			result.Name = _ctx.StringValue("UpdateABTestGroup.Result.name");
-			result.Status = _ctx.IntegerValue("UpdateABTestGroup.Result.status");
 			result.Created = _ctx.IntegerValue("UpdateABTestGroup.Result.created");
+			result.Status = _ctx.IntegerValue("UpdateABTestGroup.Result.status");
 			result.Updated = _ctx.IntegerValue("UpdateABTestGroup.Result.updated");
+			result.Name = _ctx.StringValue("UpdateABTestGroup.Result.name");
+			result.Id = _ctx.StringValue("UpdateABTestGroup.Result.id");
 			updateABTestGroupResponse.Result = result;
         
 			return updateABTestGroupResponse;

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			CreateSecondRankResponse createSecondRankResponse = new CreateSecondRankResponse();
 
 			createSecondRankResponse.HttpResponse = _ctx.HttpResponse;
-			createSecondRankResponse.RequestId = _ctx.StringValue("CreateSecondRank.RequestId");
 			createSecondRankResponse.Result = _ctx.StringValue("CreateSecondRank.result");
+			createSecondRankResponse.RequestId = _ctx.StringValue("CreateSecondRank.RequestId");
         
 			return createSecondRankResponse;
         }

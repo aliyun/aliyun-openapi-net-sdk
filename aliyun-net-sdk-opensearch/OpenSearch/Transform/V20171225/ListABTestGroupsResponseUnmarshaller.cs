@@ -36,11 +36,11 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			List<ListABTestGroupsResponse.ListABTestGroups_ResultItem> listABTestGroupsResponse_result = new List<ListABTestGroupsResponse.ListABTestGroups_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListABTestGroups.Result.Length"); i++) {
 				ListABTestGroupsResponse.ListABTestGroups_ResultItem resultItem = new ListABTestGroupsResponse.ListABTestGroups_ResultItem();
-				resultItem.Id = _ctx.StringValue("ListABTestGroups.Result["+ i +"].id");
-				resultItem.Name = _ctx.StringValue("ListABTestGroups.Result["+ i +"].name");
-				resultItem.Status = _ctx.IntegerValue("ListABTestGroups.Result["+ i +"].status");
 				resultItem.Created = _ctx.IntegerValue("ListABTestGroups.Result["+ i +"].created");
+				resultItem.Status = _ctx.IntegerValue("ListABTestGroups.Result["+ i +"].status");
 				resultItem.Updated = _ctx.IntegerValue("ListABTestGroups.Result["+ i +"].updated");
+				resultItem.Name = _ctx.StringValue("ListABTestGroups.Result["+ i +"].name");
+				resultItem.Id = _ctx.StringValue("ListABTestGroups.Result["+ i +"].id");
 
 				listABTestGroupsResponse_result.Add(resultItem);
 			}

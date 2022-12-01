@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			GetModelReportResponse getModelReportResponse = new GetModelReportResponse();
 
 			getModelReportResponse.HttpResponse = _ctx.HttpResponse;
-			getModelReportResponse.RequestId = _ctx.StringValue("GetModelReport.requestId");
 			getModelReportResponse.Result = _ctx.StringValue("GetModelReport.result");
+			getModelReportResponse.RequestId = _ctx.StringValue("GetModelReport.requestId");
         
 			return getModelReportResponse;
         }

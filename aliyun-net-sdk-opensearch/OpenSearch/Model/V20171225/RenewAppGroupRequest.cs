@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.OpenSearch;
 using Aliyun.Acs.OpenSearch.Transform;
 using Aliyun.Acs.OpenSearch.Transform.V20171225;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
     public class RenewAppGroupRequest : RoaAcsRequest<RenewAppGroupResponse>
     {
         public RenewAppGroupRequest()
-            : base("OpenSearch", "2017-12-25", "RenewAppGroup", "opensearch", "openAPI")
+            : base("OpenSearch", "2017-12-25", "RenewAppGroup")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,7 +42,22 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 			Method = MethodType.POST;
         }
 
+		private string clientToken;
+
 		private string appGroupIdentity;
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "clientToken", value);
+			}
+		}
 
 		public string AppGroupIdentity
 		{

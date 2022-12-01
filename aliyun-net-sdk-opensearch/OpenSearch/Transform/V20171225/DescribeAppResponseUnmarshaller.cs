@@ -34,16 +34,16 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			describeAppResponse.RequestId = _ctx.StringValue("DescribeApp.requestId");
 
 			DescribeAppResponse.DescribeApp_Result result = new DescribeAppResponse.DescribeApp_Result();
-			result.Id = _ctx.StringValue("DescribeApp.Result.id");
+			result.Created = _ctx.IntegerValue("DescribeApp.Result.created");
+			result.ClusterName = _ctx.StringValue("DescribeApp.Result.clusterName");
+			result.AutoSwitch = _ctx.BooleanValue("DescribeApp.Result.autoSwitch");
+			result.AlgoDeploymentId = _ctx.IntegerValue("DescribeApp.Result.algoDeploymentId");
+			result.Type = _ctx.StringValue("DescribeApp.Result.type");
 			result.Description = _ctx.StringValue("DescribeApp.Result.description");
 			result.Status = _ctx.StringValue("DescribeApp.Result.status");
-			result.Type = _ctx.StringValue("DescribeApp.Result.type");
-			result.ClusterName = _ctx.StringValue("DescribeApp.Result.clusterName");
-			result.AlgoDeploymentId = _ctx.IntegerValue("DescribeApp.Result.algoDeploymentId");
-			result.Created = _ctx.IntegerValue("DescribeApp.Result.created");
-			result.AutoSwitch = _ctx.BooleanValue("DescribeApp.Result.autoSwitch");
-			result.ProgressPercent = _ctx.IntegerValue("DescribeApp.Result.progressPercent");
 			result.Schema = _ctx.StringValue("DescribeApp.Result.schema");
+			result.ProgressPercent = _ctx.IntegerValue("DescribeApp.Result.progressPercent");
+			result.Id = _ctx.StringValue("DescribeApp.Result.id");
 
 			List<string> result_fetchFields = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeApp.Result.FetchFields.Length"); i++) {
@@ -52,17 +52,23 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			result.FetchFields = result_fetchFields;
 
 			DescribeAppResponse.DescribeApp_Result.DescribeApp_Quota quota = new DescribeAppResponse.DescribeApp_Result.DescribeApp_Quota();
+			quota.Spec = _ctx.StringValue("DescribeApp.Result.Quota.spec");
+			quota.Qps = _ctx.IntegerValue("DescribeApp.Result.Quota.qps");
 			quota.DocSize = _ctx.IntegerValue("DescribeApp.Result.Quota.docSize");
 			quota.ComputeResource = _ctx.IntegerValue("DescribeApp.Result.Quota.computeResource");
-			quota.Qps = _ctx.IntegerValue("DescribeApp.Result.Quota.qps");
-			quota.Spec = _ctx.StringValue("DescribeApp.Result.Quota.spec");
 			result.Quota = quota;
 
 			DescribeAppResponse.DescribeApp_Result.DescribeApp_Domain domain = new DescribeAppResponse.DescribeApp_Result.DescribeApp_Domain();
-			domain.Name = _ctx.StringValue("DescribeApp.Result.Domain.name");
 			domain.Category = _ctx.StringValue("DescribeApp.Result.Domain.category");
+			domain.Name = _ctx.StringValue("DescribeApp.Result.Domain.name");
 
 			DescribeAppResponse.DescribeApp_Result.DescribeApp_Domain.DescribeApp_Functions functions = new DescribeAppResponse.DescribeApp_Result.DescribeApp_Domain.DescribeApp_Functions();
+
+			List<string> functions_service = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeApp.Result.Domain.Functions.Service.Length"); i++) {
+				functions_service.Add(_ctx.StringValue("DescribeApp.Result.Domain.Functions.Service["+ i +"]"));
+			}
+			functions.Service = functions_service;
 
 			List<string> functions_qp = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeApp.Result.Domain.Functions.Qp.Length"); i++) {
@@ -75,12 +81,6 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 				functions_algo.Add(_ctx.StringValue("DescribeApp.Result.Domain.Functions.Algo["+ i +"]"));
 			}
 			functions.Algo = functions_algo;
-
-			List<string> functions_service = new List<string>();
-			for (int i = 0; i < _ctx.Length("DescribeApp.Result.Domain.Functions.Service.Length"); i++) {
-				functions_service.Add(_ctx.StringValue("DescribeApp.Result.Domain.Functions.Service["+ i +"]"));
-			}
-			functions.Service = functions_service;
 			domain.Functions = functions;
 			result.Domain = domain;
 			describeAppResponse.Result = result;

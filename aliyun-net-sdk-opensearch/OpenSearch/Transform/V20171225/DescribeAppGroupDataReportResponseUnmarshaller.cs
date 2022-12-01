@@ -42,16 +42,16 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 				receivedSampleItem.ReceivedTimeMs = _ctx.LongValue("DescribeAppGroupDataReport.Result.ReceivedSample["+ i +"].receivedTimeMs");
 
 				DescribeAppGroupDataReportResponse.DescribeAppGroupDataReport_Result.DescribeAppGroupDataReport_ReceivedSampleItem.DescribeAppGroupDataReport_Message message = new DescribeAppGroupDataReportResponse.DescribeAppGroupDataReport_Result.DescribeAppGroupDataReport_ReceivedSampleItem.DescribeAppGroupDataReport_Message();
-				message.ClientIp = _ctx.StringValue("DescribeAppGroupDataReport.Result.ReceivedSample["+ i +"].Message.clientIp");
-				message.Arg3 = _ctx.StringValue("DescribeAppGroupDataReport.Result.ReceivedSample["+ i +"].Message.arg3");
-				message.UserId = _ctx.StringValue("DescribeAppGroupDataReport.Result.ReceivedSample["+ i +"].Message.userId");
-				message.Args = _ctx.StringValue("DescribeAppGroupDataReport.Result.ReceivedSample["+ i +"].Message.args");
-				message.Arg1 = _ctx.StringValue("DescribeAppGroupDataReport.Result.ReceivedSample["+ i +"].Message.arg1");
-				message.SdkType = _ctx.StringValue("DescribeAppGroupDataReport.Result.ReceivedSample["+ i +"].Message.sdkType");
-				message.SessionId = _ctx.StringValue("DescribeAppGroupDataReport.Result.ReceivedSample["+ i +"].Message.sessionId");
 				message.EventId = _ctx.IntegerValue("DescribeAppGroupDataReport.Result.ReceivedSample["+ i +"].Message.eventId");
+				message.Arg3 = _ctx.StringValue("DescribeAppGroupDataReport.Result.ReceivedSample["+ i +"].Message.arg3");
+				message.Arg1 = _ctx.StringValue("DescribeAppGroupDataReport.Result.ReceivedSample["+ i +"].Message.arg1");
 				message.SdkVersion = _ctx.StringValue("DescribeAppGroupDataReport.Result.ReceivedSample["+ i +"].Message.sdkVersion");
+				message.UserId = _ctx.StringValue("DescribeAppGroupDataReport.Result.ReceivedSample["+ i +"].Message.userId");
 				message.Page = _ctx.StringValue("DescribeAppGroupDataReport.Result.ReceivedSample["+ i +"].Message.page");
+				message.Args = _ctx.StringValue("DescribeAppGroupDataReport.Result.ReceivedSample["+ i +"].Message.args");
+				message.SessionId = _ctx.StringValue("DescribeAppGroupDataReport.Result.ReceivedSample["+ i +"].Message.sessionId");
+				message.SdkType = _ctx.StringValue("DescribeAppGroupDataReport.Result.ReceivedSample["+ i +"].Message.sdkType");
+				message.ClientIp = _ctx.StringValue("DescribeAppGroupDataReport.Result.ReceivedSample["+ i +"].Message.clientIp");
 				receivedSampleItem.Message = message;
 
 				result_receivedSample.Add(receivedSampleItem);

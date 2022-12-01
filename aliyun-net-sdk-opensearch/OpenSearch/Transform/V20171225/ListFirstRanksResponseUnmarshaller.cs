@@ -36,17 +36,17 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			List<ListFirstRanksResponse.ListFirstRanks_FirstRankItem> listFirstRanksResponse_result = new List<ListFirstRanksResponse.ListFirstRanks_FirstRankItem>();
 			for (int i = 0; i < _ctx.Length("ListFirstRanks.Result.Length"); i++) {
 				ListFirstRanksResponse.ListFirstRanks_FirstRankItem firstRankItem = new ListFirstRanksResponse.ListFirstRanks_FirstRankItem();
-				firstRankItem.Name = _ctx.StringValue("ListFirstRanks.Result["+ i +"].name");
-				firstRankItem.Description = _ctx.StringValue("ListFirstRanks.Result["+ i +"].description");
-				firstRankItem.Active = _ctx.BooleanValue("ListFirstRanks.Result["+ i +"].active");
 				firstRankItem.Created = _ctx.IntegerValue("ListFirstRanks.Result["+ i +"].created");
+				firstRankItem.Active = _ctx.BooleanValue("ListFirstRanks.Result["+ i +"].active");
+				firstRankItem.Description = _ctx.StringValue("ListFirstRanks.Result["+ i +"].description");
 				firstRankItem.Updated = _ctx.IntegerValue("ListFirstRanks.Result["+ i +"].updated");
+				firstRankItem.Name = _ctx.StringValue("ListFirstRanks.Result["+ i +"].name");
 
 				List<ListFirstRanksResponse.ListFirstRanks_FirstRankItem.ListFirstRanks_MetaItem> firstRankItem_meta = new List<ListFirstRanksResponse.ListFirstRanks_FirstRankItem.ListFirstRanks_MetaItem>();
 				for (int j = 0; j < _ctx.Length("ListFirstRanks.Result["+ i +"].Meta.Length"); j++) {
 					ListFirstRanksResponse.ListFirstRanks_FirstRankItem.ListFirstRanks_MetaItem metaItem = new ListFirstRanksResponse.ListFirstRanks_FirstRankItem.ListFirstRanks_MetaItem();
-					metaItem.Attribute = _ctx.StringValue("ListFirstRanks.Result["+ i +"].Meta["+ j +"].attribute");
 					metaItem.Arg = _ctx.StringValue("ListFirstRanks.Result["+ i +"].Meta["+ j +"].arg");
+					metaItem.Attribute = _ctx.StringValue("ListFirstRanks.Result["+ i +"].Meta["+ j +"].attribute");
 					metaItem.Weight = _ctx.IntegerValue("ListFirstRanks.Result["+ i +"].Meta["+ j +"].weight");
 
 					firstRankItem_meta.Add(metaItem);

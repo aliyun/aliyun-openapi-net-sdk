@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			PreviewModelResponse previewModelResponse = new PreviewModelResponse();
 
 			previewModelResponse.HttpResponse = _ctx.HttpResponse;
-			previewModelResponse.RequestId = _ctx.StringValue("PreviewModel.requestId");
 			previewModelResponse.TotalCount = _ctx.LongValue("PreviewModel.totalCount");
+			previewModelResponse.RequestId = _ctx.StringValue("PreviewModel.requestId");
 
 			List<Dictionary<string, string>> previewModelResponse_result = new List<Dictionary<string, string>>();
 			for (int i = 0; i < _ctx.Length("PreviewModel.Result.Length"); i++) {

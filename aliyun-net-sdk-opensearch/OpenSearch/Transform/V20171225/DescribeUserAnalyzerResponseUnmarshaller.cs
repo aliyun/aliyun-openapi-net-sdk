@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			DescribeUserAnalyzerResponse describeUserAnalyzerResponse = new DescribeUserAnalyzerResponse();
 
 			describeUserAnalyzerResponse.HttpResponse = _ctx.HttpResponse;
-			describeUserAnalyzerResponse.RequestId = _ctx.StringValue("DescribeUserAnalyzer.requestId");
 			describeUserAnalyzerResponse.Result = _ctx.StringValue("DescribeUserAnalyzer.result");
+			describeUserAnalyzerResponse.RequestId = _ctx.StringValue("DescribeUserAnalyzer.requestId");
         
 			return describeUserAnalyzerResponse;
         }

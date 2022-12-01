@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			UpdateFetchFieldsResponse updateFetchFieldsResponse = new UpdateFetchFieldsResponse();
 
 			updateFetchFieldsResponse.HttpResponse = _ctx.HttpResponse;
-			updateFetchFieldsResponse.RequestId = _ctx.StringValue("UpdateFetchFields.requestId");
 			updateFetchFieldsResponse.Result = _ctx.BooleanValue("UpdateFetchFields.result");
+			updateFetchFieldsResponse.RequestId = _ctx.StringValue("UpdateFetchFields.requestId");
         
 			return updateFetchFieldsResponse;
         }

@@ -31,21 +31,21 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			ListSecondRanksResponse listSecondRanksResponse = new ListSecondRanksResponse();
 
 			listSecondRanksResponse.HttpResponse = _ctx.HttpResponse;
-			listSecondRanksResponse.RequestId = _ctx.StringValue("ListSecondRanks.requestId");
 			listSecondRanksResponse.TotalCount = _ctx.IntegerValue("ListSecondRanks.totalCount");
+			listSecondRanksResponse.RequestId = _ctx.StringValue("ListSecondRanks.requestId");
 
 			List<ListSecondRanksResponse.ListSecondRanks_ResultItem> listSecondRanksResponse_result = new List<ListSecondRanksResponse.ListSecondRanks_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListSecondRanks.Result.Length"); i++) {
 				ListSecondRanksResponse.ListSecondRanks_ResultItem resultItem = new ListSecondRanksResponse.ListSecondRanks_ResultItem();
-				resultItem.Id = _ctx.StringValue("ListSecondRanks.Result["+ i +"].id");
-				resultItem.Name = _ctx.StringValue("ListSecondRanks.Result["+ i +"].name");
-				resultItem.Meta = _ctx.StringValue("ListSecondRanks.Result["+ i +"].meta");
-				resultItem.Active = _ctx.BooleanValue("ListSecondRanks.Result["+ i +"].active");
-				resultItem.Description = _ctx.StringValue("ListSecondRanks.Result["+ i +"].description");
 				resultItem.Created = _ctx.IntegerValue("ListSecondRanks.Result["+ i +"].created");
-				resultItem.Updated = _ctx.IntegerValue("ListSecondRanks.Result["+ i +"].updated");
+				resultItem.Active = _ctx.BooleanValue("ListSecondRanks.Result["+ i +"].active");
 				resultItem.IsDefault = _ctx.StringValue("ListSecondRanks.Result["+ i +"].isDefault");
 				resultItem.IsSys = _ctx.StringValue("ListSecondRanks.Result["+ i +"].isSys");
+				resultItem.Description = _ctx.StringValue("ListSecondRanks.Result["+ i +"].description");
+				resultItem.Updated = _ctx.IntegerValue("ListSecondRanks.Result["+ i +"].updated");
+				resultItem.Name = _ctx.StringValue("ListSecondRanks.Result["+ i +"].name");
+				resultItem.Meta = _ctx.StringValue("ListSecondRanks.Result["+ i +"].meta");
+				resultItem.Id = _ctx.StringValue("ListSecondRanks.Result["+ i +"].id");
 
 				listSecondRanksResponse_result.Add(resultItem);
 			}

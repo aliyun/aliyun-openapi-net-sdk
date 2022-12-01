@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			ListAppGroupErrorsResponse listAppGroupErrorsResponse = new ListAppGroupErrorsResponse();
 
 			listAppGroupErrorsResponse.HttpResponse = _ctx.HttpResponse;
-			listAppGroupErrorsResponse.RequestId = _ctx.StringValue("ListAppGroupErrors.requestId");
 			listAppGroupErrorsResponse.TotalCount = _ctx.LongValue("ListAppGroupErrors.totalCount");
+			listAppGroupErrorsResponse.RequestId = _ctx.StringValue("ListAppGroupErrors.requestId");
 
 			List<Dictionary<string, string>> listAppGroupErrorsResponse_result = new List<Dictionary<string, string>>();
 			for (int i = 0; i < _ctx.Length("ListAppGroupErrors.Result.Length"); i++) {

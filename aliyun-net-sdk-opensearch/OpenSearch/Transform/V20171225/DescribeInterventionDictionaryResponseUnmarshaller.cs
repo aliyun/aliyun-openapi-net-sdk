@@ -34,11 +34,11 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			describeInterventionDictionaryResponse.RequestId = _ctx.StringValue("DescribeInterventionDictionary.requestId");
 
 			DescribeInterventionDictionaryResponse.DescribeInterventionDictionary_Result result = new DescribeInterventionDictionaryResponse.DescribeInterventionDictionary_Result();
-			result.Name = _ctx.StringValue("DescribeInterventionDictionary.Result.name");
-			result.Type = _ctx.StringValue("DescribeInterventionDictionary.Result.type");
-			result.Analyzer = _ctx.StringValue("DescribeInterventionDictionary.Result.analyzer");
 			result.Created = _ctx.StringValue("DescribeInterventionDictionary.Result.created");
+			result.Analyzer = _ctx.StringValue("DescribeInterventionDictionary.Result.analyzer");
 			result.Updated = _ctx.StringValue("DescribeInterventionDictionary.Result.updated");
+			result.Type = _ctx.StringValue("DescribeInterventionDictionary.Result.type");
+			result.Name = _ctx.StringValue("DescribeInterventionDictionary.Result.name");
 			describeInterventionDictionaryResponse.Result = result;
         
 			return describeInterventionDictionaryResponse;

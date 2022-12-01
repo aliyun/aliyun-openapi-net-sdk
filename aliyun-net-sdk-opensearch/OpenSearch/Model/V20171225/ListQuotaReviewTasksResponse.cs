@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OpenSearch.Model.V20171225
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 	public class ListQuotaReviewTasksResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalCount;
 
-		private List<ListQuotaReviewTasks_ResultItem> result;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<ListQuotaReviewTasks_ResultItem> result;
 
 		public int? TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,83 +70,83 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 		public class ListQuotaReviewTasks_ResultItem
 		{
 
-			private int? id;
+			private int? oldDocSize;
 
-			private int? appGroupId;
+			private bool? pending;
 
-			private string appGroupName;
+			private string memo;
 
-			private string appGroupType;
+			private bool? approved;
 
 			private string oldSpec;
 
 			private int? oldComputeResource;
 
-			private int? oldDocSize;
-
-			private string newSpec;
-
-			private int? newComputeResource;
-
-			private int? newSocSize;
-
-			private string memo;
+			private string appGroupType;
 
 			private bool? available;
 
-			private bool? pending;
-
-			private bool? approved;
-
 			private string gmtCreate;
+
+			private int? newSocSize;
+
+			private int? id;
+
+			private int? appGroupId;
+
+			private int? newComputeResource;
+
+			private string appGroupName;
 
 			private string gmtModified;
 
-			public int? Id
+			private string newSpec;
+
+			public int? OldDocSize
 			{
 				get
 				{
-					return id;
+					return oldDocSize;
 				}
 				set	
 				{
-					id = value;
+					oldDocSize = value;
 				}
 			}
 
-			public int? AppGroupId
+			public bool? Pending
 			{
 				get
 				{
-					return appGroupId;
+					return pending;
 				}
 				set	
 				{
-					appGroupId = value;
+					pending = value;
 				}
 			}
 
-			public string AppGroupName
+			public string Memo
 			{
 				get
 				{
-					return appGroupName;
+					return memo;
 				}
 				set	
 				{
-					appGroupName = value;
+					memo = value;
 				}
 			}
 
-			public string AppGroupType
+			public bool? Approved
 			{
 				get
 				{
-					return appGroupType;
+					return approved;
 				}
 				set	
 				{
-					appGroupType = value;
+					approved = value;
 				}
 			}
 
@@ -174,63 +174,15 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
-			public int? OldDocSize
+			public string AppGroupType
 			{
 				get
 				{
-					return oldDocSize;
+					return appGroupType;
 				}
 				set	
 				{
-					oldDocSize = value;
-				}
-			}
-
-			public string NewSpec
-			{
-				get
-				{
-					return newSpec;
-				}
-				set	
-				{
-					newSpec = value;
-				}
-			}
-
-			public int? NewComputeResource
-			{
-				get
-				{
-					return newComputeResource;
-				}
-				set	
-				{
-					newComputeResource = value;
-				}
-			}
-
-			public int? NewSocSize
-			{
-				get
-				{
-					return newSocSize;
-				}
-				set	
-				{
-					newSocSize = value;
-				}
-			}
-
-			public string Memo
-			{
-				get
-				{
-					return memo;
-				}
-				set	
-				{
-					memo = value;
+					appGroupType = value;
 				}
 			}
 
@@ -246,30 +198,6 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
-			public bool? Pending
-			{
-				get
-				{
-					return pending;
-				}
-				set	
-				{
-					pending = value;
-				}
-			}
-
-			public bool? Approved
-			{
-				get
-				{
-					return approved;
-				}
-				set	
-				{
-					approved = value;
-				}
-			}
-
 			public string GmtCreate
 			{
 				get
@@ -282,6 +210,66 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
+			public int? NewSocSize
+			{
+				get
+				{
+					return newSocSize;
+				}
+				set	
+				{
+					newSocSize = value;
+				}
+			}
+
+			public int? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public int? AppGroupId
+			{
+				get
+				{
+					return appGroupId;
+				}
+				set	
+				{
+					appGroupId = value;
+				}
+			}
+
+			public int? NewComputeResource
+			{
+				get
+				{
+					return newComputeResource;
+				}
+				set	
+				{
+					newComputeResource = value;
+				}
+			}
+
+			public string AppGroupName
+			{
+				get
+				{
+					return appGroupName;
+				}
+				set	
+				{
+					appGroupName = value;
+				}
+			}
+
 			public string GmtModified
 			{
 				get
@@ -291,6 +279,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				set	
 				{
 					gmtModified = value;
+				}
+			}
+
+			public string NewSpec
+			{
+				get
+				{
+					return newSpec;
+				}
+				set	
+				{
+					newSpec = value;
 				}
 			}
 		}

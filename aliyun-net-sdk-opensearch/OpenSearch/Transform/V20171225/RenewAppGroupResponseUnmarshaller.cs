@@ -32,6 +32,7 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 
 			renewAppGroupResponse.HttpResponse = _ctx.HttpResponse;
 			renewAppGroupResponse.RequestId = _ctx.StringValue("RenewAppGroup.requestId");
+			renewAppGroupResponse.Result = _ctx.BooleanValue("RenewAppGroup.result");
         
 			return renewAppGroupResponse;
         }

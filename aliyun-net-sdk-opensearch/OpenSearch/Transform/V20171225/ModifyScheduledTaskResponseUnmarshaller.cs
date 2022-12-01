@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			ModifyScheduledTaskResponse modifyScheduledTaskResponse = new ModifyScheduledTaskResponse();
 
 			modifyScheduledTaskResponse.HttpResponse = _ctx.HttpResponse;
-			modifyScheduledTaskResponse.RequestId = _ctx.StringValue("ModifyScheduledTask.requestId");
 			modifyScheduledTaskResponse.Result = _ctx.StringValue("ModifyScheduledTask.result");
+			modifyScheduledTaskResponse.RequestId = _ctx.StringValue("ModifyScheduledTask.requestId");
         
 			return modifyScheduledTaskResponse;
         }

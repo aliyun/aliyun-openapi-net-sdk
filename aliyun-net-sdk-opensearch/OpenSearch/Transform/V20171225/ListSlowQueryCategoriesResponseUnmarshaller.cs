@@ -34,8 +34,8 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			listSlowQueryCategoriesResponse.RequestId = _ctx.StringValue("ListSlowQueryCategories.requestId");
 
 			ListSlowQueryCategoriesResponse.ListSlowQueryCategories_Result result = new ListSlowQueryCategoriesResponse.ListSlowQueryCategories_Result();
-			result.AnalyzeStatus = _ctx.StringValue("ListSlowQueryCategories.Result.analyzeStatus");
 			result.Start = _ctx.IntegerValue("ListSlowQueryCategories.Result.start");
+			result.AnalyzeStatus = _ctx.StringValue("ListSlowQueryCategories.Result.analyzeStatus");
 			result.End = _ctx.IntegerValue("ListSlowQueryCategories.Result.end");
 			listSlowQueryCategoriesResponse.Result = result;
         

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OpenSearch.Model.V20171225
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 	public class ListInterventionDictionaryEntriesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalCount;
 
-		private List<ListInterventionDictionaryEntries_WordItem> result;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<ListInterventionDictionaryEntries_WordItem> result;
 
 		public int? TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -72,15 +72,15 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 
 			private string cmd;
 
-			private string word;
-
 			private long? created;
 
-			private long? updated;
+			private string word;
+
+			private string relevance;
 
 			private string status;
 
-			private string relevance;
+			private long? updated;
 
 			private List<ListInterventionDictionaryEntries_Token> tokens;
 
@@ -96,18 +96,6 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
-			public string Word
-			{
-				get
-				{
-					return word;
-				}
-				set	
-				{
-					word = value;
-				}
-			}
-
 			public long? Created
 			{
 				get
@@ -120,15 +108,27 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
-			public long? Updated
+			public string Word
 			{
 				get
 				{
-					return updated;
+					return word;
 				}
 				set	
 				{
-					updated = value;
+					word = value;
+				}
+			}
+
+			public string Relevance
+			{
+				get
+				{
+					return relevance;
+				}
+				set	
+				{
+					relevance = value;
 				}
 			}
 
@@ -144,15 +144,15 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
-			public string Relevance
+			public long? Updated
 			{
 				get
 				{
-					return relevance;
+					return updated;
 				}
 				set	
 				{
-					relevance = value;
+					updated = value;
 				}
 			}
 

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OpenSearch.Model.V20171225
@@ -56,21 +56,45 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 		public class ListABTestMetrics_ResultItem
 		{
 
+			private float? zeroHitRate;
+
+			private float? ctr;
+
 			private string experimentName;
 
 			private string date;
 
-			private int? pv;
+			private int? ipvUv;
 
 			private int? ipv;
 
 			private int? uv;
 
-			private int? ipvUv;
+			private int? pv;
 
-			private float? ctr;
+			public float? ZeroHitRate
+			{
+				get
+				{
+					return zeroHitRate;
+				}
+				set	
+				{
+					zeroHitRate = value;
+				}
+			}
 
-			private float? zeroHitRate;
+			public float? Ctr
+			{
+				get
+				{
+					return ctr;
+				}
+				set	
+				{
+					ctr = value;
+				}
+			}
 
 			public string ExperimentName
 			{
@@ -96,15 +120,15 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
-			public int? Pv
+			public int? IpvUv
 			{
 				get
 				{
-					return pv;
+					return ipvUv;
 				}
 				set	
 				{
-					pv = value;
+					ipvUv = value;
 				}
 			}
 
@@ -132,39 +156,15 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
-			public int? IpvUv
+			public int? Pv
 			{
 				get
 				{
-					return ipvUv;
+					return pv;
 				}
 				set	
 				{
-					ipvUv = value;
-				}
-			}
-
-			public float? Ctr
-			{
-				get
-				{
-					return ctr;
-				}
-				set	
-				{
-					ctr = value;
-				}
-			}
-
-			public float? ZeroHitRate
-			{
-				get
-				{
-					return zeroHitRate;
-				}
-				set	
-				{
-					zeroHitRate = value;
+					pv = value;
 				}
 			}
 		}

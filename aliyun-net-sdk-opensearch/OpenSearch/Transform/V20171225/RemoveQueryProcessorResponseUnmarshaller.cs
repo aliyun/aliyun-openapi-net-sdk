@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			RemoveQueryProcessorResponse removeQueryProcessorResponse = new RemoveQueryProcessorResponse();
 
 			removeQueryProcessorResponse.HttpResponse = _ctx.HttpResponse;
-			removeQueryProcessorResponse.RequestId = _ctx.StringValue("RemoveQueryProcessor.requestId");
 			removeQueryProcessorResponse.Result = _ctx.StringValue("RemoveQueryProcessor.result");
+			removeQueryProcessorResponse.RequestId = _ctx.StringValue("RemoveQueryProcessor.requestId");
         
 			return removeQueryProcessorResponse;
         }

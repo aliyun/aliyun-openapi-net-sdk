@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OpenSearch.Model.V20171225
@@ -58,9 +58,9 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 
 			private string tag;
 
-			private string priority;
-
 			private int? order;
+
+			private string priority;
 
 			private string label;
 
@@ -76,18 +76,6 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
-			public string Priority
-			{
-				get
-				{
-					return priority;
-				}
-				set	
-				{
-					priority = value;
-				}
-			}
-
 			public int? Order
 			{
 				get
@@ -97,6 +85,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				set	
 				{
 					order = value;
+				}
+			}
+
+			public string Priority
+			{
+				get
+				{
+					return priority;
+				}
+				set	
+				{
+					priority = value;
 				}
 			}
 

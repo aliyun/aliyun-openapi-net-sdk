@@ -34,11 +34,11 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			removeInterventionDictionaryResponse.RequestId = _ctx.StringValue("RemoveInterventionDictionary.requestId");
 
 			RemoveInterventionDictionaryResponse.RemoveInterventionDictionary_Result result = new RemoveInterventionDictionaryResponse.RemoveInterventionDictionary_Result();
-			result.Name = _ctx.StringValue("RemoveInterventionDictionary.Result.name");
-			result.Type = _ctx.StringValue("RemoveInterventionDictionary.Result.type");
-			result.Analyzer = _ctx.StringValue("RemoveInterventionDictionary.Result.analyzer");
 			result.Created = _ctx.StringValue("RemoveInterventionDictionary.Result.created");
+			result.Analyzer = _ctx.StringValue("RemoveInterventionDictionary.Result.analyzer");
 			result.Updated = _ctx.StringValue("RemoveInterventionDictionary.Result.updated");
+			result.Type = _ctx.StringValue("RemoveInterventionDictionary.Result.type");
+			result.Name = _ctx.StringValue("RemoveInterventionDictionary.Result.name");
 			removeInterventionDictionaryResponse.Result = result;
         
 			return removeInterventionDictionaryResponse;

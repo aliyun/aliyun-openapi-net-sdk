@@ -36,14 +36,14 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			List<ListABTestMetricsResponse.ListABTestMetrics_ResultItem> listABTestMetricsResponse_result = new List<ListABTestMetricsResponse.ListABTestMetrics_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListABTestMetrics.Result.Length"); i++) {
 				ListABTestMetricsResponse.ListABTestMetrics_ResultItem resultItem = new ListABTestMetricsResponse.ListABTestMetrics_ResultItem();
+				resultItem.ZeroHitRate = _ctx.FloatValue("ListABTestMetrics.Result["+ i +"].zeroHitRate");
+				resultItem.Ctr = _ctx.FloatValue("ListABTestMetrics.Result["+ i +"].ctr");
 				resultItem.ExperimentName = _ctx.StringValue("ListABTestMetrics.Result["+ i +"].experimentName");
 				resultItem.Date = _ctx.StringValue("ListABTestMetrics.Result["+ i +"].date");
-				resultItem.Pv = _ctx.IntegerValue("ListABTestMetrics.Result["+ i +"].pv");
+				resultItem.IpvUv = _ctx.IntegerValue("ListABTestMetrics.Result["+ i +"].ipvUv");
 				resultItem.Ipv = _ctx.IntegerValue("ListABTestMetrics.Result["+ i +"].ipv");
 				resultItem.Uv = _ctx.IntegerValue("ListABTestMetrics.Result["+ i +"].uv");
-				resultItem.IpvUv = _ctx.IntegerValue("ListABTestMetrics.Result["+ i +"].ipvUv");
-				resultItem.Ctr = _ctx.FloatValue("ListABTestMetrics.Result["+ i +"].ctr");
-				resultItem.ZeroHitRate = _ctx.FloatValue("ListABTestMetrics.Result["+ i +"].zeroHitRate");
+				resultItem.Pv = _ctx.IntegerValue("ListABTestMetrics.Result["+ i +"].pv");
 
 				listABTestMetricsResponse_result.Add(resultItem);
 			}

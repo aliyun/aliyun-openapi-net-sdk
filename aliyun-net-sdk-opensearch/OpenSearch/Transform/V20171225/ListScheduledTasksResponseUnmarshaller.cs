@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			ListScheduledTasksResponse listScheduledTasksResponse = new ListScheduledTasksResponse();
 
 			listScheduledTasksResponse.HttpResponse = _ctx.HttpResponse;
-			listScheduledTasksResponse.RequestId = _ctx.StringValue("ListScheduledTasks.requestId");
 			listScheduledTasksResponse.TotalCount = _ctx.LongValue("ListScheduledTasks.totalCount");
+			listScheduledTasksResponse.RequestId = _ctx.StringValue("ListScheduledTasks.requestId");
 
 			List<Dictionary<string, string>> listScheduledTasksResponse_result = new List<Dictionary<string, string>>();
 			for (int i = 0; i < _ctx.Length("ListScheduledTasks.Result.Length"); i++) {

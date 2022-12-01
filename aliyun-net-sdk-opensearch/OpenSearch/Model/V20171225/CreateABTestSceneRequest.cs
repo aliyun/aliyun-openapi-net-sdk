@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.OpenSearch;
 using Aliyun.Acs.OpenSearch.Transform;
 using Aliyun.Acs.OpenSearch.Transform.V20171225;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
     public class CreateABTestSceneRequest : RoaAcsRequest<CreateABTestSceneResponse>
     {
         public CreateABTestSceneRequest()
-            : base("OpenSearch", "2017-12-25", "CreateABTestScene", "opensearch", "openAPI")
+            : base("OpenSearch", "2017-12-25", "CreateABTestScene")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

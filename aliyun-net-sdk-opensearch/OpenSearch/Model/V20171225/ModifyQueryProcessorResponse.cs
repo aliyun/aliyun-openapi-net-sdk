@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OpenSearch.Model.V20171225
@@ -56,29 +56,29 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 		public class ModifyQueryProcessor_Result
 		{
 
-			private string name;
+			private int? created;
 
 			private bool? active;
 
-			private string domain;
-
-			private int? created;
-
 			private int? updated;
+
+			private string name;
+
+			private string domain;
 
 			private List<string> indexes;
 
 			private List<Dictionary<string, string>> processors;
 
-			public string Name
+			public int? Created
 			{
 				get
 				{
-					return name;
+					return created;
 				}
 				set	
 				{
-					name = value;
+					created = value;
 				}
 			}
 
@@ -94,30 +94,6 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
-			public string Domain
-			{
-				get
-				{
-					return domain;
-				}
-				set	
-				{
-					domain = value;
-				}
-			}
-
-			public int? Created
-			{
-				get
-				{
-					return created;
-				}
-				set	
-				{
-					created = value;
-				}
-			}
-
 			public int? Updated
 			{
 				get
@@ -127,6 +103,30 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				set	
 				{
 					updated = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string Domain
+			{
+				get
+				{
+					return domain;
+				}
+				set	
+				{
+					domain = value;
 				}
 			}
 

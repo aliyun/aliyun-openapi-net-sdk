@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OpenSearch.Model.V20171225
@@ -56,41 +56,29 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 		public class CreateABTestExperiment_Result
 		{
 
-			private string id;
-
-			private string name;
+			private int? created;
 
 			private string _params;
 
-			private int? created;
-
-			private int? updated;
+			private int? traffic;
 
 			private bool? online;
 
-			private int? traffic;
+			private string name;
 
-			public string Id
+			private int? updated;
+
+			private string id;
+
+			public int? Created
 			{
 				get
 				{
-					return id;
+					return created;
 				}
 				set	
 				{
-					id = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
+					created = value;
 				}
 			}
 
@@ -106,27 +94,15 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
-			public int? Created
+			public int? Traffic
 			{
 				get
 				{
-					return created;
+					return traffic;
 				}
 				set	
 				{
-					created = value;
-				}
-			}
-
-			public int? Updated
-			{
-				get
-				{
-					return updated;
-				}
-				set	
-				{
-					updated = value;
+					traffic = value;
 				}
 			}
 
@@ -142,15 +118,39 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
-			public int? Traffic
+			public string Name
 			{
 				get
 				{
-					return traffic;
+					return name;
 				}
 				set	
 				{
-					traffic = value;
+					name = value;
+				}
+			}
+
+			public int? Updated
+			{
+				get
+				{
+					return updated;
+				}
+				set	
+				{
+					updated = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
 				}
 			}
 		}

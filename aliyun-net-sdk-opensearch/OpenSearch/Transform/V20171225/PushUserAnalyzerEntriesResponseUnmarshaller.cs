@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			PushUserAnalyzerEntriesResponse pushUserAnalyzerEntriesResponse = new PushUserAnalyzerEntriesResponse();
 
 			pushUserAnalyzerEntriesResponse.HttpResponse = _ctx.HttpResponse;
-			pushUserAnalyzerEntriesResponse.RequestId = _ctx.StringValue("PushUserAnalyzerEntries.RequestId");
 			pushUserAnalyzerEntriesResponse.Result = _ctx.StringValue("PushUserAnalyzerEntries.result");
+			pushUserAnalyzerEntriesResponse.RequestId = _ctx.StringValue("PushUserAnalyzerEntries.RequestId");
         
 			return pushUserAnalyzerEntriesResponse;
         }

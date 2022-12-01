@@ -34,29 +34,29 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			replaceAppGroupCommodityCodeResponse.RequestId = _ctx.StringValue("ReplaceAppGroupCommodityCode.requestId");
 
 			ReplaceAppGroupCommodityCodeResponse.ReplaceAppGroupCommodityCode_Result result = new ReplaceAppGroupCommodityCodeResponse.ReplaceAppGroupCommodityCode_Result();
-			result.Id = _ctx.StringValue("ReplaceAppGroupCommodityCode.Result.id");
-			result.Name = _ctx.StringValue("ReplaceAppGroupCommodityCode.Result.name");
-			result.CurrentVersion = _ctx.StringValue("ReplaceAppGroupCommodityCode.Result.currentVersion");
-			result.SwitchedTime = _ctx.IntegerValue("ReplaceAppGroupCommodityCode.Result.switchedTime");
-			result.ChargingWay = _ctx.IntegerValue("ReplaceAppGroupCommodityCode.Result.chargingWay");
-			result.Type = _ctx.StringValue("ReplaceAppGroupCommodityCode.Result.type");
-			result.ProjectId = _ctx.StringValue("ReplaceAppGroupCommodityCode.Result.projectId");
-			result.ChargeType = _ctx.StringValue("ReplaceAppGroupCommodityCode.Result.chargeType");
-			result.ExpireOn = _ctx.StringValue("ReplaceAppGroupCommodityCode.Result.expireOn");
-			result.InstanceId = _ctx.StringValue("ReplaceAppGroupCommodityCode.Result.instanceId");
-			result.CommodityCode = _ctx.StringValue("ReplaceAppGroupCommodityCode.Result.commodityCode");
-			result.ProcessingOrderId = _ctx.StringValue("ReplaceAppGroupCommodityCode.Result.processingOrderId");
-			result.FirstRankAlgoDeploymentId = _ctx.IntegerValue("ReplaceAppGroupCommodityCode.Result.firstRankAlgoDeploymentId");
-			result.SecondRankAlgoDeploymentId = _ctx.IntegerValue("ReplaceAppGroupCommodityCode.Result.secondRankAlgoDeploymentId");
-			result.PendingSecondRankAlgoDeploymentId = _ctx.IntegerValue("ReplaceAppGroupCommodityCode.Result.pendingSecondRankAlgoDeploymentId");
-			result.Description = _ctx.StringValue("ReplaceAppGroupCommodityCode.Result.description");
-			result.Produced = _ctx.IntegerValue("ReplaceAppGroupCommodityCode.Result.produced");
-			result.LockedByExpiration = _ctx.IntegerValue("ReplaceAppGroupCommodityCode.Result.lockedByExpiration");
-			result.HasPendingQuotaReviewTask = _ctx.IntegerValue("ReplaceAppGroupCommodityCode.Result.hasPendingQuotaReviewTask");
 			result.Created = _ctx.IntegerValue("ReplaceAppGroupCommodityCode.Result.created");
-			result.Updated = _ctx.IntegerValue("ReplaceAppGroupCommodityCode.Result.updated");
-			result.Status = _ctx.StringValue("ReplaceAppGroupCommodityCode.Result.status");
+			result.CurrentVersion = _ctx.StringValue("ReplaceAppGroupCommodityCode.Result.currentVersion");
+			result.PendingSecondRankAlgoDeploymentId = _ctx.IntegerValue("ReplaceAppGroupCommodityCode.Result.pendingSecondRankAlgoDeploymentId");
+			result.Type = _ctx.StringValue("ReplaceAppGroupCommodityCode.Result.type");
+			result.ChargingWay = _ctx.IntegerValue("ReplaceAppGroupCommodityCode.Result.chargingWay");
 			result.LockMode = _ctx.StringValue("ReplaceAppGroupCommodityCode.Result.lockMode");
+			result.Status = _ctx.StringValue("ReplaceAppGroupCommodityCode.Result.status");
+			result.Updated = _ctx.IntegerValue("ReplaceAppGroupCommodityCode.Result.updated");
+			result.ChargeType = _ctx.StringValue("ReplaceAppGroupCommodityCode.Result.chargeType");
+			result.Id = _ctx.StringValue("ReplaceAppGroupCommodityCode.Result.id");
+			result.HasPendingQuotaReviewTask = _ctx.IntegerValue("ReplaceAppGroupCommodityCode.Result.hasPendingQuotaReviewTask");
+			result.ProjectId = _ctx.StringValue("ReplaceAppGroupCommodityCode.Result.projectId");
+			result.SecondRankAlgoDeploymentId = _ctx.IntegerValue("ReplaceAppGroupCommodityCode.Result.secondRankAlgoDeploymentId");
+			result.CommodityCode = _ctx.StringValue("ReplaceAppGroupCommodityCode.Result.commodityCode");
+			result.SwitchedTime = _ctx.IntegerValue("ReplaceAppGroupCommodityCode.Result.switchedTime");
+			result.ExpireOn = _ctx.StringValue("ReplaceAppGroupCommodityCode.Result.expireOn");
+			result.Description = _ctx.StringValue("ReplaceAppGroupCommodityCode.Result.description");
+			result.FirstRankAlgoDeploymentId = _ctx.IntegerValue("ReplaceAppGroupCommodityCode.Result.firstRankAlgoDeploymentId");
+			result.LockedByExpiration = _ctx.IntegerValue("ReplaceAppGroupCommodityCode.Result.lockedByExpiration");
+			result.Produced = _ctx.IntegerValue("ReplaceAppGroupCommodityCode.Result.produced");
+			result.Name = _ctx.StringValue("ReplaceAppGroupCommodityCode.Result.name");
+			result.ProcessingOrderId = _ctx.StringValue("ReplaceAppGroupCommodityCode.Result.processingOrderId");
+			result.InstanceId = _ctx.StringValue("ReplaceAppGroupCommodityCode.Result.instanceId");
 
 			List<string> result_versions = new List<string>();
 			for (int i = 0; i < _ctx.Length("ReplaceAppGroupCommodityCode.Result.Versions.Length"); i++) {
@@ -65,9 +65,9 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			result.Versions = result_versions;
 
 			ReplaceAppGroupCommodityCodeResponse.ReplaceAppGroupCommodityCode_Result.ReplaceAppGroupCommodityCode_Quota quota = new ReplaceAppGroupCommodityCodeResponse.ReplaceAppGroupCommodityCode_Result.ReplaceAppGroupCommodityCode_Quota();
+			quota.Spec = _ctx.StringValue("ReplaceAppGroupCommodityCode.Result.Quota.spec");
 			quota.DocSize = _ctx.IntegerValue("ReplaceAppGroupCommodityCode.Result.Quota.docSize");
 			quota.ComputeResource = _ctx.IntegerValue("ReplaceAppGroupCommodityCode.Result.Quota.computeResource");
-			quota.Spec = _ctx.StringValue("ReplaceAppGroupCommodityCode.Result.Quota.spec");
 			result.Quota = quota;
 			replaceAppGroupCommodityCodeResponse.Result = result;
         

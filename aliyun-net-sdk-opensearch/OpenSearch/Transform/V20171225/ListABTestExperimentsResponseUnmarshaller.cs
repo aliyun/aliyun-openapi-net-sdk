@@ -36,13 +36,13 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			List<ListABTestExperimentsResponse.ListABTestExperiments_ResultItem> listABTestExperimentsResponse_result = new List<ListABTestExperimentsResponse.ListABTestExperiments_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListABTestExperiments.Result.Length"); i++) {
 				ListABTestExperimentsResponse.ListABTestExperiments_ResultItem resultItem = new ListABTestExperimentsResponse.ListABTestExperiments_ResultItem();
-				resultItem.Id = _ctx.StringValue("ListABTestExperiments.Result["+ i +"].id");
-				resultItem.Name = _ctx.StringValue("ListABTestExperiments.Result["+ i +"].name");
-				resultItem._Params = _ctx.StringValue("ListABTestExperiments.Result["+ i +"].params");
 				resultItem.Created = _ctx.IntegerValue("ListABTestExperiments.Result["+ i +"].created");
-				resultItem.Updated = _ctx.IntegerValue("ListABTestExperiments.Result["+ i +"].updated");
-				resultItem.Online = _ctx.BooleanValue("ListABTestExperiments.Result["+ i +"].online");
+				resultItem._Params = _ctx.StringValue("ListABTestExperiments.Result["+ i +"].params");
 				resultItem.Traffic = _ctx.IntegerValue("ListABTestExperiments.Result["+ i +"].traffic");
+				resultItem.Online = _ctx.BooleanValue("ListABTestExperiments.Result["+ i +"].online");
+				resultItem.Name = _ctx.StringValue("ListABTestExperiments.Result["+ i +"].name");
+				resultItem.Updated = _ctx.IntegerValue("ListABTestExperiments.Result["+ i +"].updated");
+				resultItem.Id = _ctx.StringValue("ListABTestExperiments.Result["+ i +"].id");
 
 				listABTestExperimentsResponse_result.Add(resultItem);
 			}

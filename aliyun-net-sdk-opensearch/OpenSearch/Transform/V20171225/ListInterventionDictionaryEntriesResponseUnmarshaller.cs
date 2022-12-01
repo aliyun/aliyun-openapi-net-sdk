@@ -31,18 +31,18 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			ListInterventionDictionaryEntriesResponse listInterventionDictionaryEntriesResponse = new ListInterventionDictionaryEntriesResponse();
 
 			listInterventionDictionaryEntriesResponse.HttpResponse = _ctx.HttpResponse;
-			listInterventionDictionaryEntriesResponse.RequestId = _ctx.StringValue("ListInterventionDictionaryEntries.requestId");
 			listInterventionDictionaryEntriesResponse.TotalCount = _ctx.IntegerValue("ListInterventionDictionaryEntries.totalCount");
+			listInterventionDictionaryEntriesResponse.RequestId = _ctx.StringValue("ListInterventionDictionaryEntries.requestId");
 
 			List<ListInterventionDictionaryEntriesResponse.ListInterventionDictionaryEntries_WordItem> listInterventionDictionaryEntriesResponse_result = new List<ListInterventionDictionaryEntriesResponse.ListInterventionDictionaryEntries_WordItem>();
 			for (int i = 0; i < _ctx.Length("ListInterventionDictionaryEntries.Result.Length"); i++) {
 				ListInterventionDictionaryEntriesResponse.ListInterventionDictionaryEntries_WordItem wordItem = new ListInterventionDictionaryEntriesResponse.ListInterventionDictionaryEntries_WordItem();
 				wordItem.Cmd = _ctx.StringValue("ListInterventionDictionaryEntries.Result["+ i +"].cmd");
-				wordItem.Word = _ctx.StringValue("ListInterventionDictionaryEntries.Result["+ i +"].word");
 				wordItem.Created = _ctx.LongValue("ListInterventionDictionaryEntries.Result["+ i +"].created");
-				wordItem.Updated = _ctx.LongValue("ListInterventionDictionaryEntries.Result["+ i +"].updated");
-				wordItem.Status = _ctx.StringValue("ListInterventionDictionaryEntries.Result["+ i +"].status");
+				wordItem.Word = _ctx.StringValue("ListInterventionDictionaryEntries.Result["+ i +"].word");
 				wordItem.Relevance = _ctx.StringValue("ListInterventionDictionaryEntries.Result["+ i +"].relevance");
+				wordItem.Status = _ctx.StringValue("ListInterventionDictionaryEntries.Result["+ i +"].status");
+				wordItem.Updated = _ctx.LongValue("ListInterventionDictionaryEntries.Result["+ i +"].updated");
 
 				List<ListInterventionDictionaryEntriesResponse.ListInterventionDictionaryEntries_WordItem.ListInterventionDictionaryEntries_Token> wordItem_tokens = new List<ListInterventionDictionaryEntriesResponse.ListInterventionDictionaryEntries_WordItem.ListInterventionDictionaryEntries_Token>();
 				for (int j = 0; j < _ctx.Length("ListInterventionDictionaryEntries.Result["+ i +"].Tokens.Length"); j++) {

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OpenSearch.Model.V20171225
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 	public class ListDataCollectionsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalCount;
 
-		private List<ListDataCollections_ResultItem> result;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<ListDataCollections_ResultItem> result;
 
 		public int? TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,69 +70,33 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 		public class ListDataCollections_ResultItem
 		{
 
-			private string id;
-
-			private string name;
-
-			private string type;
-
-			private int? status;
+			private int? created;
 
 			private string dataCollectionType;
 
+			private string type;
+
 			private string industryName;
 
-			private int? created;
+			private int? status;
 
 			private int? updated;
 
+			private string name;
+
 			private string sundialId;
 
-			public string Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+			private string id;
 
-			public string Name
+			public int? Created
 			{
 				get
 				{
-					return name;
+					return created;
 				}
 				set	
 				{
-					name = value;
-				}
-			}
-
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
-
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
+					created = value;
 				}
 			}
 
@@ -148,6 +112,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
+				}
+			}
+
 			public string IndustryName
 			{
 				get
@@ -160,15 +136,15 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
-			public int? Created
+			public int? Status
 			{
 				get
 				{
-					return created;
+					return status;
 				}
 				set	
 				{
-					created = value;
+					status = value;
 				}
 			}
 
@@ -184,6 +160,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
 			public string SundialId
 			{
 				get
@@ -193,6 +181,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				set	
 				{
 					sundialId = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
 				}
 			}
 		}

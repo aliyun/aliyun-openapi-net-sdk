@@ -35,8 +35,8 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 
 			DescribeSlowQueryStatusResponse.DescribeSlowQueryStatus_Result result = new DescribeSlowQueryStatusResponse.DescribeSlowQueryStatus_Result();
 			result.Region = _ctx.StringValue("DescribeSlowQueryStatus.Result.region");
-			result.AppGroupId = _ctx.StringValue("DescribeSlowQueryStatus.Result.appGroupId");
 			result.Status = _ctx.StringValue("DescribeSlowQueryStatus.Result.status");
+			result.AppGroupId = _ctx.StringValue("DescribeSlowQueryStatus.Result.appGroupId");
 			describeSlowQueryStatusResponse.Result = result;
         
 			return describeSlowQueryStatusResponse;

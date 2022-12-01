@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			GetDomainResponse getDomainResponse = new GetDomainResponse();
 
 			getDomainResponse.HttpResponse = _ctx.HttpResponse;
-			getDomainResponse.RequestId = _ctx.StringValue("GetDomain.requestId");
 			getDomainResponse.Result = _ctx.StringValue("GetDomain.result");
+			getDomainResponse.RequestId = _ctx.StringValue("GetDomain.requestId");
         
 			return getDomainResponse;
         }
