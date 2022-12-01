@@ -41,6 +41,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				BatchGetDeviceBindStatusResponse.BatchGetDeviceBindStatus_DeviceStatus deviceStatus = new BatchGetDeviceBindStatusResponse.BatchGetDeviceBindStatus_DeviceStatus();
 				deviceStatus.IotId = _ctx.StringValue("BatchGetDeviceBindStatus.Data["+ i +"].IotId");
 				deviceStatus.BindStatus = _ctx.IntegerValue("BatchGetDeviceBindStatus.Data["+ i +"].BindStatus");
+				deviceStatus.InstanceId = _ctx.StringValue("BatchGetDeviceBindStatus.Data["+ i +"].InstanceId");
 
 				batchGetDeviceBindStatusResponse_data.Add(deviceStatus);
 			}

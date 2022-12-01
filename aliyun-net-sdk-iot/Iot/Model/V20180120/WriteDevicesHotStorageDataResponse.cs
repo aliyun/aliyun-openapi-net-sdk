@@ -22,18 +22,16 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class BatchGetDeviceBindStatusResponse : AcsResponse
+	public class WriteDevicesHotStorageDataResponse : AcsResponse
 	{
 
 		private string requestId;
 
 		private bool? success;
 
-		private string code;
-
 		private string errorMessage;
 
-		private List<BatchGetDeviceBindStatus_DeviceStatus> data;
+		private string code;
 
 		public string RequestId
 		{
@@ -59,18 +57,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
 		public string ErrorMessage
 		{
 			get
@@ -83,61 +69,15 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public List<BatchGetDeviceBindStatus_DeviceStatus> Data
+		public string Code
 		{
 			get
 			{
-				return data;
+				return code;
 			}
 			set	
 			{
-				data = value;
-			}
-		}
-
-		public class BatchGetDeviceBindStatus_DeviceStatus
-		{
-
-			private string iotId;
-
-			private int? bindStatus;
-
-			private string instanceId;
-
-			public string IotId
-			{
-				get
-				{
-					return iotId;
-				}
-				set	
-				{
-					iotId = value;
-				}
-			}
-
-			public int? BindStatus
-			{
-				get
-				{
-					return bindStatus;
-				}
-				set	
-				{
-					bindStatus = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
+				code = value;
 			}
 		}
 	}

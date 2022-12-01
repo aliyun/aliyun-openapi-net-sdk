@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class BatchGetDeviceBindStatusResponse : AcsResponse
+	public class QueryDevicesHotStorageDataStatusResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private List<BatchGetDeviceBindStatus_DeviceStatus> data;
+		private QueryDevicesHotStorageDataStatus_Data data;
 
 		public string RequestId
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public List<BatchGetDeviceBindStatus_DeviceStatus> Data
+		public QueryDevicesHotStorageDataStatus_Data Data
 		{
 			get
 			{
@@ -95,48 +95,94 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class BatchGetDeviceBindStatus_DeviceStatus
+		public class QueryDevicesHotStorageDataStatus_Data
 		{
 
-			private string iotId;
+			private bool? nextValid;
 
-			private int? bindStatus;
+			private string nextPageToken;
 
-			private string instanceId;
+			private List<QueryDevicesHotStorageDataStatus_PropertyStatusDataInfo> list;
 
-			public string IotId
+			public bool? NextValid
 			{
 				get
 				{
-					return iotId;
+					return nextValid;
 				}
 				set	
 				{
-					iotId = value;
+					nextValid = value;
 				}
 			}
 
-			public int? BindStatus
+			public string NextPageToken
 			{
 				get
 				{
-					return bindStatus;
+					return nextPageToken;
 				}
 				set	
 				{
-					bindStatus = value;
+					nextPageToken = value;
 				}
 			}
 
-			public string InstanceId
+			public List<QueryDevicesHotStorageDataStatus_PropertyStatusDataInfo> List
 			{
 				get
 				{
-					return instanceId;
+					return list;
 				}
 				set	
 				{
-					instanceId = value;
+					list = value;
+				}
+			}
+
+			public class QueryDevicesHotStorageDataStatus_PropertyStatusDataInfo
+			{
+
+				private string identifier;
+
+				private string _value;
+
+				private long? time;
+
+				public string Identifier
+				{
+					get
+					{
+						return identifier;
+					}
+					set	
+					{
+						identifier = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
+				}
+
+				public long? Time
+				{
+					get
+					{
+						return time;
+					}
+					set	
+					{
+						time = value;
+					}
 				}
 			}
 		}
