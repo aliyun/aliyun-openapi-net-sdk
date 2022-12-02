@@ -55,7 +55,11 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string topicFullName;
 
+		private int? payloadFormatIndicator;
+
 		private string productKey;
+
+		private string contentType;
 
 		private string deviceName;
 
@@ -155,6 +159,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
+		public int? PayloadFormatIndicator
+		{
+			get
+			{
+				return payloadFormatIndicator;
+			}
+			set	
+			{
+				payloadFormatIndicator = value;
+				DictionaryUtil.Add(QueryParameters, "PayloadFormatIndicator", value.ToString());
+			}
+		}
+
 		public string ProductKey
 		{
 			get
@@ -165,6 +182,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				productKey = value;
 				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+			}
+		}
+
+		public string ContentType
+		{
+			get
+			{
+				return contentType;
+			}
+			set	
+			{
+				contentType = value;
+				DictionaryUtil.Add(QueryParameters, "ContentType", value);
 			}
 		}
 
