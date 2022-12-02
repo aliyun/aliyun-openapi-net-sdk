@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class ListMessageAppResponse : AcsResponse
+	public class QueryMessageAppResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private ListMessageApp_Result result;
+		private List<QueryMessageApp_ResultItem> result;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -43,7 +43,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 		}
 
 		[JsonProperty(PropertyName = "Result")]
-		public ListMessageApp_Result Result
+		public List<QueryMessageApp_ResultItem> Result
 		{
 			get
 			{
@@ -55,25 +55,25 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public class ListMessageApp_Result
+		public class QueryMessageApp_ResultItem
 		{
 
-			private int? total;
+			private int? totalCount;
 
 			private bool? hasMore;
 
-			private List<ListMessageApp_AppListItem> appList;
+			private List<QueryMessageApp_AppListItem> appList;
 
-			[JsonProperty(PropertyName = "Total")]
-			public int? Total
+			[JsonProperty(PropertyName = "TotalCount")]
+			public int? TotalCount
 			{
 				get
 				{
-					return total;
+					return totalCount;
 				}
 				set	
 				{
-					total = value;
+					totalCount = value;
 				}
 			}
 
@@ -91,7 +91,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 
 			[JsonProperty(PropertyName = "AppList")]
-			public List<ListMessageApp_AppListItem> AppList
+			public List<QueryMessageApp_AppListItem> AppList
 			{
 				get
 				{
@@ -103,7 +103,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public class ListMessageApp_AppListItem
+			public class QueryMessageApp_AppListItem
 			{
 
 				private string appId;

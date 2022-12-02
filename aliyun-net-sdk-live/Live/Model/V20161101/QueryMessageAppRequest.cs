@@ -28,10 +28,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class SendMessageToGroupRequest : RpcAcsRequest<SendMessageToGroupResponse>
+    public class QueryMessageAppRequest : RpcAcsRequest<QueryMessageAppResponse>
     {
-        public SendMessageToGroupRequest()
-            : base("live", "2016-11-01", "SendMessageToGroup", "live", "openAPI")
+        public QueryMessageAppRequest()
+            : base("live", "2016-11-01", "QueryMessageApp", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,69 +41,69 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private string data;
+		private int? sortType;
 
-		private int? type;
+		private int? pageNum;
 
-		private string operatorUserId;
+		private string appName;
 
-		private string groupId;
+		private int? pageSize;
 
 		private string appId;
 
-		[JsonProperty(PropertyName = "Data")]
-		public string Data
+		[JsonProperty(PropertyName = "SortType")]
+		public int? SortType
 		{
 			get
 			{
-				return data;
+				return sortType;
 			}
 			set	
 			{
-				data = value;
-				DictionaryUtil.Add(BodyParameters, "Data", value);
+				sortType = value;
+				DictionaryUtil.Add(BodyParameters, "SortType", value.ToString());
 			}
 		}
 
-		[JsonProperty(PropertyName = "Type")]
-		public int? Type
+		[JsonProperty(PropertyName = "PageNum")]
+		public int? PageNum
 		{
 			get
 			{
-				return type;
+				return pageNum;
 			}
 			set	
 			{
-				type = value;
-				DictionaryUtil.Add(BodyParameters, "Type", value.ToString());
+				pageNum = value;
+				DictionaryUtil.Add(BodyParameters, "PageNum", value.ToString());
 			}
 		}
 
-		[JsonProperty(PropertyName = "OperatorUserId")]
-		public string OperatorUserId
+		[JsonProperty(PropertyName = "AppName")]
+		public string AppName
 		{
 			get
 			{
-				return operatorUserId;
+				return appName;
 			}
 			set	
 			{
-				operatorUserId = value;
-				DictionaryUtil.Add(BodyParameters, "OperatorUserId", value);
+				appName = value;
+				DictionaryUtil.Add(BodyParameters, "AppName", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "GroupId")]
-		public string GroupId
+		[JsonProperty(PropertyName = "PageSize")]
+		public int? PageSize
 		{
 			get
 			{
-				return groupId;
+				return pageSize;
 			}
 			set	
 			{
-				groupId = value;
-				DictionaryUtil.Add(BodyParameters, "GroupId", value);
+				pageSize = value;
+				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -126,9 +126,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			return false;
 		}
 
-        public override SendMessageToGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryMessageAppResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SendMessageToGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryMessageAppResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

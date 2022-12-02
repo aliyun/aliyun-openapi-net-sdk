@@ -28,10 +28,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class SendMessageToGroupRequest : RpcAcsRequest<SendMessageToGroupResponse>
+    public class ListMessageGroupUserByIdRequest : RpcAcsRequest<ListMessageGroupUserByIdResponse>
     {
-        public SendMessageToGroupRequest()
-            : base("live", "2016-11-01", "SendMessageToGroup", "live", "openAPI")
+        public ListMessageGroupUserByIdRequest()
+            : base("live", "2016-11-01", "ListMessageGroupUserById", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,55 +41,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private string data;
-
-		private int? type;
-
-		private string operatorUserId;
+		private List<string> userIdList = new List<string>(){ };
 
 		private string groupId;
 
 		private string appId;
 
-		[JsonProperty(PropertyName = "Data")]
-		public string Data
+		[JsonProperty(PropertyName = "UserIdList")]
+		public List<string> UserIdList
 		{
 			get
 			{
-				return data;
+				return userIdList;
 			}
-			set	
-			{
-				data = value;
-				DictionaryUtil.Add(BodyParameters, "Data", value);
-			}
-		}
 
-		[JsonProperty(PropertyName = "Type")]
-		public int? Type
-		{
-			get
+			set
 			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(BodyParameters, "Type", value.ToString());
-			}
-		}
-
-		[JsonProperty(PropertyName = "OperatorUserId")]
-		public string OperatorUserId
-		{
-			get
-			{
-				return operatorUserId;
-			}
-			set	
-			{
-				operatorUserId = value;
-				DictionaryUtil.Add(BodyParameters, "OperatorUserId", value);
+				userIdList = value;
+				if(userIdList != null)
+				{
+					for (int depth1 = 0; depth1 < userIdList.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"UserIdList." + (depth1 + 1), userIdList[depth1]);
+					}
+				}
 			}
 		}
 
@@ -126,9 +101,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			return false;
 		}
 
-        public override SendMessageToGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListMessageGroupUserByIdResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SendMessageToGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListMessageGroupUserByIdResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

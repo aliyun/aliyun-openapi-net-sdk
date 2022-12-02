@@ -40,11 +40,24 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
+		private string operatorUserId;
+
 		private string groupId;
 
 		private string appId;
 
-		private string operatorUserId;
+		public string OperatorUserId
+		{
+			get
+			{
+				return operatorUserId;
+			}
+			set	
+			{
+				operatorUserId = value;
+				DictionaryUtil.Add(BodyParameters, "OperatorUserId", value);
+			}
+		}
 
 		public string GroupId
 		{
@@ -69,19 +82,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				appId = value;
 				DictionaryUtil.Add(BodyParameters, "AppId", value);
-			}
-		}
-
-		public string OperatorUserId
-		{
-			get
-			{
-				return operatorUserId;
-			}
-			set	
-			{
-				operatorUserId = value;
-				DictionaryUtil.Add(BodyParameters, "OperatorUserId", value);
 			}
 		}
 

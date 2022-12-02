@@ -28,10 +28,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class SendMessageToGroupRequest : RpcAcsRequest<SendMessageToGroupResponse>
+    public class SendLikeRequest : RpcAcsRequest<SendLikeResponse>
     {
-        public SendMessageToGroupRequest()
-            : base("live", "2016-11-01", "SendMessageToGroup", "live", "openAPI")
+        public SendLikeRequest()
+            : base("live", "2016-11-01", "SendLike", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,43 +41,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private string data;
-
-		private int? type;
-
 		private string operatorUserId;
+
+		private int? broadCastType;
 
 		private string groupId;
 
+		private string count;
+
 		private string appId;
-
-		[JsonProperty(PropertyName = "Data")]
-		public string Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
-				DictionaryUtil.Add(BodyParameters, "Data", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "Type")]
-		public int? Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(BodyParameters, "Type", value.ToString());
-			}
-		}
 
 		[JsonProperty(PropertyName = "OperatorUserId")]
 		public string OperatorUserId
@@ -93,6 +65,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "BroadCastType")]
+		public int? BroadCastType
+		{
+			get
+			{
+				return broadCastType;
+			}
+			set	
+			{
+				broadCastType = value;
+				DictionaryUtil.Add(BodyParameters, "BroadCastType", value.ToString());
+			}
+		}
+
 		[JsonProperty(PropertyName = "GroupId")]
 		public string GroupId
 		{
@@ -104,6 +90,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				groupId = value;
 				DictionaryUtil.Add(BodyParameters, "GroupId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Count")]
+		public string Count
+		{
+			get
+			{
+				return count;
+			}
+			set	
+			{
+				count = value;
+				DictionaryUtil.Add(BodyParameters, "Count", value);
 			}
 		}
 
@@ -126,9 +126,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			return false;
 		}
 
-        public override SendMessageToGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SendLikeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SendMessageToGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SendLikeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

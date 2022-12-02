@@ -32,10 +32,10 @@ namespace Aliyun.Acs.live.Transform.V20161101
 
 			describeDomainUsageDataResponse.HttpResponse = _ctx.HttpResponse;
 			describeDomainUsageDataResponse.EndTime = _ctx.StringValue("DescribeDomainUsageData.EndTime");
+			describeDomainUsageDataResponse.Type = _ctx.StringValue("DescribeDomainUsageData.Type");
 			describeDomainUsageDataResponse.StartTime = _ctx.StringValue("DescribeDomainUsageData.StartTime");
 			describeDomainUsageDataResponse.RequestId = _ctx.StringValue("DescribeDomainUsageData.RequestId");
 			describeDomainUsageDataResponse.Area = _ctx.StringValue("DescribeDomainUsageData.Area");
-			describeDomainUsageDataResponse.Field = _ctx.StringValue("DescribeDomainUsageData.Field");
 			describeDomainUsageDataResponse.DomainName = _ctx.StringValue("DescribeDomainUsageData.DomainName");
 			describeDomainUsageDataResponse.DataInterval = _ctx.StringValue("DescribeDomainUsageData.DataInterval");
 

@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class GetMessageAppResponse : AcsResponse
+	public class UpdateMessageAppResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private GetMessageApp_Result result;
+		private UpdateMessageApp_Result result;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -43,7 +43,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 		}
 
 		[JsonProperty(PropertyName = "Result")]
-		public GetMessageApp_Result Result
+		public UpdateMessageApp_Result Result
 		{
 			get
 			{
@@ -55,96 +55,21 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public class GetMessageApp_Result
+		public class UpdateMessageApp_Result
 		{
 
-			private string appId;
+			private bool? success;
 
-			private string appName;
-
-			private long? createTime;
-
-			private int? status;
-
-			private string appConfig;
-
-			private string extension;
-
-			[JsonProperty(PropertyName = "AppId")]
-			public string AppId
+			[JsonProperty(PropertyName = "Success")]
+			public bool? Success
 			{
 				get
 				{
-					return appId;
+					return success;
 				}
 				set	
 				{
-					appId = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "AppName")]
-			public string AppName
-			{
-				get
-				{
-					return appName;
-				}
-				set	
-				{
-					appName = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "CreateTime")]
-			public long? CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Status")]
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "AppConfig")]
-			public string AppConfig
-			{
-				get
-				{
-					return appConfig;
-				}
-				set	
-				{
-					appConfig = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Extension")]
-			public string Extension
-			{
-				get
-				{
-					return extension;
-				}
-				set	
-				{
-					extension = value;
+					success = value;
 				}
 			}
 		}

@@ -43,13 +43,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private int? sortType;
 
-		private string groupId;
-
 		private int? type;
 
 		private int? pageNum;
 
 		private int? pageSize;
+
+		private string groupId;
+
+		private string appId;
 
 		[JsonProperty(PropertyName = "SortType")]
 		public int? SortType
@@ -62,20 +64,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				sortType = value;
 				DictionaryUtil.Add(BodyParameters, "SortType", value.ToString());
-			}
-		}
-
-		[JsonProperty(PropertyName = "GroupId")]
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(BodyParameters, "GroupId", value);
 			}
 		}
 
@@ -118,6 +106,34 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				pageSize = value;
 				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "GroupId")]
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(BodyParameters, "GroupId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "AppId")]
+		public string AppId
+		{
+			get
+			{
+				return appId;
+			}
+			set	
+			{
+				appId = value;
+				DictionaryUtil.Add(BodyParameters, "AppId", value);
 			}
 		}
 

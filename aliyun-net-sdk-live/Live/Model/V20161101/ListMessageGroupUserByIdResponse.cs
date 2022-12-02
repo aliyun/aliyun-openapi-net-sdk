@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class ListMessageAppResponse : AcsResponse
+	public class ListMessageGroupUserByIdResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private ListMessageApp_Result result;
+		private ListMessageGroupUserById_Result result;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -43,7 +43,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 		}
 
 		[JsonProperty(PropertyName = "Result")]
-		public ListMessageApp_Result Result
+		public ListMessageGroupUserById_Result Result
 		{
 			get
 			{
@@ -55,14 +55,14 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public class ListMessageApp_Result
+		public class ListMessageGroupUserById_Result
 		{
 
 			private int? total;
 
 			private bool? hasMore;
 
-			private List<ListMessageApp_AppListItem> appList;
+			private List<ListMessageGroupUserById_UserListItem> userList;
 
 			[JsonProperty(PropertyName = "Total")]
 			public int? Total
@@ -90,109 +90,109 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "AppList")]
-			public List<ListMessageApp_AppListItem> AppList
+			[JsonProperty(PropertyName = "UserList")]
+			public List<ListMessageGroupUserById_UserListItem> UserList
 			{
 				get
 				{
-					return appList;
+					return userList;
 				}
 				set	
 				{
-					appList = value;
+					userList = value;
 				}
 			}
 
-			public class ListMessageApp_AppListItem
+			public class ListMessageGroupUserById_UserListItem
 			{
 
-				private string appId;
+				private string userId;
 
-				private string appName;
+				private string userNick;
 
-				private long? createTime;
+				private string userAvatar;
 
-				private int? status;
+				private string userExtension;
 
-				private string appConfig;
+				private bool? isMute;
 
-				private string extension;
+				private List<string> muteBy;
 
-				[JsonProperty(PropertyName = "AppId")]
-				public string AppId
+				[JsonProperty(PropertyName = "UserId")]
+				public string UserId
 				{
 					get
 					{
-						return appId;
+						return userId;
 					}
 					set	
 					{
-						appId = value;
+						userId = value;
 					}
 				}
 
-				[JsonProperty(PropertyName = "AppName")]
-				public string AppName
+				[JsonProperty(PropertyName = "UserNick")]
+				public string UserNick
 				{
 					get
 					{
-						return appName;
+						return userNick;
 					}
 					set	
 					{
-						appName = value;
+						userNick = value;
 					}
 				}
 
-				[JsonProperty(PropertyName = "CreateTime")]
-				public long? CreateTime
+				[JsonProperty(PropertyName = "UserAvatar")]
+				public string UserAvatar
 				{
 					get
 					{
-						return createTime;
+						return userAvatar;
 					}
 					set	
 					{
-						createTime = value;
+						userAvatar = value;
 					}
 				}
 
-				[JsonProperty(PropertyName = "Status")]
-				public int? Status
+				[JsonProperty(PropertyName = "UserExtension")]
+				public string UserExtension
 				{
 					get
 					{
-						return status;
+						return userExtension;
 					}
 					set	
 					{
-						status = value;
+						userExtension = value;
 					}
 				}
 
-				[JsonProperty(PropertyName = "AppConfig")]
-				public string AppConfig
+				[JsonProperty(PropertyName = "IsMute")]
+				public bool? IsMute
 				{
 					get
 					{
-						return appConfig;
+						return isMute;
 					}
 					set	
 					{
-						appConfig = value;
+						isMute = value;
 					}
 				}
 
-				[JsonProperty(PropertyName = "Extension")]
-				public string Extension
+				[JsonProperty(PropertyName = "MuteBy")]
+				public List<string> MuteBy
 				{
 					get
 					{
-						return extension;
+						return muteBy;
 					}
 					set	
 					{
-						extension = value;
+						muteBy = value;
 					}
 				}
 			}

@@ -28,10 +28,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class SendMessageToGroupRequest : RpcAcsRequest<SendMessageToGroupResponse>
+    public class DescribeLiveSnapshotNotifyConfigRequest : RpcAcsRequest<DescribeLiveSnapshotNotifyConfigResponse>
     {
-        public SendMessageToGroupRequest()
-            : base("live", "2016-11-01", "SendMessageToGroup", "live", "openAPI")
+        public DescribeLiveSnapshotNotifyConfigRequest()
+            : base("live", "2016-11-01", "DescribeLiveSnapshotNotifyConfig", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,94 +41,41 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private string data;
+		private string domainName;
 
-		private int? type;
+		private long? ownerId;
 
-		private string operatorUserId;
-
-		private string groupId;
-
-		private string appId;
-
-		[JsonProperty(PropertyName = "Data")]
-		public string Data
+		[JsonProperty(PropertyName = "DomainName")]
+		public string DomainName
 		{
 			get
 			{
-				return data;
+				return domainName;
 			}
 			set	
 			{
-				data = value;
-				DictionaryUtil.Add(BodyParameters, "Data", value);
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "Type")]
-		public int? Type
+		[JsonProperty(PropertyName = "OwnerId")]
+		public long? OwnerId
 		{
 			get
 			{
-				return type;
+				return ownerId;
 			}
 			set	
 			{
-				type = value;
-				DictionaryUtil.Add(BodyParameters, "Type", value.ToString());
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
-		[JsonProperty(PropertyName = "OperatorUserId")]
-		public string OperatorUserId
-		{
-			get
-			{
-				return operatorUserId;
-			}
-			set	
-			{
-				operatorUserId = value;
-				DictionaryUtil.Add(BodyParameters, "OperatorUserId", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "GroupId")]
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(BodyParameters, "GroupId", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "AppId")]
-		public string AppId
-		{
-			get
-			{
-				return appId;
-			}
-			set	
-			{
-				appId = value;
-				DictionaryUtil.Add(BodyParameters, "AppId", value);
-			}
-		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override SendMessageToGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeLiveSnapshotNotifyConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SendMessageToGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeLiveSnapshotNotifyConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

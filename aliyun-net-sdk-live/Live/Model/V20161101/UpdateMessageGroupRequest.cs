@@ -28,10 +28,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class SendMessageToGroupRequest : RpcAcsRequest<SendMessageToGroupResponse>
+    public class UpdateMessageGroupRequest : RpcAcsRequest<UpdateMessageGroupResponse>
     {
-        public SendMessageToGroupRequest()
-            : base("live", "2016-11-01", "SendMessageToGroup", "live", "openAPI")
+        public UpdateMessageGroupRequest()
+            : base("live", "2016-11-01", "UpdateMessageGroup", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,55 +41,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private string data;
-
-		private int? type;
-
-		private string operatorUserId;
+		private string extension;
 
 		private string groupId;
 
 		private string appId;
 
-		[JsonProperty(PropertyName = "Data")]
-		public string Data
+		[JsonProperty(PropertyName = "Extension")]
+		public string Extension
 		{
 			get
 			{
-				return data;
+				return extension;
 			}
 			set	
 			{
-				data = value;
-				DictionaryUtil.Add(BodyParameters, "Data", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "Type")]
-		public int? Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(BodyParameters, "Type", value.ToString());
-			}
-		}
-
-		[JsonProperty(PropertyName = "OperatorUserId")]
-		public string OperatorUserId
-		{
-			get
-			{
-				return operatorUserId;
-			}
-			set	
-			{
-				operatorUserId = value;
-				DictionaryUtil.Add(BodyParameters, "OperatorUserId", value);
+				extension = value;
+				DictionaryUtil.Add(BodyParameters, "Extension", value.ToString());
 			}
 		}
 
@@ -126,9 +94,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			return false;
 		}
 
-        public override SendMessageToGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateMessageGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SendMessageToGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateMessageGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

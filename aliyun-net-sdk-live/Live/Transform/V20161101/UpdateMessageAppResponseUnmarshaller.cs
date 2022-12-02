@@ -24,25 +24,20 @@ using Aliyun.Acs.live.Model.V20161101;
 
 namespace Aliyun.Acs.live.Transform.V20161101
 {
-    public class GetMessageAppResponseUnmarshaller
+    public class UpdateMessageAppResponseUnmarshaller
     {
-        public static GetMessageAppResponse Unmarshall(UnmarshallerContext _ctx)
+        public static UpdateMessageAppResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			GetMessageAppResponse getMessageAppResponse = new GetMessageAppResponse();
+			UpdateMessageAppResponse updateMessageAppResponse = new UpdateMessageAppResponse();
 
-			getMessageAppResponse.HttpResponse = _ctx.HttpResponse;
-			getMessageAppResponse.RequestId = _ctx.StringValue("GetMessageApp.RequestId");
+			updateMessageAppResponse.HttpResponse = _ctx.HttpResponse;
+			updateMessageAppResponse.RequestId = _ctx.StringValue("UpdateMessageApp.RequestId");
 
-			GetMessageAppResponse.GetMessageApp_Result result = new GetMessageAppResponse.GetMessageApp_Result();
-			result.AppId = _ctx.StringValue("GetMessageApp.Result.AppId");
-			result.AppName = _ctx.StringValue("GetMessageApp.Result.AppName");
-			result.CreateTime = _ctx.LongValue("GetMessageApp.Result.CreateTime");
-			result.Status = _ctx.IntegerValue("GetMessageApp.Result.Status");
-			result.AppConfig = _ctx.StringValue("GetMessageApp.Result.AppConfig");
-			result.Extension = _ctx.StringValue("GetMessageApp.Result.Extension");
-			getMessageAppResponse.Result = result;
+			UpdateMessageAppResponse.UpdateMessageApp_Result result = new UpdateMessageAppResponse.UpdateMessageApp_Result();
+			result.Success = _ctx.BooleanValue("UpdateMessageApp.Result.Success");
+			updateMessageAppResponse.Result = result;
         
-			return getMessageAppResponse;
+			return updateMessageAppResponse;
         }
     }
 }

@@ -41,27 +41,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private string deviceId;
-
 		private string userId;
 
 		private string deviceType;
 
-		private string appId;
+		private string deviceId;
 
-		[JsonProperty(PropertyName = "DeviceId")]
-		public string DeviceId
-		{
-			get
-			{
-				return deviceId;
-			}
-			set	
-			{
-				deviceId = value;
-				DictionaryUtil.Add(BodyParameters, "DeviceId", value);
-			}
-		}
+		private string appId;
 
 		[JsonProperty(PropertyName = "UserId")]
 		public string UserId
@@ -88,6 +74,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				deviceType = value;
 				DictionaryUtil.Add(BodyParameters, "DeviceType", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DeviceId")]
+		public string DeviceId
+		{
+			get
+			{
+				return deviceId;
+			}
+			set	
+			{
+				deviceId = value;
+				DictionaryUtil.Add(BodyParameters, "DeviceId", value);
 			}
 		}
 
