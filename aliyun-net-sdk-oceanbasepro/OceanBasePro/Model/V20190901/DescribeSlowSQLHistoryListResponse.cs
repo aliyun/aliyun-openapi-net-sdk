@@ -155,11 +155,11 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 				private double? decodeTime;
 
-				private double? netwaitTime;
+				private double? netWaitTime;
 
 				private double? iOWaitTime;
 
-				private double? getplanTime;
+				private double? getPlanTime;
 
 				private double? maxElapsedTime;
 
@@ -587,16 +587,16 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 					}
 				}
 
-				[JsonProperty(PropertyName = "NetwaitTime")]
-				public double? NetwaitTime
+				[JsonProperty(PropertyName = "NetWaitTime")]
+				public double? NetWaitTime
 				{
 					get
 					{
-						return netwaitTime;
+						return netWaitTime;
 					}
 					set	
 					{
-						netwaitTime = value;
+						netWaitTime = value;
 					}
 				}
 
@@ -613,16 +613,16 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 					}
 				}
 
-				[JsonProperty(PropertyName = "GetplanTime")]
-				public double? GetplanTime
+				[JsonProperty(PropertyName = "GetPlanTime")]
+				public double? GetPlanTime
 				{
 					get
 					{
-						return getplanTime;
+						return getPlanTime;
 					}
 					set	
 					{
-						getplanTime = value;
+						getPlanTime = value;
 					}
 				}
 
