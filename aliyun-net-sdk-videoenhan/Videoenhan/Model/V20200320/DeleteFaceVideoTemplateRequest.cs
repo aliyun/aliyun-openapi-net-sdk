@@ -40,22 +40,7 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			Method = MethodType.POST;
         }
 
-		private string userId;
-
 		private string templateId;
-
-		public string UserId
-		{
-			get
-			{
-				return userId;
-			}
-			set	
-			{
-				userId = value;
-				DictionaryUtil.Add(BodyParameters, "UserId", value);
-			}
-		}
 
 		public string TemplateId
 		{
