@@ -41,6 +41,109 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
+		private string data;
+
+		private int? type;
+
+		private string operatorUserId;
+
+		private List<string> receiverIdList = new List<string>(){ };
+
+		private string groupId;
+
+		private string appId;
+
+		[JsonProperty(PropertyName = "Data")]
+		public string Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+				DictionaryUtil.Add(BodyParameters, "Data", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Type")]
+		public int? Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(BodyParameters, "Type", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "OperatorUserId")]
+		public string OperatorUserId
+		{
+			get
+			{
+				return operatorUserId;
+			}
+			set	
+			{
+				operatorUserId = value;
+				DictionaryUtil.Add(BodyParameters, "OperatorUserId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ReceiverIdList")]
+		public List<string> ReceiverIdList
+		{
+			get
+			{
+				return receiverIdList;
+			}
+
+			set
+			{
+				receiverIdList = value;
+				if(receiverIdList != null)
+				{
+					for (int depth1 = 0; depth1 < receiverIdList.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"ReceiverIdList." + (depth1 + 1), receiverIdList[depth1]);
+					}
+				}
+			}
+		}
+
+		[JsonProperty(PropertyName = "GroupId")]
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(BodyParameters, "GroupId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "AppId")]
+		public string AppId
+		{
+			get
+			{
+				return appId;
+			}
+			set	
+			{
+				appId = value;
+				DictionaryUtil.Add(BodyParameters, "AppId", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
