@@ -44,6 +44,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				appInfo.Description = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].Description");
 				appInfo.AppId = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].AppId");
 				appInfo.ModificationTime = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].ModificationTime");
+				appInfo.RegionId = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].RegionId");
 
 				List<ListAppInfoResponse.ListAppInfo_AppInfo.ListAppInfo_TagsItem> appInfo_tags = new List<ListAppInfoResponse.ListAppInfo_AppInfo.ListAppInfo_TagsItem>();
 				for (int j = 0; j < _ctx.Length("ListAppInfo.AppInfoList["+ i +"].Tags.Length"); j++) {

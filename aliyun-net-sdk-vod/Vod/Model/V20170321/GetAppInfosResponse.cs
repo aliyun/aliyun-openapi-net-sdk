@@ -27,6 +27,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string requestId;
 
+		private string code;
+
 		private List<GetAppInfos_AppInfo> appInfoList;
 
 		private List<string> nonExistAppIds;
@@ -40,6 +42,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 

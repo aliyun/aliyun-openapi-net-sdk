@@ -32,6 +32,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 
 			getAppInfosResponse.HttpResponse = _ctx.HttpResponse;
 			getAppInfosResponse.RequestId = _ctx.StringValue("GetAppInfos.RequestId");
+			getAppInfosResponse.Code = _ctx.StringValue("GetAppInfos.Code");
 
 			List<string> getAppInfosResponse_nonExistAppIds = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetAppInfos.NonExistAppIds.Length"); i++) {

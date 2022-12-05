@@ -84,6 +84,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string modificationTime;
 
+			private string regionId;
+
 			private List<ListAppInfo_TagsItem> tags;
 
 			public string Type
@@ -167,6 +169,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					modificationTime = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 
