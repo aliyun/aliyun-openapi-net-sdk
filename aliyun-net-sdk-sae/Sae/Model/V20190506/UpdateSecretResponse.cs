@@ -126,9 +126,9 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		public class UpdateSecret_Data
 		{
 
-			private string secretId;
+			private long? secretId;
 
-			public string SecretId
+			public long? SecretId
 			{
 				get
 				{

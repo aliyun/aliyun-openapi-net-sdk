@@ -39,7 +39,7 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			updateSecretResponse.Success = _ctx.BooleanValue("UpdateSecret.Success");
 
 			UpdateSecretResponse.UpdateSecret_Data data = new UpdateSecretResponse.UpdateSecret_Data();
-			data.SecretId = _ctx.StringValue("UpdateSecret.Data.SecretId");
+			data.SecretId = _ctx.LongValue("UpdateSecret.Data.SecretId");
 			updateSecretResponse.Data = data;
         
 			return updateSecretResponse;
