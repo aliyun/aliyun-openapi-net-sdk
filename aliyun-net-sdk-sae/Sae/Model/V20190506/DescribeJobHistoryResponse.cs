@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
 {
-	public class DescribeApplicationSlbsResponse : AcsResponse
+	public class DescribeJobHistoryResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -37,7 +37,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private bool? success;
 
-		private DescribeApplicationSlbs_Data data;
+		private DescribeJobHistory_Data data;
 
 		public string RequestId
 		{
@@ -111,7 +111,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public DescribeApplicationSlbs_Data Data
+		public DescribeJobHistory_Data Data
 		{
 			get
 			{
@@ -123,237 +123,177 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public class DescribeApplicationSlbs_Data
+		public class DescribeJobHistory_Data
 		{
 
-			private string internetIp;
+			private long? currentPage;
 
-			private string internetSlbId;
+			private long? totalSize;
 
-			private string intranetSlbId;
+			private long? pageSize;
 
-			private string intranetIp;
+			private List<DescribeJobHistory_Job> jobs;
 
-			private bool? internetSlbExpired;
-
-			private bool? intranetSlbExpired;
-
-			private List<DescribeApplicationSlbs_IntranetItem> intranet;
-
-			private List<DescribeApplicationSlbs_InternetItem> internet;
-
-			public string InternetIp
+			public long? CurrentPage
 			{
 				get
 				{
-					return internetIp;
+					return currentPage;
 				}
 				set	
 				{
-					internetIp = value;
+					currentPage = value;
 				}
 			}
 
-			public string InternetSlbId
+			public long? TotalSize
 			{
 				get
 				{
-					return internetSlbId;
+					return totalSize;
 				}
 				set	
 				{
-					internetSlbId = value;
+					totalSize = value;
 				}
 			}
 
-			public string IntranetSlbId
+			public long? PageSize
 			{
 				get
 				{
-					return intranetSlbId;
+					return pageSize;
 				}
 				set	
 				{
-					intranetSlbId = value;
+					pageSize = value;
 				}
 			}
 
-			public string IntranetIp
+			public List<DescribeJobHistory_Job> Jobs
 			{
 				get
 				{
-					return intranetIp;
+					return jobs;
 				}
 				set	
 				{
-					intranetIp = value;
+					jobs = value;
 				}
 			}
 
-			public bool? InternetSlbExpired
-			{
-				get
-				{
-					return internetSlbExpired;
-				}
-				set	
-				{
-					internetSlbExpired = value;
-				}
-			}
-
-			public bool? IntranetSlbExpired
-			{
-				get
-				{
-					return intranetSlbExpired;
-				}
-				set	
-				{
-					intranetSlbExpired = value;
-				}
-			}
-
-			public List<DescribeApplicationSlbs_IntranetItem> Intranet
-			{
-				get
-				{
-					return intranet;
-				}
-				set	
-				{
-					intranet = value;
-				}
-			}
-
-			public List<DescribeApplicationSlbs_InternetItem> Internet
-			{
-				get
-				{
-					return internet;
-				}
-				set	
-				{
-					internet = value;
-				}
-			}
-
-			public class DescribeApplicationSlbs_IntranetItem
+			public class DescribeJobHistory_Job
 			{
 
-				private string httpsCertId;
+				private string jobId;
 
-				private string protocol;
+				private long? active;
 
-				private int? targetPort;
+				private long? succeeded;
 
-				private int? port;
+				private long? failed;
 
-				public string HttpsCertId
+				private long? startTime;
+
+				private long? completionTime;
+
+				private string message;
+
+				private string state;
+
+				public string JobId
 				{
 					get
 					{
-						return httpsCertId;
+						return jobId;
 					}
 					set	
 					{
-						httpsCertId = value;
+						jobId = value;
 					}
 				}
 
-				public string Protocol
+				public long? Active
 				{
 					get
 					{
-						return protocol;
+						return active;
 					}
 					set	
 					{
-						protocol = value;
+						active = value;
 					}
 				}
 
-				public int? TargetPort
+				public long? Succeeded
 				{
 					get
 					{
-						return targetPort;
+						return succeeded;
 					}
 					set	
 					{
-						targetPort = value;
+						succeeded = value;
 					}
 				}
 
-				public int? Port
+				public long? Failed
 				{
 					get
 					{
-						return port;
+						return failed;
 					}
 					set	
 					{
-						port = value;
-					}
-				}
-			}
-
-			public class DescribeApplicationSlbs_InternetItem
-			{
-
-				private string httpsCertId;
-
-				private string protocol;
-
-				private int? targetPort;
-
-				private int? port;
-
-				public string HttpsCertId
-				{
-					get
-					{
-						return httpsCertId;
-					}
-					set	
-					{
-						httpsCertId = value;
+						failed = value;
 					}
 				}
 
-				public string Protocol
+				public long? StartTime
 				{
 					get
 					{
-						return protocol;
+						return startTime;
 					}
 					set	
 					{
-						protocol = value;
+						startTime = value;
 					}
 				}
 
-				public int? TargetPort
+				public long? CompletionTime
 				{
 					get
 					{
-						return targetPort;
+						return completionTime;
 					}
 					set	
 					{
-						targetPort = value;
+						completionTime = value;
 					}
 				}
 
-				public int? Port
+				public string Message
 				{
 					get
 					{
-						return port;
+						return message;
 					}
 					set	
 					{
-						port = value;
+						message = value;
+					}
+				}
+
+				public string State
+				{
+					get
+					{
+						return state;
+					}
+					set	
+					{
+						state = value;
 					}
 				}
 			}

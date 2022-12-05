@@ -27,62 +27,47 @@ using Aliyun.Acs.sae.Transform.V20190506;
 
 namespace Aliyun.Acs.sae.Model.V20190506
 {
-    public class DescribeConfigurationPriceRequest : RoaAcsRequest<DescribeConfigurationPriceResponse>
+    public class SuspendJobRequest : RoaAcsRequest<SuspendJobResponse>
     {
-        public DescribeConfigurationPriceRequest()
-            : base("sae", "2019-05-06", "DescribeConfigurationPrice", "serverless", "openAPI")
+        public SuspendJobRequest()
+            : base("sae", "2019-05-06", "SuspendJob", "serverless", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/pop/v1/paas/configurationPrice";
+			UriPattern = "/pop/v1/sam/job/suspendJob";
 			Method = MethodType.GET;
         }
 
-		private int? memory;
+		private bool? suspend;
 
-		private int? cpu;
+		private string appId;
 
-		private string workload;
-
-		public int? Memory
+		public bool? Suspend
 		{
 			get
 			{
-				return memory;
+				return suspend;
 			}
 			set	
 			{
-				memory = value;
-				DictionaryUtil.Add(QueryParameters, "Memory", value.ToString());
+				suspend = value;
+				DictionaryUtil.Add(QueryParameters, "Suspend", value.ToString());
 			}
 		}
 
-		public int? Cpu
+		public string AppId
 		{
 			get
 			{
-				return cpu;
+				return appId;
 			}
 			set	
 			{
-				cpu = value;
-				DictionaryUtil.Add(QueryParameters, "Cpu", value.ToString());
-			}
-		}
-
-		public string Workload
-		{
-			get
-			{
-				return workload;
-			}
-			set	
-			{
-				workload = value;
-				DictionaryUtil.Add(QueryParameters, "Workload", value);
+				appId = value;
+				DictionaryUtil.Add(QueryParameters, "AppId", value);
 			}
 		}
 
@@ -91,9 +76,9 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			return false;
 		}
 
-        public override DescribeConfigurationPriceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SuspendJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeConfigurationPriceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SuspendJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

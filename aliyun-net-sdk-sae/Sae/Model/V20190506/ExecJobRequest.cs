@@ -27,152 +27,152 @@ using Aliyun.Acs.sae.Transform.V20190506;
 
 namespace Aliyun.Acs.sae.Model.V20190506
 {
-    public class UpdateIngressRequest : RoaAcsRequest<UpdateIngressResponse>
+    public class ExecJobRequest : RoaAcsRequest<ExecJobResponse>
     {
-        public UpdateIngressRequest()
-            : base("sae", "2019-05-06", "UpdateIngress", "serverless", "openAPI")
+        public ExecJobRequest()
+            : base("sae", "2019-05-06", "ExecJob", "serverless", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/pop/v1/sam/ingress/Ingress";
-			Method = MethodType.PUT;
+			UriPattern = "/pop/v1/sam/job/execJob";
+			Method = MethodType.GET;
         }
 
-		private long? ingressId;
+		private string eventId;
 
-		private string listenerPort;
+		private string jarStartOptions;
 
-		private string description;
+		private string jarStartArgs;
 
-		private string loadBalanceType;
+		private string commandArgs;
 
-		private string rules;
+		private string appId;
 
-		private string certId;
+		private string envs;
 
-		private string certIds;
+		private string time;
 
-		private string listenerProtocol;
+		private string command;
 
-		private string defaultRule;
+		private string warStartOptions;
 
-		public long? IngressId
+		public string EventId
 		{
 			get
 			{
-				return ingressId;
+				return eventId;
 			}
 			set	
 			{
-				ingressId = value;
-				DictionaryUtil.Add(QueryParameters, "IngressId", value.ToString());
+				eventId = value;
+				DictionaryUtil.Add(QueryParameters, "EventId", value);
 			}
 		}
 
-		public string ListenerPort
+		public string JarStartOptions
 		{
 			get
 			{
-				return listenerPort;
+				return jarStartOptions;
 			}
 			set	
 			{
-				listenerPort = value;
-				DictionaryUtil.Add(QueryParameters, "ListenerPort", value);
+				jarStartOptions = value;
+				DictionaryUtil.Add(QueryParameters, "JarStartOptions", value);
 			}
 		}
 
-		public string Description
+		public string JarStartArgs
 		{
 			get
 			{
-				return description;
+				return jarStartArgs;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
+				jarStartArgs = value;
+				DictionaryUtil.Add(QueryParameters, "JarStartArgs", value);
 			}
 		}
 
-		public string LoadBalanceType
+		public string CommandArgs
 		{
 			get
 			{
-				return loadBalanceType;
+				return commandArgs;
 			}
 			set	
 			{
-				loadBalanceType = value;
-				DictionaryUtil.Add(QueryParameters, "LoadBalanceType", value);
+				commandArgs = value;
+				DictionaryUtil.Add(QueryParameters, "CommandArgs", value);
 			}
 		}
 
-		public string Rules
+		public string AppId
 		{
 			get
 			{
-				return rules;
+				return appId;
 			}
 			set	
 			{
-				rules = value;
-				DictionaryUtil.Add(BodyParameters, "Rules", value);
+				appId = value;
+				DictionaryUtil.Add(QueryParameters, "AppId", value);
 			}
 		}
 
-		public string CertId
+		public string Envs
 		{
 			get
 			{
-				return certId;
+				return envs;
 			}
 			set	
 			{
-				certId = value;
-				DictionaryUtil.Add(QueryParameters, "CertId", value);
+				envs = value;
+				DictionaryUtil.Add(QueryParameters, "Envs", value);
 			}
 		}
 
-		public string CertIds
+		public string Time
 		{
 			get
 			{
-				return certIds;
+				return time;
 			}
 			set	
 			{
-				certIds = value;
-				DictionaryUtil.Add(QueryParameters, "CertIds", value);
+				time = value;
+				DictionaryUtil.Add(QueryParameters, "Time", value);
 			}
 		}
 
-		public string ListenerProtocol
+		public string Command
 		{
 			get
 			{
-				return listenerProtocol;
+				return command;
 			}
 			set	
 			{
-				listenerProtocol = value;
-				DictionaryUtil.Add(QueryParameters, "ListenerProtocol", value);
+				command = value;
+				DictionaryUtil.Add(QueryParameters, "Command", value);
 			}
 		}
 
-		public string DefaultRule
+		public string WarStartOptions
 		{
 			get
 			{
-				return defaultRule;
+				return warStartOptions;
 			}
 			set	
 			{
-				defaultRule = value;
-				DictionaryUtil.Add(QueryParameters, "DefaultRule", value);
+				warStartOptions = value;
+				DictionaryUtil.Add(QueryParameters, "WarStartOptions", value);
 			}
 		}
 
@@ -181,9 +181,9 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			return false;
 		}
 
-        public override UpdateIngressResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ExecJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateIngressResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ExecJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

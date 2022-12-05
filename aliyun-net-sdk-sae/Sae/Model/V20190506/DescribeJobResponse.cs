@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
 {
-	public class DescribeApplicationConfigResponse : AcsResponse
+	public class DescribeJobResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -37,7 +37,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private bool? success;
 
-		private DescribeApplicationConfig_Data data;
+		private DescribeJob_Data data;
 
 		public string RequestId
 		{
@@ -111,7 +111,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public DescribeApplicationConfig_Data Data
+		public DescribeJob_Data Data
 		{
 			get
 			{
@@ -123,7 +123,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public class DescribeApplicationConfig_Data
+		public class DescribeJob_Data
 		{
 
 			private string vpcId;
@@ -162,11 +162,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 			private int? replicas;
 
-			private string updateStrategy;
-
 			private int? minReadyInstances;
-
-			private int? minReadyInstanceRatio;
 
 			private int? memory;
 
@@ -238,13 +234,23 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 			private bool? associateEip;
 
-			private string kafkaConfigs;
+			private string triggerConfig;
+
+			private string concurrencyPolicy;
+
+			private bool? suspend;
+
+			private long? timeout;
+
+			private long? backoffLimit;
+
+			private bool? slice;
+
+			private string sliceEnvs;
+
+			private string refAppId;
 
 			private string programmingLanguage;
-
-			private string pvtzDiscovery;
-
-			private string microRegistration;
 
 			private string nasConfigs;
 
@@ -252,13 +258,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 			private string pythonModules;
 
-			private List<DescribeApplicationConfig_ConfigMapMountDescItem> configMapMountDesc;
+			private List<DescribeJob_ConfigMapMountDescItem> configMapMountDesc;
 
-			private List<DescribeApplicationConfig_Tag> tags;
+			private List<DescribeJob_Tag> tags;
 
-			private List<DescribeApplicationConfig_MountDescItem> mountDesc;
+			private List<DescribeJob_MountDescItem> mountDesc;
 
-			private List<DescribeApplicationConfig_OssMountDesc> ossMountDescs;
+			private List<DescribeJob_OssMountDesc> ossMountDescs;
+
+			private List<string> refedAppIds;
+
+			private List<string> publicWebHookUrls;
+
+			private List<string> vpcWebHookUrls;
 
 			public string VpcId
 			{
@@ -476,18 +488,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public string UpdateStrategy
-			{
-				get
-				{
-					return updateStrategy;
-				}
-				set	
-				{
-					updateStrategy = value;
-				}
-			}
-
 			public int? MinReadyInstances
 			{
 				get
@@ -497,18 +497,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					minReadyInstances = value;
-				}
-			}
-
-			public int? MinReadyInstanceRatio
-			{
-				get
-				{
-					return minReadyInstanceRatio;
-				}
-				set	
-				{
-					minReadyInstanceRatio = value;
 				}
 			}
 
@@ -932,15 +920,99 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public string KafkaConfigs
+			public string TriggerConfig
 			{
 				get
 				{
-					return kafkaConfigs;
+					return triggerConfig;
 				}
 				set	
 				{
-					kafkaConfigs = value;
+					triggerConfig = value;
+				}
+			}
+
+			public string ConcurrencyPolicy
+			{
+				get
+				{
+					return concurrencyPolicy;
+				}
+				set	
+				{
+					concurrencyPolicy = value;
+				}
+			}
+
+			public bool? Suspend
+			{
+				get
+				{
+					return suspend;
+				}
+				set	
+				{
+					suspend = value;
+				}
+			}
+
+			public long? Timeout
+			{
+				get
+				{
+					return timeout;
+				}
+				set	
+				{
+					timeout = value;
+				}
+			}
+
+			public long? BackoffLimit
+			{
+				get
+				{
+					return backoffLimit;
+				}
+				set	
+				{
+					backoffLimit = value;
+				}
+			}
+
+			public bool? Slice
+			{
+				get
+				{
+					return slice;
+				}
+				set	
+				{
+					slice = value;
+				}
+			}
+
+			public string SliceEnvs
+			{
+				get
+				{
+					return sliceEnvs;
+				}
+				set	
+				{
+					sliceEnvs = value;
+				}
+			}
+
+			public string RefAppId
+			{
+				get
+				{
+					return refAppId;
+				}
+				set	
+				{
+					refAppId = value;
 				}
 			}
 
@@ -953,30 +1025,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					programmingLanguage = value;
-				}
-			}
-
-			public string PvtzDiscovery
-			{
-				get
-				{
-					return pvtzDiscovery;
-				}
-				set	
-				{
-					pvtzDiscovery = value;
-				}
-			}
-
-			public string MicroRegistration
-			{
-				get
-				{
-					return microRegistration;
-				}
-				set	
-				{
-					microRegistration = value;
 				}
 			}
 
@@ -1016,7 +1064,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public List<DescribeApplicationConfig_ConfigMapMountDescItem> ConfigMapMountDesc
+			public List<DescribeJob_ConfigMapMountDescItem> ConfigMapMountDesc
 			{
 				get
 				{
@@ -1028,7 +1076,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public List<DescribeApplicationConfig_Tag> Tags
+			public List<DescribeJob_Tag> Tags
 			{
 				get
 				{
@@ -1040,7 +1088,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public List<DescribeApplicationConfig_MountDescItem> MountDesc
+			public List<DescribeJob_MountDescItem> MountDesc
 			{
 				get
 				{
@@ -1052,7 +1100,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public List<DescribeApplicationConfig_OssMountDesc> OssMountDescs
+			public List<DescribeJob_OssMountDesc> OssMountDescs
 			{
 				get
 				{
@@ -1064,7 +1112,43 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public class DescribeApplicationConfig_ConfigMapMountDescItem
+			public List<string> RefedAppIds
+			{
+				get
+				{
+					return refedAppIds;
+				}
+				set	
+				{
+					refedAppIds = value;
+				}
+			}
+
+			public List<string> PublicWebHookUrls
+			{
+				get
+				{
+					return publicWebHookUrls;
+				}
+				set	
+				{
+					publicWebHookUrls = value;
+				}
+			}
+
+			public List<string> VpcWebHookUrls
+			{
+				get
+				{
+					return vpcWebHookUrls;
+				}
+				set	
+				{
+					vpcWebHookUrls = value;
+				}
+			}
+
+			public class DescribeJob_ConfigMapMountDescItem
 			{
 
 				private string key;
@@ -1124,7 +1208,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public class DescribeApplicationConfig_Tag
+			public class DescribeJob_Tag
 			{
 
 				private string key;
@@ -1156,7 +1240,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public class DescribeApplicationConfig_MountDescItem
+			public class DescribeJob_MountDescItem
 			{
 
 				private string mountPath;
@@ -1188,7 +1272,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public class DescribeApplicationConfig_OssMountDesc
+			public class DescribeJob_OssMountDesc
 			{
 
 				private string bucketName;

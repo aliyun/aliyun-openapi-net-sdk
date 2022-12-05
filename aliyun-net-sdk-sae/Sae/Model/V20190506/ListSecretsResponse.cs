@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
 {
-	public class ListIngressesResponse : AcsResponse
+	public class ListSecretsResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -37,7 +37,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private bool? success;
 
-		private ListIngresses_Data data;
+		private ListSecrets_Data data;
 
 		public string RequestId
 		{
@@ -111,7 +111,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public ListIngresses_Data Data
+		public ListSecrets_Data Data
 		{
 			get
 			{
@@ -123,59 +123,41 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public class ListIngresses_Data
+		public class ListSecrets_Data
 		{
 
-			private List<ListIngresses_Ingress> ingressList;
+			private List<ListSecrets_Secret> secrets;
 
-			public List<ListIngresses_Ingress> IngressList
+			public List<ListSecrets_Secret> Secrets
 			{
 				get
 				{
-					return ingressList;
+					return secrets;
 				}
 				set	
 				{
-					ingressList = value;
+					secrets = value;
 				}
 			}
 
-			public class ListIngresses_Ingress
+			public class ListSecrets_Secret
 			{
-
-				private string slbId;
 
 				private string namespaceId;
 
-				private string description;
+				private long? secretId;
 
-				private string listenerPort;
+				private string secretName;
 
-				private string slbType;
+				private string secretType;
 
-				private string certId;
+				private string secretData;
 
-				private string certIds;
+				private long? createTime;
 
-				private string name;
+				private long? updateTime;
 
-				private long? id;
-
-				private string loadBalanceType;
-
-				private string listenerProtocol;
-
-				public string SlbId
-				{
-					get
-					{
-						return slbId;
-					}
-					set	
-					{
-						slbId = value;
-					}
-				}
+				private List<ListSecrets_RelateApp> relateApps;
 
 				public string NamespaceId
 				{
@@ -189,111 +171,119 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public string Description
+				public long? SecretId
 				{
 					get
 					{
-						return description;
+						return secretId;
 					}
 					set	
 					{
-						description = value;
+						secretId = value;
 					}
 				}
 
-				public string ListenerPort
+				public string SecretName
 				{
 					get
 					{
-						return listenerPort;
+						return secretName;
 					}
 					set	
 					{
-						listenerPort = value;
+						secretName = value;
 					}
 				}
 
-				public string SlbType
+				public string SecretType
 				{
 					get
 					{
-						return slbType;
+						return secretType;
 					}
 					set	
 					{
-						slbType = value;
+						secretType = value;
 					}
 				}
 
-				public string CertId
+				public string SecretData
 				{
 					get
 					{
-						return certId;
+						return secretData;
 					}
 					set	
 					{
-						certId = value;
+						secretData = value;
 					}
 				}
 
-				public string CertIds
+				public long? CreateTime
 				{
 					get
 					{
-						return certIds;
+						return createTime;
 					}
 					set	
 					{
-						certIds = value;
+						createTime = value;
 					}
 				}
 
-				public string Name
+				public long? UpdateTime
 				{
 					get
 					{
-						return name;
+						return updateTime;
 					}
 					set	
 					{
-						name = value;
+						updateTime = value;
 					}
 				}
 
-				public long? Id
+				public List<ListSecrets_RelateApp> RelateApps
 				{
 					get
 					{
-						return id;
+						return relateApps;
 					}
 					set	
 					{
-						id = value;
+						relateApps = value;
 					}
 				}
 
-				public string LoadBalanceType
+				public class ListSecrets_RelateApp
 				{
-					get
-					{
-						return loadBalanceType;
-					}
-					set	
-					{
-						loadBalanceType = value;
-					}
-				}
 
-				public string ListenerProtocol
-				{
-					get
+					private string appName;
+
+					private string appId;
+
+					public string AppName
 					{
-						return listenerProtocol;
+						get
+						{
+							return appName;
+						}
+						set	
+						{
+							appName = value;
+						}
 					}
-					set	
+
+					public string AppId
 					{
-						listenerProtocol = value;
+						get
+						{
+							return appId;
+						}
+						set	
+						{
+							appId = value;
+						}
 					}
 				}
 			}

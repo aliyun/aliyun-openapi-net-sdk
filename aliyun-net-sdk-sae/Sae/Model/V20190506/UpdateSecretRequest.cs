@@ -27,62 +27,62 @@ using Aliyun.Acs.sae.Transform.V20190506;
 
 namespace Aliyun.Acs.sae.Model.V20190506
 {
-    public class DescribeConfigurationPriceRequest : RoaAcsRequest<DescribeConfigurationPriceResponse>
+    public class UpdateSecretRequest : RoaAcsRequest<UpdateSecretResponse>
     {
-        public DescribeConfigurationPriceRequest()
-            : base("sae", "2019-05-06", "DescribeConfigurationPrice", "serverless", "openAPI")
+        public UpdateSecretRequest()
+            : base("sae", "2019-05-06", "UpdateSecret", "serverless", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/pop/v1/paas/configurationPrice";
-			Method = MethodType.GET;
+			UriPattern = "/pop/v1/sam/secret/secret";
+			Method = MethodType.PUT;
         }
 
-		private int? memory;
+		private string namespaceId;
 
-		private int? cpu;
+		private long? secretId;
 
-		private string workload;
+		private string secretData;
 
-		public int? Memory
+		public string NamespaceId
 		{
 			get
 			{
-				return memory;
+				return namespaceId;
 			}
 			set	
 			{
-				memory = value;
-				DictionaryUtil.Add(QueryParameters, "Memory", value.ToString());
+				namespaceId = value;
+				DictionaryUtil.Add(QueryParameters, "NamespaceId", value);
 			}
 		}
 
-		public int? Cpu
+		public long? SecretId
 		{
 			get
 			{
-				return cpu;
+				return secretId;
 			}
 			set	
 			{
-				cpu = value;
-				DictionaryUtil.Add(QueryParameters, "Cpu", value.ToString());
+				secretId = value;
+				DictionaryUtil.Add(QueryParameters, "SecretId", value.ToString());
 			}
 		}
 
-		public string Workload
+		public string SecretData
 		{
 			get
 			{
-				return workload;
+				return secretData;
 			}
 			set	
 			{
-				workload = value;
-				DictionaryUtil.Add(QueryParameters, "Workload", value);
+				secretData = value;
+				DictionaryUtil.Add(BodyParameters, "SecretData", value);
 			}
 		}
 
@@ -91,9 +91,9 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			return false;
 		}
 
-        public override DescribeConfigurationPriceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateSecretResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeConfigurationPriceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateSecretResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

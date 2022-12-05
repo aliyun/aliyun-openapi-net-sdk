@@ -58,6 +58,7 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 				instance.PackageVersion = _ctx.StringValue("DescribeApplicationInstances.Data.Instances["+ i +"].PackageVersion");
 				instance.Eip = _ctx.StringValue("DescribeApplicationInstances.Data.Instances["+ i +"].Eip");
 				instance.FinishTimeStamp = _ctx.LongValue("DescribeApplicationInstances.Data.Instances["+ i +"].FinishTimeStamp");
+				instance.DebugStatus = _ctx.BooleanValue("DescribeApplicationInstances.Data.Instances["+ i +"].DebugStatus");
 
 				data_instances.Add(instance);
 			}

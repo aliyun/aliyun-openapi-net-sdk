@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
 {
-	public class ListIngressesResponse : AcsResponse
+	public class DescribeSecretResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -37,7 +37,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private bool? success;
 
-		private ListIngresses_Data data;
+		private DescribeSecret_Data data;
 
 		public string RequestId
 		{
@@ -111,7 +111,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public ListIngresses_Data Data
+		public DescribeSecret_Data Data
 		{
 			get
 			{
@@ -123,177 +123,149 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public class ListIngresses_Data
+		public class DescribeSecret_Data
 		{
 
-			private List<ListIngresses_Ingress> ingressList;
+			private string namespaceId;
 
-			public List<ListIngresses_Ingress> IngressList
+			private long? secretId;
+
+			private string secretName;
+
+			private string secretType;
+
+			private string secretData;
+
+			private long? createTime;
+
+			private long? updateTime;
+
+			private List<DescribeSecret_RelateApp> relateApps;
+
+			public string NamespaceId
 			{
 				get
 				{
-					return ingressList;
+					return namespaceId;
 				}
 				set	
 				{
-					ingressList = value;
+					namespaceId = value;
 				}
 			}
 
-			public class ListIngresses_Ingress
+			public long? SecretId
+			{
+				get
+				{
+					return secretId;
+				}
+				set	
+				{
+					secretId = value;
+				}
+			}
+
+			public string SecretName
+			{
+				get
+				{
+					return secretName;
+				}
+				set	
+				{
+					secretName = value;
+				}
+			}
+
+			public string SecretType
+			{
+				get
+				{
+					return secretType;
+				}
+				set	
+				{
+					secretType = value;
+				}
+			}
+
+			public string SecretData
+			{
+				get
+				{
+					return secretData;
+				}
+				set	
+				{
+					secretData = value;
+				}
+			}
+
+			public long? CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public long? UpdateTime
+			{
+				get
+				{
+					return updateTime;
+				}
+				set	
+				{
+					updateTime = value;
+				}
+			}
+
+			public List<DescribeSecret_RelateApp> RelateApps
+			{
+				get
+				{
+					return relateApps;
+				}
+				set	
+				{
+					relateApps = value;
+				}
+			}
+
+			public class DescribeSecret_RelateApp
 			{
 
-				private string slbId;
+				private string appId;
 
-				private string namespaceId;
+				private string appName;
 
-				private string description;
-
-				private string listenerPort;
-
-				private string slbType;
-
-				private string certId;
-
-				private string certIds;
-
-				private string name;
-
-				private long? id;
-
-				private string loadBalanceType;
-
-				private string listenerProtocol;
-
-				public string SlbId
+				public string AppId
 				{
 					get
 					{
-						return slbId;
+						return appId;
 					}
 					set	
 					{
-						slbId = value;
+						appId = value;
 					}
 				}
 
-				public string NamespaceId
+				public string AppName
 				{
 					get
 					{
-						return namespaceId;
+						return appName;
 					}
 					set	
 					{
-						namespaceId = value;
-					}
-				}
-
-				public string Description
-				{
-					get
-					{
-						return description;
-					}
-					set	
-					{
-						description = value;
-					}
-				}
-
-				public string ListenerPort
-				{
-					get
-					{
-						return listenerPort;
-					}
-					set	
-					{
-						listenerPort = value;
-					}
-				}
-
-				public string SlbType
-				{
-					get
-					{
-						return slbType;
-					}
-					set	
-					{
-						slbType = value;
-					}
-				}
-
-				public string CertId
-				{
-					get
-					{
-						return certId;
-					}
-					set	
-					{
-						certId = value;
-					}
-				}
-
-				public string CertIds
-				{
-					get
-					{
-						return certIds;
-					}
-					set	
-					{
-						certIds = value;
-					}
-				}
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
-
-				public long? Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
-					}
-				}
-
-				public string LoadBalanceType
-				{
-					get
-					{
-						return loadBalanceType;
-					}
-					set	
-					{
-						loadBalanceType = value;
-					}
-				}
-
-				public string ListenerProtocol
-				{
-					get
-					{
-						return listenerProtocol;
-					}
-					set	
-					{
-						listenerProtocol = value;
+						appName = value;
 					}
 				}
 			}

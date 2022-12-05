@@ -49,6 +49,7 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			data.Liveness = _ctx.StringValue("DescribeApplicationConfig.Data.Liveness");
 			data.PackageUrl = _ctx.StringValue("DescribeApplicationConfig.Data.PackageUrl");
 			data.PackageType = _ctx.StringValue("DescribeApplicationConfig.Data.PackageType");
+			data.PackageRuntimeCustomBuild = _ctx.StringValue("DescribeApplicationConfig.Data.PackageRuntimeCustomBuild");
 			data.PreStop = _ctx.StringValue("DescribeApplicationConfig.Data.PreStop");
 			data.PackageVersion = _ctx.StringValue("DescribeApplicationConfig.Data.PackageVersion");
 			data.JarStartArgs = _ctx.StringValue("DescribeApplicationConfig.Data.JarStartArgs");
@@ -91,9 +92,16 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			data.MseApplicationId = _ctx.StringValue("DescribeApplicationConfig.Data.MseApplicationId");
 			data.AcrInstanceId = _ctx.StringValue("DescribeApplicationConfig.Data.AcrInstanceId");
 			data.AcrAssumeRoleArn = _ctx.StringValue("DescribeApplicationConfig.Data.AcrAssumeRoleArn");
+			data.ImagePullSecrets = _ctx.StringValue("DescribeApplicationConfig.Data.ImagePullSecrets");
+			data.EnableImageAccl = _ctx.BooleanValue("DescribeApplicationConfig.Data.EnableImageAccl");
 			data.AssociateEip = _ctx.BooleanValue("DescribeApplicationConfig.Data.AssociateEip");
 			data.KafkaConfigs = _ctx.StringValue("DescribeApplicationConfig.Data.KafkaConfigs");
 			data.ProgrammingLanguage = _ctx.StringValue("DescribeApplicationConfig.Data.ProgrammingLanguage");
+			data.PvtzDiscovery = _ctx.StringValue("DescribeApplicationConfig.Data.PvtzDiscovery");
+			data.MicroRegistration = _ctx.StringValue("DescribeApplicationConfig.Data.MicroRegistration");
+			data.NasConfigs = _ctx.StringValue("DescribeApplicationConfig.Data.NasConfigs");
+			data.Python = _ctx.StringValue("DescribeApplicationConfig.Data.Python");
+			data.PythonModules = _ctx.StringValue("DescribeApplicationConfig.Data.PythonModules");
 
 			List<DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_ConfigMapMountDescItem> data_configMapMountDesc = new List<DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_ConfigMapMountDescItem>();
 			for (int i = 0; i < _ctx.Length("DescribeApplicationConfig.Data.ConfigMapMountDesc.Length"); i++) {

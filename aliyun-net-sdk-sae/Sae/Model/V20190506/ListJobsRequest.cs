@@ -27,63 +27,50 @@ using Aliyun.Acs.sae.Transform.V20190506;
 
 namespace Aliyun.Acs.sae.Model.V20190506
 {
-    public class CreateIngressRequest : RoaAcsRequest<CreateIngressResponse>
+    public class ListJobsRequest : RoaAcsRequest<ListJobsResponse>
     {
-        public CreateIngressRequest()
-            : base("sae", "2019-05-06", "CreateIngress", "serverless", "openAPI")
+        public ListJobsRequest()
+            : base("sae", "2019-05-06", "ListJobs", "serverless", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/pop/v1/sam/ingress/Ingress";
-			Method = MethodType.POST;
+			UriPattern = "/pop/v1/sam/job/listJobs";
+			Method = MethodType.GET;
         }
 
-		private int? listenerPort;
-
-		private string slbId;
+		private string appName;
 
 		private string namespaceId;
 
-		private string description;
+		private int? pageSize;
 
-		private string loadBalanceType;
+		private string orderBy;
 
-		private string rules;
+		private string workload;
 
-		private string certId;
+		private int? currentPage;
 
-		private string certIds;
+		private string fieldValue;
 
-		private string listenerProtocol;
+		private bool? reverse;
 
-		private string defaultRule;
+		private string fieldType;
 
-		public int? ListenerPort
+		private string tags;
+
+		public string AppName
 		{
 			get
 			{
-				return listenerPort;
+				return appName;
 			}
 			set	
 			{
-				listenerPort = value;
-				DictionaryUtil.Add(QueryParameters, "ListenerPort", value.ToString());
-			}
-		}
-
-		public string SlbId
-		{
-			get
-			{
-				return slbId;
-			}
-			set	
-			{
-				slbId = value;
-				DictionaryUtil.Add(QueryParameters, "SlbId", value);
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
 			}
 		}
 
@@ -100,94 +87,107 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string Description
+		public int? PageSize
 		{
 			get
 			{
-				return description;
+				return pageSize;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public string LoadBalanceType
+		public string OrderBy
 		{
 			get
 			{
-				return loadBalanceType;
+				return orderBy;
 			}
 			set	
 			{
-				loadBalanceType = value;
-				DictionaryUtil.Add(QueryParameters, "LoadBalanceType", value);
+				orderBy = value;
+				DictionaryUtil.Add(QueryParameters, "OrderBy", value);
 			}
 		}
 
-		public string Rules
+		public string Workload
 		{
 			get
 			{
-				return rules;
+				return workload;
 			}
 			set	
 			{
-				rules = value;
-				DictionaryUtil.Add(BodyParameters, "Rules", value);
+				workload = value;
+				DictionaryUtil.Add(QueryParameters, "Workload", value);
 			}
 		}
 
-		public string CertId
+		public int? CurrentPage
 		{
 			get
 			{
-				return certId;
+				return currentPage;
 			}
 			set	
 			{
-				certId = value;
-				DictionaryUtil.Add(QueryParameters, "CertId", value);
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
 			}
 		}
 
-		public string CertIds
+		public string FieldValue
 		{
 			get
 			{
-				return certIds;
+				return fieldValue;
 			}
 			set	
 			{
-				certIds = value;
-				DictionaryUtil.Add(QueryParameters, "CertIds", value);
+				fieldValue = value;
+				DictionaryUtil.Add(QueryParameters, "FieldValue", value);
 			}
 		}
 
-		public string ListenerProtocol
+		public bool? Reverse
 		{
 			get
 			{
-				return listenerProtocol;
+				return reverse;
 			}
 			set	
 			{
-				listenerProtocol = value;
-				DictionaryUtil.Add(QueryParameters, "ListenerProtocol", value);
+				reverse = value;
+				DictionaryUtil.Add(QueryParameters, "Reverse", value.ToString());
 			}
 		}
 
-		public string DefaultRule
+		public string FieldType
 		{
 			get
 			{
-				return defaultRule;
+				return fieldType;
 			}
 			set	
 			{
-				defaultRule = value;
-				DictionaryUtil.Add(QueryParameters, "DefaultRule", value);
+				fieldType = value;
+				DictionaryUtil.Add(QueryParameters, "FieldType", value);
+			}
+		}
+
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", value);
 			}
 		}
 
@@ -196,9 +196,9 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			return false;
 		}
 
-        public override CreateIngressResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListJobsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateIngressResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListJobsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

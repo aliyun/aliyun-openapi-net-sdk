@@ -27,17 +27,17 @@ using Aliyun.Acs.sae.Transform.V20190506;
 
 namespace Aliyun.Acs.sae.Model.V20190506
 {
-    public class DeployApplicationRequest : RoaAcsRequest<DeployApplicationResponse>
+    public class UpdateJobRequest : RoaAcsRequest<UpdateJobResponse>
     {
-        public DeployApplicationRequest()
-            : base("sae", "2019-05-06", "DeployApplication", "serverless", "openAPI")
+        public UpdateJobRequest()
+            : base("sae", "2019-05-06", "UpdateJob", "serverless", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/pop/v1/sam/app/deployApplication";
+			UriPattern = "/pop/v1/sam/job/updateJob";
 			Method = MethodType.POST;
         }
 
@@ -45,25 +45,23 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string jarStartArgs;
 
-		private string ossAkSecret;
+		private string concurrencyPolicy;
 
-		private string nasConfigs;
+		private string triggerConfig;
+
+		private string ossAkSecret;
 
 		private string mountHost;
 
-		private int? batchWaitTime;
-
 		private string envs;
 
-		private string phpArmsConfigLocation;
+		private string programmingLanguage;
 
 		private string customHostAlias;
 
-		private string deploy;
-
 		private string jarStartOptions;
 
-		private string pvtzDiscoverySvc;
+		private bool? slice;
 
 		private string configMapMountDesc;
 
@@ -75,41 +73,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string python;
 
-		private string updateStrategy;
-
-		private string changeOrderDesc;
-
-		private int? minReadyInstanceRatio;
-
-		private bool? autoEnableApplicationScalingRule;
+		private long? backoffLimit;
 
 		private string postStart;
 
-		private bool? associateEip;
-
 		private string webContainer;
 
-		private string enableAhas;
-
 		private string slsConfigs;
-
-		private string kafkaConfigs;
 
 		private string commandArgs;
 
 		private string acrAssumeRoleArn;
 
-		private string readiness;
-
 		private string timezone;
 
 		private string ossAkId;
 
-		private string liveness;
-
 		private string packageVersion;
 
 		private string tomcatConfig;
+
+		private long? timeout;
 
 		private string warStartOptions;
 
@@ -121,9 +105,9 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string phpConfig;
 
-		private string microRegistration;
+		private string sliceEnvs;
 
-		private bool? enableGreyTagRoute;
+		private string replicas;
 
 		private string command;
 
@@ -131,13 +115,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string jdk;
 
-		private int? minReadyInstances;
-
 		private string acrInstanceId;
 
 		private string appId;
 
 		private string imageUrl;
+
+		private string php;
+
+		private string refAppId;
 
 		private string pythonModules;
 
@@ -169,6 +155,32 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
+		public string ConcurrencyPolicy
+		{
+			get
+			{
+				return concurrencyPolicy;
+			}
+			set	
+			{
+				concurrencyPolicy = value;
+				DictionaryUtil.Add(QueryParameters, "ConcurrencyPolicy", value);
+			}
+		}
+
+		public string TriggerConfig
+		{
+			get
+			{
+				return triggerConfig;
+			}
+			set	
+			{
+				triggerConfig = value;
+				DictionaryUtil.Add(QueryParameters, "TriggerConfig", value);
+			}
+		}
+
 		public string OssAkSecret
 		{
 			get
@@ -179,19 +191,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				ossAkSecret = value;
 				DictionaryUtil.Add(BodyParameters, "OssAkSecret", value);
-			}
-		}
-
-		public string NasConfigs
-		{
-			get
-			{
-				return nasConfigs;
-			}
-			set	
-			{
-				nasConfigs = value;
-				DictionaryUtil.Add(QueryParameters, "NasConfigs", value);
 			}
 		}
 
@@ -208,19 +207,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public int? BatchWaitTime
-		{
-			get
-			{
-				return batchWaitTime;
-			}
-			set	
-			{
-				batchWaitTime = value;
-				DictionaryUtil.Add(QueryParameters, "BatchWaitTime", value.ToString());
-			}
-		}
-
 		public string Envs
 		{
 			get
@@ -234,16 +220,16 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string PhpArmsConfigLocation
+		public string ProgrammingLanguage
 		{
 			get
 			{
-				return phpArmsConfigLocation;
+				return programmingLanguage;
 			}
 			set	
 			{
-				phpArmsConfigLocation = value;
-				DictionaryUtil.Add(QueryParameters, "PhpArmsConfigLocation", value);
+				programmingLanguage = value;
+				DictionaryUtil.Add(QueryParameters, "ProgrammingLanguage", value);
 			}
 		}
 
@@ -260,19 +246,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string Deploy
-		{
-			get
-			{
-				return deploy;
-			}
-			set	
-			{
-				deploy = value;
-				DictionaryUtil.Add(QueryParameters, "Deploy", value);
-			}
-		}
-
 		public string JarStartOptions
 		{
 			get
@@ -286,16 +259,16 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string PvtzDiscoverySvc
+		public bool? Slice
 		{
 			get
 			{
-				return pvtzDiscoverySvc;
+				return slice;
 			}
 			set	
 			{
-				pvtzDiscoverySvc = value;
-				DictionaryUtil.Add(QueryParameters, "PvtzDiscoverySvc", value);
+				slice = value;
+				DictionaryUtil.Add(QueryParameters, "Slice", value.ToString());
 			}
 		}
 
@@ -364,55 +337,16 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string UpdateStrategy
+		public long? BackoffLimit
 		{
 			get
 			{
-				return updateStrategy;
+				return backoffLimit;
 			}
 			set	
 			{
-				updateStrategy = value;
-				DictionaryUtil.Add(QueryParameters, "UpdateStrategy", value);
-			}
-		}
-
-		public string ChangeOrderDesc
-		{
-			get
-			{
-				return changeOrderDesc;
-			}
-			set	
-			{
-				changeOrderDesc = value;
-				DictionaryUtil.Add(QueryParameters, "ChangeOrderDesc", value);
-			}
-		}
-
-		public int? MinReadyInstanceRatio
-		{
-			get
-			{
-				return minReadyInstanceRatio;
-			}
-			set	
-			{
-				minReadyInstanceRatio = value;
-				DictionaryUtil.Add(QueryParameters, "MinReadyInstanceRatio", value.ToString());
-			}
-		}
-
-		public bool? AutoEnableApplicationScalingRule
-		{
-			get
-			{
-				return autoEnableApplicationScalingRule;
-			}
-			set	
-			{
-				autoEnableApplicationScalingRule = value;
-				DictionaryUtil.Add(QueryParameters, "AutoEnableApplicationScalingRule", value.ToString());
+				backoffLimit = value;
+				DictionaryUtil.Add(QueryParameters, "BackoffLimit", value.ToString());
 			}
 		}
 
@@ -429,19 +363,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public bool? AssociateEip
-		{
-			get
-			{
-				return associateEip;
-			}
-			set	
-			{
-				associateEip = value;
-				DictionaryUtil.Add(BodyParameters, "AssociateEip", value.ToString());
-			}
-		}
-
 		public string WebContainer
 		{
 			get
@@ -455,19 +376,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string EnableAhas
-		{
-			get
-			{
-				return enableAhas;
-			}
-			set	
-			{
-				enableAhas = value;
-				DictionaryUtil.Add(QueryParameters, "EnableAhas", value);
-			}
-		}
-
 		public string SlsConfigs
 		{
 			get
@@ -478,19 +386,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				slsConfigs = value;
 				DictionaryUtil.Add(QueryParameters, "SlsConfigs", value);
-			}
-		}
-
-		public string KafkaConfigs
-		{
-			get
-			{
-				return kafkaConfigs;
-			}
-			set	
-			{
-				kafkaConfigs = value;
-				DictionaryUtil.Add(QueryParameters, "KafkaConfigs", value);
 			}
 		}
 
@@ -520,19 +415,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string Readiness
-		{
-			get
-			{
-				return readiness;
-			}
-			set	
-			{
-				readiness = value;
-				DictionaryUtil.Add(QueryParameters, "Readiness", value);
-			}
-		}
-
 		public string Timezone
 		{
 			get
@@ -559,19 +441,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string Liveness
-		{
-			get
-			{
-				return liveness;
-			}
-			set	
-			{
-				liveness = value;
-				DictionaryUtil.Add(QueryParameters, "Liveness", value);
-			}
-		}
-
 		public string PackageVersion
 		{
 			get
@@ -595,6 +464,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				tomcatConfig = value;
 				DictionaryUtil.Add(QueryParameters, "TomcatConfig", value);
+			}
+		}
+
+		public long? Timeout
+		{
+			get
+			{
+				return timeout;
+			}
+			set	
+			{
+				timeout = value;
+				DictionaryUtil.Add(QueryParameters, "Timeout", value.ToString());
 			}
 		}
 
@@ -663,29 +545,29 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string MicroRegistration
+		public string SliceEnvs
 		{
 			get
 			{
-				return microRegistration;
+				return sliceEnvs;
 			}
 			set	
 			{
-				microRegistration = value;
-				DictionaryUtil.Add(QueryParameters, "MicroRegistration", value);
+				sliceEnvs = value;
+				DictionaryUtil.Add(QueryParameters, "SliceEnvs", value);
 			}
 		}
 
-		public bool? EnableGreyTagRoute
+		public string Replicas
 		{
 			get
 			{
-				return enableGreyTagRoute;
+				return replicas;
 			}
 			set	
 			{
-				enableGreyTagRoute = value;
-				DictionaryUtil.Add(QueryParameters, "EnableGreyTagRoute", value.ToString());
+				replicas = value;
+				DictionaryUtil.Add(QueryParameters, "Replicas", value);
 			}
 		}
 
@@ -728,19 +610,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public int? MinReadyInstances
-		{
-			get
-			{
-				return minReadyInstances;
-			}
-			set	
-			{
-				minReadyInstances = value;
-				DictionaryUtil.Add(QueryParameters, "MinReadyInstances", value.ToString());
-			}
-		}
-
 		public string AcrInstanceId
 		{
 			get
@@ -780,6 +649,32 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
+		public string Php
+		{
+			get
+			{
+				return php;
+			}
+			set	
+			{
+				php = value;
+				DictionaryUtil.Add(BodyParameters, "Php", value);
+			}
+		}
+
+		public string RefAppId
+		{
+			get
+			{
+				return refAppId;
+			}
+			set	
+			{
+				refAppId = value;
+				DictionaryUtil.Add(QueryParameters, "RefAppId", value);
+			}
+		}
+
 		public string PythonModules
 		{
 			get
@@ -811,9 +706,9 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			return false;
 		}
 
-        public override DeployApplicationResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeployApplicationResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

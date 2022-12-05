@@ -56,6 +56,7 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			data.NotificationExpired = _ctx.BooleanValue("DescribeNamespaceResources.Data.NotificationExpired");
 			data.TenantId = _ctx.StringValue("DescribeNamespaceResources.Data.TenantId");
 			data.JumpServerAppId = _ctx.StringValue("DescribeNamespaceResources.Data.JumpServerAppId");
+			data.JumpServerIp = _ctx.StringValue("DescribeNamespaceResources.Data.JumpServerIp");
 			describeNamespaceResourcesResponse.Data = data;
         
 			return describeNamespaceResourcesResponse;

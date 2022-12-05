@@ -209,6 +209,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 				private long? finishTimeStamp;
 
+				private bool? debugStatus;
+
 				public long? CreateTimeStamp
 				{
 					get
@@ -350,6 +352,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					set	
 					{
 						finishTimeStamp = value;
+					}
+				}
+
+				public bool? DebugStatus
+				{
+					get
+					{
+						return debugStatus;
+					}
+					set	
+					{
+						debugStatus = value;
 					}
 				}
 			}

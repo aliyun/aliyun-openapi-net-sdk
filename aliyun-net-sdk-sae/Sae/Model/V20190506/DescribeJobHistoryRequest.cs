@@ -27,62 +27,77 @@ using Aliyun.Acs.sae.Transform.V20190506;
 
 namespace Aliyun.Acs.sae.Model.V20190506
 {
-    public class DescribeConfigurationPriceRequest : RoaAcsRequest<DescribeConfigurationPriceResponse>
+    public class DescribeJobHistoryRequest : RoaAcsRequest<DescribeJobHistoryResponse>
     {
-        public DescribeConfigurationPriceRequest()
-            : base("sae", "2019-05-06", "DescribeConfigurationPrice", "serverless", "openAPI")
+        public DescribeJobHistoryRequest()
+            : base("sae", "2019-05-06", "DescribeJobHistory", "serverless", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/pop/v1/paas/configurationPrice";
+			UriPattern = "/pop/v1/sam/job/describeJobHistory";
 			Method = MethodType.GET;
         }
 
-		private int? memory;
+		private string appId;
 
-		private int? cpu;
+		private long? pageSize;
 
-		private string workload;
+		private long? currentPage;
 
-		public int? Memory
+		private string state;
+
+		public string AppId
 		{
 			get
 			{
-				return memory;
+				return appId;
 			}
 			set	
 			{
-				memory = value;
-				DictionaryUtil.Add(QueryParameters, "Memory", value.ToString());
+				appId = value;
+				DictionaryUtil.Add(QueryParameters, "AppId", value);
 			}
 		}
 
-		public int? Cpu
+		public long? PageSize
 		{
 			get
 			{
-				return cpu;
+				return pageSize;
 			}
 			set	
 			{
-				cpu = value;
-				DictionaryUtil.Add(QueryParameters, "Cpu", value.ToString());
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public string Workload
+		public long? CurrentPage
 		{
 			get
 			{
-				return workload;
+				return currentPage;
 			}
 			set	
 			{
-				workload = value;
-				DictionaryUtil.Add(QueryParameters, "Workload", value);
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public string State
+		{
+			get
+			{
+				return state;
+			}
+			set	
+			{
+				state = value;
+				DictionaryUtil.Add(QueryParameters, "State", value);
 			}
 		}
 
@@ -91,9 +106,9 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			return false;
 		}
 
-        public override DescribeConfigurationPriceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeJobHistoryResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeConfigurationPriceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeJobHistoryResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

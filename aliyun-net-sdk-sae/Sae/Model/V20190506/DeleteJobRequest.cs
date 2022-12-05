@@ -27,62 +27,32 @@ using Aliyun.Acs.sae.Transform.V20190506;
 
 namespace Aliyun.Acs.sae.Model.V20190506
 {
-    public class DescribeConfigurationPriceRequest : RoaAcsRequest<DescribeConfigurationPriceResponse>
+    public class DeleteJobRequest : RoaAcsRequest<DeleteJobResponse>
     {
-        public DescribeConfigurationPriceRequest()
-            : base("sae", "2019-05-06", "DescribeConfigurationPrice", "serverless", "openAPI")
+        public DeleteJobRequest()
+            : base("sae", "2019-05-06", "DeleteJob", "serverless", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/pop/v1/paas/configurationPrice";
-			Method = MethodType.GET;
+			UriPattern = "/pop/v1/sam/job/deleteJob";
+			Method = MethodType.DELETE;
         }
 
-		private int? memory;
+		private string appId;
 
-		private int? cpu;
-
-		private string workload;
-
-		public int? Memory
+		public string AppId
 		{
 			get
 			{
-				return memory;
+				return appId;
 			}
 			set	
 			{
-				memory = value;
-				DictionaryUtil.Add(QueryParameters, "Memory", value.ToString());
-			}
-		}
-
-		public int? Cpu
-		{
-			get
-			{
-				return cpu;
-			}
-			set	
-			{
-				cpu = value;
-				DictionaryUtil.Add(QueryParameters, "Cpu", value.ToString());
-			}
-		}
-
-		public string Workload
-		{
-			get
-			{
-				return workload;
-			}
-			set	
-			{
-				workload = value;
-				DictionaryUtil.Add(QueryParameters, "Workload", value);
+				appId = value;
+				DictionaryUtil.Add(QueryParameters, "AppId", value);
 			}
 		}
 
@@ -91,9 +61,9 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			return false;
 		}
 
-        public override DescribeConfigurationPriceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeConfigurationPriceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

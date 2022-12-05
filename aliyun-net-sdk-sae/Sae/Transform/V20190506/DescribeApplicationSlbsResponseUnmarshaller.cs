@@ -43,6 +43,8 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			data.InternetSlbId = _ctx.StringValue("DescribeApplicationSlbs.Data.InternetSlbId");
 			data.IntranetSlbId = _ctx.StringValue("DescribeApplicationSlbs.Data.IntranetSlbId");
 			data.IntranetIp = _ctx.StringValue("DescribeApplicationSlbs.Data.IntranetIp");
+			data.InternetSlbExpired = _ctx.BooleanValue("DescribeApplicationSlbs.Data.InternetSlbExpired");
+			data.IntranetSlbExpired = _ctx.BooleanValue("DescribeApplicationSlbs.Data.IntranetSlbExpired");
 
 			List<DescribeApplicationSlbsResponse.DescribeApplicationSlbs_Data.DescribeApplicationSlbs_IntranetItem> data_intranet = new List<DescribeApplicationSlbsResponse.DescribeApplicationSlbs_Data.DescribeApplicationSlbs_IntranetItem>();
 			for (int i = 0; i < _ctx.Length("DescribeApplicationSlbs.Data.Intranet.Length"); i++) {
