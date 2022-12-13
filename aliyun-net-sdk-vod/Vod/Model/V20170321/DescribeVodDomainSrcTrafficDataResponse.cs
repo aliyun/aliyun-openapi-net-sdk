@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -32,6 +32,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private string requestId;
 
 		private string domainName;
+
+		private string totalTraffic;
 
 		private string dataInterval;
 
@@ -82,6 +84,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				domainName = value;
+			}
+		}
+
+		public string TotalTraffic
+		{
+			get
+			{
+				return totalTraffic;
+			}
+			set	
+			{
+				totalTraffic = value;
 			}
 		}
 

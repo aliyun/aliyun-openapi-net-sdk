@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OpenSearch.Model.V20171225
@@ -56,13 +56,25 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 		public class DescribeRegions_ResultItem
 		{
 
+			private string endpoint;
+
 			private string regionId;
 
 			private string localName;
 
-			private string endpoint;
-
 			private string consoleUrl;
+
+			public string Endpoint
+			{
+				get
+				{
+					return endpoint;
+				}
+				set	
+				{
+					endpoint = value;
+				}
+			}
 
 			public string RegionId
 			{
@@ -85,18 +97,6 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				set	
 				{
 					localName = value;
-				}
-			}
-
-			public string Endpoint
-			{
-				get
-				{
-					return endpoint;
-				}
-				set	
-				{
-					endpoint = value;
 				}
 			}
 

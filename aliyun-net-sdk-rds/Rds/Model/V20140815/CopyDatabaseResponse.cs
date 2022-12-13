@@ -31,6 +31,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dBStatus;
 
+		private string requestId;
+
 		[JsonProperty(PropertyName = "DBName")]
 		public string DBName
 		{
@@ -67,6 +69,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				dBStatus = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

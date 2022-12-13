@@ -45,6 +45,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private int? cpu;
 
+		private string workload;
+
 		public int? Memory
 		{
 			get
@@ -68,6 +70,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				cpu = value;
 				DictionaryUtil.Add(QueryParameters, "Cpu", value.ToString());
+			}
+		}
+
+		public string Workload
+		{
+			get
+			{
+				return workload;
+			}
+			set	
+			{
+				workload = value;
+				DictionaryUtil.Add(QueryParameters, "Workload", value);
 			}
 		}
 

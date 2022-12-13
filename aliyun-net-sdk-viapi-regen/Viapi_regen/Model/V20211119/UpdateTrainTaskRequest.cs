@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -46,18 +47,19 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 
 		private long? id;
 
+		private string datasetIds;
+
 		private long? preTrainTaskId;
 
 		private bool? preTrainTaskFlag;
 
 		private string advancedParameters;
 
-		private long? labelId;
-
 		private string name;
 
-		private long? datasetId;
+		private string labelIds;
 
+		[JsonProperty(PropertyName = "Description")]
 		public string Description
 		{
 			get
@@ -71,6 +73,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "TrainMode")]
 		public string TrainMode
 		{
 			get
@@ -84,6 +87,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "Id")]
 		public long? Id
 		{
 			get
@@ -97,6 +101,21 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "DatasetIds")]
+		public string DatasetIds
+		{
+			get
+			{
+				return datasetIds;
+			}
+			set	
+			{
+				datasetIds = value;
+				DictionaryUtil.Add(BodyParameters, "DatasetIds", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "PreTrainTaskId")]
 		public long? PreTrainTaskId
 		{
 			get
@@ -110,6 +129,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "PreTrainTaskFlag")]
 		public bool? PreTrainTaskFlag
 		{
 			get
@@ -123,6 +143,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "AdvancedParameters")]
 		public string AdvancedParameters
 		{
 			get
@@ -136,19 +157,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
-		public long? LabelId
-		{
-			get
-			{
-				return labelId;
-			}
-			set	
-			{
-				labelId = value;
-				DictionaryUtil.Add(BodyParameters, "LabelId", value.ToString());
-			}
-		}
-
+		[JsonProperty(PropertyName = "Name")]
 		public string Name
 		{
 			get
@@ -162,16 +171,17 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
-		public long? DatasetId
+		[JsonProperty(PropertyName = "LabelIds")]
+		public string LabelIds
 		{
 			get
 			{
-				return datasetId;
+				return labelIds;
 			}
 			set	
 			{
-				datasetId = value;
-				DictionaryUtil.Add(BodyParameters, "DatasetId", value.ToString());
+				labelIds = value;
+				DictionaryUtil.Add(BodyParameters, "LabelIds", value);
 			}
 		}
 

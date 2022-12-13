@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			RemoveSecondRankResponse removeSecondRankResponse = new RemoveSecondRankResponse();
 
 			removeSecondRankResponse.HttpResponse = _ctx.HttpResponse;
-			removeSecondRankResponse.RequestId = _ctx.StringValue("RemoveSecondRank.requestId");
 			removeSecondRankResponse.Result = _ctx.StringValue("RemoveSecondRank.result");
+			removeSecondRankResponse.RequestId = _ctx.StringValue("RemoveSecondRank.requestId");
         
 			return removeSecondRankResponse;
         }

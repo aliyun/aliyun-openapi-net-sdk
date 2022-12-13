@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OpenSearch.Model.V20171225
@@ -56,39 +56,27 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 		public class ListFirstRanks_FirstRankItem
 		{
 
-			private string name;
-
-			private string description;
+			private int? created;
 
 			private bool? active;
 
-			private int? created;
+			private string description;
 
 			private int? updated;
 
+			private string name;
+
 			private List<ListFirstRanks_MetaItem> meta;
 
-			public string Name
+			public int? Created
 			{
 				get
 				{
-					return name;
+					return created;
 				}
 				set	
 				{
-					name = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
+					created = value;
 				}
 			}
 
@@ -104,15 +92,15 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
-			public int? Created
+			public string Description
 			{
 				get
 				{
-					return created;
+					return description;
 				}
 				set	
 				{
-					created = value;
+					description = value;
 				}
 			}
 
@@ -125,6 +113,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				set	
 				{
 					updated = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 
@@ -143,23 +143,11 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 			public class ListFirstRanks_MetaItem
 			{
 
-				private string attribute;
-
 				private string arg;
 
-				private int? weight;
+				private string attribute;
 
-				public string Attribute
-				{
-					get
-					{
-						return attribute;
-					}
-					set	
-					{
-						attribute = value;
-					}
-				}
+				private int? weight;
 
 				public string Arg
 				{
@@ -170,6 +158,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 					set	
 					{
 						arg = value;
+					}
+				}
+
+				public string Attribute
+				{
+					get
+					{
+						return attribute;
+					}
+					set	
+					{
+						attribute = value;
 					}
 				}
 

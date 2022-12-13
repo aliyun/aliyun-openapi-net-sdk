@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.alinlp.Model.V20200629
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.alinlp.Model.V20200629
 	public class GetWsCustomizedChEcomCommentResponse : AcsResponse
 	{
 
-		private string data;
-
 		private string requestId;
 
-		public string Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
-			}
-		}
+		private string data;
 
 		public string RequestId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.alinlp.Model.V20200629
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
 			}
 		}
 	}

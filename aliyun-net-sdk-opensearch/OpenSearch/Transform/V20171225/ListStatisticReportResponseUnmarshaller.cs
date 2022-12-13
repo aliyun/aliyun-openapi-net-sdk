@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			ListStatisticReportResponse listStatisticReportResponse = new ListStatisticReportResponse();
 
 			listStatisticReportResponse.HttpResponse = _ctx.HttpResponse;
-			listStatisticReportResponse.RequestId = _ctx.StringValue("ListStatisticReport.requestId");
 			listStatisticReportResponse.TotalCount = _ctx.LongValue("ListStatisticReport.totalCount");
+			listStatisticReportResponse.RequestId = _ctx.StringValue("ListStatisticReport.requestId");
 
 			List<Dictionary<string, string>> listStatisticReportResponse_result = new List<Dictionary<string, string>>();
 			for (int i = 0; i < _ctx.Length("ListStatisticReport.Result.Length"); i++) {

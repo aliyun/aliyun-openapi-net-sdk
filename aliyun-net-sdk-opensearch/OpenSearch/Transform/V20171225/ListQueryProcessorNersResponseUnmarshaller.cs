@@ -37,8 +37,8 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			for (int i = 0; i < _ctx.Length("ListQueryProcessorNers.Result.Length"); i++) {
 				ListQueryProcessorNersResponse.ListQueryProcessorNers_ResultItem resultItem = new ListQueryProcessorNersResponse.ListQueryProcessorNers_ResultItem();
 				resultItem.Tag = _ctx.StringValue("ListQueryProcessorNers.Result["+ i +"].tag");
-				resultItem.Priority = _ctx.StringValue("ListQueryProcessorNers.Result["+ i +"].priority");
 				resultItem.Order = _ctx.IntegerValue("ListQueryProcessorNers.Result["+ i +"].order");
+				resultItem.Priority = _ctx.StringValue("ListQueryProcessorNers.Result["+ i +"].priority");
 				resultItem.Label = _ctx.StringValue("ListQueryProcessorNers.Result["+ i +"].label");
 
 				listQueryProcessorNersResponse_result.Add(resultItem);

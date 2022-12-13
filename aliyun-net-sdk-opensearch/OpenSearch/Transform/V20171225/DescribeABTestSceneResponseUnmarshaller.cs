@@ -34,11 +34,11 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			describeABTestSceneResponse.RequestId = _ctx.StringValue("DescribeABTestScene.requestId");
 
 			DescribeABTestSceneResponse.DescribeABTestScene_Result result = new DescribeABTestSceneResponse.DescribeABTestScene_Result();
-			result.Id = _ctx.StringValue("DescribeABTestScene.Result.id");
-			result.Name = _ctx.StringValue("DescribeABTestScene.Result.name");
-			result.Status = _ctx.IntegerValue("DescribeABTestScene.Result.status");
 			result.Created = _ctx.IntegerValue("DescribeABTestScene.Result.created");
+			result.Status = _ctx.IntegerValue("DescribeABTestScene.Result.status");
 			result.Updated = _ctx.IntegerValue("DescribeABTestScene.Result.updated");
+			result.Name = _ctx.StringValue("DescribeABTestScene.Result.name");
+			result.Id = _ctx.StringValue("DescribeABTestScene.Result.id");
 
 			List<string> result_values = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeABTestScene.Result.Values.Length"); i++) {

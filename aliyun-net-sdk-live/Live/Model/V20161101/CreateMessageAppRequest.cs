@@ -45,6 +45,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string appConfig;
 
+		private string appName;
+
 		[JsonProperty(PropertyName = "Extension")]
 		public string Extension
 		{
@@ -70,6 +72,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				appConfig = value;
 				DictionaryUtil.Add(BodyParameters, "AppConfig", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "AppName")]
+		public string AppName
+		{
+			get
+			{
+				return appName;
+			}
+			set	
+			{
+				appName = value;
+				DictionaryUtil.Add(BodyParameters, "AppName", value);
 			}
 		}
 

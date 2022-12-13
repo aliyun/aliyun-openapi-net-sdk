@@ -59,6 +59,7 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 				data.Series = _ctx.StringValue("DescribeInstances.Instances["+ i +"].Series");
 				data.UsedDiskSize = _ctx.LongValue("DescribeInstances.Instances["+ i +"].UsedDiskSize");
 				data.ResourceGroupId = _ctx.StringValue("DescribeInstances.Instances["+ i +"].ResourceGroupId");
+				data.InstanceType = _ctx.StringValue("DescribeInstances.Instances["+ i +"].InstanceType");
 
 				List<string> data_availableZones = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeInstances.Instances["+ i +"].AvailableZones.Length"); j++) {

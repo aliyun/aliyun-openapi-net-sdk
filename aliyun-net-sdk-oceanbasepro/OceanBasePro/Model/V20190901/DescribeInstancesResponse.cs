@@ -117,6 +117,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 			private string resourceGroupId;
 
+			private string instanceType;
+
 			private List<string> availableZones;
 
 			private List<string> securityIps;
@@ -406,6 +408,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				set	
 				{
 					resourceGroupId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstanceType")]
+			public string InstanceType
+			{
+				get
+				{
+					return instanceType;
+				}
+				set	
+				{
+					instanceType = value;
 				}
 			}
 

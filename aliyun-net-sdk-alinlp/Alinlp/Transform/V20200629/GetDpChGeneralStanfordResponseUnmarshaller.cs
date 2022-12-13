@@ -31,8 +31,8 @@ namespace Aliyun.Acs.alinlp.Transform.V20200629
 			GetDpChGeneralStanfordResponse getDpChGeneralStanfordResponse = new GetDpChGeneralStanfordResponse();
 
 			getDpChGeneralStanfordResponse.HttpResponse = _ctx.HttpResponse;
-			getDpChGeneralStanfordResponse.Data = _ctx.StringValue("GetDpChGeneralStanford.Data");
 			getDpChGeneralStanfordResponse.RequestId = _ctx.StringValue("GetDpChGeneralStanford.RequestId");
+			getDpChGeneralStanfordResponse.Data = _ctx.StringValue("GetDpChGeneralStanford.Data");
         
 			return getDpChGeneralStanfordResponse;
         }

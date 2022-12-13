@@ -55,6 +55,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string certId;
 
+		private string certIds;
+
 		private string listenerProtocol;
 
 		private string defaultRule;
@@ -147,6 +149,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				certId = value;
 				DictionaryUtil.Add(QueryParameters, "CertId", value);
+			}
+		}
+
+		public string CertIds
+		{
+			get
+			{
+				return certIds;
+			}
+			set	
+			{
+				certIds = value;
+				DictionaryUtil.Add(QueryParameters, "CertIds", value);
 			}
 		}
 

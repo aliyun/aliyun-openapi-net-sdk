@@ -31,8 +31,8 @@ namespace Aliyun.Acs.alinlp.Transform.V20200629
 			GetDpChEcomResponse getDpChEcomResponse = new GetDpChEcomResponse();
 
 			getDpChEcomResponse.HttpResponse = _ctx.HttpResponse;
-			getDpChEcomResponse.Data = _ctx.StringValue("GetDpChEcom.Data");
 			getDpChEcomResponse.RequestId = _ctx.StringValue("GetDpChEcom.RequestId");
+			getDpChEcomResponse.Data = _ctx.StringValue("GetDpChEcom.Data");
         
 			return getDpChEcomResponse;
         }

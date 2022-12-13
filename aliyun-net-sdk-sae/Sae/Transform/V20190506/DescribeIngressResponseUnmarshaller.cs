@@ -45,6 +45,7 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			data.ListenerPort = _ctx.IntegerValue("DescribeIngress.Data.ListenerPort");
 			data.SlbType = _ctx.StringValue("DescribeIngress.Data.SlbType");
 			data.CertId = _ctx.StringValue("DescribeIngress.Data.CertId");
+			data.CertIds = _ctx.StringValue("DescribeIngress.Data.CertIds");
 			data.Name = _ctx.StringValue("DescribeIngress.Data.Name");
 			data.Id = _ctx.LongValue("DescribeIngress.Data.Id");
 			data.LoadBalanceType = _ctx.StringValue("DescribeIngress.Data.LoadBalanceType");
@@ -54,6 +55,7 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			defaultRule.ContainerPort = _ctx.IntegerValue("DescribeIngress.Data.DefaultRule.ContainerPort");
 			defaultRule.AppName = _ctx.StringValue("DescribeIngress.Data.DefaultRule.AppName");
 			defaultRule.AppId = _ctx.StringValue("DescribeIngress.Data.DefaultRule.AppId");
+			defaultRule.BackendProtocol = _ctx.StringValue("DescribeIngress.Data.DefaultRule.BackendProtocol");
 			data.DefaultRule = defaultRule;
 
 			List<DescribeIngressResponse.DescribeIngress_Data.DescribeIngress_Rule> data_rules = new List<DescribeIngressResponse.DescribeIngress_Data.DescribeIngress_Rule>();
@@ -64,6 +66,7 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 				rule.Domain = _ctx.StringValue("DescribeIngress.Data.Rules["+ i +"].Domain");
 				rule.AppId = _ctx.StringValue("DescribeIngress.Data.Rules["+ i +"].AppId");
 				rule.Path = _ctx.StringValue("DescribeIngress.Data.Rules["+ i +"].Path");
+				rule.BackendProtocol = _ctx.StringValue("DescribeIngress.Data.Rules["+ i +"].BackendProtocol");
 
 				data_rules.Add(rule);
 			}

@@ -41,6 +41,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			for (int i = 0; i < _ctx.Length("ListMessageGroup.Result.GroupList.Length"); i++) {
 				ListMessageGroupResponse.ListMessageGroup_Result.ListMessageGroup_GroupListItem groupListItem = new ListMessageGroupResponse.ListMessageGroup_Result.ListMessageGroup_GroupListItem();
 				groupListItem.GroupId = _ctx.StringValue("ListMessageGroup.Result.GroupList["+ i +"].GroupId");
+				groupListItem.AppId = _ctx.StringValue("ListMessageGroup.Result.GroupList["+ i +"].AppId");
 				groupListItem.CreateTime = _ctx.LongValue("ListMessageGroup.Result.GroupList["+ i +"].CreateTime");
 				groupListItem.Status = _ctx.IntegerValue("ListMessageGroup.Result.GroupList["+ i +"].Status");
 				groupListItem.CreatorId = _ctx.StringValue("ListMessageGroup.Result.GroupList["+ i +"].CreatorId");

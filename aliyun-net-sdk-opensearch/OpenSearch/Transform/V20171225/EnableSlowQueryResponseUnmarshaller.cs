@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			EnableSlowQueryResponse enableSlowQueryResponse = new EnableSlowQueryResponse();
 
 			enableSlowQueryResponse.HttpResponse = _ctx.HttpResponse;
-			enableSlowQueryResponse.RequestId = _ctx.StringValue("EnableSlowQuery.requestId");
 			enableSlowQueryResponse.Result = _ctx.StringValue("EnableSlowQuery.result");
+			enableSlowQueryResponse.RequestId = _ctx.StringValue("EnableSlowQuery.requestId");
         
 			return enableSlowQueryResponse;
         }

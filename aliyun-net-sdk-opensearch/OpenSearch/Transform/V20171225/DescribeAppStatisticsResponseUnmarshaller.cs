@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			DescribeAppStatisticsResponse describeAppStatisticsResponse = new DescribeAppStatisticsResponse();
 
 			describeAppStatisticsResponse.HttpResponse = _ctx.HttpResponse;
-			describeAppStatisticsResponse.RequestId = _ctx.StringValue("DescribeAppStatistics.requestId");
 			describeAppStatisticsResponse.Result = _ctx.StringValue("DescribeAppStatistics.result");
+			describeAppStatisticsResponse.RequestId = _ctx.StringValue("DescribeAppStatistics.requestId");
         
 			return describeAppStatisticsResponse;
         }

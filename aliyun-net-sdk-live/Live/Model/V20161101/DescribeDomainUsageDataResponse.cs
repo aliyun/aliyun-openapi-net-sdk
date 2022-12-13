@@ -27,13 +27,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string endTime;
 
+		private string type;
+
 		private string startTime;
 
 		private string requestId;
 
 		private string area;
-
-		private string field;
 
 		private string domainName;
 
@@ -51,6 +51,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				endTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Type")]
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
 			}
 		}
 
@@ -90,19 +103,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				area = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "Field")]
-		public string Field
-		{
-			get
-			{
-				return field;
-			}
-			set	
-			{
-				field = value;
 			}
 		}
 

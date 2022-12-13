@@ -130,6 +130,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string accountName;
 
+			private string validUntil;
+
+			private string createDB;
+
+			private string replication;
+
+			private string createRole;
+
+			private string bypassRLS;
+
 			private List<DescribeAccounts_DatabasePrivilege> databasePrivileges;
 
 			[JsonProperty(PropertyName = "AccountStatus")]
@@ -207,6 +217,71 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					accountName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ValidUntil")]
+			public string ValidUntil
+			{
+				get
+				{
+					return validUntil;
+				}
+				set	
+				{
+					validUntil = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CreateDB")]
+			public string CreateDB
+			{
+				get
+				{
+					return createDB;
+				}
+				set	
+				{
+					createDB = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Replication")]
+			public string Replication
+			{
+				get
+				{
+					return replication;
+				}
+				set	
+				{
+					replication = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CreateRole")]
+			public string CreateRole
+			{
+				get
+				{
+					return createRole;
+				}
+				set	
+				{
+					createRole = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "BypassRLS")]
+			public string BypassRLS
+			{
+				get
+				{
+					return bypassRLS;
+				}
+				set	
+				{
+					bypassRLS = value;
 				}
 			}
 

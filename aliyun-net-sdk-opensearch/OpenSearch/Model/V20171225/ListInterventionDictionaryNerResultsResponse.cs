@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OpenSearch.Model.V20171225
@@ -58,11 +58,11 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 
 			private string tag;
 
-			private string tagLabel;
-
 			private string token;
 
 			private int? order;
+
+			private string tagLabel;
 
 			public string Tag
 			{
@@ -73,18 +73,6 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				set	
 				{
 					tag = value;
-				}
-			}
-
-			public string TagLabel
-			{
-				get
-				{
-					return tagLabel;
-				}
-				set	
-				{
-					tagLabel = value;
 				}
 			}
 
@@ -109,6 +97,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				set	
 				{
 					order = value;
+				}
+			}
+
+			public string TagLabel
+			{
+				get
+				{
+					return tagLabel;
+				}
+				set	
+				{
+					tagLabel = value;
 				}
 			}
 		}

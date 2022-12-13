@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.alinlp;
 using Aliyun.Acs.alinlp.Transform;
 using Aliyun.Acs.alinlp.Transform.V20200629;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.alinlp.Model.V20200629
     public class GetKeywordChEcomRequest : RpcAcsRequest<GetKeywordChEcomResponse>
     {
         public GetKeywordChEcomRequest()
-            : base("alinlp", "2020-06-29", "GetKeywordChEcom", "alinlp", "openAPI")
+            : base("alinlp", "2020-06-29", "GetKeywordChEcom")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,9 +41,24 @@ namespace Aliyun.Acs.alinlp.Model.V20200629
 			Method = MethodType.POST;
         }
 
+		private string apiVersion;
+
 		private string serviceCode;
 
 		private string text;
+
+		public string ApiVersion
+		{
+			get
+			{
+				return apiVersion;
+			}
+			set	
+			{
+				apiVersion = value;
+				DictionaryUtil.Add(BodyParameters, "ApiVersion", value);
+			}
+		}
 
 		public string ServiceCode
 		{

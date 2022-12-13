@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OpenSearch.Model.V20171225
@@ -118,35 +118,35 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				public class DescribeAppGroupDataReport_Message
 				{
 
-					private string clientIp;
+					private int? eventId;
 
 					private string arg3;
 
-					private string userId;
-
-					private string args;
-
 					private string arg1;
-
-					private string sdkType;
-
-					private string sessionId;
-
-					private int? eventId;
 
 					private string sdkVersion;
 
+					private string userId;
+
 					private string page;
 
-					public string ClientIp
+					private string args;
+
+					private string sessionId;
+
+					private string sdkType;
+
+					private string clientIp;
+
+					public int? EventId
 					{
 						get
 						{
-							return clientIp;
+							return eventId;
 						}
 						set	
 						{
-							clientIp = value;
+							eventId = value;
 						}
 					}
 
@@ -162,30 +162,6 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 						}
 					}
 
-					public string UserId
-					{
-						get
-						{
-							return userId;
-						}
-						set	
-						{
-							userId = value;
-						}
-					}
-
-					public string Args
-					{
-						get
-						{
-							return args;
-						}
-						set	
-						{
-							args = value;
-						}
-					}
-
 					public string Arg1
 					{
 						get
@@ -195,42 +171,6 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 						set	
 						{
 							arg1 = value;
-						}
-					}
-
-					public string SdkType
-					{
-						get
-						{
-							return sdkType;
-						}
-						set	
-						{
-							sdkType = value;
-						}
-					}
-
-					public string SessionId
-					{
-						get
-						{
-							return sessionId;
-						}
-						set	
-						{
-							sessionId = value;
-						}
-					}
-
-					public int? EventId
-					{
-						get
-						{
-							return eventId;
-						}
-						set	
-						{
-							eventId = value;
 						}
 					}
 
@@ -246,6 +186,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 						}
 					}
 
+					public string UserId
+					{
+						get
+						{
+							return userId;
+						}
+						set	
+						{
+							userId = value;
+						}
+					}
+
 					public string Page
 					{
 						get
@@ -255,6 +207,54 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 						set	
 						{
 							page = value;
+						}
+					}
+
+					public string Args
+					{
+						get
+						{
+							return args;
+						}
+						set	
+						{
+							args = value;
+						}
+					}
+
+					public string SessionId
+					{
+						get
+						{
+							return sessionId;
+						}
+						set	
+						{
+							sessionId = value;
+						}
+					}
+
+					public string SdkType
+					{
+						get
+						{
+							return sdkType;
+						}
+						set	
+						{
+							sdkType = value;
+						}
+					}
+
+					public string ClientIp
+					{
+						get
+						{
+							return clientIp;
+						}
+						set	
+						{
+							clientIp = value;
 						}
 					}
 				}

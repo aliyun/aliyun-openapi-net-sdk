@@ -41,6 +41,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			for (int i = 0; i < _ctx.Length("ListMessageApp.Result.AppList.Length"); i++) {
 				ListMessageAppResponse.ListMessageApp_Result.ListMessageApp_AppListItem appListItem = new ListMessageAppResponse.ListMessageApp_Result.ListMessageApp_AppListItem();
 				appListItem.AppId = _ctx.StringValue("ListMessageApp.Result.AppList["+ i +"].AppId");
+				appListItem.AppName = _ctx.StringValue("ListMessageApp.Result.AppList["+ i +"].AppName");
 				appListItem.CreateTime = _ctx.LongValue("ListMessageApp.Result.AppList["+ i +"].CreateTime");
 				appListItem.Status = _ctx.IntegerValue("ListMessageApp.Result.AppList["+ i +"].Status");
 				appListItem.AppConfig = _ctx.StringValue("ListMessageApp.Result.AppList["+ i +"].AppConfig");

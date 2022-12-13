@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string systemDBCharset;
 
+		private string connectionString;
+
 		private string engineVersion;
 
 		private bool? deletionProtection;
@@ -202,6 +204,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				systemDBCharset = value;
 				DictionaryUtil.Add(QueryParameters, "SystemDBCharset", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ConnectionString")]
+		public string ConnectionString
+		{
+			get
+			{
+				return connectionString;
+			}
+			set	
+			{
+				connectionString = value;
+				DictionaryUtil.Add(QueryParameters, "ConnectionString", value);
 			}
 		}
 

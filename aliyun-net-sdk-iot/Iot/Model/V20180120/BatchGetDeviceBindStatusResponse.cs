@@ -102,6 +102,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private int? bindStatus;
 
+			private string instanceId;
+
 			public string IotId
 			{
 				get
@@ -123,6 +125,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					bindStatus = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
 				}
 			}
 		}

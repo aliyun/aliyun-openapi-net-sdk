@@ -49,6 +49,7 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 				ingress.ListenerPort = _ctx.StringValue("ListIngresses.Data.IngressList["+ i +"].ListenerPort");
 				ingress.SlbType = _ctx.StringValue("ListIngresses.Data.IngressList["+ i +"].SlbType");
 				ingress.CertId = _ctx.StringValue("ListIngresses.Data.IngressList["+ i +"].CertId");
+				ingress.CertIds = _ctx.StringValue("ListIngresses.Data.IngressList["+ i +"].CertIds");
 				ingress.Name = _ctx.StringValue("ListIngresses.Data.IngressList["+ i +"].Name");
 				ingress.Id = _ctx.LongValue("ListIngresses.Data.IngressList["+ i +"].Id");
 				ingress.LoadBalanceType = _ctx.StringValue("ListIngresses.Data.IngressList["+ i +"].LoadBalanceType");

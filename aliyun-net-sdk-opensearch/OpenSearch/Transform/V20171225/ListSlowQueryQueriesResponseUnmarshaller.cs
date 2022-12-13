@@ -34,10 +34,10 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			listSlowQueryQueriesResponse.RequestId = _ctx.StringValue("ListSlowQueryQueries.requestId");
 
 			ListSlowQueryQueriesResponse.ListSlowQueryQueries_Result result = new ListSlowQueryQueriesResponse.ListSlowQueryQueries_Result();
-			result.Start = _ctx.IntegerValue("ListSlowQueryQueries.Result.start");
-			result.End = _ctx.IntegerValue("ListSlowQueryQueries.Result.end");
 			result.Index = _ctx.IntegerValue("ListSlowQueryQueries.Result.index");
 			result.AppQuery = _ctx.StringValue("ListSlowQueryQueries.Result.appQuery");
+			result.Start = _ctx.IntegerValue("ListSlowQueryQueries.Result.start");
+			result.End = _ctx.IntegerValue("ListSlowQueryQueries.Result.end");
 			listSlowQueryQueriesResponse.Result = result;
         
 			return listSlowQueryQueriesResponse;

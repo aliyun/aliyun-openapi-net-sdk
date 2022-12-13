@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OpenSearch.Model.V20171225
@@ -56,37 +56,13 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 		public class ListSlowQueryQueries_Result
 		{
 
-			private int? start;
-
-			private int? end;
-
 			private int? index;
 
 			private string appQuery;
 
-			public int? Start
-			{
-				get
-				{
-					return start;
-				}
-				set	
-				{
-					start = value;
-				}
-			}
+			private int? start;
 
-			public int? End
-			{
-				get
-				{
-					return end;
-				}
-				set	
-				{
-					end = value;
-				}
-			}
+			private int? end;
 
 			public int? Index
 			{
@@ -109,6 +85,30 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				set	
 				{
 					appQuery = value;
+				}
+			}
+
+			public int? Start
+			{
+				get
+				{
+					return start;
+				}
+				set	
+				{
+					start = value;
+				}
+			}
+
+			public int? End
+			{
+				get
+				{
+					return end;
+				}
+				set	
+				{
+					end = value;
 				}
 			}
 		}

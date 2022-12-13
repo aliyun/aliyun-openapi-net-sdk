@@ -49,6 +49,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private int? pageSize;
 
+		private string appId;
+
 		[JsonProperty(PropertyName = "SortType")]
 		public int? SortType
 		{
@@ -102,6 +104,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				pageSize = value;
 				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "AppId")]
+		public string AppId
+		{
+			get
+			{
+				return appId;
+			}
+			set	
+			{
+				appId = value;
+				DictionaryUtil.Add(BodyParameters, "AppId", value);
 			}
 		}
 

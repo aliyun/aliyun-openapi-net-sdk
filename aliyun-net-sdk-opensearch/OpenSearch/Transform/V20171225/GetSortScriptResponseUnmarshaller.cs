@@ -34,11 +34,11 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			getSortScriptResponse.RequestId = _ctx.StringValue("GetSortScript.requestId");
 
 			GetSortScriptResponse.GetSortScript_Result result = new GetSortScriptResponse.GetSortScript_Result();
-			result.Type = _ctx.StringValue("GetSortScript.Result.type");
 			result.Scope = _ctx.StringValue("GetSortScript.Result.scope");
-			result.Status = _ctx.StringValue("GetSortScript.Result.status");
 			result.CreateTime = _ctx.StringValue("GetSortScript.Result.createTime");
+			result.Status = _ctx.StringValue("GetSortScript.Result.status");
 			result.ModifyTime = _ctx.StringValue("GetSortScript.Result.modifyTime");
+			result.Type = _ctx.StringValue("GetSortScript.Result.type");
 			getSortScriptResponse.Result = result;
         
 			return getSortScriptResponse;

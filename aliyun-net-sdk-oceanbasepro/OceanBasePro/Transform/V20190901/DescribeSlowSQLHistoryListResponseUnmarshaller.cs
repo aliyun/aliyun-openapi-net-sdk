@@ -71,9 +71,9 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 				listItem.ConcurrencyWaitTime = _ctx.DoubleValue("DescribeSlowSQLHistoryList.SlowSQLHistoryList.List["+ i +"].ConcurrencyWaitTime");
 				listItem.CpuTime = _ctx.DoubleValue("DescribeSlowSQLHistoryList.SlowSQLHistoryList.List["+ i +"].CpuTime");
 				listItem.DecodeTime = _ctx.DoubleValue("DescribeSlowSQLHistoryList.SlowSQLHistoryList.List["+ i +"].DecodeTime");
-				listItem.NetwaitTime = _ctx.DoubleValue("DescribeSlowSQLHistoryList.SlowSQLHistoryList.List["+ i +"].NetwaitTime");
+				listItem.NetWaitTime = _ctx.DoubleValue("DescribeSlowSQLHistoryList.SlowSQLHistoryList.List["+ i +"].NetWaitTime");
 				listItem.IOWaitTime = _ctx.DoubleValue("DescribeSlowSQLHistoryList.SlowSQLHistoryList.List["+ i +"].IOWaitTime");
-				listItem.GetplanTime = _ctx.DoubleValue("DescribeSlowSQLHistoryList.SlowSQLHistoryList.List["+ i +"].GetplanTime");
+				listItem.GetPlanTime = _ctx.DoubleValue("DescribeSlowSQLHistoryList.SlowSQLHistoryList.List["+ i +"].GetPlanTime");
 				listItem.MaxElapsedTime = _ctx.DoubleValue("DescribeSlowSQLHistoryList.SlowSQLHistoryList.List["+ i +"].MaxElapsedTime");
 				listItem.TotalWaitTime = _ctx.DoubleValue("DescribeSlowSQLHistoryList.SlowSQLHistoryList.List["+ i +"].TotalWaitTime");
 				listItem.ScheduleTime = _ctx.DoubleValue("DescribeSlowSQLHistoryList.SlowSQLHistoryList.List["+ i +"].ScheduleTime");

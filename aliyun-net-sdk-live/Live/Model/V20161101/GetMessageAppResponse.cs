@@ -60,6 +60,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string appId;
 
+			private string appName;
+
 			private long? createTime;
 
 			private int? status;
@@ -78,6 +80,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					appId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AppName")]
+			public string AppName
+			{
+				get
+				{
+					return appName;
+				}
+				set	
+				{
+					appName = value;
 				}
 			}
 

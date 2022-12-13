@@ -36,11 +36,11 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			List<ListABTestScenesResponse.ListABTestScenes_ResultItem> listABTestScenesResponse_result = new List<ListABTestScenesResponse.ListABTestScenes_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListABTestScenes.Result.Length"); i++) {
 				ListABTestScenesResponse.ListABTestScenes_ResultItem resultItem = new ListABTestScenesResponse.ListABTestScenes_ResultItem();
-				resultItem.Id = _ctx.StringValue("ListABTestScenes.Result["+ i +"].id");
-				resultItem.Name = _ctx.StringValue("ListABTestScenes.Result["+ i +"].name");
-				resultItem.Status = _ctx.IntegerValue("ListABTestScenes.Result["+ i +"].status");
 				resultItem.Created = _ctx.IntegerValue("ListABTestScenes.Result["+ i +"].created");
+				resultItem.Status = _ctx.IntegerValue("ListABTestScenes.Result["+ i +"].status");
 				resultItem.Updated = _ctx.IntegerValue("ListABTestScenes.Result["+ i +"].updated");
+				resultItem.Name = _ctx.StringValue("ListABTestScenes.Result["+ i +"].name");
+				resultItem.Id = _ctx.StringValue("ListABTestScenes.Result["+ i +"].id");
 
 				List<string> resultItem_values = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListABTestScenes.Result["+ i +"].Values.Length"); j++) {

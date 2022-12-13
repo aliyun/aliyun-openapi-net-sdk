@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			CreateAppResponse createAppResponse = new CreateAppResponse();
 
 			createAppResponse.HttpResponse = _ctx.HttpResponse;
-			createAppResponse.RequestId = _ctx.StringValue("CreateApp.requestId");
 			createAppResponse.Result = _ctx.StringValue("CreateApp.result");
+			createAppResponse.RequestId = _ctx.StringValue("CreateApp.requestId");
         
 			return createAppResponse;
         }

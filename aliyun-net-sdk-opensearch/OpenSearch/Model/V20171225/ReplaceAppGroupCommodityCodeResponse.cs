@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OpenSearch.Model.V20171225
@@ -56,77 +56,65 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 		public class ReplaceAppGroupCommodityCode_Result
 		{
 
-			private string id;
-
-			private string name;
+			private int? created;
 
 			private string currentVersion;
 
-			private int? switchedTime;
-
-			private int? chargingWay;
+			private int? pendingSecondRankAlgoDeploymentId;
 
 			private string type;
 
-			private string projectId;
+			private int? chargingWay;
 
-			private string chargeType;
-
-			private string expireOn;
-
-			private string instanceId;
-
-			private string commodityCode;
-
-			private string processingOrderId;
-
-			private int? firstRankAlgoDeploymentId;
-
-			private int? secondRankAlgoDeploymentId;
-
-			private int? pendingSecondRankAlgoDeploymentId;
-
-			private string description;
-
-			private int? produced;
-
-			private int? lockedByExpiration;
-
-			private int? hasPendingQuotaReviewTask;
-
-			private int? created;
-
-			private int? updated;
+			private string lockMode;
 
 			private string status;
 
-			private string lockMode;
+			private int? updated;
+
+			private string chargeType;
+
+			private string id;
+
+			private int? hasPendingQuotaReviewTask;
+
+			private string projectId;
+
+			private int? secondRankAlgoDeploymentId;
+
+			private string commodityCode;
+
+			private int? switchedTime;
+
+			private string expireOn;
+
+			private string description;
+
+			private int? firstRankAlgoDeploymentId;
+
+			private int? lockedByExpiration;
+
+			private int? produced;
+
+			private string name;
+
+			private string processingOrderId;
+
+			private string instanceId;
 
 			private List<string> versions;
 
 			private ReplaceAppGroupCommodityCode_Quota quota;
 
-			public string Id
+			public int? Created
 			{
 				get
 				{
-					return id;
+					return created;
 				}
 				set	
 				{
-					id = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
+					created = value;
 				}
 			}
 
@@ -142,27 +130,15 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
-			public int? SwitchedTime
+			public int? PendingSecondRankAlgoDeploymentId
 			{
 				get
 				{
-					return switchedTime;
+					return pendingSecondRankAlgoDeploymentId;
 				}
 				set	
 				{
-					switchedTime = value;
-				}
-			}
-
-			public int? ChargingWay
-			{
-				get
-				{
-					return chargingWay;
-				}
-				set	
-				{
-					chargingWay = value;
+					pendingSecondRankAlgoDeploymentId = value;
 				}
 			}
 
@@ -178,183 +154,27 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
-			public string ProjectId
+			public int? ChargingWay
 			{
 				get
 				{
-					return projectId;
+					return chargingWay;
 				}
 				set	
 				{
-					projectId = value;
+					chargingWay = value;
 				}
 			}
 
-			public string ChargeType
+			public string LockMode
 			{
 				get
 				{
-					return chargeType;
+					return lockMode;
 				}
 				set	
 				{
-					chargeType = value;
-				}
-			}
-
-			public string ExpireOn
-			{
-				get
-				{
-					return expireOn;
-				}
-				set	
-				{
-					expireOn = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public string CommodityCode
-			{
-				get
-				{
-					return commodityCode;
-				}
-				set	
-				{
-					commodityCode = value;
-				}
-			}
-
-			public string ProcessingOrderId
-			{
-				get
-				{
-					return processingOrderId;
-				}
-				set	
-				{
-					processingOrderId = value;
-				}
-			}
-
-			public int? FirstRankAlgoDeploymentId
-			{
-				get
-				{
-					return firstRankAlgoDeploymentId;
-				}
-				set	
-				{
-					firstRankAlgoDeploymentId = value;
-				}
-			}
-
-			public int? SecondRankAlgoDeploymentId
-			{
-				get
-				{
-					return secondRankAlgoDeploymentId;
-				}
-				set	
-				{
-					secondRankAlgoDeploymentId = value;
-				}
-			}
-
-			public int? PendingSecondRankAlgoDeploymentId
-			{
-				get
-				{
-					return pendingSecondRankAlgoDeploymentId;
-				}
-				set	
-				{
-					pendingSecondRankAlgoDeploymentId = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public int? Produced
-			{
-				get
-				{
-					return produced;
-				}
-				set	
-				{
-					produced = value;
-				}
-			}
-
-			public int? LockedByExpiration
-			{
-				get
-				{
-					return lockedByExpiration;
-				}
-				set	
-				{
-					lockedByExpiration = value;
-				}
-			}
-
-			public int? HasPendingQuotaReviewTask
-			{
-				get
-				{
-					return hasPendingQuotaReviewTask;
-				}
-				set	
-				{
-					hasPendingQuotaReviewTask = value;
-				}
-			}
-
-			public int? Created
-			{
-				get
-				{
-					return created;
-				}
-				set	
-				{
-					created = value;
-				}
-			}
-
-			public int? Updated
-			{
-				get
-				{
-					return updated;
-				}
-				set	
-				{
-					updated = value;
+					lockMode = value;
 				}
 			}
 
@@ -370,15 +190,195 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
-			public string LockMode
+			public int? Updated
 			{
 				get
 				{
-					return lockMode;
+					return updated;
 				}
 				set	
 				{
-					lockMode = value;
+					updated = value;
+				}
+			}
+
+			public string ChargeType
+			{
+				get
+				{
+					return chargeType;
+				}
+				set	
+				{
+					chargeType = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public int? HasPendingQuotaReviewTask
+			{
+				get
+				{
+					return hasPendingQuotaReviewTask;
+				}
+				set	
+				{
+					hasPendingQuotaReviewTask = value;
+				}
+			}
+
+			public string ProjectId
+			{
+				get
+				{
+					return projectId;
+				}
+				set	
+				{
+					projectId = value;
+				}
+			}
+
+			public int? SecondRankAlgoDeploymentId
+			{
+				get
+				{
+					return secondRankAlgoDeploymentId;
+				}
+				set	
+				{
+					secondRankAlgoDeploymentId = value;
+				}
+			}
+
+			public string CommodityCode
+			{
+				get
+				{
+					return commodityCode;
+				}
+				set	
+				{
+					commodityCode = value;
+				}
+			}
+
+			public int? SwitchedTime
+			{
+				get
+				{
+					return switchedTime;
+				}
+				set	
+				{
+					switchedTime = value;
+				}
+			}
+
+			public string ExpireOn
+			{
+				get
+				{
+					return expireOn;
+				}
+				set	
+				{
+					expireOn = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public int? FirstRankAlgoDeploymentId
+			{
+				get
+				{
+					return firstRankAlgoDeploymentId;
+				}
+				set	
+				{
+					firstRankAlgoDeploymentId = value;
+				}
+			}
+
+			public int? LockedByExpiration
+			{
+				get
+				{
+					return lockedByExpiration;
+				}
+				set	
+				{
+					lockedByExpiration = value;
+				}
+			}
+
+			public int? Produced
+			{
+				get
+				{
+					return produced;
+				}
+				set	
+				{
+					produced = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string ProcessingOrderId
+			{
+				get
+				{
+					return processingOrderId;
+				}
+				set	
+				{
+					processingOrderId = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
 				}
 			}
 
@@ -409,11 +409,23 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 			public class ReplaceAppGroupCommodityCode_Quota
 			{
 
+				private string spec;
+
 				private int? docSize;
 
 				private int? computeResource;
 
-				private string spec;
+				public string Spec
+				{
+					get
+					{
+						return spec;
+					}
+					set	
+					{
+						spec = value;
+					}
+				}
 
 				public int? DocSize
 				{
@@ -436,18 +448,6 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 					set	
 					{
 						computeResource = value;
-					}
-				}
-
-				public string Spec
-				{
-					get
-					{
-						return spec;
-					}
-					set	
-					{
-						spec = value;
 					}
 				}
 			}

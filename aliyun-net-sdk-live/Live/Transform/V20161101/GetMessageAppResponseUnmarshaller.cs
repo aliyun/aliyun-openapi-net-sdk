@@ -35,6 +35,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 
 			GetMessageAppResponse.GetMessageApp_Result result = new GetMessageAppResponse.GetMessageApp_Result();
 			result.AppId = _ctx.StringValue("GetMessageApp.Result.AppId");
+			result.AppName = _ctx.StringValue("GetMessageApp.Result.AppName");
 			result.CreateTime = _ctx.LongValue("GetMessageApp.Result.CreateTime");
 			result.Status = _ctx.IntegerValue("GetMessageApp.Result.Status");
 			result.AppConfig = _ctx.StringValue("GetMessageApp.Result.AppConfig");

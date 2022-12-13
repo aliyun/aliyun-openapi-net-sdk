@@ -70,13 +70,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string characterSetName;
 
+			private string collate;
+
+			private string ctype;
+
+			private string connLimit;
+
+			private string tablespace;
+
+			private string resourceGroupId;
+
 			private int? pageNumber;
 
 			private int? pageSize;
 
 			private int? totalCount;
-
-			private string resourceGroupId;
 
 			private List<DescribeDatabases_AccountPrivilegeInfo> accounts;
 
@@ -158,6 +166,71 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Collate")]
+			public string Collate
+			{
+				get
+				{
+					return collate;
+				}
+				set	
+				{
+					collate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Ctype")]
+			public string Ctype
+			{
+				get
+				{
+					return ctype;
+				}
+				set	
+				{
+					ctype = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ConnLimit")]
+			public string ConnLimit
+			{
+				get
+				{
+					return connLimit;
+				}
+				set	
+				{
+					connLimit = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Tablespace")]
+			public string Tablespace
+			{
+				get
+				{
+					return tablespace;
+				}
+				set	
+				{
+					tablespace = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ResourceGroupId")]
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "PageNumber")]
 			public int? PageNumber
 			{
@@ -194,19 +267,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					totalCount = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "ResourceGroupId")]
-			public string ResourceGroupId
-			{
-				get
-				{
-					return resourceGroupId;
-				}
-				set	
-				{
-					resourceGroupId = value;
 				}
 			}
 

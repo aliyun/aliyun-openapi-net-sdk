@@ -34,13 +34,13 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			createABTestExperimentResponse.RequestId = _ctx.StringValue("CreateABTestExperiment.requestId");
 
 			CreateABTestExperimentResponse.CreateABTestExperiment_Result result = new CreateABTestExperimentResponse.CreateABTestExperiment_Result();
-			result.Id = _ctx.StringValue("CreateABTestExperiment.Result.id");
-			result.Name = _ctx.StringValue("CreateABTestExperiment.Result.name");
-			result._Params = _ctx.StringValue("CreateABTestExperiment.Result.params");
 			result.Created = _ctx.IntegerValue("CreateABTestExperiment.Result.created");
-			result.Updated = _ctx.IntegerValue("CreateABTestExperiment.Result.updated");
-			result.Online = _ctx.BooleanValue("CreateABTestExperiment.Result.online");
+			result._Params = _ctx.StringValue("CreateABTestExperiment.Result.params");
 			result.Traffic = _ctx.IntegerValue("CreateABTestExperiment.Result.traffic");
+			result.Online = _ctx.BooleanValue("CreateABTestExperiment.Result.online");
+			result.Name = _ctx.StringValue("CreateABTestExperiment.Result.name");
+			result.Updated = _ctx.IntegerValue("CreateABTestExperiment.Result.updated");
+			result.Id = _ctx.StringValue("CreateABTestExperiment.Result.id");
 			createABTestExperimentResponse.Result = result;
         
 			return createABTestExperimentResponse;

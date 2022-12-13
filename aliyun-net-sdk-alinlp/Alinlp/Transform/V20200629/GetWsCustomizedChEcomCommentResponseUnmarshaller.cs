@@ -31,8 +31,8 @@ namespace Aliyun.Acs.alinlp.Transform.V20200629
 			GetWsCustomizedChEcomCommentResponse getWsCustomizedChEcomCommentResponse = new GetWsCustomizedChEcomCommentResponse();
 
 			getWsCustomizedChEcomCommentResponse.HttpResponse = _ctx.HttpResponse;
-			getWsCustomizedChEcomCommentResponse.Data = _ctx.StringValue("GetWsCustomizedChEcomComment.Data");
 			getWsCustomizedChEcomCommentResponse.RequestId = _ctx.StringValue("GetWsCustomizedChEcomComment.RequestId");
+			getWsCustomizedChEcomCommentResponse.Data = _ctx.StringValue("GetWsCustomizedChEcomComment.Data");
         
 			return getWsCustomizedChEcomCommentResponse;
         }

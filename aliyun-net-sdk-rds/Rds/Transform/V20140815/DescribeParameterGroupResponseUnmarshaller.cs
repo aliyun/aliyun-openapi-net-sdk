@@ -60,6 +60,16 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				describeParameterGroupResponse_paramGroup.Add(parameterGroup);
 			}
 			describeParameterGroupResponse.ParamGroup = describeParameterGroupResponse_paramGroup;
+
+			List<DescribeParameterGroupResponse.DescribeParameterGroup_RelatedCustinsInfoItem> describeParameterGroupResponse_relatedCustinsInfo = new List<DescribeParameterGroupResponse.DescribeParameterGroup_RelatedCustinsInfoItem>();
+			for (int i = 0; i < _ctx.Length("DescribeParameterGroup.RelatedCustinsInfo.Length"); i++) {
+				DescribeParameterGroupResponse.DescribeParameterGroup_RelatedCustinsInfoItem relatedCustinsInfoItem = new DescribeParameterGroupResponse.DescribeParameterGroup_RelatedCustinsInfoItem();
+				relatedCustinsInfoItem.DBInstanceName = _ctx.StringValue("DescribeParameterGroup.RelatedCustinsInfo["+ i +"].DBInstanceName");
+				relatedCustinsInfoItem.AppliedTime = _ctx.StringValue("DescribeParameterGroup.RelatedCustinsInfo["+ i +"].AppliedTime");
+
+				describeParameterGroupResponse_relatedCustinsInfo.Add(relatedCustinsInfoItem);
+			}
+			describeParameterGroupResponse.RelatedCustinsInfo = describeParameterGroupResponse_relatedCustinsInfo;
         
 			return describeParameterGroupResponse;
         }

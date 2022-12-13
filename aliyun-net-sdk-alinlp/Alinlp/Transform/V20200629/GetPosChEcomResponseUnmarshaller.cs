@@ -31,8 +31,8 @@ namespace Aliyun.Acs.alinlp.Transform.V20200629
 			GetPosChEcomResponse getPosChEcomResponse = new GetPosChEcomResponse();
 
 			getPosChEcomResponse.HttpResponse = _ctx.HttpResponse;
-			getPosChEcomResponse.Data = _ctx.StringValue("GetPosChEcom.Data");
 			getPosChEcomResponse.RequestId = _ctx.StringValue("GetPosChEcom.RequestId");
+			getPosChEcomResponse.Data = _ctx.StringValue("GetPosChEcom.Data");
         
 			return getPosChEcomResponse;
         }

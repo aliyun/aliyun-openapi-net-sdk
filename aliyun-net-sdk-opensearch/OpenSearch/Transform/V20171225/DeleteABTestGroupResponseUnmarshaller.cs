@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			DeleteABTestGroupResponse deleteABTestGroupResponse = new DeleteABTestGroupResponse();
 
 			deleteABTestGroupResponse.HttpResponse = _ctx.HttpResponse;
-			deleteABTestGroupResponse.RequestId = _ctx.StringValue("DeleteABTestGroup.requestId");
 			deleteABTestGroupResponse.Result = _ctx.StringValue("DeleteABTestGroup.result");
+			deleteABTestGroupResponse.RequestId = _ctx.StringValue("DeleteABTestGroup.requestId");
         
 			return deleteABTestGroupResponse;
         }

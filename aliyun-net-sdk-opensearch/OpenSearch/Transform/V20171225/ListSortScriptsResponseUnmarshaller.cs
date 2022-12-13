@@ -36,12 +36,12 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			List<ListSortScriptsResponse.ListSortScripts_ScriptInfo> listSortScriptsResponse_result = new List<ListSortScriptsResponse.ListSortScripts_ScriptInfo>();
 			for (int i = 0; i < _ctx.Length("ListSortScripts.Result.Length"); i++) {
 				ListSortScriptsResponse.ListSortScripts_ScriptInfo scriptInfo = new ListSortScriptsResponse.ListSortScripts_ScriptInfo();
-				scriptInfo.ScriptName = _ctx.StringValue("ListSortScripts.Result["+ i +"].scriptName");
 				scriptInfo.Type = _ctx.StringValue("ListSortScripts.Result["+ i +"].type");
 				scriptInfo.Scope = _ctx.StringValue("ListSortScripts.Result["+ i +"].scope");
-				scriptInfo.Status = _ctx.StringValue("ListSortScripts.Result["+ i +"].status");
 				scriptInfo.CreateTime = _ctx.StringValue("ListSortScripts.Result["+ i +"].createTime");
+				scriptInfo.Status = _ctx.StringValue("ListSortScripts.Result["+ i +"].status");
 				scriptInfo.ModifyTime = _ctx.StringValue("ListSortScripts.Result["+ i +"].modifyTime");
+				scriptInfo.ScriptName = _ctx.StringValue("ListSortScripts.Result["+ i +"].scriptName");
 
 				listSortScriptsResponse_result.Add(scriptInfo);
 			}

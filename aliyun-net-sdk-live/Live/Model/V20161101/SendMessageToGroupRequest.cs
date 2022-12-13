@@ -43,9 +43,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string data;
 
-		private string groupId;
-
 		private int? type;
+
+		private string operatorUserId;
+
+		private string groupId;
 
 		private string appId;
 
@@ -63,20 +65,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "GroupId")]
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(BodyParameters, "GroupId", value);
-			}
-		}
-
 		[JsonProperty(PropertyName = "Type")]
 		public int? Type
 		{
@@ -88,6 +76,34 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				type = value;
 				DictionaryUtil.Add(BodyParameters, "Type", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "OperatorUserId")]
+		public string OperatorUserId
+		{
+			get
+			{
+				return operatorUserId;
+			}
+			set	
+			{
+				operatorUserId = value;
+				DictionaryUtil.Add(BodyParameters, "OperatorUserId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "GroupId")]
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(BodyParameters, "GroupId", value);
 			}
 		}
 

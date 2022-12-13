@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.OpenSearch;
 using Aliyun.Acs.OpenSearch.Transform;
 using Aliyun.Acs.OpenSearch.Transform.V20171225;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
     public class DeleteModelRequest : RoaAcsRequest<DeleteModelResponse>
     {
         public DeleteModelRequest()
-            : base("OpenSearch", "2017-12-25", "DeleteModel", "opensearch", "openAPI")
+            : base("OpenSearch", "2017-12-25", "DeleteModel")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

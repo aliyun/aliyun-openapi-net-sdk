@@ -218,9 +218,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string kindCode;
 
+			private string instructionSetArch;
+
 			private List<DescribeDBInstanceAttribute_SlaveZone> slaveZones;
 
 			private List<DescribeDBInstanceAttribute_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
+
+			private List<DescribeDBInstanceAttribute_DBClusterNode> dBClusterNodes;
 
 			private DescribeDBInstanceAttribute_Extra extra;
 
@@ -1268,6 +1272,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "InstructionSetArch")]
+			public string InstructionSetArch
+			{
+				get
+				{
+					return instructionSetArch;
+				}
+				set	
+				{
+					instructionSetArch = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "SlaveZones")]
 			public List<DescribeDBInstanceAttribute_SlaveZone> SlaveZones
 			{
@@ -1291,6 +1308,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					readOnlyDBInstanceIds = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBClusterNodes")]
+			public List<DescribeDBInstanceAttribute_DBClusterNode> DBClusterNodes
+			{
+				get
+				{
+					return dBClusterNodes;
+				}
+				set	
+				{
+					dBClusterNodes = value;
 				}
 			}
 
@@ -1367,6 +1397,85 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					set	
 					{
 						dBInstanceId = value;
+					}
+				}
+			}
+
+			public class DescribeDBInstanceAttribute_DBClusterNode
+			{
+
+				private string nodeRegionId;
+
+				private string nodeZoneId;
+
+				private string nodeId;
+
+				private string nodeRole;
+
+				private string classCode;
+
+				[JsonProperty(PropertyName = "NodeRegionId")]
+				public string NodeRegionId
+				{
+					get
+					{
+						return nodeRegionId;
+					}
+					set	
+					{
+						nodeRegionId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "NodeZoneId")]
+				public string NodeZoneId
+				{
+					get
+					{
+						return nodeZoneId;
+					}
+					set	
+					{
+						nodeZoneId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "NodeId")]
+				public string NodeId
+				{
+					get
+					{
+						return nodeId;
+					}
+					set	
+					{
+						nodeId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "NodeRole")]
+				public string NodeRole
+				{
+					get
+					{
+						return nodeRole;
+					}
+					set	
+					{
+						nodeRole = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "ClassCode")]
+				public string ClassCode
+				{
+					get
+					{
+						return classCode;
+					}
+					set	
+					{
+						classCode = value;
 					}
 				}
 			}

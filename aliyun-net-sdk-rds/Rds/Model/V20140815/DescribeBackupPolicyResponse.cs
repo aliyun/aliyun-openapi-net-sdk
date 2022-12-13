@@ -75,6 +75,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string backupLog;
 
+		private bool? enableIncrementDataBackup;
+
 		private DescribeBackupPolicy_DuplicationLocation duplicationLocation;
 
 		[JsonProperty(PropertyName = "LogBackupRetentionPeriod")]
@@ -399,6 +401,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				backupLog = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "EnableIncrementDataBackup")]
+		public bool? EnableIncrementDataBackup
+		{
+			get
+			{
+				return enableIncrementDataBackup;
+			}
+			set	
+			{
+				enableIncrementDataBackup = value;
 			}
 		}
 

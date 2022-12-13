@@ -146,6 +146,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 			private string packageType;
 
+			private string packageRuntimeCustomBuild;
+
 			private string preStop;
 
 			private string packageVersion;
@@ -230,11 +232,25 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 			private string acrAssumeRoleArn;
 
+			private string imagePullSecrets;
+
+			private bool? enableImageAccl;
+
 			private bool? associateEip;
 
 			private string kafkaConfigs;
 
 			private string programmingLanguage;
+
+			private string pvtzDiscovery;
+
+			private string microRegistration;
+
+			private string nasConfigs;
+
+			private string python;
+
+			private string pythonModules;
 
 			private List<DescribeApplicationConfig_ConfigMapMountDescItem> configMapMountDesc;
 
@@ -361,6 +377,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					packageType = value;
+				}
+			}
+
+			public string PackageRuntimeCustomBuild
+			{
+				get
+				{
+					return packageRuntimeCustomBuild;
+				}
+				set	
+				{
+					packageRuntimeCustomBuild = value;
 				}
 			}
 
@@ -868,6 +896,30 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
+			public string ImagePullSecrets
+			{
+				get
+				{
+					return imagePullSecrets;
+				}
+				set	
+				{
+					imagePullSecrets = value;
+				}
+			}
+
+			public bool? EnableImageAccl
+			{
+				get
+				{
+					return enableImageAccl;
+				}
+				set	
+				{
+					enableImageAccl = value;
+				}
+			}
+
 			public bool? AssociateEip
 			{
 				get
@@ -901,6 +953,66 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					programmingLanguage = value;
+				}
+			}
+
+			public string PvtzDiscovery
+			{
+				get
+				{
+					return pvtzDiscovery;
+				}
+				set	
+				{
+					pvtzDiscovery = value;
+				}
+			}
+
+			public string MicroRegistration
+			{
+				get
+				{
+					return microRegistration;
+				}
+				set	
+				{
+					microRegistration = value;
+				}
+			}
+
+			public string NasConfigs
+			{
+				get
+				{
+					return nasConfigs;
+				}
+				set	
+				{
+					nasConfigs = value;
+				}
+			}
+
+			public string Python
+			{
+				get
+				{
+					return python;
+				}
+				set	
+				{
+					python = value;
+				}
+			}
+
+			public string PythonModules
+			{
+				get
+				{
+					return pythonModules;
+				}
+				set	
+				{
+					pythonModules = value;
 				}
 			}
 

@@ -89,6 +89,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string maxIOMBPS;
 
+			private string encryptedMemory;
+
+			private string instructionSetArch;
+
 			[JsonProperty(PropertyName = "MaxIOPS")]
 			public string MaxIOPS
 			{
@@ -190,6 +194,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					maxIOMBPS = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EncryptedMemory")]
+			public string EncryptedMemory
+			{
+				get
+				{
+					return encryptedMemory;
+				}
+				set	
+				{
+					encryptedMemory = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstructionSetArch")]
+			public string InstructionSetArch
+			{
+				get
+				{
+					return instructionSetArch;
+				}
+				set	
+				{
+					instructionSetArch = value;
 				}
 			}
 		}

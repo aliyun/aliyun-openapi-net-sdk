@@ -35,6 +35,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			describeVodDomainSrcTrafficDataResponse.StartTime = _ctx.StringValue("DescribeVodDomainSrcTrafficData.StartTime");
 			describeVodDomainSrcTrafficDataResponse.RequestId = _ctx.StringValue("DescribeVodDomainSrcTrafficData.RequestId");
 			describeVodDomainSrcTrafficDataResponse.DomainName = _ctx.StringValue("DescribeVodDomainSrcTrafficData.DomainName");
+			describeVodDomainSrcTrafficDataResponse.TotalTraffic = _ctx.StringValue("DescribeVodDomainSrcTrafficData.TotalTraffic");
 			describeVodDomainSrcTrafficDataResponse.DataInterval = _ctx.StringValue("DescribeVodDomainSrcTrafficData.DataInterval");
 
 			List<DescribeVodDomainSrcTrafficDataResponse.DescribeVodDomainSrcTrafficData_DataModule> describeVodDomainSrcTrafficDataResponse_srcTrafficDataPerInterval = new List<DescribeVodDomainSrcTrafficDataResponse.DescribeVodDomainSrcTrafficData_DataModule>();

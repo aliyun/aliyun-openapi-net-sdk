@@ -31,21 +31,21 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			ListDataCollectionsResponse listDataCollectionsResponse = new ListDataCollectionsResponse();
 
 			listDataCollectionsResponse.HttpResponse = _ctx.HttpResponse;
-			listDataCollectionsResponse.RequestId = _ctx.StringValue("ListDataCollections.requestId");
 			listDataCollectionsResponse.TotalCount = _ctx.IntegerValue("ListDataCollections.totalCount");
+			listDataCollectionsResponse.RequestId = _ctx.StringValue("ListDataCollections.requestId");
 
 			List<ListDataCollectionsResponse.ListDataCollections_ResultItem> listDataCollectionsResponse_result = new List<ListDataCollectionsResponse.ListDataCollections_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListDataCollections.Result.Length"); i++) {
 				ListDataCollectionsResponse.ListDataCollections_ResultItem resultItem = new ListDataCollectionsResponse.ListDataCollections_ResultItem();
-				resultItem.Id = _ctx.StringValue("ListDataCollections.Result["+ i +"].id");
-				resultItem.Name = _ctx.StringValue("ListDataCollections.Result["+ i +"].name");
-				resultItem.Type = _ctx.StringValue("ListDataCollections.Result["+ i +"].type");
-				resultItem.Status = _ctx.IntegerValue("ListDataCollections.Result["+ i +"].status");
-				resultItem.DataCollectionType = _ctx.StringValue("ListDataCollections.Result["+ i +"].dataCollectionType");
-				resultItem.IndustryName = _ctx.StringValue("ListDataCollections.Result["+ i +"].industryName");
 				resultItem.Created = _ctx.IntegerValue("ListDataCollections.Result["+ i +"].created");
+				resultItem.DataCollectionType = _ctx.StringValue("ListDataCollections.Result["+ i +"].dataCollectionType");
+				resultItem.Type = _ctx.StringValue("ListDataCollections.Result["+ i +"].type");
+				resultItem.IndustryName = _ctx.StringValue("ListDataCollections.Result["+ i +"].industryName");
+				resultItem.Status = _ctx.IntegerValue("ListDataCollections.Result["+ i +"].status");
 				resultItem.Updated = _ctx.IntegerValue("ListDataCollections.Result["+ i +"].updated");
+				resultItem.Name = _ctx.StringValue("ListDataCollections.Result["+ i +"].name");
 				resultItem.SundialId = _ctx.StringValue("ListDataCollections.Result["+ i +"].sundialId");
+				resultItem.Id = _ctx.StringValue("ListDataCollections.Result["+ i +"].id");
 
 				listDataCollectionsResponse_result.Add(resultItem);
 			}

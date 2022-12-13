@@ -51,6 +51,17 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 			tenant.Collation = _ctx.StringValue("DescribeTenant.Tenant.Collation");
 			tenant.PrimaryZoneDeployType = _ctx.StringValue("DescribeTenant.Tenant.PrimaryZoneDeployType");
 			tenant.MasterIntranetAddressZone = _ctx.StringValue("DescribeTenant.Tenant.MasterIntranetAddressZone");
+			tenant.PayType = _ctx.StringValue("DescribeTenant.Tenant.PayType");
+			tenant.InstanceType = _ctx.StringValue("DescribeTenant.Tenant.InstanceType");
+			tenant.Series = _ctx.StringValue("DescribeTenant.Tenant.Series");
+			tenant.DiskType = _ctx.StringValue("DescribeTenant.Tenant.DiskType");
+			tenant.EnableReadWriteSplit = _ctx.BooleanValue("DescribeTenant.Tenant.EnableReadWriteSplit");
+
+			List<string> tenant_availableZones = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeTenant.Tenant.AvailableZones.Length"); i++) {
+				tenant_availableZones.Add(_ctx.StringValue("DescribeTenant.Tenant.AvailableZones["+ i +"]"));
+			}
+			tenant.AvailableZones = tenant_availableZones;
 
 			DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_TenantResource tenantResource = new DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_TenantResource();
 			tenantResource.UnitNum = _ctx.IntegerValue("DescribeTenant.Tenant.TenantResource.UnitNum");
@@ -86,6 +97,8 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 				tenantConnectionsItem.IntranetAddressSlaveZoneId = _ctx.StringValue("DescribeTenant.Tenant.TenantConnections["+ i +"].IntranetAddressSlaveZoneId");
 				tenantConnectionsItem.IntranetAddressStatus = _ctx.StringValue("DescribeTenant.Tenant.TenantConnections["+ i +"].IntranetAddressStatus");
 				tenantConnectionsItem.InternetAddressStatus = _ctx.StringValue("DescribeTenant.Tenant.TenantConnections["+ i +"].InternetAddressStatus");
+				tenantConnectionsItem.TransactionSplit = _ctx.BooleanValue("DescribeTenant.Tenant.TenantConnections["+ i +"].TransactionSplit");
+				tenantConnectionsItem.AddressType = _ctx.StringValue("DescribeTenant.Tenant.TenantConnections["+ i +"].AddressType");
 
 				List<string> tenantConnectionsItem_connectionZones = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeTenant.Tenant.TenantConnections["+ i +"].ConnectionZones.Length"); j++) {

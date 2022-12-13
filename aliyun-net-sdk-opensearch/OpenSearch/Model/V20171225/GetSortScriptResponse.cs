@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OpenSearch.Model.V20171225
@@ -56,27 +56,15 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 		public class GetSortScript_Result
 		{
 
-			private string type;
-
 			private string scope;
-
-			private string status;
 
 			private string createTime;
 
+			private string status;
+
 			private string modifyTime;
 
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
+			private string type;
 
 			public string Scope
 			{
@@ -87,18 +75,6 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				set	
 				{
 					scope = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
 				}
 			}
 
@@ -114,6 +90,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
 			public string ModifyTime
 			{
 				get
@@ -123,6 +111,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				set	
 				{
 					modifyTime = value;
+				}
+			}
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
 				}
 			}
 		}

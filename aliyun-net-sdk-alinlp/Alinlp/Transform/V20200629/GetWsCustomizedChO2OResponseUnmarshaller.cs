@@ -31,8 +31,8 @@ namespace Aliyun.Acs.alinlp.Transform.V20200629
 			GetWsCustomizedChO2OResponse getWsCustomizedChO2OResponse = new GetWsCustomizedChO2OResponse();
 
 			getWsCustomizedChO2OResponse.HttpResponse = _ctx.HttpResponse;
-			getWsCustomizedChO2OResponse.Data = _ctx.StringValue("GetWsCustomizedChO2O.Data");
 			getWsCustomizedChO2OResponse.RequestId = _ctx.StringValue("GetWsCustomizedChO2O.RequestId");
+			getWsCustomizedChO2OResponse.Data = _ctx.StringValue("GetWsCustomizedChO2O.Data");
         
 			return getWsCustomizedChO2OResponse;
         }

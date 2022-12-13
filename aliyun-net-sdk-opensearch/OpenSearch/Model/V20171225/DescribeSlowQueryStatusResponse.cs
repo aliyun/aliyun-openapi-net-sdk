@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OpenSearch.Model.V20171225
@@ -58,9 +58,9 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 
 			private string region;
 
-			private string appGroupId;
-
 			private string status;
+
+			private string appGroupId;
 
 			public string Region
 			{
@@ -74,18 +74,6 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
-			public string AppGroupId
-			{
-				get
-				{
-					return appGroupId;
-				}
-				set	
-				{
-					appGroupId = value;
-				}
-			}
-
 			public string Status
 			{
 				get
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public string AppGroupId
+			{
+				get
+				{
+					return appGroupId;
+				}
+				set	
+				{
+					appGroupId = value;
 				}
 			}
 		}

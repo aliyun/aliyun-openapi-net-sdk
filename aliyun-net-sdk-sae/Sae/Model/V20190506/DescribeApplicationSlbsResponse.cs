@@ -134,6 +134,10 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 			private string intranetIp;
 
+			private bool? internetSlbExpired;
+
+			private bool? intranetSlbExpired;
+
 			private List<DescribeApplicationSlbs_IntranetItem> intranet;
 
 			private List<DescribeApplicationSlbs_InternetItem> internet;
@@ -183,6 +187,30 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					intranetIp = value;
+				}
+			}
+
+			public bool? InternetSlbExpired
+			{
+				get
+				{
+					return internetSlbExpired;
+				}
+				set	
+				{
+					internetSlbExpired = value;
+				}
+			}
+
+			public bool? IntranetSlbExpired
+			{
+				get
+				{
+					return intranetSlbExpired;
+				}
+				set	
+				{
+					intranetSlbExpired = value;
 				}
 			}
 

@@ -92,9 +92,21 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 			private string masterIntranetAddressZone;
 
+			private string payType;
+
+			private string instanceType;
+
+			private string series;
+
+			private string diskType;
+
+			private bool? enableReadWriteSplit;
+
 			private List<DescribeTenant_TenantConnectionsItem> tenantConnections;
 
 			private List<DescribeTenant_TenantZonesItem> tenantZones;
+
+			private List<string> availableZones;
 
 			private DescribeTenant_TenantResource tenantResource;
 
@@ -319,6 +331,71 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				}
 			}
 
+			[JsonProperty(PropertyName = "PayType")]
+			public string PayType
+			{
+				get
+				{
+					return payType;
+				}
+				set	
+				{
+					payType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstanceType")]
+			public string InstanceType
+			{
+				get
+				{
+					return instanceType;
+				}
+				set	
+				{
+					instanceType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Series")]
+			public string Series
+			{
+				get
+				{
+					return series;
+				}
+				set	
+				{
+					series = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DiskType")]
+			public string DiskType
+			{
+				get
+				{
+					return diskType;
+				}
+				set	
+				{
+					diskType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EnableReadWriteSplit")]
+			public bool? EnableReadWriteSplit
+			{
+				get
+				{
+					return enableReadWriteSplit;
+				}
+				set	
+				{
+					enableReadWriteSplit = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "TenantConnections")]
 			public List<DescribeTenant_TenantConnectionsItem> TenantConnections
 			{
@@ -342,6 +419,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				set	
 				{
 					tenantZones = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AvailableZones")]
+			public List<string> AvailableZones
+			{
+				get
+				{
+					return availableZones;
+				}
+				set	
+				{
+					availableZones = value;
 				}
 			}
 
@@ -382,6 +472,10 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				private string intranetAddressStatus;
 
 				private string internetAddressStatus;
+
+				private bool? transactionSplit;
+
+				private string addressType;
 
 				private List<string> connectionZones;
 
@@ -525,6 +619,32 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 					set	
 					{
 						internetAddressStatus = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "TransactionSplit")]
+				public bool? TransactionSplit
+				{
+					get
+					{
+						return transactionSplit;
+					}
+					set	
+					{
+						transactionSplit = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "AddressType")]
+				public string AddressType
+				{
+					get
+					{
+						return addressType;
+					}
+					set	
+					{
+						addressType = value;
 					}
 				}
 

@@ -33,6 +33,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 
 		private GetTrainModel_Data data;
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -45,6 +46,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -57,6 +59,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -69,6 +72,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public GetTrainModel_Data Data
 		{
 			get
@@ -86,6 +90,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 
 			private long? simpleEvaluate;
 
+			[JsonProperty(PropertyName = "SimpleEvaluate")]
 			public long? SimpleEvaluate
 			{
 				get

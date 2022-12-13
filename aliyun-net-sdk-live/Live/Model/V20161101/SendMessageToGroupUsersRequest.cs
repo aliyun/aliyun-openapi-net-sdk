@@ -41,13 +41,59 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private List<string> receiverIdList = new List<string>(){ };
+		private string data;
 
-		private string groupIdcopy;
+		private int? type;
+
+		private string operatorUserId;
+
+		private List<string> receiverIdList = new List<string>(){ };
 
 		private string groupId;
 
-		private int? type;
+		private string appId;
+
+		[JsonProperty(PropertyName = "Data")]
+		public string Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+				DictionaryUtil.Add(BodyParameters, "Data", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Type")]
+		public int? Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(BodyParameters, "Type", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "OperatorUserId")]
+		public string OperatorUserId
+		{
+			get
+			{
+				return operatorUserId;
+			}
+			set	
+			{
+				operatorUserId = value;
+				DictionaryUtil.Add(BodyParameters, "OperatorUserId", value);
+			}
+		}
 
 		[JsonProperty(PropertyName = "ReceiverIdList")]
 		public List<string> ReceiverIdList
@@ -70,20 +116,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "GroupId-copy")]
-		public string GroupIdcopy
-		{
-			get
-			{
-				return groupIdcopy;
-			}
-			set	
-			{
-				groupIdcopy = value;
-				DictionaryUtil.Add(BodyParameters, "GroupId-copy", value);
-			}
-		}
-
 		[JsonProperty(PropertyName = "GroupId")]
 		public string GroupId
 		{
@@ -98,17 +130,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "Type")]
-		public int? Type
+		[JsonProperty(PropertyName = "AppId")]
+		public string AppId
 		{
 			get
 			{
-				return type;
+				return appId;
 			}
 			set	
 			{
-				type = value;
-				DictionaryUtil.Add(BodyParameters, "Type", value.ToString());
+				appId = value;
+				DictionaryUtil.Add(BodyParameters, "AppId", value);
 			}
 		}
 

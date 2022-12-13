@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OpenSearch.Model.V20171225
@@ -56,25 +56,25 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 		public class DescribeApp_Result
 		{
 
-			private string id;
+			private int? created;
+
+			private string clusterName;
+
+			private bool? autoSwitch;
+
+			private int? algoDeploymentId;
+
+			private string type;
 
 			private string description;
 
 			private string status;
 
-			private string type;
-
-			private string clusterName;
-
-			private int? algoDeploymentId;
-
-			private int? created;
-
-			private bool? autoSwitch;
+			private string schema;
 
 			private int? progressPercent;
 
-			private string schema;
+			private string id;
 
 			private List<string> fetchFields;
 
@@ -82,15 +82,63 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 
 			private DescribeApp_Domain domain;
 
-			public string Id
+			public int? Created
 			{
 				get
 				{
-					return id;
+					return created;
 				}
 				set	
 				{
-					id = value;
+					created = value;
+				}
+			}
+
+			public string ClusterName
+			{
+				get
+				{
+					return clusterName;
+				}
+				set	
+				{
+					clusterName = value;
+				}
+			}
+
+			public bool? AutoSwitch
+			{
+				get
+				{
+					return autoSwitch;
+				}
+				set	
+				{
+					autoSwitch = value;
+				}
+			}
+
+			public int? AlgoDeploymentId
+			{
+				get
+				{
+					return algoDeploymentId;
+				}
+				set	
+				{
+					algoDeploymentId = value;
+				}
+			}
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
 				}
 			}
 
@@ -118,63 +166,15 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
-			public string Type
+			public string Schema
 			{
 				get
 				{
-					return type;
+					return schema;
 				}
 				set	
 				{
-					type = value;
-				}
-			}
-
-			public string ClusterName
-			{
-				get
-				{
-					return clusterName;
-				}
-				set	
-				{
-					clusterName = value;
-				}
-			}
-
-			public int? AlgoDeploymentId
-			{
-				get
-				{
-					return algoDeploymentId;
-				}
-				set	
-				{
-					algoDeploymentId = value;
-				}
-			}
-
-			public int? Created
-			{
-				get
-				{
-					return created;
-				}
-				set	
-				{
-					created = value;
-				}
-			}
-
-			public bool? AutoSwitch
-			{
-				get
-				{
-					return autoSwitch;
-				}
-				set	
-				{
-					autoSwitch = value;
+					schema = value;
 				}
 			}
 
@@ -190,15 +190,15 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
-			public string Schema
+			public string Id
 			{
 				get
 				{
-					return schema;
+					return id;
 				}
 				set	
 				{
-					schema = value;
+					id = value;
 				}
 			}
 
@@ -241,13 +241,37 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 			public class DescribeApp_Quota
 			{
 
+				private string spec;
+
+				private int? qps;
+
 				private int? docSize;
 
 				private int? computeResource;
 
-				private int? qps;
+				public string Spec
+				{
+					get
+					{
+						return spec;
+					}
+					set	
+					{
+						spec = value;
+					}
+				}
 
-				private string spec;
+				public int? Qps
+				{
+					get
+					{
+						return qps;
+					}
+					set	
+					{
+						qps = value;
+					}
+				}
 
 				public int? DocSize
 				{
@@ -272,52 +296,16 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 						computeResource = value;
 					}
 				}
-
-				public int? Qps
-				{
-					get
-					{
-						return qps;
-					}
-					set	
-					{
-						qps = value;
-					}
-				}
-
-				public string Spec
-				{
-					get
-					{
-						return spec;
-					}
-					set	
-					{
-						spec = value;
-					}
-				}
 			}
 
 			public class DescribeApp_Domain
 			{
 
-				private string name;
-
 				private string category;
 
-				private DescribeApp_Functions functions;
+				private string name;
 
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
+				private DescribeApp_Functions functions;
 
 				public string Category
 				{
@@ -328,6 +316,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 					set	
 					{
 						category = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
 					}
 				}
 
@@ -346,11 +346,23 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				public class DescribeApp_Functions
 				{
 
+					private List<string> service;
+
 					private List<string> qp;
 
 					private List<string> algo;
 
-					private List<string> service;
+					public List<string> Service
+					{
+						get
+						{
+							return service;
+						}
+						set	
+						{
+							service = value;
+						}
+					}
 
 					public List<string> Qp
 					{
@@ -373,18 +385,6 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 						set	
 						{
 							algo = value;
-						}
-					}
-
-					public List<string> Service
-					{
-						get
-						{
-							return service;
-						}
-						set	
-						{
-							service = value;
 						}
 					}
 				}

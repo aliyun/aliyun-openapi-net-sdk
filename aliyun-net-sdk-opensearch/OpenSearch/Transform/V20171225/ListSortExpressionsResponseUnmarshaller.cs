@@ -36,11 +36,11 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			List<ListSortExpressionsResponse.ListSortExpressions_FirstRankItem> listSortExpressionsResponse_result = new List<ListSortExpressionsResponse.ListSortExpressions_FirstRankItem>();
 			for (int i = 0; i < _ctx.Length("ListSortExpressions.Result.Length"); i++) {
 				ListSortExpressionsResponse.ListSortExpressions_FirstRankItem firstRankItem = new ListSortExpressionsResponse.ListSortExpressions_FirstRankItem();
-				firstRankItem.Name = _ctx.StringValue("ListSortExpressions.Result["+ i +"].name");
-				firstRankItem.Description = _ctx.StringValue("ListSortExpressions.Result["+ i +"].description");
-				firstRankItem.Active = _ctx.BooleanValue("ListSortExpressions.Result["+ i +"].active");
 				firstRankItem.Created = _ctx.IntegerValue("ListSortExpressions.Result["+ i +"].created");
+				firstRankItem.Active = _ctx.BooleanValue("ListSortExpressions.Result["+ i +"].active");
+				firstRankItem.Description = _ctx.StringValue("ListSortExpressions.Result["+ i +"].description");
 				firstRankItem.Updated = _ctx.IntegerValue("ListSortExpressions.Result["+ i +"].updated");
+				firstRankItem.Name = _ctx.StringValue("ListSortExpressions.Result["+ i +"].name");
 
 				listSortExpressionsResponse_result.Add(firstRankItem);
 			}

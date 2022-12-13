@@ -36,9 +36,10 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			List<GetScriptFileNamesResponse.GetScriptFileNames_FileInfos> getScriptFileNamesResponse_result = new List<GetScriptFileNamesResponse.GetScriptFileNames_FileInfos>();
 			for (int i = 0; i < _ctx.Length("GetScriptFileNames.Result.Length"); i++) {
 				GetScriptFileNamesResponse.GetScriptFileNames_FileInfos fileInfos = new GetScriptFileNamesResponse.GetScriptFileNames_FileInfos();
-				fileInfos.FileName = _ctx.StringValue("GetScriptFileNames.Result["+ i +"].fileName");
 				fileInfos.CreateTime = _ctx.StringValue("GetScriptFileNames.Result["+ i +"].createTime");
+				fileInfos.FileName = _ctx.StringValue("GetScriptFileNames.Result["+ i +"].fileName");
 				fileInfos.ModifyTime = _ctx.StringValue("GetScriptFileNames.Result["+ i +"].modifyTime");
+				fileInfos.PathName = _ctx.StringValue("GetScriptFileNames.Result["+ i +"].pathName");
 
 				getScriptFileNamesResponse_result.Add(fileInfos);
 			}

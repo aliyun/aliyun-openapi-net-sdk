@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -54,6 +55,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 
 		private string category;
 
+		[JsonProperty(PropertyName = "StartTime")]
 		public long? StartTime
 		{
 			get
@@ -67,6 +69,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "ImageName")]
 		public string ImageName
 		{
 			get
@@ -80,6 +83,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
 		public long? PageSize
 		{
 			get
@@ -93,6 +97,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "EndTime")]
 		public long? EndTime
 		{
 			get
@@ -106,6 +111,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "CurrentPage")]
 		public long? CurrentPage
 		{
 			get
@@ -119,6 +125,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "ServiceId")]
 		public long? ServiceId
 		{
 			get
@@ -132,6 +139,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "Category")]
 		public string Category
 		{
 			get

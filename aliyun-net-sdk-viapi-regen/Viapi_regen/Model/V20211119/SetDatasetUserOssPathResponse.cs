@@ -33,6 +33,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 
 		private SetDatasetUserOssPath_Data data;
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -45,6 +46,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -57,6 +59,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -69,6 +72,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public SetDatasetUserOssPath_Data Data
 		{
 			get
@@ -88,6 +92,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 
 			private string ossUrl;
 
+			[JsonProperty(PropertyName = "Id")]
 			public long? Id
 			{
 				get
@@ -100,6 +105,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "OssUrl")]
 			public string OssUrl
 			{
 				get

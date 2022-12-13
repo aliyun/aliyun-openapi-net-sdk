@@ -31,28 +31,28 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			ListQuotaReviewTasksResponse listQuotaReviewTasksResponse = new ListQuotaReviewTasksResponse();
 
 			listQuotaReviewTasksResponse.HttpResponse = _ctx.HttpResponse;
-			listQuotaReviewTasksResponse.RequestId = _ctx.StringValue("ListQuotaReviewTasks.requestId");
 			listQuotaReviewTasksResponse.TotalCount = _ctx.IntegerValue("ListQuotaReviewTasks.totalCount");
+			listQuotaReviewTasksResponse.RequestId = _ctx.StringValue("ListQuotaReviewTasks.requestId");
 
 			List<ListQuotaReviewTasksResponse.ListQuotaReviewTasks_ResultItem> listQuotaReviewTasksResponse_result = new List<ListQuotaReviewTasksResponse.ListQuotaReviewTasks_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListQuotaReviewTasks.Result.Length"); i++) {
 				ListQuotaReviewTasksResponse.ListQuotaReviewTasks_ResultItem resultItem = new ListQuotaReviewTasksResponse.ListQuotaReviewTasks_ResultItem();
-				resultItem.Id = _ctx.IntegerValue("ListQuotaReviewTasks.Result["+ i +"].id");
-				resultItem.AppGroupId = _ctx.IntegerValue("ListQuotaReviewTasks.Result["+ i +"].appGroupId");
-				resultItem.AppGroupName = _ctx.StringValue("ListQuotaReviewTasks.Result["+ i +"].appGroupName");
-				resultItem.AppGroupType = _ctx.StringValue("ListQuotaReviewTasks.Result["+ i +"].appGroupType");
+				resultItem.OldDocSize = _ctx.IntegerValue("ListQuotaReviewTasks.Result["+ i +"].oldDocSize");
+				resultItem.Pending = _ctx.BooleanValue("ListQuotaReviewTasks.Result["+ i +"].pending");
+				resultItem.Memo = _ctx.StringValue("ListQuotaReviewTasks.Result["+ i +"].memo");
+				resultItem.Approved = _ctx.BooleanValue("ListQuotaReviewTasks.Result["+ i +"].approved");
 				resultItem.OldSpec = _ctx.StringValue("ListQuotaReviewTasks.Result["+ i +"].oldSpec");
 				resultItem.OldComputeResource = _ctx.IntegerValue("ListQuotaReviewTasks.Result["+ i +"].oldComputeResource");
-				resultItem.OldDocSize = _ctx.IntegerValue("ListQuotaReviewTasks.Result["+ i +"].oldDocSize");
-				resultItem.NewSpec = _ctx.StringValue("ListQuotaReviewTasks.Result["+ i +"].newSpec");
-				resultItem.NewComputeResource = _ctx.IntegerValue("ListQuotaReviewTasks.Result["+ i +"].newComputeResource");
-				resultItem.NewSocSize = _ctx.IntegerValue("ListQuotaReviewTasks.Result["+ i +"].newSocSize");
-				resultItem.Memo = _ctx.StringValue("ListQuotaReviewTasks.Result["+ i +"].memo");
+				resultItem.AppGroupType = _ctx.StringValue("ListQuotaReviewTasks.Result["+ i +"].appGroupType");
 				resultItem.Available = _ctx.BooleanValue("ListQuotaReviewTasks.Result["+ i +"].available");
-				resultItem.Pending = _ctx.BooleanValue("ListQuotaReviewTasks.Result["+ i +"].pending");
-				resultItem.Approved = _ctx.BooleanValue("ListQuotaReviewTasks.Result["+ i +"].approved");
 				resultItem.GmtCreate = _ctx.StringValue("ListQuotaReviewTasks.Result["+ i +"].gmtCreate");
+				resultItem.NewSocSize = _ctx.IntegerValue("ListQuotaReviewTasks.Result["+ i +"].newSocSize");
+				resultItem.Id = _ctx.IntegerValue("ListQuotaReviewTasks.Result["+ i +"].id");
+				resultItem.AppGroupId = _ctx.IntegerValue("ListQuotaReviewTasks.Result["+ i +"].appGroupId");
+				resultItem.NewComputeResource = _ctx.IntegerValue("ListQuotaReviewTasks.Result["+ i +"].newComputeResource");
+				resultItem.AppGroupName = _ctx.StringValue("ListQuotaReviewTasks.Result["+ i +"].appGroupName");
 				resultItem.GmtModified = _ctx.StringValue("ListQuotaReviewTasks.Result["+ i +"].gmtModified");
+				resultItem.NewSpec = _ctx.StringValue("ListQuotaReviewTasks.Result["+ i +"].newSpec");
 
 				listQuotaReviewTasksResponse_result.Add(resultItem);
 			}

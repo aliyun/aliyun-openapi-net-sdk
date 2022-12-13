@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OpenSearch.Model.V20171225
@@ -56,11 +56,23 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 		public class GenerateMergedTable_Result
 		{
 
+			private string primaryKey;
+
 			private string mergeTable;
 
 			private string fromTable;
 
-			private string primaryKey;
+			public string PrimaryKey
+			{
+				get
+				{
+					return primaryKey;
+				}
+				set	
+				{
+					primaryKey = value;
+				}
+			}
 
 			public string MergeTable
 			{
@@ -83,18 +95,6 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				set	
 				{
 					fromTable = value;
-				}
-			}
-
-			public string PrimaryKey
-			{
-				get
-				{
-					return primaryKey;
-				}
-				set	
-				{
-					primaryKey = value;
 				}
 			}
 		}

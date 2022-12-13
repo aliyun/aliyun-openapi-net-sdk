@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OpenSearch.Model.V20171225
@@ -56,23 +56,23 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 		public class ListRamRoles_ResultItem
 		{
 
-			private string name;
+			private string template_id;
 
 			private string service;
 
-			private string template_id;
-
 			private bool? assumed;
 
-			public string Name
+			private string name;
+
+			public string Template_id
 			{
 				get
 				{
-					return name;
+					return template_id;
 				}
 				set	
 				{
-					name = value;
+					template_id = value;
 				}
 			}
 
@@ -88,18 +88,6 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
-			public string Template_id
-			{
-				get
-				{
-					return template_id;
-				}
-				set	
-				{
-					template_id = value;
-				}
-			}
-
 			public bool? Assumed
 			{
 				get
@@ -109,6 +97,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				set	
 				{
 					assumed = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 		}

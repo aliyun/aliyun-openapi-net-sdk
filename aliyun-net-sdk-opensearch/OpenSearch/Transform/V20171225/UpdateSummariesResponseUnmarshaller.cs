@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			UpdateSummariesResponse updateSummariesResponse = new UpdateSummariesResponse();
 
 			updateSummariesResponse.HttpResponse = _ctx.HttpResponse;
-			updateSummariesResponse.RequestId = _ctx.StringValue("UpdateSummaries.requestId");
 			updateSummariesResponse.Result = _ctx.BooleanValue("UpdateSummaries.result");
+			updateSummariesResponse.RequestId = _ctx.StringValue("UpdateSummaries.requestId");
         
 			return updateSummariesResponse;
         }

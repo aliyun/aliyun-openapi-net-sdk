@@ -108,6 +108,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private string groupId;
 
+				private string appId;
+
 				private long? createTime;
 
 				private int? status;
@@ -126,6 +128,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						groupId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "AppId")]
+				public string AppId
+				{
+					get
+					{
+						return appId;
+					}
+					set	
+					{
+						appId = value;
 					}
 				}
 

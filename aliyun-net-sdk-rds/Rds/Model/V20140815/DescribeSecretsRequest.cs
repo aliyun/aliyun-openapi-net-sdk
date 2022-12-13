@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? pageSize;
 
+		private string dbInstanceId;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -126,6 +128,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "DbInstanceId")]
+		public string DbInstanceId
+		{
+			get
+			{
+				return dbInstanceId;
+			}
+			set	
+			{
+				dbInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DbInstanceId", value);
 			}
 		}
 

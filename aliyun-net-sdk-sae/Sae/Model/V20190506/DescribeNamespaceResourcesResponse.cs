@@ -160,6 +160,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 			private string jumpServerAppId;
 
+			private string jumpServerIp;
+
 			public string VpcId
 			{
 				get
@@ -361,6 +363,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					jumpServerAppId = value;
+				}
+			}
+
+			public string JumpServerIp
+			{
+				get
+				{
+					return jumpServerIp;
+				}
+				set	
+				{
+					jumpServerIp = value;
 				}
 			}
 		}

@@ -29,6 +29,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private List<DescribeParameterGroup_ParameterGroup> paramGroup;
 
+		private List<DescribeParameterGroup_RelatedCustinsInfoItem> relatedCustinsInfo;
+
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
@@ -52,6 +54,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				paramGroup = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RelatedCustinsInfo")]
+		public List<DescribeParameterGroup_RelatedCustinsInfoItem> RelatedCustinsInfo
+		{
+			get
+			{
+				return relatedCustinsInfo;
+			}
+			set	
+			{
+				relatedCustinsInfo = value;
 			}
 		}
 
@@ -254,6 +269,40 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					{
 						paramValue = value;
 					}
+				}
+			}
+		}
+
+		public class DescribeParameterGroup_RelatedCustinsInfoItem
+		{
+
+			private string dBInstanceName;
+
+			private string appliedTime;
+
+			[JsonProperty(PropertyName = "DBInstanceName")]
+			public string DBInstanceName
+			{
+				get
+				{
+					return dBInstanceName;
+				}
+				set	
+				{
+					dBInstanceName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AppliedTime")]
+			public string AppliedTime
+			{
+				get
+				{
+					return appliedTime;
+				}
+				set	
+				{
+					appliedTime = value;
 				}
 			}
 		}

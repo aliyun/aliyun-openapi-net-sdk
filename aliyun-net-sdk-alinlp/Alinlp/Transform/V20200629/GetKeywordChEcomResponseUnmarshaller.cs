@@ -31,8 +31,8 @@ namespace Aliyun.Acs.alinlp.Transform.V20200629
 			GetKeywordChEcomResponse getKeywordChEcomResponse = new GetKeywordChEcomResponse();
 
 			getKeywordChEcomResponse.HttpResponse = _ctx.HttpResponse;
-			getKeywordChEcomResponse.Data = _ctx.StringValue("GetKeywordChEcom.Data");
 			getKeywordChEcomResponse.RequestId = _ctx.StringValue("GetKeywordChEcom.RequestId");
+			getKeywordChEcomResponse.Data = _ctx.StringValue("GetKeywordChEcom.Data");
         
 			return getKeywordChEcomResponse;
         }

@@ -33,6 +33,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 
 		private ListDatasetDatas_Data data;
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -45,6 +46,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -57,6 +59,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -69,6 +72,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public ListDatasetDatas_Data Data
 		{
 			get
@@ -94,6 +98,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 
 			private List<Dictionary<string, string>> elements;
 
+			[JsonProperty(PropertyName = "CurrentPage")]
 			public long? CurrentPage
 			{
 				get
@@ -106,6 +111,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "PageSize")]
 			public long? PageSize
 			{
 				get
@@ -118,6 +124,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "TotalPage")]
 			public long? TotalPage
 			{
 				get
@@ -130,6 +137,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "TotalCount")]
 			public long? TotalCount
 			{
 				get
@@ -142,6 +150,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "Elements")]
 			public List<Dictionary<string, string>> Elements
 			{
 				get

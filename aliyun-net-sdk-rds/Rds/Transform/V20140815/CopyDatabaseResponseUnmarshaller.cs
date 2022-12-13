@@ -34,6 +34,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			copyDatabaseResponse.DBName = _ctx.StringValue("CopyDatabase.DBName");
 			copyDatabaseResponse.TaskId = _ctx.StringValue("CopyDatabase.TaskId");
 			copyDatabaseResponse.DBStatus = _ctx.StringValue("CopyDatabase.DBStatus");
+			copyDatabaseResponse.RequestId = _ctx.StringValue("CopyDatabase.RequestId");
         
 			return copyDatabaseResponse;
         }

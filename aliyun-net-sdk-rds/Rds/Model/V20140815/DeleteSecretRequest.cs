@@ -49,6 +49,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string engine;
 
+		private string dbInstanceId;
+
 		private string resourceOwnerAccount;
 
 		private long? ownerId;
@@ -108,6 +110,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				engine = value;
 				DictionaryUtil.Add(QueryParameters, "Engine", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DbInstanceId")]
+		public string DbInstanceId
+		{
+			get
+			{
+				return dbInstanceId;
+			}
+			set	
+			{
+				dbInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DbInstanceId", value);
 			}
 		}
 

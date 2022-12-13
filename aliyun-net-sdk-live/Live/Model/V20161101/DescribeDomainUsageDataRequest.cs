@@ -45,6 +45,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string type;
 
+		private string dataProtocol;
+
 		private string area;
 
 		private string domainName;
@@ -82,6 +84,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				type = value;
 				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DataProtocol")]
+		public string DataProtocol
+		{
+			get
+			{
+				return dataProtocol;
+			}
+			set	
+			{
+				dataProtocol = value;
+				DictionaryUtil.Add(QueryParameters, "DataProtocol", value);
 			}
 		}
 

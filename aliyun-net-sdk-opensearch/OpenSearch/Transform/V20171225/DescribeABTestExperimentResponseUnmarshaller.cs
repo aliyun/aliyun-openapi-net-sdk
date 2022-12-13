@@ -34,12 +34,12 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			describeABTestExperimentResponse.RequestId = _ctx.StringValue("DescribeABTestExperiment.requestId");
 
 			DescribeABTestExperimentResponse.DescribeABTestExperiment_Result result = new DescribeABTestExperimentResponse.DescribeABTestExperiment_Result();
-			result.Id = _ctx.StringValue("DescribeABTestExperiment.Result.id");
-			result.Name = _ctx.StringValue("DescribeABTestExperiment.Result.name");
 			result.Created = _ctx.IntegerValue("DescribeABTestExperiment.Result.created");
-			result.Updated = _ctx.IntegerValue("DescribeABTestExperiment.Result.updated");
-			result.Online = _ctx.BooleanValue("DescribeABTestExperiment.Result.online");
 			result.Traffic = _ctx.IntegerValue("DescribeABTestExperiment.Result.traffic");
+			result.Online = _ctx.BooleanValue("DescribeABTestExperiment.Result.online");
+			result.Name = _ctx.StringValue("DescribeABTestExperiment.Result.name");
+			result.Updated = _ctx.IntegerValue("DescribeABTestExperiment.Result.updated");
+			result.Id = _ctx.StringValue("DescribeABTestExperiment.Result.id");
 
 			DescribeABTestExperimentResponse.DescribeABTestExperiment_Result.DescribeABTestExperiment__Params _params = new DescribeABTestExperimentResponse.DescribeABTestExperiment_Result.DescribeABTestExperiment__Params();
 			_params.First_formula_name = _ctx.StringValue("DescribeABTestExperiment.Result.Params.first_formula_name");

@@ -153,6 +153,8 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 
 				private long? fractureSegment;
 
+				private string fracSOPInstanceUID;
+
 				private List<string> coordinates;
 
 				private List<string> coordinateImage;
@@ -214,6 +216,18 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 					set	
 					{
 						fractureSegment = value;
+					}
+				}
+
+				public string FracSOPInstanceUID
+				{
+					get
+					{
+						return fracSOPInstanceUID;
+					}
+					set	
+					{
+						fracSOPInstanceUID = value;
 					}
 				}
 

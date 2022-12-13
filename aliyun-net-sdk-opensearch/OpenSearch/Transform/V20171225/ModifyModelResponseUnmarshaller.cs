@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			ModifyModelResponse modifyModelResponse = new ModifyModelResponse();
 
 			modifyModelResponse.HttpResponse = _ctx.HttpResponse;
-			modifyModelResponse.RequestId = _ctx.StringValue("ModifyModel.requestId");
 			modifyModelResponse.Result = _ctx.StringValue("ModifyModel.result");
+			modifyModelResponse.RequestId = _ctx.StringValue("ModifyModel.requestId");
         
 			return modifyModelResponse;
         }

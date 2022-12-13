@@ -1,3 +1,83 @@
+2022-12-13 Version: 2.0.0
+- Update api ExecuteServerSideVerification The base64 data format is changed from string byte to string.
+
+2022-12-09 Version: 1.0.4
+- Update SDK.
+
+2022-12-09 Version: 0.0.8
+- Update MakeSuperResolutionImage.
+
+2022-12-08 Version: 3.9.28
+- Add live message mute related interface.
+
+2022-12-08 Version: 1.0.0
+- Release ScreenEC.
+
+2022-12-07 Version: 1.0.1
+- Update Endpoint.
+
+2022-12-05 Version: 2.16.12
+- Add API DescribeVodDomainSrcBpsData.
+- Add API DescribeVodDomainSrcTrafficData.
+
+2022-12-05 Version: 3.9.27
+- Add list live message interface.
+
+2022-12-05 Version: 1.22.5
+- Add support for secret.
+
+2022-12-05 Version: 1.22.4
+- Add support for secret.
+
+2022-12-05 Version: 3.9.26
+- Add list live message interface.
+
+2022-12-04 Version: 3.9.25
+- Support live interaction and message.
+
+2022-12-02 Version: 3.9.24
+- Support live interaction and message.
+
+2022-12-02 Version: 7.47.0
+- Pub Support PayloadFormatIndicator and ContentType.
+
+2022-12-02 Version: 1.6.6
+- Release MergeVideoModelFace.
+
+2022-12-02 Version: 1.0.3
+- Update SDK.
+
+2022-12-01 Version: 7.46.0
+- Storage open Api.
+
+2022-12-01 Version: 0.0.25
+- Release ScreenEC.
+
+2022-12-01 Version: 0.12.1
+- Fixed bugs for GetScriptFileNames result.pathName
+- Fixed bugs for RenewAppGroup result
+
+2022-11-30 Version: 0.0.24
+- Release ScreenEC.
+
+2022-11-30 Version: 1.6.5
+- Release MergeVideoModelFace.
+
+2022-11-29 Version: 1.0.3
+- Generated 2018-05-09 for `Green`.
+
+2022-11-25 Version: 1.0.2
+- Release CustomizeClassifyImage.
+
+2022-11-24 Version: 1.0.0
+- Supported new api for AliNLP version-2.
+
+2022-11-24 Version: 1.0.1
+- Release CustomizeClassifyImage.
+
+2022-11-22 Version: 2.7.2
+- Support More Open Api.
+
 2022-11-22 Version: 1.0.28
 - Update ListTransitRouterMulticastGroups offline parameter ConnectPeerId.
 - Update CreateCenBandwidthPackage offline parameter ServiceType.

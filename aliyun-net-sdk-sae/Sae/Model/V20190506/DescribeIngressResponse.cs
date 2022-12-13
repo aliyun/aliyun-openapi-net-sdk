@@ -138,6 +138,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 			private string certId;
 
+			private string certIds;
+
 			private string name;
 
 			private long? id;
@@ -219,6 +221,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					certId = value;
+				}
+			}
+
+			public string CertIds
+			{
+				get
+				{
+					return certIds;
+				}
+				set	
+				{
+					certIds = value;
 				}
 			}
 
@@ -307,6 +321,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 				private string path;
 
+				private string backendProtocol;
+
 				public string AppName
 				{
 					get
@@ -366,6 +382,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 						path = value;
 					}
 				}
+
+				public string BackendProtocol
+				{
+					get
+					{
+						return backendProtocol;
+					}
+					set	
+					{
+						backendProtocol = value;
+					}
+				}
 			}
 
 			public class DescribeIngress_DefaultRule
@@ -376,6 +404,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				private string appName;
 
 				private string appId;
+
+				private string backendProtocol;
 
 				public int? ContainerPort
 				{
@@ -410,6 +440,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					set	
 					{
 						appId = value;
+					}
+				}
+
+				public string BackendProtocol
+				{
+					get
+					{
+						return backendProtocol;
+					}
+					set	
+					{
+						backendProtocol = value;
 					}
 				}
 			}

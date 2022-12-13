@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			DeleteModelResponse deleteModelResponse = new DeleteModelResponse();
 
 			deleteModelResponse.HttpResponse = _ctx.HttpResponse;
-			deleteModelResponse.RequestId = _ctx.StringValue("DeleteModel.requestId");
 			deleteModelResponse.Result = _ctx.StringValue("DeleteModel.result");
+			deleteModelResponse.RequestId = _ctx.StringValue("DeleteModel.requestId");
         
 			return deleteModelResponse;
         }

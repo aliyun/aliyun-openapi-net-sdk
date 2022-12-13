@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OpenSearch.Model.V20171225
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 	public class ListSecondRanksResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalCount;
 
-		private List<ListSecondRanks_ResultItem> result;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<ListSecondRanks_ResultItem> result;
 
 		public int? TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,33 +70,93 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 		public class ListSecondRanks_ResultItem
 		{
 
-			private string id;
-
-			private string name;
-
-			private string meta;
-
-			private bool? active;
-
-			private string description;
-
 			private int? created;
 
-			private int? updated;
+			private bool? active;
 
 			private string isDefault;
 
 			private string isSys;
 
-			public string Id
+			private string description;
+
+			private int? updated;
+
+			private string name;
+
+			private string meta;
+
+			private string id;
+
+			public int? Created
 			{
 				get
 				{
-					return id;
+					return created;
 				}
 				set	
 				{
-					id = value;
+					created = value;
+				}
+			}
+
+			public bool? Active
+			{
+				get
+				{
+					return active;
+				}
+				set	
+				{
+					active = value;
+				}
+			}
+
+			public string IsDefault
+			{
+				get
+				{
+					return isDefault;
+				}
+				set	
+				{
+					isDefault = value;
+				}
+			}
+
+			public string IsSys
+			{
+				get
+				{
+					return isSys;
+				}
+				set	
+				{
+					isSys = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public int? Updated
+			{
+				get
+				{
+					return updated;
+				}
+				set	
+				{
+					updated = value;
 				}
 			}
 
@@ -124,75 +184,15 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
-			public bool? Active
+			public string Id
 			{
 				get
 				{
-					return active;
+					return id;
 				}
 				set	
 				{
-					active = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public int? Created
-			{
-				get
-				{
-					return created;
-				}
-				set	
-				{
-					created = value;
-				}
-			}
-
-			public int? Updated
-			{
-				get
-				{
-					return updated;
-				}
-				set	
-				{
-					updated = value;
-				}
-			}
-
-			public string IsDefault
-			{
-				get
-				{
-					return isDefault;
-				}
-				set	
-				{
-					isDefault = value;
-				}
-			}
-
-			public string IsSys
-			{
-				get
-				{
-					return isSys;
-				}
-				set	
-				{
-					isSys = value;
+					id = value;
 				}
 			}
 		}

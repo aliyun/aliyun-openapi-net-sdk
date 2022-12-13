@@ -35,9 +35,9 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 
 			GetSortScriptFileResponse.GetSortScriptFile_Result result = new GetSortScriptFileResponse.GetSortScriptFile_Result();
 			result.Content = _ctx.StringValue("GetSortScriptFile.Result.content");
-			result.Version = _ctx.LongValue("GetSortScriptFile.Result.version");
 			result.CreateTime = _ctx.StringValue("GetSortScriptFile.Result.createTime");
 			result.ModifyTime = _ctx.StringValue("GetSortScriptFile.Result.modifyTime");
+			result.Version = _ctx.LongValue("GetSortScriptFile.Result.version");
 			getSortScriptFileResponse.Result = result;
         
 			return getSortScriptFileResponse;

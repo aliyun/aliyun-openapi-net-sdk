@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OpenSearch.Model.V20171225
@@ -56,23 +56,13 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 		public class GetScriptFileNames_FileInfos
 		{
 
-			private string fileName;
-
 			private string createTime;
+
+			private string fileName;
 
 			private string modifyTime;
 
-			public string FileName
-			{
-				get
-				{
-					return fileName;
-				}
-				set	
-				{
-					fileName = value;
-				}
-			}
+			private string pathName;
 
 			public string CreateTime
 			{
@@ -86,6 +76,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
+			public string FileName
+			{
+				get
+				{
+					return fileName;
+				}
+				set	
+				{
+					fileName = value;
+				}
+			}
+
 			public string ModifyTime
 			{
 				get
@@ -95,6 +97,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				set	
 				{
 					modifyTime = value;
+				}
+			}
+
+			public string PathName
+			{
+				get
+				{
+					return pathName;
+				}
+				set	
+				{
+					pathName = value;
 				}
 			}
 		}

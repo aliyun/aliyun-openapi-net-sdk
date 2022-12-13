@@ -31,18 +31,18 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			ListInterventionDictionariesResponse listInterventionDictionariesResponse = new ListInterventionDictionariesResponse();
 
 			listInterventionDictionariesResponse.HttpResponse = _ctx.HttpResponse;
-			listInterventionDictionariesResponse.RequestId = _ctx.StringValue("ListInterventionDictionaries.requestId");
 			listInterventionDictionariesResponse.TotalCount = _ctx.IntegerValue("ListInterventionDictionaries.totalCount");
+			listInterventionDictionariesResponse.RequestId = _ctx.StringValue("ListInterventionDictionaries.requestId");
 
 			List<ListInterventionDictionariesResponse.ListInterventionDictionaries_ResultItem> listInterventionDictionariesResponse_result = new List<ListInterventionDictionariesResponse.ListInterventionDictionaries_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListInterventionDictionaries.Result.Length"); i++) {
 				ListInterventionDictionariesResponse.ListInterventionDictionaries_ResultItem resultItem = new ListInterventionDictionariesResponse.ListInterventionDictionaries_ResultItem();
-				resultItem.Id = _ctx.IntegerValue("ListInterventionDictionaries.Result["+ i +"].id");
-				resultItem.Name = _ctx.StringValue("ListInterventionDictionaries.Result["+ i +"].name");
+				resultItem.Created = _ctx.IntegerValue("ListInterventionDictionaries.Result["+ i +"].created");
 				resultItem.Type = _ctx.StringValue("ListInterventionDictionaries.Result["+ i +"].type");
 				resultItem.Analyzer = _ctx.StringValue("ListInterventionDictionaries.Result["+ i +"].analyzer");
-				resultItem.Created = _ctx.IntegerValue("ListInterventionDictionaries.Result["+ i +"].created");
+				resultItem.Name = _ctx.StringValue("ListInterventionDictionaries.Result["+ i +"].name");
 				resultItem.Updated = _ctx.IntegerValue("ListInterventionDictionaries.Result["+ i +"].updated");
+				resultItem.Id = _ctx.IntegerValue("ListInterventionDictionaries.Result["+ i +"].id");
 
 				listInterventionDictionariesResponse_result.Add(resultItem);
 			}

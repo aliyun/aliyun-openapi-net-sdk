@@ -36,13 +36,13 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			List<ListDeployedAlgorithmModelsResponse.ListDeployedAlgorithmModels_ResultItem> listDeployedAlgorithmModelsResponse_result = new List<ListDeployedAlgorithmModelsResponse.ListDeployedAlgorithmModels_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListDeployedAlgorithmModels.Result.Length"); i++) {
 				ListDeployedAlgorithmModelsResponse.ListDeployedAlgorithmModels_ResultItem resultItem = new ListDeployedAlgorithmModelsResponse.ListDeployedAlgorithmModels_ResultItem();
-				resultItem.Id = _ctx.StringValue("ListDeployedAlgorithmModels.Result["+ i +"].id");
 				resultItem.AppGroupName = _ctx.StringValue("ListDeployedAlgorithmModels.Result["+ i +"].appGroupName");
-				resultItem.Scene = _ctx.StringValue("ListDeployedAlgorithmModels.Result["+ i +"].scene");
-				resultItem.Desc = _ctx.StringValue("ListDeployedAlgorithmModels.Result["+ i +"].desc");
-				resultItem.GmtCreate = _ctx.StringValue("ListDeployedAlgorithmModels.Result["+ i +"].gmtCreate");
 				resultItem.GmtModified = _ctx.StringValue("ListDeployedAlgorithmModels.Result["+ i +"].gmtModified");
 				resultItem.Status = _ctx.StringValue("ListDeployedAlgorithmModels.Result["+ i +"].status");
+				resultItem.Scene = _ctx.StringValue("ListDeployedAlgorithmModels.Result["+ i +"].scene");
+				resultItem.GmtCreate = _ctx.StringValue("ListDeployedAlgorithmModels.Result["+ i +"].gmtCreate");
+				resultItem.Id = _ctx.StringValue("ListDeployedAlgorithmModels.Result["+ i +"].id");
+				resultItem.Desc = _ctx.StringValue("ListDeployedAlgorithmModels.Result["+ i +"].desc");
 
 				List<string> resultItem_apps = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListDeployedAlgorithmModels.Result["+ i +"].Apps.Length"); j++) {
@@ -54,11 +54,11 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 				for (int j = 0; j < _ctx.Length("ListDeployedAlgorithmModels.Result["+ i +"].Models.Length"); j++) {
 					ListDeployedAlgorithmModelsResponse.ListDeployedAlgorithmModels_ResultItem.ListDeployedAlgorithmModels_ModelsItem modelsItem = new ListDeployedAlgorithmModelsResponse.ListDeployedAlgorithmModels_ResultItem.ListDeployedAlgorithmModels_ModelsItem();
 					modelsItem.ModelName = _ctx.StringValue("ListDeployedAlgorithmModels.Result["+ i +"].Models["+ j +"].modelName");
-					modelsItem.ModelId = _ctx.IntegerValue("ListDeployedAlgorithmModels.Result["+ i +"].Models["+ j +"].modelId");
-					modelsItem.Progress = _ctx.IntegerValue("ListDeployedAlgorithmModels.Result["+ i +"].Models["+ j +"].progress");
-					modelsItem.Status = _ctx.StringValue("ListDeployedAlgorithmModels.Result["+ i +"].Models["+ j +"].status");
 					modelsItem.ProjectId = _ctx.IntegerValue("ListDeployedAlgorithmModels.Result["+ i +"].Models["+ j +"].projectId");
+					modelsItem.ModelId = _ctx.IntegerValue("ListDeployedAlgorithmModels.Result["+ i +"].Models["+ j +"].modelId");
 					modelsItem.AlgorithmType = _ctx.StringValue("ListDeployedAlgorithmModels.Result["+ i +"].Models["+ j +"].algorithmType");
+					modelsItem.Status = _ctx.StringValue("ListDeployedAlgorithmModels.Result["+ i +"].Models["+ j +"].status");
+					modelsItem.Progress = _ctx.IntegerValue("ListDeployedAlgorithmModels.Result["+ i +"].Models["+ j +"].progress");
 
 					resultItem_models.Add(modelsItem);
 				}

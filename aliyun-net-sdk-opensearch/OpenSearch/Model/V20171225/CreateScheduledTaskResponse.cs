@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OpenSearch.Model.V20171225
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 	public class CreateScheduledTaskResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string result;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string Result
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 			set	
 			{
 				result = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

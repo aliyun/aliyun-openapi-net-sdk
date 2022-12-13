@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.facebody;
 using Aliyun.Acs.facebody.Transform;
 using Aliyun.Acs.facebody.Transform.V20200910;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.facebody.Model.V20200910
     public class ExecuteServerSideVerificationRequest : RoaAcsRequest<ExecuteServerSideVerificationResponse>
     {
         public ExecuteServerSideVerificationRequest()
-            : base("facebody", "2020-09-10", "ExecuteServerSideVerification", "facebody", "openAPI")
+            : base("facebody", "2020-09-10", "ExecuteServerSideVerification")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

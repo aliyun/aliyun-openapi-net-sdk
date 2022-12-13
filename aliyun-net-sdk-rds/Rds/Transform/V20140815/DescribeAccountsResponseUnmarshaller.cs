@@ -46,6 +46,11 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstanceAccount.PrivExceeded = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].PrivExceeded");
 				dBInstanceAccount.AccountType = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].AccountType");
 				dBInstanceAccount.AccountName = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].AccountName");
+				dBInstanceAccount.ValidUntil = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].ValidUntil");
+				dBInstanceAccount.CreateDB = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].CreateDB");
+				dBInstanceAccount.Replication = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].Replication");
+				dBInstanceAccount.CreateRole = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].CreateRole");
+				dBInstanceAccount.BypassRLS = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].BypassRLS");
 
 				List<DescribeAccountsResponse.DescribeAccounts_DBInstanceAccount.DescribeAccounts_DatabasePrivilege> dBInstanceAccount_databasePrivileges = new List<DescribeAccountsResponse.DescribeAccounts_DBInstanceAccount.DescribeAccounts_DatabasePrivilege>();
 				for (int j = 0; j < _ctx.Length("DescribeAccounts.Accounts["+ i +"].DatabasePrivileges.Length"); j++) {

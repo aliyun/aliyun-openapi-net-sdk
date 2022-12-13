@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			TrainModelResponse trainModelResponse = new TrainModelResponse();
 
 			trainModelResponse.HttpResponse = _ctx.HttpResponse;
-			trainModelResponse.RequestId = _ctx.StringValue("TrainModel.requestId");
 			trainModelResponse.Result = _ctx.StringValue("TrainModel.result");
+			trainModelResponse.RequestId = _ctx.StringValue("TrainModel.requestId");
         
 			return trainModelResponse;
         }

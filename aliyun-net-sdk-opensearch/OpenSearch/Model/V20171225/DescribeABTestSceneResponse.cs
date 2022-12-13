@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OpenSearch.Model.V20171225
@@ -56,39 +56,27 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 		public class DescribeABTestScene_Result
 		{
 
-			private string id;
-
-			private string name;
+			private int? created;
 
 			private int? status;
 
-			private int? created;
-
 			private int? updated;
+
+			private string name;
+
+			private string id;
 
 			private List<string> values;
 
-			public string Id
+			public int? Created
 			{
 				get
 				{
-					return id;
+					return created;
 				}
 				set	
 				{
-					id = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
+					created = value;
 				}
 			}
 
@@ -104,18 +92,6 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
-			public int? Created
-			{
-				get
-				{
-					return created;
-				}
-				set	
-				{
-					created = value;
-				}
-			}
-
 			public int? Updated
 			{
 				get
@@ -125,6 +101,30 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				set	
 				{
 					updated = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
 				}
 			}
 

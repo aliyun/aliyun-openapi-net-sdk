@@ -47,13 +47,13 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string ossAkSecret;
 
+		private string nasConfigs;
+
 		private string mountHost;
 
 		private bool? autoConfig;
 
 		private string envs;
-
-		private string kafkaInstanceId;
 
 		private string phpArmsConfigLocation;
 
@@ -69,13 +69,17 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string namespaceId;
 
+		private string pvtzDiscoverySvc;
+
 		private string configMapMountDesc;
 
 		private string ossMountDescs;
 
-		private string kafkaEndpoint;
+		private string imagePullSecrets;
 
 		private string preStop;
+
+		private string python;
 
 		private int? cpu;
 
@@ -94,8 +98,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		private string slsConfigs;
 
 		private string kafkaConfigs;
-
-		private bool? openCollectToKafka;
 
 		private string commandArgs;
 
@@ -125,6 +127,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string phpConfig;
 
+		private string microRegistration;
+
 		private int? replicas;
 
 		private string command;
@@ -135,13 +139,13 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string appDescription;
 
-		private string kafkaLogfileConfig;
-
 		private string acrInstanceId;
 
 		private string vpcId;
 
 		private string imageUrl;
+
+		private string pythonModules;
 
 		private string phpConfigLocation;
 
@@ -184,6 +188,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
+		public string NasConfigs
+		{
+			get
+			{
+				return nasConfigs;
+			}
+			set	
+			{
+				nasConfigs = value;
+				DictionaryUtil.Add(QueryParameters, "NasConfigs", value);
+			}
+		}
+
 		public string MountHost
 		{
 			get
@@ -220,19 +237,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				envs = value;
 				DictionaryUtil.Add(QueryParameters, "Envs", value);
-			}
-		}
-
-		public string KafkaInstanceId
-		{
-			get
-			{
-				return kafkaInstanceId;
-			}
-			set	
-			{
-				kafkaInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "KafkaInstanceId", value);
 			}
 		}
 
@@ -327,6 +331,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
+		public string PvtzDiscoverySvc
+		{
+			get
+			{
+				return pvtzDiscoverySvc;
+			}
+			set	
+			{
+				pvtzDiscoverySvc = value;
+				DictionaryUtil.Add(QueryParameters, "PvtzDiscoverySvc", value);
+			}
+		}
+
 		public string ConfigMapMountDesc
 		{
 			get
@@ -353,16 +370,16 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string KafkaEndpoint
+		public string ImagePullSecrets
 		{
 			get
 			{
-				return kafkaEndpoint;
+				return imagePullSecrets;
 			}
 			set	
 			{
-				kafkaEndpoint = value;
-				DictionaryUtil.Add(QueryParameters, "KafkaEndpoint", value);
+				imagePullSecrets = value;
+				DictionaryUtil.Add(QueryParameters, "ImagePullSecrets", value);
 			}
 		}
 
@@ -376,6 +393,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				preStop = value;
 				DictionaryUtil.Add(QueryParameters, "PreStop", value);
+			}
+		}
+
+		public string Python
+		{
+			get
+			{
+				return python;
+			}
+			set	
+			{
+				python = value;
+				DictionaryUtil.Add(QueryParameters, "Python", value);
 			}
 		}
 
@@ -493,19 +523,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				kafkaConfigs = value;
 				DictionaryUtil.Add(QueryParameters, "KafkaConfigs", value);
-			}
-		}
-
-		public bool? OpenCollectToKafka
-		{
-			get
-			{
-				return openCollectToKafka;
-			}
-			set	
-			{
-				openCollectToKafka = value;
-				DictionaryUtil.Add(QueryParameters, "OpenCollectToKafka", value.ToString());
 			}
 		}
 
@@ -691,6 +708,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
+		public string MicroRegistration
+		{
+			get
+			{
+				return microRegistration;
+			}
+			set	
+			{
+				microRegistration = value;
+				DictionaryUtil.Add(QueryParameters, "MicroRegistration", value);
+			}
+		}
+
 		public int? Replicas
 		{
 			get
@@ -756,19 +786,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string KafkaLogfileConfig
-		{
-			get
-			{
-				return kafkaLogfileConfig;
-			}
-			set	
-			{
-				kafkaLogfileConfig = value;
-				DictionaryUtil.Add(QueryParameters, "KafkaLogfileConfig", value);
-			}
-		}
-
 		public string AcrInstanceId
 		{
 			get
@@ -805,6 +822,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				imageUrl = value;
 				DictionaryUtil.Add(QueryParameters, "ImageUrl", value);
+			}
+		}
+
+		public string PythonModules
+		{
+			get
+			{
+				return pythonModules;
+			}
+			set	
+			{
+				pythonModules = value;
+				DictionaryUtil.Add(QueryParameters, "PythonModules", value);
 			}
 		}
 

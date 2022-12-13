@@ -36,9 +36,9 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			List<DescribeRegionsResponse.DescribeRegions_ResultItem> describeRegionsResponse_result = new List<DescribeRegionsResponse.DescribeRegions_ResultItem>();
 			for (int i = 0; i < _ctx.Length("DescribeRegions.Result.Length"); i++) {
 				DescribeRegionsResponse.DescribeRegions_ResultItem resultItem = new DescribeRegionsResponse.DescribeRegions_ResultItem();
+				resultItem.Endpoint = _ctx.StringValue("DescribeRegions.Result["+ i +"].endpoint");
 				resultItem.RegionId = _ctx.StringValue("DescribeRegions.Result["+ i +"].regionId");
 				resultItem.LocalName = _ctx.StringValue("DescribeRegions.Result["+ i +"].localName");
-				resultItem.Endpoint = _ctx.StringValue("DescribeRegions.Result["+ i +"].endpoint");
 				resultItem.ConsoleUrl = _ctx.StringValue("DescribeRegions.Result["+ i +"].consoleUrl");
 
 				describeRegionsResponse_result.Add(resultItem);

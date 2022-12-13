@@ -34,11 +34,11 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			createQueryProcessorResponse.RequestId = _ctx.StringValue("CreateQueryProcessor.requestId");
 
 			CreateQueryProcessorResponse.CreateQueryProcessor_Result result = new CreateQueryProcessorResponse.CreateQueryProcessor_Result();
-			result.Name = _ctx.StringValue("CreateQueryProcessor.Result.name");
-			result.Active = _ctx.BooleanValue("CreateQueryProcessor.Result.active");
-			result.Domain = _ctx.StringValue("CreateQueryProcessor.Result.domain");
 			result.Created = _ctx.IntegerValue("CreateQueryProcessor.Result.created");
+			result.Active = _ctx.BooleanValue("CreateQueryProcessor.Result.active");
 			result.Updated = _ctx.IntegerValue("CreateQueryProcessor.Result.updated");
+			result.Name = _ctx.StringValue("CreateQueryProcessor.Result.name");
+			result.Domain = _ctx.StringValue("CreateQueryProcessor.Result.domain");
 
 			List<string> result_indexes = new List<string>();
 			for (int i = 0; i < _ctx.Length("CreateQueryProcessor.Result.Indexes.Length"); i++) {

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OpenSearch.Model.V20171225
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 	public class ListUserAnalyzersResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalCount;
 
-		private List<ListUserAnalyzers_ResultItem> result;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<ListUserAnalyzers_ResultItem> result;
 
 		public int? TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,53 +70,29 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 		public class ListUserAnalyzers_ResultItem
 		{
 
-			private string id;
-
-			private string name;
-
-			private string business;
+			private int? created;
 
 			private bool? available;
 
-			private int? created;
+			private string name;
 
 			private int? updated;
 
+			private string id;
+
+			private string business;
+
 			private List<ListUserAnalyzers_DictsItem> dicts;
 
-			public string Id
+			public int? Created
 			{
 				get
 				{
-					return id;
+					return created;
 				}
 				set	
 				{
-					id = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string Business
-			{
-				get
-				{
-					return business;
-				}
-				set	
-				{
-					business = value;
+					created = value;
 				}
 			}
 
@@ -132,15 +108,15 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
-			public int? Created
+			public string Name
 			{
 				get
 				{
-					return created;
+					return name;
 				}
 				set	
 				{
-					created = value;
+					name = value;
 				}
 			}
 
@@ -153,6 +129,30 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				set	
 				{
 					updated = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public string Business
+			{
+				get
+				{
+					return business;
+				}
+				set	
+				{
+					business = value;
 				}
 			}
 
@@ -171,29 +171,41 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 			public class ListUserAnalyzers_DictsItem
 			{
 
-				private string id;
+				private int? created;
+
+				private int? entriesCount;
 
 				private string type;
 
 				private int? entriesLimit;
 
-				private int? entriesCount;
-
 				private bool? available;
-
-				private int? created;
 
 				private int? updated;
 
-				public string Id
+				private string id;
+
+				public int? Created
 				{
 					get
 					{
-						return id;
+						return created;
 					}
 					set	
 					{
-						id = value;
+						created = value;
+					}
+				}
+
+				public int? EntriesCount
+				{
+					get
+					{
+						return entriesCount;
+					}
+					set	
+					{
+						entriesCount = value;
 					}
 				}
 
@@ -221,18 +233,6 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 					}
 				}
 
-				public int? EntriesCount
-				{
-					get
-					{
-						return entriesCount;
-					}
-					set	
-					{
-						entriesCount = value;
-					}
-				}
-
 				public bool? Available
 				{
 					get
@@ -245,18 +245,6 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 					}
 				}
 
-				public int? Created
-				{
-					get
-					{
-						return created;
-					}
-					set	
-					{
-						created = value;
-					}
-				}
-
 				public int? Updated
 				{
 					get
@@ -266,6 +254,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 					set	
 					{
 						updated = value;
+					}
+				}
+
+				public string Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
 					}
 				}
 			}

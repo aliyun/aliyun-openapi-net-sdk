@@ -34,15 +34,15 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			describeSecondRankResponse.RequestId = _ctx.StringValue("DescribeSecondRank.requestId");
 
 			DescribeSecondRankResponse.DescribeSecondRank_Result result = new DescribeSecondRankResponse.DescribeSecondRank_Result();
-			result.Id = _ctx.StringValue("DescribeSecondRank.Result.id");
-			result.Name = _ctx.StringValue("DescribeSecondRank.Result.name");
-			result.Meta = _ctx.StringValue("DescribeSecondRank.Result.meta");
-			result.Active = _ctx.BooleanValue("DescribeSecondRank.Result.active");
-			result.Description = _ctx.StringValue("DescribeSecondRank.Result.description");
 			result.Created = _ctx.IntegerValue("DescribeSecondRank.Result.created");
-			result.Updated = _ctx.IntegerValue("DescribeSecondRank.Result.updated");
+			result.Active = _ctx.BooleanValue("DescribeSecondRank.Result.active");
 			result.IsDefault = _ctx.StringValue("DescribeSecondRank.Result.isDefault");
 			result.IsSys = _ctx.StringValue("DescribeSecondRank.Result.isSys");
+			result.Description = _ctx.StringValue("DescribeSecondRank.Result.description");
+			result.Updated = _ctx.IntegerValue("DescribeSecondRank.Result.updated");
+			result.Name = _ctx.StringValue("DescribeSecondRank.Result.name");
+			result.Meta = _ctx.StringValue("DescribeSecondRank.Result.meta");
+			result.Id = _ctx.StringValue("DescribeSecondRank.Result.id");
 			describeSecondRankResponse.Result = result;
         
 			return describeSecondRankResponse;

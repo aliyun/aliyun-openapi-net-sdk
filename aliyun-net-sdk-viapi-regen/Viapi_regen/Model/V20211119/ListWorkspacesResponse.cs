@@ -33,6 +33,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 
 		private ListWorkspaces_Data data;
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -45,6 +46,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -57,6 +59,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -69,6 +72,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public ListWorkspaces_Data Data
 		{
 			get
@@ -94,6 +98,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 
 			private List<ListWorkspaces_Element> elements;
 
+			[JsonProperty(PropertyName = "CurrentPage")]
 			public long? CurrentPage
 			{
 				get
@@ -106,6 +111,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "PageSize")]
 			public long? PageSize
 			{
 				get
@@ -118,6 +124,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "TotalPage")]
 			public long? TotalPage
 			{
 				get
@@ -130,6 +137,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "TotalCount")]
 			public long? TotalCount
 			{
 				get
@@ -142,6 +150,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 				}
 			}
 
+			[JsonProperty(PropertyName = "Elements")]
 			public List<ListWorkspaces_Element> Elements
 			{
 				get
@@ -167,6 +176,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 
 				private string type;
 
+				[JsonProperty(PropertyName = "Id")]
 				public long? Id
 				{
 					get
@@ -179,6 +189,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 					}
 				}
 
+				[JsonProperty(PropertyName = "GmtCreate")]
 				public long? GmtCreate
 				{
 					get
@@ -191,6 +202,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 					}
 				}
 
+				[JsonProperty(PropertyName = "Name")]
 				public string Name
 				{
 					get
@@ -203,6 +215,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 					}
 				}
 
+				[JsonProperty(PropertyName = "Description")]
 				public string Description
 				{
 					get
@@ -215,6 +228,7 @@ namespace Aliyun.Acs.viapi_regen.Model.V20211119
 					}
 				}
 
+				[JsonProperty(PropertyName = "Type")]
 				public string Type
 				{
 					get

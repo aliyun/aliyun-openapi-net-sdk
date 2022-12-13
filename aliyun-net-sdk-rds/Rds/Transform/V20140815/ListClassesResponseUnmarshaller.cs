@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				classList.ClassCode = _ctx.StringValue("ListClasses.Items["+ i +"].ClassCode");
 				classList.ClassGroup = _ctx.StringValue("ListClasses.Items["+ i +"].ClassGroup");
 				classList.MaxIOMBPS = _ctx.StringValue("ListClasses.Items["+ i +"].MaxIOMBPS");
+				classList.EncryptedMemory = _ctx.StringValue("ListClasses.Items["+ i +"].EncryptedMemory");
+				classList.InstructionSetArch = _ctx.StringValue("ListClasses.Items["+ i +"].InstructionSetArch");
 
 				listClassesResponse_items.Add(classList);
 			}

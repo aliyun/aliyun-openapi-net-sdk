@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OpenSearch.Model.V20171225
@@ -58,11 +58,11 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 
 			private string content;
 
-			private long? version;
-
 			private string createTime;
 
 			private string modifyTime;
+
+			private long? version;
 
 			public string Content
 			{
@@ -73,18 +73,6 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				set	
 				{
 					content = value;
-				}
-			}
-
-			public long? Version
-			{
-				get
-				{
-					return version;
-				}
-				set	
-				{
-					version = value;
 				}
 			}
 
@@ -109,6 +97,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				set	
 				{
 					modifyTime = value;
+				}
+			}
+
+			public long? Version
+			{
+				get
+				{
+					return version;
+				}
+				set	
+				{
+					version = value;
 				}
 			}
 		}

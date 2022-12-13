@@ -155,6 +155,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 				private string certId;
 
+				private string certIds;
+
 				private string name;
 
 				private long? id;
@@ -232,6 +234,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					set	
 					{
 						certId = value;
+					}
+				}
+
+				public string CertIds
+				{
+					get
+					{
+						return certIds;
+					}
+					set	
+					{
+						certIds = value;
 					}
 				}
 

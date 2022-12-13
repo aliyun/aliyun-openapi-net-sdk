@@ -42,8 +42,6 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 
 		private string faceImageURL;
 
-		private string userId;
-
 		private string templateId;
 
 		public string FaceImageURL
@@ -56,19 +54,6 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			{
 				faceImageURL = value;
 				DictionaryUtil.Add(BodyParameters, "FaceImageURL", value);
-			}
-		}
-
-		public string UserId
-		{
-			get
-			{
-				return userId;
-			}
-			set	
-			{
-				userId = value;
-				DictionaryUtil.Add(BodyParameters, "UserId", value);
 			}
 		}
 

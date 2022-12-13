@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OpenSearch.Model.V20171225
@@ -56,37 +56,25 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 		public class DescribeInterventionDictionary_Result
 		{
 
-			private string name;
-
-			private string type;
+			private string created;
 
 			private string analyzer;
 
-			private string created;
-
 			private string updated;
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+			private string type;
 
-			public string Type
+			private string name;
+
+			public string Created
 			{
 				get
 				{
-					return type;
+					return created;
 				}
 				set	
 				{
-					type = value;
+					created = value;
 				}
 			}
 
@@ -102,18 +90,6 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
-			public string Created
-			{
-				get
-				{
-					return created;
-				}
-				set	
-				{
-					created = value;
-				}
-			}
-
 			public string Updated
 			{
 				get
@@ -123,6 +99,30 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				set	
 				{
 					updated = value;
+				}
+			}
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 		}

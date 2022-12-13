@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OpenSearch.Model.V20171225
@@ -56,35 +56,23 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 		public class ListDeployedAlgorithmModels_ResultItem
 		{
 
-			private string id;
-
 			private string appGroupName;
-
-			private string scene;
-
-			private string desc;
-
-			private string gmtCreate;
 
 			private string gmtModified;
 
 			private string status;
 
+			private string scene;
+
+			private string gmtCreate;
+
+			private string id;
+
+			private string desc;
+
 			private List<ListDeployedAlgorithmModels_ModelsItem> models;
 
 			private List<string> apps;
-
-			public string Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
 
 			public string AppGroupName
 			{
@@ -95,42 +83,6 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				set	
 				{
 					appGroupName = value;
-				}
-			}
-
-			public string Scene
-			{
-				get
-				{
-					return scene;
-				}
-				set	
-				{
-					scene = value;
-				}
-			}
-
-			public string Desc
-			{
-				get
-				{
-					return desc;
-				}
-				set	
-				{
-					desc = value;
-				}
-			}
-
-			public string GmtCreate
-			{
-				get
-				{
-					return gmtCreate;
-				}
-				set	
-				{
-					gmtCreate = value;
 				}
 			}
 
@@ -155,6 +107,54 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public string Scene
+			{
+				get
+				{
+					return scene;
+				}
+				set	
+				{
+					scene = value;
+				}
+			}
+
+			public string GmtCreate
+			{
+				get
+				{
+					return gmtCreate;
+				}
+				set	
+				{
+					gmtCreate = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public string Desc
+			{
+				get
+				{
+					return desc;
+				}
+				set	
+				{
+					desc = value;
 				}
 			}
 
@@ -187,15 +187,15 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 
 				private string modelName;
 
+				private int? projectId;
+
 				private int? modelId;
 
-				private int? progress;
+				private string algorithmType;
 
 				private string status;
 
-				private int? projectId;
-
-				private string algorithmType;
+				private int? progress;
 
 				public string ModelName
 				{
@@ -206,42 +206,6 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 					set	
 					{
 						modelName = value;
-					}
-				}
-
-				public int? ModelId
-				{
-					get
-					{
-						return modelId;
-					}
-					set	
-					{
-						modelId = value;
-					}
-				}
-
-				public int? Progress
-				{
-					get
-					{
-						return progress;
-					}
-					set	
-					{
-						progress = value;
-					}
-				}
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
 					}
 				}
 
@@ -257,6 +221,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 					}
 				}
 
+				public int? ModelId
+				{
+					get
+					{
+						return modelId;
+					}
+					set	
+					{
+						modelId = value;
+					}
+				}
+
 				public string AlgorithmType
 				{
 					get
@@ -266,6 +242,30 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 					set	
 					{
 						algorithmType = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public int? Progress
+				{
+					get
+					{
+						return progress;
+					}
+					set	
+					{
+						progress = value;
 					}
 				}
 			}
