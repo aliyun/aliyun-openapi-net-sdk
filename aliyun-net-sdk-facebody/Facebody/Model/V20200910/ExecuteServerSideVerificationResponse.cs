@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.facebody.Model.V20200910
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.facebody.Model.V20200910
 	public class ExecuteServerSideVerificationResponse : AcsResponse
 	{
 
-		private string message;
-
 		private string requestId;
 
 		private string code;
 
-		private ExecuteServerSideVerification_Data data;
+		private string message;
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
+		private ExecuteServerSideVerification_Data data;
 
 		public string RequestId
 		{
@@ -69,6 +57,18 @@ namespace Aliyun.Acs.facebody.Model.V20200910
 			}
 		}
 
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
 		public ExecuteServerSideVerification_Data Data
 		{
 			get
@@ -84,23 +84,11 @@ namespace Aliyun.Acs.facebody.Model.V20200910
 		public class ExecuteServerSideVerification_Data
 		{
 
-			private string verificationToken;
-
 			private bool? pass;
 
-			private string reason;
+			private string verificationToken;
 
-			public string VerificationToken
-			{
-				get
-				{
-					return verificationToken;
-				}
-				set	
-				{
-					verificationToken = value;
-				}
-			}
+			private string reason;
 
 			public bool? Pass
 			{
@@ -111,6 +99,18 @@ namespace Aliyun.Acs.facebody.Model.V20200910
 				set	
 				{
 					pass = value;
+				}
+			}
+
+			public string VerificationToken
+			{
+				get
+				{
+					return verificationToken;
+				}
+				set	
+				{
+					verificationToken = value;
 				}
 			}
 

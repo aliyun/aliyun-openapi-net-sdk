@@ -1,3 +1,6 @@
+2022-12-13 Version: 2.0.0
+- Update api ExecuteServerSideVerification The base64 data format is changed from string byte to string.
+
 2022-12-09 Version: 1.0.4
 - Update SDK.
 

@@ -31,13 +31,13 @@ namespace Aliyun.Acs.facebody.Transform.V20200910
 			ExecuteServerSideVerificationResponse executeServerSideVerificationResponse = new ExecuteServerSideVerificationResponse();
 
 			executeServerSideVerificationResponse.HttpResponse = _ctx.HttpResponse;
-			executeServerSideVerificationResponse.Message = _ctx.StringValue("ExecuteServerSideVerification.Message");
 			executeServerSideVerificationResponse.RequestId = _ctx.StringValue("ExecuteServerSideVerification.RequestId");
 			executeServerSideVerificationResponse.Code = _ctx.StringValue("ExecuteServerSideVerification.Code");
+			executeServerSideVerificationResponse.Message = _ctx.StringValue("ExecuteServerSideVerification.Message");
 
 			ExecuteServerSideVerificationResponse.ExecuteServerSideVerification_Data data = new ExecuteServerSideVerificationResponse.ExecuteServerSideVerification_Data();
-			data.VerificationToken = _ctx.StringValue("ExecuteServerSideVerification.Data.VerificationToken");
 			data.Pass = _ctx.BooleanValue("ExecuteServerSideVerification.Data.Pass");
+			data.VerificationToken = _ctx.StringValue("ExecuteServerSideVerification.Data.VerificationToken");
 			data.Reason = _ctx.StringValue("ExecuteServerSideVerification.Data.Reason");
 			executeServerSideVerificationResponse.Data = data;
         

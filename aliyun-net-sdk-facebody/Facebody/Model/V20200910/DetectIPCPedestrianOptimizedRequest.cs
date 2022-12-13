@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.facebody;
 using Aliyun.Acs.facebody.Transform;
 using Aliyun.Acs.facebody.Transform.V20200910;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.facebody.Model.V20200910
     public class DetectIPCPedestrianOptimizedRequest : RoaAcsRequest<DetectIPCPedestrianOptimizedResponse>
     {
         public DetectIPCPedestrianOptimizedRequest()
-            : base("facebody", "2020-09-10", "DetectIPCPedestrianOptimized", "facebody", "openAPI")
+            : base("facebody", "2020-09-10", "DetectIPCPedestrianOptimized")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,11 +42,24 @@ namespace Aliyun.Acs.facebody.Model.V20200910
 			Method = MethodType.POST;
         }
 
+		private long? height;
+
 		private string imageData;
 
 		private long? width;
 
-		private long? height;
+		public long? Height
+		{
+			get
+			{
+				return height;
+			}
+			set	
+			{
+				height = value;
+				DictionaryUtil.Add(BodyParameters, "height", value.ToString());
+			}
+		}
 
 		public string ImageData
 		{
@@ -70,19 +84,6 @@ namespace Aliyun.Acs.facebody.Model.V20200910
 			{
 				width = value;
 				DictionaryUtil.Add(BodyParameters, "width", value.ToString());
-			}
-		}
-
-		public long? Height
-		{
-			get
-			{
-				return height;
-			}
-			set	
-			{
-				height = value;
-				DictionaryUtil.Add(BodyParameters, "height", value.ToString());
 			}
 		}
 
