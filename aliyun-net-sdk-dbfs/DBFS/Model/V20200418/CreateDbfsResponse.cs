@@ -29,6 +29,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 
 		private string fsId;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "FsId")]
 		public string FsId
 		{
 			get

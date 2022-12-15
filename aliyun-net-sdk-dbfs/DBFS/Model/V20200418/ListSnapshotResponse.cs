@@ -35,6 +35,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 
 		private List<ListSnapshot_SnapshotsItem> snapshots;
 
+		[JsonProperty(PropertyName = "TotalCount")]
 		public int? TotalCount
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "Snapshots")]
 		public List<ListSnapshot_SnapshotsItem> Snapshots
 		{
 			get
@@ -126,6 +131,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 
 			private int? sourceFsStripeWidth;
 
+			[JsonProperty(PropertyName = "Status")]
 			public string Status
 			{
 				get
@@ -138,6 +144,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "CreationTime")]
 			public string CreationTime
 			{
 				get
@@ -150,6 +157,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "Progress")]
 			public string Progress
 			{
 				get
@@ -162,6 +170,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "SourceFsSize")]
 			public int? SourceFsSize
 			{
 				get
@@ -174,6 +183,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "RetentionDays")]
 			public int? RetentionDays
 			{
 				get
@@ -186,6 +196,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "RemainTime")]
 			public int? RemainTime
 			{
 				get
@@ -198,6 +209,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "LastModifiedTime")]
 			public string LastModifiedTime
 			{
 				get
@@ -210,6 +222,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "SnapshotType")]
 			public string SnapshotType
 			{
 				get
@@ -222,6 +235,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "SnapshotName")]
 			public string SnapshotName
 			{
 				get
@@ -234,6 +248,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "Description")]
 			public string Description
 			{
 				get
@@ -246,6 +261,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "SourceFsId")]
 			public string SourceFsId
 			{
 				get
@@ -258,6 +274,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "SnapshotId")]
 			public string SnapshotId
 			{
 				get
@@ -270,6 +287,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "Category")]
 			public string Category
 			{
 				get
@@ -282,6 +300,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "SourceFsStripeWidth")]
 			public int? SourceFsStripeWidth
 			{
 				get

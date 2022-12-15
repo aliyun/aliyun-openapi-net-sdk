@@ -31,6 +31,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 
 		private List<ListDbfsAttachableEcsInstances_LabelInfo> ecsLabelInfo;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -43,6 +44,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "TotalCount")]
 		public int? TotalCount
 		{
 			get
@@ -55,6 +57,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "EcsLabelInfo")]
 		public List<ListDbfsAttachableEcsInstances_LabelInfo> EcsLabelInfo
 		{
 			get
@@ -82,6 +85,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 
 			private string zoneId;
 
+			[JsonProperty(PropertyName = "_Value")]
 			public string _Value
 			{
 				get
@@ -94,6 +98,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "Label")]
 			public string Label
 			{
 				get
@@ -106,6 +111,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "InstanceTypeFamily")]
 			public string InstanceTypeFamily
 			{
 				get
@@ -118,6 +124,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "OSName")]
 			public string OSName
 			{
 				get
@@ -130,6 +137,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "Status")]
 			public string Status
 			{
 				get
@@ -142,6 +150,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "ZoneId")]
 			public string ZoneId
 			{
 				get

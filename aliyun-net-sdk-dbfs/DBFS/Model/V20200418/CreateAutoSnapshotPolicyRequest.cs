@@ -28,10 +28,10 @@ using Aliyun.Acs.DBFS.Transform.V20200418;
 
 namespace Aliyun.Acs.DBFS.Model.V20200418
 {
-    public class UpdateDbfsRequest : RpcAcsRequest<UpdateDbfsResponse>
+    public class CreateAutoSnapshotPolicyRequest : RpcAcsRequest<CreateAutoSnapshotPolicyResponse>
     {
-        public UpdateDbfsRequest()
-            : base("DBFS", "2020-04-18", "UpdateDbfs", "dbfs", "openAPI")
+        public CreateAutoSnapshotPolicyRequest()
+            : base("DBFS", "2020-04-18", "CreateAutoSnapshotPolicy", "dbfs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,67 +41,81 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			Method = MethodType.POST;
         }
 
-		private string usedScene;
+		private List<string> timePoints = new List<string>(){ };
 
-		private string fsId;
+		private List<string> repeatWeekdays = new List<string>(){ };
 
-		private string instanceType;
+		private string policyName;
 
-		private string advancedFeatures;
+		private int? retentionDays;
 
-		[JsonProperty(PropertyName = "UsedScene")]
-		public string UsedScene
+		[JsonProperty(PropertyName = "TimePoints")]
+		public List<string> TimePoints
 		{
 			get
 			{
-				return usedScene;
+				return timePoints;
 			}
-			set	
+
+			set
 			{
-				usedScene = value;
-				DictionaryUtil.Add(QueryParameters, "UsedScene", value);
+				timePoints = value;
+				if(timePoints != null)
+				{
+					for (int depth1 = 0; depth1 < timePoints.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"TimePoints." + (depth1 + 1), timePoints[depth1]);
+					}
+				}
 			}
 		}
 
-		[JsonProperty(PropertyName = "FsId")]
-		public string FsId
+		[JsonProperty(PropertyName = "RepeatWeekdays")]
+		public List<string> RepeatWeekdays
 		{
 			get
 			{
-				return fsId;
+				return repeatWeekdays;
 			}
-			set	
+
+			set
 			{
-				fsId = value;
-				DictionaryUtil.Add(QueryParameters, "FsId", value);
+				repeatWeekdays = value;
+				if(repeatWeekdays != null)
+				{
+					for (int depth1 = 0; depth1 < repeatWeekdays.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"RepeatWeekdays." + (depth1 + 1), repeatWeekdays[depth1]);
+					}
+				}
 			}
 		}
 
-		[JsonProperty(PropertyName = "InstanceType")]
-		public string InstanceType
+		[JsonProperty(PropertyName = "PolicyName")]
+		public string PolicyName
 		{
 			get
 			{
-				return instanceType;
+				return policyName;
 			}
 			set	
 			{
-				instanceType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
+				policyName = value;
+				DictionaryUtil.Add(QueryParameters, "PolicyName", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "AdvancedFeatures")]
-		public string AdvancedFeatures
+		[JsonProperty(PropertyName = "RetentionDays")]
+		public int? RetentionDays
 		{
 			get
 			{
-				return advancedFeatures;
+				return retentionDays;
 			}
 			set	
 			{
-				advancedFeatures = value;
-				DictionaryUtil.Add(QueryParameters, "AdvancedFeatures", value);
+				retentionDays = value;
+				DictionaryUtil.Add(QueryParameters, "RetentionDays", value.ToString());
 			}
 		}
 
@@ -110,9 +124,9 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			return false;
 		}
 
-        public override UpdateDbfsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateAutoSnapshotPolicyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateDbfsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateAutoSnapshotPolicyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

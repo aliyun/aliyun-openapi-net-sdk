@@ -29,6 +29,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 
 		private GetDbfs_DBFSInfo dBFSInfo;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBFSInfo")]
 		public GetDbfs_DBFSInfo DBFSInfo
 		{
 			get
@@ -106,6 +108,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 
 			private List<GetDbfs_EbsListItem> ebsList;
 
+			[JsonProperty(PropertyName = "Status")]
 			public string Status
 			{
 				get
@@ -118,6 +121,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "PayType")]
 			public string PayType
 			{
 				get
@@ -130,6 +134,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "FsId")]
 			public string FsId
 			{
 				get
@@ -142,6 +147,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "SizeG")]
 			public int? SizeG
 			{
 				get
@@ -154,6 +160,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "RegionId")]
 			public string RegionId
 			{
 				get
@@ -166,6 +173,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "DBFSClusterId")]
 			public string DBFSClusterId
 			{
 				get
@@ -178,6 +186,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "Description")]
 			public string Description
 			{
 				get
@@ -190,6 +199,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "ZoneId")]
 			public string ZoneId
 			{
 				get
@@ -202,6 +212,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "FsName")]
 			public string FsName
 			{
 				get
@@ -214,6 +225,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "Category")]
 			public string Category
 			{
 				get
@@ -226,6 +238,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "CreatedTime")]
 			public string CreatedTime
 			{
 				get
@@ -238,6 +251,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "AttachNodeNumber")]
 			public int? AttachNodeNumber
 			{
 				get
@@ -250,6 +264,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "KMSKeyId")]
 			public string KMSKeyId
 			{
 				get
@@ -262,6 +277,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "Encryption")]
 			public bool? Encryption
 			{
 				get
@@ -274,6 +290,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "PerformanceLevel")]
 			public string PerformanceLevel
 			{
 				get
@@ -286,6 +303,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "UsedScene")]
 			public string UsedScene
 			{
 				get
@@ -298,6 +316,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "LastMountTime")]
 			public string LastMountTime
 			{
 				get
@@ -310,6 +329,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "LastUmountTime")]
 			public string LastUmountTime
 			{
 				get
@@ -322,6 +342,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "EnableRaid")]
 			public bool? EnableRaid
 			{
 				get
@@ -334,6 +355,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "InstanceType")]
 			public string InstanceType
 			{
 				get
@@ -346,6 +368,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "RaidStrip")]
 			public int? RaidStrip
 			{
 				get
@@ -358,6 +381,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "LastFailed")]
 			public string LastFailed
 			{
 				get
@@ -370,6 +394,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "Tags")]
 			public List<GetDbfs_TagList> Tags
 			{
 				get
@@ -382,6 +407,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "EcsList")]
 			public List<GetDbfs_EcsListItem> EcsList
 			{
 				get
@@ -394,6 +420,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "EbsList")]
 			public List<GetDbfs_EbsListItem> EbsList
 			{
 				get
@@ -415,6 +442,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 
 				private string tagKey;
 
+				[JsonProperty(PropertyName = "TagValue")]
 				public string TagValue
 				{
 					get
@@ -427,6 +455,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 					}
 				}
 
+				[JsonProperty(PropertyName = "Id")]
 				public int? Id
 				{
 					get
@@ -439,6 +468,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 					}
 				}
 
+				[JsonProperty(PropertyName = "TagKey")]
 				public string TagKey
 				{
 					get
@@ -457,6 +487,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 
 				private string ecsId;
 
+				[JsonProperty(PropertyName = "EcsId")]
 				public string EcsId
 				{
 					get
@@ -477,6 +508,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 
 				private int? sizeG;
 
+				[JsonProperty(PropertyName = "EbsId")]
 				public string EbsId
 				{
 					get
@@ -489,6 +521,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 					}
 				}
 
+				[JsonProperty(PropertyName = "SizeG")]
 				public int? SizeG
 				{
 					get

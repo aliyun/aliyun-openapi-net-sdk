@@ -22,25 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.DBFS.Model.V20200418
 {
-	public class CreateSnapshotResponse : AcsResponse
+	public class CreateAutoSnapshotPolicyResponse : AcsResponse
 	{
-
-		private string snapshotId;
 
 		private string requestId;
 
-		[JsonProperty(PropertyName = "SnapshotId")]
-		public string SnapshotId
-		{
-			get
-			{
-				return snapshotId;
-			}
-			set	
-			{
-				snapshotId = value;
-			}
-		}
+		private string policyId;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -52,6 +39,19 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PolicyId")]
+		public string PolicyId
+		{
+			get
+			{
+				return policyId;
+			}
+			set	
+			{
+				policyId = value;
 			}
 		}
 	}

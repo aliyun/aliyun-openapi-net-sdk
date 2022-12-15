@@ -16,43 +16,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.DBFS.Model.V20200418
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.DBFS.Model.V20200418;
+
+namespace Aliyun.Acs.DBFS.Transform.V20200418
 {
-	public class CreateSnapshotResponse : AcsResponse
-	{
+    public class CreateAutoSnapshotPolicyResponseUnmarshaller
+    {
+        public static CreateAutoSnapshotPolicyResponse Unmarshall(UnmarshallerContext _ctx)
+        {
+			CreateAutoSnapshotPolicyResponse createAutoSnapshotPolicyResponse = new CreateAutoSnapshotPolicyResponse();
 
-		private string snapshotId;
-
-		private string requestId;
-
-		[JsonProperty(PropertyName = "SnapshotId")]
-		public string SnapshotId
-		{
-			get
-			{
-				return snapshotId;
-			}
-			set	
-			{
-				snapshotId = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "RequestId")]
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+			createAutoSnapshotPolicyResponse.HttpResponse = _ctx.HttpResponse;
+			createAutoSnapshotPolicyResponse.RequestId = _ctx.StringValue("CreateAutoSnapshotPolicy.RequestId");
+			createAutoSnapshotPolicyResponse.PolicyId = _ctx.StringValue("CreateAutoSnapshotPolicy.PolicyId");
+        
+			return createAutoSnapshotPolicyResponse;
+        }
+    }
 }

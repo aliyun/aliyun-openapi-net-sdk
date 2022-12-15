@@ -29,6 +29,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 
 		private List<ListDbfsAttachedEcsInstances_LabelInfo> ecsLabelInfo;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "EcsLabelInfo")]
 		public List<ListDbfsAttachedEcsInstances_LabelInfo> EcsLabelInfo
 		{
 			get
@@ -68,6 +70,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 
 			private string oSName;
 
+			[JsonProperty(PropertyName = "MountPoint")]
 			public string MountPoint
 			{
 				get
@@ -80,6 +83,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "_Value")]
 			public string _Value
 			{
 				get
@@ -92,6 +96,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "Label")]
 			public string Label
 			{
 				get
@@ -104,6 +109,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "MountedTime")]
 			public string MountedTime
 			{
 				get
@@ -116,6 +122,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "InstanceTypeFamily")]
 			public string InstanceTypeFamily
 			{
 				get
@@ -128,6 +135,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "OSName")]
 			public string OSName
 			{
 				get

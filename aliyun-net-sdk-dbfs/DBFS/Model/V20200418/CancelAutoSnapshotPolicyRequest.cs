@@ -28,10 +28,10 @@ using Aliyun.Acs.DBFS.Transform.V20200418;
 
 namespace Aliyun.Acs.DBFS.Model.V20200418
 {
-    public class ListTagValuesRequest : RpcAcsRequest<ListTagValuesResponse>
+    public class CancelAutoSnapshotPolicyRequest : RpcAcsRequest<CancelAutoSnapshotPolicyResponse>
     {
-        public ListTagValuesRequest()
-            : base("DBFS", "2020-04-18", "ListTagValues", "dbfs", "openAPI")
+        public CancelAutoSnapshotPolicyRequest()
+            : base("DBFS", "2020-04-18", "CancelAutoSnapshotPolicy", "dbfs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,19 +41,42 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			Method = MethodType.POST;
         }
 
-		private string tagKey;
+		private List<string> dbfsIds = new List<string>(){ };
 
-		[JsonProperty(PropertyName = "TagKey")]
-		public string TagKey
+		private string policyId;
+
+		[JsonProperty(PropertyName = "DbfsIds")]
+		public List<string> DbfsIds
 		{
 			get
 			{
-				return tagKey;
+				return dbfsIds;
+			}
+
+			set
+			{
+				dbfsIds = value;
+				if(dbfsIds != null)
+				{
+					for (int depth1 = 0; depth1 < dbfsIds.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"DbfsIds." + (depth1 + 1), dbfsIds[depth1]);
+					}
+				}
+			}
+		}
+
+		[JsonProperty(PropertyName = "PolicyId")]
+		public string PolicyId
+		{
+			get
+			{
+				return policyId;
 			}
 			set	
 			{
-				tagKey = value;
-				DictionaryUtil.Add(QueryParameters, "TagKey", value);
+				policyId = value;
+				DictionaryUtil.Add(QueryParameters, "PolicyId", value);
 			}
 		}
 
@@ -62,9 +85,9 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			return false;
 		}
 
-        public override ListTagValuesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CancelAutoSnapshotPolicyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListTagValuesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CancelAutoSnapshotPolicyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
