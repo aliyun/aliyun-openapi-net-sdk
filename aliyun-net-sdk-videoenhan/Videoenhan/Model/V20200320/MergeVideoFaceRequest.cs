@@ -42,8 +42,6 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 
 		private string referenceURL;
 
-		private string postURL;
-
 		private string videoURL;
 
 		public string ReferenceURL
@@ -56,19 +54,6 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			{
 				referenceURL = value;
 				DictionaryUtil.Add(BodyParameters, "ReferenceURL", value);
-			}
-		}
-
-		public string PostURL
-		{
-			get
-			{
-				return postURL;
-			}
-			set	
-			{
-				postURL = value;
-				DictionaryUtil.Add(BodyParameters, "PostURL", value);
 			}
 		}
 
