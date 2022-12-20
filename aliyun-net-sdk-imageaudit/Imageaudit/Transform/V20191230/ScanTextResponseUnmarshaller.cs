@@ -44,8 +44,8 @@ namespace Aliyun.Acs.imageaudit.Transform.V20191230
 				for (int j = 0; j < _ctx.Length("ScanText.Data.Elements["+ i +"].Results.Length"); j++) {
 					ScanTextResponse.ScanText_Data.ScanText_Element.ScanText_Result result = new ScanTextResponse.ScanText_Data.ScanText_Element.ScanText_Result();
 					result.Suggestion = _ctx.StringValue("ScanText.Data.Elements["+ i +"].Results["+ j +"].Suggestion");
-					result.Rate = _ctx.FloatValue("ScanText.Data.Elements["+ i +"].Results["+ j +"].Rate");
 					result.Label = _ctx.StringValue("ScanText.Data.Elements["+ i +"].Results["+ j +"].Label");
+					result.Rate = _ctx.FloatValue("ScanText.Data.Elements["+ i +"].Results["+ j +"].Rate");
 
 					List<ScanTextResponse.ScanText_Data.ScanText_Element.ScanText_Result.ScanText_Detail> result_details = new List<ScanTextResponse.ScanText_Data.ScanText_Element.ScanText_Result.ScanText_Detail>();
 					for (int k = 0; k < _ctx.Length("ScanText.Data.Elements["+ i +"].Results["+ j +"].Details.Length"); k++) {

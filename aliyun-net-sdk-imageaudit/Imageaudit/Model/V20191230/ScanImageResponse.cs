@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.imageaudit.Model.V20191230
@@ -73,23 +73,23 @@ namespace Aliyun.Acs.imageaudit.Model.V20191230
 			public class ScanImage_Result
 			{
 
-				private string taskId;
+				private string imageURL;
 
 				private string dataId;
 
-				private string imageURL;
+				private string taskId;
 
 				private List<ScanImage_SubResult> subResults;
 
-				public string TaskId
+				public string ImageURL
 				{
 					get
 					{
-						return taskId;
+						return imageURL;
 					}
 					set	
 					{
-						taskId = value;
+						imageURL = value;
 					}
 				}
 
@@ -105,15 +105,15 @@ namespace Aliyun.Acs.imageaudit.Model.V20191230
 					}
 				}
 
-				public string ImageURL
+				public string TaskId
 				{
 					get
 					{
-						return imageURL;
+						return taskId;
 					}
 					set	
 					{
-						imageURL = value;
+						taskId = value;
 					}
 				}
 
@@ -134,21 +134,21 @@ namespace Aliyun.Acs.imageaudit.Model.V20191230
 
 					private string suggestion;
 
-					private float? rate;
-
 					private string label;
 
 					private string scene;
 
-					private List<ScanImage_Frame> frames;
+					private float? rate;
 
 					private List<ScanImage_SfaceData> sfaceDataList;
 
 					private List<ScanImage_HintWordsInfo> hintWordsInfoList;
 
-					private List<ScanImage_LogoData> logoDataList;
-
 					private List<ScanImage_ProgramCodeData> programCodeDataList;
+
+					private List<ScanImage_Frame> frames;
+
+					private List<ScanImage_LogoData> logoDataList;
 
 					private List<string> oCRDataList;
 
@@ -161,18 +161,6 @@ namespace Aliyun.Acs.imageaudit.Model.V20191230
 						set	
 						{
 							suggestion = value;
-						}
-					}
-
-					public float? Rate
-					{
-						get
-						{
-							return rate;
-						}
-						set	
-						{
-							rate = value;
 						}
 					}
 
@@ -200,15 +188,15 @@ namespace Aliyun.Acs.imageaudit.Model.V20191230
 						}
 					}
 
-					public List<ScanImage_Frame> Frames
+					public float? Rate
 					{
 						get
 						{
-							return frames;
+							return rate;
 						}
 						set	
 						{
-							frames = value;
+							rate = value;
 						}
 					}
 
@@ -236,18 +224,6 @@ namespace Aliyun.Acs.imageaudit.Model.V20191230
 						}
 					}
 
-					public List<ScanImage_LogoData> LogoDataList
-					{
-						get
-						{
-							return logoDataList;
-						}
-						set	
-						{
-							logoDataList = value;
-						}
-					}
-
 					public List<ScanImage_ProgramCodeData> ProgramCodeDataList
 					{
 						get
@@ -257,6 +233,30 @@ namespace Aliyun.Acs.imageaudit.Model.V20191230
 						set	
 						{
 							programCodeDataList = value;
+						}
+					}
+
+					public List<ScanImage_Frame> Frames
+					{
+						get
+						{
+							return frames;
+						}
+						set	
+						{
+							frames = value;
+						}
+					}
+
+					public List<ScanImage_LogoData> LogoDataList
+					{
+						get
+						{
+							return logoDataList;
+						}
+						set	
+						{
+							logoDataList = value;
 						}
 					}
 
@@ -272,72 +272,28 @@ namespace Aliyun.Acs.imageaudit.Model.V20191230
 						}
 					}
 
-					public class ScanImage_Frame
-					{
-
-						private float? rate;
-
-						private string uRL;
-
-						public float? Rate
-						{
-							get
-							{
-								return rate;
-							}
-							set	
-							{
-								rate = value;
-							}
-						}
-
-						public string URL
-						{
-							get
-							{
-								return uRL;
-							}
-							set	
-							{
-								uRL = value;
-							}
-						}
-					}
-
 					public class ScanImage_SfaceData
 					{
 
-						private float? x;
-
-						private float? y;
+						private float? width;
 
 						private float? height;
 
-						private float? width;
+						private float? y;
+
+						private float? x;
 
 						private List<ScanImage_Face> faces;
 
-						public float? X
+						public float? Width
 						{
 							get
 							{
-								return x;
+								return width;
 							}
 							set	
 							{
-								x = value;
-							}
-						}
-
-						public float? Y
-						{
-							get
-							{
-								return y;
-							}
-							set	
-							{
-								y = value;
+								width = value;
 							}
 						}
 
@@ -353,15 +309,27 @@ namespace Aliyun.Acs.imageaudit.Model.V20191230
 							}
 						}
 
-						public float? Width
+						public float? Y
 						{
 							get
 							{
-								return width;
+								return y;
 							}
 							set	
 							{
-								width = value;
+								y = value;
+							}
+						}
+
+						public float? X
+						{
+							get
+							{
+								return x;
+							}
+							set	
+							{
+								x = value;
 							}
 						}
 
@@ -380,21 +348,21 @@ namespace Aliyun.Acs.imageaudit.Model.V20191230
 						public class ScanImage_Face
 						{
 
-							private float? rate;
+							private string name;
 
 							private string id;
 
-							private string name;
+							private float? rate;
 
-							public float? Rate
+							public string Name
 							{
 								get
 								{
-									return rate;
+									return name;
 								}
 								set	
 								{
-									rate = value;
+									name = value;
 								}
 							}
 
@@ -410,15 +378,15 @@ namespace Aliyun.Acs.imageaudit.Model.V20191230
 								}
 							}
 
-							public string Name
+							public float? Rate
 							{
 								get
 								{
-									return name;
+									return rate;
 								}
 								set	
 								{
-									name = value;
+									rate = value;
 								}
 							}
 						}
@@ -442,54 +410,26 @@ namespace Aliyun.Acs.imageaudit.Model.V20191230
 						}
 					}
 
-					public class ScanImage_LogoData
+					public class ScanImage_ProgramCodeData
 					{
-
-						private string type;
-
-						private float? x;
-
-						private float? y;
-
-						private float? height;
 
 						private float? width;
 
-						private string name;
+						private float? height;
 
-						public string Type
+						private float? y;
+
+						private float? x;
+
+						public float? Width
 						{
 							get
 							{
-								return type;
+								return width;
 							}
 							set	
 							{
-								type = value;
-							}
-						}
-
-						public float? X
-						{
-							get
-							{
-								return x;
-							}
-							set	
-							{
-								x = value;
-							}
-						}
-
-						public float? Y
-						{
-							get
-							{
-								return y;
-							}
-							set	
-							{
-								y = value;
+								width = value;
 							}
 						}
 
@@ -505,6 +445,90 @@ namespace Aliyun.Acs.imageaudit.Model.V20191230
 							}
 						}
 
+						public float? Y
+						{
+							get
+							{
+								return y;
+							}
+							set	
+							{
+								y = value;
+							}
+						}
+
+						public float? X
+						{
+							get
+							{
+								return x;
+							}
+							set	
+							{
+								x = value;
+							}
+						}
+					}
+
+					public class ScanImage_Frame
+					{
+
+						private string uRL;
+
+						private float? rate;
+
+						public string URL
+						{
+							get
+							{
+								return uRL;
+							}
+							set	
+							{
+								uRL = value;
+							}
+						}
+
+						public float? Rate
+						{
+							get
+							{
+								return rate;
+							}
+							set	
+							{
+								rate = value;
+							}
+						}
+					}
+
+					public class ScanImage_LogoData
+					{
+
+						private string type;
+
+						private float? width;
+
+						private float? height;
+
+						private float? y;
+
+						private string name;
+
+						private float? x;
+
+						public string Type
+						{
+							get
+							{
+								return type;
+							}
+							set	
+							{
+								type = value;
+							}
+						}
+
 						public float? Width
 						{
 							get
@@ -514,6 +538,30 @@ namespace Aliyun.Acs.imageaudit.Model.V20191230
 							set	
 							{
 								width = value;
+							}
+						}
+
+						public float? Height
+						{
+							get
+							{
+								return height;
+							}
+							set	
+							{
+								height = value;
+							}
+						}
+
+						public float? Y
+						{
+							get
+							{
+								return y;
+							}
+							set	
+							{
+								y = value;
 							}
 						}
 
@@ -528,18 +576,6 @@ namespace Aliyun.Acs.imageaudit.Model.V20191230
 								name = value;
 							}
 						}
-					}
-
-					public class ScanImage_ProgramCodeData
-					{
-
-						private float? x;
-
-						private float? y;
-
-						private float? height;
-
-						private float? width;
 
 						public float? X
 						{
@@ -550,42 +586,6 @@ namespace Aliyun.Acs.imageaudit.Model.V20191230
 							set	
 							{
 								x = value;
-							}
-						}
-
-						public float? Y
-						{
-							get
-							{
-								return y;
-							}
-							set	
-							{
-								y = value;
-							}
-						}
-
-						public float? Height
-						{
-							get
-							{
-								return height;
-							}
-							set	
-							{
-								height = value;
-							}
-						}
-
-						public float? Width
-						{
-							get
-							{
-								return width;
-							}
-							set	
-							{
-								width = value;
 							}
 						}
 					}

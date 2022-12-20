@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.imageaudit.Model.V20191230
@@ -106,9 +106,9 @@ namespace Aliyun.Acs.imageaudit.Model.V20191230
 
 					private string suggestion;
 
-					private float? rate;
-
 					private string label;
+
+					private float? rate;
 
 					private List<ScanText_Detail> details;
 
@@ -124,18 +124,6 @@ namespace Aliyun.Acs.imageaudit.Model.V20191230
 						}
 					}
 
-					public float? Rate
-					{
-						get
-						{
-							return rate;
-						}
-						set	
-						{
-							rate = value;
-						}
-					}
-
 					public string Label
 					{
 						get
@@ -145,6 +133,18 @@ namespace Aliyun.Acs.imageaudit.Model.V20191230
 						set	
 						{
 							label = value;
+						}
+					}
+
+					public float? Rate
+					{
+						get
+						{
+							return rate;
+						}
+						set	
+						{
+							rate = value;
 						}
 					}
 
