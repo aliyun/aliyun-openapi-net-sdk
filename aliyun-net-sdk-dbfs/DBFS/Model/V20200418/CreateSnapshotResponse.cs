@@ -29,6 +29,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 
 		private string requestId;
 
+		[JsonProperty(PropertyName = "SnapshotId")]
 		public string SnapshotId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get

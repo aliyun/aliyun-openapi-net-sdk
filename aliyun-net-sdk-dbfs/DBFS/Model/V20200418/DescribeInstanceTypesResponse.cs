@@ -29,6 +29,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 
 		private List<DescribeInstanceTypes_InstanceTypesItem> instanceTypes;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceTypes")]
 		public List<DescribeInstanceTypes_InstanceTypesItem> InstanceTypes
 		{
 			get
@@ -64,6 +66,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 
 			private string instanceTypeDescription;
 
+			[JsonProperty(PropertyName = "InstanceTypeId")]
 			public string InstanceTypeId
 			{
 				get
@@ -76,6 +79,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "CpuCoreCount")]
 			public float? CpuCoreCount
 			{
 				get
@@ -88,6 +92,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "MemorySize")]
 			public float? MemorySize
 			{
 				get
@@ -100,6 +105,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "InstanceTypeDescription")]
 			public string InstanceTypeDescription
 			{
 				get

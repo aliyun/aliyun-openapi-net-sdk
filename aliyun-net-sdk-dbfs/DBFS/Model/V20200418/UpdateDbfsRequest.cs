@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -48,6 +49,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 
 		private string advancedFeatures;
 
+		[JsonProperty(PropertyName = "UsedScene")]
 		public string UsedScene
 		{
 			get
@@ -61,6 +63,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "FsId")]
 		public string FsId
 		{
 			get
@@ -74,6 +77,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceType")]
 		public string InstanceType
 		{
 			get
@@ -87,6 +91,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "AdvancedFeatures")]
 		public string AdvancedFeatures
 		{
 			get

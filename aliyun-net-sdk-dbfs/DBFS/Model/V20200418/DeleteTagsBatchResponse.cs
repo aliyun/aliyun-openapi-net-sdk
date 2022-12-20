@@ -27,6 +27,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 
 		private string requestId;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get

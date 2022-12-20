@@ -1,3 +1,29 @@
+2022-12-20 Version: 1.0.4
+- Update imageaudit.
+
+2022-12-16 Version: 1.6.8
+- Release MergeVideoModelFace.
+
+2022-12-15 Version: 2.0.3
+- Supported delete snapshots.
+- Supported auto snapshot.
+- Fix docx.
+
+2022-12-15 Version: 1.0.0
+- Generated 2020-07-01 for `viapi-oxs-cross`.
+
+2022-12-14 Version: 1.6.7
+- Release MergeVideoModelFace.
+
+2022-12-14 Version: 0.0.9
+- Update MakeSuperResolutionImage.
+
+2022-12-14 Version: 1.0.4
+- Release EstimateMonocularVideoDepth.
+
+2022-12-14 Version: 1.0.0
+- Add GetMetaProductList api.
+
 2022-12-13 Version: 2.0.0
 - Update api ExecuteServerSideVerification The base64 data format is changed from string byte to string.
 

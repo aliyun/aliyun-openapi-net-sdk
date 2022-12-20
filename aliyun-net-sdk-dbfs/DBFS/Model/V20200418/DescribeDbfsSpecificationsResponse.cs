@@ -31,6 +31,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 
 		private List<string> supportedEcsInstanceTypeFamily;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -43,6 +44,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "MaxDbfsNumberPerEcs")]
 		public string MaxDbfsNumberPerEcs
 		{
 			get
@@ -55,6 +57,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "SupportedEcsInstanceTypeFamily")]
 		public List<string> SupportedEcsInstanceTypeFamily
 		{
 			get

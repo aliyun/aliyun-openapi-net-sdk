@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -44,6 +45,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 
 		private bool? force;
 
+		[JsonProperty(PropertyName = "SnapshotId")]
 		public string SnapshotId
 		{
 			get
@@ -57,6 +59,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "Force")]
 		public bool? Force
 		{
 			get

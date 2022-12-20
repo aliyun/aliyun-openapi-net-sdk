@@ -42,7 +42,7 @@ namespace Aliyun.Acs.imageaudit.Model.V20191230
 
 		private List<string> scenes = new List<string>(){ };
 
-		private List<Task> tasks = new List<Task>(){ };
+		private List<string> tasks = new List<string>(){ };
 
 		public List<string> Scenes
 		{
@@ -54,14 +54,10 @@ namespace Aliyun.Acs.imageaudit.Model.V20191230
 			set
 			{
 				scenes = value;
-				for (int i = 0; i < scenes.Count; i++)
-				{
-					DictionaryUtil.Add(BodyParameters,"Scene." + (i + 1) , scenes[i]);
-				}
 			}
 		}
 
-		public List<Task> Tasks
+		public List<string> Tasks
 		{
 			get
 			{
@@ -71,13 +67,16 @@ namespace Aliyun.Acs.imageaudit.Model.V20191230
 			set
 			{
 				tasks = value;
-				for (int i = 0; i < tasks.Count; i++)
+				if(tasks != null)
 				{
-					DictionaryUtil.Add(BodyParameters,"Task." + (i + 1) + ".DataId", tasks[i].DataId);
-					DictionaryUtil.Add(BodyParameters,"Task." + (i + 1) + ".ImageURL", tasks[i].ImageURL);
-					DictionaryUtil.Add(BodyParameters,"Task." + (i + 1) + ".MaxFrames", tasks[i].MaxFrames);
-					DictionaryUtil.Add(BodyParameters,"Task." + (i + 1) + ".Interval", tasks[i].Interval);
-					DictionaryUtil.Add(BodyParameters,"Task." + (i + 1) + ".ImageTimeMillisecond", tasks[i].ImageTimeMillisecond);
+					for (int depth1 = 0; depth1 < tasks.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"Task." + (depth1 + 1), tasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"Task." + (depth1 + 1), tasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"Task." + (depth1 + 1), tasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"Task." + (depth1 + 1), tasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"Task." + (depth1 + 1), tasks[depth1]);
+					}
 				}
 			}
 		}

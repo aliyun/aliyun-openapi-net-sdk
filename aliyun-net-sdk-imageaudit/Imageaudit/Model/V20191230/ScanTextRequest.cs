@@ -40,11 +40,11 @@ namespace Aliyun.Acs.imageaudit.Model.V20191230
 			Method = MethodType.POST;
         }
 
-		private List<Labels> labelss = new List<Labels>(){ };
+		private List<string> labelss = new List<string>(){ };
 
-		private List<Tasks> taskss = new List<Tasks>(){ };
+		private List<string> taskss = new List<string>(){ };
 
-		public List<Labels> Labelss
+		public List<string> Labelss
 		{
 			get
 			{
@@ -54,14 +54,17 @@ namespace Aliyun.Acs.imageaudit.Model.V20191230
 			set
 			{
 				labelss = value;
-				for (int i = 0; i < labelss.Count; i++)
+				if(labelss != null)
 				{
-					DictionaryUtil.Add(BodyParameters,"Labels." + (i + 1) + ".Label", labelss[i].Label);
+					for (int depth1 = 0; depth1 < labelss.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"Labels." + (depth1 + 1), labelss[depth1]);
+					}
 				}
 			}
 		}
 
-		public List<Tasks> Taskss
+		public List<string> Taskss
 		{
 			get
 			{
@@ -71,9 +74,12 @@ namespace Aliyun.Acs.imageaudit.Model.V20191230
 			set
 			{
 				taskss = value;
-				for (int i = 0; i < taskss.Count; i++)
+				if(taskss != null)
 				{
-					DictionaryUtil.Add(BodyParameters,"Tasks." + (i + 1) + ".Content", taskss[i].Content);
+					for (int depth1 = 0; depth1 < taskss.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"Tasks." + (depth1 + 1), taskss[depth1]);
+					}
 				}
 			}
 		}

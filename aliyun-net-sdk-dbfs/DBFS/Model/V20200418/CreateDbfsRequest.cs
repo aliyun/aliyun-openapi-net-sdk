@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -70,6 +71,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 
 		private string kMSKeyId;
 
+		[JsonProperty(PropertyName = "SizeG")]
 		public int? SizeG
 		{
 			get
@@ -83,6 +85,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "SnapshotId")]
 		public string SnapshotId
 		{
 			get
@@ -96,6 +99,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "ClientToken")]
 		public string ClientToken
 		{
 			get
@@ -109,6 +113,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "UsedScene")]
 		public string UsedScene
 		{
 			get
@@ -122,6 +127,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "FsName")]
 		public string FsName
 		{
 			get
@@ -135,6 +141,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "RaidStripeUnitNumber")]
 		public int? RaidStripeUnitNumber
 		{
 			get
@@ -148,6 +155,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "Encryption")]
 		public bool? Encryption
 		{
 			get
@@ -161,6 +169,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceType")]
 		public string InstanceType
 		{
 			get
@@ -174,6 +183,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "AdvancedFeatures")]
 		public string AdvancedFeatures
 		{
 			get
@@ -187,6 +197,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "PerformanceLevel")]
 		public string PerformanceLevel
 		{
 			get
@@ -200,6 +211,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "EnableRaid")]
 		public bool? EnableRaid
 		{
 			get
@@ -213,6 +225,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "DeleteSnapshot")]
 		public bool? DeleteSnapshot
 		{
 			get
@@ -226,6 +239,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "ZoneId")]
 		public string ZoneId
 		{
 			get
@@ -239,6 +253,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "Category")]
 		public string Category
 		{
 			get
@@ -252,6 +267,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "KMSKeyId")]
 		public string KMSKeyId
 		{
 			get

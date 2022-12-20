@@ -33,6 +33,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 
 		private string regionId;
 
+		[JsonProperty(PropertyName = "AccountId")]
 		public string AccountId
 		{
 			get
@@ -45,6 +46,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -57,6 +59,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "DbfsLinkedRole")]
 		public bool? DbfsLinkedRole
 		{
 			get
@@ -69,6 +72,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "RegionId")]
 		public string RegionId
 		{
 			get
