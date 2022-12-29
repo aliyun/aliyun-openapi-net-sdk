@@ -327,6 +327,24 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 				private string name;
 
+				private double? canPromFee;
+
+				private string promotionOptionCode;
+
+				private double? lackForPriceBreak;
+
+				private double? priceBreakThreshold;
+
+				private double? priceBreakReduceValue;
+
+				private string optionCode;
+
+				private string activityCategory;
+
+				private List<string> promotionRuleIdList;
+
+				private List<string> targetArticleItemCodes;
+
 				public string Description
 				{
 					get
@@ -372,6 +390,114 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						name = value;
+					}
+				}
+
+				public double? CanPromFee
+				{
+					get
+					{
+						return canPromFee;
+					}
+					set	
+					{
+						canPromFee = value;
+					}
+				}
+
+				public string PromotionOptionCode
+				{
+					get
+					{
+						return promotionOptionCode;
+					}
+					set	
+					{
+						promotionOptionCode = value;
+					}
+				}
+
+				public double? LackForPriceBreak
+				{
+					get
+					{
+						return lackForPriceBreak;
+					}
+					set	
+					{
+						lackForPriceBreak = value;
+					}
+				}
+
+				public double? PriceBreakThreshold
+				{
+					get
+					{
+						return priceBreakThreshold;
+					}
+					set	
+					{
+						priceBreakThreshold = value;
+					}
+				}
+
+				public double? PriceBreakReduceValue
+				{
+					get
+					{
+						return priceBreakReduceValue;
+					}
+					set	
+					{
+						priceBreakReduceValue = value;
+					}
+				}
+
+				public string OptionCode
+				{
+					get
+					{
+						return optionCode;
+					}
+					set	
+					{
+						optionCode = value;
+					}
+				}
+
+				public string ActivityCategory
+				{
+					get
+					{
+						return activityCategory;
+					}
+					set	
+					{
+						activityCategory = value;
+					}
+				}
+
+				public List<string> PromotionRuleIdList
+				{
+					get
+					{
+						return promotionRuleIdList;
+					}
+					set	
+					{
+						promotionRuleIdList = value;
+					}
+				}
+
+				public List<string> TargetArticleItemCodes
+				{
+					get
+					{
+						return targetArticleItemCodes;
+					}
+					set	
+					{
+						targetArticleItemCodes = value;
 					}
 				}
 			}

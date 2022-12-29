@@ -54,6 +54,25 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				coupon.IsSelected = _ctx.StringValue("DescribePrice.Order.Coupons["+ i +"].IsSelected");
 				coupon.CouponNo = _ctx.StringValue("DescribePrice.Order.Coupons["+ i +"].CouponNo");
 				coupon.Name = _ctx.StringValue("DescribePrice.Order.Coupons["+ i +"].Name");
+				coupon.CanPromFee = _ctx.DoubleValue("DescribePrice.Order.Coupons["+ i +"].CanPromFee");
+				coupon.PromotionOptionCode = _ctx.StringValue("DescribePrice.Order.Coupons["+ i +"].PromotionOptionCode");
+				coupon.LackForPriceBreak = _ctx.DoubleValue("DescribePrice.Order.Coupons["+ i +"].LackForPriceBreak");
+				coupon.PriceBreakThreshold = _ctx.DoubleValue("DescribePrice.Order.Coupons["+ i +"].PriceBreakThreshold");
+				coupon.PriceBreakReduceValue = _ctx.DoubleValue("DescribePrice.Order.Coupons["+ i +"].PriceBreakReduceValue");
+				coupon.OptionCode = _ctx.StringValue("DescribePrice.Order.Coupons["+ i +"].OptionCode");
+				coupon.ActivityCategory = _ctx.StringValue("DescribePrice.Order.Coupons["+ i +"].ActivityCategory");
+
+				List<string> coupon_promotionRuleIdList = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribePrice.Order.Coupons["+ i +"].PromotionRuleIdList.Length"); j++) {
+					coupon_promotionRuleIdList.Add(_ctx.StringValue("DescribePrice.Order.Coupons["+ i +"].PromotionRuleIdList["+ j +"]"));
+				}
+				coupon.PromotionRuleIdList = coupon_promotionRuleIdList;
+
+				List<string> coupon_targetArticleItemCodes = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribePrice.Order.Coupons["+ i +"].TargetArticleItemCodes.Length"); j++) {
+					coupon_targetArticleItemCodes.Add(_ctx.StringValue("DescribePrice.Order.Coupons["+ i +"].TargetArticleItemCodes["+ j +"]"));
+				}
+				coupon.TargetArticleItemCodes = coupon_targetArticleItemCodes;
 
 				order_coupons.Add(coupon);
 			}
