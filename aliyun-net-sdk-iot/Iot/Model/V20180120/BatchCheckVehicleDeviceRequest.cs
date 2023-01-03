@@ -28,10 +28,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class RRpcRequest : RpcAcsRequest<RRpcResponse>
+    public class BatchCheckVehicleDeviceRequest : RpcAcsRequest<BatchCheckVehicleDeviceResponse>
     {
-        public RRpcRequest()
-            : base("Iot", "2018-01-20", "RRpc")
+        public BatchCheckVehicleDeviceRequest()
+            : base("Iot", "2018-01-20", "BatchCheckVehicleDevice")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,32 +41,11 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private int? timeout;
-
 		private string iotInstanceId;
-
-		private string requestBase64Byte;
 
 		private string productKey;
 
-		private string contentType;
-
-		private string topic;
-
-		private string deviceName;
-
-		public int? Timeout
-		{
-			get
-			{
-				return timeout;
-			}
-			set	
-			{
-				timeout = value;
-				DictionaryUtil.Add(QueryParameters, "Timeout", value.ToString());
-			}
-		}
+		private List<DeviceList> deviceLists = new List<DeviceList>(){ };
 
 		public string IotInstanceId
 		{
@@ -78,19 +57,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
-			}
-		}
-
-		public string RequestBase64Byte
-		{
-			get
-			{
-				return requestBase64Byte;
-			}
-			set	
-			{
-				requestBase64Byte = value;
-				DictionaryUtil.Add(QueryParameters, "RequestBase64Byte", value);
 			}
 		}
 
@@ -107,48 +73,79 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string ContentType
+		public List<DeviceList> DeviceLists
 		{
 			get
 			{
-				return contentType;
+				return deviceLists;
 			}
-			set	
+
+			set
 			{
-				contentType = value;
-				DictionaryUtil.Add(QueryParameters, "ContentType", value);
+				deviceLists = value;
+				for (int i = 0; i < deviceLists.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"DeviceList." + (i + 1) + ".DeviceId", deviceLists[i].DeviceId);
+					DictionaryUtil.Add(QueryParameters,"DeviceList." + (i + 1) + ".Manufacturer", deviceLists[i].Manufacturer);
+					DictionaryUtil.Add(QueryParameters,"DeviceList." + (i + 1) + ".DeviceModel", deviceLists[i].DeviceModel);
+				}
 			}
 		}
 
-		public string Topic
+		public class DeviceList
 		{
-			get
+
+			private string deviceId;
+
+			private string manufacturer;
+
+			private string deviceModel;
+
+			public string DeviceId
 			{
-				return topic;
+				get
+				{
+					return deviceId;
+				}
+				set	
+				{
+					deviceId = value;
+				}
 			}
-			set	
+
+			public string Manufacturer
 			{
-				topic = value;
-				DictionaryUtil.Add(QueryParameters, "Topic", value);
+				get
+				{
+					return manufacturer;
+				}
+				set	
+				{
+					manufacturer = value;
+				}
+			}
+
+			public string DeviceModel
+			{
+				get
+				{
+					return deviceModel;
+				}
+				set	
+				{
+					deviceModel = value;
+				}
 			}
 		}
 
-		public string DeviceName
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return deviceName;
-			}
-			set	
-			{
-				deviceName = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
-			}
+			return false;
 		}
 
-        public override RRpcResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override BatchCheckVehicleDeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RRpcResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return BatchCheckVehicleDeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

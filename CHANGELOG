@@ -1,3 +1,10 @@
+2023-01-03 Version: 7.48.0
+- Pub Support MessageExpiryInterval and Retained.
+- Rrpc Support ContentType.
+- BatchImportVehicleDevice batch create device by jt808 protocol.
+- BatchCheckVehicleDevice batch check device by jt808 protocol.
+- QueryVehicleDevice query jt808 device information.
+
 2023-01-03 Version: 2.0.4
 - Supported snapshot link for DBFS.
 - Supported showing snapshot info.

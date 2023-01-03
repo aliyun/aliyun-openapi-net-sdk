@@ -28,10 +28,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class RRpcRequest : RpcAcsRequest<RRpcResponse>
+    public class QueryVehicleDeviceRequest : RpcAcsRequest<QueryVehicleDeviceResponse>
     {
-        public RRpcRequest()
-            : base("Iot", "2018-01-20", "RRpc")
+        public QueryVehicleDeviceRequest()
+            : base("Iot", "2018-01-20", "QueryVehicleDevice")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,32 +41,11 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private int? timeout;
-
 		private string iotInstanceId;
-
-		private string requestBase64Byte;
 
 		private string productKey;
 
-		private string contentType;
-
-		private string topic;
-
 		private string deviceName;
-
-		public int? Timeout
-		{
-			get
-			{
-				return timeout;
-			}
-			set	
-			{
-				timeout = value;
-				DictionaryUtil.Add(QueryParameters, "Timeout", value.ToString());
-			}
-		}
 
 		public string IotInstanceId
 		{
@@ -78,19 +57,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
-			}
-		}
-
-		public string RequestBase64Byte
-		{
-			get
-			{
-				return requestBase64Byte;
-			}
-			set	
-			{
-				requestBase64Byte = value;
-				DictionaryUtil.Add(QueryParameters, "RequestBase64Byte", value);
 			}
 		}
 
@@ -107,32 +73,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string ContentType
-		{
-			get
-			{
-				return contentType;
-			}
-			set	
-			{
-				contentType = value;
-				DictionaryUtil.Add(QueryParameters, "ContentType", value);
-			}
-		}
-
-		public string Topic
-		{
-			get
-			{
-				return topic;
-			}
-			set	
-			{
-				topic = value;
-				DictionaryUtil.Add(QueryParameters, "Topic", value);
-			}
-		}
-
 		public string DeviceName
 		{
 			get
@@ -146,9 +86,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-        public override RRpcResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryVehicleDeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RRpcResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryVehicleDeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
