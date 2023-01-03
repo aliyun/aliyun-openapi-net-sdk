@@ -28,10 +28,10 @@ using Aliyun.Acs.DBFS.Transform.V20200418;
 
 namespace Aliyun.Acs.DBFS.Model.V20200418
 {
-    public class AttachDbfsRequest : RpcAcsRequest<AttachDbfsResponse>
+    public class GetAutoSnapshotPolicyRequest : RpcAcsRequest<GetAutoSnapshotPolicyResponse>
     {
-        public AttachDbfsRequest()
-            : base("DBFS", "2020-04-18", "AttachDbfs", "dbfs", "openAPI")
+        public GetAutoSnapshotPolicyRequest()
+            : base("DBFS", "2020-04-18", "GetAutoSnapshotPolicy", "dbfs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,83 +41,19 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			Method = MethodType.POST;
         }
 
-		private string eCSInstanceId;
+		private string policyId;
 
-		private string attachPoint;
-
-		private string serverUrl;
-
-		private string fsId;
-
-		private string attachMode;
-
-		[JsonProperty(PropertyName = "ECSInstanceId")]
-		public string ECSInstanceId
+		[JsonProperty(PropertyName = "PolicyId")]
+		public string PolicyId
 		{
 			get
 			{
-				return eCSInstanceId;
+				return policyId;
 			}
 			set	
 			{
-				eCSInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "ECSInstanceId", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "AttachPoint")]
-		public string AttachPoint
-		{
-			get
-			{
-				return attachPoint;
-			}
-			set	
-			{
-				attachPoint = value;
-				DictionaryUtil.Add(QueryParameters, "AttachPoint", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "ServerUrl")]
-		public string ServerUrl
-		{
-			get
-			{
-				return serverUrl;
-			}
-			set	
-			{
-				serverUrl = value;
-				DictionaryUtil.Add(QueryParameters, "ServerUrl", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "FsId")]
-		public string FsId
-		{
-			get
-			{
-				return fsId;
-			}
-			set	
-			{
-				fsId = value;
-				DictionaryUtil.Add(QueryParameters, "FsId", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "AttachMode")]
-		public string AttachMode
-		{
-			get
-			{
-				return attachMode;
-			}
-			set	
-			{
-				attachMode = value;
-				DictionaryUtil.Add(QueryParameters, "AttachMode", value);
+				policyId = value;
+				DictionaryUtil.Add(QueryParameters, "PolicyId", value);
 			}
 		}
 
@@ -126,9 +62,9 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			return false;
 		}
 
-        public override AttachDbfsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetAutoSnapshotPolicyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return AttachDbfsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetAutoSnapshotPolicyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

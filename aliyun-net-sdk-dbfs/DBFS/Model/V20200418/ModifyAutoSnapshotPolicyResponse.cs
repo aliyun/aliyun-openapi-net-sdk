@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.DBFS.Model.V20200418
 {
-	public class AttachDbfsResponse : AcsResponse
+	public class ModifyAutoSnapshotPolicyResponse : AcsResponse
 	{
 
 		private string requestId;

@@ -61,6 +61,13 @@ namespace Aliyun.Acs.DBFS.Transform.V20200418
 				info.InstanceType = _ctx.StringValue("ListDbfs.DBFSInfo["+ i +"].InstanceType");
 				info.LastFailed = _ctx.StringValue("ListDbfs.DBFSInfo["+ i +"].LastFailed");
 
+				ListDbfsResponse.ListDbfs_Info.ListDbfs_SnapshotInfo snapshotInfo = new ListDbfsResponse.ListDbfs_Info.ListDbfs_SnapshotInfo();
+				snapshotInfo.SnapshotCount = _ctx.IntegerValue("ListDbfs.DBFSInfo["+ i +"].SnapshotInfo.SnapshotCount");
+				snapshotInfo.TotalSize = _ctx.LongValue("ListDbfs.DBFSInfo["+ i +"].SnapshotInfo.TotalSize");
+				snapshotInfo.LinkId = _ctx.StringValue("ListDbfs.DBFSInfo["+ i +"].SnapshotInfo.LinkId");
+				snapshotInfo.PolicyId = _ctx.StringValue("ListDbfs.DBFSInfo["+ i +"].SnapshotInfo.PolicyId");
+				info.SnapshotInfo = snapshotInfo;
+
 				List<ListDbfsResponse.ListDbfs_Info.ListDbfs_TagList> info_tags = new List<ListDbfsResponse.ListDbfs_Info.ListDbfs_TagList>();
 				for (int j = 0; j < _ctx.Length("ListDbfs.DBFSInfo["+ i +"].Tags.Length"); j++) {
 					ListDbfsResponse.ListDbfs_Info.ListDbfs_TagList tagList = new ListDbfsResponse.ListDbfs_Info.ListDbfs_TagList();

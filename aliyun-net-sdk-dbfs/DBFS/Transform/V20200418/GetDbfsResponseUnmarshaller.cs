@@ -57,6 +57,13 @@ namespace Aliyun.Acs.DBFS.Transform.V20200418
 			dBFSInfo.RaidStrip = _ctx.IntegerValue("GetDbfs.DBFSInfo.RaidStrip");
 			dBFSInfo.LastFailed = _ctx.StringValue("GetDbfs.DBFSInfo.LastFailed");
 
+			GetDbfsResponse.GetDbfs_DBFSInfo.GetDbfs_SnapshotInfo snapshotInfo = new GetDbfsResponse.GetDbfs_DBFSInfo.GetDbfs_SnapshotInfo();
+			snapshotInfo.SnapshotCount = _ctx.IntegerValue("GetDbfs.DBFSInfo.SnapshotInfo.SnapshotCount");
+			snapshotInfo.LinkId = _ctx.StringValue("GetDbfs.DBFSInfo.SnapshotInfo.LinkId");
+			snapshotInfo.TotalSize = _ctx.LongValue("GetDbfs.DBFSInfo.SnapshotInfo.totalSize");
+			snapshotInfo.PolicyId = _ctx.StringValue("GetDbfs.DBFSInfo.SnapshotInfo.PolicyId");
+			dBFSInfo.SnapshotInfo = snapshotInfo;
+
 			List<GetDbfsResponse.GetDbfs_DBFSInfo.GetDbfs_TagList> dBFSInfo_tags = new List<GetDbfsResponse.GetDbfs_DBFSInfo.GetDbfs_TagList>();
 			for (int i = 0; i < _ctx.Length("GetDbfs.DBFSInfo.Tags.Length"); i++) {
 				GetDbfsResponse.GetDbfs_DBFSInfo.GetDbfs_TagList tagList = new GetDbfsResponse.GetDbfs_DBFSInfo.GetDbfs_TagList();
