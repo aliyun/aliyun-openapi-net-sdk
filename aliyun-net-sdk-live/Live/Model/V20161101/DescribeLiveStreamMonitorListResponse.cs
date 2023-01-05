@@ -75,6 +75,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private int? status;
 
+			private string monitorConfig;
+
 			private string startTime;
 
 			private string monitorId;
@@ -105,6 +107,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					status = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MonitorConfig")]
+			public string MonitorConfig
+			{
+				get
+				{
+					return monitorConfig;
+				}
+				set	
+				{
+					monitorConfig = value;
 				}
 			}
 

@@ -43,6 +43,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string monitorId;
 
+		private string monitorConfig;
+
 		private string monitorName;
 
 		private string stream;
@@ -68,6 +70,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				monitorId = value;
 				DictionaryUtil.Add(QueryParameters, "MonitorId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "MonitorConfig")]
+		public string MonitorConfig
+		{
+			get
+			{
+				return monitorConfig;
+			}
+			set	
+			{
+				monitorConfig = value;
+				DictionaryUtil.Add(QueryParameters, "MonitorConfig", value);
 			}
 		}
 
