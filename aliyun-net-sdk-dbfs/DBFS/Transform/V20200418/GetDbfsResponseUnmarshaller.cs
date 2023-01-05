@@ -60,7 +60,7 @@ namespace Aliyun.Acs.DBFS.Transform.V20200418
 			GetDbfsResponse.GetDbfs_DBFSInfo.GetDbfs_SnapshotInfo snapshotInfo = new GetDbfsResponse.GetDbfs_DBFSInfo.GetDbfs_SnapshotInfo();
 			snapshotInfo.SnapshotCount = _ctx.IntegerValue("GetDbfs.DBFSInfo.SnapshotInfo.SnapshotCount");
 			snapshotInfo.LinkId = _ctx.StringValue("GetDbfs.DBFSInfo.SnapshotInfo.LinkId");
-			snapshotInfo.TotalSize = _ctx.LongValue("GetDbfs.DBFSInfo.SnapshotInfo.totalSize");
+			snapshotInfo.TotalSize = _ctx.LongValue("GetDbfs.DBFSInfo.SnapshotInfo.TotalSize");
 			snapshotInfo.PolicyId = _ctx.StringValue("GetDbfs.DBFSInfo.SnapshotInfo.PolicyId");
 			dBFSInfo.SnapshotInfo = snapshotInfo;
 

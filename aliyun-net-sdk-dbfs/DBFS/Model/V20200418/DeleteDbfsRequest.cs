@@ -43,6 +43,8 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 
 		private string fsId;
 
+		private bool? force;
+
 		[JsonProperty(PropertyName = "FsId")]
 		public string FsId
 		{
@@ -54,6 +56,20 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			{
 				fsId = value;
 				DictionaryUtil.Add(QueryParameters, "FsId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Force")]
+		public bool? Force
+		{
+			get
+			{
+				return force;
+			}
+			set	
+			{
+				force = value;
+				DictionaryUtil.Add(QueryParameters, "Force", value.ToString());
 			}
 		}
 
