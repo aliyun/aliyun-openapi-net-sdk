@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
-	public class ListPoliciesForRoleResponse : AcsResponse
+	public class UpdatePolicyDescriptionResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<ListPoliciesForRole_Policy> policies;
+		private UpdatePolicyDescription_Policy policy;
 
 		public string RequestId
 		{
@@ -41,40 +41,78 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			}
 		}
 
-		public List<ListPoliciesForRole_Policy> Policies
+		public UpdatePolicyDescription_Policy Policy
 		{
 			get
 			{
-				return policies;
+				return policy;
 			}
 			set	
 			{
-				policies = value;
+				policy = value;
 			}
 		}
 
-		public class ListPoliciesForRole_Policy
+		public class UpdatePolicyDescription_Policy
 		{
-
-			private string defaultVersion;
-
-			private string description;
 
 			private string policyName;
 
-			private string attachDate;
-
 			private string policyType;
 
-			public string DefaultVersion
+			private string createDate;
+
+			private string updateDate;
+
+			private string description;
+
+			private string defaultVersion;
+
+			public string PolicyName
 			{
 				get
 				{
-					return defaultVersion;
+					return policyName;
 				}
 				set	
 				{
-					defaultVersion = value;
+					policyName = value;
+				}
+			}
+
+			public string PolicyType
+			{
+				get
+				{
+					return policyType;
+				}
+				set	
+				{
+					policyType = value;
+				}
+			}
+
+			public string CreateDate
+			{
+				get
+				{
+					return createDate;
+				}
+				set	
+				{
+					createDate = value;
+				}
+			}
+
+			public string UpdateDate
+			{
+				get
+				{
+					return updateDate;
+				}
+				set	
+				{
+					updateDate = value;
 				}
 			}
 
@@ -90,39 +128,15 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				}
 			}
 
-			public string PolicyName
+			public string DefaultVersion
 			{
 				get
 				{
-					return policyName;
+					return defaultVersion;
 				}
 				set	
 				{
-					policyName = value;
-				}
-			}
-
-			public string AttachDate
-			{
-				get
-				{
-					return attachDate;
-				}
-				set	
-				{
-					attachDate = value;
-				}
-			}
-
-			public string PolicyType
-			{
-				get
-				{
-					return policyType;
-				}
-				set	
-				{
-					policyType = value;
+					defaultVersion = value;
 				}
 			}
 		}

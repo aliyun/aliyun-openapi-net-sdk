@@ -26,29 +26,29 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
 {
     public class GetPolicyResponseUnmarshaller
     {
-        public static GetPolicyResponse Unmarshall(UnmarshallerContext context)
+        public static GetPolicyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetPolicyResponse getPolicyResponse = new GetPolicyResponse();
 
-			getPolicyResponse.HttpResponse = context.HttpResponse;
-			getPolicyResponse.RequestId = context.StringValue("GetPolicy.RequestId");
+			getPolicyResponse.HttpResponse = _ctx.HttpResponse;
+			getPolicyResponse.RequestId = _ctx.StringValue("GetPolicy.RequestId");
 
 			GetPolicyResponse.GetPolicy_Policy policy = new GetPolicyResponse.GetPolicy_Policy();
-			policy.PolicyName = context.StringValue("GetPolicy.Policy.PolicyName");
-			policy.PolicyType = context.StringValue("GetPolicy.Policy.PolicyType");
-			policy.Description = context.StringValue("GetPolicy.Policy.Description");
-			policy.DefaultVersion = context.StringValue("GetPolicy.Policy.DefaultVersion");
-			policy.PolicyDocument = context.StringValue("GetPolicy.Policy.PolicyDocument");
-			policy.CreateDate = context.StringValue("GetPolicy.Policy.CreateDate");
-			policy.UpdateDate = context.StringValue("GetPolicy.Policy.UpdateDate");
-			policy.AttachmentCount = context.IntegerValue("GetPolicy.Policy.AttachmentCount");
+			policy.DefaultVersion = _ctx.StringValue("GetPolicy.Policy.DefaultVersion");
+			policy.UpdateDate = _ctx.StringValue("GetPolicy.Policy.UpdateDate");
+			policy.Description = _ctx.StringValue("GetPolicy.Policy.Description");
+			policy.PolicyDocument = _ctx.StringValue("GetPolicy.Policy.PolicyDocument");
+			policy.AttachmentCount = _ctx.IntegerValue("GetPolicy.Policy.AttachmentCount");
+			policy.PolicyName = _ctx.StringValue("GetPolicy.Policy.PolicyName");
+			policy.CreateDate = _ctx.StringValue("GetPolicy.Policy.CreateDate");
+			policy.PolicyType = _ctx.StringValue("GetPolicy.Policy.PolicyType");
 			getPolicyResponse.Policy = policy;
 
 			GetPolicyResponse.GetPolicy_DefaultPolicyVersion defaultPolicyVersion = new GetPolicyResponse.GetPolicy_DefaultPolicyVersion();
-			defaultPolicyVersion.VersionId = context.StringValue("GetPolicy.DefaultPolicyVersion.VersionId");
-			defaultPolicyVersion.IsDefaultVersion = context.BooleanValue("GetPolicy.DefaultPolicyVersion.IsDefaultVersion");
-			defaultPolicyVersion.PolicyDocument = context.StringValue("GetPolicy.DefaultPolicyVersion.PolicyDocument");
-			defaultPolicyVersion.CreateDate = context.StringValue("GetPolicy.DefaultPolicyVersion.CreateDate");
+			defaultPolicyVersion.IsDefaultVersion = _ctx.BooleanValue("GetPolicy.DefaultPolicyVersion.IsDefaultVersion");
+			defaultPolicyVersion.PolicyDocument = _ctx.StringValue("GetPolicy.DefaultPolicyVersion.PolicyDocument");
+			defaultPolicyVersion.VersionId = _ctx.StringValue("GetPolicy.DefaultPolicyVersion.VersionId");
+			defaultPolicyVersion.CreateDate = _ctx.StringValue("GetPolicy.DefaultPolicyVersion.CreateDate");
 			getPolicyResponse.DefaultPolicyVersion = defaultPolicyVersion;
         
 			return getPolicyResponse;

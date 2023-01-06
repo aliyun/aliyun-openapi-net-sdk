@@ -26,17 +26,17 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
 {
     public class CreateVirtualMFADeviceResponseUnmarshaller
     {
-        public static CreateVirtualMFADeviceResponse Unmarshall(UnmarshallerContext context)
+        public static CreateVirtualMFADeviceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateVirtualMFADeviceResponse createVirtualMFADeviceResponse = new CreateVirtualMFADeviceResponse();
 
-			createVirtualMFADeviceResponse.HttpResponse = context.HttpResponse;
-			createVirtualMFADeviceResponse.RequestId = context.StringValue("CreateVirtualMFADevice.RequestId");
+			createVirtualMFADeviceResponse.HttpResponse = _ctx.HttpResponse;
+			createVirtualMFADeviceResponse.RequestId = _ctx.StringValue("CreateVirtualMFADevice.RequestId");
 
 			CreateVirtualMFADeviceResponse.CreateVirtualMFADevice_VirtualMFADevice virtualMFADevice = new CreateVirtualMFADeviceResponse.CreateVirtualMFADevice_VirtualMFADevice();
-			virtualMFADevice.SerialNumber = context.StringValue("CreateVirtualMFADevice.VirtualMFADevice.SerialNumber");
-			virtualMFADevice.Base32StringSeed = context.StringValue("CreateVirtualMFADevice.VirtualMFADevice.Base32StringSeed");
-			virtualMFADevice.QRCodePNG = context.StringValue("CreateVirtualMFADevice.VirtualMFADevice.QRCodePNG");
+			virtualMFADevice.SerialNumber = _ctx.StringValue("CreateVirtualMFADevice.VirtualMFADevice.SerialNumber");
+			virtualMFADevice.QRCodePNG = _ctx.StringValue("CreateVirtualMFADevice.VirtualMFADevice.QRCodePNG");
+			virtualMFADevice.Base32StringSeed = _ctx.StringValue("CreateVirtualMFADevice.VirtualMFADevice.Base32StringSeed");
 			createVirtualMFADeviceResponse.VirtualMFADevice = virtualMFADevice;
         
 			return createVirtualMFADeviceResponse;

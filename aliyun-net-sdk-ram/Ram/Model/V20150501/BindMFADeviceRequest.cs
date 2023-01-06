@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Ram;
 using Aliyun.Acs.Ram.Transform;
 using Aliyun.Acs.Ram.Transform.V20150501;
 
@@ -31,36 +30,24 @@ namespace Aliyun.Acs.Ram.Model.V20150501
     public class BindMFADeviceRequest : RpcAcsRequest<BindMFADeviceResponse>
     {
         public BindMFADeviceRequest()
-            : base("Ram", "2015-05-01", "BindMFADevice")
+            : base("Ram", "2015-05-01", "BindMFADevice", "Ram", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Ram.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Ram.Endpoint.endpointRegionalType, null);
             }
 			Protocol = ProtocolType.HTTPS;
+			Method = MethodType.POST;
         }
-
-		private string serialNumber;
 
 		private string authenticationCode2;
 
 		private string authenticationCode1;
 
-		private string userName;
+		private string serialNumber;
 
-		public string SerialNumber
-		{
-			get
-			{
-				return serialNumber;
-			}
-			set	
-			{
-				serialNumber = value;
-				DictionaryUtil.Add(QueryParameters, "SerialNumber", value);
-			}
-		}
+		private string userName;
 
 		public string AuthenticationCode2
 		{
@@ -85,6 +72,19 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			{
 				authenticationCode1 = value;
 				DictionaryUtil.Add(QueryParameters, "AuthenticationCode1", value);
+			}
+		}
+
+		public string SerialNumber
+		{
+			get
+			{
+				return serialNumber;
+			}
+			set	
+			{
+				serialNumber = value;
+				DictionaryUtil.Add(QueryParameters, "SerialNumber", value);
 			}
 		}
 

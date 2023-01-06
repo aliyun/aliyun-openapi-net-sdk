@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
 {
     public class ClearAccountAliasResponseUnmarshaller
     {
-        public static ClearAccountAliasResponse Unmarshall(UnmarshallerContext context)
+        public static ClearAccountAliasResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ClearAccountAliasResponse clearAccountAliasResponse = new ClearAccountAliasResponse();
 
-			clearAccountAliasResponse.HttpResponse = context.HttpResponse;
-			clearAccountAliasResponse.RequestId = context.StringValue("ClearAccountAlias.RequestId");
+			clearAccountAliasResponse.HttpResponse = _ctx.HttpResponse;
+			clearAccountAliasResponse.RequestId = _ctx.StringValue("ClearAccountAlias.RequestId");
         
 			return clearAccountAliasResponse;
         }

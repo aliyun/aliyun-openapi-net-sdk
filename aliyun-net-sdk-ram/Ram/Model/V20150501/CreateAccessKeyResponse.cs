@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
@@ -56,23 +56,23 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 		public class CreateAccessKey_AccessKey
 		{
 
-			private string accessKeyId;
+			private string status;
 
 			private string accessKeySecret;
 
-			private string status;
-
 			private string createDate;
 
-			public string AccessKeyId
+			private string accessKeyId;
+
+			public string Status
 			{
 				get
 				{
-					return accessKeyId;
+					return status;
 				}
 				set	
 				{
-					accessKeyId = value;
+					status = value;
 				}
 			}
 
@@ -88,18 +88,6 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				}
 			}
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
 			public string CreateDate
 			{
 				get
@@ -109,6 +97,18 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				set	
 				{
 					createDate = value;
+				}
+			}
+
+			public string AccessKeyId
+			{
+				get
+				{
+					return accessKeyId;
+				}
+				set	
+				{
+					accessKeyId = value;
 				}
 			}
 		}

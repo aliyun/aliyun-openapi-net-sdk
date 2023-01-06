@@ -26,19 +26,20 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
 {
     public class ListGroupsForUserResponseUnmarshaller
     {
-        public static ListGroupsForUserResponse Unmarshall(UnmarshallerContext context)
+        public static ListGroupsForUserResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListGroupsForUserResponse listGroupsForUserResponse = new ListGroupsForUserResponse();
 
-			listGroupsForUserResponse.HttpResponse = context.HttpResponse;
-			listGroupsForUserResponse.RequestId = context.StringValue("ListGroupsForUser.RequestId");
+			listGroupsForUserResponse.HttpResponse = _ctx.HttpResponse;
+			listGroupsForUserResponse.RequestId = _ctx.StringValue("ListGroupsForUser.RequestId");
 
 			List<ListGroupsForUserResponse.ListGroupsForUser_Group> listGroupsForUserResponse_groups = new List<ListGroupsForUserResponse.ListGroupsForUser_Group>();
-			for (int i = 0; i < context.Length("ListGroupsForUser.Groups.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListGroupsForUser.Groups.Length"); i++) {
 				ListGroupsForUserResponse.ListGroupsForUser_Group group = new ListGroupsForUserResponse.ListGroupsForUser_Group();
-				group.GroupName = context.StringValue("ListGroupsForUser.Groups["+ i +"].GroupName");
-				group.Comments = context.StringValue("ListGroupsForUser.Groups["+ i +"].Comments");
-				group.JoinDate = context.StringValue("ListGroupsForUser.Groups["+ i +"].JoinDate");
+				group.GroupId = _ctx.StringValue("ListGroupsForUser.Groups["+ i +"].GroupId");
+				group.GroupName = _ctx.StringValue("ListGroupsForUser.Groups["+ i +"].GroupName");
+				group.Comments = _ctx.StringValue("ListGroupsForUser.Groups["+ i +"].Comments");
+				group.JoinDate = _ctx.StringValue("ListGroupsForUser.Groups["+ i +"].JoinDate");
 
 				listGroupsForUserResponse_groups.Add(group);
 			}

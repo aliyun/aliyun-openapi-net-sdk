@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
@@ -56,33 +56,33 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 		public class GetPasswordPolicy_PasswordPolicy
 		{
 
-			private int? minimumPasswordLength;
+			private bool? requireNumbers;
 
 			private bool? requireLowercaseCharacters;
 
-			private bool? requireUppercaseCharacters;
-
-			private bool? requireNumbers;
-
-			private bool? requireSymbols;
-
 			private bool? hardExpiry;
-
-			private int? maxPasswordAge;
 
 			private int? passwordReusePrevention;
 
+			private bool? requireSymbols;
+
+			private int? maxPasswordAge;
+
+			private int? minimumPasswordLength;
+
+			private bool? requireUppercaseCharacters;
+
 			private int? maxLoginAttemps;
 
-			public int? MinimumPasswordLength
+			public bool? RequireNumbers
 			{
 				get
 				{
-					return minimumPasswordLength;
+					return requireNumbers;
 				}
 				set	
 				{
-					minimumPasswordLength = value;
+					requireNumbers = value;
 				}
 			}
 
@@ -98,27 +98,27 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				}
 			}
 
-			public bool? RequireUppercaseCharacters
+			public bool? HardExpiry
 			{
 				get
 				{
-					return requireUppercaseCharacters;
+					return hardExpiry;
 				}
 				set	
 				{
-					requireUppercaseCharacters = value;
+					hardExpiry = value;
 				}
 			}
 
-			public bool? RequireNumbers
+			public int? PasswordReusePrevention
 			{
 				get
 				{
-					return requireNumbers;
+					return passwordReusePrevention;
 				}
 				set	
 				{
-					requireNumbers = value;
+					passwordReusePrevention = value;
 				}
 			}
 
@@ -134,18 +134,6 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				}
 			}
 
-			public bool? HardExpiry
-			{
-				get
-				{
-					return hardExpiry;
-				}
-				set	
-				{
-					hardExpiry = value;
-				}
-			}
-
 			public int? MaxPasswordAge
 			{
 				get
@@ -158,15 +146,27 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				}
 			}
 
-			public int? PasswordReusePrevention
+			public int? MinimumPasswordLength
 			{
 				get
 				{
-					return passwordReusePrevention;
+					return minimumPasswordLength;
 				}
 				set	
 				{
-					passwordReusePrevention = value;
+					minimumPasswordLength = value;
+				}
+			}
+
+			public bool? RequireUppercaseCharacters
+			{
+				get
+				{
+					return requireUppercaseCharacters;
+				}
+				set	
+				{
+					requireUppercaseCharacters = value;
 				}
 			}
 

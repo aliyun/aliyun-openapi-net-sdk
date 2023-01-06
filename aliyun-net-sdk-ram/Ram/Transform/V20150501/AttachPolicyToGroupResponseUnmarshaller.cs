@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
 {
     public class AttachPolicyToGroupResponseUnmarshaller
     {
-        public static AttachPolicyToGroupResponse Unmarshall(UnmarshallerContext context)
+        public static AttachPolicyToGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AttachPolicyToGroupResponse attachPolicyToGroupResponse = new AttachPolicyToGroupResponse();
 
-			attachPolicyToGroupResponse.HttpResponse = context.HttpResponse;
-			attachPolicyToGroupResponse.RequestId = context.StringValue("AttachPolicyToGroup.RequestId");
+			attachPolicyToGroupResponse.HttpResponse = _ctx.HttpResponse;
+			attachPolicyToGroupResponse.RequestId = _ctx.StringValue("AttachPolicyToGroup.RequestId");
         
 			return attachPolicyToGroupResponse;
         }

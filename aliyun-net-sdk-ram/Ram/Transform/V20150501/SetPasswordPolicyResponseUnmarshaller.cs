@@ -26,23 +26,23 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
 {
     public class SetPasswordPolicyResponseUnmarshaller
     {
-        public static SetPasswordPolicyResponse Unmarshall(UnmarshallerContext context)
+        public static SetPasswordPolicyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetPasswordPolicyResponse setPasswordPolicyResponse = new SetPasswordPolicyResponse();
 
-			setPasswordPolicyResponse.HttpResponse = context.HttpResponse;
-			setPasswordPolicyResponse.RequestId = context.StringValue("SetPasswordPolicy.RequestId");
+			setPasswordPolicyResponse.HttpResponse = _ctx.HttpResponse;
+			setPasswordPolicyResponse.RequestId = _ctx.StringValue("SetPasswordPolicy.RequestId");
 
 			SetPasswordPolicyResponse.SetPasswordPolicy_PasswordPolicy passwordPolicy = new SetPasswordPolicyResponse.SetPasswordPolicy_PasswordPolicy();
-			passwordPolicy.MinimumPasswordLength = context.IntegerValue("SetPasswordPolicy.PasswordPolicy.MinimumPasswordLength");
-			passwordPolicy.RequireLowercaseCharacters = context.BooleanValue("SetPasswordPolicy.PasswordPolicy.RequireLowercaseCharacters");
-			passwordPolicy.RequireUppercaseCharacters = context.BooleanValue("SetPasswordPolicy.PasswordPolicy.RequireUppercaseCharacters");
-			passwordPolicy.RequireNumbers = context.BooleanValue("SetPasswordPolicy.PasswordPolicy.RequireNumbers");
-			passwordPolicy.RequireSymbols = context.BooleanValue("SetPasswordPolicy.PasswordPolicy.RequireSymbols");
-			passwordPolicy.HardExpiry = context.BooleanValue("SetPasswordPolicy.PasswordPolicy.HardExpiry");
-			passwordPolicy.MaxPasswordAge = context.IntegerValue("SetPasswordPolicy.PasswordPolicy.MaxPasswordAge");
-			passwordPolicy.PasswordReusePrevention = context.IntegerValue("SetPasswordPolicy.PasswordPolicy.PasswordReusePrevention");
-			passwordPolicy.MaxLoginAttemps = context.IntegerValue("SetPasswordPolicy.PasswordPolicy.MaxLoginAttemps");
+			passwordPolicy.RequireNumbers = _ctx.BooleanValue("SetPasswordPolicy.PasswordPolicy.RequireNumbers");
+			passwordPolicy.RequireLowercaseCharacters = _ctx.BooleanValue("SetPasswordPolicy.PasswordPolicy.RequireLowercaseCharacters");
+			passwordPolicy.HardExpiry = _ctx.BooleanValue("SetPasswordPolicy.PasswordPolicy.HardExpiry");
+			passwordPolicy.PasswordReusePrevention = _ctx.IntegerValue("SetPasswordPolicy.PasswordPolicy.PasswordReusePrevention");
+			passwordPolicy.RequireSymbols = _ctx.BooleanValue("SetPasswordPolicy.PasswordPolicy.RequireSymbols");
+			passwordPolicy.MaxPasswordAge = _ctx.IntegerValue("SetPasswordPolicy.PasswordPolicy.MaxPasswordAge");
+			passwordPolicy.MinimumPasswordLength = _ctx.IntegerValue("SetPasswordPolicy.PasswordPolicy.MinimumPasswordLength");
+			passwordPolicy.RequireUppercaseCharacters = _ctx.BooleanValue("SetPasswordPolicy.PasswordPolicy.RequireUppercaseCharacters");
+			passwordPolicy.MaxLoginAttemps = _ctx.IntegerValue("SetPasswordPolicy.PasswordPolicy.MaxLoginAttemps");
 			setPasswordPolicyResponse.PasswordPolicy = passwordPolicy;
         
 			return setPasswordPolicyResponse;

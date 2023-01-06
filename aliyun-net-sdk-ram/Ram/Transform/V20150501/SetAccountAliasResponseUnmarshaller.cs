@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
 {
     public class SetAccountAliasResponseUnmarshaller
     {
-        public static SetAccountAliasResponse Unmarshall(UnmarshallerContext context)
+        public static SetAccountAliasResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetAccountAliasResponse setAccountAliasResponse = new SetAccountAliasResponse();
 
-			setAccountAliasResponse.HttpResponse = context.HttpResponse;
-			setAccountAliasResponse.RequestId = context.StringValue("SetAccountAlias.RequestId");
+			setAccountAliasResponse.HttpResponse = _ctx.HttpResponse;
+			setAccountAliasResponse.RequestId = _ctx.StringValue("SetAccountAlias.RequestId");
         
 			return setAccountAliasResponse;
         }

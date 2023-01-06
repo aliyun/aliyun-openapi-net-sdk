@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
 {
     public class UpdateLoginProfileResponseUnmarshaller
     {
-        public static UpdateLoginProfileResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateLoginProfileResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateLoginProfileResponse updateLoginProfileResponse = new UpdateLoginProfileResponse();
 
-			updateLoginProfileResponse.HttpResponse = context.HttpResponse;
-			updateLoginProfileResponse.RequestId = context.StringValue("UpdateLoginProfile.RequestId");
+			updateLoginProfileResponse.HttpResponse = _ctx.HttpResponse;
+			updateLoginProfileResponse.RequestId = _ctx.StringValue("UpdateLoginProfile.RequestId");
         
 			return updateLoginProfileResponse;
         }

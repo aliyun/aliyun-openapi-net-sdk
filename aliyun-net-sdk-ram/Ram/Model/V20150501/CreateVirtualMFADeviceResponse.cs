@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
@@ -58,9 +58,9 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 
 			private string serialNumber;
 
-			private string base32StringSeed;
-
 			private string qRCodePNG;
+
+			private string base32StringSeed;
 
 			public string SerialNumber
 			{
@@ -74,18 +74,6 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				}
 			}
 
-			public string Base32StringSeed
-			{
-				get
-				{
-					return base32StringSeed;
-				}
-				set	
-				{
-					base32StringSeed = value;
-				}
-			}
-
 			public string QRCodePNG
 			{
 				get
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				set	
 				{
 					qRCodePNG = value;
+				}
+			}
+
+			public string Base32StringSeed
+			{
+				get
+				{
+					return base32StringSeed;
+				}
+				set	
+				{
+					base32StringSeed = value;
 				}
 			}
 		}

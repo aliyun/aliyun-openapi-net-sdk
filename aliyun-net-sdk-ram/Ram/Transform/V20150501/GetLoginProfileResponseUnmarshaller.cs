@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
 {
     public class GetLoginProfileResponseUnmarshaller
     {
-        public static GetLoginProfileResponse Unmarshall(UnmarshallerContext context)
+        public static GetLoginProfileResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetLoginProfileResponse getLoginProfileResponse = new GetLoginProfileResponse();
 
-			getLoginProfileResponse.HttpResponse = context.HttpResponse;
-			getLoginProfileResponse.RequestId = context.StringValue("GetLoginProfile.RequestId");
+			getLoginProfileResponse.HttpResponse = _ctx.HttpResponse;
+			getLoginProfileResponse.RequestId = _ctx.StringValue("GetLoginProfile.RequestId");
 
 			GetLoginProfileResponse.GetLoginProfile_LoginProfile loginProfile = new GetLoginProfileResponse.GetLoginProfile_LoginProfile();
-			loginProfile.UserName = context.StringValue("GetLoginProfile.LoginProfile.UserName");
-			loginProfile.PasswordResetRequired = context.BooleanValue("GetLoginProfile.LoginProfile.PasswordResetRequired");
-			loginProfile.MFABindRequired = context.BooleanValue("GetLoginProfile.LoginProfile.MFABindRequired");
-			loginProfile.CreateDate = context.StringValue("GetLoginProfile.LoginProfile.CreateDate");
+			loginProfile.PasswordResetRequired = _ctx.BooleanValue("GetLoginProfile.LoginProfile.PasswordResetRequired");
+			loginProfile.CreateDate = _ctx.StringValue("GetLoginProfile.LoginProfile.CreateDate");
+			loginProfile.UserName = _ctx.StringValue("GetLoginProfile.LoginProfile.UserName");
+			loginProfile.MFABindRequired = _ctx.BooleanValue("GetLoginProfile.LoginProfile.MFABindRequired");
 			getLoginProfileResponse.LoginProfile = loginProfile;
         
 			return getLoginProfileResponse;

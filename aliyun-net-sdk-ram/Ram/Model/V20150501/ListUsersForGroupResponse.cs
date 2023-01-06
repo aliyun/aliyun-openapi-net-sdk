@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
@@ -84,23 +84,11 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 		public class ListUsersForGroup_User
 		{
 
-			private string userName;
-
 			private string displayName;
 
 			private string joinDate;
 
-			public string UserName
-			{
-				get
-				{
-					return userName;
-				}
-				set	
-				{
-					userName = value;
-				}
-			}
+			private string userName;
 
 			public string DisplayName
 			{
@@ -123,6 +111,18 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				set	
 				{
 					joinDate = value;
+				}
+			}
+
+			public string UserName
+			{
+				get
+				{
+					return userName;
+				}
+				set	
+				{
+					userName = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
@@ -58,6 +58,8 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 
 			private string serialNumber;
 
+			private string type;
+
 			public string SerialNumber
 			{
 				get
@@ -67,6 +69,18 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				set	
 				{
 					serialNumber = value;
+				}
+			}
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
 				}
 			}
 		}

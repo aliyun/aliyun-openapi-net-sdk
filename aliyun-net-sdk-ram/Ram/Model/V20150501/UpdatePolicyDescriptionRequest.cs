@@ -27,10 +27,10 @@ using Aliyun.Acs.Ram.Transform.V20150501;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
-    public class SetDefaultPolicyVersionRequest : RpcAcsRequest<SetDefaultPolicyVersionResponse>
+    public class UpdatePolicyDescriptionRequest : RpcAcsRequest<UpdatePolicyDescriptionResponse>
     {
-        public SetDefaultPolicyVersionRequest()
-            : base("Ram", "2015-05-01", "SetDefaultPolicyVersion", "Ram", "openAPI")
+        public UpdatePolicyDescriptionRequest()
+            : base("Ram", "2015-05-01", "UpdatePolicyDescription", "Ram", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,22 +41,9 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			Method = MethodType.POST;
         }
 
-		private string versionId;
-
 		private string policyName;
 
-		public string VersionId
-		{
-			get
-			{
-				return versionId;
-			}
-			set	
-			{
-				versionId = value;
-				DictionaryUtil.Add(QueryParameters, "VersionId", value);
-			}
-		}
+		private string newDescription;
 
 		public string PolicyName
 		{
@@ -71,9 +58,27 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			}
 		}
 
-        public override SetDefaultPolicyVersionResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string NewDescription
+		{
+			get
+			{
+				return newDescription;
+			}
+			set	
+			{
+				newDescription = value;
+				DictionaryUtil.Add(QueryParameters, "NewDescription", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override UpdatePolicyDescriptionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetDefaultPolicyVersionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdatePolicyDescriptionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

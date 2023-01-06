@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
 {
     public class UpdateAccessKeyResponseUnmarshaller
     {
-        public static UpdateAccessKeyResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateAccessKeyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateAccessKeyResponse updateAccessKeyResponse = new UpdateAccessKeyResponse();
 
-			updateAccessKeyResponse.HttpResponse = context.HttpResponse;
-			updateAccessKeyResponse.RequestId = context.StringValue("UpdateAccessKey.RequestId");
+			updateAccessKeyResponse.HttpResponse = _ctx.HttpResponse;
+			updateAccessKeyResponse.RequestId = _ctx.StringValue("UpdateAccessKey.RequestId");
         
 			return updateAccessKeyResponse;
         }

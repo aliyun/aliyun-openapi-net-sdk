@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
 {
     public class CreateAccessKeyResponseUnmarshaller
     {
-        public static CreateAccessKeyResponse Unmarshall(UnmarshallerContext context)
+        public static CreateAccessKeyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateAccessKeyResponse createAccessKeyResponse = new CreateAccessKeyResponse();
 
-			createAccessKeyResponse.HttpResponse = context.HttpResponse;
-			createAccessKeyResponse.RequestId = context.StringValue("CreateAccessKey.RequestId");
+			createAccessKeyResponse.HttpResponse = _ctx.HttpResponse;
+			createAccessKeyResponse.RequestId = _ctx.StringValue("CreateAccessKey.RequestId");
 
 			CreateAccessKeyResponse.CreateAccessKey_AccessKey accessKey = new CreateAccessKeyResponse.CreateAccessKey_AccessKey();
-			accessKey.AccessKeyId = context.StringValue("CreateAccessKey.AccessKey.AccessKeyId");
-			accessKey.AccessKeySecret = context.StringValue("CreateAccessKey.AccessKey.AccessKeySecret");
-			accessKey.Status = context.StringValue("CreateAccessKey.AccessKey.Status");
-			accessKey.CreateDate = context.StringValue("CreateAccessKey.AccessKey.CreateDate");
+			accessKey.Status = _ctx.StringValue("CreateAccessKey.AccessKey.Status");
+			accessKey.AccessKeySecret = _ctx.StringValue("CreateAccessKey.AccessKey.AccessKeySecret");
+			accessKey.CreateDate = _ctx.StringValue("CreateAccessKey.AccessKey.CreateDate");
+			accessKey.AccessKeyId = _ctx.StringValue("CreateAccessKey.AccessKey.AccessKeyId");
 			createAccessKeyResponse.AccessKey = accessKey;
         
 			return createAccessKeyResponse;

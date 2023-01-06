@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Ram;
 using Aliyun.Acs.Ram.Transform;
 using Aliyun.Acs.Ram.Transform.V20150501;
 
@@ -31,49 +30,24 @@ namespace Aliyun.Acs.Ram.Model.V20150501
     public class CreateRoleRequest : RpcAcsRequest<CreateRoleResponse>
     {
         public CreateRoleRequest()
-            : base("Ram", "2015-05-01", "CreateRole")
+            : base("Ram", "2015-05-01", "CreateRole", "Ram", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Ram.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Ram.Endpoint.endpointRegionalType, null);
             }
 			Protocol = ProtocolType.HTTPS;
+			Method = MethodType.POST;
         }
-
-		private long? maxSessionDuration;
-
-		private string roleName;
 
 		private string description;
 
 		private string assumeRolePolicyDocument;
 
-		public long? MaxSessionDuration
-		{
-			get
-			{
-				return maxSessionDuration;
-			}
-			set	
-			{
-				maxSessionDuration = value;
-				DictionaryUtil.Add(QueryParameters, "MaxSessionDuration", value.ToString());
-			}
-		}
+		private long? maxSessionDuration;
 
-		public string RoleName
-		{
-			get
-			{
-				return roleName;
-			}
-			set	
-			{
-				roleName = value;
-				DictionaryUtil.Add(QueryParameters, "RoleName", value);
-			}
-		}
+		private string roleName;
 
 		public string Description
 		{
@@ -98,6 +72,32 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			{
 				assumeRolePolicyDocument = value;
 				DictionaryUtil.Add(QueryParameters, "AssumeRolePolicyDocument", value);
+			}
+		}
+
+		public long? MaxSessionDuration
+		{
+			get
+			{
+				return maxSessionDuration;
+			}
+			set	
+			{
+				maxSessionDuration = value;
+				DictionaryUtil.Add(QueryParameters, "MaxSessionDuration", value.ToString());
+			}
+		}
+
+		public string RoleName
+		{
+			get
+			{
+				return roleName;
+			}
+			set	
+			{
+				roleName = value;
+				DictionaryUtil.Add(QueryParameters, "RoleName", value);
 			}
 		}
 

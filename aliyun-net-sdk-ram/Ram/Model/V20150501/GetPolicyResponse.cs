@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
@@ -70,57 +70,21 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 		public class GetPolicy_Policy
 		{
 
-			private string policyName;
-
-			private string policyType;
-
-			private string description;
-
 			private string defaultVersion;
-
-			private string policyDocument;
-
-			private string createDate;
 
 			private string updateDate;
 
+			private string description;
+
+			private string policyDocument;
+
 			private int? attachmentCount;
 
-			public string PolicyName
-			{
-				get
-				{
-					return policyName;
-				}
-				set	
-				{
-					policyName = value;
-				}
-			}
+			private string policyName;
 
-			public string PolicyType
-			{
-				get
-				{
-					return policyType;
-				}
-				set	
-				{
-					policyType = value;
-				}
-			}
+			private string createDate;
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
+			private string policyType;
 
 			public string DefaultVersion
 			{
@@ -131,30 +95,6 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				set	
 				{
 					defaultVersion = value;
-				}
-			}
-
-			public string PolicyDocument
-			{
-				get
-				{
-					return policyDocument;
-				}
-				set	
-				{
-					policyDocument = value;
-				}
-			}
-
-			public string CreateDate
-			{
-				get
-				{
-					return createDate;
-				}
-				set	
-				{
-					createDate = value;
 				}
 			}
 
@@ -170,6 +110,30 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				}
 			}
 
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string PolicyDocument
+			{
+				get
+				{
+					return policyDocument;
+				}
+				set	
+				{
+					policyDocument = value;
+				}
+			}
+
 			public int? AttachmentCount
 			{
 				get
@@ -181,30 +145,54 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 					attachmentCount = value;
 				}
 			}
+
+			public string PolicyName
+			{
+				get
+				{
+					return policyName;
+				}
+				set	
+				{
+					policyName = value;
+				}
+			}
+
+			public string CreateDate
+			{
+				get
+				{
+					return createDate;
+				}
+				set	
+				{
+					createDate = value;
+				}
+			}
+
+			public string PolicyType
+			{
+				get
+				{
+					return policyType;
+				}
+				set	
+				{
+					policyType = value;
+				}
+			}
 		}
 
 		public class GetPolicy_DefaultPolicyVersion
 		{
 
-			private string versionId;
-
 			private bool? isDefaultVersion;
 
 			private string policyDocument;
 
-			private string createDate;
+			private string versionId;
 
-			public string VersionId
-			{
-				get
-				{
-					return versionId;
-				}
-				set	
-				{
-					versionId = value;
-				}
-			}
+			private string createDate;
 
 			public bool? IsDefaultVersion
 			{
@@ -227,6 +215,18 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				set	
 				{
 					policyDocument = value;
+				}
+			}
+
+			public string VersionId
+			{
+				get
+				{
+					return versionId;
+				}
+				set	
+				{
+					versionId = value;
 				}
 			}
 

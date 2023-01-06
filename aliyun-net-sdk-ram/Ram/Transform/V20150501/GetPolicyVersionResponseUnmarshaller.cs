@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
 {
     public class GetPolicyVersionResponseUnmarshaller
     {
-        public static GetPolicyVersionResponse Unmarshall(UnmarshallerContext context)
+        public static GetPolicyVersionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetPolicyVersionResponse getPolicyVersionResponse = new GetPolicyVersionResponse();
 
-			getPolicyVersionResponse.HttpResponse = context.HttpResponse;
-			getPolicyVersionResponse.RequestId = context.StringValue("GetPolicyVersion.RequestId");
+			getPolicyVersionResponse.HttpResponse = _ctx.HttpResponse;
+			getPolicyVersionResponse.RequestId = _ctx.StringValue("GetPolicyVersion.RequestId");
 
 			GetPolicyVersionResponse.GetPolicyVersion_PolicyVersion policyVersion = new GetPolicyVersionResponse.GetPolicyVersion_PolicyVersion();
-			policyVersion.VersionId = context.StringValue("GetPolicyVersion.PolicyVersion.VersionId");
-			policyVersion.IsDefaultVersion = context.BooleanValue("GetPolicyVersion.PolicyVersion.IsDefaultVersion");
-			policyVersion.PolicyDocument = context.StringValue("GetPolicyVersion.PolicyVersion.PolicyDocument");
-			policyVersion.CreateDate = context.StringValue("GetPolicyVersion.PolicyVersion.CreateDate");
+			policyVersion.IsDefaultVersion = _ctx.BooleanValue("GetPolicyVersion.PolicyVersion.IsDefaultVersion");
+			policyVersion.PolicyDocument = _ctx.StringValue("GetPolicyVersion.PolicyVersion.PolicyDocument");
+			policyVersion.VersionId = _ctx.StringValue("GetPolicyVersion.PolicyVersion.VersionId");
+			policyVersion.CreateDate = _ctx.StringValue("GetPolicyVersion.PolicyVersion.CreateDate");
 			getPolicyVersionResponse.PolicyVersion = policyVersion;
         
 			return getPolicyVersionResponse;

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
@@ -56,47 +56,23 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 		public class GetUser_User
 		{
 
-			private string userId;
-
-			private string userName;
-
 			private string displayName;
-
-			private string mobilePhone;
 
 			private string email;
 
-			private string comments;
-
-			private string createDate;
-
 			private string updateDate;
+
+			private string mobilePhone;
+
+			private string userId;
+
+			private string comments;
 
 			private string lastLoginDate;
 
-			public string UserId
-			{
-				get
-				{
-					return userId;
-				}
-				set	
-				{
-					userId = value;
-				}
-			}
+			private string createDate;
 
-			public string UserName
-			{
-				get
-				{
-					return userName;
-				}
-				set	
-				{
-					userName = value;
-				}
-			}
+			private string userName;
 
 			public string DisplayName
 			{
@@ -107,18 +83,6 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				set	
 				{
 					displayName = value;
-				}
-			}
-
-			public string MobilePhone
-			{
-				get
-				{
-					return mobilePhone;
-				}
-				set	
-				{
-					mobilePhone = value;
 				}
 			}
 
@@ -134,6 +98,42 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				}
 			}
 
+			public string UpdateDate
+			{
+				get
+				{
+					return updateDate;
+				}
+				set	
+				{
+					updateDate = value;
+				}
+			}
+
+			public string MobilePhone
+			{
+				get
+				{
+					return mobilePhone;
+				}
+				set	
+				{
+					mobilePhone = value;
+				}
+			}
+
+			public string UserId
+			{
+				get
+				{
+					return userId;
+				}
+				set	
+				{
+					userId = value;
+				}
+			}
+
 			public string Comments
 			{
 				get
@@ -143,6 +143,18 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				set	
 				{
 					comments = value;
+				}
+			}
+
+			public string LastLoginDate
+			{
+				get
+				{
+					return lastLoginDate;
+				}
+				set	
+				{
+					lastLoginDate = value;
 				}
 			}
 
@@ -158,27 +170,15 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				}
 			}
 
-			public string UpdateDate
+			public string UserName
 			{
 				get
 				{
-					return updateDate;
+					return userName;
 				}
 				set	
 				{
-					updateDate = value;
-				}
-			}
-
-			public string LastLoginDate
-			{
-				get
-				{
-					return lastLoginDate;
-				}
-				set	
-				{
-					lastLoginDate = value;
+					userName = value;
 				}
 			}
 		}

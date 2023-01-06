@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Ram;
 using Aliyun.Acs.Ram.Transform;
 using Aliyun.Acs.Ram.Transform.V20150501;
 
@@ -31,36 +30,24 @@ namespace Aliyun.Acs.Ram.Model.V20150501
     public class UpdateLoginProfileRequest : RpcAcsRequest<UpdateLoginProfileResponse>
     {
         public UpdateLoginProfileRequest()
-            : base("Ram", "2015-05-01", "UpdateLoginProfile")
+            : base("Ram", "2015-05-01", "UpdateLoginProfile", "Ram", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Ram.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Ram.Endpoint.endpointRegionalType, null);
             }
 			Protocol = ProtocolType.HTTPS;
+			Method = MethodType.POST;
         }
-
-		private bool? passwordResetRequired;
 
 		private string password;
 
 		private bool? mFABindRequired;
 
-		private string userName;
+		private bool? passwordResetRequired;
 
-		public bool? PasswordResetRequired
-		{
-			get
-			{
-				return passwordResetRequired;
-			}
-			set	
-			{
-				passwordResetRequired = value;
-				DictionaryUtil.Add(QueryParameters, "PasswordResetRequired", value.ToString());
-			}
-		}
+		private string userName;
 
 		public string Password
 		{
@@ -85,6 +72,19 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			{
 				mFABindRequired = value;
 				DictionaryUtil.Add(QueryParameters, "MFABindRequired", value.ToString());
+			}
+		}
+
+		public bool? PasswordResetRequired
+		{
+			get
+			{
+				return passwordResetRequired;
+			}
+			set	
+			{
+				passwordResetRequired = value;
+				DictionaryUtil.Add(QueryParameters, "PasswordResetRequired", value.ToString());
 			}
 		}
 

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
@@ -56,25 +56,13 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 		public class GetPolicyVersion_PolicyVersion
 		{
 
-			private string versionId;
-
 			private bool? isDefaultVersion;
 
 			private string policyDocument;
 
-			private string createDate;
+			private string versionId;
 
-			public string VersionId
-			{
-				get
-				{
-					return versionId;
-				}
-				set	
-				{
-					versionId = value;
-				}
-			}
+			private string createDate;
 
 			public bool? IsDefaultVersion
 			{
@@ -97,6 +85,18 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				set	
 				{
 					policyDocument = value;
+				}
+			}
+
+			public string VersionId
+			{
+				get
+				{
+					return versionId;
+				}
+				set	
+				{
+					versionId = value;
 				}
 			}
 

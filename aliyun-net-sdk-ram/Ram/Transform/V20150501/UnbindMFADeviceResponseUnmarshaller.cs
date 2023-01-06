@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
 {
     public class UnbindMFADeviceResponseUnmarshaller
     {
-        public static UnbindMFADeviceResponse Unmarshall(UnmarshallerContext context)
+        public static UnbindMFADeviceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UnbindMFADeviceResponse unbindMFADeviceResponse = new UnbindMFADeviceResponse();
 
-			unbindMFADeviceResponse.HttpResponse = context.HttpResponse;
-			unbindMFADeviceResponse.RequestId = context.StringValue("UnbindMFADevice.RequestId");
+			unbindMFADeviceResponse.HttpResponse = _ctx.HttpResponse;
+			unbindMFADeviceResponse.RequestId = _ctx.StringValue("UnbindMFADevice.RequestId");
 
 			UnbindMFADeviceResponse.UnbindMFADevice_MFADevice mFADevice = new UnbindMFADeviceResponse.UnbindMFADevice_MFADevice();
-			mFADevice.SerialNumber = context.StringValue("UnbindMFADevice.MFADevice.SerialNumber");
+			mFADevice.SerialNumber = _ctx.StringValue("UnbindMFADevice.MFADevice.SerialNumber");
 			unbindMFADeviceResponse.MFADevice = mFADevice;
         
 			return unbindMFADeviceResponse;

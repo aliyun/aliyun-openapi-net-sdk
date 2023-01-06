@@ -26,18 +26,19 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
 {
     public class UpdateGroupResponseUnmarshaller
     {
-        public static UpdateGroupResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateGroupResponse updateGroupResponse = new UpdateGroupResponse();
 
-			updateGroupResponse.HttpResponse = context.HttpResponse;
-			updateGroupResponse.RequestId = context.StringValue("UpdateGroup.RequestId");
+			updateGroupResponse.HttpResponse = _ctx.HttpResponse;
+			updateGroupResponse.RequestId = _ctx.StringValue("UpdateGroup.RequestId");
 
 			UpdateGroupResponse.UpdateGroup_Group group = new UpdateGroupResponse.UpdateGroup_Group();
-			group.GroupName = context.StringValue("UpdateGroup.Group.GroupName");
-			group.Comments = context.StringValue("UpdateGroup.Group.Comments");
-			group.CreateDate = context.StringValue("UpdateGroup.Group.CreateDate");
-			group.UpdateDate = context.StringValue("UpdateGroup.Group.UpdateDate");
+			group.GroupId = _ctx.StringValue("UpdateGroup.Group.GroupId");
+			group.UpdateDate = _ctx.StringValue("UpdateGroup.Group.UpdateDate");
+			group.GroupName = _ctx.StringValue("UpdateGroup.Group.GroupName");
+			group.Comments = _ctx.StringValue("UpdateGroup.Group.Comments");
+			group.CreateDate = _ctx.StringValue("UpdateGroup.Group.CreateDate");
 			updateGroupResponse.Group = group;
         
 			return updateGroupResponse;

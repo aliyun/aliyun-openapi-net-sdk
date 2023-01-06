@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
@@ -56,43 +56,19 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 		public class CreateUser_User
 		{
 
-			private string userId;
-
-			private string userName;
-
 			private string displayName;
+
+			private string email;
 
 			private string mobilePhone;
 
-			private string email;
+			private string userId;
 
 			private string comments;
 
 			private string createDate;
 
-			public string UserId
-			{
-				get
-				{
-					return userId;
-				}
-				set	
-				{
-					userId = value;
-				}
-			}
-
-			public string UserName
-			{
-				get
-				{
-					return userName;
-				}
-				set	
-				{
-					userName = value;
-				}
-			}
+			private string userName;
 
 			public string DisplayName
 			{
@@ -103,6 +79,18 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				set	
 				{
 					displayName = value;
+				}
+			}
+
+			public string Email
+			{
+				get
+				{
+					return email;
+				}
+				set	
+				{
+					email = value;
 				}
 			}
 
@@ -118,15 +106,15 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				}
 			}
 
-			public string Email
+			public string UserId
 			{
 				get
 				{
-					return email;
+					return userId;
 				}
 				set	
 				{
-					email = value;
+					userId = value;
 				}
 			}
 
@@ -151,6 +139,18 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				set	
 				{
 					createDate = value;
+				}
+			}
+
+			public string UserName
+			{
+				get
+				{
+					return userName;
+				}
+				set	
+				{
+					userName = value;
 				}
 			}
 		}
