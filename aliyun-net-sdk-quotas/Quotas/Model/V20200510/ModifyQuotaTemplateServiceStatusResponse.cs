@@ -22,10 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.quotas.Model.V20200510
 {
-	public class UpdateQuotaAlarmResponse : AcsResponse
+	public class ModifyQuotaTemplateServiceStatusResponse : AcsResponse
 	{
 
 		private string requestId;
+
+		private ModifyQuotaTemplateServiceStatus_TemplateServiceStatus templateServiceStatus;
 
 		public string RequestId
 		{
@@ -36,6 +38,50 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public ModifyQuotaTemplateServiceStatus_TemplateServiceStatus TemplateServiceStatus
+		{
+			get
+			{
+				return templateServiceStatus;
+			}
+			set	
+			{
+				templateServiceStatus = value;
+			}
+		}
+
+		public class ModifyQuotaTemplateServiceStatus_TemplateServiceStatus
+		{
+
+			private int? serviceStatus;
+
+			private string resourceDirectoryId;
+
+			public int? ServiceStatus
+			{
+				get
+				{
+					return serviceStatus;
+				}
+				set	
+				{
+					serviceStatus = value;
+				}
+			}
+
+			public string ResourceDirectoryId
+			{
+				get
+				{
+					return resourceDirectoryId;
+				}
+				set	
+				{
+					resourceDirectoryId = value;
+				}
 			}
 		}
 	}

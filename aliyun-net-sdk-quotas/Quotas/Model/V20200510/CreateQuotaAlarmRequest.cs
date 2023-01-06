@@ -50,7 +50,7 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 
 		private string thresholdType;
 
-		private List<QuotaDimensions> quotaDimensionss = new List<QuotaDimensions>(){ };
+		private List<string> quotaDimensionss = new List<string>(){ };
 
 		private float? thresholdPercent;
 
@@ -121,7 +121,7 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			}
 		}
 
-		public List<QuotaDimensions> QuotaDimensionss
+		public List<string> QuotaDimensionss
 		{
 			get
 			{
@@ -131,10 +131,13 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			set
 			{
 				quotaDimensionss = value;
-				for (int i = 0; i < quotaDimensionss.Count; i++)
+				if(quotaDimensionss != null)
 				{
-					DictionaryUtil.Add(BodyParameters,"QuotaDimensions." + (i + 1) + ".Key", quotaDimensionss[i].Key);
-					DictionaryUtil.Add(BodyParameters,"QuotaDimensions." + (i + 1) + ".Value", quotaDimensionss[i].Value);
+					for (int depth1 = 0; depth1 < quotaDimensionss.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"QuotaDimensions." + (depth1 + 1), quotaDimensionss[depth1]);
+						DictionaryUtil.Add(BodyParameters,"QuotaDimensions." + (depth1 + 1), quotaDimensionss[depth1]);
+					}
 				}
 			}
 		}
@@ -184,7 +187,7 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
-			public string Value
+			public string Value_
 			{
 				get
 				{

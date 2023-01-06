@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.quotas.Model.V20200510
@@ -27,9 +27,9 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 
 		private int? totalCount;
 
-		private string requestId;
-
 		private string nextToken;
+
+		private string requestId;
 
 		private int? maxResults;
 
@@ -47,18 +47,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			}
 		}
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
 		public string NextToken
 		{
 			get
@@ -68,6 +56,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			set	
 			{
 				nextToken = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -98,59 +98,25 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 		public class ListProducts_ProductInfos
 		{
 
-			private string secondCategoryNameEn;
-
-			private bool? _dynamic;
-
-			private string commonQuotaSupport;
-
 			private string productName;
-
-			private string productCode;
-
-			private string secondCategoryName;
-
-			private string flowControlSupport;
 
 			private long? secondCategoryId;
 
 			private string productNameEn;
 
-			public string SecondCategoryNameEn
-			{
-				get
-				{
-					return secondCategoryNameEn;
-				}
-				set	
-				{
-					secondCategoryNameEn = value;
-				}
-			}
+			private bool? _dynamic;
 
-			public bool? _Dynamic
-			{
-				get
-				{
-					return _dynamic;
-				}
-				set	
-				{
-					_dynamic = value;
-				}
-			}
+			private string secondCategoryNameEn;
 
-			public string CommonQuotaSupport
-			{
-				get
-				{
-					return commonQuotaSupport;
-				}
-				set	
-				{
-					commonQuotaSupport = value;
-				}
-			}
+			private string secondCategoryName;
+
+			private string productCode;
+
+			private string flowControlSupport;
+
+			private string commonQuotaSupport;
+
+			private string whiteListLabelQuotaSupport;
 
 			public string ProductName
 			{
@@ -161,42 +127,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					productName = value;
-				}
-			}
-
-			public string ProductCode
-			{
-				get
-				{
-					return productCode;
-				}
-				set	
-				{
-					productCode = value;
-				}
-			}
-
-			public string SecondCategoryName
-			{
-				get
-				{
-					return secondCategoryName;
-				}
-				set	
-				{
-					secondCategoryName = value;
-				}
-			}
-
-			public string FlowControlSupport
-			{
-				get
-				{
-					return flowControlSupport;
-				}
-				set	
-				{
-					flowControlSupport = value;
 				}
 			}
 
@@ -221,6 +151,90 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					productNameEn = value;
+				}
+			}
+
+			public bool? _Dynamic
+			{
+				get
+				{
+					return _dynamic;
+				}
+				set	
+				{
+					_dynamic = value;
+				}
+			}
+
+			public string SecondCategoryNameEn
+			{
+				get
+				{
+					return secondCategoryNameEn;
+				}
+				set	
+				{
+					secondCategoryNameEn = value;
+				}
+			}
+
+			public string SecondCategoryName
+			{
+				get
+				{
+					return secondCategoryName;
+				}
+				set	
+				{
+					secondCategoryName = value;
+				}
+			}
+
+			public string ProductCode
+			{
+				get
+				{
+					return productCode;
+				}
+				set	
+				{
+					productCode = value;
+				}
+			}
+
+			public string FlowControlSupport
+			{
+				get
+				{
+					return flowControlSupport;
+				}
+				set	
+				{
+					flowControlSupport = value;
+				}
+			}
+
+			public string CommonQuotaSupport
+			{
+				get
+				{
+					return commonQuotaSupport;
+				}
+				set	
+				{
+					commonQuotaSupport = value;
+				}
+			}
+
+			public string WhiteListLabelQuotaSupport
+			{
+				get
+				{
+					return whiteListLabelQuotaSupport;
+				}
+				set	
+				{
+					whiteListLabelQuotaSupport = value;
 				}
 			}
 		}

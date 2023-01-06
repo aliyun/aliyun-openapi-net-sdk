@@ -37,23 +37,23 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 			quotaDimension.DimensionKey = _ctx.StringValue("GetProductQuotaDimension.QuotaDimension.DimensionKey");
 			quotaDimension.Name = _ctx.StringValue("GetProductQuotaDimension.QuotaDimension.Name");
 
-			List<string> quotaDimension_dimensionValues = new List<string>();
-			for (int i = 0; i < _ctx.Length("GetProductQuotaDimension.QuotaDimension.DimensionValues.Length"); i++) {
-				quotaDimension_dimensionValues.Add(_ctx.StringValue("GetProductQuotaDimension.QuotaDimension.DimensionValues["+ i +"]"));
-			}
-			quotaDimension.DimensionValues = quotaDimension_dimensionValues;
-
 			List<string> quotaDimension_dependentDimensions = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetProductQuotaDimension.QuotaDimension.DependentDimensions.Length"); i++) {
 				quotaDimension_dependentDimensions.Add(_ctx.StringValue("GetProductQuotaDimension.QuotaDimension.DependentDimensions["+ i +"]"));
 			}
 			quotaDimension.DependentDimensions = quotaDimension_dependentDimensions;
 
+			List<string> quotaDimension_dimensionValues = new List<string>();
+			for (int i = 0; i < _ctx.Length("GetProductQuotaDimension.QuotaDimension.DimensionValues.Length"); i++) {
+				quotaDimension_dimensionValues.Add(_ctx.StringValue("GetProductQuotaDimension.QuotaDimension.DimensionValues["+ i +"]"));
+			}
+			quotaDimension.DimensionValues = quotaDimension_dimensionValues;
+
 			List<GetProductQuotaDimensionResponse.GetProductQuotaDimension_QuotaDimension.GetProductQuotaDimension_DimensionValueDetailItem> quotaDimension_dimensionValueDetail = new List<GetProductQuotaDimensionResponse.GetProductQuotaDimension_QuotaDimension.GetProductQuotaDimension_DimensionValueDetailItem>();
 			for (int i = 0; i < _ctx.Length("GetProductQuotaDimension.QuotaDimension.DimensionValueDetail.Length"); i++) {
 				GetProductQuotaDimensionResponse.GetProductQuotaDimension_QuotaDimension.GetProductQuotaDimension_DimensionValueDetailItem dimensionValueDetailItem = new GetProductQuotaDimensionResponse.GetProductQuotaDimension_QuotaDimension.GetProductQuotaDimension_DimensionValueDetailItem();
-				dimensionValueDetailItem._Value = _ctx.StringValue("GetProductQuotaDimension.QuotaDimension.DimensionValueDetail["+ i +"].Value");
 				dimensionValueDetailItem.Name = _ctx.StringValue("GetProductQuotaDimension.QuotaDimension.DimensionValueDetail["+ i +"].Name");
+				dimensionValueDetailItem._Value = _ctx.StringValue("GetProductQuotaDimension.QuotaDimension.DimensionValueDetail["+ i +"].Value");
 
 				quotaDimension_dimensionValueDetail.Add(dimensionValueDetailItem);
 			}

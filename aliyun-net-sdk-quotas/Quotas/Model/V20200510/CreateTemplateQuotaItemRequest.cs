@@ -27,10 +27,10 @@ using Aliyun.Acs.quotas.Transform.V20200510;
 
 namespace Aliyun.Acs.quotas.Model.V20200510
 {
-    public class GetProductQuotaRequest : RpcAcsRequest<GetProductQuotaResponse>
+    public class CreateTemplateQuotaItemRequest : RpcAcsRequest<CreateTemplateQuotaItemResponse>
     {
-        public GetProductQuotaRequest()
-            : base("quotas", "2020-05-10", "GetProductQuota", "quotas", "openAPI")
+        public CreateTemplateQuotaItemRequest()
+            : base("quotas", "2020-05-10", "CreateTemplateQuotaItem", "quotas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,6 +43,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 		private string productCode;
 
 		private string quotaActionCode;
+
+		private float? desireValue;
+
+		private string effectiveTime;
+
+		private string quotaCategory;
+
+		private string expireTime;
+
+		private string envLanguage;
+
+		private long? noticeType;
 
 		private List<string> dimensionss = new List<string>(){ };
 
@@ -69,6 +81,84 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			{
 				quotaActionCode = value;
 				DictionaryUtil.Add(BodyParameters, "QuotaActionCode", value);
+			}
+		}
+
+		public float? DesireValue
+		{
+			get
+			{
+				return desireValue;
+			}
+			set	
+			{
+				desireValue = value;
+				DictionaryUtil.Add(BodyParameters, "DesireValue", value.ToString());
+			}
+		}
+
+		public string EffectiveTime
+		{
+			get
+			{
+				return effectiveTime;
+			}
+			set	
+			{
+				effectiveTime = value;
+				DictionaryUtil.Add(BodyParameters, "EffectiveTime", value);
+			}
+		}
+
+		public string QuotaCategory
+		{
+			get
+			{
+				return quotaCategory;
+			}
+			set	
+			{
+				quotaCategory = value;
+				DictionaryUtil.Add(BodyParameters, "QuotaCategory", value);
+			}
+		}
+
+		public string ExpireTime
+		{
+			get
+			{
+				return expireTime;
+			}
+			set	
+			{
+				expireTime = value;
+				DictionaryUtil.Add(BodyParameters, "ExpireTime", value);
+			}
+		}
+
+		public string EnvLanguage
+		{
+			get
+			{
+				return envLanguage;
+			}
+			set	
+			{
+				envLanguage = value;
+				DictionaryUtil.Add(BodyParameters, "EnvLanguage", value);
+			}
+		}
+
+		public long? NoticeType
+		{
+			get
+			{
+				return noticeType;
+			}
+			set	
+			{
+				noticeType = value;
+				DictionaryUtil.Add(BodyParameters, "NoticeType", value.ToString());
 			}
 		}
 
@@ -130,9 +220,9 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			return false;
 		}
 
-        public override GetProductQuotaResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateTemplateQuotaItemResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetProductQuotaResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateTemplateQuotaItemResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

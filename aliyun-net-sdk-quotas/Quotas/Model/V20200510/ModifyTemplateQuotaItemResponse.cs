@@ -22,10 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.quotas.Model.V20200510
 {
-	public class UpdateQuotaAlarmResponse : AcsResponse
+	public class ModifyTemplateQuotaItemResponse : AcsResponse
 	{
 
 		private string requestId;
+
+		private string id;
 
 		public string RequestId
 		{
@@ -36,6 +38,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Id
+		{
+			get
+			{
+				return id;
+			}
+			set	
+			{
+				id = value;
 			}
 		}
 	}

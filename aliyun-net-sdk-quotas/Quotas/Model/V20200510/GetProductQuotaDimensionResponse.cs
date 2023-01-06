@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.quotas.Model.V20200510
@@ -62,9 +62,9 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 
 			private List<GetProductQuotaDimension_DimensionValueDetailItem> dimensionValueDetail;
 
-			private List<string> dimensionValues;
-
 			private List<string> dependentDimensions;
+
+			private List<string> dimensionValues;
 
 			public string DimensionKey
 			{
@@ -102,18 +102,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
-			public List<string> DimensionValues
-			{
-				get
-				{
-					return dimensionValues;
-				}
-				set	
-				{
-					dimensionValues = value;
-				}
-			}
-
 			public List<string> DependentDimensions
 			{
 				get
@@ -126,24 +114,24 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
+			public List<string> DimensionValues
+			{
+				get
+				{
+					return dimensionValues;
+				}
+				set	
+				{
+					dimensionValues = value;
+				}
+			}
+
 			public class GetProductQuotaDimension_DimensionValueDetailItem
 			{
 
-				private string _value;
-
 				private string name;
 
-				public string _Value
-				{
-					get
-					{
-						return _value;
-					}
-					set	
-					{
-						_value = value;
-					}
-				}
+				private string _value;
 
 				public string Name
 				{
@@ -154,6 +142,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 					set	
 					{
 						name = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
 					}
 				}
 			}

@@ -32,16 +32,16 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 
 			listProductDimensionGroupsResponse.HttpResponse = _ctx.HttpResponse;
 			listProductDimensionGroupsResponse.TotalCount = _ctx.IntegerValue("ListProductDimensionGroups.TotalCount");
-			listProductDimensionGroupsResponse.RequestId = _ctx.StringValue("ListProductDimensionGroups.RequestId");
 			listProductDimensionGroupsResponse.NextToken = _ctx.StringValue("ListProductDimensionGroups.NextToken");
+			listProductDimensionGroupsResponse.RequestId = _ctx.StringValue("ListProductDimensionGroups.RequestId");
 			listProductDimensionGroupsResponse.MaxResults = _ctx.IntegerValue("ListProductDimensionGroups.MaxResults");
 
 			List<ListProductDimensionGroupsResponse.ListProductDimensionGroups_DimensionGroupsItem> listProductDimensionGroupsResponse_dimensionGroups = new List<ListProductDimensionGroupsResponse.ListProductDimensionGroups_DimensionGroupsItem>();
 			for (int i = 0; i < _ctx.Length("ListProductDimensionGroups.DimensionGroups.Length"); i++) {
 				ListProductDimensionGroupsResponse.ListProductDimensionGroups_DimensionGroupsItem dimensionGroupsItem = new ListProductDimensionGroupsResponse.ListProductDimensionGroups_DimensionGroupsItem();
-				dimensionGroupsItem.GroupName = _ctx.StringValue("ListProductDimensionGroups.DimensionGroups["+ i +"].GroupName");
 				dimensionGroupsItem.ProductCode = _ctx.StringValue("ListProductDimensionGroups.DimensionGroups["+ i +"].ProductCode");
 				dimensionGroupsItem.GroupCode = _ctx.StringValue("ListProductDimensionGroups.DimensionGroups["+ i +"].GroupCode");
+				dimensionGroupsItem.GroupName = _ctx.StringValue("ListProductDimensionGroups.DimensionGroups["+ i +"].GroupName");
 
 				List<string> dimensionGroupsItem_dimensionKeys = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListProductDimensionGroups.DimensionGroups["+ i +"].DimensionKeys.Length"); j++) {

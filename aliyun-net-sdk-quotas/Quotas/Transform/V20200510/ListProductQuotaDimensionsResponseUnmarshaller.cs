@@ -32,22 +32,16 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 
 			listProductQuotaDimensionsResponse.HttpResponse = _ctx.HttpResponse;
 			listProductQuotaDimensionsResponse.TotalCount = _ctx.IntegerValue("ListProductQuotaDimensions.TotalCount");
-			listProductQuotaDimensionsResponse.RequestId = _ctx.StringValue("ListProductQuotaDimensions.RequestId");
 			listProductQuotaDimensionsResponse.NextToken = _ctx.StringValue("ListProductQuotaDimensions.NextToken");
+			listProductQuotaDimensionsResponse.RequestId = _ctx.StringValue("ListProductQuotaDimensions.RequestId");
 			listProductQuotaDimensionsResponse.MaxResults = _ctx.IntegerValue("ListProductQuotaDimensions.MaxResults");
 
 			List<ListProductQuotaDimensionsResponse.ListProductQuotaDimensions_QuotaDimensionsItem> listProductQuotaDimensionsResponse_quotaDimensions = new List<ListProductQuotaDimensionsResponse.ListProductQuotaDimensions_QuotaDimensionsItem>();
 			for (int i = 0; i < _ctx.Length("ListProductQuotaDimensions.QuotaDimensions.Length"); i++) {
 				ListProductQuotaDimensionsResponse.ListProductQuotaDimensions_QuotaDimensionsItem quotaDimensionsItem = new ListProductQuotaDimensionsResponse.ListProductQuotaDimensions_QuotaDimensionsItem();
+				quotaDimensionsItem.Requisite = _ctx.BooleanValue("ListProductQuotaDimensions.QuotaDimensions["+ i +"].Requisite");
 				quotaDimensionsItem.DimensionKey = _ctx.StringValue("ListProductQuotaDimensions.QuotaDimensions["+ i +"].DimensionKey");
 				quotaDimensionsItem.Name = _ctx.StringValue("ListProductQuotaDimensions.QuotaDimensions["+ i +"].Name");
-				quotaDimensionsItem.Requisite = _ctx.BooleanValue("ListProductQuotaDimensions.QuotaDimensions["+ i +"].Requisite");
-
-				List<string> quotaDimensionsItem_dimensionValues = new List<string>();
-				for (int j = 0; j < _ctx.Length("ListProductQuotaDimensions.QuotaDimensions["+ i +"].DimensionValues.Length"); j++) {
-					quotaDimensionsItem_dimensionValues.Add(_ctx.StringValue("ListProductQuotaDimensions.QuotaDimensions["+ i +"].DimensionValues["+ j +"]"));
-				}
-				quotaDimensionsItem.DimensionValues = quotaDimensionsItem_dimensionValues;
 
 				List<string> quotaDimensionsItem_dependentDimensions = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListProductQuotaDimensions.QuotaDimensions["+ i +"].DependentDimensions.Length"); j++) {
@@ -55,11 +49,17 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 				}
 				quotaDimensionsItem.DependentDimensions = quotaDimensionsItem_dependentDimensions;
 
+				List<string> quotaDimensionsItem_dimensionValues = new List<string>();
+				for (int j = 0; j < _ctx.Length("ListProductQuotaDimensions.QuotaDimensions["+ i +"].DimensionValues.Length"); j++) {
+					quotaDimensionsItem_dimensionValues.Add(_ctx.StringValue("ListProductQuotaDimensions.QuotaDimensions["+ i +"].DimensionValues["+ j +"]"));
+				}
+				quotaDimensionsItem.DimensionValues = quotaDimensionsItem_dimensionValues;
+
 				List<ListProductQuotaDimensionsResponse.ListProductQuotaDimensions_QuotaDimensionsItem.ListProductQuotaDimensions_DimensionValueDetailItem> quotaDimensionsItem_dimensionValueDetail = new List<ListProductQuotaDimensionsResponse.ListProductQuotaDimensions_QuotaDimensionsItem.ListProductQuotaDimensions_DimensionValueDetailItem>();
 				for (int j = 0; j < _ctx.Length("ListProductQuotaDimensions.QuotaDimensions["+ i +"].DimensionValueDetail.Length"); j++) {
 					ListProductQuotaDimensionsResponse.ListProductQuotaDimensions_QuotaDimensionsItem.ListProductQuotaDimensions_DimensionValueDetailItem dimensionValueDetailItem = new ListProductQuotaDimensionsResponse.ListProductQuotaDimensions_QuotaDimensionsItem.ListProductQuotaDimensions_DimensionValueDetailItem();
-					dimensionValueDetailItem._Value = _ctx.StringValue("ListProductQuotaDimensions.QuotaDimensions["+ i +"].DimensionValueDetail["+ j +"].Value");
 					dimensionValueDetailItem.Name = _ctx.StringValue("ListProductQuotaDimensions.QuotaDimensions["+ i +"].DimensionValueDetail["+ j +"].Name");
+					dimensionValueDetailItem._Value = _ctx.StringValue("ListProductQuotaDimensions.QuotaDimensions["+ i +"].DimensionValueDetail["+ j +"].Value");
 
 					quotaDimensionsItem_dimensionValueDetail.Add(dimensionValueDetailItem);
 				}

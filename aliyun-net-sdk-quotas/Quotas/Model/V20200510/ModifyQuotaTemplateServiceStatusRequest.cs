@@ -27,10 +27,10 @@ using Aliyun.Acs.quotas.Transform.V20200510;
 
 namespace Aliyun.Acs.quotas.Model.V20200510
 {
-    public class ListProductDimensionGroupsRequest : RpcAcsRequest<ListProductDimensionGroupsResponse>
+    public class ModifyQuotaTemplateServiceStatusRequest : RpcAcsRequest<ModifyQuotaTemplateServiceStatusResponse>
     {
-        public ListProductDimensionGroupsRequest()
-            : base("quotas", "2020-05-10", "ListProductDimensionGroups", "quotas", "openAPI")
+        public ModifyQuotaTemplateServiceStatusRequest()
+            : base("quotas", "2020-05-10", "ModifyQuotaTemplateServiceStatus", "quotas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,48 +40,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			Method = MethodType.POST;
         }
 
-		private string productCode;
+		private int? serviceStatus;
 
-		private string nextToken;
-
-		private int? maxResults;
-
-		public string ProductCode
+		public int? ServiceStatus
 		{
 			get
 			{
-				return productCode;
+				return serviceStatus;
 			}
 			set	
 			{
-				productCode = value;
-				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
-			}
-		}
-
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
-				DictionaryUtil.Add(QueryParameters, "NextToken", value);
-			}
-		}
-
-		public int? MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
-				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+				serviceStatus = value;
+				DictionaryUtil.Add(BodyParameters, "ServiceStatus", value.ToString());
 			}
 		}
 
@@ -90,9 +60,9 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			return false;
 		}
 
-        public override ListProductDimensionGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyQuotaTemplateServiceStatusResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListProductDimensionGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyQuotaTemplateServiceStatusResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

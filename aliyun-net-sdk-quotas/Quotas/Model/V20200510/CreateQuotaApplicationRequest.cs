@@ -48,13 +48,19 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 
 		private float? desireValue;
 
+		private string effectiveTime;
+
 		private string quotaCategory;
+
+		private string expireTime;
+
+		private string envLanguage;
 
 		private int? noticeType;
 
 		private string auditMode;
 
-		private List<Dimensions> dimensionss = new List<Dimensions>(){ };
+		private List<string> dimensionss = new List<string>(){ };
 
 		public string Reason
 		{
@@ -108,6 +114,19 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			}
 		}
 
+		public string EffectiveTime
+		{
+			get
+			{
+				return effectiveTime;
+			}
+			set	
+			{
+				effectiveTime = value;
+				DictionaryUtil.Add(BodyParameters, "EffectiveTime", value);
+			}
+		}
+
 		public string QuotaCategory
 		{
 			get
@@ -118,6 +137,32 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			{
 				quotaCategory = value;
 				DictionaryUtil.Add(BodyParameters, "QuotaCategory", value);
+			}
+		}
+
+		public string ExpireTime
+		{
+			get
+			{
+				return expireTime;
+			}
+			set	
+			{
+				expireTime = value;
+				DictionaryUtil.Add(BodyParameters, "ExpireTime", value);
+			}
+		}
+
+		public string EnvLanguage
+		{
+			get
+			{
+				return envLanguage;
+			}
+			set	
+			{
+				envLanguage = value;
+				DictionaryUtil.Add(BodyParameters, "EnvLanguage", value);
 			}
 		}
 
@@ -147,7 +192,7 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			}
 		}
 
-		public List<Dimensions> Dimensionss
+		public List<string> Dimensionss
 		{
 			get
 			{
@@ -157,10 +202,13 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			set
 			{
 				dimensionss = value;
-				for (int i = 0; i < dimensionss.Count; i++)
+				if(dimensionss != null)
 				{
-					DictionaryUtil.Add(BodyParameters,"Dimensions." + (i + 1) + ".Key", dimensionss[i].Key);
-					DictionaryUtil.Add(BodyParameters,"Dimensions." + (i + 1) + ".Value", dimensionss[i].Value);
+					for (int depth1 = 0; depth1 < dimensionss.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"Dimensions." + (depth1 + 1), dimensionss[depth1]);
+						DictionaryUtil.Add(BodyParameters,"Dimensions." + (depth1 + 1), dimensionss[depth1]);
+					}
 				}
 			}
 		}
@@ -184,7 +232,7 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
-			public string Value
+			public string Value_
 			{
 				get
 				{

@@ -16,27 +16,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.quotas.Model.V20200510
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.quotas.Model.V20200510;
+
+namespace Aliyun.Acs.quotas.Transform.V20200510
 {
-	public class UpdateQuotaAlarmResponse : AcsResponse
-	{
+    public class CreateTemplateQuotaItemResponseUnmarshaller
+    {
+        public static CreateTemplateQuotaItemResponse Unmarshall(UnmarshallerContext _ctx)
+        {
+			CreateTemplateQuotaItemResponse createTemplateQuotaItemResponse = new CreateTemplateQuotaItemResponse();
 
-		private string requestId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+			createTemplateQuotaItemResponse.HttpResponse = _ctx.HttpResponse;
+			createTemplateQuotaItemResponse.RequestId = _ctx.StringValue("CreateTemplateQuotaItem.RequestId");
+			createTemplateQuotaItemResponse.Id = _ctx.StringValue("CreateTemplateQuotaItem.Id");
+        
+			return createTemplateQuotaItemResponse;
+        }
+    }
 }

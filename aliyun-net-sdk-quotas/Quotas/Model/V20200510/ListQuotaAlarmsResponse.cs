@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.quotas.Model.V20200510
@@ -27,9 +27,9 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 
 		private int? totalCount;
 
-		private string requestId;
-
 		private string nextToken;
+
+		private string requestId;
 
 		private int? maxResults;
 
@@ -47,18 +47,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			}
 		}
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
 		public string NextToken
 		{
 			get
@@ -68,6 +56,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			set	
 			{
 				nextToken = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -98,45 +98,57 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 		public class ListQuotaAlarms_QuotaAlarm
 		{
 
-			private string alarmId;
+			private float? thresholdPercent;
+
+			private string thresholdType;
 
 			private string quotaDimensions;
 
-			private float? thresholdPercent;
-
-			private string productCode;
-
 			private string createTime;
 
-			private string webHook;
-
-			private float? quotaUsage;
-
-			private bool? exceedThreshold;
-
 			private string quotaActionCode;
-
-			private float? quotaValue;
 
 			private string alarmName;
 
 			private string notifyTarget;
 
+			private float? quotaUsage;
+
+			private float? quotaValue;
+
+			private string alarmId;
+
 			private float? threshold;
 
-			private string thresholdType;
+			private string productCode;
+
+			private string webHook;
+
+			private bool? exceedThreshold;
 
 			private List<string> notifyChannels;
 
-			public string AlarmId
+			public float? ThresholdPercent
 			{
 				get
 				{
-					return alarmId;
+					return thresholdPercent;
 				}
 				set	
 				{
-					alarmId = value;
+					thresholdPercent = value;
+				}
+			}
+
+			public string ThresholdType
+			{
+				get
+				{
+					return thresholdType;
+				}
+				set	
+				{
+					thresholdType = value;
 				}
 			}
 
@@ -152,30 +164,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
-			public float? ThresholdPercent
-			{
-				get
-				{
-					return thresholdPercent;
-				}
-				set	
-				{
-					thresholdPercent = value;
-				}
-			}
-
-			public string ProductCode
-			{
-				get
-				{
-					return productCode;
-				}
-				set	
-				{
-					productCode = value;
-				}
-			}
-
 			public string CreateTime
 			{
 				get
@@ -188,42 +176,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
-			public string WebHook
-			{
-				get
-				{
-					return webHook;
-				}
-				set	
-				{
-					webHook = value;
-				}
-			}
-
-			public float? QuotaUsage
-			{
-				get
-				{
-					return quotaUsage;
-				}
-				set	
-				{
-					quotaUsage = value;
-				}
-			}
-
-			public bool? ExceedThreshold
-			{
-				get
-				{
-					return exceedThreshold;
-				}
-				set	
-				{
-					exceedThreshold = value;
-				}
-			}
-
 			public string QuotaActionCode
 			{
 				get
@@ -233,18 +185,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					quotaActionCode = value;
-				}
-			}
-
-			public float? QuotaValue
-			{
-				get
-				{
-					return quotaValue;
-				}
-				set	
-				{
-					quotaValue = value;
 				}
 			}
 
@@ -272,6 +212,42 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
+			public float? QuotaUsage
+			{
+				get
+				{
+					return quotaUsage;
+				}
+				set	
+				{
+					quotaUsage = value;
+				}
+			}
+
+			public float? QuotaValue
+			{
+				get
+				{
+					return quotaValue;
+				}
+				set	
+				{
+					quotaValue = value;
+				}
+			}
+
+			public string AlarmId
+			{
+				get
+				{
+					return alarmId;
+				}
+				set	
+				{
+					alarmId = value;
+				}
+			}
+
 			public float? Threshold
 			{
 				get
@@ -284,15 +260,39 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
-			public string ThresholdType
+			public string ProductCode
 			{
 				get
 				{
-					return thresholdType;
+					return productCode;
 				}
 				set	
 				{
-					thresholdType = value;
+					productCode = value;
+				}
+			}
+
+			public string WebHook
+			{
+				get
+				{
+					return webHook;
+				}
+				set	
+				{
+					webHook = value;
+				}
+			}
+
+			public bool? ExceedThreshold
+			{
+				get
+				{
+					return exceedThreshold;
+				}
+				set	
+				{
+					exceedThreshold = value;
 				}
 			}
 

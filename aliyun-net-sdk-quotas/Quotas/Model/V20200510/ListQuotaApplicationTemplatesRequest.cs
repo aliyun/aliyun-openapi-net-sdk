@@ -27,10 +27,10 @@ using Aliyun.Acs.quotas.Transform.V20200510;
 
 namespace Aliyun.Acs.quotas.Model.V20200510
 {
-    public class ListProductDimensionGroupsRequest : RpcAcsRequest<ListProductDimensionGroupsResponse>
+    public class ListQuotaApplicationTemplatesRequest : RpcAcsRequest<ListQuotaApplicationTemplatesResponse>
     {
-        public ListProductDimensionGroupsRequest()
-            : base("quotas", "2020-05-10", "ListProductDimensionGroups", "quotas", "openAPI")
+        public ListQuotaApplicationTemplatesRequest()
+            : base("quotas", "2020-05-10", "ListQuotaApplicationTemplates", "quotas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,9 +42,17 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 
 		private string productCode;
 
+		private string quotaActionCode;
+
 		private string nextToken;
 
+		private string id;
+
+		private string quotaCategory;
+
 		private int? maxResults;
+
+		private List<string> dimensionss = new List<string>(){ };
 
 		public string ProductCode
 		{
@@ -55,7 +63,20 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			set	
 			{
 				productCode = value;
-				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
+				DictionaryUtil.Add(BodyParameters, "ProductCode", value);
+			}
+		}
+
+		public string QuotaActionCode
+		{
+			get
+			{
+				return quotaActionCode;
+			}
+			set	
+			{
+				quotaActionCode = value;
+				DictionaryUtil.Add(BodyParameters, "QuotaActionCode", value);
 			}
 		}
 
@@ -72,6 +93,32 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			}
 		}
 
+		public string Id
+		{
+			get
+			{
+				return id;
+			}
+			set	
+			{
+				id = value;
+				DictionaryUtil.Add(BodyParameters, "Id", value);
+			}
+		}
+
+		public string QuotaCategory
+		{
+			get
+			{
+				return quotaCategory;
+			}
+			set	
+			{
+				quotaCategory = value;
+				DictionaryUtil.Add(BodyParameters, "QuotaCategory", value);
+			}
+		}
+
 		public int? MaxResults
 		{
 			get
@@ -81,7 +128,60 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			set	
 			{
 				maxResults = value;
-				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+				DictionaryUtil.Add(BodyParameters, "MaxResults", value.ToString());
+			}
+		}
+
+		public List<string> Dimensionss
+		{
+			get
+			{
+				return dimensionss;
+			}
+
+			set
+			{
+				dimensionss = value;
+				if(dimensionss != null)
+				{
+					for (int depth1 = 0; depth1 < dimensionss.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"Dimensions." + (depth1 + 1), dimensionss[depth1]);
+						DictionaryUtil.Add(BodyParameters,"Dimensions." + (depth1 + 1), dimensionss[depth1]);
+					}
+				}
+			}
+		}
+
+		public class Dimensions
+		{
+
+			private string key;
+
+			private string value_;
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
 			}
 		}
 
@@ -90,9 +190,9 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			return false;
 		}
 
-        public override ListProductDimensionGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListQuotaApplicationTemplatesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListProductDimensionGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListQuotaApplicationTemplatesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
