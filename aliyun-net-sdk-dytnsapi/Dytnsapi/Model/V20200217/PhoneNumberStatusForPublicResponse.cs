@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 {
-	public class PhoneNumberEncryptResponse : AcsResponse
+	public class PhoneNumberStatusForPublicResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 
 		private string code;
 
-		private List<PhoneNumberEncrypt_DataItem> data;
+		private PhoneNumberStatusForPublic_Data data;
 
 		public string RequestId
 		{
@@ -69,7 +69,7 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 			}
 		}
 
-		public List<PhoneNumberEncrypt_DataItem> Data
+		public PhoneNumberStatusForPublic_Data Data
 		{
 			get
 			{
@@ -81,48 +81,34 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 			}
 		}
 
-		public class PhoneNumberEncrypt_DataItem
+		public class PhoneNumberStatusForPublic_Data
 		{
 
-			private string originalNumber;
+			private string status;
 
-			private string encryptedNumber;
+			private string carrier;
 
-			private string expireTime;
-
-			public string OriginalNumber
+			public string Status
 			{
 				get
 				{
-					return originalNumber;
+					return status;
 				}
 				set	
 				{
-					originalNumber = value;
+					status = value;
 				}
 			}
 
-			public string EncryptedNumber
+			public string Carrier
 			{
 				get
 				{
-					return encryptedNumber;
+					return carrier;
 				}
 				set	
 				{
-					encryptedNumber = value;
-				}
-			}
-
-			public string ExpireTime
-			{
-				get
-				{
-					return expireTime;
-				}
-				set	
-				{
-					expireTime = value;
+					carrier = value;
 				}
 			}
 		}

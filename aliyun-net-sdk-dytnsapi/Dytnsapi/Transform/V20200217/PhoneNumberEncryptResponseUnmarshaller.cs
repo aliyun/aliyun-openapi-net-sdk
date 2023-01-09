@@ -32,8 +32,8 @@ namespace Aliyun.Acs.Dytnsapi.Transform.V20200217
 
 			phoneNumberEncryptResponse.HttpResponse = _ctx.HttpResponse;
 			phoneNumberEncryptResponse.RequestId = _ctx.StringValue("PhoneNumberEncrypt.RequestId");
-			phoneNumberEncryptResponse.Code = _ctx.StringValue("PhoneNumberEncrypt.Code");
 			phoneNumberEncryptResponse.Message = _ctx.StringValue("PhoneNumberEncrypt.Message");
+			phoneNumberEncryptResponse.Code = _ctx.StringValue("PhoneNumberEncrypt.Code");
 
 			List<PhoneNumberEncryptResponse.PhoneNumberEncrypt_DataItem> phoneNumberEncryptResponse_data = new List<PhoneNumberEncryptResponse.PhoneNumberEncrypt_DataItem>();
 			for (int i = 0; i < _ctx.Length("PhoneNumberEncrypt.Data.Length"); i++) {
