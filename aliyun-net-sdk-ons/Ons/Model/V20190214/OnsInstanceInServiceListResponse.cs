@@ -82,6 +82,8 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 
 			private int? instanceType;
 
+			private long? createTime;
+
 			private List<OnsInstanceInServiceList_Tag> tags;
 
 			public bool? IndependentNaming
@@ -153,6 +155,18 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				set	
 				{
 					instanceType = value;
+				}
+			}
+
+			public long? CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
 				}
 			}
 
