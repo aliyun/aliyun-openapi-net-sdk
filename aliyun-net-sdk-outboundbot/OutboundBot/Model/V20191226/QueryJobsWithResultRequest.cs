@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.OutboundBot;
 using Aliyun.Acs.OutboundBot.Transform;
 using Aliyun.Acs.OutboundBot.Transform.V20191226;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
     public class QueryJobsWithResultRequest : RpcAcsRequest<QueryJobsWithResultResponse>
     {
         public QueryJobsWithResultRequest()
-            : base("OutboundBot", "2019-12-26", "QueryJobsWithResult", "outboundbot", "openAPI")
+            : base("OutboundBot", "2019-12-26", "QueryJobsWithResult")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,6 +44,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		private bool? hasReachedEndOfFlowFilter;
 
 		private bool? hasAnsweredFilter;
+
+		private string taskStatusFilter;
 
 		private int? pageNumber;
 
@@ -81,6 +84,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				hasAnsweredFilter = value;
 				DictionaryUtil.Add(QueryParameters, "HasAnsweredFilter", value.ToString());
+			}
+		}
+
+		public string TaskStatusFilter
+		{
+			get
+			{
+				return taskStatusFilter;
+			}
+			set	
+			{
+				taskStatusFilter = value;
+				DictionaryUtil.Add(QueryParameters, "TaskStatusFilter", value);
 			}
 		}
 

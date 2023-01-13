@@ -120,6 +120,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 			private bool? interruptible;
 
+			private string contentParams;
+
 			public string Action
 			{
 				get
@@ -165,6 +167,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					interruptible = value;
+				}
+			}
+
+			public string ContentParams
+			{
+				get
+				{
+					return contentParams;
+				}
+				set	
+				{
+					contentParams = value;
 				}
 			}
 		}

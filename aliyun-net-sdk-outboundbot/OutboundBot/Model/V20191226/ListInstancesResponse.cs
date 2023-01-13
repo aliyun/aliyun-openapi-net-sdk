@@ -138,6 +138,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 			private int? maxConcurrentConversation;
 
+			private bool? isPreset;
+
 			private List<ListInstances_ResourceTag> resourceTags;
 
 			private ListInstances_NluProfile nluProfile;
@@ -295,6 +297,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					maxConcurrentConversation = value;
+				}
+			}
+
+			public bool? IsPreset
+			{
+				get
+				{
+					return isPreset;
+				}
+				set	
+				{
+					isPreset = value;
 				}
 			}
 

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.OutboundBot;
 using Aliyun.Acs.OutboundBot.Transform;
 using Aliyun.Acs.OutboundBot.Transform.V20191226;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
     public class CancelJobsRequest : RpcAcsRequest<CancelJobsResponse>
     {
         public CancelJobsRequest()
-            : base("OutboundBot", "2019-12-26", "CancelJobs", "outboundbot", "openAPI")
+            : base("OutboundBot", "2019-12-26", "CancelJobs")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

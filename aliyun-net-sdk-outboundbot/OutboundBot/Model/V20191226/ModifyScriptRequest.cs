@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.OutboundBot;
 using Aliyun.Acs.OutboundBot.Transform;
 using Aliyun.Acs.OutboundBot.Transform.V20191226;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
     public class ModifyScriptRequest : RpcAcsRequest<ModifyScriptResponse>
     {
         public ModifyScriptRequest()
-            : base("OutboundBot", "2019-12-26", "ModifyScript", "outboundbot", "openAPI")
+            : base("OutboundBot", "2019-12-26", "ModifyScript")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -55,6 +56,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		private string asrConfig;
 
 		private string miniPlaybackConfigListJsonString;
+
+		private bool? emotionEnable;
 
 		private string nlsConfig;
 
@@ -173,6 +176,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				miniPlaybackConfigListJsonString = value;
 				DictionaryUtil.Add(QueryParameters, "MiniPlaybackConfigListJsonString", value);
+			}
+		}
+
+		public bool? EmotionEnable
+		{
+			get
+			{
+				return emotionEnable;
+			}
+			set	
+			{
+				emotionEnable = value;
+				DictionaryUtil.Add(QueryParameters, "EmotionEnable", value.ToString());
 			}
 		}
 

@@ -60,6 +60,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 				script.ScriptName = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].ScriptName");
 				script.NewBargeInEnable = _ctx.BooleanValue("ListScripts.Scripts.List["+ i +"].NewBargeInEnable");
 				script.LongWaitEnable = _ctx.BooleanValue("ListScripts.Scripts.List["+ i +"].LongWaitEnable");
+				script.EmotionEnable = _ctx.BooleanValue("ListScripts.Scripts.List["+ i +"].EmotionEnable");
+				script.IsPreset = _ctx.BooleanValue("ListScripts.Scripts.List["+ i +"].IsPreset");
 
 				scripts_list.Add(script);
 			}
