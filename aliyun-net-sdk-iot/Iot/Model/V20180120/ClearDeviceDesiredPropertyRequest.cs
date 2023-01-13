@@ -28,10 +28,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class GetThingScriptRequest : RpcAcsRequest<GetThingScriptResponse>
+    public class ClearDeviceDesiredPropertyRequest : RpcAcsRequest<ClearDeviceDesiredPropertyResponse>
     {
-        public GetThingScriptRequest()
-            : base("Iot", "2018-01-20", "GetThingScript")
+        public ClearDeviceDesiredPropertyRequest()
+            : base("Iot", "2018-01-20", "ClearDeviceDesiredProperty")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,9 +41,28 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
+		private string iotId;
+
 		private string iotInstanceId;
 
+		private List<string> identifiess = new List<string>(){ };
+
 		private string productKey;
+
+		private string deviceName;
+
+		public string IotId
+		{
+			get
+			{
+				return iotId;
+			}
+			set	
+			{
+				iotId = value;
+				DictionaryUtil.Add(QueryParameters, "IotId", value);
+			}
+		}
 
 		public string IotInstanceId
 		{
@@ -55,6 +74,23 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public List<string> Identifiess
+		{
+			get
+			{
+				return identifiess;
+			}
+
+			set
+			{
+				identifiess = value;
+				for (int i = 0; i < identifiess.Count; i++)
+				{
+					DictionaryUtil.Add(BodyParameters,"Identifies." + (i + 1) , identifiess[i]);
+				}
 			}
 		}
 
@@ -71,9 +107,22 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-        public override GetThingScriptResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string DeviceName
+		{
+			get
+			{
+				return deviceName;
+			}
+			set	
+			{
+				deviceName = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
+			}
+		}
+
+        public override ClearDeviceDesiredPropertyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetThingScriptResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ClearDeviceDesiredPropertyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
