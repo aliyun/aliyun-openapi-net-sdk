@@ -49,6 +49,8 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 
 		private string area;
 
+		private string withHeader;
+
 		private long? ownerId;
 
 		public string ObjectPath
@@ -100,6 +102,19 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			{
 				area = value;
 				DictionaryUtil.Add(QueryParameters, "Area", value);
+			}
+		}
+
+		public string WithHeader
+		{
+			get
+			{
+				return withHeader;
+			}
+			set	
+			{
+				withHeader = value;
+				DictionaryUtil.Add(QueryParameters, "WithHeader", value);
 			}
 		}
 
