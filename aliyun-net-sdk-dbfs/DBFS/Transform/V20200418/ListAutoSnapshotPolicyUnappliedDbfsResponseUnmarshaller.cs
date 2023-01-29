@@ -44,7 +44,7 @@ namespace Aliyun.Acs.DBFS.Transform.V20200418
 				dbfsListItem.Status = _ctx.StringValue("ListAutoSnapshotPolicyUnappliedDbfs.DbfsList["+ i +"].Status");
 				dbfsListItem.SizeG = _ctx.LongValue("ListAutoSnapshotPolicyUnappliedDbfs.DbfsList["+ i +"].SizeG");
 				dbfsListItem.RegionId = _ctx.StringValue("ListAutoSnapshotPolicyUnappliedDbfs.DbfsList["+ i +"].RegionId");
-				dbfsListItem.SnapshotCount = _ctx.StringValue("ListAutoSnapshotPolicyUnappliedDbfs.DbfsList["+ i +"].SnapshotCount");
+				dbfsListItem.SnapshotCount = _ctx.IntegerValue("ListAutoSnapshotPolicyUnappliedDbfs.DbfsList["+ i +"].SnapshotCount");
 				dbfsListItem.TotalSize = _ctx.LongValue("ListAutoSnapshotPolicyUnappliedDbfs.DbfsList["+ i +"].TotalSize");
 
 				listAutoSnapshotPolicyUnappliedDbfsResponse_dbfsList.Add(dbfsListItem);

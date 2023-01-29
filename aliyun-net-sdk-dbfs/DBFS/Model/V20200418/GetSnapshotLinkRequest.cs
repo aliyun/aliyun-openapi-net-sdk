@@ -29,27 +29,42 @@ using Aliyun.Acs.DBFS.Transform.V20200418;
 
 namespace Aliyun.Acs.DBFS.Model.V20200418
 {
-    public class GetServiceLinkedRoleRequest : RpcAcsRequest<GetServiceLinkedRoleResponse>
+    public class GetSnapshotLinkRequest : RpcAcsRequest<GetSnapshotLinkResponse>
     {
-        public GetServiceLinkedRoleRequest()
-            : base("DBFS", "2020-04-18", "GetServiceLinkedRole")
+        public GetSnapshotLinkRequest()
+            : base("DBFS", "2020-04-18", "GetSnapshotLink")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.DBFS.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.DBFS.Endpoint.endpointRegionalType, null);
             }
-			Method = MethodType.POST;
         }
+
+		private string linkId;
+
+		[JsonProperty(PropertyName = "LinkId")]
+		public string LinkId
+		{
+			get
+			{
+				return linkId;
+			}
+			set	
+			{
+				linkId = value;
+				DictionaryUtil.Add(QueryParameters, "LinkId", value);
+			}
+		}
 
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override GetServiceLinkedRoleResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetSnapshotLinkResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetServiceLinkedRoleResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetSnapshotLinkResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

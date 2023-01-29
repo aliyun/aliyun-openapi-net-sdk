@@ -29,10 +29,10 @@ using Aliyun.Acs.DBFS.Transform.V20200418;
 
 namespace Aliyun.Acs.DBFS.Model.V20200418
 {
-    public class GetServiceLinkedRoleRequest : RpcAcsRequest<GetServiceLinkedRoleResponse>
+    public class ListSnapshotLinksRequest : RpcAcsRequest<ListSnapshotLinksResponse>
     {
-        public GetServiceLinkedRoleRequest()
-            : base("DBFS", "2020-04-18", "GetServiceLinkedRole")
+        public ListSnapshotLinksRequest()
+            : base("DBFS", "2020-04-18", "ListSnapshotLinks")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,14 +42,78 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			Method = MethodType.POST;
         }
 
+		private string filterValue;
+
+		private int? pageNumber;
+
+		private string filterKey;
+
+		private int? pageSize;
+
+		[JsonProperty(PropertyName = "FilterValue")]
+		public string FilterValue
+		{
+			get
+			{
+				return filterValue;
+			}
+			set	
+			{
+				filterValue = value;
+				DictionaryUtil.Add(QueryParameters, "FilterValue", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageNumber")]
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "FilterKey")]
+		public string FilterKey
+		{
+			get
+			{
+				return filterKey;
+			}
+			set	
+			{
+				filterKey = value;
+				DictionaryUtil.Add(QueryParameters, "FilterKey", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageSize")]
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override GetServiceLinkedRoleResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListSnapshotLinksResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetServiceLinkedRoleResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListSnapshotLinksResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

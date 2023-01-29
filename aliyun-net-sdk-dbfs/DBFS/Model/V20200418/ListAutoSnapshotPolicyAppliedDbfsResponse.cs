@@ -113,9 +113,9 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 
 			private string regionId;
 
-			private string snapshotCount;
+			private int? snapshotCount;
 
-			private string totalSize;
+			private long? totalSize;
 
 			[JsonProperty(PropertyName = "FsId")]
 			public string FsId
@@ -183,7 +183,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 
 			[JsonProperty(PropertyName = "SnapshotCount")]
-			public string SnapshotCount
+			public int? SnapshotCount
 			{
 				get
 				{
@@ -196,7 +196,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 
 			[JsonProperty(PropertyName = "TotalSize")]
-			public string TotalSize
+			public long? TotalSize
 			{
 				get
 				{
