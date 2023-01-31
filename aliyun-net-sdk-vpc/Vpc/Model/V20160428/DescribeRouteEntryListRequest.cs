@@ -40,6 +40,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			Method = MethodType.POST;
         }
 
+		private List<string> destCidrBlockLists = new List<string>(){ };
+
 		private long? resourceOwnerId;
 
 		private string routeEntryName;
@@ -66,7 +68,22 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private int? maxResult;
 
+		private string serviceType;
+
 		private string routeEntryId;
+
+		public List<string> DestCidrBlockLists
+		{
+			get
+			{
+				return destCidrBlockLists;
+			}
+
+			set
+			{
+				destCidrBlockLists = value;
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -234,6 +251,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				maxResult = value;
 				DictionaryUtil.Add(QueryParameters, "MaxResult", value.ToString());
+			}
+		}
+
+		public string ServiceType
+		{
+			get
+			{
+				return serviceType;
+			}
+			set	
+			{
+				serviceType = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceType", value);
 			}
 		}
 

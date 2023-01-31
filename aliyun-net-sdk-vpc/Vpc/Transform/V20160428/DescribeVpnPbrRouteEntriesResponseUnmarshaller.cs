@@ -46,6 +46,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				vpnPbrRouteEntry.CreateTime = _ctx.LongValue("DescribeVpnPbrRouteEntries.VpnPbrRouteEntries["+ i +"].CreateTime");
 				vpnPbrRouteEntry.VpnInstanceId = _ctx.StringValue("DescribeVpnPbrRouteEntries.VpnPbrRouteEntries["+ i +"].VpnInstanceId");
 				vpnPbrRouteEntry.RouteSource = _ctx.StringValue("DescribeVpnPbrRouteEntries.VpnPbrRouteEntries["+ i +"].RouteSource");
+				vpnPbrRouteEntry.Priority = _ctx.IntegerValue("DescribeVpnPbrRouteEntries.VpnPbrRouteEntries["+ i +"].Priority");
 
 				describeVpnPbrRouteEntriesResponse_vpnPbrRouteEntries.Add(vpnPbrRouteEntry);
 			}

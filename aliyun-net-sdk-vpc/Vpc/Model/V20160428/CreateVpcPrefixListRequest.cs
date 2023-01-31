@@ -40,15 +40,17 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			Method = MethodType.POST;
         }
 
-		private List<string> prefixListEntryss = new List<string>(){ };
-
 		private long? resourceOwnerId;
 
 		private string clientToken;
 
 		private int? maxEntries;
 
+		private string resourceGroupId;
+
 		private string ipVersion;
+
+		private List<string> prefixListEntriess = new List<string>(){ };
 
 		private bool? dryRun;
 
@@ -61,27 +63,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private string prefixListName;
 
 		private string prefixListDescription;
-
-		public List<string> PrefixListEntryss
-		{
-			get
-			{
-				return prefixListEntryss;
-			}
-
-			set
-			{
-				prefixListEntryss = value;
-				if(prefixListEntryss != null)
-				{
-					for (int depth1 = 0; depth1 < prefixListEntryss.Count; depth1++)
-					{
-						DictionaryUtil.Add(QueryParameters,"PrefixListEntrys." + (depth1 + 1), prefixListEntryss[depth1]);
-						DictionaryUtil.Add(QueryParameters,"PrefixListEntrys." + (depth1 + 1), prefixListEntryss[depth1]);
-					}
-				}
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -122,6 +103,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
 		public string IpVersion
 		{
 			get
@@ -132,6 +126,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ipVersion = value;
 				DictionaryUtil.Add(QueryParameters, "IpVersion", value);
+			}
+		}
+
+		public List<string> PrefixListEntriess
+		{
+			get
+			{
+				return prefixListEntriess;
+			}
+
+			set
+			{
+				prefixListEntriess = value;
+				if(prefixListEntriess != null)
+				{
+					for (int depth1 = 0; depth1 < prefixListEntriess.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"PrefixListEntries." + (depth1 + 1), prefixListEntriess[depth1]);
+						DictionaryUtil.Add(QueryParameters,"PrefixListEntries." + (depth1 + 1), prefixListEntriess[depth1]);
+					}
+				}
 			}
 		}
 
@@ -213,7 +228,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public class PrefixListEntrys
+		public class PrefixListEntries
 		{
 
 			private string cidr;

@@ -94,6 +94,16 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			vpnBgpConfig.LocalAsn = _ctx.LongValue("DescribeVpnConnection.VpnBgpConfig.LocalAsn");
 			vpnBgpConfig.AuthKey = _ctx.StringValue("DescribeVpnConnection.VpnBgpConfig.AuthKey");
 			describeVpnConnectionResponse.VpnBgpConfig = vpnBgpConfig;
+
+			List<DescribeVpnConnectionResponse.DescribeVpnConnection_Tag> describeVpnConnectionResponse_tags = new List<DescribeVpnConnectionResponse.DescribeVpnConnection_Tag>();
+			for (int i = 0; i < _ctx.Length("DescribeVpnConnection.Tags.Length"); i++) {
+				DescribeVpnConnectionResponse.DescribeVpnConnection_Tag tag = new DescribeVpnConnectionResponse.DescribeVpnConnection_Tag();
+				tag.Key = _ctx.StringValue("DescribeVpnConnection.Tags["+ i +"].Key");
+				tag._Value = _ctx.StringValue("DescribeVpnConnection.Tags["+ i +"].Value");
+
+				describeVpnConnectionResponse_tags.Add(tag);
+			}
+			describeVpnConnectionResponse.Tags = describeVpnConnectionResponse_tags;
         
 			return describeVpnConnectionResponse;
         }

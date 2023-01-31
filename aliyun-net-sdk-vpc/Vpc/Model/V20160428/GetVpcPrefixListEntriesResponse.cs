@@ -104,6 +104,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string description;
 
+			private string regionId;
+
 			public string PrefixListId
 			{
 				get
@@ -137,6 +139,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					description = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 		}

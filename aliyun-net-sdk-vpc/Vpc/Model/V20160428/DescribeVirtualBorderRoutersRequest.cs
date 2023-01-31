@@ -46,6 +46,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private int? pageSize;
 
+		private bool? includeCrossAccountVbr;
+
 		private string resourceOwnerAccount;
 
 		private long? ownerId;
@@ -88,6 +90,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public bool? IncludeCrossAccountVbr
+		{
+			get
+			{
+				return includeCrossAccountVbr;
+			}
+			set	
+			{
+				includeCrossAccountVbr = value;
+				DictionaryUtil.Add(QueryParameters, "IncludeCrossAccountVbr", value.ToString());
 			}
 		}
 

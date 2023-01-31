@@ -71,6 +71,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				virtualBorderRouterType.AccessPointId = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].AccessPointId");
 				virtualBorderRouterType.PConnVbrChargeType = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].PConnVbrChargeType");
 				virtualBorderRouterType.PhysicalConnectionId = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].PhysicalConnectionId");
+				virtualBorderRouterType.Bandwidth = _ctx.IntegerValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].Bandwidth");
 
 				List<DescribeVirtualBorderRoutersResponse.DescribeVirtualBorderRouters_VirtualBorderRouterType.DescribeVirtualBorderRouters_AssociatedPhysicalConnection> virtualBorderRouterType_associatedPhysicalConnections = new List<DescribeVirtualBorderRoutersResponse.DescribeVirtualBorderRouters_VirtualBorderRouterType.DescribeVirtualBorderRouters_AssociatedPhysicalConnection>();
 				for (int j = 0; j < _ctx.Length("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].AssociatedPhysicalConnections.Length"); j++) {

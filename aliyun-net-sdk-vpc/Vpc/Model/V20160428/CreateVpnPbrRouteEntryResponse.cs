@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string vpnInstanceId;
 
+		private int? priority;
+
 		public string NextHop
 		{
 			get
@@ -162,6 +164,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				vpnInstanceId = value;
+			}
+		}
+
+		public int? Priority
+		{
+			get
+			{
+				return priority;
+			}
+			set	
+			{
+				priority = value;
 			}
 		}
 	}

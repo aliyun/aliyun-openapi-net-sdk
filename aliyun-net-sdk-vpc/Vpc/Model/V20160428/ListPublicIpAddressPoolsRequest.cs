@@ -44,6 +44,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string isp;
 
+		private string resourceGroupId;
+
 		private string nextToken;
 
 		private bool? dryRun;
@@ -55,6 +57,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private List<string> tagss = new List<string>(){ };
 
 		private string name;
 
@@ -85,6 +89,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				isp = value;
 				DictionaryUtil.Add(QueryParameters, "Isp", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -166,6 +183,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public List<string> Tagss
+		{
+			get
+			{
+				return tagss;
+			}
+
+			set
+			{
+				tagss = value;
+				if(tagss != null)
+				{
+					for (int depth1 = 0; depth1 < tagss.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tags." + (depth1 + 1), tagss[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tags." + (depth1 + 1), tagss[depth1]);
+					}
+				}
+			}
+		}
+
 		public string Name
 		{
 			get
@@ -202,6 +240,38 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				status = value;
 				DictionaryUtil.Add(QueryParameters, "Status", value);
+			}
+		}
+
+		public class Tags
+		{
+
+			private string key;
+
+			private string value_;
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
 			}
 		}
 

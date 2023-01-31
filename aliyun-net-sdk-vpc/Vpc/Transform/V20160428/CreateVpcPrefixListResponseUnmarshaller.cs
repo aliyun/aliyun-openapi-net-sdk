@@ -33,6 +33,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			createVpcPrefixListResponse.HttpResponse = _ctx.HttpResponse;
 			createVpcPrefixListResponse.PrefixListId = _ctx.StringValue("CreateVpcPrefixList.PrefixListId");
 			createVpcPrefixListResponse.RequestId = _ctx.StringValue("CreateVpcPrefixList.RequestId");
+			createVpcPrefixListResponse.ResourceGroupId = _ctx.StringValue("CreateVpcPrefixList.ResourceGroupId");
         
 			return createVpcPrefixListResponse;
         }

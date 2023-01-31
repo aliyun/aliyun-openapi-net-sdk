@@ -40,6 +40,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			Method = MethodType.POST;
         }
 
+		private int? cidrMask;
+
 		private string publicIpAddressPoolId;
 
 		private long? resourceOwnerId;
@@ -55,6 +57,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private long? ownerId;
 
 		private string cidrBlock;
+
+		public int? CidrMask
+		{
+			get
+			{
+				return cidrMask;
+			}
+			set	
+			{
+				cidrMask = value;
+				DictionaryUtil.Add(QueryParameters, "CidrMask", value.ToString());
+			}
+		}
 
 		public string PublicIpAddressPoolId
 		{

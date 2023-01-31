@@ -27,6 +27,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string requestId;
 
+		private CreatePhysicalConnectionOccupancyOrder_Data data;
+
 		public string RequestId
 		{
 			get
@@ -36,6 +38,36 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public CreatePhysicalConnectionOccupancyOrder_Data Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+
+		public class CreatePhysicalConnectionOccupancyOrder_Data
+		{
+
+			private string orderId;
+
+			public string OrderId
+			{
+				get
+				{
+					return orderId;
+				}
+				set	
+				{
+					orderId = value;
+				}
 			}
 		}
 	}

@@ -51,6 +51,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			describeVpnGatewayResponse.BusinessStatus = _ctx.StringValue("DescribeVpnGateway.BusinessStatus");
 			describeVpnGatewayResponse.SslVpn = _ctx.StringValue("DescribeVpnGateway.SslVpn");
 			describeVpnGatewayResponse.Name = _ctx.StringValue("DescribeVpnGateway.Name");
+			describeVpnGatewayResponse.NetworkType = _ctx.StringValue("DescribeVpnGateway.NetworkType");
 
 			DescribeVpnGatewayResponse.DescribeVpnGateway_ReservationData reservationData = new DescribeVpnGatewayResponse.DescribeVpnGateway_ReservationData();
 			reservationData.Status = _ctx.StringValue("DescribeVpnGateway.ReservationData.Status");

@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private int? pageNumber;
 
+		private string resourceGroupId;
+
 		private int? pageSize;
 
 		private string resourceOwnerAccount;
@@ -109,6 +111,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

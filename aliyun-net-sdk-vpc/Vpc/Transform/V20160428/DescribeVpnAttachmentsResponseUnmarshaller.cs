@@ -47,6 +47,16 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				vpnAttachment.TransitRouterName = _ctx.StringValue("DescribeVpnAttachments.VpnAttachments["+ i +"].TransitRouterName");
 				vpnAttachment.CrossAccountAuthorized = _ctx.BooleanValue("DescribeVpnAttachments.VpnAttachments["+ i +"].CrossAccountAuthorized");
 
+				List<DescribeVpnAttachmentsResponse.DescribeVpnAttachments_VpnAttachment.DescribeVpnAttachments_Tag> vpnAttachment_tags = new List<DescribeVpnAttachmentsResponse.DescribeVpnAttachments_VpnAttachment.DescribeVpnAttachments_Tag>();
+				for (int j = 0; j < _ctx.Length("DescribeVpnAttachments.VpnAttachments["+ i +"].Tags.Length"); j++) {
+					DescribeVpnAttachmentsResponse.DescribeVpnAttachments_VpnAttachment.DescribeVpnAttachments_Tag tag = new DescribeVpnAttachmentsResponse.DescribeVpnAttachments_VpnAttachment.DescribeVpnAttachments_Tag();
+					tag.Key = _ctx.StringValue("DescribeVpnAttachments.VpnAttachments["+ i +"].Tags["+ j +"].Key");
+					tag._Value = _ctx.StringValue("DescribeVpnAttachments.VpnAttachments["+ i +"].Tags["+ j +"].Value");
+
+					vpnAttachment_tags.Add(tag);
+				}
+				vpnAttachment.Tags = vpnAttachment_tags;
+
 				describeVpnAttachmentsResponse_vpnAttachments.Add(vpnAttachment);
 			}
 			describeVpnAttachmentsResponse.VpnAttachments = describeVpnAttachmentsResponse_vpnAttachments;

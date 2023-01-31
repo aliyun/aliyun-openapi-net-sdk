@@ -88,6 +88,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string gmtModified;
 
+			private string serviceType;
+
 			private List<DescribeRouteEntryList_NextHop> nextHops;
 
 			public string Status
@@ -195,6 +197,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					gmtModified = value;
+				}
+			}
+
+			public string ServiceType
+			{
+				get
+				{
+					return serviceType;
+				}
+				set	
+				{
+					serviceType = value;
 				}
 			}
 

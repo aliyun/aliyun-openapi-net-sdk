@@ -110,6 +110,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string reason;
 
+			private string regionId;
+
+			private string resourceUid;
+
 			public string PrefixListId
 			{
 				get
@@ -179,6 +183,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					reason = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public string ResourceUid
+			{
+				get
+				{
+					return resourceUid;
+				}
+				set	
+				{
+					resourceUid = value;
 				}
 			}
 		}

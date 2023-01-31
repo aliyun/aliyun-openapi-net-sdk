@@ -45,6 +45,18 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				gatewayRouteEntryModelsItem.DestinationCidrBlock = _ctx.StringValue("ListGatewayRouteTableEntries.GatewayRouteEntryModels["+ i +"].DestinationCidrBlock");
 				gatewayRouteEntryModelsItem.Name = _ctx.StringValue("ListGatewayRouteTableEntries.GatewayRouteEntryModels["+ i +"].Name");
 
+				List<ListGatewayRouteTableEntriesResponse.ListGatewayRouteTableEntries_GatewayRouteEntryModelsItem.ListGatewayRouteTableEntries_NextHop> gatewayRouteEntryModelsItem_nextHops = new List<ListGatewayRouteTableEntriesResponse.ListGatewayRouteTableEntries_GatewayRouteEntryModelsItem.ListGatewayRouteTableEntries_NextHop>();
+				for (int j = 0; j < _ctx.Length("ListGatewayRouteTableEntries.GatewayRouteEntryModels["+ i +"].NextHops.Length"); j++) {
+					ListGatewayRouteTableEntriesResponse.ListGatewayRouteTableEntries_GatewayRouteEntryModelsItem.ListGatewayRouteTableEntries_NextHop nextHop = new ListGatewayRouteTableEntriesResponse.ListGatewayRouteTableEntries_GatewayRouteEntryModelsItem.ListGatewayRouteTableEntries_NextHop();
+					nextHop.NextHopId = _ctx.StringValue("ListGatewayRouteTableEntries.GatewayRouteEntryModels["+ i +"].NextHops["+ j +"].NextHopId");
+					nextHop.NextHopType = _ctx.StringValue("ListGatewayRouteTableEntries.GatewayRouteEntryModels["+ i +"].NextHops["+ j +"].NextHopType");
+					nextHop.Weight = _ctx.StringValue("ListGatewayRouteTableEntries.GatewayRouteEntryModels["+ i +"].NextHops["+ j +"].Weight");
+					nextHop.Enabled = _ctx.StringValue("ListGatewayRouteTableEntries.GatewayRouteEntryModels["+ i +"].NextHops["+ j +"].Enabled");
+
+					gatewayRouteEntryModelsItem_nextHops.Add(nextHop);
+				}
+				gatewayRouteEntryModelsItem.NextHops = gatewayRouteEntryModelsItem_nextHops;
+
 				listGatewayRouteTableEntriesResponse_gatewayRouteEntryModels.Add(gatewayRouteEntryModelsItem);
 			}
 			listGatewayRouteTableEntriesResponse.GatewayRouteEntryModels = listGatewayRouteTableEntriesResponse_gatewayRouteEntryModels;

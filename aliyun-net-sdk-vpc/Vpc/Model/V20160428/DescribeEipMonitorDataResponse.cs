@@ -64,7 +64,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string timeStamp;
 
-			private int? eipFlow;
+			private long? eipFlow;
 
 			private long? eipRX;
 
@@ -116,7 +116,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public int? EipFlow
+			public long? EipFlow
 			{
 				get
 				{

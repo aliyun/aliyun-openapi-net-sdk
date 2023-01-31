@@ -59,6 +59,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				vpnConnection.TransitRouterId = _ctx.StringValue("DescribeVpnConnections.VpnConnections["+ i +"].TransitRouterId");
 				vpnConnection.TransitRouterName = _ctx.StringValue("DescribeVpnConnections.VpnConnections["+ i +"].TransitRouterName");
 				vpnConnection.CrossAccountAuthorized = _ctx.BooleanValue("DescribeVpnConnections.VpnConnections["+ i +"].CrossAccountAuthorized");
+				vpnConnection.InternetIp = _ctx.StringValue("DescribeVpnConnections.VpnConnections["+ i +"].InternetIp");
 
 				DescribeVpnConnectionsResponse.DescribeVpnConnections_VpnConnection.DescribeVpnConnections_IkeConfig ikeConfig = new DescribeVpnConnectionsResponse.DescribeVpnConnections_VpnConnection.DescribeVpnConnections_IkeConfig();
 				ikeConfig.RemoteId = _ctx.StringValue("DescribeVpnConnections.VpnConnections["+ i +"].IkeConfig.RemoteId");
@@ -98,6 +99,16 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				vpnBgpConfig.LocalAsn = _ctx.LongValue("DescribeVpnConnections.VpnConnections["+ i +"].VpnBgpConfig.LocalAsn");
 				vpnBgpConfig.AuthKey = _ctx.StringValue("DescribeVpnConnections.VpnConnections["+ i +"].VpnBgpConfig.AuthKey");
 				vpnConnection.VpnBgpConfig = vpnBgpConfig;
+
+				List<DescribeVpnConnectionsResponse.DescribeVpnConnections_VpnConnection.DescribeVpnConnections_TagItem> vpnConnection_tag = new List<DescribeVpnConnectionsResponse.DescribeVpnConnections_VpnConnection.DescribeVpnConnections_TagItem>();
+				for (int j = 0; j < _ctx.Length("DescribeVpnConnections.VpnConnections["+ i +"].Tag.Length"); j++) {
+					DescribeVpnConnectionsResponse.DescribeVpnConnections_VpnConnection.DescribeVpnConnections_TagItem tagItem = new DescribeVpnConnectionsResponse.DescribeVpnConnections_VpnConnection.DescribeVpnConnections_TagItem();
+					tagItem.Key = _ctx.StringValue("DescribeVpnConnections.VpnConnections["+ i +"].Tag["+ j +"].Key");
+					tagItem._Value = _ctx.StringValue("DescribeVpnConnections.VpnConnections["+ i +"].Tag["+ j +"].Value");
+
+					vpnConnection_tag.Add(tagItem);
+				}
+				vpnConnection.Tag = vpnConnection_tag;
 
 				describeVpnConnectionsResponse_vpnConnections.Add(vpnConnection);
 			}

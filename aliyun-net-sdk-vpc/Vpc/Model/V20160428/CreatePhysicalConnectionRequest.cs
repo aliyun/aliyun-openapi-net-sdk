@@ -54,6 +54,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string type;
 
+		private string resourceGroupId;
+
 		private string redundantPhysicalConnectionId;
 
 		private string peerLocation;
@@ -158,6 +160,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				type = value;
 				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

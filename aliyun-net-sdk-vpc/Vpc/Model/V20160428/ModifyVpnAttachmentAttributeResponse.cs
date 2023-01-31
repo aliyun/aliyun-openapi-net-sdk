@@ -522,6 +522,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private int? retry;
 
+			private string policy;
+
 			public string Enable
 			{
 				get
@@ -579,6 +581,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					retry = value;
+				}
+			}
+
+			public string Policy
+			{
+				get
+				{
+					return policy;
+				}
+				set	
+				{
+					policy = value;
 				}
 			}
 		}

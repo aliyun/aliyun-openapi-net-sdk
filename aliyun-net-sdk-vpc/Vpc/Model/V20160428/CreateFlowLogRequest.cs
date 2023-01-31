@@ -54,6 +54,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string ownerAccount;
 
+		private List<string> trafficPaths = new List<string>(){ };
+
 		private int? aggregationInterval;
 
 		private long? ownerId;
@@ -152,6 +154,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public List<string> TrafficPaths
+		{
+			get
+			{
+				return trafficPaths;
+			}
+
+			set
+			{
+				trafficPaths = value;
 			}
 		}
 

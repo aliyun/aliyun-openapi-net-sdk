@@ -138,6 +138,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private int? aggregationInterval;
 
+			private string serviceType;
+
+			private List<string> trafficPath;
+
 			public string Status
 			{
 				get
@@ -291,6 +295,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					aggregationInterval = value;
+				}
+			}
+
+			public string ServiceType
+			{
+				get
+				{
+					return serviceType;
+				}
+				set	
+				{
+					serviceType = value;
+				}
+			}
+
+			public List<string> TrafficPath
+			{
+				get
+				{
+					return trafficPath;
+				}
+				set	
+				{
+					trafficPath = value;
 				}
 			}
 		}

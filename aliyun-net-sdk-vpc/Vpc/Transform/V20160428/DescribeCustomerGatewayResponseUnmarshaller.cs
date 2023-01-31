@@ -39,6 +39,16 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			describeCustomerGatewayResponse.CreateTime = _ctx.LongValue("DescribeCustomerGateway.CreateTime");
 			describeCustomerGatewayResponse.Name = _ctx.StringValue("DescribeCustomerGateway.Name");
 			describeCustomerGatewayResponse.AuthKey = _ctx.StringValue("DescribeCustomerGateway.AuthKey");
+
+			List<DescribeCustomerGatewayResponse.DescribeCustomerGateway_Tag> describeCustomerGatewayResponse_tags = new List<DescribeCustomerGatewayResponse.DescribeCustomerGateway_Tag>();
+			for (int i = 0; i < _ctx.Length("DescribeCustomerGateway.Tags.Length"); i++) {
+				DescribeCustomerGatewayResponse.DescribeCustomerGateway_Tag tag = new DescribeCustomerGatewayResponse.DescribeCustomerGateway_Tag();
+				tag.Key = _ctx.StringValue("DescribeCustomerGateway.Tags["+ i +"].Key");
+				tag._Value = _ctx.StringValue("DescribeCustomerGateway.Tags["+ i +"].Value");
+
+				describeCustomerGatewayResponse_tags.Add(tag);
+			}
+			describeCustomerGatewayResponse.Tags = describeCustomerGatewayResponse_tags;
         
 			return describeCustomerGatewayResponse;
         }

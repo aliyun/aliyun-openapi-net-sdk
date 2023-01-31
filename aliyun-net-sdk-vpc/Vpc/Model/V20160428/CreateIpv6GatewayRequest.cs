@@ -46,8 +46,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string description;
 
-		private string spec;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -94,19 +92,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string Spec
-		{
-			get
-			{
-				return spec;
-			}
-			set	
-			{
-				spec = value;
-				DictionaryUtil.Add(QueryParameters, "Spec", value);
 			}
 		}
 

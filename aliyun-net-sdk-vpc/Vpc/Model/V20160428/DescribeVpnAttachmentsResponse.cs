@@ -112,6 +112,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private bool? crossAccountAuthorized;
 
+			private List<DescribeVpnAttachments_Tag> tags;
+
 			public string InstanceId
 			{
 				get
@@ -193,6 +195,50 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					crossAccountAuthorized = value;
+				}
+			}
+
+			public List<DescribeVpnAttachments_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public class DescribeVpnAttachments_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}

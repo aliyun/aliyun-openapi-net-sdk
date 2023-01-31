@@ -32,6 +32,10 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 
 			createPhysicalConnectionOccupancyOrderResponse.HttpResponse = _ctx.HttpResponse;
 			createPhysicalConnectionOccupancyOrderResponse.RequestId = _ctx.StringValue("CreatePhysicalConnectionOccupancyOrder.RequestId");
+
+			CreatePhysicalConnectionOccupancyOrderResponse.CreatePhysicalConnectionOccupancyOrder_Data data = new CreatePhysicalConnectionOccupancyOrderResponse.CreatePhysicalConnectionOccupancyOrder_Data();
+			data.OrderId = _ctx.StringValue("CreatePhysicalConnectionOccupancyOrder.Data.OrderId");
+			createPhysicalConnectionOccupancyOrderResponse.Data = data;
         
 			return createPhysicalConnectionOccupancyOrderResponse;
         }
