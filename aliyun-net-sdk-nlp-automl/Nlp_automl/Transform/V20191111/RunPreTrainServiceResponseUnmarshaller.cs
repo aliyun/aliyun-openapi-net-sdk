@@ -31,8 +31,8 @@ namespace Aliyun.Acs.nlp_automl.Transform.V20191111
 			RunPreTrainServiceResponse runPreTrainServiceResponse = new RunPreTrainServiceResponse();
 
 			runPreTrainServiceResponse.HttpResponse = _ctx.HttpResponse;
-			runPreTrainServiceResponse.RequestId = _ctx.StringValue("RunPreTrainService.RequestId");
 			runPreTrainServiceResponse.PredictResult = _ctx.StringValue("RunPreTrainService.PredictResult");
+			runPreTrainServiceResponse.RequestId = _ctx.StringValue("RunPreTrainService.RequestId");
         
 			return runPreTrainServiceResponse;
         }

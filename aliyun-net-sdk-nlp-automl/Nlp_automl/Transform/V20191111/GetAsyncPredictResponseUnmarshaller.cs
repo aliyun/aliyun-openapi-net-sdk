@@ -31,9 +31,9 @@ namespace Aliyun.Acs.nlp_automl.Transform.V20191111
 			GetAsyncPredictResponse getAsyncPredictResponse = new GetAsyncPredictResponse();
 
 			getAsyncPredictResponse.HttpResponse = _ctx.HttpResponse;
-			getAsyncPredictResponse.RequestId = _ctx.StringValue("GetAsyncPredict.RequestId");
 			getAsyncPredictResponse.AsyncPredictId = _ctx.IntegerValue("GetAsyncPredict.AsyncPredictId");
 			getAsyncPredictResponse.Status = _ctx.IntegerValue("GetAsyncPredict.Status");
+			getAsyncPredictResponse.RequestId = _ctx.StringValue("GetAsyncPredict.RequestId");
 			getAsyncPredictResponse.Content = _ctx.StringValue("GetAsyncPredict.Content");
         
 			return getAsyncPredictResponse;
