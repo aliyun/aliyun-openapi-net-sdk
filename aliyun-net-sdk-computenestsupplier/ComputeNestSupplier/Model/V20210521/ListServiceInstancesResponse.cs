@@ -134,6 +134,8 @@ namespace Aliyun.Acs.ComputeNestSupplier.Model.V20210521
 
 			private string payType;
 
+			private bool? isOperated;
+
 			private List<ListServiceInstances_Tag> tags;
 
 			private ListServiceInstances_Service service;
@@ -351,6 +353,18 @@ namespace Aliyun.Acs.ComputeNestSupplier.Model.V20210521
 				set	
 				{
 					payType = value;
+				}
+			}
+
+			public bool? IsOperated
+			{
+				get
+				{
+					return isOperated;
+				}
+				set	
+				{
+					isOperated = value;
 				}
 			}
 

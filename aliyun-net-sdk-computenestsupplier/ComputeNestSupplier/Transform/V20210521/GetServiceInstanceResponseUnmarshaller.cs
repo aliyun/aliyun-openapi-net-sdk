@@ -92,6 +92,36 @@ namespace Aliyun.Acs.ComputeNestSupplier.Transform.V20210521
 				GetServiceInstanceResponse.GetServiceInstance_NetworkConfig.GetServiceInstance_PrivateVpcConnection privateVpcConnection = new GetServiceInstanceResponse.GetServiceInstance_NetworkConfig.GetServiceInstance_PrivateVpcConnection();
 				privateVpcConnection.EndpointId = _ctx.StringValue("GetServiceInstance.NetworkConfig.PrivateVpcConnections["+ i +"].EndpointId");
 				privateVpcConnection.EndpointServiceId = _ctx.StringValue("GetServiceInstance.NetworkConfig.PrivateVpcConnections["+ i +"].EndpointServiceId");
+				privateVpcConnection.PrivateZoneName = _ctx.StringValue("GetServiceInstance.NetworkConfig.PrivateVpcConnections["+ i +"].PrivateZoneName");
+
+				List<GetServiceInstanceResponse.GetServiceInstance_NetworkConfig.GetServiceInstance_PrivateVpcConnection.GetServiceInstance_ConnectionConfig> privateVpcConnection_connectionConfigs = new List<GetServiceInstanceResponse.GetServiceInstance_NetworkConfig.GetServiceInstance_PrivateVpcConnection.GetServiceInstance_ConnectionConfig>();
+				for (int j = 0; j < _ctx.Length("GetServiceInstance.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs.Length"); j++) {
+					GetServiceInstanceResponse.GetServiceInstance_NetworkConfig.GetServiceInstance_PrivateVpcConnection.GetServiceInstance_ConnectionConfig connectionConfig = new GetServiceInstanceResponse.GetServiceInstance_NetworkConfig.GetServiceInstance_PrivateVpcConnection.GetServiceInstance_ConnectionConfig();
+					connectionConfig.VpcId = _ctx.StringValue("GetServiceInstance.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].VpcId");
+					connectionConfig.IngressEndpointStatus = _ctx.StringValue("GetServiceInstance.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].IngressEndpointStatus");
+					connectionConfig.NetworkServiceStatus = _ctx.StringValue("GetServiceInstance.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].NetworkServiceStatus");
+
+					List<string> connectionConfig_securityGroups = new List<string>();
+					for (int k = 0; k < _ctx.Length("GetServiceInstance.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].SecurityGroups.Length"); k++) {
+						connectionConfig_securityGroups.Add(_ctx.StringValue("GetServiceInstance.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].SecurityGroups["+ k +"]"));
+					}
+					connectionConfig.SecurityGroups = connectionConfig_securityGroups;
+
+					List<string> connectionConfig_vSwitches = new List<string>();
+					for (int k = 0; k < _ctx.Length("GetServiceInstance.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].VSwitches.Length"); k++) {
+						connectionConfig_vSwitches.Add(_ctx.StringValue("GetServiceInstance.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].VSwitches["+ k +"]"));
+					}
+					connectionConfig.VSwitches = connectionConfig_vSwitches;
+
+					List<string> connectionConfig_endpointIps = new List<string>();
+					for (int k = 0; k < _ctx.Length("GetServiceInstance.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].EndpointIps.Length"); k++) {
+						connectionConfig_endpointIps.Add(_ctx.StringValue("GetServiceInstance.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].EndpointIps["+ k +"]"));
+					}
+					connectionConfig.EndpointIps = connectionConfig_endpointIps;
+
+					privateVpcConnection_connectionConfigs.Add(connectionConfig);
+				}
+				privateVpcConnection.ConnectionConfigs = privateVpcConnection_connectionConfigs;
 
 				networkConfig_privateVpcConnections.Add(privateVpcConnection);
 			}

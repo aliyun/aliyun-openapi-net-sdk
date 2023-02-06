@@ -747,6 +747,10 @@ namespace Aliyun.Acs.ComputeNestSupplier.Model.V20210521
 
 				private string endpointServiceId;
 
+				private string privateZoneName;
+
+				private List<GetServiceInstance_ConnectionConfig> connectionConfigs;
+
 				public string EndpointId
 				{
 					get
@@ -768,6 +772,118 @@ namespace Aliyun.Acs.ComputeNestSupplier.Model.V20210521
 					set	
 					{
 						endpointServiceId = value;
+					}
+				}
+
+				public string PrivateZoneName
+				{
+					get
+					{
+						return privateZoneName;
+					}
+					set	
+					{
+						privateZoneName = value;
+					}
+				}
+
+				public List<GetServiceInstance_ConnectionConfig> ConnectionConfigs
+				{
+					get
+					{
+						return connectionConfigs;
+					}
+					set	
+					{
+						connectionConfigs = value;
+					}
+				}
+
+				public class GetServiceInstance_ConnectionConfig
+				{
+
+					private string vpcId;
+
+					private string ingressEndpointStatus;
+
+					private string networkServiceStatus;
+
+					private List<string> securityGroups;
+
+					private List<string> vSwitches;
+
+					private List<string> endpointIps;
+
+					public string VpcId
+					{
+						get
+						{
+							return vpcId;
+						}
+						set	
+						{
+							vpcId = value;
+						}
+					}
+
+					public string IngressEndpointStatus
+					{
+						get
+						{
+							return ingressEndpointStatus;
+						}
+						set	
+						{
+							ingressEndpointStatus = value;
+						}
+					}
+
+					public string NetworkServiceStatus
+					{
+						get
+						{
+							return networkServiceStatus;
+						}
+						set	
+						{
+							networkServiceStatus = value;
+						}
+					}
+
+					public List<string> SecurityGroups
+					{
+						get
+						{
+							return securityGroups;
+						}
+						set	
+						{
+							securityGroups = value;
+						}
+					}
+
+					public List<string> VSwitches
+					{
+						get
+						{
+							return vSwitches;
+						}
+						set	
+						{
+							vSwitches = value;
+						}
+					}
+
+					public List<string> EndpointIps
+					{
+						get
+						{
+							return endpointIps;
+						}
+						set	
+						{
+							endpointIps = value;
+						}
 					}
 				}
 			}

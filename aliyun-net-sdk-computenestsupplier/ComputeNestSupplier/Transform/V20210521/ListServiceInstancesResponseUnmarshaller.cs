@@ -57,6 +57,7 @@ namespace Aliyun.Acs.ComputeNestSupplier.Transform.V20210521
 				serviceInstance.EndTime = _ctx.StringValue("ListServiceInstances.ServiceInstances["+ i +"].EndTime");
 				serviceInstance.ServiceType = _ctx.StringValue("ListServiceInstances.ServiceInstances["+ i +"].ServiceType");
 				serviceInstance.PayType = _ctx.StringValue("ListServiceInstances.ServiceInstances["+ i +"].PayType");
+				serviceInstance.IsOperated = _ctx.BooleanValue("ListServiceInstances.ServiceInstances["+ i +"].IsOperated");
 
 				ListServiceInstancesResponse.ListServiceInstances_ServiceInstance.ListServiceInstances_Service service = new ListServiceInstancesResponse.ListServiceInstances_ServiceInstance.ListServiceInstances_Service();
 				service.Status = _ctx.StringValue("ListServiceInstances.ServiceInstances["+ i +"].Service.Status");
