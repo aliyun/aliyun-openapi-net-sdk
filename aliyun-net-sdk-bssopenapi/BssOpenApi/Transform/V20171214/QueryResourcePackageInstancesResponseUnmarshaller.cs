@@ -60,6 +60,7 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 				instance.DeductType = _ctx.StringValue("QueryResourcePackageInstances.Data.Instances["+ i +"].DeductType");
 				instance.TotalAmountUnit = _ctx.StringValue("QueryResourcePackageInstances.Data.Instances["+ i +"].TotalAmountUnit");
 				instance.RemainingAmount = _ctx.StringValue("QueryResourcePackageInstances.Data.Instances["+ i +"].RemainingAmount");
+				instance.CommodityCode = _ctx.StringValue("QueryResourcePackageInstances.Data.Instances["+ i +"].CommodityCode");
 
 				List<string> instance_applicableProducts = new List<string>();
 				for (int j = 0; j < _ctx.Length("QueryResourcePackageInstances.Data.Instances["+ i +"].ApplicableProducts.Length"); j++) {

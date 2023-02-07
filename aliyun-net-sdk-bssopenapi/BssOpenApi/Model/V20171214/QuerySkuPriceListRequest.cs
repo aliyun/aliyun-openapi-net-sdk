@@ -17,122 +17,96 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.BssOpenApi;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
-    public class QueryMonthlyInstanceConsumptionRequest : RpcAcsRequest<QueryMonthlyInstanceConsumptionResponse>
+    public class QuerySkuPriceListRequest : RpcAcsRequest<QuerySkuPriceListResponse>
     {
-        public QueryMonthlyInstanceConsumptionRequest()
-            : base("BssOpenApi", "2017-12-14", "QueryMonthlyInstanceConsumption")
+        public QuerySkuPriceListRequest()
+            : base("BssOpenApi", "2017-12-14", "QuerySkuPriceList", "bssopenapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.BssOpenApi.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.BssOpenApi.Endpoint.endpointRegionalType, null);
             }
-			Method = MethodType.POST;
         }
 
-		private string productCode;
+		private string nextPageToken;
 
-		private string subscriptionType;
+		private string commodityCode;
 
-		private string billingCycle;
+		private string priceFactorConditionMap;
 
-		private long? ownerId;
-
-		private int? pageNum;
-
-		private string productType;
+		private string priceEntityCode;
 
 		private int? pageSize;
 
-		public string ProductCode
+		[JsonProperty(PropertyName = "NextPageToken")]
+		public string NextPageToken
 		{
 			get
 			{
-				return productCode;
+				return nextPageToken;
 			}
 			set	
 			{
-				productCode = value;
-				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
+				nextPageToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextPageToken", value);
 			}
 		}
 
-		public string SubscriptionType
+		[JsonProperty(PropertyName = "CommodityCode")]
+		public string CommodityCode
 		{
 			get
 			{
-				return subscriptionType;
+				return commodityCode;
 			}
 			set	
 			{
-				subscriptionType = value;
-				DictionaryUtil.Add(QueryParameters, "SubscriptionType", value);
+				commodityCode = value;
+				DictionaryUtil.Add(QueryParameters, "CommodityCode", value);
 			}
 		}
 
-		public string BillingCycle
+		[JsonProperty(PropertyName = "PriceFactorConditionMap")]
+		public string PriceFactorConditionMap
 		{
 			get
 			{
-				return billingCycle;
+				return priceFactorConditionMap;
 			}
 			set	
 			{
-				billingCycle = value;
-				DictionaryUtil.Add(QueryParameters, "BillingCycle", value);
+				priceFactorConditionMap = value;
+				DictionaryUtil.Add(QueryParameters, "PriceFactorConditionMap", value.ToString());
 			}
 		}
 
-		public long? OwnerId
+		[JsonProperty(PropertyName = "PriceEntityCode")]
+		public string PriceEntityCode
 		{
 			get
 			{
-				return ownerId;
+				return priceEntityCode;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				priceEntityCode = value;
+				DictionaryUtil.Add(QueryParameters, "PriceEntityCode", value);
 			}
 		}
 
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
-			}
-		}
-
-		public string ProductType
-		{
-			get
-			{
-				return productType;
-			}
-			set	
-			{
-				productType = value;
-				DictionaryUtil.Add(QueryParameters, "ProductType", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get
@@ -146,9 +120,14 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-        public override QueryMonthlyInstanceConsumptionResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override QuerySkuPriceListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryMonthlyInstanceConsumptionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QuerySkuPriceListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

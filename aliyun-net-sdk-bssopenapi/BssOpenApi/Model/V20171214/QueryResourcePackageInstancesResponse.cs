@@ -237,6 +237,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string remainingAmount;
 
+				private string commodityCode;
+
 				private List<string> applicableProducts;
 
 				public string ExpiryTime
@@ -380,6 +382,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						remainingAmount = value;
+					}
+				}
+
+				public string CommodityCode
+				{
+					get
+					{
+						return commodityCode;
+					}
+					set	
+					{
+						commodityCode = value;
 					}
 				}
 

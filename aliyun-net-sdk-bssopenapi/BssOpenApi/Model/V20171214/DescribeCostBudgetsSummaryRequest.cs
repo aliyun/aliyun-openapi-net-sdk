@@ -22,16 +22,15 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.BssOpenApi;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
-    public class QueryMonthlyBillRequest : RpcAcsRequest<QueryMonthlyBillResponse>
+    public class DescribeCostBudgetsSummaryRequest : RpcAcsRequest<DescribeCostBudgetsSummaryResponse>
     {
-        public QueryMonthlyBillRequest()
-            : base("BssOpenApi", "2017-12-14", "QueryMonthlyBill")
+        public DescribeCostBudgetsSummaryRequest()
+            : base("BssOpenApi", "2017-12-14", "DescribeCostBudgetsSummary", "bssopenapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,24 +40,89 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			Method = MethodType.POST;
         }
 
-		private string billingCycle;
+		private string budgetStatus;
 
-		public string BillingCycle
+		private string budgetType;
+
+		private string nextToken;
+
+		private int? maxResults;
+
+		private string budgetName;
+
+		public string BudgetStatus
 		{
 			get
 			{
-				return billingCycle;
+				return budgetStatus;
 			}
 			set	
 			{
-				billingCycle = value;
-				DictionaryUtil.Add(QueryParameters, "BillingCycle", value);
+				budgetStatus = value;
+				DictionaryUtil.Add(QueryParameters, "BudgetStatus", value);
 			}
 		}
 
-        public override QueryMonthlyBillResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string BudgetType
+		{
+			get
+			{
+				return budgetType;
+			}
+			set	
+			{
+				budgetType = value;
+				DictionaryUtil.Add(QueryParameters, "BudgetType", value);
+			}
+		}
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
+			}
+		}
+
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+			}
+		}
+
+		public string BudgetName
+		{
+			get
+			{
+				return budgetName;
+			}
+			set	
+			{
+				budgetName = value;
+				DictionaryUtil.Add(QueryParameters, "BudgetName", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeCostBudgetsSummaryResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryMonthlyBillResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeCostBudgetsSummaryResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

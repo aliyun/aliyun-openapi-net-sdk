@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.BssOpenApi;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
     public class SetCreditLabelActionRequest : RpcAcsRequest<SetCreditLabelActionResponse>
     {
         public SetCreditLabelActionRequest()
-            : base("BssOpenApi", "2017-12-14", "SetCreditLabelAction")
+            : base("BssOpenApi", "2017-12-14", "SetCreditLabelAction", "bssopenapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -76,6 +76,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string isNeedAddSettleLabel;
 
+		[JsonProperty(PropertyName = "ActionType")]
 		public string ActionType
 		{
 			get
@@ -89,6 +90,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "IsNeedSaveNotifyRule")]
 		public string IsNeedSaveNotifyRule
 		{
 			get
@@ -102,6 +104,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "IsNeedAdjustCreditAccount")]
 		public string IsNeedAdjustCreditAccount
 		{
 			get
@@ -115,6 +118,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "NewCreateMode")]
 		public bool? NewCreateMode
 		{
 			get
@@ -128,6 +132,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Description")]
 		public string Description
 		{
 			get
@@ -141,6 +146,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Source")]
 		public string Source
 		{
 			get
@@ -154,6 +160,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "CurrencyCode")]
 		public string CurrencyCode
 		{
 			get
@@ -167,6 +174,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "DailyCycle")]
 		public string DailyCycle
 		{
 			get
@@ -180,6 +188,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Operator")]
 		public string _Operator
 		{
 			get
@@ -193,6 +202,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Uid")]
 		public string Uid
 		{
 			get
@@ -206,6 +216,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "SiteCode")]
 		public string SiteCode
 		{
 			get
@@ -219,6 +230,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "ClearCycle")]
 		public string ClearCycle
 		{
 			get
@@ -232,6 +244,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "NeedNotice")]
 		public bool? NeedNotice
 		{
 			get
@@ -245,6 +258,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -258,6 +272,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "IsNeedSetCreditAmount")]
 		public string IsNeedSetCreditAmount
 		{
 			get
@@ -271,6 +286,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "CreditAmount")]
 		public string CreditAmount
 		{
 			get
@@ -284,6 +300,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "IsNeedAddSettleLabel")]
 		public string IsNeedAddSettleLabel
 		{
 			get

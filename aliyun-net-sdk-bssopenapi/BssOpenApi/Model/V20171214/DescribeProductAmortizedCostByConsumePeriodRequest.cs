@@ -22,16 +22,15 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.BssOpenApi;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
-    public class QuerySettlementBillRequest : RpcAcsRequest<QuerySettlementBillResponse>
+    public class DescribeProductAmortizedCostByConsumePeriodRequest : RpcAcsRequest<DescribeProductAmortizedCostByConsumePeriodResponse>
     {
-        public QuerySettlementBillRequest()
-            : base("BssOpenApi", "2017-12-14", "QuerySettlementBill")
+        public DescribeProductAmortizedCostByConsumePeriodRequest()
+            : base("BssOpenApi", "2017-12-14", "DescribeProductAmortizedCostByConsumePeriod", "bssopenapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,27 +40,38 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			Method = MethodType.POST;
         }
 
+		private string productDetail;
+
 		private string productCode;
 
-		private bool? isHideZeroCharge;
+		private List<string> billOwnerIdLists = new List<string>(){ };
 
 		private string subscriptionType;
 
-		private string endTime;
-
 		private string billingCycle;
 
-		private string startTime;
+		private string costUnitCode;
 
-		private long? ownerId;
+		private List<string> amortizationPeriodFilters = new List<string>(){ };
 
-		private int? pageNum;
+		private string nextToken;
 
-		private string type;
+		private List<string> billUserIdLists = new List<string>(){ };
 
-		private string productType;
+		private int? maxResults;
 
-		private int? pageSize;
+		public string ProductDetail
+		{
+			get
+			{
+				return productDetail;
+			}
+			set	
+			{
+				productDetail = value;
+				DictionaryUtil.Add(BodyParameters, "ProductDetail", value);
+			}
+		}
 
 		public string ProductCode
 		{
@@ -72,20 +82,20 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set	
 			{
 				productCode = value;
-				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
+				DictionaryUtil.Add(BodyParameters, "ProductCode", value);
 			}
 		}
 
-		public bool? IsHideZeroCharge
+		public List<string> BillOwnerIdLists
 		{
 			get
 			{
-				return isHideZeroCharge;
+				return billOwnerIdLists;
 			}
-			set	
+
+			set
 			{
-				isHideZeroCharge = value;
-				DictionaryUtil.Add(QueryParameters, "IsHideZeroCharge", value.ToString());
+				billOwnerIdLists = value;
 			}
 		}
 
@@ -98,20 +108,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set	
 			{
 				subscriptionType = value;
-				DictionaryUtil.Add(QueryParameters, "SubscriptionType", value);
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				DictionaryUtil.Add(BodyParameters, "SubscriptionType", value);
 			}
 		}
 
@@ -124,91 +121,83 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set	
 			{
 				billingCycle = value;
-				DictionaryUtil.Add(QueryParameters, "BillingCycle", value);
+				DictionaryUtil.Add(BodyParameters, "BillingCycle", value);
 			}
 		}
 
-		public string StartTime
+		public string CostUnitCode
 		{
 			get
 			{
-				return startTime;
+				return costUnitCode;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				costUnitCode = value;
+				DictionaryUtil.Add(BodyParameters, "CostUnitCode", value);
 			}
 		}
 
-		public long? OwnerId
+		public List<string> AmortizationPeriodFilters
 		{
 			get
 			{
-				return ownerId;
+				return amortizationPeriodFilters;
 			}
-			set	
+
+			set
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				amortizationPeriodFilters = value;
 			}
 		}
 
-		public int? PageNum
+		public string NextToken
 		{
 			get
 			{
-				return pageNum;
+				return nextToken;
 			}
 			set	
 			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+				nextToken = value;
+				DictionaryUtil.Add(BodyParameters, "NextToken", value);
 			}
 		}
 
-		public string Type
+		public List<string> BillUserIdLists
 		{
 			get
 			{
-				return type;
+				return billUserIdLists;
 			}
-			set	
+
+			set
 			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
+				billUserIdLists = value;
 			}
 		}
 
-		public string ProductType
+		public int? MaxResults
 		{
 			get
 			{
-				return productType;
+				return maxResults;
 			}
 			set	
 			{
-				productType = value;
-				DictionaryUtil.Add(QueryParameters, "ProductType", value);
+				maxResults = value;
+				DictionaryUtil.Add(BodyParameters, "MaxResults", value.ToString());
 			}
 		}
 
-		public int? PageSize
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
+			return false;
 		}
 
-        public override QuerySettlementBillResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeProductAmortizedCostByConsumePeriodResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QuerySettlementBillResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeProductAmortizedCostByConsumePeriodResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

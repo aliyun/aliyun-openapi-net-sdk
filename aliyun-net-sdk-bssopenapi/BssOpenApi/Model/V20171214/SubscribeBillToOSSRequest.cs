@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.BssOpenApi;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
     public class SubscribeBillToOSSRequest : RpcAcsRequest<SubscribeBillToOSSResponse>
     {
         public SubscribeBillToOSSRequest()
-            : base("BssOpenApi", "2017-12-14", "SubscribeBillToOSS")
+            : base("BssOpenApi", "2017-12-14", "SubscribeBillToOSS", "bssopenapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -53,6 +53,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string multAccountRelSubscribe;
 
+		[JsonProperty(PropertyName = "BucketOwnerId")]
 		public long? BucketOwnerId
 		{
 			get
@@ -66,6 +67,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "SubscribeType")]
 		public string SubscribeType
 		{
 			get
@@ -79,6 +81,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "SubscribeBucket")]
 		public string SubscribeBucket
 		{
 			get
@@ -92,6 +95,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "BucketPath")]
 		public string BucketPath
 		{
 			get
@@ -105,6 +109,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "BeginBillingCycle")]
 		public string BeginBillingCycle
 		{
 			get
@@ -118,6 +123,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "MultAccountRelSubscribe")]
 		public string MultAccountRelSubscribe
 		{
 			get
