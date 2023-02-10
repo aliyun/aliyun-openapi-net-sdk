@@ -28,35 +28,41 @@ using Aliyun.Acs.schedulerx2.Transform.V20190430;
 
 namespace Aliyun.Acs.schedulerx2.Model.V20190430
 {
-    public class ExecuteJobRequest : RpcAcsRequest<ExecuteJobResponse>
+    public class UpdateWorkflowDagRequest : RpcAcsRequest<UpdateWorkflowDagResponse>
     {
-        public ExecuteJobRequest()
-            : base("schedulerx2", "2019-04-30", "ExecuteJob")
+        public UpdateWorkflowDagRequest()
+            : base("schedulerx2", "2019-04-30", "UpdateWorkflowDag")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
+
+		private string dagJson;
 
 		private string namespaceSource;
 
-		private bool? checkJobStatus;
-
-		private int? designateType;
-
-		private long? jobId;
-
-		private string worker;
-
-		private string instanceParameters;
-
 		private string groupId;
 
-		private string label;
-
 		private string _namespace;
+
+		private string workflowId;
+
+		public string DagJson
+		{
+			get
+			{
+				return dagJson;
+			}
+			set	
+			{
+				dagJson = value;
+				DictionaryUtil.Add(BodyParameters, "DagJson", value);
+			}
+		}
 
 		public string NamespaceSource
 		{
@@ -67,72 +73,7 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				namespaceSource = value;
-				DictionaryUtil.Add(QueryParameters, "NamespaceSource", value);
-			}
-		}
-
-		public bool? CheckJobStatus
-		{
-			get
-			{
-				return checkJobStatus;
-			}
-			set	
-			{
-				checkJobStatus = value;
-				DictionaryUtil.Add(QueryParameters, "CheckJobStatus", value.ToString());
-			}
-		}
-
-		public int? DesignateType
-		{
-			get
-			{
-				return designateType;
-			}
-			set	
-			{
-				designateType = value;
-				DictionaryUtil.Add(QueryParameters, "DesignateType", value.ToString());
-			}
-		}
-
-		public long? JobId
-		{
-			get
-			{
-				return jobId;
-			}
-			set	
-			{
-				jobId = value;
-				DictionaryUtil.Add(QueryParameters, "JobId", value.ToString());
-			}
-		}
-
-		public string Worker
-		{
-			get
-			{
-				return worker;
-			}
-			set	
-			{
-				worker = value;
-				DictionaryUtil.Add(QueryParameters, "Worker", value);
-			}
-		}
-
-		public string InstanceParameters
-		{
-			get
-			{
-				return instanceParameters;
-			}
-			set	
-			{
-				instanceParameters = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceParameters", value);
+				DictionaryUtil.Add(BodyParameters, "NamespaceSource", value);
 			}
 		}
 
@@ -145,20 +86,7 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
-			}
-		}
-
-		public string Label
-		{
-			get
-			{
-				return label;
-			}
-			set	
-			{
-				label = value;
-				DictionaryUtil.Add(QueryParameters, "Label", value);
+				DictionaryUtil.Add(BodyParameters, "GroupId", value);
 			}
 		}
 
@@ -171,7 +99,20 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				_namespace = value;
-				DictionaryUtil.Add(QueryParameters, "Namespace", value);
+				DictionaryUtil.Add(BodyParameters, "Namespace", value);
+			}
+		}
+
+		public string WorkflowId
+		{
+			get
+			{
+				return workflowId;
+			}
+			set	
+			{
+				workflowId = value;
+				DictionaryUtil.Add(BodyParameters, "WorkflowId", value);
 			}
 		}
 
@@ -180,9 +121,9 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			return false;
 		}
 
-        public override ExecuteJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateWorkflowDagResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ExecuteJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateWorkflowDagResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

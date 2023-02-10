@@ -50,7 +50,9 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			jobConfigInfo.Content = _ctx.StringValue("GetJobInfo.Data.JobConfigInfo.Content");
 			jobConfigInfo.JarUrl = _ctx.StringValue("GetJobInfo.Data.JobConfigInfo.JarUrl");
 			jobConfigInfo.ClassName = _ctx.StringValue("GetJobInfo.Data.JobConfigInfo.ClassName");
+			jobConfigInfo.JobType = _ctx.StringValue("GetJobInfo.Data.JobConfigInfo.JobType");
 			jobConfigInfo.AttemptInterval = _ctx.IntegerValue("GetJobInfo.Data.JobConfigInfo.AttemptInterval");
+			jobConfigInfo.XAttrs = _ctx.StringValue("GetJobInfo.Data.JobConfigInfo.XAttrs");
 
 			GetJobInfoResponse.GetJobInfo_Data.GetJobInfo_JobConfigInfo.GetJobInfo_MapTaskXAttrs mapTaskXAttrs = new GetJobInfoResponse.GetJobInfo_Data.GetJobInfo_JobConfigInfo.GetJobInfo_MapTaskXAttrs();
 			mapTaskXAttrs.TaskMaxAttempt = _ctx.IntegerValue("GetJobInfo.Data.JobConfigInfo.MapTaskXAttrs.TaskMaxAttempt");

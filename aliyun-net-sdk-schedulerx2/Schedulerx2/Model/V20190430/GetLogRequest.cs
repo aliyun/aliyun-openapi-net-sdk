@@ -28,10 +28,10 @@ using Aliyun.Acs.schedulerx2.Transform.V20190430;
 
 namespace Aliyun.Acs.schedulerx2.Model.V20190430
 {
-    public class ExecuteJobRequest : RpcAcsRequest<ExecuteJobResponse>
+    public class GetLogRequest : RpcAcsRequest<GetLogResponse>
     {
-        public ExecuteJobRequest()
-            : base("schedulerx2", "2019-04-30", "ExecuteJob")
+        public GetLogRequest()
+            : base("schedulerx2", "2019-04-30", "GetLog")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,21 +42,25 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private string namespaceSource;
 
-		private bool? checkJobStatus;
+		private int? line;
 
-		private int? designateType;
+		private long? startTimestamp;
 
-		private long? jobId;
+		private long? endTimestamp;
 
-		private string worker;
+		private string jobId;
 
-		private string instanceParameters;
+		private string keyword;
+
+		private int? offset;
 
 		private string groupId;
 
-		private string label;
+		private bool? reverse;
 
 		private string _namespace;
+
+		private string jobInstanceId;
 
 		public string NamespaceSource
 		{
@@ -71,33 +75,46 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public bool? CheckJobStatus
+		public int? Line
 		{
 			get
 			{
-				return checkJobStatus;
+				return line;
 			}
 			set	
 			{
-				checkJobStatus = value;
-				DictionaryUtil.Add(QueryParameters, "CheckJobStatus", value.ToString());
+				line = value;
+				DictionaryUtil.Add(QueryParameters, "Line", value.ToString());
 			}
 		}
 
-		public int? DesignateType
+		public long? StartTimestamp
 		{
 			get
 			{
-				return designateType;
+				return startTimestamp;
 			}
 			set	
 			{
-				designateType = value;
-				DictionaryUtil.Add(QueryParameters, "DesignateType", value.ToString());
+				startTimestamp = value;
+				DictionaryUtil.Add(QueryParameters, "StartTimestamp", value.ToString());
 			}
 		}
 
-		public long? JobId
+		public long? EndTimestamp
+		{
+			get
+			{
+				return endTimestamp;
+			}
+			set	
+			{
+				endTimestamp = value;
+				DictionaryUtil.Add(QueryParameters, "EndTimestamp", value.ToString());
+			}
+		}
+
+		public string JobId
 		{
 			get
 			{
@@ -106,33 +123,33 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				jobId = value;
-				DictionaryUtil.Add(QueryParameters, "JobId", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "JobId", value);
 			}
 		}
 
-		public string Worker
+		public string Keyword
 		{
 			get
 			{
-				return worker;
+				return keyword;
 			}
 			set	
 			{
-				worker = value;
-				DictionaryUtil.Add(QueryParameters, "Worker", value);
+				keyword = value;
+				DictionaryUtil.Add(QueryParameters, "Keyword", value);
 			}
 		}
 
-		public string InstanceParameters
+		public int? Offset
 		{
 			get
 			{
-				return instanceParameters;
+				return offset;
 			}
 			set	
 			{
-				instanceParameters = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceParameters", value);
+				offset = value;
+				DictionaryUtil.Add(QueryParameters, "Offset", value.ToString());
 			}
 		}
 
@@ -149,16 +166,16 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public string Label
+		public bool? Reverse
 		{
 			get
 			{
-				return label;
+				return reverse;
 			}
 			set	
 			{
-				label = value;
-				DictionaryUtil.Add(QueryParameters, "Label", value);
+				reverse = value;
+				DictionaryUtil.Add(QueryParameters, "Reverse", value.ToString());
 			}
 		}
 
@@ -175,14 +192,27 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
+		public string JobInstanceId
+		{
+			get
+			{
+				return jobInstanceId;
+			}
+			set	
+			{
+				jobInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "JobInstanceId", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override ExecuteJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetLogResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ExecuteJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetLogResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

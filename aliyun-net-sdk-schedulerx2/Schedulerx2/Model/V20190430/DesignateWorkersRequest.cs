@@ -42,19 +42,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private string namespaceSource;
 
-		private string groupId;
-
 		private bool? transferable;
-
-		private string labels;
 
 		private int? designateType;
 
 		private long? jobId;
 
-		private string _namespace;
-
 		private string workers;
+
+		private string groupId;
+
+		private string labels;
+
+		private string _namespace;
 
 		public string NamespaceSource
 		{
@@ -69,19 +69,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
-			}
-		}
-
 		public bool? Transferable
 		{
 			get
@@ -92,19 +79,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				transferable = value;
 				DictionaryUtil.Add(QueryParameters, "Transferable", value.ToString());
-			}
-		}
-
-		public string Labels
-		{
-			get
-			{
-				return labels;
-			}
-			set	
-			{
-				labels = value;
-				DictionaryUtil.Add(QueryParameters, "Labels", value);
 			}
 		}
 
@@ -134,19 +108,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public string _Namespace
-		{
-			get
-			{
-				return _namespace;
-			}
-			set	
-			{
-				_namespace = value;
-				DictionaryUtil.Add(QueryParameters, "Namespace", value);
-			}
-		}
-
 		public string Workers
 		{
 			get
@@ -157,6 +118,45 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				workers = value;
 				DictionaryUtil.Add(QueryParameters, "Workers", value);
+			}
+		}
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+			}
+		}
+
+		public string Labels
+		{
+			get
+			{
+				return labels;
+			}
+			set	
+			{
+				labels = value;
+				DictionaryUtil.Add(QueryParameters, "Labels", value);
+			}
+		}
+
+		public string _Namespace
+		{
+			get
+			{
+				return _namespace;
+			}
+			set	
+			{
+				_namespace = value;
+				DictionaryUtil.Add(QueryParameters, "Namespace", value);
 			}
 		}
 

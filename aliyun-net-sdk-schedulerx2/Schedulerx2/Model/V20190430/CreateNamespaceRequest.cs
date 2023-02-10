@@ -41,11 +41,24 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			Method = MethodType.POST;
         }
 
+		private string description;
+
 		private string uid;
 
 		private string name;
 
-		private string description;
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
 
 		public string Uid
 		{
@@ -70,19 +83,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 

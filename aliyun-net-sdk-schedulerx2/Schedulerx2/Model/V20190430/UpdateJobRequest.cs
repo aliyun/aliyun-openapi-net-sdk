@@ -41,41 +41,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			Method = MethodType.POST;
         }
 
-		private string namespaceSource;
-
-		private string description;
-
 		private int? attemptInterval;
 
-		private string content;
-
-		private long? timeout;
-
-		private bool? timeoutKillEnable;
+		private int? failTimes;
 
 		private long? jobId;
 
-		private int? pageSize;
-
 		private int? consumerSize;
-
-		private string jarUrl;
-
-		private string calendar;
-
-		private bool? failEnable;
-
-		private string sendChannel;
-
-		private int? dataOffset;
 
 		private string groupId;
 
 		private int? taskMaxAttempt;
 
-		private int? maxAttempt;
-
-		private bool? missWorkerEnable;
+		private int? dataOffset;
 
 		private int? dispatcherSize;
 
@@ -83,11 +61,7 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private string executeMode;
 
-		private int? queueSize;
-
 		private string timeExpression;
-
-		private string className;
 
 		private bool? timeoutEnable;
 
@@ -95,39 +69,41 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private string name;
 
-		private string _namespace;
-
-		private int? maxConcurrency;
-
 		private int? timeType;
 
 		private string parameters;
 
-		public string NamespaceSource
-		{
-			get
-			{
-				return namespaceSource;
-			}
-			set	
-			{
-				namespaceSource = value;
-				DictionaryUtil.Add(BodyParameters, "NamespaceSource", value);
-			}
-		}
+		private string namespaceSource;
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(BodyParameters, "Description", value);
-			}
-		}
+		private string description;
+
+		private string content;
+
+		private long? timeout;
+
+		private bool? timeoutKillEnable;
+
+		private int? pageSize;
+
+		private string calendar;
+
+		private bool? failEnable;
+
+		private string sendChannel;
+
+		private int? maxAttempt;
+
+		private bool? missWorkerEnable;
+
+		private bool? successNoticeEnable;
+
+		private int? queueSize;
+
+		private string className;
+
+		private string _namespace;
+
+		private int? maxConcurrency;
 
 		public int? AttemptInterval
 		{
@@ -142,42 +118,16 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public string Content
+		public int? FailTimes
 		{
 			get
 			{
-				return content;
+				return failTimes;
 			}
 			set	
 			{
-				content = value;
-				DictionaryUtil.Add(BodyParameters, "Content", value);
-			}
-		}
-
-		public long? Timeout
-		{
-			get
-			{
-				return timeout;
-			}
-			set	
-			{
-				timeout = value;
-				DictionaryUtil.Add(BodyParameters, "Timeout", value.ToString());
-			}
-		}
-
-		public bool? TimeoutKillEnable
-		{
-			get
-			{
-				return timeoutKillEnable;
-			}
-			set	
-			{
-				timeoutKillEnable = value;
-				DictionaryUtil.Add(BodyParameters, "TimeoutKillEnable", value.ToString());
+				failTimes = value;
+				DictionaryUtil.Add(BodyParameters, "FailTimes", value.ToString());
 			}
 		}
 
@@ -194,19 +144,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
-			}
-		}
-
 		public int? ConsumerSize
 		{
 			get
@@ -217,71 +154,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				consumerSize = value;
 				DictionaryUtil.Add(BodyParameters, "ConsumerSize", value.ToString());
-			}
-		}
-
-		public string JarUrl
-		{
-			get
-			{
-				return jarUrl;
-			}
-			set	
-			{
-				jarUrl = value;
-				DictionaryUtil.Add(BodyParameters, "JarUrl", value);
-			}
-		}
-
-		public string Calendar
-		{
-			get
-			{
-				return calendar;
-			}
-			set	
-			{
-				calendar = value;
-				DictionaryUtil.Add(BodyParameters, "Calendar", value);
-			}
-		}
-
-		public bool? FailEnable
-		{
-			get
-			{
-				return failEnable;
-			}
-			set	
-			{
-				failEnable = value;
-				DictionaryUtil.Add(BodyParameters, "FailEnable", value.ToString());
-			}
-		}
-
-		public string SendChannel
-		{
-			get
-			{
-				return sendChannel;
-			}
-			set	
-			{
-				sendChannel = value;
-				DictionaryUtil.Add(BodyParameters, "SendChannel", value);
-			}
-		}
-
-		public int? DataOffset
-		{
-			get
-			{
-				return dataOffset;
-			}
-			set	
-			{
-				dataOffset = value;
-				DictionaryUtil.Add(BodyParameters, "DataOffset", value.ToString());
 			}
 		}
 
@@ -311,29 +183,16 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public int? MaxAttempt
+		public int? DataOffset
 		{
 			get
 			{
-				return maxAttempt;
+				return dataOffset;
 			}
 			set	
 			{
-				maxAttempt = value;
-				DictionaryUtil.Add(BodyParameters, "MaxAttempt", value.ToString());
-			}
-		}
-
-		public bool? MissWorkerEnable
-		{
-			get
-			{
-				return missWorkerEnable;
-			}
-			set	
-			{
-				missWorkerEnable = value;
-				DictionaryUtil.Add(BodyParameters, "MissWorkerEnable", value.ToString());
+				dataOffset = value;
+				DictionaryUtil.Add(BodyParameters, "DataOffset", value.ToString());
 			}
 		}
 
@@ -376,19 +235,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public int? QueueSize
-		{
-			get
-			{
-				return queueSize;
-			}
-			set	
-			{
-				queueSize = value;
-				DictionaryUtil.Add(BodyParameters, "QueueSize", value.ToString());
-			}
-		}
-
 		public string TimeExpression
 		{
 			get
@@ -399,19 +245,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				timeExpression = value;
 				DictionaryUtil.Add(BodyParameters, "TimeExpression", value);
-			}
-		}
-
-		public string ClassName
-		{
-			get
-			{
-				return className;
-			}
-			set	
-			{
-				className = value;
-				DictionaryUtil.Add(BodyParameters, "ClassName", value);
 			}
 		}
 
@@ -464,32 +297,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public string _Namespace
-		{
-			get
-			{
-				return _namespace;
-			}
-			set	
-			{
-				_namespace = value;
-				DictionaryUtil.Add(BodyParameters, "Namespace", value);
-			}
-		}
-
-		public int? MaxConcurrency
-		{
-			get
-			{
-				return maxConcurrency;
-			}
-			set	
-			{
-				maxConcurrency = value;
-				DictionaryUtil.Add(BodyParameters, "MaxConcurrency", value.ToString());
-			}
-		}
-
 		public int? TimeType
 		{
 			get
@@ -513,6 +320,214 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				parameters = value;
 				DictionaryUtil.Add(BodyParameters, "Parameters", value);
+			}
+		}
+
+		public string NamespaceSource
+		{
+			get
+			{
+				return namespaceSource;
+			}
+			set	
+			{
+				namespaceSource = value;
+				DictionaryUtil.Add(BodyParameters, "NamespaceSource", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(BodyParameters, "Description", value);
+			}
+		}
+
+		public string Content
+		{
+			get
+			{
+				return content;
+			}
+			set	
+			{
+				content = value;
+				DictionaryUtil.Add(BodyParameters, "Content", value);
+			}
+		}
+
+		public long? Timeout
+		{
+			get
+			{
+				return timeout;
+			}
+			set	
+			{
+				timeout = value;
+				DictionaryUtil.Add(BodyParameters, "Timeout", value.ToString());
+			}
+		}
+
+		public bool? TimeoutKillEnable
+		{
+			get
+			{
+				return timeoutKillEnable;
+			}
+			set	
+			{
+				timeoutKillEnable = value;
+				DictionaryUtil.Add(BodyParameters, "TimeoutKillEnable", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Calendar
+		{
+			get
+			{
+				return calendar;
+			}
+			set	
+			{
+				calendar = value;
+				DictionaryUtil.Add(BodyParameters, "Calendar", value);
+			}
+		}
+
+		public bool? FailEnable
+		{
+			get
+			{
+				return failEnable;
+			}
+			set	
+			{
+				failEnable = value;
+				DictionaryUtil.Add(BodyParameters, "FailEnable", value.ToString());
+			}
+		}
+
+		public string SendChannel
+		{
+			get
+			{
+				return sendChannel;
+			}
+			set	
+			{
+				sendChannel = value;
+				DictionaryUtil.Add(BodyParameters, "SendChannel", value);
+			}
+		}
+
+		public int? MaxAttempt
+		{
+			get
+			{
+				return maxAttempt;
+			}
+			set	
+			{
+				maxAttempt = value;
+				DictionaryUtil.Add(BodyParameters, "MaxAttempt", value.ToString());
+			}
+		}
+
+		public bool? MissWorkerEnable
+		{
+			get
+			{
+				return missWorkerEnable;
+			}
+			set	
+			{
+				missWorkerEnable = value;
+				DictionaryUtil.Add(BodyParameters, "MissWorkerEnable", value.ToString());
+			}
+		}
+
+		public bool? SuccessNoticeEnable
+		{
+			get
+			{
+				return successNoticeEnable;
+			}
+			set	
+			{
+				successNoticeEnable = value;
+				DictionaryUtil.Add(BodyParameters, "SuccessNoticeEnable", value.ToString());
+			}
+		}
+
+		public int? QueueSize
+		{
+			get
+			{
+				return queueSize;
+			}
+			set	
+			{
+				queueSize = value;
+				DictionaryUtil.Add(BodyParameters, "QueueSize", value.ToString());
+			}
+		}
+
+		public string ClassName
+		{
+			get
+			{
+				return className;
+			}
+			set	
+			{
+				className = value;
+				DictionaryUtil.Add(BodyParameters, "ClassName", value);
+			}
+		}
+
+		public string _Namespace
+		{
+			get
+			{
+				return _namespace;
+			}
+			set	
+			{
+				_namespace = value;
+				DictionaryUtil.Add(BodyParameters, "Namespace", value);
+			}
+		}
+
+		public int? MaxConcurrency
+		{
+			get
+			{
+				return maxConcurrency;
+			}
+			set	
+			{
+				maxConcurrency = value;
+				DictionaryUtil.Add(BodyParameters, "MaxConcurrency", value.ToString());
 			}
 		}
 

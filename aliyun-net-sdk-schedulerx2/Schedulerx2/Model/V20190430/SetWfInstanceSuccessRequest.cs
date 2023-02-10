@@ -28,35 +28,28 @@ using Aliyun.Acs.schedulerx2.Transform.V20190430;
 
 namespace Aliyun.Acs.schedulerx2.Model.V20190430
 {
-    public class ExecuteJobRequest : RpcAcsRequest<ExecuteJobResponse>
+    public class SetWfInstanceSuccessRequest : RpcAcsRequest<SetWfInstanceSuccessResponse>
     {
-        public ExecuteJobRequest()
-            : base("schedulerx2", "2019-04-30", "ExecuteJob")
+        public SetWfInstanceSuccessRequest()
+            : base("schedulerx2", "2019-04-30", "SetWfInstanceSuccess")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string namespaceSource;
 
-		private bool? checkJobStatus;
-
-		private int? designateType;
-
-		private long? jobId;
-
-		private string worker;
-
-		private string instanceParameters;
-
 		private string groupId;
 
-		private string label;
+		private long? wfInstanceId;
 
 		private string _namespace;
+
+		private long? workflowId;
 
 		public string NamespaceSource
 		{
@@ -68,71 +61,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				namespaceSource = value;
 				DictionaryUtil.Add(QueryParameters, "NamespaceSource", value);
-			}
-		}
-
-		public bool? CheckJobStatus
-		{
-			get
-			{
-				return checkJobStatus;
-			}
-			set	
-			{
-				checkJobStatus = value;
-				DictionaryUtil.Add(QueryParameters, "CheckJobStatus", value.ToString());
-			}
-		}
-
-		public int? DesignateType
-		{
-			get
-			{
-				return designateType;
-			}
-			set	
-			{
-				designateType = value;
-				DictionaryUtil.Add(QueryParameters, "DesignateType", value.ToString());
-			}
-		}
-
-		public long? JobId
-		{
-			get
-			{
-				return jobId;
-			}
-			set	
-			{
-				jobId = value;
-				DictionaryUtil.Add(QueryParameters, "JobId", value.ToString());
-			}
-		}
-
-		public string Worker
-		{
-			get
-			{
-				return worker;
-			}
-			set	
-			{
-				worker = value;
-				DictionaryUtil.Add(QueryParameters, "Worker", value);
-			}
-		}
-
-		public string InstanceParameters
-		{
-			get
-			{
-				return instanceParameters;
-			}
-			set	
-			{
-				instanceParameters = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceParameters", value);
 			}
 		}
 
@@ -149,16 +77,16 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public string Label
+		public long? WfInstanceId
 		{
 			get
 			{
-				return label;
+				return wfInstanceId;
 			}
 			set	
 			{
-				label = value;
-				DictionaryUtil.Add(QueryParameters, "Label", value);
+				wfInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "WfInstanceId", value.ToString());
 			}
 		}
 
@@ -175,14 +103,27 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
+		public long? WorkflowId
+		{
+			get
+			{
+				return workflowId;
+			}
+			set	
+			{
+				workflowId = value;
+				DictionaryUtil.Add(QueryParameters, "WorkflowId", value.ToString());
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override ExecuteJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SetWfInstanceSuccessResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ExecuteJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetWfInstanceSuccessResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

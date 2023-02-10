@@ -28,35 +28,36 @@ using Aliyun.Acs.schedulerx2.Transform.V20190430;
 
 namespace Aliyun.Acs.schedulerx2.Model.V20190430
 {
-    public class ExecuteJobRequest : RpcAcsRequest<ExecuteJobResponse>
+    public class CreateWorkflowRequest : RpcAcsRequest<CreateWorkflowResponse>
     {
-        public ExecuteJobRequest()
-            : base("schedulerx2", "2019-04-30", "ExecuteJob")
+        public CreateWorkflowRequest()
+            : base("schedulerx2", "2019-04-30", "CreateWorkflow")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string namespaceSource;
 
-		private bool? checkJobStatus;
+		private string timezone;
 
-		private int? designateType;
-
-		private long? jobId;
-
-		private string worker;
-
-		private string instanceParameters;
+		private string description;
 
 		private string groupId;
 
-		private string label;
+		private string timeExpression;
 
 		private string _namespace;
+
+		private string name;
+
+		private int? maxConcurrency;
+
+		private int? timeType;
 
 		public string NamespaceSource
 		{
@@ -67,72 +68,33 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				namespaceSource = value;
-				DictionaryUtil.Add(QueryParameters, "NamespaceSource", value);
+				DictionaryUtil.Add(BodyParameters, "NamespaceSource", value);
 			}
 		}
 
-		public bool? CheckJobStatus
+		public string Timezone
 		{
 			get
 			{
-				return checkJobStatus;
+				return timezone;
 			}
 			set	
 			{
-				checkJobStatus = value;
-				DictionaryUtil.Add(QueryParameters, "CheckJobStatus", value.ToString());
+				timezone = value;
+				DictionaryUtil.Add(BodyParameters, "Timezone", value);
 			}
 		}
 
-		public int? DesignateType
+		public string Description
 		{
 			get
 			{
-				return designateType;
+				return description;
 			}
 			set	
 			{
-				designateType = value;
-				DictionaryUtil.Add(QueryParameters, "DesignateType", value.ToString());
-			}
-		}
-
-		public long? JobId
-		{
-			get
-			{
-				return jobId;
-			}
-			set	
-			{
-				jobId = value;
-				DictionaryUtil.Add(QueryParameters, "JobId", value.ToString());
-			}
-		}
-
-		public string Worker
-		{
-			get
-			{
-				return worker;
-			}
-			set	
-			{
-				worker = value;
-				DictionaryUtil.Add(QueryParameters, "Worker", value);
-			}
-		}
-
-		public string InstanceParameters
-		{
-			get
-			{
-				return instanceParameters;
-			}
-			set	
-			{
-				instanceParameters = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceParameters", value);
+				description = value;
+				DictionaryUtil.Add(BodyParameters, "Description", value);
 			}
 		}
 
@@ -145,20 +107,20 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+				DictionaryUtil.Add(BodyParameters, "GroupId", value);
 			}
 		}
 
-		public string Label
+		public string TimeExpression
 		{
 			get
 			{
-				return label;
+				return timeExpression;
 			}
 			set	
 			{
-				label = value;
-				DictionaryUtil.Add(QueryParameters, "Label", value);
+				timeExpression = value;
+				DictionaryUtil.Add(BodyParameters, "TimeExpression", value);
 			}
 		}
 
@@ -171,7 +133,46 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				_namespace = value;
-				DictionaryUtil.Add(QueryParameters, "Namespace", value);
+				DictionaryUtil.Add(BodyParameters, "Namespace", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(BodyParameters, "Name", value);
+			}
+		}
+
+		public int? MaxConcurrency
+		{
+			get
+			{
+				return maxConcurrency;
+			}
+			set	
+			{
+				maxConcurrency = value;
+				DictionaryUtil.Add(BodyParameters, "MaxConcurrency", value.ToString());
+			}
+		}
+
+		public int? TimeType
+		{
+			get
+			{
+				return timeType;
+			}
+			set	
+			{
+				timeType = value;
+				DictionaryUtil.Add(BodyParameters, "TimeType", value.ToString());
 			}
 		}
 
@@ -180,9 +181,9 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			return false;
 		}
 
-        public override ExecuteJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateWorkflowResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ExecuteJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateWorkflowResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

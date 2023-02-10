@@ -22,42 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.schedulerx2.Model.V20190430
 {
-	public class ListGroupsResponse : AcsResponse
+	public class ListWorkflowInstanceResponse : AcsResponse
 	{
-
-		private int? code;
-
-		private string message;
 
 		private string requestId;
 
+		private int? code;
+
 		private bool? success;
 
-		private ListGroups_Data data;
+		private string message;
 
-		public int? Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
+		private ListWorkflowInstance_Data data;
 
 		public string RequestId
 		{
@@ -68,6 +44,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -83,7 +71,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public ListGroups_Data Data
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		public ListWorkflowInstance_Data Data
 		{
 			get
 			{
@@ -95,93 +95,121 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public class ListGroups_Data
+		public class ListWorkflowInstance_Data
 		{
 
-			private List<ListGroups_AppGroup> appGroups;
+			private List<ListWorkflowInstance_WfInstanceInfosItem> wfInstanceInfos;
 
-			public List<ListGroups_AppGroup> AppGroups
+			public List<ListWorkflowInstance_WfInstanceInfosItem> WfInstanceInfos
 			{
 				get
 				{
-					return appGroups;
+					return wfInstanceInfos;
 				}
 				set	
 				{
-					appGroups = value;
+					wfInstanceInfos = value;
 				}
 			}
 
-			public class ListGroups_AppGroup
+			public class ListWorkflowInstance_WfInstanceInfosItem
 			{
 
-				private long? appGroupId;
+				private long? wfInstanceId;
 
-				private string appName;
+				private long? workflowId;
 
-				private string appKey;
+				private int? status;
 
-				private string description;
+				private string startTime;
 
-				private string groupId;
+				private string endTime;
 
-				public long? AppGroupId
+				private string scheduleTime;
+
+				private string dataTime;
+
+				public long? WfInstanceId
 				{
 					get
 					{
-						return appGroupId;
+						return wfInstanceId;
 					}
 					set	
 					{
-						appGroupId = value;
+						wfInstanceId = value;
 					}
 				}
 
-				public string AppName
+				public long? WorkflowId
 				{
 					get
 					{
-						return appName;
+						return workflowId;
 					}
 					set	
 					{
-						appName = value;
+						workflowId = value;
 					}
 				}
 
-				public string AppKey
+				public int? Status
 				{
 					get
 					{
-						return appKey;
+						return status;
 					}
 					set	
 					{
-						appKey = value;
+						status = value;
 					}
 				}
 
-				public string Description
+				public string StartTime
 				{
 					get
 					{
-						return description;
+						return startTime;
 					}
 					set	
 					{
-						description = value;
+						startTime = value;
 					}
 				}
 
-				public string GroupId
+				public string EndTime
 				{
 					get
 					{
-						return groupId;
+						return endTime;
 					}
 					set	
 					{
-						groupId = value;
+						endTime = value;
+					}
+				}
+
+				public string ScheduleTime
+				{
+					get
+					{
+						return scheduleTime;
+					}
+					set	
+					{
+						scheduleTime = value;
+					}
+				}
+
+				public string DataTime
+				{
+					get
+					{
+						return dataTime;
+					}
+					set	
+					{
+						dataTime = value;
 					}
 				}
 			}

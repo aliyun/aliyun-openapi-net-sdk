@@ -44,9 +44,15 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private string groupId;
 
+		private long? startTimestamp;
+
+		private long? endTimestamp;
+
 		private long? jobId;
 
 		private string _namespace;
+
+		private int? status;
 
 		public string NamespaceSource
 		{
@@ -74,6 +80,32 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
+		public long? StartTimestamp
+		{
+			get
+			{
+				return startTimestamp;
+			}
+			set	
+			{
+				startTimestamp = value;
+				DictionaryUtil.Add(QueryParameters, "StartTimestamp", value.ToString());
+			}
+		}
+
+		public long? EndTimestamp
+		{
+			get
+			{
+				return endTimestamp;
+			}
+			set	
+			{
+				endTimestamp = value;
+				DictionaryUtil.Add(QueryParameters, "EndTimestamp", value.ToString());
+			}
+		}
+
 		public long? JobId
 		{
 			get
@@ -97,6 +129,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				_namespace = value;
 				DictionaryUtil.Add(QueryParameters, "Namespace", value);
+			}
+		}
+
+		public int? Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value.ToString());
 			}
 		}
 

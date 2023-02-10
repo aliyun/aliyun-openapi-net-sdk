@@ -52,7 +52,9 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 				job.Name = _ctx.StringValue("ListJobs.Data.Jobs["+ i +"].Name");
 				job.ClassName = _ctx.StringValue("ListJobs.Data.Jobs["+ i +"].ClassName");
 				job.Content = _ctx.StringValue("ListJobs.Data.Jobs["+ i +"].Content");
+				job.JobType = _ctx.StringValue("ListJobs.Data.Jobs["+ i +"].JobType");
 				job.AttemptInterval = _ctx.IntegerValue("ListJobs.Data.Jobs["+ i +"].AttemptInterval");
+				job.XAttrs = _ctx.StringValue("ListJobs.Data.Jobs["+ i +"].XAttrs");
 
 				ListJobsResponse.ListJobs_Data.ListJobs_Job.ListJobs_MapTaskXAttrs mapTaskXAttrs = new ListJobsResponse.ListJobs_Data.ListJobs_Job.ListJobs_MapTaskXAttrs();
 				mapTaskXAttrs.TaskMaxAttempt = _ctx.IntegerValue("ListJobs.Data.Jobs["+ i +"].MapTaskXAttrs.TaskMaxAttempt");

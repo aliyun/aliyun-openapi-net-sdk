@@ -137,7 +137,11 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 				private string content;
 
+				private string jobType;
+
 				private int? attemptInterval;
+
+				private string xAttrs;
 
 				private ListJobs_MapTaskXAttrs mapTaskXAttrs;
 
@@ -277,6 +281,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					}
 				}
 
+				public string JobType
+				{
+					get
+					{
+						return jobType;
+					}
+					set	
+					{
+						jobType = value;
+					}
+				}
+
 				public int? AttemptInterval
 				{
 					get
@@ -286,6 +302,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					set	
 					{
 						attemptInterval = value;
+					}
+				}
+
+				public string XAttrs
+				{
+					get
+					{
+						return xAttrs;
+					}
+					set	
+					{
+						xAttrs = value;
 					}
 				}
 
