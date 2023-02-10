@@ -32,22 +32,23 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 
 			listProductsResponse.HttpResponse = _ctx.HttpResponse;
 			listProductsResponse.TotalCount = _ctx.IntegerValue("ListProducts.TotalCount");
-			listProductsResponse.RequestId = _ctx.StringValue("ListProducts.RequestId");
 			listProductsResponse.NextToken = _ctx.StringValue("ListProducts.NextToken");
+			listProductsResponse.RequestId = _ctx.StringValue("ListProducts.RequestId");
 			listProductsResponse.MaxResults = _ctx.IntegerValue("ListProducts.MaxResults");
 
 			List<ListProductsResponse.ListProducts_ProductInfos> listProductsResponse_productInfo = new List<ListProductsResponse.ListProducts_ProductInfos>();
 			for (int i = 0; i < _ctx.Length("ListProducts.ProductInfo.Length"); i++) {
 				ListProductsResponse.ListProducts_ProductInfos productInfos = new ListProductsResponse.ListProducts_ProductInfos();
-				productInfos.SecondCategoryNameEn = _ctx.StringValue("ListProducts.ProductInfo["+ i +"].SecondCategoryNameEn");
-				productInfos._Dynamic = _ctx.BooleanValue("ListProducts.ProductInfo["+ i +"].Dynamic");
-				productInfos.CommonQuotaSupport = _ctx.StringValue("ListProducts.ProductInfo["+ i +"].CommonQuotaSupport");
 				productInfos.ProductName = _ctx.StringValue("ListProducts.ProductInfo["+ i +"].ProductName");
-				productInfos.ProductCode = _ctx.StringValue("ListProducts.ProductInfo["+ i +"].ProductCode");
-				productInfos.SecondCategoryName = _ctx.StringValue("ListProducts.ProductInfo["+ i +"].SecondCategoryName");
-				productInfos.FlowControlSupport = _ctx.StringValue("ListProducts.ProductInfo["+ i +"].FlowControlSupport");
 				productInfos.SecondCategoryId = _ctx.LongValue("ListProducts.ProductInfo["+ i +"].SecondCategoryId");
 				productInfos.ProductNameEn = _ctx.StringValue("ListProducts.ProductInfo["+ i +"].ProductNameEn");
+				productInfos._Dynamic = _ctx.BooleanValue("ListProducts.ProductInfo["+ i +"].Dynamic");
+				productInfos.SecondCategoryNameEn = _ctx.StringValue("ListProducts.ProductInfo["+ i +"].SecondCategoryNameEn");
+				productInfos.SecondCategoryName = _ctx.StringValue("ListProducts.ProductInfo["+ i +"].SecondCategoryName");
+				productInfos.ProductCode = _ctx.StringValue("ListProducts.ProductInfo["+ i +"].ProductCode");
+				productInfos.FlowControlSupport = _ctx.StringValue("ListProducts.ProductInfo["+ i +"].FlowControlSupport");
+				productInfos.CommonQuotaSupport = _ctx.StringValue("ListProducts.ProductInfo["+ i +"].CommonQuotaSupport");
+				productInfos.WhiteListLabelQuotaSupport = _ctx.StringValue("ListProducts.ProductInfo["+ i +"].WhiteListLabelQuotaSupport");
 
 				listProductsResponse_productInfo.Add(productInfos);
 			}

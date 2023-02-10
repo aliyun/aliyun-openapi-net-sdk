@@ -63,6 +63,7 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 				savingsPlansDetailResponse.TotalSave = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].TotalSave");
 				savingsPlansDetailResponse.PoolValue = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].PoolValue");
 				savingsPlansDetailResponse.PayMode = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].PayMode");
+				savingsPlansDetailResponse.DeductCycleType = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].DeductCycleType");
 
 				List<QuerySavingsPlansInstanceResponse.QuerySavingsPlansInstance_Data.QuerySavingsPlansInstance_SavingsPlansDetailResponse.QuerySavingsPlansInstance_Tag> savingsPlansDetailResponse_tags = new List<QuerySavingsPlansInstanceResponse.QuerySavingsPlansInstance_Data.QuerySavingsPlansInstance_SavingsPlansDetailResponse.QuerySavingsPlansInstance_Tag>();
 				for (int j = 0; j < _ctx.Length("QuerySavingsPlansInstance.Data.Items["+ i +"].Tags.Length"); j++) {

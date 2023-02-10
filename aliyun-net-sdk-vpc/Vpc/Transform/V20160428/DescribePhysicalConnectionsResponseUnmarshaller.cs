@@ -73,6 +73,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				physicalConnectionType.OrderMode = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].OrderMode");
 				physicalConnectionType.VpconnStatus = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].VpconnStatus");
 				physicalConnectionType.ExpectSpec = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].ExpectSpec");
+				physicalConnectionType.ResourceGroupId = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].ResourceGroupId");
 
 				describePhysicalConnectionsResponse_physicalConnectionSet.Add(physicalConnectionType);
 			}

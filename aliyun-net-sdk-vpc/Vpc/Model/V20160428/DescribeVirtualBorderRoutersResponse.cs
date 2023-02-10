@@ -162,6 +162,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string physicalConnectionId;
 
+			private int? bandwidth;
+
 			private List<DescribeVirtualBorderRouters_AssociatedPhysicalConnection> associatedPhysicalConnections;
 
 			private List<DescribeVirtualBorderRouters_AssociatedCen> associatedCens;
@@ -547,6 +549,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					physicalConnectionId = value;
+				}
+			}
+
+			public int? Bandwidth
+			{
+				get
+				{
+					return bandwidth;
+				}
+				set	
+				{
+					bandwidth = value;
 				}
 			}
 

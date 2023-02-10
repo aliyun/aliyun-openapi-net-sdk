@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
 {
     public class DeletePolicyResponseUnmarshaller
     {
-        public static DeletePolicyResponse Unmarshall(UnmarshallerContext context)
+        public static DeletePolicyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeletePolicyResponse deletePolicyResponse = new DeletePolicyResponse();
 
-			deletePolicyResponse.HttpResponse = context.HttpResponse;
-			deletePolicyResponse.RequestId = context.StringValue("DeletePolicy.RequestId");
+			deletePolicyResponse.HttpResponse = _ctx.HttpResponse;
+			deletePolicyResponse.RequestId = _ctx.StringValue("DeletePolicy.RequestId");
         
 			return deletePolicyResponse;
         }

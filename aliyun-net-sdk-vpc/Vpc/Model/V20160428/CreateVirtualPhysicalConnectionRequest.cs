@@ -50,6 +50,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string spec;
 
+		private string resourceGroupId;
+
 		private bool? dryRun;
 
 		private string token;
@@ -120,6 +122,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				spec = value;
 				DictionaryUtil.Add(QueryParameters, "Spec", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

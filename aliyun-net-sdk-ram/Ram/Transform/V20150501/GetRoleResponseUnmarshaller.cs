@@ -26,22 +26,22 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
 {
     public class GetRoleResponseUnmarshaller
     {
-        public static GetRoleResponse Unmarshall(UnmarshallerContext context)
+        public static GetRoleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetRoleResponse getRoleResponse = new GetRoleResponse();
 
-			getRoleResponse.HttpResponse = context.HttpResponse;
-			getRoleResponse.RequestId = context.StringValue("GetRole.RequestId");
+			getRoleResponse.HttpResponse = _ctx.HttpResponse;
+			getRoleResponse.RequestId = _ctx.StringValue("GetRole.RequestId");
 
 			GetRoleResponse.GetRole_Role role = new GetRoleResponse.GetRole_Role();
-			role.RoleId = context.StringValue("GetRole.Role.RoleId");
-			role.RoleName = context.StringValue("GetRole.Role.RoleName");
-			role.Arn = context.StringValue("GetRole.Role.Arn");
-			role.Description = context.StringValue("GetRole.Role.Description");
-			role.AssumeRolePolicyDocument = context.StringValue("GetRole.Role.AssumeRolePolicyDocument");
-			role.CreateDate = context.StringValue("GetRole.Role.CreateDate");
-			role.UpdateDate = context.StringValue("GetRole.Role.UpdateDate");
-			role.MaxSessionDuration = context.LongValue("GetRole.Role.MaxSessionDuration");
+			role.AssumeRolePolicyDocument = _ctx.StringValue("GetRole.Role.AssumeRolePolicyDocument");
+			role.UpdateDate = _ctx.StringValue("GetRole.Role.UpdateDate");
+			role.Description = _ctx.StringValue("GetRole.Role.Description");
+			role.MaxSessionDuration = _ctx.LongValue("GetRole.Role.MaxSessionDuration");
+			role.RoleName = _ctx.StringValue("GetRole.Role.RoleName");
+			role.CreateDate = _ctx.StringValue("GetRole.Role.CreateDate");
+			role.RoleId = _ctx.StringValue("GetRole.Role.RoleId");
+			role.Arn = _ctx.StringValue("GetRole.Role.Arn");
 			getRoleResponse.Role = role;
         
 			return getRoleResponse;

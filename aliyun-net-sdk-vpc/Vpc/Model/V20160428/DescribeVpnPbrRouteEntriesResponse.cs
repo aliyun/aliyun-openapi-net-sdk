@@ -112,6 +112,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string routeSource;
 
+			private int? priority;
+
 			public string NextHop
 			{
 				get
@@ -193,6 +195,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					routeSource = value;
+				}
+			}
+
+			public int? Priority
+			{
+				get
+				{
+					return priority;
+				}
+				set	
+				{
+					priority = value;
 				}
 			}
 		}

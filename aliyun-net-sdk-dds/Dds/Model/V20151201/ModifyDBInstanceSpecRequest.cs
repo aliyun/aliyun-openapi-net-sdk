@@ -41,6 +41,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string readonlyReplicas;
 
+		private string extraParam;
+
 		private string couponNo;
 
 		private string replicationFactor;
@@ -101,6 +103,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				readonlyReplicas = value;
 				DictionaryUtil.Add(QueryParameters, "ReadonlyReplicas", value);
+			}
+		}
+
+		public string ExtraParam
+		{
+			get
+			{
+				return extraParam;
+			}
+			set	
+			{
+				extraParam = value;
+				DictionaryUtil.Add(QueryParameters, "ExtraParam", value);
 			}
 		}
 

@@ -53,6 +53,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				fullNatEntry.CreationTime = _ctx.StringValue("ListFullNatEntries.FullNatEntries["+ i +"].CreationTime");
 				fullNatEntry.FullNatEntryId = _ctx.StringValue("ListFullNatEntries.FullNatEntries["+ i +"].FullNatEntryId");
 				fullNatEntry.FullNatEntryStatus = _ctx.StringValue("ListFullNatEntries.FullNatEntries["+ i +"].FullNatEntryStatus");
+				fullNatEntry.FullNatTableId = _ctx.StringValue("ListFullNatEntries.FullNatEntries["+ i +"].FullNatTableId");
 
 				listFullNatEntriesResponse_fullNatEntries.Add(fullNatEntry);
 			}

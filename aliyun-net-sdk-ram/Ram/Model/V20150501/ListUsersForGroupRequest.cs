@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Ram;
 using Aliyun.Acs.Ram.Transform;
 using Aliyun.Acs.Ram.Transform.V20150501;
 
@@ -31,14 +30,15 @@ namespace Aliyun.Acs.Ram.Model.V20150501
     public class ListUsersForGroupRequest : RpcAcsRequest<ListUsersForGroupResponse>
     {
         public ListUsersForGroupRequest()
-            : base("Ram", "2015-05-01", "ListUsersForGroup")
+            : base("Ram", "2015-05-01", "ListUsersForGroup", "Ram", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Ram.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Ram.Endpoint.endpointRegionalType, null);
             }
 			Protocol = ProtocolType.HTTPS;
+			Method = MethodType.POST;
         }
 
 		private string groupName;

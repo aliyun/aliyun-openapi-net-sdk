@@ -75,6 +75,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				eipAddress.HasReservationData = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].HasReservationData");
 				eipAddress.ISP = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].ISP");
 				eipAddress.PublicIpAddressPoolId = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].PublicIpAddressPoolId");
+				eipAddress.VpcId = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].VpcId");
+				eipAddress.Zone = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].Zone");
 
 				List<string> eipAddress_availableRegions = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeEipAddresses.EipAddresses["+ i +"].AvailableRegions.Length"); j++) {

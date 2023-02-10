@@ -17,11 +17,13 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.DBFS;
 using Aliyun.Acs.DBFS.Transform;
 using Aliyun.Acs.DBFS.Transform.V20200418;
 
@@ -30,7 +32,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
     public class AttachDbfsRequest : RpcAcsRequest<AttachDbfsResponse>
     {
         public AttachDbfsRequest()
-            : base("DBFS", "2020-04-18", "AttachDbfs", "dbfs", "openAPI")
+            : base("DBFS", "2020-04-18", "AttachDbfs")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -50,6 +52,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 
 		private string attachMode;
 
+		[JsonProperty(PropertyName = "ECSInstanceId")]
 		public string ECSInstanceId
 		{
 			get
@@ -63,6 +66,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "AttachPoint")]
 		public string AttachPoint
 		{
 			get
@@ -76,6 +80,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "ServerUrl")]
 		public string ServerUrl
 		{
 			get
@@ -89,6 +94,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "FsId")]
 		public string FsId
 		{
 			get
@@ -102,6 +108,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "AttachMode")]
 		public string AttachMode
 		{
 			get

@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.BssOpenApi;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
     public class SetResellerUserAlarmThresholdRequest : RpcAcsRequest<SetResellerUserAlarmThresholdResponse>
     {
         public SetResellerUserAlarmThresholdRequest()
-            : base("BssOpenApi", "2017-12-14", "SetResellerUserAlarmThreshold")
+            : base("BssOpenApi", "2017-12-14", "SetResellerUserAlarmThreshold", "bssopenapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -47,6 +47,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private long? ownerId;
 
+		[JsonProperty(PropertyName = "AlarmType")]
 		public string AlarmType
 		{
 			get
@@ -60,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "AlarmThresholds")]
 		public string AlarmThresholds
 		{
 			get
@@ -73,6 +75,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get

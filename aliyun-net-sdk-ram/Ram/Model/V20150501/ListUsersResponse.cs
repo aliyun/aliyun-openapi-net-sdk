@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
@@ -84,45 +84,21 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 		public class ListUsers_User
 		{
 
-			private string userId;
-
-			private string userName;
-
 			private string displayName;
+
+			private string email;
+
+			private string updateDate;
 
 			private string mobilePhone;
 
-			private string email;
+			private string userId;
 
 			private string comments;
 
 			private string createDate;
 
-			private string updateDate;
-
-			public string UserId
-			{
-				get
-				{
-					return userId;
-				}
-				set	
-				{
-					userId = value;
-				}
-			}
-
-			public string UserName
-			{
-				get
-				{
-					return userName;
-				}
-				set	
-				{
-					userName = value;
-				}
-			}
+			private string userName;
 
 			public string DisplayName
 			{
@@ -133,6 +109,30 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				set	
 				{
 					displayName = value;
+				}
+			}
+
+			public string Email
+			{
+				get
+				{
+					return email;
+				}
+				set	
+				{
+					email = value;
+				}
+			}
+
+			public string UpdateDate
+			{
+				get
+				{
+					return updateDate;
+				}
+				set	
+				{
+					updateDate = value;
 				}
 			}
 
@@ -148,15 +148,15 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				}
 			}
 
-			public string Email
+			public string UserId
 			{
 				get
 				{
-					return email;
+					return userId;
 				}
 				set	
 				{
-					email = value;
+					userId = value;
 				}
 			}
 
@@ -184,15 +184,15 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				}
 			}
 
-			public string UpdateDate
+			public string UserName
 			{
 				get
 				{
-					return updateDate;
+					return userName;
 				}
 				set	
 				{
-					updateDate = value;
+					userName = value;
 				}
 			}
 		}

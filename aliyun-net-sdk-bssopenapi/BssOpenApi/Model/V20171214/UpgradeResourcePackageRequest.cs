@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.BssOpenApi;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
     public class UpgradeResourcePackageRequest : RpcAcsRequest<UpgradeResourcePackageResponse>
     {
         public UpgradeResourcePackageRequest()
-            : base("BssOpenApi", "2017-12-14", "UpgradeResourcePackage")
+            : base("BssOpenApi", "2017-12-14", "UpgradeResourcePackage", "bssopenapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -49,6 +49,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string instanceId;
 
+		[JsonProperty(PropertyName = "Specification")]
 		public string Specification
 		{
 			get
@@ -62,6 +63,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -75,6 +77,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "EffectiveDate")]
 		public string EffectiveDate
 		{
 			get
@@ -88,6 +91,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceId")]
 		public string InstanceId
 		{
 			get

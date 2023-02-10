@@ -49,12 +49,24 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				prefixList.Status = _ctx.StringValue("ListPrefixLists.PrefixLists["+ i +"].Status");
 				prefixList.OwnerId = _ctx.StringValue("ListPrefixLists.PrefixLists["+ i +"].OwnerId");
 				prefixList.PrefixListStatus = _ctx.StringValue("ListPrefixLists.PrefixLists["+ i +"].PrefixListStatus");
+				prefixList.RegionId = _ctx.StringValue("ListPrefixLists.PrefixLists["+ i +"].RegionId");
+				prefixList.ResourceGroupId = _ctx.StringValue("ListPrefixLists.PrefixLists["+ i +"].ResourceGroupId");
 
 				List<string> prefixList_cidrBlocks = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListPrefixLists.PrefixLists["+ i +"].CidrBlocks.Length"); j++) {
 					prefixList_cidrBlocks.Add(_ctx.StringValue("ListPrefixLists.PrefixLists["+ i +"].CidrBlocks["+ j +"]"));
 				}
 				prefixList.CidrBlocks = prefixList_cidrBlocks;
+
+				List<ListPrefixListsResponse.ListPrefixLists_PrefixList.ListPrefixLists_Tag> prefixList_tags = new List<ListPrefixListsResponse.ListPrefixLists_PrefixList.ListPrefixLists_Tag>();
+				for (int j = 0; j < _ctx.Length("ListPrefixLists.PrefixLists["+ i +"].Tags.Length"); j++) {
+					ListPrefixListsResponse.ListPrefixLists_PrefixList.ListPrefixLists_Tag tag = new ListPrefixListsResponse.ListPrefixLists_PrefixList.ListPrefixLists_Tag();
+					tag.Key = _ctx.StringValue("ListPrefixLists.PrefixLists["+ i +"].Tags["+ j +"].Key");
+					tag._Value = _ctx.StringValue("ListPrefixLists.PrefixLists["+ i +"].Tags["+ j +"].Value");
+
+					prefixList_tags.Add(tag);
+				}
+				prefixList.Tags = prefixList_tags;
 
 				listPrefixListsResponse_prefixLists.Add(prefixList);
 			}

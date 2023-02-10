@@ -49,6 +49,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string productKey;
 
+		private string contentType;
+
 		private string topic;
 
 		private string deviceName;
@@ -102,6 +104,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				productKey = value;
 				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+			}
+		}
+
+		public string ContentType
+		{
+			get
+			{
+				return contentType;
+			}
+			set	
+			{
+				contentType = value;
+				DictionaryUtil.Add(QueryParameters, "ContentType", value);
 			}
 		}
 

@@ -37,6 +37,7 @@ namespace Aliyun.Acs.quotas.Model.V20200510
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.quotas.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.quotas.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string productCode;

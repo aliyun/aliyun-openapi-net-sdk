@@ -53,6 +53,7 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 				instance.ResourceGroupId = _ctx.StringValue("ListInstances.Instances["+ i +"].ResourceGroupId");
 				instance.CreatorName = _ctx.StringValue("ListInstances.Instances["+ i +"].CreatorName");
 				instance.MaxConcurrentConversation = _ctx.IntegerValue("ListInstances.Instances["+ i +"].MaxConcurrentConversation");
+				instance.IsPreset = _ctx.BooleanValue("ListInstances.Instances["+ i +"].IsPreset");
 
 				ListInstancesResponse.ListInstances_Instance.ListInstances_NluProfile nluProfile = new ListInstancesResponse.ListInstances_Instance.ListInstances_NluProfile();
 				nluProfile.AccessKey = _ctx.StringValue("ListInstances.Instances["+ i +"].NluProfile.AccessKey");

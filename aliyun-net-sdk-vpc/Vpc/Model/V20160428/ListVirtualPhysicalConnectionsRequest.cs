@@ -44,6 +44,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string virtualPhysicalConnectionBusinessStatus;
 
+		private string resourceGroupId;
+
 		private List<string> virtualPhysicalConnectionAliUidss = new List<string>(){ };
 
 		private string nextToken;
@@ -83,6 +85,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				virtualPhysicalConnectionBusinessStatus = value;
 				DictionaryUtil.Add(QueryParameters, "VirtualPhysicalConnectionBusinessStatus", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

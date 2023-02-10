@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.BssOpenApi;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
     public class RenewResourcePackageRequest : RpcAcsRequest<RenewResourcePackageResponse>
     {
         public RenewResourcePackageRequest()
-            : base("BssOpenApi", "2017-12-14", "RenewResourcePackage")
+            : base("BssOpenApi", "2017-12-14", "RenewResourcePackage", "bssopenapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -51,6 +51,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string pricingCycle;
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -64,6 +65,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "EffectiveDate")]
 		public string EffectiveDate
 		{
 			get
@@ -77,6 +79,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Duration")]
 		public int? Duration
 		{
 			get
@@ -90,6 +93,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceId")]
 		public string InstanceId
 		{
 			get
@@ -103,6 +107,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "PricingCycle")]
 		public string PricingCycle
 		{
 			get

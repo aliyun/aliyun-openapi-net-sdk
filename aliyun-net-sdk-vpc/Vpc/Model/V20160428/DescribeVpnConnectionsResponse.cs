@@ -138,6 +138,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private bool? crossAccountAuthorized;
 
+			private string internetIp;
+
+			private List<DescribeVpnConnections_TagItem> tag;
+
 			private DescribeVpnConnections_IkeConfig ikeConfig;
 
 			private DescribeVpnConnections_IpsecConfig ipsecConfig;
@@ -386,6 +390,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string InternetIp
+			{
+				get
+				{
+					return internetIp;
+				}
+				set	
+				{
+					internetIp = value;
+				}
+			}
+
+			public List<DescribeVpnConnections_TagItem> Tag
+			{
+				get
+				{
+					return tag;
+				}
+				set	
+				{
+					tag = value;
+				}
+			}
+
 			public DescribeVpnConnections_IkeConfig IkeConfig
 			{
 				get
@@ -431,6 +459,38 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					vpnBgpConfig = value;
+				}
+			}
+
+			public class DescribeVpnConnections_TagItem
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 

@@ -26,48 +26,48 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
 {
     public class ListEntitiesForPolicyResponseUnmarshaller
     {
-        public static ListEntitiesForPolicyResponse Unmarshall(UnmarshallerContext context)
+        public static ListEntitiesForPolicyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListEntitiesForPolicyResponse listEntitiesForPolicyResponse = new ListEntitiesForPolicyResponse();
 
-			listEntitiesForPolicyResponse.HttpResponse = context.HttpResponse;
-			listEntitiesForPolicyResponse.RequestId = context.StringValue("ListEntitiesForPolicy.RequestId");
+			listEntitiesForPolicyResponse.HttpResponse = _ctx.HttpResponse;
+			listEntitiesForPolicyResponse.RequestId = _ctx.StringValue("ListEntitiesForPolicy.RequestId");
 
 			List<ListEntitiesForPolicyResponse.ListEntitiesForPolicy_Group> listEntitiesForPolicyResponse_groups = new List<ListEntitiesForPolicyResponse.ListEntitiesForPolicy_Group>();
-			for (int i = 0; i < context.Length("ListEntitiesForPolicy.Groups.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListEntitiesForPolicy.Groups.Length"); i++) {
 				ListEntitiesForPolicyResponse.ListEntitiesForPolicy_Group group = new ListEntitiesForPolicyResponse.ListEntitiesForPolicy_Group();
-				group.GroupName = context.StringValue("ListEntitiesForPolicy.Groups["+ i +"].GroupName");
-				group.Comments = context.StringValue("ListEntitiesForPolicy.Groups["+ i +"].Comments");
-				group.AttachDate = context.StringValue("ListEntitiesForPolicy.Groups["+ i +"].AttachDate");
+				group.GroupName = _ctx.StringValue("ListEntitiesForPolicy.Groups["+ i +"].GroupName");
+				group.Comments = _ctx.StringValue("ListEntitiesForPolicy.Groups["+ i +"].Comments");
+				group.AttachDate = _ctx.StringValue("ListEntitiesForPolicy.Groups["+ i +"].AttachDate");
 
 				listEntitiesForPolicyResponse_groups.Add(group);
 			}
 			listEntitiesForPolicyResponse.Groups = listEntitiesForPolicyResponse_groups;
 
-			List<ListEntitiesForPolicyResponse.ListEntitiesForPolicy_User> listEntitiesForPolicyResponse_users = new List<ListEntitiesForPolicyResponse.ListEntitiesForPolicy_User>();
-			for (int i = 0; i < context.Length("ListEntitiesForPolicy.Users.Length"); i++) {
-				ListEntitiesForPolicyResponse.ListEntitiesForPolicy_User user = new ListEntitiesForPolicyResponse.ListEntitiesForPolicy_User();
-				user.UserId = context.StringValue("ListEntitiesForPolicy.Users["+ i +"].UserId");
-				user.UserName = context.StringValue("ListEntitiesForPolicy.Users["+ i +"].UserName");
-				user.DisplayName = context.StringValue("ListEntitiesForPolicy.Users["+ i +"].DisplayName");
-				user.AttachDate = context.StringValue("ListEntitiesForPolicy.Users["+ i +"].AttachDate");
-
-				listEntitiesForPolicyResponse_users.Add(user);
-			}
-			listEntitiesForPolicyResponse.Users = listEntitiesForPolicyResponse_users;
-
 			List<ListEntitiesForPolicyResponse.ListEntitiesForPolicy_Role> listEntitiesForPolicyResponse_roles = new List<ListEntitiesForPolicyResponse.ListEntitiesForPolicy_Role>();
-			for (int i = 0; i < context.Length("ListEntitiesForPolicy.Roles.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListEntitiesForPolicy.Roles.Length"); i++) {
 				ListEntitiesForPolicyResponse.ListEntitiesForPolicy_Role role = new ListEntitiesForPolicyResponse.ListEntitiesForPolicy_Role();
-				role.RoleId = context.StringValue("ListEntitiesForPolicy.Roles["+ i +"].RoleId");
-				role.RoleName = context.StringValue("ListEntitiesForPolicy.Roles["+ i +"].RoleName");
-				role.Arn = context.StringValue("ListEntitiesForPolicy.Roles["+ i +"].Arn");
-				role.Description = context.StringValue("ListEntitiesForPolicy.Roles["+ i +"].Description");
-				role.AttachDate = context.StringValue("ListEntitiesForPolicy.Roles["+ i +"].AttachDate");
+				role.Description = _ctx.StringValue("ListEntitiesForPolicy.Roles["+ i +"].Description");
+				role.RoleName = _ctx.StringValue("ListEntitiesForPolicy.Roles["+ i +"].RoleName");
+				role.AttachDate = _ctx.StringValue("ListEntitiesForPolicy.Roles["+ i +"].AttachDate");
+				role.Arn = _ctx.StringValue("ListEntitiesForPolicy.Roles["+ i +"].Arn");
+				role.RoleId = _ctx.StringValue("ListEntitiesForPolicy.Roles["+ i +"].RoleId");
 
 				listEntitiesForPolicyResponse_roles.Add(role);
 			}
 			listEntitiesForPolicyResponse.Roles = listEntitiesForPolicyResponse_roles;
+
+			List<ListEntitiesForPolicyResponse.ListEntitiesForPolicy_User> listEntitiesForPolicyResponse_users = new List<ListEntitiesForPolicyResponse.ListEntitiesForPolicy_User>();
+			for (int i = 0; i < _ctx.Length("ListEntitiesForPolicy.Users.Length"); i++) {
+				ListEntitiesForPolicyResponse.ListEntitiesForPolicy_User user = new ListEntitiesForPolicyResponse.ListEntitiesForPolicy_User();
+				user.DisplayName = _ctx.StringValue("ListEntitiesForPolicy.Users["+ i +"].DisplayName");
+				user.UserId = _ctx.StringValue("ListEntitiesForPolicy.Users["+ i +"].UserId");
+				user.UserName = _ctx.StringValue("ListEntitiesForPolicy.Users["+ i +"].UserName");
+				user.AttachDate = _ctx.StringValue("ListEntitiesForPolicy.Users["+ i +"].AttachDate");
+
+				listEntitiesForPolicyResponse_users.Add(user);
+			}
+			listEntitiesForPolicyResponse.Users = listEntitiesForPolicyResponse_users;
         
 			return listEntitiesForPolicyResponse;
         }

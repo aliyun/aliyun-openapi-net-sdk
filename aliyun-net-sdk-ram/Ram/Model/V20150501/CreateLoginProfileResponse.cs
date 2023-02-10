@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
@@ -56,25 +56,13 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 		public class CreateLoginProfile_LoginProfile
 		{
 
-			private string userName;
-
 			private bool? passwordResetRequired;
-
-			private bool? mFABindRequired;
 
 			private string createDate;
 
-			public string UserName
-			{
-				get
-				{
-					return userName;
-				}
-				set	
-				{
-					userName = value;
-				}
-			}
+			private string userName;
+
+			private bool? mFABindRequired;
 
 			public bool? PasswordResetRequired
 			{
@@ -88,18 +76,6 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				}
 			}
 
-			public bool? MFABindRequired
-			{
-				get
-				{
-					return mFABindRequired;
-				}
-				set	
-				{
-					mFABindRequired = value;
-				}
-			}
-
 			public string CreateDate
 			{
 				get
@@ -109,6 +85,30 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				set	
 				{
 					createDate = value;
+				}
+			}
+
+			public string UserName
+			{
+				get
+				{
+					return userName;
+				}
+				set	
+				{
+					userName = value;
+				}
+			}
+
+			public bool? MFABindRequired
+			{
+				get
+				{
+					return mFABindRequired;
+				}
+				set	
+				{
+					mFABindRequired = value;
 				}
 			}
 		}

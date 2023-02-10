@@ -41,6 +41,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string engineVersion;
 
+		private string storage;
+
 		private string shardsInfo;
 
 		private string replicationFactor;
@@ -97,6 +99,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				engineVersion = value;
 				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
+			}
+		}
+
+		public string Storage
+		{
+			get
+			{
+				return storage;
+			}
+			set	
+			{
+				storage = value;
+				DictionaryUtil.Add(QueryParameters, "Storage", value);
 			}
 		}
 

@@ -48,6 +48,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			querySubscribeRelationResponse.DeviceTagFlag = _ctx.BooleanValue("QuerySubscribeRelation.DeviceTagFlag");
 			querySubscribeRelationResponse.OtaVersionFlag = _ctx.BooleanValue("QuerySubscribeRelation.OtaVersionFlag");
 			querySubscribeRelationResponse.OtaJobFlag = _ctx.BooleanValue("QuerySubscribeRelation.OtaJobFlag");
+			querySubscribeRelationResponse.SubscribeFlags = _ctx.StringValue("QuerySubscribeRelation.SubscribeFlags");
 
 			List<string> querySubscribeRelationResponse_consumerGroupIds = new List<string>();
 			for (int i = 0; i < _ctx.Length("QuerySubscribeRelation.ConsumerGroupIds.Length"); i++) {

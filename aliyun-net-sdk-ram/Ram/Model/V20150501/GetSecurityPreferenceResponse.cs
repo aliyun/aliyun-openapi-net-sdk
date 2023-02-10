@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
@@ -56,25 +56,13 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 		public class GetSecurityPreference_SecurityPreference
 		{
 
-			private GetSecurityPreference_LoginProfilePreference loginProfilePreference;
-
 			private GetSecurityPreference_AccessKeyPreference accessKeyPreference;
-
-			private GetSecurityPreference_PublicKeyPreference publicKeyPreference;
 
 			private GetSecurityPreference_MFAPreference mFAPreference;
 
-			public GetSecurityPreference_LoginProfilePreference LoginProfilePreference
-			{
-				get
-				{
-					return loginProfilePreference;
-				}
-				set	
-				{
-					loginProfilePreference = value;
-				}
-			}
+			private GetSecurityPreference_LoginProfilePreference loginProfilePreference;
+
+			private GetSecurityPreference_PublicKeyPreference publicKeyPreference;
 
 			public GetSecurityPreference_AccessKeyPreference AccessKeyPreference
 			{
@@ -85,18 +73,6 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				set	
 				{
 					accessKeyPreference = value;
-				}
-			}
-
-			public GetSecurityPreference_PublicKeyPreference PublicKeyPreference
-			{
-				get
-				{
-					return publicKeyPreference;
-				}
-				set	
-				{
-					publicKeyPreference = value;
 				}
 			}
 
@@ -112,16 +88,76 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				}
 			}
 
+			public GetSecurityPreference_LoginProfilePreference LoginProfilePreference
+			{
+				get
+				{
+					return loginProfilePreference;
+				}
+				set	
+				{
+					loginProfilePreference = value;
+				}
+			}
+
+			public GetSecurityPreference_PublicKeyPreference PublicKeyPreference
+			{
+				get
+				{
+					return publicKeyPreference;
+				}
+				set	
+				{
+					publicKeyPreference = value;
+				}
+			}
+
+			public class GetSecurityPreference_AccessKeyPreference
+			{
+
+				private bool? allowUserToManageAccessKeys;
+
+				public bool? AllowUserToManageAccessKeys
+				{
+					get
+					{
+						return allowUserToManageAccessKeys;
+					}
+					set	
+					{
+						allowUserToManageAccessKeys = value;
+					}
+				}
+			}
+
+			public class GetSecurityPreference_MFAPreference
+			{
+
+				private bool? allowUserToManageMFADevices;
+
+				public bool? AllowUserToManageMFADevices
+				{
+					get
+					{
+						return allowUserToManageMFADevices;
+					}
+					set	
+					{
+						allowUserToManageMFADevices = value;
+					}
+				}
+			}
+
 			public class GetSecurityPreference_LoginProfilePreference
 			{
 
 				private bool? enableSaveMFATicket;
 
-				private bool? allowUserToChangePassword;
-
 				private int? loginSessionDuration;
 
 				private string loginNetworkMasks;
+
+				private bool? allowUserToChangePassword;
 
 				public bool? EnableSaveMFATicket
 				{
@@ -132,18 +168,6 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 					set	
 					{
 						enableSaveMFATicket = value;
-					}
-				}
-
-				public bool? AllowUserToChangePassword
-				{
-					get
-					{
-						return allowUserToChangePassword;
-					}
-					set	
-					{
-						allowUserToChangePassword = value;
 					}
 				}
 
@@ -170,22 +194,16 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 						loginNetworkMasks = value;
 					}
 				}
-			}
 
-			public class GetSecurityPreference_AccessKeyPreference
-			{
-
-				private bool? allowUserToManageAccessKeys;
-
-				public bool? AllowUserToManageAccessKeys
+				public bool? AllowUserToChangePassword
 				{
 					get
 					{
-						return allowUserToManageAccessKeys;
+						return allowUserToChangePassword;
 					}
 					set	
 					{
-						allowUserToManageAccessKeys = value;
+						allowUserToChangePassword = value;
 					}
 				}
 			}
@@ -204,24 +222,6 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 					set	
 					{
 						allowUserToManagePublicKeys = value;
-					}
-				}
-			}
-
-			public class GetSecurityPreference_MFAPreference
-			{
-
-				private bool? allowUserToManageMFADevices;
-
-				public bool? AllowUserToManageMFADevices
-				{
-					get
-					{
-						return allowUserToManageMFADevices;
-					}
-					set	
-					{
-						allowUserToManageMFADevices = value;
 					}
 				}
 			}

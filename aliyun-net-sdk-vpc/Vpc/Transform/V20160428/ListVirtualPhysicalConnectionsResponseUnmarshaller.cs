@@ -68,6 +68,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				virtualPhysicalConnection.AliUid = _ctx.StringValue("ListVirtualPhysicalConnections.VirtualPhysicalConnections["+ i +"].AliUid");
 				virtualPhysicalConnection.VlanId = _ctx.StringValue("ListVirtualPhysicalConnections.VirtualPhysicalConnections["+ i +"].VlanId");
 				virtualPhysicalConnection.ExpectSpec = _ctx.StringValue("ListVirtualPhysicalConnections.VirtualPhysicalConnections["+ i +"].ExpectSpec");
+				virtualPhysicalConnection.ResourceGroupId = _ctx.StringValue("ListVirtualPhysicalConnections.VirtualPhysicalConnections["+ i +"].ResourceGroupId");
 
 				listVirtualPhysicalConnectionsResponse_virtualPhysicalConnections.Add(virtualPhysicalConnection);
 			}

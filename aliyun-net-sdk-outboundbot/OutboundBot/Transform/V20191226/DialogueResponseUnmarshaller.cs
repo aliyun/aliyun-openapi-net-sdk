@@ -42,6 +42,7 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			feedback.ActionParams = _ctx.StringValue("Dialogue.Feedback.ActionParams");
 			feedback.Content = _ctx.StringValue("Dialogue.Feedback.Content");
 			feedback.Interruptible = _ctx.BooleanValue("Dialogue.Feedback.Interruptible");
+			feedback.ContentParams = _ctx.StringValue("Dialogue.Feedback.ContentParams");
 			dialogueResponse.Feedback = feedback;
         
 			return dialogueResponse;

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
@@ -56,69 +56,21 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 		public class UpdateRole_Role
 		{
 
-			private string roleId;
-
-			private string roleName;
-
-			private string arn;
-
-			private string description;
-
 			private string assumeRolePolicyDocument;
-
-			private string createDate;
 
 			private string updateDate;
 
+			private string description;
+
 			private long? maxSessionDuration;
 
-			public string RoleId
-			{
-				get
-				{
-					return roleId;
-				}
-				set	
-				{
-					roleId = value;
-				}
-			}
+			private string roleName;
 
-			public string RoleName
-			{
-				get
-				{
-					return roleName;
-				}
-				set	
-				{
-					roleName = value;
-				}
-			}
+			private string createDate;
 
-			public string Arn
-			{
-				get
-				{
-					return arn;
-				}
-				set	
-				{
-					arn = value;
-				}
-			}
+			private string roleId;
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
+			private string arn;
 
 			public string AssumeRolePolicyDocument
 			{
@@ -129,18 +81,6 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				set	
 				{
 					assumeRolePolicyDocument = value;
-				}
-			}
-
-			public string CreateDate
-			{
-				get
-				{
-					return createDate;
-				}
-				set	
-				{
-					createDate = value;
 				}
 			}
 
@@ -156,6 +96,18 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				}
 			}
 
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
 			public long? MaxSessionDuration
 			{
 				get
@@ -165,6 +117,54 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				set	
 				{
 					maxSessionDuration = value;
+				}
+			}
+
+			public string RoleName
+			{
+				get
+				{
+					return roleName;
+				}
+				set	
+				{
+					roleName = value;
+				}
+			}
+
+			public string CreateDate
+			{
+				get
+				{
+					return createDate;
+				}
+				set	
+				{
+					createDate = value;
+				}
+			}
+
+			public string RoleId
+			{
+				get
+				{
+					return roleId;
+				}
+				set	
+				{
+					roleId = value;
+				}
+			}
+
+			public string Arn
+			{
+				get
+				{
+					return arn;
+				}
+				set	
+				{
+					arn = value;
 				}
 			}
 		}

@@ -58,6 +58,7 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			script.ScriptName = _ctx.StringValue("DescribeScript.Script.ScriptName");
 			script.NewBargeInEnable = _ctx.BooleanValue("DescribeScript.Script.NewBargeInEnable");
 			script.LongWaitEnable = _ctx.BooleanValue("DescribeScript.Script.LongWaitEnable");
+			script.EmotionEnable = _ctx.BooleanValue("DescribeScript.Script.EmotionEnable");
 			describeScriptResponse.Script = script;
         
 			return describeScriptResponse;

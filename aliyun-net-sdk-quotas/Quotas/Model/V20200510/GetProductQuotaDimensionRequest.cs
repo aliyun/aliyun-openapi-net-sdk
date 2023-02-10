@@ -42,7 +42,7 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 
 		private string productCode;
 
-		private List<DependentDimensions> dependentDimensionss = new List<DependentDimensions>(){ };
+		private List<string> dependentDimensionss = new List<string>(){ };
 
 		private string dimensionKey;
 
@@ -59,7 +59,7 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			}
 		}
 
-		public List<DependentDimensions> DependentDimensionss
+		public List<string> DependentDimensionss
 		{
 			get
 			{
@@ -69,10 +69,13 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			set
 			{
 				dependentDimensionss = value;
-				for (int i = 0; i < dependentDimensionss.Count; i++)
+				if(dependentDimensionss != null)
 				{
-					DictionaryUtil.Add(BodyParameters,"DependentDimensions." + (i + 1) + ".Key", dependentDimensionss[i].Key);
-					DictionaryUtil.Add(BodyParameters,"DependentDimensions." + (i + 1) + ".Value", dependentDimensionss[i].Value);
+					for (int depth1 = 0; depth1 < dependentDimensionss.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"DependentDimensions." + (depth1 + 1), dependentDimensionss[depth1]);
+						DictionaryUtil.Add(BodyParameters,"DependentDimensions." + (depth1 + 1), dependentDimensionss[depth1]);
+					}
 				}
 			}
 		}
@@ -109,7 +112,7 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
-			public string Value
+			public string Value_
 			{
 				get
 				{

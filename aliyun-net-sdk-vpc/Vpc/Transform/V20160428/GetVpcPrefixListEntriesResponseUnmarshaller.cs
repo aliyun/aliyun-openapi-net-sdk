@@ -42,6 +42,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				prefixListCidrs.PrefixListId = _ctx.StringValue("GetVpcPrefixListEntries.PrefixListEntry["+ i +"].PrefixListId");
 				prefixListCidrs.Cidr = _ctx.StringValue("GetVpcPrefixListEntries.PrefixListEntry["+ i +"].Cidr");
 				prefixListCidrs.Description = _ctx.StringValue("GetVpcPrefixListEntries.PrefixListEntry["+ i +"].Description");
+				prefixListCidrs.RegionId = _ctx.StringValue("GetVpcPrefixListEntries.PrefixListEntry["+ i +"].RegionId");
 
 				getVpcPrefixListEntriesResponse_prefixListEntry.Add(prefixListCidrs);
 			}

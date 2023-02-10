@@ -40,6 +40,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
+		private string monitorConfig;
+
 		private string monitorName;
 
 		private string stream;
@@ -53,6 +55,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private long? ownerId;
 
 		private string domain;
+
+		public string MonitorConfig
+		{
+			get
+			{
+				return monitorConfig;
+			}
+			set	
+			{
+				monitorConfig = value;
+				DictionaryUtil.Add(QueryParameters, "MonitorConfig", value);
+			}
+		}
 
 		public string MonitorName
 		{

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
 {
     public class RemoveUserFromGroupResponseUnmarshaller
     {
-        public static RemoveUserFromGroupResponse Unmarshall(UnmarshallerContext context)
+        public static RemoveUserFromGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RemoveUserFromGroupResponse removeUserFromGroupResponse = new RemoveUserFromGroupResponse();
 
-			removeUserFromGroupResponse.HttpResponse = context.HttpResponse;
-			removeUserFromGroupResponse.RequestId = context.StringValue("RemoveUserFromGroup.RequestId");
+			removeUserFromGroupResponse.HttpResponse = _ctx.HttpResponse;
+			removeUserFromGroupResponse.RequestId = _ctx.StringValue("RemoveUserFromGroup.RequestId");
         
 			return removeUserFromGroupResponse;
         }

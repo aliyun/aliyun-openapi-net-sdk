@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.quotas.Model.V20200510
@@ -27,9 +27,9 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 
 		private int? totalCount;
 
-		private string requestId;
-
 		private string nextToken;
+
+		private string requestId;
 
 		private int? maxResults;
 
@@ -47,18 +47,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			}
 		}
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
 		public string NextToken
 		{
 			get
@@ -68,6 +56,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			set	
 			{
 				nextToken = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -98,17 +98,29 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 		public class ListProductQuotaDimensions_QuotaDimensionsItem
 		{
 
+			private bool? requisite;
+
 			private string dimensionKey;
 
 			private string name;
 
-			private bool? requisite;
-
 			private List<ListProductQuotaDimensions_DimensionValueDetailItem> dimensionValueDetail;
+
+			private List<string> dependentDimensions;
 
 			private List<string> dimensionValues;
 
-			private List<string> dependentDimensions;
+			public bool? Requisite
+			{
+				get
+				{
+					return requisite;
+				}
+				set	
+				{
+					requisite = value;
+				}
+			}
 
 			public string DimensionKey
 			{
@@ -134,18 +146,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
-			public bool? Requisite
-			{
-				get
-				{
-					return requisite;
-				}
-				set	
-				{
-					requisite = value;
-				}
-			}
-
 			public List<ListProductQuotaDimensions_DimensionValueDetailItem> DimensionValueDetail
 			{
 				get
@@ -155,18 +155,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					dimensionValueDetail = value;
-				}
-			}
-
-			public List<string> DimensionValues
-			{
-				get
-				{
-					return dimensionValues;
-				}
-				set	
-				{
-					dimensionValues = value;
 				}
 			}
 
@@ -182,24 +170,24 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
+			public List<string> DimensionValues
+			{
+				get
+				{
+					return dimensionValues;
+				}
+				set	
+				{
+					dimensionValues = value;
+				}
+			}
+
 			public class ListProductQuotaDimensions_DimensionValueDetailItem
 			{
 
-				private string _value;
-
 				private string name;
 
-				public string _Value
-				{
-					get
-					{
-						return _value;
-					}
-					set	
-					{
-						_value = value;
-					}
-				}
+				private string _value;
 
 				public string Name
 				{
@@ -210,6 +198,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 					set	
 					{
 						name = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
 					}
 				}
 			}

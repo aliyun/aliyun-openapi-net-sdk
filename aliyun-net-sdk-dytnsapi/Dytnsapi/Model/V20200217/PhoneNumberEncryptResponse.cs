@@ -27,9 +27,9 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 
 		private string requestId;
 
-		private string code;
-
 		private string message;
+
+		private string code;
 
 		private List<PhoneNumberEncrypt_DataItem> data;
 
@@ -45,18 +45,6 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 			}
 		}
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
 		public string Message
 		{
 			get
@@ -66,6 +54,18 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 

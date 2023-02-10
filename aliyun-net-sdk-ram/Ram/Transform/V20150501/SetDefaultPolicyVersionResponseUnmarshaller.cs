@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
 {
     public class SetDefaultPolicyVersionResponseUnmarshaller
     {
-        public static SetDefaultPolicyVersionResponse Unmarshall(UnmarshallerContext context)
+        public static SetDefaultPolicyVersionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetDefaultPolicyVersionResponse setDefaultPolicyVersionResponse = new SetDefaultPolicyVersionResponse();
 
-			setDefaultPolicyVersionResponse.HttpResponse = context.HttpResponse;
-			setDefaultPolicyVersionResponse.RequestId = context.StringValue("SetDefaultPolicyVersion.RequestId");
+			setDefaultPolicyVersionResponse.HttpResponse = _ctx.HttpResponse;
+			setDefaultPolicyVersionResponse.RequestId = _ctx.StringValue("SetDefaultPolicyVersion.RequestId");
         
 			return setDefaultPolicyVersionResponse;
         }

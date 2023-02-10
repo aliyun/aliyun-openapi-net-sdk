@@ -50,6 +50,9 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				publicIpAddressPool.UsedIpNum = _ctx.IntegerValue("ListPublicIpAddressPools.PublicIpAddressPoolList["+ i +"].UsedIpNum");
 				publicIpAddressPool.IpAddressRemaining = _ctx.BooleanValue("ListPublicIpAddressPools.PublicIpAddressPoolList["+ i +"].IpAddressRemaining");
 				publicIpAddressPool.UserType = _ctx.BooleanValue("ListPublicIpAddressPools.PublicIpAddressPoolList["+ i +"].UserType");
+				publicIpAddressPool.OwnerId = _ctx.LongValue("ListPublicIpAddressPools.PublicIpAddressPoolList["+ i +"].OwnerId");
+				publicIpAddressPool.ShareType = _ctx.StringValue("ListPublicIpAddressPools.PublicIpAddressPoolList["+ i +"].ShareType");
+				publicIpAddressPool.ResourceGroupId = _ctx.StringValue("ListPublicIpAddressPools.PublicIpAddressPoolList["+ i +"].ResourceGroupId");
 
 				List<ListPublicIpAddressPoolsResponse.ListPublicIpAddressPools_PublicIpAddressPool.ListPublicIpAddressPools_PublicIpCidrBlock> publicIpAddressPool_publicIpCidrBlockList = new List<ListPublicIpAddressPoolsResponse.ListPublicIpAddressPools_PublicIpAddressPool.ListPublicIpAddressPools_PublicIpCidrBlock>();
 				for (int j = 0; j < _ctx.Length("ListPublicIpAddressPools.PublicIpAddressPoolList["+ i +"].PublicIpCidrBlockList.Length"); j++) {
@@ -63,6 +66,16 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 					publicIpAddressPool_publicIpCidrBlockList.Add(publicIpCidrBlock);
 				}
 				publicIpAddressPool.PublicIpCidrBlockList = publicIpAddressPool_publicIpCidrBlockList;
+
+				List<ListPublicIpAddressPoolsResponse.ListPublicIpAddressPools_PublicIpAddressPool.ListPublicIpAddressPools_Tag> publicIpAddressPool_tags = new List<ListPublicIpAddressPoolsResponse.ListPublicIpAddressPools_PublicIpAddressPool.ListPublicIpAddressPools_Tag>();
+				for (int j = 0; j < _ctx.Length("ListPublicIpAddressPools.PublicIpAddressPoolList["+ i +"].Tags.Length"); j++) {
+					ListPublicIpAddressPoolsResponse.ListPublicIpAddressPools_PublicIpAddressPool.ListPublicIpAddressPools_Tag tag = new ListPublicIpAddressPoolsResponse.ListPublicIpAddressPools_PublicIpAddressPool.ListPublicIpAddressPools_Tag();
+					tag.Key = _ctx.StringValue("ListPublicIpAddressPools.PublicIpAddressPoolList["+ i +"].Tags["+ j +"].Key");
+					tag._Value = _ctx.StringValue("ListPublicIpAddressPools.PublicIpAddressPoolList["+ i +"].Tags["+ j +"].Value");
+
+					publicIpAddressPool_tags.Add(tag);
+				}
+				publicIpAddressPool.Tags = publicIpAddressPool_tags;
 
 				listPublicIpAddressPoolsResponse_publicIpAddressPoolList.Add(publicIpAddressPool);
 			}

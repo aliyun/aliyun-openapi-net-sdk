@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.BssOpenApi;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
     public class QueryInstanceByTagRequest : RpcAcsRequest<QueryInstanceByTagResponse>
     {
         public QueryInstanceByTagRequest()
-            : base("BssOpenApi", "2017-12-14", "QueryInstanceByTag")
+            : base("BssOpenApi", "2017-12-14", "QueryInstanceByTag", "bssopenapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,9 +42,9 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private List<string> resourceIds = new List<string>(){ };
 
-		private List<string> tags = new List<string>(){ };
-
 		private string resourceType;
+
+		private List<string> tags = new List<string>(){ };
 
 		public List<string> ResourceIds
 		{
@@ -57,6 +56,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set
 			{
 				resourceIds = value;
+			}
+		}
+
+		public string ResourceType
+		{
+			get
+			{
+				return resourceType;
+			}
+			set	
+			{
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
@@ -78,19 +90,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
 					}
 				}
-			}
-		}
-
-		public string ResourceType
-		{
-			get
-			{
-				return resourceType;
-			}
-			set	
-			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 

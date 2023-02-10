@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Dytnsapi.Transform.V20200217
 
 			DescribePhoneNumberOnlineTimeResponse.DescribePhoneNumberOnlineTime_Data data = new DescribePhoneNumberOnlineTimeResponse.DescribePhoneNumberOnlineTime_Data();
 			data.VerifyResult = _ctx.StringValue("DescribePhoneNumberOnlineTime.Data.VerifyResult");
+			data.CarrierCode = _ctx.StringValue("DescribePhoneNumberOnlineTime.Data.CarrierCode");
 			describePhoneNumberOnlineTimeResponse.Data = data;
         
 			return describePhoneNumberOnlineTimeResponse;

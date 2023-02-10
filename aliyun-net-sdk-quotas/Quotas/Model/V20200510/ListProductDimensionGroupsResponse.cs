@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.quotas.Model.V20200510
@@ -27,9 +27,9 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 
 		private int? totalCount;
 
-		private string requestId;
-
 		private string nextToken;
+
+		private string requestId;
 
 		private int? maxResults;
 
@@ -47,18 +47,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			}
 		}
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
 		public string NextToken
 		{
 			get
@@ -68,6 +56,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			set	
 			{
 				nextToken = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -98,25 +98,13 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 		public class ListProductDimensionGroups_DimensionGroupsItem
 		{
 
-			private string groupName;
-
 			private string productCode;
 
 			private string groupCode;
 
-			private List<string> dimensionKeys;
+			private string groupName;
 
-			public string GroupName
-			{
-				get
-				{
-					return groupName;
-				}
-				set	
-				{
-					groupName = value;
-				}
-			}
+			private List<string> dimensionKeys;
 
 			public string ProductCode
 			{
@@ -139,6 +127,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					groupCode = value;
+				}
+			}
+
+			public string GroupName
+			{
+				get
+				{
+					return groupName;
+				}
+				set	
+				{
+					groupName = value;
 				}
 			}
 

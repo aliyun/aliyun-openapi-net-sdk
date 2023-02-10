@@ -58,11 +58,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string ownerAccount;
 
+		private int? routeQuota;
+
 		private long? ownerId;
 
 		private string routerId;
 
 		private string name;
+
+		private long? localAsn;
 
 		public string AuthKey
 		{
@@ -181,6 +185,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public int? RouteQuota
+		{
+			get
+			{
+				return routeQuota;
+			}
+			set	
+			{
+				routeQuota = value;
+				DictionaryUtil.Add(QueryParameters, "RouteQuota", value.ToString());
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -217,6 +234,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public long? LocalAsn
+		{
+			get
+			{
+				return localAsn;
+			}
+			set	
+			{
+				localAsn = value;
+				DictionaryUtil.Add(QueryParameters, "LocalAsn", value.ToString());
 			}
 		}
 

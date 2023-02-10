@@ -56,6 +56,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string healthCheckConfig;
 
+		private string customerGatewayId;
+
 		private string localSubnet;
 
 		private string remoteCaCert;
@@ -177,6 +179,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				healthCheckConfig = value;
 				DictionaryUtil.Add(QueryParameters, "HealthCheckConfig", value);
+			}
+		}
+
+		public string CustomerGatewayId
+		{
+			get
+			{
+				return customerGatewayId;
+			}
+			set	
+			{
+				customerGatewayId = value;
+				DictionaryUtil.Add(QueryParameters, "CustomerGatewayId", value);
 			}
 		}
 

@@ -86,6 +86,8 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 
 			private string verifyResult;
 
+			private string carrierCode;
+
 			public string VerifyResult
 			{
 				get
@@ -95,6 +97,18 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 				set	
 				{
 					verifyResult = value;
+				}
+			}
+
+			public string CarrierCode
+			{
+				get
+				{
+					return carrierCode;
+				}
+				set	
+				{
+					carrierCode = value;
 				}
 			}
 		}

@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.BssOpenApi;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
     public class TagResourcesRequest : RpcAcsRequest<TagResourcesResponse>
     {
         public TagResourcesRequest()
-            : base("BssOpenApi", "2017-12-14", "TagResources")
+            : base("BssOpenApi", "2017-12-14", "TagResources", "bssopenapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,10 +43,11 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private List<string> resourceIds = new List<string>(){ };
 
-		private List<string> tags = new List<string>(){ };
-
 		private string resourceType;
 
+		private List<string> tags = new List<string>(){ };
+
+		[JsonProperty(PropertyName = "ResourceId")]
 		public List<string> ResourceIds
 		{
 			get
@@ -60,6 +61,21 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceType")]
+		public string ResourceType
+		{
+			get
+			{
+				return resourceType;
+			}
+			set	
+			{
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Tag")]
 		public List<string> Tags
 		{
 			get
@@ -81,19 +97,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string ResourceType
-		{
-			get
-			{
-				return resourceType;
-			}
-			set	
-			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
-			}
-		}
-
 		public class Tag
 		{
 
@@ -101,6 +104,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private string key;
 
+			[JsonProperty(PropertyName = "Value")]
 			public string Value_
 			{
 				get
@@ -113,6 +117,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "Key")]
 			public string Key
 			{
 				get

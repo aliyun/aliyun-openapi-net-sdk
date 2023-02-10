@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.quotas.Model.V20200510
@@ -56,85 +56,69 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 		public class GetProductQuota_Quota
 		{
 
-			private string quotaDescription;
+			private string quotaUnit;
 
-			private bool? consumable;
-
-			private string unadjustableDetail;
-
-			private string productCode;
+			private string quotaActionCode;
 
 			private float? totalUsage;
 
 			private string quotaType;
 
-			private string dimensions;
-
-			private string quotaUnit;
-
-			private bool? adjustable;
-
-			private string quotaActionCode;
-
-			private string quotaName;
+			private string quotaDescription;
 
 			private string quotaArn;
 
+			private string applicableType;
+
+			private string dimensions;
+
+			private bool? adjustable;
+
+			private string quotaName;
+
+			private string unadjustableDetail;
+
+			private bool? consumable;
+
 			private float? totalQuota;
 
-			private string applicableType;
+			private string productCode;
+
+			private string effectiveTime;
+
+			private string expireTime;
+
+			private string quotaCategory;
 
 			private List<GetProductQuota_QuotaItemsItem> quotaItems;
 
 			private List<string> applicableRange;
 
+			private List<string> supportedRange;
+
 			private GetProductQuota_Period period;
 
-			public string QuotaDescription
+			public string QuotaUnit
 			{
 				get
 				{
-					return quotaDescription;
+					return quotaUnit;
 				}
 				set	
 				{
-					quotaDescription = value;
+					quotaUnit = value;
 				}
 			}
 
-			public bool? Consumable
+			public string QuotaActionCode
 			{
 				get
 				{
-					return consumable;
+					return quotaActionCode;
 				}
 				set	
 				{
-					consumable = value;
-				}
-			}
-
-			public string UnadjustableDetail
-			{
-				get
-				{
-					return unadjustableDetail;
-				}
-				set	
-				{
-					unadjustableDetail = value;
-				}
-			}
-
-			public string ProductCode
-			{
-				get
-				{
-					return productCode;
-				}
-				set	
-				{
-					productCode = value;
+					quotaActionCode = value;
 				}
 			}
 
@@ -162,63 +146,15 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
-			public string Dimensions
+			public string QuotaDescription
 			{
 				get
 				{
-					return dimensions;
+					return quotaDescription;
 				}
 				set	
 				{
-					dimensions = value;
-				}
-			}
-
-			public string QuotaUnit
-			{
-				get
-				{
-					return quotaUnit;
-				}
-				set	
-				{
-					quotaUnit = value;
-				}
-			}
-
-			public bool? Adjustable
-			{
-				get
-				{
-					return adjustable;
-				}
-				set	
-				{
-					adjustable = value;
-				}
-			}
-
-			public string QuotaActionCode
-			{
-				get
-				{
-					return quotaActionCode;
-				}
-				set	
-				{
-					quotaActionCode = value;
-				}
-			}
-
-			public string QuotaName
-			{
-				get
-				{
-					return quotaName;
-				}
-				set	
-				{
-					quotaName = value;
+					quotaDescription = value;
 				}
 			}
 
@@ -234,6 +170,78 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
+			public string ApplicableType
+			{
+				get
+				{
+					return applicableType;
+				}
+				set	
+				{
+					applicableType = value;
+				}
+			}
+
+			public string Dimensions
+			{
+				get
+				{
+					return dimensions;
+				}
+				set	
+				{
+					dimensions = value;
+				}
+			}
+
+			public bool? Adjustable
+			{
+				get
+				{
+					return adjustable;
+				}
+				set	
+				{
+					adjustable = value;
+				}
+			}
+
+			public string QuotaName
+			{
+				get
+				{
+					return quotaName;
+				}
+				set	
+				{
+					quotaName = value;
+				}
+			}
+
+			public string UnadjustableDetail
+			{
+				get
+				{
+					return unadjustableDetail;
+				}
+				set	
+				{
+					unadjustableDetail = value;
+				}
+			}
+
+			public bool? Consumable
+			{
+				get
+				{
+					return consumable;
+				}
+				set	
+				{
+					consumable = value;
+				}
+			}
+
 			public float? TotalQuota
 			{
 				get
@@ -246,15 +254,51 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
-			public string ApplicableType
+			public string ProductCode
 			{
 				get
 				{
-					return applicableType;
+					return productCode;
 				}
 				set	
 				{
-					applicableType = value;
+					productCode = value;
+				}
+			}
+
+			public string EffectiveTime
+			{
+				get
+				{
+					return effectiveTime;
+				}
+				set	
+				{
+					effectiveTime = value;
+				}
+			}
+
+			public string ExpireTime
+			{
+				get
+				{
+					return expireTime;
+				}
+				set	
+				{
+					expireTime = value;
+				}
+			}
+
+			public string QuotaCategory
+			{
+				get
+				{
+					return quotaCategory;
+				}
+				set	
+				{
+					quotaCategory = value;
 				}
 			}
 
@@ -282,6 +326,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
+			public List<string> SupportedRange
+			{
+				get
+				{
+					return supportedRange;
+				}
+				set	
+				{
+					supportedRange = value;
+				}
+			}
+
 			public GetProductQuota_Period Period
 			{
 				get
@@ -297,25 +353,13 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			public class GetProductQuota_QuotaItemsItem
 			{
 
-				private string usage;
-
 				private string type;
 
 				private string quota;
 
 				private string quotaUnit;
 
-				public string Usage
-				{
-					get
-					{
-						return usage;
-					}
-					set	
-					{
-						usage = value;
-					}
-				}
+				private string usage;
 
 				public string Type
 				{
@@ -350,6 +394,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 					set	
 					{
 						quotaUnit = value;
+					}
+				}
+
+				public string Usage
+				{
+					get
+					{
+						return usage;
+					}
+					set	
+					{
+						usage = value;
 					}
 				}
 			}

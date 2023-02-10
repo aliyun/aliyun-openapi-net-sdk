@@ -47,6 +47,16 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				customerGateway.Name = _ctx.StringValue("DescribeCustomerGateways.CustomerGateways["+ i +"].Name");
 				customerGateway.AuthKey = _ctx.StringValue("DescribeCustomerGateways.CustomerGateways["+ i +"].AuthKey");
 
+				List<DescribeCustomerGatewaysResponse.DescribeCustomerGateways_CustomerGateway.DescribeCustomerGateways_Tag> customerGateway_tags = new List<DescribeCustomerGatewaysResponse.DescribeCustomerGateways_CustomerGateway.DescribeCustomerGateways_Tag>();
+				for (int j = 0; j < _ctx.Length("DescribeCustomerGateways.CustomerGateways["+ i +"].Tags.Length"); j++) {
+					DescribeCustomerGatewaysResponse.DescribeCustomerGateways_CustomerGateway.DescribeCustomerGateways_Tag tag = new DescribeCustomerGatewaysResponse.DescribeCustomerGateways_CustomerGateway.DescribeCustomerGateways_Tag();
+					tag.Key = _ctx.StringValue("DescribeCustomerGateways.CustomerGateways["+ i +"].Tags["+ j +"].Key");
+					tag._Value = _ctx.StringValue("DescribeCustomerGateways.CustomerGateways["+ i +"].Tags["+ j +"].Value");
+
+					customerGateway_tags.Add(tag);
+				}
+				customerGateway.Tags = customerGateway_tags;
+
 				describeCustomerGatewaysResponse_customerGateways.Add(customerGateway);
 			}
 			describeCustomerGatewaysResponse.CustomerGateways = describeCustomerGatewaysResponse_customerGateways;

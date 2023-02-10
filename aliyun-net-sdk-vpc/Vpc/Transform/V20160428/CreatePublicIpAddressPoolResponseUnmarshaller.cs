@@ -33,6 +33,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			createPublicIpAddressPoolResponse.HttpResponse = _ctx.HttpResponse;
 			createPublicIpAddressPoolResponse.PulbicIpAddressPoolId = _ctx.StringValue("CreatePublicIpAddressPool.PulbicIpAddressPoolId");
 			createPublicIpAddressPoolResponse.RequestId = _ctx.StringValue("CreatePublicIpAddressPool.RequestId");
+			createPublicIpAddressPoolResponse.ResourceGroupId = _ctx.StringValue("CreatePublicIpAddressPool.ResourceGroupId");
         
 			return createPublicIpAddressPoolResponse;
         }

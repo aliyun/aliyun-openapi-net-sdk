@@ -81,6 +81,10 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 			private string userName;
 
+			private string tenantId;
+
+			private string instanceId;
+
 			private List<DescribeTenantUsers_DatabasesItem> databases;
 
 			[JsonProperty(PropertyName = "UserType")]
@@ -132,6 +136,32 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				set	
 				{
 					userName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TenantId")]
+			public string TenantId
+			{
+				get
+				{
+					return tenantId;
+				}
+				set	
+				{
+					tenantId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstanceId")]
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
 				}
 			}
 

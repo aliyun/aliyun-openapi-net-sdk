@@ -201,6 +201,10 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 				private bool? longWaitEnable;
 
+				private bool? emotionEnable;
+
+				private bool? isPreset;
+
 				public string Status
 				{
 					get
@@ -378,6 +382,30 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						longWaitEnable = value;
+					}
+				}
+
+				public bool? EmotionEnable
+				{
+					get
+					{
+						return emotionEnable;
+					}
+					set	
+					{
+						emotionEnable = value;
+					}
+				}
+
+				public bool? IsPreset
+				{
+					get
+					{
+						return isPreset;
+					}
+					set	
+					{
+						isPreset = value;
 					}
 				}
 			}

@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private RefundInstance_Data data;
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public RefundInstance_Data Data
 		{
 			get
@@ -102,6 +107,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private long? orderId;
 
+			[JsonProperty(PropertyName = "HostId")]
 			public string HostId
 			{
 				get
@@ -114,6 +120,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "OrderId")]
 			public long? OrderId
 			{
 				get

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
@@ -84,13 +84,39 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 		public class ListGroups_Group
 		{
 
+			private string groupId;
+
+			private string updateDate;
+
 			private string groupName;
 
 			private string comments;
 
 			private string createDate;
 
-			private string updateDate;
+			public string GroupId
+			{
+				get
+				{
+					return groupId;
+				}
+				set	
+				{
+					groupId = value;
+				}
+			}
+
+			public string UpdateDate
+			{
+				get
+				{
+					return updateDate;
+				}
+				set	
+				{
+					updateDate = value;
+				}
+			}
 
 			public string GroupName
 			{
@@ -125,18 +151,6 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				set	
 				{
 					createDate = value;
-				}
-			}
-
-			public string UpdateDate
-			{
-				get
-				{
-					return updateDate;
-				}
-				set	
-				{
-					updateDate = value;
 				}
 			}
 		}

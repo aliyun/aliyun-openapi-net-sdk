@@ -1,3 +1,109 @@
+2023-02-09 Version: 0.0.11
+- Release GenerateSuperResolutionImage.
+
+2023-02-07 Version: 1.7.11
+- Add other language.
+
+2023-02-06 Version: 1.0.1
+- Public ListServiceUsages  OpenApi.
+
+2023-02-03 Version: 0.0.10
+- Release GenerateImageWithText GenerateImageWithTextAndImage.
+
+2023-02-03 Version: 1.1.0
+- Fix docs error.
+- Fix error code.
+- Set input param must.
+
+2023-02-02 Version: 1.0.1
+- Release TargetVolumeSegment.
+
+2023-02-02 Version: 1.0.5
+- Update SDK.
+
+2023-02-02 Version: 3.7.5
+- Update by SDK platform.
+
+2023-01-31 Version: 0.0.10
+- Supported parameter nepochs and lr for CreateModel Api.
+
+2023-01-31 Version: 3.0.13
+- Supported set high definition monitor log status for eip.
+- Supported batch associate eip to cloud products.
+- Supported VpcDescribeVpcNatGatewayNetworkInterfaceQuota.
+
+2023-01-31 Version: 1.6.2
+- Supported new features for outbound.
+
+2023-01-29 Version: 2.0.6
+- Update autoSnapshotPolicy.
+
+2023-01-17 Version: 2.2.9
+- Update PreloadScdnObjectCaches.
+
+2023-01-13 Version: 7.49.0
+- ClearDeviceDesiredProperty open Api.
+
+2023-01-13 Version: 1.6.1
+- Supported new features for outbound.
+
+2023-01-11 Version: 3.2.3
+- Add OnsMessageDetail for query message body.
+
+2023-01-09 Version: 1.0.0
+- Supported adjust PTS scene speed.
+- Supported open PTS product.
+
+2023-01-09 Version: 1.0.9
+- Delete numberType.
+
+2023-01-06 Version: 1.0.1
+- Quota category supported whiteListLabel.
+
+2023-01-06 Version: 3.2.0
+- Generated 2015-05-01 for `Ram`.
+
+2023-01-05 Version: 3.9.31
+- Live sdk update.
+
+2023-01-05 Version: 2.0.5
+- Fix bug for name of TotalSize.
+- Fix bug for name of totalSize.
+- Support force delete dbfs.
+
+2023-01-04 Version: 1.0.0
+- Public ListServiceInstances and GetServiceInstance OpenApi.
+
+2023-01-03 Version: 7.48.0
+- Pub Support MessageExpiryInterval and Retained.
+- Rrpc Support ContentType.
+- BatchImportVehicleDevice batch create device by jt808 protocol.
+- BatchCheckVehicleDevice batch check device by jt808 protocol.
+- QueryVehicleDevice query jt808 device information.
+
+2023-01-03 Version: 2.0.4
+- Supported snapshot link for DBFS.
+- Supported showing snapshot info.
+- Support for showing snapshot info.
+
+2023-01-03 Version: 1.0.0
+- First publish.
+
+2022-12-29 Version: 3.7.4
+- Update by SDK platform.
+
+2022-12-29 Version: 3.9.30
+- Live sdk update.
+
+2022-12-28 Version: 1.0.0
+- Added ElasticSearch Serverless SDK.
+
+2022-12-28 Version: 3.9.29
+- Live sdk update.
+
+2022-12-21 Version: 0.12.2
+- update.
+
 2022-12-20 Version: 1.0.4
 - Update imageaudit.
 

@@ -58,6 +58,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string spec;
 
+		private bool? fastLinkMode;
+
 		private string oppositeInterfaceId;
 
 		private string instanceChargeType;
@@ -202,6 +204,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				spec = value;
 				DictionaryUtil.Add(QueryParameters, "Spec", value);
+			}
+		}
+
+		public bool? FastLinkMode
+		{
+			get
+			{
+				return fastLinkMode;
+			}
+			set	
+			{
+				fastLinkMode = value;
+				DictionaryUtil.Add(QueryParameters, "FastLinkMode", value.ToString());
 			}
 		}
 

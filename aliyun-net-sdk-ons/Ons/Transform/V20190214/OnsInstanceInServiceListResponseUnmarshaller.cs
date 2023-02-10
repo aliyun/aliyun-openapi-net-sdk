@@ -43,6 +43,7 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 				instanceVO.InstanceStatus = _ctx.IntegerValue("OnsInstanceInServiceList.Data["+ i +"].InstanceStatus");
 				instanceVO.InstanceId = _ctx.StringValue("OnsInstanceInServiceList.Data["+ i +"].InstanceId");
 				instanceVO.InstanceType = _ctx.IntegerValue("OnsInstanceInServiceList.Data["+ i +"].InstanceType");
+				instanceVO.CreateTime = _ctx.LongValue("OnsInstanceInServiceList.Data["+ i +"].CreateTime");
 
 				List<OnsInstanceInServiceListResponse.OnsInstanceInServiceList_InstanceVO.OnsInstanceInServiceList_Tag> instanceVO_tags = new List<OnsInstanceInServiceListResponse.OnsInstanceInServiceList_InstanceVO.OnsInstanceInServiceList_Tag>();
 				for (int j = 0; j < _ctx.Length("OnsInstanceInServiceList.Data["+ i +"].Tags.Length"); j++) {

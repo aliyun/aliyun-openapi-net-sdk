@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string iotInstanceId;
 
+		private long? messageExpiryInterval;
+
 		private string responseTopic;
 
 		private string topicFullName;
@@ -60,6 +62,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private string productKey;
 
 		private string contentType;
+
+		private bool? retained;
 
 		private string deviceName;
 
@@ -133,6 +137,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
+		public long? MessageExpiryInterval
+		{
+			get
+			{
+				return messageExpiryInterval;
+			}
+			set	
+			{
+				messageExpiryInterval = value;
+				DictionaryUtil.Add(QueryParameters, "MessageExpiryInterval", value.ToString());
+			}
+		}
+
 		public string ResponseTopic
 		{
 			get
@@ -195,6 +212,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				contentType = value;
 				DictionaryUtil.Add(QueryParameters, "ContentType", value);
+			}
+		}
+
+		public bool? Retained
+		{
+			get
+			{
+				return retained;
+			}
+			set	
+			{
+				retained = value;
+				DictionaryUtil.Add(QueryParameters, "Retained", value.ToString());
 			}
 		}
 

@@ -59,6 +59,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private bool? otaJobFlag;
 
+		private string subscribeFlags;
+
 		private List<string> consumerGroupIds;
 
 		public string RequestId
@@ -262,6 +264,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				otaJobFlag = value;
+			}
+		}
+
+		public string SubscribeFlags
+		{
+			get
+			{
+				return subscribeFlags;
+			}
+			set	
+			{
+				subscribeFlags = value;
 			}
 		}
 

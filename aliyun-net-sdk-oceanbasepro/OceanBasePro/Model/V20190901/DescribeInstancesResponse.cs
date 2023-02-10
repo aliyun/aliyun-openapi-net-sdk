@@ -119,6 +119,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 			private string instanceType;
 
+			private string instanceRole;
+
 			private List<string> availableZones;
 
 			private List<string> securityIps;
@@ -421,6 +423,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				set	
 				{
 					instanceType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstanceRole")]
+			public string InstanceRole
+			{
+				get
+				{
+					return instanceRole;
+				}
+				set	
+				{
+					instanceRole = value;
 				}
 			}
 

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
 {
     public class AddUserToGroupResponseUnmarshaller
     {
-        public static AddUserToGroupResponse Unmarshall(UnmarshallerContext context)
+        public static AddUserToGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddUserToGroupResponse addUserToGroupResponse = new AddUserToGroupResponse();
 
-			addUserToGroupResponse.HttpResponse = context.HttpResponse;
-			addUserToGroupResponse.RequestId = context.StringValue("AddUserToGroup.RequestId");
+			addUserToGroupResponse.HttpResponse = _ctx.HttpResponse;
+			addUserToGroupResponse.RequestId = _ctx.StringValue("AddUserToGroup.RequestId");
         
 			return addUserToGroupResponse;
         }

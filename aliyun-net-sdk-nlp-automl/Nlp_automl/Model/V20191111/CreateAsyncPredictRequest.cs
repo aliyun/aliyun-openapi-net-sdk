@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.nlp_automl;
 using Aliyun.Acs.nlp_automl.Transform;
 using Aliyun.Acs.nlp_automl.Transform.V20191111;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
     public class CreateAsyncPredictRequest : RpcAcsRequest<CreateAsyncPredictResponse>
     {
         public CreateAsyncPredictRequest()
-            : base("nlp-automl", "2019-11-11", "CreateAsyncPredict", "nlpautoml", "openAPI")
+            : base("nlp-automl", "2019-11-11", "CreateAsyncPredict")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -52,7 +53,11 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 
 		private string fileContent;
 
+		private string serviceName;
+
 		private int? modelId;
+
+		private string serviceVersion;
 
 		private string fileUrl;
 
@@ -136,6 +141,19 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 			}
 		}
 
+		public string ServiceName
+		{
+			get
+			{
+				return serviceName;
+			}
+			set	
+			{
+				serviceName = value;
+				DictionaryUtil.Add(BodyParameters, "ServiceName", value);
+			}
+		}
+
 		public int? ModelId
 		{
 			get
@@ -146,6 +164,19 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 			{
 				modelId = value;
 				DictionaryUtil.Add(BodyParameters, "ModelId", value.ToString());
+			}
+		}
+
+		public string ServiceVersion
+		{
+			get
+			{
+				return serviceVersion;
+			}
+			set	
+			{
+				serviceVersion = value;
+				DictionaryUtil.Add(BodyParameters, "ServiceVersion", value);
 			}
 		}
 

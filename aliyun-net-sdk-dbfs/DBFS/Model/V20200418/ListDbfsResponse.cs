@@ -151,6 +151,8 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 
 			private List<ListDbfs_EbsListItem> ebsList;
 
+			private ListDbfs_SnapshotInfo snapshotInfo;
+
 			[JsonProperty(PropertyName = "Status")]
 			public string Status
 			{
@@ -463,6 +465,19 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
+			[JsonProperty(PropertyName = "SnapshotInfo")]
+			public ListDbfs_SnapshotInfo SnapshotInfo
+			{
+				get
+				{
+					return snapshotInfo;
+				}
+				set	
+				{
+					snapshotInfo = value;
+				}
+			}
+
 			public class ListDbfs_TagList
 			{
 
@@ -561,6 +576,70 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 					set	
 					{
 						sizeG = value;
+					}
+				}
+			}
+
+			public class ListDbfs_SnapshotInfo
+			{
+
+				private int? snapshotCount;
+
+				private long? totalSize;
+
+				private string linkId;
+
+				private string policyId;
+
+				[JsonProperty(PropertyName = "SnapshotCount")]
+				public int? SnapshotCount
+				{
+					get
+					{
+						return snapshotCount;
+					}
+					set	
+					{
+						snapshotCount = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "TotalSize")]
+				public long? TotalSize
+				{
+					get
+					{
+						return totalSize;
+					}
+					set	
+					{
+						totalSize = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "LinkId")]
+				public string LinkId
+				{
+					get
+					{
+						return linkId;
+					}
+					set	
+					{
+						linkId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "PolicyId")]
+				public string PolicyId
+				{
+					get
+					{
+						return policyId;
+					}
+					set	
+					{
+						policyId = value;
 					}
 				}
 			}

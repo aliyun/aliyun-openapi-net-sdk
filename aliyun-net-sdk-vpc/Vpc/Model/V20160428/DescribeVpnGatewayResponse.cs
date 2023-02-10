@@ -65,6 +65,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string name;
 
+		private string networkType;
+
 		private List<DescribeVpnGateway_Tag> tags;
 
 		private DescribeVpnGateway_ReservationData reservationData;
@@ -306,6 +308,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				name = value;
+			}
+		}
+
+		public string NetworkType
+		{
+			get
+			{
+				return networkType;
+			}
+			set	
+			{
+				networkType = value;
 			}
 		}
 

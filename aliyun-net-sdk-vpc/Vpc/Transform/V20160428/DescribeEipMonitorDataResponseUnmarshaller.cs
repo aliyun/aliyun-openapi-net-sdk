@@ -40,7 +40,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				eipMonitorData.EipPackets = _ctx.IntegerValue("DescribeEipMonitorData.EipMonitorDatas["+ i +"].EipPackets");
 				eipMonitorData.EipBandwidth = _ctx.IntegerValue("DescribeEipMonitorData.EipMonitorDatas["+ i +"].EipBandwidth");
 				eipMonitorData.TimeStamp = _ctx.StringValue("DescribeEipMonitorData.EipMonitorDatas["+ i +"].TimeStamp");
-				eipMonitorData.EipFlow = _ctx.IntegerValue("DescribeEipMonitorData.EipMonitorDatas["+ i +"].EipFlow");
+				eipMonitorData.EipFlow = _ctx.LongValue("DescribeEipMonitorData.EipMonitorDatas["+ i +"].EipFlow");
 				eipMonitorData.EipRX = _ctx.LongValue("DescribeEipMonitorData.EipMonitorDatas["+ i +"].EipRX");
 
 				describeEipMonitorDataResponse_eipMonitorDatas.Add(eipMonitorData);

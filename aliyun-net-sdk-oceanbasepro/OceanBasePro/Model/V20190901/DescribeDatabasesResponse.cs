@@ -93,6 +93,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 			private string collation;
 
+			private string instanceId;
+
 			private List<DescribeDatabases_UsersItem> users;
 
 			private List<DescribeDatabases_TablesItem> tables;
@@ -224,6 +226,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				set	
 				{
 					collation = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstanceId")]
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
 				}
 			}
 

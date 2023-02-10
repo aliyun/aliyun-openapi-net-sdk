@@ -41,6 +41,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			createVpnPbrRouteEntryResponse.OverlayMode = _ctx.StringValue("CreateVpnPbrRouteEntry.OverlayMode");
 			createVpnPbrRouteEntryResponse.RouteSource = _ctx.StringValue("CreateVpnPbrRouteEntry.RouteSource");
 			createVpnPbrRouteEntryResponse.VpnInstanceId = _ctx.StringValue("CreateVpnPbrRouteEntry.VpnInstanceId");
+			createVpnPbrRouteEntryResponse.Priority = _ctx.IntegerValue("CreateVpnPbrRouteEntry.Priority");
         
 			return createVpnPbrRouteEntryResponse;
         }

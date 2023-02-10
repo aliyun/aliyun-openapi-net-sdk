@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
@@ -56,53 +56,29 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 		public class CreateRole_Role
 		{
 
-			private string roleId;
-
-			private string roleName;
-
-			private string arn;
+			private string assumeRolePolicyDocument;
 
 			private string description;
 
-			private string assumeRolePolicyDocument;
+			private long? maxSessionDuration;
+
+			private string roleName;
 
 			private string createDate;
 
-			private long? maxSessionDuration;
+			private string roleId;
 
-			public string RoleId
+			private string arn;
+
+			public string AssumeRolePolicyDocument
 			{
 				get
 				{
-					return roleId;
+					return assumeRolePolicyDocument;
 				}
 				set	
 				{
-					roleId = value;
-				}
-			}
-
-			public string RoleName
-			{
-				get
-				{
-					return roleName;
-				}
-				set	
-				{
-					roleName = value;
-				}
-			}
-
-			public string Arn
-			{
-				get
-				{
-					return arn;
-				}
-				set	
-				{
-					arn = value;
+					assumeRolePolicyDocument = value;
 				}
 			}
 
@@ -118,15 +94,27 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				}
 			}
 
-			public string AssumeRolePolicyDocument
+			public long? MaxSessionDuration
 			{
 				get
 				{
-					return assumeRolePolicyDocument;
+					return maxSessionDuration;
 				}
 				set	
 				{
-					assumeRolePolicyDocument = value;
+					maxSessionDuration = value;
+				}
+			}
+
+			public string RoleName
+			{
+				get
+				{
+					return roleName;
+				}
+				set	
+				{
+					roleName = value;
 				}
 			}
 
@@ -142,15 +130,27 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				}
 			}
 
-			public long? MaxSessionDuration
+			public string RoleId
 			{
 				get
 				{
-					return maxSessionDuration;
+					return roleId;
 				}
 				set	
 				{
-					maxSessionDuration = value;
+					roleId = value;
+				}
+			}
+
+			public string Arn
+			{
+				get
+				{
+					return arn;
+				}
+				set	
+				{
+					arn = value;
 				}
 			}
 		}

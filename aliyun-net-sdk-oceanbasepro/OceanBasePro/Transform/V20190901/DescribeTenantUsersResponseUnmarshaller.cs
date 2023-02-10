@@ -41,6 +41,8 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 				tenantUsersItem.Description = _ctx.StringValue("DescribeTenantUsers.TenantUsers["+ i +"].Description");
 				tenantUsersItem.UserStatus = _ctx.StringValue("DescribeTenantUsers.TenantUsers["+ i +"].UserStatus");
 				tenantUsersItem.UserName = _ctx.StringValue("DescribeTenantUsers.TenantUsers["+ i +"].UserName");
+				tenantUsersItem.TenantId = _ctx.StringValue("DescribeTenantUsers.TenantUsers["+ i +"].TenantId");
+				tenantUsersItem.InstanceId = _ctx.StringValue("DescribeTenantUsers.TenantUsers["+ i +"].InstanceId");
 
 				List<DescribeTenantUsersResponse.DescribeTenantUsers_TenantUsersItem.DescribeTenantUsers_DatabasesItem> tenantUsersItem_databases = new List<DescribeTenantUsersResponse.DescribeTenantUsers_TenantUsersItem.DescribeTenantUsers_DatabasesItem>();
 				for (int j = 0; j < _ctx.Length("DescribeTenantUsers.TenantUsers["+ i +"].Databases.Length"); j++) {

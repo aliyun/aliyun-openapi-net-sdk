@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
 {
     public class GetAccessKeyLastUsedResponseUnmarshaller
     {
-        public static GetAccessKeyLastUsedResponse Unmarshall(UnmarshallerContext context)
+        public static GetAccessKeyLastUsedResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetAccessKeyLastUsedResponse getAccessKeyLastUsedResponse = new GetAccessKeyLastUsedResponse();
 
-			getAccessKeyLastUsedResponse.HttpResponse = context.HttpResponse;
-			getAccessKeyLastUsedResponse.RequestId = context.StringValue("GetAccessKeyLastUsed.RequestId");
+			getAccessKeyLastUsedResponse.HttpResponse = _ctx.HttpResponse;
+			getAccessKeyLastUsedResponse.RequestId = _ctx.StringValue("GetAccessKeyLastUsed.RequestId");
 
 			GetAccessKeyLastUsedResponse.GetAccessKeyLastUsed_AccessKeyLastUsed accessKeyLastUsed = new GetAccessKeyLastUsedResponse.GetAccessKeyLastUsed_AccessKeyLastUsed();
-			accessKeyLastUsed.LastUsedDate = context.StringValue("GetAccessKeyLastUsed.AccessKeyLastUsed.LastUsedDate");
+			accessKeyLastUsed.LastUsedDate = _ctx.StringValue("GetAccessKeyLastUsed.AccessKeyLastUsed.LastUsedDate");
 			getAccessKeyLastUsedResponse.AccessKeyLastUsed = accessKeyLastUsed;
         
 			return getAccessKeyLastUsedResponse;

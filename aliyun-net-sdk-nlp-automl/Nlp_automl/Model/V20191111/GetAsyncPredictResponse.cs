@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.nlp_automl.Model.V20191111
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 	public class GetAsyncPredictResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? asyncPredictId;
 
 		private int? status;
 
-		private string content;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string content;
 
 		public int? AsyncPredictId
 		{
@@ -66,6 +54,18 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 			set	
 			{
 				status = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

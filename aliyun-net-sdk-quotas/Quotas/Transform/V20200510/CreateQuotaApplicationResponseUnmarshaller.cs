@@ -31,24 +31,24 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 			CreateQuotaApplicationResponse createQuotaApplicationResponse = new CreateQuotaApplicationResponse();
 
 			createQuotaApplicationResponse.HttpResponse = _ctx.HttpResponse;
-			createQuotaApplicationResponse.Status = _ctx.StringValue("CreateQuotaApplication.Status");
-			createQuotaApplicationResponse.ApplyTime = _ctx.StringValue("CreateQuotaApplication.ApplyTime");
-			createQuotaApplicationResponse.QuotaDescription = _ctx.StringValue("CreateQuotaApplication.QuotaDescription");
 			createQuotaApplicationResponse.RequestId = _ctx.StringValue("CreateQuotaApplication.RequestId");
-			createQuotaApplicationResponse.EffectiveTime = _ctx.StringValue("CreateQuotaApplication.EffectiveTime");
-			createQuotaApplicationResponse.ProductCode = _ctx.StringValue("CreateQuotaApplication.ProductCode");
-			createQuotaApplicationResponse.QuotaUnit = _ctx.StringValue("CreateQuotaApplication.QuotaUnit");
-			createQuotaApplicationResponse.AuditReason = _ctx.StringValue("CreateQuotaApplication.AuditReason");
-			createQuotaApplicationResponse.Dimension = _ctx.StringValue("CreateQuotaApplication.Dimension");
-			createQuotaApplicationResponse.ApproveValue = _ctx.FloatValue("CreateQuotaApplication.ApproveValue");
-			createQuotaApplicationResponse.Reason = _ctx.StringValue("CreateQuotaApplication.Reason");
+			createQuotaApplicationResponse.Status = _ctx.StringValue("CreateQuotaApplication.Status");
+			createQuotaApplicationResponse.DesireValue = _ctx.IntegerValue("CreateQuotaApplication.DesireValue");
 			createQuotaApplicationResponse.QuotaActionCode = _ctx.StringValue("CreateQuotaApplication.QuotaActionCode");
 			createQuotaApplicationResponse.QuotaName = _ctx.StringValue("CreateQuotaApplication.QuotaName");
-			createQuotaApplicationResponse.QuotaArn = _ctx.StringValue("CreateQuotaApplication.QuotaArn");
-			createQuotaApplicationResponse.NoticeType = _ctx.LongValue("CreateQuotaApplication.NoticeType");
-			createQuotaApplicationResponse.ExpireTime = _ctx.StringValue("CreateQuotaApplication.ExpireTime");
 			createQuotaApplicationResponse.ApplicationId = _ctx.StringValue("CreateQuotaApplication.ApplicationId");
-			createQuotaApplicationResponse.DesireValue = _ctx.IntegerValue("CreateQuotaApplication.DesireValue");
+			createQuotaApplicationResponse.Reason = _ctx.StringValue("CreateQuotaApplication.Reason");
+			createQuotaApplicationResponse.AuditReason = _ctx.StringValue("CreateQuotaApplication.AuditReason");
+			createQuotaApplicationResponse.QuotaDescription = _ctx.StringValue("CreateQuotaApplication.QuotaDescription");
+			createQuotaApplicationResponse.ProductCode = _ctx.StringValue("CreateQuotaApplication.ProductCode");
+			createQuotaApplicationResponse.QuotaArn = _ctx.StringValue("CreateQuotaApplication.QuotaArn");
+			createQuotaApplicationResponse.ApplyTime = _ctx.StringValue("CreateQuotaApplication.ApplyTime");
+			createQuotaApplicationResponse.ApproveValue = _ctx.FloatValue("CreateQuotaApplication.ApproveValue");
+			createQuotaApplicationResponse.Dimension = _ctx.StringValue("CreateQuotaApplication.Dimension");
+			createQuotaApplicationResponse.NoticeType = _ctx.LongValue("CreateQuotaApplication.NoticeType");
+			createQuotaApplicationResponse.EffectiveTime = _ctx.StringValue("CreateQuotaApplication.EffectiveTime");
+			createQuotaApplicationResponse.ExpireTime = _ctx.StringValue("CreateQuotaApplication.ExpireTime");
+			createQuotaApplicationResponse.QuotaUnit = _ctx.StringValue("CreateQuotaApplication.QuotaUnit");
         
 			return createQuotaApplicationResponse;
         }

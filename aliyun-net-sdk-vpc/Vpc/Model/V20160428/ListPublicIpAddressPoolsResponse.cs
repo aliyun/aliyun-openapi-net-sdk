@@ -120,7 +120,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private bool? userType;
 
+			private long? ownerId;
+
+			private string shareType;
+
+			private string resourceGroupId;
+
 			private List<ListPublicIpAddressPools_PublicIpCidrBlock> publicIpCidrBlockList;
+
+			private List<ListPublicIpAddressPools_Tag> tags;
 
 			public string PublicIpAddressPoolId
 			{
@@ -254,6 +262,42 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public long? OwnerId
+			{
+				get
+				{
+					return ownerId;
+				}
+				set	
+				{
+					ownerId = value;
+				}
+			}
+
+			public string ShareType
+			{
+				get
+				{
+					return shareType;
+				}
+				set	
+				{
+					shareType = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
 			public List<ListPublicIpAddressPools_PublicIpCidrBlock> PublicIpCidrBlockList
 			{
 				get
@@ -263,6 +307,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					publicIpCidrBlockList = value;
+				}
+			}
+
+			public List<ListPublicIpAddressPools_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
 				}
 			}
 
@@ -336,6 +392,38 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					set	
 					{
 						creationTime = value;
+					}
+				}
+			}
+
+			public class ListPublicIpAddressPools_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
 					}
 				}
 			}

@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.nlp_automl;
 using Aliyun.Acs.nlp_automl.Transform;
 using Aliyun.Acs.nlp_automl.Transform.V20191111;
 
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
     public class GetAsyncPredictRequest : RpcAcsRequest<GetAsyncPredictResponse>
     {
         public GetAsyncPredictRequest()
-            : base("nlp-automl", "2019-11-11", "GetAsyncPredict", "nlpautoml", "openAPI")
+            : base("nlp-automl", "2019-11-11", "GetAsyncPredict")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

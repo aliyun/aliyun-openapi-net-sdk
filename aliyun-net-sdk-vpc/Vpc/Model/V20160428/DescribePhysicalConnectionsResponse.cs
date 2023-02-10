@@ -166,6 +166,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string expectSpec;
 
+			private string resourceGroupId;
+
 			public string Type
 			{
 				get
@@ -571,6 +573,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					expectSpec = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 		}

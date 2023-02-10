@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.BssOpenApi;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
     public class SetResellerUserStatusRequest : RpcAcsRequest<SetResellerUserStatusResponse>
     {
         public SetResellerUserStatusRequest()
-            : base("BssOpenApi", "2017-12-14", "SetResellerUserStatus")
+            : base("BssOpenApi", "2017-12-14", "SetResellerUserStatus", "bssopenapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,12 +41,29 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			Method = MethodType.POST;
         }
 
+		private string stopMode;
+
 		private string ownerId;
 
 		private string businessType;
 
 		private string status;
 
+		[JsonProperty(PropertyName = "StopMode")]
+		public string StopMode
+		{
+			get
+			{
+				return stopMode;
+			}
+			set	
+			{
+				stopMode = value;
+				DictionaryUtil.Add(QueryParameters, "StopMode", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "OwnerId")]
 		public string OwnerId
 		{
 			get
@@ -60,6 +77,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "BusinessType")]
 		public string BusinessType
 		{
 			get
@@ -73,6 +91,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Status")]
 		public string Status
 		{
 			get

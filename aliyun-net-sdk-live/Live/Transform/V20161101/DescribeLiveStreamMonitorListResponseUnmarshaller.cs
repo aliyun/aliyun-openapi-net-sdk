@@ -38,6 +38,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			for (int i = 0; i < _ctx.Length("DescribeLiveStreamMonitorList.LiveStreamMonitorList.Length"); i++) {
 				DescribeLiveStreamMonitorListResponse.DescribeLiveStreamMonitorList_LiveStreamMonitorInfo liveStreamMonitorInfo = new DescribeLiveStreamMonitorListResponse.DescribeLiveStreamMonitorList_LiveStreamMonitorInfo();
 				liveStreamMonitorInfo.Status = _ctx.IntegerValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].Status");
+				liveStreamMonitorInfo.MonitorConfig = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].MonitorConfig");
 				liveStreamMonitorInfo.StartTime = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].StartTime");
 				liveStreamMonitorInfo.MonitorId = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].MonitorId");
 				liveStreamMonitorInfo.Domain = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].Domain");

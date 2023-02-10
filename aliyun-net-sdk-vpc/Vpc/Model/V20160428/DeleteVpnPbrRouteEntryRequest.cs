@@ -56,6 +56,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? ownerId;
 
+		private int? priority;
+
 		private string routeDest;
 
 		private string nextHop;
@@ -163,6 +165,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public int? Priority
+		{
+			get
+			{
+				return priority;
+			}
+			set	
+			{
+				priority = value;
+				DictionaryUtil.Add(QueryParameters, "Priority", value.ToString());
 			}
 		}
 

@@ -55,6 +55,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private int? pageSize;
 
+		private string dBNodeType;
+
 		private string dBInstanceId;
 
 		private string dBInstanceDescription;
@@ -212,6 +214,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string DBNodeType
+		{
+			get
+			{
+				return dBNodeType;
+			}
+			set	
+			{
+				dBNodeType = value;
+				DictionaryUtil.Add(QueryParameters, "DBNodeType", value);
 			}
 		}
 

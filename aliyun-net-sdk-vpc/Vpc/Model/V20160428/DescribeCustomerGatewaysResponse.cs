@@ -112,6 +112,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string authKey;
 
+			private List<DescribeCustomerGateways_Tag> tags;
+
 			public string IpAddress
 			{
 				get
@@ -193,6 +195,50 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					authKey = value;
+				}
+			}
+
+			public List<DescribeCustomerGateways_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public class DescribeCustomerGateways_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}

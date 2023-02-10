@@ -195,6 +195,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string payMode;
 
+				private string deductCycleType;
+
 				private List<QuerySavingsPlansInstance_Tag> tags;
 
 				public string Status
@@ -422,6 +424,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						payMode = value;
+					}
+				}
+
+				public string DeductCycleType
+				{
+					get
+					{
+						return deductCycleType;
+					}
+					set	
+					{
+						deductCycleType = value;
 					}
 				}
 

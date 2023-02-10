@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
@@ -29,9 +29,9 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 
 		private List<ListEntitiesForPolicy_Group> groups;
 
-		private List<ListEntitiesForPolicy_User> users;
-
 		private List<ListEntitiesForPolicy_Role> roles;
+
+		private List<ListEntitiesForPolicy_User> users;
 
 		public string RequestId
 		{
@@ -57,18 +57,6 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			}
 		}
 
-		public List<ListEntitiesForPolicy_User> Users
-		{
-			get
-			{
-				return users;
-			}
-			set	
-			{
-				users = value;
-			}
-		}
-
 		public List<ListEntitiesForPolicy_Role> Roles
 		{
 			get
@@ -78,6 +66,18 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			set	
 			{
 				roles = value;
+			}
+		}
+
+		public List<ListEntitiesForPolicy_User> Users
+		{
+			get
+			{
+				return users;
+			}
+			set	
+			{
+				users = value;
 			}
 		}
 
@@ -127,16 +127,102 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			}
 		}
 
+		public class ListEntitiesForPolicy_Role
+		{
+
+			private string description;
+
+			private string roleName;
+
+			private string attachDate;
+
+			private string arn;
+
+			private string roleId;
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string RoleName
+			{
+				get
+				{
+					return roleName;
+				}
+				set	
+				{
+					roleName = value;
+				}
+			}
+
+			public string AttachDate
+			{
+				get
+				{
+					return attachDate;
+				}
+				set	
+				{
+					attachDate = value;
+				}
+			}
+
+			public string Arn
+			{
+				get
+				{
+					return arn;
+				}
+				set	
+				{
+					arn = value;
+				}
+			}
+
+			public string RoleId
+			{
+				get
+				{
+					return roleId;
+				}
+				set	
+				{
+					roleId = value;
+				}
+			}
+		}
+
 		public class ListEntitiesForPolicy_User
 		{
+
+			private string displayName;
 
 			private string userId;
 
 			private string userName;
 
-			private string displayName;
-
 			private string attachDate;
+
+			public string DisplayName
+			{
+				get
+				{
+					return displayName;
+				}
+				set	
+				{
+					displayName = value;
+				}
+			}
 
 			public string UserId
 			{
@@ -159,92 +245,6 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				set	
 				{
 					userName = value;
-				}
-			}
-
-			public string DisplayName
-			{
-				get
-				{
-					return displayName;
-				}
-				set	
-				{
-					displayName = value;
-				}
-			}
-
-			public string AttachDate
-			{
-				get
-				{
-					return attachDate;
-				}
-				set	
-				{
-					attachDate = value;
-				}
-			}
-		}
-
-		public class ListEntitiesForPolicy_Role
-		{
-
-			private string roleId;
-
-			private string roleName;
-
-			private string arn;
-
-			private string description;
-
-			private string attachDate;
-
-			public string RoleId
-			{
-				get
-				{
-					return roleId;
-				}
-				set	
-				{
-					roleId = value;
-				}
-			}
-
-			public string RoleName
-			{
-				get
-				{
-					return roleName;
-				}
-				set	
-				{
-					roleName = value;
-				}
-			}
-
-			public string Arn
-			{
-				get
-				{
-					return arn;
-				}
-				set	
-				{
-					arn = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
 				}
 			}
 

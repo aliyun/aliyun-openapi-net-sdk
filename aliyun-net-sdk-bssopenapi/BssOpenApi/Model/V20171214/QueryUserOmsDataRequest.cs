@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.BssOpenApi;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
     public class QueryUserOmsDataRequest : RpcAcsRequest<QueryUserOmsDataResponse>
     {
         public QueryUserOmsDataRequest()
-            : base("BssOpenApi", "2017-12-14", "QueryUserOmsData")
+            : base("BssOpenApi", "2017-12-14", "QueryUserOmsData", "bssopenapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -55,6 +55,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string table;
 
+		[JsonProperty(PropertyName = "EndTime")]
 		public string EndTime
 		{
 			get
@@ -68,6 +69,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "StartTime")]
 		public string StartTime
 		{
 			get
@@ -81,6 +83,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -94,6 +97,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "DataType")]
 		public string DataType
 		{
 			get
@@ -107,6 +111,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Marker")]
 		public string Marker
 		{
 			get
@@ -120,6 +125,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get
@@ -133,6 +139,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Table")]
 		public string Table
 		{
 			get

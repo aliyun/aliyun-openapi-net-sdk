@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
@@ -101,11 +101,23 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			public class ListVirtualMFADevices_User
 			{
 
+				private string displayName;
+
 				private string userId;
 
 				private string userName;
 
-				private string displayName;
+				public string DisplayName
+				{
+					get
+					{
+						return displayName;
+					}
+					set	
+					{
+						displayName = value;
+					}
+				}
 
 				public string UserId
 				{
@@ -128,18 +140,6 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 					set	
 					{
 						userName = value;
-					}
-				}
-
-				public string DisplayName
-				{
-					get
-					{
-						return displayName;
-					}
-					set	
-					{
-						displayName = value;
 					}
 				}
 			}

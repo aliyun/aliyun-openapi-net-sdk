@@ -26,23 +26,23 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
 {
     public class GetUserResponseUnmarshaller
     {
-        public static GetUserResponse Unmarshall(UnmarshallerContext context)
+        public static GetUserResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetUserResponse getUserResponse = new GetUserResponse();
 
-			getUserResponse.HttpResponse = context.HttpResponse;
-			getUserResponse.RequestId = context.StringValue("GetUser.RequestId");
+			getUserResponse.HttpResponse = _ctx.HttpResponse;
+			getUserResponse.RequestId = _ctx.StringValue("GetUser.RequestId");
 
 			GetUserResponse.GetUser_User user = new GetUserResponse.GetUser_User();
-			user.UserId = context.StringValue("GetUser.User.UserId");
-			user.UserName = context.StringValue("GetUser.User.UserName");
-			user.DisplayName = context.StringValue("GetUser.User.DisplayName");
-			user.MobilePhone = context.StringValue("GetUser.User.MobilePhone");
-			user.Email = context.StringValue("GetUser.User.Email");
-			user.Comments = context.StringValue("GetUser.User.Comments");
-			user.CreateDate = context.StringValue("GetUser.User.CreateDate");
-			user.UpdateDate = context.StringValue("GetUser.User.UpdateDate");
-			user.LastLoginDate = context.StringValue("GetUser.User.LastLoginDate");
+			user.DisplayName = _ctx.StringValue("GetUser.User.DisplayName");
+			user.Email = _ctx.StringValue("GetUser.User.Email");
+			user.UpdateDate = _ctx.StringValue("GetUser.User.UpdateDate");
+			user.MobilePhone = _ctx.StringValue("GetUser.User.MobilePhone");
+			user.UserId = _ctx.StringValue("GetUser.User.UserId");
+			user.Comments = _ctx.StringValue("GetUser.User.Comments");
+			user.LastLoginDate = _ctx.StringValue("GetUser.User.LastLoginDate");
+			user.CreateDate = _ctx.StringValue("GetUser.User.CreateDate");
+			user.UserName = _ctx.StringValue("GetUser.User.UserName");
 			getUserResponse.User = user;
         
 			return getUserResponse;

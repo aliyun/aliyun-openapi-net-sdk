@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.quotas.Model.V20200510
@@ -25,25 +25,25 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 	public class ListAlarmHistoriesResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? totalCount;
 
 		private string nextToken;
 
-		private int? maxResults;
+		private string requestId;
 
-		private int? totalCount;
+		private int? maxResults;
 
 		private List<ListAlarmHistories_AlarmHistory> alarmHistories;
 
-		public string RequestId
+		public int? TotalCount
 		{
 			get
 			{
-				return requestId;
+				return totalCount;
 			}
 			set	
 			{
-				requestId = value;
+				totalCount = value;
 			}
 		}
 
@@ -59,6 +59,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public int? MaxResults
 		{
 			get
@@ -68,18 +80,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			set	
 			{
 				maxResults = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -98,35 +98,23 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 		public class ListAlarmHistories_AlarmHistory
 		{
 
-			private string alarmName;
-
 			private float? quotaUsage;
 
-			private string productCode;
+			private float? thresholdPercent;
 
 			private string createTime;
+
+			private string quotaActionCode;
+
+			private string alarmName;
 
 			private string notifyTarget;
 
 			private float? threshold;
 
-			private float? thresholdPercent;
-
-			private string quotaActionCode;
+			private string productCode;
 
 			private List<string> notifyChannels;
-
-			public string AlarmName
-			{
-				get
-				{
-					return alarmName;
-				}
-				set	
-				{
-					alarmName = value;
-				}
-			}
 
 			public float? QuotaUsage
 			{
@@ -140,15 +128,15 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
-			public string ProductCode
+			public float? ThresholdPercent
 			{
 				get
 				{
-					return productCode;
+					return thresholdPercent;
 				}
 				set	
 				{
-					productCode = value;
+					thresholdPercent = value;
 				}
 			}
 
@@ -161,6 +149,30 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					createTime = value;
+				}
+			}
+
+			public string QuotaActionCode
+			{
+				get
+				{
+					return quotaActionCode;
+				}
+				set	
+				{
+					quotaActionCode = value;
+				}
+			}
+
+			public string AlarmName
+			{
+				get
+				{
+					return alarmName;
+				}
+				set	
+				{
+					alarmName = value;
 				}
 			}
 
@@ -188,27 +200,15 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
-			public float? ThresholdPercent
+			public string ProductCode
 			{
 				get
 				{
-					return thresholdPercent;
+					return productCode;
 				}
 				set	
 				{
-					thresholdPercent = value;
-				}
-			}
-
-			public string QuotaActionCode
-			{
-				get
-				{
-					return quotaActionCode;
-				}
-				set	
-				{
-					quotaActionCode = value;
+					productCode = value;
 				}
 			}
 

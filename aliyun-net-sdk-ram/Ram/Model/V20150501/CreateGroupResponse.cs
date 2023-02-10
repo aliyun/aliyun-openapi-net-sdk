@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
@@ -56,11 +56,25 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 		public class CreateGroup_Group
 		{
 
+			private string groupId;
+
 			private string groupName;
 
 			private string comments;
 
 			private string createDate;
+
+			public string GroupId
+			{
+				get
+				{
+					return groupId;
+				}
+				set	
+				{
+					groupId = value;
+				}
+			}
 
 			public string GroupName
 			{

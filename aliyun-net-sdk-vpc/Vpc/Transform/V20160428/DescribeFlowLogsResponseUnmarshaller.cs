@@ -53,6 +53,13 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				flowLog.FlowLogId = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].FlowLogId");
 				flowLog.BusinessStatus = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].BusinessStatus");
 				flowLog.AggregationInterval = _ctx.IntegerValue("DescribeFlowLogs.FlowLogs["+ i +"].AggregationInterval");
+				flowLog.ServiceType = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].ServiceType");
+
+				List<string> flowLog_trafficPath = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeFlowLogs.FlowLogs["+ i +"].TrafficPath.Length"); j++) {
+					flowLog_trafficPath.Add(_ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].TrafficPath["+ j +"]"));
+				}
+				flowLog.TrafficPath = flowLog_trafficPath;
 
 				describeFlowLogsResponse_flowLogs.Add(flowLog);
 			}

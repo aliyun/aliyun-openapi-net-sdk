@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				prefixListAssociations.OwnerId = _ctx.StringValue("GetVpcPrefixListAssociations.PrefixListAssociation["+ i +"].OwnerId");
 				prefixListAssociations.Status = _ctx.StringValue("GetVpcPrefixListAssociations.PrefixListAssociation["+ i +"].Status");
 				prefixListAssociations.Reason = _ctx.StringValue("GetVpcPrefixListAssociations.PrefixListAssociation["+ i +"].Reason");
+				prefixListAssociations.RegionId = _ctx.StringValue("GetVpcPrefixListAssociations.PrefixListAssociation["+ i +"].RegionId");
+				prefixListAssociations.ResourceUid = _ctx.StringValue("GetVpcPrefixListAssociations.PrefixListAssociation["+ i +"].ResourceUid");
 
 				getVpcPrefixListAssociationsResponse_prefixListAssociation.Add(prefixListAssociations);
 			}

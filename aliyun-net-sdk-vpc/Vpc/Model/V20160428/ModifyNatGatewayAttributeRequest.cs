@@ -56,6 +56,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string name;
 
+		private string eipBindMode;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -157,6 +159,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public string EipBindMode
+		{
+			get
+			{
+				return eipBindMode;
+			}
+			set	
+			{
+				eipBindMode = value;
+				DictionaryUtil.Add(QueryParameters, "EipBindMode", value);
 			}
 		}
 

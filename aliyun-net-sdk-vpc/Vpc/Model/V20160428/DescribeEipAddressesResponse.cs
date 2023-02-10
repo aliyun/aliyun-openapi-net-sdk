@@ -170,6 +170,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string publicIpAddressPoolId;
 
+			private string vpcId;
+
+			private string zone;
+
 			private List<DescribeEipAddresses_LockReason> operationLocks;
 
 			private List<DescribeEipAddresses_Tag> tags;
@@ -607,6 +611,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					publicIpAddressPoolId = value;
+				}
+			}
+
+			public string VpcId
+			{
+				get
+				{
+					return vpcId;
+				}
+				set	
+				{
+					vpcId = value;
+				}
+			}
+
+			public string Zone
+			{
+				get
+				{
+					return zone;
+				}
+				set	
+				{
+					zone = value;
 				}
 			}
 

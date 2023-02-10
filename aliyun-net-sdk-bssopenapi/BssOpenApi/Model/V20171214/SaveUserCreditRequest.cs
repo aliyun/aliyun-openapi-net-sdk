@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.BssOpenApi;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
     public class SaveUserCreditRequest : RpcAcsRequest<SaveUserCreditResponse>
     {
         public SaveUserCreditRequest()
-            : base("BssOpenApi", "2017-12-14", "SaveUserCredit")
+            : base("BssOpenApi", "2017-12-14", "SaveUserCredit", "bssopenapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -58,6 +58,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string creditType;
 
+		[JsonProperty(PropertyName = "AvoidExpiration")]
 		public bool? AvoidExpiration
 		{
 			get
@@ -71,6 +72,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Description")]
 		public string Description
 		{
 			get
@@ -84,6 +86,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "AvoidPrepaidNotification")]
 		public bool? AvoidPrepaidNotification
 		{
 			get
@@ -97,6 +100,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "AvoidPrepaidExpiration")]
 		public bool? AvoidPrepaidExpiration
 		{
 			get
@@ -110,6 +114,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "AvoidNotification")]
 		public bool? AvoidNotification
 		{
 			get
@@ -123,6 +128,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Operator")]
 		public string _Operator
 		{
 			get
@@ -136,6 +142,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "CreditValue")]
 		public string CreditValue
 		{
 			get
@@ -149,6 +156,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "CreditType")]
 		public string CreditType
 		{
 			get

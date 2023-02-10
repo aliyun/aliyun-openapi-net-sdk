@@ -44,7 +44,11 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string clientToken;
 
+		private int? pageNumber;
+
 		private string resourceGroupId;
+
+		private int? pageSize;
 
 		private string instanceType;
 
@@ -82,6 +86,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
 		public string ResourceGroupId
 		{
 			get
@@ -92,6 +109,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

@@ -40,13 +40,9 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			Method = MethodType.POST;
         }
 
-		private string bootFileName;
-
 		private long? resourceOwnerId;
 
 		private string clientToken;
-
-		private string tFTPServerName;
 
 		private string leaseTime;
 
@@ -69,19 +65,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private string dhcpOptionsSetName;
 
 		private string ipv6LeaseTime;
-
-		public string BootFileName
-		{
-			get
-			{
-				return bootFileName;
-			}
-			set	
-			{
-				bootFileName = value;
-				DictionaryUtil.Add(QueryParameters, "BootFileName", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -106,19 +89,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string TFTPServerName
-		{
-			get
-			{
-				return tFTPServerName;
-			}
-			set	
-			{
-				tFTPServerName = value;
-				DictionaryUtil.Add(QueryParameters, "TFTPServerName", value);
 			}
 		}
 

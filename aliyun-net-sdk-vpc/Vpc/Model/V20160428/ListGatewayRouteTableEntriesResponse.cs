@@ -96,6 +96,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string name;
 
+			private List<ListGatewayRouteTableEntries_NextHop> nextHops;
+
 			public string Status
 			{
 				get
@@ -165,6 +167,78 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					name = value;
+				}
+			}
+
+			public List<ListGatewayRouteTableEntries_NextHop> NextHops
+			{
+				get
+				{
+					return nextHops;
+				}
+				set	
+				{
+					nextHops = value;
+				}
+			}
+
+			public class ListGatewayRouteTableEntries_NextHop
+			{
+
+				private string nextHopId;
+
+				private string nextHopType;
+
+				private string weight;
+
+				private string enabled;
+
+				public string NextHopId
+				{
+					get
+					{
+						return nextHopId;
+					}
+					set	
+					{
+						nextHopId = value;
+					}
+				}
+
+				public string NextHopType
+				{
+					get
+					{
+						return nextHopType;
+					}
+					set	
+					{
+						nextHopType = value;
+					}
+				}
+
+				public string Weight
+				{
+					get
+					{
+						return weight;
+					}
+					set	
+					{
+						weight = value;
+					}
+				}
+
+				public string Enabled
+				{
+					get
+					{
+						return enabled;
+					}
+					set	
+					{
+						enabled = value;
+					}
 				}
 			}
 		}

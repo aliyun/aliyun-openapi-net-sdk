@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
 {
     public class DetachPolicyFromRoleResponseUnmarshaller
     {
-        public static DetachPolicyFromRoleResponse Unmarshall(UnmarshallerContext context)
+        public static DetachPolicyFromRoleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DetachPolicyFromRoleResponse detachPolicyFromRoleResponse = new DetachPolicyFromRoleResponse();
 
-			detachPolicyFromRoleResponse.HttpResponse = context.HttpResponse;
-			detachPolicyFromRoleResponse.RequestId = context.StringValue("DetachPolicyFromRole.RequestId");
+			detachPolicyFromRoleResponse.HttpResponse = _ctx.HttpResponse;
+			detachPolicyFromRoleResponse.RequestId = _ctx.StringValue("DetachPolicyFromRole.RequestId");
         
 			return detachPolicyFromRoleResponse;
         }

@@ -46,6 +46,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				routeEntry.RouteEntryId = _ctx.StringValue("DescribeRouteEntryList.RouteEntrys["+ i +"].RouteEntryId");
 				routeEntry.RouteTableId = _ctx.StringValue("DescribeRouteEntryList.RouteEntrys["+ i +"].RouteTableId");
 				routeEntry.GmtModified = _ctx.StringValue("DescribeRouteEntryList.RouteEntrys["+ i +"].GmtModified");
+				routeEntry.ServiceType = _ctx.StringValue("DescribeRouteEntryList.RouteEntrys["+ i +"].ServiceType");
 
 				List<DescribeRouteEntryListResponse.DescribeRouteEntryList_RouteEntry.DescribeRouteEntryList_NextHop> routeEntry_nextHops = new List<DescribeRouteEntryListResponse.DescribeRouteEntryList_RouteEntry.DescribeRouteEntryList_NextHop>();
 				for (int j = 0; j < _ctx.Length("DescribeRouteEntryList.RouteEntrys["+ i +"].NextHops.Length"); j++) {

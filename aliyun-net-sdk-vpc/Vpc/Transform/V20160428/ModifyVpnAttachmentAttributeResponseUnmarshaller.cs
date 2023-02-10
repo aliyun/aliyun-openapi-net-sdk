@@ -74,6 +74,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			vcoHealthCheck.Dip = _ctx.StringValue("ModifyVpnAttachmentAttribute.VcoHealthCheck.Dip");
 			vcoHealthCheck.Interval = _ctx.IntegerValue("ModifyVpnAttachmentAttribute.VcoHealthCheck.Interval");
 			vcoHealthCheck.Retry = _ctx.IntegerValue("ModifyVpnAttachmentAttribute.VcoHealthCheck.Retry");
+			vcoHealthCheck.Policy = _ctx.StringValue("ModifyVpnAttachmentAttribute.VcoHealthCheck.Policy");
 			modifyVpnAttachmentAttributeResponse.VcoHealthCheck = vcoHealthCheck;
 
 			ModifyVpnAttachmentAttributeResponse.ModifyVpnAttachmentAttribute_VpnBgpConfig vpnBgpConfig = new ModifyVpnAttachmentAttributeResponse.ModifyVpnAttachmentAttribute_VpnBgpConfig();

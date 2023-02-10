@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.BssOpenApi;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
     public class SetResellerUserQuotaRequest : RpcAcsRequest<SetResellerUserQuotaResponse>
     {
         public SetResellerUserQuotaRequest()
-            : base("BssOpenApi", "2017-12-14", "SetResellerUserQuota")
+            : base("BssOpenApi", "2017-12-14", "SetResellerUserQuota", "bssopenapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -49,6 +49,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string currency;
 
+		[JsonProperty(PropertyName = "Amount")]
 		public string Amount
 		{
 			get
@@ -62,6 +63,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "OutBizId")]
 		public string OutBizId
 		{
 			get
@@ -75,6 +77,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -88,6 +91,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Currency")]
 		public string Currency
 		{
 			get

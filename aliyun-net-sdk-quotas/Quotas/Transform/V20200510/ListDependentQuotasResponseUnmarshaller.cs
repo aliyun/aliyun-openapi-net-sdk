@@ -45,17 +45,17 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 					ListDependentQuotasResponse.ListDependentQuotas_QuotasItem.ListDependentQuotas_DimensionsItem dimensionsItem = new ListDependentQuotasResponse.ListDependentQuotas_QuotasItem.ListDependentQuotas_DimensionsItem();
 					dimensionsItem.DimensionKey = _ctx.StringValue("ListDependentQuotas.Quotas["+ i +"].Dimensions["+ j +"].DimensionKey");
 
-					List<string> dimensionsItem_dimensionValues = new List<string>();
-					for (int k = 0; k < _ctx.Length("ListDependentQuotas.Quotas["+ i +"].Dimensions["+ j +"].DimensionValues.Length"); k++) {
-						dimensionsItem_dimensionValues.Add(_ctx.StringValue("ListDependentQuotas.Quotas["+ i +"].Dimensions["+ j +"].DimensionValues["+ k +"]"));
-					}
-					dimensionsItem.DimensionValues = dimensionsItem_dimensionValues;
-
 					List<string> dimensionsItem_dependentDimension = new List<string>();
 					for (int k = 0; k < _ctx.Length("ListDependentQuotas.Quotas["+ i +"].Dimensions["+ j +"].DependentDimension.Length"); k++) {
 						dimensionsItem_dependentDimension.Add(_ctx.StringValue("ListDependentQuotas.Quotas["+ i +"].Dimensions["+ j +"].DependentDimension["+ k +"]"));
 					}
 					dimensionsItem.DependentDimension = dimensionsItem_dependentDimension;
+
+					List<string> dimensionsItem_dimensionValues = new List<string>();
+					for (int k = 0; k < _ctx.Length("ListDependentQuotas.Quotas["+ i +"].Dimensions["+ j +"].DimensionValues.Length"); k++) {
+						dimensionsItem_dimensionValues.Add(_ctx.StringValue("ListDependentQuotas.Quotas["+ i +"].Dimensions["+ j +"].DimensionValues["+ k +"]"));
+					}
+					dimensionsItem.DimensionValues = dimensionsItem_dimensionValues;
 
 					quotasItem_dimensions.Add(dimensionsItem);
 				}

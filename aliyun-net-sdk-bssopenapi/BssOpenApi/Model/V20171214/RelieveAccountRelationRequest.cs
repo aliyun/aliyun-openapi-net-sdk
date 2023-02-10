@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.BssOpenApi;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
     public class RelieveAccountRelationRequest : RpcAcsRequest<RelieveAccountRelationResponse>
     {
         public RelieveAccountRelationRequest()
-            : base("BssOpenApi", "2017-12-14", "RelieveAccountRelation")
+            : base("BssOpenApi", "2017-12-14", "RelieveAccountRelation", "bssopenapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -51,6 +51,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private long? relationId;
 
+		[JsonProperty(PropertyName = "RelationType")]
 		public string RelationType
 		{
 			get
@@ -64,6 +65,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "ParentUserId")]
 		public long? ParentUserId
 		{
 			get
@@ -77,6 +79,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "ChildUserId")]
 		public long? ChildUserId
 		{
 			get
@@ -90,6 +93,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -103,6 +107,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RelationId")]
 		public long? RelationId
 		{
 			get

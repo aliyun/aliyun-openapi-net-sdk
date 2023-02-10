@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.OutboundBot;
 using Aliyun.Acs.OutboundBot.Transform;
 using Aliyun.Acs.OutboundBot.Transform.V20191226;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
     public class CreateScriptRequest : RpcAcsRequest<CreateScriptResponse>
     {
         public CreateScriptRequest()
-            : base("OutboundBot", "2019-12-26", "CreateScript", "outboundbot", "openAPI")
+            : base("OutboundBot", "2019-12-26", "CreateScript")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -52,7 +53,7 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string asrConfig;
 
-		private string miniPlaybackConfigListJsonString;
+		private bool? emotionEnable;
 
 		private bool? newBargeInEnable;
 
@@ -146,16 +147,16 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string MiniPlaybackConfigListJsonString
+		public bool? EmotionEnable
 		{
 			get
 			{
-				return miniPlaybackConfigListJsonString;
+				return emotionEnable;
 			}
 			set	
 			{
-				miniPlaybackConfigListJsonString = value;
-				DictionaryUtil.Add(QueryParameters, "MiniPlaybackConfigListJsonString", value);
+				emotionEnable = value;
+				DictionaryUtil.Add(QueryParameters, "EmotionEnable", value.ToString());
 			}
 		}
 

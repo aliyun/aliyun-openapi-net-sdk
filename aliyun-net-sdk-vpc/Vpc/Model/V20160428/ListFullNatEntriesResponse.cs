@@ -150,6 +150,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string fullNatEntryStatus;
 
+			private string fullNatTableId;
+
 			public string NatIp
 			{
 				get
@@ -291,6 +293,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					fullNatEntryStatus = value;
+				}
+			}
+
+			public string FullNatTableId
+			{
+				get
+				{
+					return fullNatTableId;
+				}
+				set	
+				{
+					fullNatTableId = value;
 				}
 			}
 		}

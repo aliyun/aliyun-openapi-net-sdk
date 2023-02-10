@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
@@ -84,55 +84,19 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 		public class ListRoles_Role
 		{
 
-			private string roleId;
-
-			private string roleName;
-
-			private string arn;
-
 			private string description;
-
-			private string createDate;
 
 			private string updateDate;
 
 			private long? maxSessionDuration;
 
-			public string RoleId
-			{
-				get
-				{
-					return roleId;
-				}
-				set	
-				{
-					roleId = value;
-				}
-			}
+			private string roleName;
 
-			public string RoleName
-			{
-				get
-				{
-					return roleName;
-				}
-				set	
-				{
-					roleName = value;
-				}
-			}
+			private string createDate;
 
-			public string Arn
-			{
-				get
-				{
-					return arn;
-				}
-				set	
-				{
-					arn = value;
-				}
-			}
+			private string roleId;
+
+			private string arn;
 
 			public string Description
 			{
@@ -143,18 +107,6 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				set	
 				{
 					description = value;
-				}
-			}
-
-			public string CreateDate
-			{
-				get
-				{
-					return createDate;
-				}
-				set	
-				{
-					createDate = value;
 				}
 			}
 
@@ -179,6 +131,54 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				set	
 				{
 					maxSessionDuration = value;
+				}
+			}
+
+			public string RoleName
+			{
+				get
+				{
+					return roleName;
+				}
+				set	
+				{
+					roleName = value;
+				}
+			}
+
+			public string CreateDate
+			{
+				get
+				{
+					return createDate;
+				}
+				set	
+				{
+					createDate = value;
+				}
+			}
+
+			public string RoleId
+			{
+				get
+				{
+					return roleId;
+				}
+				set	
+				{
+					roleId = value;
+				}
+			}
+
+			public string Arn
+			{
+				get
+				{
+					return arn;
+				}
+				set	
+				{
+					arn = value;
 				}
 			}
 		}
