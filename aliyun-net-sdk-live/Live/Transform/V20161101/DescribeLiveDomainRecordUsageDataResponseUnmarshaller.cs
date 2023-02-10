@@ -31,6 +31,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveDomainRecordUsageDataResponse describeLiveDomainRecordUsageDataResponse = new DescribeLiveDomainRecordUsageDataResponse();
 
 			describeLiveDomainRecordUsageDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveDomainRecordUsageDataResponse.EndTime = _ctx.StringValue("DescribeLiveDomainRecordUsageData.EndTime");
+			describeLiveDomainRecordUsageDataResponse.StartTime = _ctx.StringValue("DescribeLiveDomainRecordUsageData.StartTime");
 			describeLiveDomainRecordUsageDataResponse.RequestId = _ctx.StringValue("DescribeLiveDomainRecordUsageData.RequestId");
 
 			List<DescribeLiveDomainRecordUsageDataResponse.DescribeLiveDomainRecordUsageData_DataModule> describeLiveDomainRecordUsageDataResponse_recordUsageData = new List<DescribeLiveDomainRecordUsageDataResponse.DescribeLiveDomainRecordUsageData_DataModule>();

@@ -58,6 +58,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private int? transparency;
 
+		private string domain;
+
 		private string name;
 
 		private string offsetCorner;
@@ -178,6 +180,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				transparency = value;
 				DictionaryUtil.Add(QueryParameters, "Transparency", value.ToString());
+			}
+		}
+
+		public string Domain
+		{
+			get
+			{
+				return domain;
+			}
+			set	
+			{
+				domain = value;
+				DictionaryUtil.Add(QueryParameters, "Domain", value);
 			}
 		}
 

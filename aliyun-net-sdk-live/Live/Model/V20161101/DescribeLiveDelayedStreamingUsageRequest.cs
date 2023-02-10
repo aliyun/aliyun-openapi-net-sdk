@@ -28,10 +28,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DescribeLiveDomainRecordUsageDataRequest : RpcAcsRequest<DescribeLiveDomainRecordUsageDataResponse>
+    public class DescribeLiveDelayedStreamingUsageRequest : RpcAcsRequest<DescribeLiveDelayedStreamingUsageResponse>
     {
-        public DescribeLiveDomainRecordUsageDataRequest()
-            : base("live", "2016-11-01", "DescribeLiveDomainRecordUsageData", "live", "openAPI")
+        public DescribeLiveDelayedStreamingUsageRequest()
+            : base("live", "2016-11-01", "DescribeLiveDelayedStreamingUsage", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,6 +43,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string startTime;
 
+		private string streamName;
+
 		private string splitBy;
 
 		private string domainName;
@@ -51,7 +53,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private long? ownerId;
 
-		private string interval;
+		private string region;
 
 		[JsonProperty(PropertyName = "StartTime")]
 		public string StartTime
@@ -64,6 +66,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "StreamName")]
+		public string StreamName
+		{
+			get
+			{
+				return streamName;
+			}
+			set	
+			{
+				streamName = value;
+				DictionaryUtil.Add(QueryParameters, "StreamName", value);
 			}
 		}
 
@@ -123,23 +139,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "Interval")]
-		public string Interval
+		[JsonProperty(PropertyName = "Region")]
+		public string Region
 		{
 			get
 			{
-				return interval;
+				return region;
 			}
 			set	
 			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value);
+				region = value;
+				DictionaryUtil.Add(QueryParameters, "Region", value);
 			}
 		}
 
-        public override DescribeLiveDomainRecordUsageDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeLiveDelayedStreamingUsageResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeLiveDomainRecordUsageDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeLiveDelayedStreamingUsageResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

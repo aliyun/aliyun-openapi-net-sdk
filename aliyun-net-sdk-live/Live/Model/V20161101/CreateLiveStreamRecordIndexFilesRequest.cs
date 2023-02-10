@@ -50,6 +50,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string securityToken;
 
+		private bool? endTimeIncluded;
+
 		private string streamName;
 
 		private string ossBucket;
@@ -122,6 +124,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public bool? EndTimeIncluded
+		{
+			get
+			{
+				return endTimeIncluded;
+			}
+			set	
+			{
+				endTimeIncluded = value;
+				DictionaryUtil.Add(QueryParameters, "EndTimeIncluded", value.ToString());
 			}
 		}
 

@@ -25,9 +25,24 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveStreamWatermarkRulesResponse : AcsResponse
 	{
 
+		private int? total;
+
 		private string requestId;
 
 		private List<DescribeLiveStreamWatermarkRules_RuleInfo> ruleInfoList;
+
+		[JsonProperty(PropertyName = "Total")]
+		public int? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
+			}
+		}
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId

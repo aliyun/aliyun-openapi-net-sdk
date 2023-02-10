@@ -28,10 +28,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DescribeLiveStreamWatermarkRulesRequest : RpcAcsRequest<DescribeLiveStreamWatermarkRulesResponse>
+    public class SetLiveMpuTaskSeiRequest : RpcAcsRequest<SetLiveMpuTaskSeiResponse>
     {
-        public DescribeLiveStreamWatermarkRulesRequest()
-            : base("live", "2016-11-01", "DescribeLiveStreamWatermarkRules", "live", "openAPI")
+        public SetLiveMpuTaskSeiRequest()
+            : base("live", "2016-11-01", "SetLiveMpuTaskSei", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,73 +41,57 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private int? pageNumber;
+		private string customSei;
 
-		private int? pageSize;
+		private string appId;
 
-		private long? ownerId;
+		private string taskId;
 
-		private string domain;
-
-		[JsonProperty(PropertyName = "PageNumber")]
-		public int? PageNumber
+		[JsonProperty(PropertyName = "CustomSei")]
+		public string CustomSei
 		{
 			get
 			{
-				return pageNumber;
+				return customSei;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				customSei = value;
+				DictionaryUtil.Add(QueryParameters, "CustomSei", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "PageSize")]
-		public int? PageSize
+		[JsonProperty(PropertyName = "AppId")]
+		public string AppId
 		{
 			get
 			{
-				return pageSize;
+				return appId;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				appId = value;
+				DictionaryUtil.Add(QueryParameters, "AppId", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "OwnerId")]
-		public long? OwnerId
+		[JsonProperty(PropertyName = "TaskId")]
+		public string TaskId
 		{
 			get
 			{
-				return ownerId;
+				return taskId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				taskId = value;
+				DictionaryUtil.Add(QueryParameters, "TaskId", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "Domain")]
-		public string Domain
-		{
-			get
-			{
-				return domain;
-			}
-			set	
-			{
-				domain = value;
-				DictionaryUtil.Add(QueryParameters, "Domain", value);
-			}
-		}
-
-        public override DescribeLiveStreamWatermarkRulesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SetLiveMpuTaskSeiResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeLiveStreamWatermarkRulesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetLiveMpuTaskSeiResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -31,6 +31,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveStreamWatermarksResponse describeLiveStreamWatermarksResponse = new DescribeLiveStreamWatermarksResponse();
 
 			describeLiveStreamWatermarksResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveStreamWatermarksResponse.Total = _ctx.IntegerValue("DescribeLiveStreamWatermarks.Total");
 			describeLiveStreamWatermarksResponse.RequestId = _ctx.StringValue("DescribeLiveStreamWatermarks.RequestId");
 
 			List<DescribeLiveStreamWatermarksResponse.DescribeLiveStreamWatermarks_Watermark> describeLiveStreamWatermarksResponse_watermarkList = new List<DescribeLiveStreamWatermarksResponse.DescribeLiveStreamWatermarks_Watermark>();
@@ -46,6 +47,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				watermark.Transparency = _ctx.IntegerValue("DescribeLiveStreamWatermarks.WatermarkList["+ i +"].Transparency");
 				watermark.Description = _ctx.StringValue("DescribeLiveStreamWatermarks.WatermarkList["+ i +"].Description");
 				watermark.OffsetCorner = _ctx.StringValue("DescribeLiveStreamWatermarks.WatermarkList["+ i +"].OffsetCorner");
+				watermark.RuleCount = _ctx.IntegerValue("DescribeLiveStreamWatermarks.WatermarkList["+ i +"].RuleCount");
 				watermark.Name = _ctx.StringValue("DescribeLiveStreamWatermarks.WatermarkList["+ i +"].Name");
 				watermark.TemplateId = _ctx.StringValue("DescribeLiveStreamWatermarks.WatermarkList["+ i +"].TemplateId");
 

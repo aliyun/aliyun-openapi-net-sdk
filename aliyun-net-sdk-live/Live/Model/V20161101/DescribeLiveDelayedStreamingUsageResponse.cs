@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class DescribeLiveDomainRecordUsageDataResponse : AcsResponse
+	public class DescribeLiveDelayedStreamingUsageResponse : AcsResponse
 	{
 
 		private string endTime;
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string requestId;
 
-		private List<DescribeLiveDomainRecordUsageData_DataModule> recordUsageData;
+		private List<DescribeLiveDelayedStreamingUsage_DelayDataItem> delayData;
 
 		[JsonProperty(PropertyName = "EndTime")]
 		public string EndTime
@@ -72,44 +72,31 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "RecordUsageData")]
-		public List<DescribeLiveDomainRecordUsageData_DataModule> RecordUsageData
+		[JsonProperty(PropertyName = "DelayData")]
+		public List<DescribeLiveDelayedStreamingUsage_DelayDataItem> DelayData
 		{
 			get
 			{
-				return recordUsageData;
+				return delayData;
 			}
 			set	
 			{
-				recordUsageData = value;
+				delayData = value;
 			}
 		}
 
-		public class DescribeLiveDomainRecordUsageData_DataModule
+		public class DescribeLiveDelayedStreamingUsage_DelayDataItem
 		{
-
-			private string type;
 
 			private long? duration;
 
-			private string domain;
-
 			private string timeStamp;
 
-			private long? count;
+			private string streamName;
 
-			[JsonProperty(PropertyName = "Type")]
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
+			private string domainName;
+
+			private string region;
 
 			[JsonProperty(PropertyName = "Duration")]
 			public long? Duration
@@ -121,19 +108,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					duration = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Domain")]
-			public string Domain
-			{
-				get
-				{
-					return domain;
-				}
-				set	
-				{
-					domain = value;
 				}
 			}
 
@@ -150,16 +124,42 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "Count")]
-			public long? Count
+			[JsonProperty(PropertyName = "StreamName")]
+			public string StreamName
 			{
 				get
 				{
-					return count;
+					return streamName;
 				}
 				set	
 				{
-					count = value;
+					streamName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Region")]
+			public string Region
+			{
+				get
+				{
+					return region;
+				}
+				set	
+				{
+					region = value;
 				}
 			}
 		}
