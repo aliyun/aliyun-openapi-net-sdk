@@ -50,6 +50,7 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 				item.SubscribeLanguage = _ctx.StringValue("QueryBillToOSSSubscription.Data.Items["+ i +"].SubscribeLanguage");
 				item.MultAccountRelSubscribe = _ctx.StringValue("QueryBillToOSSSubscription.Data.Items["+ i +"].MultAccountRelSubscribe");
 				item.BucketPath = _ctx.StringValue("QueryBillToOSSSubscription.Data.Items["+ i +"].BucketPath");
+				item.RowLimitPerFile = _ctx.IntegerValue("QueryBillToOSSSubscription.Data.Items["+ i +"].RowLimitPerFile");
 
 				data_items.Add(item);
 			}

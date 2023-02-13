@@ -157,6 +157,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string bucketPath;
 
+				private int? rowLimitPerFile;
+
 				public long? BucketOwnerId
 				{
 					get
@@ -238,6 +240,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						bucketPath = value;
+					}
+				}
+
+				public int? RowLimitPerFile
+				{
+					get
+					{
+						return rowLimitPerFile;
+					}
+					set	
+					{
+						rowLimitPerFile = value;
 					}
 				}
 			}
