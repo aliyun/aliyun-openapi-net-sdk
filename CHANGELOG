@@ -1,3 +1,6 @@
+2023-02-14 Version: 1.0.2
+- Update ScreenChestCT and DetectLungNodule.
+
 2023-02-13 Version: 1.7.12
 - SubscribeBillToOSS add param: RowLimitPerFile. 
 

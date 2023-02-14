@@ -202,6 +202,14 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 
 					private float? x;
 
+					private string recistSOPInstanceUID;
+
+					private float? risk;
+
+					private List<string> majorAxis;
+
+					private List<string> minorAxis;
+
 					public float? Z
 					{
 						get
@@ -367,6 +375,54 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 						set	
 						{
 							x = value;
+						}
+					}
+
+					public string RecistSOPInstanceUID
+					{
+						get
+						{
+							return recistSOPInstanceUID;
+						}
+						set	
+						{
+							recistSOPInstanceUID = value;
+						}
+					}
+
+					public float? Risk
+					{
+						get
+						{
+							return risk;
+						}
+						set	
+						{
+							risk = value;
+						}
+					}
+
+					public List<string> MajorAxis
+					{
+						get
+						{
+							return majorAxis;
+						}
+						set	
+						{
+							majorAxis = value;
+						}
+					}
+
+					public List<string> MinorAxis
+					{
+						get
+						{
+							return minorAxis;
+						}
+						set	
+						{
+							minorAxis = value;
 						}
 					}
 				}
