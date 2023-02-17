@@ -44,9 +44,7 @@ namespace Aliyun.Acs.Mns_open.Transform.V20220119
 			data.MessageRetentionPeriod = _ctx.LongValue("GetTopicAttributes.Data.MessageRetentionPeriod");
 			data.CreateTime = _ctx.LongValue("GetTopicAttributes.Data.CreateTime");
 			data.LastModifyTime = _ctx.LongValue("GetTopicAttributes.Data.LastModifyTime");
-			data.TopicUrl = _ctx.StringValue("GetTopicAttributes.Data.TopicUrl");
 			data.LoggingEnabled = _ctx.BooleanValue("GetTopicAttributes.Data.LoggingEnabled");
-			data.TopicInnerUrl = _ctx.StringValue("GetTopicAttributes.Data.TopicInnerUrl");
 			getTopicAttributesResponse.Data = data;
         
 			return getTopicAttributesResponse;

@@ -51,8 +51,6 @@ namespace Aliyun.Acs.Mns_open.Transform.V20220119
 				pageDataItem.MessageRetentionPeriod = _ctx.LongValue("ListTopic.Data.PageData["+ i +"].MessageRetentionPeriod");
 				pageDataItem.CreateTime = _ctx.LongValue("ListTopic.Data.PageData["+ i +"].CreateTime");
 				pageDataItem.LastModifyTime = _ctx.LongValue("ListTopic.Data.PageData["+ i +"].LastModifyTime");
-				pageDataItem.TopicUrl = _ctx.StringValue("ListTopic.Data.PageData["+ i +"].TopicUrl");
-				pageDataItem.TopicInnerUrl = _ctx.StringValue("ListTopic.Data.PageData["+ i +"].TopicInnerUrl");
 				pageDataItem.LoggingEnabled = _ctx.BooleanValue("ListTopic.Data.PageData["+ i +"].LoggingEnabled");
 
 				data_pageData.Add(pageDataItem);

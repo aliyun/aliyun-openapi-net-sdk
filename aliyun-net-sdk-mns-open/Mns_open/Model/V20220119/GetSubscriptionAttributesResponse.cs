@@ -130,8 +130,6 @@ namespace Aliyun.Acs.Mns_open.Model.V20220119
 
 			private string notifyContentFormat;
 
-			private string subscriptionURL;
-
 			public string SubscriptionName
 			{
 				get
@@ -237,18 +235,6 @@ namespace Aliyun.Acs.Mns_open.Model.V20220119
 				set	
 				{
 					notifyContentFormat = value;
-				}
-			}
-
-			public string SubscriptionURL
-			{
-				get
-				{
-					return subscriptionURL;
-				}
-				set	
-				{
-					subscriptionURL = value;
 				}
 			}
 		}

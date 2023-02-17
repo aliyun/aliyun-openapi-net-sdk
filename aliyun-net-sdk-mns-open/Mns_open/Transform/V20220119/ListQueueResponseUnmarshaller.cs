@@ -47,8 +47,6 @@ namespace Aliyun.Acs.Mns_open.Transform.V20220119
 			List<ListQueueResponse.ListQueue_Data.ListQueue_PageDataItem> data_pageData = new List<ListQueueResponse.ListQueue_Data.ListQueue_PageDataItem>();
 			for (int i = 0; i < _ctx.Length("ListQueue.Data.PageData.Length"); i++) {
 				ListQueueResponse.ListQueue_Data.ListQueue_PageDataItem pageDataItem = new ListQueueResponse.ListQueue_Data.ListQueue_PageDataItem();
-				pageDataItem.QueueUrl = _ctx.StringValue("ListQueue.Data.PageData["+ i +"].QueueUrl");
-				pageDataItem.QueueInternalUrl = _ctx.StringValue("ListQueue.Data.PageData["+ i +"].QueueInternalUrl");
 				pageDataItem.QueueName = _ctx.StringValue("ListQueue.Data.PageData["+ i +"].QueueName");
 				pageDataItem.CreateTime = _ctx.LongValue("ListQueue.Data.PageData["+ i +"].CreateTime");
 				pageDataItem.LastModifyTime = _ctx.LongValue("ListQueue.Data.PageData["+ i +"].LastModifyTime");
