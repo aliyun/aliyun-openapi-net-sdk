@@ -138,6 +138,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string paymentType;
 
+			private string dBInstanceOrderStatus;
+
 			private List<DescribeDBInstanceAttribute_ReplicaSet> replicaSets;
 
 			private List<DescribeDBInstanceAttribute_Tag> tags;
@@ -639,6 +641,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					paymentType = value;
+				}
+			}
+
+			public string DBInstanceOrderStatus
+			{
+				get
+				{
+					return dBInstanceOrderStatus;
+				}
+				set	
+				{
+					dBInstanceOrderStatus = value;
 				}
 			}
 
