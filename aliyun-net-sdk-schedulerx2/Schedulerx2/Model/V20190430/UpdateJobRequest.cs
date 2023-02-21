@@ -85,6 +85,8 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private int? pageSize;
 
+		private string taskDispatchMode;
+
 		private string calendar;
 
 		private bool? failEnable;
@@ -398,6 +400,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				pageSize = value;
 				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string TaskDispatchMode
+		{
+			get
+			{
+				return taskDispatchMode;
+			}
+			set	
+			{
+				taskDispatchMode = value;
+				DictionaryUtil.Add(BodyParameters, "TaskDispatchMode", value);
 			}
 		}
 

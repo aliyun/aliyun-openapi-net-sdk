@@ -57,9 +57,13 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private string groupId;
 
+		private int? appType;
+
 		private string monitorConfigJson;
 
 		private string _namespace;
+
+		private bool? enableLog;
 
 		private string appKey;
 
@@ -167,6 +171,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
+		public int? AppType
+		{
+			get
+			{
+				return appType;
+			}
+			set	
+			{
+				appType = value;
+				DictionaryUtil.Add(QueryParameters, "AppType", value.ToString());
+			}
+		}
+
 		public string MonitorConfigJson
 		{
 			get
@@ -190,6 +207,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				_namespace = value;
 				DictionaryUtil.Add(QueryParameters, "Namespace", value);
+			}
+		}
+
+		public bool? EnableLog
+		{
+			get
+			{
+				return enableLog;
+			}
+			set	
+			{
+				enableLog = value;
+				DictionaryUtil.Add(QueryParameters, "EnableLog", value.ToString());
 			}
 		}
 
