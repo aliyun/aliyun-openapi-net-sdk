@@ -1,3 +1,6 @@
+2023-02-21 Version: 1.0.0
+- Supported GetQccSearchCertification and GetQccCertificationDetailById Api For Zhimaxinyong.
+
 2023-02-21 Version: 0.0.6
 - Update EvaluateVideoQuality.
 
