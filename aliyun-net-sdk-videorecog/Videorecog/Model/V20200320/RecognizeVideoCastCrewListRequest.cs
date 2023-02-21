@@ -43,8 +43,6 @@ namespace Aliyun.Acs.videorecog.Model.V20200320
 
 		private List<Params> _params = new List<Params>(){ };
 
-		private string registerUrl;
-
 		private string videoUrl;
 
 		[JsonProperty(PropertyName = "Params")]
@@ -69,20 +67,6 @@ namespace Aliyun.Acs.videorecog.Model.V20200320
 						}
 					}
 				}
-			}
-		}
-
-		[JsonProperty(PropertyName = "RegisterUrl")]
-		public string RegisterUrl
-		{
-			get
-			{
-				return registerUrl;
-			}
-			set	
-			{
-				registerUrl = value;
-				DictionaryUtil.Add(BodyParameters, "RegisterUrl", value);
 			}
 		}
 

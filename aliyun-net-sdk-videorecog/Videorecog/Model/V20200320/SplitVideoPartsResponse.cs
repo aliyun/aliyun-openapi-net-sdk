@@ -90,6 +90,8 @@ namespace Aliyun.Acs.videorecog.Model.V20200320
 
 			private List<SplitVideoParts_ElementsItem> elements;
 
+			private List<SplitVideoParts_SplitVideoPartResultsItem> splitVideoPartResults;
+
 			[JsonProperty(PropertyName = "Elements")]
 			public List<SplitVideoParts_ElementsItem> Elements
 			{
@@ -100,6 +102,19 @@ namespace Aliyun.Acs.videorecog.Model.V20200320
 				set	
 				{
 					elements = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SplitVideoPartResults")]
+			public List<SplitVideoParts_SplitVideoPartResultsItem> SplitVideoPartResults
+			{
+				get
+				{
+					return splitVideoPartResults;
+				}
+				set	
+				{
+					splitVideoPartResults = value;
 				}
 			}
 
@@ -148,6 +163,85 @@ namespace Aliyun.Acs.videorecog.Model.V20200320
 					set	
 					{
 						index = value;
+					}
+				}
+			}
+
+			public class SplitVideoParts_SplitVideoPartResultsItem
+			{
+
+				private float? beginTime;
+
+				private float? endTime;
+
+				private string theme;
+
+				private string type;
+
+				private string by;
+
+				[JsonProperty(PropertyName = "BeginTime")]
+				public float? BeginTime
+				{
+					get
+					{
+						return beginTime;
+					}
+					set	
+					{
+						beginTime = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "EndTime")]
+				public float? EndTime
+				{
+					get
+					{
+						return endTime;
+					}
+					set	
+					{
+						endTime = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Theme")]
+				public string Theme
+				{
+					get
+					{
+						return theme;
+					}
+					set	
+					{
+						theme = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Type")]
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "By")]
+				public string By
+				{
+					get
+					{
+						return by;
+					}
+					set	
+					{
+						by = value;
 					}
 				}
 			}

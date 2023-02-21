@@ -41,7 +41,23 @@ namespace Aliyun.Acs.videorecog.Model.V20200320
 			Method = MethodType.POST;
         }
 
+		private string template;
+
 		private string videoUrl;
+
+		[JsonProperty(PropertyName = "Template")]
+		public string Template
+		{
+			get
+			{
+				return template;
+			}
+			set	
+			{
+				template = value;
+				DictionaryUtil.Add(BodyParameters, "Template", value);
+			}
+		}
 
 		[JsonProperty(PropertyName = "VideoUrl")]
 		public string VideoUrl
