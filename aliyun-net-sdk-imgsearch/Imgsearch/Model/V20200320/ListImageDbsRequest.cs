@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.imgsearch;
 using Aliyun.Acs.imgsearch.Transform;
 using Aliyun.Acs.imgsearch.Transform.V20200320;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.imgsearch.Model.V20200320
     public class ListImageDbsRequest : RpcAcsRequest<ListImageDbsResponse>
     {
         public ListImageDbsRequest()
-            : base("imgsearch", "2020-03-20", "ListImageDbs", "imgsearch", "openAPI")
+            : base("imgsearch", "2020-03-20", "ListImageDbs")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

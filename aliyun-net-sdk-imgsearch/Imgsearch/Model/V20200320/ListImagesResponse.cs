@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.imgsearch.Model.V20200320
@@ -101,15 +101,51 @@ namespace Aliyun.Acs.imgsearch.Model.V20200320
 			public class ListImages_ImageListItem
 			{
 
+				private string entityId;
+
+				private long? createdAt;
+
+				private long? updatedAt;
+
 				private string dataId;
 
 				private string extraData;
 
-				private string entityId;
+				public string EntityId
+				{
+					get
+					{
+						return entityId;
+					}
+					set	
+					{
+						entityId = value;
+					}
+				}
 
-				private long? updatedAt;
+				public long? CreatedAt
+				{
+					get
+					{
+						return createdAt;
+					}
+					set	
+					{
+						createdAt = value;
+					}
+				}
 
-				private long? createdAt;
+				public long? UpdatedAt
+				{
+					get
+					{
+						return updatedAt;
+					}
+					set	
+					{
+						updatedAt = value;
+					}
+				}
 
 				public string DataId
 				{
@@ -132,42 +168,6 @@ namespace Aliyun.Acs.imgsearch.Model.V20200320
 					set	
 					{
 						extraData = value;
-					}
-				}
-
-				public string EntityId
-				{
-					get
-					{
-						return entityId;
-					}
-					set	
-					{
-						entityId = value;
-					}
-				}
-
-				public long? UpdatedAt
-				{
-					get
-					{
-						return updatedAt;
-					}
-					set	
-					{
-						updatedAt = value;
-					}
-				}
-
-				public long? CreatedAt
-				{
-					get
-					{
-						return createdAt;
-					}
-					set	
-					{
-						createdAt = value;
 					}
 				}
 			}

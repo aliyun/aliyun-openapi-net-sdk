@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.imgsearch.Model.V20200320
@@ -73,15 +73,51 @@ namespace Aliyun.Acs.imgsearch.Model.V20200320
 			public class SearchImage_MatchListItem
 			{
 
+				private string imageUrl;
+
+				private string entityId;
+
+				private float? score;
+
 				private string dataId;
 
 				private string extraData;
 
-				private string entityId;
+				public string ImageUrl
+				{
+					get
+					{
+						return imageUrl;
+					}
+					set	
+					{
+						imageUrl = value;
+					}
+				}
 
-				private string imageUrl;
+				public string EntityId
+				{
+					get
+					{
+						return entityId;
+					}
+					set	
+					{
+						entityId = value;
+					}
+				}
 
-				private float? score;
+				public float? Score
+				{
+					get
+					{
+						return score;
+					}
+					set	
+					{
+						score = value;
+					}
+				}
 
 				public string DataId
 				{
@@ -104,42 +140,6 @@ namespace Aliyun.Acs.imgsearch.Model.V20200320
 					set	
 					{
 						extraData = value;
-					}
-				}
-
-				public string EntityId
-				{
-					get
-					{
-						return entityId;
-					}
-					set	
-					{
-						entityId = value;
-					}
-				}
-
-				public string ImageUrl
-				{
-					get
-					{
-						return imageUrl;
-					}
-					set	
-					{
-						imageUrl = value;
-					}
-				}
-
-				public float? Score
-				{
-					get
-					{
-						return score;
-					}
-					set	
-					{
-						score = value;
 					}
 				}
 			}

@@ -26,15 +26,15 @@ namespace Aliyun.Acs.imgsearch.Transform.V20200320
 {
     public class AddImageResponseUnmarshaller
     {
-        public static AddImageResponse Unmarshall(UnmarshallerContext context)
+        public static AddImageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddImageResponse addImageResponse = new AddImageResponse();
 
-			addImageResponse.HttpResponse = context.HttpResponse;
-			addImageResponse.RequestId = context.StringValue("AddImage.RequestId");
+			addImageResponse.HttpResponse = _ctx.HttpResponse;
+			addImageResponse.RequestId = _ctx.StringValue("AddImage.RequestId");
 
 			AddImageResponse.AddImage_Data data = new AddImageResponse.AddImage_Data();
-			data.DataId = context.StringValue("AddImage.Data.DataId");
+			data.DataId = _ctx.StringValue("AddImage.Data.DataId");
 			addImageResponse.Data = data;
         
 			return addImageResponse;
