@@ -54,6 +54,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private List<string> tags = new List<string>(){ };
 
+		private string status;
+
 		public string EndTime
 		{
 			get
@@ -150,6 +152,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
 					}
 				}
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
 			}
 		}
 
