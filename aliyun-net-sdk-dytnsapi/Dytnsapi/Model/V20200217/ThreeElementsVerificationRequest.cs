@@ -45,8 +45,6 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 
 		private string certCode;
 
-		private string routeName;
-
 		private string mask;
 
 		private string resourceOwnerAccount;
@@ -82,19 +80,6 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 			{
 				certCode = value;
 				DictionaryUtil.Add(QueryParameters, "CertCode", value);
-			}
-		}
-
-		public string RouteName
-		{
-			get
-			{
-				return routeName;
-			}
-			set	
-			{
-				routeName = value;
-				DictionaryUtil.Add(QueryParameters, "RouteName", value);
 			}
 		}
 
