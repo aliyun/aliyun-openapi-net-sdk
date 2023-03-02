@@ -37,62 +37,11 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			createDownloadDataJobResponse.ErrorMessage = _ctx.StringValue("CreateDownloadDataJob.ErrorMessage");
 
 			CreateDownloadDataJobResponse.CreateDownloadDataJob_Data data = new CreateDownloadDataJobResponse.CreateDownloadDataJob_Data();
-			data.PreviewSize = _ctx.IntegerValue("CreateDownloadDataJob.Data.PreviewSize");
 			data.CsvUrl = _ctx.StringValue("CreateDownloadDataJob.Data.CsvUrl");
-			data.DatasetId = _ctx.StringValue("CreateDownloadDataJob.Data.DatasetId");
 			data.LongJobId = _ctx.StringValue("CreateDownloadDataJob.Data.LongJobId");
 			data.Status = _ctx.IntegerValue("CreateDownloadDataJob.Data.Status");
-			data.BeginTime = _ctx.LongValue("CreateDownloadDataJob.Data.BeginTime");
-			data.EndTime = _ctx.LongValue("CreateDownloadDataJob.Data.EndTime");
-			data.ResultDataInString = _ctx.StringValue("CreateDownloadDataJob.Data.ResultDataInString");
 			data.AsyncExecute = _ctx.BooleanValue("CreateDownloadDataJob.Data.AsyncExecute");
-			data.TotalCount = _ctx.LongValue("CreateDownloadDataJob.Data.TotalCount");
-			data.PageNo = _ctx.IntegerValue("CreateDownloadDataJob.Data.PageNo");
-			data.PageSize = _ctx.IntegerValue("CreateDownloadDataJob.Data.PageSize");
 			data.CsvFileName = _ctx.StringValue("CreateDownloadDataJob.Data.CsvFileName");
-
-			CreateDownloadDataJobResponse.CreateDownloadDataJob_Data.CreateDownloadDataJob_QuerySetting querySetting = new CreateDownloadDataJobResponse.CreateDownloadDataJob_Data.CreateDownloadDataJob_QuerySetting();
-
-			List<CreateDownloadDataJobResponse.CreateDownloadDataJob_Data.CreateDownloadDataJob_QuerySetting.CreateDownloadDataJob_SelectedHeadersItem> querySetting_selectedHeaders = new List<CreateDownloadDataJobResponse.CreateDownloadDataJob_Data.CreateDownloadDataJob_QuerySetting.CreateDownloadDataJob_SelectedHeadersItem>();
-			for (int i = 0; i < _ctx.Length("CreateDownloadDataJob.Data.QuerySetting.SelectedHeaders.Length"); i++) {
-				CreateDownloadDataJobResponse.CreateDownloadDataJob_Data.CreateDownloadDataJob_QuerySetting.CreateDownloadDataJob_SelectedHeadersItem selectedHeadersItem = new CreateDownloadDataJobResponse.CreateDownloadDataJob_Data.CreateDownloadDataJob_QuerySetting.CreateDownloadDataJob_SelectedHeadersItem();
-				selectedHeadersItem.FieldName = _ctx.StringValue("CreateDownloadDataJob.Data.QuerySetting.SelectedHeaders["+ i +"].FieldName");
-				selectedHeadersItem.Alias = _ctx.StringValue("CreateDownloadDataJob.Data.QuerySetting.SelectedHeaders["+ i +"].Alias");
-				selectedHeadersItem.FieldType = _ctx.StringValue("CreateDownloadDataJob.Data.QuerySetting.SelectedHeaders["+ i +"].FieldType");
-				selectedHeadersItem.TimeClass = _ctx.StringValue("CreateDownloadDataJob.Data.QuerySetting.SelectedHeaders["+ i +"].TimeClass");
-				selectedHeadersItem.GeoClass = _ctx.StringValue("CreateDownloadDataJob.Data.QuerySetting.SelectedHeaders["+ i +"].GeoClass");
-				selectedHeadersItem.DimDateClass = _ctx.StringValue("CreateDownloadDataJob.Data.QuerySetting.SelectedHeaders["+ i +"].DimDateClass");
-
-				querySetting_selectedHeaders.Add(selectedHeadersItem);
-			}
-			querySetting.SelectedHeaders = querySetting_selectedHeaders;
-
-			List<CreateDownloadDataJobResponse.CreateDownloadDataJob_Data.CreateDownloadDataJob_QuerySetting.CreateDownloadDataJob_AstExprItem> querySetting_astExpr = new List<CreateDownloadDataJobResponse.CreateDownloadDataJob_Data.CreateDownloadDataJob_QuerySetting.CreateDownloadDataJob_AstExprItem>();
-			for (int i = 0; i < _ctx.Length("CreateDownloadDataJob.Data.QuerySetting.AstExpr.Length"); i++) {
-				CreateDownloadDataJobResponse.CreateDownloadDataJob_Data.CreateDownloadDataJob_QuerySetting.CreateDownloadDataJob_AstExprItem astExprItem = new CreateDownloadDataJobResponse.CreateDownloadDataJob_Data.CreateDownloadDataJob_QuerySetting.CreateDownloadDataJob_AstExprItem();
-				astExprItem.Expr = _ctx.StringValue("CreateDownloadDataJob.Data.QuerySetting.AstExpr["+ i +"].Expr");
-				astExprItem.ExprType = _ctx.StringValue("CreateDownloadDataJob.Data.QuerySetting.AstExpr["+ i +"].ExprType");
-
-				querySetting_astExpr.Add(astExprItem);
-			}
-			querySetting.AstExpr = querySetting_astExpr;
-			data.QuerySetting = querySetting;
-
-			List<CreateDownloadDataJobResponse.CreateDownloadDataJob_Data.CreateDownloadDataJob_HeaderItem> data_header = new List<CreateDownloadDataJobResponse.CreateDownloadDataJob_Data.CreateDownloadDataJob_HeaderItem>();
-			for (int i = 0; i < _ctx.Length("CreateDownloadDataJob.Data.Header.Length"); i++) {
-				CreateDownloadDataJobResponse.CreateDownloadDataJob_Data.CreateDownloadDataJob_HeaderItem headerItem = new CreateDownloadDataJobResponse.CreateDownloadDataJob_Data.CreateDownloadDataJob_HeaderItem();
-				headerItem.FieldName = _ctx.StringValue("CreateDownloadDataJob.Data.Header["+ i +"].FieldName");
-				headerItem.Alias = _ctx.StringValue("CreateDownloadDataJob.Data.Header["+ i +"].Alias");
-				headerItem.FieldType = _ctx.StringValue("CreateDownloadDataJob.Data.Header["+ i +"].FieldType");
-				headerItem.TypeClass = _ctx.StringValue("CreateDownloadDataJob.Data.Header["+ i +"].TypeClass");
-				headerItem.TimeClass = _ctx.StringValue("CreateDownloadDataJob.Data.Header["+ i +"].TimeClass");
-				headerItem.GeoClass = _ctx.StringValue("CreateDownloadDataJob.Data.Header["+ i +"].GeoClass");
-				headerItem.DimDateClass = _ctx.StringValue("CreateDownloadDataJob.Data.Header["+ i +"].DimDateClass");
-				headerItem.DataPrecision = _ctx.StringValue("CreateDownloadDataJob.Data.Header["+ i +"].DataPrecision");
-
-				data_header.Add(headerItem);
-			}
-			data.Header = data_header;
 			createDownloadDataJobResponse.Data = data;
         
 			return createDownloadDataJobResponse;

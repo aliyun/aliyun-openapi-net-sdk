@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Iot;
 using Aliyun.Acs.Iot.Transform;
 using Aliyun.Acs.Iot.Transform.V20180120;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class CreateDownloadDataJobRequest : RpcAcsRequest<CreateDownloadDataJobResponse>
     {
         public CreateDownloadDataJobRequest()
-            : base("Iot", "2018-01-20", "CreateDownloadDataJob")
+            : base("Iot", "2018-01-20", "CreateDownloadDataJob", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -46,8 +45,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private string fileConfig;
 
 		private string iotInstanceId;
-
-		private string context;
 
 		private string tableName;
 
@@ -91,19 +88,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(BodyParameters, "IotInstanceId", value);
-			}
-		}
-
-		public string Context
-		{
-			get
-			{
-				return context;
-			}
-			set	
-			{
-				context = value;
-				DictionaryUtil.Add(BodyParameters, "Context", value);
 			}
 		}
 
