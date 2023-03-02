@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sts.Model.V20150401
@@ -86,11 +86,11 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 
 			private string subjectType;
 
+			private string subject;
+
 			private string issuer;
 
 			private string recipient;
-
-			private string subject;
 
 			public string SubjectType
 			{
@@ -101,6 +101,18 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 				set	
 				{
 					subjectType = value;
+				}
+			}
+
+			public string Subject
+			{
+				get
+				{
+					return subject;
+				}
+				set	
+				{
+					subject = value;
 				}
 			}
 
@@ -127,38 +139,14 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 					recipient = value;
 				}
 			}
-
-			public string Subject
-			{
-				get
-				{
-					return subject;
-				}
-				set	
-				{
-					subject = value;
-				}
-			}
 		}
 
 		public class AssumeRoleWithSAML_AssumedRoleUser
 		{
 
-			private string arn;
-
 			private string assumedRoleId;
 
-			public string Arn
-			{
-				get
-				{
-					return arn;
-				}
-				set	
-				{
-					arn = value;
-				}
-			}
+			private string arn;
 
 			public string AssumedRoleId
 			{
@@ -171,6 +159,18 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 					assumedRoleId = value;
 				}
 			}
+
+			public string Arn
+			{
+				get
+				{
+					return arn;
+				}
+				set	
+				{
+					arn = value;
+				}
+			}
 		}
 
 		public class AssumeRoleWithSAML_Credentials
@@ -178,11 +178,11 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 
 			private string securityToken;
 
-			private string accessKeyId;
+			private string expiration;
 
 			private string accessKeySecret;
 
-			private string expiration;
+			private string accessKeyId;
 
 			public string SecurityToken
 			{
@@ -196,15 +196,15 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 				}
 			}
 
-			public string AccessKeyId
+			public string Expiration
 			{
 				get
 				{
-					return accessKeyId;
+					return expiration;
 				}
 				set	
 				{
-					accessKeyId = value;
+					expiration = value;
 				}
 			}
 
@@ -220,15 +220,15 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 				}
 			}
 
-			public string Expiration
+			public string AccessKeyId
 			{
 				get
 				{
-					return expiration;
+					return accessKeyId;
 				}
 				set	
 				{
-					expiration = value;
+					accessKeyId = value;
 				}
 			}
 		}

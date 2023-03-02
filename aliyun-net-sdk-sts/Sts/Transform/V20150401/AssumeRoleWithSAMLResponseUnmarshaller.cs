@@ -35,21 +35,21 @@ namespace Aliyun.Acs.Sts.Transform.V20150401
 
 			AssumeRoleWithSAMLResponse.AssumeRoleWithSAML_SAMLAssertionInfo sAMLAssertionInfo = new AssumeRoleWithSAMLResponse.AssumeRoleWithSAML_SAMLAssertionInfo();
 			sAMLAssertionInfo.SubjectType = _ctx.StringValue("AssumeRoleWithSAML.SAMLAssertionInfo.SubjectType");
+			sAMLAssertionInfo.Subject = _ctx.StringValue("AssumeRoleWithSAML.SAMLAssertionInfo.Subject");
 			sAMLAssertionInfo.Issuer = _ctx.StringValue("AssumeRoleWithSAML.SAMLAssertionInfo.Issuer");
 			sAMLAssertionInfo.Recipient = _ctx.StringValue("AssumeRoleWithSAML.SAMLAssertionInfo.Recipient");
-			sAMLAssertionInfo.Subject = _ctx.StringValue("AssumeRoleWithSAML.SAMLAssertionInfo.Subject");
 			assumeRoleWithSAMLResponse.SAMLAssertionInfo = sAMLAssertionInfo;
 
 			AssumeRoleWithSAMLResponse.AssumeRoleWithSAML_AssumedRoleUser assumedRoleUser = new AssumeRoleWithSAMLResponse.AssumeRoleWithSAML_AssumedRoleUser();
-			assumedRoleUser.Arn = _ctx.StringValue("AssumeRoleWithSAML.AssumedRoleUser.Arn");
 			assumedRoleUser.AssumedRoleId = _ctx.StringValue("AssumeRoleWithSAML.AssumedRoleUser.AssumedRoleId");
+			assumedRoleUser.Arn = _ctx.StringValue("AssumeRoleWithSAML.AssumedRoleUser.Arn");
 			assumeRoleWithSAMLResponse.AssumedRoleUser = assumedRoleUser;
 
 			AssumeRoleWithSAMLResponse.AssumeRoleWithSAML_Credentials credentials = new AssumeRoleWithSAMLResponse.AssumeRoleWithSAML_Credentials();
 			credentials.SecurityToken = _ctx.StringValue("AssumeRoleWithSAML.Credentials.SecurityToken");
-			credentials.AccessKeyId = _ctx.StringValue("AssumeRoleWithSAML.Credentials.AccessKeyId");
-			credentials.AccessKeySecret = _ctx.StringValue("AssumeRoleWithSAML.Credentials.AccessKeySecret");
 			credentials.Expiration = _ctx.StringValue("AssumeRoleWithSAML.Credentials.Expiration");
+			credentials.AccessKeySecret = _ctx.StringValue("AssumeRoleWithSAML.Credentials.AccessKeySecret");
+			credentials.AccessKeyId = _ctx.StringValue("AssumeRoleWithSAML.Credentials.AccessKeyId");
 			assumeRoleWithSAMLResponse.Credentials = credentials;
         
 			return assumeRoleWithSAMLResponse;
