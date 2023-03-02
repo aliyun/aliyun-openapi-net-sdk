@@ -1,3 +1,6 @@
+2023-03-02 Version: 2.16.14
+- Api DescribeVodDomainUsageData add parameter Interval.
+
 2023-03-02 Version: 1.0.0
 - Add new apis.
 - DescribeDatabaseInstances.
