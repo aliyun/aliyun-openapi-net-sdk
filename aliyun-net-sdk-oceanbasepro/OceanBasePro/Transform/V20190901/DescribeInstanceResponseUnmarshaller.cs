@@ -54,12 +54,20 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 			instance.ObRpmVersion = _ctx.StringValue("DescribeInstance.Instance.ObRpmVersion");
 			instance.IsLatestObVersion = _ctx.BooleanValue("DescribeInstance.Instance.IsLatestObVersion");
 			instance.EnableUpgradeLogDisk = _ctx.BooleanValue("DescribeInstance.Instance.EnableUpgradeLogDisk");
+			instance.InstanceRole = _ctx.StringValue("DescribeInstance.Instance.InstanceRole");
+			instance.NodeNum = _ctx.StringValue("DescribeInstance.Instance.NodeNum");
 
 			List<string> instance_availableZones = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeInstance.Instance.AvailableZones.Length"); i++) {
 				instance_availableZones.Add(_ctx.StringValue("DescribeInstance.Instance.AvailableZones["+ i +"]"));
 			}
 			instance.AvailableZones = instance_availableZones;
+
+			List<string> instance_zones = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeInstance.Instance.Zones.Length"); i++) {
+				instance_zones.Add(_ctx.StringValue("DescribeInstance.Instance.Zones["+ i +"]"));
+			}
+			instance.Zones = instance_zones;
 
 			DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_Resource resource = new DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_Resource();
 			resource.UnitCount = _ctx.LongValue("DescribeInstance.Instance.Resource.UnitCount");
