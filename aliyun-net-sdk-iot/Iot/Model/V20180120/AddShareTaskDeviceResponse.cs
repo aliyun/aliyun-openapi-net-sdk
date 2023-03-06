@@ -102,6 +102,12 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string progressId;
 
+			private int? successSum;
+
+			private int? failSum;
+
+			private string failedResultCsvFile;
+
 			public int? Progress
 			{
 				get
@@ -123,6 +129,42 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					progressId = value;
+				}
+			}
+
+			public int? SuccessSum
+			{
+				get
+				{
+					return successSum;
+				}
+				set	
+				{
+					successSum = value;
+				}
+			}
+
+			public int? FailSum
+			{
+				get
+				{
+					return failSum;
+				}
+				set	
+				{
+					failSum = value;
+				}
+			}
+
+			public string FailedResultCsvFile
+			{
+				get
+				{
+					return failedResultCsvFile;
+				}
+				set	
+				{
+					failedResultCsvFile = value;
 				}
 			}
 		}
