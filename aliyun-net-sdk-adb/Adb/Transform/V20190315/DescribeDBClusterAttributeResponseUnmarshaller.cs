@@ -76,6 +76,10 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 				dBCluster.Category = _ctx.StringValue("DescribeDBClusterAttribute.Items["+ i +"].Category");
 				dBCluster.Engine = _ctx.StringValue("DescribeDBClusterAttribute.Items["+ i +"].Engine");
 				dBCluster.KmsId = _ctx.StringValue("DescribeDBClusterAttribute.Items["+ i +"].KmsId");
+				dBCluster.InnerIp = _ctx.StringValue("DescribeDBClusterAttribute.Items["+ i +"].InnerIp");
+				dBCluster.InnerPort = _ctx.StringValue("DescribeDBClusterAttribute.Items["+ i +"].InnerPort");
+				dBCluster.DiskPerformanceLevel = _ctx.StringValue("DescribeDBClusterAttribute.Items["+ i +"].DiskPerformanceLevel");
+				dBCluster.ElasticIOResourceSize = _ctx.StringValue("DescribeDBClusterAttribute.Items["+ i +"].ElasticIOResourceSize");
 
 				List<DescribeDBClusterAttributeResponse.DescribeDBClusterAttribute_DBCluster.DescribeDBClusterAttribute_Tag> dBCluster_tags = new List<DescribeDBClusterAttributeResponse.DescribeDBClusterAttribute_DBCluster.DescribeDBClusterAttribute_Tag>();
 				for (int j = 0; j < _ctx.Length("DescribeDBClusterAttribute.Items["+ i +"].Tags.Length"); j++) {

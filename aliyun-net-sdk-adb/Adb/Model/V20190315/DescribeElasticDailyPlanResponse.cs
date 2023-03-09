@@ -74,6 +74,10 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 			private string planName;
 
+			private string elasticPlanType;
+
+			private string elasticPlanWorkerSpec;
+
 			public int? Status
 			{
 				get
@@ -179,6 +183,30 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					planName = value;
+				}
+			}
+
+			public string ElasticPlanType
+			{
+				get
+				{
+					return elasticPlanType;
+				}
+				set	
+				{
+					elasticPlanType = value;
+				}
+			}
+
+			public string ElasticPlanWorkerSpec
+			{
+				get
+				{
+					return elasticPlanWorkerSpec;
+				}
+				set	
+				{
+					elasticPlanWorkerSpec = value;
 				}
 			}
 		}

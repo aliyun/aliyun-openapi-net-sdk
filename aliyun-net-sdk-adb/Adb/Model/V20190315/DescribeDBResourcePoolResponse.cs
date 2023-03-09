@@ -27,6 +27,8 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private string requestId;
 
+		private string dBClusterId;
+
 		private List<DescribeDBResourcePool_PoolInfo> poolsInfo;
 
 		public string RequestId
@@ -38,6 +40,18 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string DBClusterId
+		{
+			get
+			{
+				return dBClusterId;
+			}
+			set	
+			{
+				dBClusterId = value;
 			}
 		}
 

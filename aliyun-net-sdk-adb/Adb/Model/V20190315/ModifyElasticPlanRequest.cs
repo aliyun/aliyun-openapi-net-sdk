@@ -42,11 +42,15 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private long? resourceOwnerId;
 
+		private string elasticPlanType;
+
 		private string elasticPlanTimeStart;
 
 		private string elasticPlanEndDay;
 
 		private string elasticPlanWeeklyRepeat;
+
+		private string elasticPlanWorkerSpec;
 
 		private bool? elasticPlanEnable;
 
@@ -78,6 +82,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ElasticPlanType
+		{
+			get
+			{
+				return elasticPlanType;
+			}
+			set	
+			{
+				elasticPlanType = value;
+				DictionaryUtil.Add(QueryParameters, "ElasticPlanType", value);
 			}
 		}
 
@@ -117,6 +134,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				elasticPlanWeeklyRepeat = value;
 				DictionaryUtil.Add(QueryParameters, "ElasticPlanWeeklyRepeat", value);
+			}
+		}
+
+		public string ElasticPlanWorkerSpec
+		{
+			get
+			{
+				return elasticPlanWorkerSpec;
+			}
+			set	
+			{
+				elasticPlanWorkerSpec = value;
+				DictionaryUtil.Add(QueryParameters, "ElasticPlanWorkerSpec", value);
 			}
 		}
 

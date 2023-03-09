@@ -46,6 +46,8 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private string ownerAccount;
 
+		private string dBClusterVersion;
+
 		private long? ownerId;
 
 		private string acceptLanguage;
@@ -90,6 +92,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string DBClusterVersion
+		{
+			get
+			{
+				return dBClusterVersion;
+			}
+			set	
+			{
+				dBClusterVersion = value;
+				DictionaryUtil.Add(QueryParameters, "DBClusterVersion", value);
 			}
 		}
 

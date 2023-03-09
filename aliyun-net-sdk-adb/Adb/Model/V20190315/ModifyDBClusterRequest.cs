@@ -40,6 +40,8 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			Method = MethodType.POST;
         }
 
+		private string elasticIOResourceSize;
+
 		private long? resourceOwnerId;
 
 		private string mode;
@@ -49,6 +51,8 @@ namespace Aliyun.Acs.adb.Model.V20190315
 		private string dBNodeClass;
 
 		private string dBClusterCategory;
+
+		private string diskPerformanceLevel;
 
 		private string resourceOwnerAccount;
 
@@ -69,6 +73,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 		private string computeResource;
 
 		private int? elasticIOResource;
+
+		public string ElasticIOResourceSize
+		{
+			get
+			{
+				return elasticIOResourceSize;
+			}
+			set	
+			{
+				elasticIOResourceSize = value;
+				DictionaryUtil.Add(QueryParameters, "ElasticIOResourceSize", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -132,6 +149,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				dBClusterCategory = value;
 				DictionaryUtil.Add(QueryParameters, "DBClusterCategory", value);
+			}
+		}
+
+		public string DiskPerformanceLevel
+		{
+			get
+			{
+				return diskPerformanceLevel;
+			}
+			set	
+			{
+				diskPerformanceLevel = value;
+				DictionaryUtil.Add(QueryParameters, "DiskPerformanceLevel", value);
 			}
 		}
 

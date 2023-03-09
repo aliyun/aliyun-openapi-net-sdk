@@ -45,6 +45,8 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 				elasticDailyPlanInfo.ElasticNodeNum = _ctx.IntegerValue("DescribeElasticDailyPlan.ElasticDailyPlanList["+ i +"].ElasticNodeNum");
 				elasticDailyPlanInfo.EndTs = _ctx.StringValue("DescribeElasticDailyPlan.ElasticDailyPlanList["+ i +"].EndTs");
 				elasticDailyPlanInfo.PlanName = _ctx.StringValue("DescribeElasticDailyPlan.ElasticDailyPlanList["+ i +"].PlanName");
+				elasticDailyPlanInfo.ElasticPlanType = _ctx.StringValue("DescribeElasticDailyPlan.ElasticDailyPlanList["+ i +"].ElasticPlanType");
+				elasticDailyPlanInfo.ElasticPlanWorkerSpec = _ctx.StringValue("DescribeElasticDailyPlan.ElasticDailyPlanList["+ i +"].ElasticPlanWorkerSpec");
 
 				describeElasticDailyPlanResponse_elasticDailyPlanList.Add(elasticDailyPlanInfo);
 			}
