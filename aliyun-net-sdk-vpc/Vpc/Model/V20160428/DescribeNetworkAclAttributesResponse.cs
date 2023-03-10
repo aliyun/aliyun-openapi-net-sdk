@@ -78,6 +78,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private List<DescribeNetworkAclAttributes_Resource> resources;
 
+			private List<DescribeNetworkAclAttributes_Tag> tags;
+
 			public string Status
 			{
 				get
@@ -207,6 +209,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					resources = value;
+				}
+			}
+
+			public List<DescribeNetworkAclAttributes_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
 				}
 			}
 
@@ -484,6 +498,38 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					set	
 					{
 						resourceId = value;
+					}
+				}
+			}
+
+			public class DescribeNetworkAclAttributes_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
 					}
 				}
 			}

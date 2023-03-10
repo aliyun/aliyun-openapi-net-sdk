@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string ipv4GatewayName;
 
+		private string resourceGroupId;
+
 		private bool? dryRun;
 
 		private string resourceOwnerAccount;
@@ -107,6 +109,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ipv4GatewayName = value;
 				DictionaryUtil.Add(QueryParameters, "Ipv4GatewayName", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

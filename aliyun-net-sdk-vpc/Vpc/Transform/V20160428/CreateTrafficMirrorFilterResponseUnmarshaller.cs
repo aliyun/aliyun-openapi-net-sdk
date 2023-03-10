@@ -33,6 +33,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			createTrafficMirrorFilterResponse.HttpResponse = _ctx.HttpResponse;
 			createTrafficMirrorFilterResponse.TrafficMirrorFilterId = _ctx.StringValue("CreateTrafficMirrorFilter.TrafficMirrorFilterId");
 			createTrafficMirrorFilterResponse.RequestId = _ctx.StringValue("CreateTrafficMirrorFilter.RequestId");
+			createTrafficMirrorFilterResponse.ResourceGroupId = _ctx.StringValue("CreateTrafficMirrorFilter.ResourceGroupId");
         
 			return createTrafficMirrorFilterResponse;
         }

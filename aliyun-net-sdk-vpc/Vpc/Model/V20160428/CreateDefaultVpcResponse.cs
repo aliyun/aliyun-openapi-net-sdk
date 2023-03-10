@@ -22,36 +22,40 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class CreateIpv6GatewayResponse : AcsResponse
+	public class CreateDefaultVpcResponse : AcsResponse
 	{
 
-		private string ipv6GatewayId;
+		private string vpcId;
 
-		private string resourceGroupId;
+		private string vRouterId;
 
 		private string requestId;
 
-		public string Ipv6GatewayId
+		private string routeTableId;
+
+		private List<CreateDefaultVpc_DefaultVSwitch> defaultVSwitchs;
+
+		public string VpcId
 		{
 			get
 			{
-				return ipv6GatewayId;
+				return vpcId;
 			}
 			set	
 			{
-				ipv6GatewayId = value;
+				vpcId = value;
 			}
 		}
 
-		public string ResourceGroupId
+		public string VRouterId
 		{
 			get
 			{
-				return resourceGroupId;
+				return vRouterId;
 			}
 			set	
 			{
-				resourceGroupId = value;
+				vRouterId = value;
 			}
 		}
 
@@ -64,6 +68,62 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string RouteTableId
+		{
+			get
+			{
+				return routeTableId;
+			}
+			set	
+			{
+				routeTableId = value;
+			}
+		}
+
+		public List<CreateDefaultVpc_DefaultVSwitch> DefaultVSwitchs
+		{
+			get
+			{
+				return defaultVSwitchs;
+			}
+			set	
+			{
+				defaultVSwitchs = value;
+			}
+		}
+
+		public class CreateDefaultVpc_DefaultVSwitch
+		{
+
+			private string zoneId;
+
+			private string vSwitchId;
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
+			public string VSwitchId
+			{
+				get
+				{
+					return vSwitchId;
+				}
+				set	
+				{
+					vSwitchId = value;
+				}
 			}
 		}
 	}

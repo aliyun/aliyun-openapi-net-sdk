@@ -54,12 +54,23 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				flowLog.BusinessStatus = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].BusinessStatus");
 				flowLog.AggregationInterval = _ctx.IntegerValue("DescribeFlowLogs.FlowLogs["+ i +"].AggregationInterval");
 				flowLog.ServiceType = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].ServiceType");
+				flowLog.ResourceGroupId = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].ResourceGroupId");
 
 				List<string> flowLog_trafficPath = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeFlowLogs.FlowLogs["+ i +"].TrafficPath.Length"); j++) {
 					flowLog_trafficPath.Add(_ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].TrafficPath["+ j +"]"));
 				}
 				flowLog.TrafficPath = flowLog_trafficPath;
+
+				List<DescribeFlowLogsResponse.DescribeFlowLogs_FlowLog.DescribeFlowLogs_Tag> flowLog_tags = new List<DescribeFlowLogsResponse.DescribeFlowLogs_FlowLog.DescribeFlowLogs_Tag>();
+				for (int j = 0; j < _ctx.Length("DescribeFlowLogs.FlowLogs["+ i +"].Tags.Length"); j++) {
+					DescribeFlowLogsResponse.DescribeFlowLogs_FlowLog.DescribeFlowLogs_Tag tag = new DescribeFlowLogsResponse.DescribeFlowLogs_FlowLog.DescribeFlowLogs_Tag();
+					tag.Key = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].Tags["+ j +"].Key");
+					tag._Value = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].Tags["+ j +"].Value");
+
+					flowLog_tags.Add(tag);
+				}
+				flowLog.Tags = flowLog_tags;
 
 				describeFlowLogsResponse_flowLogs.Add(flowLog);
 			}

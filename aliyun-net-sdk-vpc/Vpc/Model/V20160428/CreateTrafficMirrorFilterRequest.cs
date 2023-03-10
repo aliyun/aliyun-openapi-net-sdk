@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string trafficMirrorFilterName;
 
+		private string resourceGroupId;
+
 		private List<string> egressRuless = new List<string>(){ };
 
 		private bool? dryRun;
@@ -122,6 +124,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				trafficMirrorFilterName = value;
 				DictionaryUtil.Add(QueryParameters, "TrafficMirrorFilterName", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

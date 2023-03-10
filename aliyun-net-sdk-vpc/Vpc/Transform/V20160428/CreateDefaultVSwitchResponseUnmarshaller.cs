@@ -16,55 +16,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Vpc.Model.V20160428
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Vpc.Model.V20160428;
+
+namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
-	public class CreateIpv6GatewayResponse : AcsResponse
-	{
+    public class CreateDefaultVSwitchResponseUnmarshaller
+    {
+        public static CreateDefaultVSwitchResponse Unmarshall(UnmarshallerContext _ctx)
+        {
+			CreateDefaultVSwitchResponse createDefaultVSwitchResponse = new CreateDefaultVSwitchResponse();
 
-		private string ipv6GatewayId;
-
-		private string resourceGroupId;
-
-		private string requestId;
-
-		public string Ipv6GatewayId
-		{
-			get
-			{
-				return ipv6GatewayId;
-			}
-			set	
-			{
-				ipv6GatewayId = value;
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+			createDefaultVSwitchResponse.HttpResponse = _ctx.HttpResponse;
+			createDefaultVSwitchResponse.VSwitchId = _ctx.StringValue("CreateDefaultVSwitch.VSwitchId");
+			createDefaultVSwitchResponse.RequestId = _ctx.StringValue("CreateDefaultVSwitch.RequestId");
+        
+			return createDefaultVSwitchResponse;
+        }
+    }
 }

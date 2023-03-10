@@ -22,36 +22,22 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class CreateIpv6GatewayResponse : AcsResponse
+	public class CreateDefaultVSwitchResponse : AcsResponse
 	{
 
-		private string ipv6GatewayId;
-
-		private string resourceGroupId;
+		private string vSwitchId;
 
 		private string requestId;
 
-		public string Ipv6GatewayId
+		public string VSwitchId
 		{
 			get
 			{
-				return ipv6GatewayId;
+				return vSwitchId;
 			}
 			set	
 			{
-				ipv6GatewayId = value;
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
+				vSwitchId = value;
 			}
 		}
 

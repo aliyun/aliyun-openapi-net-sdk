@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private bool? enabled;
 
+		private string resourceGroupId;
+
 		private string trafficMirrorSessionName;
 
 		private string trafficMirrorSessionDescription;
@@ -121,6 +123,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				enabled = value;
 				DictionaryUtil.Add(QueryParameters, "Enabled", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

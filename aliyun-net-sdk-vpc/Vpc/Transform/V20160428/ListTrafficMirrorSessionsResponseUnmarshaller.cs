@@ -50,12 +50,23 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				trafficMirrorSession.VirtualNetworkId = _ctx.IntegerValue("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].VirtualNetworkId");
 				trafficMirrorSession.TrafficMirrorFilterId = _ctx.StringValue("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].TrafficMirrorFilterId");
 				trafficMirrorSession.TrafficMirrorSessionName = _ctx.StringValue("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].TrafficMirrorSessionName");
+				trafficMirrorSession.ResourceGroupId = _ctx.StringValue("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].ResourceGroupId");
 
 				List<string> trafficMirrorSession_trafficMirrorSourceIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].TrafficMirrorSourceIds.Length"); j++) {
 					trafficMirrorSession_trafficMirrorSourceIds.Add(_ctx.StringValue("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].TrafficMirrorSourceIds["+ j +"]"));
 				}
 				trafficMirrorSession.TrafficMirrorSourceIds = trafficMirrorSession_trafficMirrorSourceIds;
+
+				List<ListTrafficMirrorSessionsResponse.ListTrafficMirrorSessions_TrafficMirrorSession.ListTrafficMirrorSessions_Tag> trafficMirrorSession_tags = new List<ListTrafficMirrorSessionsResponse.ListTrafficMirrorSessions_TrafficMirrorSession.ListTrafficMirrorSessions_Tag>();
+				for (int j = 0; j < _ctx.Length("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].Tags.Length"); j++) {
+					ListTrafficMirrorSessionsResponse.ListTrafficMirrorSessions_TrafficMirrorSession.ListTrafficMirrorSessions_Tag tag = new ListTrafficMirrorSessionsResponse.ListTrafficMirrorSessions_TrafficMirrorSession.ListTrafficMirrorSessions_Tag();
+					tag.Key = _ctx.StringValue("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].Tags["+ j +"].Key");
+					tag._Value = _ctx.StringValue("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].Tags["+ j +"].Value");
+
+					trafficMirrorSession_tags.Add(tag);
+				}
+				trafficMirrorSession.Tags = trafficMirrorSession_tags;
 
 				listTrafficMirrorSessionsResponse_trafficMirrorSessions.Add(trafficMirrorSession);
 			}

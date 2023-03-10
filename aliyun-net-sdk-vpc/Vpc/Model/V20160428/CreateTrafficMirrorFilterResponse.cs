@@ -29,6 +29,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string requestId;
 
+		private string resourceGroupId;
+
 		public string TrafficMirrorFilterId
 		{
 			get
@@ -50,6 +52,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
 			}
 		}
 	}

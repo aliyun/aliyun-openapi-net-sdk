@@ -50,6 +50,17 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				ipv6Gateway.Name = _ctx.StringValue("DescribeIpv6Gateways.Ipv6Gateways["+ i +"].Name");
 				ipv6Gateway.InstanceChargeType = _ctx.StringValue("DescribeIpv6Gateways.Ipv6Gateways["+ i +"].InstanceChargeType");
 				ipv6Gateway.RegionId = _ctx.StringValue("DescribeIpv6Gateways.Ipv6Gateways["+ i +"].RegionId");
+				ipv6Gateway.ResourceGroupId = _ctx.StringValue("DescribeIpv6Gateways.Ipv6Gateways["+ i +"].ResourceGroupId");
+
+				List<DescribeIpv6GatewaysResponse.DescribeIpv6Gateways_Ipv6Gateway.DescribeIpv6Gateways_Tag> ipv6Gateway_tags = new List<DescribeIpv6GatewaysResponse.DescribeIpv6Gateways_Ipv6Gateway.DescribeIpv6Gateways_Tag>();
+				for (int j = 0; j < _ctx.Length("DescribeIpv6Gateways.Ipv6Gateways["+ i +"].Tags.Length"); j++) {
+					DescribeIpv6GatewaysResponse.DescribeIpv6Gateways_Ipv6Gateway.DescribeIpv6Gateways_Tag tag = new DescribeIpv6GatewaysResponse.DescribeIpv6Gateways_Ipv6Gateway.DescribeIpv6Gateways_Tag();
+					tag.Key = _ctx.StringValue("DescribeIpv6Gateways.Ipv6Gateways["+ i +"].Tags["+ j +"].Key");
+					tag._Value = _ctx.StringValue("DescribeIpv6Gateways.Ipv6Gateways["+ i +"].Tags["+ j +"].Value");
+
+					ipv6Gateway_tags.Add(tag);
+				}
+				ipv6Gateway.Tags = ipv6Gateway_tags;
 
 				describeIpv6GatewaysResponse_ipv6Gateways.Add(ipv6Gateway);
 			}

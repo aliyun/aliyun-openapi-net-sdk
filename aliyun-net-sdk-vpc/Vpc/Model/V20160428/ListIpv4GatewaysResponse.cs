@@ -100,6 +100,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string ipv4GatewayName;
 
+			private string resourceGroupId;
+
+			private List<ListIpv4Gateways_Tag> tags;
+
 			public string VpcId
 			{
 				get
@@ -193,6 +197,62 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					ipv4GatewayName = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public List<ListIpv4Gateways_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public class ListIpv4Gateways_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}

@@ -27,10 +27,10 @@ using Aliyun.Acs.Vpc.Transform.V20160428;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-    public class DescribeHaVipsRequest : RpcAcsRequest<DescribeHaVipsResponse>
+    public class CreateDefaultVSwitchRequest : RpcAcsRequest<CreateDefaultVSwitchResponse>
     {
-        public DescribeHaVipsRequest()
-            : base("Vpc", "2016-04-28", "DescribeHaVips", "vpc", "openAPI")
+        public CreateDefaultVSwitchRequest()
+            : base("Vpc", "2016-04-28", "CreateDefaultVSwitch", "vpc", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,11 +42,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? resourceOwnerId;
 
-		private int? pageNumber;
-
-		private string resourceGroupId;
-
-		private int? pageSize;
+		private string clientToken;
 
 		private string resourceOwnerAccount;
 
@@ -54,9 +50,9 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? ownerId;
 
-		private List<string> tagss = new List<string>(){ };
+		private int? ipv6CidrBlock;
 
-		private List<Filter> filters = new List<Filter>(){ };
+		private string zoneId;
 
 		public long? ResourceOwnerId
 		{
@@ -71,42 +67,16 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageNumber
+		public string ClientToken
 		{
 			get
 			{
-				return pageNumber;
+				return clientToken;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -149,114 +119,40 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public List<string> Tagss
+		public int? Ipv6CidrBlock
 		{
 			get
 			{
-				return tagss;
+				return ipv6CidrBlock;
 			}
-
-			set
+			set	
 			{
-				tagss = value;
-				if(tagss != null)
-				{
-					for (int depth1 = 0; depth1 < tagss.Count; depth1++)
-					{
-						DictionaryUtil.Add(QueryParameters,"Tags." + (depth1 + 1), tagss[depth1]);
-						DictionaryUtil.Add(QueryParameters,"Tags." + (depth1 + 1), tagss[depth1]);
-					}
-				}
+				ipv6CidrBlock = value;
+				DictionaryUtil.Add(QueryParameters, "Ipv6CidrBlock", value.ToString());
 			}
 		}
 
-		public List<Filter> Filters
+		public string ZoneId
 		{
 			get
 			{
-				return filters;
+				return zoneId;
 			}
-
-			set
+			set	
 			{
-				filters = value;
-				if(filters != null)
-				{
-					for (int depth1 = 0; depth1 < filters.Count; depth1++)
-					{
-						DictionaryUtil.Add(QueryParameters,"Filter." + (depth1 + 1), filters[depth1]);
-					}
-				}
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 
-		public class Tags
+		public override bool CheckShowJsonItemName()
 		{
-
-			private string value_;
-
-			private string key;
-
-			public string Value_
-			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
-			}
-
-			public string Key
-			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
-			}
+			return false;
 		}
 
-		public class Filter
-		{
-
-			private List<string> values = new List<string>(){ };
-
-			private string key;
-
-			public List<string> Values
-			{
-				get
-				{
-					return values;
-				}
-				set	
-				{
-					values = value;
-				}
-			}
-
-			public string Key
-			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
-			}
-		}
-
-        public override DescribeHaVipsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateDefaultVSwitchResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeHaVipsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateDefaultVSwitchResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

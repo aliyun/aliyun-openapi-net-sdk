@@ -132,6 +132,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string gmtCreate;
 
+			private string grantType;
+
 			public long? VbrOwnerUid
 			{
 				get
@@ -249,6 +251,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					gmtCreate = value;
+				}
+			}
+
+			public string GrantType
+			{
+				get
+				{
+					return grantType;
+				}
+				set	
+				{
+					grantType = value;
 				}
 			}
 		}

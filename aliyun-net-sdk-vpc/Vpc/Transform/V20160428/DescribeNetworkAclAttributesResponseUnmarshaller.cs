@@ -85,6 +85,16 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				networkAclAttribute_resources.Add(resource);
 			}
 			networkAclAttribute.Resources = networkAclAttribute_resources;
+
+			List<DescribeNetworkAclAttributesResponse.DescribeNetworkAclAttributes_NetworkAclAttribute.DescribeNetworkAclAttributes_Tag> networkAclAttribute_tags = new List<DescribeNetworkAclAttributesResponse.DescribeNetworkAclAttributes_NetworkAclAttribute.DescribeNetworkAclAttributes_Tag>();
+			for (int i = 0; i < _ctx.Length("DescribeNetworkAclAttributes.NetworkAclAttribute.Tags.Length"); i++) {
+				DescribeNetworkAclAttributesResponse.DescribeNetworkAclAttributes_NetworkAclAttribute.DescribeNetworkAclAttributes_Tag tag = new DescribeNetworkAclAttributesResponse.DescribeNetworkAclAttributes_NetworkAclAttribute.DescribeNetworkAclAttributes_Tag();
+				tag.Key = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.Tags["+ i +"].Key");
+				tag._Value = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.Tags["+ i +"].Value");
+
+				networkAclAttribute_tags.Add(tag);
+			}
+			networkAclAttribute.Tags = networkAclAttribute_tags;
 			describeNetworkAclAttributesResponse.NetworkAclAttribute = networkAclAttribute;
         
 			return describeNetworkAclAttributesResponse;

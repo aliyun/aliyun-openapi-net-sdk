@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private int? pageSize;
 
+		private List<string> tags = new List<string>(){ };
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -107,6 +109,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public List<string> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				if(tags != null)
+				{
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
+				}
 			}
 		}
 
@@ -172,6 +195,38 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				vpnConnectionId = value;
 				DictionaryUtil.Add(QueryParameters, "VpnConnectionId", value);
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

@@ -51,6 +51,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				haVip.Description = _ctx.StringValue("DescribeHaVips.HaVips["+ i +"].Description");
 				haVip.MasterInstanceId = _ctx.StringValue("DescribeHaVips.HaVips["+ i +"].MasterInstanceId");
 				haVip.Name = _ctx.StringValue("DescribeHaVips.HaVips["+ i +"].Name");
+				haVip.ResourceGroupId = _ctx.StringValue("DescribeHaVips.HaVips["+ i +"].ResourceGroupId");
 
 				List<string> haVip_associatedEipAddresses = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeHaVips.HaVips["+ i +"].AssociatedEipAddresses.Length"); j++) {
@@ -63,6 +64,16 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 					haVip_associatedInstances.Add(_ctx.StringValue("DescribeHaVips.HaVips["+ i +"].AssociatedInstances["+ j +"]"));
 				}
 				haVip.AssociatedInstances = haVip_associatedInstances;
+
+				List<DescribeHaVipsResponse.DescribeHaVips_HaVip.DescribeHaVips_Tag> haVip_tags = new List<DescribeHaVipsResponse.DescribeHaVips_HaVip.DescribeHaVips_Tag>();
+				for (int j = 0; j < _ctx.Length("DescribeHaVips.HaVips["+ i +"].Tags.Length"); j++) {
+					DescribeHaVipsResponse.DescribeHaVips_HaVip.DescribeHaVips_Tag tag = new DescribeHaVipsResponse.DescribeHaVips_HaVip.DescribeHaVips_Tag();
+					tag.Key = _ctx.StringValue("DescribeHaVips.HaVips["+ i +"].Tags["+ j +"].Key");
+					tag._Value = _ctx.StringValue("DescribeHaVips.HaVips["+ i +"].Tags["+ j +"].Value");
+
+					haVip_tags.Add(tag);
+				}
+				haVip.Tags = haVip_tags;
 
 				describeHaVipsResponse_haVips.Add(haVip);
 			}

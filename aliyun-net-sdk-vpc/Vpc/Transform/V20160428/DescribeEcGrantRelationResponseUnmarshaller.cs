@@ -50,6 +50,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				ecGrantRelationModel.InstanceRouterId = _ctx.StringValue("DescribeEcGrantRelation.EcGrantRelations["+ i +"].InstanceRouterId");
 				ecGrantRelationModel.VbrRegionNo = _ctx.StringValue("DescribeEcGrantRelation.EcGrantRelations["+ i +"].VbrRegionNo");
 				ecGrantRelationModel.GmtCreate = _ctx.StringValue("DescribeEcGrantRelation.EcGrantRelations["+ i +"].GmtCreate");
+				ecGrantRelationModel.GrantType = _ctx.StringValue("DescribeEcGrantRelation.EcGrantRelations["+ i +"].GrantType");
 
 				describeEcGrantRelationResponse_ecGrantRelations.Add(ecGrantRelationModel);
 			}

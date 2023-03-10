@@ -40,6 +40,17 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			getIpv4GatewayAttributeResponse.Ipv4GatewayRouteTableId = _ctx.StringValue("GetIpv4GatewayAttribute.Ipv4GatewayRouteTableId");
 			getIpv4GatewayAttributeResponse.Ipv4GatewayName = _ctx.StringValue("GetIpv4GatewayAttribute.Ipv4GatewayName");
 			getIpv4GatewayAttributeResponse.CreateTime = _ctx.StringValue("GetIpv4GatewayAttribute.CreateTime");
+			getIpv4GatewayAttributeResponse.ResourceGroupId = _ctx.StringValue("GetIpv4GatewayAttribute.ResourceGroupId");
+
+			List<GetIpv4GatewayAttributeResponse.GetIpv4GatewayAttribute_Tag> getIpv4GatewayAttributeResponse_tags = new List<GetIpv4GatewayAttributeResponse.GetIpv4GatewayAttribute_Tag>();
+			for (int i = 0; i < _ctx.Length("GetIpv4GatewayAttribute.Tags.Length"); i++) {
+				GetIpv4GatewayAttributeResponse.GetIpv4GatewayAttribute_Tag tag = new GetIpv4GatewayAttributeResponse.GetIpv4GatewayAttribute_Tag();
+				tag.Key = _ctx.StringValue("GetIpv4GatewayAttribute.Tags["+ i +"].Key");
+				tag._Value = _ctx.StringValue("GetIpv4GatewayAttribute.Tags["+ i +"].Value");
+
+				getIpv4GatewayAttributeResponse_tags.Add(tag);
+			}
+			getIpv4GatewayAttributeResponse.Tags = getIpv4GatewayAttributeResponse_tags;
         
 			return getIpv4GatewayAttributeResponse;
         }

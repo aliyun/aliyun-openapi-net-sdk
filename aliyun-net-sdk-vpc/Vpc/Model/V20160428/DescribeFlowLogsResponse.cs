@@ -140,6 +140,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string serviceType;
 
+			private string resourceGroupId;
+
+			private List<DescribeFlowLogs_Tag> tags;
+
 			private List<string> trafficPath;
 
 			public string Status
@@ -310,6 +314,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public List<DescribeFlowLogs_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
 			public List<string> TrafficPath
 			{
 				get
@@ -319,6 +347,38 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					trafficPath = value;
+				}
+			}
+
+			public class DescribeFlowLogs_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}

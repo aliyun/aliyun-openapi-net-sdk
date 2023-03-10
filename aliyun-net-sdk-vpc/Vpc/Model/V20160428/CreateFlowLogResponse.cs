@@ -31,6 +31,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string flowLogId;
 
+		private string resourceGroupId;
+
 		public string RequestId
 		{
 			get
@@ -64,6 +66,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				flowLogId = value;
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
 			}
 		}
 	}

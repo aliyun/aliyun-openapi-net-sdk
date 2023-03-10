@@ -122,6 +122,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string name;
 
+			private string resourceGroupId;
+
+			private List<DescribeHaVips_Tag> tags;
+
 			private List<string> associatedEipAddresses;
 
 			private List<string> associatedInstances;
@@ -270,6 +274,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public List<DescribeHaVips_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
 			public List<string> AssociatedEipAddresses
 			{
 				get
@@ -291,6 +319,38 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					associatedInstances = value;
+				}
+			}
+
+			public class DescribeHaVips_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}
