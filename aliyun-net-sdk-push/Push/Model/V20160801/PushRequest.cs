@@ -61,6 +61,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private bool? trim;
 
+		private string androidMessageVivoCategory;
+
 		private string androidNotifyType;
 
 		private string androidPopupTitle;
@@ -109,6 +111,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string iOSNotificationThreadId;
 
+		private int? androidHuaweiTargetUserType;
+
 		private string androidMusic;
 
 		private string iOSNotificationCollapseId;
@@ -136,6 +140,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 		private int? androidRenderStyle;
 
 		private string iOSExtParameters;
+
+		private string androidHuaweiReceiptId;
 
 		private string androidNotificationHonorChannel;
 
@@ -302,6 +308,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				trim = value;
 				DictionaryUtil.Add(QueryParameters, "Trim", value.ToString());
+			}
+		}
+
+		public string AndroidMessageVivoCategory
+		{
+			get
+			{
+				return androidMessageVivoCategory;
+			}
+			set	
+			{
+				androidMessageVivoCategory = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidMessageVivoCategory", value);
 			}
 		}
 
@@ -617,6 +636,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
+		public int? AndroidHuaweiTargetUserType
+		{
+			get
+			{
+				return androidHuaweiTargetUserType;
+			}
+			set	
+			{
+				androidHuaweiTargetUserType = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidHuaweiTargetUserType", value.ToString());
+			}
+		}
+
 		public string AndroidMusic
 		{
 			get
@@ -796,6 +828,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				iOSExtParameters = value;
 				DictionaryUtil.Add(QueryParameters, "iOSExtParameters", value);
+			}
+		}
+
+		public string AndroidHuaweiReceiptId
+		{
+			get
+			{
+				return androidHuaweiReceiptId;
+			}
+			set	
+			{
+				androidHuaweiReceiptId = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidHuaweiReceiptId", value);
 			}
 		}
 

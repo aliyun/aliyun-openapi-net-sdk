@@ -120,6 +120,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
 						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
 						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
 						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
 					}
 				}
 			}
@@ -158,6 +161,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			private string iOSRemindBody;
 
 			private bool? trim;
+
+			private string androidMessageVivoCategory;
 
 			private string androidNotifyType;
 
@@ -205,6 +210,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string iOSNotificationThreadId;
 
+			private int? androidHuaweiTargetUserType;
+
 			private string androidMusic;
 
 			private string iOSNotificationCollapseId;
@@ -230,6 +237,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			private string androidRenderStyle;
 
 			private string iOSExtParameters;
+
+			private string androidHuaweiReceiptId;
 
 			private string androidNotificationHonorChannel;
 
@@ -368,6 +377,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					trim = value;
+				}
+			}
+
+			public string AndroidMessageVivoCategory
+			{
+				get
+				{
+					return androidMessageVivoCategory;
+				}
+				set	
+				{
+					androidMessageVivoCategory = value;
 				}
 			}
 
@@ -647,6 +668,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
+			public int? AndroidHuaweiTargetUserType
+			{
+				get
+				{
+					return androidHuaweiTargetUserType;
+				}
+				set	
+				{
+					androidHuaweiTargetUserType = value;
+				}
+			}
+
 			public string AndroidMusic
 			{
 				get
@@ -800,6 +833,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					iOSExtParameters = value;
+				}
+			}
+
+			public string AndroidHuaweiReceiptId
+			{
+				get
+				{
+					return androidHuaweiReceiptId;
+				}
+				set	
+				{
+					androidHuaweiReceiptId = value;
 				}
 			}
 
