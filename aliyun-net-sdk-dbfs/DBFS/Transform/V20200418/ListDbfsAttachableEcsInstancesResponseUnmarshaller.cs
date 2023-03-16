@@ -43,6 +43,7 @@ namespace Aliyun.Acs.DBFS.Transform.V20200418
 				labelInfo.OSName = _ctx.StringValue("ListDbfsAttachableEcsInstances.EcsLabelInfo["+ i +"].OSName");
 				labelInfo.Status = _ctx.StringValue("ListDbfsAttachableEcsInstances.EcsLabelInfo["+ i +"].Status");
 				labelInfo.ZoneId = _ctx.StringValue("ListDbfsAttachableEcsInstances.EcsLabelInfo["+ i +"].ZoneId");
+				labelInfo.ImageId = _ctx.StringValue("ListDbfsAttachableEcsInstances.EcsLabelInfo["+ i +"].ImageId");
 
 				listDbfsAttachableEcsInstancesResponse_ecsLabelInfo.Add(labelInfo);
 			}

@@ -85,6 +85,8 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 
 			private string zoneId;
 
+			private string imageId;
+
 			[JsonProperty(PropertyName = "_Value")]
 			public string _Value
 			{
@@ -160,6 +162,19 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				set	
 				{
 					zoneId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ImageId")]
+			public string ImageId
+			{
+				get
+				{
+					return imageId;
+				}
+				set	
+				{
+					imageId = value;
 				}
 			}
 		}

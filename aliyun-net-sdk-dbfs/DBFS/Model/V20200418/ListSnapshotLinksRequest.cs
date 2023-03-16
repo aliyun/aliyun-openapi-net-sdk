@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.DBFS;
 using Aliyun.Acs.DBFS.Transform;
 using Aliyun.Acs.DBFS.Transform.V20200418;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
     public class ListSnapshotLinksRequest : RpcAcsRequest<ListSnapshotLinksResponse>
     {
         public ListSnapshotLinksRequest()
-            : base("DBFS", "2020-04-18", "ListSnapshotLinks")
+            : base("DBFS", "2020-04-18", "ListSnapshotLinks", "dbfs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -48,7 +47,11 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 
 		private string filterKey;
 
+		private string linkIds;
+
 		private int? pageSize;
+
+		private string fsIds;
 
 		[JsonProperty(PropertyName = "FilterValue")]
 		public string FilterValue
@@ -92,6 +95,20 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		[JsonProperty(PropertyName = "LinkIds")]
+		public string LinkIds
+		{
+			get
+			{
+				return linkIds;
+			}
+			set	
+			{
+				linkIds = value;
+				DictionaryUtil.Add(QueryParameters, "LinkIds", value);
+			}
+		}
+
 		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
@@ -103,6 +120,20 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "FsIds")]
+		public string FsIds
+		{
+			get
+			{
+				return fsIds;
+			}
+			set	
+			{
+				fsIds = value;
+				DictionaryUtil.Add(QueryParameters, "FsIds", value);
 			}
 		}
 
