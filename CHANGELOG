@@ -1,3 +1,6 @@
+2023-03-17 Version: 3.7.7
+- Update by SDK platform.
+
 2023-03-16 Version: 2.0.7
 - Increase flow control value for ListDbfs.
 - Fix errorcode.

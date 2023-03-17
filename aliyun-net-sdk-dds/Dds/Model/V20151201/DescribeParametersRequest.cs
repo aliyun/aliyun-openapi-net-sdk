@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
+		private string extraParam;
+
 		private string securityToken;
 
 		private string dBInstanceId;
@@ -61,6 +63,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ExtraParam
+		{
+			get
+			{
+				return extraParam;
+			}
+			set	
+			{
+				extraParam = value;
+				DictionaryUtil.Add(QueryParameters, "ExtraParam", value);
 			}
 		}
 
