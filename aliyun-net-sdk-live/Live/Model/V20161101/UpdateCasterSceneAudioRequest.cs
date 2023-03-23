@@ -99,6 +99,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 						DictionaryUtil.Add(QueryParameters,"AudioLayer." + (depth1 + 1), audioLayers[depth1]);
 						DictionaryUtil.Add(QueryParameters,"AudioLayer." + (depth1 + 1), audioLayers[depth1]);
 						DictionaryUtil.Add(QueryParameters,"AudioLayer." + (depth1 + 1), audioLayers[depth1]);
+						DictionaryUtil.Add(QueryParameters,"AudioLayer." + (depth1 + 1), audioLayers[depth1]);
 					}
 				}
 			}
@@ -155,6 +156,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string validChannel;
 
+			private string filter;
+
 			[JsonProperty(PropertyName = "VolumeRate")]
 			public float? VolumeRate
 			{
@@ -191,6 +194,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					validChannel = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Filter")]
+			public string Filter
+			{
+				get
+				{
+					return filter;
+				}
+				set	
+				{
+					filter = value;
 				}
 			}
 		}

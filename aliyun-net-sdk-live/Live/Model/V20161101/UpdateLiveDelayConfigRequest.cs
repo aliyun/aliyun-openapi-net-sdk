@@ -28,10 +28,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DescribeLiveDomainRecordUsageDataRequest : RpcAcsRequest<DescribeLiveDomainRecordUsageDataResponse>
+    public class UpdateLiveDelayConfigRequest : RpcAcsRequest<UpdateLiveDelayConfigResponse>
     {
-        public DescribeLiveDomainRecordUsageDataRequest()
-            : base("live", "2016-11-01", "DescribeLiveDomainRecordUsageData", "live", "openAPI")
+        public UpdateLiveDelayConfigRequest()
+            : base("live", "2016-11-01", "UpdateLiveDelayConfig", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,73 +41,57 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private string startTime;
+		private int? delayTime;
 
-		private string splitBy;
+		private string stream;
 
-		private string domainName;
-
-		private string endTime;
+		private string app;
 
 		private long? ownerId;
 
-		private string interval;
+		private string taskTriggerMode;
 
-		private string region;
+		private string domain;
 
-		[JsonProperty(PropertyName = "StartTime")]
-		public string StartTime
+		[JsonProperty(PropertyName = "DelayTime")]
+		public int? DelayTime
 		{
 			get
 			{
-				return startTime;
+				return delayTime;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				delayTime = value;
+				DictionaryUtil.Add(QueryParameters, "DelayTime", value.ToString());
 			}
 		}
 
-		[JsonProperty(PropertyName = "SplitBy")]
-		public string SplitBy
+		[JsonProperty(PropertyName = "Stream")]
+		public string Stream
 		{
 			get
 			{
-				return splitBy;
+				return stream;
 			}
 			set	
 			{
-				splitBy = value;
-				DictionaryUtil.Add(QueryParameters, "SplitBy", value);
+				stream = value;
+				DictionaryUtil.Add(QueryParameters, "Stream", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "DomainName")]
-		public string DomainName
+		[JsonProperty(PropertyName = "App")]
+		public string App
 		{
 			get
 			{
-				return domainName;
+				return app;
 			}
 			set	
 			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "EndTime")]
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				app = value;
+				DictionaryUtil.Add(QueryParameters, "App", value);
 			}
 		}
 
@@ -125,37 +109,37 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "Interval")]
-		public string Interval
+		[JsonProperty(PropertyName = "TaskTriggerMode")]
+		public string TaskTriggerMode
 		{
 			get
 			{
-				return interval;
+				return taskTriggerMode;
 			}
 			set	
 			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value);
+				taskTriggerMode = value;
+				DictionaryUtil.Add(QueryParameters, "TaskTriggerMode", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "Region")]
-		public string Region
+		[JsonProperty(PropertyName = "Domain")]
+		public string Domain
 		{
 			get
 			{
-				return region;
+				return domain;
 			}
 			set	
 			{
-				region = value;
-				DictionaryUtil.Add(QueryParameters, "Region", value);
+				domain = value;
+				DictionaryUtil.Add(QueryParameters, "Domain", value);
 			}
 		}
 
-        public override DescribeLiveDomainRecordUsageDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateLiveDelayConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeLiveDomainRecordUsageDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateLiveDelayConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

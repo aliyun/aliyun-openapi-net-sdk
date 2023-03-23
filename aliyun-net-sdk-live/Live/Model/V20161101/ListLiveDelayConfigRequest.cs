@@ -28,10 +28,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DescribeLiveDomainRecordUsageDataRequest : RpcAcsRequest<DescribeLiveDomainRecordUsageDataResponse>
+    public class ListLiveDelayConfigRequest : RpcAcsRequest<ListLiveDelayConfigResponse>
     {
-        public DescribeLiveDomainRecordUsageDataRequest()
-            : base("live", "2016-11-01", "DescribeLiveDomainRecordUsageData", "live", "openAPI")
+        public ListLiveDelayConfigRequest()
+            : base("live", "2016-11-01", "ListLiveDelayConfig", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,73 +41,39 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private string startTime;
+		private int? pageNum;
 
-		private string splitBy;
-
-		private string domainName;
-
-		private string endTime;
+		private int? pageSize;
 
 		private long? ownerId;
 
-		private string interval;
+		private string domain;
 
-		private string region;
-
-		[JsonProperty(PropertyName = "StartTime")]
-		public string StartTime
+		[JsonProperty(PropertyName = "PageNum")]
+		public int? PageNum
 		{
 			get
 			{
-				return startTime;
+				return pageNum;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
 			}
 		}
 
-		[JsonProperty(PropertyName = "SplitBy")]
-		public string SplitBy
+		[JsonProperty(PropertyName = "PageSize")]
+		public int? PageSize
 		{
 			get
 			{
-				return splitBy;
+				return pageSize;
 			}
 			set	
 			{
-				splitBy = value;
-				DictionaryUtil.Add(QueryParameters, "SplitBy", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "DomainName")]
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "EndTime")]
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -125,37 +91,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "Interval")]
-		public string Interval
+		[JsonProperty(PropertyName = "Domain")]
+		public string Domain
 		{
 			get
 			{
-				return interval;
+				return domain;
 			}
 			set	
 			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value);
+				domain = value;
+				DictionaryUtil.Add(QueryParameters, "Domain", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "Region")]
-		public string Region
-		{
-			get
-			{
-				return region;
-			}
-			set	
-			{
-				region = value;
-				DictionaryUtil.Add(QueryParameters, "Region", value);
-			}
-		}
-
-        public override DescribeLiveDomainRecordUsageDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListLiveDelayConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeLiveDomainRecordUsageDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListLiveDelayConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

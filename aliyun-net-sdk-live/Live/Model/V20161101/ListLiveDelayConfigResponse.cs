@@ -22,40 +22,25 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class DescribeLiveDomainRecordUsageDataResponse : AcsResponse
+	public class ListLiveDelayConfigResponse : AcsResponse
 	{
 
-		private string endTime;
-
-		private string startTime;
+		private int? total;
 
 		private string requestId;
 
-		private List<DescribeLiveDomainRecordUsageData_DataModule> recordUsageData;
+		private List<ListLiveDelayConfig_DelayConfig> delayConfigList;
 
-		[JsonProperty(PropertyName = "EndTime")]
-		public string EndTime
+		[JsonProperty(PropertyName = "Total")]
+		public int? Total
 		{
 			get
 			{
-				return endTime;
+				return total;
 			}
 			set	
 			{
-				endTime = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "StartTime")]
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
+				total = value;
 			}
 		}
 
@@ -72,44 +57,42 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "RecordUsageData")]
-		public List<DescribeLiveDomainRecordUsageData_DataModule> RecordUsageData
+		[JsonProperty(PropertyName = "DelayConfigList")]
+		public List<ListLiveDelayConfig_DelayConfig> DelayConfigList
 		{
 			get
 			{
-				return recordUsageData;
+				return delayConfigList;
 			}
 			set	
 			{
-				recordUsageData = value;
+				delayConfigList = value;
 			}
 		}
 
-		public class DescribeLiveDomainRecordUsageData_DataModule
+		public class ListLiveDelayConfig_DelayConfig
 		{
 
-			private string type;
+			private string stream;
 
 			private string domain;
 
-			private string region;
+			private string taskTriggerMode;
 
-			private string timeStamp;
+			private string delayTime;
 
-			private long? duration;
+			private string app;
 
-			private long? count;
-
-			[JsonProperty(PropertyName = "Type")]
-			public string Type
+			[JsonProperty(PropertyName = "Stream")]
+			public string Stream
 			{
 				get
 				{
-					return type;
+					return stream;
 				}
 				set	
 				{
-					type = value;
+					stream = value;
 				}
 			}
 
@@ -126,55 +109,42 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "Region")]
-			public string Region
+			[JsonProperty(PropertyName = "TaskTriggerMode")]
+			public string TaskTriggerMode
 			{
 				get
 				{
-					return region;
+					return taskTriggerMode;
 				}
 				set	
 				{
-					region = value;
+					taskTriggerMode = value;
 				}
 			}
 
-			[JsonProperty(PropertyName = "TimeStamp")]
-			public string TimeStamp
+			[JsonProperty(PropertyName = "DelayTime")]
+			public string DelayTime
 			{
 				get
 				{
-					return timeStamp;
+					return delayTime;
 				}
 				set	
 				{
-					timeStamp = value;
+					delayTime = value;
 				}
 			}
 
-			[JsonProperty(PropertyName = "Duration")]
-			public long? Duration
+			[JsonProperty(PropertyName = "App")]
+			public string App
 			{
 				get
 				{
-					return duration;
+					return app;
 				}
 				set	
 				{
-					duration = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Count")]
-			public long? Count
-			{
-				get
-				{
-					return count;
-				}
-				set	
-				{
-					count = value;
+					app = value;
 				}
 			}
 		}

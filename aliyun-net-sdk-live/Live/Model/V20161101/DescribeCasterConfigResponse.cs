@@ -355,6 +355,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string ossBucket;
 
+			private int? onDemand;
+
 			private List<DescribeCasterConfig_RecordFormatItem> recordFormat;
 
 			[JsonProperty(PropertyName = "OssEndpoint")]
@@ -380,6 +382,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					ossBucket = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OnDemand")]
+			public int? OnDemand
+			{
+				get
+				{
+					return onDemand;
+				}
+				set	
+				{
+					onDemand = value;
 				}
 			}
 
