@@ -27,10 +27,10 @@ using Aliyun.Acs.alinlp.Transform.V20200629;
 
 namespace Aliyun.Acs.alinlp.Model.V20200629
 {
-    public class GetDpChGeneralStanfordRequest : RpcAcsRequest<GetDpChGeneralStanfordResponse>
+    public class InsertCustomRequest : RpcAcsRequest<InsertCustomResponse>
     {
-        public GetDpChGeneralStanfordRequest()
-            : base("alinlp", "2020-06-29", "GetDpChGeneralStanford", "alinlp", "openAPI")
+        public InsertCustomRequest()
+            : base("alinlp", "2020-06-29", "InsertCustom", "alinlp", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,9 +40,43 @@ namespace Aliyun.Acs.alinlp.Model.V20200629
 			Method = MethodType.POST;
         }
 
+		private string customUrl;
+
+		private string regUrl;
+
 		private string serviceCode;
 
-		private string text;
+		private string regFileName;
+
+		private string customFileName;
+
+		private int? apiId;
+
+		public string CustomUrl
+		{
+			get
+			{
+				return customUrl;
+			}
+			set	
+			{
+				customUrl = value;
+				DictionaryUtil.Add(BodyParameters, "CustomUrl", value);
+			}
+		}
+
+		public string RegUrl
+		{
+			get
+			{
+				return regUrl;
+			}
+			set	
+			{
+				regUrl = value;
+				DictionaryUtil.Add(BodyParameters, "RegUrl", value);
+			}
+		}
 
 		public string ServiceCode
 		{
@@ -57,16 +91,42 @@ namespace Aliyun.Acs.alinlp.Model.V20200629
 			}
 		}
 
-		public string Text
+		public string RegFileName
 		{
 			get
 			{
-				return text;
+				return regFileName;
 			}
 			set	
 			{
-				text = value;
-				DictionaryUtil.Add(BodyParameters, "Text", value);
+				regFileName = value;
+				DictionaryUtil.Add(BodyParameters, "RegFileName", value);
+			}
+		}
+
+		public string CustomFileName
+		{
+			get
+			{
+				return customFileName;
+			}
+			set	
+			{
+				customFileName = value;
+				DictionaryUtil.Add(BodyParameters, "CustomFileName", value);
+			}
+		}
+
+		public int? ApiId
+		{
+			get
+			{
+				return apiId;
+			}
+			set	
+			{
+				apiId = value;
+				DictionaryUtil.Add(BodyParameters, "ApiId", value.ToString());
 			}
 		}
 
@@ -75,9 +135,9 @@ namespace Aliyun.Acs.alinlp.Model.V20200629
 			return false;
 		}
 
-        public override GetDpChGeneralStanfordResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override InsertCustomResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetDpChGeneralStanfordResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return InsertCustomResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

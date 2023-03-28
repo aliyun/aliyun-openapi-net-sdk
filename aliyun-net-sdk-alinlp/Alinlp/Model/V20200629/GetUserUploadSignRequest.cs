@@ -27,10 +27,10 @@ using Aliyun.Acs.alinlp.Transform.V20200629;
 
 namespace Aliyun.Acs.alinlp.Model.V20200629
 {
-    public class GetDpChGeneralStanfordRequest : RpcAcsRequest<GetDpChGeneralStanfordResponse>
+    public class GetUserUploadSignRequest : RpcAcsRequest<GetUserUploadSignResponse>
     {
-        public GetDpChGeneralStanfordRequest()
-            : base("alinlp", "2020-06-29", "GetDpChGeneralStanford", "alinlp", "openAPI")
+        public GetUserUploadSignRequest()
+            : base("alinlp", "2020-06-29", "GetUserUploadSign", "alinlp", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,8 +41,6 @@ namespace Aliyun.Acs.alinlp.Model.V20200629
         }
 
 		private string serviceCode;
-
-		private string text;
 
 		public string ServiceCode
 		{
@@ -57,27 +55,14 @@ namespace Aliyun.Acs.alinlp.Model.V20200629
 			}
 		}
 
-		public string Text
-		{
-			get
-			{
-				return text;
-			}
-			set	
-			{
-				text = value;
-				DictionaryUtil.Add(BodyParameters, "Text", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override GetDpChGeneralStanfordResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetUserUploadSignResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetDpChGeneralStanfordResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetUserUploadSignResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
