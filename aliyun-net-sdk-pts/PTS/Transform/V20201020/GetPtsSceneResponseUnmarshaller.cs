@@ -204,6 +204,16 @@ namespace Aliyun.Acs.PTS.Transform.V20201020
 				scene_globalParameterList.Add(globalParameter);
 			}
 			scene.GlobalParameterList = scene_globalParameterList;
+
+			List<GetPtsSceneResponse.GetPtsScene_Scene.GetPtsScene_Header1> scene_headers = new List<GetPtsSceneResponse.GetPtsScene_Scene.GetPtsScene_Header1>();
+			for (int i = 0; i < _ctx.Length("GetPtsScene.Scene.Headers.Length"); i++) {
+				GetPtsSceneResponse.GetPtsScene_Scene.GetPtsScene_Header1 header1 = new GetPtsSceneResponse.GetPtsScene_Scene.GetPtsScene_Header1();
+				header1.Name = _ctx.StringValue("GetPtsScene.Scene.Headers["+ i +"].Name");
+				header1._Value = _ctx.StringValue("GetPtsScene.Scene.Headers["+ i +"].Value");
+
+				scene_headers.Add(header1);
+			}
+			scene.Headers = scene_headers;
 			getPtsSceneResponse.Scene = scene;
         
 			return getPtsSceneResponse;

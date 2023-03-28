@@ -1,3 +1,7 @@
+2023-03-28 Version: 1.0.1
+- Add new API for querying the sample logs of PTS debug plan.
+- Add new return field for global header to PTS scene.
+
 2023-03-23 Version: 3.9.34
 - Live sdk update.
 
