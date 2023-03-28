@@ -1,3 +1,6 @@
+2023-03-28 Version: 1.6.11
+- Release ReduceVideoNoise and EnhancePortraitVideo. 
+
 2023-03-28 Version: 1.0.1
 - Add new API for querying the sample logs of PTS debug plan.
 - Add new return field for global header to PTS scene.
