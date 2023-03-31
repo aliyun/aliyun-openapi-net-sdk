@@ -27,31 +27,24 @@ using Aliyun.Acs.Dds.Transform.V20151201;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class ResetAccountPasswordRequest : RpcAcsRequest<ResetAccountPasswordResponse>
+    public class DescribeGlobalSecurityIPGroupRequest : RpcAcsRequest<DescribeGlobalSecurityIPGroupResponse>
     {
-        public ResetAccountPasswordRequest()
-            : base("Dds", "2015-12-01", "ResetAccountPassword", "dds", "openAPI")
+        public DescribeGlobalSecurityIPGroupRequest()
+            : base("Dds", "2015-12-01", "DescribeGlobalSecurityIPGroup", "dds", "openAPI")
         {
-			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private string accountName;
+		private string globalSecurityGroupId;
 
 		private string securityToken;
-
-		private string dBInstanceId;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string accountPassword;
-
-		private string characterType;
 
 		public long? ResourceOwnerId
 		{
@@ -66,16 +59,16 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string AccountName
+		public string GlobalSecurityGroupId
 		{
 			get
 			{
-				return accountName;
+				return globalSecurityGroupId;
 			}
 			set	
 			{
-				accountName = value;
-				DictionaryUtil.Add(QueryParameters, "AccountName", value);
+				globalSecurityGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "GlobalSecurityGroupId", value);
 			}
 		}
 
@@ -89,19 +82,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 
@@ -144,35 +124,14 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string AccountPassword
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return accountPassword;
-			}
-			set	
-			{
-				accountPassword = value;
-				DictionaryUtil.Add(QueryParameters, "AccountPassword", value);
-			}
+			return false;
 		}
 
-		public string CharacterType
-		{
-			get
-			{
-				return characterType;
-			}
-			set	
-			{
-				characterType = value;
-				DictionaryUtil.Add(QueryParameters, "CharacterType", value);
-			}
-		}
-
-        public override ResetAccountPasswordResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeGlobalSecurityIPGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ResetAccountPasswordResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeGlobalSecurityIPGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

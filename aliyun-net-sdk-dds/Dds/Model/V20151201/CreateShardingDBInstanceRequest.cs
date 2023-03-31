@@ -53,6 +53,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string dBInstanceDescription;
 
+		private string globalSecurityGroupIds;
+
 		private int? period;
 
 		private List<int?> configServers = new List<int?>(){ };
@@ -216,6 +218,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				dBInstanceDescription = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceDescription", value);
+			}
+		}
+
+		public string GlobalSecurityGroupIds
+		{
+			get
+			{
+				return globalSecurityGroupIds;
+			}
+			set	
+			{
+				globalSecurityGroupIds = value;
+				DictionaryUtil.Add(QueryParameters, "GlobalSecurityGroupIds", value);
 			}
 		}
 

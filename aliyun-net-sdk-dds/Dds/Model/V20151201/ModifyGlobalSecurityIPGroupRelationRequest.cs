@@ -27,31 +27,27 @@ using Aliyun.Acs.Dds.Transform.V20151201;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class ResetAccountPasswordRequest : RpcAcsRequest<ResetAccountPasswordResponse>
+    public class ModifyGlobalSecurityIPGroupRelationRequest : RpcAcsRequest<ModifyGlobalSecurityIPGroupRelationResponse>
     {
-        public ResetAccountPasswordRequest()
-            : base("Dds", "2015-12-01", "ResetAccountPassword", "dds", "openAPI")
+        public ModifyGlobalSecurityIPGroupRelationRequest()
+            : base("Dds", "2015-12-01", "ModifyGlobalSecurityIPGroupRelation", "dds", "openAPI")
         {
 			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private string accountName;
+		private string globalSecurityGroupId;
 
 		private string securityToken;
 
-		private string dBInstanceId;
-
 		private string resourceOwnerAccount;
+
+		private string dBClusterId;
 
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string accountPassword;
-
-		private string characterType;
 
 		public long? ResourceOwnerId
 		{
@@ -66,16 +62,16 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string AccountName
+		public string GlobalSecurityGroupId
 		{
 			get
 			{
-				return accountName;
+				return globalSecurityGroupId;
 			}
 			set	
 			{
-				accountName = value;
-				DictionaryUtil.Add(QueryParameters, "AccountName", value);
+				globalSecurityGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "GlobalSecurityGroupId", value);
 			}
 		}
 
@@ -92,19 +88,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
 		public string ResourceOwnerAccount
 		{
 			get
@@ -115,6 +98,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string DBClusterId
+		{
+			get
+			{
+				return dBClusterId;
+			}
+			set	
+			{
+				dBClusterId = value;
+				DictionaryUtil.Add(QueryParameters, "DBClusterId", value);
 			}
 		}
 
@@ -144,35 +140,14 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string AccountPassword
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return accountPassword;
-			}
-			set	
-			{
-				accountPassword = value;
-				DictionaryUtil.Add(QueryParameters, "AccountPassword", value);
-			}
+			return false;
 		}
 
-		public string CharacterType
-		{
-			get
-			{
-				return characterType;
-			}
-			set	
-			{
-				characterType = value;
-				DictionaryUtil.Add(QueryParameters, "CharacterType", value);
-			}
-		}
-
-        public override ResetAccountPasswordResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyGlobalSecurityIPGroupRelationResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ResetAccountPasswordResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyGlobalSecurityIPGroupRelationResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

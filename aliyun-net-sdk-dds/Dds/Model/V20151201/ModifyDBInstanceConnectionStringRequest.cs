@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string ownerAccount;
 
+		private int? newPort;
+
 		private string newConnectionString;
 
 		private long? ownerId;
@@ -128,6 +130,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public int? NewPort
+		{
+			get
+			{
+				return newPort;
+			}
+			set	
+			{
+				newPort = value;
+				DictionaryUtil.Add(QueryParameters, "NewPort", value.ToString());
 			}
 		}
 

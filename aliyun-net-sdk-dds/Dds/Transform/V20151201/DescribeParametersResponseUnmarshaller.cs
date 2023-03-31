@@ -44,22 +44,23 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				parameter.ForceRestart = _ctx.StringValue("DescribeParameters.RunningParameters["+ i +"].ForceRestart");
 				parameter.ParameterDescription = _ctx.StringValue("DescribeParameters.RunningParameters["+ i +"].ParameterDescription");
 				parameter.ModifiableStatus = _ctx.StringValue("DescribeParameters.RunningParameters["+ i +"].ModifiableStatus");
+				parameter.CharacterType = _ctx.StringValue("DescribeParameters.RunningParameters["+ i +"].CharacterType");
 
 				describeParametersResponse_runningParameters.Add(parameter);
 			}
 			describeParametersResponse.RunningParameters = describeParametersResponse_runningParameters;
 
-			List<DescribeParametersResponse.DescribeParameters_Parameter> describeParametersResponse_configParameters = new List<DescribeParametersResponse.DescribeParameters_Parameter>();
+			List<DescribeParametersResponse.DescribeParameters_Parameter1> describeParametersResponse_configParameters = new List<DescribeParametersResponse.DescribeParameters_Parameter1>();
 			for (int i = 0; i < _ctx.Length("DescribeParameters.ConfigParameters.Length"); i++) {
-				DescribeParametersResponse.DescribeParameters_Parameter parameter = new DescribeParametersResponse.DescribeParameters_Parameter();
-				parameter.CheckingCode = _ctx.StringValue("DescribeParameters.ConfigParameters["+ i +"].CheckingCode");
-				parameter.ParameterName = _ctx.StringValue("DescribeParameters.ConfigParameters["+ i +"].ParameterName");
-				parameter.ParameterValue = _ctx.StringValue("DescribeParameters.ConfigParameters["+ i +"].ParameterValue");
-				parameter.ForceRestart = _ctx.StringValue("DescribeParameters.ConfigParameters["+ i +"].ForceRestart");
-				parameter.ParameterDescription = _ctx.StringValue("DescribeParameters.ConfigParameters["+ i +"].ParameterDescription");
-				parameter.ModifiableStatus = _ctx.StringValue("DescribeParameters.ConfigParameters["+ i +"].ModifiableStatus");
+				DescribeParametersResponse.DescribeParameters_Parameter1 parameter1 = new DescribeParametersResponse.DescribeParameters_Parameter1();
+				parameter1.CheckingCode = _ctx.StringValue("DescribeParameters.ConfigParameters["+ i +"].CheckingCode");
+				parameter1.ParameterName = _ctx.StringValue("DescribeParameters.ConfigParameters["+ i +"].ParameterName");
+				parameter1.ParameterValue = _ctx.StringValue("DescribeParameters.ConfigParameters["+ i +"].ParameterValue");
+				parameter1.ForceRestart = _ctx.BooleanValue("DescribeParameters.ConfigParameters["+ i +"].ForceRestart");
+				parameter1.ParameterDescription = _ctx.StringValue("DescribeParameters.ConfigParameters["+ i +"].ParameterDescription");
+				parameter1.ModifiableStatus = _ctx.BooleanValue("DescribeParameters.ConfigParameters["+ i +"].ModifiableStatus");
 
-				describeParametersResponse_configParameters.Add(parameter);
+				describeParametersResponse_configParameters.Add(parameter1);
 			}
 			describeParametersResponse.ConfigParameters = describeParametersResponse_configParameters;
         

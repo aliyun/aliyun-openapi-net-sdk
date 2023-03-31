@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private List<DescribeParameters_Parameter> runningParameters;
 
-		private List<DescribeParameters_Parameter> configParameters;
+		private List<DescribeParameters_Parameter1> configParameters;
 
 		public string EngineVersion
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public List<DescribeParameters_Parameter> ConfigParameters
+		public List<DescribeParameters_Parameter1> ConfigParameters
 		{
 			get
 			{
@@ -109,6 +109,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			private string parameterDescription;
 
 			private string modifiableStatus;
+
+			private string characterType;
 
 			public string CheckingCode
 			{
@@ -171,6 +173,106 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 
 			public string ModifiableStatus
+			{
+				get
+				{
+					return modifiableStatus;
+				}
+				set	
+				{
+					modifiableStatus = value;
+				}
+			}
+
+			public string CharacterType
+			{
+				get
+				{
+					return characterType;
+				}
+				set	
+				{
+					characterType = value;
+				}
+			}
+		}
+
+		public class DescribeParameters_Parameter1
+		{
+
+			private string checkingCode;
+
+			private string parameterName;
+
+			private string parameterValue;
+
+			private bool? forceRestart;
+
+			private string parameterDescription;
+
+			private bool? modifiableStatus;
+
+			public string CheckingCode
+			{
+				get
+				{
+					return checkingCode;
+				}
+				set	
+				{
+					checkingCode = value;
+				}
+			}
+
+			public string ParameterName
+			{
+				get
+				{
+					return parameterName;
+				}
+				set	
+				{
+					parameterName = value;
+				}
+			}
+
+			public string ParameterValue
+			{
+				get
+				{
+					return parameterValue;
+				}
+				set	
+				{
+					parameterValue = value;
+				}
+			}
+
+			public bool? ForceRestart
+			{
+				get
+				{
+					return forceRestart;
+				}
+				set	
+				{
+					forceRestart = value;
+				}
+			}
+
+			public string ParameterDescription
+			{
+				get
+				{
+					return parameterDescription;
+				}
+				set	
+				{
+					parameterDescription = value;
+				}
+			}
+
+			public bool? ModifiableStatus
 			{
 				get
 				{
