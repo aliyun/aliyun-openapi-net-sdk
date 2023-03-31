@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -58,6 +59,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private int? pageSize;
 
+		[JsonProperty(PropertyName = "ProductCode")]
 		public string ProductCode
 		{
 			get
@@ -71,6 +73,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "BillingCycle")]
 		public string BillingCycle
 		{
 			get
@@ -84,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNum")]
 		public int? PageNum
 		{
 			get
@@ -97,6 +101,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerID")]
 		public long? OwnerID
 		{
 			get
@@ -110,6 +115,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "BillOwnerId")]
 		public long? BillOwnerId
 		{
 			get
@@ -123,6 +129,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "BillingDate")]
 		public string BillingDate
 		{
 			get
@@ -136,6 +143,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "IsGroupByProduct")]
 		public bool? IsGroupByProduct
 		{
 			get
@@ -149,6 +157,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Granularity")]
 		public string Granularity
 		{
 			get
@@ -162,6 +171,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get

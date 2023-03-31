@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -45,6 +46,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private long? ownerId;
 
+		[JsonProperty(PropertyName = "ProductCode")]
 		public string ProductCode
 		{
 			get
@@ -58,6 +60,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get

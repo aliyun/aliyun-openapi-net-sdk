@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private DeleteCostUnit_Data data;
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public DeleteCostUnit_Data Data
 		{
 			get
@@ -104,6 +109,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private long? ownerUid;
 
+			[JsonProperty(PropertyName = "IsSuccess")]
 			public bool? IsSuccess
 			{
 				get
@@ -116,6 +122,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "UnitId")]
 			public long? UnitId
 			{
 				get
@@ -128,6 +135,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "OwnerUid")]
 			public long? OwnerUid
 			{
 				get

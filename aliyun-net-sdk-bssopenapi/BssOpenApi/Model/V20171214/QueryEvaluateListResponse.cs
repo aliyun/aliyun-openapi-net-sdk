@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private QueryEvaluateList_Data data;
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public QueryEvaluateList_Data Data
 		{
 			get
@@ -112,6 +117,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private List<QueryEvaluateList_Evaluate> evaluateList;
 
+			[JsonProperty(PropertyName = "PageNum")]
 			public int? PageNum
 			{
 				get
@@ -124,6 +130,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "TotalUnAppliedInvoiceAmount")]
 			public long? TotalUnAppliedInvoiceAmount
 			{
 				get
@@ -136,6 +143,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "PageSize")]
 			public int? PageSize
 			{
 				get
@@ -148,6 +156,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "TotalCount")]
 			public int? TotalCount
 			{
 				get
@@ -160,6 +169,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "TotalInvoiceAmount")]
 			public long? TotalInvoiceAmount
 			{
 				get
@@ -172,6 +182,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "HostId")]
 			public string HostId
 			{
 				get
@@ -184,6 +195,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "EvaluateList")]
 			public List<QueryEvaluateList_Evaluate> EvaluateList
 			{
 				get
@@ -241,6 +253,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private long? id;
 
+				[JsonProperty(PropertyName = "Type")]
 				public int? Type
 				{
 					get
@@ -253,6 +266,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Status")]
 				public int? Status
 				{
 					get
@@ -265,6 +279,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "BillId")]
 				public long? BillId
 				{
 					get
@@ -277,6 +292,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "UserId")]
 				public long? UserId
 				{
 					get
@@ -289,6 +305,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "BillCycle")]
 				public string BillCycle
 				{
 					get
@@ -301,6 +318,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "CanInvoiceAmount")]
 				public long? CanInvoiceAmount
 				{
 					get
@@ -313,6 +331,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "OffsetAcceptAmount")]
 				public long? OffsetAcceptAmount
 				{
 					get
@@ -325,6 +344,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ItemId")]
 				public long? ItemId
 				{
 					get
@@ -337,6 +357,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "OutBizId")]
 				public string OutBizId
 				{
 					get
@@ -349,6 +370,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "UserNick")]
 				public string UserNick
 				{
 					get
@@ -361,6 +383,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "GmtModified")]
 				public string GmtModified
 				{
 					get
@@ -373,6 +396,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "OpId")]
 				public string OpId
 				{
 					get
@@ -385,6 +409,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "BizType")]
 				public string BizType
 				{
 					get
@@ -397,6 +422,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "OriginalAmount")]
 				public long? OriginalAmount
 				{
 					get
@@ -409,6 +435,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "InvoicedAmount")]
 				public long? InvoicedAmount
 				{
 					get
@@ -421,6 +448,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "GmtCreate")]
 				public string GmtCreate
 				{
 					get
@@ -433,6 +461,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PresentAmount")]
 				public long? PresentAmount
 				{
 					get
@@ -445,6 +474,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "BizTime")]
 				public string BizTime
 				{
 					get
@@ -457,6 +487,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Name")]
 				public string Name
 				{
 					get
@@ -469,6 +500,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "OffsetCostAmount")]
 				public long? OffsetCostAmount
 				{
 					get
@@ -481,6 +513,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Id")]
 				public long? Id
 				{
 					get

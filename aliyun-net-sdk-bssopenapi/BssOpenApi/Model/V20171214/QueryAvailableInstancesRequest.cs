@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -66,6 +67,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string region;
 
+		[JsonProperty(PropertyName = "ProductCode")]
 		public string ProductCode
 		{
 			get
@@ -79,6 +81,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "SubscriptionType")]
 		public string SubscriptionType
 		{
 			get
@@ -92,6 +95,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNum")]
 		public int? PageNum
 		{
 			get
@@ -105,6 +109,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "ProductType")]
 		public string ProductType
 		{
 			get
@@ -118,6 +123,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get
@@ -131,6 +137,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RenewStatus")]
 		public string RenewStatus
 		{
 			get
@@ -144,6 +151,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -157,6 +165,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "EndTimeStart")]
 		public string EndTimeStart
 		{
 			get
@@ -170,6 +179,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "CreateTimeEnd")]
 		public string CreateTimeEnd
 		{
 			get
@@ -183,6 +193,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceIDs")]
 		public string InstanceIDs
 		{
 			get
@@ -196,6 +207,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "EndTimeEnd")]
 		public string EndTimeEnd
 		{
 			get
@@ -209,6 +221,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "CreateTimeStart")]
 		public string CreateTimeStart
 		{
 			get
@@ -222,6 +235,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Region")]
 		public string Region
 		{
 			get

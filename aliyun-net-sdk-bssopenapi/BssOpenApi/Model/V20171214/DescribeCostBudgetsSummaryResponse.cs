@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private DescribeCostBudgetsSummary_Data data;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public DescribeCostBudgetsSummary_Data Data
 		{
 			get
@@ -108,6 +113,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private List<DescribeCostBudgetsSummary_Item> items;
 
+			[JsonProperty(PropertyName = "NextToken")]
 			public string NextToken
 			{
 				get
@@ -120,6 +126,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "MaxResults")]
 			public int? MaxResults
 			{
 				get
@@ -132,6 +139,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "TotalCount")]
 			public int? TotalCount
 			{
 				get
@@ -144,6 +152,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "HostId")]
 			public string HostId
 			{
 				get
@@ -156,6 +165,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "Items")]
 			public List<DescribeCostBudgetsSummary_Item> Items
 			{
 				get
@@ -183,6 +193,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string consumePeriod;
 
+				[JsonProperty(PropertyName = "BudgetName")]
 				public string BudgetName
 				{
 					get
@@ -195,6 +206,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "BudgetStatus")]
 				public string BudgetStatus
 				{
 					get
@@ -207,6 +219,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "BudgetType")]
 				public string BudgetType
 				{
 					get
@@ -219,6 +232,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Budget")]
 				public string Budget
 				{
 					get
@@ -231,6 +245,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "CalculatedValues")]
 				public string CalculatedValues
 				{
 					get
@@ -243,6 +258,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ConsumePeriod")]
 				public string ConsumePeriod
 				{
 					get

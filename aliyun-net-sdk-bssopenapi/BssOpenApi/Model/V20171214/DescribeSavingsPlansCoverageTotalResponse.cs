@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private DescribeSavingsPlansCoverageTotal_Data data;
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public DescribeSavingsPlansCoverageTotal_Data Data
 		{
 			get
@@ -102,6 +107,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private DescribeSavingsPlansCoverageTotal_TotalCoverage totalCoverage;
 
+			[JsonProperty(PropertyName = "PeriodCoverage")]
 			public List<DescribeSavingsPlansCoverageTotal_Item> PeriodCoverage
 			{
 				get
@@ -114,6 +120,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "TotalCoverage")]
 			public DescribeSavingsPlansCoverageTotal_TotalCoverage TotalCoverage
 			{
 				get
@@ -133,6 +140,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string period;
 
+				[JsonProperty(PropertyName = "Percentage")]
 				public float? Percentage
 				{
 					get
@@ -145,6 +153,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Period")]
 				public string Period
 				{
 					get
@@ -165,6 +174,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private float? deductAmount;
 
+				[JsonProperty(PropertyName = "CoveragePercentage")]
 				public float? CoveragePercentage
 				{
 					get
@@ -177,6 +187,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "DeductAmount")]
 				public float? DeductAmount
 				{
 					get

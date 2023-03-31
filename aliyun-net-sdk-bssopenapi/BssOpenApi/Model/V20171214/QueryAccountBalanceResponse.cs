@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private QueryAccountBalance_Data data;
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public QueryAccountBalance_Data Data
 		{
 			get
@@ -108,6 +113,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private string availableCashAmount;
 
+			[JsonProperty(PropertyName = "AvailableAmount")]
 			public string AvailableAmount
 			{
 				get
@@ -120,6 +126,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "CreditAmount")]
 			public string CreditAmount
 			{
 				get
@@ -132,6 +139,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "MybankCreditAmount")]
 			public string MybankCreditAmount
 			{
 				get
@@ -144,6 +152,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "Currency")]
 			public string Currency
 			{
 				get
@@ -156,6 +165,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "AvailableCashAmount")]
 			public string AvailableCashAmount
 			{
 				get

@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private DescribeResourceCoverageTotal_Data data;
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public DescribeResourceCoverageTotal_Data Data
 		{
 			get
@@ -102,6 +107,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private DescribeResourceCoverageTotal_TotalCoverage totalCoverage;
 
+			[JsonProperty(PropertyName = "PeriodCoverage")]
 			public List<DescribeResourceCoverageTotal_Item> PeriodCoverage
 			{
 				get
@@ -114,6 +120,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "TotalCoverage")]
 			public DescribeResourceCoverageTotal_TotalCoverage TotalCoverage
 			{
 				get
@@ -133,6 +140,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string period;
 
+				[JsonProperty(PropertyName = "CoveragePercentage")]
 				public float? CoveragePercentage
 				{
 					get
@@ -145,6 +153,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Period")]
 				public string Period
 				{
 					get
@@ -169,6 +178,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private float? totalQuantity;
 
+				[JsonProperty(PropertyName = "CapacityUnit")]
 				public string CapacityUnit
 				{
 					get
@@ -181,6 +191,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "DeductQuantity")]
 				public float? DeductQuantity
 				{
 					get
@@ -193,6 +204,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "CoveragePercentage")]
 				public float? CoveragePercentage
 				{
 					get
@@ -205,6 +217,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "TotalQuantity")]
 				public float? TotalQuantity
 				{
 					get

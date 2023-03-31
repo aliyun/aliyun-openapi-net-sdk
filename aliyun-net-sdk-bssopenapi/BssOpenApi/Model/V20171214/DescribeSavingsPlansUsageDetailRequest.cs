@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -52,6 +53,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private int? maxResults;
 
+		[JsonProperty(PropertyName = "PeriodType")]
 		public string PeriodType
 		{
 			get
@@ -65,6 +67,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "BillOwnerId")]
 		public long? BillOwnerId
 		{
 			get
@@ -78,6 +81,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "StartPeriod")]
 		public string StartPeriod
 		{
 			get
@@ -91,6 +95,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "EndPeriod")]
 		public string EndPeriod
 		{
 			get
@@ -104,6 +109,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Token")]
 		public string Token
 		{
 			get
@@ -117,6 +123,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "MaxResults")]
 		public int? MaxResults
 		{
 			get

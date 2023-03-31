@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private GetCustomerAccountInfo_Data data;
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public GetCustomerAccountInfo_Data Data
 		{
 			get
@@ -110,6 +115,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private bool? isCertified;
 
+			[JsonProperty(PropertyName = "Mpk")]
 			public long? Mpk
 			{
 				get
@@ -122,6 +128,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "LoginEmail")]
 			public string LoginEmail
 			{
 				get
@@ -134,6 +141,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "HostingStatus")]
 			public string HostingStatus
 			{
 				get
@@ -146,6 +154,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "AccountType")]
 			public string AccountType
 			{
 				get
@@ -158,6 +167,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "CreditLimitStatus")]
 			public string CreditLimitStatus
 			{
 				get
@@ -170,6 +180,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "IsCertified")]
 			public bool? IsCertified
 			{
 				get

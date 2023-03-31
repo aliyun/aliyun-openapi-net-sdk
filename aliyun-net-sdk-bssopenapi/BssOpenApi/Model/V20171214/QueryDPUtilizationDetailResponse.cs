@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private QueryDPUtilizationDetail_Data data;
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public QueryDPUtilizationDetail_Data Data
 		{
 			get
@@ -102,6 +107,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private List<QueryDPUtilizationDetail_DetailListItem> detailList;
 
+			[JsonProperty(PropertyName = "NextToken")]
 			public string NextToken
 			{
 				get
@@ -114,6 +120,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "DetailList")]
 			public List<QueryDPUtilizationDetail_DetailListItem> DetailList
 			{
 				get
@@ -157,6 +164,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private long? uid;
 
+				[JsonProperty(PropertyName = "DeductedInstanceId")]
 				public string DeductedInstanceId
 				{
 					get
@@ -169,6 +177,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "InstanceId")]
 				public string InstanceId
 				{
 					get
@@ -181,6 +190,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "DeductHours")]
 				public float? DeductHours
 				{
 					get
@@ -193,6 +203,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ShareUid")]
 				public long? ShareUid
 				{
 					get
@@ -205,6 +216,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "DeductDate")]
 				public string DeductDate
 				{
 					get
@@ -217,6 +229,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "InstanceSpec")]
 				public string InstanceSpec
 				{
 					get
@@ -229,6 +242,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "DeductedCommodityCode")]
 				public string DeductedCommodityCode
 				{
 					get
@@ -241,6 +255,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "DeductedProductDetail")]
 				public string DeductedProductDetail
 				{
 					get
@@ -253,6 +268,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "DeductMeasure")]
 				public float? DeductMeasure
 				{
 					get
@@ -265,6 +281,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Region")]
 				public string Region
 				{
 					get
@@ -277,6 +294,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "DeductQuantity")]
 				public float? DeductQuantity
 				{
 					get
@@ -289,6 +307,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "DeductFactorTotal")]
 				public float? DeductFactorTotal
 				{
 					get
@@ -301,6 +320,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ResCode")]
 				public string ResCode
 				{
 					get
@@ -313,6 +333,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Uid")]
 				public long? Uid
 				{
 					get

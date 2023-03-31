@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private QueryBillToOSSSubscription_Data data;
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public QueryBillToOSSSubscription_Data Data
 		{
 			get
@@ -104,6 +109,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private List<QueryBillToOSSSubscription_Item> items;
 
+			[JsonProperty(PropertyName = "AccountName")]
 			public string AccountName
 			{
 				get
@@ -116,6 +122,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "AccountID")]
 			public string AccountID
 			{
 				get
@@ -128,6 +135,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "Items")]
 			public List<QueryBillToOSSSubscription_Item> Items
 			{
 				get
@@ -159,6 +167,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private int? rowLimitPerFile;
 
+				[JsonProperty(PropertyName = "BucketOwnerId")]
 				public long? BucketOwnerId
 				{
 					get
@@ -171,6 +180,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "SubscribeType")]
 				public string SubscribeType
 				{
 					get
@@ -183,6 +193,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "SubscribeBucket")]
 				public string SubscribeBucket
 				{
 					get
@@ -195,6 +206,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "SubscribeTime")]
 				public string SubscribeTime
 				{
 					get
@@ -207,6 +219,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "SubscribeLanguage")]
 				public string SubscribeLanguage
 				{
 					get
@@ -219,6 +232,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "MultAccountRelSubscribe")]
 				public string MultAccountRelSubscribe
 				{
 					get
@@ -231,6 +245,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "BucketPath")]
 				public string BucketPath
 				{
 					get
@@ -243,6 +258,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "RowLimitPerFile")]
 				public int? RowLimitPerFile
 				{
 					get

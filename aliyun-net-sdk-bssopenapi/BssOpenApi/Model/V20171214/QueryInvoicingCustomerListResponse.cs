@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private QueryInvoicingCustomerList_Data data;
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public QueryInvoicingCustomerList_Data Data
 		{
 			get
@@ -100,6 +105,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private List<QueryInvoicingCustomerList_CustomerInvoice> customerInvoiceList;
 
+			[JsonProperty(PropertyName = "CustomerInvoiceList")]
 			public List<QueryInvoicingCustomerList_CustomerInvoice> CustomerInvoiceList
 			{
 				get
@@ -157,6 +163,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string bankNo;
 
+				[JsonProperty(PropertyName = "Type")]
 				public long? Type
 				{
 					get
@@ -169,6 +176,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Status")]
 				public long? Status
 				{
 					get
@@ -181,6 +189,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "AdjustType")]
 				public long? AdjustType
 				{
 					get
@@ -193,6 +202,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Bank")]
 				public string Bank
 				{
 					get
@@ -205,6 +215,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "StartCycle")]
 				public long? StartCycle
 				{
 					get
@@ -217,6 +228,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "TitleChangeInstructions")]
 				public string TitleChangeInstructions
 				{
 					get
@@ -229,6 +241,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "UserId")]
 				public long? UserId
 				{
 					get
@@ -241,6 +254,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "OperatingLicenseAddress")]
 				public string OperatingLicenseAddress
 				{
 					get
@@ -253,6 +267,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "InvoiceTitle")]
 				public string InvoiceTitle
 				{
 					get
@@ -265,6 +280,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "UserNick")]
 				public string UserNick
 				{
 					get
@@ -277,6 +293,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "OperatingLicensePhone")]
 				public string OperatingLicensePhone
 				{
 					get
@@ -289,6 +306,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "EndCycle")]
 				public long? EndCycle
 				{
 					get
@@ -301,6 +319,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "DefaultRemark")]
 				public string DefaultRemark
 				{
 					get
@@ -313,6 +332,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "TaxationLicense")]
 				public string TaxationLicense
 				{
 					get
@@ -325,6 +345,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "RegisterNo")]
 				public string RegisterNo
 				{
 					get
@@ -337,6 +358,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "GmtCreate")]
 				public string GmtCreate
 				{
 					get
@@ -349,6 +371,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "TaxpayerType")]
 				public long? TaxpayerType
 				{
 					get
@@ -361,6 +384,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "CustomerType")]
 				public long? CustomerType
 				{
 					get
@@ -373,6 +397,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "IssueType")]
 				public long? IssueType
 				{
 					get
@@ -385,6 +410,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Id")]
 				public long? Id
 				{
 					get
@@ -397,6 +423,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "BankNo")]
 				public string BankNo
 				{
 					get

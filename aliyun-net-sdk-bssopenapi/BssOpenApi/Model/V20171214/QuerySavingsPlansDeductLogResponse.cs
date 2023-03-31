@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private QuerySavingsPlansDeductLog_Data data;
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public QuerySavingsPlansDeductLog_Data Data
 		{
 			get
@@ -106,6 +111,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private List<QuerySavingsPlansDeductLog_SavingsPlansDeductDetailResponse> items;
 
+			[JsonProperty(PropertyName = "PageNum")]
 			public int? PageNum
 			{
 				get
@@ -118,6 +124,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "PageSize")]
 			public int? PageSize
 			{
 				get
@@ -130,6 +137,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "TotalCount")]
 			public int? TotalCount
 			{
 				get
@@ -142,6 +150,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "Items")]
 			public List<QuerySavingsPlansDeductLog_SavingsPlansDeductDetailResponse> Items
 			{
 				get
@@ -181,6 +190,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private long? ownerId;
 
+				[JsonProperty(PropertyName = "EndTime")]
 				public string EndTime
 				{
 					get
@@ -193,6 +203,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "StartTime")]
 				public string StartTime
 				{
 					get
@@ -205,6 +216,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "SavingsType")]
 				public string SavingsType
 				{
 					get
@@ -217,6 +229,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "UserId")]
 				public long? UserId
 				{
 					get
@@ -229,6 +242,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "DiscountRate")]
 				public string DiscountRate
 				{
 					get
@@ -241,6 +255,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "BillModule")]
 				public string BillModule
 				{
 					get
@@ -253,6 +268,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "InstanceId")]
 				public string InstanceId
 				{
 					get
@@ -265,6 +281,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "DeductInstanceId")]
 				public string DeductInstanceId
 				{
 					get
@@ -277,6 +294,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "DeductCommodity")]
 				public string DeductCommodity
 				{
 					get
@@ -289,6 +307,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "DeductRate")]
 				public string DeductRate
 				{
 					get
@@ -301,6 +320,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "DeductFee")]
 				public string DeductFee
 				{
 					get
@@ -313,6 +333,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "OwnerId")]
 				public long? OwnerId
 				{
 					get

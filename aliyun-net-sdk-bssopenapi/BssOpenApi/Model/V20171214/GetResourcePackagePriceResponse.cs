@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private GetResourcePackagePrice_Data data;
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public GetResourcePackagePrice_Data Data
 		{
 			get
@@ -108,6 +113,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private List<GetResourcePackagePrice_Promotion> promotions;
 
+			[JsonProperty(PropertyName = "OriginalPrice")]
 			public float? OriginalPrice
 			{
 				get
@@ -120,6 +126,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "DiscountPrice")]
 			public float? DiscountPrice
 			{
 				get
@@ -132,6 +139,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "Currency")]
 			public string Currency
 			{
 				get
@@ -144,6 +152,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "TradePrice")]
 			public float? TradePrice
 			{
 				get
@@ -156,6 +165,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "Promotions")]
 			public List<GetResourcePackagePrice_Promotion> Promotions
 			{
 				get
@@ -175,6 +185,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private long? id;
 
+				[JsonProperty(PropertyName = "Name")]
 				public string Name
 				{
 					get
@@ -187,6 +198,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Id")]
 				public long? Id
 				{
 					get

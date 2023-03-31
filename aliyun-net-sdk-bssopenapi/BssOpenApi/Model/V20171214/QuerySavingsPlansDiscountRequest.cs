@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -59,6 +60,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string region;
 
+		[JsonProperty(PropertyName = "CommodityCode")]
 		public string CommodityCode
 		{
 			get
@@ -72,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Locale")]
 		public string Locale
 		{
 			get
@@ -85,6 +88,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNum")]
 		public int? PageNum
 		{
 			get
@@ -98,6 +102,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Cycle")]
 		public string Cycle
 		{
 			get
@@ -111,6 +116,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Spec")]
 		public string Spec
 		{
 			get
@@ -124,6 +130,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "ModuleCode")]
 		public string ModuleCode
 		{
 			get
@@ -137,6 +144,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "PayMode")]
 		public string PayMode
 		{
 			get
@@ -150,6 +158,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get
@@ -163,6 +172,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "SpnType")]
 		public string SpnType
 		{
 			get
@@ -176,6 +186,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Region")]
 		public string Region
 		{
 			get

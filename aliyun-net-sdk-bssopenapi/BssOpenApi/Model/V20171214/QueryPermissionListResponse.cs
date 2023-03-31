@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private QueryPermissionList_Data data;
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public QueryPermissionList_Data Data
 		{
 			get
@@ -114,6 +119,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private List<QueryPermissionList_PermissionListItem> permissionList;
 
+			[JsonProperty(PropertyName = "EndTime")]
 			public string EndTime
 			{
 				get
@@ -126,6 +132,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "RelationType")]
 			public string RelationType
 			{
 				get
@@ -138,6 +145,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "StartTime")]
 			public string StartTime
 			{
 				get
@@ -150,6 +158,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "State")]
 			public string State
 			{
 				get
@@ -162,6 +171,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "MasterId")]
 			public long? MasterId
 			{
 				get
@@ -174,6 +184,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "MemberId")]
 			public long? MemberId
 			{
 				get
@@ -186,6 +197,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "SetupTime")]
 			public string SetupTime
 			{
 				get
@@ -198,6 +210,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "PermissionList")]
 			public List<QueryPermissionList_PermissionListItem> PermissionList
 			{
 				get
@@ -221,6 +234,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string permissionName;
 
+				[JsonProperty(PropertyName = "EndTime")]
 				public string EndTime
 				{
 					get
@@ -233,6 +247,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "StartTime")]
 				public string StartTime
 				{
 					get
@@ -245,6 +260,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PermissionCode")]
 				public string PermissionCode
 				{
 					get
@@ -257,6 +273,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PermissionName")]
 				public string PermissionName
 				{
 					get

@@ -37,6 +37,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private DescribeResourcePackageProduct_Data data;
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -49,6 +50,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -61,6 +63,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -73,6 +76,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -85,6 +89,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "OrderId")]
 		public long? OrderId
 		{
 			get
@@ -97,6 +102,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public DescribeResourcePackageProduct_Data Data
 		{
 			get
@@ -114,6 +120,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private List<DescribeResourcePackageProduct_ResourcePackage> resourcePackages;
 
+			[JsonProperty(PropertyName = "ResourcePackages")]
 			public List<DescribeResourcePackageProduct_ResourcePackage> ResourcePackages
 			{
 				get
@@ -137,6 +144,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private List<DescribeResourcePackageProduct_PackageType> packageTypes;
 
+				[JsonProperty(PropertyName = "ProductType")]
 				public string ProductType
 				{
 					get
@@ -149,6 +157,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Name")]
 				public string Name
 				{
 					get
@@ -161,6 +170,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ProductCode")]
 				public string ProductCode
 				{
 					get
@@ -173,6 +183,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PackageTypes")]
 				public List<DescribeResourcePackageProduct_PackageType> PackageTypes
 				{
 					get
@@ -196,6 +207,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 					private List<DescribeResourcePackageProduct_Specification> specifications;
 
+					[JsonProperty(PropertyName = "Code")]
 					public string Code
 					{
 						get
@@ -208,6 +220,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 						}
 					}
 
+					[JsonProperty(PropertyName = "Name")]
 					public string Name
 					{
 						get
@@ -220,6 +233,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 						}
 					}
 
+					[JsonProperty(PropertyName = "Properties")]
 					public List<DescribeResourcePackageProduct_Property> Properties
 					{
 						get
@@ -232,6 +246,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 						}
 					}
 
+					[JsonProperty(PropertyName = "Specifications")]
 					public List<DescribeResourcePackageProduct_Specification> Specifications
 					{
 						get
@@ -251,6 +266,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 						private string _value;
 
+						[JsonProperty(PropertyName = "Name")]
 						public string Name
 						{
 							get
@@ -263,6 +279,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 							}
 						}
 
+						[JsonProperty(PropertyName = "_Value")]
 						public string _Value
 						{
 							get
@@ -285,6 +302,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 						private List<DescribeResourcePackageProduct_AvailableDuration> availableDurations;
 
+						[JsonProperty(PropertyName = "Name")]
 						public string Name
 						{
 							get
@@ -297,6 +315,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 							}
 						}
 
+						[JsonProperty(PropertyName = "_Value")]
 						public string _Value
 						{
 							get
@@ -309,6 +328,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 							}
 						}
 
+						[JsonProperty(PropertyName = "AvailableDurations")]
 						public List<DescribeResourcePackageProduct_AvailableDuration> AvailableDurations
 						{
 							get
@@ -330,6 +350,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 							private string unit;
 
+							[JsonProperty(PropertyName = "_Value")]
 							public int? _Value
 							{
 								get
@@ -342,6 +363,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 								}
 							}
 
+							[JsonProperty(PropertyName = "Name")]
 							public string Name
 							{
 								get
@@ -354,6 +376,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 								}
 							}
 
+							[JsonProperty(PropertyName = "Unit")]
 							public string Unit
 							{
 								get

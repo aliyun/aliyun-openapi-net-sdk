@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -46,6 +47,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private List<string> tags = new List<string>(){ };
 
+		[JsonProperty(PropertyName = "ResourceId")]
 		public List<string> ResourceIds
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceType")]
 		public string ResourceType
 		{
 			get
@@ -72,6 +75,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tag")]
 		public List<string> Tags
 		{
 			get
@@ -100,6 +104,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private string key;
 
+			[JsonProperty(PropertyName = "Value")]
 			public string Value_
 			{
 				get
@@ -112,6 +117,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "Key")]
 			public string Key
 			{
 				get

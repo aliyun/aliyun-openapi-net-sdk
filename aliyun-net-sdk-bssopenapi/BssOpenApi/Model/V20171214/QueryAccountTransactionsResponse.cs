@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private QueryAccountTransactions_Data data;
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public QueryAccountTransactions_Data Data
 		{
 			get
@@ -108,6 +113,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private List<QueryAccountTransactions_AccountTransactionsListItem> accountTransactionsList;
 
+			[JsonProperty(PropertyName = "PageNum")]
 			public int? PageNum
 			{
 				get
@@ -120,6 +126,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "PageSize")]
 			public int? PageSize
 			{
 				get
@@ -132,6 +139,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "TotalCount")]
 			public int? TotalCount
 			{
 				get
@@ -144,6 +152,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "AccountName")]
 			public string AccountName
 			{
 				get
@@ -156,6 +165,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "AccountTransactionsList")]
 			public List<QueryAccountTransactions_AccountTransactionsListItem> AccountTransactionsList
 			{
 				get
@@ -197,6 +207,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string balance;
 
+				[JsonProperty(PropertyName = "BillingCycle")]
 				public string BillingCycle
 				{
 					get
@@ -209,6 +220,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "TransactionChannel")]
 				public string TransactionChannel
 				{
 					get
@@ -221,6 +233,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "RecordID")]
 				public string RecordID
 				{
 					get
@@ -233,6 +246,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Remarks")]
 				public string Remarks
 				{
 					get
@@ -245,6 +259,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Amount")]
 				public string Amount
 				{
 					get
@@ -257,6 +272,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "TransactionAccount")]
 				public string TransactionAccount
 				{
 					get
@@ -269,6 +285,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "TransactionTime")]
 				public string TransactionTime
 				{
 					get
@@ -281,6 +298,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "TransactionType")]
 				public string TransactionType
 				{
 					get
@@ -293,6 +311,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "TransactionFlow")]
 				public string TransactionFlow
 				{
 					get
@@ -305,6 +324,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "FundType")]
 				public string FundType
 				{
 					get
@@ -317,6 +337,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "TransactionChannelSN")]
 				public string TransactionChannelSN
 				{
 					get
@@ -329,6 +350,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "TransactionNumber")]
 				public string TransactionNumber
 				{
 					get
@@ -341,6 +363,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Balance")]
 				public string Balance
 				{
 					get

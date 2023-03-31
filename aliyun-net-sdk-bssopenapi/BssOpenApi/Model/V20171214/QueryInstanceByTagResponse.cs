@@ -37,6 +37,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private List<QueryInstanceByTag_TagResourceItem> tagResource;
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -49,6 +50,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -61,6 +63,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "NextToken")]
 		public string NextToken
 		{
 			get
@@ -73,6 +76,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -85,6 +89,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -97,6 +102,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "TagResource")]
 		public List<QueryInstanceByTag_TagResourceItem> TagResource
 		{
 			get
@@ -118,6 +124,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private List<QueryInstanceByTag_TagKeyValue> tag;
 
+			[JsonProperty(PropertyName = "ResourceId")]
 			public string ResourceId
 			{
 				get
@@ -130,6 +137,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "ResourceType")]
 			public string ResourceType
 			{
 				get
@@ -142,6 +150,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "Tag")]
 			public List<QueryInstanceByTag_TagKeyValue> Tag
 			{
 				get
@@ -161,6 +170,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string _value;
 
+				[JsonProperty(PropertyName = "Key")]
 				public string Key
 				{
 					get
@@ -173,6 +183,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "_Value")]
 				public string _Value
 				{
 					get

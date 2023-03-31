@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -60,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string orderType;
 
+		[JsonProperty(PropertyName = "ProductCode")]
 		public string ProductCode
 		{
 			get
@@ -73,6 +75,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "SubscriptionType")]
 		public string SubscriptionType
 		{
 			get
@@ -86,6 +89,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNum")]
 		public int? PageNum
 		{
 			get
@@ -99,6 +103,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -112,6 +117,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "CreateTimeEnd")]
 		public string CreateTimeEnd
 		{
 			get
@@ -125,6 +131,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "ProductType")]
 		public string ProductType
 		{
 			get
@@ -138,6 +145,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get
@@ -151,6 +159,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "PaymentStatus")]
 		public string PaymentStatus
 		{
 			get
@@ -164,6 +173,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "CreateTimeStart")]
 		public string CreateTimeStart
 		{
 			get
@@ -177,6 +187,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "OrderType")]
 		public string OrderType
 		{
 			get

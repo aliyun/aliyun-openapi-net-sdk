@@ -37,6 +37,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private List<QueryResellerUserAlarmThreshold_DataItem> data;
 
+		[JsonProperty(PropertyName = "Count")]
 		public int? Count
 		{
 			get
@@ -49,6 +50,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -61,6 +63,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -73,6 +76,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -85,6 +89,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -97,6 +102,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public List<QueryResellerUserAlarmThreshold_DataItem> Data
 		{
 			get
@@ -120,6 +126,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private int? denominator;
 
+			[JsonProperty(PropertyName = "ThresholdType")]
 			public int? ThresholdType
 			{
 				get
@@ -132,6 +139,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "ThresholdAmount")]
 			public string ThresholdAmount
 			{
 				get
@@ -144,6 +152,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "Numerator")]
 			public int? Numerator
 			{
 				get
@@ -156,6 +165,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "Denominator")]
 			public int? Denominator
 			{
 				get

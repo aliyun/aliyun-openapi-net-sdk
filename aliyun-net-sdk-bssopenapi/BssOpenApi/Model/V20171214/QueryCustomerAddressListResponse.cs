@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private QueryCustomerAddressList_Data data;
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public QueryCustomerAddressList_Data Data
 		{
 			get
@@ -100,6 +105,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private List<QueryCustomerAddressList_CustomerInvoiceAddress> customerInvoiceAddressList;
 
+			[JsonProperty(PropertyName = "CustomerInvoiceAddressList")]
 			public List<QueryCustomerAddressList_CustomerInvoiceAddress> CustomerInvoiceAddressList
 			{
 				get
@@ -139,6 +145,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string province;
 
+				[JsonProperty(PropertyName = "Addressee")]
 				public string Addressee
 				{
 					get
@@ -151,6 +158,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PostalCode")]
 				public string PostalCode
 				{
 					get
@@ -163,6 +171,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "UserId")]
 				public long? UserId
 				{
 					get
@@ -175,6 +184,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "City")]
 				public string City
 				{
 					get
@@ -187,6 +197,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "UserNick")]
 				public string UserNick
 				{
 					get
@@ -199,6 +210,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Street")]
 				public string Street
 				{
 					get
@@ -211,6 +223,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Phone")]
 				public string Phone
 				{
 					get
@@ -223,6 +236,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "County")]
 				public string County
 				{
 					get
@@ -235,6 +249,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "BizType")]
 				public string BizType
 				{
 					get
@@ -247,6 +262,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "DeliveryAddress")]
 				public string DeliveryAddress
 				{
 					get
@@ -259,6 +275,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Id")]
 				public long? Id
 				{
 					get
@@ -271,6 +288,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Province")]
 				public string Province
 				{
 					get

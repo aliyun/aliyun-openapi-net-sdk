@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private List<QueryPrepaidCards_PrepaidCard> data;
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public List<QueryPrepaidCards_PrepaidCard> Data
 		{
 			get
@@ -118,6 +123,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private string balance;
 
+			[JsonProperty(PropertyName = "Status")]
 			public string Status
 			{
 				get
@@ -130,6 +136,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "ExpiryTime")]
 			public string ExpiryTime
 			{
 				get
@@ -142,6 +149,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "GrantedTime")]
 			public string GrantedTime
 			{
 				get
@@ -154,6 +162,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "NominalValue")]
 			public string NominalValue
 			{
 				get
@@ -166,6 +175,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "EffectiveTime")]
 			public string EffectiveTime
 			{
 				get
@@ -178,6 +188,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "PrepaidCardNo")]
 			public string PrepaidCardNo
 			{
 				get
@@ -190,6 +201,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "ApplicableScenarios")]
 			public string ApplicableScenarios
 			{
 				get
@@ -202,6 +214,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "PrepaidCardId")]
 			public long? PrepaidCardId
 			{
 				get
@@ -214,6 +227,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "ApplicableProducts")]
 			public string ApplicableProducts
 			{
 				get
@@ -226,6 +240,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "Balance")]
 			public string Balance
 			{
 				get
