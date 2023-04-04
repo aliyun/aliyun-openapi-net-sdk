@@ -40,6 +40,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
+		private string imageId;
+
 		private int? endOffset;
 
 		private string materialId;
@@ -60,11 +62,26 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string locationId;
 
+		private string imageUrl;
+
 		private int? ptsCallbackInterval;
 
 		private string resourceName;
 
 		private int? repeatNum;
+
+		public string ImageId
+		{
+			get
+			{
+				return imageId;
+			}
+			set	
+			{
+				imageId = value;
+				DictionaryUtil.Add(QueryParameters, "ImageId", value);
+			}
+		}
 
 		public int? EndOffset
 		{
@@ -193,6 +210,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				locationId = value;
 				DictionaryUtil.Add(QueryParameters, "LocationId", value);
+			}
+		}
+
+		public string ImageUrl
+		{
+			get
+			{
+				return imageUrl;
+			}
+			set	
+			{
+				imageUrl = value;
+				DictionaryUtil.Add(QueryParameters, "ImageUrl", value);
 			}
 		}
 

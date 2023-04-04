@@ -47,6 +47,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string programName;
 
+		private string urgentImageUrl;
+
 		private string recordConfig;
 
 		private string urgentMaterialId;
@@ -70,6 +72,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private long? ownerId;
 
 		private float? delay;
+
+		private string urgentImageId;
 
 		private string callbackUrl;
 
@@ -112,6 +116,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				programName = value;
 				DictionaryUtil.Add(QueryParameters, "ProgramName", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "UrgentImageUrl")]
+		public string UrgentImageUrl
+		{
+			get
+			{
+				return urgentImageUrl;
+			}
+			set	
+			{
+				urgentImageUrl = value;
+				DictionaryUtil.Add(QueryParameters, "UrgentImageUrl", value);
 			}
 		}
 
@@ -280,6 +298,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				delay = value;
 				DictionaryUtil.Add(QueryParameters, "Delay", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "UrgentImageId")]
+		public string UrgentImageId
+		{
+			get
+			{
+				return urgentImageId;
+			}
+			set	
+			{
+				urgentImageId = value;
+				DictionaryUtil.Add(QueryParameters, "UrgentImageId", value);
 			}
 		}
 
