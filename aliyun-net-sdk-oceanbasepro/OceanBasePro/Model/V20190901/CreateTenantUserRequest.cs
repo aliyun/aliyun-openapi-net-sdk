@@ -53,6 +53,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 		private string tenantId;
 
+		private string encryptionType;
+
 		private string userName;
 
 		[JsonProperty(PropertyName = "Roles")]
@@ -136,6 +138,20 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			{
 				tenantId = value;
 				DictionaryUtil.Add(BodyParameters, "TenantId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "EncryptionType")]
+		public string EncryptionType
+		{
+			get
+			{
+				return encryptionType;
+			}
+			set	
+			{
+				encryptionType = value;
+				DictionaryUtil.Add(BodyParameters, "EncryptionType", value);
 			}
 		}
 
