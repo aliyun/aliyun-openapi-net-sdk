@@ -28,10 +28,10 @@ using Aliyun.Acs.alimt.Transform.V20181012;
 
 namespace Aliyun.Acs.alimt.Model.V20181012
 {
-    public class TranslateRequest : RpcAcsRequest<TranslateResponse>
+    public class TranslateImageBatchRequest : RpcAcsRequest<TranslateImageBatchResponse>
     {
-        public TranslateRequest()
-            : base("alimt", "2018-10-12", "Translate")
+        public TranslateImageBatchRequest()
+            : base("alimt", "2018-10-12", "TranslateImageBatch")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,17 +41,30 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			Method = MethodType.POST;
         }
 
+		private string ext;
+
 		private string sourceLanguage;
 
-		private string sourceText;
+		private string imageUrls;
 
-		private string formatType;
+		private string customTaskId;
 
-		private string scene;
-
-		private string context;
+		private string field;
 
 		private string targetLanguage;
+
+		public string Ext
+		{
+			get
+			{
+				return ext;
+			}
+			set	
+			{
+				ext = value;
+				DictionaryUtil.Add(BodyParameters, "Ext", value);
+			}
+		}
 
 		public string SourceLanguage
 		{
@@ -66,55 +79,42 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			}
 		}
 
-		public string SourceText
+		public string ImageUrls
 		{
 			get
 			{
-				return sourceText;
+				return imageUrls;
 			}
 			set	
 			{
-				sourceText = value;
-				DictionaryUtil.Add(BodyParameters, "SourceText", value);
+				imageUrls = value;
+				DictionaryUtil.Add(BodyParameters, "ImageUrls", value);
 			}
 		}
 
-		public string FormatType
+		public string CustomTaskId
 		{
 			get
 			{
-				return formatType;
+				return customTaskId;
 			}
 			set	
 			{
-				formatType = value;
-				DictionaryUtil.Add(BodyParameters, "FormatType", value);
+				customTaskId = value;
+				DictionaryUtil.Add(BodyParameters, "CustomTaskId", value);
 			}
 		}
 
-		public string Scene
+		public string Field
 		{
 			get
 			{
-				return scene;
+				return field;
 			}
 			set	
 			{
-				scene = value;
-				DictionaryUtil.Add(BodyParameters, "Scene", value);
-			}
-		}
-
-		public string Context
-		{
-			get
-			{
-				return context;
-			}
-			set	
-			{
-				context = value;
-				DictionaryUtil.Add(QueryParameters, "Context", value);
+				field = value;
+				DictionaryUtil.Add(BodyParameters, "Field", value);
 			}
 		}
 
@@ -136,9 +136,9 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			return false;
 		}
 
-        public override TranslateResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override TranslateImageBatchResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return TranslateResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TranslateImageBatchResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
