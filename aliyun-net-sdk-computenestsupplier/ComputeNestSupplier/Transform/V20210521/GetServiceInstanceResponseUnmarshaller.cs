@@ -55,6 +55,7 @@ namespace Aliyun.Acs.ComputeNestSupplier.Transform.V20210521
 			getServiceInstanceResponse.PayType = _ctx.StringValue("GetServiceInstance.PayType");
 			getServiceInstanceResponse.LicenseMetadata = _ctx.StringValue("GetServiceInstance.LicenseMetadata");
 			getServiceInstanceResponse.Name = _ctx.StringValue("GetServiceInstance.Name");
+			getServiceInstanceResponse.EnableUserPrometheus = _ctx.StringValue("GetServiceInstance.EnableUserPrometheus");
 
 			GetServiceInstanceResponse.GetServiceInstance_Service service = new GetServiceInstanceResponse.GetServiceInstance_Service();
 			service.Status = _ctx.StringValue("GetServiceInstance.Service.Status");
@@ -69,6 +70,12 @@ namespace Aliyun.Acs.ComputeNestSupplier.Transform.V20210521
 			service.ServiceType = _ctx.StringValue("GetServiceInstance.Service.ServiceType");
 			service.SupplierName = _ctx.StringValue("GetServiceInstance.Service.SupplierName");
 			service.VersionName = _ctx.StringValue("GetServiceInstance.Service.VersionName");
+
+			List<string> service_upgradableServiceVersions = new List<string>();
+			for (int i = 0; i < _ctx.Length("GetServiceInstance.Service.UpgradableServiceVersions.Length"); i++) {
+				service_upgradableServiceVersions.Add(_ctx.StringValue("GetServiceInstance.Service.UpgradableServiceVersions["+ i +"]"));
+			}
+			service.UpgradableServiceVersions = service_upgradableServiceVersions;
 
 			List<GetServiceInstanceResponse.GetServiceInstance_Service.GetServiceInstance_ServiceInfo> service_serviceInfos = new List<GetServiceInstanceResponse.GetServiceInstance_Service.GetServiceInstance_ServiceInfo>();
 			for (int i = 0; i < _ctx.Length("GetServiceInstance.Service.ServiceInfos.Length"); i++) {
@@ -100,6 +107,7 @@ namespace Aliyun.Acs.ComputeNestSupplier.Transform.V20210521
 					connectionConfig.VpcId = _ctx.StringValue("GetServiceInstance.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].VpcId");
 					connectionConfig.IngressEndpointStatus = _ctx.StringValue("GetServiceInstance.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].IngressEndpointStatus");
 					connectionConfig.NetworkServiceStatus = _ctx.StringValue("GetServiceInstance.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].NetworkServiceStatus");
+					connectionConfig.DomainName = _ctx.StringValue("GetServiceInstance.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].DomainName");
 
 					List<string> connectionConfig_securityGroups = new List<string>();
 					for (int k = 0; k < _ctx.Length("GetServiceInstance.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].SecurityGroups.Length"); k++) {

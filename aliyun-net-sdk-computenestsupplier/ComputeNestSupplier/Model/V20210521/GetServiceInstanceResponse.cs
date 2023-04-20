@@ -73,6 +73,8 @@ namespace Aliyun.Acs.ComputeNestSupplier.Model.V20210521
 
 		private string name;
 
+		private string enableUserPrometheus;
+
 		private List<GetServiceInstance_Tag> tags;
 
 		private GetServiceInstance_Service service;
@@ -367,6 +369,18 @@ namespace Aliyun.Acs.ComputeNestSupplier.Model.V20210521
 			}
 		}
 
+		public string EnableUserPrometheus
+		{
+			get
+			{
+				return enableUserPrometheus;
+			}
+			set	
+			{
+				enableUserPrometheus = value;
+			}
+		}
+
 		public List<GetServiceInstance_Tag> Tags
 		{
 			get
@@ -463,6 +477,8 @@ namespace Aliyun.Acs.ComputeNestSupplier.Model.V20210521
 			private string versionName;
 
 			private List<GetServiceInstance_ServiceInfo> serviceInfos;
+
+			private List<string> upgradableServiceVersions;
 
 			public string Status
 			{
@@ -617,6 +633,18 @@ namespace Aliyun.Acs.ComputeNestSupplier.Model.V20210521
 				set	
 				{
 					serviceInfos = value;
+				}
+			}
+
+			public List<string> UpgradableServiceVersions
+			{
+				get
+				{
+					return upgradableServiceVersions;
+				}
+				set	
+				{
+					upgradableServiceVersions = value;
 				}
 			}
 
@@ -808,6 +836,8 @@ namespace Aliyun.Acs.ComputeNestSupplier.Model.V20210521
 
 					private string networkServiceStatus;
 
+					private string domainName;
+
 					private List<string> securityGroups;
 
 					private List<string> vSwitches;
@@ -847,6 +877,18 @@ namespace Aliyun.Acs.ComputeNestSupplier.Model.V20210521
 						set	
 						{
 							networkServiceStatus = value;
+						}
+					}
+
+					public string DomainName
+					{
+						get
+						{
+							return domainName;
+						}
+						set	
+						{
+							domainName = value;
 						}
 					}
 

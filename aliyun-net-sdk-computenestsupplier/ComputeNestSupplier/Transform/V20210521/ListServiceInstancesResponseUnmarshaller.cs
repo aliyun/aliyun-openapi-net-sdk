@@ -70,6 +70,7 @@ namespace Aliyun.Acs.ComputeNestSupplier.Transform.V20210521
 				service.SupplierName = _ctx.StringValue("ListServiceInstances.ServiceInstances["+ i +"].Service.SupplierName");
 				service.VersionName = _ctx.StringValue("ListServiceInstances.ServiceInstances["+ i +"].Service.VersionName");
 				service.DeployMetadata = _ctx.StringValue("ListServiceInstances.ServiceInstances["+ i +"].Service.DeployMetadata");
+				service.EnablePrivateVpcConnection = _ctx.BooleanValue("ListServiceInstances.ServiceInstances["+ i +"].Service.EnablePrivateVpcConnection");
 
 				List<ListServiceInstancesResponse.ListServiceInstances_ServiceInstance.ListServiceInstances_Service.ListServiceInstances_ServiceInfo> service_serviceInfos = new List<ListServiceInstancesResponse.ListServiceInstances_ServiceInstance.ListServiceInstances_Service.ListServiceInstances_ServiceInfo>();
 				for (int j = 0; j < _ctx.Length("ListServiceInstances.ServiceInstances["+ i +"].Service.ServiceInfos.Length"); j++) {
