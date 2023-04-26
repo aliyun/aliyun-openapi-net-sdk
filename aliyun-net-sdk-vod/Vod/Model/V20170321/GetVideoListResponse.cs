@@ -102,6 +102,12 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string modifyTime;
 
+			private string storageClass;
+
+			private string restoreStatus;
+
+			private string restoreExpiration;
+
 			private List<string> snapshots;
 
 			public string StorageLocation
@@ -293,6 +299,42 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					modifyTime = value;
+				}
+			}
+
+			public string StorageClass
+			{
+				get
+				{
+					return storageClass;
+				}
+				set	
+				{
+					storageClass = value;
+				}
+			}
+
+			public string RestoreStatus
+			{
+				get
+				{
+					return restoreStatus;
+				}
+				set	
+				{
+					restoreStatus = value;
+				}
+			}
+
+			public string RestoreExpiration
+			{
+				get
+				{
+					return restoreExpiration;
+				}
+				set	
+				{
+					restoreExpiration = value;
 				}
 			}
 

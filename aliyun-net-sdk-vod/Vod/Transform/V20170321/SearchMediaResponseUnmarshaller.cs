@@ -68,6 +68,9 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				video.TranscodeMode = _ctx.StringValue("SearchMedia.MediaList["+ i +"].Video.TranscodeMode");
 				video.AuditAIResult = _ctx.StringValue("SearchMedia.MediaList["+ i +"].Video.AuditAIResult");
 				video.PreprocessStatus = _ctx.StringValue("SearchMedia.MediaList["+ i +"].Video.PreprocessStatus");
+				video.RestoreExpiration = _ctx.StringValue("SearchMedia.MediaList["+ i +"].Video.RestoreExpiration");
+				video.RestoreStatus = _ctx.StringValue("SearchMedia.MediaList["+ i +"].Video.RestoreStatus");
+				video.StorageClass = _ctx.StringValue("SearchMedia.MediaList["+ i +"].Video.StorageClass");
 				video.Size = _ctx.LongValue("SearchMedia.MediaList["+ i +"].Video.Size");
 				video.Duration = _ctx.FloatValue("SearchMedia.MediaList["+ i +"].Video.Duration");
 				video.Title = _ctx.StringValue("SearchMedia.MediaList["+ i +"].Video.Title");
@@ -131,6 +134,9 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				audio.CustomMediaInfo = _ctx.StringValue("SearchMedia.MediaList["+ i +"].Audio.CustomMediaInfo");
 				audio.AuditAIResult = _ctx.StringValue("SearchMedia.MediaList["+ i +"].Audio.AuditAIResult");
 				audio.PreprocessStatus = _ctx.StringValue("SearchMedia.MediaList["+ i +"].Audio.PreprocessStatus");
+				audio.RestoreExpiration = _ctx.StringValue("SearchMedia.MediaList["+ i +"].Audio.RestoreExpiration");
+				audio.RestoreStatus = _ctx.StringValue("SearchMedia.MediaList["+ i +"].Audio.RestoreStatus");
+				audio.StorageClass = _ctx.StringValue("SearchMedia.MediaList["+ i +"].Audio.StorageClass");
 				audio.Size = _ctx.LongValue("SearchMedia.MediaList["+ i +"].Audio.Size");
 				audio.Duration = _ctx.FloatValue("SearchMedia.MediaList["+ i +"].Audio.Duration");
 				audio.Title = _ctx.StringValue("SearchMedia.MediaList["+ i +"].Audio.Title");
@@ -218,6 +224,49 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				}
 				attachedMedia.Categories = attachedMedia_categories;
 				media.AttachedMedia = attachedMedia;
+
+				SearchMediaResponse.SearchMedia_Media.SearchMedia_AiData aiData = new SearchMediaResponse.SearchMedia_Media.SearchMedia_AiData();
+
+				List<SearchMediaResponse.SearchMedia_Media.SearchMedia_AiData.SearchMedia_AiLabelInfoItem> aiData_aiLabelInfo = new List<SearchMediaResponse.SearchMedia_Media.SearchMedia_AiData.SearchMedia_AiLabelInfoItem>();
+				for (int j = 0; j < _ctx.Length("SearchMedia.MediaList["+ i +"].AiData.AiLabelInfo.Length"); j++) {
+					SearchMediaResponse.SearchMedia_Media.SearchMedia_AiData.SearchMedia_AiLabelInfoItem aiLabelInfoItem = new SearchMediaResponse.SearchMedia_Media.SearchMedia_AiData.SearchMedia_AiLabelInfoItem();
+					aiLabelInfoItem.Category = _ctx.StringValue("SearchMedia.MediaList["+ i +"].AiData.AiLabelInfo["+ j +"].Category");
+					aiLabelInfoItem.LabelName = _ctx.StringValue("SearchMedia.MediaList["+ i +"].AiData.AiLabelInfo["+ j +"].LabelName");
+					aiLabelInfoItem.LabelId = _ctx.StringValue("SearchMedia.MediaList["+ i +"].AiData.AiLabelInfo["+ j +"].LabelId");
+
+					List<SearchMediaResponse.SearchMedia_Media.SearchMedia_AiData.SearchMedia_AiLabelInfoItem.SearchMedia_OccurrencesItem> aiLabelInfoItem_occurrences = new List<SearchMediaResponse.SearchMedia_Media.SearchMedia_AiData.SearchMedia_AiLabelInfoItem.SearchMedia_OccurrencesItem>();
+					for (int k = 0; k < _ctx.Length("SearchMedia.MediaList["+ i +"].AiData.AiLabelInfo["+ j +"].Occurrences.Length"); k++) {
+						SearchMediaResponse.SearchMedia_Media.SearchMedia_AiData.SearchMedia_AiLabelInfoItem.SearchMedia_OccurrencesItem occurrencesItem = new SearchMediaResponse.SearchMedia_Media.SearchMedia_AiData.SearchMedia_AiLabelInfoItem.SearchMedia_OccurrencesItem();
+						occurrencesItem.Score = _ctx.DoubleValue("SearchMedia.MediaList["+ i +"].AiData.AiLabelInfo["+ j +"].Occurrences["+ k +"].Score");
+						occurrencesItem.From = _ctx.DoubleValue("SearchMedia.MediaList["+ i +"].AiData.AiLabelInfo["+ j +"].Occurrences["+ k +"].From");
+						occurrencesItem.To = _ctx.DoubleValue("SearchMedia.MediaList["+ i +"].AiData.AiLabelInfo["+ j +"].Occurrences["+ k +"].To");
+
+						aiLabelInfoItem_occurrences.Add(occurrencesItem);
+					}
+					aiLabelInfoItem.Occurrences = aiLabelInfoItem_occurrences;
+
+					aiData_aiLabelInfo.Add(aiLabelInfoItem);
+				}
+				aiData.AiLabelInfo = aiData_aiLabelInfo;
+
+				List<SearchMediaResponse.SearchMedia_Media.SearchMedia_AiData.SearchMedia_OcrInfoItem> aiData_ocrInfo = new List<SearchMediaResponse.SearchMedia_Media.SearchMedia_AiData.SearchMedia_OcrInfoItem>();
+				for (int j = 0; j < _ctx.Length("SearchMedia.MediaList["+ i +"].AiData.OcrInfo.Length"); j++) {
+					SearchMediaResponse.SearchMedia_Media.SearchMedia_AiData.SearchMedia_OcrInfoItem ocrInfoItem = new SearchMediaResponse.SearchMedia_Media.SearchMedia_AiData.SearchMedia_OcrInfoItem();
+					ocrInfoItem.From = _ctx.DoubleValue("SearchMedia.MediaList["+ i +"].AiData.OcrInfo["+ j +"].From");
+					ocrInfoItem.To = _ctx.DoubleValue("SearchMedia.MediaList["+ i +"].AiData.OcrInfo["+ j +"].To");
+					ocrInfoItem.Content = _ctx.StringValue("SearchMedia.MediaList["+ i +"].AiData.OcrInfo["+ j +"].Content");
+
+					aiData_ocrInfo.Add(ocrInfoItem);
+				}
+				aiData.OcrInfo = aiData_ocrInfo;
+				media.AiData = aiData;
+
+				SearchMediaResponse.SearchMedia_Media.SearchMedia_AiRoughData aiRoughData = new SearchMediaResponse.SearchMedia_Media.SearchMedia_AiRoughData();
+				aiRoughData.SaveType = _ctx.StringValue("SearchMedia.MediaList["+ i +"].AiRoughData.SaveType");
+				aiRoughData.Status = _ctx.StringValue("SearchMedia.MediaList["+ i +"].AiRoughData.Status");
+				aiRoughData.AiJobId = _ctx.StringValue("SearchMedia.MediaList["+ i +"].AiRoughData.AiJobId");
+				aiRoughData.AiCategory = _ctx.StringValue("SearchMedia.MediaList["+ i +"].AiRoughData.AiCategory");
+				media.AiRoughData = aiRoughData;
 
 				searchMediaResponse_mediaList.Add(media);
 			}

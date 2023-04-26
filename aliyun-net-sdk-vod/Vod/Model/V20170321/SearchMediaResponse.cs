@@ -98,6 +98,10 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private SearchMedia_AttachedMedia attachedMedia;
 
+			private SearchMedia_AiData aiData;
+
+			private SearchMedia_AiRoughData aiRoughData;
+
 			public string CreationTime
 			{
 				get
@@ -182,6 +186,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			public SearchMedia_AiData AiData
+			{
+				get
+				{
+					return aiData;
+				}
+				set	
+				{
+					aiData = value;
+				}
+			}
+
+			public SearchMedia_AiRoughData AiRoughData
+			{
+				get
+				{
+					return aiRoughData;
+				}
+				set	
+				{
+					aiRoughData = value;
+				}
+			}
+
 			public class SearchMedia_Video
 			{
 
@@ -234,6 +262,12 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				private string auditAIResult;
 
 				private string preprocessStatus;
+
+				private string restoreExpiration;
+
+				private string restoreStatus;
+
+				private string storageClass;
 
 				private long? size;
 
@@ -544,6 +578,42 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						preprocessStatus = value;
+					}
+				}
+
+				public string RestoreExpiration
+				{
+					get
+					{
+						return restoreExpiration;
+					}
+					set	
+					{
+						restoreExpiration = value;
+					}
+				}
+
+				public string RestoreStatus
+				{
+					get
+					{
+						return restoreStatus;
+					}
+					set	
+					{
+						restoreStatus = value;
+					}
+				}
+
+				public string StorageClass
+				{
+					get
+					{
+						return storageClass;
+					}
+					set	
+					{
+						storageClass = value;
 					}
 				}
 
@@ -881,6 +951,12 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 				private string preprocessStatus;
 
+				private string restoreExpiration;
+
+				private string restoreStatus;
+
+				private string storageClass;
+
 				private long? size;
 
 				private float? duration;
@@ -1154,6 +1230,42 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						preprocessStatus = value;
+					}
+				}
+
+				public string RestoreExpiration
+				{
+					get
+					{
+						return restoreExpiration;
+					}
+					set	
+					{
+						restoreExpiration = value;
+					}
+				}
+
+				public string RestoreStatus
+				{
+					get
+					{
+						return restoreStatus;
+					}
+					set	
+					{
+						restoreStatus = value;
+					}
+				}
+
+				public string StorageClass
+				{
+					get
+					{
+						return storageClass;
+					}
+					set	
+					{
+						storageClass = value;
 					}
 				}
 
@@ -1942,6 +2054,250 @@ namespace Aliyun.Acs.vod.Model.V20170321
 						{
 							level = value;
 						}
+					}
+				}
+			}
+
+			public class SearchMedia_AiData
+			{
+
+				private List<SearchMedia_AiLabelInfoItem> aiLabelInfo;
+
+				private List<SearchMedia_OcrInfoItem> ocrInfo;
+
+				public List<SearchMedia_AiLabelInfoItem> AiLabelInfo
+				{
+					get
+					{
+						return aiLabelInfo;
+					}
+					set	
+					{
+						aiLabelInfo = value;
+					}
+				}
+
+				public List<SearchMedia_OcrInfoItem> OcrInfo
+				{
+					get
+					{
+						return ocrInfo;
+					}
+					set	
+					{
+						ocrInfo = value;
+					}
+				}
+
+				public class SearchMedia_AiLabelInfoItem
+				{
+
+					private string category;
+
+					private string labelName;
+
+					private string labelId;
+
+					private List<SearchMedia_OccurrencesItem> occurrences;
+
+					public string Category
+					{
+						get
+						{
+							return category;
+						}
+						set	
+						{
+							category = value;
+						}
+					}
+
+					public string LabelName
+					{
+						get
+						{
+							return labelName;
+						}
+						set	
+						{
+							labelName = value;
+						}
+					}
+
+					public string LabelId
+					{
+						get
+						{
+							return labelId;
+						}
+						set	
+						{
+							labelId = value;
+						}
+					}
+
+					public List<SearchMedia_OccurrencesItem> Occurrences
+					{
+						get
+						{
+							return occurrences;
+						}
+						set	
+						{
+							occurrences = value;
+						}
+					}
+
+					public class SearchMedia_OccurrencesItem
+					{
+
+						private double? score;
+
+						private double? from;
+
+						private double? to;
+
+						public double? Score
+						{
+							get
+							{
+								return score;
+							}
+							set	
+							{
+								score = value;
+							}
+						}
+
+						public double? From
+						{
+							get
+							{
+								return from;
+							}
+							set	
+							{
+								from = value;
+							}
+						}
+
+						public double? To
+						{
+							get
+							{
+								return to;
+							}
+							set	
+							{
+								to = value;
+							}
+						}
+					}
+				}
+
+				public class SearchMedia_OcrInfoItem
+				{
+
+					private double? from;
+
+					private double? to;
+
+					private string content;
+
+					public double? From
+					{
+						get
+						{
+							return from;
+						}
+						set	
+						{
+							from = value;
+						}
+					}
+
+					public double? To
+					{
+						get
+						{
+							return to;
+						}
+						set	
+						{
+							to = value;
+						}
+					}
+
+					public string Content
+					{
+						get
+						{
+							return content;
+						}
+						set	
+						{
+							content = value;
+						}
+					}
+				}
+			}
+
+			public class SearchMedia_AiRoughData
+			{
+
+				private string saveType;
+
+				private string status;
+
+				private string aiJobId;
+
+				private string aiCategory;
+
+				public string SaveType
+				{
+					get
+					{
+						return saveType;
+					}
+					set	
+					{
+						saveType = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public string AiJobId
+				{
+					get
+					{
+						return aiJobId;
+					}
+					set	
+					{
+						aiJobId = value;
+					}
+				}
+
+				public string AiCategory
+				{
+					get
+					{
+						return aiCategory;
+					}
+					set	
+					{
+						aiCategory = value;
 					}
 				}
 			}
