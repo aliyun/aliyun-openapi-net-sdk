@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 
 		private long? resourceOwnerId;
 
+		private string extendFunction;
+
 		private string certCode;
 
 		private string mask;
@@ -67,6 +69,19 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ExtendFunction
+		{
+			get
+			{
+				return extendFunction;
+			}
+			set	
+			{
+				extendFunction = value;
+				DictionaryUtil.Add(QueryParameters, "ExtendFunction", value);
 			}
 		}
 

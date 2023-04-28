@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 
 		private string startTime;
 
+		private string extendFunction;
+
 		private string mask;
 
 		private string resourceOwnerAccount;
@@ -78,6 +80,19 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string ExtendFunction
+		{
+			get
+			{
+				return extendFunction;
+			}
+			set	
+			{
+				extendFunction = value;
+				DictionaryUtil.Add(QueryParameters, "ExtendFunction", value);
 			}
 		}
 
