@@ -37,6 +37,8 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			Method = MethodType.POST;
         }
 
+		private bool? feedback;
+
 		private string textRequest;
 
 		private long? tenantId;
@@ -44,6 +46,20 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 		private VAMLRequest vAMLRequest_;
 
 		private string sessionId;
+
+		[JsonProperty(PropertyName = "Feedback")]
+		public bool? Feedback
+		{
+			get
+			{
+				return feedback;
+			}
+			set	
+			{
+				feedback = value;
+				DictionaryUtil.Add(QueryParameters, "Feedback", value.ToString());
+			}
+		}
 
 		[JsonProperty(PropertyName = "TextRequest")]
 		public string TextRequest
