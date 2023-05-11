@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class QueryUserInfoByAccountRequest : RpcAcsRequest<QueryUserInfoByAccountResponse>
     {
         public QueryUserInfoByAccountRequest()
-            : base("quickbi-public", "2022-01-01", "QueryUserInfoByAccount", "quickbi", "openAPI")
+            : base("quickbi-public", "2022-01-01", "QueryUserInfoByAccount", "2.2.0", "openAPI")
         {
 			Method = MethodType.POST;
         }

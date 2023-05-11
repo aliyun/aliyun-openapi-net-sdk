@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class UpdateUserTagValueRequest : RpcAcsRequest<UpdateUserTagValueResponse>
     {
         public UpdateUserTagValueRequest()
-            : base("quickbi-public", "2022-01-01", "UpdateUserTagValue", "quickbi", "openAPI")
+            : base("quickbi-public", "2022-01-01", "UpdateUserTagValue", "2.2.0", "openAPI")
         {
 			Method = MethodType.POST;
         }

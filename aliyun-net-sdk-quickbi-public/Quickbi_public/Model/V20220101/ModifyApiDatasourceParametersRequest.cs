@@ -27,26 +27,56 @@ using Aliyun.Acs.quickbi_public.Transform.V20220101;
 
 namespace Aliyun.Acs.quickbi_public.Model.V20220101
 {
-    public class WithdrawAllUserGroupsRequest : RpcAcsRequest<WithdrawAllUserGroupsResponse>
+    public class ModifyApiDatasourceParametersRequest : RpcAcsRequest<ModifyApiDatasourceParametersResponse>
     {
-        public WithdrawAllUserGroupsRequest()
-            : base("quickbi-public", "2022-01-01", "WithdrawAllUserGroups", "2.2.0", "openAPI")
+        public ModifyApiDatasourceParametersRequest()
+            : base("quickbi-public", "2022-01-01", "ModifyApiDatasourceParameters", "2.2.0", "openAPI")
         {
 			Method = MethodType.POST;
         }
 
-		private string userId;
+		private string parameters;
 
-		public string UserId
+		private string apiId;
+
+		private string workspaceId;
+
+		public string Parameters
 		{
 			get
 			{
-				return userId;
+				return parameters;
 			}
 			set	
 			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
+				parameters = value;
+				DictionaryUtil.Add(QueryParameters, "Parameters", value);
+			}
+		}
+
+		public string ApiId
+		{
+			get
+			{
+				return apiId;
+			}
+			set	
+			{
+				apiId = value;
+				DictionaryUtil.Add(QueryParameters, "ApiId", value);
+			}
+		}
+
+		public string WorkspaceId
+		{
+			get
+			{
+				return workspaceId;
+			}
+			set	
+			{
+				workspaceId = value;
+				DictionaryUtil.Add(QueryParameters, "WorkspaceId", value);
 			}
 		}
 
@@ -55,9 +85,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			return false;
 		}
 
-        public override WithdrawAllUserGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyApiDatasourceParametersResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return WithdrawAllUserGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyApiDatasourceParametersResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

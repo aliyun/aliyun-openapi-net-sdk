@@ -27,26 +27,71 @@ using Aliyun.Acs.quickbi_public.Transform.V20220101;
 
 namespace Aliyun.Acs.quickbi_public.Model.V20220101
 {
-    public class WithdrawAllUserGroupsRequest : RpcAcsRequest<WithdrawAllUserGroupsResponse>
+    public class ListApiDatasourceRequest : RpcAcsRequest<ListApiDatasourceResponse>
     {
-        public WithdrawAllUserGroupsRequest()
-            : base("quickbi-public", "2022-01-01", "WithdrawAllUserGroups", "2.2.0", "openAPI")
+        public ListApiDatasourceRequest()
+            : base("quickbi-public", "2022-01-01", "ListApiDatasource", "2.2.0", "openAPI")
         {
 			Method = MethodType.POST;
         }
 
-		private string userId;
+		private int? pageSize;
 
-		public string UserId
+		private int? pageNum;
+
+		private string keyWord;
+
+		private string workspaceId;
+
+		public int? PageSize
 		{
 			get
 			{
-				return userId;
+				return pageSize;
 			}
 			set	
 			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
+		public string KeyWord
+		{
+			get
+			{
+				return keyWord;
+			}
+			set	
+			{
+				keyWord = value;
+				DictionaryUtil.Add(QueryParameters, "KeyWord", value);
+			}
+		}
+
+		public string WorkspaceId
+		{
+			get
+			{
+				return workspaceId;
+			}
+			set	
+			{
+				workspaceId = value;
+				DictionaryUtil.Add(QueryParameters, "WorkspaceId", value);
 			}
 		}
 
@@ -55,9 +100,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			return false;
 		}
 
-        public override WithdrawAllUserGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListApiDatasourceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return WithdrawAllUserGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListApiDatasourceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class ListPortalMenuAuthorizationRequest : RpcAcsRequest<ListPortalMenuAuthorizationResponse>
     {
         public ListPortalMenuAuthorizationRequest()
-            : base("quickbi-public", "2022-01-01", "ListPortalMenuAuthorization", "quickbi", "openAPI")
+            : base("quickbi-public", "2022-01-01", "ListPortalMenuAuthorization", "2.2.0", "openAPI")
         {
 			Method = MethodType.POST;
         }

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class ListRecentViewReportsRequest : RpcAcsRequest<ListRecentViewReportsResponse>
     {
         public ListRecentViewReportsRequest()
-            : base("quickbi-public", "2022-01-01", "ListRecentViewReports", "quickbi", "openAPI")
+            : base("quickbi-public", "2022-01-01", "ListRecentViewReports", "2.2.0", "openAPI")
         {
 			Method = MethodType.POST;
         }

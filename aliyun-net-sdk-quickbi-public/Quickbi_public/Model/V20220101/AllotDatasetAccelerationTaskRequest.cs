@@ -27,26 +27,26 @@ using Aliyun.Acs.quickbi_public.Transform.V20220101;
 
 namespace Aliyun.Acs.quickbi_public.Model.V20220101
 {
-    public class WithdrawAllUserGroupsRequest : RpcAcsRequest<WithdrawAllUserGroupsResponse>
+    public class AllotDatasetAccelerationTaskRequest : RpcAcsRequest<AllotDatasetAccelerationTaskResponse>
     {
-        public WithdrawAllUserGroupsRequest()
-            : base("quickbi-public", "2022-01-01", "WithdrawAllUserGroups", "2.2.0", "openAPI")
+        public AllotDatasetAccelerationTaskRequest()
+            : base("quickbi-public", "2022-01-01", "AllotDatasetAccelerationTask", "2.2.0", "openAPI")
         {
 			Method = MethodType.POST;
         }
 
-		private string userId;
+		private string cubeId;
 
-		public string UserId
+		public string CubeId
 		{
 			get
 			{
-				return userId;
+				return cubeId;
 			}
 			set	
 			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
+				cubeId = value;
+				DictionaryUtil.Add(QueryParameters, "CubeId", value);
 			}
 		}
 
@@ -55,9 +55,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			return false;
 		}
 
-        public override WithdrawAllUserGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override AllotDatasetAccelerationTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return WithdrawAllUserGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AllotDatasetAccelerationTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class QueryWorkspaceUserListRequest : RpcAcsRequest<QueryWorkspaceUserListResponse>
     {
         public QueryWorkspaceUserListRequest()
-            : base("quickbi-public", "2022-01-01", "QueryWorkspaceUserList", "quickbi", "openAPI")
+            : base("quickbi-public", "2022-01-01", "QueryWorkspaceUserList", "2.2.0", "openAPI")
         {
 			Method = MethodType.POST;
         }

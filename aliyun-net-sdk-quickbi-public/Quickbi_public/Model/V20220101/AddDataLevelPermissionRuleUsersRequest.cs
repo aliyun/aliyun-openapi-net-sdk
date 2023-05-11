@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class AddDataLevelPermissionRuleUsersRequest : RpcAcsRequest<AddDataLevelPermissionRuleUsersResponse>
     {
         public AddDataLevelPermissionRuleUsersRequest()
-            : base("quickbi-public", "2022-01-01", "AddDataLevelPermissionRuleUsers", "quickbi", "openAPI")
+            : base("quickbi-public", "2022-01-01", "AddDataLevelPermissionRuleUsers", "2.2.0", "openAPI")
         {
 			Method = MethodType.POST;
         }

@@ -16,32 +16,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
-using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.quickbi_public.Transform;
-using Aliyun.Acs.quickbi_public.Transform.V20220101;
+using Aliyun.Acs.quickbi_public.Model.V20220101;
 
-namespace Aliyun.Acs.quickbi_public.Model.V20220101
+namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 {
-    public class QueryUserTagMetaListRequest : RpcAcsRequest<QueryUserTagMetaListResponse>
+    public class ModifyApiDatasourceParametersResponseUnmarshaller
     {
-        public QueryUserTagMetaListRequest()
-            : base("quickbi-public", "2022-01-01", "QueryUserTagMetaList", "2.2.0", "openAPI")
+        public static ModifyApiDatasourceParametersResponse Unmarshall(UnmarshallerContext _ctx)
         {
-        }
+			ModifyApiDatasourceParametersResponse modifyApiDatasourceParametersResponse = new ModifyApiDatasourceParametersResponse();
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override QueryUserTagMetaListResponse GetResponse(UnmarshallerContext unmarshallerContext)
-        {
-            return QueryUserTagMetaListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+			modifyApiDatasourceParametersResponse.HttpResponse = _ctx.HttpResponse;
+			modifyApiDatasourceParametersResponse.RequestId = _ctx.StringValue("ModifyApiDatasourceParameters.RequestId");
+			modifyApiDatasourceParametersResponse.Result = _ctx.BooleanValue("ModifyApiDatasourceParameters.Result");
+			modifyApiDatasourceParametersResponse.Success = _ctx.BooleanValue("ModifyApiDatasourceParameters.Success");
+        
+			return modifyApiDatasourceParametersResponse;
         }
     }
 }

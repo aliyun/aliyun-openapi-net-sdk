@@ -17,47 +17,54 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.quickbi_public.Transform;
-using Aliyun.Acs.quickbi_public.Transform.V20220101;
 
 namespace Aliyun.Acs.quickbi_public.Model.V20220101
 {
-    public class WithdrawAllUserGroupsRequest : RpcAcsRequest<WithdrawAllUserGroupsResponse>
-    {
-        public WithdrawAllUserGroupsRequest()
-            : base("quickbi-public", "2022-01-01", "WithdrawAllUserGroups", "2.2.0", "openAPI")
-        {
-			Method = MethodType.POST;
-        }
+	public class ModifyApiDatasourceParametersResponse : AcsResponse
+	{
 
-		private string userId;
+		private string requestId;
 
-		public string UserId
+		private bool? result;
+
+		private bool? success;
+
+		public string RequestId
 		{
 			get
 			{
-				return userId;
+				return requestId;
 			}
 			set	
 			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
+				requestId = value;
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		public bool? Result
 		{
-			return false;
+			get
+			{
+				return result;
+			}
+			set	
+			{
+				result = value;
+			}
 		}
 
-        public override WithdrawAllUserGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
-        {
-            return WithdrawAllUserGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
-        }
-    }
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+	}
 }

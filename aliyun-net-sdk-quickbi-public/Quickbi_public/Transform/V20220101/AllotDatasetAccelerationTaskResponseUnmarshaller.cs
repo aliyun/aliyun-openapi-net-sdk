@@ -16,32 +16,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
-using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.quickbi_public.Transform;
-using Aliyun.Acs.quickbi_public.Transform.V20220101;
+using Aliyun.Acs.quickbi_public.Model.V20220101;
 
-namespace Aliyun.Acs.quickbi_public.Model.V20220101
+namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 {
-    public class QueryUserTagMetaListRequest : RpcAcsRequest<QueryUserTagMetaListResponse>
+    public class AllotDatasetAccelerationTaskResponseUnmarshaller
     {
-        public QueryUserTagMetaListRequest()
-            : base("quickbi-public", "2022-01-01", "QueryUserTagMetaList", "2.2.0", "openAPI")
+        public static AllotDatasetAccelerationTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
-        }
+			AllotDatasetAccelerationTaskResponse allotDatasetAccelerationTaskResponse = new AllotDatasetAccelerationTaskResponse();
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override QueryUserTagMetaListResponse GetResponse(UnmarshallerContext unmarshallerContext)
-        {
-            return QueryUserTagMetaListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+			allotDatasetAccelerationTaskResponse.HttpResponse = _ctx.HttpResponse;
+			allotDatasetAccelerationTaskResponse.RequestId = _ctx.StringValue("AllotDatasetAccelerationTask.RequestId");
+			allotDatasetAccelerationTaskResponse.Result = _ctx.BooleanValue("AllotDatasetAccelerationTask.Result");
+			allotDatasetAccelerationTaskResponse.Success = _ctx.BooleanValue("AllotDatasetAccelerationTask.Success");
+        
+			return allotDatasetAccelerationTaskResponse;
         }
     }
 }

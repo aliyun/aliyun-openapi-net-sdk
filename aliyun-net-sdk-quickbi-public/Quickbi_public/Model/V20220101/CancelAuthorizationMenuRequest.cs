@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class CancelAuthorizationMenuRequest : RpcAcsRequest<CancelAuthorizationMenuResponse>
     {
         public CancelAuthorizationMenuRequest()
-            : base("quickbi-public", "2022-01-01", "CancelAuthorizationMenu", "quickbi", "openAPI")
+            : base("quickbi-public", "2022-01-01", "CancelAuthorizationMenu", "2.2.0", "openAPI")
         {
 			Method = MethodType.POST;
         }

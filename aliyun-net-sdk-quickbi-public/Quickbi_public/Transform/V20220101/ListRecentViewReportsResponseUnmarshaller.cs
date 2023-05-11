@@ -39,6 +39,7 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			result.TotalPages = _ctx.IntegerValue("ListRecentViewReports.Result.TotalPages");
 			result.PageNum = _ctx.IntegerValue("ListRecentViewReports.Result.PageNum");
 			result.PageSize = _ctx.IntegerValue("ListRecentViewReports.Result.PageSize");
+			result.Attention = _ctx.StringValue("ListRecentViewReports.Result.Attention");
 
 			List<ListRecentViewReportsResponse.ListRecentViewReports_Result.ListRecentViewReports_DataItem> result_data = new List<ListRecentViewReportsResponse.ListRecentViewReports_Result.ListRecentViewReports_DataItem>();
 			for (int i = 0; i < _ctx.Length("ListRecentViewReports.Result.Data.Length"); i++) {

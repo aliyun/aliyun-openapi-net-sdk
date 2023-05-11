@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class ChangeVisibilityModelRequest : RpcAcsRequest<ChangeVisibilityModelResponse>
     {
         public ChangeVisibilityModelRequest()
-            : base("quickbi-public", "2022-01-01", "ChangeVisibilityModel", "quickbi", "openAPI")
+            : base("quickbi-public", "2022-01-01", "ChangeVisibilityModel", "2.2.0", "openAPI")
         {
 			Method = MethodType.POST;
         }
