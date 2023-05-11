@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class QueryBatchRegisterDeviceStatusResponse : AcsResponse
+	public class BatchGrayMigrationDeviceResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private QueryBatchRegisterDeviceStatus_Data data;
+		private BatchGrayMigrationDevice_Data data;
 
 		public string RequestId
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public QueryBatchRegisterDeviceStatus_Data Data
+		public BatchGrayMigrationDevice_Data Data
 		{
 			get
 			{
@@ -95,73 +95,33 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class QueryBatchRegisterDeviceStatus_Data
+		public class BatchGrayMigrationDevice_Data
 		{
 
-			private string status;
+			private List<BatchGrayMigrationDevice_Item> details;
 
-			private List<QueryBatchRegisterDeviceStatus_InvalidDetailListItem> invalidDetailList;
-
-			private List<string> validList;
-
-			private List<string> invalidList;
-
-			public string Status
+			public List<BatchGrayMigrationDevice_Item> Details
 			{
 				get
 				{
-					return status;
+					return details;
 				}
 				set	
 				{
-					status = value;
+					details = value;
 				}
 			}
 
-			public List<QueryBatchRegisterDeviceStatus_InvalidDetailListItem> InvalidDetailList
-			{
-				get
-				{
-					return invalidDetailList;
-				}
-				set	
-				{
-					invalidDetailList = value;
-				}
-			}
-
-			public List<string> ValidList
-			{
-				get
-				{
-					return validList;
-				}
-				set	
-				{
-					validList = value;
-				}
-			}
-
-			public List<string> InvalidList
-			{
-				get
-				{
-					return invalidList;
-				}
-				set	
-				{
-					invalidList = value;
-				}
-			}
-
-			public class QueryBatchRegisterDeviceStatus_InvalidDetailListItem
+			public class BatchGrayMigrationDevice_Item
 			{
 
 				private string deviceName;
 
-				private string errorMsg;
+				private string status;
 
-				private string nickName;
+				private int? code;
+
+				private string message;
 
 				public string DeviceName
 				{
@@ -175,27 +135,39 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 					}
 				}
 
-				public string ErrorMsg
+				public string Status
 				{
 					get
 					{
-						return errorMsg;
+						return status;
 					}
 					set	
 					{
-						errorMsg = value;
+						status = value;
 					}
 				}
 
-				public string NickName
+				public int? Code
 				{
 					get
 					{
-						return nickName;
+						return code;
 					}
 					set	
 					{
-						nickName = value;
+						code = value;
+					}
+				}
+
+				public string Message
+				{
+					get
+					{
+						return message;
+					}
+					set	
+					{
+						message = value;
 					}
 				}
 			}

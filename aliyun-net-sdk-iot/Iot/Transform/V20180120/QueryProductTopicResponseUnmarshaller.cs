@@ -44,6 +44,8 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				productTopicInfo.Operation = _ctx.StringValue("QueryProductTopic.Data["+ i +"].Operation");
 				productTopicInfo.Desc = _ctx.StringValue("QueryProductTopic.Data["+ i +"].Desc");
 				productTopicInfo.Id = _ctx.StringValue("QueryProductTopic.Data["+ i +"].Id");
+				productTopicInfo.EnableProxySubscribe = _ctx.BooleanValue("QueryProductTopic.Data["+ i +"].EnableProxySubscribe");
+				productTopicInfo.Codec = _ctx.StringValue("QueryProductTopic.Data["+ i +"].Codec");
 
 				queryProductTopicResponse_data.Add(productTopicInfo);
 			}

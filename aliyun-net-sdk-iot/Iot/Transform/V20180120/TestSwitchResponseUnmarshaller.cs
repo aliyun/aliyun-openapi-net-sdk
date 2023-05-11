@@ -16,69 +16,28 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Iot.Model.V20180120;
 
-namespace Aliyun.Acs.Iot.Model.V20180120
+namespace Aliyun.Acs.Iot.Transform.V20180120
 {
-	public class UpdateTopicConfigResponse : AcsResponse
-	{
+    public class TestSwitchResponseUnmarshaller
+    {
+        public static TestSwitchResponse Unmarshall(UnmarshallerContext _ctx)
+        {
+			TestSwitchResponse testSwitchResponse = new TestSwitchResponse();
 
-		private string requestId;
-
-		private bool? success;
-
-		private string code;
-
-		private string message;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-	}
+			testSwitchResponse.HttpResponse = _ctx.HttpResponse;
+			testSwitchResponse.RequestId = _ctx.StringValue("TestSwitch.RequestId");
+			testSwitchResponse.Success = _ctx.BooleanValue("TestSwitch.Success");
+			testSwitchResponse.Code = _ctx.StringValue("TestSwitch.Code");
+			testSwitchResponse.ErrorMessage = _ctx.StringValue("TestSwitch.ErrorMessage");
+			testSwitchResponse.IotId = _ctx.StringValue("TestSwitch.IotId");
+        
+			return testSwitchResponse;
+        }
+    }
 }

@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class UpdateTopicConfigResponse : AcsResponse
+	public class CreateTopicConfigResponse : AcsResponse
 	{
 
 		private string requestId;

@@ -104,29 +104,13 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string deviceName;
 
-			private string manufacturer;
-
-			private string deviceModel;
-
-			private string deviceId;
-
-			private string status;
-
-			private string authCode;
-
-			private string province;
-
-			private string city;
-
-			private string vehicleColour;
-
-			private string vehicleNumber;
-
 			private long? createTime;
 
 			private long? modifiedTime;
 
-			private long? registerTime;
+			private string protocol;
+
+			private QueryVehicleDevice_JtProtocolDeviceData jtProtocolDeviceData;
 
 			public string IotId
 			{
@@ -164,114 +148,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
-			public string Manufacturer
-			{
-				get
-				{
-					return manufacturer;
-				}
-				set	
-				{
-					manufacturer = value;
-				}
-			}
-
-			public string DeviceModel
-			{
-				get
-				{
-					return deviceModel;
-				}
-				set	
-				{
-					deviceModel = value;
-				}
-			}
-
-			public string DeviceId
-			{
-				get
-				{
-					return deviceId;
-				}
-				set	
-				{
-					deviceId = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string AuthCode
-			{
-				get
-				{
-					return authCode;
-				}
-				set	
-				{
-					authCode = value;
-				}
-			}
-
-			public string Province
-			{
-				get
-				{
-					return province;
-				}
-				set	
-				{
-					province = value;
-				}
-			}
-
-			public string City
-			{
-				get
-				{
-					return city;
-				}
-				set	
-				{
-					city = value;
-				}
-			}
-
-			public string VehicleColour
-			{
-				get
-				{
-					return vehicleColour;
-				}
-				set	
-				{
-					vehicleColour = value;
-				}
-			}
-
-			public string VehicleNumber
-			{
-				get
-				{
-					return vehicleNumber;
-				}
-				set	
-				{
-					vehicleNumber = value;
-				}
-			}
-
 			public long? CreateTime
 			{
 				get
@@ -296,15 +172,171 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
-			public long? RegisterTime
+			public string Protocol
 			{
 				get
 				{
-					return registerTime;
+					return protocol;
 				}
 				set	
 				{
-					registerTime = value;
+					protocol = value;
+				}
+			}
+
+			public QueryVehicleDevice_JtProtocolDeviceData JtProtocolDeviceData
+			{
+				get
+				{
+					return jtProtocolDeviceData;
+				}
+				set	
+				{
+					jtProtocolDeviceData = value;
+				}
+			}
+
+			public class QueryVehicleDevice_JtProtocolDeviceData
+			{
+
+				private string manufacturer;
+
+				private string deviceModel;
+
+				private string deviceId;
+
+				private string status;
+
+				private string authCode;
+
+				private string province;
+
+				private string city;
+
+				private string vehicleColour;
+
+				private string vehicleNumber;
+
+				private string registerTime;
+
+				public string Manufacturer
+				{
+					get
+					{
+						return manufacturer;
+					}
+					set	
+					{
+						manufacturer = value;
+					}
+				}
+
+				public string DeviceModel
+				{
+					get
+					{
+						return deviceModel;
+					}
+					set	
+					{
+						deviceModel = value;
+					}
+				}
+
+				public string DeviceId
+				{
+					get
+					{
+						return deviceId;
+					}
+					set	
+					{
+						deviceId = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public string AuthCode
+				{
+					get
+					{
+						return authCode;
+					}
+					set	
+					{
+						authCode = value;
+					}
+				}
+
+				public string Province
+				{
+					get
+					{
+						return province;
+					}
+					set	
+					{
+						province = value;
+					}
+				}
+
+				public string City
+				{
+					get
+					{
+						return city;
+					}
+					set	
+					{
+						city = value;
+					}
+				}
+
+				public string VehicleColour
+				{
+					get
+					{
+						return vehicleColour;
+					}
+					set	
+					{
+						vehicleColour = value;
+					}
+				}
+
+				public string VehicleNumber
+				{
+					get
+					{
+						return vehicleNumber;
+					}
+					set	
+					{
+						vehicleNumber = value;
+					}
+				}
+
+				public string RegisterTime
+				{
+					get
+					{
+						return registerTime;
+					}
+					set	
+					{
+						registerTime = value;
+					}
 				}
 			}
 		}

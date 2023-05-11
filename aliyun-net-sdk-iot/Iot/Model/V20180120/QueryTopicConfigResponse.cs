@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class QueryBatchRegisterDeviceStatusResponse : AcsResponse
+	public class QueryTopicConfigResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string code;
 
-		private string errorMessage;
+		private string message;
 
-		private QueryBatchRegisterDeviceStatus_Data data;
+		private List<QueryTopicConfig_TopicConfigInfo> data;
 
 		public string RequestId
 		{
@@ -71,19 +71,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string ErrorMessage
+		public string Message
 		{
 			get
 			{
-				return errorMessage;
+				return message;
 			}
 			set	
 			{
-				errorMessage = value;
+				message = value;
 			}
 		}
 
-		public QueryBatchRegisterDeviceStatus_Data Data
+		public List<QueryTopicConfig_TopicConfigInfo> Data
 		{
 			get
 			{
@@ -95,108 +95,104 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class QueryBatchRegisterDeviceStatus_Data
+		public class QueryTopicConfig_TopicConfigInfo
 		{
 
-			private string status;
+			private string productKey;
 
-			private List<QueryBatchRegisterDeviceStatus_InvalidDetailListItem> invalidDetailList;
+			private string topicFullName;
 
-			private List<string> validList;
+			private string operation;
 
-			private List<string> invalidList;
+			private string description;
 
-			public string Status
+			private bool? enableBroadcast;
+
+			private bool? enableProxySubscribe;
+
+			private string codec;
+
+			public string ProductKey
 			{
 				get
 				{
-					return status;
+					return productKey;
 				}
 				set	
 				{
-					status = value;
+					productKey = value;
 				}
 			}
 
-			public List<QueryBatchRegisterDeviceStatus_InvalidDetailListItem> InvalidDetailList
+			public string TopicFullName
 			{
 				get
 				{
-					return invalidDetailList;
+					return topicFullName;
 				}
 				set	
 				{
-					invalidDetailList = value;
+					topicFullName = value;
 				}
 			}
 
-			public List<string> ValidList
+			public string Operation
 			{
 				get
 				{
-					return validList;
+					return operation;
 				}
 				set	
 				{
-					validList = value;
+					operation = value;
 				}
 			}
 
-			public List<string> InvalidList
+			public string Description
 			{
 				get
 				{
-					return invalidList;
+					return description;
 				}
 				set	
 				{
-					invalidList = value;
+					description = value;
 				}
 			}
 
-			public class QueryBatchRegisterDeviceStatus_InvalidDetailListItem
+			public bool? EnableBroadcast
 			{
-
-				private string deviceName;
-
-				private string errorMsg;
-
-				private string nickName;
-
-				public string DeviceName
+				get
 				{
-					get
-					{
-						return deviceName;
-					}
-					set	
-					{
-						deviceName = value;
-					}
+					return enableBroadcast;
 				}
-
-				public string ErrorMsg
+				set	
 				{
-					get
-					{
-						return errorMsg;
-					}
-					set	
-					{
-						errorMsg = value;
-					}
+					enableBroadcast = value;
 				}
+			}
 
-				public string NickName
+			public bool? EnableProxySubscribe
+			{
+				get
 				{
-					get
-					{
-						return nickName;
-					}
-					set	
-					{
-						nickName = value;
-					}
+					return enableProxySubscribe;
+				}
+				set	
+				{
+					enableProxySubscribe = value;
+				}
+			}
+
+			public string Codec
+			{
+				get
+				{
+					return codec;
+				}
+				set	
+				{
+					codec = value;
 				}
 			}
 		}

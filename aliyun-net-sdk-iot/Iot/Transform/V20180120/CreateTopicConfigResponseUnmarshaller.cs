@@ -24,19 +24,19 @@ using Aliyun.Acs.Iot.Model.V20180120;
 
 namespace Aliyun.Acs.Iot.Transform.V20180120
 {
-    public class UpdateTopicConfigResponseUnmarshaller
+    public class CreateTopicConfigResponseUnmarshaller
     {
-        public static UpdateTopicConfigResponse Unmarshall(UnmarshallerContext _ctx)
+        public static CreateTopicConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			UpdateTopicConfigResponse updateTopicConfigResponse = new UpdateTopicConfigResponse();
+			CreateTopicConfigResponse createTopicConfigResponse = new CreateTopicConfigResponse();
 
-			updateTopicConfigResponse.HttpResponse = _ctx.HttpResponse;
-			updateTopicConfigResponse.RequestId = _ctx.StringValue("UpdateTopicConfig.RequestId");
-			updateTopicConfigResponse.Success = _ctx.BooleanValue("UpdateTopicConfig.Success");
-			updateTopicConfigResponse.Code = _ctx.StringValue("UpdateTopicConfig.Code");
-			updateTopicConfigResponse.Message = _ctx.StringValue("UpdateTopicConfig.Message");
+			createTopicConfigResponse.HttpResponse = _ctx.HttpResponse;
+			createTopicConfigResponse.RequestId = _ctx.StringValue("CreateTopicConfig.RequestId");
+			createTopicConfigResponse.Success = _ctx.BooleanValue("CreateTopicConfig.Success");
+			createTopicConfigResponse.Code = _ctx.StringValue("CreateTopicConfig.Code");
+			createTopicConfigResponse.Message = _ctx.StringValue("CreateTopicConfig.Message");
         
-			return updateTopicConfigResponse;
+			return createTopicConfigResponse;
         }
     }
 }

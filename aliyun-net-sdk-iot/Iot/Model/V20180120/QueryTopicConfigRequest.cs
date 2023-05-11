@@ -28,10 +28,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class QueryConsumerGroupListRequest : RpcAcsRequest<QueryConsumerGroupListResponse>
+    public class QueryTopicConfigRequest : RpcAcsRequest<QueryTopicConfigResponse>
     {
-        public QueryConsumerGroupListRequest()
-            : base("Iot", "2018-01-20", "QueryConsumerGroupList")
+        public QueryTopicConfigRequest()
+            : base("Iot", "2018-01-20", "QueryTopicConfig")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,32 +41,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string type;
-
 		private string iotInstanceId;
 
-		private int? pageSize;
-
-		private bool? fuzzy;
-
-		private int? currentPage;
-
-		private string groupName;
-
-		private string subBizCode;
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
+		private string productKey;
 
 		public string IotInstanceId
 		{
@@ -81,74 +58,22 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public int? PageSize
+		public string ProductKey
 		{
 			get
 			{
-				return pageSize;
+				return productKey;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 
-		public bool? Fuzzy
-		{
-			get
-			{
-				return fuzzy;
-			}
-			set	
-			{
-				fuzzy = value;
-				DictionaryUtil.Add(QueryParameters, "Fuzzy", value.ToString());
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
-			}
-		}
-
-		public string GroupName
-		{
-			get
-			{
-				return groupName;
-			}
-			set	
-			{
-				groupName = value;
-				DictionaryUtil.Add(QueryParameters, "GroupName", value);
-			}
-		}
-
-		public string SubBizCode
-		{
-			get
-			{
-				return subBizCode;
-			}
-			set	
-			{
-				subBizCode = value;
-				DictionaryUtil.Add(QueryParameters, "SubBizCode", value);
-			}
-		}
-
-        public override QueryConsumerGroupListResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryTopicConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryConsumerGroupListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryTopicConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

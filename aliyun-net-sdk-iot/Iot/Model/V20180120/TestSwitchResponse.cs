@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class QueryProductTopicResponse : AcsResponse
+	public class TestSwitchResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private List<QueryProductTopic_ProductTopicInfo> data;
+		private string iotId;
 
 		public string RequestId
 		{
@@ -83,117 +83,15 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public List<QueryProductTopic_ProductTopicInfo> Data
+		public string IotId
 		{
 			get
 			{
-				return data;
+				return iotId;
 			}
 			set	
 			{
-				data = value;
-			}
-		}
-
-		public class QueryProductTopic_ProductTopicInfo
-		{
-
-			private string productKey;
-
-			private string topicShortName;
-
-			private string operation;
-
-			private string desc;
-
-			private string id;
-
-			private bool? enableProxySubscribe;
-
-			private string codec;
-
-			public string ProductKey
-			{
-				get
-				{
-					return productKey;
-				}
-				set	
-				{
-					productKey = value;
-				}
-			}
-
-			public string TopicShortName
-			{
-				get
-				{
-					return topicShortName;
-				}
-				set	
-				{
-					topicShortName = value;
-				}
-			}
-
-			public string Operation
-			{
-				get
-				{
-					return operation;
-				}
-				set	
-				{
-					operation = value;
-				}
-			}
-
-			public string Desc
-			{
-				get
-				{
-					return desc;
-				}
-				set	
-				{
-					desc = value;
-				}
-			}
-
-			public string Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
-
-			public bool? EnableProxySubscribe
-			{
-				get
-				{
-					return enableProxySubscribe;
-				}
-				set	
-				{
-					enableProxySubscribe = value;
-				}
-			}
-
-			public string Codec
-			{
-				get
-				{
-					return codec;
-				}
-				set	
-				{
-					codec = value;
-				}
+				iotId = value;
 			}
 		}
 	}

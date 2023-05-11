@@ -16,69 +16,28 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Iot.Model.V20180120;
 
-namespace Aliyun.Acs.Iot.Model.V20180120
+namespace Aliyun.Acs.Iot.Transform.V20180120
 {
-	public class UpdateTopicConfigResponse : AcsResponse
-	{
+    public class AsyncRRpcResponseUnmarshaller
+    {
+        public static AsyncRRpcResponse Unmarshall(UnmarshallerContext _ctx)
+        {
+			AsyncRRpcResponse asyncRRpcResponse = new AsyncRRpcResponse();
 
-		private string requestId;
-
-		private bool? success;
-
-		private string code;
-
-		private string message;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-	}
+			asyncRRpcResponse.HttpResponse = _ctx.HttpResponse;
+			asyncRRpcResponse.RequestId = _ctx.StringValue("AsyncRRpc.RequestId");
+			asyncRRpcResponse.Success = _ctx.BooleanValue("AsyncRRpc.Success");
+			asyncRRpcResponse.Code = _ctx.StringValue("AsyncRRpc.Code");
+			asyncRRpcResponse.ErrorMessage = _ctx.StringValue("AsyncRRpc.ErrorMessage");
+			asyncRRpcResponse.MessageId = _ctx.LongValue("AsyncRRpc.MessageId");
+        
+			return asyncRRpcResponse;
+        }
+    }
 }

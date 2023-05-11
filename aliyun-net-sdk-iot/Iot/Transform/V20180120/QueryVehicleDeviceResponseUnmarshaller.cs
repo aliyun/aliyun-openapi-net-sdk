@@ -40,18 +40,22 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			data.IotId = _ctx.StringValue("QueryVehicleDevice.Data.IotId");
 			data.ProductKey = _ctx.StringValue("QueryVehicleDevice.Data.ProductKey");
 			data.DeviceName = _ctx.StringValue("QueryVehicleDevice.Data.DeviceName");
-			data.Manufacturer = _ctx.StringValue("QueryVehicleDevice.Data.Manufacturer");
-			data.DeviceModel = _ctx.StringValue("QueryVehicleDevice.Data.DeviceModel");
-			data.DeviceId = _ctx.StringValue("QueryVehicleDevice.Data.DeviceId");
-			data.Status = _ctx.StringValue("QueryVehicleDevice.Data.Status");
-			data.AuthCode = _ctx.StringValue("QueryVehicleDevice.Data.AuthCode");
-			data.Province = _ctx.StringValue("QueryVehicleDevice.Data.Province");
-			data.City = _ctx.StringValue("QueryVehicleDevice.Data.City");
-			data.VehicleColour = _ctx.StringValue("QueryVehicleDevice.Data.VehicleColour");
-			data.VehicleNumber = _ctx.StringValue("QueryVehicleDevice.Data.VehicleNumber");
 			data.CreateTime = _ctx.LongValue("QueryVehicleDevice.Data.CreateTime");
 			data.ModifiedTime = _ctx.LongValue("QueryVehicleDevice.Data.ModifiedTime");
-			data.RegisterTime = _ctx.LongValue("QueryVehicleDevice.Data.RegisterTime");
+			data.Protocol = _ctx.StringValue("QueryVehicleDevice.Data.Protocol");
+
+			QueryVehicleDeviceResponse.QueryVehicleDevice_Data.QueryVehicleDevice_JtProtocolDeviceData jtProtocolDeviceData = new QueryVehicleDeviceResponse.QueryVehicleDevice_Data.QueryVehicleDevice_JtProtocolDeviceData();
+			jtProtocolDeviceData.Manufacturer = _ctx.StringValue("QueryVehicleDevice.Data.JtProtocolDeviceData.Manufacturer");
+			jtProtocolDeviceData.DeviceModel = _ctx.StringValue("QueryVehicleDevice.Data.JtProtocolDeviceData.DeviceModel");
+			jtProtocolDeviceData.DeviceId = _ctx.StringValue("QueryVehicleDevice.Data.JtProtocolDeviceData.DeviceId");
+			jtProtocolDeviceData.Status = _ctx.StringValue("QueryVehicleDevice.Data.JtProtocolDeviceData.Status");
+			jtProtocolDeviceData.AuthCode = _ctx.StringValue("QueryVehicleDevice.Data.JtProtocolDeviceData.AuthCode");
+			jtProtocolDeviceData.Province = _ctx.StringValue("QueryVehicleDevice.Data.JtProtocolDeviceData.Province");
+			jtProtocolDeviceData.City = _ctx.StringValue("QueryVehicleDevice.Data.JtProtocolDeviceData.City");
+			jtProtocolDeviceData.VehicleColour = _ctx.StringValue("QueryVehicleDevice.Data.JtProtocolDeviceData.VehicleColour");
+			jtProtocolDeviceData.VehicleNumber = _ctx.StringValue("QueryVehicleDevice.Data.JtProtocolDeviceData.VehicleNumber");
+			jtProtocolDeviceData.RegisterTime = _ctx.StringValue("QueryVehicleDevice.Data.JtProtocolDeviceData.RegisterTime");
+			data.JtProtocolDeviceData = jtProtocolDeviceData;
 			queryVehicleDeviceResponse.Data = data;
         
 			return queryVehicleDeviceResponse;

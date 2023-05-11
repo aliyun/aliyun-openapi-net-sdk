@@ -28,10 +28,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class BatchImportDeviceRequest : RpcAcsRequest<BatchImportDeviceResponse>
+    public class BatchGrayMigrationDeviceRequest : RpcAcsRequest<BatchGrayMigrationDeviceResponse>
     {
-        public BatchImportDeviceRequest()
-            : base("Iot", "2018-01-20", "BatchImportDevice")
+        public BatchGrayMigrationDeviceRequest()
+            : base("Iot", "2018-01-20", "BatchGrayMigrationDevice")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,22 +41,24 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string iotInstanceId;
+		private List<string> deviceNamess = new List<string>(){ };
 
 		private string productKey;
 
-		private List<DeviceList> deviceLists = new List<DeviceList>(){ };
-
-		public string IotInstanceId
+		public List<string> DeviceNamess
 		{
 			get
 			{
-				return iotInstanceId;
+				return deviceNamess;
 			}
-			set	
+
+			set
 			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+				deviceNamess = value;
+				for (int i = 0; i < deviceNamess.Count; i++)
+				{
+					DictionaryUtil.Add(BodyParameters,"DeviceNames." + (i + 1) , deviceNamess[i]);
+				}
 			}
 		}
 
@@ -73,74 +75,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public List<DeviceList> DeviceLists
-		{
-			get
-			{
-				return deviceLists;
-			}
-
-			set
-			{
-				deviceLists = value;
-				for (int i = 0; i < deviceLists.Count; i++)
-				{
-					DictionaryUtil.Add(BodyParameters,"DeviceList." + (i + 1) + ".DeviceSecret", deviceLists[i].DeviceSecret);
-					DictionaryUtil.Add(BodyParameters,"DeviceList." + (i + 1) + ".DeviceName", deviceLists[i].DeviceName);
-					DictionaryUtil.Add(BodyParameters,"DeviceList." + (i + 1) + ".Sn", deviceLists[i].Sn);
-				}
-			}
-		}
-
-		public class DeviceList
-		{
-
-			private string deviceSecret;
-
-			private string deviceName;
-
-			private string sn;
-
-			public string DeviceSecret
-			{
-				get
-				{
-					return deviceSecret;
-				}
-				set	
-				{
-					deviceSecret = value;
-				}
-			}
-
-			public string DeviceName
-			{
-				get
-				{
-					return deviceName;
-				}
-				set	
-				{
-					deviceName = value;
-				}
-			}
-
-			public string Sn
-			{
-				get
-				{
-					return sn;
-				}
-				set	
-				{
-					sn = value;
-				}
-			}
-		}
-
-        public override BatchImportDeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override BatchGrayMigrationDeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BatchImportDeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return BatchGrayMigrationDeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

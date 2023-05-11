@@ -28,10 +28,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class QueryConsumerGroupListRequest : RpcAcsRequest<QueryConsumerGroupListResponse>
+    public class AsyncRRpcRequest : RpcAcsRequest<AsyncRRpcResponse>
     {
-        public QueryConsumerGroupListRequest()
-            : base("Iot", "2018-01-20", "QueryConsumerGroupList")
+        public AsyncRRpcRequest()
+            : base("Iot", "2018-01-20", "AsyncRRpc")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,30 +41,28 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string type;
+		private string messageContent;
 
 		private string iotInstanceId;
 
-		private int? pageSize;
+		private string extInfo;
 
-		private bool? fuzzy;
+		private string topicFullName;
 
-		private int? currentPage;
+		private string productKey;
 
-		private string groupName;
+		private string deviceName;
 
-		private string subBizCode;
-
-		public string Type
+		public string MessageContent
 		{
 			get
 			{
-				return type;
+				return messageContent;
 			}
 			set	
 			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
+				messageContent = value;
+				DictionaryUtil.Add(BodyParameters, "MessageContent", value);
 			}
 		}
 
@@ -81,74 +79,61 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public int? PageSize
+		public string ExtInfo
 		{
 			get
 			{
-				return pageSize;
+				return extInfo;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				extInfo = value;
+				DictionaryUtil.Add(QueryParameters, "ExtInfo", value);
 			}
 		}
 
-		public bool? Fuzzy
+		public string TopicFullName
 		{
 			get
 			{
-				return fuzzy;
+				return topicFullName;
 			}
 			set	
 			{
-				fuzzy = value;
-				DictionaryUtil.Add(QueryParameters, "Fuzzy", value.ToString());
+				topicFullName = value;
+				DictionaryUtil.Add(QueryParameters, "TopicFullName", value);
 			}
 		}
 
-		public int? CurrentPage
+		public string ProductKey
 		{
 			get
 			{
-				return currentPage;
+				return productKey;
 			}
 			set	
 			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 
-		public string GroupName
+		public string DeviceName
 		{
 			get
 			{
-				return groupName;
+				return deviceName;
 			}
 			set	
 			{
-				groupName = value;
-				DictionaryUtil.Add(QueryParameters, "GroupName", value);
+				deviceName = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
 			}
 		}
 
-		public string SubBizCode
-		{
-			get
-			{
-				return subBizCode;
-			}
-			set	
-			{
-				subBizCode = value;
-				DictionaryUtil.Add(QueryParameters, "SubBizCode", value);
-			}
-		}
-
-        public override QueryConsumerGroupListResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override AsyncRRpcResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryConsumerGroupListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AsyncRRpcResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

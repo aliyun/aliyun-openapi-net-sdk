@@ -41,13 +41,34 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
+		private string description;
+
 		private string iotInstanceId;
 
 		private string topicFullName;
 
 		private bool? enableBroadcast;
 
+		private bool? enableProxySubscribe;
+
 		private string productKey;
+
+		private string codec;
+
+		private string operation;
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
 
 		public string IotInstanceId
 		{
@@ -88,6 +109,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
+		public bool? EnableProxySubscribe
+		{
+			get
+			{
+				return enableProxySubscribe;
+			}
+			set	
+			{
+				enableProxySubscribe = value;
+				DictionaryUtil.Add(QueryParameters, "EnableProxySubscribe", value.ToString());
+			}
+		}
+
 		public string ProductKey
 		{
 			get
@@ -98,6 +132,32 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				productKey = value;
 				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+			}
+		}
+
+		public string Codec
+		{
+			get
+			{
+				return codec;
+			}
+			set	
+			{
+				codec = value;
+				DictionaryUtil.Add(QueryParameters, "Codec", value);
+			}
+		}
+
+		public string Operation
+		{
+			get
+			{
+				return operation;
+			}
+			set	
+			{
+				operation = value;
+				DictionaryUtil.Add(QueryParameters, "Operation", value);
 			}
 		}
 

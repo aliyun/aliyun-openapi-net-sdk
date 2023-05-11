@@ -24,19 +24,19 @@ using Aliyun.Acs.Iot.Model.V20180120;
 
 namespace Aliyun.Acs.Iot.Transform.V20180120
 {
-    public class UpdateTopicConfigResponseUnmarshaller
+    public class DeleteTopicConfigResponseUnmarshaller
     {
-        public static UpdateTopicConfigResponse Unmarshall(UnmarshallerContext _ctx)
+        public static DeleteTopicConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			UpdateTopicConfigResponse updateTopicConfigResponse = new UpdateTopicConfigResponse();
+			DeleteTopicConfigResponse deleteTopicConfigResponse = new DeleteTopicConfigResponse();
 
-			updateTopicConfigResponse.HttpResponse = _ctx.HttpResponse;
-			updateTopicConfigResponse.RequestId = _ctx.StringValue("UpdateTopicConfig.RequestId");
-			updateTopicConfigResponse.Success = _ctx.BooleanValue("UpdateTopicConfig.Success");
-			updateTopicConfigResponse.Code = _ctx.StringValue("UpdateTopicConfig.Code");
-			updateTopicConfigResponse.Message = _ctx.StringValue("UpdateTopicConfig.Message");
+			deleteTopicConfigResponse.HttpResponse = _ctx.HttpResponse;
+			deleteTopicConfigResponse.RequestId = _ctx.StringValue("DeleteTopicConfig.RequestId");
+			deleteTopicConfigResponse.Success = _ctx.BooleanValue("DeleteTopicConfig.Success");
+			deleteTopicConfigResponse.Code = _ctx.StringValue("DeleteTopicConfig.Code");
+			deleteTopicConfigResponse.Message = _ctx.StringValue("DeleteTopicConfig.Message");
         
-			return updateTopicConfigResponse;
+			return deleteTopicConfigResponse;
         }
     }
 }
