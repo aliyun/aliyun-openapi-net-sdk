@@ -44,6 +44,8 @@ namespace Aliyun.Acs.alinlp.Model.V20200629
 
 		private string text;
 
+		private string textType;
+
 		public string ServiceCode
 		{
 			get
@@ -67,6 +69,19 @@ namespace Aliyun.Acs.alinlp.Model.V20200629
 			{
 				text = value;
 				DictionaryUtil.Add(BodyParameters, "Text", value);
+			}
+		}
+
+		public string TextType
+		{
+			get
+			{
+				return textType;
+			}
+			set	
+			{
+				textType = value;
+				DictionaryUtil.Add(BodyParameters, "TextType", value);
 			}
 		}
 
