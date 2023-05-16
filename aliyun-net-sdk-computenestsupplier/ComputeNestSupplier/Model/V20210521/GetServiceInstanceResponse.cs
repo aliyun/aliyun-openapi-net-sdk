@@ -75,6 +75,8 @@ namespace Aliyun.Acs.ComputeNestSupplier.Model.V20210521
 
 		private string enableUserPrometheus;
 
+		private string rdAccountLoginUrl;
+
 		private List<GetServiceInstance_Tag> tags;
 
 		private GetServiceInstance_Service service;
@@ -378,6 +380,18 @@ namespace Aliyun.Acs.ComputeNestSupplier.Model.V20210521
 			set	
 			{
 				enableUserPrometheus = value;
+			}
+		}
+
+		public string RdAccountLoginUrl
+		{
+			get
+			{
+				return rdAccountLoginUrl;
+			}
+			set	
+			{
+				rdAccountLoginUrl = value;
 			}
 		}
 
@@ -838,6 +852,8 @@ namespace Aliyun.Acs.ComputeNestSupplier.Model.V20210521
 
 					private string domainName;
 
+					private int? connectBandwidth;
+
 					private List<string> securityGroups;
 
 					private List<string> vSwitches;
@@ -889,6 +905,18 @@ namespace Aliyun.Acs.ComputeNestSupplier.Model.V20210521
 						set	
 						{
 							domainName = value;
+						}
+					}
+
+					public int? ConnectBandwidth
+					{
+						get
+						{
+							return connectBandwidth;
+						}
+						set	
+						{
+							connectBandwidth = value;
 						}
 					}
 

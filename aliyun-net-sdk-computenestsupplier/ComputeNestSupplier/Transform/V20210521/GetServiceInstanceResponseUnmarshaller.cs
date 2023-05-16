@@ -56,6 +56,7 @@ namespace Aliyun.Acs.ComputeNestSupplier.Transform.V20210521
 			getServiceInstanceResponse.LicenseMetadata = _ctx.StringValue("GetServiceInstance.LicenseMetadata");
 			getServiceInstanceResponse.Name = _ctx.StringValue("GetServiceInstance.Name");
 			getServiceInstanceResponse.EnableUserPrometheus = _ctx.StringValue("GetServiceInstance.EnableUserPrometheus");
+			getServiceInstanceResponse.RdAccountLoginUrl = _ctx.StringValue("GetServiceInstance.RdAccountLoginUrl");
 
 			GetServiceInstanceResponse.GetServiceInstance_Service service = new GetServiceInstanceResponse.GetServiceInstance_Service();
 			service.Status = _ctx.StringValue("GetServiceInstance.Service.Status");
@@ -108,6 +109,7 @@ namespace Aliyun.Acs.ComputeNestSupplier.Transform.V20210521
 					connectionConfig.IngressEndpointStatus = _ctx.StringValue("GetServiceInstance.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].IngressEndpointStatus");
 					connectionConfig.NetworkServiceStatus = _ctx.StringValue("GetServiceInstance.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].NetworkServiceStatus");
 					connectionConfig.DomainName = _ctx.StringValue("GetServiceInstance.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].DomainName");
+					connectionConfig.ConnectBandwidth = _ctx.IntegerValue("GetServiceInstance.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].ConnectBandwidth");
 
 					List<string> connectionConfig_securityGroups = new List<string>();
 					for (int k = 0; k < _ctx.Length("GetServiceInstance.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].SecurityGroups.Length"); k++) {
