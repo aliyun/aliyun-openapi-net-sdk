@@ -28,10 +28,10 @@ using Aliyun.Acs.OceanBasePro.Transform.V20190901;
 
 namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 {
-    public class ModifyTenantUserPasswordRequest : RpcAcsRequest<ModifyTenantUserPasswordResponse>
+    public class KillProcessListRequest : RpcAcsRequest<KillProcessListResponse>
     {
-        public ModifyTenantUserPasswordRequest()
-            : base("OceanBasePro", "2019-09-01", "ModifyTenantUserPassword", "oceanbase", "openAPI")
+        public KillProcessListRequest()
+            : base("OceanBasePro", "2019-09-01", "KillProcessList", "oceanbase", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,27 +41,23 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			Method = MethodType.POST;
         }
 
-		private string userPassword;
+		private string sessionList;
 
 		private string instanceId;
 
 		private string tenantId;
 
-		private string encryptionType;
-
-		private string userName;
-
-		[JsonProperty(PropertyName = "UserPassword")]
-		public string UserPassword
+		[JsonProperty(PropertyName = "SessionList")]
+		public string SessionList
 		{
 			get
 			{
-				return userPassword;
+				return sessionList;
 			}
 			set	
 			{
-				userPassword = value;
-				DictionaryUtil.Add(BodyParameters, "UserPassword", value);
+				sessionList = value;
+				DictionaryUtil.Add(BodyParameters, "SessionList", value);
 			}
 		}
 
@@ -93,42 +89,14 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			}
 		}
 
-		[JsonProperty(PropertyName = "EncryptionType")]
-		public string EncryptionType
-		{
-			get
-			{
-				return encryptionType;
-			}
-			set	
-			{
-				encryptionType = value;
-				DictionaryUtil.Add(BodyParameters, "EncryptionType", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "UserName")]
-		public string UserName
-		{
-			get
-			{
-				return userName;
-			}
-			set	
-			{
-				userName = value;
-				DictionaryUtil.Add(BodyParameters, "UserName", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override ModifyTenantUserPasswordResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override KillProcessListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyTenantUserPasswordResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return KillProcessListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

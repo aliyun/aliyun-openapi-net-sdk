@@ -42,6 +42,7 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 				data.NeedReboot = _ctx.BooleanValue("DescribeParameters.Parameters["+ i +"].NeedReboot");
 				data.Name = _ctx.StringValue("DescribeParameters.Parameters["+ i +"].Name");
 				data.DefaultValue = _ctx.StringValue("DescribeParameters.Parameters["+ i +"].DefaultValue");
+				data._Readonly = _ctx.BooleanValue("DescribeParameters.Parameters["+ i +"].Readonly");
 
 				List<string> data_rejectedValue = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeParameters.Parameters["+ i +"].RejectedValue.Length"); j++) {

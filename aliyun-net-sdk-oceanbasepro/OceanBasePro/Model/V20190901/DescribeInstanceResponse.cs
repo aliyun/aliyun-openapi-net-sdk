@@ -102,6 +102,10 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 			private string nodeNum;
 
+			private bool? isolationOptimization;
+
+			private bool? enableIsolationOptimization;
+
 			private List<string> availableZones;
 
 			private List<string> zones;
@@ -391,6 +395,32 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				set	
 				{
 					nodeNum = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "IsolationOptimization")]
+			public bool? IsolationOptimization
+			{
+				get
+				{
+					return isolationOptimization;
+				}
+				set	
+				{
+					isolationOptimization = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EnableIsolationOptimization")]
+			public bool? EnableIsolationOptimization
+			{
+				get
+				{
+					return enableIsolationOptimization;
+				}
+				set	
+				{
+					enableIsolationOptimization = value;
 				}
 			}
 

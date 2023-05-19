@@ -56,6 +56,8 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 			instance.EnableUpgradeLogDisk = _ctx.BooleanValue("DescribeInstance.Instance.EnableUpgradeLogDisk");
 			instance.InstanceRole = _ctx.StringValue("DescribeInstance.Instance.InstanceRole");
 			instance.NodeNum = _ctx.StringValue("DescribeInstance.Instance.NodeNum");
+			instance.IsolationOptimization = _ctx.BooleanValue("DescribeInstance.Instance.IsolationOptimization");
+			instance.EnableIsolationOptimization = _ctx.BooleanValue("DescribeInstance.Instance.EnableIsolationOptimization");
 
 			List<string> instance_availableZones = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeInstance.Instance.AvailableZones.Length"); i++) {

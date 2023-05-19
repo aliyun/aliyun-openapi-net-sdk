@@ -43,6 +43,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 		private string tenantMode;
 
+		private string series;
+
 		[JsonProperty(PropertyName = "TenantMode")]
 		public string TenantMode
 		{
@@ -54,6 +56,20 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			{
 				tenantMode = value;
 				DictionaryUtil.Add(BodyParameters, "TenantMode", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Series")]
+		public string Series
+		{
+			get
+			{
+				return series;
+			}
+			set	
+			{
+				series = value;
+				DictionaryUtil.Add(BodyParameters, "Series", value);
 			}
 		}
 

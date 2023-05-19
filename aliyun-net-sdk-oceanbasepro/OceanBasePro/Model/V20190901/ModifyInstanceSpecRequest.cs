@@ -41,25 +41,11 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			Method = MethodType.POST;
         }
 
-		private long? diskSize;
-
 		private string instanceClass;
 
-		private string instanceId;
+		private long? diskSize;
 
-		[JsonProperty(PropertyName = "DiskSize")]
-		public long? DiskSize
-		{
-			get
-			{
-				return diskSize;
-			}
-			set	
-			{
-				diskSize = value;
-				DictionaryUtil.Add(BodyParameters, "DiskSize", value.ToString());
-			}
-		}
+		private string instanceId;
 
 		[JsonProperty(PropertyName = "InstanceClass")]
 		public string InstanceClass
@@ -72,6 +58,20 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			{
 				instanceClass = value;
 				DictionaryUtil.Add(BodyParameters, "InstanceClass", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DiskSize")]
+		public long? DiskSize
+		{
+			get
+			{
+				return diskSize;
+			}
+			set	
+			{
+				diskSize = value;
+				DictionaryUtil.Add(BodyParameters, "DiskSize", value.ToString());
 			}
 		}
 
