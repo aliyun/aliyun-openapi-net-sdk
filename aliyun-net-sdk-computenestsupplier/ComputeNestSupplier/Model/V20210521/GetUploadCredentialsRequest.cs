@@ -28,10 +28,10 @@ using Aliyun.Acs.ComputeNestSupplier.Transform.V20210521;
 
 namespace Aliyun.Acs.ComputeNestSupplier.Model.V20210521
 {
-    public class GetArtifactRequest : RpcAcsRequest<GetArtifactResponse>
+    public class GetUploadCredentialsRequest : RpcAcsRequest<GetUploadCredentialsResponse>
     {
-        public GetArtifactRequest()
-            : base("ComputeNestSupplier", "2021-05-21", "GetArtifact")
+        public GetUploadCredentialsRequest()
+            : base("ComputeNestSupplier", "2021-05-21", "GetUploadCredentials")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,48 +41,18 @@ namespace Aliyun.Acs.ComputeNestSupplier.Model.V20210521
 			Method = MethodType.POST;
         }
 
-		private string artifactVersion;
+		private string fileName;
 
-		private string artifactName;
-
-		private string artifactId;
-
-		public string ArtifactVersion
+		public string FileName
 		{
 			get
 			{
-				return artifactVersion;
+				return fileName;
 			}
 			set	
 			{
-				artifactVersion = value;
-				DictionaryUtil.Add(QueryParameters, "ArtifactVersion", value);
-			}
-		}
-
-		public string ArtifactName
-		{
-			get
-			{
-				return artifactName;
-			}
-			set	
-			{
-				artifactName = value;
-				DictionaryUtil.Add(QueryParameters, "ArtifactName", value);
-			}
-		}
-
-		public string ArtifactId
-		{
-			get
-			{
-				return artifactId;
-			}
-			set	
-			{
-				artifactId = value;
-				DictionaryUtil.Add(QueryParameters, "ArtifactId", value);
+				fileName = value;
+				DictionaryUtil.Add(QueryParameters, "FileName", value);
 			}
 		}
 
@@ -91,9 +61,9 @@ namespace Aliyun.Acs.ComputeNestSupplier.Model.V20210521
 			return false;
 		}
 
-        public override GetArtifactResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetUploadCredentialsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetArtifactResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetUploadCredentialsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
