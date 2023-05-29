@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Market.Model.V20151101
@@ -25,22 +25,11 @@ namespace Aliyun.Acs.Market.Model.V20151101
 	public class PushMeteringDataResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -50,6 +39,19 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			set	
 			{
 				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

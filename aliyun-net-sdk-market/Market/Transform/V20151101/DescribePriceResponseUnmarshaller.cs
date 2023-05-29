@@ -26,43 +26,43 @@ namespace Aliyun.Acs.Market.Transform.V20151101
 {
     public class DescribePriceResponseUnmarshaller
     {
-        public static DescribePriceResponse Unmarshall(UnmarshallerContext context)
+        public static DescribePriceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribePriceResponse describePriceResponse = new DescribePriceResponse();
 
-			describePriceResponse.HttpResponse = context.HttpResponse;
-			describePriceResponse.ProductCode = context.StringValue("DescribePrice.ProductCode");
-			describePriceResponse.OriginalPrice = context.FloatValue("DescribePrice.OriginalPrice");
-			describePriceResponse.TradePrice = context.FloatValue("DescribePrice.TradePrice");
-			describePriceResponse.DiscountPrice = context.FloatValue("DescribePrice.DiscountPrice");
-			describePriceResponse.Cuxiao = context.BooleanValue("DescribePrice.Cuxiao");
-			describePriceResponse.Duration = context.IntegerValue("DescribePrice.Duration");
-			describePriceResponse.Cycle = context.StringValue("DescribePrice.Cycle");
-			describePriceResponse.InfoTitle = context.StringValue("DescribePrice.InfoTitle");
-			describePriceResponse.ExpressionCode = context.StringValue("DescribePrice.ExpressionCode");
-			describePriceResponse.Currency = context.StringValue("DescribePrice.Currency");
-			describePriceResponse.ExpressionMessage = context.StringValue("DescribePrice.ExpressionMessage");
+			describePriceResponse.HttpResponse = _ctx.HttpResponse;
+			describePriceResponse.ExpressionCode = _ctx.StringValue("DescribePrice.ExpressionCode");
+			describePriceResponse.Cuxiao = _ctx.BooleanValue("DescribePrice.Cuxiao");
+			describePriceResponse.DiscountPrice = _ctx.FloatValue("DescribePrice.DiscountPrice");
+			describePriceResponse.Cycle = _ctx.StringValue("DescribePrice.Cycle");
+			describePriceResponse.TradePrice = _ctx.FloatValue("DescribePrice.TradePrice");
+			describePriceResponse.OriginalPrice = _ctx.FloatValue("DescribePrice.OriginalPrice");
+			describePriceResponse.Duration = _ctx.IntegerValue("DescribePrice.Duration");
+			describePriceResponse.Currency = _ctx.StringValue("DescribePrice.Currency");
+			describePriceResponse.ExpressionMessage = _ctx.StringValue("DescribePrice.ExpressionMessage");
+			describePriceResponse.InfoTitle = _ctx.StringValue("DescribePrice.InfoTitle");
+			describePriceResponse.ProductCode = _ctx.StringValue("DescribePrice.ProductCode");
 
 			List<DescribePriceResponse.DescribePrice_PromotionRule> describePriceResponse_promotionRules = new List<DescribePriceResponse.DescribePrice_PromotionRule>();
-			for (int i = 0; i < context.Length("DescribePrice.PromotionRules.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribePrice.PromotionRules.Length"); i++) {
 				DescribePriceResponse.DescribePrice_PromotionRule promotionRule = new DescribePriceResponse.DescribePrice_PromotionRule();
-				promotionRule.RuleId = context.StringValue("DescribePrice.PromotionRules["+ i +"].RuleId");
-				promotionRule.Name = context.StringValue("DescribePrice.PromotionRules["+ i +"].Name");
-				promotionRule.Title = context.StringValue("DescribePrice.PromotionRules["+ i +"].Title");
+				promotionRule.Title = _ctx.StringValue("DescribePrice.PromotionRules["+ i +"].Title");
+				promotionRule.Name = _ctx.StringValue("DescribePrice.PromotionRules["+ i +"].Name");
+				promotionRule.RuleId = _ctx.StringValue("DescribePrice.PromotionRules["+ i +"].RuleId");
 
 				describePriceResponse_promotionRules.Add(promotionRule);
 			}
 			describePriceResponse.PromotionRules = describePriceResponse_promotionRules;
 
 			List<DescribePriceResponse.DescribePrice_Coupon> describePriceResponse_coupons = new List<DescribePriceResponse.DescribePrice_Coupon>();
-			for (int i = 0; i < context.Length("DescribePrice.Coupons.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribePrice.Coupons.Length"); i++) {
 				DescribePriceResponse.DescribePrice_Coupon coupon = new DescribePriceResponse.DescribePrice_Coupon();
-				coupon.CouponOptionCode = context.StringValue("DescribePrice.Coupons["+ i +"].CouponOptionCode");
-				coupon.CouponOptionNo = context.StringValue("DescribePrice.Coupons["+ i +"].CouponOptionNo");
-				coupon.CouponName = context.StringValue("DescribePrice.Coupons["+ i +"].CouponName");
-				coupon.CouponDesc = context.StringValue("DescribePrice.Coupons["+ i +"].CouponDesc");
-				coupon.CanPromFee = context.FloatValue("DescribePrice.Coupons["+ i +"].CanPromFee");
-				coupon.IsSelected = context.BooleanValue("DescribePrice.Coupons["+ i +"].IsSelected");
+				coupon.CouponOptionCode = _ctx.StringValue("DescribePrice.Coupons["+ i +"].CouponOptionCode");
+				coupon.CouponOptionNo = _ctx.StringValue("DescribePrice.Coupons["+ i +"].CouponOptionNo");
+				coupon.CouponName = _ctx.StringValue("DescribePrice.Coupons["+ i +"].CouponName");
+				coupon.CouponDesc = _ctx.StringValue("DescribePrice.Coupons["+ i +"].CouponDesc");
+				coupon.IsSelected = _ctx.BooleanValue("DescribePrice.Coupons["+ i +"].IsSelected");
+				coupon.CanPromFee = _ctx.FloatValue("DescribePrice.Coupons["+ i +"].CanPromFee");
 
 				describePriceResponse_coupons.Add(coupon);
 			}

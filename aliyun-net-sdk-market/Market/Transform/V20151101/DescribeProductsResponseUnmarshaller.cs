@@ -26,34 +26,35 @@ namespace Aliyun.Acs.Market.Transform.V20151101
 {
     public class DescribeProductsResponseUnmarshaller
     {
-        public static DescribeProductsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeProductsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeProductsResponse describeProductsResponse = new DescribeProductsResponse();
 
-			describeProductsResponse.HttpResponse = context.HttpResponse;
-			describeProductsResponse.RequestId = context.StringValue("DescribeProducts.RequestId");
-			describeProductsResponse.PageNumber = context.IntegerValue("DescribeProducts.PageNumber");
-			describeProductsResponse.PageSize = context.IntegerValue("DescribeProducts.PageSize");
-			describeProductsResponse.TotalCount = context.IntegerValue("DescribeProducts.TotalCount");
+			describeProductsResponse.HttpResponse = _ctx.HttpResponse;
+			describeProductsResponse.RequestId = _ctx.StringValue("DescribeProducts.RequestId");
+			describeProductsResponse.PageNumber = _ctx.IntegerValue("DescribeProducts.PageNumber");
+			describeProductsResponse.PageSize = _ctx.IntegerValue("DescribeProducts.PageSize");
+			describeProductsResponse.TotalCount = _ctx.IntegerValue("DescribeProducts.TotalCount");
 
 			List<DescribeProductsResponse.DescribeProducts_ProductItem> describeProductsResponse_productItems = new List<DescribeProductsResponse.DescribeProducts_ProductItem>();
-			for (int i = 0; i < context.Length("DescribeProducts.ProductItems.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeProducts.ProductItems.Length"); i++) {
 				DescribeProductsResponse.DescribeProducts_ProductItem productItem = new DescribeProductsResponse.DescribeProducts_ProductItem();
-				productItem.Code = context.StringValue("DescribeProducts.ProductItems["+ i +"].Code");
-				productItem.Name = context.StringValue("DescribeProducts.ProductItems["+ i +"].Name");
-				productItem.CategoryId = context.LongValue("DescribeProducts.ProductItems["+ i +"].CategoryId");
-				productItem.SupplierId = context.LongValue("DescribeProducts.ProductItems["+ i +"].SupplierId");
-				productItem.SupplierName = context.StringValue("DescribeProducts.ProductItems["+ i +"].SupplierName");
-				productItem.ShortDescription = context.StringValue("DescribeProducts.ProductItems["+ i +"].ShortDescription");
-				productItem.Tags = context.StringValue("DescribeProducts.ProductItems["+ i +"].Tags");
-				productItem.SuggestedPrice = context.StringValue("DescribeProducts.ProductItems["+ i +"].SuggestedPrice");
-				productItem.TargetUrl = context.StringValue("DescribeProducts.ProductItems["+ i +"].TargetUrl");
-				productItem.ImageUrl = context.StringValue("DescribeProducts.ProductItems["+ i +"].ImageUrl");
-				productItem.Score = context.StringValue("DescribeProducts.ProductItems["+ i +"].Score");
-				productItem.OperationSystem = context.StringValue("DescribeProducts.ProductItems["+ i +"].OperationSystem");
-				productItem.WarrantyDate = context.StringValue("DescribeProducts.ProductItems["+ i +"].WarrantyDate");
-				productItem.DeliveryDate = context.StringValue("DescribeProducts.ProductItems["+ i +"].DeliveryDate");
-				productItem.DeliveryWay = context.StringValue("DescribeProducts.ProductItems["+ i +"].DeliveryWay");
+				productItem.PriceInfo = _ctx.StringValue("DescribeProducts.ProductItems["+ i +"].PriceInfo");
+				productItem.DeliveryWay = _ctx.StringValue("DescribeProducts.ProductItems["+ i +"].DeliveryWay");
+				productItem.ImageUrl = _ctx.StringValue("DescribeProducts.ProductItems["+ i +"].ImageUrl");
+				productItem.WarrantyDate = _ctx.StringValue("DescribeProducts.ProductItems["+ i +"].WarrantyDate");
+				productItem.Tags = _ctx.StringValue("DescribeProducts.ProductItems["+ i +"].Tags");
+				productItem.Score = _ctx.StringValue("DescribeProducts.ProductItems["+ i +"].Score");
+				productItem.SupplierId = _ctx.LongValue("DescribeProducts.ProductItems["+ i +"].SupplierId");
+				productItem.OperationSystem = _ctx.StringValue("DescribeProducts.ProductItems["+ i +"].OperationSystem");
+				productItem.ShortDescription = _ctx.StringValue("DescribeProducts.ProductItems["+ i +"].ShortDescription");
+				productItem.DeliveryDate = _ctx.StringValue("DescribeProducts.ProductItems["+ i +"].DeliveryDate");
+				productItem.TargetUrl = _ctx.StringValue("DescribeProducts.ProductItems["+ i +"].TargetUrl");
+				productItem.Code = _ctx.StringValue("DescribeProducts.ProductItems["+ i +"].Code");
+				productItem.CategoryId = _ctx.LongValue("DescribeProducts.ProductItems["+ i +"].CategoryId");
+				productItem.Name = _ctx.StringValue("DescribeProducts.ProductItems["+ i +"].Name");
+				productItem.SuggestedPrice = _ctx.StringValue("DescribeProducts.ProductItems["+ i +"].SuggestedPrice");
+				productItem.SupplierName = _ctx.StringValue("DescribeProducts.ProductItems["+ i +"].SupplierName");
 
 				describeProductsResponse_productItems.Add(productItem);
 			}

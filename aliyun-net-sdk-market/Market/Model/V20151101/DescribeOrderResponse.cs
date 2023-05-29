@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Market.Model.V20151101
@@ -25,110 +25,51 @@ namespace Aliyun.Acs.Market.Model.V20151101
 	public class DescribeOrderResponse : AcsResponse
 	{
 
-		private long? orderId;
-
-		private long? aliUid;
+		private string productName;
 
 		private string supplierCompanyName;
 
-		private string productCode;
-
-		private string productSkuCode;
-
-		private string productName;
-
-		private string periodType;
-
-		private int? quantity;
-
-		private long? accountQuantity;
-
-		private string orderType;
-
-		private string orderStatus;
-
-		private string payStatus;
-
-		private long? paidOn;
-
-		private long? createdOn;
-
 		private float? originalPrice;
 
-		private float? totalPrice;
-
-		private float? paymentPrice;
+		private long? aliUid;
 
 		private float? couponPrice;
 
-		private string components;
+		private long? accountQuantity;
+
+		private string periodType;
 
 		private string requestId;
+
+		private string payStatus;
+
+		private float? paymentPrice;
+
+		private string orderStatus;
+
+		private string productSkuCode;
+
+		private long? paidOn;
+
+		private string components;
+
+		private long? createdOn;
+
+		private string orderType;
+
+		private float? totalPrice;
+
+		private int? quantity;
+
+		private long? orderId;
+
+		private string productCode;
 
 		private List<string> supplierTelephones;
 
 		private List<string> instanceIds;
 
-		public long? OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
-			}
-		}
-
-		public long? AliUid
-		{
-			get
-			{
-				return aliUid;
-			}
-			set	
-			{
-				aliUid = value;
-			}
-		}
-
-		public string SupplierCompanyName
-		{
-			get
-			{
-				return supplierCompanyName;
-			}
-			set	
-			{
-				supplierCompanyName = value;
-			}
-		}
-
-		public string ProductCode
-		{
-			get
-			{
-				return productCode;
-			}
-			set	
-			{
-				productCode = value;
-			}
-		}
-
-		public string ProductSkuCode
-		{
-			get
-			{
-				return productSkuCode;
-			}
-			set	
-			{
-				productSkuCode = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "ProductName")]
 		public string ProductName
 		{
 			get
@@ -141,102 +82,20 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
-		public string PeriodType
+		[JsonProperty(PropertyName = "SupplierCompanyName")]
+		public string SupplierCompanyName
 		{
 			get
 			{
-				return periodType;
+				return supplierCompanyName;
 			}
 			set	
 			{
-				periodType = value;
+				supplierCompanyName = value;
 			}
 		}
 
-		public int? Quantity
-		{
-			get
-			{
-				return quantity;
-			}
-			set	
-			{
-				quantity = value;
-			}
-		}
-
-		public long? AccountQuantity
-		{
-			get
-			{
-				return accountQuantity;
-			}
-			set	
-			{
-				accountQuantity = value;
-			}
-		}
-
-		public string OrderType
-		{
-			get
-			{
-				return orderType;
-			}
-			set	
-			{
-				orderType = value;
-			}
-		}
-
-		public string OrderStatus
-		{
-			get
-			{
-				return orderStatus;
-			}
-			set	
-			{
-				orderStatus = value;
-			}
-		}
-
-		public string PayStatus
-		{
-			get
-			{
-				return payStatus;
-			}
-			set	
-			{
-				payStatus = value;
-			}
-		}
-
-		public long? PaidOn
-		{
-			get
-			{
-				return paidOn;
-			}
-			set	
-			{
-				paidOn = value;
-			}
-		}
-
-		public long? CreatedOn
-		{
-			get
-			{
-				return createdOn;
-			}
-			set	
-			{
-				createdOn = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "OriginalPrice")]
 		public float? OriginalPrice
 		{
 			get
@@ -249,30 +108,20 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
-		public float? TotalPrice
+		[JsonProperty(PropertyName = "AliUid")]
+		public long? AliUid
 		{
 			get
 			{
-				return totalPrice;
+				return aliUid;
 			}
 			set	
 			{
-				totalPrice = value;
+				aliUid = value;
 			}
 		}
 
-		public float? PaymentPrice
-		{
-			get
-			{
-				return paymentPrice;
-			}
-			set	
-			{
-				paymentPrice = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "CouponPrice")]
 		public float? CouponPrice
 		{
 			get
@@ -285,18 +134,33 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
-		public string Components
+		[JsonProperty(PropertyName = "AccountQuantity")]
+		public long? AccountQuantity
 		{
 			get
 			{
-				return components;
+				return accountQuantity;
 			}
 			set	
 			{
-				components = value;
+				accountQuantity = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "PeriodType")]
+		public string PeriodType
+		{
+			get
+			{
+				return periodType;
+			}
+			set	
+			{
+				periodType = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -309,6 +173,163 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PayStatus")]
+		public string PayStatus
+		{
+			get
+			{
+				return payStatus;
+			}
+			set	
+			{
+				payStatus = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PaymentPrice")]
+		public float? PaymentPrice
+		{
+			get
+			{
+				return paymentPrice;
+			}
+			set	
+			{
+				paymentPrice = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "OrderStatus")]
+		public string OrderStatus
+		{
+			get
+			{
+				return orderStatus;
+			}
+			set	
+			{
+				orderStatus = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ProductSkuCode")]
+		public string ProductSkuCode
+		{
+			get
+			{
+				return productSkuCode;
+			}
+			set	
+			{
+				productSkuCode = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PaidOn")]
+		public long? PaidOn
+		{
+			get
+			{
+				return paidOn;
+			}
+			set	
+			{
+				paidOn = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Components")]
+		public string Components
+		{
+			get
+			{
+				return components;
+			}
+			set	
+			{
+				components = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "CreatedOn")]
+		public long? CreatedOn
+		{
+			get
+			{
+				return createdOn;
+			}
+			set	
+			{
+				createdOn = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "OrderType")]
+		public string OrderType
+		{
+			get
+			{
+				return orderType;
+			}
+			set	
+			{
+				orderType = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TotalPrice")]
+		public float? TotalPrice
+		{
+			get
+			{
+				return totalPrice;
+			}
+			set	
+			{
+				totalPrice = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Quantity")]
+		public int? Quantity
+		{
+			get
+			{
+				return quantity;
+			}
+			set	
+			{
+				quantity = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "OrderId")]
+		public long? OrderId
+		{
+			get
+			{
+				return orderId;
+			}
+			set	
+			{
+				orderId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ProductCode")]
+		public string ProductCode
+		{
+			get
+			{
+				return productCode;
+			}
+			set	
+			{
+				productCode = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "SupplierTelephones")]
 		public List<string> SupplierTelephones
 		{
 			get
@@ -321,6 +342,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceIds")]
 		public List<string> InstanceIds
 		{
 			get

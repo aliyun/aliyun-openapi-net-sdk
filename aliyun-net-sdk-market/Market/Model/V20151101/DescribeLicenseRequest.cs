@@ -17,11 +17,13 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Market;
 using Aliyun.Acs.Market.Transform;
 using Aliyun.Acs.Market.Transform.V20151101;
 
@@ -30,17 +32,19 @@ namespace Aliyun.Acs.Market.Model.V20151101
     public class DescribeLicenseRequest : RpcAcsRequest<DescribeLicenseResponse>
     {
         public DescribeLicenseRequest()
-            : base("Market", "2015-11-01", "DescribeLicense", "yunmarket", "openAPI")
+            : base("Market", "2015-11-01", "DescribeLicense")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Market.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Market.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string licenseCode;
 
+		[JsonProperty(PropertyName = "LicenseCode")]
 		public string LicenseCode
 		{
 			get

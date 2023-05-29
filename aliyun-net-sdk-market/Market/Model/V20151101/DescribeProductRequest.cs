@@ -17,11 +17,13 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Market;
 using Aliyun.Acs.Market.Transform;
 using Aliyun.Acs.Market.Transform.V20151101;
 
@@ -30,13 +32,14 @@ namespace Aliyun.Acs.Market.Model.V20151101
     public class DescribeProductRequest : RpcAcsRequest<DescribeProductResponse>
     {
         public DescribeProductRequest()
-            : base("Market", "2015-11-01", "DescribeProduct", "yunmarket", "openAPI")
+            : base("Market", "2015-11-01", "DescribeProduct")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Market.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Market.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string code;
@@ -45,6 +48,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 
 		private string aliUid;
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -58,6 +62,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
+		[JsonProperty(PropertyName = "QueryDraft")]
 		public bool? QueryDraft
 		{
 			get
@@ -71,6 +76,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
+		[JsonProperty(PropertyName = "AliUid")]
 		public string AliUid
 		{
 			get

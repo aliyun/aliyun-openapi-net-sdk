@@ -1,3 +1,6 @@
+2023-05-29 Version: 2.0.26
+- Add DistributionProducts API.
+
 2023-05-23 Version: 1.0.5
 - Add UpdateService GetService DeleteService.
 

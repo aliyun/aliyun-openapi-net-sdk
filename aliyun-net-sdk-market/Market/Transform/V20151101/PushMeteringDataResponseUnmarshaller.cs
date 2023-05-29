@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Market.Transform.V20151101
 {
     public class PushMeteringDataResponseUnmarshaller
     {
-        public static PushMeteringDataResponse Unmarshall(UnmarshallerContext context)
+        public static PushMeteringDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			PushMeteringDataResponse pushMeteringDataResponse = new PushMeteringDataResponse();
 
-			pushMeteringDataResponse.HttpResponse = context.HttpResponse;
-			pushMeteringDataResponse.RequestId = context.StringValue("PushMeteringData.RequestId");
-			pushMeteringDataResponse.Success = context.BooleanValue("PushMeteringData.Success");
+			pushMeteringDataResponse.HttpResponse = _ctx.HttpResponse;
+			pushMeteringDataResponse.Success = _ctx.BooleanValue("PushMeteringData.Success");
+			pushMeteringDataResponse.RequestId = _ctx.StringValue("PushMeteringData.RequestId");
         
 			return pushMeteringDataResponse;
         }
