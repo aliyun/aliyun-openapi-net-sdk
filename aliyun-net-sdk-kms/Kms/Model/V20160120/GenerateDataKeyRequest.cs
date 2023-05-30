@@ -42,27 +42,15 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Method = MethodType.POST;
         }
 
-		private string encryptionContext;
-
 		private string keyId;
 
 		private string keySpec;
 
 		private int? numberOfBytes;
 
-		public string EncryptionContext
-		{
-			get
-			{
-				return encryptionContext;
-			}
-			set	
-			{
-				encryptionContext = value;
-				DictionaryUtil.Add(QueryParameters, "EncryptionContext", value);
-			}
-		}
+		private string encryptionContext;
 
+		[JsonProperty(PropertyName = "KeyId")]
 		public string KeyId
 		{
 			get
@@ -76,6 +64,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "KeySpec")]
 		public string KeySpec
 		{
 			get
@@ -89,6 +78,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "NumberOfBytes")]
 		public int? NumberOfBytes
 		{
 			get
@@ -99,6 +89,20 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				numberOfBytes = value;
 				DictionaryUtil.Add(QueryParameters, "NumberOfBytes", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "EncryptionContext")]
+		public string EncryptionContext
+		{
+			get
+			{
+				return encryptionContext;
+			}
+			set	
+			{
+				encryptionContext = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptionContext", value);
 			}
 		}
 

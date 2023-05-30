@@ -43,9 +43,9 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string keyVersionId;
 
-		private string digest;
-
 		private string keyId;
+
+		private string digest;
 
 		private string _value;
 
@@ -64,19 +64,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public string Digest
-		{
-			get
-			{
-				return digest;
-			}
-			set	
-			{
-				digest = value;
-				DictionaryUtil.Add(QueryParameters, "Digest", value);
-			}
-		}
-
 		public string KeyId
 		{
 			get
@@ -87,6 +74,19 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				keyId = value;
 				DictionaryUtil.Add(QueryParameters, "KeyId", value);
+			}
+		}
+
+		public string Digest
+		{
+			get
+			{
+				return digest;
+			}
+			set	
+			{
+				digest = value;
+				DictionaryUtil.Add(QueryParameters, "Digest", value);
 			}
 		}
 

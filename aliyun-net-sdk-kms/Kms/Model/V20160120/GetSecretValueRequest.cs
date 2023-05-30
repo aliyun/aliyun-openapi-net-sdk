@@ -50,6 +50,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private bool? fetchExtendedConfig;
 
+		[JsonProperty(PropertyName = "VersionId")]
 		public string VersionId
 		{
 			get
@@ -63,6 +64,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "VersionStage")]
 		public string VersionStage
 		{
 			get
@@ -76,6 +78,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecretName")]
 		public string SecretName
 		{
 			get
@@ -89,6 +92,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "FetchExtendedConfig")]
 		public bool? FetchExtendedConfig
 		{
 			get

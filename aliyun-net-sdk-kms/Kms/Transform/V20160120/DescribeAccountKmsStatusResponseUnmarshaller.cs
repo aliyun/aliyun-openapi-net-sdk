@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			DescribeAccountKmsStatusResponse describeAccountKmsStatusResponse = new DescribeAccountKmsStatusResponse();
 
 			describeAccountKmsStatusResponse.HttpResponse = _ctx.HttpResponse;
-			describeAccountKmsStatusResponse.RequestId = _ctx.StringValue("DescribeAccountKmsStatus.RequestId");
 			describeAccountKmsStatusResponse.AccountStatus = _ctx.StringValue("DescribeAccountKmsStatus.AccountStatus");
+			describeAccountKmsStatusResponse.RequestId = _ctx.StringValue("DescribeAccountKmsStatus.RequestId");
         
 			return describeAccountKmsStatusResponse;
         }

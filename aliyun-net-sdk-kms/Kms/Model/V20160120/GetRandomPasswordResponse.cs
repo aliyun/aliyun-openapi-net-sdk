@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
@@ -25,22 +25,11 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 	public class GetRandomPasswordResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string randomPassword;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
+		[JsonProperty(PropertyName = "RandomPassword")]
 		public string RandomPassword
 		{
 			get
@@ -50,6 +39,19 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			set	
 			{
 				randomPassword = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

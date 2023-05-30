@@ -44,12 +44,13 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string certificateId;
 
-		private string tagKeys;
-
 		private string keyId;
+
+		private string tagKeys;
 
 		private string secretName;
 
+		[JsonProperty(PropertyName = "CertificateId")]
 		public string CertificateId
 		{
 			get
@@ -63,19 +64,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public string TagKeys
-		{
-			get
-			{
-				return tagKeys;
-			}
-			set	
-			{
-				tagKeys = value;
-				DictionaryUtil.Add(QueryParameters, "TagKeys", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "KeyId")]
 		public string KeyId
 		{
 			get
@@ -89,6 +78,21 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "TagKeys")]
+		public string TagKeys
+		{
+			get
+			{
+				return tagKeys;
+			}
+			set	
+			{
+				tagKeys = value;
+				DictionaryUtil.Add(QueryParameters, "TagKeys", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "SecretName")]
 		public string SecretName
 		{
 			get

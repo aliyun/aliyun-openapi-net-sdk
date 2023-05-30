@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
@@ -25,92 +25,33 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 	public class GetSecretValueResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string secretName;
-
-		private string versionId;
+		private string secretDataType;
 
 		private string createTime;
 
-		private string secretData;
-
-		private string secretDataType;
-
-		private string automaticRotation;
-
-		private string rotationInterval;
+		private string versionId;
 
 		private string nextRotationDate;
+
+		private string secretData;
+
+		private string rotationInterval;
 
 		private string extendedConfig;
 
 		private string lastRotationDate;
 
+		private string requestId;
+
+		private string secretName;
+
+		private string automaticRotation;
+
 		private string secretType;
 
 		private List<string> versionStages;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string SecretName
-		{
-			get
-			{
-				return secretName;
-			}
-			set	
-			{
-				secretName = value;
-			}
-		}
-
-		public string VersionId
-		{
-			get
-			{
-				return versionId;
-			}
-			set	
-			{
-				versionId = value;
-			}
-		}
-
-		public string CreateTime
-		{
-			get
-			{
-				return createTime;
-			}
-			set	
-			{
-				createTime = value;
-			}
-		}
-
-		public string SecretData
-		{
-			get
-			{
-				return secretData;
-			}
-			set	
-			{
-				secretData = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "SecretDataType")]
 		public string SecretDataType
 		{
 			get
@@ -123,30 +64,33 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public string AutomaticRotation
+		[JsonProperty(PropertyName = "CreateTime")]
+		public string CreateTime
 		{
 			get
 			{
-				return automaticRotation;
+				return createTime;
 			}
 			set	
 			{
-				automaticRotation = value;
+				createTime = value;
 			}
 		}
 
-		public string RotationInterval
+		[JsonProperty(PropertyName = "VersionId")]
+		public string VersionId
 		{
 			get
 			{
-				return rotationInterval;
+				return versionId;
 			}
 			set	
 			{
-				rotationInterval = value;
+				versionId = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "NextRotationDate")]
 		public string NextRotationDate
 		{
 			get
@@ -159,6 +103,33 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecretData")]
+		public string SecretData
+		{
+			get
+			{
+				return secretData;
+			}
+			set	
+			{
+				secretData = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RotationInterval")]
+		public string RotationInterval
+		{
+			get
+			{
+				return rotationInterval;
+			}
+			set	
+			{
+				rotationInterval = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ExtendedConfig")]
 		public string ExtendedConfig
 		{
 			get
@@ -171,6 +142,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "LastRotationDate")]
 		public string LastRotationDate
 		{
 			get
@@ -183,6 +155,46 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "SecretName")]
+		public string SecretName
+		{
+			get
+			{
+				return secretName;
+			}
+			set	
+			{
+				secretName = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "AutomaticRotation")]
+		public string AutomaticRotation
+		{
+			get
+			{
+				return automaticRotation;
+			}
+			set	
+			{
+				automaticRotation = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "SecretType")]
 		public string SecretType
 		{
 			get
@@ -195,6 +207,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "VersionStages")]
 		public List<string> VersionStages
 		{
 			get

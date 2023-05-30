@@ -52,6 +52,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string secretDataType;
 
+		[JsonProperty(PropertyName = "VersionId")]
 		public string VersionId
 		{
 			get
@@ -65,6 +66,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "VersionStages")]
 		public string VersionStages
 		{
 			get
@@ -78,6 +80,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecretData")]
 		public string SecretData
 		{
 			get
@@ -91,6 +94,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecretName")]
 		public string SecretName
 		{
 			get
@@ -104,6 +108,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecretDataType")]
 		public string SecretDataType
 		{
 			get

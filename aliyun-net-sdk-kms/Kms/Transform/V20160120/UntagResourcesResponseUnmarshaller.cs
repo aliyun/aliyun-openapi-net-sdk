@@ -24,18 +24,16 @@ using Aliyun.Acs.Kms.Model.V20160120;
 
 namespace Aliyun.Acs.Kms.Transform.V20160120
 {
-    public class ImportEncryptionCertificateResponseUnmarshaller
+    public class UntagResourcesResponseUnmarshaller
     {
-        public static ImportEncryptionCertificateResponse Unmarshall(UnmarshallerContext _ctx)
+        public static UntagResourcesResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			ImportEncryptionCertificateResponse importEncryptionCertificateResponse = new ImportEncryptionCertificateResponse();
+			UntagResourcesResponse untagResourcesResponse = new UntagResourcesResponse();
 
-			importEncryptionCertificateResponse.HttpResponse = _ctx.HttpResponse;
-			importEncryptionCertificateResponse.RequestId = _ctx.StringValue("ImportEncryptionCertificate.RequestId");
-			importEncryptionCertificateResponse.CertificateId = _ctx.StringValue("ImportEncryptionCertificate.CertificateId");
-			importEncryptionCertificateResponse.Arn = _ctx.StringValue("ImportEncryptionCertificate.Arn");
+			untagResourcesResponse.HttpResponse = _ctx.HttpResponse;
+			untagResourcesResponse.RequestId = _ctx.StringValue("UntagResources.RequestId");
         
-			return importEncryptionCertificateResponse;
+			return untagResourcesResponse;
         }
     }
 }

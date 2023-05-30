@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
@@ -25,54 +25,19 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 	public class ListSecretVersionIdsResponse : AcsResponse
 	{
 
-		private int? pageNumber;
-
-		private int? pageSize;
+		private string secretName;
 
 		private string requestId;
 
-		private string secretName;
+		private int? pageSize;
+
+		private int? pageNumber;
 
 		private int? totalCount;
 
 		private List<ListSecretVersionIds_VersionId> versionIds;
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "SecretName")]
 		public string SecretName
 		{
 			get
@@ -85,6 +50,46 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageSize")]
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageNumber")]
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TotalCount")]
 		public int? TotalCount
 		{
 			get
@@ -97,6 +102,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "VersionIds")]
 		public List<ListSecretVersionIds_VersionId> VersionIds
 		{
 			get
@@ -112,24 +118,13 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 		public class ListSecretVersionIds_VersionId
 		{
 
-			private string createTime;
-
 			private string versionId;
+
+			private string createTime;
 
 			private List<string> versionStages;
 
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "VersionId")]
 			public string VersionId
 			{
 				get
@@ -142,6 +137,20 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 				}
 			}
 
+			[JsonProperty(PropertyName = "CreateTime")]
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "VersionStages")]
 			public List<string> VersionStages
 			{
 				get

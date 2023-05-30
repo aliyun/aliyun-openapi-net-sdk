@@ -48,6 +48,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string extendedConfigCustomData;
 
+		[JsonProperty(PropertyName = "Description")]
 		public string Description
 		{
 			get
@@ -61,6 +62,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecretName")]
 		public string SecretName
 		{
 			get
@@ -74,6 +76,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "ExtendedConfig.CustomData")]
 		public string ExtendedConfigCustomData
 		{
 			get

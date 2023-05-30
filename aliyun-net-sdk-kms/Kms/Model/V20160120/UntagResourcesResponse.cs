@@ -17,26 +17,17 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-	public class ExportCertificateResponse : AcsResponse
+	public class UntagResourcesResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string certificateId;
-
-		private string certificate;
-
-		private string certificateChain;
-
-		private string privateKey;
-
-		private string pKCS12Blob;
-
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -46,66 +37,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string CertificateId
-		{
-			get
-			{
-				return certificateId;
-			}
-			set	
-			{
-				certificateId = value;
-			}
-		}
-
-		public string Certificate
-		{
-			get
-			{
-				return certificate;
-			}
-			set	
-			{
-				certificate = value;
-			}
-		}
-
-		public string CertificateChain
-		{
-			get
-			{
-				return certificateChain;
-			}
-			set	
-			{
-				certificateChain = value;
-			}
-		}
-
-		public string PrivateKey
-		{
-			get
-			{
-				return privateKey;
-			}
-			set	
-			{
-				privateKey = value;
-			}
-		}
-
-		public string PKCS12Blob
-		{
-			get
-			{
-				return pKCS12Blob;
-			}
-			set	
-			{
-				pKCS12Blob = value;
 			}
 		}
 	}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
@@ -25,23 +25,23 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 	public class AsymmetricSignResponse : AcsResponse
 	{
 
-		private string _value;
+		private string keyVersionId;
 
 		private string keyId;
 
+		private string _value;
+
 		private string requestId;
 
-		private string keyVersionId;
-
-		public string _Value
+		public string KeyVersionId
 		{
 			get
 			{
-				return _value;
+				return keyVersionId;
 			}
 			set	
 			{
-				_value = value;
+				keyVersionId = value;
 			}
 		}
 
@@ -57,6 +57,18 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		public string _Value
+		{
+			get
+			{
+				return _value;
+			}
+			set	
+			{
+				_value = value;
+			}
+		}
+
 		public string RequestId
 		{
 			get
@@ -66,18 +78,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string KeyVersionId
-		{
-			get
-			{
-				return keyVersionId;
-			}
-			set	
-			{
-				keyVersionId = value;
 			}
 		}
 	}

@@ -39,8 +39,8 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			List<ListKeysResponse.ListKeys_Key> listKeysResponse_keys = new List<ListKeysResponse.ListKeys_Key>();
 			for (int i = 0; i < _ctx.Length("ListKeys.Keys.Length"); i++) {
 				ListKeysResponse.ListKeys_Key key = new ListKeysResponse.ListKeys_Key();
-				key.KeyArn = _ctx.StringValue("ListKeys.Keys["+ i +"].KeyArn");
 				key.KeyId = _ctx.StringValue("ListKeys.Keys["+ i +"].KeyId");
+				key.KeyArn = _ctx.StringValue("ListKeys.Keys["+ i +"].KeyArn");
 
 				listKeysResponse_keys.Add(key);
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
@@ -25,11 +25,23 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 	public class CertificatePublicKeyEncryptResponse : AcsResponse
 	{
 
+		private string ciphertextBlob;
+
 		private string requestId;
 
 		private string certificateId;
 
-		private string ciphertextBlob;
+		public string CiphertextBlob
+		{
+			get
+			{
+				return ciphertextBlob;
+			}
+			set	
+			{
+				ciphertextBlob = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -52,18 +64,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			set	
 			{
 				certificateId = value;
-			}
-		}
-
-		public string CiphertextBlob
-		{
-			get
-			{
-				return ciphertextBlob;
-			}
-			set	
-			{
-				ciphertextBlob = value;
 			}
 		}
 	}

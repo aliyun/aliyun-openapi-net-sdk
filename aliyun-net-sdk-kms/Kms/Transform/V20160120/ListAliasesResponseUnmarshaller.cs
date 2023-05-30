@@ -31,17 +31,17 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			ListAliasesResponse listAliasesResponse = new ListAliasesResponse();
 
 			listAliasesResponse.HttpResponse = _ctx.HttpResponse;
-			listAliasesResponse.TotalCount = _ctx.IntegerValue("ListAliases.TotalCount");
+			listAliasesResponse.RequestId = _ctx.StringValue("ListAliases.RequestId");
 			listAliasesResponse.PageNumber = _ctx.IntegerValue("ListAliases.PageNumber");
 			listAliasesResponse.PageSize = _ctx.IntegerValue("ListAliases.PageSize");
-			listAliasesResponse.RequestId = _ctx.StringValue("ListAliases.RequestId");
+			listAliasesResponse.TotalCount = _ctx.IntegerValue("ListAliases.TotalCount");
 
 			List<ListAliasesResponse.ListAliases_Alias> listAliasesResponse_aliases = new List<ListAliasesResponse.ListAliases_Alias>();
 			for (int i = 0; i < _ctx.Length("ListAliases.Aliases.Length"); i++) {
 				ListAliasesResponse.ListAliases_Alias alias = new ListAliasesResponse.ListAliases_Alias();
 				alias.KeyId = _ctx.StringValue("ListAliases.Aliases["+ i +"].KeyId");
-				alias.AliasName = _ctx.StringValue("ListAliases.Aliases["+ i +"].AliasName");
 				alias.AliasArn = _ctx.StringValue("ListAliases.Aliases["+ i +"].AliasArn");
+				alias.AliasName = _ctx.StringValue("ListAliases.Aliases["+ i +"].AliasName");
 
 				listAliasesResponse_aliases.Add(alias);
 			}

@@ -46,6 +46,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private int? pageNumber;
 
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get
@@ -59,6 +60,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get

@@ -28,10 +28,10 @@ using Aliyun.Acs.Kms.Transform.V20160120;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-    public class ListCertificatesRequest : RpcAcsRequest<ListCertificatesResponse>
+    public class UntagResourcesRequest : RpcAcsRequest<UntagResourcesResponse>
     {
-        public ListCertificatesRequest()
-            : base("Kms", "2016-01-20", "ListCertificates", "kms", "openAPI")
+        public UntagResourcesRequest()
+            : base("Kms", "2016-01-20", "UntagResources", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,84 +42,73 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Method = MethodType.POST;
         }
 
-		private string subject;
+		private bool? all;
 
-		private int? pageSize;
+		private List<string> resourceIds = new List<string>(){ };
 
-		private string issuer;
+		private string resourceType;
 
-		private int? pageNumber;
+		private List<string> tagKeys = new List<string>(){ };
 
-		private string status;
-
-		public string Subject
+		[JsonProperty(PropertyName = "All")]
+		public bool? All
 		{
 			get
 			{
-				return subject;
+				return all;
 			}
 			set	
 			{
-				subject = value;
-				DictionaryUtil.Add(QueryParameters, "Subject", value);
+				all = value;
+				DictionaryUtil.Add(QueryParameters, "All", value.ToString());
 			}
 		}
 
-		public int? PageSize
+		[JsonProperty(PropertyName = "ResourceId")]
+		public List<string> ResourceIds
 		{
 			get
 			{
-				return pageSize;
+				return resourceIds;
 			}
-			set	
+
+			set
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				resourceIds = value;
 			}
 		}
 
-		public string Issuer
+		[JsonProperty(PropertyName = "ResourceType")]
+		public string ResourceType
 		{
 			get
 			{
-				return issuer;
+				return resourceType;
 			}
 			set	
 			{
-				issuer = value;
-				DictionaryUtil.Add(QueryParameters, "Issuer", value);
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
-		public int? PageNumber
+		[JsonProperty(PropertyName = "TagKey")]
+		public List<string> TagKeys
 		{
 			get
 			{
-				return pageNumber;
+				return tagKeys;
 			}
-			set	
+
+			set
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				tagKeys = value;
 			}
 		}
 
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
-			}
-		}
-
-        public override ListCertificatesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UntagResourcesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListCertificatesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UntagResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

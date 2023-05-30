@@ -42,55 +42,17 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Method = MethodType.POST;
         }
 
+		private string publicKeyBlob;
+
 		private string encryptionContext;
 
 		private string wrappingAlgorithm;
 
 		private string ciphertextBlob;
 
-		private string publicKeyBlob;
-
 		private string wrappingKeySpec;
 
-		public string EncryptionContext
-		{
-			get
-			{
-				return encryptionContext;
-			}
-			set	
-			{
-				encryptionContext = value;
-				DictionaryUtil.Add(QueryParameters, "EncryptionContext", value);
-			}
-		}
-
-		public string WrappingAlgorithm
-		{
-			get
-			{
-				return wrappingAlgorithm;
-			}
-			set	
-			{
-				wrappingAlgorithm = value;
-				DictionaryUtil.Add(QueryParameters, "WrappingAlgorithm", value);
-			}
-		}
-
-		public string CiphertextBlob
-		{
-			get
-			{
-				return ciphertextBlob;
-			}
-			set	
-			{
-				ciphertextBlob = value;
-				DictionaryUtil.Add(QueryParameters, "CiphertextBlob", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "PublicKeyBlob")]
 		public string PublicKeyBlob
 		{
 			get
@@ -104,6 +66,49 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "EncryptionContext")]
+		public string EncryptionContext
+		{
+			get
+			{
+				return encryptionContext;
+			}
+			set	
+			{
+				encryptionContext = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptionContext", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "WrappingAlgorithm")]
+		public string WrappingAlgorithm
+		{
+			get
+			{
+				return wrappingAlgorithm;
+			}
+			set	
+			{
+				wrappingAlgorithm = value;
+				DictionaryUtil.Add(QueryParameters, "WrappingAlgorithm", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "CiphertextBlob")]
+		public string CiphertextBlob
+		{
+			get
+			{
+				return ciphertextBlob;
+			}
+			set	
+			{
+				ciphertextBlob = value;
+				DictionaryUtil.Add(QueryParameters, "CiphertextBlob", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "WrappingKeySpec")]
 		public string WrappingKeySpec
 		{
 			get

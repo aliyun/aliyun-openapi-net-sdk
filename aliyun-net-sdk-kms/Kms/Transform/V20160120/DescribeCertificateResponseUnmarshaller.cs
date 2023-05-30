@@ -31,24 +31,24 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			DescribeCertificateResponse describeCertificateResponse = new DescribeCertificateResponse();
 
 			describeCertificateResponse.HttpResponse = _ctx.HttpResponse;
-			describeCertificateResponse.RequestId = _ctx.StringValue("DescribeCertificate.RequestId");
-			describeCertificateResponse.CertificateId = _ctx.StringValue("DescribeCertificate.CertificateId");
-			describeCertificateResponse.Arn = _ctx.StringValue("DescribeCertificate.Arn");
-			describeCertificateResponse.KeySpec = _ctx.StringValue("DescribeCertificate.KeySpec");
 			describeCertificateResponse.Status = _ctx.StringValue("DescribeCertificate.Status");
-			describeCertificateResponse.CreatedAt = _ctx.StringValue("DescribeCertificate.CreatedAt");
-			describeCertificateResponse.UpdatedAt = _ctx.StringValue("DescribeCertificate.UpdatedAt");
 			describeCertificateResponse.Serial = _ctx.StringValue("DescribeCertificate.Serial");
-			describeCertificateResponse.Subject = _ctx.StringValue("DescribeCertificate.Subject");
-			describeCertificateResponse.Issuer = _ctx.StringValue("DescribeCertificate.Issuer");
-			describeCertificateResponse.NotBefore = _ctx.StringValue("DescribeCertificate.NotBefore");
-			describeCertificateResponse.NotAfter = _ctx.StringValue("DescribeCertificate.NotAfter");
-			describeCertificateResponse.SignatureAlgorithm = _ctx.StringValue("DescribeCertificate.SignatureAlgorithm");
-			describeCertificateResponse.SubjectPublicKey = _ctx.StringValue("DescribeCertificate.SubjectPublicKey");
-			describeCertificateResponse.SubjectKeyIdentifier = _ctx.StringValue("DescribeCertificate.SubjectKeyIdentifier");
+			describeCertificateResponse.CreatedAt = _ctx.StringValue("DescribeCertificate.CreatedAt");
 			describeCertificateResponse.Tags = _ctx.StringValue("DescribeCertificate.Tags");
+			describeCertificateResponse.SubjectKeyIdentifier = _ctx.StringValue("DescribeCertificate.SubjectKeyIdentifier");
 			describeCertificateResponse.ExportablePrivateKey = _ctx.BooleanValue("DescribeCertificate.ExportablePrivateKey");
+			describeCertificateResponse.Issuer = _ctx.StringValue("DescribeCertificate.Issuer");
+			describeCertificateResponse.SignatureAlgorithm = _ctx.StringValue("DescribeCertificate.SignatureAlgorithm");
+			describeCertificateResponse.NotAfter = _ctx.StringValue("DescribeCertificate.NotAfter");
+			describeCertificateResponse.Arn = _ctx.StringValue("DescribeCertificate.Arn");
+			describeCertificateResponse.CertificateId = _ctx.StringValue("DescribeCertificate.CertificateId");
+			describeCertificateResponse.RequestId = _ctx.StringValue("DescribeCertificate.RequestId");
+			describeCertificateResponse.KeySpec = _ctx.StringValue("DescribeCertificate.KeySpec");
 			describeCertificateResponse.ProtectionLevel = _ctx.StringValue("DescribeCertificate.ProtectionLevel");
+			describeCertificateResponse.SubjectPublicKey = _ctx.StringValue("DescribeCertificate.SubjectPublicKey");
+			describeCertificateResponse.Subject = _ctx.StringValue("DescribeCertificate.Subject");
+			describeCertificateResponse.NotBefore = _ctx.StringValue("DescribeCertificate.NotBefore");
+			describeCertificateResponse.UpdatedAt = _ctx.StringValue("DescribeCertificate.UpdatedAt");
 
 			List<string> describeCertificateResponse_subjectAlternativeNames = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeCertificate.SubjectAlternativeNames.Length"); i++) {

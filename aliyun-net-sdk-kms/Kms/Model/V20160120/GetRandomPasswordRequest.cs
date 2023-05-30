@@ -42,33 +42,21 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Method = MethodType.POST;
         }
 
-		private string excludeLowercase;
-
 		private string excludeCharacters;
 
 		private string passwordLength;
 
 		private string excludePunctuation;
 
-		private string excludeUppercase;
-
 		private string requireEachIncludedType;
 
 		private string excludeNumbers;
 
-		public string ExcludeLowercase
-		{
-			get
-			{
-				return excludeLowercase;
-			}
-			set	
-			{
-				excludeLowercase = value;
-				DictionaryUtil.Add(QueryParameters, "ExcludeLowercase", value);
-			}
-		}
+		private string excludeLowercase;
 
+		private string excludeUppercase;
+
+		[JsonProperty(PropertyName = "ExcludeCharacters")]
 		public string ExcludeCharacters
 		{
 			get
@@ -82,6 +70,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "PasswordLength")]
 		public string PasswordLength
 		{
 			get
@@ -95,6 +84,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "ExcludePunctuation")]
 		public string ExcludePunctuation
 		{
 			get
@@ -108,19 +98,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public string ExcludeUppercase
-		{
-			get
-			{
-				return excludeUppercase;
-			}
-			set	
-			{
-				excludeUppercase = value;
-				DictionaryUtil.Add(QueryParameters, "ExcludeUppercase", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "RequireEachIncludedType")]
 		public string RequireEachIncludedType
 		{
 			get
@@ -134,6 +112,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "ExcludeNumbers")]
 		public string ExcludeNumbers
 		{
 			get
@@ -144,6 +123,34 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				excludeNumbers = value;
 				DictionaryUtil.Add(QueryParameters, "ExcludeNumbers", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ExcludeLowercase")]
+		public string ExcludeLowercase
+		{
+			get
+			{
+				return excludeLowercase;
+			}
+			set	
+			{
+				excludeLowercase = value;
+				DictionaryUtil.Add(QueryParameters, "ExcludeLowercase", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ExcludeUppercase")]
+		public string ExcludeUppercase
+		{
+			get
+			{
+				return excludeUppercase;
+			}
+			set	
+			{
+				excludeUppercase = value;
+				DictionaryUtil.Add(QueryParameters, "ExcludeUppercase", value);
 			}
 		}
 

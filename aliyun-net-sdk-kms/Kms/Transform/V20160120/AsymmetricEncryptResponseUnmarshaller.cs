@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			AsymmetricEncryptResponse asymmetricEncryptResponse = new AsymmetricEncryptResponse();
 
 			asymmetricEncryptResponse.HttpResponse = _ctx.HttpResponse;
-			asymmetricEncryptResponse.CiphertextBlob = _ctx.StringValue("AsymmetricEncrypt.CiphertextBlob");
-			asymmetricEncryptResponse.KeyId = _ctx.StringValue("AsymmetricEncrypt.KeyId");
-			asymmetricEncryptResponse.RequestId = _ctx.StringValue("AsymmetricEncrypt.RequestId");
 			asymmetricEncryptResponse.KeyVersionId = _ctx.StringValue("AsymmetricEncrypt.KeyVersionId");
+			asymmetricEncryptResponse.KeyId = _ctx.StringValue("AsymmetricEncrypt.KeyId");
+			asymmetricEncryptResponse.CiphertextBlob = _ctx.StringValue("AsymmetricEncrypt.CiphertextBlob");
+			asymmetricEncryptResponse.RequestId = _ctx.StringValue("AsymmetricEncrypt.RequestId");
         
 			return asymmetricEncryptResponse;
         }

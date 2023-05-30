@@ -32,9 +32,9 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 
 			createCertificateResponse.HttpResponse = _ctx.HttpResponse;
 			createCertificateResponse.RequestId = _ctx.StringValue("CreateCertificate.RequestId");
+			createCertificateResponse.Csr = _ctx.StringValue("CreateCertificate.Csr");
 			createCertificateResponse.CertificateId = _ctx.StringValue("CreateCertificate.CertificateId");
 			createCertificateResponse.Arn = _ctx.StringValue("CreateCertificate.Arn");
-			createCertificateResponse.Csr = _ctx.StringValue("CreateCertificate.Csr");
         
 			return createCertificateResponse;
         }

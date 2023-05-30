@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
@@ -25,22 +25,11 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 	public class DescribeAccountKmsStatusResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string accountStatus;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
+		[JsonProperty(PropertyName = "AccountStatus")]
 		public string AccountStatus
 		{
 			get
@@ -50,6 +39,19 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			set	
 			{
 				accountStatus = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

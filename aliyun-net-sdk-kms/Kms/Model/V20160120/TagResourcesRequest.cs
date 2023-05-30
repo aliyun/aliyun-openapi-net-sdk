@@ -28,10 +28,10 @@ using Aliyun.Acs.Kms.Transform.V20160120;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-    public class ExportCertificateRequest : RpcAcsRequest<ExportCertificateResponse>
+    public class TagResourcesRequest : RpcAcsRequest<TagResourcesResponse>
     {
-        public ExportCertificateRequest()
-            : base("Kms", "2016-01-20", "ExportCertificate", "kms", "openAPI")
+        public TagResourcesRequest()
+            : base("Kms", "2016-01-20", "TagResources", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,59 +42,99 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Method = MethodType.POST;
         }
 
-		private string certificateId;
+		private List<string> resourceIds = new List<string>(){ };
 
-		private string passphrase;
+		private string resourceType;
 
-		private string exportFormat;
+		private List<string> tags = new List<string>(){ };
 
-		public string CertificateId
+		[JsonProperty(PropertyName = "ResourceId")]
+		public List<string> ResourceIds
 		{
 			get
 			{
-				return certificateId;
+				return resourceIds;
 			}
-			set	
+
+			set
 			{
-				certificateId = value;
-				DictionaryUtil.Add(QueryParameters, "CertificateId", value);
+				resourceIds = value;
 			}
 		}
 
-		public string Passphrase
+		[JsonProperty(PropertyName = "ResourceType")]
+		public string ResourceType
 		{
 			get
 			{
-				return passphrase;
+				return resourceType;
 			}
 			set	
 			{
-				passphrase = value;
-				DictionaryUtil.Add(QueryParameters, "Passphrase", value);
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
-		public string ExportFormat
+		[JsonProperty(PropertyName = "Tag")]
+		public List<string> Tags
 		{
 			get
 			{
-				return exportFormat;
+				return tags;
 			}
-			set	
+
+			set
 			{
-				exportFormat = value;
-				DictionaryUtil.Add(QueryParameters, "ExportFormat", value);
+				tags = value;
+				if(tags != null)
+				{
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
+				}
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		public class Tag
 		{
-			return false;
+
+			private string value_;
+
+			private string key;
+
+			[JsonProperty(PropertyName = "Value")]
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Key")]
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
 		}
 
-        public override ExportCertificateResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override TagResourcesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ExportCertificateResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TagResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

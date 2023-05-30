@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
@@ -27,12 +27,13 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string requestId;
 
+		private string csr;
+
 		private string certificateId;
 
 		private string arn;
 
-		private string csr;
-
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -45,6 +46,20 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "Csr")]
+		public string Csr
+		{
+			get
+			{
+				return csr;
+			}
+			set	
+			{
+				csr = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "CertificateId")]
 		public string CertificateId
 		{
 			get
@@ -57,6 +72,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "Arn")]
 		public string Arn
 		{
 			get
@@ -66,18 +82,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			set	
 			{
 				arn = value;
-			}
-		}
-
-		public string Csr
-		{
-			get
-			{
-				return csr;
-			}
-			set	
-			{
-				csr = value;
 			}
 		}
 	}

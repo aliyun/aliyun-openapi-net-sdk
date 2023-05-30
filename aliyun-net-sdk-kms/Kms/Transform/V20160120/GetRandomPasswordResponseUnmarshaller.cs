@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			GetRandomPasswordResponse getRandomPasswordResponse = new GetRandomPasswordResponse();
 
 			getRandomPasswordResponse.HttpResponse = _ctx.HttpResponse;
-			getRandomPasswordResponse.RequestId = _ctx.StringValue("GetRandomPassword.RequestId");
 			getRandomPasswordResponse.RandomPassword = _ctx.StringValue("GetRandomPassword.RandomPassword");
+			getRandomPasswordResponse.RequestId = _ctx.StringValue("GetRandomPassword.RequestId");
         
 			return getRandomPasswordResponse;
         }

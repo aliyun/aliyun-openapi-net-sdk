@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
@@ -25,24 +25,13 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 	public class DeleteSecretResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string secretName;
+
+		private string requestId;
 
 		private string plannedDeleteTime;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "SecretName")]
 		public string SecretName
 		{
 			get
@@ -55,6 +44,20 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PlannedDeleteTime")]
 		public string PlannedDeleteTime
 		{
 			get

@@ -31,17 +31,17 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			ListSecretVersionIdsResponse listSecretVersionIdsResponse = new ListSecretVersionIdsResponse();
 
 			listSecretVersionIdsResponse.HttpResponse = _ctx.HttpResponse;
-			listSecretVersionIdsResponse.PageNumber = _ctx.IntegerValue("ListSecretVersionIds.PageNumber");
-			listSecretVersionIdsResponse.PageSize = _ctx.IntegerValue("ListSecretVersionIds.PageSize");
-			listSecretVersionIdsResponse.RequestId = _ctx.StringValue("ListSecretVersionIds.RequestId");
 			listSecretVersionIdsResponse.SecretName = _ctx.StringValue("ListSecretVersionIds.SecretName");
+			listSecretVersionIdsResponse.RequestId = _ctx.StringValue("ListSecretVersionIds.RequestId");
+			listSecretVersionIdsResponse.PageSize = _ctx.IntegerValue("ListSecretVersionIds.PageSize");
+			listSecretVersionIdsResponse.PageNumber = _ctx.IntegerValue("ListSecretVersionIds.PageNumber");
 			listSecretVersionIdsResponse.TotalCount = _ctx.IntegerValue("ListSecretVersionIds.TotalCount");
 
 			List<ListSecretVersionIdsResponse.ListSecretVersionIds_VersionId> listSecretVersionIdsResponse_versionIds = new List<ListSecretVersionIdsResponse.ListSecretVersionIds_VersionId>();
 			for (int i = 0; i < _ctx.Length("ListSecretVersionIds.VersionIds.Length"); i++) {
 				ListSecretVersionIdsResponse.ListSecretVersionIds_VersionId versionId = new ListSecretVersionIdsResponse.ListSecretVersionIds_VersionId();
-				versionId.CreateTime = _ctx.StringValue("ListSecretVersionIds.VersionIds["+ i +"].CreateTime");
 				versionId.VersionId = _ctx.StringValue("ListSecretVersionIds.VersionIds["+ i +"].VersionId");
+				versionId.CreateTime = _ctx.StringValue("ListSecretVersionIds.VersionIds["+ i +"].CreateTime");
 
 				List<string> versionId_versionStages = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListSecretVersionIds.VersionIds["+ i +"].VersionStages.Length"); j++) {

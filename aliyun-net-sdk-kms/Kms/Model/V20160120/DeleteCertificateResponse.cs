@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
@@ -27,6 +27,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string requestId;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get

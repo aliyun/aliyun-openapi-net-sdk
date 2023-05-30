@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
@@ -25,52 +25,17 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 	public class ListKeyVersionsResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<ListKeyVersions_KeyVersion> keyVersions;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get
@@ -83,6 +48,46 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageNumber")]
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TotalCount")]
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "KeyVersions")]
 		public List<ListKeyVersions_KeyVersion> KeyVersions
 		{
 			get
@@ -104,6 +109,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 			private string creationDate;
 
+			[JsonProperty(PropertyName = "KeyId")]
 			public string KeyId
 			{
 				get
@@ -116,6 +122,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 				}
 			}
 
+			[JsonProperty(PropertyName = "KeyVersionId")]
 			public string KeyVersionId
 			{
 				get
@@ -128,6 +135,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 				}
 			}
 
+			[JsonProperty(PropertyName = "CreationDate")]
 			public string CreationDate
 			{
 				get

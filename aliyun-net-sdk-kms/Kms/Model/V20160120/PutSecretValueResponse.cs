@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
@@ -25,26 +25,15 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 	public class PutSecretValueResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string secretName;
 
 		private string versionId;
 
+		private string requestId;
+
 		private List<string> versionStages;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "SecretName")]
 		public string SecretName
 		{
 			get
@@ -57,6 +46,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "VersionId")]
 		public string VersionId
 		{
 			get
@@ -69,6 +59,20 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "VersionStages")]
 		public List<string> VersionStages
 		{
 			get

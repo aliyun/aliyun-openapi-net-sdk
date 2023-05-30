@@ -16,55 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Kms.Model.V20160120;
 
-namespace Aliyun.Acs.Kms.Model.V20160120
+namespace Aliyun.Acs.Kms.Transform.V20160120
 {
-	public class ImportCertificateResponse : AcsResponse
-	{
+    public class TagResourcesResponseUnmarshaller
+    {
+        public static TagResourcesResponse Unmarshall(UnmarshallerContext _ctx)
+        {
+			TagResourcesResponse tagResourcesResponse = new TagResourcesResponse();
 
-		private string requestId;
-
-		private string certificateId;
-
-		private string arn;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string CertificateId
-		{
-			get
-			{
-				return certificateId;
-			}
-			set	
-			{
-				certificateId = value;
-			}
-		}
-
-		public string Arn
-		{
-			get
-			{
-				return arn;
-			}
-			set	
-			{
-				arn = value;
-			}
-		}
-	}
+			tagResourcesResponse.HttpResponse = _ctx.HttpResponse;
+			tagResourcesResponse.RequestId = _ctx.StringValue("TagResources.RequestId");
+        
+			return tagResourcesResponse;
+        }
+    }
 }

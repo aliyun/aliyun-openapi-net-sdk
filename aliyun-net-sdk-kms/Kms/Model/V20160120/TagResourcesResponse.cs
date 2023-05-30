@@ -17,20 +17,17 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-	public class ImportEncryptionCertificateResponse : AcsResponse
+	public class TagResourcesResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string certificateId;
-
-		private string arn;
-
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -40,30 +37,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string CertificateId
-		{
-			get
-			{
-				return certificateId;
-			}
-			set	
-			{
-				certificateId = value;
-			}
-		}
-
-		public string Arn
-		{
-			get
-			{
-				return arn;
-			}
-			set	
-			{
-				arn = value;
 			}
 		}
 	}

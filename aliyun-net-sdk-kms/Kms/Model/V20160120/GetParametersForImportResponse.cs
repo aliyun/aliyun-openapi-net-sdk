@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
@@ -27,14 +27,15 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string keyId;
 
-		private string requestId;
-
 		private string importToken;
 
-		private string publicKey;
+		private string requestId;
 
 		private string tokenExpireTime;
 
+		private string publicKey;
+
+		[JsonProperty(PropertyName = "KeyId")]
 		public string KeyId
 		{
 			get
@@ -47,18 +48,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "ImportToken")]
 		public string ImportToken
 		{
 			get
@@ -71,18 +61,20 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public string PublicKey
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return publicKey;
+				return requestId;
 			}
 			set	
 			{
-				publicKey = value;
+				requestId = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "TokenExpireTime")]
 		public string TokenExpireTime
 		{
 			get
@@ -92,6 +84,19 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			set	
 			{
 				tokenExpireTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PublicKey")]
+		public string PublicKey
+		{
+			get
+			{
+				return publicKey;
+			}
+			set	
+			{
+				publicKey = value;
 			}
 		}
 	}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
@@ -25,28 +25,30 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 	public class GenerateAndExportDataKeyResponse : AcsResponse
 	{
 
-		private string ciphertextBlob;
+		private string keyVersionId;
 
 		private string keyId;
 
-		private string exportedDataKey;
+		private string ciphertextBlob;
 
 		private string requestId;
 
-		private string keyVersionId;
+		private string exportedDataKey;
 
-		public string CiphertextBlob
+		[JsonProperty(PropertyName = "KeyVersionId")]
+		public string KeyVersionId
 		{
 			get
 			{
-				return ciphertextBlob;
+				return keyVersionId;
 			}
 			set	
 			{
-				ciphertextBlob = value;
+				keyVersionId = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "KeyId")]
 		public string KeyId
 		{
 			get
@@ -59,18 +61,20 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public string ExportedDataKey
+		[JsonProperty(PropertyName = "CiphertextBlob")]
+		public string CiphertextBlob
 		{
 			get
 			{
-				return exportedDataKey;
+				return ciphertextBlob;
 			}
 			set	
 			{
-				exportedDataKey = value;
+				ciphertextBlob = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -83,15 +87,16 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public string KeyVersionId
+		[JsonProperty(PropertyName = "ExportedDataKey")]
+		public string ExportedDataKey
 		{
 			get
 			{
-				return keyVersionId;
+				return exportedDataKey;
 			}
 			set	
 			{
-				keyVersionId = value;
+				exportedDataKey = value;
 			}
 		}
 	}

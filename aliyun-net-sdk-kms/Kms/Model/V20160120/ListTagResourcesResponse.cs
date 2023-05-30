@@ -17,20 +17,34 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-	public class DescribeServiceResponse : AcsResponse
+	public class ListTagResourcesResponse : AcsResponse
 	{
+
+		private string nextToken;
 
 		private string requestId;
 
-		private List<DescribeService_ProtectionLevel> protectionLevels;
+		private List<ListTagResources_TagResource> tagResources;
 
-		private List<DescribeService_KeySpec> keySpecs;
+		[JsonProperty(PropertyName = "NextToken")]
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+			}
+		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -43,90 +57,79 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public List<DescribeService_ProtectionLevel> ProtectionLevels
+		[JsonProperty(PropertyName = "TagResources")]
+		public List<ListTagResources_TagResource> TagResources
 		{
 			get
 			{
-				return protectionLevels;
+				return tagResources;
 			}
 			set	
 			{
-				protectionLevels = value;
+				tagResources = value;
 			}
 		}
 
-		public List<DescribeService_KeySpec> KeySpecs
-		{
-			get
-			{
-				return keySpecs;
-			}
-			set	
-			{
-				keySpecs = value;
-			}
-		}
-
-		public class DescribeService_ProtectionLevel
+		public class ListTagResources_TagResource
 		{
 
-			private string type;
+			private string resourceType;
 
-			public string Type
+			private string tagValue;
+
+			private string resourceId;
+
+			private string tagKey;
+
+			[JsonProperty(PropertyName = "ResourceType")]
+			public string ResourceType
 			{
 				get
 				{
-					return type;
+					return resourceType;
 				}
 				set	
 				{
-					type = value;
-				}
-			}
-		}
-
-		public class DescribeService_KeySpec
-		{
-
-			private string name;
-
-			private List<string> supportedProtectionLevels;
-
-			private List<string> usages;
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
+					resourceType = value;
 				}
 			}
 
-			public List<string> SupportedProtectionLevels
+			[JsonProperty(PropertyName = "TagValue")]
+			public string TagValue
 			{
 				get
 				{
-					return supportedProtectionLevels;
+					return tagValue;
 				}
 				set	
 				{
-					supportedProtectionLevels = value;
+					tagValue = value;
 				}
 			}
 
-			public List<string> Usages
+			[JsonProperty(PropertyName = "ResourceId")]
+			public string ResourceId
 			{
 				get
 				{
-					return usages;
+					return resourceId;
 				}
 				set	
 				{
-					usages = value;
+					resourceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TagKey")]
+			public string TagKey
+			{
+				get
+				{
+					return tagKey;
+				}
+				set	
+				{
+					tagKey = value;
 				}
 			}
 		}

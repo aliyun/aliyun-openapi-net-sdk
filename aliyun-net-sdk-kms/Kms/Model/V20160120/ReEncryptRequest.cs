@@ -44,18 +44,19 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string destinationEncryptionContext;
 
+		private string sourceKeyId;
+
 		private string sourceEncryptionAlgorithm;
 
 		private string sourceKeyVersionId;
 
 		private string destinationKeyId;
 
-		private string sourceKeyId;
-
 		private string sourceEncryptionContext;
 
 		private string ciphertextBlob;
 
+		[JsonProperty(PropertyName = "DestinationEncryptionContext")]
 		public string DestinationEncryptionContext
 		{
 			get
@@ -69,45 +70,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public string SourceEncryptionAlgorithm
-		{
-			get
-			{
-				return sourceEncryptionAlgorithm;
-			}
-			set	
-			{
-				sourceEncryptionAlgorithm = value;
-				DictionaryUtil.Add(QueryParameters, "SourceEncryptionAlgorithm", value);
-			}
-		}
-
-		public string SourceKeyVersionId
-		{
-			get
-			{
-				return sourceKeyVersionId;
-			}
-			set	
-			{
-				sourceKeyVersionId = value;
-				DictionaryUtil.Add(QueryParameters, "SourceKeyVersionId", value);
-			}
-		}
-
-		public string DestinationKeyId
-		{
-			get
-			{
-				return destinationKeyId;
-			}
-			set	
-			{
-				destinationKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "DestinationKeyId", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "SourceKeyId")]
 		public string SourceKeyId
 		{
 			get
@@ -121,6 +84,49 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "SourceEncryptionAlgorithm")]
+		public string SourceEncryptionAlgorithm
+		{
+			get
+			{
+				return sourceEncryptionAlgorithm;
+			}
+			set	
+			{
+				sourceEncryptionAlgorithm = value;
+				DictionaryUtil.Add(QueryParameters, "SourceEncryptionAlgorithm", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "SourceKeyVersionId")]
+		public string SourceKeyVersionId
+		{
+			get
+			{
+				return sourceKeyVersionId;
+			}
+			set	
+			{
+				sourceKeyVersionId = value;
+				DictionaryUtil.Add(QueryParameters, "SourceKeyVersionId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DestinationKeyId")]
+		public string DestinationKeyId
+		{
+			get
+			{
+				return destinationKeyId;
+			}
+			set	
+			{
+				destinationKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "DestinationKeyId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "SourceEncryptionContext")]
 		public string SourceEncryptionContext
 		{
 			get
@@ -134,6 +140,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "CiphertextBlob")]
 		public string CiphertextBlob
 		{
 			get

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private List<DescribeRegions_Region> regions;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "Regions")]
 		public List<DescribeRegions_Region> Regions
 		{
 			get
@@ -58,6 +60,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 			private string regionId;
 
+			[JsonProperty(PropertyName = "RegionId")]
 			public string RegionId
 			{
 				get

@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			ExportDataKeyResponse exportDataKeyResponse = new ExportDataKeyResponse();
 
 			exportDataKeyResponse.HttpResponse = _ctx.HttpResponse;
-			exportDataKeyResponse.ExportedDataKey = _ctx.StringValue("ExportDataKey.ExportedDataKey");
+			exportDataKeyResponse.KeyVersionId = _ctx.StringValue("ExportDataKey.KeyVersionId");
 			exportDataKeyResponse.KeyId = _ctx.StringValue("ExportDataKey.KeyId");
 			exportDataKeyResponse.RequestId = _ctx.StringValue("ExportDataKey.RequestId");
-			exportDataKeyResponse.KeyVersionId = _ctx.StringValue("ExportDataKey.KeyVersionId");
+			exportDataKeyResponse.ExportedDataKey = _ctx.StringValue("ExportDataKey.ExportedDataKey");
         
 			return exportDataKeyResponse;
         }

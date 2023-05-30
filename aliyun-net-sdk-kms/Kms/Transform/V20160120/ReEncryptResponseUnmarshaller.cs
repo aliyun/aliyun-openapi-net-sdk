@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			ReEncryptResponse reEncryptResponse = new ReEncryptResponse();
 
 			reEncryptResponse.HttpResponse = _ctx.HttpResponse;
-			reEncryptResponse.RequestId = _ctx.StringValue("ReEncrypt.RequestId");
 			reEncryptResponse.KeyId = _ctx.StringValue("ReEncrypt.KeyId");
 			reEncryptResponse.KeyVersionId = _ctx.StringValue("ReEncrypt.KeyVersionId");
 			reEncryptResponse.CiphertextBlob = _ctx.StringValue("ReEncrypt.CiphertextBlob");
+			reEncryptResponse.RequestId = _ctx.StringValue("ReEncrypt.RequestId");
         
 			return reEncryptResponse;
         }

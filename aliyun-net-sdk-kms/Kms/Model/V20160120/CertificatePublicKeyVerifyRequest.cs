@@ -41,28 +41,15 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Method = MethodType.POST;
         }
 
-		private string signatureValue;
-
 		private string messageType;
 
 		private string certificateId;
 
 		private string message;
 
-		private string algorithm;
+		private string signatureValue;
 
-		public string SignatureValue
-		{
-			get
-			{
-				return signatureValue;
-			}
-			set	
-			{
-				signatureValue = value;
-				DictionaryUtil.Add(QueryParameters, "SignatureValue", value);
-			}
-		}
+		private string algorithm;
 
 		public string MessageType
 		{
@@ -100,6 +87,19 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				message = value;
 				DictionaryUtil.Add(QueryParameters, "Message", value);
+			}
+		}
+
+		public string SignatureValue
+		{
+			get
+			{
+				return signatureValue;
+			}
+			set	
+			{
+				signatureValue = value;
+				DictionaryUtil.Add(QueryParameters, "SignatureValue", value);
 			}
 		}
 

@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			GenerateDataKeyWithoutPlaintextResponse generateDataKeyWithoutPlaintextResponse = new GenerateDataKeyWithoutPlaintextResponse();
 
 			generateDataKeyWithoutPlaintextResponse.HttpResponse = _ctx.HttpResponse;
-			generateDataKeyWithoutPlaintextResponse.CiphertextBlob = _ctx.StringValue("GenerateDataKeyWithoutPlaintext.CiphertextBlob");
-			generateDataKeyWithoutPlaintextResponse.KeyId = _ctx.StringValue("GenerateDataKeyWithoutPlaintext.KeyId");
-			generateDataKeyWithoutPlaintextResponse.RequestId = _ctx.StringValue("GenerateDataKeyWithoutPlaintext.RequestId");
 			generateDataKeyWithoutPlaintextResponse.KeyVersionId = _ctx.StringValue("GenerateDataKeyWithoutPlaintext.KeyVersionId");
+			generateDataKeyWithoutPlaintextResponse.KeyId = _ctx.StringValue("GenerateDataKeyWithoutPlaintext.KeyId");
+			generateDataKeyWithoutPlaintextResponse.CiphertextBlob = _ctx.StringValue("GenerateDataKeyWithoutPlaintext.CiphertextBlob");
+			generateDataKeyWithoutPlaintextResponse.RequestId = _ctx.StringValue("GenerateDataKeyWithoutPlaintext.RequestId");
         
 			return generateDataKeyWithoutPlaintextResponse;
         }

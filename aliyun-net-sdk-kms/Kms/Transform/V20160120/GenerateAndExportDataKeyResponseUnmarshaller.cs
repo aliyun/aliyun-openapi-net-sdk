@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			GenerateAndExportDataKeyResponse generateAndExportDataKeyResponse = new GenerateAndExportDataKeyResponse();
 
 			generateAndExportDataKeyResponse.HttpResponse = _ctx.HttpResponse;
-			generateAndExportDataKeyResponse.CiphertextBlob = _ctx.StringValue("GenerateAndExportDataKey.CiphertextBlob");
-			generateAndExportDataKeyResponse.KeyId = _ctx.StringValue("GenerateAndExportDataKey.KeyId");
-			generateAndExportDataKeyResponse.ExportedDataKey = _ctx.StringValue("GenerateAndExportDataKey.ExportedDataKey");
-			generateAndExportDataKeyResponse.RequestId = _ctx.StringValue("GenerateAndExportDataKey.RequestId");
 			generateAndExportDataKeyResponse.KeyVersionId = _ctx.StringValue("GenerateAndExportDataKey.KeyVersionId");
+			generateAndExportDataKeyResponse.KeyId = _ctx.StringValue("GenerateAndExportDataKey.KeyId");
+			generateAndExportDataKeyResponse.CiphertextBlob = _ctx.StringValue("GenerateAndExportDataKey.CiphertextBlob");
+			generateAndExportDataKeyResponse.RequestId = _ctx.StringValue("GenerateAndExportDataKey.RequestId");
+			generateAndExportDataKeyResponse.ExportedDataKey = _ctx.StringValue("GenerateAndExportDataKey.ExportedDataKey");
         
 			return generateAndExportDataKeyResponse;
         }
