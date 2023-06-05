@@ -85,6 +85,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string autoRenew;
 
+		private string port;
+
 		private string roleARN;
 
 		private string zoneId;
@@ -119,9 +121,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? amount;
 
+		private bool? autoPay;
+
 		private ServerlessConfig serverlessConfig_;
 
 		private string usedTime;
+
+		private bool? burstingEnabled;
 
 		private string targetMinorVersion;
 
@@ -136,6 +142,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string category;
 
 		private string payType;
+
+		private string bpeEnabled;
 
 		[JsonProperty(PropertyName = "DBParamGroupId")]
 		public string DBParamGroupId
@@ -453,6 +461,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Port")]
+		public string Port
+		{
+			get
+			{
+				return port;
+			}
+			set	
+			{
+				port = value;
+				DictionaryUtil.Add(QueryParameters, "Port", value);
+			}
+		}
+
 		[JsonProperty(PropertyName = "RoleARN")]
 		public string RoleARN
 		{
@@ -691,6 +713,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "AutoPay")]
+		public bool? AutoPay
+		{
+			get
+			{
+				return autoPay;
+			}
+			set	
+			{
+				autoPay = value;
+				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
+			}
+		}
+
 		[JsonProperty(PropertyName = "ServerlessConfig")]
 		public ServerlessConfig ServerlessConfig_
 		{
@@ -718,6 +754,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				usedTime = value;
 				DictionaryUtil.Add(QueryParameters, "UsedTime", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "BurstingEnabled")]
+		public bool? BurstingEnabled
+		{
+			get
+			{
+				return burstingEnabled;
+			}
+			set	
+			{
+				burstingEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "BurstingEnabled", value.ToString());
 			}
 		}
 
@@ -816,6 +866,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				payType = value;
 				DictionaryUtil.Add(QueryParameters, "PayType", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "BpeEnabled")]
+		public string BpeEnabled
+		{
+			get
+			{
+				return bpeEnabled;
+			}
+			set	
+			{
+				bpeEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "BpeEnabled", value);
 			}
 		}
 

@@ -45,41 +45,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? dBInstanceStorage;
 
-		private string clientToken;
-
-		private string instructionSetArch;
-
 		private string engineVersion;
 
 		private bool? deletionProtection;
 
 		private string resourceGroupId;
 
-		private string tddlRegionConfig;
-
 		private string targetDedicatedHostIdForMaster;
-
-		private string dBInstanceId;
 
 		private string dBInstanceDescription;
 
 		private string gdnInstanceName;
 
-		private string dBInstanceStorageType;
-
-		private string dedicatedHostGroupId;
-
 		private string tddlBizType;
 
 		private string period;
 
-		private string resourceOwnerAccount;
-
-		private string ownerAccount;
-
 		private long? ownerId;
-
-		private string usedTime;
 
 		private string dBInstanceClass;
 
@@ -89,15 +71,39 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string autoRenew;
 
-		private string vPCId;
-
 		private string zoneId;
+
+		private string instanceNetworkType;
+
+		private string clientToken;
+
+		private string instructionSetArch;
+
+		private string tddlRegionConfig;
+
+		private string dBInstanceId;
+
+		private string dBInstanceStorageType;
+
+		private string dedicatedHostGroupId;
+
+		private bool? autoPay;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
+		private string usedTime;
+
+		private bool? burstingEnabled;
+
+		private string vPCId;
 
 		private string category;
 
 		private string payType;
 
-		private string instanceNetworkType;
+		private string bpeEnabled;
 
 		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
@@ -124,34 +130,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceStorage = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceStorage", value.ToString());
-			}
-		}
-
-		[JsonProperty(PropertyName = "ClientToken")]
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "InstructionSetArch")]
-		public string InstructionSetArch
-		{
-			get
-			{
-				return instructionSetArch;
-			}
-			set	
-			{
-				instructionSetArch = value;
-				DictionaryUtil.Add(QueryParameters, "InstructionSetArch", value);
 			}
 		}
 
@@ -197,20 +175,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "TddlRegionConfig")]
-		public string TddlRegionConfig
-		{
-			get
-			{
-				return tddlRegionConfig;
-			}
-			set	
-			{
-				tddlRegionConfig = value;
-				DictionaryUtil.Add(QueryParameters, "TddlRegionConfig", value);
-			}
-		}
-
 		[JsonProperty(PropertyName = "TargetDedicatedHostIdForMaster")]
 		public string TargetDedicatedHostIdForMaster
 		{
@@ -222,20 +186,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				targetDedicatedHostIdForMaster = value;
 				DictionaryUtil.Add(QueryParameters, "TargetDedicatedHostIdForMaster", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "DBInstanceId")]
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 
@@ -267,34 +217,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "DBInstanceStorageType")]
-		public string DBInstanceStorageType
-		{
-			get
-			{
-				return dBInstanceStorageType;
-			}
-			set	
-			{
-				dBInstanceStorageType = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceStorageType", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "DedicatedHostGroupId")]
-		public string DedicatedHostGroupId
-		{
-			get
-			{
-				return dedicatedHostGroupId;
-			}
-			set	
-			{
-				dedicatedHostGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "DedicatedHostGroupId", value);
-			}
-		}
-
 		[JsonProperty(PropertyName = "TddlBizType")]
 		public string TddlBizType
 		{
@@ -323,34 +245,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "OwnerAccount")]
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
 		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
@@ -362,20 +256,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		[JsonProperty(PropertyName = "UsedTime")]
-		public string UsedTime
-		{
-			get
-			{
-				return usedTime;
-			}
-			set	
-			{
-				usedTime = value;
-				DictionaryUtil.Add(QueryParameters, "UsedTime", value);
 			}
 		}
 
@@ -435,20 +315,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "VPCId")]
-		public string VPCId
-		{
-			get
-			{
-				return vPCId;
-			}
-			set	
-			{
-				vPCId = value;
-				DictionaryUtil.Add(QueryParameters, "VPCId", value);
-			}
-		}
-
 		[JsonProperty(PropertyName = "ZoneId")]
 		public string ZoneId
 		{
@@ -460,6 +326,188 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				zoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "InstanceNetworkType")]
+		public string InstanceNetworkType
+		{
+			get
+			{
+				return instanceNetworkType;
+			}
+			set	
+			{
+				instanceNetworkType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceNetworkType", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ClientToken")]
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "InstructionSetArch")]
+		public string InstructionSetArch
+		{
+			get
+			{
+				return instructionSetArch;
+			}
+			set	
+			{
+				instructionSetArch = value;
+				DictionaryUtil.Add(QueryParameters, "InstructionSetArch", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "TddlRegionConfig")]
+		public string TddlRegionConfig
+		{
+			get
+			{
+				return tddlRegionConfig;
+			}
+			set	
+			{
+				tddlRegionConfig = value;
+				DictionaryUtil.Add(QueryParameters, "TddlRegionConfig", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBInstanceId")]
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBInstanceStorageType")]
+		public string DBInstanceStorageType
+		{
+			get
+			{
+				return dBInstanceStorageType;
+			}
+			set	
+			{
+				dBInstanceStorageType = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceStorageType", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DedicatedHostGroupId")]
+		public string DedicatedHostGroupId
+		{
+			get
+			{
+				return dedicatedHostGroupId;
+			}
+			set	
+			{
+				dedicatedHostGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedHostGroupId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "AutoPay")]
+		public bool? AutoPay
+		{
+			get
+			{
+				return autoPay;
+			}
+			set	
+			{
+				autoPay = value;
+				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "OwnerAccount")]
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "UsedTime")]
+		public string UsedTime
+		{
+			get
+			{
+				return usedTime;
+			}
+			set	
+			{
+				usedTime = value;
+				DictionaryUtil.Add(QueryParameters, "UsedTime", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "BurstingEnabled")]
+		public bool? BurstingEnabled
+		{
+			get
+			{
+				return burstingEnabled;
+			}
+			set	
+			{
+				burstingEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "BurstingEnabled", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "VPCId")]
+		public string VPCId
+		{
+			get
+			{
+				return vPCId;
+			}
+			set	
+			{
+				vPCId = value;
+				DictionaryUtil.Add(QueryParameters, "VPCId", value);
 			}
 		}
 
@@ -491,17 +539,17 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "InstanceNetworkType")]
-		public string InstanceNetworkType
+		[JsonProperty(PropertyName = "BpeEnabled")]
+		public string BpeEnabled
 		{
 			get
 			{
-				return instanceNetworkType;
+				return bpeEnabled;
 			}
 			set	
 			{
-				instanceNetworkType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceNetworkType", value);
+				bpeEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "BpeEnabled", value);
 			}
 		}
 

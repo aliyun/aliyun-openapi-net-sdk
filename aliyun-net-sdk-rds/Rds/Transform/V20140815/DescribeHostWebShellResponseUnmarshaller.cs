@@ -24,18 +24,17 @@ using Aliyun.Acs.Rds.Model.V20140815;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class RequestServiceOfCloudDBAResponseUnmarshaller
+    public class DescribeHostWebShellResponseUnmarshaller
     {
-        public static RequestServiceOfCloudDBAResponse Unmarshall(UnmarshallerContext _ctx)
+        public static DescribeHostWebShellResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			RequestServiceOfCloudDBAResponse requestServiceOfCloudDBAResponse = new RequestServiceOfCloudDBAResponse();
+			DescribeHostWebShellResponse describeHostWebShellResponse = new DescribeHostWebShellResponse();
 
-			requestServiceOfCloudDBAResponse.HttpResponse = _ctx.HttpResponse;
-			requestServiceOfCloudDBAResponse.RequestId = _ctx.StringValue("RequestServiceOfCloudDBA.RequestId");
-			requestServiceOfCloudDBAResponse.AttrData = _ctx.StringValue("RequestServiceOfCloudDBA.AttrData");
-			requestServiceOfCloudDBAResponse.ListData = _ctx.StringValue("RequestServiceOfCloudDBA.ListData");
+			describeHostWebShellResponse.HttpResponse = _ctx.HttpResponse;
+			describeHostWebShellResponse.RequestId = _ctx.StringValue("DescribeHostWebShell.RequestId");
+			describeHostWebShellResponse.LoginUrl = _ctx.StringValue("DescribeHostWebShell.LoginUrl");
         
-			return requestServiceOfCloudDBAResponse;
+			return describeHostWebShellResponse;
         }
     }
 }

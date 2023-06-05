@@ -16,27 +16,43 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+using Aliyun.Acs.Core;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Rds.Model.V20140815;
-
-namespace Aliyun.Acs.Rds.Transform.V20140815
+namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class CreateDBNodesResponseUnmarshaller
-    {
-        public static CreateDBNodesResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			CreateDBNodesResponse createDBNodesResponse = new CreateDBNodesResponse();
+	public class ModifyActiveOperationTasksResponse : AcsResponse
+	{
 
-			createDBNodesResponse.HttpResponse = _ctx.HttpResponse;
-			createDBNodesResponse.RequestId = _ctx.StringValue("CreateDBNodes.RequestId");
-			createDBNodesResponse.DBInstanceId = _ctx.StringValue("CreateDBNodes.DBInstanceId");
-			createDBNodesResponse.OrderId = _ctx.LongValue("CreateDBNodes.OrderId");
-			createDBNodesResponse.NodeIds = _ctx.StringValue("CreateDBNodes.NodeIds");
-        
-			return createDBNodesResponse;
-        }
-    }
+		private string ids;
+
+		private string requestId;
+
+		[JsonProperty(PropertyName = "Ids")]
+		public string Ids
+		{
+			get
+			{
+				return ids;
+			}
+			set	
+			{
+				ids = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+	}
 }

@@ -28,10 +28,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class RequestServiceOfCloudDBARequest : RpcAcsRequest<RequestServiceOfCloudDBAResponse>
+    public class DescribeSlotsRequest : RpcAcsRequest<DescribeSlotsResponse>
     {
-        public RequestServiceOfCloudDBARequest()
-            : base("Rds", "2014-08-15", "RequestServiceOfCloudDBA", "rds", "openAPI")
+        public DescribeSlotsRequest()
+            : base("Rds", "2014-08-15", "DescribeSlots", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,37 +41,59 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			Method = MethodType.POST;
         }
 
-		private string serviceRequestType;
+		private long? resourceOwnerId;
 
-		private string serviceRequestParam;
+		private string clientToken;
+
+		private string resourceGroupId;
 
 		private string dBInstanceId;
 
-		[JsonProperty(PropertyName = "ServiceRequestType")]
-		public string ServiceRequestType
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
+		private long? ownerId;
+
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return serviceRequestType;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				serviceRequestType = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceRequestType", value);
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
-		[JsonProperty(PropertyName = "ServiceRequestParam")]
-		public string ServiceRequestParam
+		[JsonProperty(PropertyName = "ClientToken")]
+		public string ClientToken
 		{
 			get
 			{
-				return serviceRequestParam;
+				return clientToken;
 			}
 			set	
 			{
-				serviceRequestParam = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceRequestParam", value);
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ResourceGroupId")]
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -89,14 +111,56 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "OwnerAccount")]
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "OwnerId")]
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override RequestServiceOfCloudDBAResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeSlotsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RequestServiceOfCloudDBAResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeSlotsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

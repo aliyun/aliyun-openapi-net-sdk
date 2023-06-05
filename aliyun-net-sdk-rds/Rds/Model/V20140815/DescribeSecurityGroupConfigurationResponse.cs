@@ -79,6 +79,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string regionId;
 
+			private string securityGroupName;
+
 			[JsonProperty(PropertyName = "NetworkType")]
 			public string NetworkType
 			{
@@ -115,6 +117,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					regionId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SecurityGroupName")]
+			public string SecurityGroupName
+			{
+				get
+				{
+					return securityGroupName;
+				}
+				set	
+				{
+					securityGroupName = value;
 				}
 			}
 		}

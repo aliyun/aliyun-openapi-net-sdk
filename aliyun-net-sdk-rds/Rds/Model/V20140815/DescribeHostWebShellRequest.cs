@@ -28,10 +28,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeSlowLogRecordsRequest : RpcAcsRequest<DescribeSlowLogRecordsResponse>
+    public class DescribeHostWebShellRequest : RpcAcsRequest<DescribeHostWebShellResponse>
     {
-        public DescribeSlowLogRecordsRequest()
-            : base("Rds", "2014-08-15", "DescribeSlowLogRecords", "rds", "openAPI")
+        public DescribeHostWebShellRequest()
+            : base("Rds", "2014-08-15", "DescribeHostWebShell", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,27 +43,17 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private string startTime;
+		private string hostName;
 
-		private int? pageNumber;
-
-		private int? pageSize;
+		private string accountName;
 
 		private string dBInstanceId;
 
-		private string nodeId;
-
 		private string resourceOwnerAccount;
-
-		private string ownerAccount;
-
-		private string endTime;
 
 		private long? ownerId;
 
-		private string dBName;
-
-		private string sQLHASH;
+		private string accountPassword;
 
 		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
@@ -79,45 +69,31 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "StartTime")]
-		public string StartTime
+		[JsonProperty(PropertyName = "HostName")]
+		public string HostName
 		{
 			get
 			{
-				return startTime;
+				return hostName;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				hostName = value;
+				DictionaryUtil.Add(QueryParameters, "HostName", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "PageNumber")]
-		public int? PageNumber
+		[JsonProperty(PropertyName = "AccountName")]
+		public string AccountName
 		{
 			get
 			{
-				return pageNumber;
+				return accountName;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		[JsonProperty(PropertyName = "PageSize")]
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				accountName = value;
+				DictionaryUtil.Add(QueryParameters, "AccountName", value);
 			}
 		}
 
@@ -135,20 +111,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "NodeId")]
-		public string NodeId
-		{
-			get
-			{
-				return nodeId;
-			}
-			set	
-			{
-				nodeId = value;
-				DictionaryUtil.Add(QueryParameters, "NodeId", value);
-			}
-		}
-
 		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
@@ -160,34 +122,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "OwnerAccount")]
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "EndTime")]
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
@@ -205,37 +139,28 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "DBName")]
-		public string DBName
+		[JsonProperty(PropertyName = "AccountPassword")]
+		public string AccountPassword
 		{
 			get
 			{
-				return dBName;
+				return accountPassword;
 			}
 			set	
 			{
-				dBName = value;
-				DictionaryUtil.Add(QueryParameters, "DBName", value);
+				accountPassword = value;
+				DictionaryUtil.Add(QueryParameters, "AccountPassword", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "SQLHASH")]
-		public string SQLHASH
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return sQLHASH;
-			}
-			set	
-			{
-				sQLHASH = value;
-				DictionaryUtil.Add(QueryParameters, "SQLHASH", value);
-			}
+			return false;
 		}
 
-        public override DescribeSlowLogRecordsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeHostWebShellResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeSlowLogRecordsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeHostWebShellResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -24,19 +24,17 @@ using Aliyun.Acs.Rds.Model.V20140815;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class CreateDBNodesResponseUnmarshaller
+    public class DeleteSlotResponseUnmarshaller
     {
-        public static CreateDBNodesResponse Unmarshall(UnmarshallerContext _ctx)
+        public static DeleteSlotResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CreateDBNodesResponse createDBNodesResponse = new CreateDBNodesResponse();
+			DeleteSlotResponse deleteSlotResponse = new DeleteSlotResponse();
 
-			createDBNodesResponse.HttpResponse = _ctx.HttpResponse;
-			createDBNodesResponse.RequestId = _ctx.StringValue("CreateDBNodes.RequestId");
-			createDBNodesResponse.DBInstanceId = _ctx.StringValue("CreateDBNodes.DBInstanceId");
-			createDBNodesResponse.OrderId = _ctx.LongValue("CreateDBNodes.OrderId");
-			createDBNodesResponse.NodeIds = _ctx.StringValue("CreateDBNodes.NodeIds");
+			deleteSlotResponse.HttpResponse = _ctx.HttpResponse;
+			deleteSlotResponse.RequestId = _ctx.StringValue("DeleteSlot.RequestId");
+			deleteSlotResponse.SlotName = _ctx.StringValue("DeleteSlot.SlotName");
         
-			return createDBNodesResponse;
+			return deleteSlotResponse;
         }
     }
 }

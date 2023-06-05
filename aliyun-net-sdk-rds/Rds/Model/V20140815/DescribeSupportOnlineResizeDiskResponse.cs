@@ -22,16 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class CreateDBNodesResponse : AcsResponse
+	public class DescribeSupportOnlineResizeDiskResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string dBInstanceId;
+		private bool? success;
 
-		private long? orderId;
+		private string code;
 
-		private string nodeIds;
+		private string data;
+
+		private string message;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -46,42 +48,55 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "DBInstanceId")]
-		public string DBInstanceId
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
 		{
 			get
 			{
-				return dBInstanceId;
+				return success;
 			}
 			set	
 			{
-				dBInstanceId = value;
+				success = value;
 			}
 		}
 
-		[JsonProperty(PropertyName = "OrderId")]
-		public long? OrderId
+		[JsonProperty(PropertyName = "Code")]
+		public string Code
 		{
 			get
 			{
-				return orderId;
+				return code;
 			}
 			set	
 			{
-				orderId = value;
+				code = value;
 			}
 		}
 
-		[JsonProperty(PropertyName = "NodeIds")]
-		public string NodeIds
+		[JsonProperty(PropertyName = "Data")]
+		public string Data
 		{
 			get
 			{
-				return nodeIds;
+				return data;
 			}
 			set	
 			{
-				nodeIds = value;
+				data = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Message")]
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 	}

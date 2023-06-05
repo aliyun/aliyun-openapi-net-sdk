@@ -216,6 +216,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private bool? deletionProtection;
 
+			private bool? burstingEnabled;
+
+			private string bpeEnabled;
+
 			private List<DescribeDBInstances_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 
 			[JsonProperty(PropertyName = "VpcId")]
@@ -852,6 +856,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					deletionProtection = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "BurstingEnabled")]
+			public bool? BurstingEnabled
+			{
+				get
+				{
+					return burstingEnabled;
+				}
+				set	
+				{
+					burstingEnabled = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "BpeEnabled")]
+			public string BpeEnabled
+			{
+				get
+				{
+					return bpeEnabled;
+				}
+				set	
+				{
+					bpeEnabled = value;
 				}
 			}
 

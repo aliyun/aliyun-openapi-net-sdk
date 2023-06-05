@@ -220,6 +220,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string instructionSetArch;
 
+			private bool? burstingEnabled;
+
+			private string bpeEnabled;
+
 			private List<DescribeDBInstanceAttribute_SlaveZone> slaveZones;
 
 			private List<DescribeDBInstanceAttribute_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
@@ -1282,6 +1286,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					instructionSetArch = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "BurstingEnabled")]
+			public bool? BurstingEnabled
+			{
+				get
+				{
+					return burstingEnabled;
+				}
+				set	
+				{
+					burstingEnabled = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "BpeEnabled")]
+			public string BpeEnabled
+			{
+				get
+				{
+					return bpeEnabled;
+				}
+				set	
+				{
+					bpeEnabled = value;
 				}
 			}
 

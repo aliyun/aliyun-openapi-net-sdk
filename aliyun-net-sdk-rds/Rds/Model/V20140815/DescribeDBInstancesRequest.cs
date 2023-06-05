@@ -97,7 +97,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dedicatedHostId;
 
+		private string filter;
+
 		private string vpcId;
+
+		private string category;
 
 		private string payType;
 
@@ -493,6 +497,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Filter")]
+		public string Filter
+		{
+			get
+			{
+				return filter;
+			}
+			set	
+			{
+				filter = value;
+				DictionaryUtil.Add(QueryParameters, "Filter", value);
+			}
+		}
+
 		[JsonProperty(PropertyName = "VpcId")]
 		public string VpcId
 		{
@@ -504,6 +522,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				vpcId = value;
 				DictionaryUtil.Add(QueryParameters, "VpcId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Category")]
+		public string Category
+		{
+			get
+			{
+				return category;
+			}
+			set	
+			{
+				category = value;
+				DictionaryUtil.Add(QueryParameters, "Category", value);
 			}
 		}
 

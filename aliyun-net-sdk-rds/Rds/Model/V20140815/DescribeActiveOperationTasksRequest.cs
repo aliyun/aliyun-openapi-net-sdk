@@ -28,10 +28,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeSlowLogRecordsRequest : RpcAcsRequest<DescribeSlowLogRecordsResponse>
+    public class DescribeActiveOperationTasksRequest : RpcAcsRequest<DescribeActiveOperationTasksResponse>
     {
-        public DescribeSlowLogRecordsRequest()
-            : base("Rds", "2014-08-15", "DescribeSlowLogRecords", "rds", "openAPI")
+        public DescribeActiveOperationTasksRequest()
+            : base("Rds", "2014-08-15", "DescribeActiveOperationTasks", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,27 +43,35 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private string startTime;
+		private string productId;
+
+		private string changeLevel;
 
 		private int? pageNumber;
 
+		private string insName;
+
+		private string securityToken;
+
 		private int? pageSize;
 
-		private string dBInstanceId;
-
-		private string nodeId;
+		private string taskType;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string endTime;
+		private int? allowCancel;
 
 		private long? ownerId;
 
-		private string dBName;
+		private string dbType;
 
-		private string sQLHASH;
+		private int? allowChange;
+
+		private string region;
+
+		private int? status;
 
 		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
@@ -79,17 +87,31 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "StartTime")]
-		public string StartTime
+		[JsonProperty(PropertyName = "ProductId")]
+		public string ProductId
 		{
 			get
 			{
-				return startTime;
+				return productId;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				productId = value;
+				DictionaryUtil.Add(QueryParameters, "ProductId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ChangeLevel")]
+		public string ChangeLevel
+		{
+			get
+			{
+				return changeLevel;
+			}
+			set	
+			{
+				changeLevel = value;
+				DictionaryUtil.Add(QueryParameters, "ChangeLevel", value);
 			}
 		}
 
@@ -107,6 +129,34 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "InsName")]
+		public string InsName
+		{
+			get
+			{
+				return insName;
+			}
+			set	
+			{
+				insName = value;
+				DictionaryUtil.Add(QueryParameters, "InsName", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "SecurityToken")]
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
 		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
@@ -121,31 +171,17 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "DBInstanceId")]
-		public string DBInstanceId
+		[JsonProperty(PropertyName = "TaskType")]
+		public string TaskType
 		{
 			get
 			{
-				return dBInstanceId;
+				return taskType;
 			}
 			set	
 			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "NodeId")]
-		public string NodeId
-		{
-			get
-			{
-				return nodeId;
-			}
-			set	
-			{
-				nodeId = value;
-				DictionaryUtil.Add(QueryParameters, "NodeId", value);
+				taskType = value;
+				DictionaryUtil.Add(QueryParameters, "TaskType", value);
 			}
 		}
 
@@ -177,17 +213,17 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "EndTime")]
-		public string EndTime
+		[JsonProperty(PropertyName = "AllowCancel")]
+		public int? AllowCancel
 		{
 			get
 			{
-				return endTime;
+				return allowCancel;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				allowCancel = value;
+				DictionaryUtil.Add(QueryParameters, "AllowCancel", value.ToString());
 			}
 		}
 
@@ -205,37 +241,70 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "DBName")]
-		public string DBName
+		[JsonProperty(PropertyName = "DbType")]
+		public string DbType
 		{
 			get
 			{
-				return dBName;
+				return dbType;
 			}
 			set	
 			{
-				dBName = value;
-				DictionaryUtil.Add(QueryParameters, "DBName", value);
+				dbType = value;
+				DictionaryUtil.Add(QueryParameters, "DbType", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "SQLHASH")]
-		public string SQLHASH
+		[JsonProperty(PropertyName = "AllowChange")]
+		public int? AllowChange
 		{
 			get
 			{
-				return sQLHASH;
+				return allowChange;
 			}
 			set	
 			{
-				sQLHASH = value;
-				DictionaryUtil.Add(QueryParameters, "SQLHASH", value);
+				allowChange = value;
+				DictionaryUtil.Add(QueryParameters, "AllowChange", value.ToString());
 			}
 		}
 
-        public override DescribeSlowLogRecordsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		[JsonProperty(PropertyName = "Region")]
+		public string Region
+		{
+			get
+			{
+				return region;
+			}
+			set	
+			{
+				region = value;
+				DictionaryUtil.Add(QueryParameters, "Region", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Status")]
+		public int? Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value.ToString());
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeActiveOperationTasksResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeSlowLogRecordsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeActiveOperationTasksResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

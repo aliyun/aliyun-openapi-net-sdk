@@ -35,6 +35,13 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeParametersResponse.Engine = _ctx.StringValue("DescribeParameters.Engine");
 			describeParametersResponse.EngineVersion = _ctx.StringValue("DescribeParameters.EngineVersion");
 
+			DescribeParametersResponse.DescribeParameters_ParamGroupInfo paramGroupInfo = new DescribeParametersResponse.DescribeParameters_ParamGroupInfo();
+			paramGroupInfo.ParameterGroupName = _ctx.StringValue("DescribeParameters.ParamGroupInfo.ParameterGroupName");
+			paramGroupInfo.ParameterGroupDesc = _ctx.StringValue("DescribeParameters.ParamGroupInfo.ParameterGroupDesc");
+			paramGroupInfo.ParameterGroupType = _ctx.StringValue("DescribeParameters.ParamGroupInfo.ParameterGroupType");
+			paramGroupInfo.ParamGroupId = _ctx.StringValue("DescribeParameters.ParamGroupInfo.ParamGroupId");
+			describeParametersResponse.ParamGroupInfo = paramGroupInfo;
+
 			List<DescribeParametersResponse.DescribeParameters_DBInstanceParameter> describeParametersResponse_configParameters = new List<DescribeParametersResponse.DescribeParameters_DBInstanceParameter>();
 			for (int i = 0; i < _ctx.Length("DescribeParameters.ConfigParameters.Length"); i++) {
 				DescribeParametersResponse.DescribeParameters_DBInstanceParameter dBInstanceParameter = new DescribeParametersResponse.DescribeParameters_DBInstanceParameter();

@@ -40,6 +40,25 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeDBInstanceEncryptionKeyResponse.KeyUsage = _ctx.StringValue("DescribeDBInstanceEncryptionKey.KeyUsage");
 			describeDBInstanceEncryptionKeyResponse.EncryptionKey = _ctx.StringValue("DescribeDBInstanceEncryptionKey.EncryptionKey");
 			describeDBInstanceEncryptionKeyResponse.Creator = _ctx.StringValue("DescribeDBInstanceEncryptionKey.Creator");
+
+			List<DescribeDBInstanceEncryptionKeyResponse.DescribeDBInstanceEncryptionKey_EncryptionKeyInfo> describeDBInstanceEncryptionKeyResponse_encryptionKeyList = new List<DescribeDBInstanceEncryptionKeyResponse.DescribeDBInstanceEncryptionKey_EncryptionKeyInfo>();
+			for (int i = 0; i < _ctx.Length("DescribeDBInstanceEncryptionKey.EncryptionKeyList.Length"); i++) {
+				DescribeDBInstanceEncryptionKeyResponse.DescribeDBInstanceEncryptionKey_EncryptionKeyInfo encryptionKeyInfo = new DescribeDBInstanceEncryptionKeyResponse.DescribeDBInstanceEncryptionKey_EncryptionKeyInfo();
+				encryptionKeyInfo.KeyType = _ctx.StringValue("DescribeDBInstanceEncryptionKey.EncryptionKeyList["+ i +"].KeyType");
+				encryptionKeyInfo.EncryptionKey = _ctx.StringValue("DescribeDBInstanceEncryptionKey.EncryptionKeyList["+ i +"].EncryptionKey");
+				encryptionKeyInfo.Description = _ctx.StringValue("DescribeDBInstanceEncryptionKey.EncryptionKeyList["+ i +"].Description");
+				encryptionKeyInfo.KeyUsage = _ctx.StringValue("DescribeDBInstanceEncryptionKey.EncryptionKeyList["+ i +"].KeyUsage");
+				encryptionKeyInfo.DeleteDate = _ctx.StringValue("DescribeDBInstanceEncryptionKey.EncryptionKeyList["+ i +"].DeleteDate");
+				encryptionKeyInfo.Creator = _ctx.StringValue("DescribeDBInstanceEncryptionKey.EncryptionKeyList["+ i +"].Creator");
+				encryptionKeyInfo.EncryptionKeyStatus = _ctx.StringValue("DescribeDBInstanceEncryptionKey.EncryptionKeyList["+ i +"].EncryptionKeyStatus");
+				encryptionKeyInfo.Origin = _ctx.StringValue("DescribeDBInstanceEncryptionKey.EncryptionKeyList["+ i +"].Origin");
+				encryptionKeyInfo.MaterialExpireTime = _ctx.StringValue("DescribeDBInstanceEncryptionKey.EncryptionKeyList["+ i +"].MaterialExpireTime");
+				encryptionKeyInfo.AliasName = _ctx.StringValue("DescribeDBInstanceEncryptionKey.EncryptionKeyList["+ i +"].AliasName");
+				encryptionKeyInfo.UsedBy = _ctx.StringValue("DescribeDBInstanceEncryptionKey.EncryptionKeyList["+ i +"].UsedBy");
+
+				describeDBInstanceEncryptionKeyResponse_encryptionKeyList.Add(encryptionKeyInfo);
+			}
+			describeDBInstanceEncryptionKeyResponse.EncryptionKeyList = describeDBInstanceEncryptionKeyResponse_encryptionKeyList;
         
 			return describeDBInstanceEncryptionKeyResponse;
         }

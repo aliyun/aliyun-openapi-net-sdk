@@ -27,6 +27,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string requestId;
 
+		private bool? showDiscount;
+
 		private List<DescribePrice_Rule> rules;
 
 		private DescribePrice_PriceInfo priceInfo;
@@ -41,6 +43,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ShowDiscount")]
+		public bool? ShowDiscount
+		{
+			get
+			{
+				return showDiscount;
+			}
+			set	
+			{
+				showDiscount = value;
 			}
 		}
 

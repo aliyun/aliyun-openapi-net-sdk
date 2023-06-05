@@ -24,19 +24,17 @@ using Aliyun.Acs.Rds.Model.V20140815;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class CreateDBNodesResponseUnmarshaller
+    public class ModifyActiveOperationTasksResponseUnmarshaller
     {
-        public static CreateDBNodesResponse Unmarshall(UnmarshallerContext _ctx)
+        public static ModifyActiveOperationTasksResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CreateDBNodesResponse createDBNodesResponse = new CreateDBNodesResponse();
+			ModifyActiveOperationTasksResponse modifyActiveOperationTasksResponse = new ModifyActiveOperationTasksResponse();
 
-			createDBNodesResponse.HttpResponse = _ctx.HttpResponse;
-			createDBNodesResponse.RequestId = _ctx.StringValue("CreateDBNodes.RequestId");
-			createDBNodesResponse.DBInstanceId = _ctx.StringValue("CreateDBNodes.DBInstanceId");
-			createDBNodesResponse.OrderId = _ctx.LongValue("CreateDBNodes.OrderId");
-			createDBNodesResponse.NodeIds = _ctx.StringValue("CreateDBNodes.NodeIds");
+			modifyActiveOperationTasksResponse.HttpResponse = _ctx.HttpResponse;
+			modifyActiveOperationTasksResponse.Ids = _ctx.StringValue("ModifyActiveOperationTasks.Ids");
+			modifyActiveOperationTasksResponse.RequestId = _ctx.StringValue("ModifyActiveOperationTasks.RequestId");
         
-			return createDBNodesResponse;
+			return modifyActiveOperationTasksResponse;
         }
     }
 }

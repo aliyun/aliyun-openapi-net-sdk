@@ -63,6 +63,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string instanceNetworkType;
 
+		private string zoneIdSlave1;
+
+		private string zoneIdSlave2;
+
 		private string tableMeta;
 
 		private string dBInstanceId;
@@ -73,11 +77,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string restoreTime;
 
+		private bool? autoPay;
+
 		private ServerlessConfig serverlessConfig_;
 
 		private string restoreTable;
 
 		private int? usedTime;
+
+		private bool? burstingEnabled;
 
 		private string dbNames;
 
@@ -86,6 +94,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string category;
 
 		private string payType;
+
+		private string bpeEnabled;
 
 		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
@@ -241,6 +251,34 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ZoneIdSlave1")]
+		public string ZoneIdSlave1
+		{
+			get
+			{
+				return zoneIdSlave1;
+			}
+			set	
+			{
+				zoneIdSlave1 = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneIdSlave1", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ZoneIdSlave2")]
+		public string ZoneIdSlave2
+		{
+			get
+			{
+				return zoneIdSlave2;
+			}
+			set	
+			{
+				zoneIdSlave2 = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneIdSlave2", value);
+			}
+		}
+
 		[JsonProperty(PropertyName = "TableMeta")]
 		public string TableMeta
 		{
@@ -311,6 +349,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "AutoPay")]
+		public bool? AutoPay
+		{
+			get
+			{
+				return autoPay;
+			}
+			set	
+			{
+				autoPay = value;
+				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
+			}
+		}
+
 		[JsonProperty(PropertyName = "ServerlessConfig")]
 		public ServerlessConfig ServerlessConfig_
 		{
@@ -352,6 +404,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				usedTime = value;
 				DictionaryUtil.Add(QueryParameters, "UsedTime", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "BurstingEnabled")]
+		public bool? BurstingEnabled
+		{
+			get
+			{
+				return burstingEnabled;
+			}
+			set	
+			{
+				burstingEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "BurstingEnabled", value.ToString());
 			}
 		}
 
@@ -408,6 +474,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				payType = value;
 				DictionaryUtil.Add(QueryParameters, "PayType", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "BpeEnabled")]
+		public string BpeEnabled
+		{
+			get
+			{
+				return bpeEnabled;
+			}
+			set	
+			{
+				bpeEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "BpeEnabled", value);
 			}
 		}
 

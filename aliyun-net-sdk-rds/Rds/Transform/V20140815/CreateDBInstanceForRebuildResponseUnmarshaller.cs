@@ -24,19 +24,20 @@ using Aliyun.Acs.Rds.Model.V20140815;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class CreateDBNodesResponseUnmarshaller
+    public class CreateDBInstanceForRebuildResponseUnmarshaller
     {
-        public static CreateDBNodesResponse Unmarshall(UnmarshallerContext _ctx)
+        public static CreateDBInstanceForRebuildResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CreateDBNodesResponse createDBNodesResponse = new CreateDBNodesResponse();
+			CreateDBInstanceForRebuildResponse createDBInstanceForRebuildResponse = new CreateDBInstanceForRebuildResponse();
 
-			createDBNodesResponse.HttpResponse = _ctx.HttpResponse;
-			createDBNodesResponse.RequestId = _ctx.StringValue("CreateDBNodes.RequestId");
-			createDBNodesResponse.DBInstanceId = _ctx.StringValue("CreateDBNodes.DBInstanceId");
-			createDBNodesResponse.OrderId = _ctx.LongValue("CreateDBNodes.OrderId");
-			createDBNodesResponse.NodeIds = _ctx.StringValue("CreateDBNodes.NodeIds");
+			createDBInstanceForRebuildResponse.HttpResponse = _ctx.HttpResponse;
+			createDBInstanceForRebuildResponse.RequestId = _ctx.StringValue("CreateDBInstanceForRebuild.RequestId");
+			createDBInstanceForRebuildResponse.Message = _ctx.StringValue("CreateDBInstanceForRebuild.Message");
+			createDBInstanceForRebuildResponse.DBInstanceId = _ctx.StringValue("CreateDBInstanceForRebuild.DBInstanceId");
+			createDBInstanceForRebuildResponse.TaskId = _ctx.StringValue("CreateDBInstanceForRebuild.TaskId");
+			createDBInstanceForRebuildResponse.OrderId = _ctx.StringValue("CreateDBInstanceForRebuild.OrderId");
         
-			return createDBNodesResponse;
+			return createDBInstanceForRebuildResponse;
         }
     }
 }

@@ -51,6 +51,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				vSwitch.Status = _ctx.StringValue("DescribeVSwitches.VSwitchs["+ i +"].Status");
 				vSwitch.VSwitchId = _ctx.StringValue("DescribeVSwitches.VSwitchs["+ i +"].VSwitchId");
 				vSwitch.VSwitchName = _ctx.StringValue("DescribeVSwitches.VSwitchs["+ i +"].VSwitchName");
+				vSwitch.AvailableIpAddressCount = _ctx.StringValue("DescribeVSwitches.VSwitchs["+ i +"].AvailableIpAddressCount");
 
 				describeVSwitchesResponse_vSwitchs.Add(vSwitch);
 			}

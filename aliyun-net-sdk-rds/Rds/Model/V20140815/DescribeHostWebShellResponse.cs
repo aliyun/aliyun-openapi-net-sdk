@@ -22,14 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class RequestServiceOfCloudDBAResponse : AcsResponse
+	public class DescribeHostWebShellResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string attrData;
-
-		private string listData;
+		private string loginUrl;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -44,29 +42,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "AttrData")]
-		public string AttrData
+		[JsonProperty(PropertyName = "LoginUrl")]
+		public string LoginUrl
 		{
 			get
 			{
-				return attrData;
+				return loginUrl;
 			}
 			set	
 			{
-				attrData = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "ListData")]
-		public string ListData
-		{
-			get
-			{
-				return listData;
-			}
-			set	
-			{
-				listData = value;
+				loginUrl = value;
 			}
 		}
 	}

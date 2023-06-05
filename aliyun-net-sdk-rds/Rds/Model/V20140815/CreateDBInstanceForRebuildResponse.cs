@@ -22,16 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class CreateDBNodesResponse : AcsResponse
+	public class CreateDBInstanceForRebuildResponse : AcsResponse
 	{
 
 		private string requestId;
 
+		private string message;
+
 		private string dBInstanceId;
 
-		private long? orderId;
+		private string taskId;
 
-		private string nodeIds;
+		private string orderId;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -43,6 +45,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Message")]
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 
@@ -59,8 +74,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "TaskId")]
+		public string TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
+			}
+		}
+
 		[JsonProperty(PropertyName = "OrderId")]
-		public long? OrderId
+		public string OrderId
 		{
 			get
 			{
@@ -69,19 +97,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				orderId = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "NodeIds")]
-		public string NodeIds
-		{
-			get
-			{
-				return nodeIds;
-			}
-			set	
-			{
-				nodeIds = value;
 			}
 		}
 	}
