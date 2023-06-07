@@ -28,10 +28,10 @@ using Aliyun.Acs.schedulerx2.Transform.V20190430;
 
 namespace Aliyun.Acs.schedulerx2.Model.V20190430
 {
-    public class ListNamespacesRequest : RpcAcsRequest<ListNamespacesResponse>
+    public class GetOverviewRequest : RpcAcsRequest<GetOverviewResponse>
     {
-        public ListNamespacesRequest()
-            : base("schedulerx2", "2019-04-30", "ListNamespaces")
+        public GetOverviewRequest()
+            : base("schedulerx2", "2019-04-30", "GetOverview")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,20 +41,95 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			Method = MethodType.POST;
         }
 
-		private string namespaceName;
+		private int? metricType;
+
+		private string namespaceSource;
+
+		private string groupId;
+
+		private long? endTime;
+
+		private long? startTime;
+
+		private string operate;
 
 		private string _namespace;
 
-		public string NamespaceName
+		public int? MetricType
 		{
 			get
 			{
-				return namespaceName;
+				return metricType;
 			}
 			set	
 			{
-				namespaceName = value;
-				DictionaryUtil.Add(QueryParameters, "NamespaceName", value);
+				metricType = value;
+				DictionaryUtil.Add(QueryParameters, "MetricType", value.ToString());
+			}
+		}
+
+		public string NamespaceSource
+		{
+			get
+			{
+				return namespaceSource;
+			}
+			set	
+			{
+				namespaceSource = value;
+				DictionaryUtil.Add(QueryParameters, "NamespaceSource", value);
+			}
+		}
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+			}
+		}
+
+		public long? EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
+			}
+		}
+
+		public long? StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
+			}
+		}
+
+		public string Operate
+		{
+			get
+			{
+				return operate;
+			}
+			set	
+			{
+				operate = value;
+				DictionaryUtil.Add(QueryParameters, "Operate", value);
 			}
 		}
 
@@ -76,9 +151,9 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			return false;
 		}
 
-        public override ListNamespacesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetOverviewResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListNamespacesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetOverviewResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

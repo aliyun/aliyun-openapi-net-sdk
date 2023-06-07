@@ -73,7 +73,11 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private string parameters;
 
+		private string template;
+
 		private string namespaceSource;
+
+		private string timezone;
 
 		private string description;
 
@@ -104,6 +108,8 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 		private string className;
 
 		private string _namespace;
+
+		private string xAttrs;
 
 		private int? maxConcurrency;
 
@@ -325,6 +331,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
+		public string Template
+		{
+			get
+			{
+				return template;
+			}
+			set	
+			{
+				template = value;
+				DictionaryUtil.Add(BodyParameters, "Template", value);
+			}
+		}
+
 		public string NamespaceSource
 		{
 			get
@@ -335,6 +354,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				namespaceSource = value;
 				DictionaryUtil.Add(BodyParameters, "NamespaceSource", value);
+			}
+		}
+
+		public string Timezone
+		{
+			get
+			{
+				return timezone;
+			}
+			set	
+			{
+				timezone = value;
+				DictionaryUtil.Add(BodyParameters, "Timezone", value);
 			}
 		}
 
@@ -530,6 +562,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				_namespace = value;
 				DictionaryUtil.Add(BodyParameters, "Namespace", value);
+			}
+		}
+
+		public string XAttrs
+		{
+			get
+			{
+				return xAttrs;
+			}
+			set	
+			{
+				xAttrs = value;
+				DictionaryUtil.Add(BodyParameters, "XAttrs", value);
 			}
 		}
 

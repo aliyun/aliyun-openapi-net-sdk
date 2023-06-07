@@ -77,6 +77,8 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private string namespaceSource;
 
+		private string timezone;
+
 		private string description;
 
 		private string content;
@@ -350,6 +352,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				namespaceSource = value;
 				DictionaryUtil.Add(BodyParameters, "NamespaceSource", value);
+			}
+		}
+
+		public string Timezone
+		{
+			get
+			{
+				return timezone;
+			}
+			set	
+			{
+				timezone = value;
+				DictionaryUtil.Add(BodyParameters, "Timezone", value);
 			}
 		}
 
