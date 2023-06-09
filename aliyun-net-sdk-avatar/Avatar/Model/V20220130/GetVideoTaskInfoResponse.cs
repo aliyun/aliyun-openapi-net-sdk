@@ -191,6 +191,8 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 
 				private string failCode;
 
+				private int? videoDuration;
+
 				[JsonProperty(PropertyName = "VideoUrl")]
 				public string VideoUrl
 				{
@@ -253,6 +255,19 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 					set	
 					{
 						failCode = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "VideoDuration")]
+				public int? VideoDuration
+				{
+					get
+					{
+						return videoDuration;
+					}
+					set	
+					{
+						videoDuration = value;
 					}
 				}
 			}

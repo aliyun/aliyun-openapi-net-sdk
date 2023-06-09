@@ -29,10 +29,10 @@ using Aliyun.Acs.avatar.Transform.V20220130;
 
 namespace Aliyun.Acs.avatar.Model.V20220130
 {
-    public class SubmitTextTo2DAvatarVideoTaskRequest : RpcAcsRequest<SubmitTextTo2DAvatarVideoTaskResponse>
+    public class SubmitAudioTo2DAvatarVideoTaskRequest : RpcAcsRequest<SubmitAudioTo2DAvatarVideoTaskResponse>
     {
-        public SubmitTextTo2DAvatarVideoTaskRequest()
-            : base("avatar", "2022-01-30", "SubmitTextTo2DAvatarVideoTask")
+        public SubmitAudioTo2DAvatarVideoTaskRequest()
+            : base("avatar", "2022-01-30", "SubmitAudioTo2DAvatarVideoTask")
         {
 			Method = MethodType.POST;
         }
@@ -41,15 +41,13 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 
 		private VideoInfo videoInfo_;
 
-		private AudioInfo audioInfo_;
-
 		private AvatarInfo avatarInfo_;
 
 		private long? tenantId;
 
-		private string text;
-
 		private string title;
+
+		private string url;
 
 		[JsonProperty(PropertyName = "App")]
 		public App App_
@@ -79,22 +77,6 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			{
 				videoInfo_ = value;
 				DictionaryUtil.Add(QueryParameters, "VideoInfo", JsonConvert.SerializeObject(value));
-
-			}
-		}
-
-		[JsonProperty(PropertyName = "AudioInfo")]
-		public AudioInfo AudioInfo_
-		{
-			get
-			{
-				return audioInfo_;
-			}
-
-			set
-			{
-				audioInfo_ = value;
-				DictionaryUtil.Add(QueryParameters, "AudioInfo", JsonConvert.SerializeObject(value));
 
 			}
 		}
@@ -129,20 +111,6 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			}
 		}
 
-		[JsonProperty(PropertyName = "Text")]
-		public string Text
-		{
-			get
-			{
-				return text;
-			}
-			set	
-			{
-				text = value;
-				DictionaryUtil.Add(QueryParameters, "Text", value);
-			}
-		}
-
 		[JsonProperty(PropertyName = "Title")]
 		public string Title
 		{
@@ -154,6 +122,20 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			{
 				title = value;
 				DictionaryUtil.Add(QueryParameters, "Title", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Url")]
+		public string Url
+		{
+			get
+			{
+				return url;
+			}
+			set	
+			{
+				url = value;
+				DictionaryUtil.Add(QueryParameters, "Url", value);
 			}
 		}
 
@@ -182,8 +164,6 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			private bool? isAlpha;
 
 			private string backgroundImageUrl;
-
-			private bool? isSubtitles;
 
 			private int? resolution;
 
@@ -215,19 +195,6 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 				}
 			}
 
-			[JsonProperty(PropertyName = "IsSubtitles")]
-			public bool? IsSubtitles
-			{
-				get
-				{
-					return isSubtitles;
-				}
-				set	
-				{
-					isSubtitles = value;
-				}
-			}
-
 			[JsonProperty(PropertyName = "Resolution")]
 			public int? Resolution
 			{
@@ -251,70 +218,6 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 				set	
 				{
 					alphaFormat = value;
-				}
-			}
-		}
-
-		public class AudioInfo
-		{
-
-			private string voice;
-
-			private int? volume;
-
-			private int? speechRate;
-
-			private int? pitchRate;
-
-			[JsonProperty(PropertyName = "Voice")]
-			public string Voice
-			{
-				get
-				{
-					return voice;
-				}
-				set	
-				{
-					voice = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Volume")]
-			public int? Volume
-			{
-				get
-				{
-					return volume;
-				}
-				set	
-				{
-					volume = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "SpeechRate")]
-			public int? SpeechRate
-			{
-				get
-				{
-					return speechRate;
-				}
-				set	
-				{
-					speechRate = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "PitchRate")]
-			public int? PitchRate
-			{
-				get
-				{
-					return pitchRate;
-				}
-				set	
-				{
-					pitchRate = value;
 				}
 			}
 		}
@@ -343,9 +246,9 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			return false;
 		}
 
-        public override SubmitTextTo2DAvatarVideoTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SubmitAudioTo2DAvatarVideoTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SubmitTextTo2DAvatarVideoTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SubmitAudioTo2DAvatarVideoTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
