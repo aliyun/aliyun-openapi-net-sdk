@@ -38,9 +38,9 @@ namespace Aliyun.Acs.Market.Transform.V20151101
 			List<DescribeDistributionProductsLinkResponse.DescribeDistributionProductsLink_Item> describeDistributionProductsLinkResponse_result = new List<DescribeDistributionProductsLinkResponse.DescribeDistributionProductsLink_Item>();
 			for (int i = 0; i < _ctx.Length("DescribeDistributionProductsLink.Result.Length"); i++) {
 				DescribeDistributionProductsLinkResponse.DescribeDistributionProductsLink_Item item = new DescribeDistributionProductsLinkResponse.DescribeDistributionProductsLink_Item();
-				item.Url = _ctx.StringValue("DescribeDistributionProductsLink.Result["+ i +"].url");
-				item.Code = _ctx.StringValue("DescribeDistributionProductsLink.Result["+ i +"].code");
-				item.Name = _ctx.StringValue("DescribeDistributionProductsLink.Result["+ i +"].name");
+				item.Url = _ctx.StringValue("DescribeDistributionProductsLink.Result["+ i +"].Url");
+				item.Code = _ctx.StringValue("DescribeDistributionProductsLink.Result["+ i +"].Code");
+				item.Name = _ctx.StringValue("DescribeDistributionProductsLink.Result["+ i +"].Name");
 
 				describeDistributionProductsLinkResponse_result.Add(item);
 			}
