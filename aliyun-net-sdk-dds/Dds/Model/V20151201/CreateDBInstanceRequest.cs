@@ -63,6 +63,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string backupId;
 
+		private string encryptionKey;
+
 		private long? ownerId;
 
 		private string dBInstanceClass;
@@ -100,6 +102,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string clusterId;
 
 		private string accountPassword;
+
+		private bool? encrypted;
 
 		private string vpcId;
 
@@ -284,6 +288,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				backupId = value;
 				DictionaryUtil.Add(QueryParameters, "BackupId", value);
+			}
+		}
+
+		public string EncryptionKey
+		{
+			get
+			{
+				return encryptionKey;
+			}
+			set	
+			{
+				encryptionKey = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptionKey", value);
 			}
 		}
 
@@ -531,6 +548,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				accountPassword = value;
 				DictionaryUtil.Add(QueryParameters, "AccountPassword", value);
+			}
+		}
+
+		public bool? Encrypted
+		{
+			get
+			{
+				return encrypted;
+			}
+			set	
+			{
+				encrypted = value;
+				DictionaryUtil.Add(QueryParameters, "Encrypted", value.ToString());
 			}
 		}
 

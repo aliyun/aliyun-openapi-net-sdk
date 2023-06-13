@@ -57,6 +57,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private int? period;
 
+		private string encryptionKey;
+
 		private List<int?> configServers = new List<int?>(){ };
 
 		private long? ownerId;
@@ -88,6 +90,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string ownerAccount;
 
 		private string accountPassword;
+
+		private bool? encrypted;
 
 		private string vpcId;
 
@@ -244,6 +248,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				period = value;
 				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
+			}
+		}
+
+		public string EncryptionKey
+		{
+			get
+			{
+				return encryptionKey;
+			}
+			set	
+			{
+				encryptionKey = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptionKey", value);
 			}
 		}
 
@@ -467,6 +484,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				accountPassword = value;
 				DictionaryUtil.Add(QueryParameters, "AccountPassword", value);
+			}
+		}
+
+		public bool? Encrypted
+		{
+			get
+			{
+				return encrypted;
+			}
+			set	
+			{
+				encrypted = value;
+				DictionaryUtil.Add(QueryParameters, "Encrypted", value.ToString());
 			}
 		}
 
