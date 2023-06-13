@@ -73,6 +73,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? usedTime;
 
+		private bool? burstingEnabled;
+
 		private string dBInstanceClass;
 
 		private string zoneId;
@@ -304,6 +306,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				usedTime = value;
 				DictionaryUtil.Add(QueryParameters, "UsedTime", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "BurstingEnabled")]
+		public bool? BurstingEnabled
+		{
+			get
+			{
+				return burstingEnabled;
+			}
+			set	
+			{
+				burstingEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "BurstingEnabled", value.ToString());
 			}
 		}
 
