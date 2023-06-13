@@ -39,6 +39,8 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 
 		private bool? feedback;
 
+		private StreamExtension streamExtension_;
+
 		private string textRequest;
 
 		private long? tenantId;
@@ -58,6 +60,22 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			{
 				feedback = value;
 				DictionaryUtil.Add(QueryParameters, "Feedback", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "StreamExtension")]
+		public StreamExtension StreamExtension_
+		{
+			get
+			{
+				return streamExtension_;
+			}
+
+			set
+			{
+				streamExtension_ = value;
+				DictionaryUtil.Add(QueryParameters, "StreamExtension", JsonConvert.SerializeObject(value));
+
 			}
 		}
 
@@ -116,6 +134,55 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			{
 				sessionId = value;
 				DictionaryUtil.Add(QueryParameters, "SessionId", value);
+			}
+		}
+
+		public class StreamExtension
+		{
+
+			private bool? isStream;
+
+			private int? index;
+
+			private string position;
+
+			[JsonProperty(PropertyName = "IsStream")]
+			public bool? IsStream
+			{
+				get
+				{
+					return isStream;
+				}
+				set	
+				{
+					isStream = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Index")]
+			public int? Index
+			{
+				get
+				{
+					return index;
+				}
+				set	
+				{
+					index = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Position")]
+			public string Position
+			{
+				get
+				{
+					return position;
+				}
+				set	
+				{
+					position = value;
+				}
 			}
 		}
 
