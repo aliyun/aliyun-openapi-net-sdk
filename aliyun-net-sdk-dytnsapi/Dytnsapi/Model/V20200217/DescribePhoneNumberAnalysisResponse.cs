@@ -27,11 +27,11 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 
 		private string requestId;
 
-		private string code;
-
 		private string message;
 
-		private List<DescribePhoneNumberAnalysis_DataList> data;
+		private string code;
+
+		private DescribePhoneNumberAnalysis_Data data;
 
 		public string RequestId
 		{
@@ -42,18 +42,6 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
 			}
 		}
 
@@ -69,7 +57,19 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 			}
 		}
 
-		public List<DescribePhoneNumberAnalysis_DataList> Data
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public DescribePhoneNumberAnalysis_Data Data
 		{
 			get
 			{
@@ -81,24 +81,12 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 			}
 		}
 
-		public class DescribePhoneNumberAnalysis_DataList
+		public class DescribePhoneNumberAnalysis_Data
 		{
-
-			private string code;
 
 			private string number;
 
-			public string Code
-			{
-				get
-				{
-					return code;
-				}
-				set	
-				{
-					code = value;
-				}
-			}
+			private string code;
 
 			public string Number
 			{
@@ -109,6 +97,18 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 				set	
 				{
 					number = value;
+				}
+			}
+
+			public string Code
+			{
+				get
+				{
+					return code;
+				}
+				set	
+				{
+					code = value;
 				}
 			}
 		}
