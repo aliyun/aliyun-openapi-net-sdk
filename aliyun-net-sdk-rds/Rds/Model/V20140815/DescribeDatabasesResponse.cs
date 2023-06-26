@@ -88,6 +88,12 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private List<DescribeDatabases_AccountPrivilegeInfo> accounts;
 
+			private List<Dictionary<string, string>> basicInfo;
+
+			private List<Dictionary<string, string>> runtimeInfo;
+
+			private List<Dictionary<string, string>> advancedInfo;
+
 			[JsonProperty(PropertyName = "DBDescription")]
 			public string DBDescription
 			{
@@ -280,6 +286,45 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					accounts = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "BasicInfo")]
+			public List<Dictionary<string, string>> BasicInfo
+			{
+				get
+				{
+					return basicInfo;
+				}
+				set	
+				{
+					basicInfo = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RuntimeInfo")]
+			public List<Dictionary<string, string>> RuntimeInfo
+			{
+				get
+				{
+					return runtimeInfo;
+				}
+				set	
+				{
+					runtimeInfo = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AdvancedInfo")]
+			public List<Dictionary<string, string>> AdvancedInfo
+			{
+				get
+				{
+					return advancedInfo;
+				}
+				set	
+				{
+					advancedInfo = value;
 				}
 			}
 

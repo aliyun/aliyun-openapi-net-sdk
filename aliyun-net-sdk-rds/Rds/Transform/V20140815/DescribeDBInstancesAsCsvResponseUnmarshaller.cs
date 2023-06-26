@@ -77,6 +77,13 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstanceAttribute.DBInstanceId = _ctx.StringValue("DescribeDBInstancesAsCsv.Items["+ i +"].DBInstanceId");
 				dBInstanceAttribute.DBInstanceClass = _ctx.StringValue("DescribeDBInstancesAsCsv.Items["+ i +"].DBInstanceClass");
 				dBInstanceAttribute.Engine = _ctx.StringValue("DescribeDBInstancesAsCsv.Items["+ i +"].Engine");
+				dBInstanceAttribute.ExportKey = _ctx.StringValue("DescribeDBInstancesAsCsv.Items["+ i +"].ExportKey");
+
+				List<string> dBInstanceAttribute_slaveZones = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeDBInstancesAsCsv.Items["+ i +"].SlaveZones.Length"); j++) {
+					dBInstanceAttribute_slaveZones.Add(_ctx.StringValue("DescribeDBInstancesAsCsv.Items["+ i +"].SlaveZones["+ j +"]"));
+				}
+				dBInstanceAttribute.SlaveZones = dBInstanceAttribute_slaveZones;
 
 				describeDBInstancesAsCsvResponse_items.Add(dBInstanceAttribute);
 			}
