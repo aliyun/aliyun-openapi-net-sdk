@@ -17,11 +17,13 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Market;
 using Aliyun.Acs.Market.Transform;
 using Aliyun.Acs.Market.Transform.V20151101;
 
@@ -30,14 +32,19 @@ namespace Aliyun.Acs.Market.Model.V20151101
     public class DescribeInstancesRequest : RpcAcsRequest<DescribeInstancesResponse>
     {
         public DescribeInstancesRequest()
-            : base("Market", "2015-11-01", "DescribeInstances", "yunmarket", "openAPI")
+            : base("Market", "2015-11-01", "DescribeInstances")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Market.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Market.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
+
+		private string codes;
+
+		private string exceptCodes;
 
 		private int? pageNumber;
 
@@ -45,6 +52,35 @@ namespace Aliyun.Acs.Market.Model.V20151101
 
 		private int? pageSize;
 
+		[JsonProperty(PropertyName = "Codes")]
+		public string Codes
+		{
+			get
+			{
+				return codes;
+			}
+			set	
+			{
+				codes = value;
+				DictionaryUtil.Add(QueryParameters, "Codes", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ExceptCodes")]
+		public string ExceptCodes
+		{
+			get
+			{
+				return exceptCodes;
+			}
+			set	
+			{
+				exceptCodes = value;
+				DictionaryUtil.Add(QueryParameters, "ExceptCodes", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -58,6 +94,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ProductType")]
 		public string ProductType
 		{
 			get
@@ -71,6 +108,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get

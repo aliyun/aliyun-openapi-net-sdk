@@ -42,6 +42,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string operatorUserId;
 
+		private int? broadCastType;
+
 		private string groupId;
 
 		private string appId;
@@ -56,6 +58,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				operatorUserId = value;
 				DictionaryUtil.Add(BodyParameters, "OperatorUserId", value);
+			}
+		}
+
+		public int? BroadCastType
+		{
+			get
+			{
+				return broadCastType;
+			}
+			set	
+			{
+				broadCastType = value;
+				DictionaryUtil.Add(BodyParameters, "BroadCastType", value.ToString());
 			}
 		}
 

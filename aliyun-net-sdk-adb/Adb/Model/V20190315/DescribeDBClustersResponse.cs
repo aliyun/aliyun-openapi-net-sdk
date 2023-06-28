@@ -166,6 +166,10 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 			private string engine;
 
+			private string innerIp;
+
+			private string innerPort;
+
 			private List<DescribeDBClusters_Tag> tags;
 
 			public string DtsJobId
@@ -573,6 +577,30 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					engine = value;
+				}
+			}
+
+			public string InnerIp
+			{
+				get
+				{
+					return innerIp;
+				}
+				set	
+				{
+					innerIp = value;
+				}
+			}
+
+			public string InnerPort
+			{
+				get
+				{
+					return innerPort;
+				}
+				set	
+				{
+					innerPort = value;
 				}
 			}
 

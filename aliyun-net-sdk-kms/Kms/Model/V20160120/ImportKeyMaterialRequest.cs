@@ -50,6 +50,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string keyId;
 
+		[JsonProperty(PropertyName = "ImportToken")]
 		public string ImportToken
 		{
 			get
@@ -63,6 +64,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "EncryptedKeyMaterial")]
 		public string EncryptedKeyMaterial
 		{
 			get
@@ -76,6 +78,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "KeyMaterialExpireUnix")]
 		public long? KeyMaterialExpireUnix
 		{
 			get
@@ -89,6 +92,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "KeyId")]
 		public string KeyId
 		{
 			get

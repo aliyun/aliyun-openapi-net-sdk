@@ -31,6 +31,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? orderId;
 
+		private string nodeIds;
+
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
@@ -67,6 +69,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				orderId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "NodeIds")]
+		public string NodeIds
+		{
+			get
+			{
+				return nodeIds;
+			}
+			set	
+			{
+				nodeIds = value;
 			}
 		}
 	}

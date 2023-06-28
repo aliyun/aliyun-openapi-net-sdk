@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private QueryInstanceGaapCost_Data data;
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public QueryInstanceGaapCost_Data Data
 		{
 			get
@@ -108,6 +113,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private List<QueryInstanceGaapCost_Module> modules;
 
+			[JsonProperty(PropertyName = "PageNum")]
 			public int? PageNum
 			{
 				get
@@ -120,6 +126,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "PageSize")]
 			public int? PageSize
 			{
 				get
@@ -132,6 +139,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "TotalCount")]
 			public int? TotalCount
 			{
 				get
@@ -144,6 +152,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "HostId")]
 			public string HostId
 			{
 				get
@@ -156,6 +165,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "Modules")]
 			public List<QueryInstanceGaapCost_Module> Modules
 			{
 				get
@@ -275,6 +285,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string productCode;
 
+				[JsonProperty(PropertyName = "GaapDeductedByCashCoupons")]
 				public string GaapDeductedByCashCoupons
 				{
 					get
@@ -287,6 +298,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "SubscriptionType")]
 				public string SubscriptionType
 				{
 					get
@@ -299,6 +311,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "MonthGaapPretaxAmount")]
 				public string MonthGaapPretaxAmount
 				{
 					get
@@ -311,6 +324,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "DeductedByCoupons")]
 				public string DeductedByCoupons
 				{
 					get
@@ -323,6 +337,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "SubOrderId")]
 				public string SubOrderId
 				{
 					get
@@ -335,6 +350,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Region")]
 				public string Region
 				{
 					get
@@ -347,6 +363,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "OrderType")]
 				public string OrderType
 				{
 					get
@@ -359,6 +376,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "MonthGaapDeductedByPrepaidCard")]
 				public string MonthGaapDeductedByPrepaidCard
 				{
 					get
@@ -371,6 +389,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "UnallocatedDeductedByCashCoupons")]
 				public string UnallocatedDeductedByCashCoupons
 				{
 					get
@@ -383,6 +402,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PretaxAmountLocal")]
 				public string PretaxAmountLocal
 				{
 					get
@@ -395,6 +415,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "BillingCycle")]
 				public string BillingCycle
 				{
 					get
@@ -407,6 +428,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PayerAccount")]
 				public string PayerAccount
 				{
 					get
@@ -419,6 +441,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "MonthGaapPretaxAmountLocal")]
 				public string MonthGaapPretaxAmountLocal
 				{
 					get
@@ -431,6 +454,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "AccountingUnit")]
 				public string AccountingUnit
 				{
 					get
@@ -443,6 +467,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "GaapPretaxAmountLocal")]
 				public string GaapPretaxAmountLocal
 				{
 					get
@@ -455,6 +480,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "UnallocatedDeductedByPrepaidCard")]
 				public string UnallocatedDeductedByPrepaidCard
 				{
 					get
@@ -467,6 +493,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ProductType")]
 				public string ProductType
 				{
 					get
@@ -479,6 +506,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PaymentAmount")]
 				public string PaymentAmount
 				{
 					get
@@ -491,6 +519,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "MonthGaapPretaxGrossAmount")]
 				public string MonthGaapPretaxGrossAmount
 				{
 					get
@@ -503,6 +532,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "BillType")]
 				public string BillType
 				{
 					get
@@ -515,6 +545,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PayTime")]
 				public string PayTime
 				{
 					get
@@ -527,6 +558,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PretaxGrossAmount")]
 				public string PretaxGrossAmount
 				{
 					get
@@ -539,6 +571,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "OrderId")]
 				public string OrderId
 				{
 					get
@@ -551,6 +584,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "UnallocatedPricingDiscount")]
 				public string UnallocatedPricingDiscount
 				{
 					get
@@ -563,6 +597,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "MonthGaapDeductedByCashCoupons")]
 				public string MonthGaapDeductedByCashCoupons
 				{
 					get
@@ -575,6 +610,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "UnallocatedPretaxGrossAmount")]
 				public string UnallocatedPretaxGrossAmount
 				{
 					get
@@ -587,6 +623,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "InstanceID")]
 				public string InstanceID
 				{
 					get
@@ -599,6 +636,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Tag")]
 				public string Tag
 				{
 					get
@@ -611,6 +649,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Currency")]
 				public string Currency
 				{
 					get
@@ -623,6 +662,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "GaapDeductedByCoupons")]
 				public string GaapDeductedByCoupons
 				{
 					get
@@ -635,6 +675,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "DeductedByCashCoupons")]
 				public string DeductedByCashCoupons
 				{
 					get
@@ -647,6 +688,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "GaapDeductedByPrepaidCard")]
 				public string GaapDeductedByPrepaidCard
 				{
 					get
@@ -659,6 +701,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "GaapPaymentAmount")]
 				public string GaapPaymentAmount
 				{
 					get
@@ -671,6 +714,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "UnallocatedPretaxAmountLocal")]
 				public string UnallocatedPretaxAmountLocal
 				{
 					get
@@ -683,6 +727,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "MonthGaapPricingDiscount")]
 				public string MonthGaapPricingDiscount
 				{
 					get
@@ -695,6 +740,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PricingDiscount")]
 				public string PricingDiscount
 				{
 					get
@@ -707,6 +753,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "GaapPricingDiscount")]
 				public string GaapPricingDiscount
 				{
 					get
@@ -719,6 +766,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ResourceGroup")]
 				public string ResourceGroup
 				{
 					get
@@ -731,6 +779,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "UnallocatedDeductedByCoupons")]
 				public string UnallocatedDeductedByCoupons
 				{
 					get
@@ -743,6 +792,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PretaxAmount")]
 				public string PretaxAmount
 				{
 					get
@@ -755,6 +805,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "UnallocatedPretaxAmount")]
 				public string UnallocatedPretaxAmount
 				{
 					get
@@ -767,6 +818,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "GaapPretaxGrossAmount")]
 				public string GaapPretaxGrossAmount
 				{
 					get
@@ -779,6 +831,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "UnallocatedPaymentAmount")]
 				public string UnallocatedPaymentAmount
 				{
 					get
@@ -791,6 +844,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PaymentCurrency")]
 				public string PaymentCurrency
 				{
 					get
@@ -803,6 +857,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "OwnerID")]
 				public string OwnerID
 				{
 					get
@@ -815,6 +870,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "DeductedByPrepaidCard")]
 				public string DeductedByPrepaidCard
 				{
 					get
@@ -827,6 +883,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "GaapPretaxAmount")]
 				public string GaapPretaxAmount
 				{
 					get
@@ -839,6 +896,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "MonthGaapDeductedByCoupons")]
 				public string MonthGaapDeductedByCoupons
 				{
 					get
@@ -851,6 +909,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "MonthGaapPaymentAmount")]
 				public string MonthGaapPaymentAmount
 				{
 					get
@@ -863,6 +922,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "UsageEndDate")]
 				public string UsageEndDate
 				{
 					get
@@ -875,6 +935,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "UsageStartDate")]
 				public string UsageStartDate
 				{
 					get
@@ -887,6 +948,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ProductCode")]
 				public string ProductCode
 				{
 					get

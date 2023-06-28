@@ -44,10 +44,11 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string rotationInterval;
 
-		private string secretName;
-
 		private bool? enableAutomaticRotation;
 
+		private string secretName;
+
+		[JsonProperty(PropertyName = "RotationInterval")]
 		public string RotationInterval
 		{
 			get
@@ -61,19 +62,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public string SecretName
-		{
-			get
-			{
-				return secretName;
-			}
-			set	
-			{
-				secretName = value;
-				DictionaryUtil.Add(QueryParameters, "SecretName", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "EnableAutomaticRotation")]
 		public bool? EnableAutomaticRotation
 		{
 			get
@@ -84,6 +73,20 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				enableAutomaticRotation = value;
 				DictionaryUtil.Add(QueryParameters, "EnableAutomaticRotation", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "SecretName")]
+		public string SecretName
+		{
+			get
+			{
+				return secretName;
+			}
+			set	
+			{
+				secretName = value;
+				DictionaryUtil.Add(QueryParameters, "SecretName", value);
 			}
 		}
 

@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private QuerySettleBill_Data data;
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public QuerySettleBill_Data Data
 		{
 			get
@@ -112,6 +117,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private List<QuerySettleBill_Item> items;
 
+			[JsonProperty(PropertyName = "NextToken")]
 			public string NextToken
 			{
 				get
@@ -124,6 +130,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "BillingCycle")]
 			public string BillingCycle
 			{
 				get
@@ -136,6 +143,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "MaxResults")]
 			public int? MaxResults
 			{
 				get
@@ -148,6 +156,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "AccountID")]
 			public string AccountID
 			{
 				get
@@ -160,6 +169,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "TotalCount")]
 			public int? TotalCount
 			{
 				get
@@ -172,6 +182,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "AccountName")]
 			public string AccountName
 			{
 				get
@@ -184,6 +195,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "Items")]
 			public List<QuerySettleBill_Item> Items
 			{
 				get
@@ -269,6 +281,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string productCode;
 
+				[JsonProperty(PropertyName = "Status")]
 				public string Status
 				{
 					get
@@ -281,6 +294,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "RoundDownDiscount")]
 				public string RoundDownDiscount
 				{
 					get
@@ -293,6 +307,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Item")]
 				public string Item
 				{
 					get
@@ -305,6 +320,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Currency")]
 				public string Currency
 				{
 					get
@@ -317,6 +333,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "BillAccountName")]
 				public string BillAccountName
 				{
 					get
@@ -329,6 +346,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "DeductedByCashCoupons")]
 				public float? DeductedByCashCoupons
 				{
 					get
@@ -341,6 +359,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "SubscriptionType")]
 				public string SubscriptionType
 				{
 					get
@@ -353,6 +372,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "UsageStartTime")]
 				public string UsageStartTime
 				{
 					get
@@ -365,6 +385,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "BizType")]
 				public string BizType
 				{
 					get
@@ -377,6 +398,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "UsageEndTime")]
 				public string UsageEndTime
 				{
 					get
@@ -389,6 +411,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "DeductedByCoupons")]
 				public float? DeductedByCoupons
 				{
 					get
@@ -401,6 +424,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "SubOrderId")]
 				public string SubOrderId
 				{
 					get
@@ -413,6 +437,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "AfterTaxAmount")]
 				public float? AfterTaxAmount
 				{
 					get
@@ -425,6 +450,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "OutstandingAmount")]
 				public float? OutstandingAmount
 				{
 					get
@@ -437,6 +463,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PaymentTime")]
 				public string PaymentTime
 				{
 					get
@@ -449,6 +476,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Tax")]
 				public float? Tax
 				{
 					get
@@ -461,6 +489,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PretaxAmountLocal")]
 				public float? PretaxAmountLocal
 				{
 					get
@@ -473,6 +502,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PipCode")]
 				public string PipCode
 				{
 					get
@@ -485,6 +515,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PaymentTransactionID")]
 				public string PaymentTransactionID
 				{
 					get
@@ -497,6 +528,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PretaxAmount")]
 				public float? PretaxAmount
 				{
 					get
@@ -509,6 +541,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "CommodityCode")]
 				public string CommodityCode
 				{
 					get
@@ -521,6 +554,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ProductName")]
 				public string ProductName
 				{
 					get
@@ -533,6 +567,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "RecordID")]
 				public string RecordID
 				{
 					get
@@ -545,6 +580,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "AdjustAmount")]
 				public float? AdjustAmount
 				{
 					get
@@ -557,6 +593,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ProductDetail")]
 				public string ProductDetail
 				{
 					get
@@ -569,6 +606,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PaymentCurrency")]
 				public string PaymentCurrency
 				{
 					get
@@ -581,6 +619,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "OwnerID")]
 				public string OwnerID
 				{
 					get
@@ -593,6 +632,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "DeductedByPrepaidCard")]
 				public float? DeductedByPrepaidCard
 				{
 					get
@@ -605,6 +645,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "BillAccountID")]
 				public string BillAccountID
 				{
 					get
@@ -617,6 +658,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PaymentAmount")]
 				public float? PaymentAmount
 				{
 					get
@@ -629,6 +671,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "InvoiceDiscount")]
 				public float? InvoiceDiscount
 				{
 					get
@@ -641,6 +684,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ProductType")]
 				public string ProductType
 				{
 					get
@@ -653,6 +697,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PretaxGrossAmount")]
 				public float? PretaxGrossAmount
 				{
 					get
@@ -665,6 +710,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "CashAmount")]
 				public float? CashAmount
 				{
 					get
@@ -677,6 +723,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ProductCode")]
 				public string ProductCode
 				{
 					get

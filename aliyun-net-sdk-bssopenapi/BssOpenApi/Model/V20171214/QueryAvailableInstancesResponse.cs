@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private QueryAvailableInstances_Data data;
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public QueryAvailableInstances_Data Data
 		{
 			get
@@ -106,6 +111,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private List<QueryAvailableInstances_Instance> instanceList;
 
+			[JsonProperty(PropertyName = "PageNum")]
 			public int? PageNum
 			{
 				get
@@ -118,6 +124,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "PageSize")]
 			public int? PageSize
 			{
 				get
@@ -130,6 +137,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "TotalCount")]
 			public int? TotalCount
 			{
 				get
@@ -142,6 +150,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "InstanceList")]
 			public List<QueryAvailableInstances_Instance> InstanceList
 			{
 				get
@@ -193,6 +202,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string productCode;
 
+				[JsonProperty(PropertyName = "SubStatus")]
 				public string SubStatus
 				{
 					get
@@ -205,6 +215,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Status")]
 				public string Status
 				{
 					get
@@ -217,6 +228,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ExpectedReleaseTime")]
 				public string ExpectedReleaseTime
 				{
 					get
@@ -229,6 +241,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "RenewStatus")]
 				public string RenewStatus
 				{
 					get
@@ -241,6 +254,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "CreateTime")]
 				public string CreateTime
 				{
 					get
@@ -253,6 +267,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "SellerId")]
 				public long? SellerId
 				{
 					get
@@ -265,6 +280,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "InstanceID")]
 				public string InstanceID
 				{
 					get
@@ -277,6 +293,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Seller")]
 				public string Seller
 				{
 					get
@@ -289,6 +306,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "StopTime")]
 				public string StopTime
 				{
 					get
@@ -301,6 +319,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "RenewalDurationUnit")]
 				public string RenewalDurationUnit
 				{
 					get
@@ -313,6 +332,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "SubscriptionType")]
 				public string SubscriptionType
 				{
 					get
@@ -325,6 +345,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "OwnerId")]
 				public long? OwnerId
 				{
 					get
@@ -337,6 +358,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "EndTime")]
 				public string EndTime
 				{
 					get
@@ -349,6 +371,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ProductType")]
 				public string ProductType
 				{
 					get
@@ -361,6 +384,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Region")]
 				public string Region
 				{
 					get
@@ -373,6 +397,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ReleaseTime")]
 				public string ReleaseTime
 				{
 					get
@@ -385,6 +410,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "RenewalDuration")]
 				public int? RenewalDuration
 				{
 					get
@@ -397,6 +423,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ProductCode")]
 				public string ProductCode
 				{
 					get

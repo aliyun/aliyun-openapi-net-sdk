@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 
 			describePriceResponse.HttpResponse = _ctx.HttpResponse;
 			describePriceResponse.RequestId = _ctx.StringValue("DescribePrice.RequestId");
+			describePriceResponse.ShowDiscount = _ctx.BooleanValue("DescribePrice.ShowDiscount");
 
 			DescribePriceResponse.DescribePrice_PriceInfo priceInfo = new DescribePriceResponse.DescribePrice_PriceInfo();
 			priceInfo.OriginalPrice = _ctx.FloatValue("DescribePrice.PriceInfo.OriginalPrice");

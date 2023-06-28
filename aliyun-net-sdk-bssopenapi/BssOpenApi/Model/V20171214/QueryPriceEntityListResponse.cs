@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private QueryPriceEntityList_Data data;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public QueryPriceEntityList_Data Data
 		{
 			get
@@ -100,6 +105,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private List<QueryPriceEntityList_PriceEntityInfoDTO> priceEntityInfoList;
 
+			[JsonProperty(PropertyName = "PriceEntityInfoList")]
 			public List<QueryPriceEntityList_PriceEntityInfoDTO> PriceEntityInfoList
 			{
 				get
@@ -121,6 +127,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private List<QueryPriceEntityList_PriceFactorDTO> priceFactorList;
 
+				[JsonProperty(PropertyName = "PriceEntityCode")]
 				public string PriceEntityCode
 				{
 					get
@@ -133,6 +140,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PriceEntityName")]
 				public string PriceEntityName
 				{
 					get
@@ -145,6 +153,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PriceFactorList")]
 				public List<QueryPriceEntityList_PriceFactorDTO> PriceFactorList
 				{
 					get
@@ -166,6 +175,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 					private List<string> priceFactorValueList;
 
+					[JsonProperty(PropertyName = "PriceFactorCode")]
 					public string PriceFactorCode
 					{
 						get
@@ -178,6 +188,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 						}
 					}
 
+					[JsonProperty(PropertyName = "PriceFactorName")]
 					public string PriceFactorName
 					{
 						get
@@ -190,6 +201,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 						}
 					}
 
+					[JsonProperty(PropertyName = "PriceFactorValueList")]
 					public List<string> PriceFactorValueList
 					{
 						get

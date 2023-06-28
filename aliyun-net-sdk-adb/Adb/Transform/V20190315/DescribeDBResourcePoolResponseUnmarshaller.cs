@@ -32,6 +32,7 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 
 			describeDBResourcePoolResponse.HttpResponse = _ctx.HttpResponse;
 			describeDBResourcePoolResponse.RequestId = _ctx.StringValue("DescribeDBResourcePool.RequestId");
+			describeDBResourcePoolResponse.DBClusterId = _ctx.StringValue("DescribeDBResourcePool.DBClusterId");
 
 			List<DescribeDBResourcePoolResponse.DescribeDBResourcePool_PoolInfo> describeDBResourcePoolResponse_poolsInfo = new List<DescribeDBResourcePoolResponse.DescribeDBResourcePool_PoolInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeDBResourcePool.PoolsInfo.Length"); i++) {

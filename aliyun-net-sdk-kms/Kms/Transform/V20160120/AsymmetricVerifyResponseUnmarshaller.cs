@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			AsymmetricVerifyResponse asymmetricVerifyResponse = new AsymmetricVerifyResponse();
 
 			asymmetricVerifyResponse.HttpResponse = _ctx.HttpResponse;
-			asymmetricVerifyResponse._Value = _ctx.BooleanValue("AsymmetricVerify.Value");
-			asymmetricVerifyResponse.KeyId = _ctx.StringValue("AsymmetricVerify.KeyId");
-			asymmetricVerifyResponse.RequestId = _ctx.StringValue("AsymmetricVerify.RequestId");
 			asymmetricVerifyResponse.KeyVersionId = _ctx.StringValue("AsymmetricVerify.KeyVersionId");
+			asymmetricVerifyResponse.KeyId = _ctx.StringValue("AsymmetricVerify.KeyId");
+			asymmetricVerifyResponse._Value = _ctx.BooleanValue("AsymmetricVerify.Value");
+			asymmetricVerifyResponse.RequestId = _ctx.StringValue("AsymmetricVerify.RequestId");
         
 			return asymmetricVerifyResponse;
         }

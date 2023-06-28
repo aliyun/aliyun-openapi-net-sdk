@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private QueryRedeem_Data data;
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public QueryRedeem_Data Data
 		{
 			get
@@ -106,6 +111,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private List<QueryRedeem_RedeemItem> redeem;
 
+			[JsonProperty(PropertyName = "PageNum")]
 			public long? PageNum
 			{
 				get
@@ -118,6 +124,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "PageSize")]
 			public long? PageSize
 			{
 				get
@@ -130,6 +137,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "TotalCount")]
 			public long? TotalCount
 			{
 				get
@@ -142,6 +150,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "Redeem")]
 			public List<QueryRedeem_RedeemItem> Redeem
 			{
 				get
@@ -177,6 +186,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string balance;
 
+				[JsonProperty(PropertyName = "ExpiryTime")]
 				public string ExpiryTime
 				{
 					get
@@ -189,6 +199,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "GrantedTime")]
 				public string GrantedTime
 				{
 					get
@@ -201,6 +212,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Status")]
 				public string Status
 				{
 					get
@@ -213,6 +225,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Specification")]
 				public string Specification
 				{
 					get
@@ -225,6 +238,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "NominalValue")]
 				public string NominalValue
 				{
 					get
@@ -237,6 +251,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "EffectiveTime")]
 				public string EffectiveTime
 				{
 					get
@@ -249,6 +264,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "RedeemId")]
 				public string RedeemId
 				{
 					get
@@ -261,6 +277,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "RedeemNo")]
 				public string RedeemNo
 				{
 					get
@@ -273,6 +290,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ApplicableProducts")]
 				public string ApplicableProducts
 				{
 					get
@@ -285,6 +303,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Balance")]
 				public string Balance
 				{
 					get

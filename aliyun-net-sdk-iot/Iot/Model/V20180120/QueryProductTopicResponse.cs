@@ -108,6 +108,10 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string id;
 
+			private bool? enableProxySubscribe;
+
+			private string codec;
+
 			public string ProductKey
 			{
 				get
@@ -165,6 +169,30 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					id = value;
+				}
+			}
+
+			public bool? EnableProxySubscribe
+			{
+				get
+				{
+					return enableProxySubscribe;
+				}
+				set	
+				{
+					enableProxySubscribe = value;
+				}
+			}
+
+			public string Codec
+			{
+				get
+				{
+					return codec;
+				}
+				set	
+				{
+					codec = value;
 				}
 			}
 		}

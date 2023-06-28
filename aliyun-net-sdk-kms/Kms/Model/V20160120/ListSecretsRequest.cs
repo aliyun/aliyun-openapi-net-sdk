@@ -42,27 +42,15 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Method = MethodType.POST;
         }
 
-		private int? pageSize;
-
 		private string filters;
-
-		private string fetchTags;
 
 		private int? pageNumber;
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
+		private int? pageSize;
 
+		private string fetchTags;
+
+		[JsonProperty(PropertyName = "Filters")]
 		public string Filters
 		{
 			get
@@ -76,19 +64,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public string FetchTags
-		{
-			get
-			{
-				return fetchTags;
-			}
-			set	
-			{
-				fetchTags = value;
-				DictionaryUtil.Add(QueryParameters, "FetchTags", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -99,6 +75,34 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageSize")]
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "FetchTags")]
+		public string FetchTags
+		{
+			get
+			{
+				return fetchTags;
+			}
+			set	
+			{
+				fetchTags = value;
+				DictionaryUtil.Add(QueryParameters, "FetchTags", value);
 			}
 		}
 

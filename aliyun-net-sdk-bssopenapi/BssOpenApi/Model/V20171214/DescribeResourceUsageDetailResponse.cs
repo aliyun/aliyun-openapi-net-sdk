@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private DescribeResourceUsageDetail_Data data;
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public DescribeResourceUsageDetail_Data Data
 		{
 			get
@@ -106,6 +111,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private List<DescribeResourceUsageDetail_Item> items;
 
+			[JsonProperty(PropertyName = "NextToken")]
 			public string NextToken
 			{
 				get
@@ -118,6 +124,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "TotalCount")]
 			public int? TotalCount
 			{
 				get
@@ -130,6 +137,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "MaxResults")]
 			public int? MaxResults
 			{
 				get
@@ -142,6 +150,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "Items")]
 			public List<DescribeResourceUsageDetail_Item> Items
 			{
 				get
@@ -203,6 +212,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private long? quantity;
 
+				[JsonProperty(PropertyName = "Status")]
 				public string Status
 				{
 					get
@@ -215,6 +225,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "UsagePercentage")]
 				public float? UsagePercentage
 				{
 					get
@@ -227,6 +238,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ResourceInstanceId")]
 				public string ResourceInstanceId
 				{
 					get
@@ -239,6 +251,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "TotalQuantity")]
 				public float? TotalQuantity
 				{
 					get
@@ -251,6 +264,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ReservationCost")]
 				public string ReservationCost
 				{
 					get
@@ -263,6 +277,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "RegionNo")]
 				public string RegionNo
 				{
 					get
@@ -275,6 +290,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "UserId")]
 				public string UserId
 				{
 					get
@@ -287,6 +303,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "StatusName")]
 				public string StatusName
 				{
 					get
@@ -299,6 +316,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "CapacityUnit")]
 				public string CapacityUnit
 				{
 					get
@@ -311,6 +329,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PotentialSavedCost")]
 				public string PotentialSavedCost
 				{
 					get
@@ -323,6 +342,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Currency")]
 				public string Currency
 				{
 					get
@@ -335,6 +355,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ZoneName")]
 				public string ZoneName
 				{
 					get
@@ -347,6 +368,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "InstanceSpec")]
 				public string InstanceSpec
 				{
 					get
@@ -359,6 +381,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "EndTime")]
 				public string EndTime
 				{
 					get
@@ -371,6 +394,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PostpaidCost")]
 				public string PostpaidCost
 				{
 					get
@@ -383,6 +407,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ImageType")]
 				public string ImageType
 				{
 					get
@@ -395,6 +420,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "StartTime")]
 				public string StartTime
 				{
 					get
@@ -407,6 +433,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Region")]
 				public string Region
 				{
 					get
@@ -419,6 +446,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "DeductQuantity")]
 				public float? DeductQuantity
 				{
 					get
@@ -431,6 +459,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "SavedCost")]
 				public string SavedCost
 				{
 					get
@@ -443,6 +472,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Zone")]
 				public string Zone
 				{
 					get
@@ -455,6 +485,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "UserName")]
 				public string UserName
 				{
 					get
@@ -467,6 +498,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Quantity")]
 				public long? Quantity
 				{
 					get

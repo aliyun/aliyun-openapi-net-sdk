@@ -169,6 +169,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
         public override DescribeDBInstanceEncryptionKeyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeDBInstanceEncryptionKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);

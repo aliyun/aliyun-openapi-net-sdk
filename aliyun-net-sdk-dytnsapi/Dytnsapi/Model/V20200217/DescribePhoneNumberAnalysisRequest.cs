@@ -51,7 +51,7 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 
 		private long? ownerId;
 
-		private int? numberType;
+		private long? numberType;
 
 		private string authCode;
 
@@ -122,7 +122,7 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 			}
 		}
 
-		public int? NumberType
+		public long? NumberType
 		{
 			get
 			{

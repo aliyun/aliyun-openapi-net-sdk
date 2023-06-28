@@ -156,21 +156,9 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class Tag
 		{
 
-			private string value_;
-
 			private string key;
 
-			public string Value_
-			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
-			}
+			private string value_;
 
 			public string Key
 			{
@@ -181,6 +169,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					key = value;
+				}
+			}
+
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
 				}
 			}
 		}

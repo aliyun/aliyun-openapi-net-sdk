@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
@@ -25,108 +25,39 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 	public class DescribeSecretResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string arn;
-
-		private string secretName;
-
-		private string encryptionKeyId;
-
-		private string description;
+		private string updateTime;
 
 		private string createTime;
 
-		private string updateTime;
+		private string nextRotationDate;
 
-		private string plannedDeleteTime;
-
-		private string automaticRotation;
-
-		private string lastRotationDate;
+		private string encryptionKeyId;
 
 		private string rotationInterval;
 
-		private string nextRotationDate;
+		private string arn;
 
 		private string extendedConfig;
 
+		private string lastRotationDate;
+
+		private string requestId;
+
+		private string description;
+
+		private string secretName;
+
+		private string automaticRotation;
+
 		private string secretType;
+
+		private string plannedDeleteTime;
+
+		private string dKMSInstanceId;
 
 		private List<DescribeSecret_Tag> tags;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string Arn
-		{
-			get
-			{
-				return arn;
-			}
-			set	
-			{
-				arn = value;
-			}
-		}
-
-		public string SecretName
-		{
-			get
-			{
-				return secretName;
-			}
-			set	
-			{
-				secretName = value;
-			}
-		}
-
-		public string EncryptionKeyId
-		{
-			get
-			{
-				return encryptionKeyId;
-			}
-			set	
-			{
-				encryptionKeyId = value;
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-			}
-		}
-
-		public string CreateTime
-		{
-			get
-			{
-				return createTime;
-			}
-			set	
-			{
-				createTime = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "UpdateTime")]
 		public string UpdateTime
 		{
 			get
@@ -139,54 +70,20 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public string PlannedDeleteTime
+		[JsonProperty(PropertyName = "CreateTime")]
+		public string CreateTime
 		{
 			get
 			{
-				return plannedDeleteTime;
+				return createTime;
 			}
 			set	
 			{
-				plannedDeleteTime = value;
+				createTime = value;
 			}
 		}
 
-		public string AutomaticRotation
-		{
-			get
-			{
-				return automaticRotation;
-			}
-			set	
-			{
-				automaticRotation = value;
-			}
-		}
-
-		public string LastRotationDate
-		{
-			get
-			{
-				return lastRotationDate;
-			}
-			set	
-			{
-				lastRotationDate = value;
-			}
-		}
-
-		public string RotationInterval
-		{
-			get
-			{
-				return rotationInterval;
-			}
-			set	
-			{
-				rotationInterval = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "NextRotationDate")]
 		public string NextRotationDate
 		{
 			get
@@ -199,6 +96,46 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "EncryptionKeyId")]
+		public string EncryptionKeyId
+		{
+			get
+			{
+				return encryptionKeyId;
+			}
+			set	
+			{
+				encryptionKeyId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RotationInterval")]
+		public string RotationInterval
+		{
+			get
+			{
+				return rotationInterval;
+			}
+			set	
+			{
+				rotationInterval = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Arn")]
+		public string Arn
+		{
+			get
+			{
+				return arn;
+			}
+			set	
+			{
+				arn = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ExtendedConfig")]
 		public string ExtendedConfig
 		{
 			get
@@ -211,6 +148,72 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "LastRotationDate")]
+		public string LastRotationDate
+		{
+			get
+			{
+				return lastRotationDate;
+			}
+			set	
+			{
+				lastRotationDate = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Description")]
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "SecretName")]
+		public string SecretName
+		{
+			get
+			{
+				return secretName;
+			}
+			set	
+			{
+				secretName = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "AutomaticRotation")]
+		public string AutomaticRotation
+		{
+			get
+			{
+				return automaticRotation;
+			}
+			set	
+			{
+				automaticRotation = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "SecretType")]
 		public string SecretType
 		{
 			get
@@ -223,6 +226,33 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "PlannedDeleteTime")]
+		public string PlannedDeleteTime
+		{
+			get
+			{
+				return plannedDeleteTime;
+			}
+			set	
+			{
+				plannedDeleteTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DKMSInstanceId")]
+		public string DKMSInstanceId
+		{
+			get
+			{
+				return dKMSInstanceId;
+			}
+			set	
+			{
+				dKMSInstanceId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Tags")]
 		public List<DescribeSecret_Tag> Tags
 		{
 			get
@@ -238,22 +268,11 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 		public class DescribeSecret_Tag
 		{
 
-			private string tagKey;
-
 			private string tagValue;
 
-			public string TagKey
-			{
-				get
-				{
-					return tagKey;
-				}
-				set	
-				{
-					tagKey = value;
-				}
-			}
+			private string tagKey;
 
+			[JsonProperty(PropertyName = "TagValue")]
 			public string TagValue
 			{
 				get
@@ -263,6 +282,19 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 				set	
 				{
 					tagValue = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TagKey")]
+			public string TagKey
+			{
+				get
+				{
+					return tagKey;
+				}
+				set	
+				{
+					tagKey = value;
 				}
 			}
 		}

@@ -43,6 +43,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string data;
 
+		private bool? skipAudit;
+
 		private int? type;
 
 		private string operatorUserId;
@@ -62,6 +64,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				data = value;
 				DictionaryUtil.Add(BodyParameters, "Data", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "SkipAudit")]
+		public bool? SkipAudit
+		{
+			get
+			{
+				return skipAudit;
+			}
+			set	
+			{
+				skipAudit = value;
+				DictionaryUtil.Add(QueryParameters, "SkipAudit", value.ToString());
 			}
 		}
 

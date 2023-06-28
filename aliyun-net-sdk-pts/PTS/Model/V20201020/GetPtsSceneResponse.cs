@@ -128,6 +128,8 @@ namespace Aliyun.Acs.PTS.Model.V20201020
 
 			private List<GetPtsScene_GlobalParameter> globalParameterList;
 
+			private List<GetPtsScene_Header1> headers;
+
 			private GetPtsScene_LoadConfig loadConfig;
 
 			private GetPtsScene_AdvanceSetting advanceSetting;
@@ -225,6 +227,18 @@ namespace Aliyun.Acs.PTS.Model.V20201020
 				set	
 				{
 					globalParameterList = value;
+				}
+			}
+
+			public List<GetPtsScene_Header1> Headers
+			{
+				get
+				{
+					return headers;
+				}
+				set	
+				{
+					headers = value;
 				}
 			}
 
@@ -760,6 +774,38 @@ namespace Aliyun.Acs.PTS.Model.V20201020
 					set	
 					{
 						paramValue = value;
+					}
+				}
+			}
+
+			public class GetPtsScene_Header1
+			{
+
+				private string name;
+
+				private string _value;
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
 					}
 				}
 			}

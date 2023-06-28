@@ -42,12 +42,27 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Method = MethodType.POST;
         }
 
+		private string deletionProtectionDescription;
+
 		private bool? enableDeletionProtection;
 
 		private string protectedResourceArn;
 
-		private string deletionProtectionDescription;
+		[JsonProperty(PropertyName = "DeletionProtectionDescription")]
+		public string DeletionProtectionDescription
+		{
+			get
+			{
+				return deletionProtectionDescription;
+			}
+			set	
+			{
+				deletionProtectionDescription = value;
+				DictionaryUtil.Add(QueryParameters, "DeletionProtectionDescription", value);
+			}
+		}
 
+		[JsonProperty(PropertyName = "EnableDeletionProtection")]
 		public bool? EnableDeletionProtection
 		{
 			get
@@ -61,6 +76,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "ProtectedResourceArn")]
 		public string ProtectedResourceArn
 		{
 			get
@@ -71,19 +87,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				protectedResourceArn = value;
 				DictionaryUtil.Add(QueryParameters, "ProtectedResourceArn", value);
-			}
-		}
-
-		public string DeletionProtectionDescription
-		{
-			get
-			{
-				return deletionProtectionDescription;
-			}
-			set	
-			{
-				deletionProtectionDescription = value;
-				DictionaryUtil.Add(QueryParameters, "DeletionProtectionDescription", value);
 			}
 		}
 

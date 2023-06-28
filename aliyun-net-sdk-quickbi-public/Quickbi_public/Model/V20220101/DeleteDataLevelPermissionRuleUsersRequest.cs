@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class DeleteDataLevelPermissionRuleUsersRequest : RpcAcsRequest<DeleteDataLevelPermissionRuleUsersResponse>
     {
         public DeleteDataLevelPermissionRuleUsersRequest()
-            : base("quickbi-public", "2022-01-01", "DeleteDataLevelPermissionRuleUsers", "quickbi", "openAPI")
+            : base("quickbi-public", "2022-01-01", "DeleteDataLevelPermissionRuleUsers", "2.2.0", "openAPI")
         {
 			Method = MethodType.POST;
         }

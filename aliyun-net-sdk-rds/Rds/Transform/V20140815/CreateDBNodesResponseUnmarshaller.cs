@@ -34,6 +34,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			createDBNodesResponse.RequestId = _ctx.StringValue("CreateDBNodes.RequestId");
 			createDBNodesResponse.DBInstanceId = _ctx.StringValue("CreateDBNodes.DBInstanceId");
 			createDBNodesResponse.OrderId = _ctx.LongValue("CreateDBNodes.OrderId");
+			createDBNodesResponse.NodeIds = _ctx.StringValue("CreateDBNodes.NodeIds");
         
 			return createDBNodesResponse;
         }

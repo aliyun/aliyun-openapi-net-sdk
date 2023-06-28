@@ -37,8 +37,8 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			for (int i = 0; i < _ctx.Length("ListResourceTags.Tags.Length"); i++) {
 				ListResourceTagsResponse.ListResourceTags_Tag tag = new ListResourceTagsResponse.ListResourceTags_Tag();
 				tag.KeyId = _ctx.StringValue("ListResourceTags.Tags["+ i +"].KeyId");
-				tag.TagKey = _ctx.StringValue("ListResourceTags.Tags["+ i +"].TagKey");
 				tag.TagValue = _ctx.StringValue("ListResourceTags.Tags["+ i +"].TagValue");
+				tag.TagKey = _ctx.StringValue("ListResourceTags.Tags["+ i +"].TagKey");
 
 				listResourceTagsResponse_tags.Add(tag);
 			}

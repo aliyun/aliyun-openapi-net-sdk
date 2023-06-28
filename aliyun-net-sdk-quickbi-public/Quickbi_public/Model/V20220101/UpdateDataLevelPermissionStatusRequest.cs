@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class UpdateDataLevelPermissionStatusRequest : RpcAcsRequest<UpdateDataLevelPermissionStatusResponse>
     {
         public UpdateDataLevelPermissionStatusRequest()
-            : base("quickbi-public", "2022-01-01", "UpdateDataLevelPermissionStatus", "quickbi", "openAPI")
+            : base("quickbi-public", "2022-01-01", "UpdateDataLevelPermissionStatus", "2.2.0", "openAPI")
         {
 			Method = MethodType.POST;
         }

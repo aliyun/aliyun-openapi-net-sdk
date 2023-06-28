@@ -47,7 +47,6 @@ namespace Aliyun.Acs.Mns_open.Transform.V20220119
 			data.LastModifyTime = _ctx.LongValue("GetSubscriptionAttributes.Data.LastModifyTime");
 			data.NotifyStrategy = _ctx.StringValue("GetSubscriptionAttributes.Data.NotifyStrategy");
 			data.NotifyContentFormat = _ctx.StringValue("GetSubscriptionAttributes.Data.NotifyContentFormat");
-			data.SubscriptionURL = _ctx.StringValue("GetSubscriptionAttributes.Data.SubscriptionURL");
 			getSubscriptionAttributesResponse.Data = data;
         
 			return getSubscriptionAttributesResponse;

@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.alinlp;
 using Aliyun.Acs.alinlp.Transform;
 using Aliyun.Acs.alinlp.Transform.V20200629;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.alinlp.Model.V20200629
     public class GetDpChEcomRequest : RpcAcsRequest<GetDpChEcomResponse>
     {
         public GetDpChEcomRequest()
-            : base("alinlp", "2020-06-29", "GetDpChEcom")
+            : base("alinlp", "2020-06-29", "GetDpChEcom", "alinlp", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

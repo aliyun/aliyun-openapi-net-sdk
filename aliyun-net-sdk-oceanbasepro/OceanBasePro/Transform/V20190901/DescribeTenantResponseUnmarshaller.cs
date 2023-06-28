@@ -56,6 +56,7 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 			tenant.Series = _ctx.StringValue("DescribeTenant.Tenant.Series");
 			tenant.DiskType = _ctx.StringValue("DescribeTenant.Tenant.DiskType");
 			tenant.EnableReadWriteSplit = _ctx.BooleanValue("DescribeTenant.Tenant.EnableReadWriteSplit");
+			tenant.EnableBinlogService = _ctx.BooleanValue("DescribeTenant.Tenant.EnableBinlogService");
 
 			List<string> tenant_availableZones = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeTenant.Tenant.AvailableZones.Length"); i++) {

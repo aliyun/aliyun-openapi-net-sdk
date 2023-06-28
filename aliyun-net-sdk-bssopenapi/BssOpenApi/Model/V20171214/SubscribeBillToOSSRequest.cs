@@ -51,6 +51,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string beginBillingCycle;
 
+		private int? rowLimitPerFile;
+
 		private string multAccountRelSubscribe;
 
 		[JsonProperty(PropertyName = "BucketOwnerId")]
@@ -120,6 +122,20 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				beginBillingCycle = value;
 				DictionaryUtil.Add(QueryParameters, "BeginBillingCycle", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "RowLimitPerFile")]
+		public int? RowLimitPerFile
+		{
+			get
+			{
+				return rowLimitPerFile;
+			}
+			set	
+			{
+				rowLimitPerFile = value;
+				DictionaryUtil.Add(QueryParameters, "RowLimitPerFile", value.ToString());
 			}
 		}
 

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private CreateKey_KeyMetadata keyMetadata;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "KeyMetadata")]
 		public CreateKey_KeyMetadata KeyMetadata
 		{
 			get
@@ -56,64 +58,43 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 		public class CreateKey_KeyMetadata
 		{
 
-			private string creationDate;
-
-			private string description;
-
 			private string keyId;
+
+			private string nextRotationDate;
 
 			private string keyState;
 
-			private string keyUsage;
+			private string rotationInterval;
 
-			private string deleteDate;
+			private string arn;
 
 			private string creator;
 
-			private string arn;
+			private string lastRotationDate;
+
+			private string deleteDate;
+
+			private string primaryKeyVersion;
+
+			private string description;
+
+			private string keySpec;
 
 			private string origin;
 
 			private string materialExpireTime;
 
-			private string protectionLevel;
-
-			private string primaryKeyVersion;
-
-			private string lastRotationDate;
-
 			private string automaticRotation;
 
-			private string rotationInterval;
+			private string protectionLevel;
 
-			private string nextRotationDate;
+			private string keyUsage;
 
-			private string keySpec;
+			private string creationDate;
 
-			public string CreationDate
-			{
-				get
-				{
-					return creationDate;
-				}
-				set	
-				{
-					creationDate = value;
-				}
-			}
+			private string dKMSInstanceId;
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "KeyId")]
 			public string KeyId
 			{
 				get
@@ -126,150 +107,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 				}
 			}
 
-			public string KeyState
-			{
-				get
-				{
-					return keyState;
-				}
-				set	
-				{
-					keyState = value;
-				}
-			}
-
-			public string KeyUsage
-			{
-				get
-				{
-					return keyUsage;
-				}
-				set	
-				{
-					keyUsage = value;
-				}
-			}
-
-			public string DeleteDate
-			{
-				get
-				{
-					return deleteDate;
-				}
-				set	
-				{
-					deleteDate = value;
-				}
-			}
-
-			public string Creator
-			{
-				get
-				{
-					return creator;
-				}
-				set	
-				{
-					creator = value;
-				}
-			}
-
-			public string Arn
-			{
-				get
-				{
-					return arn;
-				}
-				set	
-				{
-					arn = value;
-				}
-			}
-
-			public string Origin
-			{
-				get
-				{
-					return origin;
-				}
-				set	
-				{
-					origin = value;
-				}
-			}
-
-			public string MaterialExpireTime
-			{
-				get
-				{
-					return materialExpireTime;
-				}
-				set	
-				{
-					materialExpireTime = value;
-				}
-			}
-
-			public string ProtectionLevel
-			{
-				get
-				{
-					return protectionLevel;
-				}
-				set	
-				{
-					protectionLevel = value;
-				}
-			}
-
-			public string PrimaryKeyVersion
-			{
-				get
-				{
-					return primaryKeyVersion;
-				}
-				set	
-				{
-					primaryKeyVersion = value;
-				}
-			}
-
-			public string LastRotationDate
-			{
-				get
-				{
-					return lastRotationDate;
-				}
-				set	
-				{
-					lastRotationDate = value;
-				}
-			}
-
-			public string AutomaticRotation
-			{
-				get
-				{
-					return automaticRotation;
-				}
-				set	
-				{
-					automaticRotation = value;
-				}
-			}
-
-			public string RotationInterval
-			{
-				get
-				{
-					return rotationInterval;
-				}
-				set	
-				{
-					rotationInterval = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "NextRotationDate")]
 			public string NextRotationDate
 			{
 				get
@@ -282,6 +120,111 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 				}
 			}
 
+			[JsonProperty(PropertyName = "KeyState")]
+			public string KeyState
+			{
+				get
+				{
+					return keyState;
+				}
+				set	
+				{
+					keyState = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RotationInterval")]
+			public string RotationInterval
+			{
+				get
+				{
+					return rotationInterval;
+				}
+				set	
+				{
+					rotationInterval = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Arn")]
+			public string Arn
+			{
+				get
+				{
+					return arn;
+				}
+				set	
+				{
+					arn = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Creator")]
+			public string Creator
+			{
+				get
+				{
+					return creator;
+				}
+				set	
+				{
+					creator = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LastRotationDate")]
+			public string LastRotationDate
+			{
+				get
+				{
+					return lastRotationDate;
+				}
+				set	
+				{
+					lastRotationDate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DeleteDate")]
+			public string DeleteDate
+			{
+				get
+				{
+					return deleteDate;
+				}
+				set	
+				{
+					deleteDate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PrimaryKeyVersion")]
+			public string PrimaryKeyVersion
+			{
+				get
+				{
+					return primaryKeyVersion;
+				}
+				set	
+				{
+					primaryKeyVersion = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Description")]
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "KeySpec")]
 			public string KeySpec
 			{
 				get
@@ -291,6 +234,97 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 				set	
 				{
 					keySpec = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Origin")]
+			public string Origin
+			{
+				get
+				{
+					return origin;
+				}
+				set	
+				{
+					origin = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MaterialExpireTime")]
+			public string MaterialExpireTime
+			{
+				get
+				{
+					return materialExpireTime;
+				}
+				set	
+				{
+					materialExpireTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AutomaticRotation")]
+			public string AutomaticRotation
+			{
+				get
+				{
+					return automaticRotation;
+				}
+				set	
+				{
+					automaticRotation = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ProtectionLevel")]
+			public string ProtectionLevel
+			{
+				get
+				{
+					return protectionLevel;
+				}
+				set	
+				{
+					protectionLevel = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "KeyUsage")]
+			public string KeyUsage
+			{
+				get
+				{
+					return keyUsage;
+				}
+				set	
+				{
+					keyUsage = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CreationDate")]
+			public string CreationDate
+			{
+				get
+				{
+					return creationDate;
+				}
+				set	
+				{
+					creationDate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DKMSInstanceId")]
+			public string DKMSInstanceId
+			{
+				get
+				{
+					return dKMSInstanceId;
+				}
+				set	
+				{
+					dKMSInstanceId = value;
 				}
 			}
 		}

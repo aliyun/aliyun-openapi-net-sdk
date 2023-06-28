@@ -34,6 +34,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			createFlowLogResponse.RequestId = _ctx.StringValue("CreateFlowLog.RequestId");
 			createFlowLogResponse.Success = _ctx.StringValue("CreateFlowLog.Success");
 			createFlowLogResponse.FlowLogId = _ctx.StringValue("CreateFlowLog.FlowLogId");
+			createFlowLogResponse.ResourceGroupId = _ctx.StringValue("CreateFlowLog.ResourceGroupId");
         
 			return createFlowLogResponse;
         }

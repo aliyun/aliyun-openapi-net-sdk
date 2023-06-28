@@ -60,6 +60,8 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private long? ownerId;
 
+		private string dBVersion;
+
 		private string dBClusterIds;
 
 		public long? ResourceOwnerId
@@ -197,6 +199,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string DBVersion
+		{
+			get
+			{
+				return dBVersion;
+			}
+			set	
+			{
+				dBVersion = value;
+				DictionaryUtil.Add(QueryParameters, "DBVersion", value);
 			}
 		}
 

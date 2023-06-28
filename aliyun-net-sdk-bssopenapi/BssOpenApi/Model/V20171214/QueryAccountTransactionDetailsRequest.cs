@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -58,6 +59,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string transactionNumber;
 
+		[JsonProperty(PropertyName = "TransactionType")]
 		public string TransactionType
 		{
 			get
@@ -71,6 +73,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "CreateTimeEnd")]
 		public string CreateTimeEnd
 		{
 			get
@@ -84,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RecordID")]
 		public string RecordID
 		{
 			get
@@ -97,6 +101,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "NextToken")]
 		public string NextToken
 		{
 			get
@@ -110,6 +115,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "MaxResults")]
 		public int? MaxResults
 		{
 			get
@@ -123,6 +129,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "TransactionChannel")]
 		public string TransactionChannel
 		{
 			get
@@ -136,6 +143,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "TransactionChannelSN")]
 		public string TransactionChannelSN
 		{
 			get
@@ -149,6 +157,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "CreateTimeStart")]
 		public string CreateTimeStart
 		{
 			get
@@ -162,6 +171,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "TransactionNumber")]
 		public string TransactionNumber
 		{
 			get

@@ -48,6 +48,9 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			mezzanine.CRC64 = _ctx.StringValue("GetMezzanineInfo.Mezzanine.CRC64");
 			mezzanine.Duration = _ctx.StringValue("GetMezzanineInfo.Mezzanine.Duration");
 			mezzanine.Fps = _ctx.StringValue("GetMezzanineInfo.Mezzanine.Fps");
+			mezzanine.StorageClass = _ctx.StringValue("GetMezzanineInfo.Mezzanine.StorageClass");
+			mezzanine.RestoreStatus = _ctx.StringValue("GetMezzanineInfo.Mezzanine.RestoreStatus");
+			mezzanine.RestoreExpiration = _ctx.StringValue("GetMezzanineInfo.Mezzanine.RestoreExpiration");
 
 			List<GetMezzanineInfoResponse.GetMezzanineInfo_Mezzanine.GetMezzanineInfo_AudioStream> mezzanine_audioStreamList = new List<GetMezzanineInfoResponse.GetMezzanineInfo_Mezzanine.GetMezzanineInfo_AudioStream>();
 			for (int i = 0; i < _ctx.Length("GetMezzanineInfo.Mezzanine.AudioStreamList.Length"); i++) {

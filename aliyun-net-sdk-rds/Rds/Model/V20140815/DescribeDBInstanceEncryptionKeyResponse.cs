@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string creator;
 
+		private List<DescribeDBInstanceEncryptionKey_EncryptionKeyInfo> encryptionKeyList;
+
 		[JsonProperty(PropertyName = "DeleteDate")]
 		public string DeleteDate
 		{
@@ -157,6 +159,188 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				creator = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "EncryptionKeyList")]
+		public List<DescribeDBInstanceEncryptionKey_EncryptionKeyInfo> EncryptionKeyList
+		{
+			get
+			{
+				return encryptionKeyList;
+			}
+			set	
+			{
+				encryptionKeyList = value;
+			}
+		}
+
+		public class DescribeDBInstanceEncryptionKey_EncryptionKeyInfo
+		{
+
+			private string keyType;
+
+			private string encryptionKey;
+
+			private string description;
+
+			private string keyUsage;
+
+			private string deleteDate;
+
+			private string creator;
+
+			private string encryptionKeyStatus;
+
+			private string origin;
+
+			private string materialExpireTime;
+
+			private string aliasName;
+
+			private string usedBy;
+
+			[JsonProperty(PropertyName = "KeyType")]
+			public string KeyType
+			{
+				get
+				{
+					return keyType;
+				}
+				set	
+				{
+					keyType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EncryptionKey")]
+			public string EncryptionKey
+			{
+				get
+				{
+					return encryptionKey;
+				}
+				set	
+				{
+					encryptionKey = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Description")]
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "KeyUsage")]
+			public string KeyUsage
+			{
+				get
+				{
+					return keyUsage;
+				}
+				set	
+				{
+					keyUsage = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DeleteDate")]
+			public string DeleteDate
+			{
+				get
+				{
+					return deleteDate;
+				}
+				set	
+				{
+					deleteDate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Creator")]
+			public string Creator
+			{
+				get
+				{
+					return creator;
+				}
+				set	
+				{
+					creator = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EncryptionKeyStatus")]
+			public string EncryptionKeyStatus
+			{
+				get
+				{
+					return encryptionKeyStatus;
+				}
+				set	
+				{
+					encryptionKeyStatus = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Origin")]
+			public string Origin
+			{
+				get
+				{
+					return origin;
+				}
+				set	
+				{
+					origin = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MaterialExpireTime")]
+			public string MaterialExpireTime
+			{
+				get
+				{
+					return materialExpireTime;
+				}
+				set	
+				{
+					materialExpireTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AliasName")]
+			public string AliasName
+			{
+				get
+				{
+					return aliasName;
+				}
+				set	
+				{
+					aliasName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "UsedBy")]
+			public string UsedBy
+			{
+				get
+				{
+					return usedBy;
+				}
+				set	
+				{
+					usedBy = value;
+				}
 			}
 		}
 	}

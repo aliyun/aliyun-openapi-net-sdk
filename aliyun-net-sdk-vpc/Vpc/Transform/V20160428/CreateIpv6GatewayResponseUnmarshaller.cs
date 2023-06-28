@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 
 			createIpv6GatewayResponse.HttpResponse = _ctx.HttpResponse;
 			createIpv6GatewayResponse.Ipv6GatewayId = _ctx.StringValue("CreateIpv6Gateway.Ipv6GatewayId");
+			createIpv6GatewayResponse.ResourceGroupId = _ctx.StringValue("CreateIpv6Gateway.ResourceGroupId");
 			createIpv6GatewayResponse.RequestId = _ctx.StringValue("CreateIpv6Gateway.RequestId");
         
 			return createIpv6GatewayResponse;

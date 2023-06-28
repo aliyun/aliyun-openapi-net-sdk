@@ -47,6 +47,19 @@ namespace Aliyun.Acs.videorecog.Transform.V20200320
 				data_elements.Add(elementsItem);
 			}
 			data.Elements = data_elements;
+
+			List<SplitVideoPartsResponse.SplitVideoParts_Data.SplitVideoParts_SplitVideoPartResultsItem> data_splitVideoPartResults = new List<SplitVideoPartsResponse.SplitVideoParts_Data.SplitVideoParts_SplitVideoPartResultsItem>();
+			for (int i = 0; i < _ctx.Length("SplitVideoParts.Data.SplitVideoPartResults.Length"); i++) {
+				SplitVideoPartsResponse.SplitVideoParts_Data.SplitVideoParts_SplitVideoPartResultsItem splitVideoPartResultsItem = new SplitVideoPartsResponse.SplitVideoParts_Data.SplitVideoParts_SplitVideoPartResultsItem();
+				splitVideoPartResultsItem.BeginTime = _ctx.FloatValue("SplitVideoParts.Data.SplitVideoPartResults["+ i +"].BeginTime");
+				splitVideoPartResultsItem.EndTime = _ctx.FloatValue("SplitVideoParts.Data.SplitVideoPartResults["+ i +"].EndTime");
+				splitVideoPartResultsItem.Theme = _ctx.StringValue("SplitVideoParts.Data.SplitVideoPartResults["+ i +"].Theme");
+				splitVideoPartResultsItem.Type = _ctx.StringValue("SplitVideoParts.Data.SplitVideoPartResults["+ i +"].Type");
+				splitVideoPartResultsItem.By = _ctx.StringValue("SplitVideoParts.Data.SplitVideoPartResults["+ i +"].By");
+
+				data_splitVideoPartResults.Add(splitVideoPartResultsItem);
+			}
+			data.SplitVideoPartResults = data_splitVideoPartResults;
 			splitVideoPartsResponse.Data = data;
         
 			return splitVideoPartsResponse;

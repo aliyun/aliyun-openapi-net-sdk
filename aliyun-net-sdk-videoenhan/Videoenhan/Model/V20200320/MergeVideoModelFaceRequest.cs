@@ -42,6 +42,8 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 
 		private string faceImageURL;
 
+		private List<string> mergeInfoss = new List<string>(){ };
+
 		private string templateId;
 
 		public string FaceImageURL
@@ -57,6 +59,28 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			}
 		}
 
+		public List<string> MergeInfoss
+		{
+			get
+			{
+				return mergeInfoss;
+			}
+
+			set
+			{
+				mergeInfoss = value;
+				if(mergeInfoss != null)
+				{
+					for (int depth1 = 0; depth1 < mergeInfoss.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"MergeInfos." + (depth1 + 1), mergeInfoss[depth1]);
+						DictionaryUtil.Add(BodyParameters,"MergeInfos." + (depth1 + 1), mergeInfoss[depth1]);
+						DictionaryUtil.Add(BodyParameters,"MergeInfos." + (depth1 + 1), mergeInfoss[depth1]);
+					}
+				}
+			}
+		}
+
 		public string TemplateId
 		{
 			get
@@ -67,6 +91,52 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			{
 				templateId = value;
 				DictionaryUtil.Add(BodyParameters, "TemplateId", value);
+			}
+		}
+
+		public class MergeInfos
+		{
+
+			private string templateFaceURL;
+
+			private string imageURL;
+
+			private string templateFaceID;
+
+			public string TemplateFaceURL
+			{
+				get
+				{
+					return templateFaceURL;
+				}
+				set	
+				{
+					templateFaceURL = value;
+				}
+			}
+
+			public string ImageURL
+			{
+				get
+				{
+					return imageURL;
+				}
+				set	
+				{
+					imageURL = value;
+				}
+			}
+
+			public string TemplateFaceID
+			{
+				get
+				{
+					return templateFaceID;
+				}
+				set	
+				{
+					templateFaceID = value;
+				}
 			}
 		}
 

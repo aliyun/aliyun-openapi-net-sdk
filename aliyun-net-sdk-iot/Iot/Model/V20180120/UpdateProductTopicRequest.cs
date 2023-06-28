@@ -47,6 +47,10 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string topicShortName;
 
+		private bool? enableProxySubscribe;
+
+		private string codec;
+
 		private string operation;
 
 		private string desc;
@@ -87,6 +91,32 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				topicShortName = value;
 				DictionaryUtil.Add(QueryParameters, "TopicShortName", value);
+			}
+		}
+
+		public bool? EnableProxySubscribe
+		{
+			get
+			{
+				return enableProxySubscribe;
+			}
+			set	
+			{
+				enableProxySubscribe = value;
+				DictionaryUtil.Add(QueryParameters, "EnableProxySubscribe", value.ToString());
+			}
+		}
+
+		public string Codec
+		{
+			get
+			{
+				return codec;
+			}
+			set	
+			{
+				codec = value;
+				DictionaryUtil.Add(QueryParameters, "Codec", value);
 			}
 		}
 

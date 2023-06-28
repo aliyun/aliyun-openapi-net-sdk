@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			CertificatePrivateKeySignResponse certificatePrivateKeySignResponse = new CertificatePrivateKeySignResponse();
 
 			certificatePrivateKeySignResponse.HttpResponse = _ctx.HttpResponse;
+			certificatePrivateKeySignResponse.SignatureValue = _ctx.StringValue("CertificatePrivateKeySign.SignatureValue");
 			certificatePrivateKeySignResponse.RequestId = _ctx.StringValue("CertificatePrivateKeySign.RequestId");
 			certificatePrivateKeySignResponse.CertificateId = _ctx.StringValue("CertificatePrivateKeySign.CertificateId");
-			certificatePrivateKeySignResponse.SignatureValue = _ctx.StringValue("CertificatePrivateKeySign.SignatureValue");
         
 			return certificatePrivateKeySignResponse;
         }

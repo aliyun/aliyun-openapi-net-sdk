@@ -32,10 +32,10 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 
 			getParametersForImportResponse.HttpResponse = _ctx.HttpResponse;
 			getParametersForImportResponse.KeyId = _ctx.StringValue("GetParametersForImport.KeyId");
-			getParametersForImportResponse.RequestId = _ctx.StringValue("GetParametersForImport.RequestId");
 			getParametersForImportResponse.ImportToken = _ctx.StringValue("GetParametersForImport.ImportToken");
-			getParametersForImportResponse.PublicKey = _ctx.StringValue("GetParametersForImport.PublicKey");
+			getParametersForImportResponse.RequestId = _ctx.StringValue("GetParametersForImport.RequestId");
 			getParametersForImportResponse.TokenExpireTime = _ctx.StringValue("GetParametersForImport.TokenExpireTime");
+			getParametersForImportResponse.PublicKey = _ctx.StringValue("GetParametersForImport.PublicKey");
         
 			return getParametersForImportResponse;
         }

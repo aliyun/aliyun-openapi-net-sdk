@@ -17,11 +17,13 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Market;
 using Aliyun.Acs.Market.Transform;
 using Aliyun.Acs.Market.Transform.V20151101;
 
@@ -30,41 +32,25 @@ namespace Aliyun.Acs.Market.Model.V20151101
     public class DescribeProductsRequest : RpcAcsRequest<DescribeProductsResponse>
     {
         public DescribeProductsRequest()
-            : base("Market", "2015-11-01", "DescribeProducts", "yunmarket", "openAPI")
+            : base("Market", "2015-11-01", "DescribeProducts")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Market.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Market.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
-
-		private List<Filter> filters = new List<Filter>(){ };
 
 		private string searchTerm;
 
-		private int? pageSize;
-
 		private int? pageNumber;
 
-		public List<Filter> Filters
-		{
-			get
-			{
-				return filters;
-			}
+		private List<string> filters = new List<string>(){ };
 
-			set
-			{
-				filters = value;
-				for (int i = 0; i < filters.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Value", filters[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Key", filters[i].Key);
-				}
-			}
-		}
+		private int? pageSize;
 
+		[JsonProperty(PropertyName = "SearchTerm")]
 		public string SearchTerm
 		{
 			get
@@ -78,19 +64,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -104,6 +78,42 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Filter")]
+		public List<string> Filters
+		{
+			get
+			{
+				return filters;
+			}
+
+			set
+			{
+				filters = value;
+				if(filters != null)
+				{
+					for (int depth1 = 0; depth1 < filters.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Filter." + (depth1 + 1), filters[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Filter." + (depth1 + 1), filters[depth1]);
+					}
+				}
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageSize")]
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
 		public class Filter
 		{
 
@@ -111,7 +121,8 @@ namespace Aliyun.Acs.Market.Model.V20151101
 
 			private string key;
 
-			public string Value
+			[JsonProperty(PropertyName = "Value")]
+			public string Value_
 			{
 				get
 				{
@@ -123,6 +134,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Key")]
 			public string Key
 			{
 				get

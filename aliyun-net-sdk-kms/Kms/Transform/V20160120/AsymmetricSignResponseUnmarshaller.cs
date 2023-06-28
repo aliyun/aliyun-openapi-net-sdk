@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			AsymmetricSignResponse asymmetricSignResponse = new AsymmetricSignResponse();
 
 			asymmetricSignResponse.HttpResponse = _ctx.HttpResponse;
-			asymmetricSignResponse._Value = _ctx.StringValue("AsymmetricSign.Value");
-			asymmetricSignResponse.KeyId = _ctx.StringValue("AsymmetricSign.KeyId");
-			asymmetricSignResponse.RequestId = _ctx.StringValue("AsymmetricSign.RequestId");
 			asymmetricSignResponse.KeyVersionId = _ctx.StringValue("AsymmetricSign.KeyVersionId");
+			asymmetricSignResponse.KeyId = _ctx.StringValue("AsymmetricSign.KeyId");
+			asymmetricSignResponse._Value = _ctx.StringValue("AsymmetricSign.Value");
+			asymmetricSignResponse.RequestId = _ctx.StringValue("AsymmetricSign.RequestId");
         
 			return asymmetricSignResponse;
         }

@@ -140,6 +140,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string engine;
 
+			private string exportKey;
+
+			private List<string> slaveZones;
+
 			[JsonProperty(PropertyName = "VpcId")]
 			public string VpcId
 			{
@@ -670,6 +674,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					engine = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ExportKey")]
+			public string ExportKey
+			{
+				get
+				{
+					return exportKey;
+				}
+				set	
+				{
+					exportKey = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SlaveZones")]
+			public List<string> SlaveZones
+			{
+				get
+				{
+					return slaveZones;
+				}
+				set	
+				{
+					slaveZones = value;
 				}
 			}
 		}

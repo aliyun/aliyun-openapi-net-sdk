@@ -46,6 +46,16 @@ namespace Aliyun.Acs.videoenhan.Transform.V20200320
 				elementsItem.TemplateId = _ctx.StringValue("QueryFaceVideoTemplate.Data.Elements["+ i +"].TemplateId");
 				elementsItem.TemplateURL = _ctx.StringValue("QueryFaceVideoTemplate.Data.Elements["+ i +"].TemplateURL");
 
+				List<QueryFaceVideoTemplateResponse.QueryFaceVideoTemplate_Data.QueryFaceVideoTemplate_ElementsItem.QueryFaceVideoTemplate_FaceInfosItem> elementsItem_faceInfos = new List<QueryFaceVideoTemplateResponse.QueryFaceVideoTemplate_Data.QueryFaceVideoTemplate_ElementsItem.QueryFaceVideoTemplate_FaceInfosItem>();
+				for (int j = 0; j < _ctx.Length("QueryFaceVideoTemplate.Data.Elements["+ i +"].FaceInfos.Length"); j++) {
+					QueryFaceVideoTemplateResponse.QueryFaceVideoTemplate_Data.QueryFaceVideoTemplate_ElementsItem.QueryFaceVideoTemplate_FaceInfosItem faceInfosItem = new QueryFaceVideoTemplateResponse.QueryFaceVideoTemplate_Data.QueryFaceVideoTemplate_ElementsItem.QueryFaceVideoTemplate_FaceInfosItem();
+					faceInfosItem.TemplateFaceID = _ctx.StringValue("QueryFaceVideoTemplate.Data.Elements["+ i +"].FaceInfos["+ j +"].TemplateFaceID");
+					faceInfosItem.TemplateFaceURL = _ctx.StringValue("QueryFaceVideoTemplate.Data.Elements["+ i +"].FaceInfos["+ j +"].TemplateFaceURL");
+
+					elementsItem_faceInfos.Add(faceInfosItem);
+				}
+				elementsItem.FaceInfos = elementsItem_faceInfos;
+
 				data_elements.Add(elementsItem);
 			}
 			data.Elements = data_elements;

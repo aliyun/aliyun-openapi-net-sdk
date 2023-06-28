@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -56,6 +57,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private List<string> parameters = new List<string>(){ };
 
+		[JsonProperty(PropertyName = "ProductCode")]
 		public string ProductCode
 		{
 			get
@@ -69,6 +71,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "ClientToken")]
 		public string ClientToken
 		{
 			get
@@ -82,6 +85,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "SubscriptionType")]
 		public string SubscriptionType
 		{
 			get
@@ -95,6 +99,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -108,6 +113,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "ProductType")]
 		public string ProductType
 		{
 			get
@@ -121,6 +127,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceId")]
 		public string InstanceId
 		{
 			get
@@ -134,6 +141,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "ModifyType")]
 		public string ModifyType
 		{
 			get
@@ -147,6 +155,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Parameter")]
 		public List<string> Parameters
 		{
 			get
@@ -175,6 +184,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private string value_;
 
+			[JsonProperty(PropertyName = "Code")]
 			public string Code
 			{
 				get
@@ -187,6 +197,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "Value")]
 			public string Value_
 			{
 				get

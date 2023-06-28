@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Market.Model.V20151101
@@ -35,6 +35,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 
 		private List<DescribeInstances_InstanceItem> instanceItems;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
+		[JsonProperty(PropertyName = "TotalCount")]
 		public int? TotalCount
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceItems")]
 		public List<DescribeInstances_InstanceItem> InstanceItems
 		{
 			get
@@ -98,124 +103,41 @@ namespace Aliyun.Acs.Market.Model.V20151101
 		public class DescribeInstances_InstanceItem
 		{
 
-			private long? instanceId;
-
-			private long? orderId;
-
-			private string supplierName;
-
-			private string productCode;
-
-			private string productSkuCode;
-
-			private string productName;
-
-			private string productType;
-
 			private string status;
-
-			private long? beganOn;
-
-			private long? endOn;
-
-			private long? createdOn;
-
-			private string extendJson;
-
-			private string hostJson;
 
 			private string appJson;
 
 			private string apiJson;
 
+			private string productName;
+
 			private string imageJson;
+
+			private long? instanceId;
+
+			private string extendJson;
+
+			private long? beganOn;
+
+			private string productType;
+
+			private string hostJson;
+
+			private string productSkuCode;
+
+			private long? createdOn;
 
 			private string idaasJson;
 
-			public long? InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+			private long? endOn;
 
-			public long? OrderId
-			{
-				get
-				{
-					return orderId;
-				}
-				set	
-				{
-					orderId = value;
-				}
-			}
+			private long? orderId;
 
-			public string SupplierName
-			{
-				get
-				{
-					return supplierName;
-				}
-				set	
-				{
-					supplierName = value;
-				}
-			}
+			private string productCode;
 
-			public string ProductCode
-			{
-				get
-				{
-					return productCode;
-				}
-				set	
-				{
-					productCode = value;
-				}
-			}
+			private string supplierName;
 
-			public string ProductSkuCode
-			{
-				get
-				{
-					return productSkuCode;
-				}
-				set	
-				{
-					productSkuCode = value;
-				}
-			}
-
-			public string ProductName
-			{
-				get
-				{
-					return productName;
-				}
-				set	
-				{
-					productName = value;
-				}
-			}
-
-			public string ProductType
-			{
-				get
-				{
-					return productType;
-				}
-				set	
-				{
-					productType = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Status")]
 			public string Status
 			{
 				get
@@ -228,66 +150,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				}
 			}
 
-			public long? BeganOn
-			{
-				get
-				{
-					return beganOn;
-				}
-				set	
-				{
-					beganOn = value;
-				}
-			}
-
-			public long? EndOn
-			{
-				get
-				{
-					return endOn;
-				}
-				set	
-				{
-					endOn = value;
-				}
-			}
-
-			public long? CreatedOn
-			{
-				get
-				{
-					return createdOn;
-				}
-				set	
-				{
-					createdOn = value;
-				}
-			}
-
-			public string ExtendJson
-			{
-				get
-				{
-					return extendJson;
-				}
-				set	
-				{
-					extendJson = value;
-				}
-			}
-
-			public string HostJson
-			{
-				get
-				{
-					return hostJson;
-				}
-				set	
-				{
-					hostJson = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "AppJson")]
 			public string AppJson
 			{
 				get
@@ -300,6 +163,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				}
 			}
 
+			[JsonProperty(PropertyName = "ApiJson")]
 			public string ApiJson
 			{
 				get
@@ -312,6 +176,20 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				}
 			}
 
+			[JsonProperty(PropertyName = "ProductName")]
+			public string ProductName
+			{
+				get
+				{
+					return productName;
+				}
+				set	
+				{
+					productName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ImageJson")]
 			public string ImageJson
 			{
 				get
@@ -324,6 +202,98 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				}
 			}
 
+			[JsonProperty(PropertyName = "InstanceId")]
+			public long? InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ExtendJson")]
+			public string ExtendJson
+			{
+				get
+				{
+					return extendJson;
+				}
+				set	
+				{
+					extendJson = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "BeganOn")]
+			public long? BeganOn
+			{
+				get
+				{
+					return beganOn;
+				}
+				set	
+				{
+					beganOn = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ProductType")]
+			public string ProductType
+			{
+				get
+				{
+					return productType;
+				}
+				set	
+				{
+					productType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "HostJson")]
+			public string HostJson
+			{
+				get
+				{
+					return hostJson;
+				}
+				set	
+				{
+					hostJson = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ProductSkuCode")]
+			public string ProductSkuCode
+			{
+				get
+				{
+					return productSkuCode;
+				}
+				set	
+				{
+					productSkuCode = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CreatedOn")]
+			public long? CreatedOn
+			{
+				get
+				{
+					return createdOn;
+				}
+				set	
+				{
+					createdOn = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "IdaasJson")]
 			public string IdaasJson
 			{
 				get
@@ -333,6 +303,58 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				set	
 				{
 					idaasJson = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EndOn")]
+			public long? EndOn
+			{
+				get
+				{
+					return endOn;
+				}
+				set	
+				{
+					endOn = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OrderId")]
+			public long? OrderId
+			{
+				get
+				{
+					return orderId;
+				}
+				set	
+				{
+					orderId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ProductCode")]
+			public string ProductCode
+			{
+				get
+				{
+					return productCode;
+				}
+				set	
+				{
+					productCode = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SupplierName")]
+			public string SupplierName
+			{
+				get
+				{
+					return supplierName;
+				}
+				set	
+				{
+					supplierName = value;
 				}
 			}
 		}

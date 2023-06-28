@@ -43,6 +43,17 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			describeIpv6GatewayAttributeResponse.ExpiredTime = _ctx.StringValue("DescribeIpv6GatewayAttribute.ExpiredTime");
 			describeIpv6GatewayAttributeResponse.BusinessStatus = _ctx.StringValue("DescribeIpv6GatewayAttribute.BusinessStatus");
 			describeIpv6GatewayAttributeResponse.Name = _ctx.StringValue("DescribeIpv6GatewayAttribute.Name");
+			describeIpv6GatewayAttributeResponse.ResourceGroupId = _ctx.StringValue("DescribeIpv6GatewayAttribute.ResourceGroupId");
+
+			List<DescribeIpv6GatewayAttributeResponse.DescribeIpv6GatewayAttribute_Tag> describeIpv6GatewayAttributeResponse_tags = new List<DescribeIpv6GatewayAttributeResponse.DescribeIpv6GatewayAttribute_Tag>();
+			for (int i = 0; i < _ctx.Length("DescribeIpv6GatewayAttribute.Tags.Length"); i++) {
+				DescribeIpv6GatewayAttributeResponse.DescribeIpv6GatewayAttribute_Tag tag = new DescribeIpv6GatewayAttributeResponse.DescribeIpv6GatewayAttribute_Tag();
+				tag.Key = _ctx.StringValue("DescribeIpv6GatewayAttribute.Tags["+ i +"].Key");
+				tag._Value = _ctx.StringValue("DescribeIpv6GatewayAttribute.Tags["+ i +"].Value");
+
+				describeIpv6GatewayAttributeResponse_tags.Add(tag);
+			}
+			describeIpv6GatewayAttributeResponse.Tags = describeIpv6GatewayAttributeResponse_tags;
         
 			return describeIpv6GatewayAttributeResponse;
         }

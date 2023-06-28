@@ -70,6 +70,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 			private string defaultValue;
 
+			private bool? _readonly;
+
 			private List<string> rejectedValue;
 
 			private List<string> acceptableValue;
@@ -149,6 +151,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				set	
 				{
 					defaultValue = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "_Readonly")]
+			public bool? _Readonly
+			{
+				get
+				{
+					return _readonly;
+				}
+				set	
+				{
+					_readonly = value;
 				}
 			}
 

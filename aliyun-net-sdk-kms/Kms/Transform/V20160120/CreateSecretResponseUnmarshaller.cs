@@ -32,14 +32,15 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 
 			createSecretResponse.HttpResponse = _ctx.HttpResponse;
 			createSecretResponse.RequestId = _ctx.StringValue("CreateSecret.RequestId");
-			createSecretResponse.Arn = _ctx.StringValue("CreateSecret.Arn");
-			createSecretResponse.VersionId = _ctx.StringValue("CreateSecret.VersionId");
-			createSecretResponse.SecretName = _ctx.StringValue("CreateSecret.SecretName");
-			createSecretResponse.SecretType = _ctx.StringValue("CreateSecret.SecretType");
 			createSecretResponse.AutomaticRotation = _ctx.StringValue("CreateSecret.AutomaticRotation");
-			createSecretResponse.RotationInterval = _ctx.StringValue("CreateSecret.RotationInterval");
+			createSecretResponse.SecretName = _ctx.StringValue("CreateSecret.SecretName");
+			createSecretResponse.VersionId = _ctx.StringValue("CreateSecret.VersionId");
 			createSecretResponse.NextRotationDate = _ctx.StringValue("CreateSecret.NextRotationDate");
+			createSecretResponse.SecretType = _ctx.StringValue("CreateSecret.SecretType");
+			createSecretResponse.RotationInterval = _ctx.StringValue("CreateSecret.RotationInterval");
+			createSecretResponse.Arn = _ctx.StringValue("CreateSecret.Arn");
 			createSecretResponse.ExtendedConfig = _ctx.StringValue("CreateSecret.ExtendedConfig");
+			createSecretResponse.DKMSInstanceId = _ctx.StringValue("CreateSecret.DKMSInstanceId");
         
 			return createSecretResponse;
         }

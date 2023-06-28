@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class QueryDatasetSwitchInfoRequest : RpcAcsRequest<QueryDatasetSwitchInfoResponse>
     {
         public QueryDatasetSwitchInfoRequest()
-            : base("quickbi-public", "2022-01-01", "QueryDatasetSwitchInfo", "quickbi", "openAPI")
+            : base("quickbi-public", "2022-01-01", "QueryDatasetSwitchInfo", "2.2.0", "openAPI")
         {
 			Method = MethodType.POST;
         }

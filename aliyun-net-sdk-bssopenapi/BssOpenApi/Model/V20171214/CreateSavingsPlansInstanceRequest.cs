@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -54,12 +55,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string specType;
 
+		private string extendMap;
+
 		private string payMode;
 
 		private string region;
 
 		private string pricingCycle;
 
+		[JsonProperty(PropertyName = "Specification")]
 		public string Specification
 		{
 			get
@@ -73,6 +77,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "PoolValue")]
 		public string PoolValue
 		{
 			get
@@ -86,6 +91,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "CommodityCode")]
 		public string CommodityCode
 		{
 			get
@@ -99,6 +105,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Type")]
 		public string Type
 		{
 			get
@@ -112,6 +119,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "EffectiveDate")]
 		public string EffectiveDate
 		{
 			get
@@ -125,6 +133,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Duration")]
 		public string Duration
 		{
 			get
@@ -138,6 +147,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "SpecType")]
 		public string SpecType
 		{
 			get
@@ -151,6 +161,21 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "ExtendMap")]
+		public string ExtendMap
+		{
+			get
+			{
+				return extendMap;
+			}
+			set	
+			{
+				extendMap = value;
+				DictionaryUtil.Add(QueryParameters, "ExtendMap", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "PayMode")]
 		public string PayMode
 		{
 			get
@@ -164,6 +189,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Region")]
 		public string Region
 		{
 			get
@@ -177,6 +203,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "PricingCycle")]
 		public string PricingCycle
 		{
 			get

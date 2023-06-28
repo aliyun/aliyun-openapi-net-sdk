@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private DescribePricingModule_Data data;
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public DescribePricingModule_Data Data
 		{
 			get
@@ -102,6 +107,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private List<DescribePricingModule_Attribute> attributeList;
 
+			[JsonProperty(PropertyName = "ModuleList")]
 			public List<DescribePricingModule_Module> ModuleList
 			{
 				get
@@ -114,6 +120,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "AttributeList")]
 			public List<DescribePricingModule_Attribute> AttributeList
 			{
 				get
@@ -139,6 +146,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private List<string> configList;
 
+				[JsonProperty(PropertyName = "ModuleName")]
 				public string ModuleName
 				{
 					get
@@ -151,6 +159,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PriceType")]
 				public string PriceType
 				{
 					get
@@ -163,6 +172,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Currency")]
 				public string Currency
 				{
 					get
@@ -175,6 +185,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ModuleCode")]
 				public string ModuleCode
 				{
 					get
@@ -187,6 +198,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ConfigList")]
 				public List<string> ConfigList
 				{
 					get
@@ -211,6 +223,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private List<DescribePricingModule_AttributeValue> values;
 
+				[JsonProperty(PropertyName = "Code")]
 				public string Code
 				{
 					get
@@ -223,6 +236,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Name")]
 				public string Name
 				{
 					get
@@ -235,6 +249,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Unit")]
 				public string Unit
 				{
 					get
@@ -247,6 +262,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Values")]
 				public List<DescribePricingModule_AttributeValue> Values
 				{
 					get
@@ -270,6 +286,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 					private string name;
 
+					[JsonProperty(PropertyName = "Type")]
 					public string Type
 					{
 						get
@@ -282,6 +299,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 						}
 					}
 
+					[JsonProperty(PropertyName = "_Value")]
 					public string _Value
 					{
 						get
@@ -294,6 +312,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 						}
 					}
 
+					[JsonProperty(PropertyName = "Remark")]
 					public string Remark
 					{
 						get
@@ -306,6 +325,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 						}
 					}
 
+					[JsonProperty(PropertyName = "Name")]
 					public string Name
 					{
 						get

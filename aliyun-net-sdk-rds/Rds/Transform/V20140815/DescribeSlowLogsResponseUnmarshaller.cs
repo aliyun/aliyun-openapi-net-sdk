@@ -62,6 +62,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				sQLSlowLog.SQLServerTotalExecutionCounts = _ctx.LongValue("DescribeSlowLogs.Items["+ i +"].SQLServerTotalExecutionCounts");
 				sQLSlowLog.ReturnTotalRowCounts = _ctx.LongValue("DescribeSlowLogs.Items["+ i +"].ReturnTotalRowCounts");
 				sQLSlowLog.MaxLockTime = _ctx.LongValue("DescribeSlowLogs.Items["+ i +"].MaxLockTime");
+				sQLSlowLog.MaxLockTimeMS = _ctx.LongValue("DescribeSlowLogs.Items["+ i +"].MaxLockTimeMS");
 				sQLSlowLog.DBName = _ctx.StringValue("DescribeSlowLogs.Items["+ i +"].DBName");
 				sQLSlowLog.MinRowsAffectedCounts = _ctx.LongValue("DescribeSlowLogs.Items["+ i +"].MinRowsAffectedCounts");
 				sQLSlowLog.TotalLogicalReadCounts = _ctx.LongValue("DescribeSlowLogs.Items["+ i +"].TotalLogicalReadCounts");
@@ -75,6 +76,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				sQLSlowLog.MinPhysicalReadCounts = _ctx.LongValue("DescribeSlowLogs.Items["+ i +"].MinPhysicalReadCounts");
 				sQLSlowLog.SlowLogId = _ctx.LongValue("DescribeSlowLogs.Items["+ i +"].SlowLogId");
 				sQLSlowLog.MaxExecutionTime = _ctx.LongValue("DescribeSlowLogs.Items["+ i +"].MaxExecutionTime");
+				sQLSlowLog.MaxExecutionTimeMS = _ctx.LongValue("DescribeSlowLogs.Items["+ i +"].MaxExecutionTimeMS");
 				sQLSlowLog.AvgExecutionTime = _ctx.LongValue("DescribeSlowLogs.Items["+ i +"].AvgExecutionTime");
 				sQLSlowLog.SQLServerAvgExecutionTime = _ctx.LongValue("DescribeSlowLogs.Items["+ i +"].SQLServerAvgExecutionTime");
 				sQLSlowLog.MaxIOWriteCounts = _ctx.LongValue("DescribeSlowLogs.Items["+ i +"].MaxIOWriteCounts");

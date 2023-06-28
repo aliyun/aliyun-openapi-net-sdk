@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private GetAccountRelation_Data data;
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public GetAccountRelation_Data Data
 		{
 			get
@@ -114,6 +119,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private long? gmtModified;
 
+			[JsonProperty(PropertyName = "Id")]
 			public long? Id
 			{
 				get
@@ -126,6 +132,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "ParentUserId")]
 			public long? ParentUserId
 			{
 				get
@@ -138,6 +145,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "ChildUserId")]
 			public long? ChildUserId
 			{
 				get
@@ -150,6 +158,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "StartTime")]
 			public long? StartTime
 			{
 				get
@@ -162,6 +171,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "EndTime")]
 			public long? EndTime
 			{
 				get
@@ -174,6 +184,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "Type")]
 			public string Type
 			{
 				get
@@ -186,6 +197,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "Status")]
 			public string Status
 			{
 				get
@@ -198,6 +210,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "GmtModified")]
 			public long? GmtModified
 			{
 				get

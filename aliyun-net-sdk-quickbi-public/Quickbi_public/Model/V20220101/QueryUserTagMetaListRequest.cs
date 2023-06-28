@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class QueryUserTagMetaListRequest : RpcAcsRequest<QueryUserTagMetaListResponse>
     {
         public QueryUserTagMetaListRequest()
-            : base("quickbi-public", "2022-01-01", "QueryUserTagMetaList", "quickbi", "openAPI")
+            : base("quickbi-public", "2022-01-01", "QueryUserTagMetaList", "2.2.0", "openAPI")
         {
         }
 

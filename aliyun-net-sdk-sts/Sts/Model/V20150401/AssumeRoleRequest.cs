@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 			Method = MethodType.POST;
         }
 
+		private string externalId;
+
 		private string roleSessionName;
 
 		private string policy;
@@ -49,6 +51,19 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 		private string roleArn;
 
 		private long? durationSeconds;
+
+		public string ExternalId
+		{
+			get
+			{
+				return externalId;
+			}
+			set	
+			{
+				externalId = value;
+				DictionaryUtil.Add(QueryParameters, "ExternalId", value);
+			}
+		}
 
 		public string RoleSessionName
 		{

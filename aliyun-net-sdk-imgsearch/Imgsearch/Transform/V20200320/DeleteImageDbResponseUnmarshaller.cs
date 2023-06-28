@@ -26,12 +26,12 @@ namespace Aliyun.Acs.imgsearch.Transform.V20200320
 {
     public class DeleteImageDbResponseUnmarshaller
     {
-        public static DeleteImageDbResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteImageDbResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteImageDbResponse deleteImageDbResponse = new DeleteImageDbResponse();
 
-			deleteImageDbResponse.HttpResponse = context.HttpResponse;
-			deleteImageDbResponse.RequestId = context.StringValue("DeleteImageDb.RequestId");
+			deleteImageDbResponse.HttpResponse = _ctx.HttpResponse;
+			deleteImageDbResponse.RequestId = _ctx.StringValue("DeleteImageDb.RequestId");
         
 			return deleteImageDbResponse;
         }

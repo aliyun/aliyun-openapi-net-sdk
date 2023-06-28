@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Market.Model.V20151101
@@ -35,6 +35,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 
 		private List<DescribeProducts_ProductItem> productItems;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
+		[JsonProperty(PropertyName = "TotalCount")]
 		public int? TotalCount
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ProductItems")]
 		public List<DescribeProducts_ProductItem> ProductItems
 		{
 			get
@@ -98,144 +103,65 @@ namespace Aliyun.Acs.Market.Model.V20151101
 		public class DescribeProducts_ProductItem
 		{
 
-			private string code;
-
-			private string name;
-
-			private long? categoryId;
-
-			private long? supplierId;
-
-			private string supplierName;
-
-			private string shortDescription;
-
-			private string tags;
-
-			private string suggestedPrice;
-
-			private string targetUrl;
-
-			private string imageUrl;
-
-			private string score;
-
-			private string operationSystem;
-
-			private string warrantyDate;
-
-			private string deliveryDate;
+			private string priceInfo;
 
 			private string deliveryWay;
 
-			public string Code
+			private string imageUrl;
+
+			private string warrantyDate;
+
+			private string tags;
+
+			private string score;
+
+			private long? supplierId;
+
+			private string operationSystem;
+
+			private string shortDescription;
+
+			private string deliveryDate;
+
+			private string targetUrl;
+
+			private string code;
+
+			private long? categoryId;
+
+			private string name;
+
+			private string suggestedPrice;
+
+			private string supplierName;
+
+			[JsonProperty(PropertyName = "PriceInfo")]
+			public string PriceInfo
 			{
 				get
 				{
-					return code;
+					return priceInfo;
 				}
 				set	
 				{
-					code = value;
+					priceInfo = value;
 				}
 			}
 
-			public string Name
+			[JsonProperty(PropertyName = "DeliveryWay")]
+			public string DeliveryWay
 			{
 				get
 				{
-					return name;
+					return deliveryWay;
 				}
 				set	
 				{
-					name = value;
+					deliveryWay = value;
 				}
 			}
 
-			public long? CategoryId
-			{
-				get
-				{
-					return categoryId;
-				}
-				set	
-				{
-					categoryId = value;
-				}
-			}
-
-			public long? SupplierId
-			{
-				get
-				{
-					return supplierId;
-				}
-				set	
-				{
-					supplierId = value;
-				}
-			}
-
-			public string SupplierName
-			{
-				get
-				{
-					return supplierName;
-				}
-				set	
-				{
-					supplierName = value;
-				}
-			}
-
-			public string ShortDescription
-			{
-				get
-				{
-					return shortDescription;
-				}
-				set	
-				{
-					shortDescription = value;
-				}
-			}
-
-			public string Tags
-			{
-				get
-				{
-					return tags;
-				}
-				set	
-				{
-					tags = value;
-				}
-			}
-
-			public string SuggestedPrice
-			{
-				get
-				{
-					return suggestedPrice;
-				}
-				set	
-				{
-					suggestedPrice = value;
-				}
-			}
-
-			public string TargetUrl
-			{
-				get
-				{
-					return targetUrl;
-				}
-				set	
-				{
-					targetUrl = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "ImageUrl")]
 			public string ImageUrl
 			{
 				get
@@ -248,30 +174,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				}
 			}
 
-			public string Score
-			{
-				get
-				{
-					return score;
-				}
-				set	
-				{
-					score = value;
-				}
-			}
-
-			public string OperationSystem
-			{
-				get
-				{
-					return operationSystem;
-				}
-				set	
-				{
-					operationSystem = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "WarrantyDate")]
 			public string WarrantyDate
 			{
 				get
@@ -284,6 +187,72 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Tags")]
+			public string Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Score")]
+			public string Score
+			{
+				get
+				{
+					return score;
+				}
+				set	
+				{
+					score = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SupplierId")]
+			public long? SupplierId
+			{
+				get
+				{
+					return supplierId;
+				}
+				set	
+				{
+					supplierId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OperationSystem")]
+			public string OperationSystem
+			{
+				get
+				{
+					return operationSystem;
+				}
+				set	
+				{
+					operationSystem = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ShortDescription")]
+			public string ShortDescription
+			{
+				get
+				{
+					return shortDescription;
+				}
+				set	
+				{
+					shortDescription = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DeliveryDate")]
 			public string DeliveryDate
 			{
 				get
@@ -296,15 +265,81 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				}
 			}
 
-			public string DeliveryWay
+			[JsonProperty(PropertyName = "TargetUrl")]
+			public string TargetUrl
 			{
 				get
 				{
-					return deliveryWay;
+					return targetUrl;
 				}
 				set	
 				{
-					deliveryWay = value;
+					targetUrl = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Code")]
+			public string Code
+			{
+				get
+				{
+					return code;
+				}
+				set	
+				{
+					code = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CategoryId")]
+			public long? CategoryId
+			{
+				get
+				{
+					return categoryId;
+				}
+				set	
+				{
+					categoryId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Name")]
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SuggestedPrice")]
+			public string SuggestedPrice
+			{
+				get
+				{
+					return suggestedPrice;
+				}
+				set	
+				{
+					suggestedPrice = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SupplierName")]
+			public string SupplierName
+			{
+				get
+				{
+					return supplierName;
+				}
+				set	
+				{
+					supplierName = value;
 				}
 			}
 		}

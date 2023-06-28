@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private QueryCommodityList_Data data;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public QueryCommodityList_Data Data
 		{
 			get
@@ -100,6 +105,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private List<QueryCommodityList_CommodityDTO> commodityList;
 
+			[JsonProperty(PropertyName = "CommodityList")]
 			public List<QueryCommodityList_CommodityDTO> CommodityList
 			{
 				get
@@ -121,6 +127,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string chargeType;
 
+				[JsonProperty(PropertyName = "CommodityCode")]
 				public string CommodityCode
 				{
 					get
@@ -133,6 +140,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "CommodityName")]
 				public string CommodityName
 				{
 					get
@@ -145,6 +153,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ChargeType")]
 				public string ChargeType
 				{
 					get

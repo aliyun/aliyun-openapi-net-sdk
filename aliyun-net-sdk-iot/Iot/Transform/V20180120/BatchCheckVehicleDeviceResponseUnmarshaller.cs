@@ -61,6 +61,31 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				data_repeatedDeviceIdList.Add(_ctx.StringValue("BatchCheckVehicleDevice.Data.RepeatedDeviceIdList["+ i +"]"));
 			}
 			data.RepeatedDeviceIdList = data_repeatedDeviceIdList;
+
+			List<string> data_invalidDeviceNameList = new List<string>();
+			for (int i = 0; i < _ctx.Length("BatchCheckVehicleDevice.Data.InvalidDeviceNameList.Length"); i++) {
+				data_invalidDeviceNameList.Add(_ctx.StringValue("BatchCheckVehicleDevice.Data.InvalidDeviceNameList["+ i +"]"));
+			}
+			data.InvalidDeviceNameList = data_invalidDeviceNameList;
+
+			List<string> data_repeatedDeviceNameList = new List<string>();
+			for (int i = 0; i < _ctx.Length("BatchCheckVehicleDevice.Data.RepeatedDeviceNameList.Length"); i++) {
+				data_repeatedDeviceNameList.Add(_ctx.StringValue("BatchCheckVehicleDevice.Data.RepeatedDeviceNameList["+ i +"]"));
+			}
+			data.RepeatedDeviceNameList = data_repeatedDeviceNameList;
+
+			List<BatchCheckVehicleDeviceResponse.BatchCheckVehicleDevice_Data.BatchCheckVehicleDevice_InvalidDetailListItem> data_invalidDetailList = new List<BatchCheckVehicleDeviceResponse.BatchCheckVehicleDevice_Data.BatchCheckVehicleDevice_InvalidDetailListItem>();
+			for (int i = 0; i < _ctx.Length("BatchCheckVehicleDevice.Data.InvalidDetailList.Length"); i++) {
+				BatchCheckVehicleDeviceResponse.BatchCheckVehicleDevice_Data.BatchCheckVehicleDevice_InvalidDetailListItem invalidDetailListItem = new BatchCheckVehicleDeviceResponse.BatchCheckVehicleDevice_Data.BatchCheckVehicleDevice_InvalidDetailListItem();
+				invalidDetailListItem.Manufacturer = _ctx.StringValue("BatchCheckVehicleDevice.Data.InvalidDetailList["+ i +"].Manufacturer");
+				invalidDetailListItem.DeviceModel = _ctx.StringValue("BatchCheckVehicleDevice.Data.InvalidDetailList["+ i +"].DeviceModel");
+				invalidDetailListItem.DeviceId = _ctx.StringValue("BatchCheckVehicleDevice.Data.InvalidDetailList["+ i +"].DeviceId");
+				invalidDetailListItem.DeviceName = _ctx.StringValue("BatchCheckVehicleDevice.Data.InvalidDetailList["+ i +"].DeviceName");
+				invalidDetailListItem.ErrorMsg = _ctx.StringValue("BatchCheckVehicleDevice.Data.InvalidDetailList["+ i +"].ErrorMsg");
+
+				data_invalidDetailList.Add(invalidDetailListItem);
+			}
+			data.InvalidDetailList = data_invalidDetailList;
 			batchCheckVehicleDeviceResponse.Data = data;
         
 			return batchCheckVehicleDeviceResponse;

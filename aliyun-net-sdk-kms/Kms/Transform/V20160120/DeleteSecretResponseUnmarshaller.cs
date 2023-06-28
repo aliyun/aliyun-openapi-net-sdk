@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			DeleteSecretResponse deleteSecretResponse = new DeleteSecretResponse();
 
 			deleteSecretResponse.HttpResponse = _ctx.HttpResponse;
-			deleteSecretResponse.RequestId = _ctx.StringValue("DeleteSecret.RequestId");
 			deleteSecretResponse.SecretName = _ctx.StringValue("DeleteSecret.SecretName");
+			deleteSecretResponse.RequestId = _ctx.StringValue("DeleteSecret.RequestId");
 			deleteSecretResponse.PlannedDeleteTime = _ctx.StringValue("DeleteSecret.PlannedDeleteTime");
         
 			return deleteSecretResponse;

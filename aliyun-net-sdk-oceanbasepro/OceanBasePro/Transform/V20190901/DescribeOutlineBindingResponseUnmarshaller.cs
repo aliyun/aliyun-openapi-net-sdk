@@ -38,6 +38,7 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 			outlineBinding.OutlineId = _ctx.LongValue("DescribeOutlineBinding.OutlineBinding.OutlineId");
 			outlineBinding.BindIndex = _ctx.StringValue("DescribeOutlineBinding.OutlineBinding.BindIndex");
 			outlineBinding.MaxConcurrent = _ctx.IntegerValue("DescribeOutlineBinding.OutlineBinding.MaxConcurrent");
+			outlineBinding.TableName = _ctx.StringValue("DescribeOutlineBinding.OutlineBinding.TableName");
 			describeOutlineBindingResponse.OutlineBinding = outlineBinding;
         
 			return describeOutlineBindingResponse;

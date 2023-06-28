@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
@@ -25,26 +25,28 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 	public class EncryptResponse : AcsResponse
 	{
 
-		private string ciphertextBlob;
+		private string keyVersionId;
 
 		private string keyId;
 
+		private string ciphertextBlob;
+
 		private string requestId;
 
-		private string keyVersionId;
-
-		public string CiphertextBlob
+		[JsonProperty(PropertyName = "KeyVersionId")]
+		public string KeyVersionId
 		{
 			get
 			{
-				return ciphertextBlob;
+				return keyVersionId;
 			}
 			set	
 			{
-				ciphertextBlob = value;
+				keyVersionId = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "KeyId")]
 		public string KeyId
 		{
 			get
@@ -57,6 +59,20 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "CiphertextBlob")]
+		public string CiphertextBlob
+		{
+			get
+			{
+				return ciphertextBlob;
+			}
+			set	
+			{
+				ciphertextBlob = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -66,18 +82,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string KeyVersionId
-		{
-			get
-			{
-				return keyVersionId;
-			}
-			set	
-			{
-				keyVersionId = value;
 			}
 		}
 	}

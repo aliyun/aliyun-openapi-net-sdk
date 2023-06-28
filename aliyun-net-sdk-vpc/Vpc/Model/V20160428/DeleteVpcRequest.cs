@@ -42,6 +42,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? resourceOwnerId;
 
+		private bool? forceDelete;
+
+		private bool? dryRun;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -60,6 +64,32 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public bool? ForceDelete
+		{
+			get
+			{
+				return forceDelete;
+			}
+			set	
+			{
+				forceDelete = value;
+				DictionaryUtil.Add(QueryParameters, "ForceDelete", value.ToString());
+			}
+		}
+
+		public bool? DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
 			}
 		}
 

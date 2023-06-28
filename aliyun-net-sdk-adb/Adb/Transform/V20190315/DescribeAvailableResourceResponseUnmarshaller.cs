@@ -39,6 +39,18 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 				DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableZone availableZone = new DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableZone();
 				availableZone.ZoneId = _ctx.StringValue("DescribeAvailableResource.AvailableZoneList["+ i +"].ZoneId");
 
+				List<string> availableZone_supportedComputeResource = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeAvailableResource.AvailableZoneList["+ i +"].SupportedComputeResource.Length"); j++) {
+					availableZone_supportedComputeResource.Add(_ctx.StringValue("DescribeAvailableResource.AvailableZoneList["+ i +"].SupportedComputeResource["+ j +"]"));
+				}
+				availableZone.SupportedComputeResource = availableZone_supportedComputeResource;
+
+				List<string> availableZone_supportedStorageResource = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeAvailableResource.AvailableZoneList["+ i +"].SupportedStorageResource.Length"); j++) {
+					availableZone_supportedStorageResource.Add(_ctx.StringValue("DescribeAvailableResource.AvailableZoneList["+ i +"].SupportedStorageResource["+ j +"]"));
+				}
+				availableZone.SupportedStorageResource = availableZone_supportedStorageResource;
+
 				List<DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableZone.DescribeAvailableResource_SupportedModeItem> availableZone_supportedMode = new List<DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableZone.DescribeAvailableResource_SupportedModeItem>();
 				for (int j = 0; j < _ctx.Length("DescribeAvailableResource.AvailableZoneList["+ i +"].SupportedMode.Length"); j++) {
 					DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableZone.DescribeAvailableResource_SupportedModeItem supportedModeItem = new DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableZone.DescribeAvailableResource_SupportedModeItem();
@@ -54,17 +66,17 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 							DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableZone.DescribeAvailableResource_SupportedModeItem.DescribeAvailableResource_SupportedSerialListItem.DescribeAvailableResource_SupportedFlexibleResourceItem supportedFlexibleResourceItem = new DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableZone.DescribeAvailableResource_SupportedModeItem.DescribeAvailableResource_SupportedSerialListItem.DescribeAvailableResource_SupportedFlexibleResourceItem();
 							supportedFlexibleResourceItem.StorageType = _ctx.StringValue("DescribeAvailableResource.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedFlexibleResource["+ l +"].StorageType");
 
-							List<string> supportedFlexibleResourceItem_supportedComputeResource = new List<string>();
+							List<string> supportedFlexibleResourceItem_supportedComputeResource1 = new List<string>();
 							for (int m = 0; m < _ctx.Length("DescribeAvailableResource.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedFlexibleResource["+ l +"].SupportedComputeResource.Length"); m++) {
-								supportedFlexibleResourceItem_supportedComputeResource.Add(_ctx.StringValue("DescribeAvailableResource.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedFlexibleResource["+ l +"].SupportedComputeResource["+ m +"]"));
+								supportedFlexibleResourceItem_supportedComputeResource1.Add(_ctx.StringValue("DescribeAvailableResource.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedFlexibleResource["+ l +"].SupportedComputeResource["+ m +"]"));
 							}
-							supportedFlexibleResourceItem.SupportedComputeResource = supportedFlexibleResourceItem_supportedComputeResource;
+							supportedFlexibleResourceItem.SupportedComputeResource1 = supportedFlexibleResourceItem_supportedComputeResource1;
 
-							List<string> supportedFlexibleResourceItem_supportedStorageResource = new List<string>();
+							List<string> supportedFlexibleResourceItem_supportedStorageResource2 = new List<string>();
 							for (int m = 0; m < _ctx.Length("DescribeAvailableResource.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedFlexibleResource["+ l +"].SupportedStorageResource.Length"); m++) {
-								supportedFlexibleResourceItem_supportedStorageResource.Add(_ctx.StringValue("DescribeAvailableResource.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedFlexibleResource["+ l +"].SupportedStorageResource["+ m +"]"));
+								supportedFlexibleResourceItem_supportedStorageResource2.Add(_ctx.StringValue("DescribeAvailableResource.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedFlexibleResource["+ l +"].SupportedStorageResource["+ m +"]"));
 							}
-							supportedFlexibleResourceItem.SupportedStorageResource = supportedFlexibleResourceItem_supportedStorageResource;
+							supportedFlexibleResourceItem.SupportedStorageResource2 = supportedFlexibleResourceItem_supportedStorageResource2;
 
 							DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableZone.DescribeAvailableResource_SupportedModeItem.DescribeAvailableResource_SupportedSerialListItem.DescribeAvailableResource_SupportedFlexibleResourceItem.DescribeAvailableResource_SupportedElasticIOResource supportedElasticIOResource = new DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableZone.DescribeAvailableResource_SupportedModeItem.DescribeAvailableResource_SupportedSerialListItem.DescribeAvailableResource_SupportedFlexibleResourceItem.DescribeAvailableResource_SupportedElasticIOResource();
 							supportedElasticIOResource.Step = _ctx.StringValue("DescribeAvailableResource.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedFlexibleResource["+ l +"].SupportedElasticIOResource.Step");
@@ -106,11 +118,11 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 							for (int m = 0; m < _ctx.Length("DescribeAvailableResource.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedInstanceClassList["+ l +"].SupportedExecutorList.Length"); m++) {
 								DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableZone.DescribeAvailableResource_SupportedModeItem.DescribeAvailableResource_SupportedSerialListItem.DescribeAvailableResource_SupportedInstanceClass.DescribeAvailableResource_SupportedExecutor supportedExecutor = new DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableZone.DescribeAvailableResource_SupportedModeItem.DescribeAvailableResource_SupportedSerialListItem.DescribeAvailableResource_SupportedInstanceClass.DescribeAvailableResource_SupportedExecutor();
 
-								DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableZone.DescribeAvailableResource_SupportedModeItem.DescribeAvailableResource_SupportedSerialListItem.DescribeAvailableResource_SupportedInstanceClass.DescribeAvailableResource_SupportedExecutor.DescribeAvailableResource_NodeCount1 nodeCount1 = new DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableZone.DescribeAvailableResource_SupportedModeItem.DescribeAvailableResource_SupportedSerialListItem.DescribeAvailableResource_SupportedInstanceClass.DescribeAvailableResource_SupportedExecutor.DescribeAvailableResource_NodeCount1();
-								nodeCount1.Step = _ctx.StringValue("DescribeAvailableResource.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedInstanceClassList["+ l +"].SupportedExecutorList["+ m +"].NodeCount.Step");
-								nodeCount1.MinCount = _ctx.StringValue("DescribeAvailableResource.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedInstanceClassList["+ l +"].SupportedExecutorList["+ m +"].NodeCount.MinCount");
-								nodeCount1.MaxCount = _ctx.StringValue("DescribeAvailableResource.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedInstanceClassList["+ l +"].SupportedExecutorList["+ m +"].NodeCount.MaxCount");
-								supportedExecutor.NodeCount1 = nodeCount1;
+								DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableZone.DescribeAvailableResource_SupportedModeItem.DescribeAvailableResource_SupportedSerialListItem.DescribeAvailableResource_SupportedInstanceClass.DescribeAvailableResource_SupportedExecutor.DescribeAvailableResource_NodeCount3 nodeCount3 = new DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableZone.DescribeAvailableResource_SupportedModeItem.DescribeAvailableResource_SupportedSerialListItem.DescribeAvailableResource_SupportedInstanceClass.DescribeAvailableResource_SupportedExecutor.DescribeAvailableResource_NodeCount3();
+								nodeCount3.Step = _ctx.StringValue("DescribeAvailableResource.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedInstanceClassList["+ l +"].SupportedExecutorList["+ m +"].NodeCount.Step");
+								nodeCount3.MinCount = _ctx.StringValue("DescribeAvailableResource.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedInstanceClassList["+ l +"].SupportedExecutorList["+ m +"].NodeCount.MinCount");
+								nodeCount3.MaxCount = _ctx.StringValue("DescribeAvailableResource.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedInstanceClassList["+ l +"].SupportedExecutorList["+ m +"].NodeCount.MaxCount");
+								supportedExecutor.NodeCount3 = nodeCount3;
 
 								supportedInstanceClass_supportedExecutorList.Add(supportedExecutor);
 							}

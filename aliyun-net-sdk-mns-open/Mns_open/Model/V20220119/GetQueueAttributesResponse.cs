@@ -112,10 +112,6 @@ namespace Aliyun.Acs.Mns_open.Model.V20220119
 		public class GetQueueAttributes_Data
 		{
 
-			private string queueUrl;
-
-			private string queueInternalUrl;
-
 			private string queueName;
 
 			private long? createTime;
@@ -139,30 +135,6 @@ namespace Aliyun.Acs.Mns_open.Model.V20220119
 			private long? delayMessages;
 
 			private bool? loggingEnabled;
-
-			public string QueueUrl
-			{
-				get
-				{
-					return queueUrl;
-				}
-				set	
-				{
-					queueUrl = value;
-				}
-			}
-
-			public string QueueInternalUrl
-			{
-				get
-				{
-					return queueInternalUrl;
-				}
-				set	
-				{
-					queueInternalUrl = value;
-				}
-			}
 
 			public string QueueName
 			{

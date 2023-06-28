@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			RestoreSecretResponse restoreSecretResponse = new RestoreSecretResponse();
 
 			restoreSecretResponse.HttpResponse = _ctx.HttpResponse;
-			restoreSecretResponse.RequestId = _ctx.StringValue("RestoreSecret.RequestId");
 			restoreSecretResponse.SecretName = _ctx.StringValue("RestoreSecret.SecretName");
+			restoreSecretResponse.RequestId = _ctx.StringValue("RestoreSecret.RequestId");
         
 			return restoreSecretResponse;
         }

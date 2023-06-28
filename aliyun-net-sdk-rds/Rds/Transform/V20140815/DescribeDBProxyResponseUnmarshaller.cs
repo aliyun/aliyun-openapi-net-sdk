@@ -44,6 +44,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeDBProxyResponse.AccountName = _ctx.StringValue("DescribeDBProxy.AccountName");
 			describeDBProxyResponse.ResourceGroupId = _ctx.StringValue("DescribeDBProxy.ResourceGroupId");
 
+			List<string> describeDBProxyResponse_dBProxyAVZones = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeDBProxy.DBProxyAVZones.Length"); i++) {
+				describeDBProxyResponse_dBProxyAVZones.Add(_ctx.StringValue("DescribeDBProxy.DBProxyAVZones["+ i +"]"));
+			}
+			describeDBProxyResponse.DBProxyAVZones = describeDBProxyResponse_dBProxyAVZones;
+
 			List<DescribeDBProxyResponse.DescribeDBProxy_DBProxyConnectStringItemsItem> describeDBProxyResponse_dBProxyConnectStringItems = new List<DescribeDBProxyResponse.DescribeDBProxy_DBProxyConnectStringItemsItem>();
 			for (int i = 0; i < _ctx.Length("DescribeDBProxy.DBProxyConnectStringItems.Length"); i++) {
 				DescribeDBProxyResponse.DescribeDBProxy_DBProxyConnectStringItemsItem dBProxyConnectStringItemsItem = new DescribeDBProxyResponse.DescribeDBProxy_DBProxyConnectStringItemsItem();
@@ -54,6 +60,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBProxyConnectStringItemsItem.DBProxyEndpointId = _ctx.StringValue("DescribeDBProxy.DBProxyConnectStringItems["+ i +"].DBProxyEndpointId");
 				dBProxyConnectStringItemsItem.DBProxyConnectStringPort = _ctx.StringValue("DescribeDBProxy.DBProxyConnectStringItems["+ i +"].DBProxyConnectStringPort");
 				dBProxyConnectStringItemsItem.DBProxyConnectString = _ctx.StringValue("DescribeDBProxy.DBProxyConnectStringItems["+ i +"].DBProxyConnectString");
+				dBProxyConnectStringItemsItem.DBProxyVpcId = _ctx.StringValue("DescribeDBProxy.DBProxyConnectStringItems["+ i +"].DBProxyVpcId");
+				dBProxyConnectStringItemsItem.DBProxyVswitchId = _ctx.StringValue("DescribeDBProxy.DBProxyConnectStringItems["+ i +"].DBProxyVswitchId");
 
 				describeDBProxyResponse_dBProxyConnectStringItems.Add(dBProxyConnectStringItemsItem);
 			}

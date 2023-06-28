@@ -34,6 +34,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			describeCasterConfigResponse.Delay = _ctx.FloatValue("DescribeCasterConfig.Delay");
 			describeCasterConfigResponse.UrgentLiveStreamUrl = _ctx.StringValue("DescribeCasterConfig.UrgentLiveStreamUrl");
 			describeCasterConfigResponse.UrgentMaterialId = _ctx.StringValue("DescribeCasterConfig.UrgentMaterialId");
+			describeCasterConfigResponse.UrgentImageId = _ctx.StringValue("DescribeCasterConfig.UrgentImageId");
+			describeCasterConfigResponse.UrgentImageUrl = _ctx.StringValue("DescribeCasterConfig.UrgentImageUrl");
 			describeCasterConfigResponse.CallbackUrl = _ctx.StringValue("DescribeCasterConfig.CallbackUrl");
 			describeCasterConfigResponse.ProgramName = _ctx.StringValue("DescribeCasterConfig.ProgramName");
 			describeCasterConfigResponse.CasterName = _ctx.StringValue("DescribeCasterConfig.CasterName");
@@ -58,6 +60,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeCasterConfigResponse.DescribeCasterConfig_RecordConfig recordConfig = new DescribeCasterConfigResponse.DescribeCasterConfig_RecordConfig();
 			recordConfig.OssEndpoint = _ctx.StringValue("DescribeCasterConfig.RecordConfig.OssEndpoint");
 			recordConfig.OssBucket = _ctx.StringValue("DescribeCasterConfig.RecordConfig.OssBucket");
+			recordConfig.OnDemand = _ctx.IntegerValue("DescribeCasterConfig.RecordConfig.OnDemand");
 
 			List<DescribeCasterConfigResponse.DescribeCasterConfig_RecordConfig.DescribeCasterConfig_RecordFormatItem> recordConfig_recordFormat = new List<DescribeCasterConfigResponse.DescribeCasterConfig_RecordConfig.DescribeCasterConfig_RecordFormatItem>();
 			for (int i = 0; i < _ctx.Length("DescribeCasterConfig.RecordConfig.RecordFormat.Length"); i++) {

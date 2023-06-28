@@ -98,7 +98,17 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 			private bool? enableUpgradeLogDisk;
 
+			private string instanceRole;
+
+			private string nodeNum;
+
+			private bool? isolationOptimization;
+
+			private bool? enableIsolationOptimization;
+
 			private List<string> availableZones;
+
+			private List<string> zones;
 
 			private DescribeInstance_Resource resource;
 
@@ -362,6 +372,58 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				}
 			}
 
+			[JsonProperty(PropertyName = "InstanceRole")]
+			public string InstanceRole
+			{
+				get
+				{
+					return instanceRole;
+				}
+				set	
+				{
+					instanceRole = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "NodeNum")]
+			public string NodeNum
+			{
+				get
+				{
+					return nodeNum;
+				}
+				set	
+				{
+					nodeNum = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "IsolationOptimization")]
+			public bool? IsolationOptimization
+			{
+				get
+				{
+					return isolationOptimization;
+				}
+				set	
+				{
+					isolationOptimization = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EnableIsolationOptimization")]
+			public bool? EnableIsolationOptimization
+			{
+				get
+				{
+					return enableIsolationOptimization;
+				}
+				set	
+				{
+					enableIsolationOptimization = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "AvailableZones")]
 			public List<string> AvailableZones
 			{
@@ -372,6 +434,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				set	
 				{
 					availableZones = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Zones")]
+			public List<string> Zones
+			{
+				get
+				{
+					return zones;
+				}
+				set	
+				{
+					zones = value;
 				}
 			}
 

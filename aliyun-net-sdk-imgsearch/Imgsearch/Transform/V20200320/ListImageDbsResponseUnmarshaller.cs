@@ -26,19 +26,19 @@ namespace Aliyun.Acs.imgsearch.Transform.V20200320
 {
     public class ListImageDbsResponseUnmarshaller
     {
-        public static ListImageDbsResponse Unmarshall(UnmarshallerContext context)
+        public static ListImageDbsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListImageDbsResponse listImageDbsResponse = new ListImageDbsResponse();
 
-			listImageDbsResponse.HttpResponse = context.HttpResponse;
-			listImageDbsResponse.RequestId = context.StringValue("ListImageDbs.RequestId");
+			listImageDbsResponse.HttpResponse = _ctx.HttpResponse;
+			listImageDbsResponse.RequestId = _ctx.StringValue("ListImageDbs.RequestId");
 
 			ListImageDbsResponse.ListImageDbs_Data data = new ListImageDbsResponse.ListImageDbs_Data();
 
 			List<ListImageDbsResponse.ListImageDbs_Data.ListImageDbs_DbListItem> data_dbList = new List<ListImageDbsResponse.ListImageDbs_Data.ListImageDbs_DbListItem>();
-			for (int i = 0; i < context.Length("ListImageDbs.Data.DbList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListImageDbs.Data.DbList.Length"); i++) {
 				ListImageDbsResponse.ListImageDbs_Data.ListImageDbs_DbListItem dbListItem = new ListImageDbsResponse.ListImageDbs_Data.ListImageDbs_DbListItem();
-				dbListItem.Name = context.StringValue("ListImageDbs.Data.DbList["+ i +"].Name");
+				dbListItem.Name = _ctx.StringValue("ListImageDbs.Data.DbList["+ i +"].Name");
 
 				data_dbList.Add(dbListItem);
 			}

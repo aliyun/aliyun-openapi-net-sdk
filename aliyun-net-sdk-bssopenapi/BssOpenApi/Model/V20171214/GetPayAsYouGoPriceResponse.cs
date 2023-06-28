@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private GetPayAsYouGoPrice_Data data;
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public GetPayAsYouGoPrice_Data Data
 		{
 			get
@@ -104,6 +109,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private List<GetPayAsYouGoPrice_PromotionDetail> promotionDetails;
 
+			[JsonProperty(PropertyName = "Currency")]
 			public string Currency
 			{
 				get
@@ -116,6 +122,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "ModuleDetails")]
 			public List<GetPayAsYouGoPrice_ModuleDetail> ModuleDetails
 			{
 				get
@@ -128,6 +135,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "PromotionDetails")]
 			public List<GetPayAsYouGoPrice_PromotionDetail> PromotionDetails
 			{
 				get
@@ -153,6 +161,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string moduleCode;
 
+				[JsonProperty(PropertyName = "CostAfterDiscount")]
 				public float? CostAfterDiscount
 				{
 					get
@@ -165,6 +174,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "InvoiceDiscount")]
 				public float? InvoiceDiscount
 				{
 					get
@@ -177,6 +187,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "UnitPrice")]
 				public float? UnitPrice
 				{
 					get
@@ -189,6 +200,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "OriginalCost")]
 				public float? OriginalCost
 				{
 					get
@@ -201,6 +213,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ModuleCode")]
 				public string ModuleCode
 				{
 					get
@@ -223,6 +236,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string promotionName;
 
+				[JsonProperty(PropertyName = "PromotionDesc")]
 				public string PromotionDesc
 				{
 					get
@@ -235,6 +249,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PromotionId")]
 				public long? PromotionId
 				{
 					get
@@ -247,6 +262,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PromotionName")]
 				public string PromotionName
 				{
 					get

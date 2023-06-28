@@ -47,8 +47,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string iotInstanceId;
 
-		private string context;
-
 		private string tableName;
 
 		private long? endTime;
@@ -91,19 +89,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(BodyParameters, "IotInstanceId", value);
-			}
-		}
-
-		public string Context
-		{
-			get
-			{
-				return context;
-			}
-			set	
-			{
-				context = value;
-				DictionaryUtil.Add(BodyParameters, "Context", value);
 			}
 		}
 

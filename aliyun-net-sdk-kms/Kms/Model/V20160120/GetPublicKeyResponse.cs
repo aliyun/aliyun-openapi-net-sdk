@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
@@ -25,26 +25,28 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 	public class GetPublicKeyResponse : AcsResponse
 	{
 
-		private string publicKey;
+		private string keyVersionId;
 
 		private string keyId;
 
 		private string requestId;
 
-		private string keyVersionId;
+		private string publicKey;
 
-		public string PublicKey
+		[JsonProperty(PropertyName = "KeyVersionId")]
+		public string KeyVersionId
 		{
 			get
 			{
-				return publicKey;
+				return keyVersionId;
 			}
 			set	
 			{
-				publicKey = value;
+				keyVersionId = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "KeyId")]
 		public string KeyId
 		{
 			get
@@ -57,6 +59,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -69,15 +72,16 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public string KeyVersionId
+		[JsonProperty(PropertyName = "PublicKey")]
+		public string PublicKey
 		{
 			get
 			{
-				return keyVersionId;
+				return publicKey;
 			}
 			set	
 			{
-				keyVersionId = value;
+				publicKey = value;
 			}
 		}
 	}

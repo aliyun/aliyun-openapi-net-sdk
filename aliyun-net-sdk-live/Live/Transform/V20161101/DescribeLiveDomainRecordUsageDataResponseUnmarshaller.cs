@@ -31,15 +31,18 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveDomainRecordUsageDataResponse describeLiveDomainRecordUsageDataResponse = new DescribeLiveDomainRecordUsageDataResponse();
 
 			describeLiveDomainRecordUsageDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveDomainRecordUsageDataResponse.EndTime = _ctx.StringValue("DescribeLiveDomainRecordUsageData.EndTime");
+			describeLiveDomainRecordUsageDataResponse.StartTime = _ctx.StringValue("DescribeLiveDomainRecordUsageData.StartTime");
 			describeLiveDomainRecordUsageDataResponse.RequestId = _ctx.StringValue("DescribeLiveDomainRecordUsageData.RequestId");
 
 			List<DescribeLiveDomainRecordUsageDataResponse.DescribeLiveDomainRecordUsageData_DataModule> describeLiveDomainRecordUsageDataResponse_recordUsageData = new List<DescribeLiveDomainRecordUsageDataResponse.DescribeLiveDomainRecordUsageData_DataModule>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveDomainRecordUsageData.RecordUsageData.Length"); i++) {
 				DescribeLiveDomainRecordUsageDataResponse.DescribeLiveDomainRecordUsageData_DataModule dataModule = new DescribeLiveDomainRecordUsageDataResponse.DescribeLiveDomainRecordUsageData_DataModule();
 				dataModule.Type = _ctx.StringValue("DescribeLiveDomainRecordUsageData.RecordUsageData["+ i +"].Type");
-				dataModule.Duration = _ctx.LongValue("DescribeLiveDomainRecordUsageData.RecordUsageData["+ i +"].Duration");
 				dataModule.Domain = _ctx.StringValue("DescribeLiveDomainRecordUsageData.RecordUsageData["+ i +"].Domain");
+				dataModule.Region = _ctx.StringValue("DescribeLiveDomainRecordUsageData.RecordUsageData["+ i +"].Region");
 				dataModule.TimeStamp = _ctx.StringValue("DescribeLiveDomainRecordUsageData.RecordUsageData["+ i +"].TimeStamp");
+				dataModule.Duration = _ctx.LongValue("DescribeLiveDomainRecordUsageData.RecordUsageData["+ i +"].Duration");
 				dataModule.Count = _ctx.LongValue("DescribeLiveDomainRecordUsageData.RecordUsageData["+ i +"].Count");
 
 				describeLiveDomainRecordUsageDataResponse_recordUsageData.Add(dataModule);

@@ -42,27 +42,15 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Method = MethodType.POST;
         }
 
-		private bool? exportablePrivateKey;
-
 		private string subject;
-
-		private List<object> subjectAlternativeNames;
 
 		private string keySpec;
 
-		public bool? ExportablePrivateKey
-		{
-			get
-			{
-				return exportablePrivateKey;
-			}
-			set	
-			{
-				exportablePrivateKey = value;
-				DictionaryUtil.Add(QueryParameters, "ExportablePrivateKey", value.ToString());
-			}
-		}
+		private bool? exportablePrivateKey;
 
+		private List<object> subjectAlternativeNames;
+
+		[JsonProperty(PropertyName = "Subject")]
 		public string Subject
 		{
 			get
@@ -76,19 +64,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public List<object> SubjectAlternativeNames
-		{
-			get
-			{
-				return subjectAlternativeNames;
-			}
-			set	
-			{
-				subjectAlternativeNames = value;
-				DictionaryUtil.Add(QueryParameters, "SubjectAlternativeNames", JsonConvert.SerializeObject(value));
-			}
-		}
-
+		[JsonProperty(PropertyName = "KeySpec")]
 		public string KeySpec
 		{
 			get
@@ -99,6 +75,34 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				keySpec = value;
 				DictionaryUtil.Add(QueryParameters, "KeySpec", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ExportablePrivateKey")]
+		public bool? ExportablePrivateKey
+		{
+			get
+			{
+				return exportablePrivateKey;
+			}
+			set	
+			{
+				exportablePrivateKey = value;
+				DictionaryUtil.Add(QueryParameters, "ExportablePrivateKey", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "SubjectAlternativeNames")]
+		public List<object> SubjectAlternativeNames
+		{
+			get
+			{
+				return subjectAlternativeNames;
+			}
+			set	
+			{
+				subjectAlternativeNames = value;
+				DictionaryUtil.Add(QueryParameters, "SubjectAlternativeNames", JsonConvert.SerializeObject(value));
 			}
 		}
 

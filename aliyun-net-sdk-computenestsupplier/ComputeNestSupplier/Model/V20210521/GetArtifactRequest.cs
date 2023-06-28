@@ -43,6 +43,8 @@ namespace Aliyun.Acs.ComputeNestSupplier.Model.V20210521
 
 		private string artifactVersion;
 
+		private string artifactName;
+
 		private string artifactId;
 
 		public string ArtifactVersion
@@ -55,6 +57,19 @@ namespace Aliyun.Acs.ComputeNestSupplier.Model.V20210521
 			{
 				artifactVersion = value;
 				DictionaryUtil.Add(QueryParameters, "ArtifactVersion", value);
+			}
+		}
+
+		public string ArtifactName
+		{
+			get
+			{
+				return artifactName;
+			}
+			set	
+			{
+				artifactName = value;
+				DictionaryUtil.Add(QueryParameters, "ArtifactName", value);
 			}
 		}
 

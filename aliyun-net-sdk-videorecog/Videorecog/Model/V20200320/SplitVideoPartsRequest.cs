@@ -41,7 +41,55 @@ namespace Aliyun.Acs.videorecog.Model.V20200320
 			Method = MethodType.POST;
         }
 
+		private string template;
+
+		private int? minTime;
+
+		private int? maxTime;
+
 		private string videoUrl;
+
+		[JsonProperty(PropertyName = "Template")]
+		public string Template
+		{
+			get
+			{
+				return template;
+			}
+			set	
+			{
+				template = value;
+				DictionaryUtil.Add(BodyParameters, "Template", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "MinTime")]
+		public int? MinTime
+		{
+			get
+			{
+				return minTime;
+			}
+			set	
+			{
+				minTime = value;
+				DictionaryUtil.Add(BodyParameters, "MinTime", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "MaxTime")]
+		public int? MaxTime
+		{
+			get
+			{
+				return maxTime;
+			}
+			set	
+			{
+				maxTime = value;
+				DictionaryUtil.Add(BodyParameters, "MaxTime", value.ToString());
+			}
+		}
 
 		[JsonProperty(PropertyName = "VideoUrl")]
 		public string VideoUrl

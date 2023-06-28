@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			CertificatePublicKeyEncryptResponse certificatePublicKeyEncryptResponse = new CertificatePublicKeyEncryptResponse();
 
 			certificatePublicKeyEncryptResponse.HttpResponse = _ctx.HttpResponse;
+			certificatePublicKeyEncryptResponse.CiphertextBlob = _ctx.StringValue("CertificatePublicKeyEncrypt.CiphertextBlob");
 			certificatePublicKeyEncryptResponse.RequestId = _ctx.StringValue("CertificatePublicKeyEncrypt.RequestId");
 			certificatePublicKeyEncryptResponse.CertificateId = _ctx.StringValue("CertificatePublicKeyEncrypt.CertificateId");
-			certificatePublicKeyEncryptResponse.CiphertextBlob = _ctx.StringValue("CertificatePublicKeyEncrypt.CiphertextBlob");
         
 			return certificatePublicKeyEncryptResponse;
         }

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			UpdateSecretRotationPolicyResponse updateSecretRotationPolicyResponse = new UpdateSecretRotationPolicyResponse();
 
 			updateSecretRotationPolicyResponse.HttpResponse = _ctx.HttpResponse;
-			updateSecretRotationPolicyResponse.RequestId = _ctx.StringValue("UpdateSecretRotationPolicy.RequestId");
 			updateSecretRotationPolicyResponse.SecretName = _ctx.StringValue("UpdateSecretRotationPolicy.SecretName");
+			updateSecretRotationPolicyResponse.RequestId = _ctx.StringValue("UpdateSecretRotationPolicy.RequestId");
         
 			return updateSecretRotationPolicyResponse;
         }

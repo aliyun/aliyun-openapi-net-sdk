@@ -44,19 +44,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private bool? checkJobStatus;
 
-		private string groupId;
-
-		private string label;
-
 		private int? designateType;
 
 		private long? jobId;
 
-		private string _namespace;
-
 		private string worker;
 
 		private string instanceParameters;
+
+		private string groupId;
+
+		private string label;
+
+		private string _namespace;
 
 		public string NamespaceSource
 		{
@@ -81,32 +81,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				checkJobStatus = value;
 				DictionaryUtil.Add(QueryParameters, "CheckJobStatus", value.ToString());
-			}
-		}
-
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
-			}
-		}
-
-		public string Label
-		{
-			get
-			{
-				return label;
-			}
-			set	
-			{
-				label = value;
-				DictionaryUtil.Add(QueryParameters, "Label", value);
 			}
 		}
 
@@ -136,19 +110,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public string _Namespace
-		{
-			get
-			{
-				return _namespace;
-			}
-			set	
-			{
-				_namespace = value;
-				DictionaryUtil.Add(QueryParameters, "Namespace", value);
-			}
-		}
-
 		public string Worker
 		{
 			get
@@ -172,6 +133,45 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				instanceParameters = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceParameters", value);
+			}
+		}
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+			}
+		}
+
+		public string Label
+		{
+			get
+			{
+				return label;
+			}
+			set	
+			{
+				label = value;
+				DictionaryUtil.Add(QueryParameters, "Label", value);
+			}
+		}
+
+		public string _Namespace
+		{
+			get
+			{
+				return _namespace;
+			}
+			set	
+			{
+				_namespace = value;
+				DictionaryUtil.Add(QueryParameters, "Namespace", value);
 			}
 		}
 

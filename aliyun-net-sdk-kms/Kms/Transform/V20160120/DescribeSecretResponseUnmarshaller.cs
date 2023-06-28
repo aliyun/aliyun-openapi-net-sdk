@@ -31,26 +31,27 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			DescribeSecretResponse describeSecretResponse = new DescribeSecretResponse();
 
 			describeSecretResponse.HttpResponse = _ctx.HttpResponse;
-			describeSecretResponse.RequestId = _ctx.StringValue("DescribeSecret.RequestId");
-			describeSecretResponse.Arn = _ctx.StringValue("DescribeSecret.Arn");
-			describeSecretResponse.SecretName = _ctx.StringValue("DescribeSecret.SecretName");
-			describeSecretResponse.EncryptionKeyId = _ctx.StringValue("DescribeSecret.EncryptionKeyId");
-			describeSecretResponse.Description = _ctx.StringValue("DescribeSecret.Description");
-			describeSecretResponse.CreateTime = _ctx.StringValue("DescribeSecret.CreateTime");
 			describeSecretResponse.UpdateTime = _ctx.StringValue("DescribeSecret.UpdateTime");
-			describeSecretResponse.PlannedDeleteTime = _ctx.StringValue("DescribeSecret.PlannedDeleteTime");
-			describeSecretResponse.AutomaticRotation = _ctx.StringValue("DescribeSecret.AutomaticRotation");
-			describeSecretResponse.LastRotationDate = _ctx.StringValue("DescribeSecret.LastRotationDate");
-			describeSecretResponse.RotationInterval = _ctx.StringValue("DescribeSecret.RotationInterval");
+			describeSecretResponse.CreateTime = _ctx.StringValue("DescribeSecret.CreateTime");
 			describeSecretResponse.NextRotationDate = _ctx.StringValue("DescribeSecret.NextRotationDate");
+			describeSecretResponse.EncryptionKeyId = _ctx.StringValue("DescribeSecret.EncryptionKeyId");
+			describeSecretResponse.RotationInterval = _ctx.StringValue("DescribeSecret.RotationInterval");
+			describeSecretResponse.Arn = _ctx.StringValue("DescribeSecret.Arn");
 			describeSecretResponse.ExtendedConfig = _ctx.StringValue("DescribeSecret.ExtendedConfig");
+			describeSecretResponse.LastRotationDate = _ctx.StringValue("DescribeSecret.LastRotationDate");
+			describeSecretResponse.RequestId = _ctx.StringValue("DescribeSecret.RequestId");
+			describeSecretResponse.Description = _ctx.StringValue("DescribeSecret.Description");
+			describeSecretResponse.SecretName = _ctx.StringValue("DescribeSecret.SecretName");
+			describeSecretResponse.AutomaticRotation = _ctx.StringValue("DescribeSecret.AutomaticRotation");
 			describeSecretResponse.SecretType = _ctx.StringValue("DescribeSecret.SecretType");
+			describeSecretResponse.PlannedDeleteTime = _ctx.StringValue("DescribeSecret.PlannedDeleteTime");
+			describeSecretResponse.DKMSInstanceId = _ctx.StringValue("DescribeSecret.DKMSInstanceId");
 
 			List<DescribeSecretResponse.DescribeSecret_Tag> describeSecretResponse_tags = new List<DescribeSecretResponse.DescribeSecret_Tag>();
 			for (int i = 0; i < _ctx.Length("DescribeSecret.Tags.Length"); i++) {
 				DescribeSecretResponse.DescribeSecret_Tag tag = new DescribeSecretResponse.DescribeSecret_Tag();
-				tag.TagKey = _ctx.StringValue("DescribeSecret.Tags["+ i +"].TagKey");
 				tag.TagValue = _ctx.StringValue("DescribeSecret.Tags["+ i +"].TagValue");
+				tag.TagKey = _ctx.StringValue("DescribeSecret.Tags["+ i +"].TagKey");
 
 				describeSecretResponse_tags.Add(tag);
 			}

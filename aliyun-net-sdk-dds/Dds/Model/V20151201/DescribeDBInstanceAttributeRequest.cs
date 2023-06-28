@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? ownerId;
 
+		private bool? isDelete;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -152,6 +154,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public bool? IsDelete
+		{
+			get
+			{
+				return isDelete;
+			}
+			set	
+			{
+				isDelete = value;
+				DictionaryUtil.Add(QueryParameters, "IsDelete", value.ToString());
 			}
 		}
 

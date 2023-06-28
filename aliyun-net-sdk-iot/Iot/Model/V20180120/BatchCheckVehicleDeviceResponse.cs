@@ -98,6 +98,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		public class BatchCheckVehicleDevice_Data
 		{
 
+			private List<BatchCheckVehicleDevice_InvalidDetailListItem> invalidDetailList;
+
 			private List<string> invalidManufacturerList;
 
 			private List<string> invalidDeviceModelList;
@@ -105,6 +107,22 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			private List<string> invalidDeviceIdList;
 
 			private List<string> repeatedDeviceIdList;
+
+			private List<string> invalidDeviceNameList;
+
+			private List<string> repeatedDeviceNameList;
+
+			public List<BatchCheckVehicleDevice_InvalidDetailListItem> InvalidDetailList
+			{
+				get
+				{
+					return invalidDetailList;
+				}
+				set	
+				{
+					invalidDetailList = value;
+				}
+			}
 
 			public List<string> InvalidManufacturerList
 			{
@@ -151,6 +169,104 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					repeatedDeviceIdList = value;
+				}
+			}
+
+			public List<string> InvalidDeviceNameList
+			{
+				get
+				{
+					return invalidDeviceNameList;
+				}
+				set	
+				{
+					invalidDeviceNameList = value;
+				}
+			}
+
+			public List<string> RepeatedDeviceNameList
+			{
+				get
+				{
+					return repeatedDeviceNameList;
+				}
+				set	
+				{
+					repeatedDeviceNameList = value;
+				}
+			}
+
+			public class BatchCheckVehicleDevice_InvalidDetailListItem
+			{
+
+				private string manufacturer;
+
+				private string deviceModel;
+
+				private string deviceId;
+
+				private string deviceName;
+
+				private string errorMsg;
+
+				public string Manufacturer
+				{
+					get
+					{
+						return manufacturer;
+					}
+					set	
+					{
+						manufacturer = value;
+					}
+				}
+
+				public string DeviceModel
+				{
+					get
+					{
+						return deviceModel;
+					}
+					set	
+					{
+						deviceModel = value;
+					}
+				}
+
+				public string DeviceId
+				{
+					get
+					{
+						return deviceId;
+					}
+					set	
+					{
+						deviceId = value;
+					}
+				}
+
+				public string DeviceName
+				{
+					get
+					{
+						return deviceName;
+					}
+					set	
+					{
+						deviceName = value;
+					}
+				}
+
+				public string ErrorMsg
+				{
+					get
+					{
+						return errorMsg;
+					}
+					set	
+					{
+						errorMsg = value;
+					}
 				}
 			}
 		}

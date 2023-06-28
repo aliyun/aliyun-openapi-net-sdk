@@ -42,27 +42,15 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Method = MethodType.POST;
         }
 
-		private string removeFromVersion;
-
 		private string moveToVersion;
+
+		private string removeFromVersion;
 
 		private string versionStage;
 
 		private string secretName;
 
-		public string RemoveFromVersion
-		{
-			get
-			{
-				return removeFromVersion;
-			}
-			set	
-			{
-				removeFromVersion = value;
-				DictionaryUtil.Add(QueryParameters, "RemoveFromVersion", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "MoveToVersion")]
 		public string MoveToVersion
 		{
 			get
@@ -76,6 +64,21 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "RemoveFromVersion")]
+		public string RemoveFromVersion
+		{
+			get
+			{
+				return removeFromVersion;
+			}
+			set	
+			{
+				removeFromVersion = value;
+				DictionaryUtil.Add(QueryParameters, "RemoveFromVersion", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "VersionStage")]
 		public string VersionStage
 		{
 			get
@@ -89,6 +92,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecretName")]
 		public string SecretName
 		{
 			get

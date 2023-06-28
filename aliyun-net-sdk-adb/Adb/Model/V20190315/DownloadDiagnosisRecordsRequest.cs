@@ -40,33 +40,111 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			Method = MethodType.POST;
         }
 
+		private string queryCondition;
+
+		private string startTime;
+
+		private string database;
+
+		private string clientIp;
+
+		private string keyword;
+
+		private string lang;
+
 		private long? maxScanSize;
 
 		private string resourceGroup;
 
 		private string dBClusterId;
 
-		private string queryCondition;
-
 		private string endTime;
-
-		private string startTime;
 
 		private long? minPeakMemory;
 
 		private long? minScanSize;
 
-		private string database;
-
-		private string clientIp;
-
 		private long? maxPeakMemory;
 
-		private string keyword;
-
-		private string lang;
-
 		private string userName;
+
+		public string QueryCondition
+		{
+			get
+			{
+				return queryCondition;
+			}
+			set	
+			{
+				queryCondition = value;
+				DictionaryUtil.Add(QueryParameters, "QueryCondition", value);
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string Database
+		{
+			get
+			{
+				return database;
+			}
+			set	
+			{
+				database = value;
+				DictionaryUtil.Add(QueryParameters, "Database", value);
+			}
+		}
+
+		public string ClientIp
+		{
+			get
+			{
+				return clientIp;
+			}
+			set	
+			{
+				clientIp = value;
+				DictionaryUtil.Add(QueryParameters, "ClientIp", value);
+			}
+		}
+
+		public string Keyword
+		{
+			get
+			{
+				return keyword;
+			}
+			set	
+			{
+				keyword = value;
+				DictionaryUtil.Add(QueryParameters, "Keyword", value);
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
 
 		public long? MaxScanSize
 		{
@@ -107,19 +185,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public string QueryCondition
-		{
-			get
-			{
-				return queryCondition;
-			}
-			set	
-			{
-				queryCondition = value;
-				DictionaryUtil.Add(QueryParameters, "QueryCondition", value);
-			}
-		}
-
 		public string EndTime
 		{
 			get
@@ -130,19 +195,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				endTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
@@ -172,32 +224,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public string Database
-		{
-			get
-			{
-				return database;
-			}
-			set	
-			{
-				database = value;
-				DictionaryUtil.Add(QueryParameters, "Database", value);
-			}
-		}
-
-		public string ClientIp
-		{
-			get
-			{
-				return clientIp;
-			}
-			set	
-			{
-				clientIp = value;
-				DictionaryUtil.Add(QueryParameters, "ClientIp", value);
-			}
-		}
-
 		public long? MaxPeakMemory
 		{
 			get
@@ -208,32 +234,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				maxPeakMemory = value;
 				DictionaryUtil.Add(QueryParameters, "MaxPeakMemory", value.ToString());
-			}
-		}
-
-		public string Keyword
-		{
-			get
-			{
-				return keyword;
-			}
-			set	
-			{
-				keyword = value;
-				DictionaryUtil.Add(QueryParameters, "Keyword", value);
-			}
-		}
-
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 

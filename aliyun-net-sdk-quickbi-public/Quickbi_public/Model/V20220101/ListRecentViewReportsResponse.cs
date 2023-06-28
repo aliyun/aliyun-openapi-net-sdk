@@ -78,6 +78,8 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 			private int? pageSize;
 
+			private string attention;
+
 			private List<ListRecentViewReports_DataItem> data;
 
 			public int? TotalNum
@@ -125,6 +127,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					pageSize = value;
+				}
+			}
+
+			public string Attention
+			{
+				get
+				{
+					return attention;
+				}
+				set	
+				{
+					attention = value;
 				}
 			}
 

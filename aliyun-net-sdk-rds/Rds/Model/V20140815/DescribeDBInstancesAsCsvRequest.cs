@@ -43,13 +43,17 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
-		private long? ownerId;
+		private string exportKey;
 
 		private string resourceGroupId;
 
 		private string dBInstanceId;
+
+		private string resourceOwnerAccount;
+
+		private bool? cachedAsync;
+
+		private long? ownerId;
 
 		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
@@ -65,31 +69,17 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
-		public string ResourceOwnerAccount
+		[JsonProperty(PropertyName = "ExportKey")]
+		public string ExportKey
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return exportKey;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "OwnerId")]
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				exportKey = value;
+				DictionaryUtil.Add(QueryParameters, "ExportKey", value);
 			}
 		}
 
@@ -118,6 +108,48 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "CachedAsync")]
+		public bool? CachedAsync
+		{
+			get
+			{
+				return cachedAsync;
+			}
+			set	
+			{
+				cachedAsync = value;
+				DictionaryUtil.Add(QueryParameters, "CachedAsync", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "OwnerId")]
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

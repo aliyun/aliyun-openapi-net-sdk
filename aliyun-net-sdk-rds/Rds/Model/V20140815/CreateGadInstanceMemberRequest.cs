@@ -168,6 +168,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 						DictionaryUtil.Add(QueryParameters,"UnitNode." + (depth1 + 1), unitNodes[depth1]);
 						DictionaryUtil.Add(QueryParameters,"UnitNode." + (depth1 + 1), unitNodes[depth1]);
 						DictionaryUtil.Add(QueryParameters,"UnitNode." + (depth1 + 1), unitNodes[depth1]);
+						DictionaryUtil.Add(QueryParameters,"UnitNode." + (depth1 + 1), unitNodes[depth1]);
 					}
 				}
 			}
@@ -201,6 +202,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			private string zoneID;
 
 			private string dBInstanceDescription;
+
+			private string dBInstanceStorageType;
 
 			private string dtsConflict;
 
@@ -370,6 +373,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					dBInstanceDescription = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBInstanceStorageType")]
+			public string DBInstanceStorageType
+			{
+				get
+				{
+					return dBInstanceStorageType;
+				}
+				set	
+				{
+					dBInstanceStorageType = value;
 				}
 			}
 

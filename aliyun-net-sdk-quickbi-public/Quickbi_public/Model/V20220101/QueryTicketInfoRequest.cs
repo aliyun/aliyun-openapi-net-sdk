@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class QueryTicketInfoRequest : RpcAcsRequest<QueryTicketInfoResponse>
     {
         public QueryTicketInfoRequest()
-            : base("quickbi-public", "2022-01-01", "QueryTicketInfo", "quickbi", "openAPI")
+            : base("quickbi-public", "2022-01-01", "QueryTicketInfo", "2.2.0", "openAPI")
         {
 			Method = MethodType.POST;
         }

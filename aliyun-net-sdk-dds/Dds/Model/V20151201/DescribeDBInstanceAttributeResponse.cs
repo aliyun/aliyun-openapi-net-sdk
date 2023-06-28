@@ -138,6 +138,12 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string paymentType;
 
+			private string dBInstanceOrderStatus;
+
+			private bool? encrypted;
+
+			private string encryptionKey;
+
 			private List<DescribeDBInstanceAttribute_ReplicaSet> replicaSets;
 
 			private List<DescribeDBInstanceAttribute_Tag> tags;
@@ -639,6 +645,42 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					paymentType = value;
+				}
+			}
+
+			public string DBInstanceOrderStatus
+			{
+				get
+				{
+					return dBInstanceOrderStatus;
+				}
+				set	
+				{
+					dBInstanceOrderStatus = value;
+				}
+			}
+
+			public bool? Encrypted
+			{
+				get
+				{
+					return encrypted;
+				}
+				set	
+				{
+					encrypted = value;
+				}
+			}
+
+			public string EncryptionKey
+			{
+				get
+				{
+					return encryptionKey;
+				}
+				set	
+				{
+					encryptionKey = value;
 				}
 			}
 

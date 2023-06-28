@@ -92,9 +92,13 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string trafficMirrorFilterName;
 
+			private string resourceGroupId;
+
 			private List<ListTrafficMirrorFilters_TrafficMirrorRule> ingressRules;
 
 			private List<ListTrafficMirrorFilters_TrafficMirrorRule> egressRules;
+
+			private List<ListTrafficMirrorFilters_Tag> tags;
 
 			public string TrafficMirrorFilterStatus
 			{
@@ -144,6 +148,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
 			public List<ListTrafficMirrorFilters_TrafficMirrorRule> IngressRules
 			{
 				get
@@ -165,6 +181,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					egressRules = value;
+				}
+			}
+
+			public List<ListTrafficMirrorFilters_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
 				}
 			}
 
@@ -322,6 +350,38 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					set	
 					{
 						sourcePortRange = value;
+					}
+				}
+			}
+
+			public class ListTrafficMirrorFilters_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
 					}
 				}
 			}

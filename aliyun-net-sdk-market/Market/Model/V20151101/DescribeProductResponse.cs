@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Market.Model.V20151101
@@ -25,39 +25,39 @@ namespace Aliyun.Acs.Market.Model.V20151101
 	public class DescribeProductResponse : AcsResponse
 	{
 
-		private string code;
+		private long? frontCategoryId;
 
-		private string name;
+		private string status;
 
 		private string type;
 
 		private string picUrl;
 
-		private string description;
-
-		private string shortDescription;
+		private float? score;
 
 		private long? useCount;
 
-		private float? score;
-
-		private string status;
-
-		private string auditStatus;
-
-		private string auditFailMsg;
-
-		private long? auditTime;
-
-		private long? gmtCreated;
-
 		private long? gmtModified;
-
-		private string requestId;
 
 		private long? supplierPk;
 
-		private long? frontCategoryId;
+		private long? gmtCreated;
+
+		private string requestId;
+
+		private string shortDescription;
+
+		private string description;
+
+		private string code;
+
+		private string auditFailMsg;
+
+		private string name;
+
+		private long? auditTime;
+
+		private string auditStatus;
 
 		private List<DescribeProduct_ProductSku> productSkus;
 
@@ -65,198 +65,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 
 		private DescribeProduct_ShopInfo shopInfo;
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-			}
-		}
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-			}
-		}
-
-		public string PicUrl
-		{
-			get
-			{
-				return picUrl;
-			}
-			set	
-			{
-				picUrl = value;
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-			}
-		}
-
-		public string ShortDescription
-		{
-			get
-			{
-				return shortDescription;
-			}
-			set	
-			{
-				shortDescription = value;
-			}
-		}
-
-		public long? UseCount
-		{
-			get
-			{
-				return useCount;
-			}
-			set	
-			{
-				useCount = value;
-			}
-		}
-
-		public float? Score
-		{
-			get
-			{
-				return score;
-			}
-			set	
-			{
-				score = value;
-			}
-		}
-
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-			}
-		}
-
-		public string AuditStatus
-		{
-			get
-			{
-				return auditStatus;
-			}
-			set	
-			{
-				auditStatus = value;
-			}
-		}
-
-		public string AuditFailMsg
-		{
-			get
-			{
-				return auditFailMsg;
-			}
-			set	
-			{
-				auditFailMsg = value;
-			}
-		}
-
-		public long? AuditTime
-		{
-			get
-			{
-				return auditTime;
-			}
-			set	
-			{
-				auditTime = value;
-			}
-		}
-
-		public long? GmtCreated
-		{
-			get
-			{
-				return gmtCreated;
-			}
-			set	
-			{
-				gmtCreated = value;
-			}
-		}
-
-		public long? GmtModified
-		{
-			get
-			{
-				return gmtModified;
-			}
-			set	
-			{
-				gmtModified = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public long? SupplierPk
-		{
-			get
-			{
-				return supplierPk;
-			}
-			set	
-			{
-				supplierPk = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "FrontCategoryId")]
 		public long? FrontCategoryId
 		{
 			get
@@ -269,6 +78,215 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Status")]
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Type")]
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PicUrl")]
+		public string PicUrl
+		{
+			get
+			{
+				return picUrl;
+			}
+			set	
+			{
+				picUrl = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Score")]
+		public float? Score
+		{
+			get
+			{
+				return score;
+			}
+			set	
+			{
+				score = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "UseCount")]
+		public long? UseCount
+		{
+			get
+			{
+				return useCount;
+			}
+			set	
+			{
+				useCount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "GmtModified")]
+		public long? GmtModified
+		{
+			get
+			{
+				return gmtModified;
+			}
+			set	
+			{
+				gmtModified = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "SupplierPk")]
+		public long? SupplierPk
+		{
+			get
+			{
+				return supplierPk;
+			}
+			set	
+			{
+				supplierPk = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "GmtCreated")]
+		public long? GmtCreated
+		{
+			get
+			{
+				return gmtCreated;
+			}
+			set	
+			{
+				gmtCreated = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ShortDescription")]
+		public string ShortDescription
+		{
+			get
+			{
+				return shortDescription;
+			}
+			set	
+			{
+				shortDescription = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Description")]
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Code")]
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "AuditFailMsg")]
+		public string AuditFailMsg
+		{
+			get
+			{
+				return auditFailMsg;
+			}
+			set	
+			{
+				auditFailMsg = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Name")]
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "AuditTime")]
+		public long? AuditTime
+		{
+			get
+			{
+				return auditTime;
+			}
+			set	
+			{
+				auditTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "AuditStatus")]
+		public string AuditStatus
+		{
+			get
+			{
+				return auditStatus;
+			}
+			set	
+			{
+				auditStatus = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ProductSkus")]
 		public List<DescribeProduct_ProductSku> ProductSkus
 		{
 			get
@@ -281,6 +299,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ProductExtras")]
 		public List<DescribeProduct_ProductExtra> ProductExtras
 		{
 			get
@@ -293,6 +312,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ShopInfo")]
 		public DescribeProduct_ShopInfo ShopInfo
 		{
 			get
@@ -308,68 +328,21 @@ namespace Aliyun.Acs.Market.Model.V20151101
 		public class DescribeProduct_ProductSku
 		{
 
-			private string name;
+			private bool? hidden;
 
 			private string code;
 
-			private string chargeType;
-
 			private string constraints;
 
-			private bool? hidden;
+			private string name;
+
+			private string chargeType;
 
 			private List<DescribeProduct_OrderPeriod> orderPeriods;
 
 			private List<DescribeProduct_Module> modules;
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string Code
-			{
-				get
-				{
-					return code;
-				}
-				set	
-				{
-					code = value;
-				}
-			}
-
-			public string ChargeType
-			{
-				get
-				{
-					return chargeType;
-				}
-				set	
-				{
-					chargeType = value;
-				}
-			}
-
-			public string Constraints
-			{
-				get
-				{
-					return constraints;
-				}
-				set	
-				{
-					constraints = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Hidden")]
 			public bool? Hidden
 			{
 				get
@@ -382,6 +355,59 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Code")]
+			public string Code
+			{
+				get
+				{
+					return code;
+				}
+				set	
+				{
+					code = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Constraints")]
+			public string Constraints
+			{
+				get
+				{
+					return constraints;
+				}
+				set	
+				{
+					constraints = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Name")]
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ChargeType")]
+			public string ChargeType
+			{
+				get
+				{
+					return chargeType;
+				}
+				set	
+				{
+					chargeType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OrderPeriods")]
 			public List<DescribeProduct_OrderPeriod> OrderPeriods
 			{
 				get
@@ -394,6 +420,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Modules")]
 			public List<DescribeProduct_Module> Modules
 			{
 				get
@@ -413,6 +440,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 
 				private string periodType;
 
+				[JsonProperty(PropertyName = "Name")]
 				public string Name
 				{
 					get
@@ -425,6 +453,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 					}
 				}
 
+				[JsonProperty(PropertyName = "PeriodType")]
 				public string PeriodType
 				{
 					get
@@ -441,38 +470,15 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			public class DescribeProduct_Module
 			{
 
-				private string id;
+				private string code;
 
 				private string name;
 
-				private string code;
+				private string id;
 
 				private List<DescribeProduct_Property> properties;
 
-				public string Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
-					}
-				}
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
-
+				[JsonProperty(PropertyName = "Code")]
 				public string Code
 				{
 					get
@@ -485,6 +491,33 @@ namespace Aliyun.Acs.Market.Model.V20151101
 					}
 				}
 
+				[JsonProperty(PropertyName = "Name")]
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Id")]
+				public string Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Properties")]
 				public List<DescribeProduct_Property> Properties
 				{
 					get
@@ -500,28 +533,17 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				public class DescribeProduct_Property
 				{
 
-					private string name;
-
 					private string key;
 
 					private string showType;
+
+					private string name;
 
 					private string displayUnit;
 
 					private List<DescribeProduct_PropertyValue> propertyValues;
 
-					public string Name
-					{
-						get
-						{
-							return name;
-						}
-						set	
-						{
-							name = value;
-						}
-					}
-
+					[JsonProperty(PropertyName = "Key")]
 					public string Key
 					{
 						get
@@ -534,6 +556,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 						}
 					}
 
+					[JsonProperty(PropertyName = "ShowType")]
 					public string ShowType
 					{
 						get
@@ -546,6 +569,20 @@ namespace Aliyun.Acs.Market.Model.V20151101
 						}
 					}
 
+					[JsonProperty(PropertyName = "Name")]
+					public string Name
+					{
+						get
+						{
+							return name;
+						}
+						set	
+						{
+							name = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "DisplayUnit")]
 					public string DisplayUnit
 					{
 						get
@@ -558,6 +595,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 						}
 					}
 
+					[JsonProperty(PropertyName = "PropertyValues")]
 					public List<DescribeProduct_PropertyValue> PropertyValues
 					{
 						get
@@ -573,32 +611,21 @@ namespace Aliyun.Acs.Market.Model.V20151101
 					public class DescribeProduct_PropertyValue
 					{
 
-						private string _value;
-
 						private string displayName;
 
 						private string type;
 
-						private string min;
+						private string step;
+
+						private string _value;
 
 						private string max;
 
-						private string step;
-
 						private string remark;
 
-						public string _Value
-						{
-							get
-							{
-								return _value;
-							}
-							set	
-							{
-								_value = value;
-							}
-						}
+						private string min;
 
+						[JsonProperty(PropertyName = "DisplayName")]
 						public string DisplayName
 						{
 							get
@@ -611,6 +638,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 							}
 						}
 
+						[JsonProperty(PropertyName = "Type")]
 						public string Type
 						{
 							get
@@ -623,30 +651,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 							}
 						}
 
-						public string Min
-						{
-							get
-							{
-								return min;
-							}
-							set	
-							{
-								min = value;
-							}
-						}
-
-						public string Max
-						{
-							get
-							{
-								return max;
-							}
-							set	
-							{
-								max = value;
-							}
-						}
-
+						[JsonProperty(PropertyName = "Step")]
 						public string Step
 						{
 							get
@@ -659,6 +664,33 @@ namespace Aliyun.Acs.Market.Model.V20151101
 							}
 						}
 
+						[JsonProperty(PropertyName = "_Value")]
+						public string _Value
+						{
+							get
+							{
+								return _value;
+							}
+							set	
+							{
+								_value = value;
+							}
+						}
+
+						[JsonProperty(PropertyName = "Max")]
+						public string Max
+						{
+							get
+							{
+								return max;
+							}
+							set	
+							{
+								max = value;
+							}
+						}
+
+						[JsonProperty(PropertyName = "Remark")]
 						public string Remark
 						{
 							get
@@ -670,6 +702,19 @@ namespace Aliyun.Acs.Market.Model.V20151101
 								remark = value;
 							}
 						}
+
+						[JsonProperty(PropertyName = "Min")]
+						public string Min
+						{
+							get
+							{
+								return min;
+							}
+							set	
+							{
+								min = value;
+							}
+						}
 					}
 				}
 			}
@@ -678,16 +723,30 @@ namespace Aliyun.Acs.Market.Model.V20151101
 		public class DescribeProduct_ProductExtra
 		{
 
-			private string key;
+			private string type;
 
-			private string values;
+			private string key;
 
 			private string label;
 
 			private int? order;
 
-			private string type;
+			private string values;
 
+			[JsonProperty(PropertyName = "Type")]
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Key")]
 			public string Key
 			{
 				get
@@ -700,18 +759,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				}
 			}
 
-			public string Values
-			{
-				get
-				{
-					return values;
-				}
-				set	
-				{
-					values = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Label")]
 			public string Label
 			{
 				get
@@ -724,6 +772,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Order")]
 			public int? Order
 			{
 				get
@@ -736,15 +785,16 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				}
 			}
 
-			public string Type
+			[JsonProperty(PropertyName = "Values")]
+			public string Values
 			{
 				get
 				{
-					return type;
+					return values;
 				}
 				set	
 				{
-					type = value;
+					values = value;
 				}
 			}
 		}
@@ -752,28 +802,17 @@ namespace Aliyun.Acs.Market.Model.V20151101
 		public class DescribeProduct_ShopInfo
 		{
 
-			private long? id;
-
 			private string name;
 
 			private string emails;
+
+			private long? id;
 
 			private List<DescribeProduct_WangWang> wangWangs;
 
 			private List<string> telephones;
 
-			public long? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Name")]
 			public string Name
 			{
 				get
@@ -786,6 +825,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Emails")]
 			public string Emails
 			{
 				get
@@ -798,6 +838,20 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Id")]
+			public long? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "WangWangs")]
 			public List<DescribeProduct_WangWang> WangWangs
 			{
 				get
@@ -810,6 +864,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Telephones")]
 			public List<string> Telephones
 			{
 				get
@@ -825,22 +880,11 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			public class DescribeProduct_WangWang
 			{
 
-				private string userName;
-
 				private string remark;
 
-				public string UserName
-				{
-					get
-					{
-						return userName;
-					}
-					set	
-					{
-						userName = value;
-					}
-				}
+				private string userName;
 
+				[JsonProperty(PropertyName = "Remark")]
 				public string Remark
 				{
 					get
@@ -850,6 +894,19 @@ namespace Aliyun.Acs.Market.Model.V20151101
 					set	
 					{
 						remark = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "UserName")]
+				public string UserName
+				{
+					get
+					{
+						return userName;
+					}
+					set	
+					{
+						userName = value;
 					}
 				}
 			}

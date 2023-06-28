@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Market.Transform.V20151101
 {
     public class ActivateLicenseResponseUnmarshaller
     {
-        public static ActivateLicenseResponse Unmarshall(UnmarshallerContext context)
+        public static ActivateLicenseResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ActivateLicenseResponse activateLicenseResponse = new ActivateLicenseResponse();
 
-			activateLicenseResponse.HttpResponse = context.HttpResponse;
-			activateLicenseResponse.RequestId = context.StringValue("ActivateLicense.RequestId");
-			activateLicenseResponse.Success = context.BooleanValue("ActivateLicense.Success");
+			activateLicenseResponse.HttpResponse = _ctx.HttpResponse;
+			activateLicenseResponse.Success = _ctx.BooleanValue("ActivateLicense.Success");
+			activateLicenseResponse.RequestId = _ctx.StringValue("ActivateLicense.RequestId");
         
 			return activateLicenseResponse;
         }

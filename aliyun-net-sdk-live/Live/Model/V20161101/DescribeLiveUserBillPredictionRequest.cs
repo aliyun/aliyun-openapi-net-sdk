@@ -43,10 +43,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string startTime;
 
-		private string dimension;
-
-		private string area;
-
 		private string endTime;
 
 		private long? ownerId;
@@ -62,34 +58,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "Dimension")]
-		public string Dimension
-		{
-			get
-			{
-				return dimension;
-			}
-			set	
-			{
-				dimension = value;
-				DictionaryUtil.Add(QueryParameters, "Dimension", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "Area")]
-		public string Area
-		{
-			get
-			{
-				return area;
-			}
-			set	
-			{
-				area = value;
-				DictionaryUtil.Add(QueryParameters, "Area", value);
 			}
 		}
 

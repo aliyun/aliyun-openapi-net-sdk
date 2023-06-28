@@ -86,6 +86,8 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 
 			private string templateId;
 
+			private List<AddFaceVideoTemplate_FaceInfosItem> faceInfos;
+
 			public string TemplateId
 			{
 				get
@@ -95,6 +97,50 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 				set	
 				{
 					templateId = value;
+				}
+			}
+
+			public List<AddFaceVideoTemplate_FaceInfosItem> FaceInfos
+			{
+				get
+				{
+					return faceInfos;
+				}
+				set	
+				{
+					faceInfos = value;
+				}
+			}
+
+			public class AddFaceVideoTemplate_FaceInfosItem
+			{
+
+				private string templateFaceID;
+
+				private string templateFaceURL;
+
+				public string TemplateFaceID
+				{
+					get
+					{
+						return templateFaceID;
+					}
+					set	
+					{
+						templateFaceID = value;
+					}
+				}
+
+				public string TemplateFaceURL
+				{
+					get
+					{
+						return templateFaceURL;
+					}
+					set	
+					{
+						templateFaceURL = value;
+					}
 				}
 			}
 		}

@@ -61,6 +61,18 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				data_repeatedDeviceNameList.Add(_ctx.StringValue("BatchCheckImportDevice.Data.RepeatedDeviceNameList["+ i +"]"));
 			}
 			data.RepeatedDeviceNameList = data_repeatedDeviceNameList;
+
+			List<BatchCheckImportDeviceResponse.BatchCheckImportDevice_Data.BatchCheckImportDevice_InvalidDetailListItem> data_invalidDetailList = new List<BatchCheckImportDeviceResponse.BatchCheckImportDevice_Data.BatchCheckImportDevice_InvalidDetailListItem>();
+			for (int i = 0; i < _ctx.Length("BatchCheckImportDevice.Data.InvalidDetailList.Length"); i++) {
+				BatchCheckImportDeviceResponse.BatchCheckImportDevice_Data.BatchCheckImportDevice_InvalidDetailListItem invalidDetailListItem = new BatchCheckImportDeviceResponse.BatchCheckImportDevice_Data.BatchCheckImportDevice_InvalidDetailListItem();
+				invalidDetailListItem.DeviceName = _ctx.StringValue("BatchCheckImportDevice.Data.InvalidDetailList["+ i +"].DeviceName");
+				invalidDetailListItem.DeviceSecret = _ctx.StringValue("BatchCheckImportDevice.Data.InvalidDetailList["+ i +"].DeviceSecret");
+				invalidDetailListItem.Sn = _ctx.StringValue("BatchCheckImportDevice.Data.InvalidDetailList["+ i +"].Sn");
+				invalidDetailListItem.ErrorMsg = _ctx.StringValue("BatchCheckImportDevice.Data.InvalidDetailList["+ i +"].ErrorMsg");
+
+				data_invalidDetailList.Add(invalidDetailListItem);
+			}
+			data.InvalidDetailList = data_invalidDetailList;
 			batchCheckImportDeviceResponse.Data = data;
         
 			return batchCheckImportDeviceResponse;

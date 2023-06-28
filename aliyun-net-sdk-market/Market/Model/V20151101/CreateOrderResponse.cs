@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Market.Model.V20151101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Market.Model.V20151101
 	public class CreateOrderResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string orderId;
 
-		private List<string> instanceIds;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<string> instanceIds;
 
 		public string OrderId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			set	
 			{
 				orderId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
@@ -35,6 +35,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private List<ListSecrets_Secret> secretList;
 
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "TotalCount")]
 		public int? TotalCount
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecretList")]
 		public List<ListSecrets_Secret> SecretList
 		{
 			get
@@ -98,42 +103,19 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 		public class ListSecrets_Secret
 		{
 
-			private string createTime;
-
-			private string plannedDeleteTime;
-
 			private string secretName;
 
 			private string updateTime;
 
 			private string secretType;
 
+			private string plannedDeleteTime;
+
+			private string createTime;
+
 			private List<ListSecrets_Tag> tags;
 
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public string PlannedDeleteTime
-			{
-				get
-				{
-					return plannedDeleteTime;
-				}
-				set	
-				{
-					plannedDeleteTime = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "SecretName")]
 			public string SecretName
 			{
 				get
@@ -146,6 +128,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 				}
 			}
 
+			[JsonProperty(PropertyName = "UpdateTime")]
 			public string UpdateTime
 			{
 				get
@@ -158,6 +141,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 				}
 			}
 
+			[JsonProperty(PropertyName = "SecretType")]
 			public string SecretType
 			{
 				get
@@ -170,6 +154,33 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 				}
 			}
 
+			[JsonProperty(PropertyName = "PlannedDeleteTime")]
+			public string PlannedDeleteTime
+			{
+				get
+				{
+					return plannedDeleteTime;
+				}
+				set	
+				{
+					plannedDeleteTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CreateTime")]
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Tags")]
 			public List<ListSecrets_Tag> Tags
 			{
 				get
@@ -185,22 +196,11 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			public class ListSecrets_Tag
 			{
 
-				private string tagKey;
-
 				private string tagValue;
 
-				public string TagKey
-				{
-					get
-					{
-						return tagKey;
-					}
-					set	
-					{
-						tagKey = value;
-					}
-				}
+				private string tagKey;
 
+				[JsonProperty(PropertyName = "TagValue")]
 				public string TagValue
 				{
 					get
@@ -210,6 +210,19 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 					set	
 					{
 						tagValue = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "TagKey")]
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
 					}
 				}
 			}

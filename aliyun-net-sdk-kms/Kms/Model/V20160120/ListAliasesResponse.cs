@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
@@ -25,52 +25,17 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 	public class ListAliasesResponse : AcsResponse
 	{
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
 		private int? pageSize;
 
-		private string requestId;
+		private int? totalCount;
 
 		private List<ListAliases_Alias> aliases;
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -83,6 +48,46 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNumber")]
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageSize")]
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TotalCount")]
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Aliases")]
 		public List<ListAliases_Alias> Aliases
 		{
 			get
@@ -100,10 +105,11 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 			private string keyId;
 
-			private string aliasName;
-
 			private string aliasArn;
 
+			private string aliasName;
+
+			[JsonProperty(PropertyName = "KeyId")]
 			public string KeyId
 			{
 				get
@@ -116,18 +122,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 				}
 			}
 
-			public string AliasName
-			{
-				get
-				{
-					return aliasName;
-				}
-				set	
-				{
-					aliasName = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "AliasArn")]
 			public string AliasArn
 			{
 				get
@@ -137,6 +132,19 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 				set	
 				{
 					aliasArn = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AliasName")]
+			public string AliasName
+			{
+				get
+				{
+					return aliasName;
+				}
+				set	
+				{
+					aliasName = value;
 				}
 			}
 		}

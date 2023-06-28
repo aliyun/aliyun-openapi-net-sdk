@@ -1,0 +1,306 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using Aliyun.Acs.Core;
+
+namespace Aliyun.Acs.Linkvisual.Model.V20180120
+{
+	public class QueryFaceUserResponse : AcsResponse
+	{
+
+		private string code;
+
+		private string requestId;
+
+		private string errorMessage;
+
+		private bool? success;
+
+		private QueryFaceUser_Data data;
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public QueryFaceUser_Data Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+
+		public class QueryFaceUser_Data
+		{
+
+			private string _params;
+
+			private string customUserId;
+
+			private string name;
+
+			private string userId;
+
+			private List<QueryFaceUser_FacePicListItem> facePicList;
+
+			public string _Params
+			{
+				get
+				{
+					return _params;
+				}
+				set	
+				{
+					_params = value;
+				}
+			}
+
+			public string CustomUserId
+			{
+				get
+				{
+					return customUserId;
+				}
+				set	
+				{
+					customUserId = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string UserId
+			{
+				get
+				{
+					return userId;
+				}
+				set	
+				{
+					userId = value;
+				}
+			}
+
+			public List<QueryFaceUser_FacePicListItem> FacePicList
+			{
+				get
+				{
+					return facePicList;
+				}
+				set	
+				{
+					facePicList = value;
+				}
+			}
+
+			public class QueryFaceUser_FacePicListItem
+			{
+
+				private string faceUrl;
+
+				private string faceMd5;
+
+				private List<QueryFaceUser_FeatureDTO> featureDTOList;
+
+				public string FaceUrl
+				{
+					get
+					{
+						return faceUrl;
+					}
+					set	
+					{
+						faceUrl = value;
+					}
+				}
+
+				public string FaceMd5
+				{
+					get
+					{
+						return faceMd5;
+					}
+					set	
+					{
+						faceMd5 = value;
+					}
+				}
+
+				public List<QueryFaceUser_FeatureDTO> FeatureDTOList
+				{
+					get
+					{
+						return featureDTOList;
+					}
+					set	
+					{
+						featureDTOList = value;
+					}
+				}
+
+				public class QueryFaceUser_FeatureDTO
+				{
+
+					private string algorithmName;
+
+					private string algorithmVersion;
+
+					private string algorithmProvider;
+
+					private string errorMessage;
+
+					private string errorCode;
+
+					private string faceMd5;
+
+					public string AlgorithmName
+					{
+						get
+						{
+							return algorithmName;
+						}
+						set	
+						{
+							algorithmName = value;
+						}
+					}
+
+					public string AlgorithmVersion
+					{
+						get
+						{
+							return algorithmVersion;
+						}
+						set	
+						{
+							algorithmVersion = value;
+						}
+					}
+
+					public string AlgorithmProvider
+					{
+						get
+						{
+							return algorithmProvider;
+						}
+						set	
+						{
+							algorithmProvider = value;
+						}
+					}
+
+					public string ErrorMessage
+					{
+						get
+						{
+							return errorMessage;
+						}
+						set	
+						{
+							errorMessage = value;
+						}
+					}
+
+					public string ErrorCode
+					{
+						get
+						{
+							return errorCode;
+						}
+						set	
+						{
+							errorCode = value;
+						}
+					}
+
+					public string FaceMd5
+					{
+						get
+						{
+							return faceMd5;
+						}
+						set	
+						{
+							faceMd5 = value;
+						}
+					}
+				}
+			}
+		}
+	}
+}

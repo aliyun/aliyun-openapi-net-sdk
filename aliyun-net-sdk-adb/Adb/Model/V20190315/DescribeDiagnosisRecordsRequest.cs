@@ -64,7 +64,7 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private string dBClusterId;
 
-		private long? patternId;
+		private string patternId;
 
 		private string endTime;
 
@@ -232,7 +232,7 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public long? PatternId
+		public string PatternId
 		{
 			get
 			{
@@ -241,7 +241,7 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			set	
 			{
 				patternId = value;
-				DictionaryUtil.Add(QueryParameters, "PatternId", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "PatternId", value);
 			}
 		}
 

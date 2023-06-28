@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
@@ -25,40 +25,17 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 	public class GetCertificateResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string certificateChain;
 
 		private string certificate;
 
-		private string certificateChain;
-
-		private string csr;
+		private string requestId;
 
 		private string certificateId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string csr;
 
-		public string Certificate
-		{
-			get
-			{
-				return certificate;
-			}
-			set	
-			{
-				certificate = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "CertificateChain")]
 		public string CertificateChain
 		{
 			get
@@ -71,18 +48,33 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public string Csr
+		[JsonProperty(PropertyName = "Certificate")]
+		public string Certificate
 		{
 			get
 			{
-				return csr;
+				return certificate;
 			}
 			set	
 			{
-				csr = value;
+				certificate = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "CertificateId")]
 		public string CertificateId
 		{
 			get
@@ -92,6 +84,19 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			set	
 			{
 				certificateId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Csr")]
+		public string Csr
+		{
+			get
+			{
+				return csr;
+			}
+			set	
+			{
+				csr = value;
 			}
 		}
 	}

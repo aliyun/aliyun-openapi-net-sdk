@@ -100,9 +100,13 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private long? applyId;
 
+			private List<BatchCheckDeviceNames_InvalidDetailListItem> invalidDetailList;
+
 			private List<string> invalidDeviceNameList;
 
 			private List<string> invalidDeviceNicknameList;
+
+			private List<string> repeatedDeviceNameList;
 
 			public long? ApplyId
 			{
@@ -113,6 +117,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					applyId = value;
+				}
+			}
+
+			public List<BatchCheckDeviceNames_InvalidDetailListItem> InvalidDetailList
+			{
+				get
+				{
+					return invalidDetailList;
+				}
+				set	
+				{
+					invalidDetailList = value;
 				}
 			}
 
@@ -137,6 +153,64 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					invalidDeviceNicknameList = value;
+				}
+			}
+
+			public List<string> RepeatedDeviceNameList
+			{
+				get
+				{
+					return repeatedDeviceNameList;
+				}
+				set	
+				{
+					repeatedDeviceNameList = value;
+				}
+			}
+
+			public class BatchCheckDeviceNames_InvalidDetailListItem
+			{
+
+				private string deviceName;
+
+				private string nickName;
+
+				private string errorMsg;
+
+				public string DeviceName
+				{
+					get
+					{
+						return deviceName;
+					}
+					set	
+					{
+						deviceName = value;
+					}
+				}
+
+				public string NickName
+				{
+					get
+					{
+						return nickName;
+					}
+					set	
+					{
+						nickName = value;
+					}
+				}
+
+				public string ErrorMsg
+				{
+					get
+					{
+						return errorMsg;
+					}
+					set	
+					{
+						errorMsg = value;
+					}
 				}
 			}
 		}

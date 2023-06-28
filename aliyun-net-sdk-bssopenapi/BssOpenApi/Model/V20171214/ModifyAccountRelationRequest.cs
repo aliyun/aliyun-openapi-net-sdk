@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -58,6 +59,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private List<string> permissionCodess = new List<string>(){ };
 
+		[JsonProperty(PropertyName = "ChildNick")]
 		public string ChildNick
 		{
 			get
@@ -71,6 +73,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "ParentUserId")]
 		public long? ParentUserId
 		{
 			get
@@ -84,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RelationId")]
 		public long? RelationId
 		{
 			get
@@ -97,6 +101,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RoleCodes")]
 		public List<string> RoleCodess
 		{
 			get
@@ -110,6 +115,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RelationOperation")]
 		public string RelationOperation
 		{
 			get
@@ -123,6 +129,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RelationType")]
 		public string RelationType
 		{
 			get
@@ -136,6 +143,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "ChildUserId")]
 		public long? ChildUserId
 		{
 			get
@@ -149,6 +157,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -162,6 +171,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "PermissionCodes")]
 		public List<string> PermissionCodess
 		{
 			get

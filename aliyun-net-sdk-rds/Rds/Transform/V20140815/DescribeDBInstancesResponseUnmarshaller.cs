@@ -89,6 +89,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstance.DBInstanceClass = _ctx.StringValue("DescribeDBInstances.Items["+ i +"].DBInstanceClass");
 				dBInstance.SwitchWeight = _ctx.IntegerValue("DescribeDBInstances.Items["+ i +"].SwitchWeight");
 				dBInstance.DeletionProtection = _ctx.BooleanValue("DescribeDBInstances.Items["+ i +"].DeletionProtection");
+				dBInstance.BurstingEnabled = _ctx.BooleanValue("DescribeDBInstances.Items["+ i +"].BurstingEnabled");
+				dBInstance.BpeEnabled = _ctx.StringValue("DescribeDBInstances.Items["+ i +"].BpeEnabled");
 
 				List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_ReadOnlyDBInstanceId> dBInstance_readOnlyDBInstanceIds = new List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_ReadOnlyDBInstanceId>();
 				for (int j = 0; j < _ctx.Length("DescribeDBInstances.Items["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {

@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private List<DescribeParameters_DBInstanceParameter> runningParameters;
 
+		private DescribeParameters_ParamGroupInfo paramGroupInfo;
+
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
@@ -100,6 +102,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ParamGroupInfo")]
+		public DescribeParameters_ParamGroupInfo ParamGroupInfo
+		{
+			get
+			{
+				return paramGroupInfo;
+			}
+			set	
+			{
+				paramGroupInfo = value;
+			}
+		}
+
 		public class DescribeParameters_DBInstanceParameter
 		{
 
@@ -145,6 +160,70 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					parameterValue = value;
+				}
+			}
+		}
+
+		public class DescribeParameters_ParamGroupInfo
+		{
+
+			private string parameterGroupName;
+
+			private string parameterGroupDesc;
+
+			private string parameterGroupType;
+
+			private string paramGroupId;
+
+			[JsonProperty(PropertyName = "ParameterGroupName")]
+			public string ParameterGroupName
+			{
+				get
+				{
+					return parameterGroupName;
+				}
+				set	
+				{
+					parameterGroupName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ParameterGroupDesc")]
+			public string ParameterGroupDesc
+			{
+				get
+				{
+					return parameterGroupDesc;
+				}
+				set	
+				{
+					parameterGroupDesc = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ParameterGroupType")]
+			public string ParameterGroupType
+			{
+				get
+				{
+					return parameterGroupType;
+				}
+				set	
+				{
+					parameterGroupType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ParamGroupId")]
+			public string ParamGroupId
+			{
+				get
+				{
+					return paramGroupId;
+				}
+				set	
+				{
+					paramGroupId = value;
 				}
 			}
 		}

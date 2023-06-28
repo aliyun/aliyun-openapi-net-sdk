@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			PutSecretValueResponse putSecretValueResponse = new PutSecretValueResponse();
 
 			putSecretValueResponse.HttpResponse = _ctx.HttpResponse;
-			putSecretValueResponse.RequestId = _ctx.StringValue("PutSecretValue.RequestId");
 			putSecretValueResponse.SecretName = _ctx.StringValue("PutSecretValue.SecretName");
 			putSecretValueResponse.VersionId = _ctx.StringValue("PutSecretValue.VersionId");
+			putSecretValueResponse.RequestId = _ctx.StringValue("PutSecretValue.RequestId");
 
 			List<string> putSecretValueResponse_versionStages = new List<string>();
 			for (int i = 0; i < _ctx.Length("PutSecretValue.VersionStages.Length"); i++) {

@@ -48,6 +48,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private bool? enableAutomaticRotation;
 
+		[JsonProperty(PropertyName = "KeyId")]
 		public string KeyId
 		{
 			get
@@ -61,6 +62,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "RotationInterval")]
 		public string RotationInterval
 		{
 			get
@@ -74,6 +76,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "EnableAutomaticRotation")]
 		public bool? EnableAutomaticRotation
 		{
 			get

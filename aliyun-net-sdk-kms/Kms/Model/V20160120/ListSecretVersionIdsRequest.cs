@@ -44,12 +44,13 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string includeDeprecated;
 
+		private int? pageNumber;
+
 		private int? pageSize;
 
 		private string secretName;
 
-		private int? pageNumber;
-
+		[JsonProperty(PropertyName = "IncludeDeprecated")]
 		public string IncludeDeprecated
 		{
 			get
@@ -63,6 +64,21 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNumber")]
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get
@@ -76,6 +92,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecretName")]
 		public string SecretName
 		{
 			get
@@ -86,19 +103,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				secretName = value;
 				DictionaryUtil.Add(QueryParameters, "SecretName", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

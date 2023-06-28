@@ -40,6 +40,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				ecsSecurityGroupRelation.NetworkType = _ctx.StringValue("DescribeSecurityGroupConfiguration.Items["+ i +"].NetworkType");
 				ecsSecurityGroupRelation.SecurityGroupId = _ctx.StringValue("DescribeSecurityGroupConfiguration.Items["+ i +"].SecurityGroupId");
 				ecsSecurityGroupRelation.RegionId = _ctx.StringValue("DescribeSecurityGroupConfiguration.Items["+ i +"].RegionId");
+				ecsSecurityGroupRelation.SecurityGroupName = _ctx.StringValue("DescribeSecurityGroupConfiguration.Items["+ i +"].SecurityGroupName");
 
 				describeSecurityGroupConfigurationResponse_items.Add(ecsSecurityGroupRelation);
 			}

@@ -42,10 +42,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Method = MethodType.POST;
         }
 
-		private string protectionLevel;
-
-		private string keyUsage;
-
 		private string origin;
 
 		private string description;
@@ -56,32 +52,15 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private bool? enableAutomaticRotation;
 
-		public string ProtectionLevel
-		{
-			get
-			{
-				return protectionLevel;
-			}
-			set	
-			{
-				protectionLevel = value;
-				DictionaryUtil.Add(QueryParameters, "ProtectionLevel", value);
-			}
-		}
+		private string tags;
 
-		public string KeyUsage
-		{
-			get
-			{
-				return keyUsage;
-			}
-			set	
-			{
-				keyUsage = value;
-				DictionaryUtil.Add(QueryParameters, "KeyUsage", value);
-			}
-		}
+		private string protectionLevel;
 
+		private string keyUsage;
+
+		private string dKMSInstanceId;
+
+		[JsonProperty(PropertyName = "Origin")]
 		public string Origin
 		{
 			get
@@ -95,6 +74,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "Description")]
 		public string Description
 		{
 			get
@@ -108,6 +88,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "KeySpec")]
 		public string KeySpec
 		{
 			get
@@ -121,6 +102,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "RotationInterval")]
 		public string RotationInterval
 		{
 			get
@@ -134,6 +116,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "EnableAutomaticRotation")]
 		public bool? EnableAutomaticRotation
 		{
 			get
@@ -144,6 +127,62 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				enableAutomaticRotation = value;
 				DictionaryUtil.Add(QueryParameters, "EnableAutomaticRotation", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "Tags")]
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ProtectionLevel")]
+		public string ProtectionLevel
+		{
+			get
+			{
+				return protectionLevel;
+			}
+			set	
+			{
+				protectionLevel = value;
+				DictionaryUtil.Add(QueryParameters, "ProtectionLevel", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "KeyUsage")]
+		public string KeyUsage
+		{
+			get
+			{
+				return keyUsage;
+			}
+			set	
+			{
+				keyUsage = value;
+				DictionaryUtil.Add(QueryParameters, "KeyUsage", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DKMSInstanceId")]
+		public string DKMSInstanceId
+		{
+			get
+			{
+				return dKMSInstanceId;
+			}
+			set	
+			{
+				dKMSInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DKMSInstanceId", value);
 			}
 		}
 

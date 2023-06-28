@@ -115,6 +115,8 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			public class ListGroups_AppGroup
 			{
 
+				private long? appGroupId;
+
 				private string appName;
 
 				private string appKey;
@@ -122,6 +124,20 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 				private string description;
 
 				private string groupId;
+
+				private string xattrs;
+
+				public long? AppGroupId
+				{
+					get
+					{
+						return appGroupId;
+					}
+					set	
+					{
+						appGroupId = value;
+					}
+				}
 
 				public string AppName
 				{
@@ -168,6 +184,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					set	
 					{
 						groupId = value;
+					}
+				}
+
+				public string Xattrs
+				{
+					get
+					{
+						return xattrs;
+					}
+					set	
+					{
+						xattrs = value;
 					}
 				}
 			}

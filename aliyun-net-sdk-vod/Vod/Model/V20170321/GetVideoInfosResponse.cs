@@ -108,6 +108,12 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string title;
 
+			private string storageClass;
+
+			private string restoreStatus;
+
+			private string restoreExpiration;
+
 			private List<GetVideoInfos_Thumbnail> thumbnailList;
 
 			private List<string> snapshots;
@@ -337,6 +343,42 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					title = value;
+				}
+			}
+
+			public string StorageClass
+			{
+				get
+				{
+					return storageClass;
+				}
+				set	
+				{
+					storageClass = value;
+				}
+			}
+
+			public string RestoreStatus
+			{
+				get
+				{
+					return restoreStatus;
+				}
+				set	
+				{
+					restoreStatus = value;
+				}
+			}
+
+			public string RestoreExpiration
+			{
+				get
+				{
+					return restoreExpiration;
+				}
+				set	
+				{
+					restoreExpiration = value;
 				}
 			}
 

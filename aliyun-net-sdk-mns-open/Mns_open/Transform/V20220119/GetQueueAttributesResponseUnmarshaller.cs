@@ -38,8 +38,6 @@ namespace Aliyun.Acs.Mns_open.Transform.V20220119
 			getQueueAttributesResponse.Success = _ctx.BooleanValue("GetQueueAttributes.Success");
 
 			GetQueueAttributesResponse.GetQueueAttributes_Data data = new GetQueueAttributesResponse.GetQueueAttributes_Data();
-			data.QueueUrl = _ctx.StringValue("GetQueueAttributes.Data.QueueUrl");
-			data.QueueInternalUrl = _ctx.StringValue("GetQueueAttributes.Data.QueueInternalUrl");
 			data.QueueName = _ctx.StringValue("GetQueueAttributes.Data.QueueName");
 			data.CreateTime = _ctx.LongValue("GetQueueAttributes.Data.CreateTime");
 			data.LastModifyTime = _ctx.LongValue("GetQueueAttributes.Data.LastModifyTime");

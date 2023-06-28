@@ -31,6 +31,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveStreamWatermarkRulesResponse describeLiveStreamWatermarkRulesResponse = new DescribeLiveStreamWatermarkRulesResponse();
 
 			describeLiveStreamWatermarkRulesResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveStreamWatermarkRulesResponse.Total = _ctx.IntegerValue("DescribeLiveStreamWatermarkRules.Total");
 			describeLiveStreamWatermarkRulesResponse.RequestId = _ctx.StringValue("DescribeLiveStreamWatermarkRules.RequestId");
 
 			List<DescribeLiveStreamWatermarkRulesResponse.DescribeLiveStreamWatermarkRules_RuleInfo> describeLiveStreamWatermarkRulesResponse_ruleInfoList = new List<DescribeLiveStreamWatermarkRulesResponse.DescribeLiveStreamWatermarkRules_RuleInfo>();

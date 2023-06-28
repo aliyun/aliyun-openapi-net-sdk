@@ -39,6 +39,9 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			AddShareTaskDeviceResponse.AddShareTaskDevice_Data data = new AddShareTaskDeviceResponse.AddShareTaskDevice_Data();
 			data.Progress = _ctx.IntegerValue("AddShareTaskDevice.Data.Progress");
 			data.ProgressId = _ctx.StringValue("AddShareTaskDevice.Data.ProgressId");
+			data.SuccessSum = _ctx.IntegerValue("AddShareTaskDevice.Data.SuccessSum");
+			data.FailSum = _ctx.IntegerValue("AddShareTaskDevice.Data.FailSum");
+			data.FailedResultCsvFile = _ctx.StringValue("AddShareTaskDevice.Data.FailedResultCsvFile");
 			addShareTaskDeviceResponse.Data = data;
         
 			return addShareTaskDeviceResponse;

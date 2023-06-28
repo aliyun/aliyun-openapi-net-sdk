@@ -44,26 +44,29 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string secretType;
 
-		private string versionId;
-
-		private string secretData;
-
 		private string description;
 
 		private string rotationInterval;
-
-		private string secretName;
 
 		private bool? enableAutomaticRotation;
 
 		private string encryptionKeyId;
 
-		private string secretDataType;
-
 		private string tags;
 
 		private string extendedConfig;
 
+		private string versionId;
+
+		private string dKMSInstanceId;
+
+		private string secretData;
+
+		private string secretName;
+
+		private string secretDataType;
+
+		[JsonProperty(PropertyName = "SecretType")]
 		public string SecretType
 		{
 			get
@@ -77,32 +80,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public string VersionId
-		{
-			get
-			{
-				return versionId;
-			}
-			set	
-			{
-				versionId = value;
-				DictionaryUtil.Add(QueryParameters, "VersionId", value);
-			}
-		}
-
-		public string SecretData
-		{
-			get
-			{
-				return secretData;
-			}
-			set	
-			{
-				secretData = value;
-				DictionaryUtil.Add(QueryParameters, "SecretData", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "Description")]
 		public string Description
 		{
 			get
@@ -116,6 +94,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "RotationInterval")]
 		public string RotationInterval
 		{
 			get
@@ -129,19 +108,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public string SecretName
-		{
-			get
-			{
-				return secretName;
-			}
-			set	
-			{
-				secretName = value;
-				DictionaryUtil.Add(QueryParameters, "SecretName", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "EnableAutomaticRotation")]
 		public bool? EnableAutomaticRotation
 		{
 			get
@@ -155,6 +122,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "EncryptionKeyId")]
 		public string EncryptionKeyId
 		{
 			get
@@ -168,19 +136,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public string SecretDataType
-		{
-			get
-			{
-				return secretDataType;
-			}
-			set	
-			{
-				secretDataType = value;
-				DictionaryUtil.Add(QueryParameters, "SecretDataType", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "Tags")]
 		public string Tags
 		{
 			get
@@ -194,6 +150,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "ExtendedConfig")]
 		public string ExtendedConfig
 		{
 			get
@@ -204,6 +161,76 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				extendedConfig = value;
 				DictionaryUtil.Add(QueryParameters, "ExtendedConfig", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "VersionId")]
+		public string VersionId
+		{
+			get
+			{
+				return versionId;
+			}
+			set	
+			{
+				versionId = value;
+				DictionaryUtil.Add(QueryParameters, "VersionId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DKMSInstanceId")]
+		public string DKMSInstanceId
+		{
+			get
+			{
+				return dKMSInstanceId;
+			}
+			set	
+			{
+				dKMSInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DKMSInstanceId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "SecretData")]
+		public string SecretData
+		{
+			get
+			{
+				return secretData;
+			}
+			set	
+			{
+				secretData = value;
+				DictionaryUtil.Add(QueryParameters, "SecretData", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "SecretName")]
+		public string SecretName
+		{
+			get
+			{
+				return secretName;
+			}
+			set	
+			{
+				secretName = value;
+				DictionaryUtil.Add(QueryParameters, "SecretName", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "SecretDataType")]
+		public string SecretDataType
+		{
+			get
+			{
+				return secretDataType;
+			}
+			set	
+			{
+				secretDataType = value;
+				DictionaryUtil.Add(QueryParameters, "SecretDataType", value);
 			}
 		}
 

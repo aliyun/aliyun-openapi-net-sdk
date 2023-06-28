@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
@@ -25,11 +25,23 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 	public class CertificatePrivateKeySignResponse : AcsResponse
 	{
 
+		private string signatureValue;
+
 		private string requestId;
 
 		private string certificateId;
 
-		private string signatureValue;
+		public string SignatureValue
+		{
+			get
+			{
+				return signatureValue;
+			}
+			set	
+			{
+				signatureValue = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -52,18 +64,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			set	
 			{
 				certificateId = value;
-			}
-		}
-
-		public string SignatureValue
-		{
-			get
-			{
-				return signatureValue;
-			}
-			set	
-			{
-				signatureValue = value;
 			}
 		}
 	}

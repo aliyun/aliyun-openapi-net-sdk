@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			GetPublicKeyResponse getPublicKeyResponse = new GetPublicKeyResponse();
 
 			getPublicKeyResponse.HttpResponse = _ctx.HttpResponse;
-			getPublicKeyResponse.PublicKey = _ctx.StringValue("GetPublicKey.PublicKey");
+			getPublicKeyResponse.KeyVersionId = _ctx.StringValue("GetPublicKey.KeyVersionId");
 			getPublicKeyResponse.KeyId = _ctx.StringValue("GetPublicKey.KeyId");
 			getPublicKeyResponse.RequestId = _ctx.StringValue("GetPublicKey.RequestId");
-			getPublicKeyResponse.KeyVersionId = _ctx.StringValue("GetPublicKey.KeyVersionId");
+			getPublicKeyResponse.PublicKey = _ctx.StringValue("GetPublicKey.PublicKey");
         
 			return getPublicKeyResponse;
         }

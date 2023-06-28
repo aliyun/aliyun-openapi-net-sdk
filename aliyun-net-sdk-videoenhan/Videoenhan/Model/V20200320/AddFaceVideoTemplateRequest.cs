@@ -40,7 +40,22 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			Method = MethodType.POST;
         }
 
+		private string videoScene;
+
 		private string videoURL;
+
+		public string VideoScene
+		{
+			get
+			{
+				return videoScene;
+			}
+			set	
+			{
+				videoScene = value;
+				DictionaryUtil.Add(BodyParameters, "VideoScene", value);
+			}
+		}
 
 		public string VideoURL
 		{

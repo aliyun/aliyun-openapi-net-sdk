@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -62,6 +63,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private int? maxResults;
 
+		[JsonProperty(PropertyName = "ProductDetail")]
 		public string ProductDetail
 		{
 			get
@@ -75,6 +77,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "ProductCode")]
 		public string ProductCode
 		{
 			get
@@ -88,6 +91,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "BillOwnerIdList")]
 		public List<string> BillOwnerIdLists
 		{
 			get
@@ -101,6 +105,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "SubscriptionType")]
 		public string SubscriptionType
 		{
 			get
@@ -114,6 +119,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "BillingCycle")]
 		public string BillingCycle
 		{
 			get
@@ -127,6 +133,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "CostUnitCode")]
 		public string CostUnitCode
 		{
 			get
@@ -140,6 +147,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "AmortizationPeriodFilter")]
 		public List<string> AmortizationPeriodFilters
 		{
 			get
@@ -153,6 +161,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "NextToken")]
 		public string NextToken
 		{
 			get
@@ -166,6 +175,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "BillUserIdList")]
 		public List<string> BillUserIdLists
 		{
 			get
@@ -179,6 +189,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceIdList")]
 		public List<string> InstanceIdLists
 		{
 			get
@@ -192,6 +203,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "MaxResults")]
 		public int? MaxResults
 		{
 			get

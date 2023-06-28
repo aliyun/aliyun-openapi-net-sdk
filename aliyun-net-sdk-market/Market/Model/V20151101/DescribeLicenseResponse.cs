@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Market.Model.V20151101
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 
 		private DescribeLicense_License license;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
+		[JsonProperty(PropertyName = "License")]
 		public DescribeLicense_License License
 		{
 			get
@@ -56,90 +58,31 @@ namespace Aliyun.Acs.Market.Model.V20151101
 		public class DescribeLicense_License
 		{
 
+			private string activateTime;
+
 			private string licenseStatus;
+
+			private string productName;
+
+			private string expiredTime;
+
+			private string productSkuId;
+
+			private string createTime;
 
 			private string licenseCode;
 
 			private string instanceId;
 
-			private string createTime;
-
-			private string expiredTime;
-
-			private string activateTime;
-
-			private string productSkuId;
+			private string supplierName;
 
 			private string productCode;
-
-			private string productName;
-
-			private string supplierName;
 
 			private List<DescribeLicense_LicenseAttribute> extendArray;
 
 			private DescribeLicense_ExtendInfo extendInfo;
 
-			public string LicenseStatus
-			{
-				get
-				{
-					return licenseStatus;
-				}
-				set	
-				{
-					licenseStatus = value;
-				}
-			}
-
-			public string LicenseCode
-			{
-				get
-				{
-					return licenseCode;
-				}
-				set	
-				{
-					licenseCode = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public string ExpiredTime
-			{
-				get
-				{
-					return expiredTime;
-				}
-				set	
-				{
-					expiredTime = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "ActivateTime")]
 			public string ActivateTime
 			{
 				get
@@ -152,30 +95,20 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				}
 			}
 
-			public string ProductSkuId
+			[JsonProperty(PropertyName = "LicenseStatus")]
+			public string LicenseStatus
 			{
 				get
 				{
-					return productSkuId;
+					return licenseStatus;
 				}
 				set	
 				{
-					productSkuId = value;
+					licenseStatus = value;
 				}
 			}
 
-			public string ProductCode
-			{
-				get
-				{
-					return productCode;
-				}
-				set	
-				{
-					productCode = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "ProductName")]
 			public string ProductName
 			{
 				get
@@ -188,6 +121,72 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				}
 			}
 
+			[JsonProperty(PropertyName = "ExpiredTime")]
+			public string ExpiredTime
+			{
+				get
+				{
+					return expiredTime;
+				}
+				set	
+				{
+					expiredTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ProductSkuId")]
+			public string ProductSkuId
+			{
+				get
+				{
+					return productSkuId;
+				}
+				set	
+				{
+					productSkuId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CreateTime")]
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LicenseCode")]
+			public string LicenseCode
+			{
+				get
+				{
+					return licenseCode;
+				}
+				set	
+				{
+					licenseCode = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstanceId")]
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SupplierName")]
 			public string SupplierName
 			{
 				get
@@ -200,6 +199,20 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				}
 			}
 
+			[JsonProperty(PropertyName = "ProductCode")]
+			public string ProductCode
+			{
+				get
+				{
+					return productCode;
+				}
+				set	
+				{
+					productCode = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ExtendArray")]
 			public List<DescribeLicense_LicenseAttribute> ExtendArray
 			{
 				get
@@ -212,6 +225,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				}
 			}
 
+			[JsonProperty(PropertyName = "ExtendInfo")]
 			public DescribeLicense_ExtendInfo ExtendInfo
 			{
 				get
@@ -231,6 +245,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 
 				private string _value;
 
+				[JsonProperty(PropertyName = "Code")]
 				public string Code
 				{
 					get
@@ -243,6 +258,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 					}
 				}
 
+				[JsonProperty(PropertyName = "_Value")]
 				public string _Value
 				{
 					get
@@ -261,12 +277,13 @@ namespace Aliyun.Acs.Market.Model.V20151101
 
 				private long? aliUid;
 
+				private long? accountQuantity;
+
 				private string email;
 
 				private string mobile;
 
-				private long? accountQuantity;
-
+				[JsonProperty(PropertyName = "AliUid")]
 				public long? AliUid
 				{
 					get
@@ -279,6 +296,20 @@ namespace Aliyun.Acs.Market.Model.V20151101
 					}
 				}
 
+				[JsonProperty(PropertyName = "AccountQuantity")]
+				public long? AccountQuantity
+				{
+					get
+					{
+						return accountQuantity;
+					}
+					set	
+					{
+						accountQuantity = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Email")]
 				public string Email
 				{
 					get
@@ -291,6 +322,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 					}
 				}
 
+				[JsonProperty(PropertyName = "Mobile")]
 				public string Mobile
 				{
 					get
@@ -300,18 +332,6 @@ namespace Aliyun.Acs.Market.Model.V20151101
 					set	
 					{
 						mobile = value;
-					}
-				}
-
-				public long? AccountQuantity
-				{
-					get
-					{
-						return accountQuantity;
-					}
-					set	
-					{
-						accountQuantity = value;
 					}
 				}
 			}

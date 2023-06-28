@@ -95,6 +95,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string resourceName;
 
+			private string imageId;
+
+			private string imageUrl;
+
 			[JsonProperty(PropertyName = "EndOffset")]
 			public int? EndOffset
 			{
@@ -235,6 +239,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					resourceName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ImageId")]
+			public string ImageId
+			{
+				get
+				{
+					return imageId;
+				}
+				set	
+				{
+					imageId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ImageUrl")]
+			public string ImageUrl
+			{
+				get
+				{
+					return imageUrl;
+				}
+				set	
+				{
+					imageUrl = value;
 				}
 			}
 		}

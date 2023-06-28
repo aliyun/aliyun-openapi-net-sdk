@@ -74,6 +74,10 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 			private List<DescribeAvailableResource_SupportedModeItem> supportedMode;
 
+			private List<string> supportedComputeResource;
+
+			private List<string> supportedStorageResource;
+
 			public string ZoneId
 			{
 				get
@@ -95,6 +99,30 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					supportedMode = value;
+				}
+			}
+
+			public List<string> SupportedComputeResource
+			{
+				get
+				{
+					return supportedComputeResource;
+				}
+				set	
+				{
+					supportedComputeResource = value;
+				}
+			}
+
+			public List<string> SupportedStorageResource
+			{
+				get
+				{
+					return supportedStorageResource;
+				}
+				set	
+				{
+					supportedStorageResource = value;
 				}
 			}
 
@@ -179,9 +207,9 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 						private string storageType;
 
-						private List<string> supportedComputeResource;
+						private List<string> supportedComputeResource1;
 
-						private List<string> supportedStorageResource;
+						private List<string> supportedStorageResource2;
 
 						private DescribeAvailableResource_SupportedElasticIOResource supportedElasticIOResource;
 
@@ -197,27 +225,27 @@ namespace Aliyun.Acs.adb.Model.V20190315
 							}
 						}
 
-						public List<string> SupportedComputeResource
+						public List<string> SupportedComputeResource1
 						{
 							get
 							{
-								return supportedComputeResource;
+								return supportedComputeResource1;
 							}
 							set	
 							{
-								supportedComputeResource = value;
+								supportedComputeResource1 = value;
 							}
 						}
 
-						public List<string> SupportedStorageResource
+						public List<string> SupportedStorageResource2
 						{
 							get
 							{
-								return supportedStorageResource;
+								return supportedStorageResource2;
 							}
 							set	
 							{
-								supportedStorageResource = value;
+								supportedStorageResource2 = value;
 							}
 						}
 
@@ -420,21 +448,21 @@ namespace Aliyun.Acs.adb.Model.V20190315
 						public class DescribeAvailableResource_SupportedExecutor
 						{
 
-							private DescribeAvailableResource_NodeCount1 nodeCount1;
+							private DescribeAvailableResource_NodeCount3 nodeCount3;
 
-							public DescribeAvailableResource_NodeCount1 NodeCount1
+							public DescribeAvailableResource_NodeCount3 NodeCount3
 							{
 								get
 								{
-									return nodeCount1;
+									return nodeCount3;
 								}
 								set	
 								{
-									nodeCount1 = value;
+									nodeCount3 = value;
 								}
 							}
 
-							public class DescribeAvailableResource_NodeCount1
+							public class DescribeAvailableResource_NodeCount3
 							{
 
 								private string step;

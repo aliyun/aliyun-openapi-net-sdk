@@ -27,6 +27,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string ipv4GatewayId;
 
+		private string resourceGroupId;
+
 		private string requestId;
 
 		public string Ipv4GatewayId
@@ -38,6 +40,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				ipv4GatewayId = value;
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
 			}
 		}
 

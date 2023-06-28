@@ -85,9 +85,10 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				deviceLists = value;
 				for (int i = 0; i < deviceLists.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"DeviceList." + (i + 1) + ".DeviceId", deviceLists[i].DeviceId);
-					DictionaryUtil.Add(QueryParameters,"DeviceList." + (i + 1) + ".Manufacturer", deviceLists[i].Manufacturer);
-					DictionaryUtil.Add(QueryParameters,"DeviceList." + (i + 1) + ".DeviceModel", deviceLists[i].DeviceModel);
+					DictionaryUtil.Add(BodyParameters,"DeviceList." + (i + 1) + ".DeviceName", deviceLists[i].DeviceName);
+					DictionaryUtil.Add(BodyParameters,"DeviceList." + (i + 1) + ".DeviceId", deviceLists[i].DeviceId);
+					DictionaryUtil.Add(BodyParameters,"DeviceList." + (i + 1) + ".Manufacturer", deviceLists[i].Manufacturer);
+					DictionaryUtil.Add(BodyParameters,"DeviceList." + (i + 1) + ".DeviceModel", deviceLists[i].DeviceModel);
 				}
 			}
 		}
@@ -95,11 +96,25 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		public class DeviceList
 		{
 
+			private string deviceName;
+
 			private string deviceId;
 
 			private string manufacturer;
 
 			private string deviceModel;
+
+			public string DeviceName
+			{
+				get
+				{
+					return deviceName;
+				}
+				set	
+				{
+					deviceName = value;
+				}
+			}
 
 			public string DeviceId
 			{

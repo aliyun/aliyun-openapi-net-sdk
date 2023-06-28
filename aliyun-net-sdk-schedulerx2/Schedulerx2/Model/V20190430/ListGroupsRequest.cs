@@ -38,9 +38,12 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string namespaceSource;
+
+		private string appGroupName;
 
 		private string _namespace;
 
@@ -54,6 +57,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				namespaceSource = value;
 				DictionaryUtil.Add(QueryParameters, "NamespaceSource", value);
+			}
+		}
+
+		public string AppGroupName
+		{
+			get
+			{
+				return appGroupName;
+			}
+			set	
+			{
+				appGroupName = value;
+				DictionaryUtil.Add(QueryParameters, "AppGroupName", value);
 			}
 		}
 

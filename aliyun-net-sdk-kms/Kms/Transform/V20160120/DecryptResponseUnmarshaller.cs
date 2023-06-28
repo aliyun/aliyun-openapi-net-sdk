@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			DecryptResponse decryptResponse = new DecryptResponse();
 
 			decryptResponse.HttpResponse = _ctx.HttpResponse;
-			decryptResponse.Plaintext = _ctx.StringValue("Decrypt.Plaintext");
+			decryptResponse.KeyVersionId = _ctx.StringValue("Decrypt.KeyVersionId");
 			decryptResponse.KeyId = _ctx.StringValue("Decrypt.KeyId");
 			decryptResponse.RequestId = _ctx.StringValue("Decrypt.RequestId");
-			decryptResponse.KeyVersionId = _ctx.StringValue("Decrypt.KeyVersionId");
+			decryptResponse.Plaintext = _ctx.StringValue("Decrypt.Plaintext");
         
 			return decryptResponse;
         }

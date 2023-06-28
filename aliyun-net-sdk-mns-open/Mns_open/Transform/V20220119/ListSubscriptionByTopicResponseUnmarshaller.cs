@@ -56,7 +56,6 @@ namespace Aliyun.Acs.Mns_open.Transform.V20220119
 				pageDataItem.LastModifyTime = _ctx.LongValue("ListSubscriptionByTopic.Data.PageData["+ i +"].LastModifyTime");
 				pageDataItem.NotifyStrategy = _ctx.StringValue("ListSubscriptionByTopic.Data.PageData["+ i +"].NotifyStrategy");
 				pageDataItem.NotifyContentFormat = _ctx.StringValue("ListSubscriptionByTopic.Data.PageData["+ i +"].NotifyContentFormat");
-				pageDataItem.SubscriptionURL = _ctx.StringValue("ListSubscriptionByTopic.Data.PageData["+ i +"].SubscriptionURL");
 
 				data_pageData.Add(pageDataItem);
 			}

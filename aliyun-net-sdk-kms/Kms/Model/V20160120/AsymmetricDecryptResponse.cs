@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
@@ -25,23 +25,23 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 	public class AsymmetricDecryptResponse : AcsResponse
 	{
 
-		private string plaintext;
+		private string keyVersionId;
 
 		private string keyId;
 
 		private string requestId;
 
-		private string keyVersionId;
+		private string plaintext;
 
-		public string Plaintext
+		public string KeyVersionId
 		{
 			get
 			{
-				return plaintext;
+				return keyVersionId;
 			}
 			set	
 			{
-				plaintext = value;
+				keyVersionId = value;
 			}
 		}
 
@@ -69,15 +69,15 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public string KeyVersionId
+		public string Plaintext
 		{
 			get
 			{
-				return keyVersionId;
+				return plaintext;
 			}
 			set	
 			{
-				keyVersionId = value;
+				plaintext = value;
 			}
 		}
 	}

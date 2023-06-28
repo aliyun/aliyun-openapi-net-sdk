@@ -41,40 +41,31 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private int? maxJobs;
-
 		private string namespaceName;
 
 		private string namespaceSource;
 
-		private string groupId;
+		private bool? scheduleBusyWorkers;
 
 		private string description;
 
-		private string monitorConfigJson;
-
 		private string appName;
-
-		private string _namespace;
-
-		private string alarmJson;
-
-		private string appKey;
 
 		private string monitorContactsJson;
 
-		public int? MaxJobs
-		{
-			get
-			{
-				return maxJobs;
-			}
-			set	
-			{
-				maxJobs = value;
-				DictionaryUtil.Add(QueryParameters, "MaxJobs", value.ToString());
-			}
-		}
+		private int? maxJobs;
+
+		private string groupId;
+
+		private int? appType;
+
+		private string monitorConfigJson;
+
+		private string _namespace;
+
+		private bool? enableLog;
+
+		private string appKey;
 
 		public string NamespaceName
 		{
@@ -102,16 +93,16 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public string GroupId
+		public bool? ScheduleBusyWorkers
 		{
 			get
 			{
-				return groupId;
+				return scheduleBusyWorkers;
 			}
 			set	
 			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+				scheduleBusyWorkers = value;
+				DictionaryUtil.Add(QueryParameters, "ScheduleBusyWorkers", value.ToString());
 			}
 		}
 
@@ -128,19 +119,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public string MonitorConfigJson
-		{
-			get
-			{
-				return monitorConfigJson;
-			}
-			set	
-			{
-				monitorConfigJson = value;
-				DictionaryUtil.Add(QueryParameters, "MonitorConfigJson", value);
-			}
-		}
-
 		public string AppName
 		{
 			get
@@ -151,6 +129,71 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				appName = value;
 				DictionaryUtil.Add(QueryParameters, "AppName", value);
+			}
+		}
+
+		public string MonitorContactsJson
+		{
+			get
+			{
+				return monitorContactsJson;
+			}
+			set	
+			{
+				monitorContactsJson = value;
+				DictionaryUtil.Add(QueryParameters, "MonitorContactsJson", value);
+			}
+		}
+
+		public int? MaxJobs
+		{
+			get
+			{
+				return maxJobs;
+			}
+			set	
+			{
+				maxJobs = value;
+				DictionaryUtil.Add(QueryParameters, "MaxJobs", value.ToString());
+			}
+		}
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+			}
+		}
+
+		public int? AppType
+		{
+			get
+			{
+				return appType;
+			}
+			set	
+			{
+				appType = value;
+				DictionaryUtil.Add(QueryParameters, "AppType", value.ToString());
+			}
+		}
+
+		public string MonitorConfigJson
+		{
+			get
+			{
+				return monitorConfigJson;
+			}
+			set	
+			{
+				monitorConfigJson = value;
+				DictionaryUtil.Add(QueryParameters, "MonitorConfigJson", value);
 			}
 		}
 
@@ -167,16 +210,16 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public string AlarmJson
+		public bool? EnableLog
 		{
 			get
 			{
-				return alarmJson;
+				return enableLog;
 			}
 			set	
 			{
-				alarmJson = value;
-				DictionaryUtil.Add(QueryParameters, "AlarmJson", value);
+				enableLog = value;
+				DictionaryUtil.Add(QueryParameters, "EnableLog", value.ToString());
 			}
 		}
 
@@ -190,19 +233,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				appKey = value;
 				DictionaryUtil.Add(QueryParameters, "AppKey", value);
-			}
-		}
-
-		public string MonitorContactsJson
-		{
-			get
-			{
-				return monitorContactsJson;
-			}
-			set	
-			{
-				monitorContactsJson = value;
-				DictionaryUtil.Add(QueryParameters, "MonitorContactsJson", value);
 			}
 		}
 

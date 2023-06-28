@@ -57,6 +57,9 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			video.Title = _ctx.StringValue("GetVideoInfo.Video.Title");
 			video.AuditStatus = _ctx.StringValue("GetVideoInfo.Video.AuditStatus");
 			video.ModifyTime = _ctx.StringValue("GetVideoInfo.Video.ModifyTime");
+			video.StorageClass = _ctx.StringValue("GetVideoInfo.Video.StorageClass");
+			video.RestoreStatus = _ctx.StringValue("GetVideoInfo.Video.RestoreStatus");
+			video.RestoreExpiration = _ctx.StringValue("GetVideoInfo.Video.RestoreExpiration");
 
 			List<string> video_snapshots = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetVideoInfo.Video.Snapshots.Length"); i++) {

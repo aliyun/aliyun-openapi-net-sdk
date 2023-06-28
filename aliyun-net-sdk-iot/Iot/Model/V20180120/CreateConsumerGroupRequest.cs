@@ -41,9 +41,26 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
+		private string type;
+
 		private string iotInstanceId;
 
 		private string groupName;
+
+		private string subBizCode;
+
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
 
 		public string IotInstanceId
 		{
@@ -68,6 +85,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				groupName = value;
 				DictionaryUtil.Add(QueryParameters, "GroupName", value);
+			}
+		}
+
+		public string SubBizCode
+		{
+			get
+			{
+				return subBizCode;
+			}
+			set	
+			{
+				subBizCode = value;
+				DictionaryUtil.Add(QueryParameters, "SubBizCode", value);
 			}
 		}
 

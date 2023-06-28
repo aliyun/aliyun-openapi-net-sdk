@@ -41,10 +41,12 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			List<ListGroupsResponse.ListGroups_Data.ListGroups_AppGroup> data_appGroups = new List<ListGroupsResponse.ListGroups_Data.ListGroups_AppGroup>();
 			for (int i = 0; i < _ctx.Length("ListGroups.Data.AppGroups.Length"); i++) {
 				ListGroupsResponse.ListGroups_Data.ListGroups_AppGroup appGroup = new ListGroupsResponse.ListGroups_Data.ListGroups_AppGroup();
+				appGroup.AppGroupId = _ctx.LongValue("ListGroups.Data.AppGroups["+ i +"].AppGroupId");
 				appGroup.AppName = _ctx.StringValue("ListGroups.Data.AppGroups["+ i +"].AppName");
 				appGroup.AppKey = _ctx.StringValue("ListGroups.Data.AppGroups["+ i +"].AppKey");
 				appGroup.Description = _ctx.StringValue("ListGroups.Data.AppGroups["+ i +"].Description");
 				appGroup.GroupId = _ctx.StringValue("ListGroups.Data.AppGroups["+ i +"].GroupId");
+				appGroup.Xattrs = _ctx.StringValue("ListGroups.Data.AppGroups["+ i +"].Xattrs");
 
 				data_appGroups.Add(appGroup);
 			}

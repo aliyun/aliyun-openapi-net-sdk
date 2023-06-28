@@ -31,6 +31,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string urgentMaterialId;
 
+		private string urgentImageId;
+
+		private string urgentImageUrl;
+
 		private string callbackUrl;
 
 		private string programName;
@@ -93,6 +97,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				urgentMaterialId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "UrgentImageId")]
+		public string UrgentImageId
+		{
+			get
+			{
+				return urgentImageId;
+			}
+			set	
+			{
+				urgentImageId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "UrgentImageUrl")]
+		public string UrgentImageUrl
+		{
+			get
+			{
+				return urgentImageUrl;
+			}
+			set	
+			{
+				urgentImageUrl = value;
 			}
 		}
 
@@ -355,6 +385,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string ossBucket;
 
+			private int? onDemand;
+
 			private List<DescribeCasterConfig_RecordFormatItem> recordFormat;
 
 			[JsonProperty(PropertyName = "OssEndpoint")]
@@ -380,6 +412,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					ossBucket = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OnDemand")]
+			public int? OnDemand
+			{
+				get
+				{
+					return onDemand;
+				}
+				set	
+				{
+					onDemand = value;
 				}
 			}
 

@@ -102,6 +102,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 			private bool? enableReadWriteSplit;
 
+			private bool? enableBinlogService;
+
 			private List<DescribeTenant_TenantConnectionsItem> tenantConnections;
 
 			private List<DescribeTenant_TenantZonesItem> tenantZones;
@@ -393,6 +395,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				set	
 				{
 					enableReadWriteSplit = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EnableBinlogService")]
+			public bool? EnableBinlogService
+			{
+				get
+				{
+					return enableBinlogService;
+				}
+				set	
+				{
+					enableBinlogService = value;
 				}
 			}
 

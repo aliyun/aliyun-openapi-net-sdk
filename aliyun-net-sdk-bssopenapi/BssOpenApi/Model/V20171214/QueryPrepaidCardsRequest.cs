@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -46,6 +47,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private bool? effectiveOrNot;
 
+		[JsonProperty(PropertyName = "ExpiryTimeEnd")]
 		public string ExpiryTimeEnd
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "ExpiryTimeStart")]
 		public string ExpiryTimeStart
 		{
 			get
@@ -72,6 +75,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "EffectiveOrNot")]
 		public bool? EffectiveOrNot
 		{
 			get

@@ -47,6 +47,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private long? ownerId;
 
+		private string domain;
+
 		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
@@ -86,6 +88,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "Domain")]
+		public string Domain
+		{
+			get
+			{
+				return domain;
+			}
+			set	
+			{
+				domain = value;
+				DictionaryUtil.Add(QueryParameters, "Domain", value);
 			}
 		}
 

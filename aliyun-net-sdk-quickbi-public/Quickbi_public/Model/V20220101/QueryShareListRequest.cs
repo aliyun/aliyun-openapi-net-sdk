@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class QueryShareListRequest : RpcAcsRequest<QueryShareListResponse>
     {
         public QueryShareListRequest()
-            : base("quickbi-public", "2022-01-01", "QueryShareList", "quickbi", "openAPI")
+            : base("quickbi-public", "2022-01-01", "QueryShareList", "2.2.0", "openAPI")
         {
 			Method = MethodType.POST;
         }

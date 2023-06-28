@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
@@ -35,6 +35,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private List<ListKeys_Key> keys;
 
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "TotalCount")]
 		public int? TotalCount
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "Keys")]
 		public List<ListKeys_Key> Keys
 		{
 			get
@@ -98,22 +103,11 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 		public class ListKeys_Key
 		{
 
-			private string keyArn;
-
 			private string keyId;
 
-			public string KeyArn
-			{
-				get
-				{
-					return keyArn;
-				}
-				set	
-				{
-					keyArn = value;
-				}
-			}
+			private string keyArn;
 
+			[JsonProperty(PropertyName = "KeyId")]
 			public string KeyId
 			{
 				get
@@ -123,6 +117,19 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 				set	
 				{
 					keyId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "KeyArn")]
+			public string KeyArn
+			{
+				get
+				{
+					return keyArn;
+				}
+				set	
+				{
+					keyArn = value;
 				}
 			}
 		}

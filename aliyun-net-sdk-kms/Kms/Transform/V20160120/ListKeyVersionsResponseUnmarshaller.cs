@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			ListKeyVersionsResponse listKeyVersionsResponse = new ListKeyVersionsResponse();
 
 			listKeyVersionsResponse.HttpResponse = _ctx.HttpResponse;
-			listKeyVersionsResponse.RequestId = _ctx.StringValue("ListKeyVersions.RequestId");
-			listKeyVersionsResponse.TotalCount = _ctx.IntegerValue("ListKeyVersions.TotalCount");
-			listKeyVersionsResponse.PageNumber = _ctx.IntegerValue("ListKeyVersions.PageNumber");
 			listKeyVersionsResponse.PageSize = _ctx.IntegerValue("ListKeyVersions.PageSize");
+			listKeyVersionsResponse.RequestId = _ctx.StringValue("ListKeyVersions.RequestId");
+			listKeyVersionsResponse.PageNumber = _ctx.IntegerValue("ListKeyVersions.PageNumber");
+			listKeyVersionsResponse.TotalCount = _ctx.IntegerValue("ListKeyVersions.TotalCount");
 
 			List<ListKeyVersionsResponse.ListKeyVersions_KeyVersion> listKeyVersionsResponse_keyVersions = new List<ListKeyVersionsResponse.ListKeyVersions_KeyVersion>();
 			for (int i = 0; i < _ctx.Length("ListKeyVersions.KeyVersions.Length"); i++) {

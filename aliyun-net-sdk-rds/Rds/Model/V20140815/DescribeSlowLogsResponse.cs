@@ -201,6 +201,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private long? maxLockTime;
 
+			private long? maxLockTimeMS;
+
 			private string dBName;
 
 			private long? minRowsAffectedCounts;
@@ -226,6 +228,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			private long? slowLogId;
 
 			private long? maxExecutionTime;
+
+			private long? maxExecutionTimeMS;
 
 			private long? avgExecutionTime;
 
@@ -500,6 +504,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "MaxLockTimeMS")]
+			public long? MaxLockTimeMS
+			{
+				get
+				{
+					return maxLockTimeMS;
+				}
+				set	
+				{
+					maxLockTimeMS = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "DBName")]
 			public string DBName
 			{
@@ -666,6 +683,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					maxExecutionTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MaxExecutionTimeMS")]
+			public long? MaxExecutionTimeMS
+			{
+				get
+				{
+					return maxExecutionTimeMS;
+				}
+				set	
+				{
+					maxExecutionTimeMS = value;
 				}
 			}
 

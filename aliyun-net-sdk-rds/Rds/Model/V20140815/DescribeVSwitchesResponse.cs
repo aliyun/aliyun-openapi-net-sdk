@@ -127,6 +127,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string vSwitchName;
 
+			private string availableIpAddressCount;
+
 			[JsonProperty(PropertyName = "AliUid")]
 			public string AliUid
 			{
@@ -280,6 +282,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					vSwitchName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AvailableIpAddressCount")]
+			public string AvailableIpAddressCount
+			{
+				get
+				{
+					return availableIpAddressCount;
+				}
+				set	
+				{
+					availableIpAddressCount = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
@@ -25,26 +25,15 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 	public class RotateSecretResponse : AcsResponse
 	{
 
-		private string arn;
-
 		private string versionId;
 
 		private string secretName;
 
 		private string requestId;
 
-		public string Arn
-		{
-			get
-			{
-				return arn;
-			}
-			set	
-			{
-				arn = value;
-			}
-		}
+		private string arn;
 
+		[JsonProperty(PropertyName = "VersionId")]
 		public string VersionId
 		{
 			get
@@ -57,6 +46,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecretName")]
 		public string SecretName
 		{
 			get
@@ -69,6 +59,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -78,6 +69,19 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Arn")]
+		public string Arn
+		{
+			get
+			{
+				return arn;
+			}
+			set	
+			{
+				arn = value;
 			}
 		}
 	}

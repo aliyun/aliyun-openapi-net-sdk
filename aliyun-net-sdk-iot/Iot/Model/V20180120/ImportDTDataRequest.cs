@@ -41,11 +41,26 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
+		private string dTInstanceId;
+
 		private string iotInstanceId;
 
 		private string productKey;
 
 		private List<Items> itemss = new List<Items>(){ };
+
+		public string DTInstanceId
+		{
+			get
+			{
+				return dTInstanceId;
+			}
+			set	
+			{
+				dTInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DTInstanceId", value);
+			}
+		}
 
 		public string IotInstanceId
 		{

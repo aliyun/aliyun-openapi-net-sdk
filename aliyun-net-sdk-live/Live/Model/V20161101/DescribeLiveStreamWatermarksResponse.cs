@@ -25,9 +25,24 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveStreamWatermarksResponse : AcsResponse
 	{
 
+		private int? total;
+
 		private string requestId;
 
 		private List<DescribeLiveStreamWatermarks_Watermark> watermarkList;
+
+		[JsonProperty(PropertyName = "Total")]
+		public int? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
+			}
+		}
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -77,6 +92,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 			private string description;
 
 			private string offsetCorner;
+
+			private int? ruleCount;
 
 			private string name;
 
@@ -209,6 +226,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					offsetCorner = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RuleCount")]
+			public int? RuleCount
+			{
+				get
+				{
+					return ruleCount;
+				}
+				set	
+				{
+					ruleCount = value;
 				}
 			}
 

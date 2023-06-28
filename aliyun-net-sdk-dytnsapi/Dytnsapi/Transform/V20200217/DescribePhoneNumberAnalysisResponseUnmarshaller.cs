@@ -32,18 +32,13 @@ namespace Aliyun.Acs.Dytnsapi.Transform.V20200217
 
 			describePhoneNumberAnalysisResponse.HttpResponse = _ctx.HttpResponse;
 			describePhoneNumberAnalysisResponse.RequestId = _ctx.StringValue("DescribePhoneNumberAnalysis.RequestId");
-			describePhoneNumberAnalysisResponse.Code = _ctx.StringValue("DescribePhoneNumberAnalysis.Code");
 			describePhoneNumberAnalysisResponse.Message = _ctx.StringValue("DescribePhoneNumberAnalysis.Message");
+			describePhoneNumberAnalysisResponse.Code = _ctx.StringValue("DescribePhoneNumberAnalysis.Code");
 
-			List<DescribePhoneNumberAnalysisResponse.DescribePhoneNumberAnalysis_DataList> describePhoneNumberAnalysisResponse_data = new List<DescribePhoneNumberAnalysisResponse.DescribePhoneNumberAnalysis_DataList>();
-			for (int i = 0; i < _ctx.Length("DescribePhoneNumberAnalysis.Data.Length"); i++) {
-				DescribePhoneNumberAnalysisResponse.DescribePhoneNumberAnalysis_DataList dataList = new DescribePhoneNumberAnalysisResponse.DescribePhoneNumberAnalysis_DataList();
-				dataList.Code = _ctx.StringValue("DescribePhoneNumberAnalysis.Data["+ i +"].Code");
-				dataList.Number = _ctx.StringValue("DescribePhoneNumberAnalysis.Data["+ i +"].Number");
-
-				describePhoneNumberAnalysisResponse_data.Add(dataList);
-			}
-			describePhoneNumberAnalysisResponse.Data = describePhoneNumberAnalysisResponse_data;
+			DescribePhoneNumberAnalysisResponse.DescribePhoneNumberAnalysis_Data data = new DescribePhoneNumberAnalysisResponse.DescribePhoneNumberAnalysis_Data();
+			data.Number = _ctx.StringValue("DescribePhoneNumberAnalysis.Data.Number");
+			data.Code = _ctx.StringValue("DescribePhoneNumberAnalysis.Data.Code");
+			describePhoneNumberAnalysisResponse.Data = data;
         
 			return describePhoneNumberAnalysisResponse;
         }

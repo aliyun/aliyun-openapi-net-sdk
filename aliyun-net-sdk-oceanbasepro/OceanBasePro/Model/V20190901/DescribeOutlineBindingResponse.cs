@@ -66,6 +66,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 			private int? maxConcurrent;
 
+			private string tableName;
+
 			[JsonProperty(PropertyName = "BindPlan")]
 			public string BindPlan
 			{
@@ -115,6 +117,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				set	
 				{
 					maxConcurrent = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TableName")]
+			public string TableName
+			{
+				get
+				{
+					return tableName;
+				}
+				set	
+				{
+					tableName = value;
 				}
 			}
 		}

@@ -46,6 +46,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private bool? enabled;
 
+		private string resourceGroupId;
+
 		private string trafficMirrorSessionName;
 
 		private string nextToken;
@@ -63,6 +65,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private string trafficMirrorTargetId;
 
 		private string trafficMirrorFilterId;
+
+		private List<string> tagss = new List<string>(){ };
 
 		private int? maxResults;
 
@@ -104,6 +108,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				enabled = value;
 				DictionaryUtil.Add(QueryParameters, "Enabled", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -224,6 +241,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public List<string> Tagss
+		{
+			get
+			{
+				return tagss;
+			}
+
+			set
+			{
+				tagss = value;
+				if(tagss != null)
+				{
+					for (int depth1 = 0; depth1 < tagss.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tags." + (depth1 + 1), tagss[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tags." + (depth1 + 1), tagss[depth1]);
+					}
+				}
+			}
+		}
+
 		public int? MaxResults
 		{
 			get
@@ -247,6 +285,38 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				virtualNetworkId = value;
 				DictionaryUtil.Add(QueryParameters, "VirtualNetworkId", value.ToString());
+			}
+		}
+
+		public class Tags
+		{
+
+			private string key;
+
+			private string value_;
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
 			}
 		}
 

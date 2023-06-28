@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -68,6 +69,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string startBizTime;
 
+		[JsonProperty(PropertyName = "EndSearchTime")]
 		public string EndSearchTime
 		{
 			get
@@ -81,6 +83,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "OutBizId")]
 		public string OutBizId
 		{
 			get
@@ -94,6 +97,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "SortType")]
 		public int? SortType
 		{
 			get
@@ -107,6 +111,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Type")]
 		public int? Type
 		{
 			get
@@ -120,6 +125,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNum")]
 		public int? PageNum
 		{
 			get
@@ -133,6 +139,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get
@@ -146,6 +153,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "EndAmount")]
 		public long? EndAmount
 		{
 			get
@@ -159,6 +167,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "BillCycle")]
 		public string BillCycle
 		{
 			get
@@ -172,6 +181,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "BizTypeList")]
 		public List<string> BizTypeLists
 		{
 			get
@@ -185,6 +195,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -198,6 +209,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "StartSearchTime")]
 		public string StartSearchTime
 		{
 			get
@@ -211,6 +223,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "EndBizTime")]
 		public string EndBizTime
 		{
 			get
@@ -224,6 +237,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "StartAmount")]
 		public long? StartAmount
 		{
 			get
@@ -237,6 +251,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "StartBizTime")]
 		public string StartBizTime
 		{
 			get

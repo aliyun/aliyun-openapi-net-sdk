@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			RotateSecretResponse rotateSecretResponse = new RotateSecretResponse();
 
 			rotateSecretResponse.HttpResponse = _ctx.HttpResponse;
-			rotateSecretResponse.Arn = _ctx.StringValue("RotateSecret.Arn");
 			rotateSecretResponse.VersionId = _ctx.StringValue("RotateSecret.VersionId");
 			rotateSecretResponse.SecretName = _ctx.StringValue("RotateSecret.SecretName");
 			rotateSecretResponse.RequestId = _ctx.StringValue("RotateSecret.RequestId");
+			rotateSecretResponse.Arn = _ctx.StringValue("RotateSecret.Arn");
         
 			return rotateSecretResponse;
         }

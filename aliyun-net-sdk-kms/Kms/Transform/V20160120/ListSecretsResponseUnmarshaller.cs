@@ -39,17 +39,17 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			List<ListSecretsResponse.ListSecrets_Secret> listSecretsResponse_secretList = new List<ListSecretsResponse.ListSecrets_Secret>();
 			for (int i = 0; i < _ctx.Length("ListSecrets.SecretList.Length"); i++) {
 				ListSecretsResponse.ListSecrets_Secret secret = new ListSecretsResponse.ListSecrets_Secret();
-				secret.CreateTime = _ctx.StringValue("ListSecrets.SecretList["+ i +"].CreateTime");
-				secret.PlannedDeleteTime = _ctx.StringValue("ListSecrets.SecretList["+ i +"].PlannedDeleteTime");
 				secret.SecretName = _ctx.StringValue("ListSecrets.SecretList["+ i +"].SecretName");
 				secret.UpdateTime = _ctx.StringValue("ListSecrets.SecretList["+ i +"].UpdateTime");
 				secret.SecretType = _ctx.StringValue("ListSecrets.SecretList["+ i +"].SecretType");
+				secret.PlannedDeleteTime = _ctx.StringValue("ListSecrets.SecretList["+ i +"].PlannedDeleteTime");
+				secret.CreateTime = _ctx.StringValue("ListSecrets.SecretList["+ i +"].CreateTime");
 
 				List<ListSecretsResponse.ListSecrets_Secret.ListSecrets_Tag> secret_tags = new List<ListSecretsResponse.ListSecrets_Secret.ListSecrets_Tag>();
 				for (int j = 0; j < _ctx.Length("ListSecrets.SecretList["+ i +"].Tags.Length"); j++) {
 					ListSecretsResponse.ListSecrets_Secret.ListSecrets_Tag tag = new ListSecretsResponse.ListSecrets_Secret.ListSecrets_Tag();
-					tag.TagKey = _ctx.StringValue("ListSecrets.SecretList["+ i +"].Tags["+ j +"].TagKey");
 					tag.TagValue = _ctx.StringValue("ListSecrets.SecretList["+ i +"].Tags["+ j +"].TagValue");
+					tag.TagKey = _ctx.StringValue("ListSecrets.SecretList["+ i +"].Tags["+ j +"].TagKey");
 
 					secret_tags.Add(tag);
 				}

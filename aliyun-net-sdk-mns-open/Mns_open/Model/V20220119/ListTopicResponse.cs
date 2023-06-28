@@ -183,10 +183,6 @@ namespace Aliyun.Acs.Mns_open.Model.V20220119
 
 				private long? lastModifyTime;
 
-				private string topicUrl;
-
-				private string topicInnerUrl;
-
 				private bool? loggingEnabled;
 
 				public string TopicName
@@ -258,30 +254,6 @@ namespace Aliyun.Acs.Mns_open.Model.V20220119
 					set	
 					{
 						lastModifyTime = value;
-					}
-				}
-
-				public string TopicUrl
-				{
-					get
-					{
-						return topicUrl;
-					}
-					set	
-					{
-						topicUrl = value;
-					}
-				}
-
-				public string TopicInnerUrl
-				{
-					get
-					{
-						return topicInnerUrl;
-					}
-					set	
-					{
-						topicInnerUrl = value;
 					}
 				}
 

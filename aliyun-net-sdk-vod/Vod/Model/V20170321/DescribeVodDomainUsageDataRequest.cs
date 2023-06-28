@@ -54,6 +54,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string field;
 
+		private string interval;
+
 		public string StartTime
 		{
 			get
@@ -142,6 +144,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				field = value;
 				DictionaryUtil.Add(QueryParameters, "Field", value);
+			}
+		}
+
+		public string Interval
+		{
+			get
+			{
+				return interval;
+			}
+			set	
+			{
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value);
 			}
 		}
 

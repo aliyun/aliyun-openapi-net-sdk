@@ -59,6 +59,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private List<DescribeVSwitchAttributes_CloudResourceSetType> cloudResources;
 
+		private List<DescribeVSwitchAttributes_Tag> tags;
+
 		private DescribeVSwitchAttributes_RouteTable routeTable;
 
 		public string VpcId
@@ -265,6 +267,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public List<DescribeVSwitchAttributes_Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+			}
+		}
+
 		public DescribeVSwitchAttributes_RouteTable RouteTable
 		{
 			get
@@ -305,6 +319,38 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					resourceType = value;
+				}
+			}
+		}
+
+		public class DescribeVSwitchAttributes_Tag
+		{
+
+			private string key;
+
+			private string _value;
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+
+			public string _Value
+			{
+				get
+				{
+					return _value;
+				}
+				set	
+				{
+					_value = value;
 				}
 			}
 		}

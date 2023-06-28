@@ -91,6 +91,16 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				}
 				networkAcl.Resources = networkAcl_resources;
 
+				List<DescribeNetworkAclsResponse.DescribeNetworkAcls_NetworkAcl.DescribeNetworkAcls_Tag> networkAcl_tags = new List<DescribeNetworkAclsResponse.DescribeNetworkAcls_NetworkAcl.DescribeNetworkAcls_Tag>();
+				for (int j = 0; j < _ctx.Length("DescribeNetworkAcls.NetworkAcls["+ i +"].Tags.Length"); j++) {
+					DescribeNetworkAclsResponse.DescribeNetworkAcls_NetworkAcl.DescribeNetworkAcls_Tag tag = new DescribeNetworkAclsResponse.DescribeNetworkAcls_NetworkAcl.DescribeNetworkAcls_Tag();
+					tag.Key = _ctx.StringValue("DescribeNetworkAcls.NetworkAcls["+ i +"].Tags["+ j +"].Key");
+					tag._Value = _ctx.StringValue("DescribeNetworkAcls.NetworkAcls["+ i +"].Tags["+ j +"].Value");
+
+					networkAcl_tags.Add(tag);
+				}
+				networkAcl.Tags = networkAcl_tags;
+
 				describeNetworkAclsResponse_networkAcls.Add(networkAcl);
 			}
 			describeNetworkAclsResponse.NetworkAcls = describeNetworkAclsResponse_networkAcls;

@@ -124,11 +124,7 @@ namespace Aliyun.Acs.Mns_open.Model.V20220119
 
 			private long? lastModifyTime;
 
-			private string topicUrl;
-
 			private bool? loggingEnabled;
-
-			private string topicInnerUrl;
 
 			public string TopicName
 			{
@@ -202,18 +198,6 @@ namespace Aliyun.Acs.Mns_open.Model.V20220119
 				}
 			}
 
-			public string TopicUrl
-			{
-				get
-				{
-					return topicUrl;
-				}
-				set	
-				{
-					topicUrl = value;
-				}
-			}
-
 			public bool? LoggingEnabled
 			{
 				get
@@ -223,18 +207,6 @@ namespace Aliyun.Acs.Mns_open.Model.V20220119
 				set	
 				{
 					loggingEnabled = value;
-				}
-			}
-
-			public string TopicInnerUrl
-			{
-				get
-				{
-					return topicInnerUrl;
-				}
-				set	
-				{
-					topicInnerUrl = value;
 				}
 			}
 		}

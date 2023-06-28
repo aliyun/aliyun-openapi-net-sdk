@@ -29,6 +29,8 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 
 		private string requestId;
 
+		private int? billingCount;
+
 		public string PredictResult
 		{
 			get
@@ -50,6 +52,18 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? BillingCount
+		{
+			get
+			{
+				return billingCount;
+			}
+			set	
+			{
+				billingCount = value;
 			}
 		}
 	}

@@ -38,7 +38,38 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
+
+		private string namespaceName;
+
+		private string _namespace;
+
+		public string NamespaceName
+		{
+			get
+			{
+				return namespaceName;
+			}
+			set	
+			{
+				namespaceName = value;
+				DictionaryUtil.Add(QueryParameters, "NamespaceName", value);
+			}
+		}
+
+		public string _Namespace
+		{
+			get
+			{
+				return _namespace;
+			}
+			set	
+			{
+				_namespace = value;
+				DictionaryUtil.Add(QueryParameters, "Namespace", value);
+			}
+		}
 
 		public override bool CheckShowJsonItemName()
 		{

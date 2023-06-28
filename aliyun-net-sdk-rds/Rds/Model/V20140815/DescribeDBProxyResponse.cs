@@ -53,6 +53,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private List<DescribeDBProxy_DbProxyEndpointItemsItem> dbProxyEndpointItems;
 
+		private List<string> dBProxyAVZones;
+
 		[JsonProperty(PropertyName = "DBProxyInstanceLatestMinorVersion")]
 		public string DBProxyInstanceLatestMinorVersion
 		{
@@ -235,6 +237,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBProxyAVZones")]
+		public List<string> DBProxyAVZones
+		{
+			get
+			{
+				return dBProxyAVZones;
+			}
+			set	
+			{
+				dBProxyAVZones = value;
+			}
+		}
+
 		public class DescribeDBProxy_DBProxyConnectStringItemsItem
 		{
 
@@ -251,6 +266,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			private string dBProxyConnectStringPort;
 
 			private string dBProxyConnectString;
+
+			private string dBProxyVpcId;
+
+			private string dBProxyVswitchId;
 
 			[JsonProperty(PropertyName = "DBProxyConnectStringNetWorkType")]
 			public string DBProxyConnectStringNetWorkType
@@ -340,6 +359,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					dBProxyConnectString = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBProxyVpcId")]
+			public string DBProxyVpcId
+			{
+				get
+				{
+					return dBProxyVpcId;
+				}
+				set	
+				{
+					dBProxyVpcId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBProxyVswitchId")]
+			public string DBProxyVswitchId
+			{
+				get
+				{
+					return dBProxyVswitchId;
+				}
+				set	
+				{
+					dBProxyVswitchId = value;
 				}
 			}
 		}

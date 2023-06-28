@@ -41,6 +41,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private QueryResourcePackageInstances_Data data;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -53,6 +54,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -65,6 +67,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -77,6 +80,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -89,6 +93,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get
@@ -101,6 +106,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Total")]
 		public int? Total
 		{
 			get
@@ -113,6 +119,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Page")]
 		public int? Page
 		{
 			get
@@ -125,6 +132,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public QueryResourcePackageInstances_Data Data
 		{
 			get
@@ -150,6 +158,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private List<QueryResourcePackageInstances_Instance> instances;
 
+			[JsonProperty(PropertyName = "PageNum")]
 			public string PageNum
 			{
 				get
@@ -162,6 +171,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "PageSize")]
 			public string PageSize
 			{
 				get
@@ -174,6 +184,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "TotalCount")]
 			public string TotalCount
 			{
 				get
@@ -186,6 +197,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "HostId")]
 			public string HostId
 			{
 				get
@@ -198,6 +210,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "Instances")]
 			public List<QueryResourcePackageInstances_Instance> Instances
 			{
 				get
@@ -241,6 +254,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private List<string> applicableProducts;
 
+				[JsonProperty(PropertyName = "ExpiryTime")]
 				public string ExpiryTime
 				{
 					get
@@ -253,6 +267,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Status")]
 				public string Status
 				{
 					get
@@ -265,6 +280,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Remark")]
 				public string Remark
 				{
 					get
@@ -277,6 +293,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "RemainingAmountUnit")]
 				public string RemainingAmountUnit
 				{
 					get
@@ -289,6 +306,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "InstanceId")]
 				public string InstanceId
 				{
 					get
@@ -301,6 +319,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PackageType")]
 				public string PackageType
 				{
 					get
@@ -313,6 +332,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "EffectiveTime")]
 				public string EffectiveTime
 				{
 					get
@@ -325,6 +345,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Region")]
 				public string Region
 				{
 					get
@@ -337,6 +358,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "TotalAmount")]
 				public string TotalAmount
 				{
 					get
@@ -349,6 +371,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "DeductType")]
 				public string DeductType
 				{
 					get
@@ -361,6 +384,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "TotalAmountUnit")]
 				public string TotalAmountUnit
 				{
 					get
@@ -373,6 +397,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "RemainingAmount")]
 				public string RemainingAmount
 				{
 					get
@@ -385,6 +410,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "CommodityCode")]
 				public string CommodityCode
 				{
 					get
@@ -397,6 +423,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ApplicableProducts")]
 				public List<string> ApplicableProducts
 				{
 					get

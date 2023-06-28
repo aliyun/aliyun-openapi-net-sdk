@@ -42,6 +42,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				trafficMirrorFilter.TrafficMirrorFilterDescription = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].TrafficMirrorFilterDescription");
 				trafficMirrorFilter.TrafficMirrorFilterId = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].TrafficMirrorFilterId");
 				trafficMirrorFilter.TrafficMirrorFilterName = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].TrafficMirrorFilterName");
+				trafficMirrorFilter.ResourceGroupId = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].ResourceGroupId");
 
 				List<ListTrafficMirrorFiltersResponse.ListTrafficMirrorFilters_TrafficMirrorFilter.ListTrafficMirrorFilters_TrafficMirrorRule> trafficMirrorFilter_ingressRules = new List<ListTrafficMirrorFiltersResponse.ListTrafficMirrorFilters_TrafficMirrorFilter.ListTrafficMirrorFilters_TrafficMirrorRule>();
 				for (int j = 0; j < _ctx.Length("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].IngressRules.Length"); j++) {
@@ -80,6 +81,16 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 					trafficMirrorFilter_egressRules.Add(trafficMirrorRule);
 				}
 				trafficMirrorFilter.EgressRules = trafficMirrorFilter_egressRules;
+
+				List<ListTrafficMirrorFiltersResponse.ListTrafficMirrorFilters_TrafficMirrorFilter.ListTrafficMirrorFilters_Tag> trafficMirrorFilter_tags = new List<ListTrafficMirrorFiltersResponse.ListTrafficMirrorFilters_TrafficMirrorFilter.ListTrafficMirrorFilters_Tag>();
+				for (int j = 0; j < _ctx.Length("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].Tags.Length"); j++) {
+					ListTrafficMirrorFiltersResponse.ListTrafficMirrorFilters_TrafficMirrorFilter.ListTrafficMirrorFilters_Tag tag = new ListTrafficMirrorFiltersResponse.ListTrafficMirrorFilters_TrafficMirrorFilter.ListTrafficMirrorFilters_Tag();
+					tag.Key = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].Tags["+ j +"].Key");
+					tag._Value = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].Tags["+ j +"].Value");
+
+					trafficMirrorFilter_tags.Add(tag);
+				}
+				trafficMirrorFilter.Tags = trafficMirrorFilter_tags;
 
 				listTrafficMirrorFiltersResponse_trafficMirrorFilters.Add(trafficMirrorFilter);
 			}

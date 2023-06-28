@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private QuerySavingsPlansInstance_Data data;
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public QuerySavingsPlansInstance_Data Data
 		{
 			get
@@ -106,6 +111,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private List<QuerySavingsPlansInstance_SavingsPlansDetailResponse> items;
 
+			[JsonProperty(PropertyName = "PageNum")]
 			public int? PageNum
 			{
 				get
@@ -118,6 +124,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "PageSize")]
 			public int? PageSize
 			{
 				get
@@ -130,6 +137,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "TotalCount")]
 			public int? TotalCount
 			{
 				get
@@ -142,6 +150,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "Items")]
 			public List<QuerySavingsPlansInstance_SavingsPlansDetailResponse> Items
 			{
 				get
@@ -197,8 +206,11 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string deductCycleType;
 
+				private string restPoolValue;
+
 				private List<QuerySavingsPlansInstance_Tag> tags;
 
+				[JsonProperty(PropertyName = "Status")]
 				public string Status
 				{
 					get
@@ -211,6 +223,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Cycle")]
 				public string Cycle
 				{
 					get
@@ -223,6 +236,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "StartTimestamp")]
 				public long? StartTimestamp
 				{
 					get
@@ -235,6 +249,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "SavingsType")]
 				public string SavingsType
 				{
 					get
@@ -247,6 +262,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Utilization")]
 				public string Utilization
 				{
 					get
@@ -259,6 +275,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PrepayFee")]
 				public string PrepayFee
 				{
 					get
@@ -271,6 +288,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "InstanceId")]
 				public string InstanceId
 				{
 					get
@@ -283,6 +301,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Currency")]
 				public string Currency
 				{
 					get
@@ -295,6 +314,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "EndTimestamp")]
 				public long? EndTimestamp
 				{
 					get
@@ -307,6 +327,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "EndTime")]
 				public string EndTime
 				{
 					get
@@ -319,6 +340,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "StartTime")]
 				public string StartTime
 				{
 					get
@@ -331,6 +353,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "AllocationStatus")]
 				public string AllocationStatus
 				{
 					get
@@ -343,6 +366,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "InstanceFamily")]
 				public string InstanceFamily
 				{
 					get
@@ -355,6 +379,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Region")]
 				public string Region
 				{
 					get
@@ -367,6 +392,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "LastBillTotalUsage")]
 				public string LastBillTotalUsage
 				{
 					get
@@ -379,6 +405,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "LastBillUtilization")]
 				public string LastBillUtilization
 				{
 					get
@@ -391,6 +418,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "TotalSave")]
 				public string TotalSave
 				{
 					get
@@ -403,6 +431,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PoolValue")]
 				public string PoolValue
 				{
 					get
@@ -415,6 +444,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PayMode")]
 				public string PayMode
 				{
 					get
@@ -427,6 +457,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "DeductCycleType")]
 				public string DeductCycleType
 				{
 					get
@@ -439,6 +470,20 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "RestPoolValue")]
+				public string RestPoolValue
+				{
+					get
+					{
+						return restPoolValue;
+					}
+					set	
+					{
+						restPoolValue = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Tags")]
 				public List<QuerySavingsPlansInstance_Tag> Tags
 				{
 					get
@@ -458,6 +503,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 					private string _value;
 
+					[JsonProperty(PropertyName = "Key")]
 					public string Key
 					{
 						get
@@ -470,6 +516,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 						}
 					}
 
+					[JsonProperty(PropertyName = "_Value")]
 					public string _Value
 					{
 						get

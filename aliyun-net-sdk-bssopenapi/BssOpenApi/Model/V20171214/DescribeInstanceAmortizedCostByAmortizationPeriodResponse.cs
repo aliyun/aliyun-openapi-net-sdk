@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private DescribeInstanceAmortizedCostByAmortizationPeriod_Data data;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public DescribeInstanceAmortizedCostByAmortizationPeriod_Data Data
 		{
 			get
@@ -110,6 +115,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private List<DescribeInstanceAmortizedCostByAmortizationPeriod_Item> items;
 
+			[JsonProperty(PropertyName = "NextToken")]
 			public string NextToken
 			{
 				get
@@ -122,6 +128,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "AccountID")]
 			public string AccountID
 			{
 				get
@@ -134,6 +141,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "AccountName")]
 			public string AccountName
 			{
 				get
@@ -146,6 +154,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "MaxResults")]
 			public int? MaxResults
 			{
 				get
@@ -158,6 +167,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "TotalCount")]
 			public int? TotalCount
 			{
 				get
@@ -170,6 +180,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "Items")]
 			public List<DescribeInstanceAmortizedCostByAmortizationPeriod_Item> Items
 			{
 				get
@@ -301,6 +312,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private double? remainingAmortizationExpenditureAmount;
 
+				[JsonProperty(PropertyName = "CostUnit")]
 				public string CostUnit
 				{
 					get
@@ -313,6 +325,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "CostUnitCode")]
 				public string CostUnitCode
 				{
 					get
@@ -325,6 +338,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "InstanceID")]
 				public string InstanceID
 				{
 					get
@@ -337,6 +351,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ResourceGroup")]
 				public string ResourceGroup
 				{
 					get
@@ -349,6 +364,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Tag")]
 				public string Tag
 				{
 					get
@@ -361,6 +377,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "InternetIP")]
 				public string InternetIP
 				{
 					get
@@ -373,6 +390,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "IntranetIP")]
 				public string IntranetIP
 				{
 					get
@@ -385,6 +403,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Region")]
 				public string Region
 				{
 					get
@@ -397,6 +416,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "Zone")]
 				public string Zone
 				{
 					get
@@ -409,6 +429,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "SplitAccountName")]
 				public string SplitAccountName
 				{
 					get
@@ -421,6 +442,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "SplitProductDetail")]
 				public string SplitProductDetail
 				{
 					get
@@ -433,6 +455,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "SplitItemID")]
 				public string SplitItemID
 				{
 					get
@@ -445,6 +468,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "SplitItemName")]
 				public string SplitItemName
 				{
 					get
@@ -457,6 +481,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ConsumePeriod")]
 				public string ConsumePeriod
 				{
 					get
@@ -469,6 +494,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "AmortizationStatus")]
 				public string AmortizationStatus
 				{
 					get
@@ -481,6 +507,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "AmortizationPeriod")]
 				public string AmortizationPeriod
 				{
 					get
@@ -493,6 +520,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "BillAccountID")]
 				public long? BillAccountID
 				{
 					get
@@ -505,6 +533,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "BillAccountName")]
 				public string BillAccountName
 				{
 					get
@@ -517,6 +546,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "BillOwnerID")]
 				public long? BillOwnerID
 				{
 					get
@@ -529,6 +559,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "BillOwnerName")]
 				public string BillOwnerName
 				{
 					get
@@ -541,6 +572,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ProductCode")]
 				public string ProductCode
 				{
 					get
@@ -553,6 +585,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ProductName")]
 				public string ProductName
 				{
 					get
@@ -565,6 +598,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ProductDetailCode")]
 				public string ProductDetailCode
 				{
 					get
@@ -577,6 +611,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ProductDetail")]
 				public string ProductDetail
 				{
 					get
@@ -589,6 +624,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "BizType")]
 				public string BizType
 				{
 					get
@@ -601,6 +637,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "SubscriptionType")]
 				public string SubscriptionType
 				{
 					get
@@ -613,6 +650,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PretaxGrossAmount")]
 				public double? PretaxGrossAmount
 				{
 					get
@@ -625,6 +663,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "InvoiceDiscount")]
 				public double? InvoiceDiscount
 				{
 					get
@@ -637,6 +676,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "RoundDownDiscount")]
 				public double? RoundDownDiscount
 				{
 					get
@@ -649,6 +689,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PretaxAmount")]
 				public double? PretaxAmount
 				{
 					get
@@ -661,6 +702,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "DeductedByCashCoupons")]
 				public double? DeductedByCashCoupons
 				{
 					get
@@ -673,6 +715,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "DeductedByCoupons")]
 				public double? DeductedByCoupons
 				{
 					get
@@ -685,6 +728,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "DeductedByPrepaidCard")]
 				public double? DeductedByPrepaidCard
 				{
 					get
@@ -697,6 +741,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ExpenditureAmount")]
 				public double? ExpenditureAmount
 				{
 					get
@@ -709,6 +754,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PreviouslyAmortizedPretaxGrossAmount")]
 				public double? PreviouslyAmortizedPretaxGrossAmount
 				{
 					get
@@ -721,6 +767,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PreviouslyAmortizedInvoiceDiscount")]
 				public double? PreviouslyAmortizedInvoiceDiscount
 				{
 					get
@@ -733,6 +780,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PreviouslyAmortizedRoundDownDiscount")]
 				public double? PreviouslyAmortizedRoundDownDiscount
 				{
 					get
@@ -745,6 +793,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PreviouslyAmortizedPretaxAmount")]
 				public double? PreviouslyAmortizedPretaxAmount
 				{
 					get
@@ -757,6 +806,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PreviouslyAmortizedDeductedByCashCoupons")]
 				public double? PreviouslyAmortizedDeductedByCashCoupons
 				{
 					get
@@ -769,6 +819,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PreviouslyAmortizedDeductedByCoupons")]
 				public double? PreviouslyAmortizedDeductedByCoupons
 				{
 					get
@@ -781,6 +832,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PreviouslyAmortizedDeductedByPrepaidCard")]
 				public double? PreviouslyAmortizedDeductedByPrepaidCard
 				{
 					get
@@ -793,6 +845,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "PreviouslyAmortizedExpenditureAmount")]
 				public double? PreviouslyAmortizedExpenditureAmount
 				{
 					get
@@ -805,6 +858,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "CurrentAmortizationPretaxGrossAmount")]
 				public double? CurrentAmortizationPretaxGrossAmount
 				{
 					get
@@ -817,6 +871,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "CurrentAmortizationInvoiceDiscount")]
 				public double? CurrentAmortizationInvoiceDiscount
 				{
 					get
@@ -829,6 +884,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "CurrentAmortizationRoundDownDiscount")]
 				public double? CurrentAmortizationRoundDownDiscount
 				{
 					get
@@ -841,6 +897,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "CurrentAmortizationPretaxAmount")]
 				public double? CurrentAmortizationPretaxAmount
 				{
 					get
@@ -853,6 +910,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "CurrentAmortizationDeductedByCashCoupons")]
 				public double? CurrentAmortizationDeductedByCashCoupons
 				{
 					get
@@ -865,6 +923,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "CurrentAmortizationDeductedByCoupons")]
 				public double? CurrentAmortizationDeductedByCoupons
 				{
 					get
@@ -877,6 +936,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "CurrentAmortizationDeductedByPrepaidCard")]
 				public double? CurrentAmortizationDeductedByPrepaidCard
 				{
 					get
@@ -889,6 +949,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "CurrentAmortizationExpenditureAmount")]
 				public double? CurrentAmortizationExpenditureAmount
 				{
 					get
@@ -901,6 +962,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "RemainingAmortizationPretaxGrossAmount")]
 				public double? RemainingAmortizationPretaxGrossAmount
 				{
 					get
@@ -913,6 +975,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "RemainingAmortizationInvoiceDiscount")]
 				public double? RemainingAmortizationInvoiceDiscount
 				{
 					get
@@ -925,6 +988,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "RemainingAmortizationRoundDownDiscount")]
 				public double? RemainingAmortizationRoundDownDiscount
 				{
 					get
@@ -937,6 +1001,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "RemainingAmortizationPretaxAmount")]
 				public double? RemainingAmortizationPretaxAmount
 				{
 					get
@@ -949,6 +1014,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "RemainingAmortizationDeductedByCashCoupons")]
 				public double? RemainingAmortizationDeductedByCashCoupons
 				{
 					get
@@ -961,6 +1027,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "RemainingAmortizationDeductedByCoupons")]
 				public double? RemainingAmortizationDeductedByCoupons
 				{
 					get
@@ -973,6 +1040,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "RemainingAmortizationDeductedByPrepaidCard")]
 				public double? RemainingAmortizationDeductedByPrepaidCard
 				{
 					get
@@ -985,6 +1053,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "RemainingAmortizationExpenditureAmount")]
 				public double? RemainingAmortizationExpenditureAmount
 				{
 					get

@@ -44,6 +44,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string description;
 
+		private string resourceGroupId;
+
 		private string resourceId;
 
 		private string projectName;
@@ -89,6 +91,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

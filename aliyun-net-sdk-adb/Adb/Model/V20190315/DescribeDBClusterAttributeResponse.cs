@@ -136,6 +136,14 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 			private string kmsId;
 
+			private string innerIp;
+
+			private string innerPort;
+
+			private string diskPerformanceLevel;
+
+			private string elasticIOResourceSize;
+
 			private List<DescribeDBClusterAttribute_Tag> tags;
 
 			public string CreationTime
@@ -615,6 +623,54 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					kmsId = value;
+				}
+			}
+
+			public string InnerIp
+			{
+				get
+				{
+					return innerIp;
+				}
+				set	
+				{
+					innerIp = value;
+				}
+			}
+
+			public string InnerPort
+			{
+				get
+				{
+					return innerPort;
+				}
+				set	
+				{
+					innerPort = value;
+				}
+			}
+
+			public string DiskPerformanceLevel
+			{
+				get
+				{
+					return diskPerformanceLevel;
+				}
+				set	
+				{
+					diskPerformanceLevel = value;
+				}
+			}
+
+			public string ElasticIOResourceSize
+			{
+				get
+				{
+					return elasticIOResourceSize;
+				}
+				set	
+				{
+					elasticIOResourceSize = value;
 				}
 			}
 

@@ -42,33 +42,21 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Method = MethodType.POST;
         }
 
-		private string encryptionContext;
-
 		private string keyId;
 
 		private string keySpec;
 
 		private int? numberOfBytes;
 
-		private string wrappingAlgorithm;
-
 		private string publicKeyBlob;
+
+		private string encryptionContext;
+
+		private string wrappingAlgorithm;
 
 		private string wrappingKeySpec;
 
-		public string EncryptionContext
-		{
-			get
-			{
-				return encryptionContext;
-			}
-			set	
-			{
-				encryptionContext = value;
-				DictionaryUtil.Add(QueryParameters, "EncryptionContext", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "KeyId")]
 		public string KeyId
 		{
 			get
@@ -82,6 +70,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "KeySpec")]
 		public string KeySpec
 		{
 			get
@@ -95,6 +84,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "NumberOfBytes")]
 		public int? NumberOfBytes
 		{
 			get
@@ -108,19 +98,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public string WrappingAlgorithm
-		{
-			get
-			{
-				return wrappingAlgorithm;
-			}
-			set	
-			{
-				wrappingAlgorithm = value;
-				DictionaryUtil.Add(QueryParameters, "WrappingAlgorithm", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "PublicKeyBlob")]
 		public string PublicKeyBlob
 		{
 			get
@@ -134,6 +112,35 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		[JsonProperty(PropertyName = "EncryptionContext")]
+		public string EncryptionContext
+		{
+			get
+			{
+				return encryptionContext;
+			}
+			set	
+			{
+				encryptionContext = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptionContext", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "WrappingAlgorithm")]
+		public string WrappingAlgorithm
+		{
+			get
+			{
+				return wrappingAlgorithm;
+			}
+			set	
+			{
+				wrappingAlgorithm = value;
+				DictionaryUtil.Add(QueryParameters, "WrappingAlgorithm", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "WrappingKeySpec")]
 		public string WrappingKeySpec
 		{
 			get

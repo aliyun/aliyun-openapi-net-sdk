@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Market.Model.V20151101
@@ -25,128 +25,33 @@ namespace Aliyun.Acs.Market.Model.V20151101
 	public class DescribePriceResponse : AcsResponse
 	{
 
-		private string productCode;
-
-		private float? originalPrice;
-
-		private float? tradePrice;
-
-		private float? discountPrice;
+		private string expressionCode;
 
 		private bool? cuxiao;
 
-		private int? duration;
+		private float? discountPrice;
 
 		private string cycle;
 
-		private string infoTitle;
+		private float? tradePrice;
 
-		private string expressionCode;
+		private float? originalPrice;
+
+		private int? duration;
 
 		private string currency;
 
 		private string expressionMessage;
 
+		private string infoTitle;
+
+		private string productCode;
+
 		private List<DescribePrice_PromotionRule> promotionRules;
 
 		private List<DescribePrice_Coupon> coupons;
 
-		public string ProductCode
-		{
-			get
-			{
-				return productCode;
-			}
-			set	
-			{
-				productCode = value;
-			}
-		}
-
-		public float? OriginalPrice
-		{
-			get
-			{
-				return originalPrice;
-			}
-			set	
-			{
-				originalPrice = value;
-			}
-		}
-
-		public float? TradePrice
-		{
-			get
-			{
-				return tradePrice;
-			}
-			set	
-			{
-				tradePrice = value;
-			}
-		}
-
-		public float? DiscountPrice
-		{
-			get
-			{
-				return discountPrice;
-			}
-			set	
-			{
-				discountPrice = value;
-			}
-		}
-
-		public bool? Cuxiao
-		{
-			get
-			{
-				return cuxiao;
-			}
-			set	
-			{
-				cuxiao = value;
-			}
-		}
-
-		public int? Duration
-		{
-			get
-			{
-				return duration;
-			}
-			set	
-			{
-				duration = value;
-			}
-		}
-
-		public string Cycle
-		{
-			get
-			{
-				return cycle;
-			}
-			set	
-			{
-				cycle = value;
-			}
-		}
-
-		public string InfoTitle
-		{
-			get
-			{
-				return infoTitle;
-			}
-			set	
-			{
-				infoTitle = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "ExpressionCode")]
 		public string ExpressionCode
 		{
 			get
@@ -159,6 +64,85 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Cuxiao")]
+		public bool? Cuxiao
+		{
+			get
+			{
+				return cuxiao;
+			}
+			set	
+			{
+				cuxiao = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DiscountPrice")]
+		public float? DiscountPrice
+		{
+			get
+			{
+				return discountPrice;
+			}
+			set	
+			{
+				discountPrice = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Cycle")]
+		public string Cycle
+		{
+			get
+			{
+				return cycle;
+			}
+			set	
+			{
+				cycle = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TradePrice")]
+		public float? TradePrice
+		{
+			get
+			{
+				return tradePrice;
+			}
+			set	
+			{
+				tradePrice = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "OriginalPrice")]
+		public float? OriginalPrice
+		{
+			get
+			{
+				return originalPrice;
+			}
+			set	
+			{
+				originalPrice = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Duration")]
+		public int? Duration
+		{
+			get
+			{
+				return duration;
+			}
+			set	
+			{
+				duration = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Currency")]
 		public string Currency
 		{
 			get
@@ -171,6 +155,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ExpressionMessage")]
 		public string ExpressionMessage
 		{
 			get
@@ -183,6 +168,33 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
+		[JsonProperty(PropertyName = "InfoTitle")]
+		public string InfoTitle
+		{
+			get
+			{
+				return infoTitle;
+			}
+			set	
+			{
+				infoTitle = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ProductCode")]
+		public string ProductCode
+		{
+			get
+			{
+				return productCode;
+			}
+			set	
+			{
+				productCode = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PromotionRules")]
 		public List<DescribePrice_PromotionRule> PromotionRules
 		{
 			get
@@ -195,6 +207,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Coupons")]
 		public List<DescribePrice_Coupon> Coupons
 		{
 			get
@@ -210,24 +223,26 @@ namespace Aliyun.Acs.Market.Model.V20151101
 		public class DescribePrice_PromotionRule
 		{
 
-			private string ruleId;
+			private string title;
 
 			private string name;
 
-			private string title;
+			private string ruleId;
 
-			public string RuleId
+			[JsonProperty(PropertyName = "Title")]
+			public string Title
 			{
 				get
 				{
-					return ruleId;
+					return title;
 				}
 				set	
 				{
-					ruleId = value;
+					title = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "Name")]
 			public string Name
 			{
 				get
@@ -240,15 +255,16 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				}
 			}
 
-			public string Title
+			[JsonProperty(PropertyName = "RuleId")]
+			public string RuleId
 			{
 				get
 				{
-					return title;
+					return ruleId;
 				}
 				set	
 				{
-					title = value;
+					ruleId = value;
 				}
 			}
 		}
@@ -264,10 +280,11 @@ namespace Aliyun.Acs.Market.Model.V20151101
 
 			private string couponDesc;
 
-			private float? canPromFee;
-
 			private bool? isSelected;
 
+			private float? canPromFee;
+
+			[JsonProperty(PropertyName = "CouponOptionCode")]
 			public string CouponOptionCode
 			{
 				get
@@ -280,6 +297,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				}
 			}
 
+			[JsonProperty(PropertyName = "CouponOptionNo")]
 			public string CouponOptionNo
 			{
 				get
@@ -292,6 +310,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				}
 			}
 
+			[JsonProperty(PropertyName = "CouponName")]
 			public string CouponName
 			{
 				get
@@ -304,6 +323,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				}
 			}
 
+			[JsonProperty(PropertyName = "CouponDesc")]
 			public string CouponDesc
 			{
 				get
@@ -316,18 +336,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				}
 			}
 
-			public float? CanPromFee
-			{
-				get
-				{
-					return canPromFee;
-				}
-				set	
-				{
-					canPromFee = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "IsSelected")]
 			public bool? IsSelected
 			{
 				get
@@ -337,6 +346,19 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				set	
 				{
 					isSelected = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CanPromFee")]
+			public float? CanPromFee
+			{
+				get
+				{
+					return canPromFee;
+				}
+				set	
+				{
+					canPromFee = value;
 				}
 			}
 		}

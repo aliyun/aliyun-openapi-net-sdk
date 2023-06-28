@@ -100,6 +100,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string status;
 
+			private List<QueryBatchRegisterDeviceStatus_InvalidDetailListItem> invalidDetailList;
+
 			private List<string> validList;
 
 			private List<string> invalidList;
@@ -113,6 +115,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public List<QueryBatchRegisterDeviceStatus_InvalidDetailListItem> InvalidDetailList
+			{
+				get
+				{
+					return invalidDetailList;
+				}
+				set	
+				{
+					invalidDetailList = value;
 				}
 			}
 
@@ -137,6 +151,52 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					invalidList = value;
+				}
+			}
+
+			public class QueryBatchRegisterDeviceStatus_InvalidDetailListItem
+			{
+
+				private string deviceName;
+
+				private string errorMsg;
+
+				private string nickName;
+
+				public string DeviceName
+				{
+					get
+					{
+						return deviceName;
+					}
+					set	
+					{
+						deviceName = value;
+					}
+				}
+
+				public string ErrorMsg
+				{
+					get
+					{
+						return errorMsg;
+					}
+					set	
+					{
+						errorMsg = value;
+					}
+				}
+
+				public string NickName
+				{
+					get
+					{
+						return nickName;
+					}
+					set	
+					{
+						nickName = value;
+					}
 				}
 			}
 		}

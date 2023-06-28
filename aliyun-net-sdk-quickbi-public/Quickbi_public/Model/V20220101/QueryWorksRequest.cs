@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class QueryWorksRequest : RpcAcsRequest<QueryWorksResponse>
     {
         public QueryWorksRequest()
-            : base("quickbi-public", "2022-01-01", "QueryWorks", "quickbi", "openAPI")
+            : base("quickbi-public", "2022-01-01", "QueryWorks", "2.2.0", "openAPI")
         {
 			Method = MethodType.POST;
         }

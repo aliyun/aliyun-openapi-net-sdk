@@ -44,6 +44,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string aliasName;
 
+		[JsonProperty(PropertyName = "AliasName")]
 		public string AliasName
 		{
 			get

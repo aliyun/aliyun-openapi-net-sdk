@@ -108,6 +108,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string trafficMirrorSessionName;
 
+			private string resourceGroupId;
+
+			private List<ListTrafficMirrorSessions_Tag> tags;
+
 			private List<string> trafficMirrorSourceIds;
 
 			public string TrafficMirrorTargetId
@@ -254,6 +258,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public List<ListTrafficMirrorSessions_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
 			public List<string> TrafficMirrorSourceIds
 			{
 				get
@@ -263,6 +291,38 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					trafficMirrorSourceIds = value;
+				}
+			}
+
+			public class ListTrafficMirrorSessions_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}

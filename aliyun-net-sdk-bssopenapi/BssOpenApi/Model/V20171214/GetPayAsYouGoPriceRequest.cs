@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -52,6 +53,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string region;
 
+		[JsonProperty(PropertyName = "ProductCode")]
 		public string ProductCode
 		{
 			get
@@ -65,6 +67,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "SubscriptionType")]
 		public string SubscriptionType
 		{
 			get
@@ -78,6 +81,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "ModuleList")]
 		public List<string> ModuleLists
 		{
 			get
@@ -100,6 +104,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -113,6 +118,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "ProductType")]
 		public string ProductType
 		{
 			get
@@ -126,6 +132,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Region")]
 		public string Region
 		{
 			get
@@ -148,6 +155,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private string config;
 
+			[JsonProperty(PropertyName = "ModuleCode")]
 			public string ModuleCode
 			{
 				get
@@ -160,6 +168,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "PriceType")]
 			public string PriceType
 			{
 				get
@@ -172,6 +181,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "Config")]
 			public string Config
 			{
 				get

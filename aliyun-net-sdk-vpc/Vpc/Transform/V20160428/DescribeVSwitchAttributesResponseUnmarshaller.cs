@@ -62,6 +62,16 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				describeVSwitchAttributesResponse_cloudResources.Add(cloudResourceSetType);
 			}
 			describeVSwitchAttributesResponse.CloudResources = describeVSwitchAttributesResponse_cloudResources;
+
+			List<DescribeVSwitchAttributesResponse.DescribeVSwitchAttributes_Tag> describeVSwitchAttributesResponse_tags = new List<DescribeVSwitchAttributesResponse.DescribeVSwitchAttributes_Tag>();
+			for (int i = 0; i < _ctx.Length("DescribeVSwitchAttributes.Tags.Length"); i++) {
+				DescribeVSwitchAttributesResponse.DescribeVSwitchAttributes_Tag tag = new DescribeVSwitchAttributesResponse.DescribeVSwitchAttributes_Tag();
+				tag.Key = _ctx.StringValue("DescribeVSwitchAttributes.Tags["+ i +"].Key");
+				tag._Value = _ctx.StringValue("DescribeVSwitchAttributes.Tags["+ i +"].Value");
+
+				describeVSwitchAttributesResponse_tags.Add(tag);
+			}
+			describeVSwitchAttributesResponse.Tags = describeVSwitchAttributesResponse_tags;
         
 			return describeVSwitchAttributesResponse;
         }

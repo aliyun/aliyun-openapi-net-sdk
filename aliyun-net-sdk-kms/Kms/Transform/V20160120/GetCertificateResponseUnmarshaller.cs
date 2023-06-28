@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			GetCertificateResponse getCertificateResponse = new GetCertificateResponse();
 
 			getCertificateResponse.HttpResponse = _ctx.HttpResponse;
-			getCertificateResponse.RequestId = _ctx.StringValue("GetCertificate.RequestId");
-			getCertificateResponse.Certificate = _ctx.StringValue("GetCertificate.Certificate");
 			getCertificateResponse.CertificateChain = _ctx.StringValue("GetCertificate.CertificateChain");
-			getCertificateResponse.Csr = _ctx.StringValue("GetCertificate.Csr");
+			getCertificateResponse.Certificate = _ctx.StringValue("GetCertificate.Certificate");
+			getCertificateResponse.RequestId = _ctx.StringValue("GetCertificate.RequestId");
 			getCertificateResponse.CertificateId = _ctx.StringValue("GetCertificate.CertificateId");
+			getCertificateResponse.Csr = _ctx.StringValue("GetCertificate.Csr");
         
 			return getCertificateResponse;
         }

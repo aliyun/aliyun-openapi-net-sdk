@@ -35,6 +35,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private QueryCostUnitResource_Data data;
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public QueryCostUnitResource_Data Data
 		{
 			get
@@ -110,6 +115,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private QueryCostUnitResource_CostUnitStatisInfo costUnitStatisInfo;
 
+			[JsonProperty(PropertyName = "PageNum")]
 			public int? PageNum
 			{
 				get
@@ -122,6 +128,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "PageSize")]
 			public int? PageSize
 			{
 				get
@@ -134,6 +141,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "TotalCount")]
 			public int? TotalCount
 			{
 				get
@@ -146,6 +154,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "ResourceInstanceDtoList")]
 			public List<QueryCostUnitResource_ResourceInstanceList> ResourceInstanceDtoList
 			{
 				get
@@ -158,6 +167,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "CostUnit")]
 			public QueryCostUnitResource_CostUnit CostUnit
 			{
 				get
@@ -170,6 +180,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			[JsonProperty(PropertyName = "CostUnitStatisInfo")]
 			public QueryCostUnitResource_CostUnitStatisInfo CostUnitStatisInfo
 			{
 				get
@@ -211,6 +222,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string resourceStatus;
 
+				[JsonProperty(PropertyName = "CommodityCode")]
 				public string CommodityCode
 				{
 					get
@@ -223,6 +235,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ResourceUserName")]
 				public string ResourceUserName
 				{
 					get
@@ -235,6 +248,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "CommodityName")]
 				public string CommodityName
 				{
 					get
@@ -247,6 +261,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ResourceUserId")]
 				public long? ResourceUserId
 				{
 					get
@@ -259,6 +274,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ApportionName")]
 				public string ApportionName
 				{
 					get
@@ -271,6 +287,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ApportionCode")]
 				public string ApportionCode
 				{
 					get
@@ -283,6 +300,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ResourceType")]
 				public string ResourceType
 				{
 					get
@@ -295,6 +313,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ResourceNick")]
 				public string ResourceNick
 				{
 					get
@@ -307,6 +326,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ResourceTag")]
 				public string ResourceTag
 				{
 					get
@@ -319,6 +339,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ResourceId")]
 				public string ResourceId
 				{
 					get
@@ -331,6 +352,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ResourceGroup")]
 				public string ResourceGroup
 				{
 					get
@@ -343,6 +365,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "RelatedResources")]
 				public string RelatedResources
 				{
 					get
@@ -355,6 +378,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ResourceStatus")]
 				public string ResourceStatus
 				{
 					get
@@ -379,6 +403,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private long? ownerUid;
 
+				[JsonProperty(PropertyName = "ParentUnitId")]
 				public long? ParentUnitId
 				{
 					get
@@ -391,6 +416,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "UnitName")]
 				public string UnitName
 				{
 					get
@@ -403,6 +429,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "UnitId")]
 				public long? UnitId
 				{
 					get
@@ -415,6 +442,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "OwnerUid")]
 				public long? OwnerUid
 				{
 					get
@@ -445,6 +473,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private long? userCount;
 
+				[JsonProperty(PropertyName = "TotalResourceCount")]
 				public long? TotalResourceCount
 				{
 					get
@@ -457,6 +486,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ResourceCount")]
 				public long? ResourceCount
 				{
 					get
@@ -469,6 +499,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "TotalUserCount")]
 				public long? TotalUserCount
 				{
 					get
@@ -481,6 +512,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "SubUnitCount")]
 				public long? SubUnitCount
 				{
 					get
@@ -493,6 +525,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "ResourceGroupCount")]
 				public long? ResourceGroupCount
 				{
 					get
@@ -505,6 +538,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "TotalResourceGroupCount")]
 				public long? TotalResourceGroupCount
 				{
 					get
@@ -517,6 +551,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				[JsonProperty(PropertyName = "UserCount")]
 				public long? UserCount
 				{
 					get

@@ -48,6 +48,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				videoResource.ResourceId = _ctx.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].ResourceId");
 				videoResource.RepeatNum = _ctx.IntegerValue("DescribeCasterVideoResources.VideoResources["+ i +"].RepeatNum");
 				videoResource.ResourceName = _ctx.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].ResourceName");
+				videoResource.ImageId = _ctx.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].ImageId");
+				videoResource.ImageUrl = _ctx.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].ImageUrl");
 
 				describeCasterVideoResourcesResponse_videoResources.Add(videoResource);
 			}

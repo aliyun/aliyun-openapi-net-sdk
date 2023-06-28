@@ -447,6 +447,8 @@ namespace Aliyun.Acs.ComputeNestSupplier.Model.V20210521
 
 				private string deployMetadata;
 
+				private bool? enablePrivateVpcConnection;
+
 				private List<ListServiceInstances_ServiceInfo> serviceInfos;
 
 				public string Status
@@ -566,6 +568,18 @@ namespace Aliyun.Acs.ComputeNestSupplier.Model.V20210521
 					set	
 					{
 						deployMetadata = value;
+					}
+				}
+
+				public bool? EnablePrivateVpcConnection
+				{
+					get
+					{
+						return enablePrivateVpcConnection;
+					}
+					set	
+					{
+						enablePrivateVpcConnection = value;
 					}
 				}
 

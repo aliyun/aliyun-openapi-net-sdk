@@ -26,12 +26,12 @@ namespace Aliyun.Acs.imgsearch.Transform.V20200320
 {
     public class CreateImageDbResponseUnmarshaller
     {
-        public static CreateImageDbResponse Unmarshall(UnmarshallerContext context)
+        public static CreateImageDbResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateImageDbResponse createImageDbResponse = new CreateImageDbResponse();
 
-			createImageDbResponse.HttpResponse = context.HttpResponse;
-			createImageDbResponse.RequestId = context.StringValue("CreateImageDb.RequestId");
+			createImageDbResponse.HttpResponse = _ctx.HttpResponse;
+			createImageDbResponse.RequestId = _ctx.StringValue("CreateImageDb.RequestId");
         
 			return createImageDbResponse;
         }

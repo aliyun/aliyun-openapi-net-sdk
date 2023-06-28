@@ -44,6 +44,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string ipv4GatewayName;
 
+		private string resourceGroupId;
+
 		private string nextToken;
 
 		private string ipv4GatewayId;
@@ -53,6 +55,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private List<string> tagss = new List<string>(){ };
 
 		private string vpcId;
 
@@ -81,6 +85,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ipv4GatewayName = value;
 				DictionaryUtil.Add(QueryParameters, "Ipv4GatewayName", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -149,6 +166,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public List<string> Tagss
+		{
+			get
+			{
+				return tagss;
+			}
+
+			set
+			{
+				tagss = value;
+				if(tagss != null)
+				{
+					for (int depth1 = 0; depth1 < tagss.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tags." + (depth1 + 1), tagss[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tags." + (depth1 + 1), tagss[depth1]);
+					}
+				}
+			}
+		}
+
 		public string VpcId
 		{
 			get
@@ -172,6 +210,38 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				maxResults = value;
 				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+			}
+		}
+
+		public class Tags
+		{
+
+			private string key;
+
+			private string value_;
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
 			}
 		}
 

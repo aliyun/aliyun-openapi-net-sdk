@@ -45,6 +45,8 @@ namespace Aliyun.Acs.ComputeNestSupplier.Model.V20210521
 
 		private List<string> tags = new List<string>(){ };
 
+		private bool? showDeleted;
+
 		private List<string> filters = new List<string>(){ };
 
 		private string maxResults;
@@ -80,6 +82,19 @@ namespace Aliyun.Acs.ComputeNestSupplier.Model.V20210521
 						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
 					}
 				}
+			}
+		}
+
+		public bool? ShowDeleted
+		{
+			get
+			{
+				return showDeleted;
+			}
+			set	
+			{
+				showDeleted = value;
+				DictionaryUtil.Add(QueryParameters, "ShowDeleted", value.ToString());
 			}
 		}
 

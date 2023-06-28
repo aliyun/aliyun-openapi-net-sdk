@@ -72,6 +72,20 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 					element.ImageY = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].ImageY");
 					element.Diameter = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Diameter");
 					element.X = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].X");
+					element.RecistSOPInstanceUID = _ctx.StringValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].RecistSOPInstanceUID");
+					element.Risk = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Risk");
+
+					List<string> element_majorAxis = new List<string>();
+					for (int k = 0; k < _ctx.Length("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].MajorAxis.Length"); k++) {
+						element_majorAxis.Add(_ctx.StringValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].MajorAxis["+ k +"]"));
+					}
+					element.MajorAxis = element_majorAxis;
+
+					List<string> element_minorAxis = new List<string>();
+					for (int k = 0; k < _ctx.Length("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].MinorAxis.Length"); k++) {
+						element_minorAxis.Add(_ctx.StringValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].MinorAxis["+ k +"]"));
+					}
+					element.MinorAxis = element_minorAxis;
 
 					serie_elements.Add(element);
 				}
