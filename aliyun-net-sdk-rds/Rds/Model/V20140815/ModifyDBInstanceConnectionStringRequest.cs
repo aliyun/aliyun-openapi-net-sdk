@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string connectionStringPrefix;
 
+		private string pGBouncerPort;
+
 		private string generalGroupName;
 
 		private string dBInstanceId;
@@ -86,6 +88,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				connectionStringPrefix = value;
 				DictionaryUtil.Add(QueryParameters, "ConnectionStringPrefix", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "PGBouncerPort")]
+		public string PGBouncerPort
+		{
+			get
+			{
+				return pGBouncerPort;
+			}
+			set	
+			{
+				pGBouncerPort = value;
+				DictionaryUtil.Add(QueryParameters, "PGBouncerPort", value);
 			}
 		}
 

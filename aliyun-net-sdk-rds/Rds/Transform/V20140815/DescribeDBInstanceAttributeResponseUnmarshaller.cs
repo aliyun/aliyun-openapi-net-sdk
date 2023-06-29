@@ -119,6 +119,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstanceAttribute.InstructionSetArch = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].InstructionSetArch");
 				dBInstanceAttribute.BurstingEnabled = _ctx.BooleanValue("DescribeDBInstanceAttribute.Items["+ i +"].BurstingEnabled");
 				dBInstanceAttribute.BpeEnabled = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].BpeEnabled");
+				dBInstanceAttribute.PGBouncerEnabled = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].PGBouncerEnabled");
 
 				DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_Extra extra = new DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_Extra();
 				extra.ReplicaGroupStatus = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].Extra.ReplicaGroupStatus");

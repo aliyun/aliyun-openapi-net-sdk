@@ -224,6 +224,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string bpeEnabled;
 
+			private string pGBouncerEnabled;
+
 			private List<DescribeDBInstanceAttribute_SlaveZone> slaveZones;
 
 			private List<DescribeDBInstanceAttribute_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
@@ -1312,6 +1314,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					bpeEnabled = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PGBouncerEnabled")]
+			public string PGBouncerEnabled
+			{
+				get
+				{
+					return pGBouncerEnabled;
+				}
+				set	
+				{
+					pGBouncerEnabled = value;
 				}
 			}
 
