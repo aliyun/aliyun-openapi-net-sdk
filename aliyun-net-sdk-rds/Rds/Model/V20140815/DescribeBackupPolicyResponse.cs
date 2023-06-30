@@ -77,6 +77,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private bool? enableIncrementDataBackup;
 
+		private bool? supportModifyBackupPriority;
+
+		private int? backupPriority;
+
 		private DescribeBackupPolicy_DuplicationLocation duplicationLocation;
 
 		[JsonProperty(PropertyName = "LogBackupRetentionPeriod")]
@@ -414,6 +418,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				enableIncrementDataBackup = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "SupportModifyBackupPriority")]
+		public bool? SupportModifyBackupPriority
+		{
+			get
+			{
+				return supportModifyBackupPriority;
+			}
+			set	
+			{
+				supportModifyBackupPriority = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "BackupPriority")]
+		public int? BackupPriority
+		{
+			get
+			{
+				return backupPriority;
+			}
+			set	
+			{
+				backupPriority = value;
 			}
 		}
 

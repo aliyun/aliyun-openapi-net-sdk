@@ -57,6 +57,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeBackupPolicyResponse.EnableBackupLog = _ctx.StringValue("DescribeBackupPolicy.EnableBackupLog");
 			describeBackupPolicyResponse.BackupLog = _ctx.StringValue("DescribeBackupPolicy.BackupLog");
 			describeBackupPolicyResponse.EnableIncrementDataBackup = _ctx.BooleanValue("DescribeBackupPolicy.EnableIncrementDataBackup");
+			describeBackupPolicyResponse.SupportModifyBackupPriority = _ctx.BooleanValue("DescribeBackupPolicy.SupportModifyBackupPriority");
+			describeBackupPolicyResponse.BackupPriority = _ctx.IntegerValue("DescribeBackupPolicy.BackupPriority");
 
 			DescribeBackupPolicyResponse.DescribeBackupPolicy_DuplicationLocation duplicationLocation = new DescribeBackupPolicyResponse.DescribeBackupPolicy_DuplicationLocation();
 			duplicationLocation.Sotrage = _ctx.StringValue("DescribeBackupPolicy.DuplicationLocation.Sotrage");
