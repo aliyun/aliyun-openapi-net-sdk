@@ -29,10 +29,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class StopDBInstanceRequest : RpcAcsRequest<StopDBInstanceResponse>
+    public class ModifyDBInstanceConfigRequest : RpcAcsRequest<ModifyDBInstanceConfigResponse>
     {
-        public StopDBInstanceRequest()
-            : base("Rds", "2014-08-15", "StopDBInstance")
+        public ModifyDBInstanceConfigRequest()
+            : base("Rds", "2014-08-15", "ModifyDBInstanceConfig")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,11 +44,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+		private string clientToken;
 
-		private long? ownerId;
+		private string resourceGroupId;
+
+		private string configName;
 
 		private string dBInstanceId;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
+		private string configValue;
+
+		private long? ownerId;
 
 		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
@@ -64,31 +74,45 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
-		public string ResourceOwnerAccount
+		[JsonProperty(PropertyName = "ClientToken")]
+		public string ClientToken
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return clientToken;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "OwnerId")]
-		public long? OwnerId
+		[JsonProperty(PropertyName = "ResourceGroupId")]
+		public string ResourceGroupId
 		{
 			get
 			{
-				return ownerId;
+				return resourceGroupId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ConfigName")]
+		public string ConfigName
+		{
+			get
+			{
+				return configName;
+			}
+			set	
+			{
+				configName = value;
+				DictionaryUtil.Add(QueryParameters, "ConfigName", value);
 			}
 		}
 
@@ -106,14 +130,70 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "OwnerAccount")]
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ConfigValue")]
+		public string ConfigValue
+		{
+			get
+			{
+				return configValue;
+			}
+			set	
+			{
+				configValue = value;
+				DictionaryUtil.Add(QueryParameters, "ConfigValue", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "OwnerId")]
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override StopDBInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyDBInstanceConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return StopDBInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyDBInstanceConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

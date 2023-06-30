@@ -23,6 +23,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Rds;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
 
@@ -31,7 +32,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeAvailableRecoveryTimeRequest : RpcAcsRequest<DescribeAvailableRecoveryTimeResponse>
     {
         public DescribeAvailableRecoveryTimeRequest()
-            : base("Rds", "2014-08-15", "DescribeAvailableRecoveryTime", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeAvailableRecoveryTime")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
