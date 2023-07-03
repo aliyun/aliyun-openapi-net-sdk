@@ -58,6 +58,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? quantity;
 
+		private ServerlessConfig serverlessConfig_;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -191,6 +193,22 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				quantity = value;
 				DictionaryUtil.Add(QueryParameters, "Quantity", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "ServerlessConfig")]
+		public ServerlessConfig ServerlessConfig_
+		{
+			get
+			{
+				return serverlessConfig_;
+			}
+
+			set
+			{
+				serverlessConfig_ = value;
+				DictionaryUtil.Add(QueryParameters, "ServerlessConfig", JsonConvert.SerializeObject(value));
+
 			}
 		}
 
@@ -359,6 +377,40 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				orderType = value;
 				DictionaryUtil.Add(QueryParameters, "OrderType", value);
+			}
+		}
+
+		public class ServerlessConfig
+		{
+
+			private double? minCapacity;
+
+			private double? maxCapacity;
+
+			[JsonProperty(PropertyName = "MinCapacity")]
+			public double? MinCapacity
+			{
+				get
+				{
+					return minCapacity;
+				}
+				set	
+				{
+					minCapacity = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MaxCapacity")]
+			public double? MaxCapacity
+			{
+				get
+				{
+					return maxCapacity;
+				}
+				set	
+				{
+					maxCapacity = value;
+				}
 			}
 		}
 

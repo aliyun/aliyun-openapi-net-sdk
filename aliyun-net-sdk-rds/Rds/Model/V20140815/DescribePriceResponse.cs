@@ -29,6 +29,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private bool? showDiscount;
 
+		private float? tradeMaxRCUAmount;
+
+		private float? tradeMinRCUAmount;
+
 		private List<DescribePrice_Rule> rules;
 
 		private DescribePrice_PriceInfo priceInfo;
@@ -56,6 +60,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				showDiscount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TradeMaxRCUAmount")]
+		public float? TradeMaxRCUAmount
+		{
+			get
+			{
+				return tradeMaxRCUAmount;
+			}
+			set	
+			{
+				tradeMaxRCUAmount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TradeMinRCUAmount")]
+		public float? TradeMinRCUAmount
+		{
+			get
+			{
+				return tradeMinRCUAmount;
+			}
+			set	
+			{
+				tradeMinRCUAmount = value;
 			}
 		}
 
