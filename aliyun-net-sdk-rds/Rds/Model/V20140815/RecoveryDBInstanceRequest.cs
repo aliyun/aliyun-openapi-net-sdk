@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Rds;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class RecoveryDBInstanceRequest : RpcAcsRequest<RecoveryDBInstanceResponse>
     {
         public RecoveryDBInstanceRequest()
-            : base("Rds", "2014-08-15", "RecoveryDBInstance")
+            : base("Rds", "2014-08-15", "RecoveryDBInstance", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
