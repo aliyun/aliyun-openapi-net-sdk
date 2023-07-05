@@ -39,17 +39,23 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 
 		private App app_;
 
-		private VideoInfo videoInfo_;
-
 		private AudioInfo audioInfo_;
 
 		private AvatarInfo avatarInfo_;
 
+		private string title;
+
+		private string extParams;
+
+		private VideoInfo videoInfo_;
+
+		private string callbackParams;
+
 		private long? tenantId;
 
-		private string text;
+		private bool? callback;
 
-		private string title;
+		private string text;
 
 		[JsonProperty(PropertyName = "App")]
 		public App App_
@@ -63,22 +69,6 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			{
 				app_ = value;
 				DictionaryUtil.Add(QueryParameters, "App", JsonConvert.SerializeObject(value));
-
-			}
-		}
-
-		[JsonProperty(PropertyName = "VideoInfo")]
-		public VideoInfo VideoInfo_
-		{
-			get
-			{
-				return videoInfo_;
-			}
-
-			set
-			{
-				videoInfo_ = value;
-				DictionaryUtil.Add(QueryParameters, "VideoInfo", JsonConvert.SerializeObject(value));
 
 			}
 		}
@@ -115,6 +105,64 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			}
 		}
 
+		[JsonProperty(PropertyName = "Title")]
+		public string Title
+		{
+			get
+			{
+				return title;
+			}
+			set	
+			{
+				title = value;
+				DictionaryUtil.Add(QueryParameters, "Title", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ExtParams")]
+		public string ExtParams
+		{
+			get
+			{
+				return extParams;
+			}
+			set	
+			{
+				extParams = value;
+				DictionaryUtil.Add(QueryParameters, "ExtParams", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "VideoInfo")]
+		public VideoInfo VideoInfo_
+		{
+			get
+			{
+				return videoInfo_;
+			}
+
+			set
+			{
+				videoInfo_ = value;
+				DictionaryUtil.Add(QueryParameters, "VideoInfo", JsonConvert.SerializeObject(value));
+
+			}
+		}
+
+		[JsonProperty(PropertyName = "CallbackParams")]
+		public string CallbackParams
+		{
+			get
+			{
+				return callbackParams;
+			}
+			set	
+			{
+				callbackParams = value;
+				DictionaryUtil.Add(QueryParameters, "CallbackParams", value);
+			}
+		}
+
 		[JsonProperty(PropertyName = "TenantId")]
 		public long? TenantId
 		{
@@ -129,6 +177,20 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			}
 		}
 
+		[JsonProperty(PropertyName = "Callback")]
+		public bool? Callback
+		{
+			get
+			{
+				return callback;
+			}
+			set	
+			{
+				callback = value;
+				DictionaryUtil.Add(QueryParameters, "Callback", value.ToString());
+			}
+		}
+
 		[JsonProperty(PropertyName = "Text")]
 		public string Text
 		{
@@ -140,20 +202,6 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			{
 				text = value;
 				DictionaryUtil.Add(QueryParameters, "Text", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "Title")]
-		public string Title
-		{
-			get
-			{
-				return title;
-			}
-			set	
-			{
-				title = value;
-				DictionaryUtil.Add(QueryParameters, "Title", value);
 			}
 		}
 
@@ -172,85 +220,6 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 				set	
 				{
 					appId = value;
-				}
-			}
-		}
-
-		public class VideoInfo
-		{
-
-			private bool? isAlpha;
-
-			private string backgroundImageUrl;
-
-			private bool? isSubtitles;
-
-			private int? resolution;
-
-			private int? alphaFormat;
-
-			[JsonProperty(PropertyName = "IsAlpha")]
-			public bool? IsAlpha
-			{
-				get
-				{
-					return isAlpha;
-				}
-				set	
-				{
-					isAlpha = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "BackgroundImageUrl")]
-			public string BackgroundImageUrl
-			{
-				get
-				{
-					return backgroundImageUrl;
-				}
-				set	
-				{
-					backgroundImageUrl = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "IsSubtitles")]
-			public bool? IsSubtitles
-			{
-				get
-				{
-					return isSubtitles;
-				}
-				set	
-				{
-					isSubtitles = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Resolution")]
-			public int? Resolution
-			{
-				get
-				{
-					return resolution;
-				}
-				set	
-				{
-					resolution = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "AlphaFormat")]
-			public int? AlphaFormat
-			{
-				get
-				{
-					return alphaFormat;
-				}
-				set	
-				{
-					alphaFormat = value;
 				}
 			}
 		}
@@ -334,6 +303,85 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 				set	
 				{
 					code = value;
+				}
+			}
+		}
+
+		public class VideoInfo
+		{
+
+			private bool? isAlpha;
+
+			private string backgroundImageUrl;
+
+			private bool? isSubtitles;
+
+			private int? resolution;
+
+			private int? alphaFormat;
+
+			[JsonProperty(PropertyName = "IsAlpha")]
+			public bool? IsAlpha
+			{
+				get
+				{
+					return isAlpha;
+				}
+				set	
+				{
+					isAlpha = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "BackgroundImageUrl")]
+			public string BackgroundImageUrl
+			{
+				get
+				{
+					return backgroundImageUrl;
+				}
+				set	
+				{
+					backgroundImageUrl = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "IsSubtitles")]
+			public bool? IsSubtitles
+			{
+				get
+				{
+					return isSubtitles;
+				}
+				set	
+				{
+					isSubtitles = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Resolution")]
+			public int? Resolution
+			{
+				get
+				{
+					return resolution;
+				}
+				set	
+				{
+					resolution = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AlphaFormat")]
+			public int? AlphaFormat
+			{
+				get
+				{
+					return alphaFormat;
+				}
+				set	
+				{
+					alphaFormat = value;
 				}
 			}
 		}

@@ -39,15 +39,21 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 
 		private App app_;
 
-		private VideoInfo videoInfo_;
-
 		private AvatarInfo avatarInfo_;
-
-		private long? tenantId;
 
 		private string title;
 
+		private string extParams;
+
 		private string url;
+
+		private VideoInfo videoInfo_;
+
+		private string callbackParams;
+
+		private long? tenantId;
+
+		private bool? callback;
 
 		[JsonProperty(PropertyName = "App")]
 		public App App_
@@ -61,22 +67,6 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			{
 				app_ = value;
 				DictionaryUtil.Add(QueryParameters, "App", JsonConvert.SerializeObject(value));
-
-			}
-		}
-
-		[JsonProperty(PropertyName = "VideoInfo")]
-		public VideoInfo VideoInfo_
-		{
-			get
-			{
-				return videoInfo_;
-			}
-
-			set
-			{
-				videoInfo_ = value;
-				DictionaryUtil.Add(QueryParameters, "VideoInfo", JsonConvert.SerializeObject(value));
 
 			}
 		}
@@ -97,20 +87,6 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			}
 		}
 
-		[JsonProperty(PropertyName = "TenantId")]
-		public long? TenantId
-		{
-			get
-			{
-				return tenantId;
-			}
-			set	
-			{
-				tenantId = value;
-				DictionaryUtil.Add(QueryParameters, "TenantId", value.ToString());
-			}
-		}
-
 		[JsonProperty(PropertyName = "Title")]
 		public string Title
 		{
@@ -125,6 +101,20 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			}
 		}
 
+		[JsonProperty(PropertyName = "ExtParams")]
+		public string ExtParams
+		{
+			get
+			{
+				return extParams;
+			}
+			set	
+			{
+				extParams = value;
+				DictionaryUtil.Add(QueryParameters, "ExtParams", value);
+			}
+		}
+
 		[JsonProperty(PropertyName = "Url")]
 		public string Url
 		{
@@ -136,6 +126,64 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			{
 				url = value;
 				DictionaryUtil.Add(QueryParameters, "Url", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "VideoInfo")]
+		public VideoInfo VideoInfo_
+		{
+			get
+			{
+				return videoInfo_;
+			}
+
+			set
+			{
+				videoInfo_ = value;
+				DictionaryUtil.Add(QueryParameters, "VideoInfo", JsonConvert.SerializeObject(value));
+
+			}
+		}
+
+		[JsonProperty(PropertyName = "CallbackParams")]
+		public string CallbackParams
+		{
+			get
+			{
+				return callbackParams;
+			}
+			set	
+			{
+				callbackParams = value;
+				DictionaryUtil.Add(QueryParameters, "CallbackParams", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "TenantId")]
+		public long? TenantId
+		{
+			get
+			{
+				return tenantId;
+			}
+			set	
+			{
+				tenantId = value;
+				DictionaryUtil.Add(QueryParameters, "TenantId", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "Callback")]
+		public bool? Callback
+		{
+			get
+			{
+				return callback;
+			}
+			set	
+			{
+				callback = value;
+				DictionaryUtil.Add(QueryParameters, "Callback", value.ToString());
 			}
 		}
 
@@ -154,6 +202,70 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 				set	
 				{
 					appId = value;
+				}
+			}
+		}
+
+		public class AvatarInfo
+		{
+
+			private string code;
+
+			private int? locate;
+
+			private int? angle;
+
+			private string industryCode;
+
+			[JsonProperty(PropertyName = "Code")]
+			public string Code
+			{
+				get
+				{
+					return code;
+				}
+				set	
+				{
+					code = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Locate")]
+			public int? Locate
+			{
+				get
+				{
+					return locate;
+				}
+				set	
+				{
+					locate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Angle")]
+			public int? Angle
+			{
+				get
+				{
+					return angle;
+				}
+				set	
+				{
+					angle = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "IndustryCode")]
+			public string IndustryCode
+			{
+				get
+				{
+					return industryCode;
+				}
+				set	
+				{
+					industryCode = value;
 				}
 			}
 		}
@@ -218,55 +330,6 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 				set	
 				{
 					alphaFormat = value;
-				}
-			}
-		}
-
-		public class AvatarInfo
-		{
-
-			private string code;
-
-			private int? locate;
-
-			private int? angle;
-
-			[JsonProperty(PropertyName = "Code")]
-			public string Code
-			{
-				get
-				{
-					return code;
-				}
-				set	
-				{
-					code = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Locate")]
-			public int? Locate
-			{
-				get
-				{
-					return locate;
-				}
-				set	
-				{
-					locate = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Angle")]
-			public int? Angle
-			{
-				get
-				{
-					return angle;
-				}
-				set	
-				{
-					angle = value;
 				}
 			}
 		}
