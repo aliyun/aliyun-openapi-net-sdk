@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string engineVersion;
 
+		private bool? autoUseCoupon;
+
 		private string resourceGroupId;
 
 		private ServerlessConfiguration serverlessConfiguration_;
@@ -123,6 +125,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				engineVersion = value;
 				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "AutoUseCoupon")]
+		public bool? AutoUseCoupon
+		{
+			get
+			{
+				return autoUseCoupon;
+			}
+			set	
+			{
+				autoUseCoupon = value;
+				DictionaryUtil.Add(QueryParameters, "AutoUseCoupon", value.ToString());
 			}
 		}
 
