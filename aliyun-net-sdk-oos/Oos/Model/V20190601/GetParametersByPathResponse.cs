@@ -127,6 +127,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 			private string shareType;
 
+			private string tags;
+
 			[JsonProperty(PropertyName = "Type")]
 			public string Type
 			{
@@ -280,6 +282,19 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				set	
 				{
 					shareType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Tags")]
+			public string Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
 				}
 			}
 		}

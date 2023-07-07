@@ -45,6 +45,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private bool? includeChildExecution;
 
+		private string description;
+
 		private string mode;
 
 		private string executionId;
@@ -61,6 +63,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string sortOrder;
 
+		private string categories;
+
 		private string resourceId;
 
 		private string startDateAfter;
@@ -70,6 +74,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 		private Dictionary<object,object> tags;
 
 		private string parentExecutionId;
+
+		private string depth;
 
 		private string endDateAfter;
 
@@ -108,6 +114,20 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				includeChildExecution = value;
 				DictionaryUtil.Add(QueryParameters, "IncludeChildExecution", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "Description")]
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
@@ -223,6 +243,20 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Categories")]
+		public string Categories
+		{
+			get
+			{
+				return categories;
+			}
+			set	
+			{
+				categories = value;
+				DictionaryUtil.Add(QueryParameters, "Categories", value);
+			}
+		}
+
 		[JsonProperty(PropertyName = "ResourceId")]
 		public string ResourceId
 		{
@@ -290,6 +324,20 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				parentExecutionId = value;
 				DictionaryUtil.Add(QueryParameters, "ParentExecutionId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Depth")]
+		public string Depth
+		{
+			get
+			{
+				return depth;
+			}
+			set	
+			{
+				depth = value;
+				DictionaryUtil.Add(QueryParameters, "Depth", value);
 			}
 		}
 

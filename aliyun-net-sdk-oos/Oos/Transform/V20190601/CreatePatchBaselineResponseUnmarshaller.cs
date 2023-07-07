@@ -44,6 +44,13 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			patchBaseline.ApprovalRules = _ctx.StringValue("CreatePatchBaseline.PatchBaseline.ApprovalRules");
 			patchBaseline.Id = _ctx.StringValue("CreatePatchBaseline.PatchBaseline.Id");
 			patchBaseline.ShareType = _ctx.StringValue("CreatePatchBaseline.PatchBaseline.ShareType");
+			patchBaseline.RejectedPatchesAction = _ctx.StringValue("CreatePatchBaseline.PatchBaseline.RejectedPatchesAction");
+
+			List<string> patchBaseline_rejectedPatches = new List<string>();
+			for (int i = 0; i < _ctx.Length("CreatePatchBaseline.PatchBaseline.RejectedPatches.Length"); i++) {
+				patchBaseline_rejectedPatches.Add(_ctx.StringValue("CreatePatchBaseline.PatchBaseline.RejectedPatches["+ i +"]"));
+			}
+			patchBaseline.RejectedPatches = patchBaseline_rejectedPatches;
 			createPatchBaselineResponse.PatchBaseline = patchBaseline;
         
 			return createPatchBaselineResponse;

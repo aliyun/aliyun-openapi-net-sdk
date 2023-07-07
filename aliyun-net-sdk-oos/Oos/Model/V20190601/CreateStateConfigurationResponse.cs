@@ -29,6 +29,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private CreateStateConfiguration_StateConfiguration stateConfiguration;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "StateConfiguration")]
 		public CreateStateConfiguration_StateConfiguration StateConfiguration
 		{
 			get
@@ -82,6 +84,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 			private string templateId;
 
+			[JsonProperty(PropertyName = "CreateTime")]
 			public string CreateTime
 			{
 				get
@@ -94,6 +97,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "Targets")]
 			public string Targets
 			{
 				get
@@ -106,6 +110,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "Tags")]
 			public string Tags
 			{
 				get
@@ -118,6 +123,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "StateConfigurationId")]
 			public string StateConfigurationId
 			{
 				get
@@ -130,6 +136,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "ScheduleExpression")]
 			public string ScheduleExpression
 			{
 				get
@@ -142,6 +149,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "TemplateName")]
 			public string TemplateName
 			{
 				get
@@ -154,6 +162,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "TemplateVersion")]
 			public string TemplateVersion
 			{
 				get
@@ -166,6 +175,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "ConfigureMode")]
 			public string ConfigureMode
 			{
 				get
@@ -178,6 +188,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "ScheduleType")]
 			public string ScheduleType
 			{
 				get
@@ -190,6 +201,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "Parameters")]
 			public string Parameters
 			{
 				get
@@ -202,6 +214,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "Description")]
 			public string Description
 			{
 				get
@@ -214,6 +227,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "ResourceGroupId")]
 			public string ResourceGroupId
 			{
 				get
@@ -226,6 +240,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "TemplateId")]
 			public string TemplateId
 			{
 				get

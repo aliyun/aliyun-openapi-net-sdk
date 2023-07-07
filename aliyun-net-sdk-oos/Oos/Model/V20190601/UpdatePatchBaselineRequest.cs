@@ -47,6 +47,10 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string description;
 
+		private List<string> rejectedPatches = new List<string>(){ };
+
+		private string rejectedPatchesAction;
+
 		private string name;
 
 		[JsonProperty(PropertyName = "ClientToken")]
@@ -88,6 +92,41 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "RejectedPatches")]
+		public List<string> RejectedPatches
+		{
+			get
+			{
+				return rejectedPatches;
+			}
+
+			set
+			{
+				rejectedPatches = value;
+				if(rejectedPatches != null)
+				{
+					for (int depth1 = 0; depth1 < rejectedPatches.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"RejectedPatches." + (depth1 + 1), rejectedPatches[depth1]);
+					}
+				}
+			}
+		}
+
+		[JsonProperty(PropertyName = "RejectedPatchesAction")]
+		public string RejectedPatchesAction
+		{
+			get
+			{
+				return rejectedPatchesAction;
+			}
+			set	
+			{
+				rejectedPatchesAction = value;
+				DictionaryUtil.Add(QueryParameters, "RejectedPatchesAction", value);
 			}
 		}
 

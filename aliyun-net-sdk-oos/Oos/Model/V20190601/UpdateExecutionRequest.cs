@@ -43,6 +43,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string clientToken;
 
+		private string description;
+
 		private string executionId;
 
 		private string parameters;
@@ -58,6 +60,20 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Description")]
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 

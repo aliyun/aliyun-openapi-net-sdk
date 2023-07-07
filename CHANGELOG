@@ -1,3 +1,6 @@
+2023-07-07 Version: 1.5.7
+- ListApplicationGroups rename parameter Product to ResourceProduct
+
 2023-07-06 Version: 2.8.5
 - Add AutoUseCoupon field.
 - Api Offline.

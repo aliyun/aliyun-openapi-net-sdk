@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.oos.Model.V20190601
 {
-	public class ListApplicationsResponse : AcsResponse
+	public class ListOpsItemsResponse : AcsResponse
 	{
 
 		private string nextToken;
@@ -31,7 +31,9 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private int? maxResults;
 
-		private List<ListApplications_Application> applications;
+		private int? totalCount;
+
+		private List<ListOpsItems_OpsItem> opsItems;
 
 		[JsonProperty(PropertyName = "NextToken")]
 		public string NextToken
@@ -72,98 +74,67 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
-		[JsonProperty(PropertyName = "Applications")]
-		public List<ListApplications_Application> Applications
+		[JsonProperty(PropertyName = "TotalCount")]
+		public int? TotalCount
 		{
 			get
 			{
-				return applications;
+				return totalCount;
 			}
 			set	
 			{
-				applications = value;
+				totalCount = value;
 			}
 		}
 
-		public class ListApplications_Application
+		[JsonProperty(PropertyName = "OpsItems")]
+		public List<ListOpsItems_OpsItem> OpsItems
+		{
+			get
+			{
+				return opsItems;
+			}
+			set	
+			{
+				opsItems = value;
+			}
+		}
+
+		public class ListOpsItems_OpsItem
 		{
 
-			private string description;
-
-			private string updateDate;
-
-			private string resourceGroupId;
-
-			private string tags;
-
-			private string name;
+			private string opsItemId;
 
 			private string createDate;
 
-			private string applicationType;
+			private string updateDate;
 
-			[JsonProperty(PropertyName = "Description")]
-			public string Description
+			private string title;
+
+			private string status;
+
+			private string severity;
+
+			private string category;
+
+			private string source;
+
+			private int? priority;
+
+			private string tags;
+
+			private List<string> resources;
+
+			[JsonProperty(PropertyName = "OpsItemId")]
+			public string OpsItemId
 			{
 				get
 				{
-					return description;
+					return opsItemId;
 				}
 				set	
 				{
-					description = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "UpdateDate")]
-			public string UpdateDate
-			{
-				get
-				{
-					return updateDate;
-				}
-				set	
-				{
-					updateDate = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "ResourceGroupId")]
-			public string ResourceGroupId
-			{
-				get
-				{
-					return resourceGroupId;
-				}
-				set	
-				{
-					resourceGroupId = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Tags")]
-			public string Tags
-			{
-				get
-				{
-					return tags;
-				}
-				set	
-				{
-					tags = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Name")]
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
+					opsItemId = value;
 				}
 			}
 
@@ -180,16 +151,120 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
-			[JsonProperty(PropertyName = "ApplicationType")]
-			public string ApplicationType
+			[JsonProperty(PropertyName = "UpdateDate")]
+			public string UpdateDate
 			{
 				get
 				{
-					return applicationType;
+					return updateDate;
 				}
 				set	
 				{
-					applicationType = value;
+					updateDate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Title")]
+			public string Title
+			{
+				get
+				{
+					return title;
+				}
+				set	
+				{
+					title = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Status")]
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Severity")]
+			public string Severity
+			{
+				get
+				{
+					return severity;
+				}
+				set	
+				{
+					severity = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Category")]
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Source")]
+			public string Source
+			{
+				get
+				{
+					return source;
+				}
+				set	
+				{
+					source = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Priority")]
+			public int? Priority
+			{
+				get
+				{
+					return priority;
+				}
+				set	
+				{
+					priority = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Tags")]
+			public string Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Resources")]
+			public List<string> Resources
+			{
+				get
+				{
+					return resources;
+				}
+				set	
+				{
+					resources = value;
 				}
 			}
 		}

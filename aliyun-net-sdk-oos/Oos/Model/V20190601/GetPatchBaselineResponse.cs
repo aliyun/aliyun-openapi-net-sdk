@@ -80,6 +80,10 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 			private string shareType;
 
+			private string rejectedPatchesAction;
+
+			private List<string> rejectedPatches;
+
 			[JsonProperty(PropertyName = "OperationSystem")]
 			public string OperationSystem
 			{
@@ -220,6 +224,32 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				set	
 				{
 					shareType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RejectedPatchesAction")]
+			public string RejectedPatchesAction
+			{
+				get
+				{
+					return rejectedPatchesAction;
+				}
+				set	
+				{
+					rejectedPatchesAction = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RejectedPatches")]
+			public List<string> RejectedPatches
+			{
+				get
+				{
+					return rejectedPatches;
+				}
+				set	
+				{
+					rejectedPatches = value;
 				}
 			}
 		}

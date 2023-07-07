@@ -53,6 +53,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string sortOrder;
 
+		private string shareType;
+
 		private string tags;
 
 		private string name;
@@ -142,6 +144,20 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				sortOrder = value;
 				DictionaryUtil.Add(QueryParameters, "SortOrder", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ShareType")]
+		public string ShareType
+		{
+			get
+			{
+				return shareType;
+			}
+			set	
+			{
+				shareType = value;
+				DictionaryUtil.Add(QueryParameters, "ShareType", value);
 			}
 		}
 

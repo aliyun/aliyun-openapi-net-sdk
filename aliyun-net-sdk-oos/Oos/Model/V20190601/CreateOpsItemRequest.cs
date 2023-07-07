@@ -17,7 +17,6 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -28,10 +27,10 @@ using Aliyun.Acs.oos.Transform.V20190601;
 
 namespace Aliyun.Acs.oos.Model.V20190601
 {
-    public class CreateStateConfigurationRequest : RpcAcsRequest<CreateStateConfigurationResponse>
+    public class CreateOpsItemRequest : RpcAcsRequest<CreateOpsItemResponse>
     {
-        public CreateStateConfigurationRequest()
-            : base("oos", "2019-06-01", "CreateStateConfiguration", "oos", "openAPI")
+        public CreateOpsItemRequest()
+            : base("oos", "2019-06-01", "CreateOpsItem", "oos", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,43 +40,30 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			Method = MethodType.POST;
         }
 
-		private string scheduleType;
-
 		private string clientToken;
 
 		private string description;
 
-		private string targets;
+		private string source;
+
+		private string title;
 
 		private string resourceGroupId;
 
-		private string templateVersion;
+		private string severity;
 
-		private string scheduleExpression;
+		private string solutions;
 
-		private string templateName;
+		private string resources;
 
-		private string configureMode;
+		private int? priority;
+
+		private string dedupString;
 
 		private string tags;
 
-		private string parameters;
+		private string category;
 
-		[JsonProperty(PropertyName = "ScheduleType")]
-		public string ScheduleType
-		{
-			get
-			{
-				return scheduleType;
-			}
-			set	
-			{
-				scheduleType = value;
-				DictionaryUtil.Add(QueryParameters, "ScheduleType", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "ClientToken")]
 		public string ClientToken
 		{
 			get
@@ -91,7 +77,6 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
-		[JsonProperty(PropertyName = "Description")]
 		public string Description
 		{
 			get
@@ -105,21 +90,32 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
-		[JsonProperty(PropertyName = "Targets")]
-		public string Targets
+		public string Source
 		{
 			get
 			{
-				return targets;
+				return source;
 			}
 			set	
 			{
-				targets = value;
-				DictionaryUtil.Add(QueryParameters, "Targets", value);
+				source = value;
+				DictionaryUtil.Add(QueryParameters, "Source", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "ResourceGroupId")]
+		public string Title
+		{
+			get
+			{
+				return title;
+			}
+			set	
+			{
+				title = value;
+				DictionaryUtil.Add(QueryParameters, "Title", value);
+			}
+		}
+
 		public string ResourceGroupId
 		{
 			get
@@ -133,63 +129,71 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
-		[JsonProperty(PropertyName = "TemplateVersion")]
-		public string TemplateVersion
+		public string Severity
 		{
 			get
 			{
-				return templateVersion;
+				return severity;
 			}
 			set	
 			{
-				templateVersion = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateVersion", value);
+				severity = value;
+				DictionaryUtil.Add(QueryParameters, "Severity", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "ScheduleExpression")]
-		public string ScheduleExpression
+		public string Solutions
 		{
 			get
 			{
-				return scheduleExpression;
+				return solutions;
 			}
 			set	
 			{
-				scheduleExpression = value;
-				DictionaryUtil.Add(QueryParameters, "ScheduleExpression", value);
+				solutions = value;
+				DictionaryUtil.Add(QueryParameters, "Solutions", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "TemplateName")]
-		public string TemplateName
+		public string Resources
 		{
 			get
 			{
-				return templateName;
+				return resources;
 			}
 			set	
 			{
-				templateName = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateName", value);
+				resources = value;
+				DictionaryUtil.Add(QueryParameters, "Resources", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "ConfigureMode")]
-		public string ConfigureMode
+		public int? Priority
 		{
 			get
 			{
-				return configureMode;
+				return priority;
 			}
 			set	
 			{
-				configureMode = value;
-				DictionaryUtil.Add(QueryParameters, "ConfigureMode", value);
+				priority = value;
+				DictionaryUtil.Add(QueryParameters, "Priority", value.ToString());
 			}
 		}
 
-		[JsonProperty(PropertyName = "Tags")]
+		public string DedupString
+		{
+			get
+			{
+				return dedupString;
+			}
+			set	
+			{
+				dedupString = value;
+				DictionaryUtil.Add(QueryParameters, "DedupString", value);
+			}
+		}
+
 		public string Tags
 		{
 			get
@@ -203,17 +207,16 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
-		[JsonProperty(PropertyName = "Parameters")]
-		public string Parameters
+		public string Category
 		{
 			get
 			{
-				return parameters;
+				return category;
 			}
 			set	
 			{
-				parameters = value;
-				DictionaryUtil.Add(QueryParameters, "Parameters", value);
+				category = value;
+				DictionaryUtil.Add(QueryParameters, "Category", value);
 			}
 		}
 
@@ -222,9 +225,9 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			return false;
 		}
 
-        public override CreateStateConfigurationResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateOpsItemResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateStateConfigurationResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateOpsItemResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

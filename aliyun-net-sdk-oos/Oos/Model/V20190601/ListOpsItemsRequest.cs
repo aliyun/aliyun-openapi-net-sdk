@@ -28,10 +28,10 @@ using Aliyun.Acs.oos.Transform.V20190601;
 
 namespace Aliyun.Acs.oos.Model.V20190601
 {
-    public class ListApplicationsRequest : RpcAcsRequest<ListApplicationsResponse>
+    public class ListOpsItemsRequest : RpcAcsRequest<ListOpsItemsResponse>
     {
-        public ListApplicationsRequest()
-            : base("oos", "2019-06-01", "ListApplications", "oos", "openAPI")
+        public ListOpsItemsRequest()
+            : base("oos", "2019-06-01", "ListOpsItems", "oos", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,29 +41,27 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			Method = MethodType.POST;
         }
 
-		private string nextToken;
+		private string resourceTags;
 
 		private string tags;
 
-		private string names;
+		private List<string> filters = new List<string>(){ };
 
-		private string name;
+		private string nextToken;
 
 		private int? maxResults;
 
-		private string applicationType;
-
-		[JsonProperty(PropertyName = "NextToken")]
-		public string NextToken
+		[JsonProperty(PropertyName = "ResourceTags")]
+		public string ResourceTags
 		{
 			get
 			{
-				return nextToken;
+				return resourceTags;
 			}
 			set	
 			{
-				nextToken = value;
-				DictionaryUtil.Add(QueryParameters, "NextToken", value);
+				resourceTags = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceTags", value);
 			}
 		}
 
@@ -81,31 +79,39 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
-		[JsonProperty(PropertyName = "Names")]
-		public string Names
+		[JsonProperty(PropertyName = "Filter")]
+		public List<string> Filters
 		{
 			get
 			{
-				return names;
+				return filters;
 			}
-			set	
+
+			set
 			{
-				names = value;
-				DictionaryUtil.Add(QueryParameters, "Names", value);
+				filters = value;
+				if(filters != null)
+				{
+					for (int depth1 = 0; depth1 < filters.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Filter." + (depth1 + 1), filters[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Filter." + (depth1 + 1), filters[depth1]);
+					}
+				}
 			}
 		}
 
-		[JsonProperty(PropertyName = "Name")]
-		public string Name
+		[JsonProperty(PropertyName = "NextToken")]
+		public string NextToken
 		{
 			get
 			{
-				return name;
+				return nextToken;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
 			}
 		}
 
@@ -123,17 +129,52 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
-		[JsonProperty(PropertyName = "ApplicationType")]
-		public string ApplicationType
+		public class Filter
 		{
-			get
+
+			private string name;
+
+			private List<string> values = new List<string>(){ };
+
+			private string operator_;
+
+			[JsonProperty(PropertyName = "Name")]
+			public string Name
 			{
-				return applicationType;
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
 			}
-			set	
+
+			[JsonProperty(PropertyName = "Value")]
+			public List<string> Values
 			{
-				applicationType = value;
-				DictionaryUtil.Add(QueryParameters, "ApplicationType", value);
+				get
+				{
+					return values;
+				}
+				set	
+				{
+					values = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Operator")]
+			public string Operator_
+			{
+				get
+				{
+					return operator_;
+				}
+				set	
+				{
+					operator_ = value;
+				}
 			}
 		}
 
@@ -142,9 +183,9 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			return false;
 		}
 
-        public override ListApplicationsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListOpsItemsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListApplicationsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListOpsItemsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

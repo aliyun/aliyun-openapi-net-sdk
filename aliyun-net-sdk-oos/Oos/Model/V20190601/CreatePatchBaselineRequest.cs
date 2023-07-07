@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -48,8 +49,13 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string operationSystem;
 
+		private List<string> rejectedPatches = new List<string>(){ };
+
+		private string rejectedPatchesAction;
+
 		private string name;
 
+		[JsonProperty(PropertyName = "ClientToken")]
 		public string ClientToken
 		{
 			get
@@ -63,6 +69,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "ApprovalRules")]
 		public string ApprovalRules
 		{
 			get
@@ -76,6 +83,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Description")]
 		public string Description
 		{
 			get
@@ -89,6 +97,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "OperationSystem")]
 		public string OperationSystem
 		{
 			get
@@ -102,6 +111,42 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "RejectedPatches")]
+		public List<string> RejectedPatches
+		{
+			get
+			{
+				return rejectedPatches;
+			}
+
+			set
+			{
+				rejectedPatches = value;
+				if(rejectedPatches != null)
+				{
+					for (int depth1 = 0; depth1 < rejectedPatches.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"RejectedPatches." + (depth1 + 1), rejectedPatches[depth1]);
+					}
+				}
+			}
+		}
+
+		[JsonProperty(PropertyName = "RejectedPatchesAction")]
+		public string RejectedPatchesAction
+		{
+			get
+			{
+				return rejectedPatchesAction;
+			}
+			set	
+			{
+				rejectedPatchesAction = value;
+				DictionaryUtil.Add(QueryParameters, "RejectedPatchesAction", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Name")]
 		public string Name
 		{
 			get

@@ -32,6 +32,7 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 
 			listStateConfigurationsResponse.HttpResponse = _ctx.HttpResponse;
 			listStateConfigurationsResponse.RequestId = _ctx.StringValue("ListStateConfigurations.RequestId");
+			listStateConfigurationsResponse.NextToken = _ctx.StringValue("ListStateConfigurations.NextToken");
 
 			List<ListStateConfigurationsResponse.ListStateConfigurations_StateConfiguration> listStateConfigurationsResponse_stateConfigurations = new List<ListStateConfigurationsResponse.ListStateConfigurations_StateConfiguration>();
 			for (int i = 0; i < _ctx.Length("ListStateConfigurations.StateConfigurations.Length"); i++) {

@@ -43,6 +43,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string content;
 
+		private string templateURL;
+
 		[JsonProperty(PropertyName = "Content")]
 		public string Content
 		{
@@ -54,6 +56,20 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				content = value;
 				DictionaryUtil.Add(QueryParameters, "Content", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "TemplateURL")]
+		public string TemplateURL
+		{
+			get
+			{
+				return templateURL;
+			}
+			set	
+			{
+				templateURL = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateURL", value);
 			}
 		}
 

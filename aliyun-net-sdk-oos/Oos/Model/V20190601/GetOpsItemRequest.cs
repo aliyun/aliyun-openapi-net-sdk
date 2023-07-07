@@ -28,10 +28,10 @@ using Aliyun.Acs.oos.Transform.V20190601;
 
 namespace Aliyun.Acs.oos.Model.V20190601
 {
-    public class GenerateExecutionPolicyRequest : RpcAcsRequest<GenerateExecutionPolicyResponse>
+    public class GetOpsItemRequest : RpcAcsRequest<GetOpsItemResponse>
     {
-        public GenerateExecutionPolicyRequest()
-            : base("oos", "2019-06-01", "GenerateExecutionPolicy", "oos", "openAPI")
+        public GetOpsItemRequest()
+            : base("oos", "2019-06-01", "GetOpsItem", "oos", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,51 +41,19 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			Method = MethodType.POST;
         }
 
-		private string templateVersion;
+		private string opsItemId;
 
-		private string ramRole;
-
-		private string templateName;
-
-		[JsonProperty(PropertyName = "TemplateVersion")]
-		public string TemplateVersion
+		[JsonProperty(PropertyName = "OpsItemId")]
+		public string OpsItemId
 		{
 			get
 			{
-				return templateVersion;
+				return opsItemId;
 			}
 			set	
 			{
-				templateVersion = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateVersion", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "RamRole")]
-		public string RamRole
-		{
-			get
-			{
-				return ramRole;
-			}
-			set	
-			{
-				ramRole = value;
-				DictionaryUtil.Add(QueryParameters, "RamRole", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "TemplateName")]
-		public string TemplateName
-		{
-			get
-			{
-				return templateName;
-			}
-			set	
-			{
-				templateName = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateName", value);
+				opsItemId = value;
+				DictionaryUtil.Add(QueryParameters, "OpsItemId", value);
 			}
 		}
 
@@ -94,9 +62,9 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			return false;
 		}
 
-        public override GenerateExecutionPolicyResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetOpsItemResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GenerateExecutionPolicyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetOpsItemResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

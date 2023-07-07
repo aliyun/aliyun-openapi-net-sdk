@@ -148,6 +148,10 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 			private string resourceStatus;
 
+			private string lastTriggerStatusMessage;
+
+			private string lastTriggerOutputs;
+
 			private List<ListExecutions_CurrentTask> currentTasks;
 
 			[JsonProperty(PropertyName = "Status")]
@@ -537,6 +541,32 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				set	
 				{
 					resourceStatus = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LastTriggerStatusMessage")]
+			public string LastTriggerStatusMessage
+			{
+				get
+				{
+					return lastTriggerStatusMessage;
+				}
+				set	
+				{
+					lastTriggerStatusMessage = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LastTriggerOutputs")]
+			public string LastTriggerOutputs
+			{
+				get
+				{
+					return lastTriggerOutputs;
+				}
+				set	
+				{
+					lastTriggerOutputs = value;
 				}
 			}
 

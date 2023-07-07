@@ -47,6 +47,7 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			applicationGroup.Status = _ctx.StringValue("GetApplicationGroup.ApplicationGroup.Status");
 			applicationGroup.StatusReason = _ctx.StringValue("GetApplicationGroup.ApplicationGroup.StatusReason");
 			applicationGroup.DeployOutputs = _ctx.StringValue("GetApplicationGroup.ApplicationGroup.DeployOutputs");
+			applicationGroup.Progress = _ctx.StringValue("GetApplicationGroup.ApplicationGroup.Progress");
 			getApplicationGroupResponse.ApplicationGroup = applicationGroup;
         
 			return getApplicationGroupResponse;

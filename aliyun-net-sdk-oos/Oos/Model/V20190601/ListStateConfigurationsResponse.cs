@@ -27,6 +27,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string requestId;
 
+		private string nextToken;
+
 		private List<ListStateConfigurations_StateConfiguration> stateConfigurations;
 
 		[JsonProperty(PropertyName = "RequestId")]
@@ -39,6 +41,19 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "NextToken")]
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
 			}
 		}
 
