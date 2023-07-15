@@ -29,10 +29,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class RestartDBInstanceRequest : RpcAcsRequest<RestartDBInstanceResponse>
+    public class DescribeClassDetailsRequest : RpcAcsRequest<DescribeClassDetailsResponse>
     {
-        public RestartDBInstanceRequest()
-            : base("Rds", "2014-08-15", "RestartDBInstance")
+        public DescribeClassDetailsRequest()
+            : base("Rds", "2014-08-15", "DescribeClassDetails")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -46,13 +46,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string clientToken;
 
-		private string dBInstanceId;
+		private string engineVersion;
 
-		private string nodeId;
+		private string engine;
+
+		private string classCode;
 
 		private string resourceOwnerAccount;
 
-		private string ownerAccount;
+		private string commodityCode;
 
 		private long? ownerId;
 
@@ -84,31 +86,45 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "DBInstanceId")]
-		public string DBInstanceId
+		[JsonProperty(PropertyName = "EngineVersion")]
+		public string EngineVersion
 		{
 			get
 			{
-				return dBInstanceId;
+				return engineVersion;
 			}
 			set	
 			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+				engineVersion = value;
+				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "NodeId")]
-		public string NodeId
+		[JsonProperty(PropertyName = "Engine")]
+		public string Engine
 		{
 			get
 			{
-				return nodeId;
+				return engine;
 			}
 			set	
 			{
-				nodeId = value;
-				DictionaryUtil.Add(QueryParameters, "NodeId", value);
+				engine = value;
+				DictionaryUtil.Add(QueryParameters, "Engine", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ClassCode")]
+		public string ClassCode
+		{
+			get
+			{
+				return classCode;
+			}
+			set	
+			{
+				classCode = value;
+				DictionaryUtil.Add(QueryParameters, "ClassCode", value);
 			}
 		}
 
@@ -126,17 +142,17 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "OwnerAccount")]
-		public string OwnerAccount
+		[JsonProperty(PropertyName = "CommodityCode")]
+		public string CommodityCode
 		{
 			get
 			{
-				return ownerAccount;
+				return commodityCode;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				commodityCode = value;
+				DictionaryUtil.Add(QueryParameters, "CommodityCode", value);
 			}
 		}
 
@@ -154,9 +170,14 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-        public override RestartDBInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeClassDetailsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RestartDBInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeClassDetailsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
