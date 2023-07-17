@@ -1,3 +1,6 @@
+2023-07-17 Version: 1.1.11
+- Get Workflow Instance Add Node Field.
+
 2023-07-17 Version: 1.1.10
 - Get Job Instance API add Field.
 - Get Workflow Instance Add Node Field.

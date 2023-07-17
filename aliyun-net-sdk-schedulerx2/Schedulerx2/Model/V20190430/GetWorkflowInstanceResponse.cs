@@ -254,6 +254,8 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 					private int? status;
 
+					private string jobName;
+
 					public long? JobInstanceId
 					{
 						get
@@ -371,6 +373,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 						set	
 						{
 							status = value;
+						}
+					}
+
+					public string JobName
+					{
+						get
+						{
+							return jobName;
+						}
+						set	
+						{
+							jobName = value;
 						}
 					}
 				}
