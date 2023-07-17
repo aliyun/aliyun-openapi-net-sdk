@@ -252,6 +252,8 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 					private int? attempt;
 
+					private int? status;
+
 					public long? JobInstanceId
 					{
 						get
@@ -357,6 +359,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 						set	
 						{
 							attempt = value;
+						}
+					}
+
+					public int? Status
+					{
+						get
+						{
+							return status;
+						}
+						set	
+						{
+							status = value;
 						}
 					}
 				}

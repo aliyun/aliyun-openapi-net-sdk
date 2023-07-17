@@ -60,6 +60,7 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 				node.WorkAddr = _ctx.StringValue("GetWorkflowInstance.Data.WfInstanceDag.Nodes["+ i +"].WorkAddr");
 				node.Result = _ctx.StringValue("GetWorkflowInstance.Data.WfInstanceDag.Nodes["+ i +"].Result");
 				node.Attempt = _ctx.IntegerValue("GetWorkflowInstance.Data.WfInstanceDag.Nodes["+ i +"].Attempt");
+				node.Status = _ctx.IntegerValue("GetWorkflowInstance.Data.WfInstanceDag.Nodes["+ i +"].Status");
 
 				wfInstanceDag_nodes.Add(node);
 			}

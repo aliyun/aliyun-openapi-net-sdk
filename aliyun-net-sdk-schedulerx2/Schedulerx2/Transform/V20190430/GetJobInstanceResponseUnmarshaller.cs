@@ -52,6 +52,9 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			jobInstanceDetail.ScheduleTime = _ctx.StringValue("GetJobInstance.Data.JobInstanceDetail.ScheduleTime");
 			jobInstanceDetail.DataTime = _ctx.StringValue("GetJobInstance.Data.JobInstanceDetail.DataTime");
 			jobInstanceDetail.WorkAddr = _ctx.StringValue("GetJobInstance.Data.JobInstanceDetail.WorkAddr");
+			jobInstanceDetail.Parameters = _ctx.StringValue("GetJobInstance.Data.JobInstanceDetail.Parameters");
+			jobInstanceDetail.JobName = _ctx.StringValue("GetJobInstance.Data.JobInstanceDetail.JobName");
+			jobInstanceDetail.TraceId = _ctx.StringValue("GetJobInstance.Data.JobInstanceDetail.TraceId");
 			data.JobInstanceDetail = jobInstanceDetail;
 			getJobInstanceResponse.Data = data;
         
