@@ -1,3 +1,7 @@
+2023-07-24 Version: 2.9.6
+- Add error code.
+- Add error code for CreateDBNodes.
+
 2023-07-24 Version: 1.0.0
 - Add GetGraphQueryTemplates.
 - Add Api GetGraphQueryResult.
