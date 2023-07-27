@@ -78,6 +78,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private bool? burstingEnabled;
 
+		private string targetMinorVersion;
+
 		private string dBInstanceClass;
 
 		private string zoneId;
@@ -337,6 +339,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				burstingEnabled = value;
 				DictionaryUtil.Add(QueryParameters, "BurstingEnabled", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "TargetMinorVersion")]
+		public string TargetMinorVersion
+		{
+			get
+			{
+				return targetMinorVersion;
+			}
+			set	
+			{
+				targetMinorVersion = value;
+				DictionaryUtil.Add(QueryParameters, "TargetMinorVersion", value);
 			}
 		}
 
