@@ -29,17 +29,39 @@ using Aliyun.Acs.avatar.Transform.V20220130;
 
 namespace Aliyun.Acs.avatar.Model.V20220130
 {
-    public class QueryAvatarRequest : RpcAcsRequest<QueryAvatarResponse>
+    public class SendCommandRequest : RpcAcsRequest<SendCommandResponse>
     {
-        public QueryAvatarRequest()
-            : base("avatar", "2022-01-30", "QueryAvatar")
+        public SendCommandRequest()
+            : base("avatar", "2022-01-30", "SendCommand")
         {
 			Method = MethodType.POST;
         }
 
+		private bool? feedback;
+
 		private string code;
 
+		private string uniqueCode;
+
 		private long? tenantId;
+
+		private string sessionId;
+
+		private string content;
+
+		[JsonProperty(PropertyName = "Feedback")]
+		public bool? Feedback
+		{
+			get
+			{
+				return feedback;
+			}
+			set	
+			{
+				feedback = value;
+				DictionaryUtil.Add(QueryParameters, "Feedback", value.ToString());
+			}
+		}
 
 		[JsonProperty(PropertyName = "Code")]
 		public string Code
@@ -52,6 +74,20 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			{
 				code = value;
 				DictionaryUtil.Add(QueryParameters, "Code", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "UniqueCode")]
+		public string UniqueCode
+		{
+			get
+			{
+				return uniqueCode;
+			}
+			set	
+			{
+				uniqueCode = value;
+				DictionaryUtil.Add(QueryParameters, "UniqueCode", value);
 			}
 		}
 
@@ -69,14 +105,42 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			}
 		}
 
+		[JsonProperty(PropertyName = "SessionId")]
+		public string SessionId
+		{
+			get
+			{
+				return sessionId;
+			}
+			set	
+			{
+				sessionId = value;
+				DictionaryUtil.Add(QueryParameters, "SessionId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Content")]
+		public string Content
+		{
+			get
+			{
+				return content;
+			}
+			set	
+			{
+				content = value;
+				DictionaryUtil.Add(QueryParameters, "Content", value.ToString());
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override QueryAvatarResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SendCommandResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryAvatarResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SendCommandResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

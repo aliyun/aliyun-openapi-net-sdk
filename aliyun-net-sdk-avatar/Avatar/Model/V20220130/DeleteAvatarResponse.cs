@@ -18,28 +18,33 @@
  */
 using System.Collections.Generic;
 using Newtonsoft.Json;
-
 using Aliyun.Acs.Core;
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.avatar;
-using Aliyun.Acs.avatar.Transform;
-using Aliyun.Acs.avatar.Transform.V20220130;
 
 namespace Aliyun.Acs.avatar.Model.V20220130
 {
-    public class QueryAvatarRequest : RpcAcsRequest<QueryAvatarResponse>
-    {
-        public QueryAvatarRequest()
-            : base("avatar", "2022-01-30", "QueryAvatar")
-        {
-			Method = MethodType.POST;
-        }
+	public class DeleteAvatarResponse : AcsResponse
+	{
+
+		private string requestId;
 
 		private string code;
 
-		private long? tenantId;
+		private string message;
+
+		private bool? success;
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		[JsonProperty(PropertyName = "Code")]
 		public string Code
@@ -51,32 +56,33 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			set	
 			{
 				code = value;
-				DictionaryUtil.Add(QueryParameters, "Code", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "TenantId")]
-		public long? TenantId
+		[JsonProperty(PropertyName = "Message")]
+		public string Message
 		{
 			get
 			{
-				return tenantId;
+				return message;
 			}
 			set	
 			{
-				tenantId = value;
-				DictionaryUtil.Add(QueryParameters, "TenantId", value.ToString());
+				message = value;
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
 		{
-			return false;
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
 		}
-
-        public override QueryAvatarResponse GetResponse(UnmarshallerContext unmarshallerContext)
-        {
-            return QueryAvatarResponseUnmarshaller.Unmarshall(unmarshallerContext);
-        }
-    }
+	}
 }

@@ -29,10 +29,10 @@ using Aliyun.Acs.avatar.Transform.V20220130;
 
 namespace Aliyun.Acs.avatar.Model.V20220130
 {
-    public class QueryAvatarRequest : RpcAcsRequest<QueryAvatarResponse>
+    public class DeleteAvatarRequest : RpcAcsRequest<DeleteAvatarResponse>
     {
-        public QueryAvatarRequest()
-            : base("avatar", "2022-01-30", "QueryAvatar")
+        public DeleteAvatarRequest()
+            : base("avatar", "2022-01-30", "DeleteAvatar")
         {
 			Method = MethodType.POST;
         }
@@ -74,9 +74,9 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			return false;
 		}
 
-        public override QueryAvatarResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteAvatarResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryAvatarResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteAvatarResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -52,6 +52,8 @@ namespace Aliyun.Acs.avatar.Transform.V20220130
 				listItem.Description = _ctx.StringValue("QueryAvatarList.Data.List["+ i +"].Description");
 				listItem.AvatarType = _ctx.StringValue("QueryAvatarList.Data.List["+ i +"].AvatarType");
 				listItem.ModelType = _ctx.StringValue("QueryAvatarList.Data.List["+ i +"].ModelType");
+				listItem.MakeStatus = _ctx.StringValue("QueryAvatarList.Data.List["+ i +"].MakeStatus");
+				listItem.MakeFailReason = _ctx.StringValue("QueryAvatarList.Data.List["+ i +"].MakeFailReason");
 
 				QueryAvatarListResponse.QueryAvatarList_Data.QueryAvatarList_ListItem.QueryAvatarList_SupportedResolutions supportedResolutions = new QueryAvatarListResponse.QueryAvatarList_Data.QueryAvatarList_ListItem.QueryAvatarList_SupportedResolutions();
 

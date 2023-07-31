@@ -29,31 +29,19 @@ using Aliyun.Acs.avatar.Transform.V20220130;
 
 namespace Aliyun.Acs.avatar.Model.V20220130
 {
-    public class QueryAvatarRequest : RpcAcsRequest<QueryAvatarResponse>
+    public class SendVamlRequest : RpcAcsRequest<SendVamlResponse>
     {
-        public QueryAvatarRequest()
-            : base("avatar", "2022-01-30", "QueryAvatar")
+        public SendVamlRequest()
+            : base("avatar", "2022-01-30", "SendVaml")
         {
 			Method = MethodType.POST;
         }
 
-		private string code;
-
 		private long? tenantId;
 
-		[JsonProperty(PropertyName = "Code")]
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-				DictionaryUtil.Add(QueryParameters, "Code", value);
-			}
-		}
+		private string sessionId;
+
+		private string vaml;
 
 		[JsonProperty(PropertyName = "TenantId")]
 		public long? TenantId
@@ -69,14 +57,42 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			}
 		}
 
+		[JsonProperty(PropertyName = "SessionId")]
+		public string SessionId
+		{
+			get
+			{
+				return sessionId;
+			}
+			set	
+			{
+				sessionId = value;
+				DictionaryUtil.Add(QueryParameters, "SessionId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Vaml")]
+		public string Vaml
+		{
+			get
+			{
+				return vaml;
+			}
+			set	
+			{
+				vaml = value;
+				DictionaryUtil.Add(QueryParameters, "Vaml", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override QueryAvatarResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SendVamlResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryAvatarResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SendVamlResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
