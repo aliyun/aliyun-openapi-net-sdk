@@ -55,6 +55,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string dBInstanceDescription;
 
+		private List<string> tags = new List<string>(){ };
+
 		private string globalSecurityGroupIds;
 
 		private string businessInfo;
@@ -236,6 +238,27 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				dBInstanceDescription = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceDescription", value);
+			}
+		}
+
+		public List<string> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				if(tags != null)
+				{
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
+				}
 			}
 		}
 
@@ -587,6 +610,38 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				chargeType = value;
 				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

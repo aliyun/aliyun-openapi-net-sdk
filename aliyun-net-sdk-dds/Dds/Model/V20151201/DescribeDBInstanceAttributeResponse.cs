@@ -144,6 +144,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string encryptionKey;
 
+			private string syncPercent;
+
 			private List<DescribeDBInstanceAttribute_ReplicaSet> replicaSets;
 
 			private List<DescribeDBInstanceAttribute_Tag> tags;
@@ -681,6 +683,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					encryptionKey = value;
+				}
+			}
+
+			public string SyncPercent
+			{
+				get
+				{
+					return syncPercent;
+				}
+				set	
+				{
+					syncPercent = value;
 				}
 			}
 

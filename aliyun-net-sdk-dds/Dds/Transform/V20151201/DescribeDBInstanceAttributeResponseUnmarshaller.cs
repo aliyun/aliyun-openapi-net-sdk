@@ -80,6 +80,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				dBInstance.DBInstanceOrderStatus = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].DBInstanceOrderStatus");
 				dBInstance.Encrypted = _ctx.BooleanValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].Encrypted");
 				dBInstance.EncryptionKey = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].EncryptionKey");
+				dBInstance.SyncPercent = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].SyncPercent");
 
 				List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_ReplicaSet> dBInstance_replicaSets = new List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_ReplicaSet>();
 				for (int j = 0; j < _ctx.Length("DescribeDBInstanceAttribute.DBInstances["+ i +"].ReplicaSets.Length"); j++) {
