@@ -27,11 +27,11 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 
 		private string requestId;
 
+		private bool? success;
+
 		private string code;
 
 		private string message;
-
-		private string success;
 
 		private SubmitAudioTo3DAvatarVideoTask_Data data;
 
@@ -45,6 +45,19 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -71,19 +84,6 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			set	
 			{
 				message = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "Success")]
-		public string Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
 			}
 		}
 

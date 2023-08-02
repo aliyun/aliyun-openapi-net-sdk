@@ -361,6 +361,8 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 
 			private bool? isSubtitles;
 
+			private bool? subtitleEmbedded;
+
 			private int? resolution;
 
 			private int? alphaFormat;
@@ -401,6 +403,19 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 				set	
 				{
 					isSubtitles = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SubtitleEmbedded")]
+			public bool? SubtitleEmbedded
+			{
+				get
+				{
+					return subtitleEmbedded;
+				}
+				set	
+				{
+					subtitleEmbedded = value;
 				}
 			}
 
