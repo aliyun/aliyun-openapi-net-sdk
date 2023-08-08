@@ -103,9 +103,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveRecordVodConfigs_LiveRecordVodConfig
 		{
 
+			private string storageLocation;
+
 			private string appName;
 
 			private string autoCompose;
+
+			private int? onDemand;
 
 			private string streamName;
 
@@ -118,6 +122,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			private string domainName;
 
 			private string composeVodTranscodeGroupId;
+
+			[JsonProperty(PropertyName = "StorageLocation")]
+			public string StorageLocation
+			{
+				get
+				{
+					return storageLocation;
+				}
+				set	
+				{
+					storageLocation = value;
+				}
+			}
 
 			[JsonProperty(PropertyName = "AppName")]
 			public string AppName
@@ -142,6 +159,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					autoCompose = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OnDemand")]
+			public int? OnDemand
+			{
+				get
+				{
+					return onDemand;
+				}
+				set	
+				{
+					onDemand = value;
 				}
 			}
 

@@ -28,10 +28,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DescribeLiveStreamTranscodeInfoRequest : RpcAcsRequest<DescribeLiveStreamTranscodeInfoResponse>
+    public class SetLiveStreamPreloadTasksRequest : RpcAcsRequest<SetLiveStreamPreloadTasksResponse>
     {
-        public DescribeLiveStreamTranscodeInfoRequest()
-            : base("live", "2016-11-01", "DescribeLiveStreamTranscodeInfo", "live", "openAPI")
+        public SetLiveStreamPreloadTasksRequest()
+            : base("live", "2016-11-01", "SetLiveStreamPreloadTasks", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,23 +41,71 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private string appName;
+		private string preloadedStartTime;
+
+		private string area;
+
+		private string preloadedEndTime;
+
+		private string domainName;
 
 		private long? ownerId;
 
-		private string domainTranscodeName;
+		private string playUrl;
 
-		[JsonProperty(PropertyName = "AppName")]
-		public string AppName
+		[JsonProperty(PropertyName = "PreloadedStartTime")]
+		public string PreloadedStartTime
 		{
 			get
 			{
-				return appName;
+				return preloadedStartTime;
 			}
 			set	
 			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
+				preloadedStartTime = value;
+				DictionaryUtil.Add(QueryParameters, "PreloadedStartTime", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Area")]
+		public string Area
+		{
+			get
+			{
+				return area;
+			}
+			set	
+			{
+				area = value;
+				DictionaryUtil.Add(QueryParameters, "Area", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "PreloadedEndTime")]
+		public string PreloadedEndTime
+		{
+			get
+			{
+				return preloadedEndTime;
+			}
+			set	
+			{
+				preloadedEndTime = value;
+				DictionaryUtil.Add(QueryParameters, "PreloadedEndTime", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DomainName")]
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -75,23 +123,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "DomainTranscodeName")]
-		public string DomainTranscodeName
+		[JsonProperty(PropertyName = "PlayUrl")]
+		public string PlayUrl
 		{
 			get
 			{
-				return domainTranscodeName;
+				return playUrl;
 			}
 			set	
 			{
-				domainTranscodeName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainTranscodeName", value);
+				playUrl = value;
+				DictionaryUtil.Add(QueryParameters, "PlayUrl", value);
 			}
 		}
 
-        public override DescribeLiveStreamTranscodeInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SetLiveStreamPreloadTasksResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeLiveStreamTranscodeInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetLiveStreamPreloadTasksResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -27,10 +28,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class AddLiveAppRecordConfigRequest : RpcAcsRequest<AddLiveAppRecordConfigResponse>
+    public class UpdateLiveAppRecordConfigRequest : RpcAcsRequest<UpdateLiveAppRecordConfigResponse>
     {
-        public AddLiveAppRecordConfigRequest()
-            : base("live", "2016-11-01", "AddLiveAppRecordConfig", "live", "openAPI")
+        public UpdateLiveAppRecordConfigRequest()
+            : base("live", "2016-11-01", "UpdateLiveAppRecordConfig", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -52,13 +53,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string securityToken;
 
-		private List<string> transcodeRecordFormats = new List<string>(){ };
+		private List<int?> transcodeRecordFormats = new List<int?>(){ };
 
 		private int? onDemand;
 
 		private string streamName;
-
-		private string ossBucket;
 
 		private string domainName;
 
@@ -66,8 +65,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private long? ownerId;
 
-		private List<string> recordFormats = new List<string>(){ };
+		private List<int?> recordFormats = new List<int?>(){ };
 
+		[JsonProperty(PropertyName = "OssEndpoint")]
 		public string OssEndpoint
 		{
 			get
@@ -81,6 +81,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DelayTime")]
 		public int? DelayTime
 		{
 			get
@@ -94,6 +95,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "TranscodeTemplates")]
 		public List<string> TranscodeTemplatess
 		{
 			get
@@ -107,6 +109,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "StartTime")]
 		public string StartTime
 		{
 			get
@@ -120,6 +123,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "AppName")]
 		public string AppName
 		{
 			get
@@ -133,6 +137,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecurityToken")]
 		public string SecurityToken
 		{
 			get
@@ -146,7 +151,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public List<string> TranscodeRecordFormats
+		[JsonProperty(PropertyName = "TranscodeRecordFormat")]
+		public List<int?> TranscodeRecordFormats
 		{
 			get
 			{
@@ -163,13 +169,12 @@ namespace Aliyun.Acs.live.Model.V20161101
 						DictionaryUtil.Add(QueryParameters,"TranscodeRecordFormat." + (depth1 + 1), transcodeRecordFormats[depth1]);
 						DictionaryUtil.Add(QueryParameters,"TranscodeRecordFormat." + (depth1 + 1), transcodeRecordFormats[depth1]);
 						DictionaryUtil.Add(QueryParameters,"TranscodeRecordFormat." + (depth1 + 1), transcodeRecordFormats[depth1]);
-						DictionaryUtil.Add(QueryParameters,"TranscodeRecordFormat." + (depth1 + 1), transcodeRecordFormats[depth1]);
-						DictionaryUtil.Add(QueryParameters,"TranscodeRecordFormat." + (depth1 + 1), transcodeRecordFormats[depth1]);
 					}
 				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "OnDemand")]
 		public int? OnDemand
 		{
 			get
@@ -183,6 +188,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "StreamName")]
 		public string StreamName
 		{
 			get
@@ -196,19 +202,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string OssBucket
-		{
-			get
-			{
-				return ossBucket;
-			}
-			set	
-			{
-				ossBucket = value;
-				DictionaryUtil.Add(QueryParameters, "OssBucket", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "DomainName")]
 		public string DomainName
 		{
 			get
@@ -222,6 +216,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "EndTime")]
 		public string EndTime
 		{
 			get
@@ -235,6 +230,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -248,7 +244,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public List<string> RecordFormats
+		[JsonProperty(PropertyName = "RecordFormat")]
+		public List<int?> RecordFormats
 		{
 			get
 			{
@@ -265,8 +262,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 						DictionaryUtil.Add(QueryParameters,"RecordFormat." + (depth1 + 1), recordFormats[depth1]);
 						DictionaryUtil.Add(QueryParameters,"RecordFormat." + (depth1 + 1), recordFormats[depth1]);
 						DictionaryUtil.Add(QueryParameters,"RecordFormat." + (depth1 + 1), recordFormats[depth1]);
-						DictionaryUtil.Add(QueryParameters,"RecordFormat." + (depth1 + 1), recordFormats[depth1]);
-						DictionaryUtil.Add(QueryParameters,"RecordFormat." + (depth1 + 1), recordFormats[depth1]);
 					}
 				}
 			}
@@ -275,28 +270,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class TranscodeRecordFormat
 		{
 
-			private string sliceOssObjectPrefix;
-
 			private int? sliceDuration;
-
-			private string ossObjectPrefix;
 
 			private string format;
 
 			private int? cycleDuration;
 
-			public string SliceOssObjectPrefix
-			{
-				get
-				{
-					return sliceOssObjectPrefix;
-				}
-				set	
-				{
-					sliceOssObjectPrefix = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "SliceDuration")]
 			public int? SliceDuration
 			{
 				get
@@ -309,18 +289,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string OssObjectPrefix
-			{
-				get
-				{
-					return ossObjectPrefix;
-				}
-				set	
-				{
-					ossObjectPrefix = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Format")]
 			public string Format
 			{
 				get
@@ -333,6 +302,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "CycleDuration")]
 			public int? CycleDuration
 			{
 				get
@@ -349,28 +319,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class RecordFormat
 		{
 
-			private string sliceOssObjectPrefix;
-
 			private int? sliceDuration;
-
-			private string ossObjectPrefix;
 
 			private string format;
 
 			private int? cycleDuration;
 
-			public string SliceOssObjectPrefix
-			{
-				get
-				{
-					return sliceOssObjectPrefix;
-				}
-				set	
-				{
-					sliceOssObjectPrefix = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "SliceDuration")]
 			public int? SliceDuration
 			{
 				get
@@ -383,18 +338,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string OssObjectPrefix
-			{
-				get
-				{
-					return ossObjectPrefix;
-				}
-				set	
-				{
-					ossObjectPrefix = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Format")]
 			public string Format
 			{
 				get
@@ -407,6 +351,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "CycleDuration")]
 			public int? CycleDuration
 			{
 				get
@@ -420,9 +365,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-        public override AddLiveAppRecordConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateLiveAppRecordConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return AddLiveAppRecordConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateLiveAppRecordConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -28,10 +28,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DescribeLiveStreamTranscodeInfoRequest : RpcAcsRequest<DescribeLiveStreamTranscodeInfoResponse>
+    public class DescribeStreamLocationBlockRequest : RpcAcsRequest<DescribeStreamLocationBlockResponse>
     {
-        public DescribeLiveStreamTranscodeInfoRequest()
-            : base("live", "2016-11-01", "DescribeLiveStreamTranscodeInfo", "live", "openAPI")
+        public DescribeStreamLocationBlockRequest()
+            : base("live", "2016-11-01", "DescribeStreamLocationBlock", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,11 +41,47 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
+		private string blockType;
+
+		private int? pageNum;
+
 		private string appName;
+
+		private int? pageSize;
+
+		private string streamName;
+
+		private string domainName;
 
 		private long? ownerId;
 
-		private string domainTranscodeName;
+		[JsonProperty(PropertyName = "BlockType")]
+		public string BlockType
+		{
+			get
+			{
+				return blockType;
+			}
+			set	
+			{
+				blockType = value;
+				DictionaryUtil.Add(QueryParameters, "BlockType", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageNum")]
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
 
 		[JsonProperty(PropertyName = "AppName")]
 		public string AppName
@@ -58,6 +94,48 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				appName = value;
 				DictionaryUtil.Add(QueryParameters, "AppName", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageSize")]
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "StreamName")]
+		public string StreamName
+		{
+			get
+			{
+				return streamName;
+			}
+			set	
+			{
+				streamName = value;
+				DictionaryUtil.Add(QueryParameters, "StreamName", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DomainName")]
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -75,23 +153,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "DomainTranscodeName")]
-		public string DomainTranscodeName
-		{
-			get
-			{
-				return domainTranscodeName;
-			}
-			set	
-			{
-				domainTranscodeName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainTranscodeName", value);
-			}
-		}
-
-        public override DescribeLiveStreamTranscodeInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeStreamLocationBlockResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeLiveStreamTranscodeInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeStreamLocationBlockResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

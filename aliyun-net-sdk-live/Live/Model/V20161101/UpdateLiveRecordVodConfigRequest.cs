@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -27,10 +28,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class AddLiveRecordVodConfigRequest : RpcAcsRequest<AddLiveRecordVodConfigResponse>
+    public class UpdateLiveRecordVodConfigRequest : RpcAcsRequest<UpdateLiveRecordVodConfigResponse>
     {
-        public AddLiveRecordVodConfigRequest()
-            : base("live", "2016-11-01", "AddLiveRecordVodConfig", "live", "openAPI")
+        public UpdateLiveRecordVodConfigRequest()
+            : base("live", "2016-11-01", "UpdateLiveRecordVodConfig", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,8 +44,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private string autoCompose;
 
 		private string composeVodTranscodeGroupId;
-
-		private string storageLocation;
 
 		private string appName;
 
@@ -60,6 +59,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private long? ownerId;
 
+		[JsonProperty(PropertyName = "AutoCompose")]
 		public string AutoCompose
 		{
 			get
@@ -73,6 +73,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ComposeVodTranscodeGroupId")]
 		public string ComposeVodTranscodeGroupId
 		{
 			get
@@ -86,19 +87,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string StorageLocation
-		{
-			get
-			{
-				return storageLocation;
-			}
-			set	
-			{
-				storageLocation = value;
-				DictionaryUtil.Add(QueryParameters, "StorageLocation", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "AppName")]
 		public string AppName
 		{
 			get
@@ -112,6 +101,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OnDemand")]
 		public int? OnDemand
 		{
 			get
@@ -125,6 +115,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "StreamName")]
 		public string StreamName
 		{
 			get
@@ -138,6 +129,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "VodTranscodeGroupId")]
 		public string VodTranscodeGroupId
 		{
 			get
@@ -151,6 +143,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DomainName")]
 		public string DomainName
 		{
 			get
@@ -164,6 +157,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "CycleDuration")]
 		public int? CycleDuration
 		{
 			get
@@ -177,6 +171,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -190,9 +185,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-        public override AddLiveRecordVodConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateLiveRecordVodConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return AddLiveRecordVodConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateLiveRecordVodConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

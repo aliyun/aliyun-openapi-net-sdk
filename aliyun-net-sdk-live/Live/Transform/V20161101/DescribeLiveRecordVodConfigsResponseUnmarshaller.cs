@@ -39,8 +39,10 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeLiveRecordVodConfigsResponse.DescribeLiveRecordVodConfigs_LiveRecordVodConfig> describeLiveRecordVodConfigsResponse_liveRecordVodConfigs = new List<DescribeLiveRecordVodConfigsResponse.DescribeLiveRecordVodConfigs_LiveRecordVodConfig>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs.Length"); i++) {
 				DescribeLiveRecordVodConfigsResponse.DescribeLiveRecordVodConfigs_LiveRecordVodConfig liveRecordVodConfig = new DescribeLiveRecordVodConfigsResponse.DescribeLiveRecordVodConfigs_LiveRecordVodConfig();
+				liveRecordVodConfig.StorageLocation = _ctx.StringValue("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs["+ i +"].StorageLocation");
 				liveRecordVodConfig.AppName = _ctx.StringValue("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs["+ i +"].AppName");
 				liveRecordVodConfig.AutoCompose = _ctx.StringValue("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs["+ i +"].AutoCompose");
+				liveRecordVodConfig.OnDemand = _ctx.IntegerValue("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs["+ i +"].OnDemand");
 				liveRecordVodConfig.StreamName = _ctx.StringValue("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs["+ i +"].StreamName");
 				liveRecordVodConfig.CreateTime = _ctx.StringValue("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs["+ i +"].CreateTime");
 				liveRecordVodConfig.VodTranscodeGroupId = _ctx.StringValue("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs["+ i +"].VodTranscodeGroupId");

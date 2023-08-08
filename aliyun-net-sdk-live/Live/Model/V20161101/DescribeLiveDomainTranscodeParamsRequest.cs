@@ -28,10 +28,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DescribeLiveStreamTranscodeInfoRequest : RpcAcsRequest<DescribeLiveStreamTranscodeInfoResponse>
+    public class DescribeLiveDomainTranscodeParamsRequest : RpcAcsRequest<DescribeLiveDomainTranscodeParamsResponse>
     {
-        public DescribeLiveStreamTranscodeInfoRequest()
-            : base("live", "2016-11-01", "DescribeLiveStreamTranscodeInfo", "live", "openAPI")
+        public DescribeLiveDomainTranscodeParamsRequest()
+            : base("live", "2016-11-01", "DescribeLiveDomainTranscodeParams", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,57 +41,62 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private string appName;
+		private string pushdomain;
 
-		private long? ownerId;
+		private string app;
 
-		private string domainTranscodeName;
+		private string template_name;
 
-		[JsonProperty(PropertyName = "AppName")]
-		public string AppName
+		[JsonProperty(PropertyName = "pushdomain")]
+		public string Pushdomain
 		{
 			get
 			{
-				return appName;
+				return pushdomain;
 			}
 			set	
 			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
+				pushdomain = value;
+				DictionaryUtil.Add(QueryParameters, "pushdomain", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "OwnerId")]
-		public long? OwnerId
+		[JsonProperty(PropertyName = "app")]
+		public string App
 		{
 			get
 			{
-				return ownerId;
+				return app;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				app = value;
+				DictionaryUtil.Add(QueryParameters, "app", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "DomainTranscodeName")]
-		public string DomainTranscodeName
+		[JsonProperty(PropertyName = "template_name")]
+		public string Template_name
 		{
 			get
 			{
-				return domainTranscodeName;
+				return template_name;
 			}
 			set	
 			{
-				domainTranscodeName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainTranscodeName", value);
+				template_name = value;
+				DictionaryUtil.Add(QueryParameters, "template_name", value);
 			}
 		}
 
-        public override DescribeLiveStreamTranscodeInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeLiveDomainTranscodeParamsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeLiveStreamTranscodeInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeLiveDomainTranscodeParamsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

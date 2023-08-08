@@ -28,70 +28,60 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DescribeLiveStreamTranscodeInfoRequest : RpcAcsRequest<DescribeLiveStreamTranscodeInfoResponse>
+    public class DescribeChannelUsersRequest : RpcAcsRequest<DescribeChannelUsersResponse>
     {
-        public DescribeLiveStreamTranscodeInfoRequest()
-            : base("live", "2016-11-01", "DescribeLiveStreamTranscodeInfo", "live", "openAPI")
+        public DescribeChannelUsersRequest()
+            : base("live", "2016-11-01", "DescribeChannelUsers", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.live.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.live.Endpoint.endpointRegionalType, null);
             }
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private string appName;
+		private string appId;
 
-		private long? ownerId;
+		private string channelId;
 
-		private string domainTranscodeName;
-
-		[JsonProperty(PropertyName = "AppName")]
-		public string AppName
+		[JsonProperty(PropertyName = "AppId")]
+		public string AppId
 		{
 			get
 			{
-				return appName;
+				return appId;
 			}
 			set	
 			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
+				appId = value;
+				DictionaryUtil.Add(QueryParameters, "AppId", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "OwnerId")]
-		public long? OwnerId
+		[JsonProperty(PropertyName = "ChannelId")]
+		public string ChannelId
 		{
 			get
 			{
-				return ownerId;
+				return channelId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				channelId = value;
+				DictionaryUtil.Add(QueryParameters, "ChannelId", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "DomainTranscodeName")]
-		public string DomainTranscodeName
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return domainTranscodeName;
-			}
-			set	
-			{
-				domainTranscodeName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainTranscodeName", value);
-			}
+			return false;
 		}
 
-        public override DescribeLiveStreamTranscodeInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeChannelUsersResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeLiveStreamTranscodeInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeChannelUsersResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

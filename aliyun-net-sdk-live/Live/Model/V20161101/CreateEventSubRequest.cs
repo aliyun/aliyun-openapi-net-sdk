@@ -44,6 +44,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string clientToken;
 
+		private bool? needCallbackAuthorization;
+
 		private List<string> userss = new List<string>(){ };
 
 		private string appId;
@@ -77,6 +79,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public bool? NeedCallbackAuthorization
+		{
+			get
+			{
+				return needCallbackAuthorization;
+			}
+			set	
+			{
+				needCallbackAuthorization = value;
+				DictionaryUtil.Add(QueryParameters, "NeedCallbackAuthorization", value.ToString());
 			}
 		}
 

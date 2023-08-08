@@ -40,39 +40,49 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private string template;
+		private string resWithSource;
 
 		private string gop;
-
-		private string kmsKeyExpireInterval;
 
 		private string audioCodec;
 
 		private string kmsUID;
 
-		private string templateType;
-
-		private string audioProfile;
-
 		private int? height;
 
 		private string app;
+
+		private int? profile;
+
+		private long? ownerId;
+
+		private string extWithSource;
+
+		private string bitrateWithSource;
+
+		private string domain;
+
+		private string template;
+
+		private string lazy;
+
+		private string kmsKeyExpireInterval;
+
+		private string templateType;
+
+		private string audioProfile;
 
 		private string encryptParameters;
 
 		private int? audioChannelNum;
 
-		private int? profile;
-
 		private int? fPS;
-
-		private long? ownerId;
 
 		private int? audioRate;
 
-		private int? audioBitrate;
+		private string fpsWithSource;
 
-		private string domain;
+		private int? audioBitrate;
 
 		private int? width;
 
@@ -80,16 +90,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string kmsKeyID;
 
-		public string Template
+		public string ResWithSource
 		{
 			get
 			{
-				return template;
+				return resWithSource;
 			}
 			set	
 			{
-				template = value;
-				DictionaryUtil.Add(QueryParameters, "Template", value);
+				resWithSource = value;
+				DictionaryUtil.Add(QueryParameters, "ResWithSource", value);
 			}
 		}
 
@@ -103,19 +113,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				gop = value;
 				DictionaryUtil.Add(QueryParameters, "Gop", value);
-			}
-		}
-
-		public string KmsKeyExpireInterval
-		{
-			get
-			{
-				return kmsKeyExpireInterval;
-			}
-			set	
-			{
-				kmsKeyExpireInterval = value;
-				DictionaryUtil.Add(QueryParameters, "KmsKeyExpireInterval", value);
 			}
 		}
 
@@ -145,32 +142,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string TemplateType
-		{
-			get
-			{
-				return templateType;
-			}
-			set	
-			{
-				templateType = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateType", value);
-			}
-		}
-
-		public string AudioProfile
-		{
-			get
-			{
-				return audioProfile;
-			}
-			set	
-			{
-				audioProfile = value;
-				DictionaryUtil.Add(QueryParameters, "AudioProfile", value);
-			}
-		}
-
 		public int? Height
 		{
 			get
@@ -194,6 +165,136 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				app = value;
 				DictionaryUtil.Add(QueryParameters, "App", value);
+			}
+		}
+
+		public int? Profile
+		{
+			get
+			{
+				return profile;
+			}
+			set	
+			{
+				profile = value;
+				DictionaryUtil.Add(QueryParameters, "Profile", value.ToString());
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string ExtWithSource
+		{
+			get
+			{
+				return extWithSource;
+			}
+			set	
+			{
+				extWithSource = value;
+				DictionaryUtil.Add(QueryParameters, "ExtWithSource", value);
+			}
+		}
+
+		public string BitrateWithSource
+		{
+			get
+			{
+				return bitrateWithSource;
+			}
+			set	
+			{
+				bitrateWithSource = value;
+				DictionaryUtil.Add(QueryParameters, "BitrateWithSource", value);
+			}
+		}
+
+		public string Domain
+		{
+			get
+			{
+				return domain;
+			}
+			set	
+			{
+				domain = value;
+				DictionaryUtil.Add(QueryParameters, "Domain", value);
+			}
+		}
+
+		public string Template
+		{
+			get
+			{
+				return template;
+			}
+			set	
+			{
+				template = value;
+				DictionaryUtil.Add(QueryParameters, "Template", value);
+			}
+		}
+
+		public string Lazy
+		{
+			get
+			{
+				return lazy;
+			}
+			set	
+			{
+				lazy = value;
+				DictionaryUtil.Add(QueryParameters, "Lazy", value);
+			}
+		}
+
+		public string KmsKeyExpireInterval
+		{
+			get
+			{
+				return kmsKeyExpireInterval;
+			}
+			set	
+			{
+				kmsKeyExpireInterval = value;
+				DictionaryUtil.Add(QueryParameters, "KmsKeyExpireInterval", value);
+			}
+		}
+
+		public string TemplateType
+		{
+			get
+			{
+				return templateType;
+			}
+			set	
+			{
+				templateType = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateType", value);
+			}
+		}
+
+		public string AudioProfile
+		{
+			get
+			{
+				return audioProfile;
+			}
+			set	
+			{
+				audioProfile = value;
+				DictionaryUtil.Add(QueryParameters, "AudioProfile", value);
 			}
 		}
 
@@ -223,19 +324,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? Profile
-		{
-			get
-			{
-				return profile;
-			}
-			set	
-			{
-				profile = value;
-				DictionaryUtil.Add(QueryParameters, "Profile", value.ToString());
-			}
-		}
-
 		public int? FPS
 		{
 			get
@@ -246,19 +334,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				fPS = value;
 				DictionaryUtil.Add(QueryParameters, "FPS", value.ToString());
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -275,6 +350,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public string FpsWithSource
+		{
+			get
+			{
+				return fpsWithSource;
+			}
+			set	
+			{
+				fpsWithSource = value;
+				DictionaryUtil.Add(QueryParameters, "FpsWithSource", value);
+			}
+		}
+
 		public int? AudioBitrate
 		{
 			get
@@ -285,19 +373,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				audioBitrate = value;
 				DictionaryUtil.Add(QueryParameters, "AudioBitrate", value.ToString());
-			}
-		}
-
-		public string Domain
-		{
-			get
-			{
-				return domain;
-			}
-			set	
-			{
-				domain = value;
-				DictionaryUtil.Add(QueryParameters, "Domain", value);
 			}
 		}
 

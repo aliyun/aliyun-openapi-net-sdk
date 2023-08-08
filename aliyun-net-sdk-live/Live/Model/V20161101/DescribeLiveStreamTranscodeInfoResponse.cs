@@ -151,33 +151,54 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeLiveStreamTranscodeInfo_CustomTranscodeParameters
 			{
 
+				private string bitrateWithSource;
+
 				private string videoProfile;
 
 				private int? audioBitrate;
 
-				private string rtsFlag;
-
 				private int? height;
+
+				private string rtsFlag;
 
 				private string templateType;
 
 				private string bframes;
 
+				private string extWithSource;
+
 				private int? audioRate;
 
-				private int? fPS;
+				private string fpsWithSource;
 
 				private string audioCodec;
 
+				private int? fPS;
+
 				private string gop;
 
-				private int? videoBitrate;
-
 				private int? width;
+
+				private int? videoBitrate;
 
 				private int? audioChannelNum;
 
 				private string audioProfile;
+
+				private string resWithSource;
+
+				[JsonProperty(PropertyName = "BitrateWithSource")]
+				public string BitrateWithSource
+				{
+					get
+					{
+						return bitrateWithSource;
+					}
+					set	
+					{
+						bitrateWithSource = value;
+					}
+				}
 
 				[JsonProperty(PropertyName = "VideoProfile")]
 				public string VideoProfile
@@ -205,19 +226,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				[JsonProperty(PropertyName = "RtsFlag")]
-				public string RtsFlag
-				{
-					get
-					{
-						return rtsFlag;
-					}
-					set	
-					{
-						rtsFlag = value;
-					}
-				}
-
 				[JsonProperty(PropertyName = "Height")]
 				public int? Height
 				{
@@ -228,6 +236,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						height = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "RtsFlag")]
+				public string RtsFlag
+				{
+					get
+					{
+						return rtsFlag;
+					}
+					set	
+					{
+						rtsFlag = value;
 					}
 				}
 
@@ -257,6 +278,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
+				[JsonProperty(PropertyName = "ExtWithSource")]
+				public string ExtWithSource
+				{
+					get
+					{
+						return extWithSource;
+					}
+					set	
+					{
+						extWithSource = value;
+					}
+				}
+
 				[JsonProperty(PropertyName = "AudioRate")]
 				public int? AudioRate
 				{
@@ -270,16 +304,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				[JsonProperty(PropertyName = "FPS")]
-				public int? FPS
+				[JsonProperty(PropertyName = "FpsWithSource")]
+				public string FpsWithSource
 				{
 					get
 					{
-						return fPS;
+						return fpsWithSource;
 					}
 					set	
 					{
-						fPS = value;
+						fpsWithSource = value;
 					}
 				}
 
@@ -296,6 +330,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
+				[JsonProperty(PropertyName = "FPS")]
+				public int? FPS
+				{
+					get
+					{
+						return fPS;
+					}
+					set	
+					{
+						fPS = value;
+					}
+				}
+
 				[JsonProperty(PropertyName = "Gop")]
 				public string Gop
 				{
@@ -309,19 +356,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				[JsonProperty(PropertyName = "VideoBitrate")]
-				public int? VideoBitrate
-				{
-					get
-					{
-						return videoBitrate;
-					}
-					set	
-					{
-						videoBitrate = value;
-					}
-				}
-
 				[JsonProperty(PropertyName = "Width")]
 				public int? Width
 				{
@@ -332,6 +366,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						width = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "VideoBitrate")]
+				public int? VideoBitrate
+				{
+					get
+					{
+						return videoBitrate;
+					}
+					set	
+					{
+						videoBitrate = value;
 					}
 				}
 
@@ -358,6 +405,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						audioProfile = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "ResWithSource")]
+				public string ResWithSource
+				{
+					get
+					{
+						return resWithSource;
+					}
+					set	
+					{
+						resWithSource = value;
 					}
 				}
 			}

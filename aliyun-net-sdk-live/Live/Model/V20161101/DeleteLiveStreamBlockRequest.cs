@@ -28,10 +28,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DescribeLiveStreamTranscodeInfoRequest : RpcAcsRequest<DescribeLiveStreamTranscodeInfoResponse>
+    public class DeleteLiveStreamBlockRequest : RpcAcsRequest<DeleteLiveStreamBlockResponse>
     {
-        public DescribeLiveStreamTranscodeInfoRequest()
-            : base("live", "2016-11-01", "DescribeLiveStreamTranscodeInfo", "live", "openAPI")
+        public DeleteLiveStreamBlockRequest()
+            : base("live", "2016-11-01", "DeleteLiveStreamBlock", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,9 +43,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string appName;
 
-		private long? ownerId;
+		private string streamName;
 
-		private string domainTranscodeName;
+		private string domainName;
+
+		private long? ownerId;
 
 		[JsonProperty(PropertyName = "AppName")]
 		public string AppName
@@ -58,6 +60,34 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				appName = value;
 				DictionaryUtil.Add(QueryParameters, "AppName", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "StreamName")]
+		public string StreamName
+		{
+			get
+			{
+				return streamName;
+			}
+			set	
+			{
+				streamName = value;
+				DictionaryUtil.Add(QueryParameters, "StreamName", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DomainName")]
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -75,23 +105,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "DomainTranscodeName")]
-		public string DomainTranscodeName
-		{
-			get
-			{
-				return domainTranscodeName;
-			}
-			set	
-			{
-				domainTranscodeName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainTranscodeName", value);
-			}
-		}
-
-        public override DescribeLiveStreamTranscodeInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteLiveStreamBlockResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeLiveStreamTranscodeInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteLiveStreamBlockResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
