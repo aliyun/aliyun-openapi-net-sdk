@@ -46,6 +46,8 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 
 		private string templateId;
 
+		private bool? addWatermark;
+
 		public string FaceImageURL
 		{
 			get
@@ -91,6 +93,19 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			{
 				templateId = value;
 				DictionaryUtil.Add(BodyParameters, "TemplateId", value);
+			}
+		}
+
+		public bool? AddWatermark
+		{
+			get
+			{
+				return addWatermark;
+			}
+			set	
+			{
+				addWatermark = value;
+				DictionaryUtil.Add(BodyParameters, "AddWatermark", value.ToString());
 			}
 		}
 

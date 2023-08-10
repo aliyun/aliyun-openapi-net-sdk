@@ -44,6 +44,8 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 
 		private string videoURL;
 
+		private bool? addWatermark;
+
 		public string ReferenceURL
 		{
 			get
@@ -67,6 +69,19 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			{
 				videoURL = value;
 				DictionaryUtil.Add(BodyParameters, "VideoURL", value);
+			}
+		}
+
+		public bool? AddWatermark
+		{
+			get
+			{
+				return addWatermark;
+			}
+			set	
+			{
+				addWatermark = value;
+				DictionaryUtil.Add(BodyParameters, "AddWatermark", value.ToString());
 			}
 		}
 
