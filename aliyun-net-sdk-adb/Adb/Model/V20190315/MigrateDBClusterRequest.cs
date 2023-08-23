@@ -28,10 +28,10 @@ using Aliyun.Acs.adb.Transform.V20190315;
 
 namespace Aliyun.Acs.adb.Model.V20190315
 {
-    public class DescribeTableAccessCountRequest : RpcAcsRequest<DescribeTableAccessCountResponse>
+    public class MigrateDBClusterRequest : RpcAcsRequest<MigrateDBClusterResponse>
     {
-        public DescribeTableAccessCountRequest()
-            : base("adb", "2019-03-15", "DescribeTableAccessCount")
+        public MigrateDBClusterRequest()
+            : base("adb", "2019-03-15", "MigrateDBCluster")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,17 +41,41 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			Method = MethodType.POST;
         }
 
+		private long? resourceOwnerId;
+
+		private string resourceOwnerAccount;
+
 		private string dBClusterId;
 
-		private string startTime;
+		private string ownerAccount;
 
-		private int? pageNumber;
+		private long? ownerId;
 
-		private int? pageSize;
+		public long? ResourceOwnerId
+		{
+			get
+			{
+				return resourceOwnerId;
+			}
+			set	
+			{
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
 
-		private string tableName;
-
-		private string order;
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
 
 		public string DBClusterId
 		{
@@ -66,68 +90,29 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public string StartTime
+		public string OwnerAccount
 		{
 			get
 			{
-				return startTime;
+				return ownerAccount;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
-		public int? PageNumber
+		public long? OwnerId
 		{
 			get
 			{
-				return pageNumber;
+				return ownerId;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string TableName
-		{
-			get
-			{
-				return tableName;
-			}
-			set	
-			{
-				tableName = value;
-				DictionaryUtil.Add(QueryParameters, "TableName", value);
-			}
-		}
-
-		public string Order
-		{
-			get
-			{
-				return order;
-			}
-			set	
-			{
-				order = value;
-				DictionaryUtil.Add(QueryParameters, "Order", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -136,9 +121,9 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			return false;
 		}
 
-        public override DescribeTableAccessCountResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override MigrateDBClusterResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeTableAccessCountResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return MigrateDBClusterResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

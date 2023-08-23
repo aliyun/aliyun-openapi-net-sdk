@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.adb;
 using Aliyun.Acs.adb.Transform;
 using Aliyun.Acs.adb.Transform.V20190315;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.adb.Model.V20190315
     public class DescribeComputeResourceRequest : RpcAcsRequest<DescribeComputeResourceResponse>
     {
         public DescribeComputeResourceRequest()
-            : base("adb", "2019-03-15", "DescribeComputeResource", "ads", "openAPI")
+            : base("adb", "2019-03-15", "DescribeComputeResource")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,6 +45,8 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private string resourceOwnerAccount;
 
+		private string dBClusterId;
+
 		private string ownerAccount;
 
 		private string dBClusterVersion;
@@ -51,6 +54,8 @@ namespace Aliyun.Acs.adb.Model.V20190315
 		private long? ownerId;
 
 		private string zoneId;
+
+		private bool? migrate;
 
 		public long? ResourceOwnerId
 		{
@@ -75,6 +80,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string DBClusterId
+		{
+			get
+			{
+				return dBClusterId;
+			}
+			set	
+			{
+				dBClusterId = value;
+				DictionaryUtil.Add(QueryParameters, "DBClusterId", value);
 			}
 		}
 
@@ -127,6 +145,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				zoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public bool? Migrate
+		{
+			get
+			{
+				return migrate;
+			}
+			set	
+			{
+				migrate = value;
+				DictionaryUtil.Add(QueryParameters, "Migrate", value.ToString());
 			}
 		}
 

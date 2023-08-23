@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.adb;
 using Aliyun.Acs.adb.Transform;
 using Aliyun.Acs.adb.Transform.V20190315;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.adb.Model.V20190315
     public class ReleaseClusterPublicConnectionRequest : RpcAcsRequest<ReleaseClusterPublicConnectionResponse>
     {
         public ReleaseClusterPublicConnectionRequest()
-            : base("adb", "2019-03-15", "ReleaseClusterPublicConnection", "ads", "openAPI")
+            : base("adb", "2019-03-15", "ReleaseClusterPublicConnection")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
