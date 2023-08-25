@@ -102,7 +102,13 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 			private bool? enableReadWriteSplit;
 
+			private bool? enableParallelQuery;
+
+			private long? maxParallelQueryDegree;
+
 			private bool? enableBinlogService;
+
+			private string timeZone;
 
 			private List<DescribeTenant_TenantConnectionsItem> tenantConnections;
 
@@ -398,6 +404,32 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				}
 			}
 
+			[JsonProperty(PropertyName = "EnableParallelQuery")]
+			public bool? EnableParallelQuery
+			{
+				get
+				{
+					return enableParallelQuery;
+				}
+				set	
+				{
+					enableParallelQuery = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MaxParallelQueryDegree")]
+			public long? MaxParallelQueryDegree
+			{
+				get
+				{
+					return maxParallelQueryDegree;
+				}
+				set	
+				{
+					maxParallelQueryDegree = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "EnableBinlogService")]
 			public bool? EnableBinlogService
 			{
@@ -408,6 +440,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				set	
 				{
 					enableBinlogService = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TimeZone")]
+			public string TimeZone
+			{
+				get
+				{
+					return timeZone;
+				}
+				set	
+				{
+					timeZone = value;
 				}
 			}
 
@@ -466,8 +511,6 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			public class DescribeTenant_TenantConnectionsItem
 			{
 
-				private string connectionRole;
-
 				private string intranetAddress;
 
 				private int? intranetPort;
@@ -492,20 +535,13 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 				private string addressType;
 
-				private List<string> connectionZones;
+				private bool? enableTransactionSplit;
 
-				[JsonProperty(PropertyName = "ConnectionRole")]
-				public string ConnectionRole
-				{
-					get
-					{
-						return connectionRole;
-					}
-					set	
-					{
-						connectionRole = value;
-					}
-				}
+				private long? parallelQueryDegree;
+
+				private string tenantEndpointId;
+
+				private List<string> connectionZones;
 
 				[JsonProperty(PropertyName = "IntranetAddress")]
 				public string IntranetAddress
@@ -663,6 +699,45 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 					}
 				}
 
+				[JsonProperty(PropertyName = "EnableTransactionSplit")]
+				public bool? EnableTransactionSplit
+				{
+					get
+					{
+						return enableTransactionSplit;
+					}
+					set	
+					{
+						enableTransactionSplit = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "ParallelQueryDegree")]
+				public long? ParallelQueryDegree
+				{
+					get
+					{
+						return parallelQueryDegree;
+					}
+					set	
+					{
+						parallelQueryDegree = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "TenantEndpointId")]
+				public string TenantEndpointId
+				{
+					get
+					{
+						return tenantEndpointId;
+					}
+					set	
+					{
+						tenantEndpointId = value;
+					}
+				}
+
 				[JsonProperty(PropertyName = "ConnectionZones")]
 				public List<string> ConnectionZones
 				{
@@ -737,6 +812,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 				private DescribeTenant_DiskSize diskSize;
 
+				private DescribeTenant_CapacityUnit capacityUnit;
+
 				[JsonProperty(PropertyName = "UnitNum")]
 				public int? UnitNum
 				{
@@ -786,6 +863,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 					set	
 					{
 						diskSize = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "CapacityUnit")]
+				public DescribeTenant_CapacityUnit CapacityUnit
+				{
+					get
+					{
+						return capacityUnit;
+					}
+					set	
+					{
+						capacityUnit = value;
 					}
 				}
 
@@ -902,6 +992,55 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 						set	
 						{
 							usedDiskSize = value;
+						}
+					}
+				}
+
+				public class DescribeTenant_CapacityUnit
+				{
+
+					private int? maxCapacityUnit;
+
+					private int? minCapacityUnit;
+
+					private int? usedCapacit;
+
+					[JsonProperty(PropertyName = "MaxCapacityUnit")]
+					public int? MaxCapacityUnit
+					{
+						get
+						{
+							return maxCapacityUnit;
+						}
+						set	
+						{
+							maxCapacityUnit = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "MinCapacityUnit")]
+					public int? MinCapacityUnit
+					{
+						get
+						{
+							return minCapacityUnit;
+						}
+						set	
+						{
+							minCapacityUnit = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "UsedCapacit")]
+					public int? UsedCapacit
+					{
+						get
+						{
+							return usedCapacit;
+						}
+						set	
+						{
+							usedCapacit = value;
 						}
 					}
 				}

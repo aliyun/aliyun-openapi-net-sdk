@@ -324,6 +324,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 				private string planUnionHash;
 
+				private string sqlId;
+
 				[JsonProperty(PropertyName = "Uid")]
 				public string Uid
 				{
@@ -763,6 +765,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 					set	
 					{
 						planUnionHash = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "SqlId")]
+				public string SqlId
+				{
+					get
+					{
+						return sqlId;
+					}
+					set	
+					{
+						sqlId = value;
 					}
 				}
 			}

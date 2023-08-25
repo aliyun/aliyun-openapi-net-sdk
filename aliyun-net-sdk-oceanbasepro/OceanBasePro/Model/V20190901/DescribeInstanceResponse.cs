@@ -102,15 +102,25 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 			private string nodeNum;
 
+			private string replicaMode;
+
 			private bool? isolationOptimization;
 
 			private bool? enableIsolationOptimization;
+
+			private bool? inTempCapacityStatus;
+
+			private bool? dataDiskAutoScale;
 
 			private List<string> availableZones;
 
 			private List<string> zones;
 
 			private DescribeInstance_Resource resource;
+
+			private DescribeInstance_TenantCreatable tenantCreatable;
+
+			private DescribeInstance_DataDiskAutoScaleConfig dataDiskAutoScaleConfig;
 
 			[JsonProperty(PropertyName = "InstanceId")]
 			public string InstanceId
@@ -398,6 +408,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				}
 			}
 
+			[JsonProperty(PropertyName = "ReplicaMode")]
+			public string ReplicaMode
+			{
+				get
+				{
+					return replicaMode;
+				}
+				set	
+				{
+					replicaMode = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "IsolationOptimization")]
 			public bool? IsolationOptimization
 			{
@@ -421,6 +444,32 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				set	
 				{
 					enableIsolationOptimization = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InTempCapacityStatus")]
+			public bool? InTempCapacityStatus
+			{
+				get
+				{
+					return inTempCapacityStatus;
+				}
+				set	
+				{
+					inTempCapacityStatus = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DataDiskAutoScale")]
+			public bool? DataDiskAutoScale
+			{
+				get
+				{
+					return dataDiskAutoScale;
+				}
+				set	
+				{
+					dataDiskAutoScale = value;
 				}
 			}
 
@@ -463,6 +512,32 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				}
 			}
 
+			[JsonProperty(PropertyName = "TenantCreatable")]
+			public DescribeInstance_TenantCreatable TenantCreatable
+			{
+				get
+				{
+					return tenantCreatable;
+				}
+				set	
+				{
+					tenantCreatable = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DataDiskAutoScaleConfig")]
+			public DescribeInstance_DataDiskAutoScaleConfig DataDiskAutoScaleConfig
+			{
+				get
+				{
+					return dataDiskAutoScaleConfig;
+				}
+				set	
+				{
+					dataDiskAutoScaleConfig = value;
+				}
+			}
+
 			public class DescribeInstance_Resource
 			{
 
@@ -475,6 +550,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				private DescribeInstance_DiskSize diskSize;
 
 				private DescribeInstance_LogDiskSize logDiskSize;
+
+				private DescribeInstance_CapacityUnit capacityUnit;
 
 				[JsonProperty(PropertyName = "UnitCount")]
 				public long? UnitCount
@@ -541,6 +618,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 					}
 				}
 
+				[JsonProperty(PropertyName = "CapacityUnit")]
+				public DescribeInstance_CapacityUnit CapacityUnit
+				{
+					get
+					{
+						return capacityUnit;
+					}
+					set	
+					{
+						capacityUnit = value;
+					}
+				}
+
 				public class DescribeInstance_Cpu
 				{
 
@@ -549,6 +639,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 					private long? usedCpu;
 
 					private long? unitCpu;
+
+					private long? originalTotalCpu;
 
 					[JsonProperty(PropertyName = "TotalCpu")]
 					public long? TotalCpu
@@ -588,6 +680,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 							unitCpu = value;
 						}
 					}
+
+					[JsonProperty(PropertyName = "OriginalTotalCpu")]
+					public long? OriginalTotalCpu
+					{
+						get
+						{
+							return originalTotalCpu;
+						}
+						set	
+						{
+							originalTotalCpu = value;
+						}
+					}
 				}
 
 				public class DescribeInstance_Memory
@@ -598,6 +703,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 					private long? usedMemory;
 
 					private long? unitMemory;
+
+					private long? originalTotalMemory;
 
 					[JsonProperty(PropertyName = "TotalMemory")]
 					public long? TotalMemory
@@ -637,6 +744,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 							unitMemory = value;
 						}
 					}
+
+					[JsonProperty(PropertyName = "OriginalTotalMemory")]
+					public long? OriginalTotalMemory
+					{
+						get
+						{
+							return originalTotalMemory;
+						}
+						set	
+						{
+							originalTotalMemory = value;
+						}
+					}
 				}
 
 				public class DescribeInstance_DiskSize
@@ -651,6 +771,10 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 					private double? dataUsedSize;
 
 					private double? maxDiskUsedPercent;
+
+					private long? originalTotalDiskSize;
+
+					private double? maxDiskSize;
 
 					private List<string> maxDiskUsedObServer;
 
@@ -719,6 +843,32 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 						}
 					}
 
+					[JsonProperty(PropertyName = "OriginalTotalDiskSize")]
+					public long? OriginalTotalDiskSize
+					{
+						get
+						{
+							return originalTotalDiskSize;
+						}
+						set	
+						{
+							originalTotalDiskSize = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "MaxDiskSize")]
+					public double? MaxDiskSize
+					{
+						get
+						{
+							return maxDiskSize;
+						}
+						set	
+						{
+							maxDiskSize = value;
+						}
+					}
+
 					[JsonProperty(PropertyName = "MaxDiskUsedObServer")]
 					public List<string> MaxDiskUsedObServer
 					{
@@ -764,6 +914,198 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 						{
 							unitDiskSize = value;
 						}
+					}
+				}
+
+				public class DescribeInstance_CapacityUnit
+				{
+
+					private int? maxCapacityUnit;
+
+					private int? minCapacityUnit;
+
+					private string usedCapacityUnit;
+
+					[JsonProperty(PropertyName = "MaxCapacityUnit")]
+					public int? MaxCapacityUnit
+					{
+						get
+						{
+							return maxCapacityUnit;
+						}
+						set	
+						{
+							maxCapacityUnit = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "MinCapacityUnit")]
+					public int? MinCapacityUnit
+					{
+						get
+						{
+							return minCapacityUnit;
+						}
+						set	
+						{
+							minCapacityUnit = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "UsedCapacityUnit")]
+					public string UsedCapacityUnit
+					{
+						get
+						{
+							return usedCapacityUnit;
+						}
+						set	
+						{
+							usedCapacityUnit = value;
+						}
+					}
+				}
+			}
+
+			public class DescribeInstance_TenantCreatable
+			{
+
+				private bool? enableCreateTenant;
+
+				private string disableCreateTenantReason;
+
+				[JsonProperty(PropertyName = "EnableCreateTenant")]
+				public bool? EnableCreateTenant
+				{
+					get
+					{
+						return enableCreateTenant;
+					}
+					set	
+					{
+						enableCreateTenant = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "DisableCreateTenantReason")]
+				public string DisableCreateTenantReason
+				{
+					get
+					{
+						return disableCreateTenantReason;
+					}
+					set	
+					{
+						disableCreateTenantReason = value;
+					}
+				}
+			}
+
+			public class DescribeInstance_DataDiskAutoScaleConfig
+			{
+
+				private bool? autoScale;
+
+				private long? upperbound;
+
+				private long? upperThreshold;
+
+				private long? upperMergeThreshold;
+
+				private long? maxDiskSize;
+
+				private long? scaleStepInNormal;
+
+				private long? scaleStepInMerge;
+
+				[JsonProperty(PropertyName = "AutoScale")]
+				public bool? AutoScale
+				{
+					get
+					{
+						return autoScale;
+					}
+					set	
+					{
+						autoScale = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Upperbound")]
+				public long? Upperbound
+				{
+					get
+					{
+						return upperbound;
+					}
+					set	
+					{
+						upperbound = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "UpperThreshold")]
+				public long? UpperThreshold
+				{
+					get
+					{
+						return upperThreshold;
+					}
+					set	
+					{
+						upperThreshold = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "UpperMergeThreshold")]
+				public long? UpperMergeThreshold
+				{
+					get
+					{
+						return upperMergeThreshold;
+					}
+					set	
+					{
+						upperMergeThreshold = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "MaxDiskSize")]
+				public long? MaxDiskSize
+				{
+					get
+					{
+						return maxDiskSize;
+					}
+					set	
+					{
+						maxDiskSize = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "ScaleStepInNormal")]
+				public long? ScaleStepInNormal
+				{
+					get
+					{
+						return scaleStepInNormal;
+					}
+					set	
+					{
+						scaleStepInNormal = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "ScaleStepInMerge")]
+				public long? ScaleStepInMerge
+				{
+					get
+					{
+						return scaleStepInMerge;
+					}
+					set	
+					{
+						scaleStepInMerge = value;
 					}
 				}
 			}

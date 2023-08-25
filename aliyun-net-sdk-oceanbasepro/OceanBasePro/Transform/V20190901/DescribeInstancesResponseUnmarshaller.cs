@@ -61,18 +61,13 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 				data.ResourceGroupId = _ctx.StringValue("DescribeInstances.Instances["+ i +"].ResourceGroupId");
 				data.InstanceType = _ctx.StringValue("DescribeInstances.Instances["+ i +"].InstanceType");
 				data.InstanceRole = _ctx.StringValue("DescribeInstances.Instances["+ i +"].InstanceRole");
+				data.InTempCapacityStatus = _ctx.BooleanValue("DescribeInstances.Instances["+ i +"].InTempCapacityStatus");
 
 				List<string> data_availableZones = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeInstances.Instances["+ i +"].AvailableZones.Length"); j++) {
 					data_availableZones.Add(_ctx.StringValue("DescribeInstances.Instances["+ i +"].AvailableZones["+ j +"]"));
 				}
 				data.AvailableZones = data_availableZones;
-
-				List<string> data_securityIps = new List<string>();
-				for (int j = 0; j < _ctx.Length("DescribeInstances.Instances["+ i +"].SecurityIps.Length"); j++) {
-					data_securityIps.Add(_ctx.StringValue("DescribeInstances.Instances["+ i +"].SecurityIps["+ j +"]"));
-				}
-				data.SecurityIps = data_securityIps;
 
 				DescribeInstancesResponse.DescribeInstances_Data.DescribeInstances_Resource resource = new DescribeInstancesResponse.DescribeInstances_Data.DescribeInstances_Resource();
 				resource.UnitCount = _ctx.LongValue("DescribeInstances.Instances["+ i +"].Resource.UnitCount");
@@ -81,20 +76,39 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 				cpu.TotalCpu = _ctx.LongValue("DescribeInstances.Instances["+ i +"].Resource.Cpu.TotalCpu");
 				cpu.UsedCpu = _ctx.LongValue("DescribeInstances.Instances["+ i +"].Resource.Cpu.UsedCpu");
 				cpu.UnitCpu = _ctx.LongValue("DescribeInstances.Instances["+ i +"].Resource.Cpu.UnitCpu");
+				cpu.OriginalTotalCpu = _ctx.LongValue("DescribeInstances.Instances["+ i +"].Resource.Cpu.OriginalTotalCpu");
 				resource.Cpu = cpu;
 
 				DescribeInstancesResponse.DescribeInstances_Data.DescribeInstances_Resource.DescribeInstances_Memory memory = new DescribeInstancesResponse.DescribeInstances_Data.DescribeInstances_Resource.DescribeInstances_Memory();
 				memory.TotalMemory = _ctx.LongValue("DescribeInstances.Instances["+ i +"].Resource.Memory.TotalMemory");
 				memory.UsedMemory = _ctx.LongValue("DescribeInstances.Instances["+ i +"].Resource.Memory.UsedMemory");
 				memory.UnitMemory = _ctx.LongValue("DescribeInstances.Instances["+ i +"].Resource.Memory.UnitMemory");
+				memory.OriginalTotalMemory = _ctx.LongValue("DescribeInstances.Instances["+ i +"].Resource.Memory.OriginalTotalMemory");
 				resource.Memory = memory;
 
 				DescribeInstancesResponse.DescribeInstances_Data.DescribeInstances_Resource.DescribeInstances_DiskSize diskSize = new DescribeInstancesResponse.DescribeInstances_Data.DescribeInstances_Resource.DescribeInstances_DiskSize();
 				diskSize.TotalDiskSize = _ctx.LongValue("DescribeInstances.Instances["+ i +"].Resource.DiskSize.TotalDiskSize");
 				diskSize.UsedDiskSize = _ctx.LongValue("DescribeInstances.Instances["+ i +"].Resource.DiskSize.UsedDiskSize");
 				diskSize.UnitDiskSize = _ctx.LongValue("DescribeInstances.Instances["+ i +"].Resource.DiskSize.UnitDiskSize");
+				diskSize.OriginalTotalDiskSize = _ctx.LongValue("DescribeInstances.Instances["+ i +"].Resource.DiskSize.OriginalTotalDiskSize");
 				resource.DiskSize = diskSize;
+
+				DescribeInstancesResponse.DescribeInstances_Data.DescribeInstances_Resource.DescribeInstances_CapacityUnit capacityUnit = new DescribeInstancesResponse.DescribeInstances_Data.DescribeInstances_Resource.DescribeInstances_CapacityUnit();
+				capacityUnit.MaxCapacityUnit = _ctx.IntegerValue("DescribeInstances.Instances["+ i +"].Resource.CapacityUnit.MaxCapacityUnit");
+				capacityUnit.MinCapacityUnit = _ctx.IntegerValue("DescribeInstances.Instances["+ i +"].Resource.CapacityUnit.MinCapacityUnit");
+				capacityUnit.UsedCapacityUnit = _ctx.IntegerValue("DescribeInstances.Instances["+ i +"].Resource.CapacityUnit.UsedCapacityUnit");
+				resource.CapacityUnit = capacityUnit;
 				data.Resource = resource;
+
+				DescribeInstancesResponse.DescribeInstances_Data.DescribeInstances_DataDiskAutoScaleConfig dataDiskAutoScaleConfig = new DescribeInstancesResponse.DescribeInstances_Data.DescribeInstances_DataDiskAutoScaleConfig();
+				dataDiskAutoScaleConfig.AutoScale = _ctx.BooleanValue("DescribeInstances.Instances["+ i +"].DataDiskAutoScaleConfig.AutoScale");
+				dataDiskAutoScaleConfig.Upperbound = _ctx.LongValue("DescribeInstances.Instances["+ i +"].DataDiskAutoScaleConfig.Upperbound");
+				dataDiskAutoScaleConfig.UpperThreshold = _ctx.LongValue("DescribeInstances.Instances["+ i +"].DataDiskAutoScaleConfig.UpperThreshold");
+				dataDiskAutoScaleConfig.UpperMergeThreshold = _ctx.LongValue("DescribeInstances.Instances["+ i +"].DataDiskAutoScaleConfig.UpperMergeThreshold");
+				dataDiskAutoScaleConfig.MaxDiskSize = _ctx.LongValue("DescribeInstances.Instances["+ i +"].DataDiskAutoScaleConfig.MaxDiskSize");
+				dataDiskAutoScaleConfig.ScaleStepInNormal = _ctx.LongValue("DescribeInstances.Instances["+ i +"].DataDiskAutoScaleConfig.ScaleStepInNormal");
+				dataDiskAutoScaleConfig.ScaleStepInMerge = _ctx.LongValue("DescribeInstances.Instances["+ i +"].DataDiskAutoScaleConfig.ScaleStepInMerge");
+				data.DataDiskAutoScaleConfig = dataDiskAutoScaleConfig;
 
 				describeInstancesResponse_instances.Add(data);
 			}

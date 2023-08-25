@@ -56,7 +56,10 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 			tenant.Series = _ctx.StringValue("DescribeTenant.Tenant.Series");
 			tenant.DiskType = _ctx.StringValue("DescribeTenant.Tenant.DiskType");
 			tenant.EnableReadWriteSplit = _ctx.BooleanValue("DescribeTenant.Tenant.EnableReadWriteSplit");
+			tenant.EnableParallelQuery = _ctx.BooleanValue("DescribeTenant.Tenant.EnableParallelQuery");
+			tenant.MaxParallelQueryDegree = _ctx.LongValue("DescribeTenant.Tenant.MaxParallelQueryDegree");
 			tenant.EnableBinlogService = _ctx.BooleanValue("DescribeTenant.Tenant.EnableBinlogService");
+			tenant.TimeZone = _ctx.StringValue("DescribeTenant.Tenant.TimeZone");
 
 			List<string> tenant_availableZones = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeTenant.Tenant.AvailableZones.Length"); i++) {
@@ -82,12 +85,17 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 			DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_TenantResource.DescribeTenant_DiskSize diskSize = new DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_TenantResource.DescribeTenant_DiskSize();
 			diskSize.UsedDiskSize = _ctx.FloatValue("DescribeTenant.Tenant.TenantResource.DiskSize.UsedDiskSize");
 			tenantResource.DiskSize = diskSize;
+
+			DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_TenantResource.DescribeTenant_CapacityUnit capacityUnit = new DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_TenantResource.DescribeTenant_CapacityUnit();
+			capacityUnit.MaxCapacityUnit = _ctx.IntegerValue("DescribeTenant.Tenant.TenantResource.CapacityUnit.MaxCapacityUnit");
+			capacityUnit.MinCapacityUnit = _ctx.IntegerValue("DescribeTenant.Tenant.TenantResource.CapacityUnit.MinCapacityUnit");
+			capacityUnit.UsedCapacit = _ctx.IntegerValue("DescribeTenant.Tenant.TenantResource.CapacityUnit.UsedCapacit");
+			tenantResource.CapacityUnit = capacityUnit;
 			tenant.TenantResource = tenantResource;
 
 			List<DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_TenantConnectionsItem> tenant_tenantConnections = new List<DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_TenantConnectionsItem>();
 			for (int i = 0; i < _ctx.Length("DescribeTenant.Tenant.TenantConnections.Length"); i++) {
 				DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_TenantConnectionsItem tenantConnectionsItem = new DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_TenantConnectionsItem();
-				tenantConnectionsItem.ConnectionRole = _ctx.StringValue("DescribeTenant.Tenant.TenantConnections["+ i +"].ConnectionRole");
 				tenantConnectionsItem.IntranetAddress = _ctx.StringValue("DescribeTenant.Tenant.TenantConnections["+ i +"].IntranetAddress");
 				tenantConnectionsItem.IntranetPort = _ctx.IntegerValue("DescribeTenant.Tenant.TenantConnections["+ i +"].IntranetPort");
 				tenantConnectionsItem.InternetAddress = _ctx.StringValue("DescribeTenant.Tenant.TenantConnections["+ i +"].InternetAddress");
@@ -100,6 +108,9 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 				tenantConnectionsItem.InternetAddressStatus = _ctx.StringValue("DescribeTenant.Tenant.TenantConnections["+ i +"].InternetAddressStatus");
 				tenantConnectionsItem.TransactionSplit = _ctx.BooleanValue("DescribeTenant.Tenant.TenantConnections["+ i +"].TransactionSplit");
 				tenantConnectionsItem.AddressType = _ctx.StringValue("DescribeTenant.Tenant.TenantConnections["+ i +"].AddressType");
+				tenantConnectionsItem.EnableTransactionSplit = _ctx.BooleanValue("DescribeTenant.Tenant.TenantConnections["+ i +"].EnableTransactionSplit");
+				tenantConnectionsItem.ParallelQueryDegree = _ctx.LongValue("DescribeTenant.Tenant.TenantConnections["+ i +"].ParallelQueryDegree");
+				tenantConnectionsItem.TenantEndpointId = _ctx.StringValue("DescribeTenant.Tenant.TenantConnections["+ i +"].TenantEndpointId");
 
 				List<string> tenantConnectionsItem_connectionZones = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeTenant.Tenant.TenantConnections["+ i +"].ConnectionZones.Length"); j++) {

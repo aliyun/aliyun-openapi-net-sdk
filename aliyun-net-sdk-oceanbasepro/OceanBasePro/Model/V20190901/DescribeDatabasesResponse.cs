@@ -277,6 +277,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 				private string userName;
 
+				private string privileges;
+
 				[JsonProperty(PropertyName = "UserType")]
 				public string UserType
 				{
@@ -313,6 +315,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 					set	
 					{
 						userName = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Privileges")]
+				public string Privileges
+				{
+					get
+					{
+						return privileges;
+					}
+					set	
+					{
+						privileges = value;
 					}
 				}
 			}

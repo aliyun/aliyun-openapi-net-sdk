@@ -45,8 +45,6 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 		private string instanceId;
 
-		private int? pageSize;
-
 		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
@@ -72,20 +70,6 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			{
 				instanceId = value;
 				DictionaryUtil.Add(BodyParameters, "InstanceId", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "PageSize")]
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
 			}
 		}
 

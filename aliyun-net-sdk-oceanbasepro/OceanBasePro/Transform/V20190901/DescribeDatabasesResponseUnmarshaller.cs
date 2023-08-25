@@ -55,6 +55,7 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 					usersItem.UserType = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].Users["+ j +"].UserType");
 					usersItem.Role = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].Users["+ j +"].Role");
 					usersItem.UserName = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].Users["+ j +"].UserName");
+					usersItem.Privileges = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].Users["+ j +"].Privileges");
 
 					data_users.Add(usersItem);
 				}

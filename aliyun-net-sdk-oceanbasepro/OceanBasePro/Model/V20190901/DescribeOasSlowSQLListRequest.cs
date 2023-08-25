@@ -45,6 +45,10 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 		private string searchRule;
 
+		private bool? mergeDynamicSql;
+
+		private bool? dynamicSql;
+
 		private long? sqlTextLength;
 
 		private string tenantId;
@@ -94,6 +98,34 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			{
 				searchRule = value;
 				DictionaryUtil.Add(BodyParameters, "SearchRule", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "MergeDynamicSql")]
+		public bool? MergeDynamicSql
+		{
+			get
+			{
+				return mergeDynamicSql;
+			}
+			set	
+			{
+				mergeDynamicSql = value;
+				DictionaryUtil.Add(BodyParameters, "MergeDynamicSql", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "DynamicSql")]
+		public bool? DynamicSql
+		{
+			get
+			{
+				return dynamicSql;
+			}
+			set	
+			{
+				dynamicSql = value;
+				DictionaryUtil.Add(BodyParameters, "DynamicSql", value.ToString());
 			}
 		}
 

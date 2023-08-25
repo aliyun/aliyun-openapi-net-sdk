@@ -56,8 +56,11 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 			instance.EnableUpgradeLogDisk = _ctx.BooleanValue("DescribeInstance.Instance.EnableUpgradeLogDisk");
 			instance.InstanceRole = _ctx.StringValue("DescribeInstance.Instance.InstanceRole");
 			instance.NodeNum = _ctx.StringValue("DescribeInstance.Instance.NodeNum");
+			instance.ReplicaMode = _ctx.StringValue("DescribeInstance.Instance.ReplicaMode");
 			instance.IsolationOptimization = _ctx.BooleanValue("DescribeInstance.Instance.IsolationOptimization");
 			instance.EnableIsolationOptimization = _ctx.BooleanValue("DescribeInstance.Instance.EnableIsolationOptimization");
+			instance.InTempCapacityStatus = _ctx.BooleanValue("DescribeInstance.Instance.InTempCapacityStatus");
+			instance.DataDiskAutoScale = _ctx.BooleanValue("DescribeInstance.Instance.DataDiskAutoScale");
 
 			List<string> instance_availableZones = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeInstance.Instance.AvailableZones.Length"); i++) {
@@ -78,12 +81,14 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 			cpu.TotalCpu = _ctx.LongValue("DescribeInstance.Instance.Resource.Cpu.TotalCpu");
 			cpu.UsedCpu = _ctx.LongValue("DescribeInstance.Instance.Resource.Cpu.UsedCpu");
 			cpu.UnitCpu = _ctx.LongValue("DescribeInstance.Instance.Resource.Cpu.UnitCpu");
+			cpu.OriginalTotalCpu = _ctx.LongValue("DescribeInstance.Instance.Resource.Cpu.OriginalTotalCpu");
 			resource.Cpu = cpu;
 
 			DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_Resource.DescribeInstance_Memory memory = new DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_Resource.DescribeInstance_Memory();
 			memory.TotalMemory = _ctx.LongValue("DescribeInstance.Instance.Resource.Memory.TotalMemory");
 			memory.UsedMemory = _ctx.LongValue("DescribeInstance.Instance.Resource.Memory.UsedMemory");
 			memory.UnitMemory = _ctx.LongValue("DescribeInstance.Instance.Resource.Memory.UnitMemory");
+			memory.OriginalTotalMemory = _ctx.LongValue("DescribeInstance.Instance.Resource.Memory.OriginalTotalMemory");
 			resource.Memory = memory;
 
 			DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_Resource.DescribeInstance_DiskSize diskSize = new DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_Resource.DescribeInstance_DiskSize();
@@ -92,6 +97,8 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 			diskSize.UnitDiskSize = _ctx.LongValue("DescribeInstance.Instance.Resource.DiskSize.UnitDiskSize");
 			diskSize.DataUsedSize = _ctx.DoubleValue("DescribeInstance.Instance.Resource.DiskSize.DataUsedSize");
 			diskSize.MaxDiskUsedPercent = _ctx.DoubleValue("DescribeInstance.Instance.Resource.DiskSize.MaxDiskUsedPercent");
+			diskSize.OriginalTotalDiskSize = _ctx.LongValue("DescribeInstance.Instance.Resource.DiskSize.OriginalTotalDiskSize");
+			diskSize.MaxDiskSize = _ctx.DoubleValue("DescribeInstance.Instance.Resource.DiskSize.MaxDiskSize");
 
 			List<string> diskSize_maxDiskUsedObServer = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeInstance.Instance.Resource.DiskSize.MaxDiskUsedObServer.Length"); i++) {
@@ -104,7 +111,28 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 			logDiskSize.TotalDiskSize = _ctx.LongValue("DescribeInstance.Instance.Resource.LogDiskSize.TotalDiskSize");
 			logDiskSize.UnitDiskSize = _ctx.LongValue("DescribeInstance.Instance.Resource.LogDiskSize.UnitDiskSize");
 			resource.LogDiskSize = logDiskSize;
+
+			DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_Resource.DescribeInstance_CapacityUnit capacityUnit = new DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_Resource.DescribeInstance_CapacityUnit();
+			capacityUnit.MaxCapacityUnit = _ctx.IntegerValue("DescribeInstance.Instance.Resource.CapacityUnit.MaxCapacityUnit");
+			capacityUnit.MinCapacityUnit = _ctx.IntegerValue("DescribeInstance.Instance.Resource.CapacityUnit.MinCapacityUnit");
+			capacityUnit.UsedCapacityUnit = _ctx.StringValue("DescribeInstance.Instance.Resource.CapacityUnit.UsedCapacityUnit");
+			resource.CapacityUnit = capacityUnit;
 			instance.Resource = resource;
+
+			DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_TenantCreatable tenantCreatable = new DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_TenantCreatable();
+			tenantCreatable.EnableCreateTenant = _ctx.BooleanValue("DescribeInstance.Instance.TenantCreatable.EnableCreateTenant");
+			tenantCreatable.DisableCreateTenantReason = _ctx.StringValue("DescribeInstance.Instance.TenantCreatable.DisableCreateTenantReason");
+			instance.TenantCreatable = tenantCreatable;
+
+			DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_DataDiskAutoScaleConfig dataDiskAutoScaleConfig = new DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_DataDiskAutoScaleConfig();
+			dataDiskAutoScaleConfig.AutoScale = _ctx.BooleanValue("DescribeInstance.Instance.DataDiskAutoScaleConfig.AutoScale");
+			dataDiskAutoScaleConfig.Upperbound = _ctx.LongValue("DescribeInstance.Instance.DataDiskAutoScaleConfig.Upperbound");
+			dataDiskAutoScaleConfig.UpperThreshold = _ctx.LongValue("DescribeInstance.Instance.DataDiskAutoScaleConfig.UpperThreshold");
+			dataDiskAutoScaleConfig.UpperMergeThreshold = _ctx.LongValue("DescribeInstance.Instance.DataDiskAutoScaleConfig.UpperMergeThreshold");
+			dataDiskAutoScaleConfig.MaxDiskSize = _ctx.LongValue("DescribeInstance.Instance.DataDiskAutoScaleConfig.MaxDiskSize");
+			dataDiskAutoScaleConfig.ScaleStepInNormal = _ctx.LongValue("DescribeInstance.Instance.DataDiskAutoScaleConfig.ScaleStepInNormal");
+			dataDiskAutoScaleConfig.ScaleStepInMerge = _ctx.LongValue("DescribeInstance.Instance.DataDiskAutoScaleConfig.ScaleStepInMerge");
+			instance.DataDiskAutoScaleConfig = dataDiskAutoScaleConfig;
 			describeInstanceResponse.Instance = instance;
         
 			return describeInstanceResponse;

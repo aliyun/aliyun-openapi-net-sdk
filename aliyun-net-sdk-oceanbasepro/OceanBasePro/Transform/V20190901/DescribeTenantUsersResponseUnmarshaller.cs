@@ -50,6 +50,7 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 					databasesItem.Database = _ctx.StringValue("DescribeTenantUsers.TenantUsers["+ i +"].Databases["+ j +"].Database");
 					databasesItem.Role = _ctx.StringValue("DescribeTenantUsers.TenantUsers["+ i +"].Databases["+ j +"].Role");
 					databasesItem.Table = _ctx.StringValue("DescribeTenantUsers.TenantUsers["+ i +"].Databases["+ j +"].Table");
+					databasesItem.Privileges = _ctx.StringValue("DescribeTenantUsers.TenantUsers["+ i +"].Databases["+ j +"].Privileges");
 
 					tenantUsersItem_databases.Add(databasesItem);
 				}
