@@ -41,15 +41,29 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private string description;
 
+		private string cenOwnerId;
+
 		private bool? accessCouldService;
 
+		private string resourceGroupId;
+
+		private string vccName;
+
+		private List<string> tags = new List<string>(){ };
+
 		private string vccId;
+
+		private string connectionType;
+
+		private int? bandwidth;
 
 		private string vSwitchId;
 
 		private string vpdId;
 
 		private string vpcId;
+
+		private string zoneId;
 
 		public string BgpCidr
 		{
@@ -90,6 +104,19 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			}
 		}
 
+		public string CenOwnerId
+		{
+			get
+			{
+				return cenOwnerId;
+			}
+			set	
+			{
+				cenOwnerId = value;
+				DictionaryUtil.Add(BodyParameters, "CenOwnerId", value);
+			}
+		}
+
 		public bool? AccessCouldService
 		{
 			get
@@ -103,6 +130,53 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			}
 		}
 
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(BodyParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public string VccName
+		{
+			get
+			{
+				return vccName;
+			}
+			set	
+			{
+				vccName = value;
+				DictionaryUtil.Add(BodyParameters, "VccName", value);
+			}
+		}
+
+		public List<string> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				if(tags != null)
+				{
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(BodyParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
+				}
+			}
+		}
+
 		public string VccId
 		{
 			get
@@ -113,6 +187,32 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				vccId = value;
 				DictionaryUtil.Add(BodyParameters, "VccId", value);
+			}
+		}
+
+		public string ConnectionType
+		{
+			get
+			{
+				return connectionType;
+			}
+			set	
+			{
+				connectionType = value;
+				DictionaryUtil.Add(BodyParameters, "ConnectionType", value);
+			}
+		}
+
+		public int? Bandwidth
+		{
+			get
+			{
+				return bandwidth;
+			}
+			set	
+			{
+				bandwidth = value;
+				DictionaryUtil.Add(BodyParameters, "Bandwidth", value.ToString());
 			}
 		}
 
@@ -152,6 +252,51 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				vpcId = value;
 				DictionaryUtil.Add(BodyParameters, "VpcId", value);
+			}
+		}
+
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(BodyParameters, "ZoneId", value);
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

@@ -35,22 +35,20 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			Method = MethodType.POST;
         }
 
-		private string description;
+		private string vpdName;
 
 		private string vpdId;
 
-		private string name;
-
-		public string Description
+		public string VpdName
 		{
 			get
 			{
-				return description;
+				return vpdName;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(BodyParameters, "Description", value);
+				vpdName = value;
+				DictionaryUtil.Add(BodyParameters, "VpdName", value);
 			}
 		}
 
@@ -64,19 +62,6 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				vpdId = value;
 				DictionaryUtil.Add(BodyParameters, "VpdId", value);
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(BodyParameters, "Name", value);
 			}
 		}
 

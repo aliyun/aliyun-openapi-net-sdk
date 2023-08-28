@@ -35,13 +35,19 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			Method = MethodType.POST;
         }
 
+		private string vpdName;
+
 		private int? pageNumber;
 
 		private bool? withDependence;
 
+		private string resourceGroupId;
+
 		private bool? withoutVcc;
 
 		private int? pageSize;
+
+		private List<string> tags = new List<string>(){ };
 
 		private bool? forSelect;
 
@@ -51,9 +57,20 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private bool? enablePage;
 
-		private string name;
-
 		private string status;
+
+		public string VpdName
+		{
+			get
+			{
+				return vpdName;
+			}
+			set	
+			{
+				vpdName = value;
+				DictionaryUtil.Add(BodyParameters, "VpdName", value);
+			}
+		}
 
 		public int? PageNumber
 		{
@@ -81,6 +98,19 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			}
 		}
 
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(BodyParameters, "ResourceGroupId", value);
+			}
+		}
+
 		public bool? WithoutVcc
 		{
 			get
@@ -104,6 +134,27 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				pageSize = value;
 				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public List<string> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				if(tags != null)
+				{
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(BodyParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
+				}
 			}
 		}
 
@@ -159,19 +210,6 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			}
 		}
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(BodyParameters, "Name", value);
-			}
-		}
-
 		public string Status
 		{
 			get
@@ -182,6 +220,38 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				status = value;
 				DictionaryUtil.Add(BodyParameters, "Status", value);
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

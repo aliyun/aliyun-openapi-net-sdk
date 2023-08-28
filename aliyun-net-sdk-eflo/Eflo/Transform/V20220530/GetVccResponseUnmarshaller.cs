@@ -38,6 +38,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			GetVccResponse.GetVcc_Content content = new GetVccResponse.GetVcc_Content();
 			content.TenantId = _ctx.StringValue("GetVcc.Content.TenantId");
 			content.RegionId = _ctx.StringValue("GetVcc.Content.RegionId");
+			content.ZoneId = _ctx.StringValue("GetVcc.Content.ZoneId");
 			content.VccId = _ctx.StringValue("GetVcc.Content.VccId");
 			content.VpdId = _ctx.StringValue("GetVcc.Content.VpdId");
 			content.VpcId = _ctx.StringValue("GetVcc.Content.VpcId");
@@ -60,13 +61,38 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			content.GmtModified = _ctx.StringValue("GetVcc.Content.GmtModified");
 			content.CommodityCode = _ctx.StringValue("GetVcc.Content.CommodityCode");
 			content.BgpCidr = _ctx.StringValue("GetVcc.Content.BgpCidr");
+			content.ExpirationDate = _ctx.StringValue("GetVcc.Content.ExpirationDate");
+			content.AttachErStatus = _ctx.BooleanValue("GetVcc.Content.AttachErStatus");
+			content.ResourceGroupId = _ctx.StringValue("GetVcc.Content.ResourceGroupId");
+			content.ConnectionType = _ctx.StringValue("GetVcc.Content.ConnectionType");
+			content.CenOwnerId = _ctx.StringValue("GetVcc.Content.CenOwnerId");
 
 			GetVccResponse.GetVcc_Content.GetVcc_VpdBaseInfo vpdBaseInfo = new GetVccResponse.GetVcc_Content.GetVcc_VpdBaseInfo();
 			vpdBaseInfo.VpdId = _ctx.StringValue("GetVcc.Content.VpdBaseInfo.VpdId");
-			vpdBaseInfo.Name = _ctx.StringValue("GetVcc.Content.VpdBaseInfo.Name");
+			vpdBaseInfo.VpdName = _ctx.StringValue("GetVcc.Content.VpdBaseInfo.VpdName");
 			vpdBaseInfo.Cidr = _ctx.StringValue("GetVcc.Content.VpdBaseInfo.Cidr");
-			vpdBaseInfo.GmtCreate = _ctx.StringValue("GetVcc.Content.VpdBaseInfo.GmtCreate");
+			vpdBaseInfo.CreateTime = _ctx.StringValue("GetVcc.Content.VpdBaseInfo.CreateTime");
 			content.VpdBaseInfo = vpdBaseInfo;
+
+			List<GetVccResponse.GetVcc_Content.GetVcc_ErInfo> content_erInfos = new List<GetVccResponse.GetVcc_Content.GetVcc_ErInfo>();
+			for (int i = 0; i < _ctx.Length("GetVcc.Content.ErInfos.Length"); i++) {
+				GetVccResponse.GetVcc_Content.GetVcc_ErInfo erInfo = new GetVccResponse.GetVcc_Content.GetVcc_ErInfo();
+				erInfo.CreateTime = _ctx.StringValue("GetVcc.Content.ErInfos["+ i +"].CreateTime");
+				erInfo.GmtModified = _ctx.StringValue("GetVcc.Content.ErInfos["+ i +"].GmtModified");
+				erInfo.Message = _ctx.StringValue("GetVcc.Content.ErInfos["+ i +"].Message");
+				erInfo.ErId = _ctx.StringValue("GetVcc.Content.ErInfos["+ i +"].ErId");
+				erInfo.RegionId = _ctx.StringValue("GetVcc.Content.ErInfos["+ i +"].RegionId");
+				erInfo.TenantId = _ctx.StringValue("GetVcc.Content.ErInfos["+ i +"].TenantId");
+				erInfo.Status = _ctx.StringValue("GetVcc.Content.ErInfos["+ i +"].Status");
+				erInfo.ErName = _ctx.StringValue("GetVcc.Content.ErInfos["+ i +"].ErName");
+				erInfo.MasterZoneId = _ctx.StringValue("GetVcc.Content.ErInfos["+ i +"].MasterZoneId");
+				erInfo.Description = _ctx.StringValue("GetVcc.Content.ErInfos["+ i +"].Description");
+				erInfo.Connections = _ctx.LongValue("GetVcc.Content.ErInfos["+ i +"].Connections");
+				erInfo.RouteMaps = _ctx.LongValue("GetVcc.Content.ErInfos["+ i +"].RouteMaps");
+
+				content_erInfos.Add(erInfo);
+			}
+			content.ErInfos = content_erInfos;
 
 			List<GetVccResponse.GetVcc_Content.GetVcc_AliyunRouterInfoItem> content_aliyunRouterInfo = new List<GetVccResponse.GetVcc_Content.GetVcc_AliyunRouterInfoItem>();
 			for (int i = 0; i < _ctx.Length("GetVcc.Content.AliyunRouterInfo.Length"); i++) {
@@ -104,6 +130,16 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 				content_cisRouterInfo.Add(cisRouterInfoItem);
 			}
 			content.CisRouterInfo = content_cisRouterInfo;
+
+			List<GetVccResponse.GetVcc_Content.GetVcc_Tag> content_tags = new List<GetVccResponse.GetVcc_Content.GetVcc_Tag>();
+			for (int i = 0; i < _ctx.Length("GetVcc.Content.Tags.Length"); i++) {
+				GetVccResponse.GetVcc_Content.GetVcc_Tag tag = new GetVccResponse.GetVcc_Content.GetVcc_Tag();
+				tag.TagKey = _ctx.StringValue("GetVcc.Content.Tags["+ i +"].TagKey");
+				tag.TagValue = _ctx.StringValue("GetVcc.Content.Tags["+ i +"].TagValue");
+
+				content_tags.Add(tag);
+			}
+			content.Tags = content_tags;
 			getVccResponse.Content = content;
         
 			return getVccResponse;

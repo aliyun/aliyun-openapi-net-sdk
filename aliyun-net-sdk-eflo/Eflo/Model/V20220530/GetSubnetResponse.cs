@@ -84,9 +84,7 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 		public class GetSubnet_Content
 		{
 
-			private long? id;
-
-			private string gmtCreate;
+			private string createTime;
 
 			private string gmtModified;
 
@@ -98,11 +96,9 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 			private string subnetId;
 
-			private string name;
+			private string subnetName;
 
 			private string cidr;
-
-			private string description;
 
 			private string vpdId;
 
@@ -112,33 +108,31 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 			private string message;
 
-			private long? ncCount;
+			private int? ncCount;
+
+			private int? networkInterfaceCount;
 
 			private long? lbCount;
 
+			private string resourceGroupId;
+
+			private long? privateIpCount;
+
+			private int? availableIps;
+
+			private List<GetSubnet_Tag> tags;
+
 			private GetSubnet_VpdBaseInfo vpdBaseInfo;
 
-			public long? Id
+			public string CreateTime
 			{
 				get
 				{
-					return id;
+					return createTime;
 				}
 				set	
 				{
-					id = value;
-				}
-			}
-
-			public string GmtCreate
-			{
-				get
-				{
-					return gmtCreate;
-				}
-				set	
-				{
-					gmtCreate = value;
+					createTime = value;
 				}
 			}
 
@@ -202,15 +196,15 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				}
 			}
 
-			public string Name
+			public string SubnetName
 			{
 				get
 				{
-					return name;
+					return subnetName;
 				}
 				set	
 				{
-					name = value;
+					subnetName = value;
 				}
 			}
 
@@ -223,18 +217,6 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				set	
 				{
 					cidr = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
 				}
 			}
 
@@ -286,7 +268,7 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				}
 			}
 
-			public long? NcCount
+			public int? NcCount
 			{
 				get
 				{
@@ -295,6 +277,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				set	
 				{
 					ncCount = value;
+				}
+			}
+
+			public int? NetworkInterfaceCount
+			{
+				get
+				{
+					return networkInterfaceCount;
+				}
+				set	
+				{
+					networkInterfaceCount = value;
 				}
 			}
 
@@ -310,6 +304,54 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				}
 			}
 
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public long? PrivateIpCount
+			{
+				get
+				{
+					return privateIpCount;
+				}
+				set	
+				{
+					privateIpCount = value;
+				}
+			}
+
+			public int? AvailableIps
+			{
+				get
+				{
+					return availableIps;
+				}
+				set	
+				{
+					availableIps = value;
+				}
+			}
+
+			public List<GetSubnet_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
 			public GetSubnet_VpdBaseInfo VpdBaseInfo
 			{
 				get
@@ -322,16 +364,48 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				}
 			}
 
+			public class GetSubnet_Tag
+			{
+
+				private string tagKey;
+
+				private string tagValue;
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
+					}
+				}
+
+				public string TagValue
+				{
+					get
+					{
+						return tagValue;
+					}
+					set	
+					{
+						tagValue = value;
+					}
+				}
+			}
+
 			public class GetSubnet_VpdBaseInfo
 			{
 
 				private string vpdId;
 
-				private string name;
+				private string vpdName;
 
 				private string cidr;
 
-				private string gmtCreate;
+				private string createTime;
 
 				public string VpdId
 				{
@@ -345,15 +419,15 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					}
 				}
 
-				public string Name
+				public string VpdName
 				{
 					get
 					{
-						return name;
+						return vpdName;
 					}
 					set	
 					{
-						name = value;
+						vpdName = value;
 					}
 				}
 
@@ -369,15 +443,15 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					}
 				}
 
-				public string GmtCreate
+				public string CreateTime
 				{
 					get
 					{
-						return gmtCreate;
+						return createTime;
 					}
 					set	
 					{
-						gmtCreate = value;
+						createTime = value;
 					}
 				}
 			}

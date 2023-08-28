@@ -36,29 +36,41 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			getSubnetResponse.RequestId = _ctx.StringValue("GetSubnet.RequestId");
 
 			GetSubnetResponse.GetSubnet_Content content = new GetSubnetResponse.GetSubnet_Content();
-			content.Id = _ctx.LongValue("GetSubnet.Content.Id");
-			content.GmtCreate = _ctx.StringValue("GetSubnet.Content.GmtCreate");
+			content.CreateTime = _ctx.StringValue("GetSubnet.Content.CreateTime");
 			content.GmtModified = _ctx.StringValue("GetSubnet.Content.GmtModified");
 			content.TenantId = _ctx.StringValue("GetSubnet.Content.TenantId");
 			content.RegionId = _ctx.StringValue("GetSubnet.Content.RegionId");
 			content.ZoneId = _ctx.StringValue("GetSubnet.Content.ZoneId");
 			content.SubnetId = _ctx.StringValue("GetSubnet.Content.SubnetId");
-			content.Name = _ctx.StringValue("GetSubnet.Content.Name");
+			content.SubnetName = _ctx.StringValue("GetSubnet.Content.SubnetName");
 			content.Cidr = _ctx.StringValue("GetSubnet.Content.Cidr");
-			content.Description = _ctx.StringValue("GetSubnet.Content.Description");
 			content.VpdId = _ctx.StringValue("GetSubnet.Content.VpdId");
 			content.Type = _ctx.StringValue("GetSubnet.Content.Type");
 			content.Status = _ctx.StringValue("GetSubnet.Content.Status");
 			content.Message = _ctx.StringValue("GetSubnet.Content.Message");
-			content.NcCount = _ctx.LongValue("GetSubnet.Content.NcCount");
+			content.NcCount = _ctx.IntegerValue("GetSubnet.Content.NcCount");
+			content.NetworkInterfaceCount = _ctx.IntegerValue("GetSubnet.Content.NetworkInterfaceCount");
 			content.LbCount = _ctx.LongValue("GetSubnet.Content.LbCount");
+			content.ResourceGroupId = _ctx.StringValue("GetSubnet.Content.ResourceGroupId");
+			content.PrivateIpCount = _ctx.LongValue("GetSubnet.Content.PrivateIpCount");
+			content.AvailableIps = _ctx.IntegerValue("GetSubnet.Content.AvailableIps");
 
 			GetSubnetResponse.GetSubnet_Content.GetSubnet_VpdBaseInfo vpdBaseInfo = new GetSubnetResponse.GetSubnet_Content.GetSubnet_VpdBaseInfo();
 			vpdBaseInfo.VpdId = _ctx.StringValue("GetSubnet.Content.VpdBaseInfo.VpdId");
-			vpdBaseInfo.Name = _ctx.StringValue("GetSubnet.Content.VpdBaseInfo.Name");
+			vpdBaseInfo.VpdName = _ctx.StringValue("GetSubnet.Content.VpdBaseInfo.VpdName");
 			vpdBaseInfo.Cidr = _ctx.StringValue("GetSubnet.Content.VpdBaseInfo.Cidr");
-			vpdBaseInfo.GmtCreate = _ctx.StringValue("GetSubnet.Content.VpdBaseInfo.GmtCreate");
+			vpdBaseInfo.CreateTime = _ctx.StringValue("GetSubnet.Content.VpdBaseInfo.CreateTime");
 			content.VpdBaseInfo = vpdBaseInfo;
+
+			List<GetSubnetResponse.GetSubnet_Content.GetSubnet_Tag> content_tags = new List<GetSubnetResponse.GetSubnet_Content.GetSubnet_Tag>();
+			for (int i = 0; i < _ctx.Length("GetSubnet.Content.Tags.Length"); i++) {
+				GetSubnetResponse.GetSubnet_Content.GetSubnet_Tag tag = new GetSubnetResponse.GetSubnet_Content.GetSubnet_Tag();
+				tag.TagKey = _ctx.StringValue("GetSubnet.Content.Tags["+ i +"].TagKey");
+				tag.TagValue = _ctx.StringValue("GetSubnet.Content.Tags["+ i +"].TagValue");
+
+				content_tags.Add(tag);
+			}
+			content.Tags = content_tags;
 			getSubnetResponse.Content = content;
         
 			return getSubnetResponse;

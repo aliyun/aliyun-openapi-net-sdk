@@ -35,6 +35,21 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			Method = MethodType.POST;
         }
 
+		private string resourceGroupId;
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(BodyParameters, "ResourceGroupId", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
