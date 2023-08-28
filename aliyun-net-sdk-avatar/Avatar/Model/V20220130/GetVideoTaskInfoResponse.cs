@@ -195,6 +195,8 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 
 				private string alphaUrl;
 
+				private string previewPic;
+
 				[JsonProperty(PropertyName = "VideoUrl")]
 				public string VideoUrl
 				{
@@ -283,6 +285,19 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 					set	
 					{
 						alphaUrl = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "PreviewPic")]
+				public string PreviewPic
+				{
+					get
+					{
+						return previewPic;
+					}
+					set	
+					{
+						previewPic = value;
 					}
 				}
 			}

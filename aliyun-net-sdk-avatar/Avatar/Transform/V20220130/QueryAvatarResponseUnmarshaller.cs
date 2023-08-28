@@ -41,10 +41,12 @@ namespace Aliyun.Acs.avatar.Transform.V20220130
 			data.Description = _ctx.StringValue("QueryAvatar.Data.Description");
 			data.Portrait = _ctx.StringValue("QueryAvatar.Data.Portrait");
 			data.Image = _ctx.StringValue("QueryAvatar.Data.Image");
+			data.AllLocateImages = _ctx.StringValue("QueryAvatar.Data.AllLocateImages");
 			data.ModelType = _ctx.StringValue("QueryAvatar.Data.ModelType");
 			data.AvatarType = _ctx.StringValue("QueryAvatar.Data.AvatarType");
 			data.MakeStatus = _ctx.StringValue("QueryAvatar.Data.MakeStatus");
 			data.MakeFailReason = _ctx.StringValue("QueryAvatar.Data.MakeFailReason");
+			data.MakeStage = _ctx.StringValue("QueryAvatar.Data.MakeStage");
 
 			QueryAvatarResponse.QueryAvatar_Data.QueryAvatar_SupportedResolutions supportedResolutions = new QueryAvatarResponse.QueryAvatar_Data.QueryAvatar_SupportedResolutions();
 

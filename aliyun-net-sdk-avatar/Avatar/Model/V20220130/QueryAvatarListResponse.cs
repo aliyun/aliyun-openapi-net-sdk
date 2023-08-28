@@ -199,6 +199,8 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 
 				private string makeFailReason;
 
+				private string makeStage;
+
 				private QueryAvatarList_SupportedResolutions supportedResolutions;
 
 				[JsonProperty(PropertyName = "Code")]
@@ -315,6 +317,19 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 					set	
 					{
 						makeFailReason = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "MakeStage")]
+				public string MakeStage
+				{
+					get
+					{
+						return makeStage;
+					}
+					set	
+					{
+						makeStage = value;
 					}
 				}
 

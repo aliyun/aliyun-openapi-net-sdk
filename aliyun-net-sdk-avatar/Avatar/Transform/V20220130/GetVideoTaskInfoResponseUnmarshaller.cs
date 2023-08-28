@@ -50,6 +50,7 @@ namespace Aliyun.Acs.avatar.Transform.V20220130
 			taskResult.FailCode = _ctx.StringValue("GetVideoTaskInfo.Data.TaskResult.FailCode");
 			taskResult.VideoDuration = _ctx.IntegerValue("GetVideoTaskInfo.Data.TaskResult.VideoDuration");
 			taskResult.AlphaUrl = _ctx.StringValue("GetVideoTaskInfo.Data.TaskResult.AlphaUrl");
+			taskResult.PreviewPic = _ctx.StringValue("GetVideoTaskInfo.Data.TaskResult.PreviewPic");
 			data.TaskResult = taskResult;
 			getVideoTaskInfoResponse.Data = data;
         

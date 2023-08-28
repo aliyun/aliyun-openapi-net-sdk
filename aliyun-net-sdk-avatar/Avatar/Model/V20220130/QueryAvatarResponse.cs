@@ -111,6 +111,8 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 
 			private string image;
 
+			private string allLocateImages;
+
 			private string modelType;
 
 			private string avatarType;
@@ -118,6 +120,8 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			private string makeStatus;
 
 			private string makeFailReason;
+
+			private string makeStage;
 
 			private QueryAvatar_SupportedResolutions supportedResolutions;
 
@@ -173,6 +177,19 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 				}
 			}
 
+			[JsonProperty(PropertyName = "AllLocateImages")]
+			public string AllLocateImages
+			{
+				get
+				{
+					return allLocateImages;
+				}
+				set	
+				{
+					allLocateImages = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "ModelType")]
 			public string ModelType
 			{
@@ -222,6 +239,19 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 				set	
 				{
 					makeFailReason = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MakeStage")]
+			public string MakeStage
+			{
+				get
+				{
+					return makeStage;
+				}
+				set	
+				{
+					makeStage = value;
 				}
 			}
 
