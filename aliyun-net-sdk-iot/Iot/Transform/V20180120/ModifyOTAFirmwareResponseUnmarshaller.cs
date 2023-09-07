@@ -24,19 +24,19 @@ using Aliyun.Acs.Iot.Model.V20180120;
 
 namespace Aliyun.Acs.Iot.Transform.V20180120
 {
-    public class BatchAddDataForApiSourceResponseUnmarshaller
+    public class ModifyOTAFirmwareResponseUnmarshaller
     {
-        public static BatchAddDataForApiSourceResponse Unmarshall(UnmarshallerContext _ctx)
+        public static ModifyOTAFirmwareResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			BatchAddDataForApiSourceResponse batchAddDataForApiSourceResponse = new BatchAddDataForApiSourceResponse();
+			ModifyOTAFirmwareResponse modifyOTAFirmwareResponse = new ModifyOTAFirmwareResponse();
 
-			batchAddDataForApiSourceResponse.HttpResponse = _ctx.HttpResponse;
-			batchAddDataForApiSourceResponse.RequestId = _ctx.StringValue("BatchAddDataForApiSource.RequestId");
-			batchAddDataForApiSourceResponse.Success = _ctx.BooleanValue("BatchAddDataForApiSource.Success");
-			batchAddDataForApiSourceResponse.Code = _ctx.StringValue("BatchAddDataForApiSource.Code");
-			batchAddDataForApiSourceResponse.ErrorMessage = _ctx.StringValue("BatchAddDataForApiSource.ErrorMessage");
+			modifyOTAFirmwareResponse.HttpResponse = _ctx.HttpResponse;
+			modifyOTAFirmwareResponse.RequestId = _ctx.StringValue("ModifyOTAFirmware.RequestId");
+			modifyOTAFirmwareResponse.Success = _ctx.BooleanValue("ModifyOTAFirmware.Success");
+			modifyOTAFirmwareResponse.Code = _ctx.StringValue("ModifyOTAFirmware.Code");
+			modifyOTAFirmwareResponse.ErrorMessage = _ctx.StringValue("ModifyOTAFirmware.ErrorMessage");
         
-			return batchAddDataForApiSourceResponse;
+			return modifyOTAFirmwareResponse;
         }
     }
 }

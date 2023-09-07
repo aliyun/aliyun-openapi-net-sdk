@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class BatchAddDataForApiSourceResponse : AcsResponse
+	public class AddDeviceToSharePromotionResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -32,6 +32,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private string code;
 
 		private string errorMessage;
+
+		private AddDeviceToSharePromotion_Data data;
 
 		public string RequestId
 		{
@@ -78,6 +80,96 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				errorMessage = value;
+			}
+		}
+
+		public AddDeviceToSharePromotion_Data Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+
+		public class AddDeviceToSharePromotion_Data
+		{
+
+			private List<AddDeviceToSharePromotion_Item> failDeviceSimpleInfoList;
+
+			public List<AddDeviceToSharePromotion_Item> FailDeviceSimpleInfoList
+			{
+				get
+				{
+					return failDeviceSimpleInfoList;
+				}
+				set	
+				{
+					failDeviceSimpleInfoList = value;
+				}
+			}
+
+			public class AddDeviceToSharePromotion_Item
+			{
+
+				private string productKey;
+
+				private string deviceName;
+
+				private int? failCode;
+
+				private string failReason;
+
+				public string ProductKey
+				{
+					get
+					{
+						return productKey;
+					}
+					set	
+					{
+						productKey = value;
+					}
+				}
+
+				public string DeviceName
+				{
+					get
+					{
+						return deviceName;
+					}
+					set	
+					{
+						deviceName = value;
+					}
+				}
+
+				public int? FailCode
+				{
+					get
+					{
+						return failCode;
+					}
+					set	
+					{
+						failCode = value;
+					}
+				}
+
+				public string FailReason
+				{
+					get
+					{
+						return failReason;
+					}
+					set	
+					{
+						failReason = value;
+					}
+				}
 			}
 		}
 	}

@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string iotId;
 
+		private int? qos;
+
 		private string iotInstanceId;
 
 		private string productKey;
@@ -61,6 +63,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotId = value;
 				DictionaryUtil.Add(QueryParameters, "IotId", value);
+			}
+		}
+
+		public int? Qos
+		{
+			get
+			{
+				return qos;
+			}
+			set	
+			{
+				qos = value;
+				DictionaryUtil.Add(QueryParameters, "Qos", value.ToString());
 			}
 		}
 

@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class BatchAddDataForApiSourceResponse : AcsResponse
+	public class QuerySharePromotionActivityAuditResultResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -32,6 +32,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private string code;
 
 		private string errorMessage;
+
+		private QuerySharePromotionActivityAuditResult_Data data;
 
 		public string RequestId
 		{
@@ -78,6 +80,36 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				errorMessage = value;
+			}
+		}
+
+		public QuerySharePromotionActivityAuditResult_Data Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+
+		public class QuerySharePromotionActivityAuditResult_Data
+		{
+
+			private int? auditResult;
+
+			public int? AuditResult
+			{
+				get
+				{
+					return auditResult;
+				}
+				set	
+				{
+					auditResult = value;
+				}
 			}
 		}
 	}

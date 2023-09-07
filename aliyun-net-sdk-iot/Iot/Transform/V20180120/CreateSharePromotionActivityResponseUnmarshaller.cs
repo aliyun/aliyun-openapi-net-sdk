@@ -24,19 +24,20 @@ using Aliyun.Acs.Iot.Model.V20180120;
 
 namespace Aliyun.Acs.Iot.Transform.V20180120
 {
-    public class BatchAddDataForApiSourceResponseUnmarshaller
+    public class CreateSharePromotionActivityResponseUnmarshaller
     {
-        public static BatchAddDataForApiSourceResponse Unmarshall(UnmarshallerContext _ctx)
+        public static CreateSharePromotionActivityResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			BatchAddDataForApiSourceResponse batchAddDataForApiSourceResponse = new BatchAddDataForApiSourceResponse();
+			CreateSharePromotionActivityResponse createSharePromotionActivityResponse = new CreateSharePromotionActivityResponse();
 
-			batchAddDataForApiSourceResponse.HttpResponse = _ctx.HttpResponse;
-			batchAddDataForApiSourceResponse.RequestId = _ctx.StringValue("BatchAddDataForApiSource.RequestId");
-			batchAddDataForApiSourceResponse.Success = _ctx.BooleanValue("BatchAddDataForApiSource.Success");
-			batchAddDataForApiSourceResponse.Code = _ctx.StringValue("BatchAddDataForApiSource.Code");
-			batchAddDataForApiSourceResponse.ErrorMessage = _ctx.StringValue("BatchAddDataForApiSource.ErrorMessage");
+			createSharePromotionActivityResponse.HttpResponse = _ctx.HttpResponse;
+			createSharePromotionActivityResponse.RequestId = _ctx.StringValue("CreateSharePromotionActivity.RequestId");
+			createSharePromotionActivityResponse.Success = _ctx.BooleanValue("CreateSharePromotionActivity.Success");
+			createSharePromotionActivityResponse.Code = _ctx.StringValue("CreateSharePromotionActivity.Code");
+			createSharePromotionActivityResponse.ErrorMessage = _ctx.StringValue("CreateSharePromotionActivity.ErrorMessage");
+			createSharePromotionActivityResponse.Data = _ctx.StringValue("CreateSharePromotionActivity.Data");
         
-			return batchAddDataForApiSourceResponse;
+			return createSharePromotionActivityResponse;
         }
     }
 }

@@ -55,6 +55,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string responseTopic;
 
+		private int? topicAlias;
+
 		private string topicFullName;
 
 		private int? payloadFormatIndicator;
@@ -160,6 +162,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				responseTopic = value;
 				DictionaryUtil.Add(QueryParameters, "ResponseTopic", value);
+			}
+		}
+
+		public int? TopicAlias
+		{
+			get
+			{
+				return topicAlias;
+			}
+			set	
+			{
+				topicAlias = value;
+				DictionaryUtil.Add(QueryParameters, "TopicAlias", value.ToString());
 			}
 		}
 

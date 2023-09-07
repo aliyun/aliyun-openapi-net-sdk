@@ -90,7 +90,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				requestBase64Byte = value;
-				DictionaryUtil.Add(QueryParameters, "RequestBase64Byte", value);
+				DictionaryUtil.Add(BodyParameters, "RequestBase64Byte", value);
 			}
 		}
 

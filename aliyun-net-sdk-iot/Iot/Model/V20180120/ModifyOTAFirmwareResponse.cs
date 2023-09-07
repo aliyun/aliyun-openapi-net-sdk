@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class BatchAddDataForApiSourceResponse : AcsResponse
+	public class ModifyOTAFirmwareResponse : AcsResponse
 	{
 
 		private string requestId;

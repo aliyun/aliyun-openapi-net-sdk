@@ -28,10 +28,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class InvokeThingServiceRequest : RpcAcsRequest<InvokeThingServiceResponse>
+    public class CreateSharePromotionActivityRequest : RpcAcsRequest<CreateSharePromotionActivityResponse>
     {
-        public InvokeThingServiceRequest()
-            : base("Iot", "2018-01-20", "InvokeThingService")
+        public CreateSharePromotionActivityRequest()
+            : base("Iot", "2018-01-20", "CreateSharePromotionActivity")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,43 +41,24 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string iotId;
-
-		private int? qos;
+		private long? startTime;
 
 		private string iotInstanceId;
 
-		private string identifier;
+		private long? endTime;
 
-		private string productKey;
+		private string sharePromotionActivityName;
 
-		private string args;
-
-		private string deviceName;
-
-		public string IotId
+		public long? StartTime
 		{
 			get
 			{
-				return iotId;
+				return startTime;
 			}
 			set	
 			{
-				iotId = value;
-				DictionaryUtil.Add(QueryParameters, "IotId", value);
-			}
-		}
-
-		public int? Qos
-		{
-			get
-			{
-				return qos;
-			}
-			set	
-			{
-				qos = value;
-				DictionaryUtil.Add(QueryParameters, "Qos", value.ToString());
+				startTime = value;
+				DictionaryUtil.Add(BodyParameters, "StartTime", value.ToString());
 			}
 		}
 
@@ -90,65 +71,39 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+				DictionaryUtil.Add(BodyParameters, "IotInstanceId", value);
 			}
 		}
 
-		public string Identifier
+		public long? EndTime
 		{
 			get
 			{
-				return identifier;
+				return endTime;
 			}
 			set	
 			{
-				identifier = value;
-				DictionaryUtil.Add(QueryParameters, "Identifier", value);
+				endTime = value;
+				DictionaryUtil.Add(BodyParameters, "EndTime", value.ToString());
 			}
 		}
 
-		public string ProductKey
+		public string SharePromotionActivityName
 		{
 			get
 			{
-				return productKey;
+				return sharePromotionActivityName;
 			}
 			set	
 			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+				sharePromotionActivityName = value;
+				DictionaryUtil.Add(BodyParameters, "SharePromotionActivityName", value);
 			}
 		}
 
-		public string Args
-		{
-			get
-			{
-				return args;
-			}
-			set	
-			{
-				args = value;
-				DictionaryUtil.Add(QueryParameters, "Args", value);
-			}
-		}
-
-		public string DeviceName
-		{
-			get
-			{
-				return deviceName;
-			}
-			set	
-			{
-				deviceName = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
-			}
-		}
-
-        public override InvokeThingServiceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateSharePromotionActivityResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return InvokeThingServiceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateSharePromotionActivityResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

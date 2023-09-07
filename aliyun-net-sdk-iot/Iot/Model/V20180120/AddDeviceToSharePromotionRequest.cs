@@ -28,10 +28,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class InvokeThingServiceRequest : RpcAcsRequest<InvokeThingServiceResponse>
+    public class AddDeviceToSharePromotionRequest : RpcAcsRequest<AddDeviceToSharePromotionResponse>
     {
-        public InvokeThingServiceRequest()
-            : base("Iot", "2018-01-20", "InvokeThingService")
+        public AddDeviceToSharePromotionRequest()
+            : base("Iot", "2018-01-20", "AddDeviceToSharePromotion")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,43 +41,42 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string iotId;
+		private string sharePromotionActivityId;
 
-		private int? qos;
+		private List<DeviceSimpleInfoList> deviceSimpleInfoLists = new List<DeviceSimpleInfoList>(){ };
 
 		private string iotInstanceId;
 
-		private string identifier;
+		private string shareTaskCode;
 
-		private string productKey;
-
-		private string args;
-
-		private string deviceName;
-
-		public string IotId
+		public string SharePromotionActivityId
 		{
 			get
 			{
-				return iotId;
+				return sharePromotionActivityId;
 			}
 			set	
 			{
-				iotId = value;
-				DictionaryUtil.Add(QueryParameters, "IotId", value);
+				sharePromotionActivityId = value;
+				DictionaryUtil.Add(BodyParameters, "SharePromotionActivityId", value);
 			}
 		}
 
-		public int? Qos
+		public List<DeviceSimpleInfoList> DeviceSimpleInfoLists
 		{
 			get
 			{
-				return qos;
+				return deviceSimpleInfoLists;
 			}
-			set	
+
+			set
 			{
-				qos = value;
-				DictionaryUtil.Add(QueryParameters, "Qos", value.ToString());
+				deviceSimpleInfoLists = value;
+				for (int i = 0; i < deviceSimpleInfoLists.Count; i++)
+				{
+					DictionaryUtil.Add(BodyParameters,"DeviceSimpleInfoList." + (i + 1) + ".DeviceName", deviceSimpleInfoLists[i].DeviceName);
+					DictionaryUtil.Add(BodyParameters,"DeviceSimpleInfoList." + (i + 1) + ".ProductKey", deviceSimpleInfoLists[i].ProductKey);
+				}
 			}
 		}
 
@@ -90,65 +89,58 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+				DictionaryUtil.Add(BodyParameters, "IotInstanceId", value);
 			}
 		}
 
-		public string Identifier
+		public string ShareTaskCode
 		{
 			get
 			{
-				return identifier;
+				return shareTaskCode;
 			}
 			set	
 			{
-				identifier = value;
-				DictionaryUtil.Add(QueryParameters, "Identifier", value);
+				shareTaskCode = value;
+				DictionaryUtil.Add(BodyParameters, "ShareTaskCode", value);
 			}
 		}
 
-		public string ProductKey
+		public class DeviceSimpleInfoList
 		{
-			get
+
+			private string deviceName;
+
+			private string productKey;
+
+			public string DeviceName
 			{
-				return productKey;
+				get
+				{
+					return deviceName;
+				}
+				set	
+				{
+					deviceName = value;
+				}
 			}
-			set	
+
+			public string ProductKey
 			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+				get
+				{
+					return productKey;
+				}
+				set	
+				{
+					productKey = value;
+				}
 			}
 		}
 
-		public string Args
-		{
-			get
-			{
-				return args;
-			}
-			set	
-			{
-				args = value;
-				DictionaryUtil.Add(QueryParameters, "Args", value);
-			}
-		}
-
-		public string DeviceName
-		{
-			get
-			{
-				return deviceName;
-			}
-			set	
-			{
-				deviceName = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
-			}
-		}
-
-        public override InvokeThingServiceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override AddDeviceToSharePromotionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return InvokeThingServiceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AddDeviceToSharePromotionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

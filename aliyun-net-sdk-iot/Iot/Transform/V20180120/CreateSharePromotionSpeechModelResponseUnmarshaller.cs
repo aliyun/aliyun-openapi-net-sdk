@@ -24,19 +24,19 @@ using Aliyun.Acs.Iot.Model.V20180120;
 
 namespace Aliyun.Acs.Iot.Transform.V20180120
 {
-    public class BatchAddDataForApiSourceResponseUnmarshaller
+    public class CreateSharePromotionSpeechModelResponseUnmarshaller
     {
-        public static BatchAddDataForApiSourceResponse Unmarshall(UnmarshallerContext _ctx)
+        public static CreateSharePromotionSpeechModelResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			BatchAddDataForApiSourceResponse batchAddDataForApiSourceResponse = new BatchAddDataForApiSourceResponse();
+			CreateSharePromotionSpeechModelResponse createSharePromotionSpeechModelResponse = new CreateSharePromotionSpeechModelResponse();
 
-			batchAddDataForApiSourceResponse.HttpResponse = _ctx.HttpResponse;
-			batchAddDataForApiSourceResponse.RequestId = _ctx.StringValue("BatchAddDataForApiSource.RequestId");
-			batchAddDataForApiSourceResponse.Success = _ctx.BooleanValue("BatchAddDataForApiSource.Success");
-			batchAddDataForApiSourceResponse.Code = _ctx.StringValue("BatchAddDataForApiSource.Code");
-			batchAddDataForApiSourceResponse.ErrorMessage = _ctx.StringValue("BatchAddDataForApiSource.ErrorMessage");
+			createSharePromotionSpeechModelResponse.HttpResponse = _ctx.HttpResponse;
+			createSharePromotionSpeechModelResponse.RequestId = _ctx.StringValue("CreateSharePromotionSpeechModel.RequestId");
+			createSharePromotionSpeechModelResponse.Success = _ctx.BooleanValue("CreateSharePromotionSpeechModel.Success");
+			createSharePromotionSpeechModelResponse.Code = _ctx.StringValue("CreateSharePromotionSpeechModel.Code");
+			createSharePromotionSpeechModelResponse.ErrorMessage = _ctx.StringValue("CreateSharePromotionSpeechModel.ErrorMessage");
         
-			return batchAddDataForApiSourceResponse;
+			return createSharePromotionSpeechModelResponse;
         }
     }
 }

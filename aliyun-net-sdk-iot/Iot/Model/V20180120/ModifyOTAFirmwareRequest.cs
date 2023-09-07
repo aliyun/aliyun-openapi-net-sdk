@@ -28,10 +28,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class InvokeThingServiceRequest : RpcAcsRequest<InvokeThingServiceResponse>
+    public class ModifyOTAFirmwareRequest : RpcAcsRequest<ModifyOTAFirmwareResponse>
     {
-        public InvokeThingServiceRequest()
-            : base("Iot", "2018-01-20", "InvokeThingService")
+        public ModifyOTAFirmwareRequest()
+            : base("Iot", "2018-01-20", "ModifyOTAFirmware")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,43 +41,41 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string iotId;
+		private string firmwareUdi;
 
-		private int? qos;
+		private string firmwareDesc;
 
 		private string iotInstanceId;
 
-		private string identifier;
+		private string firmwareName;
+
+		private string firmwareId;
 
 		private string productKey;
 
-		private string args;
-
-		private string deviceName;
-
-		public string IotId
+		public string FirmwareUdi
 		{
 			get
 			{
-				return iotId;
+				return firmwareUdi;
 			}
 			set	
 			{
-				iotId = value;
-				DictionaryUtil.Add(QueryParameters, "IotId", value);
+				firmwareUdi = value;
+				DictionaryUtil.Add(QueryParameters, "FirmwareUdi", value);
 			}
 		}
 
-		public int? Qos
+		public string FirmwareDesc
 		{
 			get
 			{
-				return qos;
+				return firmwareDesc;
 			}
 			set	
 			{
-				qos = value;
-				DictionaryUtil.Add(QueryParameters, "Qos", value.ToString());
+				firmwareDesc = value;
+				DictionaryUtil.Add(QueryParameters, "FirmwareDesc", value);
 			}
 		}
 
@@ -94,16 +92,29 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string Identifier
+		public string FirmwareName
 		{
 			get
 			{
-				return identifier;
+				return firmwareName;
 			}
 			set	
 			{
-				identifier = value;
-				DictionaryUtil.Add(QueryParameters, "Identifier", value);
+				firmwareName = value;
+				DictionaryUtil.Add(QueryParameters, "FirmwareName", value);
+			}
+		}
+
+		public string FirmwareId
+		{
+			get
+			{
+				return firmwareId;
+			}
+			set	
+			{
+				firmwareId = value;
+				DictionaryUtil.Add(QueryParameters, "FirmwareId", value);
 			}
 		}
 
@@ -120,35 +131,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string Args
-		{
-			get
-			{
-				return args;
-			}
-			set	
-			{
-				args = value;
-				DictionaryUtil.Add(QueryParameters, "Args", value);
-			}
-		}
-
-		public string DeviceName
-		{
-			get
-			{
-				return deviceName;
-			}
-			set	
-			{
-				deviceName = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
-			}
-		}
-
-        public override InvokeThingServiceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyOTAFirmwareResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return InvokeThingServiceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyOTAFirmwareResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
