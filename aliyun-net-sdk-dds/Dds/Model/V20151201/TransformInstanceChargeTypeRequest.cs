@@ -59,6 +59,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string chargeType;
 
+		private string pricingCycle;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -212,6 +214,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				chargeType = value;
 				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
+			}
+		}
+
+		public string PricingCycle
+		{
+			get
+			{
+				return pricingCycle;
+			}
+			set	
+			{
+				pricingCycle = value;
+				DictionaryUtil.Add(QueryParameters, "PricingCycle", value);
 			}
 		}
 

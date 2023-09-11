@@ -75,6 +75,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string vSwitchId;
 
+		private long? provisionedIops;
+
 		private string autoRenew;
 
 		private string zoneId;
@@ -376,6 +378,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				vSwitchId = value;
 				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+			}
+		}
+
+		public long? ProvisionedIops
+		{
+			get
+			{
+				return provisionedIops;
+			}
+			set	
+			{
+				provisionedIops = value;
+				DictionaryUtil.Add(QueryParameters, "ProvisionedIops", value.ToString());
 			}
 		}
 

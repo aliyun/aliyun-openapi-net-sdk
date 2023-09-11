@@ -71,6 +71,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private List<string> mongoss = new List<string>(){ };
 
+		private long? provisionedIops;
+
 		private string autoRenew;
 
 		private string zoneId;
@@ -364,6 +366,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 						DictionaryUtil.Add(QueryParameters,"Mongos." + (depth1 + 1), mongoss[depth1]);
 					}
 				}
+			}
+		}
+
+		public long? ProvisionedIops
+		{
+			get
+			{
+				return provisionedIops;
+			}
+			set	
+			{
+				provisionedIops = value;
+				DictionaryUtil.Add(QueryParameters, "ProvisionedIops", value.ToString());
 			}
 		}
 

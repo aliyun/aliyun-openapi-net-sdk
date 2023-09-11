@@ -146,6 +146,10 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string syncPercent;
 
+			private bool? burstingEnabled;
+
+			private long? provisionedIops;
+
 			private List<DescribeDBInstanceAttribute_ReplicaSet> replicaSets;
 
 			private List<DescribeDBInstanceAttribute_Tag> tags;
@@ -695,6 +699,30 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					syncPercent = value;
+				}
+			}
+
+			public bool? BurstingEnabled
+			{
+				get
+				{
+					return burstingEnabled;
+				}
+				set	
+				{
+					burstingEnabled = value;
+				}
+			}
+
+			public long? ProvisionedIops
+			{
+				get
+				{
+					return provisionedIops;
+				}
+				set	
+				{
+					provisionedIops = value;
 				}
 			}
 

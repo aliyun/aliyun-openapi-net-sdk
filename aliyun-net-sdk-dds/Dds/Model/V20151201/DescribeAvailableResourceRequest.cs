@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
+		private string storageType;
+
 		private string resourceGroupId;
 
 		private string securityToken;
@@ -63,6 +65,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string StorageType
+		{
+			get
+			{
+				return storageType;
+			}
+			set	
+			{
+				storageType = value;
+				DictionaryUtil.Add(QueryParameters, "StorageType", value);
 			}
 		}
 
