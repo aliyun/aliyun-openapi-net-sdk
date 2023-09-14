@@ -44,6 +44,8 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 
 		private List<string> mergeInfoss = new List<string>(){ };
 
+		private bool? enhance;
+
 		private string templateId;
 
 		private bool? addWatermark;
@@ -80,6 +82,19 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 						DictionaryUtil.Add(BodyParameters,"MergeInfos." + (depth1 + 1), mergeInfoss[depth1]);
 					}
 				}
+			}
+		}
+
+		public bool? Enhance
+		{
+			get
+			{
+				return enhance;
+			}
+			set	
+			{
+				enhance = value;
+				DictionaryUtil.Add(BodyParameters, "Enhance", value.ToString());
 			}
 		}
 
