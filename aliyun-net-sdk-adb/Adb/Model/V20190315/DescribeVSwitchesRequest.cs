@@ -27,10 +27,10 @@ using Aliyun.Acs.adb.Transform.V20190315;
 
 namespace Aliyun.Acs.adb.Model.V20190315
 {
-    public class DescribeRegionsRequest : RpcAcsRequest<DescribeRegionsResponse>
+    public class DescribeVSwitchesRequest : RpcAcsRequest<DescribeVSwitchesResponse>
     {
-        public DescribeRegionsRequest()
-            : base("adb", "2019-03-15", "DescribeRegions", "ads", "openAPI")
+        public DescribeVSwitchesRequest()
+            : base("adb", "2019-03-15", "DescribeVSwitches", "ads", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,7 +40,11 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			Method = MethodType.POST;
         }
 
+		private string vswId;
+
 		private long? resourceOwnerId;
+
+		private string securityToken;
 
 		private string resourceOwnerAccount;
 
@@ -48,7 +52,22 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private long? ownerId;
 
-		private string acceptLanguage;
+		private string vpcId;
+
+		private string zoneId;
+
+		public string VswId
+		{
+			get
+			{
+				return vswId;
+			}
+			set	
+			{
+				vswId = value;
+				DictionaryUtil.Add(QueryParameters, "VswId", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -60,6 +79,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -102,22 +134,40 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public string AcceptLanguage
+		public string VpcId
 		{
 			get
 			{
-				return acceptLanguage;
+				return vpcId;
 			}
 			set	
 			{
-				acceptLanguage = value;
-				DictionaryUtil.Add(QueryParameters, "AcceptLanguage", value);
+				vpcId = value;
+				DictionaryUtil.Add(QueryParameters, "VpcId", value);
 			}
 		}
 
-        public override DescribeRegionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeVSwitchesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeRegionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeVSwitchesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

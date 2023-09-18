@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.adb;
 using Aliyun.Acs.adb.Transform;
 using Aliyun.Acs.adb.Transform.V20190315;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.adb.Model.V20190315
     public class KillProcessRequest : RpcAcsRequest<KillProcessResponse>
     {
         public KillProcessRequest()
-            : base("adb", "2019-03-15", "KillProcess")
+            : base("adb", "2019-03-15", "KillProcess", "ads", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
