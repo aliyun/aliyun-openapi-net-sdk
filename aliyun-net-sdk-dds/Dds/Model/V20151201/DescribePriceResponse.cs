@@ -240,6 +240,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string currency;
 
+			private bool? showDiscountInfo;
+
 			private List<DescribePrice_Coupon> coupons;
 
 			private List<string> ruleIds1;
@@ -289,6 +291,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					currency = value;
+				}
+			}
+
+			public bool? ShowDiscountInfo
+			{
+				get
+				{
+					return showDiscountInfo;
+				}
+				set	
+				{
+					showDiscountInfo = value;
 				}
 			}
 

@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
         public DescribeAccountsRequest()
             : base("Dds", "2015-12-01", "DescribeAccounts", "dds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
