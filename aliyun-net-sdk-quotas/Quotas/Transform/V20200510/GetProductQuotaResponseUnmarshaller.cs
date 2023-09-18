@@ -51,6 +51,7 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 			quota.EffectiveTime = _ctx.StringValue("GetProductQuota.Quota.EffectiveTime");
 			quota.ExpireTime = _ctx.StringValue("GetProductQuota.Quota.ExpireTime");
 			quota.QuotaCategory = _ctx.StringValue("GetProductQuota.Quota.QuotaCategory");
+			quota.ApplyReasonTips = _ctx.StringValue("GetProductQuota.Quota.ApplyReasonTips");
 
 			List<string> quota_applicableRange = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetProductQuota.Quota.ApplicableRange.Length"); i++) {

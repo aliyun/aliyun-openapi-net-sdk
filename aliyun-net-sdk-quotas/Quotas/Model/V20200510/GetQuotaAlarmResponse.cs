@@ -80,6 +80,8 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 
 			private string productCode;
 
+			private string webhook;
+
 			private List<string> notifyChannels;
 
 			public float? ThresholdPercent
@@ -223,6 +225,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					productCode = value;
+				}
+			}
+
+			public string Webhook
+			{
+				get
+				{
+					return webhook;
+				}
+				set	
+				{
+					webhook = value;
 				}
 			}
 
