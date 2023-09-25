@@ -41,6 +41,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
+		private int? qos;
+
 		private string iotInstanceId;
 
 		private string identifier;
@@ -50,6 +52,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private string args;
 
 		private List<string> deviceNames = new List<string>(){ };
+
+		public int? Qos
+		{
+			get
+			{
+				return qos;
+			}
+			set	
+			{
+				qos = value;
+				DictionaryUtil.Add(QueryParameters, "Qos", value.ToString());
+			}
+		}
 
 		public string IotInstanceId
 		{

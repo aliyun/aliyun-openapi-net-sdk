@@ -28,10 +28,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class SetDevicesPropertyRequest : RpcAcsRequest<SetDevicesPropertyResponse>
+    public class QueryShareProductNameByProductKeyRequest : RpcAcsRequest<QueryShareProductNameByProductKeyResponse>
     {
-        public SetDevicesPropertyRequest()
-            : base("Iot", "2018-01-20", "SetDevicesProperty")
+        public QueryShareProductNameByProductKeyRequest()
+            : base("Iot", "2018-01-20", "QueryShareProductNameByProductKey")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,39 +41,20 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private int? qos;
-
-		private string iotInstanceId;
+		private string shareTaskCode;
 
 		private string productKey;
 
-		private List<string> deviceNames = new List<string>(){ };
-
-		private string items;
-
-		public int? Qos
+		public string ShareTaskCode
 		{
 			get
 			{
-				return qos;
+				return shareTaskCode;
 			}
 			set	
 			{
-				qos = value;
-				DictionaryUtil.Add(QueryParameters, "Qos", value.ToString());
-			}
-		}
-
-		public string IotInstanceId
-		{
-			get
-			{
-				return iotInstanceId;
-			}
-			set	
-			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+				shareTaskCode = value;
+				DictionaryUtil.Add(BodyParameters, "ShareTaskCode", value);
 			}
 		}
 
@@ -86,43 +67,13 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+				DictionaryUtil.Add(BodyParameters, "ProductKey", value);
 			}
 		}
 
-		public List<string> DeviceNames
-		{
-			get
-			{
-				return deviceNames;
-			}
-
-			set
-			{
-				deviceNames = value;
-				for (int i = 0; i < deviceNames.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"DeviceName." + (i + 1) , deviceNames[i]);
-				}
-			}
-		}
-
-		public string Items
-		{
-			get
-			{
-				return items;
-			}
-			set	
-			{
-				items = value;
-				DictionaryUtil.Add(QueryParameters, "Items", value);
-			}
-		}
-
-        public override SetDevicesPropertyResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryShareProductNameByProductKeyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetDevicesPropertyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryShareProductNameByProductKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

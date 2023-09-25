@@ -28,10 +28,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class SetDevicesPropertyRequest : RpcAcsRequest<SetDevicesPropertyResponse>
+    public class ResetDeviceTimelineRequest : RpcAcsRequest<ResetDeviceTimelineResponse>
     {
-        public SetDevicesPropertyRequest()
-            : base("Iot", "2018-01-20", "SetDevicesProperty")
+        public ResetDeviceTimelineRequest()
+            : base("Iot", "2018-01-20", "ResetDeviceTimeline")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,28 +41,11 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private int? qos;
-
 		private string iotInstanceId;
 
 		private string productKey;
 
-		private List<string> deviceNames = new List<string>(){ };
-
-		private string items;
-
-		public int? Qos
-		{
-			get
-			{
-				return qos;
-			}
-			set	
-			{
-				qos = value;
-				DictionaryUtil.Add(QueryParameters, "Qos", value.ToString());
-			}
-		}
+		private string deviceName;
 
 		public string IotInstanceId
 		{
@@ -90,39 +73,22 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public List<string> DeviceNames
+		public string DeviceName
 		{
 			get
 			{
-				return deviceNames;
-			}
-
-			set
-			{
-				deviceNames = value;
-				for (int i = 0; i < deviceNames.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"DeviceName." + (i + 1) , deviceNames[i]);
-				}
-			}
-		}
-
-		public string Items
-		{
-			get
-			{
-				return items;
+				return deviceName;
 			}
 			set	
 			{
-				items = value;
-				DictionaryUtil.Add(QueryParameters, "Items", value);
+				deviceName = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
 			}
 		}
 
-        public override SetDevicesPropertyResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ResetDeviceTimelineResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetDevicesPropertyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ResetDeviceTimelineResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
