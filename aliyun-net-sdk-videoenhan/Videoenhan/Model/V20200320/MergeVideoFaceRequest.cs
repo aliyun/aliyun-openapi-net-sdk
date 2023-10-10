@@ -42,6 +42,8 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 
 		private string referenceURL;
 
+		private string watermarkType;
+
 		private bool? enhance;
 
 		private string videoURL;
@@ -58,6 +60,19 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			{
 				referenceURL = value;
 				DictionaryUtil.Add(BodyParameters, "ReferenceURL", value);
+			}
+		}
+
+		public string WatermarkType
+		{
+			get
+			{
+				return watermarkType;
+			}
+			set	
+			{
+				watermarkType = value;
+				DictionaryUtil.Add(BodyParameters, "WatermarkType", value);
 			}
 		}
 

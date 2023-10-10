@@ -44,6 +44,8 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 
 		private List<string> mergeInfoss = new List<string>(){ };
 
+		private string watermarkType;
+
 		private bool? enhance;
 
 		private string templateId;
@@ -82,6 +84,19 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 						DictionaryUtil.Add(BodyParameters,"MergeInfos." + (depth1 + 1), mergeInfoss[depth1]);
 					}
 				}
+			}
+		}
+
+		public string WatermarkType
+		{
+			get
+			{
+				return watermarkType;
+			}
+			set	
+			{
+				watermarkType = value;
+				DictionaryUtil.Add(BodyParameters, "WatermarkType", value);
 			}
 		}
 
