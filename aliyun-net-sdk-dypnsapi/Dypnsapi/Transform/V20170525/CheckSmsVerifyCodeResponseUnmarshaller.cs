@@ -24,23 +24,24 @@ using Aliyun.Acs.Dypnsapi.Model.V20170525;
 
 namespace Aliyun.Acs.Dypnsapi.Transform.V20170525
 {
-    public class GetAuthTokenResponseUnmarshaller
+    public class CheckSmsVerifyCodeResponseUnmarshaller
     {
-        public static GetAuthTokenResponse Unmarshall(UnmarshallerContext _ctx)
+        public static CheckSmsVerifyCodeResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			GetAuthTokenResponse getAuthTokenResponse = new GetAuthTokenResponse();
+			CheckSmsVerifyCodeResponse checkSmsVerifyCodeResponse = new CheckSmsVerifyCodeResponse();
 
-			getAuthTokenResponse.HttpResponse = _ctx.HttpResponse;
-			getAuthTokenResponse.Code = _ctx.StringValue("GetAuthToken.Code");
-			getAuthTokenResponse.Message = _ctx.StringValue("GetAuthToken.Message");
-			getAuthTokenResponse.RequestId = _ctx.StringValue("GetAuthToken.RequestId");
+			checkSmsVerifyCodeResponse.HttpResponse = _ctx.HttpResponse;
+			checkSmsVerifyCodeResponse.AccessDeniedDetail = _ctx.StringValue("CheckSmsVerifyCode.AccessDeniedDetail");
+			checkSmsVerifyCodeResponse.Message = _ctx.StringValue("CheckSmsVerifyCode.Message");
+			checkSmsVerifyCodeResponse.Code = _ctx.StringValue("CheckSmsVerifyCode.Code");
+			checkSmsVerifyCodeResponse.Success = _ctx.BooleanValue("CheckSmsVerifyCode.Success");
 
-			GetAuthTokenResponse.GetAuthToken_TokenInfo tokenInfo = new GetAuthTokenResponse.GetAuthToken_TokenInfo();
-			tokenInfo.AccessToken = _ctx.StringValue("GetAuthToken.TokenInfo.AccessToken");
-			tokenInfo.JwtToken = _ctx.StringValue("GetAuthToken.TokenInfo.JwtToken");
-			getAuthTokenResponse.TokenInfo = tokenInfo;
+			CheckSmsVerifyCodeResponse.CheckSmsVerifyCode_Model model = new CheckSmsVerifyCodeResponse.CheckSmsVerifyCode_Model();
+			model.OutId = _ctx.StringValue("CheckSmsVerifyCode.Model.OutId");
+			model.VerifyResult = _ctx.StringValue("CheckSmsVerifyCode.Model.VerifyResult");
+			checkSmsVerifyCodeResponse.Model = model;
         
-			return getAuthTokenResponse;
+			return checkSmsVerifyCodeResponse;
         }
     }
 }

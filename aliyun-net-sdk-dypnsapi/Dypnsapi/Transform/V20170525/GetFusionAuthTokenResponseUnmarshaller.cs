@@ -24,23 +24,20 @@ using Aliyun.Acs.Dypnsapi.Model.V20170525;
 
 namespace Aliyun.Acs.Dypnsapi.Transform.V20170525
 {
-    public class GetAuthTokenResponseUnmarshaller
+    public class GetFusionAuthTokenResponseUnmarshaller
     {
-        public static GetAuthTokenResponse Unmarshall(UnmarshallerContext _ctx)
+        public static GetFusionAuthTokenResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			GetAuthTokenResponse getAuthTokenResponse = new GetAuthTokenResponse();
+			GetFusionAuthTokenResponse getFusionAuthTokenResponse = new GetFusionAuthTokenResponse();
 
-			getAuthTokenResponse.HttpResponse = _ctx.HttpResponse;
-			getAuthTokenResponse.Code = _ctx.StringValue("GetAuthToken.Code");
-			getAuthTokenResponse.Message = _ctx.StringValue("GetAuthToken.Message");
-			getAuthTokenResponse.RequestId = _ctx.StringValue("GetAuthToken.RequestId");
-
-			GetAuthTokenResponse.GetAuthToken_TokenInfo tokenInfo = new GetAuthTokenResponse.GetAuthToken_TokenInfo();
-			tokenInfo.AccessToken = _ctx.StringValue("GetAuthToken.TokenInfo.AccessToken");
-			tokenInfo.JwtToken = _ctx.StringValue("GetAuthToken.TokenInfo.JwtToken");
-			getAuthTokenResponse.TokenInfo = tokenInfo;
+			getFusionAuthTokenResponse.HttpResponse = _ctx.HttpResponse;
+			getFusionAuthTokenResponse.Message = _ctx.StringValue("GetFusionAuthToken.Message");
+			getFusionAuthTokenResponse.RequestId = _ctx.StringValue("GetFusionAuthToken.RequestId");
+			getFusionAuthTokenResponse.Model = _ctx.StringValue("GetFusionAuthToken.Model");
+			getFusionAuthTokenResponse.Code = _ctx.StringValue("GetFusionAuthToken.Code");
+			getFusionAuthTokenResponse.Success = _ctx.BooleanValue("GetFusionAuthToken.Success");
         
-			return getAuthTokenResponse;
+			return getFusionAuthTokenResponse;
         }
     }
 }

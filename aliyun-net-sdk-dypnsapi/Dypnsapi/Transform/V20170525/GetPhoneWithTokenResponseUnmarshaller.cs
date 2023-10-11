@@ -24,23 +24,22 @@ using Aliyun.Acs.Dypnsapi.Model.V20170525;
 
 namespace Aliyun.Acs.Dypnsapi.Transform.V20170525
 {
-    public class GetAuthTokenResponseUnmarshaller
+    public class GetPhoneWithTokenResponseUnmarshaller
     {
-        public static GetAuthTokenResponse Unmarshall(UnmarshallerContext _ctx)
+        public static GetPhoneWithTokenResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			GetAuthTokenResponse getAuthTokenResponse = new GetAuthTokenResponse();
+			GetPhoneWithTokenResponse getPhoneWithTokenResponse = new GetPhoneWithTokenResponse();
 
-			getAuthTokenResponse.HttpResponse = _ctx.HttpResponse;
-			getAuthTokenResponse.Code = _ctx.StringValue("GetAuthToken.Code");
-			getAuthTokenResponse.Message = _ctx.StringValue("GetAuthToken.Message");
-			getAuthTokenResponse.RequestId = _ctx.StringValue("GetAuthToken.RequestId");
+			getPhoneWithTokenResponse.HttpResponse = _ctx.HttpResponse;
+			getPhoneWithTokenResponse.Code = _ctx.StringValue("GetPhoneWithToken.Code");
+			getPhoneWithTokenResponse.Message = _ctx.StringValue("GetPhoneWithToken.Message");
+			getPhoneWithTokenResponse.RequestId = _ctx.StringValue("GetPhoneWithToken.RequestId");
 
-			GetAuthTokenResponse.GetAuthToken_TokenInfo tokenInfo = new GetAuthTokenResponse.GetAuthToken_TokenInfo();
-			tokenInfo.AccessToken = _ctx.StringValue("GetAuthToken.TokenInfo.AccessToken");
-			tokenInfo.JwtToken = _ctx.StringValue("GetAuthToken.TokenInfo.JwtToken");
-			getAuthTokenResponse.TokenInfo = tokenInfo;
+			GetPhoneWithTokenResponse.GetPhoneWithToken_Data data = new GetPhoneWithTokenResponse.GetPhoneWithToken_Data();
+			data.Mobile = _ctx.StringValue("GetPhoneWithToken.Data.Mobile");
+			getPhoneWithTokenResponse.Data = data;
         
-			return getAuthTokenResponse;
+			return getPhoneWithTokenResponse;
         }
     }
 }

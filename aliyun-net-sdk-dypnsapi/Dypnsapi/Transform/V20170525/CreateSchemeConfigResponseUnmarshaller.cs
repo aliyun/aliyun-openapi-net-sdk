@@ -24,23 +24,23 @@ using Aliyun.Acs.Dypnsapi.Model.V20170525;
 
 namespace Aliyun.Acs.Dypnsapi.Transform.V20170525
 {
-    public class GetAuthTokenResponseUnmarshaller
+    public class CreateSchemeConfigResponseUnmarshaller
     {
-        public static GetAuthTokenResponse Unmarshall(UnmarshallerContext _ctx)
+        public static CreateSchemeConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			GetAuthTokenResponse getAuthTokenResponse = new GetAuthTokenResponse();
+			CreateSchemeConfigResponse createSchemeConfigResponse = new CreateSchemeConfigResponse();
 
-			getAuthTokenResponse.HttpResponse = _ctx.HttpResponse;
-			getAuthTokenResponse.Code = _ctx.StringValue("GetAuthToken.Code");
-			getAuthTokenResponse.Message = _ctx.StringValue("GetAuthToken.Message");
-			getAuthTokenResponse.RequestId = _ctx.StringValue("GetAuthToken.RequestId");
+			createSchemeConfigResponse.HttpResponse = _ctx.HttpResponse;
+			createSchemeConfigResponse.RequestId = _ctx.StringValue("CreateSchemeConfig.RequestId");
+			createSchemeConfigResponse.Message = _ctx.StringValue("CreateSchemeConfig.Message");
+			createSchemeConfigResponse.Code = _ctx.StringValue("CreateSchemeConfig.Code");
+			createSchemeConfigResponse.Success = _ctx.BooleanValue("CreateSchemeConfig.Success");
 
-			GetAuthTokenResponse.GetAuthToken_TokenInfo tokenInfo = new GetAuthTokenResponse.GetAuthToken_TokenInfo();
-			tokenInfo.AccessToken = _ctx.StringValue("GetAuthToken.TokenInfo.AccessToken");
-			tokenInfo.JwtToken = _ctx.StringValue("GetAuthToken.TokenInfo.JwtToken");
-			getAuthTokenResponse.TokenInfo = tokenInfo;
+			CreateSchemeConfigResponse.CreateSchemeConfig_Model model = new CreateSchemeConfigResponse.CreateSchemeConfig_Model();
+			model.SchemeCode = _ctx.StringValue("CreateSchemeConfig.Model.SchemeCode");
+			createSchemeConfigResponse.Model = model;
         
-			return getAuthTokenResponse;
+			return createSchemeConfigResponse;
         }
     }
 }

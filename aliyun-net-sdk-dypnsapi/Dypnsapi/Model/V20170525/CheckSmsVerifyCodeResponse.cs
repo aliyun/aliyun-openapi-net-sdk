@@ -22,26 +22,28 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 {
-	public class GetMobileResponse : AcsResponse
+	public class CheckSmsVerifyCodeResponse : AcsResponse
 	{
 
-		private string code;
+		private string accessDeniedDetail;
 
 		private string message;
 
-		private string requestId;
+		private string code;
 
-		private GetMobile_GetMobileResultDTO getMobileResultDTO;
+		private bool? success;
 
-		public string Code
+		private CheckSmsVerifyCode_Model model;
+
+		public string AccessDeniedDetail
 		{
 			get
 			{
-				return code;
+				return accessDeniedDetail;
 			}
 			set	
 			{
-				code = value;
+				accessDeniedDetail = value;
 			}
 		}
 
@@ -57,44 +59,70 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public string RequestId
+		public string Code
 		{
 			get
 			{
-				return requestId;
+				return code;
 			}
 			set	
 			{
-				requestId = value;
+				code = value;
 			}
 		}
 
-		public GetMobile_GetMobileResultDTO GetMobileResultDTO
+		public bool? Success
 		{
 			get
 			{
-				return getMobileResultDTO;
+				return success;
 			}
 			set	
 			{
-				getMobileResultDTO = value;
+				success = value;
 			}
 		}
 
-		public class GetMobile_GetMobileResultDTO
+		public CheckSmsVerifyCode_Model Model
+		{
+			get
+			{
+				return model;
+			}
+			set	
+			{
+				model = value;
+			}
+		}
+
+		public class CheckSmsVerifyCode_Model
 		{
 
-			private string mobile;
+			private string outId;
 
-			public string Mobile
+			private string verifyResult;
+
+			public string OutId
 			{
 				get
 				{
-					return mobile;
+					return outId;
 				}
 				set	
 				{
-					mobile = value;
+					outId = value;
+				}
+			}
+
+			public string VerifyResult
+			{
+				get
+				{
+					return verifyResult;
+				}
+				set	
+				{
+					verifyResult = value;
 				}
 			}
 		}

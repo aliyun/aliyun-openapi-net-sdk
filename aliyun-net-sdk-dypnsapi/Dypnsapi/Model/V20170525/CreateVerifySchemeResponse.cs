@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dypnsapi.Model.V20170525
@@ -25,25 +25,17 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 	public class CreateVerifySchemeResponse : AcsResponse
 	{
 
-		private string code;
-
 		private string message;
 
 		private string requestId;
 
-		private CreateVerifyScheme_GateVerifySchemeDTO gateVerifySchemeDTO;
+		private long? httpStatusCode;
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+		private string code;
+
+		private bool? success;
+
+		private CreateVerifyScheme_GateVerifySchemeDTO gateVerifySchemeDTO;
 
 		public string Message
 		{
@@ -66,6 +58,42 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public long? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 

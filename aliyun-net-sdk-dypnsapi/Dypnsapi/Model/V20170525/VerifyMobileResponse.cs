@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dypnsapi.Model.V20170525
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 	public class VerifyMobileResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string code;
 
 		private string message;
 
-		private VerifyMobile_GateVerifyResultDTO gateVerifyResultDTO;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private VerifyMobile_GateVerifyResultDTO gateVerifyResultDTO;
 
 		public string Code
 		{
@@ -69,6 +57,18 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public VerifyMobile_GateVerifyResultDTO GateVerifyResultDTO
 		{
 			get
@@ -84,21 +84,9 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 		public class VerifyMobile_GateVerifyResultDTO
 		{
 
-			private string verifyId;
-
 			private string verifyResult;
 
-			public string VerifyId
-			{
-				get
-				{
-					return verifyId;
-				}
-				set	
-				{
-					verifyId = value;
-				}
-			}
+			private string verifyId;
 
 			public string VerifyResult
 			{
@@ -109,6 +97,18 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 				set	
 				{
 					verifyResult = value;
+				}
+			}
+
+			public string VerifyId
+			{
+				get
+				{
+					return verifyId;
+				}
+				set	
+				{
+					verifyId = value;
 				}
 			}
 		}

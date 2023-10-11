@@ -17,33 +17,23 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 {
-	public class GetCertifyResultResponse : AcsResponse
+	public class VerifyWithFusionAuthTokenResponse : AcsResponse
 	{
-
-		private string code;
 
 		private string message;
 
 		private string requestId;
 
-		private List<GetCertifyResult_DataItem> data;
+		private string code;
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+		private bool? success;
+
+		private VerifyWithFusionAuthToken_Model model;
 
 		public string Message
 		{
@@ -69,64 +59,60 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public List<GetCertifyResult_DataItem> Data
+		public string Code
 		{
 			get
 			{
-				return data;
+				return code;
 			}
 			set	
 			{
-				data = value;
+				code = value;
 			}
 		}
 
-		public class GetCertifyResult_DataItem
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public VerifyWithFusionAuthToken_Model Model
+		{
+			get
+			{
+				return model;
+			}
+			set	
+			{
+				model = value;
+			}
+		}
+
+		public class VerifyWithFusionAuthToken_Model
 		{
 
-			private string materialInfo;
-
-			private string identityInfo;
-
-			private string verifyDesc;
+			private string phoneNumber;
 
 			private string verifyResult;
 
-			private string deviceToken;
+			private long? phoneScore;
 
-			public string MaterialInfo
+			public string PhoneNumber
 			{
 				get
 				{
-					return materialInfo;
+					return phoneNumber;
 				}
 				set	
 				{
-					materialInfo = value;
-				}
-			}
-
-			public string IdentityInfo
-			{
-				get
-				{
-					return identityInfo;
-				}
-				set	
-				{
-					identityInfo = value;
-				}
-			}
-
-			public string VerifyDesc
-			{
-				get
-				{
-					return verifyDesc;
-				}
-				set	
-				{
-					verifyDesc = value;
+					phoneNumber = value;
 				}
 			}
 
@@ -142,15 +128,15 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 				}
 			}
 
-			public string DeviceToken
+			public long? PhoneScore
 			{
 				get
 				{
-					return deviceToken;
+					return phoneScore;
 				}
 				set	
 				{
-					deviceToken = value;
+					phoneScore = value;
 				}
 			}
 		}

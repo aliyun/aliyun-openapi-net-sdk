@@ -43,21 +43,41 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 
 		private long? resourceOwnerId;
 
+		private string origin;
+
 		private string bundleId;
 
+		private string authType;
+
 		private string appName;
+
+		private string ipWhiteList;
+
+		private string email;
 
 		private string packSign;
 
 		private string packName;
 
+		private long? cuApiCode;
+
+		private string sceneType;
+
 		private string resourceOwnerAccount;
+
+		private long? ctApiCode;
 
 		private string osType;
 
 		private long? ownerId;
 
+		private string url;
+
+		private long? cmApiCode;
+
 		private string schemeName;
+
+		private string smsSignName;
 
 		public long? ResourceOwnerId
 		{
@@ -69,6 +89,19 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string Origin
+		{
+			get
+			{
+				return origin;
+			}
+			set	
+			{
+				origin = value;
+				DictionaryUtil.Add(QueryParameters, "Origin", value);
 			}
 		}
 
@@ -85,6 +118,19 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
+		public string AuthType
+		{
+			get
+			{
+				return authType;
+			}
+			set	
+			{
+				authType = value;
+				DictionaryUtil.Add(QueryParameters, "AuthType", value);
+			}
+		}
+
 		public string AppName
 		{
 			get
@@ -95,6 +141,32 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			{
 				appName = value;
 				DictionaryUtil.Add(QueryParameters, "AppName", value);
+			}
+		}
+
+		public string IpWhiteList
+		{
+			get
+			{
+				return ipWhiteList;
+			}
+			set	
+			{
+				ipWhiteList = value;
+				DictionaryUtil.Add(QueryParameters, "IpWhiteList", value);
+			}
+		}
+
+		public string Email
+		{
+			get
+			{
+				return email;
+			}
+			set	
+			{
+				email = value;
+				DictionaryUtil.Add(QueryParameters, "Email", value);
 			}
 		}
 
@@ -124,6 +196,32 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
+		public long? CuApiCode
+		{
+			get
+			{
+				return cuApiCode;
+			}
+			set	
+			{
+				cuApiCode = value;
+				DictionaryUtil.Add(QueryParameters, "CuApiCode", value.ToString());
+			}
+		}
+
+		public string SceneType
+		{
+			get
+			{
+				return sceneType;
+			}
+			set	
+			{
+				sceneType = value;
+				DictionaryUtil.Add(QueryParameters, "SceneType", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -134,6 +232,19 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public long? CtApiCode
+		{
+			get
+			{
+				return ctApiCode;
+			}
+			set	
+			{
+				ctApiCode = value;
+				DictionaryUtil.Add(QueryParameters, "CtApiCode", value.ToString());
 			}
 		}
 
@@ -163,6 +274,32 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
+		public string Url
+		{
+			get
+			{
+				return url;
+			}
+			set	
+			{
+				url = value;
+				DictionaryUtil.Add(QueryParameters, "Url", value);
+			}
+		}
+
+		public long? CmApiCode
+		{
+			get
+			{
+				return cmApiCode;
+			}
+			set	
+			{
+				cmApiCode = value;
+				DictionaryUtil.Add(QueryParameters, "CmApiCode", value.ToString());
+			}
+		}
+
 		public string SchemeName
 		{
 			get
@@ -174,6 +311,24 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 				schemeName = value;
 				DictionaryUtil.Add(QueryParameters, "SchemeName", value);
 			}
+		}
+
+		public string SmsSignName
+		{
+			get
+			{
+				return smsSignName;
+			}
+			set	
+			{
+				smsSignName = value;
+				DictionaryUtil.Add(QueryParameters, "SmsSignName", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
 		}
 
         public override CreateVerifySchemeResponse GetResponse(UnmarshallerContext unmarshallerContext)

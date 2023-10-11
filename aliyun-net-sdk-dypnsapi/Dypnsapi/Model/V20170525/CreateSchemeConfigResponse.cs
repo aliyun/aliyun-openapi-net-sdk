@@ -22,26 +22,28 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 {
-	public class GetMobileResponse : AcsResponse
+	public class CreateSchemeConfigResponse : AcsResponse
 	{
-
-		private string code;
-
-		private string message;
 
 		private string requestId;
 
-		private GetMobile_GetMobileResultDTO getMobileResultDTO;
+		private string message;
 
-		public string Code
+		private string code;
+
+		private bool? success;
+
+		private CreateSchemeConfig_Model model;
+
+		public string RequestId
 		{
 			get
 			{
-				return code;
+				return requestId;
 			}
 			set	
 			{
-				code = value;
+				requestId = value;
 			}
 		}
 
@@ -57,44 +59,56 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public string RequestId
+		public string Code
 		{
 			get
 			{
-				return requestId;
+				return code;
 			}
 			set	
 			{
-				requestId = value;
+				code = value;
 			}
 		}
 
-		public GetMobile_GetMobileResultDTO GetMobileResultDTO
+		public bool? Success
 		{
 			get
 			{
-				return getMobileResultDTO;
+				return success;
 			}
 			set	
 			{
-				getMobileResultDTO = value;
+				success = value;
 			}
 		}
 
-		public class GetMobile_GetMobileResultDTO
+		public CreateSchemeConfig_Model Model
+		{
+			get
+			{
+				return model;
+			}
+			set	
+			{
+				model = value;
+			}
+		}
+
+		public class CreateSchemeConfig_Model
 		{
 
-			private string mobile;
+			private string schemeCode;
 
-			public string Mobile
+			public string SchemeCode
 			{
 				get
 				{
-					return mobile;
+					return schemeCode;
 				}
 				set	
 				{
-					mobile = value;
+					schemeCode = value;
 				}
 			}
 		}

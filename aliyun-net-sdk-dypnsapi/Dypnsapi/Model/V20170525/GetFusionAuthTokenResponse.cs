@@ -22,28 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 {
-	public class GetMobileResponse : AcsResponse
+	public class GetFusionAuthTokenResponse : AcsResponse
 	{
-
-		private string code;
 
 		private string message;
 
 		private string requestId;
 
-		private GetMobile_GetMobileResultDTO getMobileResultDTO;
+		private string model;
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+		private string code;
+
+		private bool? success;
 
 		public string Message
 		{
@@ -69,33 +59,39 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public GetMobile_GetMobileResultDTO GetMobileResultDTO
+		public string Model
 		{
 			get
 			{
-				return getMobileResultDTO;
+				return model;
 			}
 			set	
 			{
-				getMobileResultDTO = value;
+				model = value;
 			}
 		}
 
-		public class GetMobile_GetMobileResultDTO
+		public string Code
 		{
-
-			private string mobile;
-
-			public string Mobile
+			get
 			{
-				get
-				{
-					return mobile;
-				}
-				set	
-				{
-					mobile = value;
-				}
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

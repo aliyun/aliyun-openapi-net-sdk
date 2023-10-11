@@ -28,10 +28,10 @@ using Aliyun.Acs.Dypnsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 {
-    public class GetCertifyResultRequest : RpcAcsRequest<GetCertifyResultResponse>
+    public class CheckSmsVerifyCodeRequest : RpcAcsRequest<CheckSmsVerifyCodeResponse>
     {
-        public GetCertifyResultRequest()
-            : base("Dypnsapi", "2017-05-25", "GetCertifyResult")
+        public CheckSmsVerifyCodeRequest()
+            : base("Dypnsapi", "2017-05-25", "CheckSmsVerifyCode")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,13 +41,36 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			Method = MethodType.POST;
         }
 
+		private long? caseAuthPolicy;
+
 		private long? resourceOwnerId;
+
+		private string countryCode;
+
+		private string phoneNumber;
+
+		private string verifyCode;
 
 		private string resourceOwnerAccount;
 
 		private long? ownerId;
 
-		private string token;
+		private string schemeName;
+
+		private string outId;
+
+		public long? CaseAuthPolicy
+		{
+			get
+			{
+				return caseAuthPolicy;
+			}
+			set	
+			{
+				caseAuthPolicy = value;
+				DictionaryUtil.Add(QueryParameters, "CaseAuthPolicy", value.ToString());
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -59,6 +82,45 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string CountryCode
+		{
+			get
+			{
+				return countryCode;
+			}
+			set	
+			{
+				countryCode = value;
+				DictionaryUtil.Add(QueryParameters, "CountryCode", value);
+			}
+		}
+
+		public string PhoneNumber
+		{
+			get
+			{
+				return phoneNumber;
+			}
+			set	
+			{
+				phoneNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PhoneNumber", value);
+			}
+		}
+
+		public string VerifyCode
+		{
+			get
+			{
+				return verifyCode;
+			}
+			set	
+			{
+				verifyCode = value;
+				DictionaryUtil.Add(QueryParameters, "VerifyCode", value);
 			}
 		}
 
@@ -88,16 +150,29 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public string Token
+		public string SchemeName
 		{
 			get
 			{
-				return token;
+				return schemeName;
 			}
 			set	
 			{
-				token = value;
-				DictionaryUtil.Add(QueryParameters, "Token", value);
+				schemeName = value;
+				DictionaryUtil.Add(QueryParameters, "SchemeName", value);
+			}
+		}
+
+		public string OutId
+		{
+			get
+			{
+				return outId;
+			}
+			set	
+			{
+				outId = value;
+				DictionaryUtil.Add(QueryParameters, "OutId", value);
 			}
 		}
 
@@ -106,9 +181,9 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			return false;
 		}
 
-        public override GetCertifyResultResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CheckSmsVerifyCodeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetCertifyResultResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CheckSmsVerifyCodeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

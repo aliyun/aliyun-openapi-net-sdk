@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 {
-	public class GetMobileResponse : AcsResponse
+	public class GetPhoneWithTokenResponse : AcsResponse
 	{
 
 		private string code;
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 
 		private string requestId;
 
-		private GetMobile_GetMobileResultDTO getMobileResultDTO;
+		private GetPhoneWithToken_Data data;
 
 		public string Code
 		{
@@ -69,19 +69,19 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public GetMobile_GetMobileResultDTO GetMobileResultDTO
+		public GetPhoneWithToken_Data Data
 		{
 			get
 			{
-				return getMobileResultDTO;
+				return data;
 			}
 			set	
 			{
-				getMobileResultDTO = value;
+				data = value;
 			}
 		}
 
-		public class GetMobile_GetMobileResultDTO
+		public class GetPhoneWithToken_Data
 		{
 
 			private string mobile;
