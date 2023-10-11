@@ -37,6 +37,9 @@ namespace Aliyun.Acs.Sts.Transform.V20150401
 			oIDCTokenInfo.Subject = _ctx.StringValue("AssumeRoleWithOIDC.OIDCTokenInfo.Subject");
 			oIDCTokenInfo.Issuer = _ctx.StringValue("AssumeRoleWithOIDC.OIDCTokenInfo.Issuer");
 			oIDCTokenInfo.ClientIds = _ctx.StringValue("AssumeRoleWithOIDC.OIDCTokenInfo.ClientIds");
+			oIDCTokenInfo.ExpirationTime = _ctx.StringValue("AssumeRoleWithOIDC.OIDCTokenInfo.ExpirationTime");
+			oIDCTokenInfo.IssuanceTime = _ctx.StringValue("AssumeRoleWithOIDC.OIDCTokenInfo.IssuanceTime");
+			oIDCTokenInfo.VerificationInfo = _ctx.StringValue("AssumeRoleWithOIDC.OIDCTokenInfo.VerificationInfo");
 			assumeRoleWithOIDCResponse.OIDCTokenInfo = oIDCTokenInfo;
 
 			AssumeRoleWithOIDCResponse.AssumeRoleWithOIDC_AssumedRoleUser assumedRoleUser = new AssumeRoleWithOIDCResponse.AssumeRoleWithOIDC_AssumedRoleUser();
