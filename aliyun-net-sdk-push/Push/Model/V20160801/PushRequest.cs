@@ -81,6 +81,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string androidImageUrl;
 
+		private int? androidHonorTargetUserType;
+
 		private string androidNotificationVivoChannel;
 
 		private string iOSNotificationCategory;
@@ -146,6 +148,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 		private string androidNotificationHonorChannel;
 
 		private string androidXiaomiImageUrl;
+
+		private int? androidTargetUserType;
 
 		private string smsTemplateName;
 
@@ -438,6 +442,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				androidImageUrl = value;
 				DictionaryUtil.Add(QueryParameters, "AndroidImageUrl", value);
+			}
+		}
+
+		public int? AndroidHonorTargetUserType
+		{
+			get
+			{
+				return androidHonorTargetUserType;
+			}
+			set	
+			{
+				androidHonorTargetUserType = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidHonorTargetUserType", value.ToString());
 			}
 		}
 
@@ -867,6 +884,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				androidXiaomiImageUrl = value;
 				DictionaryUtil.Add(QueryParameters, "AndroidXiaomiImageUrl", value);
+			}
+		}
+
+		public int? AndroidTargetUserType
+		{
+			get
+			{
+				return androidTargetUserType;
+			}
+			set	
+			{
+				androidTargetUserType = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidTargetUserType", value.ToString());
 			}
 		}
 

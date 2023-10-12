@@ -123,6 +123,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
 						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
 						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
 					}
 				}
 			}
@@ -181,6 +183,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			private string expireTime;
 
 			private string androidImageUrl;
+
+			private int? androidHonorTargetUserType;
 
 			private string androidNotificationVivoChannel;
 
@@ -243,6 +247,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			private string androidNotificationHonorChannel;
 
 			private string androidXiaomiImageUrl;
+
+			private int? androidTargetUserType;
 
 			private string androidPopupBody;
 
@@ -497,6 +503,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					androidImageUrl = value;
+				}
+			}
+
+			public int? AndroidHonorTargetUserType
+			{
+				get
+				{
+					return androidHonorTargetUserType;
+				}
+				set	
+				{
+					androidHonorTargetUserType = value;
 				}
 			}
 
@@ -869,6 +887,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					androidXiaomiImageUrl = value;
+				}
+			}
+
+			public int? AndroidTargetUserType
+			{
+				get
+				{
+					return androidTargetUserType;
+				}
+				set	
+				{
+					androidTargetUserType = value;
 				}
 			}
 

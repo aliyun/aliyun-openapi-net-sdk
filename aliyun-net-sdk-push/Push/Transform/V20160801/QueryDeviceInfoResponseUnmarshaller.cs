@@ -44,6 +44,8 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 			deviceInfo.Tags = _ctx.StringValue("QueryDeviceInfo.DeviceInfo.Tags");
 			deviceInfo.DeviceToken = _ctx.StringValue("QueryDeviceInfo.DeviceInfo.DeviceToken");
 			deviceInfo.Alias = _ctx.StringValue("QueryDeviceInfo.DeviceInfo.Alias");
+			deviceInfo.Brand = _ctx.StringValue("QueryDeviceInfo.DeviceInfo.Brand");
+			deviceInfo.Model = _ctx.StringValue("QueryDeviceInfo.DeviceInfo.Model");
 			queryDeviceInfoResponse.DeviceInfo = deviceInfo;
         
 			return queryDeviceInfoResponse;

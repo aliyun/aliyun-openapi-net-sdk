@@ -76,6 +76,10 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string alias;
 
+			private string brand;
+
+			private string model;
+
 			public string Account
 			{
 				get
@@ -193,6 +197,30 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					alias = value;
+				}
+			}
+
+			public string Brand
+			{
+				get
+				{
+					return brand;
+				}
+				set	
+				{
+					brand = value;
+				}
+			}
+
+			public string Model
+			{
+				get
+				{
+					return model;
+				}
+				set	
+				{
+					model = value;
 				}
 			}
 		}
