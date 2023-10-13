@@ -42,10 +42,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private long? resourceOwnerId;
 
-		private string startTime;
-
-		private string key;
-
 		private string resourceOwnerAccount;
 
 		private string dBClusterId;
@@ -54,7 +50,13 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private string endTime;
 
+		private string startTime;
+
 		private long? ownerId;
+
+		private string resourcePools;
+
+		private string key;
 
 		public long? ResourceOwnerId
 		{
@@ -66,32 +68,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public string Key
-		{
-			get
-			{
-				return key;
-			}
-			set	
-			{
-				key = value;
-				DictionaryUtil.Add(QueryParameters, "Key", value);
 			}
 		}
 
@@ -147,6 +123,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -157,6 +146,32 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string ResourcePools
+		{
+			get
+			{
+				return resourcePools;
+			}
+			set	
+			{
+				resourcePools = value;
+				DictionaryUtil.Add(QueryParameters, "ResourcePools", value);
+			}
+		}
+
+		public string Key
+		{
+			get
+			{
+				return key;
+			}
+			set	
+			{
+				key = value;
+				DictionaryUtil.Add(QueryParameters, "Key", value);
 			}
 		}
 

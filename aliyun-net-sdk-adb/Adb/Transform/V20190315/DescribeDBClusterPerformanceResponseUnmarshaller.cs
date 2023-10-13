@@ -46,6 +46,7 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 				for (int j = 0; j < _ctx.Length("DescribeDBClusterPerformance.Performances["+ i +"].Series.Length"); j++) {
 					DescribeDBClusterPerformanceResponse.DescribeDBClusterPerformance_PerformanceItem.DescribeDBClusterPerformance_SeriesItem seriesItem = new DescribeDBClusterPerformanceResponse.DescribeDBClusterPerformance_PerformanceItem.DescribeDBClusterPerformance_SeriesItem();
 					seriesItem.Name = _ctx.StringValue("DescribeDBClusterPerformance.Performances["+ i +"].Series["+ j +"].Name");
+					seriesItem.Tags = _ctx.StringValue("DescribeDBClusterPerformance.Performances["+ i +"].Series["+ j +"].Tags");
 
 					List<string> seriesItem_values = new List<string>();
 					for (int k = 0; k < _ctx.Length("DescribeDBClusterPerformance.Performances["+ i +"].Series["+ j +"].Values.Length"); k++) {
