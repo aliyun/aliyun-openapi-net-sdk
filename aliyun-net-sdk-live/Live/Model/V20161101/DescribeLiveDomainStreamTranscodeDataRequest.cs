@@ -41,6 +41,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
+		private string precision;
+
 		private string startTime;
 
 		private string split;
@@ -52,6 +54,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private long? ownerId;
 
 		private string interval;
+
+		[JsonProperty(PropertyName = "Precision")]
+		public string Precision
+		{
+			get
+			{
+				return precision;
+			}
+			set	
+			{
+				precision = value;
+				DictionaryUtil.Add(QueryParameters, "Precision", value);
+			}
+		}
 
 		[JsonProperty(PropertyName = "StartTime")]
 		public string StartTime

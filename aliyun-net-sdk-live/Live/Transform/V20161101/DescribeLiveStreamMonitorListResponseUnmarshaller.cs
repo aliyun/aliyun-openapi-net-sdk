@@ -37,16 +37,18 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeLiveStreamMonitorListResponse.DescribeLiveStreamMonitorList_LiveStreamMonitorInfo> describeLiveStreamMonitorListResponse_liveStreamMonitorList = new List<DescribeLiveStreamMonitorListResponse.DescribeLiveStreamMonitorList_LiveStreamMonitorInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveStreamMonitorList.LiveStreamMonitorList.Length"); i++) {
 				DescribeLiveStreamMonitorListResponse.DescribeLiveStreamMonitorList_LiveStreamMonitorInfo liveStreamMonitorInfo = new DescribeLiveStreamMonitorListResponse.DescribeLiveStreamMonitorList_LiveStreamMonitorInfo();
-				liveStreamMonitorInfo.Status = _ctx.IntegerValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].Status");
 				liveStreamMonitorInfo.MonitorConfig = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].MonitorConfig");
-				liveStreamMonitorInfo.StartTime = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].StartTime");
+				liveStreamMonitorInfo.Status = _ctx.IntegerValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].Status");
 				liveStreamMonitorInfo.MonitorId = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].MonitorId");
 				liveStreamMonitorInfo.Domain = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].Domain");
-				liveStreamMonitorInfo.OutputTemplate = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].OutputTemplate");
-				liveStreamMonitorInfo.Region = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].Region");
+				liveStreamMonitorInfo.CallbackUrl = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].CallbackUrl");
 				liveStreamMonitorInfo.AudioFrom = _ctx.IntegerValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].AudioFrom");
+				liveStreamMonitorInfo.DingTalkWebHookUrl = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].DingTalkWebHookUrl");
 				liveStreamMonitorInfo.MonitorName = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].MonitorName");
 				liveStreamMonitorInfo.StopTime = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].StopTime");
+				liveStreamMonitorInfo.StartTime = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].StartTime");
+				liveStreamMonitorInfo.OutputTemplate = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].OutputTemplate");
+				liveStreamMonitorInfo.Region = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].Region");
 
 				DescribeLiveStreamMonitorListResponse.DescribeLiveStreamMonitorList_LiveStreamMonitorInfo.DescribeLiveStreamMonitorList_OutputUrls outputUrls = new DescribeLiveStreamMonitorListResponse.DescribeLiveStreamMonitorList_LiveStreamMonitorInfo.DescribeLiveStreamMonitorList_OutputUrls();
 				outputUrls.FlvUrl = _ctx.StringValue("DescribeLiveStreamMonitorList.LiveStreamMonitorList["+ i +"].OutputUrls.FlvUrl");

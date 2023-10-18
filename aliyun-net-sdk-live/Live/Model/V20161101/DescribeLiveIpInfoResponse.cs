@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,40 +25,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveIpInfoResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string iSP;
-
 		private string ispEname;
 
-		private string region;
+		private string requestId;
 
 		private string regionEname;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string iSP;
 
-		public string ISP
-		{
-			get
-			{
-				return iSP;
-			}
-			set	
-			{
-				iSP = value;
-			}
-		}
+		private string region;
 
+		[JsonProperty(PropertyName = "IspEname")]
 		public string IspEname
 		{
 			get
@@ -71,18 +48,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string Region
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return region;
+				return requestId;
 			}
 			set	
 			{
-				region = value;
+				requestId = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "RegionEname")]
 		public string RegionEname
 		{
 			get
@@ -92,6 +71,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				regionEname = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ISP")]
+		public string ISP
+		{
+			get
+			{
+				return iSP;
+			}
+			set	
+			{
+				iSP = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Region")]
+		public string Region
+		{
+			get
+			{
+				return region;
+			}
+			set	
+			{
+				region = value;
 			}
 		}
 	}

@@ -44,6 +44,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				liveLazyPullConfig.PullDomainName = _ctx.StringValue("DescribeLiveLazyPullStreamConfig.LiveLazyPullConfigList["+ i +"].PullDomainName");
 				liveLazyPullConfig.DomainName = _ctx.StringValue("DescribeLiveLazyPullStreamConfig.LiveLazyPullConfigList["+ i +"].DomainName");
 				liveLazyPullConfig.PullAuthType = _ctx.StringValue("DescribeLiveLazyPullStreamConfig.LiveLazyPullConfigList["+ i +"].PullAuthType");
+				liveLazyPullConfig.TranscodeLazy = _ctx.StringValue("DescribeLiveLazyPullStreamConfig.LiveLazyPullConfigList["+ i +"].TranscodeLazy");
 
 				describeLiveLazyPullStreamConfigResponse_liveLazyPullConfigList.Add(liveLazyPullConfig);
 			}

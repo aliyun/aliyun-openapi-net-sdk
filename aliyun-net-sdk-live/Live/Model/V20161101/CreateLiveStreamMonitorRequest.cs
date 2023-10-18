@@ -52,9 +52,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string inputList;
 
+		private string dingTalkWebHookUrl;
+
 		private long? ownerId;
 
 		private string domain;
+
+		private string callbackUrl;
 
 		public string MonitorConfig
 		{
@@ -134,6 +138,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public string DingTalkWebHookUrl
+		{
+			get
+			{
+				return dingTalkWebHookUrl;
+			}
+			set	
+			{
+				dingTalkWebHookUrl = value;
+				DictionaryUtil.Add(QueryParameters, "DingTalkWebHookUrl", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -157,6 +174,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				domain = value;
 				DictionaryUtil.Add(QueryParameters, "Domain", value);
+			}
+		}
+
+		public string CallbackUrl
+		{
+			get
+			{
+				return callbackUrl;
+			}
+			set	
+			{
+				callbackUrl = value;
+				DictionaryUtil.Add(QueryParameters, "CallbackUrl", value);
 			}
 		}
 
