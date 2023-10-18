@@ -120,6 +120,10 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private int? bitDepth;
 
+			private int? jobType;
+
+			private string jobExt;
+
 			public string CreationTime
 			{
 				get
@@ -417,6 +421,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					bitDepth = value;
+				}
+			}
+
+			public int? JobType
+			{
+				get
+				{
+					return jobType;
+				}
+				set	
+				{
+					jobType = value;
+				}
+			}
+
+			public string JobExt
+			{
+				get
+				{
+					return jobExt;
+				}
+				set	
+				{
+					jobExt = value;
 				}
 			}
 		}

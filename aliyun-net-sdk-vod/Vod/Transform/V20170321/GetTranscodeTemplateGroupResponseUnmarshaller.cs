@@ -64,6 +64,8 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				transcodeTemplate.SubtitleList = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].SubtitleList");
 				transcodeTemplate.MuxConfig = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].MuxConfig");
 				transcodeTemplate.TailSlateList = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].TailSlateList");
+				transcodeTemplate.TraceMark = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].TraceMark");
+				transcodeTemplate.CopyrightMark = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].CopyrightMark");
 
 				List<string> transcodeTemplate_watermarkIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].WatermarkIds.Length"); j++) {

@@ -27,10 +27,10 @@ using Aliyun.Acs.vod.Transform.V20170321;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class DeleteVodSpecificConfigRequest : RpcAcsRequest<DeleteVodSpecificConfigResponse>
+    public class SubmitDigitalWatermarkExtractJobRequest : RpcAcsRequest<SubmitDigitalWatermarkExtractJobResponse>
     {
-        public DeleteVodSpecificConfigRequest()
-            : base("vod", "2017-03-21", "DeleteVodSpecificConfig", "vod", "openAPI")
+        public SubmitDigitalWatermarkExtractJobRequest()
+            : base("vod", "2017-03-21", "SubmitDigitalWatermarkExtractJob", "vod", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,30 +40,71 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			Method = MethodType.POST;
         }
 
-		private string domainName;
+		private string resourceOwnerId;
 
-		private long? ownerId;
+		private string extractType;
 
-		private string env;
+		private string resourceOwnerAccount;
 
-		private string securityToken;
+		private string ownerAccount;
 
-		private string configId;
+		private string ownerId;
 
-		public string DomainName
+		private string mediaId;
+
+		public string ResourceOwnerId
 		{
 			get
 			{
-				return domainName;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value);
 			}
 		}
 
-		public long? OwnerId
+		public string ExtractType
+		{
+			get
+			{
+				return extractType;
+			}
+			set	
+			{
+				extractType = value;
+				DictionaryUtil.Add(QueryParameters, "ExtractType", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string OwnerId
 		{
 			get
 			{
@@ -72,52 +113,31 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
 			}
 		}
 
-		public string Env
+		public string MediaId
 		{
 			get
 			{
-				return env;
+				return mediaId;
 			}
 			set	
 			{
-				env = value;
-				DictionaryUtil.Add(QueryParameters, "Env", value);
+				mediaId = value;
+				DictionaryUtil.Add(QueryParameters, "MediaId", value);
 			}
 		}
 
-		public string SecurityToken
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
+			return false;
 		}
 
-		public string ConfigId
-		{
-			get
-			{
-				return configId;
-			}
-			set	
-			{
-				configId = value;
-				DictionaryUtil.Add(QueryParameters, "ConfigId", value);
-			}
-		}
-
-        public override DeleteVodSpecificConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SubmitDigitalWatermarkExtractJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteVodSpecificConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SubmitDigitalWatermarkExtractJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

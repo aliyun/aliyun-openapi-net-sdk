@@ -27,10 +27,10 @@ using Aliyun.Acs.vod.Transform.V20170321;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class UploadMediaByURLRequest : RpcAcsRequest<UploadMediaByURLResponse>
+    public class GetDigitalWatermarkExtractResultRequest : RpcAcsRequest<GetDigitalWatermarkExtractResultResponse>
     {
-        public UploadMediaByURLRequest()
-            : base("vod", "2017-03-21", "UploadMediaByURL", "vod", "openAPI")
+        public GetDigitalWatermarkExtractResultRequest()
+            : base("vod", "2017-03-21", "GetDigitalWatermarkExtractResult", "vod", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,123 +40,108 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			Method = MethodType.POST;
         }
 
-		private string sessionId;
+		private string resourceOwnerId;
 
-		private string storageLocation;
+		private string extractType;
 
-		private string userData;
+		private string jobId;
 
-		private string workflowId;
+		private string resourceOwnerAccount;
 
-		private string templateGroupId;
+		private string ownerAccount;
 
-		private string uploadMetadatas;
+		private string ownerId;
 
-		private string uploadURLs;
+		private string mediaId;
 
-		private string appId;
-
-		public string SessionId
+		public string ResourceOwnerId
 		{
 			get
 			{
-				return sessionId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				sessionId = value;
-				DictionaryUtil.Add(QueryParameters, "SessionId", value);
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value);
 			}
 		}
 
-		public string StorageLocation
+		public string ExtractType
 		{
 			get
 			{
-				return storageLocation;
+				return extractType;
 			}
 			set	
 			{
-				storageLocation = value;
-				DictionaryUtil.Add(QueryParameters, "StorageLocation", value);
+				extractType = value;
+				DictionaryUtil.Add(QueryParameters, "ExtractType", value);
 			}
 		}
 
-		public string UserData
+		public string JobId
 		{
 			get
 			{
-				return userData;
+				return jobId;
 			}
 			set	
 			{
-				userData = value;
-				DictionaryUtil.Add(QueryParameters, "UserData", value);
+				jobId = value;
+				DictionaryUtil.Add(QueryParameters, "JobId", value);
 			}
 		}
 
-		public string WorkflowId
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return workflowId;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				workflowId = value;
-				DictionaryUtil.Add(QueryParameters, "WorkflowId", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
-		public string TemplateGroupId
+		public string OwnerAccount
 		{
 			get
 			{
-				return templateGroupId;
+				return ownerAccount;
 			}
 			set	
 			{
-				templateGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateGroupId", value);
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
-		public string UploadMetadatas
+		public string OwnerId
 		{
 			get
 			{
-				return uploadMetadatas;
+				return ownerId;
 			}
 			set	
 			{
-				uploadMetadatas = value;
-				DictionaryUtil.Add(QueryParameters, "UploadMetadatas", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
 			}
 		}
 
-		public string UploadURLs
+		public string MediaId
 		{
 			get
 			{
-				return uploadURLs;
+				return mediaId;
 			}
 			set	
 			{
-				uploadURLs = value;
-				DictionaryUtil.Add(QueryParameters, "UploadURLs", value);
-			}
-		}
-
-		public string AppId
-		{
-			get
-			{
-				return appId;
-			}
-			set	
-			{
-				appId = value;
-				DictionaryUtil.Add(QueryParameters, "AppId", value);
+				mediaId = value;
+				DictionaryUtil.Add(QueryParameters, "MediaId", value);
 			}
 		}
 
@@ -165,9 +150,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			return false;
 		}
 
-        public override UploadMediaByURLResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetDigitalWatermarkExtractResultResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UploadMediaByURLResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetDigitalWatermarkExtractResultResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
