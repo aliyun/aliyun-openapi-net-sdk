@@ -35,7 +35,22 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			Method = MethodType.POST;
         }
 
+		private string clientToken;
+
 		private string elasticNetworkInterfaceId;
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(BodyParameters, "ClientToken", value);
+			}
+		}
 
 		public string ElasticNetworkInterfaceId
 		{

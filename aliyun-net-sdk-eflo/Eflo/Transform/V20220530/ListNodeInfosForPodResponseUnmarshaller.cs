@@ -39,6 +39,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			for (int i = 0; i < _ctx.Length("ListNodeInfosForPod.Content.Length"); i++) {
 				ListNodeInfosForPodResponse.ListNodeInfosForPod_ContentItem contentItem = new ListNodeInfosForPodResponse.ListNodeInfosForPod_ContentItem();
 				contentItem.RegionId = _ctx.StringValue("ListNodeInfosForPod.Content["+ i +"].RegionId");
+				contentItem.ZoneId = _ctx.StringValue("ListNodeInfosForPod.Content["+ i +"].ZoneId");
 				contentItem.ClusterId = _ctx.StringValue("ListNodeInfosForPod.Content["+ i +"].ClusterId");
 				contentItem.VpcId = _ctx.StringValue("ListNodeInfosForPod.Content["+ i +"].VpcId");
 				contentItem.NodeId = _ctx.StringValue("ListNodeInfosForPod.Content["+ i +"].NodeId");

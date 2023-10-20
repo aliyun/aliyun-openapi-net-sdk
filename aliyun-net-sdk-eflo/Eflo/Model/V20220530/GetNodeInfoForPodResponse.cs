@@ -86,6 +86,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 			private string regionId;
 
+			private string zoneId;
+
 			private string clusterId;
 
 			private string vpcId;
@@ -107,6 +109,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				set	
 				{
 					regionId = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
 				}
 			}
 

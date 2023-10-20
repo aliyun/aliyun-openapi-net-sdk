@@ -35,7 +35,13 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			Method = MethodType.POST;
         }
 
+		private string clientToken;
+
+		private string securityGroupId;
+
 		private string description;
+
+		private string nodeId;
 
 		private string vSwitchId;
 
@@ -43,7 +49,31 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private string zoneId;
 
-		private string nodeId;
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(BodyParameters, "ClientToken", value);
+			}
+		}
+
+		public string SecurityGroupId
+		{
+			get
+			{
+				return securityGroupId;
+			}
+			set	
+			{
+				securityGroupId = value;
+				DictionaryUtil.Add(BodyParameters, "SecurityGroupId", value);
+			}
+		}
 
 		public string Description
 		{
@@ -55,6 +85,19 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				description = value;
 				DictionaryUtil.Add(BodyParameters, "Description", value);
+			}
+		}
+
+		public string NodeId
+		{
+			get
+			{
+				return nodeId;
+			}
+			set	
+			{
+				nodeId = value;
+				DictionaryUtil.Add(BodyParameters, "NodeId", value);
 			}
 		}
 
@@ -94,19 +137,6 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				zoneId = value;
 				DictionaryUtil.Add(BodyParameters, "ZoneId", value);
-			}
-		}
-
-		public string NodeId
-		{
-			get
-			{
-				return nodeId;
-			}
-			set	
-			{
-				nodeId = value;
-				DictionaryUtil.Add(BodyParameters, "NodeId", value);
 			}
 		}
 

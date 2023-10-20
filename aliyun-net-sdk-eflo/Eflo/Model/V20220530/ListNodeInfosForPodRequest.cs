@@ -37,6 +37,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private string clusterId;
 
+		private string zoneId;
+
 		private string nodeId;
 
 		public string ClusterId
@@ -49,6 +51,19 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				clusterId = value;
 				DictionaryUtil.Add(BodyParameters, "ClusterId", value);
+			}
+		}
+
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(BodyParameters, "ZoneId", value);
 			}
 		}
 

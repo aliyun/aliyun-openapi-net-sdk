@@ -37,6 +37,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private string subnetId;
 
+		private string clientToken;
+
 		private string privateIpAddress;
 
 		private string ipName;
@@ -53,6 +55,19 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				subnetId = value;
 				DictionaryUtil.Add(BodyParameters, "SubnetId", value);
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(BodyParameters, "ClientToken", value);
 			}
 		}
 

@@ -37,6 +37,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 
 			GetNodeInfoForPodResponse.GetNodeInfoForPod_Content content = new GetNodeInfoForPodResponse.GetNodeInfoForPod_Content();
 			content.RegionId = _ctx.StringValue("GetNodeInfoForPod.Content.RegionId");
+			content.ZoneId = _ctx.StringValue("GetNodeInfoForPod.Content.ZoneId");
 			content.ClusterId = _ctx.StringValue("GetNodeInfoForPod.Content.ClusterId");
 			content.VpcId = _ctx.StringValue("GetNodeInfoForPod.Content.VpcId");
 			content.NodeId = _ctx.StringValue("GetNodeInfoForPod.Content.NodeId");
