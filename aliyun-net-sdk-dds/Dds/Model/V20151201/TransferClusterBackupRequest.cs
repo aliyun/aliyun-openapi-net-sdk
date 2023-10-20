@@ -27,10 +27,10 @@ using Aliyun.Acs.Dds.Transform.V20151201;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class ModifyDBInstanceNetExpireTimeRequest : RpcAcsRequest<ModifyDBInstanceNetExpireTimeResponse>
+    public class TransferClusterBackupRequest : RpcAcsRequest<TransferClusterBackupResponse>
     {
-        public ModifyDBInstanceNetExpireTimeRequest()
-            : base("Dds", "2015-12-01", "ModifyDBInstanceNetExpireTime", "dds", "openAPI")
+        public TransferClusterBackupRequest()
+            : base("Dds", "2015-12-01", "TransferClusterBackup", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,10 +42,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
-		private string connectionString;
-
-		private int? classicExpendExpiredDays;
-
 		private string securityToken;
 
 		private string dBInstanceId;
@@ -55,8 +51,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string category;
 
 		public long? ResourceOwnerId
 		{
@@ -68,32 +62,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ConnectionString
-		{
-			get
-			{
-				return connectionString;
-			}
-			set	
-			{
-				connectionString = value;
-				DictionaryUtil.Add(QueryParameters, "ConnectionString", value);
-			}
-		}
-
-		public int? ClassicExpendExpiredDays
-		{
-			get
-			{
-				return classicExpendExpiredDays;
-			}
-			set	
-			{
-				classicExpendExpiredDays = value;
-				DictionaryUtil.Add(QueryParameters, "ClassicExpendExpiredDays", value.ToString());
 			}
 		}
 
@@ -162,22 +130,14 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string Category
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return category;
-			}
-			set	
-			{
-				category = value;
-				DictionaryUtil.Add(QueryParameters, "Category", value);
-			}
+			return false;
 		}
 
-        public override ModifyDBInstanceNetExpireTimeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override TransferClusterBackupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyDBInstanceNetExpireTimeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TransferClusterBackupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

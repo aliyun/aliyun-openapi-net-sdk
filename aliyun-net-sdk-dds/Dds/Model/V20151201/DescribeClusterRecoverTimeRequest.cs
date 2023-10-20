@@ -27,24 +27,19 @@ using Aliyun.Acs.Dds.Transform.V20151201;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class ModifyDBInstanceNetExpireTimeRequest : RpcAcsRequest<ModifyDBInstanceNetExpireTimeResponse>
+    public class DescribeClusterRecoverTimeRequest : RpcAcsRequest<DescribeClusterRecoverTimeResponse>
     {
-        public ModifyDBInstanceNetExpireTimeRequest()
-            : base("Dds", "2015-12-01", "ModifyDBInstanceNetExpireTime", "dds", "openAPI")
+        public DescribeClusterRecoverTimeRequest()
+            : base("Dds", "2015-12-01", "DescribeClusterRecoverTime", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointRegionalType, null);
             }
-			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
-
-		private string connectionString;
-
-		private int? classicExpendExpiredDays;
 
 		private string securityToken;
 
@@ -56,8 +51,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? ownerId;
 
-		private string category;
-
 		public long? ResourceOwnerId
 		{
 			get
@@ -68,32 +61,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ConnectionString
-		{
-			get
-			{
-				return connectionString;
-			}
-			set	
-			{
-				connectionString = value;
-				DictionaryUtil.Add(QueryParameters, "ConnectionString", value);
-			}
-		}
-
-		public int? ClassicExpendExpiredDays
-		{
-			get
-			{
-				return classicExpendExpiredDays;
-			}
-			set	
-			{
-				classicExpendExpiredDays = value;
-				DictionaryUtil.Add(QueryParameters, "ClassicExpendExpiredDays", value.ToString());
 			}
 		}
 
@@ -162,22 +129,14 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string Category
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return category;
-			}
-			set	
-			{
-				category = value;
-				DictionaryUtil.Add(QueryParameters, "Category", value);
-			}
+			return false;
 		}
 
-        public override ModifyDBInstanceNetExpireTimeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeClusterRecoverTimeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyDBInstanceNetExpireTimeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeClusterRecoverTimeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -22,30 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-	public class DescribeDBInstanceTDEInfoResponse : AcsResponse
+	public class DescribeClusterRecoverTimeResponse : AcsResponse
 	{
-
-		private string tDEStatus;
 
 		private string requestId;
 
-		private string roleARN;
-
-		private string encryptionKey;
-
-		private string encryptorName;
-
-		public string TDEStatus
-		{
-			get
-			{
-				return tDEStatus;
-			}
-			set	
-			{
-				tDEStatus = value;
-			}
-		}
+		private List<DescribeClusterRecoverTime_AvailableRestoreTime> restoreRanges;
 
 		public string RequestId
 		{
@@ -59,39 +41,61 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string RoleARN
+		public List<DescribeClusterRecoverTime_AvailableRestoreTime> RestoreRanges
 		{
 			get
 			{
-				return roleARN;
+				return restoreRanges;
 			}
 			set	
 			{
-				roleARN = value;
+				restoreRanges = value;
 			}
 		}
 
-		public string EncryptionKey
+		public class DescribeClusterRecoverTime_AvailableRestoreTime
 		{
-			get
-			{
-				return encryptionKey;
-			}
-			set	
-			{
-				encryptionKey = value;
-			}
-		}
 
-		public string EncryptorName
-		{
-			get
+			private string restoreBeginTime;
+
+			private string restoreEndTime;
+
+			private string restoreType;
+
+			public string RestoreBeginTime
 			{
-				return encryptorName;
+				get
+				{
+					return restoreBeginTime;
+				}
+				set	
+				{
+					restoreBeginTime = value;
+				}
 			}
-			set	
+
+			public string RestoreEndTime
 			{
-				encryptorName = value;
+				get
+				{
+					return restoreEndTime;
+				}
+				set	
+				{
+					restoreEndTime = value;
+				}
+			}
+
+			public string RestoreType
+			{
+				get
+				{
+					return restoreType;
+				}
+				set	
+				{
+					restoreType = value;
+				}
 			}
 		}
 	}

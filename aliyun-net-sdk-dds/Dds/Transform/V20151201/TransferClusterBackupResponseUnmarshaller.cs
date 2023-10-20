@@ -24,20 +24,17 @@ using Aliyun.Acs.Dds.Model.V20151201;
 
 namespace Aliyun.Acs.Dds.Transform.V20151201
 {
-    public class DescribeDBInstanceTDEInfoResponseUnmarshaller
+    public class TransferClusterBackupResponseUnmarshaller
     {
-        public static DescribeDBInstanceTDEInfoResponse Unmarshall(UnmarshallerContext _ctx)
+        public static TransferClusterBackupResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			DescribeDBInstanceTDEInfoResponse describeDBInstanceTDEInfoResponse = new DescribeDBInstanceTDEInfoResponse();
+			TransferClusterBackupResponse transferClusterBackupResponse = new TransferClusterBackupResponse();
 
-			describeDBInstanceTDEInfoResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBInstanceTDEInfoResponse.TDEStatus = _ctx.StringValue("DescribeDBInstanceTDEInfo.TDEStatus");
-			describeDBInstanceTDEInfoResponse.RequestId = _ctx.StringValue("DescribeDBInstanceTDEInfo.RequestId");
-			describeDBInstanceTDEInfoResponse.RoleARN = _ctx.StringValue("DescribeDBInstanceTDEInfo.RoleARN");
-			describeDBInstanceTDEInfoResponse.EncryptionKey = _ctx.StringValue("DescribeDBInstanceTDEInfo.EncryptionKey");
-			describeDBInstanceTDEInfoResponse.EncryptorName = _ctx.StringValue("DescribeDBInstanceTDEInfo.EncryptorName");
+			transferClusterBackupResponse.HttpResponse = _ctx.HttpResponse;
+			transferClusterBackupResponse.AlreadyDone = _ctx.StringValue("TransferClusterBackup.AlreadyDone");
+			transferClusterBackupResponse.RequestId = _ctx.StringValue("TransferClusterBackup.RequestId");
         
-			return describeDBInstanceTDEInfoResponse;
+			return transferClusterBackupResponse;
         }
     }
 }

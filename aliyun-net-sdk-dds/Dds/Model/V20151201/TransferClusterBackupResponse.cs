@@ -22,28 +22,22 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-	public class DescribeDBInstanceTDEInfoResponse : AcsResponse
+	public class TransferClusterBackupResponse : AcsResponse
 	{
 
-		private string tDEStatus;
+		private string alreadyDone;
 
 		private string requestId;
 
-		private string roleARN;
-
-		private string encryptionKey;
-
-		private string encryptorName;
-
-		public string TDEStatus
+		public string AlreadyDone
 		{
 			get
 			{
-				return tDEStatus;
+				return alreadyDone;
 			}
 			set	
 			{
-				tDEStatus = value;
+				alreadyDone = value;
 			}
 		}
 
@@ -56,42 +50,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string RoleARN
-		{
-			get
-			{
-				return roleARN;
-			}
-			set	
-			{
-				roleARN = value;
-			}
-		}
-
-		public string EncryptionKey
-		{
-			get
-			{
-				return encryptionKey;
-			}
-			set	
-			{
-				encryptionKey = value;
-			}
-		}
-
-		public string EncryptorName
-		{
-			get
-			{
-				return encryptorName;
-			}
-			set	
-			{
-				encryptorName = value;
 			}
 		}
 	}

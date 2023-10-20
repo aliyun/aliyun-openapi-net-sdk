@@ -81,6 +81,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				dBInstance.Encrypted = _ctx.BooleanValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].Encrypted");
 				dBInstance.EncryptionKey = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].EncryptionKey");
 				dBInstance.SyncPercent = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].SyncPercent");
+				dBInstance.UseClusterBackup = _ctx.BooleanValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].UseClusterBackup");
 				dBInstance.BurstingEnabled = _ctx.BooleanValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].BurstingEnabled");
 				dBInstance.ProvisionedIops = _ctx.LongValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ProvisionedIops");
 

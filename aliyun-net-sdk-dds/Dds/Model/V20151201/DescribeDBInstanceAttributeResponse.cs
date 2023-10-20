@@ -146,6 +146,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string syncPercent;
 
+			private bool? useClusterBackup;
+
 			private bool? burstingEnabled;
 
 			private long? provisionedIops;
@@ -699,6 +701,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					syncPercent = value;
+				}
+			}
+
+			public bool? UseClusterBackup
+			{
+				get
+				{
+					return useClusterBackup;
+				}
+				set	
+				{
+					useClusterBackup = value;
 				}
 			}
 

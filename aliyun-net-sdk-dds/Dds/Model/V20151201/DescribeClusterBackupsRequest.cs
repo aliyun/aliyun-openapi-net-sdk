@@ -27,10 +27,10 @@ using Aliyun.Acs.Dds.Transform.V20151201;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class ModifyDBInstanceNetExpireTimeRequest : RpcAcsRequest<ModifyDBInstanceNetExpireTimeResponse>
+    public class DescribeClusterBackupsRequest : RpcAcsRequest<DescribeClusterBackupsResponse>
     {
-        public ModifyDBInstanceNetExpireTimeRequest()
-            : base("Dds", "2015-12-01", "ModifyDBInstanceNetExpireTime", "dds", "openAPI")
+        public DescribeClusterBackupsRequest()
+            : base("Dds", "2015-12-01", "DescribeClusterBackups", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,11 +42,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
-		private string connectionString;
-
-		private int? classicExpendExpiredDays;
+		private string startTime;
 
 		private string securityToken;
+
+		private int? pageSize;
 
 		private string dBInstanceId;
 
@@ -54,9 +54,15 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string ownerAccount;
 
+		private string backupId;
+
+		private string endTime;
+
 		private long? ownerId;
 
-		private string category;
+		private bool? isOnlyGetClusterBackUp;
+
+		private int? pageNo;
 
 		public long? ResourceOwnerId
 		{
@@ -71,29 +77,16 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string ConnectionString
+		public string StartTime
 		{
 			get
 			{
-				return connectionString;
+				return startTime;
 			}
 			set	
 			{
-				connectionString = value;
-				DictionaryUtil.Add(QueryParameters, "ConnectionString", value);
-			}
-		}
-
-		public int? ClassicExpendExpiredDays
-		{
-			get
-			{
-				return classicExpendExpiredDays;
-			}
-			set	
-			{
-				classicExpendExpiredDays = value;
-				DictionaryUtil.Add(QueryParameters, "ClassicExpendExpiredDays", value.ToString());
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
@@ -107,6 +100,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -149,6 +155,32 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string BackupId
+		{
+			get
+			{
+				return backupId;
+			}
+			set	
+			{
+				backupId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupId", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -162,22 +194,40 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string Category
+		public bool? IsOnlyGetClusterBackUp
 		{
 			get
 			{
-				return category;
+				return isOnlyGetClusterBackUp;
 			}
 			set	
 			{
-				category = value;
-				DictionaryUtil.Add(QueryParameters, "Category", value);
+				isOnlyGetClusterBackUp = value;
+				DictionaryUtil.Add(QueryParameters, "IsOnlyGetClusterBackUp", value.ToString());
 			}
 		}
 
-        public override ModifyDBInstanceNetExpireTimeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public int? PageNo
+		{
+			get
+			{
+				return pageNo;
+			}
+			set	
+			{
+				pageNo = value;
+				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeClusterBackupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyDBInstanceNetExpireTimeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeClusterBackupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
