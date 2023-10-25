@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Dypnsapi;
 using Aliyun.Acs.Dypnsapi.Transform;
 using Aliyun.Acs.Dypnsapi.Transform.V20170525;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
     public class GetFusionAuthTokenRequest : RpcAcsRequest<GetFusionAuthTokenResponse>
     {
         public GetFusionAuthTokenRequest()
-            : base("Dypnsapi", "2017-05-25", "GetFusionAuthToken")
+            : base("Dypnsapi", "2017-05-25", "GetFusionAuthToken", "dypnsapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
