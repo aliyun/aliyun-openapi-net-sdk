@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.fnf.Model.V20190315
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 	public class ReportTaskSucceededResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? eventId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public long? EventId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			set	
 			{
 				eventId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

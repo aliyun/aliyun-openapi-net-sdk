@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.fnf.Model.V20190315
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 	public class ListFlowsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string nextToken;
 
-		private List<ListFlows_FlowsItem> flows;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<ListFlows_FlowsItem> flows;
 
 		public string NextToken
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			set	
 			{
 				nextToken = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,45 +70,35 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 		public class ListFlows_FlowsItem
 		{
 
-			private string name;
-
-			private string description;
+			private string type;
 
 			private string definition;
 
-			private string id;
-
-			private string type;
-
 			private string roleArn;
+
+			private string description;
+
+			private string externalStorageLocation;
+
+			private string name;
 
 			private string createdTime;
 
 			private string lastModifiedTime;
 
-			private string externalStorageLocation;
+			private string id;
 
-			public string Name
+			private string executionMode;
+
+			public string Type
 			{
 				get
 				{
-					return name;
+					return type;
 				}
 				set	
 				{
-					name = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
+					type = value;
 				}
 			}
 
@@ -124,30 +114,6 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 				}
 			}
 
-			public string Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
-
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
-
 			public string RoleArn
 			{
 				get
@@ -157,6 +123,42 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 				set	
 				{
 					roleArn = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string ExternalStorageLocation
+			{
+				get
+				{
+					return externalStorageLocation;
+				}
+				set	
+				{
+					externalStorageLocation = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 
@@ -184,15 +186,27 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 				}
 			}
 
-			public string ExternalStorageLocation
+			public string Id
 			{
 				get
 				{
-					return externalStorageLocation;
+					return id;
 				}
 				set	
 				{
-					externalStorageLocation = value;
+					id = value;
+				}
+			}
+
+			public string ExecutionMode
+			{
+				get
+				{
+					return executionMode;
+				}
+				set	
+				{
+					executionMode = value;
 				}
 			}
 		}

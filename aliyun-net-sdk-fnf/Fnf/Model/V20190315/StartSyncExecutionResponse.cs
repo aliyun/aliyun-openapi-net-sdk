@@ -22,66 +22,26 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.fnf.Model.V20190315
 {
-	public class DescribeFlowResponse : AcsResponse
+	public class StartSyncExecutionResponse : AcsResponse
 	{
-
-		private string type;
-
-		private string definition;
-
-		private string roleArn;
 
 		private string requestId;
 
-		private string description;
-
-		private string externalStorageLocation;
+		private string flowName;
 
 		private string name;
 
-		private string createdTime;
+		private string status;
 
-		private string lastModifiedTime;
+		private string errorCode;
 
-		private string id;
+		private string errorMessage;
 
-		private string executionMode;
+		private string output;
 
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-			}
-		}
+		private string startedTime;
 
-		public string Definition
-		{
-			get
-			{
-				return definition;
-			}
-			set	
-			{
-				definition = value;
-			}
-		}
-
-		public string RoleArn
-		{
-			get
-			{
-				return roleArn;
-			}
-			set	
-			{
-				roleArn = value;
-			}
-		}
+		private string stoppedTime;
 
 		public string RequestId
 		{
@@ -95,27 +55,15 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			}
 		}
 
-		public string Description
+		public string FlowName
 		{
 			get
 			{
-				return description;
+				return flowName;
 			}
 			set	
 			{
-				description = value;
-			}
-		}
-
-		public string ExternalStorageLocation
-		{
-			get
-			{
-				return externalStorageLocation;
-			}
-			set	
-			{
-				externalStorageLocation = value;
+				flowName = value;
 			}
 		}
 
@@ -131,51 +79,75 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			}
 		}
 
-		public string CreatedTime
+		public string Status
 		{
 			get
 			{
-				return createdTime;
+				return status;
 			}
 			set	
 			{
-				createdTime = value;
+				status = value;
 			}
 		}
 
-		public string LastModifiedTime
+		public string ErrorCode
 		{
 			get
 			{
-				return lastModifiedTime;
+				return errorCode;
 			}
 			set	
 			{
-				lastModifiedTime = value;
+				errorCode = value;
 			}
 		}
 
-		public string Id
+		public string ErrorMessage
 		{
 			get
 			{
-				return id;
+				return errorMessage;
 			}
 			set	
 			{
-				id = value;
+				errorMessage = value;
 			}
 		}
 
-		public string ExecutionMode
+		public string Output
 		{
 			get
 			{
-				return executionMode;
+				return output;
 			}
 			set	
 			{
-				executionMode = value;
+				output = value;
+			}
+		}
+
+		public string StartedTime
+		{
+			get
+			{
+				return startedTime;
+			}
+			set	
+			{
+				startedTime = value;
+			}
+		}
+
+		public string StoppedTime
+		{
+			get
+			{
+				return stoppedTime;
+			}
+			set	
+			{
+				stoppedTime = value;
 			}
 		}
 	}

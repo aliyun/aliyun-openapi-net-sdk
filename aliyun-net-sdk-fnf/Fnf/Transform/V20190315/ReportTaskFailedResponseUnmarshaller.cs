@@ -31,8 +31,8 @@ namespace Aliyun.Acs.fnf.Transform.V20190315
 			ReportTaskFailedResponse reportTaskFailedResponse = new ReportTaskFailedResponse();
 
 			reportTaskFailedResponse.HttpResponse = _ctx.HttpResponse;
-			reportTaskFailedResponse.RequestId = _ctx.StringValue("ReportTaskFailed.RequestId");
 			reportTaskFailedResponse.EventId = _ctx.LongValue("ReportTaskFailed.EventId");
+			reportTaskFailedResponse.RequestId = _ctx.StringValue("ReportTaskFailed.RequestId");
         
 			return reportTaskFailedResponse;
         }

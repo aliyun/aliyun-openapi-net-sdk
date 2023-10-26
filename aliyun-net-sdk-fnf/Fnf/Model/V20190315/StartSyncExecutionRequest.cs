@@ -27,58 +27,51 @@ using Aliyun.Acs.fnf.Transform.V20190315;
 
 namespace Aliyun.Acs.fnf.Model.V20190315
 {
-    public class CreateFlowRequest : RpcAcsRequest<CreateFlowResponse>
+    public class StartSyncExecutionRequest : RpcAcsRequest<StartSyncExecutionResponse>
     {
-        public CreateFlowRequest()
-            : base("fnf", "2019-03-15", "CreateFlow", "fnf", "openAPI")
+        public StartSyncExecutionRequest()
+            : base("fnf", "2019-03-15", "StartSyncExecution", "fnf", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.fnf.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.fnf.Endpoint.endpointRegionalType, null);
             }
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private string description;
+		private string executionName;
 
-		private string type;
+		private string input;
 
 		private string requestId;
 
-		private string roleArn;
+		private string flowName;
 
-		private string name;
-
-		private string definition;
-
-		private string externalStorageLocation;
-
-		private string executionMode;
-
-		public string Description
+		public string ExecutionName
 		{
 			get
 			{
-				return description;
+				return executionName;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(BodyParameters, "Description", value);
+				executionName = value;
+				DictionaryUtil.Add(BodyParameters, "ExecutionName", value);
 			}
 		}
 
-		public string Type
+		public string Input
 		{
 			get
 			{
-				return type;
+				return input;
 			}
 			set	
 			{
-				type = value;
-				DictionaryUtil.Add(BodyParameters, "Type", value);
+				input = value;
+				DictionaryUtil.Add(BodyParameters, "Input", value);
 			}
 		}
 
@@ -95,74 +88,27 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			}
 		}
 
-		public string RoleArn
+		public string FlowName
 		{
 			get
 			{
-				return roleArn;
+				return flowName;
 			}
 			set	
 			{
-				roleArn = value;
-				DictionaryUtil.Add(BodyParameters, "RoleArn", value);
+				flowName = value;
+				DictionaryUtil.Add(BodyParameters, "FlowName", value);
 			}
 		}
 
-		public string Name
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(BodyParameters, "Name", value);
-			}
+			return false;
 		}
 
-		public string Definition
-		{
-			get
-			{
-				return definition;
-			}
-			set	
-			{
-				definition = value;
-				DictionaryUtil.Add(BodyParameters, "Definition", value);
-			}
-		}
-
-		public string ExternalStorageLocation
-		{
-			get
-			{
-				return externalStorageLocation;
-			}
-			set	
-			{
-				externalStorageLocation = value;
-				DictionaryUtil.Add(BodyParameters, "ExternalStorageLocation", value);
-			}
-		}
-
-		public string ExecutionMode
-		{
-			get
-			{
-				return executionMode;
-			}
-			set	
-			{
-				executionMode = value;
-				DictionaryUtil.Add(BodyParameters, "ExecutionMode", value);
-			}
-		}
-
-        public override CreateFlowResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override StartSyncExecutionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateFlowResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return StartSyncExecutionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

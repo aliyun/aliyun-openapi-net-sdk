@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.fnf.Model.V20190315
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 	public class GetExecutionHistoryResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string nextToken;
 
-		private List<GetExecutionHistory_EventsItem> events;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<GetExecutionHistory_EventsItem> events;
 
 		public string NextToken
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			set	
 			{
 				nextToken = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,29 +70,17 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 		public class GetExecutionHistory_EventsItem
 		{
 
-			private string stepName;
-
 			private string type;
 
 			private long? eventId;
+
+			private string time;
 
 			private long? scheduleEventId;
 
 			private string eventDetail;
 
-			private string time;
-
-			public string StepName
-			{
-				get
-				{
-					return stepName;
-				}
-				set	
-				{
-					stepName = value;
-				}
-			}
+			private string stepName;
 
 			public string Type
 			{
@@ -115,6 +103,18 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 				set	
 				{
 					eventId = value;
+				}
+			}
+
+			public string Time
+			{
+				get
+				{
+					return time;
+				}
+				set	
+				{
+					time = value;
 				}
 			}
 
@@ -142,15 +142,15 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 				}
 			}
 
-			public string Time
+			public string StepName
 			{
 				get
 				{
-					return time;
+					return stepName;
 				}
 				set	
 				{
-					time = value;
+					stepName = value;
 				}
 			}
 		}

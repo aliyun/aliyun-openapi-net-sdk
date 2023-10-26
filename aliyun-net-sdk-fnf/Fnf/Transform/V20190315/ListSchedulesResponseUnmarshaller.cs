@@ -31,20 +31,20 @@ namespace Aliyun.Acs.fnf.Transform.V20190315
 			ListSchedulesResponse listSchedulesResponse = new ListSchedulesResponse();
 
 			listSchedulesResponse.HttpResponse = _ctx.HttpResponse;
-			listSchedulesResponse.RequestId = _ctx.StringValue("ListSchedules.RequestId");
 			listSchedulesResponse.NextToken = _ctx.StringValue("ListSchedules.NextToken");
+			listSchedulesResponse.RequestId = _ctx.StringValue("ListSchedules.RequestId");
 
 			List<ListSchedulesResponse.ListSchedules_SchedulesItem> listSchedulesResponse_schedules = new List<ListSchedulesResponse.ListSchedules_SchedulesItem>();
 			for (int i = 0; i < _ctx.Length("ListSchedules.Schedules.Length"); i++) {
 				ListSchedulesResponse.ListSchedules_SchedulesItem schedulesItem = new ListSchedulesResponse.ListSchedules_SchedulesItem();
-				schedulesItem.ScheduleName = _ctx.StringValue("ListSchedules.Schedules["+ i +"].ScheduleName");
 				schedulesItem.Description = _ctx.StringValue("ListSchedules.Schedules["+ i +"].Description");
 				schedulesItem.ScheduleId = _ctx.StringValue("ListSchedules.Schedules["+ i +"].ScheduleId");
 				schedulesItem.Payload = _ctx.StringValue("ListSchedules.Schedules["+ i +"].Payload");
-				schedulesItem.CronExpression = _ctx.StringValue("ListSchedules.Schedules["+ i +"].CronExpression");
-				schedulesItem.Enable = _ctx.BooleanValue("ListSchedules.Schedules["+ i +"].Enable");
+				schedulesItem.ScheduleName = _ctx.StringValue("ListSchedules.Schedules["+ i +"].ScheduleName");
 				schedulesItem.CreatedTime = _ctx.StringValue("ListSchedules.Schedules["+ i +"].CreatedTime");
 				schedulesItem.LastModifiedTime = _ctx.StringValue("ListSchedules.Schedules["+ i +"].LastModifiedTime");
+				schedulesItem.CronExpression = _ctx.StringValue("ListSchedules.Schedules["+ i +"].CronExpression");
+				schedulesItem.Enable = _ctx.BooleanValue("ListSchedules.Schedules["+ i +"].Enable");
 
 				listSchedulesResponse_schedules.Add(schedulesItem);
 			}

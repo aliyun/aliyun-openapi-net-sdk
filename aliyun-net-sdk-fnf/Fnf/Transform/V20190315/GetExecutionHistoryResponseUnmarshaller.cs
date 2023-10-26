@@ -31,18 +31,18 @@ namespace Aliyun.Acs.fnf.Transform.V20190315
 			GetExecutionHistoryResponse getExecutionHistoryResponse = new GetExecutionHistoryResponse();
 
 			getExecutionHistoryResponse.HttpResponse = _ctx.HttpResponse;
-			getExecutionHistoryResponse.RequestId = _ctx.StringValue("GetExecutionHistory.RequestId");
 			getExecutionHistoryResponse.NextToken = _ctx.StringValue("GetExecutionHistory.NextToken");
+			getExecutionHistoryResponse.RequestId = _ctx.StringValue("GetExecutionHistory.RequestId");
 
 			List<GetExecutionHistoryResponse.GetExecutionHistory_EventsItem> getExecutionHistoryResponse_events = new List<GetExecutionHistoryResponse.GetExecutionHistory_EventsItem>();
 			for (int i = 0; i < _ctx.Length("GetExecutionHistory.Events.Length"); i++) {
 				GetExecutionHistoryResponse.GetExecutionHistory_EventsItem eventsItem = new GetExecutionHistoryResponse.GetExecutionHistory_EventsItem();
-				eventsItem.StepName = _ctx.StringValue("GetExecutionHistory.Events["+ i +"].StepName");
 				eventsItem.Type = _ctx.StringValue("GetExecutionHistory.Events["+ i +"].Type");
 				eventsItem.EventId = _ctx.LongValue("GetExecutionHistory.Events["+ i +"].EventId");
+				eventsItem.Time = _ctx.StringValue("GetExecutionHistory.Events["+ i +"].Time");
 				eventsItem.ScheduleEventId = _ctx.LongValue("GetExecutionHistory.Events["+ i +"].ScheduleEventId");
 				eventsItem.EventDetail = _ctx.StringValue("GetExecutionHistory.Events["+ i +"].EventDetail");
-				eventsItem.Time = _ctx.StringValue("GetExecutionHistory.Events["+ i +"].Time");
+				eventsItem.StepName = _ctx.StringValue("GetExecutionHistory.Events["+ i +"].StepName");
 
 				getExecutionHistoryResponse_events.Add(eventsItem);
 			}

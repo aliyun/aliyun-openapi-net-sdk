@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.fnf.Model.V20190315
@@ -25,99 +25,27 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 	public class DescribeExecutionResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string name;
-
-		private string flowName;
-
-		private string flowDefinition;
-
-		private string input;
-
-		private string output;
-
 		private string status;
-
-		private string startedTime;
 
 		private string stoppedTime;
 
+		private string requestId;
+
+		private string startedTime;
+
+		private string flowDefinition;
+
 		private string externalInputUri;
+
+		private string output;
+
+		private string flowName;
 
 		private string externalOutputUri;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string name;
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-			}
-		}
-
-		public string FlowName
-		{
-			get
-			{
-				return flowName;
-			}
-			set	
-			{
-				flowName = value;
-			}
-		}
-
-		public string FlowDefinition
-		{
-			get
-			{
-				return flowDefinition;
-			}
-			set	
-			{
-				flowDefinition = value;
-			}
-		}
-
-		public string Input
-		{
-			get
-			{
-				return input;
-			}
-			set	
-			{
-				input = value;
-			}
-		}
-
-		public string Output
-		{
-			get
-			{
-				return output;
-			}
-			set	
-			{
-				output = value;
-			}
-		}
+		private string input;
 
 		public string Status
 		{
@@ -128,18 +56,6 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			set	
 			{
 				status = value;
-			}
-		}
-
-		public string StartedTime
-		{
-			get
-			{
-				return startedTime;
-			}
-			set	
-			{
-				startedTime = value;
 			}
 		}
 
@@ -155,6 +71,42 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string StartedTime
+		{
+			get
+			{
+				return startedTime;
+			}
+			set	
+			{
+				startedTime = value;
+			}
+		}
+
+		public string FlowDefinition
+		{
+			get
+			{
+				return flowDefinition;
+			}
+			set	
+			{
+				flowDefinition = value;
+			}
+		}
+
 		public string ExternalInputUri
 		{
 			get
@@ -167,6 +119,30 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			}
 		}
 
+		public string Output
+		{
+			get
+			{
+				return output;
+			}
+			set	
+			{
+				output = value;
+			}
+		}
+
+		public string FlowName
+		{
+			get
+			{
+				return flowName;
+			}
+			set	
+			{
+				flowName = value;
+			}
+		}
+
 		public string ExternalOutputUri
 		{
 			get
@@ -176,6 +152,30 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			set	
 			{
 				externalOutputUri = value;
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+			}
+		}
+
+		public string Input
+		{
+			get
+			{
+				return input;
+			}
+			set	
+			{
+				input = value;
 			}
 		}
 	}

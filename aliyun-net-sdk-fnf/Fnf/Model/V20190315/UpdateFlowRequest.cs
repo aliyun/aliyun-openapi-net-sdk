@@ -52,8 +52,6 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 
 		private string definition;
 
-		private string externalStorageLocation;
-
 		public string Description
 		{
 			get
@@ -129,19 +127,6 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			{
 				definition = value;
 				DictionaryUtil.Add(BodyParameters, "Definition", value);
-			}
-		}
-
-		public string ExternalStorageLocation
-		{
-			get
-			{
-				return externalStorageLocation;
-			}
-			set	
-			{
-				externalStorageLocation = value;
-				DictionaryUtil.Add(BodyParameters, "ExternalStorageLocation", value);
 			}
 		}
 

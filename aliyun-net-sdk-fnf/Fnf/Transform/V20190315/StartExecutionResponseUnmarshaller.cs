@@ -31,17 +31,17 @@ namespace Aliyun.Acs.fnf.Transform.V20190315
 			StartExecutionResponse startExecutionResponse = new StartExecutionResponse();
 
 			startExecutionResponse.HttpResponse = _ctx.HttpResponse;
-			startExecutionResponse.RequestId = _ctx.StringValue("StartExecution.RequestId");
-			startExecutionResponse.Name = _ctx.StringValue("StartExecution.Name");
-			startExecutionResponse.FlowName = _ctx.StringValue("StartExecution.FlowName");
-			startExecutionResponse.FlowDefinition = _ctx.StringValue("StartExecution.FlowDefinition");
-			startExecutionResponse.Input = _ctx.StringValue("StartExecution.Input");
-			startExecutionResponse.Output = _ctx.StringValue("StartExecution.Output");
 			startExecutionResponse.Status = _ctx.StringValue("StartExecution.Status");
-			startExecutionResponse.StartedTime = _ctx.StringValue("StartExecution.StartedTime");
 			startExecutionResponse.StoppedTime = _ctx.StringValue("StartExecution.StoppedTime");
+			startExecutionResponse.RequestId = _ctx.StringValue("StartExecution.RequestId");
+			startExecutionResponse.StartedTime = _ctx.StringValue("StartExecution.StartedTime");
+			startExecutionResponse.FlowDefinition = _ctx.StringValue("StartExecution.FlowDefinition");
 			startExecutionResponse.ExternalInputUri = _ctx.StringValue("StartExecution.ExternalInputUri");
+			startExecutionResponse.Output = _ctx.StringValue("StartExecution.Output");
+			startExecutionResponse.FlowName = _ctx.StringValue("StartExecution.FlowName");
 			startExecutionResponse.ExternalOutputUri = _ctx.StringValue("StartExecution.ExternalOutputUri");
+			startExecutionResponse.Name = _ctx.StringValue("StartExecution.Name");
+			startExecutionResponse.Input = _ctx.StringValue("StartExecution.Input");
         
 			return startExecutionResponse;
         }

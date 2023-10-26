@@ -32,14 +32,14 @@ namespace Aliyun.Acs.fnf.Transform.V20190315
 
 			describeScheduleResponse.HttpResponse = _ctx.HttpResponse;
 			describeScheduleResponse.RequestId = _ctx.StringValue("DescribeSchedule.RequestId");
-			describeScheduleResponse.ScheduleName = _ctx.StringValue("DescribeSchedule.ScheduleName");
 			describeScheduleResponse.Description = _ctx.StringValue("DescribeSchedule.Description");
 			describeScheduleResponse.ScheduleId = _ctx.StringValue("DescribeSchedule.ScheduleId");
 			describeScheduleResponse.Payload = _ctx.StringValue("DescribeSchedule.Payload");
-			describeScheduleResponse.CronExpression = _ctx.StringValue("DescribeSchedule.CronExpression");
-			describeScheduleResponse.Enable = _ctx.BooleanValue("DescribeSchedule.Enable");
+			describeScheduleResponse.ScheduleName = _ctx.StringValue("DescribeSchedule.ScheduleName");
 			describeScheduleResponse.CreatedTime = _ctx.StringValue("DescribeSchedule.CreatedTime");
 			describeScheduleResponse.LastModifiedTime = _ctx.StringValue("DescribeSchedule.LastModifiedTime");
+			describeScheduleResponse.CronExpression = _ctx.StringValue("DescribeSchedule.CronExpression");
+			describeScheduleResponse.Enable = _ctx.BooleanValue("DescribeSchedule.Enable");
         
 			return describeScheduleResponse;
         }
