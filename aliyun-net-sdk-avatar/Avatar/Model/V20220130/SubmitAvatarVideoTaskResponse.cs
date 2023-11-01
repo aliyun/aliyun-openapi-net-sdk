@@ -22,18 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.avatar.Model.V20220130
 {
-	public class SubmitAudioTo2DAvatarVideoTaskResponse : AcsResponse
+	public class SubmitAvatarVideoTaskResponse : AcsResponse
 	{
 
 		private string requestId;
+
+		private bool? success;
 
 		private string code;
 
 		private string message;
 
-		private bool? success;
-
-		private SubmitAudioTo2DAvatarVideoTask_Data data;
+		private SubmitAvatarVideoTask_Data data;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -45,6 +45,19 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -74,21 +87,8 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			}
 		}
 
-		[JsonProperty(PropertyName = "Success")]
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
 		[JsonProperty(PropertyName = "Data")]
-		public SubmitAudioTo2DAvatarVideoTask_Data Data
+		public SubmitAvatarVideoTask_Data Data
 		{
 			get
 			{
@@ -100,7 +100,7 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			}
 		}
 
-		public class SubmitAudioTo2DAvatarVideoTask_Data
+		public class SubmitAvatarVideoTask_Data
 		{
 
 			private string taskUuid;

@@ -58,6 +58,7 @@ namespace Aliyun.Acs.avatar.Transform.V20220130
 				taskResult.FailCode = _ctx.StringValue("QueryVideoTaskInfo.Data.List["+ i +"].TaskResult.FailCode");
 				taskResult.AlphaUrl = _ctx.StringValue("QueryVideoTaskInfo.Data.List["+ i +"].TaskResult.AlphaUrl");
 				taskResult.PreviewPic = _ctx.StringValue("QueryVideoTaskInfo.Data.List["+ i +"].TaskResult.PreviewPic");
+				taskResult.AttachmentUrl = _ctx.StringValue("QueryVideoTaskInfo.Data.List["+ i +"].TaskResult.AttachmentUrl");
 				listItem.TaskResult = taskResult;
 
 				data_list.Add(listItem);
