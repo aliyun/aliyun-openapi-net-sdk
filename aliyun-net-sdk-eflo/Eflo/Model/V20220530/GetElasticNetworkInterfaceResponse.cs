@@ -116,6 +116,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 			private string description;
 
+			private List<GetElasticNetworkInterface_PrivateIpAddresse> privateIpAddresses;
+
 			public string RegionId
 			{
 				get
@@ -305,6 +307,148 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				set	
 				{
 					description = value;
+				}
+			}
+
+			public List<GetElasticNetworkInterface_PrivateIpAddresse> PrivateIpAddresses
+			{
+				get
+				{
+					return privateIpAddresses;
+				}
+				set	
+				{
+					privateIpAddresses = value;
+				}
+			}
+
+			public class GetElasticNetworkInterface_PrivateIpAddresse
+			{
+
+				private string elasticNetworkInterfaceId;
+
+				private string regionId;
+
+				private string gmtCreate;
+
+				private string gmtModified;
+
+				private string ipName;
+
+				private string privateIpAddress;
+
+				private string status;
+
+				private string description;
+
+				private string message;
+
+				public string ElasticNetworkInterfaceId
+				{
+					get
+					{
+						return elasticNetworkInterfaceId;
+					}
+					set	
+					{
+						elasticNetworkInterfaceId = value;
+					}
+				}
+
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
+					}
+				}
+
+				public string GmtCreate
+				{
+					get
+					{
+						return gmtCreate;
+					}
+					set	
+					{
+						gmtCreate = value;
+					}
+				}
+
+				public string GmtModified
+				{
+					get
+					{
+						return gmtModified;
+					}
+					set	
+					{
+						gmtModified = value;
+					}
+				}
+
+				public string IpName
+				{
+					get
+					{
+						return ipName;
+					}
+					set	
+					{
+						ipName = value;
+					}
+				}
+
+				public string PrivateIpAddress
+				{
+					get
+					{
+						return privateIpAddress;
+					}
+					set	
+					{
+						privateIpAddress = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public string Description
+				{
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
+					}
+				}
+
+				public string Message
+				{
+					get
+					{
+						return message;
+					}
+					set	
+					{
+						message = value;
+					}
 				}
 			}
 		}
