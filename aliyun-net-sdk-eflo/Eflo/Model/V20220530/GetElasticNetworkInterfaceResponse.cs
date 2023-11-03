@@ -116,7 +116,7 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 			private string description;
 
-			private List<GetElasticNetworkInterface_PrivateIpAddresse> privateIpAddresses;
+			private List<GetElasticNetworkInterface_PrivateIpAddress> privateIpAddresses;
 
 			public string RegionId
 			{
@@ -310,7 +310,7 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				}
 			}
 
-			public List<GetElasticNetworkInterface_PrivateIpAddresse> PrivateIpAddresses
+			public List<GetElasticNetworkInterface_PrivateIpAddress> PrivateIpAddresses
 			{
 				get
 				{
@@ -322,7 +322,7 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				}
 			}
 
-			public class GetElasticNetworkInterface_PrivateIpAddresse
+			public class GetElasticNetworkInterface_PrivateIpAddress
 			{
 
 				private string elasticNetworkInterfaceId;
