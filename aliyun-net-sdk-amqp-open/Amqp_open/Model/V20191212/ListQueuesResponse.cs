@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.amqp_open.Model.V20191212
@@ -56,23 +56,11 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 		public class ListQueues_Data
 		{
 
-			private string nextToken;
-
 			private int? maxResults;
 
-			private List<ListQueues_QueueVO> queues;
+			private string nextToken;
 
-			public string NextToken
-			{
-				get
-				{
-					return nextToken;
-				}
-				set	
-				{
-					nextToken = value;
-				}
-			}
+			private List<ListQueues_QueueVO> queues;
 
 			public int? MaxResults
 			{
@@ -83,6 +71,18 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 				set	
 				{
 					maxResults = value;
+				}
+			}
+
+			public string NextToken
+			{
+				get
+				{
+					return nextToken;
+				}
+				set	
+				{
+					nextToken = value;
 				}
 			}
 
@@ -101,21 +101,81 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 			public class ListQueues_QueueVO
 			{
 
+				private bool? exclusiveState;
+
+				private bool? autoDeleteState;
+
+				private long? createTime;
+
+				private string attributes;
+
+				private string vHostName;
+
 				private string name;
 
 				private string ownerId;
 
-				private string vHostName;
-
-				private bool? autoDeleteState;
-
-				private bool? exclusiveState;
-
-				private long? createTime;
-
 				private long? lastConsumeTime;
 
-				private string attributes;
+				public bool? ExclusiveState
+				{
+					get
+					{
+						return exclusiveState;
+					}
+					set	
+					{
+						exclusiveState = value;
+					}
+				}
+
+				public bool? AutoDeleteState
+				{
+					get
+					{
+						return autoDeleteState;
+					}
+					set	
+					{
+						autoDeleteState = value;
+					}
+				}
+
+				public long? CreateTime
+				{
+					get
+					{
+						return createTime;
+					}
+					set	
+					{
+						createTime = value;
+					}
+				}
+
+				public string Attributes
+				{
+					get
+					{
+						return attributes;
+					}
+					set	
+					{
+						attributes = value;
+					}
+				}
+
+				public string VHostName
+				{
+					get
+					{
+						return vHostName;
+					}
+					set	
+					{
+						vHostName = value;
+					}
+				}
 
 				public string Name
 				{
@@ -141,54 +201,6 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 					}
 				}
 
-				public string VHostName
-				{
-					get
-					{
-						return vHostName;
-					}
-					set	
-					{
-						vHostName = value;
-					}
-				}
-
-				public bool? AutoDeleteState
-				{
-					get
-					{
-						return autoDeleteState;
-					}
-					set	
-					{
-						autoDeleteState = value;
-					}
-				}
-
-				public bool? ExclusiveState
-				{
-					get
-					{
-						return exclusiveState;
-					}
-					set	
-					{
-						exclusiveState = value;
-					}
-				}
-
-				public long? CreateTime
-				{
-					get
-					{
-						return createTime;
-					}
-					set	
-					{
-						createTime = value;
-					}
-				}
-
 				public long? LastConsumeTime
 				{
 					get
@@ -198,18 +210,6 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 					set	
 					{
 						lastConsumeTime = value;
-					}
-				}
-
-				public string Attributes
-				{
-					get
-					{
-						return attributes;
-					}
-					set	
-					{
-						attributes = value;
 					}
 				}
 			}

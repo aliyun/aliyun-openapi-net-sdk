@@ -22,12 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.amqp_open.Model.V20191212
 {
-	public class ListVirtualHostsResponse : AcsResponse
+	public class DeleteAccountResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private ListVirtualHosts_Data data;
+		private int? code;
+
+		private string message;
+
+		private bool? data;
+
+		private bool? success;
 
 		public string RequestId
 		{
@@ -41,7 +47,31 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 			}
 		}
 
-		public ListVirtualHosts_Data Data
+		public int? Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		public bool? Data
 		{
 			get
 			{
@@ -53,67 +83,15 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 			}
 		}
 
-		public class ListVirtualHosts_Data
+		public bool? Success
 		{
-
-			private int? maxResults;
-
-			private string nextToken;
-
-			private List<ListVirtualHosts_VhostVO> virtualHosts;
-
-			public int? MaxResults
+			get
 			{
-				get
-				{
-					return maxResults;
-				}
-				set	
-				{
-					maxResults = value;
-				}
+				return success;
 			}
-
-			public string NextToken
+			set	
 			{
-				get
-				{
-					return nextToken;
-				}
-				set	
-				{
-					nextToken = value;
-				}
-			}
-
-			public List<ListVirtualHosts_VhostVO> VirtualHosts
-			{
-				get
-				{
-					return virtualHosts;
-				}
-				set	
-				{
-					virtualHosts = value;
-				}
-			}
-
-			public class ListVirtualHosts_VhostVO
-			{
-
-				private string name;
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
+				success = value;
 			}
 		}
 	}

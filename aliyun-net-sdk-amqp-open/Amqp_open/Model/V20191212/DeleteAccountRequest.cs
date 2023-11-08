@@ -27,10 +27,10 @@ using Aliyun.Acs.amqp_open.Transform.V20191212;
 
 namespace Aliyun.Acs.amqp_open.Model.V20191212
 {
-    public class CreateVirtualHostRequest : RpcAcsRequest<CreateVirtualHostResponse>
+    public class DeleteAccountRequest : RpcAcsRequest<DeleteAccountResponse>
     {
-        public CreateVirtualHostRequest()
-            : base("amqp-open", "2019-12-12", "CreateVirtualHost", "onsproxy", "openAPI")
+        public DeleteAccountRequest()
+            : base("amqp-open", "2019-12-12", "DeleteAccount", "onsproxy", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,33 +40,33 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 			Method = MethodType.POST;
         }
 
-		private string instanceId;
+		private long? createTimestamp;
 
-		private string virtualHost;
+		private string userName;
 
-		public string InstanceId
+		public long? CreateTimestamp
 		{
 			get
 			{
-				return instanceId;
+				return createTimestamp;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(BodyParameters, "InstanceId", value);
+				createTimestamp = value;
+				DictionaryUtil.Add(QueryParameters, "CreateTimestamp", value.ToString());
 			}
 		}
 
-		public string VirtualHost
+		public string UserName
 		{
 			get
 			{
-				return virtualHost;
+				return userName;
 			}
 			set	
 			{
-				virtualHost = value;
-				DictionaryUtil.Add(BodyParameters, "VirtualHost", value);
+				userName = value;
+				DictionaryUtil.Add(QueryParameters, "UserName", value);
 			}
 		}
 
@@ -75,9 +75,9 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 			return false;
 		}
 
-        public override CreateVirtualHostResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteAccountResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateVirtualHostResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteAccountResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

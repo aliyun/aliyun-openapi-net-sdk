@@ -27,10 +27,10 @@ using Aliyun.Acs.amqp_open.Transform.V20191212;
 
 namespace Aliyun.Acs.amqp_open.Model.V20191212
 {
-    public class CreateBindingRequest : RpcAcsRequest<CreateBindingResponse>
+    public class CreateAccountRequest : RpcAcsRequest<CreateAccountResponse>
     {
-        public CreateBindingRequest()
-            : base("amqp-open", "2019-12-12", "CreateBinding", "onsproxy", "openAPI")
+        public CreateAccountRequest()
+            : base("amqp-open", "2019-12-12", "CreateAccount", "onsproxy", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,82 +40,54 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 			Method = MethodType.POST;
         }
 
-		private string argument;
+		private string signature;
 
-		private string destinationName;
+		private string secretSign;
 
-		private string sourceExchange;
-
-		private string bindingKey;
-
-		private string bindingType;
+		private string accountAccessKey;
 
 		private string instanceId;
 
-		private string virtualHost;
+		private long? createTimestamp;
 
-		public string Argument
+		private string userName;
+
+		public string Signature
 		{
 			get
 			{
-				return argument;
+				return signature;
 			}
 			set	
 			{
-				argument = value;
-				DictionaryUtil.Add(BodyParameters, "Argument", value);
+				signature = value;
+				DictionaryUtil.Add(QueryParameters, "signature", value);
 			}
 		}
 
-		public string DestinationName
+		public string SecretSign
 		{
 			get
 			{
-				return destinationName;
+				return secretSign;
 			}
 			set	
 			{
-				destinationName = value;
-				DictionaryUtil.Add(BodyParameters, "DestinationName", value);
+				secretSign = value;
+				DictionaryUtil.Add(QueryParameters, "secretSign", value);
 			}
 		}
 
-		public string SourceExchange
+		public string AccountAccessKey
 		{
 			get
 			{
-				return sourceExchange;
+				return accountAccessKey;
 			}
 			set	
 			{
-				sourceExchange = value;
-				DictionaryUtil.Add(BodyParameters, "SourceExchange", value);
-			}
-		}
-
-		public string BindingKey
-		{
-			get
-			{
-				return bindingKey;
-			}
-			set	
-			{
-				bindingKey = value;
-				DictionaryUtil.Add(BodyParameters, "BindingKey", value);
-			}
-		}
-
-		public string BindingType
-		{
-			get
-			{
-				return bindingType;
-			}
-			set	
-			{
-				bindingType = value;
-				DictionaryUtil.Add(BodyParameters, "BindingType", value);
+				accountAccessKey = value;
+				DictionaryUtil.Add(QueryParameters, "accountAccessKey", value);
 			}
 		}
 
@@ -128,20 +100,33 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 			set	
 			{
 				instanceId = value;
-				DictionaryUtil.Add(BodyParameters, "InstanceId", value);
+				DictionaryUtil.Add(QueryParameters, "instanceId", value);
 			}
 		}
 
-		public string VirtualHost
+		public long? CreateTimestamp
 		{
 			get
 			{
-				return virtualHost;
+				return createTimestamp;
 			}
 			set	
 			{
-				virtualHost = value;
-				DictionaryUtil.Add(BodyParameters, "VirtualHost", value);
+				createTimestamp = value;
+				DictionaryUtil.Add(QueryParameters, "createTimestamp", value.ToString());
+			}
+		}
+
+		public string UserName
+		{
+			get
+			{
+				return userName;
+			}
+			set	
+			{
+				userName = value;
+				DictionaryUtil.Add(QueryParameters, "userName", value);
 			}
 		}
 
@@ -150,9 +135,9 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 			return false;
 		}
 
-        public override CreateBindingResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateAccountResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateBindingResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateAccountResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

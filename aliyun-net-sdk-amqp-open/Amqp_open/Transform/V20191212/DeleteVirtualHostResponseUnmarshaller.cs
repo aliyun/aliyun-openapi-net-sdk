@@ -26,12 +26,12 @@ namespace Aliyun.Acs.amqp_open.Transform.V20191212
 {
     public class DeleteVirtualHostResponseUnmarshaller
     {
-        public static DeleteVirtualHostResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteVirtualHostResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteVirtualHostResponse deleteVirtualHostResponse = new DeleteVirtualHostResponse();
 
-			deleteVirtualHostResponse.HttpResponse = context.HttpResponse;
-			deleteVirtualHostResponse.RequestId = context.StringValue("DeleteVirtualHost.RequestId");
+			deleteVirtualHostResponse.HttpResponse = _ctx.HttpResponse;
+			deleteVirtualHostResponse.RequestId = _ctx.StringValue("DeleteVirtualHost.RequestId");
         
 			return deleteVirtualHostResponse;
         }

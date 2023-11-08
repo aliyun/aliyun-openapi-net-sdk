@@ -26,28 +26,28 @@ namespace Aliyun.Acs.amqp_open.Transform.V20191212
 {
     public class ListQueuesResponseUnmarshaller
     {
-        public static ListQueuesResponse Unmarshall(UnmarshallerContext context)
+        public static ListQueuesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListQueuesResponse listQueuesResponse = new ListQueuesResponse();
 
-			listQueuesResponse.HttpResponse = context.HttpResponse;
-			listQueuesResponse.RequestId = context.StringValue("ListQueues.RequestId");
+			listQueuesResponse.HttpResponse = _ctx.HttpResponse;
+			listQueuesResponse.RequestId = _ctx.StringValue("ListQueues.RequestId");
 
 			ListQueuesResponse.ListQueues_Data data = new ListQueuesResponse.ListQueues_Data();
-			data.NextToken = context.StringValue("ListQueues.Data.NextToken");
-			data.MaxResults = context.IntegerValue("ListQueues.Data.MaxResults");
+			data.MaxResults = _ctx.IntegerValue("ListQueues.Data.MaxResults");
+			data.NextToken = _ctx.StringValue("ListQueues.Data.NextToken");
 
 			List<ListQueuesResponse.ListQueues_Data.ListQueues_QueueVO> data_queues = new List<ListQueuesResponse.ListQueues_Data.ListQueues_QueueVO>();
-			for (int i = 0; i < context.Length("ListQueues.Data.Queues.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListQueues.Data.Queues.Length"); i++) {
 				ListQueuesResponse.ListQueues_Data.ListQueues_QueueVO queueVO = new ListQueuesResponse.ListQueues_Data.ListQueues_QueueVO();
-				queueVO.Name = context.StringValue("ListQueues.Data.Queues["+ i +"].Name");
-				queueVO.OwnerId = context.StringValue("ListQueues.Data.Queues["+ i +"].OwnerId");
-				queueVO.VHostName = context.StringValue("ListQueues.Data.Queues["+ i +"].VHostName");
-				queueVO.AutoDeleteState = context.BooleanValue("ListQueues.Data.Queues["+ i +"].AutoDeleteState");
-				queueVO.ExclusiveState = context.BooleanValue("ListQueues.Data.Queues["+ i +"].ExclusiveState");
-				queueVO.CreateTime = context.LongValue("ListQueues.Data.Queues["+ i +"].CreateTime");
-				queueVO.LastConsumeTime = context.LongValue("ListQueues.Data.Queues["+ i +"].LastConsumeTime");
-				queueVO.Attributes = context.StringValue("ListQueues.Data.Queues["+ i +"].Attributes");
+				queueVO.ExclusiveState = _ctx.BooleanValue("ListQueues.Data.Queues["+ i +"].ExclusiveState");
+				queueVO.AutoDeleteState = _ctx.BooleanValue("ListQueues.Data.Queues["+ i +"].AutoDeleteState");
+				queueVO.CreateTime = _ctx.LongValue("ListQueues.Data.Queues["+ i +"].CreateTime");
+				queueVO.Attributes = _ctx.StringValue("ListQueues.Data.Queues["+ i +"].Attributes");
+				queueVO.VHostName = _ctx.StringValue("ListQueues.Data.Queues["+ i +"].VHostName");
+				queueVO.Name = _ctx.StringValue("ListQueues.Data.Queues["+ i +"].Name");
+				queueVO.OwnerId = _ctx.StringValue("ListQueues.Data.Queues["+ i +"].OwnerId");
+				queueVO.LastConsumeTime = _ctx.LongValue("ListQueues.Data.Queues["+ i +"].LastConsumeTime");
 
 				data_queues.Add(queueVO);
 			}

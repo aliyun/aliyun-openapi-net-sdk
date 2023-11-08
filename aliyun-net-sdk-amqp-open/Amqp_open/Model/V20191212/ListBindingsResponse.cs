@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.amqp_open.Model.V20191212
@@ -56,23 +56,11 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 		public class ListBindings_Data
 		{
 
-			private string nextToken;
-
 			private int? maxResults;
 
-			private List<ListBindings_BindingDO> bindings;
+			private string nextToken;
 
-			public string NextToken
-			{
-				get
-				{
-					return nextToken;
-				}
-				set	
-				{
-					nextToken = value;
-				}
-			}
+			private List<ListBindings_BindingDO> bindings;
 
 			public int? MaxResults
 			{
@@ -83,6 +71,18 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 				set	
 				{
 					maxResults = value;
+				}
+			}
+
+			public string NextToken
+			{
+				get
+				{
+					return nextToken;
+				}
+				set	
+				{
+					nextToken = value;
 				}
 			}
 
@@ -103,13 +103,13 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 
 				private string sourceExchange;
 
-				private string destinationName;
-
-				private string bindingType;
+				private string argument;
 
 				private string bindingKey;
 
-				private string argument;
+				private string bindingType;
+
+				private string destinationName;
 
 				public string SourceExchange
 				{
@@ -123,27 +123,15 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 					}
 				}
 
-				public string DestinationName
+				public string Argument
 				{
 					get
 					{
-						return destinationName;
+						return argument;
 					}
 					set	
 					{
-						destinationName = value;
-					}
-				}
-
-				public string BindingType
-				{
-					get
-					{
-						return bindingType;
-					}
-					set	
-					{
-						bindingType = value;
+						argument = value;
 					}
 				}
 
@@ -159,15 +147,27 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 					}
 				}
 
-				public string Argument
+				public string BindingType
 				{
 					get
 					{
-						return argument;
+						return bindingType;
 					}
 					set	
 					{
-						argument = value;
+						bindingType = value;
+					}
+				}
+
+				public string DestinationName
+				{
+					get
+					{
+						return destinationName;
+					}
+					set	
+					{
+						destinationName = value;
 					}
 				}
 			}

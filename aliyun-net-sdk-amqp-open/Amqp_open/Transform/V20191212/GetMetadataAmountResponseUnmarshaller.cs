@@ -26,20 +26,20 @@ namespace Aliyun.Acs.amqp_open.Transform.V20191212
 {
     public class GetMetadataAmountResponseUnmarshaller
     {
-        public static GetMetadataAmountResponse Unmarshall(UnmarshallerContext context)
+        public static GetMetadataAmountResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetMetadataAmountResponse getMetadataAmountResponse = new GetMetadataAmountResponse();
 
-			getMetadataAmountResponse.HttpResponse = context.HttpResponse;
-			getMetadataAmountResponse.RequestId = context.StringValue("GetMetadataAmount.RequestId");
+			getMetadataAmountResponse.HttpResponse = _ctx.HttpResponse;
+			getMetadataAmountResponse.RequestId = _ctx.StringValue("GetMetadataAmount.RequestId");
 
 			GetMetadataAmountResponse.GetMetadataAmount_Data data = new GetMetadataAmountResponse.GetMetadataAmount_Data();
-			data.CurrentVirtualHosts = context.IntegerValue("GetMetadataAmount.Data.CurrentVirtualHosts");
-			data.MaxVirtualHosts = context.IntegerValue("GetMetadataAmount.Data.MaxVirtualHosts");
-			data.CurrentExchanges = context.IntegerValue("GetMetadataAmount.Data.CurrentExchanges");
-			data.MaxExchanges = context.IntegerValue("GetMetadataAmount.Data.MaxExchanges");
-			data.CurrentQueues = context.IntegerValue("GetMetadataAmount.Data.CurrentQueues");
-			data.MaxQueues = context.IntegerValue("GetMetadataAmount.Data.MaxQueues");
+			data.MaxVirtualHosts = _ctx.IntegerValue("GetMetadataAmount.Data.MaxVirtualHosts");
+			data.CurrentVirtualHosts = _ctx.IntegerValue("GetMetadataAmount.Data.CurrentVirtualHosts");
+			data.MaxQueues = _ctx.IntegerValue("GetMetadataAmount.Data.MaxQueues");
+			data.CurrentExchanges = _ctx.IntegerValue("GetMetadataAmount.Data.CurrentExchanges");
+			data.MaxExchanges = _ctx.IntegerValue("GetMetadataAmount.Data.MaxExchanges");
+			data.CurrentQueues = _ctx.IntegerValue("GetMetadataAmount.Data.CurrentQueues");
 			getMetadataAmountResponse.Data = data;
         
 			return getMetadataAmountResponse;

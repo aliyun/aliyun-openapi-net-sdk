@@ -27,10 +27,10 @@ using Aliyun.Acs.amqp_open.Transform.V20191212;
 
 namespace Aliyun.Acs.amqp_open.Model.V20191212
 {
-    public class CreateBindingRequest : RpcAcsRequest<CreateBindingResponse>
+    public class UpdateInstanceNameRequest : RpcAcsRequest<UpdateInstanceNameResponse>
     {
-        public CreateBindingRequest()
-            : base("amqp-open", "2019-12-12", "CreateBinding", "onsproxy", "openAPI")
+        public UpdateInstanceNameRequest()
+            : base("amqp-open", "2019-12-12", "UpdateInstanceName", "onsproxy", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,84 +40,9 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 			Method = MethodType.POST;
         }
 
-		private string argument;
-
-		private string destinationName;
-
-		private string sourceExchange;
-
-		private string bindingKey;
-
-		private string bindingType;
-
 		private string instanceId;
 
-		private string virtualHost;
-
-		public string Argument
-		{
-			get
-			{
-				return argument;
-			}
-			set	
-			{
-				argument = value;
-				DictionaryUtil.Add(BodyParameters, "Argument", value);
-			}
-		}
-
-		public string DestinationName
-		{
-			get
-			{
-				return destinationName;
-			}
-			set	
-			{
-				destinationName = value;
-				DictionaryUtil.Add(BodyParameters, "DestinationName", value);
-			}
-		}
-
-		public string SourceExchange
-		{
-			get
-			{
-				return sourceExchange;
-			}
-			set	
-			{
-				sourceExchange = value;
-				DictionaryUtil.Add(BodyParameters, "SourceExchange", value);
-			}
-		}
-
-		public string BindingKey
-		{
-			get
-			{
-				return bindingKey;
-			}
-			set	
-			{
-				bindingKey = value;
-				DictionaryUtil.Add(BodyParameters, "BindingKey", value);
-			}
-		}
-
-		public string BindingType
-		{
-			get
-			{
-				return bindingType;
-			}
-			set	
-			{
-				bindingType = value;
-				DictionaryUtil.Add(BodyParameters, "BindingType", value);
-			}
-		}
+		private string instanceName;
 
 		public string InstanceId
 		{
@@ -128,20 +53,20 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 			set	
 			{
 				instanceId = value;
-				DictionaryUtil.Add(BodyParameters, "InstanceId", value);
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
-		public string VirtualHost
+		public string InstanceName
 		{
 			get
 			{
-				return virtualHost;
+				return instanceName;
 			}
 			set	
 			{
-				virtualHost = value;
-				DictionaryUtil.Add(BodyParameters, "VirtualHost", value);
+				instanceName = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceName", value);
 			}
 		}
 
@@ -150,9 +75,9 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 			return false;
 		}
 
-        public override CreateBindingResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateInstanceNameResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateBindingResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateInstanceNameResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

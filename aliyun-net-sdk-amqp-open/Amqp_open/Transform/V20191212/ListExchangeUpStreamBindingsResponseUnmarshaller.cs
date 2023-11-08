@@ -26,28 +26,28 @@ namespace Aliyun.Acs.amqp_open.Transform.V20191212
 {
     public class ListExchangeUpStreamBindingsResponseUnmarshaller
     {
-        public static ListExchangeUpStreamBindingsResponse Unmarshall(UnmarshallerContext context)
+        public static ListExchangeUpStreamBindingsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListExchangeUpStreamBindingsResponse listExchangeUpStreamBindingsResponse = new ListExchangeUpStreamBindingsResponse();
 
-			listExchangeUpStreamBindingsResponse.HttpResponse = context.HttpResponse;
-			listExchangeUpStreamBindingsResponse.RequestId = context.StringValue("ListExchangeUpStreamBindings.RequestId");
-			listExchangeUpStreamBindingsResponse.Code = context.IntegerValue("ListExchangeUpStreamBindings.Code");
-			listExchangeUpStreamBindingsResponse.Message = context.StringValue("ListExchangeUpStreamBindings.Message");
-			listExchangeUpStreamBindingsResponse.Success = context.BooleanValue("ListExchangeUpStreamBindings.Success");
+			listExchangeUpStreamBindingsResponse.HttpResponse = _ctx.HttpResponse;
+			listExchangeUpStreamBindingsResponse.Code = _ctx.IntegerValue("ListExchangeUpStreamBindings.Code");
+			listExchangeUpStreamBindingsResponse.Message = _ctx.StringValue("ListExchangeUpStreamBindings.Message");
+			listExchangeUpStreamBindingsResponse.RequestId = _ctx.StringValue("ListExchangeUpStreamBindings.RequestId");
+			listExchangeUpStreamBindingsResponse.Success = _ctx.BooleanValue("ListExchangeUpStreamBindings.Success");
 
 			ListExchangeUpStreamBindingsResponse.ListExchangeUpStreamBindings_Data data = new ListExchangeUpStreamBindingsResponse.ListExchangeUpStreamBindings_Data();
-			data.NextToken = context.StringValue("ListExchangeUpStreamBindings.Data.NextToken");
-			data.MaxResults = context.IntegerValue("ListExchangeUpStreamBindings.Data.MaxResults");
+			data.MaxResults = _ctx.IntegerValue("ListExchangeUpStreamBindings.Data.MaxResults");
+			data.NextToken = _ctx.StringValue("ListExchangeUpStreamBindings.Data.NextToken");
 
 			List<ListExchangeUpStreamBindingsResponse.ListExchangeUpStreamBindings_Data.ListExchangeUpStreamBindings_BindingVO> data_bindings = new List<ListExchangeUpStreamBindingsResponse.ListExchangeUpStreamBindings_Data.ListExchangeUpStreamBindings_BindingVO>();
-			for (int i = 0; i < context.Length("ListExchangeUpStreamBindings.Data.Bindings.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListExchangeUpStreamBindings.Data.Bindings.Length"); i++) {
 				ListExchangeUpStreamBindingsResponse.ListExchangeUpStreamBindings_Data.ListExchangeUpStreamBindings_BindingVO bindingVO = new ListExchangeUpStreamBindingsResponse.ListExchangeUpStreamBindings_Data.ListExchangeUpStreamBindings_BindingVO();
-				bindingVO.SourceExchange = context.StringValue("ListExchangeUpStreamBindings.Data.Bindings["+ i +"].SourceExchange");
-				bindingVO.DestinationName = context.StringValue("ListExchangeUpStreamBindings.Data.Bindings["+ i +"].DestinationName");
-				bindingVO.BindingType = context.StringValue("ListExchangeUpStreamBindings.Data.Bindings["+ i +"].BindingType");
-				bindingVO.BindingKey = context.StringValue("ListExchangeUpStreamBindings.Data.Bindings["+ i +"].BindingKey");
-				bindingVO.Argument = context.StringValue("ListExchangeUpStreamBindings.Data.Bindings["+ i +"].Argument");
+				bindingVO.SourceExchange = _ctx.StringValue("ListExchangeUpStreamBindings.Data.Bindings["+ i +"].SourceExchange");
+				bindingVO.Argument = _ctx.StringValue("ListExchangeUpStreamBindings.Data.Bindings["+ i +"].Argument");
+				bindingVO.BindingKey = _ctx.StringValue("ListExchangeUpStreamBindings.Data.Bindings["+ i +"].BindingKey");
+				bindingVO.BindingType = _ctx.StringValue("ListExchangeUpStreamBindings.Data.Bindings["+ i +"].BindingType");
+				bindingVO.DestinationName = _ctx.StringValue("ListExchangeUpStreamBindings.Data.Bindings["+ i +"].DestinationName");
 
 				data_bindings.Add(bindingVO);
 			}

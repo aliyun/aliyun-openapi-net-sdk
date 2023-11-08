@@ -22,12 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.amqp_open.Model.V20191212
 {
-	public class ListVirtualHostsResponse : AcsResponse
+	public class CreateAccountResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private ListVirtualHosts_Data data;
+		private int? code;
+
+		private string message;
+
+		private bool? success;
+
+		private CreateAccount_Data data;
 
 		public string RequestId
 		{
@@ -41,7 +47,43 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 			}
 		}
 
-		public ListVirtualHosts_Data Data
+		public int? Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public CreateAccount_Data Data
 		{
 			get
 			{
@@ -53,66 +95,90 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 			}
 		}
 
-		public class ListVirtualHosts_Data
+		public class CreateAccount_Data
 		{
 
-			private int? maxResults;
+			private string accessKey;
 
-			private string nextToken;
+			private string password;
 
-			private List<ListVirtualHosts_VhostVO> virtualHosts;
+			private long? createTimeStamp;
 
-			public int? MaxResults
+			private string instanceId;
+
+			private long? masterUId;
+
+			private string userName;
+
+			public string AccessKey
 			{
 				get
 				{
-					return maxResults;
+					return accessKey;
 				}
 				set	
 				{
-					maxResults = value;
+					accessKey = value;
 				}
 			}
 
-			public string NextToken
+			public string Password
 			{
 				get
 				{
-					return nextToken;
+					return password;
 				}
 				set	
 				{
-					nextToken = value;
+					password = value;
 				}
 			}
 
-			public List<ListVirtualHosts_VhostVO> VirtualHosts
+			public long? CreateTimeStamp
 			{
 				get
 				{
-					return virtualHosts;
+					return createTimeStamp;
 				}
 				set	
 				{
-					virtualHosts = value;
+					createTimeStamp = value;
 				}
 			}
 
-			public class ListVirtualHosts_VhostVO
+			public string InstanceId
 			{
-
-				private string name;
-
-				public string Name
+				get
 				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public long? MasterUId
+			{
+				get
+				{
+					return masterUId;
+				}
+				set	
+				{
+					masterUId = value;
+				}
+			}
+
+			public string UserName
+			{
+				get
+				{
+					return userName;
+				}
+				set	
+				{
+					userName = value;
 				}
 			}
 		}

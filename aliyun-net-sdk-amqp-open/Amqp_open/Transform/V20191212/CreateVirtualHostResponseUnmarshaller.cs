@@ -26,12 +26,12 @@ namespace Aliyun.Acs.amqp_open.Transform.V20191212
 {
     public class CreateVirtualHostResponseUnmarshaller
     {
-        public static CreateVirtualHostResponse Unmarshall(UnmarshallerContext context)
+        public static CreateVirtualHostResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateVirtualHostResponse createVirtualHostResponse = new CreateVirtualHostResponse();
 
-			createVirtualHostResponse.HttpResponse = context.HttpResponse;
-			createVirtualHostResponse.RequestId = context.StringValue("CreateVirtualHost.RequestId");
+			createVirtualHostResponse.HttpResponse = _ctx.HttpResponse;
+			createVirtualHostResponse.RequestId = _ctx.StringValue("CreateVirtualHost.RequestId");
         
 			return createVirtualHostResponse;
         }

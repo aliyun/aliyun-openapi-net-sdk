@@ -16,24 +16,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+using Aliyun.Acs.Core;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.amqp_open.Model.V20191212;
-
-namespace Aliyun.Acs.amqp_open.Transform.V20191212
+namespace Aliyun.Acs.amqp_open.Model.V20191212
 {
-    public class DeleteQueueResponseUnmarshaller
-    {
-        public static DeleteQueueResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			DeleteQueueResponse deleteQueueResponse = new DeleteQueueResponse();
-
-			deleteQueueResponse.HttpResponse = _ctx.HttpResponse;
-			deleteQueueResponse.RequestId = _ctx.StringValue("DeleteQueue.RequestId");
-        
-			return deleteQueueResponse;
-        }
-    }
+	public class CreateInstanceResponse : AcsResponse
+	{
+	}
 }

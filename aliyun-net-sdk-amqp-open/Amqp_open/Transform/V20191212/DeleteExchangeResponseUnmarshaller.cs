@@ -26,12 +26,12 @@ namespace Aliyun.Acs.amqp_open.Transform.V20191212
 {
     public class DeleteExchangeResponseUnmarshaller
     {
-        public static DeleteExchangeResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteExchangeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteExchangeResponse deleteExchangeResponse = new DeleteExchangeResponse();
 
-			deleteExchangeResponse.HttpResponse = context.HttpResponse;
-			deleteExchangeResponse.RequestId = context.StringValue("DeleteExchange.RequestId");
+			deleteExchangeResponse.HttpResponse = _ctx.HttpResponse;
+			deleteExchangeResponse.RequestId = _ctx.StringValue("DeleteExchange.RequestId");
         
 			return deleteExchangeResponse;
         }

@@ -24,16 +24,15 @@ using Aliyun.Acs.amqp_open.Model.V20191212;
 
 namespace Aliyun.Acs.amqp_open.Transform.V20191212
 {
-    public class DeleteQueueResponseUnmarshaller
+    public class ListAccountsResponseUnmarshaller
     {
-        public static DeleteQueueResponse Unmarshall(UnmarshallerContext _ctx)
+        public static ListAccountsResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			DeleteQueueResponse deleteQueueResponse = new DeleteQueueResponse();
+			ListAccountsResponse listAccountsResponse = new ListAccountsResponse();
 
-			deleteQueueResponse.HttpResponse = _ctx.HttpResponse;
-			deleteQueueResponse.RequestId = _ctx.StringValue("DeleteQueue.RequestId");
+			listAccountsResponse.HttpResponse = _ctx.HttpResponse;
         
-			return deleteQueueResponse;
+			return listAccountsResponse;
         }
     }
 }

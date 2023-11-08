@@ -24,16 +24,20 @@ using Aliyun.Acs.amqp_open.Model.V20191212;
 
 namespace Aliyun.Acs.amqp_open.Transform.V20191212
 {
-    public class DeleteQueueResponseUnmarshaller
+    public class UpdateInstanceNameResponseUnmarshaller
     {
-        public static DeleteQueueResponse Unmarshall(UnmarshallerContext _ctx)
+        public static UpdateInstanceNameResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			DeleteQueueResponse deleteQueueResponse = new DeleteQueueResponse();
+			UpdateInstanceNameResponse updateInstanceNameResponse = new UpdateInstanceNameResponse();
 
-			deleteQueueResponse.HttpResponse = _ctx.HttpResponse;
-			deleteQueueResponse.RequestId = _ctx.StringValue("DeleteQueue.RequestId");
+			updateInstanceNameResponse.HttpResponse = _ctx.HttpResponse;
+			updateInstanceNameResponse.Code = _ctx.IntegerValue("UpdateInstanceName.Code");
+			updateInstanceNameResponse.Message = _ctx.StringValue("UpdateInstanceName.Message");
+			updateInstanceNameResponse.Data = _ctx.StringValue("UpdateInstanceName.Data");
+			updateInstanceNameResponse.RequestId = _ctx.StringValue("UpdateInstanceName.RequestId");
+			updateInstanceNameResponse.Success = _ctx.BooleanValue("UpdateInstanceName.Success");
         
-			return deleteQueueResponse;
+			return updateInstanceNameResponse;
         }
     }
 }

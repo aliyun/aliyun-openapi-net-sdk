@@ -26,12 +26,12 @@ namespace Aliyun.Acs.amqp_open.Transform.V20191212
 {
     public class CreateExchangeResponseUnmarshaller
     {
-        public static CreateExchangeResponse Unmarshall(UnmarshallerContext context)
+        public static CreateExchangeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateExchangeResponse createExchangeResponse = new CreateExchangeResponse();
 
-			createExchangeResponse.HttpResponse = context.HttpResponse;
-			createExchangeResponse.RequestId = context.StringValue("CreateExchange.RequestId");
+			createExchangeResponse.HttpResponse = _ctx.HttpResponse;
+			createExchangeResponse.RequestId = _ctx.StringValue("CreateExchange.RequestId");
         
 			return createExchangeResponse;
         }

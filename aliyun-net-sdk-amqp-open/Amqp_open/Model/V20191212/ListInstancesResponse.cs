@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.amqp_open.Model.V20191212
@@ -56,23 +56,11 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 		public class ListInstances_Data
 		{
 
-			private int? maxResults;
-
 			private string nextToken;
 
-			private List<ListInstances_InstanceVO> instances;
+			private int? maxResults;
 
-			public int? MaxResults
-			{
-				get
-				{
-					return maxResults;
-				}
-				set	
-				{
-					maxResults = value;
-				}
-			}
+			private List<ListInstances_InstanceVO> instances;
 
 			public string NextToken
 			{
@@ -83,6 +71,18 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 				set	
 				{
 					nextToken = value;
+				}
+			}
+
+			public int? MaxResults
+			{
+				get
+				{
+					return maxResults;
+				}
+				set	
+				{
+					maxResults = value;
 				}
 			}
 
@@ -101,63 +101,41 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 			public class ListInstances_InstanceVO
 			{
 
-				private string instanceId;
-
-				private string instanceName;
-
-				private string instanceType;
-
 				private string status;
-
-				private string orderType;
-
-				private long? orderCreateTime;
-
-				private long? expireTime;
-
-				private bool? autoRenewInstance;
 
 				private bool? supportEIP;
 
+				private long? expireTime;
+
+				private long? orderCreateTime;
+
 				private string privateEndpoint;
+
+				private int? storageSize;
+
+				private int? maxEipTps;
+
+				private string instanceId;
+
+				private string instanceType;
 
 				private string publicEndpoint;
 
-				public string InstanceId
-				{
-					get
-					{
-						return instanceId;
-					}
-					set	
-					{
-						instanceId = value;
-					}
-				}
+				private string classicEndpoint;
 
-				public string InstanceName
-				{
-					get
-					{
-						return instanceName;
-					}
-					set	
-					{
-						instanceName = value;
-					}
-				}
+				private int? maxVhost;
 
-				public string InstanceType
-				{
-					get
-					{
-						return instanceType;
-					}
-					set	
-					{
-						instanceType = value;
-					}
-				}
+				private int? maxTps;
+
+				private bool? autoRenewInstance;
+
+				private string instanceName;
+
+				private int? maxQueue;
+
+				private string orderType;
+
+				private List<ListInstances_TagsItem> tags;
 
 				public string Status
 				{
@@ -168,54 +146,6 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 					set	
 					{
 						status = value;
-					}
-				}
-
-				public string OrderType
-				{
-					get
-					{
-						return orderType;
-					}
-					set	
-					{
-						orderType = value;
-					}
-				}
-
-				public long? OrderCreateTime
-				{
-					get
-					{
-						return orderCreateTime;
-					}
-					set	
-					{
-						orderCreateTime = value;
-					}
-				}
-
-				public long? ExpireTime
-				{
-					get
-					{
-						return expireTime;
-					}
-					set	
-					{
-						expireTime = value;
-					}
-				}
-
-				public bool? AutoRenewInstance
-				{
-					get
-					{
-						return autoRenewInstance;
-					}
-					set	
-					{
-						autoRenewInstance = value;
 					}
 				}
 
@@ -231,6 +161,30 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 					}
 				}
 
+				public long? ExpireTime
+				{
+					get
+					{
+						return expireTime;
+					}
+					set	
+					{
+						expireTime = value;
+					}
+				}
+
+				public long? OrderCreateTime
+				{
+					get
+					{
+						return orderCreateTime;
+					}
+					set	
+					{
+						orderCreateTime = value;
+					}
+				}
+
 				public string PrivateEndpoint
 				{
 					get
@@ -243,6 +197,54 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 					}
 				}
 
+				public int? StorageSize
+				{
+					get
+					{
+						return storageSize;
+					}
+					set	
+					{
+						storageSize = value;
+					}
+				}
+
+				public int? MaxEipTps
+				{
+					get
+					{
+						return maxEipTps;
+					}
+					set	
+					{
+						maxEipTps = value;
+					}
+				}
+
+				public string InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
+					}
+				}
+
+				public string InstanceType
+				{
+					get
+					{
+						return instanceType;
+					}
+					set	
+					{
+						instanceType = value;
+					}
+				}
+
 				public string PublicEndpoint
 				{
 					get
@@ -252,6 +254,134 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 					set	
 					{
 						publicEndpoint = value;
+					}
+				}
+
+				public string ClassicEndpoint
+				{
+					get
+					{
+						return classicEndpoint;
+					}
+					set	
+					{
+						classicEndpoint = value;
+					}
+				}
+
+				public int? MaxVhost
+				{
+					get
+					{
+						return maxVhost;
+					}
+					set	
+					{
+						maxVhost = value;
+					}
+				}
+
+				public int? MaxTps
+				{
+					get
+					{
+						return maxTps;
+					}
+					set	
+					{
+						maxTps = value;
+					}
+				}
+
+				public bool? AutoRenewInstance
+				{
+					get
+					{
+						return autoRenewInstance;
+					}
+					set	
+					{
+						autoRenewInstance = value;
+					}
+				}
+
+				public string InstanceName
+				{
+					get
+					{
+						return instanceName;
+					}
+					set	
+					{
+						instanceName = value;
+					}
+				}
+
+				public int? MaxQueue
+				{
+					get
+					{
+						return maxQueue;
+					}
+					set	
+					{
+						maxQueue = value;
+					}
+				}
+
+				public string OrderType
+				{
+					get
+					{
+						return orderType;
+					}
+					set	
+					{
+						orderType = value;
+					}
+				}
+
+				public List<ListInstances_TagsItem> Tags
+				{
+					get
+					{
+						return tags;
+					}
+					set	
+					{
+						tags = value;
+					}
+				}
+
+				public class ListInstances_TagsItem
+				{
+
+					private string key;
+
+					private string _value;
+
+					public string Key
+					{
+						get
+						{
+							return key;
+						}
+						set	
+						{
+							key = value;
+						}
+					}
+
+					public string _Value
+					{
+						get
+						{
+							return _value;
+						}
+						set	
+						{
+							_value = value;
+						}
 					}
 				}
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.amqp_open.Model.V20191212
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 	public class ListDownStreamBindingsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? code;
 
 		private string message;
 
+		private string requestId;
+
 		private bool? success;
 
 		private ListDownStreamBindings_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public int? Code
 		{
@@ -68,6 +56,18 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -98,23 +98,11 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 		public class ListDownStreamBindings_Data
 		{
 
-			private string nextToken;
-
 			private int? maxResults;
 
-			private List<ListDownStreamBindings_BindingVO> bindings;
+			private string nextToken;
 
-			public string NextToken
-			{
-				get
-				{
-					return nextToken;
-				}
-				set	
-				{
-					nextToken = value;
-				}
-			}
+			private List<ListDownStreamBindings_BindingVO> bindings;
 
 			public int? MaxResults
 			{
@@ -125,6 +113,18 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 				set	
 				{
 					maxResults = value;
+				}
+			}
+
+			public string NextToken
+			{
+				get
+				{
+					return nextToken;
+				}
+				set	
+				{
+					nextToken = value;
 				}
 			}
 
@@ -145,13 +145,13 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 
 				private string sourceExchange;
 
-				private string destinationName;
-
-				private string bindingType;
+				private string argument;
 
 				private string bindingKey;
 
-				private string argument;
+				private string bindingType;
+
+				private string destinationName;
 
 				public string SourceExchange
 				{
@@ -165,27 +165,15 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 					}
 				}
 
-				public string DestinationName
+				public string Argument
 				{
 					get
 					{
-						return destinationName;
+						return argument;
 					}
 					set	
 					{
-						destinationName = value;
-					}
-				}
-
-				public string BindingType
-				{
-					get
-					{
-						return bindingType;
-					}
-					set	
-					{
-						bindingType = value;
+						argument = value;
 					}
 				}
 
@@ -201,15 +189,27 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 					}
 				}
 
-				public string Argument
+				public string BindingType
 				{
 					get
 					{
-						return argument;
+						return bindingType;
 					}
 					set	
 					{
-						argument = value;
+						bindingType = value;
+					}
+				}
+
+				public string DestinationName
+				{
+					get
+					{
+						return destinationName;
+					}
+					set	
+					{
+						destinationName = value;
 					}
 				}
 			}

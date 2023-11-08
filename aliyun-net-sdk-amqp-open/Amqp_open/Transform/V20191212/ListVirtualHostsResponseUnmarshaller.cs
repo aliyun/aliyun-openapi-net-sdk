@@ -26,21 +26,21 @@ namespace Aliyun.Acs.amqp_open.Transform.V20191212
 {
     public class ListVirtualHostsResponseUnmarshaller
     {
-        public static ListVirtualHostsResponse Unmarshall(UnmarshallerContext context)
+        public static ListVirtualHostsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListVirtualHostsResponse listVirtualHostsResponse = new ListVirtualHostsResponse();
 
-			listVirtualHostsResponse.HttpResponse = context.HttpResponse;
-			listVirtualHostsResponse.RequestId = context.StringValue("ListVirtualHosts.RequestId");
+			listVirtualHostsResponse.HttpResponse = _ctx.HttpResponse;
+			listVirtualHostsResponse.RequestId = _ctx.StringValue("ListVirtualHosts.RequestId");
 
 			ListVirtualHostsResponse.ListVirtualHosts_Data data = new ListVirtualHostsResponse.ListVirtualHosts_Data();
-			data.NextToken = context.StringValue("ListVirtualHosts.Data.NextToken");
-			data.MaxResults = context.IntegerValue("ListVirtualHosts.Data.MaxResults");
+			data.MaxResults = _ctx.IntegerValue("ListVirtualHosts.Data.MaxResults");
+			data.NextToken = _ctx.StringValue("ListVirtualHosts.Data.NextToken");
 
 			List<ListVirtualHostsResponse.ListVirtualHosts_Data.ListVirtualHosts_VhostVO> data_virtualHosts = new List<ListVirtualHostsResponse.ListVirtualHosts_Data.ListVirtualHosts_VhostVO>();
-			for (int i = 0; i < context.Length("ListVirtualHosts.Data.VirtualHosts.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListVirtualHosts.Data.VirtualHosts.Length"); i++) {
 				ListVirtualHostsResponse.ListVirtualHosts_Data.ListVirtualHosts_VhostVO vhostVO = new ListVirtualHostsResponse.ListVirtualHosts_Data.ListVirtualHosts_VhostVO();
-				vhostVO.Name = context.StringValue("ListVirtualHosts.Data.VirtualHosts["+ i +"].Name");
+				vhostVO.Name = _ctx.StringValue("ListVirtualHosts.Data.VirtualHosts["+ i +"].Name");
 
 				data_virtualHosts.Add(vhostVO);
 			}
