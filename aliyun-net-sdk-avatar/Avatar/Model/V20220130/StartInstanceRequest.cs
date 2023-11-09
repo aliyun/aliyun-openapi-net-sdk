@@ -41,6 +41,8 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 
 		private long? tenantId;
 
+		private string bizId;
+
 		private Channel channel_;
 
 		private CommandRequest commandRequest_;
@@ -72,6 +74,20 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			{
 				tenantId = value;
 				DictionaryUtil.Add(QueryParameters, "TenantId", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "BizId")]
+		public string BizId
+		{
+			get
+			{
+				return bizId;
+			}
+			set	
+			{
+				bizId = value;
+				DictionaryUtil.Add(QueryParameters, "BizId", value);
 			}
 		}
 
