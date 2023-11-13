@@ -66,6 +66,8 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private string computeResource;
 
+		private string kmsId;
+
 		private string elasticIOResource;
 
 		private string sourceDBInstanceName;
@@ -97,6 +99,8 @@ namespace Aliyun.Acs.adb.Model.V20190315
 		private string executorCount;
 
 		private string vPCId;
+
+		private string diskEncryption;
 
 		private string payType;
 
@@ -274,6 +278,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				computeResource = value;
 				DictionaryUtil.Add(QueryParameters, "ComputeResource", value);
+			}
+		}
+
+		public string KmsId
+		{
+			get
+			{
+				return kmsId;
+			}
+			set	
+			{
+				kmsId = value;
+				DictionaryUtil.Add(QueryParameters, "KmsId", value);
 			}
 		}
 
@@ -482,6 +499,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				vPCId = value;
 				DictionaryUtil.Add(QueryParameters, "VPCId", value);
+			}
+		}
+
+		public string DiskEncryption
+		{
+			get
+			{
+				return diskEncryption;
+			}
+			set	
+			{
+				diskEncryption = value;
+				DictionaryUtil.Add(QueryParameters, "DiskEncryption", value);
 			}
 		}
 

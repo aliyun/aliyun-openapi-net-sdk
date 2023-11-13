@@ -104,7 +104,7 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 			private string backupStartTime;
 
-			private int? backupSize;
+			private long? backupSize;
 
 			private string backupEndTime;
 
@@ -148,7 +148,7 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public int? BackupSize
+			public long? BackupSize
 			{
 				get
 				{
