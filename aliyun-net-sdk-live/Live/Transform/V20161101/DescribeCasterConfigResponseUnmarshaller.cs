@@ -46,6 +46,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			describeCasterConfigResponse.RequestId = _ctx.StringValue("DescribeCasterConfig.RequestId");
 			describeCasterConfigResponse.SideOutputUrlList = _ctx.StringValue("DescribeCasterConfig.SideOutputUrlList");
 			describeCasterConfigResponse.SideOutputUrl = _ctx.StringValue("DescribeCasterConfig.SideOutputUrl");
+			describeCasterConfigResponse.AutoSwitchUrgentOn = _ctx.StringValue("DescribeCasterConfig.AutoSwitchUrgentOn");
+			describeCasterConfigResponse.AutoSwitchUrgentConfig = _ctx.StringValue("DescribeCasterConfig.AutoSwitchUrgentConfig");
 
 			DescribeCasterConfigResponse.DescribeCasterConfig_TranscodeConfig transcodeConfig = new DescribeCasterConfigResponse.DescribeCasterConfig_TranscodeConfig();
 			transcodeConfig.CasterTemplate = _ctx.StringValue("DescribeCasterConfig.TranscodeConfig.CasterTemplate");

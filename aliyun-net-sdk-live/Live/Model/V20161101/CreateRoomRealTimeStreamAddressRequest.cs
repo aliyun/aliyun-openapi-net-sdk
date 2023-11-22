@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -27,42 +28,58 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class CreateEventSubRequest : RpcAcsRequest<CreateEventSubResponse>
+    public class CreateRoomRealTimeStreamAddressRequest : RpcAcsRequest<CreateRoomRealTimeStreamAddressResponse>
     {
-        public CreateEventSubRequest()
-            : base("live", "2016-11-01", "CreateEventSub", "live", "openAPI")
+        public CreateRoomRealTimeStreamAddressRequest()
+            : base("live", "2016-11-01", "CreateRoomRealTimeStreamAddress", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.live.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.live.Endpoint.endpointRegionalType, null);
             }
-			Method = MethodType.POST;
+			Protocol = ProtocolType.HTTPS;
         }
 
-		private List<string> userss = new List<string>(){ };
+		private int? expireTime;
+
+		private string userId;
 
 		private string appId;
 
-		private string callbackUrl;
+		private string displayName;
 
 		private string channelId;
 
-		private List<string> eventss = new List<string>(){ };
-
-		public List<string> Userss
+		[JsonProperty(PropertyName = "ExpireTime")]
+		public int? ExpireTime
 		{
 			get
 			{
-				return userss;
+				return expireTime;
 			}
-
-			set
+			set	
 			{
-				userss = value;
+				expireTime = value;
+				DictionaryUtil.Add(QueryParameters, "ExpireTime", value.ToString());
 			}
 		}
 
+		[JsonProperty(PropertyName = "UserId")]
+		public string UserId
+		{
+			get
+			{
+				return userId;
+			}
+			set	
+			{
+				userId = value;
+				DictionaryUtil.Add(QueryParameters, "UserId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "AppId")]
 		public string AppId
 		{
 			get
@@ -76,19 +93,21 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string CallbackUrl
+		[JsonProperty(PropertyName = "DisplayName")]
+		public string DisplayName
 		{
 			get
 			{
-				return callbackUrl;
+				return displayName;
 			}
 			set	
 			{
-				callbackUrl = value;
-				DictionaryUtil.Add(QueryParameters, "CallbackUrl", value);
+				displayName = value;
+				DictionaryUtil.Add(QueryParameters, "DisplayName", value);
 			}
 		}
 
+		[JsonProperty(PropertyName = "ChannelId")]
 		public string ChannelId
 		{
 			get
@@ -102,27 +121,14 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public List<string> Eventss
-		{
-			get
-			{
-				return eventss;
-			}
-
-			set
-			{
-				eventss = value;
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override CreateEventSubResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateRoomRealTimeStreamAddressResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateEventSubResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateRoomRealTimeStreamAddressResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

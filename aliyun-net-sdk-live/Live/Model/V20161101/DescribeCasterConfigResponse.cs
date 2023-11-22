@@ -55,6 +55,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string sideOutputUrl;
 
+		private string autoSwitchUrgentOn;
+
+		private string autoSwitchUrgentConfig;
+
 		private List<DescribeCasterConfig_SyncGroup> syncGroupsConfig;
 
 		private DescribeCasterConfig_TranscodeConfig transcodeConfig;
@@ -253,6 +257,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				sideOutputUrl = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "AutoSwitchUrgentOn")]
+		public string AutoSwitchUrgentOn
+		{
+			get
+			{
+				return autoSwitchUrgentOn;
+			}
+			set	
+			{
+				autoSwitchUrgentOn = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "AutoSwitchUrgentConfig")]
+		public string AutoSwitchUrgentConfig
+		{
+			get
+			{
+				return autoSwitchUrgentConfig;
+			}
+			set	
+			{
+				autoSwitchUrgentConfig = value;
 			}
 		}
 

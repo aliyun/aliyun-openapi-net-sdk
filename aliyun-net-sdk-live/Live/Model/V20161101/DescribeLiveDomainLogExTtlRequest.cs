@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -27,10 +28,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class CreateEventSubRequest : RpcAcsRequest<CreateEventSubResponse>
+    public class DescribeLiveDomainLogExTtlRequest : RpcAcsRequest<DescribeLiveDomainLogExTtlResponse>
     {
-        public CreateEventSubRequest()
-            : base("live", "2016-11-01", "CreateEventSub", "live", "openAPI")
+        public DescribeLiveDomainLogExTtlRequest()
+            : base("live", "2016-11-01", "DescribeLiveDomainLogExTtl", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,89 +41,105 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private List<string> userss = new List<string>(){ };
+		private string startTime;
 
-		private string appId;
+		private long? pageNumber;
 
-		private string callbackUrl;
+		private long? pageSize;
 
-		private string channelId;
+		private string domainName;
 
-		private List<string> eventss = new List<string>(){ };
+		private string endTime;
 
-		public List<string> Userss
+		private long? ownerId;
+
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
 		{
 			get
 			{
-				return userss;
-			}
-
-			set
-			{
-				userss = value;
-			}
-		}
-
-		public string AppId
-		{
-			get
-			{
-				return appId;
+				return startTime;
 			}
 			set	
 			{
-				appId = value;
-				DictionaryUtil.Add(QueryParameters, "AppId", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
-		public string CallbackUrl
+		[JsonProperty(PropertyName = "PageNumber")]
+		public long? PageNumber
 		{
 			get
 			{
-				return callbackUrl;
+				return pageNumber;
 			}
 			set	
 			{
-				callbackUrl = value;
-				DictionaryUtil.Add(QueryParameters, "CallbackUrl", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
-		public string ChannelId
+		[JsonProperty(PropertyName = "PageSize")]
+		public long? PageSize
 		{
 			get
 			{
-				return channelId;
+				return pageSize;
 			}
 			set	
 			{
-				channelId = value;
-				DictionaryUtil.Add(QueryParameters, "ChannelId", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public List<string> Eventss
+		[JsonProperty(PropertyName = "DomainName")]
+		public string DomainName
 		{
 			get
 			{
-				return eventss;
+				return domainName;
 			}
-
-			set
+			set	
 			{
-				eventss = value;
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		[JsonProperty(PropertyName = "EndTime")]
+		public string EndTime
 		{
-			return false;
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
 		}
 
-        public override CreateEventSubResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		[JsonProperty(PropertyName = "OwnerId")]
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+        public override DescribeLiveDomainLogExTtlResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateEventSubResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeLiveDomainLogExTtlResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

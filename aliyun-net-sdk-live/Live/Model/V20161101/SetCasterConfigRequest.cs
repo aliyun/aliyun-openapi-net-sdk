@@ -57,6 +57,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string casterName;
 
+		private bool? autoSwitchUrgentOn;
+
+		private string autoSwitchUrgentConfig;
+
 		private string urgentLiveStreamUrl;
 
 		private string sideOutputUrl;
@@ -186,6 +190,34 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				casterName = value;
 				DictionaryUtil.Add(QueryParameters, "CasterName", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "AutoSwitchUrgentOn")]
+		public bool? AutoSwitchUrgentOn
+		{
+			get
+			{
+				return autoSwitchUrgentOn;
+			}
+			set	
+			{
+				autoSwitchUrgentOn = value;
+				DictionaryUtil.Add(QueryParameters, "AutoSwitchUrgentOn", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "AutoSwitchUrgentConfig")]
+		public string AutoSwitchUrgentConfig
+		{
+			get
+			{
+				return autoSwitchUrgentConfig;
+			}
+			set	
+			{
+				autoSwitchUrgentConfig = value;
+				DictionaryUtil.Add(QueryParameters, "AutoSwitchUrgentConfig", value);
 			}
 		}
 
