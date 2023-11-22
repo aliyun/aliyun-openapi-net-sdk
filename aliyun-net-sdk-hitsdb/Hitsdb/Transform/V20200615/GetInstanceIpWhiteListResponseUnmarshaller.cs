@@ -39,6 +39,16 @@ namespace Aliyun.Acs.hitsdb.Transform.V20200615
 				getInstanceIpWhiteListResponse_ipList.Add(_ctx.StringValue("GetInstanceIpWhiteList.IpList["+ i +"]"));
 			}
 			getInstanceIpWhiteListResponse.IpList = getInstanceIpWhiteListResponse_ipList;
+
+			List<GetInstanceIpWhiteListResponse.GetInstanceIpWhiteList_GroupListItem> getInstanceIpWhiteListResponse_groupList = new List<GetInstanceIpWhiteListResponse.GetInstanceIpWhiteList_GroupListItem>();
+			for (int i = 0; i < _ctx.Length("GetInstanceIpWhiteList.GroupList.Length"); i++) {
+				GetInstanceIpWhiteListResponse.GetInstanceIpWhiteList_GroupListItem groupListItem = new GetInstanceIpWhiteListResponse.GetInstanceIpWhiteList_GroupListItem();
+				groupListItem.GroupName = _ctx.StringValue("GetInstanceIpWhiteList.GroupList["+ i +"].GroupName");
+				groupListItem.SecurityIpList = _ctx.StringValue("GetInstanceIpWhiteList.GroupList["+ i +"].SecurityIpList");
+
+				getInstanceIpWhiteListResponse_groupList.Add(groupListItem);
+			}
+			getInstanceIpWhiteListResponse.GroupList = getInstanceIpWhiteListResponse_groupList;
         
 			return getInstanceIpWhiteListResponse;
         }

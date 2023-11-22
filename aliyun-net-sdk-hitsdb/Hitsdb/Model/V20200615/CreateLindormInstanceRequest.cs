@@ -64,6 +64,8 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 
 		private string vSwitchId;
 
+		private int? streamNum;
+
 		private int? logSingleStorage;
 
 		private string zoneId;
@@ -107,6 +109,8 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 		private string instanceAlias;
 
 		private int? filestoreNum;
+
+		private string streamSpec;
 
 		private string coreSpec;
 
@@ -269,6 +273,19 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			{
 				vSwitchId = value;
 				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+			}
+		}
+
+		public int? StreamNum
+		{
+			get
+			{
+				return streamNum;
+			}
+			set	
+			{
+				streamNum = value;
+				DictionaryUtil.Add(QueryParameters, "StreamNum", value.ToString());
 			}
 		}
 
@@ -555,6 +572,19 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			{
 				filestoreNum = value;
 				DictionaryUtil.Add(QueryParameters, "FilestoreNum", value.ToString());
+			}
+		}
+
+		public string StreamSpec
+		{
+			get
+			{
+				return streamSpec;
+			}
+			set	
+			{
+				streamSpec = value;
+				DictionaryUtil.Add(QueryParameters, "StreamSpec", value);
 			}
 		}
 

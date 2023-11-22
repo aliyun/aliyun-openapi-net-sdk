@@ -39,6 +39,8 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 
 		private bool? enableKms;
 
+		private bool? enableML;
+
 		private string diskUsage;
 
 		private string diskCategory;
@@ -85,11 +87,17 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 
 		private bool? enableSSL;
 
+		private bool? enableMLCtrl;
+
 		private bool? enableCdc;
 
 		private bool? enableStream;
 
+		private bool? enableLTS;
+
 		private bool? enableShs;
+
+		private bool? enableBlob;
 
 		private string maintainStartTime;
 
@@ -130,6 +138,10 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 		private int? logNum;
 
 		private int? logSingleStorage;
+
+		private string archVersion;
+
+		private bool? enableLsqlVersionV3;
 
 		private List<GetLindormInstance_Engine> engineList;
 
@@ -214,6 +226,18 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			set	
 			{
 				enableKms = value;
+			}
+		}
+
+		public bool? EnableML
+		{
+			get
+			{
+				return enableML;
+			}
+			set	
+			{
+				enableML = value;
 			}
 		}
 
@@ -493,6 +517,18 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			}
 		}
 
+		public bool? EnableMLCtrl
+		{
+			get
+			{
+				return enableMLCtrl;
+			}
+			set	
+			{
+				enableMLCtrl = value;
+			}
+		}
+
 		public bool? EnableCdc
 		{
 			get
@@ -517,6 +553,18 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			}
 		}
 
+		public bool? EnableLTS
+		{
+			get
+			{
+				return enableLTS;
+			}
+			set	
+			{
+				enableLTS = value;
+			}
+		}
+
 		public bool? EnableShs
 		{
 			get
@@ -526,6 +574,18 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			set	
 			{
 				enableShs = value;
+			}
+		}
+
+		public bool? EnableBlob
+		{
+			get
+			{
+				return enableBlob;
+			}
+			set	
+			{
+				enableBlob = value;
 			}
 		}
 
@@ -766,6 +826,30 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			set	
 			{
 				logSingleStorage = value;
+			}
+		}
+
+		public string ArchVersion
+		{
+			get
+			{
+				return archVersion;
+			}
+			set	
+			{
+				archVersion = value;
+			}
+		}
+
+		public bool? EnableLsqlVersionV3
+		{
+			get
+			{
+				return enableLsqlVersionV3;
+			}
+			set	
+			{
+				enableLsqlVersionV3 = value;
 			}
 		}
 

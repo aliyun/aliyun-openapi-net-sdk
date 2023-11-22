@@ -22,28 +22,20 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.hitsdb.Model.V20200615
 {
-	public class GetInstanceIpWhiteListResponse : AcsResponse
+	public class GetLdpsResourceCostResponse : AcsResponse
 	{
-
-		private string instanceId;
 
 		private string requestId;
 
-		private List<GetInstanceIpWhiteList_GroupListItem> groupList;
+		private string instanceId;
 
-		private List<string> ipList;
+		private string jobId;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-			}
-		}
+		private long? startTime;
+
+		private long? endTime;
+
+		private long? totalResource;
 
 		public string RequestId
 		{
@@ -57,59 +49,63 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			}
 		}
 
-		public List<GetInstanceIpWhiteList_GroupListItem> GroupList
+		public string InstanceId
 		{
 			get
 			{
-				return groupList;
+				return instanceId;
 			}
 			set	
 			{
-				groupList = value;
+				instanceId = value;
 			}
 		}
 
-		public List<string> IpList
+		public string JobId
 		{
 			get
 			{
-				return ipList;
+				return jobId;
 			}
 			set	
 			{
-				ipList = value;
+				jobId = value;
 			}
 		}
 
-		public class GetInstanceIpWhiteList_GroupListItem
+		public long? StartTime
 		{
-
-			private string groupName;
-
-			private string securityIpList;
-
-			public string GroupName
+			get
 			{
-				get
-				{
-					return groupName;
-				}
-				set	
-				{
-					groupName = value;
-				}
+				return startTime;
 			}
-
-			public string SecurityIpList
+			set	
 			{
-				get
-				{
-					return securityIpList;
-				}
-				set	
-				{
-					securityIpList = value;
-				}
+				startTime = value;
+			}
+		}
+
+		public long? EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
+
+		public long? TotalResource
+		{
+			get
+			{
+				return totalResource;
+			}
+			set	
+			{
+				totalResource = value;
 			}
 		}
 	}

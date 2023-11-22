@@ -16,16 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
+using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.hitsdb
-{
-    public class Endpoint
-    {
-        public static Dictionary<string, string> endpointMap = new Dictionary<string, string>() 
-        {};
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.hitsdb.Model.V20200615;
 
-        public static string endpointRegionalType = "regional";
+namespace Aliyun.Acs.hitsdb.Transform.V20200615
+{
+    public class CreateLdpsNamespaceResponseUnmarshaller
+    {
+        public static CreateLdpsNamespaceResponse Unmarshall(UnmarshallerContext _ctx)
+        {
+			CreateLdpsNamespaceResponse createLdpsNamespaceResponse = new CreateLdpsNamespaceResponse();
+
+			createLdpsNamespaceResponse.HttpResponse = _ctx.HttpResponse;
+			createLdpsNamespaceResponse.RequestId = _ctx.StringValue("CreateLdpsNamespace.RequestId");
+        
+			return createLdpsNamespaceResponse;
+        }
     }
 }

@@ -27,10 +27,10 @@ using Aliyun.Acs.hitsdb.Transform.V20200615;
 
 namespace Aliyun.Acs.hitsdb.Model.V20200615
 {
-    public class ReleaseLindormInstanceRequest : RpcAcsRequest<ReleaseLindormInstanceResponse>
+    public class GetLdpsResourceCostRequest : RpcAcsRequest<GetLdpsResourceCostResponse>
     {
-        public ReleaseLindormInstanceRequest()
-            : base("hitsdb", "2020-06-15", "ReleaseLindormInstance", "hitsdb", "openAPI")
+        public GetLdpsResourceCostRequest()
+            : base("hitsdb", "2020-06-15", "GetLdpsResourceCost", "hitsdb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,13 +42,17 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 
 		private long? resourceOwnerId;
 
-		private bool? immediately;
+		private long? startTime;
+
+		private string jobId;
 
 		private string securityToken;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
+
+		private long? endTime;
 
 		private long? ownerId;
 
@@ -67,16 +71,29 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			}
 		}
 
-		public bool? Immediately
+		public long? StartTime
 		{
 			get
 			{
-				return immediately;
+				return startTime;
 			}
 			set	
 			{
-				immediately = value;
-				DictionaryUtil.Add(QueryParameters, "Immediately", value.ToString());
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
+			}
+		}
+
+		public string JobId
+		{
+			get
+			{
+				return jobId;
+			}
+			set	
+			{
+				jobId = value;
+				DictionaryUtil.Add(QueryParameters, "JobId", value);
 			}
 		}
 
@@ -119,6 +136,19 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			}
 		}
 
+		public long? EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -150,9 +180,9 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			return false;
 		}
 
-        public override ReleaseLindormInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetLdpsResourceCostResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ReleaseLindormInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetLdpsResourceCostResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

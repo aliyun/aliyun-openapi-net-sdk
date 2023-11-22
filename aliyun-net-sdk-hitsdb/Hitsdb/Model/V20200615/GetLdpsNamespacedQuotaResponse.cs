@@ -22,28 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.hitsdb.Model.V20200615
 {
-	public class GetInstanceIpWhiteListResponse : AcsResponse
+	public class GetLdpsNamespacedQuotaResponse : AcsResponse
 	{
-
-		private string instanceId;
 
 		private string requestId;
 
-		private List<GetInstanceIpWhiteList_GroupListItem> groupList;
-
-		private List<string> ipList;
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-			}
-		}
+		private List<GetLdpsNamespacedQuota_NamespacedQuota> namespacedQuotas;
 
 		public string RequestId
 		{
@@ -57,58 +41,88 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			}
 		}
 
-		public List<GetInstanceIpWhiteList_GroupListItem> GroupList
+		public List<GetLdpsNamespacedQuota_NamespacedQuota> NamespacedQuotas
 		{
 			get
 			{
-				return groupList;
+				return namespacedQuotas;
 			}
 			set	
 			{
-				groupList = value;
+				namespacedQuotas = value;
 			}
 		}
 
-		public List<string> IpList
-		{
-			get
-			{
-				return ipList;
-			}
-			set	
-			{
-				ipList = value;
-			}
-		}
-
-		public class GetInstanceIpWhiteList_GroupListItem
+		public class GetLdpsNamespacedQuota_NamespacedQuota
 		{
 
-			private string groupName;
+			private string name;
 
-			private string securityIpList;
+			private string cpuAmount;
 
-			public string GroupName
+			private string memoryAmount;
+
+			private string usedCpu;
+
+			private string usedMemory;
+
+			public string Name
 			{
 				get
 				{
-					return groupName;
+					return name;
 				}
 				set	
 				{
-					groupName = value;
+					name = value;
 				}
 			}
 
-			public string SecurityIpList
+			public string CpuAmount
 			{
 				get
 				{
-					return securityIpList;
+					return cpuAmount;
 				}
 				set	
 				{
-					securityIpList = value;
+					cpuAmount = value;
+				}
+			}
+
+			public string MemoryAmount
+			{
+				get
+				{
+					return memoryAmount;
+				}
+				set	
+				{
+					memoryAmount = value;
+				}
+			}
+
+			public string UsedCpu
+			{
+				get
+				{
+					return usedCpu;
+				}
+				set	
+				{
+					usedCpu = value;
+				}
+			}
+
+			public string UsedMemory
+			{
+				get
+				{
+					return usedMemory;
+				}
+				set	
+				{
+					usedMemory = value;
 				}
 			}
 		}

@@ -16,16 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
 using System.Collections.Generic;
+using Newtonsoft.Json;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.hitsdb
+namespace Aliyun.Acs.hitsdb.Model.V20200615
 {
-    public class Endpoint
-    {
-        public static Dictionary<string, string> endpointMap = new Dictionary<string, string>() 
-        {};
+	public class CreateLdpsNamespaceResponse : AcsResponse
+	{
 
-        public static string endpointRegionalType = "regional";
-    }
+		private string requestId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+	}
 }

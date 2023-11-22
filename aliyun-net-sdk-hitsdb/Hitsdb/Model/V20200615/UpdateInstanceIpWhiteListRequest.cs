@@ -42,6 +42,8 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 
 		private long? resourceOwnerId;
 
+		private bool? delete;
+
 		private string securityToken;
 
 		private string resourceOwnerAccount;
@@ -49,8 +51,6 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string groupName;
 
 		private string securityIpList;
 
@@ -66,6 +66,19 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public bool? Delete
+		{
+			get
+			{
+				return delete;
+			}
+			set	
+			{
+				delete = value;
+				DictionaryUtil.Add(QueryParameters, "Delete", value.ToString());
 			}
 		}
 
@@ -118,19 +131,6 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string GroupName
-		{
-			get
-			{
-				return groupName;
-			}
-			set	
-			{
-				groupName = value;
-				DictionaryUtil.Add(QueryParameters, "GroupName", value);
 			}
 		}
 

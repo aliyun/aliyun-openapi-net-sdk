@@ -27,10 +27,10 @@ using Aliyun.Acs.hitsdb.Transform.V20200615;
 
 namespace Aliyun.Acs.hitsdb.Model.V20200615
 {
-    public class ReleaseLindormInstanceRequest : RpcAcsRequest<ReleaseLindormInstanceResponse>
+    public class GetLdpsNamespacedQuotaRequest : RpcAcsRequest<GetLdpsNamespacedQuotaResponse>
     {
-        public ReleaseLindormInstanceRequest()
-            : base("hitsdb", "2020-06-15", "ReleaseLindormInstance", "hitsdb", "openAPI")
+        public GetLdpsNamespacedQuotaRequest()
+            : base("hitsdb", "2020-06-15", "GetLdpsNamespacedQuota", "hitsdb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,8 +42,6 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 
 		private long? resourceOwnerId;
 
-		private bool? immediately;
-
 		private string securityToken;
 
 		private string resourceOwnerAccount;
@@ -53,6 +51,8 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 		private long? ownerId;
 
 		private string instanceId;
+
+		private string _namespace;
 
 		public long? ResourceOwnerId
 		{
@@ -64,19 +64,6 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public bool? Immediately
-		{
-			get
-			{
-				return immediately;
-			}
-			set	
-			{
-				immediately = value;
-				DictionaryUtil.Add(QueryParameters, "Immediately", value.ToString());
 			}
 		}
 
@@ -145,14 +132,27 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			}
 		}
 
+		public string _Namespace
+		{
+			get
+			{
+				return _namespace;
+			}
+			set	
+			{
+				_namespace = value;
+				DictionaryUtil.Add(QueryParameters, "Namespace", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override ReleaseLindormInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetLdpsNamespacedQuotaResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ReleaseLindormInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetLdpsNamespacedQuotaResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
