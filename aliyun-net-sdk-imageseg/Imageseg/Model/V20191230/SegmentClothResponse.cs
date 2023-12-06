@@ -75,6 +75,8 @@ namespace Aliyun.Acs.imageseg.Model.V20191230
 
 				private string imageURL;
 
+				private string classUrl;
+
 				public string ImageURL
 				{
 					get
@@ -84,6 +86,18 @@ namespace Aliyun.Acs.imageseg.Model.V20191230
 					set	
 					{
 						imageURL = value;
+					}
+				}
+
+				public string ClassUrl
+				{
+					get
+					{
+						return classUrl;
+					}
+					set	
+					{
+						classUrl = value;
 					}
 				}
 			}

@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.imageseg;
 using Aliyun.Acs.imageseg.Transform;
 using Aliyun.Acs.imageseg.Transform.V20191230;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.imageseg.Model.V20191230
     public class SegmentSkyRequest : RpcAcsRequest<SegmentSkyResponse>
     {
         public SegmentSkyRequest()
-            : base("imageseg", "2019-12-30", "SegmentSky")
+            : base("imageseg", "2019-12-30", "SegmentSky", "imageseg", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
