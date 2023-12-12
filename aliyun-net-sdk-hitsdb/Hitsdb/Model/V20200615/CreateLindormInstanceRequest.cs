@@ -44,9 +44,13 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 
 		private long? resourceOwnerId;
 
+		private string autoRenewDuration;
+
 		private string resourceGroupId;
 
 		private string logSpec;
+
+		private bool? autoRenewal;
 
 		private string securityToken;
 
@@ -146,6 +150,19 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			}
 		}
 
+		public string AutoRenewDuration
+		{
+			get
+			{
+				return autoRenewDuration;
+			}
+			set	
+			{
+				autoRenewDuration = value;
+				DictionaryUtil.Add(QueryParameters, "AutoRenewDuration", value);
+			}
+		}
+
 		public string ResourceGroupId
 		{
 			get
@@ -169,6 +186,19 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			{
 				logSpec = value;
 				DictionaryUtil.Add(QueryParameters, "LogSpec", value);
+			}
+		}
+
+		public bool? AutoRenewal
+		{
+			get
+			{
+				return autoRenewal;
+			}
+			set	
+			{
+				autoRenewal = value;
+				DictionaryUtil.Add(QueryParameters, "AutoRenewal", value.ToString());
 			}
 		}
 
