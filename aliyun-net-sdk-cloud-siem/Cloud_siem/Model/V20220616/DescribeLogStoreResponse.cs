@@ -25,69 +25,9 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 	public class DescribeLogStoreResponse : AcsResponse
 	{
 
-		private bool? success;
-
-		private int? code;
-
-		private string message;
-
-		private string errCode;
-
 		private string requestId;
 
-		private string dyCode;
-
-		private string dyMessage;
-
 		private DescribeLogStore_Data data;
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public int? Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public string ErrCode
-		{
-			get
-			{
-				return errCode;
-			}
-			set	
-			{
-				errCode = value;
-			}
-		}
 
 		public string RequestId
 		{
@@ -98,30 +38,6 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string DyCode
-		{
-			get
-			{
-				return dyCode;
-			}
-			set	
-			{
-				dyCode = value;
-			}
-		}
-
-		public string DyMessage
-		{
-			get
-			{
-				return dyMessage;
-			}
-			set	
-			{
-				dyMessage = value;
 			}
 		}
 

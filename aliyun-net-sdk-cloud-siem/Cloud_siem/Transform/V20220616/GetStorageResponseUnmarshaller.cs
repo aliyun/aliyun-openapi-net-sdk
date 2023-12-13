@@ -31,13 +31,7 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 			GetStorageResponse getStorageResponse = new GetStorageResponse();
 
 			getStorageResponse.HttpResponse = _ctx.HttpResponse;
-			getStorageResponse.Success = _ctx.BooleanValue("GetStorage.Success");
-			getStorageResponse.Code = _ctx.IntegerValue("GetStorage.Code");
-			getStorageResponse.Message = _ctx.StringValue("GetStorage.Message");
-			getStorageResponse.ErrCode = _ctx.StringValue("GetStorage.ErrCode");
 			getStorageResponse.RequestId = _ctx.StringValue("GetStorage.RequestId");
-			getStorageResponse.DyCode = _ctx.StringValue("GetStorage.DyCode");
-			getStorageResponse.DyMessage = _ctx.StringValue("GetStorage.DyMessage");
 
 			GetStorageResponse.GetStorage_Data data = new GetStorageResponse.GetStorage_Data();
 			data.Ttl = _ctx.IntegerValue("GetStorage.Data.Ttl");

@@ -32,13 +32,7 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 
 			doSelfDelegateResponse.HttpResponse = _ctx.HttpResponse;
 			doSelfDelegateResponse.Data = _ctx.BooleanValue("DoSelfDelegate.Data");
-			doSelfDelegateResponse.Success = _ctx.BooleanValue("DoSelfDelegate.Success");
-			doSelfDelegateResponse.Code = _ctx.IntegerValue("DoSelfDelegate.Code");
-			doSelfDelegateResponse.Message = _ctx.StringValue("DoSelfDelegate.Message");
-			doSelfDelegateResponse.ErrCode = _ctx.StringValue("DoSelfDelegate.ErrCode");
 			doSelfDelegateResponse.RequestId = _ctx.StringValue("DoSelfDelegate.RequestId");
-			doSelfDelegateResponse.DyCode = _ctx.StringValue("DoSelfDelegate.DyCode");
-			doSelfDelegateResponse.DyMessage = _ctx.StringValue("DoSelfDelegate.DyMessage");
         
 			return doSelfDelegateResponse;
         }

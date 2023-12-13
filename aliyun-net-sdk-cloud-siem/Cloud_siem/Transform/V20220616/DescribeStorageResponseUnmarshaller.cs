@@ -32,13 +32,7 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 
 			describeStorageResponse.HttpResponse = _ctx.HttpResponse;
 			describeStorageResponse.Data = _ctx.BooleanValue("DescribeStorage.Data");
-			describeStorageResponse.Success = _ctx.BooleanValue("DescribeStorage.Success");
-			describeStorageResponse.Code = _ctx.IntegerValue("DescribeStorage.Code");
-			describeStorageResponse.Message = _ctx.StringValue("DescribeStorage.Message");
-			describeStorageResponse.ErrCode = _ctx.StringValue("DescribeStorage.ErrCode");
 			describeStorageResponse.RequestId = _ctx.StringValue("DescribeStorage.RequestId");
-			describeStorageResponse.DyCode = _ctx.StringValue("DescribeStorage.DyCode");
-			describeStorageResponse.DyMessage = _ctx.StringValue("DescribeStorage.DyMessage");
         
 			return describeStorageResponse;
         }

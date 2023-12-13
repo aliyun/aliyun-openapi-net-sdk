@@ -31,13 +31,7 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 			DoQuickFieldResponse doQuickFieldResponse = new DoQuickFieldResponse();
 
 			doQuickFieldResponse.HttpResponse = _ctx.HttpResponse;
-			doQuickFieldResponse.Success = _ctx.BooleanValue("DoQuickField.Success");
-			doQuickFieldResponse.Code = _ctx.IntegerValue("DoQuickField.Code");
-			doQuickFieldResponse.Message = _ctx.StringValue("DoQuickField.Message");
-			doQuickFieldResponse.ErrCode = _ctx.StringValue("DoQuickField.ErrCode");
 			doQuickFieldResponse.RequestId = _ctx.StringValue("DoQuickField.RequestId");
-			doQuickFieldResponse.DyCode = _ctx.StringValue("DoQuickField.DyCode");
-			doQuickFieldResponse.DyMessage = _ctx.StringValue("DoQuickField.DyMessage");
 
 			DoQuickFieldResponse.DoQuickField_Data data = new DoQuickFieldResponse.DoQuickField_Data();
 			data.QueryMode = _ctx.IntegerValue("DoQuickField.Data.QueryMode");

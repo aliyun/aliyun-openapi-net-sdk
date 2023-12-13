@@ -32,13 +32,7 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 
 			restoreCapacityResponse.HttpResponse = _ctx.HttpResponse;
 			restoreCapacityResponse.Data = _ctx.BooleanValue("RestoreCapacity.Data");
-			restoreCapacityResponse.Success = _ctx.BooleanValue("RestoreCapacity.Success");
-			restoreCapacityResponse.Code = _ctx.IntegerValue("RestoreCapacity.Code");
-			restoreCapacityResponse.Message = _ctx.StringValue("RestoreCapacity.Message");
-			restoreCapacityResponse.ErrCode = _ctx.StringValue("RestoreCapacity.ErrCode");
 			restoreCapacityResponse.RequestId = _ctx.StringValue("RestoreCapacity.RequestId");
-			restoreCapacityResponse.DyCode = _ctx.StringValue("RestoreCapacity.DyCode");
-			restoreCapacityResponse.DyMessage = _ctx.StringValue("RestoreCapacity.DyMessage");
         
 			return restoreCapacityResponse;
         }

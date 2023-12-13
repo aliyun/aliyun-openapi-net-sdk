@@ -32,13 +32,7 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 
 			deleteQuickQueryResponse.HttpResponse = _ctx.HttpResponse;
 			deleteQuickQueryResponse.Data = _ctx.BooleanValue("DeleteQuickQuery.Data");
-			deleteQuickQueryResponse.Success = _ctx.BooleanValue("DeleteQuickQuery.Success");
-			deleteQuickQueryResponse.Code = _ctx.IntegerValue("DeleteQuickQuery.Code");
-			deleteQuickQueryResponse.Message = _ctx.StringValue("DeleteQuickQuery.Message");
-			deleteQuickQueryResponse.ErrCode = _ctx.StringValue("DeleteQuickQuery.ErrCode");
 			deleteQuickQueryResponse.RequestId = _ctx.StringValue("DeleteQuickQuery.RequestId");
-			deleteQuickQueryResponse.DyCode = _ctx.StringValue("DeleteQuickQuery.DyCode");
-			deleteQuickQueryResponse.DyMessage = _ctx.StringValue("DeleteQuickQuery.DyMessage");
         
 			return deleteQuickQueryResponse;
         }

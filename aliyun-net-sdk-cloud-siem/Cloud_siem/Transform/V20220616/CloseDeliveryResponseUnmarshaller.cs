@@ -32,13 +32,7 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 
 			closeDeliveryResponse.HttpResponse = _ctx.HttpResponse;
 			closeDeliveryResponse.Data = _ctx.BooleanValue("CloseDelivery.Data");
-			closeDeliveryResponse.Success = _ctx.BooleanValue("CloseDelivery.Success");
-			closeDeliveryResponse.Code = _ctx.IntegerValue("CloseDelivery.Code");
-			closeDeliveryResponse.Message = _ctx.StringValue("CloseDelivery.Message");
-			closeDeliveryResponse.ErrCode = _ctx.StringValue("CloseDelivery.ErrCode");
 			closeDeliveryResponse.RequestId = _ctx.StringValue("CloseDelivery.RequestId");
-			closeDeliveryResponse.DyCode = _ctx.StringValue("CloseDelivery.DyCode");
-			closeDeliveryResponse.DyMessage = _ctx.StringValue("CloseDelivery.DyMessage");
         
 			return closeDeliveryResponse;
         }

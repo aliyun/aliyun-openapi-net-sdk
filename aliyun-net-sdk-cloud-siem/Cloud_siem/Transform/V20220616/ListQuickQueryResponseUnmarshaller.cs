@@ -31,13 +31,7 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 			ListQuickQueryResponse listQuickQueryResponse = new ListQuickQueryResponse();
 
 			listQuickQueryResponse.HttpResponse = _ctx.HttpResponse;
-			listQuickQueryResponse.Success = _ctx.BooleanValue("ListQuickQuery.Success");
-			listQuickQueryResponse.Code = _ctx.IntegerValue("ListQuickQuery.Code");
-			listQuickQueryResponse.Message = _ctx.StringValue("ListQuickQuery.Message");
-			listQuickQueryResponse.ErrCode = _ctx.StringValue("ListQuickQuery.ErrCode");
 			listQuickQueryResponse.RequestId = _ctx.StringValue("ListQuickQuery.RequestId");
-			listQuickQueryResponse.DyCode = _ctx.StringValue("ListQuickQuery.DyCode");
-			listQuickQueryResponse.DyMessage = _ctx.StringValue("ListQuickQuery.DyMessage");
 
 			ListQuickQueryResponse.ListQuickQuery_Data data = new ListQuickQueryResponse.ListQuickQuery_Data();
 			data.Total = _ctx.IntegerValue("ListQuickQuery.Data.Total");

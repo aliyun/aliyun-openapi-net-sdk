@@ -31,13 +31,7 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 			GetCapacityResponse getCapacityResponse = new GetCapacityResponse();
 
 			getCapacityResponse.HttpResponse = _ctx.HttpResponse;
-			getCapacityResponse.Success = _ctx.BooleanValue("GetCapacity.Success");
-			getCapacityResponse.Code = _ctx.IntegerValue("GetCapacity.Code");
-			getCapacityResponse.Message = _ctx.StringValue("GetCapacity.Message");
-			getCapacityResponse.ErrCode = _ctx.StringValue("GetCapacity.ErrCode");
 			getCapacityResponse.RequestId = _ctx.StringValue("GetCapacity.RequestId");
-			getCapacityResponse.DyCode = _ctx.StringValue("GetCapacity.DyCode");
-			getCapacityResponse.DyMessage = _ctx.StringValue("GetCapacity.DyMessage");
 
 			GetCapacityResponse.GetCapacity_Data data = new GetCapacityResponse.GetCapacity_Data();
 			data.UsedCapacity = _ctx.DoubleValue("GetCapacity.Data.UsedCapacity");

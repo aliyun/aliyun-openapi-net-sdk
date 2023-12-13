@@ -31,13 +31,7 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 			ShowQuickAnalysisResponse showQuickAnalysisResponse = new ShowQuickAnalysisResponse();
 
 			showQuickAnalysisResponse.HttpResponse = _ctx.HttpResponse;
-			showQuickAnalysisResponse.Success = _ctx.BooleanValue("ShowQuickAnalysis.Success");
-			showQuickAnalysisResponse.Code = _ctx.IntegerValue("ShowQuickAnalysis.Code");
-			showQuickAnalysisResponse.Message = _ctx.StringValue("ShowQuickAnalysis.Message");
-			showQuickAnalysisResponse.ErrCode = _ctx.StringValue("ShowQuickAnalysis.ErrCode");
 			showQuickAnalysisResponse.RequestId = _ctx.StringValue("ShowQuickAnalysis.RequestId");
-			showQuickAnalysisResponse.DyCode = _ctx.StringValue("ShowQuickAnalysis.DyCode");
-			showQuickAnalysisResponse.DyMessage = _ctx.StringValue("ShowQuickAnalysis.DyMessage");
 
 			ShowQuickAnalysisResponse.ShowQuickAnalysis_Data data = new ShowQuickAnalysisResponse.ShowQuickAnalysis_Data();
 

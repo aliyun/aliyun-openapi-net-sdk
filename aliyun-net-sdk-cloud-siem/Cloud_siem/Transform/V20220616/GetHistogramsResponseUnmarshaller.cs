@@ -31,13 +31,7 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 			GetHistogramsResponse getHistogramsResponse = new GetHistogramsResponse();
 
 			getHistogramsResponse.HttpResponse = _ctx.HttpResponse;
-			getHistogramsResponse.Success = _ctx.BooleanValue("GetHistograms.Success");
-			getHistogramsResponse.Code = _ctx.IntegerValue("GetHistograms.Code");
-			getHistogramsResponse.Message = _ctx.StringValue("GetHistograms.Message");
-			getHistogramsResponse.ErrCode = _ctx.StringValue("GetHistograms.ErrCode");
 			getHistogramsResponse.RequestId = _ctx.StringValue("GetHistograms.RequestId");
-			getHistogramsResponse.DyCode = _ctx.StringValue("GetHistograms.DyCode");
-			getHistogramsResponse.DyMessage = _ctx.StringValue("GetHistograms.DyMessage");
 
 			GetHistogramsResponse.GetHistograms_Data data = new GetHistogramsResponse.GetHistograms_Data();
 			data.Server = _ctx.StringValue("GetHistograms.Data.Server");

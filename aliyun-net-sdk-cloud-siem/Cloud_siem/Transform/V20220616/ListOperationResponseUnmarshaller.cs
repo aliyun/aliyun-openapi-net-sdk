@@ -31,13 +31,7 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 			ListOperationResponse listOperationResponse = new ListOperationResponse();
 
 			listOperationResponse.HttpResponse = _ctx.HttpResponse;
-			listOperationResponse.Success = _ctx.BooleanValue("ListOperation.Success");
-			listOperationResponse.Code = _ctx.IntegerValue("ListOperation.Code");
-			listOperationResponse.Message = _ctx.StringValue("ListOperation.Message");
-			listOperationResponse.ErrCode = _ctx.StringValue("ListOperation.ErrCode");
 			listOperationResponse.RequestId = _ctx.StringValue("ListOperation.RequestId");
-			listOperationResponse.DyCode = _ctx.StringValue("ListOperation.DyCode");
-			listOperationResponse.DyMessage = _ctx.StringValue("ListOperation.DyMessage");
 
 			ListOperationResponse.ListOperation_Data data = new ListOperationResponse.ListOperation_Data();
 			data.AdminOrNot = _ctx.BooleanValue("ListOperation.Data.AdminOrNot");

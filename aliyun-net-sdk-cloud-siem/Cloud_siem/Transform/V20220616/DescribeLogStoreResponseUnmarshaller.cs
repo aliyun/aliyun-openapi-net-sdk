@@ -31,13 +31,7 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 			DescribeLogStoreResponse describeLogStoreResponse = new DescribeLogStoreResponse();
 
 			describeLogStoreResponse.HttpResponse = _ctx.HttpResponse;
-			describeLogStoreResponse.Success = _ctx.BooleanValue("DescribeLogStore.Success");
-			describeLogStoreResponse.Code = _ctx.IntegerValue("DescribeLogStore.Code");
-			describeLogStoreResponse.Message = _ctx.StringValue("DescribeLogStore.Message");
-			describeLogStoreResponse.ErrCode = _ctx.StringValue("DescribeLogStore.ErrCode");
 			describeLogStoreResponse.RequestId = _ctx.StringValue("DescribeLogStore.RequestId");
-			describeLogStoreResponse.DyCode = _ctx.StringValue("DescribeLogStore.DyCode");
-			describeLogStoreResponse.DyMessage = _ctx.StringValue("DescribeLogStore.DyMessage");
 
 			DescribeLogStoreResponse.DescribeLogStore_Data data = new DescribeLogStoreResponse.DescribeLogStore_Data();
 			data.LogStoreName = _ctx.StringValue("DescribeLogStore.Data.LogStoreName");

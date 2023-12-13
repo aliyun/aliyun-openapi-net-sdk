@@ -32,13 +32,7 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 
 			saveQuickQueryResponse.HttpResponse = _ctx.HttpResponse;
 			saveQuickQueryResponse.Data = _ctx.BooleanValue("SaveQuickQuery.Data");
-			saveQuickQueryResponse.Success = _ctx.BooleanValue("SaveQuickQuery.Success");
-			saveQuickQueryResponse.Code = _ctx.IntegerValue("SaveQuickQuery.Code");
-			saveQuickQueryResponse.Message = _ctx.StringValue("SaveQuickQuery.Message");
-			saveQuickQueryResponse.ErrCode = _ctx.StringValue("SaveQuickQuery.ErrCode");
 			saveQuickQueryResponse.RequestId = _ctx.StringValue("SaveQuickQuery.RequestId");
-			saveQuickQueryResponse.DyCode = _ctx.StringValue("SaveQuickQuery.DyCode");
-			saveQuickQueryResponse.DyMessage = _ctx.StringValue("SaveQuickQuery.DyMessage");
         
 			return saveQuickQueryResponse;
         }
