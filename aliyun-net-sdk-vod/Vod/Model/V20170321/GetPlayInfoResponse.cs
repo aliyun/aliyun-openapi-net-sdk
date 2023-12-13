@@ -472,6 +472,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string danMuURL;
 
+			private string storageClass;
+
 			private List<GetPlayInfo_Thumbnail> thumbnailList;
 
 			public string CreationTime
@@ -591,6 +593,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					danMuURL = value;
+				}
+			}
+
+			public string StorageClass
+			{
+				get
+				{
+					return storageClass;
+				}
+				set	
+				{
+					storageClass = value;
 				}
 			}
 

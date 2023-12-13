@@ -48,6 +48,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string storageClass;
 
+		private bool? allowUpdateWithoutTimeLimit;
+
 		public string RestoreTier
 		{
 			get
@@ -97,6 +99,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				storageClass = value;
 				DictionaryUtil.Add(QueryParameters, "StorageClass", value);
+			}
+		}
+
+		public bool? AllowUpdateWithoutTimeLimit
+		{
+			get
+			{
+				return allowUpdateWithoutTimeLimit;
+			}
+			set	
+			{
+				allowUpdateWithoutTimeLimit = value;
+				DictionaryUtil.Add(QueryParameters, "AllowUpdateWithoutTimeLimit", value.ToString());
 			}
 		}
 
