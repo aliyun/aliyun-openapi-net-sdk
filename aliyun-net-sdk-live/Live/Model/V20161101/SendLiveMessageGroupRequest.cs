@@ -42,21 +42,97 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
+		private string senderMetaInfo;
+
+		private string body;
+
+		private long? staticsIncrease;
+
+		private long? msgType;
+
+		private bool? noStorage;
+
 		private string groupId;
 
-		private string senderMetaInfo;
+		private long? weight;
 
 		private string dataCenter;
 
 		private string msgTid;
 
-		private string body;
-
 		private string senderId;
 
 		private string appId;
 
-		private long? msgType;
+		[JsonProperty(PropertyName = "SenderMetaInfo")]
+		public string SenderMetaInfo
+		{
+			get
+			{
+				return senderMetaInfo;
+			}
+			set	
+			{
+				senderMetaInfo = value;
+				DictionaryUtil.Add(QueryParameters, "SenderMetaInfo", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Body")]
+		public string Body
+		{
+			get
+			{
+				return body;
+			}
+			set	
+			{
+				body = value;
+				DictionaryUtil.Add(QueryParameters, "Body", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "StaticsIncrease")]
+		public long? StaticsIncrease
+		{
+			get
+			{
+				return staticsIncrease;
+			}
+			set	
+			{
+				staticsIncrease = value;
+				DictionaryUtil.Add(QueryParameters, "StaticsIncrease", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "MsgType")]
+		public long? MsgType
+		{
+			get
+			{
+				return msgType;
+			}
+			set	
+			{
+				msgType = value;
+				DictionaryUtil.Add(QueryParameters, "MsgType", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "NoStorage")]
+		public bool? NoStorage
+		{
+			get
+			{
+				return noStorage;
+			}
+			set	
+			{
+				noStorage = value;
+				DictionaryUtil.Add(QueryParameters, "NoStorage", value.ToString());
+			}
+		}
 
 		[JsonProperty(PropertyName = "GroupId")]
 		public string GroupId
@@ -72,17 +148,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "SenderMetaInfo")]
-		public string SenderMetaInfo
+		[JsonProperty(PropertyName = "Weight")]
+		public long? Weight
 		{
 			get
 			{
-				return senderMetaInfo;
+				return weight;
 			}
 			set	
 			{
-				senderMetaInfo = value;
-				DictionaryUtil.Add(QueryParameters, "SenderMetaInfo", value);
+				weight = value;
+				DictionaryUtil.Add(QueryParameters, "Weight", value.ToString());
 			}
 		}
 
@@ -114,20 +190,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "Body")]
-		public string Body
-		{
-			get
-			{
-				return body;
-			}
-			set	
-			{
-				body = value;
-				DictionaryUtil.Add(QueryParameters, "Body", value);
-			}
-		}
-
 		[JsonProperty(PropertyName = "SenderId")]
 		public string SenderId
 		{
@@ -153,20 +215,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				appId = value;
 				DictionaryUtil.Add(QueryParameters, "AppId", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "MsgType")]
-		public long? MsgType
-		{
-			get
-			{
-				return msgType;
-			}
-			set	
-			{
-				msgType = value;
-				DictionaryUtil.Add(QueryParameters, "MsgType", value.ToString());
 			}
 		}
 
