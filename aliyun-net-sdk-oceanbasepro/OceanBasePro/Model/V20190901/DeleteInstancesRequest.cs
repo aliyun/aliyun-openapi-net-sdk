@@ -43,6 +43,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 		private string backupRetainMode;
 
+		private bool? dryRun;
+
 		private string instanceIds;
 
 		[JsonProperty(PropertyName = "BackupRetainMode")]
@@ -56,6 +58,20 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			{
 				backupRetainMode = value;
 				DictionaryUtil.Add(BodyParameters, "BackupRetainMode", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DryRun")]
+		public bool? DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(BodyParameters, "DryRun", value.ToString());
 			}
 		}
 

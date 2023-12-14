@@ -28,80 +28,97 @@ using Aliyun.Acs.OceanBasePro.Transform.V20190901;
 
 namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 {
-    public class ModifyInstanceSpecRequest : RpcAcsRequest<ModifyInstanceSpecResponse>
+    public class DescribeAvailableZoneRequest : RpcAcsRequest<DescribeAvailableZoneResponse>
     {
-        public ModifyInstanceSpecRequest()
-            : base("OceanBasePro", "2019-09-01", "ModifyInstanceSpec", "oceanbase", "openAPI")
+        public DescribeAvailableZoneRequest()
+            : base("OceanBasePro", "2019-09-01", "DescribeAvailableZone", "oceanbase", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.OceanBasePro.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.OceanBasePro.Endpoint.endpointRegionalType, null);
             }
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private string instanceClass;
+		private string spec;
 
-		private bool? dryRun;
+		private string obVersion;
 
-		private long? diskSize;
+		private string series;
 
-		private string instanceId;
+		private string instanceType;
 
-		[JsonProperty(PropertyName = "InstanceClass")]
-		public string InstanceClass
+		private string deployType;
+
+		[JsonProperty(PropertyName = "Spec")]
+		public string Spec
 		{
 			get
 			{
-				return instanceClass;
+				return spec;
 			}
 			set	
 			{
-				instanceClass = value;
-				DictionaryUtil.Add(BodyParameters, "InstanceClass", value);
+				spec = value;
+				DictionaryUtil.Add(BodyParameters, "Spec", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "DryRun")]
-		public bool? DryRun
+		[JsonProperty(PropertyName = "ObVersion")]
+		public string ObVersion
 		{
 			get
 			{
-				return dryRun;
+				return obVersion;
 			}
 			set	
 			{
-				dryRun = value;
-				DictionaryUtil.Add(BodyParameters, "DryRun", value.ToString());
+				obVersion = value;
+				DictionaryUtil.Add(BodyParameters, "ObVersion", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "DiskSize")]
-		public long? DiskSize
+		[JsonProperty(PropertyName = "Series")]
+		public string Series
 		{
 			get
 			{
-				return diskSize;
+				return series;
 			}
 			set	
 			{
-				diskSize = value;
-				DictionaryUtil.Add(BodyParameters, "DiskSize", value.ToString());
+				series = value;
+				DictionaryUtil.Add(BodyParameters, "Series", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "InstanceId")]
-		public string InstanceId
+		[JsonProperty(PropertyName = "InstanceType")]
+		public string InstanceType
 		{
 			get
 			{
-				return instanceId;
+				return instanceType;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(BodyParameters, "InstanceId", value);
+				instanceType = value;
+				DictionaryUtil.Add(BodyParameters, "InstanceType", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DeployType")]
+		public string DeployType
+		{
+			get
+			{
+				return deployType;
+			}
+			set	
+			{
+				deployType = value;
+				DictionaryUtil.Add(BodyParameters, "DeployType", value);
 			}
 		}
 
@@ -110,9 +127,9 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			return false;
 		}
 
-        public override ModifyInstanceSpecResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeAvailableZoneResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyInstanceSpecResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeAvailableZoneResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

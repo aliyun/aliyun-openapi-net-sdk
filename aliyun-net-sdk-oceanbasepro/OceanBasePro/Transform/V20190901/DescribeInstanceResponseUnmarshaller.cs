@@ -61,6 +61,10 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 			instance.EnableIsolationOptimization = _ctx.BooleanValue("DescribeInstance.Instance.EnableIsolationOptimization");
 			instance.InTempCapacityStatus = _ctx.BooleanValue("DescribeInstance.Instance.InTempCapacityStatus");
 			instance.DataDiskAutoScale = _ctx.BooleanValue("DescribeInstance.Instance.DataDiskAutoScale");
+			instance.EnableProxyService = _ctx.BooleanValue("DescribeInstance.Instance.EnableProxyService");
+			instance.ProxyServiceStatus = _ctx.StringValue("DescribeInstance.Instance.ProxyServiceStatus");
+			instance.ProxyClusterId = _ctx.StringValue("DescribeInstance.Instance.ProxyClusterId");
+			instance.CpuArchitecture = _ctx.StringValue("DescribeInstance.Instance.CpuArchitecture");
 
 			List<string> instance_availableZones = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeInstance.Instance.AvailableZones.Length"); i++) {
@@ -110,6 +114,14 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 			DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_Resource.DescribeInstance_LogDiskSize logDiskSize = new DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_Resource.DescribeInstance_LogDiskSize();
 			logDiskSize.TotalDiskSize = _ctx.LongValue("DescribeInstance.Instance.Resource.LogDiskSize.TotalDiskSize");
 			logDiskSize.UnitDiskSize = _ctx.LongValue("DescribeInstance.Instance.Resource.LogDiskSize.UnitDiskSize");
+			logDiskSize.LogAssignedSize = _ctx.StringValue("DescribeInstance.Instance.Resource.LogDiskSize.LogAssignedSize");
+			logDiskSize.MaxLogAssignedPercent = _ctx.StringValue("DescribeInstance.Instance.Resource.LogDiskSize.MaxLogAssignedPercent");
+
+			List<string> logDiskSize_maxLogAssignedObServer = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeInstance.Instance.Resource.LogDiskSize.MaxLogAssignedObServer.Length"); i++) {
+				logDiskSize_maxLogAssignedObServer.Add(_ctx.StringValue("DescribeInstance.Instance.Resource.LogDiskSize.MaxLogAssignedObServer["+ i +"]"));
+			}
+			logDiskSize.MaxLogAssignedObServer = logDiskSize_maxLogAssignedObServer;
 			resource.LogDiskSize = logDiskSize;
 
 			DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_Resource.DescribeInstance_CapacityUnit capacityUnit = new DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_Resource.DescribeInstance_CapacityUnit();

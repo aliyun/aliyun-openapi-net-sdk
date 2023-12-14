@@ -112,6 +112,14 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 			private bool? dataDiskAutoScale;
 
+			private bool? enableProxyService;
+
+			private string proxyServiceStatus;
+
+			private string proxyClusterId;
+
+			private string cpuArchitecture;
+
 			private List<string> availableZones;
 
 			private List<string> zones;
@@ -470,6 +478,58 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				set	
 				{
 					dataDiskAutoScale = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EnableProxyService")]
+			public bool? EnableProxyService
+			{
+				get
+				{
+					return enableProxyService;
+				}
+				set	
+				{
+					enableProxyService = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ProxyServiceStatus")]
+			public string ProxyServiceStatus
+			{
+				get
+				{
+					return proxyServiceStatus;
+				}
+				set	
+				{
+					proxyServiceStatus = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ProxyClusterId")]
+			public string ProxyClusterId
+			{
+				get
+				{
+					return proxyClusterId;
+				}
+				set	
+				{
+					proxyClusterId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CpuArchitecture")]
+			public string CpuArchitecture
+			{
+				get
+				{
+					return cpuArchitecture;
+				}
+				set	
+				{
+					cpuArchitecture = value;
 				}
 			}
 
@@ -890,6 +950,12 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 					private long? unitDiskSize;
 
+					private string logAssignedSize;
+
+					private string maxLogAssignedPercent;
+
+					private List<string> maxLogAssignedObServer;
+
 					[JsonProperty(PropertyName = "TotalDiskSize")]
 					public long? TotalDiskSize
 					{
@@ -913,6 +979,45 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 						set	
 						{
 							unitDiskSize = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "LogAssignedSize")]
+					public string LogAssignedSize
+					{
+						get
+						{
+							return logAssignedSize;
+						}
+						set	
+						{
+							logAssignedSize = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "MaxLogAssignedPercent")]
+					public string MaxLogAssignedPercent
+					{
+						get
+						{
+							return maxLogAssignedPercent;
+						}
+						set	
+						{
+							maxLogAssignedPercent = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "MaxLogAssignedObServer")]
+					public List<string> MaxLogAssignedObServer
+					{
+						get
+						{
+							return maxLogAssignedObServer;
+						}
+						set	
+						{
+							maxLogAssignedObServer = value;
 						}
 					}
 				}

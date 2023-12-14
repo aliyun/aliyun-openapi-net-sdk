@@ -36,6 +36,9 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 			DescribeInstanceSecurityConfigsResponse.DescribeInstanceSecurityConfigs_InstanceSecurityConfigs instanceSecurityConfigs = new DescribeInstanceSecurityConfigsResponse.DescribeInstanceSecurityConfigs_InstanceSecurityConfigs();
 			instanceSecurityConfigs.TotalCheckCount = _ctx.IntegerValue("DescribeInstanceSecurityConfigs.InstanceSecurityConfigs.TotalCheckCount");
 			instanceSecurityConfigs.TotalRiskCount = _ctx.IntegerValue("DescribeInstanceSecurityConfigs.InstanceSecurityConfigs.TotalRiskCount");
+			instanceSecurityConfigs.CheckTime = _ctx.StringValue("DescribeInstanceSecurityConfigs.InstanceSecurityConfigs.CheckTime");
+			instanceSecurityConfigs.InstanceId = _ctx.StringValue("DescribeInstanceSecurityConfigs.InstanceSecurityConfigs.InstanceId");
+			instanceSecurityConfigs.CheckId = _ctx.StringValue("DescribeInstanceSecurityConfigs.InstanceSecurityConfigs.CheckId");
 
 			List<DescribeInstanceSecurityConfigsResponse.DescribeInstanceSecurityConfigs_InstanceSecurityConfigs.DescribeInstanceSecurityConfigs_SecurityConfigsItem> instanceSecurityConfigs_securityConfigs = new List<DescribeInstanceSecurityConfigsResponse.DescribeInstanceSecurityConfigs_InstanceSecurityConfigs.DescribeInstanceSecurityConfigs_SecurityConfigsItem>();
 			for (int i = 0; i < _ctx.Length("DescribeInstanceSecurityConfigs.InstanceSecurityConfigs.SecurityConfigs.Length"); i++) {

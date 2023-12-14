@@ -40,6 +40,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			Method = MethodType.POST;
         }
 
+		private string isolationOptimization;
+
 		private string instanceClass;
 
 		private string resourceGroupId;
@@ -47,6 +49,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 		private long? autoRenewPeriod;
 
 		private long? period;
+
+		private bool? dryRun;
 
 		private long? diskSize;
 
@@ -60,11 +64,26 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 		private string instanceName;
 
+		private string replicaMode;
+
 		private bool? autoRenew;
 
 		private string series;
 
 		private string chargeType;
+
+		public string IsolationOptimization
+		{
+			get
+			{
+				return isolationOptimization;
+			}
+			set	
+			{
+				isolationOptimization = value;
+				DictionaryUtil.Add(BodyParameters, "IsolationOptimization", value);
+			}
+		}
 
 		public string InstanceClass
 		{
@@ -115,6 +134,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			{
 				period = value;
 				DictionaryUtil.Add(BodyParameters, "Period", value.ToString());
+			}
+		}
+
+		public bool? DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(BodyParameters, "DryRun", value.ToString());
 			}
 		}
 
@@ -193,6 +225,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			{
 				instanceName = value;
 				DictionaryUtil.Add(BodyParameters, "InstanceName", value);
+			}
+		}
+
+		public string ReplicaMode
+		{
+			get
+			{
+				return replicaMode;
+			}
+			set	
+			{
+				replicaMode = value;
+				DictionaryUtil.Add(BodyParameters, "ReplicaMode", value);
 			}
 		}
 

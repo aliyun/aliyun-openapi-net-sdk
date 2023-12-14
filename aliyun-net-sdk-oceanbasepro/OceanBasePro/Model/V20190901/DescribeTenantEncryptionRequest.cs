@@ -28,10 +28,10 @@ using Aliyun.Acs.OceanBasePro.Transform.V20190901;
 
 namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 {
-    public class ModifyInstanceSpecRequest : RpcAcsRequest<ModifyInstanceSpecResponse>
+    public class DescribeTenantEncryptionRequest : RpcAcsRequest<DescribeTenantEncryptionResponse>
     {
-        public ModifyInstanceSpecRequest()
-            : base("OceanBasePro", "2019-09-01", "ModifyInstanceSpec", "oceanbase", "openAPI")
+        public DescribeTenantEncryptionRequest()
+            : base("OceanBasePro", "2019-09-01", "DescribeTenantEncryption", "oceanbase", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,53 +41,27 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			Method = MethodType.POST;
         }
 
-		private string instanceClass;
-
-		private bool? dryRun;
-
-		private long? diskSize;
+		private long? pageNumber;
 
 		private string instanceId;
 
-		[JsonProperty(PropertyName = "InstanceClass")]
-		public string InstanceClass
-		{
-			get
-			{
-				return instanceClass;
-			}
-			set	
-			{
-				instanceClass = value;
-				DictionaryUtil.Add(BodyParameters, "InstanceClass", value);
-			}
-		}
+		private string tenantId;
 
-		[JsonProperty(PropertyName = "DryRun")]
-		public bool? DryRun
-		{
-			get
-			{
-				return dryRun;
-			}
-			set	
-			{
-				dryRun = value;
-				DictionaryUtil.Add(BodyParameters, "DryRun", value.ToString());
-			}
-		}
+		private long? pageSize;
 
-		[JsonProperty(PropertyName = "DiskSize")]
-		public long? DiskSize
+		private string tenantName;
+
+		[JsonProperty(PropertyName = "PageNumber")]
+		public long? PageNumber
 		{
 			get
 			{
-				return diskSize;
+				return pageNumber;
 			}
 			set	
 			{
-				diskSize = value;
-				DictionaryUtil.Add(BodyParameters, "DiskSize", value.ToString());
+				pageNumber = value;
+				DictionaryUtil.Add(BodyParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -105,14 +79,56 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			}
 		}
 
+		[JsonProperty(PropertyName = "TenantId")]
+		public string TenantId
+		{
+			get
+			{
+				return tenantId;
+			}
+			set	
+			{
+				tenantId = value;
+				DictionaryUtil.Add(BodyParameters, "TenantId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageSize")]
+		public long? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "TenantName")]
+		public string TenantName
+		{
+			get
+			{
+				return tenantName;
+			}
+			set	
+			{
+				tenantName = value;
+				DictionaryUtil.Add(BodyParameters, "TenantName", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override ModifyInstanceSpecResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeTenantEncryptionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyInstanceSpecResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeTenantEncryptionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -48,6 +48,7 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 				data.DataSize = _ctx.DoubleValue("DescribeDatabases.Databases["+ i +"].DataSize");
 				data.Collation = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].Collation");
 				data.InstanceId = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].InstanceId");
+				data.TenantName = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].TenantName");
 
 				List<DescribeDatabasesResponse.DescribeDatabases_Data.DescribeDatabases_UsersItem> data_users = new List<DescribeDatabasesResponse.DescribeDatabases_Data.DescribeDatabases_UsersItem>();
 				for (int j = 0; j < _ctx.Length("DescribeDatabases.Databases["+ i +"].Users.Length"); j++) {

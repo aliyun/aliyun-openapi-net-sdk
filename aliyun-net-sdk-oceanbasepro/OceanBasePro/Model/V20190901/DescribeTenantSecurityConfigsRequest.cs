@@ -45,6 +45,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 		private string tenantId;
 
+		private string checkId;
+
 		[JsonProperty(PropertyName = "InstanceId")]
 		public string InstanceId
 		{
@@ -70,6 +72,20 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			{
 				tenantId = value;
 				DictionaryUtil.Add(BodyParameters, "TenantId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "CheckId")]
+		public string CheckId
+		{
+			get
+			{
+				return checkId;
+			}
+			set	
+			{
+				checkId = value;
+				DictionaryUtil.Add(BodyParameters, "CheckId", value);
 			}
 		}
 

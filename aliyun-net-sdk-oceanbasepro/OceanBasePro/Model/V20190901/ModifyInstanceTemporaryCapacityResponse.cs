@@ -16,28 +16,28 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+using Aliyun.Acs.Core;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.OceanBasePro.Model.V20190901;
-
-namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
+namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 {
-    public class DeleteInstancesResponseUnmarshaller
-    {
-        public static DeleteInstancesResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			DeleteInstancesResponse deleteInstancesResponse = new DeleteInstancesResponse();
+	public class ModifyInstanceTemporaryCapacityResponse : AcsResponse
+	{
 
-			deleteInstancesResponse.HttpResponse = _ctx.HttpResponse;
-			deleteInstancesResponse.RequestId = _ctx.StringValue("DeleteInstances.RequestId");
+		private string requestId;
 
-			DeleteInstancesResponse.DeleteInstances_Data data = new DeleteInstancesResponse.DeleteInstances_Data();
-			data.DryRunResult = _ctx.BooleanValue("DeleteInstances.Data.DryRunResult");
-			deleteInstancesResponse.Data = data;
-        
-			return deleteInstancesResponse;
-        }
-    }
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+	}
 }

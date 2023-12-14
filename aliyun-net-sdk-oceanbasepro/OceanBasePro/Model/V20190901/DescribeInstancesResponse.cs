@@ -87,6 +87,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 			private string deployMode;
 
+			private string cpuArchitecture;
+
 			private string maintainTime;
 
 			private string deployType;
@@ -217,6 +219,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				set	
 				{
 					deployMode = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CpuArchitecture")]
+			public string CpuArchitecture
+			{
+				get
+				{
+					return cpuArchitecture;
+				}
+				set	
+				{
+					cpuArchitecture = value;
 				}
 			}
 

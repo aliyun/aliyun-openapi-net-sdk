@@ -43,11 +43,15 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 		private int? memory;
 
+		private long? logDisk;
+
 		private int? cpu;
 
 		private string instanceId;
 
 		private string tenantId;
+
+		private string readOnlyZoneList;
 
 		[JsonProperty(PropertyName = "Memory")]
 		public int? Memory
@@ -60,6 +64,20 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			{
 				memory = value;
 				DictionaryUtil.Add(BodyParameters, "Memory", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "LogDisk")]
+		public long? LogDisk
+		{
+			get
+			{
+				return logDisk;
+			}
+			set	
+			{
+				logDisk = value;
+				DictionaryUtil.Add(BodyParameters, "LogDisk", value.ToString());
 			}
 		}
 
@@ -102,6 +120,20 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			{
 				tenantId = value;
 				DictionaryUtil.Add(BodyParameters, "TenantId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ReadOnlyZoneList")]
+		public string ReadOnlyZoneList
+		{
+			get
+			{
+				return readOnlyZoneList;
+			}
+			set	
+			{
+				readOnlyZoneList = value;
+				DictionaryUtil.Add(BodyParameters, "ReadOnlyZoneList", value);
 			}
 		}
 

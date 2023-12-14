@@ -28,10 +28,10 @@ using Aliyun.Acs.OceanBasePro.Transform.V20190901;
 
 namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 {
-    public class ModifyInstanceSpecRequest : RpcAcsRequest<ModifyInstanceSpecResponse>
+    public class ModifyInstanceTemporaryCapacityRequest : RpcAcsRequest<ModifyInstanceTemporaryCapacityResponse>
     {
-        public ModifyInstanceSpecRequest()
-            : base("OceanBasePro", "2019-09-01", "ModifyInstanceSpec", "oceanbase", "openAPI")
+        public ModifyInstanceTemporaryCapacityRequest()
+            : base("OceanBasePro", "2019-09-01", "ModifyInstanceTemporaryCapacity", "oceanbase", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,44 +41,14 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			Method = MethodType.POST;
         }
 
-		private string instanceClass;
+		private string diskSize;
 
-		private bool? dryRun;
-
-		private long? diskSize;
+		private string spec;
 
 		private string instanceId;
 
-		[JsonProperty(PropertyName = "InstanceClass")]
-		public string InstanceClass
-		{
-			get
-			{
-				return instanceClass;
-			}
-			set	
-			{
-				instanceClass = value;
-				DictionaryUtil.Add(BodyParameters, "InstanceClass", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "DryRun")]
-		public bool? DryRun
-		{
-			get
-			{
-				return dryRun;
-			}
-			set	
-			{
-				dryRun = value;
-				DictionaryUtil.Add(BodyParameters, "DryRun", value.ToString());
-			}
-		}
-
 		[JsonProperty(PropertyName = "DiskSize")]
-		public long? DiskSize
+		public string DiskSize
 		{
 			get
 			{
@@ -87,7 +57,21 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			set	
 			{
 				diskSize = value;
-				DictionaryUtil.Add(BodyParameters, "DiskSize", value.ToString());
+				DictionaryUtil.Add(BodyParameters, "DiskSize", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Spec")]
+		public string Spec
+		{
+			get
+			{
+				return spec;
+			}
+			set	
+			{
+				spec = value;
+				DictionaryUtil.Add(BodyParameters, "Spec", value);
 			}
 		}
 
@@ -110,9 +94,9 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			return false;
 		}
 
-        public override ModifyInstanceSpecResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyInstanceTemporaryCapacityResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyInstanceSpecResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyInstanceTemporaryCapacityResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -541,6 +541,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 				private string tenantEndpointId;
 
+				private long? maxConnectionNum;
+
 				private List<string> connectionZones;
 
 				[JsonProperty(PropertyName = "IntranetAddress")]
@@ -738,6 +740,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 					}
 				}
 
+				[JsonProperty(PropertyName = "MaxConnectionNum")]
+				public long? MaxConnectionNum
+				{
+					get
+					{
+						return maxConnectionNum;
+					}
+					set	
+					{
+						maxConnectionNum = value;
+					}
+				}
+
 				[JsonProperty(PropertyName = "ConnectionZones")]
 				public List<string> ConnectionZones
 				{
@@ -814,6 +829,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 				private DescribeTenant_CapacityUnit capacityUnit;
 
+				private DescribeTenant_LogDiskSize logDiskSize;
+
 				[JsonProperty(PropertyName = "UnitNum")]
 				public int? UnitNum
 				{
@@ -876,6 +893,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 					set	
 					{
 						capacityUnit = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "LogDiskSize")]
+				public DescribeTenant_LogDiskSize LogDiskSize
+				{
+					get
+					{
+						return logDiskSize;
+					}
+					set	
+					{
+						logDiskSize = value;
 					}
 				}
 
@@ -1041,6 +1071,40 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 						set	
 						{
 							usedCapacit = value;
+						}
+					}
+				}
+
+				public class DescribeTenant_LogDiskSize
+				{
+
+					private int? totalLogDisk;
+
+					private int? unitLogDisk;
+
+					[JsonProperty(PropertyName = "TotalLogDisk")]
+					public int? TotalLogDisk
+					{
+						get
+						{
+							return totalLogDisk;
+						}
+						set	
+						{
+							totalLogDisk = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "UnitLogDisk")]
+					public int? UnitLogDisk
+					{
+						get
+						{
+							return unitLogDisk;
+						}
+						set	
+						{
+							unitLogDisk = value;
 						}
 					}
 				}

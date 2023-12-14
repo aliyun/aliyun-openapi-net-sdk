@@ -28,66 +28,51 @@ using Aliyun.Acs.OceanBasePro.Transform.V20190901;
 
 namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 {
-    public class ModifyInstanceSpecRequest : RpcAcsRequest<ModifyInstanceSpecResponse>
+    public class DescribeAvailableSpecRequest : RpcAcsRequest<DescribeAvailableSpecResponse>
     {
-        public ModifyInstanceSpecRequest()
-            : base("OceanBasePro", "2019-09-01", "ModifyInstanceSpec", "oceanbase", "openAPI")
+        public DescribeAvailableSpecRequest()
+            : base("OceanBasePro", "2019-09-01", "DescribeAvailableSpec", "oceanbase", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.OceanBasePro.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.OceanBasePro.Endpoint.endpointRegionalType, null);
             }
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private string instanceClass;
+		private string upgradeType;
 
-		private bool? dryRun;
-
-		private long? diskSize;
+		private string spec;
 
 		private string instanceId;
 
-		[JsonProperty(PropertyName = "InstanceClass")]
-		public string InstanceClass
+		[JsonProperty(PropertyName = "UpgradeType")]
+		public string UpgradeType
 		{
 			get
 			{
-				return instanceClass;
+				return upgradeType;
 			}
 			set	
 			{
-				instanceClass = value;
-				DictionaryUtil.Add(BodyParameters, "InstanceClass", value);
+				upgradeType = value;
+				DictionaryUtil.Add(BodyParameters, "UpgradeType", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "DryRun")]
-		public bool? DryRun
+		[JsonProperty(PropertyName = "Spec")]
+		public string Spec
 		{
 			get
 			{
-				return dryRun;
+				return spec;
 			}
 			set	
 			{
-				dryRun = value;
-				DictionaryUtil.Add(BodyParameters, "DryRun", value.ToString());
-			}
-		}
-
-		[JsonProperty(PropertyName = "DiskSize")]
-		public long? DiskSize
-		{
-			get
-			{
-				return diskSize;
-			}
-			set	
-			{
-				diskSize = value;
-				DictionaryUtil.Add(BodyParameters, "DiskSize", value.ToString());
+				spec = value;
+				DictionaryUtil.Add(BodyParameters, "Spec", value);
 			}
 		}
 
@@ -110,9 +95,9 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			return false;
 		}
 
-        public override ModifyInstanceSpecResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeAvailableSpecResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyInstanceSpecResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeAvailableSpecResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

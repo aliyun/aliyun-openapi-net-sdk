@@ -62,6 +62,12 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 			private int? totalRiskCount;
 
+			private string checkTime;
+
+			private string instanceId;
+
+			private string checkId;
+
 			private List<DescribeInstanceSecurityConfigs_SecurityConfigsItem> securityConfigs;
 
 			[JsonProperty(PropertyName = "TotalCheckCount")]
@@ -87,6 +93,45 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				set	
 				{
 					totalRiskCount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CheckTime")]
+			public string CheckTime
+			{
+				get
+				{
+					return checkTime;
+				}
+				set	
+				{
+					checkTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstanceId")]
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CheckId")]
+			public string CheckId
+			{
+				get
+				{
+					return checkId;
+				}
+				set	
+				{
+					checkId = value;
 				}
 			}
 

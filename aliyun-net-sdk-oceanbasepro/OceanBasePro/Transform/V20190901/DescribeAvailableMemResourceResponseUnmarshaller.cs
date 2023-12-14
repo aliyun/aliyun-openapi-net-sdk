@@ -37,6 +37,7 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 			data.MinMem = _ctx.LongValue("DescribeAvailableMemResource.Data.MinMem");
 			data.MaxMem = _ctx.LongValue("DescribeAvailableMemResource.Data.MaxMem");
 			data.UsedMem = _ctx.LongValue("DescribeAvailableMemResource.Data.UsedMem");
+			data.SafeMem = _ctx.StringValue("DescribeAvailableMemResource.Data.SafeMem");
 			describeAvailableMemResourceResponse.Data = data;
         
 			return describeAvailableMemResourceResponse;

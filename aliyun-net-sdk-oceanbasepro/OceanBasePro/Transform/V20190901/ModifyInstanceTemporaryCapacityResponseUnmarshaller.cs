@@ -24,20 +24,16 @@ using Aliyun.Acs.OceanBasePro.Model.V20190901;
 
 namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 {
-    public class DeleteInstancesResponseUnmarshaller
+    public class ModifyInstanceTemporaryCapacityResponseUnmarshaller
     {
-        public static DeleteInstancesResponse Unmarshall(UnmarshallerContext _ctx)
+        public static ModifyInstanceTemporaryCapacityResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			DeleteInstancesResponse deleteInstancesResponse = new DeleteInstancesResponse();
+			ModifyInstanceTemporaryCapacityResponse modifyInstanceTemporaryCapacityResponse = new ModifyInstanceTemporaryCapacityResponse();
 
-			deleteInstancesResponse.HttpResponse = _ctx.HttpResponse;
-			deleteInstancesResponse.RequestId = _ctx.StringValue("DeleteInstances.RequestId");
-
-			DeleteInstancesResponse.DeleteInstances_Data data = new DeleteInstancesResponse.DeleteInstances_Data();
-			data.DryRunResult = _ctx.BooleanValue("DeleteInstances.Data.DryRunResult");
-			deleteInstancesResponse.Data = data;
+			modifyInstanceTemporaryCapacityResponse.HttpResponse = _ctx.HttpResponse;
+			modifyInstanceTemporaryCapacityResponse.RequestId = _ctx.StringValue("ModifyInstanceTemporaryCapacity.RequestId");
         
-			return deleteInstancesResponse;
+			return modifyInstanceTemporaryCapacityResponse;
         }
     }
 }

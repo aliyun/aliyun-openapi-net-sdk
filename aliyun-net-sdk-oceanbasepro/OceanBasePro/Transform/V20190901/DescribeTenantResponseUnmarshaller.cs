@@ -91,6 +91,11 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 			capacityUnit.MinCapacityUnit = _ctx.IntegerValue("DescribeTenant.Tenant.TenantResource.CapacityUnit.MinCapacityUnit");
 			capacityUnit.UsedCapacit = _ctx.IntegerValue("DescribeTenant.Tenant.TenantResource.CapacityUnit.UsedCapacit");
 			tenantResource.CapacityUnit = capacityUnit;
+
+			DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_TenantResource.DescribeTenant_LogDiskSize logDiskSize = new DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_TenantResource.DescribeTenant_LogDiskSize();
+			logDiskSize.TotalLogDisk = _ctx.IntegerValue("DescribeTenant.Tenant.TenantResource.LogDiskSize.TotalLogDisk");
+			logDiskSize.UnitLogDisk = _ctx.IntegerValue("DescribeTenant.Tenant.TenantResource.LogDiskSize.UnitLogDisk");
+			tenantResource.LogDiskSize = logDiskSize;
 			tenant.TenantResource = tenantResource;
 
 			List<DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_TenantConnectionsItem> tenant_tenantConnections = new List<DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_TenantConnectionsItem>();
@@ -111,6 +116,7 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 				tenantConnectionsItem.EnableTransactionSplit = _ctx.BooleanValue("DescribeTenant.Tenant.TenantConnections["+ i +"].EnableTransactionSplit");
 				tenantConnectionsItem.ParallelQueryDegree = _ctx.LongValue("DescribeTenant.Tenant.TenantConnections["+ i +"].ParallelQueryDegree");
 				tenantConnectionsItem.TenantEndpointId = _ctx.StringValue("DescribeTenant.Tenant.TenantConnections["+ i +"].TenantEndpointId");
+				tenantConnectionsItem.MaxConnectionNum = _ctx.LongValue("DescribeTenant.Tenant.TenantConnections["+ i +"].MaxConnectionNum");
 
 				List<string> tenantConnectionsItem_connectionZones = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeTenant.Tenant.TenantConnections["+ i +"].ConnectionZones.Length"); j++) {

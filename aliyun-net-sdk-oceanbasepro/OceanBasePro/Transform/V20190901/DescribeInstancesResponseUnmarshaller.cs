@@ -44,6 +44,7 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 				data.InstanceClass = _ctx.StringValue("DescribeInstances.Instances["+ i +"].InstanceClass");
 				data.CreateTime = _ctx.StringValue("DescribeInstances.Instances["+ i +"].CreateTime");
 				data.DeployMode = _ctx.StringValue("DescribeInstances.Instances["+ i +"].DeployMode");
+				data.CpuArchitecture = _ctx.StringValue("DescribeInstances.Instances["+ i +"].CpuArchitecture");
 				data.MaintainTime = _ctx.StringValue("DescribeInstances.Instances["+ i +"].MaintainTime");
 				data.DeployType = _ctx.StringValue("DescribeInstances.Instances["+ i +"].DeployType");
 				data.PayType = _ctx.StringValue("DescribeInstances.Instances["+ i +"].PayType");
