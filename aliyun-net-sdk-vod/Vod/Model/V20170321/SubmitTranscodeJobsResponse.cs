@@ -31,6 +31,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private List<SubmitTranscodeJobs_TranscodeJob> transcodeJobs;
 
+		[JsonProperty(PropertyName = "TranscodeTaskId")]
 		public string TranscodeTaskId
 		{
 			get
@@ -43,6 +44,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -55,6 +57,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "TranscodeJobs")]
 		public List<SubmitTranscodeJobs_TranscodeJob> TranscodeJobs
 		{
 			get
@@ -72,6 +75,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string jobId;
 
+			[JsonProperty(PropertyName = "JobId")]
 			public string JobId
 			{
 				get

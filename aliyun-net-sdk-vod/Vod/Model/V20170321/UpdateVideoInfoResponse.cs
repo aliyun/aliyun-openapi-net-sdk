@@ -27,6 +27,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string requestId;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get

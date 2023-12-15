@@ -29,6 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private List<UploadMediaByURL_UploadJob> uploadJobs;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "UploadJobs")]
 		public List<UploadMediaByURL_UploadJob> UploadJobs
 		{
 			get
@@ -60,6 +62,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string jobId;
 
+			[JsonProperty(PropertyName = "SourceURL")]
 			public string SourceURL
 			{
 				get
@@ -72,6 +75,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			[JsonProperty(PropertyName = "JobId")]
 			public string JobId
 			{
 				get

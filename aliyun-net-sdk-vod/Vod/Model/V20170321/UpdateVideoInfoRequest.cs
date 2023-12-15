@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -52,6 +53,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string tags;
 
+		[JsonProperty(PropertyName = "Description")]
 		public string Description
 		{
 			get
@@ -65,6 +67,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "Title")]
 		public string Title
 		{
 			get
@@ -78,6 +81,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "CoverURL")]
 		public string CoverURL
 		{
 			get
@@ -91,6 +95,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "CateId")]
 		public long? CateId
 		{
 			get
@@ -104,6 +109,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "VideoId")]
 		public string VideoId
 		{
 			get
@@ -117,6 +123,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tags")]
 		public string Tags
 		{
 			get

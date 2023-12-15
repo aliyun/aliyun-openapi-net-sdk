@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -56,6 +57,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string appId;
 
+		[JsonProperty(PropertyName = "SessionId")]
 		public string SessionId
 		{
 			get
@@ -69,6 +71,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "StorageLocation")]
 		public string StorageLocation
 		{
 			get
@@ -82,6 +85,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "UserData")]
 		public string UserData
 		{
 			get
@@ -95,6 +99,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "WorkflowId")]
 		public string WorkflowId
 		{
 			get
@@ -108,6 +113,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "TemplateGroupId")]
 		public string TemplateGroupId
 		{
 			get
@@ -121,6 +127,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "UploadMetadatas")]
 		public string UploadMetadatas
 		{
 			get
@@ -134,6 +141,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "UploadURLs")]
 		public string UploadURLs
 		{
 			get
@@ -147,6 +155,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "AppId")]
 		public string AppId
 		{
 			get

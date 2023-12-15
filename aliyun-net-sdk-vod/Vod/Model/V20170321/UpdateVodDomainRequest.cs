@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -50,6 +51,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string securityToken;
 
+		[JsonProperty(PropertyName = "TopLevelDomain")]
 		public string TopLevelDomain
 		{
 			get
@@ -63,6 +65,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "Sources")]
 		public string Sources
 		{
 			get
@@ -76,6 +79,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "DomainName")]
 		public string DomainName
 		{
 			get
@@ -89,6 +93,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -102,6 +107,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecurityToken")]
 		public string SecurityToken
 		{
 			get

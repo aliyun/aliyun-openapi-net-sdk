@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -50,6 +51,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private bool? allowUpdateWithoutTimeLimit;
 
+		[JsonProperty(PropertyName = "RestoreTier")]
 		public string RestoreTier
 		{
 			get
@@ -63,6 +65,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "Scope")]
 		public string Scope
 		{
 			get
@@ -76,6 +79,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "MediaIds")]
 		public string MediaIds
 		{
 			get
@@ -89,6 +93,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "StorageClass")]
 		public string StorageClass
 		{
 			get
@@ -102,6 +107,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "AllowUpdateWithoutTimeLimit")]
 		public bool? AllowUpdateWithoutTimeLimit
 		{
 			get

@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -54,6 +55,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string encryptConfig;
 
+		[JsonProperty(PropertyName = "UserData")]
 		public string UserData
 		{
 			get
@@ -67,6 +69,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "VideoId")]
 		public string VideoId
 		{
 			get
@@ -80,6 +83,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "OverrideParams")]
 		public string OverrideParams
 		{
 			get
@@ -93,6 +97,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "Priority")]
 		public string Priority
 		{
 			get
@@ -106,6 +111,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "PipelineId")]
 		public string PipelineId
 		{
 			get
@@ -119,6 +125,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "TemplateGroupId")]
 		public string TemplateGroupId
 		{
 			get
@@ -132,6 +139,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "EncryptConfig")]
 		public string EncryptConfig
 		{
 			get

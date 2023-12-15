@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -46,6 +47,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string name;
 
+		[JsonProperty(PropertyName = "WatermarkConfig")]
 		public string WatermarkConfig
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "WatermarkId")]
 		public string WatermarkId
 		{
 			get
@@ -72,6 +75,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "Name")]
 		public string Name
 		{
 			get

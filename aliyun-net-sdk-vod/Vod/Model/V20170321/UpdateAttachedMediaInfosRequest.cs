@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -42,6 +43,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string updateContent;
 
+		[JsonProperty(PropertyName = "UpdateContent")]
 		public string UpdateContent
 		{
 			get

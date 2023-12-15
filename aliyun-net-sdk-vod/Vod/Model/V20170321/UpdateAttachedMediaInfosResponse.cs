@@ -29,6 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private List<string> nonExistMediaIds;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "NonExistMediaIds")]
 		public List<string> NonExistMediaIds
 		{
 			get
