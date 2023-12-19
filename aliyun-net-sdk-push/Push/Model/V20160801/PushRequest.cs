@@ -85,6 +85,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string androidNotificationVivoChannel;
 
+		private string androidVivoReceiptId;
+
 		private string iOSNotificationCategory;
 
 		private string androidNotificationXiaomiChannel;
@@ -468,6 +470,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				androidNotificationVivoChannel = value;
 				DictionaryUtil.Add(QueryParameters, "AndroidNotificationVivoChannel", value);
+			}
+		}
+
+		public string AndroidVivoReceiptId
+		{
+			get
+			{
+				return androidVivoReceiptId;
+			}
+			set	
+			{
+				androidVivoReceiptId = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidVivoReceiptId", value);
 			}
 		}
 

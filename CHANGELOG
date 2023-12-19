@@ -1,3 +1,6 @@
+2023-12-19 Version: 3.13.14
+- Supported AndroidVivoReceiptId for Push and MassPush.
+
 2023-12-15 Version: 2.16.21
 - SubmitSnapshotJob add parameter
 
