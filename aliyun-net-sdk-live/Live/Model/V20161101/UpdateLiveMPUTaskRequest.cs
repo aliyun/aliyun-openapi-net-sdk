@@ -376,6 +376,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private Layout layout_;
 
+			private Background background_;
+
 			private List<UserInfosItem> userInfos = new List<UserInfosItem>(){ };
 
 			private EncodeParams encodeParams_;
@@ -390,6 +392,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					layout_ = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Background")]
+			public Background Background_
+			{
+				get
+				{
+					return background_;
+				}
+				set	
+				{
+					background_ = value;
 				}
 			}
 
@@ -671,6 +686,40 @@ namespace Aliyun.Acs.live.Model.V20161101
 						{
 							userId = value;
 						}
+					}
+				}
+			}
+
+			public class Background
+			{
+
+				private string uRL;
+
+				private string renderMode;
+
+				[JsonProperty(PropertyName = "URL")]
+				public string URL
+				{
+					get
+					{
+						return uRL;
+					}
+					set	
+					{
+						uRL = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "RenderMode")]
+				public string RenderMode
+				{
+					get
+					{
+						return renderMode;
+					}
+					set	
+					{
+						renderMode = value;
 					}
 				}
 			}

@@ -62,6 +62,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				streamData.FlvCount = _ctx.LongValue("DescribeLiveStreamMetricDetailData.StreamDetailData["+ i +"].FlvCount");
 				streamData.FlvTraffic = _ctx.LongValue("DescribeLiveStreamMetricDetailData.StreamDetailData["+ i +"].FlvTraffic");
 				streamData.TimeStamp = _ctx.StringValue("DescribeLiveStreamMetricDetailData.StreamDetailData["+ i +"].TimeStamp");
+				streamData.NewConns = _ctx.StringValue("DescribeLiveStreamMetricDetailData.StreamDetailData["+ i +"].NewConns");
 
 				describeLiveStreamMetricDetailDataResponse_streamDetailData.Add(streamData);
 			}

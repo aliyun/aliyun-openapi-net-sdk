@@ -175,6 +175,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string timeStamp;
 
+			private string newConns;
+
 			[JsonProperty(PropertyName = "P2pTraffic")]
 			public long? P2pTraffic
 			{
@@ -445,6 +447,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					timeStamp = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "NewConns")]
+			public string NewConns
+			{
+				get
+				{
+					return newConns;
+				}
+				set	
+				{
+					newConns = value;
 				}
 			}
 		}
