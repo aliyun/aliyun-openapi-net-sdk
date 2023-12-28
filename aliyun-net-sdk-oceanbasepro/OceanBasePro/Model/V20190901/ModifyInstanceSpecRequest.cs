@@ -47,6 +47,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 		private long? diskSize;
 
+		private string diskType;
+
 		private string instanceId;
 
 		[JsonProperty(PropertyName = "InstanceClass")]
@@ -88,6 +90,20 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			{
 				diskSize = value;
 				DictionaryUtil.Add(BodyParameters, "DiskSize", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "DiskType")]
+		public string DiskType
+		{
+			get
+			{
+				return diskType;
+			}
+			set	
+			{
+				diskType = value;
+				DictionaryUtil.Add(BodyParameters, "DiskType", value);
 			}
 		}
 

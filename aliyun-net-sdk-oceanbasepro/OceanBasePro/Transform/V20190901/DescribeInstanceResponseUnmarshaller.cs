@@ -116,6 +116,7 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 			logDiskSize.UnitDiskSize = _ctx.LongValue("DescribeInstance.Instance.Resource.LogDiskSize.UnitDiskSize");
 			logDiskSize.LogAssignedSize = _ctx.StringValue("DescribeInstance.Instance.Resource.LogDiskSize.LogAssignedSize");
 			logDiskSize.MaxLogAssignedPercent = _ctx.StringValue("DescribeInstance.Instance.Resource.LogDiskSize.MaxLogAssignedPercent");
+			logDiskSize.OriginalTotalDiskSize = _ctx.IntegerValue("DescribeInstance.Instance.Resource.LogDiskSize.OriginalTotalDiskSize");
 
 			List<string> logDiskSize_maxLogAssignedObServer = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeInstance.Instance.Resource.LogDiskSize.MaxLogAssignedObServer.Length"); i++) {
@@ -145,6 +146,59 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 			dataDiskAutoScaleConfig.ScaleStepInNormal = _ctx.LongValue("DescribeInstance.Instance.DataDiskAutoScaleConfig.ScaleStepInNormal");
 			dataDiskAutoScaleConfig.ScaleStepInMerge = _ctx.LongValue("DescribeInstance.Instance.DataDiskAutoScaleConfig.ScaleStepInMerge");
 			instance.DataDiskAutoScaleConfig = dataDiskAutoScaleConfig;
+
+			DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_ReadOnlyResource readOnlyResource = new DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_ReadOnlyResource();
+			readOnlyResource.UnitCount = _ctx.LongValue("DescribeInstance.Instance.ReadOnlyResource.UnitCount");
+
+			DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_ReadOnlyResource.DescribeInstance_Cpu1 cpu1 = new DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_ReadOnlyResource.DescribeInstance_Cpu1();
+			cpu1.TotalCpu = _ctx.LongValue("DescribeInstance.Instance.ReadOnlyResource.Cpu.TotalCpu");
+			cpu1.UsedCpu = _ctx.LongValue("DescribeInstance.Instance.ReadOnlyResource.Cpu.UsedCpu");
+			cpu1.UnitCpu = _ctx.LongValue("DescribeInstance.Instance.ReadOnlyResource.Cpu.UnitCpu");
+			cpu1.OriginalTotalCpu = _ctx.LongValue("DescribeInstance.Instance.ReadOnlyResource.Cpu.OriginalTotalCpu");
+			readOnlyResource.Cpu1 = cpu1;
+
+			DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_ReadOnlyResource.DescribeInstance_Memory2 memory2 = new DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_ReadOnlyResource.DescribeInstance_Memory2();
+			memory2.TotalMemory = _ctx.LongValue("DescribeInstance.Instance.ReadOnlyResource.Memory.TotalMemory");
+			memory2.UsedMemory = _ctx.LongValue("DescribeInstance.Instance.ReadOnlyResource.Memory.UsedMemory");
+			memory2.UnitMemory = _ctx.LongValue("DescribeInstance.Instance.ReadOnlyResource.Memory.UnitMemory");
+			memory2.OriginalTotalMemory = _ctx.LongValue("DescribeInstance.Instance.ReadOnlyResource.Memory.OriginalTotalMemory");
+			readOnlyResource.Memory2 = memory2;
+
+			DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_ReadOnlyResource.DescribeInstance_DiskSize3 diskSize3 = new DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_ReadOnlyResource.DescribeInstance_DiskSize3();
+			diskSize3.TotalDiskSize = _ctx.LongValue("DescribeInstance.Instance.ReadOnlyResource.DiskSize.TotalDiskSize");
+			diskSize3.UsedDiskSize = _ctx.LongValue("DescribeInstance.Instance.ReadOnlyResource.DiskSize.UsedDiskSize");
+			diskSize3.UnitDiskSize = _ctx.LongValue("DescribeInstance.Instance.ReadOnlyResource.DiskSize.UnitDiskSize");
+			diskSize3.DataUsedSize = _ctx.DoubleValue("DescribeInstance.Instance.ReadOnlyResource.DiskSize.DataUsedSize");
+			diskSize3.MaxDiskUsedPercent = _ctx.DoubleValue("DescribeInstance.Instance.ReadOnlyResource.DiskSize.MaxDiskUsedPercent");
+			diskSize3.OriginalTotalDiskSize = _ctx.LongValue("DescribeInstance.Instance.ReadOnlyResource.DiskSize.OriginalTotalDiskSize");
+			diskSize3.MaxDiskSize = _ctx.DoubleValue("DescribeInstance.Instance.ReadOnlyResource.DiskSize.MaxDiskSize");
+
+			List<string> diskSize3_maxDiskUsedObServer6 = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeInstance.Instance.ReadOnlyResource.DiskSize.MaxDiskUsedObServer.Length"); i++) {
+				diskSize3_maxDiskUsedObServer6.Add(_ctx.StringValue("DescribeInstance.Instance.ReadOnlyResource.DiskSize.MaxDiskUsedObServer["+ i +"]"));
+			}
+			diskSize3.MaxDiskUsedObServer6 = diskSize3_maxDiskUsedObServer6;
+			readOnlyResource.DiskSize3 = diskSize3;
+
+			DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_ReadOnlyResource.DescribeInstance_LogDiskSize4 logDiskSize4 = new DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_ReadOnlyResource.DescribeInstance_LogDiskSize4();
+			logDiskSize4.TotalDiskSize = _ctx.LongValue("DescribeInstance.Instance.ReadOnlyResource.LogDiskSize.TotalDiskSize");
+			logDiskSize4.UnitDiskSize = _ctx.LongValue("DescribeInstance.Instance.ReadOnlyResource.LogDiskSize.UnitDiskSize");
+			logDiskSize4.LogAssignedSize = _ctx.StringValue("DescribeInstance.Instance.ReadOnlyResource.LogDiskSize.LogAssignedSize");
+			logDiskSize4.MaxLogAssignedPercent = _ctx.StringValue("DescribeInstance.Instance.ReadOnlyResource.LogDiskSize.MaxLogAssignedPercent");
+
+			List<string> logDiskSize4_maxLogAssignedObServer7 = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeInstance.Instance.ReadOnlyResource.LogDiskSize.MaxLogAssignedObServer.Length"); i++) {
+				logDiskSize4_maxLogAssignedObServer7.Add(_ctx.StringValue("DescribeInstance.Instance.ReadOnlyResource.LogDiskSize.MaxLogAssignedObServer["+ i +"]"));
+			}
+			logDiskSize4.MaxLogAssignedObServer7 = logDiskSize4_maxLogAssignedObServer7;
+			readOnlyResource.LogDiskSize4 = logDiskSize4;
+
+			DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_ReadOnlyResource.DescribeInstance_CapacityUnit5 capacityUnit5 = new DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_ReadOnlyResource.DescribeInstance_CapacityUnit5();
+			capacityUnit5.MaxCapacityUnit = _ctx.IntegerValue("DescribeInstance.Instance.ReadOnlyResource.CapacityUnit.MaxCapacityUnit");
+			capacityUnit5.MinCapacityUnit = _ctx.IntegerValue("DescribeInstance.Instance.ReadOnlyResource.CapacityUnit.MinCapacityUnit");
+			capacityUnit5.UsedCapacityUnit = _ctx.StringValue("DescribeInstance.Instance.ReadOnlyResource.CapacityUnit.UsedCapacityUnit");
+			readOnlyResource.CapacityUnit5 = capacityUnit5;
+			instance.ReadOnlyResource = readOnlyResource;
 			describeInstanceResponse.Instance = instance;
         
 			return describeInstanceResponse;

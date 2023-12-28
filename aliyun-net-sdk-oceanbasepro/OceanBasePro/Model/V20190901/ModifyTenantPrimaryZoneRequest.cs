@@ -41,6 +41,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			Method = MethodType.POST;
         }
 
+		private string tenantEndpointDirectId;
+
 		private string userVSwitchId;
 
 		private string masterIntranetAddressZone;
@@ -52,6 +54,22 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 		private string instanceId;
 
 		private string primaryZone;
+
+		private string userDirectVSwitchId;
+
+		[JsonProperty(PropertyName = "TenantEndpointDirectId")]
+		public string TenantEndpointDirectId
+		{
+			get
+			{
+				return tenantEndpointDirectId;
+			}
+			set	
+			{
+				tenantEndpointDirectId = value;
+				DictionaryUtil.Add(BodyParameters, "TenantEndpointDirectId", value);
+			}
+		}
 
 		[JsonProperty(PropertyName = "UserVSwitchId")]
 		public string UserVSwitchId
@@ -134,6 +152,20 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			{
 				primaryZone = value;
 				DictionaryUtil.Add(BodyParameters, "PrimaryZone", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "UserDirectVSwitchId")]
+		public string UserDirectVSwitchId
+		{
+			get
+			{
+				return userDirectVSwitchId;
+			}
+			set	
+			{
+				userDirectVSwitchId = value;
+				DictionaryUtil.Add(BodyParameters, "UserDirectVSwitchId", value);
 			}
 		}
 

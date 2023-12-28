@@ -33,26 +33,21 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 			createTenantUserResponse.HttpResponse = _ctx.HttpResponse;
 			createTenantUserResponse.RequestId = _ctx.StringValue("CreateTenantUser.RequestId");
 
-			List<CreateTenantUserResponse.CreateTenantUser_Data> createTenantUserResponse_tenantUser = new List<CreateTenantUserResponse.CreateTenantUser_Data>();
-			for (int i = 0; i < _ctx.Length("CreateTenantUser.TenantUser.Length"); i++) {
-				CreateTenantUserResponse.CreateTenantUser_Data data = new CreateTenantUserResponse.CreateTenantUser_Data();
-				data.UserType = _ctx.StringValue("CreateTenantUser.TenantUser["+ i +"].UserType");
-				data.UserStatus = _ctx.StringValue("CreateTenantUser.TenantUser["+ i +"].UserStatus");
-				data.UserName = _ctx.StringValue("CreateTenantUser.TenantUser["+ i +"].UserName");
+			CreateTenantUserResponse.CreateTenantUser_TenantUser tenantUser = new CreateTenantUserResponse.CreateTenantUser_TenantUser();
+			tenantUser.UserType = _ctx.StringValue("CreateTenantUser.TenantUser.UserType");
+			tenantUser.UserStatus = _ctx.StringValue("CreateTenantUser.TenantUser.UserStatus");
+			tenantUser.UserName = _ctx.StringValue("CreateTenantUser.TenantUser.UserName");
 
-				List<CreateTenantUserResponse.CreateTenantUser_Data.CreateTenantUser_RolesItem> data_roles = new List<CreateTenantUserResponse.CreateTenantUser_Data.CreateTenantUser_RolesItem>();
-				for (int j = 0; j < _ctx.Length("CreateTenantUser.TenantUser["+ i +"].Roles.Length"); j++) {
-					CreateTenantUserResponse.CreateTenantUser_Data.CreateTenantUser_RolesItem rolesItem = new CreateTenantUserResponse.CreateTenantUser_Data.CreateTenantUser_RolesItem();
-					rolesItem.Database = _ctx.StringValue("CreateTenantUser.TenantUser["+ i +"].Roles["+ j +"].Database");
-					rolesItem.Role = _ctx.StringValue("CreateTenantUser.TenantUser["+ i +"].Roles["+ j +"].Role");
+			List<CreateTenantUserResponse.CreateTenantUser_TenantUser.CreateTenantUser_RolesItem> tenantUser_roles = new List<CreateTenantUserResponse.CreateTenantUser_TenantUser.CreateTenantUser_RolesItem>();
+			for (int i = 0; i < _ctx.Length("CreateTenantUser.TenantUser.Roles.Length"); i++) {
+				CreateTenantUserResponse.CreateTenantUser_TenantUser.CreateTenantUser_RolesItem rolesItem = new CreateTenantUserResponse.CreateTenantUser_TenantUser.CreateTenantUser_RolesItem();
+				rolesItem.Database = _ctx.StringValue("CreateTenantUser.TenantUser.Roles["+ i +"].Database");
+				rolesItem.Role = _ctx.StringValue("CreateTenantUser.TenantUser.Roles["+ i +"].Role");
 
-					data_roles.Add(rolesItem);
-				}
-				data.Roles = data_roles;
-
-				createTenantUserResponse_tenantUser.Add(data);
+				tenantUser_roles.Add(rolesItem);
 			}
-			createTenantUserResponse.TenantUser = createTenantUserResponse_tenantUser;
+			tenantUser.Roles = tenantUser_roles;
+			createTenantUserResponse.TenantUser = tenantUser;
         
 			return createTenantUserResponse;
         }

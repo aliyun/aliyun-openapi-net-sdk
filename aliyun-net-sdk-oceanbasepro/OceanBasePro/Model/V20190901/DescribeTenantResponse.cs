@@ -110,6 +110,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 			private string timeZone;
 
+			private string dataMergeTime;
+
 			private List<DescribeTenant_TenantConnectionsItem> tenantConnections;
 
 			private List<DescribeTenant_TenantZonesItem> tenantZones;
@@ -117,6 +119,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			private List<string> availableZones;
 
 			private DescribeTenant_TenantResource tenantResource;
+
+			private DescribeTenant_ReadOnlyResource readOnlyResource;
 
 			[JsonProperty(PropertyName = "TenantId")]
 			public string TenantId
@@ -456,6 +460,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				}
 			}
 
+			[JsonProperty(PropertyName = "DataMergeTime")]
+			public string DataMergeTime
+			{
+				get
+				{
+					return dataMergeTime;
+				}
+				set	
+				{
+					dataMergeTime = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "TenantConnections")]
 			public List<DescribeTenant_TenantConnectionsItem> TenantConnections
 			{
@@ -508,6 +525,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				}
 			}
 
+			[JsonProperty(PropertyName = "ReadOnlyResource")]
+			public DescribeTenant_ReadOnlyResource ReadOnlyResource
+			{
+				get
+				{
+					return readOnlyResource;
+				}
+				set	
+				{
+					readOnlyResource = value;
+				}
+			}
+
 			public class DescribeTenant_TenantConnectionsItem
 			{
 
@@ -542,6 +572,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				private string tenantEndpointId;
 
 				private long? maxConnectionNum;
+
+				private string connectionReplicaType;
 
 				private List<string> connectionZones;
 
@@ -753,6 +785,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 					}
 				}
 
+				[JsonProperty(PropertyName = "ConnectionReplicaType")]
+				public string ConnectionReplicaType
+				{
+					get
+					{
+						return connectionReplicaType;
+					}
+					set	
+					{
+						connectionReplicaType = value;
+					}
+				}
+
 				[JsonProperty(PropertyName = "ConnectionZones")]
 				public List<string> ConnectionZones
 				{
@@ -775,6 +820,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				private string region;
 
 				private string tenantZoneRole;
+
+				private List<DescribeTenant_TenantZoneReplicasItem> tenantZoneReplicas;
 
 				[JsonProperty(PropertyName = "TenantZoneId")]
 				public string TenantZoneId
@@ -812,6 +859,113 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 					set	
 					{
 						tenantZoneRole = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "TenantZoneReplicas")]
+				public List<DescribeTenant_TenantZoneReplicasItem> TenantZoneReplicas
+				{
+					get
+					{
+						return tenantZoneReplicas;
+					}
+					set	
+					{
+						tenantZoneReplicas = value;
+					}
+				}
+
+				public class DescribeTenant_TenantZoneReplicasItem
+				{
+
+					private string zoneReplicaType;
+
+					private string zoneNodes;
+
+					private string logicZoneName;
+
+					private int? zoneCopyId;
+
+					private int? fullCopyId;
+
+					private string readOnlyCopyId;
+
+					[JsonProperty(PropertyName = "ZoneReplicaType")]
+					public string ZoneReplicaType
+					{
+						get
+						{
+							return zoneReplicaType;
+						}
+						set	
+						{
+							zoneReplicaType = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "ZoneNodes")]
+					public string ZoneNodes
+					{
+						get
+						{
+							return zoneNodes;
+						}
+						set	
+						{
+							zoneNodes = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "LogicZoneName")]
+					public string LogicZoneName
+					{
+						get
+						{
+							return logicZoneName;
+						}
+						set	
+						{
+							logicZoneName = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "ZoneCopyId")]
+					public int? ZoneCopyId
+					{
+						get
+						{
+							return zoneCopyId;
+						}
+						set	
+						{
+							zoneCopyId = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "FullCopyId")]
+					public int? FullCopyId
+					{
+						get
+						{
+							return fullCopyId;
+						}
+						set	
+						{
+							fullCopyId = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "ReadOnlyCopyId")]
+					public string ReadOnlyCopyId
+					{
+						get
+						{
+							return readOnlyCopyId;
+						}
+						set	
+						{
+							readOnlyCopyId = value;
+						}
 					}
 				}
 			}
@@ -1076,6 +1230,300 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				}
 
 				public class DescribeTenant_LogDiskSize
+				{
+
+					private int? totalLogDisk;
+
+					private int? unitLogDisk;
+
+					[JsonProperty(PropertyName = "TotalLogDisk")]
+					public int? TotalLogDisk
+					{
+						get
+						{
+							return totalLogDisk;
+						}
+						set	
+						{
+							totalLogDisk = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "UnitLogDisk")]
+					public int? UnitLogDisk
+					{
+						get
+						{
+							return unitLogDisk;
+						}
+						set	
+						{
+							unitLogDisk = value;
+						}
+					}
+				}
+			}
+
+			public class DescribeTenant_ReadOnlyResource
+			{
+
+				private int? unitNum;
+
+				private DescribeTenant_Cpu1 cpu1;
+
+				private DescribeTenant_Memory2 memory2;
+
+				private DescribeTenant_DiskSize3 diskSize3;
+
+				private DescribeTenant_CapacityUnit4 capacityUnit4;
+
+				private DescribeTenant_LogDiskSize5 logDiskSize5;
+
+				[JsonProperty(PropertyName = "UnitNum")]
+				public int? UnitNum
+				{
+					get
+					{
+						return unitNum;
+					}
+					set	
+					{
+						unitNum = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Cpu1")]
+				public DescribeTenant_Cpu1 Cpu1
+				{
+					get
+					{
+						return cpu1;
+					}
+					set	
+					{
+						cpu1 = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Memory2")]
+				public DescribeTenant_Memory2 Memory2
+				{
+					get
+					{
+						return memory2;
+					}
+					set	
+					{
+						memory2 = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "DiskSize3")]
+				public DescribeTenant_DiskSize3 DiskSize3
+				{
+					get
+					{
+						return diskSize3;
+					}
+					set	
+					{
+						diskSize3 = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "CapacityUnit4")]
+				public DescribeTenant_CapacityUnit4 CapacityUnit4
+				{
+					get
+					{
+						return capacityUnit4;
+					}
+					set	
+					{
+						capacityUnit4 = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "LogDiskSize5")]
+				public DescribeTenant_LogDiskSize5 LogDiskSize5
+				{
+					get
+					{
+						return logDiskSize5;
+					}
+					set	
+					{
+						logDiskSize5 = value;
+					}
+				}
+
+				public class DescribeTenant_Cpu1
+				{
+
+					private float? usedCpu;
+
+					private float? totalCpu;
+
+					private float? unitCpu;
+
+					[JsonProperty(PropertyName = "UsedCpu")]
+					public float? UsedCpu
+					{
+						get
+						{
+							return usedCpu;
+						}
+						set	
+						{
+							usedCpu = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "TotalCpu")]
+					public float? TotalCpu
+					{
+						get
+						{
+							return totalCpu;
+						}
+						set	
+						{
+							totalCpu = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "UnitCpu")]
+					public float? UnitCpu
+					{
+						get
+						{
+							return unitCpu;
+						}
+						set	
+						{
+							unitCpu = value;
+						}
+					}
+				}
+
+				public class DescribeTenant_Memory2
+				{
+
+					private float? usedMemory;
+
+					private float? totalMemory;
+
+					private float? unitMemory;
+
+					[JsonProperty(PropertyName = "UsedMemory")]
+					public float? UsedMemory
+					{
+						get
+						{
+							return usedMemory;
+						}
+						set	
+						{
+							usedMemory = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "TotalMemory")]
+					public float? TotalMemory
+					{
+						get
+						{
+							return totalMemory;
+						}
+						set	
+						{
+							totalMemory = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "UnitMemory")]
+					public float? UnitMemory
+					{
+						get
+						{
+							return unitMemory;
+						}
+						set	
+						{
+							unitMemory = value;
+						}
+					}
+				}
+
+				public class DescribeTenant_DiskSize3
+				{
+
+					private float? usedDiskSize;
+
+					[JsonProperty(PropertyName = "UsedDiskSize")]
+					public float? UsedDiskSize
+					{
+						get
+						{
+							return usedDiskSize;
+						}
+						set	
+						{
+							usedDiskSize = value;
+						}
+					}
+				}
+
+				public class DescribeTenant_CapacityUnit4
+				{
+
+					private int? maxCapacityUnit;
+
+					private int? minCapacityUnit;
+
+					private int? usedCapacit;
+
+					[JsonProperty(PropertyName = "MaxCapacityUnit")]
+					public int? MaxCapacityUnit
+					{
+						get
+						{
+							return maxCapacityUnit;
+						}
+						set	
+						{
+							maxCapacityUnit = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "MinCapacityUnit")]
+					public int? MinCapacityUnit
+					{
+						get
+						{
+							return minCapacityUnit;
+						}
+						set	
+						{
+							minCapacityUnit = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "UsedCapacit")]
+					public int? UsedCapacit
+					{
+						get
+						{
+							return usedCapacit;
+						}
+						set	
+						{
+							usedCapacit = value;
+						}
+					}
+				}
+
+				public class DescribeTenant_LogDiskSize5
 				{
 
 					private int? totalLogDisk;

@@ -47,6 +47,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 		private string instanceId;
 
+		private string acceptLanguage;
+
 		[JsonProperty(PropertyName = "DiskSize")]
 		public string DiskSize
 		{
@@ -86,6 +88,20 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			{
 				instanceId = value;
 				DictionaryUtil.Add(BodyParameters, "InstanceId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "AcceptLanguage")]
+		public string AcceptLanguage
+		{
+			get
+			{
+				return acceptLanguage;
+			}
+			set	
+			{
+				acceptLanguage = value;
+				DictionaryUtil.Add(BodyParameters, "AcceptLanguage", value);
 			}
 		}
 

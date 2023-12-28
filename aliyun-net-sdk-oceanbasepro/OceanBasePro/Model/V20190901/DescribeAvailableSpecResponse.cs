@@ -82,6 +82,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 				private List<string> nodeNum;
 
+				private List<string> diskTypes;
+
 				private DescribeAvailableSpec_DiskSizeRange diskSizeRange;
 
 				private DescribeAvailableSpec_LogDiskSizeRange logDiskSizeRange;
@@ -122,6 +124,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 					set	
 					{
 						nodeNum = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "DiskTypes")]
+				public List<string> DiskTypes
+				{
+					get
+					{
+						return diskTypes;
+					}
+					set	
+					{
+						diskTypes = value;
 					}
 				}
 

@@ -70,6 +70,10 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 		private string series;
 
+		private string primaryInstance;
+
+		private string primaryRegion;
+
 		private string chargeType;
 
 		public string IsolationOptimization
@@ -264,6 +268,32 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			{
 				series = value;
 				DictionaryUtil.Add(BodyParameters, "Series", value);
+			}
+		}
+
+		public string PrimaryInstance
+		{
+			get
+			{
+				return primaryInstance;
+			}
+			set	
+			{
+				primaryInstance = value;
+				DictionaryUtil.Add(BodyParameters, "PrimaryInstance", value);
+			}
+		}
+
+		public string PrimaryRegion
+		{
+			get
+			{
+				return primaryRegion;
+			}
+			set	
+			{
+				primaryRegion = value;
+				DictionaryUtil.Add(BodyParameters, "PrimaryRegion", value);
 			}
 		}
 

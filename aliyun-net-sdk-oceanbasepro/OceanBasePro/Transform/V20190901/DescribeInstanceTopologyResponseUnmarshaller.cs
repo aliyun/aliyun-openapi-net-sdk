@@ -67,6 +67,7 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 						unitsItem.ManualMigrate = _ctx.BooleanValue("DescribeInstanceTopology.InstanceTopology.Tenants["+ i +"].TenantZones["+ j +"].Units["+ k +"].ManualMigrate");
 						unitsItem.EnableCancelMigrateUnit = _ctx.BooleanValue("DescribeInstanceTopology.InstanceTopology.Tenants["+ i +"].TenantZones["+ j +"].Units["+ k +"].EnableCancelMigrateUnit");
 						unitsItem.UnitDataSize = _ctx.LongValue("DescribeInstanceTopology.InstanceTopology.Tenants["+ i +"].TenantZones["+ j +"].Units["+ k +"].UnitDataSize");
+						unitsItem.ReplicaType = _ctx.StringValue("DescribeInstanceTopology.InstanceTopology.Tenants["+ i +"].TenantZones["+ j +"].Units["+ k +"].ReplicaType");
 
 						tenantZonesItem_units.Add(unitsItem);
 					}
@@ -106,6 +107,9 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 					nodesItem.NodeId = _ctx.StringValue("DescribeInstanceTopology.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].NodeId");
 					nodesItem.NodeCopyId = _ctx.LongValue("DescribeInstanceTopology.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].NodeCopyId");
 					nodesItem.NodeStatus = _ctx.StringValue("DescribeInstanceTopology.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].NodeStatus");
+					nodesItem.ReplicaType = _ctx.StringValue("DescribeInstanceTopology.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].ReplicaType");
+					nodesItem.FullCopyId = _ctx.LongValue("DescribeInstanceTopology.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].FullCopyId");
+					nodesItem.ReadOnlyCopyId = _ctx.LongValue("DescribeInstanceTopology.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].ReadOnlyCopyId");
 
 					List<DescribeInstanceTopologyResponse.DescribeInstanceTopology_InstanceTopology.DescribeInstanceTopology_ZonesItem.DescribeInstanceTopology_NodesItem.DescribeInstanceTopology_NodeResourceItem> nodesItem_nodeResource = new List<DescribeInstanceTopologyResponse.DescribeInstanceTopology_InstanceTopology.DescribeInstanceTopology_ZonesItem.DescribeInstanceTopology_NodesItem.DescribeInstanceTopology_NodeResourceItem>();
 					for (int k = 0; k < _ctx.Length("DescribeInstanceTopology.InstanceTopology.Zones["+ i +"].Nodes["+ j +"].NodeResource.Length"); k++) {

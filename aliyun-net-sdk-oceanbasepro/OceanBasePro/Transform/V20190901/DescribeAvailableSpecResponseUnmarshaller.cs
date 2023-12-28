@@ -47,6 +47,12 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 				}
 				availableSpecificationsItem.NodeNum = availableSpecificationsItem_nodeNum;
 
+				List<string> availableSpecificationsItem_diskTypes = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeAvailableSpec.Data.AvailableSpecifications["+ i +"].DiskTypes.Length"); j++) {
+					availableSpecificationsItem_diskTypes.Add(_ctx.StringValue("DescribeAvailableSpec.Data.AvailableSpecifications["+ i +"].DiskTypes["+ j +"]"));
+				}
+				availableSpecificationsItem.DiskTypes = availableSpecificationsItem_diskTypes;
+
 				DescribeAvailableSpecResponse.DescribeAvailableSpec_Data.DescribeAvailableSpec_AvailableSpecificationsItem.DescribeAvailableSpec_DiskSizeRange diskSizeRange = new DescribeAvailableSpecResponse.DescribeAvailableSpec_Data.DescribeAvailableSpec_AvailableSpecificationsItem.DescribeAvailableSpec_DiskSizeRange();
 				diskSizeRange.Step = _ctx.LongValue("DescribeAvailableSpec.Data.AvailableSpecifications["+ i +"].DiskSizeRange.Step");
 				diskSizeRange.Max = _ctx.LongValue("DescribeAvailableSpec.Data.AvailableSpecifications["+ i +"].DiskSizeRange.Max");

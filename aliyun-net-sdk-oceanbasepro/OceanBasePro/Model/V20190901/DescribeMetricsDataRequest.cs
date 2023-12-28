@@ -51,6 +51,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 		private string sortMetricKey;
 
+		private string replicaType;
+
 		private string endTime;
 
 		private string labels;
@@ -126,6 +128,20 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			{
 				sortMetricKey = value;
 				DictionaryUtil.Add(QueryParameters, "SortMetricKey", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ReplicaType")]
+		public string ReplicaType
+		{
+			get
+			{
+				return replicaType;
+			}
+			set	
+			{
+				replicaType = value;
+				DictionaryUtil.Add(BodyParameters, "ReplicaType", value);
 			}
 		}
 

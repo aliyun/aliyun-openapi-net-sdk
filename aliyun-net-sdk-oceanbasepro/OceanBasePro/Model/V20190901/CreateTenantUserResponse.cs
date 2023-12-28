@@ -27,7 +27,7 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 		private string requestId;
 
-		private List<CreateTenantUser_Data> tenantUser;
+		private CreateTenantUser_TenantUser tenantUser;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -43,7 +43,7 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 		}
 
 		[JsonProperty(PropertyName = "TenantUser")]
-		public List<CreateTenantUser_Data> TenantUser
+		public CreateTenantUser_TenantUser TenantUser
 		{
 			get
 			{
@@ -55,7 +55,7 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			}
 		}
 
-		public class CreateTenantUser_Data
+		public class CreateTenantUser_TenantUser
 		{
 
 			private string userType;

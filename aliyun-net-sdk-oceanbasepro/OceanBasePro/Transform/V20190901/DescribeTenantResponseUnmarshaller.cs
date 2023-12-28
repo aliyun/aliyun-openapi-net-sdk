@@ -60,6 +60,7 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 			tenant.MaxParallelQueryDegree = _ctx.LongValue("DescribeTenant.Tenant.MaxParallelQueryDegree");
 			tenant.EnableBinlogService = _ctx.BooleanValue("DescribeTenant.Tenant.EnableBinlogService");
 			tenant.TimeZone = _ctx.StringValue("DescribeTenant.Tenant.TimeZone");
+			tenant.DataMergeTime = _ctx.StringValue("DescribeTenant.Tenant.DataMergeTime");
 
 			List<string> tenant_availableZones = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeTenant.Tenant.AvailableZones.Length"); i++) {
@@ -98,6 +99,37 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 			tenantResource.LogDiskSize = logDiskSize;
 			tenant.TenantResource = tenantResource;
 
+			DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_ReadOnlyResource readOnlyResource = new DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_ReadOnlyResource();
+			readOnlyResource.UnitNum = _ctx.IntegerValue("DescribeTenant.Tenant.ReadOnlyResource.UnitNum");
+
+			DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_ReadOnlyResource.DescribeTenant_Cpu1 cpu1 = new DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_ReadOnlyResource.DescribeTenant_Cpu1();
+			cpu1.UsedCpu = _ctx.FloatValue("DescribeTenant.Tenant.ReadOnlyResource.Cpu.UsedCpu");
+			cpu1.TotalCpu = _ctx.FloatValue("DescribeTenant.Tenant.ReadOnlyResource.Cpu.TotalCpu");
+			cpu1.UnitCpu = _ctx.FloatValue("DescribeTenant.Tenant.ReadOnlyResource.Cpu.UnitCpu");
+			readOnlyResource.Cpu1 = cpu1;
+
+			DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_ReadOnlyResource.DescribeTenant_Memory2 memory2 = new DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_ReadOnlyResource.DescribeTenant_Memory2();
+			memory2.UsedMemory = _ctx.FloatValue("DescribeTenant.Tenant.ReadOnlyResource.Memory.UsedMemory");
+			memory2.TotalMemory = _ctx.FloatValue("DescribeTenant.Tenant.ReadOnlyResource.Memory.TotalMemory");
+			memory2.UnitMemory = _ctx.FloatValue("DescribeTenant.Tenant.ReadOnlyResource.Memory.UnitMemory");
+			readOnlyResource.Memory2 = memory2;
+
+			DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_ReadOnlyResource.DescribeTenant_DiskSize3 diskSize3 = new DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_ReadOnlyResource.DescribeTenant_DiskSize3();
+			diskSize3.UsedDiskSize = _ctx.FloatValue("DescribeTenant.Tenant.ReadOnlyResource.DiskSize.UsedDiskSize");
+			readOnlyResource.DiskSize3 = diskSize3;
+
+			DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_ReadOnlyResource.DescribeTenant_CapacityUnit4 capacityUnit4 = new DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_ReadOnlyResource.DescribeTenant_CapacityUnit4();
+			capacityUnit4.MaxCapacityUnit = _ctx.IntegerValue("DescribeTenant.Tenant.ReadOnlyResource.CapacityUnit.MaxCapacityUnit");
+			capacityUnit4.MinCapacityUnit = _ctx.IntegerValue("DescribeTenant.Tenant.ReadOnlyResource.CapacityUnit.MinCapacityUnit");
+			capacityUnit4.UsedCapacit = _ctx.IntegerValue("DescribeTenant.Tenant.ReadOnlyResource.CapacityUnit.UsedCapacit");
+			readOnlyResource.CapacityUnit4 = capacityUnit4;
+
+			DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_ReadOnlyResource.DescribeTenant_LogDiskSize5 logDiskSize5 = new DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_ReadOnlyResource.DescribeTenant_LogDiskSize5();
+			logDiskSize5.TotalLogDisk = _ctx.IntegerValue("DescribeTenant.Tenant.ReadOnlyResource.LogDiskSize.TotalLogDisk");
+			logDiskSize5.UnitLogDisk = _ctx.IntegerValue("DescribeTenant.Tenant.ReadOnlyResource.LogDiskSize.UnitLogDisk");
+			readOnlyResource.LogDiskSize5 = logDiskSize5;
+			tenant.ReadOnlyResource = readOnlyResource;
+
 			List<DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_TenantConnectionsItem> tenant_tenantConnections = new List<DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_TenantConnectionsItem>();
 			for (int i = 0; i < _ctx.Length("DescribeTenant.Tenant.TenantConnections.Length"); i++) {
 				DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_TenantConnectionsItem tenantConnectionsItem = new DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_TenantConnectionsItem();
@@ -117,6 +149,7 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 				tenantConnectionsItem.ParallelQueryDegree = _ctx.LongValue("DescribeTenant.Tenant.TenantConnections["+ i +"].ParallelQueryDegree");
 				tenantConnectionsItem.TenantEndpointId = _ctx.StringValue("DescribeTenant.Tenant.TenantConnections["+ i +"].TenantEndpointId");
 				tenantConnectionsItem.MaxConnectionNum = _ctx.LongValue("DescribeTenant.Tenant.TenantConnections["+ i +"].MaxConnectionNum");
+				tenantConnectionsItem.ConnectionReplicaType = _ctx.StringValue("DescribeTenant.Tenant.TenantConnections["+ i +"].ConnectionReplicaType");
 
 				List<string> tenantConnectionsItem_connectionZones = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeTenant.Tenant.TenantConnections["+ i +"].ConnectionZones.Length"); j++) {
@@ -134,6 +167,20 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 				tenantZonesItem.TenantZoneId = _ctx.StringValue("DescribeTenant.Tenant.TenantZones["+ i +"].TenantZoneId");
 				tenantZonesItem.Region = _ctx.StringValue("DescribeTenant.Tenant.TenantZones["+ i +"].Region");
 				tenantZonesItem.TenantZoneRole = _ctx.StringValue("DescribeTenant.Tenant.TenantZones["+ i +"].TenantZoneRole");
+
+				List<DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_TenantZonesItem.DescribeTenant_TenantZoneReplicasItem> tenantZonesItem_tenantZoneReplicas = new List<DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_TenantZonesItem.DescribeTenant_TenantZoneReplicasItem>();
+				for (int j = 0; j < _ctx.Length("DescribeTenant.Tenant.TenantZones["+ i +"].TenantZoneReplicas.Length"); j++) {
+					DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_TenantZonesItem.DescribeTenant_TenantZoneReplicasItem tenantZoneReplicasItem = new DescribeTenantResponse.DescribeTenant_Tenant.DescribeTenant_TenantZonesItem.DescribeTenant_TenantZoneReplicasItem();
+					tenantZoneReplicasItem.ZoneReplicaType = _ctx.StringValue("DescribeTenant.Tenant.TenantZones["+ i +"].TenantZoneReplicas["+ j +"].ZoneReplicaType");
+					tenantZoneReplicasItem.ZoneNodes = _ctx.StringValue("DescribeTenant.Tenant.TenantZones["+ i +"].TenantZoneReplicas["+ j +"].ZoneNodes");
+					tenantZoneReplicasItem.LogicZoneName = _ctx.StringValue("DescribeTenant.Tenant.TenantZones["+ i +"].TenantZoneReplicas["+ j +"].LogicZoneName");
+					tenantZoneReplicasItem.ZoneCopyId = _ctx.IntegerValue("DescribeTenant.Tenant.TenantZones["+ i +"].TenantZoneReplicas["+ j +"].ZoneCopyId");
+					tenantZoneReplicasItem.FullCopyId = _ctx.IntegerValue("DescribeTenant.Tenant.TenantZones["+ i +"].TenantZoneReplicas["+ j +"].FullCopyId");
+					tenantZoneReplicasItem.ReadOnlyCopyId = _ctx.StringValue("DescribeTenant.Tenant.TenantZones["+ i +"].TenantZoneReplicas["+ j +"].ReadOnlyCopyId");
+
+					tenantZonesItem_tenantZoneReplicas.Add(tenantZoneReplicasItem);
+				}
+				tenantZonesItem.TenantZoneReplicas = tenantZonesItem_tenantZoneReplicas;
 
 				tenant_tenantZones.Add(tenantZonesItem);
 			}
