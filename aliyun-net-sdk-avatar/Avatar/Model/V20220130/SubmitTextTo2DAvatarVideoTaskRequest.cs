@@ -293,6 +293,14 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 
 			private string code;
 
+			private int? x;
+
+			private int? width;
+
+			private int? y;
+
+			private int? height;
+
 			[JsonProperty(PropertyName = "Code")]
 			public string Code
 			{
@@ -303,6 +311,58 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 				set	
 				{
 					code = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "X")]
+			public int? X
+			{
+				get
+				{
+					return x;
+				}
+				set	
+				{
+					x = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Width")]
+			public int? Width
+			{
+				get
+				{
+					return width;
+				}
+				set	
+				{
+					width = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Y")]
+			public int? Y
+			{
+				get
+				{
+					return y;
+				}
+				set	
+				{
+					y = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Height")]
+			public int? Height
+			{
+				get
+				{
+					return height;
+				}
+				set	
+				{
+					height = value;
 				}
 			}
 		}
