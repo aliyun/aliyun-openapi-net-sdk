@@ -27,30 +27,27 @@ using Aliyun.Acs.Dypnsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 {
-    public class GetAuthTokenRequest : RpcAcsRequest<GetAuthTokenResponse>
+    public class JyQueryAppInfoBySceneCodeRequest : RpcAcsRequest<JyQueryAppInfoBySceneCodeResponse>
     {
-        public GetAuthTokenRequest()
-            : base("Dypnsapi", "2017-05-25", "GetAuthToken", "dypnsapi", "openAPI")
+        public JyQueryAppInfoBySceneCodeRequest()
+            : base("Dypnsapi", "2017-05-25", "JyQueryAppInfoBySceneCode", "dypnsapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dypnsapi.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dypnsapi.Endpoint.endpointRegionalType, null);
             }
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
-
-		private string origin;
 
 		private string sceneCode;
 
 		private string resourceOwnerAccount;
 
 		private long? ownerId;
-
-		private string url;
 
 		public long? ResourceOwnerId
 		{
@@ -62,19 +59,6 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string Origin
-		{
-			get
-			{
-				return origin;
-			}
-			set	
-			{
-				origin = value;
-				DictionaryUtil.Add(QueryParameters, "Origin", value);
 			}
 		}
 
@@ -117,27 +101,14 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public string Url
-		{
-			get
-			{
-				return url;
-			}
-			set	
-			{
-				url = value;
-				DictionaryUtil.Add(QueryParameters, "Url", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override GetAuthTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override JyQueryAppInfoBySceneCodeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetAuthTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return JyQueryAppInfoBySceneCodeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

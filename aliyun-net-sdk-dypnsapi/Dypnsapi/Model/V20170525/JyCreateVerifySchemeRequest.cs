@@ -27,30 +27,43 @@ using Aliyun.Acs.Dypnsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 {
-    public class GetAuthTokenRequest : RpcAcsRequest<GetAuthTokenResponse>
+    public class JyCreateVerifySchemeRequest : RpcAcsRequest<JyCreateVerifySchemeResponse>
     {
-        public GetAuthTokenRequest()
-            : base("Dypnsapi", "2017-05-25", "GetAuthToken", "dypnsapi", "openAPI")
+        public JyCreateVerifySchemeRequest()
+            : base("Dypnsapi", "2017-05-25", "JyCreateVerifyScheme", "dypnsapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dypnsapi.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dypnsapi.Endpoint.endpointRegionalType, null);
             }
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private string origin;
+		private string bundleId;
 
-		private string sceneCode;
+		private string appName;
+
+		private string packSign;
+
+		private string packName;
+
+		private long? cuApiCode;
 
 		private string resourceOwnerAccount;
 
+		private long? ctApiCode;
+
+		private string osType;
+
 		private long? ownerId;
 
-		private string url;
+		private long? cmApiCode;
+
+		private string schemeName;
 
 		public long? ResourceOwnerId
 		{
@@ -65,29 +78,68 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public string Origin
+		public string BundleId
 		{
 			get
 			{
-				return origin;
+				return bundleId;
 			}
 			set	
 			{
-				origin = value;
-				DictionaryUtil.Add(QueryParameters, "Origin", value);
+				bundleId = value;
+				DictionaryUtil.Add(QueryParameters, "BundleId", value);
 			}
 		}
 
-		public string SceneCode
+		public string AppName
 		{
 			get
 			{
-				return sceneCode;
+				return appName;
 			}
 			set	
 			{
-				sceneCode = value;
-				DictionaryUtil.Add(QueryParameters, "SceneCode", value);
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
+			}
+		}
+
+		public string PackSign
+		{
+			get
+			{
+				return packSign;
+			}
+			set	
+			{
+				packSign = value;
+				DictionaryUtil.Add(QueryParameters, "PackSign", value);
+			}
+		}
+
+		public string PackName
+		{
+			get
+			{
+				return packName;
+			}
+			set	
+			{
+				packName = value;
+				DictionaryUtil.Add(QueryParameters, "PackName", value);
+			}
+		}
+
+		public long? CuApiCode
+		{
+			get
+			{
+				return cuApiCode;
+			}
+			set	
+			{
+				cuApiCode = value;
+				DictionaryUtil.Add(QueryParameters, "CuApiCode", value.ToString());
 			}
 		}
 
@@ -104,6 +156,32 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
+		public long? CtApiCode
+		{
+			get
+			{
+				return ctApiCode;
+			}
+			set	
+			{
+				ctApiCode = value;
+				DictionaryUtil.Add(QueryParameters, "CtApiCode", value.ToString());
+			}
+		}
+
+		public string OsType
+		{
+			get
+			{
+				return osType;
+			}
+			set	
+			{
+				osType = value;
+				DictionaryUtil.Add(QueryParameters, "OsType", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -117,27 +195,35 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public string Url
+		public long? CmApiCode
 		{
 			get
 			{
-				return url;
+				return cmApiCode;
 			}
 			set	
 			{
-				url = value;
-				DictionaryUtil.Add(QueryParameters, "Url", value);
+				cmApiCode = value;
+				DictionaryUtil.Add(QueryParameters, "CmApiCode", value.ToString());
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		public string SchemeName
 		{
-			return false;
+			get
+			{
+				return schemeName;
+			}
+			set	
+			{
+				schemeName = value;
+				DictionaryUtil.Add(QueryParameters, "SchemeName", value);
+			}
 		}
 
-        public override GetAuthTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override JyCreateVerifySchemeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetAuthTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return JyCreateVerifySchemeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
