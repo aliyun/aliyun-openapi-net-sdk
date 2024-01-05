@@ -40,11 +40,15 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			for (int i = 0; i < _ctx.Length("DescribeDBClusters.Items.Length"); i++) {
 				DescribeDBClustersResponse.DescribeDBClusters_DBCluster dBCluster = new DescribeDBClustersResponse.DescribeDBClusters_DBCluster();
 				dBCluster.VpcId = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].VpcId");
+				dBCluster.VswitchId = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].VswitchId");
 				dBCluster.ExpireTime = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].ExpireTime");
 				dBCluster.Expired = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].Expired");
 				dBCluster.DBNodeNumber = _ctx.IntegerValue("DescribeDBClusters.Items["+ i +"].DBNodeNumber");
 				dBCluster.CreateTime = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].CreateTime");
 				dBCluster.PayType = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].PayType");
+				dBCluster.StoragePayType = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].StoragePayType");
+				dBCluster.ServerlessType = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].ServerlessType");
+				dBCluster.StrictConsistency = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].StrictConsistency");
 				dBCluster.DBNodeClass = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].DBNodeClass");
 				dBCluster.DBType = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].DBType");
 				dBCluster.LockMode = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].LockMode");
@@ -55,11 +59,14 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				dBCluster.DBClusterStatus = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].DBClusterStatus");
 				dBCluster.ResourceGroupId = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].ResourceGroupId");
 				dBCluster.StorageUsed = _ctx.LongValue("DescribeDBClusters.Items["+ i +"].StorageUsed");
+				dBCluster.CompressStorageUsed = _ctx.LongValue("DescribeDBClusters.Items["+ i +"].CompressStorageUsed");
+				dBCluster.StorageSpace = _ctx.LongValue("DescribeDBClusters.Items["+ i +"].StorageSpace");
 				dBCluster.DBClusterNetworkType = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].DBClusterNetworkType");
 				dBCluster.DBClusterDescription = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].DBClusterDescription");
 				dBCluster.ZoneId = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].ZoneId");
 				dBCluster.Engine = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].Engine");
 				dBCluster.Category = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].Category");
+				dBCluster.AiType = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].AiType");
 
 				List<DescribeDBClustersResponse.DescribeDBClusters_DBCluster.DescribeDBClusters_Tag> dBCluster_tags = new List<DescribeDBClustersResponse.DescribeDBClusters_DBCluster.DescribeDBClusters_Tag>();
 				for (int j = 0; j < _ctx.Length("DescribeDBClusters.Items["+ i +"].Tags.Length"); j++) {
@@ -79,6 +86,9 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 					dBNode.DBNodeRole = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].DBNodes["+ j +"].DBNodeRole");
 					dBNode.DBNodeId = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].DBNodes["+ j +"].DBNodeId");
 					dBNode.RegionId = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].DBNodes["+ j +"].RegionId");
+					dBNode.Serverless = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].DBNodes["+ j +"].Serverless");
+					dBNode.ImciSwitch = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].DBNodes["+ j +"].ImciSwitch");
+					dBNode.HotReplicaMode = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].DBNodes["+ j +"].HotReplicaMode");
 
 					dBCluster_dBNodes.Add(dBNode);
 				}

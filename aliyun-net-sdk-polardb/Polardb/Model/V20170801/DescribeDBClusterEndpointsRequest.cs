@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.polardb;
 using Aliyun.Acs.polardb.Transform;
 using Aliyun.Acs.polardb.Transform.V20170801;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
     public class DescribeDBClusterEndpointsRequest : RpcAcsRequest<DescribeDBClusterEndpointsResponse>
     {
         public DescribeDBClusterEndpointsRequest()
-            : base("polardb", "2017-08-01", "DescribeDBClusterEndpoints")
+            : base("polardb", "2017-08-01", "DescribeDBClusterEndpoints", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,6 +43,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private long? resourceOwnerId;
 
 		private string dBEndpointId;
+
+		private string describeType;
 
 		private string resourceOwnerAccount;
 
@@ -76,6 +77,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				dBEndpointId = value;
 				DictionaryUtil.Add(QueryParameters, "DBEndpointId", value);
+			}
+		}
+
+		public string DescribeType
+		{
+			get
+			{
+				return describeType;
+			}
+			set	
+			{
+				describeType = value;
+				DictionaryUtil.Add(QueryParameters, "DescribeType", value);
 			}
 		}
 

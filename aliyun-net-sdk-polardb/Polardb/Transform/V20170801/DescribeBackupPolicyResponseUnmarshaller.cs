@@ -44,6 +44,8 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeBackupPolicyResponse.DataLevel1BackupPeriod = _ctx.StringValue("DescribeBackupPolicy.DataLevel1BackupPeriod");
 			describeBackupPolicyResponse.DataLevel1BackupTime = _ctx.StringValue("DescribeBackupPolicy.DataLevel1BackupTime");
 			describeBackupPolicyResponse.DataLevel2BackupPeriod = _ctx.StringValue("DescribeBackupPolicy.DataLevel2BackupPeriod");
+			describeBackupPolicyResponse.DataLevel2BackupAnotherRegionRetentionPeriod = _ctx.StringValue("DescribeBackupPolicy.DataLevel2BackupAnotherRegionRetentionPeriod");
+			describeBackupPolicyResponse.DataLevel2BackupAnotherRegionRegion = _ctx.StringValue("DescribeBackupPolicy.DataLevel2BackupAnotherRegionRegion");
         
 			return describeBackupPolicyResponse;
         }

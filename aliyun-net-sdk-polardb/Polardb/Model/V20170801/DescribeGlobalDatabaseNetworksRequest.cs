@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.polardb;
 using Aliyun.Acs.polardb.Transform;
 using Aliyun.Acs.polardb.Transform.V20170801;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
     public class DescribeGlobalDatabaseNetworksRequest : RpcAcsRequest<DescribeGlobalDatabaseNetworksResponse>
     {
         public DescribeGlobalDatabaseNetworksRequest()
-            : base("polardb", "2017-08-01", "DescribeGlobalDatabaseNetworks")
+            : base("polardb", "2017-08-01", "DescribeGlobalDatabaseNetworks", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,9 +44,17 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private int? pageNumber;
 
+		private string resourceGroupId;
+
+		private string filterRegion;
+
 		private string securityToken;
 
+		private string gDNId;
+
 		private int? pageSize;
+
+		private string gDNDescription;
 
 		private string resourceOwnerAccount;
 
@@ -83,6 +90,32 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public string FilterRegion
+		{
+			get
+			{
+				return filterRegion;
+			}
+			set	
+			{
+				filterRegion = value;
+				DictionaryUtil.Add(QueryParameters, "FilterRegion", value);
+			}
+		}
+
 		public string SecurityToken
 		{
 			get
@@ -96,6 +129,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string GDNId
+		{
+			get
+			{
+				return gDNId;
+			}
+			set	
+			{
+				gDNId = value;
+				DictionaryUtil.Add(QueryParameters, "GDNId", value);
+			}
+		}
+
 		public int? PageSize
 		{
 			get
@@ -106,6 +152,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string GDNDescription
+		{
+			get
+			{
+				return gDNDescription;
+			}
+			set	
+			{
+				gDNDescription = value;
+				DictionaryUtil.Add(QueryParameters, "GDNDescription", value);
 			}
 		}
 

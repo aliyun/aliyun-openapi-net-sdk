@@ -39,6 +39,10 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string gDNDescription;
 
+		private string dBClusterId;
+
+		private string resourceGroupId;
+
 		private List<DescribeGlobalDatabaseNetwork_Connection> connections;
 
 		private List<DescribeGlobalDatabaseNetwork_DBCluster> dBClusters;
@@ -124,6 +128,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				gDNDescription = value;
+			}
+		}
+
+		public string DBClusterId
+		{
+			get
+			{
+				return dBClusterId;
+			}
+			set	
+			{
+				dBClusterId = value;
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
 			}
 		}
 

@@ -92,6 +92,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string engine;
 
+			private string masterID;
+
 			private string characterSetName;
 
 			private List<DescribeDatabases_Account> accounts;
@@ -141,6 +143,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					engine = value;
+				}
+			}
+
+			public string MasterID
+			{
+				get
+				{
+					return masterID;
+				}
+				set	
+				{
+					masterID = value;
 				}
 			}
 

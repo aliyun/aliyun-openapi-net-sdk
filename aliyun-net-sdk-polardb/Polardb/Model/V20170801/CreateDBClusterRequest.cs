@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.polardb;
 using Aliyun.Acs.polardb.Transform;
 using Aliyun.Acs.polardb.Transform.V20170801;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
     public class CreateDBClusterRequest : RpcAcsRequest<CreateDBClusterResponse>
     {
         public CreateDBClusterRequest()
-            : base("polardb", "2017-08-01", "CreateDBCluster")
+            : base("polardb", "2017-08-01", "CreateDBCluster", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,6 +44,14 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string dBClusterDescription;
 
+		private string proxyClass;
+
+		private string proxyType;
+
+		private string scaleMax;
+
+		private string storageType;
+
 		private string creationCategory;
 
 		private string resourceGroupId;
@@ -53,7 +60,11 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string creationOption;
 
+		private List<string> tags = new List<string>(){ };
+
 		private string sourceResourceId;
+
+		private string scaleMin;
 
 		private string backupRetentionPolicyOnClusterDeletion;
 
@@ -67,13 +78,27 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string dBMinorVersion;
 
+		private long? provisionedIops;
+
 		private bool? autoRenew;
+
+		private string hotStandbyCluster;
+
+		private string storagePayType;
 
 		private string zoneId;
 
+		private string storageAutoScale;
+
 		private bool? tDEStatus;
 
+		private string allowShutDown;
+
 		private string lowerCaseTableNames;
+
+		private string scaleRoNumMax;
+
+		private string standbyAZ;
 
 		private string clientToken;
 
@@ -85,21 +110,41 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string gDNId;
 
+		private string looseXEngine;
+
+		private string loosePolarLogBin;
+
+		private string architecture;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
+		private string looseXEngineUseMemoryPct;
+
 		private string usedTime;
 
+		private int? dBNodeNum;
+
+		private long? storageUpperBound;
+
 		private string vPCId;
+
+		private string scaleRoNumMin;
 
 		private string dBType;
 
 		private string dBVersion;
 
+		private string strictConsistency;
+
 		private string cloneDataPoint;
 
 		private string payType;
+
+		private long? storageSpace;
+
+		private string serverlessType;
 
 		public long? ResourceOwnerId
 		{
@@ -124,6 +169,58 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				dBClusterDescription = value;
 				DictionaryUtil.Add(QueryParameters, "DBClusterDescription", value);
+			}
+		}
+
+		public string ProxyClass
+		{
+			get
+			{
+				return proxyClass;
+			}
+			set	
+			{
+				proxyClass = value;
+				DictionaryUtil.Add(QueryParameters, "ProxyClass", value);
+			}
+		}
+
+		public string ProxyType
+		{
+			get
+			{
+				return proxyType;
+			}
+			set	
+			{
+				proxyType = value;
+				DictionaryUtil.Add(QueryParameters, "ProxyType", value);
+			}
+		}
+
+		public string ScaleMax
+		{
+			get
+			{
+				return scaleMax;
+			}
+			set	
+			{
+				scaleMax = value;
+				DictionaryUtil.Add(QueryParameters, "ScaleMax", value);
+			}
+		}
+
+		public string StorageType
+		{
+			get
+			{
+				return storageType;
+			}
+			set	
+			{
+				storageType = value;
+				DictionaryUtil.Add(QueryParameters, "StorageType", value);
 			}
 		}
 
@@ -179,6 +276,27 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public List<string> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				if(tags != null)
+				{
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
+				}
+			}
+		}
+
 		public string SourceResourceId
 		{
 			get
@@ -189,6 +307,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				sourceResourceId = value;
 				DictionaryUtil.Add(QueryParameters, "SourceResourceId", value);
+			}
+		}
+
+		public string ScaleMin
+		{
+			get
+			{
+				return scaleMin;
+			}
+			set	
+			{
+				scaleMin = value;
+				DictionaryUtil.Add(QueryParameters, "ScaleMin", value);
 			}
 		}
 
@@ -270,6 +401,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public long? ProvisionedIops
+		{
+			get
+			{
+				return provisionedIops;
+			}
+			set	
+			{
+				provisionedIops = value;
+				DictionaryUtil.Add(QueryParameters, "ProvisionedIops", value.ToString());
+			}
+		}
+
 		public bool? AutoRenew
 		{
 			get
@@ -280,6 +424,32 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				autoRenew = value;
 				DictionaryUtil.Add(QueryParameters, "AutoRenew", value.ToString());
+			}
+		}
+
+		public string HotStandbyCluster
+		{
+			get
+			{
+				return hotStandbyCluster;
+			}
+			set	
+			{
+				hotStandbyCluster = value;
+				DictionaryUtil.Add(QueryParameters, "HotStandbyCluster", value);
+			}
+		}
+
+		public string StoragePayType
+		{
+			get
+			{
+				return storagePayType;
+			}
+			set	
+			{
+				storagePayType = value;
+				DictionaryUtil.Add(QueryParameters, "StoragePayType", value);
 			}
 		}
 
@@ -296,6 +466,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string StorageAutoScale
+		{
+			get
+			{
+				return storageAutoScale;
+			}
+			set	
+			{
+				storageAutoScale = value;
+				DictionaryUtil.Add(QueryParameters, "StorageAutoScale", value);
+			}
+		}
+
 		public bool? TDEStatus
 		{
 			get
@@ -309,6 +492,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string AllowShutDown
+		{
+			get
+			{
+				return allowShutDown;
+			}
+			set	
+			{
+				allowShutDown = value;
+				DictionaryUtil.Add(QueryParameters, "AllowShutDown", value);
+			}
+		}
+
 		public string LowerCaseTableNames
 		{
 			get
@@ -319,6 +515,32 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				lowerCaseTableNames = value;
 				DictionaryUtil.Add(QueryParameters, "LowerCaseTableNames", value);
+			}
+		}
+
+		public string ScaleRoNumMax
+		{
+			get
+			{
+				return scaleRoNumMax;
+			}
+			set	
+			{
+				scaleRoNumMax = value;
+				DictionaryUtil.Add(QueryParameters, "ScaleRoNumMax", value);
+			}
+		}
+
+		public string StandbyAZ
+		{
+			get
+			{
+				return standbyAZ;
+			}
+			set	
+			{
+				standbyAZ = value;
+				DictionaryUtil.Add(QueryParameters, "StandbyAZ", value);
 			}
 		}
 
@@ -387,6 +609,45 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string LooseXEngine
+		{
+			get
+			{
+				return looseXEngine;
+			}
+			set	
+			{
+				looseXEngine = value;
+				DictionaryUtil.Add(QueryParameters, "LooseXEngine", value);
+			}
+		}
+
+		public string LoosePolarLogBin
+		{
+			get
+			{
+				return loosePolarLogBin;
+			}
+			set	
+			{
+				loosePolarLogBin = value;
+				DictionaryUtil.Add(QueryParameters, "LoosePolarLogBin", value);
+			}
+		}
+
+		public string Architecture
+		{
+			get
+			{
+				return architecture;
+			}
+			set	
+			{
+				architecture = value;
+				DictionaryUtil.Add(QueryParameters, "Architecture", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -413,6 +674,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string LooseXEngineUseMemoryPct
+		{
+			get
+			{
+				return looseXEngineUseMemoryPct;
+			}
+			set	
+			{
+				looseXEngineUseMemoryPct = value;
+				DictionaryUtil.Add(QueryParameters, "LooseXEngineUseMemoryPct", value);
+			}
+		}
+
 		public string UsedTime
 		{
 			get
@@ -426,6 +700,32 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public int? DBNodeNum
+		{
+			get
+			{
+				return dBNodeNum;
+			}
+			set	
+			{
+				dBNodeNum = value;
+				DictionaryUtil.Add(QueryParameters, "DBNodeNum", value.ToString());
+			}
+		}
+
+		public long? StorageUpperBound
+		{
+			get
+			{
+				return storageUpperBound;
+			}
+			set	
+			{
+				storageUpperBound = value;
+				DictionaryUtil.Add(QueryParameters, "StorageUpperBound", value.ToString());
+			}
+		}
+
 		public string VPCId
 		{
 			get
@@ -436,6 +736,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				vPCId = value;
 				DictionaryUtil.Add(QueryParameters, "VPCId", value);
+			}
+		}
+
+		public string ScaleRoNumMin
+		{
+			get
+			{
+				return scaleRoNumMin;
+			}
+			set	
+			{
+				scaleRoNumMin = value;
+				DictionaryUtil.Add(QueryParameters, "ScaleRoNumMin", value);
 			}
 		}
 
@@ -465,6 +778,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string StrictConsistency
+		{
+			get
+			{
+				return strictConsistency;
+			}
+			set	
+			{
+				strictConsistency = value;
+				DictionaryUtil.Add(QueryParameters, "StrictConsistency", value);
+			}
+		}
+
 		public string CloneDataPoint
 		{
 			get
@@ -488,6 +814,64 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				payType = value;
 				DictionaryUtil.Add(QueryParameters, "PayType", value);
+			}
+		}
+
+		public long? StorageSpace
+		{
+			get
+			{
+				return storageSpace;
+			}
+			set	
+			{
+				storageSpace = value;
+				DictionaryUtil.Add(QueryParameters, "StorageSpace", value.ToString());
+			}
+		}
+
+		public string ServerlessType
+		{
+			get
+			{
+				return serverlessType;
+			}
+			set	
+			{
+				serverlessType = value;
+				DictionaryUtil.Add(QueryParameters, "ServerlessType", value);
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

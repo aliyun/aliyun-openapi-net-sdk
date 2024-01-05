@@ -33,7 +33,13 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string engine;
 
+		private string dBClusterId;
+
+		private string parameterNumbers;
+
 		private List<DescribeDBClusterParameters_Parameter> runningParameters;
+
+		private List<DescribeDBClusterParameters_ParametersItem> parameters;
 
 		public string DBVersion
 		{
@@ -83,6 +89,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string DBClusterId
+		{
+			get
+			{
+				return dBClusterId;
+			}
+			set	
+			{
+				dBClusterId = value;
+			}
+		}
+
+		public string ParameterNumbers
+		{
+			get
+			{
+				return parameterNumbers;
+			}
+			set	
+			{
+				parameterNumbers = value;
+			}
+		}
+
 		public List<DescribeDBClusterParameters_Parameter> RunningParameters
 		{
 			get
@@ -92,6 +122,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				runningParameters = value;
+			}
+		}
+
+		public List<DescribeDBClusterParameters_ParametersItem> Parameters
+		{
+			get
+			{
+				return parameters;
+			}
+			set	
+			{
+				parameters = value;
 			}
 		}
 
@@ -119,6 +161,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			private string isNodeAvailable;
 
 			private string paramRelyRule;
+
+			private string factor;
 
 			public string CheckingCode
 			{
@@ -249,6 +293,148 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					paramRelyRule = value;
+				}
+			}
+
+			public string Factor
+			{
+				get
+				{
+					return factor;
+				}
+				set	
+				{
+					factor = value;
+				}
+			}
+		}
+
+		public class DescribeDBClusterParameters_ParametersItem
+		{
+
+			private string rdsParameterName;
+
+			private string rdsParameterValue;
+
+			private string rdsParameterOptional;
+
+			private string distParameterName;
+
+			private string distParameterValue;
+
+			private string distParameterOptional;
+
+			private string isEqual;
+
+			private string distParameterDescription;
+
+			private string rdsParameterDescription;
+
+			public string RdsParameterName
+			{
+				get
+				{
+					return rdsParameterName;
+				}
+				set	
+				{
+					rdsParameterName = value;
+				}
+			}
+
+			public string RdsParameterValue
+			{
+				get
+				{
+					return rdsParameterValue;
+				}
+				set	
+				{
+					rdsParameterValue = value;
+				}
+			}
+
+			public string RdsParameterOptional
+			{
+				get
+				{
+					return rdsParameterOptional;
+				}
+				set	
+				{
+					rdsParameterOptional = value;
+				}
+			}
+
+			public string DistParameterName
+			{
+				get
+				{
+					return distParameterName;
+				}
+				set	
+				{
+					distParameterName = value;
+				}
+			}
+
+			public string DistParameterValue
+			{
+				get
+				{
+					return distParameterValue;
+				}
+				set	
+				{
+					distParameterValue = value;
+				}
+			}
+
+			public string DistParameterOptional
+			{
+				get
+				{
+					return distParameterOptional;
+				}
+				set	
+				{
+					distParameterOptional = value;
+				}
+			}
+
+			public string IsEqual
+			{
+				get
+				{
+					return isEqual;
+				}
+				set	
+				{
+					isEqual = value;
+				}
+			}
+
+			public string DistParameterDescription
+			{
+				get
+				{
+					return distParameterDescription;
+				}
+				set	
+				{
+					distParameterDescription = value;
+				}
+			}
+
+			public string RdsParameterDescription
+			{
+				get
+				{
+					return rdsParameterDescription;
+				}
+				set	
+				{
+					rdsParameterDescription = value;
 				}
 			}
 		}

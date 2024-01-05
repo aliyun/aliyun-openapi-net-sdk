@@ -29,6 +29,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string sQLCollectorStatus;
 
+		private string dBClusterId;
+
 		public string RequestId
 		{
 			get
@@ -50,6 +52,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				sQLCollectorStatus = value;
+			}
+		}
+
+		public string DBClusterId
+		{
+			get
+			{
+				return dBClusterId;
+			}
+			set	
+			{
+				dBClusterId = value;
 			}
 		}
 	}

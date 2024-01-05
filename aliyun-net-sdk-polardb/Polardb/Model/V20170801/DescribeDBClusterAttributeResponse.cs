@@ -41,6 +41,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private bool? isLatestVersion;
 
+		private bool? hasCompleteStandbyRes;
+
+		private string hotStandbyClusterStatus;
+
+		private string hotStandbyCluster;
+
+		private string dataSyncMode;
+
+		private string standbyHAMode;
+
+		private string compressStorageMode;
+
 		private long? storageMax;
 
 		private string dBVersion;
@@ -65,9 +77,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string payType;
 
+		private string storagePayType;
+
 		private string lockMode;
 
 		private long? storageUsed;
+
+		private long? compressStorageUsed;
+
+		private long? storageSpace;
 
 		private string dBVersionStatus;
 
@@ -75,15 +93,29 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? sQLSize;
 
+		private long? inodeTotal;
+
+		private long? inodeUsed;
+
+		private long? blktagTotal;
+
+		private long? blktagUsed;
+
 		private string regionId;
 
 		private string expireTime;
 
 		private string subCategory;
 
+		private string deployUnit;
+
 		private bool? isProxyLatestVersion;
 
 		private string storageType;
+
+		private string serverlessType;
+
+		private string strictConsistency;
 
 		private string proxyCpuCores;
 
@@ -93,9 +125,23 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string proxyStatus;
 
+		private string featureHTAPSupported;
+
+		private string proxyServerlessType;
+
+		private string architecture;
+
+		private string aiType;
+
+		private string provisionedIops;
+
+		private bool? hotStandbyHealthy;
+
 		private List<DescribeDBClusterAttribute_DBNode> dBNodes;
 
 		private List<DescribeDBClusterAttribute_Tag> tags;
+
+		private DescribeDBClusterAttribute_RelatedAPInstance relatedAPInstance;
 
 		public int? DeletionLock
 		{
@@ -190,6 +236,78 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				isLatestVersion = value;
+			}
+		}
+
+		public bool? HasCompleteStandbyRes
+		{
+			get
+			{
+				return hasCompleteStandbyRes;
+			}
+			set	
+			{
+				hasCompleteStandbyRes = value;
+			}
+		}
+
+		public string HotStandbyClusterStatus
+		{
+			get
+			{
+				return hotStandbyClusterStatus;
+			}
+			set	
+			{
+				hotStandbyClusterStatus = value;
+			}
+		}
+
+		public string HotStandbyCluster
+		{
+			get
+			{
+				return hotStandbyCluster;
+			}
+			set	
+			{
+				hotStandbyCluster = value;
+			}
+		}
+
+		public string DataSyncMode
+		{
+			get
+			{
+				return dataSyncMode;
+			}
+			set	
+			{
+				dataSyncMode = value;
+			}
+		}
+
+		public string StandbyHAMode
+		{
+			get
+			{
+				return standbyHAMode;
+			}
+			set	
+			{
+				standbyHAMode = value;
+			}
+		}
+
+		public string CompressStorageMode
+		{
+			get
+			{
+				return compressStorageMode;
+			}
+			set	
+			{
+				compressStorageMode = value;
 			}
 		}
 
@@ -337,6 +455,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string StoragePayType
+		{
+			get
+			{
+				return storagePayType;
+			}
+			set	
+			{
+				storagePayType = value;
+			}
+		}
+
 		public string LockMode
 		{
 			get
@@ -358,6 +488,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				storageUsed = value;
+			}
+		}
+
+		public long? CompressStorageUsed
+		{
+			get
+			{
+				return compressStorageUsed;
+			}
+			set	
+			{
+				compressStorageUsed = value;
+			}
+		}
+
+		public long? StorageSpace
+		{
+			get
+			{
+				return storageSpace;
+			}
+			set	
+			{
+				storageSpace = value;
 			}
 		}
 
@@ -397,6 +551,54 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public long? InodeTotal
+		{
+			get
+			{
+				return inodeTotal;
+			}
+			set	
+			{
+				inodeTotal = value;
+			}
+		}
+
+		public long? InodeUsed
+		{
+			get
+			{
+				return inodeUsed;
+			}
+			set	
+			{
+				inodeUsed = value;
+			}
+		}
+
+		public long? BlktagTotal
+		{
+			get
+			{
+				return blktagTotal;
+			}
+			set	
+			{
+				blktagTotal = value;
+			}
+		}
+
+		public long? BlktagUsed
+		{
+			get
+			{
+				return blktagUsed;
+			}
+			set	
+			{
+				blktagUsed = value;
+			}
+		}
+
 		public string RegionId
 		{
 			get
@@ -433,6 +635,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string DeployUnit
+		{
+			get
+			{
+				return deployUnit;
+			}
+			set	
+			{
+				deployUnit = value;
+			}
+		}
+
 		public bool? IsProxyLatestVersion
 		{
 			get
@@ -454,6 +668,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				storageType = value;
+			}
+		}
+
+		public string ServerlessType
+		{
+			get
+			{
+				return serverlessType;
+			}
+			set	
+			{
+				serverlessType = value;
+			}
+		}
+
+		public string StrictConsistency
+		{
+			get
+			{
+				return strictConsistency;
+			}
+			set	
+			{
+				strictConsistency = value;
 			}
 		}
 
@@ -505,6 +743,78 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string FeatureHTAPSupported
+		{
+			get
+			{
+				return featureHTAPSupported;
+			}
+			set	
+			{
+				featureHTAPSupported = value;
+			}
+		}
+
+		public string ProxyServerlessType
+		{
+			get
+			{
+				return proxyServerlessType;
+			}
+			set	
+			{
+				proxyServerlessType = value;
+			}
+		}
+
+		public string Architecture
+		{
+			get
+			{
+				return architecture;
+			}
+			set	
+			{
+				architecture = value;
+			}
+		}
+
+		public string AiType
+		{
+			get
+			{
+				return aiType;
+			}
+			set	
+			{
+				aiType = value;
+			}
+		}
+
+		public string ProvisionedIops
+		{
+			get
+			{
+				return provisionedIops;
+			}
+			set	
+			{
+				provisionedIops = value;
+			}
+		}
+
+		public bool? HotStandbyHealthy
+		{
+			get
+			{
+				return hotStandbyHealthy;
+			}
+			set	
+			{
+				hotStandbyHealthy = value;
+			}
+		}
+
 		public List<DescribeDBClusterAttribute_DBNode> DBNodes
 		{
 			get
@@ -529,6 +839,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public DescribeDBClusterAttribute_RelatedAPInstance RelatedAPInstance
+		{
+			get
+			{
+				return relatedAPInstance;
+			}
+			set	
+			{
+				relatedAPInstance = value;
+			}
+		}
+
 		public class DescribeDBClusterAttribute_DBNode
 		{
 
@@ -539,6 +861,10 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			private int? maxIOPS;
 
 			private string dBNodeClass;
+
+			private string cpuCores;
+
+			private string memorySize;
 
 			private string dBNodeRole;
 
@@ -557,6 +883,16 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			private string addedCpuCores;
 
 			private string masterId;
+
+			private string sccMode;
+
+			private string serverWeight;
+
+			private string serverlessType;
+
+			private string subCluster;
+
+			private string tair;
 
 			public string CreationTime
 			{
@@ -603,6 +939,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					dBNodeClass = value;
+				}
+			}
+
+			public string CpuCores
+			{
+				get
+				{
+					return cpuCores;
+				}
+				set	
+				{
+					cpuCores = value;
+				}
+			}
+
+			public string MemorySize
+			{
+				get
+				{
+					return memorySize;
+				}
+				set	
+				{
+					memorySize = value;
 				}
 			}
 
@@ -713,6 +1073,66 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					masterId = value;
 				}
 			}
+
+			public string SccMode
+			{
+				get
+				{
+					return sccMode;
+				}
+				set	
+				{
+					sccMode = value;
+				}
+			}
+
+			public string ServerWeight
+			{
+				get
+				{
+					return serverWeight;
+				}
+				set	
+				{
+					serverWeight = value;
+				}
+			}
+
+			public string ServerlessType
+			{
+				get
+				{
+					return serverlessType;
+				}
+				set	
+				{
+					serverlessType = value;
+				}
+			}
+
+			public string SubCluster
+			{
+				get
+				{
+					return subCluster;
+				}
+				set	
+				{
+					subCluster = value;
+				}
+			}
+
+			public string Tair
+			{
+				get
+				{
+					return tair;
+				}
+				set	
+				{
+					tair = value;
+				}
+			}
 		}
 
 		public class DescribeDBClusterAttribute_Tag
@@ -743,6 +1163,94 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					_value = value;
+				}
+			}
+		}
+
+		public class DescribeDBClusterAttribute_RelatedAPInstance
+		{
+
+			private string name;
+
+			private string classCode;
+
+			private string ossStorageUsed;
+
+			private string totalAPNodes;
+
+			private float? storageUsedMB;
+
+			private string aPNodeStatus;
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string ClassCode
+			{
+				get
+				{
+					return classCode;
+				}
+				set	
+				{
+					classCode = value;
+				}
+			}
+
+			public string OssStorageUsed
+			{
+				get
+				{
+					return ossStorageUsed;
+				}
+				set	
+				{
+					ossStorageUsed = value;
+				}
+			}
+
+			public string TotalAPNodes
+			{
+				get
+				{
+					return totalAPNodes;
+				}
+				set	
+				{
+					totalAPNodes = value;
+				}
+			}
+
+			public float? StorageUsedMB
+			{
+				get
+				{
+					return storageUsedMB;
+				}
+				set	
+				{
+					storageUsedMB = value;
+				}
+			}
+
+			public string APNodeStatus
+			{
+				get
+				{
+					return aPNodeStatus;
+				}
+				set	
+				{
+					aPNodeStatus = value;
 				}
 			}
 		}

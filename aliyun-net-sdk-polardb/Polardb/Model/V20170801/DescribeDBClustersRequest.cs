@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.polardb;
 using Aliyun.Acs.polardb.Transform;
 using Aliyun.Acs.polardb.Transform.V20170801;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
     public class DescribeDBClustersRequest : RpcAcsRequest<DescribeDBClustersResponse>
     {
         public DescribeDBClustersRequest()
-            : base("polardb", "2017-08-01", "DescribeDBClusters")
+            : base("polardb", "2017-08-01", "DescribeDBClusters", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -47,11 +46,21 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string dBClusterStatus;
 
+		private string connectionString;
+
+		private int? recentExpirationInterval;
+
+		private string describeType;
+
 		private int? pageNumber;
 
 		private string dBNodeIds;
 
 		private string resourceGroupId;
+
+		private int? recentCreationInterval;
+
+		private bool? expired;
 
 		private int? pageSize;
 
@@ -64,6 +73,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private long? ownerId;
 
 		private string dBType;
+
+		private string dBVersion;
 
 		private string payType;
 
@@ -108,6 +119,45 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string ConnectionString
+		{
+			get
+			{
+				return connectionString;
+			}
+			set	
+			{
+				connectionString = value;
+				DictionaryUtil.Add(QueryParameters, "ConnectionString", value);
+			}
+		}
+
+		public int? RecentExpirationInterval
+		{
+			get
+			{
+				return recentExpirationInterval;
+			}
+			set	
+			{
+				recentExpirationInterval = value;
+				DictionaryUtil.Add(QueryParameters, "RecentExpirationInterval", value.ToString());
+			}
+		}
+
+		public string DescribeType
+		{
+			get
+			{
+				return describeType;
+			}
+			set	
+			{
+				describeType = value;
+				DictionaryUtil.Add(QueryParameters, "DescribeType", value);
+			}
+		}
+
 		public int? PageNumber
 		{
 			get
@@ -144,6 +194,32 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				resourceGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public int? RecentCreationInterval
+		{
+			get
+			{
+				return recentCreationInterval;
+			}
+			set	
+			{
+				recentCreationInterval = value;
+				DictionaryUtil.Add(QueryParameters, "RecentCreationInterval", value.ToString());
+			}
+		}
+
+		public bool? Expired
+		{
+			get
+			{
+				return expired;
+			}
+			set	
+			{
+				expired = value;
+				DictionaryUtil.Add(QueryParameters, "Expired", value.ToString());
 			}
 		}
 
@@ -230,6 +306,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				dBType = value;
 				DictionaryUtil.Add(QueryParameters, "DBType", value);
+			}
+		}
+
+		public string DBVersion
+		{
+			get
+			{
+				return dBVersion;
+			}
+			set	
+			{
+				dBVersion = value;
+				DictionaryUtil.Add(QueryParameters, "DBVersion", value);
 			}
 		}
 

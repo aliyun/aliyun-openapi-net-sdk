@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.polardb;
 using Aliyun.Acs.polardb.Transform;
 using Aliyun.Acs.polardb.Transform.V20170801;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
     public class ModifyDBClusterPrimaryZoneRequest : RpcAcsRequest<ModifyDBClusterPrimaryZoneResponse>
     {
         public ModifyDBClusterPrimaryZoneRequest()
-            : base("polardb", "2017-08-01", "ModifyDBClusterPrimaryZone")
+            : base("polardb", "2017-08-01", "ModifyDBClusterPrimaryZone", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -53,9 +52,13 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? ownerId;
 
+		private string isSwitchOverForDisaster;
+
 		private string vSwitchId;
 
 		private string plannedStartTime;
+
+		private string vPCId;
 
 		private string zoneId;
 
@@ -139,6 +142,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string IsSwitchOverForDisaster
+		{
+			get
+			{
+				return isSwitchOverForDisaster;
+			}
+			set	
+			{
+				isSwitchOverForDisaster = value;
+				DictionaryUtil.Add(QueryParameters, "IsSwitchOverForDisaster", value);
+			}
+		}
+
 		public string VSwitchId
 		{
 			get
@@ -162,6 +178,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				plannedStartTime = value;
 				DictionaryUtil.Add(QueryParameters, "PlannedStartTime", value);
+			}
+		}
+
+		public string VPCId
+		{
+			get
+			{
+				return vPCId;
+			}
+			set	
+			{
+				vPCId = value;
+				DictionaryUtil.Add(QueryParameters, "VPCId", value);
 			}
 		}
 

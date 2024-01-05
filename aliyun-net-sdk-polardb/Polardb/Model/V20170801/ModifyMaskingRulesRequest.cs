@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.polardb;
 using Aliyun.Acs.polardb.Transform;
 using Aliyun.Acs.polardb.Transform.V20170801;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
     public class ModifyMaskingRulesRequest : RpcAcsRequest<ModifyMaskingRulesResponse>
     {
         public ModifyMaskingRulesRequest()
-            : base("polardb", "2017-08-01", "ModifyMaskingRules")
+            : base("polardb", "2017-08-01", "ModifyMaskingRules", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,6 +43,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private string dBClusterId;
 
 		private string ruleName;
+
+		private string ruleVersion;
 
 		private string ruleConfig;
 
@@ -74,6 +75,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				ruleName = value;
 				DictionaryUtil.Add(QueryParameters, "RuleName", value);
+			}
+		}
+
+		public string RuleVersion
+		{
+			get
+			{
+				return ruleVersion;
+			}
+			set	
+			{
+				ruleVersion = value;
+				DictionaryUtil.Add(QueryParameters, "RuleVersion", value);
 			}
 		}
 

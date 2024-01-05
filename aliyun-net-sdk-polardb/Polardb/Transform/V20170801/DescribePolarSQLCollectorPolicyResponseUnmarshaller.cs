@@ -33,6 +33,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describePolarSQLCollectorPolicyResponse.HttpResponse = _ctx.HttpResponse;
 			describePolarSQLCollectorPolicyResponse.RequestId = _ctx.StringValue("DescribePolarSQLCollectorPolicy.RequestId");
 			describePolarSQLCollectorPolicyResponse.SQLCollectorStatus = _ctx.StringValue("DescribePolarSQLCollectorPolicy.SQLCollectorStatus");
+			describePolarSQLCollectorPolicyResponse.DBClusterId = _ctx.StringValue("DescribePolarSQLCollectorPolicy.DBClusterId");
         
 			return describePolarSQLCollectorPolicyResponse;
         }

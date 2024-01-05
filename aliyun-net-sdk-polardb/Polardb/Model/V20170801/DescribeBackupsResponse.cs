@@ -110,6 +110,10 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string backupStartTime;
 
+			private string expectExpireTime;
+
+			private string expectExpireType;
+
 			private string isAvail;
 
 			private string backupEndTime;
@@ -193,6 +197,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					backupStartTime = value;
+				}
+			}
+
+			public string ExpectExpireTime
+			{
+				get
+				{
+					return expectExpireTime;
+				}
+				set	
+				{
+					expectExpireTime = value;
+				}
+			}
+
+			public string ExpectExpireType
+			{
+				get
+				{
+					return expectExpireType;
+				}
+				set	
+				{
+					expectExpireType = value;
 				}
 			}
 

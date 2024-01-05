@@ -100,6 +100,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string vpcId;
 
+			private string vswitchId;
+
 			private string expireTime;
 
 			private string expired;
@@ -109,6 +111,12 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			private string createTime;
 
 			private string payType;
+
+			private string storagePayType;
+
+			private string serverlessType;
+
+			private string strictConsistency;
 
 			private string dBNodeClass;
 
@@ -130,6 +138,10 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private long? storageUsed;
 
+			private long? compressStorageUsed;
+
+			private long? storageSpace;
+
 			private string dBClusterNetworkType;
 
 			private string dBClusterDescription;
@@ -139,6 +151,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			private string engine;
 
 			private string category;
+
+			private string aiType;
 
 			private List<DescribeDBClusters_Tag> tags;
 
@@ -153,6 +167,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					vpcId = value;
+				}
+			}
+
+			public string VswitchId
+			{
+				get
+				{
+					return vswitchId;
+				}
+				set	
+				{
+					vswitchId = value;
 				}
 			}
 
@@ -213,6 +239,42 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					payType = value;
+				}
+			}
+
+			public string StoragePayType
+			{
+				get
+				{
+					return storagePayType;
+				}
+				set	
+				{
+					storagePayType = value;
+				}
+			}
+
+			public string ServerlessType
+			{
+				get
+				{
+					return serverlessType;
+				}
+				set	
+				{
+					serverlessType = value;
+				}
+			}
+
+			public string StrictConsistency
+			{
+				get
+				{
+					return strictConsistency;
+				}
+				set	
+				{
+					strictConsistency = value;
 				}
 			}
 
@@ -336,6 +398,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
+			public long? CompressStorageUsed
+			{
+				get
+				{
+					return compressStorageUsed;
+				}
+				set	
+				{
+					compressStorageUsed = value;
+				}
+			}
+
+			public long? StorageSpace
+			{
+				get
+				{
+					return storageSpace;
+				}
+				set	
+				{
+					storageSpace = value;
+				}
+			}
+
 			public string DBClusterNetworkType
 			{
 				get
@@ -393,6 +479,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					category = value;
+				}
+			}
+
+			public string AiType
+			{
+				get
+				{
+					return aiType;
+				}
+				set	
+				{
+					aiType = value;
 				}
 			}
 
@@ -465,6 +563,12 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 				private string regionId;
 
+				private string serverless;
+
+				private string imciSwitch;
+
+				private string hotReplicaMode;
+
 				public string DBNodeClass
 				{
 					get
@@ -522,6 +626,42 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					set	
 					{
 						regionId = value;
+					}
+				}
+
+				public string Serverless
+				{
+					get
+					{
+						return serverless;
+					}
+					set	
+					{
+						serverless = value;
+					}
+				}
+
+				public string ImciSwitch
+				{
+					get
+					{
+						return imciSwitch;
+					}
+					set	
+					{
+						imciSwitch = value;
+					}
+				}
+
+				public string HotReplicaMode
+				{
+					get
+					{
+						return hotReplicaMode;
+					}
+					set	
+					{
+						hotReplicaMode = value;
 					}
 				}
 			}

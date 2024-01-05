@@ -35,6 +35,8 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeDBClusterParametersResponse.RequestId = _ctx.StringValue("DescribeDBClusterParameters.RequestId");
 			describeDBClusterParametersResponse.DBType = _ctx.StringValue("DescribeDBClusterParameters.DBType");
 			describeDBClusterParametersResponse.Engine = _ctx.StringValue("DescribeDBClusterParameters.Engine");
+			describeDBClusterParametersResponse.DBClusterId = _ctx.StringValue("DescribeDBClusterParameters.DBClusterId");
+			describeDBClusterParametersResponse.ParameterNumbers = _ctx.StringValue("DescribeDBClusterParameters.ParameterNumbers");
 
 			List<DescribeDBClusterParametersResponse.DescribeDBClusterParameters_Parameter> describeDBClusterParametersResponse_runningParameters = new List<DescribeDBClusterParametersResponse.DescribeDBClusterParameters_Parameter>();
 			for (int i = 0; i < _ctx.Length("DescribeDBClusterParameters.RunningParameters.Length"); i++) {
@@ -50,10 +52,28 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				parameter.IsModifiable = _ctx.BooleanValue("DescribeDBClusterParameters.RunningParameters["+ i +"].IsModifiable");
 				parameter.IsNodeAvailable = _ctx.StringValue("DescribeDBClusterParameters.RunningParameters["+ i +"].IsNodeAvailable");
 				parameter.ParamRelyRule = _ctx.StringValue("DescribeDBClusterParameters.RunningParameters["+ i +"].ParamRelyRule");
+				parameter.Factor = _ctx.StringValue("DescribeDBClusterParameters.RunningParameters["+ i +"].Factor");
 
 				describeDBClusterParametersResponse_runningParameters.Add(parameter);
 			}
 			describeDBClusterParametersResponse.RunningParameters = describeDBClusterParametersResponse_runningParameters;
+
+			List<DescribeDBClusterParametersResponse.DescribeDBClusterParameters_ParametersItem> describeDBClusterParametersResponse_parameters = new List<DescribeDBClusterParametersResponse.DescribeDBClusterParameters_ParametersItem>();
+			for (int i = 0; i < _ctx.Length("DescribeDBClusterParameters.Parameters.Length"); i++) {
+				DescribeDBClusterParametersResponse.DescribeDBClusterParameters_ParametersItem parametersItem = new DescribeDBClusterParametersResponse.DescribeDBClusterParameters_ParametersItem();
+				parametersItem.RdsParameterName = _ctx.StringValue("DescribeDBClusterParameters.Parameters["+ i +"].rdsParameterName");
+				parametersItem.RdsParameterValue = _ctx.StringValue("DescribeDBClusterParameters.Parameters["+ i +"].rdsParameterValue");
+				parametersItem.RdsParameterOptional = _ctx.StringValue("DescribeDBClusterParameters.Parameters["+ i +"].rdsParameterOptional");
+				parametersItem.DistParameterName = _ctx.StringValue("DescribeDBClusterParameters.Parameters["+ i +"].distParameterName");
+				parametersItem.DistParameterValue = _ctx.StringValue("DescribeDBClusterParameters.Parameters["+ i +"].distParameterValue");
+				parametersItem.DistParameterOptional = _ctx.StringValue("DescribeDBClusterParameters.Parameters["+ i +"].distParameterOptional");
+				parametersItem.IsEqual = _ctx.StringValue("DescribeDBClusterParameters.Parameters["+ i +"].IsEqual");
+				parametersItem.DistParameterDescription = _ctx.StringValue("DescribeDBClusterParameters.Parameters["+ i +"].distParameterDescription");
+				parametersItem.RdsParameterDescription = _ctx.StringValue("DescribeDBClusterParameters.Parameters["+ i +"].rdsParameterDescription");
+
+				describeDBClusterParametersResponse_parameters.Add(parametersItem);
+			}
+			describeDBClusterParametersResponse.Parameters = describeDBClusterParametersResponse_parameters;
         
 			return describeDBClusterParametersResponse;
         }

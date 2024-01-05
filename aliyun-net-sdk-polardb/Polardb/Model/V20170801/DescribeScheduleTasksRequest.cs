@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.polardb;
 using Aliyun.Acs.polardb.Transform;
 using Aliyun.Acs.polardb.Transform.V20170801;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
     public class DescribeScheduleTasksRequest : RpcAcsRequest<DescribeScheduleTasksResponse>
     {
         public DescribeScheduleTasksRequest()
-            : base("polardb", "2017-08-01", "DescribeScheduleTasks")
+            : base("polardb", "2017-08-01", "DescribeScheduleTasks", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,7 +44,11 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string dBClusterDescription;
 
+		private string plannedEndTime;
+
 		private int? pageNumber;
+
+		private string resourceGroupId;
 
 		private int? pageSize;
 
@@ -58,6 +61,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string plannedStartTime;
 
 		private string taskAction;
 
@@ -89,6 +94,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string PlannedEndTime
+		{
+			get
+			{
+				return plannedEndTime;
+			}
+			set	
+			{
+				plannedEndTime = value;
+				DictionaryUtil.Add(QueryParameters, "PlannedEndTime", value);
+			}
+		}
+
 		public int? PageNumber
 		{
 			get
@@ -99,6 +117,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -177,6 +208,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string PlannedStartTime
+		{
+			get
+			{
+				return plannedStartTime;
+			}
+			set	
+			{
+				plannedStartTime = value;
+				DictionaryUtil.Add(QueryParameters, "PlannedStartTime", value);
 			}
 		}
 

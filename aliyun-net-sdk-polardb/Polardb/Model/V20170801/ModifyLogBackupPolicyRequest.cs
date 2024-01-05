@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.polardb;
 using Aliyun.Acs.polardb.Transform;
 using Aliyun.Acs.polardb.Transform.V20170801;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
     public class ModifyLogBackupPolicyRequest : RpcAcsRequest<ModifyLogBackupPolicyResponse>
     {
         public ModifyLogBackupPolicyRequest()
-            : base("polardb", "2017-08-01", "ModifyLogBackupPolicy")
+            : base("polardb", "2017-08-01", "ModifyLogBackupPolicy", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,6 +42,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
+		private string logBackupAnotherRegionRegion;
+
 		private string resourceOwnerAccount;
 
 		private string dBClusterId;
@@ -50,6 +51,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string logBackupAnotherRegionRetentionPeriod;
 
 		private string logBackupRetentionPeriod;
 
@@ -63,6 +66,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string LogBackupAnotherRegionRegion
+		{
+			get
+			{
+				return logBackupAnotherRegionRegion;
+			}
+			set	
+			{
+				logBackupAnotherRegionRegion = value;
+				DictionaryUtil.Add(QueryParameters, "LogBackupAnotherRegionRegion", value);
 			}
 		}
 
@@ -115,6 +131,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string LogBackupAnotherRegionRetentionPeriod
+		{
+			get
+			{
+				return logBackupAnotherRegionRetentionPeriod;
+			}
+			set	
+			{
+				logBackupAnotherRegionRetentionPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "LogBackupAnotherRegionRetentionPeriod", value);
 			}
 		}
 

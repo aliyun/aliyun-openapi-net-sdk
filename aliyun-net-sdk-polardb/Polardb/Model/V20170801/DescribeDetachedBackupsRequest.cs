@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.polardb;
 using Aliyun.Acs.polardb.Transform;
 using Aliyun.Acs.polardb.Transform.V20170801;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
     public class DescribeDetachedBackupsRequest : RpcAcsRequest<DescribeDetachedBackupsResponse>
     {
         public DescribeDetachedBackupsRequest()
-            : base("polardb", "2017-08-01", "DescribeDetachedBackups")
+            : base("polardb", "2017-08-01", "DescribeDetachedBackups", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -48,6 +47,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private int? pageNumber;
 
 		private int? pageSize;
+
+		private string backupRegion;
 
 		private string resourceOwnerAccount;
 
@@ -114,6 +115,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string BackupRegion
+		{
+			get
+			{
+				return backupRegion;
+			}
+			set	
+			{
+				backupRegion = value;
+				DictionaryUtil.Add(QueryParameters, "BackupRegion", value);
 			}
 		}
 

@@ -72,6 +72,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string autoAddNewNodes;
 
+			private string dBClusterId;
+
 			private List<DescribeDBClusterEndpoints_Address> addressItems;
 
 			public string NodeWithRoles
@@ -167,6 +169,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					autoAddNewNodes = value;
+				}
+			}
+
+			public string DBClusterId
+			{
+				get
+				{
+					return dBClusterId;
+				}
+				set	
+				{
+					dBClusterId = value;
 				}
 			}
 

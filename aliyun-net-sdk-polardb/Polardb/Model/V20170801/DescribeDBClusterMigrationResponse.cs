@@ -45,6 +45,10 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string migrationStatus;
 
+		private string dtsInstanceId;
+
+		private string srcDbType;
+
 		private List<DescribeDBClusterMigration_DBClusterEndpoint> dBClusterEndpointList;
 
 		private List<DescribeDBClusterMigration_RdsEndpoint> rdsEndpointList;
@@ -169,6 +173,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string DtsInstanceId
+		{
+			get
+			{
+				return dtsInstanceId;
+			}
+			set	
+			{
+				dtsInstanceId = value;
+			}
+		}
+
+		public string SrcDbType
+		{
+			get
+			{
+				return srcDbType;
+			}
+			set	
+			{
+				srcDbType = value;
+			}
+		}
+
 		public List<DescribeDBClusterMigration_DBClusterEndpoint> DBClusterEndpointList
 		{
 			get
@@ -200,6 +228,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string endpointType;
 
+			private string readWriteMode;
+
 			private List<DescribeDBClusterMigration_Address> addressItems;
 
 			public string DBEndpointId
@@ -223,6 +253,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					endpointType = value;
+				}
+			}
+
+			public string ReadWriteMode
+			{
+				get
+				{
+					return readWriteMode;
+				}
+				set	
+				{
+					readWriteMode = value;
 				}
 			}
 
@@ -253,6 +295,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 				private string iPAddress;
 
+				private string sSLEnabled;
+
 				public string VSwitchId
 				{
 					get
@@ -324,6 +368,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 						iPAddress = value;
 					}
 				}
+
+				public string SSLEnabled
+				{
+					get
+					{
+						return sSLEnabled;
+					}
+					set	
+					{
+						sSLEnabled = value;
+					}
+				}
 			}
 		}
 
@@ -333,6 +389,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			private string dBEndpointId;
 
 			private string endpointType;
+
+			private string custinsType;
 
 			private List<DescribeDBClusterMigration_Address2> addressItems1;
 
@@ -357,6 +415,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					endpointType = value;
+				}
+			}
+
+			public string CustinsType
+			{
+				get
+				{
+					return custinsType;
+				}
+				set	
+				{
+					custinsType = value;
 				}
 			}
 
@@ -387,6 +457,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 				private string iPAddress;
 
+				private string sSLEnabled;
+
 				public string VSwitchId
 				{
 					get
@@ -456,6 +528,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					set	
 					{
 						iPAddress = value;
+					}
+				}
+
+				public string SSLEnabled
+				{
+					get
+					{
+						return sSLEnabled;
+					}
+					set	
+					{
+						sSLEnabled = value;
 					}
 				}
 			}

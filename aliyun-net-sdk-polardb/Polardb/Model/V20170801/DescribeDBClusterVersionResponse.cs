@@ -27,6 +27,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string isLatestVersion;
 
+		private string isProxyLatestVersion;
+
 		private string dBVersion;
 
 		private string dBRevisionVersion;
@@ -47,6 +49,10 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string dBLatestVersion;
 
+		private string proxyLatestVersionAfterDBEngineUpgraded;
+
+		private List<DescribeDBClusterVersion_DBRevisionVersionListItem> dBRevisionVersionList;
+
 		public string IsLatestVersion
 		{
 			get
@@ -56,6 +62,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				isLatestVersion = value;
+			}
+		}
+
+		public string IsProxyLatestVersion
+		{
+			get
+			{
+				return isProxyLatestVersion;
+			}
+			set	
+			{
+				isProxyLatestVersion = value;
 			}
 		}
 
@@ -176,6 +194,90 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				dBLatestVersion = value;
+			}
+		}
+
+		public string ProxyLatestVersionAfterDBEngineUpgraded
+		{
+			get
+			{
+				return proxyLatestVersionAfterDBEngineUpgraded;
+			}
+			set	
+			{
+				proxyLatestVersionAfterDBEngineUpgraded = value;
+			}
+		}
+
+		public List<DescribeDBClusterVersion_DBRevisionVersionListItem> DBRevisionVersionList
+		{
+			get
+			{
+				return dBRevisionVersionList;
+			}
+			set	
+			{
+				dBRevisionVersionList = value;
+			}
+		}
+
+		public class DescribeDBClusterVersion_DBRevisionVersionListItem
+		{
+
+			private string releaseType;
+
+			private string revisionVersionCode;
+
+			private string revisionVersionName;
+
+			private string releaseNote;
+
+			public string ReleaseType
+			{
+				get
+				{
+					return releaseType;
+				}
+				set	
+				{
+					releaseType = value;
+				}
+			}
+
+			public string RevisionVersionCode
+			{
+				get
+				{
+					return revisionVersionCode;
+				}
+				set	
+				{
+					revisionVersionCode = value;
+				}
+			}
+
+			public string RevisionVersionName
+			{
+				get
+				{
+					return revisionVersionName;
+				}
+				set	
+				{
+					revisionVersionName = value;
+				}
+			}
+
+			public string ReleaseNote
+			{
+				get
+				{
+					return releaseNote;
+				}
+				set	
+				{
+					releaseNote = value;
+				}
 			}
 		}
 	}

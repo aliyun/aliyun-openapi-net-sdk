@@ -45,6 +45,8 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				dBAccount.AccountType = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].AccountType");
 				dBAccount.AccountLockState = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].AccountLockState");
 				dBAccount.AccountName = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].AccountName");
+				dBAccount.AccountPassword = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].AccountPassword");
+				dBAccount.TairPasswordSetted = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].TairPasswordSetted");
 
 				List<DescribeAccountsResponse.DescribeAccounts_DBAccount.DescribeAccounts_DatabasePrivilege> dBAccount_databasePrivileges = new List<DescribeAccountsResponse.DescribeAccounts_DBAccount.DescribeAccounts_DatabasePrivilege>();
 				for (int j = 0; j < _ctx.Length("DescribeAccounts.Accounts["+ i +"].DatabasePrivileges.Length"); j++) {

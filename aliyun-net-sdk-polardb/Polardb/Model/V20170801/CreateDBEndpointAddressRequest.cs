@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.polardb;
 using Aliyun.Acs.polardb.Transform;
 using Aliyun.Acs.polardb.Transform.V20170801;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
     public class CreateDBEndpointAddressRequest : RpcAcsRequest<CreateDBEndpointAddressResponse>
     {
         public CreateDBEndpointAddressRequest()
-            : base("polardb", "2017-08-01", "CreateDBEndpointAddress")
+            : base("polardb", "2017-08-01", "CreateDBEndpointAddress", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,6 +44,10 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string connectionStringPrefix;
 
+		private List<string> zoneInfos = new List<string>(){ };
+
+		private string securityGroupId;
+
 		private string dBEndpointId;
 
 		private string resourceOwnerAccount;
@@ -56,6 +59,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private long? ownerId;
 
 		private string netType;
+
+		private string vPCId;
 
 		public long? ResourceOwnerId
 		{
@@ -80,6 +85,40 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				connectionStringPrefix = value;
 				DictionaryUtil.Add(QueryParameters, "ConnectionStringPrefix", value);
+			}
+		}
+
+		public List<string> ZoneInfos
+		{
+			get
+			{
+				return zoneInfos;
+			}
+
+			set
+			{
+				zoneInfos = value;
+				if(zoneInfos != null)
+				{
+					for (int depth1 = 0; depth1 < zoneInfos.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"ZoneInfo." + (depth1 + 1), zoneInfos[depth1]);
+						DictionaryUtil.Add(QueryParameters,"ZoneInfo." + (depth1 + 1), zoneInfos[depth1]);
+					}
+				}
+			}
+		}
+
+		public string SecurityGroupId
+		{
+			get
+			{
+				return securityGroupId;
+			}
+			set	
+			{
+				securityGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
 			}
 		}
 
@@ -158,6 +197,51 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				netType = value;
 				DictionaryUtil.Add(QueryParameters, "NetType", value);
+			}
+		}
+
+		public string VPCId
+		{
+			get
+			{
+				return vPCId;
+			}
+			set	
+			{
+				vPCId = value;
+				DictionaryUtil.Add(QueryParameters, "VPCId", value);
+			}
+		}
+
+		public class ZoneInfo
+		{
+
+			private string vSwitchId;
+
+			private string zoneId;
+
+			public string VSwitchId
+			{
+				get
+				{
+					return vSwitchId;
+				}
+				set	
+				{
+					vSwitchId = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
 			}
 		}
 

@@ -31,6 +31,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private bool? success;
 
+		private string dBClusterId;
+
 		private DescribeMaskingRules_Data data;
 
 		public string RequestId
@@ -69,6 +71,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string DBClusterId
+		{
+			get
+			{
+				return dBClusterId;
+			}
+			set	
+			{
+				dBClusterId = value;
+			}
+		}
+
 		public DescribeMaskingRules_Data Data
 		{
 			get
@@ -84,7 +98,21 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		public class DescribeMaskingRules_Data
 		{
 
+			private string ruleVersion;
+
 			private List<string> ruleList;
+
+			public string RuleVersion
+			{
+				get
+				{
+					return ruleVersion;
+				}
+				set	
+				{
+					ruleVersion = value;
+				}
+			}
 
 			public List<string> RuleList
 			{
