@@ -96,6 +96,14 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string disable;
 
+			private string appName;
+
+			private long? createTime;
+
+			private long? modifyTime;
+
+			private string dataCenter;
+
 			[JsonProperty(PropertyName = "AppId")]
 			public string AppId
 			{
@@ -145,6 +153,58 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					disable = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AppName")]
+			public string AppName
+			{
+				get
+				{
+					return appName;
+				}
+				set	
+				{
+					appName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CreateTime")]
+			public long? CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ModifyTime")]
+			public long? ModifyTime
+			{
+				get
+				{
+					return modifyTime;
+				}
+				set	
+				{
+					modifyTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DataCenter")]
+			public string DataCenter
+			{
+				get
+				{
+					return dataCenter;
+				}
+				set	
+				{
+					dataCenter = value;
 				}
 			}
 		}

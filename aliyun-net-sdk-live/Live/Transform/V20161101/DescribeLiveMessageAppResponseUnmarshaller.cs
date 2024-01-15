@@ -33,12 +33,17 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			describeLiveMessageAppResponse.HttpResponse = _ctx.HttpResponse;
 			describeLiveMessageAppResponse.RequestId = _ctx.StringValue("DescribeLiveMessageApp.RequestId");
 			describeLiveMessageAppResponse.AppId = _ctx.StringValue("DescribeLiveMessageApp.AppId");
+			describeLiveMessageAppResponse.AppName = _ctx.StringValue("DescribeLiveMessageApp.AppName");
 			describeLiveMessageAppResponse.AppKey = _ctx.StringValue("DescribeLiveMessageApp.AppKey");
 			describeLiveMessageAppResponse.AppSign = _ctx.StringValue("DescribeLiveMessageApp.AppSign");
 			describeLiveMessageAppResponse.AuditType = _ctx.IntegerValue("DescribeLiveMessageApp.AuditType");
 			describeLiveMessageAppResponse.AuditUrl = _ctx.StringValue("DescribeLiveMessageApp.AuditUrl");
+			describeLiveMessageAppResponse.EventCallbackUrl = _ctx.StringValue("DescribeLiveMessageApp.EventCallbackUrl");
 			describeLiveMessageAppResponse.CallbackUrl = _ctx.StringValue("DescribeLiveMessageApp.CallbackUrl");
 			describeLiveMessageAppResponse.Disable = _ctx.BooleanValue("DescribeLiveMessageApp.Disable");
+			describeLiveMessageAppResponse.CreateTime = _ctx.LongValue("DescribeLiveMessageApp.CreateTime");
+			describeLiveMessageAppResponse.ModifyTime = _ctx.LongValue("DescribeLiveMessageApp.ModifyTime");
+			describeLiveMessageAppResponse.DataCenter = _ctx.StringValue("DescribeLiveMessageApp.DataCenter");
         
 			return describeLiveMessageAppResponse;
         }

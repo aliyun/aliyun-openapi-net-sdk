@@ -45,6 +45,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private int? mode;
 
+		private string userData;
+
 		private string appName;
 
 		private string streamName;
@@ -54,6 +56,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private long? ownerId;
 
 		private string command;
+
+		private int? snapshotType;
 
 		private int? interval;
 
@@ -82,6 +86,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				mode = value;
 				DictionaryUtil.Add(QueryParameters, "Mode", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "UserData")]
+		public string UserData
+		{
+			get
+			{
+				return userData;
+			}
+			set	
+			{
+				userData = value;
+				DictionaryUtil.Add(QueryParameters, "UserData", value);
 			}
 		}
 
@@ -152,6 +170,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				command = value;
 				DictionaryUtil.Add(QueryParameters, "Command", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "SnapshotType")]
+		public int? SnapshotType
+		{
+			get
+			{
+				return snapshotType;
+			}
+			set	
+			{
+				snapshotType = value;
+				DictionaryUtil.Add(QueryParameters, "SnapshotType", value.ToString());
 			}
 		}
 

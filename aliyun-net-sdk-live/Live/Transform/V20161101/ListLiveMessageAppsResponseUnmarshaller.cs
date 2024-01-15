@@ -42,6 +42,10 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				apps.AppKey = _ctx.StringValue("ListLiveMessageApps.AppList["+ i +"].AppKey");
 				apps.AppSign = _ctx.StringValue("ListLiveMessageApps.AppList["+ i +"].AppSign");
 				apps.Disable = _ctx.StringValue("ListLiveMessageApps.AppList["+ i +"].Disable");
+				apps.AppName = _ctx.StringValue("ListLiveMessageApps.AppList["+ i +"].AppName");
+				apps.CreateTime = _ctx.LongValue("ListLiveMessageApps.AppList["+ i +"].CreateTime");
+				apps.ModifyTime = _ctx.LongValue("ListLiveMessageApps.AppList["+ i +"].ModifyTime");
+				apps.DataCenter = _ctx.StringValue("ListLiveMessageApps.AppList["+ i +"].DataCenter");
 
 				listLiveMessageAppsResponse_appList.Add(apps);
 			}

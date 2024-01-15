@@ -29,6 +29,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string appId;
 
+		private string appName;
+
 		private string appKey;
 
 		private string appSign;
@@ -37,9 +39,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string auditUrl;
 
+		private string eventCallbackUrl;
+
 		private string callbackUrl;
 
 		private bool? disable;
+
+		private long? createTime;
+
+		private long? modifyTime;
+
+		private string dataCenter;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -64,6 +74,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				appId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "AppName")]
+		public string AppName
+		{
+			get
+			{
+				return appName;
+			}
+			set	
+			{
+				appName = value;
 			}
 		}
 
@@ -119,6 +142,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "EventCallbackUrl")]
+		public string EventCallbackUrl
+		{
+			get
+			{
+				return eventCallbackUrl;
+			}
+			set	
+			{
+				eventCallbackUrl = value;
+			}
+		}
+
 		[JsonProperty(PropertyName = "CallbackUrl")]
 		public string CallbackUrl
 		{
@@ -142,6 +178,45 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				disable = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "CreateTime")]
+		public long? CreateTime
+		{
+			get
+			{
+				return createTime;
+			}
+			set	
+			{
+				createTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ModifyTime")]
+		public long? ModifyTime
+		{
+			get
+			{
+				return modifyTime;
+			}
+			set	
+			{
+				modifyTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DataCenter")]
+		public string DataCenter
+		{
+			get
+			{
+				return dataCenter;
+			}
+			set	
+			{
+				dataCenter = value;
 			}
 		}
 	}

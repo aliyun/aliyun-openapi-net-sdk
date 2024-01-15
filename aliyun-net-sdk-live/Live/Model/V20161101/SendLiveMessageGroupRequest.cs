@@ -48,6 +48,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private long? staticsIncrease;
 
+		private bool? noCache;
+
 		private long? msgType;
 
 		private bool? noStorage;
@@ -103,6 +105,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				staticsIncrease = value;
 				DictionaryUtil.Add(QueryParameters, "StaticsIncrease", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "NoCache")]
+		public bool? NoCache
+		{
+			get
+			{
+				return noCache;
+			}
+			set	
+			{
+				noCache = value;
+				DictionaryUtil.Add(QueryParameters, "NoCache", value.ToString());
 			}
 		}
 
