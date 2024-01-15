@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Iot;
 using Aliyun.Acs.Iot.Transform;
 using Aliyun.Acs.Iot.Transform.V20180120;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class QueryDeviceOriginalServiceDataRequest : RpcAcsRequest<QueryDeviceOriginalServiceDataResponse>
     {
         public QueryDeviceOriginalServiceDataRequest()
-            : base("Iot", "2018-01-20", "QueryDeviceOriginalServiceData")
+            : base("Iot", "2018-01-20", "QueryDeviceOriginalServiceData", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

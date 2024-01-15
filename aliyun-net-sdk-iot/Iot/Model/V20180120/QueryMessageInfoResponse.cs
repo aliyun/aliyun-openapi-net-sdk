@@ -106,7 +106,13 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private long? generateTime;
 
+			private string transformedMessageContent;
+
+			private string transformedTopicFullName;
+
 			private List<QueryMessageInfo_UserProperty> userProperties;
+
+			private List<QueryMessageInfo_MqttProperty> mqttProperties;
 
 			public string UniMsgId
 			{
@@ -156,6 +162,30 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
+			public string TransformedMessageContent
+			{
+				get
+				{
+					return transformedMessageContent;
+				}
+				set	
+				{
+					transformedMessageContent = value;
+				}
+			}
+
+			public string TransformedTopicFullName
+			{
+				get
+				{
+					return transformedTopicFullName;
+				}
+				set	
+				{
+					transformedTopicFullName = value;
+				}
+			}
+
 			public List<QueryMessageInfo_UserProperty> UserProperties
 			{
 				get
@@ -168,7 +198,51 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
+			public List<QueryMessageInfo_MqttProperty> MqttProperties
+			{
+				get
+				{
+					return mqttProperties;
+				}
+				set	
+				{
+					mqttProperties = value;
+				}
+			}
+
 			public class QueryMessageInfo_UserProperty
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
+				}
+			}
+
+			public class QueryMessageInfo_MqttProperty
 			{
 
 				private string key;

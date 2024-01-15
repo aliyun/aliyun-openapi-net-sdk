@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Iot;
 using Aliyun.Acs.Iot.Transform;
 using Aliyun.Acs.Iot.Transform.V20180120;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class CreateConsumerGroupRequest : RpcAcsRequest<CreateConsumerGroupResponse>
     {
         public CreateConsumerGroupRequest()
-            : base("Iot", "2018-01-20", "CreateConsumerGroup")
+            : base("Iot", "2018-01-20", "CreateConsumerGroup", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,26 +40,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string type;
-
 		private string iotInstanceId;
 
 		private string groupName;
-
-		private string subBizCode;
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
 
 		public string IotInstanceId
 		{
@@ -85,19 +67,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				groupName = value;
 				DictionaryUtil.Add(QueryParameters, "GroupName", value);
-			}
-		}
-
-		public string SubBizCode
-		{
-			get
-			{
-				return subBizCode;
-			}
-			set	
-			{
-				subBizCode = value;
-				DictionaryUtil.Add(QueryParameters, "SubBizCode", value);
 			}
 		}
 

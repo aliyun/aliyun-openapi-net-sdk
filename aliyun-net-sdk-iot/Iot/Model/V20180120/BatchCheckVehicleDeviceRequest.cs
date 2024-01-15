@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Iot;
 using Aliyun.Acs.Iot.Transform;
 using Aliyun.Acs.Iot.Transform.V20180120;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class BatchCheckVehicleDeviceRequest : RpcAcsRequest<BatchCheckVehicleDeviceResponse>
     {
         public BatchCheckVehicleDeviceRequest()
-            : base("Iot", "2018-01-20", "BatchCheckVehicleDevice")
+            : base("Iot", "2018-01-20", "BatchCheckVehicleDevice", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -85,6 +84,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				deviceLists = value;
 				for (int i = 0; i < deviceLists.Count; i++)
 				{
+					DictionaryUtil.Add(BodyParameters,"DeviceList." + (i + 1) + ".DeviceSecret", deviceLists[i].DeviceSecret);
 					DictionaryUtil.Add(BodyParameters,"DeviceList." + (i + 1) + ".DeviceName", deviceLists[i].DeviceName);
 					DictionaryUtil.Add(BodyParameters,"DeviceList." + (i + 1) + ".DeviceId", deviceLists[i].DeviceId);
 					DictionaryUtil.Add(BodyParameters,"DeviceList." + (i + 1) + ".Manufacturer", deviceLists[i].Manufacturer);
@@ -96,6 +96,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		public class DeviceList
 		{
 
+			private string deviceSecret;
+
 			private string deviceName;
 
 			private string deviceId;
@@ -103,6 +105,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			private string manufacturer;
 
 			private string deviceModel;
+
+			public string DeviceSecret
+			{
+				get
+				{
+					return deviceSecret;
+				}
+				set	
+				{
+					deviceSecret = value;
+				}
+			}
 
 			public string DeviceName
 			{

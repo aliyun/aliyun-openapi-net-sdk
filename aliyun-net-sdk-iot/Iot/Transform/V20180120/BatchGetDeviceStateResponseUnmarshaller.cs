@@ -45,6 +45,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				deviceStatus.AsAddress = _ctx.StringValue("BatchGetDeviceState.DeviceStatusList["+ i +"].AsAddress");
 				deviceStatus.LastOnlineTime = _ctx.StringValue("BatchGetDeviceState.DeviceStatusList["+ i +"].LastOnlineTime");
 				deviceStatus.IotId = _ctx.StringValue("BatchGetDeviceState.DeviceStatusList["+ i +"].IotId");
+				deviceStatus.Timestamp = _ctx.LongValue("BatchGetDeviceState.DeviceStatusList["+ i +"].Timestamp");
 
 				batchGetDeviceStateResponse_deviceStatusList.Add(deviceStatus);
 			}
