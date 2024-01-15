@@ -1,3 +1,6 @@
+2024-01-15 Version: 3.1.15
+- support UpdateSecurityGroup
+
 2024-01-08 Version: 0.0.2
 - Support share resource to service for RS.
 - Support display precheck information.
