@@ -235,6 +235,8 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 
 			private int? pitchRate;
 
+			private int? sampleRate;
+
 			[JsonProperty(PropertyName = "Voice")]
 			public string Voice
 			{
@@ -284,6 +286,19 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 				set	
 				{
 					pitchRate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SampleRate")]
+			public int? SampleRate
+			{
+				get
+				{
+					return sampleRate;
+				}
+				set	
+				{
+					sampleRate = value;
 				}
 			}
 		}
@@ -363,6 +378,8 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 
 			private bool? subtitleEmbedded;
 
+			private SubtitleStyle subtitleStyle_;
+
 			private int? resolution;
 
 			private int? alphaFormat;
@@ -419,6 +436,19 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 				}
 			}
 
+			[JsonProperty(PropertyName = "SubtitleStyle")]
+			public SubtitleStyle SubtitleStyle_
+			{
+				get
+				{
+					return subtitleStyle_;
+				}
+				set	
+				{
+					subtitleStyle_ = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "Resolution")]
 			public int? Resolution
 			{
@@ -442,6 +472,85 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 				set	
 				{
 					alphaFormat = value;
+				}
+			}
+
+			public class SubtitleStyle
+			{
+
+				private string color;
+
+				private int? size;
+
+				private string name;
+
+				private int? y;
+
+				private string outlineColor;
+
+				[JsonProperty(PropertyName = "Color")]
+				public string Color
+				{
+					get
+					{
+						return color;
+					}
+					set	
+					{
+						color = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Size")]
+				public int? Size
+				{
+					get
+					{
+						return size;
+					}
+					set	
+					{
+						size = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Name")]
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Y")]
+				public int? Y
+				{
+					get
+					{
+						return y;
+					}
+					set	
+					{
+						y = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "OutlineColor")]
+				public string OutlineColor
+				{
+					get
+					{
+						return outlineColor;
+					}
+					set	
+					{
+						outlineColor = value;
+					}
 				}
 			}
 		}

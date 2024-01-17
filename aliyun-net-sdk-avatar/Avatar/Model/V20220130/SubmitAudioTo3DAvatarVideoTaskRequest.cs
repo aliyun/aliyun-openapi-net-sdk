@@ -39,6 +39,8 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 
 		private App app_;
 
+		private AudioInfo audioInfo_;
+
 		private AvatarInfo avatarInfo_;
 
 		private string title;
@@ -67,6 +69,22 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			{
 				app_ = value;
 				DictionaryUtil.Add(QueryParameters, "App", JsonConvert.SerializeObject(value));
+
+			}
+		}
+
+		[JsonProperty(PropertyName = "AudioInfo")]
+		public AudioInfo AudioInfo_
+		{
+			get
+			{
+				return audioInfo_;
+			}
+
+			set
+			{
+				audioInfo_ = value;
+				DictionaryUtil.Add(QueryParameters, "AudioInfo", JsonConvert.SerializeObject(value));
 
 			}
 		}
@@ -202,6 +220,25 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 				set	
 				{
 					appId = value;
+				}
+			}
+		}
+
+		public class AudioInfo
+		{
+
+			private int? sampleRate;
+
+			[JsonProperty(PropertyName = "SampleRate")]
+			public int? SampleRate
+			{
+				get
+				{
+					return sampleRate;
+				}
+				set	
+				{
+					sampleRate = value;
 				}
 			}
 		}
