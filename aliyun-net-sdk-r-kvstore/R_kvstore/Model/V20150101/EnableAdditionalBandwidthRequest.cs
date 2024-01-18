@@ -68,6 +68,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private bool? autoRenew;
 
+		private string chargeType;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -247,6 +249,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				autoRenew = value;
 				DictionaryUtil.Add(QueryParameters, "AutoRenew", value.ToString());
+			}
+		}
+
+		public string ChargeType
+		{
+			get
+			{
+				return chargeType;
+			}
+			set	
+			{
+				chargeType = value;
+				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
 			}
 		}
 

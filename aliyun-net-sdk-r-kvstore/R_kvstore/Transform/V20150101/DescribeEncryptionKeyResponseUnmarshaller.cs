@@ -40,6 +40,8 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			describeEncryptionKeyResponse.KeyUsage = _ctx.StringValue("DescribeEncryptionKey.KeyUsage");
 			describeEncryptionKeyResponse.EncryptionKey = _ctx.StringValue("DescribeEncryptionKey.EncryptionKey");
 			describeEncryptionKeyResponse.Creator = _ctx.StringValue("DescribeEncryptionKey.Creator");
+			describeEncryptionKeyResponse.EncryptionName = _ctx.StringValue("DescribeEncryptionKey.EncryptionName");
+			describeEncryptionKeyResponse.RoleArn = _ctx.StringValue("DescribeEncryptionKey.RoleArn");
         
 			return describeEncryptionKeyResponse;
         }

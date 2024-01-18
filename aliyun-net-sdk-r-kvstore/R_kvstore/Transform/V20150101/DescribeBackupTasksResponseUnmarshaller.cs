@@ -34,6 +34,16 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			describeBackupTasksResponse.InstanceId = _ctx.StringValue("DescribeBackupTasks.InstanceId");
 			describeBackupTasksResponse.RequestId = _ctx.StringValue("DescribeBackupTasks.RequestId");
 
+			DescribeBackupTasksResponse.DescribeBackupTasks_AccessDeniedDetail accessDeniedDetail = new DescribeBackupTasksResponse.DescribeBackupTasks_AccessDeniedDetail();
+			accessDeniedDetail.AuthAction = _ctx.StringValue("DescribeBackupTasks.AccessDeniedDetail.AuthAction");
+			accessDeniedDetail.AuthPrincipalDisplayName = _ctx.StringValue("DescribeBackupTasks.AccessDeniedDetail.AuthPrincipalDisplayName");
+			accessDeniedDetail.AuthPrincipalOwnerId = _ctx.StringValue("DescribeBackupTasks.AccessDeniedDetail.AuthPrincipalOwnerId");
+			accessDeniedDetail.AuthPrincipalType = _ctx.StringValue("DescribeBackupTasks.AccessDeniedDetail.AuthPrincipalType");
+			accessDeniedDetail.EncodedDiagnosticMessage = _ctx.StringValue("DescribeBackupTasks.AccessDeniedDetail.EncodedDiagnosticMessage");
+			accessDeniedDetail.NoPermissionType = _ctx.StringValue("DescribeBackupTasks.AccessDeniedDetail.NoPermissionType");
+			accessDeniedDetail.PolicyType = _ctx.StringValue("DescribeBackupTasks.AccessDeniedDetail.PolicyType");
+			describeBackupTasksResponse.AccessDeniedDetail = accessDeniedDetail;
+
 			List<DescribeBackupTasksResponse.DescribeBackupTasks_BackupJob> describeBackupTasksResponse_backupJobs = new List<DescribeBackupTasksResponse.DescribeBackupTasks_BackupJob>();
 			for (int i = 0; i < _ctx.Length("DescribeBackupTasks.BackupJobs.Length"); i++) {
 				DescribeBackupTasksResponse.DescribeBackupTasks_BackupJob backupJob = new DescribeBackupTasksResponse.DescribeBackupTasks_BackupJob();

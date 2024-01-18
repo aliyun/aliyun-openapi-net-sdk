@@ -31,7 +31,6 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			CreateGlobalDistributeCacheResponse createGlobalDistributeCacheResponse = new CreateGlobalDistributeCacheResponse();
 
 			createGlobalDistributeCacheResponse.HttpResponse = _ctx.HttpResponse;
-			createGlobalDistributeCacheResponse.GlobalInstanceId = _ctx.StringValue("CreateGlobalDistributeCache.GlobalInstanceId");
 			createGlobalDistributeCacheResponse.RequestId = _ctx.StringValue("CreateGlobalDistributeCache.RequestId");
         
 			return createGlobalDistributeCacheResponse;

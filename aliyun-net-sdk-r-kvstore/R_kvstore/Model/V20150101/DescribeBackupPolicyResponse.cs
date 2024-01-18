@@ -37,6 +37,10 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private int? enableBackupLog;
 
+		private string dbsInstance;
+
+		private DescribeBackupPolicy_AccessDeniedDetail accessDeniedDetail;
+
 		public string BackupRetentionPeriod
 		{
 			get
@@ -106,6 +110,132 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				enableBackupLog = value;
+			}
+		}
+
+		public string DbsInstance
+		{
+			get
+			{
+				return dbsInstance;
+			}
+			set	
+			{
+				dbsInstance = value;
+			}
+		}
+
+		public DescribeBackupPolicy_AccessDeniedDetail AccessDeniedDetail
+		{
+			get
+			{
+				return accessDeniedDetail;
+			}
+			set	
+			{
+				accessDeniedDetail = value;
+			}
+		}
+
+		public class DescribeBackupPolicy_AccessDeniedDetail
+		{
+
+			private string authAction;
+
+			private string authPrincipalDisplayName;
+
+			private string authPrincipalOwnerId;
+
+			private string authPrincipalType;
+
+			private string encodedDiagnosticMessage;
+
+			private string noPermissionType;
+
+			private string policyType;
+
+			public string AuthAction
+			{
+				get
+				{
+					return authAction;
+				}
+				set	
+				{
+					authAction = value;
+				}
+			}
+
+			public string AuthPrincipalDisplayName
+			{
+				get
+				{
+					return authPrincipalDisplayName;
+				}
+				set	
+				{
+					authPrincipalDisplayName = value;
+				}
+			}
+
+			public string AuthPrincipalOwnerId
+			{
+				get
+				{
+					return authPrincipalOwnerId;
+				}
+				set	
+				{
+					authPrincipalOwnerId = value;
+				}
+			}
+
+			public string AuthPrincipalType
+			{
+				get
+				{
+					return authPrincipalType;
+				}
+				set	
+				{
+					authPrincipalType = value;
+				}
+			}
+
+			public string EncodedDiagnosticMessage
+			{
+				get
+				{
+					return encodedDiagnosticMessage;
+				}
+				set	
+				{
+					encodedDiagnosticMessage = value;
+				}
+			}
+
+			public string NoPermissionType
+			{
+				get
+				{
+					return noPermissionType;
+				}
+				set	
+				{
+					noPermissionType = value;
+				}
+			}
+
+			public string PolicyType
+			{
+				get
+				{
+					return policyType;
+				}
+				set	
+				{
+					policyType = value;
+				}
 			}
 		}
 	}

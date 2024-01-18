@@ -25,8 +25,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 	public class DescribeIntranetAttributeResponse : AcsResponse
 	{
 
-		private string bandwidthExpireTime;
-
 		private bool? autoRenewal;
 
 		private string requestId;
@@ -35,17 +33,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private int? intranetBandwidth;
 
-		public string BandwidthExpireTime
-		{
-			get
-			{
-				return bandwidthExpireTime;
-			}
-			set	
-			{
-				bandwidthExpireTime = value;
-			}
-		}
+		private bool? hasPrePaidBandWidthOrderRunning;
+
+		private string bandwidthExpireTime;
+
+		private string bandwidthPrePaid;
 
 		public bool? AutoRenewal
 		{
@@ -92,6 +84,42 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				intranetBandwidth = value;
+			}
+		}
+
+		public bool? HasPrePaidBandWidthOrderRunning
+		{
+			get
+			{
+				return hasPrePaidBandWidthOrderRunning;
+			}
+			set	
+			{
+				hasPrePaidBandWidthOrderRunning = value;
+			}
+		}
+
+		public string BandwidthExpireTime
+		{
+			get
+			{
+				return bandwidthExpireTime;
+			}
+			set	
+			{
+				bandwidthExpireTime = value;
+			}
+		}
+
+		public string BandwidthPrePaid
+		{
+			get
+			{
+				return bandwidthPrePaid;
+			}
+			set	
+			{
+				bandwidthPrePaid = value;
 			}
 		}
 	}

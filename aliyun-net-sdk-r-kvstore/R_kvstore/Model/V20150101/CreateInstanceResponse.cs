@@ -67,6 +67,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string userName;
 
+		private long? orderId;
+
 		public string VpcId
 		{
 			get
@@ -316,6 +318,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				userName = value;
+			}
+		}
+
+		public long? OrderId
+		{
+			get
+			{
+				return orderId;
+			}
+			set	
+			{
+				orderId = value;
 			}
 		}
 	}

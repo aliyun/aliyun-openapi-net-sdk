@@ -35,6 +35,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string certCommonName;
 
+		private string certDownloadURL;
+
 		public string InstanceId
 		{
 			get
@@ -92,6 +94,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				certCommonName = value;
+			}
+		}
+
+		public string CertDownloadURL
+		{
+			get
+			{
+				return certDownloadURL;
+			}
+			set	
+			{
+				certDownloadURL = value;
 			}
 		}
 	}

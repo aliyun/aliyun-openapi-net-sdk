@@ -31,7 +31,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private List<DescribeLogicInstanceTopology_NodeInfo> redisProxyList;
 
-		private List<DescribeLogicInstanceTopology_NodeInfo> redisShardList;
+		private List<DescribeLogicInstanceTopology_NodeInfo1> redisShardList;
 
 		public string InstanceId
 		{
@@ -69,7 +69,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public List<DescribeLogicInstanceTopology_NodeInfo> RedisShardList
+		public List<DescribeLogicInstanceTopology_NodeInfo1> RedisShardList
 		{
 			get
 			{
@@ -151,6 +151,94 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					nodeId = value;
+				}
+			}
+		}
+
+		public class DescribeLogicInstanceTopology_NodeInfo1
+		{
+
+			private string capacity;
+
+			private string connection;
+
+			private string nodeType;
+
+			private string bandwidth;
+
+			private string nodeId;
+
+			private string subInstanceType;
+
+			public string Capacity
+			{
+				get
+				{
+					return capacity;
+				}
+				set	
+				{
+					capacity = value;
+				}
+			}
+
+			public string Connection
+			{
+				get
+				{
+					return connection;
+				}
+				set	
+				{
+					connection = value;
+				}
+			}
+
+			public string NodeType
+			{
+				get
+				{
+					return nodeType;
+				}
+				set	
+				{
+					nodeType = value;
+				}
+			}
+
+			public string Bandwidth
+			{
+				get
+				{
+					return bandwidth;
+				}
+				set	
+				{
+					bandwidth = value;
+				}
+			}
+
+			public string NodeId
+			{
+				get
+				{
+					return nodeId;
+				}
+				set	
+				{
+					nodeId = value;
+				}
+			}
+
+			public string SubInstanceType
+			{
+				get
+				{
+					return subInstanceType;
+				}
+				set	
+				{
+					subInstanceType = value;
 				}
 			}
 		}

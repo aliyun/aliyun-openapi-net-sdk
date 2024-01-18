@@ -44,6 +44,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string securityToken;
 
+		private long? autoRenewPeriod;
+
 		private long? period;
 
 		private bool? autoPay;
@@ -55,6 +57,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private long? ownerId;
 
 		private string instanceId;
+
+		private string autoRenew;
 
 		private string chargeType;
 
@@ -81,6 +85,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public long? AutoRenewPeriod
+		{
+			get
+			{
+				return autoRenewPeriod;
+			}
+			set	
+			{
+				autoRenewPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "AutoRenewPeriod", value.ToString());
 			}
 		}
 
@@ -159,6 +176,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string AutoRenew
+		{
+			get
+			{
+				return autoRenew;
+			}
+			set	
+			{
+				autoRenew = value;
+				DictionaryUtil.Add(QueryParameters, "AutoRenew", value);
 			}
 		}
 

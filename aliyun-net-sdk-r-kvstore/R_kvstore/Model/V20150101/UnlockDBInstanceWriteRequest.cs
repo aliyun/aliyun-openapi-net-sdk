@@ -27,44 +27,31 @@ using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class ModifyNodeSpecRequest : RpcAcsRequest<ModifyNodeSpecResponse>
+    public class UnlockDBInstanceWriteRequest : RpcAcsRequest<UnlockDBInstanceWriteResponse>
     {
-        public ModifyNodeSpecRequest()
-            : base("R-kvstore", "2015-01-01", "ModifyNodeSpec", "redisa", "openAPI")
+        public UnlockDBInstanceWriteRequest()
+            : base("R-kvstore", "2015-01-01", "UnlockDBInstanceWrite", "redisa", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.R_kvstore.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.R_kvstore.Endpoint.endpointRegionalType, null);
             }
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private string couponNo;
-
-		private string instanceClass;
-
-		private string switchTimeMode;
-
 		private string securityToken;
 
-		private string nodeId;
-
-		private string businessInfo;
-
-		private bool? autoPay;
+		private string dBInstanceId;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string instanceId;
-
-		private string orderType;
 
 		public long? ResourceOwnerId
 		{
@@ -76,45 +63,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string CouponNo
-		{
-			get
-			{
-				return couponNo;
-			}
-			set	
-			{
-				couponNo = value;
-				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
-			}
-		}
-
-		public string InstanceClass
-		{
-			get
-			{
-				return instanceClass;
-			}
-			set	
-			{
-				instanceClass = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceClass", value);
-			}
-		}
-
-		public string SwitchTimeMode
-		{
-			get
-			{
-				return switchTimeMode;
-			}
-			set	
-			{
-				switchTimeMode = value;
-				DictionaryUtil.Add(QueryParameters, "SwitchTimeMode", value);
 			}
 		}
 
@@ -131,42 +79,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string NodeId
+		public string DBInstanceId
 		{
 			get
 			{
-				return nodeId;
+				return dBInstanceId;
 			}
 			set	
 			{
-				nodeId = value;
-				DictionaryUtil.Add(QueryParameters, "NodeId", value);
-			}
-		}
-
-		public string BusinessInfo
-		{
-			get
-			{
-				return businessInfo;
-			}
-			set	
-			{
-				businessInfo = value;
-				DictionaryUtil.Add(QueryParameters, "BusinessInfo", value);
-			}
-		}
-
-		public bool? AutoPay
-		{
-			get
-			{
-				return autoPay;
-			}
-			set	
-			{
-				autoPay = value;
-				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 
@@ -209,35 +131,14 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string InstanceId
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
+			return false;
 		}
 
-		public string OrderType
-		{
-			get
-			{
-				return orderType;
-			}
-			set	
-			{
-				orderType = value;
-				DictionaryUtil.Add(QueryParameters, "OrderType", value);
-			}
-		}
-
-        public override ModifyNodeSpecResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UnlockDBInstanceWriteResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyNodeSpecResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UnlockDBInstanceWriteResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

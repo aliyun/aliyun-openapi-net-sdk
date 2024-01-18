@@ -228,6 +228,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string tradeAmount;
 
+			private bool? showDiscountInfo;
+
 			private List<DescribePrice_Coupon> coupons;
 
 			private List<string> ruleIds1;
@@ -289,6 +291,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					tradeAmount = value;
+				}
+			}
+
+			public bool? ShowDiscountInfo
+			{
+				get
+				{
+					return showDiscountInfo;
+				}
+				set	
+				{
+					showDiscountInfo = value;
 				}
 			}
 

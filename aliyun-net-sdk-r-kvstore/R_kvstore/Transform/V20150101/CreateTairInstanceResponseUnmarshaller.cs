@@ -45,6 +45,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			createTairInstanceResponse.ZoneId = _ctx.StringValue("CreateTairInstance.ZoneId");
 			createTairInstanceResponse.InstanceStatus = _ctx.StringValue("CreateTairInstance.InstanceStatus");
 			createTairInstanceResponse.TaskId = _ctx.StringValue("CreateTairInstance.TaskId");
+			createTairInstanceResponse.OrderId = _ctx.LongValue("CreateTairInstance.OrderId");
         
 			return createTairInstanceResponse;
         }

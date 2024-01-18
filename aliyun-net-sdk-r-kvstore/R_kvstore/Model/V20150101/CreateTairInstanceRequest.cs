@@ -56,6 +56,10 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string securityToken;
 
+		private List<string> tags = new List<string>(){ };
+
+		private string globalSecurityGroupIds;
+
 		private string businessInfo;
 
 		private int? shardCount;
@@ -63,6 +67,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private string autoRenewPeriod;
 
 		private int? period;
+
+		private bool? dryRun;
 
 		private string backupId;
 
@@ -77,6 +83,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private string instanceName;
 
 		private string autoRenew;
+
+		private int? port;
 
 		private string zoneId;
 
@@ -100,9 +108,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string globalInstanceId;
 
+		private string paramGroupId;
+
 		private string vpcId;
 
+		private int? readOnlyCount;
+
 		private string chargeType;
+
+		private string clusterBackupId;
 
 		public long? ResourceOwnerId
 		{
@@ -208,6 +222,40 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public List<string> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				if(tags != null)
+				{
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
+				}
+			}
+		}
+
+		public string GlobalSecurityGroupIds
+		{
+			get
+			{
+				return globalSecurityGroupIds;
+			}
+			set	
+			{
+				globalSecurityGroupIds = value;
+				DictionaryUtil.Add(QueryParameters, "GlobalSecurityGroupIds", value);
+			}
+		}
+
 		public string BusinessInfo
 		{
 			get
@@ -257,6 +305,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				period = value;
 				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
+			}
+		}
+
+		public bool? DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
 			}
 		}
 
@@ -348,6 +409,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				autoRenew = value;
 				DictionaryUtil.Add(QueryParameters, "AutoRenew", value);
+			}
+		}
+
+		public int? Port
+		{
+			get
+			{
+				return port;
+			}
+			set	
+			{
+				port = value;
+				DictionaryUtil.Add(QueryParameters, "Port", value.ToString());
 			}
 		}
 
@@ -494,6 +568,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string ParamGroupId
+		{
+			get
+			{
+				return paramGroupId;
+			}
+			set	
+			{
+				paramGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ParamGroupId", value);
+			}
+		}
+
 		public string VpcId
 		{
 			get
@@ -507,6 +594,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public int? ReadOnlyCount
+		{
+			get
+			{
+				return readOnlyCount;
+			}
+			set	
+			{
+				readOnlyCount = value;
+				DictionaryUtil.Add(QueryParameters, "ReadOnlyCount", value.ToString());
+			}
+		}
+
 		public string ChargeType
 		{
 			get
@@ -517,6 +617,51 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				chargeType = value;
 				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
+			}
+		}
+
+		public string ClusterBackupId
+		{
+			get
+			{
+				return clusterBackupId;
+			}
+			set	
+			{
+				clusterBackupId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterBackupId", value);
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

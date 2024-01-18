@@ -22,24 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-	public class ModifyNodeSpecResponse : AcsResponse
+	public class UnlockDBInstanceWriteResponse : AcsResponse
 	{
-
-		private long? orderId;
 
 		private string requestId;
 
-		public long? OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
-			}
-		}
+		private string dBInstanceName;
+
+		private long? taskId;
 
 		public string RequestId
 		{
@@ -50,6 +40,30 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string DBInstanceName
+		{
+			get
+			{
+				return dBInstanceName;
+			}
+			set	
+			{
+				dBInstanceName = value;
+			}
+		}
+
+		public long? TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
 			}
 		}
 	}

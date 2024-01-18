@@ -54,6 +54,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? ownerId;
 
+		private bool? forceTrans;
+
 		private string instanceId;
 
 		public long? ResourceOwnerId
@@ -144,6 +146,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public bool? ForceTrans
+		{
+			get
+			{
+				return forceTrans;
+			}
+			set	
+			{
+				forceTrans = value;
+				DictionaryUtil.Add(QueryParameters, "ForceTrans", value.ToString());
 			}
 		}
 

@@ -36,6 +36,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			describeInstanceSSLResponse.SSLEnabled = _ctx.StringValue("DescribeInstanceSSL.SSLEnabled");
 			describeInstanceSSLResponse.SSLExpiredTime = _ctx.StringValue("DescribeInstanceSSL.SSLExpiredTime");
 			describeInstanceSSLResponse.CertCommonName = _ctx.StringValue("DescribeInstanceSSL.CertCommonName");
+			describeInstanceSSLResponse.CertDownloadURL = _ctx.StringValue("DescribeInstanceSSL.CertDownloadURL");
         
 			return describeInstanceSSLResponse;
         }

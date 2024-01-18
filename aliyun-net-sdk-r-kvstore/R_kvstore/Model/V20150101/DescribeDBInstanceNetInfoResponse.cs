@@ -92,6 +92,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string iPAddress;
 
+			private int? isSlaveProxy;
+
 			public int? DirectConnection
 			{
 				get
@@ -221,6 +223,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					iPAddress = value;
+				}
+			}
+
+			public int? IsSlaveProxy
+			{
+				get
+				{
+					return isSlaveProxy;
+				}
+				set	
+				{
+					isSlaveProxy = value;
 				}
 			}
 		}

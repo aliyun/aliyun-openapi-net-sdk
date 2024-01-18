@@ -52,6 +52,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			createInstanceResponse.InstanceStatus = _ctx.StringValue("CreateInstance.InstanceStatus");
 			createInstanceResponse.PrivateIpAddr = _ctx.StringValue("CreateInstance.PrivateIpAddr");
 			createInstanceResponse.UserName = _ctx.StringValue("CreateInstance.UserName");
+			createInstanceResponse.OrderId = _ctx.LongValue("CreateInstance.OrderId");
         
 			return createInstanceResponse;
         }

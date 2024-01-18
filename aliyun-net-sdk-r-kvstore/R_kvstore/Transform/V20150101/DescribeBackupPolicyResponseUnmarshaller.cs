@@ -37,6 +37,17 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			describeBackupPolicyResponse.PreferredNextBackupTime = _ctx.StringValue("DescribeBackupPolicy.PreferredNextBackupTime");
 			describeBackupPolicyResponse.PreferredBackupTime = _ctx.StringValue("DescribeBackupPolicy.PreferredBackupTime");
 			describeBackupPolicyResponse.EnableBackupLog = _ctx.IntegerValue("DescribeBackupPolicy.EnableBackupLog");
+			describeBackupPolicyResponse.DbsInstance = _ctx.StringValue("DescribeBackupPolicy.DbsInstance");
+
+			DescribeBackupPolicyResponse.DescribeBackupPolicy_AccessDeniedDetail accessDeniedDetail = new DescribeBackupPolicyResponse.DescribeBackupPolicy_AccessDeniedDetail();
+			accessDeniedDetail.AuthAction = _ctx.StringValue("DescribeBackupPolicy.AccessDeniedDetail.AuthAction");
+			accessDeniedDetail.AuthPrincipalDisplayName = _ctx.StringValue("DescribeBackupPolicy.AccessDeniedDetail.AuthPrincipalDisplayName");
+			accessDeniedDetail.AuthPrincipalOwnerId = _ctx.StringValue("DescribeBackupPolicy.AccessDeniedDetail.AuthPrincipalOwnerId");
+			accessDeniedDetail.AuthPrincipalType = _ctx.StringValue("DescribeBackupPolicy.AccessDeniedDetail.AuthPrincipalType");
+			accessDeniedDetail.EncodedDiagnosticMessage = _ctx.StringValue("DescribeBackupPolicy.AccessDeniedDetail.EncodedDiagnosticMessage");
+			accessDeniedDetail.NoPermissionType = _ctx.StringValue("DescribeBackupPolicy.AccessDeniedDetail.NoPermissionType");
+			accessDeniedDetail.PolicyType = _ctx.StringValue("DescribeBackupPolicy.AccessDeniedDetail.PolicyType");
+			describeBackupPolicyResponse.AccessDeniedDetail = accessDeniedDetail;
         
 			return describeBackupPolicyResponse;
         }

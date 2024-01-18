@@ -41,6 +41,54 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			describeEngineVersionResponse.MajorVersion = _ctx.StringValue("DescribeEngineVersion.MajorVersion");
 			describeEngineVersionResponse.Engine = _ctx.StringValue("DescribeEngineVersion.Engine");
 			describeEngineVersionResponse.MinorVersion = _ctx.StringValue("DescribeEngineVersion.MinorVersion");
+			describeEngineVersionResponse.IsRedisCompatibleVersion = _ctx.StringValue("DescribeEngineVersion.IsRedisCompatibleVersion");
+			describeEngineVersionResponse.IsSSLEnable = _ctx.StringValue("DescribeEngineVersion.IsSSLEnable");
+			describeEngineVersionResponse.IsNewSSLMode = _ctx.StringValue("DescribeEngineVersion.IsNewSSLMode");
+			describeEngineVersionResponse.IsAutoUpgradeOpen = _ctx.StringValue("DescribeEngineVersion.IsAutoUpgradeOpen");
+
+			DescribeEngineVersionResponse.DescribeEngineVersion_DBLatestMinorVersion dBLatestMinorVersion = new DescribeEngineVersionResponse.DescribeEngineVersion_DBLatestMinorVersion();
+			dBLatestMinorVersion.MinorVersion = _ctx.StringValue("DescribeEngineVersion.DBLatestMinorVersion.MinorVersion");
+			dBLatestMinorVersion.Level = _ctx.StringValue("DescribeEngineVersion.DBLatestMinorVersion.Level");
+
+			DescribeEngineVersionResponse.DescribeEngineVersion_DBLatestMinorVersion.DescribeEngineVersion_VersionRelease versionRelease = new DescribeEngineVersionResponse.DescribeEngineVersion_DBLatestMinorVersion.DescribeEngineVersion_VersionRelease();
+			versionRelease.VersionChangesLevel = _ctx.StringValue("DescribeEngineVersion.DBLatestMinorVersion.VersionRelease.VersionChangesLevel");
+
+			List<DescribeEngineVersionResponse.DescribeEngineVersion_DBLatestMinorVersion.DescribeEngineVersion_VersionRelease.DescribeEngineVersion_ReleaseInfoList> versionRelease_releaseInfo = new List<DescribeEngineVersionResponse.DescribeEngineVersion_DBLatestMinorVersion.DescribeEngineVersion_VersionRelease.DescribeEngineVersion_ReleaseInfoList>();
+			for (int i = 0; i < _ctx.Length("DescribeEngineVersion.DBLatestMinorVersion.VersionRelease.ReleaseInfo.Length"); i++) {
+				DescribeEngineVersionResponse.DescribeEngineVersion_DBLatestMinorVersion.DescribeEngineVersion_VersionRelease.DescribeEngineVersion_ReleaseInfoList releaseInfoList = new DescribeEngineVersionResponse.DescribeEngineVersion_DBLatestMinorVersion.DescribeEngineVersion_VersionRelease.DescribeEngineVersion_ReleaseInfoList();
+				releaseInfoList.ReleaseVersion = _ctx.StringValue("DescribeEngineVersion.DBLatestMinorVersion.VersionRelease.ReleaseInfo["+ i +"].ReleaseVersion");
+				releaseInfoList.CreateTime = _ctx.StringValue("DescribeEngineVersion.DBLatestMinorVersion.VersionRelease.ReleaseInfo["+ i +"].CreateTime");
+				releaseInfoList.ReleaseNote = _ctx.StringValue("DescribeEngineVersion.DBLatestMinorVersion.VersionRelease.ReleaseInfo["+ i +"].ReleaseNote");
+				releaseInfoList.Level = _ctx.StringValue("DescribeEngineVersion.DBLatestMinorVersion.VersionRelease.ReleaseInfo["+ i +"].Level");
+				releaseInfoList.ReleaseNoteEn = _ctx.StringValue("DescribeEngineVersion.DBLatestMinorVersion.VersionRelease.ReleaseInfo["+ i +"].ReleaseNoteEn");
+
+				versionRelease_releaseInfo.Add(releaseInfoList);
+			}
+			versionRelease.ReleaseInfo = versionRelease_releaseInfo;
+			dBLatestMinorVersion.VersionRelease = versionRelease;
+			describeEngineVersionResponse.DBLatestMinorVersion = dBLatestMinorVersion;
+
+			DescribeEngineVersionResponse.DescribeEngineVersion_ProxyLatestMinorVersion proxyLatestMinorVersion = new DescribeEngineVersionResponse.DescribeEngineVersion_ProxyLatestMinorVersion();
+			proxyLatestMinorVersion.MinorVersion = _ctx.StringValue("DescribeEngineVersion.ProxyLatestMinorVersion.MinorVersion");
+			proxyLatestMinorVersion.Level = _ctx.StringValue("DescribeEngineVersion.ProxyLatestMinorVersion.Level");
+
+			DescribeEngineVersionResponse.DescribeEngineVersion_ProxyLatestMinorVersion.DescribeEngineVersion_VersionRelease1 versionRelease1 = new DescribeEngineVersionResponse.DescribeEngineVersion_ProxyLatestMinorVersion.DescribeEngineVersion_VersionRelease1();
+			versionRelease1.VersionChangesLevel = _ctx.StringValue("DescribeEngineVersion.ProxyLatestMinorVersion.VersionRelease.VersionChangesLevel");
+
+			List<DescribeEngineVersionResponse.DescribeEngineVersion_ProxyLatestMinorVersion.DescribeEngineVersion_VersionRelease1.DescribeEngineVersion_ReleaseInfoList3> versionRelease1_releaseInfo2 = new List<DescribeEngineVersionResponse.DescribeEngineVersion_ProxyLatestMinorVersion.DescribeEngineVersion_VersionRelease1.DescribeEngineVersion_ReleaseInfoList3>();
+			for (int i = 0; i < _ctx.Length("DescribeEngineVersion.ProxyLatestMinorVersion.VersionRelease.ReleaseInfo.Length"); i++) {
+				DescribeEngineVersionResponse.DescribeEngineVersion_ProxyLatestMinorVersion.DescribeEngineVersion_VersionRelease1.DescribeEngineVersion_ReleaseInfoList3 releaseInfoList3 = new DescribeEngineVersionResponse.DescribeEngineVersion_ProxyLatestMinorVersion.DescribeEngineVersion_VersionRelease1.DescribeEngineVersion_ReleaseInfoList3();
+				releaseInfoList3.ReleaseVersion = _ctx.StringValue("DescribeEngineVersion.ProxyLatestMinorVersion.VersionRelease.ReleaseInfo["+ i +"].ReleaseVersion");
+				releaseInfoList3.CreateTime = _ctx.StringValue("DescribeEngineVersion.ProxyLatestMinorVersion.VersionRelease.ReleaseInfo["+ i +"].CreateTime");
+				releaseInfoList3.ReleaseNote = _ctx.StringValue("DescribeEngineVersion.ProxyLatestMinorVersion.VersionRelease.ReleaseInfo["+ i +"].ReleaseNote");
+				releaseInfoList3.Level = _ctx.StringValue("DescribeEngineVersion.ProxyLatestMinorVersion.VersionRelease.ReleaseInfo["+ i +"].Level");
+				releaseInfoList3.ReleaseNoteEn = _ctx.StringValue("DescribeEngineVersion.ProxyLatestMinorVersion.VersionRelease.ReleaseInfo["+ i +"].ReleaseNoteEn");
+
+				versionRelease1_releaseInfo2.Add(releaseInfoList3);
+			}
+			versionRelease1.ReleaseInfo2 = versionRelease1_releaseInfo2;
+			proxyLatestMinorVersion.VersionRelease1 = versionRelease1;
+			describeEngineVersionResponse.ProxyLatestMinorVersion = proxyLatestMinorVersion;
         
 			return describeEngineVersionResponse;
         }

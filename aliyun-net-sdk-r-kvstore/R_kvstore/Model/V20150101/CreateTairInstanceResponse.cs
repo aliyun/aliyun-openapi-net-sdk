@@ -53,6 +53,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string taskId;
 
+		private long? orderId;
+
 		public long? QPS
 		{
 			get
@@ -218,6 +220,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				taskId = value;
+			}
+		}
+
+		public long? OrderId
+		{
+			get
+			{
+				return orderId;
+			}
+			set	
+			{
+				orderId = value;
 			}
 		}
 	}
