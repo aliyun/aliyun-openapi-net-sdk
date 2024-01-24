@@ -39,6 +39,8 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 
 		private string app;
 
+		private TextRequest textRequest_;
+
 		private long? tenantId;
 
 		private string bizId;
@@ -60,6 +62,22 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			{
 				app = value;
 				DictionaryUtil.Add(QueryParameters, "App", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "TextRequest")]
+		public TextRequest TextRequest_
+		{
+			get
+			{
+				return textRequest_;
+			}
+
+			set
+			{
+				textRequest_ = value;
+				DictionaryUtil.Add(QueryParameters, "TextRequest", JsonConvert.SerializeObject(value));
+
 			}
 		}
 
@@ -137,6 +155,70 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			}
 		}
 
+		public class TextRequest
+		{
+
+			private string voice;
+
+			private int? volume;
+
+			private int? speechRate;
+
+			private int? pitchRate;
+
+			[JsonProperty(PropertyName = "Voice")]
+			public string Voice
+			{
+				get
+				{
+					return voice;
+				}
+				set	
+				{
+					voice = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Volume")]
+			public int? Volume
+			{
+				get
+				{
+					return volume;
+				}
+				set	
+				{
+					volume = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SpeechRate")]
+			public int? SpeechRate
+			{
+				get
+				{
+					return speechRate;
+				}
+				set	
+				{
+					speechRate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PitchRate")]
+			public int? PitchRate
+			{
+				get
+				{
+					return pitchRate;
+				}
+				set	
+				{
+					pitchRate = value;
+				}
+			}
+		}
+
 		public class Channel
 		{
 
@@ -174,7 +256,24 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 		public class CommandRequest
 		{
 
+			private string backGroundImageUrl;
+
 			private bool? alphaSwitch;
+
+			private int? locate;
+
+			[JsonProperty(PropertyName = "BackGroundImageUrl")]
+			public string BackGroundImageUrl
+			{
+				get
+				{
+					return backGroundImageUrl;
+				}
+				set	
+				{
+					backGroundImageUrl = value;
+				}
+			}
 
 			[JsonProperty(PropertyName = "AlphaSwitch")]
 			public bool? AlphaSwitch
@@ -186,6 +285,19 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 				set	
 				{
 					alphaSwitch = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Locate")]
+			public int? Locate
+			{
+				get
+				{
+					return locate;
+				}
+				set	
+				{
+					locate = value;
 				}
 			}
 		}
