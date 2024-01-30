@@ -140,8 +140,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 			private long? usedIncrementBytes;
 
-			private string resourceGroupId;
-
 			public long? BuyCreateTimestamp
 			{
 				get
@@ -307,18 +305,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				set	
 				{
 					usedIncrementBytes = value;
-				}
-			}
-
-			public string ResourceGroupId
-			{
-				get
-				{
-					return resourceGroupId;
-				}
-				set	
-				{
-					resourceGroupId = value;
 				}
 			}
 		}

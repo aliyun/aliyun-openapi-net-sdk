@@ -80,6 +80,7 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 				backupPlanDetail.BackupSetDownloadIncrementDataFormat = _ctx.StringValue("DescribeBackupPlanList.Items["+ i +"].BackupSetDownloadIncrementDataFormat");
 				backupPlanDetail.EnableBackupLog = _ctx.BooleanValue("DescribeBackupPlanList.Items["+ i +"].EnableBackupLog");
 				backupPlanDetail.ResourceGroupId = _ctx.StringValue("DescribeBackupPlanList.Items["+ i +"].ResourceGroupId");
+				backupPlanDetail.DatabaseType = _ctx.StringValue("DescribeBackupPlanList.Items["+ i +"].DatabaseType");
 
 				describeBackupPlanListResponse_items.Add(backupPlanDetail);
 			}

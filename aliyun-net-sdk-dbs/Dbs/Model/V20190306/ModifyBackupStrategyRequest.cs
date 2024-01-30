@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Dbs;
 using Aliyun.Acs.Dbs.Transform;
 using Aliyun.Acs.Dbs.Transform.V20190306;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
     public class ModifyBackupStrategyRequest : RpcAcsRequest<ModifyBackupStrategyResponse>
     {
         public ModifyBackupStrategyRequest()
-            : base("Dbs", "2019-03-06", "ModifyBackupStrategy")
+            : base("Dbs", "2019-03-06", "ModifyBackupStrategy", "cbs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,32 +40,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			Method = MethodType.POST;
         }
 
-		private int? backupLogIntervalSeconds;
-
 		private string clientToken;
 
 		private string backupPlanId;
+
+		private string backupStartTime;
+
+		private int? backupLogIntervalSeconds;
 
 		private string ownerId;
 
 		private string backupPeriod;
 
-		private string backupStartTime;
-
 		private string backupStrategyType;
-
-		public int? BackupLogIntervalSeconds
-		{
-			get
-			{
-				return backupLogIntervalSeconds;
-			}
-			set	
-			{
-				backupLogIntervalSeconds = value;
-				DictionaryUtil.Add(QueryParameters, "BackupLogIntervalSeconds", value.ToString());
-			}
-		}
 
 		public string ClientToken
 		{
@@ -94,6 +80,32 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
+		public string BackupStartTime
+		{
+			get
+			{
+				return backupStartTime;
+			}
+			set	
+			{
+				backupStartTime = value;
+				DictionaryUtil.Add(QueryParameters, "BackupStartTime", value);
+			}
+		}
+
+		public int? BackupLogIntervalSeconds
+		{
+			get
+			{
+				return backupLogIntervalSeconds;
+			}
+			set	
+			{
+				backupLogIntervalSeconds = value;
+				DictionaryUtil.Add(QueryParameters, "BackupLogIntervalSeconds", value.ToString());
+			}
+		}
+
 		public string OwnerId
 		{
 			get
@@ -117,19 +129,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				backupPeriod = value;
 				DictionaryUtil.Add(QueryParameters, "BackupPeriod", value);
-			}
-		}
-
-		public string BackupStartTime
-		{
-			get
-			{
-				return backupStartTime;
-			}
-			set	
-			{
-				backupStartTime = value;
-				DictionaryUtil.Add(QueryParameters, "BackupStartTime", value);
 			}
 		}
 

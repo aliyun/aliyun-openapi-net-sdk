@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Dbs;
 using Aliyun.Acs.Dbs.Transform;
 using Aliyun.Acs.Dbs.Transform.V20190306;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
     public class ModifyStorageStrategyRequest : RpcAcsRequest<ModifyStorageStrategyResponse>
     {
         public ModifyStorageStrategyRequest()
-            : base("Dbs", "2019-03-06", "ModifyStorageStrategy")
+            : base("Dbs", "2019-03-06", "ModifyStorageStrategy", "cbs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,30 +40,17 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			Method = MethodType.POST;
         }
 
-		private int? duplicationArchivePeriod;
-
 		private string clientToken;
 
 		private string backupPlanId;
 
+		private int? duplicationInfrequentAccessPeriod;
+
+		private int? duplicationArchivePeriod;
+
 		private string ownerId;
 
 		private int? backupRetentionPeriod;
-
-		private int? duplicationInfrequentAccessPeriod;
-
-		public int? DuplicationArchivePeriod
-		{
-			get
-			{
-				return duplicationArchivePeriod;
-			}
-			set	
-			{
-				duplicationArchivePeriod = value;
-				DictionaryUtil.Add(QueryParameters, "DuplicationArchivePeriod", value.ToString());
-			}
-		}
 
 		public string ClientToken
 		{
@@ -92,6 +78,32 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
+		public int? DuplicationInfrequentAccessPeriod
+		{
+			get
+			{
+				return duplicationInfrequentAccessPeriod;
+			}
+			set	
+			{
+				duplicationInfrequentAccessPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "DuplicationInfrequentAccessPeriod", value.ToString());
+			}
+		}
+
+		public int? DuplicationArchivePeriod
+		{
+			get
+			{
+				return duplicationArchivePeriod;
+			}
+			set	
+			{
+				duplicationArchivePeriod = value;
+				DictionaryUtil.Add(QueryParameters, "DuplicationArchivePeriod", value.ToString());
+			}
+		}
+
 		public string OwnerId
 		{
 			get
@@ -115,19 +127,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				backupRetentionPeriod = value;
 				DictionaryUtil.Add(QueryParameters, "BackupRetentionPeriod", value.ToString());
-			}
-		}
-
-		public int? DuplicationInfrequentAccessPeriod
-		{
-			get
-			{
-				return duplicationInfrequentAccessPeriod;
-			}
-			set	
-			{
-				duplicationInfrequentAccessPeriod = value;
-				DictionaryUtil.Add(QueryParameters, "DuplicationInfrequentAccessPeriod", value.ToString());
 			}
 		}
 

@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Dbs;
 using Aliyun.Acs.Dbs.Transform;
 using Aliyun.Acs.Dbs.Transform.V20190306;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
     public class CreateGetDBListFromAgentTaskRequest : RpcAcsRequest<CreateGetDBListFromAgentTaskResponse>
     {
         public CreateGetDBListFromAgentTaskRequest()
-            : base("Dbs", "2019-03-06", "CreateGetDBListFromAgentTask")
+            : base("Dbs", "2019-03-06", "CreateGetDBListFromAgentTask", "cbs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -49,11 +48,11 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string clientToken;
 
+		private string sourceEndpointIP;
+
 		private string ownerId;
 
 		private int? sourceEndpointPort;
-
-		private string sourceEndpointIP;
 
 		public string SourceEndpointRegion
 		{
@@ -107,6 +106,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
+		public string SourceEndpointIP
+		{
+			get
+			{
+				return sourceEndpointIP;
+			}
+			set	
+			{
+				sourceEndpointIP = value;
+				DictionaryUtil.Add(QueryParameters, "SourceEndpointIP", value);
+			}
+		}
+
 		public string OwnerId
 		{
 			get
@@ -130,19 +142,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				sourceEndpointPort = value;
 				DictionaryUtil.Add(QueryParameters, "SourceEndpointPort", value.ToString());
-			}
-		}
-
-		public string SourceEndpointIP
-		{
-			get
-			{
-				return sourceEndpointIP;
-			}
-			set	
-			{
-				sourceEndpointIP = value;
-				DictionaryUtil.Add(QueryParameters, "SourceEndpointIP", value);
 			}
 		}
 

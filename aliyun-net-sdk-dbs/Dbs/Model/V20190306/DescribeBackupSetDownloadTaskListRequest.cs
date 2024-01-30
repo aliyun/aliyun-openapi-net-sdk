@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Dbs;
 using Aliyun.Acs.Dbs.Transform;
 using Aliyun.Acs.Dbs.Transform.V20190306;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
     public class DescribeBackupSetDownloadTaskListRequest : RpcAcsRequest<DescribeBackupSetDownloadTaskListResponse>
     {
         public DescribeBackupSetDownloadTaskListRequest()
-            : base("Dbs", "2019-03-06", "DescribeBackupSetDownloadTaskList")
+            : base("Dbs", "2019-03-06", "DescribeBackupSetDownloadTaskList", "cbs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,15 +42,15 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string clientToken;
 
-		private string backupSetDownloadTaskId;
-
 		private string backupPlanId;
 
 		private int? pageNum;
 
-		private string ownerId;
-
 		private int? pageSize;
+
+		private string backupSetDownloadTaskId;
+
+		private string ownerId;
 
 		public string ClientToken
 		{
@@ -63,19 +62,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string BackupSetDownloadTaskId
-		{
-			get
-			{
-				return backupSetDownloadTaskId;
-			}
-			set	
-			{
-				backupSetDownloadTaskId = value;
-				DictionaryUtil.Add(QueryParameters, "BackupSetDownloadTaskId", value);
 			}
 		}
 
@@ -105,19 +91,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public string OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -128,6 +101,32 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string BackupSetDownloadTaskId
+		{
+			get
+			{
+				return backupSetDownloadTaskId;
+			}
+			set	
+			{
+				backupSetDownloadTaskId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupSetDownloadTaskId", value);
+			}
+		}
+
+		public string OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
 			}
 		}
 

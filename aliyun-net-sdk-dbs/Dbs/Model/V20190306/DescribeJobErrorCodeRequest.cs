@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Dbs;
 using Aliyun.Acs.Dbs.Transform;
 using Aliyun.Acs.Dbs.Transform.V20190306;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
     public class DescribeJobErrorCodeRequest : RpcAcsRequest<DescribeJobErrorCodeResponse>
     {
         public DescribeJobErrorCodeRequest()
-            : base("Dbs", "2019-03-06", "DescribeJobErrorCode")
+            : base("Dbs", "2019-03-06", "DescribeJobErrorCode", "cbs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,9 +44,9 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string language;
 
-		private string ownerId;
-
 		private string taskId;
+
+		private string ownerId;
 
 		public string ClientToken
 		{
@@ -75,19 +74,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public string OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
-			}
-		}
-
 		public string TaskId
 		{
 			get
@@ -98,6 +84,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				taskId = value;
 				DictionaryUtil.Add(QueryParameters, "TaskId", value);
+			}
+		}
+
+		public string OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
 			}
 		}
 

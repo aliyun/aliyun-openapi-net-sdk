@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Dbs;
 using Aliyun.Acs.Dbs.Transform;
 using Aliyun.Acs.Dbs.Transform.V20190306;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
     public class ModifyBackupSetDownloadRulesRequest : RpcAcsRequest<ModifyBackupSetDownloadRulesResponse>
     {
         public ModifyBackupSetDownloadRulesRequest()
-            : base("Dbs", "2019-03-06", "ModifyBackupSetDownloadRules")
+            : base("Dbs", "2019-03-06", "ModifyBackupSetDownloadRules", "cbs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -51,15 +50,15 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string backupPlanId;
 
+		private string backupSetDownloadTargetTypeLocation;
+
+		private string backupSetDownloadDir;
+
 		private string ownerId;
 
 		private bool? openAutoDownload;
 
 		private string incrementDataFormat;
-
-		private string backupSetDownloadTargetTypeLocation;
-
-		private string backupSetDownloadDir;
 
 		public string FullDataFormat
 		{
@@ -126,6 +125,32 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
+		public string BackupSetDownloadTargetTypeLocation
+		{
+			get
+			{
+				return backupSetDownloadTargetTypeLocation;
+			}
+			set	
+			{
+				backupSetDownloadTargetTypeLocation = value;
+				DictionaryUtil.Add(QueryParameters, "BackupSetDownloadTargetTypeLocation", value);
+			}
+		}
+
+		public string BackupSetDownloadDir
+		{
+			get
+			{
+				return backupSetDownloadDir;
+			}
+			set	
+			{
+				backupSetDownloadDir = value;
+				DictionaryUtil.Add(QueryParameters, "BackupSetDownloadDir", value);
+			}
+		}
+
 		public string OwnerId
 		{
 			get
@@ -162,32 +187,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				incrementDataFormat = value;
 				DictionaryUtil.Add(QueryParameters, "IncrementDataFormat", value);
-			}
-		}
-
-		public string BackupSetDownloadTargetTypeLocation
-		{
-			get
-			{
-				return backupSetDownloadTargetTypeLocation;
-			}
-			set	
-			{
-				backupSetDownloadTargetTypeLocation = value;
-				DictionaryUtil.Add(QueryParameters, "BackupSetDownloadTargetTypeLocation", value);
-			}
-		}
-
-		public string BackupSetDownloadDir
-		{
-			get
-			{
-				return backupSetDownloadDir;
-			}
-			set	
-			{
-				backupSetDownloadDir = value;
-				DictionaryUtil.Add(QueryParameters, "BackupSetDownloadDir", value);
 			}
 		}
 

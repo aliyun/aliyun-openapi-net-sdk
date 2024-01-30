@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Dbs;
 using Aliyun.Acs.Dbs.Transform;
 using Aliyun.Acs.Dbs.Transform.V20190306;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
     public class RenewBackupPlanRequest : RpcAcsRequest<RenewBackupPlanResponse>
     {
         public RenewBackupPlanRequest()
-            : base("Dbs", "2019-03-06", "RenewBackupPlan")
+            : base("Dbs", "2019-03-06", "RenewBackupPlan", "cbs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,28 +40,15 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			Method = MethodType.POST;
         }
 
-		private string period;
-
 		private string clientToken;
 
 		private string backupPlanId;
 
+		private string period;
+
 		private string ownerId;
 
 		private int? usedTime;
-
-		public string Period
-		{
-			get
-			{
-				return period;
-			}
-			set	
-			{
-				period = value;
-				DictionaryUtil.Add(QueryParameters, "Period", value);
-			}
-		}
 
 		public string ClientToken
 		{
@@ -87,6 +73,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				backupPlanId = value;
 				DictionaryUtil.Add(QueryParameters, "BackupPlanId", value);
+			}
+		}
+
+		public string Period
+		{
+			get
+			{
+				return period;
+			}
+			set	
+			{
+				period = value;
+				DictionaryUtil.Add(QueryParameters, "Period", value);
 			}
 		}
 

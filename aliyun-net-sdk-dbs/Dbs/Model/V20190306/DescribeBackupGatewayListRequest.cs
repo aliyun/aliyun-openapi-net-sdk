@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Dbs;
 using Aliyun.Acs.Dbs.Transform;
 using Aliyun.Acs.Dbs.Transform.V20190306;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
     public class DescribeBackupGatewayListRequest : RpcAcsRequest<DescribeBackupGatewayListResponse>
     {
         public DescribeBackupGatewayListRequest()
-            : base("Dbs", "2019-03-06", "DescribeBackupGatewayList")
+            : base("Dbs", "2019-03-06", "DescribeBackupGatewayList", "cbs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,30 +40,17 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			Method = MethodType.POST;
         }
 
-		private string identifier;
-
 		private string clientToken;
 
 		private int? pageNum;
 
-		private string ownerId;
-
 		private int? pageSize;
 
-		private string region;
+		private string identifier;
 
-		public string Identifier
-		{
-			get
-			{
-				return identifier;
-			}
-			set	
-			{
-				identifier = value;
-				DictionaryUtil.Add(QueryParameters, "Identifier", value);
-			}
-		}
+		private string ownerId;
+
+		private string region;
 
 		public string ClientToken
 		{
@@ -92,19 +78,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public string OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -115,6 +88,32 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Identifier
+		{
+			get
+			{
+				return identifier;
+			}
+			set	
+			{
+				identifier = value;
+				DictionaryUtil.Add(QueryParameters, "Identifier", value);
+			}
+		}
+
+		public string OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
 			}
 		}
 
