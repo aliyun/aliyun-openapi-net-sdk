@@ -1,3 +1,10 @@
+2024-02-20 Version: 1.0.0
+- Release GenerateCosplayImage.
+- Release GenerateTextDeformation.
+- Release GenerateTextTexture.
+- Release InteractiveFullSegmentation.
+- Release InteractiveScribbleSegmentation.
+
 2024-02-02 Version: 7.57.0
 - Add UnsubscribeTopic.
 
