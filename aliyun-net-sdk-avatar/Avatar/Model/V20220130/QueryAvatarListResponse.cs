@@ -201,6 +201,8 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 
 				private string makeStage;
 
+				private string preview;
+
 				private QueryAvatarList_SupportedResolutions supportedResolutions;
 
 				[JsonProperty(PropertyName = "Code")]
@@ -330,6 +332,19 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 					set	
 					{
 						makeStage = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Preview")]
+				public string Preview
+				{
+					get
+					{
+						return preview;
+					}
+					set	
+					{
+						preview = value;
 					}
 				}
 

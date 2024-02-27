@@ -47,6 +47,7 @@ namespace Aliyun.Acs.avatar.Transform.V20220130
 			data.MakeStatus = _ctx.StringValue("QueryAvatar.Data.MakeStatus");
 			data.MakeFailReason = _ctx.StringValue("QueryAvatar.Data.MakeFailReason");
 			data.MakeStage = _ctx.StringValue("QueryAvatar.Data.MakeStage");
+			data.Preview = _ctx.StringValue("QueryAvatar.Data.Preview");
 
 			QueryAvatarResponse.QueryAvatar_Data.QueryAvatar_SupportedResolutions supportedResolutions = new QueryAvatarResponse.QueryAvatar_Data.QueryAvatar_SupportedResolutions();
 
