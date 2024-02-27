@@ -35,7 +35,22 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			Method = MethodType.POST;
         }
 
+		private string parentAccountName;
+
 		private string account;
+
+		public string ParentAccountName
+		{
+			get
+			{
+				return parentAccountName;
+			}
+			set	
+			{
+				parentAccountName = value;
+				DictionaryUtil.Add(QueryParameters, "ParentAccountName", value);
+			}
+		}
 
 		public string Account
 		{

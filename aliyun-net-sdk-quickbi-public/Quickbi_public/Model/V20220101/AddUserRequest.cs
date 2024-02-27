@@ -39,6 +39,8 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 		private int? userType;
 
+		private string roleIds;
+
 		private string accountName;
 
 		private string nickName;
@@ -68,6 +70,19 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				userType = value;
 				DictionaryUtil.Add(QueryParameters, "UserType", value.ToString());
+			}
+		}
+
+		public string RoleIds
+		{
+			get
+			{
+				return roleIds;
+			}
+			set	
+			{
+				roleIds = value;
+				DictionaryUtil.Add(BodyParameters, "RoleIds", value);
 			}
 		}
 

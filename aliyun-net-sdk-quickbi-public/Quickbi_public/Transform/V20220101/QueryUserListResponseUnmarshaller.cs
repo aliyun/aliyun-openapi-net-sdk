@@ -53,6 +53,12 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 				dataItem.Phone = _ctx.StringValue("QueryUserList.Result.Data["+ i +"].Phone");
 				dataItem.AccountName = _ctx.StringValue("QueryUserList.Result.Data["+ i +"].AccountName");
 
+				List<string> dataItem_roleIdList = new List<string>();
+				for (int j = 0; j < _ctx.Length("QueryUserList.Result.Data["+ i +"].RoleIdList.Length"); j++) {
+					dataItem_roleIdList.Add(_ctx.StringValue("QueryUserList.Result.Data["+ i +"].RoleIdList["+ j +"]"));
+				}
+				dataItem.RoleIdList = dataItem_roleIdList;
+
 				result_data.Add(dataItem);
 			}
 			result.Data = result_data;

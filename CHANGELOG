@@ -1,3 +1,7 @@
+2024-02-27 Version: 2.1.4
+- AllotDatasetAccelerationTask API add error code.
+- QueryUserInfoByAccount, QueryUserInfoByUserId, AddUser, UpdateUser, and QueryUserList APIs add query or response parameters.
+
 2024-02-27 Version: 2.0.8
 - support preview params
 
