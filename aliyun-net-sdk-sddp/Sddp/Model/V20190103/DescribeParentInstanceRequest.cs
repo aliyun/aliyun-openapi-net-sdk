@@ -27,10 +27,10 @@ using Aliyun.Acs.Sddp.Transform.V20190103;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
 {
-    public class CreateDataLimitRequest : RpcAcsRequest<CreateDataLimitResponse>
+    public class DescribeParentInstanceRequest : RpcAcsRequest<DescribeParentInstanceResponse>
     {
-        public CreateDataLimitRequest()
-            : base("Sddp", "2019-01-03", "CreateDataLimit", "sddp", "openAPI")
+        public DescribeParentInstanceRequest()
+            : base("Sddp", "2019-01-03", "DescribeParentInstance", "sddp", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,15 +40,9 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			Method = MethodType.POST;
         }
 
-		private int? ocrStatus;
+		private int? pageSize;
 
-		private int? samplingSize;
-
-		private string parentId;
-
-		private string password;
-
-		private int? enable;
+		private int? checkStatus;
 
 		private string lang;
 
@@ -56,84 +50,41 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private string engineType;
 
-		private int? auditStatus;
+		private string clusterStatus;
 
-		private int? autoScan;
+		private int? authStatus;
 
-		private int? logStoreDay;
+		private int? currentPage;
 
-		private string certificatePermission;
+		private long? resourceType;
 
-		private int? resourceType;
+		private string instanceId;
 
-		private int? port;
+		private string dbName;
 
-		private int? eventStatus;
-
-		private string userName;
-
-		public int? OcrStatus
+		public int? PageSize
 		{
 			get
 			{
-				return ocrStatus;
+				return pageSize;
 			}
 			set	
 			{
-				ocrStatus = value;
-				DictionaryUtil.Add(QueryParameters, "OcrStatus", value.ToString());
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public int? SamplingSize
+		public int? CheckStatus
 		{
 			get
 			{
-				return samplingSize;
+				return checkStatus;
 			}
 			set	
 			{
-				samplingSize = value;
-				DictionaryUtil.Add(QueryParameters, "SamplingSize", value.ToString());
-			}
-		}
-
-		public string ParentId
-		{
-			get
-			{
-				return parentId;
-			}
-			set	
-			{
-				parentId = value;
-				DictionaryUtil.Add(QueryParameters, "ParentId", value);
-			}
-		}
-
-		public string Password
-		{
-			get
-			{
-				return password;
-			}
-			set	
-			{
-				password = value;
-				DictionaryUtil.Add(QueryParameters, "Password", value);
-			}
-		}
-
-		public int? Enable
-		{
-			get
-			{
-				return enable;
-			}
-			set	
-			{
-				enable = value;
-				DictionaryUtil.Add(QueryParameters, "Enable", value.ToString());
+				checkStatus = value;
+				DictionaryUtil.Add(QueryParameters, "CheckStatus", value.ToString());
 			}
 		}
 
@@ -176,59 +127,46 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
-		public int? AuditStatus
+		public string ClusterStatus
 		{
 			get
 			{
-				return auditStatus;
+				return clusterStatus;
 			}
 			set	
 			{
-				auditStatus = value;
-				DictionaryUtil.Add(QueryParameters, "AuditStatus", value.ToString());
+				clusterStatus = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterStatus", value);
 			}
 		}
 
-		public int? AutoScan
+		public int? AuthStatus
 		{
 			get
 			{
-				return autoScan;
+				return authStatus;
 			}
 			set	
 			{
-				autoScan = value;
-				DictionaryUtil.Add(QueryParameters, "AutoScan", value.ToString());
+				authStatus = value;
+				DictionaryUtil.Add(QueryParameters, "AuthStatus", value.ToString());
 			}
 		}
 
-		public int? LogStoreDay
+		public int? CurrentPage
 		{
 			get
 			{
-				return logStoreDay;
+				return currentPage;
 			}
 			set	
 			{
-				logStoreDay = value;
-				DictionaryUtil.Add(QueryParameters, "LogStoreDay", value.ToString());
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
 			}
 		}
 
-		public string CertificatePermission
-		{
-			get
-			{
-				return certificatePermission;
-			}
-			set	
-			{
-				certificatePermission = value;
-				DictionaryUtil.Add(QueryParameters, "CertificatePermission", value);
-			}
-		}
-
-		public int? ResourceType
+		public long? ResourceType
 		{
 			get
 			{
@@ -241,42 +179,29 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
-		public int? Port
+		public string InstanceId
 		{
 			get
 			{
-				return port;
+				return instanceId;
 			}
 			set	
 			{
-				port = value;
-				DictionaryUtil.Add(QueryParameters, "Port", value.ToString());
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
-		public int? EventStatus
+		public string DbName
 		{
 			get
 			{
-				return eventStatus;
+				return dbName;
 			}
 			set	
 			{
-				eventStatus = value;
-				DictionaryUtil.Add(QueryParameters, "EventStatus", value.ToString());
-			}
-		}
-
-		public string UserName
-		{
-			get
-			{
-				return userName;
-			}
-			set	
-			{
-				userName = value;
-				DictionaryUtil.Add(QueryParameters, "UserName", value);
+				dbName = value;
+				DictionaryUtil.Add(QueryParameters, "DbName", value);
 			}
 		}
 
@@ -285,9 +210,9 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			return false;
 		}
 
-        public override CreateDataLimitResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeParentInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateDataLimitResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeParentInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -102,6 +102,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 			private int? status;
 
+			private int? supportForm;
+
 			private int? warnLevel;
 
 			private long? userId;
@@ -148,6 +150,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 			private string productCode;
 
+			private int? matchType;
+
 			public string DisplayName
 			{
 				get
@@ -169,6 +173,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public int? SupportForm
+			{
+				get
+				{
+					return supportForm;
+				}
+				set	
+				{
+					supportForm = value;
 				}
 			}
 
@@ -445,6 +461,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					productCode = value;
+				}
+			}
+
+			public int? MatchType
+			{
+				get
+				{
+					return matchType;
+				}
+				set	
+				{
+					matchType = value;
 				}
 			}
 		}

@@ -52,7 +52,11 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private string content;
 
+		private int? matchType;
+
 		private string lang;
+
+		private int? supportForm;
 
 		private int? ruleType;
 
@@ -146,6 +150,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
+		public int? MatchType
+		{
+			get
+			{
+				return matchType;
+			}
+			set	
+			{
+				matchType = value;
+				DictionaryUtil.Add(QueryParameters, "MatchType", value.ToString());
+			}
+		}
+
 		public string Lang
 		{
 			get
@@ -156,6 +173,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public int? SupportForm
+		{
+			get
+			{
+				return supportForm;
+			}
+			set	
+			{
+				supportForm = value;
+				DictionaryUtil.Add(QueryParameters, "SupportForm", value.ToString());
 			}
 		}
 

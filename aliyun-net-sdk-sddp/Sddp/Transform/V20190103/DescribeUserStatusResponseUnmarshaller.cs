@@ -75,6 +75,14 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 			userStatus.AlarmCount = _ctx.LongValue("DescribeUserStatus.UserStatus.AlarmCount");
 			userStatus.DisplayTime = _ctx.StringValue("DescribeUserStatus.UserStatus.DisplayTime");
 			userStatus.DataManagerRole = _ctx.IntegerValue("DescribeUserStatus.UserStatus.DataManagerRole");
+			userStatus.ReleaseDays = _ctx.IntegerValue("DescribeUserStatus.UserStatus.ReleaseDays");
+			userStatus.AuditClosable = _ctx.BooleanValue("DescribeUserStatus.UserStatus.AuditClosable");
+			userStatus.AuditReleasable = _ctx.BooleanValue("DescribeUserStatus.UserStatus.AuditReleasable");
+			userStatus.ReleaseTime = _ctx.LongValue("DescribeUserStatus.UserStatus.ReleaseTime");
+			userStatus.InstanceTotalCount = _ctx.LongValue("DescribeUserStatus.UserStatus.InstanceTotalCount");
+			userStatus.OssTotalSize = _ctx.LongValue("DescribeUserStatus.UserStatus.OssTotalSize");
+			userStatus.UseAgentAudit = _ctx.BooleanValue("DescribeUserStatus.UserStatus.UseAgentAudit");
+			userStatus.ProtectionDays = _ctx.IntegerValue("DescribeUserStatus.UserStatus.ProtectionDays");
 			describeUserStatusResponse.UserStatus = userStatus;
         
 			return describeUserStatusResponse;

@@ -27,10 +27,10 @@ using Aliyun.Acs.Sddp.Transform.V20190103;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
 {
-    public class DescribeTablesRequest : RpcAcsRequest<DescribeTablesResponse>
+    public class DescribeDataObjectColumnDetailRequest : RpcAcsRequest<DescribeDataObjectColumnDetailResponse>
     {
-        public DescribeTablesRequest()
-            : base("Sddp", "2019-01-03", "DescribeTables", "sddp", "openAPI")
+        public DescribeDataObjectColumnDetailRequest()
+            : base("Sddp", "2019-01-03", "DescribeDataObjectColumnDetail", "sddp", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,42 +40,17 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			Method = MethodType.POST;
         }
 
-		private string productCode;
-
 		private long? productId;
-
-		private long? packageId;
-
-		private long? riskLevelId;
 
 		private int? pageSize;
 
-		private string lang;
+		private long? id;
 
-		private string serviceRegionId;
+		private string lang;
 
 		private int? currentPage;
 
 		private long? templateId;
-
-		private long? instanceId;
-
-		private string name;
-
-		private long? ruleId;
-
-		public string ProductCode
-		{
-			get
-			{
-				return productCode;
-			}
-			set	
-			{
-				productCode = value;
-				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
-			}
-		}
 
 		public long? ProductId
 		{
@@ -87,32 +62,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				productId = value;
 				DictionaryUtil.Add(QueryParameters, "ProductId", value.ToString());
-			}
-		}
-
-		public long? PackageId
-		{
-			get
-			{
-				return packageId;
-			}
-			set	
-			{
-				packageId = value;
-				DictionaryUtil.Add(QueryParameters, "PackageId", value.ToString());
-			}
-		}
-
-		public long? RiskLevelId
-		{
-			get
-			{
-				return riskLevelId;
-			}
-			set	
-			{
-				riskLevelId = value;
-				DictionaryUtil.Add(QueryParameters, "RiskLevelId", value.ToString());
 			}
 		}
 
@@ -129,6 +78,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
+		public long? Id
+		{
+			get
+			{
+				return id;
+			}
+			set	
+			{
+				id = value;
+				DictionaryUtil.Add(QueryParameters, "Id", value.ToString());
+			}
+		}
+
 		public string Lang
 		{
 			get
@@ -139,19 +101,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public string ServiceRegionId
-		{
-			get
-			{
-				return serviceRegionId;
-			}
-			set	
-			{
-				serviceRegionId = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceRegionId", value);
 			}
 		}
 
@@ -181,53 +130,14 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
-		public long? InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value.ToString());
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public long? RuleId
-		{
-			get
-			{
-				return ruleId;
-			}
-			set	
-			{
-				ruleId = value;
-				DictionaryUtil.Add(QueryParameters, "RuleId", value.ToString());
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DescribeTablesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeDataObjectColumnDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeTablesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDataObjectColumnDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -51,6 +51,7 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 				dataLimit.TemplateId = _ctx.LongValue("DescribeCategoryTemplateRuleList.Items["+ i +"].TemplateId");
 				dataLimit.Id = _ctx.LongValue("DescribeCategoryTemplateRuleList.Items["+ i +"].Id");
 				dataLimit.CategoryLevel = _ctx.IntegerValue("DescribeCategoryTemplateRuleList.Items["+ i +"].CategoryLevel");
+				dataLimit.ParentModelId = _ctx.LongValue("DescribeCategoryTemplateRuleList.Items["+ i +"].ParentModelId");
 
 				describeCategoryTemplateRuleListResponse_items.Add(dataLimit);
 			}

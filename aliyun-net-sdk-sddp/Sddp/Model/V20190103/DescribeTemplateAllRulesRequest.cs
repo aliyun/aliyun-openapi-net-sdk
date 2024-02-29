@@ -27,10 +27,10 @@ using Aliyun.Acs.Sddp.Transform.V20190103;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
 {
-    public class DescribeDataLimitSetRequest : RpcAcsRequest<DescribeDataLimitSetResponse>
+    public class DescribeTemplateAllRulesRequest : RpcAcsRequest<DescribeTemplateAllRulesResponse>
     {
-        public DescribeDataLimitSetRequest()
-            : base("Sddp", "2019-01-03", "DescribeDataLimitSet", "sddp", "openAPI")
+        public DescribeTemplateAllRulesRequest()
+            : base("Sddp", "2019-01-03", "DescribeTemplateAllRules", "sddp", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,35 +40,20 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			Method = MethodType.POST;
         }
 
-		private int? resourceType;
-
-		private string parentId;
+		private long? templateId;
 
 		private string lang;
 
-		public int? ResourceType
+		public long? TemplateId
 		{
 			get
 			{
-				return resourceType;
+				return templateId;
 			}
 			set	
 			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value.ToString());
-			}
-		}
-
-		public string ParentId
-		{
-			get
-			{
-				return parentId;
-			}
-			set	
-			{
-				parentId = value;
-				DictionaryUtil.Add(QueryParameters, "ParentId", value);
+				templateId = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateId", value.ToString());
 			}
 		}
 
@@ -90,9 +75,9 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			return false;
 		}
 
-        public override DescribeDataLimitSetResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeTemplateAllRulesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDataLimitSetResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeTemplateAllRulesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

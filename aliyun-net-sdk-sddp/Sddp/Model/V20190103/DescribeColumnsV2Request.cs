@@ -27,10 +27,10 @@ using Aliyun.Acs.Sddp.Transform.V20190103;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
 {
-    public class DescribeTablesRequest : RpcAcsRequest<DescribeTablesResponse>
+    public class DescribeColumnsV2Request : RpcAcsRequest<DescribeColumnsV2Response>
     {
-        public DescribeTablesRequest()
-            : base("Sddp", "2019-01-03", "DescribeTables", "sddp", "openAPI")
+        public DescribeColumnsV2Request()
+            : base("Sddp", "2019-01-03", "DescribeColumnsV2", "sddp", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,23 +42,25 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private string productCode;
 
-		private long? productId;
-
-		private long? packageId;
+		private string ruleName;
 
 		private long? riskLevelId;
 
+		private string sensLevelName;
+
 		private int? pageSize;
+
+		private string tableId;
 
 		private string lang;
 
-		private string serviceRegionId;
+		private string tableName;
 
 		private int? currentPage;
 
-		private long? templateId;
-
 		private long? instanceId;
+
+		private string instanceName;
 
 		private string name;
 
@@ -77,29 +79,16 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
-		public long? ProductId
+		public string RuleName
 		{
 			get
 			{
-				return productId;
+				return ruleName;
 			}
 			set	
 			{
-				productId = value;
-				DictionaryUtil.Add(QueryParameters, "ProductId", value.ToString());
-			}
-		}
-
-		public long? PackageId
-		{
-			get
-			{
-				return packageId;
-			}
-			set	
-			{
-				packageId = value;
-				DictionaryUtil.Add(QueryParameters, "PackageId", value.ToString());
+				ruleName = value;
+				DictionaryUtil.Add(QueryParameters, "RuleName", value);
 			}
 		}
 
@@ -116,6 +105,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
+		public string SensLevelName
+		{
+			get
+			{
+				return sensLevelName;
+			}
+			set	
+			{
+				sensLevelName = value;
+				DictionaryUtil.Add(QueryParameters, "SensLevelName", value);
+			}
+		}
+
 		public int? PageSize
 		{
 			get
@@ -126,6 +128,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string TableId
+		{
+			get
+			{
+				return tableId;
+			}
+			set	
+			{
+				tableId = value;
+				DictionaryUtil.Add(QueryParameters, "TableId", value);
 			}
 		}
 
@@ -142,16 +157,16 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
-		public string ServiceRegionId
+		public string TableName
 		{
 			get
 			{
-				return serviceRegionId;
+				return tableName;
 			}
 			set	
 			{
-				serviceRegionId = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceRegionId", value);
+				tableName = value;
+				DictionaryUtil.Add(QueryParameters, "TableName", value);
 			}
 		}
 
@@ -168,19 +183,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
-		public long? TemplateId
-		{
-			get
-			{
-				return templateId;
-			}
-			set	
-			{
-				templateId = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateId", value.ToString());
-			}
-		}
-
 		public long? InstanceId
 		{
 			get
@@ -191,6 +193,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value.ToString());
+			}
+		}
+
+		public string InstanceName
+		{
+			get
+			{
+				return instanceName;
+			}
+			set	
+			{
+				instanceName = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceName", value);
 			}
 		}
 
@@ -225,9 +240,9 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			return false;
 		}
 
-        public override DescribeTablesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeColumnsV2Response GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeTablesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeColumnsV2ResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

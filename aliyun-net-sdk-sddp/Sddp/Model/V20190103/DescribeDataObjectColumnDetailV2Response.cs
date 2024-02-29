@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
 {
-	public class DescribeCategoryTemplateRuleListResponse : AcsResponse
+	public class DescribeDataObjectColumnDetailV2Response : AcsResponse
 	{
 
 		private int? currentPage;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private int? totalCount;
 
-		private List<DescribeCategoryTemplateRuleList_DataLimit> items;
+		private List<DescribeDataObjectColumnDetailV2_Rule> items;
 
 		public int? CurrentPage
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
-		public List<DescribeCategoryTemplateRuleList_DataLimit> Items
+		public List<DescribeDataObjectColumnDetailV2_Rule> Items
 		{
 			get
 			{
@@ -95,56 +95,88 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
-		public class DescribeCategoryTemplateRuleList_DataLimit
+		public class DescribeDataObjectColumnDetailV2_Rule
 		{
 
-			private int? status;
+			private string columnName;
 
-			private string identificationScope;
+			private string dataType;
+
+			private string columnComment;
+
+			private bool? primaryKey;
+
+			private string id;
 
 			private long? riskLevelId;
 
-			private long? parentCategoryId;
+			private string riskLevelName;
 
-			private string description;
+			private long? ruleId;
 
-			private int? customType;
+			private string ruleName;
 
-			private string identificationRuleIds;
+			private List<DescribeDataObjectColumnDetailV2_ModelTagsItem> modelTags;
 
-			private string name;
+			private List<string> categories;
 
-			private int? orderNum;
-
-			private long? templateId;
-
-			private long? id;
-
-			private int? categoryLevel;
-
-			private long? parentModelId;
-
-			public int? Status
+			public string ColumnName
 			{
 				get
 				{
-					return status;
+					return columnName;
 				}
 				set	
 				{
-					status = value;
+					columnName = value;
 				}
 			}
 
-			public string IdentificationScope
+			public string DataType
 			{
 				get
 				{
-					return identificationScope;
+					return dataType;
 				}
 				set	
 				{
-					identificationScope = value;
+					dataType = value;
+				}
+			}
+
+			public string ColumnComment
+			{
+				get
+				{
+					return columnComment;
+				}
+				set	
+				{
+					columnComment = value;
+				}
+			}
+
+			public bool? PrimaryKey
+			{
+				get
+				{
+					return primaryKey;
+				}
+				set	
+				{
+					primaryKey = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
 				}
 			}
 
@@ -160,123 +192,95 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public long? ParentCategoryId
+			public string RiskLevelName
 			{
 				get
 				{
-					return parentCategoryId;
+					return riskLevelName;
 				}
 				set	
 				{
-					parentCategoryId = value;
+					riskLevelName = value;
 				}
 			}
 
-			public string Description
+			public long? RuleId
 			{
 				get
 				{
-					return description;
+					return ruleId;
 				}
 				set	
 				{
-					description = value;
+					ruleId = value;
 				}
 			}
 
-			public int? CustomType
+			public string RuleName
 			{
 				get
 				{
-					return customType;
+					return ruleName;
 				}
 				set	
 				{
-					customType = value;
+					ruleName = value;
 				}
 			}
 
-			public string IdentificationRuleIds
+			public List<DescribeDataObjectColumnDetailV2_ModelTagsItem> ModelTags
 			{
 				get
 				{
-					return identificationRuleIds;
+					return modelTags;
 				}
 				set	
 				{
-					identificationRuleIds = value;
+					modelTags = value;
 				}
 			}
 
-			public string Name
+			public List<string> Categories
 			{
 				get
 				{
-					return name;
+					return categories;
 				}
 				set	
 				{
-					name = value;
+					categories = value;
 				}
 			}
 
-			public int? OrderNum
+			public class DescribeDataObjectColumnDetailV2_ModelTagsItem
 			{
-				get
-				{
-					return orderNum;
-				}
-				set	
-				{
-					orderNum = value;
-				}
-			}
 
-			public long? TemplateId
-			{
-				get
-				{
-					return templateId;
-				}
-				set	
-				{
-					templateId = value;
-				}
-			}
+				private long? id;
 
-			public long? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+				private string name;
 
-			public int? CategoryLevel
-			{
-				get
+				public long? Id
 				{
-					return categoryLevel;
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
+					}
 				}
-				set	
-				{
-					categoryLevel = value;
-				}
-			}
 
-			public long? ParentModelId
-			{
-				get
+				public string Name
 				{
-					return parentModelId;
-				}
-				set	
-				{
-					parentModelId = value;
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
 				}
 			}
 		}

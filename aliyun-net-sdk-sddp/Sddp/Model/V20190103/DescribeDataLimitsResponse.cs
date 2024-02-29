@@ -178,6 +178,12 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 			private int? enable;
 
+			private string vpcId;
+
+			private List<string> securityGroupIdList;
+
+			private List<string> vSwitchIdList;
+
 			public bool? SupportEvent
 			{
 				get
@@ -655,6 +661,42 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					enable = value;
+				}
+			}
+
+			public string VpcId
+			{
+				get
+				{
+					return vpcId;
+				}
+				set	
+				{
+					vpcId = value;
+				}
+			}
+
+			public List<string> SecurityGroupIdList
+			{
+				get
+				{
+					return securityGroupIdList;
+				}
+				set	
+				{
+					securityGroupIdList = value;
+				}
+			}
+
+			public List<string> VSwitchIdList
+			{
+				get
+				{
+					return vSwitchIdList;
+				}
+				set	
+				{
+					vSwitchIdList = value;
 				}
 			}
 		}

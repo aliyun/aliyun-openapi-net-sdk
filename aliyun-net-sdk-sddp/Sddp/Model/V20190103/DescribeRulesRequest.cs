@@ -50,9 +50,13 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private int? pageSize;
 
+		private int? matchType;
+
 		private string lang;
 
 		private bool? keywordCompatible;
+
+		private int? supportForm;
 
 		private int? ruleType;
 
@@ -135,6 +139,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
+		public int? MatchType
+		{
+			get
+			{
+				return matchType;
+			}
+			set	
+			{
+				matchType = value;
+				DictionaryUtil.Add(QueryParameters, "MatchType", value.ToString());
+			}
+		}
+
 		public string Lang
 		{
 			get
@@ -158,6 +175,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				keywordCompatible = value;
 				DictionaryUtil.Add(QueryParameters, "KeywordCompatible", value.ToString());
+			}
+		}
+
+		public int? SupportForm
+		{
+			get
+			{
+				return supportForm;
+			}
+			set	
+			{
+				supportForm = value;
+				DictionaryUtil.Add(QueryParameters, "SupportForm", value.ToString());
 			}
 		}
 

@@ -71,6 +71,16 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 				instance.Id = _ctx.LongValue("DescribeInstances.Items["+ i +"].Id");
 				instance.ProductCode = _ctx.StringValue("DescribeInstances.Items["+ i +"].ProductCode");
 
+				List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_ModelTagsItem> instance_modelTags = new List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_ModelTagsItem>();
+				for (int j = 0; j < _ctx.Length("DescribeInstances.Items["+ i +"].ModelTags.Length"); j++) {
+					DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_ModelTagsItem modelTagsItem = new DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_ModelTagsItem();
+					modelTagsItem.Id = _ctx.LongValue("DescribeInstances.Items["+ i +"].ModelTags["+ j +"].Id");
+					modelTagsItem.Name = _ctx.StringValue("DescribeInstances.Items["+ i +"].ModelTags["+ j +"].Name");
+
+					instance_modelTags.Add(modelTagsItem);
+				}
+				instance.ModelTags = instance_modelTags;
+
 				describeInstancesResponse_items.Add(instance);
 			}
 			describeInstancesResponse.Items = describeInstancesResponse_items;

@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
 {
-	public class DescribeOssObjectDetailResponse : AcsResponse
+	public class DescribeOssObjectDetailV2Response : AcsResponse
 	{
 
 		private string requestId;
 
-		private DescribeOssObjectDetail_OssObjectDetail ossObjectDetail;
+		private DescribeOssObjectDetailV2_OssObjectDetail ossObjectDetail;
 
 		public string RequestId
 		{
@@ -41,7 +41,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
-		public DescribeOssObjectDetail_OssObjectDetail OssObjectDetail
+		public DescribeOssObjectDetailV2_OssObjectDetail OssObjectDetail
 		{
 			get
 			{
@@ -53,7 +53,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
-		public class DescribeOssObjectDetail_OssObjectDetail
+		public class DescribeOssObjectDetailV2_OssObjectDetail
 		{
 
 			private string categoryName;
@@ -66,7 +66,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 			private string regionId;
 
-			private List<DescribeOssObjectDetail_Rule> ruleList;
+			private List<DescribeOssObjectDetailV2_Rule> ruleList;
 
 			public string CategoryName
 			{
@@ -128,7 +128,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public List<DescribeOssObjectDetail_Rule> RuleList
+			public List<DescribeOssObjectDetailV2_Rule> RuleList
 			{
 				get
 				{
@@ -140,7 +140,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public class DescribeOssObjectDetail_Rule
+			public class DescribeOssObjectDetailV2_Rule
 			{
 
 				private string riskLevelName;
@@ -155,7 +155,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 				private string ruleName;
 
-				private List<DescribeOssObjectDetail_ModelTagsItem> modelTags;
+				private List<DescribeOssObjectDetailV2_ModelTagsItem> modelTags;
 
 				private List<string> sampleList;
 
@@ -231,7 +231,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 					}
 				}
 
-				public List<DescribeOssObjectDetail_ModelTagsItem> ModelTags
+				public List<DescribeOssObjectDetailV2_ModelTagsItem> ModelTags
 				{
 					get
 					{
@@ -255,7 +255,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 					}
 				}
 
-				public class DescribeOssObjectDetail_ModelTagsItem
+				public class DescribeOssObjectDetailV2_ModelTagsItem
 				{
 
 					private long? id;

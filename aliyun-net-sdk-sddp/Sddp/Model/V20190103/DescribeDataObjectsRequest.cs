@@ -27,10 +27,10 @@ using Aliyun.Acs.Sddp.Transform.V20190103;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
 {
-    public class DescribeTablesRequest : RpcAcsRequest<DescribeTablesResponse>
+    public class DescribeDataObjectsRequest : RpcAcsRequest<DescribeDataObjectsResponse>
     {
-        public DescribeTablesRequest()
-            : base("Sddp", "2019-01-03", "DescribeTables", "sddp", "openAPI")
+        public DescribeDataObjectsRequest()
+            : base("Sddp", "2019-01-03", "DescribeDataObjects", "sddp", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,13 +40,17 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			Method = MethodType.POST;
         }
 
-		private string productCode;
+		private long? fileType;
 
-		private long? productId;
+		private string riskLevels;
 
-		private long? packageId;
+		private string queryName;
 
-		private long? riskLevelId;
+		private long? domainId;
+
+		private string parentCategoryIds;
+
+		private string productIds;
 
 		private int? pageSize;
 
@@ -54,65 +58,93 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private string serviceRegionId;
 
+		private string modelTagIds;
+
+		private long? fileCategoryCode;
+
 		private int? currentPage;
 
 		private long? templateId;
 
-		private long? instanceId;
+		private string instanceId;
 
-		private string name;
+		private string modelIds;
 
-		private long? ruleId;
-
-		public string ProductCode
+		public long? FileType
 		{
 			get
 			{
-				return productCode;
+				return fileType;
 			}
 			set	
 			{
-				productCode = value;
-				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
+				fileType = value;
+				DictionaryUtil.Add(QueryParameters, "FileType", value.ToString());
 			}
 		}
 
-		public long? ProductId
+		public string RiskLevels
 		{
 			get
 			{
-				return productId;
+				return riskLevels;
 			}
 			set	
 			{
-				productId = value;
-				DictionaryUtil.Add(QueryParameters, "ProductId", value.ToString());
+				riskLevels = value;
+				DictionaryUtil.Add(QueryParameters, "RiskLevels", value);
 			}
 		}
 
-		public long? PackageId
+		public string QueryName
 		{
 			get
 			{
-				return packageId;
+				return queryName;
 			}
 			set	
 			{
-				packageId = value;
-				DictionaryUtil.Add(QueryParameters, "PackageId", value.ToString());
+				queryName = value;
+				DictionaryUtil.Add(QueryParameters, "QueryName", value);
 			}
 		}
 
-		public long? RiskLevelId
+		public long? DomainId
 		{
 			get
 			{
-				return riskLevelId;
+				return domainId;
 			}
 			set	
 			{
-				riskLevelId = value;
-				DictionaryUtil.Add(QueryParameters, "RiskLevelId", value.ToString());
+				domainId = value;
+				DictionaryUtil.Add(QueryParameters, "DomainId", value.ToString());
+			}
+		}
+
+		public string ParentCategoryIds
+		{
+			get
+			{
+				return parentCategoryIds;
+			}
+			set	
+			{
+				parentCategoryIds = value;
+				DictionaryUtil.Add(QueryParameters, "ParentCategoryIds", value);
+			}
+		}
+
+		public string ProductIds
+		{
+			get
+			{
+				return productIds;
+			}
+			set	
+			{
+				productIds = value;
+				DictionaryUtil.Add(QueryParameters, "ProductIds", value);
 			}
 		}
 
@@ -155,6 +187,32 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
+		public string ModelTagIds
+		{
+			get
+			{
+				return modelTagIds;
+			}
+			set	
+			{
+				modelTagIds = value;
+				DictionaryUtil.Add(QueryParameters, "ModelTagIds", value);
+			}
+		}
+
+		public long? FileCategoryCode
+		{
+			get
+			{
+				return fileCategoryCode;
+			}
+			set	
+			{
+				fileCategoryCode = value;
+				DictionaryUtil.Add(QueryParameters, "FileCategoryCode", value.ToString());
+			}
+		}
+
 		public int? CurrentPage
 		{
 			get
@@ -181,7 +239,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
-		public long? InstanceId
+		public string InstanceId
 		{
 			get
 			{
@@ -190,33 +248,20 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			set	
 			{
 				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
-		public string Name
+		public string ModelIds
 		{
 			get
 			{
-				return name;
+				return modelIds;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public long? RuleId
-		{
-			get
-			{
-				return ruleId;
-			}
-			set	
-			{
-				ruleId = value;
-				DictionaryUtil.Add(QueryParameters, "RuleId", value.ToString());
+				modelIds = value;
+				DictionaryUtil.Add(QueryParameters, "ModelIds", value);
 			}
 		}
 
@@ -225,9 +270,9 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			return false;
 		}
 
-        public override DescribeTablesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeDataObjectsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeTablesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDataObjectsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -52,7 +52,11 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private string serviceRegionId;
 
+		private long? fileCategoryCode;
+
 		private int? currentPage;
+
+		private long? templateId;
 
 		private string instanceId;
 
@@ -138,6 +142,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
+		public long? FileCategoryCode
+		{
+			get
+			{
+				return fileCategoryCode;
+			}
+			set	
+			{
+				fileCategoryCode = value;
+				DictionaryUtil.Add(QueryParameters, "FileCategoryCode", value.ToString());
+			}
+		}
+
 		public int? CurrentPage
 		{
 			get
@@ -148,6 +165,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				currentPage = value;
 				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public long? TemplateId
+		{
+			get
+			{
+				return templateId;
+			}
+			set	
+			{
+				templateId = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateId", value.ToString());
 			}
 		}
 

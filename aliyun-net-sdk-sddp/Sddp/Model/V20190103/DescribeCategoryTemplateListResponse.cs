@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
 {
-	public class DescribeCategoryTemplateRuleListResponse : AcsResponse
+	public class DescribeCategoryTemplateListResponse : AcsResponse
 	{
 
 		private int? currentPage;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private int? totalCount;
 
-		private List<DescribeCategoryTemplateRuleList_DataLimit> items;
+		private List<DescribeCategoryTemplateList_Template> items;
 
 		public int? CurrentPage
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
-		public List<DescribeCategoryTemplateRuleList_DataLimit> Items
+		public List<DescribeCategoryTemplateList_Template> Items
 		{
 			get
 			{
@@ -95,34 +95,42 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
-		public class DescribeCategoryTemplateRuleList_DataLimit
+		public class DescribeCategoryTemplateList_Template
 		{
+
+			private int? currentRiskLevel;
 
 			private int? status;
 
-			private string identificationScope;
+			private int? type;
 
-			private long? riskLevelId;
+			private int? supportEdit;
 
-			private long? parentCategoryId;
-
-			private string description;
-
-			private int? customType;
-
-			private string identificationRuleIds;
+			private int? maxCategoryLevel;
 
 			private string name;
 
-			private int? orderNum;
-
-			private long? templateId;
+			private int? maxRiskLevel;
 
 			private long? id;
 
-			private int? categoryLevel;
+			private string description;
 
-			private long? parentModelId;
+			private long? gmtCreate;
+
+			private long? gmtModified;
+
+			public int? CurrentRiskLevel
+			{
+				get
+				{
+					return currentRiskLevel;
+				}
+				set	
+				{
+					currentRiskLevel = value;
+				}
+			}
 
 			public int? Status
 			{
@@ -136,75 +144,39 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public string IdentificationScope
+			public int? Type
 			{
 				get
 				{
-					return identificationScope;
+					return type;
 				}
 				set	
 				{
-					identificationScope = value;
+					type = value;
 				}
 			}
 
-			public long? RiskLevelId
+			public int? SupportEdit
 			{
 				get
 				{
-					return riskLevelId;
+					return supportEdit;
 				}
 				set	
 				{
-					riskLevelId = value;
+					supportEdit = value;
 				}
 			}
 
-			public long? ParentCategoryId
+			public int? MaxCategoryLevel
 			{
 				get
 				{
-					return parentCategoryId;
+					return maxCategoryLevel;
 				}
 				set	
 				{
-					parentCategoryId = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public int? CustomType
-			{
-				get
-				{
-					return customType;
-				}
-				set	
-				{
-					customType = value;
-				}
-			}
-
-			public string IdentificationRuleIds
-			{
-				get
-				{
-					return identificationRuleIds;
-				}
-				set	
-				{
-					identificationRuleIds = value;
+					maxCategoryLevel = value;
 				}
 			}
 
@@ -220,27 +192,15 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public int? OrderNum
+			public int? MaxRiskLevel
 			{
 				get
 				{
-					return orderNum;
+					return maxRiskLevel;
 				}
 				set	
 				{
-					orderNum = value;
-				}
-			}
-
-			public long? TemplateId
-			{
-				get
-				{
-					return templateId;
-				}
-				set	
-				{
-					templateId = value;
+					maxRiskLevel = value;
 				}
 			}
 
@@ -256,27 +216,39 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public int? CategoryLevel
+			public string Description
 			{
 				get
 				{
-					return categoryLevel;
+					return description;
 				}
 				set	
 				{
-					categoryLevel = value;
+					description = value;
 				}
 			}
 
-			public long? ParentModelId
+			public long? GmtCreate
 			{
 				get
 				{
-					return parentModelId;
+					return gmtCreate;
 				}
 				set	
 				{
-					parentModelId = value;
+					gmtCreate = value;
+				}
+			}
+
+			public long? GmtModified
+			{
+				get
+				{
+					return gmtModified;
+				}
+				set	
+				{
+					gmtModified = value;
 				}
 			}
 		}

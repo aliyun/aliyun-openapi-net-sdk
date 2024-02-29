@@ -27,10 +27,10 @@ using Aliyun.Acs.Sddp.Transform.V20190103;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
 {
-    public class DescribeDataLimitSetRequest : RpcAcsRequest<DescribeDataLimitSetResponse>
+    public class DescribeDocTypesRequest : RpcAcsRequest<DescribeDocTypesResponse>
     {
-        public DescribeDataLimitSetRequest()
-            : base("Sddp", "2019-01-03", "DescribeDataLimitSet", "sddp", "openAPI")
+        public DescribeDocTypesRequest()
+            : base("Sddp", "2019-01-03", "DescribeDocTypes", "sddp", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,37 +40,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			Method = MethodType.POST;
         }
 
-		private int? resourceType;
-
-		private string parentId;
-
 		private string lang;
-
-		public int? ResourceType
-		{
-			get
-			{
-				return resourceType;
-			}
-			set	
-			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value.ToString());
-			}
-		}
-
-		public string ParentId
-		{
-			get
-			{
-				return parentId;
-			}
-			set	
-			{
-				parentId = value;
-				DictionaryUtil.Add(QueryParameters, "ParentId", value);
-			}
-		}
 
 		public string Lang
 		{
@@ -90,9 +60,9 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			return false;
 		}
 
-        public override DescribeDataLimitSetResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeDocTypesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDataLimitSetResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDocTypesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

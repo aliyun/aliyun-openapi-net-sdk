@@ -27,10 +27,10 @@ using Aliyun.Acs.Sddp.Transform.V20190103;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
 {
-    public class DescribeDataLimitSetRequest : RpcAcsRequest<DescribeDataLimitSetResponse>
+    public class DescribeCategoryTemplateListRequest : RpcAcsRequest<DescribeCategoryTemplateListResponse>
     {
-        public DescribeDataLimitSetRequest()
-            : base("Sddp", "2019-01-03", "DescribeDataLimitSet", "sddp", "openAPI")
+        public DescribeCategoryTemplateListRequest()
+            : base("Sddp", "2019-01-03", "DescribeCategoryTemplateList", "sddp", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,35 +40,50 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			Method = MethodType.POST;
         }
 
-		private int? resourceType;
+		private int? currentPage;
 
-		private string parentId;
+		private int? pageSize;
+
+		private int? usageScenario;
 
 		private string lang;
 
-		public int? ResourceType
+		public int? CurrentPage
 		{
 			get
 			{
-				return resourceType;
+				return currentPage;
 			}
 			set	
 			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value.ToString());
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
 			}
 		}
 
-		public string ParentId
+		public int? PageSize
 		{
 			get
 			{
-				return parentId;
+				return pageSize;
 			}
 			set	
 			{
-				parentId = value;
-				DictionaryUtil.Add(QueryParameters, "ParentId", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public int? UsageScenario
+		{
+			get
+			{
+				return usageScenario;
+			}
+			set	
+			{
+				usageScenario = value;
+				DictionaryUtil.Add(QueryParameters, "UsageScenario", value.ToString());
 			}
 		}
 
@@ -90,9 +105,9 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			return false;
 		}
 
-        public override DescribeDataLimitSetResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeCategoryTemplateListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDataLimitSetResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeCategoryTemplateListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

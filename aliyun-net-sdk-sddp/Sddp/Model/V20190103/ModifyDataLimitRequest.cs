@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private bool? modifyPassword;
 
+		private List<string> vSwitchIdLists = new List<string>(){ };
+
 		private int? samplingSize;
 
 		private string password;
@@ -58,11 +60,15 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private int? autoScan;
 
+		private List<string> securityGroupIdLists = new List<string>(){ };
+
 		private int? logStoreDay;
 
 		private int? resourceType;
 
 		private int? port;
+
+		private string vpcId;
 
 		private string userName;
 
@@ -76,6 +82,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				modifyPassword = value;
 				DictionaryUtil.Add(QueryParameters, "ModifyPassword", value.ToString());
+			}
+		}
+
+		public List<string> VSwitchIdLists
+		{
+			get
+			{
+				return vSwitchIdLists;
+			}
+
+			set
+			{
+				vSwitchIdLists = value;
 			}
 		}
 
@@ -183,6 +202,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
+		public List<string> SecurityGroupIdLists
+		{
+			get
+			{
+				return securityGroupIdLists;
+			}
+
+			set
+			{
+				securityGroupIdLists = value;
+			}
+		}
+
 		public int? LogStoreDay
 		{
 			get
@@ -219,6 +251,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				port = value;
 				DictionaryUtil.Add(QueryParameters, "Port", value.ToString());
+			}
+		}
+
+		public string VpcId
+		{
+			get
+			{
+				return vpcId;
+			}
+			set	
+			{
+				vpcId = value;
+				DictionaryUtil.Add(QueryParameters, "VpcId", value);
 			}
 		}
 

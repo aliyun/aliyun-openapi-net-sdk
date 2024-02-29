@@ -40,7 +40,22 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			Method = MethodType.POST;
         }
 
+		private long? templateId;
+
 		private string lang;
+
+		public long? TemplateId
+		{
+			get
+			{
+				return templateId;
+			}
+			set	
+			{
+				templateId = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateId", value.ToString());
+			}
+		}
 
 		public string Lang
 		{
