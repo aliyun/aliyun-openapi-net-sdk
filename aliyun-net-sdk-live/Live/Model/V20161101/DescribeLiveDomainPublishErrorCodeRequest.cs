@@ -28,10 +28,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DescribeLiveDomainTranscodeParamsRequest : RpcAcsRequest<DescribeLiveDomainTranscodeParamsResponse>
+    public class DescribeLiveDomainPublishErrorCodeRequest : RpcAcsRequest<DescribeLiveDomainPublishErrorCodeResponse>
     {
-        public DescribeLiveDomainTranscodeParamsRequest()
-            : base("live", "2016-11-01", "DescribeLiveDomainTranscodeParams", "live", "openAPI")
+        public DescribeLiveDomainPublishErrorCodeRequest()
+            : base("live", "2016-11-01", "DescribeLiveDomainPublishErrorCode", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,67 +41,83 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private string pushdomain;
+		private string startTime;
 
-		private string securityToken;
+		private string appName;
 
-		private string app;
+		private string domainName;
 
-		private string template_name;
+		private string endTime;
 
-		[JsonProperty(PropertyName = "pushdomain")]
-		public string Pushdomain
+		private long? ownerId;
+
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
 		{
 			get
 			{
-				return pushdomain;
+				return startTime;
 			}
 			set	
 			{
-				pushdomain = value;
-				DictionaryUtil.Add(QueryParameters, "pushdomain", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "SecurityToken")]
-		public string SecurityToken
+		[JsonProperty(PropertyName = "AppName")]
+		public string AppName
 		{
 			get
 			{
-				return securityToken;
+				return appName;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "app")]
-		public string App
+		[JsonProperty(PropertyName = "DomainName")]
+		public string DomainName
 		{
 			get
 			{
-				return app;
+				return domainName;
 			}
 			set	
 			{
-				app = value;
-				DictionaryUtil.Add(QueryParameters, "app", value);
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "template_name")]
-		public string Template_name
+		[JsonProperty(PropertyName = "EndTime")]
+		public string EndTime
 		{
 			get
 			{
-				return template_name;
+				return endTime;
 			}
 			set	
 			{
-				template_name = value;
-				DictionaryUtil.Add(QueryParameters, "template_name", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "OwnerId")]
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -110,9 +126,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			return false;
 		}
 
-        public override DescribeLiveDomainTranscodeParamsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeLiveDomainPublishErrorCodeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeLiveDomainTranscodeParamsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeLiveDomainPublishErrorCodeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

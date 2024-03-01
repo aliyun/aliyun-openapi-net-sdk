@@ -28,10 +28,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DescribeLiveDomainTranscodeParamsRequest : RpcAcsRequest<DescribeLiveDomainTranscodeParamsResponse>
+    public class ListMuteGroupUserRequest : RpcAcsRequest<ListMuteGroupUserResponse>
     {
-        public DescribeLiveDomainTranscodeParamsRequest()
-            : base("live", "2016-11-01", "DescribeLiveDomainTranscodeParams", "live", "openAPI")
+        public ListMuteGroupUserRequest()
+            : base("live", "2016-11-01", "ListMuteGroupUser", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,67 +41,83 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private string pushdomain;
+		private int? pageNum;
 
-		private string securityToken;
+		private int? pageSize;
 
-		private string app;
+		private string operatorUserId;
 
-		private string template_name;
+		private string groupId;
 
-		[JsonProperty(PropertyName = "pushdomain")]
-		public string Pushdomain
+		private string appId;
+
+		[JsonProperty(PropertyName = "PageNum")]
+		public int? PageNum
 		{
 			get
 			{
-				return pushdomain;
+				return pageNum;
 			}
 			set	
 			{
-				pushdomain = value;
-				DictionaryUtil.Add(QueryParameters, "pushdomain", value);
+				pageNum = value;
+				DictionaryUtil.Add(BodyParameters, "PageNum", value.ToString());
 			}
 		}
 
-		[JsonProperty(PropertyName = "SecurityToken")]
-		public string SecurityToken
+		[JsonProperty(PropertyName = "PageSize")]
+		public int? PageSize
 		{
 			get
 			{
-				return securityToken;
+				return pageSize;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				pageSize = value;
+				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
 			}
 		}
 
-		[JsonProperty(PropertyName = "app")]
-		public string App
+		[JsonProperty(PropertyName = "OperatorUserId")]
+		public string OperatorUserId
 		{
 			get
 			{
-				return app;
+				return operatorUserId;
 			}
 			set	
 			{
-				app = value;
-				DictionaryUtil.Add(QueryParameters, "app", value);
+				operatorUserId = value;
+				DictionaryUtil.Add(BodyParameters, "OperatorUserId", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "template_name")]
-		public string Template_name
+		[JsonProperty(PropertyName = "GroupId")]
+		public string GroupId
 		{
 			get
 			{
-				return template_name;
+				return groupId;
 			}
 			set	
 			{
-				template_name = value;
-				DictionaryUtil.Add(QueryParameters, "template_name", value);
+				groupId = value;
+				DictionaryUtil.Add(BodyParameters, "GroupId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "AppId")]
+		public string AppId
+		{
+			get
+			{
+				return appId;
+			}
+			set	
+			{
+				appId = value;
+				DictionaryUtil.Add(BodyParameters, "AppId", value);
 			}
 		}
 
@@ -110,9 +126,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			return false;
 		}
 
-        public override DescribeLiveDomainTranscodeParamsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListMuteGroupUserResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeLiveDomainTranscodeParamsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListMuteGroupUserResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

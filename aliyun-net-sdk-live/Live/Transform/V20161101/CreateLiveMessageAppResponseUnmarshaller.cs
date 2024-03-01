@@ -35,6 +35,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			createLiveMessageAppResponse.AppId = _ctx.StringValue("CreateLiveMessageApp.AppId");
 			createLiveMessageAppResponse.AppKey = _ctx.StringValue("CreateLiveMessageApp.AppKey");
 			createLiveMessageAppResponse.AppSign = _ctx.StringValue("CreateLiveMessageApp.AppSign");
+			createLiveMessageAppResponse.DataCenter = _ctx.StringValue("CreateLiveMessageApp.DataCenter");
         
 			return createLiveMessageAppResponse;
         }

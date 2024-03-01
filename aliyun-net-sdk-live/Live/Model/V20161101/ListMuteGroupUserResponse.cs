@@ -22,19 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class CreateLiveMessageAppResponse : AcsResponse
+	public class ListMuteGroupUserResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string appId;
+		private ListMuteGroupUser_Result result;
 
-		private string appKey;
-
-		private string appSign;
-
-		private string dataCenter;
-
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,51 +42,84 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string AppId
+		[JsonProperty(PropertyName = "Result")]
+		public ListMuteGroupUser_Result Result
 		{
 			get
 			{
-				return appId;
+				return result;
 			}
 			set	
 			{
-				appId = value;
+				result = value;
 			}
 		}
 
-		public string AppKey
+		public class ListMuteGroupUser_Result
 		{
-			get
-			{
-				return appKey;
-			}
-			set	
-			{
-				appKey = value;
-			}
-		}
 
-		public string AppSign
-		{
-			get
-			{
-				return appSign;
-			}
-			set	
-			{
-				appSign = value;
-			}
-		}
+			private int? total;
 
-		public string DataCenter
-		{
-			get
+			private bool? hasMore;
+
+			private List<ListMuteGroupUser_UserListItem> userList;
+
+			[JsonProperty(PropertyName = "Total")]
+			public int? Total
 			{
-				return dataCenter;
+				get
+				{
+					return total;
+				}
+				set	
+				{
+					total = value;
+				}
 			}
-			set	
+
+			[JsonProperty(PropertyName = "HasMore")]
+			public bool? HasMore
 			{
-				dataCenter = value;
+				get
+				{
+					return hasMore;
+				}
+				set	
+				{
+					hasMore = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "UserList")]
+			public List<ListMuteGroupUser_UserListItem> UserList
+			{
+				get
+				{
+					return userList;
+				}
+				set	
+				{
+					userList = value;
+				}
+			}
+
+			public class ListMuteGroupUser_UserListItem
+			{
+
+				private string userId;
+
+				[JsonProperty(PropertyName = "UserId")]
+				public string UserId
+				{
+					get
+					{
+						return userId;
+					}
+					set	
+					{
+						userId = value;
+					}
+				}
 			}
 		}
 	}

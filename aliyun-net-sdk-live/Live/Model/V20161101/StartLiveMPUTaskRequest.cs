@@ -243,9 +243,24 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class SeiParams
 		{
 
+			private string payloadType;
+
 			private LayoutVolume layoutVolume_;
 
 			private PassThrough passThrough_;
+
+			[JsonProperty(PropertyName = "PayloadType")]
+			public string PayloadType
+			{
+				get
+				{
+					return payloadType;
+				}
+				set	
+				{
+					payloadType = value;
+				}
+			}
 
 			[JsonProperty(PropertyName = "LayoutVolume")]
 			public LayoutVolume LayoutVolume_
@@ -278,8 +293,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private string followIdr;
 
-				private string payloadType;
-
 				private string interval;
 
 				[JsonProperty(PropertyName = "FollowIdr")]
@@ -292,19 +305,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						followIdr = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "PayloadType")]
-				public string PayloadType
-				{
-					get
-					{
-						return payloadType;
-					}
-					set	
-					{
-						payloadType = value;
 					}
 				}
 
@@ -327,7 +327,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private string followIdr;
 
-				private string payloadType;
+				private string payloadContentKey;
 
 				private string payloadContent;
 
@@ -346,16 +346,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				[JsonProperty(PropertyName = "PayloadType")]
-				public string PayloadType
+				[JsonProperty(PropertyName = "PayloadContentKey")]
+				public string PayloadContentKey
 				{
 					get
 					{
-						return payloadType;
+						return payloadContentKey;
 					}
 					set	
 					{
-						payloadType = value;
+						payloadContentKey = value;
 					}
 				}
 

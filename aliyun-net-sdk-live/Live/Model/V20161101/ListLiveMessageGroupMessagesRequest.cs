@@ -46,6 +46,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private long? nextPageToken;
 
+		private int? pageSize;
+
+		private long? msgType;
+
 		private string groupId;
 
 		private long? endTime;
@@ -55,10 +59,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private string dataCenter;
 
 		private string appId;
-
-		private int? pageSize;
-
-		private long? msgType;
 
 		[JsonProperty(PropertyName = "SortType")]
 		public int? SortType
@@ -85,6 +85,34 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				nextPageToken = value;
 				DictionaryUtil.Add(QueryParameters, "NextPageToken", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageSize")]
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "MsgType")]
+		public long? MsgType
+		{
+			get
+			{
+				return msgType;
+			}
+			set	
+			{
+				msgType = value;
+				DictionaryUtil.Add(QueryParameters, "MsgType", value.ToString());
 			}
 		}
 
@@ -155,34 +183,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				appId = value;
 				DictionaryUtil.Add(QueryParameters, "AppId", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "PageSize")]
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		[JsonProperty(PropertyName = "MsgType")]
-		public long? MsgType
-		{
-			get
-			{
-				return msgType;
-			}
-			set	
-			{
-				msgType = value;
-				DictionaryUtil.Add(QueryParameters, "MsgType", value.ToString());
 			}
 		}
 

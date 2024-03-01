@@ -28,10 +28,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DescribeLiveDomainTranscodeParamsRequest : RpcAcsRequest<DescribeLiveDomainTranscodeParamsResponse>
+    public class DescribeLiveUpVideoAudioInfoRequest : RpcAcsRequest<DescribeLiveUpVideoAudioInfoResponse>
     {
-        public DescribeLiveDomainTranscodeParamsRequest()
-            : base("live", "2016-11-01", "DescribeLiveDomainTranscodeParams", "live", "openAPI")
+        public DescribeLiveUpVideoAudioInfoRequest()
+            : base("live", "2016-11-01", "DescribeLiveUpVideoAudioInfo", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,78 +41,73 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private string pushdomain;
+		private string startTime;
 
-		private string securityToken;
+		private string stream;
 
-		private string app;
+		private string endTime;
 
-		private string template_name;
+		private long? ownerId;
 
-		[JsonProperty(PropertyName = "pushdomain")]
-		public string Pushdomain
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
 		{
 			get
 			{
-				return pushdomain;
+				return startTime;
 			}
 			set	
 			{
-				pushdomain = value;
-				DictionaryUtil.Add(QueryParameters, "pushdomain", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "SecurityToken")]
-		public string SecurityToken
+		[JsonProperty(PropertyName = "Stream")]
+		public string Stream
 		{
 			get
 			{
-				return securityToken;
+				return stream;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				stream = value;
+				DictionaryUtil.Add(QueryParameters, "Stream", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "app")]
-		public string App
+		[JsonProperty(PropertyName = "EndTime")]
+		public string EndTime
 		{
 			get
 			{
-				return app;
+				return endTime;
 			}
 			set	
 			{
-				app = value;
-				DictionaryUtil.Add(QueryParameters, "app", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "template_name")]
-		public string Template_name
+		[JsonProperty(PropertyName = "OwnerId")]
+		public long? OwnerId
 		{
 			get
 			{
-				return template_name;
+				return ownerId;
 			}
 			set	
 			{
-				template_name = value;
-				DictionaryUtil.Add(QueryParameters, "template_name", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override DescribeLiveDomainTranscodeParamsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeLiveUpVideoAudioInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeLiveDomainTranscodeParamsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeLiveUpVideoAudioInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

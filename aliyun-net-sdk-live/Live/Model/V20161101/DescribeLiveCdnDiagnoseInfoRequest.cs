@@ -49,6 +49,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string requestType;
 
+		private string securityToken;
+
 		private string streamName;
 
 		private string app;
@@ -112,6 +114,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				requestType = value;
 				DictionaryUtil.Add(QueryParameters, "requestType", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "SecurityToken")]
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
