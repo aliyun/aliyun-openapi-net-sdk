@@ -763,13 +763,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private string audioOnly;
 
-				private string vIdeoWidth;
+				private string videoWidth;
 
 				private string audioBitrate;
 
 				private string videoFramerate;
 
-				private string vIdeoHeight;
+				private string videoHeight;
 
 				private string videoBitrate;
 
@@ -792,16 +792,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				[JsonProperty(PropertyName = "VIdeoWidth")]
-				public string VIdeoWidth
+				[JsonProperty(PropertyName = "VideoWidth")]
+				public string VideoWidth
 				{
 					get
 					{
-						return vIdeoWidth;
+						return videoWidth;
 					}
 					set	
 					{
-						vIdeoWidth = value;
+						videoWidth = value;
 					}
 				}
 
@@ -831,16 +831,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				[JsonProperty(PropertyName = "VIdeoHeight")]
-				public string VIdeoHeight
+				[JsonProperty(PropertyName = "VideoHeight")]
+				public string VideoHeight
 				{
 					get
 					{
-						return vIdeoHeight;
+						return videoHeight;
 					}
 					set	
 					{
-						vIdeoHeight = value;
+						videoHeight = value;
 					}
 				}
 

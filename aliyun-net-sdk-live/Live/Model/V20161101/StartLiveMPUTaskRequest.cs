@@ -800,7 +800,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private string videoFramerate;
 
-				private string vIdeoHeight;
+				private string videoHeight;
 
 				private string videoBitrate;
 
@@ -862,16 +862,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				[JsonProperty(PropertyName = "VIdeoHeight")]
-				public string VIdeoHeight
+				[JsonProperty(PropertyName = "VideoHeight")]
+				public string VideoHeight
 				{
 					get
 					{
-						return vIdeoHeight;
+						return videoHeight;
 					}
 					set	
 					{
-						vIdeoHeight = value;
+						videoHeight = value;
 					}
 				}
 
