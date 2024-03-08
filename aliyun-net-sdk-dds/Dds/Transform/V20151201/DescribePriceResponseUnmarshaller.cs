@@ -41,12 +41,47 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			order.TradeAmount = _ctx.StringValue("DescribePrice.Order.TradeAmount");
 			order.Currency = _ctx.StringValue("DescribePrice.Order.Currency");
 			order.ShowDiscountInfo = _ctx.BooleanValue("DescribePrice.Order.ShowDiscountInfo");
+			order.OptionalPromotions = _ctx.StringValue("DescribePrice.Order.OptionalPromotions");
+			order.PromDetailList = _ctx.StringValue("DescribePrice.Order.PromDetailList");
+			order.StandDiscountPrice = _ctx.DoubleValue("DescribePrice.Order.StandDiscountPrice");
+			order.StandPrice = _ctx.DoubleValue("DescribePrice.Order.StandPrice");
+			order.ContractActivity = _ctx.BooleanValue("DescribePrice.Order.ContractActivity");
+			order.Code = _ctx.StringValue("DescribePrice.Order.Code");
+			order.Message = _ctx.StringValue("DescribePrice.Order.Message");
+			order.IsContractActivity = _ctx.BooleanValue("DescribePrice.Order.IsContractActivity");
 
-			List<string> order_ruleIds1 = new List<string>();
+			List<string> order_ruleIds4 = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribePrice.Order.RuleIds.Length"); i++) {
-				order_ruleIds1.Add(_ctx.StringValue("DescribePrice.Order.RuleIds["+ i +"]"));
+				order_ruleIds4.Add(_ctx.StringValue("DescribePrice.Order.RuleIds["+ i +"]"));
 			}
-			order.RuleIds1 = order_ruleIds1;
+			order.RuleIds4 = order_ruleIds4;
+
+			DescribePriceResponse.DescribePrice_Order.DescribePrice_DepreciateInfo5 depreciateInfo5 = new DescribePriceResponse.DescribePrice_Order.DescribePrice_DepreciateInfo5();
+			depreciateInfo5.ListPrice = _ctx.DoubleValue("DescribePrice.Order.DepreciateInfo.ListPrice");
+			depreciateInfo5.OriginalStandAmount = _ctx.DoubleValue("DescribePrice.Order.DepreciateInfo.OriginalStandAmount");
+			depreciateInfo5.CheapStandAmount = _ctx.DoubleValue("DescribePrice.Order.DepreciateInfo.CheapStandAmount");
+			depreciateInfo5.CheapRate = _ctx.DoubleValue("DescribePrice.Order.DepreciateInfo.CheapRate");
+			depreciateInfo5.Differential = _ctx.DoubleValue("DescribePrice.Order.DepreciateInfo.Differential");
+			depreciateInfo5.DifferentialName = _ctx.StringValue("DescribePrice.Order.DepreciateInfo.DifferentialName");
+			depreciateInfo5.MonthPrice = _ctx.DoubleValue("DescribePrice.Order.DepreciateInfo.MonthPrice");
+			depreciateInfo5.IsContractActivity = _ctx.BooleanValue("DescribePrice.Order.DepreciateInfo.IsContractActivity");
+			depreciateInfo5.IsShow = _ctx.StringValue("DescribePrice.Order.DepreciateInfo.IsShow");
+
+			DescribePriceResponse.DescribePrice_Order.DescribePrice_DepreciateInfo5.DescribePrice_ContractActivity7 contractActivity7 = new DescribePriceResponse.DescribePrice_Order.DescribePrice_DepreciateInfo5.DescribePrice_ContractActivity7();
+			contractActivity7.FinalPromFee = _ctx.DoubleValue("DescribePrice.Order.DepreciateInfo.ContractActivity.FinalPromFee");
+			contractActivity7.FinalFee = _ctx.DoubleValue("DescribePrice.Order.DepreciateInfo.ContractActivity.FinalFee");
+			contractActivity7.ProdFee = _ctx.DoubleValue("DescribePrice.Order.DepreciateInfo.ContractActivity.ProdFee");
+			contractActivity7.ActivityId = _ctx.LongValue("DescribePrice.Order.DepreciateInfo.ContractActivity.ActivityId");
+			contractActivity7.OptionCode = _ctx.StringValue("DescribePrice.Order.DepreciateInfo.ContractActivity.OptionCode");
+			contractActivity7.ActivityName = _ctx.StringValue("DescribePrice.Order.DepreciateInfo.ContractActivity.ActivityName");
+
+			List<string> contractActivity7_optionIds8 = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribePrice.Order.DepreciateInfo.ContractActivity.OptionIds.Length"); i++) {
+				contractActivity7_optionIds8.Add(_ctx.StringValue("DescribePrice.Order.DepreciateInfo.ContractActivity.OptionIds["+ i +"]"));
+			}
+			contractActivity7.OptionIds8 = contractActivity7_optionIds8;
+			depreciateInfo5.ContractActivity7 = contractActivity7;
+			order.DepreciateInfo5 = depreciateInfo5;
 
 			List<DescribePriceResponse.DescribePrice_Order.DescribePrice_Coupon> order_coupons = new List<DescribePriceResponse.DescribePrice_Order.DescribePrice_Coupon>();
 			for (int i = 0; i < _ctx.Length("DescribePrice.Order.Coupons.Length"); i++) {
@@ -69,11 +104,11 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				}
 				coupon.PromotionRuleIdList = coupon_promotionRuleIdList;
 
-				List<string> coupon_targetArticleItemCodes = new List<string>();
+				List<string> coupon_targetArticleItemCodes6 = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribePrice.Order.Coupons["+ i +"].TargetArticleItemCodes.Length"); j++) {
-					coupon_targetArticleItemCodes.Add(_ctx.StringValue("DescribePrice.Order.Coupons["+ i +"].TargetArticleItemCodes["+ j +"]"));
+					coupon_targetArticleItemCodes6.Add(_ctx.StringValue("DescribePrice.Order.Coupons["+ i +"].TargetArticleItemCodes["+ j +"]"));
 				}
-				coupon.TargetArticleItemCodes = coupon_targetArticleItemCodes;
+				coupon.TargetArticleItemCodes6 = coupon_targetArticleItemCodes6;
 
 				order_coupons.Add(coupon);
 			}
@@ -87,12 +122,141 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				subOrder.DiscountAmount = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].DiscountAmount");
 				subOrder.TradeAmount = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].TradeAmount");
 				subOrder.InstanceId = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].InstanceId");
+				subOrder.IsNewOfficialActivity = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].IsNewOfficialActivity");
+				subOrder.ContractActivity = _ctx.BooleanValue("DescribePrice.SubOrders["+ i +"].ContractActivity");
+				subOrder.StandDiscountPrice = _ctx.DoubleValue("DescribePrice.SubOrders["+ i +"].StandDiscountPrice");
+				subOrder.StandPrice = _ctx.DoubleValue("DescribePrice.SubOrders["+ i +"].StandPrice");
+				subOrder.IsContractActivity = _ctx.BooleanValue("DescribePrice.SubOrders["+ i +"].IsContractActivity");
 
 				List<string> subOrder_ruleIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribePrice.SubOrders["+ i +"].RuleIds.Length"); j++) {
 					subOrder_ruleIds.Add(_ctx.StringValue("DescribePrice.SubOrders["+ i +"].RuleIds["+ j +"]"));
 				}
 				subOrder.RuleIds = subOrder_ruleIds;
+
+				DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_DepreciateInfo depreciateInfo = new DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_DepreciateInfo();
+				depreciateInfo.ListPrice = _ctx.DoubleValue("DescribePrice.SubOrders["+ i +"].DepreciateInfo.ListPrice");
+				depreciateInfo.OriginalStandAmount = _ctx.DoubleValue("DescribePrice.SubOrders["+ i +"].DepreciateInfo.OriginalStandAmount");
+				depreciateInfo.CheapStandAmount = _ctx.DoubleValue("DescribePrice.SubOrders["+ i +"].DepreciateInfo.CheapStandAmount");
+				depreciateInfo.CheapRate = _ctx.DoubleValue("DescribePrice.SubOrders["+ i +"].DepreciateInfo.CheapRate");
+				depreciateInfo.Differential = _ctx.DoubleValue("DescribePrice.SubOrders["+ i +"].DepreciateInfo.Differential");
+				depreciateInfo.DifferentialName = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].DepreciateInfo.DifferentialName");
+				depreciateInfo.MonthPrice = _ctx.DoubleValue("DescribePrice.SubOrders["+ i +"].DepreciateInfo.MonthPrice");
+				depreciateInfo.IsContractActivity = _ctx.BooleanValue("DescribePrice.SubOrders["+ i +"].DepreciateInfo.IsContractActivity");
+				depreciateInfo.IsShow = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].DepreciateInfo.IsShow");
+
+				DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_DepreciateInfo.DescribePrice_ContractActivity contractActivity = new DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_DepreciateInfo.DescribePrice_ContractActivity();
+				contractActivity.FinalPromFee = _ctx.DoubleValue("DescribePrice.SubOrders["+ i +"].DepreciateInfo.ContractActivity.FinalPromFee");
+				contractActivity.FinalFee = _ctx.DoubleValue("DescribePrice.SubOrders["+ i +"].DepreciateInfo.ContractActivity.FinalFee");
+				contractActivity.ProdFee = _ctx.DoubleValue("DescribePrice.SubOrders["+ i +"].DepreciateInfo.ContractActivity.ProdFee");
+				contractActivity.ActivityId = _ctx.LongValue("DescribePrice.SubOrders["+ i +"].DepreciateInfo.ContractActivity.ActivityId");
+				contractActivity.OptionCode = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].DepreciateInfo.ContractActivity.OptionCode");
+				contractActivity.ActivityName = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].DepreciateInfo.ContractActivity.ActivityName");
+
+				List<string> contractActivity_optionIds = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribePrice.SubOrders["+ i +"].DepreciateInfo.ContractActivity.OptionIds.Length"); j++) {
+					contractActivity_optionIds.Add(_ctx.StringValue("DescribePrice.SubOrders["+ i +"].DepreciateInfo.ContractActivity.OptionIds["+ j +"]"));
+				}
+				contractActivity.OptionIds = contractActivity_optionIds;
+				depreciateInfo.ContractActivity = contractActivity;
+				subOrder.DepreciateInfo = depreciateInfo;
+
+				List<DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_ModuleInstanceItem> subOrder_moduleInstance = new List<DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_ModuleInstanceItem>();
+				for (int j = 0; j < _ctx.Length("DescribePrice.SubOrders["+ i +"].ModuleInstance.Length"); j++) {
+					DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_ModuleInstanceItem moduleInstanceItem = new DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_ModuleInstanceItem();
+					moduleInstanceItem.CycleFee = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].CycleFee");
+					moduleInstanceItem.DiscountFee = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].DiscountFee");
+					moduleInstanceItem.ModuleCode = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].ModuleCode");
+					moduleInstanceItem.ModuleId = _ctx.LongValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].ModuleId");
+					moduleInstanceItem.ModuleName = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].ModuleName");
+					moduleInstanceItem.NeedOrderPay = _ctx.BooleanValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].NeedOrderPay");
+					moduleInstanceItem.PayFee = _ctx.DoubleValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].PayFee");
+					moduleInstanceItem.PricingModule = _ctx.BooleanValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].PricingModule");
+					moduleInstanceItem.StandPrice = _ctx.DoubleValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].StandPrice");
+					moduleInstanceItem.TotalProductFee = _ctx.DoubleValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].TotalProductFee");
+					moduleInstanceItem.ContractActivity = _ctx.BooleanValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].ContractActivity");
+
+					DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_ModuleInstanceItem.DescribePrice_DepreciateInfo1 depreciateInfo1 = new DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_ModuleInstanceItem.DescribePrice_DepreciateInfo1();
+					depreciateInfo1.ListPrice = _ctx.DoubleValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].DepreciateInfo.ListPrice");
+					depreciateInfo1.OriginalStandAmount = _ctx.DoubleValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].DepreciateInfo.OriginalStandAmount");
+					depreciateInfo1.CheapStandAmount = _ctx.DoubleValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].DepreciateInfo.CheapStandAmount");
+					depreciateInfo1.CheapRate = _ctx.DoubleValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].DepreciateInfo.CheapRate");
+					depreciateInfo1.Differential = _ctx.DoubleValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].DepreciateInfo.Differential");
+					depreciateInfo1.DifferentialName = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].DepreciateInfo.DifferentialName");
+					depreciateInfo1.MonthPrice = _ctx.DoubleValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].DepreciateInfo.MonthPrice");
+					depreciateInfo1.IsContractActivity = _ctx.BooleanValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].DepreciateInfo.IsContractActivity");
+					depreciateInfo1.IsShow = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].DepreciateInfo.IsShow");
+					moduleInstanceItem.DepreciateInfo1 = depreciateInfo1;
+
+					List<DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_ModuleInstanceItem.DescribePrice_PromDetal> moduleInstanceItem_promDetailList2 = new List<DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_ModuleInstanceItem.DescribePrice_PromDetal>();
+					for (int k = 0; k < _ctx.Length("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].PromDetailList.Length"); k++) {
+						DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_ModuleInstanceItem.DescribePrice_PromDetal promDetal = new DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_ModuleInstanceItem.DescribePrice_PromDetal();
+						promDetal.FinalPromFee = _ctx.DoubleValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].PromDetailList["+ k +"].FinalPromFee");
+						promDetal.ActivityExtInfo = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].PromDetailList["+ k +"].ActivityExtInfo");
+						promDetal.OptionCode = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].PromDetailList["+ k +"].OptionCode");
+						promDetal.PromType = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].PromDetailList["+ k +"].PromType");
+						promDetal.PromotionId = _ctx.LongValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].PromDetailList["+ k +"].PromotionId");
+						promDetal.PromotionName = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].PromDetailList["+ k +"].PromotionName");
+						promDetal.PromotionCode = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].PromDetailList["+ k +"].PromotionCode");
+						promDetal.DerivedPromType = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].PromDetailList["+ k +"].DerivedPromType");
+
+						moduleInstanceItem_promDetailList2.Add(promDetal);
+					}
+					moduleInstanceItem.PromDetailList2 = moduleInstanceItem_promDetailList2;
+
+					List<DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_ModuleInstanceItem.DescribePrice_ModuleAttr> moduleInstanceItem_moduleAttrs = new List<DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_ModuleInstanceItem.DescribePrice_ModuleAttr>();
+					for (int k = 0; k < _ctx.Length("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].ModuleAttrs.Length"); k++) {
+						DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_ModuleInstanceItem.DescribePrice_ModuleAttr moduleAttr = new DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_ModuleInstanceItem.DescribePrice_ModuleAttr();
+						moduleAttr.Code = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].ModuleAttrs["+ k +"].Code");
+						moduleAttr.Name = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].ModuleAttrs["+ k +"].Name");
+						moduleAttr.Type = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].ModuleAttrs["+ k +"].Type");
+						moduleAttr._Value = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].ModuleAttrs["+ k +"].Value");
+
+						moduleInstanceItem_moduleAttrs.Add(moduleAttr);
+					}
+					moduleInstanceItem.ModuleAttrs = moduleInstanceItem_moduleAttrs;
+
+					subOrder_moduleInstance.Add(moduleInstanceItem);
+				}
+				subOrder.ModuleInstance = subOrder_moduleInstance;
+
+				List<DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_OptionalPromotion> subOrder_optionalPromotions = new List<DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_OptionalPromotion>();
+				for (int j = 0; j < _ctx.Length("DescribePrice.SubOrders["+ i +"].OptionalPromotions.Length"); j++) {
+					DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_OptionalPromotion optionalPromotion = new DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_OptionalPromotion();
+					optionalPromotion.ActivityCategory = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].OptionalPromotions["+ j +"].ActivityCategory");
+					optionalPromotion.ActivityExtInfo = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].OptionalPromotions["+ j +"].ActivityExtInfo");
+					optionalPromotion.CanPromFee = _ctx.DoubleValue("DescribePrice.SubOrders["+ i +"].OptionalPromotions["+ j +"].CanPromFee");
+					optionalPromotion.OptionCode = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].OptionalPromotions["+ j +"].OptionCode");
+					optionalPromotion.PromotionName = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].OptionalPromotions["+ j +"].PromotionName");
+					optionalPromotion.PromotionOptionNo = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].OptionalPromotions["+ j +"].PromotionOptionNo");
+					optionalPromotion.Selected = _ctx.BooleanValue("DescribePrice.SubOrders["+ i +"].OptionalPromotions["+ j +"].Selected");
+					optionalPromotion.Show = _ctx.BooleanValue("DescribePrice.SubOrders["+ i +"].OptionalPromotions["+ j +"].Show");
+
+					List<string> optionalPromotion_targetArticleItemCodes = new List<string>();
+					for (int k = 0; k < _ctx.Length("DescribePrice.SubOrders["+ i +"].OptionalPromotions["+ j +"].TargetArticleItemCodes.Length"); k++) {
+						optionalPromotion_targetArticleItemCodes.Add(_ctx.StringValue("DescribePrice.SubOrders["+ i +"].OptionalPromotions["+ j +"].TargetArticleItemCodes["+ k +"]"));
+					}
+					optionalPromotion.TargetArticleItemCodes = optionalPromotion_targetArticleItemCodes;
+
+					subOrder_optionalPromotions.Add(optionalPromotion);
+				}
+				subOrder.OptionalPromotions = subOrder_optionalPromotions;
+
+				List<DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_PromDetal3> subOrder_promDetailList = new List<DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_PromDetal3>();
+				for (int j = 0; j < _ctx.Length("DescribePrice.SubOrders["+ i +"].PromDetailList.Length"); j++) {
+					DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_PromDetal3 promDetal3 = new DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_PromDetal3();
+					promDetal3.FinalPromFee = _ctx.DoubleValue("DescribePrice.SubOrders["+ i +"].PromDetailList["+ j +"].FinalPromFee");
+					promDetal3.ActivityExtInfo = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].PromDetailList["+ j +"].ActivityExtInfo");
+					promDetal3.OptionCode = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].PromDetailList["+ j +"].OptionCode");
+					promDetal3.PromType = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].PromDetailList["+ j +"].PromType");
+					promDetal3.PromotionId = _ctx.LongValue("DescribePrice.SubOrders["+ i +"].PromDetailList["+ j +"].PromotionId");
+					promDetal3.PromotionName = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].PromDetailList["+ j +"].PromotionName");
+					promDetal3.PromotionCode = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].PromDetailList["+ j +"].PromotionCode");
+					promDetal3.DerivedPromType = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].PromDetailList["+ j +"].DerivedPromType");
+
+					subOrder_promDetailList.Add(promDetal3);
+				}
+				subOrder.PromDetailList = subOrder_promDetailList;
 
 				describePriceResponse_subOrders.Add(subOrder);
 			}

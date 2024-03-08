@@ -46,8 +46,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private int? isHistory;
 
-		private string securityToken;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -90,19 +88,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				isHistory = value;
 				DictionaryUtil.Add(QueryParameters, "IsHistory", value.ToString());
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

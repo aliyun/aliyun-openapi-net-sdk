@@ -42,7 +42,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
-		private string securityToken;
+		private bool? showHDMIps;
 
 		private string dBInstanceId;
 
@@ -65,16 +65,16 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string SecurityToken
+		public bool? ShowHDMIps
 		{
 			get
 			{
-				return securityToken;
+				return showHDMIps;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				showHDMIps = value;
+				DictionaryUtil.Add(QueryParameters, "ShowHDMIps", value.ToString());
 			}
 		}
 

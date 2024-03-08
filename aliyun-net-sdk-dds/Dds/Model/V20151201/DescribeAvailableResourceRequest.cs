@@ -42,11 +42,13 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
+		private string engineVersion;
+
 		private string storageType;
 
-		private string resourceGroupId;
+		private string replicationFactor;
 
-		private string securityToken;
+		private string resourceGroupId;
 
 		private string instanceChargeType;
 
@@ -55,6 +57,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string dBInstanceClass;
 
 		private string dbType;
 
@@ -73,6 +77,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string EngineVersion
+		{
+			get
+			{
+				return engineVersion;
+			}
+			set	
+			{
+				engineVersion = value;
+				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
+			}
+		}
+
 		public string StorageType
 		{
 			get
@@ -86,6 +103,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string ReplicationFactor
+		{
+			get
+			{
+				return replicationFactor;
+			}
+			set	
+			{
+				replicationFactor = value;
+				DictionaryUtil.Add(QueryParameters, "ReplicationFactor", value);
+			}
+		}
+
 		public string ResourceGroupId
 		{
 			get
@@ -96,19 +126,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -161,6 +178,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string DBInstanceClass
+		{
+			get
+			{
+				return dBInstanceClass;
+			}
+			set	
+			{
+				dBInstanceClass = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceClass", value);
 			}
 		}
 

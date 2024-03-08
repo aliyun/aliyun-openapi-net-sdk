@@ -44,8 +44,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string startTime;
 
-		private string securityToken;
-
 		private string dBInstanceId;
 
 		private string nodeId;
@@ -83,19 +81,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

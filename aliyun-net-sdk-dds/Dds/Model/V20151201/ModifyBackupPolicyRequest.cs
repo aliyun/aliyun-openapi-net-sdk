@@ -44,8 +44,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string backupInterval;
 
-		private string securityToken;
-
 		private string dBInstanceId;
 
 		private long? enableBackupLog;
@@ -63,6 +61,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string preferredBackupTime;
 
 		private long? backupRetentionPeriod;
+
+		private long? highFrequencyBackupRetention;
 
 		private long? logBackupRetentionPeriod;
 
@@ -89,19 +89,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				backupInterval = value;
 				DictionaryUtil.Add(QueryParameters, "BackupInterval", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -219,6 +206,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				backupRetentionPeriod = value;
 				DictionaryUtil.Add(QueryParameters, "BackupRetentionPeriod", value.ToString());
+			}
+		}
+
+		public long? HighFrequencyBackupRetention
+		{
+			get
+			{
+				return highFrequencyBackupRetention;
+			}
+			set	
+			{
+				highFrequencyBackupRetention = value;
+				DictionaryUtil.Add(QueryParameters, "HighFrequencyBackupRetention", value.ToString());
 			}
 		}
 

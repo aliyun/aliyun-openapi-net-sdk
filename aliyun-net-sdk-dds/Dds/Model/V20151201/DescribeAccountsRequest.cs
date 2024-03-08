@@ -44,8 +44,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string accountName;
 
-		private string securityToken;
-
 		private string dBInstanceId;
 
 		private string resourceOwnerAccount;
@@ -77,19 +75,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				accountName = value;
 				DictionaryUtil.Add(QueryParameters, "AccountName", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

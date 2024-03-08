@@ -46,8 +46,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string databaseNames;
 
-		private string securityToken;
-
 		private string restoreTime;
 
 		private string resourceOwnerAccount;
@@ -96,19 +94,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				databaseNames = value;
 				DictionaryUtil.Add(QueryParameters, "DatabaseNames", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

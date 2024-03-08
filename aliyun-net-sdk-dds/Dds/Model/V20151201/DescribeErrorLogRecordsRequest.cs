@@ -46,9 +46,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private int? pageNumber;
 
-		private string resourceGroupId;
+		private string queryKeywords;
 
-		private string securityToken;
+		private string resourceGroupId;
 
 		private int? pageSize;
 
@@ -65,6 +65,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string endTime;
 
 		private long? ownerId;
+
+		private string logicalOperator;
 
 		private string dBName;
 
@@ -107,6 +109,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string QueryKeywords
+		{
+			get
+			{
+				return queryKeywords;
+			}
+			set	
+			{
+				queryKeywords = value;
+				DictionaryUtil.Add(QueryParameters, "QueryKeywords", value);
+			}
+		}
+
 		public string ResourceGroupId
 		{
 			get
@@ -117,19 +132,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -234,6 +236,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string LogicalOperator
+		{
+			get
+			{
+				return logicalOperator;
+			}
+			set	
+			{
+				logicalOperator = value;
+				DictionaryUtil.Add(QueryParameters, "LogicalOperator", value);
 			}
 		}
 

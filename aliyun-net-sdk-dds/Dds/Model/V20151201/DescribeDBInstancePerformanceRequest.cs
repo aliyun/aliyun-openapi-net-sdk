@@ -48,8 +48,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string replicaSetRole;
 
-		private string securityToken;
-
 		private string dBInstanceId;
 
 		private string nodeId;
@@ -113,19 +111,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				replicaSetRole = value;
 				DictionaryUtil.Add(QueryParameters, "ReplicaSetRole", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

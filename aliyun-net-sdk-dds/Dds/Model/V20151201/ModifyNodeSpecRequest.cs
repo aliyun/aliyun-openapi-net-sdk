@@ -50,8 +50,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string nodeClass;
 
-		private string securityToken;
-
 		private string effectiveTime;
 
 		private string dBInstanceId;
@@ -138,19 +136,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				nodeClass = value;
 				DictionaryUtil.Add(QueryParameters, "NodeClass", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

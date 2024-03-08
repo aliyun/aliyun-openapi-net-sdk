@@ -44,8 +44,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string kernelVersion;
 
-		private string securityToken;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -75,19 +73,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				kernelVersion = value;
 				DictionaryUtil.Add(QueryParameters, "KernelVersion", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

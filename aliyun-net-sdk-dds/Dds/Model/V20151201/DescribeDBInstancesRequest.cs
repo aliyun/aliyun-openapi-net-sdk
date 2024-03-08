@@ -54,8 +54,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string expired;
 
-		private string securityToken;
-
 		private string engine;
 
 		private int? pageSize;
@@ -180,19 +178,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				expired = value;
 				DictionaryUtil.Add(QueryParameters, "Expired", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

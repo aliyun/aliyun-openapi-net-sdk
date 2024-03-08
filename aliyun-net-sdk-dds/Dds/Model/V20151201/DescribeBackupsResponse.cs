@@ -120,6 +120,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string backupMethod;
 
+			private long? backupJobId;
+
 			public string BackupStatus
 			{
 				get
@@ -249,6 +251,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					backupMethod = value;
+				}
+			}
+
+			public long? BackupJobId
+			{
+				get
+				{
+					return backupJobId;
+				}
+				set	
+				{
+					backupJobId = value;
 				}
 			}
 		}

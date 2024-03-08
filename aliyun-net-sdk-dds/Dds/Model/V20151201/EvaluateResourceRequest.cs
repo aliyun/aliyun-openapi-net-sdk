@@ -52,8 +52,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string replicationFactor;
 
-		private string securityToken;
-
 		private string engine;
 
 		private string dBInstanceId;
@@ -143,19 +141,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				replicationFactor = value;
 				DictionaryUtil.Add(QueryParameters, "ReplicationFactor", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

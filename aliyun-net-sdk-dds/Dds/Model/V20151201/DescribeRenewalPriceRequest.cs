@@ -44,8 +44,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string couponNo;
 
-		private string securityToken;
-
 		private string dBInstanceId;
 
 		private string businessInfo;
@@ -79,19 +77,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				couponNo = value;
 				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

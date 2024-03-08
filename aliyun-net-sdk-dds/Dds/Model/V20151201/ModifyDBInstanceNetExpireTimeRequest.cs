@@ -46,8 +46,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private int? classicExpendExpiredDays;
 
-		private string securityToken;
-
 		private string dBInstanceId;
 
 		private string resourceOwnerAccount;
@@ -55,8 +53,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string category;
 
 		public long? ResourceOwnerId
 		{
@@ -94,19 +90,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				classicExpendExpiredDays = value;
 				DictionaryUtil.Add(QueryParameters, "ClassicExpendExpiredDays", value.ToString());
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -159,19 +142,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Category
-		{
-			get
-			{
-				return category;
-			}
-			set	
-			{
-				category = value;
-				DictionaryUtil.Add(QueryParameters, "Category", value);
 			}
 		}
 

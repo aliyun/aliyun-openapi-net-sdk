@@ -46,8 +46,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string securityIpGroupName;
 
-		private string securityToken;
-
 		private string dBInstanceId;
 
 		private string modifyMode;
@@ -96,19 +94,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				securityIpGroupName = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityIpGroupName", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

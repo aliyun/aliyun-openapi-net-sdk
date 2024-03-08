@@ -40,6 +40,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			describeBackupPolicyResponse.LogBackupRetentionPeriod = _ctx.IntegerValue("DescribeBackupPolicy.LogBackupRetentionPeriod");
 			describeBackupPolicyResponse.SnapshotBackupType = _ctx.StringValue("DescribeBackupPolicy.SnapshotBackupType");
 			describeBackupPolicyResponse.BackupInterval = _ctx.IntegerValue("DescribeBackupPolicy.BackupInterval");
+			describeBackupPolicyResponse.HighFrequencyBackupRetention = _ctx.StringValue("DescribeBackupPolicy.HighFrequencyBackupRetention");
         
 			return describeBackupPolicyResponse;
         }

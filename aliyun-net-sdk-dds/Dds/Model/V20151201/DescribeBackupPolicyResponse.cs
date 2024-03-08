@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private int? backupInterval;
 
+		private string highFrequencyBackupRetention;
+
 		public string PreferredBackupPeriod
 		{
 			get
@@ -148,6 +150,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				backupInterval = value;
+			}
+		}
+
+		public string HighFrequencyBackupRetention
+		{
+			get
+			{
+				return highFrequencyBackupRetention;
+			}
+			set	
+			{
+				highFrequencyBackupRetention = value;
 			}
 		}
 	}

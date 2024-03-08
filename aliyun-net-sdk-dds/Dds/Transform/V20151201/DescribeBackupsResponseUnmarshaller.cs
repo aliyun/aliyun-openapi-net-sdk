@@ -50,6 +50,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				backup.BackupId = _ctx.IntegerValue("DescribeBackups.Backups["+ i +"].BackupId");
 				backup.BackupDBNames = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupDBNames");
 				backup.BackupMethod = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupMethod");
+				backup.BackupJobId = _ctx.LongValue("DescribeBackups.Backups["+ i +"].BackupJobId");
 
 				describeBackupsResponse_backups.Add(backup);
 			}

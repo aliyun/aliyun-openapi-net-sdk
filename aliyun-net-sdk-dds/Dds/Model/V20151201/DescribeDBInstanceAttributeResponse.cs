@@ -70,6 +70,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private int? maxIOPS;
 
+			private int? maxMBPS;
+
 			private string vPCCloudInstanceIds;
 
 			private string protocolType;
@@ -245,6 +247,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					maxIOPS = value;
+				}
+			}
+
+			public int? MaxMBPS
+			{
+				get
+				{
+					return maxMBPS;
+				}
+				set	
+				{
+					maxMBPS = value;
 				}
 			}
 
@@ -1127,6 +1141,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 				private string status;
 
+				private string maxDiskMbps;
+
 				public int? MaxIOPS
 				{
 					get
@@ -1244,6 +1260,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						status = value;
+					}
+				}
+
+				public string MaxDiskMbps
+				{
+					get
+					{
+						return maxDiskMbps;
+					}
+					set	
+					{
+						maxDiskMbps = value;
 					}
 				}
 			}

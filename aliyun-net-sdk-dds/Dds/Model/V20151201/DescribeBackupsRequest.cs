@@ -46,8 +46,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private int? pageNumber;
 
-		private string securityToken;
-
 		private int? pageSize;
 
 		private string dBInstanceId;
@@ -100,19 +98,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

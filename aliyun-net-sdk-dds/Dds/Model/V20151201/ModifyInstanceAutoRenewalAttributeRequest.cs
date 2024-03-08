@@ -44,8 +44,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string duration;
 
-		private string securityToken;
-
 		private string dBInstanceId;
 
 		private string resourceOwnerAccount;
@@ -79,19 +77,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				duration = value;
 				DictionaryUtil.Add(QueryParameters, "Duration", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

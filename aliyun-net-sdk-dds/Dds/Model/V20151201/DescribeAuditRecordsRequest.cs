@@ -50,8 +50,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string database;
 
-		private string securityToken;
-
 		private int? pageSize;
 
 		private string dBInstanceId;
@@ -65,6 +63,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string endTime;
 
 		private long? ownerId;
+
+		private string logicalOperator;
 
 		private string form;
 
@@ -134,19 +134,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				database = value;
 				DictionaryUtil.Add(QueryParameters, "Database", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -238,6 +225,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string LogicalOperator
+		{
+			get
+			{
+				return logicalOperator;
+			}
+			set	
+			{
+				logicalOperator = value;
+				DictionaryUtil.Add(QueryParameters, "LogicalOperator", value);
 			}
 		}
 
