@@ -27,10 +27,10 @@ using Aliyun.Acs.amqp_open.Transform.V20191212;
 
 namespace Aliyun.Acs.amqp_open.Model.V20191212
 {
-    public class CreateInstanceRequest : RpcAcsRequest<CreateInstanceResponse>
+    public class UpdateInstanceRequest : RpcAcsRequest<UpdateInstanceResponse>
     {
-        public CreateInstanceRequest()
-            : base("amqp-open", "2019-12-12", "CreateInstance", "onsproxy", "openAPI")
+        public UpdateInstanceRequest()
+            : base("amqp-open", "2019-12-12", "UpdateInstance", "onsproxy", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,8 +43,6 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 		private long? maxPrivateTps;
 
 		private string clientToken;
-
-		private string periodCycle;
 
 		private int? storageSize;
 
@@ -60,23 +58,13 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 
 		private string instanceType;
 
-		private string renewStatus;
-
-		private int? autoRenewPeriod;
-
-		private int? period;
-
-		private string renewalDurationUnit;
-
-		private string instanceName;
-
-		private bool? autoRenew;
+		private string instanceId;
 
 		private bool? supportEip;
 
-		private long? maxEipTps;
+		private string modifyType;
 
-		private string paymentType;
+		private long? maxEipTps;
 
 		public long? MaxPrivateTps
 		{
@@ -101,19 +89,6 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string PeriodCycle
-		{
-			get
-			{
-				return periodCycle;
-			}
-			set	
-			{
-				periodCycle = value;
-				DictionaryUtil.Add(QueryParameters, "PeriodCycle", value);
 			}
 		}
 
@@ -208,81 +183,16 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 			}
 		}
 
-		public string RenewStatus
+		public string InstanceId
 		{
 			get
 			{
-				return renewStatus;
+				return instanceId;
 			}
 			set	
 			{
-				renewStatus = value;
-				DictionaryUtil.Add(QueryParameters, "RenewStatus", value);
-			}
-		}
-
-		public int? AutoRenewPeriod
-		{
-			get
-			{
-				return autoRenewPeriod;
-			}
-			set	
-			{
-				autoRenewPeriod = value;
-				DictionaryUtil.Add(QueryParameters, "AutoRenewPeriod", value.ToString());
-			}
-		}
-
-		public int? Period
-		{
-			get
-			{
-				return period;
-			}
-			set	
-			{
-				period = value;
-				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
-			}
-		}
-
-		public string RenewalDurationUnit
-		{
-			get
-			{
-				return renewalDurationUnit;
-			}
-			set	
-			{
-				renewalDurationUnit = value;
-				DictionaryUtil.Add(QueryParameters, "RenewalDurationUnit", value);
-			}
-		}
-
-		public string InstanceName
-		{
-			get
-			{
-				return instanceName;
-			}
-			set	
-			{
-				instanceName = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceName", value);
-			}
-		}
-
-		public bool? AutoRenew
-		{
-			get
-			{
-				return autoRenew;
-			}
-			set	
-			{
-				autoRenew = value;
-				DictionaryUtil.Add(QueryParameters, "AutoRenew", value.ToString());
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -299,6 +209,19 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 			}
 		}
 
+		public string ModifyType
+		{
+			get
+			{
+				return modifyType;
+			}
+			set	
+			{
+				modifyType = value;
+				DictionaryUtil.Add(QueryParameters, "ModifyType", value);
+			}
+		}
+
 		public long? MaxEipTps
 		{
 			get
@@ -312,27 +235,14 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 			}
 		}
 
-		public string PaymentType
-		{
-			get
-			{
-				return paymentType;
-			}
-			set	
-			{
-				paymentType = value;
-				DictionaryUtil.Add(QueryParameters, "PaymentType", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override CreateInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
