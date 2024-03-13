@@ -43,6 +43,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string dataCenter;
 
+		private int? msgLifeCycle;
+
 		private string appName;
 
 		private int? auditType;
@@ -61,6 +63,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				dataCenter = value;
 				DictionaryUtil.Add(QueryParameters, "DataCenter", value);
+			}
+		}
+
+		public int? MsgLifeCycle
+		{
+			get
+			{
+				return msgLifeCycle;
+			}
+			set	
+			{
+				msgLifeCycle = value;
+				DictionaryUtil.Add(QueryParameters, "MsgLifeCycle", value.ToString());
 			}
 		}
 
