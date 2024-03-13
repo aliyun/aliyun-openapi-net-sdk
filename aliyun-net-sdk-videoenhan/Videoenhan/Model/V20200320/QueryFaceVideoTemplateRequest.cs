@@ -40,7 +40,24 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			Method = MethodType.POST;
         }
 
+		private long? pageSize;
+
 		private string templateId;
+
+		private long? pageNo;
+
+		public long? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
 
 		public string TemplateId
 		{
@@ -52,6 +69,19 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			{
 				templateId = value;
 				DictionaryUtil.Add(QueryParameters, "TemplateId", value);
+			}
+		}
+
+		public long? PageNo
+		{
+			get
+			{
+				return pageNo;
+			}
+			set	
+			{
+				pageNo = value;
+				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
 			}
 		}
 

@@ -36,6 +36,7 @@ namespace Aliyun.Acs.videoenhan.Transform.V20200320
 			queryFaceVideoTemplateResponse.Message = _ctx.StringValue("QueryFaceVideoTemplate.Message");
 
 			QueryFaceVideoTemplateResponse.QueryFaceVideoTemplate_Data data = new QueryFaceVideoTemplateResponse.QueryFaceVideoTemplate_Data();
+			data.Total = _ctx.LongValue("QueryFaceVideoTemplate.Data.Total");
 
 			List<QueryFaceVideoTemplateResponse.QueryFaceVideoTemplate_Data.QueryFaceVideoTemplate_ElementsItem> data_elements = new List<QueryFaceVideoTemplateResponse.QueryFaceVideoTemplate_Data.QueryFaceVideoTemplate_ElementsItem>();
 			for (int i = 0; i < _ctx.Length("QueryFaceVideoTemplate.Data.Elements.Length"); i++) {

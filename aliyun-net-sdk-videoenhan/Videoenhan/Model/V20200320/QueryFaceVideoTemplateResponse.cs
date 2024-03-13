@@ -84,7 +84,21 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 		public class QueryFaceVideoTemplate_Data
 		{
 
+			private long? total;
+
 			private List<QueryFaceVideoTemplate_ElementsItem> elements;
+
+			public long? Total
+			{
+				get
+				{
+					return total;
+				}
+				set	
+				{
+					total = value;
+				}
+			}
 
 			public List<QueryFaceVideoTemplate_ElementsItem> Elements
 			{
