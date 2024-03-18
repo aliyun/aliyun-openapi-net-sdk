@@ -39,6 +39,17 @@ namespace Aliyun.Acs.tingwu.Transform.V20230930
 			data.TaskId = _ctx.StringValue("GetTaskInfo.Data.TaskId");
 			data.TaskKey = _ctx.StringValue("GetTaskInfo.Data.TaskKey");
 			data.TaskStatus = _ctx.StringValue("GetTaskInfo.Data.TaskStatus");
+			data.ErrorCode = _ctx.StringValue("GetTaskInfo.Data.ErrorCode");
+			data.ErrorMessage = _ctx.StringValue("GetTaskInfo.Data.ErrorMessage");
+
+			GetTaskInfoResponse.GetTaskInfo_Data.GetTaskInfo_Result result = new GetTaskInfoResponse.GetTaskInfo_Data.GetTaskInfo_Result();
+			result.Transcription = _ctx.StringValue("GetTaskInfo.Data.Result.Transcription");
+			result.AutoChapters = _ctx.StringValue("GetTaskInfo.Data.Result.AutoChapters");
+			result.MeetingAssistance = _ctx.StringValue("GetTaskInfo.Data.Result.MeetingAssistance");
+			result.Summarization = _ctx.StringValue("GetTaskInfo.Data.Result.Summarization");
+			result.Translation = _ctx.StringValue("GetTaskInfo.Data.Result.Translation");
+			result.PptExtraction = _ctx.StringValue("GetTaskInfo.Data.Result.PptExtraction");
+			data.Result = result;
 			getTaskInfoResponse.Data = data;
         
 			return getTaskInfoResponse;

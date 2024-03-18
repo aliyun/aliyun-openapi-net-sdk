@@ -38,6 +38,8 @@ namespace Aliyun.Acs.tingwu.Transform.V20230930
 			CreateTaskResponse.CreateTask_Data data = new CreateTaskResponse.CreateTask_Data();
 			data.TaskId = _ctx.StringValue("CreateTask.Data.TaskId");
 			data.TaskKey = _ctx.StringValue("CreateTask.Data.TaskKey");
+			data.MeetingJoinUrl = _ctx.StringValue("CreateTask.Data.MeetingJoinUrl");
+			data.TaskStatus = _ctx.StringValue("CreateTask.Data.TaskStatus");
 			createTaskResponse.Data = data;
         
 			return createTaskResponse;

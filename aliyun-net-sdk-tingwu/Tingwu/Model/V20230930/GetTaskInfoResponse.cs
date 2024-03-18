@@ -90,6 +90,12 @@ namespace Aliyun.Acs.tingwu.Model.V20230930
 
 			private string taskStatus;
 
+			private string errorCode;
+
+			private string errorMessage;
+
+			private GetTaskInfo_Result result;
+
 			public string TaskId
 			{
 				get
@@ -123,6 +129,130 @@ namespace Aliyun.Acs.tingwu.Model.V20230930
 				set	
 				{
 					taskStatus = value;
+				}
+			}
+
+			public string ErrorCode
+			{
+				get
+				{
+					return errorCode;
+				}
+				set	
+				{
+					errorCode = value;
+				}
+			}
+
+			public string ErrorMessage
+			{
+				get
+				{
+					return errorMessage;
+				}
+				set	
+				{
+					errorMessage = value;
+				}
+			}
+
+			public GetTaskInfo_Result Result
+			{
+				get
+				{
+					return result;
+				}
+				set	
+				{
+					result = value;
+				}
+			}
+
+			public class GetTaskInfo_Result
+			{
+
+				private string transcription;
+
+				private string autoChapters;
+
+				private string meetingAssistance;
+
+				private string summarization;
+
+				private string translation;
+
+				private string pptExtraction;
+
+				public string Transcription
+				{
+					get
+					{
+						return transcription;
+					}
+					set	
+					{
+						transcription = value;
+					}
+				}
+
+				public string AutoChapters
+				{
+					get
+					{
+						return autoChapters;
+					}
+					set	
+					{
+						autoChapters = value;
+					}
+				}
+
+				public string MeetingAssistance
+				{
+					get
+					{
+						return meetingAssistance;
+					}
+					set	
+					{
+						meetingAssistance = value;
+					}
+				}
+
+				public string Summarization
+				{
+					get
+					{
+						return summarization;
+					}
+					set	
+					{
+						summarization = value;
+					}
+				}
+
+				public string Translation
+				{
+					get
+					{
+						return translation;
+					}
+					set	
+					{
+						translation = value;
+					}
+				}
+
+				public string PptExtraction
+				{
+					get
+					{
+						return pptExtraction;
+					}
+					set	
+					{
+						pptExtraction = value;
+					}
 				}
 			}
 		}

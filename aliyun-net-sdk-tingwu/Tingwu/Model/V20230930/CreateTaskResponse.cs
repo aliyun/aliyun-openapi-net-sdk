@@ -88,6 +88,10 @@ namespace Aliyun.Acs.tingwu.Model.V20230930
 
 			private string taskKey;
 
+			private string meetingJoinUrl;
+
+			private string taskStatus;
+
 			public string TaskId
 			{
 				get
@@ -109,6 +113,30 @@ namespace Aliyun.Acs.tingwu.Model.V20230930
 				set	
 				{
 					taskKey = value;
+				}
+			}
+
+			public string MeetingJoinUrl
+			{
+				get
+				{
+					return meetingJoinUrl;
+				}
+				set	
+				{
+					meetingJoinUrl = value;
+				}
+			}
+
+			public string TaskStatus
+			{
+				get
+				{
+					return taskStatus;
+				}
+				set	
+				{
+					taskStatus = value;
 				}
 			}
 		}
