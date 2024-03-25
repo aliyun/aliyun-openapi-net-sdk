@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private string lang;
 
+		private int? featureType;
+
 		private int? currentPage;
 
 		private long? templateId;
@@ -101,6 +103,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public int? FeatureType
+		{
+			get
+			{
+				return featureType;
+			}
+			set	
+			{
+				featureType = value;
+				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
 			}
 		}
 

@@ -60,6 +60,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private int? autoScan;
 
+		private int? featureType;
+
 		private List<string> securityGroupIdLists = new List<string>(){ };
 
 		private int? logStoreDay;
@@ -199,6 +201,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				autoScan = value;
 				DictionaryUtil.Add(QueryParameters, "AutoScan", value.ToString());
+			}
+		}
+
+		public int? FeatureType
+		{
+			get
+			{
+				return featureType;
+			}
+			set	
+			{
+				featureType = value;
+				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
 			}
 		}
 

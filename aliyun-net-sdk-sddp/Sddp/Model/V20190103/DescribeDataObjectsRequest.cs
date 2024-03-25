@@ -60,6 +60,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private string modelTagIds;
 
+		private int? featureType;
+
 		private long? fileCategoryCode;
 
 		private int? currentPage;
@@ -197,6 +199,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				modelTagIds = value;
 				DictionaryUtil.Add(QueryParameters, "ModelTagIds", value);
+			}
+		}
+
+		public int? FeatureType
+		{
+			get
+			{
+				return featureType;
+			}
+			set	
+			{
+				featureType = value;
+				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
 			}
 		}
 

@@ -52,6 +52,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private string content;
 
+		private string sourceIp;
+
 		private int? matchType;
 
 		private string lang;
@@ -147,6 +149,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				content = value;
 				DictionaryUtil.Add(QueryParameters, "Content", value);
+			}
+		}
+
+		public string SourceIp
+		{
+			get
+			{
+				return sourceIp;
+			}
+			set	
+			{
+				sourceIp = value;
+				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
 			}
 		}
 

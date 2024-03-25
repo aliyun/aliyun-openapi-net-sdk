@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private string subTypeIds;
 
+		private int? featureType;
+
 		private string lang;
 
 		public string SubTypeIds
@@ -54,6 +56,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				subTypeIds = value;
 				DictionaryUtil.Add(QueryParameters, "SubTypeIds", value);
+			}
+		}
+
+		public int? FeatureType
+		{
+			get
+			{
+				return featureType;
+			}
+			set	
+			{
+				featureType = value;
+				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
 			}
 		}
 

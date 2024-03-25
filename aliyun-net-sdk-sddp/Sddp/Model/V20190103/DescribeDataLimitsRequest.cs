@@ -60,6 +60,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private int? auditStatus;
 
+		private int? featureType;
+
 		private long? endTime;
 
 		private int? currentPage;
@@ -193,6 +195,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				auditStatus = value;
 				DictionaryUtil.Add(QueryParameters, "AuditStatus", value.ToString());
+			}
+		}
+
+		public int? FeatureType
+		{
+			get
+			{
+				return featureType;
+			}
+			set	
+			{
+				featureType = value;
+				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
 			}
 		}
 

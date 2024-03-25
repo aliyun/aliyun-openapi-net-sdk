@@ -60,6 +60,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private int? ruleType;
 
+		private int? featureType;
+
 		private string groupId;
 
 		private int? contentCategory;
@@ -201,6 +203,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				ruleType = value;
 				DictionaryUtil.Add(QueryParameters, "RuleType", value.ToString());
+			}
+		}
+
+		public int? FeatureType
+		{
+			get
+			{
+				return featureType;
+			}
+			set	
+			{
+				featureType = value;
+				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
 			}
 		}
 

@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private string password;
 
+		private string sourceIp;
+
 		private int? enable;
 
 		private string lang;
@@ -59,6 +61,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 		private int? auditStatus;
 
 		private int? autoScan;
+
+		private int? featureType;
 
 		private int? logStoreDay;
 
@@ -121,6 +125,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				password = value;
 				DictionaryUtil.Add(QueryParameters, "Password", value);
+			}
+		}
+
+		public string SourceIp
+		{
+			get
+			{
+				return sourceIp;
+			}
+			set	
+			{
+				sourceIp = value;
+				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
 			}
 		}
 
@@ -199,6 +216,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				autoScan = value;
 				DictionaryUtil.Add(QueryParameters, "AutoScan", value.ToString());
+			}
+		}
+
+		public int? FeatureType
+		{
+			get
+			{
+				return featureType;
+			}
+			set	
+			{
+				featureType = value;
+				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
 			}
 		}
 

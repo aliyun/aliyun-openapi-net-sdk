@@ -1,3 +1,6 @@
+2024-03-25 Version: 1.0.10
+- Fix API
+
 2024-03-19 Version: 2.1.5
 - Add QueryWorkspaceRoleConfig, ListWorkspaceRoleUsers, ListWorkspaceRoles, QueryOrganizationRoleConfig, ListOrganizationRoleUsers and ListOrganizationRoles APIs.
 

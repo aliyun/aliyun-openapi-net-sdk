@@ -40,11 +40,26 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			Method = MethodType.POST;
         }
 
+		private int? featureType;
+
 		private int? resourceType;
 
 		private string parentId;
 
 		private string lang;
+
+		public int? FeatureType
+		{
+			get
+			{
+				return featureType;
+			}
+			set	
+			{
+				featureType = value;
+				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
+			}
+		}
 
 		public int? ResourceType
 		{

@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private int? resourceId;
 
+		private int? featureType;
+
 		private long? parentTypeId;
 
 		private string lang;
@@ -58,6 +60,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				resourceId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceId", value.ToString());
+			}
+		}
+
+		public int? FeatureType
+		{
+			get
+			{
+				return featureType;
+			}
+			set	
+			{
+				featureType = value;
+				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
 			}
 		}
 

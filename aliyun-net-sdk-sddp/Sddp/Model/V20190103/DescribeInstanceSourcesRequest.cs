@@ -60,6 +60,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private int? authStatus;
 
+		private int? featureType;
+
 		private int? currentPage;
 
 		private string instanceId;
@@ -191,6 +193,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				authStatus = value;
 				DictionaryUtil.Add(QueryParameters, "AuthStatus", value.ToString());
+			}
+		}
+
+		public int? FeatureType
+		{
+			get
+			{
+				return featureType;
+			}
+			set	
+			{
+				featureType = value;
+				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
 			}
 		}
 
