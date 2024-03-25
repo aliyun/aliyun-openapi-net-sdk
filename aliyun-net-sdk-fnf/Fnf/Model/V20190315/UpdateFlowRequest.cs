@@ -44,8 +44,6 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 
 		private string type;
 
-		private string requestId;
-
 		private string roleArn;
 
 		private string name;
@@ -75,19 +73,6 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			{
 				type = value;
 				DictionaryUtil.Add(BodyParameters, "Type", value);
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-				DictionaryUtil.Add(QueryParameters, "RequestId", value);
 			}
 		}
 

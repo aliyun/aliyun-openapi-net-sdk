@@ -37,11 +37,10 @@ namespace Aliyun.Acs.fnf.Model.V20190315
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.fnf.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.fnf.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string scheduleName;
-
-		private string requestId;
 
 		private string flowName;
 
@@ -55,19 +54,6 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			{
 				scheduleName = value;
 				DictionaryUtil.Add(QueryParameters, "ScheduleName", value);
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-				DictionaryUtil.Add(QueryParameters, "RequestId", value);
 			}
 		}
 

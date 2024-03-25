@@ -40,19 +40,45 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			Method = MethodType.POST;
         }
 
-		private string scheduleName;
-
 		private string cronExpression;
-
-		private string payload;
-
-		private string requestId;
-
-		private bool? enable;
 
 		private string description;
 
+		private string scheduleName;
+
+		private string signatureVersion;
+
+		private string payload;
+
+		private bool? enable;
+
 		private string flowName;
+
+		public string CronExpression
+		{
+			get
+			{
+				return cronExpression;
+			}
+			set	
+			{
+				cronExpression = value;
+				DictionaryUtil.Add(BodyParameters, "CronExpression", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(BodyParameters, "Description", value);
+			}
+		}
 
 		public string ScheduleName
 		{
@@ -67,16 +93,16 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			}
 		}
 
-		public string CronExpression
+		public string SignatureVersion
 		{
 			get
 			{
-				return cronExpression;
+				return signatureVersion;
 			}
 			set	
 			{
-				cronExpression = value;
-				DictionaryUtil.Add(BodyParameters, "CronExpression", value);
+				signatureVersion = value;
+				DictionaryUtil.Add(QueryParameters, "SignatureVersion", value);
 			}
 		}
 
@@ -93,19 +119,6 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			}
 		}
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-				DictionaryUtil.Add(QueryParameters, "RequestId", value);
-			}
-		}
-
 		public bool? Enable
 		{
 			get
@@ -116,19 +129,6 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			{
 				enable = value;
 				DictionaryUtil.Add(BodyParameters, "Enable", value.ToString());
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(BodyParameters, "Description", value);
 			}
 		}
 

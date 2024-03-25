@@ -46,8 +46,6 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 
 		private string input;
 
-		private string requestId;
-
 		private string flowName;
 
 		public string CallbackFnFTaskToken
@@ -86,19 +84,6 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			{
 				input = value;
 				DictionaryUtil.Add(BodyParameters, "Input", value);
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-				DictionaryUtil.Add(QueryParameters, "RequestId", value);
 			}
 		}
 

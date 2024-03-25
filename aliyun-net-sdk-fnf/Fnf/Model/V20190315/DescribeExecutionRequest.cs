@@ -43,8 +43,6 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 
 		private int? waitTimeSeconds;
 
-		private string requestId;
-
 		private string flowName;
 
 		public string ExecutionName
@@ -70,19 +68,6 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			{
 				waitTimeSeconds = value;
 				DictionaryUtil.Add(QueryParameters, "WaitTimeSeconds", value.ToString());
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-				DictionaryUtil.Add(QueryParameters, "RequestId", value);
 			}
 		}
 
