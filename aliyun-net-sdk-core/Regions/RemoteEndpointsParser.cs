@@ -19,7 +19,8 @@
 
 using System;
 using System.Collections.Generic;
-
+using System.Threading;
+using System.Threading.Tasks;
 using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Regions.Location;
 
@@ -47,12 +48,10 @@ namespace Aliyun.Acs.Core.Regions
                 return null;
             }
 
-            Endpoint endpoint = null;
-
             var response = describeEndpointService.DescribeEndpoint(regionId, serviceCode, endpointType, credential, locationConfig);
             if (response == null)
             {
-                return endpoint;
+                return null;
             }
 
             ISet<string> regionIds = new HashSet<string>();
@@ -61,8 +60,36 @@ namespace Aliyun.Acs.Core.Regions
             var productDomainList = new List<ProductDomain>();
             productDomainList.Add(new ProductDomain(product, response.Endpoint));
 
-            endpoint = new Endpoint(response.RegionId, regionIds, productDomainList);
-            return endpoint;
+            return new Endpoint(response.RegionId, regionIds, productDomainList);
+        }
+
+        public Task<Endpoint> GetEndpointAsync(string region, string product, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            throw new NotSupportedException();
+        }
+
+        public async Task<Endpoint> GetEndpointAsync(string regionId, string product, string serviceCode, string endpointType,
+            Credential credential, LocationConfig locationConfig,
+            CancellationToken cancellationToken = default(CancellationToken))
+        {
+            if (serviceCode == null)
+            {
+                return null;
+            }
+
+            var response = await describeEndpointService.DescribeEndpointAsync(regionId, serviceCode, endpointType, credential, locationConfig, cancellationToken).ConfigureAwait(false);
+            if (response == null)
+            {
+                return null;
+            }
+
+            ISet<string> regionIds = new HashSet<string>();
+            regionIds.Add(regionId);
+
+            var productDomainList = new List<ProductDomain>();
+            productDomainList.Add(new ProductDomain(product, response.Endpoint));
+
+            return new Endpoint(response.RegionId, regionIds, productDomainList);
         }
     }
 }

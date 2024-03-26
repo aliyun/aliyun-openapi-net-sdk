@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -17,6 +17,8 @@
  * under the License.
  */
 
+using System.Threading;
+using System.Threading.Tasks;
 using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Regions.Location;
 using Aliyun.Acs.Core.Regions.Location.Model;
@@ -28,5 +30,10 @@ namespace Aliyun.Acs.Core.Regions
         DescribeEndpointResponse DescribeEndpoint(string regionId, string serviceCode, string endpointType,
             Credential credential,
             LocationConfig locationConfig);
+
+        Task<DescribeEndpointResponse> DescribeEndpointAsync(string regionId, string serviceCode, string endpointType,
+            Credential credential,
+            LocationConfig locationConfig,
+            CancellationToken cancellationToken = default(CancellationToken));
     }
 }

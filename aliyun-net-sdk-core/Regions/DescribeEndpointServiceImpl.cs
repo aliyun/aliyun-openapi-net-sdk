@@ -20,7 +20,8 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Text;
-
+using System.Threading;
+using System.Threading.Tasks;
 using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Reader;
@@ -65,6 +66,59 @@ namespace Aliyun.Acs.Core.Regions
             httpRequest.SetConnectTimeoutInMilliSeconds(100000);
             httpRequest.SetReadTimeoutInMilliSeconds(100000);
             var httpResponse = GetResponse(httpRequest);
+
+            if (httpResponse.isSuccess())
+            {
+                var data = Encoding.UTF8.GetString(httpResponse.Content);
+                var response = GetEndpointResponse(data, endpointType);
+                if (response == null || string.IsNullOrEmpty(response.Endpoint))
+                {
+                    return null;
+                }
+
+                return response;
+            }
+
+            var error = ReadError(httpResponse, FormatType.JSON);
+            if (500 <= httpResponse.Status)
+            {
+                return null;
+            }
+
+            return null;
+        }
+
+        public async Task<DescribeEndpointResponse> DescribeEndpointAsync(string regionId, string serviceCode, string endpointType,
+            Credential credential, LocationConfig locationConfig,
+            CancellationToken cancellationToken = default(CancellationToken))
+        {
+            if (string.IsNullOrEmpty(serviceCode))
+            {
+                return null;
+            }
+
+            if (string.IsNullOrEmpty(endpointType))
+            {
+                endpointType = DEFAULT_ENDPOINT_TYPE;
+            }
+
+            var request = new DescribeEndpointRequest
+            {
+                AcceptFormat = FormatType.JSON,
+                Id = regionId,
+                RegionId = locationConfig.RegionId,
+                LocationProduct = serviceCode,
+                SecurityToken = credential.SecurityToken,
+                EndpointType = endpointType
+            };
+
+            var signer = Signer.GetSigner(new LegacyCredentials(credential));
+            var domain = new ProductDomain(locationConfig.Product, locationConfig.Endpoint);
+
+            var httpRequest = request.SignRequest(signer, credential, FormatType.JSON, domain);
+            httpRequest.SetConnectTimeoutInMilliSeconds(100000);
+            httpRequest.SetReadTimeoutInMilliSeconds(100000);
+            var httpResponse = await GetResponseAsync(httpRequest, cancellationToken).ConfigureAwait(false);
 
             if (httpResponse.isSuccess())
             {
@@ -143,6 +197,11 @@ namespace Aliyun.Acs.Core.Regions
         public virtual HttpResponse GetResponse(HttpRequest httpRequest)
         {
             return HttpResponse.GetResponse(httpRequest);
+        }
+
+        public virtual Task<HttpResponse> GetResponseAsync(HttpRequest httpRequest, CancellationToken cancellationToken)
+        {
+            return HttpResponse.GetResponseAsync(httpRequest, cancellationToken);
         }
     }
 }
