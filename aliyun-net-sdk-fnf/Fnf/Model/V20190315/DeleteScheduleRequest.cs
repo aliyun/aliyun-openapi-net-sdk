@@ -53,7 +53,7 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			set	
 			{
 				scheduleName = value;
-				DictionaryUtil.Add(QueryParameters, "ScheduleName", value);
+				DictionaryUtil.Add(BodyParameters, "ScheduleName", value);
 			}
 		}
 
@@ -66,7 +66,7 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			set	
 			{
 				flowName = value;
-				DictionaryUtil.Add(QueryParameters, "FlowName", value);
+				DictionaryUtil.Add(BodyParameters, "FlowName", value);
 			}
 		}
 

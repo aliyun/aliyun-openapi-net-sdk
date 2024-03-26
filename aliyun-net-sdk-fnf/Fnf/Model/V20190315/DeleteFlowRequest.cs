@@ -51,7 +51,7 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			set	
 			{
 				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				DictionaryUtil.Add(BodyParameters, "Name", value);
 			}
 		}
 
