@@ -27,10 +27,10 @@ using Aliyun.Acs.Cloudauth.Transform.V20190307;
 
 namespace Aliyun.Acs.Cloudauth.Model.V20190307
 {
-    public class LivenessFaceVerifyRequest : RpcAcsRequest<LivenessFaceVerifyResponse>
+    public class AIGCFaceVerifyRequest : RpcAcsRequest<AIGCFaceVerifyResponse>
     {
-        public LivenessFaceVerifyRequest()
-            : base("Cloudauth", "2019-03-07", "LivenessFaceVerify", "cloudauth", "openAPI")
+        public AIGCFaceVerifyRequest()
+            : base("Cloudauth", "2019-03-07", "AIGCFaceVerify", "cloudauth", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,31 +42,17 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 		private string productCode;
 
+		private string ossObjectName;
+
 		private string faceContrastPicture;
-
-		private string deviceToken;
-
-		private string userId;
-
-		private string certifyId;
 
 		private string outerOrderNo;
 
 		private string faceContrastPictureUrl;
 
-		private string model;
-
-		private string ossObjectName;
-
-		private string ip;
-
-		private string mobile;
-
 		private long? sceneId;
 
 		private string ossBucketName;
-
-		private string crop;
 
 		public string ProductCode
 		{
@@ -77,7 +63,20 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				productCode = value;
-				DictionaryUtil.Add(BodyParameters, "ProductCode", value);
+				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
+			}
+		}
+
+		public string OssObjectName
+		{
+			get
+			{
+				return ossObjectName;
+			}
+			set	
+			{
+				ossObjectName = value;
+				DictionaryUtil.Add(QueryParameters, "OssObjectName", value);
 			}
 		}
 
@@ -94,45 +93,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
-		public string DeviceToken
-		{
-			get
-			{
-				return deviceToken;
-			}
-			set	
-			{
-				deviceToken = value;
-				DictionaryUtil.Add(BodyParameters, "DeviceToken", value);
-			}
-		}
-
-		public string UserId
-		{
-			get
-			{
-				return userId;
-			}
-			set	
-			{
-				userId = value;
-				DictionaryUtil.Add(BodyParameters, "UserId", value);
-			}
-		}
-
-		public string CertifyId
-		{
-			get
-			{
-				return certifyId;
-			}
-			set	
-			{
-				certifyId = value;
-				DictionaryUtil.Add(BodyParameters, "CertifyId", value);
-			}
-		}
-
 		public string OuterOrderNo
 		{
 			get
@@ -142,7 +102,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				outerOrderNo = value;
-				DictionaryUtil.Add(BodyParameters, "OuterOrderNo", value);
+				DictionaryUtil.Add(QueryParameters, "OuterOrderNo", value);
 			}
 		}
 
@@ -155,59 +115,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				faceContrastPictureUrl = value;
-				DictionaryUtil.Add(BodyParameters, "FaceContrastPictureUrl", value);
-			}
-		}
-
-		public string Model
-		{
-			get
-			{
-				return model;
-			}
-			set	
-			{
-				model = value;
-				DictionaryUtil.Add(QueryParameters, "Model", value);
-			}
-		}
-
-		public string OssObjectName
-		{
-			get
-			{
-				return ossObjectName;
-			}
-			set	
-			{
-				ossObjectName = value;
-				DictionaryUtil.Add(BodyParameters, "OssObjectName", value);
-			}
-		}
-
-		public string Ip
-		{
-			get
-			{
-				return ip;
-			}
-			set	
-			{
-				ip = value;
-				DictionaryUtil.Add(BodyParameters, "Ip", value);
-			}
-		}
-
-		public string Mobile
-		{
-			get
-			{
-				return mobile;
-			}
-			set	
-			{
-				mobile = value;
-				DictionaryUtil.Add(BodyParameters, "Mobile", value);
+				DictionaryUtil.Add(QueryParameters, "FaceContrastPictureUrl", value);
 			}
 		}
 
@@ -220,7 +128,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				sceneId = value;
-				DictionaryUtil.Add(BodyParameters, "SceneId", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "SceneId", value.ToString());
 			}
 		}
 
@@ -233,20 +141,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				ossBucketName = value;
-				DictionaryUtil.Add(BodyParameters, "OssBucketName", value);
-			}
-		}
-
-		public string Crop
-		{
-			get
-			{
-				return crop;
-			}
-			set	
-			{
-				crop = value;
-				DictionaryUtil.Add(BodyParameters, "Crop", value);
+				DictionaryUtil.Add(QueryParameters, "OssBucketName", value);
 			}
 		}
 
@@ -255,9 +150,9 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			return false;
 		}
 
-        public override LivenessFaceVerifyResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override AIGCFaceVerifyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return LivenessFaceVerifyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AIGCFaceVerifyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

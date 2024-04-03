@@ -27,10 +27,10 @@ using Aliyun.Acs.Cloudauth.Transform.V20190307;
 
 namespace Aliyun.Acs.Cloudauth.Model.V20190307
 {
-    public class CompareFacesRequest : RpcAcsRequest<CompareFacesResponse>
+    public class Id2MetaVerifyRequest : RpcAcsRequest<Id2MetaVerifyResponse>
     {
-        public CompareFacesRequest()
-            : base("Cloudauth", "2019-03-07", "CompareFaces", "cloudauth", "openAPI")
+        public Id2MetaVerifyRequest()
+            : base("Cloudauth", "2019-03-07", "Id2MetaVerify", "cloudauth", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,69 +41,59 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			Method = MethodType.POST;
         }
 
-		private string sourceImageType;
+		private string paramType;
 
-		private string targetImageType;
+		private string identifyNum;
 
-		private string targetImageValue;
+		private string userName;
 
-		private string sourceImageValue;
-
-		public string SourceImageType
+		public string ParamType
 		{
 			get
 			{
-				return sourceImageType;
+				return paramType;
 			}
 			set	
 			{
-				sourceImageType = value;
-				DictionaryUtil.Add(BodyParameters, "SourceImageType", value);
+				paramType = value;
+				DictionaryUtil.Add(QueryParameters, "ParamType", value);
 			}
 		}
 
-		public string TargetImageType
+		public string IdentifyNum
 		{
 			get
 			{
-				return targetImageType;
+				return identifyNum;
 			}
 			set	
 			{
-				targetImageType = value;
-				DictionaryUtil.Add(BodyParameters, "TargetImageType", value);
+				identifyNum = value;
+				DictionaryUtil.Add(QueryParameters, "IdentifyNum", value);
 			}
 		}
 
-		public string TargetImageValue
+		public string UserName
 		{
 			get
 			{
-				return targetImageValue;
+				return userName;
 			}
 			set	
 			{
-				targetImageValue = value;
-				DictionaryUtil.Add(BodyParameters, "TargetImageValue", value);
+				userName = value;
+				DictionaryUtil.Add(QueryParameters, "UserName", value);
 			}
 		}
 
-		public string SourceImageValue
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return sourceImageValue;
-			}
-			set	
-			{
-				sourceImageValue = value;
-				DictionaryUtil.Add(BodyParameters, "SourceImageValue", value);
-			}
+			return false;
 		}
 
-        public override CompareFacesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override Id2MetaVerifyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CompareFacesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return Id2MetaVerifyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

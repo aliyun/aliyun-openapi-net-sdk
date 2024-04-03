@@ -22,38 +22,54 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cloudauth.Model.V20190307
 {
-	public class DescribeFaceVerifyResponse : AcsResponse
+	public class DescribeSmartStatisticsPageListResponse : AcsResponse
 	{
 
-		private string code;
+		private int? currentPage;
 
-		private string message;
+		private int? totalPage;
+
+		private int? pageSize;
 
 		private string requestId;
 
-		private DescribeFaceVerify_ResultObject resultObject;
+		private int? totalCount;
 
-		public string Code
+		private List<DescribeSmartStatisticsPageList_ItemsItem> items;
+
+		public int? CurrentPage
 		{
 			get
 			{
-				return code;
+				return currentPage;
 			}
 			set	
 			{
-				code = value;
+				currentPage = value;
 			}
 		}
 
-		public string Message
+		public int? TotalPage
 		{
 			get
 			{
-				return message;
+				return totalPage;
 			}
 			set	
 			{
-				message = value;
+				totalPage = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
 			}
 		}
 
@@ -69,130 +85,128 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
-		public DescribeFaceVerify_ResultObject ResultObject
+		public int? TotalCount
 		{
 			get
 			{
-				return resultObject;
+				return totalCount;
 			}
 			set	
 			{
-				resultObject = value;
+				totalCount = value;
 			}
 		}
 
-		public class DescribeFaceVerify_ResultObject
+		public List<DescribeSmartStatisticsPageList_ItemsItem> Items
+		{
+			get
+			{
+				return items;
+			}
+			set	
+			{
+				items = value;
+			}
+		}
+
+		public class DescribeSmartStatisticsPageList_ItemsItem
 		{
 
-			private string subCode;
+			private string date;
 
-			private string materialInfo;
+			private long? sceneId;
 
-			private string identityInfo;
+			private string sceneName;
 
-			private string deviceToken;
+			private int? totalCount;
 
-			private string passed;
+			private int? successCount;
 
-			private string deviceRisk;
+			private string passRate;
 
-			private string success;
+			private string productCode;
 
-			private string userInfo;
-
-			public string SubCode
+			public string Date
 			{
 				get
 				{
-					return subCode;
+					return date;
 				}
 				set	
 				{
-					subCode = value;
+					date = value;
 				}
 			}
 
-			public string MaterialInfo
+			public long? SceneId
 			{
 				get
 				{
-					return materialInfo;
+					return sceneId;
 				}
 				set	
 				{
-					materialInfo = value;
+					sceneId = value;
 				}
 			}
 
-			public string IdentityInfo
+			public string SceneName
 			{
 				get
 				{
-					return identityInfo;
+					return sceneName;
 				}
 				set	
 				{
-					identityInfo = value;
+					sceneName = value;
 				}
 			}
 
-			public string DeviceToken
+			public int? TotalCount
 			{
 				get
 				{
-					return deviceToken;
+					return totalCount;
 				}
 				set	
 				{
-					deviceToken = value;
+					totalCount = value;
 				}
 			}
 
-			public string Passed
+			public int? SuccessCount
 			{
 				get
 				{
-					return passed;
+					return successCount;
 				}
 				set	
 				{
-					passed = value;
+					successCount = value;
 				}
 			}
 
-			public string DeviceRisk
+			public string PassRate
 			{
 				get
 				{
-					return deviceRisk;
+					return passRate;
 				}
 				set	
 				{
-					deviceRisk = value;
+					passRate = value;
 				}
 			}
 
-			public string Success
+			public string ProductCode
 			{
 				get
 				{
-					return success;
+					return productCode;
 				}
 				set	
 				{
-					success = value;
-				}
-			}
-
-			public string UserInfo
-			{
-				get
-				{
-					return userInfo;
-				}
-				set	
-				{
-					userInfo = value;
+					productCode = value;
 				}
 			}
 		}

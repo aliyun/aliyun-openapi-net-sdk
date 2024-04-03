@@ -27,83 +27,117 @@ using Aliyun.Acs.Cloudauth.Transform.V20190307;
 
 namespace Aliyun.Acs.Cloudauth.Model.V20190307
 {
-    public class CompareFacesRequest : RpcAcsRequest<CompareFacesResponse>
+    public class DescribeSmartStatisticsPageListRequest : RpcAcsRequest<DescribeSmartStatisticsPageListResponse>
     {
-        public CompareFacesRequest()
-            : base("Cloudauth", "2019-03-07", "CompareFaces", "cloudauth", "openAPI")
+        public DescribeSmartStatisticsPageListRequest()
+            : base("Cloudauth", "2019-03-07", "DescribeSmartStatisticsPageList", "cloudauth", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Cloudauth.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Cloudauth.Endpoint.endpointRegionalType, null);
             }
-			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private string sourceImageType;
+		private string startDate;
 
-		private string targetImageType;
+		private string pageSize;
 
-		private string targetImageValue;
+		private string currentPage;
 
-		private string sourceImageValue;
+		private string endDate;
 
-		public string SourceImageType
+		private string serviceCode;
+
+		private string sceneId;
+
+		public string StartDate
 		{
 			get
 			{
-				return sourceImageType;
+				return startDate;
 			}
 			set	
 			{
-				sourceImageType = value;
-				DictionaryUtil.Add(BodyParameters, "SourceImageType", value);
+				startDate = value;
+				DictionaryUtil.Add(QueryParameters, "StartDate", value);
 			}
 		}
 
-		public string TargetImageType
+		public string PageSize
 		{
 			get
 			{
-				return targetImageType;
+				return pageSize;
 			}
 			set	
 			{
-				targetImageType = value;
-				DictionaryUtil.Add(BodyParameters, "TargetImageType", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value);
 			}
 		}
 
-		public string TargetImageValue
+		public string CurrentPage
 		{
 			get
 			{
-				return targetImageValue;
+				return currentPage;
 			}
 			set	
 			{
-				targetImageValue = value;
-				DictionaryUtil.Add(BodyParameters, "TargetImageValue", value);
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value);
 			}
 		}
 
-		public string SourceImageValue
+		public string EndDate
 		{
 			get
 			{
-				return sourceImageValue;
+				return endDate;
 			}
 			set	
 			{
-				sourceImageValue = value;
-				DictionaryUtil.Add(BodyParameters, "SourceImageValue", value);
+				endDate = value;
+				DictionaryUtil.Add(QueryParameters, "EndDate", value);
 			}
 		}
 
-        public override CompareFacesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string ServiceCode
+		{
+			get
+			{
+				return serviceCode;
+			}
+			set	
+			{
+				serviceCode = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceCode", value);
+			}
+		}
+
+		public string SceneId
+		{
+			get
+			{
+				return sceneId;
+			}
+			set	
+			{
+				sceneId = value;
+				DictionaryUtil.Add(QueryParameters, "SceneId", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeSmartStatisticsPageListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CompareFacesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeSmartStatisticsPageListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
