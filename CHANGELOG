@@ -1,3 +1,12 @@
+2024-04-10 Version: 1.0.0
+- Optimize GetInternetTuple API.
+- Optimize CreateNetworkPath API.
+- Optimize DeleteNetworkPath API.
+- Optimize CreateNetworkReachableAnalysis API.
+- Optimize GetNetworkReachableAnalysis API.
+- Publish DeleteNetworkReachableAnalysis API.
+- Publish CreateAndAnalyzeNetworkPath API.
+
 2024-04-03 Version: 1.0.0
 - Generated 2024-03-25 for `aps`.
 
