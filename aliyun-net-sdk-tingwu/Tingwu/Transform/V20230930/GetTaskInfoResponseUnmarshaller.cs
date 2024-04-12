@@ -39,6 +39,10 @@ namespace Aliyun.Acs.tingwu.Transform.V20230930
 			data.TaskId = _ctx.StringValue("GetTaskInfo.Data.TaskId");
 			data.TaskKey = _ctx.StringValue("GetTaskInfo.Data.TaskKey");
 			data.TaskStatus = _ctx.StringValue("GetTaskInfo.Data.TaskStatus");
+			data.OutputMp3Path = _ctx.StringValue("GetTaskInfo.Data.OutputMp3Path");
+			data.OutputMp4Path = _ctx.StringValue("GetTaskInfo.Data.OutputMp4Path");
+			data.OutputThumbnailPath = _ctx.StringValue("GetTaskInfo.Data.OutputThumbnailPath");
+			data.OutputSpectrumPath = _ctx.StringValue("GetTaskInfo.Data.OutputSpectrumPath");
 			data.ErrorCode = _ctx.StringValue("GetTaskInfo.Data.ErrorCode");
 			data.ErrorMessage = _ctx.StringValue("GetTaskInfo.Data.ErrorMessage");
 
@@ -49,6 +53,7 @@ namespace Aliyun.Acs.tingwu.Transform.V20230930
 			result.Summarization = _ctx.StringValue("GetTaskInfo.Data.Result.Summarization");
 			result.Translation = _ctx.StringValue("GetTaskInfo.Data.Result.Translation");
 			result.PptExtraction = _ctx.StringValue("GetTaskInfo.Data.Result.PptExtraction");
+			result.TextPolish = _ctx.StringValue("GetTaskInfo.Data.Result.TextPolish");
 			data.Result = result;
 			getTaskInfoResponse.Data = data;
         

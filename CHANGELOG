@@ -1,3 +1,6 @@
+2024-04-12 Version: 1.0.4
+- Generated 2023-09-30 for `tingwu`.
+
 2024-04-10 Version: 1.0.0
 - Optimize GetInternetTuple API.
 - Optimize CreateNetworkPath API.

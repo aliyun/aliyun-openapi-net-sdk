@@ -90,6 +90,14 @@ namespace Aliyun.Acs.tingwu.Model.V20230930
 
 			private string taskStatus;
 
+			private string outputMp3Path;
+
+			private string outputMp4Path;
+
+			private string outputThumbnailPath;
+
+			private string outputSpectrumPath;
+
 			private string errorCode;
 
 			private string errorMessage;
@@ -129,6 +137,54 @@ namespace Aliyun.Acs.tingwu.Model.V20230930
 				set	
 				{
 					taskStatus = value;
+				}
+			}
+
+			public string OutputMp3Path
+			{
+				get
+				{
+					return outputMp3Path;
+				}
+				set	
+				{
+					outputMp3Path = value;
+				}
+			}
+
+			public string OutputMp4Path
+			{
+				get
+				{
+					return outputMp4Path;
+				}
+				set	
+				{
+					outputMp4Path = value;
+				}
+			}
+
+			public string OutputThumbnailPath
+			{
+				get
+				{
+					return outputThumbnailPath;
+				}
+				set	
+				{
+					outputThumbnailPath = value;
+				}
+			}
+
+			public string OutputSpectrumPath
+			{
+				get
+				{
+					return outputSpectrumPath;
+				}
+				set	
+				{
+					outputSpectrumPath = value;
 				}
 			}
 
@@ -182,6 +238,8 @@ namespace Aliyun.Acs.tingwu.Model.V20230930
 				private string translation;
 
 				private string pptExtraction;
+
+				private string textPolish;
 
 				public string Transcription
 				{
@@ -252,6 +310,18 @@ namespace Aliyun.Acs.tingwu.Model.V20230930
 					set	
 					{
 						pptExtraction = value;
+					}
+				}
+
+				public string TextPolish
+				{
+					get
+					{
+						return textPolish;
+					}
+					set	
+					{
+						textPolish = value;
 					}
 				}
 			}
