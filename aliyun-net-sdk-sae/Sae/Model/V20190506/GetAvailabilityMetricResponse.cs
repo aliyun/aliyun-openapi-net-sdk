@@ -22,34 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
 {
-	public class UpdateNamespaceResponse : AcsResponse
+	public class GetAvailabilityMetricResponse : AcsResponse
 	{
-
-		private string requestId;
 
 		private string message;
 
-		private string traceId;
-
-		private string errorCode;
+		private string requestId;
 
 		private string code;
 
 		private bool? success;
 
-		private UpdateNamespace_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<GetAvailabilityMetric_AvailabilityMetricDto> data;
 
 		public string Message
 		{
@@ -63,27 +47,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string TraceId
+		public string RequestId
 		{
 			get
 			{
-				return traceId;
+				return requestId;
 			}
 			set	
 			{
-				traceId = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
+				requestId = value;
 			}
 		}
 
@@ -111,7 +83,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public UpdateNamespace_Data Data
+		public List<GetAvailabilityMetric_AvailabilityMetricDto> Data
 		{
 			get
 			{
@@ -123,54 +95,44 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public class UpdateNamespace_Data
+		public class GetAvailabilityMetric_AvailabilityMetricDto
 		{
 
-			private string namespaceDescription;
+			private string appId;
 
-			private string namespaceId;
-
-			private string namespaceName;
+			private string name;
 
 			private string regionId;
 
-			private string nameSpaceShortId;
+			private long? runnings;
 
-			private bool? enableMicroRegistration;
+			private long? instances;
 
-			public string NamespaceDescription
+			private long? errorInstances;
+
+			private long? enableAutoscale;
+
+			public string AppId
 			{
 				get
 				{
-					return namespaceDescription;
+					return appId;
 				}
 				set	
 				{
-					namespaceDescription = value;
+					appId = value;
 				}
 			}
 
-			public string NamespaceId
+			public string Name
 			{
 				get
 				{
-					return namespaceId;
+					return name;
 				}
 				set	
 				{
-					namespaceId = value;
-				}
-			}
-
-			public string NamespaceName
-			{
-				get
-				{
-					return namespaceName;
-				}
-				set	
-				{
-					namespaceName = value;
+					name = value;
 				}
 			}
 
@@ -186,27 +148,51 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public string NameSpaceShortId
+			public long? Runnings
 			{
 				get
 				{
-					return nameSpaceShortId;
+					return runnings;
 				}
 				set	
 				{
-					nameSpaceShortId = value;
+					runnings = value;
 				}
 			}
 
-			public bool? EnableMicroRegistration
+			public long? Instances
 			{
 				get
 				{
-					return enableMicroRegistration;
+					return instances;
 				}
 				set	
 				{
-					enableMicroRegistration = value;
+					instances = value;
+				}
+			}
+
+			public long? ErrorInstances
+			{
+				get
+				{
+					return errorInstances;
+				}
+				set	
+				{
+					errorInstances = value;
+				}
+			}
+
+			public long? EnableAutoscale
+			{
+				get
+				{
+					return enableAutoscale;
+				}
+				set	
+				{
+					enableAutoscale = value;
 				}
 			}
 		}

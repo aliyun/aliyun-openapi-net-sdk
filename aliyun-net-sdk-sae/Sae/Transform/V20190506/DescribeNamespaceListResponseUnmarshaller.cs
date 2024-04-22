@@ -51,6 +51,7 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 				regionList.Current = _ctx.BooleanValue("DescribeNamespaceList.Data["+ i +"].Current");
 				regionList.NamespaceName = _ctx.StringValue("DescribeNamespaceList.Data["+ i +"].NamespaceName");
 				regionList.RegionId = _ctx.StringValue("DescribeNamespaceList.Data["+ i +"].RegionId");
+				regionList.NameSpaceShortId = _ctx.StringValue("DescribeNamespaceList.Data["+ i +"].NameSpaceShortId");
 
 				describeNamespaceListResponse_data.Add(regionList);
 			}

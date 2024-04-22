@@ -138,8 +138,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 			private string certId;
 
-			private string certIds;
-
 			private string name;
 
 			private long? id;
@@ -148,7 +146,11 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 			private string listenerProtocol;
 
+			private string certIds;
+
 			private List<DescribeIngress_Rule> rules;
+
+			private List<DescribeIngress_Svc> svcs;
 
 			private DescribeIngress_DefaultRule defaultRule;
 
@@ -224,18 +226,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public string CertIds
-			{
-				get
-				{
-					return certIds;
-				}
-				set	
-				{
-					certIds = value;
-				}
-			}
-
 			public string Name
 			{
 				get
@@ -284,6 +274,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
+			public string CertIds
+			{
+				get
+				{
+					return certIds;
+				}
+				set	
+				{
+					certIds = value;
+				}
+			}
+
 			public List<DescribeIngress_Rule> Rules
 			{
 				get
@@ -293,6 +295,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					rules = value;
+				}
+			}
+
+			public List<DescribeIngress_Svc> Svcs
+			{
+				get
+				{
+					return svcs;
+				}
+				set	
+				{
+					svcs = value;
 				}
 			}
 
@@ -322,6 +336,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				private string path;
 
 				private string backendProtocol;
+
+				private string rewritePath;
 
 				public string AppName
 				{
@@ -392,6 +408,92 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					set	
 					{
 						backendProtocol = value;
+					}
+				}
+
+				public string RewritePath
+				{
+					get
+					{
+						return rewritePath;
+					}
+					set	
+					{
+						rewritePath = value;
+					}
+				}
+			}
+
+			public class DescribeIngress_Svc
+			{
+
+				private long? id;
+
+				private string appId;
+
+				private string backendProtocol;
+
+				private int? backendPort;
+
+				private string name;
+
+				public long? Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
+					}
+				}
+
+				public string AppId
+				{
+					get
+					{
+						return appId;
+					}
+					set	
+					{
+						appId = value;
+					}
+				}
+
+				public string BackendProtocol
+				{
+					get
+					{
+						return backendProtocol;
+					}
+					set	
+					{
+						backendProtocol = value;
+					}
+				}
+
+				public int? BackendPort
+				{
+					get
+					{
+						return backendPort;
+					}
+					set	
+					{
+						backendPort = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
 					}
 				}
 			}

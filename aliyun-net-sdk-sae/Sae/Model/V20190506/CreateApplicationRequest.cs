@@ -69,6 +69,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string namespaceId;
 
+		private string saeVersion;
+
 		private string pvtzDiscoverySvc;
 
 		private string configMapMountDesc;
@@ -85,11 +87,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string vSwitchId;
 
+		private string enableEbpf;
+
 		private string packageType;
 
 		private string postStart;
 
 		private bool? associateEip;
+
+		private string appSource;
 
 		private string webContainer;
 
@@ -144,6 +150,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		private string vpcId;
 
 		private string imageUrl;
+
+		private string php;
 
 		private string pythonModules;
 
@@ -331,6 +339,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
+		public string SaeVersion
+		{
+			get
+			{
+				return saeVersion;
+			}
+			set	
+			{
+				saeVersion = value;
+				DictionaryUtil.Add(QueryParameters, "SaeVersion", value);
+			}
+		}
+
 		public string PvtzDiscoverySvc
 		{
 			get
@@ -435,6 +456,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
+		public string EnableEbpf
+		{
+			get
+			{
+				return enableEbpf;
+			}
+			set	
+			{
+				enableEbpf = value;
+				DictionaryUtil.Add(QueryParameters, "EnableEbpf", value);
+			}
+		}
+
 		public string PackageType
 		{
 			get
@@ -471,6 +505,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				associateEip = value;
 				DictionaryUtil.Add(BodyParameters, "AssociateEip", value.ToString());
+			}
+		}
+
+		public string AppSource
+		{
+			get
+			{
+				return appSource;
+			}
+			set	
+			{
+				appSource = value;
+				DictionaryUtil.Add(QueryParameters, "AppSource", value);
 			}
 		}
 
@@ -822,6 +869,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				imageUrl = value;
 				DictionaryUtil.Add(QueryParameters, "ImageUrl", value);
+			}
+		}
+
+		public string Php
+		{
+			get
+			{
+				return php;
+			}
+			set	
+			{
+				php = value;
+				DictionaryUtil.Add(BodyParameters, "Php", value);
 			}
 		}
 

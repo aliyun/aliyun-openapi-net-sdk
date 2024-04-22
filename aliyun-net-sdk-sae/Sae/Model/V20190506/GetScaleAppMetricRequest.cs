@@ -27,62 +27,62 @@ using Aliyun.Acs.sae.Transform.V20190506;
 
 namespace Aliyun.Acs.sae.Model.V20190506
 {
-    public class UpdateSecretRequest : RoaAcsRequest<UpdateSecretResponse>
+    public class GetScaleAppMetricRequest : RoaAcsRequest<GetScaleAppMetricResponse>
     {
-        public UpdateSecretRequest()
-            : base("sae", "2019-05-06", "UpdateSecret", "serverless", "openAPI")
+        public GetScaleAppMetricRequest()
+            : base("sae", "2019-05-06", "GetScaleAppMetric", "serverless", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/pop/v1/sam/secret/secret";
-			Method = MethodType.PUT;
+			UriPattern = "/pop/v1/sam/getScaleAppMetric";
+			Method = MethodType.GET;
         }
 
-		private string namespaceId;
+		private string appSource;
 
-		private long? secretId;
+		private string cpuStrategy;
 
-		private string secretData;
+		private long? limit;
 
-		public string NamespaceId
+		public string AppSource
 		{
 			get
 			{
-				return namespaceId;
+				return appSource;
 			}
 			set	
 			{
-				namespaceId = value;
-				DictionaryUtil.Add(QueryParameters, "NamespaceId", value);
+				appSource = value;
+				DictionaryUtil.Add(QueryParameters, "AppSource", value);
 			}
 		}
 
-		public long? SecretId
+		public string CpuStrategy
 		{
 			get
 			{
-				return secretId;
+				return cpuStrategy;
 			}
 			set	
 			{
-				secretId = value;
-				DictionaryUtil.Add(QueryParameters, "SecretId", value.ToString());
+				cpuStrategy = value;
+				DictionaryUtil.Add(QueryParameters, "CpuStrategy", value);
 			}
 		}
 
-		public string SecretData
+		public long? Limit
 		{
 			get
 			{
-				return secretData;
+				return limit;
 			}
 			set	
 			{
-				secretData = value;
-				DictionaryUtil.Add(QueryParameters, "SecretData", value);
+				limit = value;
+				DictionaryUtil.Add(QueryParameters, "Limit", value.ToString());
 			}
 		}
 
@@ -91,9 +91,9 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			return false;
 		}
 
-        public override UpdateSecretResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetScaleAppMetricResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateSecretResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetScaleAppMetricResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

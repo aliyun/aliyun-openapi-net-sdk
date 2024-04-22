@@ -29,6 +29,14 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string traceId;
 
+		private string message;
+
+		private string errorCode;
+
+		private string code;
+
+		private bool? success;
+
 		private DescribeApplicationScalingRules_Data data;
 
 		public string RequestId
@@ -52,6 +60,54 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				traceId = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -143,6 +199,10 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 				private string scaleRuleName;
 
+				private int? minReadyInstances;
+
+				private int? minReadyInstanceRatio;
+
 				private DescribeApplicationScalingRules_Timer timer;
 
 				private DescribeApplicationScalingRules_Metric metric;
@@ -228,6 +288,30 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					set	
 					{
 						scaleRuleName = value;
+					}
+				}
+
+				public int? MinReadyInstances
+				{
+					get
+					{
+						return minReadyInstances;
+					}
+					set	
+					{
+						minReadyInstances = value;
+					}
+				}
+
+				public int? MinReadyInstanceRatio
+				{
+					get
+					{
+						return minReadyInstanceRatio;
+					}
+					set	
+					{
+						minReadyInstanceRatio = value;
 					}
 				}
 
@@ -469,6 +553,14 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 						private string metricType;
 
+						private string slbProject;
+
+						private string slbLogstore;
+
+						private string vport;
+
+						private string slbId;
+
 						public int? MetricTargetAverageUtilization
 						{
 							get
@@ -490,6 +582,54 @@ namespace Aliyun.Acs.sae.Model.V20190506
 							set	
 							{
 								metricType = value;
+							}
+						}
+
+						public string SlbProject
+						{
+							get
+							{
+								return slbProject;
+							}
+							set	
+							{
+								slbProject = value;
+							}
+						}
+
+						public string SlbLogstore
+						{
+							get
+							{
+								return slbLogstore;
+							}
+							set	
+							{
+								slbLogstore = value;
+							}
+						}
+
+						public string Vport
+						{
+							get
+							{
+								return vport;
+							}
+							set	
+							{
+								vport = value;
+							}
+						}
+
+						public string SlbId
+						{
+							get
+							{
+								return slbId;
+							}
+							set	
+							{
+								slbId = value;
 							}
 						}
 					}

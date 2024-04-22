@@ -49,6 +49,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string commandArgs;
 
+		private string replicas;
+
 		private string appId;
 
 		private string envs;
@@ -108,6 +110,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				commandArgs = value;
 				DictionaryUtil.Add(QueryParameters, "CommandArgs", value);
+			}
+		}
+
+		public string Replicas
+		{
+			get
+			{
+				return replicas;
+			}
+			set	
+			{
+				replicas = value;
+				DictionaryUtil.Add(QueryParameters, "Replicas", value);
 			}
 		}
 

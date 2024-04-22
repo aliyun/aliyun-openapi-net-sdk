@@ -132,6 +132,12 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 			private DescribeConfigurationPrice_Order order;
 
+			private DescribeConfigurationPrice_RequestPrice requestPrice;
+
+			private DescribeConfigurationPrice_TrafficPrice trafficPrice;
+
+			private DescribeConfigurationPrice_CpuMemPrice cpuMemPrice;
+
 			public List<DescribeConfigurationPrice_Rule> Rules
 			{
 				get
@@ -165,6 +171,42 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					order = value;
+				}
+			}
+
+			public DescribeConfigurationPrice_RequestPrice RequestPrice
+			{
+				get
+				{
+					return requestPrice;
+				}
+				set	
+				{
+					requestPrice = value;
+				}
+			}
+
+			public DescribeConfigurationPrice_TrafficPrice TrafficPrice
+			{
+				get
+				{
+					return trafficPrice;
+				}
+				set	
+				{
+					trafficPrice = value;
+				}
+			}
+
+			public DescribeConfigurationPrice_CpuMemPrice CpuMemPrice
+			{
+				get
+				{
+					return cpuMemPrice;
+				}
+				set	
+				{
+					cpuMemPrice = value;
 				}
 			}
 
@@ -288,6 +330,378 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					set	
 					{
 						ruleIds = value;
+					}
+				}
+			}
+
+			public class DescribeConfigurationPrice_RequestPrice
+			{
+
+				private List<DescribeConfigurationPrice_Rule3> rules2;
+
+				private DescribeConfigurationPrice_Order1 order1;
+
+				public List<DescribeConfigurationPrice_Rule3> Rules2
+				{
+					get
+					{
+						return rules2;
+					}
+					set	
+					{
+						rules2 = value;
+					}
+				}
+
+				public DescribeConfigurationPrice_Order1 Order1
+				{
+					get
+					{
+						return order1;
+					}
+					set	
+					{
+						order1 = value;
+					}
+				}
+
+				public class DescribeConfigurationPrice_Rule3
+				{
+
+					private long? ruleDescId;
+
+					private string name;
+
+					public long? RuleDescId
+					{
+						get
+						{
+							return ruleDescId;
+						}
+						set	
+						{
+							ruleDescId = value;
+						}
+					}
+
+					public string Name
+					{
+						get
+						{
+							return name;
+						}
+						set	
+						{
+							name = value;
+						}
+					}
+				}
+
+				public class DescribeConfigurationPrice_Order1
+				{
+
+					private float? originalAmount;
+
+					private float? discountAmount;
+
+					private float? tradeAmount;
+
+					private List<string> ruleIds4;
+
+					public float? OriginalAmount
+					{
+						get
+						{
+							return originalAmount;
+						}
+						set	
+						{
+							originalAmount = value;
+						}
+					}
+
+					public float? DiscountAmount
+					{
+						get
+						{
+							return discountAmount;
+						}
+						set	
+						{
+							discountAmount = value;
+						}
+					}
+
+					public float? TradeAmount
+					{
+						get
+						{
+							return tradeAmount;
+						}
+						set	
+						{
+							tradeAmount = value;
+						}
+					}
+
+					public List<string> RuleIds4
+					{
+						get
+						{
+							return ruleIds4;
+						}
+						set	
+						{
+							ruleIds4 = value;
+						}
+					}
+				}
+			}
+
+			public class DescribeConfigurationPrice_TrafficPrice
+			{
+
+				private List<DescribeConfigurationPrice_Rule7> rules6;
+
+				private DescribeConfigurationPrice_Order5 order5;
+
+				public List<DescribeConfigurationPrice_Rule7> Rules6
+				{
+					get
+					{
+						return rules6;
+					}
+					set	
+					{
+						rules6 = value;
+					}
+				}
+
+				public DescribeConfigurationPrice_Order5 Order5
+				{
+					get
+					{
+						return order5;
+					}
+					set	
+					{
+						order5 = value;
+					}
+				}
+
+				public class DescribeConfigurationPrice_Rule7
+				{
+
+					private float? ruleDescId;
+
+					private string name;
+
+					public float? RuleDescId
+					{
+						get
+						{
+							return ruleDescId;
+						}
+						set	
+						{
+							ruleDescId = value;
+						}
+					}
+
+					public string Name
+					{
+						get
+						{
+							return name;
+						}
+						set	
+						{
+							name = value;
+						}
+					}
+				}
+
+				public class DescribeConfigurationPrice_Order5
+				{
+
+					private float? originalAmount;
+
+					private float? discountAmount;
+
+					private float? tradeAmount;
+
+					private List<string> ruleIds8;
+
+					public float? OriginalAmount
+					{
+						get
+						{
+							return originalAmount;
+						}
+						set	
+						{
+							originalAmount = value;
+						}
+					}
+
+					public float? DiscountAmount
+					{
+						get
+						{
+							return discountAmount;
+						}
+						set	
+						{
+							discountAmount = value;
+						}
+					}
+
+					public float? TradeAmount
+					{
+						get
+						{
+							return tradeAmount;
+						}
+						set	
+						{
+							tradeAmount = value;
+						}
+					}
+
+					public List<string> RuleIds8
+					{
+						get
+						{
+							return ruleIds8;
+						}
+						set	
+						{
+							ruleIds8 = value;
+						}
+					}
+				}
+			}
+
+			public class DescribeConfigurationPrice_CpuMemPrice
+			{
+
+				private List<DescribeConfigurationPrice_Rule11> rules10;
+
+				private DescribeConfigurationPrice_Order9 order9;
+
+				public List<DescribeConfigurationPrice_Rule11> Rules10
+				{
+					get
+					{
+						return rules10;
+					}
+					set	
+					{
+						rules10 = value;
+					}
+				}
+
+				public DescribeConfigurationPrice_Order9 Order9
+				{
+					get
+					{
+						return order9;
+					}
+					set	
+					{
+						order9 = value;
+					}
+				}
+
+				public class DescribeConfigurationPrice_Rule11
+				{
+
+					private float? ruleDescId;
+
+					private string name;
+
+					public float? RuleDescId
+					{
+						get
+						{
+							return ruleDescId;
+						}
+						set	
+						{
+							ruleDescId = value;
+						}
+					}
+
+					public string Name
+					{
+						get
+						{
+							return name;
+						}
+						set	
+						{
+							name = value;
+						}
+					}
+				}
+
+				public class DescribeConfigurationPrice_Order9
+				{
+
+					private float? originalAmount;
+
+					private float? discountAmount;
+
+					private float? tradeAmount;
+
+					private List<string> ruleIds12;
+
+					public float? OriginalAmount
+					{
+						get
+						{
+							return originalAmount;
+						}
+						set	
+						{
+							originalAmount = value;
+						}
+					}
+
+					public float? DiscountAmount
+					{
+						get
+						{
+							return discountAmount;
+						}
+						set	
+						{
+							discountAmount = value;
+						}
+					}
+
+					public float? TradeAmount
+					{
+						get
+						{
+							return tradeAmount;
+						}
+						set	
+						{
+							tradeAmount = value;
+						}
+					}
+
+					public List<string> RuleIds12
+					{
+						get
+						{
+							return ruleIds12;
+						}
+						set	
+						{
+							ruleIds12 = value;
+						}
 					}
 				}
 			}

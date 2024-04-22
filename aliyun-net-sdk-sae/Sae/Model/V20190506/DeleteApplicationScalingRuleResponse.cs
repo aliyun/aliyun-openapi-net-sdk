@@ -29,6 +29,14 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string traceId;
 
+		private string message;
+
+		private string errorCode;
+
+		private string code;
+
+		private bool? success;
+
 		public string RequestId
 		{
 			get
@@ -50,6 +58,54 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				traceId = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

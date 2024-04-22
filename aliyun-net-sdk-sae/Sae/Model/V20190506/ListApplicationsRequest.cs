@@ -41,6 +41,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			Method = MethodType.GET;
         }
 
+		private string appSource;
+
 		private string appName;
 
 		private string namespaceId;
@@ -58,6 +60,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		private string fieldType;
 
 		private string tags;
+
+		public string AppSource
+		{
+			get
+			{
+				return appSource;
+			}
+			set	
+			{
+				appSource = value;
+				DictionaryUtil.Add(QueryParameters, "AppSource", value);
+			}
+		}
 
 		public string AppName
 		{

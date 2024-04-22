@@ -84,7 +84,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				secretData = value;
-				DictionaryUtil.Add(BodyParameters, "SecretData", value);
+				DictionaryUtil.Add(QueryParameters, "SecretData", value);
 			}
 		}
 

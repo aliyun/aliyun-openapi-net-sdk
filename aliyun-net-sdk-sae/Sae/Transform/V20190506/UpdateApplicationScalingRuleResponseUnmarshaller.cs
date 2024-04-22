@@ -33,6 +33,10 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			updateApplicationScalingRuleResponse.HttpResponse = _ctx.HttpResponse;
 			updateApplicationScalingRuleResponse.RequestId = _ctx.StringValue("UpdateApplicationScalingRule.RequestId");
 			updateApplicationScalingRuleResponse.TraceId = _ctx.StringValue("UpdateApplicationScalingRule.TraceId");
+			updateApplicationScalingRuleResponse.Message = _ctx.StringValue("UpdateApplicationScalingRule.Message");
+			updateApplicationScalingRuleResponse.ErrorCode = _ctx.StringValue("UpdateApplicationScalingRule.ErrorCode");
+			updateApplicationScalingRuleResponse.Code = _ctx.StringValue("UpdateApplicationScalingRule.Code");
+			updateApplicationScalingRuleResponse.Success = _ctx.BooleanValue("UpdateApplicationScalingRule.Success");
 
 			UpdateApplicationScalingRuleResponse.UpdateApplicationScalingRule_Data data = new UpdateApplicationScalingRuleResponse.UpdateApplicationScalingRule_Data();
 			data.UpdateTime = _ctx.LongValue("UpdateApplicationScalingRule.Data.UpdateTime");
@@ -53,6 +57,8 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 				UpdateApplicationScalingRuleResponse.UpdateApplicationScalingRule_Data.UpdateApplicationScalingRule_Timer.UpdateApplicationScalingRule_Schedule schedule = new UpdateApplicationScalingRuleResponse.UpdateApplicationScalingRule_Data.UpdateApplicationScalingRule_Timer.UpdateApplicationScalingRule_Schedule();
 				schedule.AtTime = _ctx.StringValue("UpdateApplicationScalingRule.Data.Timer.Schedules["+ i +"].AtTime");
 				schedule.TargetReplicas = _ctx.IntegerValue("UpdateApplicationScalingRule.Data.Timer.Schedules["+ i +"].TargetReplicas");
+				schedule.MinReplicas = _ctx.IntegerValue("UpdateApplicationScalingRule.Data.Timer.Schedules["+ i +"].MinReplicas");
+				schedule.MaxReplicas = _ctx.IntegerValue("UpdateApplicationScalingRule.Data.Timer.Schedules["+ i +"].MaxReplicas");
 
 				timer_schedules.Add(schedule);
 			}
@@ -68,6 +74,10 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 				UpdateApplicationScalingRuleResponse.UpdateApplicationScalingRule_Data.UpdateApplicationScalingRule_Metric.UpdateApplicationScalingRule_Metric1 metric1 = new UpdateApplicationScalingRuleResponse.UpdateApplicationScalingRule_Data.UpdateApplicationScalingRule_Metric.UpdateApplicationScalingRule_Metric1();
 				metric1.MetricTargetAverageUtilization = _ctx.IntegerValue("UpdateApplicationScalingRule.Data.Metric.Metrics["+ i +"].MetricTargetAverageUtilization");
 				metric1.MetricType = _ctx.StringValue("UpdateApplicationScalingRule.Data.Metric.Metrics["+ i +"].MetricType");
+				metric1.SlbProject = _ctx.StringValue("UpdateApplicationScalingRule.Data.Metric.Metrics["+ i +"].SlbProject");
+				metric1.SlbLogstore = _ctx.StringValue("UpdateApplicationScalingRule.Data.Metric.Metrics["+ i +"].SlbLogstore");
+				metric1.Vport = _ctx.StringValue("UpdateApplicationScalingRule.Data.Metric.Metrics["+ i +"].Vport");
+				metric1.SlbId = _ctx.StringValue("UpdateApplicationScalingRule.Data.Metric.Metrics["+ i +"].SlbId");
 
 				metric_metrics.Add(metric1);
 			}

@@ -54,6 +54,7 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 				_namespace.NamespaceName = _ctx.StringValue("DescribeNamespaces.Data.Namespaces["+ i +"].NamespaceName");
 				_namespace.TenantId = _ctx.StringValue("DescribeNamespaces.Data.Namespaces["+ i +"].TenantId");
 				_namespace.RegionId = _ctx.StringValue("DescribeNamespaces.Data.Namespaces["+ i +"].RegionId");
+				_namespace.NameSpaceShortId = _ctx.StringValue("DescribeNamespaces.Data.Namespaces["+ i +"].NameSpaceShortId");
 
 				data_namespaces.Add(_namespace);
 			}

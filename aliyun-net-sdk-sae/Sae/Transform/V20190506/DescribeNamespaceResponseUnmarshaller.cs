@@ -43,6 +43,8 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			data.NamespaceId = _ctx.StringValue("DescribeNamespace.Data.NamespaceId");
 			data.NamespaceName = _ctx.StringValue("DescribeNamespace.Data.NamespaceName");
 			data.RegionId = _ctx.StringValue("DescribeNamespace.Data.RegionId");
+			data.NameSpaceShortId = _ctx.StringValue("DescribeNamespace.Data.NameSpaceShortId");
+			data.EnableMicroRegistration = _ctx.BooleanValue("DescribeNamespace.Data.EnableMicroRegistration");
 			describeNamespaceResponse.Data = data;
         
 			return describeNamespaceResponse;

@@ -45,7 +45,11 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string namespaceDescription;
 
+		private bool? enableMicroRegistration;
+
 		private string namespaceId;
+
+		private string nameSpaceShortId;
 
 		public string NamespaceName
 		{
@@ -73,6 +77,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
+		public bool? EnableMicroRegistration
+		{
+			get
+			{
+				return enableMicroRegistration;
+			}
+			set	
+			{
+				enableMicroRegistration = value;
+				DictionaryUtil.Add(QueryParameters, "EnableMicroRegistration", value.ToString());
+			}
+		}
+
 		public string NamespaceId
 		{
 			get
@@ -83,6 +100,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				namespaceId = value;
 				DictionaryUtil.Add(QueryParameters, "NamespaceId", value);
+			}
+		}
+
+		public string NameSpaceShortId
+		{
+			get
+			{
+				return nameSpaceShortId;
+			}
+			set	
+			{
+				nameSpaceShortId = value;
+				DictionaryUtil.Add(QueryParameters, "NameSpaceShortId", value);
 			}
 		}
 

@@ -47,6 +47,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string dubboRules;
 
+		private string albRules;
+
 		private string scRules;
 
 		public long? GreyTagRouteId
@@ -85,6 +87,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				dubboRules = value;
 				DictionaryUtil.Add(QueryParameters, "DubboRules", value);
+			}
+		}
+
+		public string AlbRules
+		{
+			get
+			{
+				return albRules;
+			}
+			set	
+			{
+				albRules = value;
+				DictionaryUtil.Add(QueryParameters, "AlbRules", value);
 			}
 		}
 

@@ -33,6 +33,10 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			describeApplicationScalingRuleResponse.HttpResponse = _ctx.HttpResponse;
 			describeApplicationScalingRuleResponse.RequestId = _ctx.StringValue("DescribeApplicationScalingRule.RequestId");
 			describeApplicationScalingRuleResponse.TraceId = _ctx.StringValue("DescribeApplicationScalingRule.TraceId");
+			describeApplicationScalingRuleResponse.Message = _ctx.StringValue("DescribeApplicationScalingRule.Message");
+			describeApplicationScalingRuleResponse.ErrorCode = _ctx.StringValue("DescribeApplicationScalingRule.ErrorCode");
+			describeApplicationScalingRuleResponse.Code = _ctx.StringValue("DescribeApplicationScalingRule.Code");
+			describeApplicationScalingRuleResponse.Success = _ctx.BooleanValue("DescribeApplicationScalingRule.Success");
 
 			DescribeApplicationScalingRuleResponse.DescribeApplicationScalingRule_Data data = new DescribeApplicationScalingRuleResponse.DescribeApplicationScalingRule_Data();
 			data.UpdateTime = _ctx.LongValue("DescribeApplicationScalingRule.Data.UpdateTime");
@@ -42,6 +46,8 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			data.ScaleRuleEnabled = _ctx.BooleanValue("DescribeApplicationScalingRule.Data.ScaleRuleEnabled");
 			data.ScaleRuleType = _ctx.StringValue("DescribeApplicationScalingRule.Data.ScaleRuleType");
 			data.ScaleRuleName = _ctx.StringValue("DescribeApplicationScalingRule.Data.ScaleRuleName");
+			data.MinReadyInstances = _ctx.IntegerValue("DescribeApplicationScalingRule.Data.MinReadyInstances");
+			data.MinReadyInstanceRatio = _ctx.IntegerValue("DescribeApplicationScalingRule.Data.MinReadyInstanceRatio");
 
 			DescribeApplicationScalingRuleResponse.DescribeApplicationScalingRule_Data.DescribeApplicationScalingRule_Timer timer = new DescribeApplicationScalingRuleResponse.DescribeApplicationScalingRule_Data.DescribeApplicationScalingRule_Timer();
 			timer.EndDate = _ctx.StringValue("DescribeApplicationScalingRule.Data.Timer.EndDate");
@@ -53,6 +59,8 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 				DescribeApplicationScalingRuleResponse.DescribeApplicationScalingRule_Data.DescribeApplicationScalingRule_Timer.DescribeApplicationScalingRule_Schedule schedule = new DescribeApplicationScalingRuleResponse.DescribeApplicationScalingRule_Data.DescribeApplicationScalingRule_Timer.DescribeApplicationScalingRule_Schedule();
 				schedule.AtTime = _ctx.StringValue("DescribeApplicationScalingRule.Data.Timer.Schedules["+ i +"].AtTime");
 				schedule.TargetReplicas = _ctx.IntegerValue("DescribeApplicationScalingRule.Data.Timer.Schedules["+ i +"].TargetReplicas");
+				schedule.MinReplicas = _ctx.IntegerValue("DescribeApplicationScalingRule.Data.Timer.Schedules["+ i +"].MinReplicas");
+				schedule.MaxReplicas = _ctx.IntegerValue("DescribeApplicationScalingRule.Data.Timer.Schedules["+ i +"].MaxReplicas");
 
 				timer_schedules.Add(schedule);
 			}
@@ -109,6 +117,10 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 				DescribeApplicationScalingRuleResponse.DescribeApplicationScalingRule_Data.DescribeApplicationScalingRule_Metric.DescribeApplicationScalingRule_Metric1 metric1 = new DescribeApplicationScalingRuleResponse.DescribeApplicationScalingRule_Data.DescribeApplicationScalingRule_Metric.DescribeApplicationScalingRule_Metric1();
 				metric1.MetricTargetAverageUtilization = _ctx.IntegerValue("DescribeApplicationScalingRule.Data.Metric.Metrics["+ i +"].MetricTargetAverageUtilization");
 				metric1.MetricType = _ctx.StringValue("DescribeApplicationScalingRule.Data.Metric.Metrics["+ i +"].MetricType");
+				metric1.SlbProject = _ctx.StringValue("DescribeApplicationScalingRule.Data.Metric.Metrics["+ i +"].SlbProject");
+				metric1.SlbLogstore = _ctx.StringValue("DescribeApplicationScalingRule.Data.Metric.Metrics["+ i +"].SlbLogstore");
+				metric1.Vport = _ctx.StringValue("DescribeApplicationScalingRule.Data.Metric.Metrics["+ i +"].Vport");
+				metric1.SlbId = _ctx.StringValue("DescribeApplicationScalingRule.Data.Metric.Metrics["+ i +"].SlbId");
 
 				metric_metrics.Add(metric1);
 			}

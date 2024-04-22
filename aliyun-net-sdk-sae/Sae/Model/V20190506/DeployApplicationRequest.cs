@@ -75,13 +75,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string python;
 
+		private int? cpu;
+
 		private string updateStrategy;
+
+		private string vSwitchId;
 
 		private string changeOrderDesc;
 
 		private int? minReadyInstanceRatio;
 
 		private bool? autoEnableApplicationScalingRule;
+
+		private string packageType;
 
 		private string postStart;
 
@@ -95,6 +101,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string kafkaConfigs;
 
+		private int? memory;
+
 		private string commandArgs;
 
 		private string acrAssumeRoleArn;
@@ -106,6 +114,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		private string ossAkId;
 
 		private string liveness;
+
+		private string securityGroupId;
 
 		private string packageVersion;
 
@@ -125,6 +135,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private bool? enableGreyTagRoute;
 
+		private int? replicas;
+
 		private string command;
 
 		private string mountDesc;
@@ -138,6 +150,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		private string appId;
 
 		private string imageUrl;
+
+		private string php;
 
 		private string pythonModules;
 
@@ -364,6 +378,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
+		public int? Cpu
+		{
+			get
+			{
+				return cpu;
+			}
+			set	
+			{
+				cpu = value;
+				DictionaryUtil.Add(QueryParameters, "Cpu", value.ToString());
+			}
+		}
+
 		public string UpdateStrategy
 		{
 			get
@@ -374,6 +401,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				updateStrategy = value;
 				DictionaryUtil.Add(QueryParameters, "UpdateStrategy", value);
+			}
+		}
+
+		public string VSwitchId
+		{
+			get
+			{
+				return vSwitchId;
+			}
+			set	
+			{
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
 			}
 		}
 
@@ -413,6 +453,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				autoEnableApplicationScalingRule = value;
 				DictionaryUtil.Add(QueryParameters, "AutoEnableApplicationScalingRule", value.ToString());
+			}
+		}
+
+		public string PackageType
+		{
+			get
+			{
+				return packageType;
+			}
+			set	
+			{
+				packageType = value;
+				DictionaryUtil.Add(QueryParameters, "PackageType", value);
 			}
 		}
 
@@ -494,6 +547,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
+		public int? Memory
+		{
+			get
+			{
+				return memory;
+			}
+			set	
+			{
+				memory = value;
+				DictionaryUtil.Add(QueryParameters, "Memory", value.ToString());
+			}
+		}
+
 		public string CommandArgs
 		{
 			get
@@ -569,6 +635,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				liveness = value;
 				DictionaryUtil.Add(QueryParameters, "Liveness", value);
+			}
+		}
+
+		public string SecurityGroupId
+		{
+			get
+			{
+				return securityGroupId;
+			}
+			set	
+			{
+				securityGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
 			}
 		}
 
@@ -689,6 +768,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
+		public int? Replicas
+		{
+			get
+			{
+				return replicas;
+			}
+			set	
+			{
+				replicas = value;
+				DictionaryUtil.Add(QueryParameters, "Replicas", value.ToString());
+			}
+		}
+
 		public string Command
 		{
 			get
@@ -777,6 +869,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				imageUrl = value;
 				DictionaryUtil.Add(QueryParameters, "ImageUrl", value);
+			}
+		}
+
+		public string Php
+		{
+			get
+			{
+				return php;
+			}
+			set	
+			{
+				php = value;
+				DictionaryUtil.Add(BodyParameters, "Php", value);
 			}
 		}
 

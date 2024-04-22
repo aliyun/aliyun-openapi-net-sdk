@@ -22,44 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
 {
-	public class DisableApplicationScalingRuleResponse : AcsResponse
+	public class GetWarningEventMetricResponse : AcsResponse
 	{
-
-		private string requestId;
-
-		private string traceId;
 
 		private string message;
 
-		private string errorCode;
+		private string requestId;
 
 		private string code;
 
 		private bool? success;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string TraceId
-		{
-			get
-			{
-				return traceId;
-			}
-			set	
-			{
-				traceId = value;
-			}
-		}
+		private List<GetWarningEventMetric_EventMetricDto> data;
 
 		public string Message
 		{
@@ -73,15 +47,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string ErrorCode
+		public string RequestId
 		{
 			get
 			{
-				return errorCode;
+				return requestId;
 			}
 			set	
 			{
-				errorCode = value;
+				requestId = value;
 			}
 		}
 
@@ -106,6 +80,78 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public List<GetWarningEventMetric_EventMetricDto> Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+
+		public class GetWarningEventMetric_EventMetricDto
+		{
+
+			private string appId;
+
+			private string name;
+
+			private string regionId;
+
+			private long? warningCount;
+
+			public string AppId
+			{
+				get
+				{
+					return appId;
+				}
+				set	
+				{
+					appId = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public long? WarningCount
+			{
+				get
+				{
+					return warningCount;
+				}
+				set	
+				{
+					warningCount = value;
+				}
 			}
 		}
 	}

@@ -45,6 +45,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string namespaceId;
 
+		private string version;
+
 		public string AppIds
 		{
 			get
@@ -68,6 +70,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				namespaceId = value;
 				DictionaryUtil.Add(QueryParameters, "NamespaceId", value);
+			}
+		}
+
+		public string Version
+		{
+			get
+			{
+				return version;
+			}
+			set	
+			{
+				version = value;
+				DictionaryUtil.Add(QueryParameters, "Version", value);
 			}
 		}
 

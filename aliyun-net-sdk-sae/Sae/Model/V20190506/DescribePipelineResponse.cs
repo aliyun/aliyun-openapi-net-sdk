@@ -346,6 +346,12 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 					private string taskId;
 
+					private long? createTime;
+
+					private long? startTime;
+
+					private long? updateTime;
+
 					public int? Status
 					{
 						get
@@ -451,6 +457,42 @@ namespace Aliyun.Acs.sae.Model.V20190506
 						set	
 						{
 							taskId = value;
+						}
+					}
+
+					public long? CreateTime
+					{
+						get
+						{
+							return createTime;
+						}
+						set	
+						{
+							createTime = value;
+						}
+					}
+
+					public long? StartTime
+					{
+						get
+						{
+							return startTime;
+						}
+						set	
+						{
+							startTime = value;
+						}
+					}
+
+					public long? UpdateTime
+					{
+						get
+						{
+							return updateTime;
+						}
+						set	
+						{
+							updateTime = value;
 						}
 					}
 				}

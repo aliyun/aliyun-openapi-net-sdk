@@ -27,62 +27,92 @@ using Aliyun.Acs.sae.Transform.V20190506;
 
 namespace Aliyun.Acs.sae.Model.V20190506
 {
-    public class UpdateSecretRequest : RoaAcsRequest<UpdateSecretResponse>
+    public class GetChangeOrderMetricRequest : RoaAcsRequest<GetChangeOrderMetricResponse>
     {
-        public UpdateSecretRequest()
-            : base("sae", "2019-05-06", "UpdateSecret", "serverless", "openAPI")
+        public GetChangeOrderMetricRequest()
+            : base("sae", "2019-05-06", "GetChangeOrderMetric", "serverless", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/pop/v1/sam/secret/secret";
-			Method = MethodType.PUT;
+			UriPattern = "/pop/v1/sam/getChangeOrderMetric";
+			Method = MethodType.GET;
         }
 
-		private string namespaceId;
+		private string appSource;
 
-		private long? secretId;
+		private string createTime;
 
-		private string secretData;
+		private string cpuStrategy;
 
-		public string NamespaceId
+		private long? limit;
+
+		private string orderBy;
+
+		public string AppSource
 		{
 			get
 			{
-				return namespaceId;
+				return appSource;
 			}
 			set	
 			{
-				namespaceId = value;
-				DictionaryUtil.Add(QueryParameters, "NamespaceId", value);
+				appSource = value;
+				DictionaryUtil.Add(QueryParameters, "AppSource", value);
 			}
 		}
 
-		public long? SecretId
+		public string CreateTime
 		{
 			get
 			{
-				return secretId;
+				return createTime;
 			}
 			set	
 			{
-				secretId = value;
-				DictionaryUtil.Add(QueryParameters, "SecretId", value.ToString());
+				createTime = value;
+				DictionaryUtil.Add(QueryParameters, "CreateTime", value);
 			}
 		}
 
-		public string SecretData
+		public string CpuStrategy
 		{
 			get
 			{
-				return secretData;
+				return cpuStrategy;
 			}
 			set	
 			{
-				secretData = value;
-				DictionaryUtil.Add(QueryParameters, "SecretData", value);
+				cpuStrategy = value;
+				DictionaryUtil.Add(QueryParameters, "CpuStrategy", value);
+			}
+		}
+
+		public long? Limit
+		{
+			get
+			{
+				return limit;
+			}
+			set	
+			{
+				limit = value;
+				DictionaryUtil.Add(QueryParameters, "Limit", value.ToString());
+			}
+		}
+
+		public string OrderBy
+		{
+			get
+			{
+				return orderBy;
+			}
+			set	
+			{
+				orderBy = value;
+				DictionaryUtil.Add(QueryParameters, "OrderBy", value);
 			}
 		}
 
@@ -91,9 +121,9 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			return false;
 		}
 
-        public override UpdateSecretResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetChangeOrderMetricResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateSecretResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetChangeOrderMetricResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

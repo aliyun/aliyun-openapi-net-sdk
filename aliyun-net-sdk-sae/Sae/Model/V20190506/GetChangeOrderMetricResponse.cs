@@ -22,34 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
 {
-	public class UpdateNamespaceResponse : AcsResponse
+	public class GetChangeOrderMetricResponse : AcsResponse
 	{
-
-		private string requestId;
 
 		private string message;
 
-		private string traceId;
-
-		private string errorCode;
+		private string requestId;
 
 		private string code;
 
 		private bool? success;
 
-		private UpdateNamespace_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<GetChangeOrderMetric_ChangeOrderMetricDto> data;
 
 		public string Message
 		{
@@ -63,27 +47,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string TraceId
+		public string RequestId
 		{
 			get
 			{
-				return traceId;
+				return requestId;
 			}
 			set	
 			{
-				traceId = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
+				requestId = value;
 			}
 		}
 
@@ -111,7 +83,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public UpdateNamespace_Data Data
+		public List<GetChangeOrderMetric_ChangeOrderMetricDto> Data
 		{
 			get
 			{
@@ -123,54 +95,42 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public class UpdateNamespace_Data
+		public class GetChangeOrderMetric_ChangeOrderMetricDto
 		{
 
-			private string namespaceDescription;
+			private string appId;
 
-			private string namespaceId;
-
-			private string namespaceName;
+			private string name;
 
 			private string regionId;
 
-			private string nameSpaceShortId;
+			private long? total;
 
-			private bool? enableMicroRegistration;
+			private long? error;
 
-			public string NamespaceDescription
+			private float? errorPercent;
+
+			public string AppId
 			{
 				get
 				{
-					return namespaceDescription;
+					return appId;
 				}
 				set	
 				{
-					namespaceDescription = value;
+					appId = value;
 				}
 			}
 
-			public string NamespaceId
+			public string Name
 			{
 				get
 				{
-					return namespaceId;
+					return name;
 				}
 				set	
 				{
-					namespaceId = value;
-				}
-			}
-
-			public string NamespaceName
-			{
-				get
-				{
-					return namespaceName;
-				}
-				set	
-				{
-					namespaceName = value;
+					name = value;
 				}
 			}
 
@@ -186,27 +146,39 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public string NameSpaceShortId
+			public long? Total
 			{
 				get
 				{
-					return nameSpaceShortId;
+					return total;
 				}
 				set	
 				{
-					nameSpaceShortId = value;
+					total = value;
 				}
 			}
 
-			public bool? EnableMicroRegistration
+			public long? Error
 			{
 				get
 				{
-					return enableMicroRegistration;
+					return error;
 				}
 				set	
 				{
-					enableMicroRegistration = value;
+					error = value;
+				}
+			}
+
+			public float? ErrorPercent
+			{
+				get
+				{
+					return errorPercent;
+				}
+				set	
+				{
+					errorPercent = value;
 				}
 			}
 		}
