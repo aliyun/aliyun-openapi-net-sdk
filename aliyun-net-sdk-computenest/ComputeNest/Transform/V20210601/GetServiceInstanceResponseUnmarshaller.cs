@@ -60,6 +60,8 @@ namespace Aliyun.Acs.ComputeNest.Transform.V20210601
 			getServiceInstanceResponse.PredefinedParameterName = _ctx.StringValue("GetServiceInstance.PredefinedParameterName");
 			getServiceInstanceResponse.MarketInstanceId = _ctx.StringValue("GetServiceInstance.MarketInstanceId");
 			getServiceInstanceResponse.ResourceGroupId = _ctx.StringValue("GetServiceInstance.ResourceGroupId");
+			getServiceInstanceResponse.BizStatus = _ctx.StringValue("GetServiceInstance.BizStatus");
+			getServiceInstanceResponse.GrafanaDashBoardUrl = _ctx.StringValue("GetServiceInstance.GrafanaDashBoardUrl");
 
 			GetServiceInstanceResponse.GetServiceInstance_Service service = new GetServiceInstanceResponse.GetServiceInstance_Service();
 			service.Status = _ctx.StringValue("GetServiceInstance.Service.Status");

@@ -24,20 +24,16 @@ using Aliyun.Acs.ComputeNest.Model.V20210601;
 
 namespace Aliyun.Acs.ComputeNest.Transform.V20210601
 {
-    public class CreateServiceInstanceResponseUnmarshaller
+    public class ChangeResourceGroupResponseUnmarshaller
     {
-        public static CreateServiceInstanceResponse Unmarshall(UnmarshallerContext _ctx)
+        public static ChangeResourceGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CreateServiceInstanceResponse createServiceInstanceResponse = new CreateServiceInstanceResponse();
+			ChangeResourceGroupResponse changeResourceGroupResponse = new ChangeResourceGroupResponse();
 
-			createServiceInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			createServiceInstanceResponse.Status = _ctx.StringValue("CreateServiceInstance.Status");
-			createServiceInstanceResponse.RequestId = _ctx.StringValue("CreateServiceInstance.RequestId");
-			createServiceInstanceResponse.ServiceInstanceId = _ctx.StringValue("CreateServiceInstance.ServiceInstanceId");
-			createServiceInstanceResponse.MarketInstanceId = _ctx.StringValue("CreateServiceInstance.MarketInstanceId");
-			createServiceInstanceResponse.OrderId = _ctx.StringValue("CreateServiceInstance.OrderId");
+			changeResourceGroupResponse.HttpResponse = _ctx.HttpResponse;
+			changeResourceGroupResponse.RequestId = _ctx.StringValue("ChangeResourceGroup.RequestId");
         
-			return createServiceInstanceResponse;
+			return changeResourceGroupResponse;
         }
     }
 }

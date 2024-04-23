@@ -29,7 +29,7 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 
 		private string requestId;
 
-		private string maxResults;
+		private int? maxResults;
 
 		private List<ListServiceInstanceLogs_ServiceInstanceLogs> serviceInstancesLogs;
 
@@ -57,7 +57,7 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 			}
 		}
 
-		public string MaxResults
+		public int? MaxResults
 		{
 			get
 			{
@@ -86,8 +86,6 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 
 			private string timestamp;
 
-			private string serviceInstanceId;
-
 			private string source;
 
 			private string content;
@@ -109,18 +107,6 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 				set	
 				{
 					timestamp = value;
-				}
-			}
-
-			public string ServiceInstanceId
-			{
-				get
-				{
-					return serviceInstanceId;
-				}
-				set	
-				{
-					serviceInstanceId = value;
 				}
 			}
 

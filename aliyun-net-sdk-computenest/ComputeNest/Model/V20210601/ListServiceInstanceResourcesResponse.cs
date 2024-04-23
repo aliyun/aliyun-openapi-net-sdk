@@ -29,7 +29,7 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 
 		private string requestId;
 
-		private string maxResults;
+		private int? maxResults;
 
 		private List<ListServiceInstanceResources_ResourcesItem> resources;
 
@@ -57,7 +57,7 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 			}
 		}
 
-		public string MaxResults
+		public int? MaxResults
 		{
 			get
 			{
@@ -101,6 +101,8 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 			private string productType;
 
 			private string productCode;
+
+			private string status;
 
 			public string ResourceARN
 			{
@@ -207,6 +209,18 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 				set	
 				{
 					productCode = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 		}

@@ -22,30 +22,10 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ComputeNest.Model.V20210601
 {
-	public class CreateServiceInstanceResponse : AcsResponse
+	public class ChangeResourceGroupResponse : AcsResponse
 	{
 
-		private string status;
-
 		private string requestId;
-
-		private string serviceInstanceId;
-
-		private string marketInstanceId;
-
-		private string orderId;
-
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-			}
-		}
 
 		public string RequestId
 		{
@@ -56,42 +36,6 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string ServiceInstanceId
-		{
-			get
-			{
-				return serviceInstanceId;
-			}
-			set	
-			{
-				serviceInstanceId = value;
-			}
-		}
-
-		public string MarketInstanceId
-		{
-			get
-			{
-				return marketInstanceId;
-			}
-			set	
-			{
-				marketInstanceId = value;
-			}
-		}
-
-		public string OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
 			}
 		}
 	}

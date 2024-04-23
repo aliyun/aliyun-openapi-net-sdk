@@ -27,10 +27,10 @@ using Aliyun.Acs.ComputeNest.Transform.V20210601;
 
 namespace Aliyun.Acs.ComputeNest.Model.V20210601
 {
-    public class ListServiceInstanceLogsRequest : RpcAcsRequest<ListServiceInstanceLogsResponse>
+    public class ChangeResourceGroupRequest : RpcAcsRequest<ChangeResourceGroupResponse>
     {
-        public ListServiceInstanceLogsRequest()
-            : base("ComputeNest", "2021-06-01", "ListServiceInstanceLogs", "computenest", "openAPI")
+        public ChangeResourceGroupRequest()
+            : base("ComputeNest", "2021-06-01", "ChangeResourceGroup", "computenest", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,78 +40,48 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 			Method = MethodType.POST;
         }
 
-		private string nextToken;
+		private string resourceId;
 
-		private string serviceInstanceId;
+		private string resourceType;
 
-		private string logSource;
+		private string newResourceGroupId;
 
-		private int? maxResults;
-
-		private string logstore;
-
-		public string NextToken
+		public string ResourceId
 		{
 			get
 			{
-				return nextToken;
+				return resourceId;
 			}
 			set	
 			{
-				nextToken = value;
-				DictionaryUtil.Add(QueryParameters, "NextToken", value);
+				resourceId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
 			}
 		}
 
-		public string ServiceInstanceId
+		public string ResourceType
 		{
 			get
 			{
-				return serviceInstanceId;
+				return resourceType;
 			}
 			set	
 			{
-				serviceInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceInstanceId", value);
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
-		public string LogSource
+		public string NewResourceGroupId
 		{
 			get
 			{
-				return logSource;
+				return newResourceGroupId;
 			}
 			set	
 			{
-				logSource = value;
-				DictionaryUtil.Add(QueryParameters, "LogSource", value);
-			}
-		}
-
-		public int? MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
-				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
-			}
-		}
-
-		public string Logstore
-		{
-			get
-			{
-				return logstore;
-			}
-			set	
-			{
-				logstore = value;
-				DictionaryUtil.Add(QueryParameters, "Logstore", value);
+				newResourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "NewResourceGroupId", value);
 			}
 		}
 
@@ -120,9 +90,9 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 			return false;
 		}
 
-        public override ListServiceInstanceLogsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ChangeResourceGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListServiceInstanceLogsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ChangeResourceGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

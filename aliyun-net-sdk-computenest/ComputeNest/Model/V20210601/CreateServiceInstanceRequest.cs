@@ -72,8 +72,6 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 
 		private string parameters;
 
-		private long? payType;
-
 		private OperationMetadata operationMetadata_;
 
 		public Commodity Commodity_
@@ -90,6 +88,8 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 				{
 
 					DictionaryUtil.Add(QueryParameters,"Commodity.PayPeriod", commodity_.PayPeriod);
+					DictionaryUtil.Add(QueryParameters,"Commodity.AutoPay", commodity_.AutoPay);
+					DictionaryUtil.Add(QueryParameters,"Commodity.AutoRenew", commodity_.AutoRenew);
 					DictionaryUtil.Add(QueryParameters,"Commodity.PayPeriodUnit", commodity_.PayPeriodUnit);
 				}
 			}
@@ -298,19 +298,6 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 			}
 		}
 
-		public long? PayType
-		{
-			get
-			{
-				return payType;
-			}
-			set	
-			{
-				payType = value;
-				DictionaryUtil.Add(QueryParameters, "PayType", value.ToString());
-			}
-		}
-
 		public OperationMetadata OperationMetadata_
 		{
 			get
@@ -338,6 +325,10 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 
 			private long? payPeriod;
 
+			private bool? autoPay;
+
+			private bool? autoRenew;
+
 			private string payPeriodUnit;
 
 			public long? PayPeriod
@@ -349,6 +340,30 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 				set	
 				{
 					payPeriod = value;
+				}
+			}
+
+			public bool? AutoPay
+			{
+				get
+				{
+					return autoPay;
+				}
+				set	
+				{
+					autoPay = value;
+				}
+			}
+
+			public bool? AutoRenew
+			{
+				get
+				{
+					return autoRenew;
+				}
+				set	
+				{
+					autoRenew = value;
 				}
 			}
 
