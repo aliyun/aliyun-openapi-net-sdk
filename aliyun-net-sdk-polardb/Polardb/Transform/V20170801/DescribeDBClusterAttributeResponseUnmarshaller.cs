@@ -87,6 +87,11 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeDBClusterAttributeResponse.AiType = _ctx.StringValue("DescribeDBClusterAttribute.AiType");
 			describeDBClusterAttributeResponse.ProvisionedIops = _ctx.StringValue("DescribeDBClusterAttribute.ProvisionedIops");
 			describeDBClusterAttributeResponse.HotStandbyHealthy = _ctx.BooleanValue("DescribeDBClusterAttribute.HotStandbyHealthy");
+			describeDBClusterAttributeResponse.HotStandbyWhiteListSwitch = _ctx.BooleanValue("DescribeDBClusterAttribute.HotStandbyWhiteListSwitch");
+			describeDBClusterAttributeResponse.StorageTypeWhiteListSwitch = _ctx.BooleanValue("DescribeDBClusterAttribute.StorageTypeWhiteListSwitch");
+			describeDBClusterAttributeResponse.AiFreeMode = _ctx.StringValue("DescribeDBClusterAttribute.AiFreeMode");
+			describeDBClusterAttributeResponse.AiCreatingTime = _ctx.StringValue("DescribeDBClusterAttribute.AiCreatingTime");
+			describeDBClusterAttributeResponse.SupportInstantSwitchWithImci = _ctx.StringValue("DescribeDBClusterAttribute.SupportInstantSwitchWithImci");
 
 			DescribeDBClusterAttributeResponse.DescribeDBClusterAttribute_RelatedAPInstance relatedAPInstance = new DescribeDBClusterAttributeResponse.DescribeDBClusterAttribute_RelatedAPInstance();
 			relatedAPInstance.Name = _ctx.StringValue("DescribeDBClusterAttribute.RelatedAPInstance.Name");
@@ -120,6 +125,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				dBNode.ServerlessType = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].ServerlessType");
 				dBNode.SubCluster = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].SubCluster");
 				dBNode.Tair = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].Tair");
+				dBNode.RemoteMemorySize = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].RemoteMemorySize");
 
 				describeDBClusterAttributeResponse_dBNodes.Add(dBNode);
 			}

@@ -68,6 +68,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				dBCluster.StorageUsed = _ctx.StringValue("DescribeGlobalDatabaseNetwork.DBClusters["+ i +"].StorageUsed");
 				dBCluster.DBClusterDescription = _ctx.StringValue("DescribeGlobalDatabaseNetwork.DBClusters["+ i +"].DBClusterDescription");
 				dBCluster.Role = _ctx.StringValue("DescribeGlobalDatabaseNetwork.DBClusters["+ i +"].Role");
+				dBCluster.ServerlessType = _ctx.StringValue("DescribeGlobalDatabaseNetwork.DBClusters["+ i +"].ServerlessType");
 
 				List<DescribeGlobalDatabaseNetworkResponse.DescribeGlobalDatabaseNetwork_DBCluster.DescribeGlobalDatabaseNetwork_DBNode> dBCluster_dBNodes = new List<DescribeGlobalDatabaseNetworkResponse.DescribeGlobalDatabaseNetwork_DBCluster.DescribeGlobalDatabaseNetwork_DBNode>();
 				for (int j = 0; j < _ctx.Length("DescribeGlobalDatabaseNetwork.DBClusters["+ i +"].DBNodes.Length"); j++) {

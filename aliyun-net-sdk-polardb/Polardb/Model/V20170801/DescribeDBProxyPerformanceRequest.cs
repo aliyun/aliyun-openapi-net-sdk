@@ -40,13 +40,32 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			Method = MethodType.POST;
         }
 
+		private string dBEndpointId;
+
 		private string startTime;
+
+		private string type;
 
 		private string key;
 
 		private string dBClusterId;
 
 		private string endTime;
+
+		private string interval;
+
+		public string DBEndpointId
+		{
+			get
+			{
+				return dBEndpointId;
+			}
+			set	
+			{
+				dBEndpointId = value;
+				DictionaryUtil.Add(QueryParameters, "DBEndpointId", value);
+			}
+		}
 
 		public string StartTime
 		{
@@ -58,6 +77,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
 			}
 		}
 
@@ -97,6 +129,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				endTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		public string Interval
+		{
+			get
+			{
+				return interval;
+			}
+			set	
+			{
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value);
 			}
 		}
 

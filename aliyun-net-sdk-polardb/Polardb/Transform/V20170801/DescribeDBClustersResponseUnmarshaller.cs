@@ -67,6 +67,10 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				dBCluster.Engine = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].Engine");
 				dBCluster.Category = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].Category");
 				dBCluster.AiType = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].AiType");
+				dBCluster.CpuCores = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].CpuCores");
+				dBCluster.MemorySize = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].MemorySize");
+				dBCluster.RemoteMemorySize = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].RemoteMemorySize");
+				dBCluster.SubCategory = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].SubCategory");
 
 				List<DescribeDBClustersResponse.DescribeDBClusters_DBCluster.DescribeDBClusters_Tag> dBCluster_tags = new List<DescribeDBClustersResponse.DescribeDBClusters_DBCluster.DescribeDBClusters_Tag>();
 				for (int j = 0; j < _ctx.Length("DescribeDBClusters.Items["+ i +"].Tags.Length"); j++) {

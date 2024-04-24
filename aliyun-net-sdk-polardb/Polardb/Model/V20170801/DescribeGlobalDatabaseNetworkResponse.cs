@@ -254,6 +254,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string role;
 
+			private string serverlessType;
+
 			private List<DescribeGlobalDatabaseNetwork_DBNode> dBNodes;
 
 			public string ReplicaLag
@@ -409,6 +411,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					role = value;
+				}
+			}
+
+			public string ServerlessType
+			{
+				get
+				{
+					return serverlessType;
+				}
+				set	
+				{
+					serverlessType = value;
 				}
 			}
 

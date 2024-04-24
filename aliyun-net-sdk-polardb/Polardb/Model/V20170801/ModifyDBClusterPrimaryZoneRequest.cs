@@ -62,6 +62,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string zoneId;
 
+		private string zoneType;
+
 		private bool? fromTimeService;
 
 		public long? ResourceOwnerId
@@ -204,6 +206,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				zoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public string ZoneType
+		{
+			get
+			{
+				return zoneType;
+			}
+			set	
+			{
+				zoneType = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneType", value);
 			}
 		}
 

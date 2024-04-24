@@ -137,6 +137,16 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private bool? hotStandbyHealthy;
 
+		private bool? hotStandbyWhiteListSwitch;
+
+		private bool? storageTypeWhiteListSwitch;
+
+		private string aiFreeMode;
+
+		private string aiCreatingTime;
+
+		private string supportInstantSwitchWithImci;
+
 		private List<DescribeDBClusterAttribute_DBNode> dBNodes;
 
 		private List<DescribeDBClusterAttribute_Tag> tags;
@@ -815,6 +825,66 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public bool? HotStandbyWhiteListSwitch
+		{
+			get
+			{
+				return hotStandbyWhiteListSwitch;
+			}
+			set	
+			{
+				hotStandbyWhiteListSwitch = value;
+			}
+		}
+
+		public bool? StorageTypeWhiteListSwitch
+		{
+			get
+			{
+				return storageTypeWhiteListSwitch;
+			}
+			set	
+			{
+				storageTypeWhiteListSwitch = value;
+			}
+		}
+
+		public string AiFreeMode
+		{
+			get
+			{
+				return aiFreeMode;
+			}
+			set	
+			{
+				aiFreeMode = value;
+			}
+		}
+
+		public string AiCreatingTime
+		{
+			get
+			{
+				return aiCreatingTime;
+			}
+			set	
+			{
+				aiCreatingTime = value;
+			}
+		}
+
+		public string SupportInstantSwitchWithImci
+		{
+			get
+			{
+				return supportInstantSwitchWithImci;
+			}
+			set	
+			{
+				supportInstantSwitchWithImci = value;
+			}
+		}
+
 		public List<DescribeDBClusterAttribute_DBNode> DBNodes
 		{
 			get
@@ -893,6 +963,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			private string subCluster;
 
 			private string tair;
+
+			private string remoteMemorySize;
 
 			public string CreationTime
 			{
@@ -1131,6 +1203,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					tair = value;
+				}
+			}
+
+			public string RemoteMemorySize
+			{
+				get
+				{
+					return remoteMemorySize;
+				}
+				set	
+				{
+					remoteMemorySize = value;
 				}
 			}
 		}

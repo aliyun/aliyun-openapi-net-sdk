@@ -330,6 +330,14 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string rdsParameterDescription;
 
+			private string isRdsKey;
+
+			private string isPolarDBKey;
+
+			private string isInstancePolarDBKey;
+
+			private string isInstanceRdsKey;
+
 			public string RdsParameterName
 			{
 				get
@@ -435,6 +443,54 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					rdsParameterDescription = value;
+				}
+			}
+
+			public string IsRdsKey
+			{
+				get
+				{
+					return isRdsKey;
+				}
+				set	
+				{
+					isRdsKey = value;
+				}
+			}
+
+			public string IsPolarDBKey
+			{
+				get
+				{
+					return isPolarDBKey;
+				}
+				set	
+				{
+					isPolarDBKey = value;
+				}
+			}
+
+			public string IsInstancePolarDBKey
+			{
+				get
+				{
+					return isInstancePolarDBKey;
+				}
+				set	
+				{
+					isInstancePolarDBKey = value;
+				}
+			}
+
+			public string IsInstanceRdsKey
+			{
+				get
+				{
+					return isInstanceRdsKey;
+				}
+				set	
+				{
+					isInstanceRdsKey = value;
 				}
 			}
 		}

@@ -154,6 +154,14 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string aiType;
 
+			private string cpuCores;
+
+			private string memorySize;
+
+			private string remoteMemorySize;
+
+			private string subCategory;
+
 			private List<DescribeDBClusters_Tag> tags;
 
 			private List<DescribeDBClusters_DBNode> dBNodes;
@@ -491,6 +499,54 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					aiType = value;
+				}
+			}
+
+			public string CpuCores
+			{
+				get
+				{
+					return cpuCores;
+				}
+				set	
+				{
+					cpuCores = value;
+				}
+			}
+
+			public string MemorySize
+			{
+				get
+				{
+					return memorySize;
+				}
+				set	
+				{
+					memorySize = value;
+				}
+			}
+
+			public string RemoteMemorySize
+			{
+				get
+				{
+					return remoteMemorySize;
+				}
+				set	
+				{
+					remoteMemorySize = value;
+				}
+			}
+
+			public string SubCategory
+			{
+				get
+				{
+					return subCategory;
+				}
+				set	
+				{
+					subCategory = value;
 				}
 			}
 

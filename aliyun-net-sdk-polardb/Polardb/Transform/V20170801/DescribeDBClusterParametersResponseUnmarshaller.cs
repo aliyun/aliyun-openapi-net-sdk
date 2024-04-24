@@ -70,6 +70,10 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				parametersItem.IsEqual = _ctx.StringValue("DescribeDBClusterParameters.Parameters["+ i +"].IsEqual");
 				parametersItem.DistParameterDescription = _ctx.StringValue("DescribeDBClusterParameters.Parameters["+ i +"].distParameterDescription");
 				parametersItem.RdsParameterDescription = _ctx.StringValue("DescribeDBClusterParameters.Parameters["+ i +"].rdsParameterDescription");
+				parametersItem.IsRdsKey = _ctx.StringValue("DescribeDBClusterParameters.Parameters["+ i +"].IsRdsKey");
+				parametersItem.IsPolarDBKey = _ctx.StringValue("DescribeDBClusterParameters.Parameters["+ i +"].IsPolarDBKey");
+				parametersItem.IsInstancePolarDBKey = _ctx.StringValue("DescribeDBClusterParameters.Parameters["+ i +"].IsInstancePolarDBKey");
+				parametersItem.IsInstanceRdsKey = _ctx.StringValue("DescribeDBClusterParameters.Parameters["+ i +"].IsInstanceRdsKey");
 
 				describeDBClusterParametersResponse_parameters.Add(parametersItem);
 			}
