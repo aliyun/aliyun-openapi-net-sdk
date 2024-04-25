@@ -27,65 +27,92 @@ using Aliyun.Acs.vod.Transform.V20170321;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class RefreshVodObjectCachesRequest : RpcAcsRequest<RefreshVodObjectCachesResponse>
+    public class DescribeVodDomainRealTimeBpsDataRequest : RpcAcsRequest<DescribeVodDomainRealTimeBpsDataResponse>
     {
-        public RefreshVodObjectCachesRequest()
-            : base("vod", "2017-03-21", "RefreshVodObjectCaches", "vod", "openAPI")
+        public DescribeVodDomainRealTimeBpsDataRequest()
+            : base("vod", "2017-03-21", "DescribeVodDomainRealTimeBpsData", "vod", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointRegionalType, null);
             }
-			Method = MethodType.POST;
         }
 
-		private string objectPath;
+		private string locationNameEn;
 
-		private string securityToken;
+		private string ispNameEn;
 
-		private string objectType;
+		private string startTime;
+
+		private string domainName;
+
+		private string endTime;
 
 		private long? ownerId;
 
-		private bool? force;
-
-		public string ObjectPath
+		public string LocationNameEn
 		{
 			get
 			{
-				return objectPath;
+				return locationNameEn;
 			}
 			set	
 			{
-				objectPath = value;
-				DictionaryUtil.Add(QueryParameters, "ObjectPath", value);
+				locationNameEn = value;
+				DictionaryUtil.Add(QueryParameters, "LocationNameEn", value);
 			}
 		}
 
-		public string SecurityToken
+		public string IspNameEn
 		{
 			get
 			{
-				return securityToken;
+				return ispNameEn;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				ispNameEn = value;
+				DictionaryUtil.Add(QueryParameters, "IspNameEn", value);
 			}
 		}
 
-		public string ObjectType
+		public string StartTime
 		{
 			get
 			{
-				return objectType;
+				return startTime;
 			}
 			set	
 			{
-				objectType = value;
-				DictionaryUtil.Add(QueryParameters, "ObjectType", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
@@ -102,22 +129,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public bool? Force
-		{
-			get
-			{
-				return force;
-			}
-			set	
-			{
-				force = value;
-				DictionaryUtil.Add(QueryParameters, "Force", value.ToString());
-			}
-		}
-
-        public override RefreshVodObjectCachesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeVodDomainRealTimeBpsDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RefreshVodObjectCachesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeVodDomainRealTimeBpsDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

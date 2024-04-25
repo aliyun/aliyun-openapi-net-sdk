@@ -27,10 +27,10 @@ using Aliyun.Acs.vod.Transform.V20170321;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class DescribeVodTranscodeDataRequest : RpcAcsRequest<DescribeVodTranscodeDataResponse>
+    public class DescribeVodMediaPlayDataRequest : RpcAcsRequest<DescribeVodMediaPlayDataResponse>
     {
-        public DescribeVodTranscodeDataRequest()
-            : base("vod", "2017-03-21", "DescribeVodTranscodeData", "vod", "openAPI")
+        public DescribeVodMediaPlayDataRequest()
+            : base("vod", "2017-03-21", "DescribeVodMediaPlayData", "vod", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,110 +40,99 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			Method = MethodType.POST;
         }
 
-		private string startTime;
+		private long? pageSize;
 
-		private string storage;
+		private string playDate;
 
-		private string endTime;
+		private string os;
 
-		private string specification;
+		private string mediaId;
 
-		private long? ownerId;
+		private string orderName;
 
-		private string appId;
-
-		private string interval;
+		private long? pageNo;
 
 		private string region;
 
-		public string StartTime
+		private string terminalType;
+
+		private string orderType;
+
+		public long? PageSize
 		{
 			get
 			{
-				return startTime;
+				return pageSize;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public string Storage
+		public string PlayDate
 		{
 			get
 			{
-				return storage;
+				return playDate;
 			}
 			set	
 			{
-				storage = value;
-				DictionaryUtil.Add(QueryParameters, "Storage", value);
+				playDate = value;
+				DictionaryUtil.Add(QueryParameters, "PlayDate", value);
 			}
 		}
 
-		public string EndTime
+		public string Os
 		{
 			get
 			{
-				return endTime;
+				return os;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				os = value;
+				DictionaryUtil.Add(QueryParameters, "Os", value);
 			}
 		}
 
-		public string Specification
+		public string MediaId
 		{
 			get
 			{
-				return specification;
+				return mediaId;
 			}
 			set	
 			{
-				specification = value;
-				DictionaryUtil.Add(QueryParameters, "Specification", value);
+				mediaId = value;
+				DictionaryUtil.Add(QueryParameters, "MediaId", value);
 			}
 		}
 
-		public long? OwnerId
+		public string OrderName
 		{
 			get
 			{
-				return ownerId;
+				return orderName;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				orderName = value;
+				DictionaryUtil.Add(QueryParameters, "OrderName", value);
 			}
 		}
 
-		public string AppId
+		public long? PageNo
 		{
 			get
 			{
-				return appId;
+				return pageNo;
 			}
 			set	
 			{
-				appId = value;
-				DictionaryUtil.Add(QueryParameters, "AppId", value);
-			}
-		}
-
-		public string Interval
-		{
-			get
-			{
-				return interval;
-			}
-			set	
-			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value);
+				pageNo = value;
+				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
 			}
 		}
 
@@ -160,9 +149,40 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-        public override DescribeVodTranscodeDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string TerminalType
+		{
+			get
+			{
+				return terminalType;
+			}
+			set	
+			{
+				terminalType = value;
+				DictionaryUtil.Add(QueryParameters, "TerminalType", value);
+			}
+		}
+
+		public string OrderType
+		{
+			get
+			{
+				return orderType;
+			}
+			set	
+			{
+				orderType = value;
+				DictionaryUtil.Add(QueryParameters, "OrderType", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeVodMediaPlayDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeVodTranscodeDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeVodMediaPlayDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

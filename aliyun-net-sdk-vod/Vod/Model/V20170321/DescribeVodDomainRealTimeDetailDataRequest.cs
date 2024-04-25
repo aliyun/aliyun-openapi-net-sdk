@@ -27,34 +27,48 @@ using Aliyun.Acs.vod.Transform.V20170321;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class DescribeVodTranscodeDataRequest : RpcAcsRequest<DescribeVodTranscodeDataResponse>
+    public class DescribeVodDomainRealTimeDetailDataRequest : RpcAcsRequest<DescribeVodDomainRealTimeDetailDataResponse>
     {
-        public DescribeVodTranscodeDataRequest()
-            : base("vod", "2017-03-21", "DescribeVodTranscodeData", "vod", "openAPI")
+        public DescribeVodDomainRealTimeDetailDataRequest()
+            : base("vod", "2017-03-21", "DescribeVodDomainRealTimeDetailData", "vod", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointRegionalType, null);
             }
-			Method = MethodType.POST;
         }
+
+		private string locationNameEn;
 
 		private string startTime;
 
-		private string storage;
+		private string ispNameEn;
+
+		private string merge;
+
+		private string domainName;
 
 		private string endTime;
 
-		private string specification;
+		private string mergeLocIsp;
 
 		private long? ownerId;
 
-		private string appId;
+		private string field;
 
-		private string interval;
-
-		private string region;
+		public string LocationNameEn
+		{
+			get
+			{
+				return locationNameEn;
+			}
+			set	
+			{
+				locationNameEn = value;
+				DictionaryUtil.Add(QueryParameters, "LocationNameEn", value);
+			}
+		}
 
 		public string StartTime
 		{
@@ -69,16 +83,42 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Storage
+		public string IspNameEn
 		{
 			get
 			{
-				return storage;
+				return ispNameEn;
 			}
 			set	
 			{
-				storage = value;
-				DictionaryUtil.Add(QueryParameters, "Storage", value);
+				ispNameEn = value;
+				DictionaryUtil.Add(QueryParameters, "IspNameEn", value);
+			}
+		}
+
+		public string Merge
+		{
+			get
+			{
+				return merge;
+			}
+			set	
+			{
+				merge = value;
+				DictionaryUtil.Add(QueryParameters, "Merge", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -95,16 +135,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Specification
+		public string MergeLocIsp
 		{
 			get
 			{
-				return specification;
+				return mergeLocIsp;
 			}
 			set	
 			{
-				specification = value;
-				DictionaryUtil.Add(QueryParameters, "Specification", value);
+				mergeLocIsp = value;
+				DictionaryUtil.Add(QueryParameters, "MergeLocIsp", value);
 			}
 		}
 
@@ -121,48 +161,22 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string AppId
+		public string Field
 		{
 			get
 			{
-				return appId;
+				return field;
 			}
 			set	
 			{
-				appId = value;
-				DictionaryUtil.Add(QueryParameters, "AppId", value);
+				field = value;
+				DictionaryUtil.Add(QueryParameters, "Field", value);
 			}
 		}
 
-		public string Interval
-		{
-			get
-			{
-				return interval;
-			}
-			set	
-			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value);
-			}
-		}
-
-		public string Region
-		{
-			get
-			{
-				return region;
-			}
-			set	
-			{
-				region = value;
-				DictionaryUtil.Add(QueryParameters, "Region", value);
-			}
-		}
-
-        public override DescribeVodTranscodeDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeVodDomainRealTimeDetailDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeVodTranscodeDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeVodDomainRealTimeDetailDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -27,10 +27,10 @@ using Aliyun.Acs.vod.Transform.V20170321;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class RefreshVodObjectCachesRequest : RpcAcsRequest<RefreshVodObjectCachesResponse>
+    public class DescribeVodDomainReqHitRateDataRequest : RpcAcsRequest<DescribeVodDomainReqHitRateDataResponse>
     {
-        public RefreshVodObjectCachesRequest()
-            : base("vod", "2017-03-21", "RefreshVodObjectCaches", "vod", "openAPI")
+        public DescribeVodDomainReqHitRateDataRequest()
+            : base("vod", "2017-03-21", "DescribeVodDomainReqHitRateData", "vod", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,84 +40,69 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			Method = MethodType.POST;
         }
 
-		private string objectPath;
+		private string startTime;
 
-		private string securityToken;
+		private string domainName;
 
-		private string objectType;
+		private string endTime;
 
-		private long? ownerId;
+		private string interval;
 
-		private bool? force;
-
-		public string ObjectPath
+		public string StartTime
 		{
 			get
 			{
-				return objectPath;
+				return startTime;
 			}
 			set	
 			{
-				objectPath = value;
-				DictionaryUtil.Add(QueryParameters, "ObjectPath", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
-		public string SecurityToken
+		public string DomainName
 		{
 			get
 			{
-				return securityToken;
+				return domainName;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
-		public string ObjectType
+		public string EndTime
 		{
 			get
 			{
-				return objectType;
+				return endTime;
 			}
 			set	
 			{
-				objectType = value;
-				DictionaryUtil.Add(QueryParameters, "ObjectType", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
-		public long? OwnerId
+		public string Interval
 		{
 			get
 			{
-				return ownerId;
+				return interval;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value);
 			}
 		}
 
-		public bool? Force
-		{
-			get
-			{
-				return force;
-			}
-			set	
-			{
-				force = value;
-				DictionaryUtil.Add(QueryParameters, "Force", value.ToString());
-			}
-		}
-
-        public override RefreshVodObjectCachesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeVodDomainReqHitRateDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RefreshVodObjectCachesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeVodDomainReqHitRateDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
