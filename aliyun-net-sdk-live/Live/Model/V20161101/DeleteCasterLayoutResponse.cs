@@ -25,22 +25,22 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DeleteCasterLayoutResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string casterId;
 
 		private string layoutId;
 
-		private string casterId;
+		private string requestId;
 
-		[JsonProperty(PropertyName = "RequestId")]
-		public string RequestId
+		[JsonProperty(PropertyName = "CasterId")]
+		public string CasterId
 		{
 			get
 			{
-				return requestId;
+				return casterId;
 			}
 			set	
 			{
-				requestId = value;
+				casterId = value;
 			}
 		}
 
@@ -57,16 +57,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "CasterId")]
-		public string CasterId
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return casterId;
+				return requestId;
 			}
 			set	
 			{
-				casterId = value;
+				requestId = value;
 			}
 		}
 	}

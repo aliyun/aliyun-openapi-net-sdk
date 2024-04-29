@@ -25,17 +25,43 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeCasterProgramResponse : AcsResponse
 	{
 
+		private string casterId;
+
+		private int? programEffect;
+
 		private string programName;
 
 		private string requestId;
 
-		private int? programEffect;
-
-		private string casterId;
-
 		private int? total;
 
 		private List<DescribeCasterProgram_Episode> episodes;
+
+		[JsonProperty(PropertyName = "CasterId")]
+		public string CasterId
+		{
+			get
+			{
+				return casterId;
+			}
+			set	
+			{
+				casterId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ProgramEffect")]
+		public int? ProgramEffect
+		{
+			get
+			{
+				return programEffect;
+			}
+			set	
+			{
+				programEffect = value;
+			}
+		}
 
 		[JsonProperty(PropertyName = "ProgramName")]
 		public string ProgramName
@@ -60,32 +86,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "ProgramEffect")]
-		public int? ProgramEffect
-		{
-			get
-			{
-				return programEffect;
-			}
-			set	
-			{
-				programEffect = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "CasterId")]
-		public string CasterId
-		{
-			get
-			{
-				return casterId;
-			}
-			set	
-			{
-				casterId = value;
 			}
 		}
 
@@ -118,36 +118,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeCasterProgram_Episode
 		{
 
-			private int? status;
-
 			private string endTime;
 
-			private string startTime;
+			private string episodeId;
 
 			private string episodeName;
 
 			private string episodeType;
 
-			private string episodeId;
-
 			private string resourceId;
+
+			private string startTime;
+
+			private int? status;
 
 			private string switchType;
 
 			private List<string> componentIds;
-
-			[JsonProperty(PropertyName = "Status")]
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
 
 			[JsonProperty(PropertyName = "EndTime")]
 			public string EndTime
@@ -162,16 +149,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "StartTime")]
-			public string StartTime
+			[JsonProperty(PropertyName = "EpisodeId")]
+			public string EpisodeId
 			{
 				get
 				{
-					return startTime;
+					return episodeId;
 				}
 				set	
 				{
-					startTime = value;
+					episodeId = value;
 				}
 			}
 
@@ -201,19 +188,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "EpisodeId")]
-			public string EpisodeId
-			{
-				get
-				{
-					return episodeId;
-				}
-				set	
-				{
-					episodeId = value;
-				}
-			}
-
 			[JsonProperty(PropertyName = "ResourceId")]
 			public string ResourceId
 			{
@@ -224,6 +198,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					resourceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StartTime")]
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Status")]
+			public int? Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 

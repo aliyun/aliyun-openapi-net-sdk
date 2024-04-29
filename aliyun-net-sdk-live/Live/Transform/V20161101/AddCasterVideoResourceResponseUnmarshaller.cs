@@ -31,8 +31,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			AddCasterVideoResourceResponse addCasterVideoResourceResponse = new AddCasterVideoResourceResponse();
 
 			addCasterVideoResourceResponse.HttpResponse = _ctx.HttpResponse;
-			addCasterVideoResourceResponse.ResourceId = _ctx.StringValue("AddCasterVideoResource.ResourceId");
 			addCasterVideoResourceResponse.RequestId = _ctx.StringValue("AddCasterVideoResource.RequestId");
+			addCasterVideoResourceResponse.ResourceId = _ctx.StringValue("AddCasterVideoResource.ResourceId");
         
 			return addCasterVideoResourceResponse;
         }

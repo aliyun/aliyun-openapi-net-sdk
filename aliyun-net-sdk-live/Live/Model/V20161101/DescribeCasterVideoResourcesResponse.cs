@@ -25,24 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeCasterVideoResourcesResponse : AcsResponse
 	{
 
-		private int? total;
-
 		private string requestId;
 
-		private List<DescribeCasterVideoResources_VideoResource> videoResources;
+		private int? total;
 
-		[JsonProperty(PropertyName = "Total")]
-		public int? Total
-		{
-			get
-			{
-				return total;
-			}
-			set	
-			{
-				total = value;
-			}
-		}
+		private List<DescribeCasterVideoResources_VideoResource> videoResources;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -54,6 +41,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Total")]
+		public int? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
 			}
 		}
 
@@ -73,31 +73,44 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeCasterVideoResources_VideoResource
 		{
 
+			private int? beginOffset;
+
 			private int? endOffset;
 
 			private string flvUrl;
 
-			private int? beginOffset;
-
-			private int? ptsCallbackInterval;
-
-			private string materialId;
-
-			private string locationId;
-
-			private string liveStreamUrl;
-
-			private string vodUrl;
-
-			private string resourceId;
-
-			private int? repeatNum;
-
-			private string resourceName;
-
 			private string imageId;
 
 			private string imageUrl;
+
+			private string liveStreamUrl;
+
+			private string locationId;
+
+			private string materialId;
+
+			private int? ptsCallbackInterval;
+
+			private int? repeatNum;
+
+			private string resourceId;
+
+			private string resourceName;
+
+			private string vodUrl;
+
+			[JsonProperty(PropertyName = "BeginOffset")]
+			public int? BeginOffset
+			{
+				get
+				{
+					return beginOffset;
+				}
+				set	
+				{
+					beginOffset = value;
+				}
+			}
 
 			[JsonProperty(PropertyName = "EndOffset")]
 			public int? EndOffset
@@ -125,123 +138,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "BeginOffset")]
-			public int? BeginOffset
-			{
-				get
-				{
-					return beginOffset;
-				}
-				set	
-				{
-					beginOffset = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "PtsCallbackInterval")]
-			public int? PtsCallbackInterval
-			{
-				get
-				{
-					return ptsCallbackInterval;
-				}
-				set	
-				{
-					ptsCallbackInterval = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "MaterialId")]
-			public string MaterialId
-			{
-				get
-				{
-					return materialId;
-				}
-				set	
-				{
-					materialId = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "LocationId")]
-			public string LocationId
-			{
-				get
-				{
-					return locationId;
-				}
-				set	
-				{
-					locationId = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "LiveStreamUrl")]
-			public string LiveStreamUrl
-			{
-				get
-				{
-					return liveStreamUrl;
-				}
-				set	
-				{
-					liveStreamUrl = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "VodUrl")]
-			public string VodUrl
-			{
-				get
-				{
-					return vodUrl;
-				}
-				set	
-				{
-					vodUrl = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "ResourceId")]
-			public string ResourceId
-			{
-				get
-				{
-					return resourceId;
-				}
-				set	
-				{
-					resourceId = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "RepeatNum")]
-			public int? RepeatNum
-			{
-				get
-				{
-					return repeatNum;
-				}
-				set	
-				{
-					repeatNum = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "ResourceName")]
-			public string ResourceName
-			{
-				get
-				{
-					return resourceName;
-				}
-				set	
-				{
-					resourceName = value;
-				}
-			}
-
 			[JsonProperty(PropertyName = "ImageId")]
 			public string ImageId
 			{
@@ -265,6 +161,110 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					imageUrl = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LiveStreamUrl")]
+			public string LiveStreamUrl
+			{
+				get
+				{
+					return liveStreamUrl;
+				}
+				set	
+				{
+					liveStreamUrl = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LocationId")]
+			public string LocationId
+			{
+				get
+				{
+					return locationId;
+				}
+				set	
+				{
+					locationId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MaterialId")]
+			public string MaterialId
+			{
+				get
+				{
+					return materialId;
+				}
+				set	
+				{
+					materialId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PtsCallbackInterval")]
+			public int? PtsCallbackInterval
+			{
+				get
+				{
+					return ptsCallbackInterval;
+				}
+				set	
+				{
+					ptsCallbackInterval = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RepeatNum")]
+			public int? RepeatNum
+			{
+				get
+				{
+					return repeatNum;
+				}
+				set	
+				{
+					repeatNum = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ResourceId")]
+			public string ResourceId
+			{
+				get
+				{
+					return resourceId;
+				}
+				set	
+				{
+					resourceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ResourceName")]
+			public string ResourceName
+			{
+				get
+				{
+					return resourceName;
+				}
+				set	
+				{
+					resourceName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "VodUrl")]
+			public string VodUrl
+			{
+				get
+				{
+					return vodUrl;
+				}
+				set	
+				{
+					vodUrl = value;
 				}
 			}
 		}

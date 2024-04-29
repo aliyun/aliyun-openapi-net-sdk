@@ -25,30 +25,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class SetLiveStreamPreloadTasksResponse : AcsResponse
 	{
 
-		private string status;
-
 		private int? failedURL;
-
-		private int? totalURL;
 
 		private string requestId;
 
+		private string status;
+
 		private int? successURL;
 
-		private List<SetLiveStreamPreloadTasks_PreloadTasksMessage> preloadTasksMessages;
+		private int? totalURL;
 
-		[JsonProperty(PropertyName = "Status")]
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-			}
-		}
+		private List<SetLiveStreamPreloadTasks_PreloadTasksMessage> preloadTasksMessages;
 
 		[JsonProperty(PropertyName = "FailedURL")]
 		public int? FailedURL
@@ -60,19 +47,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				failedURL = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "TotalURL")]
-		public int? TotalURL
-		{
-			get
-			{
-				return totalURL;
-			}
-			set	
-			{
-				totalURL = value;
 			}
 		}
 
@@ -89,6 +63,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Status")]
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+			}
+		}
+
 		[JsonProperty(PropertyName = "SuccessURL")]
 		public int? SuccessURL
 		{
@@ -99,6 +86,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				successURL = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TotalURL")]
+		public int? TotalURL
+		{
+			get
+			{
+				return totalURL;
+			}
+			set	
+			{
+				totalURL = value;
 			}
 		}
 
@@ -118,24 +118,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class SetLiveStreamPreloadTasks_PreloadTasksMessage
 		{
 
-			private string playUrl;
-
 			private string description;
 
-			private string taskId;
+			private string playUrl;
 
-			[JsonProperty(PropertyName = "PlayUrl")]
-			public string PlayUrl
-			{
-				get
-				{
-					return playUrl;
-				}
-				set	
-				{
-					playUrl = value;
-				}
-			}
+			private string taskId;
 
 			[JsonProperty(PropertyName = "Description")]
 			public string Description
@@ -147,6 +134,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					description = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PlayUrl")]
+			public string PlayUrl
+			{
+				get
+				{
+					return playUrl;
+				}
+				set	
+				{
+					playUrl = value;
 				}
 			}
 

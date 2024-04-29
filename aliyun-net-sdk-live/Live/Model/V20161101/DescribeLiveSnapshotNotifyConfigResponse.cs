@@ -25,39 +25,26 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveSnapshotNotifyConfigResponse : AcsResponse
 	{
 
-		private string notifyReqAuth;
-
-		private string requestId;
+		private string domainName;
 
 		private string notifyAuthKey;
 
-		private string domainName;
+		private string notifyReqAuth;
 
 		private string notifyUrl;
 
-		[JsonProperty(PropertyName = "NotifyReqAuth")]
-		public string NotifyReqAuth
-		{
-			get
-			{
-				return notifyReqAuth;
-			}
-			set	
-			{
-				notifyReqAuth = value;
-			}
-		}
+		private string requestId;
 
-		[JsonProperty(PropertyName = "RequestId")]
-		public string RequestId
+		[JsonProperty(PropertyName = "DomainName")]
+		public string DomainName
 		{
 			get
 			{
-				return requestId;
+				return domainName;
 			}
 			set	
 			{
-				requestId = value;
+				domainName = value;
 			}
 		}
 
@@ -74,16 +61,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "DomainName")]
-		public string DomainName
+		[JsonProperty(PropertyName = "NotifyReqAuth")]
+		public string NotifyReqAuth
 		{
 			get
 			{
-				return domainName;
+				return notifyReqAuth;
 			}
 			set	
 			{
-				domainName = value;
+				notifyReqAuth = value;
 			}
 		}
 
@@ -97,6 +84,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				notifyUrl = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

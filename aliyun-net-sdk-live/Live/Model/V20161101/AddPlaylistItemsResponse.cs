@@ -70,21 +70,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class AddPlaylistItems_Items
 		{
 
-			private List<AddPlaylistItems_SuccessItem> successItems;
-
 			private List<AddPlaylistItems_FailedItem> failedItems;
 
-			public List<AddPlaylistItems_SuccessItem> SuccessItems
-			{
-				get
-				{
-					return successItems;
-				}
-				set	
-				{
-					successItems = value;
-				}
-			}
+			private List<AddPlaylistItems_SuccessItem> successItems;
 
 			public List<AddPlaylistItems_FailedItem> FailedItems
 			{
@@ -98,44 +86,36 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public class AddPlaylistItems_SuccessItem
+			public List<AddPlaylistItems_SuccessItem> SuccessItems
 			{
-
-				private string itemName;
-
-				private string itemId;
-
-				public string ItemName
+				get
 				{
-					get
-					{
-						return itemName;
-					}
-					set	
-					{
-						itemName = value;
-					}
+					return successItems;
 				}
-
-				public string ItemId
+				set	
 				{
-					get
-					{
-						return itemId;
-					}
-					set	
-					{
-						itemId = value;
-					}
+					successItems = value;
 				}
 			}
 
 			public class AddPlaylistItems_FailedItem
 			{
 
+				private string itemId;
+
 				private string itemName;
 
-				private string itemId;
+				public string ItemId
+				{
+					get
+					{
+						return itemId;
+					}
+					set	
+					{
+						itemId = value;
+					}
+				}
 
 				public string ItemName
 				{
@@ -148,6 +128,14 @@ namespace Aliyun.Acs.live.Model.V20161101
 						itemName = value;
 					}
 				}
+			}
+
+			public class AddPlaylistItems_SuccessItem
+			{
+
+				private string itemId;
+
+				private string itemName;
 
 				public string ItemId
 				{
@@ -158,6 +146,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						itemId = value;
+					}
+				}
+
+				public string ItemName
+				{
+					get
+					{
+						return itemName;
+					}
+					set	
+					{
+						itemName = value;
 					}
 				}
 			}

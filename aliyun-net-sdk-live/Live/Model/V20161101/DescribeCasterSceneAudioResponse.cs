@@ -25,28 +25,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeCasterSceneAudioResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string casterId;
 
 		private int? followEnable;
 
+		private string requestId;
+
 		private List<DescribeCasterSceneAudio_AudioLayer> audioLayers;
 
 		private List<string> mixList;
-
-		[JsonProperty(PropertyName = "RequestId")]
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		[JsonProperty(PropertyName = "CasterId")]
 		public string CasterId
@@ -71,6 +58,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				followEnable = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -103,24 +103,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeCasterSceneAudio_AudioLayer
 		{
 
-			private float? volumeRate;
-
 			private int? fixedDelayDuration;
 
 			private string validChannel;
 
-			[JsonProperty(PropertyName = "VolumeRate")]
-			public float? VolumeRate
-			{
-				get
-				{
-					return volumeRate;
-				}
-				set	
-				{
-					volumeRate = value;
-				}
-			}
+			private float? volumeRate;
 
 			[JsonProperty(PropertyName = "FixedDelayDuration")]
 			public int? FixedDelayDuration
@@ -145,6 +132,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					validChannel = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "VolumeRate")]
+			public float? VolumeRate
+			{
+				get
+				{
+					return volumeRate;
+				}
+				set	
+				{
+					volumeRate = value;
 				}
 			}
 		}

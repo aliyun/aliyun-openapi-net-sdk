@@ -31,11 +31,11 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveDomainPublishErrorCodeResponse describeLiveDomainPublishErrorCodeResponse = new DescribeLiveDomainPublishErrorCodeResponse();
 
 			describeLiveDomainPublishErrorCodeResponse.HttpResponse = _ctx.HttpResponse;
-			describeLiveDomainPublishErrorCodeResponse.RequestId = _ctx.StringValue("DescribeLiveDomainPublishErrorCode.RequestId");
 			describeLiveDomainPublishErrorCodeResponse.DataInterval = _ctx.StringValue("DescribeLiveDomainPublishErrorCode.DataInterval");
 			describeLiveDomainPublishErrorCodeResponse.DomainName = _ctx.StringValue("DescribeLiveDomainPublishErrorCode.DomainName");
-			describeLiveDomainPublishErrorCodeResponse.StartTime = _ctx.StringValue("DescribeLiveDomainPublishErrorCode.StartTime");
 			describeLiveDomainPublishErrorCodeResponse.EndTime = _ctx.StringValue("DescribeLiveDomainPublishErrorCode.EndTime");
+			describeLiveDomainPublishErrorCodeResponse.RequestId = _ctx.StringValue("DescribeLiveDomainPublishErrorCode.RequestId");
+			describeLiveDomainPublishErrorCodeResponse.StartTime = _ctx.StringValue("DescribeLiveDomainPublishErrorCode.StartTime");
 
 			List<DescribeLiveDomainPublishErrorCodeResponse.DescribeLiveDomainPublishErrorCode_Rtcd> describeLiveDomainPublishErrorCodeResponse_realTimeCodeData = new List<DescribeLiveDomainPublishErrorCodeResponse.DescribeLiveDomainPublishErrorCode_Rtcd>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveDomainPublishErrorCode.RealTimeCodeData.Length"); i++) {

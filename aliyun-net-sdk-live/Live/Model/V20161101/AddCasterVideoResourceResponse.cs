@@ -25,21 +25,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class AddCasterVideoResourceResponse : AcsResponse
 	{
 
-		private string resourceId;
-
 		private string requestId;
 
-		public string ResourceId
-		{
-			get
-			{
-				return resourceId;
-			}
-			set	
-			{
-				resourceId = value;
-			}
-		}
+		private string resourceId;
 
 		public string RequestId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ResourceId
+		{
+			get
+			{
+				return resourceId;
+			}
+			set	
+			{
+				resourceId = value;
 			}
 		}
 	}

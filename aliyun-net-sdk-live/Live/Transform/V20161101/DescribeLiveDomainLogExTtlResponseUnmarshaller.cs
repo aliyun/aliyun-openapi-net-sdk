@@ -49,10 +49,10 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				for (int j = 0; j < _ctx.Length("DescribeLiveDomainLogExTtl.DomainLogDetails["+ i +"].LogInfos.Length"); j++) {
 					DescribeLiveDomainLogExTtlResponse.DescribeLiveDomainLogExTtl_DomainLogDetail.DescribeLiveDomainLogExTtl_LogInfoDetail logInfoDetail = new DescribeLiveDomainLogExTtlResponse.DescribeLiveDomainLogExTtl_DomainLogDetail.DescribeLiveDomainLogExTtl_LogInfoDetail();
 					logInfoDetail.EndTime = _ctx.StringValue("DescribeLiveDomainLogExTtl.DomainLogDetails["+ i +"].LogInfos["+ j +"].EndTime");
-					logInfoDetail.LogSize = _ctx.LongValue("DescribeLiveDomainLogExTtl.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogSize");
-					logInfoDetail.StartTime = _ctx.StringValue("DescribeLiveDomainLogExTtl.DomainLogDetails["+ i +"].LogInfos["+ j +"].StartTime");
 					logInfoDetail.LogName = _ctx.StringValue("DescribeLiveDomainLogExTtl.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogName");
 					logInfoDetail.LogPath = _ctx.StringValue("DescribeLiveDomainLogExTtl.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogPath");
+					logInfoDetail.LogSize = _ctx.LongValue("DescribeLiveDomainLogExTtl.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogSize");
+					logInfoDetail.StartTime = _ctx.StringValue("DescribeLiveDomainLogExTtl.DomainLogDetails["+ i +"].LogInfos["+ j +"].StartTime");
 
 					domainLogDetail_logInfos.Add(logInfoDetail);
 				}

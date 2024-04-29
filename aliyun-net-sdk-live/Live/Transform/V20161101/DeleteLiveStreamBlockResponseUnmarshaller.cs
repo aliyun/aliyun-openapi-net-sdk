@@ -31,9 +31,9 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DeleteLiveStreamBlockResponse deleteLiveStreamBlockResponse = new DeleteLiveStreamBlockResponse();
 
 			deleteLiveStreamBlockResponse.HttpResponse = _ctx.HttpResponse;
-			deleteLiveStreamBlockResponse.Status = _ctx.StringValue("DeleteLiveStreamBlock.Status");
-			deleteLiveStreamBlockResponse.RequestId = _ctx.StringValue("DeleteLiveStreamBlock.RequestId");
 			deleteLiveStreamBlockResponse.Description = _ctx.StringValue("DeleteLiveStreamBlock.Description");
+			deleteLiveStreamBlockResponse.RequestId = _ctx.StringValue("DeleteLiveStreamBlock.RequestId");
+			deleteLiveStreamBlockResponse.Status = _ctx.StringValue("DeleteLiveStreamBlock.Status");
         
 			return deleteLiveStreamBlockResponse;
         }

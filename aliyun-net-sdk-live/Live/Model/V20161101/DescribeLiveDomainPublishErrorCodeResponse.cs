@@ -25,30 +25,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveDomainPublishErrorCodeResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string dataInterval;
 
 		private string domainName;
 
-		private string startTime;
-
 		private string endTime;
 
-		private List<DescribeLiveDomainPublishErrorCode_Rtcd> realTimeCodeData;
+		private string requestId;
 
-		[JsonProperty(PropertyName = "RequestId")]
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string startTime;
+
+		private List<DescribeLiveDomainPublishErrorCode_Rtcd> realTimeCodeData;
 
 		[JsonProperty(PropertyName = "DataInterval")]
 		public string DataInterval
@@ -76,19 +63,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "StartTime")]
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
 		[JsonProperty(PropertyName = "EndTime")]
 		public string EndTime
 		{
@@ -99,6 +73,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				endTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
 			}
 		}
 

@@ -31,22 +31,22 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveDomainMonitoringUsageDataResponse describeLiveDomainMonitoringUsageDataResponse = new DescribeLiveDomainMonitoringUsageDataResponse();
 
 			describeLiveDomainMonitoringUsageDataResponse.HttpResponse = _ctx.HttpResponse;
-			describeLiveDomainMonitoringUsageDataResponse.EndTime = _ctx.StringValue("DescribeLiveDomainMonitoringUsageData.EndTime");
-			describeLiveDomainMonitoringUsageDataResponse.StartTime = _ctx.StringValue("DescribeLiveDomainMonitoringUsageData.StartTime");
-			describeLiveDomainMonitoringUsageDataResponse.RequestId = _ctx.StringValue("DescribeLiveDomainMonitoringUsageData.RequestId");
-			describeLiveDomainMonitoringUsageDataResponse.Region = _ctx.StringValue("DescribeLiveDomainMonitoringUsageData.Region");
-			describeLiveDomainMonitoringUsageDataResponse.InstanceId = _ctx.StringValue("DescribeLiveDomainMonitoringUsageData.InstanceId");
 			describeLiveDomainMonitoringUsageDataResponse.DomainName = _ctx.StringValue("DescribeLiveDomainMonitoringUsageData.DomainName");
+			describeLiveDomainMonitoringUsageDataResponse.EndTime = _ctx.StringValue("DescribeLiveDomainMonitoringUsageData.EndTime");
+			describeLiveDomainMonitoringUsageDataResponse.InstanceId = _ctx.StringValue("DescribeLiveDomainMonitoringUsageData.InstanceId");
+			describeLiveDomainMonitoringUsageDataResponse.Region = _ctx.StringValue("DescribeLiveDomainMonitoringUsageData.Region");
+			describeLiveDomainMonitoringUsageDataResponse.RequestId = _ctx.StringValue("DescribeLiveDomainMonitoringUsageData.RequestId");
+			describeLiveDomainMonitoringUsageDataResponse.StartTime = _ctx.StringValue("DescribeLiveDomainMonitoringUsageData.StartTime");
 
 			List<DescribeLiveDomainMonitoringUsageDataResponse.DescribeLiveDomainMonitoringUsageData_MonitoringDataItem> describeLiveDomainMonitoringUsageDataResponse_monitoringData = new List<DescribeLiveDomainMonitoringUsageDataResponse.DescribeLiveDomainMonitoringUsageData_MonitoringDataItem>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveDomainMonitoringUsageData.MonitoringData.Length"); i++) {
 				DescribeLiveDomainMonitoringUsageDataResponse.DescribeLiveDomainMonitoringUsageData_MonitoringDataItem monitoringDataItem = new DescribeLiveDomainMonitoringUsageDataResponse.DescribeLiveDomainMonitoringUsageData_MonitoringDataItem();
-				monitoringDataItem.Region = _ctx.StringValue("DescribeLiveDomainMonitoringUsageData.MonitoringData["+ i +"].Region");
-				monitoringDataItem.TimeStamp = _ctx.StringValue("DescribeLiveDomainMonitoringUsageData.MonitoringData["+ i +"].TimeStamp");
+				monitoringDataItem.DomainName = _ctx.StringValue("DescribeLiveDomainMonitoringUsageData.MonitoringData["+ i +"].DomainName");
 				monitoringDataItem.Duration = _ctx.IntegerValue("DescribeLiveDomainMonitoringUsageData.MonitoringData["+ i +"].Duration");
 				monitoringDataItem.InstanceId = _ctx.StringValue("DescribeLiveDomainMonitoringUsageData.MonitoringData["+ i +"].InstanceId");
-				monitoringDataItem.DomainName = _ctx.StringValue("DescribeLiveDomainMonitoringUsageData.MonitoringData["+ i +"].DomainName");
+				monitoringDataItem.Region = _ctx.StringValue("DescribeLiveDomainMonitoringUsageData.MonitoringData["+ i +"].Region");
 				monitoringDataItem.Resolution = _ctx.StringValue("DescribeLiveDomainMonitoringUsageData.MonitoringData["+ i +"].Resolution");
+				monitoringDataItem.TimeStamp = _ctx.StringValue("DescribeLiveDomainMonitoringUsageData.MonitoringData["+ i +"].TimeStamp");
 
 				describeLiveDomainMonitoringUsageDataResponse_monitoringData.Add(monitoringDataItem);
 			}

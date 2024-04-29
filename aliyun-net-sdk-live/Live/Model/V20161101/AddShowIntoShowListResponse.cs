@@ -29,9 +29,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string showId;
 
-		private string successfulShowIds;
-
 		private string failedList;
+
+		private string successfulShowIds;
 
 		public string RequestId
 		{
@@ -57,18 +57,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string SuccessfulShowIds
-		{
-			get
-			{
-				return successfulShowIds;
-			}
-			set	
-			{
-				successfulShowIds = value;
-			}
-		}
-
 		public string FailedList
 		{
 			get
@@ -78,6 +66,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				failedList = value;
+			}
+		}
+
+		public string SuccessfulShowIds
+		{
+			get
+			{
+				return successfulShowIds;
+			}
+			set	
+			{
+				successfulShowIds = value;
 			}
 		}
 	}

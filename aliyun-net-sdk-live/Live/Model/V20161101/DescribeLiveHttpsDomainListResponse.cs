@@ -25,24 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveHttpsDomainListResponse : AcsResponse
 	{
 
-		private int? totalCount;
-
 		private string requestId;
 
-		private List<DescribeLiveHttpsDomainList_CertInfo> certInfos;
+		private int? totalCount;
 
-		[JsonProperty(PropertyName = "TotalCount")]
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+		private List<DescribeLiveHttpsDomainList_CertInfo> certInfos;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -54,6 +41,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TotalCount")]
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
 			}
 		}
 
@@ -73,32 +73,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveHttpsDomainList_CertInfo
 		{
 
-			private string certStartTime;
+			private string certCommonName;
 
 			private string certExpireTime;
 
-			private string certUpdateTime;
-
-			private string certType;
-
 			private string certName;
+
+			private string certStartTime;
 
 			private string certStatus;
 
+			private string certType;
+
+			private string certUpdateTime;
+
 			private string domainName;
 
-			private string certCommonName;
-
-			[JsonProperty(PropertyName = "CertStartTime")]
-			public string CertStartTime
+			[JsonProperty(PropertyName = "CertCommonName")]
+			public string CertCommonName
 			{
 				get
 				{
-					return certStartTime;
+					return certCommonName;
 				}
 				set	
 				{
-					certStartTime = value;
+					certCommonName = value;
 				}
 			}
 
@@ -115,32 +115,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "CertUpdateTime")]
-			public string CertUpdateTime
-			{
-				get
-				{
-					return certUpdateTime;
-				}
-				set	
-				{
-					certUpdateTime = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "CertType")]
-			public string CertType
-			{
-				get
-				{
-					return certType;
-				}
-				set	
-				{
-					certType = value;
-				}
-			}
-
 			[JsonProperty(PropertyName = "CertName")]
 			public string CertName
 			{
@@ -151,6 +125,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					certName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CertStartTime")]
+			public string CertStartTime
+			{
+				get
+				{
+					return certStartTime;
+				}
+				set	
+				{
+					certStartTime = value;
 				}
 			}
 
@@ -167,6 +154,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "CertType")]
+			public string CertType
+			{
+				get
+				{
+					return certType;
+				}
+				set	
+				{
+					certType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CertUpdateTime")]
+			public string CertUpdateTime
+			{
+				get
+				{
+					return certUpdateTime;
+				}
+				set	
+				{
+					certUpdateTime = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "DomainName")]
 			public string DomainName
 			{
@@ -177,19 +190,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					domainName = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "CertCommonName")]
-			public string CertCommonName
-			{
-				get
-				{
-					return certCommonName;
-				}
-				set	
-				{
-					certCommonName = value;
 				}
 			}
 		}

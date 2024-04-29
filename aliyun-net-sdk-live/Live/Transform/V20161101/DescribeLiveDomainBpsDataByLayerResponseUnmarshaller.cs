@@ -37,9 +37,9 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeLiveDomainBpsDataByLayerResponse.DescribeLiveDomainBpsDataByLayer_DataModule> describeLiveDomainBpsDataByLayerResponse_bpsDataInterval = new List<DescribeLiveDomainBpsDataByLayerResponse.DescribeLiveDomainBpsDataByLayer_DataModule>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveDomainBpsDataByLayer.BpsDataInterval.Length"); i++) {
 				DescribeLiveDomainBpsDataByLayerResponse.DescribeLiveDomainBpsDataByLayer_DataModule dataModule = new DescribeLiveDomainBpsDataByLayerResponse.DescribeLiveDomainBpsDataByLayer_DataModule();
-				dataModule._Value = _ctx.StringValue("DescribeLiveDomainBpsDataByLayer.BpsDataInterval["+ i +"].Value");
-				dataModule.TrafficValue = _ctx.StringValue("DescribeLiveDomainBpsDataByLayer.BpsDataInterval["+ i +"].TrafficValue");
 				dataModule.TimeStamp = _ctx.StringValue("DescribeLiveDomainBpsDataByLayer.BpsDataInterval["+ i +"].TimeStamp");
+				dataModule.TrafficValue = _ctx.StringValue("DescribeLiveDomainBpsDataByLayer.BpsDataInterval["+ i +"].TrafficValue");
+				dataModule._Value = _ctx.StringValue("DescribeLiveDomainBpsDataByLayer.BpsDataInterval["+ i +"].Value");
 
 				describeLiveDomainBpsDataByLayerResponse_bpsDataInterval.Add(dataModule);
 			}

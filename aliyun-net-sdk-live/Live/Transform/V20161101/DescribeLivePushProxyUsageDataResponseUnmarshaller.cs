@@ -32,16 +32,16 @@ namespace Aliyun.Acs.live.Transform.V20161101
 
 			describeLivePushProxyUsageDataResponse.HttpResponse = _ctx.HttpResponse;
 			describeLivePushProxyUsageDataResponse.EndTime = _ctx.StringValue("DescribeLivePushProxyUsageData.EndTime");
-			describeLivePushProxyUsageDataResponse.StartTime = _ctx.StringValue("DescribeLivePushProxyUsageData.StartTime");
 			describeLivePushProxyUsageDataResponse.RequestId = _ctx.StringValue("DescribeLivePushProxyUsageData.RequestId");
+			describeLivePushProxyUsageDataResponse.StartTime = _ctx.StringValue("DescribeLivePushProxyUsageData.StartTime");
 
 			List<DescribeLivePushProxyUsageDataResponse.DescribeLivePushProxyUsageData_PushProxyDataItem> describeLivePushProxyUsageDataResponse_pushProxyData = new List<DescribeLivePushProxyUsageDataResponse.DescribeLivePushProxyUsageData_PushProxyDataItem>();
 			for (int i = 0; i < _ctx.Length("DescribeLivePushProxyUsageData.PushProxyData.Length"); i++) {
 				DescribeLivePushProxyUsageDataResponse.DescribeLivePushProxyUsageData_PushProxyDataItem pushProxyDataItem = new DescribeLivePushProxyUsageDataResponse.DescribeLivePushProxyUsageData_PushProxyDataItem();
-				pushProxyDataItem.TimeStamp = _ctx.StringValue("DescribeLivePushProxyUsageData.PushProxyData["+ i +"].TimeStamp");
-				pushProxyDataItem.StreamCount = _ctx.LongValue("DescribeLivePushProxyUsageData.PushProxyData["+ i +"].StreamCount");
 				pushProxyDataItem.DomainName = _ctx.StringValue("DescribeLivePushProxyUsageData.PushProxyData["+ i +"].DomainName");
 				pushProxyDataItem.Region = _ctx.StringValue("DescribeLivePushProxyUsageData.PushProxyData["+ i +"].Region");
+				pushProxyDataItem.StreamCount = _ctx.LongValue("DescribeLivePushProxyUsageData.PushProxyData["+ i +"].StreamCount");
+				pushProxyDataItem.TimeStamp = _ctx.StringValue("DescribeLivePushProxyUsageData.PushProxyData["+ i +"].TimeStamp");
 
 				describeLivePushProxyUsageDataResponse_pushProxyData.Add(pushProxyDataItem);
 			}

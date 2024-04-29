@@ -31,8 +31,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			StartCasterSceneResponse startCasterSceneResponse = new StartCasterSceneResponse();
 
 			startCasterSceneResponse.HttpResponse = _ctx.HttpResponse;
-			startCasterSceneResponse.StreamUrl = _ctx.StringValue("StartCasterScene.StreamUrl");
 			startCasterSceneResponse.RequestId = _ctx.StringValue("StartCasterScene.RequestId");
+			startCasterSceneResponse.StreamUrl = _ctx.StringValue("StartCasterScene.StreamUrl");
         
 			return startCasterSceneResponse;
         }

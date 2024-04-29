@@ -32,17 +32,17 @@ namespace Aliyun.Acs.live.Transform.V20161101
 
 			describeLiveDelayedStreamingUsageResponse.HttpResponse = _ctx.HttpResponse;
 			describeLiveDelayedStreamingUsageResponse.EndTime = _ctx.StringValue("DescribeLiveDelayedStreamingUsage.EndTime");
-			describeLiveDelayedStreamingUsageResponse.StartTime = _ctx.StringValue("DescribeLiveDelayedStreamingUsage.StartTime");
 			describeLiveDelayedStreamingUsageResponse.RequestId = _ctx.StringValue("DescribeLiveDelayedStreamingUsage.RequestId");
+			describeLiveDelayedStreamingUsageResponse.StartTime = _ctx.StringValue("DescribeLiveDelayedStreamingUsage.StartTime");
 
 			List<DescribeLiveDelayedStreamingUsageResponse.DescribeLiveDelayedStreamingUsage_DelayDataItem> describeLiveDelayedStreamingUsageResponse_delayData = new List<DescribeLiveDelayedStreamingUsageResponse.DescribeLiveDelayedStreamingUsage_DelayDataItem>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveDelayedStreamingUsage.DelayData.Length"); i++) {
 				DescribeLiveDelayedStreamingUsageResponse.DescribeLiveDelayedStreamingUsage_DelayDataItem delayDataItem = new DescribeLiveDelayedStreamingUsageResponse.DescribeLiveDelayedStreamingUsage_DelayDataItem();
-				delayDataItem.Duration = _ctx.LongValue("DescribeLiveDelayedStreamingUsage.DelayData["+ i +"].Duration");
-				delayDataItem.TimeStamp = _ctx.StringValue("DescribeLiveDelayedStreamingUsage.DelayData["+ i +"].TimeStamp");
-				delayDataItem.StreamName = _ctx.StringValue("DescribeLiveDelayedStreamingUsage.DelayData["+ i +"].StreamName");
 				delayDataItem.DomainName = _ctx.StringValue("DescribeLiveDelayedStreamingUsage.DelayData["+ i +"].DomainName");
+				delayDataItem.Duration = _ctx.LongValue("DescribeLiveDelayedStreamingUsage.DelayData["+ i +"].Duration");
 				delayDataItem.Region = _ctx.StringValue("DescribeLiveDelayedStreamingUsage.DelayData["+ i +"].Region");
+				delayDataItem.StreamName = _ctx.StringValue("DescribeLiveDelayedStreamingUsage.DelayData["+ i +"].StreamName");
+				delayDataItem.TimeStamp = _ctx.StringValue("DescribeLiveDelayedStreamingUsage.DelayData["+ i +"].TimeStamp");
 
 				describeLiveDelayedStreamingUsageResponse_delayData.Add(delayDataItem);
 			}

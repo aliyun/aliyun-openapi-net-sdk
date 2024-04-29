@@ -31,9 +31,9 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveStreamAuthCheckingResponse describeLiveStreamAuthCheckingResponse = new DescribeLiveStreamAuthCheckingResponse();
 
 			describeLiveStreamAuthCheckingResponse.HttpResponse = _ctx.HttpResponse;
-			describeLiveStreamAuthCheckingResponse.Status = _ctx.StringValue("DescribeLiveStreamAuthChecking.Status");
-			describeLiveStreamAuthCheckingResponse.RequestId = _ctx.StringValue("DescribeLiveStreamAuthChecking.RequestId");
 			describeLiveStreamAuthCheckingResponse.Description = _ctx.StringValue("DescribeLiveStreamAuthChecking.Description");
+			describeLiveStreamAuthCheckingResponse.RequestId = _ctx.StringValue("DescribeLiveStreamAuthChecking.RequestId");
+			describeLiveStreamAuthCheckingResponse.Status = _ctx.StringValue("DescribeLiveStreamAuthChecking.Status");
         
 			return describeLiveStreamAuthCheckingResponse;
         }

@@ -36,25 +36,25 @@ namespace Aliyun.Acs.live.Transform.V20161101
 
 			AddPlaylistItemsResponse.AddPlaylistItems_Items items = new AddPlaylistItemsResponse.AddPlaylistItems_Items();
 
-			List<AddPlaylistItemsResponse.AddPlaylistItems_Items.AddPlaylistItems_SuccessItem> items_successItems = new List<AddPlaylistItemsResponse.AddPlaylistItems_Items.AddPlaylistItems_SuccessItem>();
-			for (int i = 0; i < _ctx.Length("AddPlaylistItems.Items.SuccessItems.Length"); i++) {
-				AddPlaylistItemsResponse.AddPlaylistItems_Items.AddPlaylistItems_SuccessItem successItem = new AddPlaylistItemsResponse.AddPlaylistItems_Items.AddPlaylistItems_SuccessItem();
-				successItem.ItemName = _ctx.StringValue("AddPlaylistItems.Items.SuccessItems["+ i +"].ItemName");
-				successItem.ItemId = _ctx.StringValue("AddPlaylistItems.Items.SuccessItems["+ i +"].ItemId");
-
-				items_successItems.Add(successItem);
-			}
-			items.SuccessItems = items_successItems;
-
 			List<AddPlaylistItemsResponse.AddPlaylistItems_Items.AddPlaylistItems_FailedItem> items_failedItems = new List<AddPlaylistItemsResponse.AddPlaylistItems_Items.AddPlaylistItems_FailedItem>();
 			for (int i = 0; i < _ctx.Length("AddPlaylistItems.Items.FailedItems.Length"); i++) {
 				AddPlaylistItemsResponse.AddPlaylistItems_Items.AddPlaylistItems_FailedItem failedItem = new AddPlaylistItemsResponse.AddPlaylistItems_Items.AddPlaylistItems_FailedItem();
-				failedItem.ItemName = _ctx.StringValue("AddPlaylistItems.Items.FailedItems["+ i +"].ItemName");
 				failedItem.ItemId = _ctx.StringValue("AddPlaylistItems.Items.FailedItems["+ i +"].ItemId");
+				failedItem.ItemName = _ctx.StringValue("AddPlaylistItems.Items.FailedItems["+ i +"].ItemName");
 
 				items_failedItems.Add(failedItem);
 			}
 			items.FailedItems = items_failedItems;
+
+			List<AddPlaylistItemsResponse.AddPlaylistItems_Items.AddPlaylistItems_SuccessItem> items_successItems = new List<AddPlaylistItemsResponse.AddPlaylistItems_Items.AddPlaylistItems_SuccessItem>();
+			for (int i = 0; i < _ctx.Length("AddPlaylistItems.Items.SuccessItems.Length"); i++) {
+				AddPlaylistItemsResponse.AddPlaylistItems_Items.AddPlaylistItems_SuccessItem successItem = new AddPlaylistItemsResponse.AddPlaylistItems_Items.AddPlaylistItems_SuccessItem();
+				successItem.ItemId = _ctx.StringValue("AddPlaylistItems.Items.SuccessItems["+ i +"].ItemId");
+				successItem.ItemName = _ctx.StringValue("AddPlaylistItems.Items.SuccessItems["+ i +"].ItemName");
+
+				items_successItems.Add(successItem);
+			}
+			items.SuccessItems = items_successItems;
 			addPlaylistItemsResponse.Items = items;
         
 			return addPlaylistItemsResponse;

@@ -25,28 +25,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveUserDomainsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? pageNumber;
 
 		private long? pageSize;
 
+		private string requestId;
+
 		private long? totalCount;
 
 		private List<DescribeLiveUserDomains_PageData> domains;
-
-		[JsonProperty(PropertyName = "RequestId")]
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		[JsonProperty(PropertyName = "PageNumber")]
 		public long? PageNumber
@@ -71,6 +58,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				pageSize = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -103,71 +103,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveUserDomains_PageData
 		{
 
-			private string gmtCreated;
-
-			private string liveDomainType;
-
-			private string liveDomainStatus;
-
-			private string regionName;
+			private string cname;
 
 			private string description;
 
-			private string cname;
+			private string domainName;
+
+			private string gmtCreated;
 
 			private string gmtModified;
 
-			private string domainName;
+			private string liveDomainStatus;
 
-			[JsonProperty(PropertyName = "GmtCreated")]
-			public string GmtCreated
+			private string liveDomainType;
+
+			private string regionName;
+
+			[JsonProperty(PropertyName = "Cname")]
+			public string Cname
 			{
 				get
 				{
-					return gmtCreated;
+					return cname;
 				}
 				set	
 				{
-					gmtCreated = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "LiveDomainType")]
-			public string LiveDomainType
-			{
-				get
-				{
-					return liveDomainType;
-				}
-				set	
-				{
-					liveDomainType = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "LiveDomainStatus")]
-			public string LiveDomainStatus
-			{
-				get
-				{
-					return liveDomainStatus;
-				}
-				set	
-				{
-					liveDomainStatus = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "RegionName")]
-			public string RegionName
-			{
-				get
-				{
-					return regionName;
-				}
-				set	
-				{
-					regionName = value;
+					cname = value;
 				}
 			}
 
@@ -184,16 +145,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "Cname")]
-			public string Cname
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
 			{
 				get
 				{
-					return cname;
+					return domainName;
 				}
 				set	
 				{
-					cname = value;
+					domainName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "GmtCreated")]
+			public string GmtCreated
+			{
+				get
+				{
+					return gmtCreated;
+				}
+				set	
+				{
+					gmtCreated = value;
 				}
 			}
 
@@ -210,16 +184,42 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "DomainName")]
-			public string DomainName
+			[JsonProperty(PropertyName = "LiveDomainStatus")]
+			public string LiveDomainStatus
 			{
 				get
 				{
-					return domainName;
+					return liveDomainStatus;
 				}
 				set	
 				{
-					domainName = value;
+					liveDomainStatus = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LiveDomainType")]
+			public string LiveDomainType
+			{
+				get
+				{
+					return liveDomainType;
+				}
+				set	
+				{
+					liveDomainType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RegionName")]
+			public string RegionName
+			{
+				get
+				{
+					return regionName;
+				}
+				set	
+				{
+					regionName = value;
 				}
 			}
 		}

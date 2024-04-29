@@ -25,24 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class ListLiveDelayConfigResponse : AcsResponse
 	{
 
-		private int? total;
-
 		private string requestId;
 
-		private List<ListLiveDelayConfig_DelayConfig> delayConfigList;
+		private int? total;
 
-		[JsonProperty(PropertyName = "Total")]
-		public int? Total
-		{
-			get
-			{
-				return total;
-			}
-			set	
-			{
-				total = value;
-			}
-		}
+		private List<ListLiveDelayConfig_DelayConfig> delayConfigList;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -54,6 +41,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Total")]
+		public int? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
 			}
 		}
 
@@ -73,52 +73,26 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class ListLiveDelayConfig_DelayConfig
 		{
 
-			private string stream;
-
-			private string domain;
-
-			private string taskTriggerMode;
+			private string app;
 
 			private string delayTime;
 
-			private string app;
+			private string domain;
 
-			[JsonProperty(PropertyName = "Stream")]
-			public string Stream
+			private string stream;
+
+			private string taskTriggerMode;
+
+			[JsonProperty(PropertyName = "App")]
+			public string App
 			{
 				get
 				{
-					return stream;
+					return app;
 				}
 				set	
 				{
-					stream = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Domain")]
-			public string Domain
-			{
-				get
-				{
-					return domain;
-				}
-				set	
-				{
-					domain = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "TaskTriggerMode")]
-			public string TaskTriggerMode
-			{
-				get
-				{
-					return taskTriggerMode;
-				}
-				set	
-				{
-					taskTriggerMode = value;
+					app = value;
 				}
 			}
 
@@ -135,16 +109,42 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "App")]
-			public string App
+			[JsonProperty(PropertyName = "Domain")]
+			public string Domain
 			{
 				get
 				{
-					return app;
+					return domain;
 				}
 				set	
 				{
-					app = value;
+					domain = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Stream")]
+			public string Stream
+			{
+				get
+				{
+					return stream;
+				}
+				set	
+				{
+					stream = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TaskTriggerMode")]
+			public string TaskTriggerMode
+			{
+				get
+				{
+					return taskTriggerMode;
+				}
+				set	
+				{
+					taskTriggerMode = value;
 				}
 			}
 		}

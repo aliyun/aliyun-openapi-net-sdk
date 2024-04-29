@@ -34,17 +34,17 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			describeLiveDomainDetailResponse.RequestId = _ctx.StringValue("DescribeLiveDomainDetail.RequestId");
 
 			DescribeLiveDomainDetailResponse.DescribeLiveDomainDetail_DomainDetail domainDetail = new DescribeLiveDomainDetailResponse.DescribeLiveDomainDetail_DomainDetail();
-			domainDetail.SSLPub = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.SSLPub");
-			domainDetail.GmtModified = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.GmtModified");
-			domainDetail.DomainName = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.DomainName");
-			domainDetail.GmtCreated = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.GmtCreated");
-			domainDetail.LiveDomainType = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.LiveDomainType");
+			domainDetail.CertName = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.CertName");
+			domainDetail.Cname = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.Cname");
 			domainDetail.Description = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.Description");
+			domainDetail.DomainName = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.DomainName");
+			domainDetail.DomainStatus = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.DomainStatus");
+			domainDetail.GmtCreated = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.GmtCreated");
+			domainDetail.GmtModified = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.GmtModified");
+			domainDetail.LiveDomainType = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.LiveDomainType");
 			domainDetail.Region = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.Region");
 			domainDetail.SSLProtocol = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.SSLProtocol");
-			domainDetail.CertName = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.CertName");
-			domainDetail.DomainStatus = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.DomainStatus");
-			domainDetail.Cname = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.Cname");
+			domainDetail.SSLPub = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.SSLPub");
 			domainDetail.Scope = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.Scope");
 			describeLiveDomainDetailResponse.DomainDetail = domainDetail;
         

@@ -25,28 +25,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class MiguLivePullToPushStatusResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string code;
-
-		private string timestamp;
 
 		private string message;
 
-		private MiguLivePullToPushStatus_Data data;
+		private string requestId;
 
-		[JsonProperty(PropertyName = "RequestId")]
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string timestamp;
+
+		private MiguLivePullToPushStatus_Data data;
 
 		[JsonProperty(PropertyName = "Code")]
 		public string Code
@@ -61,19 +48,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "Timestamp")]
-		public string Timestamp
-		{
-			get
-			{
-				return timestamp;
-			}
-			set	
-			{
-				timestamp = value;
-			}
-		}
-
 		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
@@ -84,6 +58,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				message = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Timestamp")]
+		public string Timestamp
+		{
+			get
+			{
+				return timestamp;
+			}
+			set	
+			{
+				timestamp = value;
 			}
 		}
 
@@ -103,22 +103,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class MiguLivePullToPushStatus_Data
 		{
 
-			private string status;
-
 			private string message;
 
-			[JsonProperty(PropertyName = "Status")]
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+			private string status;
 
 			[JsonProperty(PropertyName = "Message")]
 			public string Message
@@ -130,6 +117,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					message = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Status")]
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 		}

@@ -73,22 +73,22 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDomainBpsDataByLayer_DataModule
 		{
 
-			private string _value;
+			private string timeStamp;
 
 			private string trafficValue;
 
-			private string timeStamp;
+			private string _value;
 
-			[JsonProperty(PropertyName = "_Value")]
-			public string _Value
+			[JsonProperty(PropertyName = "TimeStamp")]
+			public string TimeStamp
 			{
 				get
 				{
-					return _value;
+					return timeStamp;
 				}
 				set	
 				{
-					_value = value;
+					timeStamp = value;
 				}
 			}
 
@@ -105,16 +105,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "TimeStamp")]
-			public string TimeStamp
+			[JsonProperty(PropertyName = "_Value")]
+			public string _Value
 			{
 				get
 				{
-					return timeStamp;
+					return _value;
 				}
 				set	
 				{
-					timeStamp = value;
+					_value = value;
 				}
 			}
 		}

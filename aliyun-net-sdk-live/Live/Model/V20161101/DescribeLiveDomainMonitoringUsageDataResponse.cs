@@ -25,19 +25,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveDomainMonitoringUsageDataResponse : AcsResponse
 	{
 
+		private string domainName;
+
 		private string endTime;
-
-		private string startTime;
-
-		private string requestId;
-
-		private string region;
 
 		private string instanceId;
 
-		private string domainName;
+		private string region;
+
+		private string requestId;
+
+		private string startTime;
 
 		private List<DescribeLiveDomainMonitoringUsageData_MonitoringDataItem> monitoringData;
+
+		[JsonProperty(PropertyName = "DomainName")]
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+			}
+		}
 
 		[JsonProperty(PropertyName = "EndTime")]
 		public string EndTime
@@ -49,45 +62,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				endTime = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "StartTime")]
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "RequestId")]
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "Region")]
-		public string Region
-		{
-			get
-			{
-				return region;
-			}
-			set	
-			{
-				region = value;
 			}
 		}
 
@@ -104,16 +78,42 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "DomainName")]
-		public string DomainName
+		[JsonProperty(PropertyName = "Region")]
+		public string Region
 		{
 			get
 			{
-				return domainName;
+				return region;
 			}
 			set	
 			{
-				domainName = value;
+				region = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
 			}
 		}
 
@@ -133,41 +133,28 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDomainMonitoringUsageData_MonitoringDataItem
 		{
 
-			private string region;
-
-			private string timeStamp;
+			private string domainName;
 
 			private int? duration;
 
 			private string instanceId;
 
-			private string domainName;
+			private string region;
 
 			private string resolution;
 
-			[JsonProperty(PropertyName = "Region")]
-			public string Region
-			{
-				get
-				{
-					return region;
-				}
-				set	
-				{
-					region = value;
-				}
-			}
+			private string timeStamp;
 
-			[JsonProperty(PropertyName = "TimeStamp")]
-			public string TimeStamp
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
 			{
 				get
 				{
-					return timeStamp;
+					return domainName;
 				}
 				set	
 				{
-					timeStamp = value;
+					domainName = value;
 				}
 			}
 
@@ -197,16 +184,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "DomainName")]
-			public string DomainName
+			[JsonProperty(PropertyName = "Region")]
+			public string Region
 			{
 				get
 				{
-					return domainName;
+					return region;
 				}
 				set	
 				{
-					domainName = value;
+					region = value;
 				}
 			}
 
@@ -220,6 +207,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					resolution = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TimeStamp")]
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
 				}
 			}
 		}

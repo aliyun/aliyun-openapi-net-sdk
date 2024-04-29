@@ -31,25 +31,25 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveStreamPreloadTasksResponse describeLiveStreamPreloadTasksResponse = new DescribeLiveStreamPreloadTasksResponse();
 
 			describeLiveStreamPreloadTasksResponse.HttpResponse = _ctx.HttpResponse;
-			describeLiveStreamPreloadTasksResponse.TotalPage = _ctx.IntegerValue("DescribeLiveStreamPreloadTasks.TotalPage");
 			describeLiveStreamPreloadTasksResponse.PageNum = _ctx.IntegerValue("DescribeLiveStreamPreloadTasks.PageNum");
 			describeLiveStreamPreloadTasksResponse.PageSize = _ctx.IntegerValue("DescribeLiveStreamPreloadTasks.PageSize");
 			describeLiveStreamPreloadTasksResponse.RequestId = _ctx.StringValue("DescribeLiveStreamPreloadTasks.RequestId");
 			describeLiveStreamPreloadTasksResponse.TotalNum = _ctx.IntegerValue("DescribeLiveStreamPreloadTasks.TotalNum");
+			describeLiveStreamPreloadTasksResponse.TotalPage = _ctx.IntegerValue("DescribeLiveStreamPreloadTasks.TotalPage");
 
 			List<DescribeLiveStreamPreloadTasksResponse.DescribeLiveStreamPreloadTasks_PreloadTask> describeLiveStreamPreloadTasksResponse_preloadTasks = new List<DescribeLiveStreamPreloadTasksResponse.DescribeLiveStreamPreloadTasks_PreloadTask>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveStreamPreloadTasks.PreloadTasks.Length"); i++) {
 				DescribeLiveStreamPreloadTasksResponse.DescribeLiveStreamPreloadTasks_PreloadTask preloadTask = new DescribeLiveStreamPreloadTasksResponse.DescribeLiveStreamPreloadTasks_PreloadTask();
-				preloadTask.Status = _ctx.StringValue("DescribeLiveStreamPreloadTasks.PreloadTasks["+ i +"].Status");
-				preloadTask.Process = _ctx.StringValue("DescribeLiveStreamPreloadTasks.PreloadTasks["+ i +"].Process");
-				preloadTask.Description = _ctx.StringValue("DescribeLiveStreamPreloadTasks.PreloadTasks["+ i +"].Description");
+				preloadTask.Area = _ctx.StringValue("DescribeLiveStreamPreloadTasks.PreloadTasks["+ i +"].Area");
 				preloadTask.CreateTime = _ctx.StringValue("DescribeLiveStreamPreloadTasks.PreloadTasks["+ i +"].CreateTime");
+				preloadTask.Description = _ctx.StringValue("DescribeLiveStreamPreloadTasks.PreloadTasks["+ i +"].Description");
+				preloadTask.DomainName = _ctx.StringValue("DescribeLiveStreamPreloadTasks.PreloadTasks["+ i +"].DomainName");
+				preloadTask.PlayUrl = _ctx.StringValue("DescribeLiveStreamPreloadTasks.PreloadTasks["+ i +"].PlayUrl");
 				preloadTask.PreloadedEndTime = _ctx.StringValue("DescribeLiveStreamPreloadTasks.PreloadTasks["+ i +"].PreloadedEndTime");
 				preloadTask.PreloadedStartTime = _ctx.StringValue("DescribeLiveStreamPreloadTasks.PreloadTasks["+ i +"].PreloadedStartTime");
-				preloadTask.PlayUrl = _ctx.StringValue("DescribeLiveStreamPreloadTasks.PreloadTasks["+ i +"].PlayUrl");
-				preloadTask.Area = _ctx.StringValue("DescribeLiveStreamPreloadTasks.PreloadTasks["+ i +"].Area");
+				preloadTask.Process = _ctx.StringValue("DescribeLiveStreamPreloadTasks.PreloadTasks["+ i +"].Process");
+				preloadTask.Status = _ctx.StringValue("DescribeLiveStreamPreloadTasks.PreloadTasks["+ i +"].Status");
 				preloadTask.TaskId = _ctx.StringValue("DescribeLiveStreamPreloadTasks.PreloadTasks["+ i +"].TaskId");
-				preloadTask.DomainName = _ctx.StringValue("DescribeLiveStreamPreloadTasks.PreloadTasks["+ i +"].DomainName");
 
 				describeLiveStreamPreloadTasksResponse_preloadTasks.Add(preloadTask);
 			}

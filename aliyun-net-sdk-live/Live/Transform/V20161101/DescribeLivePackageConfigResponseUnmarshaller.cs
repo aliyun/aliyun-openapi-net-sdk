@@ -31,24 +31,24 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLivePackageConfigResponse describeLivePackageConfigResponse = new DescribeLivePackageConfigResponse();
 
 			describeLivePackageConfigResponse.HttpResponse = _ctx.HttpResponse;
-			describeLivePackageConfigResponse.PageNum = _ctx.IntegerValue("DescribeLivePackageConfig.PageNum");
-			describeLivePackageConfigResponse.RequestId = _ctx.StringValue("DescribeLivePackageConfig.RequestId");
 			describeLivePackageConfigResponse.Order = _ctx.StringValue("DescribeLivePackageConfig.Order");
-			describeLivePackageConfigResponse.TotalPage = _ctx.IntegerValue("DescribeLivePackageConfig.TotalPage");
+			describeLivePackageConfigResponse.PageNum = _ctx.IntegerValue("DescribeLivePackageConfig.PageNum");
 			describeLivePackageConfigResponse.PageSize = _ctx.IntegerValue("DescribeLivePackageConfig.PageSize");
+			describeLivePackageConfigResponse.RequestId = _ctx.StringValue("DescribeLivePackageConfig.RequestId");
 			describeLivePackageConfigResponse.TotalNum = _ctx.IntegerValue("DescribeLivePackageConfig.TotalNum");
+			describeLivePackageConfigResponse.TotalPage = _ctx.IntegerValue("DescribeLivePackageConfig.TotalPage");
 
 			List<DescribeLivePackageConfigResponse.DescribeLivePackageConfig_LivePackageConfig> describeLivePackageConfigResponse_livePackageConfigList = new List<DescribeLivePackageConfigResponse.DescribeLivePackageConfig_LivePackageConfig>();
 			for (int i = 0; i < _ctx.Length("DescribeLivePackageConfig.LivePackageConfigList.Length"); i++) {
 				DescribeLivePackageConfigResponse.DescribeLivePackageConfig_LivePackageConfig livePackageConfig = new DescribeLivePackageConfigResponse.DescribeLivePackageConfig_LivePackageConfig();
 				livePackageConfig.AppName = _ctx.StringValue("DescribeLivePackageConfig.LivePackageConfigList["+ i +"].AppName");
-				livePackageConfig.SegmentNum = _ctx.IntegerValue("DescribeLivePackageConfig.LivePackageConfigList["+ i +"].SegmentNum");
-				livePackageConfig.StreamName = _ctx.StringValue("DescribeLivePackageConfig.LivePackageConfigList["+ i +"].StreamName");
-				livePackageConfig.Protocol = _ctx.StringValue("DescribeLivePackageConfig.LivePackageConfigList["+ i +"].Protocol");
+				livePackageConfig.DomainName = _ctx.StringValue("DescribeLivePackageConfig.LivePackageConfigList["+ i +"].DomainName");
 				livePackageConfig.IgnoreTranscode = _ctx.BooleanValue("DescribeLivePackageConfig.LivePackageConfigList["+ i +"].IgnoreTranscode");
 				livePackageConfig.PartDuration = _ctx.IntegerValue("DescribeLivePackageConfig.LivePackageConfigList["+ i +"].PartDuration");
+				livePackageConfig.Protocol = _ctx.StringValue("DescribeLivePackageConfig.LivePackageConfigList["+ i +"].Protocol");
 				livePackageConfig.SegmentDuration = _ctx.IntegerValue("DescribeLivePackageConfig.LivePackageConfigList["+ i +"].SegmentDuration");
-				livePackageConfig.DomainName = _ctx.StringValue("DescribeLivePackageConfig.LivePackageConfigList["+ i +"].DomainName");
+				livePackageConfig.SegmentNum = _ctx.IntegerValue("DescribeLivePackageConfig.LivePackageConfigList["+ i +"].SegmentNum");
+				livePackageConfig.StreamName = _ctx.StringValue("DescribeLivePackageConfig.LivePackageConfigList["+ i +"].StreamName");
 
 				describeLivePackageConfigResponse_livePackageConfigList.Add(livePackageConfig);
 			}

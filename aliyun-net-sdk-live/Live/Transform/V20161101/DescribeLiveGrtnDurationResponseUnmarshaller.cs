@@ -36,11 +36,11 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeLiveGrtnDurationResponse.DescribeLiveGrtnDuration_StreamData> describeLiveGrtnDurationResponse_streamDetailData = new List<DescribeLiveGrtnDurationResponse.DescribeLiveGrtnDuration_StreamData>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveGrtnDuration.StreamDetailData.Length"); i++) {
 				DescribeLiveGrtnDurationResponse.DescribeLiveGrtnDuration_StreamData streamData = new DescribeLiveGrtnDurationResponse.DescribeLiveGrtnDuration_StreamData();
+				streamData.AppId = _ctx.StringValue("DescribeLiveGrtnDuration.StreamDetailData["+ i +"].AppId");
 				streamData.Duration = _ctx.LongValue("DescribeLiveGrtnDuration.StreamDetailData["+ i +"].Duration");
-				streamData.TimeStamp = _ctx.StringValue("DescribeLiveGrtnDuration.StreamDetailData["+ i +"].TimeStamp");
 				streamData.MediaProfile = _ctx.StringValue("DescribeLiveGrtnDuration.StreamDetailData["+ i +"].MediaProfile");
 				streamData.MediaType = _ctx.StringValue("DescribeLiveGrtnDuration.StreamDetailData["+ i +"].MediaType");
-				streamData.AppId = _ctx.StringValue("DescribeLiveGrtnDuration.StreamDetailData["+ i +"].AppId");
+				streamData.TimeStamp = _ctx.StringValue("DescribeLiveGrtnDuration.StreamDetailData["+ i +"].TimeStamp");
 
 				describeLiveGrtnDurationResponse_streamDetailData.Add(streamData);
 			}

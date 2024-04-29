@@ -27,9 +27,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string endTime;
 
-		private string startTime;
-
 		private string requestId;
+
+		private string startTime;
 
 		private List<DescribeLiveDelayedStreamingUsage_DelayDataItem> delayData;
 
@@ -46,19 +46,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "StartTime")]
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
@@ -69,6 +56,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
 			}
 		}
 
@@ -88,15 +88,28 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDelayedStreamingUsage_DelayDataItem
 		{
 
+			private string domainName;
+
 			private long? duration;
 
-			private string timeStamp;
+			private string region;
 
 			private string streamName;
 
-			private string domainName;
+			private string timeStamp;
 
-			private string region;
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
+				}
+			}
 
 			[JsonProperty(PropertyName = "Duration")]
 			public long? Duration
@@ -111,16 +124,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "TimeStamp")]
-			public string TimeStamp
+			[JsonProperty(PropertyName = "Region")]
+			public string Region
 			{
 				get
 				{
-					return timeStamp;
+					return region;
 				}
 				set	
 				{
-					timeStamp = value;
+					region = value;
 				}
 			}
 
@@ -137,29 +150,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "DomainName")]
-			public string DomainName
+			[JsonProperty(PropertyName = "TimeStamp")]
+			public string TimeStamp
 			{
 				get
 				{
-					return domainName;
+					return timeStamp;
 				}
 				set	
 				{
-					domainName = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Region")]
-			public string Region
-			{
-				get
-				{
-					return region;
-				}
-				set	
-				{
-					region = value;
+					timeStamp = value;
 				}
 			}
 		}

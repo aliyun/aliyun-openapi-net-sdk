@@ -25,7 +25,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeStreamLocationBlockResponse : AcsResponse
 	{
 
-		private int? totalPage;
+		private int? count;
 
 		private int? pageNum;
 
@@ -33,20 +33,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string requestId;
 
-		private int? count;
+		private int? totalPage;
 
 		private List<DescribeStreamLocationBlock_StreamBlock> streamBlockList;
 
-		[JsonProperty(PropertyName = "TotalPage")]
-		public int? TotalPage
+		[JsonProperty(PropertyName = "Count")]
+		public int? Count
 		{
 			get
 			{
-				return totalPage;
+				return count;
 			}
 			set	
 			{
-				totalPage = value;
+				count = value;
 			}
 		}
 
@@ -89,16 +89,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "Count")]
-		public int? Count
+		[JsonProperty(PropertyName = "TotalPage")]
+		public int? TotalPage
 		{
 			get
 			{
-				return count;
+				return totalPage;
 			}
 			set	
 			{
-				count = value;
+				totalPage = value;
 			}
 		}
 
@@ -118,32 +118,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeStreamLocationBlock_StreamBlock
 		{
 
-			private int? status;
+			private string appName;
 
 			private string blockType;
 
-			private string appName;
-
-			private string updateTime;
-
-			private string streamName;
-
-			private string releaseTime;
+			private string domainName;
 
 			private string locationList;
 
-			private string domainName;
+			private string releaseTime;
 
-			[JsonProperty(PropertyName = "Status")]
-			public int? Status
+			private int? status;
+
+			private string streamName;
+
+			private string updateTime;
+
+			[JsonProperty(PropertyName = "AppName")]
+			public string AppName
 			{
 				get
 				{
-					return status;
+					return appName;
 				}
 				set	
 				{
-					status = value;
+					appName = value;
 				}
 			}
 
@@ -160,55 +160,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "AppName")]
-			public string AppName
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
 			{
 				get
 				{
-					return appName;
+					return domainName;
 				}
 				set	
 				{
-					appName = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "UpdateTime")]
-			public string UpdateTime
-			{
-				get
-				{
-					return updateTime;
-				}
-				set	
-				{
-					updateTime = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "StreamName")]
-			public string StreamName
-			{
-				get
-				{
-					return streamName;
-				}
-				set	
-				{
-					streamName = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "ReleaseTime")]
-			public string ReleaseTime
-			{
-				get
-				{
-					return releaseTime;
-				}
-				set	
-				{
-					releaseTime = value;
+					domainName = value;
 				}
 			}
 
@@ -225,16 +186,55 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "DomainName")]
-			public string DomainName
+			[JsonProperty(PropertyName = "ReleaseTime")]
+			public string ReleaseTime
 			{
 				get
 				{
-					return domainName;
+					return releaseTime;
 				}
 				set	
 				{
-					domainName = value;
+					releaseTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Status")]
+			public int? Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StreamName")]
+			public string StreamName
+			{
+				get
+				{
+					return streamName;
+				}
+				set	
+				{
+					streamName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "UpdateTime")]
+			public string UpdateTime
+			{
+				get
+				{
+					return updateTime;
+				}
+				set	
+				{
+					updateTime = value;
 				}
 			}
 		}

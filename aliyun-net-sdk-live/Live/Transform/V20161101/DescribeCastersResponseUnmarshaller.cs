@@ -31,26 +31,26 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeCastersResponse describeCastersResponse = new DescribeCastersResponse();
 
 			describeCastersResponse.HttpResponse = _ctx.HttpResponse;
-			describeCastersResponse.Total = _ctx.IntegerValue("DescribeCasters.Total");
 			describeCastersResponse.RequestId = _ctx.StringValue("DescribeCasters.RequestId");
+			describeCastersResponse.Total = _ctx.IntegerValue("DescribeCasters.Total");
 
 			List<DescribeCastersResponse.DescribeCasters_Caster> describeCastersResponse_casterList = new List<DescribeCastersResponse.DescribeCasters_Caster>();
 			for (int i = 0; i < _ctx.Length("DescribeCasters.CasterList.Length"); i++) {
 				DescribeCastersResponse.DescribeCasters_Caster caster = new DescribeCastersResponse.DescribeCasters_Caster();
-				caster.Status = _ctx.IntegerValue("DescribeCasters.CasterList["+ i +"].Status");
-				caster.PurchaseTime = _ctx.StringValue("DescribeCasters.CasterList["+ i +"].PurchaseTime");
-				caster.ExpireTime = _ctx.StringValue("DescribeCasters.CasterList["+ i +"].ExpireTime");
-				caster.CreateTime = _ctx.StringValue("DescribeCasters.CasterList["+ i +"].CreateTime");
-				caster.CasterName = _ctx.StringValue("DescribeCasters.CasterList["+ i +"].CasterName");
-				caster.ChargeType = _ctx.StringValue("DescribeCasters.CasterList["+ i +"].ChargeType");
-				caster.CasterTemplate = _ctx.StringValue("DescribeCasters.CasterList["+ i +"].CasterTemplate");
-				caster.RoomId = _ctx.IntegerValue("DescribeCasters.CasterList["+ i +"].RoomId");
 				caster.CasterId = _ctx.StringValue("DescribeCasters.CasterList["+ i +"].CasterId");
+				caster.CasterName = _ctx.StringValue("DescribeCasters.CasterList["+ i +"].CasterName");
+				caster.CasterTemplate = _ctx.StringValue("DescribeCasters.CasterList["+ i +"].CasterTemplate");
 				caster.ChannelEnable = _ctx.IntegerValue("DescribeCasters.CasterList["+ i +"].ChannelEnable");
-				caster.LastModified = _ctx.StringValue("DescribeCasters.CasterList["+ i +"].LastModified");
-				caster.StartTime = _ctx.StringValue("DescribeCasters.CasterList["+ i +"].StartTime");
-				caster.NormType = _ctx.IntegerValue("DescribeCasters.CasterList["+ i +"].NormType");
+				caster.ChargeType = _ctx.StringValue("DescribeCasters.CasterList["+ i +"].ChargeType");
+				caster.CreateTime = _ctx.StringValue("DescribeCasters.CasterList["+ i +"].CreateTime");
 				caster.Duration = _ctx.StringValue("DescribeCasters.CasterList["+ i +"].Duration");
+				caster.ExpireTime = _ctx.StringValue("DescribeCasters.CasterList["+ i +"].ExpireTime");
+				caster.LastModified = _ctx.StringValue("DescribeCasters.CasterList["+ i +"].LastModified");
+				caster.NormType = _ctx.IntegerValue("DescribeCasters.CasterList["+ i +"].NormType");
+				caster.PurchaseTime = _ctx.StringValue("DescribeCasters.CasterList["+ i +"].PurchaseTime");
+				caster.RoomId = _ctx.IntegerValue("DescribeCasters.CasterList["+ i +"].RoomId");
+				caster.StartTime = _ctx.StringValue("DescribeCasters.CasterList["+ i +"].StartTime");
+				caster.Status = _ctx.IntegerValue("DescribeCasters.CasterList["+ i +"].Status");
 
 				describeCastersResponse_casterList.Add(caster);
 			}

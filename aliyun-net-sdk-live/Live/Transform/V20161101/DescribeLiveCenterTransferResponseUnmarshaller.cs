@@ -36,13 +36,13 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeLiveCenterTransferResponse.DescribeLiveCenterTransfer_LiveCenterTransferInfo> describeLiveCenterTransferResponse_liveCenterTransferInfoList = new List<DescribeLiveCenterTransferResponse.DescribeLiveCenterTransfer_LiveCenterTransferInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveCenterTransfer.LiveCenterTransferInfoList.Length"); i++) {
 				DescribeLiveCenterTransferResponse.DescribeLiveCenterTransfer_LiveCenterTransferInfo liveCenterTransferInfo = new DescribeLiveCenterTransferResponse.DescribeLiveCenterTransfer_LiveCenterTransferInfo();
-				liveCenterTransferInfo.EndTime = _ctx.StringValue("DescribeLiveCenterTransfer.LiveCenterTransferInfoList["+ i +"].EndTime");
 				liveCenterTransferInfo.AppName = _ctx.StringValue("DescribeLiveCenterTransfer.LiveCenterTransferInfoList["+ i +"].AppName");
-				liveCenterTransferInfo.StartTime = _ctx.StringValue("DescribeLiveCenterTransfer.LiveCenterTransferInfoList["+ i +"].StartTime");
-				liveCenterTransferInfo.TransferArgs = _ctx.StringValue("DescribeLiveCenterTransfer.LiveCenterTransferInfoList["+ i +"].TransferArgs");
-				liveCenterTransferInfo.StreamName = _ctx.StringValue("DescribeLiveCenterTransfer.LiveCenterTransferInfoList["+ i +"].StreamName");
-				liveCenterTransferInfo.DstUrl = _ctx.StringValue("DescribeLiveCenterTransfer.LiveCenterTransferInfoList["+ i +"].DstUrl");
 				liveCenterTransferInfo.DomainName = _ctx.StringValue("DescribeLiveCenterTransfer.LiveCenterTransferInfoList["+ i +"].DomainName");
+				liveCenterTransferInfo.DstUrl = _ctx.StringValue("DescribeLiveCenterTransfer.LiveCenterTransferInfoList["+ i +"].DstUrl");
+				liveCenterTransferInfo.EndTime = _ctx.StringValue("DescribeLiveCenterTransfer.LiveCenterTransferInfoList["+ i +"].EndTime");
+				liveCenterTransferInfo.StartTime = _ctx.StringValue("DescribeLiveCenterTransfer.LiveCenterTransferInfoList["+ i +"].StartTime");
+				liveCenterTransferInfo.StreamName = _ctx.StringValue("DescribeLiveCenterTransfer.LiveCenterTransferInfoList["+ i +"].StreamName");
+				liveCenterTransferInfo.TransferArgs = _ctx.StringValue("DescribeLiveCenterTransfer.LiveCenterTransferInfoList["+ i +"].TransferArgs");
 
 				describeLiveCenterTransferResponse_liveCenterTransferInfoList.Add(liveCenterTransferInfo);
 			}

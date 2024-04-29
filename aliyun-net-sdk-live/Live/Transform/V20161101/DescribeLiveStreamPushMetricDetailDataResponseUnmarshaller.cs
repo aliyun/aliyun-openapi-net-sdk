@@ -31,21 +31,21 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveStreamPushMetricDetailDataResponse describeLiveStreamPushMetricDetailDataResponse = new DescribeLiveStreamPushMetricDetailDataResponse();
 
 			describeLiveStreamPushMetricDetailDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveStreamPushMetricDetailDataResponse.DomainName = _ctx.StringValue("DescribeLiveStreamPushMetricDetailData.DomainName");
 			describeLiveStreamPushMetricDetailDataResponse.EndTime = _ctx.StringValue("DescribeLiveStreamPushMetricDetailData.EndTime");
-			describeLiveStreamPushMetricDetailDataResponse.StartTime = _ctx.StringValue("DescribeLiveStreamPushMetricDetailData.StartTime");
-			describeLiveStreamPushMetricDetailDataResponse.RequestId = _ctx.StringValue("DescribeLiveStreamPushMetricDetailData.RequestId");
 			describeLiveStreamPushMetricDetailDataResponse.NextPageToken = _ctx.StringValue("DescribeLiveStreamPushMetricDetailData.NextPageToken");
 			describeLiveStreamPushMetricDetailDataResponse.PageSize = _ctx.IntegerValue("DescribeLiveStreamPushMetricDetailData.PageSize");
-			describeLiveStreamPushMetricDetailDataResponse.DomainName = _ctx.StringValue("DescribeLiveStreamPushMetricDetailData.DomainName");
+			describeLiveStreamPushMetricDetailDataResponse.RequestId = _ctx.StringValue("DescribeLiveStreamPushMetricDetailData.RequestId");
+			describeLiveStreamPushMetricDetailDataResponse.StartTime = _ctx.StringValue("DescribeLiveStreamPushMetricDetailData.StartTime");
 
 			List<DescribeLiveStreamPushMetricDetailDataResponse.DescribeLiveStreamPushMetricDetailData_StreamData> describeLiveStreamPushMetricDetailDataResponse_streamDetailData = new List<DescribeLiveStreamPushMetricDetailDataResponse.DescribeLiveStreamPushMetricDetailData_StreamData>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveStreamPushMetricDetailData.StreamDetailData.Length"); i++) {
 				DescribeLiveStreamPushMetricDetailDataResponse.DescribeLiveStreamPushMetricDetailData_StreamData streamData = new DescribeLiveStreamPushMetricDetailDataResponse.DescribeLiveStreamPushMetricDetailData_StreamData();
 				streamData.AppName = _ctx.StringValue("DescribeLiveStreamPushMetricDetailData.StreamDetailData["+ i +"].AppName");
-				streamData.TimeStamp = _ctx.StringValue("DescribeLiveStreamPushMetricDetailData.StreamDetailData["+ i +"].TimeStamp");
 				streamData.ReqBps = _ctx.FloatValue("DescribeLiveStreamPushMetricDetailData.StreamDetailData["+ i +"].ReqBps");
 				streamData.ReqTraffic = _ctx.LongValue("DescribeLiveStreamPushMetricDetailData.StreamDetailData["+ i +"].ReqTraffic");
 				streamData.StreamName = _ctx.StringValue("DescribeLiveStreamPushMetricDetailData.StreamDetailData["+ i +"].StreamName");
+				streamData.TimeStamp = _ctx.StringValue("DescribeLiveStreamPushMetricDetailData.StreamDetailData["+ i +"].TimeStamp");
 
 				describeLiveStreamPushMetricDetailDataResponse_streamDetailData.Add(streamData);
 			}

@@ -25,45 +25,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLivePackageConfigResponse : AcsResponse
 	{
 
-		private int? pageNum;
-
-		private string requestId;
-
 		private string order;
 
-		private int? totalPage;
+		private int? pageNum;
 
 		private int? pageSize;
 
+		private string requestId;
+
 		private int? totalNum;
 
+		private int? totalPage;
+
 		private List<DescribeLivePackageConfig_LivePackageConfig> livePackageConfigList;
-
-		[JsonProperty(PropertyName = "PageNum")]
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "RequestId")]
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		[JsonProperty(PropertyName = "Order")]
 		public string Order
@@ -78,16 +52,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "TotalPage")]
-		public int? TotalPage
+		[JsonProperty(PropertyName = "PageNum")]
+		public int? PageNum
 		{
 			get
 			{
-				return totalPage;
+				return pageNum;
 			}
 			set	
 			{
-				totalPage = value;
+				pageNum = value;
 			}
 		}
 
@@ -104,6 +78,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		[JsonProperty(PropertyName = "TotalNum")]
 		public int? TotalNum
 		{
@@ -114,6 +101,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				totalNum = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TotalPage")]
+		public int? TotalPage
+		{
+			get
+			{
+				return totalPage;
+			}
+			set	
+			{
+				totalPage = value;
 			}
 		}
 
@@ -135,19 +135,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string appName;
 
-			private int? segmentNum;
-
-			private string streamName;
-
-			private string protocol;
+			private string domainName;
 
 			private bool? ignoreTranscode;
 
 			private int? partDuration;
 
+			private string protocol;
+
 			private int? segmentDuration;
 
-			private string domainName;
+			private int? segmentNum;
+
+			private string streamName;
 
 			[JsonProperty(PropertyName = "AppName")]
 			public string AppName
@@ -162,42 +162,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "SegmentNum")]
-			public int? SegmentNum
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
 			{
 				get
 				{
-					return segmentNum;
+					return domainName;
 				}
 				set	
 				{
-					segmentNum = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "StreamName")]
-			public string StreamName
-			{
-				get
-				{
-					return streamName;
-				}
-				set	
-				{
-					streamName = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Protocol")]
-			public string Protocol
-			{
-				get
-				{
-					return protocol;
-				}
-				set	
-				{
-					protocol = value;
+					domainName = value;
 				}
 			}
 
@@ -227,6 +201,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Protocol")]
+			public string Protocol
+			{
+				get
+				{
+					return protocol;
+				}
+				set	
+				{
+					protocol = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "SegmentDuration")]
 			public int? SegmentDuration
 			{
@@ -240,16 +227,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "DomainName")]
-			public string DomainName
+			[JsonProperty(PropertyName = "SegmentNum")]
+			public int? SegmentNum
 			{
 				get
 				{
-					return domainName;
+					return segmentNum;
 				}
 				set	
 				{
-					domainName = value;
+					segmentNum = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StreamName")]
+			public string StreamName
+			{
+				get
+				{
+					return streamName;
+				}
+				set	
+				{
+					streamName = value;
 				}
 			}
 		}

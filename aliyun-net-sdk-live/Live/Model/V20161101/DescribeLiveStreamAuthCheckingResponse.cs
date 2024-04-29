@@ -25,22 +25,22 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveStreamAuthCheckingResponse : AcsResponse
 	{
 
-		private string status;
+		private string description;
 
 		private string requestId;
 
-		private string description;
+		private string status;
 
-		[JsonProperty(PropertyName = "Status")]
-		public string Status
+		[JsonProperty(PropertyName = "Description")]
+		public string Description
 		{
 			get
 			{
-				return status;
+				return description;
 			}
 			set	
 			{
-				status = value;
+				description = value;
 			}
 		}
 
@@ -57,16 +57,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "Description")]
-		public string Description
+		[JsonProperty(PropertyName = "Status")]
+		public string Status
 		{
 			get
 			{
-				return description;
+				return status;
 			}
 			set	
 			{
-				description = value;
+				status = value;
 			}
 		}
 	}

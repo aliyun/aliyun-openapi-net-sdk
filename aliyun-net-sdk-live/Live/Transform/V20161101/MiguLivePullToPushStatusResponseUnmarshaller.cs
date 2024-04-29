@@ -31,14 +31,14 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			MiguLivePullToPushStatusResponse miguLivePullToPushStatusResponse = new MiguLivePullToPushStatusResponse();
 
 			miguLivePullToPushStatusResponse.HttpResponse = _ctx.HttpResponse;
-			miguLivePullToPushStatusResponse.RequestId = _ctx.StringValue("MiguLivePullToPushStatus.requestId");
 			miguLivePullToPushStatusResponse.Code = _ctx.StringValue("MiguLivePullToPushStatus.code");
-			miguLivePullToPushStatusResponse.Timestamp = _ctx.StringValue("MiguLivePullToPushStatus.timestamp");
 			miguLivePullToPushStatusResponse.Message = _ctx.StringValue("MiguLivePullToPushStatus.message");
+			miguLivePullToPushStatusResponse.RequestId = _ctx.StringValue("MiguLivePullToPushStatus.requestId");
+			miguLivePullToPushStatusResponse.Timestamp = _ctx.StringValue("MiguLivePullToPushStatus.timestamp");
 
 			MiguLivePullToPushStatusResponse.MiguLivePullToPushStatus_Data data = new MiguLivePullToPushStatusResponse.MiguLivePullToPushStatus_Data();
-			data.Status = _ctx.StringValue("MiguLivePullToPushStatus.Data.status");
 			data.Message = _ctx.StringValue("MiguLivePullToPushStatus.Data.message");
+			data.Status = _ctx.StringValue("MiguLivePullToPushStatus.Data.status");
 			miguLivePullToPushStatusResponse.Data = data;
         
 			return miguLivePullToPushStatusResponse;

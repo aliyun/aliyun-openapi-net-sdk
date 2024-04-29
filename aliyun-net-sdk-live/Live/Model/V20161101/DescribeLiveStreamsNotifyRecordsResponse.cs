@@ -25,8 +25,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveStreamsNotifyRecordsResponse : AcsResponse
 	{
 
-		private int? totalPage;
-
 		private int? pageNum;
 
 		private int? pageSize;
@@ -35,20 +33,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private int? totalNum;
 
-		private List<DescribeLiveStreamsNotifyRecords_LiveStreamNotifyRecordsInfo> notifyRecordsInfo;
+		private int? totalPage;
 
-		[JsonProperty(PropertyName = "TotalPage")]
-		public int? TotalPage
-		{
-			get
-			{
-				return totalPage;
-			}
-			set	
-			{
-				totalPage = value;
-			}
-		}
+		private List<DescribeLiveStreamsNotifyRecords_LiveStreamNotifyRecordsInfo> notifyRecordsInfo;
 
 		[JsonProperty(PropertyName = "PageNum")]
 		public int? PageNum
@@ -102,6 +89,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "TotalPage")]
+		public int? TotalPage
+		{
+			get
+			{
+				return totalPage;
+			}
+			set	
+			{
+				totalPage = value;
+			}
+		}
+
 		[JsonProperty(PropertyName = "NotifyRecordsInfo")]
 		public List<DescribeLiveStreamsNotifyRecords_LiveStreamNotifyRecordsInfo> NotifyRecordsInfo
 		{
@@ -120,21 +120,21 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string appName;
 
-			private string notifyType;
-
-			private string notifyContent;
-
 			private string description;
 
-			private string streamName;
+			private string domainName;
 
-			private string notifyUrl;
+			private string notifyContent;
 
 			private string notifyResult;
 
 			private string notifyTime;
 
-			private string domainName;
+			private string notifyType;
+
+			private string notifyUrl;
+
+			private string streamName;
 
 			[JsonProperty(PropertyName = "AppName")]
 			public string AppName
@@ -146,32 +146,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					appName = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "NotifyType")]
-			public string NotifyType
-			{
-				get
-				{
-					return notifyType;
-				}
-				set	
-				{
-					notifyType = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "NotifyContent")]
-			public string NotifyContent
-			{
-				get
-				{
-					return notifyContent;
-				}
-				set	
-				{
-					notifyContent = value;
 				}
 			}
 
@@ -188,29 +162,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "StreamName")]
-			public string StreamName
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
 			{
 				get
 				{
-					return streamName;
+					return domainName;
 				}
 				set	
 				{
-					streamName = value;
+					domainName = value;
 				}
 			}
 
-			[JsonProperty(PropertyName = "NotifyUrl")]
-			public string NotifyUrl
+			[JsonProperty(PropertyName = "NotifyContent")]
+			public string NotifyContent
 			{
 				get
 				{
-					return notifyUrl;
+					return notifyContent;
 				}
 				set	
 				{
-					notifyUrl = value;
+					notifyContent = value;
 				}
 			}
 
@@ -240,16 +214,42 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "DomainName")]
-			public string DomainName
+			[JsonProperty(PropertyName = "NotifyType")]
+			public string NotifyType
 			{
 				get
 				{
-					return domainName;
+					return notifyType;
 				}
 				set	
 				{
-					domainName = value;
+					notifyType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "NotifyUrl")]
+			public string NotifyUrl
+			{
+				get
+				{
+					return notifyUrl;
+				}
+				set	
+				{
+					notifyUrl = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StreamName")]
+			public string StreamName
+			{
+				get
+				{
+					return streamName;
+				}
+				set	
+				{
+					streamName = value;
 				}
 			}
 		}

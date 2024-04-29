@@ -32,23 +32,23 @@ namespace Aliyun.Acs.live.Transform.V20161101
 
 			describeLiveProducerUsageDataResponse.HttpResponse = _ctx.HttpResponse;
 			describeLiveProducerUsageDataResponse.EndTime = _ctx.StringValue("DescribeLiveProducerUsageData.EndTime");
-			describeLiveProducerUsageDataResponse.StartTime = _ctx.StringValue("DescribeLiveProducerUsageData.StartTime");
 			describeLiveProducerUsageDataResponse.RequestId = _ctx.StringValue("DescribeLiveProducerUsageData.RequestId");
+			describeLiveProducerUsageDataResponse.StartTime = _ctx.StringValue("DescribeLiveProducerUsageData.StartTime");
 
 			List<DescribeLiveProducerUsageDataResponse.DescribeLiveProducerUsageData_BillProducerDataItem> describeLiveProducerUsageDataResponse_billProducerData = new List<DescribeLiveProducerUsageDataResponse.DescribeLiveProducerUsageData_BillProducerDataItem>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveProducerUsageData.BillProducerData.Length"); i++) {
 				DescribeLiveProducerUsageDataResponse.DescribeLiveProducerUsageData_BillProducerDataItem billProducerDataItem = new DescribeLiveProducerUsageDataResponse.DescribeLiveProducerUsageData_BillProducerDataItem();
-				billProducerDataItem.TranSdDuration = _ctx.LongValue("DescribeLiveProducerUsageData.BillProducerData["+ i +"].TranSdDuration");
-				billProducerDataItem.Type = _ctx.StringValue("DescribeLiveProducerUsageData.BillProducerData["+ i +"].Type");
-				billProducerDataItem.TranLdDuration = _ctx.LongValue("DescribeLiveProducerUsageData.BillProducerData["+ i +"].TranLdDuration");
+				billProducerDataItem.DomainName = _ctx.StringValue("DescribeLiveProducerUsageData.BillProducerData["+ i +"].DomainName");
 				billProducerDataItem.Instance = _ctx.StringValue("DescribeLiveProducerUsageData.BillProducerData["+ i +"].Instance");
-				billProducerDataItem.TranHdDuration = _ctx.LongValue("DescribeLiveProducerUsageData.BillProducerData["+ i +"].TranHdDuration");
+				billProducerDataItem.OutputHdDuration = _ctx.LongValue("DescribeLiveProducerUsageData.BillProducerData["+ i +"].OutputHdDuration");
+				billProducerDataItem.OutputLdDuration = _ctx.LongValue("DescribeLiveProducerUsageData.BillProducerData["+ i +"].OutputLdDuration");
+				billProducerDataItem.OutputSdDuration = _ctx.LongValue("DescribeLiveProducerUsageData.BillProducerData["+ i +"].OutputSdDuration");
 				billProducerDataItem.Region = _ctx.StringValue("DescribeLiveProducerUsageData.BillProducerData["+ i +"].Region");
 				billProducerDataItem.TimeStamp = _ctx.StringValue("DescribeLiveProducerUsageData.BillProducerData["+ i +"].TimeStamp");
-				billProducerDataItem.OutputHdDuration = _ctx.LongValue("DescribeLiveProducerUsageData.BillProducerData["+ i +"].OutputHdDuration");
-				billProducerDataItem.OutputSdDuration = _ctx.LongValue("DescribeLiveProducerUsageData.BillProducerData["+ i +"].OutputSdDuration");
-				billProducerDataItem.DomainName = _ctx.StringValue("DescribeLiveProducerUsageData.BillProducerData["+ i +"].DomainName");
-				billProducerDataItem.OutputLdDuration = _ctx.LongValue("DescribeLiveProducerUsageData.BillProducerData["+ i +"].OutputLdDuration");
+				billProducerDataItem.TranHdDuration = _ctx.LongValue("DescribeLiveProducerUsageData.BillProducerData["+ i +"].TranHdDuration");
+				billProducerDataItem.TranLdDuration = _ctx.LongValue("DescribeLiveProducerUsageData.BillProducerData["+ i +"].TranLdDuration");
+				billProducerDataItem.TranSdDuration = _ctx.LongValue("DescribeLiveProducerUsageData.BillProducerData["+ i +"].TranSdDuration");
+				billProducerDataItem.Type = _ctx.StringValue("DescribeLiveProducerUsageData.BillProducerData["+ i +"].Type");
 
 				describeLiveProducerUsageDataResponse_billProducerData.Add(billProducerDataItem);
 			}

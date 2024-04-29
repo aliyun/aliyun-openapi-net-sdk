@@ -31,17 +31,17 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			SetLiveStreamPreloadTasksResponse setLiveStreamPreloadTasksResponse = new SetLiveStreamPreloadTasksResponse();
 
 			setLiveStreamPreloadTasksResponse.HttpResponse = _ctx.HttpResponse;
-			setLiveStreamPreloadTasksResponse.Status = _ctx.StringValue("SetLiveStreamPreloadTasks.Status");
 			setLiveStreamPreloadTasksResponse.FailedURL = _ctx.IntegerValue("SetLiveStreamPreloadTasks.FailedURL");
-			setLiveStreamPreloadTasksResponse.TotalURL = _ctx.IntegerValue("SetLiveStreamPreloadTasks.TotalURL");
 			setLiveStreamPreloadTasksResponse.RequestId = _ctx.StringValue("SetLiveStreamPreloadTasks.RequestId");
+			setLiveStreamPreloadTasksResponse.Status = _ctx.StringValue("SetLiveStreamPreloadTasks.Status");
 			setLiveStreamPreloadTasksResponse.SuccessURL = _ctx.IntegerValue("SetLiveStreamPreloadTasks.SuccessURL");
+			setLiveStreamPreloadTasksResponse.TotalURL = _ctx.IntegerValue("SetLiveStreamPreloadTasks.TotalURL");
 
 			List<SetLiveStreamPreloadTasksResponse.SetLiveStreamPreloadTasks_PreloadTasksMessage> setLiveStreamPreloadTasksResponse_preloadTasksMessages = new List<SetLiveStreamPreloadTasksResponse.SetLiveStreamPreloadTasks_PreloadTasksMessage>();
 			for (int i = 0; i < _ctx.Length("SetLiveStreamPreloadTasks.PreloadTasksMessages.Length"); i++) {
 				SetLiveStreamPreloadTasksResponse.SetLiveStreamPreloadTasks_PreloadTasksMessage preloadTasksMessage = new SetLiveStreamPreloadTasksResponse.SetLiveStreamPreloadTasks_PreloadTasksMessage();
-				preloadTasksMessage.PlayUrl = _ctx.StringValue("SetLiveStreamPreloadTasks.PreloadTasksMessages["+ i +"].PlayUrl");
 				preloadTasksMessage.Description = _ctx.StringValue("SetLiveStreamPreloadTasks.PreloadTasksMessages["+ i +"].Description");
+				preloadTasksMessage.PlayUrl = _ctx.StringValue("SetLiveStreamPreloadTasks.PreloadTasksMessages["+ i +"].PlayUrl");
 				preloadTasksMessage.TaskId = _ctx.StringValue("SetLiveStreamPreloadTasks.PreloadTasksMessages["+ i +"].TaskId");
 
 				setLiveStreamPreloadTasksResponse_preloadTasksMessages.Add(preloadTasksMessage);

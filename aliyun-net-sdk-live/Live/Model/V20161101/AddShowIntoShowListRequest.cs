@@ -40,7 +40,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private List<string> showLists = new List<string>(){ };
+		private List<long?> showLists = new List<long?>(){ };
 
 		private int? liveInputType;
 
@@ -64,7 +64,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private int? spot;
 
-		public List<string> ShowLists
+		public List<long?> ShowLists
 		{
 			get
 			{
@@ -236,29 +236,41 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class ShowList
 		{
 
-			private string showName;
+			private long? duration;
+
+			private int? liveInputType;
 
 			private int? repeatTimes;
+
+			private string resourceId;
 
 			private string resourceType;
 
 			private string resourceUrl;
 
-			private int? liveInputType;
+			private string showName;
 
-			private long? duration;
-
-			private string resourceId;
-
-			public string ShowName
+			public long? Duration
 			{
 				get
 				{
-					return showName;
+					return duration;
 				}
 				set	
 				{
-					showName = value;
+					duration = value;
+				}
+			}
+
+			public int? LiveInputType
+			{
+				get
+				{
+					return liveInputType;
+				}
+				set	
+				{
+					liveInputType = value;
 				}
 			}
 
@@ -271,6 +283,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					repeatTimes = value;
+				}
+			}
+
+			public string ResourceId
+			{
+				get
+				{
+					return resourceId;
+				}
+				set	
+				{
+					resourceId = value;
 				}
 			}
 
@@ -298,39 +322,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public int? LiveInputType
+			public string ShowName
 			{
 				get
 				{
-					return liveInputType;
+					return showName;
 				}
 				set	
 				{
-					liveInputType = value;
-				}
-			}
-
-			public long? Duration
-			{
-				get
-				{
-					return duration;
-				}
-				set	
-				{
-					duration = value;
-				}
-			}
-
-			public string ResourceId
-			{
-				get
-				{
-					return resourceId;
-				}
-				set	
-				{
-					resourceId = value;
+					showName = value;
 				}
 			}
 		}

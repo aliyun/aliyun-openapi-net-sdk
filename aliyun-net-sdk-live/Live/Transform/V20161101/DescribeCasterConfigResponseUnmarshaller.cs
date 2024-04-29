@@ -31,23 +31,41 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeCasterConfigResponse describeCasterConfigResponse = new DescribeCasterConfigResponse();
 
 			describeCasterConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeCasterConfigResponse.AutoSwitchUrgentConfig = _ctx.StringValue("DescribeCasterConfig.AutoSwitchUrgentConfig");
+			describeCasterConfigResponse.AutoSwitchUrgentOn = _ctx.StringValue("DescribeCasterConfig.AutoSwitchUrgentOn");
+			describeCasterConfigResponse.CallbackUrl = _ctx.StringValue("DescribeCasterConfig.CallbackUrl");
+			describeCasterConfigResponse.CasterId = _ctx.StringValue("DescribeCasterConfig.CasterId");
+			describeCasterConfigResponse.CasterName = _ctx.StringValue("DescribeCasterConfig.CasterName");
+			describeCasterConfigResponse.ChannelEnable = _ctx.IntegerValue("DescribeCasterConfig.ChannelEnable");
 			describeCasterConfigResponse.Delay = _ctx.FloatValue("DescribeCasterConfig.Delay");
-			describeCasterConfigResponse.UrgentLiveStreamUrl = _ctx.StringValue("DescribeCasterConfig.UrgentLiveStreamUrl");
-			describeCasterConfigResponse.UrgentMaterialId = _ctx.StringValue("DescribeCasterConfig.UrgentMaterialId");
+			describeCasterConfigResponse.DomainName = _ctx.StringValue("DescribeCasterConfig.DomainName");
+			describeCasterConfigResponse.ProgramEffect = _ctx.IntegerValue("DescribeCasterConfig.ProgramEffect");
+			describeCasterConfigResponse.ProgramName = _ctx.StringValue("DescribeCasterConfig.ProgramName");
+			describeCasterConfigResponse.RequestId = _ctx.StringValue("DescribeCasterConfig.RequestId");
+			describeCasterConfigResponse.SideOutputUrl = _ctx.StringValue("DescribeCasterConfig.SideOutputUrl");
+			describeCasterConfigResponse.SideOutputUrlList = _ctx.StringValue("DescribeCasterConfig.SideOutputUrlList");
 			describeCasterConfigResponse.UrgentImageId = _ctx.StringValue("DescribeCasterConfig.UrgentImageId");
 			describeCasterConfigResponse.UrgentImageUrl = _ctx.StringValue("DescribeCasterConfig.UrgentImageUrl");
-			describeCasterConfigResponse.CallbackUrl = _ctx.StringValue("DescribeCasterConfig.CallbackUrl");
-			describeCasterConfigResponse.ProgramName = _ctx.StringValue("DescribeCasterConfig.ProgramName");
-			describeCasterConfigResponse.CasterName = _ctx.StringValue("DescribeCasterConfig.CasterName");
-			describeCasterConfigResponse.CasterId = _ctx.StringValue("DescribeCasterConfig.CasterId");
-			describeCasterConfigResponse.ProgramEffect = _ctx.IntegerValue("DescribeCasterConfig.ProgramEffect");
-			describeCasterConfigResponse.ChannelEnable = _ctx.IntegerValue("DescribeCasterConfig.ChannelEnable");
-			describeCasterConfigResponse.DomainName = _ctx.StringValue("DescribeCasterConfig.DomainName");
-			describeCasterConfigResponse.RequestId = _ctx.StringValue("DescribeCasterConfig.RequestId");
-			describeCasterConfigResponse.SideOutputUrlList = _ctx.StringValue("DescribeCasterConfig.SideOutputUrlList");
-			describeCasterConfigResponse.SideOutputUrl = _ctx.StringValue("DescribeCasterConfig.SideOutputUrl");
-			describeCasterConfigResponse.AutoSwitchUrgentOn = _ctx.StringValue("DescribeCasterConfig.AutoSwitchUrgentOn");
-			describeCasterConfigResponse.AutoSwitchUrgentConfig = _ctx.StringValue("DescribeCasterConfig.AutoSwitchUrgentConfig");
+			describeCasterConfigResponse.UrgentLiveStreamUrl = _ctx.StringValue("DescribeCasterConfig.UrgentLiveStreamUrl");
+			describeCasterConfigResponse.UrgentMaterialId = _ctx.StringValue("DescribeCasterConfig.UrgentMaterialId");
+
+			DescribeCasterConfigResponse.DescribeCasterConfig_RecordConfig recordConfig = new DescribeCasterConfigResponse.DescribeCasterConfig_RecordConfig();
+			recordConfig.OnDemand = _ctx.IntegerValue("DescribeCasterConfig.RecordConfig.OnDemand");
+			recordConfig.OssBucket = _ctx.StringValue("DescribeCasterConfig.RecordConfig.OssBucket");
+			recordConfig.OssEndpoint = _ctx.StringValue("DescribeCasterConfig.RecordConfig.OssEndpoint");
+
+			List<DescribeCasterConfigResponse.DescribeCasterConfig_RecordConfig.DescribeCasterConfig_RecordFormatItem> recordConfig_recordFormat = new List<DescribeCasterConfigResponse.DescribeCasterConfig_RecordConfig.DescribeCasterConfig_RecordFormatItem>();
+			for (int i = 0; i < _ctx.Length("DescribeCasterConfig.RecordConfig.RecordFormat.Length"); i++) {
+				DescribeCasterConfigResponse.DescribeCasterConfig_RecordConfig.DescribeCasterConfig_RecordFormatItem recordFormatItem = new DescribeCasterConfigResponse.DescribeCasterConfig_RecordConfig.DescribeCasterConfig_RecordFormatItem();
+				recordFormatItem.CycleDuration = _ctx.IntegerValue("DescribeCasterConfig.RecordConfig.RecordFormat["+ i +"].CycleDuration");
+				recordFormatItem.Format = _ctx.StringValue("DescribeCasterConfig.RecordConfig.RecordFormat["+ i +"].Format");
+				recordFormatItem.OssObjectPrefix = _ctx.StringValue("DescribeCasterConfig.RecordConfig.RecordFormat["+ i +"].OssObjectPrefix");
+				recordFormatItem.SliceOssObjectPrefix = _ctx.StringValue("DescribeCasterConfig.RecordConfig.RecordFormat["+ i +"].SliceOssObjectPrefix");
+
+				recordConfig_recordFormat.Add(recordFormatItem);
+			}
+			recordConfig.RecordFormat = recordConfig_recordFormat;
+			describeCasterConfigResponse.RecordConfig = recordConfig;
 
 			DescribeCasterConfigResponse.DescribeCasterConfig_TranscodeConfig transcodeConfig = new DescribeCasterConfigResponse.DescribeCasterConfig_TranscodeConfig();
 			transcodeConfig.CasterTemplate = _ctx.StringValue("DescribeCasterConfig.TranscodeConfig.CasterTemplate");
@@ -58,24 +76,6 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			}
 			transcodeConfig.LiveTemplateIds = transcodeConfig_liveTemplateIds;
 			describeCasterConfigResponse.TranscodeConfig = transcodeConfig;
-
-			DescribeCasterConfigResponse.DescribeCasterConfig_RecordConfig recordConfig = new DescribeCasterConfigResponse.DescribeCasterConfig_RecordConfig();
-			recordConfig.OssEndpoint = _ctx.StringValue("DescribeCasterConfig.RecordConfig.OssEndpoint");
-			recordConfig.OssBucket = _ctx.StringValue("DescribeCasterConfig.RecordConfig.OssBucket");
-			recordConfig.OnDemand = _ctx.IntegerValue("DescribeCasterConfig.RecordConfig.OnDemand");
-
-			List<DescribeCasterConfigResponse.DescribeCasterConfig_RecordConfig.DescribeCasterConfig_RecordFormatItem> recordConfig_recordFormat = new List<DescribeCasterConfigResponse.DescribeCasterConfig_RecordConfig.DescribeCasterConfig_RecordFormatItem>();
-			for (int i = 0; i < _ctx.Length("DescribeCasterConfig.RecordConfig.RecordFormat.Length"); i++) {
-				DescribeCasterConfigResponse.DescribeCasterConfig_RecordConfig.DescribeCasterConfig_RecordFormatItem recordFormatItem = new DescribeCasterConfigResponse.DescribeCasterConfig_RecordConfig.DescribeCasterConfig_RecordFormatItem();
-				recordFormatItem.CycleDuration = _ctx.IntegerValue("DescribeCasterConfig.RecordConfig.RecordFormat["+ i +"].CycleDuration");
-				recordFormatItem.SliceOssObjectPrefix = _ctx.StringValue("DescribeCasterConfig.RecordConfig.RecordFormat["+ i +"].SliceOssObjectPrefix");
-				recordFormatItem.OssObjectPrefix = _ctx.StringValue("DescribeCasterConfig.RecordConfig.RecordFormat["+ i +"].OssObjectPrefix");
-				recordFormatItem.Format = _ctx.StringValue("DescribeCasterConfig.RecordConfig.RecordFormat["+ i +"].Format");
-
-				recordConfig_recordFormat.Add(recordFormatItem);
-			}
-			recordConfig.RecordFormat = recordConfig_recordFormat;
-			describeCasterConfigResponse.RecordConfig = recordConfig;
 
 			List<DescribeCasterConfigResponse.DescribeCasterConfig_SyncGroup> describeCasterConfigResponse_syncGroupsConfig = new List<DescribeCasterConfigResponse.DescribeCasterConfig_SyncGroup>();
 			for (int i = 0; i < _ctx.Length("DescribeCasterConfig.SyncGroupsConfig.Length"); i++) {

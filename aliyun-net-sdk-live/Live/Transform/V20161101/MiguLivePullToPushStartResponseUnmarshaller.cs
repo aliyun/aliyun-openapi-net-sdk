@@ -31,10 +31,10 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			MiguLivePullToPushStartResponse miguLivePullToPushStartResponse = new MiguLivePullToPushStartResponse();
 
 			miguLivePullToPushStartResponse.HttpResponse = _ctx.HttpResponse;
-			miguLivePullToPushStartResponse.RequestId = _ctx.StringValue("MiguLivePullToPushStart.requestId");
 			miguLivePullToPushStartResponse.Code = _ctx.StringValue("MiguLivePullToPushStart.code");
-			miguLivePullToPushStartResponse.Timestamp = _ctx.StringValue("MiguLivePullToPushStart.timestamp");
 			miguLivePullToPushStartResponse.Message = _ctx.StringValue("MiguLivePullToPushStart.message");
+			miguLivePullToPushStartResponse.RequestId = _ctx.StringValue("MiguLivePullToPushStart.requestId");
+			miguLivePullToPushStartResponse.Timestamp = _ctx.StringValue("MiguLivePullToPushStart.timestamp");
         
 			return miguLivePullToPushStartResponse;
         }

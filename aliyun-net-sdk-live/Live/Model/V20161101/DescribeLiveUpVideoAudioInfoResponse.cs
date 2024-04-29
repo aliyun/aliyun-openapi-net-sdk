@@ -58,62 +58,49 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveUpVideoAudioInfo_PublishItem
 		{
 
-			private string publishTime;
-
 			private string appName;
 
 			private string codecInfo;
 
-			private string publishIp;
-
-			private string streamName;
-
-			private string publishStatus;
-
-			private string uniqueId;
+			private string domainName;
 
 			private string publishInterval;
 
+			private string publishIp;
+
+			private string publishStatus;
+
+			private string publishTime;
+
 			private string stopTime;
 
-			private string domainName;
+			private string streamName;
 
-			private List<DescribeLiveUpVideoAudioInfo_VideoFramesItem> videoFrames;
-
-			private List<DescribeLiveUpVideoAudioInfo_AudioFramesItem> audioFrames;
-
-			private List<DescribeLiveUpVideoAudioInfo_VideoStampsItem> videoStamps;
-
-			private List<DescribeLiveUpVideoAudioInfo_AudioStampsItem> audioStamps;
-
-			private List<DescribeLiveUpVideoAudioInfo_V_AStamp> videoAndAudioStamp;
-
-			private List<DescribeLiveUpVideoAudioInfo_AvcHeadersItem> avcHeaders;
+			private string uniqueId;
 
 			private List<DescribeLiveUpVideoAudioInfo_AacHeadersItem> aacHeaders;
 
-			private List<DescribeLiveUpVideoAudioInfo_VideoBitRateItem> videoBitRate;
-
 			private List<DescribeLiveUpVideoAudioInfo_AudioBitRateItem> audioBitRate;
 
-			private List<DescribeLiveUpVideoAudioInfo_VideoIntervalItem> videoInterval;
+			private List<DescribeLiveUpVideoAudioInfo_AudioFramesItem> audioFrames;
 
 			private List<DescribeLiveUpVideoAudioInfo_AudioIntervalItem> audioInterval;
 
+			private List<DescribeLiveUpVideoAudioInfo_AudioStampsItem> audioStamps;
+
+			private List<DescribeLiveUpVideoAudioInfo_AvcHeadersItem> avcHeaders;
+
 			private List<DescribeLiveUpVideoAudioInfo_ErrorFlagsItem> errorFlags;
 
-			[JsonProperty(PropertyName = "PublishTime")]
-			public string PublishTime
-			{
-				get
-				{
-					return publishTime;
-				}
-				set	
-				{
-					publishTime = value;
-				}
-			}
+			private List<DescribeLiveUpVideoAudioInfo_V_AStamp> videoAndAudioStamp;
+
+			private List<DescribeLiveUpVideoAudioInfo_VideoBitRateItem> videoBitRate;
+
+			private List<DescribeLiveUpVideoAudioInfo_VideoFramesItem> videoFrames;
+
+			private List<DescribeLiveUpVideoAudioInfo_VideoIntervalItem> videoInterval;
+
+			private List<DescribeLiveUpVideoAudioInfo_VideoStampsItem> videoStamps;
 
 			[JsonProperty(PropertyName = "AppName")]
 			public string AppName
@@ -141,55 +128,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "PublishIp")]
-			public string PublishIp
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
 			{
 				get
 				{
-					return publishIp;
+					return domainName;
 				}
 				set	
 				{
-					publishIp = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "StreamName")]
-			public string StreamName
-			{
-				get
-				{
-					return streamName;
-				}
-				set	
-				{
-					streamName = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "PublishStatus")]
-			public string PublishStatus
-			{
-				get
-				{
-					return publishStatus;
-				}
-				set	
-				{
-					publishStatus = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "UniqueId")]
-			public string UniqueId
-			{
-				get
-				{
-					return uniqueId;
-				}
-				set	
-				{
-					uniqueId = value;
+					domainName = value;
 				}
 			}
 
@@ -206,6 +154,45 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "PublishIp")]
+			public string PublishIp
+			{
+				get
+				{
+					return publishIp;
+				}
+				set	
+				{
+					publishIp = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PublishStatus")]
+			public string PublishStatus
+			{
+				get
+				{
+					return publishStatus;
+				}
+				set	
+				{
+					publishStatus = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PublishTime")]
+			public string PublishTime
+			{
+				get
+				{
+					return publishTime;
+				}
+				set	
+				{
+					publishTime = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "StopTime")]
 			public string StopTime
 			{
@@ -219,94 +206,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "DomainName")]
-			public string DomainName
+			[JsonProperty(PropertyName = "StreamName")]
+			public string StreamName
 			{
 				get
 				{
-					return domainName;
+					return streamName;
 				}
 				set	
 				{
-					domainName = value;
+					streamName = value;
 				}
 			}
 
-			[JsonProperty(PropertyName = "VideoFrames")]
-			public List<DescribeLiveUpVideoAudioInfo_VideoFramesItem> VideoFrames
+			[JsonProperty(PropertyName = "UniqueId")]
+			public string UniqueId
 			{
 				get
 				{
-					return videoFrames;
+					return uniqueId;
 				}
 				set	
 				{
-					videoFrames = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "AudioFrames")]
-			public List<DescribeLiveUpVideoAudioInfo_AudioFramesItem> AudioFrames
-			{
-				get
-				{
-					return audioFrames;
-				}
-				set	
-				{
-					audioFrames = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "VideoStamps")]
-			public List<DescribeLiveUpVideoAudioInfo_VideoStampsItem> VideoStamps
-			{
-				get
-				{
-					return videoStamps;
-				}
-				set	
-				{
-					videoStamps = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "AudioStamps")]
-			public List<DescribeLiveUpVideoAudioInfo_AudioStampsItem> AudioStamps
-			{
-				get
-				{
-					return audioStamps;
-				}
-				set	
-				{
-					audioStamps = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "VideoAndAudioStamp")]
-			public List<DescribeLiveUpVideoAudioInfo_V_AStamp> VideoAndAudioStamp
-			{
-				get
-				{
-					return videoAndAudioStamp;
-				}
-				set	
-				{
-					videoAndAudioStamp = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "AvcHeaders")]
-			public List<DescribeLiveUpVideoAudioInfo_AvcHeadersItem> AvcHeaders
-			{
-				get
-				{
-					return avcHeaders;
-				}
-				set	
-				{
-					avcHeaders = value;
+					uniqueId = value;
 				}
 			}
 
@@ -323,19 +245,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "VideoBitRate")]
-			public List<DescribeLiveUpVideoAudioInfo_VideoBitRateItem> VideoBitRate
-			{
-				get
-				{
-					return videoBitRate;
-				}
-				set	
-				{
-					videoBitRate = value;
-				}
-			}
-
 			[JsonProperty(PropertyName = "AudioBitRate")]
 			public List<DescribeLiveUpVideoAudioInfo_AudioBitRateItem> AudioBitRate
 			{
@@ -349,16 +258,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "VideoInterval")]
-			public List<DescribeLiveUpVideoAudioInfo_VideoIntervalItem> VideoInterval
+			[JsonProperty(PropertyName = "AudioFrames")]
+			public List<DescribeLiveUpVideoAudioInfo_AudioFramesItem> AudioFrames
 			{
 				get
 				{
-					return videoInterval;
+					return audioFrames;
 				}
 				set	
 				{
-					videoInterval = value;
+					audioFrames = value;
 				}
 			}
 
@@ -375,6 +284,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "AudioStamps")]
+			public List<DescribeLiveUpVideoAudioInfo_AudioStampsItem> AudioStamps
+			{
+				get
+				{
+					return audioStamps;
+				}
+				set	
+				{
+					audioStamps = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AvcHeaders")]
+			public List<DescribeLiveUpVideoAudioInfo_AvcHeadersItem> AvcHeaders
+			{
+				get
+				{
+					return avcHeaders;
+				}
+				set	
+				{
+					avcHeaders = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "ErrorFlags")]
 			public List<DescribeLiveUpVideoAudioInfo_ErrorFlagsItem> ErrorFlags
 			{
@@ -388,229 +323,77 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public class DescribeLiveUpVideoAudioInfo_VideoFramesItem
+			[JsonProperty(PropertyName = "VideoAndAudioStamp")]
+			public List<DescribeLiveUpVideoAudioInfo_V_AStamp> VideoAndAudioStamp
 			{
-
-				private int? _value;
-
-				private long? time;
-
-				[JsonProperty(PropertyName = "_Value")]
-				public int? _Value
+				get
 				{
-					get
-					{
-						return _value;
-					}
-					set	
-					{
-						_value = value;
-					}
+					return videoAndAudioStamp;
 				}
-
-				[JsonProperty(PropertyName = "Time")]
-				public long? Time
+				set	
 				{
-					get
-					{
-						return time;
-					}
-					set	
-					{
-						time = value;
-					}
+					videoAndAudioStamp = value;
 				}
 			}
 
-			public class DescribeLiveUpVideoAudioInfo_AudioFramesItem
+			[JsonProperty(PropertyName = "VideoBitRate")]
+			public List<DescribeLiveUpVideoAudioInfo_VideoBitRateItem> VideoBitRate
 			{
-
-				private int? _value;
-
-				private long? time;
-
-				[JsonProperty(PropertyName = "_Value")]
-				public int? _Value
+				get
 				{
-					get
-					{
-						return _value;
-					}
-					set	
-					{
-						_value = value;
-					}
+					return videoBitRate;
 				}
-
-				[JsonProperty(PropertyName = "Time")]
-				public long? Time
+				set	
 				{
-					get
-					{
-						return time;
-					}
-					set	
-					{
-						time = value;
-					}
+					videoBitRate = value;
 				}
 			}
 
-			public class DescribeLiveUpVideoAudioInfo_VideoStampsItem
+			[JsonProperty(PropertyName = "VideoFrames")]
+			public List<DescribeLiveUpVideoAudioInfo_VideoFramesItem> VideoFrames
 			{
-
-				private int? _value;
-
-				private long? time;
-
-				[JsonProperty(PropertyName = "_Value")]
-				public int? _Value
+				get
 				{
-					get
-					{
-						return _value;
-					}
-					set	
-					{
-						_value = value;
-					}
+					return videoFrames;
 				}
-
-				[JsonProperty(PropertyName = "Time")]
-				public long? Time
+				set	
 				{
-					get
-					{
-						return time;
-					}
-					set	
-					{
-						time = value;
-					}
+					videoFrames = value;
 				}
 			}
 
-			public class DescribeLiveUpVideoAudioInfo_AudioStampsItem
+			[JsonProperty(PropertyName = "VideoInterval")]
+			public List<DescribeLiveUpVideoAudioInfo_VideoIntervalItem> VideoInterval
 			{
-
-				private int? _value;
-
-				private long? time;
-
-				[JsonProperty(PropertyName = "_Value")]
-				public int? _Value
+				get
 				{
-					get
-					{
-						return _value;
-					}
-					set	
-					{
-						_value = value;
-					}
+					return videoInterval;
 				}
-
-				[JsonProperty(PropertyName = "Time")]
-				public long? Time
+				set	
 				{
-					get
-					{
-						return time;
-					}
-					set	
-					{
-						time = value;
-					}
+					videoInterval = value;
 				}
 			}
 
-			public class DescribeLiveUpVideoAudioInfo_V_AStamp
+			[JsonProperty(PropertyName = "VideoStamps")]
+			public List<DescribeLiveUpVideoAudioInfo_VideoStampsItem> VideoStamps
 			{
-
-				private int? _value;
-
-				private long? time;
-
-				[JsonProperty(PropertyName = "_Value")]
-				public int? _Value
+				get
 				{
-					get
-					{
-						return _value;
-					}
-					set	
-					{
-						_value = value;
-					}
+					return videoStamps;
 				}
-
-				[JsonProperty(PropertyName = "Time")]
-				public long? Time
+				set	
 				{
-					get
-					{
-						return time;
-					}
-					set	
-					{
-						time = value;
-					}
-				}
-			}
-
-			public class DescribeLiveUpVideoAudioInfo_AvcHeadersItem
-			{
-
-				private int? _value;
-
-				private long? time;
-
-				[JsonProperty(PropertyName = "_Value")]
-				public int? _Value
-				{
-					get
-					{
-						return _value;
-					}
-					set	
-					{
-						_value = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "Time")]
-				public long? Time
-				{
-					get
-					{
-						return time;
-					}
-					set	
-					{
-						time = value;
-					}
+					videoStamps = value;
 				}
 			}
 
 			public class DescribeLiveUpVideoAudioInfo_AacHeadersItem
 			{
 
-				private int? _value;
-
 				private long? time;
 
-				[JsonProperty(PropertyName = "_Value")]
-				public int? _Value
-				{
-					get
-					{
-						return _value;
-					}
-					set	
-					{
-						_value = value;
-					}
-				}
+				private int? _value;
 
 				[JsonProperty(PropertyName = "Time")]
 				public long? Time
@@ -624,14 +407,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 						time = value;
 					}
 				}
-			}
-
-			public class DescribeLiveUpVideoAudioInfo_VideoBitRateItem
-			{
-
-				private int? _value;
-
-				private long? time;
 
 				[JsonProperty(PropertyName = "_Value")]
 				public int? _Value
@@ -643,19 +418,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						_value = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "Time")]
-				public long? Time
-				{
-					get
-					{
-						return time;
-					}
-					set	
-					{
-						time = value;
 					}
 				}
 			}
@@ -663,22 +425,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeLiveUpVideoAudioInfo_AudioBitRateItem
 			{
 
-				private int? _value;
-
 				private long? time;
 
-				[JsonProperty(PropertyName = "_Value")]
-				public int? _Value
-				{
-					get
-					{
-						return _value;
-					}
-					set	
-					{
-						_value = value;
-					}
-				}
+				private int? _value;
 
 				[JsonProperty(PropertyName = "Time")]
 				public long? Time
@@ -690,29 +439,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						time = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "_Value")]
+				public int? _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
 					}
 				}
 			}
 
-			public class DescribeLiveUpVideoAudioInfo_VideoIntervalItem
+			public class DescribeLiveUpVideoAudioInfo_AudioFramesItem
 			{
-
-				private int? _value;
 
 				private long? time;
 
-				[JsonProperty(PropertyName = "_Value")]
-				public int? _Value
-				{
-					get
-					{
-						return _value;
-					}
-					set	
-					{
-						_value = value;
-					}
-				}
+				private int? _value;
 
 				[JsonProperty(PropertyName = "Time")]
 				public long? Time
@@ -724,6 +473,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						time = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "_Value")]
+				public int? _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
 					}
 				}
 			}
@@ -731,9 +493,22 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeLiveUpVideoAudioInfo_AudioIntervalItem
 			{
 
+				private long? time;
+
 				private int? _value;
 
-				private long? time;
+				[JsonProperty(PropertyName = "Time")]
+				public long? Time
+				{
+					get
+					{
+						return time;
+					}
+					set	
+					{
+						time = value;
+					}
+				}
 
 				[JsonProperty(PropertyName = "_Value")]
 				public int? _Value
@@ -747,6 +522,14 @@ namespace Aliyun.Acs.live.Model.V20161101
 						_value = value;
 					}
 				}
+			}
+
+			public class DescribeLiveUpVideoAudioInfo_AudioStampsItem
+			{
+
+				private long? time;
+
+				private int? _value;
 
 				[JsonProperty(PropertyName = "Time")]
 				public long? Time
@@ -758,6 +541,53 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						time = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "_Value")]
+				public int? _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
+				}
+			}
+
+			public class DescribeLiveUpVideoAudioInfo_AvcHeadersItem
+			{
+
+				private long? time;
+
+				private int? _value;
+
+				[JsonProperty(PropertyName = "Time")]
+				public long? Time
+				{
+					get
+					{
+						return time;
+					}
+					set	
+					{
+						time = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "_Value")]
+				public int? _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
 					}
 				}
 			}
@@ -765,9 +595,22 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeLiveUpVideoAudioInfo_ErrorFlagsItem
 			{
 
+				private long? time;
+
 				private int? _value;
 
-				private long? time;
+				[JsonProperty(PropertyName = "Time")]
+				public long? Time
+				{
+					get
+					{
+						return time;
+					}
+					set	
+					{
+						time = value;
+					}
+				}
 
 				[JsonProperty(PropertyName = "_Value")]
 				public int? _Value
@@ -781,6 +624,14 @@ namespace Aliyun.Acs.live.Model.V20161101
 						_value = value;
 					}
 				}
+			}
+
+			public class DescribeLiveUpVideoAudioInfo_V_AStamp
+			{
+
+				private long? time;
+
+				private int? _value;
 
 				[JsonProperty(PropertyName = "Time")]
 				public long? Time
@@ -792,6 +643,155 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						time = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "_Value")]
+				public int? _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
+				}
+			}
+
+			public class DescribeLiveUpVideoAudioInfo_VideoBitRateItem
+			{
+
+				private long? time;
+
+				private int? _value;
+
+				[JsonProperty(PropertyName = "Time")]
+				public long? Time
+				{
+					get
+					{
+						return time;
+					}
+					set	
+					{
+						time = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "_Value")]
+				public int? _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
+				}
+			}
+
+			public class DescribeLiveUpVideoAudioInfo_VideoFramesItem
+			{
+
+				private long? time;
+
+				private int? _value;
+
+				[JsonProperty(PropertyName = "Time")]
+				public long? Time
+				{
+					get
+					{
+						return time;
+					}
+					set	
+					{
+						time = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "_Value")]
+				public int? _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
+				}
+			}
+
+			public class DescribeLiveUpVideoAudioInfo_VideoIntervalItem
+			{
+
+				private long? time;
+
+				private int? _value;
+
+				[JsonProperty(PropertyName = "Time")]
+				public long? Time
+				{
+					get
+					{
+						return time;
+					}
+					set	
+					{
+						time = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "_Value")]
+				public int? _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
+				}
+			}
+
+			public class DescribeLiveUpVideoAudioInfo_VideoStampsItem
+			{
+
+				private long? time;
+
+				private int? _value;
+
+				[JsonProperty(PropertyName = "Time")]
+				public long? Time
+				{
+					get
+					{
+						return time;
+					}
+					set	
+					{
+						time = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "_Value")]
+				public int? _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
 					}
 				}
 			}

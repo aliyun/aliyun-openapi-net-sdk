@@ -25,8 +25,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveStreamPreloadTasksResponse : AcsResponse
 	{
 
-		private int? totalPage;
-
 		private int? pageNum;
 
 		private int? pageSize;
@@ -35,20 +33,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private int? totalNum;
 
-		private List<DescribeLiveStreamPreloadTasks_PreloadTask> preloadTasks;
+		private int? totalPage;
 
-		[JsonProperty(PropertyName = "TotalPage")]
-		public int? TotalPage
-		{
-			get
-			{
-				return totalPage;
-			}
-			set	
-			{
-				totalPage = value;
-			}
-		}
+		private List<DescribeLiveStreamPreloadTasks_PreloadTask> preloadTasks;
 
 		[JsonProperty(PropertyName = "PageNum")]
 		public int? PageNum
@@ -102,6 +89,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "TotalPage")]
+		public int? TotalPage
+		{
+			get
+			{
+				return totalPage;
+			}
+			set	
+			{
+				totalPage = value;
+			}
+		}
+
 		[JsonProperty(PropertyName = "PreloadTasks")]
 		public List<DescribeLiveStreamPreloadTasks_PreloadTask> PreloadTasks
 		{
@@ -118,49 +118,49 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamPreloadTasks_PreloadTask
 		{
 
-			private string status;
+			private string area;
 
-			private string process;
+			private string createTime;
 
 			private string description;
 
-			private string createTime;
+			private string domainName;
+
+			private string playUrl;
 
 			private string preloadedEndTime;
 
 			private string preloadedStartTime;
 
-			private string playUrl;
+			private string process;
 
-			private string area;
+			private string status;
 
 			private string taskId;
 
-			private string domainName;
-
-			[JsonProperty(PropertyName = "Status")]
-			public string Status
+			[JsonProperty(PropertyName = "Area")]
+			public string Area
 			{
 				get
 				{
-					return status;
+					return area;
 				}
 				set	
 				{
-					status = value;
+					area = value;
 				}
 			}
 
-			[JsonProperty(PropertyName = "Process")]
-			public string Process
+			[JsonProperty(PropertyName = "CreateTime")]
+			public string CreateTime
 			{
 				get
 				{
-					return process;
+					return createTime;
 				}
 				set	
 				{
-					process = value;
+					createTime = value;
 				}
 			}
 
@@ -177,16 +177,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "CreateTime")]
-			public string CreateTime
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
 			{
 				get
 				{
-					return createTime;
+					return domainName;
 				}
 				set	
 				{
-					createTime = value;
+					domainName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PlayUrl")]
+			public string PlayUrl
+			{
+				get
+				{
+					return playUrl;
+				}
+				set	
+				{
+					playUrl = value;
 				}
 			}
 
@@ -216,29 +229,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "PlayUrl")]
-			public string PlayUrl
+			[JsonProperty(PropertyName = "Process")]
+			public string Process
 			{
 				get
 				{
-					return playUrl;
+					return process;
 				}
 				set	
 				{
-					playUrl = value;
+					process = value;
 				}
 			}
 
-			[JsonProperty(PropertyName = "Area")]
-			public string Area
+			[JsonProperty(PropertyName = "Status")]
+			public string Status
 			{
 				get
 				{
-					return area;
+					return status;
 				}
 				set	
 				{
-					area = value;
+					status = value;
 				}
 			}
 
@@ -252,19 +265,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					taskId = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "DomainName")]
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
 				}
 			}
 		}

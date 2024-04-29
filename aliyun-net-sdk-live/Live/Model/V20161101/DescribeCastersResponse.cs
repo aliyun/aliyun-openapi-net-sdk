@@ -25,24 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeCastersResponse : AcsResponse
 	{
 
-		private int? total;
-
 		private string requestId;
 
-		private List<DescribeCasters_Caster> casterList;
+		private int? total;
 
-		[JsonProperty(PropertyName = "Total")]
-		public int? Total
-		{
-			get
-			{
-				return total;
-			}
-			set	
-			{
-				total = value;
-			}
-		}
+		private List<DescribeCasters_Caster> casterList;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -54,6 +41,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Total")]
+		public int? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
 			}
 		}
 
@@ -73,83 +73,44 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeCasters_Caster
 		{
 
-			private int? status;
-
-			private string purchaseTime;
-
-			private string expireTime;
-
-			private string createTime;
+			private string casterId;
 
 			private string casterName;
 
-			private string chargeType;
-
 			private string casterTemplate;
-
-			private int? roomId;
-
-			private string casterId;
 
 			private int? channelEnable;
 
-			private string lastModified;
+			private string chargeType;
 
-			private string startTime;
-
-			private int? normType;
+			private string createTime;
 
 			private string duration;
 
-			[JsonProperty(PropertyName = "Status")]
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+			private string expireTime;
 
-			[JsonProperty(PropertyName = "PurchaseTime")]
-			public string PurchaseTime
-			{
-				get
-				{
-					return purchaseTime;
-				}
-				set	
-				{
-					purchaseTime = value;
-				}
-			}
+			private string lastModified;
 
-			[JsonProperty(PropertyName = "ExpireTime")]
-			public string ExpireTime
-			{
-				get
-				{
-					return expireTime;
-				}
-				set	
-				{
-					expireTime = value;
-				}
-			}
+			private int? normType;
 
-			[JsonProperty(PropertyName = "CreateTime")]
-			public string CreateTime
+			private string purchaseTime;
+
+			private int? roomId;
+
+			private string startTime;
+
+			private int? status;
+
+			[JsonProperty(PropertyName = "CasterId")]
+			public string CasterId
 			{
 				get
 				{
-					return createTime;
+					return casterId;
 				}
 				set	
 				{
-					createTime = value;
+					casterId = value;
 				}
 			}
 
@@ -166,19 +127,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "ChargeType")]
-			public string ChargeType
-			{
-				get
-				{
-					return chargeType;
-				}
-				set	
-				{
-					chargeType = value;
-				}
-			}
-
 			[JsonProperty(PropertyName = "CasterTemplate")]
 			public string CasterTemplate
 			{
@@ -189,32 +137,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					casterTemplate = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "RoomId")]
-			public int? RoomId
-			{
-				get
-				{
-					return roomId;
-				}
-				set	
-				{
-					roomId = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "CasterId")]
-			public string CasterId
-			{
-				get
-				{
-					return casterId;
-				}
-				set	
-				{
-					casterId = value;
 				}
 			}
 
@@ -231,6 +153,58 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "ChargeType")]
+			public string ChargeType
+			{
+				get
+				{
+					return chargeType;
+				}
+				set	
+				{
+					chargeType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CreateTime")]
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Duration")]
+			public string Duration
+			{
+				get
+				{
+					return duration;
+				}
+				set	
+				{
+					duration = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ExpireTime")]
+			public string ExpireTime
+			{
+				get
+				{
+					return expireTime;
+				}
+				set	
+				{
+					expireTime = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "LastModified")]
 			public string LastModified
 			{
@@ -241,19 +215,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					lastModified = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "StartTime")]
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
 				}
 			}
 
@@ -270,16 +231,55 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "Duration")]
-			public string Duration
+			[JsonProperty(PropertyName = "PurchaseTime")]
+			public string PurchaseTime
 			{
 				get
 				{
-					return duration;
+					return purchaseTime;
 				}
 				set	
 				{
-					duration = value;
+					purchaseTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RoomId")]
+			public int? RoomId
+			{
+				get
+				{
+					return roomId;
+				}
+				set	
+				{
+					roomId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StartTime")]
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Status")]
+			public int? Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 		}

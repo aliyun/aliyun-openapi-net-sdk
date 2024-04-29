@@ -25,19 +25,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveStreamTranscodeMetricDataResponse : AcsResponse
 	{
 
+		private string domainName;
+
 		private string endTime;
-
-		private string startTime;
-
-		private string requestId;
 
 		private string nextPageToken;
 
 		private int? pageSize;
 
-		private string domainName;
+		private string requestId;
+
+		private string startTime;
 
 		private List<DescribeLiveStreamTranscodeMetricData_StreamData> streamDetailData;
+
+		[JsonProperty(PropertyName = "DomainName")]
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+			}
+		}
 
 		[JsonProperty(PropertyName = "EndTime")]
 		public string EndTime
@@ -49,32 +62,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				endTime = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "StartTime")]
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "RequestId")]
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
 			}
 		}
 
@@ -104,16 +91,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "DomainName")]
-		public string DomainName
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return domainName;
+				return requestId;
 			}
 			set	
 			{
-				domainName = value;
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
 			}
 		}
 
@@ -135,19 +135,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string appName;
 
-			private string streamName;
-
-			private string region;
-
 			private long? duration;
 
 			private string fps;
 
+			private string region;
+
+			private string resolution;
+
+			private string streamName;
+
 			private string timeStamp;
 
 			private string transcodeType;
-
-			private string resolution;
 
 			[JsonProperty(PropertyName = "AppName")]
 			public string AppName
@@ -159,32 +159,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					appName = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "StreamName")]
-			public string StreamName
-			{
-				get
-				{
-					return streamName;
-				}
-				set	
-				{
-					streamName = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Region")]
-			public string Region
-			{
-				get
-				{
-					return region;
-				}
-				set	
-				{
-					region = value;
 				}
 			}
 
@@ -214,6 +188,45 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Region")]
+			public string Region
+			{
+				get
+				{
+					return region;
+				}
+				set	
+				{
+					region = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Resolution")]
+			public string Resolution
+			{
+				get
+				{
+					return resolution;
+				}
+				set	
+				{
+					resolution = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StreamName")]
+			public string StreamName
+			{
+				get
+				{
+					return streamName;
+				}
+				set	
+				{
+					streamName = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "TimeStamp")]
 			public string TimeStamp
 			{
@@ -237,19 +250,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					transcodeType = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Resolution")]
-			public string Resolution
-			{
-				get
-				{
-					return resolution;
-				}
-				set	
-				{
-					resolution = value;
 				}
 			}
 		}

@@ -27,9 +27,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string endTime;
 
-		private string startTime;
-
 		private string requestId;
+
+		private string startTime;
 
 		private List<DescribeLivePushProxyUsageData_PushProxyDataItem> pushProxyData;
 
@@ -46,19 +46,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "StartTime")]
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
@@ -69,6 +56,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
 			}
 		}
 
@@ -88,39 +88,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLivePushProxyUsageData_PushProxyDataItem
 		{
 
-			private string timeStamp;
-
-			private long? streamCount;
-
 			private string domainName;
 
 			private string region;
 
-			[JsonProperty(PropertyName = "TimeStamp")]
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+			private long? streamCount;
 
-			[JsonProperty(PropertyName = "StreamCount")]
-			public long? StreamCount
-			{
-				get
-				{
-					return streamCount;
-				}
-				set	
-				{
-					streamCount = value;
-				}
-			}
+			private string timeStamp;
 
 			[JsonProperty(PropertyName = "DomainName")]
 			public string DomainName
@@ -145,6 +119,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					region = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StreamCount")]
+			public long? StreamCount
+			{
+				get
+				{
+					return streamCount;
+				}
+				set	
+				{
+					streamCount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TimeStamp")]
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
 				}
 			}
 		}

@@ -36,15 +36,15 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeLiveDomainByCertificateResponse.DescribeLiveDomainByCertificate_CertInfo> describeLiveDomainByCertificateResponse_certInfos = new List<DescribeLiveDomainByCertificateResponse.DescribeLiveDomainByCertificate_CertInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveDomainByCertificate.CertInfos.Length"); i++) {
 				DescribeLiveDomainByCertificateResponse.DescribeLiveDomainByCertificate_CertInfo certInfo = new DescribeLiveDomainByCertificateResponse.DescribeLiveDomainByCertificate_CertInfo();
-				certInfo.CertExpireTime = _ctx.StringValue("DescribeLiveDomainByCertificate.CertInfos["+ i +"].CertExpireTime");
-				certInfo.CertStartTime = _ctx.StringValue("DescribeLiveDomainByCertificate.CertInfos["+ i +"].CertStartTime");
-				certInfo.CertType = _ctx.StringValue("DescribeLiveDomainByCertificate.CertInfos["+ i +"].CertType");
-				certInfo.CertSubjectCommonName = _ctx.StringValue("DescribeLiveDomainByCertificate.CertInfos["+ i +"].CertSubjectCommonName");
 				certInfo.CertCaIsLegacy = _ctx.StringValue("DescribeLiveDomainByCertificate.CertInfos["+ i +"].CertCaIsLegacy");
-				certInfo.DomainNames = _ctx.StringValue("DescribeLiveDomainByCertificate.CertInfos["+ i +"].DomainNames");
+				certInfo.CertExpireTime = _ctx.StringValue("DescribeLiveDomainByCertificate.CertInfos["+ i +"].CertExpireTime");
 				certInfo.CertExpired = _ctx.StringValue("DescribeLiveDomainByCertificate.CertInfos["+ i +"].CertExpired");
-				certInfo.Issuer = _ctx.StringValue("DescribeLiveDomainByCertificate.CertInfos["+ i +"].Issuer");
+				certInfo.CertStartTime = _ctx.StringValue("DescribeLiveDomainByCertificate.CertInfos["+ i +"].CertStartTime");
+				certInfo.CertSubjectCommonName = _ctx.StringValue("DescribeLiveDomainByCertificate.CertInfos["+ i +"].CertSubjectCommonName");
+				certInfo.CertType = _ctx.StringValue("DescribeLiveDomainByCertificate.CertInfos["+ i +"].CertType");
 				certInfo.DomainList = _ctx.StringValue("DescribeLiveDomainByCertificate.CertInfos["+ i +"].DomainList");
+				certInfo.DomainNames = _ctx.StringValue("DescribeLiveDomainByCertificate.CertInfos["+ i +"].DomainNames");
+				certInfo.Issuer = _ctx.StringValue("DescribeLiveDomainByCertificate.CertInfos["+ i +"].Issuer");
 
 				describeLiveDomainByCertificateResponse_certInfos.Add(certInfo);
 			}

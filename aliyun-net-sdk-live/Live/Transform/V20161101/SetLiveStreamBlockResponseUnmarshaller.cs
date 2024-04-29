@@ -31,9 +31,9 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			SetLiveStreamBlockResponse setLiveStreamBlockResponse = new SetLiveStreamBlockResponse();
 
 			setLiveStreamBlockResponse.HttpResponse = _ctx.HttpResponse;
-			setLiveStreamBlockResponse.Status = _ctx.StringValue("SetLiveStreamBlock.Status");
-			setLiveStreamBlockResponse.RequestId = _ctx.StringValue("SetLiveStreamBlock.RequestId");
 			setLiveStreamBlockResponse.Description = _ctx.StringValue("SetLiveStreamBlock.Description");
+			setLiveStreamBlockResponse.RequestId = _ctx.StringValue("SetLiveStreamBlock.RequestId");
+			setLiveStreamBlockResponse.Status = _ctx.StringValue("SetLiveStreamBlock.Status");
         
 			return setLiveStreamBlockResponse;
         }

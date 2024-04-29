@@ -136,26 +136,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class StartPlaylist_Stream
 			{
 
-				private string quality;
-
 				private string pullFlvUrl;
 
 				private string pullM3U8Url;
 
 				private string pullRtmpUrl;
 
-				[JsonProperty(PropertyName = "Quality")]
-				public string Quality
-				{
-					get
-					{
-						return quality;
-					}
-					set	
-					{
-						quality = value;
-					}
-				}
+				private string quality;
 
 				[JsonProperty(PropertyName = "PullFlvUrl")]
 				public string PullFlvUrl
@@ -193,6 +180,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						pullRtmpUrl = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Quality")]
+				public string Quality
+				{
+					get
+					{
+						return quality;
+					}
+					set	
+					{
+						quality = value;
 					}
 				}
 			}

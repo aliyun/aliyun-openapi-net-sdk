@@ -25,19 +25,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveStreamPushMetricDetailDataResponse : AcsResponse
 	{
 
+		private string domainName;
+
 		private string endTime;
-
-		private string startTime;
-
-		private string requestId;
 
 		private string nextPageToken;
 
 		private int? pageSize;
 
-		private string domainName;
+		private string requestId;
+
+		private string startTime;
 
 		private List<DescribeLiveStreamPushMetricDetailData_StreamData> streamDetailData;
+
+		[JsonProperty(PropertyName = "DomainName")]
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+			}
+		}
 
 		[JsonProperty(PropertyName = "EndTime")]
 		public string EndTime
@@ -49,32 +62,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				endTime = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "StartTime")]
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "RequestId")]
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
 			}
 		}
 
@@ -104,16 +91,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "DomainName")]
-		public string DomainName
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return domainName;
+				return requestId;
 			}
 			set	
 			{
-				domainName = value;
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
 			}
 		}
 
@@ -135,13 +135,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string appName;
 
-			private string timeStamp;
-
 			private float? reqBps;
 
 			private long? reqTraffic;
 
 			private string streamName;
+
+			private string timeStamp;
 
 			[JsonProperty(PropertyName = "AppName")]
 			public string AppName
@@ -153,19 +153,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					appName = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "TimeStamp")]
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
 				}
 			}
 
@@ -205,6 +192,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					streamName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TimeStamp")]
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
 				}
 			}
 		}

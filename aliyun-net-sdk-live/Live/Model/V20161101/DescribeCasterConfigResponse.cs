@@ -25,45 +25,123 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeCasterConfigResponse : AcsResponse
 	{
 
+		private string autoSwitchUrgentConfig;
+
+		private string autoSwitchUrgentOn;
+
+		private string callbackUrl;
+
+		private string casterId;
+
+		private string casterName;
+
+		private int? channelEnable;
+
 		private float? delay;
 
-		private string urgentLiveStreamUrl;
+		private string domainName;
 
-		private string urgentMaterialId;
+		private int? programEffect;
+
+		private string programName;
+
+		private string requestId;
+
+		private string sideOutputUrl;
+
+		private string sideOutputUrlList;
 
 		private string urgentImageId;
 
 		private string urgentImageUrl;
 
-		private string callbackUrl;
+		private string urgentLiveStreamUrl;
 
-		private string programName;
-
-		private string casterName;
-
-		private string casterId;
-
-		private int? programEffect;
-
-		private int? channelEnable;
-
-		private string domainName;
-
-		private string requestId;
-
-		private string sideOutputUrlList;
-
-		private string sideOutputUrl;
-
-		private string autoSwitchUrgentOn;
-
-		private string autoSwitchUrgentConfig;
+		private string urgentMaterialId;
 
 		private List<DescribeCasterConfig_SyncGroup> syncGroupsConfig;
 
+		private DescribeCasterConfig_RecordConfig recordConfig;
+
 		private DescribeCasterConfig_TranscodeConfig transcodeConfig;
 
-		private DescribeCasterConfig_RecordConfig recordConfig;
+		[JsonProperty(PropertyName = "AutoSwitchUrgentConfig")]
+		public string AutoSwitchUrgentConfig
+		{
+			get
+			{
+				return autoSwitchUrgentConfig;
+			}
+			set	
+			{
+				autoSwitchUrgentConfig = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "AutoSwitchUrgentOn")]
+		public string AutoSwitchUrgentOn
+		{
+			get
+			{
+				return autoSwitchUrgentOn;
+			}
+			set	
+			{
+				autoSwitchUrgentOn = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "CallbackUrl")]
+		public string CallbackUrl
+		{
+			get
+			{
+				return callbackUrl;
+			}
+			set	
+			{
+				callbackUrl = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "CasterId")]
+		public string CasterId
+		{
+			get
+			{
+				return casterId;
+			}
+			set	
+			{
+				casterId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "CasterName")]
+		public string CasterName
+		{
+			get
+			{
+				return casterName;
+			}
+			set	
+			{
+				casterName = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ChannelEnable")]
+		public int? ChannelEnable
+		{
+			get
+			{
+				return channelEnable;
+			}
+			set	
+			{
+				channelEnable = value;
+			}
+		}
 
 		[JsonProperty(PropertyName = "Delay")]
 		public float? Delay
@@ -78,29 +156,81 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "UrgentLiveStreamUrl")]
-		public string UrgentLiveStreamUrl
+		[JsonProperty(PropertyName = "DomainName")]
+		public string DomainName
 		{
 			get
 			{
-				return urgentLiveStreamUrl;
+				return domainName;
 			}
 			set	
 			{
-				urgentLiveStreamUrl = value;
+				domainName = value;
 			}
 		}
 
-		[JsonProperty(PropertyName = "UrgentMaterialId")]
-		public string UrgentMaterialId
+		[JsonProperty(PropertyName = "ProgramEffect")]
+		public int? ProgramEffect
 		{
 			get
 			{
-				return urgentMaterialId;
+				return programEffect;
 			}
 			set	
 			{
-				urgentMaterialId = value;
+				programEffect = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ProgramName")]
+		public string ProgramName
+		{
+			get
+			{
+				return programName;
+			}
+			set	
+			{
+				programName = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "SideOutputUrl")]
+		public string SideOutputUrl
+		{
+			get
+			{
+				return sideOutputUrl;
+			}
+			set	
+			{
+				sideOutputUrl = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "SideOutputUrlList")]
+		public string SideOutputUrlList
+		{
+			get
+			{
+				return sideOutputUrlList;
+			}
+			set	
+			{
+				sideOutputUrlList = value;
 			}
 		}
 
@@ -130,159 +260,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "CallbackUrl")]
-		public string CallbackUrl
+		[JsonProperty(PropertyName = "UrgentLiveStreamUrl")]
+		public string UrgentLiveStreamUrl
 		{
 			get
 			{
-				return callbackUrl;
+				return urgentLiveStreamUrl;
 			}
 			set	
 			{
-				callbackUrl = value;
+				urgentLiveStreamUrl = value;
 			}
 		}
 
-		[JsonProperty(PropertyName = "ProgramName")]
-		public string ProgramName
+		[JsonProperty(PropertyName = "UrgentMaterialId")]
+		public string UrgentMaterialId
 		{
 			get
 			{
-				return programName;
+				return urgentMaterialId;
 			}
 			set	
 			{
-				programName = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "CasterName")]
-		public string CasterName
-		{
-			get
-			{
-				return casterName;
-			}
-			set	
-			{
-				casterName = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "CasterId")]
-		public string CasterId
-		{
-			get
-			{
-				return casterId;
-			}
-			set	
-			{
-				casterId = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "ProgramEffect")]
-		public int? ProgramEffect
-		{
-			get
-			{
-				return programEffect;
-			}
-			set	
-			{
-				programEffect = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "ChannelEnable")]
-		public int? ChannelEnable
-		{
-			get
-			{
-				return channelEnable;
-			}
-			set	
-			{
-				channelEnable = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "DomainName")]
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "RequestId")]
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "SideOutputUrlList")]
-		public string SideOutputUrlList
-		{
-			get
-			{
-				return sideOutputUrlList;
-			}
-			set	
-			{
-				sideOutputUrlList = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "SideOutputUrl")]
-		public string SideOutputUrl
-		{
-			get
-			{
-				return sideOutputUrl;
-			}
-			set	
-			{
-				sideOutputUrl = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "AutoSwitchUrgentOn")]
-		public string AutoSwitchUrgentOn
-		{
-			get
-			{
-				return autoSwitchUrgentOn;
-			}
-			set	
-			{
-				autoSwitchUrgentOn = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "AutoSwitchUrgentConfig")]
-		public string AutoSwitchUrgentConfig
-		{
-			get
-			{
-				return autoSwitchUrgentConfig;
-			}
-			set	
-			{
-				autoSwitchUrgentConfig = value;
+				urgentMaterialId = value;
 			}
 		}
 
@@ -299,19 +299,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "TranscodeConfig")]
-		public DescribeCasterConfig_TranscodeConfig TranscodeConfig
-		{
-			get
-			{
-				return transcodeConfig;
-			}
-			set	
-			{
-				transcodeConfig = value;
-			}
-		}
-
 		[JsonProperty(PropertyName = "RecordConfig")]
 		public DescribeCasterConfig_RecordConfig RecordConfig
 		{
@@ -322,6 +309,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				recordConfig = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TranscodeConfig")]
+		public DescribeCasterConfig_TranscodeConfig TranscodeConfig
+		{
+			get
+			{
+				return transcodeConfig;
+			}
+			set	
+			{
+				transcodeConfig = value;
 			}
 		}
 
@@ -374,6 +374,134 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public class DescribeCasterConfig_RecordConfig
+		{
+
+			private int? onDemand;
+
+			private string ossBucket;
+
+			private string ossEndpoint;
+
+			private List<DescribeCasterConfig_RecordFormatItem> recordFormat;
+
+			[JsonProperty(PropertyName = "OnDemand")]
+			public int? OnDemand
+			{
+				get
+				{
+					return onDemand;
+				}
+				set	
+				{
+					onDemand = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OssBucket")]
+			public string OssBucket
+			{
+				get
+				{
+					return ossBucket;
+				}
+				set	
+				{
+					ossBucket = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OssEndpoint")]
+			public string OssEndpoint
+			{
+				get
+				{
+					return ossEndpoint;
+				}
+				set	
+				{
+					ossEndpoint = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RecordFormat")]
+			public List<DescribeCasterConfig_RecordFormatItem> RecordFormat
+			{
+				get
+				{
+					return recordFormat;
+				}
+				set	
+				{
+					recordFormat = value;
+				}
+			}
+
+			public class DescribeCasterConfig_RecordFormatItem
+			{
+
+				private int? cycleDuration;
+
+				private string format;
+
+				private string ossObjectPrefix;
+
+				private string sliceOssObjectPrefix;
+
+				[JsonProperty(PropertyName = "CycleDuration")]
+				public int? CycleDuration
+				{
+					get
+					{
+						return cycleDuration;
+					}
+					set	
+					{
+						cycleDuration = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Format")]
+				public string Format
+				{
+					get
+					{
+						return format;
+					}
+					set	
+					{
+						format = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "OssObjectPrefix")]
+				public string OssObjectPrefix
+				{
+					get
+					{
+						return ossObjectPrefix;
+					}
+					set	
+					{
+						ossObjectPrefix = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "SliceOssObjectPrefix")]
+				public string SliceOssObjectPrefix
+				{
+					get
+					{
+						return sliceOssObjectPrefix;
+					}
+					set	
+					{
+						sliceOssObjectPrefix = value;
+					}
+				}
+			}
+		}
+
 		public class DescribeCasterConfig_TranscodeConfig
 		{
 
@@ -404,134 +532,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					liveTemplateIds = value;
-				}
-			}
-		}
-
-		public class DescribeCasterConfig_RecordConfig
-		{
-
-			private string ossEndpoint;
-
-			private string ossBucket;
-
-			private int? onDemand;
-
-			private List<DescribeCasterConfig_RecordFormatItem> recordFormat;
-
-			[JsonProperty(PropertyName = "OssEndpoint")]
-			public string OssEndpoint
-			{
-				get
-				{
-					return ossEndpoint;
-				}
-				set	
-				{
-					ossEndpoint = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "OssBucket")]
-			public string OssBucket
-			{
-				get
-				{
-					return ossBucket;
-				}
-				set	
-				{
-					ossBucket = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "OnDemand")]
-			public int? OnDemand
-			{
-				get
-				{
-					return onDemand;
-				}
-				set	
-				{
-					onDemand = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "RecordFormat")]
-			public List<DescribeCasterConfig_RecordFormatItem> RecordFormat
-			{
-				get
-				{
-					return recordFormat;
-				}
-				set	
-				{
-					recordFormat = value;
-				}
-			}
-
-			public class DescribeCasterConfig_RecordFormatItem
-			{
-
-				private int? cycleDuration;
-
-				private string sliceOssObjectPrefix;
-
-				private string ossObjectPrefix;
-
-				private string format;
-
-				[JsonProperty(PropertyName = "CycleDuration")]
-				public int? CycleDuration
-				{
-					get
-					{
-						return cycleDuration;
-					}
-					set	
-					{
-						cycleDuration = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "SliceOssObjectPrefix")]
-				public string SliceOssObjectPrefix
-				{
-					get
-					{
-						return sliceOssObjectPrefix;
-					}
-					set	
-					{
-						sliceOssObjectPrefix = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "OssObjectPrefix")]
-				public string OssObjectPrefix
-				{
-					get
-					{
-						return ossObjectPrefix;
-					}
-					set	
-					{
-						ossObjectPrefix = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "Format")]
-				public string Format
-				{
-					get
-					{
-						return format;
-					}
-					set	
-					{
-						format = value;
-					}
 				}
 			}
 		}

@@ -31,21 +31,21 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeMixStreamListResponse describeMixStreamListResponse = new DescribeMixStreamListResponse();
 
 			describeMixStreamListResponse.HttpResponse = _ctx.HttpResponse;
-			describeMixStreamListResponse.Total = _ctx.IntegerValue("DescribeMixStreamList.Total");
 			describeMixStreamListResponse.RequestId = _ctx.StringValue("DescribeMixStreamList.RequestId");
+			describeMixStreamListResponse.Total = _ctx.IntegerValue("DescribeMixStreamList.Total");
 
 			List<DescribeMixStreamListResponse.DescribeMixStreamList_MixStreamInfo> describeMixStreamListResponse_mixStreamList = new List<DescribeMixStreamListResponse.DescribeMixStreamList_MixStreamInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeMixStreamList.MixStreamList.Length"); i++) {
 				DescribeMixStreamListResponse.DescribeMixStreamList_MixStreamInfo mixStreamInfo = new DescribeMixStreamListResponse.DescribeMixStreamList_MixStreamInfo();
-				mixStreamInfo.MixStreamTemplate = _ctx.StringValue("DescribeMixStreamList.MixStreamList["+ i +"].MixStreamTemplate");
 				mixStreamInfo.AppName = _ctx.StringValue("DescribeMixStreamList.MixStreamList["+ i +"].AppName");
-				mixStreamInfo.LayoutId = _ctx.StringValue("DescribeMixStreamList.MixStreamList["+ i +"].LayoutId");
-				mixStreamInfo.StreamName = _ctx.StringValue("DescribeMixStreamList.MixStreamList["+ i +"].StreamName");
+				mixStreamInfo.DomainName = _ctx.StringValue("DescribeMixStreamList.MixStreamList["+ i +"].DomainName");
 				mixStreamInfo.GmtCreate = _ctx.StringValue("DescribeMixStreamList.MixStreamList["+ i +"].GmtCreate");
-				mixStreamInfo.MixstreamId = _ctx.StringValue("DescribeMixStreamList.MixStreamList["+ i +"].MixstreamId");
 				mixStreamInfo.GmtModified = _ctx.StringValue("DescribeMixStreamList.MixStreamList["+ i +"].GmtModified");
 				mixStreamInfo.InputStreamNumber = _ctx.IntegerValue("DescribeMixStreamList.MixStreamList["+ i +"].InputStreamNumber");
-				mixStreamInfo.DomainName = _ctx.StringValue("DescribeMixStreamList.MixStreamList["+ i +"].DomainName");
+				mixStreamInfo.LayoutId = _ctx.StringValue("DescribeMixStreamList.MixStreamList["+ i +"].LayoutId");
+				mixStreamInfo.MixStreamTemplate = _ctx.StringValue("DescribeMixStreamList.MixStreamList["+ i +"].MixStreamTemplate");
+				mixStreamInfo.MixstreamId = _ctx.StringValue("DescribeMixStreamList.MixStreamList["+ i +"].MixstreamId");
+				mixStreamInfo.StreamName = _ctx.StringValue("DescribeMixStreamList.MixStreamList["+ i +"].StreamName");
 
 				describeMixStreamListResponse_mixStreamList.Add(mixStreamInfo);
 			}

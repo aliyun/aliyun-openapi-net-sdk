@@ -31,24 +31,24 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveStreamTranscodeMetricDataResponse describeLiveStreamTranscodeMetricDataResponse = new DescribeLiveStreamTranscodeMetricDataResponse();
 
 			describeLiveStreamTranscodeMetricDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveStreamTranscodeMetricDataResponse.DomainName = _ctx.StringValue("DescribeLiveStreamTranscodeMetricData.DomainName");
 			describeLiveStreamTranscodeMetricDataResponse.EndTime = _ctx.StringValue("DescribeLiveStreamTranscodeMetricData.EndTime");
-			describeLiveStreamTranscodeMetricDataResponse.StartTime = _ctx.StringValue("DescribeLiveStreamTranscodeMetricData.StartTime");
-			describeLiveStreamTranscodeMetricDataResponse.RequestId = _ctx.StringValue("DescribeLiveStreamTranscodeMetricData.RequestId");
 			describeLiveStreamTranscodeMetricDataResponse.NextPageToken = _ctx.StringValue("DescribeLiveStreamTranscodeMetricData.NextPageToken");
 			describeLiveStreamTranscodeMetricDataResponse.PageSize = _ctx.IntegerValue("DescribeLiveStreamTranscodeMetricData.PageSize");
-			describeLiveStreamTranscodeMetricDataResponse.DomainName = _ctx.StringValue("DescribeLiveStreamTranscodeMetricData.DomainName");
+			describeLiveStreamTranscodeMetricDataResponse.RequestId = _ctx.StringValue("DescribeLiveStreamTranscodeMetricData.RequestId");
+			describeLiveStreamTranscodeMetricDataResponse.StartTime = _ctx.StringValue("DescribeLiveStreamTranscodeMetricData.StartTime");
 
 			List<DescribeLiveStreamTranscodeMetricDataResponse.DescribeLiveStreamTranscodeMetricData_StreamData> describeLiveStreamTranscodeMetricDataResponse_streamDetailData = new List<DescribeLiveStreamTranscodeMetricDataResponse.DescribeLiveStreamTranscodeMetricData_StreamData>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveStreamTranscodeMetricData.StreamDetailData.Length"); i++) {
 				DescribeLiveStreamTranscodeMetricDataResponse.DescribeLiveStreamTranscodeMetricData_StreamData streamData = new DescribeLiveStreamTranscodeMetricDataResponse.DescribeLiveStreamTranscodeMetricData_StreamData();
 				streamData.AppName = _ctx.StringValue("DescribeLiveStreamTranscodeMetricData.StreamDetailData["+ i +"].AppName");
-				streamData.StreamName = _ctx.StringValue("DescribeLiveStreamTranscodeMetricData.StreamDetailData["+ i +"].StreamName");
-				streamData.Region = _ctx.StringValue("DescribeLiveStreamTranscodeMetricData.StreamDetailData["+ i +"].Region");
 				streamData.Duration = _ctx.LongValue("DescribeLiveStreamTranscodeMetricData.StreamDetailData["+ i +"].Duration");
 				streamData.Fps = _ctx.StringValue("DescribeLiveStreamTranscodeMetricData.StreamDetailData["+ i +"].Fps");
+				streamData.Region = _ctx.StringValue("DescribeLiveStreamTranscodeMetricData.StreamDetailData["+ i +"].Region");
+				streamData.Resolution = _ctx.StringValue("DescribeLiveStreamTranscodeMetricData.StreamDetailData["+ i +"].Resolution");
+				streamData.StreamName = _ctx.StringValue("DescribeLiveStreamTranscodeMetricData.StreamDetailData["+ i +"].StreamName");
 				streamData.TimeStamp = _ctx.StringValue("DescribeLiveStreamTranscodeMetricData.StreamDetailData["+ i +"].TimeStamp");
 				streamData.TranscodeType = _ctx.StringValue("DescribeLiveStreamTranscodeMetricData.StreamDetailData["+ i +"].TranscodeType");
-				streamData.Resolution = _ctx.StringValue("DescribeLiveStreamTranscodeMetricData.StreamDetailData["+ i +"].Resolution");
 
 				describeLiveStreamTranscodeMetricDataResponse_streamDetailData.Add(streamData);
 			}

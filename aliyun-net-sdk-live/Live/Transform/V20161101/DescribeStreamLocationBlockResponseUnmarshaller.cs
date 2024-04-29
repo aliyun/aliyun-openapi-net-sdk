@@ -31,23 +31,23 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeStreamLocationBlockResponse describeStreamLocationBlockResponse = new DescribeStreamLocationBlockResponse();
 
 			describeStreamLocationBlockResponse.HttpResponse = _ctx.HttpResponse;
-			describeStreamLocationBlockResponse.TotalPage = _ctx.IntegerValue("DescribeStreamLocationBlock.TotalPage");
+			describeStreamLocationBlockResponse.Count = _ctx.IntegerValue("DescribeStreamLocationBlock.Count");
 			describeStreamLocationBlockResponse.PageNum = _ctx.IntegerValue("DescribeStreamLocationBlock.PageNum");
 			describeStreamLocationBlockResponse.PageSize = _ctx.IntegerValue("DescribeStreamLocationBlock.PageSize");
 			describeStreamLocationBlockResponse.RequestId = _ctx.StringValue("DescribeStreamLocationBlock.RequestId");
-			describeStreamLocationBlockResponse.Count = _ctx.IntegerValue("DescribeStreamLocationBlock.Count");
+			describeStreamLocationBlockResponse.TotalPage = _ctx.IntegerValue("DescribeStreamLocationBlock.TotalPage");
 
 			List<DescribeStreamLocationBlockResponse.DescribeStreamLocationBlock_StreamBlock> describeStreamLocationBlockResponse_streamBlockList = new List<DescribeStreamLocationBlockResponse.DescribeStreamLocationBlock_StreamBlock>();
 			for (int i = 0; i < _ctx.Length("DescribeStreamLocationBlock.StreamBlockList.Length"); i++) {
 				DescribeStreamLocationBlockResponse.DescribeStreamLocationBlock_StreamBlock streamBlock = new DescribeStreamLocationBlockResponse.DescribeStreamLocationBlock_StreamBlock();
-				streamBlock.Status = _ctx.IntegerValue("DescribeStreamLocationBlock.StreamBlockList["+ i +"].Status");
-				streamBlock.BlockType = _ctx.StringValue("DescribeStreamLocationBlock.StreamBlockList["+ i +"].BlockType");
 				streamBlock.AppName = _ctx.StringValue("DescribeStreamLocationBlock.StreamBlockList["+ i +"].AppName");
-				streamBlock.UpdateTime = _ctx.StringValue("DescribeStreamLocationBlock.StreamBlockList["+ i +"].UpdateTime");
-				streamBlock.StreamName = _ctx.StringValue("DescribeStreamLocationBlock.StreamBlockList["+ i +"].StreamName");
-				streamBlock.ReleaseTime = _ctx.StringValue("DescribeStreamLocationBlock.StreamBlockList["+ i +"].ReleaseTime");
-				streamBlock.LocationList = _ctx.StringValue("DescribeStreamLocationBlock.StreamBlockList["+ i +"].LocationList");
+				streamBlock.BlockType = _ctx.StringValue("DescribeStreamLocationBlock.StreamBlockList["+ i +"].BlockType");
 				streamBlock.DomainName = _ctx.StringValue("DescribeStreamLocationBlock.StreamBlockList["+ i +"].DomainName");
+				streamBlock.LocationList = _ctx.StringValue("DescribeStreamLocationBlock.StreamBlockList["+ i +"].LocationList");
+				streamBlock.ReleaseTime = _ctx.StringValue("DescribeStreamLocationBlock.StreamBlockList["+ i +"].ReleaseTime");
+				streamBlock.Status = _ctx.IntegerValue("DescribeStreamLocationBlock.StreamBlockList["+ i +"].Status");
+				streamBlock.StreamName = _ctx.StringValue("DescribeStreamLocationBlock.StreamBlockList["+ i +"].StreamName");
+				streamBlock.UpdateTime = _ctx.StringValue("DescribeStreamLocationBlock.StreamBlockList["+ i +"].UpdateTime");
 
 				describeStreamLocationBlockResponse_streamBlockList.Add(streamBlock);
 			}

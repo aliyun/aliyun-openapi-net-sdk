@@ -58,15 +58,28 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveGrtnDuration_StreamData
 		{
 
-			private long? duration;
+			private string appId;
 
-			private string timeStamp;
+			private long? duration;
 
 			private string mediaProfile;
 
 			private string mediaType;
 
-			private string appId;
+			private string timeStamp;
+
+			[JsonProperty(PropertyName = "AppId")]
+			public string AppId
+			{
+				get
+				{
+					return appId;
+				}
+				set	
+				{
+					appId = value;
+				}
+			}
 
 			[JsonProperty(PropertyName = "Duration")]
 			public long? Duration
@@ -78,19 +91,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					duration = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "TimeStamp")]
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
 				}
 			}
 
@@ -120,16 +120,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "AppId")]
-			public string AppId
+			[JsonProperty(PropertyName = "TimeStamp")]
+			public string TimeStamp
 			{
 				get
 				{
-					return appId;
+					return timeStamp;
 				}
 				set	
 				{
-					appId = value;
+					timeStamp = value;
 				}
 			}
 		}

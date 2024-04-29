@@ -58,53 +58,66 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDomainDetail_DomainDetail
 		{
 
-			private string sSLPub;
+			private string certName;
 
-			private string gmtModified;
+			private string cname;
+
+			private string description;
 
 			private string domainName;
 
+			private string domainStatus;
+
 			private string gmtCreated;
 
-			private string liveDomainType;
+			private string gmtModified;
 
-			private string description;
+			private string liveDomainType;
 
 			private string region;
 
 			private string sSLProtocol;
 
-			private string certName;
-
-			private string domainStatus;
-
-			private string cname;
+			private string sSLPub;
 
 			private string scope;
 
-			[JsonProperty(PropertyName = "SSLPub")]
-			public string SSLPub
+			[JsonProperty(PropertyName = "CertName")]
+			public string CertName
 			{
 				get
 				{
-					return sSLPub;
+					return certName;
 				}
 				set	
 				{
-					sSLPub = value;
+					certName = value;
 				}
 			}
 
-			[JsonProperty(PropertyName = "GmtModified")]
-			public string GmtModified
+			[JsonProperty(PropertyName = "Cname")]
+			public string Cname
 			{
 				get
 				{
-					return gmtModified;
+					return cname;
 				}
 				set	
 				{
-					gmtModified = value;
+					cname = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Description")]
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
 				}
 			}
 
@@ -121,6 +134,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "DomainStatus")]
+			public string DomainStatus
+			{
+				get
+				{
+					return domainStatus;
+				}
+				set	
+				{
+					domainStatus = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "GmtCreated")]
 			public string GmtCreated
 			{
@@ -134,6 +160,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "GmtModified")]
+			public string GmtModified
+			{
+				get
+				{
+					return gmtModified;
+				}
+				set	
+				{
+					gmtModified = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "LiveDomainType")]
 			public string LiveDomainType
 			{
@@ -144,19 +183,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					liveDomainType = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Description")]
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
 				}
 			}
 
@@ -186,42 +212,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "CertName")]
-			public string CertName
+			[JsonProperty(PropertyName = "SSLPub")]
+			public string SSLPub
 			{
 				get
 				{
-					return certName;
+					return sSLPub;
 				}
 				set	
 				{
-					certName = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "DomainStatus")]
-			public string DomainStatus
-			{
-				get
-				{
-					return domainStatus;
-				}
-				set	
-				{
-					domainStatus = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Cname")]
-			public string Cname
-			{
-				get
-				{
-					return cname;
-				}
-				set	
-				{
-					cname = value;
+					sSLPub = value;
 				}
 			}
 
