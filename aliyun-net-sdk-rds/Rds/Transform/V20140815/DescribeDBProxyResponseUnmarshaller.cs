@@ -36,6 +36,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeDBProxyResponse.DBProxyInstanceCurrentMinorVersion = _ctx.StringValue("DescribeDBProxy.DBProxyInstanceCurrentMinorVersion");
 			describeDBProxyResponse.DBProxyInstanceNum = _ctx.IntegerValue("DescribeDBProxy.DBProxyInstanceNum");
 			describeDBProxyResponse.DBProxyInstanceType = _ctx.StringValue("DescribeDBProxy.DBProxyInstanceType");
+			describeDBProxyResponse.DBProxyPersistentConnectionStatus = _ctx.StringValue("DescribeDBProxy.DBProxyPersistentConnectionStatus");
 			describeDBProxyResponse.DBProxyInstanceStatus = _ctx.StringValue("DescribeDBProxy.DBProxyInstanceStatus");
 			describeDBProxyResponse.DBProxyServiceStatus = _ctx.StringValue("DescribeDBProxy.DBProxyServiceStatus");
 			describeDBProxyResponse.DBProxyInstanceName = _ctx.StringValue("DescribeDBProxy.DBProxyInstanceName");

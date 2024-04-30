@@ -23,16 +23,15 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Rds;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class ImportDatabaseBetweenInstancesRequest : RpcAcsRequest<ImportDatabaseBetweenInstancesResponse>
+    public class DescribeResourceDetailsRequest : RpcAcsRequest<DescribeResourceDetailsResponse>
     {
-        public ImportDatabaseBetweenInstancesRequest()
-            : base("Rds", "2014-08-15", "ImportDatabaseBetweenInstances")
+        public DescribeResourceDetailsRequest()
+            : base("Rds", "2014-08-15", "DescribeResourceDetails", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,17 +43,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private string dBInfo;
+		private string clientToken;
+
+		private string resourceGroupId;
 
 		private string dBInstanceId;
 
 		private string resourceOwnerAccount;
 
-		private string ownerAccount;
-
 		private long? ownerId;
-
-		private string sourceDBInstanceId;
 
 		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
@@ -70,17 +67,31 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "DBInfo")]
-		public string DBInfo
+		[JsonProperty(PropertyName = "ClientToken")]
+		public string ClientToken
 		{
 			get
 			{
-				return dBInfo;
+				return clientToken;
 			}
 			set	
 			{
-				dBInfo = value;
-				DictionaryUtil.Add(QueryParameters, "DBInfo", value);
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ResourceGroupId")]
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -112,20 +123,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "OwnerAccount")]
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
 		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
@@ -140,23 +137,14 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "SourceDBInstanceId")]
-		public string SourceDBInstanceId
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return sourceDBInstanceId;
-			}
-			set	
-			{
-				sourceDBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "SourceDBInstanceId", value);
-			}
+			return false;
 		}
 
-        public override ImportDatabaseBetweenInstancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeResourceDetailsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ImportDatabaseBetweenInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeResourceDetailsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -43,6 +43,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				slot.Temporary = _ctx.StringValue("DescribeSlots.Slots["+ i +"].Temporary");
 				slot.SlotStatus = _ctx.StringValue("DescribeSlots.Slots["+ i +"].SlotStatus");
 				slot.WalDelay = _ctx.StringValue("DescribeSlots.Slots["+ i +"].WalDelay");
+				slot.SubReplayLag = _ctx.StringValue("DescribeSlots.Slots["+ i +"].SubReplayLag");
 
 				describeSlotsResponse_slots.Add(slot);
 			}

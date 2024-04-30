@@ -81,6 +81,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? backupPriority;
 
+		private bool? enablePitrProtection;
+
+		private int? pitrRetentionPeriod;
+
 		private DescribeBackupPolicy_DuplicationLocation duplicationLocation;
 
 		[JsonProperty(PropertyName = "LogBackupRetentionPeriod")]
@@ -444,6 +448,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				backupPriority = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "EnablePitrProtection")]
+		public bool? EnablePitrProtection
+		{
+			get
+			{
+				return enablePitrProtection;
+			}
+			set	
+			{
+				enablePitrProtection = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PitrRetentionPeriod")]
+		public int? PitrRetentionPeriod
+		{
+			get
+			{
+				return pitrRetentionPeriod;
+			}
+			set	
+			{
+				pitrRetentionPeriod = value;
 			}
 		}
 

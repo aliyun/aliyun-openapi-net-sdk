@@ -25,6 +25,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribePriceResponse : AcsResponse
 	{
 
+		private string orderParams;
+
 		private string requestId;
 
 		private bool? showDiscount;
@@ -36,6 +38,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private List<DescribePrice_Rule> rules;
 
 		private DescribePrice_PriceInfo priceInfo;
+
+		private DescribePrice_ServerlessPrice serverlessPrice;
+
+		[JsonProperty(PropertyName = "OrderParams")]
+		public string OrderParams
+		{
+			get
+			{
+				return orderParams;
+			}
+			set	
+			{
+				orderParams = value;
+			}
+		}
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -115,6 +132,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ServerlessPrice")]
+		public DescribePrice_ServerlessPrice ServerlessPrice
+		{
+			get
+			{
+				return serverlessPrice;
+			}
+			set	
+			{
+				serverlessPrice = value;
+			}
+		}
+
 		public class DescribePrice_Rule
 		{
 
@@ -175,6 +205,12 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private float? tradePrice;
 
+			private float? tradeMinRCUAmount;
+
+			private float? tradeMaxRCUAmount;
+
+			private string orderLines;
+
 			private List<DescribePrice_Coupon> coupons;
 
 			private List<string> ruleIds;
@@ -230,6 +266,45 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					tradePrice = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TradeMinRCUAmount")]
+			public float? TradeMinRCUAmount
+			{
+				get
+				{
+					return tradeMinRCUAmount;
+				}
+				set	
+				{
+					tradeMinRCUAmount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TradeMaxRCUAmount")]
+			public float? TradeMaxRCUAmount
+			{
+				get
+				{
+					return tradeMaxRCUAmount;
+				}
+				set	
+				{
+					tradeMaxRCUAmount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OrderLines")]
+			public string OrderLines
+			{
+				get
+				{
+					return orderLines;
+				}
+				set	
+				{
+					orderLines = value;
 				}
 			}
 
@@ -382,6 +457,160 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					{
 						success = value;
 					}
+				}
+			}
+		}
+
+		public class DescribePrice_ServerlessPrice
+		{
+
+			private float? totalOriginalMinAmount;
+
+			private float? totalOriginalMaxAmount;
+
+			private float? rCUOriginalMinAmount;
+
+			private float? rCUOriginalMaxAmount;
+
+			private float? rCUDiscountMinAmount;
+
+			private float? rCUDiscountMaxAmount;
+
+			private float? tradeMinRCUAmount;
+
+			private float? tradeMaxRCUAmount;
+
+			private float? storageOriginalAmount;
+
+			private float? storageDiscountAmount;
+
+			[JsonProperty(PropertyName = "TotalOriginalMinAmount")]
+			public float? TotalOriginalMinAmount
+			{
+				get
+				{
+					return totalOriginalMinAmount;
+				}
+				set	
+				{
+					totalOriginalMinAmount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TotalOriginalMaxAmount")]
+			public float? TotalOriginalMaxAmount
+			{
+				get
+				{
+					return totalOriginalMaxAmount;
+				}
+				set	
+				{
+					totalOriginalMaxAmount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RCUOriginalMinAmount")]
+			public float? RCUOriginalMinAmount
+			{
+				get
+				{
+					return rCUOriginalMinAmount;
+				}
+				set	
+				{
+					rCUOriginalMinAmount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RCUOriginalMaxAmount")]
+			public float? RCUOriginalMaxAmount
+			{
+				get
+				{
+					return rCUOriginalMaxAmount;
+				}
+				set	
+				{
+					rCUOriginalMaxAmount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RCUDiscountMinAmount")]
+			public float? RCUDiscountMinAmount
+			{
+				get
+				{
+					return rCUDiscountMinAmount;
+				}
+				set	
+				{
+					rCUDiscountMinAmount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RCUDiscountMaxAmount")]
+			public float? RCUDiscountMaxAmount
+			{
+				get
+				{
+					return rCUDiscountMaxAmount;
+				}
+				set	
+				{
+					rCUDiscountMaxAmount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TradeMinRCUAmount")]
+			public float? TradeMinRCUAmount
+			{
+				get
+				{
+					return tradeMinRCUAmount;
+				}
+				set	
+				{
+					tradeMinRCUAmount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TradeMaxRCUAmount")]
+			public float? TradeMaxRCUAmount
+			{
+				get
+				{
+					return tradeMaxRCUAmount;
+				}
+				set	
+				{
+					tradeMaxRCUAmount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StorageOriginalAmount")]
+			public float? StorageOriginalAmount
+			{
+				get
+				{
+					return storageOriginalAmount;
+				}
+				set	
+				{
+					storageOriginalAmount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StorageDiscountAmount")]
+			public float? StorageDiscountAmount
+			{
+				get
+				{
+					return storageDiscountAmount;
+				}
+				set	
+				{
+					storageDiscountAmount = value;
 				}
 			}
 		}

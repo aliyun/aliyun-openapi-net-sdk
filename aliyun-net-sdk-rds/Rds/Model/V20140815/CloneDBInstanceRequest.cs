@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Rds;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CloneDBInstanceRequest : RpcAcsRequest<CloneDBInstanceResponse>
     {
         public CloneDBInstanceRequest()
-            : base("Rds", "2014-08-15", "CloneDBInstance")
+            : base("Rds", "2014-08-15", "CloneDBInstance", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -67,6 +66,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string zoneIdSlave1;
 
 		private string zoneIdSlave2;
+
+		private string ioAccelerationEnabled;
 
 		private string tableMeta;
 
@@ -277,6 +278,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				zoneIdSlave2 = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneIdSlave2", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "IoAccelerationEnabled")]
+		public string IoAccelerationEnabled
+		{
+			get
+			{
+				return ioAccelerationEnabled;
+			}
+			set	
+			{
+				ioAccelerationEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "IoAccelerationEnabled", value);
 			}
 		}
 

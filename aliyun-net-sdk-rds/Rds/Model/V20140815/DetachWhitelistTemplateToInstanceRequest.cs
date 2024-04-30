@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Rds;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DetachWhitelistTemplateToInstanceRequest : RpcAcsRequest<DetachWhitelistTemplateToInstanceResponse>
     {
         public DetachWhitelistTemplateToInstanceRequest()
-            : base("Rds", "2014-08-15", "DetachWhitelistTemplateToInstance")
+            : base("Rds", "2014-08-15", "DetachWhitelistTemplateToInstance", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -47,6 +46,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string resourceOwnerAccount;
 
 		private int? templateId;
+
+		private string resourceGroupId;
 
 		private string insName;
 
@@ -89,6 +90,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				templateId = value;
 				DictionaryUtil.Add(QueryParameters, "TemplateId", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "ResourceGroupId")]
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

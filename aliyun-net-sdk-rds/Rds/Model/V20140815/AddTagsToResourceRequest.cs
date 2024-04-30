@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Rds;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class AddTagsToResourceRequest : RpcAcsRequest<AddTagsToResourceResponse>
     {
         public AddTagsToResourceRequest()
-            : base("Rds", "2014-08-15", "AddTagsToResource")
+            : base("Rds", "2014-08-15", "AddTagsToResource", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -52,6 +51,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string tag3key;
 
 		private string tag1value;
+
+		private string resourceGroupId;
 
 		private string dBInstanceId;
 
@@ -152,6 +153,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				tag1value = value;
 				DictionaryUtil.Add(QueryParameters, "Tag.1.value", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

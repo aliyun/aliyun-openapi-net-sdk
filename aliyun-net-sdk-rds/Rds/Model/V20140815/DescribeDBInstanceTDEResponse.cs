@@ -29,6 +29,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string requestId;
 
+		private string tDEMode;
+
 		private List<DescribeDBInstanceTDE_Database> databases;
 
 		[JsonProperty(PropertyName = "TDEStatus")]
@@ -54,6 +56,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TDEMode")]
+		public string TDEMode
+		{
+			get
+			{
+				return tDEMode;
+			}
+			set	
+			{
+				tDEMode = value;
 			}
 		}
 

@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Rds;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeInstanceLinkedWhitelistTemplateRequest : RpcAcsRequest<DescribeInstanceLinkedWhitelistTemplateResponse>
     {
         public DescribeInstanceLinkedWhitelistTemplateRequest()
-            : base("Rds", "2014-08-15", "DescribeInstanceLinkedWhitelistTemplate")
+            : base("Rds", "2014-08-15", "DescribeInstanceLinkedWhitelistTemplate", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,6 +44,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
+
+		private string resourceGroupId;
 
 		private string insName;
 
@@ -73,6 +74,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ResourceGroupId")]
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

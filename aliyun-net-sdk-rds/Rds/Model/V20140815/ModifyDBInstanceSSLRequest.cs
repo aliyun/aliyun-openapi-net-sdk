@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Rds;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifyDBInstanceSSLRequest : RpcAcsRequest<ModifyDBInstanceSSLResponse>
     {
         public ModifyDBInstanceSSLRequest()
-            : base("Rds", "2014-08-15", "ModifyDBInstanceSSL")
+            : base("Rds", "2014-08-15", "ModifyDBInstanceSSL", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -50,13 +49,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? clientCrlEnabled;
 
+		private string certificate;
+
 		private string aCL;
+
+		private string passWord;
 
 		private string clientCertRevocationList;
 
 		private string serverCert;
 
 		private string dBInstanceId;
+
+		private string forceEncryption;
 
 		private int? clientCAEnabled;
 
@@ -73,6 +78,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private long? ownerId;
 
 		private int? sSLEnabled;
+
+		private string tlsVersion;
 
 		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
@@ -130,6 +137,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Certificate")]
+		public string Certificate
+		{
+			get
+			{
+				return certificate;
+			}
+			set	
+			{
+				certificate = value;
+				DictionaryUtil.Add(QueryParameters, "Certificate", value);
+			}
+		}
+
 		[JsonProperty(PropertyName = "ACL")]
 		public string ACL
 		{
@@ -141,6 +162,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				aCL = value;
 				DictionaryUtil.Add(QueryParameters, "ACL", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "PassWord")]
+		public string PassWord
+		{
+			get
+			{
+				return passWord;
+			}
+			set	
+			{
+				passWord = value;
+				DictionaryUtil.Add(QueryParameters, "PassWord", value);
 			}
 		}
 
@@ -183,6 +218,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ForceEncryption")]
+		public string ForceEncryption
+		{
+			get
+			{
+				return forceEncryption;
+			}
+			set	
+			{
+				forceEncryption = value;
+				DictionaryUtil.Add(QueryParameters, "ForceEncryption", value);
 			}
 		}
 
@@ -295,6 +344,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				sSLEnabled = value;
 				DictionaryUtil.Add(QueryParameters, "SSLEnabled", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "TlsVersion")]
+		public string TlsVersion
+		{
+			get
+			{
+				return tlsVersion;
+			}
+			set	
+			{
+				tlsVersion = value;
+				DictionaryUtil.Add(QueryParameters, "TlsVersion", value);
 			}
 		}
 

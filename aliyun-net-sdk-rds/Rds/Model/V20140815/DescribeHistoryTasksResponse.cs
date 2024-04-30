@@ -103,7 +103,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeHistoryTasks_ItemsItem
 		{
 
-			private int? status;
+			private string status;
 
 			private string taskId;
 
@@ -144,7 +144,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			private string callerUid;
 
 			[JsonProperty(PropertyName = "Status")]
-			public int? Status
+			public string Status
 			{
 				get
 				{

@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Rds;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifyDBProxyRequest : RpcAcsRequest<ModifyDBProxyResponse>
     {
         public ModifyDBProxyRequest()
-            : base("Rds", "2014-08-15", "ModifyDBProxy")
+            : base("Rds", "2014-08-15", "ModifyDBProxy", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -48,6 +47,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dBInstanceId;
 
+		private string persistentConnectionStatus;
+
 		private string resourceOwnerAccount;
 
 		private string dBProxyEngineType;
@@ -59,6 +60,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string configDBProxyService;
 
 		private string vSwitchId;
+
+		private string dBProxyInstanceType;
 
 		private string vPCId;
 
@@ -103,6 +106,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "PersistentConnectionStatus")]
+		public string PersistentConnectionStatus
+		{
+			get
+			{
+				return persistentConnectionStatus;
+			}
+			set	
+			{
+				persistentConnectionStatus = value;
+				DictionaryUtil.Add(QueryParameters, "PersistentConnectionStatus", value);
 			}
 		}
 
@@ -187,6 +204,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				vSwitchId = value;
 				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBProxyInstanceType")]
+		public string DBProxyInstanceType
+		{
+			get
+			{
+				return dBProxyInstanceType;
+			}
+			set	
+			{
+				dBProxyInstanceType = value;
+				DictionaryUtil.Add(QueryParameters, "DBProxyInstanceType", value);
 			}
 		}
 

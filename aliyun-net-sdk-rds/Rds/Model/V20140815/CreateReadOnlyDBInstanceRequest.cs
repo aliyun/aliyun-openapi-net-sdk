@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Rds;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CreateReadOnlyDBInstanceRequest : RpcAcsRequest<CreateReadOnlyDBInstanceResponse>
     {
         public CreateReadOnlyDBInstanceRequest()
-            : base("Rds", "2014-08-15", "CreateReadOnlyDBInstance")
+            : base("Rds", "2014-08-15", "CreateReadOnlyDBInstance", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -72,6 +71,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string autoRenew;
 
+		private string port;
+
 		private string zoneId;
 
 		private string instanceNetworkType;
@@ -79,6 +80,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string clientToken;
 
 		private string instructionSetArch;
+
+		private string ioAccelerationEnabled;
 
 		private string tddlRegionConfig;
 
@@ -316,6 +319,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Port")]
+		public string Port
+		{
+			get
+			{
+				return port;
+			}
+			set	
+			{
+				port = value;
+				DictionaryUtil.Add(QueryParameters, "Port", value);
+			}
+		}
+
 		[JsonProperty(PropertyName = "ZoneId")]
 		public string ZoneId
 		{
@@ -369,6 +386,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				instructionSetArch = value;
 				DictionaryUtil.Add(QueryParameters, "InstructionSetArch", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "IoAccelerationEnabled")]
+		public string IoAccelerationEnabled
+		{
+			get
+			{
+				return ioAccelerationEnabled;
+			}
+			set	
+			{
+				ioAccelerationEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "IoAccelerationEnabled", value);
 			}
 		}
 

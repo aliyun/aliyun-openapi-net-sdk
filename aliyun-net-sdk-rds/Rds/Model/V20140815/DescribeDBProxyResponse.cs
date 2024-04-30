@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dBProxyInstanceType;
 
+		private string dBProxyPersistentConnectionStatus;
+
 		private string dBProxyInstanceStatus;
 
 		private string dBProxyServiceStatus;
@@ -117,6 +119,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				dBProxyInstanceType = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBProxyPersistentConnectionStatus")]
+		public string DBProxyPersistentConnectionStatus
+		{
+			get
+			{
+				return dBProxyPersistentConnectionStatus;
+			}
+			set	
+			{
+				dBProxyPersistentConnectionStatus = value;
 			}
 		}
 

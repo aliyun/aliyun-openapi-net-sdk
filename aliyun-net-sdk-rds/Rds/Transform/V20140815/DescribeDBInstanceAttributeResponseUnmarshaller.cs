@@ -119,7 +119,9 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstanceAttribute.InstructionSetArch = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].InstructionSetArch");
 				dBInstanceAttribute.BurstingEnabled = _ctx.BooleanValue("DescribeDBInstanceAttribute.Items["+ i +"].BurstingEnabled");
 				dBInstanceAttribute.BpeEnabled = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].BpeEnabled");
+				dBInstanceAttribute.IoAccelerationEnabled = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].IoAccelerationEnabled");
 				dBInstanceAttribute.PGBouncerEnabled = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].PGBouncerEnabled");
+				dBInstanceAttribute.ColdDataEnabled = _ctx.BooleanValue("DescribeDBInstanceAttribute.Items["+ i +"].ColdDataEnabled");
 
 				DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_Extra extra = new DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_Extra();
 				extra.ReplicaGroupStatus = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].Extra.ReplicaGroupStatus");
@@ -171,6 +173,10 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 					dBClusterNode.NodeId = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].DBClusterNodes["+ j +"].NodeId");
 					dBClusterNode.NodeRole = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].DBClusterNodes["+ j +"].NodeRole");
 					dBClusterNode.ClassCode = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].DBClusterNodes["+ j +"].ClassCode");
+					dBClusterNode.ClassType = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].DBClusterNodes["+ j +"].ClassType");
+					dBClusterNode.Cpu = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].DBClusterNodes["+ j +"].Cpu");
+					dBClusterNode.Memory = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].DBClusterNodes["+ j +"].Memory");
+					dBClusterNode.Status = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].DBClusterNodes["+ j +"].Status");
 
 					dBInstanceAttribute_dBClusterNodes.Add(dBClusterNode);
 				}

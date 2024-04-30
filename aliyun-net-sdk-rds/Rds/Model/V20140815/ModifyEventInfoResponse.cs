@@ -22,25 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class ImportDatabaseBetweenInstancesResponse : AcsResponse
+	public class ModifyEventInfoResponse : AcsResponse
 	{
-
-		private string importId;
 
 		private string requestId;
 
-		[JsonProperty(PropertyName = "ImportId")]
-		public string ImportId
-		{
-			get
-			{
-				return importId;
-			}
-			set	
-			{
-				importId = value;
-			}
-		}
+		private string errorEventId;
+
+		private int? successCount;
+
+		private string errorCode;
+
+		private string successEventId;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -52,6 +45,58 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ErrorEventId")]
+		public string ErrorEventId
+		{
+			get
+			{
+				return errorEventId;
+			}
+			set	
+			{
+				errorEventId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "SuccessCount")]
+		public int? SuccessCount
+		{
+			get
+			{
+				return successCount;
+			}
+			set	
+			{
+				successCount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ErrorCode")]
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "SuccessEventId")]
+		public string SuccessEventId
+		{
+			get
+			{
+				return successEventId;
+			}
+			set	
+			{
+				successEventId = value;
 			}
 		}
 	}

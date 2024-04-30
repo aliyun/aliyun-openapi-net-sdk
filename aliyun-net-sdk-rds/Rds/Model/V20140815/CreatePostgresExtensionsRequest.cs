@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Rds;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CreatePostgresExtensionsRequest : RpcAcsRequest<CreatePostgresExtensionsResponse>
     {
         public CreatePostgresExtensionsRequest()
-            : base("Rds", "2014-08-15", "CreatePostgresExtensions")
+            : base("Rds", "2014-08-15", "CreatePostgresExtensions", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,6 +44,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private long? resourceOwnerId;
 
 		private string clientToken;
+
+		private bool? riskConfirmed;
 
 		private string resourceGroupId;
 
@@ -89,6 +90,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "RiskConfirmed")]
+		public bool? RiskConfirmed
+		{
+			get
+			{
+				return riskConfirmed;
+			}
+			set	
+			{
+				riskConfirmed = value;
+				DictionaryUtil.Add(QueryParameters, "RiskConfirmed", value.ToString());
 			}
 		}
 

@@ -16,25 +16,58 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+using Aliyun.Acs.Core;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Rds.Model.V20140815;
-
-namespace Aliyun.Acs.Rds.Transform.V20140815
+namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class ImportDatabaseBetweenInstancesResponseUnmarshaller
-    {
-        public static ImportDatabaseBetweenInstancesResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			ImportDatabaseBetweenInstancesResponse importDatabaseBetweenInstancesResponse = new ImportDatabaseBetweenInstancesResponse();
+	public class DescribeQuickSaleConfigResponse : AcsResponse
+	{
 
-			importDatabaseBetweenInstancesResponse.HttpResponse = _ctx.HttpResponse;
-			importDatabaseBetweenInstancesResponse.ImportId = _ctx.StringValue("ImportDatabaseBetweenInstances.ImportId");
-			importDatabaseBetweenInstancesResponse.RequestId = _ctx.StringValue("ImportDatabaseBetweenInstances.RequestId");
-        
-			return importDatabaseBetweenInstancesResponse;
-        }
-    }
+		private string requestId;
+
+		private string commodity;
+
+		private string items;
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Commodity")]
+		public string Commodity
+		{
+			get
+			{
+				return commodity;
+			}
+			set	
+			{
+				commodity = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Items")]
+		public string Items
+		{
+			get
+			{
+				return items;
+			}
+			set	
+			{
+				items = value;
+			}
+		}
+	}
 }

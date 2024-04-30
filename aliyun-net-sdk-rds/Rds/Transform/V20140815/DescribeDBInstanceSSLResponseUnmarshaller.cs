@@ -50,6 +50,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeDBInstanceSSLResponse.ClientCACert = _ctx.StringValue("DescribeDBInstanceSSL.ClientCACert");
 			describeDBInstanceSSLResponse.ServerKey = _ctx.StringValue("DescribeDBInstanceSSL.ServerKey");
 			describeDBInstanceSSLResponse.ModifyStatusReason = _ctx.StringValue("DescribeDBInstanceSSL.ModifyStatusReason");
+			describeDBInstanceSSLResponse.ForceEncryption = _ctx.StringValue("DescribeDBInstanceSSL.ForceEncryption");
+			describeDBInstanceSSLResponse.TlsVersion = _ctx.StringValue("DescribeDBInstanceSSL.TlsVersion");
         
 			return describeDBInstanceSSLResponse;
         }
