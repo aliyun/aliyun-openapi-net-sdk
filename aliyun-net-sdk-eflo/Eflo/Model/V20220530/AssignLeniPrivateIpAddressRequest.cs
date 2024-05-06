@@ -27,23 +27,21 @@ using Aliyun.Acs.eflo.Transform.V20220530;
 
 namespace Aliyun.Acs.eflo.Model.V20220530
 {
-    public class GetVccRequest : RpcAcsRequest<GetVccResponse>
+    public class AssignLeniPrivateIpAddressRequest : RpcAcsRequest<AssignLeniPrivateIpAddressResponse>
     {
-        public GetVccRequest()
-            : base("eflo", "2022-05-30", "GetVcc", "eflo", "openAPI")
+        public AssignLeniPrivateIpAddressRequest()
+            : base("eflo", "2022-05-30", "AssignLeniPrivateIpAddress", "eflo", "openAPI")
         {
 			Method = MethodType.POST;
         }
 
 		private string clientToken;
 
-		private int? pageNumber;
+		private string description;
 
-		private bool? enablePage;
+		private string privateIpAddress;
 
-		private int? pageSize;
-
-		private string vccId;
+		private string elasticNetworkInterfaceId;
 
 		public string ClientToken
 		{
@@ -58,55 +56,42 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			}
 		}
 
-		public int? PageNumber
+		public string Description
 		{
 			get
 			{
-				return pageNumber;
+				return description;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(BodyParameters, "PageNumber", value.ToString());
+				description = value;
+				DictionaryUtil.Add(BodyParameters, "Description", value);
 			}
 		}
 
-		public bool? EnablePage
+		public string PrivateIpAddress
 		{
 			get
 			{
-				return enablePage;
+				return privateIpAddress;
 			}
 			set	
 			{
-				enablePage = value;
-				DictionaryUtil.Add(BodyParameters, "EnablePage", value.ToString());
+				privateIpAddress = value;
+				DictionaryUtil.Add(BodyParameters, "PrivateIpAddress", value);
 			}
 		}
 
-		public int? PageSize
+		public string ElasticNetworkInterfaceId
 		{
 			get
 			{
-				return pageSize;
+				return elasticNetworkInterfaceId;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string VccId
-		{
-			get
-			{
-				return vccId;
-			}
-			set	
-			{
-				vccId = value;
-				DictionaryUtil.Add(BodyParameters, "VccId", value);
+				elasticNetworkInterfaceId = value;
+				DictionaryUtil.Add(BodyParameters, "ElasticNetworkInterfaceId", value);
 			}
 		}
 
@@ -115,9 +100,9 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			return false;
 		}
 
-        public override GetVccResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override AssignLeniPrivateIpAddressResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetVccResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AssignLeniPrivateIpAddressResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

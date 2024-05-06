@@ -27,23 +27,19 @@ using Aliyun.Acs.eflo.Transform.V20220530;
 
 namespace Aliyun.Acs.eflo.Model.V20220530
 {
-    public class GetVccRequest : RpcAcsRequest<GetVccResponse>
+    public class UnassignLeniPrivateIpAddressRequest : RpcAcsRequest<UnassignLeniPrivateIpAddressResponse>
     {
-        public GetVccRequest()
-            : base("eflo", "2022-05-30", "GetVcc", "eflo", "openAPI")
+        public UnassignLeniPrivateIpAddressRequest()
+            : base("eflo", "2022-05-30", "UnassignLeniPrivateIpAddress", "eflo", "openAPI")
         {
 			Method = MethodType.POST;
         }
 
 		private string clientToken;
 
-		private int? pageNumber;
+		private string ipName;
 
-		private bool? enablePage;
-
-		private int? pageSize;
-
-		private string vccId;
+		private string elasticNetworkInterfaceId;
 
 		public string ClientToken
 		{
@@ -58,55 +54,29 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			}
 		}
 
-		public int? PageNumber
+		public string IpName
 		{
 			get
 			{
-				return pageNumber;
+				return ipName;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(BodyParameters, "PageNumber", value.ToString());
+				ipName = value;
+				DictionaryUtil.Add(BodyParameters, "IpName", value);
 			}
 		}
 
-		public bool? EnablePage
+		public string ElasticNetworkInterfaceId
 		{
 			get
 			{
-				return enablePage;
+				return elasticNetworkInterfaceId;
 			}
 			set	
 			{
-				enablePage = value;
-				DictionaryUtil.Add(BodyParameters, "EnablePage", value.ToString());
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string VccId
-		{
-			get
-			{
-				return vccId;
-			}
-			set	
-			{
-				vccId = value;
-				DictionaryUtil.Add(BodyParameters, "VccId", value);
+				elasticNetworkInterfaceId = value;
+				DictionaryUtil.Add(BodyParameters, "ElasticNetworkInterfaceId", value);
 			}
 		}
 
@@ -115,9 +85,9 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			return false;
 		}
 
-        public override GetVccResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UnassignLeniPrivateIpAddressResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetVccResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UnassignLeniPrivateIpAddressResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

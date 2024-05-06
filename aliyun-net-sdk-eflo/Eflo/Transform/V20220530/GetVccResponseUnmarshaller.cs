@@ -140,6 +140,32 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 				content_tags.Add(tag);
 			}
 			content.Tags = content_tags;
+
+			List<GetVccResponse.GetVcc_Content.GetVcc_VbrInfo> content_vbrInfos = new List<GetVccResponse.GetVcc_Content.GetVcc_VbrInfo>();
+			for (int i = 0; i < _ctx.Length("GetVcc.Content.VbrInfos.Length"); i++) {
+				GetVccResponse.GetVcc_Content.GetVcc_VbrInfo vbrInfo = new GetVccResponse.GetVcc_Content.GetVcc_VbrInfo();
+				vbrInfo.VbrId = _ctx.StringValue("GetVcc.Content.VbrInfos["+ i +"].VbrId");
+				vbrInfo.CenId = _ctx.StringValue("GetVcc.Content.VbrInfos["+ i +"].CenId");
+				vbrInfo.Status = _ctx.StringValue("GetVcc.Content.VbrInfos["+ i +"].Status");
+				vbrInfo.GmtCreate = _ctx.StringValue("GetVcc.Content.VbrInfos["+ i +"].GmtCreate");
+				vbrInfo.GmtModified = _ctx.StringValue("GetVcc.Content.VbrInfos["+ i +"].GmtModified");
+
+				List<GetVccResponse.GetVcc_Content.GetVcc_VbrInfo.GetVcc_VbrBgpPeer> vbrInfo_vbrBgpPeers = new List<GetVccResponse.GetVcc_Content.GetVcc_VbrInfo.GetVcc_VbrBgpPeer>();
+				for (int j = 0; j < _ctx.Length("GetVcc.Content.VbrInfos["+ i +"].VbrBgpPeers.Length"); j++) {
+					GetVccResponse.GetVcc_Content.GetVcc_VbrInfo.GetVcc_VbrBgpPeer vbrBgpPeer = new GetVccResponse.GetVcc_Content.GetVcc_VbrInfo.GetVcc_VbrBgpPeer();
+					vbrBgpPeer.BgpGroupId = _ctx.StringValue("GetVcc.Content.VbrInfos["+ i +"].VbrBgpPeers["+ j +"].BgpGroupId");
+					vbrBgpPeer.BgpPeerId = _ctx.StringValue("GetVcc.Content.VbrInfos["+ i +"].VbrBgpPeers["+ j +"].BgpPeerId");
+					vbrBgpPeer.PeerIpAddress = _ctx.StringValue("GetVcc.Content.VbrInfos["+ i +"].VbrBgpPeers["+ j +"].PeerIpAddress");
+					vbrBgpPeer.PeerAsn = _ctx.StringValue("GetVcc.Content.VbrInfos["+ i +"].VbrBgpPeers["+ j +"].PeerAsn");
+					vbrBgpPeer.Status = _ctx.StringValue("GetVcc.Content.VbrInfos["+ i +"].VbrBgpPeers["+ j +"].Status");
+
+					vbrInfo_vbrBgpPeers.Add(vbrBgpPeer);
+				}
+				vbrInfo.VbrBgpPeers = vbrInfo_vbrBgpPeers;
+
+				content_vbrInfos.Add(vbrInfo);
+			}
+			content.VbrInfos = content_vbrInfos;
 			getVccResponse.Content = content;
         
 			return getVccResponse;

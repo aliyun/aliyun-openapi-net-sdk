@@ -147,6 +147,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 				private string description;
 
+				private string securityGroupId;
+
 				public string RegionId
 				{
 					get
@@ -336,6 +338,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					set	
 					{
 						description = value;
+					}
+				}
+
+				public string SecurityGroupId
+				{
+					get
+					{
+						return securityGroupId;
+					}
+					set	
+					{
+						securityGroupId = value;
 					}
 				}
 			}

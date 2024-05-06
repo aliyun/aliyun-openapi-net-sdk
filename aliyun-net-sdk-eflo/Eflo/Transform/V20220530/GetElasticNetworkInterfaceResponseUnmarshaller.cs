@@ -52,6 +52,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			content.CreateTime = _ctx.StringValue("GetElasticNetworkInterface.Content.CreateTime");
 			content.GmtModified = _ctx.StringValue("GetElasticNetworkInterface.Content.GmtModified");
 			content.Description = _ctx.StringValue("GetElasticNetworkInterface.Content.Description");
+			content.SecurityGroupId = _ctx.StringValue("GetElasticNetworkInterface.Content.SecurityGroupId");
 
 			List<GetElasticNetworkInterfaceResponse.GetElasticNetworkInterface_Content.GetElasticNetworkInterface_PrivateIpAddress> content_privateIpAddresses = new List<GetElasticNetworkInterfaceResponse.GetElasticNetworkInterface_Content.GetElasticNetworkInterface_PrivateIpAddress>();
 			for (int i = 0; i < _ctx.Length("GetElasticNetworkInterface.Content.PrivateIpAddresses.Length"); i++) {

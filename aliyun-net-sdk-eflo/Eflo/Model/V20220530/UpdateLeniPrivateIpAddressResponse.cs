@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.eflo.Model.V20220530
 {
-	public class GetNodeInfoForPodResponse : AcsResponse
+	public class UpdateLeniPrivateIpAddressResponse : AcsResponse
 	{
 
 		private int? code;
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private string requestId;
 
-		private GetNodeInfoForPod_Content content;
+		private UpdateLeniPrivateIpAddress_Content content;
 
 		public int? Code
 		{
@@ -69,7 +69,7 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			}
 		}
 
-		public GetNodeInfoForPod_Content Content
+		public UpdateLeniPrivateIpAddress_Content Content
 		{
 			get
 			{
@@ -81,132 +81,34 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			}
 		}
 
-		public class GetNodeInfoForPod_Content
+		public class UpdateLeniPrivateIpAddress_Content
 		{
 
-			private string regionId;
+			private string elasticNetworkInterfaceId;
 
-			private string zoneId;
+			private string ipName;
 
-			private string clusterId;
-
-			private string vpcId;
-
-			private string nodeId;
-
-			private int? leniQuota;
-
-			private int? lniSipQuota;
-
-			private int? hdeniQuota;
-
-			private List<string> vSwitches;
-
-			public string RegionId
+			public string ElasticNetworkInterfaceId
 			{
 				get
 				{
-					return regionId;
+					return elasticNetworkInterfaceId;
 				}
 				set	
 				{
-					regionId = value;
+					elasticNetworkInterfaceId = value;
 				}
 			}
 
-			public string ZoneId
+			public string IpName
 			{
 				get
 				{
-					return zoneId;
+					return ipName;
 				}
 				set	
 				{
-					zoneId = value;
-				}
-			}
-
-			public string ClusterId
-			{
-				get
-				{
-					return clusterId;
-				}
-				set	
-				{
-					clusterId = value;
-				}
-			}
-
-			public string VpcId
-			{
-				get
-				{
-					return vpcId;
-				}
-				set	
-				{
-					vpcId = value;
-				}
-			}
-
-			public string NodeId
-			{
-				get
-				{
-					return nodeId;
-				}
-				set	
-				{
-					nodeId = value;
-				}
-			}
-
-			public int? LeniQuota
-			{
-				get
-				{
-					return leniQuota;
-				}
-				set	
-				{
-					leniQuota = value;
-				}
-			}
-
-			public int? LniSipQuota
-			{
-				get
-				{
-					return lniSipQuota;
-				}
-				set	
-				{
-					lniSipQuota = value;
-				}
-			}
-
-			public int? HdeniQuota
-			{
-				get
-				{
-					return hdeniQuota;
-				}
-				set	
-				{
-					hdeniQuota = value;
-				}
-			}
-
-			public List<string> VSwitches
-			{
-				get
-				{
-					return vSwitches;
-				}
-				set	
-				{
-					vSwitches = value;
+					ipName = value;
 				}
 			}
 		}

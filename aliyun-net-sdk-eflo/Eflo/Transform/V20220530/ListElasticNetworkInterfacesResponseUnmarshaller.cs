@@ -57,6 +57,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 				dataItem.CreateTime = _ctx.StringValue("ListElasticNetworkInterfaces.Content.Data["+ i +"].CreateTime");
 				dataItem.GmtModified = _ctx.StringValue("ListElasticNetworkInterfaces.Content.Data["+ i +"].GmtModified");
 				dataItem.Description = _ctx.StringValue("ListElasticNetworkInterfaces.Content.Data["+ i +"].Description");
+				dataItem.SecurityGroupId = _ctx.StringValue("ListElasticNetworkInterfaces.Content.Data["+ i +"].SecurityGroupId");
 
 				content_data.Add(dataItem);
 			}

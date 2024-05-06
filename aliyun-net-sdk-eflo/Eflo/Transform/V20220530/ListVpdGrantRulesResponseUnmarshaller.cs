@@ -51,6 +51,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 				dataItem.Used = _ctx.BooleanValue("ListVpdGrantRules.Content.Data["+ i +"].Used");
 				dataItem.CreateTime = _ctx.StringValue("ListVpdGrantRules.Content.Data["+ i +"].CreateTime");
 				dataItem.GrantRuleId = _ctx.StringValue("ListVpdGrantRules.Content.Data["+ i +"].GrantRuleId");
+				dataItem.ResourceGroupId = _ctx.StringValue("ListVpdGrantRules.Content.Data["+ i +"].ResourceGroupId");
 
 				content_data.Add(dataItem);
 			}

@@ -152,6 +152,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 			private List<GetVcc_Tag> tags;
 
+			private List<GetVcc_VbrInfo> vbrInfos;
+
 			private GetVcc_VpdBaseInfo vpdBaseInfo;
 
 			public string TenantId
@@ -559,6 +561,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				set	
 				{
 					tags = value;
+				}
+			}
+
+			public List<GetVcc_VbrInfo> VbrInfos
+			{
+				get
+				{
+					return vbrInfos;
+				}
+				set	
+				{
+					vbrInfos = value;
 				}
 			}
 
@@ -982,6 +996,168 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					set	
 					{
 						tagValue = value;
+					}
+				}
+			}
+
+			public class GetVcc_VbrInfo
+			{
+
+				private string vbrId;
+
+				private string cenId;
+
+				private string status;
+
+				private string gmtCreate;
+
+				private string gmtModified;
+
+				private List<GetVcc_VbrBgpPeer> vbrBgpPeers;
+
+				public string VbrId
+				{
+					get
+					{
+						return vbrId;
+					}
+					set	
+					{
+						vbrId = value;
+					}
+				}
+
+				public string CenId
+				{
+					get
+					{
+						return cenId;
+					}
+					set	
+					{
+						cenId = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public string GmtCreate
+				{
+					get
+					{
+						return gmtCreate;
+					}
+					set	
+					{
+						gmtCreate = value;
+					}
+				}
+
+				public string GmtModified
+				{
+					get
+					{
+						return gmtModified;
+					}
+					set	
+					{
+						gmtModified = value;
+					}
+				}
+
+				public List<GetVcc_VbrBgpPeer> VbrBgpPeers
+				{
+					get
+					{
+						return vbrBgpPeers;
+					}
+					set	
+					{
+						vbrBgpPeers = value;
+					}
+				}
+
+				public class GetVcc_VbrBgpPeer
+				{
+
+					private string bgpGroupId;
+
+					private string bgpPeerId;
+
+					private string peerIpAddress;
+
+					private string peerAsn;
+
+					private string status;
+
+					public string BgpGroupId
+					{
+						get
+						{
+							return bgpGroupId;
+						}
+						set	
+						{
+							bgpGroupId = value;
+						}
+					}
+
+					public string BgpPeerId
+					{
+						get
+						{
+							return bgpPeerId;
+						}
+						set	
+						{
+							bgpPeerId = value;
+						}
+					}
+
+					public string PeerIpAddress
+					{
+						get
+						{
+							return peerIpAddress;
+						}
+						set	
+						{
+							peerIpAddress = value;
+						}
+					}
+
+					public string PeerAsn
+					{
+						get
+						{
+							return peerAsn;
+						}
+						set	
+						{
+							peerAsn = value;
+						}
+					}
+
+					public string Status
+					{
+						get
+						{
+							return status;
+						}
+						set	
+						{
+							status = value;
+						}
 					}
 				}
 			}

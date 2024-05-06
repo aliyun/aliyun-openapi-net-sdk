@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.eflo.Model.V20220530
 {
-	public class GetVccGrantRuleResponse : AcsResponse
+	public class GetLeniPrivateIpAddressResponse : AcsResponse
 	{
 
 		private int? code;
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private string requestId;
 
-		private GetVccGrantRule_Content content;
+		private GetLeniPrivateIpAddress_Content content;
 
 		public int? Code
 		{
@@ -69,7 +69,7 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			}
 		}
 
-		public GetVccGrantRule_Content Content
+		public GetLeniPrivateIpAddress_Content Content
 		{
 			get
 			{
@@ -81,30 +81,38 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			}
 		}
 
-		public class GetVccGrantRule_Content
+		public class GetLeniPrivateIpAddress_Content
 		{
+
+			private string elasticNetworkInterfaceId;
 
 			private string regionId;
 
-			private string tenantId;
+			private string gmtCreate;
 
-			private string instanceId;
+			private string gmtModified;
 
-			private string instanceName;
+			private string ipName;
 
-			private string product;
+			private string privateIpAddress;
 
-			private string erId;
+			private string status;
 
-			private string grantTenantId;
+			private string description;
 
-			private bool? used;
+			private string message;
 
-			private string createTime;
-
-			private string grantRuleId;
-
-			private string resourceGroupId;
+			public string ElasticNetworkInterfaceId
+			{
+				get
+				{
+					return elasticNetworkInterfaceId;
+				}
+				set	
+				{
+					elasticNetworkInterfaceId = value;
+				}
+			}
 
 			public string RegionId
 			{
@@ -118,123 +126,87 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				}
 			}
 
-			public string TenantId
+			public string GmtCreate
 			{
 				get
 				{
-					return tenantId;
+					return gmtCreate;
 				}
 				set	
 				{
-					tenantId = value;
+					gmtCreate = value;
 				}
 			}
 
-			public string InstanceId
+			public string GmtModified
 			{
 				get
 				{
-					return instanceId;
+					return gmtModified;
 				}
 				set	
 				{
-					instanceId = value;
+					gmtModified = value;
 				}
 			}
 
-			public string InstanceName
+			public string IpName
 			{
 				get
 				{
-					return instanceName;
+					return ipName;
 				}
 				set	
 				{
-					instanceName = value;
+					ipName = value;
 				}
 			}
 
-			public string Product
+			public string PrivateIpAddress
 			{
 				get
 				{
-					return product;
+					return privateIpAddress;
 				}
 				set	
 				{
-					product = value;
+					privateIpAddress = value;
 				}
 			}
 
-			public string ErId
+			public string Status
 			{
 				get
 				{
-					return erId;
+					return status;
 				}
 				set	
 				{
-					erId = value;
+					status = value;
 				}
 			}
 
-			public string GrantTenantId
+			public string Description
 			{
 				get
 				{
-					return grantTenantId;
+					return description;
 				}
 				set	
 				{
-					grantTenantId = value;
+					description = value;
 				}
 			}
 
-			public bool? Used
+			public string Message
 			{
 				get
 				{
-					return used;
+					return message;
 				}
 				set	
 				{
-					used = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public string GrantRuleId
-			{
-				get
-				{
-					return grantRuleId;
-				}
-				set	
-				{
-					grantRuleId = value;
-				}
-			}
-
-			public string ResourceGroupId
-			{
-				get
-				{
-					return resourceGroupId;
-				}
-				set	
-				{
-					resourceGroupId = value;
+					message = value;
 				}
 			}
 		}

@@ -104,6 +104,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 			private string grantRuleId;
 
+			private string resourceGroupId;
+
 			public string RegionId
 			{
 				get
@@ -221,6 +223,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				set	
 				{
 					grantRuleId = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 		}

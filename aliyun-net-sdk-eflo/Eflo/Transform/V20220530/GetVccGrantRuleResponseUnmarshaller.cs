@@ -46,6 +46,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			content.Used = _ctx.BooleanValue("GetVccGrantRule.Content.Used");
 			content.CreateTime = _ctx.StringValue("GetVccGrantRule.Content.CreateTime");
 			content.GrantRuleId = _ctx.StringValue("GetVccGrantRule.Content.GrantRuleId");
+			content.ResourceGroupId = _ctx.StringValue("GetVccGrantRule.Content.ResourceGroupId");
 			getVccGrantRuleResponse.Content = content;
         
 			return getVccGrantRuleResponse;

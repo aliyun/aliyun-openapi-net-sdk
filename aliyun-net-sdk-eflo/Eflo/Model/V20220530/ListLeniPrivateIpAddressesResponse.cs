@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.eflo.Model.V20220530
 {
-	public class GetElasticNetworkInterfaceResponse : AcsResponse
+	public class ListLeniPrivateIpAddressesResponse : AcsResponse
 	{
 
 		private int? code;
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private string requestId;
 
-		private GetElasticNetworkInterface_Content content;
+		private ListLeniPrivateIpAddresses_Content content;
 
 		public int? Code
 		{
@@ -69,7 +69,7 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			}
 		}
 
-		public GetElasticNetworkInterface_Content Content
+		public ListLeniPrivateIpAddresses_Content Content
 		{
 			get
 			{
@@ -81,262 +81,38 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			}
 		}
 
-		public class GetElasticNetworkInterface_Content
+		public class ListLeniPrivateIpAddresses_Content
 		{
 
-			private string regionId;
+			private long? total;
 
-			private string zoneId;
+			private List<ListLeniPrivateIpAddresses_DataItem> data;
 
-			private string elasticNetworkInterfaceId;
-
-			private string nodeId;
-
-			private string status;
-
-			private string ip;
-
-			private string vpcId;
-
-			private string vSwitchId;
-
-			private string message;
-
-			private string mac;
-
-			private string type;
-
-			private string gateway;
-
-			private string mask;
-
-			private string createTime;
-
-			private string gmtModified;
-
-			private string description;
-
-			private string securityGroupId;
-
-			private List<GetElasticNetworkInterface_PrivateIpAddress> privateIpAddresses;
-
-			public string RegionId
+			public long? Total
 			{
 				get
 				{
-					return regionId;
+					return total;
 				}
 				set	
 				{
-					regionId = value;
+					total = value;
 				}
 			}
 
-			public string ZoneId
+			public List<ListLeniPrivateIpAddresses_DataItem> Data
 			{
 				get
 				{
-					return zoneId;
+					return data;
 				}
 				set	
 				{
-					zoneId = value;
+					data = value;
 				}
 			}
 
-			public string ElasticNetworkInterfaceId
-			{
-				get
-				{
-					return elasticNetworkInterfaceId;
-				}
-				set	
-				{
-					elasticNetworkInterfaceId = value;
-				}
-			}
-
-			public string NodeId
-			{
-				get
-				{
-					return nodeId;
-				}
-				set	
-				{
-					nodeId = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string Ip
-			{
-				get
-				{
-					return ip;
-				}
-				set	
-				{
-					ip = value;
-				}
-			}
-
-			public string VpcId
-			{
-				get
-				{
-					return vpcId;
-				}
-				set	
-				{
-					vpcId = value;
-				}
-			}
-
-			public string VSwitchId
-			{
-				get
-				{
-					return vSwitchId;
-				}
-				set	
-				{
-					vSwitchId = value;
-				}
-			}
-
-			public string Message
-			{
-				get
-				{
-					return message;
-				}
-				set	
-				{
-					message = value;
-				}
-			}
-
-			public string Mac
-			{
-				get
-				{
-					return mac;
-				}
-				set	
-				{
-					mac = value;
-				}
-			}
-
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
-
-			public string Gateway
-			{
-				get
-				{
-					return gateway;
-				}
-				set	
-				{
-					gateway = value;
-				}
-			}
-
-			public string Mask
-			{
-				get
-				{
-					return mask;
-				}
-				set	
-				{
-					mask = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public string GmtModified
-			{
-				get
-				{
-					return gmtModified;
-				}
-				set	
-				{
-					gmtModified = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string SecurityGroupId
-			{
-				get
-				{
-					return securityGroupId;
-				}
-				set	
-				{
-					securityGroupId = value;
-				}
-			}
-
-			public List<GetElasticNetworkInterface_PrivateIpAddress> PrivateIpAddresses
-			{
-				get
-				{
-					return privateIpAddresses;
-				}
-				set	
-				{
-					privateIpAddresses = value;
-				}
-			}
-
-			public class GetElasticNetworkInterface_PrivateIpAddress
+			public class ListLeniPrivateIpAddresses_DataItem
 			{
 
 				private string elasticNetworkInterfaceId;
