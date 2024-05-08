@@ -66,6 +66,8 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string secretDataType;
 
+		private string policy;
+
 		[JsonProperty(PropertyName = "SecretType")]
 		public string SecretType
 		{
@@ -231,6 +233,20 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				secretDataType = value;
 				DictionaryUtil.Add(QueryParameters, "SecretDataType", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Policy")]
+		public string Policy
+		{
+			get
+			{
+				return policy;
+			}
+			set	
+			{
+				policy = value;
+				DictionaryUtil.Add(QueryParameters, "Policy", value);
 			}
 		}
 
