@@ -98,7 +98,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class DescribeVodMediaPlayData_Data
 		{
 
-			private float? videoTitle;
+			private string videoTitle;
 
 			private float? videoDuration;
 
@@ -114,7 +114,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private float? playPerVv;
 
-			public float? VideoTitle
+			public string VideoTitle
 			{
 				get
 				{

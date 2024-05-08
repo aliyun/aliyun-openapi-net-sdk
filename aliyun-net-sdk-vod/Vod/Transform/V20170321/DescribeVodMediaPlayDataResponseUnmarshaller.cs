@@ -39,7 +39,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			List<DescribeVodMediaPlayDataResponse.DescribeVodMediaPlayData_Data> describeVodMediaPlayDataResponse_qoeInfoList = new List<DescribeVodMediaPlayDataResponse.DescribeVodMediaPlayData_Data>();
 			for (int i = 0; i < _ctx.Length("DescribeVodMediaPlayData.QoeInfoList.Length"); i++) {
 				DescribeVodMediaPlayDataResponse.DescribeVodMediaPlayData_Data data = new DescribeVodMediaPlayDataResponse.DescribeVodMediaPlayData_Data();
-				data.VideoTitle = _ctx.FloatValue("DescribeVodMediaPlayData.QoeInfoList["+ i +"].VideoTitle");
+				data.VideoTitle = _ctx.StringValue("DescribeVodMediaPlayData.QoeInfoList["+ i +"].VideoTitle");
 				data.VideoDuration = _ctx.FloatValue("DescribeVodMediaPlayData.QoeInfoList["+ i +"].VideoDuration");
 				data.MediaId = _ctx.StringValue("DescribeVodMediaPlayData.QoeInfoList["+ i +"].MediaId");
 				data.DAU = _ctx.FloatValue("DescribeVodMediaPlayData.QoeInfoList["+ i +"].DAU");
