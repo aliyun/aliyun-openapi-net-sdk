@@ -27,6 +27,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string requestId;
 
+		private List<ModifyLiveMessageUserInfo_SuccessGroups> successList;
+
+		private List<ModifyLiveMessageUserInfo_FailGroups> failList;
+
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
@@ -37,6 +41,130 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "SuccessList")]
+		public List<ModifyLiveMessageUserInfo_SuccessGroups> SuccessList
+		{
+			get
+			{
+				return successList;
+			}
+			set	
+			{
+				successList = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "FailList")]
+		public List<ModifyLiveMessageUserInfo_FailGroups> FailList
+		{
+			get
+			{
+				return failList;
+			}
+			set	
+			{
+				failList = value;
+			}
+		}
+
+		public class ModifyLiveMessageUserInfo_SuccessGroups
+		{
+
+			private string groupId;
+
+			private bool? success;
+
+			[JsonProperty(PropertyName = "GroupId")]
+			public string GroupId
+			{
+				get
+				{
+					return groupId;
+				}
+				set	
+				{
+					groupId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Success")]
+			public bool? Success
+			{
+				get
+				{
+					return success;
+				}
+				set	
+				{
+					success = value;
+				}
+			}
+		}
+
+		public class ModifyLiveMessageUserInfo_FailGroups
+		{
+
+			private string groupId;
+
+			private bool? success;
+
+			private string reason;
+
+			private int? code;
+
+			[JsonProperty(PropertyName = "GroupId")]
+			public string GroupId
+			{
+				get
+				{
+					return groupId;
+				}
+				set	
+				{
+					groupId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Success")]
+			public bool? Success
+			{
+				get
+				{
+					return success;
+				}
+				set	
+				{
+					success = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Reason")]
+			public string Reason
+			{
+				get
+				{
+					return reason;
+				}
+				set	
+				{
+					reason = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Code")]
+			public int? Code
+			{
+				get
+				{
+					return code;
+				}
+				set	
+				{
+					code = value;
+				}
 			}
 		}
 	}
