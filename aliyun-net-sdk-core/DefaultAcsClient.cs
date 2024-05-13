@@ -152,6 +152,71 @@ namespace Aliyun.Acs.Core
             return response;
         }
 
+        public HttpRequest GetCommonRequest(CommonRequest _request)
+        {
+            var request = _request.BuildRequest();
+
+            if (null == clientProfile)
+            {
+                throw new ClientException("SDK.InvalidProfile", "No active profile found.");
+            }
+
+            var region = clientProfile.GetRegionId();
+            if (null == request.RegionId)
+            {
+                request.RegionId = region;
+            }
+
+            if (request.ProductDomain == null)
+            {
+                request.ProductDomain = EndpointUserConfig.GetProductDomain(request.Product, request.RegionId);
+                if (request.ProductDomain == null)
+                {
+                    request.SetProductDomain();
+                }
+            }
+
+            var credentials = credentialsProvider.GetCredentials();
+            if (credentials == null)
+            {
+                credentials = new DefaultCredentialProvider().GetAlibabaCloudClientCredential();
+            }
+
+            var signer = Signer.GetSigner(credentials);
+            FormatType? requestFormatType = request.AcceptFormat;
+            var format = requestFormatType;
+            List<Endpoint> endpoints = null;
+
+            if (request.ProductDomain == null)
+            {
+                endpoints = clientProfile.GetEndpoints(request.Product, request.RegionId,
+                    request.LocationProduct,
+                    request.LocationEndpointType);
+            }
+
+            var domain = request.ProductDomain ??
+                Endpoint.FindProductDomain(request.RegionId, request.Product, endpoints);
+
+            if (null == domain)
+            {
+                throw new ClientException("SDK.InvalidRegionId", "Can not find endpoint to access.");
+            }
+
+            var userAgent = UserAgent.Resolve(request.GetSysUserAgentConfig(), userAgentConfig);
+            DictionaryUtil.Add(request.Headers, "User-Agent", userAgent);
+            DictionaryUtil.Add(request.Headers, "x-acs-version", request.Version);
+            if (!string.IsNullOrWhiteSpace(request.ActionName))
+            {
+                DictionaryUtil.Add(request.Headers, "x-acs-action", request.ActionName);
+            }
+            var httpRequest = request.SignRequest(signer, credentials, format, domain);
+            ResolveTimeout(httpRequest, request.Product, request.Version, request.ActionName);
+            SetHttpsInsecure(IgnoreCertificate);
+            ResolveProxy(httpRequest, request);
+
+            return httpRequest;
+        }
+
         public HttpResponse DoAction<T>(AcsRequest<T> request) where T : AcsResponse
         {
             return DoAction(request, AutoRetry, MaxRetryNumber, clientProfile);
