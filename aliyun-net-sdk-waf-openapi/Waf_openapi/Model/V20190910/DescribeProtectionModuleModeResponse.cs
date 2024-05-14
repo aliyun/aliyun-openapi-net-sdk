@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.waf_openapi.Model.V20190910
@@ -25,11 +25,23 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 	public class DescribeProtectionModuleModeResponse : AcsResponse
 	{
 
+		private int? learnStatus;
+
 		private string requestId;
 
 		private int? mode;
 
-		private int? learnStatus;
+		public int? LearnStatus
+		{
+			get
+			{
+				return learnStatus;
+			}
+			set	
+			{
+				learnStatus = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -52,18 +64,6 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			set	
 			{
 				mode = value;
-			}
-		}
-
-		public int? LearnStatus
-		{
-			get
-			{
-				return learnStatus;
-			}
-			set	
-			{
-				learnStatus = value;
 			}
 		}
 	}

@@ -88,6 +88,14 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 
 			private int? connectionTime;
 
+			private bool? retry;
+
+			private bool? keepalive;
+
+			private int? keepaliveRequests;
+
+			private int? keepaliveTimeout;
+
 			private List<DescribeDomain_LogHeader> logHeaders;
 
 			private List<DescribeDomain_CloudNativeInstancesItem> cloudNativeInstances;
@@ -294,6 +302,54 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				}
 			}
 
+			public bool? Retry
+			{
+				get
+				{
+					return retry;
+				}
+				set	
+				{
+					retry = value;
+				}
+			}
+
+			public bool? Keepalive
+			{
+				get
+				{
+					return keepalive;
+				}
+				set	
+				{
+					keepalive = value;
+				}
+			}
+
+			public int? KeepaliveRequests
+			{
+				get
+				{
+					return keepaliveRequests;
+				}
+				set	
+				{
+					keepaliveRequests = value;
+				}
+			}
+
+			public int? KeepaliveTimeout
+			{
+				get
+				{
+					return keepaliveTimeout;
+				}
+				set	
+				{
+					keepaliveTimeout = value;
+				}
+			}
+
 			public List<DescribeDomain_LogHeader> LogHeaders
 			{
 				get
@@ -419,9 +475,9 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 
 				private string instanceId;
 
-				private string iPAddressList;
-
 				private List<DescribeDomain_ProtocolPortConfigsItem> protocolPortConfigs;
+
+				private List<string> iPAddressList;
 
 				public string RedirectionTypeName
 				{
@@ -459,18 +515,6 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 					}
 				}
 
-				public string IPAddressList
-				{
-					get
-					{
-						return iPAddressList;
-					}
-					set	
-					{
-						iPAddressList = value;
-					}
-				}
-
 				public List<DescribeDomain_ProtocolPortConfigsItem> ProtocolPortConfigs
 				{
 					get
@@ -483,24 +527,24 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 					}
 				}
 
+				public List<string> IPAddressList
+				{
+					get
+					{
+						return iPAddressList;
+					}
+					set	
+					{
+						iPAddressList = value;
+					}
+				}
+
 				public class DescribeDomain_ProtocolPortConfigsItem
 				{
 
-					private string ports;
-
 					private string protocol;
 
-					public string Ports
-					{
-						get
-						{
-							return ports;
-						}
-						set	
-						{
-							ports = value;
-						}
-					}
+					private List<string> ports;
 
 					public string Protocol
 					{
@@ -511,6 +555,18 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 						set	
 						{
 							protocol = value;
+						}
+					}
+
+					public List<string> Ports
+					{
+						get
+						{
+							return ports;
+						}
+						set	
+						{
+							ports = value;
 						}
 					}
 				}

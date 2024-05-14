@@ -42,6 +42,8 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 
 		private int? enabled;
 
+		private string resourceGroupId;
+
 		private string instanceId;
 
 		private string domain;
@@ -56,6 +58,19 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			{
 				enabled = value;
 				DictionaryUtil.Add(QueryParameters, "Enabled", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

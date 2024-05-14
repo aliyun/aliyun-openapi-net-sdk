@@ -50,6 +50,10 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 			domain.ResourceGroupId = _ctx.StringValue("DescribeDomain.Domain.ResourceGroupId");
 			domain.Cname = _ctx.StringValue("DescribeDomain.Domain.Cname");
 			domain.ConnectionTime = _ctx.IntegerValue("DescribeDomain.Domain.ConnectionTime");
+			domain.Retry = _ctx.BooleanValue("DescribeDomain.Domain.Retry");
+			domain.Keepalive = _ctx.BooleanValue("DescribeDomain.Domain.Keepalive");
+			domain.KeepaliveRequests = _ctx.IntegerValue("DescribeDomain.Domain.KeepaliveRequests");
+			domain.KeepaliveTimeout = _ctx.IntegerValue("DescribeDomain.Domain.KeepaliveTimeout");
 
 			List<string> domain_httpPort = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeDomain.Domain.HttpPort.Length"); i++) {
@@ -97,13 +101,23 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 				cloudNativeInstancesItem.RedirectionTypeName = _ctx.StringValue("DescribeDomain.Domain.CloudNativeInstances["+ i +"].RedirectionTypeName");
 				cloudNativeInstancesItem.CloudNativeProductName = _ctx.StringValue("DescribeDomain.Domain.CloudNativeInstances["+ i +"].CloudNativeProductName");
 				cloudNativeInstancesItem.InstanceId = _ctx.StringValue("DescribeDomain.Domain.CloudNativeInstances["+ i +"].InstanceId");
-				cloudNativeInstancesItem.IPAddressList = _ctx.StringValue("DescribeDomain.Domain.CloudNativeInstances["+ i +"].IPAddressList");
+
+				List<string> cloudNativeInstancesItem_iPAddressList = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeDomain.Domain.CloudNativeInstances["+ i +"].IPAddressList.Length"); j++) {
+					cloudNativeInstancesItem_iPAddressList.Add(_ctx.StringValue("DescribeDomain.Domain.CloudNativeInstances["+ i +"].IPAddressList["+ j +"]"));
+				}
+				cloudNativeInstancesItem.IPAddressList = cloudNativeInstancesItem_iPAddressList;
 
 				List<DescribeDomainResponse.DescribeDomain_Domain.DescribeDomain_CloudNativeInstancesItem.DescribeDomain_ProtocolPortConfigsItem> cloudNativeInstancesItem_protocolPortConfigs = new List<DescribeDomainResponse.DescribeDomain_Domain.DescribeDomain_CloudNativeInstancesItem.DescribeDomain_ProtocolPortConfigsItem>();
 				for (int j = 0; j < _ctx.Length("DescribeDomain.Domain.CloudNativeInstances["+ i +"].ProtocolPortConfigs.Length"); j++) {
 					DescribeDomainResponse.DescribeDomain_Domain.DescribeDomain_CloudNativeInstancesItem.DescribeDomain_ProtocolPortConfigsItem protocolPortConfigsItem = new DescribeDomainResponse.DescribeDomain_Domain.DescribeDomain_CloudNativeInstancesItem.DescribeDomain_ProtocolPortConfigsItem();
-					protocolPortConfigsItem.Ports = _ctx.StringValue("DescribeDomain.Domain.CloudNativeInstances["+ i +"].ProtocolPortConfigs["+ j +"].Ports");
 					protocolPortConfigsItem.Protocol = _ctx.StringValue("DescribeDomain.Domain.CloudNativeInstances["+ i +"].ProtocolPortConfigs["+ j +"].Protocol");
+
+					List<string> protocolPortConfigsItem_ports = new List<string>();
+					for (int k = 0; k < _ctx.Length("DescribeDomain.Domain.CloudNativeInstances["+ i +"].ProtocolPortConfigs["+ j +"].Ports.Length"); k++) {
+						protocolPortConfigsItem_ports.Add(_ctx.StringValue("DescribeDomain.Domain.CloudNativeInstances["+ i +"].ProtocolPortConfigs["+ j +"].Ports["+ k +"]"));
+					}
+					protocolPortConfigsItem.Ports = protocolPortConfigsItem_ports;
 
 					cloudNativeInstancesItem_protocolPortConfigs.Add(protocolPortConfigsItem);
 				}
