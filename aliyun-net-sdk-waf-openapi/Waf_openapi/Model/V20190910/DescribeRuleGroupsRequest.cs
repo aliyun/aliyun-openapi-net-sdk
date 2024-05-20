@@ -27,10 +27,10 @@ using Aliyun.Acs.waf_openapi.Transform.V20190910;
 
 namespace Aliyun.Acs.waf_openapi.Model.V20190910
 {
-    public class ModifyProtectionModuleModeRequest : RpcAcsRequest<ModifyProtectionModuleModeResponse>
+    public class DescribeRuleGroupsRequest : RpcAcsRequest<DescribeRuleGroupsResponse>
     {
-        public ModifyProtectionModuleModeRequest()
-            : base("waf-openapi", "2019-09-10", "ModifyProtectionModuleMode", "waf", "openAPI")
+        public DescribeRuleGroupsRequest()
+            : base("waf-openapi", "2019-09-10", "DescribeRuleGroups", "waf", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,26 +40,49 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			Method = MethodType.POST;
         }
 
-		private int? mode;
+		private int? type;
+
+		private string wafLang;
 
 		private string resourceGroupId;
 
-		private string defenseType;
+		private string sourceIp;
+
+		private long? policyId;
+
+		private int? pageSize;
+
+		private string lang;
+
+		private int? currentPage;
 
 		private string instanceId;
 
-		private string domain;
+		private string region;
 
-		public int? Mode
+		public int? Type
 		{
 			get
 			{
-				return mode;
+				return type;
 			}
 			set	
 			{
-				mode = value;
-				DictionaryUtil.Add(QueryParameters, "Mode", value.ToString());
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value.ToString());
+			}
+		}
+
+		public string WafLang
+		{
+			get
+			{
+				return wafLang;
+			}
+			set	
+			{
+				wafLang = value;
+				DictionaryUtil.Add(QueryParameters, "WafLang", value);
 			}
 		}
 
@@ -76,16 +99,68 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			}
 		}
 
-		public string DefenseType
+		public string SourceIp
 		{
 			get
 			{
-				return defenseType;
+				return sourceIp;
 			}
 			set	
 			{
-				defenseType = value;
-				DictionaryUtil.Add(QueryParameters, "DefenseType", value);
+				sourceIp = value;
+				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
+			}
+		}
+
+		public long? PolicyId
+		{
+			get
+			{
+				return policyId;
+			}
+			set	
+			{
+				policyId = value;
+				DictionaryUtil.Add(QueryParameters, "PolicyId", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
 			}
 		}
 
@@ -102,16 +177,16 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			}
 		}
 
-		public string Domain
+		public string Region
 		{
 			get
 			{
-				return domain;
+				return region;
 			}
 			set	
 			{
-				domain = value;
-				DictionaryUtil.Add(QueryParameters, "Domain", value);
+				region = value;
+				DictionaryUtil.Add(QueryParameters, "Region", value);
 			}
 		}
 
@@ -120,9 +195,9 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			return false;
 		}
 
-        public override ModifyProtectionModuleModeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeRuleGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyProtectionModuleModeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeRuleGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
