@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardbx.Model.V20200202
@@ -27,11 +27,11 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 
 		private string requestId;
 
-		private int? totalRecordCount;
-
 		private int? pageNumber;
 
 		private int? pageRecordCount;
+
+		private int? totalRecordCount;
 
 		private List<DescribeTasks_TaskProgressInfo> items;
 
@@ -44,18 +44,6 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
 			}
 		}
 
@@ -83,6 +71,18 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			}
 		}
 
+		public int? TotalRecordCount
+		{
+			get
+			{
+				return totalRecordCount;
+			}
+			set	
+			{
+				totalRecordCount = value;
+			}
+		}
+
 		public List<DescribeTasks_TaskProgressInfo> Items
 		{
 			get
@@ -98,63 +98,37 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 		public class DescribeTasks_TaskProgressInfo
 		{
 
-			private string dBName;
-
-			private string beginTime;
-
-			private string progressInfo;
+			private string status;
 
 			private string finishTime;
 
-			private string taskAction;
-
-			private string taskId;
-
 			private string progress;
 
-			private string finishTime1;
-
-			private string status;
+			private string beginTime;
 
 			private string taskErrorCode;
 
-			private string taskErrorMessage;
+			private string dBName;
+
+			private string progressInfo;
 
 			private string scaleOutToken;
 
-			public string DBName
-			{
-				get
-				{
-					return dBName;
-				}
-				set	
-				{
-					dBName = value;
-				}
-			}
+			private string taskId;
 
-			public string BeginTime
-			{
-				get
-				{
-					return beginTime;
-				}
-				set	
-				{
-					beginTime = value;
-				}
-			}
+			private string taskErrorMessage;
 
-			public string ProgressInfo
+			private string taskAction;
+
+			public string Status
 			{
 				get
 				{
-					return progressInfo;
+					return status;
 				}
 				set	
 				{
-					progressInfo = value;
+					status = value;
 				}
 			}
 
@@ -170,30 +144,6 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 				}
 			}
 
-			public string TaskAction
-			{
-				get
-				{
-					return taskAction;
-				}
-				set	
-				{
-					taskAction = value;
-				}
-			}
-
-			public string TaskId
-			{
-				get
-				{
-					return taskId;
-				}
-				set	
-				{
-					taskId = value;
-				}
-			}
-
 			public string Progress
 			{
 				get
@@ -206,27 +156,15 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 				}
 			}
 
-			public string FinishTime1
+			public string BeginTime
 			{
 				get
 				{
-					return finishTime1;
+					return beginTime;
 				}
 				set	
 				{
-					finishTime1 = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
+					beginTime = value;
 				}
 			}
 
@@ -242,15 +180,27 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 				}
 			}
 
-			public string TaskErrorMessage
+			public string DBName
 			{
 				get
 				{
-					return taskErrorMessage;
+					return dBName;
 				}
 				set	
 				{
-					taskErrorMessage = value;
+					dBName = value;
+				}
+			}
+
+			public string ProgressInfo
+			{
+				get
+				{
+					return progressInfo;
+				}
+				set	
+				{
+					progressInfo = value;
 				}
 			}
 
@@ -263,6 +213,42 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 				set	
 				{
 					scaleOutToken = value;
+				}
+			}
+
+			public string TaskId
+			{
+				get
+				{
+					return taskId;
+				}
+				set	
+				{
+					taskId = value;
+				}
+			}
+
+			public string TaskErrorMessage
+			{
+				get
+				{
+					return taskErrorMessage;
+				}
+				set	
+				{
+					taskErrorMessage = value;
+				}
+			}
+
+			public string TaskAction
+			{
+				get
+				{
+					return taskAction;
+				}
+				set	
+				{
+					taskAction = value;
 				}
 			}
 		}

@@ -31,9 +31,9 @@ namespace Aliyun.Acs.polardbx.Transform.V20200202
 			CreateAccountResponse createAccountResponse = new CreateAccountResponse();
 
 			createAccountResponse.HttpResponse = _ctx.HttpResponse;
+			createAccountResponse.Message = _ctx.StringValue("CreateAccount.Message");
 			createAccountResponse.RequestId = _ctx.StringValue("CreateAccount.RequestId");
 			createAccountResponse.Success = _ctx.BooleanValue("CreateAccount.Success");
-			createAccountResponse.Message = _ctx.StringValue("CreateAccount.Message");
         
 			return createAccountResponse;
         }

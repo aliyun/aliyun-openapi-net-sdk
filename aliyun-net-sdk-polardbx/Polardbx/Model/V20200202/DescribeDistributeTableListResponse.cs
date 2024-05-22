@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardbx.Model.V20200202
@@ -25,13 +25,25 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 	public class DescribeDistributeTableListResponse : AcsResponse
 	{
 
+		private string message;
+
 		private string requestId;
 
 		private bool? success;
 
-		private string message;
-
 		private DescribeDistributeTableList_Data data;
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -54,18 +66,6 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
 			}
 		}
 
@@ -105,9 +105,9 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 
 				private string tableType;
 
-				private string dbKey;
-
 				private string tbKey;
+
+				private string dbKey;
 
 				public string TableName
 				{
@@ -133,18 +133,6 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 					}
 				}
 
-				public string DbKey
-				{
-					get
-					{
-						return dbKey;
-					}
-					set	
-					{
-						dbKey = value;
-					}
-				}
-
 				public string TbKey
 				{
 					get
@@ -154,6 +142,18 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 					set	
 					{
 						tbKey = value;
+					}
+				}
+
+				public string DbKey
+				{
+					get
+					{
+						return dbKey;
+					}
+					set	
+					{
+						dbKey = value;
 					}
 				}
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardbx.Model.V20200202
@@ -98,97 +98,127 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 		public class DescribeDBInstances_DBInstance
 		{
 
-			private string id;
+			private string type;
 
-			private string description;
+			private string status;
 
-			private string payType;
-
-			private string createTime;
+			private string commodityCode;
 
 			private string expireTime;
 
 			private bool? expired;
 
-			private string regionId;
+			private string createTime;
 
-			private string zoneId;
-
-			private string network;
-
-			private string vPCId;
-
-			private string engine;
-
-			private string dBType;
-
-			private string dBVersion;
-
-			private string status;
-
-			private string lockMode;
+			private string payType;
 
 			private string lockReason;
 
-			private int? nodeCount;
+			private string dBType;
+
+			private string lockMode;
+
+			private string vPCId;
+
+			private string minorVersion;
+
+			private string regionId;
+
+			private string network;
+
+			private string dBVersion;
+
+			private string description;
 
 			private string nodeClass;
 
-			private int? storageUsed;
+			private long? storageUsed;
 
-			private string commodityCode;
+			private int? nodeCount;
 
-			private string type;
+			private string zoneId;
+
+			private string engine;
+
+			private string id;
+
+			private string resourceGroupId;
+
+			private string dBInstanceName;
+
+			private int? dnNodeCount;
+
+			private int? cnNodeCount;
+
+			private string cnNodeClassCode;
+
+			private string dnNodeClassCode;
+
+			private string series;
+
+			private bool? containBinlogX;
+
+			private bool? supportBinlogX;
+
+			private string cdcInstanceName;
+
+			private string topologyType;
+
+			private string tertiaryZone;
+
+			private string primaryZone;
+
+			private string secondaryZone;
+
+			private string columnarInstanceName;
+
+			private bool? isInGdn;
+
+			private string gdnRole;
+
+			private string cpuType;
 
 			private List<DescribeDBInstances_PolarDBXNode> nodes;
 
+			private List<DescribeDBInstances_TagSetItem> tagSet;
+
 			private List<string> readDBInstances;
 
-			public string Id
+			private List<string> columnarReadDBInstances;
+
+			public string Type
 			{
 				get
 				{
-					return id;
+					return type;
 				}
 				set	
 				{
-					id = value;
+					type = value;
 				}
 			}
 
-			public string Description
+			public string Status
 			{
 				get
 				{
-					return description;
+					return status;
 				}
 				set	
 				{
-					description = value;
+					status = value;
 				}
 			}
 
-			public string PayType
+			public string CommodityCode
 			{
 				get
 				{
-					return payType;
+					return commodityCode;
 				}
 				set	
 				{
-					payType = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
+					commodityCode = value;
 				}
 			}
 
@@ -216,111 +246,27 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 				}
 			}
 
-			public string RegionId
+			public string CreateTime
 			{
 				get
 				{
-					return regionId;
+					return createTime;
 				}
 				set	
 				{
-					regionId = value;
+					createTime = value;
 				}
 			}
 
-			public string ZoneId
+			public string PayType
 			{
 				get
 				{
-					return zoneId;
+					return payType;
 				}
 				set	
 				{
-					zoneId = value;
-				}
-			}
-
-			public string Network
-			{
-				get
-				{
-					return network;
-				}
-				set	
-				{
-					network = value;
-				}
-			}
-
-			public string VPCId
-			{
-				get
-				{
-					return vPCId;
-				}
-				set	
-				{
-					vPCId = value;
-				}
-			}
-
-			public string Engine
-			{
-				get
-				{
-					return engine;
-				}
-				set	
-				{
-					engine = value;
-				}
-			}
-
-			public string DBType
-			{
-				get
-				{
-					return dBType;
-				}
-				set	
-				{
-					dBType = value;
-				}
-			}
-
-			public string DBVersion
-			{
-				get
-				{
-					return dBVersion;
-				}
-				set	
-				{
-					dBVersion = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string LockMode
-			{
-				get
-				{
-					return lockMode;
-				}
-				set	
-				{
-					lockMode = value;
+					payType = value;
 				}
 			}
 
@@ -336,15 +282,99 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 				}
 			}
 
-			public int? NodeCount
+			public string DBType
 			{
 				get
 				{
-					return nodeCount;
+					return dBType;
 				}
 				set	
 				{
-					nodeCount = value;
+					dBType = value;
+				}
+			}
+
+			public string LockMode
+			{
+				get
+				{
+					return lockMode;
+				}
+				set	
+				{
+					lockMode = value;
+				}
+			}
+
+			public string VPCId
+			{
+				get
+				{
+					return vPCId;
+				}
+				set	
+				{
+					vPCId = value;
+				}
+			}
+
+			public string MinorVersion
+			{
+				get
+				{
+					return minorVersion;
+				}
+				set	
+				{
+					minorVersion = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public string Network
+			{
+				get
+				{
+					return network;
+				}
+				set	
+				{
+					network = value;
+				}
+			}
+
+			public string DBVersion
+			{
+				get
+				{
+					return dBVersion;
+				}
+				set	
+				{
+					dBVersion = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
 				}
 			}
 
@@ -360,7 +390,7 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 				}
 			}
 
-			public int? StorageUsed
+			public long? StorageUsed
 			{
 				get
 				{
@@ -372,27 +402,267 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 				}
 			}
 
-			public string CommodityCode
+			public int? NodeCount
 			{
 				get
 				{
-					return commodityCode;
+					return nodeCount;
 				}
 				set	
 				{
-					commodityCode = value;
+					nodeCount = value;
 				}
 			}
 
-			public string Type
+			public string ZoneId
 			{
 				get
 				{
-					return type;
+					return zoneId;
 				}
 				set	
 				{
-					type = value;
+					zoneId = value;
+				}
+			}
+
+			public string Engine
+			{
+				get
+				{
+					return engine;
+				}
+				set	
+				{
+					engine = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public string DBInstanceName
+			{
+				get
+				{
+					return dBInstanceName;
+				}
+				set	
+				{
+					dBInstanceName = value;
+				}
+			}
+
+			public int? DnNodeCount
+			{
+				get
+				{
+					return dnNodeCount;
+				}
+				set	
+				{
+					dnNodeCount = value;
+				}
+			}
+
+			public int? CnNodeCount
+			{
+				get
+				{
+					return cnNodeCount;
+				}
+				set	
+				{
+					cnNodeCount = value;
+				}
+			}
+
+			public string CnNodeClassCode
+			{
+				get
+				{
+					return cnNodeClassCode;
+				}
+				set	
+				{
+					cnNodeClassCode = value;
+				}
+			}
+
+			public string DnNodeClassCode
+			{
+				get
+				{
+					return dnNodeClassCode;
+				}
+				set	
+				{
+					dnNodeClassCode = value;
+				}
+			}
+
+			public string Series
+			{
+				get
+				{
+					return series;
+				}
+				set	
+				{
+					series = value;
+				}
+			}
+
+			public bool? ContainBinlogX
+			{
+				get
+				{
+					return containBinlogX;
+				}
+				set	
+				{
+					containBinlogX = value;
+				}
+			}
+
+			public bool? SupportBinlogX
+			{
+				get
+				{
+					return supportBinlogX;
+				}
+				set	
+				{
+					supportBinlogX = value;
+				}
+			}
+
+			public string CdcInstanceName
+			{
+				get
+				{
+					return cdcInstanceName;
+				}
+				set	
+				{
+					cdcInstanceName = value;
+				}
+			}
+
+			public string TopologyType
+			{
+				get
+				{
+					return topologyType;
+				}
+				set	
+				{
+					topologyType = value;
+				}
+			}
+
+			public string TertiaryZone
+			{
+				get
+				{
+					return tertiaryZone;
+				}
+				set	
+				{
+					tertiaryZone = value;
+				}
+			}
+
+			public string PrimaryZone
+			{
+				get
+				{
+					return primaryZone;
+				}
+				set	
+				{
+					primaryZone = value;
+				}
+			}
+
+			public string SecondaryZone
+			{
+				get
+				{
+					return secondaryZone;
+				}
+				set	
+				{
+					secondaryZone = value;
+				}
+			}
+
+			public string ColumnarInstanceName
+			{
+				get
+				{
+					return columnarInstanceName;
+				}
+				set	
+				{
+					columnarInstanceName = value;
+				}
+			}
+
+			public bool? IsInGdn
+			{
+				get
+				{
+					return isInGdn;
+				}
+				set	
+				{
+					isInGdn = value;
+				}
+			}
+
+			public string GdnRole
+			{
+				get
+				{
+					return gdnRole;
+				}
+				set	
+				{
+					gdnRole = value;
+				}
+			}
+
+			public string CpuType
+			{
+				get
+				{
+					return cpuType;
+				}
+				set	
+				{
+					cpuType = value;
 				}
 			}
 
@@ -408,6 +678,18 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 				}
 			}
 
+			public List<DescribeDBInstances_TagSetItem> TagSet
+			{
+				get
+				{
+					return tagSet;
+				}
+				set	
+				{
+					tagSet = value;
+				}
+			}
+
 			public List<string> ReadDBInstances
 			{
 				get
@@ -420,8 +702,22 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 				}
 			}
 
+			public List<string> ColumnarReadDBInstances
+			{
+				get
+				{
+					return columnarReadDBInstances;
+				}
+				set	
+				{
+					columnarReadDBInstances = value;
+				}
+			}
+
 			public class DescribeDBInstances_PolarDBXNode
 			{
+
+				private string zoneId;
 
 				private string id;
 
@@ -429,7 +725,17 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 
 				private string regionId;
 
-				private string zoneId;
+				public string ZoneId
+				{
+					get
+					{
+						return zoneId;
+					}
+					set	
+					{
+						zoneId = value;
+					}
+				}
 
 				public string Id
 				{
@@ -466,16 +772,36 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 						regionId = value;
 					}
 				}
+			}
 
-				public string ZoneId
+			public class DescribeDBInstances_TagSetItem
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
 				{
 					get
 					{
-						return zoneId;
+						return key;
 					}
 					set	
 					{
-						zoneId = value;
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
 					}
 				}
 			}

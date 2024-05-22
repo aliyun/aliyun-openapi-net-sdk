@@ -31,17 +31,18 @@ namespace Aliyun.Acs.polardbx.Transform.V20200202
 			DescribeRegionsResponse describeRegionsResponse = new DescribeRegionsResponse();
 
 			describeRegionsResponse.HttpResponse = _ctx.HttpResponse;
-			describeRegionsResponse.RequestId = _ctx.StringValue("DescribeRegions.RequestId");
 			describeRegionsResponse.Code = _ctx.IntegerValue("DescribeRegions.Code");
-			describeRegionsResponse.ErrorCode = _ctx.IntegerValue("DescribeRegions.ErrorCode");
-			describeRegionsResponse.Success = _ctx.BooleanValue("DescribeRegions.Success");
 			describeRegionsResponse.Message = _ctx.StringValue("DescribeRegions.Message");
+			describeRegionsResponse.RequestId = _ctx.StringValue("DescribeRegions.RequestId");
+			describeRegionsResponse.Success = _ctx.BooleanValue("DescribeRegions.Success");
+			describeRegionsResponse.ErrorCode = _ctx.IntegerValue("DescribeRegions.ErrorCode");
 
 			List<DescribeRegionsResponse.DescribeRegions_Region> describeRegionsResponse_regions = new List<DescribeRegionsResponse.DescribeRegions_Region>();
 			for (int i = 0; i < _ctx.Length("DescribeRegions.Regions.Length"); i++) {
 				DescribeRegionsResponse.DescribeRegions_Region region = new DescribeRegionsResponse.DescribeRegions_Region();
-				region.RegionId = _ctx.StringValue("DescribeRegions.Regions["+ i +"].RegionId");
+				region.SupportPolarx10 = _ctx.BooleanValue("DescribeRegions.Regions["+ i +"].SupportPolarx10");
 				region.SupportPolarx20 = _ctx.BooleanValue("DescribeRegions.Regions["+ i +"].SupportPolarx20");
+				region.RegionId = _ctx.StringValue("DescribeRegions.Regions["+ i +"].RegionId");
 
 				List<DescribeRegionsResponse.DescribeRegions_Region.DescribeRegions_Zone> region_zones = new List<DescribeRegionsResponse.DescribeRegions_Region.DescribeRegions_Zone>();
 				for (int j = 0; j < _ctx.Length("DescribeRegions.Regions["+ i +"].Zones.Length"); j++) {

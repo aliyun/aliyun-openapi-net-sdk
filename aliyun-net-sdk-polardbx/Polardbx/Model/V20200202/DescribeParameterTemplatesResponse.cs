@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardbx.Model.V20200202
@@ -56,25 +56,13 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 		public class DescribeParameterTemplates_Data
 		{
 
-			private string engineVersion;
-
 			private string engine;
+
+			private string engineVersion;
 
 			private int? parameterCount;
 
 			private List<DescribeParameterTemplates_TemplateRecord> parameters;
-
-			public string EngineVersion
-			{
-				get
-				{
-					return engineVersion;
-				}
-				set	
-				{
-					engineVersion = value;
-				}
-			}
 
 			public string Engine
 			{
@@ -85,6 +73,18 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 				set	
 				{
 					engine = value;
+				}
+			}
+
+			public string EngineVersion
+			{
+				get
+				{
+					return engineVersion;
+				}
+				set	
+				{
+					engineVersion = value;
 				}
 			}
 
@@ -115,17 +115,29 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			public class DescribeParameterTemplates_TemplateRecord
 			{
 
+				private string checkingCode;
+
 				private string parameterName;
+
+				private int? _dynamic;
 
 				private string parameterValue;
 
 				private string parameterDescription;
 
-				private string checkingCode;
-
 				private int? revisable;
 
-				private int? _dynamic;
+				public string CheckingCode
+				{
+					get
+					{
+						return checkingCode;
+					}
+					set	
+					{
+						checkingCode = value;
+					}
+				}
 
 				public string ParameterName
 				{
@@ -136,6 +148,18 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 					set	
 					{
 						parameterName = value;
+					}
+				}
+
+				public int? _Dynamic
+				{
+					get
+					{
+						return _dynamic;
+					}
+					set	
+					{
+						_dynamic = value;
 					}
 				}
 
@@ -163,18 +187,6 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 					}
 				}
 
-				public string CheckingCode
-				{
-					get
-					{
-						return checkingCode;
-					}
-					set	
-					{
-						checkingCode = value;
-					}
-				}
-
 				public int? Revisable
 				{
 					get
@@ -184,18 +196,6 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 					set	
 					{
 						revisable = value;
-					}
-				}
-
-				public int? _Dynamic
-				{
-					get
-					{
-						return _dynamic;
-					}
-					set	
-					{
-						_dynamic = value;
 					}
 				}
 			}

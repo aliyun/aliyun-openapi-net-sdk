@@ -31,10 +31,10 @@ namespace Aliyun.Acs.polardbx.Transform.V20200202
 			UpgradeDBInstanceKernelVersionResponse upgradeDBInstanceKernelVersionResponse = new UpgradeDBInstanceKernelVersionResponse();
 
 			upgradeDBInstanceKernelVersionResponse.HttpResponse = _ctx.HttpResponse;
-			upgradeDBInstanceKernelVersionResponse.RequestId = _ctx.StringValue("UpgradeDBInstanceKernelVersion.RequestId");
 			upgradeDBInstanceKernelVersionResponse.DBInstanceName = _ctx.StringValue("UpgradeDBInstanceKernelVersion.DBInstanceName");
-			upgradeDBInstanceKernelVersionResponse.TaskId = _ctx.StringValue("UpgradeDBInstanceKernelVersion.TaskId");
 			upgradeDBInstanceKernelVersionResponse.TargetMinorVersion = _ctx.StringValue("UpgradeDBInstanceKernelVersion.TargetMinorVersion");
+			upgradeDBInstanceKernelVersionResponse.RequestId = _ctx.StringValue("UpgradeDBInstanceKernelVersion.RequestId");
+			upgradeDBInstanceKernelVersionResponse.TaskId = _ctx.StringValue("UpgradeDBInstanceKernelVersion.TaskId");
         
 			return upgradeDBInstanceKernelVersionResponse;
         }

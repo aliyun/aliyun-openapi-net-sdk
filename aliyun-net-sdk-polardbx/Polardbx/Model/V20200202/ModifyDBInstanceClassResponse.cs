@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardbx.Model.V20200202
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 	public class ModifyDBInstanceClassResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string orderId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string OrderId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			set	
 			{
 				orderId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

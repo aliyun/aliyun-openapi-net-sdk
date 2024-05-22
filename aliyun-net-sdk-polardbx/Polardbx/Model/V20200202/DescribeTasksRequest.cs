@@ -58,10 +58,6 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 
 		private long? ownerId;
 
-		private string taskAction;
-
-		private string status;
-
 		public long? ResourceOwnerId
 		{
 			get
@@ -176,32 +172,6 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string TaskAction
-		{
-			get
-			{
-				return taskAction;
-			}
-			set	
-			{
-				taskAction = value;
-				DictionaryUtil.Add(QueryParameters, "TaskAction", value);
-			}
-		}
-
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
 			}
 		}
 

@@ -42,6 +42,8 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 
 		private string dBInstanceName;
 
+		private string accountType;
+
 		private string accountName;
 
 		public string DBInstanceName
@@ -54,6 +56,19 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			{
 				dBInstanceName = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceName", value);
+			}
+		}
+
+		public string AccountType
+		{
+			get
+			{
+				return accountType;
+			}
+			set	
+			{
+				accountType = value;
+				DictionaryUtil.Add(QueryParameters, "AccountType", value);
 			}
 		}
 

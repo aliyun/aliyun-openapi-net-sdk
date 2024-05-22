@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardbx.Model.V20200202
@@ -25,13 +25,25 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 	public class DescribeDbListResponse : AcsResponse
 	{
 
+		private string message;
+
 		private string requestId;
 
 		private bool? success;
 
-		private string message;
-
 		private List<DescribeDbList_DB> data;
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -54,18 +66,6 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
 			}
 		}
 
@@ -157,21 +157,9 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			public class DescribeDbList_Account
 			{
 
-				private string accountName;
-
 				private string accountPrivilege;
 
-				public string AccountName
-				{
-					get
-					{
-						return accountName;
-					}
-					set	
-					{
-						accountName = value;
-					}
-				}
+				private string accountName;
 
 				public string AccountPrivilege
 				{
@@ -182,6 +170,18 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 					set	
 					{
 						accountPrivilege = value;
+					}
+				}
+
+				public string AccountName
+				{
+					get
+					{
+						return accountName;
+					}
+					set	
+					{
+						accountName = value;
 					}
 				}
 			}

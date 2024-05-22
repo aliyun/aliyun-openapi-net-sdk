@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardbx.Model.V20200202
@@ -84,17 +84,43 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 		public class DescribeAccountList_Account
 		{
 
+			private string gmtCreated;
+
+			private string dBInstanceName;
+
 			private string accountDescription;
 
-			private string accountName;
+			private string dBName;
 
 			private string accountPrivilege;
 
 			private string accountType;
 
-			private string dBInstanceName;
+			private string accountName;
 
-			private string dBName;
+			public string GmtCreated
+			{
+				get
+				{
+					return gmtCreated;
+				}
+				set	
+				{
+					gmtCreated = value;
+				}
+			}
+
+			public string DBInstanceName
+			{
+				get
+				{
+					return dBInstanceName;
+				}
+				set	
+				{
+					dBInstanceName = value;
+				}
+			}
 
 			public string AccountDescription
 			{
@@ -108,15 +134,15 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 				}
 			}
 
-			public string AccountName
+			public string DBName
 			{
 				get
 				{
-					return accountName;
+					return dBName;
 				}
 				set	
 				{
-					accountName = value;
+					dBName = value;
 				}
 			}
 
@@ -144,27 +170,15 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 				}
 			}
 
-			public string DBInstanceName
+			public string AccountName
 			{
 				get
 				{
-					return dBInstanceName;
+					return accountName;
 				}
 				set	
 				{
-					dBInstanceName = value;
-				}
-			}
-
-			public string DBName
-			{
-				get
-				{
-					return dBName;
-				}
-				set	
-				{
-					dBName = value;
+					accountName = value;
 				}
 			}
 		}

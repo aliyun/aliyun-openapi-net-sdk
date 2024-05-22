@@ -34,9 +34,9 @@ namespace Aliyun.Acs.polardbx.Transform.V20200202
 			describeDBInstanceConfigResponse.RequestId = _ctx.StringValue("DescribeDBInstanceConfig.RequestId");
 
 			DescribeDBInstanceConfigResponse.DescribeDBInstanceConfig_Data data = new DescribeDBInstanceConfigResponse.DescribeDBInstanceConfig_Data();
+			data.ConfigName = _ctx.StringValue("DescribeDBInstanceConfig.Data.ConfigName");
 			data.DbInstanceName = _ctx.StringValue("DescribeDBInstanceConfig.Data.DbInstanceName");
 			data.ConfigValue = _ctx.StringValue("DescribeDBInstanceConfig.Data.ConfigValue");
-			data.ConfigName = _ctx.StringValue("DescribeDBInstanceConfig.Data.ConfigName");
 			describeDBInstanceConfigResponse.Data = data;
         
 			return describeDBInstanceConfigResponse;
