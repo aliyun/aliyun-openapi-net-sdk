@@ -22,14 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.quickbi_public.Model.V20220101
 {
-	public class ListFavoriteReportsResponse : AcsResponse
+	public class ListWorkspaceRoleUsersResponse : AcsResponse
 	{
 
 		private string requestId;
 
 		private bool? success;
 
-		private ListFavoriteReports_Result result;
+		private ListWorkspaceRoleUsers_Result result;
 
 		public string RequestId
 		{
@@ -55,7 +55,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			}
 		}
 
-		public ListFavoriteReports_Result Result
+		public ListWorkspaceRoleUsers_Result Result
 		{
 			get
 			{
@@ -67,7 +67,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			}
 		}
 
-		public class ListFavoriteReports_Result
+		public class ListWorkspaceRoleUsers_Result
 		{
 
 			private int? totalNum;
@@ -78,7 +78,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 			private int? pageSize;
 
-			private List<ListFavoriteReports_DataItem> data;
+			private List<ListWorkspaceRoleUsers_DataItem> data;
 
 			public int? TotalNum
 			{
@@ -128,7 +128,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public List<ListFavoriteReports_DataItem> Data
+			public List<ListWorkspaceRoleUsers_DataItem> Data
 			{
 				get
 				{
@@ -140,178 +140,38 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public class ListFavoriteReports_DataItem
+			public class ListWorkspaceRoleUsers_DataItem
 			{
 
-				private string treeId;
+				private string userId;
 
-				private string type;
-
-				private string name;
-
-				private string ownerNum;
-
-				private string ownerName;
-
-				private string gmtCreate;
-
-				private string gmtModified;
-
-				private int? publishStatus;
-
-				private bool? favorite;
-
-				private bool? hasViewAuth;
-
-				private bool? hasEditAuth;
-
-				private string workspaceId;
+				private string nickName;
 
 				private string workspaceName;
 
-				private string favoriteDate;
+				private string workspaceId;
 
-				public string TreeId
+				public string UserId
 				{
 					get
 					{
-						return treeId;
+						return userId;
 					}
 					set	
 					{
-						treeId = value;
+						userId = value;
 					}
 				}
 
-				public string Type
+				public string NickName
 				{
 					get
 					{
-						return type;
+						return nickName;
 					}
 					set	
 					{
-						type = value;
-					}
-				}
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
-
-				public string OwnerNum
-				{
-					get
-					{
-						return ownerNum;
-					}
-					set	
-					{
-						ownerNum = value;
-					}
-				}
-
-				public string OwnerName
-				{
-					get
-					{
-						return ownerName;
-					}
-					set	
-					{
-						ownerName = value;
-					}
-				}
-
-				public string GmtCreate
-				{
-					get
-					{
-						return gmtCreate;
-					}
-					set	
-					{
-						gmtCreate = value;
-					}
-				}
-
-				public string GmtModified
-				{
-					get
-					{
-						return gmtModified;
-					}
-					set	
-					{
-						gmtModified = value;
-					}
-				}
-
-				public int? PublishStatus
-				{
-					get
-					{
-						return publishStatus;
-					}
-					set	
-					{
-						publishStatus = value;
-					}
-				}
-
-				public bool? Favorite
-				{
-					get
-					{
-						return favorite;
-					}
-					set	
-					{
-						favorite = value;
-					}
-				}
-
-				public bool? HasViewAuth
-				{
-					get
-					{
-						return hasViewAuth;
-					}
-					set	
-					{
-						hasViewAuth = value;
-					}
-				}
-
-				public bool? HasEditAuth
-				{
-					get
-					{
-						return hasEditAuth;
-					}
-					set	
-					{
-						hasEditAuth = value;
-					}
-				}
-
-				public string WorkspaceId
-				{
-					get
-					{
-						return workspaceId;
-					}
-					set	
-					{
-						workspaceId = value;
+						nickName = value;
 					}
 				}
 
@@ -327,15 +187,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string FavoriteDate
+				public string WorkspaceId
 				{
 					get
 					{
-						return favoriteDate;
+						return workspaceId;
 					}
 					set	
 					{
-						favoriteDate = value;
+						workspaceId = value;
 					}
 				}
 			}

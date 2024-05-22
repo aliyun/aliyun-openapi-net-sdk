@@ -1,3 +1,7 @@
+2024-05-22 Version: 2.1.6
+- Add CreateTicket4Copilot API.
+- QueryDatasetList and QueryDatasetInfo APIs add response parameters.
+
 2024-05-22 Version: 1.1.3
 - DescribeDBInstances, add cpuType.
 

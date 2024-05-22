@@ -53,6 +53,7 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 				dataItem.ModifyTime = _ctx.StringValue("QueryDatasetList.Result.Data["+ i +"].ModifyTime");
 				dataItem.DatasetName = _ctx.StringValue("QueryDatasetList.Result.Data["+ i +"].DatasetName");
 				dataItem.DatasetId = _ctx.StringValue("QueryDatasetList.Result.Data["+ i +"].DatasetId");
+				dataItem.OpenOfflineAcceleration = _ctx.BooleanValue("QueryDatasetList.Result.Data["+ i +"].OpenOfflineAcceleration");
 
 				QueryDatasetListResponse.QueryDatasetList_Result.QueryDatasetList_DataItem.QueryDatasetList_DataSource dataSource = new QueryDatasetListResponse.QueryDatasetList_Result.QueryDatasetList_DataItem.QueryDatasetList_DataSource();
 				dataSource.DsType = _ctx.StringValue("QueryDatasetList.Result.Data["+ i +"].DataSource.DsType");
