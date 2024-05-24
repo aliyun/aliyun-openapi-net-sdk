@@ -39,7 +39,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
             }
         }
 
-		private long? backupJobId;
+		private string backupJobId;
 
 		private long? resourceOwnerId;
 
@@ -53,7 +53,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? ownerId;
 
-		public long? BackupJobId
+		public string BackupJobId
 		{
 			get
 			{
@@ -62,7 +62,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				backupJobId = value;
-				DictionaryUtil.Add(QueryParameters, "BackupJobId", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "BackupJobId", value);
 			}
 		}
 

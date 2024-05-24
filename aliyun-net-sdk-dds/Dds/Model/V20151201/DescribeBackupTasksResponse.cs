@@ -56,7 +56,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		public class DescribeBackupTasks_BackupTask
 		{
 
-			private long? backupjobId;
+			private string backupjobId;
 
 			private string backupSetStatus;
 
@@ -66,7 +66,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string jobMode;
 
-			public long? BackupjobId
+			public string BackupjobId
 			{
 				get
 				{

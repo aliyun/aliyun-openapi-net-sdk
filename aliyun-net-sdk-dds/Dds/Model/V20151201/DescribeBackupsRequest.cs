@@ -44,6 +44,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string startTime;
 
+		private string srcRegion;
+
 		private int? pageNumber;
 
 		private int? pageSize;
@@ -51,6 +53,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string dBInstanceId;
 
 		private string nodeId;
+
+		private string destRegion;
 
 		private string resourceOwnerAccount;
 
@@ -85,6 +89,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string SrcRegion
+		{
+			get
+			{
+				return srcRegion;
+			}
+			set	
+			{
+				srcRegion = value;
+				DictionaryUtil.Add(QueryParameters, "SrcRegion", value);
 			}
 		}
 
@@ -137,6 +154,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				nodeId = value;
 				DictionaryUtil.Add(QueryParameters, "NodeId", value);
+			}
+		}
+
+		public string DestRegion
+		{
+			get
+			{
+				return destRegion;
+			}
+			set	
+			{
+				destRegion = value;
+				DictionaryUtil.Add(QueryParameters, "DestRegion", value);
 			}
 		}
 

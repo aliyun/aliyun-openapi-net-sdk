@@ -45,6 +45,24 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string highFrequencyBackupRetention;
 
+		private int? backupRetentionPolicyOnClusterDeletion;
+
+		private string srcRegion;
+
+		private string destRegion;
+
+		private string crossRetentionType;
+
+		private int? crossRetentionValue;
+
+		private string crossBackupPeriod;
+
+		private int? enableCrossLogBackup;
+
+		private string crossLogRetentionType;
+
+		private int? crossLogRetentionValue;
+
 		public string PreferredBackupPeriod
 		{
 			get
@@ -162,6 +180,114 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				highFrequencyBackupRetention = value;
+			}
+		}
+
+		public int? BackupRetentionPolicyOnClusterDeletion
+		{
+			get
+			{
+				return backupRetentionPolicyOnClusterDeletion;
+			}
+			set	
+			{
+				backupRetentionPolicyOnClusterDeletion = value;
+			}
+		}
+
+		public string SrcRegion
+		{
+			get
+			{
+				return srcRegion;
+			}
+			set	
+			{
+				srcRegion = value;
+			}
+		}
+
+		public string DestRegion
+		{
+			get
+			{
+				return destRegion;
+			}
+			set	
+			{
+				destRegion = value;
+			}
+		}
+
+		public string CrossRetentionType
+		{
+			get
+			{
+				return crossRetentionType;
+			}
+			set	
+			{
+				crossRetentionType = value;
+			}
+		}
+
+		public int? CrossRetentionValue
+		{
+			get
+			{
+				return crossRetentionValue;
+			}
+			set	
+			{
+				crossRetentionValue = value;
+			}
+		}
+
+		public string CrossBackupPeriod
+		{
+			get
+			{
+				return crossBackupPeriod;
+			}
+			set	
+			{
+				crossBackupPeriod = value;
+			}
+		}
+
+		public int? EnableCrossLogBackup
+		{
+			get
+			{
+				return enableCrossLogBackup;
+			}
+			set	
+			{
+				enableCrossLogBackup = value;
+			}
+		}
+
+		public string CrossLogRetentionType
+		{
+			get
+			{
+				return crossLogRetentionType;
+			}
+			set	
+			{
+				crossLogRetentionType = value;
+			}
+		}
+
+		public int? CrossLogRetentionValue
+		{
+			get
+			{
+				return crossLogRetentionValue;
+			}
+			set	
+			{
+				crossLogRetentionValue = value;
 			}
 		}
 	}

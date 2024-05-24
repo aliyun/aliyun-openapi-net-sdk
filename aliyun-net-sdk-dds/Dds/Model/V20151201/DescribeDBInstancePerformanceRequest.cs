@@ -62,6 +62,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? ownerId;
 
+		private string interval;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -202,6 +204,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Interval
+		{
+			get
+			{
+				return interval;
+			}
+			set	
+			{
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value);
 			}
 		}
 

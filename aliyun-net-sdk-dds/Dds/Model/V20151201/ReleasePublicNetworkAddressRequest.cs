@@ -44,6 +44,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string dBInstanceId;
 
+		private string connectionType;
+
 		private string nodeId;
 
 		private string resourceOwnerAccount;
@@ -75,6 +77,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public string ConnectionType
+		{
+			get
+			{
+				return connectionType;
+			}
+			set	
+			{
+				connectionType = value;
+				DictionaryUtil.Add(QueryParameters, "ConnectionType", value);
 			}
 		}
 

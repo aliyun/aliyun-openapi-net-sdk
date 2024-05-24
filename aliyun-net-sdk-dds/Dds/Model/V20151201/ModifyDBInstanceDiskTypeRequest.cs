@@ -27,10 +27,10 @@ using Aliyun.Acs.Dds.Transform.V20151201;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class DescribeBackupPolicyRequest : RpcAcsRequest<DescribeBackupPolicyResponse>
+    public class ModifyDBInstanceDiskTypeRequest : RpcAcsRequest<ModifyDBInstanceDiskTypeResponse>
     {
-        public DescribeBackupPolicyRequest()
-            : base("Dds", "2015-12-01", "DescribeBackupPolicy", "dds", "openAPI")
+        public ModifyDBInstanceDiskTypeRequest()
+            : base("Dds", "2015-12-01", "ModifyDBInstanceDiskType", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,19 +42,23 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
-		private string srcRegion;
+		private string extraParam;
 
-		private string securityToken;
-
-		private string instanceType;
+		private string couponNo;
 
 		private string dBInstanceId;
 
-		private string resourceOwnerAccount;
+		private string dbInstanceStorageType;
 
-		private string ownerAccount;
+		private string businessInfo;
 
-		private long? ownerId;
+		private bool? autoPay;
+
+		private long? provisionedIops;
+
+		private string autoRenew;
+
+		private string orderType;
 
 		public long? ResourceOwnerId
 		{
@@ -69,42 +73,29 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string SrcRegion
+		public string ExtraParam
 		{
 			get
 			{
-				return srcRegion;
+				return extraParam;
 			}
 			set	
 			{
-				srcRegion = value;
-				DictionaryUtil.Add(QueryParameters, "SrcRegion", value);
+				extraParam = value;
+				DictionaryUtil.Add(QueryParameters, "ExtraParam", value);
 			}
 		}
 
-		public string SecurityToken
+		public string CouponNo
 		{
 			get
 			{
-				return securityToken;
+				return couponNo;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string InstanceType
-		{
-			get
-			{
-				return instanceType;
-			}
-			set	
-			{
-				instanceType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
+				couponNo = value;
+				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
 			}
 		}
 
@@ -121,48 +112,92 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public string DbInstanceStorageType
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return dbInstanceStorageType;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				dbInstanceStorageType = value;
+				DictionaryUtil.Add(QueryParameters, "DbInstanceStorageType", value);
 			}
 		}
 
-		public string OwnerAccount
+		public string BusinessInfo
 		{
 			get
 			{
-				return ownerAccount;
+				return businessInfo;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				businessInfo = value;
+				DictionaryUtil.Add(QueryParameters, "BusinessInfo", value);
 			}
 		}
 
-		public long? OwnerId
+		public bool? AutoPay
 		{
 			get
 			{
-				return ownerId;
+				return autoPay;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				autoPay = value;
+				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
 			}
 		}
 
-        public override DescribeBackupPolicyResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public long? ProvisionedIops
+		{
+			get
+			{
+				return provisionedIops;
+			}
+			set	
+			{
+				provisionedIops = value;
+				DictionaryUtil.Add(QueryParameters, "ProvisionedIops", value.ToString());
+			}
+		}
+
+		public string AutoRenew
+		{
+			get
+			{
+				return autoRenew;
+			}
+			set	
+			{
+				autoRenew = value;
+				DictionaryUtil.Add(QueryParameters, "AutoRenew", value);
+			}
+		}
+
+		public string OrderType
+		{
+			get
+			{
+				return orderType;
+			}
+			set	
+			{
+				orderType = value;
+				DictionaryUtil.Add(QueryParameters, "OrderType", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override ModifyDBInstanceDiskTypeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeBackupPolicyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyDBInstanceDiskTypeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

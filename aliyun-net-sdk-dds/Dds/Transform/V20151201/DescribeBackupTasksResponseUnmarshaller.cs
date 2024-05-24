@@ -36,7 +36,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			List<DescribeBackupTasksResponse.DescribeBackupTasks_BackupTask> describeBackupTasksResponse_backupJobs = new List<DescribeBackupTasksResponse.DescribeBackupTasks_BackupTask>();
 			for (int i = 0; i < _ctx.Length("DescribeBackupTasks.BackupJobs.Length"); i++) {
 				DescribeBackupTasksResponse.DescribeBackupTasks_BackupTask backupTask = new DescribeBackupTasksResponse.DescribeBackupTasks_BackupTask();
-				backupTask.BackupjobId = _ctx.LongValue("DescribeBackupTasks.BackupJobs["+ i +"].BackupjobId");
+				backupTask.BackupjobId = _ctx.StringValue("DescribeBackupTasks.BackupJobs["+ i +"].BackupjobId");
 				backupTask.BackupSetStatus = _ctx.StringValue("DescribeBackupTasks.BackupJobs["+ i +"].BackupSetStatus");
 				backupTask.BackupStartTime = _ctx.StringValue("DescribeBackupTasks.BackupJobs["+ i +"].BackupStartTime");
 				backupTask.Progress = _ctx.StringValue("DescribeBackupTasks.BackupJobs["+ i +"].Progress");

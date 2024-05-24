@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string networkType;
 
+		private string srcRegion;
+
 		private List<int?> replicaSets = new List<int?>(){ };
 
 		private string storageType;
@@ -61,6 +63,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string globalSecurityGroupIds;
 
 		private int? period;
+
+		private string backupId;
 
 		private string encryptionKey;
 
@@ -90,11 +94,15 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string restoreTime;
 
+		private string destRegion;
+
 		private string resourceOwnerAccount;
 
 		private string srcDBInstanceId;
 
 		private string ownerAccount;
+
+		private string restoreType;
 
 		private string accountPassword;
 
@@ -155,6 +163,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				networkType = value;
 				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
+			}
+		}
+
+		public string SrcRegion
+		{
+			get
+			{
+				return srcRegion;
+			}
+			set	
+			{
+				srcRegion = value;
+				DictionaryUtil.Add(QueryParameters, "SrcRegion", value);
 			}
 		}
 
@@ -263,6 +284,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				period = value;
 				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
+			}
+		}
+
+		public string BackupId
+		{
+			get
+			{
+				return backupId;
+			}
+			set	
+			{
+				backupId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupId", value);
 			}
 		}
 
@@ -463,6 +497,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string DestRegion
+		{
+			get
+			{
+				return destRegion;
+			}
+			set	
+			{
+				destRegion = value;
+				DictionaryUtil.Add(QueryParameters, "DestRegion", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -499,6 +546,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string RestoreType
+		{
+			get
+			{
+				return restoreType;
+			}
+			set	
+			{
+				restoreType = value;
+				DictionaryUtil.Add(QueryParameters, "RestoreType", value);
 			}
 		}
 

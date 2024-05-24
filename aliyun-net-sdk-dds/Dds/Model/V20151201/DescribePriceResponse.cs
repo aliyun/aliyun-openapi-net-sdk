@@ -134,7 +134,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private List<DescribePrice_OptionalPromotion> optionalPromotions;
 
-			private List<DescribePrice_PromDetal3> promDetailList;
+			private List<DescribePrice_PromDetail3> promDetailList;
 
 			private List<string> ruleIds;
 
@@ -272,7 +272,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
-			public List<DescribePrice_PromDetal3> PromDetailList
+			public List<DescribePrice_PromDetail3> PromDetailList
 			{
 				get
 				{
@@ -333,7 +333,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 				private bool? contractActivity;
 
-				private List<DescribePrice_PromDetal> promDetailList2;
+				private double? standDiscountPrice;
+
+				private List<DescribePrice_PromDetail> promDetailList2;
 
 				private List<DescribePrice_ModuleAttr> moduleAttrs;
 
@@ -471,7 +473,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					}
 				}
 
-				public List<DescribePrice_PromDetal> PromDetailList2
+				public double? StandDiscountPrice
+				{
+					get
+					{
+						return standDiscountPrice;
+					}
+					set	
+					{
+						standDiscountPrice = value;
+					}
+				}
+
+				public List<DescribePrice_PromDetail> PromDetailList2
 				{
 					get
 					{
@@ -507,7 +521,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					}
 				}
 
-				public class DescribePrice_PromDetal
+				public class DescribePrice_PromDetail
 				{
 
 					private double? finalPromFee;
@@ -835,6 +849,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 				private List<string> targetArticleItemCodes;
 
+				private List<string> promotionRuleIdList;
+
 				public string ActivityCategory
 				{
 					get
@@ -942,9 +958,21 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 						targetArticleItemCodes = value;
 					}
 				}
+
+				public List<string> PromotionRuleIdList
+				{
+					get
+					{
+						return promotionRuleIdList;
+					}
+					set	
+					{
+						promotionRuleIdList = value;
+					}
+				}
 			}
 
-			public class DescribePrice_PromDetal3
+			public class DescribePrice_PromDetail3
 			{
 
 				private double? finalPromFee;
@@ -1081,6 +1109,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 				private string isShow;
 
+				private string startTime;
+
 				private DescribePrice_ContractActivity contractActivity;
 
 				public double? ListPrice
@@ -1188,6 +1218,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						isShow = value;
+					}
+				}
+
+				public string StartTime
+				{
+					get
+					{
+						return startTime;
+					}
+					set	
+					{
+						startTime = value;
 					}
 				}
 
@@ -1605,9 +1647,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 				private string activityCategory;
 
-				private List<string> promotionRuleIdList;
+				private List<string> promotionRuleIdList6;
 
-				private List<string> targetArticleItemCodes6;
+				private List<string> targetArticleItemCodes7;
 
 				public string Description
 				{
@@ -1741,27 +1783,27 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					}
 				}
 
-				public List<string> PromotionRuleIdList
+				public List<string> PromotionRuleIdList6
 				{
 					get
 					{
-						return promotionRuleIdList;
+						return promotionRuleIdList6;
 					}
 					set	
 					{
-						promotionRuleIdList = value;
+						promotionRuleIdList6 = value;
 					}
 				}
 
-				public List<string> TargetArticleItemCodes6
+				public List<string> TargetArticleItemCodes7
 				{
 					get
 					{
-						return targetArticleItemCodes6;
+						return targetArticleItemCodes7;
 					}
 					set	
 					{
-						targetArticleItemCodes6 = value;
+						targetArticleItemCodes7 = value;
 					}
 				}
 			}
@@ -1787,7 +1829,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 				private string isShow;
 
-				private DescribePrice_ContractActivity7 contractActivity7;
+				private DescribePrice_ContractActivity8 contractActivity8;
 
 				public double? ListPrice
 				{
@@ -1897,19 +1939,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					}
 				}
 
-				public DescribePrice_ContractActivity7 ContractActivity7
+				public DescribePrice_ContractActivity8 ContractActivity8
 				{
 					get
 					{
-						return contractActivity7;
+						return contractActivity8;
 					}
 					set	
 					{
-						contractActivity7 = value;
+						contractActivity8 = value;
 					}
 				}
 
-				public class DescribePrice_ContractActivity7
+				public class DescribePrice_ContractActivity8
 				{
 
 					private double? finalPromFee;
@@ -1924,7 +1966,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 					private string activityName;
 
-					private List<string> optionIds8;
+					private List<string> optionIds9;
 
 					public double? FinalPromFee
 					{
@@ -1998,15 +2040,15 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 						}
 					}
 
-					public List<string> OptionIds8
+					public List<string> OptionIds9
 					{
 						get
 						{
-							return optionIds8;
+							return optionIds9;
 						}
 						set	
 						{
-							optionIds8 = value;
+							optionIds9 = value;
 						}
 					}
 				}
