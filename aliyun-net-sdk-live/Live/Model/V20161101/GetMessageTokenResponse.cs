@@ -60,9 +60,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string accessToken;
 
-			private string refreshToken;
-
 			private long? accessTokenExpiredTime;
+
+			private string refreshToken;
 
 			[JsonProperty(PropertyName = "AccessToken")]
 			public string AccessToken
@@ -77,19 +77,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "RefreshToken")]
-			public string RefreshToken
-			{
-				get
-				{
-					return refreshToken;
-				}
-				set	
-				{
-					refreshToken = value;
-				}
-			}
-
 			[JsonProperty(PropertyName = "AccessTokenExpiredTime")]
 			public long? AccessTokenExpiredTime
 			{
@@ -100,6 +87,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					accessTokenExpiredTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RefreshToken")]
+			public string RefreshToken
+			{
+				get
+				{
+					return refreshToken;
+				}
+				set	
+				{
+					refreshToken = value;
 				}
 			}
 		}

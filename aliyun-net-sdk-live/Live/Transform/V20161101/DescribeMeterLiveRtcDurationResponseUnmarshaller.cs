@@ -31,9 +31,9 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeMeterLiveRtcDurationResponse describeMeterLiveRtcDurationResponse = new DescribeMeterLiveRtcDurationResponse();
 
 			describeMeterLiveRtcDurationResponse.HttpResponse = _ctx.HttpResponse;
+			describeMeterLiveRtcDurationResponse.AudioSummaryDuration = _ctx.LongValue("DescribeMeterLiveRtcDuration.AudioSummaryDuration");
 			describeMeterLiveRtcDurationResponse.RequestId = _ctx.StringValue("DescribeMeterLiveRtcDuration.RequestId");
 			describeMeterLiveRtcDurationResponse.TotalSummaryDuration = _ctx.LongValue("DescribeMeterLiveRtcDuration.TotalSummaryDuration");
-			describeMeterLiveRtcDurationResponse.AudioSummaryDuration = _ctx.LongValue("DescribeMeterLiveRtcDuration.AudioSummaryDuration");
 			describeMeterLiveRtcDurationResponse.V480SummaryDuration = _ctx.LongValue("DescribeMeterLiveRtcDuration.V480SummaryDuration");
 			describeMeterLiveRtcDurationResponse.V720SummaryDuration = _ctx.LongValue("DescribeMeterLiveRtcDuration.V720SummaryDuration");
 			describeMeterLiveRtcDurationResponse.V1080SummaryDuration = _ctx.LongValue("DescribeMeterLiveRtcDuration.V1080SummaryDuration");
@@ -41,9 +41,9 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeMeterLiveRtcDurationResponse.DescribeMeterLiveRtcDuration_DataItem> describeMeterLiveRtcDurationResponse_data = new List<DescribeMeterLiveRtcDurationResponse.DescribeMeterLiveRtcDuration_DataItem>();
 			for (int i = 0; i < _ctx.Length("DescribeMeterLiveRtcDuration.Data.Length"); i++) {
 				DescribeMeterLiveRtcDurationResponse.DescribeMeterLiveRtcDuration_DataItem dataItem = new DescribeMeterLiveRtcDurationResponse.DescribeMeterLiveRtcDuration_DataItem();
+				dataItem.AudioDuration = _ctx.LongValue("DescribeMeterLiveRtcDuration.Data["+ i +"].AudioDuration");
 				dataItem.Timestamp = _ctx.StringValue("DescribeMeterLiveRtcDuration.Data["+ i +"].Timestamp");
 				dataItem.TotalDuration = _ctx.LongValue("DescribeMeterLiveRtcDuration.Data["+ i +"].TotalDuration");
-				dataItem.AudioDuration = _ctx.LongValue("DescribeMeterLiveRtcDuration.Data["+ i +"].AudioDuration");
 				dataItem.V480Duration = _ctx.LongValue("DescribeMeterLiveRtcDuration.Data["+ i +"].V480Duration");
 				dataItem.V720Duration = _ctx.LongValue("DescribeMeterLiveRtcDuration.Data["+ i +"].V720Duration");
 				dataItem.V1080Duration = _ctx.LongValue("DescribeMeterLiveRtcDuration.Data["+ i +"].V1080Duration");

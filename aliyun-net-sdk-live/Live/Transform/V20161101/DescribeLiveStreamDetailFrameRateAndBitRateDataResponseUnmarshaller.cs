@@ -36,13 +36,13 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeLiveStreamDetailFrameRateAndBitRateDataResponse.DescribeLiveStreamDetailFrameRateAndBitRateData_Frabr> describeLiveStreamDetailFrameRateAndBitRateDataResponse_frameRateAndBitRateInfos = new List<DescribeLiveStreamDetailFrameRateAndBitRateDataResponse.DescribeLiveStreamDetailFrameRateAndBitRateData_Frabr>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveStreamDetailFrameRateAndBitRateData.FrameRateAndBitRateInfos.Length"); i++) {
 				DescribeLiveStreamDetailFrameRateAndBitRateDataResponse.DescribeLiveStreamDetailFrameRateAndBitRateData_Frabr frabr = new DescribeLiveStreamDetailFrameRateAndBitRateDataResponse.DescribeLiveStreamDetailFrameRateAndBitRateData_Frabr();
-				frabr.Time = _ctx.StringValue("DescribeLiveStreamDetailFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].Time");
-				frabr.VideoFrameRate = _ctx.FloatValue("DescribeLiveStreamDetailFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].VideoFrameRate");
-				frabr.AudioFrameRate = _ctx.FloatValue("DescribeLiveStreamDetailFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].AudioFrameRate");
-				frabr.StreamUrl = _ctx.StringValue("DescribeLiveStreamDetailFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].StreamUrl");
-				frabr.BitRate = _ctx.FloatValue("DescribeLiveStreamDetailFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].BitRate");
-				frabr.VideoBitRate = _ctx.FloatValue("DescribeLiveStreamDetailFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].VideoBitRate");
 				frabr.AudioBitRate = _ctx.FloatValue("DescribeLiveStreamDetailFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].AudioBitRate");
+				frabr.AudioFrameRate = _ctx.FloatValue("DescribeLiveStreamDetailFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].AudioFrameRate");
+				frabr.BitRate = _ctx.FloatValue("DescribeLiveStreamDetailFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].BitRate");
+				frabr.StreamUrl = _ctx.StringValue("DescribeLiveStreamDetailFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].StreamUrl");
+				frabr.Time = _ctx.StringValue("DescribeLiveStreamDetailFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].Time");
+				frabr.VideoBitRate = _ctx.FloatValue("DescribeLiveStreamDetailFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].VideoBitRate");
+				frabr.VideoFrameRate = _ctx.FloatValue("DescribeLiveStreamDetailFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].VideoFrameRate");
 
 				describeLiveStreamDetailFrameRateAndBitRateDataResponse_frameRateAndBitRateInfos.Add(frabr);
 			}

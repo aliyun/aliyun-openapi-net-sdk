@@ -31,10 +31,10 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeChannelParticipantsResponse describeChannelParticipantsResponse = new DescribeChannelParticipantsResponse();
 
 			describeChannelParticipantsResponse.HttpResponse = _ctx.HttpResponse;
-			describeChannelParticipantsResponse.TotalPage = _ctx.IntegerValue("DescribeChannelParticipants.TotalPage");
 			describeChannelParticipantsResponse.RequestId = _ctx.StringValue("DescribeChannelParticipants.RequestId");
-			describeChannelParticipantsResponse.TotalNum = _ctx.IntegerValue("DescribeChannelParticipants.TotalNum");
 			describeChannelParticipantsResponse.Times = _ctx.LongValue("DescribeChannelParticipants.Times");
+			describeChannelParticipantsResponse.TotalNum = _ctx.IntegerValue("DescribeChannelParticipants.TotalNum");
+			describeChannelParticipantsResponse.TotalPage = _ctx.IntegerValue("DescribeChannelParticipants.TotalPage");
 
 			List<string> describeChannelParticipantsResponse_userList = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeChannelParticipants.UserList.Length"); i++) {

@@ -25,28 +25,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeChannelParticipantsResponse : AcsResponse
 	{
 
-		private int? totalPage;
-
 		private string requestId;
-
-		private int? totalNum;
 
 		private long? times;
 
-		private List<string> userList;
+		private int? totalNum;
 
-		[JsonProperty(PropertyName = "TotalPage")]
-		public int? TotalPage
-		{
-			get
-			{
-				return totalPage;
-			}
-			set	
-			{
-				totalPage = value;
-			}
-		}
+		private int? totalPage;
+
+		private List<string> userList;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -58,6 +45,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Times")]
+		public long? Times
+		{
+			get
+			{
+				return times;
+			}
+			set	
+			{
+				times = value;
 			}
 		}
 
@@ -74,16 +74,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "Times")]
-		public long? Times
+		[JsonProperty(PropertyName = "TotalPage")]
+		public int? TotalPage
 		{
 			get
 			{
-				return times;
+				return totalPage;
 			}
 			set	
 			{
-				times = value;
+				totalPage = value;
 			}
 		}
 

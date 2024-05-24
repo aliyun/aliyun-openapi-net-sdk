@@ -31,21 +31,21 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			ListLiveMessageAppsResponse listLiveMessageAppsResponse = new ListLiveMessageAppsResponse();
 
 			listLiveMessageAppsResponse.HttpResponse = _ctx.HttpResponse;
-			listLiveMessageAppsResponse.RequestId = _ctx.StringValue("ListLiveMessageApps.RequestId");
 			listLiveMessageAppsResponse.HasMore = _ctx.BooleanValue("ListLiveMessageApps.HasMore");
 			listLiveMessageAppsResponse.NextPageToken = _ctx.LongValue("ListLiveMessageApps.NextPageToken");
+			listLiveMessageAppsResponse.RequestId = _ctx.StringValue("ListLiveMessageApps.RequestId");
 
 			List<ListLiveMessageAppsResponse.ListLiveMessageApps_Apps> listLiveMessageAppsResponse_appList = new List<ListLiveMessageAppsResponse.ListLiveMessageApps_Apps>();
 			for (int i = 0; i < _ctx.Length("ListLiveMessageApps.AppList.Length"); i++) {
 				ListLiveMessageAppsResponse.ListLiveMessageApps_Apps apps = new ListLiveMessageAppsResponse.ListLiveMessageApps_Apps();
 				apps.AppId = _ctx.StringValue("ListLiveMessageApps.AppList["+ i +"].AppId");
 				apps.AppKey = _ctx.StringValue("ListLiveMessageApps.AppList["+ i +"].AppKey");
-				apps.AppSign = _ctx.StringValue("ListLiveMessageApps.AppList["+ i +"].AppSign");
-				apps.Disable = _ctx.StringValue("ListLiveMessageApps.AppList["+ i +"].Disable");
 				apps.AppName = _ctx.StringValue("ListLiveMessageApps.AppList["+ i +"].AppName");
+				apps.AppSign = _ctx.StringValue("ListLiveMessageApps.AppList["+ i +"].AppSign");
 				apps.CreateTime = _ctx.LongValue("ListLiveMessageApps.AppList["+ i +"].CreateTime");
-				apps.ModifyTime = _ctx.LongValue("ListLiveMessageApps.AppList["+ i +"].ModifyTime");
 				apps.DataCenter = _ctx.StringValue("ListLiveMessageApps.AppList["+ i +"].DataCenter");
+				apps.Disable = _ctx.StringValue("ListLiveMessageApps.AppList["+ i +"].Disable");
+				apps.ModifyTime = _ctx.LongValue("ListLiveMessageApps.AppList["+ i +"].ModifyTime");
 
 				listLiveMessageAppsResponse_appList.Add(apps);
 			}

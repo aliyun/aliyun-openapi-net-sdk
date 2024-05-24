@@ -31,14 +31,14 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeMeterLiveInteractionDauResponse describeMeterLiveInteractionDauResponse = new DescribeMeterLiveInteractionDauResponse();
 
 			describeMeterLiveInteractionDauResponse.HttpResponse = _ctx.HttpResponse;
-			describeMeterLiveInteractionDauResponse.RequestId = _ctx.StringValue("DescribeMeterLiveInteractionDau.RequestId");
 			describeMeterLiveInteractionDauResponse.PeakDau = _ctx.DoubleValue("DescribeMeterLiveInteractionDau.PeakDau");
+			describeMeterLiveInteractionDauResponse.RequestId = _ctx.StringValue("DescribeMeterLiveInteractionDau.RequestId");
 
 			List<DescribeMeterLiveInteractionDauResponse.DescribeMeterLiveInteractionDau_DataItem> describeMeterLiveInteractionDauResponse_data = new List<DescribeMeterLiveInteractionDauResponse.DescribeMeterLiveInteractionDau_DataItem>();
 			for (int i = 0; i < _ctx.Length("DescribeMeterLiveInteractionDau.Data.Length"); i++) {
 				DescribeMeterLiveInteractionDauResponse.DescribeMeterLiveInteractionDau_DataItem dataItem = new DescribeMeterLiveInteractionDauResponse.DescribeMeterLiveInteractionDau_DataItem();
-				dataItem.Timestamp = _ctx.LongValue("DescribeMeterLiveInteractionDau.Data["+ i +"].Timestamp");
 				dataItem.Dau = _ctx.DoubleValue("DescribeMeterLiveInteractionDau.Data["+ i +"].Dau");
+				dataItem.Timestamp = _ctx.LongValue("DescribeMeterLiveInteractionDau.Data["+ i +"].Timestamp");
 
 				describeMeterLiveInteractionDauResponse_data.Add(dataItem);
 			}

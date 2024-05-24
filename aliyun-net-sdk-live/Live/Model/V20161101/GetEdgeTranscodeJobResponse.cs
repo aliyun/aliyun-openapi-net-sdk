@@ -58,27 +58,92 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class GetEdgeTranscodeJob_Job
 		{
 
-			private string status;
+			private string createTime;
 
-			private string type;
+			private string jobId;
+
+			private string lastStartAt;
+
+			private string lastStopAt;
+
+			private string name;
+
+			private string status;
 
 			private string streamInput;
 
 			private string streamOutput;
 
-			private string lastStopAt;
-
-			private string lastStartAt;
-
-			private string createTime;
-
-			private string jobId;
+			private string templateId;
 
 			private string templateName;
 
-			private string name;
+			private string type;
 
-			private string templateId;
+			[JsonProperty(PropertyName = "CreateTime")]
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "JobId")]
+			public string JobId
+			{
+				get
+				{
+					return jobId;
+				}
+				set	
+				{
+					jobId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LastStartAt")]
+			public string LastStartAt
+			{
+				get
+				{
+					return lastStartAt;
+				}
+				set	
+				{
+					lastStartAt = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LastStopAt")]
+			public string LastStopAt
+			{
+				get
+				{
+					return lastStopAt;
+				}
+				set	
+				{
+					lastStopAt = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Name")]
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
 
 			[JsonProperty(PropertyName = "Status")]
 			public string Status
@@ -90,19 +155,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					status = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Type")]
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
 				}
 			}
 
@@ -132,55 +184,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "LastStopAt")]
-			public string LastStopAt
+			[JsonProperty(PropertyName = "TemplateId")]
+			public string TemplateId
 			{
 				get
 				{
-					return lastStopAt;
+					return templateId;
 				}
 				set	
 				{
-					lastStopAt = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "LastStartAt")]
-			public string LastStartAt
-			{
-				get
-				{
-					return lastStartAt;
-				}
-				set	
-				{
-					lastStartAt = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "CreateTime")]
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "JobId")]
-			public string JobId
-			{
-				get
-				{
-					return jobId;
-				}
-				set	
-				{
-					jobId = value;
+					templateId = value;
 				}
 			}
 
@@ -197,29 +210,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "Name")]
-			public string Name
+			[JsonProperty(PropertyName = "Type")]
+			public string Type
 			{
 				get
 				{
-					return name;
+					return type;
 				}
 				set	
 				{
-					name = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "TemplateId")]
-			public string TemplateId
-			{
-				get
-				{
-					return templateId;
-				}
-				set	
-				{
-					templateId = value;
+					type = value;
 				}
 			}
 		}

@@ -25,28 +25,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeRTSNativeSDKVvDataResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string dataInterval;
-
-		private string startTime;
 
 		private string endTime;
 
-		private List<DescribeRTSNativeSDKVvData_Data> vvData;
+		private string requestId;
 
-		[JsonProperty(PropertyName = "RequestId")]
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string startTime;
+
+		private List<DescribeRTSNativeSDKVvData_Data> vvData;
 
 		[JsonProperty(PropertyName = "DataInterval")]
 		public string DataInterval
@@ -61,19 +48,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "StartTime")]
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
 		[JsonProperty(PropertyName = "EndTime")]
 		public string EndTime
 		{
@@ -84,6 +58,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				endTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
 			}
 		}
 
@@ -105,9 +105,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string timeStamp;
 
-			private string vvTotal;
-
 			private string vvSuccess;
+
+			private string vvTotal;
 
 			[JsonProperty(PropertyName = "TimeStamp")]
 			public string TimeStamp
@@ -122,19 +122,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "VvTotal")]
-			public string VvTotal
-			{
-				get
-				{
-					return vvTotal;
-				}
-				set	
-				{
-					vvTotal = value;
-				}
-			}
-
 			[JsonProperty(PropertyName = "VvSuccess")]
 			public string VvSuccess
 			{
@@ -145,6 +132,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					vvSuccess = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "VvTotal")]
+			public string VvTotal
+			{
+				get
+				{
+					return vvTotal;
+				}
+				set	
+				{
+					vvTotal = value;
 				}
 			}
 		}

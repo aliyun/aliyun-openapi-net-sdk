@@ -44,6 +44,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private int? sortType;
 
+		private int? groupStatus;
+
 		private long? nextPageToken;
 
 		private string dataCenter;
@@ -61,6 +63,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				sortType = value;
 				DictionaryUtil.Add(QueryParameters, "SortType", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "GroupStatus")]
+		public int? GroupStatus
+		{
+			get
+			{
+				return groupStatus;
+			}
+			set	
+			{
+				groupStatus = value;
+				DictionaryUtil.Add(QueryParameters, "GroupStatus", value.ToString());
 			}
 		}
 

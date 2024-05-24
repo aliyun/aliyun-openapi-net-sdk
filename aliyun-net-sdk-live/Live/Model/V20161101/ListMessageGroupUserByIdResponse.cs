@@ -58,24 +58,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class ListMessageGroupUserById_Result
 		{
 
-			private int? total;
-
 			private bool? hasMore;
 
-			private List<ListMessageGroupUserById_UserListItem> userList;
+			private int? total;
 
-			[JsonProperty(PropertyName = "Total")]
-			public int? Total
-			{
-				get
-				{
-					return total;
-				}
-				set	
-				{
-					total = value;
-				}
-			}
+			private List<ListMessageGroupUserById_UserListItem> userList;
 
 			[JsonProperty(PropertyName = "HasMore")]
 			public bool? HasMore
@@ -87,6 +74,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					hasMore = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Total")]
+			public int? Total
+			{
+				get
+				{
+					return total;
+				}
+				set	
+				{
+					total = value;
 				}
 			}
 
@@ -106,41 +106,28 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class ListMessageGroupUserById_UserListItem
 			{
 
-				private string userId;
-
-				private string userNick;
+				private bool? isMute;
 
 				private string userAvatar;
 
 				private string userExtension;
 
-				private bool? isMute;
+				private string userId;
+
+				private string userNick;
 
 				private List<string> muteBy;
 
-				[JsonProperty(PropertyName = "UserId")]
-				public string UserId
+				[JsonProperty(PropertyName = "IsMute")]
+				public bool? IsMute
 				{
 					get
 					{
-						return userId;
+						return isMute;
 					}
 					set	
 					{
-						userId = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "UserNick")]
-				public string UserNick
-				{
-					get
-					{
-						return userNick;
-					}
-					set	
-					{
-						userNick = value;
+						isMute = value;
 					}
 				}
 
@@ -170,16 +157,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				[JsonProperty(PropertyName = "IsMute")]
-				public bool? IsMute
+				[JsonProperty(PropertyName = "UserId")]
+				public string UserId
 				{
 					get
 					{
-						return isMute;
+						return userId;
 					}
 					set	
 					{
-						isMute = value;
+						userId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "UserNick")]
+				public string UserNick
+				{
+					get
+					{
+						return userNick;
+					}
+					set	
+					{
+						userNick = value;
 					}
 				}
 

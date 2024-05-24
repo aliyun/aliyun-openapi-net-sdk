@@ -34,15 +34,15 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			getEdgeTranscodeTemplateResponse.RequestId = _ctx.StringValue("GetEdgeTranscodeTemplate.RequestId");
 
 			GetEdgeTranscodeTemplateResponse.GetEdgeTranscodeTemplate_Template template = new GetEdgeTranscodeTemplateResponse.GetEdgeTranscodeTemplate_Template();
-			template.Type = _ctx.StringValue("GetEdgeTranscodeTemplate.Template.Type");
-			template.Gop = _ctx.StringValue("GetEdgeTranscodeTemplate.Template.Gop");
-			template.CreateTime = _ctx.StringValue("GetEdgeTranscodeTemplate.Template.CreateTime");
-			template.Codec = _ctx.StringValue("GetEdgeTranscodeTemplate.Template.Codec");
-			template.Fps = _ctx.StringValue("GetEdgeTranscodeTemplate.Template.Fps");
 			template.Bitrate = _ctx.StringValue("GetEdgeTranscodeTemplate.Template.Bitrate");
+			template.Codec = _ctx.StringValue("GetEdgeTranscodeTemplate.Template.Codec");
+			template.CreateTime = _ctx.StringValue("GetEdgeTranscodeTemplate.Template.CreateTime");
+			template.Fps = _ctx.StringValue("GetEdgeTranscodeTemplate.Template.Fps");
+			template.Gop = _ctx.StringValue("GetEdgeTranscodeTemplate.Template.Gop");
 			template.Name = _ctx.StringValue("GetEdgeTranscodeTemplate.Template.Name");
 			template.Resolution = _ctx.StringValue("GetEdgeTranscodeTemplate.Template.Resolution");
 			template.TemplateId = _ctx.StringValue("GetEdgeTranscodeTemplate.Template.TemplateId");
+			template.Type = _ctx.StringValue("GetEdgeTranscodeTemplate.Template.Type");
 			getEdgeTranscodeTemplateResponse.Template = template;
         
 			return getEdgeTranscodeTemplateResponse;

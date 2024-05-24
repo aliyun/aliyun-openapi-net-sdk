@@ -56,21 +56,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class CheckLiveMessageUsersOnline_Users
 		{
 
-			private string userId;
-
 			private bool? online;
 
-			public string UserId
-			{
-				get
-				{
-					return userId;
-				}
-				set	
-				{
-					userId = value;
-				}
-			}
+			private string userId;
 
 			public bool? Online
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					online = value;
+				}
+			}
+
+			public string UserId
+			{
+				get
+				{
+					return userId;
+				}
+				set	
+				{
+					userId = value;
 				}
 			}
 		}

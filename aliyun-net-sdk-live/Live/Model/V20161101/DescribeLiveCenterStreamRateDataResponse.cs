@@ -58,41 +58,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveCenterStreamRateData_Data
 		{
 
-			private string videoFps;
-
-			private string videoRate;
-
 			private string audioFps;
 
 			private string audioRate;
 
 			private string time;
 
-			[JsonProperty(PropertyName = "VideoFps")]
-			public string VideoFps
-			{
-				get
-				{
-					return videoFps;
-				}
-				set	
-				{
-					videoFps = value;
-				}
-			}
+			private string videoFps;
 
-			[JsonProperty(PropertyName = "VideoRate")]
-			public string VideoRate
-			{
-				get
-				{
-					return videoRate;
-				}
-				set	
-				{
-					videoRate = value;
-				}
-			}
+			private string videoRate;
 
 			[JsonProperty(PropertyName = "AudioFps")]
 			public string AudioFps
@@ -130,6 +104,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					time = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "VideoFps")]
+			public string VideoFps
+			{
+				get
+				{
+					return videoFps;
+				}
+				set	
+				{
+					videoFps = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "VideoRate")]
+			public string VideoRate
+			{
+				get
+				{
+					return videoRate;
+				}
+				set	
+				{
+					videoRate = value;
 				}
 			}
 		}

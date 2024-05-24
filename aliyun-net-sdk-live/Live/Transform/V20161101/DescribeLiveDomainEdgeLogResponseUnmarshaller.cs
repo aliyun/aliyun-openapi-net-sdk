@@ -49,10 +49,10 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				for (int j = 0; j < _ctx.Length("DescribeLiveDomainEdgeLog.DomainLogDetails["+ i +"].LogInfos.Length"); j++) {
 					DescribeLiveDomainEdgeLogResponse.DescribeLiveDomainEdgeLog_DomainLogDetail.DescribeLiveDomainEdgeLog_LogInfoDetail logInfoDetail = new DescribeLiveDomainEdgeLogResponse.DescribeLiveDomainEdgeLog_DomainLogDetail.DescribeLiveDomainEdgeLog_LogInfoDetail();
 					logInfoDetail.EndTime = _ctx.StringValue("DescribeLiveDomainEdgeLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].EndTime");
-					logInfoDetail.LogSize = _ctx.LongValue("DescribeLiveDomainEdgeLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogSize");
-					logInfoDetail.StartTime = _ctx.StringValue("DescribeLiveDomainEdgeLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].StartTime");
 					logInfoDetail.LogName = _ctx.StringValue("DescribeLiveDomainEdgeLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogName");
 					logInfoDetail.LogPath = _ctx.StringValue("DescribeLiveDomainEdgeLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogPath");
+					logInfoDetail.LogSize = _ctx.LongValue("DescribeLiveDomainEdgeLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogSize");
+					logInfoDetail.StartTime = _ctx.StringValue("DescribeLiveDomainEdgeLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].StartTime");
 
 					domainLogDetail_logInfos.Add(logInfoDetail);
 				}

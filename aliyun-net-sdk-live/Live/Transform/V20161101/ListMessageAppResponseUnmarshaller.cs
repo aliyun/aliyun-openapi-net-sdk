@@ -34,18 +34,18 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			listMessageAppResponse.RequestId = _ctx.StringValue("ListMessageApp.RequestId");
 
 			ListMessageAppResponse.ListMessageApp_Result result = new ListMessageAppResponse.ListMessageApp_Result();
-			result.Total = _ctx.IntegerValue("ListMessageApp.Result.Total");
 			result.HasMore = _ctx.BooleanValue("ListMessageApp.Result.HasMore");
+			result.Total = _ctx.IntegerValue("ListMessageApp.Result.Total");
 
 			List<ListMessageAppResponse.ListMessageApp_Result.ListMessageApp_AppListItem> result_appList = new List<ListMessageAppResponse.ListMessageApp_Result.ListMessageApp_AppListItem>();
 			for (int i = 0; i < _ctx.Length("ListMessageApp.Result.AppList.Length"); i++) {
 				ListMessageAppResponse.ListMessageApp_Result.ListMessageApp_AppListItem appListItem = new ListMessageAppResponse.ListMessageApp_Result.ListMessageApp_AppListItem();
+				appListItem.AppConfig = _ctx.StringValue("ListMessageApp.Result.AppList["+ i +"].AppConfig");
 				appListItem.AppId = _ctx.StringValue("ListMessageApp.Result.AppList["+ i +"].AppId");
 				appListItem.AppName = _ctx.StringValue("ListMessageApp.Result.AppList["+ i +"].AppName");
 				appListItem.CreateTime = _ctx.LongValue("ListMessageApp.Result.AppList["+ i +"].CreateTime");
-				appListItem.Status = _ctx.IntegerValue("ListMessageApp.Result.AppList["+ i +"].Status");
-				appListItem.AppConfig = _ctx.StringValue("ListMessageApp.Result.AppList["+ i +"].AppConfig");
 				appListItem.Extension = _ctx.StringValue("ListMessageApp.Result.AppList["+ i +"].Extension");
+				appListItem.Status = _ctx.IntegerValue("ListMessageApp.Result.AppList["+ i +"].Status");
 
 				result_appList.Add(appListItem);
 			}

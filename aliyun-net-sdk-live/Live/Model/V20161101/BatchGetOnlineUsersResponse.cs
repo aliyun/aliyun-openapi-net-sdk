@@ -73,23 +73,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class BatchGetOnlineUsers_OnlineUsersItem
 			{
 
-				private string userId;
-
 				private long? joinTime;
 
 				private bool? online;
 
-				public string UserId
-				{
-					get
-					{
-						return userId;
-					}
-					set	
-					{
-						userId = value;
-					}
-				}
+				private string userId;
 
 				public long? JoinTime
 				{
@@ -112,6 +100,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						online = value;
+					}
+				}
+
+				public string UserId
+				{
+					get
+					{
+						return userId;
+					}
+					set	
+					{
+						userId = value;
 					}
 				}
 			}

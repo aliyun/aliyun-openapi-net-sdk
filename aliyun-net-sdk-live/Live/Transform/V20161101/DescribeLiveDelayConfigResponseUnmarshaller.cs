@@ -31,12 +31,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveDelayConfigResponse describeLiveDelayConfigResponse = new DescribeLiveDelayConfigResponse();
 
 			describeLiveDelayConfigResponse.HttpResponse = _ctx.HttpResponse;
-			describeLiveDelayConfigResponse.Domain = _ctx.StringValue("DescribeLiveDelayConfig.Domain");
-			describeLiveDelayConfigResponse.RequestId = _ctx.StringValue("DescribeLiveDelayConfig.RequestId");
-			describeLiveDelayConfigResponse.TaskTriggerMode = _ctx.StringValue("DescribeLiveDelayConfig.TaskTriggerMode");
 			describeLiveDelayConfigResponse.App = _ctx.StringValue("DescribeLiveDelayConfig.App");
 			describeLiveDelayConfigResponse.DelayTime = _ctx.StringValue("DescribeLiveDelayConfig.DelayTime");
+			describeLiveDelayConfigResponse.Domain = _ctx.StringValue("DescribeLiveDelayConfig.Domain");
+			describeLiveDelayConfigResponse.RequestId = _ctx.StringValue("DescribeLiveDelayConfig.RequestId");
 			describeLiveDelayConfigResponse.Stream = _ctx.StringValue("DescribeLiveDelayConfig.Stream");
+			describeLiveDelayConfigResponse.TaskTriggerMode = _ctx.StringValue("DescribeLiveDelayConfig.TaskTriggerMode");
         
 			return describeLiveDelayConfigResponse;
         }

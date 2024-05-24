@@ -58,24 +58,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class ListMessageApp_Result
 		{
 
-			private int? total;
-
 			private bool? hasMore;
 
-			private List<ListMessageApp_AppListItem> appList;
+			private int? total;
 
-			[JsonProperty(PropertyName = "Total")]
-			public int? Total
-			{
-				get
-				{
-					return total;
-				}
-				set	
-				{
-					total = value;
-				}
-			}
+			private List<ListMessageApp_AppListItem> appList;
 
 			[JsonProperty(PropertyName = "HasMore")]
 			public bool? HasMore
@@ -87,6 +74,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					hasMore = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Total")]
+			public int? Total
+			{
+				get
+				{
+					return total;
+				}
+				set	
+				{
+					total = value;
 				}
 			}
 
@@ -106,17 +106,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class ListMessageApp_AppListItem
 			{
 
+				private string appConfig;
+
 				private string appId;
 
 				private string appName;
 
 				private long? createTime;
 
+				private string extension;
+
 				private int? status;
 
-				private string appConfig;
-
-				private string extension;
+				[JsonProperty(PropertyName = "AppConfig")]
+				public string AppConfig
+				{
+					get
+					{
+						return appConfig;
+					}
+					set	
+					{
+						appConfig = value;
+					}
+				}
 
 				[JsonProperty(PropertyName = "AppId")]
 				public string AppId
@@ -157,32 +170,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				[JsonProperty(PropertyName = "Status")]
-				public int? Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "AppConfig")]
-				public string AppConfig
-				{
-					get
-					{
-						return appConfig;
-					}
-					set	
-					{
-						appConfig = value;
-					}
-				}
-
 				[JsonProperty(PropertyName = "Extension")]
 				public string Extension
 				{
@@ -193,6 +180,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						extension = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Status")]
+				public int? Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
 					}
 				}
 			}

@@ -31,17 +31,17 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeRTSNativeSDKVvDataResponse describeRTSNativeSDKVvDataResponse = new DescribeRTSNativeSDKVvDataResponse();
 
 			describeRTSNativeSDKVvDataResponse.HttpResponse = _ctx.HttpResponse;
-			describeRTSNativeSDKVvDataResponse.RequestId = _ctx.StringValue("DescribeRTSNativeSDKVvData.RequestId");
 			describeRTSNativeSDKVvDataResponse.DataInterval = _ctx.StringValue("DescribeRTSNativeSDKVvData.DataInterval");
-			describeRTSNativeSDKVvDataResponse.StartTime = _ctx.StringValue("DescribeRTSNativeSDKVvData.StartTime");
 			describeRTSNativeSDKVvDataResponse.EndTime = _ctx.StringValue("DescribeRTSNativeSDKVvData.EndTime");
+			describeRTSNativeSDKVvDataResponse.RequestId = _ctx.StringValue("DescribeRTSNativeSDKVvData.RequestId");
+			describeRTSNativeSDKVvDataResponse.StartTime = _ctx.StringValue("DescribeRTSNativeSDKVvData.StartTime");
 
 			List<DescribeRTSNativeSDKVvDataResponse.DescribeRTSNativeSDKVvData_Data> describeRTSNativeSDKVvDataResponse_vvData = new List<DescribeRTSNativeSDKVvDataResponse.DescribeRTSNativeSDKVvData_Data>();
 			for (int i = 0; i < _ctx.Length("DescribeRTSNativeSDKVvData.VvData.Length"); i++) {
 				DescribeRTSNativeSDKVvDataResponse.DescribeRTSNativeSDKVvData_Data data = new DescribeRTSNativeSDKVvDataResponse.DescribeRTSNativeSDKVvData_Data();
 				data.TimeStamp = _ctx.StringValue("DescribeRTSNativeSDKVvData.VvData["+ i +"].TimeStamp");
-				data.VvTotal = _ctx.StringValue("DescribeRTSNativeSDKVvData.VvData["+ i +"].VvTotal");
 				data.VvSuccess = _ctx.StringValue("DescribeRTSNativeSDKVvData.VvData["+ i +"].VvSuccess");
+				data.VvTotal = _ctx.StringValue("DescribeRTSNativeSDKVvData.VvData["+ i +"].VvTotal");
 
 				describeRTSNativeSDKVvDataResponse_vvData.Add(data);
 			}

@@ -123,13 +123,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private string endTime;
 
-				private long? logSize;
-
-				private string startTime;
-
 				private string logName;
 
 				private string logPath;
+
+				private long? logSize;
+
+				private string startTime;
 
 				[JsonProperty(PropertyName = "EndTime")]
 				public string EndTime
@@ -141,32 +141,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						endTime = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "LogSize")]
-				public long? LogSize
-				{
-					get
-					{
-						return logSize;
-					}
-					set	
-					{
-						logSize = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "StartTime")]
-				public string StartTime
-				{
-					get
-					{
-						return startTime;
-					}
-					set	
-					{
-						startTime = value;
 					}
 				}
 
@@ -193,6 +167,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						logPath = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "LogSize")]
+				public long? LogSize
+				{
+					get
+					{
+						return logSize;
+					}
+					set	
+					{
+						logSize = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "StartTime")]
+				public string StartTime
+				{
+					get
+					{
+						return startTime;
+					}
+					set	
+					{
+						startTime = value;
 					}
 				}
 			}

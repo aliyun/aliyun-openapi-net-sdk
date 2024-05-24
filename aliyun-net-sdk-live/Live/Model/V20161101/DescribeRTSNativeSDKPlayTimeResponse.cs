@@ -25,28 +25,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeRTSNativeSDKPlayTimeResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string dataInterval;
-
-		private string startTime;
 
 		private string endTime;
 
-		private List<DescribeRTSNativeSDKPlayTime_Data> playTimeData;
+		private string requestId;
 
-		[JsonProperty(PropertyName = "RequestId")]
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string startTime;
+
+		private List<DescribeRTSNativeSDKPlayTime_Data> playTimeData;
 
 		[JsonProperty(PropertyName = "DataInterval")]
 		public string DataInterval
@@ -61,19 +48,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "StartTime")]
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
 		[JsonProperty(PropertyName = "EndTime")]
 		public string EndTime
 		{
@@ -84,6 +58,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				endTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
 			}
 		}
 
@@ -103,24 +103,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeRTSNativeSDKPlayTime_Data
 		{
 
-			private string timeStamp;
-
 			private string playTime;
 
 			private string stallTime;
 
-			[JsonProperty(PropertyName = "TimeStamp")]
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+			private string timeStamp;
 
 			[JsonProperty(PropertyName = "PlayTime")]
 			public string PlayTime
@@ -145,6 +132,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					stallTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TimeStamp")]
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
 				}
 			}
 		}

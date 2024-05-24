@@ -31,18 +31,18 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveGrtnTrafficUsageResponse describeLiveGrtnTrafficUsageResponse = new DescribeLiveGrtnTrafficUsageResponse();
 
 			describeLiveGrtnTrafficUsageResponse.HttpResponse = _ctx.HttpResponse;
-			describeLiveGrtnTrafficUsageResponse.EndTime = _ctx.StringValue("DescribeLiveGrtnTrafficUsage.EndTime");
-			describeLiveGrtnTrafficUsageResponse.StartTime = _ctx.StringValue("DescribeLiveGrtnTrafficUsage.StartTime");
-			describeLiveGrtnTrafficUsageResponse.RequestId = _ctx.StringValue("DescribeLiveGrtnTrafficUsage.RequestId");
-			describeLiveGrtnTrafficUsageResponse.Filed = _ctx.StringValue("DescribeLiveGrtnTrafficUsage.Filed");
 			describeLiveGrtnTrafficUsageResponse.AppId = _ctx.StringValue("DescribeLiveGrtnTrafficUsage.AppId");
 			describeLiveGrtnTrafficUsageResponse.Area = _ctx.StringValue("DescribeLiveGrtnTrafficUsage.Area");
+			describeLiveGrtnTrafficUsageResponse.EndTime = _ctx.StringValue("DescribeLiveGrtnTrafficUsage.EndTime");
+			describeLiveGrtnTrafficUsageResponse.Filed = _ctx.StringValue("DescribeLiveGrtnTrafficUsage.Filed");
+			describeLiveGrtnTrafficUsageResponse.RequestId = _ctx.StringValue("DescribeLiveGrtnTrafficUsage.RequestId");
+			describeLiveGrtnTrafficUsageResponse.StartTime = _ctx.StringValue("DescribeLiveGrtnTrafficUsage.StartTime");
 
 			List<DescribeLiveGrtnTrafficUsageResponse.DescribeLiveGrtnTrafficUsage_UsageData> describeLiveGrtnTrafficUsageResponse_usageDataPerInterval = new List<DescribeLiveGrtnTrafficUsageResponse.DescribeLiveGrtnTrafficUsage_UsageData>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveGrtnTrafficUsage.UsageDataPerInterval.Length"); i++) {
 				DescribeLiveGrtnTrafficUsageResponse.DescribeLiveGrtnTrafficUsage_UsageData usageData = new DescribeLiveGrtnTrafficUsageResponse.DescribeLiveGrtnTrafficUsage_UsageData();
-				usageData._Value = _ctx.DoubleValue("DescribeLiveGrtnTrafficUsage.UsageDataPerInterval["+ i +"].Value");
 				usageData.TimeStamp = _ctx.StringValue("DescribeLiveGrtnTrafficUsage.UsageDataPerInterval["+ i +"].TimeStamp");
+				usageData._Value = _ctx.DoubleValue("DescribeLiveGrtnTrafficUsage.UsageDataPerInterval["+ i +"].Value");
 
 				describeLiveGrtnTrafficUsageResponse_usageDataPerInterval.Add(usageData);
 			}

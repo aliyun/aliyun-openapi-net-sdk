@@ -91,15 +91,28 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class ListMessage_MessageListItem
 			{
 
+				private string data;
+
 				private string groupId;
 
 				private string messageId;
 
-				private int? type;
-
 				private string senderId;
 
-				private string data;
+				private int? type;
+
+				[JsonProperty(PropertyName = "Data")]
+				public string Data
+				{
+					get
+					{
+						return data;
+					}
+					set	
+					{
+						data = value;
+					}
+				}
 
 				[JsonProperty(PropertyName = "GroupId")]
 				public string GroupId
@@ -127,19 +140,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				[JsonProperty(PropertyName = "Type")]
-				public int? Type
-				{
-					get
-					{
-						return type;
-					}
-					set	
-					{
-						type = value;
-					}
-				}
-
 				[JsonProperty(PropertyName = "SenderId")]
 				public string SenderId
 				{
@@ -153,16 +153,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				[JsonProperty(PropertyName = "Data")]
-				public string Data
+				[JsonProperty(PropertyName = "Type")]
+				public int? Type
 				{
 					get
 					{
-						return data;
+						return type;
 					}
 					set	
 					{
-						data = value;
+						type = value;
 					}
 				}
 			}

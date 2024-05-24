@@ -474,15 +474,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 					private string zOrder;
 
-					private string x;
-
 					private string width;
+
+					private string x;
 
 					private string y;
 
-					private UserInfo userInfo_;
-
 					private string renderMode;
+
+					private UserInfo userInfo_;
 
 					private string height;
 
@@ -512,19 +512,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 						}
 					}
 
-					[JsonProperty(PropertyName = "X")]
-					public string X
-					{
-						get
-						{
-							return x;
-						}
-						set	
-						{
-							x = value;
-						}
-					}
-
 					[JsonProperty(PropertyName = "Width")]
 					public string Width
 					{
@@ -535,6 +522,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 						set	
 						{
 							width = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "X")]
+					public string X
+					{
+						get
+						{
+							return x;
+						}
+						set	
+						{
+							x = value;
 						}
 					}
 
@@ -551,19 +551,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 						}
 					}
 
-					[JsonProperty(PropertyName = "UserInfo")]
-					public UserInfo UserInfo_
-					{
-						get
-						{
-							return userInfo_;
-						}
-						set	
-						{
-							userInfo_ = value;
-						}
-					}
-
 					[JsonProperty(PropertyName = "RenderMode")]
 					public string RenderMode
 					{
@@ -574,6 +561,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 						set	
 						{
 							renderMode = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "UserInfo")]
+					public UserInfo UserInfo_
+					{
+						get
+						{
+							return userInfo_;
+						}
+						set	
+						{
+							userInfo_ = value;
 						}
 					}
 
@@ -678,22 +678,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class Background
 			{
 
-				private string uRL;
-
 				private string renderMode;
 
-				[JsonProperty(PropertyName = "URL")]
-				public string URL
-				{
-					get
-					{
-						return uRL;
-					}
-					set	
-					{
-						uRL = value;
-					}
-				}
+				private string uRL;
 
 				[JsonProperty(PropertyName = "RenderMode")]
 				public string RenderMode
@@ -705,6 +692,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						renderMode = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "URL")]
+				public string URL
+				{
+					get
+					{
+						return uRL;
+					}
+					set	
+					{
+						uRL = value;
 					}
 				}
 			}
@@ -771,13 +771,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private string videoHeight;
 
-				private string videoBitrate;
-
 				private string audioSampleRate;
 
-				private string videoGop;
+				private string videoBitrate;
 
 				private string audioChannels;
+
+				private string videoGop;
 
 				[JsonProperty(PropertyName = "AudioOnly")]
 				public string AudioOnly
@@ -844,19 +844,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				[JsonProperty(PropertyName = "VideoBitrate")]
-				public string VideoBitrate
-				{
-					get
-					{
-						return videoBitrate;
-					}
-					set	
-					{
-						videoBitrate = value;
-					}
-				}
-
 				[JsonProperty(PropertyName = "AudioSampleRate")]
 				public string AudioSampleRate
 				{
@@ -870,16 +857,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				[JsonProperty(PropertyName = "VideoGop")]
-				public string VideoGop
+				[JsonProperty(PropertyName = "VideoBitrate")]
+				public string VideoBitrate
 				{
 					get
 					{
-						return videoGop;
+						return videoBitrate;
 					}
 					set	
 					{
-						videoGop = value;
+						videoBitrate = value;
 					}
 				}
 
@@ -893,6 +880,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						audioChannels = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "VideoGop")]
+				public string VideoGop
+				{
+					get
+					{
+						return videoGop;
+					}
+					set	
+					{
+						videoGop = value;
 					}
 				}
 			}

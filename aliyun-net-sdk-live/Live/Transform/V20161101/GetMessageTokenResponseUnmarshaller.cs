@@ -35,8 +35,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 
 			GetMessageTokenResponse.GetMessageToken_Result result = new GetMessageTokenResponse.GetMessageToken_Result();
 			result.AccessToken = _ctx.StringValue("GetMessageToken.Result.AccessToken");
-			result.RefreshToken = _ctx.StringValue("GetMessageToken.Result.RefreshToken");
 			result.AccessTokenExpiredTime = _ctx.LongValue("GetMessageToken.Result.AccessTokenExpiredTime");
+			result.RefreshToken = _ctx.StringValue("GetMessageToken.Result.RefreshToken");
 			getMessageTokenResponse.Result = result;
         
 			return getMessageTokenResponse;

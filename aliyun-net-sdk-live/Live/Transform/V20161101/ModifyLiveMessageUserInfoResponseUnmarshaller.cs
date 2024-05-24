@@ -33,6 +33,18 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			modifyLiveMessageUserInfoResponse.HttpResponse = _ctx.HttpResponse;
 			modifyLiveMessageUserInfoResponse.RequestId = _ctx.StringValue("ModifyLiveMessageUserInfo.RequestId");
 
+			List<ModifyLiveMessageUserInfoResponse.ModifyLiveMessageUserInfo_FailGroups> modifyLiveMessageUserInfoResponse_failList = new List<ModifyLiveMessageUserInfoResponse.ModifyLiveMessageUserInfo_FailGroups>();
+			for (int i = 0; i < _ctx.Length("ModifyLiveMessageUserInfo.FailList.Length"); i++) {
+				ModifyLiveMessageUserInfoResponse.ModifyLiveMessageUserInfo_FailGroups failGroups = new ModifyLiveMessageUserInfoResponse.ModifyLiveMessageUserInfo_FailGroups();
+				failGroups.Code = _ctx.IntegerValue("ModifyLiveMessageUserInfo.FailList["+ i +"].Code");
+				failGroups.GroupId = _ctx.StringValue("ModifyLiveMessageUserInfo.FailList["+ i +"].GroupId");
+				failGroups.Reason = _ctx.StringValue("ModifyLiveMessageUserInfo.FailList["+ i +"].Reason");
+				failGroups.Success = _ctx.BooleanValue("ModifyLiveMessageUserInfo.FailList["+ i +"].Success");
+
+				modifyLiveMessageUserInfoResponse_failList.Add(failGroups);
+			}
+			modifyLiveMessageUserInfoResponse.FailList = modifyLiveMessageUserInfoResponse_failList;
+
 			List<ModifyLiveMessageUserInfoResponse.ModifyLiveMessageUserInfo_SuccessGroups> modifyLiveMessageUserInfoResponse_successList = new List<ModifyLiveMessageUserInfoResponse.ModifyLiveMessageUserInfo_SuccessGroups>();
 			for (int i = 0; i < _ctx.Length("ModifyLiveMessageUserInfo.SuccessList.Length"); i++) {
 				ModifyLiveMessageUserInfoResponse.ModifyLiveMessageUserInfo_SuccessGroups successGroups = new ModifyLiveMessageUserInfoResponse.ModifyLiveMessageUserInfo_SuccessGroups();
@@ -42,18 +54,6 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				modifyLiveMessageUserInfoResponse_successList.Add(successGroups);
 			}
 			modifyLiveMessageUserInfoResponse.SuccessList = modifyLiveMessageUserInfoResponse_successList;
-
-			List<ModifyLiveMessageUserInfoResponse.ModifyLiveMessageUserInfo_FailGroups> modifyLiveMessageUserInfoResponse_failList = new List<ModifyLiveMessageUserInfoResponse.ModifyLiveMessageUserInfo_FailGroups>();
-			for (int i = 0; i < _ctx.Length("ModifyLiveMessageUserInfo.FailList.Length"); i++) {
-				ModifyLiveMessageUserInfoResponse.ModifyLiveMessageUserInfo_FailGroups failGroups = new ModifyLiveMessageUserInfoResponse.ModifyLiveMessageUserInfo_FailGroups();
-				failGroups.GroupId = _ctx.StringValue("ModifyLiveMessageUserInfo.FailList["+ i +"].GroupId");
-				failGroups.Success = _ctx.BooleanValue("ModifyLiveMessageUserInfo.FailList["+ i +"].Success");
-				failGroups.Reason = _ctx.StringValue("ModifyLiveMessageUserInfo.FailList["+ i +"].Reason");
-				failGroups.Code = _ctx.IntegerValue("ModifyLiveMessageUserInfo.FailList["+ i +"].Code");
-
-				modifyLiveMessageUserInfoResponse_failList.Add(failGroups);
-			}
-			modifyLiveMessageUserInfoResponse.FailList = modifyLiveMessageUserInfoResponse_failList;
         
 			return modifyLiveMessageUserInfoResponse;
         }

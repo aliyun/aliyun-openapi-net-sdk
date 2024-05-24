@@ -36,8 +36,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<CheckLiveMessageUsersOnlineResponse.CheckLiveMessageUsersOnline_Users> checkLiveMessageUsersOnlineResponse_userList = new List<CheckLiveMessageUsersOnlineResponse.CheckLiveMessageUsersOnline_Users>();
 			for (int i = 0; i < _ctx.Length("CheckLiveMessageUsersOnline.UserList.Length"); i++) {
 				CheckLiveMessageUsersOnlineResponse.CheckLiveMessageUsersOnline_Users users = new CheckLiveMessageUsersOnlineResponse.CheckLiveMessageUsersOnline_Users();
-				users.UserId = _ctx.StringValue("CheckLiveMessageUsersOnline.UserList["+ i +"].UserId");
 				users.Online = _ctx.BooleanValue("CheckLiveMessageUsersOnline.UserList["+ i +"].Online");
+				users.UserId = _ctx.StringValue("CheckLiveMessageUsersOnline.UserList["+ i +"].UserId");
 
 				checkLiveMessageUsersOnlineResponse_userList.Add(users);
 			}

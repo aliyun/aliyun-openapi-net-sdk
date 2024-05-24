@@ -34,12 +34,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			getMessageAppResponse.RequestId = _ctx.StringValue("GetMessageApp.RequestId");
 
 			GetMessageAppResponse.GetMessageApp_Result result = new GetMessageAppResponse.GetMessageApp_Result();
+			result.AppConfig = _ctx.StringValue("GetMessageApp.Result.AppConfig");
 			result.AppId = _ctx.StringValue("GetMessageApp.Result.AppId");
 			result.AppName = _ctx.StringValue("GetMessageApp.Result.AppName");
 			result.CreateTime = _ctx.LongValue("GetMessageApp.Result.CreateTime");
-			result.Status = _ctx.IntegerValue("GetMessageApp.Result.Status");
-			result.AppConfig = _ctx.StringValue("GetMessageApp.Result.AppConfig");
 			result.Extension = _ctx.StringValue("GetMessageApp.Result.Extension");
+			result.Status = _ctx.IntegerValue("GetMessageApp.Result.Status");
 			getMessageAppResponse.Result = result;
         
 			return getMessageAppResponse;

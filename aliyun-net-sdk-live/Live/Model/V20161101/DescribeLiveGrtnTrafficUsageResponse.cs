@@ -25,71 +25,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveGrtnTrafficUsageResponse : AcsResponse
 	{
 
-		private string endTime;
-
-		private string startTime;
-
-		private string requestId;
-
-		private string filed;
-
 		private string appId;
 
 		private string area;
 
+		private string endTime;
+
+		private string filed;
+
+		private string requestId;
+
+		private string startTime;
+
 		private List<DescribeLiveGrtnTrafficUsage_UsageData> usageDataPerInterval;
-
-		[JsonProperty(PropertyName = "EndTime")]
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "StartTime")]
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "RequestId")]
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "Filed")]
-		public string Filed
-		{
-			get
-			{
-				return filed;
-			}
-			set	
-			{
-				filed = value;
-			}
-		}
 
 		[JsonProperty(PropertyName = "AppId")]
 		public string AppId
@@ -117,6 +65,58 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "EndTime")]
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Filed")]
+		public string Filed
+		{
+			get
+			{
+				return filed;
+			}
+			set	
+			{
+				filed = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
+
 		[JsonProperty(PropertyName = "UsageDataPerInterval")]
 		public List<DescribeLiveGrtnTrafficUsage_UsageData> UsageDataPerInterval
 		{
@@ -133,22 +133,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveGrtnTrafficUsage_UsageData
 		{
 
-			private double? _value;
-
 			private string timeStamp;
 
-			[JsonProperty(PropertyName = "_Value")]
-			public double? _Value
-			{
-				get
-				{
-					return _value;
-				}
-				set	
-				{
-					_value = value;
-				}
-			}
+			private double? _value;
 
 			[JsonProperty(PropertyName = "TimeStamp")]
 			public string TimeStamp
@@ -160,6 +147,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					timeStamp = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "_Value")]
+			public double? _Value
+			{
+				get
+				{
+					return _value;
+				}
+				set	
+				{
+					_value = value;
 				}
 			}
 		}
