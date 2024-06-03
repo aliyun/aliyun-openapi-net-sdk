@@ -35,11 +35,28 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			Method = MethodType.POST;
         }
 
+		private string clusterId;
+
 		private string vpdId;
+
+		private string vpcId;
 
 		private List<string> lniIdss = new List<string>(){ };
 
 		private List<string> nodeIdss = new List<string>(){ };
+
+		public string ClusterId
+		{
+			get
+			{
+				return clusterId;
+			}
+			set	
+			{
+				clusterId = value;
+				DictionaryUtil.Add(BodyParameters, "ClusterId", value);
+			}
+		}
 
 		public string VpdId
 		{
@@ -51,6 +68,19 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				vpdId = value;
 				DictionaryUtil.Add(BodyParameters, "VpdId", value);
+			}
+		}
+
+		public string VpcId
+		{
+			get
+			{
+				return vpcId;
+			}
+			set	
+			{
+				vpcId = value;
+				DictionaryUtil.Add(BodyParameters, "VpcId", value);
 			}
 		}
 

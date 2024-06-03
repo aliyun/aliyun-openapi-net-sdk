@@ -43,6 +43,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			content.NodeId = _ctx.StringValue("GetNodeInfoForPod.Content.NodeId");
 			content.LeniQuota = _ctx.IntegerValue("GetNodeInfoForPod.Content.LeniQuota");
 			content.LniSipQuota = _ctx.IntegerValue("GetNodeInfoForPod.Content.LniSipQuota");
+			content.LeniSipQuota = _ctx.IntegerValue("GetNodeInfoForPod.Content.LeniSipQuota");
 			content.HdeniQuota = _ctx.IntegerValue("GetNodeInfoForPod.Content.HdeniQuota");
 
 			List<string> content_vSwitches = new List<string>();

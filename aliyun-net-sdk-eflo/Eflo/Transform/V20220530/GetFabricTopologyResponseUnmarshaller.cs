@@ -38,6 +38,8 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			GetFabricTopologyResponse.GetFabricTopology_Content content = new GetFabricTopologyResponse.GetFabricTopology_Content();
 			content.RegionId = _ctx.StringValue("GetFabricTopology.Content.RegionId");
 			content.VpdId = _ctx.StringValue("GetFabricTopology.Content.VpdId");
+			content.VpcId = _ctx.StringValue("GetFabricTopology.Content.VpcId");
+			content.ClusterId = _ctx.StringValue("GetFabricTopology.Content.ClusterId");
 
 			List<GetFabricTopologyResponse.GetFabricTopology_Content.GetFabricTopology_Layer> content_topoInfo = new List<GetFabricTopologyResponse.GetFabricTopology_Content.GetFabricTopology_Layer>();
 			for (int i = 0; i < _ctx.Length("GetFabricTopology.Content.TopoInfo.Length"); i++) {
