@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -49,6 +50,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string appId;
 
+		[JsonProperty(PropertyName = "GroupId")]
 		public string GroupId
 		{
 			get
@@ -62,6 +64,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DataCenter")]
 		public string DataCenter
 		{
 			get
@@ -75,6 +78,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "UserIds")]
 		public List<string> UserIds
 		{
 			get
@@ -95,6 +99,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "AppId")]
 		public string AppId
 		{
 			get

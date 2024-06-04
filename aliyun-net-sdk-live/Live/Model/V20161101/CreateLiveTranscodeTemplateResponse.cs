@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string templateId;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "TemplateId")]
 		public string TemplateId
 		{
 			get

@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -53,6 +54,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string eventCallbackUrl;
 
+		[JsonProperty(PropertyName = "DataCenter")]
 		public string DataCenter
 		{
 			get
@@ -66,6 +68,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "MsgLifeCycle")]
 		public int? MsgLifeCycle
 		{
 			get
@@ -79,6 +82,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "AppName")]
 		public string AppName
 		{
 			get
@@ -92,6 +96,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "AuditType")]
 		public int? AuditType
 		{
 			get
@@ -105,6 +110,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "AuditUrl")]
 		public string AuditUrl
 		{
 			get
@@ -118,6 +124,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "EventCallbackUrl")]
 		public string EventCallbackUrl
 		{
 			get

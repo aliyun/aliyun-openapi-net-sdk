@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private CancelMuteAllGroupUser_Result result;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Result")]
 		public CancelMuteAllGroupUser_Result Result
 		{
 			get
@@ -58,6 +60,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private bool? success;
 
+			[JsonProperty(PropertyName = "Success")]
 			public bool? Success
 			{
 				get

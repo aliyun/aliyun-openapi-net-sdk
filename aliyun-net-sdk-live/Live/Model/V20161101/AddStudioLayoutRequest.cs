@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -58,6 +59,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string commonConfig;
 
+		[JsonProperty(PropertyName = "ScreenInputConfigList")]
 		public string ScreenInputConfigList
 		{
 			get
@@ -71,6 +73,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "LayoutType")]
 		public string LayoutType
 		{
 			get
@@ -84,6 +87,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "LayoutName")]
 		public string LayoutName
 		{
 			get
@@ -97,6 +101,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "LayerOrderConfigList")]
 		public string LayerOrderConfigList
 		{
 			get
@@ -110,6 +115,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "MediaInputConfigList")]
 		public string MediaInputConfigList
 		{
 			get
@@ -123,6 +129,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "CasterId")]
 		public string CasterId
 		{
 			get
@@ -136,6 +143,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "BgImageConfig")]
 		public string BgImageConfig
 		{
 			get
@@ -149,6 +157,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -162,6 +171,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "CommonConfig")]
 		public string CommonConfig
 		{
 			get

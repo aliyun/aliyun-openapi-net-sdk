@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private CreateLiveStreamRecordIndexFiles_RecordInfo recordInfo;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RecordInfo")]
 		public CreateLiveStreamRecordIndexFiles_RecordInfo RecordInfo
 		{
 			get
@@ -84,6 +86,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string ossEndpoint;
 
+			[JsonProperty(PropertyName = "RecordUrl")]
 			public string RecordUrl
 			{
 				get
@@ -96,6 +99,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "StreamName")]
 			public string StreamName
 			{
 				get
@@ -108,6 +112,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "CreateTime")]
 			public string CreateTime
 			{
 				get
@@ -120,6 +125,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "RecordId")]
 			public string RecordId
 			{
 				get
@@ -132,6 +138,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Height")]
 			public int? Height
 			{
 				get
@@ -144,6 +151,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "OssBucket")]
 			public string OssBucket
 			{
 				get
@@ -156,6 +164,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "DomainName")]
 			public string DomainName
 			{
 				get
@@ -168,6 +177,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "OssObject")]
 			public string OssObject
 			{
 				get
@@ -180,6 +190,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "EndTime")]
 			public string EndTime
 			{
 				get
@@ -192,6 +203,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "AppName")]
 			public string AppName
 			{
 				get
@@ -204,6 +216,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "StartTime")]
 			public string StartTime
 			{
 				get
@@ -216,6 +229,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Width")]
 			public int? Width
 			{
 				get
@@ -228,6 +242,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Duration")]
 			public float? Duration
 			{
 				get
@@ -240,6 +255,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "OssEndpoint")]
 			public string OssEndpoint
 			{
 				get
