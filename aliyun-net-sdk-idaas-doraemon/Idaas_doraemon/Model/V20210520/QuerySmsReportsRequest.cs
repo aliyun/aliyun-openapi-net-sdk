@@ -27,47 +27,45 @@ using Aliyun.Acs.idaas_doraemon.Transform.V20210520;
 
 namespace Aliyun.Acs.idaas_doraemon.Model.V20210520
 {
-    public class ListUsersRequest : RpcAcsRequest<ListUsersResponse>
+    public class QuerySmsReportsRequest : RpcAcsRequest<QuerySmsReportsResponse>
     {
-        public ListUsersRequest()
-            : base("idaas-doraemon", "2021-05-20", "ListUsers", "idaasauth", "openAPI")
+        public QuerySmsReportsRequest()
+            : base("idaas-doraemon", "2021-05-20", "QuerySmsReports", "idaasauth", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.idaas_doraemon.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.idaas_doraemon.Endpoint.endpointRegionalType, null);
             }
-			Protocol = ProtocolType.HTTPS;
-			Method = MethodType.POST;
         }
 
-		private string userId;
+		private string eventId;
 
-		private string applicationExternalId;
+		private string appId;
 
-		public string UserId
+		public string EventId
 		{
 			get
 			{
-				return userId;
+				return eventId;
 			}
 			set	
 			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
+				eventId = value;
+				DictionaryUtil.Add(QueryParameters, "EventId", value);
 			}
 		}
 
-		public string ApplicationExternalId
+		public string AppId
 		{
 			get
 			{
-				return applicationExternalId;
+				return appId;
 			}
 			set	
 			{
-				applicationExternalId = value;
-				DictionaryUtil.Add(QueryParameters, "ApplicationExternalId", value);
+				appId = value;
+				DictionaryUtil.Add(QueryParameters, "AppId", value);
 			}
 		}
 
@@ -76,9 +74,9 @@ namespace Aliyun.Acs.idaas_doraemon.Model.V20210520
 			return false;
 		}
 
-        public override ListUsersResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QuerySmsReportsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListUsersResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QuerySmsReportsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

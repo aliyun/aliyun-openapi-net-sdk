@@ -27,58 +27,26 @@ using Aliyun.Acs.idaas_doraemon.Transform.V20210520;
 
 namespace Aliyun.Acs.idaas_doraemon.Model.V20210520
 {
-    public class ListUsersRequest : RpcAcsRequest<ListUsersResponse>
+    public class QuerySmsUpsRequest : RpcAcsRequest<QuerySmsUpsResponse>
     {
-        public ListUsersRequest()
-            : base("idaas-doraemon", "2021-05-20", "ListUsers", "idaasauth", "openAPI")
+        public QuerySmsUpsRequest()
+            : base("idaas-doraemon", "2021-05-20", "QuerySmsUps", "idaasauth", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.idaas_doraemon.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.idaas_doraemon.Endpoint.endpointRegionalType, null);
             }
-			Protocol = ProtocolType.HTTPS;
-			Method = MethodType.POST;
         }
-
-		private string userId;
-
-		private string applicationExternalId;
-
-		public string UserId
-		{
-			get
-			{
-				return userId;
-			}
-			set	
-			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
-			}
-		}
-
-		public string ApplicationExternalId
-		{
-			get
-			{
-				return applicationExternalId;
-			}
-			set	
-			{
-				applicationExternalId = value;
-				DictionaryUtil.Add(QueryParameters, "ApplicationExternalId", value);
-			}
-		}
 
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override ListUsersResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QuerySmsUpsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListUsersResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QuerySmsUpsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

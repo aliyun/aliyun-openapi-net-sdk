@@ -22,22 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.idaas_doraemon.Model.V20210520
 {
-	public class ServiceInvokeResponse : AcsResponse
+	public class QuerySmsUpsResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string data;
+		private long? totalElements;
 
-		private string message;
-
-		private string code;
-
-		private bool? success;
-
-		private string idToken;
-
-		private string eventId;
+		private List<QuerySmsUps_SmsUpsItem> smsUps;
 
 		public string RequestId
 		{
@@ -51,75 +43,115 @@ namespace Aliyun.Acs.idaas_doraemon.Model.V20210520
 			}
 		}
 
-		public string Data
+		public long? TotalElements
 		{
 			get
 			{
-				return data;
+				return totalElements;
 			}
 			set	
 			{
-				data = value;
+				totalElements = value;
 			}
 		}
 
-		public string Message
+		public List<QuerySmsUps_SmsUpsItem> SmsUps
 		{
 			get
 			{
-				return message;
+				return smsUps;
 			}
 			set	
 			{
-				message = value;
+				smsUps = value;
 			}
 		}
 
-		public string Code
+		public class QuerySmsUps_SmsUpsItem
 		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+			private string phoneNumber;
 
-		public string IdToken
-		{
-			get
-			{
-				return idToken;
-			}
-			set	
-			{
-				idToken = value;
-			}
-		}
+			private string content;
 
-		public string EventId
-		{
-			get
+			private string destCode;
+
+			private string sequenceId;
+
+			private string tenantId;
+
+			private string sendTime;
+
+			public string PhoneNumber
 			{
-				return eventId;
+				get
+				{
+					return phoneNumber;
+				}
+				set	
+				{
+					phoneNumber = value;
+				}
 			}
-			set	
+
+			public string Content
 			{
-				eventId = value;
+				get
+				{
+					return content;
+				}
+				set	
+				{
+					content = value;
+				}
+			}
+
+			public string DestCode
+			{
+				get
+				{
+					return destCode;
+				}
+				set	
+				{
+					destCode = value;
+				}
+			}
+
+			public string SequenceId
+			{
+				get
+				{
+					return sequenceId;
+				}
+				set	
+				{
+					sequenceId = value;
+				}
+			}
+
+			public string TenantId
+			{
+				get
+				{
+					return tenantId;
+				}
+				set	
+				{
+					tenantId = value;
+				}
+			}
+
+			public string SendTime
+			{
+				get
+				{
+					return sendTime;
+				}
+				set	
+				{
+					sendTime = value;
+				}
 			}
 		}
 	}

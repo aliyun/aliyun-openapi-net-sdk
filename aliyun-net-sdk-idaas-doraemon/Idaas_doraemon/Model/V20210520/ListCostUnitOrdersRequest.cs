@@ -27,47 +27,76 @@ using Aliyun.Acs.idaas_doraemon.Transform.V20210520;
 
 namespace Aliyun.Acs.idaas_doraemon.Model.V20210520
 {
-    public class ListUsersRequest : RpcAcsRequest<ListUsersResponse>
+    public class ListCostUnitOrdersRequest : RpcAcsRequest<ListCostUnitOrdersResponse>
     {
-        public ListUsersRequest()
-            : base("idaas-doraemon", "2021-05-20", "ListUsers", "idaasauth", "openAPI")
+        public ListCostUnitOrdersRequest()
+            : base("idaas-doraemon", "2021-05-20", "ListCostUnitOrders", "idaasauth", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.idaas_doraemon.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.idaas_doraemon.Endpoint.endpointRegionalType, null);
             }
-			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private string userId;
+		private string beginDate;
 
-		private string applicationExternalId;
+		private int? pageNumber;
 
-		public string UserId
+		private string finalDate;
+
+		private int? pageSize;
+
+		public string BeginDate
 		{
 			get
 			{
-				return userId;
+				return beginDate;
 			}
 			set	
 			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
+				beginDate = value;
+				DictionaryUtil.Add(QueryParameters, "BeginDate", value);
 			}
 		}
 
-		public string ApplicationExternalId
+		public int? PageNumber
 		{
 			get
 			{
-				return applicationExternalId;
+				return pageNumber;
 			}
 			set	
 			{
-				applicationExternalId = value;
-				DictionaryUtil.Add(QueryParameters, "ApplicationExternalId", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string FinalDate
+		{
+			get
+			{
+				return finalDate;
+			}
+			set	
+			{
+				finalDate = value;
+				DictionaryUtil.Add(QueryParameters, "FinalDate", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -76,9 +105,9 @@ namespace Aliyun.Acs.idaas_doraemon.Model.V20210520
 			return false;
 		}
 
-        public override ListUsersResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListCostUnitOrdersResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListUsersResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListCostUnitOrdersResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -27,34 +27,108 @@ using Aliyun.Acs.idaas_doraemon.Transform.V20210520;
 
 namespace Aliyun.Acs.idaas_doraemon.Model.V20210520
 {
-    public class ListUsersRequest : RpcAcsRequest<ListUsersResponse>
+    public class ListOrderConsumeStatisticRecordsRequest : RpcAcsRequest<ListOrderConsumeStatisticRecordsResponse>
     {
-        public ListUsersRequest()
-            : base("idaas-doraemon", "2021-05-20", "ListUsers", "idaasauth", "openAPI")
+        public ListOrderConsumeStatisticRecordsRequest()
+            : base("idaas-doraemon", "2021-05-20", "ListOrderConsumeStatisticRecords", "idaasauth", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.idaas_doraemon.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.idaas_doraemon.Endpoint.endpointRegionalType, null);
             }
-			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private string userId;
+		private string statisticTimeMin;
+
+		private string aliOrderCode;
+
+		private int? pageNumber;
+
+		private int? pageSize;
+
+		private string serviceCode;
+
+		private string statisticTimeMax;
 
 		private string applicationExternalId;
 
-		public string UserId
+		public string StatisticTimeMin
 		{
 			get
 			{
-				return userId;
+				return statisticTimeMin;
 			}
 			set	
 			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
+				statisticTimeMin = value;
+				DictionaryUtil.Add(QueryParameters, "StatisticTimeMin", value);
+			}
+		}
+
+		public string AliOrderCode
+		{
+			get
+			{
+				return aliOrderCode;
+			}
+			set	
+			{
+				aliOrderCode = value;
+				DictionaryUtil.Add(QueryParameters, "AliOrderCode", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string ServiceCode
+		{
+			get
+			{
+				return serviceCode;
+			}
+			set	
+			{
+				serviceCode = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceCode", value);
+			}
+		}
+
+		public string StatisticTimeMax
+		{
+			get
+			{
+				return statisticTimeMax;
+			}
+			set	
+			{
+				statisticTimeMax = value;
+				DictionaryUtil.Add(QueryParameters, "StatisticTimeMax", value);
 			}
 		}
 
@@ -76,9 +150,9 @@ namespace Aliyun.Acs.idaas_doraemon.Model.V20210520
 			return false;
 		}
 
-        public override ListUsersResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListOrderConsumeStatisticRecordsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListUsersResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListOrderConsumeStatisticRecordsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
