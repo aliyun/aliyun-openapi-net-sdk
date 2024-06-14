@@ -28,10 +28,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DescribeLiveAISubtitleRequest : RpcAcsRequest<DescribeLiveAISubtitleResponse>
+    public class ListRtcMPUEventSubRecordRequest : RpcAcsRequest<ListRtcMPUEventSubRecordResponse>
     {
-        public DescribeLiveAISubtitleRequest()
-            : base("live", "2016-11-01", "DescribeLiveAISubtitle", "live", "openAPI")
+        public ListRtcMPUEventSubRecordRequest()
+            : base("live", "2016-11-01", "ListRtcMPUEventSubRecord", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,48 +41,90 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private string subtitleName;
+		private string endTime;
 
-		private string pageNumber;
+		private string startTime;
 
-		private string pageSize;
+		private string subId;
 
-		private bool? isDefault;
+		private int? pageNo;
 
-		private long? ownerId;
+		private string appId;
 
-		private string subtitleId;
+		private int? pageSize;
 
-		[JsonProperty(PropertyName = "SubtitleName")]
-		public string SubtitleName
+		[JsonProperty(PropertyName = "EndTime")]
+		public string EndTime
 		{
 			get
 			{
-				return subtitleName;
+				return endTime;
 			}
 			set	
 			{
-				subtitleName = value;
-				DictionaryUtil.Add(QueryParameters, "SubtitleName", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "PageNumber")]
-		public string PageNumber
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
 		{
 			get
 			{
-				return pageNumber;
+				return startTime;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "SubId")]
+		public string SubId
+		{
+			get
+			{
+				return subId;
+			}
+			set	
+			{
+				subId = value;
+				DictionaryUtil.Add(QueryParameters, "SubId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageNo")]
+		public int? PageNo
+		{
+			get
+			{
+				return pageNo;
+			}
+			set	
+			{
+				pageNo = value;
+				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "AppId")]
+		public string AppId
+		{
+			get
+			{
+				return appId;
+			}
+			set	
+			{
+				appId = value;
+				DictionaryUtil.Add(QueryParameters, "AppId", value);
 			}
 		}
 
 		[JsonProperty(PropertyName = "PageSize")]
-		public string PageSize
+		public int? PageSize
 		{
 			get
 			{
@@ -91,55 +133,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value);
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
-		[JsonProperty(PropertyName = "IsDefault")]
-		public bool? IsDefault
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return isDefault;
-			}
-			set	
-			{
-				isDefault = value;
-				DictionaryUtil.Add(QueryParameters, "IsDefault", value.ToString());
-			}
+			return false;
 		}
 
-		[JsonProperty(PropertyName = "OwnerId")]
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		[JsonProperty(PropertyName = "SubtitleId")]
-		public string SubtitleId
-		{
-			get
-			{
-				return subtitleId;
-			}
-			set	
-			{
-				subtitleId = value;
-				DictionaryUtil.Add(QueryParameters, "SubtitleId", value);
-			}
-		}
-
-        public override DescribeLiveAISubtitleResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListRtcMPUEventSubRecordResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeLiveAISubtitleResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListRtcMPUEventSubRecordResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

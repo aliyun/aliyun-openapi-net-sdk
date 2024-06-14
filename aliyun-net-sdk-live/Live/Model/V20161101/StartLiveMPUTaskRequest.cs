@@ -511,9 +511,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 					private string y;
 
-					private string renderMode;
-
 					private UserInfo userInfo_;
+
+					private string renderMode;
 
 					private string height;
 
@@ -582,19 +582,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 						}
 					}
 
-					[JsonProperty(PropertyName = "RenderMode")]
-					public string RenderMode
-					{
-						get
-						{
-							return renderMode;
-						}
-						set	
-						{
-							renderMode = value;
-						}
-					}
-
 					[JsonProperty(PropertyName = "UserInfo")]
 					public UserInfo UserInfo_
 					{
@@ -605,6 +592,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 						set	
 						{
 							userInfo_ = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "RenderMode")]
+					public string RenderMode
+					{
+						get
+						{
+							return renderMode;
+						}
+						set	
+						{
+							renderMode = value;
 						}
 					}
 
@@ -798,6 +798,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private string audioBitrate;
 
+				private string enhancedParam;
+
 				private string videoFramerate;
 
 				private string videoHeight;
@@ -805,6 +807,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 				private string audioSampleRate;
 
 				private string videoBitrate;
+
+				private string videoCodec;
 
 				private string audioChannels;
 
@@ -846,6 +850,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						audioBitrate = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "EnhancedParam")]
+				public string EnhancedParam
+				{
+					get
+					{
+						return enhancedParam;
+					}
+					set	
+					{
+						enhancedParam = value;
 					}
 				}
 
@@ -898,6 +915,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						videoBitrate = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "VideoCodec")]
+				public string VideoCodec
+				{
+					get
+					{
+						return videoCodec;
+					}
+					set	
+					{
+						videoCodec = value;
 					}
 				}
 

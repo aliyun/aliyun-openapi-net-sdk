@@ -28,10 +28,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DescribeLiveAISubtitleRequest : RpcAcsRequest<DescribeLiveAISubtitleResponse>
+    public class DeleteRtcAsrTaskRequest : RpcAcsRequest<DeleteRtcAsrTaskResponse>
     {
-        public DescribeLiveAISubtitleRequest()
-            : base("live", "2016-11-01", "DescribeLiveAISubtitle", "live", "openAPI")
+        public DeleteRtcAsrTaskRequest()
+            : base("live", "2016-11-01", "DeleteRtcAsrTask", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,71 +41,21 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private string subtitleName;
-
-		private string pageNumber;
-
-		private string pageSize;
-
-		private bool? isDefault;
+		private string taskId;
 
 		private long? ownerId;
 
-		private string subtitleId;
-
-		[JsonProperty(PropertyName = "SubtitleName")]
-		public string SubtitleName
+		[JsonProperty(PropertyName = "TaskId")]
+		public string TaskId
 		{
 			get
 			{
-				return subtitleName;
+				return taskId;
 			}
 			set	
 			{
-				subtitleName = value;
-				DictionaryUtil.Add(QueryParameters, "SubtitleName", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "PageNumber")]
-		public string PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "PageSize")]
-		public string PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "IsDefault")]
-		public bool? IsDefault
-		{
-			get
-			{
-				return isDefault;
-			}
-			set	
-			{
-				isDefault = value;
-				DictionaryUtil.Add(QueryParameters, "IsDefault", value.ToString());
+				taskId = value;
+				DictionaryUtil.Add(QueryParameters, "TaskId", value);
 			}
 		}
 
@@ -123,23 +73,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "SubtitleId")]
-		public string SubtitleId
-		{
-			get
-			{
-				return subtitleId;
-			}
-			set	
-			{
-				subtitleId = value;
-				DictionaryUtil.Add(QueryParameters, "SubtitleId", value);
-			}
-		}
-
-        public override DescribeLiveAISubtitleResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteRtcAsrTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeLiveAISubtitleResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteRtcAsrTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
