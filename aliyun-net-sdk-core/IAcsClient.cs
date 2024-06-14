@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -18,7 +18,8 @@
  */
 
 using System.Collections.Generic;
-
+using System.Threading;
+using System.Threading.Tasks;
 using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Profile;
@@ -28,6 +29,7 @@ namespace Aliyun.Acs.Core
 {
     public interface IAcsClient
     {
+        #region Sync
         T GetAcsResponse<T>(AcsRequest<T> request) where T : AcsResponse;
 
         T GetAcsResponse<T>(AcsRequest<T> request, bool autoRetry, int maxRetryCounts) where T : AcsResponse;
@@ -54,5 +56,69 @@ namespace Aliyun.Acs.Core
             string regionId, Credential credential,
             Signer signer, FormatType? format,
             List<Endpoint> endpoints) where T : AcsResponse;
+        #endregion
+
+        #region Async
+
+        Task<T> GetAcsResponseAsync<T>(AcsRequest<T> request,
+            CancellationToken cancellationToken)
+            where T : AcsResponse;
+
+        Task<T> GetAcsResponseAsync<T>(AcsRequest<T> request,
+            bool autoRetry,
+            int maxRetryCounts,
+            CancellationToken cancellationToken)
+            where T : AcsResponse;
+
+        Task<T> GetAcsResponseAsync<T>(AcsRequest<T> request,
+            IClientProfile profile,
+            CancellationToken cancellationToken)
+            where T : AcsResponse;
+
+        Task<T> GetAcsResponseAsync<T>(AcsRequest<T> request,
+            string regionId,
+            Credential credential,
+            CancellationToken cancellationToken)
+            where T : AcsResponse;
+
+        Task<CommonResponse> GetCommonResponseAsync(CommonRequest request,
+            CancellationToken cancellationToken);
+
+        Task<HttpResponse> DoActionAsync<T>(AcsRequest<T> request,
+            CancellationToken cancellationToken)
+            where T : AcsResponse;
+
+        Task<HttpResponse> DoActionAsync<T>(AcsRequest<T> request,
+            bool autoRetry,
+            int maxRetryCounts,
+            CancellationToken cancellationToken)
+            where T : AcsResponse;
+
+        Task<HttpResponse> DoActionAsync<T>(AcsRequest<T> request,
+            IClientProfile profile,
+            CancellationToken cancellationToken)
+            where T : AcsResponse;
+
+        Task<HttpResponse> DoActionAsync<T>(AcsRequest<T> request,
+            string regionId,
+            Credential credential,
+            CancellationToken cancellationToken)
+            where T : AcsResponse;
+
+        Task<HttpResponse> DoActionAsync<T>(AcsRequest<T> request,
+            bool autoRetry,
+            int maxRetryCounts,
+            IClientProfile profile,
+            CancellationToken cancellationToken)
+            where T : AcsResponse;
+
+        Task<HttpResponse> DoActionAsync<T>(AcsRequest<T> request,
+            bool autoRetry, int maxRetryNumber,
+            string regionId, Credential credential,
+            Signer signer, FormatType? format,
+            List<Endpoint> endpoints,
+            CancellationToken cancellationToken)
+            where T : AcsResponse;
+        #endregion
     }
 }

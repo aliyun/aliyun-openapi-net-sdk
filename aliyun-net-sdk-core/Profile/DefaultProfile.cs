@@ -19,7 +19,8 @@
 
 using System;
 using System.Collections.Generic;
-
+using System.Threading;
+using System.Threading.Tasks;
 using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Regions;
@@ -100,9 +101,19 @@ namespace Aliyun.Acs.Core.Profile
             return endpointResolve.Resolve(product, regionId, serviceCode, endpointType, _credential, locationConfig);
         }
 
+        public async Task<List<Endpoint>> GetEndpointsAsync(string product, string regionId, string serviceCode, string endpointType, CancellationToken cancellationToken)
+        {
+            return await endpointResolve.ResolveAsync(product, regionId, serviceCode, endpointType, _credential, locationConfig, cancellationToken).ConfigureAwait(false);
+        }
+
         public List<Endpoint> GetEndpoints(string regionId, string product)
         {
             return endpointResolve.GetEndpoints(regionId, product);
+        }
+
+        public Task<List<Endpoint>> GetEndpointsAsync(string regionId, string product, CancellationToken cancellationToken)
+        {
+            return endpointResolve.GetEndpointsAsync(regionId, product, cancellationToken);
         }
 
         public void AddEndpoint(string endpointName, string regionId, string product, string domain,
@@ -110,6 +121,14 @@ namespace Aliyun.Acs.Core.Profile
         {
             EndpointUserConfig.AddEndpoint(product, regionId, domain);
             endpointResolve.AddEndpoint(endpointName, regionId, product, domain, isNeverExpire);
+        }
+
+        public Task AddEndpointAsync(string endpointName, string regionId, string product, string domain,
+            bool isNeverExpire,
+            CancellationToken cancellationToken)
+        {
+            EndpointUserConfig.AddEndpoint(product, regionId, domain);
+            return endpointResolve.AddEndpointAsync(endpointName, regionId, product, domain, isNeverExpire, cancellationToken);
         }
 
         public void SetCredentialsProvider(AlibabaCloudCredentialsProvider credentialsProvider)

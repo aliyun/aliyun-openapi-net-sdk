@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -17,6 +17,9 @@
  * under the License.
  */
 
+using System.Threading;
+using System.Threading.Tasks;
+
 namespace Aliyun.Acs.Core.Auth
 {
     public class BearerTokenCredentialProvider : AlibabaCloudCredentialsProvider
@@ -31,6 +34,11 @@ namespace Aliyun.Acs.Core.Auth
         public AlibabaCloudCredentials GetCredentials()
         {
             return bearerTokenCredential;
+        }
+
+        public Task<AlibabaCloudCredentials> GetCredentialsAsync(CancellationToken cancellationToken)
+        {
+            return Task.FromResult<AlibabaCloudCredentials>(bearerTokenCredential);
         }
     }
 }

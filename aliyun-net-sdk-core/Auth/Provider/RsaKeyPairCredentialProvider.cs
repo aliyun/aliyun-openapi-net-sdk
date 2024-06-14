@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -17,6 +17,8 @@
  * under the License.
  */
 
+using System.Threading;
+using System.Threading.Tasks;
 using Aliyun.Acs.Core.Auth.Sts;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Profile;
@@ -52,6 +54,16 @@ namespace Aliyun.Acs.Core.Auth.Provider
             return basicSessionCredentials;
         }
 
+        public async Task<AlibabaCloudCredentials> GetCredentialsAsync(CancellationToken cancellationToken)
+        {
+            if (basicSessionCredentials == null || basicSessionCredentials.WillSoonExpire())
+            {
+                basicSessionCredentials = await GetNewSessionCredentialsAsync(cancellationToken).ConfigureAwait(false);
+            }
+
+            return basicSessionCredentials;
+        }
+
         public void WithDurationSeconds(long seconds)
         {
             sessionDurationSeconds = seconds;
@@ -72,6 +84,24 @@ namespace Aliyun.Acs.Core.Auth.Provider
             };
 
             var response = stsClient.GetAcsResponse(request);
+
+            return new BasicSessionCredentials(
+                response.SessionAccesskey.SessionAccessKeyId,
+                response.SessionAccesskey.SessionAccessKeySecert,
+                null, sessionDurationSeconds
+            );
+        }
+
+        private async Task<BasicSessionCredentials> GetNewSessionCredentialsAsync(CancellationToken cancellationToken)
+        {
+            var request = new GetSessionAccessKeyRequest
+            {
+                PublicKeyId = rsaKeyPairCredential.GetAccessKeyId(),
+                DurationSeconds = (int)sessionDurationSeconds,
+                Protocol = ProtocolType.HTTPS
+            };
+
+            var response = await stsClient.GetAcsResponseAsync(request, cancellationToken).ConfigureAwait(false);
 
             return new BasicSessionCredentials(
                 response.SessionAccesskey.SessionAccessKeyId,

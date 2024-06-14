@@ -19,11 +19,9 @@
 
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
-
+using System.Threading;
+using System.Threading.Tasks;
 using Aliyun.Acs.Core.Auth;
-using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Regions.Location;
 
 namespace Aliyun.Acs.Core.Regions
@@ -64,6 +62,16 @@ namespace Aliyun.Acs.Core.Regions
 
         public Endpoint GetEndpoint(string region, string product, string serviceCode, string endpointType,
             Credential credential, LocationConfig locationConfig)
+        {
+            throw new NotSupportedException();
+        }
+
+        public Task<Endpoint> GetEndpointAsync(string region, string product, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return Task.FromResult(GetEndpoint(region, product));
+        }
+
+        public Task<Endpoint> GetEndpointAsync(string region, string product, string serviceCode, string endpointType, Credential credential, LocationConfig locationConfig, CancellationToken cancellationToken = default(CancellationToken))
         {
             throw new NotSupportedException();
         }

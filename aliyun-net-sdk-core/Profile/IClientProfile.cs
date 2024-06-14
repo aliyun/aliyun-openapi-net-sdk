@@ -18,7 +18,8 @@
  */
 
 using System.Collections.Generic;
-
+using System.Threading;
+using System.Threading.Tasks;
 using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Regions;
@@ -38,12 +39,18 @@ namespace Aliyun.Acs.Core.Profile
 
         List<Endpoint> GetEndpoints(string product, string regionId, string serviceCode, string endpointType);
 
+        Task<List<Endpoint>> GetEndpointsAsync(string product, string regionId, string serviceCode, string endpointType, CancellationToken cancellationToken);
+
         void SetLocationConfig(string regionId, string product, string endpoint);
 
         void SetCredentialsProvider(AlibabaCloudCredentialsProvider credentialsProvider);
 
         void AddEndpoint(string endpointName, string regionId, string product, string domain,
             bool isNeverExpire = false);
+
+        Task AddEndpointAsync(string endpointName, string regionId, string product, string domain,
+            bool isNeverExpire,
+            CancellationToken cancellationToken);
 
     }
 }
