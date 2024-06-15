@@ -114,13 +114,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string backupEndTime;
 
-			private int? backupId;
+			private string backupId;
 
 			private string backupDBNames;
 
 			private string backupMethod;
 
-			private long? backupJobId;
+			private string backupJobId;
+
+			private string backupName;
+
+			private string backupScale;
+
+			private bool? isAvail;
 
 			public string BackupStatus
 			{
@@ -218,7 +224,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
-			public int? BackupId
+			public string BackupId
 			{
 				get
 				{
@@ -254,7 +260,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
-			public long? BackupJobId
+			public string BackupJobId
 			{
 				get
 				{
@@ -263,6 +269,42 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					backupJobId = value;
+				}
+			}
+
+			public string BackupName
+			{
+				get
+				{
+					return backupName;
+				}
+				set	
+				{
+					backupName = value;
+				}
+			}
+
+			public string BackupScale
+			{
+				get
+				{
+					return backupScale;
+				}
+				set	
+				{
+					backupScale = value;
+				}
+			}
+
+			public bool? IsAvail
+			{
+				get
+				{
+					return isAvail;
+				}
+				set	
+				{
+					isAvail = value;
 				}
 			}
 		}

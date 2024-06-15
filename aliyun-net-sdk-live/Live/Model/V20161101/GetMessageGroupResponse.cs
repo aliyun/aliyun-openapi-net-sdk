@@ -58,30 +58,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class GetMessageGroup_Result
 		{
 
-			private string groupId;
-
 			private long? createTime;
-
-			private int? status;
 
 			private string creatorId;
 
 			private string extension;
 
+			private string groupId;
+
 			private bool? isMuteAll;
 
-			[JsonProperty(PropertyName = "GroupId")]
-			public string GroupId
-			{
-				get
-				{
-					return groupId;
-				}
-				set	
-				{
-					groupId = value;
-				}
-			}
+			private int? status;
 
 			[JsonProperty(PropertyName = "CreateTime")]
 			public long? CreateTime
@@ -93,19 +80,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					createTime = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Status")]
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
 				}
 			}
 
@@ -135,6 +109,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "GroupId")]
+			public string GroupId
+			{
+				get
+				{
+					return groupId;
+				}
+				set	
+				{
+					groupId = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "IsMuteAll")]
 			public bool? IsMuteAll
 			{
@@ -145,6 +132,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					isMuteAll = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Status")]
+			public int? Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 		}

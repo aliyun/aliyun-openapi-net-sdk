@@ -47,10 +47,13 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				backup.BackupDownloadURL = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupDownloadURL");
 				backup.BackupMode = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupMode");
 				backup.BackupEndTime = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupEndTime");
-				backup.BackupId = _ctx.IntegerValue("DescribeBackups.Backups["+ i +"].BackupId");
+				backup.BackupId = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupId");
 				backup.BackupDBNames = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupDBNames");
 				backup.BackupMethod = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupMethod");
-				backup.BackupJobId = _ctx.LongValue("DescribeBackups.Backups["+ i +"].BackupJobId");
+				backup.BackupJobId = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupJobId");
+				backup.BackupName = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupName");
+				backup.BackupScale = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupScale");
+				backup.IsAvail = _ctx.BooleanValue("DescribeBackups.Backups["+ i +"].IsAvail");
 
 				describeBackupsResponse_backups.Add(backup);
 			}

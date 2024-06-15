@@ -31,21 +31,21 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			ListEdgeTranscodeTemplateResponse listEdgeTranscodeTemplateResponse = new ListEdgeTranscodeTemplateResponse();
 
 			listEdgeTranscodeTemplateResponse.HttpResponse = _ctx.HttpResponse;
-			listEdgeTranscodeTemplateResponse.TotalCount = _ctx.IntegerValue("ListEdgeTranscodeTemplate.TotalCount");
 			listEdgeTranscodeTemplateResponse.RequestId = _ctx.StringValue("ListEdgeTranscodeTemplate.RequestId");
+			listEdgeTranscodeTemplateResponse.TotalCount = _ctx.IntegerValue("ListEdgeTranscodeTemplate.TotalCount");
 
 			List<ListEdgeTranscodeTemplateResponse.ListEdgeTranscodeTemplate_Template> listEdgeTranscodeTemplateResponse_templateList = new List<ListEdgeTranscodeTemplateResponse.ListEdgeTranscodeTemplate_Template>();
 			for (int i = 0; i < _ctx.Length("ListEdgeTranscodeTemplate.TemplateList.Length"); i++) {
 				ListEdgeTranscodeTemplateResponse.ListEdgeTranscodeTemplate_Template template = new ListEdgeTranscodeTemplateResponse.ListEdgeTranscodeTemplate_Template();
-				template.Type = _ctx.StringValue("ListEdgeTranscodeTemplate.TemplateList["+ i +"].Type");
-				template.Gop = _ctx.StringValue("ListEdgeTranscodeTemplate.TemplateList["+ i +"].Gop");
-				template.CreateTime = _ctx.StringValue("ListEdgeTranscodeTemplate.TemplateList["+ i +"].CreateTime");
-				template.Codec = _ctx.StringValue("ListEdgeTranscodeTemplate.TemplateList["+ i +"].Codec");
-				template.Fps = _ctx.StringValue("ListEdgeTranscodeTemplate.TemplateList["+ i +"].Fps");
 				template.Bitrate = _ctx.StringValue("ListEdgeTranscodeTemplate.TemplateList["+ i +"].Bitrate");
+				template.Codec = _ctx.StringValue("ListEdgeTranscodeTemplate.TemplateList["+ i +"].Codec");
+				template.CreateTime = _ctx.StringValue("ListEdgeTranscodeTemplate.TemplateList["+ i +"].CreateTime");
+				template.Fps = _ctx.StringValue("ListEdgeTranscodeTemplate.TemplateList["+ i +"].Fps");
+				template.Gop = _ctx.StringValue("ListEdgeTranscodeTemplate.TemplateList["+ i +"].Gop");
 				template.Name = _ctx.StringValue("ListEdgeTranscodeTemplate.TemplateList["+ i +"].Name");
 				template.Resolution = _ctx.StringValue("ListEdgeTranscodeTemplate.TemplateList["+ i +"].Resolution");
 				template.TemplateId = _ctx.StringValue("ListEdgeTranscodeTemplate.TemplateList["+ i +"].TemplateId");
+				template.Type = _ctx.StringValue("ListEdgeTranscodeTemplate.TemplateList["+ i +"].Type");
 
 				listEdgeTranscodeTemplateResponse_templateList.Add(template);
 			}

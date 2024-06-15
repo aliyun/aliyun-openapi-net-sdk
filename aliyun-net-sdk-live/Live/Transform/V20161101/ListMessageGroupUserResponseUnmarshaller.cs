@@ -34,14 +34,14 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			listMessageGroupUserResponse.RequestId = _ctx.StringValue("ListMessageGroupUser.RequestId");
 
 			ListMessageGroupUserResponse.ListMessageGroupUser_Result result = new ListMessageGroupUserResponse.ListMessageGroupUser_Result();
-			result.Total = _ctx.IntegerValue("ListMessageGroupUser.Result.Total");
 			result.HasMore = _ctx.BooleanValue("ListMessageGroupUser.Result.HasMore");
+			result.Total = _ctx.IntegerValue("ListMessageGroupUser.Result.Total");
 
 			List<ListMessageGroupUserResponse.ListMessageGroupUser_Result.ListMessageGroupUser_UserListItem> result_userList = new List<ListMessageGroupUserResponse.ListMessageGroupUser_Result.ListMessageGroupUser_UserListItem>();
 			for (int i = 0; i < _ctx.Length("ListMessageGroupUser.Result.UserList.Length"); i++) {
 				ListMessageGroupUserResponse.ListMessageGroupUser_Result.ListMessageGroupUser_UserListItem userListItem = new ListMessageGroupUserResponse.ListMessageGroupUser_Result.ListMessageGroupUser_UserListItem();
-				userListItem.UserId = _ctx.StringValue("ListMessageGroupUser.Result.UserList["+ i +"].UserId");
 				userListItem.JoinTime = _ctx.LongValue("ListMessageGroupUser.Result.UserList["+ i +"].JoinTime");
+				userListItem.UserId = _ctx.StringValue("ListMessageGroupUser.Result.UserList["+ i +"].UserId");
 
 				result_userList.Add(userListItem);
 			}

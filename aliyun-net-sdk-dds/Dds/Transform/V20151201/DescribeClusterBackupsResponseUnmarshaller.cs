@@ -47,6 +47,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				clusterBackup.ClusterBackupEndTime = _ctx.StringValue("DescribeClusterBackups.ClusterBackups["+ i +"].ClusterBackupEndTime");
 				clusterBackup.ClusterBackupMode = _ctx.StringValue("DescribeClusterBackups.ClusterBackups["+ i +"].ClusterBackupMode");
 				clusterBackup.Progress = _ctx.StringValue("DescribeClusterBackups.ClusterBackups["+ i +"].Progress");
+				clusterBackup.AttachLogStatus = _ctx.StringValue("DescribeClusterBackups.ClusterBackups["+ i +"].AttachLogStatus");
 
 				DescribeClusterBackupsResponse.DescribeClusterBackups_ClusterBackup.DescribeClusterBackups_ExtraInfo extraInfo = new DescribeClusterBackupsResponse.DescribeClusterBackups_ClusterBackup.DescribeClusterBackups_ExtraInfo();
 				extraInfo.RegistryFromHistory = _ctx.StringValue("DescribeClusterBackups.ClusterBackups["+ i +"].ExtraInfo.RegistryFromHistory");
@@ -65,6 +66,13 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 					backup.IsAvail = _ctx.StringValue("DescribeClusterBackups.ClusterBackups["+ i +"].Backups["+ j +"].IsAvail");
 					backup.BackupStatus = _ctx.StringValue("DescribeClusterBackups.ClusterBackups["+ i +"].Backups["+ j +"].BackupStatus");
 					backup.BackupName = _ctx.StringValue("DescribeClusterBackups.ClusterBackups["+ i +"].Backups["+ j +"].BackupName");
+
+					DescribeClusterBackupsResponse.DescribeClusterBackups_ClusterBackup.DescribeClusterBackups_Backup.DescribeClusterBackups_ExtraInfo1 extraInfo1 = new DescribeClusterBackupsResponse.DescribeClusterBackups_ClusterBackup.DescribeClusterBackups_Backup.DescribeClusterBackups_ExtraInfo1();
+					extraInfo1.NodeId = _ctx.StringValue("DescribeClusterBackups.ClusterBackups["+ i +"].Backups["+ j +"].ExtraInfo.NodeId");
+					extraInfo1.StorageSize = _ctx.StringValue("DescribeClusterBackups.ClusterBackups["+ i +"].Backups["+ j +"].ExtraInfo.StorageSize");
+					extraInfo1.InstanceClass = _ctx.StringValue("DescribeClusterBackups.ClusterBackups["+ i +"].Backups["+ j +"].ExtraInfo.InstanceClass");
+					extraInfo1.NodeType = _ctx.StringValue("DescribeClusterBackups.ClusterBackups["+ i +"].Backups["+ j +"].ExtraInfo.NodeType");
+					backup.ExtraInfo1 = extraInfo1;
 
 					clusterBackup_backups.Add(backup);
 				}

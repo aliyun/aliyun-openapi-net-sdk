@@ -31,9 +31,9 @@ namespace Aliyun.Acs.polardbx.Transform.V20200202
 			DeleteDBResponse deleteDBResponse = new DeleteDBResponse();
 
 			deleteDBResponse.HttpResponse = _ctx.HttpResponse;
+			deleteDBResponse.Message = _ctx.StringValue("DeleteDB.Message");
 			deleteDBResponse.RequestId = _ctx.StringValue("DeleteDB.RequestId");
 			deleteDBResponse.Success = _ctx.BooleanValue("DeleteDB.Success");
-			deleteDBResponse.Message = _ctx.StringValue("DeleteDB.Message");
         
 			return deleteDBResponse;
         }

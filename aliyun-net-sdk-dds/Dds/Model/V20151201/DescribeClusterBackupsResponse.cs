@@ -114,6 +114,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string progress;
 
+			private string attachLogStatus;
+
 			private List<DescribeClusterBackups_Backup> backups;
 
 			private DescribeClusterBackups_ExtraInfo extraInfo;
@@ -214,6 +216,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
+			public string AttachLogStatus
+			{
+				get
+				{
+					return attachLogStatus;
+				}
+				set	
+				{
+					attachLogStatus = value;
+				}
+			}
+
 			public List<DescribeClusterBackups_Backup> Backups
 			{
 				get
@@ -260,6 +274,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				private string backupStatus;
 
 				private string backupName;
+
+				private DescribeClusterBackups_ExtraInfo1 extraInfo1;
 
 				public string BackupId
 				{
@@ -378,6 +394,78 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						backupName = value;
+					}
+				}
+
+				public DescribeClusterBackups_ExtraInfo1 ExtraInfo1
+				{
+					get
+					{
+						return extraInfo1;
+					}
+					set	
+					{
+						extraInfo1 = value;
+					}
+				}
+
+				public class DescribeClusterBackups_ExtraInfo1
+				{
+
+					private string nodeId;
+
+					private string storageSize;
+
+					private string instanceClass;
+
+					private string nodeType;
+
+					public string NodeId
+					{
+						get
+						{
+							return nodeId;
+						}
+						set	
+						{
+							nodeId = value;
+						}
+					}
+
+					public string StorageSize
+					{
+						get
+						{
+							return storageSize;
+						}
+						set	
+						{
+							storageSize = value;
+						}
+					}
+
+					public string InstanceClass
+					{
+						get
+						{
+							return instanceClass;
+						}
+						set	
+						{
+							instanceClass = value;
+						}
+					}
+
+					public string NodeType
+					{
+						get
+						{
+							return nodeType;
+						}
+						set	
+						{
+							nodeType = value;
+						}
 					}
 				}
 			}

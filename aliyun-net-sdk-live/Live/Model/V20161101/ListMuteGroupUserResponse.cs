@@ -58,24 +58,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class ListMuteGroupUser_Result
 		{
 
-			private int? total;
-
 			private bool? hasMore;
 
-			private List<ListMuteGroupUser_UserListItem> userList;
+			private int? total;
 
-			[JsonProperty(PropertyName = "Total")]
-			public int? Total
-			{
-				get
-				{
-					return total;
-				}
-				set	
-				{
-					total = value;
-				}
-			}
+			private List<ListMuteGroupUser_UserListItem> userList;
 
 			[JsonProperty(PropertyName = "HasMore")]
 			public bool? HasMore
@@ -87,6 +74,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					hasMore = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Total")]
+			public int? Total
+			{
+				get
+				{
+					return total;
+				}
+				set	
+				{
+					total = value;
 				}
 			}
 

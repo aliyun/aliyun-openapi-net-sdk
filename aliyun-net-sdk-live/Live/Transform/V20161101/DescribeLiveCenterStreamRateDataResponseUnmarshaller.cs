@@ -36,11 +36,11 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeLiveCenterStreamRateDataResponse.DescribeLiveCenterStreamRateData_Data> describeLiveCenterStreamRateDataResponse_rateDatas = new List<DescribeLiveCenterStreamRateDataResponse.DescribeLiveCenterStreamRateData_Data>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveCenterStreamRateData.RateDatas.Length"); i++) {
 				DescribeLiveCenterStreamRateDataResponse.DescribeLiveCenterStreamRateData_Data data = new DescribeLiveCenterStreamRateDataResponse.DescribeLiveCenterStreamRateData_Data();
-				data.VideoFps = _ctx.StringValue("DescribeLiveCenterStreamRateData.RateDatas["+ i +"].VideoFps");
-				data.VideoRate = _ctx.StringValue("DescribeLiveCenterStreamRateData.RateDatas["+ i +"].VideoRate");
 				data.AudioFps = _ctx.StringValue("DescribeLiveCenterStreamRateData.RateDatas["+ i +"].AudioFps");
 				data.AudioRate = _ctx.StringValue("DescribeLiveCenterStreamRateData.RateDatas["+ i +"].AudioRate");
 				data.Time = _ctx.StringValue("DescribeLiveCenterStreamRateData.RateDatas["+ i +"].Time");
+				data.VideoFps = _ctx.StringValue("DescribeLiveCenterStreamRateData.RateDatas["+ i +"].VideoFps");
+				data.VideoRate = _ctx.StringValue("DescribeLiveCenterStreamRateData.RateDatas["+ i +"].VideoRate");
 
 				describeLiveCenterStreamRateDataResponse_rateDatas.Add(data);
 			}

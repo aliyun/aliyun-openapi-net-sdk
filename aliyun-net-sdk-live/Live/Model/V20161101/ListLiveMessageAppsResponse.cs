@@ -25,26 +25,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class ListLiveMessageAppsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? hasMore;
 
 		private long? nextPageToken;
 
-		private List<ListLiveMessageApps_Apps> appList;
+		private string requestId;
 
-		[JsonProperty(PropertyName = "RequestId")]
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<ListLiveMessageApps_Apps> appList;
 
 		[JsonProperty(PropertyName = "HasMore")]
 		public bool? HasMore
@@ -72,6 +59,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		[JsonProperty(PropertyName = "AppList")]
 		public List<ListLiveMessageApps_Apps> AppList
 		{
@@ -92,17 +92,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string appKey;
 
-			private string appSign;
-
-			private string disable;
-
 			private string appName;
+
+			private string appSign;
 
 			private long? createTime;
 
-			private long? modifyTime;
-
 			private string dataCenter;
+
+			private string disable;
+
+			private long? modifyTime;
 
 			[JsonProperty(PropertyName = "AppId")]
 			public string AppId
@@ -130,32 +130,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "AppSign")]
-			public string AppSign
-			{
-				get
-				{
-					return appSign;
-				}
-				set	
-				{
-					appSign = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Disable")]
-			public string Disable
-			{
-				get
-				{
-					return disable;
-				}
-				set	
-				{
-					disable = value;
-				}
-			}
-
 			[JsonProperty(PropertyName = "AppName")]
 			public string AppName
 			{
@@ -166,6 +140,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					appName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AppSign")]
+			public string AppSign
+			{
+				get
+				{
+					return appSign;
+				}
+				set	
+				{
+					appSign = value;
 				}
 			}
 
@@ -182,19 +169,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "ModifyTime")]
-			public long? ModifyTime
-			{
-				get
-				{
-					return modifyTime;
-				}
-				set	
-				{
-					modifyTime = value;
-				}
-			}
-
 			[JsonProperty(PropertyName = "DataCenter")]
 			public string DataCenter
 			{
@@ -205,6 +179,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					dataCenter = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Disable")]
+			public string Disable
+			{
+				get
+				{
+					return disable;
+				}
+				set	
+				{
+					disable = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ModifyTime")]
+			public long? ModifyTime
+			{
+				get
+				{
+					return modifyTime;
+				}
+				set	
+				{
+					modifyTime = value;
 				}
 			}
 		}

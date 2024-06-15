@@ -41,6 +41,15 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			describeBackupPolicyResponse.SnapshotBackupType = _ctx.StringValue("DescribeBackupPolicy.SnapshotBackupType");
 			describeBackupPolicyResponse.BackupInterval = _ctx.IntegerValue("DescribeBackupPolicy.BackupInterval");
 			describeBackupPolicyResponse.HighFrequencyBackupRetention = _ctx.StringValue("DescribeBackupPolicy.HighFrequencyBackupRetention");
+			describeBackupPolicyResponse.BackupRetentionPolicyOnClusterDeletion = _ctx.IntegerValue("DescribeBackupPolicy.BackupRetentionPolicyOnClusterDeletion");
+			describeBackupPolicyResponse.SrcRegion = _ctx.StringValue("DescribeBackupPolicy.SrcRegion");
+			describeBackupPolicyResponse.DestRegion = _ctx.StringValue("DescribeBackupPolicy.DestRegion");
+			describeBackupPolicyResponse.CrossRetentionType = _ctx.StringValue("DescribeBackupPolicy.CrossRetentionType");
+			describeBackupPolicyResponse.CrossRetentionValue = _ctx.IntegerValue("DescribeBackupPolicy.CrossRetentionValue");
+			describeBackupPolicyResponse.CrossBackupPeriod = _ctx.StringValue("DescribeBackupPolicy.CrossBackupPeriod");
+			describeBackupPolicyResponse.EnableCrossLogBackup = _ctx.IntegerValue("DescribeBackupPolicy.EnableCrossLogBackup");
+			describeBackupPolicyResponse.CrossLogRetentionType = _ctx.StringValue("DescribeBackupPolicy.CrossLogRetentionType");
+			describeBackupPolicyResponse.CrossLogRetentionValue = _ctx.IntegerValue("DescribeBackupPolicy.CrossLogRetentionValue");
         
 			return describeBackupPolicyResponse;
         }

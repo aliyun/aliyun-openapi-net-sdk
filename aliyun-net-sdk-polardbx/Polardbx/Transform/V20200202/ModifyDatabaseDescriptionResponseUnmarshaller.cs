@@ -31,9 +31,9 @@ namespace Aliyun.Acs.polardbx.Transform.V20200202
 			ModifyDatabaseDescriptionResponse modifyDatabaseDescriptionResponse = new ModifyDatabaseDescriptionResponse();
 
 			modifyDatabaseDescriptionResponse.HttpResponse = _ctx.HttpResponse;
+			modifyDatabaseDescriptionResponse.Message = _ctx.StringValue("ModifyDatabaseDescription.Message");
 			modifyDatabaseDescriptionResponse.RequestId = _ctx.StringValue("ModifyDatabaseDescription.RequestId");
 			modifyDatabaseDescriptionResponse.Success = _ctx.BooleanValue("ModifyDatabaseDescription.Success");
-			modifyDatabaseDescriptionResponse.Message = _ctx.StringValue("ModifyDatabaseDescription.Message");
         
 			return modifyDatabaseDescriptionResponse;
         }

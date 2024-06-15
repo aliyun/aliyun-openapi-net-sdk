@@ -42,9 +42,9 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 
 		private string dBInstanceName;
 
-		private string switchTime;
+		private string switchMode;
 
-		private string upgradeTime;
+		private string minorVersion;
 
 		public string DBInstanceName
 		{
@@ -59,29 +59,29 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			}
 		}
 
-		public string SwitchTime
+		public string SwitchMode
 		{
 			get
 			{
-				return switchTime;
+				return switchMode;
 			}
 			set	
 			{
-				switchTime = value;
-				DictionaryUtil.Add(QueryParameters, "SwitchTime", value);
+				switchMode = value;
+				DictionaryUtil.Add(QueryParameters, "SwitchMode", value);
 			}
 		}
 
-		public string UpgradeTime
+		public string MinorVersion
 		{
 			get
 			{
-				return upgradeTime;
+				return minorVersion;
 			}
 			set	
 			{
-				upgradeTime = value;
-				DictionaryUtil.Add(QueryParameters, "UpgradeTime", value);
+				minorVersion = value;
+				DictionaryUtil.Add(QueryParameters, "MinorVersion", value);
 			}
 		}
 

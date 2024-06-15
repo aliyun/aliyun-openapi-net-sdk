@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<CheckLiveMessageUsersOnline_Users> userList;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "UserList")]
 		public List<CheckLiveMessageUsersOnline_Users> UserList
 		{
 			get
@@ -56,22 +58,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class CheckLiveMessageUsersOnline_Users
 		{
 
-			private string userId;
-
 			private bool? online;
 
-			public string UserId
-			{
-				get
-				{
-					return userId;
-				}
-				set	
-				{
-					userId = value;
-				}
-			}
+			private string userId;
 
+			[JsonProperty(PropertyName = "Online")]
 			public bool? Online
 			{
 				get
@@ -81,6 +72,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					online = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "UserId")]
+			public string UserId
+			{
+				get
+				{
+					return userId;
+				}
+				set	
+				{
+					userId = value;
 				}
 			}
 		}

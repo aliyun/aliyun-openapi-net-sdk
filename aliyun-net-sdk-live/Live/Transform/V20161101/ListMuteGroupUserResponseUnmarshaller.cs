@@ -34,8 +34,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			listMuteGroupUserResponse.RequestId = _ctx.StringValue("ListMuteGroupUser.RequestId");
 
 			ListMuteGroupUserResponse.ListMuteGroupUser_Result result = new ListMuteGroupUserResponse.ListMuteGroupUser_Result();
-			result.Total = _ctx.IntegerValue("ListMuteGroupUser.Result.Total");
 			result.HasMore = _ctx.BooleanValue("ListMuteGroupUser.Result.HasMore");
+			result.Total = _ctx.IntegerValue("ListMuteGroupUser.Result.Total");
 
 			List<ListMuteGroupUserResponse.ListMuteGroupUser_Result.ListMuteGroupUser_UserListItem> result_userList = new List<ListMuteGroupUserResponse.ListMuteGroupUser_Result.ListMuteGroupUser_UserListItem>();
 			for (int i = 0; i < _ctx.Length("ListMuteGroupUser.Result.UserList.Length"); i++) {

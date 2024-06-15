@@ -88,6 +88,10 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 			private string vpdId;
 
+			private string vpcId;
+
+			private string clusterId;
+
 			private List<GetFabricTopology_Layer> topoInfo;
 
 			public string RegionId
@@ -111,6 +115,30 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				set	
 				{
 					vpdId = value;
+				}
+			}
+
+			public string VpcId
+			{
+				get
+				{
+					return vpcId;
+				}
+				set	
+				{
+					vpcId = value;
+				}
+			}
+
+			public string ClusterId
+			{
+				get
+				{
+					return clusterId;
+				}
+				set	
+				{
+					clusterId = value;
 				}
 			}
 

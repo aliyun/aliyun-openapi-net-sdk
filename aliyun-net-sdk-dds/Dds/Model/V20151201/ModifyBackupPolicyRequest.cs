@@ -42,7 +42,15 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
+		private int? crossLogRetentionValue;
+
+		private string srcRegion;
+
+		private string crossRetentionType;
+
 		private string backupInterval;
+
+		private string instanceType;
 
 		private string dBInstanceId;
 
@@ -50,7 +58,13 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string preferredBackupPeriod;
 
+		private int? backupRetentionPolicyOnClusterDeletion;
+
+		private string destRegion;
+
 		private string resourceOwnerAccount;
+
+		private string crossBackupType;
 
 		private string ownerAccount;
 
@@ -63,6 +77,14 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private long? backupRetentionPeriod;
 
 		private long? highFrequencyBackupRetention;
+
+		private int? enableCrossLogBackup;
+
+		private string crossBackupPeriod;
+
+		private int? crossRetentionValue;
+
+		private string crossLogRetentionType;
 
 		private long? logBackupRetentionPeriod;
 
@@ -79,6 +101,45 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public int? CrossLogRetentionValue
+		{
+			get
+			{
+				return crossLogRetentionValue;
+			}
+			set	
+			{
+				crossLogRetentionValue = value;
+				DictionaryUtil.Add(QueryParameters, "CrossLogRetentionValue", value.ToString());
+			}
+		}
+
+		public string SrcRegion
+		{
+			get
+			{
+				return srcRegion;
+			}
+			set	
+			{
+				srcRegion = value;
+				DictionaryUtil.Add(QueryParameters, "SrcRegion", value);
+			}
+		}
+
+		public string CrossRetentionType
+		{
+			get
+			{
+				return crossRetentionType;
+			}
+			set	
+			{
+				crossRetentionType = value;
+				DictionaryUtil.Add(QueryParameters, "CrossRetentionType", value);
+			}
+		}
+
 		public string BackupInterval
 		{
 			get
@@ -89,6 +150,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				backupInterval = value;
 				DictionaryUtil.Add(QueryParameters, "BackupInterval", value);
+			}
+		}
+
+		public string InstanceType
+		{
+			get
+			{
+				return instanceType;
+			}
+			set	
+			{
+				instanceType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
 			}
 		}
 
@@ -131,6 +205,32 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public int? BackupRetentionPolicyOnClusterDeletion
+		{
+			get
+			{
+				return backupRetentionPolicyOnClusterDeletion;
+			}
+			set	
+			{
+				backupRetentionPolicyOnClusterDeletion = value;
+				DictionaryUtil.Add(QueryParameters, "BackupRetentionPolicyOnClusterDeletion", value.ToString());
+			}
+		}
+
+		public string DestRegion
+		{
+			get
+			{
+				return destRegion;
+			}
+			set	
+			{
+				destRegion = value;
+				DictionaryUtil.Add(QueryParameters, "DestRegion", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -141,6 +241,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string CrossBackupType
+		{
+			get
+			{
+				return crossBackupType;
+			}
+			set	
+			{
+				crossBackupType = value;
+				DictionaryUtil.Add(QueryParameters, "CrossBackupType", value);
 			}
 		}
 
@@ -219,6 +332,58 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				highFrequencyBackupRetention = value;
 				DictionaryUtil.Add(QueryParameters, "HighFrequencyBackupRetention", value.ToString());
+			}
+		}
+
+		public int? EnableCrossLogBackup
+		{
+			get
+			{
+				return enableCrossLogBackup;
+			}
+			set	
+			{
+				enableCrossLogBackup = value;
+				DictionaryUtil.Add(QueryParameters, "EnableCrossLogBackup", value.ToString());
+			}
+		}
+
+		public string CrossBackupPeriod
+		{
+			get
+			{
+				return crossBackupPeriod;
+			}
+			set	
+			{
+				crossBackupPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "CrossBackupPeriod", value);
+			}
+		}
+
+		public int? CrossRetentionValue
+		{
+			get
+			{
+				return crossRetentionValue;
+			}
+			set	
+			{
+				crossRetentionValue = value;
+				DictionaryUtil.Add(QueryParameters, "CrossRetentionValue", value.ToString());
+			}
+		}
+
+		public string CrossLogRetentionType
+		{
+			get
+			{
+				return crossLogRetentionType;
+			}
+			set	
+			{
+				crossLogRetentionType = value;
+				DictionaryUtil.Add(QueryParameters, "CrossLogRetentionType", value);
 			}
 		}
 

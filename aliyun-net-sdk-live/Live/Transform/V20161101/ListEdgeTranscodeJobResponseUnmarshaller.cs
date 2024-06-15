@@ -31,23 +31,23 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			ListEdgeTranscodeJobResponse listEdgeTranscodeJobResponse = new ListEdgeTranscodeJobResponse();
 
 			listEdgeTranscodeJobResponse.HttpResponse = _ctx.HttpResponse;
-			listEdgeTranscodeJobResponse.TotalCount = _ctx.IntegerValue("ListEdgeTranscodeJob.TotalCount");
 			listEdgeTranscodeJobResponse.RequestId = _ctx.StringValue("ListEdgeTranscodeJob.RequestId");
+			listEdgeTranscodeJobResponse.TotalCount = _ctx.IntegerValue("ListEdgeTranscodeJob.TotalCount");
 
 			List<ListEdgeTranscodeJobResponse.ListEdgeTranscodeJob_Job> listEdgeTranscodeJobResponse_jobList = new List<ListEdgeTranscodeJobResponse.ListEdgeTranscodeJob_Job>();
 			for (int i = 0; i < _ctx.Length("ListEdgeTranscodeJob.JobList.Length"); i++) {
 				ListEdgeTranscodeJobResponse.ListEdgeTranscodeJob_Job job = new ListEdgeTranscodeJobResponse.ListEdgeTranscodeJob_Job();
-				job.Status = _ctx.StringValue("ListEdgeTranscodeJob.JobList["+ i +"].Status");
-				job.Type = _ctx.StringValue("ListEdgeTranscodeJob.JobList["+ i +"].Type");
-				job.StreamInput = _ctx.StringValue("ListEdgeTranscodeJob.JobList["+ i +"].StreamInput");
-				job.StreamOutput = _ctx.StringValue("ListEdgeTranscodeJob.JobList["+ i +"].StreamOutput");
-				job.LastStopAt = _ctx.StringValue("ListEdgeTranscodeJob.JobList["+ i +"].LastStopAt");
-				job.LastStartAt = _ctx.StringValue("ListEdgeTranscodeJob.JobList["+ i +"].LastStartAt");
 				job.CreateTime = _ctx.StringValue("ListEdgeTranscodeJob.JobList["+ i +"].CreateTime");
 				job.JobId = _ctx.StringValue("ListEdgeTranscodeJob.JobList["+ i +"].JobId");
-				job.TemplateName = _ctx.StringValue("ListEdgeTranscodeJob.JobList["+ i +"].TemplateName");
+				job.LastStartAt = _ctx.StringValue("ListEdgeTranscodeJob.JobList["+ i +"].LastStartAt");
+				job.LastStopAt = _ctx.StringValue("ListEdgeTranscodeJob.JobList["+ i +"].LastStopAt");
 				job.Name = _ctx.StringValue("ListEdgeTranscodeJob.JobList["+ i +"].Name");
+				job.Status = _ctx.StringValue("ListEdgeTranscodeJob.JobList["+ i +"].Status");
+				job.StreamInput = _ctx.StringValue("ListEdgeTranscodeJob.JobList["+ i +"].StreamInput");
+				job.StreamOutput = _ctx.StringValue("ListEdgeTranscodeJob.JobList["+ i +"].StreamOutput");
 				job.TemplateId = _ctx.StringValue("ListEdgeTranscodeJob.JobList["+ i +"].TemplateId");
+				job.TemplateName = _ctx.StringValue("ListEdgeTranscodeJob.JobList["+ i +"].TemplateName");
+				job.Type = _ctx.StringValue("ListEdgeTranscodeJob.JobList["+ i +"].Type");
 
 				listEdgeTranscodeJobResponse_jobList.Add(job);
 			}

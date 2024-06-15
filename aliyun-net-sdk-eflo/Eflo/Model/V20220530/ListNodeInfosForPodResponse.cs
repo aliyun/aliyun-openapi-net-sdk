@@ -98,6 +98,10 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 			private int? lniSipQuota;
 
+			private int? leniSipQuota;
+
+			private int? hdeniQuota;
+
 			private List<string> vSwitches;
 
 			public string RegionId
@@ -181,6 +185,30 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				set	
 				{
 					lniSipQuota = value;
+				}
+			}
+
+			public int? LeniSipQuota
+			{
+				get
+				{
+					return leniSipQuota;
+				}
+				set	
+				{
+					leniSipQuota = value;
+				}
+			}
+
+			public int? HdeniQuota
+			{
+				get
+				{
+					return hdeniQuota;
+				}
+				set	
+				{
+					hdeniQuota = value;
 				}
 			}
 

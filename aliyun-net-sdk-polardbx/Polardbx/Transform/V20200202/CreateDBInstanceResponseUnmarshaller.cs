@@ -31,8 +31,8 @@ namespace Aliyun.Acs.polardbx.Transform.V20200202
 			CreateDBInstanceResponse createDBInstanceResponse = new CreateDBInstanceResponse();
 
 			createDBInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			createDBInstanceResponse.RequestId = _ctx.StringValue("CreateDBInstance.RequestId");
 			createDBInstanceResponse.DBInstanceName = _ctx.StringValue("CreateDBInstance.DBInstanceName");
+			createDBInstanceResponse.RequestId = _ctx.StringValue("CreateDBInstance.RequestId");
 			createDBInstanceResponse.OrderId = _ctx.StringValue("CreateDBInstance.OrderId");
         
 			return createDBInstanceResponse;

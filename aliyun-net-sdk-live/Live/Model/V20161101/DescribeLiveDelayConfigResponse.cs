@@ -25,56 +25,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveDelayConfigResponse : AcsResponse
 	{
 
-		private string domain;
-
-		private string requestId;
-
-		private string taskTriggerMode;
-
 		private string app;
 
 		private string delayTime;
 
+		private string domain;
+
+		private string requestId;
+
 		private string stream;
 
-		[JsonProperty(PropertyName = "Domain")]
-		public string Domain
-		{
-			get
-			{
-				return domain;
-			}
-			set	
-			{
-				domain = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "RequestId")]
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "TaskTriggerMode")]
-		public string TaskTriggerMode
-		{
-			get
-			{
-				return taskTriggerMode;
-			}
-			set	
-			{
-				taskTriggerMode = value;
-			}
-		}
+		private string taskTriggerMode;
 
 		[JsonProperty(PropertyName = "App")]
 		public string App
@@ -102,6 +63,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Domain")]
+		public string Domain
+		{
+			get
+			{
+				return domain;
+			}
+			set	
+			{
+				domain = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		[JsonProperty(PropertyName = "Stream")]
 		public string Stream
 		{
@@ -112,6 +99,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				stream = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TaskTriggerMode")]
+		public string TaskTriggerMode
+		{
+			get
+			{
+				return taskTriggerMode;
+			}
+			set	
+			{
+				taskTriggerMode = value;
 			}
 		}
 	}

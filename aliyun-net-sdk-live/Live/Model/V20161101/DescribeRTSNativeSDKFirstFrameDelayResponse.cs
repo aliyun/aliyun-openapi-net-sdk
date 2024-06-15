@@ -25,28 +25,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeRTSNativeSDKFirstFrameDelayResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string dataInterval;
-
-		private string startTime;
 
 		private string endTime;
 
-		private List<DescribeRTSNativeSDKFirstFrameDelay_Data> frameDelayData;
+		private string requestId;
 
-		[JsonProperty(PropertyName = "RequestId")]
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string startTime;
+
+		private List<DescribeRTSNativeSDKFirstFrameDelay_Data> frameDelayData;
 
 		[JsonProperty(PropertyName = "DataInterval")]
 		public string DataInterval
@@ -61,19 +48,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "StartTime")]
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
 		[JsonProperty(PropertyName = "EndTime")]
 		public string EndTime
 		{
@@ -84,6 +58,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				endTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
 			}
 		}
 
@@ -103,22 +103,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeRTSNativeSDKFirstFrameDelay_Data
 		{
 
-			private string timeStamp;
-
 			private string frameDelay;
 
-			[JsonProperty(PropertyName = "TimeStamp")]
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+			private string timeStamp;
 
 			[JsonProperty(PropertyName = "FrameDelay")]
 			public string FrameDelay
@@ -130,6 +117,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					frameDelay = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TimeStamp")]
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
 				}
 			}
 		}

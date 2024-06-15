@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -64,6 +65,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private int? spot;
 
+		[JsonProperty(PropertyName = "showList")]
 		public List<long?> ShowLists
 		{
 			get
@@ -90,6 +92,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "LiveInputType")]
 		public int? LiveInputType
 		{
 			get
@@ -103,6 +106,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "isBatchMode")]
 		public bool? IsBatchMode
 		{
 			get
@@ -116,6 +120,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Duration")]
 		public long? Duration
 		{
 			get
@@ -129,6 +134,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RepeatTimes")]
 		public int? RepeatTimes
 		{
 			get
@@ -142,6 +148,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ShowName")]
 		public string ShowName
 		{
 			get
@@ -155,6 +162,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceId")]
 		public string ResourceId
 		{
 			get
@@ -168,6 +176,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "CasterId")]
 		public string CasterId
 		{
 			get
@@ -181,6 +190,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -194,6 +204,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceType")]
 		public string ResourceType
 		{
 			get
@@ -207,6 +218,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceUrl")]
 		public string ResourceUrl
 		{
 			get
@@ -220,6 +232,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Spot")]
 		public int? Spot
 		{
 			get
@@ -250,6 +263,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string showName;
 
+			[JsonProperty(PropertyName = "duration")]
 			public long? Duration
 			{
 				get
@@ -262,6 +276,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "liveInputType")]
 			public int? LiveInputType
 			{
 				get
@@ -274,6 +289,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "repeatTimes")]
 			public int? RepeatTimes
 			{
 				get
@@ -286,6 +302,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "resourceId")]
 			public string ResourceId
 			{
 				get
@@ -298,6 +315,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "resourceType")]
 			public string ResourceType
 			{
 				get
@@ -310,6 +328,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "resourceUrl")]
 			public string ResourceUrl
 			{
 				get
@@ -322,6 +341,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "showName")]
 			public string ShowName
 			{
 				get

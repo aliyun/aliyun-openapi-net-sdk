@@ -37,6 +37,7 @@ namespace Aliyun.Acs.idaas_doraemon.Transform.V20210520
 			serviceInvokeResponse.Code = _ctx.StringValue("ServiceInvoke.Code");
 			serviceInvokeResponse.Success = _ctx.BooleanValue("ServiceInvoke.Success");
 			serviceInvokeResponse.IdToken = _ctx.StringValue("ServiceInvoke.IdToken");
+			serviceInvokeResponse.EventId = _ctx.StringValue("ServiceInvoke.EventId");
         
 			return serviceInvokeResponse;
         }

@@ -27,9 +27,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string requestId;
 
-		private List<ModifyLiveMessageUserInfo_SuccessGroups> successList;
-
 		private List<ModifyLiveMessageUserInfo_FailGroups> failList;
+
+		private List<ModifyLiveMessageUserInfo_SuccessGroups> successList;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -41,6 +41,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "FailList")]
+		public List<ModifyLiveMessageUserInfo_FailGroups> FailList
+		{
+			get
+			{
+				return failList;
+			}
+			set	
+			{
+				failList = value;
 			}
 		}
 
@@ -57,16 +70,67 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "FailList")]
-		public List<ModifyLiveMessageUserInfo_FailGroups> FailList
+		public class ModifyLiveMessageUserInfo_FailGroups
 		{
-			get
+
+			private int? code;
+
+			private string groupId;
+
+			private string reason;
+
+			private bool? success;
+
+			[JsonProperty(PropertyName = "Code")]
+			public int? Code
 			{
-				return failList;
+				get
+				{
+					return code;
+				}
+				set	
+				{
+					code = value;
+				}
 			}
-			set	
+
+			[JsonProperty(PropertyName = "GroupId")]
+			public string GroupId
 			{
-				failList = value;
+				get
+				{
+					return groupId;
+				}
+				set	
+				{
+					groupId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Reason")]
+			public string Reason
+			{
+				get
+				{
+					return reason;
+				}
+				set	
+				{
+					reason = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Success")]
+			public bool? Success
+			{
+				get
+				{
+					return success;
+				}
+				set	
+				{
+					success = value;
+				}
 			}
 		}
 
@@ -100,70 +164,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					success = value;
-				}
-			}
-		}
-
-		public class ModifyLiveMessageUserInfo_FailGroups
-		{
-
-			private string groupId;
-
-			private bool? success;
-
-			private string reason;
-
-			private int? code;
-
-			[JsonProperty(PropertyName = "GroupId")]
-			public string GroupId
-			{
-				get
-				{
-					return groupId;
-				}
-				set	
-				{
-					groupId = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Success")]
-			public bool? Success
-			{
-				get
-				{
-					return success;
-				}
-				set	
-				{
-					success = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Reason")]
-			public string Reason
-			{
-				get
-				{
-					return reason;
-				}
-				set	
-				{
-					reason = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Code")]
-			public int? Code
-			{
-				get
-				{
-					return code;
-				}
-				set	
-				{
-					code = value;
 				}
 			}
 		}

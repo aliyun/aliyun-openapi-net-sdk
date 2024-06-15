@@ -31,10 +31,10 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeRTSNativeSDKPlayFailStatusResponse describeRTSNativeSDKPlayFailStatusResponse = new DescribeRTSNativeSDKPlayFailStatusResponse();
 
 			describeRTSNativeSDKPlayFailStatusResponse.HttpResponse = _ctx.HttpResponse;
-			describeRTSNativeSDKPlayFailStatusResponse.RequestId = _ctx.StringValue("DescribeRTSNativeSDKPlayFailStatus.RequestId");
 			describeRTSNativeSDKPlayFailStatusResponse.DataInterval = _ctx.StringValue("DescribeRTSNativeSDKPlayFailStatus.DataInterval");
-			describeRTSNativeSDKPlayFailStatusResponse.StartTime = _ctx.StringValue("DescribeRTSNativeSDKPlayFailStatus.StartTime");
 			describeRTSNativeSDKPlayFailStatusResponse.EndTime = _ctx.StringValue("DescribeRTSNativeSDKPlayFailStatus.EndTime");
+			describeRTSNativeSDKPlayFailStatusResponse.RequestId = _ctx.StringValue("DescribeRTSNativeSDKPlayFailStatus.RequestId");
+			describeRTSNativeSDKPlayFailStatusResponse.StartTime = _ctx.StringValue("DescribeRTSNativeSDKPlayFailStatus.StartTime");
 
 			List<DescribeRTSNativeSDKPlayFailStatusResponse.DescribeRTSNativeSDKPlayFailStatus_Data> describeRTSNativeSDKPlayFailStatusResponse_playFailStatus = new List<DescribeRTSNativeSDKPlayFailStatusResponse.DescribeRTSNativeSDKPlayFailStatus_Data>();
 			for (int i = 0; i < _ctx.Length("DescribeRTSNativeSDKPlayFailStatus.PlayFailStatus.Length"); i++) {

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardbx.Model.V20200202
@@ -56,25 +56,13 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 		public class DescribeParameters_Data
 		{
 
-			private string engine;
-
 			private string engineVersion;
+
+			private string engine;
 
 			private List<DescribeParameters_DBInstanceParameter> configParameters;
 
 			private List<DescribeParameters_DBInstanceParameter> runningParameters;
-
-			public string Engine
-			{
-				get
-				{
-					return engine;
-				}
-				set	
-				{
-					engine = value;
-				}
-			}
 
 			public string EngineVersion
 			{
@@ -85,6 +73,18 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 				set	
 				{
 					engineVersion = value;
+				}
+			}
+
+			public string Engine
+			{
+				get
+				{
+					return engine;
+				}
+				set	
+				{
+					engine = value;
 				}
 			}
 

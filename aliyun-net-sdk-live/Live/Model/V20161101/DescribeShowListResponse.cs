@@ -25,24 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeShowListResponse : AcsResponse
 	{
 
-		private string showList;
-
 		private string requestId;
 
-		private DescribeShowList_ShowListInfo showListInfo;
+		private string showList;
 
-		[JsonProperty(PropertyName = "ShowList")]
-		public string ShowList
-		{
-			get
-			{
-				return showList;
-			}
-			set	
-			{
-				showList = value;
-			}
-		}
+		private DescribeShowList_ShowListInfo showListInfo;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -54,6 +41,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ShowList")]
+		public string ShowList
+		{
+			get
+			{
+				return showList;
+			}
+			set	
+			{
+				showList = value;
 			}
 		}
 
@@ -73,56 +73,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeShowList_ShowListInfo
 		{
 
-			private string highPriorityShowStartTime;
-
-			private int? totalShowListRepeatTimes;
-
-			private int? showListRepeatTimes;
-
 			private string currentShowId;
 
 			private string highPriorityShowId;
 
+			private string highPriorityShowStartTime;
+
+			private int? showListRepeatTimes;
+
+			private int? totalShowListRepeatTimes;
+
 			private List<DescribeShowList_Show> showList;
-
-			[JsonProperty(PropertyName = "HighPriorityShowStartTime")]
-			public string HighPriorityShowStartTime
-			{
-				get
-				{
-					return highPriorityShowStartTime;
-				}
-				set	
-				{
-					highPriorityShowStartTime = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "TotalShowListRepeatTimes")]
-			public int? TotalShowListRepeatTimes
-			{
-				get
-				{
-					return totalShowListRepeatTimes;
-				}
-				set	
-				{
-					totalShowListRepeatTimes = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "ShowListRepeatTimes")]
-			public int? ShowListRepeatTimes
-			{
-				get
-				{
-					return showListRepeatTimes;
-				}
-				set	
-				{
-					showListRepeatTimes = value;
-				}
-			}
 
 			[JsonProperty(PropertyName = "CurrentShowId")]
 			public string CurrentShowId
@@ -150,6 +111,45 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "HighPriorityShowStartTime")]
+			public string HighPriorityShowStartTime
+			{
+				get
+				{
+					return highPriorityShowStartTime;
+				}
+				set	
+				{
+					highPriorityShowStartTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ShowListRepeatTimes")]
+			public int? ShowListRepeatTimes
+			{
+				get
+				{
+					return showListRepeatTimes;
+				}
+				set	
+				{
+					showListRepeatTimes = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TotalShowListRepeatTimes")]
+			public int? TotalShowListRepeatTimes
+			{
+				get
+				{
+					return totalShowListRepeatTimes;
+				}
+				set	
+				{
+					totalShowListRepeatTimes = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "ShowList")]
 			public List<DescribeShowList_Show> ShowList
 			{
@@ -166,28 +166,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeShowList_Show
 			{
 
-				private string showName;
-
 				private long? duration;
 
 				private int? repeatTimes;
 
 				private string showId;
 
-				private DescribeShowList_ResourceInfo resourceInfo;
+				private string showName;
 
-				[JsonProperty(PropertyName = "ShowName")]
-				public string ShowName
-				{
-					get
-					{
-						return showName;
-					}
-					set	
-					{
-						showName = value;
-					}
-				}
+				private DescribeShowList_ResourceInfo resourceInfo;
 
 				[JsonProperty(PropertyName = "Duration")]
 				public long? Duration
@@ -228,6 +215,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
+				[JsonProperty(PropertyName = "ShowName")]
+				public string ShowName
+				{
+					get
+					{
+						return showName;
+					}
+					set	
+					{
+						showName = value;
+					}
+				}
+
 				[JsonProperty(PropertyName = "ResourceInfo")]
 				public DescribeShowList_ResourceInfo ResourceInfo
 				{
@@ -246,11 +246,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 					private int? liveInputType;
 
-					private string resourceUrl;
+					private string resourceId;
 
 					private string resourceType;
 
-					private string resourceId;
+					private string resourceUrl;
 
 					[JsonProperty(PropertyName = "LiveInputType")]
 					public int? LiveInputType
@@ -265,16 +265,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 						}
 					}
 
-					[JsonProperty(PropertyName = "ResourceUrl")]
-					public string ResourceUrl
+					[JsonProperty(PropertyName = "ResourceId")]
+					public string ResourceId
 					{
 						get
 						{
-							return resourceUrl;
+							return resourceId;
 						}
 						set	
 						{
-							resourceUrl = value;
+							resourceId = value;
 						}
 					}
 
@@ -291,16 +291,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 						}
 					}
 
-					[JsonProperty(PropertyName = "ResourceId")]
-					public string ResourceId
+					[JsonProperty(PropertyName = "ResourceUrl")]
+					public string ResourceUrl
 					{
 						get
 						{
-							return resourceId;
+							return resourceUrl;
 						}
 						set	
 						{
-							resourceId = value;
+							resourceUrl = value;
 						}
 					}
 				}

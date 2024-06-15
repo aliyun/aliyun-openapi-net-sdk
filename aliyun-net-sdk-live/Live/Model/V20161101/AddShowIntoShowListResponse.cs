@@ -33,6 +33,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string successfulShowIds;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -45,6 +46,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ShowId")]
 		public string ShowId
 		{
 			get
@@ -57,6 +59,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "FailedList")]
 		public string FailedList
 		{
 			get
@@ -69,6 +72,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "SuccessfulShowIds")]
 		public string SuccessfulShowIds
 		{
 			get

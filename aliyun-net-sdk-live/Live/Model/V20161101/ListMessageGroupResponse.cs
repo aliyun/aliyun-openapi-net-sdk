@@ -58,24 +58,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class ListMessageGroup_Result
 		{
 
-			private int? total;
-
 			private bool? hasMore;
 
-			private List<ListMessageGroup_GroupListItem> groupList;
+			private int? total;
 
-			[JsonProperty(PropertyName = "Total")]
-			public int? Total
-			{
-				get
-				{
-					return total;
-				}
-				set	
-				{
-					total = value;
-				}
-			}
+			private List<ListMessageGroup_GroupListItem> groupList;
 
 			[JsonProperty(PropertyName = "HasMore")]
 			public bool? HasMore
@@ -87,6 +74,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					hasMore = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Total")]
+			public int? Total
+			{
+				get
+				{
+					return total;
+				}
+				set	
+				{
+					total = value;
 				}
 			}
 
@@ -106,30 +106,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class ListMessageGroup_GroupListItem
 			{
 
-				private string groupId;
-
 				private string appId;
 
 				private long? createTime;
-
-				private int? status;
 
 				private string creatorId;
 
 				private string extension;
 
-				[JsonProperty(PropertyName = "GroupId")]
-				public string GroupId
-				{
-					get
-					{
-						return groupId;
-					}
-					set	
-					{
-						groupId = value;
-					}
-				}
+				private string groupId;
+
+				private int? status;
 
 				[JsonProperty(PropertyName = "AppId")]
 				public string AppId
@@ -157,19 +144,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				[JsonProperty(PropertyName = "Status")]
-				public int? Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
-				}
-
 				[JsonProperty(PropertyName = "CreatorId")]
 				public string CreatorId
 				{
@@ -193,6 +167,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						extension = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "GroupId")]
+				public string GroupId
+				{
+					get
+					{
+						return groupId;
+					}
+					set	
+					{
+						groupId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Status")]
+				public int? Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
 					}
 				}
 			}

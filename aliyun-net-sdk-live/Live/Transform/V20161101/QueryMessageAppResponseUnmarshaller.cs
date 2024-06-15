@@ -36,18 +36,18 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<QueryMessageAppResponse.QueryMessageApp_ResultItem> queryMessageAppResponse_result = new List<QueryMessageAppResponse.QueryMessageApp_ResultItem>();
 			for (int i = 0; i < _ctx.Length("QueryMessageApp.Result.Length"); i++) {
 				QueryMessageAppResponse.QueryMessageApp_ResultItem resultItem = new QueryMessageAppResponse.QueryMessageApp_ResultItem();
-				resultItem.TotalCount = _ctx.IntegerValue("QueryMessageApp.Result["+ i +"].TotalCount");
 				resultItem.HasMore = _ctx.BooleanValue("QueryMessageApp.Result["+ i +"].HasMore");
+				resultItem.TotalCount = _ctx.IntegerValue("QueryMessageApp.Result["+ i +"].TotalCount");
 
 				List<QueryMessageAppResponse.QueryMessageApp_ResultItem.QueryMessageApp_AppListItem> resultItem_appList = new List<QueryMessageAppResponse.QueryMessageApp_ResultItem.QueryMessageApp_AppListItem>();
 				for (int j = 0; j < _ctx.Length("QueryMessageApp.Result["+ i +"].AppList.Length"); j++) {
 					QueryMessageAppResponse.QueryMessageApp_ResultItem.QueryMessageApp_AppListItem appListItem = new QueryMessageAppResponse.QueryMessageApp_ResultItem.QueryMessageApp_AppListItem();
+					appListItem.AppConfig = _ctx.StringValue("QueryMessageApp.Result["+ i +"].AppList["+ j +"].AppConfig");
 					appListItem.AppId = _ctx.StringValue("QueryMessageApp.Result["+ i +"].AppList["+ j +"].AppId");
 					appListItem.AppName = _ctx.StringValue("QueryMessageApp.Result["+ i +"].AppList["+ j +"].AppName");
 					appListItem.CreateTime = _ctx.LongValue("QueryMessageApp.Result["+ i +"].AppList["+ j +"].CreateTime");
-					appListItem.Status = _ctx.IntegerValue("QueryMessageApp.Result["+ i +"].AppList["+ j +"].Status");
-					appListItem.AppConfig = _ctx.StringValue("QueryMessageApp.Result["+ i +"].AppList["+ j +"].AppConfig");
 					appListItem.Extension = _ctx.StringValue("QueryMessageApp.Result["+ i +"].AppList["+ j +"].Extension");
+					appListItem.Status = _ctx.IntegerValue("QueryMessageApp.Result["+ i +"].AppList["+ j +"].Status");
 
 					resultItem_appList.Add(appListItem);
 				}

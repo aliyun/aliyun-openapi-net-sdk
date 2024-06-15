@@ -37,6 +37,8 @@ namespace Aliyun.Acs.idaas_doraemon.Model.V20210520
 
 		private string idToken;
 
+		private string eventId;
+
 		public string RequestId
 		{
 			get
@@ -106,6 +108,18 @@ namespace Aliyun.Acs.idaas_doraemon.Model.V20210520
 			set	
 			{
 				idToken = value;
+			}
+		}
+
+		public string EventId
+		{
+			get
+			{
+				return eventId;
+			}
+			set	
+			{
+				eventId = value;
 			}
 		}
 	}

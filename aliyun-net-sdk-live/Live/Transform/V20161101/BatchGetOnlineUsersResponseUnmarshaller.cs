@@ -38,9 +38,9 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<BatchGetOnlineUsersResponse.BatchGetOnlineUsers_Result.BatchGetOnlineUsers_OnlineUsersItem> result_onlineUsers = new List<BatchGetOnlineUsersResponse.BatchGetOnlineUsers_Result.BatchGetOnlineUsers_OnlineUsersItem>();
 			for (int i = 0; i < _ctx.Length("BatchGetOnlineUsers.Result.OnlineUsers.Length"); i++) {
 				BatchGetOnlineUsersResponse.BatchGetOnlineUsers_Result.BatchGetOnlineUsers_OnlineUsersItem onlineUsersItem = new BatchGetOnlineUsersResponse.BatchGetOnlineUsers_Result.BatchGetOnlineUsers_OnlineUsersItem();
-				onlineUsersItem.UserId = _ctx.StringValue("BatchGetOnlineUsers.Result.OnlineUsers["+ i +"].UserId");
 				onlineUsersItem.JoinTime = _ctx.LongValue("BatchGetOnlineUsers.Result.OnlineUsers["+ i +"].JoinTime");
 				onlineUsersItem.Online = _ctx.BooleanValue("BatchGetOnlineUsers.Result.OnlineUsers["+ i +"].Online");
+				onlineUsersItem.UserId = _ctx.StringValue("BatchGetOnlineUsers.Result.OnlineUsers["+ i +"].UserId");
 
 				result_onlineUsers.Add(onlineUsersItem);
 			}

@@ -58,17 +58,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class GetEdgeTranscodeTemplate_Template
 		{
 
-			private string type;
-
-			private string gop;
-
-			private string createTime;
+			private string bitrate;
 
 			private string codec;
 
+			private string createTime;
+
 			private string fps;
 
-			private string bitrate;
+			private string gop;
 
 			private string name;
 
@@ -76,42 +74,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string templateId;
 
-			[JsonProperty(PropertyName = "Type")]
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
+			private string type;
 
-			[JsonProperty(PropertyName = "Gop")]
-			public string Gop
+			[JsonProperty(PropertyName = "Bitrate")]
+			public string Bitrate
 			{
 				get
 				{
-					return gop;
+					return bitrate;
 				}
 				set	
 				{
-					gop = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "CreateTime")]
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
+					bitrate = value;
 				}
 			}
 
@@ -128,6 +102,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "CreateTime")]
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "Fps")]
 			public string Fps
 			{
@@ -141,16 +128,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "Bitrate")]
-			public string Bitrate
+			[JsonProperty(PropertyName = "Gop")]
+			public string Gop
 			{
 				get
 				{
-					return bitrate;
+					return gop;
 				}
 				set	
 				{
-					bitrate = value;
+					gop = value;
 				}
 			}
 
@@ -190,6 +177,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					templateId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Type")]
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
 				}
 			}
 		}

@@ -31,9 +31,9 @@ namespace Aliyun.Acs.polardbx.Transform.V20200202
 			DescribeDbListResponse describeDbListResponse = new DescribeDbListResponse();
 
 			describeDbListResponse.HttpResponse = _ctx.HttpResponse;
+			describeDbListResponse.Message = _ctx.StringValue("DescribeDbList.Message");
 			describeDbListResponse.RequestId = _ctx.StringValue("DescribeDbList.RequestId");
 			describeDbListResponse.Success = _ctx.BooleanValue("DescribeDbList.Success");
-			describeDbListResponse.Message = _ctx.StringValue("DescribeDbList.Message");
 
 			List<DescribeDbListResponse.DescribeDbList_DB> describeDbListResponse_data = new List<DescribeDbListResponse.DescribeDbList_DB>();
 			for (int i = 0; i < _ctx.Length("DescribeDbList.Data.Length"); i++) {
@@ -46,8 +46,8 @@ namespace Aliyun.Acs.polardbx.Transform.V20200202
 				List<DescribeDbListResponse.DescribeDbList_DB.DescribeDbList_Account> dB_accounts = new List<DescribeDbListResponse.DescribeDbList_DB.DescribeDbList_Account>();
 				for (int j = 0; j < _ctx.Length("DescribeDbList.Data["+ i +"].Accounts.Length"); j++) {
 					DescribeDbListResponse.DescribeDbList_DB.DescribeDbList_Account account = new DescribeDbListResponse.DescribeDbList_DB.DescribeDbList_Account();
-					account.AccountName = _ctx.StringValue("DescribeDbList.Data["+ i +"].Accounts["+ j +"].AccountName");
 					account.AccountPrivilege = _ctx.StringValue("DescribeDbList.Data["+ i +"].Accounts["+ j +"].AccountPrivilege");
+					account.AccountName = _ctx.StringValue("DescribeDbList.Data["+ i +"].Accounts["+ j +"].AccountName");
 
 					dB_accounts.Add(account);
 				}

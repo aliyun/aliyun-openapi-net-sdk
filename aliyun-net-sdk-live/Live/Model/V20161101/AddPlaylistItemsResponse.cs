@@ -31,6 +31,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private AddPlaylistItems_Items items;
 
+		[JsonProperty(PropertyName = "ProgramId")]
 		public string ProgramId
 		{
 			get
@@ -43,6 +44,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -55,6 +57,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Items")]
 		public AddPlaylistItems_Items Items
 		{
 			get
@@ -74,6 +77,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private List<AddPlaylistItems_SuccessItem> successItems;
 
+			[JsonProperty(PropertyName = "FailedItems")]
 			public List<AddPlaylistItems_FailedItem> FailedItems
 			{
 				get
@@ -86,6 +90,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "SuccessItems")]
 			public List<AddPlaylistItems_SuccessItem> SuccessItems
 			{
 				get
@@ -105,6 +110,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private string itemName;
 
+				[JsonProperty(PropertyName = "ItemId")]
 				public string ItemId
 				{
 					get
@@ -117,6 +123,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
+				[JsonProperty(PropertyName = "ItemName")]
 				public string ItemName
 				{
 					get
@@ -137,6 +144,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private string itemName;
 
+				[JsonProperty(PropertyName = "ItemId")]
 				public string ItemId
 				{
 					get
@@ -149,6 +157,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
+				[JsonProperty(PropertyName = "ItemName")]
 				public string ItemName
 				{
 					get

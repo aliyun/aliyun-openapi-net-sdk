@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -55,6 +56,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<string> administrators = new List<string>(){ };
 
+		[JsonProperty(PropertyName = "GroupId")]
 		public string GroupId
 		{
 			get
@@ -68,6 +70,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "GroupInfo")]
 		public string GroupInfo
 		{
 			get
@@ -81,6 +84,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "CreatorId")]
 		public string CreatorId
 		{
 			get
@@ -94,6 +98,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DataCenter")]
 		public string DataCenter
 		{
 			get
@@ -107,6 +112,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "GroupName")]
 		public string GroupName
 		{
 			get
@@ -120,6 +126,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "AppId")]
 		public string AppId
 		{
 			get
@@ -133,6 +140,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Administrators")]
 		public List<string> Administrators
 		{
 			get

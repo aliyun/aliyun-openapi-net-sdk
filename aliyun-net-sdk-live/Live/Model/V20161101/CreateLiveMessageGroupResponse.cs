@@ -33,6 +33,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private bool? alreadyDelete;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -45,6 +46,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "GroupId")]
 		public string GroupId
 		{
 			get
@@ -57,6 +59,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "AlreadyExists")]
 		public bool? AlreadyExists
 		{
 			get
@@ -69,6 +72,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "AlreadyDelete")]
 		public bool? AlreadyDelete
 		{
 			get

@@ -52,6 +52,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string networkType;
 
+		private string srcRegion;
+
 		private string storageType;
 
 		private string resourceGroupId;
@@ -107,6 +109,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string ownerAccount;
 
 		private string clusterId;
+
+		private string restoreType;
 
 		private string accountPassword;
 
@@ -191,6 +195,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				networkType = value;
 				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
+			}
+		}
+
+		public string SrcRegion
+		{
+			get
+			{
+				return srcRegion;
+			}
+			set	
+			{
+				srcRegion = value;
+				DictionaryUtil.Add(QueryParameters, "SrcRegion", value);
 			}
 		}
 
@@ -563,6 +580,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				clusterId = value;
 				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+			}
+		}
+
+		public string RestoreType
+		{
+			get
+			{
+				return restoreType;
+			}
+			set	
+			{
+				restoreType = value;
+				DictionaryUtil.Add(QueryParameters, "RestoreType", value);
 			}
 		}
 

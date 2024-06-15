@@ -31,9 +31,9 @@ namespace Aliyun.Acs.polardbx.Transform.V20200202
 			ModifySecurityIpsResponse modifySecurityIpsResponse = new ModifySecurityIpsResponse();
 
 			modifySecurityIpsResponse.HttpResponse = _ctx.HttpResponse;
+			modifySecurityIpsResponse.Message = _ctx.StringValue("ModifySecurityIps.Message");
 			modifySecurityIpsResponse.RequestId = _ctx.StringValue("ModifySecurityIps.RequestId");
 			modifySecurityIpsResponse.Success = _ctx.BooleanValue("ModifySecurityIps.Success");
-			modifySecurityIpsResponse.Message = _ctx.StringValue("ModifySecurityIps.Message");
         
 			return modifySecurityIpsResponse;
         }

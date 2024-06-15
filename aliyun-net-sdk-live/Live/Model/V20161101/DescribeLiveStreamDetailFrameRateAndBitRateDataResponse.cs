@@ -58,43 +58,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamDetailFrameRateAndBitRateData_Frabr
 		{
 
-			private string time;
-
-			private float? videoFrameRate;
+			private float? audioBitRate;
 
 			private float? audioFrameRate;
 
+			private float? bitRate;
+
 			private string streamUrl;
 
-			private float? bitRate;
+			private string time;
 
 			private float? videoBitRate;
 
-			private float? audioBitRate;
+			private float? videoFrameRate;
 
-			[JsonProperty(PropertyName = "Time")]
-			public string Time
+			[JsonProperty(PropertyName = "AudioBitRate")]
+			public float? AudioBitRate
 			{
 				get
 				{
-					return time;
+					return audioBitRate;
 				}
 				set	
 				{
-					time = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "VideoFrameRate")]
-			public float? VideoFrameRate
-			{
-				get
-				{
-					return videoFrameRate;
-				}
-				set	
-				{
-					videoFrameRate = value;
+					audioBitRate = value;
 				}
 			}
 
@@ -111,6 +98,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "BitRate")]
+			public float? BitRate
+			{
+				get
+				{
+					return bitRate;
+				}
+				set	
+				{
+					bitRate = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "StreamUrl")]
 			public string StreamUrl
 			{
@@ -124,16 +124,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "BitRate")]
-			public float? BitRate
+			[JsonProperty(PropertyName = "Time")]
+			public string Time
 			{
 				get
 				{
-					return bitRate;
+					return time;
 				}
 				set	
 				{
-					bitRate = value;
+					time = value;
 				}
 			}
 
@@ -150,16 +150,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "AudioBitRate")]
-			public float? AudioBitRate
+			[JsonProperty(PropertyName = "VideoFrameRate")]
+			public float? VideoFrameRate
 			{
 				get
 				{
-					return audioBitRate;
+					return videoFrameRate;
 				}
 				set	
 				{
-					audioBitRate = value;
+					videoFrameRate = value;
 				}
 			}
 		}

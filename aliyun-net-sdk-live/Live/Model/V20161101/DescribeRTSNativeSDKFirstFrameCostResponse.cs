@@ -25,28 +25,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeRTSNativeSDKFirstFrameCostResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string dataInterval;
-
-		private string startTime;
 
 		private string endTime;
 
-		private List<DescribeRTSNativeSDKFirstFrameCost_Data> firstFrameCostData;
+		private string requestId;
 
-		[JsonProperty(PropertyName = "RequestId")]
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string startTime;
+
+		private List<DescribeRTSNativeSDKFirstFrameCost_Data> firstFrameCostData;
 
 		[JsonProperty(PropertyName = "DataInterval")]
 		public string DataInterval
@@ -61,19 +48,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "StartTime")]
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
 		[JsonProperty(PropertyName = "EndTime")]
 		public string EndTime
 		{
@@ -84,6 +58,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				endTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
 			}
 		}
 
@@ -103,43 +103,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeRTSNativeSDKFirstFrameCost_Data
 		{
 
-			private string timeStamp;
-
-			private string initialized;
-
 			private string connected;
 
 			private string finishGetStreamInfo;
 
-			private string firstPacket;
-
 			private string firstFrameComplete;
 
-			[JsonProperty(PropertyName = "TimeStamp")]
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+			private string firstPacket;
 
-			[JsonProperty(PropertyName = "Initialized")]
-			public string Initialized
-			{
-				get
-				{
-					return initialized;
-				}
-				set	
-				{
-					initialized = value;
-				}
-			}
+			private string initialized;
+
+			private string timeStamp;
 
 			[JsonProperty(PropertyName = "Connected")]
 			public string Connected
@@ -167,6 +141,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "FirstFrameComplete")]
+			public string FirstFrameComplete
+			{
+				get
+				{
+					return firstFrameComplete;
+				}
+				set	
+				{
+					firstFrameComplete = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "FirstPacket")]
 			public string FirstPacket
 			{
@@ -180,16 +167,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "FirstFrameComplete")]
-			public string FirstFrameComplete
+			[JsonProperty(PropertyName = "Initialized")]
+			public string Initialized
 			{
 				get
 				{
-					return firstFrameComplete;
+					return initialized;
 				}
 				set	
 				{
-					firstFrameComplete = value;
+					initialized = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TimeStamp")]
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
 				}
 			}
 		}

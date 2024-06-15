@@ -31,9 +31,9 @@ namespace Aliyun.Acs.polardbx.Transform.V20200202
 			ModifyAccountDescriptionResponse modifyAccountDescriptionResponse = new ModifyAccountDescriptionResponse();
 
 			modifyAccountDescriptionResponse.HttpResponse = _ctx.HttpResponse;
+			modifyAccountDescriptionResponse.Message = _ctx.StringValue("ModifyAccountDescription.Message");
 			modifyAccountDescriptionResponse.RequestId = _ctx.StringValue("ModifyAccountDescription.RequestId");
 			modifyAccountDescriptionResponse.Success = _ctx.BooleanValue("ModifyAccountDescription.Success");
-			modifyAccountDescriptionResponse.Message = _ctx.StringValue("ModifyAccountDescription.Message");
         
 			return modifyAccountDescriptionResponse;
         }

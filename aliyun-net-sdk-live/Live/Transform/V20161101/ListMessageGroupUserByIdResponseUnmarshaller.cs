@@ -34,17 +34,17 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			listMessageGroupUserByIdResponse.RequestId = _ctx.StringValue("ListMessageGroupUserById.RequestId");
 
 			ListMessageGroupUserByIdResponse.ListMessageGroupUserById_Result result = new ListMessageGroupUserByIdResponse.ListMessageGroupUserById_Result();
-			result.Total = _ctx.IntegerValue("ListMessageGroupUserById.Result.Total");
 			result.HasMore = _ctx.BooleanValue("ListMessageGroupUserById.Result.HasMore");
+			result.Total = _ctx.IntegerValue("ListMessageGroupUserById.Result.Total");
 
 			List<ListMessageGroupUserByIdResponse.ListMessageGroupUserById_Result.ListMessageGroupUserById_UserListItem> result_userList = new List<ListMessageGroupUserByIdResponse.ListMessageGroupUserById_Result.ListMessageGroupUserById_UserListItem>();
 			for (int i = 0; i < _ctx.Length("ListMessageGroupUserById.Result.UserList.Length"); i++) {
 				ListMessageGroupUserByIdResponse.ListMessageGroupUserById_Result.ListMessageGroupUserById_UserListItem userListItem = new ListMessageGroupUserByIdResponse.ListMessageGroupUserById_Result.ListMessageGroupUserById_UserListItem();
-				userListItem.UserId = _ctx.StringValue("ListMessageGroupUserById.Result.UserList["+ i +"].UserId");
-				userListItem.UserNick = _ctx.StringValue("ListMessageGroupUserById.Result.UserList["+ i +"].UserNick");
+				userListItem.IsMute = _ctx.BooleanValue("ListMessageGroupUserById.Result.UserList["+ i +"].IsMute");
 				userListItem.UserAvatar = _ctx.StringValue("ListMessageGroupUserById.Result.UserList["+ i +"].UserAvatar");
 				userListItem.UserExtension = _ctx.StringValue("ListMessageGroupUserById.Result.UserList["+ i +"].UserExtension");
-				userListItem.IsMute = _ctx.BooleanValue("ListMessageGroupUserById.Result.UserList["+ i +"].IsMute");
+				userListItem.UserId = _ctx.StringValue("ListMessageGroupUserById.Result.UserList["+ i +"].UserId");
+				userListItem.UserNick = _ctx.StringValue("ListMessageGroupUserById.Result.UserList["+ i +"].UserNick");
 
 				List<string> userListItem_muteBy = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListMessageGroupUserById.Result.UserList["+ i +"].MuteBy.Length"); j++) {
