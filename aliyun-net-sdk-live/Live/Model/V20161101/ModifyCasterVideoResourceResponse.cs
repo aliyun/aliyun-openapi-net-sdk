@@ -25,24 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class ModifyCasterVideoResourceResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string casterId;
 
-		private string resourceId;
+		private string requestId;
 
-		[JsonProperty(PropertyName = "RequestId")]
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string resourceId;
 
 		[JsonProperty(PropertyName = "CasterId")]
 		public string CasterId
@@ -54,6 +41,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				casterId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

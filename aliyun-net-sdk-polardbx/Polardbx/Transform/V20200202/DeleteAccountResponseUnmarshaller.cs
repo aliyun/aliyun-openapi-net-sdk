@@ -31,9 +31,9 @@ namespace Aliyun.Acs.polardbx.Transform.V20200202
 			DeleteAccountResponse deleteAccountResponse = new DeleteAccountResponse();
 
 			deleteAccountResponse.HttpResponse = _ctx.HttpResponse;
+			deleteAccountResponse.Message = _ctx.StringValue("DeleteAccount.Message");
 			deleteAccountResponse.RequestId = _ctx.StringValue("DeleteAccount.RequestId");
 			deleteAccountResponse.Success = _ctx.BooleanValue("DeleteAccount.Success");
-			deleteAccountResponse.Message = _ctx.StringValue("DeleteAccount.Message");
         
 			return deleteAccountResponse;
         }

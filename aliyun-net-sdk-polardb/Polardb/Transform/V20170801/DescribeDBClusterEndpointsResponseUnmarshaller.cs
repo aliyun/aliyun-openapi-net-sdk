@@ -44,6 +44,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				dBEndpoint.DBEndpointDescription = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].DBEndpointDescription");
 				dBEndpoint.EndpointType = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].EndpointType");
 				dBEndpoint.AutoAddNewNodes = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AutoAddNewNodes");
+				dBEndpoint.DBClusterId = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].DBClusterId");
 
 				List<DescribeDBClusterEndpointsResponse.DescribeDBClusterEndpoints_DBEndpoint.DescribeDBClusterEndpoints_Address> dBEndpoint_addressItems = new List<DescribeDBClusterEndpointsResponse.DescribeDBClusterEndpoints_DBEndpoint.DescribeDBClusterEndpoints_Address>();
 				for (int j = 0; j < _ctx.Length("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems.Length"); j++) {

@@ -110,6 +110,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string instanceStatus;
 
+			private string secondaryZoneId;
+
 			public string VpcId
 			{
 				get
@@ -347,6 +349,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					instanceStatus = value;
+				}
+			}
+
+			public string SecondaryZoneId
+			{
+				get
+				{
+					return secondaryZoneId;
+				}
+				set	
+				{
+					secondaryZoneId = value;
 				}
 			}
 		}

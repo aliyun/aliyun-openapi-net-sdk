@@ -76,6 +76,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstance.DedicatedHostZoneIdForLog = _ctx.StringValue("DescribeDBInstances.Items["+ i +"].DedicatedHostZoneIdForLog");
 				dBInstance.DedicatedHostNameForSlave = _ctx.StringValue("DescribeDBInstances.Items["+ i +"].DedicatedHostNameForSlave");
 				dBInstance.DBInstanceDescription = _ctx.StringValue("DescribeDBInstances.Items["+ i +"].DBInstanceDescription");
+				dBInstance.DBInstanceCPU = _ctx.StringValue("DescribeDBInstances.Items["+ i +"].DBInstanceCPU");
+				dBInstance.DBInstanceMemory = _ctx.IntegerValue("DescribeDBInstances.Items["+ i +"].DBInstanceMemory");
 				dBInstance.DBInstanceNetType = _ctx.StringValue("DescribeDBInstances.Items["+ i +"].DBInstanceNetType");
 				dBInstance.DBInstanceType = _ctx.StringValue("DescribeDBInstances.Items["+ i +"].DBInstanceType");
 				dBInstance.LockReason = _ctx.StringValue("DescribeDBInstances.Items["+ i +"].LockReason");
@@ -91,6 +93,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstance.DeletionProtection = _ctx.BooleanValue("DescribeDBInstances.Items["+ i +"].DeletionProtection");
 				dBInstance.BurstingEnabled = _ctx.BooleanValue("DescribeDBInstances.Items["+ i +"].BurstingEnabled");
 				dBInstance.BpeEnabled = _ctx.StringValue("DescribeDBInstances.Items["+ i +"].BpeEnabled");
+				dBInstance.IoAccelerationEnabled = _ctx.StringValue("DescribeDBInstances.Items["+ i +"].IoAccelerationEnabled");
+				dBInstance.ColdDataEnabled = _ctx.BooleanValue("DescribeDBInstances.Items["+ i +"].ColdDataEnabled");
 
 				List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_ReadOnlyDBInstanceId> dBInstance_readOnlyDBInstanceIds = new List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_ReadOnlyDBInstanceId>();
 				for (int j = 0; j < _ctx.Length("DescribeDBInstances.Items["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {

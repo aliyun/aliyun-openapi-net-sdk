@@ -32,14 +32,17 @@ namespace Aliyun.Acs.Dds.Model.V20151201
         public TransformInstanceChargeTypeRequest()
             : base("Dds", "2015-12-01", "TransformInstanceChargeType", "dds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
 		private string couponNo;
-
-		private string securityToken;
 
 		private string businessInfo;
 
@@ -58,6 +61,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string autoRenew;
 
 		private string chargeType;
+
+		private string pricingCycle;
 
 		public long? ResourceOwnerId
 		{
@@ -82,19 +87,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				couponNo = value;
 				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -212,6 +204,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				chargeType = value;
 				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
+			}
+		}
+
+		public string PricingCycle
+		{
+			get
+			{
+				return pricingCycle;
+			}
+			set	
+			{
+				pricingCycle = value;
+				DictionaryUtil.Add(QueryParameters, "PricingCycle", value);
 			}
 		}
 

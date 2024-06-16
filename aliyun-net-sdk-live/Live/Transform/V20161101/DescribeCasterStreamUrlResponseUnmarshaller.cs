@@ -31,25 +31,25 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeCasterStreamUrlResponse describeCasterStreamUrlResponse = new DescribeCasterStreamUrlResponse();
 
 			describeCasterStreamUrlResponse.HttpResponse = _ctx.HttpResponse;
-			describeCasterStreamUrlResponse.RequestId = _ctx.StringValue("DescribeCasterStreamUrl.RequestId");
 			describeCasterStreamUrlResponse.CasterId = _ctx.StringValue("DescribeCasterStreamUrl.CasterId");
+			describeCasterStreamUrlResponse.RequestId = _ctx.StringValue("DescribeCasterStreamUrl.RequestId");
 			describeCasterStreamUrlResponse.Total = _ctx.IntegerValue("DescribeCasterStreamUrl.Total");
 
 			List<DescribeCasterStreamUrlResponse.DescribeCasterStreamUrl_CasterStream> describeCasterStreamUrlResponse_casterStreams = new List<DescribeCasterStreamUrlResponse.DescribeCasterStreamUrl_CasterStream>();
 			for (int i = 0; i < _ctx.Length("DescribeCasterStreamUrl.CasterStreams.Length"); i++) {
 				DescribeCasterStreamUrlResponse.DescribeCasterStreamUrl_CasterStream casterStream = new DescribeCasterStreamUrlResponse.DescribeCasterStreamUrl_CasterStream();
-				casterStream.RtsUrl = _ctx.StringValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].RtsUrl");
-				casterStream.RtmpUrl = _ctx.StringValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].RtmpUrl");
-				casterStream.SceneId = _ctx.StringValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].SceneId");
 				casterStream.OutputType = _ctx.IntegerValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].OutputType");
+				casterStream.RtmpUrl = _ctx.StringValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].RtmpUrl");
+				casterStream.RtsUrl = _ctx.StringValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].RtsUrl");
+				casterStream.SceneId = _ctx.StringValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].SceneId");
 				casterStream.StreamUrl = _ctx.StringValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].StreamUrl");
 
 				List<DescribeCasterStreamUrlResponse.DescribeCasterStreamUrl_CasterStream.DescribeCasterStreamUrl_StreamInfo> casterStream_streamInfos = new List<DescribeCasterStreamUrlResponse.DescribeCasterStreamUrl_CasterStream.DescribeCasterStreamUrl_StreamInfo>();
 				for (int j = 0; j < _ctx.Length("DescribeCasterStreamUrl.CasterStreams["+ i +"].StreamInfos.Length"); j++) {
 					DescribeCasterStreamUrlResponse.DescribeCasterStreamUrl_CasterStream.DescribeCasterStreamUrl_StreamInfo streamInfo = new DescribeCasterStreamUrlResponse.DescribeCasterStreamUrl_CasterStream.DescribeCasterStreamUrl_StreamInfo();
-					streamInfo.VideoFormat = _ctx.StringValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].StreamInfos["+ j +"].VideoFormat");
 					streamInfo.OutputStreamUrl = _ctx.StringValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].StreamInfos["+ j +"].OutputStreamUrl");
 					streamInfo.TranscodeConfig = _ctx.StringValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].StreamInfos["+ j +"].TranscodeConfig");
+					streamInfo.VideoFormat = _ctx.StringValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].StreamInfos["+ j +"].VideoFormat");
 
 					casterStream_streamInfos.Add(streamInfo);
 				}

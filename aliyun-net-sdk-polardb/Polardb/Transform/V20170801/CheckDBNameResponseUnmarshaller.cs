@@ -32,6 +32,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 
 			checkDBNameResponse.HttpResponse = _ctx.HttpResponse;
 			checkDBNameResponse.RequestId = _ctx.StringValue("CheckDBName.RequestId");
+			checkDBNameResponse.DBName = _ctx.StringValue("CheckDBName.DBName");
         
 			return checkDBNameResponse;
         }

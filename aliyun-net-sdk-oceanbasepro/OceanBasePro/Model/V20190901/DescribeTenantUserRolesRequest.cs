@@ -41,6 +41,22 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			Method = MethodType.POST;
         }
 
+		private string tenantId;
+
+		[JsonProperty(PropertyName = "TenantId")]
+		public string TenantId
+		{
+			get
+			{
+				return tenantId;
+			}
+			set	
+			{
+				tenantId = value;
+				DictionaryUtil.Add(BodyParameters, "TenantId", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;

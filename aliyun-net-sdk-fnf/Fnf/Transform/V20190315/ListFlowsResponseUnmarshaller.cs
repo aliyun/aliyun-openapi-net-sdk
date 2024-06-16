@@ -31,21 +31,22 @@ namespace Aliyun.Acs.fnf.Transform.V20190315
 			ListFlowsResponse listFlowsResponse = new ListFlowsResponse();
 
 			listFlowsResponse.HttpResponse = _ctx.HttpResponse;
-			listFlowsResponse.RequestId = _ctx.StringValue("ListFlows.RequestId");
 			listFlowsResponse.NextToken = _ctx.StringValue("ListFlows.NextToken");
+			listFlowsResponse.RequestId = _ctx.StringValue("ListFlows.RequestId");
 
 			List<ListFlowsResponse.ListFlows_FlowsItem> listFlowsResponse_flows = new List<ListFlowsResponse.ListFlows_FlowsItem>();
 			for (int i = 0; i < _ctx.Length("ListFlows.Flows.Length"); i++) {
 				ListFlowsResponse.ListFlows_FlowsItem flowsItem = new ListFlowsResponse.ListFlows_FlowsItem();
-				flowsItem.Name = _ctx.StringValue("ListFlows.Flows["+ i +"].Name");
-				flowsItem.Description = _ctx.StringValue("ListFlows.Flows["+ i +"].Description");
-				flowsItem.Definition = _ctx.StringValue("ListFlows.Flows["+ i +"].Definition");
-				flowsItem.Id = _ctx.StringValue("ListFlows.Flows["+ i +"].Id");
 				flowsItem.Type = _ctx.StringValue("ListFlows.Flows["+ i +"].Type");
+				flowsItem.Definition = _ctx.StringValue("ListFlows.Flows["+ i +"].Definition");
 				flowsItem.RoleArn = _ctx.StringValue("ListFlows.Flows["+ i +"].RoleArn");
+				flowsItem.Description = _ctx.StringValue("ListFlows.Flows["+ i +"].Description");
+				flowsItem.ExternalStorageLocation = _ctx.StringValue("ListFlows.Flows["+ i +"].ExternalStorageLocation");
+				flowsItem.Name = _ctx.StringValue("ListFlows.Flows["+ i +"].Name");
 				flowsItem.CreatedTime = _ctx.StringValue("ListFlows.Flows["+ i +"].CreatedTime");
 				flowsItem.LastModifiedTime = _ctx.StringValue("ListFlows.Flows["+ i +"].LastModifiedTime");
-				flowsItem.ExternalStorageLocation = _ctx.StringValue("ListFlows.Flows["+ i +"].ExternalStorageLocation");
+				flowsItem.Id = _ctx.StringValue("ListFlows.Flows["+ i +"].Id");
+				flowsItem.ExecutionMode = _ctx.StringValue("ListFlows.Flows["+ i +"].ExecutionMode");
 
 				listFlowsResponse_flows.Add(flowsItem);
 			}

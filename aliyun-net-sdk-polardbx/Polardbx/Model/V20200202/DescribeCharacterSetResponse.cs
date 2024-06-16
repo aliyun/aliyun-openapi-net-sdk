@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardbx.Model.V20200202
@@ -25,13 +25,25 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 	public class DescribeCharacterSetResponse : AcsResponse
 	{
 
+		private string message;
+
 		private string requestId;
 
 		private bool? success;
 
-		private string message;
-
 		private DescribeCharacterSet_Data data;
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -54,18 +66,6 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
 			}
 		}
 

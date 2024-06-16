@@ -41,19 +41,35 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			Method = MethodType.POST;
         }
 
+		private string tenantEndpointDirectId;
+
 		private string userVSwitchId;
 
 		private string masterIntranetAddressZone;
 
 		private string tenantId;
 
+		private string tenantEndpointId;
+
 		private string instanceId;
 
 		private string primaryZone;
 
-		private string modifyType;
+		private string userDirectVSwitchId;
 
-		private string primaryZoneDeployType;
+		[JsonProperty(PropertyName = "TenantEndpointDirectId")]
+		public string TenantEndpointDirectId
+		{
+			get
+			{
+				return tenantEndpointDirectId;
+			}
+			set	
+			{
+				tenantEndpointDirectId = value;
+				DictionaryUtil.Add(BodyParameters, "TenantEndpointDirectId", value);
+			}
+		}
 
 		[JsonProperty(PropertyName = "UserVSwitchId")]
 		public string UserVSwitchId
@@ -97,6 +113,20 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			}
 		}
 
+		[JsonProperty(PropertyName = "TenantEndpointId")]
+		public string TenantEndpointId
+		{
+			get
+			{
+				return tenantEndpointId;
+			}
+			set	
+			{
+				tenantEndpointId = value;
+				DictionaryUtil.Add(BodyParameters, "TenantEndpointId", value);
+			}
+		}
+
 		[JsonProperty(PropertyName = "InstanceId")]
 		public string InstanceId
 		{
@@ -125,31 +155,17 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			}
 		}
 
-		[JsonProperty(PropertyName = "ModifyType")]
-		public string ModifyType
+		[JsonProperty(PropertyName = "UserDirectVSwitchId")]
+		public string UserDirectVSwitchId
 		{
 			get
 			{
-				return modifyType;
+				return userDirectVSwitchId;
 			}
 			set	
 			{
-				modifyType = value;
-				DictionaryUtil.Add(BodyParameters, "ModifyType", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "PrimaryZoneDeployType")]
-		public string PrimaryZoneDeployType
-		{
-			get
-			{
-				return primaryZoneDeployType;
-			}
-			set	
-			{
-				primaryZoneDeployType = value;
-				DictionaryUtil.Add(BodyParameters, "PrimaryZoneDeployType", value);
+				userDirectVSwitchId = value;
+				DictionaryUtil.Add(BodyParameters, "UserDirectVSwitchId", value);
 			}
 		}
 

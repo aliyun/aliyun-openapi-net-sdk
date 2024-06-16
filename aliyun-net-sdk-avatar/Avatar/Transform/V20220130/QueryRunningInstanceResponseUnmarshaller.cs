@@ -40,6 +40,7 @@ namespace Aliyun.Acs.avatar.Transform.V20220130
 			for (int i = 0; i < _ctx.Length("QueryRunningInstance.Data.Length"); i++) {
 				QueryRunningInstanceResponse.QueryRunningInstance_DataItem dataItem = new QueryRunningInstanceResponse.QueryRunningInstance_DataItem();
 				dataItem.SessionId = _ctx.StringValue("QueryRunningInstance.Data["+ i +"].SessionId");
+				dataItem.Token = _ctx.StringValue("QueryRunningInstance.Data["+ i +"].Token");
 
 				QueryRunningInstanceResponse.QueryRunningInstance_DataItem.QueryRunningInstance_Channel channel = new QueryRunningInstanceResponse.QueryRunningInstance_DataItem.QueryRunningInstance_Channel();
 				channel.ChannelId = _ctx.StringValue("QueryRunningInstance.Data["+ i +"].Channel.ChannelId");

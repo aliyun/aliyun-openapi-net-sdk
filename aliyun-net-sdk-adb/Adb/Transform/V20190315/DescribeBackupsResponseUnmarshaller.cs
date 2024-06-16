@@ -42,7 +42,7 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 				backup.DBClusterId = _ctx.StringValue("DescribeBackups.Items["+ i +"].DBClusterId");
 				backup.BackupType = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupType");
 				backup.BackupStartTime = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupStartTime");
-				backup.BackupSize = _ctx.IntegerValue("DescribeBackups.Items["+ i +"].BackupSize");
+				backup.BackupSize = _ctx.LongValue("DescribeBackups.Items["+ i +"].BackupSize");
 				backup.BackupEndTime = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupEndTime");
 				backup.BackupId = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupId");
 				backup.BackupMethod = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupMethod");

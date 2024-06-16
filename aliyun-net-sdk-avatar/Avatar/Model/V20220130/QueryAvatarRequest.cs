@@ -34,6 +34,7 @@ namespace Aliyun.Acs.avatar.Model.V20220130
         public QueryAvatarRequest()
             : base("avatar", "2022-01-30", "QueryAvatar")
         {
+			Method = MethodType.POST;
         }
 
 		private string code;

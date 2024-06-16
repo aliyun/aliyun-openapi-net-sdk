@@ -25,24 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeCasterChannelsResponse : AcsResponse
 	{
 
-		private int? total;
-
 		private string requestId;
 
-		private List<DescribeCasterChannels_Channel> channels;
+		private int? total;
 
-		[JsonProperty(PropertyName = "Total")]
-		public int? Total
-		{
-			get
-			{
-				return total;
-			}
-			set	
-			{
-				total = value;
-			}
-		}
+		private List<DescribeCasterChannels_Channel> channels;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -54,6 +41,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Total")]
+		public int? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
 			}
 		}
 
@@ -73,45 +73,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeCasterChannels_Channel
 		{
 
-			private int? inputType;
-
-			private string rtmpUrl;
-
 			private string channelId;
-
-			private string rtsUrl;
 
 			private string faceBeauty;
 
+			private int? inputType;
+
 			private string resourceId;
 
+			private string rtmpUrl;
+
+			private string rtsUrl;
+
 			private string streamUrl;
-
-			[JsonProperty(PropertyName = "InputType")]
-			public int? InputType
-			{
-				get
-				{
-					return inputType;
-				}
-				set	
-				{
-					inputType = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "RtmpUrl")]
-			public string RtmpUrl
-			{
-				get
-				{
-					return rtmpUrl;
-				}
-				set	
-				{
-					rtmpUrl = value;
-				}
-			}
 
 			[JsonProperty(PropertyName = "ChannelId")]
 			public string ChannelId
@@ -123,19 +97,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					channelId = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "RtsUrl")]
-			public string RtsUrl
-			{
-				get
-				{
-					return rtsUrl;
-				}
-				set	
-				{
-					rtsUrl = value;
 				}
 			}
 
@@ -152,6 +113,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "InputType")]
+			public int? InputType
+			{
+				get
+				{
+					return inputType;
+				}
+				set	
+				{
+					inputType = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "ResourceId")]
 			public string ResourceId
 			{
@@ -162,6 +136,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					resourceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RtmpUrl")]
+			public string RtmpUrl
+			{
+				get
+				{
+					return rtmpUrl;
+				}
+				set	
+				{
+					rtmpUrl = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RtsUrl")]
+			public string RtsUrl
+			{
+				get
+				{
+					return rtsUrl;
+				}
+				set	
+				{
+					rtsUrl = value;
 				}
 			}
 

@@ -39,6 +39,7 @@ namespace Aliyun.Acs.imageseg.Transform.V20191230
 			for (int i = 0; i < _ctx.Length("SegmentCloth.Data.Elements.Length"); i++) {
 				SegmentClothResponse.SegmentCloth_Data.SegmentCloth_Element element = new SegmentClothResponse.SegmentCloth_Data.SegmentCloth_Element();
 				element.ImageURL = _ctx.StringValue("SegmentCloth.Data.Elements["+ i +"].ImageURL");
+				element.ClassUrl = _ctx.StringValue("SegmentCloth.Data.Elements["+ i +"].ClassUrl");
 
 				data_elements.Add(element);
 			}

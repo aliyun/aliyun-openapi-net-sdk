@@ -101,6 +101,14 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 			private string userName;
 
+			private bool? dynamicSql;
+
+			private double? avgDbTime;
+
+			private double? sumDbTime;
+
+			private List<DescribeOasAnomalySQLList_SqlListItem> sqlList;
+
 			private List<string> diagTypes;
 
 			[JsonProperty(PropertyName = "AvgCpuTime")]
@@ -285,6 +293,58 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				}
 			}
 
+			[JsonProperty(PropertyName = "DynamicSql")]
+			public bool? DynamicSql
+			{
+				get
+				{
+					return dynamicSql;
+				}
+				set	
+				{
+					dynamicSql = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AvgDbTime")]
+			public double? AvgDbTime
+			{
+				get
+				{
+					return avgDbTime;
+				}
+				set	
+				{
+					avgDbTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SumDbTime")]
+			public double? SumDbTime
+			{
+				get
+				{
+					return sumDbTime;
+				}
+				set	
+				{
+					sumDbTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SqlList")]
+			public List<DescribeOasAnomalySQLList_SqlListItem> SqlList
+			{
+				get
+				{
+					return sqlList;
+				}
+				set	
+				{
+					sqlList = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "DiagTypes")]
 			public List<string> DiagTypes
 			{
@@ -295,6 +355,265 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				set	
 				{
 					diagTypes = value;
+				}
+			}
+
+			public class DescribeOasAnomalySQLList_SqlListItem
+			{
+
+				private double? avgCpuTime;
+
+				private double? avgElapsedTime;
+
+				private double? avgGetPlanTime;
+
+				private double? cpuTime;
+
+				private string dbName;
+
+				private string diagnosis;
+
+				private double? executions;
+
+				private double? lastExecutedTime;
+
+				private string riskLevel;
+
+				private string sqlId;
+
+				private string sqlTextShort;
+
+				private string suggestion;
+
+				private string sumElapsedTime;
+
+				private string userName;
+
+				private double? avgDbTime;
+
+				private double? sumDbTime;
+
+				private List<string> diagTypes1;
+
+				[JsonProperty(PropertyName = "AvgCpuTime")]
+				public double? AvgCpuTime
+				{
+					get
+					{
+						return avgCpuTime;
+					}
+					set	
+					{
+						avgCpuTime = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "AvgElapsedTime")]
+				public double? AvgElapsedTime
+				{
+					get
+					{
+						return avgElapsedTime;
+					}
+					set	
+					{
+						avgElapsedTime = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "AvgGetPlanTime")]
+				public double? AvgGetPlanTime
+				{
+					get
+					{
+						return avgGetPlanTime;
+					}
+					set	
+					{
+						avgGetPlanTime = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "CpuTime")]
+				public double? CpuTime
+				{
+					get
+					{
+						return cpuTime;
+					}
+					set	
+					{
+						cpuTime = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "DbName")]
+				public string DbName
+				{
+					get
+					{
+						return dbName;
+					}
+					set	
+					{
+						dbName = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Diagnosis")]
+				public string Diagnosis
+				{
+					get
+					{
+						return diagnosis;
+					}
+					set	
+					{
+						diagnosis = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Executions")]
+				public double? Executions
+				{
+					get
+					{
+						return executions;
+					}
+					set	
+					{
+						executions = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "LastExecutedTime")]
+				public double? LastExecutedTime
+				{
+					get
+					{
+						return lastExecutedTime;
+					}
+					set	
+					{
+						lastExecutedTime = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "RiskLevel")]
+				public string RiskLevel
+				{
+					get
+					{
+						return riskLevel;
+					}
+					set	
+					{
+						riskLevel = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "SqlId")]
+				public string SqlId
+				{
+					get
+					{
+						return sqlId;
+					}
+					set	
+					{
+						sqlId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "SqlTextShort")]
+				public string SqlTextShort
+				{
+					get
+					{
+						return sqlTextShort;
+					}
+					set	
+					{
+						sqlTextShort = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Suggestion")]
+				public string Suggestion
+				{
+					get
+					{
+						return suggestion;
+					}
+					set	
+					{
+						suggestion = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "SumElapsedTime")]
+				public string SumElapsedTime
+				{
+					get
+					{
+						return sumElapsedTime;
+					}
+					set	
+					{
+						sumElapsedTime = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "UserName")]
+				public string UserName
+				{
+					get
+					{
+						return userName;
+					}
+					set	
+					{
+						userName = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "AvgDbTime")]
+				public double? AvgDbTime
+				{
+					get
+					{
+						return avgDbTime;
+					}
+					set	
+					{
+						avgDbTime = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "SumDbTime")]
+				public double? SumDbTime
+				{
+					get
+					{
+						return sumDbTime;
+					}
+					set	
+					{
+						sumDbTime = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "DiagTypes1")]
+				public List<string> DiagTypes1
+				{
+					get
+					{
+						return diagTypes1;
+					}
+					set	
+					{
+						diagTypes1 = value;
+					}
 				}
 			}
 		}

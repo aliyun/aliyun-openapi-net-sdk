@@ -31,7 +31,7 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 
 		private long? totalCount;
 
-		private string maxResults;
+		private int? maxResults;
 
 		private List<ListServiceInstances_ServiceInstance> serviceInstances;
 
@@ -71,7 +71,7 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 			}
 		}
 
-		public string MaxResults
+		public int? MaxResults
 		{
 			get
 			{
@@ -139,6 +139,8 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 			private string marketInstanceId;
 
 			private string resourceGroupId;
+
+			private string bizStatus;
 
 			private List<ListServiceInstances_Tag> tags;
 
@@ -393,6 +395,18 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 				set	
 				{
 					resourceGroupId = value;
+				}
+			}
+
+			public string BizStatus
+			{
+				get
+				{
+					return bizStatus;
+				}
+				set	
+				{
+					bizStatus = value;
 				}
 			}
 

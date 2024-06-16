@@ -56,6 +56,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private int? currentPage;
 
+		private long? templateId;
+
 		private long? instanceId;
 
 		private string name;
@@ -163,6 +165,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				currentPage = value;
 				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public long? TemplateId
+		{
+			get
+			{
+				return templateId;
+			}
+			set	
+			{
+				templateId = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateId", value.ToString());
 			}
 		}
 

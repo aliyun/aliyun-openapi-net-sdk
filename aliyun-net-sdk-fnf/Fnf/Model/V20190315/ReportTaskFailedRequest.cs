@@ -44,8 +44,6 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 
 		private string error;
 
-		private string requestId;
-
 		private string taskToken;
 
 		public string Cause
@@ -71,19 +69,6 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			{
 				error = value;
 				DictionaryUtil.Add(BodyParameters, "Error", value);
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-				DictionaryUtil.Add(QueryParameters, "RequestId", value);
 			}
 		}
 

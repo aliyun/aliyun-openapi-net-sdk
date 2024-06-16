@@ -98,9 +98,9 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 			private bool? inner;
 
-			private double? executorRpc;
+			private bool? executorRpc;
 
-			private double? hitPlan;
+			private bool? hitPlan;
 
 			private double? elapsedTime;
 
@@ -138,7 +138,7 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 			private double? retryCount;
 
-			private double? tableScan;
+			private bool? tableScan;
 
 			private string consistencyLevel;
 
@@ -159,6 +159,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			private string statement;
 
 			private string transHash;
+
+			private string fullSqlText;
 
 			[JsonProperty(PropertyName = "RequestId")]
 			public string RequestId
@@ -421,7 +423,7 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			}
 
 			[JsonProperty(PropertyName = "ExecutorRpc")]
-			public double? ExecutorRpc
+			public bool? ExecutorRpc
 			{
 				get
 				{
@@ -434,7 +436,7 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			}
 
 			[JsonProperty(PropertyName = "HitPlan")]
-			public double? HitPlan
+			public bool? HitPlan
 			{
 				get
 				{
@@ -681,7 +683,7 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			}
 
 			[JsonProperty(PropertyName = "TableScan")]
-			public double? TableScan
+			public bool? TableScan
 			{
 				get
 				{
@@ -820,6 +822,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				set	
 				{
 					transHash = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "FullSqlText")]
+			public string FullSqlText
+			{
+				get
+				{
+					return fullSqlText;
+				}
+				set	
+				{
+					fullSqlText = value;
 				}
 			}
 		}

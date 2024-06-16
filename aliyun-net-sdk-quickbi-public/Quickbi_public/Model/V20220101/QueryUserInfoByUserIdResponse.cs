@@ -88,6 +88,8 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 			private string accountName;
 
+			private List<string> roleIdList;
+
 			public int? UserType
 			{
 				get
@@ -193,6 +195,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					accountName = value;
+				}
+			}
+
+			public List<string> RoleIdList
+			{
+				get
+				{
+					return roleIdList;
+				}
+				set	
+				{
+					roleIdList = value;
 				}
 			}
 		}

@@ -41,6 +41,8 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 		private string userId;
 
+		private string roleIds;
+
 		private string nickName;
 
 		private bool? authAdminUser;
@@ -81,6 +83,19 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				userId = value;
 				DictionaryUtil.Add(QueryParameters, "UserId", value);
+			}
+		}
+
+		public string RoleIds
+		{
+			get
+			{
+				return roleIds;
+			}
+			set	
+			{
+				roleIds = value;
+				DictionaryUtil.Add(QueryParameters, "RoleIds", value);
 			}
 		}
 

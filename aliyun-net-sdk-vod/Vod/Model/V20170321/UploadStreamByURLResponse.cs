@@ -33,6 +33,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string sourceURL;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -45,6 +46,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "StreamJobId")]
 		public string StreamJobId
 		{
 			get
@@ -57,6 +59,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "FileURL")]
 		public string FileURL
 		{
 			get
@@ -69,6 +72,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "SourceURL")]
 		public string SourceURL
 		{
 			get

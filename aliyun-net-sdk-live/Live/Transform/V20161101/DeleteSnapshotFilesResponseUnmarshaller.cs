@@ -38,8 +38,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DeleteSnapshotFilesResponse.DeleteSnapshotFiles_SnapshotDeleteInfo> deleteSnapshotFilesResponse_snapshotDeleteInfoList = new List<DeleteSnapshotFilesResponse.DeleteSnapshotFiles_SnapshotDeleteInfo>();
 			for (int i = 0; i < _ctx.Length("DeleteSnapshotFiles.SnapshotDeleteInfoList.Length"); i++) {
 				DeleteSnapshotFilesResponse.DeleteSnapshotFiles_SnapshotDeleteInfo snapshotDeleteInfo = new DeleteSnapshotFilesResponse.DeleteSnapshotFiles_SnapshotDeleteInfo();
-				snapshotDeleteInfo.Message = _ctx.StringValue("DeleteSnapshotFiles.SnapshotDeleteInfoList["+ i +"].Message");
 				snapshotDeleteInfo.CreateTimestamp = _ctx.LongValue("DeleteSnapshotFiles.SnapshotDeleteInfoList["+ i +"].CreateTimestamp");
+				snapshotDeleteInfo.Message = _ctx.StringValue("DeleteSnapshotFiles.SnapshotDeleteInfoList["+ i +"].Message");
 
 				deleteSnapshotFilesResponse_snapshotDeleteInfoList.Add(snapshotDeleteInfo);
 			}

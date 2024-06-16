@@ -29,6 +29,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private CreatePatchBaseline_PatchBaseline patchBaseline;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "PatchBaseline")]
 		public CreatePatchBaseline_PatchBaseline PatchBaseline
 		{
 			get
@@ -76,6 +78,11 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 			private string shareType;
 
+			private string rejectedPatchesAction;
+
+			private List<string> rejectedPatches;
+
+			[JsonProperty(PropertyName = "OperationSystem")]
 			public string OperationSystem
 			{
 				get
@@ -88,6 +95,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "Description")]
 			public string Description
 			{
 				get
@@ -100,6 +108,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "UpdatedDate")]
 			public string UpdatedDate
 			{
 				get
@@ -112,6 +121,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "UpdatedBy")]
 			public string UpdatedBy
 			{
 				get
@@ -124,6 +134,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "CreatedBy")]
 			public string CreatedBy
 			{
 				get
@@ -136,6 +147,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "CreatedDate")]
 			public string CreatedDate
 			{
 				get
@@ -148,6 +160,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "Name")]
 			public string Name
 			{
 				get
@@ -160,6 +173,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "ApprovalRules")]
 			public string ApprovalRules
 			{
 				get
@@ -172,6 +186,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "Id")]
 			public string Id
 			{
 				get
@@ -184,6 +199,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "ShareType")]
 			public string ShareType
 			{
 				get
@@ -193,6 +209,32 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				set	
 				{
 					shareType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RejectedPatchesAction")]
+			public string RejectedPatchesAction
+			{
+				get
+				{
+					return rejectedPatchesAction;
+				}
+				set	
+				{
+					rejectedPatchesAction = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RejectedPatches")]
+			public List<string> RejectedPatches
+			{
+				get
+				{
+					return rejectedPatches;
+				}
+				set	
+				{
+					rejectedPatches = value;
 				}
 			}
 		}

@@ -40,6 +40,7 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 				certificate.CertificateName = _ctx.StringValue("DescribeCertificates.Certificates["+ i +"].CertificateName");
 				certificate.CertificateId = _ctx.LongValue("DescribeCertificates.Certificates["+ i +"].CertificateId");
 				certificate.CommonName = _ctx.StringValue("DescribeCertificates.Certificates["+ i +"].CommonName");
+				certificate.EndTime = _ctx.LongValue("DescribeCertificates.Certificates["+ i +"].EndTime");
 
 				List<string> certificate_sans = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeCertificates.Certificates["+ i +"].Sans.Length"); j++) {

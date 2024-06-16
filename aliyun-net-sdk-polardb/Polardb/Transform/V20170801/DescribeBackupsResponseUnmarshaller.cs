@@ -45,6 +45,8 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				backup.BackupStatus = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupStatus");
 				backup.BackupType = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupType");
 				backup.BackupStartTime = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupStartTime");
+				backup.ExpectExpireTime = _ctx.StringValue("DescribeBackups.Items["+ i +"].ExpectExpireTime");
+				backup.ExpectExpireType = _ctx.StringValue("DescribeBackups.Items["+ i +"].ExpectExpireType");
 				backup.IsAvail = _ctx.StringValue("DescribeBackups.Items["+ i +"].IsAvail");
 				backup.BackupEndTime = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupEndTime");
 				backup.BackupId = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupId");

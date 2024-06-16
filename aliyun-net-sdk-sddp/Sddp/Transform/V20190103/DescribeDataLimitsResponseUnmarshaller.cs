@@ -79,6 +79,19 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 				dataLimit.ProcessStatus = _ctx.IntegerValue("DescribeDataLimits.Items["+ i +"].ProcessStatus");
 				dataLimit.Id = _ctx.LongValue("DescribeDataLimits.Items["+ i +"].Id");
 				dataLimit.Enable = _ctx.IntegerValue("DescribeDataLimits.Items["+ i +"].Enable");
+				dataLimit.VpcId = _ctx.StringValue("DescribeDataLimits.Items["+ i +"].VpcId");
+
+				List<string> dataLimit_securityGroupIdList = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeDataLimits.Items["+ i +"].SecurityGroupIdList.Length"); j++) {
+					dataLimit_securityGroupIdList.Add(_ctx.StringValue("DescribeDataLimits.Items["+ i +"].SecurityGroupIdList["+ j +"]"));
+				}
+				dataLimit.SecurityGroupIdList = dataLimit_securityGroupIdList;
+
+				List<string> dataLimit_vSwitchIdList = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeDataLimits.Items["+ i +"].VSwitchIdList.Length"); j++) {
+					dataLimit_vSwitchIdList.Add(_ctx.StringValue("DescribeDataLimits.Items["+ i +"].VSwitchIdList["+ j +"]"));
+				}
+				dataLimit.VSwitchIdList = dataLimit_vSwitchIdList;
 
 				describeDataLimitsResponse_items.Add(dataLimit);
 			}

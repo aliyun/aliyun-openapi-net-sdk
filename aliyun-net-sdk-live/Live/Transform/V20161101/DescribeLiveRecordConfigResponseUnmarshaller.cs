@@ -45,6 +45,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				liveAppRecord.StartTime = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].StartTime");
 				liveAppRecord.AppName = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].AppName");
 				liveAppRecord.StreamName = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].StreamName");
+				liveAppRecord.DelayTime = _ctx.IntegerValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].DelayTime");
 				liveAppRecord.CreateTime = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].CreateTime");
 				liveAppRecord.OnDemond = _ctx.IntegerValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].OnDemond");
 				liveAppRecord.OssBucket = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].OssBucket");

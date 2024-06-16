@@ -40,26 +40,13 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			Method = MethodType.POST;
         }
 
-		private string defenseType;
-
 		private string resourceGroupId;
+
+		private string defenseType;
 
 		private string instanceId;
 
 		private string domain;
-
-		public string DefenseType
-		{
-			get
-			{
-				return defenseType;
-			}
-			set	
-			{
-				defenseType = value;
-				DictionaryUtil.Add(QueryParameters, "DefenseType", value);
-			}
-		}
 
 		public string ResourceGroupId
 		{
@@ -71,6 +58,19 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			{
 				resourceGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public string DefenseType
+		{
+			get
+			{
+				return defenseType;
+			}
+			set	
+			{
+				defenseType = value;
+				DictionaryUtil.Add(QueryParameters, "DefenseType", value);
 			}
 		}
 

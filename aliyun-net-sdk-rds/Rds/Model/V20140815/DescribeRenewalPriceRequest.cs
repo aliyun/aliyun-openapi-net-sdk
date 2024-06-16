@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string clientToken;
 
+		private string resourceGroupId;
+
 		private string dBInstanceId;
 
 		private string businessInfo;
@@ -92,6 +94,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ResourceGroupId")]
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

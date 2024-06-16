@@ -52,7 +52,6 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 			item.ContStorageSize = _ctx.LongValue("DescribeBackupPlanBilling.Item.ContStorageSize");
 			item.BuyChargeType = _ctx.StringValue("DescribeBackupPlanBilling.Item.BuyChargeType");
 			item.UsedIncrementBytes = _ctx.LongValue("DescribeBackupPlanBilling.Item.UsedIncrementBytes");
-			item.ResourceGroupId = _ctx.StringValue("DescribeBackupPlanBilling.Item.ResourceGroupId");
 			describeBackupPlanBillingResponse.Item = item;
         
 			return describeBackupPlanBillingResponse;

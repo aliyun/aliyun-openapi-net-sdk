@@ -25,24 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class GetEditingJobInfoResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string casterId;
 
 		private string editingTasksInfo;
 
-		[JsonProperty(PropertyName = "RequestId")]
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		[JsonProperty(PropertyName = "CasterId")]
 		public string CasterId
@@ -67,6 +54,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				editingTasksInfo = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

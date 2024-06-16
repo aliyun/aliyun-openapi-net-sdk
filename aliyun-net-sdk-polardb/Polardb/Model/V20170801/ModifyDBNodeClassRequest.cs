@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.polardb;
 using Aliyun.Acs.polardb.Transform;
 using Aliyun.Acs.polardb.Transform.V20170801;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
     public class ModifyDBNodeClassRequest : RpcAcsRequest<ModifyDBNodeClassResponse>
     {
         public ModifyDBNodeClassRequest()
-            : base("polardb", "2017-08-01", "ModifyDBNodeClass")
+            : base("polardb", "2017-08-01", "ModifyDBNodeClass", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -46,6 +45,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private string clientToken;
 
 		private string plannedEndTime;
+
+		private string dBNodeType;
 
 		private string dBNodeTargetClass;
 
@@ -99,6 +100,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				plannedEndTime = value;
 				DictionaryUtil.Add(QueryParameters, "PlannedEndTime", value);
+			}
+		}
+
+		public string DBNodeType
+		{
+			get
+			{
+				return dBNodeType;
+			}
+			set	
+			{
+				dBNodeType = value;
+				DictionaryUtil.Add(QueryParameters, "DBNodeType", value);
 			}
 		}
 

@@ -68,6 +68,9 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 					task.Message = _ctx.StringValue("DescribePipeline.Data.StageList["+ i +"].TaskList["+ j +"].Message");
 					task.ShowManualIgnore = _ctx.BooleanValue("DescribePipeline.Data.StageList["+ i +"].TaskList["+ j +"].ShowManualIgnore");
 					task.TaskId = _ctx.StringValue("DescribePipeline.Data.StageList["+ i +"].TaskList["+ j +"].TaskId");
+					task.CreateTime = _ctx.LongValue("DescribePipeline.Data.StageList["+ i +"].TaskList["+ j +"].CreateTime");
+					task.StartTime = _ctx.LongValue("DescribePipeline.Data.StageList["+ i +"].TaskList["+ j +"].StartTime");
+					task.UpdateTime = _ctx.LongValue("DescribePipeline.Data.StageList["+ i +"].TaskList["+ j +"].UpdateTime");
 
 					stage_taskList.Add(task);
 				}

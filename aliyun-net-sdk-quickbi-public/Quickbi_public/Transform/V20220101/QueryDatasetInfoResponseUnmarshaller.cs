@@ -48,6 +48,7 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			result.GmtCreate = _ctx.StringValue("QueryDatasetInfo.Result.GmtCreate");
 			result.DsType = _ctx.StringValue("QueryDatasetInfo.Result.DsType");
 			result.DatasetId = _ctx.StringValue("QueryDatasetInfo.Result.DatasetId");
+			result.OpenOfflineAcceleration = _ctx.BooleanValue("QueryDatasetInfo.Result.OpenOfflineAcceleration");
 
 			QueryDatasetInfoResponse.QueryDatasetInfo_Result.QueryDatasetInfo_Directory directory = new QueryDatasetInfoResponse.QueryDatasetInfo_Result.QueryDatasetInfo_Directory();
 			directory.PathId = _ctx.StringValue("QueryDatasetInfo.Result.Directory.PathId");

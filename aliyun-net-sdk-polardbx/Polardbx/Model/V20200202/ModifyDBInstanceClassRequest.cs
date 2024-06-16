@@ -40,11 +40,75 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			Method = MethodType.POST;
         }
 
+		private string specifiedDNSpecMapJson;
+
+		private string cnClass;
+
+		private string targetDBInstanceClass;
+
+		private bool? specifiedDNScale;
+
 		private string dBInstanceName;
 
 		private string clientToken;
 
-		private string targetDBInstanceClass;
+		private string switchTimeMode;
+
+		private string switchTime;
+
+		private string dnClass;
+
+		public string SpecifiedDNSpecMapJson
+		{
+			get
+			{
+				return specifiedDNSpecMapJson;
+			}
+			set	
+			{
+				specifiedDNSpecMapJson = value;
+				DictionaryUtil.Add(QueryParameters, "SpecifiedDNSpecMapJson", value);
+			}
+		}
+
+		public string CnClass
+		{
+			get
+			{
+				return cnClass;
+			}
+			set	
+			{
+				cnClass = value;
+				DictionaryUtil.Add(QueryParameters, "CnClass", value);
+			}
+		}
+
+		public string TargetDBInstanceClass
+		{
+			get
+			{
+				return targetDBInstanceClass;
+			}
+			set	
+			{
+				targetDBInstanceClass = value;
+				DictionaryUtil.Add(QueryParameters, "TargetDBInstanceClass", value);
+			}
+		}
+
+		public bool? SpecifiedDNScale
+		{
+			get
+			{
+				return specifiedDNScale;
+			}
+			set	
+			{
+				specifiedDNScale = value;
+				DictionaryUtil.Add(QueryParameters, "SpecifiedDNScale", value.ToString());
+			}
+		}
 
 		public string DBInstanceName
 		{
@@ -72,16 +136,42 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			}
 		}
 
-		public string TargetDBInstanceClass
+		public string SwitchTimeMode
 		{
 			get
 			{
-				return targetDBInstanceClass;
+				return switchTimeMode;
 			}
 			set	
 			{
-				targetDBInstanceClass = value;
-				DictionaryUtil.Add(QueryParameters, "TargetDBInstanceClass", value);
+				switchTimeMode = value;
+				DictionaryUtil.Add(QueryParameters, "SwitchTimeMode", value);
+			}
+		}
+
+		public string SwitchTime
+		{
+			get
+			{
+				return switchTime;
+			}
+			set	
+			{
+				switchTime = value;
+				DictionaryUtil.Add(QueryParameters, "SwitchTime", value);
+			}
+		}
+
+		public string DnClass
+		{
+			get
+			{
+				return dnClass;
+			}
+			set	
+			{
+				dnClass = value;
+				DictionaryUtil.Add(QueryParameters, "DnClass", value);
 			}
 		}
 

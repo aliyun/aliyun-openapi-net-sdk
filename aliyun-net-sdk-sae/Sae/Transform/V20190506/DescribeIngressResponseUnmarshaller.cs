@@ -45,11 +45,11 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			data.ListenerPort = _ctx.IntegerValue("DescribeIngress.Data.ListenerPort");
 			data.SlbType = _ctx.StringValue("DescribeIngress.Data.SlbType");
 			data.CertId = _ctx.StringValue("DescribeIngress.Data.CertId");
-			data.CertIds = _ctx.StringValue("DescribeIngress.Data.CertIds");
 			data.Name = _ctx.StringValue("DescribeIngress.Data.Name");
 			data.Id = _ctx.LongValue("DescribeIngress.Data.Id");
 			data.LoadBalanceType = _ctx.StringValue("DescribeIngress.Data.LoadBalanceType");
 			data.ListenerProtocol = _ctx.StringValue("DescribeIngress.Data.ListenerProtocol");
+			data.CertIds = _ctx.StringValue("DescribeIngress.Data.CertIds");
 
 			DescribeIngressResponse.DescribeIngress_Data.DescribeIngress_DefaultRule defaultRule = new DescribeIngressResponse.DescribeIngress_Data.DescribeIngress_DefaultRule();
 			defaultRule.ContainerPort = _ctx.IntegerValue("DescribeIngress.Data.DefaultRule.ContainerPort");
@@ -67,10 +67,24 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 				rule.AppId = _ctx.StringValue("DescribeIngress.Data.Rules["+ i +"].AppId");
 				rule.Path = _ctx.StringValue("DescribeIngress.Data.Rules["+ i +"].Path");
 				rule.BackendProtocol = _ctx.StringValue("DescribeIngress.Data.Rules["+ i +"].BackendProtocol");
+				rule.RewritePath = _ctx.StringValue("DescribeIngress.Data.Rules["+ i +"].RewritePath");
 
 				data_rules.Add(rule);
 			}
 			data.Rules = data_rules;
+
+			List<DescribeIngressResponse.DescribeIngress_Data.DescribeIngress_Svc> data_svcs = new List<DescribeIngressResponse.DescribeIngress_Data.DescribeIngress_Svc>();
+			for (int i = 0; i < _ctx.Length("DescribeIngress.Data.Svcs.Length"); i++) {
+				DescribeIngressResponse.DescribeIngress_Data.DescribeIngress_Svc svc = new DescribeIngressResponse.DescribeIngress_Data.DescribeIngress_Svc();
+				svc.Id = _ctx.LongValue("DescribeIngress.Data.Svcs["+ i +"].id");
+				svc.AppId = _ctx.StringValue("DescribeIngress.Data.Svcs["+ i +"].appId");
+				svc.BackendProtocol = _ctx.StringValue("DescribeIngress.Data.Svcs["+ i +"].backendProtocol");
+				svc.BackendPort = _ctx.IntegerValue("DescribeIngress.Data.Svcs["+ i +"].backendPort");
+				svc.Name = _ctx.StringValue("DescribeIngress.Data.Svcs["+ i +"].name");
+
+				data_svcs.Add(svc);
+			}
+			data.Svcs = data_svcs;
 			describeIngressResponse.Data = data;
         
 			return describeIngressResponse;

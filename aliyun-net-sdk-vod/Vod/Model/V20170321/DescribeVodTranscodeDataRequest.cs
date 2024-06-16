@@ -50,6 +50,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private long? ownerId;
 
+		private string appId;
+
 		private string interval;
 
 		private string region;
@@ -116,6 +118,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AppId
+		{
+			get
+			{
+				return appId;
+			}
+			set	
+			{
+				appId = value;
+				DictionaryUtil.Add(QueryParameters, "AppId", value);
 			}
 		}
 

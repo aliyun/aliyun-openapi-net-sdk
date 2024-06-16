@@ -79,6 +79,16 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 				}
 				table.RuleList = table_ruleList;
 
+				List<DescribeTablesResponse.DescribeTables_Table.DescribeTables_ModelTagsItem> table_modelTags = new List<DescribeTablesResponse.DescribeTables_Table.DescribeTables_ModelTagsItem>();
+				for (int j = 0; j < _ctx.Length("DescribeTables.Items["+ i +"].ModelTags.Length"); j++) {
+					DescribeTablesResponse.DescribeTables_Table.DescribeTables_ModelTagsItem modelTagsItem = new DescribeTablesResponse.DescribeTables_Table.DescribeTables_ModelTagsItem();
+					modelTagsItem.Id = _ctx.LongValue("DescribeTables.Items["+ i +"].ModelTags["+ j +"].Id");
+					modelTagsItem.Name = _ctx.StringValue("DescribeTables.Items["+ i +"].ModelTags["+ j +"].Name");
+
+					table_modelTags.Add(modelTagsItem);
+				}
+				table.ModelTags = table_modelTags;
+
 				describeTablesResponse_items.Add(table);
 			}
 			describeTablesResponse.Items = describeTablesResponse_items;

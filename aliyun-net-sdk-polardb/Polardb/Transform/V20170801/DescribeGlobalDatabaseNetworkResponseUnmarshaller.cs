@@ -38,6 +38,8 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeGlobalDatabaseNetworkResponse.CreateTime = _ctx.StringValue("DescribeGlobalDatabaseNetwork.CreateTime");
 			describeGlobalDatabaseNetworkResponse.DBType = _ctx.StringValue("DescribeGlobalDatabaseNetwork.DBType");
 			describeGlobalDatabaseNetworkResponse.GDNDescription = _ctx.StringValue("DescribeGlobalDatabaseNetwork.GDNDescription");
+			describeGlobalDatabaseNetworkResponse.DBClusterId = _ctx.StringValue("DescribeGlobalDatabaseNetwork.DBClusterId");
+			describeGlobalDatabaseNetworkResponse.ResourceGroupId = _ctx.StringValue("DescribeGlobalDatabaseNetwork.ResourceGroupId");
 
 			List<DescribeGlobalDatabaseNetworkResponse.DescribeGlobalDatabaseNetwork_Connection> describeGlobalDatabaseNetworkResponse_connections = new List<DescribeGlobalDatabaseNetworkResponse.DescribeGlobalDatabaseNetwork_Connection>();
 			for (int i = 0; i < _ctx.Length("DescribeGlobalDatabaseNetwork.Connections.Length"); i++) {
@@ -66,6 +68,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				dBCluster.StorageUsed = _ctx.StringValue("DescribeGlobalDatabaseNetwork.DBClusters["+ i +"].StorageUsed");
 				dBCluster.DBClusterDescription = _ctx.StringValue("DescribeGlobalDatabaseNetwork.DBClusters["+ i +"].DBClusterDescription");
 				dBCluster.Role = _ctx.StringValue("DescribeGlobalDatabaseNetwork.DBClusters["+ i +"].Role");
+				dBCluster.ServerlessType = _ctx.StringValue("DescribeGlobalDatabaseNetwork.DBClusters["+ i +"].ServerlessType");
 
 				List<DescribeGlobalDatabaseNetworkResponse.DescribeGlobalDatabaseNetwork_DBCluster.DescribeGlobalDatabaseNetwork_DBNode> dBCluster_dBNodes = new List<DescribeGlobalDatabaseNetworkResponse.DescribeGlobalDatabaseNetwork_DBCluster.DescribeGlobalDatabaseNetwork_DBNode>();
 				for (int j = 0; j < _ctx.Length("DescribeGlobalDatabaseNetwork.DBClusters["+ i +"].DBNodes.Length"); j++) {

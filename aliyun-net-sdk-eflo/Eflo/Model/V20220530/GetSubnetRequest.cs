@@ -37,6 +37,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private string subnetId;
 
+		private string vpdId;
+
 		public string SubnetId
 		{
 			get
@@ -47,6 +49,19 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				subnetId = value;
 				DictionaryUtil.Add(BodyParameters, "SubnetId", value);
+			}
+		}
+
+		public string VpdId
+		{
+			get
+			{
+				return vpdId;
+			}
+			set	
+			{
+				vpdId = value;
+				DictionaryUtil.Add(BodyParameters, "VpdId", value);
 			}
 		}
 

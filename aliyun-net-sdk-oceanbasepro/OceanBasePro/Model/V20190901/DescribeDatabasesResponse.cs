@@ -95,6 +95,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 			private string instanceId;
 
+			private string tenantName;
+
 			private List<DescribeDatabases_UsersItem> users;
 
 			private List<DescribeDatabases_TablesItem> tables;
@@ -242,6 +244,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				}
 			}
 
+			[JsonProperty(PropertyName = "TenantName")]
+			public string TenantName
+			{
+				get
+				{
+					return tenantName;
+				}
+				set	
+				{
+					tenantName = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "Users")]
 			public List<DescribeDatabases_UsersItem> Users
 			{
@@ -276,6 +291,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				private string role;
 
 				private string userName;
+
+				private string privileges;
 
 				[JsonProperty(PropertyName = "UserType")]
 				public string UserType
@@ -313,6 +330,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 					set	
 					{
 						userName = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Privileges")]
+				public string Privileges
+				{
+					get
+					{
+						return privileges;
+					}
+					set	
+					{
+						privileges = value;
 					}
 				}
 			}

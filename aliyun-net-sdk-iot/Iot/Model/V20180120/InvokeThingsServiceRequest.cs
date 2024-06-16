@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Iot;
 using Aliyun.Acs.Iot.Transform;
 using Aliyun.Acs.Iot.Transform.V20180120;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class InvokeThingsServiceRequest : RpcAcsRequest<InvokeThingsServiceResponse>
     {
         public InvokeThingsServiceRequest()
-            : base("Iot", "2018-01-20", "InvokeThingsService")
+            : base("Iot", "2018-01-20", "InvokeThingsService", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,6 +39,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
 			Method = MethodType.POST;
         }
+
+		private int? qos;
 
 		private string iotInstanceId;
 
@@ -50,6 +51,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private string args;
 
 		private List<string> deviceNames = new List<string>(){ };
+
+		public int? Qos
+		{
+			get
+			{
+				return qos;
+			}
+			set	
+			{
+				qos = value;
+				DictionaryUtil.Add(QueryParameters, "Qos", value.ToString());
+			}
+		}
 
 		public string IotInstanceId
 		{

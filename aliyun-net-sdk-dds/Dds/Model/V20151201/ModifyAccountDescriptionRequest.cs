@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
         public ModifyAccountDescriptionRequest()
             : base("Dds", "2015-12-01", "ModifyAccountDescription", "dds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
@@ -40,8 +45,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string accountDescription;
 
 		private string accountName;
-
-		private string securityToken;
 
 		private string dBInstanceId;
 
@@ -87,19 +90,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				accountName = value;
 				DictionaryUtil.Add(QueryParameters, "AccountName", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

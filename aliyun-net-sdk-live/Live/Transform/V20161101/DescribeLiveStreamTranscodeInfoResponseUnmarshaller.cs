@@ -42,20 +42,24 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				domainTranscodeInfo.TranscodeName = _ctx.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].TranscodeName");
 
 				DescribeLiveStreamTranscodeInfoResponse.DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo.DescribeLiveStreamTranscodeInfo_CustomTranscodeParameters customTranscodeParameters = new DescribeLiveStreamTranscodeInfoResponse.DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo.DescribeLiveStreamTranscodeInfo_CustomTranscodeParameters();
+				customTranscodeParameters.BitrateWithSource = _ctx.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.BitrateWithSource");
 				customTranscodeParameters.VideoProfile = _ctx.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.VideoProfile");
 				customTranscodeParameters.AudioBitrate = _ctx.IntegerValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.AudioBitrate");
-				customTranscodeParameters.RtsFlag = _ctx.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.RtsFlag");
 				customTranscodeParameters.Height = _ctx.IntegerValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.Height");
+				customTranscodeParameters.RtsFlag = _ctx.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.RtsFlag");
 				customTranscodeParameters.TemplateType = _ctx.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.TemplateType");
 				customTranscodeParameters.Bframes = _ctx.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.Bframes");
+				customTranscodeParameters.ExtWithSource = _ctx.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.ExtWithSource");
 				customTranscodeParameters.AudioRate = _ctx.IntegerValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.AudioRate");
-				customTranscodeParameters.FPS = _ctx.IntegerValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.FPS");
+				customTranscodeParameters.FpsWithSource = _ctx.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.FpsWithSource");
 				customTranscodeParameters.AudioCodec = _ctx.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.AudioCodec");
+				customTranscodeParameters.FPS = _ctx.IntegerValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.FPS");
 				customTranscodeParameters.Gop = _ctx.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.Gop");
-				customTranscodeParameters.VideoBitrate = _ctx.IntegerValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.VideoBitrate");
 				customTranscodeParameters.Width = _ctx.IntegerValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.Width");
+				customTranscodeParameters.VideoBitrate = _ctx.IntegerValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.VideoBitrate");
 				customTranscodeParameters.AudioChannelNum = _ctx.IntegerValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.AudioChannelNum");
 				customTranscodeParameters.AudioProfile = _ctx.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.AudioProfile");
+				customTranscodeParameters.ResWithSource = _ctx.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.ResWithSource");
 				domainTranscodeInfo.CustomTranscodeParameters = customTranscodeParameters;
 
 				DescribeLiveStreamTranscodeInfoResponse.DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo.DescribeLiveStreamTranscodeInfo_EncryptParameters encryptParameters = new DescribeLiveStreamTranscodeInfoResponse.DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo.DescribeLiveStreamTranscodeInfo_EncryptParameters();

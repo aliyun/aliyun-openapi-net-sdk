@@ -132,6 +132,8 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 
 			private string quotaCategory;
 
+			private string applyReasonTips;
+
 			private List<ListProductQuotas_QuotaItemsItem> quotaItems;
 
 			private List<string> applicableRange;
@@ -341,6 +343,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					quotaCategory = value;
+				}
+			}
+
+			public string ApplyReasonTips
+			{
+				get
+				{
+					return applyReasonTips;
+				}
+				set	
+				{
+					applyReasonTips = value;
 				}
 			}
 

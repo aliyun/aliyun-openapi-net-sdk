@@ -45,6 +45,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 		private int? pageNumber;
 
+		private string instanceId;
+
 		private string databaseName;
 
 		private bool? withTables;
@@ -78,6 +80,20 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(BodyParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "InstanceId")]
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(BodyParameters, "InstanceId", value);
 			}
 		}
 

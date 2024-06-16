@@ -31,8 +31,8 @@ namespace Aliyun.Acs.polardbx.Transform.V20200202
 			UpdatePolarDBXInstanceNodeResponse updatePolarDBXInstanceNodeResponse = new UpdatePolarDBXInstanceNodeResponse();
 
 			updatePolarDBXInstanceNodeResponse.HttpResponse = _ctx.HttpResponse;
-			updatePolarDBXInstanceNodeResponse.RequestId = _ctx.StringValue("UpdatePolarDBXInstanceNode.RequestId");
 			updatePolarDBXInstanceNodeResponse.OrderId = _ctx.StringValue("UpdatePolarDBXInstanceNode.OrderId");
+			updatePolarDBXInstanceNodeResponse.RequestId = _ctx.StringValue("UpdatePolarDBXInstanceNode.RequestId");
         
 			return updatePolarDBXInstanceNodeResponse;
         }

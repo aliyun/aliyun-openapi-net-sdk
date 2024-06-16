@@ -90,6 +90,12 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 
 			private string clientIds;
 
+			private string expirationTime;
+
+			private string issuanceTime;
+
+			private string verificationInfo;
+
 			public string Subject
 			{
 				get
@@ -123,6 +129,42 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 				set	
 				{
 					clientIds = value;
+				}
+			}
+
+			public string ExpirationTime
+			{
+				get
+				{
+					return expirationTime;
+				}
+				set	
+				{
+					expirationTime = value;
+				}
+			}
+
+			public string IssuanceTime
+			{
+				get
+				{
+					return issuanceTime;
+				}
+				set	
+				{
+					issuanceTime = value;
+				}
+			}
+
+			public string VerificationInfo
+			{
+				get
+				{
+					return verificationInfo;
+				}
+				set	
+				{
+					verificationInfo = value;
 				}
 			}
 		}

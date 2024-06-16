@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -48,6 +49,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string appName;
 
+		private int? onDemand;
+
 		private string streamName;
 
 		private string vodTranscodeGroupId;
@@ -58,6 +61,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private long? ownerId;
 
+		[JsonProperty(PropertyName = "AutoCompose")]
 		public string AutoCompose
 		{
 			get
@@ -71,6 +75,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ComposeVodTranscodeGroupId")]
 		public string ComposeVodTranscodeGroupId
 		{
 			get
@@ -84,6 +89,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "StorageLocation")]
 		public string StorageLocation
 		{
 			get
@@ -97,6 +103,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "AppName")]
 		public string AppName
 		{
 			get
@@ -110,6 +117,21 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OnDemand")]
+		public int? OnDemand
+		{
+			get
+			{
+				return onDemand;
+			}
+			set	
+			{
+				onDemand = value;
+				DictionaryUtil.Add(QueryParameters, "OnDemand", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "StreamName")]
 		public string StreamName
 		{
 			get
@@ -123,6 +145,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "VodTranscodeGroupId")]
 		public string VodTranscodeGroupId
 		{
 			get
@@ -136,6 +159,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DomainName")]
 		public string DomainName
 		{
 			get
@@ -149,6 +173,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "CycleDuration")]
 		public int? CycleDuration
 		{
 			get
@@ -162,6 +187,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get

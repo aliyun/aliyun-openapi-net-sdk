@@ -41,9 +41,25 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			Method = MethodType.POST;
         }
 
+		private bool? dryRun;
+
 		private string nodeNum;
 
 		private string instanceId;
+
+		[JsonProperty(PropertyName = "DryRun")]
+		public bool? DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(BodyParameters, "DryRun", value.ToString());
+			}
+		}
 
 		[JsonProperty(PropertyName = "NodeNum")]
 		public string NodeNum

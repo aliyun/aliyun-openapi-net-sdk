@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.amqp_open.Model.V20191212
@@ -56,23 +56,11 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 		public class ListQueueConsumers_Data
 		{
 
-			private string nextToken;
-
 			private int? maxResults;
 
-			private List<ListQueueConsumers_QueueConsumerVO> consumers;
+			private string nextToken;
 
-			public string NextToken
-			{
-				get
-				{
-					return nextToken;
-				}
-				set	
-				{
-					nextToken = value;
-				}
-			}
+			private List<ListQueueConsumers_QueueConsumerVO> consumers;
 
 			public int? MaxResults
 			{
@@ -83,6 +71,18 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 				set	
 				{
 					maxResults = value;
+				}
+			}
+
+			public string NextToken
+			{
+				get
+				{
+					return nextToken;
+				}
+				set	
+				{
+					nextToken = value;
 				}
 			}
 

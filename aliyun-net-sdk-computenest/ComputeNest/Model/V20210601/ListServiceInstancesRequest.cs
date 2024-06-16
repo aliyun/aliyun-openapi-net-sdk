@@ -48,7 +48,7 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 
 		private List<string> filters = new List<string>(){ };
 
-		private string maxResults;
+		private int? maxResults;
 
 		public string ResourceGroupId
 		{
@@ -117,7 +117,7 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 			}
 		}
 
-		public string MaxResults
+		public int? MaxResults
 		{
 			get
 			{
@@ -126,7 +126,7 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 			set	
 			{
 				maxResults = value;
-				DictionaryUtil.Add(QueryParameters, "MaxResults", value);
+				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
 			}
 		}
 

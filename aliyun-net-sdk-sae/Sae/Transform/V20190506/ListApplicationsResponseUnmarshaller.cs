@@ -58,6 +58,8 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 				application.Instances = _ctx.IntegerValue("ListApplications.Data.Applications["+ i +"].Instances");
 				application.RegionId = _ctx.StringValue("ListApplications.Data.Applications["+ i +"].RegionId");
 				application.AppDescription = _ctx.StringValue("ListApplications.Data.Applications["+ i +"].AppDescription");
+				application.Cpu = _ctx.IntegerValue("ListApplications.Data.Applications["+ i +"].Cpu");
+				application.Mem = _ctx.IntegerValue("ListApplications.Data.Applications["+ i +"].Mem");
 
 				List<ListApplicationsResponse.ListApplications_Data.ListApplications_Application.ListApplications_TagsItem> application_tags = new List<ListApplicationsResponse.ListApplications_Data.ListApplications_Application.ListApplications_TagsItem>();
 				for (int j = 0; j < _ctx.Length("ListApplications.Data.Applications["+ i +"].Tags.Length"); j++) {

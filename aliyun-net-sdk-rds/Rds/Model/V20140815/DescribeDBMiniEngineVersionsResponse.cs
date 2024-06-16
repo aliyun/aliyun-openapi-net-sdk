@@ -138,6 +138,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string tag;
 
+			private string expireStatus;
+
+			private string expireDate;
+
 			[JsonProperty(PropertyName = "ReleaseNote")]
 			public string ReleaseNote
 			{
@@ -265,6 +269,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					tag = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ExpireStatus")]
+			public string ExpireStatus
+			{
+				get
+				{
+					return expireStatus;
+				}
+				set	
+				{
+					expireStatus = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ExpireDate")]
+			public string ExpireDate
+			{
+				get
+				{
+					return expireDate;
+				}
+				set	
+				{
+					expireDate = value;
 				}
 			}
 		}

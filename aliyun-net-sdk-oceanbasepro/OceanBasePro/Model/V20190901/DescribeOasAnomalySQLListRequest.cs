@@ -45,7 +45,11 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 		private string searchRule;
 
+		private bool? mergeDynamicSql;
+
 		private long? current;
+
+		private bool? dynamicSql;
 
 		private long? sqlTextLength;
 
@@ -101,6 +105,20 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			}
 		}
 
+		[JsonProperty(PropertyName = "MergeDynamicSql")]
+		public bool? MergeDynamicSql
+		{
+			get
+			{
+				return mergeDynamicSql;
+			}
+			set	
+			{
+				mergeDynamicSql = value;
+				DictionaryUtil.Add(BodyParameters, "MergeDynamicSql", value.ToString());
+			}
+		}
+
 		[JsonProperty(PropertyName = "Current")]
 		public long? Current
 		{
@@ -112,6 +130,20 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			{
 				current = value;
 				DictionaryUtil.Add(BodyParameters, "Current", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "DynamicSql")]
+		public bool? DynamicSql
+		{
+			get
+			{
+				return dynamicSql;
+			}
+			set	
+			{
+				dynamicSql = value;
+				DictionaryUtil.Add(BodyParameters, "DynamicSql", value.ToString());
 			}
 		}
 

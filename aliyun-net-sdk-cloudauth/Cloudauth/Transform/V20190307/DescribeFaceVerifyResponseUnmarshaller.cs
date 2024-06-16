@@ -41,6 +41,9 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 			resultObject.IdentityInfo = _ctx.StringValue("DescribeFaceVerify.ResultObject.IdentityInfo");
 			resultObject.DeviceToken = _ctx.StringValue("DescribeFaceVerify.ResultObject.DeviceToken");
 			resultObject.Passed = _ctx.StringValue("DescribeFaceVerify.ResultObject.Passed");
+			resultObject.DeviceRisk = _ctx.StringValue("DescribeFaceVerify.ResultObject.DeviceRisk");
+			resultObject.Success = _ctx.StringValue("DescribeFaceVerify.ResultObject.Success");
+			resultObject.UserInfo = _ctx.StringValue("DescribeFaceVerify.ResultObject.UserInfo");
 			describeFaceVerifyResponse.ResultObject = resultObject;
         
 			return describeFaceVerifyResponse;

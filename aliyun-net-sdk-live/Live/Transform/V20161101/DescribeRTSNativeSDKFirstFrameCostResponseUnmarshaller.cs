@@ -31,20 +31,20 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeRTSNativeSDKFirstFrameCostResponse describeRTSNativeSDKFirstFrameCostResponse = new DescribeRTSNativeSDKFirstFrameCostResponse();
 
 			describeRTSNativeSDKFirstFrameCostResponse.HttpResponse = _ctx.HttpResponse;
-			describeRTSNativeSDKFirstFrameCostResponse.RequestId = _ctx.StringValue("DescribeRTSNativeSDKFirstFrameCost.RequestId");
 			describeRTSNativeSDKFirstFrameCostResponse.DataInterval = _ctx.StringValue("DescribeRTSNativeSDKFirstFrameCost.DataInterval");
-			describeRTSNativeSDKFirstFrameCostResponse.StartTime = _ctx.StringValue("DescribeRTSNativeSDKFirstFrameCost.StartTime");
 			describeRTSNativeSDKFirstFrameCostResponse.EndTime = _ctx.StringValue("DescribeRTSNativeSDKFirstFrameCost.EndTime");
+			describeRTSNativeSDKFirstFrameCostResponse.RequestId = _ctx.StringValue("DescribeRTSNativeSDKFirstFrameCost.RequestId");
+			describeRTSNativeSDKFirstFrameCostResponse.StartTime = _ctx.StringValue("DescribeRTSNativeSDKFirstFrameCost.StartTime");
 
 			List<DescribeRTSNativeSDKFirstFrameCostResponse.DescribeRTSNativeSDKFirstFrameCost_Data> describeRTSNativeSDKFirstFrameCostResponse_firstFrameCostData = new List<DescribeRTSNativeSDKFirstFrameCostResponse.DescribeRTSNativeSDKFirstFrameCost_Data>();
 			for (int i = 0; i < _ctx.Length("DescribeRTSNativeSDKFirstFrameCost.FirstFrameCostData.Length"); i++) {
 				DescribeRTSNativeSDKFirstFrameCostResponse.DescribeRTSNativeSDKFirstFrameCost_Data data = new DescribeRTSNativeSDKFirstFrameCostResponse.DescribeRTSNativeSDKFirstFrameCost_Data();
-				data.TimeStamp = _ctx.StringValue("DescribeRTSNativeSDKFirstFrameCost.FirstFrameCostData["+ i +"].TimeStamp");
-				data.Initialized = _ctx.StringValue("DescribeRTSNativeSDKFirstFrameCost.FirstFrameCostData["+ i +"].Initialized");
 				data.Connected = _ctx.StringValue("DescribeRTSNativeSDKFirstFrameCost.FirstFrameCostData["+ i +"].Connected");
 				data.FinishGetStreamInfo = _ctx.StringValue("DescribeRTSNativeSDKFirstFrameCost.FirstFrameCostData["+ i +"].FinishGetStreamInfo");
-				data.FirstPacket = _ctx.StringValue("DescribeRTSNativeSDKFirstFrameCost.FirstFrameCostData["+ i +"].FirstPacket");
 				data.FirstFrameComplete = _ctx.StringValue("DescribeRTSNativeSDKFirstFrameCost.FirstFrameCostData["+ i +"].FirstFrameComplete");
+				data.FirstPacket = _ctx.StringValue("DescribeRTSNativeSDKFirstFrameCost.FirstFrameCostData["+ i +"].FirstPacket");
+				data.Initialized = _ctx.StringValue("DescribeRTSNativeSDKFirstFrameCost.FirstFrameCostData["+ i +"].Initialized");
+				data.TimeStamp = _ctx.StringValue("DescribeRTSNativeSDKFirstFrameCost.FirstFrameCostData["+ i +"].TimeStamp");
 
 				describeRTSNativeSDKFirstFrameCostResponse_firstFrameCostData.Add(data);
 			}

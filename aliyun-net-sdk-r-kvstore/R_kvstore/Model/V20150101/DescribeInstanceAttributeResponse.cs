@@ -100,6 +100,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private int? shardCount;
 
+			private int? readOnlyCount;
+
 			private string globalInstanceId;
 
 			private long? qPS;
@@ -110,9 +112,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string maintainStartTime;
 
+			private string maintainEndTime;
+
 			private string instanceClass;
 
-			private string maintainEndTime;
+			private string realInstanceClass;
 
 			private string instanceId;
 
@@ -138,6 +142,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string backupLogStartTime;
 
+			private long? slaveReadOnlyCount;
+
 			private string resourceGroupId;
 
 			private string zoneId;
@@ -149,6 +155,10 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			private string storage;
 
 			private string cloudType;
+
+			private bool? isOrderCompleted;
+
+			private bool? isSupportTDE;
 
 			private List<DescribeInstanceAttribute_Tag> tags;
 
@@ -416,6 +426,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
+			public int? ReadOnlyCount
+			{
+				get
+				{
+					return readOnlyCount;
+				}
+				set	
+				{
+					readOnlyCount = value;
+				}
+			}
+
 			public string GlobalInstanceId
 			{
 				get
@@ -476,6 +498,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
+			public string MaintainEndTime
+			{
+				get
+				{
+					return maintainEndTime;
+				}
+				set	
+				{
+					maintainEndTime = value;
+				}
+			}
+
 			public string InstanceClass
 			{
 				get
@@ -488,15 +522,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string MaintainEndTime
+			public string RealInstanceClass
 			{
 				get
 				{
-					return maintainEndTime;
+					return realInstanceClass;
 				}
 				set	
 				{
-					maintainEndTime = value;
+					realInstanceClass = value;
 				}
 			}
 
@@ -644,6 +678,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
+			public long? SlaveReadOnlyCount
+			{
+				get
+				{
+					return slaveReadOnlyCount;
+				}
+				set	
+				{
+					slaveReadOnlyCount = value;
+				}
+			}
+
 			public string ResourceGroupId
 			{
 				get
@@ -713,6 +759,30 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					cloudType = value;
+				}
+			}
+
+			public bool? IsOrderCompleted
+			{
+				get
+				{
+					return isOrderCompleted;
+				}
+				set	
+				{
+					isOrderCompleted = value;
+				}
+			}
+
+			public bool? IsSupportTDE
+			{
+				get
+				{
+					return isSupportTDE;
+				}
+				set	
+				{
+					isSupportTDE = value;
 				}
 			}
 

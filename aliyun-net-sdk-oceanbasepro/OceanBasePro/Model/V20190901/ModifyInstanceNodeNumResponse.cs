@@ -60,6 +60,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 			private string orderId;
 
+			private bool? dryRunResult;
+
 			[JsonProperty(PropertyName = "OrderId")]
 			public string OrderId
 			{
@@ -70,6 +72,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				set	
 				{
 					orderId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DryRunResult")]
+			public bool? DryRunResult
+			{
+				get
+				{
+					return dryRunResult;
+				}
+				set	
+				{
+					dryRunResult = value;
 				}
 			}
 		}

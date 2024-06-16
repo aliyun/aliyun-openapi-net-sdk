@@ -128,6 +128,10 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 			private string id;
 
+			private long? fileCategoryCode;
+
+			private string fileCategoryName;
+
 			private List<DescribeOssObjects_Rule> ruleList;
 
 			public long? InstanceId
@@ -307,6 +311,30 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					id = value;
+				}
+			}
+
+			public long? FileCategoryCode
+			{
+				get
+				{
+					return fileCategoryCode;
+				}
+				set	
+				{
+					fileCategoryCode = value;
+				}
+			}
+
+			public string FileCategoryName
+			{
+				get
+				{
+					return fileCategoryName;
+				}
+				set	
+				{
+					fileCategoryName = value;
 				}
 			}
 

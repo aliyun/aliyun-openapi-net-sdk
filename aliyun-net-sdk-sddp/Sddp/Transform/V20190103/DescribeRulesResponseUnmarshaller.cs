@@ -41,6 +41,7 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 				DescribeRulesResponse.DescribeRules_Rule rule = new DescribeRulesResponse.DescribeRules_Rule();
 				rule.DisplayName = _ctx.StringValue("DescribeRules.Items["+ i +"].DisplayName");
 				rule.Status = _ctx.IntegerValue("DescribeRules.Items["+ i +"].Status");
+				rule.SupportForm = _ctx.IntegerValue("DescribeRules.Items["+ i +"].SupportForm");
 				rule.WarnLevel = _ctx.IntegerValue("DescribeRules.Items["+ i +"].WarnLevel");
 				rule.UserId = _ctx.LongValue("DescribeRules.Items["+ i +"].UserId");
 				rule.DepartName = _ctx.StringValue("DescribeRules.Items["+ i +"].DepartName");
@@ -64,6 +65,7 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 				rule.MajorKey = _ctx.StringValue("DescribeRules.Items["+ i +"].MajorKey");
 				rule.Id = _ctx.LongValue("DescribeRules.Items["+ i +"].Id");
 				rule.ProductCode = _ctx.StringValue("DescribeRules.Items["+ i +"].ProductCode");
+				rule.MatchType = _ctx.IntegerValue("DescribeRules.Items["+ i +"].MatchType");
 
 				describeRulesResponse_items.Add(rule);
 			}

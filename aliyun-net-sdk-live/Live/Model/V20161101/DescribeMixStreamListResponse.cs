@@ -25,24 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeMixStreamListResponse : AcsResponse
 	{
 
-		private int? total;
-
 		private string requestId;
 
-		private List<DescribeMixStreamList_MixStreamInfo> mixStreamList;
+		private int? total;
 
-		[JsonProperty(PropertyName = "Total")]
-		public int? Total
-		{
-			get
-			{
-				return total;
-			}
-			set	
-			{
-				total = value;
-			}
-		}
+		private List<DescribeMixStreamList_MixStreamInfo> mixStreamList;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -54,6 +41,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Total")]
+		public int? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
 			}
 		}
 
@@ -73,36 +73,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeMixStreamList_MixStreamInfo
 		{
 
-			private string mixStreamTemplate;
-
 			private string appName;
 
-			private string layoutId;
-
-			private string streamName;
+			private string domainName;
 
 			private string gmtCreate;
-
-			private string mixstreamId;
 
 			private string gmtModified;
 
 			private int? inputStreamNumber;
 
-			private string domainName;
+			private string layoutId;
 
-			[JsonProperty(PropertyName = "MixStreamTemplate")]
-			public string MixStreamTemplate
-			{
-				get
-				{
-					return mixStreamTemplate;
-				}
-				set	
-				{
-					mixStreamTemplate = value;
-				}
-			}
+			private string mixStreamTemplate;
+
+			private string mixstreamId;
+
+			private string streamName;
 
 			[JsonProperty(PropertyName = "AppName")]
 			public string AppName
@@ -117,29 +104,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "LayoutId")]
-			public string LayoutId
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
 			{
 				get
 				{
-					return layoutId;
+					return domainName;
 				}
 				set	
 				{
-					layoutId = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "StreamName")]
-			public string StreamName
-			{
-				get
-				{
-					return streamName;
-				}
-				set	
-				{
-					streamName = value;
+					domainName = value;
 				}
 			}
 
@@ -153,19 +127,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					gmtCreate = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "MixstreamId")]
-			public string MixstreamId
-			{
-				get
-				{
-					return mixstreamId;
-				}
-				set	
-				{
-					mixstreamId = value;
 				}
 			}
 
@@ -195,16 +156,55 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "DomainName")]
-			public string DomainName
+			[JsonProperty(PropertyName = "LayoutId")]
+			public string LayoutId
 			{
 				get
 				{
-					return domainName;
+					return layoutId;
 				}
 				set	
 				{
-					domainName = value;
+					layoutId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MixStreamTemplate")]
+			public string MixStreamTemplate
+			{
+				get
+				{
+					return mixStreamTemplate;
+				}
+				set	
+				{
+					mixStreamTemplate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MixstreamId")]
+			public string MixstreamId
+			{
+				get
+				{
+					return mixstreamId;
+				}
+				set	
+				{
+					mixstreamId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StreamName")]
+			public string StreamName
+			{
+				get
+				{
+					return streamName;
+				}
+				set	
+				{
+					streamName = value;
 				}
 			}
 		}

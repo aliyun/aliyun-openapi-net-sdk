@@ -35,7 +35,67 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			Method = MethodType.POST;
         }
 
+		private string clientToken;
+
+		private int? pageNumber;
+
+		private bool? enablePage;
+
+		private int? pageSize;
+
 		private string vccId;
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(BodyParameters, "ClientToken", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(BodyParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public bool? EnablePage
+		{
+			get
+			{
+				return enablePage;
+			}
+			set	
+			{
+				enablePage = value;
+				DictionaryUtil.Add(BodyParameters, "EnablePage", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
+			}
+		}
 
 		public string VccId
 		{

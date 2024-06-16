@@ -41,13 +41,33 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			Method = MethodType.POST;
         }
 
+		private string resourceProduct;
+
 		private string nextToken;
 
+		private string resourceId;
+
 		private string deployRegionId;
+
+		private string resourceType;
 
 		private string applicationName;
 
 		private int? maxResults;
+
+		[JsonProperty(PropertyName = "ResourceProduct")]
+		public string ResourceProduct
+		{
+			get
+			{
+				return resourceProduct;
+			}
+			set	
+			{
+				resourceProduct = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceProduct", value);
+			}
+		}
 
 		[JsonProperty(PropertyName = "NextToken")]
 		public string NextToken
@@ -63,6 +83,20 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceId")]
+		public string ResourceId
+		{
+			get
+			{
+				return resourceId;
+			}
+			set	
+			{
+				resourceId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
+			}
+		}
+
 		[JsonProperty(PropertyName = "DeployRegionId")]
 		public string DeployRegionId
 		{
@@ -74,6 +108,20 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				deployRegionId = value;
 				DictionaryUtil.Add(QueryParameters, "DeployRegionId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ResourceType")]
+		public string ResourceType
+		{
+			get
+			{
+				return resourceType;
+			}
+			set	
+			{
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 

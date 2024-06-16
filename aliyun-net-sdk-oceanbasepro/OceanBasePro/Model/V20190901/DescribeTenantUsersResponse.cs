@@ -187,6 +187,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 				private string table;
 
+				private string privileges;
+
 				[JsonProperty(PropertyName = "Database")]
 				public string Database
 				{
@@ -223,6 +225,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 					set	
 					{
 						table = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Privileges")]
+				public string Privileges
+				{
+					get
+					{
+						return privileges;
+					}
+					set	
+					{
+						privileges = value;
 					}
 				}
 			}

@@ -36,6 +36,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeDBClusterTDEResponse.DBClusterId = _ctx.StringValue("DescribeDBClusterTDE.DBClusterId");
 			describeDBClusterTDEResponse.EncryptionKey = _ctx.StringValue("DescribeDBClusterTDE.EncryptionKey");
 			describeDBClusterTDEResponse.EncryptNewTables = _ctx.StringValue("DescribeDBClusterTDE.EncryptNewTables");
+			describeDBClusterTDEResponse.TDERegion = _ctx.StringValue("DescribeDBClusterTDE.TDERegion");
         
 			return describeDBClusterTDEResponse;
         }

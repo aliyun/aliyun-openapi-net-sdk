@@ -105,6 +105,8 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 
 			private string sessionId;
 
+			private string token;
+
 			private QueryRunningInstance_Channel channel;
 
 			private QueryRunningInstance_User user;
@@ -119,6 +121,19 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 				set	
 				{
 					sessionId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Token")]
+			public string Token
+			{
+				get
+				{
+					return token;
+				}
+				set	
+				{
+					token = value;
 				}
 			}
 

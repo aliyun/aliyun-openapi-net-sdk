@@ -31,9 +31,9 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeCasterSceneAudioResponse describeCasterSceneAudioResponse = new DescribeCasterSceneAudioResponse();
 
 			describeCasterSceneAudioResponse.HttpResponse = _ctx.HttpResponse;
-			describeCasterSceneAudioResponse.RequestId = _ctx.StringValue("DescribeCasterSceneAudio.RequestId");
 			describeCasterSceneAudioResponse.CasterId = _ctx.StringValue("DescribeCasterSceneAudio.CasterId");
 			describeCasterSceneAudioResponse.FollowEnable = _ctx.IntegerValue("DescribeCasterSceneAudio.FollowEnable");
+			describeCasterSceneAudioResponse.RequestId = _ctx.StringValue("DescribeCasterSceneAudio.RequestId");
 
 			List<string> describeCasterSceneAudioResponse_mixList = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeCasterSceneAudio.MixList.Length"); i++) {
@@ -44,9 +44,9 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeCasterSceneAudioResponse.DescribeCasterSceneAudio_AudioLayer> describeCasterSceneAudioResponse_audioLayers = new List<DescribeCasterSceneAudioResponse.DescribeCasterSceneAudio_AudioLayer>();
 			for (int i = 0; i < _ctx.Length("DescribeCasterSceneAudio.AudioLayers.Length"); i++) {
 				DescribeCasterSceneAudioResponse.DescribeCasterSceneAudio_AudioLayer audioLayer = new DescribeCasterSceneAudioResponse.DescribeCasterSceneAudio_AudioLayer();
-				audioLayer.VolumeRate = _ctx.FloatValue("DescribeCasterSceneAudio.AudioLayers["+ i +"].VolumeRate");
 				audioLayer.FixedDelayDuration = _ctx.IntegerValue("DescribeCasterSceneAudio.AudioLayers["+ i +"].FixedDelayDuration");
 				audioLayer.ValidChannel = _ctx.StringValue("DescribeCasterSceneAudio.AudioLayers["+ i +"].ValidChannel");
+				audioLayer.VolumeRate = _ctx.FloatValue("DescribeCasterSceneAudio.AudioLayers["+ i +"].VolumeRate");
 
 				describeCasterSceneAudioResponse_audioLayers.Add(audioLayer);
 			}

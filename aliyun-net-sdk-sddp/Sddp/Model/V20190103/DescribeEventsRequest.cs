@@ -40,6 +40,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			Method = MethodType.POST;
         }
 
+		private int? warnLevel;
+
 		private string productCode;
 
 		private string startTime;
@@ -69,6 +71,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 		private string status;
 
 		private string userName;
+
+		public int? WarnLevel
+		{
+			get
+			{
+				return warnLevel;
+			}
+			set	
+			{
+				warnLevel = value;
+				DictionaryUtil.Add(QueryParameters, "WarnLevel", value.ToString());
+			}
+		}
 
 		public string ProductCode
 		{

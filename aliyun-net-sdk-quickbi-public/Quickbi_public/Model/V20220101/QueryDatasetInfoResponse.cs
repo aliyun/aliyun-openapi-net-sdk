@@ -96,6 +96,8 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 			private string datasetId;
 
+			private bool? openOfflineAcceleration;
+
 			private List<QueryDatasetInfo_CubeTableListItem> cubeTableList;
 
 			private List<QueryDatasetInfo_DimensionListItem> dimensionList;
@@ -257,6 +259,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					datasetId = value;
+				}
+			}
+
+			public bool? OpenOfflineAcceleration
+			{
+				get
+				{
+					return openOfflineAcceleration;
+				}
+				set	
+				{
+					openOfflineAcceleration = value;
 				}
 			}
 

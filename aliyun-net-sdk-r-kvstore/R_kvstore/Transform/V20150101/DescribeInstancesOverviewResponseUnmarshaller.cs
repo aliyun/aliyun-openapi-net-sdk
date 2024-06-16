@@ -57,6 +57,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				kVStoreInstance.ResourceGroupId = _ctx.StringValue("DescribeInstancesOverview.Instances["+ i +"].ResourceGroupId");
 				kVStoreInstance.ZoneId = _ctx.StringValue("DescribeInstancesOverview.Instances["+ i +"].ZoneId");
 				kVStoreInstance.InstanceStatus = _ctx.StringValue("DescribeInstancesOverview.Instances["+ i +"].InstanceStatus");
+				kVStoreInstance.SecondaryZoneId = _ctx.StringValue("DescribeInstancesOverview.Instances["+ i +"].SecondaryZoneId");
 
 				describeInstancesOverviewResponse_instances.Add(kVStoreInstance);
 			}

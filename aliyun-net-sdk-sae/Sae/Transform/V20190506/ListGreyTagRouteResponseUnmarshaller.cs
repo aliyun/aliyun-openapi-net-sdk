@@ -77,6 +77,33 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 				}
 				resultItem.ScRules = resultItem_scRules;
 
+				List<ListGreyTagRouteResponse.ListGreyTagRoute_Data.ListGreyTagRoute_ResultItem.ListGreyTagRoute_AlbRule> resultItem_albRules = new List<ListGreyTagRouteResponse.ListGreyTagRoute_Data.ListGreyTagRoute_ResultItem.ListGreyTagRoute_AlbRule>();
+				for (int j = 0; j < _ctx.Length("ListGreyTagRoute.Data.Result["+ i +"].AlbRules.Length"); j++) {
+					ListGreyTagRouteResponse.ListGreyTagRoute_Data.ListGreyTagRoute_ResultItem.ListGreyTagRoute_AlbRule albRule = new ListGreyTagRouteResponse.ListGreyTagRoute_Data.ListGreyTagRoute_ResultItem.ListGreyTagRoute_AlbRule();
+					albRule.ServiceId = _ctx.StringValue("ListGreyTagRoute.Data.Result["+ i +"].AlbRules["+ j +"].serviceId");
+					albRule.IngressId = _ctx.StringValue("ListGreyTagRoute.Data.Result["+ i +"].AlbRules["+ j +"].ingressId");
+					albRule.Condition = _ctx.StringValue("ListGreyTagRoute.Data.Result["+ i +"].AlbRules["+ j +"].condition");
+					albRule.ServiceName = _ctx.StringValue("ListGreyTagRoute.Data.Result["+ i +"].AlbRules["+ j +"].serviceName");
+
+					List<ListGreyTagRouteResponse.ListGreyTagRoute_Data.ListGreyTagRoute_ResultItem.ListGreyTagRoute_AlbRule.ListGreyTagRoute_Item2> albRule_items1 = new List<ListGreyTagRouteResponse.ListGreyTagRoute_Data.ListGreyTagRoute_ResultItem.ListGreyTagRoute_AlbRule.ListGreyTagRoute_Item2>();
+					for (int k = 0; k < _ctx.Length("ListGreyTagRoute.Data.Result["+ i +"].AlbRules["+ j +"].Items.Length"); k++) {
+						ListGreyTagRouteResponse.ListGreyTagRoute_Data.ListGreyTagRoute_ResultItem.ListGreyTagRoute_AlbRule.ListGreyTagRoute_Item2 item2 = new ListGreyTagRouteResponse.ListGreyTagRoute_Data.ListGreyTagRoute_ResultItem.ListGreyTagRoute_AlbRule.ListGreyTagRoute_Item2();
+						item2.Type = _ctx.StringValue("ListGreyTagRoute.Data.Result["+ i +"].AlbRules["+ j +"].Items["+ k +"].type");
+						item2.Name = _ctx.StringValue("ListGreyTagRoute.Data.Result["+ i +"].AlbRules["+ j +"].Items["+ k +"].name");
+						item2._Operator = _ctx.StringValue("ListGreyTagRoute.Data.Result["+ i +"].AlbRules["+ j +"].Items["+ k +"].operator");
+						item2._Value = _ctx.StringValue("ListGreyTagRoute.Data.Result["+ i +"].AlbRules["+ j +"].Items["+ k +"].value");
+						item2.Cond = _ctx.StringValue("ListGreyTagRoute.Data.Result["+ i +"].AlbRules["+ j +"].Items["+ k +"].cond");
+						item2.Index = _ctx.IntegerValue("ListGreyTagRoute.Data.Result["+ i +"].AlbRules["+ j +"].Items["+ k +"].index");
+						item2.Expr = _ctx.StringValue("ListGreyTagRoute.Data.Result["+ i +"].AlbRules["+ j +"].Items["+ k +"].expr");
+
+						albRule_items1.Add(item2);
+					}
+					albRule.Items1 = albRule_items1;
+
+					resultItem_albRules.Add(albRule);
+				}
+				resultItem.AlbRules = resultItem_albRules;
+
 				List<ListGreyTagRouteResponse.ListGreyTagRoute_Data.ListGreyTagRoute_ResultItem.ListGreyTagRoute_DubboRule> resultItem_dubboRules = new List<ListGreyTagRouteResponse.ListGreyTagRoute_Data.ListGreyTagRoute_ResultItem.ListGreyTagRoute_DubboRule>();
 				for (int j = 0; j < _ctx.Length("ListGreyTagRoute.Data.Result["+ i +"].DubboRules.Length"); j++) {
 					ListGreyTagRouteResponse.ListGreyTagRoute_Data.ListGreyTagRoute_ResultItem.ListGreyTagRoute_DubboRule dubboRule = new ListGreyTagRouteResponse.ListGreyTagRoute_Data.ListGreyTagRoute_ResultItem.ListGreyTagRoute_DubboRule();
@@ -86,20 +113,20 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 					dubboRule.MethodName = _ctx.StringValue("ListGreyTagRoute.Data.Result["+ i +"].DubboRules["+ j +"].methodName");
 					dubboRule.Condition = _ctx.StringValue("ListGreyTagRoute.Data.Result["+ i +"].DubboRules["+ j +"].condition");
 
-					List<ListGreyTagRouteResponse.ListGreyTagRoute_Data.ListGreyTagRoute_ResultItem.ListGreyTagRoute_DubboRule.ListGreyTagRoute_Item2> dubboRule_items1 = new List<ListGreyTagRouteResponse.ListGreyTagRoute_Data.ListGreyTagRoute_ResultItem.ListGreyTagRoute_DubboRule.ListGreyTagRoute_Item2>();
+					List<ListGreyTagRouteResponse.ListGreyTagRoute_Data.ListGreyTagRoute_ResultItem.ListGreyTagRoute_DubboRule.ListGreyTagRoute_Item4> dubboRule_items3 = new List<ListGreyTagRouteResponse.ListGreyTagRoute_Data.ListGreyTagRoute_ResultItem.ListGreyTagRoute_DubboRule.ListGreyTagRoute_Item4>();
 					for (int k = 0; k < _ctx.Length("ListGreyTagRoute.Data.Result["+ i +"].DubboRules["+ j +"].Items.Length"); k++) {
-						ListGreyTagRouteResponse.ListGreyTagRoute_Data.ListGreyTagRoute_ResultItem.ListGreyTagRoute_DubboRule.ListGreyTagRoute_Item2 item2 = new ListGreyTagRouteResponse.ListGreyTagRoute_Data.ListGreyTagRoute_ResultItem.ListGreyTagRoute_DubboRule.ListGreyTagRoute_Item2();
-						item2.Index = _ctx.IntegerValue("ListGreyTagRoute.Data.Result["+ i +"].DubboRules["+ j +"].Items["+ k +"].index");
-						item2.Expr = _ctx.StringValue("ListGreyTagRoute.Data.Result["+ i +"].DubboRules["+ j +"].Items["+ k +"].expr");
-						item2._Operator = _ctx.StringValue("ListGreyTagRoute.Data.Result["+ i +"].DubboRules["+ j +"].Items["+ k +"].operator");
-						item2._Value = _ctx.StringValue("ListGreyTagRoute.Data.Result["+ i +"].DubboRules["+ j +"].Items["+ k +"].value");
-						item2.Cond = _ctx.StringValue("ListGreyTagRoute.Data.Result["+ i +"].DubboRules["+ j +"].Items["+ k +"].cond");
-						item2.Type = _ctx.StringValue("ListGreyTagRoute.Data.Result["+ i +"].DubboRules["+ j +"].Items["+ k +"].type");
-						item2.Name = _ctx.StringValue("ListGreyTagRoute.Data.Result["+ i +"].DubboRules["+ j +"].Items["+ k +"].name");
+						ListGreyTagRouteResponse.ListGreyTagRoute_Data.ListGreyTagRoute_ResultItem.ListGreyTagRoute_DubboRule.ListGreyTagRoute_Item4 item4 = new ListGreyTagRouteResponse.ListGreyTagRoute_Data.ListGreyTagRoute_ResultItem.ListGreyTagRoute_DubboRule.ListGreyTagRoute_Item4();
+						item4.Index = _ctx.IntegerValue("ListGreyTagRoute.Data.Result["+ i +"].DubboRules["+ j +"].Items["+ k +"].index");
+						item4.Expr = _ctx.StringValue("ListGreyTagRoute.Data.Result["+ i +"].DubboRules["+ j +"].Items["+ k +"].expr");
+						item4._Operator = _ctx.StringValue("ListGreyTagRoute.Data.Result["+ i +"].DubboRules["+ j +"].Items["+ k +"].operator");
+						item4._Value = _ctx.StringValue("ListGreyTagRoute.Data.Result["+ i +"].DubboRules["+ j +"].Items["+ k +"].value");
+						item4.Cond = _ctx.StringValue("ListGreyTagRoute.Data.Result["+ i +"].DubboRules["+ j +"].Items["+ k +"].cond");
+						item4.Type = _ctx.StringValue("ListGreyTagRoute.Data.Result["+ i +"].DubboRules["+ j +"].Items["+ k +"].type");
+						item4.Name = _ctx.StringValue("ListGreyTagRoute.Data.Result["+ i +"].DubboRules["+ j +"].Items["+ k +"].name");
 
-						dubboRule_items1.Add(item2);
+						dubboRule_items3.Add(item4);
 					}
-					dubboRule.Items1 = dubboRule_items1;
+					dubboRule.Items3 = dubboRule_items3;
 
 					resultItem_dubboRules.Add(dubboRule);
 				}

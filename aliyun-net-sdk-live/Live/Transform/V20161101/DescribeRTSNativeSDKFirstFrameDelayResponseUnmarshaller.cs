@@ -31,16 +31,16 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeRTSNativeSDKFirstFrameDelayResponse describeRTSNativeSDKFirstFrameDelayResponse = new DescribeRTSNativeSDKFirstFrameDelayResponse();
 
 			describeRTSNativeSDKFirstFrameDelayResponse.HttpResponse = _ctx.HttpResponse;
-			describeRTSNativeSDKFirstFrameDelayResponse.RequestId = _ctx.StringValue("DescribeRTSNativeSDKFirstFrameDelay.RequestId");
 			describeRTSNativeSDKFirstFrameDelayResponse.DataInterval = _ctx.StringValue("DescribeRTSNativeSDKFirstFrameDelay.DataInterval");
-			describeRTSNativeSDKFirstFrameDelayResponse.StartTime = _ctx.StringValue("DescribeRTSNativeSDKFirstFrameDelay.StartTime");
 			describeRTSNativeSDKFirstFrameDelayResponse.EndTime = _ctx.StringValue("DescribeRTSNativeSDKFirstFrameDelay.EndTime");
+			describeRTSNativeSDKFirstFrameDelayResponse.RequestId = _ctx.StringValue("DescribeRTSNativeSDKFirstFrameDelay.RequestId");
+			describeRTSNativeSDKFirstFrameDelayResponse.StartTime = _ctx.StringValue("DescribeRTSNativeSDKFirstFrameDelay.StartTime");
 
 			List<DescribeRTSNativeSDKFirstFrameDelayResponse.DescribeRTSNativeSDKFirstFrameDelay_Data> describeRTSNativeSDKFirstFrameDelayResponse_frameDelayData = new List<DescribeRTSNativeSDKFirstFrameDelayResponse.DescribeRTSNativeSDKFirstFrameDelay_Data>();
 			for (int i = 0; i < _ctx.Length("DescribeRTSNativeSDKFirstFrameDelay.FrameDelayData.Length"); i++) {
 				DescribeRTSNativeSDKFirstFrameDelayResponse.DescribeRTSNativeSDKFirstFrameDelay_Data data = new DescribeRTSNativeSDKFirstFrameDelayResponse.DescribeRTSNativeSDKFirstFrameDelay_Data();
-				data.TimeStamp = _ctx.StringValue("DescribeRTSNativeSDKFirstFrameDelay.FrameDelayData["+ i +"].TimeStamp");
 				data.FrameDelay = _ctx.StringValue("DescribeRTSNativeSDKFirstFrameDelay.FrameDelayData["+ i +"].FrameDelay");
+				data.TimeStamp = _ctx.StringValue("DescribeRTSNativeSDKFirstFrameDelay.FrameDelayData["+ i +"].TimeStamp");
 
 				describeRTSNativeSDKFirstFrameDelayResponse_frameDelayData.Add(data);
 			}

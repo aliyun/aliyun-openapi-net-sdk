@@ -64,6 +64,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 			private long? usedMem;
 
+			private string safeMem;
+
 			[JsonProperty(PropertyName = "MinMem")]
 			public long? MinMem
 			{
@@ -100,6 +102,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				set	
 				{
 					usedMem = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SafeMem")]
+			public string SafeMem
+			{
+				get
+				{
+					return safeMem;
+				}
+				set	
+				{
+					safeMem = value;
 				}
 			}
 		}

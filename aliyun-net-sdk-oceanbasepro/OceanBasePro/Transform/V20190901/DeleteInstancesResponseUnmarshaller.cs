@@ -32,6 +32,10 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 
 			deleteInstancesResponse.HttpResponse = _ctx.HttpResponse;
 			deleteInstancesResponse.RequestId = _ctx.StringValue("DeleteInstances.RequestId");
+
+			DeleteInstancesResponse.DeleteInstances_Data data = new DeleteInstancesResponse.DeleteInstances_Data();
+			data.DryRunResult = _ctx.BooleanValue("DeleteInstances.Data.DryRunResult");
+			deleteInstancesResponse.Data = data;
         
 			return deleteInstancesResponse;
         }

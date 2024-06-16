@@ -44,13 +44,21 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 
 		private string charset;
 
+		private string securityAccountPassword;
+
 		private string accountPrivilege;
+
+		private string mode;
 
 		private string accountName;
 
-		private string dbName;
+		private string securityAccountName;
 
 		private string dbDescription;
+
+		private string dbName;
+
+		private string storagePoolName;
 
 		public string DBInstanceName
 		{
@@ -78,6 +86,19 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			}
 		}
 
+		public string SecurityAccountPassword
+		{
+			get
+			{
+				return securityAccountPassword;
+			}
+			set	
+			{
+				securityAccountPassword = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityAccountPassword", value);
+			}
+		}
+
 		public string AccountPrivilege
 		{
 			get
@@ -88,6 +109,19 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			{
 				accountPrivilege = value;
 				DictionaryUtil.Add(QueryParameters, "AccountPrivilege", value);
+			}
+		}
+
+		public string Mode
+		{
+			get
+			{
+				return mode;
+			}
+			set	
+			{
+				mode = value;
+				DictionaryUtil.Add(QueryParameters, "Mode", value);
 			}
 		}
 
@@ -104,16 +138,16 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			}
 		}
 
-		public string DbName
+		public string SecurityAccountName
 		{
 			get
 			{
-				return dbName;
+				return securityAccountName;
 			}
 			set	
 			{
-				dbName = value;
-				DictionaryUtil.Add(QueryParameters, "DbName", value);
+				securityAccountName = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityAccountName", value);
 			}
 		}
 
@@ -127,6 +161,32 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			{
 				dbDescription = value;
 				DictionaryUtil.Add(QueryParameters, "DbDescription", value);
+			}
+		}
+
+		public string DbName
+		{
+			get
+			{
+				return dbName;
+			}
+			set	
+			{
+				dbName = value;
+				DictionaryUtil.Add(QueryParameters, "DbName", value);
+			}
+		}
+
+		public string StoragePoolName
+		{
+			get
+			{
+				return storagePoolName;
+			}
+			set	
+			{
+				storagePoolName = value;
+				DictionaryUtil.Add(QueryParameters, "StoragePoolName", value);
 			}
 		}
 

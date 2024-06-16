@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.polardb;
 using Aliyun.Acs.polardb.Transform;
 using Aliyun.Acs.polardb.Transform.V20170801;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
     public class CreateDBLinkRequest : RpcAcsRequest<CreateDBLinkResponse>
     {
         public CreateDBLinkRequest()
-            : base("polardb", "2017-08-01", "CreateDBLink")
+            : base("polardb", "2017-08-01", "CreateDBLink", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -50,6 +49,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private string targetDBName;
 
 		private string targetIp;
+
+		private string resourceGroupId;
 
 		private string dBLinkName;
 
@@ -133,6 +134,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				targetIp = value;
 				DictionaryUtil.Add(QueryParameters, "TargetIp", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

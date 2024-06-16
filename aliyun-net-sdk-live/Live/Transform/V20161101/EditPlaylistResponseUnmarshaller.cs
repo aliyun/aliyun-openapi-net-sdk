@@ -31,31 +31,31 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			EditPlaylistResponse editPlaylistResponse = new EditPlaylistResponse();
 
 			editPlaylistResponse.HttpResponse = _ctx.HttpResponse;
-			editPlaylistResponse.RequestId = _ctx.StringValue("EditPlaylist.RequestId");
 			editPlaylistResponse.CasterId = _ctx.StringValue("EditPlaylist.CasterId");
 			editPlaylistResponse.ProgramId = _ctx.StringValue("EditPlaylist.ProgramId");
+			editPlaylistResponse.RequestId = _ctx.StringValue("EditPlaylist.RequestId");
 
 			EditPlaylistResponse.EditPlaylist_Items items = new EditPlaylistResponse.EditPlaylist_Items();
-
-			List<EditPlaylistResponse.EditPlaylist_Items.EditPlaylist_SuccessItem> items_successItems = new List<EditPlaylistResponse.EditPlaylist_Items.EditPlaylist_SuccessItem>();
-			for (int i = 0; i < _ctx.Length("EditPlaylist.Items.SuccessItems.Length"); i++) {
-				EditPlaylistResponse.EditPlaylist_Items.EditPlaylist_SuccessItem successItem = new EditPlaylistResponse.EditPlaylist_Items.EditPlaylist_SuccessItem();
-				successItem.ItemName = _ctx.StringValue("EditPlaylist.Items.SuccessItems["+ i +"].ItemName");
-				successItem.ItemId = _ctx.StringValue("EditPlaylist.Items.SuccessItems["+ i +"].ItemId");
-
-				items_successItems.Add(successItem);
-			}
-			items.SuccessItems = items_successItems;
 
 			List<EditPlaylistResponse.EditPlaylist_Items.EditPlaylist_FailedItem> items_failedItems = new List<EditPlaylistResponse.EditPlaylist_Items.EditPlaylist_FailedItem>();
 			for (int i = 0; i < _ctx.Length("EditPlaylist.Items.FailedItems.Length"); i++) {
 				EditPlaylistResponse.EditPlaylist_Items.EditPlaylist_FailedItem failedItem = new EditPlaylistResponse.EditPlaylist_Items.EditPlaylist_FailedItem();
-				failedItem.ItemName = _ctx.StringValue("EditPlaylist.Items.FailedItems["+ i +"].ItemName");
 				failedItem.ItemId = _ctx.StringValue("EditPlaylist.Items.FailedItems["+ i +"].ItemId");
+				failedItem.ItemName = _ctx.StringValue("EditPlaylist.Items.FailedItems["+ i +"].ItemName");
 
 				items_failedItems.Add(failedItem);
 			}
 			items.FailedItems = items_failedItems;
+
+			List<EditPlaylistResponse.EditPlaylist_Items.EditPlaylist_SuccessItem> items_successItems = new List<EditPlaylistResponse.EditPlaylist_Items.EditPlaylist_SuccessItem>();
+			for (int i = 0; i < _ctx.Length("EditPlaylist.Items.SuccessItems.Length"); i++) {
+				EditPlaylistResponse.EditPlaylist_Items.EditPlaylist_SuccessItem successItem = new EditPlaylistResponse.EditPlaylist_Items.EditPlaylist_SuccessItem();
+				successItem.ItemId = _ctx.StringValue("EditPlaylist.Items.SuccessItems["+ i +"].ItemId");
+				successItem.ItemName = _ctx.StringValue("EditPlaylist.Items.SuccessItems["+ i +"].ItemName");
+
+				items_successItems.Add(successItem);
+			}
+			items.SuccessItems = items_successItems;
 			editPlaylistResponse.Items = items;
         
 			return editPlaylistResponse;

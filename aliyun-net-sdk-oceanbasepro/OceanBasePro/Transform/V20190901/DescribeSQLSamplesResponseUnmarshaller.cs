@@ -56,8 +56,8 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 				dataItem.RpcCount = _ctx.DoubleValue("DescribeSQLSamples.Data["+ i +"].RpcCount");
 				dataItem.PlanType = _ctx.StringValue("DescribeSQLSamples.Data["+ i +"].PlanType");
 				dataItem.Inner = _ctx.BooleanValue("DescribeSQLSamples.Data["+ i +"].Inner");
-				dataItem.ExecutorRpc = _ctx.DoubleValue("DescribeSQLSamples.Data["+ i +"].ExecutorRpc");
-				dataItem.HitPlan = _ctx.DoubleValue("DescribeSQLSamples.Data["+ i +"].HitPlan");
+				dataItem.ExecutorRpc = _ctx.BooleanValue("DescribeSQLSamples.Data["+ i +"].ExecutorRpc");
+				dataItem.HitPlan = _ctx.BooleanValue("DescribeSQLSamples.Data["+ i +"].HitPlan");
 				dataItem.ElapsedTime = _ctx.DoubleValue("DescribeSQLSamples.Data["+ i +"].ElapsedTime");
 				dataItem.CpuTime = _ctx.DoubleValue("DescribeSQLSamples.Data["+ i +"].CpuTime");
 				dataItem.NetTime = _ctx.DoubleValue("DescribeSQLSamples.Data["+ i +"].NetTime");
@@ -76,7 +76,7 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 				dataItem.BlockIndexCacheHit = _ctx.DoubleValue("DescribeSQLSamples.Data["+ i +"].BlockIndexCacheHit");
 				dataItem.DiskReads = _ctx.DoubleValue("DescribeSQLSamples.Data["+ i +"].DiskReads");
 				dataItem.RetryCount = _ctx.DoubleValue("DescribeSQLSamples.Data["+ i +"].RetryCount");
-				dataItem.TableScan = _ctx.DoubleValue("DescribeSQLSamples.Data["+ i +"].TableScan");
+				dataItem.TableScan = _ctx.BooleanValue("DescribeSQLSamples.Data["+ i +"].TableScan");
 				dataItem.ConsistencyLevel = _ctx.StringValue("DescribeSQLSamples.Data["+ i +"].ConsistencyLevel");
 				dataItem.MemstoreReadRows = _ctx.DoubleValue("DescribeSQLSamples.Data["+ i +"].MemstoreReadRows");
 				dataItem.ExpectedWorkerCount = _ctx.DoubleValue("DescribeSQLSamples.Data["+ i +"].ExpectedWorkerCount");
@@ -87,6 +87,7 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 				dataItem.ObDbId = _ctx.DoubleValue("DescribeSQLSamples.Data["+ i +"].ObDbId");
 				dataItem.Statement = _ctx.StringValue("DescribeSQLSamples.Data["+ i +"].Statement");
 				dataItem.TransHash = _ctx.StringValue("DescribeSQLSamples.Data["+ i +"].TransHash");
+				dataItem.FullSqlText = _ctx.StringValue("DescribeSQLSamples.Data["+ i +"].FullSqlText");
 
 				describeSQLSamplesResponse_data.Add(dataItem);
 			}

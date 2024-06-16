@@ -34,8 +34,10 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeMaskingRulesResponse.RequestId = _ctx.StringValue("DescribeMaskingRules.RequestId");
 			describeMaskingRulesResponse.Message = _ctx.StringValue("DescribeMaskingRules.Message");
 			describeMaskingRulesResponse.Success = _ctx.BooleanValue("DescribeMaskingRules.Success");
+			describeMaskingRulesResponse.DBClusterId = _ctx.StringValue("DescribeMaskingRules.DBClusterId");
 
 			DescribeMaskingRulesResponse.DescribeMaskingRules_Data data = new DescribeMaskingRulesResponse.DescribeMaskingRules_Data();
+			data.RuleVersion = _ctx.StringValue("DescribeMaskingRules.Data.RuleVersion");
 
 			List<string> data_ruleList = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeMaskingRules.Data.RuleList.Length"); i++) {

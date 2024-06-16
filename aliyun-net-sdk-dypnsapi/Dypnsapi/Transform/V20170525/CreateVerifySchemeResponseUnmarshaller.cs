@@ -31,9 +31,11 @@ namespace Aliyun.Acs.Dypnsapi.Transform.V20170525
 			CreateVerifySchemeResponse createVerifySchemeResponse = new CreateVerifySchemeResponse();
 
 			createVerifySchemeResponse.HttpResponse = _ctx.HttpResponse;
-			createVerifySchemeResponse.Code = _ctx.StringValue("CreateVerifyScheme.Code");
 			createVerifySchemeResponse.Message = _ctx.StringValue("CreateVerifyScheme.Message");
 			createVerifySchemeResponse.RequestId = _ctx.StringValue("CreateVerifyScheme.RequestId");
+			createVerifySchemeResponse.HttpStatusCode = _ctx.LongValue("CreateVerifyScheme.HttpStatusCode");
+			createVerifySchemeResponse.Code = _ctx.StringValue("CreateVerifyScheme.Code");
+			createVerifySchemeResponse.Success = _ctx.BooleanValue("CreateVerifyScheme.Success");
 
 			CreateVerifySchemeResponse.CreateVerifyScheme_GateVerifySchemeDTO gateVerifySchemeDTO = new CreateVerifySchemeResponse.CreateVerifyScheme_GateVerifySchemeDTO();
 			gateVerifySchemeDTO.SchemeCode = _ctx.StringValue("CreateVerifyScheme.GateVerifySchemeDTO.SchemeCode");

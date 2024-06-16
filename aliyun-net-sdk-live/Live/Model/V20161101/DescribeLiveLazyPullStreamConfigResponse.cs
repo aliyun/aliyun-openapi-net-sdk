@@ -74,6 +74,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string pullAuthType;
 
+			private string transcodeLazy;
+
 			[JsonProperty(PropertyName = "AppName")]
 			public string AppName
 			{
@@ -175,6 +177,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					pullAuthType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TranscodeLazy")]
+			public string TranscodeLazy
+			{
+				get
+				{
+					return transcodeLazy;
+				}
+				set	
+				{
+					transcodeLazy = value;
 				}
 			}
 		}

@@ -40,11 +40,26 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			Method = MethodType.POST;
         }
 
+		private string resourceGroupId;
+
 		private string defenseType;
 
 		private string instanceId;
 
 		private string domain;
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
 
 		public string DefenseType
 		{

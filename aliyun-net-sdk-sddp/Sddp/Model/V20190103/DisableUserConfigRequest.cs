@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private string code;
 
+		private int? featureType;
+
 		private string lang;
 
 		public string Code
@@ -54,6 +56,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				code = value;
 				DictionaryUtil.Add(QueryParameters, "Code", value);
+			}
+		}
+
+		public int? FeatureType
+		{
+			get
+			{
+				return featureType;
+			}
+			set	
+			{
+				featureType = value;
+				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
 			}
 		}
 

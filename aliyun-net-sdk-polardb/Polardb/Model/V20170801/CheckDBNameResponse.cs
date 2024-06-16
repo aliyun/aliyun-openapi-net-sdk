@@ -27,6 +27,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string requestId;
 
+		private string dBName;
+
 		public string RequestId
 		{
 			get
@@ -36,6 +38,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string DBName
+		{
+			get
+			{
+				return dBName;
+			}
+			set	
+			{
+				dBName = value;
 			}
 		}
 	}

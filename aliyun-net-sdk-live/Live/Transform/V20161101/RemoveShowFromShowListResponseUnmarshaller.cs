@@ -33,8 +33,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			removeShowFromShowListResponse.HttpResponse = _ctx.HttpResponse;
 			removeShowFromShowListResponse.RequestId = _ctx.StringValue("RemoveShowFromShowList.RequestId");
 			removeShowFromShowListResponse.ShowId = _ctx.StringValue("RemoveShowFromShowList.ShowId");
-			removeShowFromShowListResponse.SuccessfulShowIds = _ctx.StringValue("RemoveShowFromShowList.successfulShowIds");
 			removeShowFromShowListResponse.FailedList = _ctx.StringValue("RemoveShowFromShowList.failedList");
+			removeShowFromShowListResponse.SuccessfulShowIds = _ctx.StringValue("RemoveShowFromShowList.successfulShowIds");
         
 			return removeShowFromShowListResponse;
         }

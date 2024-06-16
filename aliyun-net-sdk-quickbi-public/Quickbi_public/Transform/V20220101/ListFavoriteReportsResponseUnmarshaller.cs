@@ -56,6 +56,7 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 				dataItem.HasEditAuth = _ctx.BooleanValue("ListFavoriteReports.Result.Data["+ i +"].HasEditAuth");
 				dataItem.WorkspaceId = _ctx.StringValue("ListFavoriteReports.Result.Data["+ i +"].WorkspaceId");
 				dataItem.WorkspaceName = _ctx.StringValue("ListFavoriteReports.Result.Data["+ i +"].WorkspaceName");
+				dataItem.FavoriteDate = _ctx.StringValue("ListFavoriteReports.Result.Data["+ i +"].FavoriteDate");
 
 				result_data.Add(dataItem);
 			}

@@ -224,6 +224,12 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string bpeEnabled;
 
+			private string ioAccelerationEnabled;
+
+			private string pGBouncerEnabled;
+
+			private bool? coldDataEnabled;
+
 			private List<DescribeDBInstanceAttribute_SlaveZone> slaveZones;
 
 			private List<DescribeDBInstanceAttribute_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
@@ -1315,6 +1321,45 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "IoAccelerationEnabled")]
+			public string IoAccelerationEnabled
+			{
+				get
+				{
+					return ioAccelerationEnabled;
+				}
+				set	
+				{
+					ioAccelerationEnabled = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PGBouncerEnabled")]
+			public string PGBouncerEnabled
+			{
+				get
+				{
+					return pGBouncerEnabled;
+				}
+				set	
+				{
+					pGBouncerEnabled = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ColdDataEnabled")]
+			public bool? ColdDataEnabled
+			{
+				get
+				{
+					return coldDataEnabled;
+				}
+				set	
+				{
+					coldDataEnabled = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "SlaveZones")]
 			public List<DescribeDBInstanceAttribute_SlaveZone> SlaveZones
 			{
@@ -1444,6 +1489,14 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 				private string classCode;
 
+				private string classType;
+
+				private string cpu;
+
+				private string memory;
+
+				private string status;
+
 				[JsonProperty(PropertyName = "NodeRegionId")]
 				public string NodeRegionId
 				{
@@ -1506,6 +1559,58 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					set	
 					{
 						classCode = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "ClassType")]
+				public string ClassType
+				{
+					get
+					{
+						return classType;
+					}
+					set	
+					{
+						classType = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Cpu")]
+				public string Cpu
+				{
+					get
+					{
+						return cpu;
+					}
+					set	
+					{
+						cpu = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Memory")]
+				public string Memory
+				{
+					get
+					{
+						return memory;
+					}
+					set	
+					{
+						memory = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Status")]
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
 					}
 				}
 			}

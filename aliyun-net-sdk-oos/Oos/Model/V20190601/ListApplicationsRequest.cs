@@ -51,6 +51,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private int? maxResults;
 
+		private string applicationType;
+
 		[JsonProperty(PropertyName = "NextToken")]
 		public string NextToken
 		{
@@ -118,6 +120,20 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				maxResults = value;
 				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "ApplicationType")]
+		public string ApplicationType
+		{
+			get
+			{
+				return applicationType;
+			}
+			set	
+			{
+				applicationType = value;
+				DictionaryUtil.Add(QueryParameters, "ApplicationType", value);
 			}
 		}
 

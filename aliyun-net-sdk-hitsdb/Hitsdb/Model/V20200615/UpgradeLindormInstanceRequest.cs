@@ -42,9 +42,27 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 
 		private long? resourceOwnerId;
 
-		private int? phoenixCoreNum;
+		private string logSpec;
 
-		private string phoenixCoreSpec;
+		private string securityToken;
+
+		private int? tsdbNum;
+
+		private int? solrNum;
+
+		private long? ownerId;
+
+		private int? lindormNum;
+
+		private int? ltsCoreNum;
+
+		private string instanceId;
+
+		private int? streamNum;
+
+		private int? logSingleStorage;
+
+		private string zoneId;
 
 		private string upgradeType;
 
@@ -52,15 +70,7 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 
 		private string filestoreSpec;
 
-		private string logSpec;
-
-		private string securityToken;
-
-		private int? tsdbNum;
-
 		private string lindormSpec;
-
-		private int? solrNum;
 
 		private int? coldStorage;
 
@@ -76,21 +86,11 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 
 		private int? filestoreNum;
 
-		private long? ownerId;
-
-		private int? lindormNum;
-
-		private int? ltsCoreNum;
-
-		private string instanceId;
+		private string streamSpec;
 
 		private string ltsCoreSpec;
 
 		private int? clusterStorage;
-
-		private int? logSingleStorage;
-
-		private string zoneId;
 
 		public long? ResourceOwnerId
 		{
@@ -102,71 +102,6 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public int? PhoenixCoreNum
-		{
-			get
-			{
-				return phoenixCoreNum;
-			}
-			set	
-			{
-				phoenixCoreNum = value;
-				DictionaryUtil.Add(QueryParameters, "PhoenixCoreNum", value.ToString());
-			}
-		}
-
-		public string PhoenixCoreSpec
-		{
-			get
-			{
-				return phoenixCoreSpec;
-			}
-			set	
-			{
-				phoenixCoreSpec = value;
-				DictionaryUtil.Add(QueryParameters, "PhoenixCoreSpec", value);
-			}
-		}
-
-		public string UpgradeType
-		{
-			get
-			{
-				return upgradeType;
-			}
-			set	
-			{
-				upgradeType = value;
-				DictionaryUtil.Add(QueryParameters, "UpgradeType", value);
-			}
-		}
-
-		public string TsdbSpec
-		{
-			get
-			{
-				return tsdbSpec;
-			}
-			set	
-			{
-				tsdbSpec = value;
-				DictionaryUtil.Add(QueryParameters, "TsdbSpec", value);
-			}
-		}
-
-		public string FilestoreSpec
-		{
-			get
-			{
-				return filestoreSpec;
-			}
-			set	
-			{
-				filestoreSpec = value;
-				DictionaryUtil.Add(QueryParameters, "FilestoreSpec", value);
 			}
 		}
 
@@ -209,19 +144,6 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			}
 		}
 
-		public string LindormSpec
-		{
-			get
-			{
-				return lindormSpec;
-			}
-			set	
-			{
-				lindormSpec = value;
-				DictionaryUtil.Add(QueryParameters, "LindormSpec", value);
-			}
-		}
-
 		public int? SolrNum
 		{
 			get
@@ -232,6 +154,149 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			{
 				solrNum = value;
 				DictionaryUtil.Add(QueryParameters, "SolrNum", value.ToString());
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public int? LindormNum
+		{
+			get
+			{
+				return lindormNum;
+			}
+			set	
+			{
+				lindormNum = value;
+				DictionaryUtil.Add(QueryParameters, "LindormNum", value.ToString());
+			}
+		}
+
+		public int? LtsCoreNum
+		{
+			get
+			{
+				return ltsCoreNum;
+			}
+			set	
+			{
+				ltsCoreNum = value;
+				DictionaryUtil.Add(QueryParameters, "LtsCoreNum", value.ToString());
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public int? StreamNum
+		{
+			get
+			{
+				return streamNum;
+			}
+			set	
+			{
+				streamNum = value;
+				DictionaryUtil.Add(QueryParameters, "StreamNum", value.ToString());
+			}
+		}
+
+		public int? LogSingleStorage
+		{
+			get
+			{
+				return logSingleStorage;
+			}
+			set	
+			{
+				logSingleStorage = value;
+				DictionaryUtil.Add(QueryParameters, "LogSingleStorage", value.ToString());
+			}
+		}
+
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public string UpgradeType
+		{
+			get
+			{
+				return upgradeType;
+			}
+			set	
+			{
+				upgradeType = value;
+				DictionaryUtil.Add(QueryParameters, "UpgradeType", value);
+			}
+		}
+
+		public string TsdbSpec
+		{
+			get
+			{
+				return tsdbSpec;
+			}
+			set	
+			{
+				tsdbSpec = value;
+				DictionaryUtil.Add(QueryParameters, "TsdbSpec", value);
+			}
+		}
+
+		public string FilestoreSpec
+		{
+			get
+			{
+				return filestoreSpec;
+			}
+			set	
+			{
+				filestoreSpec = value;
+				DictionaryUtil.Add(QueryParameters, "FilestoreSpec", value);
+			}
+		}
+
+		public string LindormSpec
+		{
+			get
+			{
+				return lindormSpec;
+			}
+			set	
+			{
+				lindormSpec = value;
+				DictionaryUtil.Add(QueryParameters, "LindormSpec", value);
 			}
 		}
 
@@ -326,55 +391,16 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			}
 		}
 
-		public long? OwnerId
+		public string StreamSpec
 		{
 			get
 			{
-				return ownerId;
+				return streamSpec;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public int? LindormNum
-		{
-			get
-			{
-				return lindormNum;
-			}
-			set	
-			{
-				lindormNum = value;
-				DictionaryUtil.Add(QueryParameters, "LindormNum", value.ToString());
-			}
-		}
-
-		public int? LtsCoreNum
-		{
-			get
-			{
-				return ltsCoreNum;
-			}
-			set	
-			{
-				ltsCoreNum = value;
-				DictionaryUtil.Add(QueryParameters, "LtsCoreNum", value.ToString());
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				streamSpec = value;
+				DictionaryUtil.Add(QueryParameters, "StreamSpec", value);
 			}
 		}
 
@@ -401,32 +427,6 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			{
 				clusterStorage = value;
 				DictionaryUtil.Add(QueryParameters, "ClusterStorage", value.ToString());
-			}
-		}
-
-		public int? LogSingleStorage
-		{
-			get
-			{
-				return logSingleStorage;
-			}
-			set	
-			{
-				logSingleStorage = value;
-				DictionaryUtil.Add(QueryParameters, "LogSingleStorage", value.ToString());
-			}
-		}
-
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 

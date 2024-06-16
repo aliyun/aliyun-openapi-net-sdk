@@ -27,9 +27,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string endTime;
 
-		private string startTime;
-
 		private string requestId;
+
+		private string startTime;
 
 		private List<DescribeLiveProducerUsageData_BillProducerDataItem> billProducerData;
 
@@ -46,19 +46,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "StartTime")]
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
@@ -69,6 +56,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
 			}
 		}
 
@@ -88,64 +88,38 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveProducerUsageData_BillProducerDataItem
 		{
 
-			private long? tranSdDuration;
-
-			private string type;
-
-			private long? tranLdDuration;
+			private string domainName;
 
 			private string instance;
 
-			private long? tranHdDuration;
+			private long? outputHdDuration;
+
+			private long? outputLdDuration;
+
+			private long? outputSdDuration;
 
 			private string region;
 
 			private string timeStamp;
 
-			private long? outputHdDuration;
+			private long? tranHdDuration;
 
-			private long? outputSdDuration;
+			private long? tranLdDuration;
 
-			private string domainName;
+			private long? tranSdDuration;
 
-			private long? outputLdDuration;
+			private string type;
 
-			[JsonProperty(PropertyName = "TranSdDuration")]
-			public long? TranSdDuration
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
 			{
 				get
 				{
-					return tranSdDuration;
+					return domainName;
 				}
 				set	
 				{
-					tranSdDuration = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Type")]
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "TranLdDuration")]
-			public long? TranLdDuration
-			{
-				get
-				{
-					return tranLdDuration;
-				}
-				set	
-				{
-					tranLdDuration = value;
+					domainName = value;
 				}
 			}
 
@@ -162,16 +136,42 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "TranHdDuration")]
-			public long? TranHdDuration
+			[JsonProperty(PropertyName = "OutputHdDuration")]
+			public long? OutputHdDuration
 			{
 				get
 				{
-					return tranHdDuration;
+					return outputHdDuration;
 				}
 				set	
 				{
-					tranHdDuration = value;
+					outputHdDuration = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OutputLdDuration")]
+			public long? OutputLdDuration
+			{
+				get
+				{
+					return outputLdDuration;
+				}
+				set	
+				{
+					outputLdDuration = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OutputSdDuration")]
+			public long? OutputSdDuration
+			{
+				get
+				{
+					return outputSdDuration;
+				}
+				set	
+				{
+					outputSdDuration = value;
 				}
 			}
 
@@ -201,55 +201,55 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "OutputHdDuration")]
-			public long? OutputHdDuration
+			[JsonProperty(PropertyName = "TranHdDuration")]
+			public long? TranHdDuration
 			{
 				get
 				{
-					return outputHdDuration;
+					return tranHdDuration;
 				}
 				set	
 				{
-					outputHdDuration = value;
+					tranHdDuration = value;
 				}
 			}
 
-			[JsonProperty(PropertyName = "OutputSdDuration")]
-			public long? OutputSdDuration
+			[JsonProperty(PropertyName = "TranLdDuration")]
+			public long? TranLdDuration
 			{
 				get
 				{
-					return outputSdDuration;
+					return tranLdDuration;
 				}
 				set	
 				{
-					outputSdDuration = value;
+					tranLdDuration = value;
 				}
 			}
 
-			[JsonProperty(PropertyName = "DomainName")]
-			public string DomainName
+			[JsonProperty(PropertyName = "TranSdDuration")]
+			public long? TranSdDuration
 			{
 				get
 				{
-					return domainName;
+					return tranSdDuration;
 				}
 				set	
 				{
-					domainName = value;
+					tranSdDuration = value;
 				}
 			}
 
-			[JsonProperty(PropertyName = "OutputLdDuration")]
-			public long? OutputLdDuration
+			[JsonProperty(PropertyName = "Type")]
+			public string Type
 			{
 				get
 				{
-					return outputLdDuration;
+					return type;
 				}
 				set	
 				{
-					outputLdDuration = value;
+					type = value;
 				}
 			}
 		}

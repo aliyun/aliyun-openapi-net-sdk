@@ -42,6 +42,8 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 
 		private string dBInstanceName;
 
+		private string resourceGroupId;
+
 		public string DBInstanceName
 		{
 			get
@@ -52,6 +54,19 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			{
 				dBInstanceName = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceName", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

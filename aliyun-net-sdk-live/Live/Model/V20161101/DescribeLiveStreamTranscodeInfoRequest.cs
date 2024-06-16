@@ -41,9 +41,25 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
+		private string appName;
+
 		private long? ownerId;
 
 		private string domainTranscodeName;
+
+		[JsonProperty(PropertyName = "AppName")]
+		public string AppName
+		{
+			get
+			{
+				return appName;
+			}
+			set	
+			{
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
+			}
+		}
 
 		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.amqp_open.Model.V20191212
@@ -56,23 +56,11 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 		public class ListExchanges_Data
 		{
 
-			private string nextToken;
-
 			private int? maxResults;
 
-			private List<ListExchanges_ExchangeVO> exchanges;
+			private string nextToken;
 
-			public string NextToken
-			{
-				get
-				{
-					return nextToken;
-				}
-				set	
-				{
-					nextToken = value;
-				}
-			}
+			private List<ListExchanges_ExchangeVO> exchanges;
 
 			public int? MaxResults
 			{
@@ -83,6 +71,18 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 				set	
 				{
 					maxResults = value;
+				}
+			}
+
+			public string NextToken
+			{
+				get
+				{
+					return nextToken;
+				}
+				set	
+				{
+					nextToken = value;
 				}
 			}
 
@@ -101,53 +101,17 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 			public class ListExchanges_ExchangeVO
 			{
 
-				private string name;
-
-				private string vHostName;
-
-				private string exchangeType;
-
 				private bool? autoDeleteState;
-
-				private string attributes;
 
 				private long? createTime;
 
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
+				private string attributes;
 
-				public string VHostName
-				{
-					get
-					{
-						return vHostName;
-					}
-					set	
-					{
-						vHostName = value;
-					}
-				}
+				private string vHostName;
 
-				public string ExchangeType
-				{
-					get
-					{
-						return exchangeType;
-					}
-					set	
-					{
-						exchangeType = value;
-					}
-				}
+				private string name;
+
+				private string exchangeType;
 
 				public bool? AutoDeleteState
 				{
@@ -158,6 +122,18 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 					set	
 					{
 						autoDeleteState = value;
+					}
+				}
+
+				public long? CreateTime
+				{
+					get
+					{
+						return createTime;
+					}
+					set	
+					{
+						createTime = value;
 					}
 				}
 
@@ -173,15 +149,39 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 					}
 				}
 
-				public long? CreateTime
+				public string VHostName
 				{
 					get
 					{
-						return createTime;
+						return vHostName;
 					}
 					set	
 					{
-						createTime = value;
+						vHostName = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public string ExchangeType
+				{
+					get
+					{
+						return exchangeType;
+					}
+					set	
+					{
+						exchangeType = value;
 					}
 				}
 			}

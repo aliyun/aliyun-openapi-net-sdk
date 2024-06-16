@@ -31,9 +31,9 @@ namespace Aliyun.Acs.polardbx.Transform.V20200202
 			CreateDBResponse createDBResponse = new CreateDBResponse();
 
 			createDBResponse.HttpResponse = _ctx.HttpResponse;
+			createDBResponse.Message = _ctx.StringValue("CreateDB.Message");
 			createDBResponse.RequestId = _ctx.StringValue("CreateDB.RequestId");
 			createDBResponse.Success = _ctx.BooleanValue("CreateDB.Success");
-			createDBResponse.Message = _ctx.StringValue("CreateDB.Message");
         
 			return createDBResponse;
         }

@@ -126,6 +126,8 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 
 			private List<string> applicableRange;
 
+			private ListQuotaApplicationTemplates_Period period;
+
 			public string Id
 			{
 				get
@@ -291,6 +293,50 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					applicableRange = value;
+				}
+			}
+
+			public ListQuotaApplicationTemplates_Period Period
+			{
+				get
+				{
+					return period;
+				}
+				set	
+				{
+					period = value;
+				}
+			}
+
+			public class ListQuotaApplicationTemplates_Period
+			{
+
+				private int? periodValue;
+
+				private string periodUnit;
+
+				public int? PeriodValue
+				{
+					get
+					{
+						return periodValue;
+					}
+					set	
+					{
+						periodValue = value;
+					}
+				}
+
+				public string PeriodUnit
+				{
+					get
+					{
+						return periodUnit;
+					}
+					set	
+					{
+						periodUnit = value;
+					}
 				}
 			}
 		}

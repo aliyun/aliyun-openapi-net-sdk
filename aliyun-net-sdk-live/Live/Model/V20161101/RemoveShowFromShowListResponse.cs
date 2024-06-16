@@ -29,9 +29,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string showId;
 
-		private string successfulShowIds;
-
 		private string failedList;
+
+		private string successfulShowIds;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -59,19 +59,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "SuccessfulShowIds")]
-		public string SuccessfulShowIds
-		{
-			get
-			{
-				return successfulShowIds;
-			}
-			set	
-			{
-				successfulShowIds = value;
-			}
-		}
-
 		[JsonProperty(PropertyName = "FailedList")]
 		public string FailedList
 		{
@@ -82,6 +69,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				failedList = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "SuccessfulShowIds")]
+		public string SuccessfulShowIds
+		{
+			get
+			{
+				return successfulShowIds;
+			}
+			set	
+			{
+				successfulShowIds = value;
 			}
 		}
 	}

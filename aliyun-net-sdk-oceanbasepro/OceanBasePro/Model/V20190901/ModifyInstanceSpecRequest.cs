@@ -43,7 +43,11 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 		private string instanceClass;
 
+		private bool? dryRun;
+
 		private long? diskSize;
+
+		private string diskType;
 
 		private string instanceId;
 
@@ -61,6 +65,20 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			}
 		}
 
+		[JsonProperty(PropertyName = "DryRun")]
+		public bool? DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(BodyParameters, "DryRun", value.ToString());
+			}
+		}
+
 		[JsonProperty(PropertyName = "DiskSize")]
 		public long? DiskSize
 		{
@@ -72,6 +90,20 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			{
 				diskSize = value;
 				DictionaryUtil.Add(BodyParameters, "DiskSize", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "DiskType")]
+		public string DiskType
+		{
+			get
+			{
+				return diskType;
+			}
+			set	
+			{
+				diskType = value;
+				DictionaryUtil.Add(BodyParameters, "DiskType", value);
 			}
 		}
 

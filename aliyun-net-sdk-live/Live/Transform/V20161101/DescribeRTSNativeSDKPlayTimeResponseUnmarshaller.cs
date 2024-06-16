@@ -31,17 +31,17 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeRTSNativeSDKPlayTimeResponse describeRTSNativeSDKPlayTimeResponse = new DescribeRTSNativeSDKPlayTimeResponse();
 
 			describeRTSNativeSDKPlayTimeResponse.HttpResponse = _ctx.HttpResponse;
-			describeRTSNativeSDKPlayTimeResponse.RequestId = _ctx.StringValue("DescribeRTSNativeSDKPlayTime.RequestId");
 			describeRTSNativeSDKPlayTimeResponse.DataInterval = _ctx.StringValue("DescribeRTSNativeSDKPlayTime.DataInterval");
-			describeRTSNativeSDKPlayTimeResponse.StartTime = _ctx.StringValue("DescribeRTSNativeSDKPlayTime.StartTime");
 			describeRTSNativeSDKPlayTimeResponse.EndTime = _ctx.StringValue("DescribeRTSNativeSDKPlayTime.EndTime");
+			describeRTSNativeSDKPlayTimeResponse.RequestId = _ctx.StringValue("DescribeRTSNativeSDKPlayTime.RequestId");
+			describeRTSNativeSDKPlayTimeResponse.StartTime = _ctx.StringValue("DescribeRTSNativeSDKPlayTime.StartTime");
 
 			List<DescribeRTSNativeSDKPlayTimeResponse.DescribeRTSNativeSDKPlayTime_Data> describeRTSNativeSDKPlayTimeResponse_playTimeData = new List<DescribeRTSNativeSDKPlayTimeResponse.DescribeRTSNativeSDKPlayTime_Data>();
 			for (int i = 0; i < _ctx.Length("DescribeRTSNativeSDKPlayTime.PlayTimeData.Length"); i++) {
 				DescribeRTSNativeSDKPlayTimeResponse.DescribeRTSNativeSDKPlayTime_Data data = new DescribeRTSNativeSDKPlayTimeResponse.DescribeRTSNativeSDKPlayTime_Data();
-				data.TimeStamp = _ctx.StringValue("DescribeRTSNativeSDKPlayTime.PlayTimeData["+ i +"].TimeStamp");
 				data.PlayTime = _ctx.StringValue("DescribeRTSNativeSDKPlayTime.PlayTimeData["+ i +"].PlayTime");
 				data.StallTime = _ctx.StringValue("DescribeRTSNativeSDKPlayTime.PlayTimeData["+ i +"].StallTime");
+				data.TimeStamp = _ctx.StringValue("DescribeRTSNativeSDKPlayTime.PlayTimeData["+ i +"].TimeStamp");
 
 				describeRTSNativeSDKPlayTimeResponse_playTimeData.Add(data);
 			}

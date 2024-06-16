@@ -42,6 +42,8 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 
 		private long? resourceOwnerId;
 
+		private bool? immediately;
+
 		private string securityToken;
 
 		private string resourceOwnerAccount;
@@ -62,6 +64,19 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public bool? Immediately
+		{
+			get
+			{
+				return immediately;
+			}
+			set	
+			{
+				immediately = value;
+				DictionaryUtil.Add(QueryParameters, "Immediately", value.ToString());
 			}
 		}
 

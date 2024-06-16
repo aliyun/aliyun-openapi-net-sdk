@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string engineVersion;
 
+		private string resourceGroupId;
+
 		private string engine;
 
 		private string restoreTime;
@@ -113,6 +115,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				engineVersion = value;
 				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

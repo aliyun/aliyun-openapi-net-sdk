@@ -42,7 +42,13 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 
 		private string referenceURL;
 
+		private string watermarkType;
+
+		private bool? enhance;
+
 		private string videoURL;
+
+		private bool? addWatermark;
 
 		public string ReferenceURL
 		{
@@ -57,6 +63,32 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			}
 		}
 
+		public string WatermarkType
+		{
+			get
+			{
+				return watermarkType;
+			}
+			set	
+			{
+				watermarkType = value;
+				DictionaryUtil.Add(BodyParameters, "WatermarkType", value);
+			}
+		}
+
+		public bool? Enhance
+		{
+			get
+			{
+				return enhance;
+			}
+			set	
+			{
+				enhance = value;
+				DictionaryUtil.Add(BodyParameters, "Enhance", value.ToString());
+			}
+		}
+
 		public string VideoURL
 		{
 			get
@@ -67,6 +99,19 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			{
 				videoURL = value;
 				DictionaryUtil.Add(BodyParameters, "VideoURL", value);
+			}
+		}
+
+		public bool? AddWatermark
+		{
+			get
+			{
+				return addWatermark;
+			}
+			set	
+			{
+				addWatermark = value;
+				DictionaryUtil.Add(BodyParameters, "AddWatermark", value.ToString());
 			}
 		}
 

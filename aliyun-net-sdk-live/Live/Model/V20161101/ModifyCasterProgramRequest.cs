@@ -41,14 +41,14 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private List<string> episodes = new List<string>(){ };
+		private List<Episode> episodes = new List<Episode>(){ };
 
 		private string casterId;
 
 		private long? ownerId;
 
 		[JsonProperty(PropertyName = "Episode")]
-		public List<string> Episodes
+		public List<Episode> Episodes
 		{
 			get
 			{
@@ -105,21 +105,34 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class Episode
 		{
 
+			private List<string> componentIds = new List<string>(){ };
+
 			private string endTime;
 
-			private string startTime;
+			private string episodeId;
 
 			private string episodeName;
 
 			private string episodeType;
 
-			private string episodeId;
-
 			private string resourceId;
 
-			private List<string> componentIds = new List<string>(){ };
+			private string startTime;
 
 			private string switchType;
+
+			[JsonProperty(PropertyName = "ComponentId")]
+			public List<string> ComponentIds
+			{
+				get
+				{
+					return componentIds;
+				}
+				set	
+				{
+					componentIds = value;
+				}
+			}
 
 			[JsonProperty(PropertyName = "EndTime")]
 			public string EndTime
@@ -134,16 +147,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "StartTime")]
-			public string StartTime
+			[JsonProperty(PropertyName = "EpisodeId")]
+			public string EpisodeId
 			{
 				get
 				{
-					return startTime;
+					return episodeId;
 				}
 				set	
 				{
-					startTime = value;
+					episodeId = value;
 				}
 			}
 
@@ -173,19 +186,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "EpisodeId")]
-			public string EpisodeId
-			{
-				get
-				{
-					return episodeId;
-				}
-				set	
-				{
-					episodeId = value;
-				}
-			}
-
 			[JsonProperty(PropertyName = "ResourceId")]
 			public string ResourceId
 			{
@@ -199,16 +199,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "ComponentId")]
-			public List<string> ComponentIds
+			[JsonProperty(PropertyName = "StartTime")]
+			public string StartTime
 			{
 				get
 				{
-					return componentIds;
+					return startTime;
 				}
 				set	
 				{
-					componentIds = value;
+					startTime = value;
 				}
 			}
 

@@ -31,9 +31,9 @@ namespace Aliyun.Acs.polardbx.Transform.V20200202
 			DescribeSecurityIpsResponse describeSecurityIpsResponse = new DescribeSecurityIpsResponse();
 
 			describeSecurityIpsResponse.HttpResponse = _ctx.HttpResponse;
+			describeSecurityIpsResponse.Message = _ctx.StringValue("DescribeSecurityIps.Message");
 			describeSecurityIpsResponse.RequestId = _ctx.StringValue("DescribeSecurityIps.RequestId");
 			describeSecurityIpsResponse.Success = _ctx.BooleanValue("DescribeSecurityIps.Success");
-			describeSecurityIpsResponse.Message = _ctx.StringValue("DescribeSecurityIps.Message");
 
 			DescribeSecurityIpsResponse.DescribeSecurityIps_Data data = new DescribeSecurityIpsResponse.DescribeSecurityIps_Data();
 			data.DBInstanceName = _ctx.StringValue("DescribeSecurityIps.Data.DBInstanceName");

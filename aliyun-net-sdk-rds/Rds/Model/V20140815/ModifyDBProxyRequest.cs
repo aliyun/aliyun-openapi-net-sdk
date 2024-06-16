@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dBInstanceId;
 
+		private string persistentConnectionStatus;
+
 		private string resourceOwnerAccount;
 
 		private string dBProxyEngineType;
@@ -58,6 +60,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string configDBProxyService;
 
 		private string vSwitchId;
+
+		private string dBProxyInstanceType;
 
 		private string vPCId;
 
@@ -102,6 +106,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "PersistentConnectionStatus")]
+		public string PersistentConnectionStatus
+		{
+			get
+			{
+				return persistentConnectionStatus;
+			}
+			set	
+			{
+				persistentConnectionStatus = value;
+				DictionaryUtil.Add(QueryParameters, "PersistentConnectionStatus", value);
 			}
 		}
 
@@ -186,6 +204,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				vSwitchId = value;
 				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBProxyInstanceType")]
+		public string DBProxyInstanceType
+		{
+			get
+			{
+				return dBProxyInstanceType;
+			}
+			set	
+			{
+				dBProxyInstanceType = value;
+				DictionaryUtil.Add(QueryParameters, "DBProxyInstanceType", value);
 			}
 		}
 

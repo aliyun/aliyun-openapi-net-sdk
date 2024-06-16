@@ -41,11 +41,43 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			Method = MethodType.POST;
         }
 
-		private string instanceId;
-
 		private string tenantId;
 
+		private string vSwitchId;
+
+		private string instanceId;
+
+		private string vpcId;
+
 		private string zoneId;
+
+		[JsonProperty(PropertyName = "TenantId")]
+		public string TenantId
+		{
+			get
+			{
+				return tenantId;
+			}
+			set	
+			{
+				tenantId = value;
+				DictionaryUtil.Add(BodyParameters, "TenantId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "VSwitchId")]
+		public string VSwitchId
+		{
+			get
+			{
+				return vSwitchId;
+			}
+			set	
+			{
+				vSwitchId = value;
+				DictionaryUtil.Add(BodyParameters, "VSwitchId", value);
+			}
+		}
 
 		[JsonProperty(PropertyName = "InstanceId")]
 		public string InstanceId
@@ -61,17 +93,17 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			}
 		}
 
-		[JsonProperty(PropertyName = "TenantId")]
-		public string TenantId
+		[JsonProperty(PropertyName = "VpcId")]
+		public string VpcId
 		{
 			get
 			{
-				return tenantId;
+				return vpcId;
 			}
 			set	
 			{
-				tenantId = value;
-				DictionaryUtil.Add(BodyParameters, "TenantId", value);
+				vpcId = value;
+				DictionaryUtil.Add(BodyParameters, "VpcId", value);
 			}
 		}
 

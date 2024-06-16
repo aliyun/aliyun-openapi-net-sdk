@@ -35,7 +35,6 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			batchAddDataForApiSourceResponse.Success = _ctx.BooleanValue("BatchAddDataForApiSource.Success");
 			batchAddDataForApiSourceResponse.Code = _ctx.StringValue("BatchAddDataForApiSource.Code");
 			batchAddDataForApiSourceResponse.ErrorMessage = _ctx.StringValue("BatchAddDataForApiSource.ErrorMessage");
-			batchAddDataForApiSourceResponse.Data = _ctx.StringValue("BatchAddDataForApiSource.Data");
         
 			return batchAddDataForApiSourceResponse;
         }

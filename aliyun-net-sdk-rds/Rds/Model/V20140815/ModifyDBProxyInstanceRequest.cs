@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
+		private string vSwitchIds;
+
 		private string effectiveTime;
 
 		private string effectiveSpecificTime;
@@ -70,6 +72,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "VSwitchIds")]
+		public string VSwitchIds
+		{
+			get
+			{
+				return vSwitchIds;
+			}
+			set	
+			{
+				vSwitchIds = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchIds", value);
 			}
 		}
 

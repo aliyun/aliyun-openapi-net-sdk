@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.polardb;
 using Aliyun.Acs.polardb.Transform;
 using Aliyun.Acs.polardb.Transform.V20170801;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
     public class DescribeDBNodePerformanceRequest : RpcAcsRequest<DescribeDBNodePerformanceResponse>
     {
         public DescribeDBNodePerformanceRequest()
-            : base("polardb", "2017-08-01", "DescribeDBNodePerformance")
+            : base("polardb", "2017-08-01", "DescribeDBNodePerformance", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,11 +44,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string startTime;
 
+		private string type;
+
 		private string key;
 
 		private string dBClusterId;
 
 		private string endTime;
+
+		private string interval;
 
 		public string DBNodeId
 		{
@@ -74,6 +77,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
 			}
 		}
 
@@ -113,6 +129,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				endTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		public string Interval
+		{
+			get
+			{
+				return interval;
+			}
+			set	
+			{
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value);
 			}
 		}
 

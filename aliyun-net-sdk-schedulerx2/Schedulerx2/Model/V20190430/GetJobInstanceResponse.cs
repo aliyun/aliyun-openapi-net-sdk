@@ -141,6 +141,12 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 				private string workAddr;
 
+				private string parameters;
+
+				private string jobName;
+
+				private string traceId;
+
 				public int? Status
 				{
 					get
@@ -294,6 +300,42 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					set	
 					{
 						workAddr = value;
+					}
+				}
+
+				public string Parameters
+				{
+					get
+					{
+						return parameters;
+					}
+					set	
+					{
+						parameters = value;
+					}
+				}
+
+				public string JobName
+				{
+					get
+					{
+						return jobName;
+					}
+					set	
+					{
+						jobName = value;
+					}
+				}
+
+				public string TraceId
+				{
+					get
+					{
+						return traceId;
+					}
+					set	
+					{
+						traceId = value;
 					}
 				}
 			}

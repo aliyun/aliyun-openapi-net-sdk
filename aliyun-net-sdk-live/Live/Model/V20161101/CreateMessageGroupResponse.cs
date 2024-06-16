@@ -58,22 +58,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class CreateMessageGroup_Result
 		{
 
-			private string groupId;
-
 			private string extension;
 
-			[JsonProperty(PropertyName = "GroupId")]
-			public string GroupId
-			{
-				get
-				{
-					return groupId;
-				}
-				set	
-				{
-					groupId = value;
-				}
-			}
+			private string groupId;
 
 			[JsonProperty(PropertyName = "Extension")]
 			public string Extension
@@ -85,6 +72,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					extension = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "GroupId")]
+			public string GroupId
+			{
+				get
+				{
+					return groupId;
+				}
+				set	
+				{
+					groupId = value;
 				}
 			}
 		}

@@ -37,6 +37,7 @@ namespace Aliyun.Acs.videoenhan.Transform.V20200320
 
 			AddFaceVideoTemplateResponse.AddFaceVideoTemplate_Date date = new AddFaceVideoTemplateResponse.AddFaceVideoTemplate_Date();
 			date.TemplateId = _ctx.StringValue("AddFaceVideoTemplate.Date.TemplateId");
+			date.TransResult = _ctx.StringValue("AddFaceVideoTemplate.Date.TransResult");
 
 			List<AddFaceVideoTemplateResponse.AddFaceVideoTemplate_Date.AddFaceVideoTemplate_FaceInfosItem> date_faceInfos = new List<AddFaceVideoTemplateResponse.AddFaceVideoTemplate_Date.AddFaceVideoTemplate_FaceInfosItem>();
 			for (int i = 0; i < _ctx.Length("AddFaceVideoTemplate.Date.FaceInfos.Length"); i++) {

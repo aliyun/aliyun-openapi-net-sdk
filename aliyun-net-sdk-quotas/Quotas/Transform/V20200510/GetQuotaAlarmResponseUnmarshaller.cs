@@ -46,6 +46,7 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 			quotaAlarm.AlarmId = _ctx.StringValue("GetQuotaAlarm.QuotaAlarm.AlarmId");
 			quotaAlarm.Threshold = _ctx.FloatValue("GetQuotaAlarm.QuotaAlarm.Threshold");
 			quotaAlarm.ProductCode = _ctx.StringValue("GetQuotaAlarm.QuotaAlarm.ProductCode");
+			quotaAlarm.Webhook = _ctx.StringValue("GetQuotaAlarm.QuotaAlarm.Webhook");
 
 			List<string> quotaAlarm_notifyChannels = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetQuotaAlarm.QuotaAlarm.NotifyChannels.Length"); i++) {

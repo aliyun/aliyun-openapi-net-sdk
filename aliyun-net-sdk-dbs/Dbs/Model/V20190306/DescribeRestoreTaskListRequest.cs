@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Dbs;
 using Aliyun.Acs.Dbs.Transform;
 using Aliyun.Acs.Dbs.Transform.V20190306;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
     public class DescribeRestoreTaskListRequest : RpcAcsRequest<DescribeRestoreTaskListResponse>
     {
         public DescribeRestoreTaskListRequest()
-            : base("Dbs", "2019-03-06", "DescribeRestoreTaskList")
+            : base("Dbs", "2019-03-06", "DescribeRestoreTaskList", "cbs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -47,8 +46,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private int? pageNum;
 
-		private string ownerId;
-
 		private long? startTimestamp;
 
 		private long? endTimestamp;
@@ -56,6 +53,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 		private string restoreTaskId;
 
 		private int? pageSize;
+
+		private string ownerId;
 
 		public string ClientToken
 		{
@@ -93,19 +92,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				pageNum = value;
 				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
-			}
-		}
-
-		public string OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
 			}
 		}
 
@@ -158,6 +144,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
 			}
 		}
 

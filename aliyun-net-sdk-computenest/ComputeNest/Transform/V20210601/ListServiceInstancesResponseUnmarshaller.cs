@@ -34,7 +34,7 @@ namespace Aliyun.Acs.ComputeNest.Transform.V20210601
 			listServiceInstancesResponse.NextToken = _ctx.StringValue("ListServiceInstances.NextToken");
 			listServiceInstancesResponse.RequestId = _ctx.StringValue("ListServiceInstances.RequestId");
 			listServiceInstancesResponse.TotalCount = _ctx.LongValue("ListServiceInstances.TotalCount");
-			listServiceInstancesResponse.MaxResults = _ctx.StringValue("ListServiceInstances.MaxResults");
+			listServiceInstancesResponse.MaxResults = _ctx.IntegerValue("ListServiceInstances.MaxResults");
 
 			List<ListServiceInstancesResponse.ListServiceInstances_ServiceInstance> listServiceInstancesResponse_serviceInstances = new List<ListServiceInstancesResponse.ListServiceInstances_ServiceInstance>();
 			for (int i = 0; i < _ctx.Length("ListServiceInstances.ServiceInstances.Length"); i++) {
@@ -60,6 +60,7 @@ namespace Aliyun.Acs.ComputeNest.Transform.V20210601
 				serviceInstance.PayType = _ctx.StringValue("ListServiceInstances.ServiceInstances["+ i +"].PayType");
 				serviceInstance.MarketInstanceId = _ctx.StringValue("ListServiceInstances.ServiceInstances["+ i +"].MarketInstanceId");
 				serviceInstance.ResourceGroupId = _ctx.StringValue("ListServiceInstances.ServiceInstances["+ i +"].ResourceGroupId");
+				serviceInstance.BizStatus = _ctx.StringValue("ListServiceInstances.ServiceInstances["+ i +"].BizStatus");
 
 				ListServiceInstancesResponse.ListServiceInstances_ServiceInstance.ListServiceInstances_Service service = new ListServiceInstancesResponse.ListServiceInstances_ServiceInstance.ListServiceInstances_Service();
 				service.Status = _ctx.StringValue("ListServiceInstances.ServiceInstances["+ i +"].Service.Status");

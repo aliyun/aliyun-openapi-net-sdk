@@ -31,26 +31,26 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveRecordNotifyRecordsResponse describeLiveRecordNotifyRecordsResponse = new DescribeLiveRecordNotifyRecordsResponse();
 
 			describeLiveRecordNotifyRecordsResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveRecordNotifyRecordsResponse.Code = _ctx.IntegerValue("DescribeLiveRecordNotifyRecords.Code");
 			describeLiveRecordNotifyRecordsResponse.Msg = _ctx.StringValue("DescribeLiveRecordNotifyRecords.Msg");
 			describeLiveRecordNotifyRecordsResponse.PageNum = _ctx.IntegerValue("DescribeLiveRecordNotifyRecords.PageNum");
-			describeLiveRecordNotifyRecordsResponse.RequestId = _ctx.StringValue("DescribeLiveRecordNotifyRecords.RequestId");
-			describeLiveRecordNotifyRecordsResponse.Code = _ctx.IntegerValue("DescribeLiveRecordNotifyRecords.Code");
-			describeLiveRecordNotifyRecordsResponse.TotalPage = _ctx.IntegerValue("DescribeLiveRecordNotifyRecords.TotalPage");
 			describeLiveRecordNotifyRecordsResponse.PageSize = _ctx.IntegerValue("DescribeLiveRecordNotifyRecords.PageSize");
+			describeLiveRecordNotifyRecordsResponse.RequestId = _ctx.StringValue("DescribeLiveRecordNotifyRecords.RequestId");
 			describeLiveRecordNotifyRecordsResponse.TotalNum = _ctx.IntegerValue("DescribeLiveRecordNotifyRecords.TotalNum");
+			describeLiveRecordNotifyRecordsResponse.TotalPage = _ctx.IntegerValue("DescribeLiveRecordNotifyRecords.TotalPage");
 
 			List<DescribeLiveRecordNotifyRecordsResponse.DescribeLiveRecordNotifyRecords_Callback> describeLiveRecordNotifyRecordsResponse_callbackList = new List<DescribeLiveRecordNotifyRecordsResponse.DescribeLiveRecordNotifyRecords_Callback>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveRecordNotifyRecords.CallbackList.Length"); i++) {
 				DescribeLiveRecordNotifyRecordsResponse.DescribeLiveRecordNotifyRecords_Callback callback = new DescribeLiveRecordNotifyRecordsResponse.DescribeLiveRecordNotifyRecords_Callback();
 				callback.AppName = _ctx.StringValue("DescribeLiveRecordNotifyRecords.CallbackList["+ i +"].AppName");
-				callback.NotifyType = _ctx.StringValue("DescribeLiveRecordNotifyRecords.CallbackList["+ i +"].NotifyType");
-				callback.NotifyContent = _ctx.StringValue("DescribeLiveRecordNotifyRecords.CallbackList["+ i +"].NotifyContent");
 				callback.Description = _ctx.StringValue("DescribeLiveRecordNotifyRecords.CallbackList["+ i +"].Description");
-				callback.StreamName = _ctx.StringValue("DescribeLiveRecordNotifyRecords.CallbackList["+ i +"].StreamName");
-				callback.NotifyUrl = _ctx.StringValue("DescribeLiveRecordNotifyRecords.CallbackList["+ i +"].NotifyUrl");
+				callback.DomainName = _ctx.StringValue("DescribeLiveRecordNotifyRecords.CallbackList["+ i +"].DomainName");
+				callback.NotifyContent = _ctx.StringValue("DescribeLiveRecordNotifyRecords.CallbackList["+ i +"].NotifyContent");
 				callback.NotifyResult = _ctx.StringValue("DescribeLiveRecordNotifyRecords.CallbackList["+ i +"].NotifyResult");
 				callback.NotifyTime = _ctx.StringValue("DescribeLiveRecordNotifyRecords.CallbackList["+ i +"].NotifyTime");
-				callback.DomainName = _ctx.StringValue("DescribeLiveRecordNotifyRecords.CallbackList["+ i +"].DomainName");
+				callback.NotifyType = _ctx.StringValue("DescribeLiveRecordNotifyRecords.CallbackList["+ i +"].NotifyType");
+				callback.NotifyUrl = _ctx.StringValue("DescribeLiveRecordNotifyRecords.CallbackList["+ i +"].NotifyUrl");
+				callback.StreamName = _ctx.StringValue("DescribeLiveRecordNotifyRecords.CallbackList["+ i +"].StreamName");
 
 				describeLiveRecordNotifyRecordsResponse_callbackList.Add(callback);
 			}

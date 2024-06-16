@@ -43,6 +43,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 		private string startTime;
 
+		private bool? dynamicSql;
+
 		private string tenantId;
 
 		private string sqlId;
@@ -68,6 +70,20 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			{
 				startTime = value;
 				DictionaryUtil.Add(BodyParameters, "StartTime", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DynamicSql")]
+		public bool? DynamicSql
+		{
+			get
+			{
+				return dynamicSql;
+			}
+			set	
+			{
+				dynamicSql = value;
+				DictionaryUtil.Add(BodyParameters, "DynamicSql", value.ToString());
 			}
 		}
 

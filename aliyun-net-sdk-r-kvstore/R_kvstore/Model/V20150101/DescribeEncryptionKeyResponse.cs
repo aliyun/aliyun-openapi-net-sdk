@@ -43,6 +43,10 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string creator;
 
+		private string encryptionName;
+
+		private string roleArn;
+
 		public string DeleteDate
 		{
 			get
@@ -148,6 +152,30 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				creator = value;
+			}
+		}
+
+		public string EncryptionName
+		{
+			get
+			{
+				return encryptionName;
+			}
+			set	
+			{
+				encryptionName = value;
+			}
+		}
+
+		public string RoleArn
+		{
+			get
+			{
+				return roleArn;
+			}
+			set	
+			{
+				roleArn = value;
 			}
 		}
 	}

@@ -88,6 +88,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 			private string regionId;
 
+			private string zoneId;
+
 			private string vccId;
 
 			private string vpdId;
@@ -132,9 +134,25 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 			private string bgpCidr;
 
+			private string expirationDate;
+
+			private bool? attachErStatus;
+
+			private string resourceGroupId;
+
+			private string connectionType;
+
+			private string cenOwnerId;
+
+			private List<GetVcc_ErInfo> erInfos;
+
 			private List<GetVcc_AliyunRouterInfoItem> aliyunRouterInfo;
 
 			private List<GetVcc_CisRouterInfoItem> cisRouterInfo;
+
+			private List<GetVcc_Tag> tags;
+
+			private List<GetVcc_VbrInfo> vbrInfos;
 
 			private GetVcc_VpdBaseInfo vpdBaseInfo;
 
@@ -159,6 +177,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				set	
 				{
 					regionId = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
 				}
 			}
 
@@ -426,6 +456,78 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				}
 			}
 
+			public string ExpirationDate
+			{
+				get
+				{
+					return expirationDate;
+				}
+				set	
+				{
+					expirationDate = value;
+				}
+			}
+
+			public bool? AttachErStatus
+			{
+				get
+				{
+					return attachErStatus;
+				}
+				set	
+				{
+					attachErStatus = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public string ConnectionType
+			{
+				get
+				{
+					return connectionType;
+				}
+				set	
+				{
+					connectionType = value;
+				}
+			}
+
+			public string CenOwnerId
+			{
+				get
+				{
+					return cenOwnerId;
+				}
+				set	
+				{
+					cenOwnerId = value;
+				}
+			}
+
+			public List<GetVcc_ErInfo> ErInfos
+			{
+				get
+				{
+					return erInfos;
+				}
+				set	
+				{
+					erInfos = value;
+				}
+			}
+
 			public List<GetVcc_AliyunRouterInfoItem> AliyunRouterInfo
 			{
 				get
@@ -450,6 +552,30 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				}
 			}
 
+			public List<GetVcc_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public List<GetVcc_VbrInfo> VbrInfos
+			{
+				get
+				{
+					return vbrInfos;
+				}
+				set	
+				{
+					vbrInfos = value;
+				}
+			}
+
 			public GetVcc_VpdBaseInfo VpdBaseInfo
 			{
 				get
@@ -459,6 +585,178 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				set	
 				{
 					vpdBaseInfo = value;
+				}
+			}
+
+			public class GetVcc_ErInfo
+			{
+
+				private string createTime;
+
+				private string gmtModified;
+
+				private string message;
+
+				private string erId;
+
+				private string regionId;
+
+				private string tenantId;
+
+				private string status;
+
+				private string erName;
+
+				private string masterZoneId;
+
+				private string description;
+
+				private long? connections;
+
+				private long? routeMaps;
+
+				public string CreateTime
+				{
+					get
+					{
+						return createTime;
+					}
+					set	
+					{
+						createTime = value;
+					}
+				}
+
+				public string GmtModified
+				{
+					get
+					{
+						return gmtModified;
+					}
+					set	
+					{
+						gmtModified = value;
+					}
+				}
+
+				public string Message
+				{
+					get
+					{
+						return message;
+					}
+					set	
+					{
+						message = value;
+					}
+				}
+
+				public string ErId
+				{
+					get
+					{
+						return erId;
+					}
+					set	
+					{
+						erId = value;
+					}
+				}
+
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
+					}
+				}
+
+				public string TenantId
+				{
+					get
+					{
+						return tenantId;
+					}
+					set	
+					{
+						tenantId = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public string ErName
+				{
+					get
+					{
+						return erName;
+					}
+					set	
+					{
+						erName = value;
+					}
+				}
+
+				public string MasterZoneId
+				{
+					get
+					{
+						return masterZoneId;
+					}
+					set	
+					{
+						masterZoneId = value;
+					}
+				}
+
+				public string Description
+				{
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
+					}
+				}
+
+				public long? Connections
+				{
+					get
+					{
+						return connections;
+					}
+					set	
+					{
+						connections = value;
+					}
+				}
+
+				public long? RouteMaps
+				{
+					get
+					{
+						return routeMaps;
+					}
+					set	
+					{
+						routeMaps = value;
+					}
 				}
 			}
 
@@ -670,16 +968,210 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				}
 			}
 
+			public class GetVcc_Tag
+			{
+
+				private string tagKey;
+
+				private string tagValue;
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
+					}
+				}
+
+				public string TagValue
+				{
+					get
+					{
+						return tagValue;
+					}
+					set	
+					{
+						tagValue = value;
+					}
+				}
+			}
+
+			public class GetVcc_VbrInfo
+			{
+
+				private string vbrId;
+
+				private string cenId;
+
+				private string status;
+
+				private string gmtCreate;
+
+				private string gmtModified;
+
+				private List<GetVcc_VbrBgpPeer> vbrBgpPeers;
+
+				public string VbrId
+				{
+					get
+					{
+						return vbrId;
+					}
+					set	
+					{
+						vbrId = value;
+					}
+				}
+
+				public string CenId
+				{
+					get
+					{
+						return cenId;
+					}
+					set	
+					{
+						cenId = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public string GmtCreate
+				{
+					get
+					{
+						return gmtCreate;
+					}
+					set	
+					{
+						gmtCreate = value;
+					}
+				}
+
+				public string GmtModified
+				{
+					get
+					{
+						return gmtModified;
+					}
+					set	
+					{
+						gmtModified = value;
+					}
+				}
+
+				public List<GetVcc_VbrBgpPeer> VbrBgpPeers
+				{
+					get
+					{
+						return vbrBgpPeers;
+					}
+					set	
+					{
+						vbrBgpPeers = value;
+					}
+				}
+
+				public class GetVcc_VbrBgpPeer
+				{
+
+					private string bgpGroupId;
+
+					private string bgpPeerId;
+
+					private string peerIpAddress;
+
+					private string peerAsn;
+
+					private string status;
+
+					public string BgpGroupId
+					{
+						get
+						{
+							return bgpGroupId;
+						}
+						set	
+						{
+							bgpGroupId = value;
+						}
+					}
+
+					public string BgpPeerId
+					{
+						get
+						{
+							return bgpPeerId;
+						}
+						set	
+						{
+							bgpPeerId = value;
+						}
+					}
+
+					public string PeerIpAddress
+					{
+						get
+						{
+							return peerIpAddress;
+						}
+						set	
+						{
+							peerIpAddress = value;
+						}
+					}
+
+					public string PeerAsn
+					{
+						get
+						{
+							return peerAsn;
+						}
+						set	
+						{
+							peerAsn = value;
+						}
+					}
+
+					public string Status
+					{
+						get
+						{
+							return status;
+						}
+						set	
+						{
+							status = value;
+						}
+					}
+				}
+			}
+
 			public class GetVcc_VpdBaseInfo
 			{
 
 				private string vpdId;
 
-				private string name;
+				private string vpdName;
 
 				private string cidr;
 
-				private string gmtCreate;
+				private string createTime;
 
 				public string VpdId
 				{
@@ -693,15 +1185,15 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					}
 				}
 
-				public string Name
+				public string VpdName
 				{
 					get
 					{
-						return name;
+						return vpdName;
 					}
 					set	
 					{
-						name = value;
+						vpdName = value;
 					}
 				}
 
@@ -717,15 +1209,15 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					}
 				}
 
-				public string GmtCreate
+				public string CreateTime
 				{
 					get
 					{
-						return gmtCreate;
+						return createTime;
 					}
 					set	
 					{
-						gmtCreate = value;
+						createTime = value;
 					}
 				}
 			}

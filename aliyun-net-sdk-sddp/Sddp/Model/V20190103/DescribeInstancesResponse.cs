@@ -160,6 +160,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 			private string productCode;
 
+			private List<DescribeInstances_ModelTagsItem> modelTags;
+
 			public long? CreationTime
 			{
 				get
@@ -529,6 +531,50 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					productCode = value;
+				}
+			}
+
+			public List<DescribeInstances_ModelTagsItem> ModelTags
+			{
+				get
+				{
+					return modelTags;
+				}
+				set	
+				{
+					modelTags = value;
+				}
+			}
+
+			public class DescribeInstances_ModelTagsItem
+			{
+
+				private long? id;
+
+				private string name;
+
+				public long? Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
 				}
 			}
 		}

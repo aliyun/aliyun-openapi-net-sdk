@@ -36,6 +36,9 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 			DescribeTenantSecurityConfigsResponse.DescribeTenantSecurityConfigs_Configs configs = new DescribeTenantSecurityConfigsResponse.DescribeTenantSecurityConfigs_Configs();
 			configs.TotalCheckCount = _ctx.IntegerValue("DescribeTenantSecurityConfigs.Configs.TotalCheckCount");
 			configs.TotalRiskCount = _ctx.IntegerValue("DescribeTenantSecurityConfigs.Configs.TotalRiskCount");
+			configs.CheckId = _ctx.StringValue("DescribeTenantSecurityConfigs.Configs.CheckId");
+			configs.InstanceId = _ctx.StringValue("DescribeTenantSecurityConfigs.Configs.InstanceId");
+			configs.CheckTime = _ctx.StringValue("DescribeTenantSecurityConfigs.Configs.CheckTime");
 
 			List<DescribeTenantSecurityConfigsResponse.DescribeTenantSecurityConfigs_Configs.DescribeTenantSecurityConfigs_TenantSecurityConfigsItem> configs_tenantSecurityConfigs = new List<DescribeTenantSecurityConfigsResponse.DescribeTenantSecurityConfigs_Configs.DescribeTenantSecurityConfigs_TenantSecurityConfigsItem>();
 			for (int i = 0; i < _ctx.Length("DescribeTenantSecurityConfigs.Configs.TenantSecurityConfigs.Length"); i++) {

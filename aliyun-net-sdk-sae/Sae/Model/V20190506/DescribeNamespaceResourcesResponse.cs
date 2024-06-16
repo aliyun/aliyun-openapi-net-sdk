@@ -162,6 +162,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 			private string jumpServerIp;
 
+			private string nameSpaceShortId;
+
 			public string VpcId
 			{
 				get
@@ -375,6 +377,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					jumpServerIp = value;
+				}
+			}
+
+			public string NameSpaceShortId
+			{
+				get
+				{
+					return nameSpaceShortId;
+				}
+				set	
+				{
+					nameSpaceShortId = value;
 				}
 			}
 		}

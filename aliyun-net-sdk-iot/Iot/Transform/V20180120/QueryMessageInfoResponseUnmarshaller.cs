@@ -41,6 +41,8 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			message.TopicFullName = _ctx.StringValue("QueryMessageInfo.Message.TopicFullName");
 			message.MessageContent = _ctx.StringValue("QueryMessageInfo.Message.MessageContent");
 			message.GenerateTime = _ctx.LongValue("QueryMessageInfo.Message.GenerateTime");
+			message.TransformedMessageContent = _ctx.StringValue("QueryMessageInfo.Message.TransformedMessageContent");
+			message.TransformedTopicFullName = _ctx.StringValue("QueryMessageInfo.Message.TransformedTopicFullName");
 
 			List<QueryMessageInfoResponse.QueryMessageInfo_Message.QueryMessageInfo_UserProperty> message_userProperties = new List<QueryMessageInfoResponse.QueryMessageInfo_Message.QueryMessageInfo_UserProperty>();
 			for (int i = 0; i < _ctx.Length("QueryMessageInfo.Message.UserProperties.Length"); i++) {
@@ -51,6 +53,16 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				message_userProperties.Add(userProperty);
 			}
 			message.UserProperties = message_userProperties;
+
+			List<QueryMessageInfoResponse.QueryMessageInfo_Message.QueryMessageInfo_MqttProperty> message_mqttProperties = new List<QueryMessageInfoResponse.QueryMessageInfo_Message.QueryMessageInfo_MqttProperty>();
+			for (int i = 0; i < _ctx.Length("QueryMessageInfo.Message.MqttProperties.Length"); i++) {
+				QueryMessageInfoResponse.QueryMessageInfo_Message.QueryMessageInfo_MqttProperty mqttProperty = new QueryMessageInfoResponse.QueryMessageInfo_Message.QueryMessageInfo_MqttProperty();
+				mqttProperty.Key = _ctx.StringValue("QueryMessageInfo.Message.MqttProperties["+ i +"].Key");
+				mqttProperty._Value = _ctx.StringValue("QueryMessageInfo.Message.MqttProperties["+ i +"].Value");
+
+				message_mqttProperties.Add(mqttProperty);
+			}
+			message.MqttProperties = message_mqttProperties;
 			queryMessageInfoResponse.Message = message;
         
 			return queryMessageInfoResponse;

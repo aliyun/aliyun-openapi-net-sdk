@@ -136,6 +136,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string engine;
 
+			private string category;
+
 			public string DeletedTime
 			{
 				get
@@ -361,6 +363,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					engine = value;
+				}
+			}
+
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
 				}
 			}
 		}

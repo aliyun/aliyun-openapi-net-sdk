@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.fnf.Model.V20190315
@@ -27,21 +27,21 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 
 		private string requestId;
 
-		private string scheduleName;
-
 		private string description;
 
 		private string scheduleId;
 
 		private string payload;
 
-		private string cronExpression;
-
-		private bool? enable;
+		private string scheduleName;
 
 		private string createdTime;
 
 		private string lastModifiedTime;
+
+		private string cronExpression;
+
+		private bool? enable;
 
 		public string RequestId
 		{
@@ -52,18 +52,6 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string ScheduleName
-		{
-			get
-			{
-				return scheduleName;
-			}
-			set	
-			{
-				scheduleName = value;
 			}
 		}
 
@@ -103,27 +91,15 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			}
 		}
 
-		public string CronExpression
+		public string ScheduleName
 		{
 			get
 			{
-				return cronExpression;
+				return scheduleName;
 			}
 			set	
 			{
-				cronExpression = value;
-			}
-		}
-
-		public bool? Enable
-		{
-			get
-			{
-				return enable;
-			}
-			set	
-			{
-				enable = value;
+				scheduleName = value;
 			}
 		}
 
@@ -148,6 +124,30 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			set	
 			{
 				lastModifiedTime = value;
+			}
+		}
+
+		public string CronExpression
+		{
+			get
+			{
+				return cronExpression;
+			}
+			set	
+			{
+				cronExpression = value;
+			}
+		}
+
+		public bool? Enable
+		{
+			get
+			{
+				return enable;
+			}
+			set	
+			{
+				enable = value;
 			}
 		}
 	}

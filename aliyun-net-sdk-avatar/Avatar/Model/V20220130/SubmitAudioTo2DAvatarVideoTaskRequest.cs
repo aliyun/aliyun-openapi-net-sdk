@@ -39,15 +39,23 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 
 		private App app_;
 
-		private VideoInfo videoInfo_;
+		private AudioInfo audioInfo_;
 
 		private AvatarInfo avatarInfo_;
 
-		private long? tenantId;
-
 		private string title;
 
+		private string extParams;
+
 		private string url;
+
+		private VideoInfo videoInfo_;
+
+		private string callbackParams;
+
+		private long? tenantId;
+
+		private bool? callback;
 
 		[JsonProperty(PropertyName = "App")]
 		public App App_
@@ -65,18 +73,18 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			}
 		}
 
-		[JsonProperty(PropertyName = "VideoInfo")]
-		public VideoInfo VideoInfo_
+		[JsonProperty(PropertyName = "AudioInfo")]
+		public AudioInfo AudioInfo_
 		{
 			get
 			{
-				return videoInfo_;
+				return audioInfo_;
 			}
 
 			set
 			{
-				videoInfo_ = value;
-				DictionaryUtil.Add(QueryParameters, "VideoInfo", JsonConvert.SerializeObject(value));
+				audioInfo_ = value;
+				DictionaryUtil.Add(QueryParameters, "AudioInfo", JsonConvert.SerializeObject(value));
 
 			}
 		}
@@ -97,20 +105,6 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			}
 		}
 
-		[JsonProperty(PropertyName = "TenantId")]
-		public long? TenantId
-		{
-			get
-			{
-				return tenantId;
-			}
-			set	
-			{
-				tenantId = value;
-				DictionaryUtil.Add(QueryParameters, "TenantId", value.ToString());
-			}
-		}
-
 		[JsonProperty(PropertyName = "Title")]
 		public string Title
 		{
@@ -125,6 +119,20 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			}
 		}
 
+		[JsonProperty(PropertyName = "ExtParams")]
+		public string ExtParams
+		{
+			get
+			{
+				return extParams;
+			}
+			set	
+			{
+				extParams = value;
+				DictionaryUtil.Add(QueryParameters, "ExtParams", value);
+			}
+		}
+
 		[JsonProperty(PropertyName = "Url")]
 		public string Url
 		{
@@ -136,6 +144,64 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 			{
 				url = value;
 				DictionaryUtil.Add(QueryParameters, "Url", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "VideoInfo")]
+		public VideoInfo VideoInfo_
+		{
+			get
+			{
+				return videoInfo_;
+			}
+
+			set
+			{
+				videoInfo_ = value;
+				DictionaryUtil.Add(QueryParameters, "VideoInfo", JsonConvert.SerializeObject(value));
+
+			}
+		}
+
+		[JsonProperty(PropertyName = "CallbackParams")]
+		public string CallbackParams
+		{
+			get
+			{
+				return callbackParams;
+			}
+			set	
+			{
+				callbackParams = value;
+				DictionaryUtil.Add(QueryParameters, "CallbackParams", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "TenantId")]
+		public long? TenantId
+		{
+			get
+			{
+				return tenantId;
+			}
+			set	
+			{
+				tenantId = value;
+				DictionaryUtil.Add(QueryParameters, "TenantId", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "Callback")]
+		public bool? Callback
+		{
+			get
+			{
+				return callback;
+			}
+			set	
+			{
+				callback = value;
+				DictionaryUtil.Add(QueryParameters, "Callback", value.ToString());
 			}
 		}
 
@@ -154,6 +220,104 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 				set	
 				{
 					appId = value;
+				}
+			}
+		}
+
+		public class AudioInfo
+		{
+
+			private int? sampleRate;
+
+			[JsonProperty(PropertyName = "SampleRate")]
+			public int? SampleRate
+			{
+				get
+				{
+					return sampleRate;
+				}
+				set	
+				{
+					sampleRate = value;
+				}
+			}
+		}
+
+		public class AvatarInfo
+		{
+
+			private string code;
+
+			private int? x;
+
+			private int? width;
+
+			private int? y;
+
+			private int? height;
+
+			[JsonProperty(PropertyName = "Code")]
+			public string Code
+			{
+				get
+				{
+					return code;
+				}
+				set	
+				{
+					code = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "X")]
+			public int? X
+			{
+				get
+				{
+					return x;
+				}
+				set	
+				{
+					x = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Width")]
+			public int? Width
+			{
+				get
+				{
+					return width;
+				}
+				set	
+				{
+					width = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Y")]
+			public int? Y
+			{
+				get
+				{
+					return y;
+				}
+				set	
+				{
+					y = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Height")]
+			public int? Height
+			{
+				get
+				{
+					return height;
+				}
+				set	
+				{
+					height = value;
 				}
 			}
 		}
@@ -218,25 +382,6 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 				set	
 				{
 					alphaFormat = value;
-				}
-			}
-		}
-
-		public class AvatarInfo
-		{
-
-			private string code;
-
-			[JsonProperty(PropertyName = "Code")]
-			public string Code
-			{
-				get
-				{
-					return code;
-				}
-				set	
-				{
-					code = value;
 				}
 			}
 		}

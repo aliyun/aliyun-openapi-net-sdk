@@ -59,6 +59,11 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 				}
 				quotaApplicationTemplatesItem.ApplicableRange = quotaApplicationTemplatesItem_applicableRange;
 
+				ListQuotaApplicationTemplatesResponse.ListQuotaApplicationTemplates_QuotaApplicationTemplatesItem.ListQuotaApplicationTemplates_Period period = new ListQuotaApplicationTemplatesResponse.ListQuotaApplicationTemplates_QuotaApplicationTemplatesItem.ListQuotaApplicationTemplates_Period();
+				period.PeriodValue = _ctx.IntegerValue("ListQuotaApplicationTemplates.QuotaApplicationTemplates["+ i +"].Period.PeriodValue");
+				period.PeriodUnit = _ctx.StringValue("ListQuotaApplicationTemplates.QuotaApplicationTemplates["+ i +"].Period.PeriodUnit");
+				quotaApplicationTemplatesItem.Period = period;
+
 				listQuotaApplicationTemplatesResponse_quotaApplicationTemplates.Add(quotaApplicationTemplatesItem);
 			}
 			listQuotaApplicationTemplatesResponse.QuotaApplicationTemplates = listQuotaApplicationTemplatesResponse_quotaApplicationTemplates;

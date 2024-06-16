@@ -25,24 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeMeterLiveInteractionDauResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private double? peakDau;
 
-		private List<DescribeMeterLiveInteractionDau_DataItem> data;
+		private string requestId;
 
-		[JsonProperty(PropertyName = "RequestId")]
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeMeterLiveInteractionDau_DataItem> data;
 
 		[JsonProperty(PropertyName = "PeakDau")]
 		public double? PeakDau
@@ -54,6 +41,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				peakDau = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -73,22 +73,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeMeterLiveInteractionDau_DataItem
 		{
 
-			private long? timestamp;
-
 			private double? dau;
 
-			[JsonProperty(PropertyName = "Timestamp")]
-			public long? Timestamp
-			{
-				get
-				{
-					return timestamp;
-				}
-				set	
-				{
-					timestamp = value;
-				}
-			}
+			private long? timestamp;
 
 			[JsonProperty(PropertyName = "Dau")]
 			public double? Dau
@@ -100,6 +87,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					dau = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Timestamp")]
+			public long? Timestamp
+			{
+				get
+				{
+					return timestamp;
+				}
+				set	
+				{
+					timestamp = value;
 				}
 			}
 		}

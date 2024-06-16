@@ -35,6 +35,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private List<DescribeBackups_Backup> backups;
 
+		private DescribeBackups_AccessDeniedDetail accessDeniedDetail;
+
 		public string RequestId
 		{
 			get
@@ -95,6 +97,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public DescribeBackups_AccessDeniedDetail AccessDeniedDetail
+		{
+			get
+			{
+				return accessDeniedDetail;
+			}
+			set	
+			{
+				accessDeniedDetail = value;
+			}
+		}
+
 		public class DescribeBackups_Backup
 		{
 
@@ -123,6 +137,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			private string backupMode;
 
 			private string backupMethod;
+
+			private int? backupJobID;
 
 			public string BackupStatus
 			{
@@ -277,6 +293,120 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					backupMethod = value;
+				}
+			}
+
+			public int? BackupJobID
+			{
+				get
+				{
+					return backupJobID;
+				}
+				set	
+				{
+					backupJobID = value;
+				}
+			}
+		}
+
+		public class DescribeBackups_AccessDeniedDetail
+		{
+
+			private string authAction;
+
+			private string authPrincipalDisplayName;
+
+			private string authPrincipalOwnerId;
+
+			private string authPrincipalType;
+
+			private string encodedDiagnosticMessage;
+
+			private string noPermissionType;
+
+			private string policyType;
+
+			public string AuthAction
+			{
+				get
+				{
+					return authAction;
+				}
+				set	
+				{
+					authAction = value;
+				}
+			}
+
+			public string AuthPrincipalDisplayName
+			{
+				get
+				{
+					return authPrincipalDisplayName;
+				}
+				set	
+				{
+					authPrincipalDisplayName = value;
+				}
+			}
+
+			public string AuthPrincipalOwnerId
+			{
+				get
+				{
+					return authPrincipalOwnerId;
+				}
+				set	
+				{
+					authPrincipalOwnerId = value;
+				}
+			}
+
+			public string AuthPrincipalType
+			{
+				get
+				{
+					return authPrincipalType;
+				}
+				set	
+				{
+					authPrincipalType = value;
+				}
+			}
+
+			public string EncodedDiagnosticMessage
+			{
+				get
+				{
+					return encodedDiagnosticMessage;
+				}
+				set	
+				{
+					encodedDiagnosticMessage = value;
+				}
+			}
+
+			public string NoPermissionType
+			{
+				get
+				{
+					return noPermissionType;
+				}
+				set	
+				{
+					noPermissionType = value;
+				}
+			}
+
+			public string PolicyType
+			{
+				get
+				{
+					return policyType;
+				}
+				set	
+				{
+					policyType = value;
 				}
 			}
 		}

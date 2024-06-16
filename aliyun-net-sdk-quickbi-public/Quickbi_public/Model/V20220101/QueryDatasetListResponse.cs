@@ -163,6 +163,8 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 				private string datasetId;
 
+				private bool? openOfflineAcceleration;
+
 				private QueryDatasetList_DataSource dataSource;
 
 				private QueryDatasetList_Directory directory;
@@ -284,6 +286,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						datasetId = value;
+					}
+				}
+
+				public bool? OpenOfflineAcceleration
+				{
+					get
+					{
+						return openOfflineAcceleration;
+					}
+					set	
+					{
+						openOfflineAcceleration = value;
 					}
 				}
 

@@ -68,6 +68,8 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 				execution.TemplateId = _ctx.StringValue("ListExecutions.Executions["+ i +"].TemplateId");
 				execution.RamRole = _ctx.StringValue("ListExecutions.Executions["+ i +"].RamRole");
 				execution.ResourceStatus = _ctx.StringValue("ListExecutions.Executions["+ i +"].ResourceStatus");
+				execution.LastTriggerStatusMessage = _ctx.StringValue("ListExecutions.Executions["+ i +"].LastTriggerStatusMessage");
+				execution.LastTriggerOutputs = _ctx.StringValue("ListExecutions.Executions["+ i +"].LastTriggerOutputs");
 
 				List<ListExecutionsResponse.ListExecutions_Execution.ListExecutions_CurrentTask> execution_currentTasks = new List<ListExecutionsResponse.ListExecutions_Execution.ListExecutions_CurrentTask>();
 				for (int j = 0; j < _ctx.Length("ListExecutions.Executions["+ i +"].CurrentTasks.Length"); j++) {

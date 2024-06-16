@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
         public DescribeAuditRecordsRequest()
             : base("Dds", "2015-12-01", "DescribeAuditRecords", "dds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
@@ -44,8 +49,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private int? pageNumber;
 
 		private string database;
-
-		private string securityToken;
 
 		private int? pageSize;
 
@@ -60,6 +63,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string endTime;
 
 		private long? ownerId;
+
+		private string logicalOperator;
 
 		private string form;
 
@@ -129,19 +134,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				database = value;
 				DictionaryUtil.Add(QueryParameters, "Database", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -233,6 +225,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string LogicalOperator
+		{
+			get
+			{
+				return logicalOperator;
+			}
+			set	
+			{
+				logicalOperator = value;
+				DictionaryUtil.Add(QueryParameters, "LogicalOperator", value);
 			}
 		}
 

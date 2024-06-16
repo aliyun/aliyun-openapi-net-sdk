@@ -54,6 +54,8 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 				column.RuleCount = _ctx.IntegerValue("DescribeOssObjects.Items["+ i +"].RuleCount");
 				column.SensitiveCount = _ctx.IntegerValue("DescribeOssObjects.Items["+ i +"].SensitiveCount");
 				column.Id = _ctx.StringValue("DescribeOssObjects.Items["+ i +"].Id");
+				column.FileCategoryCode = _ctx.LongValue("DescribeOssObjects.Items["+ i +"].FileCategoryCode");
+				column.FileCategoryName = _ctx.StringValue("DescribeOssObjects.Items["+ i +"].FileCategoryName");
 
 				List<DescribeOssObjectsResponse.DescribeOssObjects_Column.DescribeOssObjects_Rule> column_ruleList = new List<DescribeOssObjectsResponse.DescribeOssObjects_Column.DescribeOssObjects_Rule>();
 				for (int j = 0; j < _ctx.Length("DescribeOssObjects.Items["+ i +"].RuleList.Length"); j++) {

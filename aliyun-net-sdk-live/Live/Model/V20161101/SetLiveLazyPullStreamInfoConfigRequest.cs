@@ -51,6 +51,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string pullAppName;
 
+		private string transcodeLazy;
+
 		private string pullProtocol;
 
 		[JsonProperty(PropertyName = "AppName")]
@@ -120,6 +122,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				pullAppName = value;
 				DictionaryUtil.Add(QueryParameters, "PullAppName", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "TranscodeLazy")]
+		public string TranscodeLazy
+		{
+			get
+			{
+				return transcodeLazy;
+			}
+			set	
+			{
+				transcodeLazy = value;
+				DictionaryUtil.Add(QueryParameters, "TranscodeLazy", value);
 			}
 		}
 

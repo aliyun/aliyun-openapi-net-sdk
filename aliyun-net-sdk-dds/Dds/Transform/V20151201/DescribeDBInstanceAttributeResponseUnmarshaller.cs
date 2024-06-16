@@ -43,6 +43,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				dBInstance.LockMode = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].LockMode");
 				dBInstance.EngineVersion = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].EngineVersion");
 				dBInstance.MaxIOPS = _ctx.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].MaxIOPS");
+				dBInstance.MaxMBPS = _ctx.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].MaxMBPS");
 				dBInstance.VPCCloudInstanceIds = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].VPCCloudInstanceIds");
 				dBInstance.ProtocolType = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ProtocolType");
 				dBInstance.DBInstanceDescription = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].DBInstanceDescription");
@@ -80,6 +81,10 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				dBInstance.DBInstanceOrderStatus = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].DBInstanceOrderStatus");
 				dBInstance.Encrypted = _ctx.BooleanValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].Encrypted");
 				dBInstance.EncryptionKey = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].EncryptionKey");
+				dBInstance.SyncPercent = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].SyncPercent");
+				dBInstance.UseClusterBackup = _ctx.BooleanValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].UseClusterBackup");
+				dBInstance.BurstingEnabled = _ctx.BooleanValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].BurstingEnabled");
+				dBInstance.ProvisionedIops = _ctx.LongValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ProvisionedIops");
 
 				List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_ReplicaSet> dBInstance_replicaSets = new List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_ReplicaSet>();
 				for (int j = 0; j < _ctx.Length("DescribeDBInstanceAttribute.DBInstances["+ i +"].ReplicaSets.Length"); j++) {
@@ -138,6 +143,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 					shardAttribute.NodeStorage = _ctx.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ShardList["+ j +"].NodeStorage");
 					shardAttribute.ReadonlyReplicas = _ctx.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ShardList["+ j +"].ReadonlyReplicas");
 					shardAttribute.Status = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ShardList["+ j +"].Status");
+					shardAttribute.MaxDiskMbps = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ShardList["+ j +"].MaxDiskMbps");
 
 					dBInstance_shardList.Add(shardAttribute);
 				}

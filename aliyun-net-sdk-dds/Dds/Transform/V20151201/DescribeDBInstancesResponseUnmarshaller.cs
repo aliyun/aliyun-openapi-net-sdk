@@ -65,6 +65,8 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				dBInstance.StorageType = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].StorageType");
 				dBInstance.SecondaryZoneId = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].SecondaryZoneId");
 				dBInstance.HiddenZoneId = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].HiddenZoneId");
+				dBInstance.BackupRetentionPolicy = _ctx.IntegerValue("DescribeDBInstances.DBInstances["+ i +"].BackupRetentionPolicy");
+				dBInstance.ReleaseTime = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].ReleaseTime");
 
 				List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_Tag> dBInstance_tags = new List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_Tag>();
 				for (int j = 0; j < _ctx.Length("DescribeDBInstances.DBInstances["+ i +"].Tags.Length"); j++) {

@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
         public CreateShardingDBInstanceRequest()
             : base("Dds", "2015-12-01", "CreateShardingDBInstance", "dds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
@@ -43,19 +48,23 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string networkType;
 
+		private string srcRegion;
+
 		private List<int?> replicaSets = new List<int?>(){ };
 
 		private string storageType;
 
 		private string resourceGroupId;
 
-		private string securityToken;
-
 		private string dBInstanceDescription;
+
+		private List<string> tags = new List<string>(){ };
 
 		private string globalSecurityGroupIds;
 
 		private int? period;
+
+		private string backupId;
 
 		private string encryptionKey;
 
@@ -68,6 +77,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string vSwitchId;
 
 		private List<string> mongoss = new List<string>(){ };
+
+		private long? provisionedIops;
 
 		private string autoRenew;
 
@@ -83,11 +94,15 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string restoreTime;
 
+		private string destRegion;
+
 		private string resourceOwnerAccount;
 
 		private string srcDBInstanceId;
 
 		private string ownerAccount;
+
+		private string restoreType;
 
 		private string accountPassword;
 
@@ -151,6 +166,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string SrcRegion
+		{
+			get
+			{
+				return srcRegion;
+			}
+			set	
+			{
+				srcRegion = value;
+				DictionaryUtil.Add(QueryParameters, "SrcRegion", value);
+			}
+		}
+
 		public List<int?> ReplicaSets
 		{
 			get
@@ -199,19 +227,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
 		public string DBInstanceDescription
 		{
 			get
@@ -222,6 +237,27 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				dBInstanceDescription = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceDescription", value);
+			}
+		}
+
+		public List<string> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				if(tags != null)
+				{
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
+				}
 			}
 		}
 
@@ -248,6 +284,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				period = value;
 				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
+			}
+		}
+
+		public string BackupId
+		{
+			get
+			{
+				return backupId;
+			}
+			set	
+			{
+				backupId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupId", value);
 			}
 		}
 
@@ -344,6 +393,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public long? ProvisionedIops
+		{
+			get
+			{
+				return provisionedIops;
+			}
+			set	
+			{
+				provisionedIops = value;
+				DictionaryUtil.Add(QueryParameters, "ProvisionedIops", value.ToString());
+			}
+		}
+
 		public string AutoRenew
 		{
 			get
@@ -435,6 +497,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string DestRegion
+		{
+			get
+			{
+				return destRegion;
+			}
+			set	
+			{
+				destRegion = value;
+				DictionaryUtil.Add(QueryParameters, "DestRegion", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -471,6 +546,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string RestoreType
+		{
+			get
+			{
+				return restoreType;
+			}
+			set	
+			{
+				restoreType = value;
+				DictionaryUtil.Add(QueryParameters, "RestoreType", value);
 			}
 		}
 
@@ -581,6 +669,38 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					class_ = value;
+				}
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
 				}
 			}
 		}

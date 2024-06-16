@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardbx.Model.V20200202
@@ -25,29 +25,17 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 	public class DescribeRegionsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? code;
-
-		private int? errorCode;
-
-		private bool? success;
 
 		private string message;
 
-		private List<DescribeRegions_Region> regions;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private bool? success;
+
+		private int? errorCode;
+
+		private List<DescribeRegions_Region> regions;
 
 		public int? Code
 		{
@@ -61,15 +49,27 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			}
 		}
 
-		public int? ErrorCode
+		public string Message
 		{
 			get
 			{
-				return errorCode;
+				return message;
 			}
 			set	
 			{
-				errorCode = value;
+				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -85,15 +85,15 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			}
 		}
 
-		public string Message
+		public int? ErrorCode
 		{
 			get
 			{
-				return message;
+				return errorCode;
 			}
 			set	
 			{
-				message = value;
+				errorCode = value;
 			}
 		}
 
@@ -112,21 +112,23 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 		public class DescribeRegions_Region
 		{
 
-			private string regionId;
+			private bool? supportPolarx10;
 
 			private bool? supportPolarx20;
 
+			private string regionId;
+
 			private List<DescribeRegions_Zone> zones;
 
-			public string RegionId
+			public bool? SupportPolarx10
 			{
 				get
 				{
-					return regionId;
+					return supportPolarx10;
 				}
 				set	
 				{
-					regionId = value;
+					supportPolarx10 = value;
 				}
 			}
 
@@ -139,6 +141,18 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 				set	
 				{
 					supportPolarx20 = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 

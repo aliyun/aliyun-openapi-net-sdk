@@ -120,6 +120,10 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private int? bitDepth;
 
+			private int? jobType;
+
+			private string jobExt;
+
 			public string CreationTime
 			{
 				get
@@ -419,6 +423,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					bitDepth = value;
 				}
 			}
+
+			public int? JobType
+			{
+				get
+				{
+					return jobType;
+				}
+				set	
+				{
+					jobType = value;
+				}
+			}
+
+			public string JobExt
+			{
+				get
+				{
+					return jobExt;
+				}
+				set	
+				{
+					jobExt = value;
+				}
+			}
 		}
 
 		public class GetPlayInfo_VideoBase
@@ -443,6 +471,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			private string mediaType;
 
 			private string danMuURL;
+
+			private string storageClass;
 
 			private List<GetPlayInfo_Thumbnail> thumbnailList;
 
@@ -563,6 +593,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					danMuURL = value;
+				}
+			}
+
+			public string StorageClass
+			{
+				get
+				{
+					return storageClass;
+				}
+				set	
+				{
+					storageClass = value;
 				}
 			}
 

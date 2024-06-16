@@ -29,6 +29,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string requestId;
 
+		private string missingPolicy;
+
 		[JsonProperty(PropertyName = "Policy")]
 		public string Policy
 		{
@@ -52,6 +54,19 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "MissingPolicy")]
+		public string MissingPolicy
+		{
+			get
+			{
+				return missingPolicy;
+			}
+			set	
+			{
+				missingPolicy = value;
 			}
 		}
 	}

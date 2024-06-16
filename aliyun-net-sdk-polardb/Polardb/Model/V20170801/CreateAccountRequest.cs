@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.polardb;
 using Aliyun.Acs.polardb.Transform;
 using Aliyun.Acs.polardb.Transform.V20170801;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
     public class CreateAccountRequest : RpcAcsRequest<CreateAccountResponse>
     {
         public CreateAccountRequest()
-            : base("polardb", "2017-08-01", "CreateAccount")
+            : base("polardb", "2017-08-01", "CreateAccount", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -64,6 +63,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private string accountPassword;
 
 		private string dBName;
+
+		private string privForAllDB;
 
 		public long? ResourceOwnerId
 		{
@@ -218,6 +219,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				dBName = value;
 				DictionaryUtil.Add(QueryParameters, "DBName", value);
+			}
+		}
+
+		public string PrivForAllDB
+		{
+			get
+			{
+				return privForAllDB;
+			}
+			set	
+			{
+				privForAllDB = value;
+				DictionaryUtil.Add(QueryParameters, "PrivForAllDB", value);
 			}
 		}
 

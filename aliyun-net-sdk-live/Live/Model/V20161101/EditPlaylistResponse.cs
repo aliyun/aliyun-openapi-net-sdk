@@ -25,26 +25,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class EditPlaylistResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string casterId;
 
 		private string programId;
 
-		private EditPlaylist_Items items;
+		private string requestId;
 
-		[JsonProperty(PropertyName = "RequestId")]
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private EditPlaylist_Items items;
 
 		[JsonProperty(PropertyName = "CasterId")]
 		public string CasterId
@@ -72,6 +59,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		[JsonProperty(PropertyName = "Items")]
 		public EditPlaylist_Items Items
 		{
@@ -88,22 +88,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class EditPlaylist_Items
 		{
 
-			private List<EditPlaylist_SuccessItem> successItems;
-
 			private List<EditPlaylist_FailedItem> failedItems;
 
-			[JsonProperty(PropertyName = "SuccessItems")]
-			public List<EditPlaylist_SuccessItem> SuccessItems
-			{
-				get
-				{
-					return successItems;
-				}
-				set	
-				{
-					successItems = value;
-				}
-			}
+			private List<EditPlaylist_SuccessItem> successItems;
 
 			[JsonProperty(PropertyName = "FailedItems")]
 			public List<EditPlaylist_FailedItem> FailedItems
@@ -118,46 +105,38 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public class EditPlaylist_SuccessItem
+			[JsonProperty(PropertyName = "SuccessItems")]
+			public List<EditPlaylist_SuccessItem> SuccessItems
 			{
-
-				private string itemName;
-
-				private string itemId;
-
-				[JsonProperty(PropertyName = "ItemName")]
-				public string ItemName
+				get
 				{
-					get
-					{
-						return itemName;
-					}
-					set	
-					{
-						itemName = value;
-					}
+					return successItems;
 				}
-
-				[JsonProperty(PropertyName = "ItemId")]
-				public string ItemId
+				set	
 				{
-					get
-					{
-						return itemId;
-					}
-					set	
-					{
-						itemId = value;
-					}
+					successItems = value;
 				}
 			}
 
 			public class EditPlaylist_FailedItem
 			{
 
+				private string itemId;
+
 				private string itemName;
 
-				private string itemId;
+				[JsonProperty(PropertyName = "ItemId")]
+				public string ItemId
+				{
+					get
+					{
+						return itemId;
+					}
+					set	
+					{
+						itemId = value;
+					}
+				}
 
 				[JsonProperty(PropertyName = "ItemName")]
 				public string ItemName
@@ -171,6 +150,14 @@ namespace Aliyun.Acs.live.Model.V20161101
 						itemName = value;
 					}
 				}
+			}
+
+			public class EditPlaylist_SuccessItem
+			{
+
+				private string itemId;
+
+				private string itemName;
 
 				[JsonProperty(PropertyName = "ItemId")]
 				public string ItemId
@@ -182,6 +169,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						itemId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "ItemName")]
+				public string ItemName
+				{
+					get
+					{
+						return itemName;
+					}
+					set	
+					{
+						itemName = value;
 					}
 				}
 			}

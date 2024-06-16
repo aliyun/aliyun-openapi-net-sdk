@@ -67,6 +67,9 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 				application.CompletionTime = _ctx.LongValue("ListJobs.Data.Applications["+ i +"].CompletionTime");
 				application.LastChangeorderState = _ctx.StringValue("ListJobs.Data.Applications["+ i +"].LastChangeorderState");
 				application.LastJobState = _ctx.StringValue("ListJobs.Data.Applications["+ i +"].LastJobState");
+				application.Cpu = _ctx.IntegerValue("ListJobs.Data.Applications["+ i +"].Cpu");
+				application.Mem = _ctx.IntegerValue("ListJobs.Data.Applications["+ i +"].Mem");
+				application.Message = _ctx.StringValue("ListJobs.Data.Applications["+ i +"].Message");
 
 				List<ListJobsResponse.ListJobs_Data.ListJobs_Application.ListJobs_TagsItem> application_tags = new List<ListJobsResponse.ListJobs_Data.ListJobs_Application.ListJobs_TagsItem>();
 				for (int j = 0; j < _ctx.Length("ListJobs.Data.Applications["+ i +"].Tags.Length"); j++) {

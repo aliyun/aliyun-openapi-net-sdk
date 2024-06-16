@@ -150,6 +150,10 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string hiddenZoneId;
 
+			private int? backupRetentionPolicy;
+
+			private string releaseTime;
+
 			private List<DescribeDBInstances_Tag> tags;
 
 			private List<DescribeDBInstances_MongosAttribute> mongosList;
@@ -465,6 +469,30 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					hiddenZoneId = value;
+				}
+			}
+
+			public int? BackupRetentionPolicy
+			{
+				get
+				{
+					return backupRetentionPolicy;
+				}
+				set	
+				{
+					backupRetentionPolicy = value;
+				}
+			}
+
+			public string ReleaseTime
+			{
+				get
+				{
+					return releaseTime;
+				}
+				set	
+				{
+					releaseTime = value;
 				}
 			}
 

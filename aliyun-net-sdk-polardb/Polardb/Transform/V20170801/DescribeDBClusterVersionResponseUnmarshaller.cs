@@ -32,6 +32,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 
 			describeDBClusterVersionResponse.HttpResponse = _ctx.HttpResponse;
 			describeDBClusterVersionResponse.IsLatestVersion = _ctx.StringValue("DescribeDBClusterVersion.IsLatestVersion");
+			describeDBClusterVersionResponse.IsProxyLatestVersion = _ctx.StringValue("DescribeDBClusterVersion.IsProxyLatestVersion");
 			describeDBClusterVersionResponse.DBVersion = _ctx.StringValue("DescribeDBClusterVersion.DBVersion");
 			describeDBClusterVersionResponse.DBRevisionVersion = _ctx.StringValue("DescribeDBClusterVersion.DBRevisionVersion");
 			describeDBClusterVersionResponse.RequestId = _ctx.StringValue("DescribeDBClusterVersion.RequestId");
@@ -42,6 +43,19 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeDBClusterVersionResponse.ProxyVersionStatus = _ctx.StringValue("DescribeDBClusterVersion.ProxyVersionStatus");
 			describeDBClusterVersionResponse.ProxyLatestVersion = _ctx.StringValue("DescribeDBClusterVersion.ProxyLatestVersion");
 			describeDBClusterVersionResponse.DBLatestVersion = _ctx.StringValue("DescribeDBClusterVersion.DBLatestVersion");
+			describeDBClusterVersionResponse.ProxyLatestVersionAfterDBEngineUpgraded = _ctx.StringValue("DescribeDBClusterVersion.ProxyLatestVersionAfterDBEngineUpgraded");
+
+			List<DescribeDBClusterVersionResponse.DescribeDBClusterVersion_DBRevisionVersionListItem> describeDBClusterVersionResponse_dBRevisionVersionList = new List<DescribeDBClusterVersionResponse.DescribeDBClusterVersion_DBRevisionVersionListItem>();
+			for (int i = 0; i < _ctx.Length("DescribeDBClusterVersion.DBRevisionVersionList.Length"); i++) {
+				DescribeDBClusterVersionResponse.DescribeDBClusterVersion_DBRevisionVersionListItem dBRevisionVersionListItem = new DescribeDBClusterVersionResponse.DescribeDBClusterVersion_DBRevisionVersionListItem();
+				dBRevisionVersionListItem.ReleaseType = _ctx.StringValue("DescribeDBClusterVersion.DBRevisionVersionList["+ i +"].ReleaseType");
+				dBRevisionVersionListItem.RevisionVersionCode = _ctx.StringValue("DescribeDBClusterVersion.DBRevisionVersionList["+ i +"].RevisionVersionCode");
+				dBRevisionVersionListItem.RevisionVersionName = _ctx.StringValue("DescribeDBClusterVersion.DBRevisionVersionList["+ i +"].RevisionVersionName");
+				dBRevisionVersionListItem.ReleaseNote = _ctx.StringValue("DescribeDBClusterVersion.DBRevisionVersionList["+ i +"].ReleaseNote");
+
+				describeDBClusterVersionResponse_dBRevisionVersionList.Add(dBRevisionVersionListItem);
+			}
+			describeDBClusterVersionResponse.DBRevisionVersionList = describeDBClusterVersionResponse_dBRevisionVersionList;
         
 			return describeDBClusterVersionResponse;
         }

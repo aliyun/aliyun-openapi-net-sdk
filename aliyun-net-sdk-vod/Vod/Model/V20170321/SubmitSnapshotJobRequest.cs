@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -46,6 +47,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string spriteSnapshotConfig;
 
+		private List<long?> specifiedOffsetTimes = new List<long?>(){ };
+
 		private string snapshotTemplateId;
 
 		private string height;
@@ -58,6 +61,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private long? interval;
 
+		[JsonProperty(PropertyName = "UserData")]
 		public string UserData
 		{
 			get
@@ -71,6 +75,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "SpecifiedOffsetTime")]
 		public long? SpecifiedOffsetTime
 		{
 			get
@@ -84,6 +89,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "SpriteSnapshotConfig")]
 		public string SpriteSnapshotConfig
 		{
 			get
@@ -97,6 +103,28 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "SpecifiedOffsetTimes")]
+		public List<long?> SpecifiedOffsetTimes
+		{
+			get
+			{
+				return specifiedOffsetTimes;
+			}
+
+			set
+			{
+				specifiedOffsetTimes = value;
+				if(specifiedOffsetTimes != null)
+				{
+					for (int depth1 = 0; depth1 < specifiedOffsetTimes.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"SpecifiedOffsetTimes." + (depth1 + 1), specifiedOffsetTimes[depth1]);
+					}
+				}
+			}
+		}
+
+		[JsonProperty(PropertyName = "SnapshotTemplateId")]
 		public string SnapshotTemplateId
 		{
 			get
@@ -110,6 +138,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "Height")]
 		public string Height
 		{
 			get
@@ -123,6 +152,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "Count")]
 		public long? Count
 		{
 			get
@@ -136,6 +166,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "VideoId")]
 		public string VideoId
 		{
 			get
@@ -149,6 +180,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "Width")]
 		public string Width
 		{
 			get
@@ -162,6 +194,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "Interval")]
 		public long? Interval
 		{
 			get

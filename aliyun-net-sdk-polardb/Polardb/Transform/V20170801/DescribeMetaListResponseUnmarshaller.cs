@@ -36,6 +36,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeMetaListResponse.PageSize = _ctx.StringValue("DescribeMetaList.PageSize");
 			describeMetaListResponse.RequestId = _ctx.StringValue("DescribeMetaList.RequestId");
 			describeMetaListResponse.PageNumber = _ctx.StringValue("DescribeMetaList.PageNumber");
+			describeMetaListResponse.DBClusterId = _ctx.StringValue("DescribeMetaList.DBClusterId");
 
 			List<DescribeMetaListResponse.DescribeMetaList_MetaItem> describeMetaListResponse_items = new List<DescribeMetaListResponse.DescribeMetaList_MetaItem>();
 			for (int i = 0; i < _ctx.Length("DescribeMetaList.Items.Length"); i++) {

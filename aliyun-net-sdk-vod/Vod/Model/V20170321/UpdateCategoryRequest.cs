@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -44,6 +45,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string cateName;
 
+		[JsonProperty(PropertyName = "CateId")]
 		public long? CateId
 		{
 			get
@@ -57,6 +59,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "CateName")]
 		public string CateName
 		{
 			get

@@ -31,6 +31,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private List<string> nonExistVideoIds;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -43,6 +44,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "ForbiddenVideoIds")]
 		public List<string> ForbiddenVideoIds
 		{
 			get
@@ -55,6 +57,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "NonExistVideoIds")]
 		public List<string> NonExistVideoIds
 		{
 			get

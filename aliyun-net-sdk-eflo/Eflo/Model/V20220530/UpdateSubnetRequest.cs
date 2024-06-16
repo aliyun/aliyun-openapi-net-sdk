@@ -37,13 +37,11 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private string subnetId;
 
-		private string description;
-
 		private string vpdId;
 
-		private string name;
-
 		private string zoneId;
+
+		private string subnetName;
 
 		public string SubnetId
 		{
@@ -55,19 +53,6 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				subnetId = value;
 				DictionaryUtil.Add(BodyParameters, "SubnetId", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(BodyParameters, "Description", value);
 			}
 		}
 
@@ -84,19 +69,6 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			}
 		}
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(BodyParameters, "Name", value);
-			}
-		}
-
 		public string ZoneId
 		{
 			get
@@ -107,6 +79,19 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				zoneId = value;
 				DictionaryUtil.Add(BodyParameters, "ZoneId", value);
+			}
+		}
+
+		public string SubnetName
+		{
+			get
+			{
+				return subnetName;
+			}
+			set	
+			{
+				subnetName = value;
+				DictionaryUtil.Add(BodyParameters, "SubnetName", value);
 			}
 		}
 

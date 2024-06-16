@@ -32,12 +32,21 @@ namespace Aliyun.Acs.Dds.Model.V20151201
         public DescribeBackupPolicyRequest()
             : base("Dds", "2015-12-01", "DescribeBackupPolicy", "dds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
+		private string srcRegion;
+
 		private string securityToken;
+
+		private string instanceType;
 
 		private string dBInstanceId;
 
@@ -60,6 +69,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string SrcRegion
+		{
+			get
+			{
+				return srcRegion;
+			}
+			set	
+			{
+				srcRegion = value;
+				DictionaryUtil.Add(QueryParameters, "SrcRegion", value);
+			}
+		}
+
 		public string SecurityToken
 		{
 			get
@@ -70,6 +92,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string InstanceType
+		{
+			get
+			{
+				return instanceType;
+			}
+			set	
+			{
+				instanceType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
 			}
 		}
 

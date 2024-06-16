@@ -31,17 +31,17 @@ namespace Aliyun.Acs.fnf.Transform.V20190315
 			StopExecutionResponse stopExecutionResponse = new StopExecutionResponse();
 
 			stopExecutionResponse.HttpResponse = _ctx.HttpResponse;
-			stopExecutionResponse.RequestId = _ctx.StringValue("StopExecution.RequestId");
-			stopExecutionResponse.Name = _ctx.StringValue("StopExecution.Name");
-			stopExecutionResponse.FlowName = _ctx.StringValue("StopExecution.FlowName");
-			stopExecutionResponse.FlowDefinition = _ctx.StringValue("StopExecution.FlowDefinition");
-			stopExecutionResponse.Input = _ctx.StringValue("StopExecution.Input");
-			stopExecutionResponse.Output = _ctx.StringValue("StopExecution.Output");
 			stopExecutionResponse.Status = _ctx.StringValue("StopExecution.Status");
-			stopExecutionResponse.StartedTime = _ctx.StringValue("StopExecution.StartedTime");
 			stopExecutionResponse.StoppedTime = _ctx.StringValue("StopExecution.StoppedTime");
+			stopExecutionResponse.RequestId = _ctx.StringValue("StopExecution.RequestId");
+			stopExecutionResponse.StartedTime = _ctx.StringValue("StopExecution.StartedTime");
+			stopExecutionResponse.FlowDefinition = _ctx.StringValue("StopExecution.FlowDefinition");
 			stopExecutionResponse.ExternalInputUri = _ctx.StringValue("StopExecution.ExternalInputUri");
+			stopExecutionResponse.Output = _ctx.StringValue("StopExecution.Output");
+			stopExecutionResponse.FlowName = _ctx.StringValue("StopExecution.FlowName");
 			stopExecutionResponse.ExternalOutputUri = _ctx.StringValue("StopExecution.ExternalOutputUri");
+			stopExecutionResponse.Name = _ctx.StringValue("StopExecution.Name");
+			stopExecutionResponse.Input = _ctx.StringValue("StopExecution.Input");
         
 			return stopExecutionResponse;
         }

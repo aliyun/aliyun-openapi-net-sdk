@@ -39,27 +39,46 @@ namespace Aliyun.Acs.polardbx.Transform.V20200202
 			List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance> describeDBInstancesResponse_dBInstances = new List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance>();
 			for (int i = 0; i < _ctx.Length("DescribeDBInstances.DBInstances.Length"); i++) {
 				DescribeDBInstancesResponse.DescribeDBInstances_DBInstance dBInstance = new DescribeDBInstancesResponse.DescribeDBInstances_DBInstance();
-				dBInstance.Id = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].Id");
-				dBInstance.Description = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].Description");
-				dBInstance.PayType = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].PayType");
-				dBInstance.CreateTime = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].CreateTime");
+				dBInstance.Type = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].Type");
+				dBInstance.Status = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].Status");
+				dBInstance.CommodityCode = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].CommodityCode");
 				dBInstance.ExpireTime = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].ExpireTime");
 				dBInstance.Expired = _ctx.BooleanValue("DescribeDBInstances.DBInstances["+ i +"].Expired");
-				dBInstance.RegionId = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].RegionId");
-				dBInstance.ZoneId = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].ZoneId");
-				dBInstance.Network = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].Network");
-				dBInstance.VPCId = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].VPCId");
-				dBInstance.Engine = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].Engine");
-				dBInstance.DBType = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].DBType");
-				dBInstance.DBVersion = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].DBVersion");
-				dBInstance.Status = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].Status");
-				dBInstance.LockMode = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].LockMode");
+				dBInstance.CreateTime = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].CreateTime");
+				dBInstance.PayType = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].PayType");
 				dBInstance.LockReason = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].LockReason");
-				dBInstance.NodeCount = _ctx.IntegerValue("DescribeDBInstances.DBInstances["+ i +"].NodeCount");
+				dBInstance.DBType = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].DBType");
+				dBInstance.LockMode = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].LockMode");
+				dBInstance.VPCId = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].VPCId");
+				dBInstance.MinorVersion = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].MinorVersion");
+				dBInstance.RegionId = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].RegionId");
+				dBInstance.Network = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].Network");
+				dBInstance.DBVersion = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].DBVersion");
+				dBInstance.Description = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].Description");
 				dBInstance.NodeClass = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].NodeClass");
-				dBInstance.StorageUsed = _ctx.IntegerValue("DescribeDBInstances.DBInstances["+ i +"].StorageUsed");
-				dBInstance.CommodityCode = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].CommodityCode");
-				dBInstance.Type = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].Type");
+				dBInstance.StorageUsed = _ctx.LongValue("DescribeDBInstances.DBInstances["+ i +"].StorageUsed");
+				dBInstance.NodeCount = _ctx.IntegerValue("DescribeDBInstances.DBInstances["+ i +"].NodeCount");
+				dBInstance.ZoneId = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].ZoneId");
+				dBInstance.Engine = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].Engine");
+				dBInstance.Id = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].Id");
+				dBInstance.ResourceGroupId = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].ResourceGroupId");
+				dBInstance.DBInstanceName = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].DBInstanceName");
+				dBInstance.DnNodeCount = _ctx.IntegerValue("DescribeDBInstances.DBInstances["+ i +"].DnNodeCount");
+				dBInstance.CnNodeCount = _ctx.IntegerValue("DescribeDBInstances.DBInstances["+ i +"].CnNodeCount");
+				dBInstance.CnNodeClassCode = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].CnNodeClassCode");
+				dBInstance.DnNodeClassCode = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].DnNodeClassCode");
+				dBInstance.Series = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].Series");
+				dBInstance.ContainBinlogX = _ctx.BooleanValue("DescribeDBInstances.DBInstances["+ i +"].ContainBinlogX");
+				dBInstance.SupportBinlogX = _ctx.BooleanValue("DescribeDBInstances.DBInstances["+ i +"].SupportBinlogX");
+				dBInstance.CdcInstanceName = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].CdcInstanceName");
+				dBInstance.TopologyType = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].TopologyType");
+				dBInstance.TertiaryZone = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].TertiaryZone");
+				dBInstance.PrimaryZone = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].PrimaryZone");
+				dBInstance.SecondaryZone = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].SecondaryZone");
+				dBInstance.ColumnarInstanceName = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].ColumnarInstanceName");
+				dBInstance.IsInGdn = _ctx.BooleanValue("DescribeDBInstances.DBInstances["+ i +"].isInGdn");
+				dBInstance.GdnRole = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].gdnRole");
+				dBInstance.CpuType = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].CpuType");
 
 				List<string> dBInstance_readDBInstances = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeDBInstances.DBInstances["+ i +"].ReadDBInstances.Length"); j++) {
@@ -67,17 +86,33 @@ namespace Aliyun.Acs.polardbx.Transform.V20200202
 				}
 				dBInstance.ReadDBInstances = dBInstance_readDBInstances;
 
+				List<string> dBInstance_columnarReadDBInstances = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeDBInstances.DBInstances["+ i +"].ColumnarReadDBInstances.Length"); j++) {
+					dBInstance_columnarReadDBInstances.Add(_ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].ColumnarReadDBInstances["+ j +"]"));
+				}
+				dBInstance.ColumnarReadDBInstances = dBInstance_columnarReadDBInstances;
+
 				List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_PolarDBXNode> dBInstance_nodes = new List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_PolarDBXNode>();
 				for (int j = 0; j < _ctx.Length("DescribeDBInstances.DBInstances["+ i +"].Nodes.Length"); j++) {
 					DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_PolarDBXNode polarDBXNode = new DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_PolarDBXNode();
+					polarDBXNode.ZoneId = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].Nodes["+ j +"].ZoneId");
 					polarDBXNode.Id = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].Nodes["+ j +"].Id");
 					polarDBXNode.ClassCode = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].Nodes["+ j +"].ClassCode");
 					polarDBXNode.RegionId = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].Nodes["+ j +"].RegionId");
-					polarDBXNode.ZoneId = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].Nodes["+ j +"].ZoneId");
 
 					dBInstance_nodes.Add(polarDBXNode);
 				}
 				dBInstance.Nodes = dBInstance_nodes;
+
+				List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_TagSetItem> dBInstance_tagSet = new List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_TagSetItem>();
+				for (int j = 0; j < _ctx.Length("DescribeDBInstances.DBInstances["+ i +"].TagSet.Length"); j++) {
+					DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_TagSetItem tagSetItem = new DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_TagSetItem();
+					tagSetItem.Key = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].TagSet["+ j +"].Key");
+					tagSetItem._Value = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].TagSet["+ j +"].Value");
+
+					dBInstance_tagSet.Add(tagSetItem);
+				}
+				dBInstance.TagSet = dBInstance_tagSet;
 
 				describeDBInstancesResponse_dBInstances.Add(dBInstance);
 			}

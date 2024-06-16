@@ -66,6 +66,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string zoneId;
 
+		private string instanceScene;
+
 		private string orderType;
 
 		public long? ResourceOwnerId
@@ -234,6 +236,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				zoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public string InstanceScene
+		{
+			get
+			{
+				return instanceScene;
+			}
+			set	
+			{
+				instanceScene = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceScene", value);
 			}
 		}
 

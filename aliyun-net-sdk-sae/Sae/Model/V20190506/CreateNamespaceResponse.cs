@@ -134,6 +134,10 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 			private string regionId;
 
+			private string nameSpaceShortId;
+
+			private bool? enableMicroRegistration;
+
 			public string NamespaceDescription
 			{
 				get
@@ -179,6 +183,30 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					regionId = value;
+				}
+			}
+
+			public string NameSpaceShortId
+			{
+				get
+				{
+					return nameSpaceShortId;
+				}
+				set	
+				{
+					nameSpaceShortId = value;
+				}
+			}
+
+			public bool? EnableMicroRegistration
+			{
+				get
+				{
+					return enableMicroRegistration;
+				}
+				set	
+				{
+					enableMicroRegistration = value;
 				}
 			}
 		}

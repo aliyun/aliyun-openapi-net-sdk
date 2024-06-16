@@ -44,6 +44,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private long? ownerId;
 
+		private string env;
+
 		private string securityToken;
 
 		private string configId;
@@ -71,6 +73,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Env
+		{
+			get
+			{
+				return env;
+			}
+			set	
+			{
+				env = value;
+				DictionaryUtil.Add(QueryParameters, "Env", value);
 			}
 		}
 

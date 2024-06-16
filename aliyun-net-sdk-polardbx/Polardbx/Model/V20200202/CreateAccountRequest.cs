@@ -42,6 +42,8 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 
 		private string dBInstanceName;
 
+		private string securityAccountPassword;
+
 		private string accountDescription;
 
 		private string accountPrivilege;
@@ -51,6 +53,8 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 		private string accountName;
 
 		private string dBName;
+
+		private string securityAccountName;
 
 		public string DBInstanceName
 		{
@@ -62,6 +66,19 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			{
 				dBInstanceName = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceName", value);
+			}
+		}
+
+		public string SecurityAccountPassword
+		{
+			get
+			{
+				return securityAccountPassword;
+			}
+			set	
+			{
+				securityAccountPassword = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityAccountPassword", value);
 			}
 		}
 
@@ -127,6 +144,19 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			{
 				dBName = value;
 				DictionaryUtil.Add(QueryParameters, "DBName", value);
+			}
+		}
+
+		public string SecurityAccountName
+		{
+			get
+			{
+				return securityAccountName;
+			}
+			set	
+			{
+				securityAccountName = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityAccountName", value);
 			}
 		}
 

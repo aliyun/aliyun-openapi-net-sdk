@@ -26,25 +26,25 @@ namespace Aliyun.Acs.amqp_open.Transform.V20191212
 {
     public class ListQueueUpStreamBindingsResponseUnmarshaller
     {
-        public static ListQueueUpStreamBindingsResponse Unmarshall(UnmarshallerContext context)
+        public static ListQueueUpStreamBindingsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListQueueUpStreamBindingsResponse listQueueUpStreamBindingsResponse = new ListQueueUpStreamBindingsResponse();
 
-			listQueueUpStreamBindingsResponse.HttpResponse = context.HttpResponse;
-			listQueueUpStreamBindingsResponse.RequestId = context.StringValue("ListQueueUpStreamBindings.RequestId");
+			listQueueUpStreamBindingsResponse.HttpResponse = _ctx.HttpResponse;
+			listQueueUpStreamBindingsResponse.RequestId = _ctx.StringValue("ListQueueUpStreamBindings.RequestId");
 
 			ListQueueUpStreamBindingsResponse.ListQueueUpStreamBindings_Data data = new ListQueueUpStreamBindingsResponse.ListQueueUpStreamBindings_Data();
-			data.NextToken = context.StringValue("ListQueueUpStreamBindings.Data.NextToken");
-			data.MaxResults = context.StringValue("ListQueueUpStreamBindings.Data.MaxResults");
+			data.MaxResults = _ctx.StringValue("ListQueueUpStreamBindings.Data.MaxResults");
+			data.NextToken = _ctx.StringValue("ListQueueUpStreamBindings.Data.NextToken");
 
 			List<ListQueueUpStreamBindingsResponse.ListQueueUpStreamBindings_Data.ListQueueUpStreamBindings_BindingVO> data_bindings = new List<ListQueueUpStreamBindingsResponse.ListQueueUpStreamBindings_Data.ListQueueUpStreamBindings_BindingVO>();
-			for (int i = 0; i < context.Length("ListQueueUpStreamBindings.Data.Bindings.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListQueueUpStreamBindings.Data.Bindings.Length"); i++) {
 				ListQueueUpStreamBindingsResponse.ListQueueUpStreamBindings_Data.ListQueueUpStreamBindings_BindingVO bindingVO = new ListQueueUpStreamBindingsResponse.ListQueueUpStreamBindings_Data.ListQueueUpStreamBindings_BindingVO();
-				bindingVO.SourceExchange = context.StringValue("ListQueueUpStreamBindings.Data.Bindings["+ i +"].SourceExchange");
-				bindingVO.DestinationName = context.StringValue("ListQueueUpStreamBindings.Data.Bindings["+ i +"].DestinationName");
-				bindingVO.BindingType = context.StringValue("ListQueueUpStreamBindings.Data.Bindings["+ i +"].BindingType");
-				bindingVO.BindingKey = context.StringValue("ListQueueUpStreamBindings.Data.Bindings["+ i +"].BindingKey");
-				bindingVO.Argument = context.StringValue("ListQueueUpStreamBindings.Data.Bindings["+ i +"].Argument");
+				bindingVO.SourceExchange = _ctx.StringValue("ListQueueUpStreamBindings.Data.Bindings["+ i +"].SourceExchange");
+				bindingVO.Argument = _ctx.StringValue("ListQueueUpStreamBindings.Data.Bindings["+ i +"].Argument");
+				bindingVO.BindingKey = _ctx.StringValue("ListQueueUpStreamBindings.Data.Bindings["+ i +"].BindingKey");
+				bindingVO.BindingType = _ctx.StringValue("ListQueueUpStreamBindings.Data.Bindings["+ i +"].BindingType");
+				bindingVO.DestinationName = _ctx.StringValue("ListQueueUpStreamBindings.Data.Bindings["+ i +"].DestinationName");
 
 				data_bindings.Add(bindingVO);
 			}

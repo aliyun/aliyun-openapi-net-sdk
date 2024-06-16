@@ -35,6 +35,7 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 
 			ModifyInstanceNodeNumResponse.ModifyInstanceNodeNum_Data data = new ModifyInstanceNodeNumResponse.ModifyInstanceNodeNum_Data();
 			data.OrderId = _ctx.StringValue("ModifyInstanceNodeNum.Data.OrderId");
+			data.DryRunResult = _ctx.BooleanValue("ModifyInstanceNodeNum.Data.DryRunResult");
 			modifyInstanceNodeNumResponse.Data = data;
         
 			return modifyInstanceNodeNumResponse;

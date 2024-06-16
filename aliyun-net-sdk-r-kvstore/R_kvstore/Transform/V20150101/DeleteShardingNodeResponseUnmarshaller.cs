@@ -32,6 +32,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 
 			deleteShardingNodeResponse.HttpResponse = _ctx.HttpResponse;
 			deleteShardingNodeResponse.RequestId = _ctx.StringValue("DeleteShardingNode.RequestId");
+			deleteShardingNodeResponse.OrderId = _ctx.StringValue("DeleteShardingNode.OrderId");
         
 			return deleteShardingNodeResponse;
         }

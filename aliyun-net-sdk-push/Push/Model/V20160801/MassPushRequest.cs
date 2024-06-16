@@ -123,6 +123,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
 						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
 						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
 						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
 					}
 				}
 			}
@@ -182,7 +185,11 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string androidImageUrl;
 
+			private int? androidHonorTargetUserType;
+
 			private string androidNotificationVivoChannel;
+
+			private string androidVivoReceiptId;
 
 			private string iOSNotificationCategory;
 
@@ -243,6 +250,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			private string androidNotificationHonorChannel;
 
 			private string androidXiaomiImageUrl;
+
+			private int? androidTargetUserType;
 
 			private string androidPopupBody;
 
@@ -500,6 +509,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
+			public int? AndroidHonorTargetUserType
+			{
+				get
+				{
+					return androidHonorTargetUserType;
+				}
+				set	
+				{
+					androidHonorTargetUserType = value;
+				}
+			}
+
 			public string AndroidNotificationVivoChannel
 			{
 				get
@@ -509,6 +530,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					androidNotificationVivoChannel = value;
+				}
+			}
+
+			public string AndroidVivoReceiptId
+			{
+				get
+				{
+					return androidVivoReceiptId;
+				}
+				set	
+				{
+					androidVivoReceiptId = value;
 				}
 			}
 
@@ -869,6 +902,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					androidXiaomiImageUrl = value;
+				}
+			}
+
+			public int? AndroidTargetUserType
+			{
+				get
+				{
+					return androidTargetUserType;
+				}
+				set	
+				{
+					androidTargetUserType = value;
 				}
 			}
 

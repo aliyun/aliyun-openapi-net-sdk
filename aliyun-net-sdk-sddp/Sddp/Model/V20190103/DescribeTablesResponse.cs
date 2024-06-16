@@ -154,6 +154,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 			private List<DescribeTables_Rule> ruleList;
 
+			private List<DescribeTables_ModelTagsItem> modelTags;
+
 			public long? CreationTime
 			{
 				get
@@ -490,6 +492,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
+			public List<DescribeTables_ModelTagsItem> ModelTags
+			{
+				get
+				{
+					return modelTags;
+				}
+				set	
+				{
+					modelTags = value;
+				}
+			}
+
 			public class DescribeTables_Rule
 			{
 
@@ -546,6 +560,38 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 					set	
 					{
 						count = value;
+					}
+				}
+			}
+
+			public class DescribeTables_ModelTagsItem
+			{
+
+				private long? id;
+
+				private string name;
+
+				public long? Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
 					}
 				}
 			}

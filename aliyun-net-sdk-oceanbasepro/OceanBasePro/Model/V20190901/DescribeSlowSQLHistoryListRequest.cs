@@ -41,10 +41,6 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			Method = MethodType.POST;
         }
 
-		private string sQLId;
-
-		private string endTime;
-
 		private string startTime;
 
 		private int? pageNumber;
@@ -53,33 +49,9 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 		private int? pageSize;
 
-		[JsonProperty(PropertyName = "SQLId")]
-		public string SQLId
-		{
-			get
-			{
-				return sQLId;
-			}
-			set	
-			{
-				sQLId = value;
-				DictionaryUtil.Add(BodyParameters, "SQLId", value);
-			}
-		}
+		private string sQLId;
 
-		[JsonProperty(PropertyName = "EndTime")]
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(BodyParameters, "EndTime", value);
-			}
-		}
+		private string endTime;
 
 		[JsonProperty(PropertyName = "StartTime")]
 		public string StartTime
@@ -134,6 +106,34 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			{
 				pageSize = value;
 				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "SQLId")]
+		public string SQLId
+		{
+			get
+			{
+				return sQLId;
+			}
+			set	
+			{
+				sQLId = value;
+				DictionaryUtil.Add(BodyParameters, "SQLId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "EndTime")]
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(BodyParameters, "EndTime", value);
 			}
 		}
 

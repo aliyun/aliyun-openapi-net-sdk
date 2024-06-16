@@ -83,6 +83,10 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 
 		private string resourceGroupId;
 
+		private string bizStatus;
+
+		private string grafanaDashBoardUrl;
+
 		private List<GetServiceInstance_Tag> tags;
 
 		private GetServiceInstance_Service service;
@@ -434,6 +438,30 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 			set	
 			{
 				resourceGroupId = value;
+			}
+		}
+
+		public string BizStatus
+		{
+			get
+			{
+				return bizStatus;
+			}
+			set	
+			{
+				bizStatus = value;
+			}
+		}
+
+		public string GrafanaDashBoardUrl
+		{
+			get
+			{
+				return grafanaDashBoardUrl;
+			}
+			set	
+			{
+				grafanaDashBoardUrl = value;
 			}
 		}
 

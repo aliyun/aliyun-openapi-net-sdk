@@ -141,6 +141,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string streamName;
 
+			private int? delayTime;
+
 			private string createTime;
 
 			private int? onDemond;
@@ -206,6 +208,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					streamName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DelayTime")]
+			public int? DelayTime
+			{
+				get
+				{
+					return delayTime;
+				}
+				set	
+				{
+					delayTime = value;
 				}
 			}
 

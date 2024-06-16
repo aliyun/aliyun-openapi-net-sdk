@@ -50,11 +50,15 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private int? runMinute;
 
+		private string sourceIp;
+
 		private int? intervalDay;
 
 		private int? scanRange;
 
 		private string lang;
+
+		private int? featureType;
 
 		private string ossScanPath;
 
@@ -127,6 +131,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
+		public string SourceIp
+		{
+			get
+			{
+				return sourceIp;
+			}
+			set	
+			{
+				sourceIp = value;
+				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
+			}
+		}
+
 		public int? IntervalDay
 		{
 			get
@@ -163,6 +180,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public int? FeatureType
+		{
+			get
+			{
+				return featureType;
+			}
+			set	
+			{
+				featureType = value;
+				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
 			}
 		}
 

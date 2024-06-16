@@ -31,16 +31,17 @@ namespace Aliyun.Acs.fnf.Transform.V20190315
 			CreateFlowResponse createFlowResponse = new CreateFlowResponse();
 
 			createFlowResponse.HttpResponse = _ctx.HttpResponse;
-			createFlowResponse.RequestId = _ctx.StringValue("CreateFlow.RequestId");
-			createFlowResponse.Name = _ctx.StringValue("CreateFlow.Name");
-			createFlowResponse.Description = _ctx.StringValue("CreateFlow.Description");
-			createFlowResponse.Definition = _ctx.StringValue("CreateFlow.Definition");
-			createFlowResponse.Id = _ctx.StringValue("CreateFlow.Id");
 			createFlowResponse.Type = _ctx.StringValue("CreateFlow.Type");
+			createFlowResponse.Definition = _ctx.StringValue("CreateFlow.Definition");
 			createFlowResponse.RoleArn = _ctx.StringValue("CreateFlow.RoleArn");
+			createFlowResponse.RequestId = _ctx.StringValue("CreateFlow.RequestId");
+			createFlowResponse.Description = _ctx.StringValue("CreateFlow.Description");
+			createFlowResponse.ExternalStorageLocation = _ctx.StringValue("CreateFlow.ExternalStorageLocation");
+			createFlowResponse.Name = _ctx.StringValue("CreateFlow.Name");
 			createFlowResponse.CreatedTime = _ctx.StringValue("CreateFlow.CreatedTime");
 			createFlowResponse.LastModifiedTime = _ctx.StringValue("CreateFlow.LastModifiedTime");
-			createFlowResponse.ExternalStorageLocation = _ctx.StringValue("CreateFlow.ExternalStorageLocation");
+			createFlowResponse.Id = _ctx.StringValue("CreateFlow.Id");
+			createFlowResponse.ExecutionMode = _ctx.StringValue("CreateFlow.ExecutionMode");
         
 			return createFlowResponse;
         }

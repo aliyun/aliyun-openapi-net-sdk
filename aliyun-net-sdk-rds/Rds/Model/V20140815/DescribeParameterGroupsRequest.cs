@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string resourceOwnerAccount;
 
+		private bool? enableDetail;
+
 		private long? ownerId;
 
 		private string resourceGroupId;
@@ -74,6 +76,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "EnableDetail")]
+		public bool? EnableDetail
+		{
+			get
+			{
+				return enableDetail;
+			}
+			set	
+			{
+				enableDetail = value;
+				DictionaryUtil.Add(QueryParameters, "EnableDetail", value.ToString());
 			}
 		}
 

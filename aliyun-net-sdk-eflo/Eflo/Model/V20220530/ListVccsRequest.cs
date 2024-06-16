@@ -39,13 +39,19 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private int? pageNumber;
 
+		private string resourceGroupId;
+
 		private int? pageSize;
+
+		private List<string> tags = new List<string>(){ };
 
 		private string vccId;
 
 		private int? bandwidth;
 
 		private string exStatus;
+
+		private string filterErId;
 
 		private string vpdId;
 
@@ -81,6 +87,19 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			}
 		}
 
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(BodyParameters, "ResourceGroupId", value);
+			}
+		}
+
 		public int? PageSize
 		{
 			get
@@ -91,6 +110,27 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				pageSize = value;
 				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public List<string> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				if(tags != null)
+				{
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(BodyParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
+				}
 			}
 		}
 
@@ -130,6 +170,19 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				exStatus = value;
 				DictionaryUtil.Add(BodyParameters, "ExStatus", value);
+			}
+		}
+
+		public string FilterErId
+		{
+			get
+			{
+				return filterErId;
+			}
+			set	
+			{
+				filterErId = value;
+				DictionaryUtil.Add(BodyParameters, "FilterErId", value);
 			}
 		}
 
@@ -182,6 +235,38 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				status = value;
 				DictionaryUtil.Add(BodyParameters, "Status", value);
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

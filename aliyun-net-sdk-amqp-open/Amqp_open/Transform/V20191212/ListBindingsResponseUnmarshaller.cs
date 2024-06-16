@@ -26,25 +26,25 @@ namespace Aliyun.Acs.amqp_open.Transform.V20191212
 {
     public class ListBindingsResponseUnmarshaller
     {
-        public static ListBindingsResponse Unmarshall(UnmarshallerContext context)
+        public static ListBindingsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListBindingsResponse listBindingsResponse = new ListBindingsResponse();
 
-			listBindingsResponse.HttpResponse = context.HttpResponse;
-			listBindingsResponse.RequestId = context.StringValue("ListBindings.RequestId");
+			listBindingsResponse.HttpResponse = _ctx.HttpResponse;
+			listBindingsResponse.RequestId = _ctx.StringValue("ListBindings.RequestId");
 
 			ListBindingsResponse.ListBindings_Data data = new ListBindingsResponse.ListBindings_Data();
-			data.NextToken = context.StringValue("ListBindings.Data.NextToken");
-			data.MaxResults = context.IntegerValue("ListBindings.Data.MaxResults");
+			data.MaxResults = _ctx.IntegerValue("ListBindings.Data.MaxResults");
+			data.NextToken = _ctx.StringValue("ListBindings.Data.NextToken");
 
 			List<ListBindingsResponse.ListBindings_Data.ListBindings_BindingDO> data_bindings = new List<ListBindingsResponse.ListBindings_Data.ListBindings_BindingDO>();
-			for (int i = 0; i < context.Length("ListBindings.Data.Bindings.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListBindings.Data.Bindings.Length"); i++) {
 				ListBindingsResponse.ListBindings_Data.ListBindings_BindingDO bindingDO = new ListBindingsResponse.ListBindings_Data.ListBindings_BindingDO();
-				bindingDO.SourceExchange = context.StringValue("ListBindings.Data.Bindings["+ i +"].SourceExchange");
-				bindingDO.DestinationName = context.StringValue("ListBindings.Data.Bindings["+ i +"].DestinationName");
-				bindingDO.BindingType = context.StringValue("ListBindings.Data.Bindings["+ i +"].BindingType");
-				bindingDO.BindingKey = context.StringValue("ListBindings.Data.Bindings["+ i +"].BindingKey");
-				bindingDO.Argument = context.StringValue("ListBindings.Data.Bindings["+ i +"].Argument");
+				bindingDO.SourceExchange = _ctx.StringValue("ListBindings.Data.Bindings["+ i +"].SourceExchange");
+				bindingDO.Argument = _ctx.StringValue("ListBindings.Data.Bindings["+ i +"].Argument");
+				bindingDO.BindingKey = _ctx.StringValue("ListBindings.Data.Bindings["+ i +"].BindingKey");
+				bindingDO.BindingType = _ctx.StringValue("ListBindings.Data.Bindings["+ i +"].BindingType");
+				bindingDO.DestinationName = _ctx.StringValue("ListBindings.Data.Bindings["+ i +"].DestinationName");
 
 				data_bindings.Add(bindingDO);
 			}

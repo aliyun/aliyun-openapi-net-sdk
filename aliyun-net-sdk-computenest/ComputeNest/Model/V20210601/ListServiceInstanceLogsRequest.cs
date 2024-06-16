@@ -44,7 +44,11 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 
 		private string serviceInstanceId;
 
-		private string maxResults;
+		private string logSource;
+
+		private int? maxResults;
+
+		private string logstore;
 
 		public string NextToken
 		{
@@ -72,7 +76,20 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 			}
 		}
 
-		public string MaxResults
+		public string LogSource
+		{
+			get
+			{
+				return logSource;
+			}
+			set	
+			{
+				logSource = value;
+				DictionaryUtil.Add(QueryParameters, "LogSource", value);
+			}
+		}
+
+		public int? MaxResults
 		{
 			get
 			{
@@ -81,7 +98,20 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 			set	
 			{
 				maxResults = value;
-				DictionaryUtil.Add(QueryParameters, "MaxResults", value);
+				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+			}
+		}
+
+		public string Logstore
+		{
+			get
+			{
+				return logstore;
+			}
+			set	
+			{
+				logstore = value;
+				DictionaryUtil.Add(QueryParameters, "Logstore", value);
 			}
 		}
 

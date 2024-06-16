@@ -25,22 +25,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class StartCasterSceneResponse : AcsResponse
 	{
 
-		private string streamUrl;
-
 		private string requestId;
 
-		[JsonProperty(PropertyName = "StreamUrl")]
-		public string StreamUrl
-		{
-			get
-			{
-				return streamUrl;
-			}
-			set	
-			{
-				streamUrl = value;
-			}
-		}
+		private string streamUrl;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -52,6 +39,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "StreamUrl")]
+		public string StreamUrl
+		{
+			get
+			{
+				return streamUrl;
+			}
+			set	
+			{
+				streamUrl = value;
 			}
 		}
 	}

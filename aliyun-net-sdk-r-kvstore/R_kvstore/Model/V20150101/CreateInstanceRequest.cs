@@ -42,6 +42,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
+		private string connectionStringPrefix;
+
 		private string secondaryZoneId;
 
 		private string couponNo;
@@ -57,6 +59,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private string securityToken;
 
 		private List<string> tags = new List<string>(){ };
+
+		private string globalSecurityGroupIds;
 
 		private string businessInfo;
 
@@ -84,6 +88,10 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string zoneId;
 
+		private string appendonly;
+
+		private string nodeType;
+
 		private string autoUseCoupon;
 
 		private string instanceClass;
@@ -108,9 +116,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string globalInstanceId;
 
+		private string paramGroupId;
+
 		private string vpcId;
 
+		private int? readOnlyCount;
+
 		private string chargeType;
+
+		private string clusterBackupId;
 
 		public long? ResourceOwnerId
 		{
@@ -122,6 +136,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ConnectionStringPrefix
+		{
+			get
+			{
+				return connectionStringPrefix;
+			}
+			set	
+			{
+				connectionStringPrefix = value;
+				DictionaryUtil.Add(QueryParameters, "ConnectionStringPrefix", value);
 			}
 		}
 
@@ -234,6 +261,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
 					}
 				}
+			}
+		}
+
+		public string GlobalSecurityGroupIds
+		{
+			get
+			{
+				return globalSecurityGroupIds;
+			}
+			set	
+			{
+				globalSecurityGroupIds = value;
+				DictionaryUtil.Add(QueryParameters, "GlobalSecurityGroupIds", value);
 			}
 		}
 
@@ -406,6 +446,32 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string Appendonly
+		{
+			get
+			{
+				return appendonly;
+			}
+			set	
+			{
+				appendonly = value;
+				DictionaryUtil.Add(QueryParameters, "Appendonly", value);
+			}
+		}
+
+		public string NodeType
+		{
+			get
+			{
+				return nodeType;
+			}
+			set	
+			{
+				nodeType = value;
+				DictionaryUtil.Add(QueryParameters, "NodeType", value);
+			}
+		}
+
 		public string AutoUseCoupon
 		{
 			get
@@ -562,6 +628,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string ParamGroupId
+		{
+			get
+			{
+				return paramGroupId;
+			}
+			set	
+			{
+				paramGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ParamGroupId", value);
+			}
+		}
+
 		public string VpcId
 		{
 			get
@@ -575,6 +654,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public int? ReadOnlyCount
+		{
+			get
+			{
+				return readOnlyCount;
+			}
+			set	
+			{
+				readOnlyCount = value;
+				DictionaryUtil.Add(QueryParameters, "ReadOnlyCount", value.ToString());
+			}
+		}
+
 		public string ChargeType
 		{
 			get
@@ -585,6 +677,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				chargeType = value;
 				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
+			}
+		}
+
+		public string ClusterBackupId
+		{
+			get
+			{
+				return clusterBackupId;
+			}
+			set	
+			{
+				clusterBackupId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterBackupId", value);
 			}
 		}
 

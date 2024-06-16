@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dBInstanceId;
 
+		private string nodeId;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -92,6 +94,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "NodeId")]
+		public string NodeId
+		{
+			get
+			{
+				return nodeId;
+			}
+			set	
+			{
+				nodeId = value;
+				DictionaryUtil.Add(QueryParameters, "NodeId", value);
 			}
 		}
 

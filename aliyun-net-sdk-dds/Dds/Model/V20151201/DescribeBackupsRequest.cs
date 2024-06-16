@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
         public DescribeBackupsRequest()
             : base("Dds", "2015-12-01", "DescribeBackups", "dds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
@@ -39,15 +44,17 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string startTime;
 
-		private int? pageNumber;
+		private string srcRegion;
 
-		private string securityToken;
+		private int? pageNumber;
 
 		private int? pageSize;
 
 		private string dBInstanceId;
 
 		private string nodeId;
+
+		private string destRegion;
 
 		private string resourceOwnerAccount;
 
@@ -85,6 +92,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string SrcRegion
+		{
+			get
+			{
+				return srcRegion;
+			}
+			set	
+			{
+				srcRegion = value;
+				DictionaryUtil.Add(QueryParameters, "SrcRegion", value);
+			}
+		}
+
 		public int? PageNumber
 		{
 			get
@@ -95,19 +115,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -147,6 +154,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				nodeId = value;
 				DictionaryUtil.Add(QueryParameters, "NodeId", value);
+			}
+		}
+
+		public string DestRegion
+		{
+			get
+			{
+				return destRegion;
+			}
+			set	
+			{
+				destRegion = value;
+				DictionaryUtil.Add(QueryParameters, "DestRegion", value);
 			}
 		}
 

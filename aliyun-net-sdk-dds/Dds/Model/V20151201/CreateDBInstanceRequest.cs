@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
         public CreateDBInstanceRequest()
             : base("Dds", "2015-12-01", "CreateDBInstance", "dds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
@@ -47,13 +52,15 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string networkType;
 
+		private string srcRegion;
+
 		private string storageType;
 
 		private string resourceGroupId;
 
-		private string securityToken;
-
 		private string dBInstanceDescription;
+
+		private List<string> tags = new List<string>(){ };
 
 		private string globalSecurityGroupIds;
 
@@ -72,6 +79,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string securityIPList;
 
 		private string vSwitchId;
+
+		private long? provisionedIops;
 
 		private string autoRenew;
 
@@ -100,6 +109,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string ownerAccount;
 
 		private string clusterId;
+
+		private string restoreType;
 
 		private string accountPassword;
 
@@ -187,6 +198,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string SrcRegion
+		{
+			get
+			{
+				return srcRegion;
+			}
+			set	
+			{
+				srcRegion = value;
+				DictionaryUtil.Add(QueryParameters, "SrcRegion", value);
+			}
+		}
+
 		public string StorageType
 		{
 			get
@@ -213,19 +237,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
 		public string DBInstanceDescription
 		{
 			get
@@ -236,6 +247,27 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				dBInstanceDescription = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceDescription", value);
+			}
+		}
+
+		public List<string> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				if(tags != null)
+				{
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
+				}
 			}
 		}
 
@@ -353,6 +385,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				vSwitchId = value;
 				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+			}
+		}
+
+		public long? ProvisionedIops
+		{
+			get
+			{
+				return provisionedIops;
+			}
+			set	
+			{
+				provisionedIops = value;
+				DictionaryUtil.Add(QueryParameters, "ProvisionedIops", value.ToString());
 			}
 		}
 
@@ -538,6 +583,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string RestoreType
+		{
+			get
+			{
+				return restoreType;
+			}
+			set	
+			{
+				restoreType = value;
+				DictionaryUtil.Add(QueryParameters, "RestoreType", value);
+			}
+		}
+
 		public string AccountPassword
 		{
 			get
@@ -587,6 +645,38 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				chargeType = value;
 				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

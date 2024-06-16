@@ -43,17 +43,17 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 		private string roles;
 
-		private string userType;
-
 		private string description;
 
 		private string userPassword;
 
-		private string instanceId;
-
 		private string tenantId;
 
 		private string encryptionType;
+
+		private string userType;
+
+		private string instanceId;
 
 		private string userName;
 
@@ -68,20 +68,6 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			{
 				roles = value;
 				DictionaryUtil.Add(BodyParameters, "Roles", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "UserType")]
-		public string UserType
-		{
-			get
-			{
-				return userType;
-			}
-			set	
-			{
-				userType = value;
-				DictionaryUtil.Add(BodyParameters, "UserType", value);
 			}
 		}
 
@@ -113,20 +99,6 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			}
 		}
 
-		[JsonProperty(PropertyName = "InstanceId")]
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(BodyParameters, "InstanceId", value);
-			}
-		}
-
 		[JsonProperty(PropertyName = "TenantId")]
 		public string TenantId
 		{
@@ -152,6 +124,34 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			{
 				encryptionType = value;
 				DictionaryUtil.Add(BodyParameters, "EncryptionType", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "UserType")]
+		public string UserType
+		{
+			get
+			{
+				return userType;
+			}
+			set	
+			{
+				userType = value;
+				DictionaryUtil.Add(BodyParameters, "UserType", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "InstanceId")]
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(BodyParameters, "InstanceId", value);
 			}
 		}
 

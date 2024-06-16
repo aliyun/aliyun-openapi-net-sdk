@@ -29,6 +29,14 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string traceId;
 
+		private string message;
+
+		private string errorCode;
+
+		private string code;
+
+		private bool? success;
+
 		private UpdateApplicationScalingRule_Data data;
 
 		public string RequestId
@@ -52,6 +60,54 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				traceId = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -262,6 +318,10 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 					private int? targetReplicas;
 
+					private int? minReplicas;
+
+					private int? maxReplicas;
+
 					public string AtTime
 					{
 						get
@@ -283,6 +343,30 @@ namespace Aliyun.Acs.sae.Model.V20190506
 						set	
 						{
 							targetReplicas = value;
+						}
+					}
+
+					public int? MinReplicas
+					{
+						get
+						{
+							return minReplicas;
+						}
+						set	
+						{
+							minReplicas = value;
+						}
+					}
+
+					public int? MaxReplicas
+					{
+						get
+						{
+							return maxReplicas;
+						}
+						set	
+						{
+							maxReplicas = value;
 						}
 					}
 				}
@@ -340,6 +424,14 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 					private string metricType;
 
+					private string slbProject;
+
+					private string slbLogstore;
+
+					private string vport;
+
+					private string slbId;
+
 					public int? MetricTargetAverageUtilization
 					{
 						get
@@ -361,6 +453,54 @@ namespace Aliyun.Acs.sae.Model.V20190506
 						set	
 						{
 							metricType = value;
+						}
+					}
+
+					public string SlbProject
+					{
+						get
+						{
+							return slbProject;
+						}
+						set	
+						{
+							slbProject = value;
+						}
+					}
+
+					public string SlbLogstore
+					{
+						get
+						{
+							return slbLogstore;
+						}
+						set	
+						{
+							slbLogstore = value;
+						}
+					}
+
+					public string Vport
+					{
+						get
+						{
+							return vport;
+						}
+						set	
+						{
+							vport = value;
+						}
+					}
+
+					public string SlbId
+					{
+						get
+						{
+							return slbId;
+						}
+						set	
+						{
+							slbId = value;
 						}
 					}
 				}

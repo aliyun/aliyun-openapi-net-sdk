@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
         public RenewDBInstanceRequest()
             : base("Dds", "2015-12-01", "RenewDBInstance", "dds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
@@ -40,8 +45,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string clientToken;
 
 		private string couponNo;
-
-		private string securityToken;
 
 		private string dBInstanceId;
 
@@ -56,6 +59,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private bool? autoRenew;
 
 		public long? ResourceOwnerId
 		{
@@ -93,19 +98,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				couponNo = value;
 				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -197,6 +189,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public bool? AutoRenew
+		{
+			get
+			{
+				return autoRenew;
+			}
+			set	
+			{
+				autoRenew = value;
+				DictionaryUtil.Add(QueryParameters, "AutoRenew", value.ToString());
 			}
 		}
 

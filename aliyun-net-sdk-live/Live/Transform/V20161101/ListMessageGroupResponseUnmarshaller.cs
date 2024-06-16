@@ -34,18 +34,18 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			listMessageGroupResponse.RequestId = _ctx.StringValue("ListMessageGroup.RequestId");
 
 			ListMessageGroupResponse.ListMessageGroup_Result result = new ListMessageGroupResponse.ListMessageGroup_Result();
-			result.Total = _ctx.IntegerValue("ListMessageGroup.Result.Total");
 			result.HasMore = _ctx.BooleanValue("ListMessageGroup.Result.HasMore");
+			result.Total = _ctx.IntegerValue("ListMessageGroup.Result.Total");
 
 			List<ListMessageGroupResponse.ListMessageGroup_Result.ListMessageGroup_GroupListItem> result_groupList = new List<ListMessageGroupResponse.ListMessageGroup_Result.ListMessageGroup_GroupListItem>();
 			for (int i = 0; i < _ctx.Length("ListMessageGroup.Result.GroupList.Length"); i++) {
 				ListMessageGroupResponse.ListMessageGroup_Result.ListMessageGroup_GroupListItem groupListItem = new ListMessageGroupResponse.ListMessageGroup_Result.ListMessageGroup_GroupListItem();
-				groupListItem.GroupId = _ctx.StringValue("ListMessageGroup.Result.GroupList["+ i +"].GroupId");
 				groupListItem.AppId = _ctx.StringValue("ListMessageGroup.Result.GroupList["+ i +"].AppId");
 				groupListItem.CreateTime = _ctx.LongValue("ListMessageGroup.Result.GroupList["+ i +"].CreateTime");
-				groupListItem.Status = _ctx.IntegerValue("ListMessageGroup.Result.GroupList["+ i +"].Status");
 				groupListItem.CreatorId = _ctx.StringValue("ListMessageGroup.Result.GroupList["+ i +"].CreatorId");
 				groupListItem.Extension = _ctx.StringValue("ListMessageGroup.Result.GroupList["+ i +"].Extension");
+				groupListItem.GroupId = _ctx.StringValue("ListMessageGroup.Result.GroupList["+ i +"].GroupId");
+				groupListItem.Status = _ctx.IntegerValue("ListMessageGroup.Result.GroupList["+ i +"].Status");
 
 				result_groupList.Add(groupListItem);
 			}

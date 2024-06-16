@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardbx.Model.V20200202
@@ -56,11 +56,23 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 		public class DescribeDBInstanceConfig_Data
 		{
 
+			private string configName;
+
 			private string dbInstanceName;
 
 			private string configValue;
 
-			private string configName;
+			public string ConfigName
+			{
+				get
+				{
+					return configName;
+				}
+				set	
+				{
+					configName = value;
+				}
+			}
 
 			public string DbInstanceName
 			{
@@ -83,18 +95,6 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 				set	
 				{
 					configValue = value;
-				}
-			}
-
-			public string ConfigName
-			{
-				get
-				{
-					return configName;
-				}
-				set	
-				{
-					configName = value;
 				}
 			}
 		}

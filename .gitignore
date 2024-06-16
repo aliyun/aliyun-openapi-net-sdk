@@ -299,3 +299,5 @@ __pycache__/
 
 # End of https://www.gitignore.io/api/csharp
 dotnet_build.sh
+
+.DS_Store

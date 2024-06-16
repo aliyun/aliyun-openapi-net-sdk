@@ -55,6 +55,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 					parameter.ParameterValue = _ctx.StringValue("DescribeDBNodesParameters.DBNodeIds["+ i +"].RunningParameters["+ j +"].ParameterValue");
 					parameter.IsNodeAvailable = _ctx.StringValue("DescribeDBNodesParameters.DBNodeIds["+ i +"].RunningParameters["+ j +"].IsNodeAvailable");
 					parameter.ParamRelyRule = _ctx.StringValue("DescribeDBNodesParameters.DBNodeIds["+ i +"].RunningParameters["+ j +"].ParamRelyRule");
+					parameter.Factor = _ctx.StringValue("DescribeDBNodesParameters.DBNodeIds["+ i +"].RunningParameters["+ j +"].Factor");
 
 					dBNodeParameter_runningParameters.Add(parameter);
 				}

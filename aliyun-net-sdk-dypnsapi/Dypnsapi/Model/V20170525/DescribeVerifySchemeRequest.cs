@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Dypnsapi;
 using Aliyun.Acs.Dypnsapi.Transform;
 using Aliyun.Acs.Dypnsapi.Transform.V20170525;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
     public class DescribeVerifySchemeRequest : RpcAcsRequest<DescribeVerifySchemeResponse>
     {
         public DescribeVerifySchemeRequest()
-            : base("Dypnsapi", "2017-05-25", "DescribeVerifyScheme")
+            : base("Dypnsapi", "2017-05-25", "DescribeVerifyScheme", "dypnsapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

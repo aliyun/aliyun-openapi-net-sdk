@@ -31,9 +31,9 @@ namespace Aliyun.Acs.polardbx.Transform.V20200202
 			DescribeDistributeTableListResponse describeDistributeTableListResponse = new DescribeDistributeTableListResponse();
 
 			describeDistributeTableListResponse.HttpResponse = _ctx.HttpResponse;
+			describeDistributeTableListResponse.Message = _ctx.StringValue("DescribeDistributeTableList.Message");
 			describeDistributeTableListResponse.RequestId = _ctx.StringValue("DescribeDistributeTableList.RequestId");
 			describeDistributeTableListResponse.Success = _ctx.BooleanValue("DescribeDistributeTableList.Success");
-			describeDistributeTableListResponse.Message = _ctx.StringValue("DescribeDistributeTableList.Message");
 
 			DescribeDistributeTableListResponse.DescribeDistributeTableList_Data data = new DescribeDistributeTableListResponse.DescribeDistributeTableList_Data();
 
@@ -42,8 +42,8 @@ namespace Aliyun.Acs.polardbx.Transform.V20200202
 				DescribeDistributeTableListResponse.DescribeDistributeTableList_Data.DescribeDistributeTableList_Table table = new DescribeDistributeTableListResponse.DescribeDistributeTableList_Data.DescribeDistributeTableList_Table();
 				table.TableName = _ctx.StringValue("DescribeDistributeTableList.Data.Tables["+ i +"].TableName");
 				table.TableType = _ctx.StringValue("DescribeDistributeTableList.Data.Tables["+ i +"].TableType");
-				table.DbKey = _ctx.StringValue("DescribeDistributeTableList.Data.Tables["+ i +"].DbKey");
 				table.TbKey = _ctx.StringValue("DescribeDistributeTableList.Data.Tables["+ i +"].TbKey");
+				table.DbKey = _ctx.StringValue("DescribeDistributeTableList.Data.Tables["+ i +"].DbKey");
 
 				data_tables.Add(table);
 			}

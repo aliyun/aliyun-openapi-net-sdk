@@ -190,6 +190,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string dBInstanceDescription;
 
+			private string dBInstanceCPU;
+
+			private int? dBInstanceMemory;
+
 			private string dBInstanceNetType;
 
 			private string dBInstanceType;
@@ -219,6 +223,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			private bool? burstingEnabled;
 
 			private string bpeEnabled;
+
+			private string ioAccelerationEnabled;
+
+			private bool? coldDataEnabled;
 
 			private List<DescribeDBInstances_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 
@@ -690,6 +698,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DBInstanceCPU")]
+			public string DBInstanceCPU
+			{
+				get
+				{
+					return dBInstanceCPU;
+				}
+				set	
+				{
+					dBInstanceCPU = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBInstanceMemory")]
+			public int? DBInstanceMemory
+			{
+				get
+				{
+					return dBInstanceMemory;
+				}
+				set	
+				{
+					dBInstanceMemory = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "DBInstanceNetType")]
 			public string DBInstanceNetType
 			{
@@ -882,6 +916,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					bpeEnabled = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "IoAccelerationEnabled")]
+			public string IoAccelerationEnabled
+			{
+				get
+				{
+					return ioAccelerationEnabled;
+				}
+				set	
+				{
+					ioAccelerationEnabled = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ColdDataEnabled")]
+			public bool? ColdDataEnabled
+			{
+				get
+				{
+					return coldDataEnabled;
+				}
+				set	
+				{
+					coldDataEnabled = value;
 				}
 			}
 

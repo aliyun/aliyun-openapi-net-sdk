@@ -31,24 +31,24 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveStreamsNotifyRecordsResponse describeLiveStreamsNotifyRecordsResponse = new DescribeLiveStreamsNotifyRecordsResponse();
 
 			describeLiveStreamsNotifyRecordsResponse.HttpResponse = _ctx.HttpResponse;
-			describeLiveStreamsNotifyRecordsResponse.TotalPage = _ctx.IntegerValue("DescribeLiveStreamsNotifyRecords.TotalPage");
 			describeLiveStreamsNotifyRecordsResponse.PageNum = _ctx.IntegerValue("DescribeLiveStreamsNotifyRecords.PageNum");
 			describeLiveStreamsNotifyRecordsResponse.PageSize = _ctx.IntegerValue("DescribeLiveStreamsNotifyRecords.PageSize");
 			describeLiveStreamsNotifyRecordsResponse.RequestId = _ctx.StringValue("DescribeLiveStreamsNotifyRecords.RequestId");
 			describeLiveStreamsNotifyRecordsResponse.TotalNum = _ctx.IntegerValue("DescribeLiveStreamsNotifyRecords.TotalNum");
+			describeLiveStreamsNotifyRecordsResponse.TotalPage = _ctx.IntegerValue("DescribeLiveStreamsNotifyRecords.TotalPage");
 
 			List<DescribeLiveStreamsNotifyRecordsResponse.DescribeLiveStreamsNotifyRecords_LiveStreamNotifyRecordsInfo> describeLiveStreamsNotifyRecordsResponse_notifyRecordsInfo = new List<DescribeLiveStreamsNotifyRecordsResponse.DescribeLiveStreamsNotifyRecords_LiveStreamNotifyRecordsInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveStreamsNotifyRecords.NotifyRecordsInfo.Length"); i++) {
 				DescribeLiveStreamsNotifyRecordsResponse.DescribeLiveStreamsNotifyRecords_LiveStreamNotifyRecordsInfo liveStreamNotifyRecordsInfo = new DescribeLiveStreamsNotifyRecordsResponse.DescribeLiveStreamsNotifyRecords_LiveStreamNotifyRecordsInfo();
 				liveStreamNotifyRecordsInfo.AppName = _ctx.StringValue("DescribeLiveStreamsNotifyRecords.NotifyRecordsInfo["+ i +"].AppName");
-				liveStreamNotifyRecordsInfo.NotifyType = _ctx.StringValue("DescribeLiveStreamsNotifyRecords.NotifyRecordsInfo["+ i +"].NotifyType");
-				liveStreamNotifyRecordsInfo.NotifyContent = _ctx.StringValue("DescribeLiveStreamsNotifyRecords.NotifyRecordsInfo["+ i +"].NotifyContent");
 				liveStreamNotifyRecordsInfo.Description = _ctx.StringValue("DescribeLiveStreamsNotifyRecords.NotifyRecordsInfo["+ i +"].Description");
-				liveStreamNotifyRecordsInfo.StreamName = _ctx.StringValue("DescribeLiveStreamsNotifyRecords.NotifyRecordsInfo["+ i +"].StreamName");
-				liveStreamNotifyRecordsInfo.NotifyUrl = _ctx.StringValue("DescribeLiveStreamsNotifyRecords.NotifyRecordsInfo["+ i +"].NotifyUrl");
+				liveStreamNotifyRecordsInfo.DomainName = _ctx.StringValue("DescribeLiveStreamsNotifyRecords.NotifyRecordsInfo["+ i +"].DomainName");
+				liveStreamNotifyRecordsInfo.NotifyContent = _ctx.StringValue("DescribeLiveStreamsNotifyRecords.NotifyRecordsInfo["+ i +"].NotifyContent");
 				liveStreamNotifyRecordsInfo.NotifyResult = _ctx.StringValue("DescribeLiveStreamsNotifyRecords.NotifyRecordsInfo["+ i +"].NotifyResult");
 				liveStreamNotifyRecordsInfo.NotifyTime = _ctx.StringValue("DescribeLiveStreamsNotifyRecords.NotifyRecordsInfo["+ i +"].NotifyTime");
-				liveStreamNotifyRecordsInfo.DomainName = _ctx.StringValue("DescribeLiveStreamsNotifyRecords.NotifyRecordsInfo["+ i +"].DomainName");
+				liveStreamNotifyRecordsInfo.NotifyType = _ctx.StringValue("DescribeLiveStreamsNotifyRecords.NotifyRecordsInfo["+ i +"].NotifyType");
+				liveStreamNotifyRecordsInfo.NotifyUrl = _ctx.StringValue("DescribeLiveStreamsNotifyRecords.NotifyRecordsInfo["+ i +"].NotifyUrl");
+				liveStreamNotifyRecordsInfo.StreamName = _ctx.StringValue("DescribeLiveStreamsNotifyRecords.NotifyRecordsInfo["+ i +"].StreamName");
 
 				describeLiveStreamsNotifyRecordsResponse_notifyRecordsInfo.Add(liveStreamNotifyRecordsInfo);
 			}

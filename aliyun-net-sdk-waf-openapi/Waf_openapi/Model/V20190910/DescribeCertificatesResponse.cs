@@ -64,6 +64,8 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 
 			private string commonName;
 
+			private long? endTime;
+
 			private List<string> sans;
 
 			public bool? IsUsing
@@ -111,6 +113,18 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				set	
 				{
 					commonName = value;
+				}
+			}
+
+			public long? EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
 				}
 			}
 

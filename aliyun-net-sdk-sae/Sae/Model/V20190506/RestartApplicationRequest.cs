@@ -47,6 +47,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private int? minReadyInstanceRatio;
 
+		private bool? autoEnableApplicationScalingRule;
+
 		public int? MinReadyInstances
 		{
 			get
@@ -83,6 +85,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				minReadyInstanceRatio = value;
 				DictionaryUtil.Add(QueryParameters, "MinReadyInstanceRatio", value.ToString());
+			}
+		}
+
+		public bool? AutoEnableApplicationScalingRule
+		{
+			get
+			{
+				return autoEnableApplicationScalingRule;
+			}
+			set	
+			{
+				autoEnableApplicationScalingRule = value;
+				DictionaryUtil.Add(QueryParameters, "AutoEnableApplicationScalingRule", value.ToString());
 			}
 		}
 

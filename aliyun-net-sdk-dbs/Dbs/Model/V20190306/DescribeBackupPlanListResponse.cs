@@ -240,6 +240,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 			private string resourceGroupId;
 
+			private string databaseType;
+
 			public string CrossRoleName
 			{
 				get
@@ -669,6 +671,18 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				set	
 				{
 					resourceGroupId = value;
+				}
+			}
+
+			public string DatabaseType
+			{
+				get
+				{
+					return databaseType;
+				}
+				set	
+				{
+					databaseType = value;
 				}
 			}
 		}

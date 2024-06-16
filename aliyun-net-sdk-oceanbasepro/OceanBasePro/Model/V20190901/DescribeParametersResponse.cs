@@ -72,6 +72,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 			private bool? _readonly;
 
+			private string unit;
+
 			private List<string> rejectedValue;
 
 			private List<string> acceptableValue;
@@ -164,6 +166,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				set	
 				{
 					_readonly = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Unit")]
+			public string Unit
+			{
+				get
+				{
+					return unit;
+				}
+				set	
+				{
+					unit = value;
 				}
 			}
 

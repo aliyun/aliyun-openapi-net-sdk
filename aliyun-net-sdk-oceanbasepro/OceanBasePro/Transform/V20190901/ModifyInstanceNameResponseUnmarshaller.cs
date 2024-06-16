@@ -31,7 +31,6 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 			ModifyInstanceNameResponse modifyInstanceNameResponse = new ModifyInstanceNameResponse();
 
 			modifyInstanceNameResponse.HttpResponse = _ctx.HttpResponse;
-			modifyInstanceNameResponse.InstanceName = _ctx.StringValue("ModifyInstanceName.InstanceName");
 			modifyInstanceNameResponse.RequestId = _ctx.StringValue("ModifyInstanceName.RequestId");
         
 			return modifyInstanceNameResponse;

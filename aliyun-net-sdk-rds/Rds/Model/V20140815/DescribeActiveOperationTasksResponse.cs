@@ -155,6 +155,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private int? id;
 
+			private string taskParams;
+
 			private List<string> subInsNames;
 
 			[JsonProperty(PropertyName = "Status")]
@@ -492,6 +494,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					id = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TaskParams")]
+			public string TaskParams
+			{
+				get
+				{
+					return taskParams;
+				}
+				set	
+				{
+					taskParams = value;
 				}
 			}
 

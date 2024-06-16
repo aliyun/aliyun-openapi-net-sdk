@@ -31,17 +31,17 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			ListLiveDelayConfigResponse listLiveDelayConfigResponse = new ListLiveDelayConfigResponse();
 
 			listLiveDelayConfigResponse.HttpResponse = _ctx.HttpResponse;
-			listLiveDelayConfigResponse.Total = _ctx.IntegerValue("ListLiveDelayConfig.Total");
 			listLiveDelayConfigResponse.RequestId = _ctx.StringValue("ListLiveDelayConfig.RequestId");
+			listLiveDelayConfigResponse.Total = _ctx.IntegerValue("ListLiveDelayConfig.Total");
 
 			List<ListLiveDelayConfigResponse.ListLiveDelayConfig_DelayConfig> listLiveDelayConfigResponse_delayConfigList = new List<ListLiveDelayConfigResponse.ListLiveDelayConfig_DelayConfig>();
 			for (int i = 0; i < _ctx.Length("ListLiveDelayConfig.DelayConfigList.Length"); i++) {
 				ListLiveDelayConfigResponse.ListLiveDelayConfig_DelayConfig delayConfig = new ListLiveDelayConfigResponse.ListLiveDelayConfig_DelayConfig();
-				delayConfig.Stream = _ctx.StringValue("ListLiveDelayConfig.DelayConfigList["+ i +"].Stream");
-				delayConfig.Domain = _ctx.StringValue("ListLiveDelayConfig.DelayConfigList["+ i +"].Domain");
-				delayConfig.TaskTriggerMode = _ctx.StringValue("ListLiveDelayConfig.DelayConfigList["+ i +"].TaskTriggerMode");
-				delayConfig.DelayTime = _ctx.StringValue("ListLiveDelayConfig.DelayConfigList["+ i +"].DelayTime");
 				delayConfig.App = _ctx.StringValue("ListLiveDelayConfig.DelayConfigList["+ i +"].App");
+				delayConfig.DelayTime = _ctx.StringValue("ListLiveDelayConfig.DelayConfigList["+ i +"].DelayTime");
+				delayConfig.Domain = _ctx.StringValue("ListLiveDelayConfig.DelayConfigList["+ i +"].Domain");
+				delayConfig.Stream = _ctx.StringValue("ListLiveDelayConfig.DelayConfigList["+ i +"].Stream");
+				delayConfig.TaskTriggerMode = _ctx.StringValue("ListLiveDelayConfig.DelayConfigList["+ i +"].TaskTriggerMode");
 
 				listLiveDelayConfigResponse_delayConfigList.Add(delayConfig);
 			}

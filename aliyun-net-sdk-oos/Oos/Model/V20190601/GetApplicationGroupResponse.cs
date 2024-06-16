@@ -84,6 +84,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 			private string deployOutputs;
 
+			private string progress;
+
 			[JsonProperty(PropertyName = "CmsGroupId")]
 			public string CmsGroupId
 			{
@@ -250,6 +252,19 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				set	
 				{
 					deployOutputs = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Progress")]
+			public string Progress
+			{
+				get
+				{
+					return progress;
+				}
+				set	
+				{
+					progress = value;
 				}
 			}
 		}

@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -58,6 +59,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string name;
 
+		[JsonProperty(PropertyName = "ClientToken")]
 		public string ClientToken
 		{
 			get
@@ -71,6 +73,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Description")]
 		public string Description
 		{
 			get
@@ -84,6 +87,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Type")]
 		public string Type
 		{
 			get
@@ -97,6 +101,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Constraints")]
 		public string Constraints
 		{
 			get
@@ -110,6 +115,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceGroupId")]
 		public string ResourceGroupId
 		{
 			get
@@ -123,6 +129,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Value")]
 		public string _Value
 		{
 			get
@@ -136,6 +143,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "KeyId")]
 		public string KeyId
 		{
 			get
@@ -149,6 +157,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tags")]
 		public string Tags
 		{
 			get
@@ -158,10 +167,11 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			set	
 			{
 				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", value);
+				DictionaryUtil.Add(QueryParameters, "Tags", value.ToString());
 			}
 		}
 
+		[JsonProperty(PropertyName = "Name")]
 		public string Name
 		{
 			get

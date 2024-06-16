@@ -58,32 +58,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveCenterTransfer_LiveCenterTransferInfo
 		{
 
-			private string endTime;
-
 			private string appName;
-
-			private string startTime;
-
-			private string transferArgs;
-
-			private string streamName;
-
-			private string dstUrl;
 
 			private string domainName;
 
-			[JsonProperty(PropertyName = "EndTime")]
-			public string EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
-				}
-			}
+			private string dstUrl;
+
+			private string endTime;
+
+			private string startTime;
+
+			private string streamName;
+
+			private string transferArgs;
 
 			[JsonProperty(PropertyName = "AppName")]
 			public string AppName
@@ -98,42 +85,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "StartTime")]
-			public string StartTime
+			[JsonProperty(PropertyName = "DomainName")]
+			public string DomainName
 			{
 				get
 				{
-					return startTime;
+					return domainName;
 				}
 				set	
 				{
-					startTime = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "TransferArgs")]
-			public string TransferArgs
-			{
-				get
-				{
-					return transferArgs;
-				}
-				set	
-				{
-					transferArgs = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "StreamName")]
-			public string StreamName
-			{
-				get
-				{
-					return streamName;
-				}
-				set	
-				{
-					streamName = value;
+					domainName = value;
 				}
 			}
 
@@ -150,16 +111,55 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "DomainName")]
-			public string DomainName
+			[JsonProperty(PropertyName = "EndTime")]
+			public string EndTime
 			{
 				get
 				{
-					return domainName;
+					return endTime;
 				}
 				set	
 				{
-					domainName = value;
+					endTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StartTime")]
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StreamName")]
+			public string StreamName
+			{
+				get
+				{
+					return streamName;
+				}
+				set	
+				{
+					streamName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TransferArgs")]
+			public string TransferArgs
+			{
+				get
+				{
+					return transferArgs;
+				}
+				set	
+				{
+					transferArgs = value;
 				}
 			}
 		}

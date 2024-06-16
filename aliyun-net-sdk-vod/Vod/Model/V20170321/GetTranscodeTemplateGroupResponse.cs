@@ -221,6 +221,10 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 				private string tailSlateList;
 
+				private string traceMark;
+
+				private string copyrightMark;
+
 				private List<string> watermarkIds;
 
 				public string Type
@@ -436,6 +440,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						tailSlateList = value;
+					}
+				}
+
+				public string TraceMark
+				{
+					get
+					{
+						return traceMark;
+					}
+					set	
+					{
+						traceMark = value;
+					}
+				}
+
+				public string CopyrightMark
+				{
+					get
+					{
+						return copyrightMark;
+					}
+					set	
+					{
+						copyrightMark = value;
 					}
 				}
 

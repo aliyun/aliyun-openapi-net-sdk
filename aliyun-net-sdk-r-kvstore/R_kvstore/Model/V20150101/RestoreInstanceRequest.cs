@@ -46,6 +46,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string securityToken;
 
+		private string timeShift;
+
 		private string restoreTime;
 
 		private string resourceOwnerAccount;
@@ -96,6 +98,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string TimeShift
+		{
+			get
+			{
+				return timeShift;
+			}
+			set	
+			{
+				timeShift = value;
+				DictionaryUtil.Add(QueryParameters, "TimeShift", value);
 			}
 		}
 

@@ -44,7 +44,13 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 
 		private List<string> mergeInfoss = new List<string>(){ };
 
+		private string watermarkType;
+
+		private bool? enhance;
+
 		private string templateId;
+
+		private bool? addWatermark;
 
 		public string FaceImageURL
 		{
@@ -81,6 +87,32 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			}
 		}
 
+		public string WatermarkType
+		{
+			get
+			{
+				return watermarkType;
+			}
+			set	
+			{
+				watermarkType = value;
+				DictionaryUtil.Add(BodyParameters, "WatermarkType", value);
+			}
+		}
+
+		public bool? Enhance
+		{
+			get
+			{
+				return enhance;
+			}
+			set	
+			{
+				enhance = value;
+				DictionaryUtil.Add(BodyParameters, "Enhance", value.ToString());
+			}
+		}
+
 		public string TemplateId
 		{
 			get
@@ -91,6 +123,19 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			{
 				templateId = value;
 				DictionaryUtil.Add(BodyParameters, "TemplateId", value);
+			}
+		}
+
+		public bool? AddWatermark
+		{
+			get
+			{
+				return addWatermark;
+			}
+			set	
+			{
+				addWatermark = value;
+				DictionaryUtil.Add(BodyParameters, "AddWatermark", value.ToString());
 			}
 		}
 

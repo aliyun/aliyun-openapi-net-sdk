@@ -60,6 +60,8 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string dKMSInstanceId;
 
+		private string policy;
+
 		[JsonProperty(PropertyName = "Origin")]
 		public string Origin
 		{
@@ -183,6 +185,20 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				dKMSInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DKMSInstanceId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Policy")]
+		public string Policy
+		{
+			get
+			{
+				return policy;
+			}
+			set	
+			{
+				policy = value;
+				DictionaryUtil.Add(QueryParameters, "Policy", value);
 			}
 		}
 

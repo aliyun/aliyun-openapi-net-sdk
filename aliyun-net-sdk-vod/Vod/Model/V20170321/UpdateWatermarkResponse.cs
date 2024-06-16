@@ -29,6 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private UpdateWatermark_WatermarkInfo watermarkInfo;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "WatermarkInfo")]
 		public UpdateWatermark_WatermarkInfo WatermarkInfo
 		{
 			get
@@ -70,6 +72,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string watermarkId;
 
+			[JsonProperty(PropertyName = "CreationTime")]
 			public string CreationTime
 			{
 				get
@@ -82,6 +85,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			[JsonProperty(PropertyName = "Type")]
 			public string Type
 			{
 				get
@@ -94,6 +98,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			[JsonProperty(PropertyName = "IsDefault")]
 			public string IsDefault
 			{
 				get
@@ -106,6 +111,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			[JsonProperty(PropertyName = "FileUrl")]
 			public string FileUrl
 			{
 				get
@@ -118,6 +124,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			[JsonProperty(PropertyName = "WatermarkConfig")]
 			public string WatermarkConfig
 			{
 				get
@@ -130,6 +137,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			[JsonProperty(PropertyName = "Name")]
 			public string Name
 			{
 				get
@@ -142,6 +150,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			[JsonProperty(PropertyName = "WatermarkId")]
 			public string WatermarkId
 			{
 				get

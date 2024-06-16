@@ -42,8 +42,6 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 
 		private string output;
 
-		private string requestId;
-
 		private string taskToken;
 
 		public string Output
@@ -56,19 +54,6 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			{
 				output = value;
 				DictionaryUtil.Add(BodyParameters, "Output", value);
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-				DictionaryUtil.Add(QueryParameters, "RequestId", value);
 			}
 		}
 

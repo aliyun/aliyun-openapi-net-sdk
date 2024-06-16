@@ -25,24 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class ListPlaylistResponse : AcsResponse
 	{
 
-		private int? total;
-
 		private string requestId;
 
-		private List<ListPlaylist_ProgramInfo> programList;
+		private int? total;
 
-		[JsonProperty(PropertyName = "Total")]
-		public int? Total
-		{
-			get
-			{
-				return total;
-			}
-			set	
-			{
-				total = value;
-			}
-		}
+		private List<ListPlaylist_ProgramInfo> programList;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -54,6 +41,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Total")]
+		public int? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
 			}
 		}
 
@@ -73,69 +73,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class ListPlaylist_ProgramInfo
 		{
 
-			private int? status;
-
-			private int? repeatNumber;
-
-			private string programName;
-
-			private string programId;
-
 			private string casterId;
 
 			private string domainName;
 
-			[JsonProperty(PropertyName = "Status")]
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+			private string programId;
 
-			[JsonProperty(PropertyName = "RepeatNumber")]
-			public int? RepeatNumber
-			{
-				get
-				{
-					return repeatNumber;
-				}
-				set	
-				{
-					repeatNumber = value;
-				}
-			}
+			private string programName;
 
-			[JsonProperty(PropertyName = "ProgramName")]
-			public string ProgramName
-			{
-				get
-				{
-					return programName;
-				}
-				set	
-				{
-					programName = value;
-				}
-			}
+			private int? repeatNumber;
 
-			[JsonProperty(PropertyName = "ProgramId")]
-			public string ProgramId
-			{
-				get
-				{
-					return programId;
-				}
-				set	
-				{
-					programId = value;
-				}
-			}
+			private int? status;
 
 			[JsonProperty(PropertyName = "CasterId")]
 			public string CasterId
@@ -160,6 +108,58 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					domainName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ProgramId")]
+			public string ProgramId
+			{
+				get
+				{
+					return programId;
+				}
+				set	
+				{
+					programId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ProgramName")]
+			public string ProgramName
+			{
+				get
+				{
+					return programName;
+				}
+				set	
+				{
+					programName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RepeatNumber")]
+			public int? RepeatNumber
+			{
+				get
+				{
+					return repeatNumber;
+				}
+				set	
+				{
+					repeatNumber = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Status")]
+			public int? Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 		}

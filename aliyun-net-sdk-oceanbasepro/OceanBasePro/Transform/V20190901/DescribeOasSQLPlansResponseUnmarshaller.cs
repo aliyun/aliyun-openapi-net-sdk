@@ -89,6 +89,7 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 					plansItem.TimeoutPercentage = _ctx.DoubleValue("DescribeOasSQLPlans.Data["+ i +"].Plans["+ j +"].TimeoutPercentage");
 					plansItem.TableScan = _ctx.BooleanValue("DescribeOasSQLPlans.Data["+ i +"].Plans["+ j +"].TableScan");
 					plansItem.PlanUnionHash = _ctx.StringValue("DescribeOasSQLPlans.Data["+ i +"].Plans["+ j +"].PlanUnionHash");
+					plansItem.SqlId = _ctx.StringValue("DescribeOasSQLPlans.Data["+ i +"].Plans["+ j +"].SqlId");
 
 					dataItem_plans.Add(plansItem);
 				}

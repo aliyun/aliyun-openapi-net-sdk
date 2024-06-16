@@ -58,41 +58,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDrmUsageData_DataModule
 		{
 
-			private string domain;
-
-			private string timeStamp;
-
 			private long? count;
+
+			private string domain;
 
 			private string drmType;
 
 			private string region;
 
-			[JsonProperty(PropertyName = "Domain")]
-			public string Domain
-			{
-				get
-				{
-					return domain;
-				}
-				set	
-				{
-					domain = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "TimeStamp")]
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+			private string timeStamp;
 
 			[JsonProperty(PropertyName = "Count")]
 			public long? Count
@@ -104,6 +78,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					count = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Domain")]
+			public string Domain
+			{
+				get
+				{
+					return domain;
+				}
+				set	
+				{
+					domain = value;
 				}
 			}
 
@@ -130,6 +117,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					region = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TimeStamp")]
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
 				}
 			}
 		}

@@ -44,6 +44,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			videoBase.Title = _ctx.StringValue("GetPlayInfo.VideoBase.Title");
 			videoBase.MediaType = _ctx.StringValue("GetPlayInfo.VideoBase.MediaType");
 			videoBase.DanMuURL = _ctx.StringValue("GetPlayInfo.VideoBase.DanMuURL");
+			videoBase.StorageClass = _ctx.StringValue("GetPlayInfo.VideoBase.StorageClass");
 
 			List<GetPlayInfoResponse.GetPlayInfo_VideoBase.GetPlayInfo_Thumbnail> videoBase_thumbnailList = new List<GetPlayInfoResponse.GetPlayInfo_VideoBase.GetPlayInfo_Thumbnail>();
 			for (int i = 0; i < _ctx.Length("GetPlayInfo.VideoBase.ThumbnailList.Length"); i++) {
@@ -83,6 +84,8 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				playInfo.Format = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].Format");
 				playInfo.HDRType = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].HDRType");
 				playInfo.BitDepth = _ctx.IntegerValue("GetPlayInfo.PlayInfoList["+ i +"].BitDepth");
+				playInfo.JobType = _ctx.IntegerValue("GetPlayInfo.PlayInfoList["+ i +"].JobType");
+				playInfo.JobExt = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].JobExt");
 
 				getPlayInfoResponse_playInfoList.Add(playInfo);
 			}

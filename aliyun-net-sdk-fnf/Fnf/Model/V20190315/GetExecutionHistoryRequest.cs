@@ -43,8 +43,6 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 
 		private string nextToken;
 
-		private string requestId;
-
 		private int? limit;
 
 		private string flowName;
@@ -72,19 +70,6 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			{
 				nextToken = value;
 				DictionaryUtil.Add(QueryParameters, "NextToken", value);
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-				DictionaryUtil.Add(QueryParameters, "RequestId", value);
 			}
 		}
 

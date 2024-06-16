@@ -42,6 +42,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				database.DBStatus = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].DBStatus");
 				database.DBName = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].DBName");
 				database.Engine = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].Engine");
+				database.MasterID = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].MasterID");
 				database.CharacterSetName = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].CharacterSetName");
 
 				List<DescribeDatabasesResponse.DescribeDatabases_Database.DescribeDatabases_Account> database_accounts = new List<DescribeDatabasesResponse.DescribeDatabases_Database.DescribeDatabases_Account>();

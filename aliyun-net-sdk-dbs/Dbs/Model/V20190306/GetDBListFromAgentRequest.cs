@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Dbs;
 using Aliyun.Acs.Dbs.Transform;
 using Aliyun.Acs.Dbs.Transform.V20190306;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
     public class GetDBListFromAgentRequest : RpcAcsRequest<GetDBListFromAgentResponse>
     {
         public GetDBListFromAgentRequest()
-            : base("Dbs", "2019-03-06", "GetDBListFromAgent")
+            : base("Dbs", "2019-03-06", "GetDBListFromAgent", "cbs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -47,9 +46,9 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string clientToken;
 
-		private string ownerId;
-
 		private long? taskId;
+
+		private string ownerId;
 
 		public string SourceEndpointRegion
 		{
@@ -90,19 +89,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public string OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
-			}
-		}
-
 		public long? TaskId
 		{
 			get
@@ -113,6 +99,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				taskId = value;
 				DictionaryUtil.Add(QueryParameters, "TaskId", value.ToString());
+			}
+		}
+
+		public string OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
 			}
 		}
 

@@ -51,6 +51,10 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string dataLevel2BackupPeriod;
 
+		private string dataLevel2BackupAnotherRegionRetentionPeriod;
+
+		private string dataLevel2BackupAnotherRegionRegion;
+
 		public string PreferredBackupPeriod
 		{
 			get
@@ -204,6 +208,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				dataLevel2BackupPeriod = value;
+			}
+		}
+
+		public string DataLevel2BackupAnotherRegionRetentionPeriod
+		{
+			get
+			{
+				return dataLevel2BackupAnotherRegionRetentionPeriod;
+			}
+			set	
+			{
+				dataLevel2BackupAnotherRegionRetentionPeriod = value;
+			}
+		}
+
+		public string DataLevel2BackupAnotherRegionRegion
+		{
+			get
+			{
+				return dataLevel2BackupAnotherRegionRegion;
+			}
+			set	
+			{
+				dataLevel2BackupAnotherRegionRegion = value;
 			}
 		}
 	}

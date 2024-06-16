@@ -31,22 +31,22 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveUserDomainsResponse describeLiveUserDomainsResponse = new DescribeLiveUserDomainsResponse();
 
 			describeLiveUserDomainsResponse.HttpResponse = _ctx.HttpResponse;
-			describeLiveUserDomainsResponse.RequestId = _ctx.StringValue("DescribeLiveUserDomains.RequestId");
 			describeLiveUserDomainsResponse.PageNumber = _ctx.LongValue("DescribeLiveUserDomains.PageNumber");
 			describeLiveUserDomainsResponse.PageSize = _ctx.LongValue("DescribeLiveUserDomains.PageSize");
+			describeLiveUserDomainsResponse.RequestId = _ctx.StringValue("DescribeLiveUserDomains.RequestId");
 			describeLiveUserDomainsResponse.TotalCount = _ctx.LongValue("DescribeLiveUserDomains.TotalCount");
 
 			List<DescribeLiveUserDomainsResponse.DescribeLiveUserDomains_PageData> describeLiveUserDomainsResponse_domains = new List<DescribeLiveUserDomainsResponse.DescribeLiveUserDomains_PageData>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveUserDomains.Domains.Length"); i++) {
 				DescribeLiveUserDomainsResponse.DescribeLiveUserDomains_PageData pageData = new DescribeLiveUserDomainsResponse.DescribeLiveUserDomains_PageData();
-				pageData.GmtCreated = _ctx.StringValue("DescribeLiveUserDomains.Domains["+ i +"].GmtCreated");
-				pageData.LiveDomainType = _ctx.StringValue("DescribeLiveUserDomains.Domains["+ i +"].LiveDomainType");
-				pageData.LiveDomainStatus = _ctx.StringValue("DescribeLiveUserDomains.Domains["+ i +"].LiveDomainStatus");
-				pageData.RegionName = _ctx.StringValue("DescribeLiveUserDomains.Domains["+ i +"].RegionName");
-				pageData.Description = _ctx.StringValue("DescribeLiveUserDomains.Domains["+ i +"].Description");
 				pageData.Cname = _ctx.StringValue("DescribeLiveUserDomains.Domains["+ i +"].Cname");
-				pageData.GmtModified = _ctx.StringValue("DescribeLiveUserDomains.Domains["+ i +"].GmtModified");
+				pageData.Description = _ctx.StringValue("DescribeLiveUserDomains.Domains["+ i +"].Description");
 				pageData.DomainName = _ctx.StringValue("DescribeLiveUserDomains.Domains["+ i +"].DomainName");
+				pageData.GmtCreated = _ctx.StringValue("DescribeLiveUserDomains.Domains["+ i +"].GmtCreated");
+				pageData.GmtModified = _ctx.StringValue("DescribeLiveUserDomains.Domains["+ i +"].GmtModified");
+				pageData.LiveDomainStatus = _ctx.StringValue("DescribeLiveUserDomains.Domains["+ i +"].LiveDomainStatus");
+				pageData.LiveDomainType = _ctx.StringValue("DescribeLiveUserDomains.Domains["+ i +"].LiveDomainType");
+				pageData.RegionName = _ctx.StringValue("DescribeLiveUserDomains.Domains["+ i +"].RegionName");
 
 				describeLiveUserDomainsResponse_domains.Add(pageData);
 			}

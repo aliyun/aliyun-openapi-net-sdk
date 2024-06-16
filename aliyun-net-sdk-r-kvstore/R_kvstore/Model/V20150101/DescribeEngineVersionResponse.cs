@@ -45,6 +45,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string minorVersion;
 
+		private string isRedisCompatibleVersion;
+
+		private string isSSLEnable;
+
+		private string isNewSSLMode;
+
+		private string isAutoUpgradeOpen;
+
+		private DescribeEngineVersion_DBLatestMinorVersion dBLatestMinorVersion;
+
+		private DescribeEngineVersion_ProxyLatestMinorVersion proxyLatestMinorVersion;
+
 		public bool? IsLatestVersion
 		{
 			get
@@ -162,6 +174,382 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				minorVersion = value;
+			}
+		}
+
+		public string IsRedisCompatibleVersion
+		{
+			get
+			{
+				return isRedisCompatibleVersion;
+			}
+			set	
+			{
+				isRedisCompatibleVersion = value;
+			}
+		}
+
+		public string IsSSLEnable
+		{
+			get
+			{
+				return isSSLEnable;
+			}
+			set	
+			{
+				isSSLEnable = value;
+			}
+		}
+
+		public string IsNewSSLMode
+		{
+			get
+			{
+				return isNewSSLMode;
+			}
+			set	
+			{
+				isNewSSLMode = value;
+			}
+		}
+
+		public string IsAutoUpgradeOpen
+		{
+			get
+			{
+				return isAutoUpgradeOpen;
+			}
+			set	
+			{
+				isAutoUpgradeOpen = value;
+			}
+		}
+
+		public DescribeEngineVersion_DBLatestMinorVersion DBLatestMinorVersion
+		{
+			get
+			{
+				return dBLatestMinorVersion;
+			}
+			set	
+			{
+				dBLatestMinorVersion = value;
+			}
+		}
+
+		public DescribeEngineVersion_ProxyLatestMinorVersion ProxyLatestMinorVersion
+		{
+			get
+			{
+				return proxyLatestMinorVersion;
+			}
+			set	
+			{
+				proxyLatestMinorVersion = value;
+			}
+		}
+
+		public class DescribeEngineVersion_DBLatestMinorVersion
+		{
+
+			private string minorVersion;
+
+			private string level;
+
+			private DescribeEngineVersion_VersionRelease versionRelease;
+
+			public string MinorVersion
+			{
+				get
+				{
+					return minorVersion;
+				}
+				set	
+				{
+					minorVersion = value;
+				}
+			}
+
+			public string Level
+			{
+				get
+				{
+					return level;
+				}
+				set	
+				{
+					level = value;
+				}
+			}
+
+			public DescribeEngineVersion_VersionRelease VersionRelease
+			{
+				get
+				{
+					return versionRelease;
+				}
+				set	
+				{
+					versionRelease = value;
+				}
+			}
+
+			public class DescribeEngineVersion_VersionRelease
+			{
+
+				private string versionChangesLevel;
+
+				private List<DescribeEngineVersion_ReleaseInfoList> releaseInfo;
+
+				public string VersionChangesLevel
+				{
+					get
+					{
+						return versionChangesLevel;
+					}
+					set	
+					{
+						versionChangesLevel = value;
+					}
+				}
+
+				public List<DescribeEngineVersion_ReleaseInfoList> ReleaseInfo
+				{
+					get
+					{
+						return releaseInfo;
+					}
+					set	
+					{
+						releaseInfo = value;
+					}
+				}
+
+				public class DescribeEngineVersion_ReleaseInfoList
+				{
+
+					private string releaseVersion;
+
+					private string createTime;
+
+					private string releaseNote;
+
+					private string level;
+
+					private string releaseNoteEn;
+
+					public string ReleaseVersion
+					{
+						get
+						{
+							return releaseVersion;
+						}
+						set	
+						{
+							releaseVersion = value;
+						}
+					}
+
+					public string CreateTime
+					{
+						get
+						{
+							return createTime;
+						}
+						set	
+						{
+							createTime = value;
+						}
+					}
+
+					public string ReleaseNote
+					{
+						get
+						{
+							return releaseNote;
+						}
+						set	
+						{
+							releaseNote = value;
+						}
+					}
+
+					public string Level
+					{
+						get
+						{
+							return level;
+						}
+						set	
+						{
+							level = value;
+						}
+					}
+
+					public string ReleaseNoteEn
+					{
+						get
+						{
+							return releaseNoteEn;
+						}
+						set	
+						{
+							releaseNoteEn = value;
+						}
+					}
+				}
+			}
+		}
+
+		public class DescribeEngineVersion_ProxyLatestMinorVersion
+		{
+
+			private string minorVersion;
+
+			private string level;
+
+			private DescribeEngineVersion_VersionRelease1 versionRelease1;
+
+			public string MinorVersion
+			{
+				get
+				{
+					return minorVersion;
+				}
+				set	
+				{
+					minorVersion = value;
+				}
+			}
+
+			public string Level
+			{
+				get
+				{
+					return level;
+				}
+				set	
+				{
+					level = value;
+				}
+			}
+
+			public DescribeEngineVersion_VersionRelease1 VersionRelease1
+			{
+				get
+				{
+					return versionRelease1;
+				}
+				set	
+				{
+					versionRelease1 = value;
+				}
+			}
+
+			public class DescribeEngineVersion_VersionRelease1
+			{
+
+				private string versionChangesLevel;
+
+				private List<DescribeEngineVersion_ReleaseInfoList3> releaseInfo2;
+
+				public string VersionChangesLevel
+				{
+					get
+					{
+						return versionChangesLevel;
+					}
+					set	
+					{
+						versionChangesLevel = value;
+					}
+				}
+
+				public List<DescribeEngineVersion_ReleaseInfoList3> ReleaseInfo2
+				{
+					get
+					{
+						return releaseInfo2;
+					}
+					set	
+					{
+						releaseInfo2 = value;
+					}
+				}
+
+				public class DescribeEngineVersion_ReleaseInfoList3
+				{
+
+					private string releaseVersion;
+
+					private string createTime;
+
+					private string releaseNote;
+
+					private string level;
+
+					private string releaseNoteEn;
+
+					public string ReleaseVersion
+					{
+						get
+						{
+							return releaseVersion;
+						}
+						set	
+						{
+							releaseVersion = value;
+						}
+					}
+
+					public string CreateTime
+					{
+						get
+						{
+							return createTime;
+						}
+						set	
+						{
+							createTime = value;
+						}
+					}
+
+					public string ReleaseNote
+					{
+						get
+						{
+							return releaseNote;
+						}
+						set	
+						{
+							releaseNote = value;
+						}
+					}
+
+					public string Level
+					{
+						get
+						{
+							return level;
+						}
+						set	
+						{
+							level = value;
+						}
+					}
+
+					public string ReleaseNoteEn
+					{
+						get
+						{
+							return releaseNoteEn;
+						}
+						set	
+						{
+							releaseNoteEn = value;
+						}
+					}
+				}
 			}
 		}
 	}

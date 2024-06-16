@@ -29,6 +29,10 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string requestId;
 
+		private string logBackupAnotherRegionRetentionPeriod;
+
+		private string logBackupAnotherRegionRegion;
+
 		private int? enableBackupLog;
 
 		public int? LogBackupRetentionPeriod
@@ -52,6 +56,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string LogBackupAnotherRegionRetentionPeriod
+		{
+			get
+			{
+				return logBackupAnotherRegionRetentionPeriod;
+			}
+			set	
+			{
+				logBackupAnotherRegionRetentionPeriod = value;
+			}
+		}
+
+		public string LogBackupAnotherRegionRegion
+		{
+			get
+			{
+				return logBackupAnotherRegionRegion;
+			}
+			set	
+			{
+				logBackupAnotherRegionRegion = value;
 			}
 		}
 

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.amqp_open.Transform.V20191212
 {
     public class CreateBindingResponseUnmarshaller
     {
-        public static CreateBindingResponse Unmarshall(UnmarshallerContext context)
+        public static CreateBindingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateBindingResponse createBindingResponse = new CreateBindingResponse();
 
-			createBindingResponse.HttpResponse = context.HttpResponse;
-			createBindingResponse.RequestId = context.StringValue("CreateBinding.RequestId");
+			createBindingResponse.HttpResponse = _ctx.HttpResponse;
+			createBindingResponse.RequestId = _ctx.StringValue("CreateBinding.RequestId");
         
 			return createBindingResponse;
         }

@@ -195,6 +195,14 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 
 				private string modelType;
 
+				private string makeStatus;
+
+				private string makeFailReason;
+
+				private string makeStage;
+
+				private string preview;
+
 				private QueryAvatarList_SupportedResolutions supportedResolutions;
 
 				[JsonProperty(PropertyName = "Code")]
@@ -285,6 +293,58 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 					set	
 					{
 						modelType = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "MakeStatus")]
+				public string MakeStatus
+				{
+					get
+					{
+						return makeStatus;
+					}
+					set	
+					{
+						makeStatus = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "MakeFailReason")]
+				public string MakeFailReason
+				{
+					get
+					{
+						return makeFailReason;
+					}
+					set	
+					{
+						makeFailReason = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "MakeStage")]
+				public string MakeStage
+				{
+					get
+					{
+						return makeStage;
+					}
+					set	
+					{
+						makeStage = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Preview")]
+				public string Preview
+				{
+					get
+					{
+						return preview;
+					}
+					set	
+					{
+						preview = value;
 					}
 				}
 

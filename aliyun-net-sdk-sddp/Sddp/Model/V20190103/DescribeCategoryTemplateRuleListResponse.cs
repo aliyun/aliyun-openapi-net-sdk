@@ -122,6 +122,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 			private int? categoryLevel;
 
+			private long? parentModelId;
+
 			public int? Status
 			{
 				get
@@ -263,6 +265,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					categoryLevel = value;
+				}
+			}
+
+			public long? ParentModelId
+			{
+				get
+				{
+					return parentModelId;
+				}
+				set	
+				{
+					parentModelId = value;
 				}
 			}
 		}

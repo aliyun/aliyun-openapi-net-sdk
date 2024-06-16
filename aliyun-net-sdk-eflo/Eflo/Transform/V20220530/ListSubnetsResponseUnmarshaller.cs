@@ -41,27 +41,38 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			List<ListSubnetsResponse.ListSubnets_Content.ListSubnets_DataItem> content_data = new List<ListSubnetsResponse.ListSubnets_Content.ListSubnets_DataItem>();
 			for (int i = 0; i < _ctx.Length("ListSubnets.Content.Data.Length"); i++) {
 				ListSubnetsResponse.ListSubnets_Content.ListSubnets_DataItem dataItem = new ListSubnetsResponse.ListSubnets_Content.ListSubnets_DataItem();
-				dataItem.Id = _ctx.LongValue("ListSubnets.Content.Data["+ i +"].Id");
-				dataItem.GmtCreate = _ctx.StringValue("ListSubnets.Content.Data["+ i +"].GmtCreate");
+				dataItem.CreateTime = _ctx.StringValue("ListSubnets.Content.Data["+ i +"].CreateTime");
 				dataItem.GmtModified = _ctx.StringValue("ListSubnets.Content.Data["+ i +"].GmtModified");
 				dataItem.TenantId = _ctx.StringValue("ListSubnets.Content.Data["+ i +"].TenantId");
 				dataItem.RegionId = _ctx.StringValue("ListSubnets.Content.Data["+ i +"].RegionId");
 				dataItem.ZoneId = _ctx.StringValue("ListSubnets.Content.Data["+ i +"].ZoneId");
 				dataItem.Type = _ctx.StringValue("ListSubnets.Content.Data["+ i +"].Type");
 				dataItem.SubnetId = _ctx.StringValue("ListSubnets.Content.Data["+ i +"].SubnetId");
-				dataItem.Name = _ctx.StringValue("ListSubnets.Content.Data["+ i +"].Name");
+				dataItem.SubnetName = _ctx.StringValue("ListSubnets.Content.Data["+ i +"].SubnetName");
 				dataItem.Cidr = _ctx.StringValue("ListSubnets.Content.Data["+ i +"].Cidr");
 				dataItem.VpdId = _ctx.StringValue("ListSubnets.Content.Data["+ i +"].VpdId");
 				dataItem.Status = _ctx.StringValue("ListSubnets.Content.Data["+ i +"].Status");
 				dataItem.Message = _ctx.StringValue("ListSubnets.Content.Data["+ i +"].Message");
-				dataItem.NcCount = _ctx.LongValue("ListSubnets.Content.Data["+ i +"].NcCount");
+				dataItem.NcCount = _ctx.IntegerValue("ListSubnets.Content.Data["+ i +"].NcCount");
+				dataItem.NetworkInterfaceCount = _ctx.IntegerValue("ListSubnets.Content.Data["+ i +"].NetworkInterfaceCount");
+				dataItem.ResourceGroupId = _ctx.StringValue("ListSubnets.Content.Data["+ i +"].ResourceGroupId");
 
 				ListSubnetsResponse.ListSubnets_Content.ListSubnets_DataItem.ListSubnets_VpdBaseInfo vpdBaseInfo = new ListSubnetsResponse.ListSubnets_Content.ListSubnets_DataItem.ListSubnets_VpdBaseInfo();
 				vpdBaseInfo.VpdId = _ctx.StringValue("ListSubnets.Content.Data["+ i +"].VpdBaseInfo.VpdId");
-				vpdBaseInfo.Name = _ctx.StringValue("ListSubnets.Content.Data["+ i +"].VpdBaseInfo.Name");
+				vpdBaseInfo.VpdName = _ctx.StringValue("ListSubnets.Content.Data["+ i +"].VpdBaseInfo.VpdName");
 				vpdBaseInfo.Cidr = _ctx.StringValue("ListSubnets.Content.Data["+ i +"].VpdBaseInfo.Cidr");
-				vpdBaseInfo.GmtCreate = _ctx.StringValue("ListSubnets.Content.Data["+ i +"].VpdBaseInfo.GmtCreate");
+				vpdBaseInfo.CreateTime = _ctx.StringValue("ListSubnets.Content.Data["+ i +"].VpdBaseInfo.CreateTime");
 				dataItem.VpdBaseInfo = vpdBaseInfo;
+
+				List<ListSubnetsResponse.ListSubnets_Content.ListSubnets_DataItem.ListSubnets_Tag> dataItem_tags = new List<ListSubnetsResponse.ListSubnets_Content.ListSubnets_DataItem.ListSubnets_Tag>();
+				for (int j = 0; j < _ctx.Length("ListSubnets.Content.Data["+ i +"].Tags.Length"); j++) {
+					ListSubnetsResponse.ListSubnets_Content.ListSubnets_DataItem.ListSubnets_Tag tag = new ListSubnetsResponse.ListSubnets_Content.ListSubnets_DataItem.ListSubnets_Tag();
+					tag.TagKey = _ctx.StringValue("ListSubnets.Content.Data["+ i +"].Tags["+ j +"].TagKey");
+					tag.TagValue = _ctx.StringValue("ListSubnets.Content.Data["+ i +"].Tags["+ j +"].TagValue");
+
+					dataItem_tags.Add(tag);
+				}
+				dataItem.Tags = dataItem_tags;
 
 				content_data.Add(dataItem);
 			}

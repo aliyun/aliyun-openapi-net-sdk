@@ -110,6 +110,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string iotId;
 
+			private long? timestamp;
+
 			public string DeviceId
 			{
 				get
@@ -179,6 +181,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					iotId = value;
+				}
+			}
+
+			public long? Timestamp
+			{
+				get
+				{
+					return timestamp;
+				}
+				set	
+				{
+					timestamp = value;
 				}
 			}
 		}

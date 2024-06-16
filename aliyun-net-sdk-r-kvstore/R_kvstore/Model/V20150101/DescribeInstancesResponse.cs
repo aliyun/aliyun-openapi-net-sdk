@@ -176,6 +176,10 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string editionType;
 
+			private string readOnlyCount;
+
+			private string shardClass;
+
 			private List<DescribeInstances_Tag> tags;
 
 			public string VpcId
@@ -643,6 +647,30 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					editionType = value;
+				}
+			}
+
+			public string ReadOnlyCount
+			{
+				get
+				{
+					return readOnlyCount;
+				}
+				set	
+				{
+					readOnlyCount = value;
+				}
+			}
+
+			public string ShardClass
+			{
+				get
+				{
+					return shardClass;
+				}
+				set	
+				{
+					shardClass = value;
 				}
 			}
 

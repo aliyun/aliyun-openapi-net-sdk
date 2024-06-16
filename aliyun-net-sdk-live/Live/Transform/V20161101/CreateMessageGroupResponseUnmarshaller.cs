@@ -34,8 +34,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			createMessageGroupResponse.RequestId = _ctx.StringValue("CreateMessageGroup.RequestId");
 
 			CreateMessageGroupResponse.CreateMessageGroup_Result result = new CreateMessageGroupResponse.CreateMessageGroup_Result();
-			result.GroupId = _ctx.StringValue("CreateMessageGroup.Result.GroupId");
 			result.Extension = _ctx.StringValue("CreateMessageGroup.Result.Extension");
+			result.GroupId = _ctx.StringValue("CreateMessageGroup.Result.GroupId");
 			createMessageGroupResponse.Result = result;
         
 			return createMessageGroupResponse;

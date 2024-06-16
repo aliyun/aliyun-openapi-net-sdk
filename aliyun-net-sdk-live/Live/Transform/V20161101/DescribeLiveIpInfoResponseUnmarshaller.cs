@@ -31,11 +31,11 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveIpInfoResponse describeLiveIpInfoResponse = new DescribeLiveIpInfoResponse();
 
 			describeLiveIpInfoResponse.HttpResponse = _ctx.HttpResponse;
-			describeLiveIpInfoResponse.RequestId = _ctx.StringValue("DescribeLiveIpInfo.RequestId");
-			describeLiveIpInfoResponse.ISP = _ctx.StringValue("DescribeLiveIpInfo.ISP");
 			describeLiveIpInfoResponse.IspEname = _ctx.StringValue("DescribeLiveIpInfo.IspEname");
-			describeLiveIpInfoResponse.Region = _ctx.StringValue("DescribeLiveIpInfo.Region");
+			describeLiveIpInfoResponse.RequestId = _ctx.StringValue("DescribeLiveIpInfo.RequestId");
 			describeLiveIpInfoResponse.RegionEname = _ctx.StringValue("DescribeLiveIpInfo.RegionEname");
+			describeLiveIpInfoResponse.ISP = _ctx.StringValue("DescribeLiveIpInfo.ISP");
+			describeLiveIpInfoResponse.Region = _ctx.StringValue("DescribeLiveIpInfo.Region");
         
 			return describeLiveIpInfoResponse;
         }

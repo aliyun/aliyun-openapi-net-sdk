@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string localLogRetentionHours;
 
+		private int? backupPriority;
+
 		private string logBackupFrequency;
 
 		private int? archiveBackupKeepCount;
@@ -118,6 +120,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				localLogRetentionHours = value;
 				DictionaryUtil.Add(QueryParameters, "LocalLogRetentionHours", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "BackupPriority")]
+		public int? BackupPriority
+		{
+			get
+			{
+				return backupPriority;
+			}
+			set	
+			{
+				backupPriority = value;
+				DictionaryUtil.Add(QueryParameters, "BackupPriority", value.ToString());
 			}
 		}
 

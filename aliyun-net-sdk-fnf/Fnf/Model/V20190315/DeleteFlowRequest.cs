@@ -37,24 +37,10 @@ namespace Aliyun.Acs.fnf.Model.V20190315
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.fnf.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.fnf.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
-		private string requestId;
-
 		private string name;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-				DictionaryUtil.Add(QueryParameters, "RequestId", value);
-			}
-		}
 
 		public string Name
 		{
@@ -65,7 +51,7 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			set	
 			{
 				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				DictionaryUtil.Add(BodyParameters, "Name", value);
 			}
 		}
 

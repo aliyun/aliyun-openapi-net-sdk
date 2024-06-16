@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -78,6 +79,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private int? videoBitrate;
 
+		[JsonProperty(PropertyName = "Template")]
 		public string Template
 		{
 			get
@@ -91,6 +93,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DeleteBframes")]
 		public bool? DeleteBframes
 		{
 			get
@@ -104,6 +107,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Lazy")]
 		public string Lazy
 		{
 			get
@@ -117,6 +121,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Gop")]
 		public string Gop
 		{
 			get
@@ -130,6 +135,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Opus")]
 		public bool? Opus
 		{
 			get
@@ -143,6 +149,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "AudioCodec")]
 		public string AudioCodec
 		{
 			get
@@ -156,6 +163,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "TemplateType")]
 		public string TemplateType
 		{
 			get
@@ -169,6 +177,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "AudioProfile")]
 		public string AudioProfile
 		{
 			get
@@ -182,6 +191,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Height")]
 		public int? Height
 		{
 			get
@@ -195,6 +205,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "App")]
 		public string App
 		{
 			get
@@ -208,6 +219,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "AudioChannelNum")]
 		public int? AudioChannelNum
 		{
 			get
@@ -221,6 +233,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Profile")]
 		public int? Profile
 		{
 			get
@@ -234,6 +247,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "FPS")]
 		public int? FPS
 		{
 			get
@@ -247,6 +261,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -260,6 +275,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "AudioRate")]
 		public int? AudioRate
 		{
 			get
@@ -273,6 +289,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "AudioBitrate")]
 		public int? AudioBitrate
 		{
 			get
@@ -286,6 +303,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Domain")]
 		public string Domain
 		{
 			get
@@ -299,6 +317,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Width")]
 		public int? Width
 		{
 			get
@@ -312,6 +331,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "VideoBitrate")]
 		public int? VideoBitrate
 		{
 			get

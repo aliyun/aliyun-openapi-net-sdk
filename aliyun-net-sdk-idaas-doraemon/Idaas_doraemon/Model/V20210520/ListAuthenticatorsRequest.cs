@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.idaas_doraemon;
 using Aliyun.Acs.idaas_doraemon.Transform;
 using Aliyun.Acs.idaas_doraemon.Transform.V20210520;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.idaas_doraemon.Model.V20210520
     public class ListAuthenticatorsRequest : RpcAcsRequest<ListAuthenticatorsResponse>
     {
         public ListAuthenticatorsRequest()
-            : base("idaas-doraemon", "2021-05-20", "ListAuthenticators")
+            : base("idaas-doraemon", "2021-05-20", "ListAuthenticators", "idaasauth", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

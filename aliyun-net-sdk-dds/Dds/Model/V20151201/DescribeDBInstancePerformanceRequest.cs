@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
         public DescribeDBInstancePerformanceRequest()
             : base("Dds", "2015-12-01", "DescribeDBInstancePerformance", "dds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
@@ -42,8 +47,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string startTime;
 
 		private string replicaSetRole;
-
-		private string securityToken;
 
 		private string dBInstanceId;
 
@@ -58,6 +61,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string endTime;
 
 		private long? ownerId;
+
+		private string interval;
 
 		public long? ResourceOwnerId
 		{
@@ -108,19 +113,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				replicaSetRole = value;
 				DictionaryUtil.Add(QueryParameters, "ReplicaSetRole", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -212,6 +204,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Interval
+		{
+			get
+			{
+				return interval;
+			}
+			set	
+			{
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value);
 			}
 		}
 

@@ -1,3 +1,0 @@
-2020-01-20 Version 0.0.2
-- Release on full language support.
-

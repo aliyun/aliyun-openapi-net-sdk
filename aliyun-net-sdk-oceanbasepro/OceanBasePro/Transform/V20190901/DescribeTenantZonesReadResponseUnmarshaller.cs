@@ -39,7 +39,6 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 				tenantZonesItem.IsElectable = _ctx.BooleanValue("DescribeTenantZonesRead.TenantZones["+ i +"].IsElectable");
 				tenantZonesItem.IsPrimary = _ctx.BooleanValue("DescribeTenantZonesRead.TenantZones["+ i +"].IsPrimary");
 				tenantZonesItem.Zone = _ctx.StringValue("DescribeTenantZonesRead.TenantZones["+ i +"].Zone");
-				tenantZonesItem.IsReadOnlyAddressMaster = _ctx.BooleanValue("DescribeTenantZonesRead.TenantZones["+ i +"].IsReadOnlyAddressMaster");
 				tenantZonesItem.IsReadable = _ctx.StringValue("DescribeTenantZonesRead.TenantZones["+ i +"].IsReadable");
 
 				describeTenantZonesReadResponse_tenantZones.Add(tenantZonesItem);

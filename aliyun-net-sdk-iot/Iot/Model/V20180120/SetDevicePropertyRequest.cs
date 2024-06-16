@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Iot;
 using Aliyun.Acs.Iot.Transform;
 using Aliyun.Acs.Iot.Transform.V20180120;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class SetDevicePropertyRequest : RpcAcsRequest<SetDevicePropertyResponse>
     {
         public SetDevicePropertyRequest()
-            : base("Iot", "2018-01-20", "SetDeviceProperty")
+            : base("Iot", "2018-01-20", "SetDeviceProperty", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,6 +41,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
         }
 
 		private string iotId;
+
+		private int? qos;
 
 		private string iotInstanceId;
 
@@ -61,6 +62,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotId = value;
 				DictionaryUtil.Add(QueryParameters, "IotId", value);
+			}
+		}
+
+		public int? Qos
+		{
+			get
+			{
+				return qos;
+			}
+			set	
+			{
+				qos = value;
+				DictionaryUtil.Add(QueryParameters, "Qos", value.ToString());
 			}
 		}
 

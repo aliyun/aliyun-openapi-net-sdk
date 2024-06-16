@@ -44,6 +44,8 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 
 		private string privateKey;
 
+		private string resourceGroupId;
+
 		private string instanceId;
 
 		private string domain;
@@ -73,6 +75,19 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			{
 				privateKey = value;
 				DictionaryUtil.Add(QueryParameters, "PrivateKey", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

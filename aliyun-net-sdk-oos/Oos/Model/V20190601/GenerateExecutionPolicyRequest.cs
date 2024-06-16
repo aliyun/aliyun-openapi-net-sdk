@@ -43,6 +43,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string templateVersion;
 
+		private string ramRole;
+
 		private string templateName;
 
 		[JsonProperty(PropertyName = "TemplateVersion")]
@@ -56,6 +58,20 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				templateVersion = value;
 				DictionaryUtil.Add(QueryParameters, "TemplateVersion", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "RamRole")]
+		public string RamRole
+		{
+			get
+			{
+				return ramRole;
+			}
+			set	
+			{
+				ramRole = value;
+				DictionaryUtil.Add(QueryParameters, "RamRole", value);
 			}
 		}
 

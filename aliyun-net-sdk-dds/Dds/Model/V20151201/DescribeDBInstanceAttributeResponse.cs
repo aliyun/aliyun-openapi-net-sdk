@@ -70,6 +70,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private int? maxIOPS;
 
+			private int? maxMBPS;
+
 			private string vPCCloudInstanceIds;
 
 			private string protocolType;
@@ -143,6 +145,14 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			private bool? encrypted;
 
 			private string encryptionKey;
+
+			private string syncPercent;
+
+			private bool? useClusterBackup;
+
+			private bool? burstingEnabled;
+
+			private long? provisionedIops;
 
 			private List<DescribeDBInstanceAttribute_ReplicaSet> replicaSets;
 
@@ -237,6 +247,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					maxIOPS = value;
+				}
+			}
+
+			public int? MaxMBPS
+			{
+				get
+				{
+					return maxMBPS;
+				}
+				set	
+				{
+					maxMBPS = value;
 				}
 			}
 
@@ -684,6 +706,54 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
+			public string SyncPercent
+			{
+				get
+				{
+					return syncPercent;
+				}
+				set	
+				{
+					syncPercent = value;
+				}
+			}
+
+			public bool? UseClusterBackup
+			{
+				get
+				{
+					return useClusterBackup;
+				}
+				set	
+				{
+					useClusterBackup = value;
+				}
+			}
+
+			public bool? BurstingEnabled
+			{
+				get
+				{
+					return burstingEnabled;
+				}
+				set	
+				{
+					burstingEnabled = value;
+				}
+			}
+
+			public long? ProvisionedIops
+			{
+				get
+				{
+					return provisionedIops;
+				}
+				set	
+				{
+					provisionedIops = value;
+				}
+			}
+
 			public List<DescribeDBInstanceAttribute_ReplicaSet> ReplicaSets
 			{
 				get
@@ -1071,6 +1141,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 				private string status;
 
+				private string maxDiskMbps;
+
 				public int? MaxIOPS
 				{
 					get
@@ -1188,6 +1260,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						status = value;
+					}
+				}
+
+				public string MaxDiskMbps
+				{
+					get
+					{
+						return maxDiskMbps;
+					}
+					set	
+					{
+						maxDiskMbps = value;
 					}
 				}
 			}

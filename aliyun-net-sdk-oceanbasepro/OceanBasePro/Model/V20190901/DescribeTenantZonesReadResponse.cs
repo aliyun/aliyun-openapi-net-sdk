@@ -64,8 +64,6 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 			private string zone;
 
-			private bool? isReadOnlyAddressMaster;
-
 			private string isReadable;
 
 			[JsonProperty(PropertyName = "IsElectable")]
@@ -104,19 +102,6 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				set	
 				{
 					zone = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "IsReadOnlyAddressMaster")]
-			public bool? IsReadOnlyAddressMaster
-			{
-				get
-				{
-					return isReadOnlyAddressMaster;
-				}
-				set	
-				{
-					isReadOnlyAddressMaster = value;
 				}
 			}
 

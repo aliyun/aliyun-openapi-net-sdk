@@ -40,13 +40,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private List<string> episodes = new List<string>(){ };
+		private List<Episode> episodes = new List<Episode>(){ };
 
 		private string casterId;
 
 		private long? ownerId;
 
-		public List<string> Episodes
+		public List<Episode> Episodes
 		{
 			get
 			{
@@ -100,9 +100,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class Episode
 		{
 
-			private string endTime;
+			private List<string> componentIds = new List<string>(){ };
 
-			private string startTime;
+			private string endTime;
 
 			private string episodeName;
 
@@ -110,9 +110,21 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string resourceId;
 
-			private List<string> componentIds = new List<string>(){ };
+			private string startTime;
 
 			private string switchType;
+
+			public List<string> ComponentIds
+			{
+				get
+				{
+					return componentIds;
+				}
+				set	
+				{
+					componentIds = value;
+				}
+			}
 
 			public string EndTime
 			{
@@ -123,18 +135,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					endTime = value;
-				}
-			}
-
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
 				}
 			}
 
@@ -174,15 +174,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public List<string> ComponentIds
+			public string StartTime
 			{
 				get
 				{
-					return componentIds;
+					return startTime;
 				}
 				set	
 				{
-					componentIds = value;
+					startTime = value;
 				}
 			}
 

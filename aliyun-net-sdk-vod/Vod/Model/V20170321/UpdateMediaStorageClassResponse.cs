@@ -33,6 +33,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private List<string> ignoredList;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -45,6 +46,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "Status")]
 		public string Status
 		{
 			get
@@ -57,6 +59,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "ForbiddenList")]
 		public List<UpdateMediaStorageClass_MediaForbiddenReasonDTO> ForbiddenList
 		{
 			get
@@ -69,6 +72,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "IgnoredList")]
 		public List<string> IgnoredList
 		{
 			get
@@ -88,6 +92,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string reason;
 
+			[JsonProperty(PropertyName = "MediaId")]
 			public string MediaId
 			{
 				get
@@ -100,6 +105,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			[JsonProperty(PropertyName = "Reason")]
 			public string Reason
 			{
 				get

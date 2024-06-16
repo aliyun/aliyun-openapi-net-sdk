@@ -41,8 +41,6 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 
 		private string scheduleName;
 
-		private string requestId;
-
 		private string flowName;
 
 		public string ScheduleName
@@ -55,19 +53,6 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			{
 				scheduleName = value;
 				DictionaryUtil.Add(QueryParameters, "ScheduleName", value);
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-				DictionaryUtil.Add(QueryParameters, "RequestId", value);
 			}
 		}
 

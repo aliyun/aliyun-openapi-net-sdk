@@ -112,6 +112,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string iPAddress;
 
+			private string pGBouncerPort;
+
 			private List<DescribeDBInstanceNetInfo_SecurityIPGroup> securityIPGroups;
 
 			private List<DescribeDBInstanceNetInfo_DBInstanceWeight> dBInstanceWeights;
@@ -269,6 +271,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					iPAddress = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PGBouncerPort")]
+			public string PGBouncerPort
+			{
+				get
+				{
+					return pGBouncerPort;
+				}
+				set	
+				{
+					pGBouncerPort = value;
 				}
 			}
 

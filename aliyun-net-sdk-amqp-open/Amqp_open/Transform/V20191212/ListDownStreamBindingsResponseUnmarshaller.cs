@@ -26,28 +26,28 @@ namespace Aliyun.Acs.amqp_open.Transform.V20191212
 {
     public class ListDownStreamBindingsResponseUnmarshaller
     {
-        public static ListDownStreamBindingsResponse Unmarshall(UnmarshallerContext context)
+        public static ListDownStreamBindingsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListDownStreamBindingsResponse listDownStreamBindingsResponse = new ListDownStreamBindingsResponse();
 
-			listDownStreamBindingsResponse.HttpResponse = context.HttpResponse;
-			listDownStreamBindingsResponse.RequestId = context.StringValue("ListDownStreamBindings.RequestId");
-			listDownStreamBindingsResponse.Code = context.IntegerValue("ListDownStreamBindings.Code");
-			listDownStreamBindingsResponse.Message = context.StringValue("ListDownStreamBindings.Message");
-			listDownStreamBindingsResponse.Success = context.BooleanValue("ListDownStreamBindings.Success");
+			listDownStreamBindingsResponse.HttpResponse = _ctx.HttpResponse;
+			listDownStreamBindingsResponse.Code = _ctx.IntegerValue("ListDownStreamBindings.Code");
+			listDownStreamBindingsResponse.Message = _ctx.StringValue("ListDownStreamBindings.Message");
+			listDownStreamBindingsResponse.RequestId = _ctx.StringValue("ListDownStreamBindings.RequestId");
+			listDownStreamBindingsResponse.Success = _ctx.BooleanValue("ListDownStreamBindings.Success");
 
 			ListDownStreamBindingsResponse.ListDownStreamBindings_Data data = new ListDownStreamBindingsResponse.ListDownStreamBindings_Data();
-			data.NextToken = context.StringValue("ListDownStreamBindings.Data.NextToken");
-			data.MaxResults = context.IntegerValue("ListDownStreamBindings.Data.MaxResults");
+			data.MaxResults = _ctx.IntegerValue("ListDownStreamBindings.Data.MaxResults");
+			data.NextToken = _ctx.StringValue("ListDownStreamBindings.Data.NextToken");
 
 			List<ListDownStreamBindingsResponse.ListDownStreamBindings_Data.ListDownStreamBindings_BindingVO> data_bindings = new List<ListDownStreamBindingsResponse.ListDownStreamBindings_Data.ListDownStreamBindings_BindingVO>();
-			for (int i = 0; i < context.Length("ListDownStreamBindings.Data.Bindings.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListDownStreamBindings.Data.Bindings.Length"); i++) {
 				ListDownStreamBindingsResponse.ListDownStreamBindings_Data.ListDownStreamBindings_BindingVO bindingVO = new ListDownStreamBindingsResponse.ListDownStreamBindings_Data.ListDownStreamBindings_BindingVO();
-				bindingVO.SourceExchange = context.StringValue("ListDownStreamBindings.Data.Bindings["+ i +"].SourceExchange");
-				bindingVO.DestinationName = context.StringValue("ListDownStreamBindings.Data.Bindings["+ i +"].DestinationName");
-				bindingVO.BindingType = context.StringValue("ListDownStreamBindings.Data.Bindings["+ i +"].BindingType");
-				bindingVO.BindingKey = context.StringValue("ListDownStreamBindings.Data.Bindings["+ i +"].BindingKey");
-				bindingVO.Argument = context.StringValue("ListDownStreamBindings.Data.Bindings["+ i +"].Argument");
+				bindingVO.SourceExchange = _ctx.StringValue("ListDownStreamBindings.Data.Bindings["+ i +"].SourceExchange");
+				bindingVO.Argument = _ctx.StringValue("ListDownStreamBindings.Data.Bindings["+ i +"].Argument");
+				bindingVO.BindingKey = _ctx.StringValue("ListDownStreamBindings.Data.Bindings["+ i +"].BindingKey");
+				bindingVO.BindingType = _ctx.StringValue("ListDownStreamBindings.Data.Bindings["+ i +"].BindingType");
+				bindingVO.DestinationName = _ctx.StringValue("ListDownStreamBindings.Data.Bindings["+ i +"].DestinationName");
 
 				data_bindings.Add(bindingVO);
 			}

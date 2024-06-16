@@ -33,13 +33,12 @@ namespace Aliyun.Acs.ComputeNest.Transform.V20210601
 			listServiceInstanceLogsResponse.HttpResponse = _ctx.HttpResponse;
 			listServiceInstanceLogsResponse.NextToken = _ctx.StringValue("ListServiceInstanceLogs.NextToken");
 			listServiceInstanceLogsResponse.RequestId = _ctx.StringValue("ListServiceInstanceLogs.RequestId");
-			listServiceInstanceLogsResponse.MaxResults = _ctx.StringValue("ListServiceInstanceLogs.MaxResults");
+			listServiceInstanceLogsResponse.MaxResults = _ctx.IntegerValue("ListServiceInstanceLogs.MaxResults");
 
 			List<ListServiceInstanceLogsResponse.ListServiceInstanceLogs_ServiceInstanceLogs> listServiceInstanceLogsResponse_serviceInstancesLogs = new List<ListServiceInstanceLogsResponse.ListServiceInstanceLogs_ServiceInstanceLogs>();
 			for (int i = 0; i < _ctx.Length("ListServiceInstanceLogs.ServiceInstancesLogs.Length"); i++) {
 				ListServiceInstanceLogsResponse.ListServiceInstanceLogs_ServiceInstanceLogs serviceInstanceLogs = new ListServiceInstanceLogsResponse.ListServiceInstanceLogs_ServiceInstanceLogs();
 				serviceInstanceLogs.Timestamp = _ctx.StringValue("ListServiceInstanceLogs.ServiceInstancesLogs["+ i +"].Timestamp");
-				serviceInstanceLogs.ServiceInstanceId = _ctx.StringValue("ListServiceInstanceLogs.ServiceInstancesLogs["+ i +"].ServiceInstanceId");
 				serviceInstanceLogs.Source = _ctx.StringValue("ListServiceInstanceLogs.ServiceInstancesLogs["+ i +"].Source");
 				serviceInstanceLogs.Content = _ctx.StringValue("ListServiceInstanceLogs.ServiceInstancesLogs["+ i +"].Content");
 				serviceInstanceLogs.LogType = _ctx.StringValue("ListServiceInstanceLogs.ServiceInstancesLogs["+ i +"].LogType");

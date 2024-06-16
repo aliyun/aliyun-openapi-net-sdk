@@ -25,22 +25,7 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 	public class ModifyInstanceNameResponse : AcsResponse
 	{
 
-		private string instanceName;
-
 		private string requestId;
-
-		[JsonProperty(PropertyName = "InstanceName")]
-		public string InstanceName
-		{
-			get
-			{
-				return instanceName;
-			}
-			set	
-			{
-				instanceName = value;
-			}
-		}
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId

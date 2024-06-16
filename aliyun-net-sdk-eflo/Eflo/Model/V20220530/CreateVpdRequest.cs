@@ -35,22 +35,39 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			Method = MethodType.POST;
         }
 
-		private string name;
+		private string vpdName;
+
+		private string resourceGroupId;
 
 		private string cidr;
 
 		private List<string> subnetss = new List<string>(){ };
 
-		public string Name
+		private List<string> tags = new List<string>(){ };
+
+		public string VpdName
 		{
 			get
 			{
-				return name;
+				return vpdName;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(BodyParameters, "Name", value);
+				vpdName = value;
+				DictionaryUtil.Add(BodyParameters, "VpdName", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(BodyParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -91,16 +108,37 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			}
 		}
 
+		public List<string> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				if(tags != null)
+				{
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(BodyParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
+				}
+			}
+		}
+
 		public class Subnets
 		{
 
 			private string regionId;
 
-			private string name;
-
 			private string zoneId;
 
 			private string cidr;
+
+			private string subnetName;
 
 			private string type;
 
@@ -113,18 +151,6 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				set	
 				{
 					regionId = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
 				}
 			}
 
@@ -152,6 +178,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				}
 			}
 
+			public string SubnetName
+			{
+				get
+				{
+					return subnetName;
+				}
+				set	
+				{
+					subnetName = value;
+				}
+			}
+
 			public string Type
 			{
 				get
@@ -161,6 +199,38 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				set	
 				{
 					type = value;
+				}
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
 				}
 			}
 		}

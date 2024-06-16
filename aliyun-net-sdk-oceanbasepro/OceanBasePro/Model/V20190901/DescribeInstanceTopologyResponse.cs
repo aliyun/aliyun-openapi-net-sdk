@@ -325,6 +325,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 						private long? unitDataSize;
 
+						private string replicaType;
+
 						[JsonProperty(PropertyName = "UnitId")]
 						public string UnitId
 						{
@@ -441,6 +443,19 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 								unitDataSize = value;
 							}
 						}
+
+						[JsonProperty(PropertyName = "ReplicaType")]
+						public string ReplicaType
+						{
+							get
+							{
+								return replicaType;
+							}
+							set	
+							{
+								replicaType = value;
+							}
+						}
 					}
 				}
 			}
@@ -532,6 +547,12 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 					private string nodeStatus;
 
+					private string replicaType;
+
+					private long? fullCopyId;
+
+					private long? readOnlyCopyId;
+
 					private List<DescribeInstanceTopology_NodeResourceItem> nodeResource;
 
 					[JsonProperty(PropertyName = "NodeId")]
@@ -570,6 +591,45 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 						set	
 						{
 							nodeStatus = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "ReplicaType")]
+					public string ReplicaType
+					{
+						get
+						{
+							return replicaType;
+						}
+						set	
+						{
+							replicaType = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "FullCopyId")]
+					public long? FullCopyId
+					{
+						get
+						{
+							return fullCopyId;
+						}
+						set	
+						{
+							fullCopyId = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "ReadOnlyCopyId")]
+					public long? ReadOnlyCopyId
+					{
+						get
+						{
+							return readOnlyCopyId;
+						}
+						set	
+						{
+							readOnlyCopyId = value;
 						}
 					}
 

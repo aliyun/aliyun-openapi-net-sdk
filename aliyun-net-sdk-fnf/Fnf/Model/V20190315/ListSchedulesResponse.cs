@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.fnf.Model.V20190315
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 	public class ListSchedulesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string nextToken;
 
-		private List<ListSchedules_SchedulesItem> schedules;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<ListSchedules_SchedulesItem> schedules;
 
 		public string NextToken
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			set	
 			{
 				nextToken = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,33 +70,21 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 		public class ListSchedules_SchedulesItem
 		{
 
-			private string scheduleName;
-
 			private string description;
 
 			private string scheduleId;
 
 			private string payload;
 
-			private string cronExpression;
-
-			private bool? enable;
+			private string scheduleName;
 
 			private string createdTime;
 
 			private string lastModifiedTime;
 
-			public string ScheduleName
-			{
-				get
-				{
-					return scheduleName;
-				}
-				set	
-				{
-					scheduleName = value;
-				}
-			}
+			private string cronExpression;
+
+			private bool? enable;
 
 			public string Description
 			{
@@ -134,27 +122,15 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 				}
 			}
 
-			public string CronExpression
+			public string ScheduleName
 			{
 				get
 				{
-					return cronExpression;
+					return scheduleName;
 				}
 				set	
 				{
-					cronExpression = value;
-				}
-			}
-
-			public bool? Enable
-			{
-				get
-				{
-					return enable;
-				}
-				set	
-				{
-					enable = value;
+					scheduleName = value;
 				}
 			}
 
@@ -179,6 +155,30 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 				set	
 				{
 					lastModifiedTime = value;
+				}
+			}
+
+			public string CronExpression
+			{
+				get
+				{
+					return cronExpression;
+				}
+				set	
+				{
+					cronExpression = value;
+				}
+			}
+
+			public bool? Enable
+			{
+				get
+				{
+					return enable;
+				}
+				set	
+				{
+					enable = value;
 				}
 			}
 		}

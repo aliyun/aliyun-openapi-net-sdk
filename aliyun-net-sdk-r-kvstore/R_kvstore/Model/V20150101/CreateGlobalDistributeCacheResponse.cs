@@ -25,21 +25,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 	public class CreateGlobalDistributeCacheResponse : AcsResponse
 	{
 
-		private string globalInstanceId;
-
 		private string requestId;
-
-		public string GlobalInstanceId
-		{
-			get
-			{
-				return globalInstanceId;
-			}
-			set	
-			{
-				globalInstanceId = value;
-			}
-		}
 
 		public string RequestId
 		{

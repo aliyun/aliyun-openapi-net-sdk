@@ -29,6 +29,12 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string requestId;
 
+		private string roleARN;
+
+		private string encryptionKey;
+
+		private string encryptorName;
+
 		public string TDEStatus
 		{
 			get
@@ -50,6 +56,42 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string RoleARN
+		{
+			get
+			{
+				return roleARN;
+			}
+			set	
+			{
+				roleARN = value;
+			}
+		}
+
+		public string EncryptionKey
+		{
+			get
+			{
+				return encryptionKey;
+			}
+			set	
+			{
+				encryptionKey = value;
+			}
+		}
+
+		public string EncryptorName
+		{
+			get
+			{
+				return encryptorName;
+			}
+			set	
+			{
+				encryptorName = value;
 			}
 		}
 	}

@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
         public ReleaseNodePrivateNetworkAddressRequest()
             : base("Dds", "2015-12-01", "ReleaseNodePrivateNetworkAddress", "dds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
@@ -39,9 +44,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string networkType;
 
-		private string securityToken;
-
 		private string dBInstanceId;
+
+		private string connectionType;
 
 		private string nodeId;
 
@@ -77,19 +82,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
 		public string DBInstanceId
 		{
 			get
@@ -100,6 +92,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public string ConnectionType
+		{
+			get
+			{
+				return connectionType;
+			}
+			set	
+			{
+				connectionType = value;
+				DictionaryUtil.Add(QueryParameters, "ConnectionType", value);
 			}
 		}
 

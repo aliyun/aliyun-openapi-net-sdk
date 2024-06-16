@@ -58,24 +58,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class ListMessageGroupUser_Result
 		{
 
-			private int? total;
-
 			private bool? hasMore;
 
-			private List<ListMessageGroupUser_UserListItem> userList;
+			private int? total;
 
-			[JsonProperty(PropertyName = "Total")]
-			public int? Total
-			{
-				get
-				{
-					return total;
-				}
-				set	
-				{
-					total = value;
-				}
-			}
+			private List<ListMessageGroupUser_UserListItem> userList;
 
 			[JsonProperty(PropertyName = "HasMore")]
 			public bool? HasMore
@@ -87,6 +74,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					hasMore = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Total")]
+			public int? Total
+			{
+				get
+				{
+					return total;
+				}
+				set	
+				{
+					total = value;
 				}
 			}
 
@@ -106,22 +106,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class ListMessageGroupUser_UserListItem
 			{
 
-				private string userId;
-
 				private long? joinTime;
 
-				[JsonProperty(PropertyName = "UserId")]
-				public string UserId
-				{
-					get
-					{
-						return userId;
-					}
-					set	
-					{
-						userId = value;
-					}
-				}
+				private string userId;
 
 				[JsonProperty(PropertyName = "JoinTime")]
 				public long? JoinTime
@@ -133,6 +120,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						joinTime = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "UserId")]
+				public string UserId
+				{
+					get
+					{
+						return userId;
+					}
+					set	
+					{
+						userId = value;
 					}
 				}
 			}

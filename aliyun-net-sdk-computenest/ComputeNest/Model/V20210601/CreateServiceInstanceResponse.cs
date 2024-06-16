@@ -33,6 +33,8 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 
 		private string marketInstanceId;
 
+		private string orderId;
+
 		public string Status
 		{
 			get
@@ -78,6 +80,18 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 			set	
 			{
 				marketInstanceId = value;
+			}
+		}
+
+		public string OrderId
+		{
+			get
+			{
+				return orderId;
+			}
+			set	
+			{
+				orderId = value;
 			}
 		}
 	}

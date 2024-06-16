@@ -49,9 +49,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private long? ownerId;
 
-		private List<float?> audioLayers = new List<float?>(){ };
+		private List<int?> audioLayers = new List<int?>(){ };
 
-		private List<int?> videoLayers = new List<int?>(){ };
+		private List<string> videoLayers = new List<string>(){ };
 
 		private List<string> mixLists = new List<string>(){ };
 
@@ -112,7 +112,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 		}
 
 		[JsonProperty(PropertyName = "AudioLayer")]
-		public List<float?> AudioLayers
+		public List<int?> AudioLayers
 		{
 			get
 			{
@@ -135,7 +135,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 		}
 
 		[JsonProperty(PropertyName = "VideoLayer")]
-		public List<int?> VideoLayers
+		public List<string> VideoLayers
 		{
 			get
 			{
@@ -176,24 +176,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class AudioLayer
 		{
 
-			private float? volumeRate;
-
 			private int? fixedDelayDuration;
 
 			private string validChannel;
 
-			[JsonProperty(PropertyName = "VolumeRate")]
-			public float? VolumeRate
-			{
-				get
-				{
-					return volumeRate;
-				}
-				set	
-				{
-					volumeRate = value;
-				}
-			}
+			private float? volumeRate;
 
 			[JsonProperty(PropertyName = "FixedDelayDuration")]
 			public int? FixedDelayDuration
@@ -220,35 +207,35 @@ namespace Aliyun.Acs.live.Model.V20161101
 					validChannel = value;
 				}
 			}
+
+			[JsonProperty(PropertyName = "VolumeRate")]
+			public float? VolumeRate
+			{
+				get
+				{
+					return volumeRate;
+				}
+				set	
+				{
+					volumeRate = value;
+				}
+			}
 		}
 
 		public class VideoLayer
 		{
 
-			private int? fixedDelayDuration;
-
 			private string fillMode;
+
+			private int? fixedDelayDuration;
 
 			private float? heightNormalized;
 
-			private string positionRefer;
-
 			private List<string> positionNormalizeds = new List<string>(){ };
 
-			private float? widthNormalized;
+			private string positionRefer;
 
-			[JsonProperty(PropertyName = "FixedDelayDuration")]
-			public int? FixedDelayDuration
-			{
-				get
-				{
-					return fixedDelayDuration;
-				}
-				set	
-				{
-					fixedDelayDuration = value;
-				}
-			}
+			private float? widthNormalized;
 
 			[JsonProperty(PropertyName = "FillMode")]
 			public string FillMode
@@ -260,6 +247,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					fillMode = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "FixedDelayDuration")]
+			public int? FixedDelayDuration
+			{
+				get
+				{
+					return fixedDelayDuration;
+				}
+				set	
+				{
+					fixedDelayDuration = value;
 				}
 			}
 
@@ -276,19 +276,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "PositionRefer")]
-			public string PositionRefer
-			{
-				get
-				{
-					return positionRefer;
-				}
-				set	
-				{
-					positionRefer = value;
-				}
-			}
-
 			[JsonProperty(PropertyName = "PositionNormalized")]
 			public List<string> PositionNormalizeds
 			{
@@ -299,6 +286,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					positionNormalizeds = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PositionRefer")]
+			public string PositionRefer
+			{
+				get
+				{
+					return positionRefer;
+				}
+				set	
+				{
+					positionRefer = value;
 				}
 			}
 

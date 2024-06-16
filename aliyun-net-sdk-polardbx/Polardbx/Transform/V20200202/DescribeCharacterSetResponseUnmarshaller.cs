@@ -31,9 +31,9 @@ namespace Aliyun.Acs.polardbx.Transform.V20200202
 			DescribeCharacterSetResponse describeCharacterSetResponse = new DescribeCharacterSetResponse();
 
 			describeCharacterSetResponse.HttpResponse = _ctx.HttpResponse;
+			describeCharacterSetResponse.Message = _ctx.StringValue("DescribeCharacterSet.Message");
 			describeCharacterSetResponse.RequestId = _ctx.StringValue("DescribeCharacterSet.RequestId");
 			describeCharacterSetResponse.Success = _ctx.BooleanValue("DescribeCharacterSet.Success");
-			describeCharacterSetResponse.Message = _ctx.StringValue("DescribeCharacterSet.Message");
 
 			DescribeCharacterSetResponse.DescribeCharacterSet_Data data = new DescribeCharacterSetResponse.DescribeCharacterSet_Data();
 			data.Engine = _ctx.StringValue("DescribeCharacterSet.Data.Engine");

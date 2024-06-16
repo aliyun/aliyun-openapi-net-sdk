@@ -138,6 +138,22 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 			private int? dataManagerRole;
 
+			private int? releaseDays;
+
+			private bool? auditClosable;
+
+			private bool? auditReleasable;
+
+			private long? releaseTime;
+
+			private long? instanceTotalCount;
+
+			private long? ossTotalSize;
+
+			private bool? useAgentAudit;
+
+			private int? protectionDays;
+
 			public long? UseOssSize
 			{
 				get
@@ -627,6 +643,102 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					dataManagerRole = value;
+				}
+			}
+
+			public int? ReleaseDays
+			{
+				get
+				{
+					return releaseDays;
+				}
+				set	
+				{
+					releaseDays = value;
+				}
+			}
+
+			public bool? AuditClosable
+			{
+				get
+				{
+					return auditClosable;
+				}
+				set	
+				{
+					auditClosable = value;
+				}
+			}
+
+			public bool? AuditReleasable
+			{
+				get
+				{
+					return auditReleasable;
+				}
+				set	
+				{
+					auditReleasable = value;
+				}
+			}
+
+			public long? ReleaseTime
+			{
+				get
+				{
+					return releaseTime;
+				}
+				set	
+				{
+					releaseTime = value;
+				}
+			}
+
+			public long? InstanceTotalCount
+			{
+				get
+				{
+					return instanceTotalCount;
+				}
+				set	
+				{
+					instanceTotalCount = value;
+				}
+			}
+
+			public long? OssTotalSize
+			{
+				get
+				{
+					return ossTotalSize;
+				}
+				set	
+				{
+					ossTotalSize = value;
+				}
+			}
+
+			public bool? UseAgentAudit
+			{
+				get
+				{
+					return useAgentAudit;
+				}
+				set	
+				{
+					useAgentAudit = value;
+				}
+			}
+
+			public int? ProtectionDays
+			{
+				get
+				{
+					return protectionDays;
+				}
+				set	
+				{
+					protectionDays = value;
 				}
 			}
 		}

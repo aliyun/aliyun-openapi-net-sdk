@@ -73,42 +73,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamMonitorList_LiveStreamMonitorInfo
 		{
 
-			private int? status;
-
 			private string monitorConfig;
 
-			private string startTime;
+			private int? status;
 
 			private string monitorId;
 
 			private string domain;
 
-			private string outputTemplate;
-
-			private string region;
+			private string callbackUrl;
 
 			private int? audioFrom;
+
+			private string dingTalkWebHookUrl;
 
 			private string monitorName;
 
 			private string stopTime;
 
+			private string startTime;
+
+			private string outputTemplate;
+
+			private string region;
+
 			private List<DescribeLiveStreamMonitorList_InputConfig> inputList;
 
 			private DescribeLiveStreamMonitorList_OutputUrls outputUrls;
-
-			[JsonProperty(PropertyName = "Status")]
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
 
 			[JsonProperty(PropertyName = "MonitorConfig")]
 			public string MonitorConfig
@@ -123,16 +114,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "StartTime")]
-			public string StartTime
+			[JsonProperty(PropertyName = "Status")]
+			public int? Status
 			{
 				get
 				{
-					return startTime;
+					return status;
 				}
 				set	
 				{
-					startTime = value;
+					status = value;
 				}
 			}
 
@@ -162,29 +153,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "OutputTemplate")]
-			public string OutputTemplate
+			[JsonProperty(PropertyName = "CallbackUrl")]
+			public string CallbackUrl
 			{
 				get
 				{
-					return outputTemplate;
+					return callbackUrl;
 				}
 				set	
 				{
-					outputTemplate = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Region")]
-			public string Region
-			{
-				get
-				{
-					return region;
-				}
-				set	
-				{
-					region = value;
+					callbackUrl = value;
 				}
 			}
 
@@ -198,6 +176,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					audioFrom = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DingTalkWebHookUrl")]
+			public string DingTalkWebHookUrl
+			{
+				get
+				{
+					return dingTalkWebHookUrl;
+				}
+				set	
+				{
+					dingTalkWebHookUrl = value;
 				}
 			}
 
@@ -224,6 +215,45 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					stopTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StartTime")]
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OutputTemplate")]
+			public string OutputTemplate
+			{
+				get
+				{
+					return outputTemplate;
+				}
+				set	
+				{
+					outputTemplate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Region")]
+			public string Region
+			{
+				get
+				{
+					return region;
+				}
+				set	
+				{
+					region = value;
 				}
 			}
 

@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.polardb;
 using Aliyun.Acs.polardb.Transform;
 using Aliyun.Acs.polardb.Transform.V20170801;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
     public class UpgradeDBClusterVersionRequest : RpcAcsRequest<UpgradeDBClusterVersionResponse>
     {
         public UpgradeDBClusterVersionRequest()
-            : base("polardb", "2017-08-01", "UpgradeDBClusterVersion")
+            : base("polardb", "2017-08-01", "UpgradeDBClusterVersion", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -51,11 +50,17 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string dBClusterId;
 
+		private string upgradeLabel;
+
 		private string ownerAccount;
 
 		private long? ownerId;
 
 		private string plannedStartTime;
+
+		private string targetDBRevisionVersionCode;
+
+		private string upgradePolicy;
 
 		private bool? fromTimeService;
 
@@ -124,6 +129,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string UpgradeLabel
+		{
+			get
+			{
+				return upgradeLabel;
+			}
+			set	
+			{
+				upgradeLabel = value;
+				DictionaryUtil.Add(QueryParameters, "UpgradeLabel", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -160,6 +178,32 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				plannedStartTime = value;
 				DictionaryUtil.Add(QueryParameters, "PlannedStartTime", value);
+			}
+		}
+
+		public string TargetDBRevisionVersionCode
+		{
+			get
+			{
+				return targetDBRevisionVersionCode;
+			}
+			set	
+			{
+				targetDBRevisionVersionCode = value;
+				DictionaryUtil.Add(QueryParameters, "TargetDBRevisionVersionCode", value);
+			}
+		}
+
+		public string UpgradePolicy
+		{
+			get
+			{
+				return upgradePolicy;
+			}
+			set	
+			{
+				upgradePolicy = value;
+				DictionaryUtil.Add(QueryParameters, "UpgradePolicy", value);
 			}
 		}
 

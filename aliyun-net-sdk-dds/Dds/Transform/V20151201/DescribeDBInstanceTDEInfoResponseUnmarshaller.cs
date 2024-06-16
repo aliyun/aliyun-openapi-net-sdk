@@ -33,6 +33,9 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			describeDBInstanceTDEInfoResponse.HttpResponse = _ctx.HttpResponse;
 			describeDBInstanceTDEInfoResponse.TDEStatus = _ctx.StringValue("DescribeDBInstanceTDEInfo.TDEStatus");
 			describeDBInstanceTDEInfoResponse.RequestId = _ctx.StringValue("DescribeDBInstanceTDEInfo.RequestId");
+			describeDBInstanceTDEInfoResponse.RoleARN = _ctx.StringValue("DescribeDBInstanceTDEInfo.RoleARN");
+			describeDBInstanceTDEInfoResponse.EncryptionKey = _ctx.StringValue("DescribeDBInstanceTDEInfo.EncryptionKey");
+			describeDBInstanceTDEInfoResponse.EncryptorName = _ctx.StringValue("DescribeDBInstanceTDEInfo.EncryptorName");
         
 			return describeDBInstanceTDEInfoResponse;
         }

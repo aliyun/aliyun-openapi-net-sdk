@@ -29,6 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private SubmitSnapshotJob_SnapshotJob snapshotJob;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "SnapshotJob")]
 		public SubmitSnapshotJob_SnapshotJob SnapshotJob
 		{
 			get
@@ -58,6 +60,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string jobId;
 
+			[JsonProperty(PropertyName = "JobId")]
 			public string JobId
 			{
 				get

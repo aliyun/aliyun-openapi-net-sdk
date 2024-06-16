@@ -88,22 +88,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DeleteSnapshotFiles_SnapshotDeleteInfo
 		{
 
-			private string message;
-
 			private long? createTimestamp;
 
-			[JsonProperty(PropertyName = "Message")]
-			public string Message
-			{
-				get
-				{
-					return message;
-				}
-				set	
-				{
-					message = value;
-				}
-			}
+			private string message;
 
 			[JsonProperty(PropertyName = "CreateTimestamp")]
 			public long? CreateTimestamp
@@ -115,6 +102,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					createTimestamp = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Message")]
+			public string Message
+			{
+				get
+				{
+					return message;
+				}
+				set	
+				{
+					message = value;
 				}
 			}
 		}

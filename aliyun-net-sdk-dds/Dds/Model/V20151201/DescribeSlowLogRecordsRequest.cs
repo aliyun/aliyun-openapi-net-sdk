@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
         public DescribeSlowLogRecordsRequest()
             : base("Dds", "2015-12-01", "DescribeSlowLogRecords", "dds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
@@ -39,11 +44,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string startTime;
 
+		private string queryKeywords;
+
 		private int? pageNumber;
 
 		private string resourceGroupId;
-
-		private string securityToken;
 
 		private int? pageSize;
 
@@ -58,6 +63,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string endTime;
 
 		private long? ownerId;
+
+		private string logicalOperator;
 
 		private string dBName;
 
@@ -89,6 +96,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string QueryKeywords
+		{
+			get
+			{
+				return queryKeywords;
+			}
+			set	
+			{
+				queryKeywords = value;
+				DictionaryUtil.Add(QueryParameters, "QueryKeywords", value);
+			}
+		}
+
 		public int? PageNumber
 		{
 			get
@@ -112,19 +132,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -216,6 +223,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string LogicalOperator
+		{
+			get
+			{
+				return logicalOperator;
+			}
+			set	
+			{
+				logicalOperator = value;
+				DictionaryUtil.Add(QueryParameters, "LogicalOperator", value);
 			}
 		}
 

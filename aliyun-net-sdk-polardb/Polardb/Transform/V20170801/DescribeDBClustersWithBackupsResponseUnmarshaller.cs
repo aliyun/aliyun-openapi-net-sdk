@@ -58,6 +58,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				dBCluster.DBClusterDescription = _ctx.StringValue("DescribeDBClustersWithBackups.Items["+ i +"].DBClusterDescription");
 				dBCluster.ZoneId = _ctx.StringValue("DescribeDBClustersWithBackups.Items["+ i +"].ZoneId");
 				dBCluster.Engine = _ctx.StringValue("DescribeDBClustersWithBackups.Items["+ i +"].Engine");
+				dBCluster.Category = _ctx.StringValue("DescribeDBClustersWithBackups.Items["+ i +"].Category");
 
 				describeDBClustersWithBackupsResponse_items.Add(dBCluster);
 			}

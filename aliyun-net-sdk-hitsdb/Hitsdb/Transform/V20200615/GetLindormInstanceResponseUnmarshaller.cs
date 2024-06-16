@@ -38,6 +38,7 @@ namespace Aliyun.Acs.hitsdb.Transform.V20200615
 			getLindormInstanceResponse.NetworkType = _ctx.StringValue("GetLindormInstance.NetworkType");
 			getLindormInstanceResponse.ServiceType = _ctx.StringValue("GetLindormInstance.ServiceType");
 			getLindormInstanceResponse.EnableKms = _ctx.BooleanValue("GetLindormInstance.EnableKms");
+			getLindormInstanceResponse.EnableML = _ctx.BooleanValue("GetLindormInstance.EnableML");
 			getLindormInstanceResponse.DiskUsage = _ctx.StringValue("GetLindormInstance.DiskUsage");
 			getLindormInstanceResponse.DiskCategory = _ctx.StringValue("GetLindormInstance.DiskCategory");
 			getLindormInstanceResponse.RequestId = _ctx.StringValue("GetLindormInstance.RequestId");
@@ -61,9 +62,12 @@ namespace Aliyun.Acs.hitsdb.Transform.V20200615
 			getLindormInstanceResponse.InstanceStatus = _ctx.StringValue("GetLindormInstance.InstanceStatus");
 			getLindormInstanceResponse.EnableCompute = _ctx.BooleanValue("GetLindormInstance.EnableCompute");
 			getLindormInstanceResponse.EnableSSL = _ctx.BooleanValue("GetLindormInstance.EnableSSL");
+			getLindormInstanceResponse.EnableMLCtrl = _ctx.BooleanValue("GetLindormInstance.EnableMLCtrl");
 			getLindormInstanceResponse.EnableCdc = _ctx.BooleanValue("GetLindormInstance.EnableCdc");
 			getLindormInstanceResponse.EnableStream = _ctx.BooleanValue("GetLindormInstance.EnableStream");
+			getLindormInstanceResponse.EnableLTS = _ctx.BooleanValue("GetLindormInstance.EnableLTS");
 			getLindormInstanceResponse.EnableShs = _ctx.BooleanValue("GetLindormInstance.EnableShs");
+			getLindormInstanceResponse.EnableBlob = _ctx.BooleanValue("GetLindormInstance.EnableBlob");
 			getLindormInstanceResponse.MaintainStartTime = _ctx.StringValue("GetLindormInstance.MaintainStartTime");
 			getLindormInstanceResponse.MaintainEndTime = _ctx.StringValue("GetLindormInstance.MaintainEndTime");
 			getLindormInstanceResponse.ResourceGroupId = _ctx.StringValue("GetLindormInstance.ResourceGroupId");
@@ -84,6 +88,8 @@ namespace Aliyun.Acs.hitsdb.Transform.V20200615
 			getLindormInstanceResponse.LogSpec = _ctx.StringValue("GetLindormInstance.LogSpec");
 			getLindormInstanceResponse.LogNum = _ctx.IntegerValue("GetLindormInstance.LogNum");
 			getLindormInstanceResponse.LogSingleStorage = _ctx.IntegerValue("GetLindormInstance.LogSingleStorage");
+			getLindormInstanceResponse.ArchVersion = _ctx.StringValue("GetLindormInstance.ArchVersion");
+			getLindormInstanceResponse.EnableLsqlVersionV3 = _ctx.BooleanValue("GetLindormInstance.EnableLsqlVersionV3");
 
 			List<GetLindormInstanceResponse.GetLindormInstance_Engine> getLindormInstanceResponse_engineList = new List<GetLindormInstanceResponse.GetLindormInstance_Engine>();
 			for (int i = 0; i < _ctx.Length("GetLindormInstance.EngineList.Length"); i++) {

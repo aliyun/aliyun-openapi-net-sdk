@@ -25,11 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeMeterLiveRtcDurationResponse : AcsResponse
 	{
 
+		private long? audioSummaryDuration;
+
 		private string requestId;
 
 		private long? totalSummaryDuration;
-
-		private long? audioSummaryDuration;
 
 		private long? v480SummaryDuration;
 
@@ -38,6 +38,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private long? v1080SummaryDuration;
 
 		private List<DescribeMeterLiveRtcDuration_DataItem> data;
+
+		[JsonProperty(PropertyName = "AudioSummaryDuration")]
+		public long? AudioSummaryDuration
+		{
+			get
+			{
+				return audioSummaryDuration;
+			}
+			set	
+			{
+				audioSummaryDuration = value;
+			}
+		}
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -62,19 +75,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				totalSummaryDuration = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "AudioSummaryDuration")]
-		public long? AudioSummaryDuration
-		{
-			get
-			{
-				return audioSummaryDuration;
-			}
-			set	
-			{
-				audioSummaryDuration = value;
 			}
 		}
 
@@ -133,17 +133,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeMeterLiveRtcDuration_DataItem
 		{
 
+			private long? audioDuration;
+
 			private string timestamp;
 
 			private long? totalDuration;
-
-			private long? audioDuration;
 
 			private long? v480Duration;
 
 			private long? v720Duration;
 
 			private long? v1080Duration;
+
+			[JsonProperty(PropertyName = "AudioDuration")]
+			public long? AudioDuration
+			{
+				get
+				{
+					return audioDuration;
+				}
+				set	
+				{
+					audioDuration = value;
+				}
+			}
 
 			[JsonProperty(PropertyName = "Timestamp")]
 			public string Timestamp
@@ -168,19 +181,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					totalDuration = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "AudioDuration")]
-			public long? AudioDuration
-			{
-				get
-				{
-					return audioDuration;
-				}
-				set	
-				{
-					audioDuration = value;
 				}
 			}
 

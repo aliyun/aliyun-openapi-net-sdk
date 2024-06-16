@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Dbs;
 using Aliyun.Acs.Dbs.Transform;
 using Aliyun.Acs.Dbs.Transform.V20190306;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
     public class DescribeFullBackupListRequest : RpcAcsRequest<DescribeFullBackupListResponse>
     {
         public DescribeFullBackupListRequest()
-            : base("Dbs", "2019-03-06", "DescribeFullBackupList")
+            : base("Dbs", "2019-03-06", "DescribeFullBackupList", "cbs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,11 +44,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string backupPlanId;
 
-		private string backupSetId;
-
 		private int? pageNum;
-
-		private string ownerId;
 
 		private long? startTimestamp;
 
@@ -58,6 +53,10 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 		private bool? showStorageType;
 
 		private int? pageSize;
+
+		private string backupSetId;
+
+		private string ownerId;
 
 		public string ClientToken
 		{
@@ -85,19 +84,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public string BackupSetId
-		{
-			get
-			{
-				return backupSetId;
-			}
-			set	
-			{
-				backupSetId = value;
-				DictionaryUtil.Add(QueryParameters, "BackupSetId", value);
-			}
-		}
-
 		public int? PageNum
 		{
 			get
@@ -108,19 +94,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				pageNum = value;
 				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
-			}
-		}
-
-		public string OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
 			}
 		}
 
@@ -173,6 +146,32 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string BackupSetId
+		{
+			get
+			{
+				return backupSetId;
+			}
+			set	
+			{
+				backupSetId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupSetId", value);
+			}
+		}
+
+		public string OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
 			}
 		}
 

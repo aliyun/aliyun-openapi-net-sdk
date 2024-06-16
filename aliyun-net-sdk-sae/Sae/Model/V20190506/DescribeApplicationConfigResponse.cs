@@ -252,6 +252,12 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 			private string pythonModules;
 
+			private string mseApplicationName;
+
+			private string saeVersion;
+
+			private string appSource;
+
 			private List<DescribeApplicationConfig_ConfigMapMountDescItem> configMapMountDesc;
 
 			private List<DescribeApplicationConfig_Tag> tags;
@@ -1013,6 +1019,42 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					pythonModules = value;
+				}
+			}
+
+			public string MseApplicationName
+			{
+				get
+				{
+					return mseApplicationName;
+				}
+				set	
+				{
+					mseApplicationName = value;
+				}
+			}
+
+			public string SaeVersion
+			{
+				get
+				{
+					return saeVersion;
+				}
+				set	
+				{
+					saeVersion = value;
+				}
+			}
+
+			public string AppSource
+			{
+				get
+				{
+					return appSource;
+				}
+				set	
+				{
+					appSource = value;
 				}
 			}
 

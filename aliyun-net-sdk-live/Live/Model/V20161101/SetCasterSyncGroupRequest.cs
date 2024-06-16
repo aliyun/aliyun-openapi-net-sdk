@@ -103,13 +103,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string hostResourceId;
 
-			private List<string> resourceIdss = new List<string>(){ };
+			private int? mode;
 
-			private List<string> syncOffsetss = new List<string>(){ };
+			private List<string> resourceIdss = new List<string>(){ };
 
 			private long? syncDelayThreshold;
 
-			private int? mode;
+			private List<string> syncOffsetss = new List<string>(){ };
 
 			[JsonProperty(PropertyName = "HostResourceId")]
 			public string HostResourceId
@@ -121,6 +121,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					hostResourceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Mode")]
+			public int? Mode
+			{
+				get
+				{
+					return mode;
+				}
+				set	
+				{
+					mode = value;
 				}
 			}
 
@@ -137,19 +150,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "SyncOffsets")]
-			public List<string> SyncOffsetss
-			{
-				get
-				{
-					return syncOffsetss;
-				}
-				set	
-				{
-					syncOffsetss = value;
-				}
-			}
-
 			[JsonProperty(PropertyName = "SyncDelayThreshold")]
 			public long? SyncDelayThreshold
 			{
@@ -163,16 +163,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "Mode")]
-			public int? Mode
+			[JsonProperty(PropertyName = "SyncOffsets")]
+			public List<string> SyncOffsetss
 			{
 				get
 				{
-					return mode;
+					return syncOffsetss;
 				}
 				set	
 				{
-					mode = value;
+					syncOffsetss = value;
 				}
 			}
 		}

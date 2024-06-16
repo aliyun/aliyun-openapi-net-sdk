@@ -47,6 +47,12 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string engineVersion;
 
+		private bool? autoUseCoupon;
+
+		private string ioAccelerationEnabled;
+
+		private bool? coldDataEnabled;
+
 		private string resourceGroupId;
 
 		private ServerlessConfiguration serverlessConfiguration_;
@@ -74,6 +80,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private long? usedTime;
 
 		private bool? burstingEnabled;
+
+		private string targetMinorVersion;
 
 		private string dBInstanceClass;
 
@@ -122,6 +130,48 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				engineVersion = value;
 				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "AutoUseCoupon")]
+		public bool? AutoUseCoupon
+		{
+			get
+			{
+				return autoUseCoupon;
+			}
+			set	
+			{
+				autoUseCoupon = value;
+				DictionaryUtil.Add(QueryParameters, "AutoUseCoupon", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "IoAccelerationEnabled")]
+		public string IoAccelerationEnabled
+		{
+			get
+			{
+				return ioAccelerationEnabled;
+			}
+			set	
+			{
+				ioAccelerationEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "IoAccelerationEnabled", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ColdDataEnabled")]
+		public bool? ColdDataEnabled
+		{
+			get
+			{
+				return coldDataEnabled;
+			}
+			set	
+			{
+				coldDataEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "ColdDataEnabled", value.ToString());
 			}
 		}
 
@@ -320,6 +370,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				burstingEnabled = value;
 				DictionaryUtil.Add(QueryParameters, "BurstingEnabled", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "TargetMinorVersion")]
+		public string TargetMinorVersion
+		{
+			get
+			{
+				return targetMinorVersion;
+			}
+			set	
+			{
+				targetMinorVersion = value;
+				DictionaryUtil.Add(QueryParameters, "TargetMinorVersion", value);
 			}
 		}
 

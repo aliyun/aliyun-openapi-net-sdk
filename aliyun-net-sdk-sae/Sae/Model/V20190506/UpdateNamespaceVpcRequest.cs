@@ -45,6 +45,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string vpcId;
 
+		private string nameSpaceShortId;
+
 		public string NamespaceId
 		{
 			get
@@ -68,6 +70,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				vpcId = value;
 				DictionaryUtil.Add(QueryParameters, "VpcId", value);
+			}
+		}
+
+		public string NameSpaceShortId
+		{
+			get
+			{
+				return nameSpaceShortId;
+			}
+			set	
+			{
+				nameSpaceShortId = value;
+				DictionaryUtil.Add(QueryParameters, "NameSpaceShortId", value);
 			}
 		}
 

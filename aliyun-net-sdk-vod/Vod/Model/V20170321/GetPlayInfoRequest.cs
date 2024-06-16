@@ -42,6 +42,10 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string formats;
 
+		private string digitalWatermarkType;
+
+		private string trace;
+
 		private string reAuthInfo;
 
 		private string playConfig;
@@ -70,6 +74,32 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				formats = value;
 				DictionaryUtil.Add(QueryParameters, "Formats", value);
+			}
+		}
+
+		public string DigitalWatermarkType
+		{
+			get
+			{
+				return digitalWatermarkType;
+			}
+			set	
+			{
+				digitalWatermarkType = value;
+				DictionaryUtil.Add(QueryParameters, "DigitalWatermarkType", value);
+			}
+		}
+
+		public string Trace
+		{
+			get
+			{
+				return trace;
+			}
+			set	
+			{
+				trace = value;
+				DictionaryUtil.Add(QueryParameters, "Trace", value);
 			}
 		}
 

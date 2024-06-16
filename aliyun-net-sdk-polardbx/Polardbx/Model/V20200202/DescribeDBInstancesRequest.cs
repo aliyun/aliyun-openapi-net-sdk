@@ -40,9 +40,71 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			Method = MethodType.POST;
         }
 
+		private string resourceGroupId;
+
+		private bool? mustHasCdc;
+
+		private string tags;
+
+		private string instanceId;
+
 		private int? pageNumber;
 
 		private int? pageSize;
+
+		private string series;
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public bool? MustHasCdc
+		{
+			get
+			{
+				return mustHasCdc;
+			}
+			set	
+			{
+				mustHasCdc = value;
+				DictionaryUtil.Add(QueryParameters, "MustHasCdc", value.ToString());
+			}
+		}
+
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
 
 		public int? PageNumber
 		{
@@ -67,6 +129,19 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Series
+		{
+			get
+			{
+				return series;
+			}
+			set	
+			{
+				series = value;
+				DictionaryUtil.Add(QueryParameters, "Series", value);
 			}
 		}
 

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardbx.Model.V20200202
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 	public class UpgradeDBInstanceKernelVersionResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string dBInstanceName;
-
-		private string taskId;
 
 		private string targetMinorVersion;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
+
+		private string taskId;
 
 		public string DBInstanceName
 		{
@@ -57,18 +45,6 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			}
 		}
 
-		public string TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-			}
-		}
-
 		public string TargetMinorVersion
 		{
 			get
@@ -78,6 +54,30 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			set	
 			{
 				targetMinorVersion = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
 			}
 		}
 	}

@@ -43,6 +43,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string name;
 
+		private bool? force;
+
 		[JsonProperty(PropertyName = "Name")]
 		public string Name
 		{
@@ -54,6 +56,20 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Force")]
+		public bool? Force
+		{
+			get
+			{
+				return force;
+			}
+			set	
+			{
+				force = value;
+				DictionaryUtil.Add(QueryParameters, "Force", value.ToString());
 			}
 		}
 

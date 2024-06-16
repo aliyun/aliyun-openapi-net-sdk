@@ -63,6 +63,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string modifyStatusReason;
 
+		private string forceEncryption;
+
+		private string tlsVersion;
+
 		[JsonProperty(PropertyName = "ServerCert")]
 		public string ServerCert
 		{
@@ -307,6 +311,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				modifyStatusReason = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ForceEncryption")]
+		public string ForceEncryption
+		{
+			get
+			{
+				return forceEncryption;
+			}
+			set	
+			{
+				forceEncryption = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TlsVersion")]
+		public string TlsVersion
+		{
+			get
+			{
+				return tlsVersion;
+			}
+			set	
+			{
+				tlsVersion = value;
 			}
 		}
 	}

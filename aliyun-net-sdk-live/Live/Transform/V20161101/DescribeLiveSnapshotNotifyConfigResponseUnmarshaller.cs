@@ -31,11 +31,11 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveSnapshotNotifyConfigResponse describeLiveSnapshotNotifyConfigResponse = new DescribeLiveSnapshotNotifyConfigResponse();
 
 			describeLiveSnapshotNotifyConfigResponse.HttpResponse = _ctx.HttpResponse;
-			describeLiveSnapshotNotifyConfigResponse.NotifyReqAuth = _ctx.StringValue("DescribeLiveSnapshotNotifyConfig.NotifyReqAuth");
-			describeLiveSnapshotNotifyConfigResponse.RequestId = _ctx.StringValue("DescribeLiveSnapshotNotifyConfig.RequestId");
-			describeLiveSnapshotNotifyConfigResponse.NotifyAuthKey = _ctx.StringValue("DescribeLiveSnapshotNotifyConfig.NotifyAuthKey");
 			describeLiveSnapshotNotifyConfigResponse.DomainName = _ctx.StringValue("DescribeLiveSnapshotNotifyConfig.DomainName");
+			describeLiveSnapshotNotifyConfigResponse.NotifyAuthKey = _ctx.StringValue("DescribeLiveSnapshotNotifyConfig.NotifyAuthKey");
+			describeLiveSnapshotNotifyConfigResponse.NotifyReqAuth = _ctx.StringValue("DescribeLiveSnapshotNotifyConfig.NotifyReqAuth");
 			describeLiveSnapshotNotifyConfigResponse.NotifyUrl = _ctx.StringValue("DescribeLiveSnapshotNotifyConfig.NotifyUrl");
+			describeLiveSnapshotNotifyConfigResponse.RequestId = _ctx.StringValue("DescribeLiveSnapshotNotifyConfig.RequestId");
         
 			return describeLiveSnapshotNotifyConfigResponse;
         }

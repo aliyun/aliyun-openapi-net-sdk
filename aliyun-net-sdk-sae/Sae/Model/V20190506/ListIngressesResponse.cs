@@ -165,6 +165,12 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 				private string listenerProtocol;
 
+				private string mseGatewayId;
+
+				private string mseGatewayPort;
+
+				private string mseGatewayProtocol;
+
 				public string SlbId
 				{
 					get
@@ -294,6 +300,42 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					set	
 					{
 						listenerProtocol = value;
+					}
+				}
+
+				public string MseGatewayId
+				{
+					get
+					{
+						return mseGatewayId;
+					}
+					set	
+					{
+						mseGatewayId = value;
+					}
+				}
+
+				public string MseGatewayPort
+				{
+					get
+					{
+						return mseGatewayPort;
+					}
+					set	
+					{
+						mseGatewayPort = value;
+					}
+				}
+
+				public string MseGatewayProtocol
+				{
+					get
+					{
+						return mseGatewayProtocol;
+					}
+					set	
+					{
+						mseGatewayProtocol = value;
 					}
 				}
 			}

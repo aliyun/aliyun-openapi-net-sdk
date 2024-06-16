@@ -44,15 +44,11 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 
 		private string type;
 
-		private string requestId;
-
 		private string roleArn;
 
 		private string name;
 
 		private string definition;
-
-		private string externalStorageLocation;
 
 		public string Description
 		{
@@ -77,19 +73,6 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			{
 				type = value;
 				DictionaryUtil.Add(BodyParameters, "Type", value);
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-				DictionaryUtil.Add(QueryParameters, "RequestId", value);
 			}
 		}
 
@@ -129,19 +112,6 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			{
 				definition = value;
 				DictionaryUtil.Add(BodyParameters, "Definition", value);
-			}
-		}
-
-		public string ExternalStorageLocation
-		{
-			get
-			{
-				return externalStorageLocation;
-			}
-			set	
-			{
-				externalStorageLocation = value;
-				DictionaryUtil.Add(BodyParameters, "ExternalStorageLocation", value);
 			}
 		}
 

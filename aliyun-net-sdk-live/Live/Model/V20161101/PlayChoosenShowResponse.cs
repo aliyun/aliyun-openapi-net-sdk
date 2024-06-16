@@ -25,22 +25,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class PlayChoosenShowResponse : AcsResponse
 	{
 
-		private string showId;
-
 		private string requestId;
 
-		[JsonProperty(PropertyName = "ShowId")]
-		public string ShowId
-		{
-			get
-			{
-				return showId;
-			}
-			set	
-			{
-				showId = value;
-			}
-		}
+		private string showId;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -52,6 +39,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ShowId")]
+		public string ShowId
+		{
+			get
+			{
+				return showId;
+			}
+			set	
+			{
+				showId = value;
 			}
 		}
 	}

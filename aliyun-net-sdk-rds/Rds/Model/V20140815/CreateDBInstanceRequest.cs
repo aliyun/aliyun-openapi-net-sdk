@@ -67,6 +67,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string businessInfo;
 
+		private string whitelistTemplateList;
+
 		private string period;
 
 		private bool? dryRun;
@@ -106,6 +108,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string zoneIdSlave2;
 
 		private string dBIsIgnoreCase;
+
+		private string ioAccelerationEnabled;
+
+		private bool? coldDataEnabled;
 
 		private string engine;
 
@@ -332,6 +338,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				businessInfo = value;
 				DictionaryUtil.Add(QueryParameters, "BusinessInfo", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "WhitelistTemplateList")]
+		public string WhitelistTemplateList
+		{
+			get
+			{
+				return whitelistTemplateList;
+			}
+			set	
+			{
+				whitelistTemplateList = value;
+				DictionaryUtil.Add(QueryParameters, "WhitelistTemplateList", value);
 			}
 		}
 
@@ -612,6 +632,34 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBIsIgnoreCase = value;
 				DictionaryUtil.Add(QueryParameters, "DBIsIgnoreCase", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "IoAccelerationEnabled")]
+		public string IoAccelerationEnabled
+		{
+			get
+			{
+				return ioAccelerationEnabled;
+			}
+			set	
+			{
+				ioAccelerationEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "IoAccelerationEnabled", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ColdDataEnabled")]
+		public bool? ColdDataEnabled
+		{
+			get
+			{
+				return coldDataEnabled;
+			}
+			set	
+			{
+				coldDataEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "ColdDataEnabled", value.ToString());
 			}
 		}
 

@@ -86,6 +86,8 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 
 			private string templateId;
 
+			private string transResult;
+
 			private List<AddFaceVideoTemplate_FaceInfosItem> faceInfos;
 
 			public string TemplateId
@@ -97,6 +99,18 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 				set	
 				{
 					templateId = value;
+				}
+			}
+
+			public string TransResult
+			{
+				get
+				{
+					return transResult;
+				}
+				set	
+				{
+					transResult = value;
 				}
 			}
 

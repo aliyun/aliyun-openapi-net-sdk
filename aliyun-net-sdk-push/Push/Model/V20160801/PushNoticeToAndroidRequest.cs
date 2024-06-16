@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string extParameters;
 
+		private bool? storeOffline;
+
 		private string title;
 
 		private string body;
@@ -65,6 +67,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				extParameters = value;
 				DictionaryUtil.Add(QueryParameters, "ExtParameters", value);
+			}
+		}
+
+		public bool? StoreOffline
+		{
+			get
+			{
+				return storeOffline;
+			}
+			set	
+			{
+				storeOffline = value;
+				DictionaryUtil.Add(QueryParameters, "StoreOffline", value.ToString());
 			}
 		}
 

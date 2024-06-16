@@ -25,22 +25,22 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class InitializeAutoShowListTaskResponse : AcsResponse
 	{
 
-		private string streamList;
+		private string casterId;
 
 		private string requestId;
 
-		private string casterId;
+		private string streamList;
 
-		[JsonProperty(PropertyName = "StreamList")]
-		public string StreamList
+		[JsonProperty(PropertyName = "CasterId")]
+		public string CasterId
 		{
 			get
 			{
-				return streamList;
+				return casterId;
 			}
 			set	
 			{
-				streamList = value;
+				casterId = value;
 			}
 		}
 
@@ -57,16 +57,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		[JsonProperty(PropertyName = "CasterId")]
-		public string CasterId
+		[JsonProperty(PropertyName = "StreamList")]
+		public string StreamList
 		{
 			get
 			{
-				return casterId;
+				return streamList;
 			}
 			set	
 			{
-				casterId = value;
+				streamList = value;
 			}
 		}
 	}

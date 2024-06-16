@@ -42,6 +42,8 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 
 		private int? ipFollowStatus;
 
+		private bool? keepalive;
+
 		private string sniHost;
 
 		private string resourceGroupId;
@@ -52,35 +54,41 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 
 		private int? writeTime;
 
-		private int? sniStatus;
-
 		private int? accessHeaderMode;
-
-		private string accessType;
-
-		private string logHeaders;
 
 		private string accessHeaders;
 
-		private int? connectionTime;
+		private int? keepaliveTimeout;
 
 		private int? clusterType;
-
-		private string cloudNativeInstances;
 
 		private int? httpsRedirect;
 
 		private string instanceId;
 
-		private string sourceIps;
-
 		private string domain;
-
-		private int? isAccessProduct;
 
 		private int? readTime;
 
 		private string httpsPort;
+
+		private int? sniStatus;
+
+		private bool? retry;
+
+		private int? keepaliveRequests;
+
+		private string accessType;
+
+		private string logHeaders;
+
+		private int? connectionTime;
+
+		private string cloudNativeInstances;
+
+		private string sourceIps;
+
+		private int? isAccessProduct;
 
 		private int? loadBalancing;
 
@@ -96,6 +104,19 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			{
 				ipFollowStatus = value;
 				DictionaryUtil.Add(QueryParameters, "IpFollowStatus", value.ToString());
+			}
+		}
+
+		public bool? Keepalive
+		{
+			get
+			{
+				return keepalive;
+			}
+			set	
+			{
+				keepalive = value;
+				DictionaryUtil.Add(QueryParameters, "Keepalive", value.ToString());
 			}
 		}
 
@@ -164,19 +185,6 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			}
 		}
 
-		public int? SniStatus
-		{
-			get
-			{
-				return sniStatus;
-			}
-			set	
-			{
-				sniStatus = value;
-				DictionaryUtil.Add(QueryParameters, "SniStatus", value.ToString());
-			}
-		}
-
 		public int? AccessHeaderMode
 		{
 			get
@@ -187,32 +195,6 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			{
 				accessHeaderMode = value;
 				DictionaryUtil.Add(QueryParameters, "AccessHeaderMode", value.ToString());
-			}
-		}
-
-		public string AccessType
-		{
-			get
-			{
-				return accessType;
-			}
-			set	
-			{
-				accessType = value;
-				DictionaryUtil.Add(QueryParameters, "AccessType", value);
-			}
-		}
-
-		public string LogHeaders
-		{
-			get
-			{
-				return logHeaders;
-			}
-			set	
-			{
-				logHeaders = value;
-				DictionaryUtil.Add(QueryParameters, "LogHeaders", value);
 			}
 		}
 
@@ -229,16 +211,16 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			}
 		}
 
-		public int? ConnectionTime
+		public int? KeepaliveTimeout
 		{
 			get
 			{
-				return connectionTime;
+				return keepaliveTimeout;
 			}
 			set	
 			{
-				connectionTime = value;
-				DictionaryUtil.Add(QueryParameters, "ConnectionTime", value.ToString());
+				keepaliveTimeout = value;
+				DictionaryUtil.Add(QueryParameters, "KeepaliveTimeout", value.ToString());
 			}
 		}
 
@@ -252,19 +234,6 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			{
 				clusterType = value;
 				DictionaryUtil.Add(QueryParameters, "ClusterType", value.ToString());
-			}
-		}
-
-		public string CloudNativeInstances
-		{
-			get
-			{
-				return cloudNativeInstances;
-			}
-			set	
-			{
-				cloudNativeInstances = value;
-				DictionaryUtil.Add(QueryParameters, "CloudNativeInstances", value);
 			}
 		}
 
@@ -294,19 +263,6 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			}
 		}
 
-		public string SourceIps
-		{
-			get
-			{
-				return sourceIps;
-			}
-			set	
-			{
-				sourceIps = value;
-				DictionaryUtil.Add(QueryParameters, "SourceIps", value);
-			}
-		}
-
 		public string Domain
 		{
 			get
@@ -317,19 +273,6 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			{
 				domain = value;
 				DictionaryUtil.Add(QueryParameters, "Domain", value);
-			}
-		}
-
-		public int? IsAccessProduct
-		{
-			get
-			{
-				return isAccessProduct;
-			}
-			set	
-			{
-				isAccessProduct = value;
-				DictionaryUtil.Add(QueryParameters, "IsAccessProduct", value.ToString());
 			}
 		}
 
@@ -356,6 +299,123 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			{
 				httpsPort = value;
 				DictionaryUtil.Add(QueryParameters, "HttpsPort", value);
+			}
+		}
+
+		public int? SniStatus
+		{
+			get
+			{
+				return sniStatus;
+			}
+			set	
+			{
+				sniStatus = value;
+				DictionaryUtil.Add(QueryParameters, "SniStatus", value.ToString());
+			}
+		}
+
+		public bool? Retry
+		{
+			get
+			{
+				return retry;
+			}
+			set	
+			{
+				retry = value;
+				DictionaryUtil.Add(QueryParameters, "Retry", value.ToString());
+			}
+		}
+
+		public int? KeepaliveRequests
+		{
+			get
+			{
+				return keepaliveRequests;
+			}
+			set	
+			{
+				keepaliveRequests = value;
+				DictionaryUtil.Add(QueryParameters, "KeepaliveRequests", value.ToString());
+			}
+		}
+
+		public string AccessType
+		{
+			get
+			{
+				return accessType;
+			}
+			set	
+			{
+				accessType = value;
+				DictionaryUtil.Add(QueryParameters, "AccessType", value);
+			}
+		}
+
+		public string LogHeaders
+		{
+			get
+			{
+				return logHeaders;
+			}
+			set	
+			{
+				logHeaders = value;
+				DictionaryUtil.Add(QueryParameters, "LogHeaders", value);
+			}
+		}
+
+		public int? ConnectionTime
+		{
+			get
+			{
+				return connectionTime;
+			}
+			set	
+			{
+				connectionTime = value;
+				DictionaryUtil.Add(QueryParameters, "ConnectionTime", value.ToString());
+			}
+		}
+
+		public string CloudNativeInstances
+		{
+			get
+			{
+				return cloudNativeInstances;
+			}
+			set	
+			{
+				cloudNativeInstances = value;
+				DictionaryUtil.Add(QueryParameters, "CloudNativeInstances", value);
+			}
+		}
+
+		public string SourceIps
+		{
+			get
+			{
+				return sourceIps;
+			}
+			set	
+			{
+				sourceIps = value;
+				DictionaryUtil.Add(QueryParameters, "SourceIps", value);
+			}
+		}
+
+		public int? IsAccessProduct
+		{
+			get
+			{
+				return isAccessProduct;
+			}
+			set	
+			{
+				isAccessProduct = value;
+				DictionaryUtil.Add(QueryParameters, "IsAccessProduct", value.ToString());
 			}
 		}
 

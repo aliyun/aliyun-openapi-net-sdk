@@ -29,6 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private BatchGetOnlineUsers_Result result;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Result")]
 		public BatchGetOnlineUsers_Result Result
 		{
 			get
@@ -58,6 +60,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private List<BatchGetOnlineUsers_OnlineUsersItem> onlineUsers;
 
+			[JsonProperty(PropertyName = "OnlineUsers")]
 			public List<BatchGetOnlineUsers_OnlineUsersItem> OnlineUsers
 			{
 				get
@@ -73,24 +76,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class BatchGetOnlineUsers_OnlineUsersItem
 			{
 
-				private string userId;
-
 				private long? joinTime;
 
 				private bool? online;
 
-				public string UserId
-				{
-					get
-					{
-						return userId;
-					}
-					set	
-					{
-						userId = value;
-					}
-				}
+				private string userId;
 
+				[JsonProperty(PropertyName = "JoinTime")]
 				public long? JoinTime
 				{
 					get
@@ -103,6 +95,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
+				[JsonProperty(PropertyName = "Online")]
 				public bool? Online
 				{
 					get
@@ -112,6 +105,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						online = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "UserId")]
+				public string UserId
+				{
+					get
+					{
+						return userId;
+					}
+					set	
+					{
+						userId = value;
 					}
 				}
 			}

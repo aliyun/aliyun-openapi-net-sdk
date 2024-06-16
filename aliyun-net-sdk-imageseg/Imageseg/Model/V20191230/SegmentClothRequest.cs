@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.imageseg;
 using Aliyun.Acs.imageseg.Transform;
 using Aliyun.Acs.imageseg.Transform.V20191230;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.imageseg.Model.V20191230
     public class SegmentClothRequest : RpcAcsRequest<SegmentClothResponse>
     {
         public SegmentClothRequest()
-            : base("imageseg", "2019-12-30", "SegmentCloth")
+            : base("imageseg", "2019-12-30", "SegmentCloth", "imageseg", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,7 +40,37 @@ namespace Aliyun.Acs.imageseg.Model.V20191230
 			Method = MethodType.POST;
         }
 
+		private List<string> clothClasss = new List<string>(){ };
+
+		private string returnForm;
+
 		private string imageURL;
+
+		public List<string> ClothClasss
+		{
+			get
+			{
+				return clothClasss;
+			}
+
+			set
+			{
+				clothClasss = value;
+			}
+		}
+
+		public string ReturnForm
+		{
+			get
+			{
+				return returnForm;
+			}
+			set	
+			{
+				returnForm = value;
+				DictionaryUtil.Add(QueryParameters, "ReturnForm", value);
+			}
+		}
 
 		public string ImageURL
 		{

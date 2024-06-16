@@ -35,6 +35,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string encryptNewTables;
 
+		private string tDERegion;
+
 		public string TDEStatus
 		{
 			get
@@ -92,6 +94,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				encryptNewTables = value;
+			}
+		}
+
+		public string TDERegion
+		{
+			get
+			{
+				return tDERegion;
+			}
+			set	
+			{
+				tDERegion = value;
 			}
 		}
 	}

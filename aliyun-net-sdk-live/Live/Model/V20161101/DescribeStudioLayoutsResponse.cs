@@ -25,24 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeStudioLayoutsResponse : AcsResponse
 	{
 
-		private int? total;
-
 		private string requestId;
 
-		private List<DescribeStudioLayouts_StudioLayout> studioLayouts;
+		private int? total;
 
-		[JsonProperty(PropertyName = "Total")]
-		public int? Total
-		{
-			get
-			{
-				return total;
-			}
-			set	
-			{
-				total = value;
-			}
-		}
+		private List<DescribeStudioLayouts_StudioLayout> studioLayouts;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -54,6 +41,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Total")]
+		public int? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
 			}
 		}
 
@@ -73,34 +73,21 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeStudioLayouts_StudioLayout
 		{
 
-			private string layoutType;
-
 			private string layoutId;
 
 			private string layoutName;
 
-			private List<DescribeStudioLayouts_ScreenInputConfig> screenInputConfigList;
-
-			private List<DescribeStudioLayouts_MediaInputConfig> mediaInputConfigList;
+			private string layoutType;
 
 			private List<DescribeStudioLayouts_LayerOrderConfig> layerOrderConfigList;
 
-			private DescribeStudioLayouts_CommonConfig commonConfig;
+			private List<DescribeStudioLayouts_MediaInputConfig> mediaInputConfigList;
+
+			private List<DescribeStudioLayouts_ScreenInputConfig> screenInputConfigList;
 
 			private DescribeStudioLayouts_BgImageConfig bgImageConfig;
 
-			[JsonProperty(PropertyName = "LayoutType")]
-			public string LayoutType
-			{
-				get
-				{
-					return layoutType;
-				}
-				set	
-				{
-					layoutType = value;
-				}
-			}
+			private DescribeStudioLayouts_CommonConfig commonConfig;
 
 			[JsonProperty(PropertyName = "LayoutId")]
 			public string LayoutId
@@ -128,29 +115,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "ScreenInputConfigList")]
-			public List<DescribeStudioLayouts_ScreenInputConfig> ScreenInputConfigList
+			[JsonProperty(PropertyName = "LayoutType")]
+			public string LayoutType
 			{
 				get
 				{
-					return screenInputConfigList;
+					return layoutType;
 				}
 				set	
 				{
-					screenInputConfigList = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "MediaInputConfigList")]
-			public List<DescribeStudioLayouts_MediaInputConfig> MediaInputConfigList
-			{
-				get
-				{
-					return mediaInputConfigList;
-				}
-				set	
-				{
-					mediaInputConfigList = value;
+					layoutType = value;
 				}
 			}
 
@@ -167,16 +141,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "CommonConfig")]
-			public DescribeStudioLayouts_CommonConfig CommonConfig
+			[JsonProperty(PropertyName = "MediaInputConfigList")]
+			public List<DescribeStudioLayouts_MediaInputConfig> MediaInputConfigList
 			{
 				get
 				{
-					return commonConfig;
+					return mediaInputConfigList;
 				}
 				set	
 				{
-					commonConfig = value;
+					mediaInputConfigList = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ScreenInputConfigList")]
+			public List<DescribeStudioLayouts_ScreenInputConfig> ScreenInputConfigList
+			{
+				get
+				{
+					return screenInputConfigList;
+				}
+				set	
+				{
+					screenInputConfigList = value;
 				}
 			}
 
@@ -193,147 +180,25 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public class DescribeStudioLayouts_ScreenInputConfig
+			[JsonProperty(PropertyName = "CommonConfig")]
+			public DescribeStudioLayouts_CommonConfig CommonConfig
 			{
+				get
+				{
+					return commonConfig;
+				}
+				set	
+				{
+					commonConfig = value;
+				}
+			}
 
-				private int? portraitType;
-
-				private int? index;
-
-				private string positionX;
-
-				private string color;
-
-				private bool? onlyAudio;
-
-				private float? heightNormalized;
-
-				private string positionY;
-
-				private string channelId;
-
-				private string videoResourceId;
+			public class DescribeStudioLayouts_LayerOrderConfig
+			{
 
 				private string id;
 
-				private DescribeStudioLayouts_AudioConfig audioConfig;
-
-				[JsonProperty(PropertyName = "PortraitType")]
-				public int? PortraitType
-				{
-					get
-					{
-						return portraitType;
-					}
-					set	
-					{
-						portraitType = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "Index")]
-				public int? Index
-				{
-					get
-					{
-						return index;
-					}
-					set	
-					{
-						index = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "PositionX")]
-				public string PositionX
-				{
-					get
-					{
-						return positionX;
-					}
-					set	
-					{
-						positionX = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "Color")]
-				public string Color
-				{
-					get
-					{
-						return color;
-					}
-					set	
-					{
-						color = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "OnlyAudio")]
-				public bool? OnlyAudio
-				{
-					get
-					{
-						return onlyAudio;
-					}
-					set	
-					{
-						onlyAudio = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "HeightNormalized")]
-				public float? HeightNormalized
-				{
-					get
-					{
-						return heightNormalized;
-					}
-					set	
-					{
-						heightNormalized = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "PositionY")]
-				public string PositionY
-				{
-					get
-					{
-						return positionY;
-					}
-					set	
-					{
-						positionY = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "ChannelId")]
-				public string ChannelId
-				{
-					get
-					{
-						return channelId;
-					}
-					set	
-					{
-						channelId = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "VideoResourceId")]
-				public string VideoResourceId
-				{
-					get
-					{
-						return videoResourceId;
-					}
-					set	
-					{
-						videoResourceId = value;
-					}
-				}
+				private string type;
 
 				[JsonProperty(PropertyName = "Id")]
 				public string Id
@@ -348,50 +213,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				[JsonProperty(PropertyName = "AudioConfig")]
-				public DescribeStudioLayouts_AudioConfig AudioConfig
+				[JsonProperty(PropertyName = "Type")]
+				public string Type
 				{
 					get
 					{
-						return audioConfig;
+						return type;
 					}
 					set	
 					{
-						audioConfig = value;
-					}
-				}
-
-				public class DescribeStudioLayouts_AudioConfig
-				{
-
-					private float? volumeRate;
-
-					private string validChannel;
-
-					[JsonProperty(PropertyName = "VolumeRate")]
-					public float? VolumeRate
-					{
-						get
-						{
-							return volumeRate;
-						}
-						set	
-						{
-							volumeRate = value;
-						}
-					}
-
-					[JsonProperty(PropertyName = "ValidChannel")]
-					public string ValidChannel
-					{
-						get
-						{
-							return validChannel;
-						}
-						set	
-						{
-							validChannel = value;
-						}
+						type = value;
 					}
 				}
 			}
@@ -399,49 +230,36 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeStudioLayouts_MediaInputConfig
 			{
 
-				private int? index;
-
-				private float? heightNormalized;
+				private string channelId;
 
 				private string fillMode;
 
-				private string positionRefer;
+				private float? heightNormalized;
 
-				private string channelId;
+				private string id;
+
+				private string imageMaterialId;
+
+				private int? index;
+
+				private string positionRefer;
 
 				private string videoResourceId;
 
 				private float? widthNormalized;
 
-				private string imageMaterialId;
-
-				private string id;
-
 				private List<string> positionNormalized;
 
-				[JsonProperty(PropertyName = "Index")]
-				public int? Index
+				[JsonProperty(PropertyName = "ChannelId")]
+				public string ChannelId
 				{
 					get
 					{
-						return index;
+						return channelId;
 					}
 					set	
 					{
-						index = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "HeightNormalized")]
-				public float? HeightNormalized
-				{
-					get
-					{
-						return heightNormalized;
-					}
-					set	
-					{
-						heightNormalized = value;
+						channelId = value;
 					}
 				}
 
@@ -458,6 +276,58 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
+				[JsonProperty(PropertyName = "HeightNormalized")]
+				public float? HeightNormalized
+				{
+					get
+					{
+						return heightNormalized;
+					}
+					set	
+					{
+						heightNormalized = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Id")]
+				public string Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "ImageMaterialId")]
+				public string ImageMaterialId
+				{
+					get
+					{
+						return imageMaterialId;
+					}
+					set	
+					{
+						imageMaterialId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Index")]
+				public int? Index
+				{
+					get
+					{
+						return index;
+					}
+					set	
+					{
+						index = value;
+					}
+				}
+
 				[JsonProperty(PropertyName = "PositionRefer")]
 				public string PositionRefer
 				{
@@ -468,19 +338,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						positionRefer = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "ChannelId")]
-				public string ChannelId
-				{
-					get
-					{
-						return channelId;
-					}
-					set	
-					{
-						channelId = value;
 					}
 				}
 
@@ -510,32 +367,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				[JsonProperty(PropertyName = "ImageMaterialId")]
-				public string ImageMaterialId
-				{
-					get
-					{
-						return imageMaterialId;
-					}
-					set	
-					{
-						imageMaterialId = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "Id")]
-				public string Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
-					}
-				}
-
 				[JsonProperty(PropertyName = "PositionNormalized")]
 				public List<string> PositionNormalized
 				{
@@ -550,23 +381,67 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public class DescribeStudioLayouts_LayerOrderConfig
+			public class DescribeStudioLayouts_ScreenInputConfig
 			{
 
-				private string type;
+				private string channelId;
+
+				private string color;
+
+				private float? heightNormalized;
 
 				private string id;
 
-				[JsonProperty(PropertyName = "Type")]
-				public string Type
+				private int? index;
+
+				private bool? onlyAudio;
+
+				private int? portraitType;
+
+				private string positionX;
+
+				private string positionY;
+
+				private string videoResourceId;
+
+				private DescribeStudioLayouts_AudioConfig audioConfig;
+
+				[JsonProperty(PropertyName = "ChannelId")]
+				public string ChannelId
 				{
 					get
 					{
-						return type;
+						return channelId;
 					}
 					set	
 					{
-						type = value;
+						channelId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Color")]
+				public string Color
+				{
+					get
+					{
+						return color;
+					}
+					set	
+					{
+						color = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "HeightNormalized")]
+				public float? HeightNormalized
+				{
+					get
+					{
+						return heightNormalized;
+					}
+					set	
+					{
+						heightNormalized = value;
 					}
 				}
 
@@ -580,6 +455,195 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						id = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Index")]
+				public int? Index
+				{
+					get
+					{
+						return index;
+					}
+					set	
+					{
+						index = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "OnlyAudio")]
+				public bool? OnlyAudio
+				{
+					get
+					{
+						return onlyAudio;
+					}
+					set	
+					{
+						onlyAudio = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "PortraitType")]
+				public int? PortraitType
+				{
+					get
+					{
+						return portraitType;
+					}
+					set	
+					{
+						portraitType = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "PositionX")]
+				public string PositionX
+				{
+					get
+					{
+						return positionX;
+					}
+					set	
+					{
+						positionX = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "PositionY")]
+				public string PositionY
+				{
+					get
+					{
+						return positionY;
+					}
+					set	
+					{
+						positionY = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "VideoResourceId")]
+				public string VideoResourceId
+				{
+					get
+					{
+						return videoResourceId;
+					}
+					set	
+					{
+						videoResourceId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "AudioConfig")]
+				public DescribeStudioLayouts_AudioConfig AudioConfig
+				{
+					get
+					{
+						return audioConfig;
+					}
+					set	
+					{
+						audioConfig = value;
+					}
+				}
+
+				public class DescribeStudioLayouts_AudioConfig
+				{
+
+					private string validChannel;
+
+					private float? volumeRate;
+
+					[JsonProperty(PropertyName = "ValidChannel")]
+					public string ValidChannel
+					{
+						get
+						{
+							return validChannel;
+						}
+						set	
+						{
+							validChannel = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "VolumeRate")]
+					public float? VolumeRate
+					{
+						get
+						{
+							return volumeRate;
+						}
+						set	
+						{
+							volumeRate = value;
+						}
+					}
+				}
+			}
+
+			public class DescribeStudioLayouts_BgImageConfig
+			{
+
+				private string id;
+
+				private string imageUrl;
+
+				private string locationId;
+
+				private string materialId;
+
+				[JsonProperty(PropertyName = "Id")]
+				public string Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "ImageUrl")]
+				public string ImageUrl
+				{
+					get
+					{
+						return imageUrl;
+					}
+					set	
+					{
+						imageUrl = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "LocationId")]
+				public string LocationId
+				{
+					get
+					{
+						return locationId;
+					}
+					set	
+					{
+						locationId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "MaterialId")]
+				public string MaterialId
+				{
+					get
+					{
+						return materialId;
+					}
+					set	
+					{
+						materialId = value;
 					}
 				}
 			}
@@ -614,70 +678,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						videoResourceId = value;
-					}
-				}
-			}
-
-			public class DescribeStudioLayouts_BgImageConfig
-			{
-
-				private string materialId;
-
-				private string imageUrl;
-
-				private string id;
-
-				private string locationId;
-
-				[JsonProperty(PropertyName = "MaterialId")]
-				public string MaterialId
-				{
-					get
-					{
-						return materialId;
-					}
-					set	
-					{
-						materialId = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "ImageUrl")]
-				public string ImageUrl
-				{
-					get
-					{
-						return imageUrl;
-					}
-					set	
-					{
-						imageUrl = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "Id")]
-				public string Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "LocationId")]
-				public string LocationId
-				{
-					get
-					{
-						return locationId;
-					}
-					set	
-					{
-						locationId = value;
 					}
 				}
 			}

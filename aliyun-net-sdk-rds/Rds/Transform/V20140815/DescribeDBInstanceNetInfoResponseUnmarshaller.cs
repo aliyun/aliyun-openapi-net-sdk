@@ -50,6 +50,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstanceNetInfo.VPCId = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].VPCId");
 				dBInstanceNetInfo.DistributionType = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].DistributionType");
 				dBInstanceNetInfo.IPAddress = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].IPAddress");
+				dBInstanceNetInfo.PGBouncerPort = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].PGBouncerPort");
 
 				List<DescribeDBInstanceNetInfoResponse.DescribeDBInstanceNetInfo_DBInstanceNetInfo.DescribeDBInstanceNetInfo_SecurityIPGroup> dBInstanceNetInfo_securityIPGroups = new List<DescribeDBInstanceNetInfoResponse.DescribeDBInstanceNetInfo_DBInstanceNetInfo.DescribeDBInstanceNetInfo_SecurityIPGroup>();
 				for (int j = 0; j < _ctx.Length("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].SecurityIPGroups.Length"); j++) {

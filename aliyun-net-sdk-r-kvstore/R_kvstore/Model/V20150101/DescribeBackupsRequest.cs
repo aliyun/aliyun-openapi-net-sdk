@@ -40,6 +40,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			Method = MethodType.POST;
         }
 
+		private int? backupJobId;
+
 		private long? resourceOwnerId;
 
 		private string startTime;
@@ -63,6 +65,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private long? ownerId;
 
 		private string instanceId;
+
+		public int? BackupJobId
+		{
+			get
+			{
+				return backupJobId;
+			}
+			set	
+			{
+				backupJobId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupJobId", value.ToString());
+			}
+		}
 
 		public long? ResourceOwnerId
 		{

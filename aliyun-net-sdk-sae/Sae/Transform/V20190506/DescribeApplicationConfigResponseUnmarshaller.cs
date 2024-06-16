@@ -102,6 +102,9 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			data.NasConfigs = _ctx.StringValue("DescribeApplicationConfig.Data.NasConfigs");
 			data.Python = _ctx.StringValue("DescribeApplicationConfig.Data.Python");
 			data.PythonModules = _ctx.StringValue("DescribeApplicationConfig.Data.PythonModules");
+			data.MseApplicationName = _ctx.StringValue("DescribeApplicationConfig.Data.MseApplicationName");
+			data.SaeVersion = _ctx.StringValue("DescribeApplicationConfig.Data.SaeVersion");
+			data.AppSource = _ctx.StringValue("DescribeApplicationConfig.Data.AppSource");
 
 			List<DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_ConfigMapMountDescItem> data_configMapMountDesc = new List<DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_ConfigMapMountDescItem>();
 			for (int i = 0; i < _ctx.Length("DescribeApplicationConfig.Data.ConfigMapMountDesc.Length"); i++) {

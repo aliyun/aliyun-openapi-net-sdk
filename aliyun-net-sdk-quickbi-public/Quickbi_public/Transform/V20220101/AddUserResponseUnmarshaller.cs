@@ -43,6 +43,12 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			result.AdminUser = _ctx.BooleanValue("AddUser.Result.AdminUser");
 			result.Phone = _ctx.StringValue("AddUser.Result.Phone");
 			result.AccountName = _ctx.StringValue("AddUser.Result.AccountName");
+
+			List<string> result_roleIdList = new List<string>();
+			for (int i = 0; i < _ctx.Length("AddUser.Result.RoleIdList.Length"); i++) {
+				result_roleIdList.Add(_ctx.StringValue("AddUser.Result.RoleIdList["+ i +"]"));
+			}
+			result.RoleIdList = result_roleIdList;
 			addUserResponse.Result = result;
         
 			return addUserResponse;

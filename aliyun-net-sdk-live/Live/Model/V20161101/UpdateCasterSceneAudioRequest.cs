@@ -45,7 +45,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private long? ownerId;
 
-		private List<float?> audioLayers = new List<float?>(){ };
+		private List<string> audioLayers = new List<string>(){ };
 
 		private string sceneId;
 
@@ -82,7 +82,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 		}
 
 		[JsonProperty(PropertyName = "AudioLayer")]
-		public List<float?> AudioLayers
+		public List<string> AudioLayers
 		{
 			get
 			{
@@ -150,24 +150,24 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class AudioLayer
 		{
 
-			private float? volumeRate;
+			private string filter;
 
 			private int? fixedDelayDuration;
 
 			private string validChannel;
 
-			private string filter;
+			private float? volumeRate;
 
-			[JsonProperty(PropertyName = "VolumeRate")]
-			public float? VolumeRate
+			[JsonProperty(PropertyName = "Filter")]
+			public string Filter
 			{
 				get
 				{
-					return volumeRate;
+					return filter;
 				}
 				set	
 				{
-					volumeRate = value;
+					filter = value;
 				}
 			}
 
@@ -197,16 +197,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			[JsonProperty(PropertyName = "Filter")]
-			public string Filter
+			[JsonProperty(PropertyName = "VolumeRate")]
+			public float? VolumeRate
 			{
 				get
 				{
-					return filter;
+					return volumeRate;
 				}
 				set	
 				{
-					filter = value;
+					volumeRate = value;
 				}
 			}
 		}

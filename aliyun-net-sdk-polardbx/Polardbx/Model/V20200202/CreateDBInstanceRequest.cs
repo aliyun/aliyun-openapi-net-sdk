@@ -44,9 +44,15 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 
 		private string engineVersion;
 
+		private string tertiaryZone;
+
+		private string cnClass;
+
 		private string resourceGroupId;
 
 		private string dBNodeClass;
+
+		private string secondaryZone;
 
 		private string period;
 
@@ -58,13 +64,27 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 
 		private string zoneId;
 
+		private string cNNodeCount;
+
 		private string primaryDBInstanceName;
+
+		private string topologyType;
 
 		private string clientToken;
 
+		private bool? isColumnarReadDBInstance;
+
+		private string dNNodeCount;
+
 		private int? dBNodeCount;
 
+		private string dnClass;
+
 		private int? usedTime;
+
+		private string primaryZone;
+
+		private string series;
 
 		private string vPCId;
 
@@ -96,6 +116,32 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			}
 		}
 
+		public string TertiaryZone
+		{
+			get
+			{
+				return tertiaryZone;
+			}
+			set	
+			{
+				tertiaryZone = value;
+				DictionaryUtil.Add(QueryParameters, "TertiaryZone", value);
+			}
+		}
+
+		public string CnClass
+		{
+			get
+			{
+				return cnClass;
+			}
+			set	
+			{
+				cnClass = value;
+				DictionaryUtil.Add(QueryParameters, "CnClass", value);
+			}
+		}
+
 		public string ResourceGroupId
 		{
 			get
@@ -119,6 +165,19 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			{
 				dBNodeClass = value;
 				DictionaryUtil.Add(QueryParameters, "DBNodeClass", value);
+			}
+		}
+
+		public string SecondaryZone
+		{
+			get
+			{
+				return secondaryZone;
+			}
+			set	
+			{
+				secondaryZone = value;
+				DictionaryUtil.Add(QueryParameters, "SecondaryZone", value);
 			}
 		}
 
@@ -187,6 +246,19 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			}
 		}
 
+		public string CNNodeCount
+		{
+			get
+			{
+				return cNNodeCount;
+			}
+			set	
+			{
+				cNNodeCount = value;
+				DictionaryUtil.Add(QueryParameters, "CNNodeCount", value);
+			}
+		}
+
 		public string PrimaryDBInstanceName
 		{
 			get
@@ -197,6 +269,19 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			{
 				primaryDBInstanceName = value;
 				DictionaryUtil.Add(QueryParameters, "PrimaryDBInstanceName", value);
+			}
+		}
+
+		public string TopologyType
+		{
+			get
+			{
+				return topologyType;
+			}
+			set	
+			{
+				topologyType = value;
+				DictionaryUtil.Add(QueryParameters, "TopologyType", value);
 			}
 		}
 
@@ -213,6 +298,32 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			}
 		}
 
+		public bool? IsColumnarReadDBInstance
+		{
+			get
+			{
+				return isColumnarReadDBInstance;
+			}
+			set	
+			{
+				isColumnarReadDBInstance = value;
+				DictionaryUtil.Add(QueryParameters, "IsColumnarReadDBInstance", value.ToString());
+			}
+		}
+
+		public string DNNodeCount
+		{
+			get
+			{
+				return dNNodeCount;
+			}
+			set	
+			{
+				dNNodeCount = value;
+				DictionaryUtil.Add(QueryParameters, "DNNodeCount", value);
+			}
+		}
+
 		public int? DBNodeCount
 		{
 			get
@@ -226,6 +337,19 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			}
 		}
 
+		public string DnClass
+		{
+			get
+			{
+				return dnClass;
+			}
+			set	
+			{
+				dnClass = value;
+				DictionaryUtil.Add(QueryParameters, "DnClass", value);
+			}
+		}
+
 		public int? UsedTime
 		{
 			get
@@ -236,6 +360,32 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			{
 				usedTime = value;
 				DictionaryUtil.Add(QueryParameters, "UsedTime", value.ToString());
+			}
+		}
+
+		public string PrimaryZone
+		{
+			get
+			{
+				return primaryZone;
+			}
+			set	
+			{
+				primaryZone = value;
+				DictionaryUtil.Add(QueryParameters, "PrimaryZone", value);
+			}
+		}
+
+		public string Series
+		{
+			get
+			{
+				return series;
+			}
+			set	
+			{
+				series = value;
+				DictionaryUtil.Add(QueryParameters, "Series", value);
 			}
 		}
 

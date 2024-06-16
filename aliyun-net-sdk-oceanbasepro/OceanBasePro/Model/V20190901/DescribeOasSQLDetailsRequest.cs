@@ -41,17 +41,61 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			Method = MethodType.POST;
         }
 
+		private string startTime;
+
+		private bool? dynamicSql;
+
+		private string tenantId;
+
 		private string sqlId;
 
 		private string endTime;
-
-		private string startTime;
 
 		private string instanceId;
 
 		private string dbName;
 
-		private string tenantId;
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(BodyParameters, "StartTime", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DynamicSql")]
+		public bool? DynamicSql
+		{
+			get
+			{
+				return dynamicSql;
+			}
+			set	
+			{
+				dynamicSql = value;
+				DictionaryUtil.Add(BodyParameters, "DynamicSql", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "TenantId")]
+		public string TenantId
+		{
+			get
+			{
+				return tenantId;
+			}
+			set	
+			{
+				tenantId = value;
+				DictionaryUtil.Add(BodyParameters, "TenantId", value);
+			}
+		}
 
 		[JsonProperty(PropertyName = "SqlId")]
 		public string SqlId
@@ -81,20 +125,6 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			}
 		}
 
-		[JsonProperty(PropertyName = "StartTime")]
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(BodyParameters, "StartTime", value);
-			}
-		}
-
 		[JsonProperty(PropertyName = "InstanceId")]
 		public string InstanceId
 		{
@@ -120,20 +150,6 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			{
 				dbName = value;
 				DictionaryUtil.Add(BodyParameters, "DbName", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "TenantId")]
-		public string TenantId
-		{
-			get
-			{
-				return tenantId;
-			}
-			set	
-			{
-				tenantId = value;
-				DictionaryUtil.Add(BodyParameters, "TenantId", value);
 			}
 		}
 

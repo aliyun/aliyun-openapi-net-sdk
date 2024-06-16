@@ -31,9 +31,9 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			GetEditingJobInfoResponse getEditingJobInfoResponse = new GetEditingJobInfoResponse();
 
 			getEditingJobInfoResponse.HttpResponse = _ctx.HttpResponse;
-			getEditingJobInfoResponse.RequestId = _ctx.StringValue("GetEditingJobInfo.RequestId");
 			getEditingJobInfoResponse.CasterId = _ctx.StringValue("GetEditingJobInfo.CasterId");
 			getEditingJobInfoResponse.EditingTasksInfo = _ctx.StringValue("GetEditingJobInfo.EditingTasksInfo");
+			getEditingJobInfoResponse.RequestId = _ctx.StringValue("GetEditingJobInfo.RequestId");
         
 			return getEditingJobInfoResponse;
         }

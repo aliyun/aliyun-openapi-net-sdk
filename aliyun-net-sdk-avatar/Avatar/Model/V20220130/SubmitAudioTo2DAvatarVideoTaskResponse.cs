@@ -31,7 +31,7 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 
 		private string message;
 
-		private string success;
+		private bool? success;
 
 		private SubmitAudioTo2DAvatarVideoTask_Data data;
 
@@ -75,7 +75,7 @@ namespace Aliyun.Acs.avatar.Model.V20220130
 		}
 
 		[JsonProperty(PropertyName = "Success")]
-		public string Success
+		public bool? Success
 		{
 			get
 			{

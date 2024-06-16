@@ -51,7 +51,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string resourceOwnerAccount;
 
-		private int? backupId;
+		private long? backupId;
 
 		private string ownerAccount;
 
@@ -128,7 +128,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		}
 
 		[JsonProperty(PropertyName = "BackupId")]
-		public int? BackupId
+		public long? BackupId
 		{
 			get
 			{

@@ -94,6 +94,12 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 			private string passed;
 
+			private string deviceRisk;
+
+			private string success;
+
+			private string userInfo;
+
 			public string SubCode
 			{
 				get
@@ -151,6 +157,42 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				set	
 				{
 					passed = value;
+				}
+			}
+
+			public string DeviceRisk
+			{
+				get
+				{
+					return deviceRisk;
+				}
+				set	
+				{
+					deviceRisk = value;
+				}
+			}
+
+			public string Success
+			{
+				get
+				{
+					return success;
+				}
+				set	
+				{
+					success = value;
+				}
+			}
+
+			public string UserInfo
+			{
+				get
+				{
+					return userInfo;
+				}
+				set	
+				{
+					userInfo = value;
 				}
 			}
 		}

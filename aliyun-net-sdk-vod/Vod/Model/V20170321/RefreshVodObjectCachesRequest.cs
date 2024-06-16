@@ -42,11 +42,13 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string objectPath;
 
-		private long? ownerId;
-
 		private string securityToken;
 
 		private string objectType;
+
+		private long? ownerId;
+
+		private bool? force;
 
 		public string ObjectPath
 		{
@@ -58,19 +60,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				objectPath = value;
 				DictionaryUtil.Add(QueryParameters, "ObjectPath", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -97,6 +86,32 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				objectType = value;
 				DictionaryUtil.Add(QueryParameters, "ObjectType", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public bool? Force
+		{
+			get
+			{
+				return force;
+			}
+			set	
+			{
+				force = value;
+				DictionaryUtil.Add(QueryParameters, "Force", value.ToString());
 			}
 		}
 

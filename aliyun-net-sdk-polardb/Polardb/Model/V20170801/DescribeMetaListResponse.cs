@@ -35,6 +35,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string pageNumber;
 
+		private string dBClusterId;
+
 		private List<DescribeMetaList_MetaItem> items;
 
 		public string TotalPageCount
@@ -94,6 +96,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				pageNumber = value;
+			}
+		}
+
+		public string DBClusterId
+		{
+			get
+			{
+				return dBClusterId;
+			}
+			set	
+			{
+				dBClusterId = value;
 			}
 		}
 

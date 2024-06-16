@@ -33,7 +33,7 @@ namespace Aliyun.Acs.ComputeNest.Transform.V20210601
 			listServiceInstanceResourcesResponse.HttpResponse = _ctx.HttpResponse;
 			listServiceInstanceResourcesResponse.NextToken = _ctx.StringValue("ListServiceInstanceResources.NextToken");
 			listServiceInstanceResourcesResponse.RequestId = _ctx.StringValue("ListServiceInstanceResources.RequestId");
-			listServiceInstanceResourcesResponse.MaxResults = _ctx.StringValue("ListServiceInstanceResources.MaxResults");
+			listServiceInstanceResourcesResponse.MaxResults = _ctx.IntegerValue("ListServiceInstanceResources.MaxResults");
 
 			List<ListServiceInstanceResourcesResponse.ListServiceInstanceResources_ResourcesItem> listServiceInstanceResourcesResponse_resources = new List<ListServiceInstanceResourcesResponse.ListServiceInstanceResources_ResourcesItem>();
 			for (int i = 0; i < _ctx.Length("ListServiceInstanceResources.Resources.Length"); i++) {
@@ -47,6 +47,7 @@ namespace Aliyun.Acs.ComputeNest.Transform.V20210601
 				resourcesItem.RenewalPeriodUnit = _ctx.StringValue("ListServiceInstanceResources.Resources["+ i +"].RenewalPeriodUnit");
 				resourcesItem.ProductType = _ctx.StringValue("ListServiceInstanceResources.Resources["+ i +"].ProductType");
 				resourcesItem.ProductCode = _ctx.StringValue("ListServiceInstanceResources.Resources["+ i +"].ProductCode");
+				resourcesItem.Status = _ctx.StringValue("ListServiceInstanceResources.Resources["+ i +"].Status");
 
 				listServiceInstanceResourcesResponse_resources.Add(resourcesItem);
 			}

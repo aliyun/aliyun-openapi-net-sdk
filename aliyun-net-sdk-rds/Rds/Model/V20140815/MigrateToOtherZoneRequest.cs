@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string zoneIdSlave2;
 
+		private string ioAccelerationEnabled;
+
 		private string effectiveTime;
 
 		private string dBInstanceId;
@@ -140,6 +142,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				zoneIdSlave2 = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneIdSlave2", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "IoAccelerationEnabled")]
+		public string IoAccelerationEnabled
+		{
+			get
+			{
+				return ioAccelerationEnabled;
+			}
+			set	
+			{
+				ioAccelerationEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "IoAccelerationEnabled", value);
 			}
 		}
 

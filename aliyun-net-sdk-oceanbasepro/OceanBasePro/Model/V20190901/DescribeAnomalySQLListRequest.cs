@@ -65,6 +65,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 		private string nodeIp;
 
+		private string instanceId;
+
 		private string dbName;
 
 		private string searchKeyWord;
@@ -238,6 +240,20 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			{
 				nodeIp = value;
 				DictionaryUtil.Add(BodyParameters, "NodeIp", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "InstanceId")]
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(BodyParameters, "InstanceId", value);
 			}
 		}
 

@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -52,6 +53,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string mediaId;
 
+		[JsonProperty(PropertyName = "FileExtension")]
 		public string FileExtension
 		{
 			get
@@ -65,6 +67,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "UserData")]
 		public string UserData
 		{
 			get
@@ -78,6 +81,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "HDRType")]
 		public string HDRType
 		{
 			get
@@ -91,6 +95,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "Definition")]
 		public string Definition
 		{
 			get
@@ -104,6 +109,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "StreamURL")]
 		public string StreamURL
 		{
 			get
@@ -117,6 +123,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "MediaId")]
 		public string MediaId
 		{
 			get

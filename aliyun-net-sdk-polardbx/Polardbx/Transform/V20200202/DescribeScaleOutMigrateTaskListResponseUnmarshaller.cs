@@ -31,8 +31,8 @@ namespace Aliyun.Acs.polardbx.Transform.V20200202
 			DescribeScaleOutMigrateTaskListResponse describeScaleOutMigrateTaskListResponse = new DescribeScaleOutMigrateTaskListResponse();
 
 			describeScaleOutMigrateTaskListResponse.HttpResponse = _ctx.HttpResponse;
-			describeScaleOutMigrateTaskListResponse.RequestId = _ctx.StringValue("DescribeScaleOutMigrateTaskList.RequestId");
 			describeScaleOutMigrateTaskListResponse.Progress = _ctx.IntegerValue("DescribeScaleOutMigrateTaskList.Progress");
+			describeScaleOutMigrateTaskListResponse.RequestId = _ctx.StringValue("DescribeScaleOutMigrateTaskList.RequestId");
         
 			return describeScaleOutMigrateTaskListResponse;
         }

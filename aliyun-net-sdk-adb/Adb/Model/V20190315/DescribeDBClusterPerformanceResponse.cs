@@ -145,6 +145,8 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 				private string name;
 
+				private string tags;
+
 				private List<string> values;
 
 				public string Name
@@ -156,6 +158,18 @@ namespace Aliyun.Acs.adb.Model.V20190315
 					set	
 					{
 						name = value;
+					}
+				}
+
+				public string Tags
+				{
+					get
+					{
+						return tags;
+					}
+					set	
+					{
+						tags = value;
 					}
 				}
 

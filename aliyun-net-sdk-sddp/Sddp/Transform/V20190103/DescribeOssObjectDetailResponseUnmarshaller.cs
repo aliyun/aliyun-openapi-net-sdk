@@ -56,6 +56,16 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 				}
 				rule.SampleList = rule_sampleList;
 
+				List<DescribeOssObjectDetailResponse.DescribeOssObjectDetail_OssObjectDetail.DescribeOssObjectDetail_Rule.DescribeOssObjectDetail_ModelTagsItem> rule_modelTags = new List<DescribeOssObjectDetailResponse.DescribeOssObjectDetail_OssObjectDetail.DescribeOssObjectDetail_Rule.DescribeOssObjectDetail_ModelTagsItem>();
+				for (int j = 0; j < _ctx.Length("DescribeOssObjectDetail.OssObjectDetail.RuleList["+ i +"].ModelTags.Length"); j++) {
+					DescribeOssObjectDetailResponse.DescribeOssObjectDetail_OssObjectDetail.DescribeOssObjectDetail_Rule.DescribeOssObjectDetail_ModelTagsItem modelTagsItem = new DescribeOssObjectDetailResponse.DescribeOssObjectDetail_OssObjectDetail.DescribeOssObjectDetail_Rule.DescribeOssObjectDetail_ModelTagsItem();
+					modelTagsItem.Id = _ctx.LongValue("DescribeOssObjectDetail.OssObjectDetail.RuleList["+ i +"].ModelTags["+ j +"].Id");
+					modelTagsItem.Name = _ctx.StringValue("DescribeOssObjectDetail.OssObjectDetail.RuleList["+ i +"].ModelTags["+ j +"].Name");
+
+					rule_modelTags.Add(modelTagsItem);
+				}
+				rule.ModelTags = rule_modelTags;
+
 				ossObjectDetail_ruleList.Add(rule);
 			}
 			ossObjectDetail.RuleList = ossObjectDetail_ruleList;

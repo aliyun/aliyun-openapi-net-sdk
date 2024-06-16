@@ -58,13 +58,15 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				dBInstanceAttribute.InstanceName = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].InstanceName");
 				dBInstanceAttribute.SecurityIPList = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].SecurityIPList");
 				dBInstanceAttribute.ShardCount = _ctx.IntegerValue("DescribeInstanceAttribute.Instances["+ i +"].ShardCount");
+				dBInstanceAttribute.ReadOnlyCount = _ctx.IntegerValue("DescribeInstanceAttribute.Instances["+ i +"].ReadOnlyCount");
 				dBInstanceAttribute.GlobalInstanceId = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].GlobalInstanceId");
 				dBInstanceAttribute.QPS = _ctx.LongValue("DescribeInstanceAttribute.Instances["+ i +"].QPS");
 				dBInstanceAttribute.AuditLogRetention = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].AuditLogRetention");
 				dBInstanceAttribute.ZoneType = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].ZoneType");
 				dBInstanceAttribute.MaintainStartTime = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].MaintainStartTime");
-				dBInstanceAttribute.InstanceClass = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].InstanceClass");
 				dBInstanceAttribute.MaintainEndTime = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].MaintainEndTime");
+				dBInstanceAttribute.InstanceClass = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].InstanceClass");
+				dBInstanceAttribute.RealInstanceClass = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].RealInstanceClass");
 				dBInstanceAttribute.InstanceId = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].InstanceId");
 				dBInstanceAttribute.InstanceType = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].InstanceType");
 				dBInstanceAttribute.HasRenewChangeOrder = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].HasRenewChangeOrder");
@@ -77,12 +79,15 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				dBInstanceAttribute.NodeType = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].NodeType");
 				dBInstanceAttribute.Connections = _ctx.LongValue("DescribeInstanceAttribute.Instances["+ i +"].Connections");
 				dBInstanceAttribute.BackupLogStartTime = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].BackupLogStartTime");
+				dBInstanceAttribute.SlaveReadOnlyCount = _ctx.LongValue("DescribeInstanceAttribute.Instances["+ i +"].SlaveReadOnlyCount");
 				dBInstanceAttribute.ResourceGroupId = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].ResourceGroupId");
 				dBInstanceAttribute.ZoneId = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].ZoneId");
 				dBInstanceAttribute.InstanceStatus = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].InstanceStatus");
 				dBInstanceAttribute.Engine = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].Engine");
 				dBInstanceAttribute.Storage = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].Storage");
 				dBInstanceAttribute.CloudType = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].CloudType");
+				dBInstanceAttribute.IsOrderCompleted = _ctx.BooleanValue("DescribeInstanceAttribute.Instances["+ i +"].IsOrderCompleted");
+				dBInstanceAttribute.IsSupportTDE = _ctx.BooleanValue("DescribeInstanceAttribute.Instances["+ i +"].IsSupportTDE");
 
 				List<DescribeInstanceAttributeResponse.DescribeInstanceAttribute_DBInstanceAttribute.DescribeInstanceAttribute_Tag> dBInstanceAttribute_tags = new List<DescribeInstanceAttributeResponse.DescribeInstanceAttribute_DBInstanceAttribute.DescribeInstanceAttribute_Tag>();
 				for (int j = 0; j < _ctx.Length("DescribeInstanceAttribute.Instances["+ i +"].Tags.Length"); j++) {

@@ -251,6 +251,12 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 				private string lastJobState;
 
+				private int? cpu;
+
+				private int? mem;
+
+				private string message;
+
 				private List<ListJobs_TagsItem> tags;
 
 				public string AppName
@@ -478,6 +484,42 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					set	
 					{
 						lastJobState = value;
+					}
+				}
+
+				public int? Cpu
+				{
+					get
+					{
+						return cpu;
+					}
+					set	
+					{
+						cpu = value;
+					}
+				}
+
+				public int? Mem
+				{
+					get
+					{
+						return mem;
+					}
+					set	
+					{
+						mem = value;
+					}
+				}
+
+				public string Message
+				{
+					get
+					{
+						return message;
+					}
+					set	
+					{
+						message = value;
 					}
 				}
 

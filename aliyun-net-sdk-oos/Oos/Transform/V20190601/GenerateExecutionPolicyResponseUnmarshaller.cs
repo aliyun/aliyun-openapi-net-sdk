@@ -33,6 +33,7 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			generateExecutionPolicyResponse.HttpResponse = _ctx.HttpResponse;
 			generateExecutionPolicyResponse.Policy = _ctx.StringValue("GenerateExecutionPolicy.Policy");
 			generateExecutionPolicyResponse.RequestId = _ctx.StringValue("GenerateExecutionPolicy.RequestId");
+			generateExecutionPolicyResponse.MissingPolicy = _ctx.StringValue("GenerateExecutionPolicy.MissingPolicy");
         
 			return generateExecutionPolicyResponse;
         }

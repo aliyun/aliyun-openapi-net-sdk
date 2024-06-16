@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -48,6 +49,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string locked;
 
+		[JsonProperty(PropertyName = "TranscodeTemplateList")]
 		public string TranscodeTemplateList
 		{
 			get
@@ -61,6 +63,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "TranscodeTemplateGroupId")]
 		public string TranscodeTemplateGroupId
 		{
 			get
@@ -74,6 +77,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "Name")]
 		public string Name
 		{
 			get
@@ -87,6 +91,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		[JsonProperty(PropertyName = "Locked")]
 		public string Locked
 		{
 			get

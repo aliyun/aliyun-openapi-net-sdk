@@ -31,9 +31,9 @@ namespace Aliyun.Acs.polardbx.Transform.V20200202
 			ResetAccountPasswordResponse resetAccountPasswordResponse = new ResetAccountPasswordResponse();
 
 			resetAccountPasswordResponse.HttpResponse = _ctx.HttpResponse;
+			resetAccountPasswordResponse.Message = _ctx.StringValue("ResetAccountPassword.Message");
 			resetAccountPasswordResponse.RequestId = _ctx.StringValue("ResetAccountPassword.RequestId");
 			resetAccountPasswordResponse.Success = _ctx.BooleanValue("ResetAccountPassword.Success");
-			resetAccountPasswordResponse.Message = _ctx.StringValue("ResetAccountPassword.Message");
         
 			return resetAccountPasswordResponse;
         }

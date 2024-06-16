@@ -29,6 +29,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private CreateSecretParameter_Parameter parameter;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Parameter")]
 		public CreateSecretParameter_Parameter Parameter
 		{
 			get
@@ -84,6 +86,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 			private string shareType;
 
+			[JsonProperty(PropertyName = "Type")]
 			public string Type
 			{
 				get
@@ -96,6 +99,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "UpdatedDate")]
 			public string UpdatedDate
 			{
 				get
@@ -108,6 +112,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "UpdatedBy")]
 			public string UpdatedBy
 			{
 				get
@@ -120,6 +125,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "KeyId")]
 			public string KeyId
 			{
 				get
@@ -132,6 +138,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "Tags")]
 			public string Tags
 			{
 				get
@@ -144,6 +151,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "Description")]
 			public string Description
 			{
 				get
@@ -156,6 +164,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "Constraints")]
 			public string Constraints
 			{
 				get
@@ -168,6 +177,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "ResourceGroupId")]
 			public string ResourceGroupId
 			{
 				get
@@ -180,6 +190,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "CreatedBy")]
 			public string CreatedBy
 			{
 				get
@@ -192,6 +203,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "CreatedDate")]
 			public string CreatedDate
 			{
 				get
@@ -204,6 +216,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "ParameterVersion")]
 			public int? ParameterVersion
 			{
 				get
@@ -216,6 +229,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "Name")]
 			public string Name
 			{
 				get
@@ -228,6 +242,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "Id")]
 			public string Id
 			{
 				get
@@ -240,6 +255,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "ShareType")]
 			public string ShareType
 			{
 				get

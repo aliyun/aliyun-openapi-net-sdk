@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Cloudauth;
 using Aliyun.Acs.Cloudauth.Transform;
 using Aliyun.Acs.Cloudauth.Transform.V20190307;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
     public class InitFaceVerifyRequest : RpcAcsRequest<InitFaceVerifyResponse>
     {
         public InitFaceVerifyRequest()
-            : base("Cloudauth", "2019-03-07", "InitFaceVerify")
+            : base("Cloudauth", "2019-03-07", "InitFaceVerify", "cloudauth", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,15 +40,25 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			Method = MethodType.POST;
         }
 
+		private string birthday;
+
 		private string productCode;
 
 		private string faceContrastPicture;
+
+		private string readImg;
+
+		private string rarelyCharacters;
+
+		private string voluntaryCustomizedContent;
 
 		private string userId;
 
 		private string certifyId;
 
 		private string encryptType;
+
+		private string mode;
 
 		private string certNo;
 
@@ -61,9 +70,15 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 		private string model;
 
+		private string suitableType;
+
+		private string certifyUrlStyle;
+
 		private string metaInfo;
 
 		private string ossObjectName;
+
+		private string validityDate;
 
 		private string certName;
 
@@ -71,7 +86,11 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 		private string mobile;
 
+		private string faceGuardOutput;
+
 		private string authId;
+
+		private string procedurePriority;
 
 		private long? sceneId;
 
@@ -86,6 +105,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 		private string crop;
 
 		private string certifyUrlType;
+
+		public string Birthday
+		{
+			get
+			{
+				return birthday;
+			}
+			set	
+			{
+				birthday = value;
+				DictionaryUtil.Add(QueryParameters, "Birthday", value);
+			}
+		}
 
 		public string ProductCode
 		{
@@ -110,6 +142,45 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				faceContrastPicture = value;
 				DictionaryUtil.Add(BodyParameters, "FaceContrastPicture", value);
+			}
+		}
+
+		public string ReadImg
+		{
+			get
+			{
+				return readImg;
+			}
+			set	
+			{
+				readImg = value;
+				DictionaryUtil.Add(QueryParameters, "ReadImg", value);
+			}
+		}
+
+		public string RarelyCharacters
+		{
+			get
+			{
+				return rarelyCharacters;
+			}
+			set	
+			{
+				rarelyCharacters = value;
+				DictionaryUtil.Add(QueryParameters, "RarelyCharacters", value);
+			}
+		}
+
+		public string VoluntaryCustomizedContent
+		{
+			get
+			{
+				return voluntaryCustomizedContent;
+			}
+			set	
+			{
+				voluntaryCustomizedContent = value;
+				DictionaryUtil.Add(QueryParameters, "VoluntaryCustomizedContent", value);
 			}
 		}
 
@@ -149,6 +220,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				encryptType = value;
 				DictionaryUtil.Add(QueryParameters, "EncryptType", value);
+			}
+		}
+
+		public string Mode
+		{
+			get
+			{
+				return mode;
+			}
+			set	
+			{
+				mode = value;
+				DictionaryUtil.Add(QueryParameters, "Mode", value);
 			}
 		}
 
@@ -217,6 +301,32 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
+		public string SuitableType
+		{
+			get
+			{
+				return suitableType;
+			}
+			set	
+			{
+				suitableType = value;
+				DictionaryUtil.Add(QueryParameters, "SuitableType", value);
+			}
+		}
+
+		public string CertifyUrlStyle
+		{
+			get
+			{
+				return certifyUrlStyle;
+			}
+			set	
+			{
+				certifyUrlStyle = value;
+				DictionaryUtil.Add(QueryParameters, "CertifyUrlStyle", value);
+			}
+		}
+
 		public string MetaInfo
 		{
 			get
@@ -240,6 +350,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				ossObjectName = value;
 				DictionaryUtil.Add(QueryParameters, "OssObjectName", value);
+			}
+		}
+
+		public string ValidityDate
+		{
+			get
+			{
+				return validityDate;
+			}
+			set	
+			{
+				validityDate = value;
+				DictionaryUtil.Add(QueryParameters, "ValidityDate", value);
 			}
 		}
 
@@ -282,6 +405,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
+		public string FaceGuardOutput
+		{
+			get
+			{
+				return faceGuardOutput;
+			}
+			set	
+			{
+				faceGuardOutput = value;
+				DictionaryUtil.Add(QueryParameters, "FaceGuardOutput", value);
+			}
+		}
+
 		public string AuthId
 		{
 			get
@@ -292,6 +428,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				authId = value;
 				DictionaryUtil.Add(BodyParameters, "AuthId", value);
+			}
+		}
+
+		public string ProcedurePriority
+		{
+			get
+			{
+				return procedurePriority;
+			}
+			set	
+			{
+				procedurePriority = value;
+				DictionaryUtil.Add(QueryParameters, "ProcedurePriority", value);
 			}
 		}
 

@@ -151,6 +151,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 				private string paramRelyRule;
 
+				private string factor;
+
 				public string CheckingCode
 				{
 					get
@@ -280,6 +282,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					set	
 					{
 						paramRelyRule = value;
+					}
+				}
+
+				public string Factor
+				{
+					get
+					{
+						return factor;
+					}
+					set	
+					{
+						factor = value;
 					}
 				}
 			}

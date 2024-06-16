@@ -51,12 +51,45 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 				dataItem.Suggestion = _ctx.StringValue("DescribeOasAnomalySQLList.Data["+ i +"].Suggestion");
 				dataItem.SumElapsedTime = _ctx.StringValue("DescribeOasAnomalySQLList.Data["+ i +"].SumElapsedTime");
 				dataItem.UserName = _ctx.StringValue("DescribeOasAnomalySQLList.Data["+ i +"].UserName");
+				dataItem.DynamicSql = _ctx.BooleanValue("DescribeOasAnomalySQLList.Data["+ i +"].DynamicSql");
+				dataItem.AvgDbTime = _ctx.DoubleValue("DescribeOasAnomalySQLList.Data["+ i +"].AvgDbTime");
+				dataItem.SumDbTime = _ctx.DoubleValue("DescribeOasAnomalySQLList.Data["+ i +"].SumDbTime");
 
 				List<string> dataItem_diagTypes = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeOasAnomalySQLList.Data["+ i +"].DiagTypes.Length"); j++) {
 					dataItem_diagTypes.Add(_ctx.StringValue("DescribeOasAnomalySQLList.Data["+ i +"].DiagTypes["+ j +"]"));
 				}
 				dataItem.DiagTypes = dataItem_diagTypes;
+
+				List<DescribeOasAnomalySQLListResponse.DescribeOasAnomalySQLList_DataItem.DescribeOasAnomalySQLList_SqlListItem> dataItem_sqlList = new List<DescribeOasAnomalySQLListResponse.DescribeOasAnomalySQLList_DataItem.DescribeOasAnomalySQLList_SqlListItem>();
+				for (int j = 0; j < _ctx.Length("DescribeOasAnomalySQLList.Data["+ i +"].SqlList.Length"); j++) {
+					DescribeOasAnomalySQLListResponse.DescribeOasAnomalySQLList_DataItem.DescribeOasAnomalySQLList_SqlListItem sqlListItem = new DescribeOasAnomalySQLListResponse.DescribeOasAnomalySQLList_DataItem.DescribeOasAnomalySQLList_SqlListItem();
+					sqlListItem.AvgCpuTime = _ctx.DoubleValue("DescribeOasAnomalySQLList.Data["+ i +"].SqlList["+ j +"].AvgCpuTime");
+					sqlListItem.AvgElapsedTime = _ctx.DoubleValue("DescribeOasAnomalySQLList.Data["+ i +"].SqlList["+ j +"].AvgElapsedTime");
+					sqlListItem.AvgGetPlanTime = _ctx.DoubleValue("DescribeOasAnomalySQLList.Data["+ i +"].SqlList["+ j +"].AvgGetPlanTime");
+					sqlListItem.CpuTime = _ctx.DoubleValue("DescribeOasAnomalySQLList.Data["+ i +"].SqlList["+ j +"].CpuTime");
+					sqlListItem.DbName = _ctx.StringValue("DescribeOasAnomalySQLList.Data["+ i +"].SqlList["+ j +"].DbName");
+					sqlListItem.Diagnosis = _ctx.StringValue("DescribeOasAnomalySQLList.Data["+ i +"].SqlList["+ j +"].Diagnosis");
+					sqlListItem.Executions = _ctx.DoubleValue("DescribeOasAnomalySQLList.Data["+ i +"].SqlList["+ j +"].Executions");
+					sqlListItem.LastExecutedTime = _ctx.DoubleValue("DescribeOasAnomalySQLList.Data["+ i +"].SqlList["+ j +"].LastExecutedTime");
+					sqlListItem.RiskLevel = _ctx.StringValue("DescribeOasAnomalySQLList.Data["+ i +"].SqlList["+ j +"].RiskLevel");
+					sqlListItem.SqlId = _ctx.StringValue("DescribeOasAnomalySQLList.Data["+ i +"].SqlList["+ j +"].SqlId");
+					sqlListItem.SqlTextShort = _ctx.StringValue("DescribeOasAnomalySQLList.Data["+ i +"].SqlList["+ j +"].SqlTextShort");
+					sqlListItem.Suggestion = _ctx.StringValue("DescribeOasAnomalySQLList.Data["+ i +"].SqlList["+ j +"].Suggestion");
+					sqlListItem.SumElapsedTime = _ctx.StringValue("DescribeOasAnomalySQLList.Data["+ i +"].SqlList["+ j +"].SumElapsedTime");
+					sqlListItem.UserName = _ctx.StringValue("DescribeOasAnomalySQLList.Data["+ i +"].SqlList["+ j +"].UserName");
+					sqlListItem.AvgDbTime = _ctx.DoubleValue("DescribeOasAnomalySQLList.Data["+ i +"].SqlList["+ j +"].AvgDbTime");
+					sqlListItem.SumDbTime = _ctx.DoubleValue("DescribeOasAnomalySQLList.Data["+ i +"].SqlList["+ j +"].SumDbTime");
+
+					List<string> sqlListItem_diagTypes1 = new List<string>();
+					for (int k = 0; k < _ctx.Length("DescribeOasAnomalySQLList.Data["+ i +"].SqlList["+ j +"].DiagTypes.Length"); k++) {
+						sqlListItem_diagTypes1.Add(_ctx.StringValue("DescribeOasAnomalySQLList.Data["+ i +"].SqlList["+ j +"].DiagTypes["+ k +"]"));
+					}
+					sqlListItem.DiagTypes1 = sqlListItem_diagTypes1;
+
+					dataItem_sqlList.Add(sqlListItem);
+				}
+				dataItem.SqlList = dataItem_sqlList;
 
 				describeOasAnomalySQLListResponse_data.Add(dataItem);
 			}

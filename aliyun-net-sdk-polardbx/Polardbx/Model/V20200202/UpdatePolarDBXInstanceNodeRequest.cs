@@ -40,11 +40,73 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			Method = MethodType.POST;
         }
 
+		private string addDNSpec;
+
+		private string storagePoolName;
+
+		private string dbInstanceNodeCount;
+
+		private string cNNodeCount;
+
 		private string dBInstanceName;
 
 		private string clientToken;
 
-		private string dbInstanceNodeCount;
+		private string deleteDNIds;
+
+		private string dNNodeCount;
+
+		public string AddDNSpec
+		{
+			get
+			{
+				return addDNSpec;
+			}
+			set	
+			{
+				addDNSpec = value;
+				DictionaryUtil.Add(QueryParameters, "AddDNSpec", value);
+			}
+		}
+
+		public string StoragePoolName
+		{
+			get
+			{
+				return storagePoolName;
+			}
+			set	
+			{
+				storagePoolName = value;
+				DictionaryUtil.Add(QueryParameters, "StoragePoolName", value);
+			}
+		}
+
+		public string DbInstanceNodeCount
+		{
+			get
+			{
+				return dbInstanceNodeCount;
+			}
+			set	
+			{
+				dbInstanceNodeCount = value;
+				DictionaryUtil.Add(QueryParameters, "DbInstanceNodeCount", value);
+			}
+		}
+
+		public string CNNodeCount
+		{
+			get
+			{
+				return cNNodeCount;
+			}
+			set	
+			{
+				cNNodeCount = value;
+				DictionaryUtil.Add(QueryParameters, "CNNodeCount", value);
+			}
+		}
 
 		public string DBInstanceName
 		{
@@ -72,16 +134,29 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			}
 		}
 
-		public string DbInstanceNodeCount
+		public string DeleteDNIds
 		{
 			get
 			{
-				return dbInstanceNodeCount;
+				return deleteDNIds;
 			}
 			set	
 			{
-				dbInstanceNodeCount = value;
-				DictionaryUtil.Add(QueryParameters, "DbInstanceNodeCount", value);
+				deleteDNIds = value;
+				DictionaryUtil.Add(QueryParameters, "DeleteDNIds", value);
+			}
+		}
+
+		public string DNNodeCount
+		{
+			get
+			{
+				return dNNodeCount;
+			}
+			set	
+			{
+				dNNodeCount = value;
+				DictionaryUtil.Add(QueryParameters, "DNNodeCount", value);
 			}
 		}
 

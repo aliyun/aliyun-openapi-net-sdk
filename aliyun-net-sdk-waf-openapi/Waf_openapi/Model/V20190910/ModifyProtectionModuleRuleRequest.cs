@@ -44,6 +44,8 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 
 		private long? lockVersion;
 
+		private string resourceGroupId;
+
 		private string defenseType;
 
 		private string instanceId;
@@ -75,6 +77,19 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			{
 				lockVersion = value;
 				DictionaryUtil.Add(QueryParameters, "LockVersion", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

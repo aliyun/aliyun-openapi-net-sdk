@@ -37,6 +37,7 @@ namespace Aliyun.Acs.OceanBasePro.Transform.V20190901
 			data.InstanceId = _ctx.StringValue("CreateInstance.Data.InstanceId");
 			data.OrderId = _ctx.StringValue("CreateInstance.Data.OrderId");
 			data.ResourceGroupId = _ctx.StringValue("CreateInstance.Data.ResourceGroupId");
+			data.DryRunResult = _ctx.BooleanValue("CreateInstance.Data.DryRunResult");
 			createInstanceResponse.Data = data;
         
 			return createInstanceResponse;

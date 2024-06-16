@@ -39,11 +39,11 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<ListMessageResponse.ListMessage_Result.ListMessage_MessageListItem> result_messageList = new List<ListMessageResponse.ListMessage_Result.ListMessage_MessageListItem>();
 			for (int i = 0; i < _ctx.Length("ListMessage.Result.MessageList.Length"); i++) {
 				ListMessageResponse.ListMessage_Result.ListMessage_MessageListItem messageListItem = new ListMessageResponse.ListMessage_Result.ListMessage_MessageListItem();
+				messageListItem.Data = _ctx.StringValue("ListMessage.Result.MessageList["+ i +"].Data");
 				messageListItem.GroupId = _ctx.StringValue("ListMessage.Result.MessageList["+ i +"].GroupId");
 				messageListItem.MessageId = _ctx.StringValue("ListMessage.Result.MessageList["+ i +"].MessageId");
-				messageListItem.Type = _ctx.IntegerValue("ListMessage.Result.MessageList["+ i +"].Type");
 				messageListItem.SenderId = _ctx.StringValue("ListMessage.Result.MessageList["+ i +"].SenderId");
-				messageListItem.Data = _ctx.StringValue("ListMessage.Result.MessageList["+ i +"].Data");
+				messageListItem.Type = _ctx.IntegerValue("ListMessage.Result.MessageList["+ i +"].Type");
 
 				result_messageList.Add(messageListItem);
 			}

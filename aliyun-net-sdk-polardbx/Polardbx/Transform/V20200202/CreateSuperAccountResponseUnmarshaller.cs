@@ -31,9 +31,9 @@ namespace Aliyun.Acs.polardbx.Transform.V20200202
 			CreateSuperAccountResponse createSuperAccountResponse = new CreateSuperAccountResponse();
 
 			createSuperAccountResponse.HttpResponse = _ctx.HttpResponse;
+			createSuperAccountResponse.Message = _ctx.StringValue("CreateSuperAccount.Message");
 			createSuperAccountResponse.RequestId = _ctx.StringValue("CreateSuperAccount.RequestId");
 			createSuperAccountResponse.Success = _ctx.BooleanValue("CreateSuperAccount.Success");
-			createSuperAccountResponse.Message = _ctx.StringValue("CreateSuperAccount.Message");
         
 			return createSuperAccountResponse;
         }

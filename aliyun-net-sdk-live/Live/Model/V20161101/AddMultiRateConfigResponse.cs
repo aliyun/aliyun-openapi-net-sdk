@@ -33,6 +33,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private List<AddMultiRateConfig_FailedTemplates> body;
 
+		[JsonProperty(PropertyName = "Code")]
 		public int? Code
 		{
 			get
@@ -45,6 +46,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -57,6 +59,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -69,6 +72,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Body")]
 		public List<AddMultiRateConfig_FailedTemplates> Body
 		{
 			get
@@ -112,6 +116,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string audioProfile;
 
+			[JsonProperty(PropertyName = "AudioBitrate")]
 			public int? AudioBitrate
 			{
 				get
@@ -124,6 +129,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Template")]
 			public string Template
 			{
 				get
@@ -136,6 +142,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Height")]
 			public int? Height
 			{
 				get
@@ -148,6 +155,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "TemplateType")]
 			public string TemplateType
 			{
 				get
@@ -160,6 +168,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "BandWidth")]
 			public int? BandWidth
 			{
 				get
@@ -172,6 +181,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Profile")]
 			public int? Profile
 			{
 				get
@@ -184,6 +194,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "AudioRate")]
 			public int? AudioRate
 			{
 				get
@@ -196,6 +207,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "AudioCodec")]
 			public string AudioCodec
 			{
 				get
@@ -208,6 +220,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Gop")]
 			public string Gop
 			{
 				get
@@ -220,6 +233,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Width")]
 			public int? Width
 			{
 				get
@@ -232,6 +246,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "VideoBitrate")]
 			public int? VideoBitrate
 			{
 				get
@@ -244,6 +259,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "AudioChannelNum")]
 			public int? AudioChannelNum
 			{
 				get
@@ -256,6 +272,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Fps")]
 			public int? Fps
 			{
 				get
@@ -268,6 +285,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			[JsonProperty(PropertyName = "AudioProfile")]
 			public string AudioProfile
 			{
 				get

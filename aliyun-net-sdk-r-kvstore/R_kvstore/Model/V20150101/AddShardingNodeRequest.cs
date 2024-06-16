@@ -60,9 +60,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? ownerId;
 
-		private string instanceId;
+		private string vSwitchId;
 
-		private string shardClass;
+		private bool? forceTrans;
+
+		private string instanceId;
 
 		public long? ResourceOwnerId
 		{
@@ -194,6 +196,32 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string VSwitchId
+		{
+			get
+			{
+				return vSwitchId;
+			}
+			set	
+			{
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+			}
+		}
+
+		public bool? ForceTrans
+		{
+			get
+			{
+				return forceTrans;
+			}
+			set	
+			{
+				forceTrans = value;
+				DictionaryUtil.Add(QueryParameters, "ForceTrans", value.ToString());
+			}
+		}
+
 		public string InstanceId
 		{
 			get
@@ -204,19 +232,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string ShardClass
-		{
-			get
-			{
-				return shardClass;
-			}
-			set	
-			{
-				shardClass = value;
-				DictionaryUtil.Add(QueryParameters, "ShardClass", value);
 			}
 		}
 

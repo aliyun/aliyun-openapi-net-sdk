@@ -29,6 +29,8 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 
 		private string requestId;
 
+		private List<GetInstanceIpWhiteList_GroupListItem> groupList;
+
 		private List<string> ipList;
 
 		public string InstanceId
@@ -55,6 +57,18 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			}
 		}
 
+		public List<GetInstanceIpWhiteList_GroupListItem> GroupList
+		{
+			get
+			{
+				return groupList;
+			}
+			set	
+			{
+				groupList = value;
+			}
+		}
+
 		public List<string> IpList
 		{
 			get
@@ -64,6 +78,38 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			set	
 			{
 				ipList = value;
+			}
+		}
+
+		public class GetInstanceIpWhiteList_GroupListItem
+		{
+
+			private string groupName;
+
+			private string securityIpList;
+
+			public string GroupName
+			{
+				get
+				{
+					return groupName;
+				}
+				set	
+				{
+					groupName = value;
+				}
+			}
+
+			public string SecurityIpList
+			{
+				get
+				{
+					return securityIpList;
+				}
+				set	
+				{
+					securityIpList = value;
+				}
 			}
 		}
 	}

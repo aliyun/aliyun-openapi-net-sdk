@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.amqp_open.Model.V20191212
@@ -56,9 +56,11 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 		public class GetMetadataAmount_Data
 		{
 
+			private int? maxVirtualHosts;
+
 			private int? currentVirtualHosts;
 
-			private int? maxVirtualHosts;
+			private int? maxQueues;
 
 			private int? currentExchanges;
 
@@ -66,7 +68,17 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 
 			private int? currentQueues;
 
-			private int? maxQueues;
+			public int? MaxVirtualHosts
+			{
+				get
+				{
+					return maxVirtualHosts;
+				}
+				set	
+				{
+					maxVirtualHosts = value;
+				}
+			}
 
 			public int? CurrentVirtualHosts
 			{
@@ -80,15 +92,15 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 				}
 			}
 
-			public int? MaxVirtualHosts
+			public int? MaxQueues
 			{
 				get
 				{
-					return maxVirtualHosts;
+					return maxQueues;
 				}
 				set	
 				{
-					maxVirtualHosts = value;
+					maxQueues = value;
 				}
 			}
 
@@ -125,18 +137,6 @@ namespace Aliyun.Acs.amqp_open.Model.V20191212
 				set	
 				{
 					currentQueues = value;
-				}
-			}
-
-			public int? MaxQueues
-			{
-				get
-				{
-					return maxQueues;
-				}
-				set	
-				{
-					maxQueues = value;
 				}
 			}
 		}

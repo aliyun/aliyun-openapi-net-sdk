@@ -27,6 +27,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 		private string requestId;
 
+		private DeleteInstances_Data data;
+
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
@@ -37,6 +39,38 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Data")]
+		public DeleteInstances_Data Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+
+		public class DeleteInstances_Data
+		{
+
+			private bool? dryRunResult;
+
+			[JsonProperty(PropertyName = "DryRunResult")]
+			public bool? DryRunResult
+			{
+				get
+				{
+					return dryRunResult;
+				}
+				set	
+				{
+					dryRunResult = value;
+				}
 			}
 		}
 	}

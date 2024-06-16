@@ -44,6 +44,8 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 
 		private string nextToken;
 
+		private string serviceInstanceResourceType;
+
 		private List<string> resourceARNs = new List<string>(){ };
 
 		private List<string> tags = new List<string>(){ };
@@ -52,7 +54,7 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 
 		private string expireTimeStart;
 
-		private string maxResults;
+		private int? maxResults;
 
 		private string payType;
 
@@ -79,6 +81,19 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 			{
 				nextToken = value;
 				DictionaryUtil.Add(QueryParameters, "NextToken", value);
+			}
+		}
+
+		public string ServiceInstanceResourceType
+		{
+			get
+			{
+				return serviceInstanceResourceType;
+			}
+			set	
+			{
+				serviceInstanceResourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceInstanceResourceType", value);
 			}
 		}
 
@@ -142,7 +157,7 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 			}
 		}
 
-		public string MaxResults
+		public int? MaxResults
 		{
 			get
 			{
@@ -151,7 +166,7 @@ namespace Aliyun.Acs.ComputeNest.Model.V20210601
 			set	
 			{
 				maxResults = value;
-				DictionaryUtil.Add(QueryParameters, "MaxResults", value);
+				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
 			}
 		}
 

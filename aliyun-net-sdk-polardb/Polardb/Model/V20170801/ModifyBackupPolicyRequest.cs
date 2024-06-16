@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.polardb;
 using Aliyun.Acs.polardb.Transform;
 using Aliyun.Acs.polardb.Transform.V20170801;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
     public class ModifyBackupPolicyRequest : RpcAcsRequest<ModifyBackupPolicyResponse>
     {
         public ModifyBackupPolicyRequest()
-            : base("polardb", "2017-08-01", "ModifyBackupPolicy")
+            : base("polardb", "2017-08-01", "ModifyBackupPolicy", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -61,6 +60,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string ownerAccount;
 
+		private string dataLevel2BackupAnotherRegionRetentionPeriod;
+
 		private long? ownerId;
 
 		private string preferredBackupTime;
@@ -68,6 +69,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private string backupFrequency;
 
 		private string dataLevel1BackupFrequency;
+
+		private string dataLevel2BackupAnotherRegionRegion;
 
 		private string dataLevel1BackupTime;
 
@@ -201,6 +204,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string DataLevel2BackupAnotherRegionRetentionPeriod
+		{
+			get
+			{
+				return dataLevel2BackupAnotherRegionRetentionPeriod;
+			}
+			set	
+			{
+				dataLevel2BackupAnotherRegionRetentionPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "DataLevel2BackupAnotherRegionRetentionPeriod", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -250,6 +266,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				dataLevel1BackupFrequency = value;
 				DictionaryUtil.Add(QueryParameters, "DataLevel1BackupFrequency", value);
+			}
+		}
+
+		public string DataLevel2BackupAnotherRegionRegion
+		{
+			get
+			{
+				return dataLevel2BackupAnotherRegionRegion;
+			}
+			set	
+			{
+				dataLevel2BackupAnotherRegionRegion = value;
+				DictionaryUtil.Add(QueryParameters, "DataLevel2BackupAnotherRegionRegion", value);
 			}
 		}
 

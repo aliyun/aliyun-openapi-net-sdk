@@ -56,6 +56,7 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 				quotasItem.EffectiveTime = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].EffectiveTime");
 				quotasItem.ExpireTime = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].ExpireTime");
 				quotasItem.QuotaCategory = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].QuotaCategory");
+				quotasItem.ApplyReasonTips = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].ApplyReasonTips");
 
 				List<string> quotasItem_applicableRange = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListProductQuotas.Quotas["+ i +"].ApplicableRange.Length"); j++) {

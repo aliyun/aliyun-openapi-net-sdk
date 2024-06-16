@@ -155,6 +155,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 				private string ruleName;
 
+				private List<DescribeOssObjectDetail_ModelTagsItem> modelTags;
+
 				private List<string> sampleList;
 
 				public string RiskLevelName
@@ -229,6 +231,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 					}
 				}
 
+				public List<DescribeOssObjectDetail_ModelTagsItem> ModelTags
+				{
+					get
+					{
+						return modelTags;
+					}
+					set	
+					{
+						modelTags = value;
+					}
+				}
+
 				public List<string> SampleList
 				{
 					get
@@ -238,6 +252,38 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 					set	
 					{
 						sampleList = value;
+					}
+				}
+
+				public class DescribeOssObjectDetail_ModelTagsItem
+				{
+
+					private long? id;
+
+					private string name;
+
+					public long? Id
+					{
+						get
+						{
+							return id;
+						}
+						set	
+						{
+							id = value;
+						}
+					}
+
+					public string Name
+					{
+						get
+						{
+							return name;
+						}
+						set	
+						{
+							name = value;
+						}
 					}
 				}
 			}

@@ -32,14 +32,17 @@ namespace Aliyun.Acs.Dds.Model.V20151201
         public ModifyDBInstanceNetworkTypeRequest()
             : base("Dds", "2015-12-01", "ModifyDBInstanceNetworkType", "dds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
 		private string networkType;
-
-		private string securityToken;
 
 		private int? classicExpiredDays;
 
@@ -82,19 +85,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				networkType = value;
 				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

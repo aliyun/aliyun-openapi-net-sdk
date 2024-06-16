@@ -233,6 +233,10 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 				private string appDescription;
 
+				private int? cpu;
+
+				private int? mem;
+
 				private List<ListApplications_TagsItem> tags;
 
 				public string AppName
@@ -352,6 +356,30 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					set	
 					{
 						appDescription = value;
+					}
+				}
+
+				public int? Cpu
+				{
+					get
+					{
+						return cpu;
+					}
+					set	
+					{
+						cpu = value;
+					}
+				}
+
+				public int? Mem
+				{
+					get
+					{
+						return mem;
+					}
+					set	
+					{
+						mem = value;
 					}
 				}
 

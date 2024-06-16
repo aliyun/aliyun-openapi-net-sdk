@@ -197,6 +197,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 				private List<ListGreyTagRoute_ScRule> scRules;
 
+				private List<ListGreyTagRoute_AlbRule> albRules;
+
 				private List<ListGreyTagRoute_DubboRule> dubboRules;
 
 				public long? GreyTagRouteId
@@ -268,6 +270,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					set	
 					{
 						scRules = value;
+					}
+				}
+
+				public List<ListGreyTagRoute_AlbRule> AlbRules
+				{
+					get
+					{
+						return albRules;
+					}
+					set	
+					{
+						albRules = value;
 					}
 				}
 
@@ -431,6 +445,182 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
+				public class ListGreyTagRoute_AlbRule
+				{
+
+					private string serviceId;
+
+					private string ingressId;
+
+					private string condition;
+
+					private string serviceName;
+
+					private List<ListGreyTagRoute_Item2> items1;
+
+					public string ServiceId
+					{
+						get
+						{
+							return serviceId;
+						}
+						set	
+						{
+							serviceId = value;
+						}
+					}
+
+					public string IngressId
+					{
+						get
+						{
+							return ingressId;
+						}
+						set	
+						{
+							ingressId = value;
+						}
+					}
+
+					public string Condition
+					{
+						get
+						{
+							return condition;
+						}
+						set	
+						{
+							condition = value;
+						}
+					}
+
+					public string ServiceName
+					{
+						get
+						{
+							return serviceName;
+						}
+						set	
+						{
+							serviceName = value;
+						}
+					}
+
+					public List<ListGreyTagRoute_Item2> Items1
+					{
+						get
+						{
+							return items1;
+						}
+						set	
+						{
+							items1 = value;
+						}
+					}
+
+					public class ListGreyTagRoute_Item2
+					{
+
+						private string type;
+
+						private string name;
+
+						private string _operator;
+
+						private string _value;
+
+						private string cond;
+
+						private int? index;
+
+						private string expr;
+
+						public string Type
+						{
+							get
+							{
+								return type;
+							}
+							set	
+							{
+								type = value;
+							}
+						}
+
+						public string Name
+						{
+							get
+							{
+								return name;
+							}
+							set	
+							{
+								name = value;
+							}
+						}
+
+						public string _Operator
+						{
+							get
+							{
+								return _operator;
+							}
+							set	
+							{
+								_operator = value;
+							}
+						}
+
+						public string _Value
+						{
+							get
+							{
+								return _value;
+							}
+							set	
+							{
+								_value = value;
+							}
+						}
+
+						public string Cond
+						{
+							get
+							{
+								return cond;
+							}
+							set	
+							{
+								cond = value;
+							}
+						}
+
+						public int? Index
+						{
+							get
+							{
+								return index;
+							}
+							set	
+							{
+								index = value;
+							}
+						}
+
+						public string Expr
+						{
+							get
+							{
+								return expr;
+							}
+							set	
+							{
+								expr = value;
+							}
+						}
+					}
+				}
+
 				public class ListGreyTagRoute_DubboRule
 				{
 
@@ -444,7 +634,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 					private string condition;
 
-					private List<ListGreyTagRoute_Item2> items1;
+					private List<ListGreyTagRoute_Item4> items3;
 
 					public string ServiceName
 					{
@@ -506,19 +696,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 						}
 					}
 
-					public List<ListGreyTagRoute_Item2> Items1
+					public List<ListGreyTagRoute_Item4> Items3
 					{
 						get
 						{
-							return items1;
+							return items3;
 						}
 						set	
 						{
-							items1 = value;
+							items3 = value;
 						}
 					}
 
-					public class ListGreyTagRoute_Item2
+					public class ListGreyTagRoute_Item4
 					{
 
 						private int? index;

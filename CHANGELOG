@@ -1,3 +1,591 @@
+2024-06-14 Version: 3.9.54
+- Update to support new apis.
+
+2024-06-06 Version: 1.0.1
+- ListOrderConsumeStatisticRecords  add applicationExternalId serviceCode.
+
+2024-06-05 Version: 1.0.0
+- Support dms dg.
+
+2024-06-04 Version: 3.9.53
+- Update to support new apis.
+
+2024-06-03 Version: 1.0.8
+- Supported gateway for hdeni api.
+
+2024-05-30 Version: 1.6.18
+- Update QueryFaceVideoTemplate.
+
+2024-05-24 Version: 3.7.17
+- Generated 2015-12-01 for `Dds`.
+
+2024-05-24 Version: 3.9.52
+- Update to support new apis.
+
+2024-05-23 Version: 3.0.5
+- Generated 2014-08-15 for `Rds`.
+
+2024-05-22 Version: 2.1.6
+- Add CreateTicket4Copilot API.
+- QueryDatasetList and QueryDatasetInfo APIs add response parameters.
+
+2024-05-22 Version: 1.1.3
+- DescribeDBInstances, add cpuType.
+
+2024-05-17 Version: 1.0.6
+- Generated 2023-09-30 for `tingwu`.
+
+2024-05-15 Version: 1.0.5
+- Generated 2023-09-30 for `tingwu`.
+
+2024-05-14 Version: 1.1.9
+- Upgrade SDK.
+
+2024-05-11 Version: 3.9.51
+- Update to support new apis.
+
+2024-05-08 Version: 2.15.3
+- Support key policy and secret policy OpenAPI.
+
+2024-05-08 Version: 2.16.24
+-Fixed DescribeVodMediaPlayData接口返回数据类型错误
+
+2024-05-06 Version: 1.0.7
+- Update HDENI and LENI API.
+
+2024-04-30 Version: 3.0.4
+- Generated 2014-08-15 for `Rds`.
+
+2024-04-29 Version: 3.9.50
+- Update to support new apis.
+
+2024-04-25 Version: 2.16.23
+- Generated 2017-03-21 for `vod`.
+
+2024-04-24 Version: 1.8.20
+- Support new feature.
+
+2024-04-23 Version: 1.0.1
+- Generated 2021-06-01 for `ComputeNest`.
+
+2024-04-22 Version: 1.22.6
+- Generated 2019-05-06 for `sae`.
+
+2024-04-12 Version: 1.0.4
+- Generated 2023-09-30 for `tingwu`.
+
+2024-04-10 Version: 1.0.0
+- Optimize GetInternetTuple API.
+- Optimize CreateNetworkPath API.
+- Optimize DeleteNetworkPath API.
+- Optimize CreateNetworkReachableAnalysis API.
+- Optimize GetNetworkReachableAnalysis API.
+- Publish DeleteNetworkReachableAnalysis API.
+- Publish CreateAndAnalyzeNetworkPath API.
+
+2024-04-03 Version: 1.0.0
+- Generated 2024-03-25 for `aps`.
+
+2024-04-03 Version: 2.0.35
+- Generated 2019-03-07 for `Cloudauth`.
+
+2024-04-02 Version: 3.6.6
+- Generated 2017-08-23 for `Green`.
+
+2024-04-01 Version: 1.0.0
+- Generated 2013-02-21 for `Slb`.
+
+2024-03-26 Version: 1.8.3
+- DeleteFlow、DeleteSchedule Parameters move to body.
+
+2024-03-25 Version: 1.8.2
+- update api
+
+2024-03-25 Version: 1.0.10
+- Fix API
+
+2024-03-19 Version: 2.1.5
+- Add QueryWorkspaceRoleConfig, ListWorkspaceRoleUsers, ListWorkspaceRoles, QueryOrganizationRoleConfig, ListOrganizationRoleUsers and ListOrganizationRoles APIs.
+
+2024-03-18 Version: 1.0.3
+- Generated 2023-09-30 for `tingwu`.
+
+2024-03-13 Version: 1.6.17
+- Update QueryFaceVideoTemplate.
+
+2024-03-13 Version: 3.9.49
+- Update to support new apis.
+
+2024-03-08 Version: 1.1.3
+- Support CreateInstance API.
+- Support UpdateInstance API.
+
+2024-03-08 Version: 3.7.16
+- Generated 2015-12-01 for `Dds`.
+
+2024-03-06 Version: 3.9.48
+- Update to support new apis.
+
+2024-03-01 Version: 3.9.47
+- Update to support new apis.
+
+2024-02-29 Version: 1.0.9
+- Generated 2019-01-03 for `Sddp`.
+
+2024-02-27 Version: 2.1.4
+- AllotDatasetAccelerationTask API add error code.
+- QueryUserInfoByAccount, QueryUserInfoByUserId, AddUser, UpdateUser, and QueryUserList APIs add query or response parameters.
+
+2024-02-27 Version: 2.0.8
+- support preview params
+
+2024-02-20 Version: 1.0.0
+- Release GenerateCosplayImage.
+- Release GenerateTextDeformation.
+- Release GenerateTextTexture.
+- Release InteractiveFullSegmentation.
+- Release InteractiveScribbleSegmentation.
+
+2024-02-02 Version: 7.57.0
+- Add UnsubscribeTopic.
+
+2024-01-31 Version: 3.9.46
+- Update to support new apis.
+
+2024-01-30 Version: 1.0.35
+- Generated 2019-03-06 for `Dbs`.
+
+2024-01-30 Version: 1.1.12
+- Publish sdk.
+
+2024-01-26 Version: 1.0.0
+- Generated 2023-03-05 for `captcha`.
+
+2024-01-24 Version: 2.0.7
+- support start params
+
+2024-01-18 Version: 2.20.7
+- Add DescribeClusterBackupList OpenAPI.
+
+2024-01-17 Version: 2.0.6
+- support unbind device
+
+2024-01-16 Version: 1.0.0
+- Generated 2023-08-01 for `AiMiaoBi`.
+
+2024-01-16 Version: 3.9.45
+- Update to support new apis.
+
+2024-01-15 Version: 7.56.0
+- BatchPub Support MQTT5.
+
+2024-01-15 Version: 3.9.44
+- Update to support new apis.
+
+2024-01-15 Version: 3.1.15
+- support UpdateSecurityGroup
+
+2024-01-08 Version: 0.0.2
+- Support share resource to service for RS.
+- Support display precheck information.
+
+2024-01-05 Version: 1.8.19
+- Support new feature.
+
+2024-01-04 Version: 2.16.22
+- open GenerateDownloadDecryptkey.
+
+2024-01-04 Version: 1.1.11
+- Publish sdk.
+
+2023-12-28 Version: 1.0.13
+- Generated 2019-09-01 for `OceanBasePro`.
+
+2023-12-28 Version: 2.0.5
+- Generated 2022-01-30 for `avatar`.
+
+2023-12-26 Version: 3.9.43
+- Update to support new apis.
+
+2023-12-20 Version: 1.0.2
+- Generated 2023-09-30 for `tingwu`.
+
+2023-12-19 Version: 3.13.14
+- Supported AndroidVivoReceiptId for Push and MassPush.
+
+2023-12-15 Version: 2.16.21
+- SubmitSnapshotJob add parameter
+
+2023-12-15 Version: 1.0.7
+- Update ScreenEC.
+
+2023-12-14 Version: 1.0.12
+- Generated 2019-09-01 for `OceanBasePro`.
+
+2023-12-13 Version: 3.9.42
+- Update to support new apis.
+
+2023-12-13 Version: 1.0.2
+- Standardizing api.
+
+2023-12-13 Version: 2.16.20
+- Support Media StorageClass.
+
+2023-12-12 Version: 1.0.2
+-sdk release.
+
+2023-12-12 Version: 1.0.1
+- Generated 2023-09-30 for `tingwu`.
+
+2023-12-12 Version: 1.0.0
+- Generated 2023-09-30 for `tingwu`.
+
+2023-12-12 Version: 3.1.14
+- CreateLindormInstance api support auto renew
+
+2023-12-11 Version: 1.0.1
+-sdk release.
+
+2023-12-08 Version: 1.0.0
+- Sdk version release.
+
+2023-12-06 Version: 0.0.11
+- Update SegmentCloth.
+
+2023-11-29 Version: 3.1.13
+- SwitchLSQLV3MySQLService
+
+2023-11-23 Version: 3.1.12
+- Generated 2020-06-15 for `hitsdb`.
+
+2023-11-22 Version: 3.1.11
+- Lindorm open api.
+
+2023-11-22 Version: 3.9.41
+- Update to support new apis.
+
+2023-11-20 Version: 1.0.0
+- GetDomainFields add request field
+
+2023-11-15 Version: 2.16.19
+- Latest version for php.
+
+2023-11-15 Version: 2.16.18
+- Latest version for php.
+
+2023-11-13 Version: 1.1.10
+- Support DiskEncryption.
+
+2023-11-09 Version: 2.0.4
+- Generated 2022-01-30 for `avatar`.
+
+2023-11-08 Version: 1.1.2
+- Support CreateInstance API.
+
+2023-11-03 Version: 1.0.6
+- Support ClientToken for Idemoptent.
+
+2023-11-03 Version: 1.0.5
+- Support ClientToken for Idemoptent.
+
+2023-11-01 Version: 1.0.1
+- Standardizing api.
+
+2023-11-01 Version: 2.0.3
+- Generated 2022-01-30 for `avatar`.
+
+2023-10-30 Version: 3.9.40
+- Update to support new apis.
+
+2023-10-26 Version: 1.8.1
+- 增加StartSyncExecution
+
+2023-10-25 Version: 1.1.10
+- Publish sdk.
+
+2023-10-23 Version: 1.1.9
+- Generated 2019-03-15 for `adb`.
+
+2023-10-20 Version: 1.0.4
+- Support ClientToken for Idemoptent.
+
+2023-10-20 Version: 3.7.15
+- Update by SDK platform.
+
+2023-10-18 Version: 3.9.39
+- Update to support new apis.
+
+2023-10-18 Version: 2.16.17
+- Support Digital Watermark.
+
+2023-10-13 Version: 1.1.8
+- Public Api.
+
+2023-10-12 Version: 3.13.13
+- Supported AndroidTargetUserType. AndroidHonorTargetUserType for Push and MassPush.
+- Supported StoreOffline for PushNoticeToAndroid, PushMessageToAndroid and PushMessageToiOS.
+
+2023-10-12 Version: 1.0.11
+- Generated 2019-09-01 for `OceanBasePro`.
+
+2023-10-11 Version: 3.1.2
+- Publish AssumeRoleWithOIDC API by adding more detail in response.
+
+2023-10-11 Version: 1.1.9
+- Publish sdk.
+
+2023-10-10 Version: 1.6.16
+- Update MergeVideoModelFace MergeVideoFace.
+
+2023-09-25 Version: 7.55.0
+- Add Api ResetDeviceTimeline.
+
+2023-09-18 Version: 3.7.14
+- Update by SDK platform.
+
+2023-09-18 Version: 2.0.2
+- add client SDK api
+
+2023-09-18 Version: 1.0.2
+Support QuotaApplications For Template.
+
+2023-09-18 Version: 1.1.7
+- Public Api.
+
+2023-09-14 Version: 1.6.15
+- Update MergeVideoModelFace.
+
+2023-09-11 Version: 3.7.13
+- Update by SDK platform.
+
+2023-09-11 Version: 2.15.2
+- add Instance, NetworkRule, Policy, ApplicationAccessPoint, ClientKey OpenAPIs
+
+2023-09-07 Version: 7.54.0
+- Generated 2018-01-20 for `Iot`.
+
+2023-09-04 Version: 1.0.3
+- Support ListNodeInfos4Pod.
+
+2023-09-04 Version: 1.0.2
+- Support ListNodeInfos4Pod.
+
+2023-08-31 Version: 1.6.14
+- Update MergeVideoFace.
+
+2023-08-28 Version: 2.0.1
+- add make stage, preview url
+
+2023-08-28 Version: 1.0.1
+- Support elastic network interface.
+
+2023-08-25 Version: 1.0.10
+- Update SDK.
+
+2023-08-23 Version: 1.1.6
+- Generated 2019-03-15 for `adb`.
+
+2023-08-17 Version: 3.7.12
+- Update by SDK platform.
+
+2023-08-10 Version: 1.6.13
+- Update MergeVideoModelFace and MergeVideoFace.
+
+2023-08-08 Version: 3.9.38
+- Generated 2016-11-01 for `live`.
+
+2023-08-03 Version: 1.1.5
+- Support region id.
+
+2023-08-02 Version: 3.0.3
+- Fixed bug.
+
+2023-08-02 Version: 1.1.4
+- Support tag policy.
+
+2023-08-02 Version: 2.0.0
+-Fix return message field type
+-Support subtitleEmbeded
+-Support mp4 alphaUrl
+
+2023-08-02 Version: 1.0.25
+-Fix return message field type
+-Support subtitleEmbeded
+-Support mp4 alphaUrl
+
+2023-08-01 Version: 3.7.11
+- Update by SDK platform.
+
+2023-08-01 Version: 1.1.3
+- Support resoruce group id.
+- Support resource group id.
+
+2023-08-01 Version: 1.0.0
+- Initialize SDK.
+
+2023-08-01 Version: 1.1.2
+- Support resource group id.
+
+2023-08-01 Version: 1.1.1
+- Support resourcegroup id.
+- Support resourceGroup id.
+- Support resource group.
+- Support resrouce group.
+- Support resource group id.
+- Support region id.
+- Support RegionId Ram Auth.
+- Support resrouce group id.
+
+2023-07-31 Version: 3.0.2
+- Fix bug ram.
+- Add minor version error.
+- Support to select the minor version of the kernel when the modify instance error reports that the kernel version does not support it.
+
+2023-07-31 Version: 1.0.23
+-2d create
+
+2023-07-30 Version: 3.0.1
+- Fix bug ram.
+- Add minor version error.
+- Support to select the minor version of the kernel when the modify instance error reports that the kernel version does not support it.
+
+2023-07-29 Version: 3.0.0
+- Fix bug ram.
+- Add minor version error.
+- Support to select the minor version of the kernel when the modify instance error reports that the kernel version does not support it.
+
+2023-07-28 Version: 2.9.9
+- Fix bug ram.
+- Add minor version error.
+- Support to select the minor version of the kernel when the modify instance error reports that the kernel version does not support it.
+
+2023-07-28 Version: 1.1.0
+- Add ErrorCode.
+- Support DescribeResubmitConfig and ModifyResubmitConfig.
+- Support DescribeSQAConfig and ModifySQAConfig.
+- Set default value.
+- Support Api TagList.
+- Modify parameters and response for ResubmitConfig API.
+- Update CancelActiveOperationTasks.
+- DescribeActiveOperationTasks Response add field TaskParams.
+- Add patameters for DescribeVswitches and DescribeVpcs.
+- Add regionId.
+
+2023-07-27 Version: 2.9.8
+- Fix bug ram.
+- Add minor version error.
+- Support to select the minor version of the kernel when the modify instance error reports that the kernel version does not support it.
+
+2023-07-25 Version: 2.9.7
+- Add error code.
+- Support System param.
+
+2023-07-24 Version: 2.9.6
+- Add error code.
+- Add error code for CreateDBNodes.
+
+2023-07-24 Version: 1.0.0
+- Add GetGraphQueryTemplates.
+- Add Api GetGraphQueryResult.
+- Support http.
+
+2023-07-23 Version: 2.9.5
+- Fix 500 for CreateOrder.
+- Support sts.
+
+2023-07-22 Version: 2.9.4
+- Fix 500 for CreateOrder.
+- Support sts.
+
+2023-07-21 Version: 2.9.3
+- Fix 500 for CreateOrder.
+- Support sts.
+
+2023-07-20 Version: 2.9.2
+- Fix bug of lack fill resourceOwnerId in DescribeHostWebshell.
+
+2023-07-19 Version: 2.9.1
+- Add openapis for whitelist template.
+
+2023-07-19 Version: 1.0.0
+- Update SDK version.
+
+2023-07-18 Version: 2.9.0
+- Supported RDS PostgreSQL manage extensions.
+
+2023-07-17 Version: 2.8.9
+- Add TimeOut.
+
+2023-07-17 Version: 1.1.11
+- Get Workflow Instance Add Node Field.
+
+2023-07-17 Version: 1.1.10
+- Get Job Instance API add Field.
+- Get Workflow Instance Add Node Field.
+
+2023-07-16 Version: 2.8.8
+- Add error code.
+
+2023-07-15 Version: 2.8.7
+- Add error code.
+
+2023-07-07 Version: 2.8.6
+- Add AutoUseCoupon field.
+- Api Offline.
+
+2023-07-07 Version: 1.5.7
+- ListApplicationGroups rename parameter Product to ResourceProduct
+
+2023-07-06 Version: 2.8.5
+- Add AutoUseCoupon field.
+- Api Offline.
+
+2023-07-05 Version: 2.8.4
+- Add AutoUseCoupon field.
+- Api Offline.
+
+2023-07-05 Version: 1.0.22
+-offline add voice and industrycode
+
+2023-07-04 Version: 2.8.3
+- Fix bugs for  DescribeDedicatedHosts.
+- Fixed bugs add ERRORCODE.
+- Added serverless config to support serverless price query.
+
+2023-07-04 Version: 2.8.2
+- ModifyBackupPolicy API support parameter BackupPriority.
+- DescribeBackupPolicy API add return parameters: BackupPriority and SupportModifyBackupPriority.
+
+2023-07-04 Version: 0.0.15
+- 新增模型预测高性能版本
+
+2023-07-03 Version: 2.8.1
+- Fix bugs for  DescribeDedicatedHosts.
+- Fixed bugs add ERRORCODE.
+- Added serverless config to support serverless price query.
+
+2023-07-03 Version: 0.0.14
+- Add The billingCount return value to the RunPreTrainService Api.
+
+2023-07-02 Version: 2.8.0
+- Fixed bugs for lack of regionId.
+- Fix error code.
+
+2023-07-01 Version: 2.7.9
+- Fixed bugs for lack of regionId.
+- Fix error code.
+
+2023-06-30 Version: 2.7.8
+- Fixed bugs for lack of regionId.
+- Fix error code.
+
+2023-06-30 Version: 2.7.7
+- ModifyBackupPolicy API support parameter BackupPriority.
+- DescribeBackupPolicy API add return parameters: BackupPriority and SupportModifyBackupPriority.
+
+2023-06-29 Version: 2.7.6
+- Support More Open Api.
+
 2023-06-28 Version: 3.7.10
 - Update by SDK platform.
 

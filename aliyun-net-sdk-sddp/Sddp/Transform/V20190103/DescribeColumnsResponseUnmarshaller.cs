@@ -66,6 +66,16 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 				}
 				column.SampleList = column_sampleList;
 
+				List<DescribeColumnsResponse.DescribeColumns_Column.DescribeColumns_ModelTagsItem> column_modelTags = new List<DescribeColumnsResponse.DescribeColumns_Column.DescribeColumns_ModelTagsItem>();
+				for (int j = 0; j < _ctx.Length("DescribeColumns.Items["+ i +"].ModelTags.Length"); j++) {
+					DescribeColumnsResponse.DescribeColumns_Column.DescribeColumns_ModelTagsItem modelTagsItem = new DescribeColumnsResponse.DescribeColumns_Column.DescribeColumns_ModelTagsItem();
+					modelTagsItem.Id = _ctx.LongValue("DescribeColumns.Items["+ i +"].ModelTags["+ j +"].Id");
+					modelTagsItem.Name = _ctx.StringValue("DescribeColumns.Items["+ i +"].ModelTags["+ j +"].Name");
+
+					column_modelTags.Add(modelTagsItem);
+				}
+				column.ModelTags = column_modelTags;
+
 				describeColumnsResponse_items.Add(column);
 			}
 			describeColumnsResponse.Items = describeColumnsResponse_items;

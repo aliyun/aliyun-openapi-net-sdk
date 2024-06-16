@@ -123,6 +123,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string sliceEnvs;
 
+		private bool? enableImageAccl;
+
 		private int? replicas;
 
 		private string workload;
@@ -677,6 +679,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				sliceEnvs = value;
 				DictionaryUtil.Add(QueryParameters, "SliceEnvs", value);
+			}
+		}
+
+		public bool? EnableImageAccl
+		{
+			get
+			{
+				return enableImageAccl;
+			}
+			set	
+			{
+				enableImageAccl = value;
+				DictionaryUtil.Add(BodyParameters, "EnableImageAccl", value.ToString());
 			}
 		}
 

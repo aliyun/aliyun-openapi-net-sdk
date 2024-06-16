@@ -33,6 +33,10 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			deleteApplicationScalingRuleResponse.HttpResponse = _ctx.HttpResponse;
 			deleteApplicationScalingRuleResponse.RequestId = _ctx.StringValue("DeleteApplicationScalingRule.RequestId");
 			deleteApplicationScalingRuleResponse.TraceId = _ctx.StringValue("DeleteApplicationScalingRule.TraceId");
+			deleteApplicationScalingRuleResponse.Message = _ctx.StringValue("DeleteApplicationScalingRule.Message");
+			deleteApplicationScalingRuleResponse.ErrorCode = _ctx.StringValue("DeleteApplicationScalingRule.ErrorCode");
+			deleteApplicationScalingRuleResponse.Code = _ctx.StringValue("DeleteApplicationScalingRule.Code");
+			deleteApplicationScalingRuleResponse.Success = _ctx.BooleanValue("DeleteApplicationScalingRule.Success");
         
 			return deleteApplicationScalingRuleResponse;
         }

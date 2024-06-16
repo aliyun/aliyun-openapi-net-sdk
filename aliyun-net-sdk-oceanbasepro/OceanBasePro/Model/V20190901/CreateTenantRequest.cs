@@ -47,6 +47,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 		private int? memory;
 
+		private long? logDisk;
+
 		private string timeZone;
 
 		private string description;
@@ -64,6 +66,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 		private string primaryZone;
 
 		private string tenantName;
+
+		private string readOnlyZoneList;
 
 		[JsonProperty(PropertyName = "Charset")]
 		public string Charset
@@ -104,6 +108,20 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			{
 				memory = value;
 				DictionaryUtil.Add(BodyParameters, "Memory", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "LogDisk")]
+		public long? LogDisk
+		{
+			get
+			{
+				return logDisk;
+			}
+			set	
+			{
+				logDisk = value;
+				DictionaryUtil.Add(BodyParameters, "LogDisk", value.ToString());
 			}
 		}
 
@@ -230,6 +248,20 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 			{
 				tenantName = value;
 				DictionaryUtil.Add(BodyParameters, "TenantName", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ReadOnlyZoneList")]
+		public string ReadOnlyZoneList
+		{
+			get
+			{
+				return readOnlyZoneList;
+			}
+			set	
+			{
+				readOnlyZoneList = value;
+				DictionaryUtil.Add(BodyParameters, "ReadOnlyZoneList", value);
 			}
 		}
 

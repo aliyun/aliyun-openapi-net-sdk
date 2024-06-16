@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Iot;
 using Aliyun.Acs.Iot.Transform;
 using Aliyun.Acs.Iot.Transform.V20180120;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class ListOTAUnfinishedTaskByDeviceRequest : RpcAcsRequest<ListOTAUnfinishedTaskByDeviceResponse>
     {
         public ListOTAUnfinishedTaskByDeviceRequest()
-            : base("Iot", "2018-01-20", "ListOTAUnfinishedTaskByDevice")
+            : base("Iot", "2018-01-20", "ListOTAUnfinishedTaskByDevice", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,6 +39,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
 			Method = MethodType.POST;
         }
+
+		private List<string> taskStatusLists = new List<string>(){ };
 
 		private string taskStatus;
 
@@ -52,6 +53,23 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private string productKey;
 
 		private string deviceName;
+
+		public List<string> TaskStatusLists
+		{
+			get
+			{
+				return taskStatusLists;
+			}
+
+			set
+			{
+				taskStatusLists = value;
+				for (int i = 0; i < taskStatusLists.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"TaskStatusList." + (i + 1) , taskStatusLists[i]);
+				}
+			}
+		}
 
 		public string TaskStatus
 		{

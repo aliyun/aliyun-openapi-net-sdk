@@ -100,6 +100,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 			private string createDate;
 
+			private string applicationType;
+
 			[JsonProperty(PropertyName = "Description")]
 			public string Description
 			{
@@ -175,6 +177,19 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				set	
 				{
 					createDate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ApplicationType")]
+			public string ApplicationType
+			{
+				get
+				{
+					return applicationType;
+				}
+				set	
+				{
+					applicationType = value;
 				}
 			}
 		}

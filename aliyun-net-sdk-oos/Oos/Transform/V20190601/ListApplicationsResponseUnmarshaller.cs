@@ -44,6 +44,7 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 				application.Tags = _ctx.StringValue("ListApplications.Applications["+ i +"].Tags");
 				application.Name = _ctx.StringValue("ListApplications.Applications["+ i +"].Name");
 				application.CreateDate = _ctx.StringValue("ListApplications.Applications["+ i +"].CreateDate");
+				application.ApplicationType = _ctx.StringValue("ListApplications.Applications["+ i +"].ApplicationType");
 
 				listApplicationsResponse_applications.Add(application);
 			}

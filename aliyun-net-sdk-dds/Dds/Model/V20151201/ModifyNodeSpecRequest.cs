@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
         public ModifyNodeSpecRequest()
             : base("Dds", "2015-12-01", "ModifyNodeSpec", "dds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
@@ -44,8 +49,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string couponNo;
 
 		private string nodeClass;
-
-		private string securityToken;
 
 		private string effectiveTime;
 
@@ -133,19 +136,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				nodeClass = value;
 				DictionaryUtil.Add(QueryParameters, "NodeClass", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

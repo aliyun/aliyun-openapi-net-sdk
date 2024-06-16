@@ -32,9 +32,9 @@ namespace Aliyun.Acs.avatar.Transform.V20220130
 
 			submitAudioTo3DAvatarVideoTaskResponse.HttpResponse = _ctx.HttpResponse;
 			submitAudioTo3DAvatarVideoTaskResponse.RequestId = _ctx.StringValue("SubmitAudioTo3DAvatarVideoTask.RequestId");
+			submitAudioTo3DAvatarVideoTaskResponse.Success = _ctx.BooleanValue("SubmitAudioTo3DAvatarVideoTask.Success");
 			submitAudioTo3DAvatarVideoTaskResponse.Code = _ctx.StringValue("SubmitAudioTo3DAvatarVideoTask.Code");
 			submitAudioTo3DAvatarVideoTaskResponse.Message = _ctx.StringValue("SubmitAudioTo3DAvatarVideoTask.Message");
-			submitAudioTo3DAvatarVideoTaskResponse.Success = _ctx.StringValue("SubmitAudioTo3DAvatarVideoTask.Success");
 
 			SubmitAudioTo3DAvatarVideoTaskResponse.SubmitAudioTo3DAvatarVideoTask_Data data = new SubmitAudioTo3DAvatarVideoTaskResponse.SubmitAudioTo3DAvatarVideoTask_Data();
 			data.TaskUuid = _ctx.StringValue("SubmitAudioTo3DAvatarVideoTask.Data.TaskUuid");

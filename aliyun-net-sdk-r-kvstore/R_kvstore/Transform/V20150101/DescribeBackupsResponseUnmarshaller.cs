@@ -36,6 +36,16 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			describeBackupsResponse.PageSize = _ctx.IntegerValue("DescribeBackups.PageSize");
 			describeBackupsResponse.TotalCount = _ctx.IntegerValue("DescribeBackups.TotalCount");
 
+			DescribeBackupsResponse.DescribeBackups_AccessDeniedDetail accessDeniedDetail = new DescribeBackupsResponse.DescribeBackups_AccessDeniedDetail();
+			accessDeniedDetail.AuthAction = _ctx.StringValue("DescribeBackups.AccessDeniedDetail.AuthAction");
+			accessDeniedDetail.AuthPrincipalDisplayName = _ctx.StringValue("DescribeBackups.AccessDeniedDetail.AuthPrincipalDisplayName");
+			accessDeniedDetail.AuthPrincipalOwnerId = _ctx.StringValue("DescribeBackups.AccessDeniedDetail.AuthPrincipalOwnerId");
+			accessDeniedDetail.AuthPrincipalType = _ctx.StringValue("DescribeBackups.AccessDeniedDetail.AuthPrincipalType");
+			accessDeniedDetail.EncodedDiagnosticMessage = _ctx.StringValue("DescribeBackups.AccessDeniedDetail.EncodedDiagnosticMessage");
+			accessDeniedDetail.NoPermissionType = _ctx.StringValue("DescribeBackups.AccessDeniedDetail.NoPermissionType");
+			accessDeniedDetail.PolicyType = _ctx.StringValue("DescribeBackups.AccessDeniedDetail.PolicyType");
+			describeBackupsResponse.AccessDeniedDetail = accessDeniedDetail;
+
 			List<DescribeBackupsResponse.DescribeBackups_Backup> describeBackupsResponse_backups = new List<DescribeBackupsResponse.DescribeBackups_Backup>();
 			for (int i = 0; i < _ctx.Length("DescribeBackups.Backups.Length"); i++) {
 				DescribeBackupsResponse.DescribeBackups_Backup backup = new DescribeBackupsResponse.DescribeBackups_Backup();
@@ -52,6 +62,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				backup.BackupSize = _ctx.LongValue("DescribeBackups.Backups["+ i +"].BackupSize");
 				backup.BackupMode = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupMode");
 				backup.BackupMethod = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupMethod");
+				backup.BackupJobID = _ctx.IntegerValue("DescribeBackups.Backups["+ i +"].BackupJobID");
 
 				describeBackupsResponse_backups.Add(backup);
 			}

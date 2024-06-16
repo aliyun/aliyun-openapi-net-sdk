@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Dypnsapi;
 using Aliyun.Acs.Dypnsapi.Transform;
 using Aliyun.Acs.Dypnsapi.Transform.V20170525;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
     public class GetAuthTokenRequest : RpcAcsRequest<GetAuthTokenResponse>
     {
         public GetAuthTokenRequest()
-            : base("Dypnsapi", "2017-05-25", "GetAuthToken")
+            : base("Dypnsapi", "2017-05-25", "GetAuthToken", "dypnsapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,9 +42,11 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
 		private string origin;
+
+		private string sceneCode;
+
+		private string resourceOwnerAccount;
 
 		private long? ownerId;
 
@@ -64,19 +65,6 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
 		public string Origin
 		{
 			get
@@ -87,6 +75,32 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			{
 				origin = value;
 				DictionaryUtil.Add(QueryParameters, "Origin", value);
+			}
+		}
+
+		public string SceneCode
+		{
+			get
+			{
+				return sceneCode;
+			}
+			set	
+			{
+				sceneCode = value;
+				DictionaryUtil.Add(QueryParameters, "SceneCode", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 

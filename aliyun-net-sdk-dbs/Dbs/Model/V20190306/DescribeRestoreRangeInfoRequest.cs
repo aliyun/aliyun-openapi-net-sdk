@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Dbs;
 using Aliyun.Acs.Dbs.Transform;
 using Aliyun.Acs.Dbs.Transform.V20190306;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
     public class DescribeRestoreRangeInfoRequest : RpcAcsRequest<DescribeRestoreRangeInfoResponse>
     {
         public DescribeRestoreRangeInfoRequest()
-            : base("Dbs", "2019-03-06", "DescribeRestoreRangeInfo")
+            : base("Dbs", "2019-03-06", "DescribeRestoreRangeInfo", "cbs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,15 +42,15 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private long? beginTimestampForRestore;
 
-		private long? endTimestampForRestore;
-
 		private string clientToken;
 
 		private string backupPlanId;
 
-		private string ownerId;
-
 		private bool? recentlyRestore;
+
+		private long? endTimestampForRestore;
+
+		private string ownerId;
 
 		public long? BeginTimestampForRestore
 		{
@@ -63,19 +62,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				beginTimestampForRestore = value;
 				DictionaryUtil.Add(QueryParameters, "BeginTimestampForRestore", value.ToString());
-			}
-		}
-
-		public long? EndTimestampForRestore
-		{
-			get
-			{
-				return endTimestampForRestore;
-			}
-			set	
-			{
-				endTimestampForRestore = value;
-				DictionaryUtil.Add(QueryParameters, "EndTimestampForRestore", value.ToString());
 			}
 		}
 
@@ -105,19 +91,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public string OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
-			}
-		}
-
 		public bool? RecentlyRestore
 		{
 			get
@@ -128,6 +101,32 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				recentlyRestore = value;
 				DictionaryUtil.Add(QueryParameters, "RecentlyRestore", value.ToString());
+			}
+		}
+
+		public long? EndTimestampForRestore
+		{
+			get
+			{
+				return endTimestampForRestore;
+			}
+			set	
+			{
+				endTimestampForRestore = value;
+				DictionaryUtil.Add(QueryParameters, "EndTimestampForRestore", value.ToString());
+			}
+		}
+
+		public string OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
 			}
 		}
 

@@ -62,6 +62,8 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 
 			private string resourceGroupId;
 
+			private bool? dryRunResult;
+
 			public string InstanceId
 			{
 				get
@@ -95,6 +97,18 @@ namespace Aliyun.Acs.OceanBasePro.Model.V20190901
 				set	
 				{
 					resourceGroupId = value;
+				}
+			}
+
+			public bool? DryRunResult
+			{
+				get
+				{
+					return dryRunResult;
+				}
+				set	
+				{
+					dryRunResult = value;
 				}
 			}
 		}

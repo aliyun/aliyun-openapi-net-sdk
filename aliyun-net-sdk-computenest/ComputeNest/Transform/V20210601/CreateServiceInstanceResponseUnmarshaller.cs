@@ -35,6 +35,7 @@ namespace Aliyun.Acs.ComputeNest.Transform.V20210601
 			createServiceInstanceResponse.RequestId = _ctx.StringValue("CreateServiceInstance.RequestId");
 			createServiceInstanceResponse.ServiceInstanceId = _ctx.StringValue("CreateServiceInstance.ServiceInstanceId");
 			createServiceInstanceResponse.MarketInstanceId = _ctx.StringValue("CreateServiceInstance.MarketInstanceId");
+			createServiceInstanceResponse.OrderId = _ctx.StringValue("CreateServiceInstance.OrderId");
         
 			return createServiceInstanceResponse;
         }

@@ -72,6 +72,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string walDelay;
 
+			private string subReplayLag;
+
 			[JsonProperty(PropertyName = "SlotName")]
 			public string SlotName
 			{
@@ -160,6 +162,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					walDelay = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SubReplayLag")]
+			public string SubReplayLag
+			{
+				get
+				{
+					return subReplayLag;
+				}
+				set	
+				{
+					subReplayLag = value;
 				}
 			}
 		}

@@ -56,6 +56,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string businessInfo;
 
+		private int? shardCount;
+
 		private bool? autoPay;
 
 		private string majorVersion;
@@ -66,7 +68,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? ownerId;
 
+		private bool? forceTrans;
+
 		private string instanceId;
+
+		private int? readOnlyCount;
 
 		private bool? forceUpgrade;
 
@@ -176,6 +182,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public int? ShardCount
+		{
+			get
+			{
+				return shardCount;
+			}
+			set	
+			{
+				shardCount = value;
+				DictionaryUtil.Add(QueryParameters, "ShardCount", value.ToString());
+			}
+		}
+
 		public bool? AutoPay
 		{
 			get
@@ -241,6 +260,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public bool? ForceTrans
+		{
+			get
+			{
+				return forceTrans;
+			}
+			set	
+			{
+				forceTrans = value;
+				DictionaryUtil.Add(QueryParameters, "ForceTrans", value.ToString());
+			}
+		}
+
 		public string InstanceId
 		{
 			get
@@ -251,6 +283,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public int? ReadOnlyCount
+		{
+			get
+			{
+				return readOnlyCount;
+			}
+			set	
+			{
+				readOnlyCount = value;
+				DictionaryUtil.Add(QueryParameters, "ReadOnlyCount", value.ToString());
 			}
 		}
 

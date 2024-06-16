@@ -34,12 +34,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			getMessageGroupResponse.RequestId = _ctx.StringValue("GetMessageGroup.RequestId");
 
 			GetMessageGroupResponse.GetMessageGroup_Result result = new GetMessageGroupResponse.GetMessageGroup_Result();
-			result.GroupId = _ctx.StringValue("GetMessageGroup.Result.GroupId");
 			result.CreateTime = _ctx.LongValue("GetMessageGroup.Result.CreateTime");
-			result.Status = _ctx.IntegerValue("GetMessageGroup.Result.Status");
 			result.CreatorId = _ctx.StringValue("GetMessageGroup.Result.CreatorId");
 			result.Extension = _ctx.StringValue("GetMessageGroup.Result.Extension");
+			result.GroupId = _ctx.StringValue("GetMessageGroup.Result.GroupId");
 			result.IsMuteAll = _ctx.BooleanValue("GetMessageGroup.Result.IsMuteAll");
+			result.Status = _ctx.IntegerValue("GetMessageGroup.Result.Status");
 			getMessageGroupResponse.Result = result;
         
 			return getMessageGroupResponse;

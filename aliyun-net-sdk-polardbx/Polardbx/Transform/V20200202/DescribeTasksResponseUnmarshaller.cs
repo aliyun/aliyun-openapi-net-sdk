@@ -32,25 +32,24 @@ namespace Aliyun.Acs.polardbx.Transform.V20200202
 
 			describeTasksResponse.HttpResponse = _ctx.HttpResponse;
 			describeTasksResponse.RequestId = _ctx.StringValue("DescribeTasks.RequestId");
-			describeTasksResponse.TotalRecordCount = _ctx.IntegerValue("DescribeTasks.TotalRecordCount");
 			describeTasksResponse.PageNumber = _ctx.IntegerValue("DescribeTasks.PageNumber");
 			describeTasksResponse.PageRecordCount = _ctx.IntegerValue("DescribeTasks.PageRecordCount");
+			describeTasksResponse.TotalRecordCount = _ctx.IntegerValue("DescribeTasks.TotalRecordCount");
 
 			List<DescribeTasksResponse.DescribeTasks_TaskProgressInfo> describeTasksResponse_items = new List<DescribeTasksResponse.DescribeTasks_TaskProgressInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeTasks.Items.Length"); i++) {
 				DescribeTasksResponse.DescribeTasks_TaskProgressInfo taskProgressInfo = new DescribeTasksResponse.DescribeTasks_TaskProgressInfo();
-				taskProgressInfo.DBName = _ctx.StringValue("DescribeTasks.Items["+ i +"].DBName");
-				taskProgressInfo.BeginTime = _ctx.StringValue("DescribeTasks.Items["+ i +"].BeginTime");
-				taskProgressInfo.ProgressInfo = _ctx.StringValue("DescribeTasks.Items["+ i +"].ProgressInfo");
-				taskProgressInfo.FinishTime = _ctx.StringValue("DescribeTasks.Items["+ i +"].FinishTime");
-				taskProgressInfo.TaskAction = _ctx.StringValue("DescribeTasks.Items["+ i +"].TaskAction");
-				taskProgressInfo.TaskId = _ctx.StringValue("DescribeTasks.Items["+ i +"].TaskId");
-				taskProgressInfo.Progress = _ctx.StringValue("DescribeTasks.Items["+ i +"].Progress");
-				taskProgressInfo.FinishTime1 = _ctx.StringValue("DescribeTasks.Items["+ i +"].FinishTime");
 				taskProgressInfo.Status = _ctx.StringValue("DescribeTasks.Items["+ i +"].Status");
+				taskProgressInfo.FinishTime = _ctx.StringValue("DescribeTasks.Items["+ i +"].FinishTime");
+				taskProgressInfo.Progress = _ctx.StringValue("DescribeTasks.Items["+ i +"].Progress");
+				taskProgressInfo.BeginTime = _ctx.StringValue("DescribeTasks.Items["+ i +"].BeginTime");
 				taskProgressInfo.TaskErrorCode = _ctx.StringValue("DescribeTasks.Items["+ i +"].TaskErrorCode");
-				taskProgressInfo.TaskErrorMessage = _ctx.StringValue("DescribeTasks.Items["+ i +"].TaskErrorMessage");
+				taskProgressInfo.DBName = _ctx.StringValue("DescribeTasks.Items["+ i +"].DBName");
+				taskProgressInfo.ProgressInfo = _ctx.StringValue("DescribeTasks.Items["+ i +"].ProgressInfo");
 				taskProgressInfo.ScaleOutToken = _ctx.StringValue("DescribeTasks.Items["+ i +"].ScaleOutToken");
+				taskProgressInfo.TaskId = _ctx.StringValue("DescribeTasks.Items["+ i +"].TaskId");
+				taskProgressInfo.TaskErrorMessage = _ctx.StringValue("DescribeTasks.Items["+ i +"].TaskErrorMessage");
+				taskProgressInfo.TaskAction = _ctx.StringValue("DescribeTasks.Items["+ i +"].TaskAction");
 
 				describeTasksResponse_items.Add(taskProgressInfo);
 			}

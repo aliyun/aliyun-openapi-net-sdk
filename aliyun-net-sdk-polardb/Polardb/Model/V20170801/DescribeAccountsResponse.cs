@@ -98,6 +98,10 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string accountName;
 
+			private string accountPassword;
+
+			private string tairPasswordSetted;
+
 			private List<DescribeAccounts_DatabasePrivilege> databasePrivileges;
 
 			public string AccountStatus
@@ -181,6 +185,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					accountName = value;
+				}
+			}
+
+			public string AccountPassword
+			{
+				get
+				{
+					return accountPassword;
+				}
+				set	
+				{
+					accountPassword = value;
+				}
+			}
+
+			public string TairPasswordSetted
+			{
+				get
+				{
+					return tairPasswordSetted;
+				}
+				set	
+				{
+					tairPasswordSetted = value;
 				}
 			}
 

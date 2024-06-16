@@ -45,6 +45,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string description;
 
+		private string templateURL;
+
 		private string mode;
 
 		private string resourceGroupId;
@@ -90,6 +92,20 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "TemplateURL")]
+		public string TemplateURL
+		{
+			get
+			{
+				return templateURL;
+			}
+			set	
+			{
+				templateURL = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateURL", value);
 			}
 		}
 

@@ -1,2 +1,0 @@
-2019-04-10 Version: 4.7.2
-1, This is the first time to publish .NET SDK for Australia and Singapore Region.

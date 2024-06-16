@@ -48,6 +48,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				instanceNetInfo.Port = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].Port");
 				instanceNetInfo.VPCId = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].VPCId");
 				instanceNetInfo.IPAddress = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].IPAddress");
+				instanceNetInfo.IsSlaveProxy = _ctx.IntegerValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].IsSlaveProxy");
 
 				describeDBInstanceNetInfoResponse_netInfoItems.Add(instanceNetInfo);
 			}

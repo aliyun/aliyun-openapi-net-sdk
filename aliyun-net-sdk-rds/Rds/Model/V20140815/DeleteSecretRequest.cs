@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string secretArn;
 
+		private string resourceGroupId;
+
 		private string engine;
 
 		private string dbInstanceId;
@@ -96,6 +98,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				secretArn = value;
 				DictionaryUtil.Add(QueryParameters, "SecretArn", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ResourceGroupId")]
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

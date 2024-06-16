@@ -37,13 +37,15 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private string type;
 
-		private string vpdId;
+		private string cidr;
 
-		private string name;
+		private List<string> tags = new List<string>(){ };
+
+		private string vpdId;
 
 		private string zoneId;
 
-		private string cidr;
+		private string subnetName;
 
 		public string Type
 		{
@@ -55,6 +57,40 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				type = value;
 				DictionaryUtil.Add(BodyParameters, "Type", value);
+			}
+		}
+
+		public string Cidr
+		{
+			get
+			{
+				return cidr;
+			}
+			set	
+			{
+				cidr = value;
+				DictionaryUtil.Add(BodyParameters, "Cidr", value);
+			}
+		}
+
+		public List<string> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				if(tags != null)
+				{
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(BodyParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
+				}
 			}
 		}
 
@@ -71,19 +107,6 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			}
 		}
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(BodyParameters, "Name", value);
-			}
-		}
-
 		public string ZoneId
 		{
 			get
@@ -97,16 +120,48 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			}
 		}
 
-		public string Cidr
+		public string SubnetName
 		{
 			get
 			{
-				return cidr;
+				return subnetName;
 			}
 			set	
 			{
-				cidr = value;
-				DictionaryUtil.Add(BodyParameters, "Cidr", value);
+				subnetName = value;
+				DictionaryUtil.Add(BodyParameters, "SubnetName", value);
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

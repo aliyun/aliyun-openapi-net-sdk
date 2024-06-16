@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -52,10 +53,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string inputList;
 
+		private string dingTalkWebHookUrl;
+
 		private long? ownerId;
 
 		private string domain;
 
+		private string callbackUrl;
+
+		[JsonProperty(PropertyName = "MonitorConfig")]
 		public string MonitorConfig
 		{
 			get
@@ -69,6 +75,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "MonitorName")]
 		public string MonitorName
 		{
 			get
@@ -82,6 +89,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Stream")]
 		public string Stream
 		{
 			get
@@ -95,6 +103,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OutputTemplate")]
 		public string OutputTemplate
 		{
 			get
@@ -108,6 +117,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "App")]
 		public string App
 		{
 			get
@@ -121,6 +131,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "InputList")]
 		public string InputList
 		{
 			get
@@ -134,6 +145,21 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DingTalkWebHookUrl")]
+		public string DingTalkWebHookUrl
+		{
+			get
+			{
+				return dingTalkWebHookUrl;
+			}
+			set	
+			{
+				dingTalkWebHookUrl = value;
+				DictionaryUtil.Add(QueryParameters, "DingTalkWebHookUrl", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -147,6 +173,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Domain")]
 		public string Domain
 		{
 			get
@@ -157,6 +184,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				domain = value;
 				DictionaryUtil.Add(QueryParameters, "Domain", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "CallbackUrl")]
+		public string CallbackUrl
+		{
+			get
+			{
+				return callbackUrl;
+			}
+			set	
+			{
+				callbackUrl = value;
+				DictionaryUtil.Add(QueryParameters, "CallbackUrl", value);
 			}
 		}
 

@@ -169,6 +169,8 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 				private string workspaceName;
 
+				private string favoriteDate;
+
 				public string TreeId
 				{
 					get
@@ -322,6 +324,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						workspaceName = value;
+					}
+				}
+
+				public string FavoriteDate
+				{
+					get
+					{
+						return favoriteDate;
+					}
+					set	
+					{
+						favoriteDate = value;
 					}
 				}
 			}

@@ -31,9 +31,9 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			InitializeAutoShowListTaskResponse initializeAutoShowListTaskResponse = new InitializeAutoShowListTaskResponse();
 
 			initializeAutoShowListTaskResponse.HttpResponse = _ctx.HttpResponse;
-			initializeAutoShowListTaskResponse.StreamList = _ctx.StringValue("InitializeAutoShowListTask.StreamList");
-			initializeAutoShowListTaskResponse.RequestId = _ctx.StringValue("InitializeAutoShowListTask.RequestId");
 			initializeAutoShowListTaskResponse.CasterId = _ctx.StringValue("InitializeAutoShowListTask.CasterId");
+			initializeAutoShowListTaskResponse.RequestId = _ctx.StringValue("InitializeAutoShowListTask.RequestId");
+			initializeAutoShowListTaskResponse.StreamList = _ctx.StringValue("InitializeAutoShowListTask.StreamList");
         
 			return initializeAutoShowListTaskResponse;
         }
