@@ -144,6 +144,8 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 
 			private bool? canNotCreateColumnar;
 
+			private string specCategory;
+
 			private List<DescribeDBInstanceAttribute_DBNode> dBNodes;
 
 			private List<DescribeDBInstanceAttribute_ConnAddr> connAddrs;
@@ -681,6 +683,18 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 				set	
 				{
 					canNotCreateColumnar = value;
+				}
+			}
+
+			public string SpecCategory
+			{
+				get
+				{
+					return specCategory;
+				}
+				set	
+				{
+					specCategory = value;
 				}
 			}
 

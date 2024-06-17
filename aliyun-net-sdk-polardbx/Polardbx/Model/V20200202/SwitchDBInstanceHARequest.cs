@@ -42,13 +42,13 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 
 		private string dBInstanceName;
 
-		private string targetPrimaryRegionId;
-
 		private string switchTimeMode;
 
-		private string targetPrimaryAzoneId;
-
 		private string switchTime;
+
+		private string targetPrimaryRegionId;
+
+		private string targetPrimaryAzoneId;
 
 		public string DBInstanceName
 		{
@@ -60,19 +60,6 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			{
 				dBInstanceName = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceName", value);
-			}
-		}
-
-		public string TargetPrimaryRegionId
-		{
-			get
-			{
-				return targetPrimaryRegionId;
-			}
-			set	
-			{
-				targetPrimaryRegionId = value;
-				DictionaryUtil.Add(QueryParameters, "TargetPrimaryRegionId", value);
 			}
 		}
 
@@ -89,19 +76,6 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			}
 		}
 
-		public string TargetPrimaryAzoneId
-		{
-			get
-			{
-				return targetPrimaryAzoneId;
-			}
-			set	
-			{
-				targetPrimaryAzoneId = value;
-				DictionaryUtil.Add(QueryParameters, "TargetPrimaryAzoneId", value);
-			}
-		}
-
 		public string SwitchTime
 		{
 			get
@@ -112,6 +86,32 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			{
 				switchTime = value;
 				DictionaryUtil.Add(QueryParameters, "SwitchTime", value);
+			}
+		}
+
+		public string TargetPrimaryRegionId
+		{
+			get
+			{
+				return targetPrimaryRegionId;
+			}
+			set	
+			{
+				targetPrimaryRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "TargetPrimaryRegionId", value);
+			}
+		}
+
+		public string TargetPrimaryAzoneId
+		{
+			get
+			{
+				return targetPrimaryAzoneId;
+			}
+			set	
+			{
+				targetPrimaryAzoneId = value;
+				DictionaryUtil.Add(QueryParameters, "TargetPrimaryAzoneId", value);
 			}
 		}
 

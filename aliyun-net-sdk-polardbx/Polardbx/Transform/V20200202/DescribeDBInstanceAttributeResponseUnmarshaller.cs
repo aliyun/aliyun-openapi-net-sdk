@@ -78,6 +78,7 @@ namespace Aliyun.Acs.polardbx.Transform.V20200202
 			dBInstance.DifferentDNSpec = _ctx.BooleanValue("DescribeDBInstanceAttribute.DBInstance.DifferentDNSpec");
 			dBInstance.ColumnarInstanceName = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstance.ColumnarInstanceName");
 			dBInstance.CanNotCreateColumnar = _ctx.BooleanValue("DescribeDBInstanceAttribute.DBInstance.CanNotCreateColumnar");
+			dBInstance.SpecCategory = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstance.SpecCategory");
 
 			List<string> dBInstance_readDBInstances = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeDBInstanceAttribute.DBInstance.ReadDBInstances.Length"); i++) {
