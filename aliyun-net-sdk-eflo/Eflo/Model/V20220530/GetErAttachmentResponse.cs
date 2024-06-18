@@ -114,6 +114,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 			private string resourceTenantId;
 
+			private string resourceGroupId;
+
 			public string CreateTime
 			{
 				get
@@ -291,6 +293,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				set	
 				{
 					resourceTenantId = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 		}

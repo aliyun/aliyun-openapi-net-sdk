@@ -155,6 +155,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 				private string receptionInstanceOwner;
 
+				private string resourceGroupId;
+
 				public string RegionId
 				{
 					get
@@ -392,6 +394,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					set	
 					{
 						receptionInstanceOwner = value;
+					}
+				}
+
+				public string ResourceGroupId
+				{
+					get
+					{
+						return resourceGroupId;
+					}
+					set	
+					{
+						resourceGroupId = value;
 					}
 				}
 			}

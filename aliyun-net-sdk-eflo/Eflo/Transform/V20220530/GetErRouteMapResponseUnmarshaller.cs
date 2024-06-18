@@ -42,7 +42,6 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			content.GmtModified = _ctx.StringValue("GetErRouteMap.Content.GmtModified");
 			content.Message = _ctx.StringValue("GetErRouteMap.Content.Message");
 			content.Status = _ctx.StringValue("GetErRouteMap.Content.Status");
-			content.ErRouteMapName = _ctx.StringValue("GetErRouteMap.Content.ErRouteMapName");
 			content.ErRouteMapId = _ctx.StringValue("GetErRouteMap.Content.ErRouteMapId");
 			content.ErId = _ctx.StringValue("GetErRouteMap.Content.ErId");
 			content.RouteMapNum = _ctx.IntegerValue("GetErRouteMap.Content.RouteMapNum");
@@ -57,6 +56,8 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			content.Action = _ctx.StringValue("GetErRouteMap.Content.Action");
 			content.TransmissionInstanceOwner = _ctx.StringValue("GetErRouteMap.Content.TransmissionInstanceOwner");
 			content.ReceptionInstanceOwner = _ctx.StringValue("GetErRouteMap.Content.ReceptionInstanceOwner");
+			content.ResourceGroupId = _ctx.StringValue("GetErRouteMap.Content.ResourceGroupId");
+			content.ErRouteMapName = _ctx.StringValue("GetErRouteMap.Content.ErRouteMapName");
 			getErRouteMapResponse.Content = content;
         
 			return getErRouteMapResponse;

@@ -1,3 +1,6 @@
+2024-06-18 Version: 1.0.9
+- Supported modification of securityGroupId for UpdateElasticNetworkInterface API.
+
 2024-06-18 Version: 1.1.5
 - Generated 2020-02-02 for `polardbx`.
 

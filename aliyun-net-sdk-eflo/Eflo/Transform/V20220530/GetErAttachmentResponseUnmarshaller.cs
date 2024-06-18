@@ -51,6 +51,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			content.AutoReceiveAllRoute = _ctx.BooleanValue("GetErAttachment.Content.AutoReceiveAllRoute");
 			content.Across = _ctx.BooleanValue("GetErAttachment.Content.Across");
 			content.ResourceTenantId = _ctx.StringValue("GetErAttachment.Content.ResourceTenantId");
+			content.ResourceGroupId = _ctx.StringValue("GetErAttachment.Content.ResourceGroupId");
 			getErAttachmentResponse.Content = content;
         
 			return getErAttachmentResponse;

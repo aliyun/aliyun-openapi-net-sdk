@@ -104,6 +104,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 			private string gmtModified;
 
+			private string resourceGroupId;
+
 			public string RegionId
 			{
 				get
@@ -221,6 +223,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				set	
 				{
 					gmtModified = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 		}

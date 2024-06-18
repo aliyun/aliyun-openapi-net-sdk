@@ -43,6 +43,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private int? pageNumber;
 
+		private string resourceGroupId;
+
 		private string routeMapAction;
 
 		private string transmissionInstanceType;
@@ -112,6 +114,19 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(BodyParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(BodyParameters, "ResourceGroupId", value);
 			}
 		}
 

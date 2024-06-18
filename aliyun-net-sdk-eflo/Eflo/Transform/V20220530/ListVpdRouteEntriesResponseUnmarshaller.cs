@@ -52,6 +52,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 				dataItem.RouteType = _ctx.StringValue("ListVpdRouteEntries.Content.Data["+ i +"].RouteType");
 				dataItem.Status = _ctx.StringValue("ListVpdRouteEntries.Content.Data["+ i +"].Status");
 				dataItem.GmtModified = _ctx.StringValue("ListVpdRouteEntries.Content.Data["+ i +"].GmtModified");
+				dataItem.ResourceGroupId = _ctx.StringValue("ListVpdRouteEntries.Content.Data["+ i +"].ResourceGroupId");
 
 				content_data.Add(dataItem);
 			}

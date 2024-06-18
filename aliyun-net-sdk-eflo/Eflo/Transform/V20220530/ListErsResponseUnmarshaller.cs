@@ -53,6 +53,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 				dataItem.Description = _ctx.StringValue("ListErs.Content.Data["+ i +"].Description");
 				dataItem.Connections = _ctx.LongValue("ListErs.Content.Data["+ i +"].Connections");
 				dataItem.RouteMaps = _ctx.LongValue("ListErs.Content.Data["+ i +"].RouteMaps");
+				dataItem.ResourceGroupId = _ctx.StringValue("ListErs.Content.Data["+ i +"].ResourceGroupId");
 
 				content_data.Add(dataItem);
 			}

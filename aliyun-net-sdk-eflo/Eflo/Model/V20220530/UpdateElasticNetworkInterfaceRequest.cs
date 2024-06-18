@@ -37,6 +37,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private string clientToken;
 
+		private string securityGroupId;
+
 		private string description;
 
 		private string elasticNetworkInterfaceId;
@@ -51,6 +53,19 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				clientToken = value;
 				DictionaryUtil.Add(BodyParameters, "ClientToken", value);
+			}
+		}
+
+		public string SecurityGroupId
+		{
+			get
+			{
+				return securityGroupId;
+			}
+			set	
+			{
+				securityGroupId = value;
+				DictionaryUtil.Add(BodyParameters, "SecurityGroupId", value);
 			}
 		}
 
