@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.schedulerx2;
 using Aliyun.Acs.schedulerx2.Transform;
 using Aliyun.Acs.schedulerx2.Transform.V20190430;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
     public class UpdateAppGroupRequest : RpcAcsRequest<UpdateAppGroupResponse>
     {
         public UpdateAppGroupRequest()
-            : base("schedulerx2", "2019-04-30", "UpdateAppGroup")
+            : base("schedulerx2", "2019-04-30", "UpdateAppGroup", "schedulerx2", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,6 +43,8 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 		private string description;
 
 		private string groupId;
+
+		private int? appVersion;
 
 		private string _namespace;
 
@@ -72,6 +73,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				groupId = value;
 				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+			}
+		}
+
+		public int? AppVersion
+		{
+			get
+			{
+				return appVersion;
+			}
+			set	
+			{
+				appVersion = value;
+				DictionaryUtil.Add(QueryParameters, "AppVersion", value.ToString());
 			}
 		}
 

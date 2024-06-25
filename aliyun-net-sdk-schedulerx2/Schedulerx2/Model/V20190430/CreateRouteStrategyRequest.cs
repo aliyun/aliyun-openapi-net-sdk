@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.schedulerx2;
 using Aliyun.Acs.schedulerx2.Transform;
 using Aliyun.Acs.schedulerx2.Transform.V20190430;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
     public class CreateRouteStrategyRequest : RpcAcsRequest<CreateRouteStrategyResponse>
     {
         public CreateRouteStrategyRequest()
-            : base("schedulerx2", "2019-04-30", "CreateRouteStrategy")
+            : base("schedulerx2", "2019-04-30", "CreateRouteStrategy", "schedulerx2", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,45 +40,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			Method = MethodType.POST;
         }
 
-		private string groupId;
-
-		private string strategyContent;
-
 		private int? type;
 
 		private long? jobId;
+
+		private string groupId;
+
+		private string strategyContent;
 
 		private string name;
 
 		private string _namespace;
 
 		private int? status;
-
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
-			}
-		}
-
-		public string StrategyContent
-		{
-			get
-			{
-				return strategyContent;
-			}
-			set	
-			{
-				strategyContent = value;
-				DictionaryUtil.Add(QueryParameters, "StrategyContent", value);
-			}
-		}
 
 		public int? Type
 		{
@@ -104,6 +77,32 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				jobId = value;
 				DictionaryUtil.Add(QueryParameters, "JobId", value.ToString());
+			}
+		}
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+			}
+		}
+
+		public string StrategyContent
+		{
+			get
+			{
+				return strategyContent;
+			}
+			set	
+			{
+				strategyContent = value;
+				DictionaryUtil.Add(QueryParameters, "StrategyContent", value);
 			}
 		}
 

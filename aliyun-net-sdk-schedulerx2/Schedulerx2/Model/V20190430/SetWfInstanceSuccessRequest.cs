@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.schedulerx2;
 using Aliyun.Acs.schedulerx2.Transform;
 using Aliyun.Acs.schedulerx2.Transform.V20190430;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
     public class SetWfInstanceSuccessRequest : RpcAcsRequest<SetWfInstanceSuccessResponse>
     {
         public SetWfInstanceSuccessRequest()
-            : base("schedulerx2", "2019-04-30", "SetWfInstanceSuccess")
+            : base("schedulerx2", "2019-04-30", "SetWfInstanceSuccess", "schedulerx2", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

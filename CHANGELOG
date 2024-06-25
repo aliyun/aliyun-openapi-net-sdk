@@ -1,3 +1,8 @@
+2024-06-25 Version: 1.1.12
+- Create AppGroup Support Set AppVersion.
+- Update AppGroup Support Set AppVersion.
+- List AppGroup Support return AppVersion.
+
 2024-06-18 Version: 3.9.55
 - Update to support new apis.
 

@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.schedulerx2;
 using Aliyun.Acs.schedulerx2.Transform;
 using Aliyun.Acs.schedulerx2.Transform.V20190430;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
     public class GetOverviewRequest : RpcAcsRequest<GetOverviewResponse>
     {
         public GetOverviewRequest()
-            : base("schedulerx2", "2019-04-30", "GetOverview")
+            : base("schedulerx2", "2019-04-30", "GetOverview", "schedulerx2", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,11 +44,11 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private string namespaceSource;
 
+		private long? startTime;
+
 		private string groupId;
 
 		private long? endTime;
-
-		private long? startTime;
 
 		private string operate;
 
@@ -81,6 +80,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
+		public long? StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
+			}
+		}
+
 		public string GroupId
 		{
 			get
@@ -104,19 +116,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				endTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
-			}
-		}
-
-		public long? StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
 			}
 		}
 

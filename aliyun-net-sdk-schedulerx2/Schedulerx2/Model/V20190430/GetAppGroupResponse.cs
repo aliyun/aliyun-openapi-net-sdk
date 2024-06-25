@@ -126,6 +126,8 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 			private string xattrs;
 
+			private string appVersion;
+
 			public string AppName
 			{
 				get
@@ -291,6 +293,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 				set	
 				{
 					xattrs = value;
+				}
+			}
+
+			public string AppVersion
+			{
+				get
+				{
+					return appVersion;
+				}
+				set	
+				{
+					appVersion = value;
 				}
 			}
 		}

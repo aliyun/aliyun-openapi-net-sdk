@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.schedulerx2;
 using Aliyun.Acs.schedulerx2.Transform;
 using Aliyun.Acs.schedulerx2.Transform.V20190430;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
     public class RerunJobRequest : RpcAcsRequest<RerunJobResponse>
     {
         public RerunJobRequest()
-            : base("schedulerx2", "2019-04-30", "RerunJob")
+            : base("schedulerx2", "2019-04-30", "RerunJob", "schedulerx2", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,11 +44,11 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private string dataTime;
 
-		private string groupId;
-
 		private long? startDate;
 
 		private long? jobId;
+
+		private string groupId;
 
 		private long? endDate;
 
@@ -81,19 +80,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(BodyParameters, "GroupId", value);
-			}
-		}
-
 		public long? StartDate
 		{
 			get
@@ -117,6 +103,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				jobId = value;
 				DictionaryUtil.Add(BodyParameters, "JobId", value.ToString());
+			}
+		}
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(BodyParameters, "GroupId", value);
 			}
 		}
 
