@@ -126,6 +126,21 @@ namespace Aliyun.Acs.Push.Model.V20160801
 						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
 						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
 						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
 					}
 				}
 			}
@@ -161,6 +176,10 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string androidPopupActivity;
 
+			private int? harmonyNotifyId;
+
+			private string harmonyRenderStyle;
+
 			private string iOSRemindBody;
 
 			private bool? trim;
@@ -187,6 +206,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private int? androidHonorTargetUserType;
 
+			private string harmonyRemindBody;
+
 			private string androidNotificationVivoChannel;
 
 			private string androidVivoReceiptId;
@@ -194,6 +215,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			private string iOSNotificationCategory;
 
 			private string androidNotificationXiaomiChannel;
+
+			private string harmonyAction;
 
 			private bool? storeOffline;
 
@@ -205,6 +228,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string jobKey;
 
+			private string harmonyReceiptId;
+
 			private string androidOpenUrl;
 
 			private string androidXiaoMiNotifyBody;
@@ -213,11 +238,15 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string androidXiaomiBigPictureUrl;
 
+			private string harmonyCategory;
+
 			private bool? iOSRemind;
 
 			private string iOSNotificationThreadId;
 
 			private int? androidHuaweiTargetUserType;
+
+			private bool? harmonyRemind;
 
 			private string androidMusic;
 
@@ -231,6 +260,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string androidExtParameters;
 
+			private string harmonyImageUrl;
+
 			private int? iOSBadge;
 
 			private string androidBigBody;
@@ -239,7 +270,11 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string androidOpenType;
 
+			private string harmonyRemindTitle;
+
 			private string title;
+
+			private bool? harmonyTestMessage;
 
 			private string androidRenderStyle;
 
@@ -253,7 +288,11 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private int? androidTargetUserType;
 
+			private string harmonyUri;
+
 			private string androidPopupBody;
+
+			private string harmonyExtParameters;
 
 			private string androidBigPictureUrl;
 
@@ -263,13 +302,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string sendChannels;
 
+			private string harmonyActionType;
+
 			private string target;
+
+			private string harmonyNotificationSlotType;
 
 			private string androidBigTitle;
 
 			private string androidNotificationChannel;
 
 			private bool? androidRemind;
+
+			private string harmonyInboxContent;
 
 			private string androidActivity;
 
@@ -362,6 +407,30 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					androidPopupActivity = value;
+				}
+			}
+
+			public int? HarmonyNotifyId
+			{
+				get
+				{
+					return harmonyNotifyId;
+				}
+				set	
+				{
+					harmonyNotifyId = value;
+				}
+			}
+
+			public string HarmonyRenderStyle
+			{
+				get
+				{
+					return harmonyRenderStyle;
+				}
+				set	
+				{
+					harmonyRenderStyle = value;
 				}
 			}
 
@@ -521,6 +590,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
+			public string HarmonyRemindBody
+			{
+				get
+				{
+					return harmonyRemindBody;
+				}
+				set	
+				{
+					harmonyRemindBody = value;
+				}
+			}
+
 			public string AndroidNotificationVivoChannel
 			{
 				get
@@ -566,6 +647,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					androidNotificationXiaomiChannel = value;
+				}
+			}
+
+			public string HarmonyAction
+			{
+				get
+				{
+					return harmonyAction;
+				}
+				set	
+				{
+					harmonyAction = value;
 				}
 			}
 
@@ -629,6 +722,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
+			public string HarmonyReceiptId
+			{
+				get
+				{
+					return harmonyReceiptId;
+				}
+				set	
+				{
+					harmonyReceiptId = value;
+				}
+			}
+
 			public string AndroidOpenUrl
 			{
 				get
@@ -677,6 +782,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
+			public string HarmonyCategory
+			{
+				get
+				{
+					return harmonyCategory;
+				}
+				set	
+				{
+					harmonyCategory = value;
+				}
+			}
+
 			public bool? IOSRemind
 			{
 				get
@@ -710,6 +827,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					androidHuaweiTargetUserType = value;
+				}
+			}
+
+			public bool? HarmonyRemind
+			{
+				get
+				{
+					return harmonyRemind;
+				}
+				set	
+				{
+					harmonyRemind = value;
 				}
 			}
 
@@ -785,6 +914,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
+			public string HarmonyImageUrl
+			{
+				get
+				{
+					return harmonyImageUrl;
+				}
+				set	
+				{
+					harmonyImageUrl = value;
+				}
+			}
+
 			public int? IOSBadge
 			{
 				get
@@ -833,6 +974,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
+			public string HarmonyRemindTitle
+			{
+				get
+				{
+					return harmonyRemindTitle;
+				}
+				set	
+				{
+					harmonyRemindTitle = value;
+				}
+			}
+
 			public string Title
 			{
 				get
@@ -842,6 +995,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					title = value;
+				}
+			}
+
+			public bool? HarmonyTestMessage
+			{
+				get
+				{
+					return harmonyTestMessage;
+				}
+				set	
+				{
+					harmonyTestMessage = value;
 				}
 			}
 
@@ -917,6 +1082,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
+			public string HarmonyUri
+			{
+				get
+				{
+					return harmonyUri;
+				}
+				set	
+				{
+					harmonyUri = value;
+				}
+			}
+
 			public string AndroidPopupBody
 			{
 				get
@@ -926,6 +1103,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					androidPopupBody = value;
+				}
+			}
+
+			public string HarmonyExtParameters
+			{
+				get
+				{
+					return harmonyExtParameters;
+				}
+				set	
+				{
+					harmonyExtParameters = value;
 				}
 			}
 
@@ -977,6 +1166,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
+			public string HarmonyActionType
+			{
+				get
+				{
+					return harmonyActionType;
+				}
+				set	
+				{
+					harmonyActionType = value;
+				}
+			}
+
 			public string Target
 			{
 				get
@@ -986,6 +1187,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					target = value;
+				}
+			}
+
+			public string HarmonyNotificationSlotType
+			{
+				get
+				{
+					return harmonyNotificationSlotType;
+				}
+				set	
+				{
+					harmonyNotificationSlotType = value;
 				}
 			}
 
@@ -1022,6 +1235,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					androidRemind = value;
+				}
+			}
+
+			public string HarmonyInboxContent
+			{
+				get
+				{
+					return harmonyInboxContent;
+				}
+				set	
+				{
+					harmonyInboxContent = value;
 				}
 			}
 

@@ -41,11 +41,11 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			Method = MethodType.POST;
         }
 
-		private bool? storeOffline;
-
 		private string title;
 
 		private string body;
+
+		private bool? storeOffline;
 
 		private string jobKey;
 
@@ -54,19 +54,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 		private long? appKey;
 
 		private string targetValue;
-
-		public bool? StoreOffline
-		{
-			get
-			{
-				return storeOffline;
-			}
-			set	
-			{
-				storeOffline = value;
-				DictionaryUtil.Add(QueryParameters, "StoreOffline", value.ToString());
-			}
-		}
 
 		public string Title
 		{
@@ -91,6 +78,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				body = value;
 				DictionaryUtil.Add(QueryParameters, "Body", value);
+			}
+		}
+
+		public bool? StoreOffline
+		{
+			get
+			{
+				return storeOffline;
+			}
+			set	
+			{
+				storeOffline = value;
+				DictionaryUtil.Add(QueryParameters, "StoreOffline", value.ToString());
 			}
 		}
 
