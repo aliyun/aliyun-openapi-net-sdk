@@ -1,3 +1,6 @@
+2024-06-26 Version: 1.0.10
+- Supported AssumeRoleProxyChain for CreateHighDensityElasticNetworkInterface.
+
 2024-06-25 Version: 1.1.12
 - Create AppGroup Support Set AppVersion.
 - Update AppGroup Support Set AppVersion.
