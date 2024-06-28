@@ -57,6 +57,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 				dataItem.Description = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].Description");
 				dataItem.WorkName = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].WorkName");
 				dataItem.GmtCreate = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].GmtCreate");
+				dataItem.PublicFlag = _ctx.BooleanValue("QueryWorksByWorkspace.Result.Data["+ i +"].PublicFlag");
+				dataItem.PublicInvalidTime = _ctx.LongValue("QueryWorksByWorkspace.Result.Data["+ i +"].PublicInvalidTime");
 
 				QueryWorksByWorkspaceResponse.QueryWorksByWorkspace_Result.QueryWorksByWorkspace_DataItem.QueryWorksByWorkspace_Directory directory = new QueryWorksByWorkspaceResponse.QueryWorksByWorkspace_Result.QueryWorksByWorkspace_DataItem.QueryWorksByWorkspace_Directory();
 				directory.PathId = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].Directory.PathId");

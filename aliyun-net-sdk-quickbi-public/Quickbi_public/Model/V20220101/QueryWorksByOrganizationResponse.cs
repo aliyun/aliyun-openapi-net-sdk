@@ -171,6 +171,10 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 				private string gmtCreate;
 
+				private bool? publicFlag;
+
+				private long? publicInvalidTime;
+
 				private QueryWorksByOrganization_Directory directory;
 
 				public int? Status
@@ -338,6 +342,30 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						gmtCreate = value;
+					}
+				}
+
+				public bool? PublicFlag
+				{
+					get
+					{
+						return publicFlag;
+					}
+					set	
+					{
+						publicFlag = value;
+					}
+				}
+
+				public long? PublicInvalidTime
+				{
+					get
+					{
+						return publicInvalidTime;
+					}
+					set	
+					{
+						publicInvalidTime = value;
 					}
 				}
 

@@ -49,6 +49,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			result.GmtCreate = _ctx.StringValue("QueryWorks.Result.GmtCreate");
 			result.GmtModify = _ctx.StringValue("QueryWorks.Result.GmtModify");
 			result.Status = _ctx.IntegerValue("QueryWorks.Result.Status");
+			result.PublicFlag = _ctx.BooleanValue("QueryWorks.Result.PublicFlag");
+			result.PublicInvalidTime = _ctx.LongValue("QueryWorks.Result.PublicInvalidTime");
 
 			QueryWorksResponse.QueryWorks_Result.QueryWorks_Directory directory = new QueryWorksResponse.QueryWorks_Result.QueryWorks_Directory();
 			directory.Id = _ctx.StringValue("QueryWorks.Result.Directory.Id");

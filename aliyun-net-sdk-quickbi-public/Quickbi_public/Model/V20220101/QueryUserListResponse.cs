@@ -161,6 +161,10 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 				private string accountName;
 
+				private long? joinedDate;
+
+				private long? lastLoginTime;
+
 				private List<string> roleIdList;
 
 				public int? UserType
@@ -268,6 +272,30 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						accountName = value;
+					}
+				}
+
+				public long? JoinedDate
+				{
+					get
+					{
+						return joinedDate;
+					}
+					set	
+					{
+						joinedDate = value;
+					}
+				}
+
+				public long? LastLoginTime
+				{
+					get
+					{
+						return lastLoginTime;
+					}
+					set	
+					{
+						lastLoginTime = value;
 					}
 				}
 

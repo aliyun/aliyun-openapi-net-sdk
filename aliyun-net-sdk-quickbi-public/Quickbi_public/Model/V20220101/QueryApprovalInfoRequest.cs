@@ -27,51 +27,45 @@ using Aliyun.Acs.quickbi_public.Transform.V20220101;
 
 namespace Aliyun.Acs.quickbi_public.Model.V20220101
 {
-    public class UpdateUserRequest : RpcAcsRequest<UpdateUserResponse>
+    public class QueryApprovalInfoRequest : RpcAcsRequest<QueryApprovalInfoResponse>
     {
-        public UpdateUserRequest()
-            : base("quickbi-public", "2022-01-01", "UpdateUser", "2.2.0", "openAPI")
+        public QueryApprovalInfoRequest()
+            : base("quickbi-public", "2022-01-01", "QueryApprovalInfo", "2.2.0", "openAPI")
         {
 			Method = MethodType.POST;
         }
 
-		private bool? adminUser;
+		private int? pageSize;
 
-		private int? userType;
+		private int? page;
 
 		private string userId;
 
-		private bool? isDeleted;
+		private int? status;
 
-		private string roleIds;
-
-		private string nickName;
-
-		private bool? authAdminUser;
-
-		public bool? AdminUser
+		public int? PageSize
 		{
 			get
 			{
-				return adminUser;
+				return pageSize;
 			}
 			set	
 			{
-				adminUser = value;
-				DictionaryUtil.Add(QueryParameters, "AdminUser", value.ToString());
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public int? UserType
+		public int? Page
 		{
 			get
 			{
-				return userType;
+				return page;
 			}
 			set	
 			{
-				userType = value;
-				DictionaryUtil.Add(QueryParameters, "UserType", value.ToString());
+				page = value;
+				DictionaryUtil.Add(QueryParameters, "Page", value.ToString());
 			}
 		}
 
@@ -88,55 +82,16 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			}
 		}
 
-		public bool? IsDeleted
+		public int? Status
 		{
 			get
 			{
-				return isDeleted;
+				return status;
 			}
 			set	
 			{
-				isDeleted = value;
-				DictionaryUtil.Add(QueryParameters, "IsDeleted", value.ToString());
-			}
-		}
-
-		public string RoleIds
-		{
-			get
-			{
-				return roleIds;
-			}
-			set	
-			{
-				roleIds = value;
-				DictionaryUtil.Add(QueryParameters, "RoleIds", value);
-			}
-		}
-
-		public string NickName
-		{
-			get
-			{
-				return nickName;
-			}
-			set	
-			{
-				nickName = value;
-				DictionaryUtil.Add(QueryParameters, "NickName", value);
-			}
-		}
-
-		public bool? AuthAdminUser
-		{
-			get
-			{
-				return authAdminUser;
-			}
-			set	
-			{
-				authAdminUser = value;
-				DictionaryUtil.Add(QueryParameters, "AuthAdminUser", value.ToString());
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value.ToString());
 			}
 		}
 
@@ -145,9 +100,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			return false;
 		}
 
-        public override UpdateUserResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryApprovalInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateUserResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryApprovalInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

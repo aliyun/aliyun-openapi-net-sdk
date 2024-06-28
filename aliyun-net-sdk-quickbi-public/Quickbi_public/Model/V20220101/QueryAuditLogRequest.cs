@@ -27,116 +27,116 @@ using Aliyun.Acs.quickbi_public.Transform.V20220101;
 
 namespace Aliyun.Acs.quickbi_public.Model.V20220101
 {
-    public class UpdateUserRequest : RpcAcsRequest<UpdateUserResponse>
+    public class QueryAuditLogRequest : RpcAcsRequest<QueryAuditLogResponse>
     {
-        public UpdateUserRequest()
-            : base("quickbi-public", "2022-01-01", "UpdateUser", "2.2.0", "openAPI")
+        public QueryAuditLogRequest()
+            : base("quickbi-public", "2022-01-01", "QueryAuditLog", "2.2.0", "openAPI")
         {
 			Method = MethodType.POST;
         }
 
-		private bool? adminUser;
+		private string startDate;
 
-		private int? userType;
+		private string resourceType;
 
-		private string userId;
+		private string operatorTypes;
 
-		private bool? isDeleted;
+		private string logType;
 
-		private string roleIds;
+		private string endDate;
 
-		private string nickName;
+		private string operatorId;
 
-		private bool? authAdminUser;
+		private string workspaceId;
 
-		public bool? AdminUser
+		public string StartDate
 		{
 			get
 			{
-				return adminUser;
+				return startDate;
 			}
 			set	
 			{
-				adminUser = value;
-				DictionaryUtil.Add(QueryParameters, "AdminUser", value.ToString());
+				startDate = value;
+				DictionaryUtil.Add(QueryParameters, "StartDate", value);
 			}
 		}
 
-		public int? UserType
+		public string ResourceType
 		{
 			get
 			{
-				return userType;
+				return resourceType;
 			}
 			set	
 			{
-				userType = value;
-				DictionaryUtil.Add(QueryParameters, "UserType", value.ToString());
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
-		public string UserId
+		public string OperatorTypes
 		{
 			get
 			{
-				return userId;
+				return operatorTypes;
 			}
 			set	
 			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
+				operatorTypes = value;
+				DictionaryUtil.Add(QueryParameters, "OperatorTypes", value);
 			}
 		}
 
-		public bool? IsDeleted
+		public string LogType
 		{
 			get
 			{
-				return isDeleted;
+				return logType;
 			}
 			set	
 			{
-				isDeleted = value;
-				DictionaryUtil.Add(QueryParameters, "IsDeleted", value.ToString());
+				logType = value;
+				DictionaryUtil.Add(QueryParameters, "LogType", value);
 			}
 		}
 
-		public string RoleIds
+		public string EndDate
 		{
 			get
 			{
-				return roleIds;
+				return endDate;
 			}
 			set	
 			{
-				roleIds = value;
-				DictionaryUtil.Add(QueryParameters, "RoleIds", value);
+				endDate = value;
+				DictionaryUtil.Add(QueryParameters, "EndDate", value);
 			}
 		}
 
-		public string NickName
+		public string OperatorId
 		{
 			get
 			{
-				return nickName;
+				return operatorId;
 			}
 			set	
 			{
-				nickName = value;
-				DictionaryUtil.Add(QueryParameters, "NickName", value);
+				operatorId = value;
+				DictionaryUtil.Add(QueryParameters, "OperatorId", value);
 			}
 		}
 
-		public bool? AuthAdminUser
+		public string WorkspaceId
 		{
 			get
 			{
-				return authAdminUser;
+				return workspaceId;
 			}
 			set	
 			{
-				authAdminUser = value;
-				DictionaryUtil.Add(QueryParameters, "AuthAdminUser", value.ToString());
+				workspaceId = value;
+				DictionaryUtil.Add(QueryParameters, "WorkspaceId", value);
 			}
 		}
 
@@ -145,9 +145,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			return false;
 		}
 
-        public override UpdateUserResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryAuditLogResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateUserResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryAuditLogResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -98,6 +98,10 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 			private int? status;
 
+			private bool? publicFlag;
+
+			private long? publicInvalidTime;
+
 			private QueryWorks_Directory directory;
 
 			public string WorksId
@@ -265,6 +269,30 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public bool? PublicFlag
+			{
+				get
+				{
+					return publicFlag;
+				}
+				set	
+				{
+					publicFlag = value;
+				}
+			}
+
+			public long? PublicInvalidTime
+			{
+				get
+				{
+					return publicInvalidTime;
+				}
+				set	
+				{
+					publicInvalidTime = value;
 				}
 			}
 
