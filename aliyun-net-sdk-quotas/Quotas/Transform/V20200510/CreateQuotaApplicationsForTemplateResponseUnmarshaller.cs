@@ -39,6 +39,16 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 				createQuotaApplicationsForTemplateResponse_aliyunUids.Add(_ctx.StringValue("CreateQuotaApplicationsForTemplate.AliyunUids["+ i +"]"));
 			}
 			createQuotaApplicationsForTemplateResponse.AliyunUids = createQuotaApplicationsForTemplateResponse_aliyunUids;
+
+			List<CreateQuotaApplicationsForTemplateResponse.CreateQuotaApplicationsForTemplate_FailResultsItem> createQuotaApplicationsForTemplateResponse_failResults = new List<CreateQuotaApplicationsForTemplateResponse.CreateQuotaApplicationsForTemplate_FailResultsItem>();
+			for (int i = 0; i < _ctx.Length("CreateQuotaApplicationsForTemplate.FailResults.Length"); i++) {
+				CreateQuotaApplicationsForTemplateResponse.CreateQuotaApplicationsForTemplate_FailResultsItem failResultsItem = new CreateQuotaApplicationsForTemplateResponse.CreateQuotaApplicationsForTemplate_FailResultsItem();
+				failResultsItem.AliyunUid = _ctx.StringValue("CreateQuotaApplicationsForTemplate.FailResults["+ i +"].AliyunUid");
+				failResultsItem.Reason = _ctx.StringValue("CreateQuotaApplicationsForTemplate.FailResults["+ i +"].Reason");
+
+				createQuotaApplicationsForTemplateResponse_failResults.Add(failResultsItem);
+			}
+			createQuotaApplicationsForTemplateResponse.FailResults = createQuotaApplicationsForTemplateResponse_failResults;
         
 			return createQuotaApplicationsForTemplateResponse;
         }

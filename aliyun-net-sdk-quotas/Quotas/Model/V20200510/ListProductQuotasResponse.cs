@@ -134,6 +134,8 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 
 			private string applyReasonTips;
 
+			private bool? globalQuota;
+
 			private List<ListProductQuotas_QuotaItemsItem> quotaItems;
 
 			private List<string> applicableRange;
@@ -141,6 +143,8 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			private List<string> supportedRange;
 
 			private ListProductQuotas_Period period;
+
+			private ListProductQuotas_UsageMetric usageMetric;
 
 			public string QuotaUnit
 			{
@@ -358,6 +362,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
+			public bool? GlobalQuota
+			{
+				get
+				{
+					return globalQuota;
+				}
+				set	
+				{
+					globalQuota = value;
+				}
+			}
+
 			public List<ListProductQuotas_QuotaItemsItem> QuotaItems
 			{
 				get
@@ -403,6 +419,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					period = value;
+				}
+			}
+
+			public ListProductQuotas_UsageMetric UsageMetric
+			{
+				get
+				{
+					return usageMetric;
+				}
+				set	
+				{
+					usageMetric = value;
 				}
 			}
 
@@ -494,6 +522,52 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 					set	
 					{
 						periodUnit = value;
+					}
+				}
+			}
+
+			public class ListProductQuotas_UsageMetric
+			{
+
+				private string metricNamespace;
+
+				private string metricName;
+
+				private string metricDimensions;
+
+				public string MetricNamespace
+				{
+					get
+					{
+						return metricNamespace;
+					}
+					set	
+					{
+						metricNamespace = value;
+					}
+				}
+
+				public string MetricName
+				{
+					get
+					{
+						return metricName;
+					}
+					set	
+					{
+						metricName = value;
+					}
+				}
+
+				public string MetricDimensions
+				{
+					get
+					{
+						return metricDimensions;
+					}
+					set	
+					{
+						metricDimensions = value;
 					}
 				}
 			}

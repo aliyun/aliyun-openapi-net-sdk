@@ -61,6 +61,16 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 					dimensionValueDetailItem.Name = _ctx.StringValue("ListProductQuotaDimensions.QuotaDimensions["+ i +"].DimensionValueDetail["+ j +"].Name");
 					dimensionValueDetailItem._Value = _ctx.StringValue("ListProductQuotaDimensions.QuotaDimensions["+ i +"].DimensionValueDetail["+ j +"].Value");
 
+					List<ListProductQuotaDimensionsResponse.ListProductQuotaDimensions_QuotaDimensionsItem.ListProductQuotaDimensions_DimensionValueDetailItem.ListProductQuotaDimensions_DependentDimension> dimensionValueDetailItem_dependentDimensions1 = new List<ListProductQuotaDimensionsResponse.ListProductQuotaDimensions_QuotaDimensionsItem.ListProductQuotaDimensions_DimensionValueDetailItem.ListProductQuotaDimensions_DependentDimension>();
+					for (int k = 0; k < _ctx.Length("ListProductQuotaDimensions.QuotaDimensions["+ i +"].DimensionValueDetail["+ j +"].DependentDimensions.Length"); k++) {
+						ListProductQuotaDimensionsResponse.ListProductQuotaDimensions_QuotaDimensionsItem.ListProductQuotaDimensions_DimensionValueDetailItem.ListProductQuotaDimensions_DependentDimension dependentDimension = new ListProductQuotaDimensionsResponse.ListProductQuotaDimensions_QuotaDimensionsItem.ListProductQuotaDimensions_DimensionValueDetailItem.ListProductQuotaDimensions_DependentDimension();
+						dependentDimension.Key = _ctx.StringValue("ListProductQuotaDimensions.QuotaDimensions["+ i +"].DimensionValueDetail["+ j +"].DependentDimensions["+ k +"].Key");
+						dependentDimension._Value = _ctx.StringValue("ListProductQuotaDimensions.QuotaDimensions["+ i +"].DimensionValueDetail["+ j +"].DependentDimensions["+ k +"].Value");
+
+						dimensionValueDetailItem_dependentDimensions1.Add(dependentDimension);
+					}
+					dimensionValueDetailItem.DependentDimensions1 = dimensionValueDetailItem_dependentDimensions1;
+
 					quotaDimensionsItem_dimensionValueDetail.Add(dimensionValueDetailItem);
 				}
 				quotaDimensionsItem.DimensionValueDetail = quotaDimensionsItem_dimensionValueDetail;

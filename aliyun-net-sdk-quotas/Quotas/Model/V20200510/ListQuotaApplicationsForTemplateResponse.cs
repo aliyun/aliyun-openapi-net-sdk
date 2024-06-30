@@ -116,7 +116,11 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 
 			private string dimensions;
 
+			private string reason;
+
 			private List<ListQuotaApplicationsForTemplate_AuditStatusVo> auditStatusVos;
+
+			private List<string> aliyunUids;
 
 			public string ProductCode
 			{
@@ -226,6 +230,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
+			public string Reason
+			{
+				get
+				{
+					return reason;
+				}
+				set	
+				{
+					reason = value;
+				}
+			}
+
 			public List<ListQuotaApplicationsForTemplate_AuditStatusVo> AuditStatusVos
 			{
 				get
@@ -235,6 +251,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					auditStatusVos = value;
+				}
+			}
+
+			public List<string> AliyunUids
+			{
+				get
+				{
+					return aliyunUids;
+				}
+				set	
+				{
+					aliyunUids = value;
 				}
 			}
 

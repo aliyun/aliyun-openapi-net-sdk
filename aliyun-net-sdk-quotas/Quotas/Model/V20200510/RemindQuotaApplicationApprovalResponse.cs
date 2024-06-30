@@ -22,16 +22,28 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.quotas.Model.V20200510
 {
-	public class CreateQuotaApplicationsForTemplateResponse : AcsResponse
+	public class RemindQuotaApplicationApprovalResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string batchQuotaApplicationId;
+		private int? httpStatusCode;
 
-		private List<CreateQuotaApplicationsForTemplate_FailResultsItem> failResults;
+		private string dynamicCode;
 
-		private List<string> aliyunUids;
+		private string dynamicMessage;
+
+		private string errorMsg;
+
+		private string errorCode;
+
+		private bool? success;
+
+		private string module;
+
+		private bool? allowRetry;
+
+		private List<string> errorArgs;
 
 		public string RequestId
 		{
@@ -45,71 +57,111 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			}
 		}
 
-		public string BatchQuotaApplicationId
+		public int? HttpStatusCode
 		{
 			get
 			{
-				return batchQuotaApplicationId;
+				return httpStatusCode;
 			}
 			set	
 			{
-				batchQuotaApplicationId = value;
+				httpStatusCode = value;
 			}
 		}
 
-		public List<CreateQuotaApplicationsForTemplate_FailResultsItem> FailResults
+		public string DynamicCode
 		{
 			get
 			{
-				return failResults;
+				return dynamicCode;
 			}
 			set	
 			{
-				failResults = value;
+				dynamicCode = value;
 			}
 		}
 
-		public List<string> AliyunUids
+		public string DynamicMessage
 		{
 			get
 			{
-				return aliyunUids;
+				return dynamicMessage;
 			}
 			set	
 			{
-				aliyunUids = value;
+				dynamicMessage = value;
 			}
 		}
 
-		public class CreateQuotaApplicationsForTemplate_FailResultsItem
+		public string ErrorMsg
 		{
-
-			private string aliyunUid;
-
-			private string reason;
-
-			public string AliyunUid
+			get
 			{
-				get
-				{
-					return aliyunUid;
-				}
-				set	
-				{
-					aliyunUid = value;
-				}
+				return errorMsg;
 			}
-
-			public string Reason
+			set	
 			{
-				get
-				{
-					return reason;
-				}
-				set	
-				{
-					reason = value;
-				}
+				errorMsg = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public string Module
+		{
+			get
+			{
+				return module;
+			}
+			set	
+			{
+				module = value;
+			}
+		}
+
+		public bool? AllowRetry
+		{
+			get
+			{
+				return allowRetry;
+			}
+			set	
+			{
+				allowRetry = value;
+			}
+		}
+
+		public List<string> ErrorArgs
+		{
+			get
+			{
+				return errorArgs;
+			}
+			set	
+			{
+				errorArgs = value;
 			}
 		}
 	}

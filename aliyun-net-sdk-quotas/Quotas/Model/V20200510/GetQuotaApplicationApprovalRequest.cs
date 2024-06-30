@@ -27,10 +27,10 @@ using Aliyun.Acs.quotas.Transform.V20200510;
 
 namespace Aliyun.Acs.quotas.Model.V20200510
 {
-    public class ListProductQuotaDimensionsRequest : RpcAcsRequest<ListProductQuotaDimensionsResponse>
+    public class GetQuotaApplicationApprovalRequest : RpcAcsRequest<GetQuotaApplicationApprovalResponse>
     {
-        public ListProductQuotaDimensionsRequest()
-            : base("quotas", "2020-05-10", "ListProductQuotaDimensions", "quotas", "openAPI")
+        public GetQuotaApplicationApprovalRequest()
+            : base("quotas", "2020-05-10", "GetQuotaApplicationApproval", "quotas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,63 +40,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			Method = MethodType.POST;
         }
 
-		private string productCode;
+		private string applicationId;
 
-		private string nextToken;
-
-		private string quotaCategory;
-
-		private int? maxResults;
-
-		public string ProductCode
+		public string ApplicationId
 		{
 			get
 			{
-				return productCode;
+				return applicationId;
 			}
 			set	
 			{
-				productCode = value;
-				DictionaryUtil.Add(BodyParameters, "ProductCode", value);
-			}
-		}
-
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
-				DictionaryUtil.Add(BodyParameters, "NextToken", value);
-			}
-		}
-
-		public string QuotaCategory
-		{
-			get
-			{
-				return quotaCategory;
-			}
-			set	
-			{
-				quotaCategory = value;
-				DictionaryUtil.Add(BodyParameters, "QuotaCategory", value);
-			}
-		}
-
-		public int? MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
-				DictionaryUtil.Add(BodyParameters, "MaxResults", value.ToString());
+				applicationId = value;
+				DictionaryUtil.Add(BodyParameters, "ApplicationId", value);
 			}
 		}
 
@@ -105,9 +60,9 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			return false;
 		}
 
-        public override ListProductQuotaDimensionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetQuotaApplicationApprovalResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListProductQuotaDimensionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetQuotaApplicationApprovalResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -50,6 +50,8 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 
 		private long? endTime;
 
+		private string alarmId;
+
 		private int? maxResults;
 
 		public string ProductCode
@@ -114,6 +116,19 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			{
 				endTime = value;
 				DictionaryUtil.Add(BodyParameters, "EndTime", value.ToString());
+			}
+		}
+
+		public string AlarmId
+		{
+			get
+			{
+				return alarmId;
+			}
+			set	
+			{
+				alarmId = value;
+				DictionaryUtil.Add(BodyParameters, "AlarmId", value);
 			}
 		}
 
