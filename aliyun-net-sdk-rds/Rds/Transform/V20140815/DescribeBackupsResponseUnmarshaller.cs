@@ -69,6 +69,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				backup.BackupExtractionStatus = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupExtractionStatus");
 				backup.Checksum = _ctx.StringValue("DescribeBackups.Items["+ i +"].Checksum");
 				backup.ResourceGroupId = _ctx.StringValue("DescribeBackups.Items["+ i +"].ResourceGroupId");
+				backup.Engine = _ctx.StringValue("DescribeBackups.Items["+ i +"].Engine");
+				backup.EngineVersion = _ctx.StringValue("DescribeBackups.Items["+ i +"].EngineVersion");
 
 				List<DescribeBackupsResponse.DescribeBackups_Backup.DescribeBackups_BackupDownloadLinkByDBItem> backup_backupDownloadLinkByDB = new List<DescribeBackupsResponse.DescribeBackups_Backup.DescribeBackups_BackupDownloadLinkByDBItem>();
 				for (int j = 0; j < _ctx.Length("DescribeBackups.Items["+ i +"].BackupDownloadLinkByDB.Length"); j++) {

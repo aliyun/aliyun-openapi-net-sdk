@@ -1624,6 +1624,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 				private string replicaGroupID;
 
+				private string recoveryModel;
+
 				private List<string> dBInstanceIds;
 
 				[JsonProperty(PropertyName = "ReplicaGroupStatus")]
@@ -1662,6 +1664,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					set	
 					{
 						replicaGroupID = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "RecoveryModel")]
+				public string RecoveryModel
+				{
+					get
+					{
+						return recoveryModel;
+					}
+					set	
+					{
+						recoveryModel = value;
 					}
 				}
 

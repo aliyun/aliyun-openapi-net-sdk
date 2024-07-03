@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private List<DescribeParameters_DBInstanceParameter> configParameters;
 
-		private List<DescribeParameters_DBInstanceParameter> runningParameters;
+		private List<DescribeParameters_DBInstanceParameter1> runningParameters;
 
 		private DescribeParameters_ParamGroupInfo paramGroupInfo;
 
@@ -90,7 +90,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		}
 
 		[JsonProperty(PropertyName = "RunningParameters")]
-		public List<DescribeParameters_DBInstanceParameter> RunningParameters
+		public List<DescribeParameters_DBInstanceParameter1> RunningParameters
 		{
 			get
 			{
@@ -160,6 +160,85 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					parameterValue = value;
+				}
+			}
+		}
+
+		public class DescribeParameters_DBInstanceParameter1
+		{
+
+			private string parameterDescription;
+
+			private string parameterName;
+
+			private string parameterValue;
+
+			private string parameterValueRange;
+
+			private string parameterDefaultValue;
+
+			[JsonProperty(PropertyName = "ParameterDescription")]
+			public string ParameterDescription
+			{
+				get
+				{
+					return parameterDescription;
+				}
+				set	
+				{
+					parameterDescription = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ParameterName")]
+			public string ParameterName
+			{
+				get
+				{
+					return parameterName;
+				}
+				set	
+				{
+					parameterName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ParameterValue")]
+			public string ParameterValue
+			{
+				get
+				{
+					return parameterValue;
+				}
+				set	
+				{
+					parameterValue = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ParameterValueRange")]
+			public string ParameterValueRange
+			{
+				get
+				{
+					return parameterValueRange;
+				}
+				set	
+				{
+					parameterValueRange = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ParameterDefaultValue")]
+			public string ParameterDefaultValue
+			{
+				get
+				{
+					return parameterDefaultValue;
+				}
+				set	
+				{
+					parameterDefaultValue = value;
 				}
 			}
 		}

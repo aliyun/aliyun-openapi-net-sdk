@@ -53,14 +53,16 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			}
 			describeParametersResponse.ConfigParameters = describeParametersResponse_configParameters;
 
-			List<DescribeParametersResponse.DescribeParameters_DBInstanceParameter> describeParametersResponse_runningParameters = new List<DescribeParametersResponse.DescribeParameters_DBInstanceParameter>();
+			List<DescribeParametersResponse.DescribeParameters_DBInstanceParameter1> describeParametersResponse_runningParameters = new List<DescribeParametersResponse.DescribeParameters_DBInstanceParameter1>();
 			for (int i = 0; i < _ctx.Length("DescribeParameters.RunningParameters.Length"); i++) {
-				DescribeParametersResponse.DescribeParameters_DBInstanceParameter dBInstanceParameter = new DescribeParametersResponse.DescribeParameters_DBInstanceParameter();
-				dBInstanceParameter.ParameterDescription = _ctx.StringValue("DescribeParameters.RunningParameters["+ i +"].ParameterDescription");
-				dBInstanceParameter.ParameterName = _ctx.StringValue("DescribeParameters.RunningParameters["+ i +"].ParameterName");
-				dBInstanceParameter.ParameterValue = _ctx.StringValue("DescribeParameters.RunningParameters["+ i +"].ParameterValue");
+				DescribeParametersResponse.DescribeParameters_DBInstanceParameter1 dBInstanceParameter1 = new DescribeParametersResponse.DescribeParameters_DBInstanceParameter1();
+				dBInstanceParameter1.ParameterDescription = _ctx.StringValue("DescribeParameters.RunningParameters["+ i +"].ParameterDescription");
+				dBInstanceParameter1.ParameterName = _ctx.StringValue("DescribeParameters.RunningParameters["+ i +"].ParameterName");
+				dBInstanceParameter1.ParameterValue = _ctx.StringValue("DescribeParameters.RunningParameters["+ i +"].ParameterValue");
+				dBInstanceParameter1.ParameterValueRange = _ctx.StringValue("DescribeParameters.RunningParameters["+ i +"].ParameterValueRange");
+				dBInstanceParameter1.ParameterDefaultValue = _ctx.StringValue("DescribeParameters.RunningParameters["+ i +"].ParameterDefaultValue");
 
-				describeParametersResponse_runningParameters.Add(dBInstanceParameter);
+				describeParametersResponse_runningParameters.Add(dBInstanceParameter1);
 			}
 			describeParametersResponse.RunningParameters = describeParametersResponse_runningParameters;
         
