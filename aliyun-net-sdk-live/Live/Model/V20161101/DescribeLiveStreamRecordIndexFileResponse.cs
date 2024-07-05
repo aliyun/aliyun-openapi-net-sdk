@@ -86,6 +86,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string ossEndpoint;
 
+			private string format;
+
 			[JsonProperty(PropertyName = "RecordUrl")]
 			public string RecordUrl
 			{
@@ -265,6 +267,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					ossEndpoint = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Format")]
+			public string Format
+			{
+				get
+				{
+					return format;
+				}
+				set	
+				{
+					format = value;
 				}
 			}
 		}

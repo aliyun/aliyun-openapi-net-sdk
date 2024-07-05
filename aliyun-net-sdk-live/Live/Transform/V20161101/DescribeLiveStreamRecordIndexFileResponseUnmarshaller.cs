@@ -48,6 +48,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			recordIndexInfo.Width = _ctx.IntegerValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.Width");
 			recordIndexInfo.Duration = _ctx.FloatValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.Duration");
 			recordIndexInfo.OssEndpoint = _ctx.StringValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.OssEndpoint");
+			recordIndexInfo.Format = _ctx.StringValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.Format");
 			describeLiveStreamRecordIndexFileResponse.RecordIndexInfo = recordIndexInfo;
         
 			return describeLiveStreamRecordIndexFileResponse;

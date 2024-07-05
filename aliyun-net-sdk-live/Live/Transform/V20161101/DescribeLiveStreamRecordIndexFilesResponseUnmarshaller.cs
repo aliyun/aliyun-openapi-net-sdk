@@ -55,6 +55,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				recordIndexInfo.Width = _ctx.IntegerValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].Width");
 				recordIndexInfo.Duration = _ctx.FloatValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].Duration");
 				recordIndexInfo.OssEndpoint = _ctx.StringValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].OssEndpoint");
+				recordIndexInfo.Format = _ctx.StringValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].Format");
 
 				describeLiveStreamRecordIndexFilesResponse_recordIndexInfoList.Add(recordIndexInfo);
 			}
