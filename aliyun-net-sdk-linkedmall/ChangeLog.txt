@@ -1,7 +1,0 @@
-2020-04-03 Version: 1.0.1
-- Support lmItemId.
-- Support STSToken.
-
-2020-04-02 Version: 1.0.0
-- Generated 2018-01-16 for `linkedmall`.
-
