@@ -42,7 +42,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
+		private string nodeType;
+
 		private string clientToken;
+
+		private int? slaveReadOnlyCount;
 
 		private string couponNo;
 
@@ -91,6 +95,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string NodeType
+		{
+			get
+			{
+				return nodeType;
+			}
+			set	
+			{
+				nodeType = value;
+				DictionaryUtil.Add(QueryParameters, "NodeType", value);
+			}
+		}
+
 		public string ClientToken
 		{
 			get
@@ -101,6 +118,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public int? SlaveReadOnlyCount
+		{
+			get
+			{
+				return slaveReadOnlyCount;
+			}
+			set	
+			{
+				slaveReadOnlyCount = value;
+				DictionaryUtil.Add(QueryParameters, "SlaveReadOnlyCount", value.ToString());
 			}
 		}
 

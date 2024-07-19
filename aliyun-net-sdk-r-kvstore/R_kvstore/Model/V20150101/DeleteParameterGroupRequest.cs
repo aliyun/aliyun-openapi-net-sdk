@@ -27,10 +27,10 @@ using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class GrantAccountPrivilegeRequest : RpcAcsRequest<GrantAccountPrivilegeResponse>
+    public class DeleteParameterGroupRequest : RpcAcsRequest<DeleteParameterGroupResponse>
     {
-        public GrantAccountPrivilegeRequest()
-            : base("R-kvstore", "2015-01-01", "GrantAccountPrivilege", "redisa", "openAPI")
+        public DeleteParameterGroupRequest()
+            : base("R-kvstore", "2015-01-01", "DeleteParameterGroup", "redisa", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,21 +42,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
-		private string accountPrivilege;
-
-		private string accountName;
+		private string parameterGroupId;
 
 		private string securityToken;
-
-		private string sourceBiz;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string instanceId;
 
 		public long? ResourceOwnerId
 		{
@@ -71,29 +65,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string AccountPrivilege
+		public string ParameterGroupId
 		{
 			get
 			{
-				return accountPrivilege;
+				return parameterGroupId;
 			}
 			set	
 			{
-				accountPrivilege = value;
-				DictionaryUtil.Add(QueryParameters, "AccountPrivilege", value);
-			}
-		}
-
-		public string AccountName
-		{
-			get
-			{
-				return accountName;
-			}
-			set	
-			{
-				accountName = value;
-				DictionaryUtil.Add(QueryParameters, "AccountName", value);
+				parameterGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ParameterGroupId", value);
 			}
 		}
 
@@ -107,19 +88,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string SourceBiz
-		{
-			get
-			{
-				return sourceBiz;
-			}
-			set	
-			{
-				sourceBiz = value;
-				DictionaryUtil.Add(QueryParameters, "SourceBiz", value);
 			}
 		}
 
@@ -162,22 +130,14 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string InstanceId
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
+			return false;
 		}
 
-        public override GrantAccountPrivilegeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteParameterGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GrantAccountPrivilegeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteParameterGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

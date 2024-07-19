@@ -44,6 +44,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string secondaryZoneId;
 
+		private int? slaveReadOnlyCount;
+
 		private string couponNo;
 
 		private string engineVersion;
@@ -98,6 +100,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string instanceType;
 
+		private string restoreTime;
+
 		private bool? autoPay;
 
 		private string resourceOwnerAccount;
@@ -105,6 +109,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private string srcDBInstanceId;
 
 		private string ownerAccount;
+
+		private string recoverConfigMode;
 
 		private string globalInstanceId;
 
@@ -141,6 +147,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				secondaryZoneId = value;
 				DictionaryUtil.Add(QueryParameters, "SecondaryZoneId", value);
+			}
+		}
+
+		public int? SlaveReadOnlyCount
+		{
+			get
+			{
+				return slaveReadOnlyCount;
+			}
+			set	
+			{
+				slaveReadOnlyCount = value;
+				DictionaryUtil.Add(QueryParameters, "SlaveReadOnlyCount", value.ToString());
 			}
 		}
 
@@ -503,6 +522,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string RestoreTime
+		{
+			get
+			{
+				return restoreTime;
+			}
+			set	
+			{
+				restoreTime = value;
+				DictionaryUtil.Add(QueryParameters, "RestoreTime", value);
+			}
+		}
+
 		public bool? AutoPay
 		{
 			get
@@ -552,6 +584,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string RecoverConfigMode
+		{
+			get
+			{
+				return recoverConfigMode;
+			}
+			set	
+			{
+				recoverConfigMode = value;
+				DictionaryUtil.Add(QueryParameters, "RecoverConfigMode", value);
 			}
 		}
 

@@ -35,6 +35,9 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			describeBackupsResponse.PageNumber = _ctx.IntegerValue("DescribeBackups.PageNumber");
 			describeBackupsResponse.PageSize = _ctx.IntegerValue("DescribeBackups.PageSize");
 			describeBackupsResponse.TotalCount = _ctx.IntegerValue("DescribeBackups.TotalCount");
+			describeBackupsResponse.FullStorageSize = _ctx.LongValue("DescribeBackups.FullStorageSize");
+			describeBackupsResponse.LogStorageSize = _ctx.LongValue("DescribeBackups.LogStorageSize");
+			describeBackupsResponse.FreeSize = _ctx.LongValue("DescribeBackups.FreeSize");
 
 			DescribeBackupsResponse.DescribeBackups_AccessDeniedDetail accessDeniedDetail = new DescribeBackupsResponse.DescribeBackups_AccessDeniedDetail();
 			accessDeniedDetail.AuthAction = _ctx.StringValue("DescribeBackups.AccessDeniedDetail.AuthAction");
@@ -55,14 +58,15 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				backup.BackupDownloadURL = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupDownloadURL");
 				backup.NodeInstanceId = _ctx.StringValue("DescribeBackups.Backups["+ i +"].NodeInstanceId");
 				backup.BackupEndTime = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupEndTime");
-				backup.BackupId = _ctx.IntegerValue("DescribeBackups.Backups["+ i +"].BackupId");
+				backup.BackupId = _ctx.LongValue("DescribeBackups.Backups["+ i +"].BackupId");
 				backup.BackupDBNames = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupDBNames");
 				backup.EngineVersion = _ctx.StringValue("DescribeBackups.Backups["+ i +"].EngineVersion");
 				backup.BackupIntranetDownloadURL = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupIntranetDownloadURL");
 				backup.BackupSize = _ctx.LongValue("DescribeBackups.Backups["+ i +"].BackupSize");
 				backup.BackupMode = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupMode");
 				backup.BackupMethod = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupMethod");
-				backup.BackupJobID = _ctx.IntegerValue("DescribeBackups.Backups["+ i +"].BackupJobID");
+				backup.BackupJobID = _ctx.LongValue("DescribeBackups.Backups["+ i +"].BackupJobID");
+				backup.RecoverConfigMode = _ctx.StringValue("DescribeBackups.Backups["+ i +"].RecoverConfigMode");
 
 				describeBackupsResponse_backups.Add(backup);
 			}

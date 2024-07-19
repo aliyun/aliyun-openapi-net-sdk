@@ -68,6 +68,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string instanceId;
 
+		private bool? autoRenew;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -247,6 +249,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public bool? AutoRenew
+		{
+			get
+			{
+				return autoRenew;
+			}
+			set	
+			{
+				autoRenew = value;
+				DictionaryUtil.Add(QueryParameters, "AutoRenew", value.ToString());
 			}
 		}
 

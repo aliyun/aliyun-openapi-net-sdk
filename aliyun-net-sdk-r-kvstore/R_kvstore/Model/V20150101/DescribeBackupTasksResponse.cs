@@ -90,7 +90,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string jobMode;
 
-			private int? backupJobID;
+			private long? backupJobID;
 
 			private string backupProgressStatus;
 
@@ -134,7 +134,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public int? BackupJobID
+			public long? BackupJobID
 			{
 				get
 				{

@@ -76,6 +76,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				kVStoreInstance.ZoneId = _ctx.StringValue("DescribeInstances.Instances["+ i +"].ZoneId");
 				kVStoreInstance.InstanceStatus = _ctx.StringValue("DescribeInstances.Instances["+ i +"].InstanceStatus");
 				kVStoreInstance.ProxyCount = _ctx.IntegerValue("DescribeInstances.Instances["+ i +"].ProxyCount");
+				kVStoreInstance.ComputingType = _ctx.StringValue("DescribeInstances.Instances["+ i +"].ComputingType");
 				kVStoreInstance.CloudType = _ctx.StringValue("DescribeInstances.Instances["+ i +"].CloudType");
 				kVStoreInstance.EditionType = _ctx.StringValue("DescribeInstances.Instances["+ i +"].EditionType");
 				kVStoreInstance.ReadOnlyCount = _ctx.StringValue("DescribeInstances.Instances["+ i +"].ReadOnlyCount");

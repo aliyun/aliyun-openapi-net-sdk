@@ -42,6 +42,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
+		private string nodeRole;
+
 		private string startTime;
 
 		private string securityToken;
@@ -72,6 +74,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string NodeRole
+		{
+			get
+			{
+				return nodeRole;
+			}
+			set	
+			{
+				nodeRole = value;
+				DictionaryUtil.Add(QueryParameters, "NodeRole", value);
 			}
 		}
 

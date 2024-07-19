@@ -33,6 +33,12 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private int? pageSize;
 
+		private long? fullStorageSize;
+
+		private long? logStorageSize;
+
+		private long? freeSize;
+
 		private List<DescribeClusterBackupList_ClusterBackup> clusterBackups;
 
 		public string RequestId
@@ -80,6 +86,42 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				pageSize = value;
+			}
+		}
+
+		public long? FullStorageSize
+		{
+			get
+			{
+				return fullStorageSize;
+			}
+			set	
+			{
+				fullStorageSize = value;
+			}
+		}
+
+		public long? LogStorageSize
+		{
+			get
+			{
+				return logStorageSize;
+			}
+			set	
+			{
+				logStorageSize = value;
+			}
+		}
+
+		public long? FreeSize
+		{
+			get
+			{
+				return freeSize;
+			}
+			set	
+			{
+				freeSize = value;
 			}
 		}
 
@@ -263,6 +305,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 				private string backupIntranetDownloadURL;
 
+				private string recoverConfigMode;
+
 				private string backupStartTime;
 
 				private string backupEndTime;
@@ -324,6 +368,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 					set	
 					{
 						backupIntranetDownloadURL = value;
+					}
+				}
+
+				public string RecoverConfigMode
+				{
+					get
+					{
+						return recoverConfigMode;
+					}
+					set	
+					{
+						recoverConfigMode = value;
 					}
 				}
 

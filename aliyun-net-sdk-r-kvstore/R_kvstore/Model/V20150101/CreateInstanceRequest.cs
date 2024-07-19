@@ -46,6 +46,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string secondaryZoneId;
 
+		private int? slaveReadOnlyCount;
+
 		private string couponNo;
 
 		private string networkType;
@@ -112,6 +114,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private bool? globalInstance;
 
+		private string recoverConfigMode;
+
 		private string token;
 
 		private string globalInstanceId;
@@ -162,6 +166,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				secondaryZoneId = value;
 				DictionaryUtil.Add(QueryParameters, "SecondaryZoneId", value);
+			}
+		}
+
+		public int? SlaveReadOnlyCount
+		{
+			get
+			{
+				return slaveReadOnlyCount;
+			}
+			set	
+			{
+				slaveReadOnlyCount = value;
+				DictionaryUtil.Add(QueryParameters, "SlaveReadOnlyCount", value.ToString());
 			}
 		}
 
@@ -599,6 +616,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				globalInstance = value;
 				DictionaryUtil.Add(QueryParameters, "GlobalInstance", value.ToString());
+			}
+		}
+
+		public string RecoverConfigMode
+		{
+			get
+			{
+				return recoverConfigMode;
+			}
+			set	
+			{
+				recoverConfigMode = value;
+				DictionaryUtil.Add(QueryParameters, "RecoverConfigMode", value);
 			}
 		}
 

@@ -27,10 +27,10 @@ using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class GrantAccountPrivilegeRequest : RpcAcsRequest<GrantAccountPrivilegeResponse>
+    public class ModifyParameterGroupRequest : RpcAcsRequest<ModifyParameterGroupResponse>
     {
-        public GrantAccountPrivilegeRequest()
-            : base("R-kvstore", "2015-01-01", "GrantAccountPrivilege", "redisa", "openAPI")
+        public ModifyParameterGroupRequest()
+            : base("R-kvstore", "2015-01-01", "ModifyParameterGroup", "redisa", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,13 +42,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
-		private string accountPrivilege;
-
-		private string accountName;
+		private string parameterGroupId;
 
 		private string securityToken;
-
-		private string sourceBiz;
 
 		private string resourceOwnerAccount;
 
@@ -56,7 +52,13 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? ownerId;
 
-		private string instanceId;
+		private string category;
+
+		private string parameterGroupName;
+
+		private string parameters;
+
+		private string parameterGroupDesc;
 
 		public long? ResourceOwnerId
 		{
@@ -71,29 +73,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string AccountPrivilege
+		public string ParameterGroupId
 		{
 			get
 			{
-				return accountPrivilege;
+				return parameterGroupId;
 			}
 			set	
 			{
-				accountPrivilege = value;
-				DictionaryUtil.Add(QueryParameters, "AccountPrivilege", value);
-			}
-		}
-
-		public string AccountName
-		{
-			get
-			{
-				return accountName;
-			}
-			set	
-			{
-				accountName = value;
-				DictionaryUtil.Add(QueryParameters, "AccountName", value);
+				parameterGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ParameterGroupId", value);
 			}
 		}
 
@@ -107,19 +96,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string SourceBiz
-		{
-			get
-			{
-				return sourceBiz;
-			}
-			set	
-			{
-				sourceBiz = value;
-				DictionaryUtil.Add(QueryParameters, "SourceBiz", value);
 			}
 		}
 
@@ -162,22 +138,66 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string InstanceId
+		public string Category
 		{
 			get
 			{
-				return instanceId;
+				return category;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				category = value;
+				DictionaryUtil.Add(QueryParameters, "Category", value);
 			}
 		}
 
-        public override GrantAccountPrivilegeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string ParameterGroupName
+		{
+			get
+			{
+				return parameterGroupName;
+			}
+			set	
+			{
+				parameterGroupName = value;
+				DictionaryUtil.Add(QueryParameters, "ParameterGroupName", value);
+			}
+		}
+
+		public string Parameters
+		{
+			get
+			{
+				return parameters;
+			}
+			set	
+			{
+				parameters = value;
+				DictionaryUtil.Add(QueryParameters, "Parameters", value);
+			}
+		}
+
+		public string ParameterGroupDesc
+		{
+			get
+			{
+				return parameterGroupDesc;
+			}
+			set	
+			{
+				parameterGroupDesc = value;
+				DictionaryUtil.Add(QueryParameters, "ParameterGroupDesc", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override ModifyParameterGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GrantAccountPrivilegeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyParameterGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -53,6 +53,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string isAutoUpgradeOpen;
 
+		private string isOpenNGLB;
+
 		private DescribeEngineVersion_DBLatestMinorVersion dBLatestMinorVersion;
 
 		private DescribeEngineVersion_ProxyLatestMinorVersion proxyLatestMinorVersion;
@@ -222,6 +224,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				isAutoUpgradeOpen = value;
+			}
+		}
+
+		public string IsOpenNGLB
+		{
+			get
+			{
+				return isOpenNGLB;
+			}
+			set	
+			{
+				isOpenNGLB = value;
 			}
 		}
 

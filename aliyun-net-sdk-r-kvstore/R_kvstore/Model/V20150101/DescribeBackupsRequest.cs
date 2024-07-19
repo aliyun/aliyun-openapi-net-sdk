@@ -40,7 +40,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			Method = MethodType.POST;
         }
 
-		private int? backupJobId;
+		private long? backupJobId;
 
 		private long? resourceOwnerId;
 
@@ -56,7 +56,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string ownerAccount;
 
-		private int? backupId;
+		private long? backupId;
 
 		private string needAof;
 
@@ -66,7 +66,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string instanceId;
 
-		public int? BackupJobId
+		public long? BackupJobId
 		{
 			get
 			{
@@ -170,7 +170,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public int? BackupId
+		public long? BackupId
 		{
 			get
 			{

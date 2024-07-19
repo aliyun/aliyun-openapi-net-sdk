@@ -50,7 +50,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				backupJob.StartTime = _ctx.StringValue("DescribeBackupTasks.BackupJobs["+ i +"].StartTime");
 				backupJob.Process = _ctx.StringValue("DescribeBackupTasks.BackupJobs["+ i +"].Process");
 				backupJob.JobMode = _ctx.StringValue("DescribeBackupTasks.BackupJobs["+ i +"].JobMode");
-				backupJob.BackupJobID = _ctx.IntegerValue("DescribeBackupTasks.BackupJobs["+ i +"].BackupJobID");
+				backupJob.BackupJobID = _ctx.LongValue("DescribeBackupTasks.BackupJobs["+ i +"].BackupJobID");
 				backupJob.BackupProgressStatus = _ctx.StringValue("DescribeBackupTasks.BackupJobs["+ i +"].BackupProgressStatus");
 				backupJob.NodeId = _ctx.StringValue("DescribeBackupTasks.BackupJobs["+ i +"].NodeId");
 				backupJob.TaskAction = _ctx.StringValue("DescribeBackupTasks.BackupJobs["+ i +"].TaskAction");

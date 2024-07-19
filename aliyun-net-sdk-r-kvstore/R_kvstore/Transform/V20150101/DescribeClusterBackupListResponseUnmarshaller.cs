@@ -35,6 +35,9 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			describeClusterBackupListResponse.MaxResults = _ctx.IntegerValue("DescribeClusterBackupList.MaxResults");
 			describeClusterBackupListResponse.PageNumber = _ctx.IntegerValue("DescribeClusterBackupList.PageNumber");
 			describeClusterBackupListResponse.PageSize = _ctx.IntegerValue("DescribeClusterBackupList.PageSize");
+			describeClusterBackupListResponse.FullStorageSize = _ctx.LongValue("DescribeClusterBackupList.FullStorageSize");
+			describeClusterBackupListResponse.LogStorageSize = _ctx.LongValue("DescribeClusterBackupList.LogStorageSize");
+			describeClusterBackupListResponse.FreeSize = _ctx.LongValue("DescribeClusterBackupList.FreeSize");
 
 			List<DescribeClusterBackupListResponse.DescribeClusterBackupList_ClusterBackup> describeClusterBackupListResponse_clusterBackups = new List<DescribeClusterBackupListResponse.DescribeClusterBackupList_ClusterBackup>();
 			for (int i = 0; i < _ctx.Length("DescribeClusterBackupList.ClusterBackups.Length"); i++) {
@@ -60,6 +63,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 					backup.InstanceName = _ctx.StringValue("DescribeClusterBackupList.ClusterBackups["+ i +"].Backups["+ j +"].InstanceName");
 					backup.BackupDownloadURL = _ctx.StringValue("DescribeClusterBackupList.ClusterBackups["+ i +"].Backups["+ j +"].BackupDownloadURL");
 					backup.BackupIntranetDownloadURL = _ctx.StringValue("DescribeClusterBackupList.ClusterBackups["+ i +"].Backups["+ j +"].BackupIntranetDownloadURL");
+					backup.RecoverConfigMode = _ctx.StringValue("DescribeClusterBackupList.ClusterBackups["+ i +"].Backups["+ j +"].RecoverConfigMode");
 					backup.BackupStartTime = _ctx.StringValue("DescribeClusterBackupList.ClusterBackups["+ i +"].Backups["+ j +"].BackupStartTime");
 					backup.BackupEndTime = _ctx.StringValue("DescribeClusterBackupList.ClusterBackups["+ i +"].Backups["+ j +"].BackupEndTime");
 					backup.BackupSize = _ctx.StringValue("DescribeClusterBackupList.ClusterBackups["+ i +"].Backups["+ j +"].BackupSize");

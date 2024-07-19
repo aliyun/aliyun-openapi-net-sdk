@@ -172,6 +172,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private int? proxyCount;
 
+			private string computingType;
+
 			private string cloudType;
 
 			private string editionType;
@@ -623,6 +625,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					proxyCount = value;
+				}
+			}
+
+			public string ComputingType
+			{
+				get
+				{
+					return computingType;
+				}
+				set	
+				{
+					computingType = value;
 				}
 			}
 

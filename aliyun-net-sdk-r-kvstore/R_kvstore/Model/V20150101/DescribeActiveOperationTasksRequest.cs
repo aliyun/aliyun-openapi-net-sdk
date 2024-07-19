@@ -27,10 +27,10 @@ using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class GrantAccountPrivilegeRequest : RpcAcsRequest<GrantAccountPrivilegeResponse>
+    public class DescribeActiveOperationTasksRequest : RpcAcsRequest<DescribeActiveOperationTasksResponse>
     {
-        public GrantAccountPrivilegeRequest()
-            : base("R-kvstore", "2015-01-01", "GrantAccountPrivilege", "redisa", "openAPI")
+        public DescribeActiveOperationTasksRequest()
+            : base("R-kvstore", "2015-01-01", "DescribeActiveOperationTasks", "redisa", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,21 +42,35 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
-		private string accountPrivilege;
+		private string productId;
 
-		private string accountName;
+		private string changeLevel;
+
+		private int? pageNumber;
+
+		private string insName;
 
 		private string securityToken;
 
-		private string sourceBiz;
+		private int? pageSize;
+
+		private string taskType;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
+		private int? allowCancel;
+
 		private long? ownerId;
 
-		private string instanceId;
+		private string dbType;
+
+		private int? allowChange;
+
+		private string region;
+
+		private int? status;
 
 		public long? ResourceOwnerId
 		{
@@ -71,29 +85,55 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string AccountPrivilege
+		public string ProductId
 		{
 			get
 			{
-				return accountPrivilege;
+				return productId;
 			}
 			set	
 			{
-				accountPrivilege = value;
-				DictionaryUtil.Add(QueryParameters, "AccountPrivilege", value);
+				productId = value;
+				DictionaryUtil.Add(QueryParameters, "ProductId", value);
 			}
 		}
 
-		public string AccountName
+		public string ChangeLevel
 		{
 			get
 			{
-				return accountName;
+				return changeLevel;
 			}
 			set	
 			{
-				accountName = value;
-				DictionaryUtil.Add(QueryParameters, "AccountName", value);
+				changeLevel = value;
+				DictionaryUtil.Add(QueryParameters, "ChangeLevel", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string InsName
+		{
+			get
+			{
+				return insName;
+			}
+			set	
+			{
+				insName = value;
+				DictionaryUtil.Add(QueryParameters, "InsName", value);
 			}
 		}
 
@@ -110,16 +150,29 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string SourceBiz
+		public int? PageSize
 		{
 			get
 			{
-				return sourceBiz;
+				return pageSize;
 			}
 			set	
 			{
-				sourceBiz = value;
-				DictionaryUtil.Add(QueryParameters, "SourceBiz", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string TaskType
+		{
+			get
+			{
+				return taskType;
+			}
+			set	
+			{
+				taskType = value;
+				DictionaryUtil.Add(QueryParameters, "TaskType", value);
 			}
 		}
 
@@ -149,6 +202,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public int? AllowCancel
+		{
+			get
+			{
+				return allowCancel;
+			}
+			set	
+			{
+				allowCancel = value;
+				DictionaryUtil.Add(QueryParameters, "AllowCancel", value.ToString());
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -162,22 +228,66 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string InstanceId
+		public string DbType
 		{
 			get
 			{
-				return instanceId;
+				return dbType;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				dbType = value;
+				DictionaryUtil.Add(QueryParameters, "DbType", value);
 			}
 		}
 
-        public override GrantAccountPrivilegeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public int? AllowChange
+		{
+			get
+			{
+				return allowChange;
+			}
+			set	
+			{
+				allowChange = value;
+				DictionaryUtil.Add(QueryParameters, "AllowChange", value.ToString());
+			}
+		}
+
+		public string Region
+		{
+			get
+			{
+				return region;
+			}
+			set	
+			{
+				region = value;
+				DictionaryUtil.Add(QueryParameters, "Region", value);
+			}
+		}
+
+		public int? Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value.ToString());
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeActiveOperationTasksResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GrantAccountPrivilegeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeActiveOperationTasksResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

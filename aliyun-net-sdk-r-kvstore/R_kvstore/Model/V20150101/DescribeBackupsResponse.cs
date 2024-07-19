@@ -33,6 +33,12 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private int? totalCount;
 
+		private long? fullStorageSize;
+
+		private long? logStorageSize;
+
+		private long? freeSize;
+
 		private List<DescribeBackups_Backup> backups;
 
 		private DescribeBackups_AccessDeniedDetail accessDeniedDetail;
@@ -85,6 +91,42 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public long? FullStorageSize
+		{
+			get
+			{
+				return fullStorageSize;
+			}
+			set	
+			{
+				fullStorageSize = value;
+			}
+		}
+
+		public long? LogStorageSize
+		{
+			get
+			{
+				return logStorageSize;
+			}
+			set	
+			{
+				logStorageSize = value;
+			}
+		}
+
+		public long? FreeSize
+		{
+			get
+			{
+				return freeSize;
+			}
+			set	
+			{
+				freeSize = value;
+			}
+		}
+
 		public List<DescribeBackups_Backup> Backups
 		{
 			get
@@ -124,7 +166,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string backupEndTime;
 
-			private int? backupId;
+			private long? backupId;
 
 			private string backupDBNames;
 
@@ -138,7 +180,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string backupMethod;
 
-			private int? backupJobID;
+			private long? backupJobID;
+
+			private string recoverConfigMode;
 
 			public string BackupStatus
 			{
@@ -212,7 +256,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public int? BackupId
+			public long? BackupId
 			{
 				get
 				{
@@ -296,7 +340,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public int? BackupJobID
+			public long? BackupJobID
 			{
 				get
 				{
@@ -305,6 +349,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					backupJobID = value;
+				}
+			}
+
+			public string RecoverConfigMode
+			{
+				get
+				{
+					return recoverConfigMode;
+				}
+				set	
+				{
+					recoverConfigMode = value;
 				}
 			}
 		}
