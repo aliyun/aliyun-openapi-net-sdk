@@ -37,10 +37,10 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			for (int i = 0; i < _ctx.Length("DescribeRegions.Result.Length"); i++) {
 				DescribeRegionsResponse.DescribeRegions_RegionInfo regionInfo = new DescribeRegionsResponse.DescribeRegions_RegionInfo();
 				regionInfo.RegionId = _ctx.StringValue("DescribeRegions.Result["+ i +"].regionId");
+				regionInfo.Status = _ctx.StringValue("DescribeRegions.Result["+ i +"].status");
 				regionInfo.RegionEndpoint = _ctx.StringValue("DescribeRegions.Result["+ i +"].regionEndpoint");
 				regionInfo.LocalName = _ctx.StringValue("DescribeRegions.Result["+ i +"].localName");
 				regionInfo.ConsoleEndpoint = _ctx.StringValue("DescribeRegions.Result["+ i +"].consoleEndpoint");
-				regionInfo.Status = _ctx.StringValue("DescribeRegions.Result["+ i +"].status");
 
 				describeRegionsResponse_result.Add(regionInfo);
 			}

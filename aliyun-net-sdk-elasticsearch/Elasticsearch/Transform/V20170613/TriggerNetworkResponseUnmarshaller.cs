@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			TriggerNetworkResponse triggerNetworkResponse = new TriggerNetworkResponse();
 
 			triggerNetworkResponse.HttpResponse = _ctx.HttpResponse;
-			triggerNetworkResponse.RequestId = _ctx.StringValue("TriggerNetwork.RequestId");
 			triggerNetworkResponse.Result = _ctx.BooleanValue("TriggerNetwork.Result");
+			triggerNetworkResponse.RequestId = _ctx.StringValue("TriggerNetwork.RequestId");
         
 			return triggerNetworkResponse;
         }

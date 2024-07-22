@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			UpdateAdvancedSettingResponse updateAdvancedSettingResponse = new UpdateAdvancedSettingResponse();
 
 			updateAdvancedSettingResponse.HttpResponse = _ctx.HttpResponse;
-			updateAdvancedSettingResponse.RequestId = _ctx.StringValue("UpdateAdvancedSetting.RequestId");
 			updateAdvancedSettingResponse.Result = _ctx.BooleanValue("UpdateAdvancedSetting.Result");
+			updateAdvancedSettingResponse.RequestId = _ctx.StringValue("UpdateAdvancedSetting.RequestId");
         
 			return updateAdvancedSettingResponse;
         }

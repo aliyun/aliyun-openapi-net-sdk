@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			AddSnapshotRepoResponse addSnapshotRepoResponse = new AddSnapshotRepoResponse();
 
 			addSnapshotRepoResponse.HttpResponse = _ctx.HttpResponse;
-			addSnapshotRepoResponse.RequestId = _ctx.StringValue("AddSnapshotRepo.RequestId");
 			addSnapshotRepoResponse.Result = _ctx.BooleanValue("AddSnapshotRepo.Result");
+			addSnapshotRepoResponse.RequestId = _ctx.StringValue("AddSnapshotRepo.RequestId");
         
 			return addSnapshotRepoResponse;
         }

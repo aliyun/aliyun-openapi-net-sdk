@@ -43,6 +43,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private string instanceId;
 
+		private string body;
+
 		public string InstanceId
 		{
 			get
@@ -53,6 +55,19 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			{
 				instanceId = value;
 				DictionaryUtil.Add(PathParameters, "InstanceId", value);
+			}
+		}
+
+		public string Body
+		{
+			get
+			{
+				return body;
+			}
+			set	
+			{
+				body = value;
+				DictionaryUtil.Add(BodyParameters, "body", value);
 			}
 		}
 

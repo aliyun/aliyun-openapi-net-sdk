@@ -41,26 +41,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			Method = MethodType.PUT;
         }
 
-		private bool? ignoreStatus;
-
 		private string instanceId;
 
 		private string clientToken;
 
-		private string orderActionType;
+		private bool? force;
 
-		public bool? IgnoreStatus
-		{
-			get
-			{
-				return ignoreStatus;
-			}
-			set	
-			{
-				ignoreStatus = value;
-				DictionaryUtil.Add(QueryParameters, "ignoreStatus", value.ToString());
-			}
-		}
+		private string body;
+
+		private string orderActionType;
 
 		public string InstanceId
 		{
@@ -85,6 +74,32 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "clientToken", value);
+			}
+		}
+
+		public bool? Force
+		{
+			get
+			{
+				return force;
+			}
+			set	
+			{
+				force = value;
+				DictionaryUtil.Add(QueryParameters, "force", value.ToString());
+			}
+		}
+
+		public string Body
+		{
+			get
+			{
+				return body;
+			}
+			set	
+			{
+				body = value;
+				DictionaryUtil.Add(BodyParameters, "body", value);
 			}
 		}
 

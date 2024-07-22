@@ -36,10 +36,10 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<ListAvailableEsInstanceIdsResponse.ListAvailableEsInstanceIds_ResultItem> listAvailableEsInstanceIdsResponse_result = new List<ListAvailableEsInstanceIdsResponse.ListAvailableEsInstanceIds_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListAvailableEsInstanceIds.Result.Length"); i++) {
 				ListAvailableEsInstanceIdsResponse.ListAvailableEsInstanceIds_ResultItem resultItem = new ListAvailableEsInstanceIdsResponse.ListAvailableEsInstanceIds_ResultItem();
-				resultItem.EsInstanceId = _ctx.StringValue("ListAvailableEsInstanceIds.Result["+ i +"].esInstanceId");
 				resultItem.Endpoint = _ctx.StringValue("ListAvailableEsInstanceIds.Result["+ i +"].endpoint");
 				resultItem.Description = _ctx.StringValue("ListAvailableEsInstanceIds.Result["+ i +"].description");
 				resultItem.KibanaEndpoint = _ctx.StringValue("ListAvailableEsInstanceIds.Result["+ i +"].kibanaEndpoint");
+				resultItem.EsInstanceId = _ctx.StringValue("ListAvailableEsInstanceIds.Result["+ i +"].esInstanceId");
 
 				listAvailableEsInstanceIdsResponse_result.Add(resultItem);
 			}

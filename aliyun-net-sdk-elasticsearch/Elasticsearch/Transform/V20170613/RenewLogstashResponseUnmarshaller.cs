@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			RenewLogstashResponse renewLogstashResponse = new RenewLogstashResponse();
 
 			renewLogstashResponse.HttpResponse = _ctx.HttpResponse;
-			renewLogstashResponse.RequestId = _ctx.StringValue("RenewLogstash.RequestId");
 			renewLogstashResponse.Result = _ctx.BooleanValue("RenewLogstash.Result");
+			renewLogstashResponse.RequestId = _ctx.StringValue("RenewLogstash.RequestId");
         
 			return renewLogstashResponse;
         }

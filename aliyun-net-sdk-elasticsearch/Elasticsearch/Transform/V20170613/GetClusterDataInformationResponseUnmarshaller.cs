@@ -37,14 +37,14 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			result.Connectable = _ctx.BooleanValue("GetClusterDataInformation.Result.connectable");
 
 			GetClusterDataInformationResponse.GetClusterDataInformation_Result.GetClusterDataInformation_MetaInfo metaInfo = new GetClusterDataInformationResponse.GetClusterDataInformation_Result.GetClusterDataInformation_MetaInfo();
-			metaInfo.Settings = _ctx.StringValue("GetClusterDataInformation.Result.MetaInfo.settings");
 			metaInfo.Mapping = _ctx.StringValue("GetClusterDataInformation.Result.MetaInfo.mapping");
+			metaInfo.Settings = _ctx.StringValue("GetClusterDataInformation.Result.MetaInfo.settings");
 
-			List<string> metaInfo_indices = new List<string>();
-			for (int i = 0; i < _ctx.Length("GetClusterDataInformation.Result.MetaInfo.Indices.Length"); i++) {
-				metaInfo_indices.Add(_ctx.StringValue("GetClusterDataInformation.Result.MetaInfo.Indices["+ i +"]"));
+			List<string> metaInfo_typeName = new List<string>();
+			for (int i = 0; i < _ctx.Length("GetClusterDataInformation.Result.MetaInfo.TypeName.Length"); i++) {
+				metaInfo_typeName.Add(_ctx.StringValue("GetClusterDataInformation.Result.MetaInfo.TypeName["+ i +"]"));
 			}
-			metaInfo.Indices = metaInfo_indices;
+			metaInfo.TypeName = metaInfo_typeName;
 
 			List<string> metaInfo_fields = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetClusterDataInformation.Result.MetaInfo.Fields.Length"); i++) {
@@ -52,11 +52,11 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			}
 			metaInfo.Fields = metaInfo_fields;
 
-			List<string> metaInfo_typeName = new List<string>();
-			for (int i = 0; i < _ctx.Length("GetClusterDataInformation.Result.MetaInfo.TypeName.Length"); i++) {
-				metaInfo_typeName.Add(_ctx.StringValue("GetClusterDataInformation.Result.MetaInfo.TypeName["+ i +"]"));
+			List<string> metaInfo_indices = new List<string>();
+			for (int i = 0; i < _ctx.Length("GetClusterDataInformation.Result.MetaInfo.Indices.Length"); i++) {
+				metaInfo_indices.Add(_ctx.StringValue("GetClusterDataInformation.Result.MetaInfo.Indices["+ i +"]"));
 			}
-			metaInfo.TypeName = metaInfo_typeName;
+			metaInfo.Indices = metaInfo_indices;
 			result.MetaInfo = metaInfo;
 			getClusterDataInformationResponse.Result = result;
         

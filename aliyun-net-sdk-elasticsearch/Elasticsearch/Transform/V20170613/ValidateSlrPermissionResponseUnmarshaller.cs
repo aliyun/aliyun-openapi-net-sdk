@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			ValidateSlrPermissionResponse validateSlrPermissionResponse = new ValidateSlrPermissionResponse();
 
 			validateSlrPermissionResponse.HttpResponse = _ctx.HttpResponse;
-			validateSlrPermissionResponse.RequestId = _ctx.StringValue("ValidateSlrPermission.RequestId");
 			validateSlrPermissionResponse.Result = _ctx.BooleanValue("ValidateSlrPermission.Result");
+			validateSlrPermissionResponse.RequestId = _ctx.StringValue("ValidateSlrPermission.RequestId");
         
 			return validateSlrPermissionResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -56,21 +56,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class DescribeConnectableClusters_ConnectableClustersInfo
 		{
 
-			private string instances;
-
 			private string networkType;
 
-			public string Instances
-			{
-				get
-				{
-					return instances;
-				}
-				set	
-				{
-					instances = value;
-				}
-			}
+			private string instances;
 
 			public string NetworkType
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					networkType = value;
+				}
+			}
+
+			public string Instances
+			{
+				get
+				{
+					return instances;
+				}
+				set	
+				{
+					instances = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -56,47 +56,23 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class ListVpcEndpoints_ResultItem
 		{
 
-			private string connectionStatus;
-
-			private string createTime;
-
 			private string endpointBusinessStatus;
-
-			private string endpointId;
-
-			private string endpointName;
-
-			private string endpointStatus;
 
 			private string serviceId;
 
+			private string endpointName;
+
+			private string endpointId;
+
 			private string serviceName;
+
+			private string createTime;
+
+			private string connectionStatus;
 
 			private string endpointDomain;
 
-			public string ConnectionStatus
-			{
-				get
-				{
-					return connectionStatus;
-				}
-				set	
-				{
-					connectionStatus = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
+			private string endpointStatus;
 
 			public string EndpointBusinessStatus
 			{
@@ -107,42 +83,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					endpointBusinessStatus = value;
-				}
-			}
-
-			public string EndpointId
-			{
-				get
-				{
-					return endpointId;
-				}
-				set	
-				{
-					endpointId = value;
-				}
-			}
-
-			public string EndpointName
-			{
-				get
-				{
-					return endpointName;
-				}
-				set	
-				{
-					endpointName = value;
-				}
-			}
-
-			public string EndpointStatus
-			{
-				get
-				{
-					return endpointStatus;
-				}
-				set	
-				{
-					endpointStatus = value;
 				}
 			}
 
@@ -158,6 +98,30 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
+			public string EndpointName
+			{
+				get
+				{
+					return endpointName;
+				}
+				set	
+				{
+					endpointName = value;
+				}
+			}
+
+			public string EndpointId
+			{
+				get
+				{
+					return endpointId;
+				}
+				set	
+				{
+					endpointId = value;
+				}
+			}
+
 			public string ServiceName
 			{
 				get
@@ -170,6 +134,30 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public string ConnectionStatus
+			{
+				get
+				{
+					return connectionStatus;
+				}
+				set	
+				{
+					connectionStatus = value;
+				}
+			}
+
 			public string EndpointDomain
 			{
 				get
@@ -179,6 +167,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					endpointDomain = value;
+				}
+			}
+
+			public string EndpointStatus
+			{
+				get
+				{
+					return endpointStatus;
+				}
+				set	
+				{
+					endpointStatus = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -56,21 +56,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class DescribeDiagnosisSettings_Result
 		{
 
-			private string scene;
-
 			private long? updateTime;
 
-			public string Scene
-			{
-				get
-				{
-					return scene;
-				}
-				set	
-				{
-					scene = value;
-				}
-			}
+			private string scene;
 
 			public long? UpdateTime
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					updateTime = value;
+				}
+			}
+
+			public string Scene
+			{
+				get
+				{
+					return scene;
+				}
+				set	
+				{
+					scene = value;
 				}
 			}
 		}

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			ValidateShrinkNodesResponse validateShrinkNodesResponse = new ValidateShrinkNodesResponse();
 
 			validateShrinkNodesResponse.HttpResponse = _ctx.HttpResponse;
-			validateShrinkNodesResponse.RequestId = _ctx.StringValue("ValidateShrinkNodes.RequestId");
 			validateShrinkNodesResponse.Result = _ctx.BooleanValue("ValidateShrinkNodes.Result");
+			validateShrinkNodesResponse.RequestId = _ctx.StringValue("ValidateShrinkNodes.RequestId");
         
 			return validateShrinkNodesResponse;
         }

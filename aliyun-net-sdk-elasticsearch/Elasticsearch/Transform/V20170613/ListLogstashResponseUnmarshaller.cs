@@ -40,34 +40,35 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<ListLogstashResponse.ListLogstash_Instance> listLogstashResponse_result = new List<ListLogstashResponse.ListLogstash_Instance>();
 			for (int i = 0; i < _ctx.Length("ListLogstash.Result.Length"); i++) {
 				ListLogstashResponse.ListLogstash_Instance instance = new ListLogstashResponse.ListLogstash_Instance();
-				instance.InstanceId = _ctx.StringValue("ListLogstash.Result["+ i +"].instanceId");
-				instance.Description = _ctx.StringValue("ListLogstash.Result["+ i +"].description");
-				instance.NodeAmount = _ctx.IntegerValue("ListLogstash.Result["+ i +"].nodeAmount");
 				instance.PaymentType = _ctx.StringValue("ListLogstash.Result["+ i +"].paymentType");
-				instance.Status = _ctx.StringValue("ListLogstash.Result["+ i +"].status");
-				instance.Version = _ctx.StringValue("ListLogstash.Result["+ i +"].version");
+				instance.NodeAmount = _ctx.IntegerValue("ListLogstash.Result["+ i +"].nodeAmount");
+				instance.Description = _ctx.StringValue("ListLogstash.Result["+ i +"].description");
 				instance.CreatedAt = _ctx.StringValue("ListLogstash.Result["+ i +"].createdAt");
+				instance.Status = _ctx.StringValue("ListLogstash.Result["+ i +"].status");
 				instance.UpdatedAt = _ctx.StringValue("ListLogstash.Result["+ i +"].updatedAt");
+				instance.InstanceId = _ctx.StringValue("ListLogstash.Result["+ i +"].instanceId");
+				instance.Version = _ctx.StringValue("ListLogstash.Result["+ i +"].version");
+				instance.ResourceGroupId = _ctx.StringValue("ListLogstash.Result["+ i +"].resourceGroupId");
 
 				ListLogstashResponse.ListLogstash_Instance.ListLogstash_NodeSpec nodeSpec = new ListLogstashResponse.ListLogstash_Instance.ListLogstash_NodeSpec();
 				nodeSpec.Spec = _ctx.StringValue("ListLogstash.Result["+ i +"].NodeSpec.spec");
 				nodeSpec.Disk = _ctx.IntegerValue("ListLogstash.Result["+ i +"].NodeSpec.disk");
-				nodeSpec.DiskType = _ctx.StringValue("ListLogstash.Result["+ i +"].NodeSpec.diskType");
 				nodeSpec.DiskEncryption = _ctx.BooleanValue("ListLogstash.Result["+ i +"].NodeSpec.diskEncryption");
+				nodeSpec.DiskType = _ctx.StringValue("ListLogstash.Result["+ i +"].NodeSpec.diskType");
 				instance.NodeSpec = nodeSpec;
 
 				ListLogstashResponse.ListLogstash_Instance.ListLogstash_NetworkConfig networkConfig = new ListLogstashResponse.ListLogstash_Instance.ListLogstash_NetworkConfig();
-				networkConfig.Type = _ctx.StringValue("ListLogstash.Result["+ i +"].NetworkConfig.type");
 				networkConfig.VpcId = _ctx.StringValue("ListLogstash.Result["+ i +"].NetworkConfig.vpcId");
-				networkConfig.VswitchId = _ctx.StringValue("ListLogstash.Result["+ i +"].NetworkConfig.vswitchId");
 				networkConfig.VsArea = _ctx.StringValue("ListLogstash.Result["+ i +"].NetworkConfig.vsArea");
+				networkConfig.Type = _ctx.StringValue("ListLogstash.Result["+ i +"].NetworkConfig.type");
+				networkConfig.VswitchId = _ctx.StringValue("ListLogstash.Result["+ i +"].NetworkConfig.vswitchId");
 				instance.NetworkConfig = networkConfig;
 
 				List<ListLogstashResponse.ListLogstash_Instance.ListLogstash_TagsItem> instance_tags = new List<ListLogstashResponse.ListLogstash_Instance.ListLogstash_TagsItem>();
 				for (int j = 0; j < _ctx.Length("ListLogstash.Result["+ i +"].Tags.Length"); j++) {
 					ListLogstashResponse.ListLogstash_Instance.ListLogstash_TagsItem tagsItem = new ListLogstashResponse.ListLogstash_Instance.ListLogstash_TagsItem();
-					tagsItem.TagKey = _ctx.StringValue("ListLogstash.Result["+ i +"].Tags["+ j +"].TagKey");
 					tagsItem.TagValue = _ctx.StringValue("ListLogstash.Result["+ i +"].Tags["+ j +"].TagValue");
+					tagsItem.TagKey = _ctx.StringValue("ListLogstash.Result["+ i +"].Tags["+ j +"].TagKey");
 
 					instance_tags.Add(tagsItem);
 				}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 	public class GetEmonMonitorDataResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
 		private bool? success;
 
 		private List<GetEmonMonitorData_ResultItem> result;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public string Code
 		{
@@ -68,6 +56,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -98,29 +98,17 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class GetEmonMonitorData_ResultItem
 		{
 
-			private string dps;
-
 			private float? integrity;
-
-			private long? messageWatermark;
-
-			private string metric;
 
 			private float? summary;
 
+			private long? messageWatermark;
+
+			private string dps;
+
 			private string tags;
 
-			public string Dps
-			{
-				get
-				{
-					return dps;
-				}
-				set	
-				{
-					dps = value;
-				}
-			}
+			private string metric;
 
 			public float? Integrity
 			{
@@ -131,30 +119,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					integrity = value;
-				}
-			}
-
-			public long? MessageWatermark
-			{
-				get
-				{
-					return messageWatermark;
-				}
-				set	
-				{
-					messageWatermark = value;
-				}
-			}
-
-			public string Metric
-			{
-				get
-				{
-					return metric;
-				}
-				set	
-				{
-					metric = value;
 				}
 			}
 
@@ -170,6 +134,30 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
+			public long? MessageWatermark
+			{
+				get
+				{
+					return messageWatermark;
+				}
+				set	
+				{
+					messageWatermark = value;
+				}
+			}
+
+			public string Dps
+			{
+				get
+				{
+					return dps;
+				}
+				set	
+				{
+					dps = value;
+				}
+			}
+
 			public string Tags
 			{
 				get
@@ -179,6 +167,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					tags = value;
+				}
+			}
+
+			public string Metric
+			{
+				get
+				{
+					return metric;
+				}
+				set	
+				{
+					metric = value;
 				}
 			}
 		}

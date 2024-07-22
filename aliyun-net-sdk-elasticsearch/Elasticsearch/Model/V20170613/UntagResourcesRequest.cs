@@ -45,6 +45,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private string tagKeys;
 
+		private string body;
+
 		private string resourceType;
 
 		private string resourceIds;
@@ -72,6 +74,19 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			{
 				tagKeys = value;
 				DictionaryUtil.Add(QueryParameters, "TagKeys", value);
+			}
+		}
+
+		public string Body
+		{
+			get
+			{
+				return body;
+			}
+			set	
+			{
+				body = value;
+				DictionaryUtil.Add(BodyParameters, "body", value);
 			}
 		}
 

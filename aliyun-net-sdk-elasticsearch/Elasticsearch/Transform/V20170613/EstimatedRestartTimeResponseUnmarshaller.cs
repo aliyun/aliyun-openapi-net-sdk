@@ -34,8 +34,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			estimatedRestartTimeResponse.RequestId = _ctx.StringValue("EstimatedRestartTime.RequestId");
 
 			EstimatedRestartTimeResponse.EstimatedRestartTime_Result result = new EstimatedRestartTimeResponse.EstimatedRestartTime_Result();
-			result._Value = _ctx.LongValue("EstimatedRestartTime.Result.value");
 			result.Unit = _ctx.StringValue("EstimatedRestartTime.Result.unit");
+			result._Value = _ctx.LongValue("EstimatedRestartTime.Result.value");
 			estimatedRestartTimeResponse.Result = result;
         
 			return estimatedRestartTimeResponse;

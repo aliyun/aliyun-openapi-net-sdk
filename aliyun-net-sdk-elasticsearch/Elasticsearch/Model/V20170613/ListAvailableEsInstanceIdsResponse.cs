@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -56,25 +56,13 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class ListAvailableEsInstanceIds_ResultItem
 		{
 
-			private string esInstanceId;
-
 			private string endpoint;
 
 			private string description;
 
 			private string kibanaEndpoint;
 
-			public string EsInstanceId
-			{
-				get
-				{
-					return esInstanceId;
-				}
-				set	
-				{
-					esInstanceId = value;
-				}
-			}
+			private string esInstanceId;
 
 			public string Endpoint
 			{
@@ -109,6 +97,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					kibanaEndpoint = value;
+				}
+			}
+
+			public string EsInstanceId
+			{
+				get
+				{
+					return esInstanceId;
+				}
+				set	
+				{
+					esInstanceId = value;
 				}
 			}
 		}

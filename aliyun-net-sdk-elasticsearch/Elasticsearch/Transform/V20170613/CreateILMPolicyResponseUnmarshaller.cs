@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			CreateILMPolicyResponse createILMPolicyResponse = new CreateILMPolicyResponse();
 
 			createILMPolicyResponse.HttpResponse = _ctx.HttpResponse;
-			createILMPolicyResponse.RequestId = _ctx.StringValue("CreateILMPolicy.RequestId");
 			createILMPolicyResponse.Result = _ctx.StringValue("CreateILMPolicy.Result");
+			createILMPolicyResponse.RequestId = _ctx.StringValue("CreateILMPolicy.RequestId");
         
 			return createILMPolicyResponse;
         }

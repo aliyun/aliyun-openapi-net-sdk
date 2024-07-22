@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -56,21 +56,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class ListTags_ResultItem
 		{
 
-			private string tagKey;
-
 			private string tagValue;
 
-			public string TagKey
-			{
-				get
-				{
-					return tagKey;
-				}
-				set	
-				{
-					tagKey = value;
-				}
-			}
+			private string tagKey;
 
 			public string TagValue
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					tagValue = value;
+				}
+			}
+
+			public string TagKey
+			{
+				get
+				{
+					return tagKey;
+				}
+				set	
+				{
+					tagKey = value;
 				}
 			}
 		}

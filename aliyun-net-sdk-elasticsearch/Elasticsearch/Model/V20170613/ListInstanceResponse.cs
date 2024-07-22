@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -72,35 +72,49 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private bool? advancedDedicateMaster;
 
+			private int? nodeAmount;
+
 			private string createdAt;
+
+			private string status;
 
 			private bool? dedicateMaster;
 
-			private string description;
-
-			private string esVersion;
-
-			private string instanceId;
-
-			private int? nodeAmount;
+			private bool? serviceVpc;
 
 			private string paymentType;
 
 			private string resourceGroupId;
 
-			private string status;
-
-			private string updatedAt;
-
 			private string postpaidServiceStatus;
+
+			private string description;
+
+			private string esVersion;
 
 			private string isNewDeployment;
 
-			private bool? serviceVpc;
+			private string updatedAt;
+
+			private string instanceId;
+
+			private string vpcInstanceId;
+
+			private long? endTime;
+
+			private string archType;
 
 			private List<ListInstance_Tag> tags;
 
 			private List<Dictionary<string, string>> extendConfigs;
+
+			private List<string> kibanaIPWhitelist;
+
+			private List<string> kibanaPrivateIPWhitelist;
+
+			private List<string> publicIpWhitelist;
+
+			private List<string> privateNetworkIpWhiteList;
 
 			private ListInstance_ClientNodeConfiguration clientNodeConfiguration;
 
@@ -126,6 +140,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
+			public int? NodeAmount
+			{
+				get
+				{
+					return nodeAmount;
+				}
+				set	
+				{
+					nodeAmount = value;
+				}
+			}
+
 			public string CreatedAt
 			{
 				get
@@ -135,6 +161,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					createdAt = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 
@@ -150,51 +188,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public string Description
+			public bool? ServiceVpc
 			{
 				get
 				{
-					return description;
+					return serviceVpc;
 				}
 				set	
 				{
-					description = value;
-				}
-			}
-
-			public string EsVersion
-			{
-				get
-				{
-					return esVersion;
-				}
-				set	
-				{
-					esVersion = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public int? NodeAmount
-			{
-				get
-				{
-					return nodeAmount;
-				}
-				set	
-				{
-					nodeAmount = value;
+					serviceVpc = value;
 				}
 			}
 
@@ -222,30 +224,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string UpdatedAt
-			{
-				get
-				{
-					return updatedAt;
-				}
-				set	
-				{
-					updatedAt = value;
-				}
-			}
-
 			public string PostpaidServiceStatus
 			{
 				get
@@ -255,6 +233,30 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					postpaidServiceStatus = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string EsVersion
+			{
+				get
+				{
+					return esVersion;
+				}
+				set	
+				{
+					esVersion = value;
 				}
 			}
 
@@ -270,15 +272,63 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public bool? ServiceVpc
+			public string UpdatedAt
 			{
 				get
 				{
-					return serviceVpc;
+					return updatedAt;
 				}
 				set	
 				{
-					serviceVpc = value;
+					updatedAt = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string VpcInstanceId
+			{
+				get
+				{
+					return vpcInstanceId;
+				}
+				set	
+				{
+					vpcInstanceId = value;
+				}
+			}
+
+			public long? EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
+				}
+			}
+
+			public string ArchType
+			{
+				get
+				{
+					return archType;
+				}
+				set	
+				{
+					archType = value;
 				}
 			}
 
@@ -303,6 +353,54 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					extendConfigs = value;
+				}
+			}
+
+			public List<string> KibanaIPWhitelist
+			{
+				get
+				{
+					return kibanaIPWhitelist;
+				}
+				set	
+				{
+					kibanaIPWhitelist = value;
+				}
+			}
+
+			public List<string> KibanaPrivateIPWhitelist
+			{
+				get
+				{
+					return kibanaPrivateIPWhitelist;
+				}
+				set	
+				{
+					kibanaPrivateIPWhitelist = value;
+				}
+			}
+
+			public List<string> PublicIpWhitelist
+			{
+				get
+				{
+					return publicIpWhitelist;
+				}
+				set	
+				{
+					publicIpWhitelist = value;
+				}
+			}
+
+			public List<string> PrivateNetworkIpWhiteList
+			{
+				get
+				{
+					return privateNetworkIpWhiteList;
+				}
+				set	
+				{
+					privateNetworkIpWhiteList = value;
 				}
 			}
 
@@ -413,13 +511,27 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			public class ListInstance_ClientNodeConfiguration
 			{
 
+				private string spec;
+
 				private int? amount;
 
 				private int? disk;
 
 				private string diskType;
 
-				private string spec;
+				private string specInfo;
+
+				public string Spec
+				{
+					get
+					{
+						return spec;
+					}
+					set	
+					{
+						spec = value;
+					}
+				}
 
 				public int? Amount
 				{
@@ -457,6 +569,34 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					}
 				}
 
+				public string SpecInfo
+				{
+					get
+					{
+						return specInfo;
+					}
+					set	
+					{
+						specInfo = value;
+					}
+				}
+			}
+
+			public class ListInstance_ElasticDataNodeConfiguration
+			{
+
+				private string spec;
+
+				private int? amount;
+
+				private int? disk;
+
+				private bool? diskEncryption;
+
+				private string diskType;
+
+				private string specInfo;
+
 				public string Spec
 				{
 					get
@@ -468,20 +608,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						spec = value;
 					}
 				}
-			}
-
-			public class ListInstance_ElasticDataNodeConfiguration
-			{
-
-				private int? amount;
-
-				private int? disk;
-
-				private bool? diskEncryption;
-
-				private string diskType;
-
-				private string spec;
 
 				public int? Amount
 				{
@@ -531,15 +657,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					}
 				}
 
-				public string Spec
+				public string SpecInfo
 				{
 					get
 					{
-						return spec;
+						return specInfo;
 					}
 					set	
 					{
-						spec = value;
+						specInfo = value;
 					}
 				}
 			}
@@ -547,13 +673,27 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			public class ListInstance_KibanaConfiguration
 			{
 
+				private string spec;
+
 				private int? amount;
 
 				private int? disk;
 
 				private string diskType;
 
-				private string spec;
+				private string specInfo;
+
+				public string Spec
+				{
+					get
+					{
+						return spec;
+					}
+					set	
+					{
+						spec = value;
+					}
+				}
 
 				public int? Amount
 				{
@@ -591,15 +731,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					}
 				}
 
-				public string Spec
+				public string SpecInfo
 				{
 					get
 					{
-						return spec;
+						return specInfo;
 					}
 					set	
 					{
-						spec = value;
+						specInfo = value;
 					}
 				}
 			}
@@ -607,13 +747,27 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			public class ListInstance_MasterConfiguration
 			{
 
+				private string spec;
+
 				private int? amount;
 
 				private int? disk;
 
 				private string diskType;
 
-				private string spec;
+				private string specInfo;
+
+				public string Spec
+				{
+					get
+					{
+						return spec;
+					}
+					set	
+					{
+						spec = value;
+					}
+				}
 
 				public int? Amount
 				{
@@ -651,15 +805,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					}
 				}
 
-				public string Spec
+				public string SpecInfo
 				{
 					get
 					{
-						return spec;
+						return specInfo;
 					}
 					set	
 					{
-						spec = value;
+						specInfo = value;
 					}
 				}
 			}
@@ -667,25 +821,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			public class ListInstance_NetworkConfig
 			{
 
-				private string type;
-
 				private string vpcId;
 
 				private string vsArea;
 
+				private string type;
+
 				private string vswitchId;
 
-				public string Type
-				{
-					get
-					{
-						return type;
-					}
-					set	
-					{
-						type = value;
-					}
-				}
+				private List<ListInstance_WhiteIpGroupListItem> whiteIpGroupList;
 
 				public string VpcId
 				{
@@ -711,6 +855,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					}
 				}
 
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
+					}
+				}
+
 				public string VswitchId
 				{
 					get
@@ -722,10 +878,70 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						vswitchId = value;
 					}
 				}
+
+				public List<ListInstance_WhiteIpGroupListItem> WhiteIpGroupList
+				{
+					get
+					{
+						return whiteIpGroupList;
+					}
+					set	
+					{
+						whiteIpGroupList = value;
+					}
+				}
+
+				public class ListInstance_WhiteIpGroupListItem
+				{
+
+					private string groupName;
+
+					private string whiteIpType;
+
+					private List<string> ips;
+
+					public string GroupName
+					{
+						get
+						{
+							return groupName;
+						}
+						set	
+						{
+							groupName = value;
+						}
+					}
+
+					public string WhiteIpType
+					{
+						get
+						{
+							return whiteIpType;
+						}
+						set	
+						{
+							whiteIpType = value;
+						}
+					}
+
+					public List<string> Ips
+					{
+						get
+						{
+							return ips;
+						}
+						set	
+						{
+							ips = value;
+						}
+					}
+				}
 			}
 
 			public class ListInstance_NodeSpec
 			{
+
+				private string spec;
 
 				private int? disk;
 
@@ -733,7 +949,21 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 				private string diskType;
 
-				private string spec;
+				private string performanceLevel;
+
+				private string specInfo;
+
+				public string Spec
+				{
+					get
+					{
+						return spec;
+					}
+					set	
+					{
+						spec = value;
+					}
+				}
 
 				public int? Disk
 				{
@@ -771,15 +1001,27 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					}
 				}
 
-				public string Spec
+				public string PerformanceLevel
 				{
 					get
 					{
-						return spec;
+						return performanceLevel;
 					}
 					set	
 					{
-						spec = value;
+						performanceLevel = value;
+					}
+				}
+
+				public string SpecInfo
+				{
+					get
+					{
+						return specInfo;
+					}
+					set	
+					{
+						specInfo = value;
 					}
 				}
 			}

@@ -31,9 +31,9 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			DescribeElasticsearchHealthResponse describeElasticsearchHealthResponse = new DescribeElasticsearchHealthResponse();
 
 			describeElasticsearchHealthResponse.HttpResponse = _ctx.HttpResponse;
-			describeElasticsearchHealthResponse.RequestId = _ctx.StringValue("DescribeElasticsearchHealth.RequestId");
 			describeElasticsearchHealthResponse.Code = _ctx.StringValue("DescribeElasticsearchHealth.Code");
 			describeElasticsearchHealthResponse.Message = _ctx.StringValue("DescribeElasticsearchHealth.Message");
+			describeElasticsearchHealthResponse.RequestId = _ctx.StringValue("DescribeElasticsearchHealth.RequestId");
 			describeElasticsearchHealthResponse.Result = _ctx.StringValue("DescribeElasticsearchHealth.Result");
         
 			return describeElasticsearchHealthResponse;

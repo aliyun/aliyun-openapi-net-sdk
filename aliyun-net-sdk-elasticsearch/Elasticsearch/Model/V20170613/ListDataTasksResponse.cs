@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -58,9 +58,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private string createTime;
 
-			private string status;
-
 			private string taskId;
+
+			private string status;
 
 			private ListDataTasks_SinkCluster sinkCluster;
 
@@ -78,18 +78,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
 			public string TaskId
 			{
 				get
@@ -99,6 +87,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					taskId = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 
@@ -129,29 +129,41 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			public class ListDataTasks_SinkCluster
 			{
 
-				private string dataSourceType;
-
-				private string endpoint;
-
 				private string index;
 
 				private string type;
 
-				private string vpcId;
+				private string endpoint;
 
-				private string vpcInstanceId;
+				private string vpcId;
 
 				private string vpcInstancePort;
 
-				public string DataSourceType
+				private string vpcInstanceId;
+
+				private string dataSourceType;
+
+				public string Index
 				{
 					get
 					{
-						return dataSourceType;
+						return index;
 					}
 					set	
 					{
-						dataSourceType = value;
+						index = value;
+					}
+				}
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
 					}
 				}
 
@@ -167,30 +179,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					}
 				}
 
-				public string Index
-				{
-					get
-					{
-						return index;
-					}
-					set	
-					{
-						index = value;
-					}
-				}
-
-				public string Type
-				{
-					get
-					{
-						return type;
-					}
-					set	
-					{
-						type = value;
-					}
-				}
-
 				public string VpcId
 				{
 					get
@@ -200,6 +188,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						vpcId = value;
+					}
+				}
+
+				public string VpcInstancePort
+				{
+					get
+					{
+						return vpcInstancePort;
+					}
+					set	
+					{
+						vpcInstancePort = value;
 					}
 				}
 
@@ -215,34 +215,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					}
 				}
 
-				public string VpcInstancePort
-				{
-					get
-					{
-						return vpcInstancePort;
-					}
-					set	
-					{
-						vpcInstancePort = value;
-					}
-				}
-			}
-
-			public class ListDataTasks_SourceCluster
-			{
-
-				private string dataSourceType;
-
-				private string index;
-
-				private string mapping;
-
-				private string routing;
-
-				private string settings;
-
-				private string type;
-
 				public string DataSourceType
 				{
 					get
@@ -254,6 +226,22 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						dataSourceType = value;
 					}
 				}
+			}
+
+			public class ListDataTasks_SourceCluster
+			{
+
+				private string index;
+
+				private string settings;
+
+				private string mapping;
+
+				private string type;
+
+				private string routing;
+
+				private string dataSourceType;
 
 				public string Index
 				{
@@ -264,30 +252,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						index = value;
-					}
-				}
-
-				public string Mapping
-				{
-					get
-					{
-						return mapping;
-					}
-					set	
-					{
-						mapping = value;
-					}
-				}
-
-				public string Routing
-				{
-					get
-					{
-						return routing;
-					}
-					set	
-					{
-						routing = value;
 					}
 				}
 
@@ -303,6 +267,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					}
 				}
 
+				public string Mapping
+				{
+					get
+					{
+						return mapping;
+					}
+					set	
+					{
+						mapping = value;
+					}
+				}
+
 				public string Type
 				{
 					get
@@ -312,6 +288,30 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						type = value;
+					}
+				}
+
+				public string Routing
+				{
+					get
+					{
+						return routing;
+					}
+					set	
+					{
+						routing = value;
+					}
+				}
+
+				public string DataSourceType
+				{
+					get
+					{
+						return dataSourceType;
+					}
+					set	
+					{
+						dataSourceType = value;
 					}
 				}
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -56,21 +56,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class ListDefaultCollectorConfigurations_ResultItem
 		{
 
-			private string fileName;
-
 			private string content;
 
-			public string FileName
-			{
-				get
-				{
-					return fileName;
-				}
-				set	
-				{
-					fileName = value;
-				}
-			}
+			private string fileName;
 
 			public string Content
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					content = value;
+				}
+			}
+
+			public string FileName
+			{
+				get
+				{
+					return fileName;
+				}
+				set	
+				{
+					fileName = value;
 				}
 			}
 		}

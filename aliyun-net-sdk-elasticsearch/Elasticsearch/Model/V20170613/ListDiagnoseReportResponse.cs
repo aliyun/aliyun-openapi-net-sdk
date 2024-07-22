@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -70,19 +70,43 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class ListDiagnoseReport_ResultItem
 		{
 
-			private string reportId;
-
-			private string instanceId;
-
-			private string state;
-
 			private string trigger;
-
-			private string health;
 
 			private long? createTime;
 
+			private string reportId;
+
+			private string state;
+
+			private string instanceId;
+
+			private string health;
+
 			private List<ListDiagnoseReport_DiagnoseItemsItem> diagnoseItems;
+
+			public string Trigger
+			{
+				get
+				{
+					return trigger;
+				}
+				set	
+				{
+					trigger = value;
+				}
+			}
+
+			public long? CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
 
 			public string ReportId
 			{
@@ -93,18 +117,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					reportId = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
 				}
 			}
 
@@ -120,15 +132,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public string Trigger
+			public string InstanceId
 			{
 				get
 				{
-					return trigger;
+					return instanceId;
 				}
 				set	
 				{
-					trigger = value;
+					instanceId = value;
 				}
 			}
 
@@ -141,18 +153,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					health = value;
-				}
-			}
-
-			public long? CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
 				}
 			}
 
@@ -216,15 +216,27 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				public class ListDiagnoseReport_Detail
 				{
 
+					private string type;
+
 					private string name;
 
 					private string desc;
 
-					private string type;
+					private string result;
 
 					private string suggest;
 
-					private string result;
+					public string Type
+					{
+						get
+						{
+							return type;
+						}
+						set	
+						{
+							type = value;
+						}
+					}
 
 					public string Name
 					{
@@ -250,15 +262,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						}
 					}
 
-					public string Type
+					public string Result
 					{
 						get
 						{
-							return type;
+							return result;
 						}
 						set	
 						{
-							type = value;
+							result = value;
 						}
 					}
 
@@ -271,18 +283,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						set	
 						{
 							suggest = value;
-						}
-					}
-
-					public string Result
-					{
-						get
-						{
-							return result;
-						}
-						set	
-						{
-							result = value;
 						}
 					}
 				}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 	public class GetEmonGrafanaDashboardsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string code;
 
 		private string message;
 
-		private bool? success;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private bool? success;
 
 		public string Code
 		{
@@ -66,6 +54,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

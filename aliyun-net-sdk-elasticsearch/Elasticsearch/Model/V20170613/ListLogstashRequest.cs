@@ -51,9 +51,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private int? page;
 
-		private string ownerId;
-
 		private string version;
+
+		private string tags;
 
 		public string ResourceGroupId
 		{
@@ -120,19 +120,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public string OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "ownerId", value);
-			}
-		}
-
 		public string Version
 		{
 			get
@@ -143,6 +130,19 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			{
 				version = value;
 				DictionaryUtil.Add(QueryParameters, "version", value);
+			}
+		}
+
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "tags", value);
 			}
 		}
 

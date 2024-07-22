@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			RunPipelinesResponse runPipelinesResponse = new RunPipelinesResponse();
 
 			runPipelinesResponse.HttpResponse = _ctx.HttpResponse;
-			runPipelinesResponse.RequestId = _ctx.StringValue("RunPipelines.RequestId");
 			runPipelinesResponse.Result = _ctx.BooleanValue("RunPipelines.Result");
+			runPipelinesResponse.RequestId = _ctx.StringValue("RunPipelines.RequestId");
         
 			return runPipelinesResponse;
         }

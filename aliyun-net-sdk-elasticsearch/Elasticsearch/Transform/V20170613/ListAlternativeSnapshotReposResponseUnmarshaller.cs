@@ -36,8 +36,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<ListAlternativeSnapshotReposResponse.ListAlternativeSnapshotRepos_Repo> listAlternativeSnapshotReposResponse_result = new List<ListAlternativeSnapshotReposResponse.ListAlternativeSnapshotRepos_Repo>();
 			for (int i = 0; i < _ctx.Length("ListAlternativeSnapshotRepos.Result.Length"); i++) {
 				ListAlternativeSnapshotReposResponse.ListAlternativeSnapshotRepos_Repo repo = new ListAlternativeSnapshotReposResponse.ListAlternativeSnapshotRepos_Repo();
-				repo.InstanceId = _ctx.StringValue("ListAlternativeSnapshotRepos.Result["+ i +"].instanceId");
 				repo.RepoPath = _ctx.StringValue("ListAlternativeSnapshotRepos.Result["+ i +"].repoPath");
+				repo.InstanceId = _ctx.StringValue("ListAlternativeSnapshotRepos.Result["+ i +"].instanceId");
 
 				listAlternativeSnapshotReposResponse_result.Add(repo);
 			}

@@ -38,16 +38,16 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 				ListShardRecoveriesResponse.ListShardRecoveries_ResultItem resultItem = new ListShardRecoveriesResponse.ListShardRecoveries_ResultItem();
 				resultItem.Index = _ctx.StringValue("ListShardRecoveries.Result["+ i +"].index");
 				resultItem.SourceHost = _ctx.StringValue("ListShardRecoveries.Result["+ i +"].sourceHost");
-				resultItem.TargetNode = _ctx.StringValue("ListShardRecoveries.Result["+ i +"].targetNode");
-				resultItem.Stage = _ctx.StringValue("ListShardRecoveries.Result["+ i +"].stage");
+				resultItem.SourceNode = _ctx.StringValue("ListShardRecoveries.Result["+ i +"].sourceNode");
 				resultItem.FilesTotal = _ctx.LongValue("ListShardRecoveries.Result["+ i +"].filesTotal");
-				resultItem.FilesPercent = _ctx.StringValue("ListShardRecoveries.Result["+ i +"].filesPercent");
-				resultItem.BytesTotal = _ctx.LongValue("ListShardRecoveries.Result["+ i +"].bytesTotal");
 				resultItem.BytesPercent = _ctx.StringValue("ListShardRecoveries.Result["+ i +"].bytesPercent");
 				resultItem.TranslogOps = _ctx.LongValue("ListShardRecoveries.Result["+ i +"].translogOps");
 				resultItem.TranslogOpsPercent = _ctx.StringValue("ListShardRecoveries.Result["+ i +"].translogOpsPercent");
-				resultItem.SourceNode = _ctx.StringValue("ListShardRecoveries.Result["+ i +"].sourceNode");
+				resultItem.BytesTotal = _ctx.LongValue("ListShardRecoveries.Result["+ i +"].bytesTotal");
 				resultItem.TargetHost = _ctx.StringValue("ListShardRecoveries.Result["+ i +"].targetHost");
+				resultItem.TargetNode = _ctx.StringValue("ListShardRecoveries.Result["+ i +"].targetNode");
+				resultItem.FilesPercent = _ctx.StringValue("ListShardRecoveries.Result["+ i +"].filesPercent");
+				resultItem.Stage = _ctx.StringValue("ListShardRecoveries.Result["+ i +"].stage");
 
 				listShardRecoveriesResponse_result.Add(resultItem);
 			}

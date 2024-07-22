@@ -41,7 +41,22 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			Method = MethodType.GET;
         }
 
+		private string body;
+
 		private string projectId;
+
+		public string Body
+		{
+			get
+			{
+				return body;
+			}
+			set	
+			{
+				body = value;
+				DictionaryUtil.Add(BodyParameters, "body", value);
+			}
+		}
 
 		public string ProjectId
 		{

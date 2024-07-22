@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -87,27 +87,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			public class GetClusterDataInformation_MetaInfo
 			{
 
-				private string settings;
-
 				private string mapping;
 
-				private List<string> indices;
-
-				private List<string> fields;
+				private string settings;
 
 				private List<string> typeName;
 
-				public string Settings
-				{
-					get
-					{
-						return settings;
-					}
-					set	
-					{
-						settings = value;
-					}
-				}
+				private List<string> fields;
+
+				private List<string> indices;
 
 				public string Mapping
 				{
@@ -121,15 +109,27 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					}
 				}
 
-				public List<string> Indices
+				public string Settings
 				{
 					get
 					{
-						return indices;
+						return settings;
 					}
 					set	
 					{
-						indices = value;
+						settings = value;
+					}
+				}
+
+				public List<string> TypeName
+				{
+					get
+					{
+						return typeName;
+					}
+					set	
+					{
+						typeName = value;
 					}
 				}
 
@@ -145,15 +145,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					}
 				}
 
-				public List<string> TypeName
+				public List<string> Indices
 				{
 					get
 					{
-						return typeName;
+						return indices;
 					}
 					set	
 					{
-						typeName = value;
+						indices = value;
 					}
 				}
 			}

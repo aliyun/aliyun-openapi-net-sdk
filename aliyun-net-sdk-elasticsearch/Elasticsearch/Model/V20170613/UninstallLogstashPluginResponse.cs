@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -26,6 +26,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 	{
 
 		private string requestId;
+
+		private string headers;
 
 		private List<string> result;
 
@@ -38,6 +40,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Headers
+		{
+			get
+			{
+				return headers;
+			}
+			set	
+			{
+				headers = value;
 			}
 		}
 

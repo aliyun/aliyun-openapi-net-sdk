@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			AddConnectableClusterResponse addConnectableClusterResponse = new AddConnectableClusterResponse();
 
 			addConnectableClusterResponse.HttpResponse = _ctx.HttpResponse;
-			addConnectableClusterResponse.RequestId = _ctx.StringValue("AddConnectableCluster.RequestId");
 			addConnectableClusterResponse.Result = _ctx.BooleanValue("AddConnectableCluster.Result");
+			addConnectableClusterResponse.RequestId = _ctx.StringValue("AddConnectableCluster.RequestId");
         
 			return addConnectableClusterResponse;
         }

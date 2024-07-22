@@ -34,8 +34,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			describeSnapshotSettingResponse.RequestId = _ctx.StringValue("DescribeSnapshotSetting.RequestId");
 
 			DescribeSnapshotSettingResponse.DescribeSnapshotSetting_Result result = new DescribeSnapshotSettingResponse.DescribeSnapshotSetting_Result();
-			result.QuartzRegex = _ctx.StringValue("DescribeSnapshotSetting.Result.QuartzRegex");
 			result.Enable = _ctx.BooleanValue("DescribeSnapshotSetting.Result.Enable");
+			result.QuartzRegex = _ctx.StringValue("DescribeSnapshotSetting.Result.QuartzRegex");
 			describeSnapshotSettingResponse.Result = result;
         
 			return describeSnapshotSettingResponse;

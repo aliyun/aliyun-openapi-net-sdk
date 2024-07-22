@@ -34,16 +34,16 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			describeCollectorResponse.RequestId = _ctx.StringValue("DescribeCollector.RequestId");
 
 			DescribeCollectorResponse.DescribeCollector_Result result = new DescribeCollectorResponse.DescribeCollector_Result();
-			result.GmtCreatedTime = _ctx.StringValue("DescribeCollector.Result.gmtCreatedTime");
-			result.GmtUpdateTime = _ctx.StringValue("DescribeCollector.Result.gmtUpdateTime");
-			result.Name = _ctx.StringValue("DescribeCollector.Result.name");
 			result.ResId = _ctx.StringValue("DescribeCollector.Result.resId");
-			result.ResVersion = _ctx.StringValue("DescribeCollector.Result.resVersion");
+			result.GmtUpdateTime = _ctx.StringValue("DescribeCollector.Result.gmtUpdateTime");
+			result.DryRun = _ctx.BooleanValue("DescribeCollector.Result.dryRun");
+			result.OwnerId = _ctx.StringValue("DescribeCollector.Result.ownerId");
 			result.VpcId = _ctx.StringValue("DescribeCollector.Result.vpcId");
 			result.ResType = _ctx.StringValue("DescribeCollector.Result.resType");
-			result.OwnerId = _ctx.StringValue("DescribeCollector.Result.ownerId");
+			result.ResVersion = _ctx.StringValue("DescribeCollector.Result.resVersion");
+			result.GmtCreatedTime = _ctx.StringValue("DescribeCollector.Result.gmtCreatedTime");
 			result.Status = _ctx.StringValue("DescribeCollector.Result.status");
-			result.DryRun = _ctx.BooleanValue("DescribeCollector.Result.dryRun");
+			result.Name = _ctx.StringValue("DescribeCollector.Result.name");
 
 			List<string> result_collectorPaths = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeCollector.Result.CollectorPaths.Length"); i++) {
@@ -54,8 +54,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<DescribeCollectorResponse.DescribeCollector_Result.DescribeCollector_ConfigsItem> result_configs = new List<DescribeCollectorResponse.DescribeCollector_Result.DescribeCollector_ConfigsItem>();
 			for (int i = 0; i < _ctx.Length("DescribeCollector.Result.Configs.Length"); i++) {
 				DescribeCollectorResponse.DescribeCollector_Result.DescribeCollector_ConfigsItem configsItem = new DescribeCollectorResponse.DescribeCollector_Result.DescribeCollector_ConfigsItem();
-				configsItem.FileName = _ctx.StringValue("DescribeCollector.Result.Configs["+ i +"].fileName");
 				configsItem.Content = _ctx.StringValue("DescribeCollector.Result.Configs["+ i +"].content");
+				configsItem.FileName = _ctx.StringValue("DescribeCollector.Result.Configs["+ i +"].fileName");
 
 				result_configs.Add(configsItem);
 			}
@@ -64,18 +64,18 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<DescribeCollectorResponse.DescribeCollector_Result.DescribeCollector_ExtendConfigsItem> result_extendConfigs = new List<DescribeCollectorResponse.DescribeCollector_Result.DescribeCollector_ExtendConfigsItem>();
 			for (int i = 0; i < _ctx.Length("DescribeCollector.Result.ExtendConfigs.Length"); i++) {
 				DescribeCollectorResponse.DescribeCollector_Result.DescribeCollector_ExtendConfigsItem extendConfigsItem = new DescribeCollectorResponse.DescribeCollector_Result.DescribeCollector_ExtendConfigsItem();
-				extendConfigsItem.ConfigType = _ctx.StringValue("DescribeCollector.Result.ExtendConfigs["+ i +"].configType");
-				extendConfigsItem.InstanceId = _ctx.StringValue("DescribeCollector.Result.ExtendConfigs["+ i +"].instanceId");
-				extendConfigsItem.InstanceType = _ctx.StringValue("DescribeCollector.Result.ExtendConfigs["+ i +"].instanceType");
+				extendConfigsItem.SuccessPodsCount = _ctx.StringValue("DescribeCollector.Result.ExtendConfigs["+ i +"].successPodsCount");
 				extendConfigsItem.Protocol = _ctx.StringValue("DescribeCollector.Result.ExtendConfigs["+ i +"].protocol");
 				extendConfigsItem.UserName = _ctx.StringValue("DescribeCollector.Result.ExtendConfigs["+ i +"].userName");
-				extendConfigsItem.EnableMonitoring = _ctx.BooleanValue("DescribeCollector.Result.ExtendConfigs["+ i +"].enableMonitoring");
+				extendConfigsItem.TotalPodsCount = _ctx.StringValue("DescribeCollector.Result.ExtendConfigs["+ i +"].totalPodsCount");
 				extendConfigsItem.Type = _ctx.StringValue("DescribeCollector.Result.ExtendConfigs["+ i +"].type");
+				extendConfigsItem.KibanaHost = _ctx.StringValue("DescribeCollector.Result.ExtendConfigs["+ i +"].kibanaHost");
+				extendConfigsItem.EnableMonitoring = _ctx.BooleanValue("DescribeCollector.Result.ExtendConfigs["+ i +"].enableMonitoring");
+				extendConfigsItem.ConfigType = _ctx.StringValue("DescribeCollector.Result.ExtendConfigs["+ i +"].configType");
+				extendConfigsItem.InstanceType = _ctx.StringValue("DescribeCollector.Result.ExtendConfigs["+ i +"].instanceType");
 				extendConfigsItem.GroupId = _ctx.StringValue("DescribeCollector.Result.ExtendConfigs["+ i +"].groupId");
 				extendConfigsItem.Host = _ctx.StringValue("DescribeCollector.Result.ExtendConfigs["+ i +"].host");
-				extendConfigsItem.KibanaHost = _ctx.StringValue("DescribeCollector.Result.ExtendConfigs["+ i +"].kibanaHost");
-				extendConfigsItem.TotalPodsCount = _ctx.StringValue("DescribeCollector.Result.ExtendConfigs["+ i +"].totalPodsCount");
-				extendConfigsItem.SuccessPodsCount = _ctx.StringValue("DescribeCollector.Result.ExtendConfigs["+ i +"].successPodsCount");
+				extendConfigsItem.InstanceId = _ctx.StringValue("DescribeCollector.Result.ExtendConfigs["+ i +"].instanceId");
 
 				List<string> extendConfigsItem_hosts = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeCollector.Result.ExtendConfigs["+ i +"].Hosts.Length"); j++) {
@@ -86,8 +86,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 				List<DescribeCollectorResponse.DescribeCollector_Result.DescribeCollector_ExtendConfigsItem.DescribeCollector_MachinesItem> extendConfigsItem_machines = new List<DescribeCollectorResponse.DescribeCollector_Result.DescribeCollector_ExtendConfigsItem.DescribeCollector_MachinesItem>();
 				for (int j = 0; j < _ctx.Length("DescribeCollector.Result.ExtendConfigs["+ i +"].Machines.Length"); j++) {
 					DescribeCollectorResponse.DescribeCollector_Result.DescribeCollector_ExtendConfigsItem.DescribeCollector_MachinesItem machinesItem = new DescribeCollectorResponse.DescribeCollector_Result.DescribeCollector_ExtendConfigsItem.DescribeCollector_MachinesItem();
-					machinesItem.InstanceId = _ctx.StringValue("DescribeCollector.Result.ExtendConfigs["+ i +"].Machines["+ j +"].instanceId");
 					machinesItem.AgentStatus = _ctx.StringValue("DescribeCollector.Result.ExtendConfigs["+ i +"].Machines["+ j +"].agentStatus");
+					machinesItem.InstanceId = _ctx.StringValue("DescribeCollector.Result.ExtendConfigs["+ i +"].Machines["+ j +"].instanceId");
 
 					extendConfigsItem_machines.Add(machinesItem);
 				}

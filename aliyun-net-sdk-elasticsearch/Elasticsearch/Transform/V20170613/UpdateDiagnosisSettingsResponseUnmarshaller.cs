@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			UpdateDiagnosisSettingsResponse updateDiagnosisSettingsResponse = new UpdateDiagnosisSettingsResponse();
 
 			updateDiagnosisSettingsResponse.HttpResponse = _ctx.HttpResponse;
-			updateDiagnosisSettingsResponse.RequestId = _ctx.StringValue("UpdateDiagnosisSettings.RequestId");
 			updateDiagnosisSettingsResponse.Result = _ctx.BooleanValue("UpdateDiagnosisSettings.Result");
+			updateDiagnosisSettingsResponse.RequestId = _ctx.StringValue("UpdateDiagnosisSettings.RequestId");
         
 			return updateDiagnosisSettingsResponse;
         }

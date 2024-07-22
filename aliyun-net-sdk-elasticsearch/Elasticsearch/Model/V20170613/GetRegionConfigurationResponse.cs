@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -74,15 +74,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private List<GetRegionConfiguration_CategoryEntity> supportVersions;
 
-			private List<string> zones;
-
-			private List<string> esVersions;
-
 			private List<string> masterSpec;
 
 			private List<string> clientNodeSpec;
 
+			private List<string> zones;
+
 			private List<string> instanceSupportNodes;
+
+			private List<string> esVersions;
 
 			private GetRegionConfiguration_Node node;
 
@@ -204,30 +204,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public List<string> Zones
-			{
-				get
-				{
-					return zones;
-				}
-				set	
-				{
-					zones = value;
-				}
-			}
-
-			public List<string> EsVersions
-			{
-				get
-				{
-					return esVersions;
-				}
-				set	
-				{
-					esVersions = value;
-				}
-			}
-
 			public List<string> MasterSpec
 			{
 				get
@@ -252,6 +228,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
+			public List<string> Zones
+			{
+				get
+				{
+					return zones;
+				}
+				set	
+				{
+					zones = value;
+				}
+			}
+
 			public List<string> InstanceSupportNodes
 			{
 				get
@@ -261,6 +249,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					instanceSupportNodes = value;
+				}
+			}
+
+			public List<string> EsVersions
+			{
+				get
+				{
+					return esVersions;
+				}
+				set	
+				{
+					esVersions = value;
 				}
 			}
 
@@ -339,25 +339,25 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			public class GetRegionConfiguration_DataDiskListItem
 			{
 
-				private string diskType;
+				private int? scaleLimit;
 
 				private int? minSize;
 
 				private int? maxSize;
 
-				private int? scaleLimit;
+				private string diskType;
 
 				private List<string> valueLimitSet;
 
-				public string DiskType
+				public int? ScaleLimit
 				{
 					get
 					{
-						return diskType;
+						return scaleLimit;
 					}
 					set	
 					{
-						diskType = value;
+						scaleLimit = value;
 					}
 				}
 
@@ -385,15 +385,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					}
 				}
 
-				public int? ScaleLimit
+				public string DiskType
 				{
 					get
 					{
-						return scaleLimit;
+						return diskType;
 					}
 					set	
 					{
-						scaleLimit = value;
+						diskType = value;
 					}
 				}
 
@@ -445,31 +445,19 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			public class GetRegionConfiguration_NodeSpecListItem
 			{
 
-				private int? cpuCount;
-
 				private int? memorySize;
 
-				private bool? enable;
-
-				private string spec;
+				private int? cpuCount;
 
 				private string diskType;
+
+				private string spec;
 
 				private int? disk;
 
 				private string specGroupType;
 
-				public int? CpuCount
-				{
-					get
-					{
-						return cpuCount;
-					}
-					set	
-					{
-						cpuCount = value;
-					}
-				}
+				private bool? enable;
 
 				public int? MemorySize
 				{
@@ -483,27 +471,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					}
 				}
 
-				public bool? Enable
+				public int? CpuCount
 				{
 					get
 					{
-						return enable;
+						return cpuCount;
 					}
 					set	
 					{
-						enable = value;
-					}
-				}
-
-				public string Spec
-				{
-					get
-					{
-						return spec;
-					}
-					set	
-					{
-						spec = value;
+						cpuCount = value;
 					}
 				}
 
@@ -516,6 +492,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						diskType = value;
+					}
+				}
+
+				public string Spec
+				{
+					get
+					{
+						return spec;
+					}
+					set	
+					{
+						spec = value;
 					}
 				}
 
@@ -542,28 +530,40 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						specGroupType = value;
 					}
 				}
+
+				public bool? Enable
+				{
+					get
+					{
+						return enable;
+					}
+					set	
+					{
+						enable = value;
+					}
+				}
 			}
 
 			public class GetRegionConfiguration_Disk
 			{
 
-				private string diskType;
+				private int? scaleLimit;
 
 				private int? minSize;
 
 				private int? maxSize;
 
-				private int? scaleLimit;
+				private string diskType;
 
-				public string DiskType
+				public int? ScaleLimit
 				{
 					get
 					{
-						return diskType;
+						return scaleLimit;
 					}
 					set	
 					{
-						diskType = value;
+						scaleLimit = value;
 					}
 				}
 
@@ -591,15 +591,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					}
 				}
 
-				public int? ScaleLimit
+				public string DiskType
 				{
 					get
 					{
-						return scaleLimit;
+						return diskType;
 					}
 					set	
 					{
-						scaleLimit = value;
+						diskType = value;
 					}
 				}
 			}
@@ -671,21 +671,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			public class GetRegionConfiguration_Node
 			{
 
-				private int? minAmount;
-
 				private int? maxAmount;
 
-				public int? MinAmount
-				{
-					get
-					{
-						return minAmount;
-					}
-					set	
-					{
-						minAmount = value;
-					}
-				}
+				private int? minAmount;
 
 				public int? MaxAmount
 				{
@@ -698,6 +686,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						maxAmount = value;
 					}
 				}
+
+				public int? MinAmount
+				{
+					get
+					{
+						return minAmount;
+					}
+					set	
+					{
+						minAmount = value;
+					}
+				}
 			}
 
 			public class GetRegionConfiguration_JvmConfine
@@ -705,9 +705,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 				private int? memory;
 
-				private List<string> supportGcs;
-
 				private List<string> supportEsVersions;
+
+				private List<string> supportGcs;
 
 				public int? Memory
 				{
@@ -718,18 +718,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						memory = value;
-					}
-				}
-
-				public List<string> SupportGcs
-				{
-					get
-					{
-						return supportGcs;
-					}
-					set	
-					{
-						supportGcs = value;
 					}
 				}
 
@@ -744,26 +732,26 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						supportEsVersions = value;
 					}
 				}
+
+				public List<string> SupportGcs
+				{
+					get
+					{
+						return supportGcs;
+					}
+					set	
+					{
+						supportGcs = value;
+					}
+				}
 			}
 
 			public class GetRegionConfiguration_ClientNodeAmountRange
 			{
 
-				private int? minAmount;
-
 				private int? maxAmount;
 
-				public int? MinAmount
-				{
-					get
-					{
-						return minAmount;
-					}
-					set	
-					{
-						minAmount = value;
-					}
-				}
+				private int? minAmount;
 
 				public int? MaxAmount
 				{
@@ -774,6 +762,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						maxAmount = value;
+					}
+				}
+
+				public int? MinAmount
+				{
+					get
+					{
+						return minAmount;
+					}
+					set	
+					{
+						minAmount = value;
 					}
 				}
 			}
@@ -826,39 +826,27 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				public class GetRegionConfiguration_Disk1
 				{
 
-					private string diskType;
-
-					private int? maxSize;
+					private int? scaleLimit;
 
 					private int? minSize;
 
-					private int? scaleLimit;
-
 					private bool? diskEncryption;
+
+					private int? maxSize;
+
+					private string diskType;
 
 					private List<string> valueLimitSet2;
 
-					public string DiskType
+					public int? ScaleLimit
 					{
 						get
 						{
-							return diskType;
+							return scaleLimit;
 						}
 						set	
 						{
-							diskType = value;
-						}
-					}
-
-					public int? MaxSize
-					{
-						get
-						{
-							return maxSize;
-						}
-						set	
-						{
-							maxSize = value;
+							scaleLimit = value;
 						}
 					}
 
@@ -874,18 +862,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						}
 					}
 
-					public int? ScaleLimit
-					{
-						get
-						{
-							return scaleLimit;
-						}
-						set	
-						{
-							scaleLimit = value;
-						}
-					}
-
 					public bool? DiskEncryption
 					{
 						get
@@ -895,6 +871,30 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						set	
 						{
 							diskEncryption = value;
+						}
+					}
+
+					public int? MaxSize
+					{
+						get
+						{
+							return maxSize;
+						}
+						set	
+						{
+							maxSize = value;
+						}
+					}
+
+					public string DiskType
+					{
+						get
+						{
+							return diskType;
+						}
+						set	
+						{
+							diskType = value;
 						}
 					}
 
@@ -1056,39 +1056,27 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				public class GetRegionConfiguration_Disk8
 				{
 
-					private string diskType;
-
-					private int? maxSize;
+					private int? scaleLimit;
 
 					private int? minSize;
 
-					private int? scaleLimit;
-
 					private bool? diskEncryption;
+
+					private int? maxSize;
+
+					private string diskType;
 
 					private List<string> valueLimitSet9;
 
-					public string DiskType
+					public int? ScaleLimit
 					{
 						get
 						{
-							return diskType;
+							return scaleLimit;
 						}
 						set	
 						{
-							diskType = value;
-						}
-					}
-
-					public int? MaxSize
-					{
-						get
-						{
-							return maxSize;
-						}
-						set	
-						{
-							maxSize = value;
+							scaleLimit = value;
 						}
 					}
 
@@ -1104,18 +1092,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						}
 					}
 
-					public int? ScaleLimit
-					{
-						get
-						{
-							return scaleLimit;
-						}
-						set	
-						{
-							scaleLimit = value;
-						}
-					}
-
 					public bool? DiskEncryption
 					{
 						get
@@ -1125,6 +1101,30 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						set	
 						{
 							diskEncryption = value;
+						}
+					}
+
+					public int? MaxSize
+					{
+						get
+						{
+							return maxSize;
+						}
+						set	
+						{
+							maxSize = value;
+						}
+					}
+
+					public string DiskType
+					{
+						get
+						{
+							return diskType;
+						}
+						set	
+						{
+							diskType = value;
 						}
 					}
 

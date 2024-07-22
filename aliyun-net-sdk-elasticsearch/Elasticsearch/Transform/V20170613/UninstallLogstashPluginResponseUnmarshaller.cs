@@ -32,6 +32,7 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 
 			uninstallLogstashPluginResponse.HttpResponse = _ctx.HttpResponse;
 			uninstallLogstashPluginResponse.RequestId = _ctx.StringValue("UninstallLogstashPlugin.RequestId");
+			uninstallLogstashPluginResponse.Headers = _ctx.StringValue("UninstallLogstashPlugin.Headers");
 
 			List<string> uninstallLogstashPluginResponse_result = new List<string>();
 			for (int i = 0; i < _ctx.Length("UninstallLogstashPlugin.Result.Length"); i++) {

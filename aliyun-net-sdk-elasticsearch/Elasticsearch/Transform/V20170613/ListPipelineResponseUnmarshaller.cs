@@ -41,9 +41,9 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			for (int i = 0; i < _ctx.Length("ListPipeline.Result.Length"); i++) {
 				ListPipelineResponse.ListPipeline_ResultItem resultItem = new ListPipelineResponse.ListPipeline_ResultItem();
 				resultItem.PipelineId = _ctx.StringValue("ListPipeline.Result["+ i +"].pipelineId");
-				resultItem.PipelineStatus = _ctx.StringValue("ListPipeline.Result["+ i +"].pipelineStatus");
-				resultItem.GmtCreatedTime = _ctx.StringValue("ListPipeline.Result["+ i +"].gmtCreatedTime");
 				resultItem.GmtUpdateTime = _ctx.StringValue("ListPipeline.Result["+ i +"].gmtUpdateTime");
+				resultItem.GmtCreatedTime = _ctx.StringValue("ListPipeline.Result["+ i +"].gmtCreatedTime");
+				resultItem.PipelineStatus = _ctx.StringValue("ListPipeline.Result["+ i +"].pipelineStatus");
 
 				listPipelineResponse_result.Add(resultItem);
 			}

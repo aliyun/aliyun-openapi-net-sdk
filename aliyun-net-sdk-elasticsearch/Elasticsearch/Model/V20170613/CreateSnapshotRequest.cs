@@ -41,22 +41,11 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			Method = MethodType.POST;
         }
 
-		private string instanceId;
-
 		private string clientToken;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(PathParameters, "InstanceId", value);
-			}
-		}
+		private string body;
+
+		private string instanceId;
 
 		public string ClientToken
 		{
@@ -68,6 +57,32 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string Body
+		{
+			get
+			{
+				return body;
+			}
+			set	
+			{
+				body = value;
+				DictionaryUtil.Add(BodyParameters, "body", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(PathParameters, "InstanceId", value);
 			}
 		}
 

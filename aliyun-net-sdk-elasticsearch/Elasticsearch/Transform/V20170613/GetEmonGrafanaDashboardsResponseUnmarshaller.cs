@@ -31,9 +31,9 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			GetEmonGrafanaDashboardsResponse getEmonGrafanaDashboardsResponse = new GetEmonGrafanaDashboardsResponse();
 
 			getEmonGrafanaDashboardsResponse.HttpResponse = _ctx.HttpResponse;
-			getEmonGrafanaDashboardsResponse.RequestId = _ctx.StringValue("GetEmonGrafanaDashboards.RequestId");
 			getEmonGrafanaDashboardsResponse.Code = _ctx.StringValue("GetEmonGrafanaDashboards.Code");
 			getEmonGrafanaDashboardsResponse.Message = _ctx.StringValue("GetEmonGrafanaDashboards.Message");
+			getEmonGrafanaDashboardsResponse.RequestId = _ctx.StringValue("GetEmonGrafanaDashboards.RequestId");
 			getEmonGrafanaDashboardsResponse.Success = _ctx.BooleanValue("GetEmonGrafanaDashboards.Success");
         
 			return getEmonGrafanaDashboardsResponse;

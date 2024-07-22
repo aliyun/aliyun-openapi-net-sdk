@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			CloseHttpsResponse closeHttpsResponse = new CloseHttpsResponse();
 
 			closeHttpsResponse.HttpResponse = _ctx.HttpResponse;
-			closeHttpsResponse.RequestId = _ctx.StringValue("CloseHttps.RequestId");
 			closeHttpsResponse.Result = _ctx.BooleanValue("CloseHttps.Result");
+			closeHttpsResponse.RequestId = _ctx.StringValue("CloseHttps.RequestId");
         
 			return closeHttpsResponse;
         }

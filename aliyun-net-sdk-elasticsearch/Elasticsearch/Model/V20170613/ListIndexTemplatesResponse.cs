@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -56,29 +56,17 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class ListIndexTemplates_ResultItem
 		{
 
-			private string indexTemplate;
-
 			private bool? dataStream;
 
-			private int? priority;
+			private string indexTemplate;
 
 			private string ilmPolicy;
+
+			private int? priority;
 
 			private List<string> indexPatterns;
 
 			private ListIndexTemplates_Template template;
-
-			public string IndexTemplate
-			{
-				get
-				{
-					return indexTemplate;
-				}
-				set	
-				{
-					indexTemplate = value;
-				}
-			}
 
 			public bool? DataStream
 			{
@@ -92,15 +80,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public int? Priority
+			public string IndexTemplate
 			{
 				get
 				{
-					return priority;
+					return indexTemplate;
 				}
 				set	
 				{
-					priority = value;
+					indexTemplate = value;
 				}
 			}
 
@@ -113,6 +101,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					ilmPolicy = value;
+				}
+			}
+
+			public int? Priority
+			{
+				get
+				{
+					return priority;
+				}
+				set	
+				{
+					priority = value;
 				}
 			}
 

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -56,21 +56,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class RecommendTemplates_TemplateConfig
 		{
 
-			private string templateName;
-
 			private string content;
 
-			public string TemplateName
-			{
-				get
-				{
-					return templateName;
-				}
-				set	
-				{
-					templateName = value;
-				}
-			}
+			private string templateName;
 
 			public string Content
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					content = value;
+				}
+			}
+
+			public string TemplateName
+			{
+				get
+				{
+					return templateName;
+				}
+				set	
+				{
+					templateName = value;
 				}
 			}
 		}

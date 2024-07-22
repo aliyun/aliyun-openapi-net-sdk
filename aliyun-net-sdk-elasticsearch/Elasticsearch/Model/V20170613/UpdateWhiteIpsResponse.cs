@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -58,6 +58,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private List<string> esIPWhitelist;
 
+			private UpdateWhiteIps_NetworkConfig networkConfig;
+
 			public List<string> EsIPWhitelist
 			{
 				get
@@ -67,6 +69,82 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					esIPWhitelist = value;
+				}
+			}
+
+			public UpdateWhiteIps_NetworkConfig NetworkConfig
+			{
+				get
+				{
+					return networkConfig;
+				}
+				set	
+				{
+					networkConfig = value;
+				}
+			}
+
+			public class UpdateWhiteIps_NetworkConfig
+			{
+
+				private List<UpdateWhiteIps_WhiteIpGroupListItem> whiteIpGroupList;
+
+				public List<UpdateWhiteIps_WhiteIpGroupListItem> WhiteIpGroupList
+				{
+					get
+					{
+						return whiteIpGroupList;
+					}
+					set	
+					{
+						whiteIpGroupList = value;
+					}
+				}
+
+				public class UpdateWhiteIps_WhiteIpGroupListItem
+				{
+
+					private string groupName;
+
+					private string whiteIpType;
+
+					private List<string> ips;
+
+					public string GroupName
+					{
+						get
+						{
+							return groupName;
+						}
+						set	
+						{
+							groupName = value;
+						}
+					}
+
+					public string WhiteIpType
+					{
+						get
+						{
+							return whiteIpType;
+						}
+						set	
+						{
+							whiteIpType = value;
+						}
+					}
+
+					public List<string> Ips
+					{
+						get
+						{
+							return ips;
+						}
+						set	
+						{
+							ips = value;
+						}
+					}
 				}
 			}
 		}

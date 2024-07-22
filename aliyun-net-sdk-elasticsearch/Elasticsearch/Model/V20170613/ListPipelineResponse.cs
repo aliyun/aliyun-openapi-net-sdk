@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -72,11 +72,11 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private string pipelineId;
 
-			private string pipelineStatus;
+			private string gmtUpdateTime;
 
 			private string gmtCreatedTime;
 
-			private string gmtUpdateTime;
+			private string pipelineStatus;
 
 			public string PipelineId
 			{
@@ -90,15 +90,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public string PipelineStatus
+			public string GmtUpdateTime
 			{
 				get
 				{
-					return pipelineStatus;
+					return gmtUpdateTime;
 				}
 				set	
 				{
-					pipelineStatus = value;
+					gmtUpdateTime = value;
 				}
 			}
 
@@ -114,15 +114,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public string GmtUpdateTime
+			public string PipelineStatus
 			{
 				get
 				{
-					return gmtUpdateTime;
+					return pipelineStatus;
 				}
 				set	
 				{
-					gmtUpdateTime = value;
+					pipelineStatus = value;
 				}
 			}
 		}

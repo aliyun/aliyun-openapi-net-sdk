@@ -34,8 +34,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			describeAckOperatorResponse.RequestId = _ctx.StringValue("DescribeAckOperator.RequestId");
 
 			DescribeAckOperatorResponse.DescribeAckOperator_Result result = new DescribeAckOperatorResponse.DescribeAckOperator_Result();
-			result.Status = _ctx.StringValue("DescribeAckOperator.Result.status");
 			result.Version = _ctx.StringValue("DescribeAckOperator.Result.version");
+			result.Status = _ctx.StringValue("DescribeAckOperator.Result.status");
 			describeAckOperatorResponse.Result = result;
         
 			return describeAckOperatorResponse;

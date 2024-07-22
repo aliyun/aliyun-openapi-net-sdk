@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			MigrateToOtherZoneResponse migrateToOtherZoneResponse = new MigrateToOtherZoneResponse();
 
 			migrateToOtherZoneResponse.HttpResponse = _ctx.HttpResponse;
-			migrateToOtherZoneResponse.RequestId = _ctx.StringValue("MigrateToOtherZone.RequestId");
 			migrateToOtherZoneResponse.Result = _ctx.BooleanValue("MigrateToOtherZone.Result");
+			migrateToOtherZoneResponse.RequestId = _ctx.StringValue("MigrateToOtherZone.RequestId");
         
 			return migrateToOtherZoneResponse;
         }

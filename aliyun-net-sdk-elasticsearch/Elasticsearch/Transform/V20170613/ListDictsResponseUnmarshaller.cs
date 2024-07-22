@@ -40,11 +40,11 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<ListDictsResponse.ListDicts_ResultItem> listDictsResponse_result = new List<ListDictsResponse.ListDicts_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListDicts.Result.Length"); i++) {
 				ListDictsResponse.ListDicts_ResultItem resultItem = new ListDictsResponse.ListDicts_ResultItem();
-				resultItem.Name = _ctx.StringValue("ListDicts.Result["+ i +"].name");
 				resultItem.FileSize = _ctx.LongValue("ListDicts.Result["+ i +"].fileSize");
-				resultItem.Type = _ctx.StringValue("ListDicts.Result["+ i +"].type");
-				resultItem.SourceType = _ctx.StringValue("ListDicts.Result["+ i +"].sourceType");
 				resultItem.DownloadUrl = _ctx.StringValue("ListDicts.Result["+ i +"].downloadUrl");
+				resultItem.SourceType = _ctx.StringValue("ListDicts.Result["+ i +"].sourceType");
+				resultItem.Type = _ctx.StringValue("ListDicts.Result["+ i +"].type");
+				resultItem.Name = _ctx.StringValue("ListDicts.Result["+ i +"].name");
 
 				listDictsResponse_result.Add(resultItem);
 			}

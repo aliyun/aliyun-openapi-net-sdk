@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			UpdateReadWritePolicyResponse updateReadWritePolicyResponse = new UpdateReadWritePolicyResponse();
 
 			updateReadWritePolicyResponse.HttpResponse = _ctx.HttpResponse;
-			updateReadWritePolicyResponse.RequestId = _ctx.StringValue("UpdateReadWritePolicy.RequestId");
 			updateReadWritePolicyResponse.Result = _ctx.BooleanValue("UpdateReadWritePolicy.Result");
+			updateReadWritePolicyResponse.RequestId = _ctx.StringValue("UpdateReadWritePolicy.RequestId");
         
 			return updateReadWritePolicyResponse;
         }

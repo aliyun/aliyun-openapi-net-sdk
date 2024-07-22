@@ -34,54 +34,54 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			restartInstanceResponse.RequestId = _ctx.StringValue("RestartInstance.RequestId");
 
 			RestartInstanceResponse.RestartInstance_Result result = new RestartInstanceResponse.RestartInstance_Result();
-			result.CreatedAt = _ctx.StringValue("RestartInstance.Result.createdAt");
-			result.Description = _ctx.StringValue("RestartInstance.Result.description");
-			result.Domain = _ctx.StringValue("RestartInstance.Result.domain");
-			result.EsVersion = _ctx.StringValue("RestartInstance.Result.esVersion");
-			result.InstanceId = _ctx.StringValue("RestartInstance.Result.instanceId");
-			result.KibanaDomain = _ctx.StringValue("RestartInstance.Result.kibanaDomain");
-			result.KibanaPort = _ctx.IntegerValue("RestartInstance.Result.kibanaPort");
 			result.NodeAmount = _ctx.IntegerValue("RestartInstance.Result.nodeAmount");
-			result.PaymentType = _ctx.StringValue("RestartInstance.Result.paymentType");
 			result.PublicDomain = _ctx.StringValue("RestartInstance.Result.publicDomain");
-			result.PublicPort = _ctx.IntegerValue("RestartInstance.Result.publicPort");
+			result.CreatedAt = _ctx.StringValue("RestartInstance.Result.createdAt");
 			result.Status = _ctx.StringValue("RestartInstance.Result.status");
+			result.KibanaPort = _ctx.IntegerValue("RestartInstance.Result.kibanaPort");
+			result.PublicPort = _ctx.IntegerValue("RestartInstance.Result.publicPort");
+			result.PaymentType = _ctx.StringValue("RestartInstance.Result.paymentType");
+			result.Domain = _ctx.StringValue("RestartInstance.Result.domain");
+			result.Description = _ctx.StringValue("RestartInstance.Result.description");
+			result.EsVersion = _ctx.StringValue("RestartInstance.Result.esVersion");
+			result.KibanaDomain = _ctx.StringValue("RestartInstance.Result.kibanaDomain");
 			result.UpdatedAt = _ctx.StringValue("RestartInstance.Result.updatedAt");
+			result.InstanceId = _ctx.StringValue("RestartInstance.Result.instanceId");
 
 			RestartInstanceResponse.RestartInstance_Result.RestartInstance_KibanaConfiguration kibanaConfiguration = new RestartInstanceResponse.RestartInstance_Result.RestartInstance_KibanaConfiguration();
+			kibanaConfiguration.Spec = _ctx.StringValue("RestartInstance.Result.KibanaConfiguration.spec");
 			kibanaConfiguration.Amount = _ctx.IntegerValue("RestartInstance.Result.KibanaConfiguration.amount");
 			kibanaConfiguration.Disk = _ctx.IntegerValue("RestartInstance.Result.KibanaConfiguration.disk");
 			kibanaConfiguration.DiskType = _ctx.StringValue("RestartInstance.Result.KibanaConfiguration.diskType");
-			kibanaConfiguration.Spec = _ctx.StringValue("RestartInstance.Result.KibanaConfiguration.spec");
 			result.KibanaConfiguration = kibanaConfiguration;
 
 			RestartInstanceResponse.RestartInstance_Result.RestartInstance_MasterConfiguration masterConfiguration = new RestartInstanceResponse.RestartInstance_Result.RestartInstance_MasterConfiguration();
+			masterConfiguration.Spec = _ctx.StringValue("RestartInstance.Result.MasterConfiguration.spec");
 			masterConfiguration.Amount = _ctx.IntegerValue("RestartInstance.Result.MasterConfiguration.amount");
 			masterConfiguration.Disk = _ctx.IntegerValue("RestartInstance.Result.MasterConfiguration.disk");
 			masterConfiguration.DiskType = _ctx.StringValue("RestartInstance.Result.MasterConfiguration.diskType");
-			masterConfiguration.Spec = _ctx.StringValue("RestartInstance.Result.MasterConfiguration.spec");
 			result.MasterConfiguration = masterConfiguration;
 
 			RestartInstanceResponse.RestartInstance_Result.RestartInstance_NetworkConfig networkConfig = new RestartInstanceResponse.RestartInstance_Result.RestartInstance_NetworkConfig();
-			networkConfig.Type = _ctx.StringValue("RestartInstance.Result.NetworkConfig.type");
 			networkConfig.VpcId = _ctx.StringValue("RestartInstance.Result.NetworkConfig.vpcId");
 			networkConfig.VsArea = _ctx.StringValue("RestartInstance.Result.NetworkConfig.vsArea");
+			networkConfig.Type = _ctx.StringValue("RestartInstance.Result.NetworkConfig.type");
 			networkConfig.VswitchId = _ctx.StringValue("RestartInstance.Result.NetworkConfig.vswitchId");
 			result.NetworkConfig = networkConfig;
 
 			RestartInstanceResponse.RestartInstance_Result.RestartInstance_NodeSpec nodeSpec = new RestartInstanceResponse.RestartInstance_Result.RestartInstance_NodeSpec();
+			nodeSpec.Spec = _ctx.StringValue("RestartInstance.Result.NodeSpec.spec");
 			nodeSpec.Disk = _ctx.IntegerValue("RestartInstance.Result.NodeSpec.disk");
 			nodeSpec.DiskType = _ctx.StringValue("RestartInstance.Result.NodeSpec.diskType");
-			nodeSpec.Spec = _ctx.StringValue("RestartInstance.Result.NodeSpec.spec");
 			result.NodeSpec = nodeSpec;
 
 			List<RestartInstanceResponse.RestartInstance_Result.RestartInstance_DictListItem> result_dictList = new List<RestartInstanceResponse.RestartInstance_Result.RestartInstance_DictListItem>();
 			for (int i = 0; i < _ctx.Length("RestartInstance.Result.DictList.Length"); i++) {
 				RestartInstanceResponse.RestartInstance_Result.RestartInstance_DictListItem dictListItem = new RestartInstanceResponse.RestartInstance_Result.RestartInstance_DictListItem();
 				dictListItem.FileSize = _ctx.LongValue("RestartInstance.Result.DictList["+ i +"].fileSize");
+				dictListItem.Type = _ctx.StringValue("RestartInstance.Result.DictList["+ i +"].type");
 				dictListItem.Name = _ctx.StringValue("RestartInstance.Result.DictList["+ i +"].name");
 				dictListItem.SourceType = _ctx.StringValue("RestartInstance.Result.DictList["+ i +"].sourceType");
-				dictListItem.Type = _ctx.StringValue("RestartInstance.Result.DictList["+ i +"].type");
 
 				result_dictList.Add(dictListItem);
 			}
@@ -91,9 +91,9 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			for (int i = 0; i < _ctx.Length("RestartInstance.Result.SynonymsDicts.Length"); i++) {
 				RestartInstanceResponse.RestartInstance_Result.RestartInstance_SynonymsDictsItem synonymsDictsItem = new RestartInstanceResponse.RestartInstance_Result.RestartInstance_SynonymsDictsItem();
 				synonymsDictsItem.FileSize = _ctx.LongValue("RestartInstance.Result.SynonymsDicts["+ i +"].fileSize");
+				synonymsDictsItem.Type = _ctx.StringValue("RestartInstance.Result.SynonymsDicts["+ i +"].type");
 				synonymsDictsItem.Name = _ctx.StringValue("RestartInstance.Result.SynonymsDicts["+ i +"].name");
 				synonymsDictsItem.SourceType = _ctx.StringValue("RestartInstance.Result.SynonymsDicts["+ i +"].sourceType");
-				synonymsDictsItem.Type = _ctx.StringValue("RestartInstance.Result.SynonymsDicts["+ i +"].type");
 
 				result_synonymsDicts.Add(synonymsDictsItem);
 			}

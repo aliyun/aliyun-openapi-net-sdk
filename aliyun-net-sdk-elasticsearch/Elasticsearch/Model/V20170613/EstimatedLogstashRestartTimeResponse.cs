@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -56,21 +56,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class EstimatedLogstashRestartTime_Result
 		{
 
-			private long? _value;
-
 			private string unit;
 
-			public long? _Value
-			{
-				get
-				{
-					return _value;
-				}
-				set	
-				{
-					_value = value;
-				}
-			}
+			private long? _value;
 
 			public string Unit
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					unit = value;
+				}
+			}
+
+			public long? _Value
+			{
+				get
+				{
+					return _value;
+				}
+				set	
+				{
+					_value = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -56,21 +56,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class DescribeSnapshotSetting_Result
 		{
 
-			private string quartzRegex;
-
 			private bool? enable;
 
-			public string QuartzRegex
-			{
-				get
-				{
-					return quartzRegex;
-				}
-				set	
-				{
-					quartzRegex = value;
-				}
-			}
+			private string quartzRegex;
 
 			public bool? Enable
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					enable = value;
+				}
+			}
+
+			public string QuartzRegex
+			{
+				get
+				{
+					return quartzRegex;
+				}
+				set	
+				{
+					quartzRegex = value;
 				}
 			}
 		}

@@ -36,10 +36,10 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<ListIndexTemplatesResponse.ListIndexTemplates_ResultItem> listIndexTemplatesResponse_result = new List<ListIndexTemplatesResponse.ListIndexTemplates_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListIndexTemplates.Result.Length"); i++) {
 				ListIndexTemplatesResponse.ListIndexTemplates_ResultItem resultItem = new ListIndexTemplatesResponse.ListIndexTemplates_ResultItem();
-				resultItem.IndexTemplate = _ctx.StringValue("ListIndexTemplates.Result["+ i +"].indexTemplate");
 				resultItem.DataStream = _ctx.BooleanValue("ListIndexTemplates.Result["+ i +"].dataStream");
-				resultItem.Priority = _ctx.IntegerValue("ListIndexTemplates.Result["+ i +"].priority");
+				resultItem.IndexTemplate = _ctx.StringValue("ListIndexTemplates.Result["+ i +"].indexTemplate");
 				resultItem.IlmPolicy = _ctx.StringValue("ListIndexTemplates.Result["+ i +"].ilmPolicy");
+				resultItem.Priority = _ctx.IntegerValue("ListIndexTemplates.Result["+ i +"].priority");
 
 				List<string> resultItem_indexPatterns = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListIndexTemplates.Result["+ i +"].IndexPatterns.Length"); j++) {

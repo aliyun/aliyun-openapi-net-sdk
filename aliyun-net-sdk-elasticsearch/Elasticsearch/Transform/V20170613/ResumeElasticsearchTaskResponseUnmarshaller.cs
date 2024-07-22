@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			ResumeElasticsearchTaskResponse resumeElasticsearchTaskResponse = new ResumeElasticsearchTaskResponse();
 
 			resumeElasticsearchTaskResponse.HttpResponse = _ctx.HttpResponse;
-			resumeElasticsearchTaskResponse.RequestId = _ctx.StringValue("ResumeElasticsearchTask.RequestId");
 			resumeElasticsearchTaskResponse.Result = _ctx.BooleanValue("ResumeElasticsearchTask.Result");
+			resumeElasticsearchTaskResponse.RequestId = _ctx.StringValue("ResumeElasticsearchTask.RequestId");
         
 			return resumeElasticsearchTaskResponse;
         }

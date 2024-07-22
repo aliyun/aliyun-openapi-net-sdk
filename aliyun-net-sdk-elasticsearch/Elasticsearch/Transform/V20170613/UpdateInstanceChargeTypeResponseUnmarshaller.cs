@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			UpdateInstanceChargeTypeResponse updateInstanceChargeTypeResponse = new UpdateInstanceChargeTypeResponse();
 
 			updateInstanceChargeTypeResponse.HttpResponse = _ctx.HttpResponse;
-			updateInstanceChargeTypeResponse.RequestId = _ctx.StringValue("UpdateInstanceChargeType.RequestId");
 			updateInstanceChargeTypeResponse.Result = _ctx.BooleanValue("UpdateInstanceChargeType.Result");
+			updateInstanceChargeTypeResponse.RequestId = _ctx.StringValue("UpdateInstanceChargeType.RequestId");
         
 			return updateInstanceChargeTypeResponse;
         }

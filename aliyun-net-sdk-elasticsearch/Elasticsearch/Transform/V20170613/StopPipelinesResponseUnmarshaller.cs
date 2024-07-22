@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			StopPipelinesResponse stopPipelinesResponse = new StopPipelinesResponse();
 
 			stopPipelinesResponse.HttpResponse = _ctx.HttpResponse;
-			stopPipelinesResponse.RequestId = _ctx.StringValue("StopPipelines.RequestId");
 			stopPipelinesResponse.Result = _ctx.BooleanValue("StopPipelines.Result");
+			stopPipelinesResponse.RequestId = _ctx.StringValue("StopPipelines.RequestId");
         
 			return stopPipelinesResponse;
         }

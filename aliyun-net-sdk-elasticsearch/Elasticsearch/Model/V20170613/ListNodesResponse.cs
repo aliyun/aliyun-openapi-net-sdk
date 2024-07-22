@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -70,15 +70,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class ListNodes_ResultItem
 		{
 
-			private string ecsInstanceId;
+			private string cloudAssistantStatus;
 
 			private string ecsInstanceName;
 
-			private string status;
+			private string ecsInstanceId;
 
 			private string osType;
 
-			private string cloudAssistantStatus;
+			private string status;
 
 			private string agentStatus;
 
@@ -86,15 +86,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private List<ListNodes_IpAddressItem> ipAddress;
 
-			public string EcsInstanceId
+			public string CloudAssistantStatus
 			{
 				get
 				{
-					return ecsInstanceId;
+					return cloudAssistantStatus;
 				}
 				set	
 				{
-					ecsInstanceId = value;
+					cloudAssistantStatus = value;
 				}
 			}
 
@@ -110,15 +110,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public string Status
+			public string EcsInstanceId
 			{
 				get
 				{
-					return status;
+					return ecsInstanceId;
 				}
 				set	
 				{
-					status = value;
+					ecsInstanceId = value;
 				}
 			}
 
@@ -134,15 +134,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public string CloudAssistantStatus
+			public string Status
 			{
 				get
 				{
-					return cloudAssistantStatus;
+					return status;
 				}
 				set	
 				{
-					cloudAssistantStatus = value;
+					status = value;
 				}
 			}
 
@@ -217,21 +217,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			public class ListNodes_IpAddressItem
 			{
 
-				private string host;
-
 				private string ipType;
 
-				public string Host
-				{
-					get
-					{
-						return host;
-					}
-					set	
-					{
-						host = value;
-					}
-				}
+				private string host;
 
 				public string IpType
 				{
@@ -242,6 +230,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						ipType = value;
+					}
+				}
+
+				public string Host
+				{
+					get
+					{
+						return host;
+					}
+					set	
+					{
+						host = value;
 					}
 				}
 			}

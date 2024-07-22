@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			DeleteVpcEndpointResponse deleteVpcEndpointResponse = new DeleteVpcEndpointResponse();
 
 			deleteVpcEndpointResponse.HttpResponse = _ctx.HttpResponse;
-			deleteVpcEndpointResponse.RequestId = _ctx.StringValue("DeleteVpcEndpoint.RequestId");
 			deleteVpcEndpointResponse.Result = _ctx.BooleanValue("DeleteVpcEndpoint.Result");
+			deleteVpcEndpointResponse.RequestId = _ctx.StringValue("DeleteVpcEndpoint.RequestId");
         
 			return deleteVpcEndpointResponse;
         }

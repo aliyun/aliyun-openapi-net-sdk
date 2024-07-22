@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			UpdatePipelineManagementConfigResponse updatePipelineManagementConfigResponse = new UpdatePipelineManagementConfigResponse();
 
 			updatePipelineManagementConfigResponse.HttpResponse = _ctx.HttpResponse;
-			updatePipelineManagementConfigResponse.RequestId = _ctx.StringValue("UpdatePipelineManagementConfig.RequestId");
 			updatePipelineManagementConfigResponse.Result = _ctx.BooleanValue("UpdatePipelineManagementConfig.Result");
+			updatePipelineManagementConfigResponse.RequestId = _ctx.StringValue("UpdatePipelineManagementConfig.RequestId");
         
 			return updatePipelineManagementConfigResponse;
         }

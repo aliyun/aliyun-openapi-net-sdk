@@ -40,11 +40,11 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<ListPluginsResponse.ListPlugins_ResultItem> listPluginsResponse_result = new List<ListPluginsResponse.ListPlugins_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListPlugins.Result.Length"); i++) {
 				ListPluginsResponse.ListPlugins_ResultItem resultItem = new ListPluginsResponse.ListPlugins_ResultItem();
-				resultItem.Name = _ctx.StringValue("ListPlugins.Result["+ i +"].name");
-				resultItem.State = _ctx.StringValue("ListPlugins.Result["+ i +"].state");
-				resultItem.Source = _ctx.StringValue("ListPlugins.Result["+ i +"].source");
 				resultItem.Description = _ctx.StringValue("ListPlugins.Result["+ i +"].description");
 				resultItem.SpecificationUrl = _ctx.StringValue("ListPlugins.Result["+ i +"].specificationUrl");
+				resultItem.State = _ctx.StringValue("ListPlugins.Result["+ i +"].state");
+				resultItem.Source = _ctx.StringValue("ListPlugins.Result["+ i +"].source");
+				resultItem.Name = _ctx.StringValue("ListPlugins.Result["+ i +"].name");
 
 				listPluginsResponse_result.Add(resultItem);
 			}

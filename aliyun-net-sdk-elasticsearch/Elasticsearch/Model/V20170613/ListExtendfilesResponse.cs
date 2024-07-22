@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -56,23 +56,23 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class ListExtendfiles_ResultItem
 		{
 
-			private string name;
+			private string filePath;
 
 			private long? fileSize;
 
+			private string name;
+
 			private string sourceType;
 
-			private string filePath;
-
-			public string Name
+			public string FilePath
 			{
 				get
 				{
-					return name;
+					return filePath;
 				}
 				set	
 				{
-					name = value;
+					filePath = value;
 				}
 			}
 
@@ -88,6 +88,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
 			public string SourceType
 			{
 				get
@@ -97,18 +109,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					sourceType = value;
-				}
-			}
-
-			public string FilePath
-			{
-				get
-				{
-					return filePath;
-				}
-				set	
-				{
-					filePath = value;
 				}
 			}
 		}

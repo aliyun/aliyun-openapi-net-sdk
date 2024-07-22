@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			DeactivateZonesResponse deactivateZonesResponse = new DeactivateZonesResponse();
 
 			deactivateZonesResponse.HttpResponse = _ctx.HttpResponse;
-			deactivateZonesResponse.RequestId = _ctx.StringValue("DeactivateZones.RequestId");
 			deactivateZonesResponse.Result = _ctx.BooleanValue("DeactivateZones.Result");
+			deactivateZonesResponse.RequestId = _ctx.StringValue("DeactivateZones.RequestId");
         
 			return deactivateZonesResponse;
         }

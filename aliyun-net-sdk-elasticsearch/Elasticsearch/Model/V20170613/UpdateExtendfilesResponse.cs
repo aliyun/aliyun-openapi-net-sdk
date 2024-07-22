@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -56,23 +56,11 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class UpdateExtendfiles_ResultItem
 		{
 
-			private string name;
-
 			private long? fileSize;
 
-			private string sourceType;
+			private string name;
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+			private string sourceType;
 
 			public long? FileSize
 			{
@@ -83,6 +71,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					fileSize = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 

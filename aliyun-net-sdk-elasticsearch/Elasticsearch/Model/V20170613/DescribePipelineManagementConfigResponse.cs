@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -56,27 +56,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class DescribePipelineManagementConfig_Result
 		{
 
-			private string pipelineManagementType;
-
 			private string endpoints;
 
 			private string userName;
 
+			private string pipelineManagementType;
+
 			private string esInstanceId;
 
 			private List<string> pipelineIds;
-
-			public string PipelineManagementType
-			{
-				get
-				{
-					return pipelineManagementType;
-				}
-				set	
-				{
-					pipelineManagementType = value;
-				}
-			}
 
 			public string Endpoints
 			{
@@ -99,6 +87,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					userName = value;
+				}
+			}
+
+			public string PipelineManagementType
+			{
+				get
+				{
+					return pipelineManagementType;
+				}
+				set	
+				{
+					pipelineManagementType = value;
 				}
 			}
 

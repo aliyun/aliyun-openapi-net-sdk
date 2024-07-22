@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -89,11 +89,11 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 				private string triggerType;
 
-				private string cronExpression;
+				private int? replicaCount;
 
 				private int? elasticNodeCount;
 
-				private int? replicaCount;
+				private string cronExpression;
 
 				private List<string> targetIndices;
 
@@ -109,15 +109,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					}
 				}
 
-				public string CronExpression
+				public int? ReplicaCount
 				{
 					get
 					{
-						return cronExpression;
+						return replicaCount;
 					}
 					set	
 					{
-						cronExpression = value;
+						replicaCount = value;
 					}
 				}
 
@@ -133,15 +133,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					}
 				}
 
-				public int? ReplicaCount
+				public string CronExpression
 				{
 					get
 					{
-						return replicaCount;
+						return cronExpression;
 					}
 					set	
 					{
-						replicaCount = value;
+						cronExpression = value;
 					}
 				}
 
@@ -163,11 +163,11 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 				private string triggerType;
 
-				private string cronExpression;
+				private int? replicaCount;
 
 				private int? elasticNodeCount;
 
-				private int? replicaCount;
+				private string cronExpression;
 
 				private List<string> targetIndices1;
 
@@ -183,15 +183,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					}
 				}
 
-				public string CronExpression
+				public int? ReplicaCount
 				{
 					get
 					{
-						return cronExpression;
+						return replicaCount;
 					}
 					set	
 					{
-						cronExpression = value;
+						replicaCount = value;
 					}
 				}
 
@@ -207,15 +207,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					}
 				}
 
-				public int? ReplicaCount
+				public string CronExpression
 				{
 					get
 					{
-						return replicaCount;
+						return cronExpression;
 					}
 					set	
 					{
-						replicaCount = value;
+						cronExpression = value;
 					}
 				}
 

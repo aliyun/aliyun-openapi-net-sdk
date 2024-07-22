@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			InitializeOperationRoleResponse initializeOperationRoleResponse = new InitializeOperationRoleResponse();
 
 			initializeOperationRoleResponse.HttpResponse = _ctx.HttpResponse;
-			initializeOperationRoleResponse.RequestId = _ctx.StringValue("InitializeOperationRole.RequestId");
 			initializeOperationRoleResponse.Result = _ctx.BooleanValue("InitializeOperationRole.Result");
+			initializeOperationRoleResponse.RequestId = _ctx.StringValue("InitializeOperationRole.RequestId");
         
 			return initializeOperationRoleResponse;
         }

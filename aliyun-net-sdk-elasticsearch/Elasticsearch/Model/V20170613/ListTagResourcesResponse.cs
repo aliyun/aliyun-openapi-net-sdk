@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 	public class ListTagResourcesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? pageSize;
+
+		private string requestId;
 
 		private ListTagResources_Headers headers;
 
 		private ListTagResources_TagResources tagResources;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public int? PageSize
 		{
@@ -54,6 +42,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			set	
 			{
 				pageSize = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -119,23 +119,23 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			public class ListTagResources_TagResourceItem
 			{
 
-				private string resourceId;
+				private string tagValue;
 
 				private string resourceType;
 
+				private string resourceId;
+
 				private string tagKey;
 
-				private string tagValue;
-
-				public string ResourceId
+				public string TagValue
 				{
 					get
 					{
-						return resourceId;
+						return tagValue;
 					}
 					set	
 					{
-						resourceId = value;
+						tagValue = value;
 					}
 				}
 
@@ -151,6 +151,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					}
 				}
 
+				public string ResourceId
+				{
+					get
+					{
+						return resourceId;
+					}
+					set	
+					{
+						resourceId = value;
+					}
+				}
+
 				public string TagKey
 				{
 					get
@@ -160,18 +172,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						tagKey = value;
-					}
-				}
-
-				public string TagValue
-				{
-					get
-					{
-						return tagValue;
-					}
-					set	
-					{
-						tagValue = value;
 					}
 				}
 			}

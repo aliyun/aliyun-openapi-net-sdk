@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -70,31 +70,19 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class ListDataStreams_ResultItem
 		{
 
-			private string health;
-
 			private long? totalStorageSize;
-
-			private string name;
-
-			private long? managedStorageSize;
 
 			private string indexTemplateName;
 
 			private string ilmPolicyName;
 
-			private List<ListDataStreams_IndicesItem> indices;
+			private string name;
 
-			public string Health
-			{
-				get
-				{
-					return health;
-				}
-				set	
-				{
-					health = value;
-				}
-			}
+			private string health;
+
+			private long? managedStorageSize;
+
+			private List<ListDataStreams_IndicesItem> indices;
 
 			public long? TotalStorageSize
 			{
@@ -105,30 +93,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					totalStorageSize = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public long? ManagedStorageSize
-			{
-				get
-				{
-					return managedStorageSize;
-				}
-				set	
-				{
-					managedStorageSize = value;
 				}
 			}
 
@@ -156,6 +120,42 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string Health
+			{
+				get
+				{
+					return health;
+				}
+				set	
+				{
+					health = value;
+				}
+			}
+
+			public long? ManagedStorageSize
+			{
+				get
+				{
+					return managedStorageSize;
+				}
+				set	
+				{
+					managedStorageSize = value;
+				}
+			}
+
 			public List<ListDataStreams_IndicesItem> Indices
 			{
 				get
@@ -171,17 +171,65 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			public class ListDataStreams_IndicesItem
 			{
 
+				private bool? isManaged;
+
+				private string createTime;
+
+				private long? size;
+
+				private string managedStatus;
+
 				private string name;
 
 				private string health;
 
-				private long? size;
+				public bool? IsManaged
+				{
+					get
+					{
+						return isManaged;
+					}
+					set	
+					{
+						isManaged = value;
+					}
+				}
 
-				private string createTime;
+				public string CreateTime
+				{
+					get
+					{
+						return createTime;
+					}
+					set	
+					{
+						createTime = value;
+					}
+				}
 
-				private bool? isManaged;
+				public long? Size
+				{
+					get
+					{
+						return size;
+					}
+					set	
+					{
+						size = value;
+					}
+				}
 
-				private string managedStatus;
+				public string ManagedStatus
+				{
+					get
+					{
+						return managedStatus;
+					}
+					set	
+					{
+						managedStatus = value;
+					}
+				}
 
 				public string Name
 				{
@@ -206,75 +254,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						health = value;
 					}
 				}
-
-				public long? Size
-				{
-					get
-					{
-						return size;
-					}
-					set	
-					{
-						size = value;
-					}
-				}
-
-				public string CreateTime
-				{
-					get
-					{
-						return createTime;
-					}
-					set	
-					{
-						createTime = value;
-					}
-				}
-
-				public bool? IsManaged
-				{
-					get
-					{
-						return isManaged;
-					}
-					set	
-					{
-						isManaged = value;
-					}
-				}
-
-				public string ManagedStatus
-				{
-					get
-					{
-						return managedStatus;
-					}
-					set	
-					{
-						managedStatus = value;
-					}
-				}
 			}
 		}
 
 		public class ListDataStreams_Headers
 		{
 
-			private int? xManagedCount;
-
 			private long? xManagedStorageSize;
 
-			public int? XManagedCount
-			{
-				get
-				{
-					return xManagedCount;
-				}
-				set	
-				{
-					xManagedCount = value;
-				}
-			}
+			private int? xManagedCount;
 
 			public long? XManagedStorageSize
 			{
@@ -285,6 +273,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					xManagedStorageSize = value;
+				}
+			}
+
+			public int? XManagedCount
+			{
+				get
+				{
+					return xManagedCount;
+				}
+				set	
+				{
+					xManagedCount = value;
 				}
 			}
 		}

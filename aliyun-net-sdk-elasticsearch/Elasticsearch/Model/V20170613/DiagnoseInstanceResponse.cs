@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -56,15 +56,27 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class DiagnoseInstance_Result
 		{
 
-			private string reportId;
+			private long? createTime;
 
-			private string instanceId;
+			private string reportId;
 
 			private string state;
 
-			private long? createTime;
+			private string instanceId;
 
 			private List<DiagnoseInstance_DiagnoseItemsItem> diagnoseItems;
+
+			public long? CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
 
 			public string ReportId
 			{
@@ -75,18 +87,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					reportId = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
 				}
 			}
 
@@ -102,15 +102,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public long? CreateTime
+			public string InstanceId
 			{
 				get
 				{
-					return createTime;
+					return instanceId;
 				}
 				set	
 				{
-					createTime = value;
+					instanceId = value;
 				}
 			}
 
@@ -174,15 +174,27 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				public class DiagnoseInstance_Detail
 				{
 
+					private string type;
+
 					private string name;
 
 					private string desc;
 
-					private string type;
+					private string result;
 
 					private string suggest;
 
-					private string result;
+					public string Type
+					{
+						get
+						{
+							return type;
+						}
+						set	
+						{
+							type = value;
+						}
+					}
 
 					public string Name
 					{
@@ -208,15 +220,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						}
 					}
 
-					public string Type
+					public string Result
 					{
 						get
 						{
-							return type;
+							return result;
 						}
 						set	
 						{
-							type = value;
+							result = value;
 						}
 					}
 
@@ -229,18 +241,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						set	
 						{
 							suggest = value;
-						}
-					}
-
-					public string Result
-					{
-						get
-						{
-							return result;
-						}
-						set	
-						{
-							result = value;
 						}
 					}
 				}

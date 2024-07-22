@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			StopCollectorResponse stopCollectorResponse = new StopCollectorResponse();
 
 			stopCollectorResponse.HttpResponse = _ctx.HttpResponse;
-			stopCollectorResponse.RequestId = _ctx.StringValue("StopCollector.RequestId");
 			stopCollectorResponse.Result = _ctx.BooleanValue("StopCollector.Result");
+			stopCollectorResponse.RequestId = _ctx.StringValue("StopCollector.RequestId");
         
 			return stopCollectorResponse;
         }

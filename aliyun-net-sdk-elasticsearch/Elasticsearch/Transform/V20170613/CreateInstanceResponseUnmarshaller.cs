@@ -31,11 +31,6 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			CreateInstanceResponse createInstanceResponse = new CreateInstanceResponse();
 
 			createInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			createInstanceResponse.RequestId = _ctx.StringValue("CreateInstance.RequestId");
-
-			CreateInstanceResponse.CreateInstance_Result result = new CreateInstanceResponse.CreateInstance_Result();
-			result.InstanceId = _ctx.StringValue("CreateInstance.Result.instanceId");
-			createInstanceResponse.Result = result;
         
 			return createInstanceResponse;
         }

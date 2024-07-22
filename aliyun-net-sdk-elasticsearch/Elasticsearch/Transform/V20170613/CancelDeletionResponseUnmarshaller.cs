@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			CancelDeletionResponse cancelDeletionResponse = new CancelDeletionResponse();
 
 			cancelDeletionResponse.HttpResponse = _ctx.HttpResponse;
-			cancelDeletionResponse.RequestId = _ctx.StringValue("CancelDeletion.RequestId");
 			cancelDeletionResponse.Result = _ctx.BooleanValue("CancelDeletion.Result");
+			cancelDeletionResponse.RequestId = _ctx.StringValue("CancelDeletion.RequestId");
         
 			return cancelDeletionResponse;
         }

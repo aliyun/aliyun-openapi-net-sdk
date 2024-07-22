@@ -45,6 +45,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private string clientToken;
 
+		private string body;
+
 		public string InstanceId
 		{
 			get
@@ -68,6 +70,19 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "clientToken", value);
+			}
+		}
+
+		public string Body
+		{
+			get
+			{
+				return body;
+			}
+			set	
+			{
+				body = value;
+				DictionaryUtil.Add(BodyParameters, "body", value);
 			}
 		}
 

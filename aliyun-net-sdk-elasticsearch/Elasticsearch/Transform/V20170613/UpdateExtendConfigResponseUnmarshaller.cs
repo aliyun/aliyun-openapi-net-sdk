@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			UpdateExtendConfigResponse updateExtendConfigResponse = new UpdateExtendConfigResponse();
 
 			updateExtendConfigResponse.HttpResponse = _ctx.HttpResponse;
-			updateExtendConfigResponse.RequestId = _ctx.StringValue("UpdateExtendConfig.RequestId");
 			updateExtendConfigResponse.Result = _ctx.BooleanValue("UpdateExtendConfig.Result");
+			updateExtendConfigResponse.RequestId = _ctx.StringValue("UpdateExtendConfig.RequestId");
         
 			return updateExtendConfigResponse;
         }

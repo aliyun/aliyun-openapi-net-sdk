@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -56,31 +56,31 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class RestartInstance_Result
 		{
 
-			private string createdAt;
-
-			private string description;
-
-			private string domain;
-
-			private string esVersion;
-
-			private string instanceId;
-
-			private string kibanaDomain;
-
-			private int? kibanaPort;
-
 			private int? nodeAmount;
-
-			private string paymentType;
 
 			private string publicDomain;
 
-			private int? publicPort;
+			private string createdAt;
 
 			private string status;
 
+			private int? kibanaPort;
+
+			private int? publicPort;
+
+			private string paymentType;
+
+			private string domain;
+
+			private string description;
+
+			private string esVersion;
+
+			private string kibanaDomain;
+
 			private string updatedAt;
+
+			private string instanceId;
 
 			private List<RestartInstance_DictListItem> dictList;
 
@@ -94,90 +94,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private RestartInstance_NodeSpec nodeSpec;
 
-			public string CreatedAt
-			{
-				get
-				{
-					return createdAt;
-				}
-				set	
-				{
-					createdAt = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string Domain
-			{
-				get
-				{
-					return domain;
-				}
-				set	
-				{
-					domain = value;
-				}
-			}
-
-			public string EsVersion
-			{
-				get
-				{
-					return esVersion;
-				}
-				set	
-				{
-					esVersion = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public string KibanaDomain
-			{
-				get
-				{
-					return kibanaDomain;
-				}
-				set	
-				{
-					kibanaDomain = value;
-				}
-			}
-
-			public int? KibanaPort
-			{
-				get
-				{
-					return kibanaPort;
-				}
-				set	
-				{
-					kibanaPort = value;
-				}
-			}
-
 			public int? NodeAmount
 			{
 				get
@@ -187,18 +103,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					nodeAmount = value;
-				}
-			}
-
-			public string PaymentType
-			{
-				get
-				{
-					return paymentType;
-				}
-				set	
-				{
-					paymentType = value;
 				}
 			}
 
@@ -214,15 +118,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public int? PublicPort
+			public string CreatedAt
 			{
 				get
 				{
-					return publicPort;
+					return createdAt;
 				}
 				set	
 				{
-					publicPort = value;
+					createdAt = value;
 				}
 			}
 
@@ -238,6 +142,90 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
+			public int? KibanaPort
+			{
+				get
+				{
+					return kibanaPort;
+				}
+				set	
+				{
+					kibanaPort = value;
+				}
+			}
+
+			public int? PublicPort
+			{
+				get
+				{
+					return publicPort;
+				}
+				set	
+				{
+					publicPort = value;
+				}
+			}
+
+			public string PaymentType
+			{
+				get
+				{
+					return paymentType;
+				}
+				set	
+				{
+					paymentType = value;
+				}
+			}
+
+			public string Domain
+			{
+				get
+				{
+					return domain;
+				}
+				set	
+				{
+					domain = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string EsVersion
+			{
+				get
+				{
+					return esVersion;
+				}
+				set	
+				{
+					esVersion = value;
+				}
+			}
+
+			public string KibanaDomain
+			{
+				get
+				{
+					return kibanaDomain;
+				}
+				set	
+				{
+					kibanaDomain = value;
+				}
+			}
+
 			public string UpdatedAt
 			{
 				get
@@ -247,6 +235,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					updatedAt = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
 				}
 			}
 
@@ -327,11 +327,11 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 				private long? fileSize;
 
+				private string type;
+
 				private string name;
 
 				private string sourceType;
-
-				private string type;
 
 				public long? FileSize
 				{
@@ -342,6 +342,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						fileSize = value;
+					}
+				}
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
 					}
 				}
 
@@ -366,18 +378,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						sourceType = value;
-					}
-				}
-
-				public string Type
-				{
-					get
-					{
-						return type;
-					}
-					set	
-					{
-						type = value;
 					}
 				}
 			}
@@ -387,11 +387,11 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 				private long? fileSize;
 
+				private string type;
+
 				private string name;
 
 				private string sourceType;
-
-				private string type;
 
 				public long? FileSize
 				{
@@ -402,6 +402,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						fileSize = value;
+					}
+				}
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
 					}
 				}
 
@@ -428,22 +440,12 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						sourceType = value;
 					}
 				}
-
-				public string Type
-				{
-					get
-					{
-						return type;
-					}
-					set	
-					{
-						type = value;
-					}
-				}
 			}
 
 			public class RestartInstance_KibanaConfiguration
 			{
+
+				private string spec;
 
 				private int? amount;
 
@@ -451,7 +453,17 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 				private string diskType;
 
-				private string spec;
+				public string Spec
+				{
+					get
+					{
+						return spec;
+					}
+					set	
+					{
+						spec = value;
+					}
+				}
 
 				public int? Amount
 				{
@@ -486,18 +498,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						diskType = value;
-					}
-				}
-
-				public string Spec
-				{
-					get
-					{
-						return spec;
-					}
-					set	
-					{
-						spec = value;
 					}
 				}
 			}
@@ -505,13 +505,25 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			public class RestartInstance_MasterConfiguration
 			{
 
+				private string spec;
+
 				private int? amount;
 
 				private int? disk;
 
 				private string diskType;
 
-				private string spec;
+				public string Spec
+				{
+					get
+					{
+						return spec;
+					}
+					set	
+					{
+						spec = value;
+					}
+				}
 
 				public int? Amount
 				{
@@ -548,42 +560,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						diskType = value;
 					}
 				}
-
-				public string Spec
-				{
-					get
-					{
-						return spec;
-					}
-					set	
-					{
-						spec = value;
-					}
-				}
 			}
 
 			public class RestartInstance_NetworkConfig
 			{
 
-				private string type;
-
 				private string vpcId;
 
 				private string vsArea;
 
-				private string vswitchId;
+				private string type;
 
-				public string Type
-				{
-					get
-					{
-						return type;
-					}
-					set	
-					{
-						type = value;
-					}
-				}
+				private string vswitchId;
 
 				public string VpcId
 				{
@@ -609,6 +597,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					}
 				}
 
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
+					}
+				}
+
 				public string VswitchId
 				{
 					get
@@ -625,11 +625,23 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			public class RestartInstance_NodeSpec
 			{
 
+				private string spec;
+
 				private int? disk;
 
 				private string diskType;
 
-				private string spec;
+				public string Spec
+				{
+					get
+					{
+						return spec;
+					}
+					set	
+					{
+						spec = value;
+					}
+				}
 
 				public int? Disk
 				{
@@ -652,18 +664,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						diskType = value;
-					}
-				}
-
-				public string Spec
-				{
-					get
-					{
-						return spec;
-					}
-					set	
-					{
-						spec = value;
 					}
 				}
 			}

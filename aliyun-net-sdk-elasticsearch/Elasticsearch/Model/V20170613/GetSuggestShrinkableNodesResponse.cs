@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -56,21 +56,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class GetSuggestShrinkableNodes_ResultItem
 		{
 
-			private string host;
-
 			private int? port;
 
-			public string Host
-			{
-				get
-				{
-					return host;
-				}
-				set	
-				{
-					host = value;
-				}
-			}
+			private string host;
 
 			public int? Port
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					port = value;
+				}
+			}
+
+			public string Host
+			{
+				get
+				{
+					return host;
+				}
+				set	
+				{
+					host = value;
 				}
 			}
 		}

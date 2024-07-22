@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -56,25 +56,13 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class UpdateHotIkDicts_DictList
 		{
 
-			private string name;
-
 			private long? fileSize;
-
-			private string type;
 
 			private string sourceType;
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+			private string name;
+
+			private string type;
 
 			public long? FileSize
 			{
@@ -88,18 +76,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
-
 			public string SourceType
 			{
 				get
@@ -109,6 +85,30 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					sourceType = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
 				}
 			}
 		}

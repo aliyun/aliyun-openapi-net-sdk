@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -56,23 +56,11 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class ListDictInformation_Result
 		{
 
-			private long? fileSize;
-
 			private string type;
 
-			private ListDictInformation_OssObject ossObject;
+			private long? fileSize;
 
-			public long? FileSize
-			{
-				get
-				{
-					return fileSize;
-				}
-				set	
-				{
-					fileSize = value;
-				}
-			}
+			private ListDictInformation_OssObject ossObject;
 
 			public string Type
 			{
@@ -83,6 +71,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					type = value;
+				}
+			}
+
+			public long? FileSize
+			{
+				get
+				{
+					return fileSize;
+				}
+				set	
+				{
+					fileSize = value;
 				}
 			}
 
@@ -101,23 +101,11 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			public class ListDictInformation_OssObject
 			{
 
-				private string bucketName;
-
 				private string key;
 
-				private string etag;
+				private string bucketName;
 
-				public string BucketName
-				{
-					get
-					{
-						return bucketName;
-					}
-					set	
-					{
-						bucketName = value;
-					}
-				}
+				private string etag;
 
 				public string Key
 				{
@@ -128,6 +116,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						key = value;
+					}
+				}
+
+				public string BucketName
+				{
+					get
+					{
+						return bucketName;
+					}
+					set	
+					{
+						bucketName = value;
 					}
 				}
 

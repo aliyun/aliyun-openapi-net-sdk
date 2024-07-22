@@ -43,6 +43,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private string alarmGroupId;
 
+		private string body;
+
 		private string projectId;
 
 		public string AlarmGroupId
@@ -55,6 +57,19 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			{
 				alarmGroupId = value;
 				DictionaryUtil.Add(PathParameters, "AlarmGroupId", value);
+			}
+		}
+
+		public string Body
+		{
+			get
+			{
+				return body;
+			}
+			set	
+			{
+				body = value;
+				DictionaryUtil.Add(BodyParameters, "body", value);
 			}
 		}
 

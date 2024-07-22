@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -56,9 +56,23 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class UpdateKibanaWhiteIps_Result
 		{
 
+			private List<string> kibanaPrivateIPWhitelist;
+
 			private List<string> kibanaIPWhitelist;
 
-			private List<string> kibanaPrivateIPWhitelist;
+			private UpdateKibanaWhiteIps_NetworkConfig networkConfig;
+
+			public List<string> KibanaPrivateIPWhitelist
+			{
+				get
+				{
+					return kibanaPrivateIPWhitelist;
+				}
+				set	
+				{
+					kibanaPrivateIPWhitelist = value;
+				}
+			}
 
 			public List<string> KibanaIPWhitelist
 			{
@@ -72,15 +86,135 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public List<string> KibanaPrivateIPWhitelist
+			public UpdateKibanaWhiteIps_NetworkConfig NetworkConfig
 			{
 				get
 				{
-					return kibanaPrivateIPWhitelist;
+					return networkConfig;
 				}
 				set	
 				{
-					kibanaPrivateIPWhitelist = value;
+					networkConfig = value;
+				}
+			}
+
+			public class UpdateKibanaWhiteIps_NetworkConfig
+			{
+
+				private string vpcId;
+
+				private string vswitchId;
+
+				private string vsArea;
+
+				private string type;
+
+				private List<UpdateKibanaWhiteIps_WhiteIpGroupListItem> whiteIpGroupList;
+
+				public string VpcId
+				{
+					get
+					{
+						return vpcId;
+					}
+					set	
+					{
+						vpcId = value;
+					}
+				}
+
+				public string VswitchId
+				{
+					get
+					{
+						return vswitchId;
+					}
+					set	
+					{
+						vswitchId = value;
+					}
+				}
+
+				public string VsArea
+				{
+					get
+					{
+						return vsArea;
+					}
+					set	
+					{
+						vsArea = value;
+					}
+				}
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
+					}
+				}
+
+				public List<UpdateKibanaWhiteIps_WhiteIpGroupListItem> WhiteIpGroupList
+				{
+					get
+					{
+						return whiteIpGroupList;
+					}
+					set	
+					{
+						whiteIpGroupList = value;
+					}
+				}
+
+				public class UpdateKibanaWhiteIps_WhiteIpGroupListItem
+				{
+
+					private string groupName;
+
+					private string whiteIpType;
+
+					private List<string> ips;
+
+					public string GroupName
+					{
+						get
+						{
+							return groupName;
+						}
+						set	
+						{
+							groupName = value;
+						}
+					}
+
+					public string WhiteIpType
+					{
+						get
+						{
+							return whiteIpType;
+						}
+						set	
+						{
+							whiteIpType = value;
+						}
+					}
+
+					public List<string> Ips
+					{
+						get
+						{
+							return ips;
+						}
+						set	
+						{
+							ips = value;
+						}
+					}
 				}
 			}
 		}

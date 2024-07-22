@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -58,27 +58,27 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private string pipelineId;
 
-			private string config;
-
-			private string pipelineStatus;
-
-			private string gmtCreatedTime;
-
 			private string gmtUpdateTime;
-
-			private int? workers;
-
-			private int? batchSize;
-
-			private int? batchDelay;
-
-			private string description;
 
 			private string queueType;
 
+			private int? queueCheckPointWrites;
+
 			private int? queueMaxBytes;
 
-			private int? queueCheckPointWrites;
+			private string config;
+
+			private int? batchDelay;
+
+			private int? workers;
+
+			private string description;
+
+			private string gmtCreatedTime;
+
+			private int? batchSize;
+
+			private string pipelineStatus;
 
 			public string PipelineId
 			{
@@ -89,42 +89,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					pipelineId = value;
-				}
-			}
-
-			public string Config
-			{
-				get
-				{
-					return config;
-				}
-				set	
-				{
-					config = value;
-				}
-			}
-
-			public string PipelineStatus
-			{
-				get
-				{
-					return pipelineStatus;
-				}
-				set	
-				{
-					pipelineStatus = value;
-				}
-			}
-
-			public string GmtCreatedTime
-			{
-				get
-				{
-					return gmtCreatedTime;
-				}
-				set	
-				{
-					gmtCreatedTime = value;
 				}
 			}
 
@@ -140,54 +104,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public int? Workers
-			{
-				get
-				{
-					return workers;
-				}
-				set	
-				{
-					workers = value;
-				}
-			}
-
-			public int? BatchSize
-			{
-				get
-				{
-					return batchSize;
-				}
-				set	
-				{
-					batchSize = value;
-				}
-			}
-
-			public int? BatchDelay
-			{
-				get
-				{
-					return batchDelay;
-				}
-				set	
-				{
-					batchDelay = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
 			public string QueueType
 			{
 				get
@@ -197,6 +113,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					queueType = value;
+				}
+			}
+
+			public int? QueueCheckPointWrites
+			{
+				get
+				{
+					return queueCheckPointWrites;
+				}
+				set	
+				{
+					queueCheckPointWrites = value;
 				}
 			}
 
@@ -212,15 +140,87 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public int? QueueCheckPointWrites
+			public string Config
 			{
 				get
 				{
-					return queueCheckPointWrites;
+					return config;
 				}
 				set	
 				{
-					queueCheckPointWrites = value;
+					config = value;
+				}
+			}
+
+			public int? BatchDelay
+			{
+				get
+				{
+					return batchDelay;
+				}
+				set	
+				{
+					batchDelay = value;
+				}
+			}
+
+			public int? Workers
+			{
+				get
+				{
+					return workers;
+				}
+				set	
+				{
+					workers = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string GmtCreatedTime
+			{
+				get
+				{
+					return gmtCreatedTime;
+				}
+				set	
+				{
+					gmtCreatedTime = value;
+				}
+			}
+
+			public int? BatchSize
+			{
+				get
+				{
+					return batchSize;
+				}
+				set	
+				{
+					batchSize = value;
+				}
+			}
+
+			public string PipelineStatus
+			{
+				get
+				{
+					return pipelineStatus;
+				}
+				set	
+				{
+					pipelineStatus = value;
 				}
 			}
 		}

@@ -32,6 +32,7 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 
 			updateAdminPasswordResponse.HttpResponse = _ctx.HttpResponse;
 			updateAdminPasswordResponse.RequestId = _ctx.StringValue("UpdateAdminPassword.RequestId");
+			updateAdminPasswordResponse.Result = _ctx.BooleanValue("UpdateAdminPassword.Result");
         
 			return updateAdminPasswordResponse;
         }

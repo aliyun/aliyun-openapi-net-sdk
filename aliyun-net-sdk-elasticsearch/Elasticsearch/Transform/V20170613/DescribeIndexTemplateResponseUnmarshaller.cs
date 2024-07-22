@@ -34,10 +34,10 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			describeIndexTemplateResponse.RequestId = _ctx.StringValue("DescribeIndexTemplate.RequestId");
 
 			DescribeIndexTemplateResponse.DescribeIndexTemplate_Result result = new DescribeIndexTemplateResponse.DescribeIndexTemplate_Result();
-			result.IndexTemplate = _ctx.StringValue("DescribeIndexTemplate.Result.indexTemplate");
 			result.DataStream = _ctx.BooleanValue("DescribeIndexTemplate.Result.dataStream");
-			result.Priority = _ctx.IntegerValue("DescribeIndexTemplate.Result.priority");
+			result.IndexTemplate = _ctx.StringValue("DescribeIndexTemplate.Result.indexTemplate");
 			result.IlmPolicy = _ctx.StringValue("DescribeIndexTemplate.Result.ilmPolicy");
+			result.Priority = _ctx.IntegerValue("DescribeIndexTemplate.Result.priority");
 
 			List<string> result_indexPatterns = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeIndexTemplate.Result.IndexPatterns.Length"); i++) {

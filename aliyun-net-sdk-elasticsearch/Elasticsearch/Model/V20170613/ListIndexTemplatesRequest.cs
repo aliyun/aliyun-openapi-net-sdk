@@ -43,6 +43,10 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private string instanceId;
 
+		private int? size;
+
+		private int? page;
+
 		private string indexTemplate;
 
 		public string InstanceId
@@ -55,6 +59,32 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			{
 				instanceId = value;
 				DictionaryUtil.Add(PathParameters, "InstanceId", value);
+			}
+		}
+
+		public int? Size
+		{
+			get
+			{
+				return size;
+			}
+			set	
+			{
+				size = value;
+				DictionaryUtil.Add(QueryParameters, "size", value.ToString());
+			}
+		}
+
+		public int? Page
+		{
+			get
+			{
+				return page;
+			}
+			set	
+			{
+				page = value;
+				DictionaryUtil.Add(QueryParameters, "page", value.ToString());
 			}
 		}
 

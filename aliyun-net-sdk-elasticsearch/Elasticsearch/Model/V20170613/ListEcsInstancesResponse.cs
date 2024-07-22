@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -70,31 +70,31 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class ListEcsInstances_ResultItem
 		{
 
-			private string ecsInstanceId;
+			private string cloudAssistantStatus;
 
 			private string ecsInstanceName;
 
-			private string status;
+			private string ecsInstanceId;
 
 			private string tags;
 
 			private string osType;
 
-			private string cloudAssistantStatus;
+			private string status;
 
 			private List<ListEcsInstances_IpAddressItem> ipAddress;
 
 			private List<ListEcsInstances_CollectorsItem> collectors;
 
-			public string EcsInstanceId
+			public string CloudAssistantStatus
 			{
 				get
 				{
-					return ecsInstanceId;
+					return cloudAssistantStatus;
 				}
 				set	
 				{
-					ecsInstanceId = value;
+					cloudAssistantStatus = value;
 				}
 			}
 
@@ -110,15 +110,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public string Status
+			public string EcsInstanceId
 			{
 				get
 				{
-					return status;
+					return ecsInstanceId;
 				}
 				set	
 				{
-					status = value;
+					ecsInstanceId = value;
 				}
 			}
 
@@ -146,15 +146,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public string CloudAssistantStatus
+			public string Status
 			{
 				get
 				{
-					return cloudAssistantStatus;
+					return status;
 				}
 				set	
 				{
-					cloudAssistantStatus = value;
+					status = value;
 				}
 			}
 
@@ -185,21 +185,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			public class ListEcsInstances_IpAddressItem
 			{
 
-				private string host;
-
 				private string ipType;
 
-				public string Host
-				{
-					get
-					{
-						return host;
-					}
-					set	
-					{
-						host = value;
-					}
-				}
+				private string host;
 
 				public string IpType
 				{
@@ -212,30 +200,42 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						ipType = value;
 					}
 				}
+
+				public string Host
+				{
+					get
+					{
+						return host;
+					}
+					set	
+					{
+						host = value;
+					}
+				}
 			}
 
 			public class ListEcsInstances_CollectorsItem
 			{
 
-				private string gmtCreatedTime;
+				private string resId;
 
 				private string gmtUpdateTime;
 
-				private string name;
+				private bool? dryRun;
 
-				private string resId;
-
-				private string resVersion;
+				private string ownerId;
 
 				private string vpcId;
 
 				private string resType;
 
-				private string ownerId;
+				private string resVersion;
+
+				private string gmtCreatedTime;
 
 				private string status;
 
-				private bool? dryRun;
+				private string name;
 
 				private List<ListEcsInstances_ConfigsItem> configs;
 
@@ -243,15 +243,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 				private List<string> collectorPaths;
 
-				public string GmtCreatedTime
+				public string ResId
 				{
 					get
 					{
-						return gmtCreatedTime;
+						return resId;
 					}
 					set	
 					{
-						gmtCreatedTime = value;
+						resId = value;
 					}
 				}
 
@@ -267,39 +267,27 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					}
 				}
 
-				public string Name
+				public bool? DryRun
 				{
 					get
 					{
-						return name;
+						return dryRun;
 					}
 					set	
 					{
-						name = value;
+						dryRun = value;
 					}
 				}
 
-				public string ResId
+				public string OwnerId
 				{
 					get
 					{
-						return resId;
+						return ownerId;
 					}
 					set	
 					{
-						resId = value;
-					}
-				}
-
-				public string ResVersion
-				{
-					get
-					{
-						return resVersion;
-					}
-					set	
-					{
-						resVersion = value;
+						ownerId = value;
 					}
 				}
 
@@ -327,15 +315,27 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					}
 				}
 
-				public string OwnerId
+				public string ResVersion
 				{
 					get
 					{
-						return ownerId;
+						return resVersion;
 					}
 					set	
 					{
-						ownerId = value;
+						resVersion = value;
+					}
+				}
+
+				public string GmtCreatedTime
+				{
+					get
+					{
+						return gmtCreatedTime;
+					}
+					set	
+					{
+						gmtCreatedTime = value;
 					}
 				}
 
@@ -351,15 +351,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					}
 				}
 
-				public bool? DryRun
+				public string Name
 				{
 					get
 					{
-						return dryRun;
+						return name;
 					}
 					set	
 					{
-						dryRun = value;
+						name = value;
 					}
 				}
 
@@ -402,21 +402,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				public class ListEcsInstances_ConfigsItem
 				{
 
-					private string fileName;
-
 					private string content;
 
-					public string FileName
-					{
-						get
-						{
-							return fileName;
-						}
-						set	
-						{
-							fileName = value;
-						}
-					}
+					private string fileName;
 
 					public string Content
 					{
@@ -429,14 +417,28 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 							content = value;
 						}
 					}
+
+					public string FileName
+					{
+						get
+						{
+							return fileName;
+						}
+						set	
+						{
+							fileName = value;
+						}
+					}
 				}
 
 				public class ListEcsInstances_ExtendConfigsItem
 				{
 
-					private string configType;
+					private bool? enableMonitoring;
 
-					private string instanceId;
+					private string groupId;
+
+					private string configType;
 
 					private string instanceType;
 
@@ -444,15 +446,37 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 					private string userName;
 
-					private bool? enableMonitoring;
-
 					private string type;
 
-					private string groupId;
+					private string instanceId;
 
 					private List<ListEcsInstances_MachinesItem> machines;
 
 					private List<string> hosts;
+
+					public bool? EnableMonitoring
+					{
+						get
+						{
+							return enableMonitoring;
+						}
+						set	
+						{
+							enableMonitoring = value;
+						}
+					}
+
+					public string GroupId
+					{
+						get
+						{
+							return groupId;
+						}
+						set	
+						{
+							groupId = value;
+						}
+					}
 
 					public string ConfigType
 					{
@@ -463,18 +487,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						set	
 						{
 							configType = value;
-						}
-					}
-
-					public string InstanceId
-					{
-						get
-						{
-							return instanceId;
-						}
-						set	
-						{
-							instanceId = value;
 						}
 					}
 
@@ -514,18 +526,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						}
 					}
 
-					public bool? EnableMonitoring
-					{
-						get
-						{
-							return enableMonitoring;
-						}
-						set	
-						{
-							enableMonitoring = value;
-						}
-					}
-
 					public string Type
 					{
 						get
@@ -538,15 +538,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						}
 					}
 
-					public string GroupId
+					public string InstanceId
 					{
 						get
 						{
-							return groupId;
+							return instanceId;
 						}
 						set	
 						{
-							groupId = value;
+							instanceId = value;
 						}
 					}
 
@@ -577,21 +577,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					public class ListEcsInstances_MachinesItem
 					{
 
-						private string instanceId;
-
 						private string agentStatus;
 
-						public string InstanceId
-						{
-							get
-							{
-								return instanceId;
-							}
-							set	
-							{
-								instanceId = value;
-							}
-						}
+						private string instanceId;
 
 						public string AgentStatus
 						{
@@ -602,6 +590,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 							set	
 							{
 								agentStatus = value;
+							}
+						}
+
+						public string InstanceId
+						{
+							get
+							{
+								return instanceId;
+							}
+							set	
+							{
+								instanceId = value;
 							}
 						}
 					}

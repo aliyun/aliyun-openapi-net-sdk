@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -56,37 +56,13 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class ListAckClusters_ResultItem
 		{
 
-			private string clusterId;
-
-			private string name;
-
 			private string clusterType;
 
 			private string vpcId;
 
-			public string ClusterId
-			{
-				get
-				{
-					return clusterId;
-				}
-				set	
-				{
-					clusterId = value;
-				}
-			}
+			private string name;
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+			private string clusterId;
 
 			public string ClusterType
 			{
@@ -109,6 +85,30 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					vpcId = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string ClusterId
+			{
+				get
+				{
+					return clusterId;
+				}
+				set	
+				{
+					clusterId = value;
 				}
 			}
 		}

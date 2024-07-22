@@ -31,6 +31,7 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			TagResourcesResponse tagResourcesResponse = new TagResourcesResponse();
 
 			tagResourcesResponse.HttpResponse = _ctx.HttpResponse;
+			tagResourcesResponse.Result = _ctx.BooleanValue("TagResources.Result");
 			tagResourcesResponse.RequestId = _ctx.StringValue("TagResources.RequestId");
         
 			return tagResourcesResponse;

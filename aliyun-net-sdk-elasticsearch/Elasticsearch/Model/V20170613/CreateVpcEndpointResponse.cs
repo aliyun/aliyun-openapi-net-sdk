@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -56,37 +56,13 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class CreateVpcEndpoint_Result
 		{
 
-			private string endpointId;
-
-			private string endpointName;
-
 			private string serviceId;
 
 			private string endpointDomain;
 
-			public string EndpointId
-			{
-				get
-				{
-					return endpointId;
-				}
-				set	
-				{
-					endpointId = value;
-				}
-			}
+			private string endpointId;
 
-			public string EndpointName
-			{
-				get
-				{
-					return endpointName;
-				}
-				set	
-				{
-					endpointName = value;
-				}
-			}
+			private string endpointName;
 
 			public string ServiceId
 			{
@@ -109,6 +85,30 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					endpointDomain = value;
+				}
+			}
+
+			public string EndpointId
+			{
+				get
+				{
+					return endpointId;
+				}
+				set	
+				{
+					endpointId = value;
+				}
+			}
+
+			public string EndpointName
+			{
+				get
+				{
+					return endpointName;
+				}
+				set	
+				{
+					endpointName = value;
 				}
 			}
 		}

@@ -41,6 +41,21 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			Method = MethodType.POST;
         }
 
+		private string body;
+
+		public string Body
+		{
+			get
+			{
+				return body;
+			}
+			set	
+			{
+				body = value;
+				DictionaryUtil.Add(BodyParameters, "body", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;

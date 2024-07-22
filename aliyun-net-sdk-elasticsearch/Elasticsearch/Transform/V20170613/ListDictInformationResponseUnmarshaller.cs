@@ -34,12 +34,12 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			listDictInformationResponse.RequestId = _ctx.StringValue("ListDictInformation.RequestId");
 
 			ListDictInformationResponse.ListDictInformation_Result result = new ListDictInformationResponse.ListDictInformation_Result();
-			result.FileSize = _ctx.LongValue("ListDictInformation.Result.fileSize");
 			result.Type = _ctx.StringValue("ListDictInformation.Result.type");
+			result.FileSize = _ctx.LongValue("ListDictInformation.Result.fileSize");
 
 			ListDictInformationResponse.ListDictInformation_Result.ListDictInformation_OssObject ossObject = new ListDictInformationResponse.ListDictInformation_Result.ListDictInformation_OssObject();
-			ossObject.BucketName = _ctx.StringValue("ListDictInformation.Result.OssObject.bucketName");
 			ossObject.Key = _ctx.StringValue("ListDictInformation.Result.OssObject.key");
+			ossObject.BucketName = _ctx.StringValue("ListDictInformation.Result.OssObject.bucketName");
 			ossObject.Etag = _ctx.StringValue("ListDictInformation.Result.OssObject.etag");
 			result.OssObject = ossObject;
 			listDictInformationResponse.Result = result;

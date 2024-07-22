@@ -36,10 +36,10 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<UpdateHotIkDictsResponse.UpdateHotIkDicts_DictList> updateHotIkDictsResponse_result = new List<UpdateHotIkDictsResponse.UpdateHotIkDicts_DictList>();
 			for (int i = 0; i < _ctx.Length("UpdateHotIkDicts.Result.Length"); i++) {
 				UpdateHotIkDictsResponse.UpdateHotIkDicts_DictList dictList = new UpdateHotIkDictsResponse.UpdateHotIkDicts_DictList();
-				dictList.Name = _ctx.StringValue("UpdateHotIkDicts.Result["+ i +"].name");
 				dictList.FileSize = _ctx.LongValue("UpdateHotIkDicts.Result["+ i +"].fileSize");
-				dictList.Type = _ctx.StringValue("UpdateHotIkDicts.Result["+ i +"].type");
 				dictList.SourceType = _ctx.StringValue("UpdateHotIkDicts.Result["+ i +"].sourceType");
+				dictList.Name = _ctx.StringValue("UpdateHotIkDicts.Result["+ i +"].name");
+				dictList.Type = _ctx.StringValue("UpdateHotIkDicts.Result["+ i +"].type");
 
 				updateHotIkDictsResponse_result.Add(dictList);
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -70,27 +70,27 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class ListSearchLog_ResultItem
 		{
 
-			private long? timestamp;
+			private string level;
 
 			private string host;
 
-			private string instanceId;
+			private string content;
+
+			private long? timestamp;
 
 			private string contentCollection;
 
-			private string level;
+			private string instanceId;
 
-			private string content;
-
-			public long? Timestamp
+			public string Level
 			{
 				get
 				{
-					return timestamp;
+					return level;
 				}
 				set	
 				{
-					timestamp = value;
+					level = value;
 				}
 			}
 
@@ -106,15 +106,27 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public string InstanceId
+			public string Content
 			{
 				get
 				{
-					return instanceId;
+					return content;
 				}
 				set	
 				{
-					instanceId = value;
+					content = value;
+				}
+			}
+
+			public long? Timestamp
+			{
+				get
+				{
+					return timestamp;
+				}
+				set	
+				{
+					timestamp = value;
 				}
 			}
 
@@ -130,27 +142,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public string Level
+			public string InstanceId
 			{
 				get
 				{
-					return level;
+					return instanceId;
 				}
 				set	
 				{
-					level = value;
-				}
-			}
-
-			public string Content
-			{
-				get
-				{
-					return content;
-				}
-				set	
-				{
-					content = value;
+					instanceId = value;
 				}
 			}
 		}

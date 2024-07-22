@@ -17,58 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
 	public class CreateInstanceResponse : AcsResponse
 	{
-
-		private string requestId;
-
-		private CreateInstance_Result result;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public CreateInstance_Result Result
-		{
-			get
-			{
-				return result;
-			}
-			set	
-			{
-				result = value;
-			}
-		}
-
-		public class CreateInstance_Result
-		{
-
-			private string instanceId;
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-		}
 	}
 }

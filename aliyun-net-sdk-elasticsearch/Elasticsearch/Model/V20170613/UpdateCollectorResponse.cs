@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -56,25 +56,25 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class UpdateCollector_Result
 		{
 
-			private string gmtCreatedTime;
+			private string resId;
 
 			private string gmtUpdateTime;
 
-			private string name;
+			private bool? dryRun;
 
-			private string resId;
-
-			private string resVersion;
+			private string ownerId;
 
 			private string vpcId;
 
 			private string resType;
 
-			private string ownerId;
+			private string resVersion;
+
+			private string gmtCreatedTime;
 
 			private string status;
 
-			private bool? dryRun;
+			private string name;
 
 			private List<UpdateCollector_ConfigsItem> configs;
 
@@ -82,15 +82,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private List<string> collectorPaths;
 
-			public string GmtCreatedTime
+			public string ResId
 			{
 				get
 				{
-					return gmtCreatedTime;
+					return resId;
 				}
 				set	
 				{
-					gmtCreatedTime = value;
+					resId = value;
 				}
 			}
 
@@ -106,39 +106,27 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public string Name
+			public bool? DryRun
 			{
 				get
 				{
-					return name;
+					return dryRun;
 				}
 				set	
 				{
-					name = value;
+					dryRun = value;
 				}
 			}
 
-			public string ResId
+			public string OwnerId
 			{
 				get
 				{
-					return resId;
+					return ownerId;
 				}
 				set	
 				{
-					resId = value;
-				}
-			}
-
-			public string ResVersion
-			{
-				get
-				{
-					return resVersion;
-				}
-				set	
-				{
-					resVersion = value;
+					ownerId = value;
 				}
 			}
 
@@ -166,15 +154,27 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public string OwnerId
+			public string ResVersion
 			{
 				get
 				{
-					return ownerId;
+					return resVersion;
 				}
 				set	
 				{
-					ownerId = value;
+					resVersion = value;
+				}
+			}
+
+			public string GmtCreatedTime
+			{
+				get
+				{
+					return gmtCreatedTime;
+				}
+				set	
+				{
+					gmtCreatedTime = value;
 				}
 			}
 
@@ -190,15 +190,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public bool? DryRun
+			public string Name
 			{
 				get
 				{
-					return dryRun;
+					return name;
 				}
 				set	
 				{
-					dryRun = value;
+					name = value;
 				}
 			}
 
@@ -241,21 +241,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			public class UpdateCollector_ConfigsItem
 			{
 
-				private string fileName;
-
 				private string content;
 
-				public string FileName
-				{
-					get
-					{
-						return fileName;
-					}
-					set	
-					{
-						fileName = value;
-					}
-				}
+				private string fileName;
 
 				public string Content
 				{
@@ -268,72 +256,60 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						content = value;
 					}
 				}
+
+				public string FileName
+				{
+					get
+					{
+						return fileName;
+					}
+					set	
+					{
+						fileName = value;
+					}
+				}
 			}
 
 			public class UpdateCollector_ExtendConfigsItem
 			{
 
-				private string configType;
-
-				private string instanceId;
-
-				private string instanceType;
+				private string successPodsCount;
 
 				private string protocol;
 
 				private string userName;
 
-				private bool? enableMonitoring;
+				private string totalPodsCount;
 
 				private string type;
+
+				private string kibanaHost;
+
+				private bool? enableMonitoring;
+
+				private string configType;
+
+				private string instanceType;
 
 				private string groupId;
 
 				private string host;
 
-				private string kibanaHost;
-
-				private string totalPodsCount;
-
-				private string successPodsCount;
+				private string instanceId;
 
 				private List<UpdateCollector_MachinesItem> machines;
 
 				private List<string> hosts;
 
-				public string ConfigType
+				public string SuccessPodsCount
 				{
 					get
 					{
-						return configType;
+						return successPodsCount;
 					}
 					set	
 					{
-						configType = value;
-					}
-				}
-
-				public string InstanceId
-				{
-					get
-					{
-						return instanceId;
-					}
-					set	
-					{
-						instanceId = value;
-					}
-				}
-
-				public string InstanceType
-				{
-					get
-					{
-						return instanceType;
-					}
-					set	
-					{
-						instanceType = value;
+						successPodsCount = value;
 					}
 				}
 
@@ -361,15 +337,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					}
 				}
 
-				public bool? EnableMonitoring
+				public string TotalPodsCount
 				{
 					get
 					{
-						return enableMonitoring;
+						return totalPodsCount;
 					}
 					set	
 					{
-						enableMonitoring = value;
+						totalPodsCount = value;
 					}
 				}
 
@@ -382,6 +358,54 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						type = value;
+					}
+				}
+
+				public string KibanaHost
+				{
+					get
+					{
+						return kibanaHost;
+					}
+					set	
+					{
+						kibanaHost = value;
+					}
+				}
+
+				public bool? EnableMonitoring
+				{
+					get
+					{
+						return enableMonitoring;
+					}
+					set	
+					{
+						enableMonitoring = value;
+					}
+				}
+
+				public string ConfigType
+				{
+					get
+					{
+						return configType;
+					}
+					set	
+					{
+						configType = value;
+					}
+				}
+
+				public string InstanceType
+				{
+					get
+					{
+						return instanceType;
+					}
+					set	
+					{
+						instanceType = value;
 					}
 				}
 
@@ -409,39 +433,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					}
 				}
 
-				public string KibanaHost
+				public string InstanceId
 				{
 					get
 					{
-						return kibanaHost;
+						return instanceId;
 					}
 					set	
 					{
-						kibanaHost = value;
-					}
-				}
-
-				public string TotalPodsCount
-				{
-					get
-					{
-						return totalPodsCount;
-					}
-					set	
-					{
-						totalPodsCount = value;
-					}
-				}
-
-				public string SuccessPodsCount
-				{
-					get
-					{
-						return successPodsCount;
-					}
-					set	
-					{
-						successPodsCount = value;
+						instanceId = value;
 					}
 				}
 
@@ -472,21 +472,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				public class UpdateCollector_MachinesItem
 				{
 
-					private string instanceId;
-
 					private string agentStatus;
 
-					public string InstanceId
-					{
-						get
-						{
-							return instanceId;
-						}
-						set	
-						{
-							instanceId = value;
-						}
-					}
+					private string instanceId;
 
 					public string AgentStatus
 					{
@@ -497,6 +485,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						set	
 						{
 							agentStatus = value;
+						}
+					}
+
+					public string InstanceId
+					{
+						get
+						{
+							return instanceId;
+						}
+						set	
+						{
+							instanceId = value;
 						}
 					}
 				}

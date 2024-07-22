@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			CloseManagedIndexResponse closeManagedIndexResponse = new CloseManagedIndexResponse();
 
 			closeManagedIndexResponse.HttpResponse = _ctx.HttpResponse;
-			closeManagedIndexResponse.RequestId = _ctx.StringValue("CloseManagedIndex.RequestId");
 			closeManagedIndexResponse.Result = _ctx.BooleanValue("CloseManagedIndex.Result");
+			closeManagedIndexResponse.RequestId = _ctx.StringValue("CloseManagedIndex.RequestId");
         
 			return closeManagedIndexResponse;
         }

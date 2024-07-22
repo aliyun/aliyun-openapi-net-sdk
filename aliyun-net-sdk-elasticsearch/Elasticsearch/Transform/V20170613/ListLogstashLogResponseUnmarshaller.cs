@@ -36,11 +36,11 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<ListLogstashLogResponse.ListLogstashLog_ResultItem> listLogstashLogResponse_result = new List<ListLogstashLogResponse.ListLogstashLog_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListLogstashLog.Result.Length"); i++) {
 				ListLogstashLogResponse.ListLogstashLog_ResultItem resultItem = new ListLogstashLogResponse.ListLogstashLog_ResultItem();
-				resultItem.Timestamp = _ctx.LongValue("ListLogstashLog.Result["+ i +"].timestamp");
-				resultItem.Host = _ctx.StringValue("ListLogstashLog.Result["+ i +"].host");
 				resultItem.Level = _ctx.StringValue("ListLogstashLog.Result["+ i +"].level");
 				resultItem.Content = _ctx.StringValue("ListLogstashLog.Result["+ i +"].content");
+				resultItem.Timestamp = _ctx.LongValue("ListLogstashLog.Result["+ i +"].timestamp");
 				resultItem.InstanceId = _ctx.StringValue("ListLogstashLog.Result["+ i +"].instanceId");
+				resultItem.Host = _ctx.StringValue("ListLogstashLog.Result["+ i +"].host");
 
 				listLogstashLogResponse_result.Add(resultItem);
 			}

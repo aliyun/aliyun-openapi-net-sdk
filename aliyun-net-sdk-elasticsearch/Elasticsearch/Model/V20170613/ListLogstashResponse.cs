@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -70,21 +70,23 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class ListLogstash_Instance
 		{
 
-			private string instanceId;
-
-			private string description;
+			private string paymentType;
 
 			private int? nodeAmount;
 
-			private string paymentType;
-
-			private string status;
-
-			private string version;
+			private string description;
 
 			private string createdAt;
 
+			private string status;
+
 			private string updatedAt;
+
+			private string instanceId;
+
+			private string version;
+
+			private string resourceGroupId;
 
 			private List<ListLogstash_TagsItem> tags;
 
@@ -92,27 +94,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private ListLogstash_NetworkConfig networkConfig;
 
-			public string InstanceId
+			public string PaymentType
 			{
 				get
 				{
-					return instanceId;
+					return paymentType;
 				}
 				set	
 				{
-					instanceId = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
+					paymentType = value;
 				}
 			}
 
@@ -128,39 +118,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public string PaymentType
+			public string Description
 			{
 				get
 				{
-					return paymentType;
+					return description;
 				}
 				set	
 				{
-					paymentType = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string Version
-			{
-				get
-				{
-					return version;
-				}
-				set	
-				{
-					version = value;
+					description = value;
 				}
 			}
 
@@ -176,6 +142,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
 			public string UpdatedAt
 			{
 				get
@@ -185,6 +163,42 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					updatedAt = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string Version
+			{
+				get
+				{
+					return version;
+				}
+				set	
+				{
+					version = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 
@@ -227,21 +241,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			public class ListLogstash_TagsItem
 			{
 
-				private string tagKey;
-
 				private string tagValue;
 
-				public string TagKey
-				{
-					get
-					{
-						return tagKey;
-					}
-					set	
-					{
-						tagKey = value;
-					}
-				}
+				private string tagKey;
 
 				public string TagValue
 				{
@@ -254,6 +256,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						tagValue = value;
 					}
 				}
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
+					}
+				}
 			}
 
 			public class ListLogstash_NodeSpec
@@ -263,9 +277,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 				private int? disk;
 
-				private string diskType;
-
 				private bool? diskEncryption;
+
+				private string diskType;
 
 				public string Spec
 				{
@@ -291,18 +305,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					}
 				}
 
-				public string DiskType
-				{
-					get
-					{
-						return diskType;
-					}
-					set	
-					{
-						diskType = value;
-					}
-				}
-
 				public bool? DiskEncryption
 				{
 					get
@@ -314,30 +316,30 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						diskEncryption = value;
 					}
 				}
+
+				public string DiskType
+				{
+					get
+					{
+						return diskType;
+					}
+					set	
+					{
+						diskType = value;
+					}
+				}
 			}
 
 			public class ListLogstash_NetworkConfig
 			{
 
-				private string type;
-
 				private string vpcId;
-
-				private string vswitchId;
 
 				private string vsArea;
 
-				public string Type
-				{
-					get
-					{
-						return type;
-					}
-					set	
-					{
-						type = value;
-					}
-				}
+				private string type;
+
+				private string vswitchId;
 
 				public string VpcId
 				{
@@ -351,18 +353,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					}
 				}
 
-				public string VswitchId
-				{
-					get
-					{
-						return vswitchId;
-					}
-					set	
-					{
-						vswitchId = value;
-					}
-				}
-
 				public string VsArea
 				{
 					get
@@ -372,6 +362,30 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						vsArea = value;
+					}
+				}
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
+					}
+				}
+
+				public string VswitchId
+				{
+					get
+					{
+						return vswitchId;
+					}
+					set	
+					{
+						vswitchId = value;
 					}
 				}
 			}

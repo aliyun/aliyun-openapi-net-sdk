@@ -36,8 +36,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<GetSuggestShrinkableNodesResponse.GetSuggestShrinkableNodes_ResultItem> getSuggestShrinkableNodesResponse_result = new List<GetSuggestShrinkableNodesResponse.GetSuggestShrinkableNodes_ResultItem>();
 			for (int i = 0; i < _ctx.Length("GetSuggestShrinkableNodes.Result.Length"); i++) {
 				GetSuggestShrinkableNodesResponse.GetSuggestShrinkableNodes_ResultItem resultItem = new GetSuggestShrinkableNodesResponse.GetSuggestShrinkableNodes_ResultItem();
-				resultItem.Host = _ctx.StringValue("GetSuggestShrinkableNodes.Result["+ i +"].host");
 				resultItem.Port = _ctx.IntegerValue("GetSuggestShrinkableNodes.Result["+ i +"].port");
+				resultItem.Host = _ctx.StringValue("GetSuggestShrinkableNodes.Result["+ i +"].host");
 
 				getSuggestShrinkableNodesResponse_result.Add(resultItem);
 			}

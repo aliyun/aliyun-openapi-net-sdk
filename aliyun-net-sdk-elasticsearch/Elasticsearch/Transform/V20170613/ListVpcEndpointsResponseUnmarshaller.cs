@@ -36,15 +36,15 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<ListVpcEndpointsResponse.ListVpcEndpoints_ResultItem> listVpcEndpointsResponse_result = new List<ListVpcEndpointsResponse.ListVpcEndpoints_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListVpcEndpoints.Result.Length"); i++) {
 				ListVpcEndpointsResponse.ListVpcEndpoints_ResultItem resultItem = new ListVpcEndpointsResponse.ListVpcEndpoints_ResultItem();
-				resultItem.ConnectionStatus = _ctx.StringValue("ListVpcEndpoints.Result["+ i +"].connectionStatus");
-				resultItem.CreateTime = _ctx.StringValue("ListVpcEndpoints.Result["+ i +"].createTime");
 				resultItem.EndpointBusinessStatus = _ctx.StringValue("ListVpcEndpoints.Result["+ i +"].endpointBusinessStatus");
-				resultItem.EndpointId = _ctx.StringValue("ListVpcEndpoints.Result["+ i +"].endpointId");
-				resultItem.EndpointName = _ctx.StringValue("ListVpcEndpoints.Result["+ i +"].endpointName");
-				resultItem.EndpointStatus = _ctx.StringValue("ListVpcEndpoints.Result["+ i +"].endpointStatus");
 				resultItem.ServiceId = _ctx.StringValue("ListVpcEndpoints.Result["+ i +"].serviceId");
+				resultItem.EndpointName = _ctx.StringValue("ListVpcEndpoints.Result["+ i +"].endpointName");
+				resultItem.EndpointId = _ctx.StringValue("ListVpcEndpoints.Result["+ i +"].endpointId");
 				resultItem.ServiceName = _ctx.StringValue("ListVpcEndpoints.Result["+ i +"].serviceName");
+				resultItem.CreateTime = _ctx.StringValue("ListVpcEndpoints.Result["+ i +"].createTime");
+				resultItem.ConnectionStatus = _ctx.StringValue("ListVpcEndpoints.Result["+ i +"].connectionStatus");
 				resultItem.EndpointDomain = _ctx.StringValue("ListVpcEndpoints.Result["+ i +"].endpointDomain");
+				resultItem.EndpointStatus = _ctx.StringValue("ListVpcEndpoints.Result["+ i +"].endpointStatus");
 
 				listVpcEndpointsResponse_result.Add(resultItem);
 			}

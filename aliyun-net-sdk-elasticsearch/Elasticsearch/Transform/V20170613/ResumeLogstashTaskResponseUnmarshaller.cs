@@ -31,9 +31,9 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			ResumeLogstashTaskResponse resumeLogstashTaskResponse = new ResumeLogstashTaskResponse();
 
 			resumeLogstashTaskResponse.HttpResponse = _ctx.HttpResponse;
-			resumeLogstashTaskResponse.RequestId = _ctx.StringValue("ResumeLogstashTask.RequestId");
 			resumeLogstashTaskResponse.Code = _ctx.StringValue("ResumeLogstashTask.Code");
 			resumeLogstashTaskResponse.Message = _ctx.StringValue("ResumeLogstashTask.Message");
+			resumeLogstashTaskResponse.RequestId = _ctx.StringValue("ResumeLogstashTask.RequestId");
 			resumeLogstashTaskResponse.Result = _ctx.BooleanValue("ResumeLogstashTask.Result");
         
 			return resumeLogstashTaskResponse;
