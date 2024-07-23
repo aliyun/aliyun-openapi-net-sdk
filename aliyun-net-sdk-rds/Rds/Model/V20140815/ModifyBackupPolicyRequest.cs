@@ -43,19 +43,31 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private string localLogRetentionHours;
-
 		private int? backupPriority;
+
+		private string backupLog;
+
+		private string highSpaceUsageProtection;
+
+		private bool? enableIncrementDataBackup;
+
+		private string localLogRetentionSpace;
+
+		private long? ownerId;
+
+		private string archiveBackupKeepPolicy;
+
+		private string backupRetentionPeriod;
+
+		private string backupMethod;
+
+		private string localLogRetentionHours;
 
 		private string logBackupFrequency;
 
 		private int? archiveBackupKeepCount;
 
-		private string backupLog;
-
 		private string backupInterval;
-
-		private string highSpaceUsageProtection;
 
 		private int? logBackupLocalRetentionNumber;
 
@@ -67,8 +79,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string preferredBackupPeriod;
 
-		private bool? enableIncrementDataBackup;
-
 		private string releasedKeepPolicy;
 
 		private string resourceOwnerAccount;
@@ -77,17 +87,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string compressType;
 
-		private string localLogRetentionSpace;
-
-		private long? ownerId;
-
-		private string archiveBackupKeepPolicy;
-
 		private string preferredBackupTime;
-
-		private string backupRetentionPeriod;
-
-		private string backupMethod;
 
 		private string archiveBackupRetentionPeriod;
 
@@ -109,20 +109,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "LocalLogRetentionHours")]
-		public string LocalLogRetentionHours
-		{
-			get
-			{
-				return localLogRetentionHours;
-			}
-			set	
-			{
-				localLogRetentionHours = value;
-				DictionaryUtil.Add(QueryParameters, "LocalLogRetentionHours", value);
-			}
-		}
-
 		[JsonProperty(PropertyName = "BackupPriority")]
 		public int? BackupPriority
 		{
@@ -134,6 +120,132 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				backupPriority = value;
 				DictionaryUtil.Add(QueryParameters, "BackupPriority", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "BackupLog")]
+		public string BackupLog
+		{
+			get
+			{
+				return backupLog;
+			}
+			set	
+			{
+				backupLog = value;
+				DictionaryUtil.Add(QueryParameters, "BackupLog", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "HighSpaceUsageProtection")]
+		public string HighSpaceUsageProtection
+		{
+			get
+			{
+				return highSpaceUsageProtection;
+			}
+			set	
+			{
+				highSpaceUsageProtection = value;
+				DictionaryUtil.Add(QueryParameters, "HighSpaceUsageProtection", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "EnableIncrementDataBackup")]
+		public bool? EnableIncrementDataBackup
+		{
+			get
+			{
+				return enableIncrementDataBackup;
+			}
+			set	
+			{
+				enableIncrementDataBackup = value;
+				DictionaryUtil.Add(QueryParameters, "EnableIncrementDataBackup", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "LocalLogRetentionSpace")]
+		public string LocalLogRetentionSpace
+		{
+			get
+			{
+				return localLogRetentionSpace;
+			}
+			set	
+			{
+				localLogRetentionSpace = value;
+				DictionaryUtil.Add(QueryParameters, "LocalLogRetentionSpace", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "OwnerId")]
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "ArchiveBackupKeepPolicy")]
+		public string ArchiveBackupKeepPolicy
+		{
+			get
+			{
+				return archiveBackupKeepPolicy;
+			}
+			set	
+			{
+				archiveBackupKeepPolicy = value;
+				DictionaryUtil.Add(QueryParameters, "ArchiveBackupKeepPolicy", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "BackupRetentionPeriod")]
+		public string BackupRetentionPeriod
+		{
+			get
+			{
+				return backupRetentionPeriod;
+			}
+			set	
+			{
+				backupRetentionPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "BackupRetentionPeriod", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "BackupMethod")]
+		public string BackupMethod
+		{
+			get
+			{
+				return backupMethod;
+			}
+			set	
+			{
+				backupMethod = value;
+				DictionaryUtil.Add(QueryParameters, "BackupMethod", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "LocalLogRetentionHours")]
+		public string LocalLogRetentionHours
+		{
+			get
+			{
+				return localLogRetentionHours;
+			}
+			set	
+			{
+				localLogRetentionHours = value;
+				DictionaryUtil.Add(QueryParameters, "LocalLogRetentionHours", value);
 			}
 		}
 
@@ -165,20 +277,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "BackupLog")]
-		public string BackupLog
-		{
-			get
-			{
-				return backupLog;
-			}
-			set	
-			{
-				backupLog = value;
-				DictionaryUtil.Add(QueryParameters, "BackupLog", value);
-			}
-		}
-
 		[JsonProperty(PropertyName = "BackupInterval")]
 		public string BackupInterval
 		{
@@ -190,20 +288,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				backupInterval = value;
 				DictionaryUtil.Add(QueryParameters, "BackupInterval", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "HighSpaceUsageProtection")]
-		public string HighSpaceUsageProtection
-		{
-			get
-			{
-				return highSpaceUsageProtection;
-			}
-			set	
-			{
-				highSpaceUsageProtection = value;
-				DictionaryUtil.Add(QueryParameters, "HighSpaceUsageProtection", value);
 			}
 		}
 
@@ -277,20 +361,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "EnableIncrementDataBackup")]
-		public bool? EnableIncrementDataBackup
-		{
-			get
-			{
-				return enableIncrementDataBackup;
-			}
-			set	
-			{
-				enableIncrementDataBackup = value;
-				DictionaryUtil.Add(QueryParameters, "EnableIncrementDataBackup", value.ToString());
-			}
-		}
-
 		[JsonProperty(PropertyName = "ReleasedKeepPolicy")]
 		public string ReleasedKeepPolicy
 		{
@@ -347,48 +417,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "LocalLogRetentionSpace")]
-		public string LocalLogRetentionSpace
-		{
-			get
-			{
-				return localLogRetentionSpace;
-			}
-			set	
-			{
-				localLogRetentionSpace = value;
-				DictionaryUtil.Add(QueryParameters, "LocalLogRetentionSpace", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "OwnerId")]
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		[JsonProperty(PropertyName = "ArchiveBackupKeepPolicy")]
-		public string ArchiveBackupKeepPolicy
-		{
-			get
-			{
-				return archiveBackupKeepPolicy;
-			}
-			set	
-			{
-				archiveBackupKeepPolicy = value;
-				DictionaryUtil.Add(QueryParameters, "ArchiveBackupKeepPolicy", value);
-			}
-		}
-
 		[JsonProperty(PropertyName = "PreferredBackupTime")]
 		public string PreferredBackupTime
 		{
@@ -400,34 +428,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				preferredBackupTime = value;
 				DictionaryUtil.Add(QueryParameters, "PreferredBackupTime", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "BackupRetentionPeriod")]
-		public string BackupRetentionPeriod
-		{
-			get
-			{
-				return backupRetentionPeriod;
-			}
-			set	
-			{
-				backupRetentionPeriod = value;
-				DictionaryUtil.Add(QueryParameters, "BackupRetentionPeriod", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "BackupMethod")]
-		public string BackupMethod
-		{
-			get
-			{
-				return backupMethod;
-			}
-			set	
-			{
-				backupMethod = value;
-				DictionaryUtil.Add(QueryParameters, "BackupMethod", value);
 			}
 		}
 
