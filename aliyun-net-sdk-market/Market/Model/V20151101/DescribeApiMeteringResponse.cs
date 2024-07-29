@@ -178,6 +178,8 @@ namespace Aliyun.Acs.Market.Model.V20151101
 
 			private long? totalUsage;
 
+			private long? totalCapacity;
+
 			private string unit;
 
 			public long? AliyunPk
@@ -237,6 +239,18 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				set	
 				{
 					totalUsage = value;
+				}
+			}
+
+			public long? TotalCapacity
+			{
+				get
+				{
+					return totalCapacity;
+				}
+				set	
+				{
+					totalCapacity = value;
 				}
 			}
 

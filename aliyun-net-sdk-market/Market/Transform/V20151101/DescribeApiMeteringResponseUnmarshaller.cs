@@ -49,6 +49,7 @@ namespace Aliyun.Acs.Market.Transform.V20151101
 				resultItem.ProductName = _ctx.StringValue("DescribeApiMetering.Result["+ i +"].ProductName");
 				resultItem.TotalQuota = _ctx.LongValue("DescribeApiMetering.Result["+ i +"].TotalQuota");
 				resultItem.TotalUsage = _ctx.LongValue("DescribeApiMetering.Result["+ i +"].TotalUsage");
+				resultItem.TotalCapacity = _ctx.LongValue("DescribeApiMetering.Result["+ i +"].TotalCapacity");
 				resultItem.Unit = _ctx.StringValue("DescribeApiMetering.Result["+ i +"].Unit");
 
 				describeApiMeteringResponse_result.Add(resultItem);

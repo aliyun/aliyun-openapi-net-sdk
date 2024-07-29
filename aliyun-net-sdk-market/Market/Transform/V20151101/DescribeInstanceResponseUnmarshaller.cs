@@ -49,6 +49,8 @@ namespace Aliyun.Acs.Market.Transform.V20151101
 			describeInstanceResponse.ProductCode = _ctx.StringValue("DescribeInstance.ProductCode");
 			describeInstanceResponse.SupplierName = _ctx.StringValue("DescribeInstance.SupplierName");
 			describeInstanceResponse.AutoRenewal = _ctx.StringValue("DescribeInstance.AutoRenewal");
+			describeInstanceResponse.ActiveAddress = _ctx.StringValue("DescribeInstance.ActiveAddress");
+			describeInstanceResponse.LicenseCode = _ctx.StringValue("DescribeInstance.LicenseCode");
 
 			DescribeInstanceResponse.DescribeInstance_RelationalData relationalData = new DescribeInstanceResponse.DescribeInstance_RelationalData();
 			relationalData.ServiceStatus = _ctx.StringValue("DescribeInstance.RelationalData.ServiceStatus");

@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Market;
 using Aliyun.Acs.Market.Transform;
 using Aliyun.Acs.Market.Transform.V20151101;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
     public class DescribeInstanceRequest : RpcAcsRequest<DescribeInstanceResponse>
     {
         public DescribeInstanceRequest()
-            : base("Market", "2015-11-01", "DescribeInstance")
+            : base("Market", "2015-11-01", "DescribeInstance", "yunmarket", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
