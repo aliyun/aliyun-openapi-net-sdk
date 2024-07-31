@@ -1,0 +1,8 @@
+2019-06-28 Version 1.0.1
+- Release dybaseapi to nuget.
+2019-06-28 Version 1.0.1
+- Release dybaseapi to nuget.
+2018-11-20 Version: 1.0.0
+1, Add MNS STS Token Query API
+2, Add MNS Minimal Package
+
