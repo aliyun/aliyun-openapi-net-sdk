@@ -35,6 +35,7 @@ namespace Aliyun.Acs.AiContent.Transform.V20240611
 			personalizedtxt2imgQueryModelTrainStatusResponse.Success = _ctx.BooleanValue("Personalizedtxt2imgQueryModelTrainStatus.success");
 			personalizedtxt2imgQueryModelTrainStatusResponse.ErrCode = _ctx.StringValue("Personalizedtxt2imgQueryModelTrainStatus.errCode");
 			personalizedtxt2imgQueryModelTrainStatusResponse.ErrMessage = _ctx.StringValue("Personalizedtxt2imgQueryModelTrainStatus.errMessage");
+			personalizedtxt2imgQueryModelTrainStatusResponse.HttpStatusCode = _ctx.IntegerValue("Personalizedtxt2imgQueryModelTrainStatus.httpStatusCode");
 
 			Personalizedtxt2imgQueryModelTrainStatusResponse.Personalizedtxt2imgQueryModelTrainStatus_Data data = new Personalizedtxt2imgQueryModelTrainStatusResponse.Personalizedtxt2imgQueryModelTrainStatus_Data();
 			data.ModelTrainStatus = _ctx.StringValue("Personalizedtxt2imgQueryModelTrainStatus.Data.modelTrainStatus");

@@ -35,9 +35,43 @@ namespace Aliyun.Acs.AiContent.Transform.V20240611
 			personalizedtxt2imgAddModelTrainJobResponse.Success = _ctx.BooleanValue("Personalizedtxt2imgAddModelTrainJob.success");
 			personalizedtxt2imgAddModelTrainJobResponse.ErrCode = _ctx.StringValue("Personalizedtxt2imgAddModelTrainJob.errCode");
 			personalizedtxt2imgAddModelTrainJobResponse.ErrMessage = _ctx.StringValue("Personalizedtxt2imgAddModelTrainJob.errMessage");
+			personalizedtxt2imgAddModelTrainJobResponse.HttpStatusCode = _ctx.IntegerValue("Personalizedtxt2imgAddModelTrainJob.httpStatusCode");
 
 			Personalizedtxt2imgAddModelTrainJobResponse.Personalizedtxt2imgAddModelTrainJob_Data data = new Personalizedtxt2imgAddModelTrainJobResponse.Personalizedtxt2imgAddModelTrainJob_Data();
-			data.ModelTrainStatus = _ctx.StringValue("Personalizedtxt2imgAddModelTrainJob.Data.modelTrainStatus");
+			data.Id = _ctx.StringValue("Personalizedtxt2imgAddModelTrainJob.Data.id");
+			data.ModelId = _ctx.StringValue("Personalizedtxt2imgAddModelTrainJob.Data.modelId");
+			data.Name = _ctx.StringValue("Personalizedtxt2imgAddModelTrainJob.Data.name");
+			data.ObjectType = _ctx.StringValue("Personalizedtxt2imgAddModelTrainJob.Data.objectType");
+			data.JobStatus = _ctx.StringValue("Personalizedtxt2imgAddModelTrainJob.Data.jobStatus");
+			data.JobTrainProgress = _ctx.DoubleValue("Personalizedtxt2imgAddModelTrainJob.Data.jobTrainProgress");
+			data.InferenceImageCount = _ctx.IntegerValue("Personalizedtxt2imgAddModelTrainJob.Data.inferenceImageCount");
+			data.CreateTime = _ctx.StringValue("Personalizedtxt2imgAddModelTrainJob.Data.createTime");
+
+			List<string> data_imageUrl = new List<string>();
+			for (int i = 0; i < _ctx.Length("Personalizedtxt2imgAddModelTrainJob.Data.ImageUrl.Length"); i++) {
+				data_imageUrl.Add(_ctx.StringValue("Personalizedtxt2imgAddModelTrainJob.Data.ImageUrl["+ i +"]"));
+			}
+			data.ImageUrl = data_imageUrl;
+
+			List<Personalizedtxt2imgAddModelTrainJobResponse.Personalizedtxt2imgAddModelTrainJob_Data.Personalizedtxt2imgAddModelTrainJob_InferenceJobListItem> data_inferenceJobList = new List<Personalizedtxt2imgAddModelTrainJobResponse.Personalizedtxt2imgAddModelTrainJob_Data.Personalizedtxt2imgAddModelTrainJob_InferenceJobListItem>();
+			for (int i = 0; i < _ctx.Length("Personalizedtxt2imgAddModelTrainJob.Data.InferenceJobList.Length"); i++) {
+				Personalizedtxt2imgAddModelTrainJobResponse.Personalizedtxt2imgAddModelTrainJob_Data.Personalizedtxt2imgAddModelTrainJob_InferenceJobListItem inferenceJobListItem = new Personalizedtxt2imgAddModelTrainJobResponse.Personalizedtxt2imgAddModelTrainJob_Data.Personalizedtxt2imgAddModelTrainJob_InferenceJobListItem();
+				inferenceJobListItem.Id = _ctx.StringValue("Personalizedtxt2imgAddModelTrainJob.Data.InferenceJobList["+ i +"].id");
+				inferenceJobListItem.PromptId = _ctx.StringValue("Personalizedtxt2imgAddModelTrainJob.Data.InferenceJobList["+ i +"].promptId");
+				inferenceJobListItem.ModelId = _ctx.StringValue("Personalizedtxt2imgAddModelTrainJob.Data.InferenceJobList["+ i +"].modelId");
+				inferenceJobListItem.JobStatus = _ctx.StringValue("Personalizedtxt2imgAddModelTrainJob.Data.InferenceJobList["+ i +"].jobStatus");
+				inferenceJobListItem.JobTrainProgress = _ctx.DoubleValue("Personalizedtxt2imgAddModelTrainJob.Data.InferenceJobList["+ i +"].jobTrainProgress");
+				inferenceJobListItem.CreateTime = _ctx.StringValue("Personalizedtxt2imgAddModelTrainJob.Data.InferenceJobList["+ i +"].createTime");
+
+				List<string> inferenceJobListItem_resultImageUrl = new List<string>();
+				for (int j = 0; j < _ctx.Length("Personalizedtxt2imgAddModelTrainJob.Data.InferenceJobList["+ i +"].ResultImageUrl.Length"); j++) {
+					inferenceJobListItem_resultImageUrl.Add(_ctx.StringValue("Personalizedtxt2imgAddModelTrainJob.Data.InferenceJobList["+ i +"].ResultImageUrl["+ j +"]"));
+				}
+				inferenceJobListItem.ResultImageUrl = inferenceJobListItem_resultImageUrl;
+
+				data_inferenceJobList.Add(inferenceJobListItem);
+			}
+			data.InferenceJobList = data_inferenceJobList;
 			personalizedtxt2imgAddModelTrainJobResponse.Data = data;
         
 			return personalizedtxt2imgAddModelTrainJobResponse;

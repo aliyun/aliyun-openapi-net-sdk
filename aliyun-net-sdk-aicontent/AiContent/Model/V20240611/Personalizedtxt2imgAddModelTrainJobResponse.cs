@@ -33,6 +33,8 @@ namespace Aliyun.Acs.AiContent.Model.V20240611
 
 		private string errMessage;
 
+		private int? httpStatusCode;
+
 		private Personalizedtxt2imgAddModelTrainJob_Data data;
 
 		public string RequestId
@@ -83,6 +85,18 @@ namespace Aliyun.Acs.AiContent.Model.V20240611
 			}
 		}
 
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
+
 		public Personalizedtxt2imgAddModelTrainJob_Data Data
 		{
 			get
@@ -98,17 +112,245 @@ namespace Aliyun.Acs.AiContent.Model.V20240611
 		public class Personalizedtxt2imgAddModelTrainJob_Data
 		{
 
-			private string modelTrainStatus;
+			private string id;
 
-			public string ModelTrainStatus
+			private string modelId;
+
+			private string name;
+
+			private string objectType;
+
+			private string jobStatus;
+
+			private double? jobTrainProgress;
+
+			private int? inferenceImageCount;
+
+			private string createTime;
+
+			private List<Personalizedtxt2imgAddModelTrainJob_InferenceJobListItem> inferenceJobList;
+
+			private List<string> imageUrl;
+
+			public string Id
 			{
 				get
 				{
-					return modelTrainStatus;
+					return id;
 				}
 				set	
 				{
-					modelTrainStatus = value;
+					id = value;
+				}
+			}
+
+			public string ModelId
+			{
+				get
+				{
+					return modelId;
+				}
+				set	
+				{
+					modelId = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string ObjectType
+			{
+				get
+				{
+					return objectType;
+				}
+				set	
+				{
+					objectType = value;
+				}
+			}
+
+			public string JobStatus
+			{
+				get
+				{
+					return jobStatus;
+				}
+				set	
+				{
+					jobStatus = value;
+				}
+			}
+
+			public double? JobTrainProgress
+			{
+				get
+				{
+					return jobTrainProgress;
+				}
+				set	
+				{
+					jobTrainProgress = value;
+				}
+			}
+
+			public int? InferenceImageCount
+			{
+				get
+				{
+					return inferenceImageCount;
+				}
+				set	
+				{
+					inferenceImageCount = value;
+				}
+			}
+
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public List<Personalizedtxt2imgAddModelTrainJob_InferenceJobListItem> InferenceJobList
+			{
+				get
+				{
+					return inferenceJobList;
+				}
+				set	
+				{
+					inferenceJobList = value;
+				}
+			}
+
+			public List<string> ImageUrl
+			{
+				get
+				{
+					return imageUrl;
+				}
+				set	
+				{
+					imageUrl = value;
+				}
+			}
+
+			public class Personalizedtxt2imgAddModelTrainJob_InferenceJobListItem
+			{
+
+				private string id;
+
+				private string promptId;
+
+				private string modelId;
+
+				private string jobStatus;
+
+				private double? jobTrainProgress;
+
+				private string createTime;
+
+				private List<string> resultImageUrl;
+
+				public string Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
+					}
+				}
+
+				public string PromptId
+				{
+					get
+					{
+						return promptId;
+					}
+					set	
+					{
+						promptId = value;
+					}
+				}
+
+				public string ModelId
+				{
+					get
+					{
+						return modelId;
+					}
+					set	
+					{
+						modelId = value;
+					}
+				}
+
+				public string JobStatus
+				{
+					get
+					{
+						return jobStatus;
+					}
+					set	
+					{
+						jobStatus = value;
+					}
+				}
+
+				public double? JobTrainProgress
+				{
+					get
+					{
+						return jobTrainProgress;
+					}
+					set	
+					{
+						jobTrainProgress = value;
+					}
+				}
+
+				public string CreateTime
+				{
+					get
+					{
+						return createTime;
+					}
+					set	
+					{
+						createTime = value;
+					}
+				}
+
+				public List<string> ResultImageUrl
+				{
+					get
+					{
+						return resultImageUrl;
+					}
+					set	
+					{
+						resultImageUrl = value;
+					}
 				}
 			}
 		}

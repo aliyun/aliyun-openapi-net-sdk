@@ -35,44 +35,15 @@ namespace Aliyun.Acs.AiContent.Transform.V20240611
 			aliyunConsoleOpenApiQueryAliyunConsoleServcieListResponse.Success = _ctx.BooleanValue("AliyunConsoleOpenApiQueryAliyunConsoleServcieList.success");
 			aliyunConsoleOpenApiQueryAliyunConsoleServcieListResponse.ErrCode = _ctx.StringValue("AliyunConsoleOpenApiQueryAliyunConsoleServcieList.errCode");
 			aliyunConsoleOpenApiQueryAliyunConsoleServcieListResponse.ErrMessage = _ctx.StringValue("AliyunConsoleOpenApiQueryAliyunConsoleServcieList.errMessage");
+			aliyunConsoleOpenApiQueryAliyunConsoleServcieListResponse.HttpStatusCode = _ctx.IntegerValue("AliyunConsoleOpenApiQueryAliyunConsoleServcieList.httpStatusCode");
 
 			List<AliyunConsoleOpenApiQueryAliyunConsoleServcieListResponse.AliyunConsoleOpenApiQueryAliyunConsoleServcieList_DataItem> aliyunConsoleOpenApiQueryAliyunConsoleServcieListResponse_data = new List<AliyunConsoleOpenApiQueryAliyunConsoleServcieListResponse.AliyunConsoleOpenApiQueryAliyunConsoleServcieList_DataItem>();
 			for (int i = 0; i < _ctx.Length("AliyunConsoleOpenApiQueryAliyunConsoleServcieList.Data.Length"); i++) {
 				AliyunConsoleOpenApiQueryAliyunConsoleServcieListResponse.AliyunConsoleOpenApiQueryAliyunConsoleServcieList_DataItem dataItem = new AliyunConsoleOpenApiQueryAliyunConsoleServcieListResponse.AliyunConsoleOpenApiQueryAliyunConsoleServcieList_DataItem();
-				dataItem.Id = _ctx.StringValue("AliyunConsoleOpenApiQueryAliyunConsoleServcieList.Data["+ i +"].id");
-				dataItem.ModelId = _ctx.StringValue("AliyunConsoleOpenApiQueryAliyunConsoleServcieList.Data["+ i +"].modelId");
-				dataItem.Name = _ctx.StringValue("AliyunConsoleOpenApiQueryAliyunConsoleServcieList.Data["+ i +"].name");
-				dataItem.ObjectType = _ctx.StringValue("AliyunConsoleOpenApiQueryAliyunConsoleServcieList.Data["+ i +"].objectType");
-				dataItem.JobStatus = _ctx.StringValue("AliyunConsoleOpenApiQueryAliyunConsoleServcieList.Data["+ i +"].jobStatus");
-				dataItem.JobTrainProgress = _ctx.DoubleValue("AliyunConsoleOpenApiQueryAliyunConsoleServcieList.Data["+ i +"].jobTrainProgress");
-				dataItem.InferenceImageCount = _ctx.IntegerValue("AliyunConsoleOpenApiQueryAliyunConsoleServcieList.Data["+ i +"].inferenceImageCount");
-				dataItem.CreateTime = _ctx.StringValue("AliyunConsoleOpenApiQueryAliyunConsoleServcieList.Data["+ i +"].createTime");
-
-				List<string> dataItem_imageUrl = new List<string>();
-				for (int j = 0; j < _ctx.Length("AliyunConsoleOpenApiQueryAliyunConsoleServcieList.Data["+ i +"].ImageUrl.Length"); j++) {
-					dataItem_imageUrl.Add(_ctx.StringValue("AliyunConsoleOpenApiQueryAliyunConsoleServcieList.Data["+ i +"].ImageUrl["+ j +"]"));
-				}
-				dataItem.ImageUrl = dataItem_imageUrl;
-
-				List<AliyunConsoleOpenApiQueryAliyunConsoleServcieListResponse.AliyunConsoleOpenApiQueryAliyunConsoleServcieList_DataItem.AliyunConsoleOpenApiQueryAliyunConsoleServcieList_InferenceJobListItem> dataItem_inferenceJobList = new List<AliyunConsoleOpenApiQueryAliyunConsoleServcieListResponse.AliyunConsoleOpenApiQueryAliyunConsoleServcieList_DataItem.AliyunConsoleOpenApiQueryAliyunConsoleServcieList_InferenceJobListItem>();
-				for (int j = 0; j < _ctx.Length("AliyunConsoleOpenApiQueryAliyunConsoleServcieList.Data["+ i +"].InferenceJobList.Length"); j++) {
-					AliyunConsoleOpenApiQueryAliyunConsoleServcieListResponse.AliyunConsoleOpenApiQueryAliyunConsoleServcieList_DataItem.AliyunConsoleOpenApiQueryAliyunConsoleServcieList_InferenceJobListItem inferenceJobListItem = new AliyunConsoleOpenApiQueryAliyunConsoleServcieListResponse.AliyunConsoleOpenApiQueryAliyunConsoleServcieList_DataItem.AliyunConsoleOpenApiQueryAliyunConsoleServcieList_InferenceJobListItem();
-					inferenceJobListItem.Id = _ctx.StringValue("AliyunConsoleOpenApiQueryAliyunConsoleServcieList.Data["+ i +"].InferenceJobList["+ j +"].id");
-					inferenceJobListItem.PromptId = _ctx.StringValue("AliyunConsoleOpenApiQueryAliyunConsoleServcieList.Data["+ i +"].InferenceJobList["+ j +"].promptId");
-					inferenceJobListItem.ModelId = _ctx.StringValue("AliyunConsoleOpenApiQueryAliyunConsoleServcieList.Data["+ i +"].InferenceJobList["+ j +"].modelId");
-					inferenceJobListItem.JobStatus = _ctx.StringValue("AliyunConsoleOpenApiQueryAliyunConsoleServcieList.Data["+ i +"].InferenceJobList["+ j +"].jobStatus");
-					inferenceJobListItem.JobTrainProgress = _ctx.DoubleValue("AliyunConsoleOpenApiQueryAliyunConsoleServcieList.Data["+ i +"].InferenceJobList["+ j +"].jobTrainProgress");
-					inferenceJobListItem.CreateTime = _ctx.StringValue("AliyunConsoleOpenApiQueryAliyunConsoleServcieList.Data["+ i +"].InferenceJobList["+ j +"].createTime");
-
-					List<string> inferenceJobListItem_resultImageUrl = new List<string>();
-					for (int k = 0; k < _ctx.Length("AliyunConsoleOpenApiQueryAliyunConsoleServcieList.Data["+ i +"].InferenceJobList["+ j +"].ResultImageUrl.Length"); k++) {
-						inferenceJobListItem_resultImageUrl.Add(_ctx.StringValue("AliyunConsoleOpenApiQueryAliyunConsoleServcieList.Data["+ i +"].InferenceJobList["+ j +"].ResultImageUrl["+ k +"]"));
-					}
-					inferenceJobListItem.ResultImageUrl = inferenceJobListItem_resultImageUrl;
-
-					dataItem_inferenceJobList.Add(inferenceJobListItem);
-				}
-				dataItem.InferenceJobList = dataItem_inferenceJobList;
+				dataItem.ServiceCode = _ctx.StringValue("AliyunConsoleOpenApiQueryAliyunConsoleServcieList.Data["+ i +"].ServiceCode");
+				dataItem.ServiceName = _ctx.StringValue("AliyunConsoleOpenApiQueryAliyunConsoleServcieList.Data["+ i +"].ServiceName");
+				dataItem.FreeCount = _ctx.IntegerValue("AliyunConsoleOpenApiQueryAliyunConsoleServcieList.Data["+ i +"].FreeCount");
+				dataItem.FreeConcurrencyCount = _ctx.IntegerValue("AliyunConsoleOpenApiQueryAliyunConsoleServcieList.Data["+ i +"].FreeConcurrencyCount");
 
 				aliyunConsoleOpenApiQueryAliyunConsoleServcieListResponse_data.Add(dataItem);
 			}

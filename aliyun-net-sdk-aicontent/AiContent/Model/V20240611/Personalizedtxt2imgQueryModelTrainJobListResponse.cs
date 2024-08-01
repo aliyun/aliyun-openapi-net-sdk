@@ -33,6 +33,8 @@ namespace Aliyun.Acs.AiContent.Model.V20240611
 
 		private string errMessage;
 
+		private int? httpStatusCode;
+
 		private List<Personalizedtxt2imgQueryModelTrainJobList_DataItem> data;
 
 		public string RequestId
@@ -80,6 +82,18 @@ namespace Aliyun.Acs.AiContent.Model.V20240611
 			set	
 			{
 				errMessage = value;
+			}
+		}
+
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
 			}
 		}
 

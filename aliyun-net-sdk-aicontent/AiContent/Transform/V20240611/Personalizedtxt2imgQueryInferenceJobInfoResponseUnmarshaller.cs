@@ -35,9 +35,21 @@ namespace Aliyun.Acs.AiContent.Transform.V20240611
 			personalizedtxt2imgQueryInferenceJobInfoResponse.Success = _ctx.BooleanValue("Personalizedtxt2imgQueryInferenceJobInfo.success");
 			personalizedtxt2imgQueryInferenceJobInfoResponse.ErrCode = _ctx.StringValue("Personalizedtxt2imgQueryInferenceJobInfo.errCode");
 			personalizedtxt2imgQueryInferenceJobInfoResponse.ErrMessage = _ctx.StringValue("Personalizedtxt2imgQueryInferenceJobInfo.errMessage");
+			personalizedtxt2imgQueryInferenceJobInfoResponse.HttpStatusCode = _ctx.IntegerValue("Personalizedtxt2imgQueryInferenceJobInfo.httpStatusCode");
 
 			Personalizedtxt2imgQueryInferenceJobInfoResponse.Personalizedtxt2imgQueryInferenceJobInfo_Data data = new Personalizedtxt2imgQueryInferenceJobInfoResponse.Personalizedtxt2imgQueryInferenceJobInfo_Data();
-			data.ModelTrainStatus = _ctx.StringValue("Personalizedtxt2imgQueryInferenceJobInfo.Data.modelTrainStatus");
+			data.Id = _ctx.StringValue("Personalizedtxt2imgQueryInferenceJobInfo.Data.id");
+			data.PromptId = _ctx.StringValue("Personalizedtxt2imgQueryInferenceJobInfo.Data.promptId");
+			data.ModelId = _ctx.StringValue("Personalizedtxt2imgQueryInferenceJobInfo.Data.modelId");
+			data.JobStatus = _ctx.StringValue("Personalizedtxt2imgQueryInferenceJobInfo.Data.jobStatus");
+			data.JobTrainProgress = _ctx.DoubleValue("Personalizedtxt2imgQueryInferenceJobInfo.Data.jobTrainProgress");
+			data.CreateTime = _ctx.StringValue("Personalizedtxt2imgQueryInferenceJobInfo.Data.createTime");
+
+			List<string> data_resultImageUrl = new List<string>();
+			for (int i = 0; i < _ctx.Length("Personalizedtxt2imgQueryInferenceJobInfo.Data.ResultImageUrl.Length"); i++) {
+				data_resultImageUrl.Add(_ctx.StringValue("Personalizedtxt2imgQueryInferenceJobInfo.Data.ResultImageUrl["+ i +"]"));
+			}
+			data.ResultImageUrl = data_resultImageUrl;
 			personalizedtxt2imgQueryInferenceJobInfoResponse.Data = data;
         
 			return personalizedtxt2imgQueryInferenceJobInfoResponse;

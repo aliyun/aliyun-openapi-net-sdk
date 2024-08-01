@@ -33,6 +33,8 @@ namespace Aliyun.Acs.AiContent.Model.V20240611
 
 		private string errMessage;
 
+		private int? httpStatusCode;
+
 		private List<AliyunConsoleOpenApiQueryAliyunConsoleServcieList_DataItem> data;
 
 		public string RequestId
@@ -83,6 +85,18 @@ namespace Aliyun.Acs.AiContent.Model.V20240611
 			}
 		}
 
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
+
 		public List<AliyunConsoleOpenApiQueryAliyunConsoleServcieList_DataItem> Data
 		{
 			get
@@ -98,245 +112,59 @@ namespace Aliyun.Acs.AiContent.Model.V20240611
 		public class AliyunConsoleOpenApiQueryAliyunConsoleServcieList_DataItem
 		{
 
-			private string id;
+			private string serviceCode;
 
-			private string modelId;
+			private string serviceName;
 
-			private string name;
+			private int? freeCount;
 
-			private string objectType;
+			private int? freeConcurrencyCount;
 
-			private string jobStatus;
-
-			private double? jobTrainProgress;
-
-			private int? inferenceImageCount;
-
-			private string createTime;
-
-			private List<AliyunConsoleOpenApiQueryAliyunConsoleServcieList_InferenceJobListItem> inferenceJobList;
-
-			private List<string> imageUrl;
-
-			public string Id
+			public string ServiceCode
 			{
 				get
 				{
-					return id;
+					return serviceCode;
 				}
 				set	
 				{
-					id = value;
+					serviceCode = value;
 				}
 			}
 
-			public string ModelId
+			public string ServiceName
 			{
 				get
 				{
-					return modelId;
+					return serviceName;
 				}
 				set	
 				{
-					modelId = value;
+					serviceName = value;
 				}
 			}
 
-			public string Name
+			public int? FreeCount
 			{
 				get
 				{
-					return name;
+					return freeCount;
 				}
 				set	
 				{
-					name = value;
+					freeCount = value;
 				}
 			}
 
-			public string ObjectType
+			public int? FreeConcurrencyCount
 			{
 				get
 				{
-					return objectType;
+					return freeConcurrencyCount;
 				}
 				set	
 				{
-					objectType = value;
-				}
-			}
-
-			public string JobStatus
-			{
-				get
-				{
-					return jobStatus;
-				}
-				set	
-				{
-					jobStatus = value;
-				}
-			}
-
-			public double? JobTrainProgress
-			{
-				get
-				{
-					return jobTrainProgress;
-				}
-				set	
-				{
-					jobTrainProgress = value;
-				}
-			}
-
-			public int? InferenceImageCount
-			{
-				get
-				{
-					return inferenceImageCount;
-				}
-				set	
-				{
-					inferenceImageCount = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public List<AliyunConsoleOpenApiQueryAliyunConsoleServcieList_InferenceJobListItem> InferenceJobList
-			{
-				get
-				{
-					return inferenceJobList;
-				}
-				set	
-				{
-					inferenceJobList = value;
-				}
-			}
-
-			public List<string> ImageUrl
-			{
-				get
-				{
-					return imageUrl;
-				}
-				set	
-				{
-					imageUrl = value;
-				}
-			}
-
-			public class AliyunConsoleOpenApiQueryAliyunConsoleServcieList_InferenceJobListItem
-			{
-
-				private string id;
-
-				private string promptId;
-
-				private string modelId;
-
-				private string jobStatus;
-
-				private double? jobTrainProgress;
-
-				private string createTime;
-
-				private List<string> resultImageUrl;
-
-				public string Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
-					}
-				}
-
-				public string PromptId
-				{
-					get
-					{
-						return promptId;
-					}
-					set	
-					{
-						promptId = value;
-					}
-				}
-
-				public string ModelId
-				{
-					get
-					{
-						return modelId;
-					}
-					set	
-					{
-						modelId = value;
-					}
-				}
-
-				public string JobStatus
-				{
-					get
-					{
-						return jobStatus;
-					}
-					set	
-					{
-						jobStatus = value;
-					}
-				}
-
-				public double? JobTrainProgress
-				{
-					get
-					{
-						return jobTrainProgress;
-					}
-					set	
-					{
-						jobTrainProgress = value;
-					}
-				}
-
-				public string CreateTime
-				{
-					get
-					{
-						return createTime;
-					}
-					set	
-					{
-						createTime = value;
-					}
-				}
-
-				public List<string> ResultImageUrl
-				{
-					get
-					{
-						return resultImageUrl;
-					}
-					set	
-					{
-						resultImageUrl = value;
-					}
+					freeConcurrencyCount = value;
 				}
 			}
 		}
