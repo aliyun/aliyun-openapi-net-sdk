@@ -16,24 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+using Aliyun.Acs.Core;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Dds.Model.V20151201;
-
-namespace Aliyun.Acs.Dds.Transform.V20151201
+namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class RestoreDBInstanceResponseUnmarshaller
-    {
-        public static RestoreDBInstanceResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			RestoreDBInstanceResponse restoreDBInstanceResponse = new RestoreDBInstanceResponse();
+	public class RestartNodeResponse : AcsResponse
+	{
 
-			restoreDBInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			restoreDBInstanceResponse.RequestId = _ctx.StringValue("RestoreDBInstance.RequestId");
-        
-			return restoreDBInstanceResponse;
-        }
-    }
+		private string requestId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+	}
 }

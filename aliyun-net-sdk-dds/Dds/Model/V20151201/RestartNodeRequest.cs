@@ -27,10 +27,10 @@ using Aliyun.Acs.Dds.Transform.V20151201;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class RestoreDBInstanceRequest : RpcAcsRequest<RestoreDBInstanceResponse>
+    public class RestartNodeRequest : RpcAcsRequest<RestartNodeResponse>
     {
-        public RestoreDBInstanceRequest()
-            : base("Dds", "2015-12-01", "RestoreDBInstance", "dds", "openAPI")
+        public RestartNodeRequest()
+            : base("Dds", "2015-12-01", "RestartNode", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,13 +42,15 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
+		private string roleId;
+
 		private string dBInstanceId;
+
+		private string nodeId;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
-
-		private int? backupId;
 
 		private long? ownerId;
 
@@ -65,6 +67,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string RoleId
+		{
+			get
+			{
+				return roleId;
+			}
+			set	
+			{
+				roleId = value;
+				DictionaryUtil.Add(QueryParameters, "RoleId", value);
+			}
+		}
+
 		public string DBInstanceId
 		{
 			get
@@ -75,6 +90,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public string NodeId
+		{
+			get
+			{
+				return nodeId;
+			}
+			set	
+			{
+				nodeId = value;
+				DictionaryUtil.Add(QueryParameters, "NodeId", value);
 			}
 		}
 
@@ -104,19 +132,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public int? BackupId
-		{
-			get
-			{
-				return backupId;
-			}
-			set	
-			{
-				backupId = value;
-				DictionaryUtil.Add(QueryParameters, "BackupId", value.ToString());
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -130,9 +145,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-        public override RestoreDBInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override RestartNodeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RestoreDBInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RestartNodeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
