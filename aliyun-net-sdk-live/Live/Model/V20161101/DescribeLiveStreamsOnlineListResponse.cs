@@ -25,17 +25,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveStreamsOnlineListResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalPage;
 
 		private int? pageNum;
 
 		private int? pageSize;
 
-		private string requestId;
-
 		private int? totalNum;
 
 		private List<DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo> onlineInfo;
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		[JsonProperty(PropertyName = "TotalPage")]
 		public int? TotalPage
@@ -73,19 +86,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				pageSize = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "RequestId")]
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
 			}
 		}
 
@@ -157,6 +157,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			private string serverIp;
 
 			private string streamUrlArgs;
+
+			private int? currAudioDataRate;
+
+			private int? currVideoDataRate;
+
+			private int? currWidth;
+
+			private int? currHeight;
+
+			private int? currFrameRate;
+
+			private int? currVideoCodecId;
 
 			[JsonProperty(PropertyName = "AudioDataRate")]
 			public int? AudioDataRate
@@ -415,6 +427,84 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					streamUrlArgs = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CurrAudioDataRate")]
+			public int? CurrAudioDataRate
+			{
+				get
+				{
+					return currAudioDataRate;
+				}
+				set	
+				{
+					currAudioDataRate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CurrVideoDataRate")]
+			public int? CurrVideoDataRate
+			{
+				get
+				{
+					return currVideoDataRate;
+				}
+				set	
+				{
+					currVideoDataRate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CurrWidth")]
+			public int? CurrWidth
+			{
+				get
+				{
+					return currWidth;
+				}
+				set	
+				{
+					currWidth = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CurrHeight")]
+			public int? CurrHeight
+			{
+				get
+				{
+					return currHeight;
+				}
+				set	
+				{
+					currHeight = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CurrFrameRate")]
+			public int? CurrFrameRate
+			{
+				get
+				{
+					return currFrameRate;
+				}
+				set	
+				{
+					currFrameRate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CurrVideoCodecId")]
+			public int? CurrVideoCodecId
+			{
+				get
+				{
+					return currVideoCodecId;
+				}
+				set	
+				{
+					currVideoCodecId = value;
 				}
 			}
 		}

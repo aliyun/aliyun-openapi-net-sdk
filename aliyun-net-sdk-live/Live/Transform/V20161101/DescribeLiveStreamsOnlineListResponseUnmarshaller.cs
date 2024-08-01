@@ -31,10 +31,10 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveStreamsOnlineListResponse describeLiveStreamsOnlineListResponse = new DescribeLiveStreamsOnlineListResponse();
 
 			describeLiveStreamsOnlineListResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveStreamsOnlineListResponse.RequestId = _ctx.StringValue("DescribeLiveStreamsOnlineList.RequestId");
 			describeLiveStreamsOnlineListResponse.TotalPage = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.TotalPage");
 			describeLiveStreamsOnlineListResponse.PageNum = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.PageNum");
 			describeLiveStreamsOnlineListResponse.PageSize = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.PageSize");
-			describeLiveStreamsOnlineListResponse.RequestId = _ctx.StringValue("DescribeLiveStreamsOnlineList.RequestId");
 			describeLiveStreamsOnlineListResponse.TotalNum = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.TotalNum");
 
 			List<DescribeLiveStreamsOnlineListResponse.DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo> describeLiveStreamsOnlineListResponse_onlineInfo = new List<DescribeLiveStreamsOnlineListResponse.DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo>();
@@ -60,6 +60,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				liveStreamOnlineInfo.ClientIp = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].ClientIp");
 				liveStreamOnlineInfo.ServerIp = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].ServerIp");
 				liveStreamOnlineInfo.StreamUrlArgs = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].StreamUrlArgs");
+				liveStreamOnlineInfo.CurrAudioDataRate = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].CurrAudioDataRate");
+				liveStreamOnlineInfo.CurrVideoDataRate = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].CurrVideoDataRate");
+				liveStreamOnlineInfo.CurrWidth = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].CurrWidth");
+				liveStreamOnlineInfo.CurrHeight = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].CurrHeight");
+				liveStreamOnlineInfo.CurrFrameRate = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].CurrFrameRate");
+				liveStreamOnlineInfo.CurrVideoCodecId = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].CurrVideoCodecId");
 
 				describeLiveStreamsOnlineListResponse_onlineInfo.Add(liveStreamOnlineInfo);
 			}

@@ -36,6 +36,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 
 			DescribeShowListResponse.DescribeShowList_ShowListInfo showListInfo = new DescribeShowListResponse.DescribeShowList_ShowListInfo();
 			showListInfo.CurrentShowId = _ctx.StringValue("DescribeShowList.ShowListInfo.CurrentShowId");
+			showListInfo.Background = _ctx.StringValue("DescribeShowList.ShowListInfo.Background");
+			showListInfo.Watermark = _ctx.StringValue("DescribeShowList.ShowListInfo.Watermark");
 			showListInfo.HighPriorityShowId = _ctx.StringValue("DescribeShowList.ShowListInfo.HighPriorityShowId");
 			showListInfo.HighPriorityShowStartTime = _ctx.StringValue("DescribeShowList.ShowListInfo.HighPriorityShowStartTime");
 			showListInfo.ShowListRepeatTimes = _ctx.IntegerValue("DescribeShowList.ShowListInfo.ShowListRepeatTimes");

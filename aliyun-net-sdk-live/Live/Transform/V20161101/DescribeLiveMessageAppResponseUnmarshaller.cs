@@ -43,6 +43,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			describeLiveMessageAppResponse.Disable = _ctx.BooleanValue("DescribeLiveMessageApp.Disable");
 			describeLiveMessageAppResponse.CreateTime = _ctx.LongValue("DescribeLiveMessageApp.CreateTime");
 			describeLiveMessageAppResponse.ModifyTime = _ctx.LongValue("DescribeLiveMessageApp.ModifyTime");
+			describeLiveMessageAppResponse.MsgLifeCycle = _ctx.IntegerValue("DescribeLiveMessageApp.MsgLifeCycle");
 			describeLiveMessageAppResponse.DataCenter = _ctx.StringValue("DescribeLiveMessageApp.DataCenter");
         
 			return describeLiveMessageAppResponse;
