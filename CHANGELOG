@@ -1,3 +1,6 @@
+2024-08-07 Version: 2.1.8
+- Add QueryData, ModifyCopilotEmbedConfig, QueryCopilotEmbedConfig and QueryDataRange APIs.
+
 2024-08-01 Version: 1.0.1
 - add openapi for Personalized Text to Image ablity init version.
 
