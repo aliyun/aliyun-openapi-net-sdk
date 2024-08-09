@@ -91,6 +91,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string harmonyRemindTitle;
 
+		private string androidBadgeClass;
+
 		private int? smsDelaySecs;
 
 		private int? androidRenderStyle;
@@ -177,6 +179,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string androidOpenUrl;
 
+		private int? androidBadgeSetNum;
+
 		private string androidXiaoMiNotifyBody;
 
 		private string iOSSubtitle;
@@ -196,6 +200,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 		private string title;
 
 		private bool? harmonyTestMessage;
+
+		private int? androidBadgeAddNum;
 
 		private string androidHuaweiReceiptId;
 
@@ -539,6 +545,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				harmonyRemindTitle = value;
 				DictionaryUtil.Add(QueryParameters, "HarmonyRemindTitle", value);
+			}
+		}
+
+		public string AndroidBadgeClass
+		{
+			get
+			{
+				return androidBadgeClass;
+			}
+			set	
+			{
+				androidBadgeClass = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidBadgeClass", value);
 			}
 		}
 
@@ -1101,6 +1120,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
+		public int? AndroidBadgeSetNum
+		{
+			get
+			{
+				return androidBadgeSetNum;
+			}
+			set	
+			{
+				androidBadgeSetNum = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidBadgeSetNum", value.ToString());
+			}
+		}
+
 		public string AndroidXiaoMiNotifyBody
 		{
 			get
@@ -1228,6 +1260,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				harmonyTestMessage = value;
 				DictionaryUtil.Add(QueryParameters, "HarmonyTestMessage", value.ToString());
+			}
+		}
+
+		public int? AndroidBadgeAddNum
+		{
+			get
+			{
+				return androidBadgeAddNum;
+			}
+			set	
+			{
+				androidBadgeAddNum = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidBadgeAddNum", value.ToString());
 			}
 		}
 

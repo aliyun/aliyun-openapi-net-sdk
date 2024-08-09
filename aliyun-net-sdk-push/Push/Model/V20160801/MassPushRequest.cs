@@ -141,6 +141,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
 						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
 						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
 						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
 					}
 				}
 			}
@@ -232,6 +235,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string androidOpenUrl;
 
+			private int? androidBadgeSetNum;
+
 			private string androidXiaoMiNotifyBody;
 
 			private string iOSSubtitle;
@@ -274,11 +279,15 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string title;
 
+			private string androidBadgeClass;
+
 			private bool? harmonyTestMessage;
 
 			private string androidRenderStyle;
 
 			private string iOSExtParameters;
+
+			private int? androidBadgeAddNum;
 
 			private string androidHuaweiReceiptId;
 
@@ -746,6 +755,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
+			public int? AndroidBadgeSetNum
+			{
+				get
+				{
+					return androidBadgeSetNum;
+				}
+				set	
+				{
+					androidBadgeSetNum = value;
+				}
+			}
+
 			public string AndroidXiaoMiNotifyBody
 			{
 				get
@@ -998,6 +1019,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
+			public string AndroidBadgeClass
+			{
+				get
+				{
+					return androidBadgeClass;
+				}
+				set	
+				{
+					androidBadgeClass = value;
+				}
+			}
+
 			public bool? HarmonyTestMessage
 			{
 				get
@@ -1031,6 +1064,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					iOSExtParameters = value;
+				}
+			}
+
+			public int? AndroidBadgeAddNum
+			{
+				get
+				{
+					return androidBadgeAddNum;
+				}
+				set	
+				{
+					androidBadgeAddNum = value;
 				}
 			}
 
