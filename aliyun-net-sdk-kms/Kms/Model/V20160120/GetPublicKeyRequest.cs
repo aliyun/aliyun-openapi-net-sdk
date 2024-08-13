@@ -42,9 +42,25 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Method = MethodType.POST;
         }
 
+		private string dryRun;
+
 		private string keyVersionId;
 
 		private string keyId;
+
+		[JsonProperty(PropertyName = "DryRun")]
+		public string DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value);
+			}
+		}
 
 		[JsonProperty(PropertyName = "KeyVersionId")]
 		public string KeyVersionId

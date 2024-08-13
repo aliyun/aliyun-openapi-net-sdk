@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Method = MethodType.POST;
         }
 
+		private string dryRun;
+
 		private string versionId;
 
 		private string versionStage;
@@ -49,6 +51,20 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 		private string secretName;
 
 		private bool? fetchExtendedConfig;
+
+		[JsonProperty(PropertyName = "DryRun")]
+		public string DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value);
+			}
+		}
 
 		[JsonProperty(PropertyName = "VersionId")]
 		public string VersionId

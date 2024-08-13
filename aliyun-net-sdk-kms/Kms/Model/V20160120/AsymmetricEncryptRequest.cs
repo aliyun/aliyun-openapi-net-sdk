@@ -41,6 +41,8 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Method = MethodType.POST;
         }
 
+		private string dryRun;
+
 		private string keyVersionId;
 
 		private string keyId;
@@ -48,6 +50,19 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 		private string plaintext;
 
 		private string algorithm;
+
+		public string DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value);
+			}
+		}
 
 		public string KeyVersionId
 		{

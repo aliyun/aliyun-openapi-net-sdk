@@ -1,3 +1,6 @@
+2024-08-13 Version: 2.15.4
+- Support DryRun parameter OpenAPI.
+
 2024-08-13 Version: 2.16.25
 -DescribeVodCertificateDetail, DescribeVodCertificateList增加返回参数
 
