@@ -41,7 +41,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			Method = MethodType.POST;
         }
 
-		private string resourceOwnerId;
+		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
@@ -52,7 +52,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private long? activityId;
 
 		[JsonProperty(PropertyName = "ResourceOwnerId")]
-		public string ResourceOwnerId
+		public long? ResourceOwnerId
 		{
 			get
 			{
@@ -61,7 +61,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value);
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
