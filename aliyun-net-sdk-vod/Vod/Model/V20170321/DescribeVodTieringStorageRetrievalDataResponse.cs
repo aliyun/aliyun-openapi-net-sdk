@@ -22,16 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-	public class GetAppInfosResponse : AcsResponse
+	public class DescribeVodTieringStorageRetrievalDataResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string code;
-
-		private List<GetAppInfos_AppInfo> appInfoList;
-
-		private List<string> nonExistAppIds;
+		private List<DescribeVodTieringStorageRetrievalData_RetrievalDataItem> retrievalData;
 
 		public string RequestId
 		{
@@ -45,154 +41,116 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Code
+		public List<DescribeVodTieringStorageRetrievalData_RetrievalDataItem> RetrievalData
 		{
 			get
 			{
-				return code;
+				return retrievalData;
 			}
 			set	
 			{
-				code = value;
+				retrievalData = value;
 			}
 		}
 
-		public List<GetAppInfos_AppInfo> AppInfoList
-		{
-			get
-			{
-				return appInfoList;
-			}
-			set	
-			{
-				appInfoList = value;
-			}
-		}
-
-		public List<string> NonExistAppIds
-		{
-			get
-			{
-				return nonExistAppIds;
-			}
-			set	
-			{
-				nonExistAppIds = value;
-			}
-		}
-
-		public class GetAppInfos_AppInfo
+		public class DescribeVodTieringStorageRetrievalData_RetrievalDataItem
 		{
 
-			private string type;
+			private string timeStamp;
 
-			private string status;
+			private string region;
 
-			private string creationTime;
+			private string storageClass;
 
-			private string appName;
+			private long? retrievalData;
 
-			private string description;
+			private long? cAStdRetrievalData;
 
-			private string appId;
+			private long? cABulkRetrievalData;
 
-			private string modificationTime;
+			private long? cAHighPriorRetrievalData;
 
-			private string resourceGroupId;
-
-			public string Type
+			public string TimeStamp
 			{
 				get
 				{
-					return type;
+					return timeStamp;
 				}
 				set	
 				{
-					type = value;
+					timeStamp = value;
 				}
 			}
 
-			public string Status
+			public string Region
 			{
 				get
 				{
-					return status;
+					return region;
 				}
 				set	
 				{
-					status = value;
+					region = value;
 				}
 			}
 
-			public string CreationTime
+			public string StorageClass
 			{
 				get
 				{
-					return creationTime;
+					return storageClass;
 				}
 				set	
 				{
-					creationTime = value;
+					storageClass = value;
 				}
 			}
 
-			public string AppName
+			public long? RetrievalData
 			{
 				get
 				{
-					return appName;
+					return retrievalData;
 				}
 				set	
 				{
-					appName = value;
+					retrievalData = value;
 				}
 			}
 
-			public string Description
+			public long? CAStdRetrievalData
 			{
 				get
 				{
-					return description;
+					return cAStdRetrievalData;
 				}
 				set	
 				{
-					description = value;
+					cAStdRetrievalData = value;
 				}
 			}
 
-			public string AppId
+			public long? CABulkRetrievalData
 			{
 				get
 				{
-					return appId;
+					return cABulkRetrievalData;
 				}
 				set	
 				{
-					appId = value;
+					cABulkRetrievalData = value;
 				}
 			}
 
-			public string ModificationTime
+			public long? CAHighPriorRetrievalData
 			{
 				get
 				{
-					return modificationTime;
+					return cAHighPriorRetrievalData;
 				}
 				set	
 				{
-					modificationTime = value;
-				}
-			}
-
-			public string ResourceGroupId
-			{
-				get
-				{
-					return resourceGroupId;
-				}
-				set	
-				{
-					resourceGroupId = value;
+					cAHighPriorRetrievalData = value;
 				}
 			}
 		}

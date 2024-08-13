@@ -27,30 +27,27 @@ using Aliyun.Acs.vod.Transform.V20170321;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class DescribeVodStorageDataRequest : RpcAcsRequest<DescribeVodStorageDataResponse>
+    public class DescribeVodTieringStorageRetrievalDataRequest : RpcAcsRequest<DescribeVodTieringStorageRetrievalDataResponse>
     {
-        public DescribeVodStorageDataRequest()
-            : base("vod", "2017-03-21", "DescribeVodStorageData", "vod", "openAPI")
+        public DescribeVodTieringStorageRetrievalDataRequest()
+            : base("vod", "2017-03-21", "DescribeVodTieringStorageRetrievalData", "vod", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointRegionalType, null);
             }
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
 		private string startTime;
 
-		private string storage;
-
-		private string storageType;
-
 		private string endTime;
 
 		private long? ownerId;
 
-		private string appId;
+		private string storageClass;
 
 		private string region;
 
@@ -64,32 +61,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public string Storage
-		{
-			get
-			{
-				return storage;
-			}
-			set	
-			{
-				storage = value;
-				DictionaryUtil.Add(QueryParameters, "Storage", value);
-			}
-		}
-
-		public string StorageType
-		{
-			get
-			{
-				return storageType;
-			}
-			set	
-			{
-				storageType = value;
-				DictionaryUtil.Add(QueryParameters, "StorageType", value);
 			}
 		}
 
@@ -119,16 +90,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string AppId
+		public string StorageClass
 		{
 			get
 			{
-				return appId;
+				return storageClass;
 			}
 			set	
 			{
-				appId = value;
-				DictionaryUtil.Add(QueryParameters, "AppId", value);
+				storageClass = value;
+				DictionaryUtil.Add(QueryParameters, "StorageClass", value);
 			}
 		}
 
@@ -145,9 +116,14 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-        public override DescribeVodStorageDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeVodTieringStorageRetrievalDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeVodStorageDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeVodTieringStorageRetrievalDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

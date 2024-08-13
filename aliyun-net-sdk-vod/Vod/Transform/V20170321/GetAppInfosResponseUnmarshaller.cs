@@ -50,6 +50,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				appInfo.Description = _ctx.StringValue("GetAppInfos.AppInfoList["+ i +"].Description");
 				appInfo.AppId = _ctx.StringValue("GetAppInfos.AppInfoList["+ i +"].AppId");
 				appInfo.ModificationTime = _ctx.StringValue("GetAppInfos.AppInfoList["+ i +"].ModificationTime");
+				appInfo.ResourceGroupId = _ctx.StringValue("GetAppInfos.AppInfoList["+ i +"].ResourceGroupId");
 
 				getAppInfosResponse_appInfoList.Add(appInfo);
 			}

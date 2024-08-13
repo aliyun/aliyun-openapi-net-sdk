@@ -45,6 +45,13 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				cert.Issuer = _ctx.StringValue("DescribeVodCertificateList.CertificateListModel.CertList["+ i +"].Issuer");
 				cert.CertId = _ctx.LongValue("DescribeVodCertificateList.CertificateListModel.CertList["+ i +"].CertId");
 				cert.Common = _ctx.StringValue("DescribeVodCertificateList.CertificateListModel.CertList["+ i +"].Common");
+				cert.CreateTime = _ctx.LongValue("DescribeVodCertificateList.CertificateListModel.CertList["+ i +"].CreateTime");
+				cert.EndTime = _ctx.LongValue("DescribeVodCertificateList.CertificateListModel.CertList["+ i +"].EndTime");
+				cert.Algorithm = _ctx.StringValue("DescribeVodCertificateList.CertificateListModel.CertList["+ i +"].Algorithm");
+				cert.CertIdentifier = _ctx.StringValue("DescribeVodCertificateList.CertificateListModel.CertList["+ i +"].CertIdentifier");
+				cert.DomainMatchCert = _ctx.BooleanValue("DescribeVodCertificateList.CertificateListModel.CertList["+ i +"].DomainMatchCert");
+				cert.InstanceId = _ctx.StringValue("DescribeVodCertificateList.CertificateListModel.CertList["+ i +"].InstanceId");
+				cert.SignAlgorithm = _ctx.StringValue("DescribeVodCertificateList.CertificateListModel.CertList["+ i +"].SignAlgorithm");
 
 				certificateListModel_certList.Add(cert);
 			}

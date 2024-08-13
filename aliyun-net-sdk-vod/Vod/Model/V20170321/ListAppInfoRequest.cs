@@ -40,11 +40,26 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			Method = MethodType.POST;
         }
 
+		private string resourceGroupId;
+
 		private int? pageSize;
 
 		private int? pageNo;
 
 		private string status;
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
 
 		public int? PageSize
 		{

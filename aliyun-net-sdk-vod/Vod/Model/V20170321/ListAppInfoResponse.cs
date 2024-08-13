@@ -86,6 +86,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string regionId;
 
+			private string resourceGroupId;
+
 			private List<ListAppInfo_TagsItem> tags;
 
 			public string Type
@@ -181,6 +183,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					regionId = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 
