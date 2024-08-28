@@ -965,6 +965,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 				private string vpcCloudInstanceId;
 
+				private string lockMode;
+
 				private int? maxIOPS;
 
 				private string vSwitchId;
@@ -994,6 +996,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						vpcCloudInstanceId = value;
+					}
+				}
+
+				public string LockMode
+				{
+					get
+					{
+						return lockMode;
+					}
+					set	
+					{
+						lockMode = value;
 					}
 				}
 
@@ -1121,6 +1135,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			public class DescribeDBInstanceAttribute_ShardAttribute
 			{
 
+				private string lockMode;
+
 				private int? maxIOPS;
 
 				private string connectString;
@@ -1142,6 +1158,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				private string status;
 
 				private string maxDiskMbps;
+
+				public string LockMode
+				{
+					get
+					{
+						return lockMode;
+					}
+					set	
+					{
+						lockMode = value;
+					}
+				}
 
 				public int? MaxIOPS
 				{
@@ -1281,6 +1309,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 				private int? maxIOPS;
 
+				private string lockMode;
+
 				private string connectString;
 
 				private string nodeClass;
@@ -1306,6 +1336,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						maxIOPS = value;
+					}
+				}
+
+				public string LockMode
+				{
+					get
+					{
+						return lockMode;
+					}
+					set	
+					{
+						lockMode = value;
 					}
 				}
 
