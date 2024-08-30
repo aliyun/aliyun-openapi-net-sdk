@@ -35,30 +35,24 @@ namespace Aliyun.Acs.Core.Http
 
         private readonly List<string> excludedList = new List<string>();
         private readonly Dictionary<string, string> userAgent = new Dictionary<string, string>();
-        private string ClientVersion;
-        private string CoreVersion;
 
-        private string OSVersion;
+        static UserAgent()
+        {
+            DEFAULT_MESSAGE = "Alibaba Cloud (" + GetOsVersion() + ") " + GetClientVersion(RuntimeEnvironment.GetRuntimeDirectory()) + " Core/" + Assembly.GetExecutingAssembly().GetName().Version.ToString();
+        }
 
         public UserAgent()
         {
             SetTheValue();
-
-            DEFAULT_MESSAGE = "Alibaba Cloud (" + OSVersion + ") ";
-            DEFAULT_MESSAGE += ClientVersion;
-            DEFAULT_MESSAGE += " Core/" + CoreVersion;
         }
 
         public void SetTheValue()
         {
-            OSVersion = GetOsVersion();
-            ClientVersion = GetRuntimeRegexValue(RuntimeEnvironment.GetRuntimeDirectory());
-            CoreVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
             excludedList.Add("core");
             excludedList.Add("microsoft.netcore.app");
         }
 
-        private string GetOsVersion()
+        private static string GetOsVersion()
         {
 #if NETSTANDARD2_0
             return RuntimeInformation.OSDescription;
@@ -67,11 +61,17 @@ namespace Aliyun.Acs.Core.Http
 #endif
         }
 
+        [Obsolete]
         public string GetRuntimeRegexValue(string value)
+        {
+            return GetClientVersion(value);
+        }
+
+        private static string GetClientVersion(string value)
         {
             var rx = new Regex(@"(\.NET).*(\\|\/).*(\d)", RegexOptions.Compiled | RegexOptions.IgnoreCase);
             var matches = rx.Match(value);
-            char[] separator = {'\\', '/'};
+            char[] separator = { '\\', '/' };
 
             if (matches.Success)
             {
@@ -82,7 +82,7 @@ namespace Aliyun.Acs.Core.Http
             return "RuntimeNotFound";
         }
 
-        private string BuildClientVersion(string[] value)
+        private static string BuildClientVersion(string[] value)
         {
             var finalValue = "";
             for (var i = 0; i < value.Length - 1; ++i)

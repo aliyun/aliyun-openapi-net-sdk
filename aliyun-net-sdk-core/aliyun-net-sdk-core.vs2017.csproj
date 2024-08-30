@@ -26,6 +26,9 @@
     <DefineConstants>NET45</DefineConstants>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1"/>
+  </ItemGroup>
   <!-- Conditionally obtain references for the .NET Framework 4.5 target -->
   <!-- .NET 4.5 references, compilation flags and build options -->
   <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
