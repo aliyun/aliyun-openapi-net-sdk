@@ -87,6 +87,10 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string domainStatus;
 
+		private string resourceGroupId;
+
+		private List<QueryDomainByDomainName_TagItem> tag;
+
 		private List<string> dnsList;
 
 		public string Email
@@ -461,6 +465,30 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+			}
+		}
+
+		public List<QueryDomainByDomainName_TagItem> Tag
+		{
+			get
+			{
+				return tag;
+			}
+			set	
+			{
+				tag = value;
+			}
+		}
+
 		public List<string> DnsList
 		{
 			get
@@ -470,6 +498,38 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				dnsList = value;
+			}
+		}
+
+		public class QueryDomainByDomainName_TagItem
+		{
+
+			private string key;
+
+			private string vaue;
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+
+			public string Vaue
+			{
+				get
+				{
+					return vaue;
+				}
+				set	
+				{
+					vaue = value;
+				}
 			}
 		}
 	}

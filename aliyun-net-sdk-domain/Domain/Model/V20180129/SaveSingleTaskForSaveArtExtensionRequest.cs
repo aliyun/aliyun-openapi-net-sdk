@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Domain;
 using Aliyun.Acs.Domain.Transform;
 using Aliyun.Acs.Domain.Transform.V20180129;
 
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
     public class SaveSingleTaskForSaveArtExtensionRequest : RpcAcsRequest<SaveSingleTaskForSaveArtExtensionResponse>
     {
         public SaveSingleTaskForSaveArtExtensionRequest()
-            : base("Domain", "2018-01-29", "SaveSingleTaskForSaveArtExtension")
+            : base("Domain", "2018-01-29", "SaveSingleTaskForSaveArtExtension", "domain", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -65,6 +65,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string dimensions;
 
+		[JsonProperty(PropertyName = "Subject")]
 		public string Subject
 		{
 			get
@@ -78,6 +79,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "Title")]
 		public string Title
 		{
 			get
@@ -91,6 +93,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "DateOrPeriod")]
 		public string DateOrPeriod
 		{
 			get
@@ -104,6 +107,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "Reference")]
 		public string Reference
 		{
 			get
@@ -117,6 +121,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "Features")]
 		public string Features
 		{
 			get
@@ -130,6 +135,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "InscriptionsAndMarkings")]
 		public string InscriptionsAndMarkings
 		{
 			get
@@ -143,6 +149,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "ObjectType")]
 		public string ObjectType
 		{
 			get
@@ -156,6 +163,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "Lang")]
 		public string Lang
 		{
 			get
@@ -169,6 +177,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "DomainName")]
 		public string DomainName
 		{
 			get
@@ -182,6 +191,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "Maker")]
 		public string Maker
 		{
 			get
@@ -195,6 +205,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "MaterialsAndTechniques")]
 		public string MaterialsAndTechniques
 		{
 			get
@@ -208,6 +219,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "Dimensions")]
 		public string Dimensions
 		{
 			get

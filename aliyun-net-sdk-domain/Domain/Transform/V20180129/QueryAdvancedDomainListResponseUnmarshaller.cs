@@ -62,12 +62,23 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 				domain.ProductId = _ctx.StringValue("QueryAdvancedDomainList.Data["+ i +"].ProductId");
 				domain.DomainStatus = _ctx.StringValue("QueryAdvancedDomainList.Data["+ i +"].DomainStatus");
 				domain.DomainType = _ctx.StringValue("QueryAdvancedDomainList.Data["+ i +"].DomainType");
+				domain.ResourceGroupId = _ctx.StringValue("QueryAdvancedDomainList.Data["+ i +"].ResourceGroupId");
 
 				List<string> domain_dnsList = new List<string>();
 				for (int j = 0; j < _ctx.Length("QueryAdvancedDomainList.Data["+ i +"].DnsList.Length"); j++) {
 					domain_dnsList.Add(_ctx.StringValue("QueryAdvancedDomainList.Data["+ i +"].DnsList["+ j +"]"));
 				}
 				domain.DnsList = domain_dnsList;
+
+				List<QueryAdvancedDomainListResponse.QueryAdvancedDomainList_Domain.QueryAdvancedDomainList_TagItem> domain_tag = new List<QueryAdvancedDomainListResponse.QueryAdvancedDomainList_Domain.QueryAdvancedDomainList_TagItem>();
+				for (int j = 0; j < _ctx.Length("QueryAdvancedDomainList.Data["+ i +"].Tag.Length"); j++) {
+					QueryAdvancedDomainListResponse.QueryAdvancedDomainList_Domain.QueryAdvancedDomainList_TagItem tagItem = new QueryAdvancedDomainListResponse.QueryAdvancedDomainList_Domain.QueryAdvancedDomainList_TagItem();
+					tagItem.Key = _ctx.StringValue("QueryAdvancedDomainList.Data["+ i +"].Tag["+ j +"].Key");
+					tagItem._Value = _ctx.StringValue("QueryAdvancedDomainList.Data["+ i +"].Tag["+ j +"].Value");
+
+					domain_tag.Add(tagItem);
+				}
+				domain.Tag = domain_tag;
 
 				queryAdvancedDomainListResponse_data.Add(domain);
 			}

@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Domain;
 using Aliyun.Acs.Domain.Transform;
 using Aliyun.Acs.Domain.Transform.V20180129;
 
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
     public class SaveSingleTaskForCreatingOrderRedeemRequest : RpcAcsRequest<SaveSingleTaskForCreatingOrderRedeemResponse>
     {
         public SaveSingleTaskForCreatingOrderRedeemRequest()
-            : base("Domain", "2018-01-29", "SaveSingleTaskForCreatingOrderRedeem")
+            : base("Domain", "2018-01-29", "SaveSingleTaskForCreatingOrderRedeem", "domain", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -57,6 +57,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private bool? usePromotion;
 
+		[JsonProperty(PropertyName = "DomainName")]
 		public string DomainName
 		{
 			get
@@ -70,6 +71,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "CouponNo")]
 		public string CouponNo
 		{
 			get
@@ -83,6 +85,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "UseCoupon")]
 		public bool? UseCoupon
 		{
 			get
@@ -96,6 +99,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "PromotionNo")]
 		public string PromotionNo
 		{
 			get
@@ -109,6 +113,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "CurrentExpirationDate")]
 		public long? CurrentExpirationDate
 		{
 			get
@@ -122,6 +127,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "UserClientIp")]
 		public string UserClientIp
 		{
 			get
@@ -135,6 +141,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "Lang")]
 		public string Lang
 		{
 			get
@@ -148,6 +155,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "UsePromotion")]
 		public bool? UsePromotion
 		{
 			get

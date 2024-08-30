@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Domain;
 using Aliyun.Acs.Domain.Transform;
 using Aliyun.Acs.Domain.Transform.V20180129;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
     public class SaveBatchTaskForCreatingOrderActivateRequest : RpcAcsRequest<SaveBatchTaskForCreatingOrderActivateResponse>
     {
         public SaveBatchTaskForCreatingOrderActivateRequest()
-            : base("Domain", "2018-01-29", "SaveBatchTaskForCreatingOrderActivate")
+            : base("Domain", "2018-01-29", "SaveBatchTaskForCreatingOrderActivate", "domain", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -69,6 +68,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				{
 					for (int depth1 = 0; depth1 < orderActivateParams.Count; depth1++)
 					{
+						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
 						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
 						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
 						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
@@ -198,6 +198,8 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			private bool? aliyunDns;
 
 			private string zhCity;
+
+			private string resourceGroupId;
 
 			private string telExt;
 
@@ -338,6 +340,18 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					zhCity = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 

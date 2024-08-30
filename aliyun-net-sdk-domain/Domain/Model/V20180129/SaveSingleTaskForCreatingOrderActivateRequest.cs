@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Domain;
 using Aliyun.Acs.Domain.Transform;
 using Aliyun.Acs.Domain.Transform.V20180129;
 
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
     public class SaveSingleTaskForCreatingOrderActivateRequest : RpcAcsRequest<SaveSingleTaskForCreatingOrderActivateResponse>
     {
         public SaveSingleTaskForCreatingOrderActivateRequest()
-            : base("Domain", "2018-01-29", "SaveSingleTaskForCreatingOrderActivate")
+            : base("Domain", "2018-01-29", "SaveSingleTaskForCreatingOrderActivate", "domain", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,29 +43,47 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string country;
 
+		private string dns2;
+
+		private string dns1;
+
+		private string couponNo;
+
+		private string zhCity;
+
+		private string resourceGroupId;
+
+		private string telExt;
+
+		private string province;
+
+		private string domainName;
+
+		private string zhAddress;
+
+		private string telephone;
+
+		private string zhProvince;
+
+		private string registrantOrganization;
+
+		private string promotionNo;
+
+		private string registrantName;
+
+		private bool? usePromotion;
+
 		private int? subscriptionDuration;
 
 		private bool? permitPremiumActivation;
 
 		private string city;
 
-		private string dns2;
-
-		private string dns1;
-
 		private long? registrantProfileId;
-
-		private string couponNo;
 
 		private bool? aliyunDns;
 
-		private string zhCity;
-
-		private string telExt;
-
 		private string zhRegistrantName;
-
-		private string province;
 
 		private string postalCode;
 
@@ -79,32 +97,17 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string telArea;
 
-		private string domainName;
-
-		private string zhAddress;
-
 		private string registrantType;
-
-		private string telephone;
 
 		private bool? trademarkDomainActivation;
 
 		private bool? useCoupon;
 
-		private string zhProvince;
-
-		private string registrantOrganization;
-
-		private string promotionNo;
-
 		private bool? enableDomainProxy;
 
 		private string userClientIp;
 
-		private string registrantName;
-
-		private bool? usePromotion;
-
+		[JsonProperty(PropertyName = "Country")]
 		public string Country
 		{
 			get
@@ -118,45 +121,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public int? SubscriptionDuration
-		{
-			get
-			{
-				return subscriptionDuration;
-			}
-			set	
-			{
-				subscriptionDuration = value;
-				DictionaryUtil.Add(QueryParameters, "SubscriptionDuration", value.ToString());
-			}
-		}
-
-		public bool? PermitPremiumActivation
-		{
-			get
-			{
-				return permitPremiumActivation;
-			}
-			set	
-			{
-				permitPremiumActivation = value;
-				DictionaryUtil.Add(QueryParameters, "PermitPremiumActivation", value.ToString());
-			}
-		}
-
-		public string City
-		{
-			get
-			{
-				return city;
-			}
-			set	
-			{
-				city = value;
-				DictionaryUtil.Add(QueryParameters, "City", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "Dns2")]
 		public string Dns2
 		{
 			get
@@ -170,6 +135,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "Dns1")]
 		public string Dns1
 		{
 			get
@@ -183,19 +149,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public long? RegistrantProfileId
-		{
-			get
-			{
-				return registrantProfileId;
-			}
-			set	
-			{
-				registrantProfileId = value;
-				DictionaryUtil.Add(QueryParameters, "RegistrantProfileId", value.ToString());
-			}
-		}
-
+		[JsonProperty(PropertyName = "CouponNo")]
 		public string CouponNo
 		{
 			get
@@ -209,19 +163,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public bool? AliyunDns
-		{
-			get
-			{
-				return aliyunDns;
-			}
-			set	
-			{
-				aliyunDns = value;
-				DictionaryUtil.Add(QueryParameters, "AliyunDns", value.ToString());
-			}
-		}
-
+		[JsonProperty(PropertyName = "ZhCity")]
 		public string ZhCity
 		{
 			get
@@ -235,6 +177,21 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceGroupId")]
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "TelExt")]
 		public string TelExt
 		{
 			get
@@ -248,19 +205,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string ZhRegistrantName
-		{
-			get
-			{
-				return zhRegistrantName;
-			}
-			set	
-			{
-				zhRegistrantName = value;
-				DictionaryUtil.Add(QueryParameters, "ZhRegistrantName", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "Province")]
 		public string Province
 		{
 			get
@@ -274,84 +219,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string PostalCode
-		{
-			get
-			{
-				return postalCode;
-			}
-			set	
-			{
-				postalCode = value;
-				DictionaryUtil.Add(QueryParameters, "PostalCode", value);
-			}
-		}
-
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public string Email
-		{
-			get
-			{
-				return email;
-			}
-			set	
-			{
-				email = value;
-				DictionaryUtil.Add(QueryParameters, "Email", value);
-			}
-		}
-
-		public string ZhRegistrantOrganization
-		{
-			get
-			{
-				return zhRegistrantOrganization;
-			}
-			set	
-			{
-				zhRegistrantOrganization = value;
-				DictionaryUtil.Add(QueryParameters, "ZhRegistrantOrganization", value);
-			}
-		}
-
-		public string Address
-		{
-			get
-			{
-				return address;
-			}
-			set	
-			{
-				address = value;
-				DictionaryUtil.Add(QueryParameters, "Address", value);
-			}
-		}
-
-		public string TelArea
-		{
-			get
-			{
-				return telArea;
-			}
-			set	
-			{
-				telArea = value;
-				DictionaryUtil.Add(QueryParameters, "TelArea", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "DomainName")]
 		public string DomainName
 		{
 			get
@@ -365,6 +233,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "ZhAddress")]
 		public string ZhAddress
 		{
 			get
@@ -378,19 +247,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string RegistrantType
-		{
-			get
-			{
-				return registrantType;
-			}
-			set	
-			{
-				registrantType = value;
-				DictionaryUtil.Add(QueryParameters, "RegistrantType", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "Telephone")]
 		public string Telephone
 		{
 			get
@@ -404,32 +261,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public bool? TrademarkDomainActivation
-		{
-			get
-			{
-				return trademarkDomainActivation;
-			}
-			set	
-			{
-				trademarkDomainActivation = value;
-				DictionaryUtil.Add(QueryParameters, "TrademarkDomainActivation", value.ToString());
-			}
-		}
-
-		public bool? UseCoupon
-		{
-			get
-			{
-				return useCoupon;
-			}
-			set	
-			{
-				useCoupon = value;
-				DictionaryUtil.Add(QueryParameters, "UseCoupon", value.ToString());
-			}
-		}
-
+		[JsonProperty(PropertyName = "ZhProvince")]
 		public string ZhProvince
 		{
 			get
@@ -443,6 +275,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "RegistrantOrganization")]
 		public string RegistrantOrganization
 		{
 			get
@@ -456,6 +289,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "PromotionNo")]
 		public string PromotionNo
 		{
 			get
@@ -469,32 +303,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public bool? EnableDomainProxy
-		{
-			get
-			{
-				return enableDomainProxy;
-			}
-			set	
-			{
-				enableDomainProxy = value;
-				DictionaryUtil.Add(QueryParameters, "EnableDomainProxy", value.ToString());
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "RegistrantName")]
 		public string RegistrantName
 		{
 			get
@@ -508,6 +317,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "UsePromotion")]
 		public bool? UsePromotion
 		{
 			get
@@ -518,6 +328,244 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				usePromotion = value;
 				DictionaryUtil.Add(QueryParameters, "UsePromotion", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "SubscriptionDuration")]
+		public int? SubscriptionDuration
+		{
+			get
+			{
+				return subscriptionDuration;
+			}
+			set	
+			{
+				subscriptionDuration = value;
+				DictionaryUtil.Add(QueryParameters, "SubscriptionDuration", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "PermitPremiumActivation")]
+		public bool? PermitPremiumActivation
+		{
+			get
+			{
+				return permitPremiumActivation;
+			}
+			set	
+			{
+				permitPremiumActivation = value;
+				DictionaryUtil.Add(QueryParameters, "PermitPremiumActivation", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "City")]
+		public string City
+		{
+			get
+			{
+				return city;
+			}
+			set	
+			{
+				city = value;
+				DictionaryUtil.Add(QueryParameters, "City", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "RegistrantProfileId")]
+		public long? RegistrantProfileId
+		{
+			get
+			{
+				return registrantProfileId;
+			}
+			set	
+			{
+				registrantProfileId = value;
+				DictionaryUtil.Add(QueryParameters, "RegistrantProfileId", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "AliyunDns")]
+		public bool? AliyunDns
+		{
+			get
+			{
+				return aliyunDns;
+			}
+			set	
+			{
+				aliyunDns = value;
+				DictionaryUtil.Add(QueryParameters, "AliyunDns", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "ZhRegistrantName")]
+		public string ZhRegistrantName
+		{
+			get
+			{
+				return zhRegistrantName;
+			}
+			set	
+			{
+				zhRegistrantName = value;
+				DictionaryUtil.Add(QueryParameters, "ZhRegistrantName", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "PostalCode")]
+		public string PostalCode
+		{
+			get
+			{
+				return postalCode;
+			}
+			set	
+			{
+				postalCode = value;
+				DictionaryUtil.Add(QueryParameters, "PostalCode", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Lang")]
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Email")]
+		public string Email
+		{
+			get
+			{
+				return email;
+			}
+			set	
+			{
+				email = value;
+				DictionaryUtil.Add(QueryParameters, "Email", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ZhRegistrantOrganization")]
+		public string ZhRegistrantOrganization
+		{
+			get
+			{
+				return zhRegistrantOrganization;
+			}
+			set	
+			{
+				zhRegistrantOrganization = value;
+				DictionaryUtil.Add(QueryParameters, "ZhRegistrantOrganization", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Address")]
+		public string Address
+		{
+			get
+			{
+				return address;
+			}
+			set	
+			{
+				address = value;
+				DictionaryUtil.Add(QueryParameters, "Address", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "TelArea")]
+		public string TelArea
+		{
+			get
+			{
+				return telArea;
+			}
+			set	
+			{
+				telArea = value;
+				DictionaryUtil.Add(QueryParameters, "TelArea", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "RegistrantType")]
+		public string RegistrantType
+		{
+			get
+			{
+				return registrantType;
+			}
+			set	
+			{
+				registrantType = value;
+				DictionaryUtil.Add(QueryParameters, "RegistrantType", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "TrademarkDomainActivation")]
+		public bool? TrademarkDomainActivation
+		{
+			get
+			{
+				return trademarkDomainActivation;
+			}
+			set	
+			{
+				trademarkDomainActivation = value;
+				DictionaryUtil.Add(QueryParameters, "TrademarkDomainActivation", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "UseCoupon")]
+		public bool? UseCoupon
+		{
+			get
+			{
+				return useCoupon;
+			}
+			set	
+			{
+				useCoupon = value;
+				DictionaryUtil.Add(QueryParameters, "UseCoupon", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "EnableDomainProxy")]
+		public bool? EnableDomainProxy
+		{
+			get
+			{
+				return enableDomainProxy;
+			}
+			set	
+			{
+				enableDomainProxy = value;
+				DictionaryUtil.Add(QueryParameters, "EnableDomainProxy", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "UserClientIp")]
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 

@@ -29,6 +29,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string taskNo;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "TaskNo")]
 		public string TaskNo
 		{
 			get

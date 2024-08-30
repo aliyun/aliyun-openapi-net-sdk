@@ -38,6 +38,17 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			checkDomainResponse.Premium = _ctx.StringValue("CheckDomain.Premium");
 			checkDomainResponse.DynamicCheck = _ctx.BooleanValue("CheckDomain.DynamicCheck");
 			checkDomainResponse.Reason = _ctx.StringValue("CheckDomain.Reason");
+
+			List<CheckDomainResponse.CheckDomain_PriceInfo> checkDomainResponse_staticPriceInfo = new List<CheckDomainResponse.CheckDomain_PriceInfo>();
+			for (int i = 0; i < _ctx.Length("CheckDomain.StaticPriceInfo.Length"); i++) {
+				CheckDomainResponse.CheckDomain_PriceInfo priceInfo = new CheckDomainResponse.CheckDomain_PriceInfo();
+				priceInfo.Action = _ctx.StringValue("CheckDomain.StaticPriceInfo["+ i +"].action");
+				priceInfo.Money = _ctx.DoubleValue("CheckDomain.StaticPriceInfo["+ i +"].money");
+				priceInfo.Period = _ctx.LongValue("CheckDomain.StaticPriceInfo["+ i +"].period");
+
+				checkDomainResponse_staticPriceInfo.Add(priceInfo);
+			}
+			checkDomainResponse.StaticPriceInfo = checkDomainResponse_staticPriceInfo;
         
 			return checkDomainResponse;
         }

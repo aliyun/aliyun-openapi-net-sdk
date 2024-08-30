@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Domain;
 using Aliyun.Acs.Domain.Transform;
 using Aliyun.Acs.Domain.Transform.V20180129;
 
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
     public class SubmitOperationCredentialsRequest : RpcAcsRequest<SubmitOperationCredentialsResponse>
     {
         public SubmitOperationCredentialsRequest()
-            : base("Domain", "2018-01-29", "SubmitOperationCredentials")
+            : base("Domain", "2018-01-29", "SubmitOperationCredentials", "domain", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -51,6 +51,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string lang;
 
+		[JsonProperty(PropertyName = "Credentials")]
 		public string Credentials
 		{
 			get
@@ -64,6 +65,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "AuditRecordId")]
 		public long? AuditRecordId
 		{
 			get
@@ -77,6 +79,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "RegType")]
 		public int? RegType
 		{
 			get
@@ -90,6 +93,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "AuditType")]
 		public int? AuditType
 		{
 			get
@@ -103,6 +107,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "Lang")]
 		public string Lang
 		{
 			get

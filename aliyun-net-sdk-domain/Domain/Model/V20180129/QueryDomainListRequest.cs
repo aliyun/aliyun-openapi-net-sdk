@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Domain;
 using Aliyun.Acs.Domain.Transform;
 using Aliyun.Acs.Domain.Transform.V20180129;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
     public class QueryDomainListRequest : RpcAcsRequest<QueryDomainListResponse>
     {
         public QueryDomainListRequest()
-            : base("Domain", "2018-01-29", "QueryDomainList")
+            : base("Domain", "2018-01-29", "QueryDomainList", "domain", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,13 +42,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string productDomainType;
 
+		private string ccompany;
+
 		private string orderKeyType;
 
 		private int? pageNum;
 
 		private string orderByType;
 
+		private string resourceGroupId;
+
 		private int? pageSize;
+
+		private List<string> tags = new List<string>(){ };
 
 		private string lang;
 
@@ -79,6 +84,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				productDomainType = value;
 				DictionaryUtil.Add(QueryParameters, "ProductDomainType", value);
+			}
+		}
+
+		public string Ccompany
+		{
+			get
+			{
+				return ccompany;
+			}
+			set	
+			{
+				ccompany = value;
+				DictionaryUtil.Add(QueryParameters, "Ccompany", value);
 			}
 		}
 
@@ -121,6 +139,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
 		public int? PageSize
 		{
 			get
@@ -131,6 +162,27 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public List<string> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				if(tags != null)
+				{
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
+				}
 			}
 		}
 
@@ -248,6 +300,38 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				startRegistrationDate = value;
 				DictionaryUtil.Add(QueryParameters, "StartRegistrationDate", value.ToString());
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

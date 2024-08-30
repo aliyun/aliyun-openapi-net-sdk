@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Domain;
 using Aliyun.Acs.Domain.Transform;
 using Aliyun.Acs.Domain.Transform.V20180129;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
     public class CheckProcessingServerLockApplyRequest : RpcAcsRequest<CheckProcessingServerLockApplyResponse>
     {
         public CheckProcessingServerLockApplyRequest()
-            : base("Domain", "2018-01-29", "CheckProcessingServerLockApply")
+            : base("Domain", "2018-01-29", "CheckProcessingServerLockApply", "domain", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

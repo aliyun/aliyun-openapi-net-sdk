@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Domain;
 using Aliyun.Acs.Domain.Transform;
 using Aliyun.Acs.Domain.Transform.V20180129;
 
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
     public class SaveRegistrantProfileRequest : RpcAcsRequest<SaveRegistrantProfileResponse>
     {
         public SaveRegistrantProfileRequest()
-            : base("Domain", "2018-01-29", "SaveRegistrantProfile")
+            : base("Domain", "2018-01-29", "SaveRegistrantProfile", "domain", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -85,6 +85,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string registrantName;
 
+		[JsonProperty(PropertyName = "Country")]
 		public string Country
 		{
 			get
@@ -98,6 +99,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "City")]
 		public string City
 		{
 			get
@@ -111,6 +113,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "RegistrantProfileId")]
 		public long? RegistrantProfileId
 		{
 			get
@@ -124,6 +127,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "ZhCity")]
 		public string ZhCity
 		{
 			get
@@ -137,6 +141,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "TelExt")]
 		public string TelExt
 		{
 			get
@@ -150,6 +155,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "Province")]
 		public string Province
 		{
 			get
@@ -163,6 +169,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "ZhRegistrantName")]
 		public string ZhRegistrantName
 		{
 			get
@@ -176,6 +183,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "PostalCode")]
 		public string PostalCode
 		{
 			get
@@ -189,6 +197,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "Lang")]
 		public string Lang
 		{
 			get
@@ -202,6 +211,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "Email")]
 		public string Email
 		{
 			get
@@ -215,6 +225,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "ZhRegistrantOrganization")]
 		public string ZhRegistrantOrganization
 		{
 			get
@@ -228,6 +239,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "Address")]
 		public string Address
 		{
 			get
@@ -241,6 +253,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "TelArea")]
 		public string TelArea
 		{
 			get
@@ -254,6 +267,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "ZhAddress")]
 		public string ZhAddress
 		{
 			get
@@ -267,6 +281,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "RegistrantType")]
 		public string RegistrantType
 		{
 			get
@@ -280,6 +295,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "RegistrantProfileType")]
 		public string RegistrantProfileType
 		{
 			get
@@ -293,6 +309,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "Telephone")]
 		public string Telephone
 		{
 			get
@@ -306,6 +323,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "DefaultRegistrantProfile")]
 		public bool? DefaultRegistrantProfile
 		{
 			get
@@ -319,6 +337,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "ZhProvince")]
 		public string ZhProvince
 		{
 			get
@@ -332,6 +351,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "RegistrantOrganization")]
 		public string RegistrantOrganization
 		{
 			get
@@ -345,6 +365,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "UserClientIp")]
 		public string UserClientIp
 		{
 			get
@@ -358,6 +379,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "RegistrantName")]
 		public string RegistrantName
 		{
 			get

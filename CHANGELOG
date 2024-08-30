@@ -1,3 +1,10 @@
+2024-08-30 Version: 3.14.10
+- 增加国际一口价相关接口.
+- GetIntlFixPriceDomainListUrl.
+- CheckIntlFixPriceDomainStatus.
+- CreateIntlFixedPriceDomainOrder.
+- QueryIntlFixedPriceOrderList.
+
 2024-08-28 Version: 3.7.19
 - Generated 2015-12-01 for `Dds`.
 

@@ -41,6 +41,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private int? totalNumber;
 
+		[JsonProperty(PropertyName = "BeingDeleted")]
 		public bool? BeingDeleted
 		{
 			get
@@ -53,6 +54,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "CreationDate")]
 		public string CreationDate
 		{
 			get
@@ -65,6 +67,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -77,6 +80,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "DomainGroupName")]
 		public string DomainGroupName
 		{
 			get
@@ -89,6 +93,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "ModificationDate")]
 		public string ModificationDate
 		{
 			get
@@ -101,6 +106,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "DomainGroupStatus")]
 		public string DomainGroupStatus
 		{
 			get
@@ -113,6 +119,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "DomainGroupId")]
 		public long? DomainGroupId
 		{
 			get
@@ -125,6 +132,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "TotalNumber")]
 		public int? TotalNumber
 		{
 			get

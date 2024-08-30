@@ -39,6 +39,8 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string reason;
 
+		private List<CheckDomain_PriceInfo> staticPriceInfo;
+
 		public string RequestId
 		{
 			get
@@ -120,6 +122,64 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				reason = value;
+			}
+		}
+
+		public List<CheckDomain_PriceInfo> StaticPriceInfo
+		{
+			get
+			{
+				return staticPriceInfo;
+			}
+			set	
+			{
+				staticPriceInfo = value;
+			}
+		}
+
+		public class CheckDomain_PriceInfo
+		{
+
+			private string action;
+
+			private double? money;
+
+			private long? period;
+
+			public string Action
+			{
+				get
+				{
+					return action;
+				}
+				set	
+				{
+					action = value;
+				}
+			}
+
+			public double? Money
+			{
+				get
+				{
+					return money;
+				}
+				set	
+				{
+					money = value;
+				}
+			}
+
+			public long? Period
+			{
+				get
+				{
+					return period;
+				}
+				set	
+				{
+					period = value;
+				}
 			}
 		}
 	}

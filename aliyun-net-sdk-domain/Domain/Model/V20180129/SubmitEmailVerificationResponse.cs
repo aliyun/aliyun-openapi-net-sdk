@@ -33,6 +33,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private List<SubmitEmailVerification_SendResult> failList;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -45,6 +46,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "ExistList")]
 		public List<SubmitEmailVerification_SendResult> ExistList
 		{
 			get
@@ -57,6 +59,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "SuccessList")]
 		public List<SubmitEmailVerification_SendResult> SuccessList
 		{
 			get
@@ -69,6 +72,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "FailList")]
 		public List<SubmitEmailVerification_SendResult> FailList
 		{
 			get
@@ -90,6 +94,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 			private string message;
 
+			[JsonProperty(PropertyName = "Email")]
 			public string Email
 			{
 				get
@@ -102,6 +107,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			[JsonProperty(PropertyName = "Code")]
 			public string Code
 			{
 				get
@@ -114,6 +120,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			[JsonProperty(PropertyName = "Message")]
 			public string Message
 			{
 				get

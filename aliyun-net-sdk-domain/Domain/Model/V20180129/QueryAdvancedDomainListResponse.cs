@@ -180,6 +180,10 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 			private string domainType;
 
+			private string resourceGroupId;
+
+			private List<QueryAdvancedDomainList_TagItem> tag;
+
 			private List<string> dnsList;
 
 			public string DomainAuditStatus
@@ -422,6 +426,30 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public List<QueryAdvancedDomainList_TagItem> Tag
+			{
+				get
+				{
+					return tag;
+				}
+				set	
+				{
+					tag = value;
+				}
+			}
+
 			public List<string> DnsList
 			{
 				get
@@ -431,6 +459,38 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					dnsList = value;
+				}
+			}
+
+			public class QueryAdvancedDomainList_TagItem
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}
