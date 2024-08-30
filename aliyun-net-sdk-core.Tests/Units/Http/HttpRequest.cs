@@ -17,9 +17,11 @@
  * under the License.
  */
 
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
@@ -30,6 +32,16 @@ namespace Aliyun.Acs.Core.Tests.Units.Http
 {
     public class HttpRequestTest
     {
+        [Fact]
+        public void CredentialsHeadersTest()
+        {
+            var instance = new HttpRequest("https://testurl");
+            instance.Headers.Add("User-Agent", UserAgent.Resolve(null, null));
+            var pattern = @"^Alibaba Cloud \(.+?\) \S+ Core/\S+$";
+            var isMatch = Regex.IsMatch(instance.Headers["User-Agent"], pattern);
+            Assert.True(isMatch);
+        }
+
         [Fact]
         public void ConnectTimeoutTest()
         {
