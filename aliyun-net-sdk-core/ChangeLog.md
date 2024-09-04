@@ -1,3 +1,7 @@
+### 2024-09-04 Version 1.6.0
+* Support OIDC credentials provider.
+* Add OIDC credentials provider into default credentials provider chain.
+
 ### 2021-12-07 Version 1.5.11
 * Add Endpoint for SLB.
 
