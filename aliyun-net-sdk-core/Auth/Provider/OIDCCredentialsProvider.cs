@@ -42,7 +42,7 @@ namespace Aliyun.Acs.Core.Auth
 
             if (string.IsNullOrEmpty(RoleSessionName))
             {
-                RoleSessionName = "DEFAULT_ROLE_SESSION_NAME_FOR_C#_SDK_V1";
+                RoleSessionName = "aliyun-net-sdk-" + DateTime.UtcNow.currentTimeMillis();
             }
 
             if (string.IsNullOrEmpty(regionId))
@@ -138,7 +138,7 @@ namespace Aliyun.Acs.Core.Auth
             else if (map.ContainsKey("Credentials"))
             {
                 var credentialsJson = JsonConvert.SerializeObject(DictionaryUtil.Get(map, "Credentials"));
-                var credentials = JsonConvert.DeserializeObject<Dictionary<string, string>> (credentialsJson);
+                var credentials = JsonConvert.DeserializeObject<Dictionary<string, string>>(credentialsJson);
                 var accessKeyId = DictionaryUtil.Get(credentials, "AccessKeyId");
                 var accessKeySecret = DictionaryUtil.Get(credentials, "AccessKeySecret");
                 var securityToken = DictionaryUtil.Get(credentials, "SecurityToken");
