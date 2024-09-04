@@ -17,6 +17,7 @@
  * under the License.
  */
 
+using System;
 using System.IO;
 
 using Aliyun.Acs.Core.Exceptions;
@@ -39,6 +40,8 @@ namespace Aliyun.Acs.Core.Auth.Provider
         private string regionId;
         private string roleArn;
         private string roleName;
+        private string oidcProviderArn;
+        private string oidcTokenFile;
 
         public DefaultCredentialProvider()
         {
@@ -55,6 +58,9 @@ namespace Aliyun.Acs.Core.Auth.Provider
             credentialFileLocation = EnvironmentUtil.GetEnvironmentCredentialFile();
             roleName = EnvironmentUtil.GetEnvironmentRoleName();
             defaultProfile = profile;
+            roleArn = EnvironmentUtil.GetEnvironmentRoleArn();
+            oidcProviderArn = EnvironmentUtil.GetEnvironmentOIDCProviderArn();
+            oidcTokenFile = EnvironmentUtil.GetEnvironmentOIDCTokenFile();
             this.alibabaCloudCredentialProvider = alibabaCloudCredentialProvider;
         }
 
@@ -75,6 +81,7 @@ namespace Aliyun.Acs.Core.Auth.Provider
         public AlibabaCloudCredentials GetAlibabaCloudClientCredential()
         {
             var credential = GetEnvironmentAlibabaCloudCredential() ??
+                             GetOIDCAlibabaCloudCredential() ??
                              GetCredentialFileAlibabaCloudCredential() ??
                              GetInstanceRamRoleAlibabaCloudCredential();
 
@@ -84,6 +91,15 @@ namespace Aliyun.Acs.Core.Auth.Provider
             }
 
             return credential;
+        }
+
+        internal virtual AlibabaCloudCredentials GetOIDCAlibabaCloudCredential()
+        {
+            if (string.IsNullOrEmpty(oidcProviderArn) || string.IsNullOrEmpty(roleArn) || string.IsNullOrEmpty(oidcTokenFile))
+            {
+                return null;
+            }
+            return new OIDCCredentialsProvider(roleArn, oidcProviderArn, oidcTokenFile, null, null).GetCredentials();
         }
 
         public AlibabaCloudCredentials GetEnvironmentAlibabaCloudCredential()
