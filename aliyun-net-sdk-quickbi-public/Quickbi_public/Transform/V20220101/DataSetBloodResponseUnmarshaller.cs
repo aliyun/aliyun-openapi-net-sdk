@@ -37,8 +37,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			List<DataSetBloodResponse.DataSetBlood_WorksModels> dataSetBloodResponse_result = new List<DataSetBloodResponse.DataSetBlood_WorksModels>();
 			for (int i = 0; i < _ctx.Length("DataSetBlood.Result.Length"); i++) {
 				DataSetBloodResponse.DataSetBlood_WorksModels worksModels = new DataSetBloodResponse.DataSetBlood_WorksModels();
-				worksModels.WorksType = _ctx.StringValue("DataSetBlood.Result["+ i +"].WorksType");
 				worksModels.WorksId = _ctx.StringValue("DataSetBlood.Result["+ i +"].WorksId");
+				worksModels.WorksType = _ctx.StringValue("DataSetBlood.Result["+ i +"].WorksType");
 
 				dataSetBloodResponse_result.Add(worksModels);
 			}

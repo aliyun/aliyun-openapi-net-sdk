@@ -37,11 +37,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 		private string copilotId;
 
-		private string agentName;
-
 		private string dataRange;
 
 		private string moduleName;
+
+		private string agentName;
 
 		public string CopilotId
 		{
@@ -53,19 +53,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				copilotId = value;
 				DictionaryUtil.Add(QueryParameters, "CopilotId", value);
-			}
-		}
-
-		public string AgentName
-		{
-			get
-			{
-				return agentName;
-			}
-			set	
-			{
-				agentName = value;
-				DictionaryUtil.Add(QueryParameters, "AgentName", value);
 			}
 		}
 
@@ -92,6 +79,19 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				moduleName = value;
 				DictionaryUtil.Add(QueryParameters, "ModuleName", value);
+			}
+		}
+
+		public string AgentName
+		{
+			get
+			{
+				return agentName;
+			}
+			set	
+			{
+				agentName = value;
+				DictionaryUtil.Add(QueryParameters, "AgentName", value);
 			}
 		}
 

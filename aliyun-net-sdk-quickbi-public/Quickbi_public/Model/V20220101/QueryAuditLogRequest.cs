@@ -37,11 +37,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 		private string startDate;
 
+		private string logType;
+
 		private string resourceType;
 
 		private string operatorTypes;
-
-		private string logType;
 
 		private string endDate;
 
@@ -59,6 +59,19 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				startDate = value;
 				DictionaryUtil.Add(QueryParameters, "StartDate", value);
+			}
+		}
+
+		public string LogType
+		{
+			get
+			{
+				return logType;
+			}
+			set	
+			{
+				logType = value;
+				DictionaryUtil.Add(QueryParameters, "LogType", value);
 			}
 		}
 
@@ -85,19 +98,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				operatorTypes = value;
 				DictionaryUtil.Add(QueryParameters, "OperatorTypes", value);
-			}
-		}
-
-		public string LogType
-		{
-			get
-			{
-				return logType;
-			}
-			set	
-			{
-				logType = value;
-				DictionaryUtil.Add(QueryParameters, "LogType", value);
 			}
 		}
 

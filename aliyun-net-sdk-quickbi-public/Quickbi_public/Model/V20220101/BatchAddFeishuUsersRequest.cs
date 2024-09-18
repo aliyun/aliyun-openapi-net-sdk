@@ -35,15 +35,28 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			Method = MethodType.POST;
         }
 
-		private bool? isAdmin;
+		private bool? isAuthAdmin;
 
-		private string feishuUsers;
+		private bool? isAdmin;
 
 		private int? userType;
 
 		private string userGroupIds;
 
-		private bool? isAuthAdmin;
+		private string feishuUsers;
+
+		public bool? IsAuthAdmin
+		{
+			get
+			{
+				return isAuthAdmin;
+			}
+			set	
+			{
+				isAuthAdmin = value;
+				DictionaryUtil.Add(QueryParameters, "IsAuthAdmin", value.ToString());
+			}
+		}
 
 		public bool? IsAdmin
 		{
@@ -55,19 +68,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				isAdmin = value;
 				DictionaryUtil.Add(QueryParameters, "IsAdmin", value.ToString());
-			}
-		}
-
-		public string FeishuUsers
-		{
-			get
-			{
-				return feishuUsers;
-			}
-			set	
-			{
-				feishuUsers = value;
-				DictionaryUtil.Add(QueryParameters, "FeishuUsers", value);
 			}
 		}
 
@@ -97,16 +97,16 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			}
 		}
 
-		public bool? IsAuthAdmin
+		public string FeishuUsers
 		{
 			get
 			{
-				return isAuthAdmin;
+				return feishuUsers;
 			}
 			set	
 			{
-				isAuthAdmin = value;
-				DictionaryUtil.Add(QueryParameters, "IsAuthAdmin", value.ToString());
+				feishuUsers = value;
+				DictionaryUtil.Add(QueryParameters, "FeishuUsers", value);
 			}
 		}
 

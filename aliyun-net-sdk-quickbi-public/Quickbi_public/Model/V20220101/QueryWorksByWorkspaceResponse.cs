@@ -25,23 +25,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 	public class QueryWorksByWorkspaceResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private string requestId;
 
-		private QueryWorksByWorkspace_Result result;
+		private bool? success;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private QueryWorksByWorkspace_Result result;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -70,27 +70,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryWorksByWorkspace_Result
 		{
 
-			private int? totalPages;
-
 			private int? pageNum;
 
 			private int? pageSize;
 
 			private int? totalNum;
 
-			private List<QueryWorksByWorkspace_DataItem> data;
+			private int? totalPages;
 
-			public int? TotalPages
-			{
-				get
-				{
-					return totalPages;
-				}
-				set	
-				{
-					totalPages = value;
-				}
-			}
+			private List<QueryWorksByWorkspace_DataItem> data;
 
 			public int? PageNum
 			{
@@ -128,6 +116,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
+			public int? TotalPages
+			{
+				get
+				{
+					return totalPages;
+				}
+				set	
+				{
+					totalPages = value;
+				}
+			}
+
 			public List<QueryWorksByWorkspace_DataItem> Data
 			{
 				get
@@ -143,63 +143,39 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class QueryWorksByWorkspace_DataItem
 			{
 
-				private int? status;
-
-				private string gmtModify;
-
 				private int? auth3rdFlag;
-
-				private string worksId;
-
-				private string workType;
-
-				private string ownerName;
-
-				private string workspaceName;
-
-				private string ownerId;
-
-				private string modifyName;
-
-				private string workspaceId;
-
-				private string securityLevel;
 
 				private string description;
 
-				private string workName;
-
 				private string gmtCreate;
+
+				private string gmtModify;
+
+				private string modifyName;
+
+				private string ownerId;
+
+				private string ownerName;
 
 				private bool? publicFlag;
 
 				private long? publicInvalidTime;
 
+				private string securityLevel;
+
+				private int? status;
+
+				private string workName;
+
+				private string workType;
+
+				private string worksId;
+
+				private string workspaceId;
+
+				private string workspaceName;
+
 				private QueryWorksByWorkspace_Directory directory;
-
-				public int? Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
-				}
-
-				public string GmtModify
-				{
-					get
-					{
-						return gmtModify;
-					}
-					set	
-					{
-						gmtModify = value;
-					}
-				}
 
 				public int? Auth3rdFlag
 				{
@@ -210,102 +186,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						auth3rdFlag = value;
-					}
-				}
-
-				public string WorksId
-				{
-					get
-					{
-						return worksId;
-					}
-					set	
-					{
-						worksId = value;
-					}
-				}
-
-				public string WorkType
-				{
-					get
-					{
-						return workType;
-					}
-					set	
-					{
-						workType = value;
-					}
-				}
-
-				public string OwnerName
-				{
-					get
-					{
-						return ownerName;
-					}
-					set	
-					{
-						ownerName = value;
-					}
-				}
-
-				public string WorkspaceName
-				{
-					get
-					{
-						return workspaceName;
-					}
-					set	
-					{
-						workspaceName = value;
-					}
-				}
-
-				public string OwnerId
-				{
-					get
-					{
-						return ownerId;
-					}
-					set	
-					{
-						ownerId = value;
-					}
-				}
-
-				public string ModifyName
-				{
-					get
-					{
-						return modifyName;
-					}
-					set	
-					{
-						modifyName = value;
-					}
-				}
-
-				public string WorkspaceId
-				{
-					get
-					{
-						return workspaceId;
-					}
-					set	
-					{
-						workspaceId = value;
-					}
-				}
-
-				public string SecurityLevel
-				{
-					get
-					{
-						return securityLevel;
-					}
-					set	
-					{
-						securityLevel = value;
 					}
 				}
 
@@ -321,18 +201,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string WorkName
-				{
-					get
-					{
-						return workName;
-					}
-					set	
-					{
-						workName = value;
-					}
-				}
-
 				public string GmtCreate
 				{
 					get
@@ -342,6 +210,54 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						gmtCreate = value;
+					}
+				}
+
+				public string GmtModify
+				{
+					get
+					{
+						return gmtModify;
+					}
+					set	
+					{
+						gmtModify = value;
+					}
+				}
+
+				public string ModifyName
+				{
+					get
+					{
+						return modifyName;
+					}
+					set	
+					{
+						modifyName = value;
+					}
+				}
+
+				public string OwnerId
+				{
+					get
+					{
+						return ownerId;
+					}
+					set	
+					{
+						ownerId = value;
+					}
+				}
+
+				public string OwnerName
+				{
+					get
+					{
+						return ownerName;
+					}
+					set	
+					{
+						ownerName = value;
 					}
 				}
 
@@ -369,6 +285,90 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
+				public string SecurityLevel
+				{
+					get
+					{
+						return securityLevel;
+					}
+					set	
+					{
+						securityLevel = value;
+					}
+				}
+
+				public int? Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public string WorkName
+				{
+					get
+					{
+						return workName;
+					}
+					set	
+					{
+						workName = value;
+					}
+				}
+
+				public string WorkType
+				{
+					get
+					{
+						return workType;
+					}
+					set	
+					{
+						workType = value;
+					}
+				}
+
+				public string WorksId
+				{
+					get
+					{
+						return worksId;
+					}
+					set	
+					{
+						worksId = value;
+					}
+				}
+
+				public string WorkspaceId
+				{
+					get
+					{
+						return workspaceId;
+					}
+					set	
+					{
+						workspaceId = value;
+					}
+				}
+
+				public string WorkspaceName
+				{
+					get
+					{
+						return workspaceName;
+					}
+					set	
+					{
+						workspaceName = value;
+					}
+				}
+
 				public QueryWorksByWorkspace_Directory Directory
 				{
 					get
@@ -384,13 +384,37 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				public class QueryWorksByWorkspace_Directory
 				{
 
+					private string id;
+
+					private string name;
+
 					private string pathId;
 
 					private string pathName;
 
-					private string name;
+					public string Id
+					{
+						get
+						{
+							return id;
+						}
+						set	
+						{
+							id = value;
+						}
+					}
 
-					private string id;
+					public string Name
+					{
+						get
+						{
+							return name;
+						}
+						set	
+						{
+							name = value;
+						}
+					}
 
 					public string PathId
 					{
@@ -413,30 +437,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 						set	
 						{
 							pathName = value;
-						}
-					}
-
-					public string Name
-					{
-						get
-						{
-							return name;
-						}
-						set	
-						{
-							name = value;
-						}
-					}
-
-					public string Id
-					{
-						get
-						{
-							return id;
-						}
-						set	
-						{
-							id = value;
 						}
 					}
 				}

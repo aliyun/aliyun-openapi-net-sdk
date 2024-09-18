@@ -70,75 +70,75 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryReportPerformance_Data
 		{
 
-			private string reportId;
+			private double? cacheCostTimeAvg;
 
-			private string reportName;
+			private int? cacheQueryCount;
 
 			private int? componentQueryCount;
 
 			private double? componentQueryCountAvg;
 
-			private string reportType;
+			private double? costTimeAvg;
+
+			private int? queryCount;
+
+			private double? queryCountAvg;
+
+			private double? queryOverFivePercentNum;
+
+			private string queryOverFiveSecPercent;
+
+			private string queryOverTenSecPercent;
+
+			private double? queryOverTenSecPercentNum;
 
 			private int? queryTimeoutCount;
 
-			private string repeatSqlQueryPercent;
-
-			private string workspaceName;
-
-			private string workspaceId;
-
-			private double? repeatQueryPercentNum;
-
-			private string repeatQueryPercent;
+			private double? queryTimeoutCountPercent;
 
 			private double? quickIndexCostTimeAvg;
 
 			private int? quickIndexQueryCount;
 
-			private double? cacheCostTimeAvg;
+			private string repeatQueryPercent;
 
-			private int? cacheQueryCount;
+			private double? repeatQueryPercentNum;
 
 			private int? repeatSqlQueryCount;
 
-			private double? costTimeAvg;
+			private string repeatSqlQueryPercent;
 
-			private double? queryCountAvg;
+			private string reportId;
 
-			private int? queryCount;
+			private string reportName;
 
-			private double? queryTimeoutCountPercent;
+			private string reportType;
 
-			private double? queryOverTenSecPercentNum;
+			private string workspaceId;
 
-			private double? queryOverFivePercentNum;
+			private string workspaceName;
 
-			private string queryOverTenSecPercent;
-
-			private string queryOverFiveSecPercent;
-
-			public string ReportId
+			public double? CacheCostTimeAvg
 			{
 				get
 				{
-					return reportId;
+					return cacheCostTimeAvg;
 				}
 				set	
 				{
-					reportId = value;
+					cacheCostTimeAvg = value;
 				}
 			}
 
-			public string ReportName
+			public int? CacheQueryCount
 			{
 				get
 				{
-					return reportName;
+					return cacheQueryCount;
 				}
 				set	
 				{
-					reportName = value;
+					cacheQueryCount = value;
 				}
 			}
 
@@ -166,15 +166,87 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string ReportType
+			public double? CostTimeAvg
 			{
 				get
 				{
-					return reportType;
+					return costTimeAvg;
 				}
 				set	
 				{
-					reportType = value;
+					costTimeAvg = value;
+				}
+			}
+
+			public int? QueryCount
+			{
+				get
+				{
+					return queryCount;
+				}
+				set	
+				{
+					queryCount = value;
+				}
+			}
+
+			public double? QueryCountAvg
+			{
+				get
+				{
+					return queryCountAvg;
+				}
+				set	
+				{
+					queryCountAvg = value;
+				}
+			}
+
+			public double? QueryOverFivePercentNum
+			{
+				get
+				{
+					return queryOverFivePercentNum;
+				}
+				set	
+				{
+					queryOverFivePercentNum = value;
+				}
+			}
+
+			public string QueryOverFiveSecPercent
+			{
+				get
+				{
+					return queryOverFiveSecPercent;
+				}
+				set	
+				{
+					queryOverFiveSecPercent = value;
+				}
+			}
+
+			public string QueryOverTenSecPercent
+			{
+				get
+				{
+					return queryOverTenSecPercent;
+				}
+				set	
+				{
+					queryOverTenSecPercent = value;
+				}
+			}
+
+			public double? QueryOverTenSecPercentNum
+			{
+				get
+				{
+					return queryOverTenSecPercentNum;
+				}
+				set	
+				{
+					queryOverTenSecPercentNum = value;
 				}
 			}
 
@@ -190,63 +262,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string RepeatSqlQueryPercent
+			public double? QueryTimeoutCountPercent
 			{
 				get
 				{
-					return repeatSqlQueryPercent;
+					return queryTimeoutCountPercent;
 				}
 				set	
 				{
-					repeatSqlQueryPercent = value;
-				}
-			}
-
-			public string WorkspaceName
-			{
-				get
-				{
-					return workspaceName;
-				}
-				set	
-				{
-					workspaceName = value;
-				}
-			}
-
-			public string WorkspaceId
-			{
-				get
-				{
-					return workspaceId;
-				}
-				set	
-				{
-					workspaceId = value;
-				}
-			}
-
-			public double? RepeatQueryPercentNum
-			{
-				get
-				{
-					return repeatQueryPercentNum;
-				}
-				set	
-				{
-					repeatQueryPercentNum = value;
-				}
-			}
-
-			public string RepeatQueryPercent
-			{
-				get
-				{
-					return repeatQueryPercent;
-				}
-				set	
-				{
-					repeatQueryPercent = value;
+					queryTimeoutCountPercent = value;
 				}
 			}
 
@@ -274,27 +298,27 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public double? CacheCostTimeAvg
+			public string RepeatQueryPercent
 			{
 				get
 				{
-					return cacheCostTimeAvg;
+					return repeatQueryPercent;
 				}
 				set	
 				{
-					cacheCostTimeAvg = value;
+					repeatQueryPercent = value;
 				}
 			}
 
-			public int? CacheQueryCount
+			public double? RepeatQueryPercentNum
 			{
 				get
 				{
-					return cacheQueryCount;
+					return repeatQueryPercentNum;
 				}
 				set	
 				{
-					cacheQueryCount = value;
+					repeatQueryPercentNum = value;
 				}
 			}
 
@@ -310,99 +334,75 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public double? CostTimeAvg
+			public string RepeatSqlQueryPercent
 			{
 				get
 				{
-					return costTimeAvg;
+					return repeatSqlQueryPercent;
 				}
 				set	
 				{
-					costTimeAvg = value;
+					repeatSqlQueryPercent = value;
 				}
 			}
 
-			public double? QueryCountAvg
+			public string ReportId
 			{
 				get
 				{
-					return queryCountAvg;
+					return reportId;
 				}
 				set	
 				{
-					queryCountAvg = value;
+					reportId = value;
 				}
 			}
 
-			public int? QueryCount
+			public string ReportName
 			{
 				get
 				{
-					return queryCount;
+					return reportName;
 				}
 				set	
 				{
-					queryCount = value;
+					reportName = value;
 				}
 			}
 
-			public double? QueryTimeoutCountPercent
+			public string ReportType
 			{
 				get
 				{
-					return queryTimeoutCountPercent;
+					return reportType;
 				}
 				set	
 				{
-					queryTimeoutCountPercent = value;
+					reportType = value;
 				}
 			}
 
-			public double? QueryOverTenSecPercentNum
+			public string WorkspaceId
 			{
 				get
 				{
-					return queryOverTenSecPercentNum;
+					return workspaceId;
 				}
 				set	
 				{
-					queryOverTenSecPercentNum = value;
+					workspaceId = value;
 				}
 			}
 
-			public double? QueryOverFivePercentNum
+			public string WorkspaceName
 			{
 				get
 				{
-					return queryOverFivePercentNum;
+					return workspaceName;
 				}
 				set	
 				{
-					queryOverFivePercentNum = value;
-				}
-			}
-
-			public string QueryOverTenSecPercent
-			{
-				get
-				{
-					return queryOverTenSecPercent;
-				}
-				set	
-				{
-					queryOverTenSecPercent = value;
-				}
-			}
-
-			public string QueryOverFiveSecPercent
-			{
-				get
-				{
-					return queryOverFiveSecPercent;
-				}
-				set	
-				{
-					queryOverFiveSecPercent = value;
+					workspaceName = value;
 				}
 			}
 		}

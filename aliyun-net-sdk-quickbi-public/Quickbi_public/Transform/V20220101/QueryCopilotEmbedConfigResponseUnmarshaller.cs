@@ -37,29 +37,29 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			List<QueryCopilotEmbedConfigResponse.QueryCopilotEmbedConfig_ResultItem> queryCopilotEmbedConfigResponse_result = new List<QueryCopilotEmbedConfigResponse.QueryCopilotEmbedConfig_ResultItem>();
 			for (int i = 0; i < _ctx.Length("QueryCopilotEmbedConfig.Result.Length"); i++) {
 				QueryCopilotEmbedConfigResponse.QueryCopilotEmbedConfig_ResultItem resultItem = new QueryCopilotEmbedConfigResponse.QueryCopilotEmbedConfig_ResultItem();
+				resultItem.AgentName = _ctx.StringValue("QueryCopilotEmbedConfig.Result["+ i +"].AgentName");
 				resultItem.CopilotId = _ctx.StringValue("QueryCopilotEmbedConfig.Result["+ i +"].CopilotId");
-				resultItem.ShowName = _ctx.StringValue("QueryCopilotEmbedConfig.Result["+ i +"].ShowName");
 				resultItem.CreateUser = _ctx.StringValue("QueryCopilotEmbedConfig.Result["+ i +"].CreateUser");
 				resultItem.CreateUserName = _ctx.StringValue("QueryCopilotEmbedConfig.Result["+ i +"].CreateUserName");
 				resultItem.ModifyUser = _ctx.StringValue("QueryCopilotEmbedConfig.Result["+ i +"].ModifyUser");
 				resultItem.ModuleName = _ctx.StringValue("QueryCopilotEmbedConfig.Result["+ i +"].ModuleName");
-				resultItem.AgentName = _ctx.StringValue("QueryCopilotEmbedConfig.Result["+ i +"].AgentName");
+				resultItem.ShowName = _ctx.StringValue("QueryCopilotEmbedConfig.Result["+ i +"].ShowName");
 
 				QueryCopilotEmbedConfigResponse.QueryCopilotEmbedConfig_ResultItem.QueryCopilotEmbedConfig_DataRange dataRange = new QueryCopilotEmbedConfigResponse.QueryCopilotEmbedConfig_ResultItem.QueryCopilotEmbedConfig_DataRange();
-				dataRange.AllTheme = _ctx.BooleanValue("QueryCopilotEmbedConfig.Result["+ i +"].DataRange.AllTheme");
 				dataRange.AllCube = _ctx.BooleanValue("QueryCopilotEmbedConfig.Result["+ i +"].DataRange.AllCube");
-
-				List<string> dataRange_themes = new List<string>();
-				for (int j = 0; j < _ctx.Length("QueryCopilotEmbedConfig.Result["+ i +"].DataRange.Themes.Length"); j++) {
-					dataRange_themes.Add(_ctx.StringValue("QueryCopilotEmbedConfig.Result["+ i +"].DataRange.Themes["+ j +"]"));
-				}
-				dataRange.Themes = dataRange_themes;
+				dataRange.AllTheme = _ctx.BooleanValue("QueryCopilotEmbedConfig.Result["+ i +"].DataRange.AllTheme");
 
 				List<string> dataRange_llmCubes = new List<string>();
 				for (int j = 0; j < _ctx.Length("QueryCopilotEmbedConfig.Result["+ i +"].DataRange.LlmCubes.Length"); j++) {
 					dataRange_llmCubes.Add(_ctx.StringValue("QueryCopilotEmbedConfig.Result["+ i +"].DataRange.LlmCubes["+ j +"]"));
 				}
 				dataRange.LlmCubes = dataRange_llmCubes;
+
+				List<string> dataRange_themes = new List<string>();
+				for (int j = 0; j < _ctx.Length("QueryCopilotEmbedConfig.Result["+ i +"].DataRange.Themes.Length"); j++) {
+					dataRange_themes.Add(_ctx.StringValue("QueryCopilotEmbedConfig.Result["+ i +"].DataRange.Themes["+ j +"]"));
+				}
+				dataRange.Themes = dataRange_themes;
 				resultItem.DataRange = dataRange;
 
 				queryCopilotEmbedConfigResponse_result.Add(resultItem);

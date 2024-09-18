@@ -39,9 +39,9 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			List<QueryDataRangeResponse.QueryDataRange_Result.QueryDataRange_ApiCopilotLlmCubeModelsItem> result_apiCopilotLlmCubeModels = new List<QueryDataRangeResponse.QueryDataRange_Result.QueryDataRange_ApiCopilotLlmCubeModelsItem>();
 			for (int i = 0; i < _ctx.Length("QueryDataRange.Result.ApiCopilotLlmCubeModels.Length"); i++) {
 				QueryDataRangeResponse.QueryDataRange_Result.QueryDataRange_ApiCopilotLlmCubeModelsItem apiCopilotLlmCubeModelsItem = new QueryDataRangeResponse.QueryDataRange_Result.QueryDataRange_ApiCopilotLlmCubeModelsItem();
-				apiCopilotLlmCubeModelsItem.LlmCubeId = _ctx.StringValue("QueryDataRange.Result.ApiCopilotLlmCubeModels["+ i +"].LlmCubeId");
 				apiCopilotLlmCubeModelsItem.Alias = _ctx.StringValue("QueryDataRange.Result.ApiCopilotLlmCubeModels["+ i +"].Alias");
 				apiCopilotLlmCubeModelsItem.CreateUser = _ctx.StringValue("QueryDataRange.Result.ApiCopilotLlmCubeModels["+ i +"].CreateUser");
+				apiCopilotLlmCubeModelsItem.LlmCubeId = _ctx.StringValue("QueryDataRange.Result.ApiCopilotLlmCubeModels["+ i +"].LlmCubeId");
 
 				result_apiCopilotLlmCubeModels.Add(apiCopilotLlmCubeModelsItem);
 			}
@@ -50,16 +50,16 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			List<QueryDataRangeResponse.QueryDataRange_Result.QueryDataRange_ApiCopilotThemeModelsItem> result_apiCopilotThemeModels = new List<QueryDataRangeResponse.QueryDataRange_Result.QueryDataRange_ApiCopilotThemeModelsItem>();
 			for (int i = 0; i < _ctx.Length("QueryDataRange.Result.ApiCopilotThemeModels.Length"); i++) {
 				QueryDataRangeResponse.QueryDataRange_Result.QueryDataRange_ApiCopilotThemeModelsItem apiCopilotThemeModelsItem = new QueryDataRangeResponse.QueryDataRange_Result.QueryDataRange_ApiCopilotThemeModelsItem();
+				apiCopilotThemeModelsItem.CreateUser = _ctx.StringValue("QueryDataRange.Result.ApiCopilotThemeModels["+ i +"].CreateUser");
 				apiCopilotThemeModelsItem.ThemeId = _ctx.StringValue("QueryDataRange.Result.ApiCopilotThemeModels["+ i +"].ThemeId");
 				apiCopilotThemeModelsItem.ThemeName = _ctx.StringValue("QueryDataRange.Result.ApiCopilotThemeModels["+ i +"].ThemeName");
-				apiCopilotThemeModelsItem.CreateUser = _ctx.StringValue("QueryDataRange.Result.ApiCopilotThemeModels["+ i +"].CreateUser");
 
 				List<QueryDataRangeResponse.QueryDataRange_Result.QueryDataRange_ApiCopilotThemeModelsItem.QueryDataRange_ApiCopilotLlmCubeModelsItem2> apiCopilotThemeModelsItem_apiCopilotLlmCubeModels1 = new List<QueryDataRangeResponse.QueryDataRange_Result.QueryDataRange_ApiCopilotThemeModelsItem.QueryDataRange_ApiCopilotLlmCubeModelsItem2>();
 				for (int j = 0; j < _ctx.Length("QueryDataRange.Result.ApiCopilotThemeModels["+ i +"].ApiCopilotLlmCubeModels.Length"); j++) {
 					QueryDataRangeResponse.QueryDataRange_Result.QueryDataRange_ApiCopilotThemeModelsItem.QueryDataRange_ApiCopilotLlmCubeModelsItem2 apiCopilotLlmCubeModelsItem2 = new QueryDataRangeResponse.QueryDataRange_Result.QueryDataRange_ApiCopilotThemeModelsItem.QueryDataRange_ApiCopilotLlmCubeModelsItem2();
-					apiCopilotLlmCubeModelsItem2.LlmCubeId = _ctx.StringValue("QueryDataRange.Result.ApiCopilotThemeModels["+ i +"].ApiCopilotLlmCubeModels["+ j +"].LlmCubeId");
 					apiCopilotLlmCubeModelsItem2.Alias = _ctx.StringValue("QueryDataRange.Result.ApiCopilotThemeModels["+ i +"].ApiCopilotLlmCubeModels["+ j +"].Alias");
 					apiCopilotLlmCubeModelsItem2.CreateUser = _ctx.StringValue("QueryDataRange.Result.ApiCopilotThemeModels["+ i +"].ApiCopilotLlmCubeModels["+ j +"].CreateUser");
+					apiCopilotLlmCubeModelsItem2.LlmCubeId = _ctx.StringValue("QueryDataRange.Result.ApiCopilotThemeModels["+ i +"].ApiCopilotLlmCubeModels["+ j +"].LlmCubeId");
 
 					apiCopilotThemeModelsItem_apiCopilotLlmCubeModels1.Add(apiCopilotLlmCubeModelsItem2);
 				}

@@ -37,9 +37,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 		private long? roleId;
 
-		private int? pageSize;
-
 		private int? pageNum;
+
+		private int? pageSize;
 
 		private string keyword;
 
@@ -56,19 +56,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
 		public int? PageNum
 		{
 			get
@@ -79,6 +66,19 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				pageNum = value;
 				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

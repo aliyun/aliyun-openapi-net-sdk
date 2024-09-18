@@ -35,24 +35,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			Method = MethodType.POST;
         }
 
-		private string userIds;
-
 		private long? roleId;
 
-		private string workspaceId;
+		private string userIds;
 
-		public string UserIds
-		{
-			get
-			{
-				return userIds;
-			}
-			set	
-			{
-				userIds = value;
-				DictionaryUtil.Add(QueryParameters, "UserIds", value);
-			}
-		}
+		private string workspaceId;
 
 		public long? RoleId
 		{
@@ -64,6 +51,19 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				roleId = value;
 				DictionaryUtil.Add(QueryParameters, "RoleId", value.ToString());
+			}
+		}
+
+		public string UserIds
+		{
+			get
+			{
+				return userIds;
+			}
+			set	
+			{
+				userIds = value;
+				DictionaryUtil.Add(QueryParameters, "UserIds", value);
 			}
 		}
 

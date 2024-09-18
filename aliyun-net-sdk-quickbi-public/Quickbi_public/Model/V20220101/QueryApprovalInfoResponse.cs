@@ -70,17 +70,53 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryApprovalInfo_Result
 		{
 
+			private int? page;
+
+			private int? pageSize;
+
+			private int? start;
+
 			private int? total;
 
 			private int? totalPages;
 
-			private int? start;
-
-			private int? pageSize;
-
-			private int? page;
-
 			private List<QueryApprovalInfo_ApprovalsResultModel> data;
+
+			public int? Page
+			{
+				get
+				{
+					return page;
+				}
+				set	
+				{
+					page = value;
+				}
+			}
+
+			public int? PageSize
+			{
+				get
+				{
+					return pageSize;
+				}
+				set	
+				{
+					pageSize = value;
+				}
+			}
+
+			public int? Start
+			{
+				get
+				{
+					return start;
+				}
+				set	
+				{
+					start = value;
+				}
+			}
 
 			public int? Total
 			{
@@ -106,42 +142,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public int? Start
-			{
-				get
-				{
-					return start;
-				}
-				set	
-				{
-					start = value;
-				}
-			}
-
-			public int? PageSize
-			{
-				get
-				{
-					return pageSize;
-				}
-				set	
-				{
-					pageSize = value;
-				}
-			}
-
-			public int? Page
-			{
-				get
-				{
-					return page;
-				}
-				set	
-				{
-					page = value;
-				}
-			}
-
 			public List<QueryApprovalInfo_ApprovalsResultModel> Data
 			{
 				get
@@ -157,17 +157,29 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class QueryApprovalInfo_ApprovalsResultModel
 			{
 
-				private string workspaceName;
-
-				private string applicationId;
-
 				private string applicantId;
 
 				private string applicantName;
 
+				private string applicationId;
+
+				private string applyReason;
+
 				private string approverId;
 
 				private string approverName;
+
+				private bool? deleteFlag;
+
+				private long? expireDate;
+
+				private int? flagStatus;
+
+				private long? gmtCreate;
+
+				private long? gmtModified;
+
+				private string handleReason;
 
 				private string resourceId;
 
@@ -175,43 +187,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 				private string resourceType;
 
-				private string applyReason;
-
-				private string handleReason;
-
-				private long? expireDate;
-
-				private long? gmtCreate;
-
-				private long? gmtModified;
-
-				private int? flagStatus;
-
-				private bool? deleteFlag;
-
-				public string WorkspaceName
-				{
-					get
-					{
-						return workspaceName;
-					}
-					set	
-					{
-						workspaceName = value;
-					}
-				}
-
-				public string ApplicationId
-				{
-					get
-					{
-						return applicationId;
-					}
-					set	
-					{
-						applicationId = value;
-					}
-				}
+				private string workspaceName;
 
 				public string ApplicantId
 				{
@@ -237,6 +213,30 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
+				public string ApplicationId
+				{
+					get
+					{
+						return applicationId;
+					}
+					set	
+					{
+						applicationId = value;
+					}
+				}
+
+				public string ApplyReason
+				{
+					get
+					{
+						return applyReason;
+					}
+					set	
+					{
+						applyReason = value;
+					}
+				}
+
 				public string ApproverId
 				{
 					get
@@ -258,6 +258,78 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						approverName = value;
+					}
+				}
+
+				public bool? DeleteFlag
+				{
+					get
+					{
+						return deleteFlag;
+					}
+					set	
+					{
+						deleteFlag = value;
+					}
+				}
+
+				public long? ExpireDate
+				{
+					get
+					{
+						return expireDate;
+					}
+					set	
+					{
+						expireDate = value;
+					}
+				}
+
+				public int? FlagStatus
+				{
+					get
+					{
+						return flagStatus;
+					}
+					set	
+					{
+						flagStatus = value;
+					}
+				}
+
+				public long? GmtCreate
+				{
+					get
+					{
+						return gmtCreate;
+					}
+					set	
+					{
+						gmtCreate = value;
+					}
+				}
+
+				public long? GmtModified
+				{
+					get
+					{
+						return gmtModified;
+					}
+					set	
+					{
+						gmtModified = value;
+					}
+				}
+
+				public string HandleReason
+				{
+					get
+					{
+						return handleReason;
+					}
+					set	
+					{
+						handleReason = value;
 					}
 				}
 
@@ -297,87 +369,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string ApplyReason
+				public string WorkspaceName
 				{
 					get
 					{
-						return applyReason;
+						return workspaceName;
 					}
 					set	
 					{
-						applyReason = value;
-					}
-				}
-
-				public string HandleReason
-				{
-					get
-					{
-						return handleReason;
-					}
-					set	
-					{
-						handleReason = value;
-					}
-				}
-
-				public long? ExpireDate
-				{
-					get
-					{
-						return expireDate;
-					}
-					set	
-					{
-						expireDate = value;
-					}
-				}
-
-				public long? GmtCreate
-				{
-					get
-					{
-						return gmtCreate;
-					}
-					set	
-					{
-						gmtCreate = value;
-					}
-				}
-
-				public long? GmtModified
-				{
-					get
-					{
-						return gmtModified;
-					}
-					set	
-					{
-						gmtModified = value;
-					}
-				}
-
-				public int? FlagStatus
-				{
-					get
-					{
-						return flagStatus;
-					}
-					set	
-					{
-						flagStatus = value;
-					}
-				}
-
-				public bool? DeleteFlag
-				{
-					get
-					{
-						return deleteFlag;
-					}
-					set	
-					{
-						deleteFlag = value;
+						workspaceName = value;
 					}
 				}
 			}

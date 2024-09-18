@@ -25,23 +25,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 	public class ListDataLevelPermissionWhiteListResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private string requestId;
 
-		private ListDataLevelPermissionWhiteList_Result result;
+		private bool? success;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private ListDataLevelPermissionWhiteList_Result result;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 

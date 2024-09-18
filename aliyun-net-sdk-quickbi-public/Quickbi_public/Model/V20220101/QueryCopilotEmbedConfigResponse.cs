@@ -70,9 +70,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryCopilotEmbedConfig_ResultItem
 		{
 
-			private string copilotId;
+			private string agentName;
 
-			private string showName;
+			private string copilotId;
 
 			private string createUser;
 
@@ -82,9 +82,21 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 			private string moduleName;
 
-			private string agentName;
+			private string showName;
 
 			private QueryCopilotEmbedConfig_DataRange dataRange;
+
+			public string AgentName
+			{
+				get
+				{
+					return agentName;
+				}
+				set	
+				{
+					agentName = value;
+				}
+			}
 
 			public string CopilotId
 			{
@@ -95,18 +107,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					copilotId = value;
-				}
-			}
-
-			public string ShowName
-			{
-				get
-				{
-					return showName;
-				}
-				set	
-				{
-					showName = value;
 				}
 			}
 
@@ -158,15 +158,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string AgentName
+			public string ShowName
 			{
 				get
 				{
-					return agentName;
+					return showName;
 				}
 				set	
 				{
-					agentName = value;
+					showName = value;
 				}
 			}
 
@@ -185,25 +185,13 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class QueryCopilotEmbedConfig_DataRange
 			{
 
-				private bool? allTheme;
-
 				private bool? allCube;
 
-				private List<string> themes;
+				private bool? allTheme;
 
 				private List<string> llmCubes;
 
-				public bool? AllTheme
-				{
-					get
-					{
-						return allTheme;
-					}
-					set	
-					{
-						allTheme = value;
-					}
-				}
+				private List<string> themes;
 
 				public bool? AllCube
 				{
@@ -217,15 +205,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public List<string> Themes
+				public bool? AllTheme
 				{
 					get
 					{
-						return themes;
+						return allTheme;
 					}
 					set	
 					{
-						themes = value;
+						allTheme = value;
 					}
 				}
 
@@ -238,6 +226,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						llmCubes = value;
+					}
+				}
+
+				public List<string> Themes
+				{
+					get
+					{
+						return themes;
+					}
+					set	
+					{
+						themes = value;
 					}
 				}
 			}

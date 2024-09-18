@@ -35,16 +35,16 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			listOrganizationRoleUsersResponse.Success = _ctx.BooleanValue("ListOrganizationRoleUsers.Success");
 
 			ListOrganizationRoleUsersResponse.ListOrganizationRoleUsers_Result result = new ListOrganizationRoleUsersResponse.ListOrganizationRoleUsers_Result();
-			result.TotalNum = _ctx.IntegerValue("ListOrganizationRoleUsers.Result.TotalNum");
-			result.TotalPages = _ctx.IntegerValue("ListOrganizationRoleUsers.Result.TotalPages");
 			result.PageNum = _ctx.IntegerValue("ListOrganizationRoleUsers.Result.PageNum");
 			result.PageSize = _ctx.IntegerValue("ListOrganizationRoleUsers.Result.PageSize");
+			result.TotalNum = _ctx.IntegerValue("ListOrganizationRoleUsers.Result.TotalNum");
+			result.TotalPages = _ctx.IntegerValue("ListOrganizationRoleUsers.Result.TotalPages");
 
 			List<ListOrganizationRoleUsersResponse.ListOrganizationRoleUsers_Result.ListOrganizationRoleUsers_DataItem> result_data = new List<ListOrganizationRoleUsersResponse.ListOrganizationRoleUsers_Result.ListOrganizationRoleUsers_DataItem>();
 			for (int i = 0; i < _ctx.Length("ListOrganizationRoleUsers.Result.Data.Length"); i++) {
 				ListOrganizationRoleUsersResponse.ListOrganizationRoleUsers_Result.ListOrganizationRoleUsers_DataItem dataItem = new ListOrganizationRoleUsersResponse.ListOrganizationRoleUsers_Result.ListOrganizationRoleUsers_DataItem();
-				dataItem.UserId = _ctx.StringValue("ListOrganizationRoleUsers.Result.Data["+ i +"].UserId");
 				dataItem.NickName = _ctx.StringValue("ListOrganizationRoleUsers.Result.Data["+ i +"].NickName");
+				dataItem.UserId = _ctx.StringValue("ListOrganizationRoleUsers.Result.Data["+ i +"].UserId");
 
 				result_data.Add(dataItem);
 			}

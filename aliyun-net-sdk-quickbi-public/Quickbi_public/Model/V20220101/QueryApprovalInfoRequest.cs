@@ -35,13 +35,26 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			Method = MethodType.POST;
         }
 
+		private string userId;
+
 		private int? pageSize;
 
 		private int? page;
 
-		private string userId;
-
 		private int? status;
+
+		public string UserId
+		{
+			get
+			{
+				return userId;
+			}
+			set	
+			{
+				userId = value;
+				DictionaryUtil.Add(QueryParameters, "UserId", value);
+			}
+		}
 
 		public int? PageSize
 		{
@@ -66,19 +79,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				page = value;
 				DictionaryUtil.Add(QueryParameters, "Page", value.ToString());
-			}
-		}
-
-		public string UserId
-		{
-			get
-			{
-				return userId;
-			}
-			set	
-			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
 			}
 		}
 

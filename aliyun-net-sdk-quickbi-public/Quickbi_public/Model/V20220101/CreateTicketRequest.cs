@@ -35,15 +35,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			Method = MethodType.POST;
         }
 
-		private int? expireTime;
-
 		private int? accountType;
-
-		private string cmptId;
 
 		private string userId;
 
 		private string accountName;
+
+		private int? expireTime;
+
+		private string cmptId;
 
 		private string globalParam;
 
@@ -52,19 +52,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		private int? ticketNum;
 
 		private string watermarkParam;
-
-		public int? ExpireTime
-		{
-			get
-			{
-				return expireTime;
-			}
-			set	
-			{
-				expireTime = value;
-				DictionaryUtil.Add(QueryParameters, "ExpireTime", value.ToString());
-			}
-		}
 
 		public int? AccountType
 		{
@@ -76,19 +63,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				accountType = value;
 				DictionaryUtil.Add(QueryParameters, "AccountType", value.ToString());
-			}
-		}
-
-		public string CmptId
-		{
-			get
-			{
-				return cmptId;
-			}
-			set	
-			{
-				cmptId = value;
-				DictionaryUtil.Add(QueryParameters, "CmptId", value);
 			}
 		}
 
@@ -115,6 +89,32 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				accountName = value;
 				DictionaryUtil.Add(QueryParameters, "AccountName", value);
+			}
+		}
+
+		public int? ExpireTime
+		{
+			get
+			{
+				return expireTime;
+			}
+			set	
+			{
+				expireTime = value;
+				DictionaryUtil.Add(QueryParameters, "ExpireTime", value.ToString());
+			}
+		}
+
+		public string CmptId
+		{
+			get
+			{
+				return cmptId;
+			}
+			set	
+			{
+				cmptId = value;
+				DictionaryUtil.Add(QueryParameters, "CmptId", value);
 			}
 		}
 

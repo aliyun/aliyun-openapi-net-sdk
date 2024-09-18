@@ -37,13 +37,13 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			List<QueryAuditLogResponse.QueryAuditLog_LogApiResultModel> queryAuditLogResponse_result = new List<QueryAuditLogResponse.QueryAuditLog_LogApiResultModel>();
 			for (int i = 0; i < _ctx.Length("QueryAuditLog.Result.Length"); i++) {
 				QueryAuditLogResponse.QueryAuditLog_LogApiResultModel logApiResultModel = new QueryAuditLogResponse.QueryAuditLog_LogApiResultModel();
-				logApiResultModel.WorkspaceId = _ctx.StringValue("QueryAuditLog.Result["+ i +"].WorkspaceId");
-				logApiResultModel.OperatorName = _ctx.StringValue("QueryAuditLog.Result["+ i +"].OperatorName");
-				logApiResultModel.OperatorAccountName = _ctx.StringValue("QueryAuditLog.Result["+ i +"].OperatorAccountName");
-				logApiResultModel.OperatorType = _ctx.StringValue("QueryAuditLog.Result["+ i +"].OperatorType");
-				logApiResultModel.TargetType = _ctx.StringValue("QueryAuditLog.Result["+ i +"].TargetType");
-				logApiResultModel.TargetName = _ctx.StringValue("QueryAuditLog.Result["+ i +"].TargetName");
 				logApiResultModel.GmtCreate = _ctx.StringValue("QueryAuditLog.Result["+ i +"].GmtCreate");
+				logApiResultModel.OperatorAccountName = _ctx.StringValue("QueryAuditLog.Result["+ i +"].OperatorAccountName");
+				logApiResultModel.OperatorName = _ctx.StringValue("QueryAuditLog.Result["+ i +"].OperatorName");
+				logApiResultModel.OperatorType = _ctx.StringValue("QueryAuditLog.Result["+ i +"].OperatorType");
+				logApiResultModel.TargetName = _ctx.StringValue("QueryAuditLog.Result["+ i +"].TargetName");
+				logApiResultModel.TargetType = _ctx.StringValue("QueryAuditLog.Result["+ i +"].TargetType");
+				logApiResultModel.WorkspaceId = _ctx.StringValue("QueryAuditLog.Result["+ i +"].WorkspaceId");
 
 				queryAuditLogResponse_result.Add(logApiResultModel);
 			}

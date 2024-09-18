@@ -25,23 +25,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 	public class QueryWorksBloodRelationshipResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private string requestId;
 
-		private List<QueryWorksBloodRelationship_Item> result;
+		private bool? success;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private List<QueryWorksBloodRelationship_Item> result;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -157,9 +157,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class QueryWorksBloodRelationship_QueryParam
 			{
 
-				private string uid;
+				private string areaId;
 
-				private string pathId;
+				private string areaName;
 
 				private string caption;
 
@@ -167,31 +167,31 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 				private bool? isMeasure;
 
-				private string areaId;
+				private string pathId;
 
-				private string areaName;
+				private string uid;
 
-				public string Uid
+				public string AreaId
 				{
 					get
 					{
-						return uid;
+						return areaId;
 					}
 					set	
 					{
-						uid = value;
+						areaId = value;
 					}
 				}
 
-				public string PathId
+				public string AreaName
 				{
 					get
 					{
-						return pathId;
+						return areaName;
 					}
 					set	
 					{
-						pathId = value;
+						areaName = value;
 					}
 				}
 
@@ -231,27 +231,27 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string AreaId
+				public string PathId
 				{
 					get
 					{
-						return areaId;
+						return pathId;
 					}
 					set	
 					{
-						areaId = value;
+						pathId = value;
 					}
 				}
 
-				public string AreaName
+				public string Uid
 				{
 					get
 					{
-						return areaName;
+						return uid;
 					}
 					set	
 					{
-						areaName = value;
+						uid = value;
 					}
 				}
 			}

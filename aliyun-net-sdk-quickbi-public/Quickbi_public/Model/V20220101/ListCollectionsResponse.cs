@@ -25,23 +25,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 	public class ListCollectionsResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private string requestId;
 
-		private List<ListCollections_Data> result;
+		private bool? success;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private List<ListCollections_Data> result;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -70,43 +70,19 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class ListCollections_Data
 		{
 
-			private string workspaceId;
-
-			private string worksType;
-
 			private int? favoriteId;
+
+			private string ownerId;
 
 			private string worksId;
 
 			private string worksName;
 
+			private string worksType;
+
+			private string workspaceId;
+
 			private string workspaceName;
-
-			private string ownerId;
-
-			public string WorkspaceId
-			{
-				get
-				{
-					return workspaceId;
-				}
-				set	
-				{
-					workspaceId = value;
-				}
-			}
-
-			public string WorksType
-			{
-				get
-				{
-					return worksType;
-				}
-				set	
-				{
-					worksType = value;
-				}
-			}
 
 			public int? FavoriteId
 			{
@@ -117,6 +93,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					favoriteId = value;
+				}
+			}
+
+			public string OwnerId
+			{
+				get
+				{
+					return ownerId;
+				}
+				set	
+				{
+					ownerId = value;
 				}
 			}
 
@@ -144,6 +132,30 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
+			public string WorksType
+			{
+				get
+				{
+					return worksType;
+				}
+				set	
+				{
+					worksType = value;
+				}
+			}
+
+			public string WorkspaceId
+			{
+				get
+				{
+					return workspaceId;
+				}
+				set	
+				{
+					workspaceId = value;
+				}
+			}
+
 			public string WorkspaceName
 			{
 				get
@@ -153,18 +165,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					workspaceName = value;
-				}
-			}
-
-			public string OwnerId
-			{
-				get
-				{
-					return ownerId;
-				}
-				set	
-				{
-					ownerId = value;
 				}
 			}
 		}

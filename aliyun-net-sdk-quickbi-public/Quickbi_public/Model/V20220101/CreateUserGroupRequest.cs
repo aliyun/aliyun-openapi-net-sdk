@@ -35,26 +35,13 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			Method = MethodType.POST;
         }
 
-		private string userGroupId;
-
 		private string userGroupName;
-
-		private string userGroupDescription;
 
 		private string parentUserGroupId;
 
-		public string UserGroupId
-		{
-			get
-			{
-				return userGroupId;
-			}
-			set	
-			{
-				userGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "UserGroupId", value);
-			}
-		}
+		private string userGroupId;
+
+		private string userGroupDescription;
 
 		public string UserGroupName
 		{
@@ -69,19 +56,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			}
 		}
 
-		public string UserGroupDescription
-		{
-			get
-			{
-				return userGroupDescription;
-			}
-			set	
-			{
-				userGroupDescription = value;
-				DictionaryUtil.Add(QueryParameters, "UserGroupDescription", value);
-			}
-		}
-
 		public string ParentUserGroupId
 		{
 			get
@@ -92,6 +66,32 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				parentUserGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "ParentUserGroupId", value);
+			}
+		}
+
+		public string UserGroupId
+		{
+			get
+			{
+				return userGroupId;
+			}
+			set	
+			{
+				userGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "UserGroupId", value);
+			}
+		}
+
+		public string UserGroupDescription
+		{
+			get
+			{
+				return userGroupDescription;
+			}
+			set	
+			{
+				userGroupDescription = value;
+				DictionaryUtil.Add(QueryParameters, "UserGroupDescription", value);
 			}
 		}
 

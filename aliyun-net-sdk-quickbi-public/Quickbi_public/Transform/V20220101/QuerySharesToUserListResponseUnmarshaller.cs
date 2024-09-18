@@ -31,32 +31,32 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			QuerySharesToUserListResponse querySharesToUserListResponse = new QuerySharesToUserListResponse();
 
 			querySharesToUserListResponse.HttpResponse = _ctx.HttpResponse;
-			querySharesToUserListResponse.Success = _ctx.BooleanValue("QuerySharesToUserList.Success");
 			querySharesToUserListResponse.RequestId = _ctx.StringValue("QuerySharesToUserList.RequestId");
+			querySharesToUserListResponse.Success = _ctx.BooleanValue("QuerySharesToUserList.Success");
 
 			List<QuerySharesToUserListResponse.QuerySharesToUserList_Data> querySharesToUserListResponse_result = new List<QuerySharesToUserListResponse.QuerySharesToUserList_Data>();
 			for (int i = 0; i < _ctx.Length("QuerySharesToUserList.Result.Length"); i++) {
 				QuerySharesToUserListResponse.QuerySharesToUserList_Data data = new QuerySharesToUserListResponse.QuerySharesToUserList_Data();
+				data.CreateTime = _ctx.StringValue("QuerySharesToUserList.Result["+ i +"].CreateTime");
+				data.Description = _ctx.StringValue("QuerySharesToUserList.Result["+ i +"].Description");
+				data.ModifyName = _ctx.StringValue("QuerySharesToUserList.Result["+ i +"].ModifyName");
+				data.ModifyTime = _ctx.StringValue("QuerySharesToUserList.Result["+ i +"].ModifyTime");
+				data.OwnerId = _ctx.StringValue("QuerySharesToUserList.Result["+ i +"].OwnerId");
+				data.OwnerName = _ctx.StringValue("QuerySharesToUserList.Result["+ i +"].OwnerName");
+				data.SecurityLevel = _ctx.StringValue("QuerySharesToUserList.Result["+ i +"].SecurityLevel");
 				data.Status = _ctx.IntegerValue("QuerySharesToUserList.Result["+ i +"].Status");
 				data.ThirdPartAuthFlag = _ctx.IntegerValue("QuerySharesToUserList.Result["+ i +"].ThirdPartAuthFlag");
-				data.WorksId = _ctx.StringValue("QuerySharesToUserList.Result["+ i +"].WorksId");
-				data.CreateTime = _ctx.StringValue("QuerySharesToUserList.Result["+ i +"].CreateTime");
-				data.WorkType = _ctx.StringValue("QuerySharesToUserList.Result["+ i +"].WorkType");
-				data.OwnerName = _ctx.StringValue("QuerySharesToUserList.Result["+ i +"].OwnerName");
-				data.WorkspaceName = _ctx.StringValue("QuerySharesToUserList.Result["+ i +"].WorkspaceName");
-				data.OwnerId = _ctx.StringValue("QuerySharesToUserList.Result["+ i +"].OwnerId");
-				data.ModifyName = _ctx.StringValue("QuerySharesToUserList.Result["+ i +"].ModifyName");
-				data.WorkspaceId = _ctx.StringValue("QuerySharesToUserList.Result["+ i +"].WorkspaceId");
-				data.SecurityLevel = _ctx.StringValue("QuerySharesToUserList.Result["+ i +"].SecurityLevel");
-				data.Description = _ctx.StringValue("QuerySharesToUserList.Result["+ i +"].Description");
 				data.WorkName = _ctx.StringValue("QuerySharesToUserList.Result["+ i +"].WorkName");
-				data.ModifyTime = _ctx.StringValue("QuerySharesToUserList.Result["+ i +"].ModifyTime");
+				data.WorkType = _ctx.StringValue("QuerySharesToUserList.Result["+ i +"].WorkType");
+				data.WorksId = _ctx.StringValue("QuerySharesToUserList.Result["+ i +"].WorksId");
+				data.WorkspaceId = _ctx.StringValue("QuerySharesToUserList.Result["+ i +"].WorkspaceId");
+				data.WorkspaceName = _ctx.StringValue("QuerySharesToUserList.Result["+ i +"].WorkspaceName");
 
 				QuerySharesToUserListResponse.QuerySharesToUserList_Data.QuerySharesToUserList_Directory directory = new QuerySharesToUserListResponse.QuerySharesToUserList_Data.QuerySharesToUserList_Directory();
+				directory.Id = _ctx.StringValue("QuerySharesToUserList.Result["+ i +"].Directory.Id");
+				directory.Name = _ctx.StringValue("QuerySharesToUserList.Result["+ i +"].Directory.Name");
 				directory.PathId = _ctx.StringValue("QuerySharesToUserList.Result["+ i +"].Directory.PathId");
 				directory.PathName = _ctx.StringValue("QuerySharesToUserList.Result["+ i +"].Directory.PathName");
-				directory.Name = _ctx.StringValue("QuerySharesToUserList.Result["+ i +"].Directory.Name");
-				directory.Id = _ctx.StringValue("QuerySharesToUserList.Result["+ i +"].Directory.Id");
 				data.Directory = directory;
 
 				querySharesToUserListResponse_result.Add(data);

@@ -31,14 +31,14 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			ListPortalMenuAuthorizationResponse listPortalMenuAuthorizationResponse = new ListPortalMenuAuthorizationResponse();
 
 			listPortalMenuAuthorizationResponse.HttpResponse = _ctx.HttpResponse;
-			listPortalMenuAuthorizationResponse.Success = _ctx.BooleanValue("ListPortalMenuAuthorization.Success");
 			listPortalMenuAuthorizationResponse.RequestId = _ctx.StringValue("ListPortalMenuAuthorization.RequestId");
+			listPortalMenuAuthorizationResponse.Success = _ctx.BooleanValue("ListPortalMenuAuthorization.Success");
 
 			List<ListPortalMenuAuthorizationResponse.ListPortalMenuAuthorization_Data> listPortalMenuAuthorizationResponse_result = new List<ListPortalMenuAuthorizationResponse.ListPortalMenuAuthorization_Data>();
 			for (int i = 0; i < _ctx.Length("ListPortalMenuAuthorization.Result.Length"); i++) {
 				ListPortalMenuAuthorizationResponse.ListPortalMenuAuthorization_Data data = new ListPortalMenuAuthorizationResponse.ListPortalMenuAuthorization_Data();
-				data.ShowOnlyWithAccess = _ctx.BooleanValue("ListPortalMenuAuthorization.Result["+ i +"].ShowOnlyWithAccess");
 				data.MenuId = _ctx.StringValue("ListPortalMenuAuthorization.Result["+ i +"].MenuId");
+				data.ShowOnlyWithAccess = _ctx.BooleanValue("ListPortalMenuAuthorization.Result["+ i +"].ShowOnlyWithAccess");
 
 				List<ListPortalMenuAuthorizationResponse.ListPortalMenuAuthorization_Data.ListPortalMenuAuthorization_ReceiversItem> data_receivers = new List<ListPortalMenuAuthorizationResponse.ListPortalMenuAuthorization_Data.ListPortalMenuAuthorization_ReceiversItem>();
 				for (int j = 0; j < _ctx.Length("ListPortalMenuAuthorization.Result["+ i +"].Receivers.Length"); j++) {

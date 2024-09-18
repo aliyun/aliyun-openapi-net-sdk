@@ -25,23 +25,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 	public class QueryOrganizationWorkspaceListResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private string requestId;
 
-		private QueryOrganizationWorkspaceList_Result result;
+		private bool? success;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private QueryOrganizationWorkspaceList_Result result;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -70,27 +70,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryOrganizationWorkspaceList_Result
 		{
 
-			private int? totalPages;
-
 			private int? pageNum;
 
 			private int? pageSize;
 
 			private int? totalNum;
 
-			private List<QueryOrganizationWorkspaceList_DataItem> data;
+			private int? totalPages;
 
-			public int? TotalPages
-			{
-				get
-				{
-					return totalPages;
-				}
-				set	
-				{
-					totalPages = value;
-				}
-			}
+			private List<QueryOrganizationWorkspaceList_DataItem> data;
 
 			public int? PageNum
 			{
@@ -128,6 +116,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
+			public int? TotalPages
+			{
+				get
+				{
+					return totalPages;
+				}
+				set	
+				{
+					totalPages = value;
+				}
+			}
+
 			public List<QueryOrganizationWorkspaceList_DataItem> Data
 			{
 				get
@@ -143,103 +143,43 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class QueryOrganizationWorkspaceList_DataItem
 			{
 
-				private string createUserAccountName;
-
-				private string owner;
-
-				private string createTime;
-
-				private string workspaceName;
-
-				private string organizationId;
-
-				private string workspaceId;
+				private bool? allowPublishOperation;
 
 				private bool? allowShareOperation;
 
+				private string createTime;
+
 				private string createUser;
+
+				private string createUserAccountName;
 
 				private string modifiedTime;
 
-				private string workspaceDescription;
-
 				private string modifyUser;
-
-				private bool? allowPublishOperation;
-
-				private string ownerAccountName;
 
 				private string modifyUserAccountName;
 
-				public string CreateUserAccountName
-				{
-					get
-					{
-						return createUserAccountName;
-					}
-					set	
-					{
-						createUserAccountName = value;
-					}
-				}
+				private string organizationId;
 
-				public string Owner
-				{
-					get
-					{
-						return owner;
-					}
-					set	
-					{
-						owner = value;
-					}
-				}
+				private string owner;
 
-				public string CreateTime
-				{
-					get
-					{
-						return createTime;
-					}
-					set	
-					{
-						createTime = value;
-					}
-				}
+				private string ownerAccountName;
 
-				public string WorkspaceName
-				{
-					get
-					{
-						return workspaceName;
-					}
-					set	
-					{
-						workspaceName = value;
-					}
-				}
+				private string workspaceDescription;
 
-				public string OrganizationId
-				{
-					get
-					{
-						return organizationId;
-					}
-					set	
-					{
-						organizationId = value;
-					}
-				}
+				private string workspaceId;
 
-				public string WorkspaceId
+				private string workspaceName;
+
+				public bool? AllowPublishOperation
 				{
 					get
 					{
-						return workspaceId;
+						return allowPublishOperation;
 					}
 					set	
 					{
-						workspaceId = value;
+						allowPublishOperation = value;
 					}
 				}
 
@@ -255,6 +195,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
+				public string CreateTime
+				{
+					get
+					{
+						return createTime;
+					}
+					set	
+					{
+						createTime = value;
+					}
+				}
+
 				public string CreateUser
 				{
 					get
@@ -264,6 +216,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						createUser = value;
+					}
+				}
+
+				public string CreateUserAccountName
+				{
+					get
+					{
+						return createUserAccountName;
+					}
+					set	
+					{
+						createUserAccountName = value;
 					}
 				}
 
@@ -279,18 +243,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string WorkspaceDescription
-				{
-					get
-					{
-						return workspaceDescription;
-					}
-					set	
-					{
-						workspaceDescription = value;
-					}
-				}
-
 				public string ModifyUser
 				{
 					get
@@ -303,15 +255,39 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public bool? AllowPublishOperation
+				public string ModifyUserAccountName
 				{
 					get
 					{
-						return allowPublishOperation;
+						return modifyUserAccountName;
 					}
 					set	
 					{
-						allowPublishOperation = value;
+						modifyUserAccountName = value;
+					}
+				}
+
+				public string OrganizationId
+				{
+					get
+					{
+						return organizationId;
+					}
+					set	
+					{
+						organizationId = value;
+					}
+				}
+
+				public string Owner
+				{
+					get
+					{
+						return owner;
+					}
+					set	
+					{
+						owner = value;
 					}
 				}
 
@@ -327,15 +303,39 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string ModifyUserAccountName
+				public string WorkspaceDescription
 				{
 					get
 					{
-						return modifyUserAccountName;
+						return workspaceDescription;
 					}
 					set	
 					{
-						modifyUserAccountName = value;
+						workspaceDescription = value;
+					}
+				}
+
+				public string WorkspaceId
+				{
+					get
+					{
+						return workspaceId;
+					}
+					set	
+					{
+						workspaceId = value;
+					}
+				}
+
+				public string WorkspaceName
+				{
+					get
+					{
+						return workspaceName;
+					}
+					set	
+					{
+						workspaceName = value;
 					}
 				}
 			}

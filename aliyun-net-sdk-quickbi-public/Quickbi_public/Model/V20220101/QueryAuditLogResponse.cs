@@ -70,41 +70,29 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryAuditLog_LogApiResultModel
 		{
 
-			private string workspaceId;
-
-			private string operatorName;
+			private string gmtCreate;
 
 			private string operatorAccountName;
 
-			private string operatorType;
+			private string operatorName;
 
-			private string targetType;
+			private string operatorType;
 
 			private string targetName;
 
-			private string gmtCreate;
+			private string targetType;
 
-			public string WorkspaceId
+			private string workspaceId;
+
+			public string GmtCreate
 			{
 				get
 				{
-					return workspaceId;
+					return gmtCreate;
 				}
 				set	
 				{
-					workspaceId = value;
-				}
-			}
-
-			public string OperatorName
-			{
-				get
-				{
-					return operatorName;
-				}
-				set	
-				{
-					operatorName = value;
+					gmtCreate = value;
 				}
 			}
 
@@ -120,6 +108,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
+			public string OperatorName
+			{
+				get
+				{
+					return operatorName;
+				}
+				set	
+				{
+					operatorName = value;
+				}
+			}
+
 			public string OperatorType
 			{
 				get
@@ -129,18 +129,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					operatorType = value;
-				}
-			}
-
-			public string TargetType
-			{
-				get
-				{
-					return targetType;
-				}
-				set	
-				{
-					targetType = value;
 				}
 			}
 
@@ -156,15 +144,27 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string GmtCreate
+			public string TargetType
 			{
 				get
 				{
-					return gmtCreate;
+					return targetType;
 				}
 				set	
 				{
-					gmtCreate = value;
+					targetType = value;
+				}
+			}
+
+			public string WorkspaceId
+			{
+				get
+				{
+					return workspaceId;
+				}
+				set	
+				{
+					workspaceId = value;
 				}
 			}
 		}

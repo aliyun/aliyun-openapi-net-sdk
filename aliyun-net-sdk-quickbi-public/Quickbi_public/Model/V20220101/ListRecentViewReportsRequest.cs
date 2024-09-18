@@ -39,13 +39,13 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 		private string userId;
 
-		private string queryMode;
-
-		private string treeType;
-
 		private int? pageSize;
 
 		private string keyword;
+
+		private string queryMode;
+
+		private string treeType;
 
 		public int? OffsetDay
 		{
@@ -73,32 +73,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			}
 		}
 
-		public string QueryMode
-		{
-			get
-			{
-				return queryMode;
-			}
-			set	
-			{
-				queryMode = value;
-				DictionaryUtil.Add(QueryParameters, "QueryMode", value);
-			}
-		}
-
-		public string TreeType
-		{
-			get
-			{
-				return treeType;
-			}
-			set	
-			{
-				treeType = value;
-				DictionaryUtil.Add(QueryParameters, "TreeType", value);
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -122,6 +96,32 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				keyword = value;
 				DictionaryUtil.Add(QueryParameters, "Keyword", value);
+			}
+		}
+
+		public string QueryMode
+		{
+			get
+			{
+				return queryMode;
+			}
+			set	
+			{
+				queryMode = value;
+				DictionaryUtil.Add(QueryParameters, "QueryMode", value);
+			}
+		}
+
+		public string TreeType
+		{
+			get
+			{
+				return treeType;
+			}
+			set	
+			{
+				treeType = value;
+				DictionaryUtil.Add(QueryParameters, "TreeType", value);
 			}
 		}
 

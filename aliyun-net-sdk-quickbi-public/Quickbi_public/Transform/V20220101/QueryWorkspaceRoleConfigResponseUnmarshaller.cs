@@ -35,9 +35,9 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			queryWorkspaceRoleConfigResponse.Success = _ctx.BooleanValue("QueryWorkspaceRoleConfig.Success");
 
 			QueryWorkspaceRoleConfigResponse.QueryWorkspaceRoleConfig_Result result = new QueryWorkspaceRoleConfigResponse.QueryWorkspaceRoleConfig_Result();
+			result.IsSystemRole = _ctx.BooleanValue("QueryWorkspaceRoleConfig.Result.IsSystemRole");
 			result.RoleId = _ctx.LongValue("QueryWorkspaceRoleConfig.Result.RoleId");
 			result.RoleName = _ctx.StringValue("QueryWorkspaceRoleConfig.Result.RoleName");
-			result.IsSystemRole = _ctx.BooleanValue("QueryWorkspaceRoleConfig.Result.IsSystemRole");
 
 			List<QueryWorkspaceRoleConfigResponse.QueryWorkspaceRoleConfig_Result.QueryWorkspaceRoleConfig_AuthConfigListItem> result_authConfigList = new List<QueryWorkspaceRoleConfigResponse.QueryWorkspaceRoleConfig_Result.QueryWorkspaceRoleConfig_AuthConfigListItem>();
 			for (int i = 0; i < _ctx.Length("QueryWorkspaceRoleConfig.Result.AuthConfigList.Length"); i++) {

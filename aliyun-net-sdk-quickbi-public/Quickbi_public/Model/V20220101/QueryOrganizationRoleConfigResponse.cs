@@ -70,13 +70,25 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryOrganizationRoleConfig_Result
 		{
 
+			private bool? isSystemRole;
+
 			private long? roleId;
 
 			private string roleName;
 
-			private bool? isSystemRole;
-
 			private List<QueryOrganizationRoleConfig_AuthConfigListItem> authConfigList;
+
+			public bool? IsSystemRole
+			{
+				get
+				{
+					return isSystemRole;
+				}
+				set	
+				{
+					isSystemRole = value;
+				}
+			}
 
 			public long? RoleId
 			{
@@ -99,18 +111,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					roleName = value;
-				}
-			}
-
-			public bool? IsSystemRole
-			{
-				get
-				{
-					return isSystemRole;
-				}
-				set	
-				{
-					isSystemRole = value;
 				}
 			}
 

@@ -70,39 +70,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryDataServiceList_Result
 		{
 
-			private int? totalPages;
-
-			private int? totalNum;
-
 			private int? pageNum;
 
 			private int? pageSize;
 
+			private int? totalNum;
+
+			private int? totalPages;
+
 			private List<QueryDataServiceList_QueryDataServiceModel> data;
-
-			public int? TotalPages
-			{
-				get
-				{
-					return totalPages;
-				}
-				set	
-				{
-					totalPages = value;
-				}
-			}
-
-			public int? TotalNum
-			{
-				get
-				{
-					return totalNum;
-				}
-				set	
-				{
-					totalNum = value;
-				}
-			}
 
 			public int? PageNum
 			{
@@ -128,6 +104,30 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
+			public int? TotalNum
+			{
+				get
+				{
+					return totalNum;
+				}
+				set	
+				{
+					totalNum = value;
+				}
+			}
+
+			public int? TotalPages
+			{
+				get
+				{
+					return totalPages;
+				}
+				set	
+				{
+					totalPages = value;
+				}
+			}
+
 			public List<QueryDataServiceList_QueryDataServiceModel> Data
 			{
 				get
@@ -143,71 +143,59 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class QueryDataServiceList_QueryDataServiceModel
 			{
 
-				private string sid;
+				private string creatorId;
 
-				private string name;
-
-				private string desc;
+				private string creatorName;
 
 				private string cubeId;
 
 				private string cubeName;
 
-				private string workspaceId;
-
-				private string workspaceName;
+				private string desc;
 
 				private string gmtCreate;
 
 				private string gmtModified;
 
-				private string creatorId;
-
-				private string creatorName;
-
 				private string modifierId;
 
 				private string modifierName;
+
+				private string name;
 
 				private string ownerId;
 
 				private string ownerName;
 
+				private string sid;
+
+				private string workspaceId;
+
+				private string workspaceName;
+
 				private QueryDataServiceList_Content content;
 
-				public string Sid
+				public string CreatorId
 				{
 					get
 					{
-						return sid;
+						return creatorId;
 					}
 					set	
 					{
-						sid = value;
+						creatorId = value;
 					}
 				}
 
-				public string Name
+				public string CreatorName
 				{
 					get
 					{
-						return name;
+						return creatorName;
 					}
 					set	
 					{
-						name = value;
-					}
-				}
-
-				public string Desc
-				{
-					get
-					{
-						return desc;
-					}
-					set	
-					{
-						desc = value;
+						creatorName = value;
 					}
 				}
 
@@ -235,27 +223,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string WorkspaceId
+				public string Desc
 				{
 					get
 					{
-						return workspaceId;
+						return desc;
 					}
 					set	
 					{
-						workspaceId = value;
-					}
-				}
-
-				public string WorkspaceName
-				{
-					get
-					{
-						return workspaceName;
-					}
-					set	
-					{
-						workspaceName = value;
+						desc = value;
 					}
 				}
 
@@ -283,30 +259,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string CreatorId
-				{
-					get
-					{
-						return creatorId;
-					}
-					set	
-					{
-						creatorId = value;
-					}
-				}
-
-				public string CreatorName
-				{
-					get
-					{
-						return creatorName;
-					}
-					set	
-					{
-						creatorName = value;
-					}
-				}
-
 				public string ModifierId
 				{
 					get
@@ -331,6 +283,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
 				public string OwnerId
 				{
 					get
@@ -352,6 +316,42 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						ownerName = value;
+					}
+				}
+
+				public string Sid
+				{
+					get
+					{
+						return sid;
+					}
+					set	
+					{
+						sid = value;
+					}
+				}
+
+				public string WorkspaceId
+				{
+					get
+					{
+						return workspaceId;
+					}
+					set	
+					{
+						workspaceId = value;
+					}
+				}
+
+				public string WorkspaceName
+				{
+					get
+					{
+						return workspaceName;
+					}
+					set	
+					{
+						workspaceName = value;
 					}
 				}
 
@@ -443,15 +443,27 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					public class QueryDataServiceList_SelectFieldModel
 					{
 
+						private string aggregator;
+
 						private string alias;
 
 						private string desc;
 
-						private string aggregator;
-
 						private string orderby;
 
 						private QueryDataServiceList_Field field;
+
+						public string Aggregator
+						{
+							get
+							{
+								return aggregator;
+							}
+							set	
+							{
+								aggregator = value;
+							}
+						}
 
 						public string Alias
 						{
@@ -474,18 +486,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 							set	
 							{
 								desc = value;
-							}
-						}
-
-						public string Aggregator
-						{
-							get
-							{
-								return aggregator;
-							}
-							set	
-							{
-								aggregator = value;
 							}
 						}
 
@@ -516,55 +516,19 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 						public class QueryDataServiceList_Field
 						{
 
-							private string fid;
-
-							private string name;
-
-							private string type;
-
 							private string caption;
 
 							private string column;
 
 							private string dataType;
 
+							private string fid;
+
 							private string granularity;
 
-							public string Fid
-							{
-								get
-								{
-									return fid;
-								}
-								set	
-								{
-									fid = value;
-								}
-							}
+							private string name;
 
-							public string Name
-							{
-								get
-								{
-									return name;
-								}
-								set	
-								{
-									name = value;
-								}
-							}
-
-							public string Type
-							{
-								get
-								{
-									return type;
-								}
-								set	
-								{
-									type = value;
-								}
-							}
+							private string type;
 
 							public string Caption
 							{
@@ -602,6 +566,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 								}
 							}
 
+							public string Fid
+							{
+								get
+								{
+									return fid;
+								}
+								set	
+								{
+									fid = value;
+								}
+							}
+
 							public string Granularity
 							{
 								get
@@ -611,6 +587,30 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 								set	
 								{
 									granularity = value;
+								}
+							}
+
+							public string Name
+							{
+								get
+								{
+									return name;
+								}
+								set	
+								{
+									name = value;
+								}
+							}
+
+							public string Type
+							{
+								get
+								{
+									return type;
+								}
+								set	
+								{
+									type = value;
 								}
 							}
 						}

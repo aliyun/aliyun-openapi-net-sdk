@@ -101,23 +101,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class QueryDataRange_ApiCopilotLlmCubeModelsItem
 			{
 
-				private string llmCubeId;
-
 				private string alias;
 
 				private string createUser;
 
-				public string LlmCubeId
-				{
-					get
-					{
-						return llmCubeId;
-					}
-					set	
-					{
-						llmCubeId = value;
-					}
-				}
+				private string llmCubeId;
 
 				public string Alias
 				{
@@ -142,18 +130,42 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 						createUser = value;
 					}
 				}
+
+				public string LlmCubeId
+				{
+					get
+					{
+						return llmCubeId;
+					}
+					set	
+					{
+						llmCubeId = value;
+					}
+				}
 			}
 
 			public class QueryDataRange_ApiCopilotThemeModelsItem
 			{
 
+				private string createUser;
+
 				private string themeId;
 
 				private string themeName;
 
-				private string createUser;
-
 				private List<QueryDataRange_ApiCopilotLlmCubeModelsItem2> apiCopilotLlmCubeModels1;
+
+				public string CreateUser
+				{
+					get
+					{
+						return createUser;
+					}
+					set	
+					{
+						createUser = value;
+					}
+				}
 
 				public string ThemeId
 				{
@@ -179,18 +191,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string CreateUser
-				{
-					get
-					{
-						return createUser;
-					}
-					set	
-					{
-						createUser = value;
-					}
-				}
-
 				public List<QueryDataRange_ApiCopilotLlmCubeModelsItem2> ApiCopilotLlmCubeModels1
 				{
 					get
@@ -206,23 +206,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				public class QueryDataRange_ApiCopilotLlmCubeModelsItem2
 				{
 
-					private string llmCubeId;
-
 					private string alias;
 
 					private string createUser;
 
-					public string LlmCubeId
-					{
-						get
-						{
-							return llmCubeId;
-						}
-						set	
-						{
-							llmCubeId = value;
-						}
-					}
+					private string llmCubeId;
 
 					public string Alias
 					{
@@ -245,6 +233,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 						set	
 						{
 							createUser = value;
+						}
+					}
+
+					public string LlmCubeId
+					{
+						get
+						{
+							return llmCubeId;
+						}
+						set	
+						{
+							llmCubeId = value;
 						}
 					}
 				}

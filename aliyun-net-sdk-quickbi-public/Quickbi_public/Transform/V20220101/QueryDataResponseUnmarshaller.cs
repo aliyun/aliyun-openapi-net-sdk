@@ -31,8 +31,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			QueryDataResponse queryDataResponse = new QueryDataResponse();
 
 			queryDataResponse.HttpResponse = _ctx.HttpResponse;
-			queryDataResponse.Success = _ctx.BooleanValue("QueryData.Success");
 			queryDataResponse.RequestId = _ctx.StringValue("QueryData.RequestId");
+			queryDataResponse.Success = _ctx.BooleanValue("QueryData.Success");
 
 			QueryDataResponse.QueryData_Result result = new QueryDataResponse.QueryData_Result();
 			result.Sql = _ctx.StringValue("QueryData.Result.Sql");
@@ -55,12 +55,12 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			List<QueryDataResponse.QueryData_Result.QueryData_HeadersItem> result_headers = new List<QueryDataResponse.QueryData_Result.QueryData_HeadersItem>();
 			for (int i = 0; i < _ctx.Length("QueryData.Result.Headers.Length"); i++) {
 				QueryDataResponse.QueryData_Result.QueryData_HeadersItem headersItem = new QueryDataResponse.QueryData_Result.QueryData_HeadersItem();
-				headersItem.Type = _ctx.StringValue("QueryData.Result.Headers["+ i +"].Type");
+				headersItem.Aggregator = _ctx.StringValue("QueryData.Result.Headers["+ i +"].Aggregator");
+				headersItem.Column = _ctx.StringValue("QueryData.Result.Headers["+ i +"].Column");
 				headersItem.DataType = _ctx.StringValue("QueryData.Result.Headers["+ i +"].DataType");
 				headersItem.Granularity = _ctx.StringValue("QueryData.Result.Headers["+ i +"].Granularity");
 				headersItem.Label = _ctx.StringValue("QueryData.Result.Headers["+ i +"].Label");
-				headersItem.Column = _ctx.StringValue("QueryData.Result.Headers["+ i +"].Column");
-				headersItem.Aggregator = _ctx.StringValue("QueryData.Result.Headers["+ i +"].Aggregator");
+				headersItem.Type = _ctx.StringValue("QueryData.Result.Headers["+ i +"].Type");
 
 				result_headers.Add(headersItem);
 			}

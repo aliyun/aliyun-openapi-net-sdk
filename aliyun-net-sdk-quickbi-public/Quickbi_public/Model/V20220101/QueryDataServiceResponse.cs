@@ -25,23 +25,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 	public class QueryDataServiceResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private string requestId;
 
-		private QueryDataService_Result result;
+		private bool? success;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private QueryDataService_Result result;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -115,7 +115,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class QueryDataService_HeadersItem
 			{
 
-				private string type;
+				private string aggregator;
+
+				private string column;
 
 				private string dataType;
 
@@ -123,19 +125,29 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 				private string label;
 
-				private string column;
+				private string type;
 
-				private string aggregator;
-
-				public string Type
+				public string Aggregator
 				{
 					get
 					{
-						return type;
+						return aggregator;
 					}
 					set	
 					{
-						type = value;
+						aggregator = value;
+					}
+				}
+
+				public string Column
+				{
+					get
+					{
+						return column;
+					}
+					set	
+					{
+						column = value;
 					}
 				}
 
@@ -175,27 +187,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string Column
+				public string Type
 				{
 					get
 					{
-						return column;
+						return type;
 					}
 					set	
 					{
-						column = value;
-					}
-				}
-
-				public string Aggregator
-				{
-					get
-					{
-						return aggregator;
-					}
-					set	
-					{
-						aggregator = value;
+						type = value;
 					}
 				}
 			}

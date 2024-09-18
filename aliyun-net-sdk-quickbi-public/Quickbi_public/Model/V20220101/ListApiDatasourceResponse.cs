@@ -131,23 +131,23 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 				private string apiId;
 
-				private string jobId;
-
-				private string showName;
+				private string body;
 
 				private float? dataSize;
-
-				private int? statusType;
-
-				private string parameters;
-
-				private string body;
 
 				private string dateUpdateTime;
 
 				private string gmtCreate;
 
 				private string gmtModified;
+
+				private string jobId;
+
+				private string parameters;
+
+				private string showName;
+
+				private int? statusType;
 
 				public string ApiId
 				{
@@ -161,27 +161,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string JobId
+				public string Body
 				{
 					get
 					{
-						return jobId;
+						return body;
 					}
 					set	
 					{
-						jobId = value;
-					}
-				}
-
-				public string ShowName
-				{
-					get
-					{
-						return showName;
-					}
-					set	
-					{
-						showName = value;
+						body = value;
 					}
 				}
 
@@ -194,42 +182,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						dataSize = value;
-					}
-				}
-
-				public int? StatusType
-				{
-					get
-					{
-						return statusType;
-					}
-					set	
-					{
-						statusType = value;
-					}
-				}
-
-				public string Parameters
-				{
-					get
-					{
-						return parameters;
-					}
-					set	
-					{
-						parameters = value;
-					}
-				}
-
-				public string Body
-				{
-					get
-					{
-						return body;
-					}
-					set	
-					{
-						body = value;
 					}
 				}
 
@@ -266,6 +218,54 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						gmtModified = value;
+					}
+				}
+
+				public string JobId
+				{
+					get
+					{
+						return jobId;
+					}
+					set	
+					{
+						jobId = value;
+					}
+				}
+
+				public string Parameters
+				{
+					get
+					{
+						return parameters;
+					}
+					set	
+					{
+						parameters = value;
+					}
+				}
+
+				public string ShowName
+				{
+					get
+					{
+						return showName;
+					}
+					set	
+					{
+						showName = value;
+					}
+				}
+
+				public int? StatusType
+				{
+					get
+					{
+						return statusType;
+					}
+					set	
+					{
+						statusType = value;
 					}
 				}
 			}

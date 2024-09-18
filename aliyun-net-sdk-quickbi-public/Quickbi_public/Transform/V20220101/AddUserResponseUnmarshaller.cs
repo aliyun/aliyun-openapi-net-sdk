@@ -31,18 +31,18 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			AddUserResponse addUserResponse = new AddUserResponse();
 
 			addUserResponse.HttpResponse = _ctx.HttpResponse;
-			addUserResponse.Success = _ctx.BooleanValue("AddUser.Success");
 			addUserResponse.RequestId = _ctx.StringValue("AddUser.RequestId");
+			addUserResponse.Success = _ctx.BooleanValue("AddUser.Success");
 
 			AddUserResponse.AddUser_Result result = new AddUserResponse.AddUser_Result();
-			result.UserType = _ctx.IntegerValue("AddUser.Result.UserType");
-			result.Email = _ctx.StringValue("AddUser.Result.Email");
-			result.UserId = _ctx.StringValue("AddUser.Result.UserId");
-			result.AuthAdminUser = _ctx.BooleanValue("AddUser.Result.AuthAdminUser");
-			result.NickName = _ctx.StringValue("AddUser.Result.NickName");
-			result.AdminUser = _ctx.BooleanValue("AddUser.Result.AdminUser");
-			result.Phone = _ctx.StringValue("AddUser.Result.Phone");
 			result.AccountName = _ctx.StringValue("AddUser.Result.AccountName");
+			result.AdminUser = _ctx.BooleanValue("AddUser.Result.AdminUser");
+			result.AuthAdminUser = _ctx.BooleanValue("AddUser.Result.AuthAdminUser");
+			result.Email = _ctx.StringValue("AddUser.Result.Email");
+			result.NickName = _ctx.StringValue("AddUser.Result.NickName");
+			result.Phone = _ctx.StringValue("AddUser.Result.Phone");
+			result.UserId = _ctx.StringValue("AddUser.Result.UserId");
+			result.UserType = _ctx.IntegerValue("AddUser.Result.UserType");
 
 			List<string> result_roleIdList = new List<string>();
 			for (int i = 0; i < _ctx.Length("AddUser.Result.RoleIdList.Length"); i++) {

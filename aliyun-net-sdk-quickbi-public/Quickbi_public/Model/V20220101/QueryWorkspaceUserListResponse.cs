@@ -25,23 +25,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 	public class QueryWorkspaceUserListResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private string requestId;
 
-		private QueryWorkspaceUserList_Result result;
+		private bool? success;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private QueryWorkspaceUserList_Result result;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -70,27 +70,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryWorkspaceUserList_Result
 		{
 
-			private int? totalPages;
-
 			private int? pageNum;
 
 			private int? pageSize;
 
 			private int? totalNum;
 
-			private List<QueryWorkspaceUserList_DataItem> data;
+			private int? totalPages;
 
-			public int? TotalPages
-			{
-				get
-				{
-					return totalPages;
-				}
-				set	
-				{
-					totalPages = value;
-				}
-			}
+			private List<QueryWorkspaceUserList_DataItem> data;
 
 			public int? PageNum
 			{
@@ -128,6 +116,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
+			public int? TotalPages
+			{
+				get
+				{
+					return totalPages;
+				}
+				set	
+				{
+					totalPages = value;
+				}
+			}
+
 			public List<QueryWorkspaceUserList_DataItem> Data
 			{
 				get
@@ -143,43 +143,19 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class QueryWorkspaceUserList_DataItem
 			{
 
-				private string email;
-
-				private string userId;
-
 				private string accountId;
+
+				private string accountName;
+
+				private string email;
 
 				private string nickName;
 
 				private string phone;
 
-				private string accountName;
+				private string userId;
 
 				private QueryWorkspaceUserList_Role role;
-
-				public string Email
-				{
-					get
-					{
-						return email;
-					}
-					set	
-					{
-						email = value;
-					}
-				}
-
-				public string UserId
-				{
-					get
-					{
-						return userId;
-					}
-					set	
-					{
-						userId = value;
-					}
-				}
 
 				public string AccountId
 				{
@@ -190,6 +166,30 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						accountId = value;
+					}
+				}
+
+				public string AccountName
+				{
+					get
+					{
+						return accountName;
+					}
+					set	
+					{
+						accountName = value;
+					}
+				}
+
+				public string Email
+				{
+					get
+					{
+						return email;
+					}
+					set	
+					{
+						email = value;
 					}
 				}
 
@@ -217,15 +217,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string AccountName
+				public string UserId
 				{
 					get
 					{
-						return accountName;
+						return userId;
 					}
 					set	
 					{
-						accountName = value;
+						userId = value;
 					}
 				}
 
@@ -246,9 +246,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 					private string roleCode;
 
-					private string roleName;
-
 					private long? roleId;
+
+					private string roleName;
 
 					public string RoleCode
 					{
@@ -262,18 +262,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 						}
 					}
 
-					public string RoleName
-					{
-						get
-						{
-							return roleName;
-						}
-						set	
-						{
-							roleName = value;
-						}
-					}
-
 					public long? RoleId
 					{
 						get
@@ -283,6 +271,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 						set	
 						{
 							roleId = value;
+						}
+					}
+
+					public string RoleName
+					{
+						get
+						{
+							return roleName;
+						}
+						set	
+						{
+							roleName = value;
 						}
 					}
 				}

@@ -31,26 +31,26 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			QueryWorksResponse queryWorksResponse = new QueryWorksResponse();
 
 			queryWorksResponse.HttpResponse = _ctx.HttpResponse;
-			queryWorksResponse.Success = _ctx.BooleanValue("QueryWorks.Success");
 			queryWorksResponse.RequestId = _ctx.StringValue("QueryWorks.RequestId");
+			queryWorksResponse.Success = _ctx.BooleanValue("QueryWorks.Success");
 
 			QueryWorksResponse.QueryWorks_Result result = new QueryWorksResponse.QueryWorks_Result();
-			result.WorksId = _ctx.StringValue("QueryWorks.Result.WorksId");
-			result.WorkType = _ctx.StringValue("QueryWorks.Result.WorkType");
-			result.WorkName = _ctx.StringValue("QueryWorks.Result.WorkName");
-			result.WorkspaceId = _ctx.StringValue("QueryWorks.Result.WorkspaceId");
-			result.WorkspaceName = _ctx.StringValue("QueryWorks.Result.WorkspaceName");
-			result.SecurityLevel = _ctx.StringValue("QueryWorks.Result.SecurityLevel");
 			result.Auth3rdFlag = _ctx.IntegerValue("QueryWorks.Result.Auth3rdFlag");
 			result.Description = _ctx.StringValue("QueryWorks.Result.Description");
-			result.OwnerId = _ctx.StringValue("QueryWorks.Result.OwnerId");
-			result.OwnerName = _ctx.StringValue("QueryWorks.Result.OwnerName");
-			result.ModifyName = _ctx.StringValue("QueryWorks.Result.ModifyName");
 			result.GmtCreate = _ctx.StringValue("QueryWorks.Result.GmtCreate");
 			result.GmtModify = _ctx.StringValue("QueryWorks.Result.GmtModify");
-			result.Status = _ctx.IntegerValue("QueryWorks.Result.Status");
+			result.ModifyName = _ctx.StringValue("QueryWorks.Result.ModifyName");
+			result.OwnerId = _ctx.StringValue("QueryWorks.Result.OwnerId");
+			result.OwnerName = _ctx.StringValue("QueryWorks.Result.OwnerName");
 			result.PublicFlag = _ctx.BooleanValue("QueryWorks.Result.PublicFlag");
 			result.PublicInvalidTime = _ctx.LongValue("QueryWorks.Result.PublicInvalidTime");
+			result.SecurityLevel = _ctx.StringValue("QueryWorks.Result.SecurityLevel");
+			result.Status = _ctx.IntegerValue("QueryWorks.Result.Status");
+			result.WorkName = _ctx.StringValue("QueryWorks.Result.WorkName");
+			result.WorkType = _ctx.StringValue("QueryWorks.Result.WorkType");
+			result.WorksId = _ctx.StringValue("QueryWorks.Result.WorksId");
+			result.WorkspaceId = _ctx.StringValue("QueryWorks.Result.WorkspaceId");
+			result.WorkspaceName = _ctx.StringValue("QueryWorks.Result.WorkspaceName");
 
 			QueryWorksResponse.QueryWorks_Result.QueryWorks_Directory directory = new QueryWorksResponse.QueryWorks_Result.QueryWorks_Directory();
 			directory.Id = _ctx.StringValue("QueryWorks.Result.Directory.Id");

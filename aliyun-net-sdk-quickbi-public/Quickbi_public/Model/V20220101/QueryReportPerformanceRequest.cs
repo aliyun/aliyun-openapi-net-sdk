@@ -39,13 +39,13 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 		private int? pageNum;
 
-		private string resourceType;
-
 		private int? pageSize;
 
 		private int? costTimeAvgMin;
 
 		private string queryType;
+
+		private string resourceType;
 
 		private string workspaceId;
 
@@ -72,19 +72,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				pageNum = value;
 				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
-			}
-		}
-
-		public string ResourceType
-		{
-			get
-			{
-				return resourceType;
-			}
-			set	
-			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
@@ -124,6 +111,19 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				queryType = value;
 				DictionaryUtil.Add(QueryParameters, "QueryType", value);
+			}
+		}
+
+		public string ResourceType
+		{
+			get
+			{
+				return resourceType;
+			}
+			set	
+			{
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 

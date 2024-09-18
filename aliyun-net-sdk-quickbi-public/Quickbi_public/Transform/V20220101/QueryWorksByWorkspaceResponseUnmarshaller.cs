@@ -31,40 +31,40 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			QueryWorksByWorkspaceResponse queryWorksByWorkspaceResponse = new QueryWorksByWorkspaceResponse();
 
 			queryWorksByWorkspaceResponse.HttpResponse = _ctx.HttpResponse;
-			queryWorksByWorkspaceResponse.Success = _ctx.BooleanValue("QueryWorksByWorkspace.Success");
 			queryWorksByWorkspaceResponse.RequestId = _ctx.StringValue("QueryWorksByWorkspace.RequestId");
+			queryWorksByWorkspaceResponse.Success = _ctx.BooleanValue("QueryWorksByWorkspace.Success");
 
 			QueryWorksByWorkspaceResponse.QueryWorksByWorkspace_Result result = new QueryWorksByWorkspaceResponse.QueryWorksByWorkspace_Result();
-			result.TotalPages = _ctx.IntegerValue("QueryWorksByWorkspace.Result.TotalPages");
 			result.PageNum = _ctx.IntegerValue("QueryWorksByWorkspace.Result.PageNum");
 			result.PageSize = _ctx.IntegerValue("QueryWorksByWorkspace.Result.PageSize");
 			result.TotalNum = _ctx.IntegerValue("QueryWorksByWorkspace.Result.TotalNum");
+			result.TotalPages = _ctx.IntegerValue("QueryWorksByWorkspace.Result.TotalPages");
 
 			List<QueryWorksByWorkspaceResponse.QueryWorksByWorkspace_Result.QueryWorksByWorkspace_DataItem> result_data = new List<QueryWorksByWorkspaceResponse.QueryWorksByWorkspace_Result.QueryWorksByWorkspace_DataItem>();
 			for (int i = 0; i < _ctx.Length("QueryWorksByWorkspace.Result.Data.Length"); i++) {
 				QueryWorksByWorkspaceResponse.QueryWorksByWorkspace_Result.QueryWorksByWorkspace_DataItem dataItem = new QueryWorksByWorkspaceResponse.QueryWorksByWorkspace_Result.QueryWorksByWorkspace_DataItem();
-				dataItem.Status = _ctx.IntegerValue("QueryWorksByWorkspace.Result.Data["+ i +"].Status");
-				dataItem.GmtModify = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].GmtModify");
 				dataItem.Auth3rdFlag = _ctx.IntegerValue("QueryWorksByWorkspace.Result.Data["+ i +"].Auth3rdFlag");
-				dataItem.WorksId = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].WorksId");
-				dataItem.WorkType = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].WorkType");
-				dataItem.OwnerName = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].OwnerName");
-				dataItem.WorkspaceName = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].WorkspaceName");
-				dataItem.OwnerId = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].OwnerId");
-				dataItem.ModifyName = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].ModifyName");
-				dataItem.WorkspaceId = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].WorkspaceId");
-				dataItem.SecurityLevel = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].SecurityLevel");
 				dataItem.Description = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].Description");
-				dataItem.WorkName = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].WorkName");
 				dataItem.GmtCreate = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].GmtCreate");
+				dataItem.GmtModify = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].GmtModify");
+				dataItem.ModifyName = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].ModifyName");
+				dataItem.OwnerId = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].OwnerId");
+				dataItem.OwnerName = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].OwnerName");
 				dataItem.PublicFlag = _ctx.BooleanValue("QueryWorksByWorkspace.Result.Data["+ i +"].PublicFlag");
 				dataItem.PublicInvalidTime = _ctx.LongValue("QueryWorksByWorkspace.Result.Data["+ i +"].PublicInvalidTime");
+				dataItem.SecurityLevel = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].SecurityLevel");
+				dataItem.Status = _ctx.IntegerValue("QueryWorksByWorkspace.Result.Data["+ i +"].Status");
+				dataItem.WorkName = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].WorkName");
+				dataItem.WorkType = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].WorkType");
+				dataItem.WorksId = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].WorksId");
+				dataItem.WorkspaceId = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].WorkspaceId");
+				dataItem.WorkspaceName = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].WorkspaceName");
 
 				QueryWorksByWorkspaceResponse.QueryWorksByWorkspace_Result.QueryWorksByWorkspace_DataItem.QueryWorksByWorkspace_Directory directory = new QueryWorksByWorkspaceResponse.QueryWorksByWorkspace_Result.QueryWorksByWorkspace_DataItem.QueryWorksByWorkspace_Directory();
+				directory.Id = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].Directory.Id");
+				directory.Name = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].Directory.Name");
 				directory.PathId = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].Directory.PathId");
 				directory.PathName = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].Directory.PathName");
-				directory.Name = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].Directory.Name");
-				directory.Id = _ctx.StringValue("QueryWorksByWorkspace.Result.Data["+ i +"].Directory.Id");
 				dataItem.Directory = directory;
 
 				result_data.Add(dataItem);

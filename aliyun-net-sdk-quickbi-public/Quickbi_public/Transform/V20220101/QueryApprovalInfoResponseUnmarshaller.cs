@@ -35,31 +35,31 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			queryApprovalInfoResponse.Success = _ctx.BooleanValue("QueryApprovalInfo.Success");
 
 			QueryApprovalInfoResponse.QueryApprovalInfo_Result result = new QueryApprovalInfoResponse.QueryApprovalInfo_Result();
+			result.Page = _ctx.IntegerValue("QueryApprovalInfo.Result.Page");
+			result.PageSize = _ctx.IntegerValue("QueryApprovalInfo.Result.PageSize");
+			result.Start = _ctx.IntegerValue("QueryApprovalInfo.Result.Start");
 			result.Total = _ctx.IntegerValue("QueryApprovalInfo.Result.Total");
 			result.TotalPages = _ctx.IntegerValue("QueryApprovalInfo.Result.TotalPages");
-			result.Start = _ctx.IntegerValue("QueryApprovalInfo.Result.Start");
-			result.PageSize = _ctx.IntegerValue("QueryApprovalInfo.Result.PageSize");
-			result.Page = _ctx.IntegerValue("QueryApprovalInfo.Result.Page");
 
 			List<QueryApprovalInfoResponse.QueryApprovalInfo_Result.QueryApprovalInfo_ApprovalsResultModel> result_data = new List<QueryApprovalInfoResponse.QueryApprovalInfo_Result.QueryApprovalInfo_ApprovalsResultModel>();
 			for (int i = 0; i < _ctx.Length("QueryApprovalInfo.Result.Data.Length"); i++) {
 				QueryApprovalInfoResponse.QueryApprovalInfo_Result.QueryApprovalInfo_ApprovalsResultModel approvalsResultModel = new QueryApprovalInfoResponse.QueryApprovalInfo_Result.QueryApprovalInfo_ApprovalsResultModel();
-				approvalsResultModel.WorkspaceName = _ctx.StringValue("QueryApprovalInfo.Result.Data["+ i +"].WorkspaceName");
-				approvalsResultModel.ApplicationId = _ctx.StringValue("QueryApprovalInfo.Result.Data["+ i +"].ApplicationId");
 				approvalsResultModel.ApplicantId = _ctx.StringValue("QueryApprovalInfo.Result.Data["+ i +"].ApplicantId");
 				approvalsResultModel.ApplicantName = _ctx.StringValue("QueryApprovalInfo.Result.Data["+ i +"].ApplicantName");
+				approvalsResultModel.ApplicationId = _ctx.StringValue("QueryApprovalInfo.Result.Data["+ i +"].ApplicationId");
+				approvalsResultModel.ApplyReason = _ctx.StringValue("QueryApprovalInfo.Result.Data["+ i +"].ApplyReason");
 				approvalsResultModel.ApproverId = _ctx.StringValue("QueryApprovalInfo.Result.Data["+ i +"].ApproverId");
 				approvalsResultModel.ApproverName = _ctx.StringValue("QueryApprovalInfo.Result.Data["+ i +"].ApproverName");
+				approvalsResultModel.DeleteFlag = _ctx.BooleanValue("QueryApprovalInfo.Result.Data["+ i +"].DeleteFlag");
+				approvalsResultModel.ExpireDate = _ctx.LongValue("QueryApprovalInfo.Result.Data["+ i +"].ExpireDate");
+				approvalsResultModel.FlagStatus = _ctx.IntegerValue("QueryApprovalInfo.Result.Data["+ i +"].FlagStatus");
+				approvalsResultModel.GmtCreate = _ctx.LongValue("QueryApprovalInfo.Result.Data["+ i +"].GmtCreate");
+				approvalsResultModel.GmtModified = _ctx.LongValue("QueryApprovalInfo.Result.Data["+ i +"].GmtModified");
+				approvalsResultModel.HandleReason = _ctx.StringValue("QueryApprovalInfo.Result.Data["+ i +"].HandleReason");
 				approvalsResultModel.ResourceId = _ctx.StringValue("QueryApprovalInfo.Result.Data["+ i +"].ResourceId");
 				approvalsResultModel.ResourceName = _ctx.StringValue("QueryApprovalInfo.Result.Data["+ i +"].ResourceName");
 				approvalsResultModel.ResourceType = _ctx.StringValue("QueryApprovalInfo.Result.Data["+ i +"].ResourceType");
-				approvalsResultModel.ApplyReason = _ctx.StringValue("QueryApprovalInfo.Result.Data["+ i +"].ApplyReason");
-				approvalsResultModel.HandleReason = _ctx.StringValue("QueryApprovalInfo.Result.Data["+ i +"].HandleReason");
-				approvalsResultModel.ExpireDate = _ctx.LongValue("QueryApprovalInfo.Result.Data["+ i +"].ExpireDate");
-				approvalsResultModel.GmtCreate = _ctx.LongValue("QueryApprovalInfo.Result.Data["+ i +"].GmtCreate");
-				approvalsResultModel.GmtModified = _ctx.LongValue("QueryApprovalInfo.Result.Data["+ i +"].GmtModified");
-				approvalsResultModel.FlagStatus = _ctx.IntegerValue("QueryApprovalInfo.Result.Data["+ i +"].FlagStatus");
-				approvalsResultModel.DeleteFlag = _ctx.BooleanValue("QueryApprovalInfo.Result.Data["+ i +"].DeleteFlag");
+				approvalsResultModel.WorkspaceName = _ctx.StringValue("QueryApprovalInfo.Result.Data["+ i +"].WorkspaceName");
 
 				result_data.Add(approvalsResultModel);
 			}

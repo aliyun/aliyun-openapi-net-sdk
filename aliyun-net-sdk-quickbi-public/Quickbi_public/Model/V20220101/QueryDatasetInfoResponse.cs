@@ -25,23 +25,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 	public class QueryDatasetInfoResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private string requestId;
 
-		private QueryDatasetInfo_Result result;
+		private bool? success;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private QueryDatasetInfo_Result result;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -70,33 +70,33 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryDatasetInfo_Result
 		{
 
-			private string gmtModify;
+			private bool? custimzeSql;
 
-			private string dsName;
+			private string datasetId;
+
+			private string datasetName;
 
 			private string dsId;
 
-			private string ownerName;
+			private string dsName;
 
-			private string workspaceName;
+			private string dsType;
+
+			private string gmtCreate;
+
+			private string gmtModify;
+
+			private bool? openOfflineAcceleration;
 
 			private string ownerId;
 
-			private string datasetName;
+			private string ownerName;
 
 			private bool? rowLevel;
 
 			private string workspaceId;
 
-			private bool? custimzeSql;
-
-			private string gmtCreate;
-
-			private string dsType;
-
-			private string datasetId;
-
-			private bool? openOfflineAcceleration;
+			private string workspaceName;
 
 			private List<QueryDatasetInfo_CubeTableListItem> cubeTableList;
 
@@ -106,27 +106,39 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 			private QueryDatasetInfo_Directory directory;
 
-			public string GmtModify
+			public bool? CustimzeSql
 			{
 				get
 				{
-					return gmtModify;
+					return custimzeSql;
 				}
 				set	
 				{
-					gmtModify = value;
+					custimzeSql = value;
 				}
 			}
 
-			public string DsName
+			public string DatasetId
 			{
 				get
 				{
-					return dsName;
+					return datasetId;
 				}
 				set	
 				{
-					dsName = value;
+					datasetId = value;
+				}
+			}
+
+			public string DatasetName
+			{
+				get
+				{
+					return datasetName;
+				}
+				set	
+				{
+					datasetName = value;
 				}
 			}
 
@@ -142,27 +154,63 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string OwnerName
+			public string DsName
 			{
 				get
 				{
-					return ownerName;
+					return dsName;
 				}
 				set	
 				{
-					ownerName = value;
+					dsName = value;
 				}
 			}
 
-			public string WorkspaceName
+			public string DsType
 			{
 				get
 				{
-					return workspaceName;
+					return dsType;
 				}
 				set	
 				{
-					workspaceName = value;
+					dsType = value;
+				}
+			}
+
+			public string GmtCreate
+			{
+				get
+				{
+					return gmtCreate;
+				}
+				set	
+				{
+					gmtCreate = value;
+				}
+			}
+
+			public string GmtModify
+			{
+				get
+				{
+					return gmtModify;
+				}
+				set	
+				{
+					gmtModify = value;
+				}
+			}
+
+			public bool? OpenOfflineAcceleration
+			{
+				get
+				{
+					return openOfflineAcceleration;
+				}
+				set	
+				{
+					openOfflineAcceleration = value;
 				}
 			}
 
@@ -178,15 +226,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string DatasetName
+			public string OwnerName
 			{
 				get
 				{
-					return datasetName;
+					return ownerName;
 				}
 				set	
 				{
-					datasetName = value;
+					ownerName = value;
 				}
 			}
 
@@ -214,63 +262,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public bool? CustimzeSql
+			public string WorkspaceName
 			{
 				get
 				{
-					return custimzeSql;
+					return workspaceName;
 				}
 				set	
 				{
-					custimzeSql = value;
-				}
-			}
-
-			public string GmtCreate
-			{
-				get
-				{
-					return gmtCreate;
-				}
-				set	
-				{
-					gmtCreate = value;
-				}
-			}
-
-			public string DsType
-			{
-				get
-				{
-					return dsType;
-				}
-				set	
-				{
-					dsType = value;
-				}
-			}
-
-			public string DatasetId
-			{
-				get
-				{
-					return datasetId;
-				}
-				set	
-				{
-					datasetId = value;
-				}
-			}
-
-			public bool? OpenOfflineAcceleration
-			{
-				get
-				{
-					return openOfflineAcceleration;
-				}
-				set	
-				{
-					openOfflineAcceleration = value;
+					workspaceName = value;
 				}
 			}
 
@@ -325,31 +325,43 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class QueryDatasetInfo_CubeTableListItem
 			{
 
-				private string tableName;
+				private string caption;
+
+				private bool? customsql;
 
 				private string datasourceId;
 
 				private string dsType;
 
-				private string uniqueId;
-
 				private bool? factTable;
-
-				private string caption;
-
-				private bool? customsql;
 
 				private string sql;
 
-				public string TableName
+				private string tableName;
+
+				private string uniqueId;
+
+				public string Caption
 				{
 					get
 					{
-						return tableName;
+						return caption;
 					}
 					set	
 					{
-						tableName = value;
+						caption = value;
+					}
+				}
+
+				public bool? Customsql
+				{
+					get
+					{
+						return customsql;
+					}
+					set	
+					{
+						customsql = value;
 					}
 				}
 
@@ -377,18 +389,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string UniqueId
-				{
-					get
-					{
-						return uniqueId;
-					}
-					set	
-					{
-						uniqueId = value;
-					}
-				}
-
 				public bool? FactTable
 				{
 					get
@@ -398,30 +398,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						factTable = value;
-					}
-				}
-
-				public string Caption
-				{
-					get
-					{
-						return caption;
-					}
-					set	
-					{
-						caption = value;
-					}
-				}
-
-				public bool? Customsql
-				{
-					get
-					{
-						return customsql;
-					}
-					set	
-					{
-						customsql = value;
 					}
 				}
 
@@ -436,28 +412,66 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 						sql = value;
 					}
 				}
+
+				public string TableName
+				{
+					get
+					{
+						return tableName;
+					}
+					set	
+					{
+						tableName = value;
+					}
+				}
+
+				public string UniqueId
+				{
+					get
+					{
+						return uniqueId;
+					}
+					set	
+					{
+						uniqueId = value;
+					}
+				}
 			}
 
 			public class QueryDatasetInfo_DimensionListItem
 			{
 
+				private string caption;
+
 				private string dataType;
+
+				private string dimensionType;
 
 				private string expression;
 
 				private string factColumn;
 
-				private string dimensionType;
+				private string fieldDescription;
 
 				private string granularity;
 
 				private string refUid;
 
-				private string caption;
+				private string tableUniqueId;
 
 				private string uid;
 
-				private string tableUniqueId;
+				public string Caption
+				{
+					get
+					{
+						return caption;
+					}
+					set	
+					{
+						caption = value;
+					}
+				}
 
 				public string DataType
 				{
@@ -468,6 +482,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						dataType = value;
+					}
+				}
+
+				public string DimensionType
+				{
+					get
+					{
+						return dimensionType;
+					}
+					set	
+					{
+						dimensionType = value;
 					}
 				}
 
@@ -495,15 +521,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string DimensionType
+				public string FieldDescription
 				{
 					get
 					{
-						return dimensionType;
+						return fieldDescription;
 					}
 					set	
 					{
-						dimensionType = value;
+						fieldDescription = value;
 					}
 				}
 
@@ -531,15 +557,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string Caption
+				public string TableUniqueId
 				{
 					get
 					{
-						return caption;
+						return tableUniqueId;
 					}
 					set	
 					{
-						caption = value;
+						tableUniqueId = value;
 					}
 				}
 
@@ -554,36 +580,38 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 						uid = value;
 					}
 				}
-
-				public string TableUniqueId
-				{
-					get
-					{
-						return tableUniqueId;
-					}
-					set	
-					{
-						tableUniqueId = value;
-					}
-				}
 			}
 
 			public class QueryDatasetInfo_MeasureListItem
 			{
 
+				private string caption;
+
 				private string dataType;
 
 				private string expression;
 
-				private string measureType;
-
 				private string factColumn;
 
-				private string caption;
+				private string fieldDescription;
+
+				private string measureType;
 
 				private string tableUniqueId;
 
 				private string uid;
+
+				public string Caption
+				{
+					get
+					{
+						return caption;
+					}
+					set	
+					{
+						caption = value;
+					}
+				}
 
 				public string DataType
 				{
@@ -609,18 +637,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string MeasureType
-				{
-					get
-					{
-						return measureType;
-					}
-					set	
-					{
-						measureType = value;
-					}
-				}
-
 				public string FactColumn
 				{
 					get
@@ -633,15 +649,27 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string Caption
+				public string FieldDescription
 				{
 					get
 					{
-						return caption;
+						return fieldDescription;
 					}
 					set	
 					{
-						caption = value;
+						fieldDescription = value;
+					}
+				}
+
+				public string MeasureType
+				{
+					get
+					{
+						return measureType;
+					}
+					set	
+					{
+						measureType = value;
 					}
 				}
 
@@ -673,13 +701,37 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class QueryDatasetInfo_Directory
 			{
 
+				private string id;
+
+				private string name;
+
 				private string pathId;
 
 				private string pathName;
 
-				private string name;
+				public string Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
+					}
+				}
 
-				private string id;
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
 
 				public string PathId
 				{
@@ -702,30 +754,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						pathName = value;
-					}
-				}
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
-
-				public string Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
 					}
 				}
 			}

@@ -35,28 +35,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			Method = MethodType.POST;
         }
 
-		private int? authPoint;
-
 		private long? expireDate;
+
+		private int? authPoint;
 
 		private int? shareToType;
 
 		private string worksId;
 
 		private string shareToId;
-
-		public int? AuthPoint
-		{
-			get
-			{
-				return authPoint;
-			}
-			set	
-			{
-				authPoint = value;
-				DictionaryUtil.Add(QueryParameters, "AuthPoint", value.ToString());
-			}
-		}
 
 		public long? ExpireDate
 		{
@@ -68,6 +55,19 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				expireDate = value;
 				DictionaryUtil.Add(QueryParameters, "ExpireDate", value.ToString());
+			}
+		}
+
+		public int? AuthPoint
+		{
+			get
+			{
+				return authPoint;
+			}
+			set	
+			{
+				authPoint = value;
+				DictionaryUtil.Add(QueryParameters, "AuthPoint", value.ToString());
 			}
 		}
 

@@ -37,13 +37,13 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 		private string copilotId;
 
-		private int? expireTime;
-
 		private int? accountType;
 
 		private string userId;
 
 		private string accountName;
+
+		private int? expireTime;
 
 		private int? ticketNum;
 
@@ -57,19 +57,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				copilotId = value;
 				DictionaryUtil.Add(QueryParameters, "CopilotId", value);
-			}
-		}
-
-		public int? ExpireTime
-		{
-			get
-			{
-				return expireTime;
-			}
-			set	
-			{
-				expireTime = value;
-				DictionaryUtil.Add(QueryParameters, "ExpireTime", value.ToString());
 			}
 		}
 
@@ -109,6 +96,19 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				accountName = value;
 				DictionaryUtil.Add(QueryParameters, "AccountName", value);
+			}
+		}
+
+		public int? ExpireTime
+		{
+			get
+			{
+				return expireTime;
+			}
+			set	
+			{
+				expireTime = value;
+				DictionaryUtil.Add(QueryParameters, "ExpireTime", value.ToString());
 			}
 		}
 

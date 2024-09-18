@@ -31,15 +31,15 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			QueryUserTagMetaListResponse queryUserTagMetaListResponse = new QueryUserTagMetaListResponse();
 
 			queryUserTagMetaListResponse.HttpResponse = _ctx.HttpResponse;
-			queryUserTagMetaListResponse.Success = _ctx.BooleanValue("QueryUserTagMetaList.Success");
 			queryUserTagMetaListResponse.RequestId = _ctx.StringValue("QueryUserTagMetaList.RequestId");
+			queryUserTagMetaListResponse.Success = _ctx.BooleanValue("QueryUserTagMetaList.Success");
 
 			List<QueryUserTagMetaListResponse.QueryUserTagMetaList_ResultItem> queryUserTagMetaListResponse_result = new List<QueryUserTagMetaListResponse.QueryUserTagMetaList_ResultItem>();
 			for (int i = 0; i < _ctx.Length("QueryUserTagMetaList.Result.Length"); i++) {
 				QueryUserTagMetaListResponse.QueryUserTagMetaList_ResultItem resultItem = new QueryUserTagMetaListResponse.QueryUserTagMetaList_ResultItem();
-				resultItem.TagName = _ctx.StringValue("QueryUserTagMetaList.Result["+ i +"].TagName");
 				resultItem.TagDescription = _ctx.StringValue("QueryUserTagMetaList.Result["+ i +"].TagDescription");
 				resultItem.TagId = _ctx.StringValue("QueryUserTagMetaList.Result["+ i +"].TagId");
+				resultItem.TagName = _ctx.StringValue("QueryUserTagMetaList.Result["+ i +"].TagName");
 
 				queryUserTagMetaListResponse_result.Add(resultItem);
 			}

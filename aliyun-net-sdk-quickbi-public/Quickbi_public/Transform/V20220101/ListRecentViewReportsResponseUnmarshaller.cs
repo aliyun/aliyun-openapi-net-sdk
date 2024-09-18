@@ -35,30 +35,30 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			listRecentViewReportsResponse.Success = _ctx.BooleanValue("ListRecentViewReports.Success");
 
 			ListRecentViewReportsResponse.ListRecentViewReports_Result result = new ListRecentViewReportsResponse.ListRecentViewReports_Result();
-			result.TotalNum = _ctx.IntegerValue("ListRecentViewReports.Result.TotalNum");
-			result.TotalPages = _ctx.IntegerValue("ListRecentViewReports.Result.TotalPages");
+			result.Attention = _ctx.StringValue("ListRecentViewReports.Result.Attention");
 			result.PageNum = _ctx.IntegerValue("ListRecentViewReports.Result.PageNum");
 			result.PageSize = _ctx.IntegerValue("ListRecentViewReports.Result.PageSize");
-			result.Attention = _ctx.StringValue("ListRecentViewReports.Result.Attention");
+			result.TotalNum = _ctx.IntegerValue("ListRecentViewReports.Result.TotalNum");
+			result.TotalPages = _ctx.IntegerValue("ListRecentViewReports.Result.TotalPages");
 
 			List<ListRecentViewReportsResponse.ListRecentViewReports_Result.ListRecentViewReports_DataItem> result_data = new List<ListRecentViewReportsResponse.ListRecentViewReports_Result.ListRecentViewReports_DataItem>();
 			for (int i = 0; i < _ctx.Length("ListRecentViewReports.Result.Data.Length"); i++) {
 				ListRecentViewReportsResponse.ListRecentViewReports_Result.ListRecentViewReports_DataItem dataItem = new ListRecentViewReportsResponse.ListRecentViewReports_Result.ListRecentViewReports_DataItem();
-				dataItem.TreeId = _ctx.StringValue("ListRecentViewReports.Result.Data["+ i +"].TreeId");
-				dataItem.Type = _ctx.StringValue("ListRecentViewReports.Result.Data["+ i +"].Type");
-				dataItem.Name = _ctx.StringValue("ListRecentViewReports.Result.Data["+ i +"].Name");
-				dataItem.OwnerNum = _ctx.StringValue("ListRecentViewReports.Result.Data["+ i +"].OwnerNum");
-				dataItem.OwnerName = _ctx.StringValue("ListRecentViewReports.Result.Data["+ i +"].OwnerName");
+				dataItem.Favorite = _ctx.BooleanValue("ListRecentViewReports.Result.Data["+ i +"].Favorite");
 				dataItem.GmtCreate = _ctx.StringValue("ListRecentViewReports.Result.Data["+ i +"].GmtCreate");
 				dataItem.GmtModified = _ctx.StringValue("ListRecentViewReports.Result.Data["+ i +"].GmtModified");
-				dataItem.PublishStatus = _ctx.IntegerValue("ListRecentViewReports.Result.Data["+ i +"].PublishStatus");
-				dataItem.Favorite = _ctx.BooleanValue("ListRecentViewReports.Result.Data["+ i +"].Favorite");
-				dataItem.HasViewAuth = _ctx.BooleanValue("ListRecentViewReports.Result.Data["+ i +"].HasViewAuth");
 				dataItem.HasEditAuth = _ctx.BooleanValue("ListRecentViewReports.Result.Data["+ i +"].HasEditAuth");
+				dataItem.HasViewAuth = _ctx.BooleanValue("ListRecentViewReports.Result.Data["+ i +"].HasViewAuth");
+				dataItem.LatestViewTime = _ctx.StringValue("ListRecentViewReports.Result.Data["+ i +"].LatestViewTime");
+				dataItem.Name = _ctx.StringValue("ListRecentViewReports.Result.Data["+ i +"].Name");
+				dataItem.OwnerName = _ctx.StringValue("ListRecentViewReports.Result.Data["+ i +"].OwnerName");
+				dataItem.OwnerNum = _ctx.StringValue("ListRecentViewReports.Result.Data["+ i +"].OwnerNum");
+				dataItem.PublishStatus = _ctx.IntegerValue("ListRecentViewReports.Result.Data["+ i +"].PublishStatus");
+				dataItem.TreeId = _ctx.StringValue("ListRecentViewReports.Result.Data["+ i +"].TreeId");
+				dataItem.Type = _ctx.StringValue("ListRecentViewReports.Result.Data["+ i +"].Type");
+				dataItem.ViewCount = _ctx.LongValue("ListRecentViewReports.Result.Data["+ i +"].ViewCount");
 				dataItem.WorkspaceId = _ctx.StringValue("ListRecentViewReports.Result.Data["+ i +"].WorkspaceId");
 				dataItem.WorkspaceName = _ctx.StringValue("ListRecentViewReports.Result.Data["+ i +"].WorkspaceName");
-				dataItem.ViewCount = _ctx.LongValue("ListRecentViewReports.Result.Data["+ i +"].ViewCount");
-				dataItem.LatestViewTime = _ctx.StringValue("ListRecentViewReports.Result.Data["+ i +"].LatestViewTime");
 
 				result_data.Add(dataItem);
 			}

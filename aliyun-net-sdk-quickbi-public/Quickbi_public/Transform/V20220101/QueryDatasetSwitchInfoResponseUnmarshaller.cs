@@ -31,13 +31,13 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			QueryDatasetSwitchInfoResponse queryDatasetSwitchInfoResponse = new QueryDatasetSwitchInfoResponse();
 
 			queryDatasetSwitchInfoResponse.HttpResponse = _ctx.HttpResponse;
-			queryDatasetSwitchInfoResponse.Success = _ctx.BooleanValue("QueryDatasetSwitchInfo.Success");
 			queryDatasetSwitchInfoResponse.RequestId = _ctx.StringValue("QueryDatasetSwitchInfo.RequestId");
+			queryDatasetSwitchInfoResponse.Success = _ctx.BooleanValue("QueryDatasetSwitchInfo.Success");
 
 			QueryDatasetSwitchInfoResponse.QueryDatasetSwitchInfo_Result result = new QueryDatasetSwitchInfoResponse.QueryDatasetSwitchInfo_Result();
-			result.IsOpenRowLevelPermission = _ctx.IntegerValue("QueryDatasetSwitchInfo.Result.IsOpenRowLevelPermission");
 			result.CubeId = _ctx.StringValue("QueryDatasetSwitchInfo.Result.CubeId");
 			result.IsOpenColumnLevelPermission = _ctx.IntegerValue("QueryDatasetSwitchInfo.Result.IsOpenColumnLevelPermission");
+			result.IsOpenRowLevelPermission = _ctx.IntegerValue("QueryDatasetSwitchInfo.Result.IsOpenRowLevelPermission");
 			queryDatasetSwitchInfoResponse.Result = result;
         
 			return queryDatasetSwitchInfoResponse;

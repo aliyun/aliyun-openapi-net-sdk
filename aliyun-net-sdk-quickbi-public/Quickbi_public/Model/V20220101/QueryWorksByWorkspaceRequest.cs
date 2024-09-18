@@ -35,30 +35,17 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			Method = MethodType.POST;
         }
 
-		private string worksType;
-
 		private int? thirdPartAuthFlag;
 
 		private int? pageNum;
 
 		private int? pageSize;
 
+		private string worksType;
+
 		private string workspaceId;
 
 		private int? status;
-
-		public string WorksType
-		{
-			get
-			{
-				return worksType;
-			}
-			set	
-			{
-				worksType = value;
-				DictionaryUtil.Add(QueryParameters, "WorksType", value);
-			}
-		}
 
 		public int? ThirdPartAuthFlag
 		{
@@ -96,6 +83,19 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string WorksType
+		{
+			get
+			{
+				return worksType;
+			}
+			set	
+			{
+				worksType = value;
+				DictionaryUtil.Add(QueryParameters, "WorksType", value);
 			}
 		}
 

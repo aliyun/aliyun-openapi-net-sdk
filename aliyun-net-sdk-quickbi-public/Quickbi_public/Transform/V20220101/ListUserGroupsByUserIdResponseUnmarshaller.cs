@@ -31,21 +31,21 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			ListUserGroupsByUserIdResponse listUserGroupsByUserIdResponse = new ListUserGroupsByUserIdResponse();
 
 			listUserGroupsByUserIdResponse.HttpResponse = _ctx.HttpResponse;
-			listUserGroupsByUserIdResponse.Success = _ctx.BooleanValue("ListUserGroupsByUserId.Success");
 			listUserGroupsByUserIdResponse.RequestId = _ctx.StringValue("ListUserGroupsByUserId.RequestId");
+			listUserGroupsByUserIdResponse.Success = _ctx.BooleanValue("ListUserGroupsByUserId.Success");
 
 			List<ListUserGroupsByUserIdResponse.ListUserGroupsByUserId_Data> listUserGroupsByUserIdResponse_result = new List<ListUserGroupsByUserIdResponse.ListUserGroupsByUserId_Data>();
 			for (int i = 0; i < _ctx.Length("ListUserGroupsByUserId.Result.Length"); i++) {
 				ListUserGroupsByUserIdResponse.ListUserGroupsByUserId_Data data = new ListUserGroupsByUserIdResponse.ListUserGroupsByUserId_Data();
-				data.IdentifiedPath = _ctx.StringValue("ListUserGroupsByUserId.Result["+ i +"].IdentifiedPath");
-				data.ParentUsergroupId = _ctx.StringValue("ListUserGroupsByUserId.Result["+ i +"].ParentUsergroupId");
-				data.ModifiedTime = _ctx.StringValue("ListUserGroupsByUserId.Result["+ i +"].ModifiedTime");
-				data.CreateUser = _ctx.StringValue("ListUserGroupsByUserId.Result["+ i +"].CreateUser");
-				data.UsergroupName = _ctx.StringValue("ListUserGroupsByUserId.Result["+ i +"].UsergroupName");
 				data.CreateTime = _ctx.StringValue("ListUserGroupsByUserId.Result["+ i +"].CreateTime");
+				data.CreateUser = _ctx.StringValue("ListUserGroupsByUserId.Result["+ i +"].CreateUser");
+				data.IdentifiedPath = _ctx.StringValue("ListUserGroupsByUserId.Result["+ i +"].IdentifiedPath");
+				data.ModifiedTime = _ctx.StringValue("ListUserGroupsByUserId.Result["+ i +"].ModifiedTime");
+				data.ModifyUser = _ctx.StringValue("ListUserGroupsByUserId.Result["+ i +"].ModifyUser");
+				data.ParentUsergroupId = _ctx.StringValue("ListUserGroupsByUserId.Result["+ i +"].ParentUsergroupId");
 				data.UsergroupDesc = _ctx.StringValue("ListUserGroupsByUserId.Result["+ i +"].UsergroupDesc");
 				data.UsergroupId = _ctx.StringValue("ListUserGroupsByUserId.Result["+ i +"].UsergroupId");
-				data.ModifyUser = _ctx.StringValue("ListUserGroupsByUserId.Result["+ i +"].ModifyUser");
+				data.UsergroupName = _ctx.StringValue("ListUserGroupsByUserId.Result["+ i +"].UsergroupName");
 
 				listUserGroupsByUserIdResponse_result.Add(data);
 			}

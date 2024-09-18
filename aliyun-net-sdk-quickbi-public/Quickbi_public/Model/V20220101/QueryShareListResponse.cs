@@ -25,23 +25,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 	public class QueryShareListResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private string requestId;
 
-		private List<QueryShareList_Data> result;
+		private bool? success;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private List<QueryShareList_Data> result;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -70,45 +70,21 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryShareList_Data
 		{
 
-			private string shareId;
-
-			private string shareToId;
-
 			private int? authPoint;
 
 			private long? expireDate;
 
-			private int? shareToType;
-
 			private string reportId;
+
+			private string shareId;
+
+			private string shareToId;
 
 			private string shareToName;
 
+			private int? shareToType;
+
 			private string shareType;
-
-			public string ShareId
-			{
-				get
-				{
-					return shareId;
-				}
-				set	
-				{
-					shareId = value;
-				}
-			}
-
-			public string ShareToId
-			{
-				get
-				{
-					return shareToId;
-				}
-				set	
-				{
-					shareToId = value;
-				}
-			}
 
 			public int? AuthPoint
 			{
@@ -134,18 +110,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public int? ShareToType
-			{
-				get
-				{
-					return shareToType;
-				}
-				set	
-				{
-					shareToType = value;
-				}
-			}
-
 			public string ReportId
 			{
 				get
@@ -158,6 +122,30 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
+			public string ShareId
+			{
+				get
+				{
+					return shareId;
+				}
+				set	
+				{
+					shareId = value;
+				}
+			}
+
+			public string ShareToId
+			{
+				get
+				{
+					return shareToId;
+				}
+				set	
+				{
+					shareToId = value;
+				}
+			}
+
 			public string ShareToName
 			{
 				get
@@ -167,6 +155,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					shareToName = value;
+				}
+			}
+
+			public int? ShareToType
+			{
+				get
+				{
+					return shareToType;
+				}
+				set	
+				{
+					shareToType = value;
 				}
 			}
 

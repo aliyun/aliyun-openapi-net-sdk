@@ -70,39 +70,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class ListSharedReports_Result
 		{
 
-			private int? totalNum;
-
-			private int? totalPages;
-
 			private int? pageNum;
 
 			private int? pageSize;
 
+			private int? totalNum;
+
+			private int? totalPages;
+
 			private List<ListSharedReports_DataItem> data;
-
-			public int? TotalNum
-			{
-				get
-				{
-					return totalNum;
-				}
-				set	
-				{
-					totalNum = value;
-				}
-			}
-
-			public int? TotalPages
-			{
-				get
-				{
-					return totalPages;
-				}
-				set	
-				{
-					totalPages = value;
-				}
-			}
 
 			public int? PageNum
 			{
@@ -128,6 +104,30 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
+			public int? TotalNum
+			{
+				get
+				{
+					return totalNum;
+				}
+				set	
+				{
+					totalNum = value;
+				}
+			}
+
+			public int? TotalPages
+			{
+				get
+				{
+					return totalPages;
+				}
+				set	
+				{
+					totalPages = value;
+				}
+			}
+
 			public List<ListSharedReports_DataItem> Data
 			{
 				get
@@ -143,89 +143,41 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class ListSharedReports_DataItem
 			{
 
-				private string treeId;
-
-				private string type;
-
-				private string name;
-
-				private string ownerNum;
-
-				private string ownerName;
+				private bool? favorite;
 
 				private string gmtCreate;
 
 				private string gmtModified;
 
-				private int? publishStatus;
-
-				private bool? favorite;
+				private bool? hasEditAuth;
 
 				private bool? hasViewAuth;
 
-				private bool? hasEditAuth;
+				private string name;
+
+				private string ownerName;
+
+				private string ownerNum;
+
+				private int? publishStatus;
+
+				private string treeId;
+
+				private string type;
 
 				private string workspaceId;
 
 				private string workspaceName;
 
-				public string TreeId
+				public bool? Favorite
 				{
 					get
 					{
-						return treeId;
+						return favorite;
 					}
 					set	
 					{
-						treeId = value;
-					}
-				}
-
-				public string Type
-				{
-					get
-					{
-						return type;
-					}
-					set	
-					{
-						type = value;
-					}
-				}
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
-
-				public string OwnerNum
-				{
-					get
-					{
-						return ownerNum;
-					}
-					set	
-					{
-						ownerNum = value;
-					}
-				}
-
-				public string OwnerName
-				{
-					get
-					{
-						return ownerName;
-					}
-					set	
-					{
-						ownerName = value;
+						favorite = value;
 					}
 				}
 
@@ -253,27 +205,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public int? PublishStatus
+				public bool? HasEditAuth
 				{
 					get
 					{
-						return publishStatus;
+						return hasEditAuth;
 					}
 					set	
 					{
-						publishStatus = value;
-					}
-				}
-
-				public bool? Favorite
-				{
-					get
-					{
-						return favorite;
-					}
-					set	
-					{
-						favorite = value;
+						hasEditAuth = value;
 					}
 				}
 
@@ -289,15 +229,75 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public bool? HasEditAuth
+				public string Name
 				{
 					get
 					{
-						return hasEditAuth;
+						return name;
 					}
 					set	
 					{
-						hasEditAuth = value;
+						name = value;
+					}
+				}
+
+				public string OwnerName
+				{
+					get
+					{
+						return ownerName;
+					}
+					set	
+					{
+						ownerName = value;
+					}
+				}
+
+				public string OwnerNum
+				{
+					get
+					{
+						return ownerNum;
+					}
+					set	
+					{
+						ownerNum = value;
+					}
+				}
+
+				public int? PublishStatus
+				{
+					get
+					{
+						return publishStatus;
+					}
+					set	
+					{
+						publishStatus = value;
+					}
+				}
+
+				public string TreeId
+				{
+					get
+					{
+						return treeId;
+					}
+					set	
+					{
+						treeId = value;
+					}
+				}
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
 					}
 				}
 

@@ -25,23 +25,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 	public class ListPortalMenuAuthorizationResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private string requestId;
 
-		private List<ListPortalMenuAuthorization_Data> result;
+		private bool? success;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private List<ListPortalMenuAuthorization_Data> result;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -70,23 +70,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class ListPortalMenuAuthorization_Data
 		{
 
-			private bool? showOnlyWithAccess;
-
 			private string menuId;
 
-			private List<ListPortalMenuAuthorization_ReceiversItem> receivers;
+			private bool? showOnlyWithAccess;
 
-			public bool? ShowOnlyWithAccess
-			{
-				get
-				{
-					return showOnlyWithAccess;
-				}
-				set	
-				{
-					showOnlyWithAccess = value;
-				}
-			}
+			private List<ListPortalMenuAuthorization_ReceiversItem> receivers;
 
 			public string MenuId
 			{
@@ -97,6 +85,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					menuId = value;
+				}
+			}
+
+			public bool? ShowOnlyWithAccess
+			{
+				get
+				{
+					return showOnlyWithAccess;
+				}
+				set	
+				{
+					showOnlyWithAccess = value;
 				}
 			}
 

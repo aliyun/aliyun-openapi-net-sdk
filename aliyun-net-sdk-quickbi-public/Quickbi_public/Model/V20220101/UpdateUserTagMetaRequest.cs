@@ -35,11 +35,24 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			Method = MethodType.POST;
         }
 
+		private string tagId;
+
 		private string tagDescription;
 
 		private string tagName;
 
-		private string tagId;
+		public string TagId
+		{
+			get
+			{
+				return tagId;
+			}
+			set	
+			{
+				tagId = value;
+				DictionaryUtil.Add(QueryParameters, "TagId", value);
+			}
+		}
 
 		public string TagDescription
 		{
@@ -64,19 +77,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				tagName = value;
 				DictionaryUtil.Add(QueryParameters, "TagName", value);
-			}
-		}
-
-		public string TagId
-		{
-			get
-			{
-				return tagId;
-			}
-			set	
-			{
-				tagId = value;
-				DictionaryUtil.Add(QueryParameters, "TagId", value);
 			}
 		}
 

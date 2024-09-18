@@ -31,43 +31,43 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			QueryDatasetInfoResponse queryDatasetInfoResponse = new QueryDatasetInfoResponse();
 
 			queryDatasetInfoResponse.HttpResponse = _ctx.HttpResponse;
-			queryDatasetInfoResponse.Success = _ctx.BooleanValue("QueryDatasetInfo.Success");
 			queryDatasetInfoResponse.RequestId = _ctx.StringValue("QueryDatasetInfo.RequestId");
+			queryDatasetInfoResponse.Success = _ctx.BooleanValue("QueryDatasetInfo.Success");
 
 			QueryDatasetInfoResponse.QueryDatasetInfo_Result result = new QueryDatasetInfoResponse.QueryDatasetInfo_Result();
-			result.GmtModify = _ctx.StringValue("QueryDatasetInfo.Result.GmtModify");
-			result.DsName = _ctx.StringValue("QueryDatasetInfo.Result.DsName");
-			result.DsId = _ctx.StringValue("QueryDatasetInfo.Result.DsId");
-			result.OwnerName = _ctx.StringValue("QueryDatasetInfo.Result.OwnerName");
-			result.WorkspaceName = _ctx.StringValue("QueryDatasetInfo.Result.WorkspaceName");
-			result.OwnerId = _ctx.StringValue("QueryDatasetInfo.Result.OwnerId");
+			result.CustimzeSql = _ctx.BooleanValue("QueryDatasetInfo.Result.CustimzeSql");
+			result.DatasetId = _ctx.StringValue("QueryDatasetInfo.Result.DatasetId");
 			result.DatasetName = _ctx.StringValue("QueryDatasetInfo.Result.DatasetName");
+			result.DsId = _ctx.StringValue("QueryDatasetInfo.Result.DsId");
+			result.DsName = _ctx.StringValue("QueryDatasetInfo.Result.DsName");
+			result.DsType = _ctx.StringValue("QueryDatasetInfo.Result.DsType");
+			result.GmtCreate = _ctx.StringValue("QueryDatasetInfo.Result.GmtCreate");
+			result.GmtModify = _ctx.StringValue("QueryDatasetInfo.Result.GmtModify");
+			result.OpenOfflineAcceleration = _ctx.BooleanValue("QueryDatasetInfo.Result.OpenOfflineAcceleration");
+			result.OwnerId = _ctx.StringValue("QueryDatasetInfo.Result.OwnerId");
+			result.OwnerName = _ctx.StringValue("QueryDatasetInfo.Result.OwnerName");
 			result.RowLevel = _ctx.BooleanValue("QueryDatasetInfo.Result.RowLevel");
 			result.WorkspaceId = _ctx.StringValue("QueryDatasetInfo.Result.WorkspaceId");
-			result.CustimzeSql = _ctx.BooleanValue("QueryDatasetInfo.Result.CustimzeSql");
-			result.GmtCreate = _ctx.StringValue("QueryDatasetInfo.Result.GmtCreate");
-			result.DsType = _ctx.StringValue("QueryDatasetInfo.Result.DsType");
-			result.DatasetId = _ctx.StringValue("QueryDatasetInfo.Result.DatasetId");
-			result.OpenOfflineAcceleration = _ctx.BooleanValue("QueryDatasetInfo.Result.OpenOfflineAcceleration");
+			result.WorkspaceName = _ctx.StringValue("QueryDatasetInfo.Result.WorkspaceName");
 
 			QueryDatasetInfoResponse.QueryDatasetInfo_Result.QueryDatasetInfo_Directory directory = new QueryDatasetInfoResponse.QueryDatasetInfo_Result.QueryDatasetInfo_Directory();
+			directory.Id = _ctx.StringValue("QueryDatasetInfo.Result.Directory.Id");
+			directory.Name = _ctx.StringValue("QueryDatasetInfo.Result.Directory.Name");
 			directory.PathId = _ctx.StringValue("QueryDatasetInfo.Result.Directory.PathId");
 			directory.PathName = _ctx.StringValue("QueryDatasetInfo.Result.Directory.PathName");
-			directory.Name = _ctx.StringValue("QueryDatasetInfo.Result.Directory.Name");
-			directory.Id = _ctx.StringValue("QueryDatasetInfo.Result.Directory.Id");
 			result.Directory = directory;
 
 			List<QueryDatasetInfoResponse.QueryDatasetInfo_Result.QueryDatasetInfo_CubeTableListItem> result_cubeTableList = new List<QueryDatasetInfoResponse.QueryDatasetInfo_Result.QueryDatasetInfo_CubeTableListItem>();
 			for (int i = 0; i < _ctx.Length("QueryDatasetInfo.Result.CubeTableList.Length"); i++) {
 				QueryDatasetInfoResponse.QueryDatasetInfo_Result.QueryDatasetInfo_CubeTableListItem cubeTableListItem = new QueryDatasetInfoResponse.QueryDatasetInfo_Result.QueryDatasetInfo_CubeTableListItem();
-				cubeTableListItem.TableName = _ctx.StringValue("QueryDatasetInfo.Result.CubeTableList["+ i +"].TableName");
-				cubeTableListItem.DatasourceId = _ctx.StringValue("QueryDatasetInfo.Result.CubeTableList["+ i +"].DatasourceId");
-				cubeTableListItem.DsType = _ctx.StringValue("QueryDatasetInfo.Result.CubeTableList["+ i +"].DsType");
-				cubeTableListItem.UniqueId = _ctx.StringValue("QueryDatasetInfo.Result.CubeTableList["+ i +"].UniqueId");
-				cubeTableListItem.FactTable = _ctx.BooleanValue("QueryDatasetInfo.Result.CubeTableList["+ i +"].FactTable");
 				cubeTableListItem.Caption = _ctx.StringValue("QueryDatasetInfo.Result.CubeTableList["+ i +"].Caption");
 				cubeTableListItem.Customsql = _ctx.BooleanValue("QueryDatasetInfo.Result.CubeTableList["+ i +"].Customsql");
+				cubeTableListItem.DatasourceId = _ctx.StringValue("QueryDatasetInfo.Result.CubeTableList["+ i +"].DatasourceId");
+				cubeTableListItem.DsType = _ctx.StringValue("QueryDatasetInfo.Result.CubeTableList["+ i +"].DsType");
+				cubeTableListItem.FactTable = _ctx.BooleanValue("QueryDatasetInfo.Result.CubeTableList["+ i +"].FactTable");
 				cubeTableListItem.Sql = _ctx.StringValue("QueryDatasetInfo.Result.CubeTableList["+ i +"].Sql");
+				cubeTableListItem.TableName = _ctx.StringValue("QueryDatasetInfo.Result.CubeTableList["+ i +"].TableName");
+				cubeTableListItem.UniqueId = _ctx.StringValue("QueryDatasetInfo.Result.CubeTableList["+ i +"].UniqueId");
 
 				result_cubeTableList.Add(cubeTableListItem);
 			}
@@ -76,15 +76,16 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			List<QueryDatasetInfoResponse.QueryDatasetInfo_Result.QueryDatasetInfo_DimensionListItem> result_dimensionList = new List<QueryDatasetInfoResponse.QueryDatasetInfo_Result.QueryDatasetInfo_DimensionListItem>();
 			for (int i = 0; i < _ctx.Length("QueryDatasetInfo.Result.DimensionList.Length"); i++) {
 				QueryDatasetInfoResponse.QueryDatasetInfo_Result.QueryDatasetInfo_DimensionListItem dimensionListItem = new QueryDatasetInfoResponse.QueryDatasetInfo_Result.QueryDatasetInfo_DimensionListItem();
+				dimensionListItem.Caption = _ctx.StringValue("QueryDatasetInfo.Result.DimensionList["+ i +"].Caption");
 				dimensionListItem.DataType = _ctx.StringValue("QueryDatasetInfo.Result.DimensionList["+ i +"].DataType");
+				dimensionListItem.DimensionType = _ctx.StringValue("QueryDatasetInfo.Result.DimensionList["+ i +"].DimensionType");
 				dimensionListItem.Expression = _ctx.StringValue("QueryDatasetInfo.Result.DimensionList["+ i +"].Expression");
 				dimensionListItem.FactColumn = _ctx.StringValue("QueryDatasetInfo.Result.DimensionList["+ i +"].FactColumn");
-				dimensionListItem.DimensionType = _ctx.StringValue("QueryDatasetInfo.Result.DimensionList["+ i +"].DimensionType");
+				dimensionListItem.FieldDescription = _ctx.StringValue("QueryDatasetInfo.Result.DimensionList["+ i +"].FieldDescription");
 				dimensionListItem.Granularity = _ctx.StringValue("QueryDatasetInfo.Result.DimensionList["+ i +"].Granularity");
 				dimensionListItem.RefUid = _ctx.StringValue("QueryDatasetInfo.Result.DimensionList["+ i +"].RefUid");
-				dimensionListItem.Caption = _ctx.StringValue("QueryDatasetInfo.Result.DimensionList["+ i +"].Caption");
-				dimensionListItem.Uid = _ctx.StringValue("QueryDatasetInfo.Result.DimensionList["+ i +"].Uid");
 				dimensionListItem.TableUniqueId = _ctx.StringValue("QueryDatasetInfo.Result.DimensionList["+ i +"].TableUniqueId");
+				dimensionListItem.Uid = _ctx.StringValue("QueryDatasetInfo.Result.DimensionList["+ i +"].Uid");
 
 				result_dimensionList.Add(dimensionListItem);
 			}
@@ -93,11 +94,12 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			List<QueryDatasetInfoResponse.QueryDatasetInfo_Result.QueryDatasetInfo_MeasureListItem> result_measureList = new List<QueryDatasetInfoResponse.QueryDatasetInfo_Result.QueryDatasetInfo_MeasureListItem>();
 			for (int i = 0; i < _ctx.Length("QueryDatasetInfo.Result.MeasureList.Length"); i++) {
 				QueryDatasetInfoResponse.QueryDatasetInfo_Result.QueryDatasetInfo_MeasureListItem measureListItem = new QueryDatasetInfoResponse.QueryDatasetInfo_Result.QueryDatasetInfo_MeasureListItem();
+				measureListItem.Caption = _ctx.StringValue("QueryDatasetInfo.Result.MeasureList["+ i +"].Caption");
 				measureListItem.DataType = _ctx.StringValue("QueryDatasetInfo.Result.MeasureList["+ i +"].DataType");
 				measureListItem.Expression = _ctx.StringValue("QueryDatasetInfo.Result.MeasureList["+ i +"].Expression");
-				measureListItem.MeasureType = _ctx.StringValue("QueryDatasetInfo.Result.MeasureList["+ i +"].MeasureType");
 				measureListItem.FactColumn = _ctx.StringValue("QueryDatasetInfo.Result.MeasureList["+ i +"].FactColumn");
-				measureListItem.Caption = _ctx.StringValue("QueryDatasetInfo.Result.MeasureList["+ i +"].Caption");
+				measureListItem.FieldDescription = _ctx.StringValue("QueryDatasetInfo.Result.MeasureList["+ i +"].FieldDescription");
+				measureListItem.MeasureType = _ctx.StringValue("QueryDatasetInfo.Result.MeasureList["+ i +"].MeasureType");
 				measureListItem.TableUniqueId = _ctx.StringValue("QueryDatasetInfo.Result.MeasureList["+ i +"].TableUniqueId");
 				measureListItem.Uid = _ctx.StringValue("QueryDatasetInfo.Result.MeasureList["+ i +"].Uid");
 
