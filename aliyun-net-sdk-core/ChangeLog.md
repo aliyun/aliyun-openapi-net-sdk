@@ -1,3 +1,6 @@
+### 2024-09-18 Version 1.6.1
+* Change fixed dependency of newtonsoft.json to scope dependency
+
 ### 2024-09-04 Version 1.6.0
 * Support OIDC credentials provider.
 * Add OIDC credentials provider into default credentials provider chain.
