@@ -28,12 +28,22 @@ namespace Aliyun.Acs.Core.Utils
     public class AuthUtils
     {
         private static volatile string oidcToken;
+        private static volatile string clientType = Environment.GetEnvironmentVariable("ALIBABA_CLOUD_PROFILE");
 
         AuthUtils()
         {
         }
 
-        
+        public static string GetClientType()
+        {
+            if (clientType == null)
+            {
+                AuthUtils.clientType = "default";
+            }
+            return AuthUtils.clientType;
+        }
+
+
         public static string GetOIDCToken(string OIDCTokenFilePath)
         {
             byte[] buffer;

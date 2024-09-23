@@ -61,5 +61,16 @@ namespace Aliyun.Acs.Core.Tests.Units.Utils
             TestHelper.DeleteIniFile();
             Assert.Empty(value);
         }
+
+        [Fact]
+        public void TestIniReader()
+        {
+            var path = TestHelper.GetTestIniFilePath();
+            var iniReader = new IniReader(path);
+            var accessKeyId = iniReader.GetValue("access_key_id", "default");
+            var accessKeySecret = iniReader.GetValue("access_key_secret", "default");
+            Assert.Equal("foo", accessKeyId);
+            Assert.Equal("bar", accessKeySecret);
+        }
     }
 }

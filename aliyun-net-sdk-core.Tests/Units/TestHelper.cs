@@ -74,6 +74,11 @@ namespace Aliyun.Acs.Core.Tests.Units
             return Directory.GetCurrentDirectory() + slash + "credentials.ini";
         }
 
+        public static string GetTestIniFilePath()
+        {
+            return HomePath + Slash + "configTest.ini";
+        }
+
         public static void DeleteIniFile()
         {
             File.Delete(homePath + slash + ".alibabacloud" + slash + "credentials.ini");
