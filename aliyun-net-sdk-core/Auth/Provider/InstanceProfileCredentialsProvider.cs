@@ -17,6 +17,7 @@
  * under the License.
  */
 
+using System;
 using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Utils;
 
@@ -63,15 +64,18 @@ namespace Aliyun.Acs.Core.Auth
             }
             catch (ClientException ex)
             {
-                if (ex.ErrorCode.Equals("SDK.SessionTokenExpired") &&
-                    ex.ErrorMessage.Equals("Current session token has expired."))
+                if (ex.ErrorCode != null && ex.ErrorCode.Equals("SDK.SessionTokenExpired") &&
+                    ex.ErrorMessage != null && ex.ErrorMessage.Equals("Current session token has expired."))
                 {
                     CommonLog.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
                     throw new ClientException(ex.ErrorCode, ex.ErrorMessage);
                 }
 
                 // Use the current expiring session token and wait for next round
-                credentials.SetLastFailedRefreshTime();
+                if (credentials != null)
+                {
+                    credentials.SetLastFailedRefreshTime();
+                }
             }
 
             return credentials;

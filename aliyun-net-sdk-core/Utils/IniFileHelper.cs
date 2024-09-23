@@ -32,9 +32,7 @@ namespace Aliyun.Acs.Core.Utils
         public IniReader(string file)
         {
             var txt = File.ReadAllText(file);
-            var currentSection =
-                new Dictionary<string, string>(StringComparer.InvariantCultureIgnoreCase);
-
+            var currentSection = new Dictionary<string, string>(StringComparer.InvariantCultureIgnoreCase);
             ini[""] = currentSection;
 
             foreach (var line in txt.Split(new[] { "\n" }, StringSplitOptions.RemoveEmptyEntries)
@@ -49,18 +47,18 @@ namespace Aliyun.Acs.Core.Utils
                 if (line.StartsWith("[") && line.EndsWith("]"))
                 {
                     currentSection = new Dictionary<string, string>(StringComparer.InvariantCultureIgnoreCase);
-                    ini[line.Substring(1, line.LastIndexOf("]") - 1)] = currentSection;
+                    ini[line.Substring(1, line.LastIndexOf("]") - 1).Trim()] = currentSection;
                     continue;
                 }
 
                 var idx = line.IndexOf("=");
                 if (idx == -1)
                 {
-                    currentSection[line] = "";
+                    currentSection[line.Trim()] = "";
                 }
                 else
                 {
-                    currentSection[line.Substring(0, idx)] = line.Substring(idx + 1);
+                    currentSection[line.Substring(0, idx).Trim()] = line.Substring(idx + 1).Trim();
                 }
             }
         }
@@ -86,7 +84,6 @@ namespace Aliyun.Acs.Core.Utils
             {
                 return @default;
             }
-
             return ini[section][key];
         }
 
