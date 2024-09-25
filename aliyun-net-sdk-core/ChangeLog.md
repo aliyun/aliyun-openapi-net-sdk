@@ -1,3 +1,6 @@
+### 2024-09-25 Version 1.6.2
+* Refactor default credentials provider
+
 ### 2024-09-18 Version 1.6.1
 * Change fixed dependency of newtonsoft.json to scope dependency
 
