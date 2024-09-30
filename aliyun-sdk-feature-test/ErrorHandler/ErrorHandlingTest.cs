@@ -34,8 +34,10 @@ namespace Aliyun.Acs.Feature.Test.ErrorHandler
         [Fact]
         public void BadFormatTypeTest()
         {
-            var request = new ActiveFlowLogRequest();
-            request.FlowLogId = "testFlow";
+            var request = new ActiveFlowLogRequest
+            {
+                FlowLogId = "testFlow"
+            };
 
             var profile = DefaultProfile.GetProfile("cn-hangzhou", FeatureTest.BasicAccessKeyId, FeatureTest.BasicAccessKeySecret);
             var client = new DefaultAcsClient(profile);
@@ -52,15 +54,17 @@ namespace Aliyun.Acs.Feature.Test.ErrorHandler
         [Fact]
         public void ParameterErrorTest()
         {
-            var request = new CommonRequest();
-            request.Domain = "ecs-cn-hangzhou.aliyuncs.com";
-            request.Version = "2014-05-26";
-            request.Action = "actionError";
+            var request = new CommonRequest
+            {
+                Domain = "ecs-cn-hangzhou.aliyuncs.com",
+                Version = "2014-05-26",
+                Action = "actionError"
+            };
 
             var response = FeatureTest.DefaultClient.GetCommonResponse(request);
             var content = Encoding.UTF8.GetString(response.HttpResponse.Content);
 
-            Assert.Contains("Keyword=InvalidParameter", content);
+            Assert.Contains("InvalidAction.NotFound", content);
         }
     }
 }
