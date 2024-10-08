@@ -12,7 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
+      with:
+        show-progress: false
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v2
       with:
@@ -20,10 +22,20 @@ jobs:
     - name: install altcover
       run: dotnet tool install --global altcover.visualizer --version 8.6.14
     - name: Install dependencies
-      run: cd aliyun-net-sdk-core.Tests/ && dotnet add package AltCover --version 8.6.14 && cd ../ && dotnet restore && dotnet build
-    - name: Test
+      run: cd aliyun-net-sdk-core.Tests/ && dotnet add package AltCover --version 8.6.14 && cd ../ && dotnet restore -v minimal && dotnet build
+    - name: Unit Test
       run: dotnet test aliyun-net-sdk-core.Tests/ /p:AltCover=true
     - name: Upload Coverage Report
       uses: codecov/codecov-action@v4
       with:
         token: ${{ secrets.CODECOV_TOKEN }} # required
+    - name: Setup proxy
+      run: |
+        npm install o_o -g
+        o_o &
+    - name: Integration Test
+      run: dotnet test aliyun-sdk-feature-test/
+      if: env.ACCESS_KEY_ID != ''
+      env:
+        ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
+        ACCESS_KEY_SECRET: ${{ secrets.ACCESS_KEY_SECRET }}
