@@ -28,71 +28,42 @@ using Aliyun.Acs.ResourceCenter.Transform.V20221201;
 
 namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 {
-    public class GetMultiAccountResourceConfigurationRequest : RpcAcsRequest<GetMultiAccountResourceConfigurationResponse>
+    public class ListExampleQueriesRequest : RpcAcsRequest<ListExampleQueriesResponse>
     {
-        public GetMultiAccountResourceConfigurationRequest()
-            : base("ResourceCenter", "2022-12-01", "GetMultiAccountResourceConfiguration")
+        public ListExampleQueriesRequest()
+            : base("ResourceCenter", "2022-12-01", "ListExampleQueries")
         {
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private string accountId;
+		private string nextToken;
 
-		private string resourceRegionId;
+		private string maxResults;
 
-		private string resourceId;
-
-		private string resourceType;
-
-		public string AccountId
+		public string NextToken
 		{
 			get
 			{
-				return accountId;
+				return nextToken;
 			}
 			set	
 			{
-				accountId = value;
-				DictionaryUtil.Add(QueryParameters, "AccountId", value);
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
 			}
 		}
 
-		public string ResourceRegionId
+		public string MaxResults
 		{
 			get
 			{
-				return resourceRegionId;
+				return maxResults;
 			}
 			set	
 			{
-				resourceRegionId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceRegionId", value);
-			}
-		}
-
-		public string ResourceId
-		{
-			get
-			{
-				return resourceId;
-			}
-			set	
-			{
-				resourceId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
-			}
-		}
-
-		public string ResourceType
-		{
-			get
-			{
-				return resourceType;
-			}
-			set	
-			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+				maxResults = value;
+				DictionaryUtil.Add(QueryParameters, "MaxResults", value);
 			}
 		}
 
@@ -101,9 +72,9 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 			return false;
 		}
 
-        public override GetMultiAccountResourceConfigurationResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListExampleQueriesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetMultiAccountResourceConfigurationResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListExampleQueriesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

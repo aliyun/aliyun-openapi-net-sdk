@@ -28,71 +28,26 @@ using Aliyun.Acs.ResourceCenter.Transform.V20221201;
 
 namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 {
-    public class ListMultiAccountResourceGroupsRequest : RpcAcsRequest<ListMultiAccountResourceGroupsResponse>
+    public class DeleteFilterRequest : RpcAcsRequest<DeleteFilterResponse>
     {
-        public ListMultiAccountResourceGroupsRequest()
-            : base("ResourceCenter", "2022-12-01", "ListMultiAccountResourceGroups")
+        public DeleteFilterRequest()
+            : base("ResourceCenter", "2022-12-01", "DeleteFilter")
         {
 			Method = MethodType.POST;
         }
 
-		private string accountId;
+		private string filterName;
 
-		private string nextToken;
-
-		private List<string> resourceGroupIdss = new List<string>(){ };
-
-		private int? maxResults;
-
-		public string AccountId
+		public string FilterName
 		{
 			get
 			{
-				return accountId;
+				return filterName;
 			}
 			set	
 			{
-				accountId = value;
-				DictionaryUtil.Add(QueryParameters, "AccountId", value);
-			}
-		}
-
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
-				DictionaryUtil.Add(QueryParameters, "NextToken", value);
-			}
-		}
-
-		public List<string> ResourceGroupIdss
-		{
-			get
-			{
-				return resourceGroupIdss;
-			}
-
-			set
-			{
-				resourceGroupIdss = value;
-			}
-		}
-
-		public int? MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
-				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+				filterName = value;
+				DictionaryUtil.Add(QueryParameters, "FilterName", value);
 			}
 		}
 
@@ -101,9 +56,9 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 			return false;
 		}
 
-        public override ListMultiAccountResourceGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteFilterResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListMultiAccountResourceGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteFilterResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -28,71 +28,27 @@ using Aliyun.Acs.ResourceCenter.Transform.V20221201;
 
 namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 {
-    public class ListMultiAccountResourceGroupsRequest : RpcAcsRequest<ListMultiAccountResourceGroupsResponse>
+    public class GetSavedQueryRequest : RpcAcsRequest<GetSavedQueryResponse>
     {
-        public ListMultiAccountResourceGroupsRequest()
-            : base("ResourceCenter", "2022-12-01", "ListMultiAccountResourceGroups")
+        public GetSavedQueryRequest()
+            : base("ResourceCenter", "2022-12-01", "GetSavedQuery")
         {
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private string accountId;
+		private string queryId;
 
-		private string nextToken;
-
-		private List<string> resourceGroupIdss = new List<string>(){ };
-
-		private int? maxResults;
-
-		public string AccountId
+		public string QueryId
 		{
 			get
 			{
-				return accountId;
+				return queryId;
 			}
 			set	
 			{
-				accountId = value;
-				DictionaryUtil.Add(QueryParameters, "AccountId", value);
-			}
-		}
-
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
-				DictionaryUtil.Add(QueryParameters, "NextToken", value);
-			}
-		}
-
-		public List<string> ResourceGroupIdss
-		{
-			get
-			{
-				return resourceGroupIdss;
-			}
-
-			set
-			{
-				resourceGroupIdss = value;
-			}
-		}
-
-		public int? MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
-				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+				queryId = value;
+				DictionaryUtil.Add(QueryParameters, "QueryId", value);
 			}
 		}
 
@@ -101,9 +57,9 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 			return false;
 		}
 
-        public override ListMultiAccountResourceGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetSavedQueryResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListMultiAccountResourceGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetSavedQueryResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

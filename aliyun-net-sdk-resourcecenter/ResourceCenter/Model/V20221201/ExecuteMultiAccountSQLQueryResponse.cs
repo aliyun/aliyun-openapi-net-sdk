@@ -22,70 +22,28 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 {
-	public class ListMultiAccountTagValuesResponse : AcsResponse
+	public class ExecuteMultiAccountSQLQueryResponse : AcsResponse
 	{
 
-		private string dynamicCode;
-
-		private string dynamicMessage;
-
-		private string errorCode;
-
-		private string errorMessage;
+		private int? maxResults;
 
 		private string nextToken;
 
 		private string requestId;
 
-		private bool? success;
+		private List<ExecuteMultiAccountSQLQuery_Column> columns;
 
-		private List<string> tagValues;
+		private List<string> rows;
 
-		public string DynamicCode
+		public int? MaxResults
 		{
 			get
 			{
-				return dynamicCode;
+				return maxResults;
 			}
 			set	
 			{
-				dynamicCode = value;
-			}
-		}
-
-		public string DynamicMessage
-		{
-			get
-			{
-				return dynamicMessage;
-			}
-			set	
-			{
-				dynamicMessage = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
+				maxResults = value;
 			}
 		}
 
@@ -113,27 +71,59 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 			}
 		}
 
-		public bool? Success
+		public List<ExecuteMultiAccountSQLQuery_Column> Columns
 		{
 			get
 			{
-				return success;
+				return columns;
 			}
 			set	
 			{
-				success = value;
+				columns = value;
 			}
 		}
 
-		public List<string> TagValues
+		public List<string> Rows
 		{
 			get
 			{
-				return tagValues;
+				return rows;
 			}
 			set	
 			{
-				tagValues = value;
+				rows = value;
+			}
+		}
+
+		public class ExecuteMultiAccountSQLQuery_Column
+		{
+
+			private string name;
+
+			private string type;
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
+				}
 			}
 		}
 	}

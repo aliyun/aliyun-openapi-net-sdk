@@ -160,7 +160,11 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 
 			private string regionId;
 
+			private string expireTime;
+
 			private List<SearchResources_Tag> tags;
+
+			private List<SearchResources_IpAddressAttribute> ipAddressAttributes;
 
 			private List<string> ipAddresses;
 
@@ -260,6 +264,18 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 				}
 			}
 
+			public string ExpireTime
+			{
+				get
+				{
+					return expireTime;
+				}
+				set	
+				{
+					expireTime = value;
+				}
+			}
+
 			public List<SearchResources_Tag> Tags
 			{
 				get
@@ -269,6 +285,18 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 				set	
 				{
 					tags = value;
+				}
+			}
+
+			public List<SearchResources_IpAddressAttribute> IpAddressAttributes
+			{
+				get
+				{
+					return ipAddressAttributes;
+				}
+				set	
+				{
+					ipAddressAttributes = value;
 				}
 			}
 
@@ -312,6 +340,52 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 					set	
 					{
 						_value = value;
+					}
+				}
+			}
+
+			public class SearchResources_IpAddressAttribute
+			{
+
+				private string ipAddress;
+
+				private string networkType;
+
+				private string version;
+
+				public string IpAddress
+				{
+					get
+					{
+						return ipAddress;
+					}
+					set	
+					{
+						ipAddress = value;
+					}
+				}
+
+				public string NetworkType
+				{
+					get
+					{
+						return networkType;
+					}
+					set	
+					{
+						networkType = value;
+					}
+				}
+
+				public string Version
+				{
+					get
+					{
+						return version;
+					}
+					set	
+					{
+						version = value;
 					}
 				}
 			}

@@ -25,12 +25,6 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 	public class ListMultiAccountResourceGroupsResponse : AcsResponse
 	{
 
-		private string nextToken;
-
-		private string requestId;
-
-		private bool? success;
-
 		private string dynamicCode;
 
 		private string dynamicMessage;
@@ -39,43 +33,13 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 
 		private string errorMessage;
 
+		private string nextToken;
+
+		private string requestId;
+
+		private bool? success;
+
 		private List<ListMultiAccountResourceGroups_ResourceGroup> resourceGroups;
-
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string DynamicCode
 		{
@@ -125,6 +89,42 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 			}
 		}
 
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public List<ListMultiAccountResourceGroups_ResourceGroup> ResourceGroups
 		{
 			get
@@ -140,41 +140,17 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 		public class ListMultiAccountResourceGroups_ResourceGroup
 		{
 
-			private string displayName;
-
-			private string status;
-
 			private string accountId;
-
-			private string name;
 
 			private string createDate;
 
+			private string displayName;
+
 			private string id;
 
-			public string DisplayName
-			{
-				get
-				{
-					return displayName;
-				}
-				set	
-				{
-					displayName = value;
-				}
-			}
+			private string name;
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+			private string status;
 
 			public string AccountId
 			{
@@ -185,18 +161,6 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 				set	
 				{
 					accountId = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
 				}
 			}
 
@@ -212,6 +176,18 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 				}
 			}
 
+			public string DisplayName
+			{
+				get
+				{
+					return displayName;
+				}
+				set	
+				{
+					displayName = value;
+				}
+			}
+
 			public string Id
 			{
 				get
@@ -221,6 +197,30 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 				set	
 				{
 					id = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 		}

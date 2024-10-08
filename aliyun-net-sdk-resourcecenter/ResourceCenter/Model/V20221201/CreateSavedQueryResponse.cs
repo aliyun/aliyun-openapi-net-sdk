@@ -22,84 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 {
-	public class ListMultiAccountTagValuesResponse : AcsResponse
+	public class CreateSavedQueryResponse : AcsResponse
 	{
-
-		private string dynamicCode;
-
-		private string dynamicMessage;
-
-		private string errorCode;
-
-		private string errorMessage;
-
-		private string nextToken;
 
 		private string requestId;
 
-		private bool? success;
-
-		private List<string> tagValues;
-
-		public string DynamicCode
-		{
-			get
-			{
-				return dynamicCode;
-			}
-			set	
-			{
-				dynamicCode = value;
-			}
-		}
-
-		public string DynamicMessage
-		{
-			get
-			{
-				return dynamicMessage;
-			}
-			set	
-			{
-				dynamicMessage = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
-			}
-		}
+		private string queryId;
 
 		public string RequestId
 		{
@@ -113,27 +41,15 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 			}
 		}
 
-		public bool? Success
+		public string QueryId
 		{
 			get
 			{
-				return success;
+				return queryId;
 			}
 			set	
 			{
-				success = value;
-			}
-		}
-
-		public List<string> TagValues
-		{
-			get
-			{
-				return tagValues;
-			}
-			set	
-			{
-				tagValues = value;
+				queryId = value;
 			}
 		}
 	}

@@ -31,13 +31,13 @@ namespace Aliyun.Acs.ResourceCenter.Transform.V20221201
 			ListMultiAccountTagKeysResponse listMultiAccountTagKeysResponse = new ListMultiAccountTagKeysResponse();
 
 			listMultiAccountTagKeysResponse.HttpResponse = _ctx.HttpResponse;
-			listMultiAccountTagKeysResponse.NextToken = _ctx.StringValue("ListMultiAccountTagKeys.NextToken");
-			listMultiAccountTagKeysResponse.RequestId = _ctx.StringValue("ListMultiAccountTagKeys.RequestId");
-			listMultiAccountTagKeysResponse.Success = _ctx.BooleanValue("ListMultiAccountTagKeys.Success");
 			listMultiAccountTagKeysResponse.DynamicCode = _ctx.StringValue("ListMultiAccountTagKeys.DynamicCode");
 			listMultiAccountTagKeysResponse.DynamicMessage = _ctx.StringValue("ListMultiAccountTagKeys.DynamicMessage");
 			listMultiAccountTagKeysResponse.ErrorCode = _ctx.StringValue("ListMultiAccountTagKeys.ErrorCode");
 			listMultiAccountTagKeysResponse.ErrorMessage = _ctx.StringValue("ListMultiAccountTagKeys.ErrorMessage");
+			listMultiAccountTagKeysResponse.NextToken = _ctx.StringValue("ListMultiAccountTagKeys.NextToken");
+			listMultiAccountTagKeysResponse.RequestId = _ctx.StringValue("ListMultiAccountTagKeys.RequestId");
+			listMultiAccountTagKeysResponse.Success = _ctx.BooleanValue("ListMultiAccountTagKeys.Success");
 
 			List<string> listMultiAccountTagKeysResponse_tagKeys = new List<string>();
 			for (int i = 0; i < _ctx.Length("ListMultiAccountTagKeys.TagKeys.Length"); i++) {

@@ -22,70 +22,38 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 {
-	public class ListMultiAccountTagValuesResponse : AcsResponse
+	public class ListExampleQueriesResponse : AcsResponse
 	{
-
-		private string dynamicCode;
-
-		private string dynamicMessage;
-
-		private string errorCode;
-
-		private string errorMessage;
-
-		private string nextToken;
 
 		private string requestId;
 
-		private bool? success;
+		private string maxResults;
 
-		private List<string> tagValues;
+		private string nextToken;
 
-		public string DynamicCode
+		private List<ListExampleQueries_ExampleQuery> exampleQueries;
+
+		public string RequestId
 		{
 			get
 			{
-				return dynamicCode;
+				return requestId;
 			}
 			set	
 			{
-				dynamicCode = value;
+				requestId = value;
 			}
 		}
 
-		public string DynamicMessage
+		public string MaxResults
 		{
 			get
 			{
-				return dynamicMessage;
+				return maxResults;
 			}
 			set	
 			{
-				dynamicMessage = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
+				maxResults = value;
 			}
 		}
 
@@ -101,39 +69,61 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 			}
 		}
 
-		public string RequestId
+		public List<ListExampleQueries_ExampleQuery> ExampleQueries
 		{
 			get
 			{
-				return requestId;
+				return exampleQueries;
 			}
 			set	
 			{
-				requestId = value;
+				exampleQueries = value;
 			}
 		}
 
-		public bool? Success
+		public class ListExampleQueries_ExampleQuery
 		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
-		public List<string> TagValues
-		{
-			get
+			private string queryId;
+
+			private string name;
+
+			private string description;
+
+			public string QueryId
 			{
-				return tagValues;
+				get
+				{
+					return queryId;
+				}
+				set	
+				{
+					queryId = value;
+				}
 			}
-			set	
+
+			public string Name
 			{
-				tagValues = value;
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
 			}
 		}
 	}

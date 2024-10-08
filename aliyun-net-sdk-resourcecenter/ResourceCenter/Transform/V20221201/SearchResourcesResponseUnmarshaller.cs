@@ -62,6 +62,7 @@ namespace Aliyun.Acs.ResourceCenter.Transform.V20221201
 				resource.ResourceId = _ctx.StringValue("SearchResources.Resources["+ i +"].ResourceId");
 				resource.ResourceName = _ctx.StringValue("SearchResources.Resources["+ i +"].ResourceName");
 				resource.RegionId = _ctx.StringValue("SearchResources.Resources["+ i +"].RegionId");
+				resource.ExpireTime = _ctx.StringValue("SearchResources.Resources["+ i +"].ExpireTime");
 
 				List<string> resource_ipAddresses = new List<string>();
 				for (int j = 0; j < _ctx.Length("SearchResources.Resources["+ i +"].IpAddresses.Length"); j++) {
@@ -78,6 +79,17 @@ namespace Aliyun.Acs.ResourceCenter.Transform.V20221201
 					resource_tags.Add(tag);
 				}
 				resource.Tags = resource_tags;
+
+				List<SearchResourcesResponse.SearchResources_Resource.SearchResources_IpAddressAttribute> resource_ipAddressAttributes = new List<SearchResourcesResponse.SearchResources_Resource.SearchResources_IpAddressAttribute>();
+				for (int j = 0; j < _ctx.Length("SearchResources.Resources["+ i +"].IpAddressAttributes.Length"); j++) {
+					SearchResourcesResponse.SearchResources_Resource.SearchResources_IpAddressAttribute ipAddressAttribute = new SearchResourcesResponse.SearchResources_Resource.SearchResources_IpAddressAttribute();
+					ipAddressAttribute.IpAddress = _ctx.StringValue("SearchResources.Resources["+ i +"].IpAddressAttributes["+ j +"].IpAddress");
+					ipAddressAttribute.NetworkType = _ctx.StringValue("SearchResources.Resources["+ i +"].IpAddressAttributes["+ j +"].NetworkType");
+					ipAddressAttribute.Version = _ctx.StringValue("SearchResources.Resources["+ i +"].IpAddressAttributes["+ j +"].Version");
+
+					resource_ipAddressAttributes.Add(ipAddressAttribute);
+				}
+				resource.IpAddressAttributes = resource_ipAddressAttributes;
 
 				searchResourcesResponse_resources.Add(resource);
 			}

@@ -28,71 +28,72 @@ using Aliyun.Acs.ResourceCenter.Transform.V20221201;
 
 namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 {
-    public class GetMultiAccountResourceConfigurationRequest : RpcAcsRequest<GetMultiAccountResourceConfigurationResponse>
+    public class UpdateSavedQueryRequest : RpcAcsRequest<UpdateSavedQueryResponse>
     {
-        public GetMultiAccountResourceConfigurationRequest()
-            : base("ResourceCenter", "2022-12-01", "GetMultiAccountResourceConfiguration")
+        public UpdateSavedQueryRequest()
+            : base("ResourceCenter", "2022-12-01", "UpdateSavedQuery")
         {
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private string accountId;
+		private string expression;
 
-		private string resourceRegionId;
+		private string description;
 
-		private string resourceId;
+		private string queryId;
 
-		private string resourceType;
+		private string name;
 
-		public string AccountId
+		public string Expression
 		{
 			get
 			{
-				return accountId;
+				return expression;
 			}
 			set	
 			{
-				accountId = value;
-				DictionaryUtil.Add(QueryParameters, "AccountId", value);
+				expression = value;
+				DictionaryUtil.Add(QueryParameters, "Expression", value);
 			}
 		}
 
-		public string ResourceRegionId
+		public string Description
 		{
 			get
 			{
-				return resourceRegionId;
+				return description;
 			}
 			set	
 			{
-				resourceRegionId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceRegionId", value);
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
-		public string ResourceId
+		public string QueryId
 		{
 			get
 			{
-				return resourceId;
+				return queryId;
 			}
 			set	
 			{
-				resourceId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
+				queryId = value;
+				DictionaryUtil.Add(QueryParameters, "QueryId", value);
 			}
 		}
 
-		public string ResourceType
+		public string Name
 		{
 			get
 			{
-				return resourceType;
+				return name;
 			}
 			set	
 			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 
@@ -101,9 +102,9 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 			return false;
 		}
 
-        public override GetMultiAccountResourceConfigurationResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateSavedQueryResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetMultiAccountResourceConfigurationResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateSavedQueryResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
