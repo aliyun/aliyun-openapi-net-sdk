@@ -129,6 +129,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string targetValue;
 
+		private int? harmonyBadgeSetNum;
+
 		private string androidXiaoMiNotifyTitle;
 
 		private int? smsSendPolicy;
@@ -189,15 +191,21 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string androidMusic;
 
+		private bool? harmonyExtensionPush;
+
 		private string iOSNotificationCollapseId;
 
 		private string pushType;
+
+		private string harmonyExtensionExtraData;
 
 		private string harmonyImageUrl;
 
 		private string androidBigBody;
 
 		private string title;
+
+		private int? harmonyBadgeAddNum;
 
 		private bool? harmonyTestMessage;
 
@@ -795,6 +803,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
+		public int? HarmonyBadgeSetNum
+		{
+			get
+			{
+				return harmonyBadgeSetNum;
+			}
+			set	
+			{
+				harmonyBadgeSetNum = value;
+				DictionaryUtil.Add(QueryParameters, "HarmonyBadgeSetNum", value.ToString());
+			}
+		}
+
 		public string AndroidXiaoMiNotifyTitle
 		{
 			get
@@ -1185,6 +1206,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
+		public bool? HarmonyExtensionPush
+		{
+			get
+			{
+				return harmonyExtensionPush;
+			}
+			set	
+			{
+				harmonyExtensionPush = value;
+				DictionaryUtil.Add(QueryParameters, "HarmonyExtensionPush", value.ToString());
+			}
+		}
+
 		public string IOSNotificationCollapseId
 		{
 			get
@@ -1208,6 +1242,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				pushType = value;
 				DictionaryUtil.Add(QueryParameters, "PushType", value);
+			}
+		}
+
+		public string HarmonyExtensionExtraData
+		{
+			get
+			{
+				return harmonyExtensionExtraData;
+			}
+			set	
+			{
+				harmonyExtensionExtraData = value;
+				DictionaryUtil.Add(QueryParameters, "HarmonyExtensionExtraData", value);
 			}
 		}
 
@@ -1247,6 +1294,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				title = value;
 				DictionaryUtil.Add(QueryParameters, "Title", value);
+			}
+		}
+
+		public int? HarmonyBadgeAddNum
+		{
+			get
+			{
+				return harmonyBadgeAddNum;
+			}
+			set	
+			{
+				harmonyBadgeAddNum = value;
+				DictionaryUtil.Add(QueryParameters, "HarmonyBadgeAddNum", value.ToString());
 			}
 		}
 

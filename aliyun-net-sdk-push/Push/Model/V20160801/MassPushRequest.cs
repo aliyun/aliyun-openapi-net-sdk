@@ -144,6 +144,10 @@ namespace Aliyun.Acs.Push.Model.V20160801
 						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
 						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
 						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
 					}
 				}
 			}
@@ -255,6 +259,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string androidMusic;
 
+			private bool? harmonyExtensionPush;
+
 			private string iOSNotificationCollapseId;
 
 			private string androidMessageHuaweiUrgency;
@@ -262,6 +268,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			private string pushType;
 
 			private string iOSInterruptionLevel;
+
+			private string harmonyExtensionExtraData;
 
 			private string androidExtParameters;
 
@@ -280,6 +288,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			private string title;
 
 			private string androidBadgeClass;
+
+			private int? harmonyBadgeAddNum;
 
 			private bool? harmonyTestMessage;
 
@@ -330,6 +340,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			private int? androidNotificationNotifyId;
 
 			private string targetValue;
+
+			private int? harmonyBadgeSetNum;
 
 			private string androidXiaoMiNotifyTitle;
 
@@ -875,6 +887,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
+			public bool? HarmonyExtensionPush
+			{
+				get
+				{
+					return harmonyExtensionPush;
+				}
+				set	
+				{
+					harmonyExtensionPush = value;
+				}
+			}
+
 			public string IOSNotificationCollapseId
 			{
 				get
@@ -920,6 +944,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					iOSInterruptionLevel = value;
+				}
+			}
+
+			public string HarmonyExtensionExtraData
+			{
+				get
+				{
+					return harmonyExtensionExtraData;
+				}
+				set	
+				{
+					harmonyExtensionExtraData = value;
 				}
 			}
 
@@ -1028,6 +1064,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					androidBadgeClass = value;
+				}
+			}
+
+			public int? HarmonyBadgeAddNum
+			{
+				get
+				{
+					return harmonyBadgeAddNum;
+				}
+				set	
+				{
+					harmonyBadgeAddNum = value;
 				}
 			}
 
@@ -1328,6 +1376,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					targetValue = value;
+				}
+			}
+
+			public int? HarmonyBadgeSetNum
+			{
+				get
+				{
+					return harmonyBadgeSetNum;
+				}
+				set	
+				{
+					harmonyBadgeSetNum = value;
 				}
 			}
 
