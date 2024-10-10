@@ -39,7 +39,11 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 
 		private string expression;
 
+		private string nextToken;
+
 		private string scope;
+
+		private int? maxResults;
 
 		public string Expression
 		{
@@ -54,6 +58,19 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 			}
 		}
 
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
+			}
+		}
+
 		public string Scope
 		{
 			get
@@ -64,6 +81,19 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 			{
 				scope = value;
 				DictionaryUtil.Add(QueryParameters, "Scope", value);
+			}
+		}
+
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
 			}
 		}
 
