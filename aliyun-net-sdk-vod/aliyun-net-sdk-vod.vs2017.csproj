@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
     <RootNamespace>Aliyun.Acs.vod</RootNamespace>
-    <Version>2.16.26</Version>
+    <Version>2.16.27</Version>
     <Authors>Alibaba Cloud</Authors>
     <Copyright>©2009-2019 Alibaba Cloud</Copyright>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
@@ -24,11 +24,10 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-    <PackageReference Include="Newtonsoft.Json" Version="[9.0.1,)"/>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="[13.0.1,)"/>
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
-    <PackageReference Include="Newtonsoft.Json" Version="[6.0.1,)"/>
     <Reference Include="mscorlib"/>
     <Reference Include="System"/>
     <Reference Include="System.Core"/>

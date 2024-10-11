@@ -96,6 +96,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string encryptType;
 
+			private string encryptMode;
+
 			private string preprocessStatus;
 
 			private string streamType;
@@ -277,6 +279,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					encryptType = value;
+				}
+			}
+
+			public string EncryptMode
+			{
+				get
+				{
+					return encryptMode;
+				}
+				set	
+				{
+					encryptMode = value;
 				}
 			}
 

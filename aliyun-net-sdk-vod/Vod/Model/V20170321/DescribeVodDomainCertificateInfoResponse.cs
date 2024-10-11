@@ -56,33 +56,45 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class DescribeVodDomainCertificateInfo_CertInfo
 		{
 
-			private string status;
+			private string certExpireTime;
 
 			private string certLife;
 
-			private string certExpireTime;
+			private string status;
 
-			private string certType;
-
-			private string serverCertificateStatus;
+			private string certUpdateTime;
 
 			private string certDomainName;
 
-			private string certName;
+			private string serverCertificateStatus;
 
 			private string certOrg;
 
 			private string domainName;
 
-			public string Status
+			private string certStartTime;
+
+			private string certType;
+
+			private string certName;
+
+			private string domainCnameStatus;
+
+			private string serverCertificate;
+
+			private string certId;
+
+			private string certRegion;
+
+			public string CertExpireTime
 			{
 				get
 				{
-					return status;
+					return certExpireTime;
 				}
 				set	
 				{
-					status = value;
+					certExpireTime = value;
 				}
 			}
 
@@ -98,39 +110,27 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string CertExpireTime
+			public string Status
 			{
 				get
 				{
-					return certExpireTime;
+					return status;
 				}
 				set	
 				{
-					certExpireTime = value;
+					status = value;
 				}
 			}
 
-			public string CertType
+			public string CertUpdateTime
 			{
 				get
 				{
-					return certType;
+					return certUpdateTime;
 				}
 				set	
 				{
-					certType = value;
-				}
-			}
-
-			public string ServerCertificateStatus
-			{
-				get
-				{
-					return serverCertificateStatus;
-				}
-				set	
-				{
-					serverCertificateStatus = value;
+					certUpdateTime = value;
 				}
 			}
 
@@ -146,15 +146,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string CertName
+			public string ServerCertificateStatus
 			{
 				get
 				{
-					return certName;
+					return serverCertificateStatus;
 				}
 				set	
 				{
-					certName = value;
+					serverCertificateStatus = value;
 				}
 			}
 
@@ -179,6 +179,90 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					domainName = value;
+				}
+			}
+
+			public string CertStartTime
+			{
+				get
+				{
+					return certStartTime;
+				}
+				set	
+				{
+					certStartTime = value;
+				}
+			}
+
+			public string CertType
+			{
+				get
+				{
+					return certType;
+				}
+				set	
+				{
+					certType = value;
+				}
+			}
+
+			public string CertName
+			{
+				get
+				{
+					return certName;
+				}
+				set	
+				{
+					certName = value;
+				}
+			}
+
+			public string DomainCnameStatus
+			{
+				get
+				{
+					return domainCnameStatus;
+				}
+				set	
+				{
+					domainCnameStatus = value;
+				}
+			}
+
+			public string ServerCertificate
+			{
+				get
+				{
+					return serverCertificate;
+				}
+				set	
+				{
+					serverCertificate = value;
+				}
+			}
+
+			public string CertId
+			{
+				get
+				{
+					return certId;
+				}
+				set	
+				{
+					certId = value;
+				}
+			}
+
+			public string CertRegion
+			{
+				get
+				{
+					return certRegion;
+				}
+				set	
+				{
+					certRegion = value;
 				}
 			}
 		}

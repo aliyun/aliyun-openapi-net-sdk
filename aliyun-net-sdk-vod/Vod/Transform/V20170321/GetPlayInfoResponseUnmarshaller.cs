@@ -72,6 +72,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				playInfo.Definition = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].Definition");
 				playInfo.Rand = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].Rand");
 				playInfo.EncryptType = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].EncryptType");
+				playInfo.EncryptMode = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].EncryptMode");
 				playInfo.PreprocessStatus = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].PreprocessStatus");
 				playInfo.StreamType = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].StreamType");
 				playInfo.JobId = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].JobId");
