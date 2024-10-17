@@ -1,3 +1,8 @@
+2024-10-17 Version: 3.14.11
+- 基于转移码的转出接口
+- SaveSingleTaskForTransferOutByAuthorizationCode
+- SaveBatchTaskForTransferOutByAuthorizationCode
+
 2024-10-11 Version: 2.16.27
 - GetPlayInfo Add EncryptMode.
 

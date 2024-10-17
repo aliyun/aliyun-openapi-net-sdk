@@ -56,115 +56,189 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 		public class QueryIntlFixedPriceOrderList_Module
 		{
 
-			private long? createTime;
+			private int? totalItemNum;
 
-			private long? updateTime;
+			private int? currentPageNum;
 
-			private string userId;
+			private int? pageSize;
 
-			private string bizId;
+			private int? totalPageNum;
 
-			private string domain;
+			private List<QueryIntlFixedPriceOrderList_OrderList> data;
 
-			private long? price;
-
-			private long? status;
-
-			private long? orderType;
-
-			public long? CreateTime
+			public int? TotalItemNum
 			{
 				get
 				{
-					return createTime;
+					return totalItemNum;
 				}
 				set	
 				{
-					createTime = value;
+					totalItemNum = value;
 				}
 			}
 
-			public long? UpdateTime
+			public int? CurrentPageNum
 			{
 				get
 				{
-					return updateTime;
+					return currentPageNum;
 				}
 				set	
 				{
-					updateTime = value;
+					currentPageNum = value;
 				}
 			}
 
-			public string UserId
+			public int? PageSize
 			{
 				get
 				{
-					return userId;
+					return pageSize;
 				}
 				set	
 				{
-					userId = value;
+					pageSize = value;
 				}
 			}
 
-			public string BizId
+			public int? TotalPageNum
 			{
 				get
 				{
-					return bizId;
+					return totalPageNum;
 				}
 				set	
 				{
-					bizId = value;
+					totalPageNum = value;
 				}
 			}
 
-			public string Domain
+			public List<QueryIntlFixedPriceOrderList_OrderList> Data
 			{
 				get
 				{
-					return domain;
+					return data;
 				}
 				set	
 				{
-					domain = value;
+					data = value;
 				}
 			}
 
-			public long? Price
+			public class QueryIntlFixedPriceOrderList_OrderList
 			{
-				get
-				{
-					return price;
-				}
-				set	
-				{
-					price = value;
-				}
-			}
 
-			public long? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+				private int? orderType;
 
-			public long? OrderType
-			{
-				get
+				private string bizId;
+
+				private string userId;
+
+				private int? status;
+
+				private long? price;
+
+				private string domain;
+
+				private long? createTime;
+
+				private long? updateTime;
+
+				public int? OrderType
 				{
-					return orderType;
+					get
+					{
+						return orderType;
+					}
+					set	
+					{
+						orderType = value;
+					}
 				}
-				set	
+
+				public string BizId
 				{
-					orderType = value;
+					get
+					{
+						return bizId;
+					}
+					set	
+					{
+						bizId = value;
+					}
+				}
+
+				public string UserId
+				{
+					get
+					{
+						return userId;
+					}
+					set	
+					{
+						userId = value;
+					}
+				}
+
+				public int? Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public long? Price
+				{
+					get
+					{
+						return price;
+					}
+					set	
+					{
+						price = value;
+					}
+				}
+
+				public string Domain
+				{
+					get
+					{
+						return domain;
+					}
+					set	
+					{
+						domain = value;
+					}
+				}
+
+				public long? CreateTime
+				{
+					get
+					{
+						return createTime;
+					}
+					set	
+					{
+						createTime = value;
+					}
+				}
+
+				public long? UpdateTime
+				{
+					get
+					{
+						return updateTime;
+					}
+					set	
+					{
+						updateTime = value;
+					}
 				}
 			}
 		}
