@@ -56,21 +56,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
 		public class ListSummaryApps_SummaryAppInfo
 		{
 
-			private string appName;
-
 			private long? appKey;
 
-			public string AppName
-			{
-				get
-				{
-					return appName;
-				}
-				set	
-				{
-					appName = value;
-				}
-			}
+			private string appName;
 
 			public long? AppKey
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					appKey = value;
+				}
+			}
+
+			public string AppName
+			{
+				get
+				{
+					return appName;
+				}
+				set	
+				{
+					appName = value;
 				}
 			}
 		}

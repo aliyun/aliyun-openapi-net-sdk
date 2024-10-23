@@ -101,9 +101,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string androidXiaomiImageUrl;
 
-		private string smsTemplateName;
-
 		private string harmonyUri;
+
+		private string smsTemplateName;
 
 		private string harmonyExtParameters;
 
@@ -154,6 +154,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 		private string iOSMusic;
 
 		private bool? iOSMutableContent;
+
+		private string androidNotificationThreadId;
 
 		private int? androidHonorTargetUserType;
 
@@ -621,19 +623,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public string SmsTemplateName
-		{
-			get
-			{
-				return smsTemplateName;
-			}
-			set	
-			{
-				smsTemplateName = value;
-				DictionaryUtil.Add(QueryParameters, "SmsTemplateName", value);
-			}
-		}
-
 		public string HarmonyUri
 		{
 			get
@@ -644,6 +633,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				harmonyUri = value;
 				DictionaryUtil.Add(QueryParameters, "HarmonyUri", value);
+			}
+		}
+
+		public string SmsTemplateName
+		{
+			get
+			{
+				return smsTemplateName;
+			}
+			set	
+			{
+				smsTemplateName = value;
+				DictionaryUtil.Add(QueryParameters, "SmsTemplateName", value);
 			}
 		}
 
@@ -969,6 +971,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				iOSMutableContent = value;
 				DictionaryUtil.Add(QueryParameters, "iOSMutableContent", value.ToString());
+			}
+		}
+
+		public string AndroidNotificationThreadId
+		{
+			get
+			{
+				return androidNotificationThreadId;
+			}
+			set	
+			{
+				androidNotificationThreadId = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidNotificationThreadId", value);
 			}
 		}
 

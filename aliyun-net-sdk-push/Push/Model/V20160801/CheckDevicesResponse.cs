@@ -56,21 +56,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
 		public class CheckDevices_DeviceCheckInfo
 		{
 
-			private string deviceId;
-
 			private bool? available;
 
-			public string DeviceId
-			{
-				get
-				{
-					return deviceId;
-				}
-				set	
-				{
-					deviceId = value;
-				}
-			}
+			private string deviceId;
 
 			public bool? Available
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					available = value;
+				}
+			}
+
+			public string DeviceId
+			{
+				get
+				{
+					return deviceId;
+				}
+				set	
+				{
+					deviceId = value;
 				}
 			}
 		}

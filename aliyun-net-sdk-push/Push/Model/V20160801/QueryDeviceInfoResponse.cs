@@ -58,27 +58,27 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string account;
 
+			private string alias;
+
+			private string brand;
+
+			private string deviceId;
+
+			private string deviceToken;
+
+			private string deviceType;
+
 			private string lastOnlineTime;
+
+			private string model;
+
+			private bool? online;
 
 			private string phoneNumber;
 
 			private bool? pushEnabled;
 
-			private string deviceType;
-
-			private string deviceId;
-
-			private bool? online;
-
 			private string tags;
-
-			private string deviceToken;
-
-			private string alias;
-
-			private string brand;
-
-			private string model;
 
 			public string Account
 			{
@@ -89,102 +89,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					account = value;
-				}
-			}
-
-			public string LastOnlineTime
-			{
-				get
-				{
-					return lastOnlineTime;
-				}
-				set	
-				{
-					lastOnlineTime = value;
-				}
-			}
-
-			public string PhoneNumber
-			{
-				get
-				{
-					return phoneNumber;
-				}
-				set	
-				{
-					phoneNumber = value;
-				}
-			}
-
-			public bool? PushEnabled
-			{
-				get
-				{
-					return pushEnabled;
-				}
-				set	
-				{
-					pushEnabled = value;
-				}
-			}
-
-			public string DeviceType
-			{
-				get
-				{
-					return deviceType;
-				}
-				set	
-				{
-					deviceType = value;
-				}
-			}
-
-			public string DeviceId
-			{
-				get
-				{
-					return deviceId;
-				}
-				set	
-				{
-					deviceId = value;
-				}
-			}
-
-			public bool? Online
-			{
-				get
-				{
-					return online;
-				}
-				set	
-				{
-					online = value;
-				}
-			}
-
-			public string Tags
-			{
-				get
-				{
-					return tags;
-				}
-				set	
-				{
-					tags = value;
-				}
-			}
-
-			public string DeviceToken
-			{
-				get
-				{
-					return deviceToken;
-				}
-				set	
-				{
-					deviceToken = value;
 				}
 			}
 
@@ -212,6 +116,54 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
+			public string DeviceId
+			{
+				get
+				{
+					return deviceId;
+				}
+				set	
+				{
+					deviceId = value;
+				}
+			}
+
+			public string DeviceToken
+			{
+				get
+				{
+					return deviceToken;
+				}
+				set	
+				{
+					deviceToken = value;
+				}
+			}
+
+			public string DeviceType
+			{
+				get
+				{
+					return deviceType;
+				}
+				set	
+				{
+					deviceType = value;
+				}
+			}
+
+			public string LastOnlineTime
+			{
+				get
+				{
+					return lastOnlineTime;
+				}
+				set	
+				{
+					lastOnlineTime = value;
+				}
+			}
+
 			public string Model
 			{
 				get
@@ -221,6 +173,54 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					model = value;
+				}
+			}
+
+			public bool? Online
+			{
+				get
+				{
+					return online;
+				}
+				set	
+				{
+					online = value;
+				}
+			}
+
+			public string PhoneNumber
+			{
+				get
+				{
+					return phoneNumber;
+				}
+				set	
+				{
+					phoneNumber = value;
+				}
+			}
+
+			public bool? PushEnabled
+			{
+				get
+				{
+					return pushEnabled;
+				}
+				set	
+				{
+					pushEnabled = value;
+				}
+			}
+
+			public string Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
 				}
 			}
 		}
