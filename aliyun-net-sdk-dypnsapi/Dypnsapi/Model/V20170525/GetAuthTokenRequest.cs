@@ -46,11 +46,21 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 
 		private string sceneCode;
 
+		private int? cuApiCode;
+
 		private string resourceOwnerAccount;
+
+		private int? ctApiCode;
 
 		private long? ownerId;
 
+		private string version;
+
 		private string url;
+
+		private int? bizType;
+
+		private int? cmApiCode;
 
 		public long? ResourceOwnerId
 		{
@@ -91,6 +101,19 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
+		public int? CuApiCode
+		{
+			get
+			{
+				return cuApiCode;
+			}
+			set	
+			{
+				cuApiCode = value;
+				DictionaryUtil.Add(QueryParameters, "CuApiCode", value.ToString());
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -101,6 +124,19 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public int? CtApiCode
+		{
+			get
+			{
+				return ctApiCode;
+			}
+			set	
+			{
+				ctApiCode = value;
+				DictionaryUtil.Add(QueryParameters, "CtApiCode", value.ToString());
 			}
 		}
 
@@ -117,6 +153,19 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
+		public string Version
+		{
+			get
+			{
+				return version;
+			}
+			set	
+			{
+				version = value;
+				DictionaryUtil.Add(QueryParameters, "Version", value);
+			}
+		}
+
 		public string Url
 		{
 			get
@@ -127,6 +176,32 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			{
 				url = value;
 				DictionaryUtil.Add(QueryParameters, "Url", value);
+			}
+		}
+
+		public int? BizType
+		{
+			get
+			{
+				return bizType;
+			}
+			set	
+			{
+				bizType = value;
+				DictionaryUtil.Add(QueryParameters, "BizType", value.ToString());
+			}
+		}
+
+		public int? CmApiCode
+		{
+			get
+			{
+				return cmApiCode;
+			}
+			set	
+			{
+				cmApiCode = value;
+				DictionaryUtil.Add(QueryParameters, "CmApiCode", value.ToString());
 			}
 		}
 

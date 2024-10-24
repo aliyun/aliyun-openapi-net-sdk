@@ -54,9 +54,13 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 
 		private string email;
 
+		private string hmSignName;
+
 		private string packSign;
 
 		private string packName;
+
+		private string hmAppIdentifier;
 
 		private long? cuApiCode;
 
@@ -77,6 +81,8 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 		private string schemeName;
 
 		private string smsSignName;
+
+		private string hmPackageName;
 
 		public long? ResourceOwnerId
 		{
@@ -169,6 +175,19 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
+		public string HmSignName
+		{
+			get
+			{
+				return hmSignName;
+			}
+			set	
+			{
+				hmSignName = value;
+				DictionaryUtil.Add(QueryParameters, "HmSignName", value);
+			}
+		}
+
 		public string PackSign
 		{
 			get
@@ -192,6 +211,19 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			{
 				packName = value;
 				DictionaryUtil.Add(QueryParameters, "PackName", value);
+			}
+		}
+
+		public string HmAppIdentifier
+		{
+			get
+			{
+				return hmAppIdentifier;
+			}
+			set	
+			{
+				hmAppIdentifier = value;
+				DictionaryUtil.Add(QueryParameters, "HmAppIdentifier", value);
 			}
 		}
 
@@ -322,6 +354,19 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			{
 				smsSignName = value;
 				DictionaryUtil.Add(QueryParameters, "SmsSignName", value);
+			}
+		}
+
+		public string HmPackageName
+		{
+			get
+			{
+				return hmPackageName;
+			}
+			set	
+			{
+				hmPackageName = value;
+				DictionaryUtil.Add(QueryParameters, "HmPackageName", value);
 			}
 		}
 
