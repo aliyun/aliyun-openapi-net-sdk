@@ -45,6 +45,8 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 				accessGroup.AccessGroupType = _ctx.StringValue("DescribeAccessGroups.AccessGroups["+ i +"].AccessGroupType");
 				accessGroup.RuleCount = _ctx.IntegerValue("DescribeAccessGroups.AccessGroups["+ i +"].RuleCount");
 				accessGroup.MountTargetCount = _ctx.IntegerValue("DescribeAccessGroups.AccessGroups["+ i +"].MountTargetCount");
+				accessGroup.FileSystemType = _ctx.StringValue("DescribeAccessGroups.AccessGroups["+ i +"].FileSystemType");
+				accessGroup.RegionId = _ctx.StringValue("DescribeAccessGroups.AccessGroups["+ i +"].RegionId");
 
 				List<DescribeAccessGroupsResponse.DescribeAccessGroups_AccessGroup.DescribeAccessGroups_Tag> accessGroup_tags = new List<DescribeAccessGroupsResponse.DescribeAccessGroups_AccessGroup.DescribeAccessGroups_Tag>();
 				for (int j = 0; j < _ctx.Length("DescribeAccessGroups.AccessGroups["+ i +"].Tags.Length"); j++) {

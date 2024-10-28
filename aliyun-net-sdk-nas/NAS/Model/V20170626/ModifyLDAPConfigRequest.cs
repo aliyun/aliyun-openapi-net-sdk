@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class ModifyLDAPConfigRequest : RpcAcsRequest<ModifyLDAPConfigResponse>
     {
         public ModifyLDAPConfigRequest()
-            : base("NAS", "2017-06-26", "ModifyLDAPConfig", "NAS", "openAPI")
+            : base("NAS", "2017-06-26", "ModifyLDAPConfig", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -48,6 +49,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 		private string bindDN;
 
+		[JsonProperty(PropertyName = "SearchBase")]
 		public string SearchBase
 		{
 			get
@@ -61,6 +63,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
+		[JsonProperty(PropertyName = "FileSystemId")]
 		public string FileSystemId
 		{
 			get
@@ -74,6 +77,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
+		[JsonProperty(PropertyName = "URI")]
 		public string URI
 		{
 			get
@@ -87,6 +91,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
+		[JsonProperty(PropertyName = "BindDN")]
 		public string BindDN
 		{
 			get

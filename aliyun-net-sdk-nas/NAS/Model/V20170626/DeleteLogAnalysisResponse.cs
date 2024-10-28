@@ -22,12 +22,10 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.NAS.Model.V20170626
 {
-	public class DescribeLDAPConfigResponse : AcsResponse
+	public class DeleteLogAnalysisResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private DescribeLDAPConfig_Ldap ldap;
 
 		public string RequestId
 		{
@@ -38,64 +36,6 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public DescribeLDAPConfig_Ldap Ldap
-		{
-			get
-			{
-				return ldap;
-			}
-			set	
-			{
-				ldap = value;
-			}
-		}
-
-		public class DescribeLDAPConfig_Ldap
-		{
-
-			private string bindDN;
-
-			private string searchBase;
-
-			private string uRI;
-
-			public string BindDN
-			{
-				get
-				{
-					return bindDN;
-				}
-				set	
-				{
-					bindDN = value;
-				}
-			}
-
-			public string SearchBase
-			{
-				get
-				{
-					return searchBase;
-				}
-				set	
-				{
-					searchBase = value;
-				}
-			}
-
-			public string URI
-			{
-				get
-				{
-					return uRI;
-				}
-				set	
-				{
-					uRI = value;
-				}
 			}
 		}
 	}

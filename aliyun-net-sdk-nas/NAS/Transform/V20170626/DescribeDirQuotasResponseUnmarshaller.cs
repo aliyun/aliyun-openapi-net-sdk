@@ -53,6 +53,7 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 					userQuotaInfo.SizeLimit = _ctx.LongValue("DescribeDirQuotas.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].SizeLimit");
 					userQuotaInfo.QuotaType = _ctx.StringValue("DescribeDirQuotas.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].QuotaType");
 					userQuotaInfo.SizeReal = _ctx.LongValue("DescribeDirQuotas.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].SizeReal");
+					userQuotaInfo.SizeRealInByte = _ctx.LongValue("DescribeDirQuotas.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].SizeRealInByte");
 
 					dirQuotaInfo_userQuotaInfos.Add(userQuotaInfo);
 				}

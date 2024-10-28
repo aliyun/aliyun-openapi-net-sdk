@@ -51,6 +51,8 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 				snapshot.EncryptType = _ctx.IntegerValue("DescribeSnapshots.Snapshots["+ i +"].EncryptType");
 				snapshot.Description = _ctx.StringValue("DescribeSnapshots.Snapshots["+ i +"].Description");
 				snapshot.SnapshotId = _ctx.StringValue("DescribeSnapshots.Snapshots["+ i +"].SnapshotId");
+				snapshot.FileSystemType = _ctx.StringValue("DescribeSnapshots.Snapshots["+ i +"].FileSystemType");
+				snapshot.SnapshotType = _ctx.StringValue("DescribeSnapshots.Snapshots["+ i +"].SnapshotType");
 
 				describeSnapshotsResponse_snapshots.Add(snapshot);
 			}

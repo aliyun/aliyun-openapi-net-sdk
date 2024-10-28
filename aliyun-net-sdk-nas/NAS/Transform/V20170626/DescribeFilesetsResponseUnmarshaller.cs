@@ -44,6 +44,15 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 				entrie.Status = _ctx.StringValue("DescribeFilesets.Entries["+ i +"].Status");
 				entrie.CreateTime = _ctx.StringValue("DescribeFilesets.Entries["+ i +"].CreateTime");
 				entrie.UpdateTime = _ctx.StringValue("DescribeFilesets.Entries["+ i +"].UpdateTime");
+				entrie.DeletionProtection = _ctx.BooleanValue("DescribeFilesets.Entries["+ i +"].DeletionProtection");
+				entrie.FileCountUsage = _ctx.LongValue("DescribeFilesets.Entries["+ i +"].FileCountUsage");
+				entrie.SpaceUsage = _ctx.LongValue("DescribeFilesets.Entries["+ i +"].SpaceUsage");
+				entrie.FileSystemId = _ctx.StringValue("DescribeFilesets.Entries["+ i +"].FileSystemId");
+
+				DescribeFilesetsResponse.DescribeFilesets_Entrie.DescribeFilesets_Quota quota = new DescribeFilesetsResponse.DescribeFilesets_Entrie.DescribeFilesets_Quota();
+				quota.SizeLimit = _ctx.LongValue("DescribeFilesets.Entries["+ i +"].Quota.SizeLimit");
+				quota.FileCountLimit = _ctx.LongValue("DescribeFilesets.Entries["+ i +"].Quota.FileCountLimit");
+				entrie.Quota = quota;
 
 				describeFilesetsResponse_entries.Add(entrie);
 			}

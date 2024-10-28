@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class RemoveTagsRequest : RpcAcsRequest<RemoveTagsResponse>
     {
         public RemoveTagsRequest()
-            : base("NAS", "2017-06-26", "RemoveTags", "NAS", "openAPI")
+            : base("NAS", "2017-06-26", "RemoveTags", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,6 +45,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 		private string fileSystemId;
 
+		[JsonProperty(PropertyName = "Tag")]
 		public List<string> Tags
 		{
 			get
@@ -65,6 +67,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
+		[JsonProperty(PropertyName = "FileSystemId")]
 		public string FileSystemId
 		{
 			get
@@ -85,6 +88,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private string key;
 
+			[JsonProperty(PropertyName = "Value")]
 			public string Value_
 			{
 				get
@@ -97,6 +101,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				}
 			}
 
+			[JsonProperty(PropertyName = "Key")]
 			public string Key
 			{
 				get

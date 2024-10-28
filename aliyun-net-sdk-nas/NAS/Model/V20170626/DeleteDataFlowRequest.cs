@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class DeleteDataFlowRequest : RpcAcsRequest<DeleteDataFlowResponse>
     {
         public DeleteDataFlowRequest()
-            : base("NAS", "2017-06-26", "DeleteDataFlow", "NAS", "openAPI")
+            : base("NAS", "2017-06-26", "DeleteDataFlow", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

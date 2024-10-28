@@ -33,6 +33,7 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 			openNASServiceResponse.HttpResponse = _ctx.HttpResponse;
 			openNASServiceResponse.RequestId = _ctx.StringValue("OpenNASService.RequestId");
 			openNASServiceResponse.OrderId = _ctx.StringValue("OpenNASService.OrderId");
+			openNASServiceResponse.AccessDeniedDetail = _ctx.StringValue("OpenNASService.AccessDeniedDetail");
         
 			return openNASServiceResponse;
         }

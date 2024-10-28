@@ -116,6 +116,8 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private string regionId;
 
+			private string fileSystemType;
+
 			public string TimePoints
 			{
 				get
@@ -221,6 +223,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					regionId = value;
+				}
+			}
+
+			public string FileSystemType
+			{
+				get
+				{
+					return fileSystemType;
+				}
+				set	
+				{
+					fileSystemType = value;
 				}
 			}
 		}

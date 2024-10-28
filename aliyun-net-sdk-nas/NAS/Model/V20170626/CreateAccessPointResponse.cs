@@ -22,30 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.NAS.Model.V20170626
 {
-	public class DescribeTagsResponse : AcsResponse
+	public class CreateAccessPointResponse : AcsResponse
 	{
-
-		private int? totalCount;
 
 		private string requestId;
 
-		private int? pageSize;
-
-		private int? pageNumber;
-
-		private List<DescribeTags_Tag> tags;
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+		private CreateAccessPoint_AccessPoint accessPoint;
 
 		public string RequestId
 		{
@@ -59,84 +41,46 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
-		public int? PageSize
+		public CreateAccessPoint_AccessPoint AccessPoint
 		{
 			get
 			{
-				return pageSize;
+				return accessPoint;
 			}
 			set	
 			{
-				pageSize = value;
+				accessPoint = value;
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
-		public List<DescribeTags_Tag> Tags
-		{
-			get
-			{
-				return tags;
-			}
-			set	
-			{
-				tags = value;
-			}
-		}
-
-		public class DescribeTags_Tag
+		public class CreateAccessPoint_AccessPoint
 		{
 
-			private string key;
+			private string accessPointDomain;
 
-			private string _value;
+			private string accessPointId;
 
-			private List<string> fileSystemIds;
-
-			public string Key
+			public string AccessPointDomain
 			{
 				get
 				{
-					return key;
+					return accessPointDomain;
 				}
 				set	
 				{
-					key = value;
+					accessPointDomain = value;
 				}
 			}
 
-			public string _Value
+			public string AccessPointId
 			{
 				get
 				{
-					return _value;
+					return accessPointId;
 				}
 				set	
 				{
-					_value = value;
-				}
-			}
-
-			public List<string> FileSystemIds
-			{
-				get
-				{
-					return fileSystemIds;
-				}
-				set	
-				{
-					fileSystemIds = value;
+					accessPointId = value;
 				}
 			}
 		}

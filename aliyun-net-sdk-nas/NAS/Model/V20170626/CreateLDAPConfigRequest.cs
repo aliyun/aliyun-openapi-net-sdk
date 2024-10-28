@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class CreateLDAPConfigRequest : RpcAcsRequest<CreateLDAPConfigResponse>
     {
         public CreateLDAPConfigRequest()
-            : base("NAS", "2017-06-26", "CreateLDAPConfig", "NAS", "openAPI")
+            : base("NAS", "2017-06-26", "CreateLDAPConfig", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

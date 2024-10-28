@@ -49,6 +49,7 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 				entry.Inode = _ctx.StringValue("ListDirectoriesAndFiles.Entries["+ i +"].Inode");
 				entry.FileId = _ctx.StringValue("ListDirectoriesAndFiles.Entries["+ i +"].FileId");
 				entry.Owner = _ctx.StringValue("ListDirectoriesAndFiles.Entries["+ i +"].Owner");
+				entry.HasArchiveFile = _ctx.StringValue("ListDirectoriesAndFiles.Entries["+ i +"].HasArchiveFile");
 
 				listDirectoriesAndFilesResponse_entries.Add(entry);
 			}

@@ -29,6 +29,9 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 		private string orderId;
 
+		private string accessDeniedDetail;
+
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +44,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
+		[JsonProperty(PropertyName = "OrderId")]
 		public string OrderId
 		{
 			get
@@ -50,6 +54,19 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			set	
 			{
 				orderId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "AccessDeniedDetail")]
+		public string AccessDeniedDetail
+		{
+			get
+			{
+				return accessDeniedDetail;
+			}
+			set	
+			{
+				accessDeniedDetail = value;
 			}
 		}
 	}

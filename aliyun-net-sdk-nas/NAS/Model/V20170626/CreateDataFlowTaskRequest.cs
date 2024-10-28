@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class CreateDataFlowTaskRequest : RpcAcsRequest<CreateDataFlowTaskResponse>
     {
         public CreateDataFlowTaskRequest()
-            : base("NAS", "2017-06-26", "CreateDataFlowTask", "NAS", "openAPI")
+            : base("NAS", "2017-06-26", "CreateDataFlowTask", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,6 +40,8 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			Method = MethodType.POST;
         }
 
+		private string dstDirectory;
+
 		private string clientToken;
 
 		private string directory;
@@ -47,6 +49,8 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 		private string srcTaskId;
 
 		private string dataType;
+
+		private bool? createDirIfNotExist;
 
 		private string fileSystemId;
 
@@ -56,7 +60,22 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 		private string entryList;
 
+		private string conflictPolicy;
+
 		private string taskAction;
+
+		public string DstDirectory
+		{
+			get
+			{
+				return dstDirectory;
+			}
+			set	
+			{
+				dstDirectory = value;
+				DictionaryUtil.Add(QueryParameters, "DstDirectory", value);
+			}
+		}
 
 		public string ClientToken
 		{
@@ -110,6 +129,19 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
+		public bool? CreateDirIfNotExist
+		{
+			get
+			{
+				return createDirIfNotExist;
+			}
+			set	
+			{
+				createDirIfNotExist = value;
+				DictionaryUtil.Add(QueryParameters, "CreateDirIfNotExist", value.ToString());
+			}
+		}
+
 		public string FileSystemId
 		{
 			get
@@ -159,6 +191,19 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			{
 				entryList = value;
 				DictionaryUtil.Add(QueryParameters, "EntryList", value);
+			}
+		}
+
+		public string ConflictPolicy
+		{
+			get
+			{
+				return conflictPolicy;
+			}
+			set	
+			{
+				conflictPolicy = value;
+				DictionaryUtil.Add(QueryParameters, "ConflictPolicy", value);
 			}
 		}
 

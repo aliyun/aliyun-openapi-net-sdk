@@ -46,6 +46,7 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 				lifecycleRetrieveJob.RetrievedFileCount = _ctx.LongValue("ListLifecycleRetrieveJobs.LifecycleRetrieveJobs["+ i +"].RetrievedFileCount");
 				lifecycleRetrieveJob.JobId = _ctx.StringValue("ListLifecycleRetrieveJobs.LifecycleRetrieveJobs["+ i +"].JobId");
 				lifecycleRetrieveJob.CreateTime = _ctx.StringValue("ListLifecycleRetrieveJobs.LifecycleRetrieveJobs["+ i +"].CreateTime");
+				lifecycleRetrieveJob.StorageType = _ctx.StringValue("ListLifecycleRetrieveJobs.LifecycleRetrieveJobs["+ i +"].StorageType");
 
 				List<string> lifecycleRetrieveJob_paths = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListLifecycleRetrieveJobs.LifecycleRetrieveJobs["+ i +"].Paths.Length"); j++) {

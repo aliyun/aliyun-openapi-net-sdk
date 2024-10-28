@@ -100,6 +100,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private string fsPath;
 
+			private string conflictPolicy;
+
+			private string directory;
+
+			private string dstDirectory;
+
+			private string errorMsg;
+
+			private List<DescribeDataFlowTasks_Report> reports;
+
+			private DescribeDataFlowTasks_ProgressStats progressStats;
+
 			public string FilesystemId
 			{
 				get
@@ -277,6 +289,226 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					fsPath = value;
+				}
+			}
+
+			public string ConflictPolicy
+			{
+				get
+				{
+					return conflictPolicy;
+				}
+				set	
+				{
+					conflictPolicy = value;
+				}
+			}
+
+			public string Directory
+			{
+				get
+				{
+					return directory;
+				}
+				set	
+				{
+					directory = value;
+				}
+			}
+
+			public string DstDirectory
+			{
+				get
+				{
+					return dstDirectory;
+				}
+				set	
+				{
+					dstDirectory = value;
+				}
+			}
+
+			public string ErrorMsg
+			{
+				get
+				{
+					return errorMsg;
+				}
+				set	
+				{
+					errorMsg = value;
+				}
+			}
+
+			public List<DescribeDataFlowTasks_Report> Reports
+			{
+				get
+				{
+					return reports;
+				}
+				set	
+				{
+					reports = value;
+				}
+			}
+
+			public DescribeDataFlowTasks_ProgressStats ProgressStats
+			{
+				get
+				{
+					return progressStats;
+				}
+				set	
+				{
+					progressStats = value;
+				}
+			}
+
+			public class DescribeDataFlowTasks_Report
+			{
+
+				private string name;
+
+				private string path;
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public string Path
+				{
+					get
+					{
+						return path;
+					}
+					set	
+					{
+						path = value;
+					}
+				}
+			}
+
+			public class DescribeDataFlowTasks_ProgressStats
+			{
+
+				private long? filesTotal;
+
+				private long? filesDone;
+
+				private long? actualFiles;
+
+				private long? bytesTotal;
+
+				private long? bytesDone;
+
+				private long? actualBytes;
+
+				private long? remainTime;
+
+				private long? averageSpeed;
+
+				public long? FilesTotal
+				{
+					get
+					{
+						return filesTotal;
+					}
+					set	
+					{
+						filesTotal = value;
+					}
+				}
+
+				public long? FilesDone
+				{
+					get
+					{
+						return filesDone;
+					}
+					set	
+					{
+						filesDone = value;
+					}
+				}
+
+				public long? ActualFiles
+				{
+					get
+					{
+						return actualFiles;
+					}
+					set	
+					{
+						actualFiles = value;
+					}
+				}
+
+				public long? BytesTotal
+				{
+					get
+					{
+						return bytesTotal;
+					}
+					set	
+					{
+						bytesTotal = value;
+					}
+				}
+
+				public long? BytesDone
+				{
+					get
+					{
+						return bytesDone;
+					}
+					set	
+					{
+						bytesDone = value;
+					}
+				}
+
+				public long? ActualBytes
+				{
+					get
+					{
+						return actualBytes;
+					}
+					set	
+					{
+						actualBytes = value;
+					}
+				}
+
+				public long? RemainTime
+				{
+					get
+					{
+						return remainTime;
+					}
+					set	
+					{
+						remainTime = value;
+					}
+				}
+
+				public long? AverageSpeed
+				{
+					get
+					{
+						return averageSpeed;
+					}
+					set	
+					{
+						averageSpeed = value;
+					}
 				}
 			}
 		}

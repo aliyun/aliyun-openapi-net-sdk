@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class CreateFilesetRequest : RpcAcsRequest<CreateFilesetResponse>
     {
         public CreateFilesetRequest()
-            : base("NAS", "2017-06-26", "CreateFileset", "NAS", "openAPI")
+            : base("NAS", "2017-06-26", "CreateFileset", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,6 +43,10 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 		private string clientToken;
 
 		private string description;
+
+		private bool? deletionProtection;
+
+		private Quota quota_;
 
 		private string fileSystemId;
 
@@ -73,6 +77,38 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public bool? DeletionProtection
+		{
+			get
+			{
+				return deletionProtection;
+			}
+			set	
+			{
+				deletionProtection = value;
+				DictionaryUtil.Add(QueryParameters, "DeletionProtection", value.ToString());
+			}
+		}
+
+		public Quota Quota_
+		{
+			get
+			{
+				return quota_;
+			}
+
+			set
+			{
+				quota_ = value;
+				if(quota_ != null)
+				{
+
+					DictionaryUtil.Add(QueryParameters,"Quota.SizeLimit", quota_.SizeLimit);
+					DictionaryUtil.Add(QueryParameters,"Quota.FileCountLimit", quota_.FileCountLimit);
+				}
 			}
 		}
 
@@ -112,6 +148,38 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			{
 				fileSystemPath = value;
 				DictionaryUtil.Add(QueryParameters, "FileSystemPath", value);
+			}
+		}
+
+		public class Quota
+		{
+
+			private long? sizeLimit;
+
+			private long? fileCountLimit;
+
+			public long? SizeLimit
+			{
+				get
+				{
+					return sizeLimit;
+				}
+				set	
+				{
+					sizeLimit = value;
+				}
+			}
+
+			public long? FileCountLimit
+			{
+				get
+				{
+					return fileCountLimit;
+				}
+				set	
+				{
+					fileCountLimit = value;
+				}
 			}
 		}
 

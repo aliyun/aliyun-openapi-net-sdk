@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class RemoveClientFromBlackListRequest : RpcAcsRequest<RemoveClientFromBlackListResponse>
     {
         public RemoveClientFromBlackListRequest()
-            : base("NAS", "2017-06-26", "RemoveClientFromBlackList", "NAS", "openAPI")
+            : base("NAS", "2017-06-26", "RemoveClientFromBlackList", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -46,6 +47,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 		private string fileSystemId;
 
+		[JsonProperty(PropertyName = "ClientToken")]
 		public string ClientToken
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
+		[JsonProperty(PropertyName = "ClientIP")]
 		public string ClientIP
 		{
 			get
@@ -72,6 +75,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
+		[JsonProperty(PropertyName = "FileSystemId")]
 		public string FileSystemId
 		{
 			get

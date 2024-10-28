@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class DeleteAccessGroupRequest : RpcAcsRequest<DeleteAccessGroupResponse>
     {
         public DeleteAccessGroupRequest()
-            : base("NAS", "2017-06-26", "DeleteAccessGroup", "NAS", "openAPI")
+            : base("NAS", "2017-06-26", "DeleteAccessGroup", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -1,3 +1,7 @@
+2024-10-28 Version: 3.2.6
+- Support Fileset for BmCPFS.
+- Support Fileset Quota for BmCPFS.
+
 2024-10-24 Version: 1.1.13
 - Publish sdk.
 

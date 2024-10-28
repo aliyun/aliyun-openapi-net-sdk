@@ -112,6 +112,8 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private string createTime;
 
+			private string storageType;
+
 			private List<string> paths;
 
 			public string FileSystemId
@@ -195,6 +197,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					createTime = value;
+				}
+			}
+
+			public string StorageType
+			{
+				get
+				{
+					return storageType;
+				}
+				set	
+				{
+					storageType = value;
 				}
 			}
 

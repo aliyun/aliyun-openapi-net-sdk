@@ -61,6 +61,12 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 				fileSystem.ExpiredTime = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].ExpiredTime");
 				fileSystem.ZoneId = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].ZoneId");
 				fileSystem.VpcId = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].VpcId");
+				fileSystem.NodeNum = _ctx.IntegerValue("DescribeFileSystems.FileSystems["+ i +"].NodeNum");
+				fileSystem.HpnZone = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].HpnZone");
+				fileSystem.AccessPointCount = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].AccessPointCount");
+				fileSystem.ResourceGroupId = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].ResourceGroupId");
+				fileSystem.MeteredArchiveSize = _ctx.LongValue("DescribeFileSystems.FileSystems["+ i +"].MeteredArchiveSize");
+				fileSystem.QuorumVswId = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].QuorumVswId");
 
 				List<string> fileSystem_supportedFeatures = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeFileSystems.FileSystems["+ i +"].SupportedFeatures.Length"); j++) {
@@ -79,6 +85,16 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 				ldap.SearchBase = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].Ldap.SearchBase");
 				ldap.URI = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].Ldap.URI");
 				fileSystem.Ldap = ldap;
+
+				DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_GuiInfo guiInfo = new DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_GuiInfo();
+				guiInfo.Endpoint = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].GuiInfo.Endpoint");
+				guiInfo.Password = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].GuiInfo.Password");
+				guiInfo.User = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].GuiInfo.User");
+				fileSystem.GuiInfo = guiInfo;
+
+				DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_Options options = new DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_Options();
+				options.EnableOplock = _ctx.BooleanValue("DescribeFileSystems.FileSystems["+ i +"].Options.EnableOplock");
+				fileSystem.Options = options;
 
 				List<DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_Tag> fileSystem_tags = new List<DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_Tag>();
 				for (int j = 0; j < _ctx.Length("DescribeFileSystems.FileSystems["+ i +"].Tags.Length"); j++) {
@@ -100,6 +116,7 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 					mountTarget.DualStackMountTargetDomain = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].DualStackMountTargetDomain");
 					mountTarget.VswId = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].VswId");
 					mountTarget.NetworkType = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].NetworkType");
+					mountTarget.MountTargetIp = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].MountTargetIp");
 
 					List<DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_MountTarget.DescribeFileSystems_ClientMasterNode> mountTarget_clientMasterNodes = new List<DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_MountTarget.DescribeFileSystems_ClientMasterNode>();
 					for (int k = 0; k < _ctx.Length("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].ClientMasterNodes.Length"); k++) {

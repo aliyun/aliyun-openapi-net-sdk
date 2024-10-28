@@ -27,10 +27,10 @@ using Aliyun.Acs.NAS.Transform.V20170626;
 
 namespace Aliyun.Acs.NAS.Model.V20170626
 {
-    public class DescribeLDAPConfigRequest : RpcAcsRequest<DescribeLDAPConfigResponse>
+    public class DeleteLogAnalysisRequest : RpcAcsRequest<DeleteLogAnalysisResponse>
     {
-        public DescribeLDAPConfigRequest()
-            : base("NAS", "2017-06-26", "DescribeLDAPConfig", "NAS", "openAPI")
+        public DeleteLogAnalysisRequest()
+            : base("NAS", "2017-06-26", "DeleteLogAnalysis", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -55,9 +55,9 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
-        public override DescribeLDAPConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteLogAnalysisResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeLDAPConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteLogAnalysisResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -27,71 +27,51 @@ using Aliyun.Acs.NAS.Transform.V20170626;
 
 namespace Aliyun.Acs.NAS.Model.V20170626
 {
-    public class DescribeTagsRequest : RpcAcsRequest<DescribeTagsResponse>
+    public class CancelFilesetQuotaRequest : RpcAcsRequest<CancelFilesetQuotaResponse>
     {
-        public DescribeTagsRequest()
-            : base("NAS", "2017-06-26", "DescribeTags", "NAS", "openAPI")
+        public CancelFilesetQuotaRequest()
+            : base("NAS", "2017-06-26", "CancelFilesetQuota", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.NAS.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.NAS.Endpoint.endpointRegionalType, null);
             }
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private int? pageNumber;
+		private string fsetId;
 
-		private int? pageSize;
-
-		private List<string> tags = new List<string>(){ };
+		private string clientToken;
 
 		private string fileSystemId;
 
-		public int? PageNumber
+		private bool? dryRun;
+
+		public string FsetId
 		{
 			get
 			{
-				return pageNumber;
+				return fsetId;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				fsetId = value;
+				DictionaryUtil.Add(QueryParameters, "FsetId", value);
 			}
 		}
 
-		public int? PageSize
+		public string ClientToken
 		{
 			get
 			{
-				return pageSize;
+				return clientToken;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public List<string> Tags
-		{
-			get
-			{
-				return tags;
-			}
-
-			set
-			{
-				tags = value;
-				if(tags != null)
-				{
-					for (int depth1 = 0; depth1 < tags.Count; depth1++)
-					{
-						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
-						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
-					}
-				}
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -108,41 +88,22 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
-		public class Tag
+		public bool? DryRun
 		{
-
-			private string value_;
-
-			private string key;
-
-			public string Value_
+			get
 			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
+				return dryRun;
 			}
-
-			public string Key
+			set	
 			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
 			}
 		}
 
-        public override DescribeTagsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CancelFilesetQuotaResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeTagsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CancelFilesetQuotaResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

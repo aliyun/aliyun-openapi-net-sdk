@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class DescribeLifecyclePoliciesRequest : RpcAcsRequest<DescribeLifecyclePoliciesResponse>
     {
         public DescribeLifecyclePoliciesRequest()
-            : base("NAS", "2017-06-26", "DescribeLifecyclePolicies", "NAS", "openAPI")
+            : base("NAS", "2017-06-26", "DescribeLifecyclePolicies", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,6 +40,10 @@ namespace Aliyun.Acs.NAS.Model.V20170626
         }
 
 		private int? pageNumber;
+
+		private string storageType;
+
+		private string lifecyclePolicyName;
 
 		private int? pageSize;
 
@@ -55,6 +59,32 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string StorageType
+		{
+			get
+			{
+				return storageType;
+			}
+			set	
+			{
+				storageType = value;
+				DictionaryUtil.Add(QueryParameters, "StorageType", value);
+			}
+		}
+
+		public string LifecyclePolicyName
+		{
+			get
+			{
+				return lifecyclePolicyName;
+			}
+			set	
+			{
+				lifecyclePolicyName = value;
+				DictionaryUtil.Add(QueryParameters, "LifecyclePolicyName", value);
 			}
 		}
 

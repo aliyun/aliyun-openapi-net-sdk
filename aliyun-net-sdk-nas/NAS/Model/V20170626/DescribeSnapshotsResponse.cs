@@ -122,6 +122,10 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private string snapshotId;
 
+			private string fileSystemType;
+
+			private string snapshotType;
+
 			public string Status
 			{
 				get
@@ -263,6 +267,30 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					snapshotId = value;
+				}
+			}
+
+			public string FileSystemType
+			{
+				get
+				{
+					return fileSystemType;
+				}
+				set	
+				{
+					fileSystemType = value;
+				}
+			}
+
+			public string SnapshotType
+			{
+				get
+				{
+					return snapshotType;
+				}
+				set	
+				{
+					snapshotType = value;
 				}
 			}
 		}

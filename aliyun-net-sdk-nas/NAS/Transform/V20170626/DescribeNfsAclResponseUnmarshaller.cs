@@ -24,22 +24,20 @@ using Aliyun.Acs.NAS.Model.V20170626;
 
 namespace Aliyun.Acs.NAS.Transform.V20170626
 {
-    public class DescribeLDAPConfigResponseUnmarshaller
+    public class DescribeNfsAclResponseUnmarshaller
     {
-        public static DescribeLDAPConfigResponse Unmarshall(UnmarshallerContext _ctx)
+        public static DescribeNfsAclResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			DescribeLDAPConfigResponse describeLDAPConfigResponse = new DescribeLDAPConfigResponse();
+			DescribeNfsAclResponse describeNfsAclResponse = new DescribeNfsAclResponse();
 
-			describeLDAPConfigResponse.HttpResponse = _ctx.HttpResponse;
-			describeLDAPConfigResponse.RequestId = _ctx.StringValue("DescribeLDAPConfig.RequestId");
+			describeNfsAclResponse.HttpResponse = _ctx.HttpResponse;
+			describeNfsAclResponse.RequestId = _ctx.StringValue("DescribeNfsAcl.RequestId");
 
-			DescribeLDAPConfigResponse.DescribeLDAPConfig_Ldap ldap = new DescribeLDAPConfigResponse.DescribeLDAPConfig_Ldap();
-			ldap.BindDN = _ctx.StringValue("DescribeLDAPConfig.Ldap.BindDN");
-			ldap.SearchBase = _ctx.StringValue("DescribeLDAPConfig.Ldap.SearchBase");
-			ldap.URI = _ctx.StringValue("DescribeLDAPConfig.Ldap.URI");
-			describeLDAPConfigResponse.Ldap = ldap;
+			DescribeNfsAclResponse.DescribeNfsAcl_Acl acl = new DescribeNfsAclResponse.DescribeNfsAcl_Acl();
+			acl.Enabled = _ctx.BooleanValue("DescribeNfsAcl.Acl.Enabled");
+			describeNfsAclResponse.Acl = acl;
         
-			return describeLDAPConfigResponse;
+			return describeNfsAclResponse;
         }
     }
 }

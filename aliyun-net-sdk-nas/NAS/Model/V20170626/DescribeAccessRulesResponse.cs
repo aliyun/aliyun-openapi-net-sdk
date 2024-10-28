@@ -110,6 +110,12 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private int? priority;
 
+			private string fileSystemType;
+
+			private string accessGroupName;
+
+			private string regionId;
+
 			public string AccessRuleId
 			{
 				get
@@ -179,6 +185,42 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					priority = value;
+				}
+			}
+
+			public string FileSystemType
+			{
+				get
+				{
+					return fileSystemType;
+				}
+				set	
+				{
+					fileSystemType = value;
+				}
+			}
+
+			public string AccessGroupName
+			{
+				get
+				{
+					return accessGroupName;
+				}
+				set	
+				{
+					accessGroupName = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 		}

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class ApplyDataFlowAutoRefreshRequest : RpcAcsRequest<ApplyDataFlowAutoRefreshResponse>
     {
         public ApplyDataFlowAutoRefreshRequest()
-            : base("NAS", "2017-06-26", "ApplyDataFlowAutoRefresh", "NAS", "openAPI")
+            : base("NAS", "2017-06-26", "ApplyDataFlowAutoRefresh", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

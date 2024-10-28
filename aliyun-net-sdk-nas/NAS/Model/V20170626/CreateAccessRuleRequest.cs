@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class CreateAccessRuleRequest : RpcAcsRequest<CreateAccessRuleResponse>
     {
         public CreateAccessRuleRequest()
-            : base("NAS", "2017-06-26", "CreateAccessRule", "NAS", "openAPI")
+            : base("NAS", "2017-06-26", "CreateAccessRule", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

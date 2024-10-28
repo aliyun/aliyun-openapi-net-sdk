@@ -27,6 +27,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 		private string requestId;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get

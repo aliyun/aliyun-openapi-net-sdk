@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class TagResourcesRequest : RpcAcsRequest<TagResourcesResponse>
     {
         public TagResourcesRequest()
-            : base("NAS", "2017-06-26", "TagResources", "NAS", "openAPI")
+            : base("NAS", "2017-06-26", "TagResources", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -46,6 +47,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 		private string resourceType;
 
+		[JsonProperty(PropertyName = "Tag")]
 		public List<string> Tags
 		{
 			get
@@ -67,6 +69,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceId")]
 		public List<string> ResourceIds
 		{
 			get
@@ -80,6 +83,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceType")]
 		public string ResourceType
 		{
 			get
@@ -100,6 +104,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private string key;
 
+			[JsonProperty(PropertyName = "Value")]
 			public string Value_
 			{
 				get
@@ -112,6 +117,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				}
 			}
 
+			[JsonProperty(PropertyName = "Key")]
 			public string Key
 			{
 				get

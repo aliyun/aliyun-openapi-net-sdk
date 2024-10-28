@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class CreateFileSystemRequest : RpcAcsRequest<CreateFileSystemResponse>
     {
         public CreateFileSystemRequest()
-            : base("NAS", "2017-06-26", "CreateFileSystem", "NAS", "openAPI")
+            : base("NAS", "2017-06-26", "CreateFileSystem", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -55,6 +55,8 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 		private int? encryptType;
 
 		private int? duration;
+
+		private string resourceGroupId;
 
 		private bool? dryRun;
 
@@ -173,6 +175,19 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			{
 				duration = value;
 				DictionaryUtil.Add(QueryParameters, "Duration", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

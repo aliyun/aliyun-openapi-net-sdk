@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class AddTagsRequest : RpcAcsRequest<AddTagsResponse>
     {
         public AddTagsRequest()
-            : base("NAS", "2017-06-26", "AddTags", "NAS", "openAPI")
+            : base("NAS", "2017-06-26", "AddTags", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

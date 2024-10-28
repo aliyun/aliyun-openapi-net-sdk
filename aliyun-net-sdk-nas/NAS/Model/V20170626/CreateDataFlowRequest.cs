@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class CreateDataFlowRequest : RpcAcsRequest<CreateDataFlowResponse>
     {
         public CreateDataFlowRequest()
-            : base("NAS", "2017-06-26", "CreateDataFlow", "NAS", "openAPI")
+            : base("NAS", "2017-06-26", "CreateDataFlow", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -61,6 +61,10 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 		private bool? dryRun;
 
 		private long? autoRefreshInterval;
+
+		private string sourceStoragePath;
+
+		private string fileSystemPath;
 
 		public string AutoRefreshPolicy
 		{
@@ -209,6 +213,32 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			{
 				autoRefreshInterval = value;
 				DictionaryUtil.Add(QueryParameters, "AutoRefreshInterval", value.ToString());
+			}
+		}
+
+		public string SourceStoragePath
+		{
+			get
+			{
+				return sourceStoragePath;
+			}
+			set	
+			{
+				sourceStoragePath = value;
+				DictionaryUtil.Add(QueryParameters, "SourceStoragePath", value);
+			}
+		}
+
+		public string FileSystemPath
+		{
+			get
+			{
+				return fileSystemPath;
+			}
+			set	
+			{
+				fileSystemPath = value;
+				DictionaryUtil.Add(QueryParameters, "FileSystemPath", value);
 			}
 		}
 

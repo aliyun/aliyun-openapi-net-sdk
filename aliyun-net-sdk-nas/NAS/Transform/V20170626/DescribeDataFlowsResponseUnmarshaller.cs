@@ -52,6 +52,7 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 				dataFlow.FsetDescription = _ctx.StringValue("DescribeDataFlows.DataFlowInfo["+ i +"].FsetDescription");
 				dataFlow.AutoRefreshInterval = _ctx.LongValue("DescribeDataFlows.DataFlowInfo["+ i +"].AutoRefreshInterval");
 				dataFlow.AutoRefreshPolicy = _ctx.StringValue("DescribeDataFlows.DataFlowInfo["+ i +"].AutoRefreshPolicy");
+				dataFlow.SourceStoragePath = _ctx.StringValue("DescribeDataFlows.DataFlowInfo["+ i +"].SourceStoragePath");
 
 				List<DescribeDataFlowsResponse.DescribeDataFlows_DataFlow.DescribeDataFlows_AutoRefreshItem> dataFlow_autoRefresh = new List<DescribeDataFlowsResponse.DescribeDataFlows_DataFlow.DescribeDataFlows_AutoRefreshItem>();
 				for (int j = 0; j < _ctx.Length("DescribeDataFlows.DataFlowInfo["+ i +"].AutoRefresh.Length"); j++) {

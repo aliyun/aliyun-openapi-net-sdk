@@ -47,6 +47,7 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 				mountTarget.VswId = _ctx.StringValue("DescribeMountTargets.MountTargets["+ i +"].VswId");
 				mountTarget.NetworkType = _ctx.StringValue("DescribeMountTargets.MountTargets["+ i +"].NetworkType");
 				mountTarget.IPVersion = _ctx.StringValue("DescribeMountTargets.MountTargets["+ i +"].IPVersion");
+				mountTarget.MountTargetIp = _ctx.StringValue("DescribeMountTargets.MountTargets["+ i +"].MountTargetIp");
 
 				List<DescribeMountTargetsResponse.DescribeMountTargets_MountTarget.DescribeMountTargets_ClientMasterNode> mountTarget_clientMasterNodes = new List<DescribeMountTargetsResponse.DescribeMountTargets_MountTarget.DescribeMountTargets_ClientMasterNode>();
 				for (int j = 0; j < _ctx.Length("DescribeMountTargets.MountTargets["+ i +"].ClientMasterNodes.Length"); j++) {

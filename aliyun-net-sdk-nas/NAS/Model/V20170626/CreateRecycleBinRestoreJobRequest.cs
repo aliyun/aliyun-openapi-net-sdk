@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class CreateRecycleBinRestoreJobRequest : RpcAcsRequest<CreateRecycleBinRestoreJobResponse>
     {
         public CreateRecycleBinRestoreJobRequest()
-            : base("NAS", "2017-06-26", "CreateRecycleBinRestoreJob", "NAS", "openAPI")
+            : base("NAS", "2017-06-26", "CreateRecycleBinRestoreJob", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
