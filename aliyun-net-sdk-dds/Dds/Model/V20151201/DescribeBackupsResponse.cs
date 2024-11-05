@@ -128,6 +128,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private bool? isAvail;
 
+			private string engineVersion;
+
 			public string BackupStatus
 			{
 				get
@@ -305,6 +307,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					isAvail = value;
+				}
+			}
+
+			public string EngineVersion
+			{
+				get
+				{
+					return engineVersion;
+				}
+				set	
+				{
+					engineVersion = value;
 				}
 			}
 		}

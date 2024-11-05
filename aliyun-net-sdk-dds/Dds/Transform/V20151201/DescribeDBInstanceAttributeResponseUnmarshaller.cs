@@ -126,6 +126,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 					mongosAttribute.NodeDescription = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].MongosList["+ j +"].NodeDescription");
 					mongosAttribute.NodeId = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].MongosList["+ j +"].NodeId");
 					mongosAttribute.Status = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].MongosList["+ j +"].Status");
+					mongosAttribute.CurrentKernelVersion = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].MongosList["+ j +"].CurrentKernelVersion");
 
 					dBInstance_mongosList.Add(mongosAttribute);
 				}
@@ -146,6 +147,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 					shardAttribute.ReadonlyReplicas = _ctx.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ShardList["+ j +"].ReadonlyReplicas");
 					shardAttribute.Status = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ShardList["+ j +"].Status");
 					shardAttribute.MaxDiskMbps = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ShardList["+ j +"].MaxDiskMbps");
+					shardAttribute.CurrentKernelVersion = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ShardList["+ j +"].CurrentKernelVersion");
 
 					dBInstance_shardList.Add(shardAttribute);
 				}
@@ -164,6 +166,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 					configserverAttribute.NodeId = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ConfigserverList["+ j +"].NodeId");
 					configserverAttribute.NodeStorage = _ctx.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ConfigserverList["+ j +"].NodeStorage");
 					configserverAttribute.Status = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ConfigserverList["+ j +"].Status");
+					configserverAttribute.CurrentKernelVersion = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ConfigserverList["+ j +"].CurrentKernelVersion");
 
 					dBInstance_configserverList.Add(configserverAttribute);
 				}

@@ -116,6 +116,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string attachLogStatus;
 
+			private string engineVersion;
+
 			private List<DescribeClusterBackups_Backup> backups;
 
 			private DescribeClusterBackups_ExtraInfo extraInfo;
@@ -225,6 +227,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					attachLogStatus = value;
+				}
+			}
+
+			public string EngineVersion
+			{
+				get
+				{
+					return engineVersion;
+				}
+				set	
+				{
+					engineVersion = value;
 				}
 			}
 

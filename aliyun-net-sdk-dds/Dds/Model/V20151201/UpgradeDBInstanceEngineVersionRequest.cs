@@ -44,6 +44,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string engineVersion;
 
+		private int? switchMode;
+
 		private string dBInstanceId;
 
 		private string resourceOwnerAccount;
@@ -75,6 +77,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				engineVersion = value;
 				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
+			}
+		}
+
+		public int? SwitchMode
+		{
+			get
+			{
+				return switchMode;
+			}
+			set	
+			{
+				switchMode = value;
+				DictionaryUtil.Add(QueryParameters, "SwitchMode", value.ToString());
 			}
 		}
 

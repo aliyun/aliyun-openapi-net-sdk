@@ -27,22 +27,27 @@ using Aliyun.Acs.Dds.Transform.V20151201;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class UpgradeDBInstanceKernelVersionRequest : RpcAcsRequest<UpgradeDBInstanceKernelVersionResponse>
+    public class DescribeRestoreDBInstanceListRequest : RpcAcsRequest<DescribeRestoreDBInstanceListResponse>
     {
-        public UpgradeDBInstanceKernelVersionRequest()
-            : base("Dds", "2015-12-01", "UpgradeDBInstanceKernelVersion", "dds", "openAPI")
+        public DescribeRestoreDBInstanceListRequest()
+            : base("Dds", "2015-12-01", "DescribeRestoreDBInstanceList", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointRegionalType, null);
             }
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private string switchMode;
+		private string creationTimeAfter;
+
+		private int? pageNumber;
+
+		private int? pageSize;
 
 		private string dBInstanceId;
 
@@ -65,16 +70,42 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string SwitchMode
+		public string CreationTimeAfter
 		{
 			get
 			{
-				return switchMode;
+				return creationTimeAfter;
 			}
 			set	
 			{
-				switchMode = value;
-				DictionaryUtil.Add(QueryParameters, "SwitchMode", value);
+				creationTimeAfter = value;
+				DictionaryUtil.Add(QueryParameters, "CreationTimeAfter", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -130,9 +161,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-        public override UpgradeDBInstanceKernelVersionResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeRestoreDBInstanceListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpgradeDBInstanceKernelVersionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeRestoreDBInstanceListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

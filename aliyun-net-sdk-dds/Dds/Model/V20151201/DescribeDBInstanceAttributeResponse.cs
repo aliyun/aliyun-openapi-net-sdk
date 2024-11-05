@@ -987,6 +987,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 				private string status;
 
+				private string currentKernelVersion;
+
 				public string VpcCloudInstanceId
 				{
 					get
@@ -1130,6 +1132,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 						status = value;
 					}
 				}
+
+				public string CurrentKernelVersion
+				{
+					get
+					{
+						return currentKernelVersion;
+					}
+					set	
+					{
+						currentKernelVersion = value;
+					}
+				}
 			}
 
 			public class DescribeDBInstanceAttribute_ShardAttribute
@@ -1158,6 +1172,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				private string status;
 
 				private string maxDiskMbps;
+
+				private string currentKernelVersion;
 
 				public string LockMode
 				{
@@ -1302,6 +1318,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 						maxDiskMbps = value;
 					}
 				}
+
+				public string CurrentKernelVersion
+				{
+					get
+					{
+						return currentKernelVersion;
+					}
+					set	
+					{
+						currentKernelVersion = value;
+					}
+				}
 			}
 
 			public class DescribeDBInstanceAttribute_ConfigserverAttribute
@@ -1326,6 +1354,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				private int? nodeStorage;
 
 				private string status;
+
+				private string currentKernelVersion;
 
 				public int? MaxIOPS
 				{
@@ -1444,6 +1474,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						status = value;
+					}
+				}
+
+				public string CurrentKernelVersion
+				{
+					get
+					{
+						return currentKernelVersion;
+					}
+					set	
+					{
+						currentKernelVersion = value;
 					}
 				}
 			}

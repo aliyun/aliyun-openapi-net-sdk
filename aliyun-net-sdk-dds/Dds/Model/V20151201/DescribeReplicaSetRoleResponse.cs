@@ -82,6 +82,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string roleId;
 
+			private string connectionType;
+
 			public string ConnectionPort
 			{
 				get
@@ -151,6 +153,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					roleId = value;
+				}
+			}
+
+			public string ConnectionType
+			{
+				get
+				{
+					return connectionType;
+				}
+				set	
+				{
+					connectionType = value;
 				}
 			}
 		}
