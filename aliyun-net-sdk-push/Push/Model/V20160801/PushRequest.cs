@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private int? androidNotificationBarType;
 
+		private int? androidMessageOppoNotifyLevel;
+
 		private string deviceType;
 
 		private string pushTime;
@@ -231,6 +233,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string harmonyInboxContent;
 
+		private string androidMessageOppoCategory;
+
 		private string androidXiaoMiActivity;
 
 		public int? AndroidNotificationBarType
@@ -243,6 +247,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				androidNotificationBarType = value;
 				DictionaryUtil.Add(QueryParameters, "AndroidNotificationBarType", value.ToString());
+			}
+		}
+
+		public int? AndroidMessageOppoNotifyLevel
+		{
+			get
+			{
+				return androidMessageOppoNotifyLevel;
+			}
+			set	
+			{
+				androidMessageOppoNotifyLevel = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidMessageOppoNotifyLevel", value.ToString());
 			}
 		}
 
@@ -1465,6 +1482,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				harmonyInboxContent = value;
 				DictionaryUtil.Add(QueryParameters, "HarmonyInboxContent", value);
+			}
+		}
+
+		public string AndroidMessageOppoCategory
+		{
+			get
+			{
+				return androidMessageOppoCategory;
+			}
+			set	
+			{
+				androidMessageOppoCategory = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidMessageOppoCategory", value);
 			}
 		}
 

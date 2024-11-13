@@ -149,6 +149,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
 						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
 						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
 					}
 				}
 			}
@@ -171,6 +173,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 		{
 
 			private int? androidNotificationBarType;
+
+			private int? androidMessageOppoNotifyLevel;
 
 			private string body;
 
@@ -208,13 +212,13 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private int? androidNotificationBarPriority;
 
-			private string androidImageUrl;
-
 			private string expireTime;
 
-			private int? androidHonorTargetUserType;
+			private string androidImageUrl;
 
 			private string androidNotificationThreadId;
+
+			private int? androidHonorTargetUserType;
 
 			private string harmonyRemindBody;
 
@@ -236,9 +240,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string androidInboxBody;
 
-			private string harmonyReceiptId;
-
 			private string jobKey;
+
+			private string harmonyReceiptId;
 
 			private string androidOpenUrl;
 
@@ -246,15 +250,15 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string androidXiaoMiNotifyBody;
 
-			private string androidXiaomiBigPictureUrl;
-
 			private string iOSSubtitle;
+
+			private string androidXiaomiBigPictureUrl;
 
 			private string harmonyCategory;
 
-			private string iOSNotificationThreadId;
-
 			private bool? iOSRemind;
+
+			private string iOSNotificationThreadId;
 
 			private int? androidHuaweiTargetUserType;
 
@@ -264,9 +268,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private bool? harmonyExtensionPush;
 
-			private string androidMessageHuaweiUrgency;
-
 			private string iOSNotificationCollapseId;
+
+			private string androidMessageHuaweiUrgency;
 
 			private string pushType;
 
@@ -278,9 +282,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string harmonyImageUrl;
 
-			private string androidBigBody;
-
 			private int? iOSBadge;
+
+			private string androidBigBody;
 
 			private bool? iOSBadgeAutoIncrement;
 
@@ -288,9 +292,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string harmonyRemindTitle;
 
-			private string androidBadgeClass;
-
 			private string title;
+
+			private string androidBadgeClass;
 
 			private int? harmonyBadgeAddNum;
 
@@ -326,9 +330,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string harmonyActionType;
 
-			private string harmonyNotificationSlotType;
-
 			private string target;
+
+			private string harmonyNotificationSlotType;
 
 			private string androidBigTitle;
 
@@ -340,15 +344,17 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string androidActivity;
 
+			private string androidMessageOppoCategory;
+
 			private int? androidNotificationNotifyId;
 
 			private string targetValue;
 
 			private int? harmonyBadgeSetNum;
 
-			private string androidXiaoMiActivity;
-
 			private string androidXiaoMiNotifyTitle;
+
+			private string androidXiaoMiActivity;
 
 			public int? AndroidNotificationBarType
 			{
@@ -359,6 +365,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					androidNotificationBarType = value;
+				}
+			}
+
+			public int? AndroidMessageOppoNotifyLevel
+			{
+				get
+				{
+					return androidMessageOppoNotifyLevel;
+				}
+				set	
+				{
+					androidMessageOppoNotifyLevel = value;
 				}
 			}
 
@@ -578,18 +596,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public string AndroidImageUrl
-			{
-				get
-				{
-					return androidImageUrl;
-				}
-				set	
-				{
-					androidImageUrl = value;
-				}
-			}
-
 			public string ExpireTime
 			{
 				get
@@ -602,15 +608,15 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public int? AndroidHonorTargetUserType
+			public string AndroidImageUrl
 			{
 				get
 				{
-					return androidHonorTargetUserType;
+					return androidImageUrl;
 				}
 				set	
 				{
-					androidHonorTargetUserType = value;
+					androidImageUrl = value;
 				}
 			}
 
@@ -623,6 +629,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					androidNotificationThreadId = value;
+				}
+			}
+
+			public int? AndroidHonorTargetUserType
+			{
+				get
+				{
+					return androidHonorTargetUserType;
+				}
+				set	
+				{
+					androidHonorTargetUserType = value;
 				}
 			}
 
@@ -746,18 +764,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public string HarmonyReceiptId
-			{
-				get
-				{
-					return harmonyReceiptId;
-				}
-				set	
-				{
-					harmonyReceiptId = value;
-				}
-			}
-
 			public string JobKey
 			{
 				get
@@ -767,6 +773,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					jobKey = value;
+				}
+			}
+
+			public string HarmonyReceiptId
+			{
+				get
+				{
+					return harmonyReceiptId;
+				}
+				set	
+				{
+					harmonyReceiptId = value;
 				}
 			}
 
@@ -806,18 +824,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public string AndroidXiaomiBigPictureUrl
-			{
-				get
-				{
-					return androidXiaomiBigPictureUrl;
-				}
-				set	
-				{
-					androidXiaomiBigPictureUrl = value;
-				}
-			}
-
 			public string IOSSubtitle
 			{
 				get
@@ -827,6 +833,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					iOSSubtitle = value;
+				}
+			}
+
+			public string AndroidXiaomiBigPictureUrl
+			{
+				get
+				{
+					return androidXiaomiBigPictureUrl;
+				}
+				set	
+				{
+					androidXiaomiBigPictureUrl = value;
 				}
 			}
 
@@ -842,18 +860,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public string IOSNotificationThreadId
-			{
-				get
-				{
-					return iOSNotificationThreadId;
-				}
-				set	
-				{
-					iOSNotificationThreadId = value;
-				}
-			}
-
 			public bool? IOSRemind
 			{
 				get
@@ -863,6 +869,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					iOSRemind = value;
+				}
+			}
+
+			public string IOSNotificationThreadId
+			{
+				get
+				{
+					return iOSNotificationThreadId;
+				}
+				set	
+				{
+					iOSNotificationThreadId = value;
 				}
 			}
 
@@ -914,18 +932,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public string AndroidMessageHuaweiUrgency
-			{
-				get
-				{
-					return androidMessageHuaweiUrgency;
-				}
-				set	
-				{
-					androidMessageHuaweiUrgency = value;
-				}
-			}
-
 			public string IOSNotificationCollapseId
 			{
 				get
@@ -935,6 +941,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					iOSNotificationCollapseId = value;
+				}
+			}
+
+			public string AndroidMessageHuaweiUrgency
+			{
+				get
+				{
+					return androidMessageHuaweiUrgency;
+				}
+				set	
+				{
+					androidMessageHuaweiUrgency = value;
 				}
 			}
 
@@ -998,18 +1016,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public string AndroidBigBody
-			{
-				get
-				{
-					return androidBigBody;
-				}
-				set	
-				{
-					androidBigBody = value;
-				}
-			}
-
 			public int? IOSBadge
 			{
 				get
@@ -1019,6 +1025,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					iOSBadge = value;
+				}
+			}
+
+			public string AndroidBigBody
+			{
+				get
+				{
+					return androidBigBody;
+				}
+				set	
+				{
+					androidBigBody = value;
 				}
 			}
 
@@ -1058,18 +1076,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public string AndroidBadgeClass
-			{
-				get
-				{
-					return androidBadgeClass;
-				}
-				set	
-				{
-					androidBadgeClass = value;
-				}
-			}
-
 			public string Title
 			{
 				get
@@ -1079,6 +1085,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					title = value;
+				}
+			}
+
+			public string AndroidBadgeClass
+			{
+				get
+				{
+					return androidBadgeClass;
+				}
+				set	
+				{
+					androidBadgeClass = value;
 				}
 			}
 
@@ -1286,18 +1304,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public string HarmonyNotificationSlotType
-			{
-				get
-				{
-					return harmonyNotificationSlotType;
-				}
-				set	
-				{
-					harmonyNotificationSlotType = value;
-				}
-			}
-
 			public string Target
 			{
 				get
@@ -1307,6 +1313,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					target = value;
+				}
+			}
+
+			public string HarmonyNotificationSlotType
+			{
+				get
+				{
+					return harmonyNotificationSlotType;
+				}
+				set	
+				{
+					harmonyNotificationSlotType = value;
 				}
 			}
 
@@ -1370,6 +1388,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
+			public string AndroidMessageOppoCategory
+			{
+				get
+				{
+					return androidMessageOppoCategory;
+				}
+				set	
+				{
+					androidMessageOppoCategory = value;
+				}
+			}
+
 			public int? AndroidNotificationNotifyId
 			{
 				get
@@ -1406,18 +1436,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public string AndroidXiaoMiActivity
-			{
-				get
-				{
-					return androidXiaoMiActivity;
-				}
-				set	
-				{
-					androidXiaoMiActivity = value;
-				}
-			}
-
 			public string AndroidXiaoMiNotifyTitle
 			{
 				get
@@ -1427,6 +1445,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					androidXiaoMiNotifyTitle = value;
+				}
+			}
+
+			public string AndroidXiaoMiActivity
+			{
+				get
+				{
+					return androidXiaoMiActivity;
+				}
+				set	
+				{
+					androidXiaoMiActivity = value;
 				}
 			}
 		}
