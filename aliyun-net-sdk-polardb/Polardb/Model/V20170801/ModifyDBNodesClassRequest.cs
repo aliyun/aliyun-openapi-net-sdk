@@ -52,6 +52,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string ownerAccount;
 
+		private string plannedFlashingOffTime;
+
 		private long? ownerId;
 
 		private string plannedStartTime;
@@ -137,6 +139,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string PlannedFlashingOffTime
+		{
+			get
+			{
+				return plannedFlashingOffTime;
+			}
+			set	
+			{
+				plannedFlashingOffTime = value;
+				DictionaryUtil.Add(QueryParameters, "PlannedFlashingOffTime", value);
 			}
 		}
 

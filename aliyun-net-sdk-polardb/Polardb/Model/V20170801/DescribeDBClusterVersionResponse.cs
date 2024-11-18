@@ -53,6 +53,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private List<DescribeDBClusterVersion_DBRevisionVersionListItem> dBRevisionVersionList;
 
+		private List<DescribeDBClusterVersion_ProxyRevisionVersionListItem> proxyRevisionVersionList;
+
 		public string IsLatestVersion
 		{
 			get
@@ -221,7 +223,79 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public List<DescribeDBClusterVersion_ProxyRevisionVersionListItem> ProxyRevisionVersionList
+		{
+			get
+			{
+				return proxyRevisionVersionList;
+			}
+			set	
+			{
+				proxyRevisionVersionList = value;
+			}
+		}
+
 		public class DescribeDBClusterVersion_DBRevisionVersionListItem
+		{
+
+			private string releaseType;
+
+			private string revisionVersionCode;
+
+			private string revisionVersionName;
+
+			private string releaseNote;
+
+			public string ReleaseType
+			{
+				get
+				{
+					return releaseType;
+				}
+				set	
+				{
+					releaseType = value;
+				}
+			}
+
+			public string RevisionVersionCode
+			{
+				get
+				{
+					return revisionVersionCode;
+				}
+				set	
+				{
+					revisionVersionCode = value;
+				}
+			}
+
+			public string RevisionVersionName
+			{
+				get
+				{
+					return revisionVersionName;
+				}
+				set	
+				{
+					revisionVersionName = value;
+				}
+			}
+
+			public string ReleaseNote
+			{
+				get
+				{
+					return releaseNote;
+				}
+				set	
+				{
+					releaseNote = value;
+				}
+			}
+		}
+
+		public class DescribeDBClusterVersion_ProxyRevisionVersionListItem
 		{
 
 			private string releaseType;

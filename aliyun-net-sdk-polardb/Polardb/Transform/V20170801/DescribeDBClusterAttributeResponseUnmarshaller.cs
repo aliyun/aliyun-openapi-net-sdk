@@ -92,6 +92,13 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeDBClusterAttributeResponse.AiFreeMode = _ctx.StringValue("DescribeDBClusterAttribute.AiFreeMode");
 			describeDBClusterAttributeResponse.AiCreatingTime = _ctx.StringValue("DescribeDBClusterAttribute.AiCreatingTime");
 			describeDBClusterAttributeResponse.SupportInstantSwitchWithImci = _ctx.StringValue("DescribeDBClusterAttribute.SupportInstantSwitchWithImci");
+			describeDBClusterAttributeResponse.Orca = _ctx.StringValue("DescribeDBClusterAttribute.Orca");
+			describeDBClusterAttributeResponse.SourceDBCluster = _ctx.StringValue("DescribeDBClusterAttribute.SourceDBCluster");
+			describeDBClusterAttributeResponse.RestoreType = _ctx.StringValue("DescribeDBClusterAttribute.RestoreType");
+			describeDBClusterAttributeResponse.RestoreDataPoint = _ctx.StringValue("DescribeDBClusterAttribute.RestoreDataPoint");
+			describeDBClusterAttributeResponse.SourceRegionId = _ctx.StringValue("DescribeDBClusterAttribute.SourceRegionId");
+			describeDBClusterAttributeResponse.ImciAutoIndex = _ctx.StringValue("DescribeDBClusterAttribute.ImciAutoIndex");
+			describeDBClusterAttributeResponse.BurstingEnabled = _ctx.StringValue("DescribeDBClusterAttribute.BurstingEnabled");
 
 			DescribeDBClusterAttributeResponse.DescribeDBClusterAttribute_RelatedAPInstance relatedAPInstance = new DescribeDBClusterAttributeResponse.DescribeDBClusterAttribute_RelatedAPInstance();
 			relatedAPInstance.Name = _ctx.StringValue("DescribeDBClusterAttribute.RelatedAPInstance.Name");
@@ -126,6 +133,11 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				dBNode.SubCluster = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].SubCluster");
 				dBNode.Tair = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].Tair");
 				dBNode.RemoteMemorySize = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].RemoteMemorySize");
+				dBNode.Orca = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].Orca");
+				dBNode.MirrorInsName = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].MirrorInsName");
+				dBNode.MultiMasterLocalStandby = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].MultiMasterLocalStandby");
+				dBNode.MultiMasterPrimaryNode = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].MultiMasterPrimaryNode");
+				dBNode.DBNodeDescription = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].DBNodeDescription");
 
 				describeDBClusterAttributeResponse_dBNodes.Add(dBNode);
 			}

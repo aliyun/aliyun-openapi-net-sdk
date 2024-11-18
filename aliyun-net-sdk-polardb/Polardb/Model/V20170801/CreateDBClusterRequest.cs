@@ -124,6 +124,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string usedTime;
 
+		private string burstingEnabled;
+
 		private int? dBNodeNum;
 
 		private long? storageUpperBound;
@@ -697,6 +699,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				usedTime = value;
 				DictionaryUtil.Add(QueryParameters, "UsedTime", value);
+			}
+		}
+
+		public string BurstingEnabled
+		{
+			get
+			{
+				return burstingEnabled;
+			}
+			set	
+			{
+				burstingEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "BurstingEnabled", value);
 			}
 		}
 

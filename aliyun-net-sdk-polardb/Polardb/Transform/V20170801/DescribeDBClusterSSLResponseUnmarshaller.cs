@@ -34,6 +34,12 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeDBClusterSSLResponse.RequestId = _ctx.StringValue("DescribeDBClusterSSL.RequestId");
 			describeDBClusterSSLResponse.SSLAutoRotate = _ctx.StringValue("DescribeDBClusterSSL.SSLAutoRotate");
 
+			List<string> describeDBClusterSSLResponse_supportAdvancedSSLFeatureEndpointTypes = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeDBClusterSSL.SupportAdvancedSSLFeatureEndpointTypes.Length"); i++) {
+				describeDBClusterSSLResponse_supportAdvancedSSLFeatureEndpointTypes.Add(_ctx.StringValue("DescribeDBClusterSSL.SupportAdvancedSSLFeatureEndpointTypes["+ i +"]"));
+			}
+			describeDBClusterSSLResponse.SupportAdvancedSSLFeatureEndpointTypes = describeDBClusterSSLResponse_supportAdvancedSSLFeatureEndpointTypes;
+
 			List<DescribeDBClusterSSLResponse.DescribeDBClusterSSL_Item> describeDBClusterSSLResponse_items = new List<DescribeDBClusterSSLResponse.DescribeDBClusterSSL_Item>();
 			for (int i = 0; i < _ctx.Length("DescribeDBClusterSSL.Items.Length"); i++) {
 				DescribeDBClusterSSLResponse.DescribeDBClusterSSL_Item item = new DescribeDBClusterSSLResponse.DescribeDBClusterSSL_Item();
@@ -41,6 +47,18 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				item.SSLEnabled = _ctx.StringValue("DescribeDBClusterSSL.Items["+ i +"].SSLEnabled");
 				item.SSLConnectionString = _ctx.StringValue("DescribeDBClusterSSL.Items["+ i +"].SSLConnectionString");
 				item.DBEndpointId = _ctx.StringValue("DescribeDBClusterSSL.Items["+ i +"].DBEndpointId");
+				item.CAType = _ctx.StringValue("DescribeDBClusterSSL.Items["+ i +"].CAType");
+				item.ServerCert = _ctx.StringValue("DescribeDBClusterSSL.Items["+ i +"].ServerCert");
+				item.ServerKey = _ctx.StringValue("DescribeDBClusterSSL.Items["+ i +"].ServerKey");
+				item.ClientCACert = _ctx.StringValue("DescribeDBClusterSSL.Items["+ i +"].ClientCACert");
+				item.ClientCrl = _ctx.StringValue("DescribeDBClusterSSL.Items["+ i +"].ClientCrl");
+				item.ACL = _ctx.StringValue("DescribeDBClusterSSL.Items["+ i +"].ACL");
+
+				List<string> item_allowedACLs = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeDBClusterSSL.Items["+ i +"].AllowedACLs.Length"); j++) {
+					item_allowedACLs.Add(_ctx.StringValue("DescribeDBClusterSSL.Items["+ i +"].AllowedACLs["+ j +"]"));
+				}
+				item.AllowedACLs = item_allowedACLs;
 
 				describeDBClusterSSLResponse_items.Add(item);
 			}

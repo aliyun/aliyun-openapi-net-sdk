@@ -52,6 +52,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? ownerId;
 
+		private string enableAutomaticRotation;
+
 		private string roleArn;
 
 		private string encryptNewTables;
@@ -133,6 +135,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string EnableAutomaticRotation
+		{
+			get
+			{
+				return enableAutomaticRotation;
+			}
+			set	
+			{
+				enableAutomaticRotation = value;
+				DictionaryUtil.Add(QueryParameters, "EnableAutomaticRotation", value);
 			}
 		}
 

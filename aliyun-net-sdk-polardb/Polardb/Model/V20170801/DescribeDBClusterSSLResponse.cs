@@ -31,6 +31,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private List<DescribeDBClusterSSL_Item> items;
 
+		private List<string> supportAdvancedSSLFeatureEndpointTypes;
+
 		public string RequestId
 		{
 			get
@@ -67,6 +69,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public List<string> SupportAdvancedSSLFeatureEndpointTypes
+		{
+			get
+			{
+				return supportAdvancedSSLFeatureEndpointTypes;
+			}
+			set	
+			{
+				supportAdvancedSSLFeatureEndpointTypes = value;
+			}
+		}
+
 		public class DescribeDBClusterSSL_Item
 		{
 
@@ -77,6 +91,20 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			private string sSLConnectionString;
 
 			private string dBEndpointId;
+
+			private string cAType;
+
+			private string serverCert;
+
+			private string serverKey;
+
+			private string clientCACert;
+
+			private string clientCrl;
+
+			private string aCL;
+
+			private List<string> allowedACLs;
 
 			public string SSLExpireTime
 			{
@@ -123,6 +151,90 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					dBEndpointId = value;
+				}
+			}
+
+			public string CAType
+			{
+				get
+				{
+					return cAType;
+				}
+				set	
+				{
+					cAType = value;
+				}
+			}
+
+			public string ServerCert
+			{
+				get
+				{
+					return serverCert;
+				}
+				set	
+				{
+					serverCert = value;
+				}
+			}
+
+			public string ServerKey
+			{
+				get
+				{
+					return serverKey;
+				}
+				set	
+				{
+					serverKey = value;
+				}
+			}
+
+			public string ClientCACert
+			{
+				get
+				{
+					return clientCACert;
+				}
+				set	
+				{
+					clientCACert = value;
+				}
+			}
+
+			public string ClientCrl
+			{
+				get
+				{
+					return clientCrl;
+				}
+				set	
+				{
+					clientCrl = value;
+				}
+			}
+
+			public string ACL
+			{
+				get
+				{
+					return aCL;
+				}
+				set	
+				{
+					aCL = value;
+				}
+			}
+
+			public List<string> AllowedACLs
+			{
+				get
+				{
+					return allowedACLs;
+				}
+				set	
+				{
+					allowedACLs = value;
 				}
 			}
 		}

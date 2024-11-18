@@ -54,6 +54,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string ownerAccount;
 
+		private bool? enableGlobalDomainName;
+
 		private long? ownerId;
 
 		public long? ResourceOwnerId
@@ -144,6 +146,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public bool? EnableGlobalDomainName
+		{
+			get
+			{
+				return enableGlobalDomainName;
+			}
+			set	
+			{
+				enableGlobalDomainName = value;
+				DictionaryUtil.Add(QueryParameters, "EnableGlobalDomainName", value.ToString());
 			}
 		}
 

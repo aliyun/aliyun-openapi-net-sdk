@@ -147,6 +147,20 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string supportInstantSwitchWithImci;
 
+		private string orca;
+
+		private string sourceDBCluster;
+
+		private string restoreType;
+
+		private string restoreDataPoint;
+
+		private string sourceRegionId;
+
+		private string imciAutoIndex;
+
+		private string burstingEnabled;
+
 		private List<DescribeDBClusterAttribute_DBNode> dBNodes;
 
 		private List<DescribeDBClusterAttribute_Tag> tags;
@@ -885,6 +899,90 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string Orca
+		{
+			get
+			{
+				return orca;
+			}
+			set	
+			{
+				orca = value;
+			}
+		}
+
+		public string SourceDBCluster
+		{
+			get
+			{
+				return sourceDBCluster;
+			}
+			set	
+			{
+				sourceDBCluster = value;
+			}
+		}
+
+		public string RestoreType
+		{
+			get
+			{
+				return restoreType;
+			}
+			set	
+			{
+				restoreType = value;
+			}
+		}
+
+		public string RestoreDataPoint
+		{
+			get
+			{
+				return restoreDataPoint;
+			}
+			set	
+			{
+				restoreDataPoint = value;
+			}
+		}
+
+		public string SourceRegionId
+		{
+			get
+			{
+				return sourceRegionId;
+			}
+			set	
+			{
+				sourceRegionId = value;
+			}
+		}
+
+		public string ImciAutoIndex
+		{
+			get
+			{
+				return imciAutoIndex;
+			}
+			set	
+			{
+				imciAutoIndex = value;
+			}
+		}
+
+		public string BurstingEnabled
+		{
+			get
+			{
+				return burstingEnabled;
+			}
+			set	
+			{
+				burstingEnabled = value;
+			}
+		}
+
 		public List<DescribeDBClusterAttribute_DBNode> DBNodes
 		{
 			get
@@ -965,6 +1063,16 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			private string tair;
 
 			private string remoteMemorySize;
+
+			private string orca;
+
+			private string mirrorInsName;
+
+			private string multiMasterLocalStandby;
+
+			private string multiMasterPrimaryNode;
+
+			private string dBNodeDescription;
 
 			public string CreationTime
 			{
@@ -1215,6 +1323,66 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					remoteMemorySize = value;
+				}
+			}
+
+			public string Orca
+			{
+				get
+				{
+					return orca;
+				}
+				set	
+				{
+					orca = value;
+				}
+			}
+
+			public string MirrorInsName
+			{
+				get
+				{
+					return mirrorInsName;
+				}
+				set	
+				{
+					mirrorInsName = value;
+				}
+			}
+
+			public string MultiMasterLocalStandby
+			{
+				get
+				{
+					return multiMasterLocalStandby;
+				}
+				set	
+				{
+					multiMasterLocalStandby = value;
+				}
+			}
+
+			public string MultiMasterPrimaryNode
+			{
+				get
+				{
+					return multiMasterPrimaryNode;
+				}
+				set	
+				{
+					multiMasterPrimaryNode = value;
+				}
+			}
+
+			public string DBNodeDescription
+			{
+				get
+				{
+					return dBNodeDescription;
+				}
+				set	
+				{
+					dBNodeDescription = value;
 				}
 			}
 		}

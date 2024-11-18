@@ -43,6 +43,11 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeDBClusterServerlessConfResponse.ScaleApRoNumMax = _ctx.StringValue("DescribeDBClusterServerlessConf.ScaleApRoNumMax");
 			describeDBClusterServerlessConfResponse.Switchs = _ctx.StringValue("DescribeDBClusterServerlessConf.Switchs");
 			describeDBClusterServerlessConfResponse.DBMaxscaleId = _ctx.StringValue("DescribeDBClusterServerlessConf.DBMaxscaleId");
+			describeDBClusterServerlessConfResponse.ServerlessRuleMode = _ctx.StringValue("DescribeDBClusterServerlessConf.ServerlessRuleMode");
+			describeDBClusterServerlessConfResponse.ServerlessRuleCpuEnlargeThreshold = _ctx.StringValue("DescribeDBClusterServerlessConf.ServerlessRuleCpuEnlargeThreshold");
+			describeDBClusterServerlessConfResponse.ServerlessRuleCpuShrinkThreshold = _ctx.StringValue("DescribeDBClusterServerlessConf.ServerlessRuleCpuShrinkThreshold");
+			describeDBClusterServerlessConfResponse.TraditionalScaleMaxThreshold = _ctx.StringValue("DescribeDBClusterServerlessConf.TraditionalScaleMaxThreshold");
+			describeDBClusterServerlessConfResponse.AgileScaleMax = _ctx.StringValue("DescribeDBClusterServerlessConf.AgileScaleMax");
         
 			return describeDBClusterServerlessConfResponse;
         }

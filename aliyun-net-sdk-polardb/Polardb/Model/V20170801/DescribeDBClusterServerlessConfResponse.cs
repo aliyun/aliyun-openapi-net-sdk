@@ -49,6 +49,16 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string dBMaxscaleId;
 
+		private string serverlessRuleMode;
+
+		private string serverlessRuleCpuEnlargeThreshold;
+
+		private string serverlessRuleCpuShrinkThreshold;
+
+		private string traditionalScaleMaxThreshold;
+
+		private string agileScaleMax;
+
 		public string RequestId
 		{
 			get
@@ -190,6 +200,66 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				dBMaxscaleId = value;
+			}
+		}
+
+		public string ServerlessRuleMode
+		{
+			get
+			{
+				return serverlessRuleMode;
+			}
+			set	
+			{
+				serverlessRuleMode = value;
+			}
+		}
+
+		public string ServerlessRuleCpuEnlargeThreshold
+		{
+			get
+			{
+				return serverlessRuleCpuEnlargeThreshold;
+			}
+			set	
+			{
+				serverlessRuleCpuEnlargeThreshold = value;
+			}
+		}
+
+		public string ServerlessRuleCpuShrinkThreshold
+		{
+			get
+			{
+				return serverlessRuleCpuShrinkThreshold;
+			}
+			set	
+			{
+				serverlessRuleCpuShrinkThreshold = value;
+			}
+		}
+
+		public string TraditionalScaleMaxThreshold
+		{
+			get
+			{
+				return traditionalScaleMaxThreshold;
+			}
+			set	
+			{
+				traditionalScaleMaxThreshold = value;
+			}
+		}
+
+		public string AgileScaleMax
+		{
+			get
+			{
+				return agileScaleMax;
+			}
+			set	
+			{
+				agileScaleMax = value;
 			}
 		}
 	}

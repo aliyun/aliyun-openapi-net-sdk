@@ -25,39 +25,31 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribeDBClusterTDEResponse : AcsResponse
 	{
 
-		private string tDEStatus;
-
-		private string requestId;
+		private string automaticRotation;
 
 		private string dBClusterId;
 
+		private string encryptNewTables;
+
 		private string encryptionKey;
 
-		private string encryptNewTables;
+		private string requestId;
+
+		private string rotationInterval;
 
 		private string tDERegion;
 
-		public string TDEStatus
-		{
-			get
-			{
-				return tDEStatus;
-			}
-			set	
-			{
-				tDEStatus = value;
-			}
-		}
+		private string tDEStatus;
 
-		public string RequestId
+		public string AutomaticRotation
 		{
 			get
 			{
-				return requestId;
+				return automaticRotation;
 			}
 			set	
 			{
-				requestId = value;
+				automaticRotation = value;
 			}
 		}
 
@@ -73,18 +65,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string EncryptionKey
-		{
-			get
-			{
-				return encryptionKey;
-			}
-			set	
-			{
-				encryptionKey = value;
-			}
-		}
-
 		public string EncryptNewTables
 		{
 			get
@@ -97,6 +77,42 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string EncryptionKey
+		{
+			get
+			{
+				return encryptionKey;
+			}
+			set	
+			{
+				encryptionKey = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string RotationInterval
+		{
+			get
+			{
+				return rotationInterval;
+			}
+			set	
+			{
+				rotationInterval = value;
+			}
+		}
+
 		public string TDERegion
 		{
 			get
@@ -106,6 +122,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				tDERegion = value;
+			}
+		}
+
+		public string TDEStatus
+		{
+			get
+			{
+				return tDEStatus;
+			}
+			set	
+			{
+				tDEStatus = value;
 			}
 		}
 	}

@@ -25,29 +25,53 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribeSlowLogRecordsResponse : AcsResponse
 	{
 
-		private int? totalRecordCount;
+		private string dBClusterId;
+
+		private string engine;
+
+		private int? pageNumber;
 
 		private int? pageRecordCount;
 
 		private string requestId;
 
-		private int? pageNumber;
-
-		private string dBClusterId;
-
-		private string engine;
+		private int? totalRecordCount;
 
 		private List<DescribeSlowLogRecords_SQLSlowRecord> items;
 
-		public int? TotalRecordCount
+		public string DBClusterId
 		{
 			get
 			{
-				return totalRecordCount;
+				return dBClusterId;
 			}
 			set	
 			{
-				totalRecordCount = value;
+				dBClusterId = value;
+			}
+		}
+
+		public string Engine
+		{
+			get
+			{
+				return engine;
+			}
+			set	
+			{
+				engine = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
 			}
 		}
 
@@ -75,39 +99,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public int? PageNumber
+		public int? TotalRecordCount
 		{
 			get
 			{
-				return pageNumber;
+				return totalRecordCount;
 			}
 			set	
 			{
-				pageNumber = value;
-			}
-		}
-
-		public string DBClusterId
-		{
-			get
-			{
-				return dBClusterId;
-			}
-			set	
-			{
-				dBClusterId = value;
-			}
-		}
-
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
+				totalRecordCount = value;
 			}
 		}
 
@@ -126,25 +126,51 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		public class DescribeSlowLogRecords_SQLSlowRecord
 		{
 
+			private string dBName;
+
+			private string dBNodeId;
+
 			private string executionStartTime;
 
 			private string hostAddress;
 
-			private long? queryTimes;
-
-			private string sQLText;
-
-			private long? returnRowCounts;
+			private long? lockTimes;
 
 			private long? parseRowCounts;
 
-			private string dBName;
-
-			private long? lockTimes;
-
-			private string dBNodeId;
-
 			private long? queryTimeMS;
+
+			private long? queryTimes;
+
+			private long? returnRowCounts;
+
+			private string sQLHash;
+
+			private string sQLText;
+
+			public string DBName
+			{
+				get
+				{
+					return dBName;
+				}
+				set	
+				{
+					dBName = value;
+				}
+			}
+
+			public string DBNodeId
+			{
+				get
+				{
+					return dBNodeId;
+				}
+				set	
+				{
+					dBNodeId = value;
+				}
+			}
 
 			public string ExecutionStartTime
 			{
@@ -170,39 +196,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public long? QueryTimes
+			public long? LockTimes
 			{
 				get
 				{
-					return queryTimes;
+					return lockTimes;
 				}
 				set	
 				{
-					queryTimes = value;
-				}
-			}
-
-			public string SQLText
-			{
-				get
-				{
-					return sQLText;
-				}
-				set	
-				{
-					sQLText = value;
-				}
-			}
-
-			public long? ReturnRowCounts
-			{
-				get
-				{
-					return returnRowCounts;
-				}
-				set	
-				{
-					returnRowCounts = value;
+					lockTimes = value;
 				}
 			}
 
@@ -218,42 +220,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string DBName
-			{
-				get
-				{
-					return dBName;
-				}
-				set	
-				{
-					dBName = value;
-				}
-			}
-
-			public long? LockTimes
-			{
-				get
-				{
-					return lockTimes;
-				}
-				set	
-				{
-					lockTimes = value;
-				}
-			}
-
-			public string DBNodeId
-			{
-				get
-				{
-					return dBNodeId;
-				}
-				set	
-				{
-					dBNodeId = value;
-				}
-			}
-
 			public long? QueryTimeMS
 			{
 				get
@@ -263,6 +229,54 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					queryTimeMS = value;
+				}
+			}
+
+			public long? QueryTimes
+			{
+				get
+				{
+					return queryTimes;
+				}
+				set	
+				{
+					queryTimes = value;
+				}
+			}
+
+			public long? ReturnRowCounts
+			{
+				get
+				{
+					return returnRowCounts;
+				}
+				set	
+				{
+					returnRowCounts = value;
+				}
+			}
+
+			public string SQLHash
+			{
+				get
+				{
+					return sQLHash;
+				}
+				set	
+				{
+					sQLHash = value;
+				}
+			}
+
+			public string SQLText
+			{
+				get
+				{
+					return sQLText;
+				}
+				set	
+				{
+					sQLText = value;
 				}
 			}
 		}

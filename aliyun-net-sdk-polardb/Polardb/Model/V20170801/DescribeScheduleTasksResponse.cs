@@ -25,27 +25,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribeScheduleTasksResponse : AcsResponse
 	{
 
-		private string message;
-
 		private string code;
 
-		private bool? success;
+		private string message;
 
 		private string requestId;
 
-		private DescribeScheduleTasks_Data data;
+		private bool? success;
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
+		private DescribeScheduleTasks_Data data;
 
 		public string Code
 		{
@@ -59,15 +47,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public bool? Success
+		public string Message
 		{
 			get
 			{
-				return success;
+				return message;
 			}
 			set	
 			{
-				success = value;
+				message = value;
 			}
 		}
 
@@ -80,6 +68,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -98,25 +98,13 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		public class DescribeScheduleTasks_Data
 		{
 
-			private int? totalRecordCount;
-
 			private int? pageNumber;
 
 			private int? pageSize;
 
-			private List<DescribeScheduleTasks_TimerInfosItem> timerInfos;
+			private int? totalRecordCount;
 
-			public int? TotalRecordCount
-			{
-				get
-				{
-					return totalRecordCount;
-				}
-				set	
-				{
-					totalRecordCount = value;
-				}
-			}
+			private List<DescribeScheduleTasks_TimerInfosItem> timerInfos;
 
 			public int? PageNumber
 			{
@@ -142,6 +130,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
+			public int? TotalRecordCount
+			{
+				get
+				{
+					return totalRecordCount;
+				}
+				set	
+				{
+					totalRecordCount = value;
+				}
+			}
+
 			public List<DescribeScheduleTasks_TimerInfosItem> TimerInfos
 			{
 				get
@@ -157,41 +157,33 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			public class DescribeScheduleTasks_TimerInfosItem
 			{
 
-				private string status;
-
 				private string action;
 
-				private string plannedEndTime;
-
-				private string plannedTime;
+				private string crontabJobId;
 
 				private string dBClusterId;
 
-				private string region;
-
-				private string plannedStartTime;
-
-				private string taskId;
-
-				private string orderId;
+				private string dbClusterDescription;
 
 				private string dbClusterStatus;
 
-				private string dbClusterDescription;
+				private string orderId;
+
+				private string plannedEndTime;
+
+				private string plannedFlashingOffTime;
+
+				private string plannedStartTime;
+
+				private string plannedTime;
+
+				private string region;
+
+				private string status;
 
 				private bool? taskCancel;
 
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
-				}
+				private string taskId;
 
 				public string Action
 				{
@@ -205,27 +197,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					}
 				}
 
-				public string PlannedEndTime
+				public string CrontabJobId
 				{
 					get
 					{
-						return plannedEndTime;
+						return crontabJobId;
 					}
 					set	
 					{
-						plannedEndTime = value;
-					}
-				}
-
-				public string PlannedTime
-				{
-					get
-					{
-						return plannedTime;
-					}
-					set	
-					{
-						plannedTime = value;
+						crontabJobId = value;
 					}
 				}
 
@@ -241,51 +221,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					}
 				}
 
-				public string Region
+				public string DbClusterDescription
 				{
 					get
 					{
-						return region;
+						return dbClusterDescription;
 					}
 					set	
 					{
-						region = value;
-					}
-				}
-
-				public string PlannedStartTime
-				{
-					get
-					{
-						return plannedStartTime;
-					}
-					set	
-					{
-						plannedStartTime = value;
-					}
-				}
-
-				public string TaskId
-				{
-					get
-					{
-						return taskId;
-					}
-					set	
-					{
-						taskId = value;
-					}
-				}
-
-				public string OrderId
-				{
-					get
-					{
-						return orderId;
-					}
-					set	
-					{
-						orderId = value;
+						dbClusterDescription = value;
 					}
 				}
 
@@ -301,15 +245,87 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					}
 				}
 
-				public string DbClusterDescription
+				public string OrderId
 				{
 					get
 					{
-						return dbClusterDescription;
+						return orderId;
 					}
 					set	
 					{
-						dbClusterDescription = value;
+						orderId = value;
+					}
+				}
+
+				public string PlannedEndTime
+				{
+					get
+					{
+						return plannedEndTime;
+					}
+					set	
+					{
+						plannedEndTime = value;
+					}
+				}
+
+				public string PlannedFlashingOffTime
+				{
+					get
+					{
+						return plannedFlashingOffTime;
+					}
+					set	
+					{
+						plannedFlashingOffTime = value;
+					}
+				}
+
+				public string PlannedStartTime
+				{
+					get
+					{
+						return plannedStartTime;
+					}
+					set	
+					{
+						plannedStartTime = value;
+					}
+				}
+
+				public string PlannedTime
+				{
+					get
+					{
+						return plannedTime;
+					}
+					set	
+					{
+						plannedTime = value;
+					}
+				}
+
+				public string Region
+				{
+					get
+					{
+						return region;
+					}
+					set	
+					{
+						region = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
 					}
 				}
 
@@ -322,6 +338,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					set	
 					{
 						taskCancel = value;
+					}
+				}
+
+				public string TaskId
+				{
+					get
+					{
+						return taskId;
+					}
+					set	
+					{
+						taskId = value;
 					}
 				}
 			}

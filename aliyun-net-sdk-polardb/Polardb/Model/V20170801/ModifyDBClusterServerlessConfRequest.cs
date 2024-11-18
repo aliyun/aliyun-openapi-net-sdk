@@ -44,23 +44,33 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
+		private string serverlessRuleMode;
+
 		private string scaleApRoNumMax;
 
 		private string scaleMax;
 
 		private string plannedEndTime;
 
+		private string serverlessRuleCpuEnlargeThreshold;
+
 		private string secondsUntilAutoPause;
 
 		private string scaleApRoNumMin;
 
+		private string taskId;
+
 		private string scaleMin;
+
+		private string crontabJobId;
 
 		private string resourceOwnerAccount;
 
 		private string dBClusterId;
 
 		private string ownerAccount;
+
+		private string serverlessRuleCpuShrinkThreshold;
 
 		private long? ownerId;
 
@@ -95,6 +105,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ServerlessRuleMode
+		{
+			get
+			{
+				return serverlessRuleMode;
+			}
+			set	
+			{
+				serverlessRuleMode = value;
+				DictionaryUtil.Add(QueryParameters, "ServerlessRuleMode", value);
 			}
 		}
 
@@ -137,6 +160,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string ServerlessRuleCpuEnlargeThreshold
+		{
+			get
+			{
+				return serverlessRuleCpuEnlargeThreshold;
+			}
+			set	
+			{
+				serverlessRuleCpuEnlargeThreshold = value;
+				DictionaryUtil.Add(QueryParameters, "ServerlessRuleCpuEnlargeThreshold", value);
+			}
+		}
+
 		public string SecondsUntilAutoPause
 		{
 			get
@@ -163,6 +199,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
+				DictionaryUtil.Add(QueryParameters, "TaskId", value);
+			}
+		}
+
 		public string ScaleMin
 		{
 			get
@@ -173,6 +222,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				scaleMin = value;
 				DictionaryUtil.Add(QueryParameters, "ScaleMin", value);
+			}
+		}
+
+		public string CrontabJobId
+		{
+			get
+			{
+				return crontabJobId;
+			}
+			set	
+			{
+				crontabJobId = value;
+				DictionaryUtil.Add(QueryParameters, "CrontabJobId", value);
 			}
 		}
 
@@ -212,6 +274,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string ServerlessRuleCpuShrinkThreshold
+		{
+			get
+			{
+				return serverlessRuleCpuShrinkThreshold;
+			}
+			set	
+			{
+				serverlessRuleCpuShrinkThreshold = value;
+				DictionaryUtil.Add(QueryParameters, "ServerlessRuleCpuShrinkThreshold", value);
 			}
 		}
 

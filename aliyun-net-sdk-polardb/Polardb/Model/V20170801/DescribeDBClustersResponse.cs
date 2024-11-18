@@ -162,6 +162,14 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string subCategory;
 
+			private string deployUnit;
+
+			private string storageType;
+
+			private string hotStandbyCluster;
+
+			private string engineMigrationStatus;
+
 			private List<DescribeDBClusters_Tag> tags;
 
 			private List<DescribeDBClusters_DBNode> dBNodes;
@@ -547,6 +555,54 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					subCategory = value;
+				}
+			}
+
+			public string DeployUnit
+			{
+				get
+				{
+					return deployUnit;
+				}
+				set	
+				{
+					deployUnit = value;
+				}
+			}
+
+			public string StorageType
+			{
+				get
+				{
+					return storageType;
+				}
+				set	
+				{
+					storageType = value;
+				}
+			}
+
+			public string HotStandbyCluster
+			{
+				get
+				{
+					return hotStandbyCluster;
+				}
+				set	
+				{
+					hotStandbyCluster = value;
+				}
+			}
+
+			public string EngineMigrationStatus
+			{
+				get
+				{
+					return engineMigrationStatus;
+				}
+				set	
+				{
+					engineMigrationStatus = value;
 				}
 			}
 

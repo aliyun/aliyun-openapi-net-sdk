@@ -56,6 +56,18 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				describeDBClusterVersionResponse_dBRevisionVersionList.Add(dBRevisionVersionListItem);
 			}
 			describeDBClusterVersionResponse.DBRevisionVersionList = describeDBClusterVersionResponse_dBRevisionVersionList;
+
+			List<DescribeDBClusterVersionResponse.DescribeDBClusterVersion_ProxyRevisionVersionListItem> describeDBClusterVersionResponse_proxyRevisionVersionList = new List<DescribeDBClusterVersionResponse.DescribeDBClusterVersion_ProxyRevisionVersionListItem>();
+			for (int i = 0; i < _ctx.Length("DescribeDBClusterVersion.ProxyRevisionVersionList.Length"); i++) {
+				DescribeDBClusterVersionResponse.DescribeDBClusterVersion_ProxyRevisionVersionListItem proxyRevisionVersionListItem = new DescribeDBClusterVersionResponse.DescribeDBClusterVersion_ProxyRevisionVersionListItem();
+				proxyRevisionVersionListItem.ReleaseType = _ctx.StringValue("DescribeDBClusterVersion.ProxyRevisionVersionList["+ i +"].ReleaseType");
+				proxyRevisionVersionListItem.RevisionVersionCode = _ctx.StringValue("DescribeDBClusterVersion.ProxyRevisionVersionList["+ i +"].RevisionVersionCode");
+				proxyRevisionVersionListItem.RevisionVersionName = _ctx.StringValue("DescribeDBClusterVersion.ProxyRevisionVersionList["+ i +"].RevisionVersionName");
+				proxyRevisionVersionListItem.ReleaseNote = _ctx.StringValue("DescribeDBClusterVersion.ProxyRevisionVersionList["+ i +"].ReleaseNote");
+
+				describeDBClusterVersionResponse_proxyRevisionVersionList.Add(proxyRevisionVersionListItem);
+			}
+			describeDBClusterVersionResponse.ProxyRevisionVersionList = describeDBClusterVersionResponse_proxyRevisionVersionList;
         
 			return describeDBClusterVersionResponse;
         }

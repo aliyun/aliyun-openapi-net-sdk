@@ -46,9 +46,13 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string clientToken;
 
+		private string polarSccWaitTimeout;
+
 		private string readWriteMode;
 
 		private string endpointType;
+
+		private string polarSccTimeoutAction;
 
 		private string resourceOwnerAccount;
 
@@ -63,6 +67,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private long? ownerId;
 
 		private string nodes;
+
+		private string sccMode;
 
 		public string AutoAddNewNodes
 		{
@@ -103,6 +109,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string PolarSccWaitTimeout
+		{
+			get
+			{
+				return polarSccWaitTimeout;
+			}
+			set	
+			{
+				polarSccWaitTimeout = value;
+				DictionaryUtil.Add(QueryParameters, "PolarSccWaitTimeout", value);
+			}
+		}
+
 		public string ReadWriteMode
 		{
 			get
@@ -126,6 +145,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				endpointType = value;
 				DictionaryUtil.Add(QueryParameters, "EndpointType", value);
+			}
+		}
+
+		public string PolarSccTimeoutAction
+		{
+			get
+			{
+				return polarSccTimeoutAction;
+			}
+			set	
+			{
+				polarSccTimeoutAction = value;
+				DictionaryUtil.Add(QueryParameters, "PolarSccTimeoutAction", value);
 			}
 		}
 
@@ -217,6 +249,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				nodes = value;
 				DictionaryUtil.Add(QueryParameters, "Nodes", value);
+			}
+		}
+
+		public string SccMode
+		{
+			get
+			{
+				return sccMode;
+			}
+			set	
+			{
+				sccMode = value;
+				DictionaryUtil.Add(QueryParameters, "SccMode", value);
 			}
 		}
 

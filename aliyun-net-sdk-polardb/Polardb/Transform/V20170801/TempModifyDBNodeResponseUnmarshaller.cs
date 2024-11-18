@@ -31,9 +31,9 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			TempModifyDBNodeResponse tempModifyDBNodeResponse = new TempModifyDBNodeResponse();
 
 			tempModifyDBNodeResponse.HttpResponse = _ctx.HttpResponse;
-			tempModifyDBNodeResponse.RequestId = _ctx.StringValue("TempModifyDBNode.RequestId");
 			tempModifyDBNodeResponse.DBClusterId = _ctx.StringValue("TempModifyDBNode.DBClusterId");
 			tempModifyDBNodeResponse.OrderId = _ctx.StringValue("TempModifyDBNode.OrderId");
+			tempModifyDBNodeResponse.RequestId = _ctx.StringValue("TempModifyDBNode.RequestId");
 
 			List<string> tempModifyDBNodeResponse_dBNodeIds = new List<string>();
 			for (int i = 0; i < _ctx.Length("TempModifyDBNode.DBNodeIds.Length"); i++) {

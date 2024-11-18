@@ -33,6 +33,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string pageNumber;
 
+		private string totalLevel2BackupSize;
+
 		private List<DescribeBackups_Backup> items;
 
 		public string TotalRecordCount
@@ -80,6 +82,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				pageNumber = value;
+			}
+		}
+
+		public string TotalLevel2BackupSize
+		{
+			get
+			{
+				return totalLevel2BackupSize;
+			}
+			set	
+			{
+				totalLevel2BackupSize = value;
 			}
 		}
 

@@ -40,6 +40,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			Method = MethodType.POST;
         }
 
+		private string dBNodeId;
+
 		private string dBEndpointId;
 
 		private string startTime;
@@ -53,6 +55,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private string endTime;
 
 		private string interval;
+
+		public string DBNodeId
+		{
+			get
+			{
+				return dBNodeId;
+			}
+			set	
+			{
+				dBNodeId = value;
+				DictionaryUtil.Add(QueryParameters, "DBNodeId", value);
+			}
+		}
 
 		public string DBEndpointId
 		{

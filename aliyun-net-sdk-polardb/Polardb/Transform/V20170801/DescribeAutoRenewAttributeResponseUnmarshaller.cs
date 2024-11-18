@@ -31,20 +31,20 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			DescribeAutoRenewAttributeResponse describeAutoRenewAttributeResponse = new DescribeAutoRenewAttributeResponse();
 
 			describeAutoRenewAttributeResponse.HttpResponse = _ctx.HttpResponse;
-			describeAutoRenewAttributeResponse.TotalRecordCount = _ctx.IntegerValue("DescribeAutoRenewAttribute.TotalRecordCount");
+			describeAutoRenewAttributeResponse.PageNumber = _ctx.IntegerValue("DescribeAutoRenewAttribute.PageNumber");
 			describeAutoRenewAttributeResponse.PageRecordCount = _ctx.IntegerValue("DescribeAutoRenewAttribute.PageRecordCount");
 			describeAutoRenewAttributeResponse.RequestId = _ctx.StringValue("DescribeAutoRenewAttribute.RequestId");
-			describeAutoRenewAttributeResponse.PageNumber = _ctx.IntegerValue("DescribeAutoRenewAttribute.PageNumber");
+			describeAutoRenewAttributeResponse.TotalRecordCount = _ctx.IntegerValue("DescribeAutoRenewAttribute.TotalRecordCount");
 
 			List<DescribeAutoRenewAttributeResponse.DescribeAutoRenewAttribute_AutoRenewAttribute> describeAutoRenewAttributeResponse_items = new List<DescribeAutoRenewAttributeResponse.DescribeAutoRenewAttribute_AutoRenewAttribute>();
 			for (int i = 0; i < _ctx.Length("DescribeAutoRenewAttribute.Items.Length"); i++) {
 				DescribeAutoRenewAttributeResponse.DescribeAutoRenewAttribute_AutoRenewAttribute autoRenewAttribute = new DescribeAutoRenewAttributeResponse.DescribeAutoRenewAttribute_AutoRenewAttribute();
-				autoRenewAttribute.DBClusterId = _ctx.StringValue("DescribeAutoRenewAttribute.Items["+ i +"].DBClusterId");
-				autoRenewAttribute.PeriodUnit = _ctx.StringValue("DescribeAutoRenewAttribute.Items["+ i +"].PeriodUnit");
-				autoRenewAttribute.Duration = _ctx.IntegerValue("DescribeAutoRenewAttribute.Items["+ i +"].Duration");
-				autoRenewAttribute.RenewalStatus = _ctx.StringValue("DescribeAutoRenewAttribute.Items["+ i +"].RenewalStatus");
 				autoRenewAttribute.AutoRenewEnabled = _ctx.BooleanValue("DescribeAutoRenewAttribute.Items["+ i +"].AutoRenewEnabled");
+				autoRenewAttribute.DBClusterId = _ctx.StringValue("DescribeAutoRenewAttribute.Items["+ i +"].DBClusterId");
+				autoRenewAttribute.Duration = _ctx.IntegerValue("DescribeAutoRenewAttribute.Items["+ i +"].Duration");
+				autoRenewAttribute.PeriodUnit = _ctx.StringValue("DescribeAutoRenewAttribute.Items["+ i +"].PeriodUnit");
 				autoRenewAttribute.RegionId = _ctx.StringValue("DescribeAutoRenewAttribute.Items["+ i +"].RegionId");
+				autoRenewAttribute.RenewalStatus = _ctx.StringValue("DescribeAutoRenewAttribute.Items["+ i +"].RenewalStatus");
 
 				describeAutoRenewAttributeResponse_items.Add(autoRenewAttribute);
 			}

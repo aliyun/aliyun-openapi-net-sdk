@@ -60,6 +60,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string targetDBRevisionVersionCode;
 
+		private string targetProxyRevisionVersionCode;
+
 		private string upgradePolicy;
 
 		private bool? fromTimeService;
@@ -191,6 +193,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				targetDBRevisionVersionCode = value;
 				DictionaryUtil.Add(QueryParameters, "TargetDBRevisionVersionCode", value);
+			}
+		}
+
+		public string TargetProxyRevisionVersionCode
+		{
+			get
+			{
+				return targetProxyRevisionVersionCode;
+			}
+			set	
+			{
+				targetProxyRevisionVersionCode = value;
+				DictionaryUtil.Add(QueryParameters, "TargetProxyRevisionVersionCode", value);
 			}
 		}
 

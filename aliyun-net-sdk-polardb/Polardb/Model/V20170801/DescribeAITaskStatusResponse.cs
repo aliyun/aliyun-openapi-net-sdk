@@ -25,13 +25,27 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribeAITaskStatusResponse : AcsResponse
 	{
 
+		private string dBClusterId;
+
 		private string requestId;
 
 		private string status;
 
-		private string dBClusterId;
-
 		private string statusName;
+
+		private string accountName;
+
+		public string DBClusterId
+		{
+			get
+			{
+				return dBClusterId;
+			}
+			set	
+			{
+				dBClusterId = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -57,18 +71,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string DBClusterId
-		{
-			get
-			{
-				return dBClusterId;
-			}
-			set	
-			{
-				dBClusterId = value;
-			}
-		}
-
 		public string StatusName
 		{
 			get
@@ -78,6 +80,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				statusName = value;
+			}
+		}
+
+		public string AccountName
+		{
+			get
+			{
+				return accountName;
+			}
+			set	
+			{
+				accountName = value;
 			}
 		}
 	}

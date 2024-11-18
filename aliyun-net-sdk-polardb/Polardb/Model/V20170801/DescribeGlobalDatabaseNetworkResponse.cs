@@ -39,6 +39,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string gDNDescription;
 
+		private string globalDomainName;
+
 		private string dBClusterId;
 
 		private string resourceGroupId;
@@ -128,6 +130,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				gDNDescription = value;
+			}
+		}
+
+		public string GlobalDomainName
+		{
+			get
+			{
+				return globalDomainName;
+			}
+			set	
+			{
+				globalDomainName = value;
 			}
 		}
 
@@ -252,9 +266,13 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string dBClusterDescription;
 
+			private string category;
+
 			private string role;
 
 			private string serverlessType;
+
+			private string memberStatus;
 
 			private List<DescribeGlobalDatabaseNetwork_DBNode> dBNodes;
 
@@ -402,6 +420,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
+				}
+			}
+
 			public string Role
 			{
 				get
@@ -423,6 +453,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					serverlessType = value;
+				}
+			}
+
+			public string MemberStatus
+			{
+				get
+				{
+					return memberStatus;
+				}
+				set	
+				{
+					memberStatus = value;
 				}
 			}
 

@@ -74,6 +74,12 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string dBClusterId;
 
+			private string sccMode;
+
+			private string polarSccTimeoutAction;
+
+			private string polarSccWaitTimeout;
+
 			private List<DescribeDBClusterEndpoints_Address> addressItems;
 
 			public string NodeWithRoles
@@ -181,6 +187,42 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					dBClusterId = value;
+				}
+			}
+
+			public string SccMode
+			{
+				get
+				{
+					return sccMode;
+				}
+				set	
+				{
+					sccMode = value;
+				}
+			}
+
+			public string PolarSccTimeoutAction
+			{
+				get
+				{
+					return polarSccTimeoutAction;
+				}
+				set	
+				{
+					polarSccTimeoutAction = value;
+				}
+			}
+
+			public string PolarSccWaitTimeout
+			{
+				get
+				{
+					return polarSccWaitTimeout;
+				}
+				set	
+				{
+					polarSccWaitTimeout = value;
 				}
 			}
 

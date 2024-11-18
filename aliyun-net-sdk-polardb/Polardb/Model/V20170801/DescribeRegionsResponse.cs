@@ -87,21 +87,9 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			public class DescribeRegions_Zone
 			{
 
-				private string zoneId;
-
 				private bool? vpcEnabled;
 
-				public string ZoneId
-				{
-					get
-					{
-						return zoneId;
-					}
-					set	
-					{
-						zoneId = value;
-					}
-				}
+				private string zoneId;
 
 				public bool? VpcEnabled
 				{
@@ -112,6 +100,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					set	
 					{
 						vpcEnabled = value;
+					}
+				}
+
+				public string ZoneId
+				{
+					get
+					{
+						return zoneId;
+					}
+					set	
+					{
+						zoneId = value;
 					}
 				}
 			}

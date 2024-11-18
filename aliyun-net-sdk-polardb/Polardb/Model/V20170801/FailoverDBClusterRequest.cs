@@ -52,6 +52,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string ownerAccount;
 
+		private string targetZoneType;
+
 		private long? ownerId;
 
 		private string targetDBNodeId;
@@ -131,6 +133,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string TargetZoneType
+		{
+			get
+			{
+				return targetZoneType;
+			}
+			set	
+			{
+				targetZoneType = value;
+				DictionaryUtil.Add(QueryParameters, "TargetZoneType", value);
 			}
 		}
 

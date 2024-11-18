@@ -45,6 +45,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				globalDatabaseNetwork.GDNStatus = _ctx.StringValue("DescribeGlobalDatabaseNetworks.Items["+ i +"].GDNStatus");
 				globalDatabaseNetwork.DBType = _ctx.StringValue("DescribeGlobalDatabaseNetworks.Items["+ i +"].DBType");
 				globalDatabaseNetwork.GDNDescription = _ctx.StringValue("DescribeGlobalDatabaseNetworks.Items["+ i +"].GDNDescription");
+				globalDatabaseNetwork.ZoneId = _ctx.StringValue("DescribeGlobalDatabaseNetworks.Items["+ i +"].ZoneId");
 
 				List<DescribeGlobalDatabaseNetworksResponse.DescribeGlobalDatabaseNetworks_GlobalDatabaseNetwork.DescribeGlobalDatabaseNetworks_DBCluster> globalDatabaseNetwork_dBClusters = new List<DescribeGlobalDatabaseNetworksResponse.DescribeGlobalDatabaseNetworks_GlobalDatabaseNetwork.DescribeGlobalDatabaseNetworks_DBCluster>();
 				for (int j = 0; j < _ctx.Length("DescribeGlobalDatabaseNetworks.Items["+ i +"].DBClusters.Length"); j++) {
@@ -56,6 +57,18 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 					globalDatabaseNetwork_dBClusters.Add(dBCluster);
 				}
 				globalDatabaseNetwork.DBClusters = globalDatabaseNetwork_dBClusters;
+
+				List<DescribeGlobalDatabaseNetworksResponse.DescribeGlobalDatabaseNetworks_GlobalDatabaseNetwork.DescribeGlobalDatabaseNetworks_OutCloudDBCluster> globalDatabaseNetwork_outCloudDBClusters = new List<DescribeGlobalDatabaseNetworksResponse.DescribeGlobalDatabaseNetworks_GlobalDatabaseNetwork.DescribeGlobalDatabaseNetworks_OutCloudDBCluster>();
+				for (int j = 0; j < _ctx.Length("DescribeGlobalDatabaseNetworks.Items["+ i +"].OutCloudDBClusters.Length"); j++) {
+					DescribeGlobalDatabaseNetworksResponse.DescribeGlobalDatabaseNetworks_GlobalDatabaseNetwork.DescribeGlobalDatabaseNetworks_OutCloudDBCluster outCloudDBCluster = new DescribeGlobalDatabaseNetworksResponse.DescribeGlobalDatabaseNetworks_GlobalDatabaseNetwork.DescribeGlobalDatabaseNetworks_OutCloudDBCluster();
+					outCloudDBCluster.OutCloudType = _ctx.StringValue("DescribeGlobalDatabaseNetworks.Items["+ i +"].OutCloudDBClusters["+ j +"].OutCloudType");
+					outCloudDBCluster.DBClusterId = _ctx.StringValue("DescribeGlobalDatabaseNetworks.Items["+ i +"].OutCloudDBClusters["+ j +"].DBClusterId");
+					outCloudDBCluster.Role = _ctx.StringValue("DescribeGlobalDatabaseNetworks.Items["+ i +"].OutCloudDBClusters["+ j +"].Role");
+					outCloudDBCluster.RegionId = _ctx.StringValue("DescribeGlobalDatabaseNetworks.Items["+ i +"].OutCloudDBClusters["+ j +"].RegionId");
+
+					globalDatabaseNetwork_outCloudDBClusters.Add(outCloudDBCluster);
+				}
+				globalDatabaseNetwork.OutCloudDBClusters = globalDatabaseNetwork_outCloudDBClusters;
 
 				describeGlobalDatabaseNetworksResponse_items.Add(globalDatabaseNetwork);
 			}

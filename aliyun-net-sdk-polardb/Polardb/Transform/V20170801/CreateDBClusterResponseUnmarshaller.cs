@@ -31,10 +31,10 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			CreateDBClusterResponse createDBClusterResponse = new CreateDBClusterResponse();
 
 			createDBClusterResponse.HttpResponse = _ctx.HttpResponse;
-			createDBClusterResponse.RequestId = _ctx.StringValue("CreateDBCluster.RequestId");
-			createDBClusterResponse.ResourceGroupId = _ctx.StringValue("CreateDBCluster.ResourceGroupId");
 			createDBClusterResponse.DBClusterId = _ctx.StringValue("CreateDBCluster.DBClusterId");
 			createDBClusterResponse.OrderId = _ctx.StringValue("CreateDBCluster.OrderId");
+			createDBClusterResponse.RequestId = _ctx.StringValue("CreateDBCluster.RequestId");
+			createDBClusterResponse.ResourceGroupId = _ctx.StringValue("CreateDBCluster.ResourceGroupId");
         
 			return createDBClusterResponse;
         }

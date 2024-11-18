@@ -35,6 +35,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeBackupsResponse.PageRecordCount = _ctx.StringValue("DescribeBackups.PageRecordCount");
 			describeBackupsResponse.RequestId = _ctx.StringValue("DescribeBackups.RequestId");
 			describeBackupsResponse.PageNumber = _ctx.StringValue("DescribeBackups.PageNumber");
+			describeBackupsResponse.TotalLevel2BackupSize = _ctx.StringValue("DescribeBackups.TotalLevel2BackupSize");
 
 			List<DescribeBackupsResponse.DescribeBackups_Backup> describeBackupsResponse_items = new List<DescribeBackupsResponse.DescribeBackups_Backup>();
 			for (int i = 0; i < _ctx.Length("DescribeBackups.Items.Length"); i++) {

@@ -43,6 +43,11 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeDBClusterMigrationResponse.MigrationStatus = _ctx.StringValue("DescribeDBClusterMigration.MigrationStatus");
 			describeDBClusterMigrationResponse.DtsInstanceId = _ctx.StringValue("DescribeDBClusterMigration.DtsInstanceId");
 			describeDBClusterMigrationResponse.SrcDbType = _ctx.StringValue("DescribeDBClusterMigration.SrcDbType");
+			describeDBClusterMigrationResponse.MigrationSwitch = _ctx.StringValue("DescribeDBClusterMigration.MigrationSwitch");
+			describeDBClusterMigrationResponse.MigrationDtsJobEndpoint = _ctx.StringValue("DescribeDBClusterMigration.MigrationDtsJobEndpoint");
+			describeDBClusterMigrationResponse.DstBinlogPosition = _ctx.StringValue("DescribeDBClusterMigration.DstBinlogPosition");
+			describeDBClusterMigrationResponse.SrcBinlogPosition = _ctx.StringValue("DescribeDBClusterMigration.SrcBinlogPosition");
+			describeDBClusterMigrationResponse.MigrationProgress = _ctx.StringValue("DescribeDBClusterMigration.MigrationProgress");
 
 			List<DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_DBClusterEndpoint> describeDBClusterMigrationResponse_dBClusterEndpointList = new List<DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_DBClusterEndpoint>();
 			for (int i = 0; i < _ctx.Length("DescribeDBClusterMigration.DBClusterEndpointList.Length"); i++) {
@@ -95,6 +100,36 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				describeDBClusterMigrationResponse_rdsEndpointList.Add(rdsEndpoint);
 			}
 			describeDBClusterMigrationResponse.RdsEndpointList = describeDBClusterMigrationResponse_rdsEndpointList;
+
+			List<DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_SrcDtsJob> describeDBClusterMigrationResponse_srcDtsJobList = new List<DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_SrcDtsJob>();
+			for (int i = 0; i < _ctx.Length("DescribeDBClusterMigration.SrcDtsJobList.Length"); i++) {
+				DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_SrcDtsJob srcDtsJob = new DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_SrcDtsJob();
+				srcDtsJob.DtsJobId = _ctx.StringValue("DescribeDBClusterMigration.SrcDtsJobList["+ i +"].DtsJobId");
+				srcDtsJob.DtsJobName = _ctx.StringValue("DescribeDBClusterMigration.SrcDtsJobList["+ i +"].DtsJobName");
+				srcDtsJob.DtsInstanceID = _ctx.StringValue("DescribeDBClusterMigration.SrcDtsJobList["+ i +"].DtsInstanceID");
+				srcDtsJob.DtsJobDirection = _ctx.StringValue("DescribeDBClusterMigration.SrcDtsJobList["+ i +"].DtsJobDirection");
+				srcDtsJob.Status = _ctx.StringValue("DescribeDBClusterMigration.SrcDtsJobList["+ i +"].Status");
+				srcDtsJob.SourceEndpoint = _ctx.StringValue("DescribeDBClusterMigration.SrcDtsJobList["+ i +"].SourceEndpoint");
+				srcDtsJob.DestinationEndpoint = _ctx.StringValue("DescribeDBClusterMigration.SrcDtsJobList["+ i +"].DestinationEndpoint");
+
+				describeDBClusterMigrationResponse_srcDtsJobList.Add(srcDtsJob);
+			}
+			describeDBClusterMigrationResponse.SrcDtsJobList = describeDBClusterMigrationResponse_srcDtsJobList;
+
+			List<DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_DstDtsJob> describeDBClusterMigrationResponse_dstDtsJobList = new List<DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_DstDtsJob>();
+			for (int i = 0; i < _ctx.Length("DescribeDBClusterMigration.DstDtsJobList.Length"); i++) {
+				DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_DstDtsJob dstDtsJob = new DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_DstDtsJob();
+				dstDtsJob.DtsJobId = _ctx.StringValue("DescribeDBClusterMigration.DstDtsJobList["+ i +"].DtsJobId");
+				dstDtsJob.DtsJobName = _ctx.StringValue("DescribeDBClusterMigration.DstDtsJobList["+ i +"].DtsJobName");
+				dstDtsJob.DtsInstanceId = _ctx.StringValue("DescribeDBClusterMigration.DstDtsJobList["+ i +"].DtsInstanceId");
+				dstDtsJob.DtsJobDirection = _ctx.StringValue("DescribeDBClusterMigration.DstDtsJobList["+ i +"].DtsJobDirection");
+				dstDtsJob.Status = _ctx.StringValue("DescribeDBClusterMigration.DstDtsJobList["+ i +"].Status");
+				dstDtsJob.SourceEndpoint = _ctx.StringValue("DescribeDBClusterMigration.DstDtsJobList["+ i +"].SourceEndpoint");
+				dstDtsJob.DestinationEndpoint = _ctx.StringValue("DescribeDBClusterMigration.DstDtsJobList["+ i +"].DestinationEndpoint");
+
+				describeDBClusterMigrationResponse_dstDtsJobList.Add(dstDtsJob);
+			}
+			describeDBClusterMigrationResponse.DstDtsJobList = describeDBClusterMigrationResponse_dstDtsJobList;
         
 			return describeDBClusterMigrationResponse;
         }

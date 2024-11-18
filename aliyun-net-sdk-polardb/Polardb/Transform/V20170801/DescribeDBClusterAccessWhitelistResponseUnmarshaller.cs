@@ -33,6 +33,16 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeDBClusterAccessWhitelistResponse.HttpResponse = _ctx.HttpResponse;
 			describeDBClusterAccessWhitelistResponse.RequestId = _ctx.StringValue("DescribeDBClusterAccessWhitelist.RequestId");
 
+			List<DescribeDBClusterAccessWhitelistResponse.DescribeDBClusterAccessWhitelist_DBClusterSecurityGroup> describeDBClusterAccessWhitelistResponse_dBClusterSecurityGroups = new List<DescribeDBClusterAccessWhitelistResponse.DescribeDBClusterAccessWhitelist_DBClusterSecurityGroup>();
+			for (int i = 0; i < _ctx.Length("DescribeDBClusterAccessWhitelist.DBClusterSecurityGroups.Length"); i++) {
+				DescribeDBClusterAccessWhitelistResponse.DescribeDBClusterAccessWhitelist_DBClusterSecurityGroup dBClusterSecurityGroup = new DescribeDBClusterAccessWhitelistResponse.DescribeDBClusterAccessWhitelist_DBClusterSecurityGroup();
+				dBClusterSecurityGroup.SecurityGroupId = _ctx.StringValue("DescribeDBClusterAccessWhitelist.DBClusterSecurityGroups["+ i +"].SecurityGroupId");
+				dBClusterSecurityGroup.SecurityGroupName = _ctx.StringValue("DescribeDBClusterAccessWhitelist.DBClusterSecurityGroups["+ i +"].SecurityGroupName");
+
+				describeDBClusterAccessWhitelistResponse_dBClusterSecurityGroups.Add(dBClusterSecurityGroup);
+			}
+			describeDBClusterAccessWhitelistResponse.DBClusterSecurityGroups = describeDBClusterAccessWhitelistResponse_dBClusterSecurityGroups;
+
 			List<DescribeDBClusterAccessWhitelistResponse.DescribeDBClusterAccessWhitelist_DBClusterIPArray> describeDBClusterAccessWhitelistResponse_items = new List<DescribeDBClusterAccessWhitelistResponse.DescribeDBClusterAccessWhitelist_DBClusterIPArray>();
 			for (int i = 0; i < _ctx.Length("DescribeDBClusterAccessWhitelist.Items.Length"); i++) {
 				DescribeDBClusterAccessWhitelistResponse.DescribeDBClusterAccessWhitelist_DBClusterIPArray dBClusterIPArray = new DescribeDBClusterAccessWhitelistResponse.DescribeDBClusterAccessWhitelist_DBClusterIPArray();
@@ -43,16 +53,6 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				describeDBClusterAccessWhitelistResponse_items.Add(dBClusterIPArray);
 			}
 			describeDBClusterAccessWhitelistResponse.Items = describeDBClusterAccessWhitelistResponse_items;
-
-			List<DescribeDBClusterAccessWhitelistResponse.DescribeDBClusterAccessWhitelist_DBClusterSecurityGroup> describeDBClusterAccessWhitelistResponse_dBClusterSecurityGroups = new List<DescribeDBClusterAccessWhitelistResponse.DescribeDBClusterAccessWhitelist_DBClusterSecurityGroup>();
-			for (int i = 0; i < _ctx.Length("DescribeDBClusterAccessWhitelist.DBClusterSecurityGroups.Length"); i++) {
-				DescribeDBClusterAccessWhitelistResponse.DescribeDBClusterAccessWhitelist_DBClusterSecurityGroup dBClusterSecurityGroup = new DescribeDBClusterAccessWhitelistResponse.DescribeDBClusterAccessWhitelist_DBClusterSecurityGroup();
-				dBClusterSecurityGroup.SecurityGroupId = _ctx.StringValue("DescribeDBClusterAccessWhitelist.DBClusterSecurityGroups["+ i +"].SecurityGroupId");
-				dBClusterSecurityGroup.SecurityGroupName = _ctx.StringValue("DescribeDBClusterAccessWhitelist.DBClusterSecurityGroups["+ i +"].SecurityGroupName");
-
-				describeDBClusterAccessWhitelistResponse_dBClusterSecurityGroups.Add(dBClusterSecurityGroup);
-			}
-			describeDBClusterAccessWhitelistResponse.DBClusterSecurityGroups = describeDBClusterAccessWhitelistResponse_dBClusterSecurityGroups;
         
 			return describeDBClusterAccessWhitelistResponse;
         }
