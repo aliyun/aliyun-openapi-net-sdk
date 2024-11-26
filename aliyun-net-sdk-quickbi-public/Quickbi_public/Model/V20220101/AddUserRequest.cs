@@ -37,6 +37,8 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 		private bool? adminUser;
 
+		private string accountId;
+
 		private string roleIds;
 
 		private string accountName;
@@ -57,6 +59,19 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				adminUser = value;
 				DictionaryUtil.Add(QueryParameters, "AdminUser", value.ToString());
+			}
+		}
+
+		public string AccountId
+		{
+			get
+			{
+				return accountId;
+			}
+			set	
+			{
+				accountId = value;
+				DictionaryUtil.Add(QueryParameters, "AccountId", value);
 			}
 		}
 
