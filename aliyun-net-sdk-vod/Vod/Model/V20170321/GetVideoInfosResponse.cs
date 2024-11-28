@@ -114,6 +114,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string restoreExpiration;
 
+			private string userData;
+
 			private List<GetVideoInfos_Thumbnail> thumbnailList;
 
 			private List<string> snapshots;
@@ -379,6 +381,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					restoreExpiration = value;
+				}
+			}
+
+			public string UserData
+			{
+				get
+				{
+					return userData;
+				}
+				set	
+				{
+					userData = value;
 				}
 			}
 

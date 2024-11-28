@@ -60,6 +60,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			video.StorageClass = _ctx.StringValue("GetVideoInfo.Video.StorageClass");
 			video.RestoreStatus = _ctx.StringValue("GetVideoInfo.Video.RestoreStatus");
 			video.RestoreExpiration = _ctx.StringValue("GetVideoInfo.Video.RestoreExpiration");
+			video.UserData = _ctx.StringValue("GetVideoInfo.Video.UserData");
 
 			List<string> video_snapshots = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetVideoInfo.Video.Snapshots.Length"); i++) {

@@ -41,6 +41,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			Method = MethodType.POST;
         }
 
+		private string sessionId;
+
 		private string userData;
 
 		private string videoId;
@@ -54,6 +56,20 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private string templateGroupId;
 
 		private string encryptConfig;
+
+		[JsonProperty(PropertyName = "SessionId")]
+		public string SessionId
+		{
+			get
+			{
+				return sessionId;
+			}
+			set	
+			{
+				sessionId = value;
+				DictionaryUtil.Add(QueryParameters, "SessionId", value);
+			}
+		}
 
 		[JsonProperty(PropertyName = "UserData")]
 		public string UserData
