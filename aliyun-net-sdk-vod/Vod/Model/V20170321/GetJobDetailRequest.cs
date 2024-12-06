@@ -27,10 +27,10 @@ using Aliyun.Acs.vod.Transform.V20170321;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class GetTranscodeTaskRequest : RpcAcsRequest<GetTranscodeTaskResponse>
+    public class GetJobDetailRequest : RpcAcsRequest<GetJobDetailResponse>
     {
-        public GetTranscodeTaskRequest()
-            : base("vod", "2017-03-21", "GetTranscodeTask", "vod", "openAPI")
+        public GetJobDetailRequest()
+            : base("vod", "2017-03-21", "GetJobDetail", "vod", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,33 +40,33 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			Method = MethodType.POST;
         }
 
-		private string transcodeTaskId;
+		private string jobType;
 
-		private string jobIds;
+		private string jobId;
 
-		public string TranscodeTaskId
+		public string JobType
 		{
 			get
 			{
-				return transcodeTaskId;
+				return jobType;
 			}
 			set	
 			{
-				transcodeTaskId = value;
-				DictionaryUtil.Add(QueryParameters, "TranscodeTaskId", value);
+				jobType = value;
+				DictionaryUtil.Add(QueryParameters, "JobType", value);
 			}
 		}
 
-		public string JobIds
+		public string JobId
 		{
 			get
 			{
-				return jobIds;
+				return jobId;
 			}
 			set	
 			{
-				jobIds = value;
-				DictionaryUtil.Add(QueryParameters, "JobIds", value);
+				jobId = value;
+				DictionaryUtil.Add(QueryParameters, "JobId", value);
 			}
 		}
 
@@ -75,9 +75,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			return false;
 		}
 
-        public override GetTranscodeTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetJobDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetTranscodeTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetJobDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
