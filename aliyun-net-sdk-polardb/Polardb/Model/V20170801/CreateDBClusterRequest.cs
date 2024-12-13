@@ -126,6 +126,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string burstingEnabled;
 
+		private string targetMinorVersion;
+
 		private int? dBNodeNum;
 
 		private long? storageUpperBound;
@@ -712,6 +714,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				burstingEnabled = value;
 				DictionaryUtil.Add(QueryParameters, "BurstingEnabled", value);
+			}
+		}
+
+		public string TargetMinorVersion
+		{
+			get
+			{
+				return targetMinorVersion;
+			}
+			set	
+			{
+				targetMinorVersion = value;
+				DictionaryUtil.Add(QueryParameters, "TargetMinorVersion", value);
 			}
 		}
 

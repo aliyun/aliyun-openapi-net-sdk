@@ -64,8 +64,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string dBName;
 
-		private string privForAllDB;
-
 		public long? ResourceOwnerId
 		{
 			get
@@ -219,19 +217,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				dBName = value;
 				DictionaryUtil.Add(QueryParameters, "DBName", value);
-			}
-		}
-
-		public string PrivForAllDB
-		{
-			get
-			{
-				return privForAllDB;
-			}
-			set	
-			{
-				privForAllDB = value;
-				DictionaryUtil.Add(QueryParameters, "PrivForAllDB", value);
 			}
 		}
 

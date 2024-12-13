@@ -58,6 +58,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string plannedStartTime;
 
+		private string standbyClusterIdListNeedToSync;
+
 		private string parameters;
 
 		private bool? fromTimeService;
@@ -176,6 +178,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				plannedStartTime = value;
 				DictionaryUtil.Add(QueryParameters, "PlannedStartTime", value);
+			}
+		}
+
+		public string StandbyClusterIdListNeedToSync
+		{
+			get
+			{
+				return standbyClusterIdListNeedToSync;
+			}
+			set	
+			{
+				standbyClusterIdListNeedToSync = value;
+				DictionaryUtil.Add(QueryParameters, "StandbyClusterIdListNeedToSync", value);
 			}
 		}
 
