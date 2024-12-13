@@ -31,31 +31,6 @@ namespace Aliyun.Acs.Market.Transform.V20151101
 			DescribeOrderForIsvResponse describeOrderForIsvResponse = new DescribeOrderForIsvResponse();
 
 			describeOrderForIsvResponse.HttpResponse = _ctx.HttpResponse;
-			describeOrderForIsvResponse.ProductName = _ctx.StringValue("DescribeOrderForIsv.ProductName");
-			describeOrderForIsvResponse.OriginalPrice = _ctx.FloatValue("DescribeOrderForIsv.OriginalPrice");
-			describeOrderForIsvResponse.AliUid = _ctx.LongValue("DescribeOrderForIsv.AliUid");
-			describeOrderForIsvResponse.CouponPrice = _ctx.FloatValue("DescribeOrderForIsv.CouponPrice");
-			describeOrderForIsvResponse.AccountQuantity = _ctx.LongValue("DescribeOrderForIsv.AccountQuantity");
-			describeOrderForIsvResponse.PeriodType = _ctx.StringValue("DescribeOrderForIsv.PeriodType");
-			describeOrderForIsvResponse.PayStatus = _ctx.StringValue("DescribeOrderForIsv.PayStatus");
-			describeOrderForIsvResponse.PaymentPrice = _ctx.FloatValue("DescribeOrderForIsv.PaymentPrice");
-			describeOrderForIsvResponse.OrderStatus = _ctx.StringValue("DescribeOrderForIsv.OrderStatus");
-			describeOrderForIsvResponse.ProductSkuCode = _ctx.StringValue("DescribeOrderForIsv.ProductSkuCode");
-			describeOrderForIsvResponse.PaidOn = _ctx.LongValue("DescribeOrderForIsv.PaidOn");
-			describeOrderForIsvResponse.Components = _ctx.StringValue("DescribeOrderForIsv.Components");
-			describeOrderForIsvResponse.CreatedOn = _ctx.LongValue("DescribeOrderForIsv.CreatedOn");
-			describeOrderForIsvResponse.OrderType = _ctx.StringValue("DescribeOrderForIsv.OrderType");
-			describeOrderForIsvResponse.TotalPrice = _ctx.FloatValue("DescribeOrderForIsv.TotalPrice");
-			describeOrderForIsvResponse.Quantity = _ctx.IntegerValue("DescribeOrderForIsv.Quantity");
-			describeOrderForIsvResponse.OrderId = _ctx.LongValue("DescribeOrderForIsv.OrderId");
-			describeOrderForIsvResponse.ProductCode = _ctx.StringValue("DescribeOrderForIsv.ProductCode");
-			describeOrderForIsvResponse.RequestId = _ctx.StringValue("DescribeOrderForIsv.RequestId");
-
-			List<string> describeOrderForIsvResponse_instanceIds = new List<string>();
-			for (int i = 0; i < _ctx.Length("DescribeOrderForIsv.InstanceIds.Length"); i++) {
-				describeOrderForIsvResponse_instanceIds.Add(_ctx.StringValue("DescribeOrderForIsv.InstanceIds["+ i +"]"));
-			}
-			describeOrderForIsvResponse.InstanceIds = describeOrderForIsvResponse_instanceIds;
         
 			return describeOrderForIsvResponse;
         }
