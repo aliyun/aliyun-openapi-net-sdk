@@ -69,6 +69,8 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 
 		private string publishTableScript;
 
+		private string mockTableName;
+
 		private List<GetFeatureView_FieldsItem> fields;
 
 		private List<string> tags;
@@ -334,6 +336,18 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 			set	
 			{
 				publishTableScript = value;
+			}
+		}
+
+		public string MockTableName
+		{
+			get
+			{
+				return mockTableName;
+			}
+			set	
+			{
+				mockTableName = value;
 			}
 		}
 

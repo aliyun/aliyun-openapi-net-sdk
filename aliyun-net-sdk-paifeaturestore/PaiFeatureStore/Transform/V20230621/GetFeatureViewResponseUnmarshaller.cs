@@ -53,6 +53,7 @@ namespace Aliyun.Acs.PaiFeatureStore.Transform.V20230621
 			getFeatureViewResponse.GmtSyncTime = _ctx.StringValue("GetFeatureView.GmtSyncTime");
 			getFeatureViewResponse.LastSyncConfig = _ctx.StringValue("GetFeatureView.LastSyncConfig");
 			getFeatureViewResponse.PublishTableScript = _ctx.StringValue("GetFeatureView.PublishTableScript");
+			getFeatureViewResponse.MockTableName = _ctx.StringValue("GetFeatureView.MockTableName");
 
 			List<string> getFeatureViewResponse_tags = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetFeatureView.Tags.Length"); i++) {
