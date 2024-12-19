@@ -104,6 +104,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string aCL;
 
+			private string sSLAutoRotate;
+
 			private List<string> allowedACLs;
 
 			public string SSLExpireTime
@@ -223,6 +225,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					aCL = value;
+				}
+			}
+
+			public string SSLAutoRotate
+			{
+				get
+				{
+					return sSLAutoRotate;
+				}
+				set	
+				{
+					sSLAutoRotate = value;
 				}
 			}
 

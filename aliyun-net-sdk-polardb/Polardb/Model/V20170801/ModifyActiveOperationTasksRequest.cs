@@ -27,10 +27,10 @@ using Aliyun.Acs.polardb.Transform.V20170801;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class CreateAccountRequest : RpcAcsRequest<CreateAccountResponse>
+    public class ModifyActiveOperationTasksRequest : RpcAcsRequest<ModifyActiveOperationTasksResponse>
     {
-        public CreateAccountRequest()
-            : base("polardb", "2017-08-01", "CreateAccount", "polardb", "openAPI")
+        public ModifyActiveOperationTasksRequest()
+            : base("polardb", "2017-08-01", "ModifyActiveOperationTasks", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,29 +42,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
-		private string clientToken;
+		private string taskIds;
 
-		private string accountType;
+		private string securityToken;
 
-		private string accountDescription;
-
-		private string accountPrivilege;
-
-		private string accountName;
+		private string switchTime;
 
 		private string resourceOwnerAccount;
-
-		private string dBClusterId;
 
 		private string ownerAccount;
 
 		private long? ownerId;
 
-		private string accountPassword;
-
-		private string dBName;
-
-		private string privForAllDB;
+		private int? immediateStart;
 
 		public long? ResourceOwnerId
 		{
@@ -79,68 +69,42 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string ClientToken
+		public string TaskIds
 		{
 			get
 			{
-				return clientToken;
+				return taskIds;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+				taskIds = value;
+				DictionaryUtil.Add(QueryParameters, "TaskIds", value);
 			}
 		}
 
-		public string AccountType
+		public string SecurityToken
 		{
 			get
 			{
-				return accountType;
+				return securityToken;
 			}
 			set	
 			{
-				accountType = value;
-				DictionaryUtil.Add(QueryParameters, "AccountType", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
-		public string AccountDescription
+		public string SwitchTime
 		{
 			get
 			{
-				return accountDescription;
+				return switchTime;
 			}
 			set	
 			{
-				accountDescription = value;
-				DictionaryUtil.Add(QueryParameters, "AccountDescription", value);
-			}
-		}
-
-		public string AccountPrivilege
-		{
-			get
-			{
-				return accountPrivilege;
-			}
-			set	
-			{
-				accountPrivilege = value;
-				DictionaryUtil.Add(QueryParameters, "AccountPrivilege", value);
-			}
-		}
-
-		public string AccountName
-		{
-			get
-			{
-				return accountName;
-			}
-			set	
-			{
-				accountName = value;
-				DictionaryUtil.Add(QueryParameters, "AccountName", value);
+				switchTime = value;
+				DictionaryUtil.Add(QueryParameters, "SwitchTime", value);
 			}
 		}
 
@@ -154,19 +118,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string DBClusterId
-		{
-			get
-			{
-				return dBClusterId;
-			}
-			set	
-			{
-				dBClusterId = value;
-				DictionaryUtil.Add(QueryParameters, "DBClusterId", value);
 			}
 		}
 
@@ -196,48 +147,27 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string AccountPassword
+		public int? ImmediateStart
 		{
 			get
 			{
-				return accountPassword;
+				return immediateStart;
 			}
 			set	
 			{
-				accountPassword = value;
-				DictionaryUtil.Add(QueryParameters, "AccountPassword", value);
+				immediateStart = value;
+				DictionaryUtil.Add(QueryParameters, "ImmediateStart", value.ToString());
 			}
 		}
 
-		public string DBName
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return dBName;
-			}
-			set	
-			{
-				dBName = value;
-				DictionaryUtil.Add(QueryParameters, "DBName", value);
-			}
+			return false;
 		}
 
-		public string PrivForAllDB
-		{
-			get
-			{
-				return privForAllDB;
-			}
-			set	
-			{
-				privForAllDB = value;
-				DictionaryUtil.Add(QueryParameters, "PrivForAllDB", value);
-			}
-		}
-
-        public override CreateAccountResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyActiveOperationTasksResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateAccountResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyActiveOperationTasksResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -53,6 +53,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				item.ClientCACert = _ctx.StringValue("DescribeDBClusterSSL.Items["+ i +"].ClientCACert");
 				item.ClientCrl = _ctx.StringValue("DescribeDBClusterSSL.Items["+ i +"].ClientCrl");
 				item.ACL = _ctx.StringValue("DescribeDBClusterSSL.Items["+ i +"].ACL");
+				item.SSLAutoRotate = _ctx.StringValue("DescribeDBClusterSSL.Items["+ i +"].SSLAutoRotate");
 
 				List<string> item_allowedACLs = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeDBClusterSSL.Items["+ i +"].AllowedACLs.Length"); j++) {

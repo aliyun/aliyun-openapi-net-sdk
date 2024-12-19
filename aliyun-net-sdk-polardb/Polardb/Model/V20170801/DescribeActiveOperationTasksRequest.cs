@@ -27,10 +27,10 @@ using Aliyun.Acs.polardb.Transform.V20170801;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class CreateAccountRequest : RpcAcsRequest<CreateAccountResponse>
+    public class DescribeActiveOperationTasksRequest : RpcAcsRequest<DescribeActiveOperationTasksResponse>
     {
-        public CreateAccountRequest()
-            : base("polardb", "2017-08-01", "CreateAccount", "polardb", "openAPI")
+        public DescribeActiveOperationTasksRequest()
+            : base("polardb", "2017-08-01", "DescribeActiveOperationTasks", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,15 +42,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
-		private string clientToken;
+		private string changeLevel;
 
-		private string accountType;
+		private int? pageNumber;
 
-		private string accountDescription;
+		private string securityToken;
 
-		private string accountPrivilege;
+		private int? pageSize;
 
-		private string accountName;
+		private string taskType;
 
 		private string resourceOwnerAccount;
 
@@ -58,13 +58,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string ownerAccount;
 
+		private long? allowCancel;
+
 		private long? ownerId;
 
-		private string accountPassword;
+		private string dBType;
 
-		private string dBName;
+		private long? allowChange;
 
-		private string privForAllDB;
+		private long? status;
 
 		public long? ResourceOwnerId
 		{
@@ -79,68 +81,68 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string ClientToken
+		public string ChangeLevel
 		{
 			get
 			{
-				return clientToken;
+				return changeLevel;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+				changeLevel = value;
+				DictionaryUtil.Add(QueryParameters, "ChangeLevel", value);
 			}
 		}
 
-		public string AccountType
+		public int? PageNumber
 		{
 			get
 			{
-				return accountType;
+				return pageNumber;
 			}
 			set	
 			{
-				accountType = value;
-				DictionaryUtil.Add(QueryParameters, "AccountType", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
-		public string AccountDescription
+		public string SecurityToken
 		{
 			get
 			{
-				return accountDescription;
+				return securityToken;
 			}
 			set	
 			{
-				accountDescription = value;
-				DictionaryUtil.Add(QueryParameters, "AccountDescription", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
-		public string AccountPrivilege
+		public int? PageSize
 		{
 			get
 			{
-				return accountPrivilege;
+				return pageSize;
 			}
 			set	
 			{
-				accountPrivilege = value;
-				DictionaryUtil.Add(QueryParameters, "AccountPrivilege", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public string AccountName
+		public string TaskType
 		{
 			get
 			{
-				return accountName;
+				return taskType;
 			}
 			set	
 			{
-				accountName = value;
-				DictionaryUtil.Add(QueryParameters, "AccountName", value);
+				taskType = value;
+				DictionaryUtil.Add(QueryParameters, "TaskType", value);
 			}
 		}
 
@@ -183,6 +185,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public long? AllowCancel
+		{
+			get
+			{
+				return allowCancel;
+			}
+			set	
+			{
+				allowCancel = value;
+				DictionaryUtil.Add(QueryParameters, "AllowCancel", value.ToString());
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -196,48 +211,53 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string AccountPassword
+		public string DBType
 		{
 			get
 			{
-				return accountPassword;
+				return dBType;
 			}
 			set	
 			{
-				accountPassword = value;
-				DictionaryUtil.Add(QueryParameters, "AccountPassword", value);
+				dBType = value;
+				DictionaryUtil.Add(QueryParameters, "DBType", value);
 			}
 		}
 
-		public string DBName
+		public long? AllowChange
 		{
 			get
 			{
-				return dBName;
+				return allowChange;
 			}
 			set	
 			{
-				dBName = value;
-				DictionaryUtil.Add(QueryParameters, "DBName", value);
+				allowChange = value;
+				DictionaryUtil.Add(QueryParameters, "AllowChange", value.ToString());
 			}
 		}
 
-		public string PrivForAllDB
+		public long? Status
 		{
 			get
 			{
-				return privForAllDB;
+				return status;
 			}
 			set	
 			{
-				privForAllDB = value;
-				DictionaryUtil.Add(QueryParameters, "PrivForAllDB", value);
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value.ToString());
 			}
 		}
 
-        public override CreateAccountResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeActiveOperationTasksResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateAccountResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeActiveOperationTasksResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

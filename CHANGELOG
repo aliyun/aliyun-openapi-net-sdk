@@ -1,3 +1,6 @@
+2024-12-19 Version: 1.8.23
+- Generated 2017-08-01 for `polardb`.
+
 2024-12-19 Version: 2.16.30
 - Add BatchGetMediaInfos.
 - Modify UploadStreamByURL.
