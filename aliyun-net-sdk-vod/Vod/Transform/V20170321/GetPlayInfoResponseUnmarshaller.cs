@@ -87,6 +87,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				playInfo.BitDepth = _ctx.IntegerValue("GetPlayInfo.PlayInfoList["+ i +"].BitDepth");
 				playInfo.JobType = _ctx.IntegerValue("GetPlayInfo.PlayInfoList["+ i +"].JobType");
 				playInfo.JobExt = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].JobExt");
+				playInfo.CodecName = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].CodecName");
 
 				getPlayInfoResponse_playInfoList.Add(playInfo);
 			}

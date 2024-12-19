@@ -126,6 +126,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string jobExt;
 
+			private string codecName;
+
 			public string CreationTime
 			{
 				get
@@ -459,6 +461,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					jobExt = value;
+				}
+			}
+
+			public string CodecName
+			{
+				get
+				{
+					return codecName;
+				}
+				set	
+				{
+					codecName = value;
 				}
 			}
 		}
