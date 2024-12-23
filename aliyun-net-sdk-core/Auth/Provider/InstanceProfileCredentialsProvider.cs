@@ -40,6 +40,23 @@ namespace Aliyun.Acs.Core.Auth
             fetcher.SetRoleName(roleName);
         }
 
+        private InstanceProfileCredentialsProvider(Builder builder)
+        {
+            if (AuthUtils.DisableECSMetaData)
+            {
+                throw new ArgumentException("IMDS credentials is disabled.");
+            }
+
+            this.roleName = builder.roleName ?? AuthUtils.EnvironmentEcsMetaDataDisabled;
+            var disableIMDSv1 = builder.disableIMDSv1 ?? AuthUtils.DisableECSIMDSv1;
+            this.fetcher = new ECSMetadataServiceCredentialsFetcher(
+                roleName,
+                disableIMDSv1,
+                builder.connectTimeout,
+                builder.readTimeout);
+        }
+
+
         public virtual AlibabaCloudCredentials GetCredentials()
         {
             try
@@ -85,6 +102,43 @@ namespace Aliyun.Acs.Core.Auth
         {
             this.fetcher = fetcher;
             this.fetcher.SetRoleName(roleName);
+        }
+
+        public class Builder
+        {
+            internal string roleName;
+            internal bool? disableIMDSv1;
+            internal int? connectTimeout;
+            internal int? readTimeout;
+
+            public Builder RoleName(string roleName)
+            {
+                this.roleName = roleName;
+                return this;
+            }
+
+            public Builder DisableIMDSv1(bool? disableIMDSv1)
+            {
+                this.disableIMDSv1 = disableIMDSv1;
+                return this;
+            }
+
+            public Builder ConnectTimeout(int? connectTimeout)
+            {
+                this.connectTimeout = connectTimeout;
+                return this;
+            }
+
+            public Builder ReadTimeout(int? readTimeout)
+            {
+                this.readTimeout = readTimeout;
+                return this;
+            }
+
+            public InstanceProfileCredentialsProvider Build()
+            {
+                return new InstanceProfileCredentialsProvider(this);
+            }
         }
     }
 }
