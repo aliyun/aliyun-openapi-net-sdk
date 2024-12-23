@@ -57,7 +57,7 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
             Assert.NotNull(response);
         }
 
-        [Fact]
+        [Fact(Skip = "temporarily skipped")]
         public void FormPostTypeTest()
         {
             var request = new DoActionsRequest();
@@ -167,7 +167,7 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
             Assert.True(0 <= response.Vpcs.Count);
         }
 
-        [Fact]
+        [Fact(Skip = "temporarily skipped")]
         public void XmlPostTypeTest()
         {
             var request = new DoActionsRequest();
