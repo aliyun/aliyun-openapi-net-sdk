@@ -66,6 +66,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			content.ResourceGroupId = _ctx.StringValue("GetVcc.Content.ResourceGroupId");
 			content.ConnectionType = _ctx.StringValue("GetVcc.Content.ConnectionType");
 			content.CenOwnerId = _ctx.StringValue("GetVcc.Content.CenOwnerId");
+			content.BgpAsn = _ctx.StringValue("GetVcc.Content.BgpAsn");
 
 			GetVccResponse.GetVcc_Content.GetVcc_VpdBaseInfo vpdBaseInfo = new GetVccResponse.GetVcc_Content.GetVcc_VpdBaseInfo();
 			vpdBaseInfo.VpdId = _ctx.StringValue("GetVcc.Content.VpdBaseInfo.VpdId");

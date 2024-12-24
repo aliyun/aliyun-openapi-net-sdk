@@ -118,7 +118,11 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 			private string securityGroupId;
 
+			private bool? enableJumboFrame;
+
 			private List<GetElasticNetworkInterface_PrivateIpAddress> privateIpAddresses;
+
+			private List<GetElasticNetworkInterface_Ipv6Addresse> ipv6Addresses;
 
 			public string RegionId
 			{
@@ -324,6 +328,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				}
 			}
 
+			public bool? EnableJumboFrame
+			{
+				get
+				{
+					return enableJumboFrame;
+				}
+				set	
+				{
+					enableJumboFrame = value;
+				}
+			}
+
 			public List<GetElasticNetworkInterface_PrivateIpAddress> PrivateIpAddresses
 			{
 				get
@@ -333,6 +349,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				set	
 				{
 					privateIpAddresses = value;
+				}
+			}
+
+			public List<GetElasticNetworkInterface_Ipv6Addresse> Ipv6Addresses
+			{
+				get
+				{
+					return ipv6Addresses;
+				}
+				set	
+				{
+					ipv6Addresses = value;
 				}
 			}
 
@@ -462,6 +490,136 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					set	
 					{
 						message = value;
+					}
+				}
+			}
+
+			public class GetElasticNetworkInterface_Ipv6Addresse
+			{
+
+				private string elasticNetworkInterfaceId;
+
+				private string ipName;
+
+				private string ipv6Address;
+
+				private string status;
+
+				private string description;
+
+				private string message;
+
+				private string regionId;
+
+				private string gmtCreate;
+
+				private string gmtModified;
+
+				public string ElasticNetworkInterfaceId
+				{
+					get
+					{
+						return elasticNetworkInterfaceId;
+					}
+					set	
+					{
+						elasticNetworkInterfaceId = value;
+					}
+				}
+
+				public string IpName
+				{
+					get
+					{
+						return ipName;
+					}
+					set	
+					{
+						ipName = value;
+					}
+				}
+
+				public string Ipv6Address
+				{
+					get
+					{
+						return ipv6Address;
+					}
+					set	
+					{
+						ipv6Address = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public string Description
+				{
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
+					}
+				}
+
+				public string Message
+				{
+					get
+					{
+						return message;
+					}
+					set	
+					{
+						message = value;
+					}
+				}
+
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
+					}
+				}
+
+				public string GmtCreate
+				{
+					get
+					{
+						return gmtCreate;
+					}
+					set	
+					{
+						gmtCreate = value;
+					}
+				}
+
+				public string GmtModified
+				{
+					get
+					{
+						return gmtModified;
+					}
+					set	
+					{
+						gmtModified = value;
 					}
 				}
 			}

@@ -43,6 +43,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private string nodeId;
 
+		private bool? enableJumboFrame;
+
 		private string vSwitchId;
 
 		private string vpcId;
@@ -98,6 +100,19 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				nodeId = value;
 				DictionaryUtil.Add(BodyParameters, "NodeId", value);
+			}
+		}
+
+		public bool? EnableJumboFrame
+		{
+			get
+			{
+				return enableJumboFrame;
+			}
+			set	
+			{
+				enableJumboFrame = value;
+				DictionaryUtil.Add(BodyParameters, "EnableJumboFrame", value.ToString());
 			}
 		}
 

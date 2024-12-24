@@ -43,6 +43,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private string cenOwnerId;
 
+		private long? bgpAsn;
+
 		private bool? accessCouldService;
 
 		private string resourceGroupId;
@@ -114,6 +116,19 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				cenOwnerId = value;
 				DictionaryUtil.Add(BodyParameters, "CenOwnerId", value);
+			}
+		}
+
+		public long? BgpAsn
+		{
+			get
+			{
+				return bgpAsn;
+			}
+			set	
+			{
+				bgpAsn = value;
+				DictionaryUtil.Add(BodyParameters, "BgpAsn", value.ToString());
 			}
 		}
 

@@ -167,6 +167,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 				private string cenOwnerId;
 
+				private string bgpAsn;
+
 				private List<ListVccs_ErInfo> erInfos;
 
 				private List<ListVccs_Tag> tags;
@@ -482,6 +484,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					set	
 					{
 						cenOwnerId = value;
+					}
+				}
+
+				public string BgpAsn
+				{
+					get
+					{
+						return bgpAsn;
+					}
+					set	
+					{
+						bgpAsn = value;
 					}
 				}
 
