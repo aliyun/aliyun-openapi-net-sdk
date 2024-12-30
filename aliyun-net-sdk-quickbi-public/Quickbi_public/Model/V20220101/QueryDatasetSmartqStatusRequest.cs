@@ -27,71 +27,27 @@ using Aliyun.Acs.quickbi_public.Transform.V20220101;
 
 namespace Aliyun.Acs.quickbi_public.Model.V20220101
 {
-    public class UpdateWorkspaceUserRoleRequest : RpcAcsRequest<UpdateWorkspaceUserRoleResponse>
+    public class QueryDatasetSmartqStatusRequest : RpcAcsRequest<QueryDatasetSmartqStatusResponse>
     {
-        public UpdateWorkspaceUserRoleRequest()
-            : base("quickbi-public", "2022-01-01", "UpdateWorkspaceUserRole", "2.2.0", "openAPI")
+        public QueryDatasetSmartqStatusRequest()
+            : base("quickbi-public", "2022-01-01", "QueryDatasetSmartqStatus", "2.2.0", "openAPI")
         {
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private long? roleId;
+		private string cubeId;
 
-		private string userId;
-
-		private string roleIds;
-
-		private string workspaceId;
-
-		public long? RoleId
+		public string CubeId
 		{
 			get
 			{
-				return roleId;
+				return cubeId;
 			}
 			set	
 			{
-				roleId = value;
-				DictionaryUtil.Add(QueryParameters, "RoleId", value.ToString());
-			}
-		}
-
-		public string UserId
-		{
-			get
-			{
-				return userId;
-			}
-			set	
-			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
-			}
-		}
-
-		public string RoleIds
-		{
-			get
-			{
-				return roleIds;
-			}
-			set	
-			{
-				roleIds = value;
-				DictionaryUtil.Add(QueryParameters, "RoleIds", value);
-			}
-		}
-
-		public string WorkspaceId
-		{
-			get
-			{
-				return workspaceId;
-			}
-			set	
-			{
-				workspaceId = value;
-				DictionaryUtil.Add(QueryParameters, "WorkspaceId", value);
+				cubeId = value;
+				DictionaryUtil.Add(QueryParameters, "CubeId", value);
 			}
 		}
 
@@ -100,9 +56,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			return false;
 		}
 
-        public override UpdateWorkspaceUserRoleResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryDatasetSmartqStatusResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateWorkspaceUserRoleResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryDatasetSmartqStatusResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

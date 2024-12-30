@@ -22,14 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.quickbi_public.Model.V20220101
 {
-	public class QueryAuditLogResponse : AcsResponse
+	public class QuerySmartqPermissionByCubeIdResponse : AcsResponse
 	{
 
 		private string requestId;
 
 		private bool? success;
 
-		private List<QueryAuditLog_LogApiResultModel> result;
+		private QuerySmartqPermissionByCubeId_Result result;
 
 		public string RequestId
 		{
@@ -55,7 +55,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			}
 		}
 
-		public List<QueryAuditLog_LogApiResultModel> Result
+		public QuerySmartqPermissionByCubeId_Result Result
 		{
 			get
 			{
@@ -67,118 +67,48 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			}
 		}
 
-		public class QueryAuditLog_LogApiResultModel
+		public class QuerySmartqPermissionByCubeId_Result
 		{
 
-			private string gmtCreate;
+			private bool? hasPerssion;
 
-			private string operatorAccountName;
+			private string cubeId;
 
-			private string operatorName;
+			private string cubeName;
 
-			private string operatorType;
-
-			private string targetName;
-
-			private string targetType;
-
-			private string workspaceId;
-
-			private string targetId;
-
-			public string GmtCreate
+			public bool? HasPerssion
 			{
 				get
 				{
-					return gmtCreate;
+					return hasPerssion;
 				}
 				set	
 				{
-					gmtCreate = value;
+					hasPerssion = value;
 				}
 			}
 
-			public string OperatorAccountName
+			public string CubeId
 			{
 				get
 				{
-					return operatorAccountName;
+					return cubeId;
 				}
 				set	
 				{
-					operatorAccountName = value;
+					cubeId = value;
 				}
 			}
 
-			public string OperatorName
+			public string CubeName
 			{
 				get
 				{
-					return operatorName;
+					return cubeName;
 				}
 				set	
 				{
-					operatorName = value;
-				}
-			}
-
-			public string OperatorType
-			{
-				get
-				{
-					return operatorType;
-				}
-				set	
-				{
-					operatorType = value;
-				}
-			}
-
-			public string TargetName
-			{
-				get
-				{
-					return targetName;
-				}
-				set	
-				{
-					targetName = value;
-				}
-			}
-
-			public string TargetType
-			{
-				get
-				{
-					return targetType;
-				}
-				set	
-				{
-					targetType = value;
-				}
-			}
-
-			public string WorkspaceId
-			{
-				get
-				{
-					return workspaceId;
-				}
-				set	
-				{
-					workspaceId = value;
-				}
-			}
-
-			public string TargetId
-			{
-				get
-				{
-					return targetId;
-				}
-				set	
-				{
-					targetId = value;
+					cubeName = value;
 				}
 			}
 		}

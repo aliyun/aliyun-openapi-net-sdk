@@ -22,14 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.quickbi_public.Model.V20220101
 {
-	public class QueryAuditLogResponse : AcsResponse
+	public class SmartqAuthorizeResponse : AcsResponse
 	{
 
 		private string requestId;
 
 		private bool? success;
 
-		private List<QueryAuditLog_LogApiResultModel> result;
+		private List<SmartqAuthorize_Data> result;
 
 		public string RequestId
 		{
@@ -55,7 +55,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			}
 		}
 
-		public List<QueryAuditLog_LogApiResultModel> Result
+		public List<SmartqAuthorize_Data> Result
 		{
 			get
 			{
@@ -67,118 +67,62 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			}
 		}
 
-		public class QueryAuditLog_LogApiResultModel
+		public class SmartqAuthorize_Data
 		{
 
-			private string gmtCreate;
+			private string userId;
 
-			private string operatorAccountName;
+			private string llmCube;
 
-			private string operatorName;
+			private string llmCubeTheme;
 
-			private string operatorType;
+			private string detailMessage;
 
-			private string targetName;
-
-			private string targetType;
-
-			private string workspaceId;
-
-			private string targetId;
-
-			public string GmtCreate
+			public string UserId
 			{
 				get
 				{
-					return gmtCreate;
+					return userId;
 				}
 				set	
 				{
-					gmtCreate = value;
+					userId = value;
 				}
 			}
 
-			public string OperatorAccountName
+			public string LlmCube
 			{
 				get
 				{
-					return operatorAccountName;
+					return llmCube;
 				}
 				set	
 				{
-					operatorAccountName = value;
+					llmCube = value;
 				}
 			}
 
-			public string OperatorName
+			public string LlmCubeTheme
 			{
 				get
 				{
-					return operatorName;
+					return llmCubeTheme;
 				}
 				set	
 				{
-					operatorName = value;
+					llmCubeTheme = value;
 				}
 			}
 
-			public string OperatorType
+			public string DetailMessage
 			{
 				get
 				{
-					return operatorType;
+					return detailMessage;
 				}
 				set	
 				{
-					operatorType = value;
-				}
-			}
-
-			public string TargetName
-			{
-				get
-				{
-					return targetName;
-				}
-				set	
-				{
-					targetName = value;
-				}
-			}
-
-			public string TargetType
-			{
-				get
-				{
-					return targetType;
-				}
-				set	
-				{
-					targetType = value;
-				}
-			}
-
-			public string WorkspaceId
-			{
-				get
-				{
-					return workspaceId;
-				}
-				set	
-				{
-					workspaceId = value;
-				}
-			}
-
-			public string TargetId
-			{
-				get
-				{
-					return targetId;
-				}
-				set	
-				{
-					targetId = value;
+					detailMessage = value;
 				}
 			}
 		}

@@ -27,34 +27,16 @@ using Aliyun.Acs.quickbi_public.Transform.V20220101;
 
 namespace Aliyun.Acs.quickbi_public.Model.V20220101
 {
-    public class UpdateWorkspaceUserRoleRequest : RpcAcsRequest<UpdateWorkspaceUserRoleResponse>
+    public class QueryLlmCubeWithThemeListByUserIdRequest : RpcAcsRequest<QueryLlmCubeWithThemeListByUserIdResponse>
     {
-        public UpdateWorkspaceUserRoleRequest()
-            : base("quickbi-public", "2022-01-01", "UpdateWorkspaceUserRole", "2.2.0", "openAPI")
+        public QueryLlmCubeWithThemeListByUserIdRequest()
+            : base("quickbi-public", "2022-01-01", "QueryLlmCubeWithThemeListByUserId", "2.2.0", "openAPI")
         {
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private long? roleId;
-
 		private string userId;
-
-		private string roleIds;
-
-		private string workspaceId;
-
-		public long? RoleId
-		{
-			get
-			{
-				return roleId;
-			}
-			set	
-			{
-				roleId = value;
-				DictionaryUtil.Add(QueryParameters, "RoleId", value.ToString());
-			}
-		}
 
 		public string UserId
 		{
@@ -69,40 +51,14 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			}
 		}
 
-		public string RoleIds
-		{
-			get
-			{
-				return roleIds;
-			}
-			set	
-			{
-				roleIds = value;
-				DictionaryUtil.Add(QueryParameters, "RoleIds", value);
-			}
-		}
-
-		public string WorkspaceId
-		{
-			get
-			{
-				return workspaceId;
-			}
-			set	
-			{
-				workspaceId = value;
-				DictionaryUtil.Add(QueryParameters, "WorkspaceId", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override UpdateWorkspaceUserRoleResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryLlmCubeWithThemeListByUserIdResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateWorkspaceUserRoleResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryLlmCubeWithThemeListByUserIdResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

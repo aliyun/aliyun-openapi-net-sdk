@@ -22,14 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.quickbi_public.Model.V20220101
 {
-	public class QueryAuditLogResponse : AcsResponse
+	public class ListDataSourceResponse : AcsResponse
 	{
 
 		private string requestId;
 
 		private bool? success;
 
-		private List<QueryAuditLog_LogApiResultModel> result;
+		private List<ListDataSource_Data> result;
 
 		public string RequestId
 		{
@@ -55,7 +55,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			}
 		}
 
-		public List<QueryAuditLog_LogApiResultModel> Result
+		public List<ListDataSource_Data> Result
 		{
 			get
 			{
@@ -67,24 +67,60 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			}
 		}
 
-		public class QueryAuditLog_LogApiResultModel
+		public class ListDataSource_Data
 		{
+
+			private string creatorId;
+
+			private string creatorName;
+
+			private string datasourceId;
 
 			private string gmtCreate;
 
-			private string operatorAccountName;
+			private string gmtModified;
 
-			private string operatorName;
+			private string showName;
 
-			private string operatorType;
+			private string dsType;
 
-			private string targetName;
+			private string parentDsType;
 
-			private string targetType;
+			public string CreatorId
+			{
+				get
+				{
+					return creatorId;
+				}
+				set	
+				{
+					creatorId = value;
+				}
+			}
 
-			private string workspaceId;
+			public string CreatorName
+			{
+				get
+				{
+					return creatorName;
+				}
+				set	
+				{
+					creatorName = value;
+				}
+			}
 
-			private string targetId;
+			public string DatasourceId
+			{
+				get
+				{
+					return datasourceId;
+				}
+				set	
+				{
+					datasourceId = value;
+				}
+			}
 
 			public string GmtCreate
 			{
@@ -98,87 +134,51 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string OperatorAccountName
+			public string GmtModified
 			{
 				get
 				{
-					return operatorAccountName;
+					return gmtModified;
 				}
 				set	
 				{
-					operatorAccountName = value;
+					gmtModified = value;
 				}
 			}
 
-			public string OperatorName
+			public string ShowName
 			{
 				get
 				{
-					return operatorName;
+					return showName;
 				}
 				set	
 				{
-					operatorName = value;
+					showName = value;
 				}
 			}
 
-			public string OperatorType
+			public string DsType
 			{
 				get
 				{
-					return operatorType;
+					return dsType;
 				}
 				set	
 				{
-					operatorType = value;
+					dsType = value;
 				}
 			}
 
-			public string TargetName
+			public string ParentDsType
 			{
 				get
 				{
-					return targetName;
+					return parentDsType;
 				}
 				set	
 				{
-					targetName = value;
-				}
-			}
-
-			public string TargetType
-			{
-				get
-				{
-					return targetType;
-				}
-				set	
-				{
-					targetType = value;
-				}
-			}
-
-			public string WorkspaceId
-			{
-				get
-				{
-					return workspaceId;
-				}
-				set	
-				{
-					workspaceId = value;
-				}
-			}
-
-			public string TargetId
-			{
-				get
-				{
-					return targetId;
-				}
-				set	
-				{
-					targetId = value;
+					parentDsType = value;
 				}
 			}
 		}

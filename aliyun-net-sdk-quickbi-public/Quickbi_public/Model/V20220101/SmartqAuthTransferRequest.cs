@@ -27,71 +27,42 @@ using Aliyun.Acs.quickbi_public.Transform.V20220101;
 
 namespace Aliyun.Acs.quickbi_public.Model.V20220101
 {
-    public class UpdateWorkspaceUserRoleRequest : RpcAcsRequest<UpdateWorkspaceUserRoleResponse>
+    public class SmartqAuthTransferRequest : RpcAcsRequest<SmartqAuthTransferResponse>
     {
-        public UpdateWorkspaceUserRoleRequest()
-            : base("quickbi-public", "2022-01-01", "UpdateWorkspaceUserRole", "2.2.0", "openAPI")
+        public SmartqAuthTransferRequest()
+            : base("quickbi-public", "2022-01-01", "SmartqAuthTransfer", "2.2.0", "openAPI")
         {
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private long? roleId;
+		private string targetUserIds;
 
-		private string userId;
+		private string originUserId;
 
-		private string roleIds;
-
-		private string workspaceId;
-
-		public long? RoleId
+		public string TargetUserIds
 		{
 			get
 			{
-				return roleId;
+				return targetUserIds;
 			}
 			set	
 			{
-				roleId = value;
-				DictionaryUtil.Add(QueryParameters, "RoleId", value.ToString());
+				targetUserIds = value;
+				DictionaryUtil.Add(QueryParameters, "TargetUserIds", value);
 			}
 		}
 
-		public string UserId
+		public string OriginUserId
 		{
 			get
 			{
-				return userId;
+				return originUserId;
 			}
 			set	
 			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
-			}
-		}
-
-		public string RoleIds
-		{
-			get
-			{
-				return roleIds;
-			}
-			set	
-			{
-				roleIds = value;
-				DictionaryUtil.Add(QueryParameters, "RoleIds", value);
-			}
-		}
-
-		public string WorkspaceId
-		{
-			get
-			{
-				return workspaceId;
-			}
-			set	
-			{
-				workspaceId = value;
-				DictionaryUtil.Add(QueryParameters, "WorkspaceId", value);
+				originUserId = value;
+				DictionaryUtil.Add(QueryParameters, "OriginUserId", value);
 			}
 		}
 
@@ -100,9 +71,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			return false;
 		}
 
-        public override UpdateWorkspaceUserRoleResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SmartqAuthTransferResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateWorkspaceUserRoleResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SmartqAuthTransferResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

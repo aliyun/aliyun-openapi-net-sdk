@@ -27,71 +27,87 @@ using Aliyun.Acs.quickbi_public.Transform.V20220101;
 
 namespace Aliyun.Acs.quickbi_public.Model.V20220101
 {
-    public class UpdateWorkspaceUserRoleRequest : RpcAcsRequest<UpdateWorkspaceUserRoleResponse>
+    public class SmartqAuthorizeRequest : RpcAcsRequest<SmartqAuthorizeResponse>
     {
-        public UpdateWorkspaceUserRoleRequest()
-            : base("quickbi-public", "2022-01-01", "UpdateWorkspaceUserRole", "2.2.0", "openAPI")
+        public SmartqAuthorizeRequest()
+            : base("quickbi-public", "2022-01-01", "SmartqAuthorize", "2.2.0", "openAPI")
         {
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private long? roleId;
+		private string llmCubeThemes;
 
-		private string userId;
+		private string llmCubes;
 
-		private string roleIds;
+		private int? operationType;
 
-		private string workspaceId;
+		private string expireDay;
 
-		public long? RoleId
+		private string userIds;
+
+		public string LlmCubeThemes
 		{
 			get
 			{
-				return roleId;
+				return llmCubeThemes;
 			}
 			set	
 			{
-				roleId = value;
-				DictionaryUtil.Add(QueryParameters, "RoleId", value.ToString());
+				llmCubeThemes = value;
+				DictionaryUtil.Add(QueryParameters, "LlmCubeThemes", value);
 			}
 		}
 
-		public string UserId
+		public string LlmCubes
 		{
 			get
 			{
-				return userId;
+				return llmCubes;
 			}
 			set	
 			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
+				llmCubes = value;
+				DictionaryUtil.Add(QueryParameters, "LlmCubes", value);
 			}
 		}
 
-		public string RoleIds
+		public int? OperationType
 		{
 			get
 			{
-				return roleIds;
+				return operationType;
 			}
 			set	
 			{
-				roleIds = value;
-				DictionaryUtil.Add(QueryParameters, "RoleIds", value);
+				operationType = value;
+				DictionaryUtil.Add(QueryParameters, "OperationType", value.ToString());
 			}
 		}
 
-		public string WorkspaceId
+		public string ExpireDay
 		{
 			get
 			{
-				return workspaceId;
+				return expireDay;
 			}
 			set	
 			{
-				workspaceId = value;
-				DictionaryUtil.Add(QueryParameters, "WorkspaceId", value);
+				expireDay = value;
+				DictionaryUtil.Add(QueryParameters, "ExpireDay", value);
+			}
+		}
+
+		public string UserIds
+		{
+			get
+			{
+				return userIds;
+			}
+			set	
+			{
+				userIds = value;
+				DictionaryUtil.Add(QueryParameters, "UserIds", value);
 			}
 		}
 
@@ -100,9 +116,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			return false;
 		}
 
-        public override UpdateWorkspaceUserRoleResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SmartqAuthorizeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateWorkspaceUserRoleResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SmartqAuthorizeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

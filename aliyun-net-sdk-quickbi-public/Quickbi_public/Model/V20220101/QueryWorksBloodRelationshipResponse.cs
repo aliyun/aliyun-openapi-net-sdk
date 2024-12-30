@@ -25,23 +25,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 	public class QueryWorksBloodRelationshipResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private List<QueryWorksBloodRelationship_Item> result;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<QueryWorksBloodRelationship_Item> result;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -77,6 +77,8 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			private int? componentType;
 
 			private string componentTypeName;
+
+			private string componentTypeCnName;
 
 			private string datasetId;
 
@@ -130,6 +132,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
+			public string ComponentTypeCnName
+			{
+				get
+				{
+					return componentTypeCnName;
+				}
+				set	
+				{
+					componentTypeCnName = value;
+				}
+			}
+
 			public string DatasetId
 			{
 				get
@@ -170,6 +184,8 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				private string pathId;
 
 				private string uid;
+
+				private string expression;
 
 				public string AreaId
 				{
@@ -252,6 +268,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						uid = value;
+					}
+				}
+
+				public string Expression
+				{
+					get
+					{
+						return expression;
+					}
+					set	
+					{
+						expression = value;
 					}
 				}
 			}

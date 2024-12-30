@@ -44,6 +44,7 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 				logApiResultModel.TargetName = _ctx.StringValue("QueryAuditLog.Result["+ i +"].TargetName");
 				logApiResultModel.TargetType = _ctx.StringValue("QueryAuditLog.Result["+ i +"].TargetType");
 				logApiResultModel.WorkspaceId = _ctx.StringValue("QueryAuditLog.Result["+ i +"].WorkspaceId");
+				logApiResultModel.TargetId = _ctx.StringValue("QueryAuditLog.Result["+ i +"].TargetId");
 
 				queryAuditLogResponse_result.Add(logApiResultModel);
 			}

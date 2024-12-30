@@ -31,8 +31,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			QueryWorksBloodRelationshipResponse queryWorksBloodRelationshipResponse = new QueryWorksBloodRelationshipResponse();
 
 			queryWorksBloodRelationshipResponse.HttpResponse = _ctx.HttpResponse;
-			queryWorksBloodRelationshipResponse.RequestId = _ctx.StringValue("QueryWorksBloodRelationship.RequestId");
 			queryWorksBloodRelationshipResponse.Success = _ctx.BooleanValue("QueryWorksBloodRelationship.Success");
+			queryWorksBloodRelationshipResponse.RequestId = _ctx.StringValue("QueryWorksBloodRelationship.RequestId");
 
 			List<QueryWorksBloodRelationshipResponse.QueryWorksBloodRelationship_Item> queryWorksBloodRelationshipResponse_result = new List<QueryWorksBloodRelationshipResponse.QueryWorksBloodRelationship_Item>();
 			for (int i = 0; i < _ctx.Length("QueryWorksBloodRelationship.Result.Length"); i++) {
@@ -41,6 +41,7 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 				item.ComponentName = _ctx.StringValue("QueryWorksBloodRelationship.Result["+ i +"].ComponentName");
 				item.ComponentType = _ctx.IntegerValue("QueryWorksBloodRelationship.Result["+ i +"].ComponentType");
 				item.ComponentTypeName = _ctx.StringValue("QueryWorksBloodRelationship.Result["+ i +"].ComponentTypeName");
+				item.ComponentTypeCnName = _ctx.StringValue("QueryWorksBloodRelationship.Result["+ i +"].ComponentTypeCnName");
 				item.DatasetId = _ctx.StringValue("QueryWorksBloodRelationship.Result["+ i +"].DatasetId");
 
 				List<QueryWorksBloodRelationshipResponse.QueryWorksBloodRelationship_Item.QueryWorksBloodRelationship_QueryParam> item_queryParams = new List<QueryWorksBloodRelationshipResponse.QueryWorksBloodRelationship_Item.QueryWorksBloodRelationship_QueryParam>();
@@ -53,6 +54,7 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 					queryParam.IsMeasure = _ctx.BooleanValue("QueryWorksBloodRelationship.Result["+ i +"].QueryParams["+ j +"].IsMeasure");
 					queryParam.PathId = _ctx.StringValue("QueryWorksBloodRelationship.Result["+ i +"].QueryParams["+ j +"].PathId");
 					queryParam.Uid = _ctx.StringValue("QueryWorksBloodRelationship.Result["+ i +"].QueryParams["+ j +"].Uid");
+					queryParam.Expression = _ctx.StringValue("QueryWorksBloodRelationship.Result["+ i +"].QueryParams["+ j +"].Expression");
 
 					item_queryParams.Add(queryParam);
 				}
