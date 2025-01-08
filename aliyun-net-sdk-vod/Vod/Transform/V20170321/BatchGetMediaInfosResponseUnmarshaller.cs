@@ -150,6 +150,45 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				mezzanineInfo.VideoStreamList = mezzanineInfo_videoStreamList;
 				mediaBasicInfo.MezzanineInfo = mezzanineInfo;
 
+				List<BatchGetMediaInfosResponse.BatchGetMediaInfos_MediaBasicInfo.BatchGetMediaInfos_PlayInfo> mediaBasicInfo_playInfoList = new List<BatchGetMediaInfosResponse.BatchGetMediaInfos_MediaBasicInfo.BatchGetMediaInfos_PlayInfo>();
+				for (int j = 0; j < _ctx.Length("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList.Length"); j++) {
+					BatchGetMediaInfosResponse.BatchGetMediaInfos_MediaBasicInfo.BatchGetMediaInfos_PlayInfo playInfo = new BatchGetMediaInfosResponse.BatchGetMediaInfos_MediaBasicInfo.BatchGetMediaInfos_PlayInfo();
+					playInfo.CreationTime = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].CreationTime");
+					playInfo.Status = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].Status");
+					playInfo.Specification = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].Specification");
+					playInfo.Complexity = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].Complexity");
+					playInfo.NarrowBandType = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].NarrowBandType");
+					playInfo.Height = _ctx.LongValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].Height");
+					playInfo.Bitrate = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].Bitrate");
+					playInfo.ModificationTime = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].ModificationTime");
+					playInfo.WatermarkId = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].WatermarkId");
+					playInfo.Encrypt = _ctx.LongValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].Encrypt");
+					playInfo.Definition = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].Definition");
+					playInfo.Rand = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].Rand");
+					playInfo.EncryptType = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].EncryptType");
+					playInfo.EncryptMode = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].EncryptMode");
+					playInfo.PreprocessStatus = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].PreprocessStatus");
+					playInfo.StreamType = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].StreamType");
+					playInfo.JobId = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].JobId");
+					playInfo.Plaintext = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].Plaintext");
+					playInfo.Size = _ctx.LongValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].Size");
+					playInfo.Width = _ctx.LongValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].Width");
+					playInfo.Fps = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].Fps");
+					playInfo.Duration = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].Duration");
+					playInfo.PlayURL = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].PlayURL");
+					playInfo.Format = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].Format");
+					playInfo.HDRType = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].HDRType");
+					playInfo.BitDepth = _ctx.IntegerValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].BitDepth");
+					playInfo.JobType = _ctx.IntegerValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].JobType");
+					playInfo.JobExt = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].JobExt");
+					playInfo.CodecName = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].CodecName");
+					playInfo.TemplateId = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].TemplateId");
+					playInfo.TemplateGroupId = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].PlayInfoList["+ j +"].TemplateGroupId");
+
+					mediaBasicInfo_playInfoList.Add(playInfo);
+				}
+				mediaBasicInfo.PlayInfoList = mediaBasicInfo_playInfoList;
+
 				batchGetMediaInfosResponse_mediaInfos.Add(mediaBasicInfo);
 			}
 			batchGetMediaInfosResponse.MediaInfos = batchGetMediaInfosResponse_mediaInfos;
