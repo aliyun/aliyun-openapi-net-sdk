@@ -161,6 +161,10 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string burstingEnabled;
 
+		private string rowCompression;
+
+		private string imperceptibleSwitch;
+
 		private List<DescribeDBClusterAttribute_DBNode> dBNodes;
 
 		private List<DescribeDBClusterAttribute_Tag> tags;
@@ -980,6 +984,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				burstingEnabled = value;
+			}
+		}
+
+		public string RowCompression
+		{
+			get
+			{
+				return rowCompression;
+			}
+			set	
+			{
+				rowCompression = value;
+			}
+		}
+
+		public string ImperceptibleSwitch
+		{
+			get
+			{
+				return imperceptibleSwitch;
+			}
+			set	
+			{
+				imperceptibleSwitch = value;
 			}
 		}
 

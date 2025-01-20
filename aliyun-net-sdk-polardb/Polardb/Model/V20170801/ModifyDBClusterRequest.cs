@@ -40,7 +40,11 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			Method = MethodType.POST;
         }
 
+		private string modifyRowCompression;
+
 		private long? resourceOwnerId;
+
+		private string tableMeta;
 
 		private string standbyHAMode;
 
@@ -68,6 +72,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string dataSyncMode;
 
+		public string ModifyRowCompression
+		{
+			get
+			{
+				return modifyRowCompression;
+			}
+			set	
+			{
+				modifyRowCompression = value;
+				DictionaryUtil.Add(QueryParameters, "ModifyRowCompression", value);
+			}
+		}
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -78,6 +95,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string TableMeta
+		{
+			get
+			{
+				return tableMeta;
+			}
+			set	
+			{
+				tableMeta = value;
+				DictionaryUtil.Add(QueryParameters, "TableMeta", value);
 			}
 		}
 

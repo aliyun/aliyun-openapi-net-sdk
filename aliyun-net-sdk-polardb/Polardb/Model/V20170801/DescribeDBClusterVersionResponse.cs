@@ -51,6 +51,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string proxyLatestVersionAfterDBEngineUpgraded;
 
+		private string dBInnerRevisionVersion;
+
 		private List<DescribeDBClusterVersion_DBRevisionVersionListItem> dBRevisionVersionList;
 
 		private List<DescribeDBClusterVersion_ProxyRevisionVersionListItem> proxyRevisionVersionList;
@@ -208,6 +210,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				proxyLatestVersionAfterDBEngineUpgraded = value;
+			}
+		}
+
+		public string DBInnerRevisionVersion
+		{
+			get
+			{
+				return dBInnerRevisionVersion;
+			}
+			set	
+			{
+				dBInnerRevisionVersion = value;
 			}
 		}
 

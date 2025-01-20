@@ -99,6 +99,8 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeDBClusterAttributeResponse.SourceRegionId = _ctx.StringValue("DescribeDBClusterAttribute.SourceRegionId");
 			describeDBClusterAttributeResponse.ImciAutoIndex = _ctx.StringValue("DescribeDBClusterAttribute.ImciAutoIndex");
 			describeDBClusterAttributeResponse.BurstingEnabled = _ctx.StringValue("DescribeDBClusterAttribute.BurstingEnabled");
+			describeDBClusterAttributeResponse.RowCompression = _ctx.StringValue("DescribeDBClusterAttribute.RowCompression");
+			describeDBClusterAttributeResponse.ImperceptibleSwitch = _ctx.StringValue("DescribeDBClusterAttribute.ImperceptibleSwitch");
 
 			DescribeDBClusterAttributeResponse.DescribeDBClusterAttribute_RelatedAPInstance relatedAPInstance = new DescribeDBClusterAttributeResponse.DescribeDBClusterAttribute_RelatedAPInstance();
 			relatedAPInstance.Name = _ctx.StringValue("DescribeDBClusterAttribute.RelatedAPInstance.Name");

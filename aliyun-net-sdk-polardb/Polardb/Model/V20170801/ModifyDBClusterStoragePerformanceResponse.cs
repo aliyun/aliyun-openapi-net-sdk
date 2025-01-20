@@ -22,38 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-	public class DescribeDBClusterTDEResponse : AcsResponse
+	public class ModifyDBClusterStoragePerformanceResponse : AcsResponse
 	{
-
-		private string automaticRotation;
 
 		private string dBClusterId;
 
-		private string encryptNewTables;
-
-		private string encryptionKey;
+		private string orderId;
 
 		private string requestId;
-
-		private string rotationInterval;
-
-		private string tDERegion;
-
-		private string tDEStatus;
-
-		private string encryptionKeyStatus;
-
-		public string AutomaticRotation
-		{
-			get
-			{
-				return automaticRotation;
-			}
-			set	
-			{
-				automaticRotation = value;
-			}
-		}
 
 		public string DBClusterId
 		{
@@ -67,27 +43,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string EncryptNewTables
+		public string OrderId
 		{
 			get
 			{
-				return encryptNewTables;
+				return orderId;
 			}
 			set	
 			{
-				encryptNewTables = value;
-			}
-		}
-
-		public string EncryptionKey
-		{
-			get
-			{
-				return encryptionKey;
-			}
-			set	
-			{
-				encryptionKey = value;
+				orderId = value;
 			}
 		}
 
@@ -100,54 +64,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string RotationInterval
-		{
-			get
-			{
-				return rotationInterval;
-			}
-			set	
-			{
-				rotationInterval = value;
-			}
-		}
-
-		public string TDERegion
-		{
-			get
-			{
-				return tDERegion;
-			}
-			set	
-			{
-				tDERegion = value;
-			}
-		}
-
-		public string TDEStatus
-		{
-			get
-			{
-				return tDEStatus;
-			}
-			set	
-			{
-				tDEStatus = value;
-			}
-		}
-
-		public string EncryptionKeyStatus
-		{
-			get
-			{
-				return encryptionKeyStatus;
-			}
-			set	
-			{
-				encryptionKeyStatus = value;
 			}
 		}
 	}

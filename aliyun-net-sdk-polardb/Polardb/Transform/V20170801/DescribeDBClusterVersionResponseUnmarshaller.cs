@@ -44,6 +44,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeDBClusterVersionResponse.ProxyLatestVersion = _ctx.StringValue("DescribeDBClusterVersion.ProxyLatestVersion");
 			describeDBClusterVersionResponse.DBLatestVersion = _ctx.StringValue("DescribeDBClusterVersion.DBLatestVersion");
 			describeDBClusterVersionResponse.ProxyLatestVersionAfterDBEngineUpgraded = _ctx.StringValue("DescribeDBClusterVersion.ProxyLatestVersionAfterDBEngineUpgraded");
+			describeDBClusterVersionResponse.DBInnerRevisionVersion = _ctx.StringValue("DescribeDBClusterVersion.DBInnerRevisionVersion");
 
 			List<DescribeDBClusterVersionResponse.DescribeDBClusterVersion_DBRevisionVersionListItem> describeDBClusterVersionResponse_dBRevisionVersionList = new List<DescribeDBClusterVersionResponse.DescribeDBClusterVersion_DBRevisionVersionListItem>();
 			for (int i = 0; i < _ctx.Length("DescribeDBClusterVersion.DBRevisionVersionList.Length"); i++) {
