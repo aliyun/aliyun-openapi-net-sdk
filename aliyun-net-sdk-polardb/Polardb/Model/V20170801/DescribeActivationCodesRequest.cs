@@ -49,6 +49,10 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string aliyunOrderId;
 
+		private string macAddress;
+
+		private string systemIdentifier;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -104,6 +108,32 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				aliyunOrderId = value;
 				DictionaryUtil.Add(QueryParameters, "AliyunOrderId", value);
+			}
+		}
+
+		public string MacAddress
+		{
+			get
+			{
+				return macAddress;
+			}
+			set	
+			{
+				macAddress = value;
+				DictionaryUtil.Add(QueryParameters, "MacAddress", value);
+			}
+		}
+
+		public string SystemIdentifier
+		{
+			get
+			{
+				return systemIdentifier;
+			}
+			set	
+			{
+				systemIdentifier = value;
+				DictionaryUtil.Add(QueryParameters, "SystemIdentifier", value);
 			}
 		}
 
