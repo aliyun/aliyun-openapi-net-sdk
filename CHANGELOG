@@ -1,3 +1,6 @@
+2025-02-07 Version: 1.0.1
+- Add ModifyInstanceProperties.
+
 2025-02-06 Version: 1.8.25
 - DescribeLicenseCodes support filter by mac address or system id.
 

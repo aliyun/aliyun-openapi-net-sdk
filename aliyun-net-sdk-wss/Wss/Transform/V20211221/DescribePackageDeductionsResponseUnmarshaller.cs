@@ -35,6 +35,8 @@ namespace Aliyun.Acs.wss.Transform.V20211221
 			describePackageDeductionsResponse.RequestId = _ctx.StringValue("DescribePackageDeductions.RequestId");
 			describePackageDeductionsResponse.PageSize = _ctx.IntegerValue("DescribePackageDeductions.PageSize");
 			describePackageDeductionsResponse.TotalCount = _ctx.LongValue("DescribePackageDeductions.TotalCount");
+			describePackageDeductionsResponse.TotalUsedTime = _ctx.LongValue("DescribePackageDeductions.TotalUsedTime");
+			describePackageDeductionsResponse.TotalUsedCoreTime = _ctx.FloatValue("DescribePackageDeductions.TotalUsedCoreTime");
 
 			List<DescribePackageDeductionsResponse.DescribePackageDeductions_Deduction> describePackageDeductionsResponse_deductions = new List<DescribePackageDeductionsResponse.DescribePackageDeductions_Deduction>();
 			for (int i = 0; i < _ctx.Length("DescribePackageDeductions.Deductions.Length"); i++) {

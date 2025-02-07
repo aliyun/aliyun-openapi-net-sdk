@@ -33,6 +33,10 @@ namespace Aliyun.Acs.wss.Model.V20211221
 
 		private long? totalCount;
 
+		private long? totalUsedTime;
+
+		private float? totalUsedCoreTime;
+
 		private List<DescribePackageDeductions_Deduction> deductions;
 
 		public int? PageNum
@@ -80,6 +84,30 @@ namespace Aliyun.Acs.wss.Model.V20211221
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public long? TotalUsedTime
+		{
+			get
+			{
+				return totalUsedTime;
+			}
+			set	
+			{
+				totalUsedTime = value;
+			}
+		}
+
+		public float? TotalUsedCoreTime
+		{
+			get
+			{
+				return totalUsedCoreTime;
+			}
+			set	
+			{
+				totalUsedCoreTime = value;
 			}
 		}
 

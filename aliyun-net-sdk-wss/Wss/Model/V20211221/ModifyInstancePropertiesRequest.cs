@@ -28,66 +28,23 @@ using Aliyun.Acs.wss.Transform.V20211221;
 
 namespace Aliyun.Acs.wss.Model.V20211221
 {
-    public class DescribePackageDeductionsRequest : RpcAcsRequest<DescribePackageDeductionsResponse>
+    public class ModifyInstancePropertiesRequest : RpcAcsRequest<ModifyInstancePropertiesResponse>
     {
-        public DescribePackageDeductionsRequest()
-            : base("wss", "2021-12-21", "DescribePackageDeductions")
+        public ModifyInstancePropertiesRequest()
+            : base("wss", "2021-12-21", "ModifyInstanceProperties")
         {
 			Method = MethodType.POST;
         }
 
-		private long? endTime;
-
-		private long? startTime;
-
-		private int? pageNum;
-
 		private string resourceType;
 
-		private List<string> packageIdss = new List<string>(){ };
+		private string instanceId;
 
 		private List<string> instanceIdss = new List<string>(){ };
 
-		private int? pageSize;
+		private string _value;
 
-		public long? EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
-			}
-		}
-
-		public long? StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
-			}
-		}
-
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
-			}
-		}
+		private string key;
 
 		public string ResourceType
 		{
@@ -102,16 +59,16 @@ namespace Aliyun.Acs.wss.Model.V20211221
 			}
 		}
 
-		public List<string> PackageIdss
+		public string InstanceId
 		{
 			get
 			{
-				return packageIdss;
+				return instanceId;
 			}
-
-			set
+			set	
 			{
-				packageIdss = value;
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -128,16 +85,29 @@ namespace Aliyun.Acs.wss.Model.V20211221
 			}
 		}
 
-		public int? PageSize
+		public string _Value
 		{
 			get
 			{
-				return pageSize;
+				return _value;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				_value = value;
+				DictionaryUtil.Add(QueryParameters, "Value", value);
+			}
+		}
+
+		public string Key
+		{
+			get
+			{
+				return key;
+			}
+			set	
+			{
+				key = value;
+				DictionaryUtil.Add(QueryParameters, "Key", value);
 			}
 		}
 
@@ -146,9 +116,9 @@ namespace Aliyun.Acs.wss.Model.V20211221
 			return false;
 		}
 
-        public override DescribePackageDeductionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyInstancePropertiesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribePackageDeductionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyInstancePropertiesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
