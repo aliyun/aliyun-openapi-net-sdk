@@ -29,6 +29,7 @@ namespace Aliyun.Acs.Core.Auth.Sts
         private string policy;
         private string roleArn;
         private string roleSessionName;
+        private string externalId;
 
         public AssumeRoleRequest() : base("Sts", "2015-04-01", "AssumeRole")
         {
@@ -72,6 +73,16 @@ namespace Aliyun.Acs.Core.Auth.Sts
             {
                 roleSessionName = value;
                 DictionaryUtil.Add(QueryParameters, "RoleSessionName", value);
+            }
+        }
+        
+        public string ExternalId
+        {
+            get { return externalId; }
+            set
+            {
+                externalId = value;
+                DictionaryUtil.Add(QueryParameters, "ExternalId", value);
             }
         }
 
