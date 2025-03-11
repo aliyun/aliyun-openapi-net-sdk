@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class ValidateShardTaskResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private List<ValidateShardTask_ListItem> list;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<ValidateShardTask_ListItem> list;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,21 +70,9 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class ValidateShardTask_ListItem
 		{
 
-			private string item;
-
 			private int? result;
 
-			public string Item
-			{
-				get
-				{
-					return item;
-				}
-				set	
-				{
-					item = value;
-				}
-			}
+			private string item;
 
 			public int? Result
 			{
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					result = value;
+				}
+			}
+
+			public string Item
+			{
+				get
+				{
+					return item;
+				}
+				set	
+				{
+					item = value;
 				}
 			}
 		}

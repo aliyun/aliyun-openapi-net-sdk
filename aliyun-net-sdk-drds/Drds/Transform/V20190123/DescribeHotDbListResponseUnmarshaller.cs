@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			DescribeHotDbListResponse describeHotDbListResponse = new DescribeHotDbListResponse();
 
 			describeHotDbListResponse.HttpResponse = _ctx.HttpResponse;
+			describeHotDbListResponse.Msg = _ctx.StringValue("DescribeHotDbList.Msg");
 			describeHotDbListResponse.RequestId = _ctx.StringValue("DescribeHotDbList.RequestId");
 			describeHotDbListResponse.Success = _ctx.BooleanValue("DescribeHotDbList.Success");
-			describeHotDbListResponse.Msg = _ctx.StringValue("DescribeHotDbList.Msg");
 
 			DescribeHotDbListResponse.DescribeHotDbList_Data data = new DescribeHotDbListResponse.DescribeHotDbList_Data();
 			data.RandomCode = _ctx.StringValue("DescribeHotDbList.Data.RandomCode");

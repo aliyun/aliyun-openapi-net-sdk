@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			DescribeDrdsDbRdsNameListResponse describeDrdsDbRdsNameListResponse = new DescribeDrdsDbRdsNameListResponse();
 
 			describeDrdsDbRdsNameListResponse.HttpResponse = _ctx.HttpResponse;
-			describeDrdsDbRdsNameListResponse.RequestId = _ctx.StringValue("DescribeDrdsDbRdsNameList.RequestId");
 			describeDrdsDbRdsNameListResponse.Success = _ctx.BooleanValue("DescribeDrdsDbRdsNameList.Success");
+			describeDrdsDbRdsNameListResponse.RequestId = _ctx.StringValue("DescribeDrdsDbRdsNameList.RequestId");
 
 			List<string> describeDrdsDbRdsNameListResponse_instanceNameList = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeDrdsDbRdsNameList.InstanceNameList.Length"); i++) {

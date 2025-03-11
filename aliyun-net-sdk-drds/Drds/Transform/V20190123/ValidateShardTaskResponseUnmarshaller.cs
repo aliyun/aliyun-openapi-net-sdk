@@ -31,14 +31,14 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			ValidateShardTaskResponse validateShardTaskResponse = new ValidateShardTaskResponse();
 
 			validateShardTaskResponse.HttpResponse = _ctx.HttpResponse;
-			validateShardTaskResponse.RequestId = _ctx.StringValue("ValidateShardTask.RequestId");
 			validateShardTaskResponse.Success = _ctx.BooleanValue("ValidateShardTask.Success");
+			validateShardTaskResponse.RequestId = _ctx.StringValue("ValidateShardTask.RequestId");
 
 			List<ValidateShardTaskResponse.ValidateShardTask_ListItem> validateShardTaskResponse_list = new List<ValidateShardTaskResponse.ValidateShardTask_ListItem>();
 			for (int i = 0; i < _ctx.Length("ValidateShardTask.List.Length"); i++) {
 				ValidateShardTaskResponse.ValidateShardTask_ListItem listItem = new ValidateShardTaskResponse.ValidateShardTask_ListItem();
-				listItem.Item = _ctx.StringValue("ValidateShardTask.List["+ i +"].Item");
 				listItem.Result = _ctx.IntegerValue("ValidateShardTask.List["+ i +"].Result");
+				listItem.Item = _ctx.StringValue("ValidateShardTask.List["+ i +"].Item");
 
 				validateShardTaskResponse_list.Add(listItem);
 			}

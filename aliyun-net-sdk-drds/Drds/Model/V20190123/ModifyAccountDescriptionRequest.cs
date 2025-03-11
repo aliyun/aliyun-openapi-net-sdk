@@ -27,10 +27,10 @@ using Aliyun.Acs.Drds.Transform.V20190123;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
 {
-    public class DescribeDrdsDbTasksRequest : RpcAcsRequest<DescribeDrdsDbTasksResponse>
+    public class ModifyAccountDescriptionRequest : RpcAcsRequest<ModifyAccountDescriptionResponse>
     {
-        public DescribeDrdsDbTasksRequest()
-            : base("Drds", "2019-01-23", "DescribeDrdsDbTasks", "drds", "openAPI")
+        public ModifyAccountDescriptionRequest()
+            : base("Drds", "2019-01-23", "ModifyAccountDescription", "drds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,22 +40,22 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			Method = MethodType.POST;
         }
 
-		private string taskType;
+		private string description;
 
 		private string drdsInstanceId;
 
-		private string dbName;
+		private string accountName;
 
-		public string TaskType
+		public string Description
 		{
 			get
 			{
-				return taskType;
+				return description;
 			}
 			set	
 			{
-				taskType = value;
-				DictionaryUtil.Add(QueryParameters, "TaskType", value);
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
@@ -72,22 +72,22 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			}
 		}
 
-		public string DbName
+		public string AccountName
 		{
 			get
 			{
-				return dbName;
+				return accountName;
 			}
 			set	
 			{
-				dbName = value;
-				DictionaryUtil.Add(QueryParameters, "DbName", value);
+				accountName = value;
+				DictionaryUtil.Add(QueryParameters, "AccountName", value);
 			}
 		}
 
-        public override DescribeDrdsDbTasksResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyAccountDescriptionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDrdsDbTasksResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyAccountDescriptionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

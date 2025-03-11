@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,39 +25,27 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribeTablesResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
+		private int? pageSize;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private string requestId;
 
 		private int? total;
 
+		private bool? success;
+
 		private List<DescribeTables_ListItem> list;
 
-		public string RequestId
+		public int? PageSize
 		{
 			get
 			{
-				return requestId;
+				return pageSize;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
+				pageSize = value;
 			}
 		}
 
@@ -73,15 +61,15 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			}
 		}
 
-		public int? PageSize
+		public string RequestId
 		{
 			get
 			{
-				return pageSize;
+				return requestId;
 			}
 			set	
 			{
-				pageSize = value;
+				requestId = value;
 			}
 		}
 
@@ -94,6 +82,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				total = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -112,31 +112,43 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class DescribeTables_ListItem
 		{
 
-			private string table;
+			private int? status;
+
+			private bool? isLocked;
 
 			private string shardKey;
 
 			private bool? isShard;
 
-			private bool? isLocked;
-
-			private int? dbInstType;
-
 			private bool? broadcast;
 
 			private bool? allowFullTableScan;
 
-			private int? status;
+			private string table;
 
-			public string Table
+			private int? dbInstType;
+
+			public int? Status
 			{
 				get
 				{
-					return table;
+					return status;
 				}
 				set	
 				{
-					table = value;
+					status = value;
+				}
+			}
+
+			public bool? IsLocked
+			{
+				get
+				{
+					return isLocked;
+				}
+				set	
+				{
+					isLocked = value;
 				}
 			}
 
@@ -164,30 +176,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public bool? IsLocked
-			{
-				get
-				{
-					return isLocked;
-				}
-				set	
-				{
-					isLocked = value;
-				}
-			}
-
-			public int? DbInstType
-			{
-				get
-				{
-					return dbInstType;
-				}
-				set	
-				{
-					dbInstType = value;
-				}
-			}
-
 			public bool? Broadcast
 			{
 				get
@@ -212,15 +200,27 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public int? Status
+			public string Table
 			{
 				get
 				{
-					return status;
+					return table;
 				}
 				set	
 				{
-					status = value;
+					table = value;
+				}
+			}
+
+			public int? DbInstType
+			{
+				get
+				{
+					return dbInstType;
+				}
+				set	
+				{
+					dbInstType = value;
 				}
 			}
 		}

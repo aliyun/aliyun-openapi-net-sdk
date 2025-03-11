@@ -27,10 +27,10 @@ using Aliyun.Acs.Drds.Transform.V20190123;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
 {
-    public class SubmitSwitchTaskRequest : RpcAcsRequest<SubmitSwitchTaskResponse>
+    public class RefreshDrdsAtomUrlRequest : RpcAcsRequest<RefreshDrdsAtomUrlResponse>
     {
-        public SubmitSwitchTaskRequest()
-            : base("Drds", "2019-01-23", "SubmitSwitchTask", "drds", "openAPI")
+        public RefreshDrdsAtomUrlRequest()
+            : base("Drds", "2019-01-23", "RefreshDrdsAtomUrl", "drds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,13 +42,7 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 
 		private string drdsInstanceId;
 
-		private string expandType;
-
-		private string jobId;
-
 		private string dbName;
-
-		private string parentJobId;
 
 		public string DrdsInstanceId
 		{
@@ -60,32 +54,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			{
 				drdsInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DrdsInstanceId", value);
-			}
-		}
-
-		public string ExpandType
-		{
-			get
-			{
-				return expandType;
-			}
-			set	
-			{
-				expandType = value;
-				DictionaryUtil.Add(QueryParameters, "ExpandType", value);
-			}
-		}
-
-		public string JobId
-		{
-			get
-			{
-				return jobId;
-			}
-			set	
-			{
-				jobId = value;
-				DictionaryUtil.Add(QueryParameters, "JobId", value);
 			}
 		}
 
@@ -102,22 +70,9 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			}
 		}
 
-		public string ParentJobId
-		{
-			get
-			{
-				return parentJobId;
-			}
-			set	
-			{
-				parentJobId = value;
-				DictionaryUtil.Add(QueryParameters, "ParentJobId", value);
-			}
-		}
-
-        public override SubmitSwitchTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override RefreshDrdsAtomUrlResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SubmitSwitchTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RefreshDrdsAtomUrlResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

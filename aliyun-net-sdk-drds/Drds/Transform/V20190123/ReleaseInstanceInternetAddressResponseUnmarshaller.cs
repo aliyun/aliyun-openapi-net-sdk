@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			ReleaseInstanceInternetAddressResponse releaseInstanceInternetAddressResponse = new ReleaseInstanceInternetAddressResponse();
 
 			releaseInstanceInternetAddressResponse.HttpResponse = _ctx.HttpResponse;
-			releaseInstanceInternetAddressResponse.RequestId = _ctx.StringValue("ReleaseInstanceInternetAddress.RequestId");
 			releaseInstanceInternetAddressResponse.Data = _ctx.BooleanValue("ReleaseInstanceInternetAddress.Data");
+			releaseInstanceInternetAddressResponse.RequestId = _ctx.StringValue("ReleaseInstanceInternetAddress.RequestId");
         
 			return releaseInstanceInternetAddressResponse;
         }

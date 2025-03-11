@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			UpdateInstanceNetworkResponse updateInstanceNetworkResponse = new UpdateInstanceNetworkResponse();
 
 			updateInstanceNetworkResponse.HttpResponse = _ctx.HttpResponse;
-			updateInstanceNetworkResponse.RequestId = _ctx.StringValue("UpdateInstanceNetwork.RequestId");
 			updateInstanceNetworkResponse.Success = _ctx.BooleanValue("UpdateInstanceNetwork.Success");
+			updateInstanceNetworkResponse.RequestId = _ctx.StringValue("UpdateInstanceNetwork.RequestId");
         
 			return updateInstanceNetworkResponse;
         }

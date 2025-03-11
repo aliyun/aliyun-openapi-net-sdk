@@ -31,20 +31,20 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			DescribeTableResponse describeTableResponse = new DescribeTableResponse();
 
 			describeTableResponse.HttpResponse = _ctx.HttpResponse;
-			describeTableResponse.RequestId = _ctx.StringValue("DescribeTable.RequestId");
 			describeTableResponse.Success = _ctx.BooleanValue("DescribeTable.Success");
+			describeTableResponse.RequestId = _ctx.StringValue("DescribeTable.RequestId");
 
 			DescribeTableResponse.DescribeTable_Data data = new DescribeTableResponse.DescribeTable_Data();
 
 			List<DescribeTableResponse.DescribeTable_Data.DescribeTable_ColumnInfo> data_list = new List<DescribeTableResponse.DescribeTable_Data.DescribeTable_ColumnInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeTable.Data.List.Length"); i++) {
 				DescribeTableResponse.DescribeTable_Data.DescribeTable_ColumnInfo columnInfo = new DescribeTableResponse.DescribeTable_Data.DescribeTable_ColumnInfo();
-				columnInfo.ColumnName = _ctx.StringValue("DescribeTable.Data.List["+ i +"].ColumnName");
-				columnInfo.ColumnType = _ctx.StringValue("DescribeTable.Data.List["+ i +"].ColumnType");
-				columnInfo.Extra = _ctx.StringValue("DescribeTable.Data.List["+ i +"].Extra");
 				columnInfo.Index = _ctx.StringValue("DescribeTable.Data.List["+ i +"].Index");
 				columnInfo.IsAllowNull = _ctx.StringValue("DescribeTable.Data.List["+ i +"].IsAllowNull");
+				columnInfo.ColumnName = _ctx.StringValue("DescribeTable.Data.List["+ i +"].ColumnName");
 				columnInfo.IsPk = _ctx.StringValue("DescribeTable.Data.List["+ i +"].IsPk");
+				columnInfo.ColumnType = _ctx.StringValue("DescribeTable.Data.List["+ i +"].ColumnType");
+				columnInfo.Extra = _ctx.StringValue("DescribeTable.Data.List["+ i +"].Extra");
 
 				data_list.Add(columnInfo);
 			}

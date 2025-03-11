@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			RemoveDrdsDbResponse removeDrdsDbResponse = new RemoveDrdsDbResponse();
 
 			removeDrdsDbResponse.HttpResponse = _ctx.HttpResponse;
-			removeDrdsDbResponse.RequestId = _ctx.StringValue("RemoveDrdsDb.RequestId");
 			removeDrdsDbResponse.Success = _ctx.BooleanValue("RemoveDrdsDb.Success");
+			removeDrdsDbResponse.RequestId = _ctx.StringValue("RemoveDrdsDb.RequestId");
         
 			return removeDrdsDbResponse;
         }

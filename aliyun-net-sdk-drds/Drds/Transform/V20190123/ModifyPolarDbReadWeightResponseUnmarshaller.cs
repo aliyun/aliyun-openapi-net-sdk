@@ -24,18 +24,17 @@ using Aliyun.Acs.Drds.Model.V20190123;
 
 namespace Aliyun.Acs.Drds.Transform.V20190123
 {
-    public class DescribeInstanceMenuSwitchResponseUnmarshaller
+    public class ModifyPolarDbReadWeightResponseUnmarshaller
     {
-        public static DescribeInstanceMenuSwitchResponse Unmarshall(UnmarshallerContext _ctx)
+        public static ModifyPolarDbReadWeightResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			DescribeInstanceMenuSwitchResponse describeInstanceMenuSwitchResponse = new DescribeInstanceMenuSwitchResponse();
+			ModifyPolarDbReadWeightResponse modifyPolarDbReadWeightResponse = new ModifyPolarDbReadWeightResponse();
 
-			describeInstanceMenuSwitchResponse.HttpResponse = _ctx.HttpResponse;
-			describeInstanceMenuSwitchResponse.RequestId = _ctx.StringValue("DescribeInstanceMenuSwitch.RequestId");
-			describeInstanceMenuSwitchResponse.Success = _ctx.BooleanValue("DescribeInstanceMenuSwitch.Success");
-			describeInstanceMenuSwitchResponse.Config = _ctx.StringValue("DescribeInstanceMenuSwitch.Config");
+			modifyPolarDbReadWeightResponse.HttpResponse = _ctx.HttpResponse;
+			modifyPolarDbReadWeightResponse.Success = _ctx.BooleanValue("ModifyPolarDbReadWeight.Success");
+			modifyPolarDbReadWeightResponse.RequestId = _ctx.StringValue("ModifyPolarDbReadWeight.RequestId");
         
-			return describeInstanceMenuSwitchResponse;
+			return modifyPolarDbReadWeightResponse;
         }
     }
 }

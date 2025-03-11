@@ -31,27 +31,27 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			DescribeBackupPolicyResponse describeBackupPolicyResponse = new DescribeBackupPolicyResponse();
 
 			describeBackupPolicyResponse.HttpResponse = _ctx.HttpResponse;
-			describeBackupPolicyResponse.RequestId = _ctx.StringValue("DescribeBackupPolicy.RequestId");
 			describeBackupPolicyResponse.Success = _ctx.BooleanValue("DescribeBackupPolicy.Success");
+			describeBackupPolicyResponse.RequestId = _ctx.StringValue("DescribeBackupPolicy.RequestId");
 
 			DescribeBackupPolicyResponse.DescribeBackupPolicy_BackupPolicyDO backupPolicyDO = new DescribeBackupPolicyResponse.DescribeBackupPolicy_BackupPolicyDO();
-			backupPolicyDO.GmtCreate = _ctx.LongValue("DescribeBackupPolicy.BackupPolicyDO.GmtCreate");
-			backupPolicyDO.GmtModified = _ctx.LongValue("DescribeBackupPolicy.BackupPolicyDO.GmtModified");
-			backupPolicyDO.BackupPolicyMode = _ctx.StringValue("DescribeBackupPolicy.BackupPolicyDO.BackupPolicyMode");
+			backupPolicyDO.BackupDbName = _ctx.StringValue("DescribeBackupPolicy.BackupPolicyDO.BackupDbName");
+			backupPolicyDO.LogBackupRetentionPeriod = _ctx.LongValue("DescribeBackupPolicy.BackupPolicyDO.LogBackupRetentionPeriod");
+			backupPolicyDO.DataBackupRetentionPeriod = _ctx.LongValue("DescribeBackupPolicy.BackupPolicyDO.DataBackupRetentionPeriod");
 			backupPolicyDO.BackupType = _ctx.StringValue("DescribeBackupPolicy.BackupPolicyDO.BackupType");
 			backupPolicyDO.BackupLevel = _ctx.StringValue("DescribeBackupPolicy.BackupPolicyDO.BackupLevel");
-			backupPolicyDO.BackupDbName = _ctx.StringValue("DescribeBackupPolicy.BackupPolicyDO.BackupDbName");
-			backupPolicyDO.PreferredBackupTime = _ctx.StringValue("DescribeBackupPolicy.BackupPolicyDO.PreferredBackupTime");
-			backupPolicyDO.PreferredBackupPeriod = _ctx.StringValue("DescribeBackupPolicy.BackupPolicyDO.PreferredBackupPeriod");
-			backupPolicyDO.DataBackupRetentionPeriod = _ctx.LongValue("DescribeBackupPolicy.BackupPolicyDO.DataBackupRetentionPeriod");
-			backupPolicyDO.LogBackupRetentionPeriod = _ctx.LongValue("DescribeBackupPolicy.BackupPolicyDO.LogBackupRetentionPeriod");
-			backupPolicyDO.BackupRetentionPeriod = _ctx.LongValue("DescribeBackupPolicy.BackupPolicyDO.BackupRetentionPeriod");
-			backupPolicyDO.BackupLog = _ctx.StringValue("DescribeBackupPolicy.BackupPolicyDO.BackupLog");
 			backupPolicyDO.LocalLogRetentionHours = _ctx.LongValue("DescribeBackupPolicy.BackupPolicyDO.LocalLogRetentionHours");
-			backupPolicyDO.LocalLogRetentionSpace = _ctx.LongValue("DescribeBackupPolicy.BackupPolicyDO.LocalLogRetentionSpace");
 			backupPolicyDO.HighSpaceUsageProtection = _ctx.LongValue("DescribeBackupPolicy.BackupPolicyDO.HighSpaceUsageProtection");
+			backupPolicyDO.GmtModified = _ctx.LongValue("DescribeBackupPolicy.BackupPolicyDO.GmtModified");
+			backupPolicyDO.BackupRetentionPeriod = _ctx.LongValue("DescribeBackupPolicy.BackupPolicyDO.BackupRetentionPeriod");
+			backupPolicyDO.BackupPolicyMode = _ctx.StringValue("DescribeBackupPolicy.BackupPolicyDO.BackupPolicyMode");
+			backupPolicyDO.PreferredBackupPeriod = _ctx.StringValue("DescribeBackupPolicy.BackupPolicyDO.PreferredBackupPeriod");
+			backupPolicyDO.LocalLogRetentionSpace = _ctx.LongValue("DescribeBackupPolicy.BackupPolicyDO.LocalLogRetentionSpace");
 			backupPolicyDO.BackupAppName = _ctx.StringValue("DescribeBackupPolicy.BackupPolicyDO.BackupAppName");
+			backupPolicyDO.PreferredBackupTime = _ctx.StringValue("DescribeBackupPolicy.BackupPolicyDO.PreferredBackupTime");
+			backupPolicyDO.GmtCreate = _ctx.LongValue("DescribeBackupPolicy.BackupPolicyDO.GmtCreate");
 			backupPolicyDO.BackupMode = _ctx.StringValue("DescribeBackupPolicy.BackupPolicyDO.BackupMode");
+			backupPolicyDO.BackupLog = _ctx.StringValue("DescribeBackupPolicy.BackupPolicyDO.BackupLog");
 			backupPolicyDO.NextBackupActuallyTime = _ctx.StringValue("DescribeBackupPolicy.BackupPolicyDO.NextBackupActuallyTime");
 			describeBackupPolicyResponse.BackupPolicyDO = backupPolicyDO;
         

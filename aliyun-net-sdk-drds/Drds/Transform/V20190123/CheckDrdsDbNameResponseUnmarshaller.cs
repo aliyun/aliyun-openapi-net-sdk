@@ -32,8 +32,8 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 
 			checkDrdsDbNameResponse.HttpResponse = _ctx.HttpResponse;
 			checkDrdsDbNameResponse.RequestId = _ctx.StringValue("CheckDrdsDbName.RequestId");
-			checkDrdsDbNameResponse.Success = _ctx.BooleanValue("CheckDrdsDbName.Success");
 			checkDrdsDbNameResponse.Result = _ctx.BooleanValue("CheckDrdsDbName.Result");
+			checkDrdsDbNameResponse.Success = _ctx.BooleanValue("CheckDrdsDbName.Success");
         
 			return checkDrdsDbNameResponse;
         }

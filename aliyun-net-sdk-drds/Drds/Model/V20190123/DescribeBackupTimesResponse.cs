@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribeBackupTimesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private DescribeBackupTimes_RestoreTime restoreTime;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private DescribeBackupTimes_RestoreTime restoreTime;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,21 +70,9 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class DescribeBackupTimes_RestoreTime
 		{
 
-			private string startTime;
-
 			private string endTime;
 
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
+			private string startTime;
 
 			public string EndTime
 			{
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					endTime = value;
+				}
+			}
+
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
 				}
 			}
 		}

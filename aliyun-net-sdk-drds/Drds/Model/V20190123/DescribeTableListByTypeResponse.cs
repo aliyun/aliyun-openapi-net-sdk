@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,39 +25,27 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribeTableListByTypeResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
+		private int? pageSize;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private string requestId;
 
 		private int? total;
 
+		private bool? success;
+
 		private List<DescribeTableListByType_ListItem> list;
 
-		public string RequestId
+		public int? PageSize
 		{
 			get
 			{
-				return requestId;
+				return pageSize;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
+				pageSize = value;
 			}
 		}
 
@@ -73,15 +61,15 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			}
 		}
 
-		public int? PageSize
+		public string RequestId
 		{
 			get
 			{
-				return pageSize;
+				return requestId;
 			}
 			set	
 			{
-				pageSize = value;
+				requestId = value;
 			}
 		}
 
@@ -94,6 +82,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				total = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -112,21 +112,9 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class DescribeTableListByType_ListItem
 		{
 
-			private string tableName;
-
 			private string property;
 
-			public string TableName
-			{
-				get
-				{
-					return tableName;
-				}
-				set	
-				{
-					tableName = value;
-				}
-			}
+			private string tableName;
 
 			public string Property
 			{
@@ -137,6 +125,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					property = value;
+				}
+			}
+
+			public string TableName
+			{
+				get
+				{
+					return tableName;
+				}
+				set	
+				{
+					tableName = value;
 				}
 			}
 		}

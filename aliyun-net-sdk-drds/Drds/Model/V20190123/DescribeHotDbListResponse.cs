@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,13 +25,25 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribeHotDbListResponse : AcsResponse
 	{
 
+		private string msg;
+
 		private string requestId;
 
 		private bool? success;
 
-		private string msg;
-
 		private DescribeHotDbList_Data data;
+
+		public string Msg
+		{
+			get
+			{
+				return msg;
+			}
+			set	
+			{
+				msg = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -54,18 +66,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public string Msg
-		{
-			get
-			{
-				return msg;
-			}
-			set	
-			{
-				msg = value;
 			}
 		}
 

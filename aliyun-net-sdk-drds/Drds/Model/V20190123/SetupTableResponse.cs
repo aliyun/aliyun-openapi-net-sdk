@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,11 +25,23 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class SetupTableResponse : AcsResponse
 	{
 
+		private bool? data;
+
 		private string requestId;
 
 		private bool? success;
 
-		private bool? data;
+		public bool? Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -52,18 +64,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public bool? Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
 			}
 		}
 	}

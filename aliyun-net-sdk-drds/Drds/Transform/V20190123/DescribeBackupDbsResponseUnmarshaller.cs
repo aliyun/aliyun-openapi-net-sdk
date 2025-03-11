@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			DescribeBackupDbsResponse describeBackupDbsResponse = new DescribeBackupDbsResponse();
 
 			describeBackupDbsResponse.HttpResponse = _ctx.HttpResponse;
-			describeBackupDbsResponse.RequestId = _ctx.StringValue("DescribeBackupDbs.RequestId");
 			describeBackupDbsResponse.Success = _ctx.BooleanValue("DescribeBackupDbs.Success");
+			describeBackupDbsResponse.RequestId = _ctx.StringValue("DescribeBackupDbs.RequestId");
 
 			List<string> describeBackupDbsResponse_dbNames = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeBackupDbs.DbNames.Length"); i++) {

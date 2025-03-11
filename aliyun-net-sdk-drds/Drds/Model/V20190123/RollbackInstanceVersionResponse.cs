@@ -17,17 +17,29 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
 {
-	public class SubmitSwitchTaskResponse : AcsResponse
+	public class RollbackInstanceVersionResponse : AcsResponse
 	{
+
+		private string data;
 
 		private string requestId;
 
-		private bool? success;
+		public string Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -38,18 +50,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
 			}
 		}
 	}

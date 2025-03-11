@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			CreateOrderForRdsResponse createOrderForRdsResponse = new CreateOrderForRdsResponse();
 
 			createOrderForRdsResponse.HttpResponse = _ctx.HttpResponse;
+			createOrderForRdsResponse.Data = _ctx.StringValue("CreateOrderForRds.Data");
 			createOrderForRdsResponse.RequestId = _ctx.StringValue("CreateOrderForRds.RequestId");
 			createOrderForRdsResponse.Success = _ctx.BooleanValue("CreateOrderForRds.Success");
-			createOrderForRdsResponse.Data = _ctx.StringValue("CreateOrderForRds.Data");
         
 			return createOrderForRdsResponse;
         }

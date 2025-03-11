@@ -48,7 +48,7 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 
 		private string password;
 
-		private List<RdsSuperAccount> rdsSuperAccounts = new List<RdsSuperAccount>(){ };
+		private List<string> rdsSuperAccounts = new List<string>(){ };
 
 		private string accountName;
 
@@ -85,10 +85,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set
 			{
 				rdsInstances = value;
-				for (int i = 0; i < rdsInstances.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"RdsInstance." + (i + 1) , rdsInstances[i]);
-				}
 			}
 		}
 
@@ -118,7 +114,7 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			}
 		}
 
-		public List<RdsSuperAccount> RdsSuperAccounts
+		public List<string> RdsSuperAccounts
 		{
 			get
 			{
@@ -128,11 +124,14 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set
 			{
 				rdsSuperAccounts = value;
-				for (int i = 0; i < rdsSuperAccounts.Count; i++)
+				if(rdsSuperAccounts != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"RdsSuperAccount." + (i + 1) + ".Password", rdsSuperAccounts[i].Password);
-					DictionaryUtil.Add(QueryParameters,"RdsSuperAccount." + (i + 1) + ".AccountName", rdsSuperAccounts[i].AccountName);
-					DictionaryUtil.Add(QueryParameters,"RdsSuperAccount." + (i + 1) + ".DbInstanceId", rdsSuperAccounts[i].DbInstanceId);
+					for (int depth1 = 0; depth1 < rdsSuperAccounts.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"RdsSuperAccount." + (depth1 + 1), rdsSuperAccounts[depth1]);
+						DictionaryUtil.Add(QueryParameters,"RdsSuperAccount." + (depth1 + 1), rdsSuperAccounts[depth1]);
+						DictionaryUtil.Add(QueryParameters,"RdsSuperAccount." + (depth1 + 1), rdsSuperAccounts[depth1]);
+					}
 				}
 			}
 		}
@@ -186,13 +185,12 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set
 			{
 				instDbNames = value;
-				for (int i = 0; i < instDbNames.Count; i++)
+				if(instDbNames != null)
 				{
-					for (int j = 0; j < instDbNames[i].ShardDbNames.Count; j++)
+					for (int depth1 = 0; depth1 < instDbNames.Count; depth1++)
 					{
-						DictionaryUtil.Add(QueryParameters,"InstDbName." + (i + 1) + ".ShardDbName." +(j + 1), instDbNames[i].ShardDbNames[j]);
+						DictionaryUtil.Add(QueryParameters,"InstDbName." + (depth1 + 1), instDbNames[depth1]);
 					}
-					DictionaryUtil.Add(QueryParameters,"InstDbName." + (i + 1) + ".DbInstanceId", instDbNames[i].DbInstanceId);
 				}
 			}
 		}

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			ModifyDrdsInstanceDescriptionResponse modifyDrdsInstanceDescriptionResponse = new ModifyDrdsInstanceDescriptionResponse();
 
 			modifyDrdsInstanceDescriptionResponse.HttpResponse = _ctx.HttpResponse;
-			modifyDrdsInstanceDescriptionResponse.RequestId = _ctx.StringValue("ModifyDrdsInstanceDescription.RequestId");
 			modifyDrdsInstanceDescriptionResponse.Success = _ctx.BooleanValue("ModifyDrdsInstanceDescription.Success");
+			modifyDrdsInstanceDescriptionResponse.RequestId = _ctx.StringValue("ModifyDrdsInstanceDescription.RequestId");
         
 			return modifyDrdsInstanceDescriptionResponse;
         }

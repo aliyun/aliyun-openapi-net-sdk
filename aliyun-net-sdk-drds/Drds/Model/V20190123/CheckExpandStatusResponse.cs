@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class CheckExpandStatusResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private CheckExpandStatus_Data data;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private CheckExpandStatus_Data data;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,21 +70,9 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class CheckExpandStatus_Data
 		{
 
-			private bool? isActive;
-
 			private string msg;
 
-			public bool? IsActive
-			{
-				get
-				{
-					return isActive;
-				}
-				set	
-				{
-					isActive = value;
-				}
-			}
+			private bool? isActive;
 
 			public string Msg
 			{
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					msg = value;
+				}
+			}
+
+			public bool? IsActive
+			{
+				get
+				{
+					return isActive;
+				}
+				set	
+				{
+					isActive = value;
 				}
 			}
 		}

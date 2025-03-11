@@ -31,19 +31,19 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			DescribeDrdsSqlAuditStatusResponse describeDrdsSqlAuditStatusResponse = new DescribeDrdsSqlAuditStatusResponse();
 
 			describeDrdsSqlAuditStatusResponse.HttpResponse = _ctx.HttpResponse;
-			describeDrdsSqlAuditStatusResponse.RequestId = _ctx.StringValue("DescribeDrdsSqlAuditStatus.RequestId");
 			describeDrdsSqlAuditStatusResponse.Success = _ctx.BooleanValue("DescribeDrdsSqlAuditStatus.Success");
+			describeDrdsSqlAuditStatusResponse.RequestId = _ctx.StringValue("DescribeDrdsSqlAuditStatus.RequestId");
 
 			List<DescribeDrdsSqlAuditStatusResponse.DescribeDrdsSqlAuditStatus_DataItem> describeDrdsSqlAuditStatusResponse_data = new List<DescribeDrdsSqlAuditStatusResponse.DescribeDrdsSqlAuditStatus_DataItem>();
 			for (int i = 0; i < _ctx.Length("DescribeDrdsSqlAuditStatus.Data.Length"); i++) {
 				DescribeDrdsSqlAuditStatusResponse.DescribeDrdsSqlAuditStatus_DataItem dataItem = new DescribeDrdsSqlAuditStatusResponse.DescribeDrdsSqlAuditStatus_DataItem();
+				dataItem.ExtraSlsLogStore = _ctx.StringValue("DescribeDrdsSqlAuditStatus.Data["+ i +"].ExtraSlsLogStore");
 				dataItem.DbName = _ctx.StringValue("DescribeDrdsSqlAuditStatus.Data["+ i +"].DbName");
-				dataItem.Enabled = _ctx.StringValue("DescribeDrdsSqlAuditStatus.Data["+ i +"].Enabled");
 				dataItem.Detailed = _ctx.StringValue("DescribeDrdsSqlAuditStatus.Data["+ i +"].Detailed");
 				dataItem.ExtraWriteEnabled = _ctx.BooleanValue("DescribeDrdsSqlAuditStatus.Data["+ i +"].ExtraWriteEnabled");
+				dataItem.Enabled = _ctx.StringValue("DescribeDrdsSqlAuditStatus.Data["+ i +"].Enabled");
 				dataItem.ExtraAliUid = _ctx.LongValue("DescribeDrdsSqlAuditStatus.Data["+ i +"].ExtraAliUid");
 				dataItem.ExtraSlsProject = _ctx.StringValue("DescribeDrdsSqlAuditStatus.Data["+ i +"].ExtraSlsProject");
-				dataItem.ExtraSlsLogStore = _ctx.StringValue("DescribeDrdsSqlAuditStatus.Data["+ i +"].ExtraSlsLogStore");
 
 				describeDrdsSqlAuditStatusResponse_data.Add(dataItem);
 			}

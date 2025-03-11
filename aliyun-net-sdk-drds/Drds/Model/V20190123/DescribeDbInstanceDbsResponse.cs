@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -84,23 +84,11 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class DescribeDbInstanceDbs_Database
 		{
 
-			private string dbName;
-
 			private int? status;
 
-			private string description;
+			private string dbName;
 
-			public string DbName
-			{
-				get
-				{
-					return dbName;
-				}
-				set	
-				{
-					dbName = value;
-				}
-			}
+			private string description;
 
 			public int? Status
 			{
@@ -111,6 +99,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public string DbName
+			{
+				get
+				{
+					return dbName;
+				}
+				set	
+				{
+					dbName = value;
 				}
 			}
 

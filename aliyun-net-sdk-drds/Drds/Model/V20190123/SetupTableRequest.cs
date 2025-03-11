@@ -97,10 +97,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set
 			{
 				tableNames = value;
-				for (int i = 0; i < tableNames.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"TableName." + (i + 1) , tableNames[i]);
-				}
 			}
 		}
 

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			UpgradeInstanceVersionResponse upgradeInstanceVersionResponse = new UpgradeInstanceVersionResponse();
 
 			upgradeInstanceVersionResponse.HttpResponse = _ctx.HttpResponse;
-			upgradeInstanceVersionResponse.RequestId = _ctx.StringValue("UpgradeInstanceVersion.RequestId");
 			upgradeInstanceVersionResponse.Data = _ctx.StringValue("UpgradeInstanceVersion.Data");
+			upgradeInstanceVersionResponse.RequestId = _ctx.StringValue("UpgradeInstanceVersion.RequestId");
         
 			return upgradeInstanceVersionResponse;
         }

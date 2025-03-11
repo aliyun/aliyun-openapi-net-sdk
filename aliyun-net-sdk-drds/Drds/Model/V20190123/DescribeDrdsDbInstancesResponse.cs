@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,39 +25,27 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribeDrdsDbInstancesResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
+		private string pageSize;
 
 		private string pageNumber;
 
-		private string pageSize;
+		private string requestId;
 
 		private string total;
 
+		private bool? success;
+
 		private List<DescribeDrdsDbInstances_DbInstance> dbInstances;
 
-		public string RequestId
+		public string PageSize
 		{
 			get
 			{
-				return requestId;
+				return pageSize;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
+				pageSize = value;
 			}
 		}
 
@@ -73,15 +61,15 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			}
 		}
 
-		public string PageSize
+		public string RequestId
 		{
 			get
 			{
-				return pageSize;
+				return requestId;
 			}
 			set	
 			{
-				pageSize = value;
+				requestId = value;
 			}
 		}
 
@@ -94,6 +82,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				total = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -112,45 +112,105 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class DescribeDrdsDbInstances_DbInstance
 		{
 
-			private string dBInstanceId;
+			private string expireTime;
+
+			private string payType;
+
+			private string dBInstanceStatus;
+
+			private string networkType;
+
+			private int? port;
+
+			private string engineVersion;
 
 			private string dmInstanceId;
 
 			private string connectUrl;
 
-			private int? port;
-
-			private string dBInstanceStatus;
-
-			private string dbInstType;
-
 			private int? readWeight;
-
-			private string networkType;
-
-			private string engine;
-
-			private string engineVersion;
 
 			private string rdsInstType;
 
-			private string payType;
-
-			private string expireTime;
-
 			private int? remainDays;
+
+			private string dBInstanceId;
+
+			private string dbInstType;
+
+			private string engine;
 
 			private List<DescribeDrdsDbInstances_ReadOnlyInstance> readOnlyInstances;
 
-			public string DBInstanceId
+			public string ExpireTime
 			{
 				get
 				{
-					return dBInstanceId;
+					return expireTime;
 				}
 				set	
 				{
-					dBInstanceId = value;
+					expireTime = value;
+				}
+			}
+
+			public string PayType
+			{
+				get
+				{
+					return payType;
+				}
+				set	
+				{
+					payType = value;
+				}
+			}
+
+			public string DBInstanceStatus
+			{
+				get
+				{
+					return dBInstanceStatus;
+				}
+				set	
+				{
+					dBInstanceStatus = value;
+				}
+			}
+
+			public string NetworkType
+			{
+				get
+				{
+					return networkType;
+				}
+				set	
+				{
+					networkType = value;
+				}
+			}
+
+			public int? Port
+			{
+				get
+				{
+					return port;
+				}
+				set	
+				{
+					port = value;
+				}
+			}
+
+			public string EngineVersion
+			{
+				get
+				{
+					return engineVersion;
+				}
+				set	
+				{
+					engineVersion = value;
 				}
 			}
 
@@ -178,42 +238,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public int? Port
-			{
-				get
-				{
-					return port;
-				}
-				set	
-				{
-					port = value;
-				}
-			}
-
-			public string DBInstanceStatus
-			{
-				get
-				{
-					return dBInstanceStatus;
-				}
-				set	
-				{
-					dBInstanceStatus = value;
-				}
-			}
-
-			public string DbInstType
-			{
-				get
-				{
-					return dbInstType;
-				}
-				set	
-				{
-					dbInstType = value;
-				}
-			}
-
 			public int? ReadWeight
 			{
 				get
@@ -223,42 +247,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					readWeight = value;
-				}
-			}
-
-			public string NetworkType
-			{
-				get
-				{
-					return networkType;
-				}
-				set	
-				{
-					networkType = value;
-				}
-			}
-
-			public string Engine
-			{
-				get
-				{
-					return engine;
-				}
-				set	
-				{
-					engine = value;
-				}
-			}
-
-			public string EngineVersion
-			{
-				get
-				{
-					return engineVersion;
-				}
-				set	
-				{
-					engineVersion = value;
 				}
 			}
 
@@ -274,30 +262,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public string PayType
-			{
-				get
-				{
-					return payType;
-				}
-				set	
-				{
-					payType = value;
-				}
-			}
-
-			public string ExpireTime
-			{
-				get
-				{
-					return expireTime;
-				}
-				set	
-				{
-					expireTime = value;
-				}
-			}
-
 			public int? RemainDays
 			{
 				get
@@ -307,6 +271,42 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					remainDays = value;
+				}
+			}
+
+			public string DBInstanceId
+			{
+				get
+				{
+					return dBInstanceId;
+				}
+				set	
+				{
+					dBInstanceId = value;
+				}
+			}
+
+			public string DbInstType
+			{
+				get
+				{
+					return dbInstType;
+				}
+				set	
+				{
+					dbInstType = value;
+				}
+			}
+
+			public string Engine
+			{
+				get
+				{
+					return engine;
+				}
+				set	
+				{
+					engine = value;
 				}
 			}
 
@@ -325,43 +325,103 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			public class DescribeDrdsDbInstances_ReadOnlyInstance
 			{
 
-				private string instanceName;
+				private string expireTime;
+
+				private string payType;
+
+				private string dBInstanceStatus;
+
+				private string networkType;
+
+				private int? port;
+
+				private string engineVersion;
 
 				private string dmInstanceId;
 
 				private string connectUrl;
 
-				private int? port;
-
-				private string dBInstanceStatus;
-
-				private string dbInstType;
-
 				private int? readWeight;
-
-				private string networkType;
-
-				private string engine;
-
-				private string engineVersion;
 
 				private string rdsInstType;
 
-				private string payType;
-
-				private string expireTime;
+				private string instanceName;
 
 				private int? remainDays;
 
-				public string InstanceName
+				private string dbInstType;
+
+				private string engine;
+
+				public string ExpireTime
 				{
 					get
 					{
-						return instanceName;
+						return expireTime;
 					}
 					set	
 					{
-						instanceName = value;
+						expireTime = value;
+					}
+				}
+
+				public string PayType
+				{
+					get
+					{
+						return payType;
+					}
+					set	
+					{
+						payType = value;
+					}
+				}
+
+				public string DBInstanceStatus
+				{
+					get
+					{
+						return dBInstanceStatus;
+					}
+					set	
+					{
+						dBInstanceStatus = value;
+					}
+				}
+
+				public string NetworkType
+				{
+					get
+					{
+						return networkType;
+					}
+					set	
+					{
+						networkType = value;
+					}
+				}
+
+				public int? Port
+				{
+					get
+					{
+						return port;
+					}
+					set	
+					{
+						port = value;
+					}
+				}
+
+				public string EngineVersion
+				{
+					get
+					{
+						return engineVersion;
+					}
+					set	
+					{
+						engineVersion = value;
 					}
 				}
 
@@ -389,42 +449,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					}
 				}
 
-				public int? Port
-				{
-					get
-					{
-						return port;
-					}
-					set	
-					{
-						port = value;
-					}
-				}
-
-				public string DBInstanceStatus
-				{
-					get
-					{
-						return dBInstanceStatus;
-					}
-					set	
-					{
-						dBInstanceStatus = value;
-					}
-				}
-
-				public string DbInstType
-				{
-					get
-					{
-						return dbInstType;
-					}
-					set	
-					{
-						dbInstType = value;
-					}
-				}
-
 				public int? ReadWeight
 				{
 					get
@@ -434,42 +458,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					set	
 					{
 						readWeight = value;
-					}
-				}
-
-				public string NetworkType
-				{
-					get
-					{
-						return networkType;
-					}
-					set	
-					{
-						networkType = value;
-					}
-				}
-
-				public string Engine
-				{
-					get
-					{
-						return engine;
-					}
-					set	
-					{
-						engine = value;
-					}
-				}
-
-				public string EngineVersion
-				{
-					get
-					{
-						return engineVersion;
-					}
-					set	
-					{
-						engineVersion = value;
 					}
 				}
 
@@ -485,27 +473,15 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					}
 				}
 
-				public string PayType
+				public string InstanceName
 				{
 					get
 					{
-						return payType;
+						return instanceName;
 					}
 					set	
 					{
-						payType = value;
-					}
-				}
-
-				public string ExpireTime
-				{
-					get
-					{
-						return expireTime;
-					}
-					set	
-					{
-						expireTime = value;
+						instanceName = value;
 					}
 				}
 
@@ -518,6 +494,30 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					set	
 					{
 						remainDays = value;
+					}
+				}
+
+				public string DbInstType
+				{
+					get
+					{
+						return dbInstType;
+					}
+					set	
+					{
+						dbInstType = value;
+					}
+				}
+
+				public string Engine
+				{
+					get
+					{
+						return engine;
+					}
+					set	
+					{
+						engine = value;
 					}
 				}
 			}

@@ -42,7 +42,7 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 
 		private string paramLevel;
 
-		private List<Data> datas = new List<Data>(){ };
+		private List<string> datas = new List<string>(){ };
 
 		private string drdsInstanceId;
 
@@ -59,7 +59,7 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			}
 		}
 
-		public List<Data> Datas
+		public List<string> Datas
 		{
 			get
 			{
@@ -69,13 +69,16 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set
 			{
 				datas = value;
-				for (int i = 0; i < datas.Count; i++)
+				if(datas != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"Data." + (i + 1) + ".ParamType", datas[i].ParamType);
-					DictionaryUtil.Add(QueryParameters,"Data." + (i + 1) + ".DbName", datas[i].DbName);
-					DictionaryUtil.Add(QueryParameters,"Data." + (i + 1) + ".ParamRanges", datas[i].ParamRanges);
-					DictionaryUtil.Add(QueryParameters,"Data." + (i + 1) + ".ParamVariableName", datas[i].ParamVariableName);
-					DictionaryUtil.Add(QueryParameters,"Data." + (i + 1) + ".ParamValue", datas[i].ParamValue);
+					for (int depth1 = 0; depth1 < datas.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Data." + (depth1 + 1), datas[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Data." + (depth1 + 1), datas[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Data." + (depth1 + 1), datas[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Data." + (depth1 + 1), datas[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Data." + (depth1 + 1), datas[depth1]);
+					}
 				}
 			}
 		}

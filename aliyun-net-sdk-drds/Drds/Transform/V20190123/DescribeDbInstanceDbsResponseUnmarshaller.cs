@@ -38,8 +38,8 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			List<DescribeDbInstanceDbsResponse.DescribeDbInstanceDbs_Database> describeDbInstanceDbsResponse_databases = new List<DescribeDbInstanceDbsResponse.DescribeDbInstanceDbs_Database>();
 			for (int i = 0; i < _ctx.Length("DescribeDbInstanceDbs.Databases.Length"); i++) {
 				DescribeDbInstanceDbsResponse.DescribeDbInstanceDbs_Database database = new DescribeDbInstanceDbsResponse.DescribeDbInstanceDbs_Database();
-				database.DbName = _ctx.StringValue("DescribeDbInstanceDbs.Databases["+ i +"].DbName");
 				database.Status = _ctx.IntegerValue("DescribeDbInstanceDbs.Databases["+ i +"].Status");
+				database.DbName = _ctx.StringValue("DescribeDbInstanceDbs.Databases["+ i +"].DbName");
 				database.Description = _ctx.StringValue("DescribeDbInstanceDbs.Databases["+ i +"].Description");
 
 				describeDbInstanceDbsResponse_databases.Add(database);

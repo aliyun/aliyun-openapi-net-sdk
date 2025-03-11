@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribeTableResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private DescribeTable_Data data;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private DescribeTable_Data data;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -87,53 +87,17 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			public class DescribeTable_ColumnInfo
 			{
 
-				private string columnName;
-
-				private string columnType;
-
-				private string extra;
-
 				private string index;
 
 				private string isAllowNull;
 
+				private string columnName;
+
 				private string isPk;
 
-				public string ColumnName
-				{
-					get
-					{
-						return columnName;
-					}
-					set	
-					{
-						columnName = value;
-					}
-				}
+				private string columnType;
 
-				public string ColumnType
-				{
-					get
-					{
-						return columnType;
-					}
-					set	
-					{
-						columnType = value;
-					}
-				}
-
-				public string Extra
-				{
-					get
-					{
-						return extra;
-					}
-					set	
-					{
-						extra = value;
-					}
-				}
+				private string extra;
 
 				public string Index
 				{
@@ -159,6 +123,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					}
 				}
 
+				public string ColumnName
+				{
+					get
+					{
+						return columnName;
+					}
+					set	
+					{
+						columnName = value;
+					}
+				}
+
 				public string IsPk
 				{
 					get
@@ -168,6 +144,30 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					set	
 					{
 						isPk = value;
+					}
+				}
+
+				public string ColumnType
+				{
+					get
+					{
+						return columnType;
+					}
+					set	
+					{
+						columnType = value;
+					}
+				}
+
+				public string Extra
+				{
+					get
+					{
+						return extra;
+					}
+					set	
+					{
+						extra = value;
 					}
 				}
 			}

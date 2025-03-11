@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,39 +25,27 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribeDrdsDBsResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
+		private string pageSize;
 
 		private string pageNumber;
 
-		private string pageSize;
+		private string requestId;
 
 		private string total;
 
+		private bool? success;
+
 		private List<DescribeDrdsDBs_Db> data;
 
-		public string RequestId
+		public string PageSize
 		{
 			get
 			{
-				return requestId;
+				return pageSize;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
+				pageSize = value;
 			}
 		}
 
@@ -73,15 +61,15 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			}
 		}
 
-		public string PageSize
+		public string RequestId
 		{
 			get
 			{
-				return pageSize;
+				return requestId;
 			}
 			set	
 			{
-				pageSize = value;
+				requestId = value;
 			}
 		}
 
@@ -94,6 +82,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				total = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -112,17 +112,29 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class DescribeDrdsDBs_Db
 		{
 
+			private string status;
+
 			private string dbName;
 
-			private string status;
+			private string schema;
 
 			private string createTime;
 
 			private string mode;
 
-			private string schema;
-
 			private string dbInstType;
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
 
 			public string DbName
 			{
@@ -136,15 +148,15 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public string Status
+			public string Schema
 			{
 				get
 				{
-					return status;
+					return schema;
 				}
 				set	
 				{
-					status = value;
+					schema = value;
 				}
 			}
 
@@ -169,18 +181,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					mode = value;
-				}
-			}
-
-			public string Schema
-			{
-				get
-				{
-					return schema;
-				}
-				set	
-				{
-					schema = value;
 				}
 			}
 

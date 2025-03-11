@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			SubmitSmoothExpandPreCheckTaskResponse submitSmoothExpandPreCheckTaskResponse = new SubmitSmoothExpandPreCheckTaskResponse();
 
 			submitSmoothExpandPreCheckTaskResponse.HttpResponse = _ctx.HttpResponse;
-			submitSmoothExpandPreCheckTaskResponse.RequestId = _ctx.StringValue("SubmitSmoothExpandPreCheckTask.RequestId");
-			submitSmoothExpandPreCheckTaskResponse.Success = _ctx.BooleanValue("SubmitSmoothExpandPreCheckTask.Success");
 			submitSmoothExpandPreCheckTaskResponse.Msg = _ctx.StringValue("SubmitSmoothExpandPreCheckTask.Msg");
+			submitSmoothExpandPreCheckTaskResponse.RequestId = _ctx.StringValue("SubmitSmoothExpandPreCheckTask.RequestId");
 			submitSmoothExpandPreCheckTaskResponse.TaskId = _ctx.LongValue("SubmitSmoothExpandPreCheckTask.TaskId");
+			submitSmoothExpandPreCheckTaskResponse.Success = _ctx.BooleanValue("SubmitSmoothExpandPreCheckTask.Success");
         
 			return submitSmoothExpandPreCheckTaskResponse;
         }

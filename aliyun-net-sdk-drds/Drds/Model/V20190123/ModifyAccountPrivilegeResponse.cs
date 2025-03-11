@@ -17,31 +17,17 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
 {
-	public class DescribeInstanceMenuSwitchResponse : AcsResponse
+	public class ModifyAccountPrivilegeResponse : AcsResponse
 	{
-
-		private string requestId;
 
 		private bool? success;
 
-		private string config;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public bool? Success
 		{
@@ -55,15 +41,15 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			}
 		}
 
-		public string Config
+		public string RequestId
 		{
 			get
 			{
-				return config;
+				return requestId;
 			}
 			set	
 			{
-				config = value;
+				requestId = value;
 			}
 		}
 	}

@@ -17,31 +17,19 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
 {
-	public class DescribeHiStoreInstanceInfoResponse : AcsResponse
+	public class GetDrdsDbRdsRelationInfoResponse : AcsResponse
 	{
-
-		private string requestId;
 
 		private bool? success;
 
-		private DescribeHiStoreInstanceInfo_HiStoreInstanceInfo hiStoreInstanceInfo;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<GetDrdsDbRdsRelationInfo_DataItem> data;
 
 		public bool? Success
 		{
@@ -55,88 +43,86 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			}
 		}
 
-		public DescribeHiStoreInstanceInfo_HiStoreInstanceInfo HiStoreInstanceInfo
+		public string RequestId
 		{
 			get
 			{
-				return hiStoreInstanceInfo;
+				return requestId;
 			}
 			set	
 			{
-				hiStoreInstanceInfo = value;
+				requestId = value;
 			}
 		}
 
-		public class DescribeHiStoreInstanceInfo_HiStoreInstanceInfo
+		public List<GetDrdsDbRdsRelationInfo_DataItem> Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+
+		public class GetDrdsDbRdsRelationInfo_DataItem
 		{
 
-			private string historeInstanceId;
+			private string rdsInstanceId;
 
-			private long? gmtCreate;
+			private string usedInstanceType;
 
-			private string rpmVersion;
+			private string usedInstanceId;
 
-			private int? diskSize;
+			private List<string> readOnlyInstanceInfo;
 
-			private string machineSpec;
-
-			public string HistoreInstanceId
+			public string RdsInstanceId
 			{
 				get
 				{
-					return historeInstanceId;
+					return rdsInstanceId;
 				}
 				set	
 				{
-					historeInstanceId = value;
+					rdsInstanceId = value;
 				}
 			}
 
-			public long? GmtCreate
+			public string UsedInstanceType
 			{
 				get
 				{
-					return gmtCreate;
+					return usedInstanceType;
 				}
 				set	
 				{
-					gmtCreate = value;
+					usedInstanceType = value;
 				}
 			}
 
-			public string RpmVersion
+			public string UsedInstanceId
 			{
 				get
 				{
-					return rpmVersion;
+					return usedInstanceId;
 				}
 				set	
 				{
-					rpmVersion = value;
+					usedInstanceId = value;
 				}
 			}
 
-			public int? DiskSize
+			public List<string> ReadOnlyInstanceInfo
 			{
 				get
 				{
-					return diskSize;
+					return readOnlyInstanceInfo;
 				}
 				set	
 				{
-					diskSize = value;
-				}
-			}
-
-			public string MachineSpec
-			{
-				get
-				{
-					return machineSpec;
-				}
-				set	
-				{
-					machineSpec = value;
+					readOnlyInstanceInfo = value;
 				}
 			}
 		}

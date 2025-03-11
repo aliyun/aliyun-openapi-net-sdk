@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			DescribeInstDbLogInfoResponse describeInstDbLogInfoResponse = new DescribeInstDbLogInfoResponse();
 
 			describeInstDbLogInfoResponse.HttpResponse = _ctx.HttpResponse;
-			describeInstDbLogInfoResponse.RequestId = _ctx.StringValue("DescribeInstDbLogInfo.RequestId");
 			describeInstDbLogInfoResponse.Success = _ctx.BooleanValue("DescribeInstDbLogInfo.Success");
+			describeInstDbLogInfoResponse.RequestId = _ctx.StringValue("DescribeInstDbLogInfo.RequestId");
 
 			DescribeInstDbLogInfoResponse.DescribeInstDbLogInfo_LogTimeRange logTimeRange = new DescribeInstDbLogInfoResponse.DescribeInstDbLogInfo_LogTimeRange();
 			logTimeRange.SupportOldestTime = _ctx.LongValue("DescribeInstDbLogInfo.LogTimeRange.SupportOldestTime");

@@ -17,17 +17,31 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
 {
-	public class SubmitSmoothExpandTaskResponse : AcsResponse
+	public class SetupRecycleBinStatusResponse : AcsResponse
 	{
+
+		private bool? data;
 
 		private string requestId;
 
 		private bool? success;
+
+		public bool? Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
 
 		public string RequestId
 		{

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribeShardTaskInfoResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private DescribeShardTaskInfo_Data data;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private DescribeShardTaskInfo_Data data;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,10 +70,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class DescribeShardTaskInfo_Data
 		{
 
-			private string sourceTableName;
-
-			private string targetTableName;
-
 			private string status;
 
 			private string stage;
@@ -81,6 +77,10 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			private string progress;
 
 			private string expired;
+
+			private string targetTableName;
+
+			private string sourceTableName;
 
 			private DescribeShardTaskInfo_Full full;
 
@@ -91,30 +91,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			private DescribeShardTaskInfo_Review review;
 
 			private DescribeShardTaskInfo_Increment increment;
-
-			public string SourceTableName
-			{
-				get
-				{
-					return sourceTableName;
-				}
-				set	
-				{
-					sourceTableName = value;
-				}
-			}
-
-			public string TargetTableName
-			{
-				get
-				{
-					return targetTableName;
-				}
-				set	
-				{
-					targetTableName = value;
-				}
-			}
 
 			public string Status
 			{
@@ -161,6 +137,30 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					expired = value;
+				}
+			}
+
+			public string TargetTableName
+			{
+				get
+				{
+					return targetTableName;
+				}
+				set	
+				{
+					targetTableName = value;
+				}
+			}
+
+			public string SourceTableName
+			{
+				get
+				{
+					return sourceTableName;
+				}
+				set	
+				{
+					sourceTableName = value;
 				}
 			}
 
@@ -227,25 +227,25 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			public class DescribeShardTaskInfo_Full
 			{
 
-				private int? expired;
+				private string startTime;
 
 				private int? progress;
 
-				private int? total;
-
 				private int? tps;
 
-				private string startTime;
+				private int? total;
 
-				public int? Expired
+				private int? expired;
+
+				public string StartTime
 				{
 					get
 					{
-						return expired;
+						return startTime;
 					}
 					set	
 					{
-						expired = value;
+						startTime = value;
 					}
 				}
 
@@ -261,18 +261,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					}
 				}
 
-				public int? Total
-				{
-					get
-					{
-						return total;
-					}
-					set	
-					{
-						total = value;
-					}
-				}
-
 				public int? Tps
 				{
 					get
@@ -285,15 +273,27 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					}
 				}
 
-				public string StartTime
+				public int? Total
 				{
 					get
 					{
-						return startTime;
+						return total;
 					}
 					set	
 					{
-						startTime = value;
+						total = value;
+					}
+				}
+
+				public int? Expired
+				{
+					get
+					{
+						return expired;
+					}
+					set	
+					{
+						expired = value;
 					}
 				}
 			}
@@ -301,25 +301,25 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			public class DescribeShardTaskInfo_FullCheck
 			{
 
-				private int? expired;
+				private string startTime;
 
 				private int? progress;
 
-				private int? total;
-
 				private int? tps;
 
-				private string startTime;
+				private int? total;
 
-				public int? Expired
+				private int? expired;
+
+				public string StartTime
 				{
 					get
 					{
-						return expired;
+						return startTime;
 					}
 					set	
 					{
-						expired = value;
+						startTime = value;
 					}
 				}
 
@@ -335,18 +335,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					}
 				}
 
-				public int? Total
-				{
-					get
-					{
-						return total;
-					}
-					set	
-					{
-						total = value;
-					}
-				}
-
 				public int? Tps
 				{
 					get
@@ -359,15 +347,27 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					}
 				}
 
-				public string StartTime
+				public int? Total
 				{
 					get
 					{
-						return startTime;
+						return total;
 					}
 					set	
 					{
-						startTime = value;
+						total = value;
+					}
+				}
+
+				public int? Expired
+				{
+					get
+					{
+						return expired;
+					}
+					set	
+					{
+						expired = value;
 					}
 				}
 			}
@@ -375,25 +375,25 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			public class DescribeShardTaskInfo_FullRevise
 			{
 
-				private int? expired;
+				private string startTime;
 
 				private int? progress;
 
-				private int? total;
-
 				private int? tps;
 
-				private string startTime;
+				private int? total;
 
-				public int? Expired
+				private int? expired;
+
+				public string StartTime
 				{
 					get
 					{
-						return expired;
+						return startTime;
 					}
 					set	
 					{
-						expired = value;
+						startTime = value;
 					}
 				}
 
@@ -409,18 +409,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					}
 				}
 
-				public int? Total
-				{
-					get
-					{
-						return total;
-					}
-					set	
-					{
-						total = value;
-					}
-				}
-
 				public int? Tps
 				{
 					get
@@ -433,15 +421,27 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					}
 				}
 
-				public string StartTime
+				public int? Total
 				{
 					get
 					{
-						return startTime;
+						return total;
 					}
 					set	
 					{
-						startTime = value;
+						total = value;
+					}
+				}
+
+				public int? Expired
+				{
+					get
+					{
+						return expired;
+					}
+					set	
+					{
+						expired = value;
 					}
 				}
 			}
@@ -449,25 +449,25 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			public class DescribeShardTaskInfo_Review
 			{
 
-				private int? expired;
+				private string startTime;
 
 				private int? progress;
 
-				private int? total;
-
 				private int? tps;
 
-				private string startTime;
+				private int? total;
 
-				public int? Expired
+				private int? expired;
+
+				public string StartTime
 				{
 					get
 					{
-						return expired;
+						return startTime;
 					}
 					set	
 					{
-						expired = value;
+						startTime = value;
 					}
 				}
 
@@ -483,18 +483,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					}
 				}
 
-				public int? Total
-				{
-					get
-					{
-						return total;
-					}
-					set	
-					{
-						total = value;
-					}
-				}
-
 				public int? Tps
 				{
 					get
@@ -507,15 +495,27 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					}
 				}
 
-				public string StartTime
+				public int? Total
 				{
 					get
 					{
-						return startTime;
+						return total;
 					}
 					set	
 					{
-						startTime = value;
+						total = value;
+					}
+				}
+
+				public int? Expired
+				{
+					get
+					{
+						return expired;
+					}
+					set	
+					{
+						expired = value;
 					}
 				}
 			}
@@ -525,9 +525,9 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 
 				private int? delay;
 
-				private int? tps;
-
 				private string startTime;
+
+				private int? tps;
 
 				public int? Delay
 				{
@@ -541,18 +541,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					}
 				}
 
-				public int? Tps
-				{
-					get
-					{
-						return tps;
-					}
-					set	
-					{
-						tps = value;
-					}
-				}
-
 				public string StartTime
 				{
 					get
@@ -562,6 +550,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					set	
 					{
 						startTime = value;
+					}
+				}
+
+				public int? Tps
+				{
+					get
+					{
+						return tps;
+					}
+					set	
+					{
+						tps = value;
 					}
 				}
 			}

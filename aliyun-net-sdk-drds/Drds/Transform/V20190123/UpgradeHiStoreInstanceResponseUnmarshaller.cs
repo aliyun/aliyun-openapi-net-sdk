@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			UpgradeHiStoreInstanceResponse upgradeHiStoreInstanceResponse = new UpgradeHiStoreInstanceResponse();
 
 			upgradeHiStoreInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			upgradeHiStoreInstanceResponse.RequestId = _ctx.StringValue("UpgradeHiStoreInstance.RequestId");
 			upgradeHiStoreInstanceResponse.Data = _ctx.StringValue("UpgradeHiStoreInstance.Data");
+			upgradeHiStoreInstanceResponse.RequestId = _ctx.StringValue("UpgradeHiStoreInstance.RequestId");
         
 			return upgradeHiStoreInstanceResponse;
         }

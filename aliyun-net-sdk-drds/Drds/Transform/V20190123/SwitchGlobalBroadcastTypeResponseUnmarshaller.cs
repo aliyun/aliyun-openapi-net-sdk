@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			SwitchGlobalBroadcastTypeResponse switchGlobalBroadcastTypeResponse = new SwitchGlobalBroadcastTypeResponse();
 
 			switchGlobalBroadcastTypeResponse.HttpResponse = _ctx.HttpResponse;
+			switchGlobalBroadcastTypeResponse.Data = _ctx.BooleanValue("SwitchGlobalBroadcastType.Data");
 			switchGlobalBroadcastTypeResponse.RequestId = _ctx.StringValue("SwitchGlobalBroadcastType.RequestId");
 			switchGlobalBroadcastTypeResponse.Success = _ctx.BooleanValue("SwitchGlobalBroadcastType.Success");
-			switchGlobalBroadcastTypeResponse.Data = _ctx.BooleanValue("SwitchGlobalBroadcastType.Data");
         
 			return switchGlobalBroadcastTypeResponse;
         }

@@ -27,10 +27,10 @@ using Aliyun.Acs.Drds.Transform.V20190123;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
 {
-    public class DescribeHiStoreInstanceInfoRequest : RpcAcsRequest<DescribeHiStoreInstanceInfoResponse>
+    public class RollbackInstanceVersionRequest : RpcAcsRequest<RollbackInstanceVersionResponse>
     {
-        public DescribeHiStoreInstanceInfoRequest()
-            : base("Drds", "2019-01-23", "DescribeHiStoreInstanceInfo", "drds", "openAPI")
+        public RollbackInstanceVersionRequest()
+            : base("Drds", "2019-01-23", "RollbackInstanceVersion", "drds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,22 +40,7 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			Method = MethodType.POST;
         }
 
-		private string historeInstanceId;
-
 		private string drdsInstanceId;
-
-		public string HistoreInstanceId
-		{
-			get
-			{
-				return historeInstanceId;
-			}
-			set	
-			{
-				historeInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "HistoreInstanceId", value);
-			}
-		}
 
 		public string DrdsInstanceId
 		{
@@ -70,9 +55,14 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			}
 		}
 
-        public override DescribeHiStoreInstanceInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override RollbackInstanceVersionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeHiStoreInstanceInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RollbackInstanceVersionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

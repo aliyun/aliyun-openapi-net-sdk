@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribeInstanceSwitchNetworkResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private List<DescribeInstanceSwitchNetwork_VpcInfo> vpcInfos;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeInstanceSwitchNetwork_VpcInfo> vpcInfos;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -72,9 +72,9 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 
 			private string vpcId;
 
-			private string regionId;
-
 			private string vpcName;
+
+			private string regionId;
 
 			private List<DescribeInstanceSwitchNetwork_VswitchInfo> vswitchInfos;
 
@@ -90,18 +90,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
 			public string VpcName
 			{
 				get
@@ -111,6 +99,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					vpcName = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 
@@ -129,27 +129,15 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			public class DescribeInstanceSwitchNetwork_VswitchInfo
 			{
 
-				private string vswitchId;
-
 				private string vpcId;
-
-				private string vswitchName;
-
-				private string azoneId;
 
 				private bool? drdsSupported;
 
-				public string VswitchId
-				{
-					get
-					{
-						return vswitchId;
-					}
-					set	
-					{
-						vswitchId = value;
-					}
-				}
+				private string vswitchId;
+
+				private string azoneId;
+
+				private string vswitchName;
 
 				public string VpcId
 				{
@@ -163,15 +151,27 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					}
 				}
 
-				public string VswitchName
+				public bool? DrdsSupported
 				{
 					get
 					{
-						return vswitchName;
+						return drdsSupported;
 					}
 					set	
 					{
-						vswitchName = value;
+						drdsSupported = value;
+					}
+				}
+
+				public string VswitchId
+				{
+					get
+					{
+						return vswitchId;
+					}
+					set	
+					{
+						vswitchId = value;
 					}
 				}
 
@@ -187,15 +187,15 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					}
 				}
 
-				public bool? DrdsSupported
+				public string VswitchName
 				{
 					get
 					{
-						return drdsSupported;
+						return vswitchName;
 					}
 					set	
 					{
-						drdsSupported = value;
+						vswitchName = value;
 					}
 				}
 			}

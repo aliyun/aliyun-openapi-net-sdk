@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribeRdsPerformanceSummaryResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private List<DescribeRdsPerformanceSummary_RdsPerformanceInfo> rdsPerformanceInfos;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeRdsPerformanceSummary_RdsPerformanceInfo> rdsPerformanceInfos;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,29 +70,17 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class DescribeRdsPerformanceSummary_RdsPerformanceInfo
 		{
 
-			private string rdsId;
-
 			private float? cpu;
-
-			private float? iops;
 
 			private int? activeSessions;
 
 			private int? totalSessions;
 
-			private long? spaceUsage;
+			private string rdsId;
 
-			public string RdsId
-			{
-				get
-				{
-					return rdsId;
-				}
-				set	
-				{
-					rdsId = value;
-				}
-			}
+			private float? iops;
+
+			private long? spaceUsage;
 
 			public float? Cpu
 			{
@@ -103,18 +91,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					cpu = value;
-				}
-			}
-
-			public float? Iops
-			{
-				get
-				{
-					return iops;
-				}
-				set	
-				{
-					iops = value;
 				}
 			}
 
@@ -139,6 +115,30 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					totalSessions = value;
+				}
+			}
+
+			public string RdsId
+			{
+				get
+				{
+					return rdsId;
+				}
+				set	
+				{
+					rdsId = value;
+				}
+			}
+
+			public float? Iops
+			{
+				get
+				{
+					return iops;
+				}
+				set	
+				{
+					iops = value;
 				}
 			}
 

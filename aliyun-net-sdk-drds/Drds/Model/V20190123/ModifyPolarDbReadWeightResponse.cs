@@ -16,25 +16,41 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+using Aliyun.Acs.Core;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Drds.Model.V20190123;
-
-namespace Aliyun.Acs.Drds.Transform.V20190123
+namespace Aliyun.Acs.Drds.Model.V20190123
 {
-    public class SubmitSmoothExpandTaskResponseUnmarshaller
-    {
-        public static SubmitSmoothExpandTaskResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			SubmitSmoothExpandTaskResponse submitSmoothExpandTaskResponse = new SubmitSmoothExpandTaskResponse();
+	public class ModifyPolarDbReadWeightResponse : AcsResponse
+	{
 
-			submitSmoothExpandTaskResponse.HttpResponse = _ctx.HttpResponse;
-			submitSmoothExpandTaskResponse.RequestId = _ctx.StringValue("SubmitSmoothExpandTask.RequestId");
-			submitSmoothExpandTaskResponse.Success = _ctx.BooleanValue("SubmitSmoothExpandTask.Success");
-        
-			return submitSmoothExpandTaskResponse;
-        }
-    }
+		private bool? success;
+
+		private string requestId;
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+	}
 }

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			SubmitCleanTaskResponse submitCleanTaskResponse = new SubmitCleanTaskResponse();
 
 			submitCleanTaskResponse.HttpResponse = _ctx.HttpResponse;
-			submitCleanTaskResponse.RequestId = _ctx.StringValue("SubmitCleanTask.RequestId");
 			submitCleanTaskResponse.Success = _ctx.BooleanValue("SubmitCleanTask.Success");
+			submitCleanTaskResponse.RequestId = _ctx.StringValue("SubmitCleanTask.RequestId");
         
 			return submitCleanTaskResponse;
         }

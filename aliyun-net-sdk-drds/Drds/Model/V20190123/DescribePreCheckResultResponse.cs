@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribePreCheckResultResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private DescribePreCheckResult_PreCheckResult preCheckResult;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private DescribePreCheckResult_PreCheckResult preCheckResult;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -115,13 +115,25 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			public class DescribePreCheckResult_SubCheckItemsItem
 			{
 
+				private string errorMsgCode;
+
 				private string preCheckItemName;
 
 				private string state;
 
-				private string errorMsgCode;
-
 				private List<string> errorMsgParams;
+
+				public string ErrorMsgCode
+				{
+					get
+					{
+						return errorMsgCode;
+					}
+					set	
+					{
+						errorMsgCode = value;
+					}
+				}
 
 				public string PreCheckItemName
 				{
@@ -144,18 +156,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					set	
 					{
 						state = value;
-					}
-				}
-
-				public string ErrorMsgCode
-				{
-					get
-					{
-						return errorMsgCode;
-					}
-					set	
-					{
-						errorMsgCode = value;
 					}
 				}
 

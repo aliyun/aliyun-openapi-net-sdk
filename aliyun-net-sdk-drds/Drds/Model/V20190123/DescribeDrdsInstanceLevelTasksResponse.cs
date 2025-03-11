@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribeDrdsInstanceLevelTasksResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private List<DescribeDrdsInstanceLevelTasks_Task> tasks;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeDrdsInstanceLevelTasks_Task> tasks;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,51 +70,27 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class DescribeDrdsInstanceLevelTasks_Task
 		{
 
-			private string taskName;
-
-			private long? gmtCreate;
-
 			private int? taskType;
-
-			private long? targetId;
-
-			private int? taskStatus;
-
-			private int? progress;
-
-			private string progressDescription;
 
 			private string taskPhase;
 
-			private string errMsg;
-
-			private bool? showProgress;
+			private int? progress;
 
 			private bool? allowCancel;
 
-			public string TaskName
-			{
-				get
-				{
-					return taskName;
-				}
-				set	
-				{
-					taskName = value;
-				}
-			}
+			private int? taskStatus;
 
-			public long? GmtCreate
-			{
-				get
-				{
-					return gmtCreate;
-				}
-				set	
-				{
-					gmtCreate = value;
-				}
-			}
+			private bool? showProgress;
+
+			private string taskName;
+
+			private string progressDescription;
+
+			private long? gmtCreate;
+
+			private long? targetId;
+
+			private string errMsg;
 
 			public int? TaskType
 			{
@@ -125,54 +101,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					taskType = value;
-				}
-			}
-
-			public long? TargetId
-			{
-				get
-				{
-					return targetId;
-				}
-				set	
-				{
-					targetId = value;
-				}
-			}
-
-			public int? TaskStatus
-			{
-				get
-				{
-					return taskStatus;
-				}
-				set	
-				{
-					taskStatus = value;
-				}
-			}
-
-			public int? Progress
-			{
-				get
-				{
-					return progress;
-				}
-				set	
-				{
-					progress = value;
-				}
-			}
-
-			public string ProgressDescription
-			{
-				get
-				{
-					return progressDescription;
-				}
-				set	
-				{
-					progressDescription = value;
 				}
 			}
 
@@ -188,15 +116,39 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public string ErrMsg
+			public int? Progress
 			{
 				get
 				{
-					return errMsg;
+					return progress;
 				}
 				set	
 				{
-					errMsg = value;
+					progress = value;
+				}
+			}
+
+			public bool? AllowCancel
+			{
+				get
+				{
+					return allowCancel;
+				}
+				set	
+				{
+					allowCancel = value;
+				}
+			}
+
+			public int? TaskStatus
+			{
+				get
+				{
+					return taskStatus;
+				}
+				set	
+				{
+					taskStatus = value;
 				}
 			}
 
@@ -212,15 +164,63 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public bool? AllowCancel
+			public string TaskName
 			{
 				get
 				{
-					return allowCancel;
+					return taskName;
 				}
 				set	
 				{
-					allowCancel = value;
+					taskName = value;
+				}
+			}
+
+			public string ProgressDescription
+			{
+				get
+				{
+					return progressDescription;
+				}
+				set	
+				{
+					progressDescription = value;
+				}
+			}
+
+			public long? GmtCreate
+			{
+				get
+				{
+					return gmtCreate;
+				}
+				set	
+				{
+					gmtCreate = value;
+				}
+			}
+
+			public long? TargetId
+			{
+				get
+				{
+					return targetId;
+				}
+				set	
+				{
+					targetId = value;
+				}
+			}
+
+			public string ErrMsg
+			{
+				get
+				{
+					return errMsg;
+				}
+				set	
+				{
+					errMsg = value;
 				}
 			}
 		}

@@ -31,15 +31,15 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			DescribeExpandLogicTableInfoListResponse describeExpandLogicTableInfoListResponse = new DescribeExpandLogicTableInfoListResponse();
 
 			describeExpandLogicTableInfoListResponse.HttpResponse = _ctx.HttpResponse;
-			describeExpandLogicTableInfoListResponse.RequestId = _ctx.StringValue("DescribeExpandLogicTableInfoList.RequestId");
 			describeExpandLogicTableInfoListResponse.Success = _ctx.BooleanValue("DescribeExpandLogicTableInfoList.Success");
+			describeExpandLogicTableInfoListResponse.RequestId = _ctx.StringValue("DescribeExpandLogicTableInfoList.RequestId");
 
 			List<DescribeExpandLogicTableInfoListResponse.DescribeExpandLogicTableInfoList_DataItem> describeExpandLogicTableInfoListResponse_data = new List<DescribeExpandLogicTableInfoListResponse.DescribeExpandLogicTableInfoList_DataItem>();
 			for (int i = 0; i < _ctx.Length("DescribeExpandLogicTableInfoList.Data.Length"); i++) {
 				DescribeExpandLogicTableInfoListResponse.DescribeExpandLogicTableInfoList_DataItem dataItem = new DescribeExpandLogicTableInfoListResponse.DescribeExpandLogicTableInfoList_DataItem();
+				dataItem.ShardTbKey = _ctx.StringValue("DescribeExpandLogicTableInfoList.Data["+ i +"].ShardTbKey");
 				dataItem.TableName = _ctx.StringValue("DescribeExpandLogicTableInfoList.Data["+ i +"].TableName");
 				dataItem.ShardDbKey = _ctx.StringValue("DescribeExpandLogicTableInfoList.Data["+ i +"].ShardDbKey");
-				dataItem.ShardTbKey = _ctx.StringValue("DescribeExpandLogicTableInfoList.Data["+ i +"].ShardTbKey");
 
 				describeExpandLogicTableInfoListResponse_data.Add(dataItem);
 			}

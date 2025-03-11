@@ -27,10 +27,10 @@ using Aliyun.Acs.Drds.Transform.V20190123;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
 {
-    public class DescribeInstanceMenuSwitchRequest : RpcAcsRequest<DescribeInstanceMenuSwitchResponse>
+    public class ChangeInstanceAzoneRequest : RpcAcsRequest<ChangeInstanceAzoneResponse>
     {
-        public DescribeInstanceMenuSwitchRequest()
-            : base("Drds", "2019-01-23", "DescribeInstanceMenuSwitch", "drds", "openAPI")
+        public ChangeInstanceAzoneRequest()
+            : base("Drds", "2019-01-23", "ChangeInstanceAzone", "drds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,7 +40,43 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			Method = MethodType.POST;
         }
 
+		private string targetAzoneId;
+
+		private string drdsRegionId;
+
 		private string drdsInstanceId;
+
+		private string originAzoneId;
+
+		private bool? changeVSwitch;
+
+		private string newVSwitch;
+
+		public string TargetAzoneId
+		{
+			get
+			{
+				return targetAzoneId;
+			}
+			set	
+			{
+				targetAzoneId = value;
+				DictionaryUtil.Add(QueryParameters, "TargetAzoneId", value);
+			}
+		}
+
+		public string DrdsRegionId
+		{
+			get
+			{
+				return drdsRegionId;
+			}
+			set	
+			{
+				drdsRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "DrdsRegionId", value);
+			}
+		}
 
 		public string DrdsInstanceId
 		{
@@ -55,9 +91,48 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			}
 		}
 
-        public override DescribeInstanceMenuSwitchResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string OriginAzoneId
+		{
+			get
+			{
+				return originAzoneId;
+			}
+			set	
+			{
+				originAzoneId = value;
+				DictionaryUtil.Add(QueryParameters, "OriginAzoneId", value);
+			}
+		}
+
+		public bool? ChangeVSwitch
+		{
+			get
+			{
+				return changeVSwitch;
+			}
+			set	
+			{
+				changeVSwitch = value;
+				DictionaryUtil.Add(QueryParameters, "ChangeVSwitch", value.ToString());
+			}
+		}
+
+		public string NewVSwitch
+		{
+			get
+			{
+				return newVSwitch;
+			}
+			set	
+			{
+				newVSwitch = value;
+				DictionaryUtil.Add(QueryParameters, "NewVSwitch", value);
+			}
+		}
+
+        public override ChangeInstanceAzoneResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeInstanceMenuSwitchResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ChangeInstanceAzoneResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

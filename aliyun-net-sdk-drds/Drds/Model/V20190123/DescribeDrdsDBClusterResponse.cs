@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribeDrdsDBClusterResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private DescribeDrdsDBCluster_DbInstance dbInstance;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private DescribeDrdsDBCluster_DbInstance dbInstance;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,27 +70,27 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class DescribeDrdsDBCluster_DbInstance
 		{
 
-			private string dBInstanceId;
+			private string expireTime;
 
-			private int? port;
+			private string payType;
 
 			private string dBInstanceStatus;
 
-			private string dbInstType;
+			private string networkType;
 
-			private string engine;
+			private int? port;
 
 			private string engineVersion;
 
 			private string rdsInstType;
 
-			private string payType;
-
-			private string expireTime;
-
 			private string remainDays;
 
-			private string networkType;
+			private string dBInstanceId;
+
+			private string dbInstType;
+
+			private string engine;
 
 			private string readMode;
 
@@ -98,27 +98,27 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 
 			private List<DescribeDrdsDBCluster_DBNode> dBNodes;
 
-			public string DBInstanceId
+			public string ExpireTime
 			{
 				get
 				{
-					return dBInstanceId;
+					return expireTime;
 				}
 				set	
 				{
-					dBInstanceId = value;
+					expireTime = value;
 				}
 			}
 
-			public int? Port
+			public string PayType
 			{
 				get
 				{
-					return port;
+					return payType;
 				}
 				set	
 				{
-					port = value;
+					payType = value;
 				}
 			}
 
@@ -134,27 +134,27 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public string DbInstType
+			public string NetworkType
 			{
 				get
 				{
-					return dbInstType;
+					return networkType;
 				}
 				set	
 				{
-					dbInstType = value;
+					networkType = value;
 				}
 			}
 
-			public string Engine
+			public int? Port
 			{
 				get
 				{
-					return engine;
+					return port;
 				}
 				set	
 				{
-					engine = value;
+					port = value;
 				}
 			}
 
@@ -182,30 +182,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public string PayType
-			{
-				get
-				{
-					return payType;
-				}
-				set	
-				{
-					payType = value;
-				}
-			}
-
-			public string ExpireTime
-			{
-				get
-				{
-					return expireTime;
-				}
-				set	
-				{
-					expireTime = value;
-				}
-			}
-
 			public string RemainDays
 			{
 				get
@@ -218,15 +194,39 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public string NetworkType
+			public string DBInstanceId
 			{
 				get
 				{
-					return networkType;
+					return dBInstanceId;
 				}
 				set	
 				{
-					networkType = value;
+					dBInstanceId = value;
+				}
+			}
+
+			public string DbInstType
+			{
+				get
+				{
+					return dbInstType;
+				}
+				set	
+				{
+					dbInstType = value;
+				}
+			}
+
+			public string Engine
+			{
+				get
+				{
+					return engine;
+				}
+				set	
+				{
+					engine = value;
 				}
 			}
 
@@ -269,21 +269,21 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			public class DescribeDrdsDBCluster_Endpoint
 			{
 
-				private string nodeIds;
+				private int? readWeight;
 
 				private string endpointId;
 
-				private int? readWeight;
+				private string nodeIds;
 
-				public string NodeIds
+				public int? ReadWeight
 				{
 					get
 					{
-						return nodeIds;
+						return readWeight;
 					}
 					set	
 					{
-						nodeIds = value;
+						readWeight = value;
 					}
 				}
 
@@ -299,15 +299,15 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					}
 				}
 
-				public int? ReadWeight
+				public string NodeIds
 				{
 					get
 					{
-						return readWeight;
+						return nodeIds;
 					}
 					set	
 					{
-						readWeight = value;
+						nodeIds = value;
 					}
 				}
 			}
@@ -315,23 +315,23 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			public class DescribeDrdsDBCluster_DBNode
 			{
 
-				private string dBNodeId;
+				private string dBNodeRole;
 
 				private string zoneId;
 
+				private string dBNodeId;
+
 				private string dBNodeStatus;
 
-				private string dBNodeRole;
-
-				public string DBNodeId
+				public string DBNodeRole
 				{
 					get
 					{
-						return dBNodeId;
+						return dBNodeRole;
 					}
 					set	
 					{
-						dBNodeId = value;
+						dBNodeRole = value;
 					}
 				}
 
@@ -347,6 +347,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					}
 				}
 
+				public string DBNodeId
+				{
+					get
+					{
+						return dBNodeId;
+					}
+					set	
+					{
+						dBNodeId = value;
+					}
+				}
+
 				public string DBNodeStatus
 				{
 					get
@@ -356,18 +368,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					set	
 					{
 						dBNodeStatus = value;
-					}
-				}
-
-				public string DBNodeRole
-				{
-					get
-					{
-						return dBNodeRole;
-					}
-					set	
-					{
-						dBNodeRole = value;
 					}
 				}
 			}

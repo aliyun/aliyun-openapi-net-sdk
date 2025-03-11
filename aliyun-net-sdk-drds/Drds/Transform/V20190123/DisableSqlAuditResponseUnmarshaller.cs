@@ -32,8 +32,8 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 
 			disableSqlAuditResponse.HttpResponse = _ctx.HttpResponse;
 			disableSqlAuditResponse.RequestId = _ctx.StringValue("DisableSqlAudit.RequestId");
-			disableSqlAuditResponse.Success = _ctx.BooleanValue("DisableSqlAudit.Success");
 			disableSqlAuditResponse.Result = _ctx.BooleanValue("DisableSqlAudit.Result");
+			disableSqlAuditResponse.Success = _ctx.BooleanValue("DisableSqlAudit.Success");
         
 			return disableSqlAuditResponse;
         }

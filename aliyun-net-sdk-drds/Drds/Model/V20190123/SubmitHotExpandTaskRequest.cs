@@ -40,44 +40,21 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			Method = MethodType.POST;
         }
 
-		private List<Mapping> mappings = new List<Mapping>(){ };
-
 		private string taskDesc;
-
-		private List<SupperAccountMapping> supperAccountMappings = new List<SupperAccountMapping>(){ };
-
-		private List<ExtendedMapping> extendedMappings = new List<ExtendedMapping>(){ };
 
 		private string taskName;
 
+		private List<string> mappings = new List<string>(){ };
+
+		private List<string> supperAccountMappings = new List<string>(){ };
+
+		private List<string> extendedMappings = new List<string>(){ };
+
 		private string drdsInstanceId;
 
-		private List<InstanceDbMapping> instanceDbMappings = new List<InstanceDbMapping>(){ };
+		private List<string> instanceDbMappings = new List<string>(){ };
 
 		private string dbName;
-
-		public List<Mapping> Mappings
-		{
-			get
-			{
-				return mappings;
-			}
-
-			set
-			{
-				mappings = value;
-				for (int i = 0; i < mappings.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Mapping." + (i + 1) + ".DbShardColumn", mappings[i].DbShardColumn);
-					DictionaryUtil.Add(QueryParameters,"Mapping." + (i + 1) + ".TbShardColumn", mappings[i].TbShardColumn);
-					DictionaryUtil.Add(QueryParameters,"Mapping." + (i + 1) + ".ShardTbValue", mappings[i].ShardTbValue);
-					DictionaryUtil.Add(QueryParameters,"Mapping." + (i + 1) + ".HotDbName", mappings[i].HotDbName);
-					DictionaryUtil.Add(QueryParameters,"Mapping." + (i + 1) + ".ShardDbValue", mappings[i].ShardDbValue);
-					DictionaryUtil.Add(QueryParameters,"Mapping." + (i + 1) + ".HotTableName", mappings[i].HotTableName);
-					DictionaryUtil.Add(QueryParameters,"Mapping." + (i + 1) + ".LogicTable", mappings[i].LogicTable);
-				}
-			}
-		}
 
 		public string TaskDesc
 		{
@@ -89,43 +66,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			{
 				taskDesc = value;
 				DictionaryUtil.Add(QueryParameters, "TaskDesc", value);
-			}
-		}
-
-		public List<SupperAccountMapping> SupperAccountMappings
-		{
-			get
-			{
-				return supperAccountMappings;
-			}
-
-			set
-			{
-				supperAccountMappings = value;
-				for (int i = 0; i < supperAccountMappings.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"SupperAccountMapping." + (i + 1) + ".InstanceName", supperAccountMappings[i].InstanceName);
-					DictionaryUtil.Add(QueryParameters,"SupperAccountMapping." + (i + 1) + ".SupperAccount", supperAccountMappings[i].SupperAccount);
-					DictionaryUtil.Add(QueryParameters,"SupperAccountMapping." + (i + 1) + ".SupperPassword", supperAccountMappings[i].SupperPassword);
-				}
-			}
-		}
-
-		public List<ExtendedMapping> ExtendedMappings
-		{
-			get
-			{
-				return extendedMappings;
-			}
-
-			set
-			{
-				extendedMappings = value;
-				for (int i = 0; i < extendedMappings.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ExtendedMapping." + (i + 1) + ".SrcInstanceId", extendedMappings[i].SrcInstanceId);
-					DictionaryUtil.Add(QueryParameters,"ExtendedMapping." + (i + 1) + ".SrcDb", extendedMappings[i].SrcDb);
-				}
 			}
 		}
 
@@ -142,6 +82,75 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			}
 		}
 
+		public List<string> Mappings
+		{
+			get
+			{
+				return mappings;
+			}
+
+			set
+			{
+				mappings = value;
+				if(mappings != null)
+				{
+					for (int depth1 = 0; depth1 < mappings.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Mapping." + (depth1 + 1), mappings[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Mapping." + (depth1 + 1), mappings[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Mapping." + (depth1 + 1), mappings[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Mapping." + (depth1 + 1), mappings[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Mapping." + (depth1 + 1), mappings[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Mapping." + (depth1 + 1), mappings[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Mapping." + (depth1 + 1), mappings[depth1]);
+					}
+				}
+			}
+		}
+
+		public List<string> SupperAccountMappings
+		{
+			get
+			{
+				return supperAccountMappings;
+			}
+
+			set
+			{
+				supperAccountMappings = value;
+				if(supperAccountMappings != null)
+				{
+					for (int depth1 = 0; depth1 < supperAccountMappings.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"SupperAccountMapping." + (depth1 + 1), supperAccountMappings[depth1]);
+						DictionaryUtil.Add(QueryParameters,"SupperAccountMapping." + (depth1 + 1), supperAccountMappings[depth1]);
+						DictionaryUtil.Add(QueryParameters,"SupperAccountMapping." + (depth1 + 1), supperAccountMappings[depth1]);
+					}
+				}
+			}
+		}
+
+		public List<string> ExtendedMappings
+		{
+			get
+			{
+				return extendedMappings;
+			}
+
+			set
+			{
+				extendedMappings = value;
+				if(extendedMappings != null)
+				{
+					for (int depth1 = 0; depth1 < extendedMappings.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"ExtendedMapping." + (depth1 + 1), extendedMappings[depth1]);
+						DictionaryUtil.Add(QueryParameters,"ExtendedMapping." + (depth1 + 1), extendedMappings[depth1]);
+					}
+				}
+			}
+		}
+
 		public string DrdsInstanceId
 		{
 			get
@@ -155,7 +164,7 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			}
 		}
 
-		public List<InstanceDbMapping> InstanceDbMappings
+		public List<string> InstanceDbMappings
 		{
 			get
 			{
@@ -165,10 +174,13 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set
 			{
 				instanceDbMappings = value;
-				for (int i = 0; i < instanceDbMappings.Count; i++)
+				if(instanceDbMappings != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"InstanceDbMapping." + (i + 1) + ".DbList", instanceDbMappings[i].DbList);
-					DictionaryUtil.Add(QueryParameters,"InstanceDbMapping." + (i + 1) + ".InstanceName", instanceDbMappings[i].InstanceName);
+					for (int depth1 = 0; depth1 < instanceDbMappings.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"InstanceDbMapping." + (depth1 + 1), instanceDbMappings[depth1]);
+						DictionaryUtil.Add(QueryParameters,"InstanceDbMapping." + (depth1 + 1), instanceDbMappings[depth1]);
+					}
 				}
 			}
 		}
@@ -189,9 +201,9 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class Mapping
 		{
 
-			private string dbShardColumn;
-
 			private string tbShardColumn;
+
+			private string dbShardColumn;
 
 			private string shardTbValue;
 
@@ -203,18 +215,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 
 			private string logicTable;
 
-			public string DbShardColumn
-			{
-				get
-				{
-					return dbShardColumn;
-				}
-				set	
-				{
-					dbShardColumn = value;
-				}
-			}
-
 			public string TbShardColumn
 			{
 				get
@@ -224,6 +224,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					tbShardColumn = value;
+				}
+			}
+
+			public string DbShardColumn
+			{
+				get
+				{
+					return dbShardColumn;
+				}
+				set	
+				{
+					dbShardColumn = value;
 				}
 			}
 

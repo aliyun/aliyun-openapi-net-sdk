@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			DescribeRdsCommodityResponse describeRdsCommodityResponse = new DescribeRdsCommodityResponse();
 
 			describeRdsCommodityResponse.HttpResponse = _ctx.HttpResponse;
+			describeRdsCommodityResponse.Data = _ctx.StringValue("DescribeRdsCommodity.Data");
 			describeRdsCommodityResponse.RequestId = _ctx.StringValue("DescribeRdsCommodity.RequestId");
 			describeRdsCommodityResponse.Success = _ctx.BooleanValue("DescribeRdsCommodity.Success");
-			describeRdsCommodityResponse.Data = _ctx.StringValue("DescribeRdsCommodity.Data");
         
 			return describeRdsCommodityResponse;
         }

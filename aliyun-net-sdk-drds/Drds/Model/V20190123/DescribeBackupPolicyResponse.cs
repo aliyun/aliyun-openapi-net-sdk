@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribeBackupPolicyResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private DescribeBackupPolicy_BackupPolicyDO backupPolicyDO;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private DescribeBackupPolicy_BackupPolicyDO backupPolicyDO;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,75 +70,75 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class DescribeBackupPolicy_BackupPolicyDO
 		{
 
-			private long? gmtCreate;
+			private string backupDbName;
 
-			private long? gmtModified;
+			private long? logBackupRetentionPeriod;
 
-			private string backupPolicyMode;
+			private long? dataBackupRetentionPeriod;
 
 			private string backupType;
 
 			private string backupLevel;
 
-			private string backupDbName;
-
-			private string preferredBackupTime;
-
-			private string preferredBackupPeriod;
-
-			private long? dataBackupRetentionPeriod;
-
-			private long? logBackupRetentionPeriod;
-
-			private long? backupRetentionPeriod;
-
-			private string backupLog;
-
 			private long? localLogRetentionHours;
-
-			private long? localLogRetentionSpace;
 
 			private long? highSpaceUsageProtection;
 
+			private long? gmtModified;
+
+			private long? backupRetentionPeriod;
+
+			private string backupPolicyMode;
+
+			private string preferredBackupPeriod;
+
+			private long? localLogRetentionSpace;
+
 			private string backupAppName;
+
+			private string preferredBackupTime;
+
+			private long? gmtCreate;
 
 			private string backupMode;
 
+			private string backupLog;
+
 			private string nextBackupActuallyTime;
 
-			public long? GmtCreate
+			public string BackupDbName
 			{
 				get
 				{
-					return gmtCreate;
+					return backupDbName;
 				}
 				set	
 				{
-					gmtCreate = value;
+					backupDbName = value;
 				}
 			}
 
-			public long? GmtModified
+			public long? LogBackupRetentionPeriod
 			{
 				get
 				{
-					return gmtModified;
+					return logBackupRetentionPeriod;
 				}
 				set	
 				{
-					gmtModified = value;
+					logBackupRetentionPeriod = value;
 				}
 			}
 
-			public string BackupPolicyMode
+			public long? DataBackupRetentionPeriod
 			{
 				get
 				{
-					return backupPolicyMode;
+					return dataBackupRetentionPeriod;
 				}
 				set	
 				{
-					backupPolicyMode = value;
+					dataBackupRetentionPeriod = value;
 				}
 			}
 
@@ -166,90 +166,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public string BackupDbName
-			{
-				get
-				{
-					return backupDbName;
-				}
-				set	
-				{
-					backupDbName = value;
-				}
-			}
-
-			public string PreferredBackupTime
-			{
-				get
-				{
-					return preferredBackupTime;
-				}
-				set	
-				{
-					preferredBackupTime = value;
-				}
-			}
-
-			public string PreferredBackupPeriod
-			{
-				get
-				{
-					return preferredBackupPeriod;
-				}
-				set	
-				{
-					preferredBackupPeriod = value;
-				}
-			}
-
-			public long? DataBackupRetentionPeriod
-			{
-				get
-				{
-					return dataBackupRetentionPeriod;
-				}
-				set	
-				{
-					dataBackupRetentionPeriod = value;
-				}
-			}
-
-			public long? LogBackupRetentionPeriod
-			{
-				get
-				{
-					return logBackupRetentionPeriod;
-				}
-				set	
-				{
-					logBackupRetentionPeriod = value;
-				}
-			}
-
-			public long? BackupRetentionPeriod
-			{
-				get
-				{
-					return backupRetentionPeriod;
-				}
-				set	
-				{
-					backupRetentionPeriod = value;
-				}
-			}
-
-			public string BackupLog
-			{
-				get
-				{
-					return backupLog;
-				}
-				set	
-				{
-					backupLog = value;
-				}
-			}
-
 			public long? LocalLogRetentionHours
 			{
 				get
@@ -259,18 +175,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					localLogRetentionHours = value;
-				}
-			}
-
-			public long? LocalLogRetentionSpace
-			{
-				get
-				{
-					return localLogRetentionSpace;
-				}
-				set	
-				{
-					localLogRetentionSpace = value;
 				}
 			}
 
@@ -286,6 +190,66 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
+			public long? GmtModified
+			{
+				get
+				{
+					return gmtModified;
+				}
+				set	
+				{
+					gmtModified = value;
+				}
+			}
+
+			public long? BackupRetentionPeriod
+			{
+				get
+				{
+					return backupRetentionPeriod;
+				}
+				set	
+				{
+					backupRetentionPeriod = value;
+				}
+			}
+
+			public string BackupPolicyMode
+			{
+				get
+				{
+					return backupPolicyMode;
+				}
+				set	
+				{
+					backupPolicyMode = value;
+				}
+			}
+
+			public string PreferredBackupPeriod
+			{
+				get
+				{
+					return preferredBackupPeriod;
+				}
+				set	
+				{
+					preferredBackupPeriod = value;
+				}
+			}
+
+			public long? LocalLogRetentionSpace
+			{
+				get
+				{
+					return localLogRetentionSpace;
+				}
+				set	
+				{
+					localLogRetentionSpace = value;
+				}
+			}
+
 			public string BackupAppName
 			{
 				get
@@ -298,6 +262,30 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
+			public string PreferredBackupTime
+			{
+				get
+				{
+					return preferredBackupTime;
+				}
+				set	
+				{
+					preferredBackupTime = value;
+				}
+			}
+
+			public long? GmtCreate
+			{
+				get
+				{
+					return gmtCreate;
+				}
+				set	
+				{
+					gmtCreate = value;
+				}
+			}
+
 			public string BackupMode
 			{
 				get
@@ -307,6 +295,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					backupMode = value;
+				}
+			}
+
+			public string BackupLog
+			{
+				get
+				{
+					return backupLog;
+				}
+				set	
+				{
+					backupLog = value;
 				}
 			}
 

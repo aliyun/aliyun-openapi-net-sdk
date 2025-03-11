@@ -31,15 +31,15 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			DescribeDrdsDBResponse describeDrdsDBResponse = new DescribeDrdsDBResponse();
 
 			describeDrdsDBResponse.HttpResponse = _ctx.HttpResponse;
-			describeDrdsDBResponse.RequestId = _ctx.StringValue("DescribeDrdsDB.RequestId");
 			describeDrdsDBResponse.Success = _ctx.BooleanValue("DescribeDrdsDB.Success");
+			describeDrdsDBResponse.RequestId = _ctx.StringValue("DescribeDrdsDB.RequestId");
 
 			DescribeDrdsDBResponse.DescribeDrdsDB_Data data = new DescribeDrdsDBResponse.DescribeDrdsDB_Data();
-			data.DbName = _ctx.StringValue("DescribeDrdsDB.Data.DbName");
 			data.Status = _ctx.StringValue("DescribeDrdsDB.Data.Status");
+			data.DbName = _ctx.StringValue("DescribeDrdsDB.Data.DbName");
+			data.Schema = _ctx.StringValue("DescribeDrdsDB.Data.Schema");
 			data.CreateTime = _ctx.StringValue("DescribeDrdsDB.Data.CreateTime");
 			data.Mode = _ctx.StringValue("DescribeDrdsDB.Data.Mode");
-			data.Schema = _ctx.StringValue("DescribeDrdsDB.Data.Schema");
 			data.DbInstType = _ctx.StringValue("DescribeDrdsDB.Data.DbInstType");
 			data.InstRole = _ctx.StringValue("DescribeDrdsDB.Data.InstRole");
 			describeDrdsDBResponse.Data = data;

@@ -16,25 +16,41 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+using Aliyun.Acs.Core;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Drds.Model.V20190123;
-
-namespace Aliyun.Acs.Drds.Transform.V20190123
+namespace Aliyun.Acs.Drds.Model.V20190123
 {
-    public class SubmitSwitchTaskResponseUnmarshaller
-    {
-        public static SubmitSwitchTaskResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			SubmitSwitchTaskResponse submitSwitchTaskResponse = new SubmitSwitchTaskResponse();
+	public class EnableInstanceIpv6AddressResponse : AcsResponse
+	{
 
-			submitSwitchTaskResponse.HttpResponse = _ctx.HttpResponse;
-			submitSwitchTaskResponse.RequestId = _ctx.StringValue("SubmitSwitchTask.RequestId");
-			submitSwitchTaskResponse.Success = _ctx.BooleanValue("SubmitSwitchTask.Success");
-        
-			return submitSwitchTaskResponse;
-        }
-    }
+		private bool? data;
+
+		private string requestId;
+
+		public bool? Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+	}
 }

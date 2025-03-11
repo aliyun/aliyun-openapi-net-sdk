@@ -27,10 +27,10 @@ using Aliyun.Acs.Drds.Transform.V20190123;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
 {
-    public class DescribeShardTaskListRequest : RpcAcsRequest<DescribeShardTaskListResponse>
+    public class ModifyAccountPrivilegeRequest : RpcAcsRequest<ModifyAccountPrivilegeResponse>
     {
-        public DescribeShardTaskListRequest()
-            : base("Drds", "2019-01-23", "DescribeShardTaskList", "drds", "openAPI")
+        public ModifyAccountPrivilegeRequest()
+            : base("Drds", "2019-01-23", "ModifyAccountPrivilege", "drds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,56 +40,11 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			Method = MethodType.POST;
         }
 
-		private string taskType;
-
-		private string query;
-
-		private int? currentPage;
-
 		private string drdsInstanceId;
 
-		private string dbName;
+		private string accountName;
 
-		private int? pageSize;
-
-		public string TaskType
-		{
-			get
-			{
-				return taskType;
-			}
-			set	
-			{
-				taskType = value;
-				DictionaryUtil.Add(QueryParameters, "TaskType", value);
-			}
-		}
-
-		public string Query
-		{
-			get
-			{
-				return query;
-			}
-			set	
-			{
-				query = value;
-				DictionaryUtil.Add(QueryParameters, "Query", value);
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
-			}
-		}
+		private List<string> dbPrivileges = new List<string>(){ };
 
 		public string DrdsInstanceId
 		{
@@ -104,40 +59,75 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			}
 		}
 
-		public string DbName
+		public string AccountName
 		{
 			get
 			{
-				return dbName;
+				return accountName;
 			}
 			set	
 			{
-				dbName = value;
-				DictionaryUtil.Add(QueryParameters, "DbName", value);
+				accountName = value;
+				DictionaryUtil.Add(QueryParameters, "AccountName", value);
 			}
 		}
 
-		public int? PageSize
+		public List<string> DbPrivileges
 		{
 			get
 			{
-				return pageSize;
+				return dbPrivileges;
 			}
-			set	
+
+			set
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				dbPrivileges = value;
+				if(dbPrivileges != null)
+				{
+					for (int depth1 = 0; depth1 < dbPrivileges.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"DbPrivilege." + (depth1 + 1), dbPrivileges[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DbPrivilege." + (depth1 + 1), dbPrivileges[depth1]);
+					}
+				}
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		public class DbPrivilege
 		{
-			return false;
+
+			private string dbName;
+
+			private string privilege;
+
+			public string DbName
+			{
+				get
+				{
+					return dbName;
+				}
+				set	
+				{
+					dbName = value;
+				}
+			}
+
+			public string Privilege
+			{
+				get
+				{
+					return privilege;
+				}
+				set	
+				{
+					privilege = value;
+				}
+			}
 		}
 
-        public override DescribeShardTaskListResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyAccountPrivilegeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeShardTaskListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyAccountPrivilegeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

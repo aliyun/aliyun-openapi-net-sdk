@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			CreateShardTaskResponse createShardTaskResponse = new CreateShardTaskResponse();
 
 			createShardTaskResponse.HttpResponse = _ctx.HttpResponse;
+			createShardTaskResponse.Data = _ctx.BooleanValue("CreateShardTask.Data");
 			createShardTaskResponse.RequestId = _ctx.StringValue("CreateShardTask.RequestId");
 			createShardTaskResponse.Success = _ctx.BooleanValue("CreateShardTask.Success");
-			createShardTaskResponse.Data = _ctx.BooleanValue("CreateShardTask.Data");
         
 			return createShardTaskResponse;
         }

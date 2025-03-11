@@ -58,10 +58,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set
 			{
 				tableLists = value;
-				for (int i = 0; i < tableLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"TableList." + (i + 1) , tableLists[i]);
-				}
 			}
 		}
 

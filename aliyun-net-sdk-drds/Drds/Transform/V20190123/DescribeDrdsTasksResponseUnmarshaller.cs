@@ -31,15 +31,15 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			DescribeDrdsTasksResponse describeDrdsTasksResponse = new DescribeDrdsTasksResponse();
 
 			describeDrdsTasksResponse.HttpResponse = _ctx.HttpResponse;
-			describeDrdsTasksResponse.RequestId = _ctx.StringValue("DescribeDrdsTasks.RequestId");
 			describeDrdsTasksResponse.Success = _ctx.BooleanValue("DescribeDrdsTasks.Success");
+			describeDrdsTasksResponse.RequestId = _ctx.StringValue("DescribeDrdsTasks.RequestId");
 
 			List<DescribeDrdsTasksResponse.DescribeDrdsTasks_Task> describeDrdsTasksResponse_tasks = new List<DescribeDrdsTasksResponse.DescribeDrdsTasks_Task>();
 			for (int i = 0; i < _ctx.Length("DescribeDrdsTasks.Tasks.Length"); i++) {
 				DescribeDrdsTasksResponse.DescribeDrdsTasks_Task task = new DescribeDrdsTasksResponse.DescribeDrdsTasks_Task();
-				task.Id = _ctx.LongValue("DescribeDrdsTasks.Tasks["+ i +"].Id");
 				task.State = _ctx.StringValue("DescribeDrdsTasks.Tasks["+ i +"].State");
 				task.Content = _ctx.StringValue("DescribeDrdsTasks.Tasks["+ i +"].Content");
+				task.Id = _ctx.LongValue("DescribeDrdsTasks.Tasks["+ i +"].Id");
 
 				describeDrdsTasksResponse_tasks.Add(task);
 			}

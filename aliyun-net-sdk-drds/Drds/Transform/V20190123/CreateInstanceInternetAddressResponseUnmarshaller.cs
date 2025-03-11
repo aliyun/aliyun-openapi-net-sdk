@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			CreateInstanceInternetAddressResponse createInstanceInternetAddressResponse = new CreateInstanceInternetAddressResponse();
 
 			createInstanceInternetAddressResponse.HttpResponse = _ctx.HttpResponse;
-			createInstanceInternetAddressResponse.RequestId = _ctx.StringValue("CreateInstanceInternetAddress.RequestId");
-			createInstanceInternetAddressResponse.Data = _ctx.BooleanValue("CreateInstanceInternetAddress.Data");
-			createInstanceInternetAddressResponse.Success = _ctx.BooleanValue("CreateInstanceInternetAddress.Success");
 			createInstanceInternetAddressResponse.Code = _ctx.IntegerValue("CreateInstanceInternetAddress.Code");
+			createInstanceInternetAddressResponse.Data = _ctx.BooleanValue("CreateInstanceInternetAddress.Data");
+			createInstanceInternetAddressResponse.RequestId = _ctx.StringValue("CreateInstanceInternetAddress.RequestId");
+			createInstanceInternetAddressResponse.Success = _ctx.BooleanValue("CreateInstanceInternetAddress.Success");
         
 			return createInstanceInternetAddressResponse;
         }

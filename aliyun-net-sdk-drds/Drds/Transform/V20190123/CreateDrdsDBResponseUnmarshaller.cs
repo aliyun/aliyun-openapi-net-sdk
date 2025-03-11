@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			CreateDrdsDBResponse createDrdsDBResponse = new CreateDrdsDBResponse();
 
 			createDrdsDBResponse.HttpResponse = _ctx.HttpResponse;
-			createDrdsDBResponse.RequestId = _ctx.StringValue("CreateDrdsDB.RequestId");
 			createDrdsDBResponse.Success = _ctx.BooleanValue("CreateDrdsDB.Success");
+			createDrdsDBResponse.RequestId = _ctx.StringValue("CreateDrdsDB.RequestId");
         
 			return createDrdsDBResponse;
         }

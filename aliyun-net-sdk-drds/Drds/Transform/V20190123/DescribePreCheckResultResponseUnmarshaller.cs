@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			DescribePreCheckResultResponse describePreCheckResultResponse = new DescribePreCheckResultResponse();
 
 			describePreCheckResultResponse.HttpResponse = _ctx.HttpResponse;
-			describePreCheckResultResponse.RequestId = _ctx.StringValue("DescribePreCheckResult.RequestId");
 			describePreCheckResultResponse.Success = _ctx.BooleanValue("DescribePreCheckResult.Success");
+			describePreCheckResultResponse.RequestId = _ctx.StringValue("DescribePreCheckResult.RequestId");
 
 			DescribePreCheckResultResponse.DescribePreCheckResult_PreCheckResult preCheckResult = new DescribePreCheckResultResponse.DescribePreCheckResult_PreCheckResult();
 			preCheckResult.PreCheckName = _ctx.StringValue("DescribePreCheckResult.PreCheckResult.PreCheckName");
@@ -41,9 +41,9 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			List<DescribePreCheckResultResponse.DescribePreCheckResult_PreCheckResult.DescribePreCheckResult_SubCheckItemsItem> preCheckResult_subCheckItems = new List<DescribePreCheckResultResponse.DescribePreCheckResult_PreCheckResult.DescribePreCheckResult_SubCheckItemsItem>();
 			for (int i = 0; i < _ctx.Length("DescribePreCheckResult.PreCheckResult.SubCheckItems.Length"); i++) {
 				DescribePreCheckResultResponse.DescribePreCheckResult_PreCheckResult.DescribePreCheckResult_SubCheckItemsItem subCheckItemsItem = new DescribePreCheckResultResponse.DescribePreCheckResult_PreCheckResult.DescribePreCheckResult_SubCheckItemsItem();
+				subCheckItemsItem.ErrorMsgCode = _ctx.StringValue("DescribePreCheckResult.PreCheckResult.SubCheckItems["+ i +"].ErrorMsgCode");
 				subCheckItemsItem.PreCheckItemName = _ctx.StringValue("DescribePreCheckResult.PreCheckResult.SubCheckItems["+ i +"].PreCheckItemName");
 				subCheckItemsItem.State = _ctx.StringValue("DescribePreCheckResult.PreCheckResult.SubCheckItems["+ i +"].State");
-				subCheckItemsItem.ErrorMsgCode = _ctx.StringValue("DescribePreCheckResult.PreCheckResult.SubCheckItems["+ i +"].ErrorMsgCode");
 
 				List<string> subCheckItemsItem_errorMsgParams = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribePreCheckResult.PreCheckResult.SubCheckItems["+ i +"].ErrorMsgParams.Length"); j++) {

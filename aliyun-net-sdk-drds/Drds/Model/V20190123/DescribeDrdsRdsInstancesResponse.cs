@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,39 +25,27 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribeDrdsRdsInstancesResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
+		private string pageSize;
 
 		private string pageNumber;
 
-		private string pageSize;
+		private string requestId;
 
 		private string total;
 
+		private bool? success;
+
 		private List<DescribeDrdsRdsInstances_DbInstance> dbInstances;
 
-		public string RequestId
+		public string PageSize
 		{
 			get
 			{
-				return requestId;
+				return pageSize;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
+				pageSize = value;
 			}
 		}
 
@@ -73,15 +61,15 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			}
 		}
 
-		public string PageSize
+		public string RequestId
 		{
 			get
 			{
-				return pageSize;
+				return requestId;
 			}
 			set	
 			{
-				pageSize = value;
+				requestId = value;
 			}
 		}
 
@@ -94,6 +82,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				total = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -112,171 +112,79 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class DescribeDrdsRdsInstances_DbInstance
 		{
 
-			private string dBInstanceId;
+			private string dBInstanceCPU;
 
-			private string dmInstanceId;
+			private string expireTime;
 
-			private string connectUrl;
-
-			private int? port;
-
-			private string dBInstanceStatus;
-
-			private string dbInstType;
-
-			private int? readWeight;
-
-			private string networkType;
-
-			private string engine;
-
-			private string engineVersion;
-
-			private string rdsInstType;
+			private long? dBInstanceMemory;
 
 			private string payType;
 
-			private string expireTime;
+			private string dBInstanceStatus;
+
+			private string networkType;
+
+			private int? port;
+
+			private string engineVersion;
+
+			private string dmInstanceId;
+
+			private long? dBInstanceStorage;
+
+			private string connectUrl;
+
+			private int? readWeight;
+
+			private string rdsInstType;
 
 			private int? remainDays;
 
 			private string dBInstanceClassType;
 
-			private string dBInstanceCPU;
+			private string dBInstanceId;
 
-			private long? dBInstanceMemory;
+			private string engine;
 
-			private long? dBInstanceStorage;
+			private string dbInstType;
 
-			public string DBInstanceId
+			private int? lockMode;
+
+			private string lockReason;
+
+			public string DBInstanceCPU
 			{
 				get
 				{
-					return dBInstanceId;
+					return dBInstanceCPU;
 				}
 				set	
 				{
-					dBInstanceId = value;
+					dBInstanceCPU = value;
 				}
 			}
 
-			public string DmInstanceId
+			public string ExpireTime
 			{
 				get
 				{
-					return dmInstanceId;
+					return expireTime;
 				}
 				set	
 				{
-					dmInstanceId = value;
+					expireTime = value;
 				}
 			}
 
-			public string ConnectUrl
+			public long? DBInstanceMemory
 			{
 				get
 				{
-					return connectUrl;
+					return dBInstanceMemory;
 				}
 				set	
 				{
-					connectUrl = value;
-				}
-			}
-
-			public int? Port
-			{
-				get
-				{
-					return port;
-				}
-				set	
-				{
-					port = value;
-				}
-			}
-
-			public string DBInstanceStatus
-			{
-				get
-				{
-					return dBInstanceStatus;
-				}
-				set	
-				{
-					dBInstanceStatus = value;
-				}
-			}
-
-			public string DbInstType
-			{
-				get
-				{
-					return dbInstType;
-				}
-				set	
-				{
-					dbInstType = value;
-				}
-			}
-
-			public int? ReadWeight
-			{
-				get
-				{
-					return readWeight;
-				}
-				set	
-				{
-					readWeight = value;
-				}
-			}
-
-			public string NetworkType
-			{
-				get
-				{
-					return networkType;
-				}
-				set	
-				{
-					networkType = value;
-				}
-			}
-
-			public string Engine
-			{
-				get
-				{
-					return engine;
-				}
-				set	
-				{
-					engine = value;
-				}
-			}
-
-			public string EngineVersion
-			{
-				get
-				{
-					return engineVersion;
-				}
-				set	
-				{
-					engineVersion = value;
-				}
-			}
-
-			public string RdsInstType
-			{
-				get
-				{
-					return rdsInstType;
-				}
-				set	
-				{
-					rdsInstType = value;
+					dBInstanceMemory = value;
 				}
 			}
 
@@ -292,15 +200,111 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public string ExpireTime
+			public string DBInstanceStatus
 			{
 				get
 				{
-					return expireTime;
+					return dBInstanceStatus;
 				}
 				set	
 				{
-					expireTime = value;
+					dBInstanceStatus = value;
+				}
+			}
+
+			public string NetworkType
+			{
+				get
+				{
+					return networkType;
+				}
+				set	
+				{
+					networkType = value;
+				}
+			}
+
+			public int? Port
+			{
+				get
+				{
+					return port;
+				}
+				set	
+				{
+					port = value;
+				}
+			}
+
+			public string EngineVersion
+			{
+				get
+				{
+					return engineVersion;
+				}
+				set	
+				{
+					engineVersion = value;
+				}
+			}
+
+			public string DmInstanceId
+			{
+				get
+				{
+					return dmInstanceId;
+				}
+				set	
+				{
+					dmInstanceId = value;
+				}
+			}
+
+			public long? DBInstanceStorage
+			{
+				get
+				{
+					return dBInstanceStorage;
+				}
+				set	
+				{
+					dBInstanceStorage = value;
+				}
+			}
+
+			public string ConnectUrl
+			{
+				get
+				{
+					return connectUrl;
+				}
+				set	
+				{
+					connectUrl = value;
+				}
+			}
+
+			public int? ReadWeight
+			{
+				get
+				{
+					return readWeight;
+				}
+				set	
+				{
+					readWeight = value;
+				}
+			}
+
+			public string RdsInstType
+			{
+				get
+				{
+					return rdsInstType;
+				}
+				set	
+				{
+					rdsInstType = value;
 				}
 			}
 
@@ -328,39 +332,63 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public string DBInstanceCPU
+			public string DBInstanceId
 			{
 				get
 				{
-					return dBInstanceCPU;
+					return dBInstanceId;
 				}
 				set	
 				{
-					dBInstanceCPU = value;
+					dBInstanceId = value;
 				}
 			}
 
-			public long? DBInstanceMemory
+			public string Engine
 			{
 				get
 				{
-					return dBInstanceMemory;
+					return engine;
 				}
 				set	
 				{
-					dBInstanceMemory = value;
+					engine = value;
 				}
 			}
 
-			public long? DBInstanceStorage
+			public string DbInstType
 			{
 				get
 				{
-					return dBInstanceStorage;
+					return dbInstType;
 				}
 				set	
 				{
-					dBInstanceStorage = value;
+					dbInstType = value;
+				}
+			}
+
+			public int? LockMode
+			{
+				get
+				{
+					return lockMode;
+				}
+				set	
+				{
+					lockMode = value;
+				}
+			}
+
+			public string LockReason
+			{
+				get
+				{
+					return lockReason;
+				}
+				set	
+				{
+					lockReason = value;
 				}
 			}
 		}

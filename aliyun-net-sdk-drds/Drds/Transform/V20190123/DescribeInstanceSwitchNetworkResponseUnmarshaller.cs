@@ -31,24 +31,24 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			DescribeInstanceSwitchNetworkResponse describeInstanceSwitchNetworkResponse = new DescribeInstanceSwitchNetworkResponse();
 
 			describeInstanceSwitchNetworkResponse.HttpResponse = _ctx.HttpResponse;
-			describeInstanceSwitchNetworkResponse.RequestId = _ctx.StringValue("DescribeInstanceSwitchNetwork.RequestId");
 			describeInstanceSwitchNetworkResponse.Success = _ctx.BooleanValue("DescribeInstanceSwitchNetwork.Success");
+			describeInstanceSwitchNetworkResponse.RequestId = _ctx.StringValue("DescribeInstanceSwitchNetwork.RequestId");
 
 			List<DescribeInstanceSwitchNetworkResponse.DescribeInstanceSwitchNetwork_VpcInfo> describeInstanceSwitchNetworkResponse_vpcInfos = new List<DescribeInstanceSwitchNetworkResponse.DescribeInstanceSwitchNetwork_VpcInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeInstanceSwitchNetwork.VpcInfos.Length"); i++) {
 				DescribeInstanceSwitchNetworkResponse.DescribeInstanceSwitchNetwork_VpcInfo vpcInfo = new DescribeInstanceSwitchNetworkResponse.DescribeInstanceSwitchNetwork_VpcInfo();
 				vpcInfo.VpcId = _ctx.StringValue("DescribeInstanceSwitchNetwork.VpcInfos["+ i +"].VpcId");
-				vpcInfo.RegionId = _ctx.StringValue("DescribeInstanceSwitchNetwork.VpcInfos["+ i +"].RegionId");
 				vpcInfo.VpcName = _ctx.StringValue("DescribeInstanceSwitchNetwork.VpcInfos["+ i +"].VpcName");
+				vpcInfo.RegionId = _ctx.StringValue("DescribeInstanceSwitchNetwork.VpcInfos["+ i +"].RegionId");
 
 				List<DescribeInstanceSwitchNetworkResponse.DescribeInstanceSwitchNetwork_VpcInfo.DescribeInstanceSwitchNetwork_VswitchInfo> vpcInfo_vswitchInfos = new List<DescribeInstanceSwitchNetworkResponse.DescribeInstanceSwitchNetwork_VpcInfo.DescribeInstanceSwitchNetwork_VswitchInfo>();
 				for (int j = 0; j < _ctx.Length("DescribeInstanceSwitchNetwork.VpcInfos["+ i +"].VswitchInfos.Length"); j++) {
 					DescribeInstanceSwitchNetworkResponse.DescribeInstanceSwitchNetwork_VpcInfo.DescribeInstanceSwitchNetwork_VswitchInfo vswitchInfo = new DescribeInstanceSwitchNetworkResponse.DescribeInstanceSwitchNetwork_VpcInfo.DescribeInstanceSwitchNetwork_VswitchInfo();
-					vswitchInfo.VswitchId = _ctx.StringValue("DescribeInstanceSwitchNetwork.VpcInfos["+ i +"].VswitchInfos["+ j +"].VswitchId");
 					vswitchInfo.VpcId = _ctx.StringValue("DescribeInstanceSwitchNetwork.VpcInfos["+ i +"].VswitchInfos["+ j +"].VpcId");
-					vswitchInfo.VswitchName = _ctx.StringValue("DescribeInstanceSwitchNetwork.VpcInfos["+ i +"].VswitchInfos["+ j +"].VswitchName");
-					vswitchInfo.AzoneId = _ctx.StringValue("DescribeInstanceSwitchNetwork.VpcInfos["+ i +"].VswitchInfos["+ j +"].AzoneId");
 					vswitchInfo.DrdsSupported = _ctx.BooleanValue("DescribeInstanceSwitchNetwork.VpcInfos["+ i +"].VswitchInfos["+ j +"].DrdsSupported");
+					vswitchInfo.VswitchId = _ctx.StringValue("DescribeInstanceSwitchNetwork.VpcInfos["+ i +"].VswitchInfos["+ j +"].VswitchId");
+					vswitchInfo.AzoneId = _ctx.StringValue("DescribeInstanceSwitchNetwork.VpcInfos["+ i +"].VswitchInfos["+ j +"].AzoneId");
+					vswitchInfo.VswitchName = _ctx.StringValue("DescribeInstanceSwitchNetwork.VpcInfos["+ i +"].VswitchInfos["+ j +"].VswitchName");
 
 					vpcInfo_vswitchInfos.Add(vswitchInfo);
 				}

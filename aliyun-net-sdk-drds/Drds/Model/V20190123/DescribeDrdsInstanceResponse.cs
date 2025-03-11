@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribeDrdsInstanceResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private DescribeDrdsInstance_Data data;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private DescribeDrdsInstance_Data data;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,69 +70,57 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class DescribeDrdsInstance_Data
 		{
 
-			private string drdsInstanceId;
-
 			private string type;
-
-			private string regionId;
-
-			private string zoneId;
-
-			private string description;
-
-			private string networkType;
 
 			private string status;
 
 			private long? createTime;
 
-			private long? version;
+			private string versionAction;
 
-			private string instanceSeries;
+			private string storageType;
+
+			private string networkType;
+
+			private string label;
+
+			private int? mysqlVersion;
 
 			private string instanceSpec;
 
 			private string vpcCloudInstanceId;
 
-			private string instRole;
+			private string description;
 
-			private string commodityCode;
+			private long? version;
 
 			private long? expireDate;
 
-			private string versionAction;
-
-			private string label;
-
 			private string masterInstanceId;
+
+			private string commodityCode;
 
 			private string machineType;
 
-			private string orderInstanceId;
+			private string instanceSeries;
 
-			private int? mysqlVersion;
+			private string productVersion;
 
-			private string storageType;
+			private string regionId;
 
 			private string resourceGroupId;
 
-			private string productVersion;
+			private string drdsInstanceId;
+
+			private string zoneId;
+
+			private string instRole;
+
+			private string orderInstanceId;
 
 			private List<DescribeDrdsInstance_Vip> vips;
 
 			private List<string> readOnlyDBInstanceIds;
-
-			public string DrdsInstanceId
-			{
-				get
-				{
-					return drdsInstanceId;
-				}
-				set	
-				{
-					drdsInstanceId = value;
-				}
-			}
 
 			public string Type
 			{
@@ -143,54 +131,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					type = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string NetworkType
-			{
-				get
-				{
-					return networkType;
-				}
-				set	
-				{
-					networkType = value;
 				}
 			}
 
@@ -218,27 +158,63 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public long? Version
+			public string VersionAction
 			{
 				get
 				{
-					return version;
+					return versionAction;
 				}
 				set	
 				{
-					version = value;
+					versionAction = value;
 				}
 			}
 
-			public string InstanceSeries
+			public string StorageType
 			{
 				get
 				{
-					return instanceSeries;
+					return storageType;
 				}
 				set	
 				{
-					instanceSeries = value;
+					storageType = value;
+				}
+			}
+
+			public string NetworkType
+			{
+				get
+				{
+					return networkType;
+				}
+				set	
+				{
+					networkType = value;
+				}
+			}
+
+			public string Label
+			{
+				get
+				{
+					return label;
+				}
+				set	
+				{
+					label = value;
+				}
+			}
+
+			public int? MysqlVersion
+			{
+				get
+				{
+					return mysqlVersion;
+				}
+				set	
+				{
+					mysqlVersion = value;
 				}
 			}
 
@@ -266,27 +242,27 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public string InstRole
+			public string Description
 			{
 				get
 				{
-					return instRole;
+					return description;
 				}
 				set	
 				{
-					instRole = value;
+					description = value;
 				}
 			}
 
-			public string CommodityCode
+			public long? Version
 			{
 				get
 				{
-					return commodityCode;
+					return version;
 				}
 				set	
 				{
-					commodityCode = value;
+					version = value;
 				}
 			}
 
@@ -302,30 +278,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public string VersionAction
-			{
-				get
-				{
-					return versionAction;
-				}
-				set	
-				{
-					versionAction = value;
-				}
-			}
-
-			public string Label
-			{
-				get
-				{
-					return label;
-				}
-				set	
-				{
-					label = value;
-				}
-			}
-
 			public string MasterInstanceId
 			{
 				get
@@ -335,6 +287,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					masterInstanceId = value;
+				}
+			}
+
+			public string CommodityCode
+			{
+				get
+				{
+					return commodityCode;
+				}
+				set	
+				{
+					commodityCode = value;
 				}
 			}
 
@@ -350,39 +314,39 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public string OrderInstanceId
+			public string InstanceSeries
 			{
 				get
 				{
-					return orderInstanceId;
+					return instanceSeries;
 				}
 				set	
 				{
-					orderInstanceId = value;
+					instanceSeries = value;
 				}
 			}
 
-			public int? MysqlVersion
+			public string ProductVersion
 			{
 				get
 				{
-					return mysqlVersion;
+					return productVersion;
 				}
 				set	
 				{
-					mysqlVersion = value;
+					productVersion = value;
 				}
 			}
 
-			public string StorageType
+			public string RegionId
 			{
 				get
 				{
-					return storageType;
+					return regionId;
 				}
 				set	
 				{
-					storageType = value;
+					regionId = value;
 				}
 			}
 
@@ -398,15 +362,51 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public string ProductVersion
+			public string DrdsInstanceId
 			{
 				get
 				{
-					return productVersion;
+					return drdsInstanceId;
 				}
 				set	
 				{
-					productVersion = value;
+					drdsInstanceId = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
+			public string InstRole
+			{
+				get
+				{
+					return instRole;
+				}
+				set	
+				{
+					instRole = value;
+				}
+			}
+
+			public string OrderInstanceId
+			{
+				get
+				{
+					return orderInstanceId;
+				}
+				set	
+				{
+					orderInstanceId = value;
 				}
 			}
 
@@ -437,53 +437,19 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			public class DescribeDrdsInstance_Vip
 			{
 
-				private string dns;
-
-				private long? expireDays;
-
-				private string port;
-
 				private string type;
 
 				private string vpcId;
 
 				private string vswitchId;
 
-				public string Dns
-				{
-					get
-					{
-						return dns;
-					}
-					set	
-					{
-						dns = value;
-					}
-				}
+				private string dns;
 
-				public long? ExpireDays
-				{
-					get
-					{
-						return expireDays;
-					}
-					set	
-					{
-						expireDays = value;
-					}
-				}
+				private string port;
 
-				public string Port
-				{
-					get
-					{
-						return port;
-					}
-					set	
-					{
-						port = value;
-					}
-				}
+				private long? expireDays;
+
+				private bool? removeWeight;
 
 				public string Type
 				{
@@ -518,6 +484,54 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					set	
 					{
 						vswitchId = value;
+					}
+				}
+
+				public string Dns
+				{
+					get
+					{
+						return dns;
+					}
+					set	
+					{
+						dns = value;
+					}
+				}
+
+				public string Port
+				{
+					get
+					{
+						return port;
+					}
+					set	
+					{
+						port = value;
+					}
+				}
+
+				public long? ExpireDays
+				{
+					get
+					{
+						return expireDays;
+					}
+					set	
+					{
+						expireDays = value;
+					}
+				}
+
+				public bool? RemoveWeight
+				{
+					get
+					{
+						return removeWeight;
+					}
+					set	
+					{
+						removeWeight = value;
 					}
 				}
 			}

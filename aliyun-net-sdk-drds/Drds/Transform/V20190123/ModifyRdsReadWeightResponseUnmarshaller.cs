@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			ModifyRdsReadWeightResponse modifyRdsReadWeightResponse = new ModifyRdsReadWeightResponse();
 
 			modifyRdsReadWeightResponse.HttpResponse = _ctx.HttpResponse;
-			modifyRdsReadWeightResponse.RequestId = _ctx.StringValue("ModifyRdsReadWeight.RequestId");
 			modifyRdsReadWeightResponse.Success = _ctx.BooleanValue("ModifyRdsReadWeight.Success");
+			modifyRdsReadWeightResponse.RequestId = _ctx.StringValue("ModifyRdsReadWeight.RequestId");
         
 			return modifyRdsReadWeightResponse;
         }

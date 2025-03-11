@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribeBackupSetsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private List<DescribeBackupSets_BackupSet> backupSets;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeBackupSets_BackupSet> backupSets;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,97 +70,37 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class DescribeBackupSets_BackupSet
 		{
 
-			private string id;
-
-			private long? backupStartTime;
-
-			private long? backupEndTime;
-
-			private string backupMode;
-
-			private string backupLevel;
-
-			private string backupType;
+			private bool? enableRecovery;
 
 			private long? status;
 
-			private bool? enableRecovery;
+			private string backupConsitentTime;
+
+			private string backupType;
+
+			private long? backupStartTime;
+
+			private string backupLevel;
+
+			private string backupMode;
+
+			private long? backupEndTime;
+
+			private string id;
 
 			private string backupTotalSize;
 
-			private string backupConsitentTime;
-
 			private List<string> backupDbs;
 
-			public string Id
+			public bool? EnableRecovery
 			{
 				get
 				{
-					return id;
+					return enableRecovery;
 				}
 				set	
 				{
-					id = value;
-				}
-			}
-
-			public long? BackupStartTime
-			{
-				get
-				{
-					return backupStartTime;
-				}
-				set	
-				{
-					backupStartTime = value;
-				}
-			}
-
-			public long? BackupEndTime
-			{
-				get
-				{
-					return backupEndTime;
-				}
-				set	
-				{
-					backupEndTime = value;
-				}
-			}
-
-			public string BackupMode
-			{
-				get
-				{
-					return backupMode;
-				}
-				set	
-				{
-					backupMode = value;
-				}
-			}
-
-			public string BackupLevel
-			{
-				get
-				{
-					return backupLevel;
-				}
-				set	
-				{
-					backupLevel = value;
-				}
-			}
-
-			public string BackupType
-			{
-				get
-				{
-					return backupType;
-				}
-				set	
-				{
-					backupType = value;
+					enableRecovery = value;
 				}
 			}
 
@@ -176,15 +116,87 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public bool? EnableRecovery
+			public string BackupConsitentTime
 			{
 				get
 				{
-					return enableRecovery;
+					return backupConsitentTime;
 				}
 				set	
 				{
-					enableRecovery = value;
+					backupConsitentTime = value;
+				}
+			}
+
+			public string BackupType
+			{
+				get
+				{
+					return backupType;
+				}
+				set	
+				{
+					backupType = value;
+				}
+			}
+
+			public long? BackupStartTime
+			{
+				get
+				{
+					return backupStartTime;
+				}
+				set	
+				{
+					backupStartTime = value;
+				}
+			}
+
+			public string BackupLevel
+			{
+				get
+				{
+					return backupLevel;
+				}
+				set	
+				{
+					backupLevel = value;
+				}
+			}
+
+			public string BackupMode
+			{
+				get
+				{
+					return backupMode;
+				}
+				set	
+				{
+					backupMode = value;
+				}
+			}
+
+			public long? BackupEndTime
+			{
+				get
+				{
+					return backupEndTime;
+				}
+				set	
+				{
+					backupEndTime = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
 				}
 			}
 
@@ -197,18 +209,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					backupTotalSize = value;
-				}
-			}
-
-			public string BackupConsitentTime
-			{
-				get
-				{
-					return backupConsitentTime;
-				}
-				set	
-				{
-					backupConsitentTime = value;
 				}
 			}
 
