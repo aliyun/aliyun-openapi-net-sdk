@@ -33,6 +33,25 @@ namespace Aliyun.Acs.Core.Tests.Units
         private static readonly string Slash = Environment.OSVersion.Platform == PlatformID.Unix ? "/" : "\\";
         private static readonly string HomePath = Environment.CurrentDirectory;
         
+        public static string GetCLIConfigFilePath(string type)
+        {
+            switch (type)
+            {
+                case "invalid":
+                    return HomePath + Slash + "invalid_cli_config.json";
+                case "empty":
+                    return HomePath + Slash + "empty_file.json";
+                case "mock_empty":
+                    return HomePath + Slash + "mock_empty_cli_config.json";
+                case "full":
+                    return HomePath + Slash + "full_cli_config.json";
+                case "aliyun":
+                    return HomePath + Slash + ".aliyun/config.json";
+                default:
+                    return "";
+            }
+        }
+        
         public static string GetOIDCTokenFilePath()
         {
             return HomePath + Slash + "OIDCToken.txt";
