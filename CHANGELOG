@@ -1,3 +1,6 @@
+2025-03-13 Version: 1.8.26
+- DescribeLicenseCodes support filter by mac address or system id.
+
 2025-03-11 Version: 2.5.3
 - Generated 2019-01-23 for `Drds`.
 

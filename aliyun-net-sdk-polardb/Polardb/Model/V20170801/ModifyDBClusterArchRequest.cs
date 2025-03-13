@@ -27,43 +27,36 @@ using Aliyun.Acs.polardb.Transform.V20170801;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class ModifyMaskingRulesRequest : RpcAcsRequest<ModifyMaskingRulesResponse>
+    public class ModifyDBClusterArchRequest : RpcAcsRequest<ModifyDBClusterArchResponse>
     {
-        public ModifyMaskingRulesRequest()
-            : base("polardb", "2017-08-01", "ModifyMaskingRules", "polardb", "openAPI")
+        public ModifyDBClusterArchRequest()
+            : base("polardb", "2017-08-01", "ModifyDBClusterArch", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.polardb.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.polardb.Endpoint.endpointRegionalType, null);
             }
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private string interfaceVersion;
+		private string standbyAZ;
 
 		private string dBClusterId;
 
-		private string ruleName;
+		private string hotStandbyCluster;
 
-		private string ruleVersion;
-
-		private string ruleConfig;
-
-		private string enable;
-
-		private string ruleNameList;
-
-		public string InterfaceVersion
+		public string StandbyAZ
 		{
 			get
 			{
-				return interfaceVersion;
+				return standbyAZ;
 			}
 			set	
 			{
-				interfaceVersion = value;
-				DictionaryUtil.Add(QueryParameters, "InterfaceVersion", value);
+				standbyAZ = value;
+				DictionaryUtil.Add(QueryParameters, "StandbyAZ", value);
 			}
 		}
 
@@ -80,68 +73,16 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string RuleName
+		public string HotStandbyCluster
 		{
 			get
 			{
-				return ruleName;
+				return hotStandbyCluster;
 			}
 			set	
 			{
-				ruleName = value;
-				DictionaryUtil.Add(QueryParameters, "RuleName", value);
-			}
-		}
-
-		public string RuleVersion
-		{
-			get
-			{
-				return ruleVersion;
-			}
-			set	
-			{
-				ruleVersion = value;
-				DictionaryUtil.Add(QueryParameters, "RuleVersion", value);
-			}
-		}
-
-		public string RuleConfig
-		{
-			get
-			{
-				return ruleConfig;
-			}
-			set	
-			{
-				ruleConfig = value;
-				DictionaryUtil.Add(QueryParameters, "RuleConfig", value);
-			}
-		}
-
-		public string Enable
-		{
-			get
-			{
-				return enable;
-			}
-			set	
-			{
-				enable = value;
-				DictionaryUtil.Add(QueryParameters, "Enable", value);
-			}
-		}
-
-		public string RuleNameList
-		{
-			get
-			{
-				return ruleNameList;
-			}
-			set	
-			{
-				ruleNameList = value;
-				DictionaryUtil.Add(QueryParameters, "RuleNameList", value);
+				hotStandbyCluster = value;
+				DictionaryUtil.Add(QueryParameters, "HotStandbyCluster", value);
 			}
 		}
 
@@ -150,9 +91,9 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			return false;
 		}
 
-        public override ModifyMaskingRulesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyDBClusterArchResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyMaskingRulesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyDBClusterArchResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

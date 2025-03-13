@@ -40,9 +40,24 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			Method = MethodType.POST;
         }
 
+		private string interfaceVersion;
+
 		private string dBClusterId;
 
 		private string ruleNameList;
+
+		public string InterfaceVersion
+		{
+			get
+			{
+				return interfaceVersion;
+			}
+			set	
+			{
+				interfaceVersion = value;
+				DictionaryUtil.Add(QueryParameters, "InterfaceVersion", value);
+			}
+		}
 
 		public string DBClusterId
 		{

@@ -98,9 +98,12 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeDBClusterAttributeResponse.RestoreDataPoint = _ctx.StringValue("DescribeDBClusterAttribute.RestoreDataPoint");
 			describeDBClusterAttributeResponse.SourceRegionId = _ctx.StringValue("DescribeDBClusterAttribute.SourceRegionId");
 			describeDBClusterAttributeResponse.ImciAutoIndex = _ctx.StringValue("DescribeDBClusterAttribute.ImciAutoIndex");
+			describeDBClusterAttributeResponse.OsVersion = _ctx.StringValue("DescribeDBClusterAttribute.OsVersion");
 			describeDBClusterAttributeResponse.BurstingEnabled = _ctx.StringValue("DescribeDBClusterAttribute.BurstingEnabled");
 			describeDBClusterAttributeResponse.RowCompression = _ctx.StringValue("DescribeDBClusterAttribute.RowCompression");
 			describeDBClusterAttributeResponse.ImperceptibleSwitch = _ctx.StringValue("DescribeDBClusterAttribute.ImperceptibleSwitch");
+			describeDBClusterAttributeResponse.CnNodeCount = _ctx.IntegerValue("DescribeDBClusterAttribute.CnNodeCount");
+			describeDBClusterAttributeResponse.DnNodeCount = _ctx.IntegerValue("DescribeDBClusterAttribute.DnNodeCount");
 
 			DescribeDBClusterAttributeResponse.DescribeDBClusterAttribute_RelatedAPInstance relatedAPInstance = new DescribeDBClusterAttributeResponse.DescribeDBClusterAttribute_RelatedAPInstance();
 			relatedAPInstance.Name = _ctx.StringValue("DescribeDBClusterAttribute.RelatedAPInstance.Name");
@@ -140,6 +143,16 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				dBNode.MultiMasterLocalStandby = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].MultiMasterLocalStandby");
 				dBNode.MultiMasterPrimaryNode = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].MultiMasterPrimaryNode");
 				dBNode.DBNodeDescription = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].DBNodeDescription");
+				dBNode.SubGroupType = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].SubGroupType");
+				dBNode.SubGroupName = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].SubGroupName");
+				dBNode.IsPrimaryCN = _ctx.BooleanValue("DescribeDBClusterAttribute.DBNodes["+ i +"].IsPrimaryCN");
+				dBNode.StandbyZoneIds = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].StandbyZoneIds");
+				dBNode.StorageMax = _ctx.LongValue("DescribeDBClusterAttribute.DBNodes["+ i +"].StorageMax");
+				dBNode.StorageUsed = _ctx.LongValue("DescribeDBClusterAttribute.DBNodes["+ i +"].StorageUsed");
+				dBNode.InodeUsed = _ctx.LongValue("DescribeDBClusterAttribute.DBNodes["+ i +"].InodeUsed");
+				dBNode.InodeTotal = _ctx.LongValue("DescribeDBClusterAttribute.DBNodes["+ i +"].InodeTotal");
+				dBNode.BlktagTotal = _ctx.LongValue("DescribeDBClusterAttribute.DBNodes["+ i +"].BlktagTotal");
+				dBNode.BlktagUsed = _ctx.LongValue("DescribeDBClusterAttribute.DBNodes["+ i +"].BlktagUsed");
 
 				describeDBClusterAttributeResponse_dBNodes.Add(dBNode);
 			}

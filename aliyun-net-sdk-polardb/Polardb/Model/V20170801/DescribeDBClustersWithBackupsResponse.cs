@@ -138,6 +138,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string category;
 
+			private string cnClass;
+
 			public string DeletedTime
 			{
 				get
@@ -375,6 +377,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					category = value;
+				}
+			}
+
+			public string CnClass
+			{
+				get
+				{
+					return cnClass;
+				}
+				set	
+				{
+					cnClass = value;
 				}
 			}
 		}

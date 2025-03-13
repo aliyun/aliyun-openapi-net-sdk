@@ -70,11 +70,17 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				dBCluster.CpuCores = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].CpuCores");
 				dBCluster.MemorySize = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].MemorySize");
 				dBCluster.RemoteMemorySize = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].RemoteMemorySize");
-				dBCluster.SubCategory = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].SubCategory");
+				dBCluster.CpuArch = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].CpuArch");
 				dBCluster.DeployUnit = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].DeployUnit");
 				dBCluster.StorageType = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].StorageType");
 				dBCluster.HotStandbyCluster = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].HotStandbyCluster");
 				dBCluster.EngineMigrationStatus = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].EngineMigrationStatus");
+				dBCluster.CnNodeCount = _ctx.IntegerValue("DescribeDBClusters.Items["+ i +"].CnNodeCount");
+				dBCluster.DnNodeCount = _ctx.IntegerValue("DescribeDBClusters.Items["+ i +"].DnNodeCount");
+				dBCluster.CnClass = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].CnClass");
+				dBCluster.DnClass = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].DnClass");
+				dBCluster.CloudInstanceIp = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].CloudInstanceIp");
+				dBCluster.SubCategory = _ctx.StringValue("DescribeDBClusters.Items["+ i +"].SubCategory");
 
 				List<DescribeDBClustersResponse.DescribeDBClusters_DBCluster.DescribeDBClusters_Tag> dBCluster_tags = new List<DescribeDBClustersResponse.DescribeDBClusters_DBCluster.DescribeDBClusters_Tag>();
 				for (int j = 0; j < _ctx.Length("DescribeDBClusters.Items["+ i +"].Tags.Length"); j++) {

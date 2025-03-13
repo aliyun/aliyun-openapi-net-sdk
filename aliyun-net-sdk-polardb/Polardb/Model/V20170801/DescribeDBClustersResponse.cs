@@ -160,7 +160,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string remoteMemorySize;
 
-			private string subCategory;
+			private string cpuArch;
 
 			private string deployUnit;
 
@@ -169,6 +169,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			private string hotStandbyCluster;
 
 			private string engineMigrationStatus;
+
+			private int? cnNodeCount;
+
+			private int? dnNodeCount;
+
+			private string cnClass;
+
+			private string dnClass;
+
+			private string cloudInstanceIp;
+
+			private string subCategory;
 
 			private List<DescribeDBClusters_Tag> tags;
 
@@ -546,15 +558,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string SubCategory
+			public string CpuArch
 			{
 				get
 				{
-					return subCategory;
+					return cpuArch;
 				}
 				set	
 				{
-					subCategory = value;
+					cpuArch = value;
 				}
 			}
 
@@ -603,6 +615,78 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					engineMigrationStatus = value;
+				}
+			}
+
+			public int? CnNodeCount
+			{
+				get
+				{
+					return cnNodeCount;
+				}
+				set	
+				{
+					cnNodeCount = value;
+				}
+			}
+
+			public int? DnNodeCount
+			{
+				get
+				{
+					return dnNodeCount;
+				}
+				set	
+				{
+					dnNodeCount = value;
+				}
+			}
+
+			public string CnClass
+			{
+				get
+				{
+					return cnClass;
+				}
+				set	
+				{
+					cnClass = value;
+				}
+			}
+
+			public string DnClass
+			{
+				get
+				{
+					return dnClass;
+				}
+				set	
+				{
+					dnClass = value;
+				}
+			}
+
+			public string CloudInstanceIp
+			{
+				get
+				{
+					return cloudInstanceIp;
+				}
+				set	
+				{
+					cloudInstanceIp = value;
+				}
+			}
+
+			public string SubCategory
+			{
+				get
+				{
+					return subCategory;
+				}
+				set	
+				{
+					subCategory = value;
 				}
 			}
 

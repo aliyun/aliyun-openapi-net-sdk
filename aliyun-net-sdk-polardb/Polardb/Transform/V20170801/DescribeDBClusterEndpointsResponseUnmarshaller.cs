@@ -60,6 +60,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 					address.VpcInstanceId = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems["+ j +"].VpcInstanceId");
 					address.VPCId = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems["+ j +"].VPCId");
 					address.IPAddress = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems["+ j +"].IPAddress");
+					address.DashboardUsed = _ctx.BooleanValue("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems["+ j +"].DashboardUsed");
 
 					dBEndpoint_addressItems.Add(address);
 				}

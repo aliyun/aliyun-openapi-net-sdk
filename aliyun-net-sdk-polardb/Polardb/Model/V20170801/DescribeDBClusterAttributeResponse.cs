@@ -159,11 +159,17 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string imciAutoIndex;
 
+		private string osVersion;
+
 		private string burstingEnabled;
 
 		private string rowCompression;
 
 		private string imperceptibleSwitch;
+
+		private int? cnNodeCount;
+
+		private int? dnNodeCount;
 
 		private List<DescribeDBClusterAttribute_DBNode> dBNodes;
 
@@ -975,6 +981,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string OsVersion
+		{
+			get
+			{
+				return osVersion;
+			}
+			set	
+			{
+				osVersion = value;
+			}
+		}
+
 		public string BurstingEnabled
 		{
 			get
@@ -1008,6 +1026,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				imperceptibleSwitch = value;
+			}
+		}
+
+		public int? CnNodeCount
+		{
+			get
+			{
+				return cnNodeCount;
+			}
+			set	
+			{
+				cnNodeCount = value;
+			}
+		}
+
+		public int? DnNodeCount
+		{
+			get
+			{
+				return dnNodeCount;
+			}
+			set	
+			{
+				dnNodeCount = value;
 			}
 		}
 
@@ -1101,6 +1143,26 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			private string multiMasterPrimaryNode;
 
 			private string dBNodeDescription;
+
+			private string subGroupType;
+
+			private string subGroupName;
+
+			private bool? isPrimaryCN;
+
+			private string standbyZoneIds;
+
+			private long? storageMax;
+
+			private long? storageUsed;
+
+			private long? inodeUsed;
+
+			private long? inodeTotal;
+
+			private long? blktagTotal;
+
+			private long? blktagUsed;
 
 			public string CreationTime
 			{
@@ -1411,6 +1473,126 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					dBNodeDescription = value;
+				}
+			}
+
+			public string SubGroupType
+			{
+				get
+				{
+					return subGroupType;
+				}
+				set	
+				{
+					subGroupType = value;
+				}
+			}
+
+			public string SubGroupName
+			{
+				get
+				{
+					return subGroupName;
+				}
+				set	
+				{
+					subGroupName = value;
+				}
+			}
+
+			public bool? IsPrimaryCN
+			{
+				get
+				{
+					return isPrimaryCN;
+				}
+				set	
+				{
+					isPrimaryCN = value;
+				}
+			}
+
+			public string StandbyZoneIds
+			{
+				get
+				{
+					return standbyZoneIds;
+				}
+				set	
+				{
+					standbyZoneIds = value;
+				}
+			}
+
+			public long? StorageMax
+			{
+				get
+				{
+					return storageMax;
+				}
+				set	
+				{
+					storageMax = value;
+				}
+			}
+
+			public long? StorageUsed
+			{
+				get
+				{
+					return storageUsed;
+				}
+				set	
+				{
+					storageUsed = value;
+				}
+			}
+
+			public long? InodeUsed
+			{
+				get
+				{
+					return inodeUsed;
+				}
+				set	
+				{
+					inodeUsed = value;
+				}
+			}
+
+			public long? InodeTotal
+			{
+				get
+				{
+					return inodeTotal;
+				}
+				set	
+				{
+					inodeTotal = value;
+				}
+			}
+
+			public long? BlktagTotal
+			{
+				get
+				{
+					return blktagTotal;
+				}
+				set	
+				{
+					blktagTotal = value;
+				}
+			}
+
+			public long? BlktagUsed
+			{
+				get
+				{
+					return blktagUsed;
+				}
+				set	
+				{
+					blktagUsed = value;
 				}
 			}
 		}

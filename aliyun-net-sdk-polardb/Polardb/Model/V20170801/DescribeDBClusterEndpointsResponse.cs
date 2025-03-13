@@ -257,6 +257,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 				private string iPAddress;
 
+				private bool? dashboardUsed;
+
 				public string VSwitchId
 				{
 					get
@@ -350,6 +352,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					set	
 					{
 						iPAddress = value;
+					}
+				}
+
+				public bool? DashboardUsed
+				{
+					get
+					{
+						return dashboardUsed;
+					}
+					set	
+					{
+						dashboardUsed = value;
 					}
 				}
 			}
