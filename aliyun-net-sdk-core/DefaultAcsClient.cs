@@ -61,21 +61,21 @@ namespace Aliyun.Acs.Core
         {
             clientProfile = profile;
             credentialsProvider = new StaticCredentialsProvider(profile);
-            clientProfile.SetCredentialsProvider(credentialsProvider);
+            // clientProfile.SetCredentialsProvider(credentialsProvider);
         }
 
         public DefaultAcsClient(IClientProfile profile, AlibabaCloudCredentials credentials) : this()
         {
             clientProfile = profile;
             credentialsProvider = new StaticCredentialsProvider(credentials);
-            clientProfile.SetCredentialsProvider(credentialsProvider);
+            // clientProfile.SetCredentialsProvider(credentialsProvider);
         }
 
         public DefaultAcsClient(IClientProfile profile, AlibabaCloudCredentialsProvider credentialsProvider) : this()
         {
             clientProfile = profile;
             this.credentialsProvider = credentialsProvider;
-            clientProfile.SetCredentialsProvider(this.credentialsProvider);
+            // clientProfile.SetCredentialsProvider(this.credentialsProvider);
         }
 
         [Obsolete("readTimeout is deprecated as does not match Properties rule, please use readTimeout instead.")]
