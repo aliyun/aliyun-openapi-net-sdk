@@ -31,8 +31,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			UpdateWorkspaceUsersRoleResponse updateWorkspaceUsersRoleResponse = new UpdateWorkspaceUsersRoleResponse();
 
 			updateWorkspaceUsersRoleResponse.HttpResponse = _ctx.HttpResponse;
-			updateWorkspaceUsersRoleResponse.RequestId = _ctx.StringValue("UpdateWorkspaceUsersRole.RequestId");
 			updateWorkspaceUsersRoleResponse.Success = _ctx.BooleanValue("UpdateWorkspaceUsersRole.Success");
+			updateWorkspaceUsersRoleResponse.RequestId = _ctx.StringValue("UpdateWorkspaceUsersRole.RequestId");
 
 			UpdateWorkspaceUsersRoleResponse.UpdateWorkspaceUsersRole_Result result = new UpdateWorkspaceUsersRoleResponse.UpdateWorkspaceUsersRole_Result();
 			result.Failure = _ctx.IntegerValue("UpdateWorkspaceUsersRole.Result.Failure");

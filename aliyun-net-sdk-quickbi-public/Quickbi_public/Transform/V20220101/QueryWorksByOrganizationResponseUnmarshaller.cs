@@ -31,8 +31,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			QueryWorksByOrganizationResponse queryWorksByOrganizationResponse = new QueryWorksByOrganizationResponse();
 
 			queryWorksByOrganizationResponse.HttpResponse = _ctx.HttpResponse;
-			queryWorksByOrganizationResponse.RequestId = _ctx.StringValue("QueryWorksByOrganization.RequestId");
 			queryWorksByOrganizationResponse.Success = _ctx.BooleanValue("QueryWorksByOrganization.Success");
+			queryWorksByOrganizationResponse.RequestId = _ctx.StringValue("QueryWorksByOrganization.RequestId");
 
 			QueryWorksByOrganizationResponse.QueryWorksByOrganization_Result result = new QueryWorksByOrganizationResponse.QueryWorksByOrganization_Result();
 			result.PageNum = _ctx.IntegerValue("QueryWorksByOrganization.Result.PageNum");

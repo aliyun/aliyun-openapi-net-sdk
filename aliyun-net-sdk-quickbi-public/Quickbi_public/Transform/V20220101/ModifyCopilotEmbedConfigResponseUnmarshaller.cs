@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			modifyCopilotEmbedConfigResponse.HttpResponse = _ctx.HttpResponse;
 			modifyCopilotEmbedConfigResponse.RequestId = _ctx.StringValue("ModifyCopilotEmbedConfig.RequestId");
-			modifyCopilotEmbedConfigResponse.Result = _ctx.BooleanValue("ModifyCopilotEmbedConfig.Result");
 			modifyCopilotEmbedConfigResponse.Success = _ctx.BooleanValue("ModifyCopilotEmbedConfig.Success");
+			modifyCopilotEmbedConfigResponse.Result = _ctx.BooleanValue("ModifyCopilotEmbedConfig.Result");
         
 			return modifyCopilotEmbedConfigResponse;
         }

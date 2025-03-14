@@ -35,22 +35,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			Method = MethodType.POST;
         }
 
-		private string ruleType;
-
 		private string cubeId;
 
-		public string RuleType
-		{
-			get
-			{
-				return ruleType;
-			}
-			set	
-			{
-				ruleType = value;
-				DictionaryUtil.Add(QueryParameters, "RuleType", value);
-			}
-		}
+		private string ruleType;
 
 		public string CubeId
 		{
@@ -62,6 +49,19 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				cubeId = value;
 				DictionaryUtil.Add(QueryParameters, "CubeId", value);
+			}
+		}
+
+		public string RuleType
+		{
+			get
+			{
+				return ruleType;
+			}
+			set	
+			{
+				ruleType = value;
+				DictionaryUtil.Add(QueryParameters, "RuleType", value);
 			}
 		}
 

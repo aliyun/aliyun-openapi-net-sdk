@@ -31,8 +31,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			QueryUserTagValueListResponse queryUserTagValueListResponse = new QueryUserTagValueListResponse();
 
 			queryUserTagValueListResponse.HttpResponse = _ctx.HttpResponse;
-			queryUserTagValueListResponse.RequestId = _ctx.StringValue("QueryUserTagValueList.RequestId");
 			queryUserTagValueListResponse.Success = _ctx.BooleanValue("QueryUserTagValueList.Success");
+			queryUserTagValueListResponse.RequestId = _ctx.StringValue("QueryUserTagValueList.RequestId");
 
 			List<QueryUserTagValueListResponse.QueryUserTagValueList_Data> queryUserTagValueListResponse_result = new List<QueryUserTagValueListResponse.QueryUserTagValueList_Data>();
 			for (int i = 0; i < _ctx.Length("QueryUserTagValueList.Result.Length"); i++) {

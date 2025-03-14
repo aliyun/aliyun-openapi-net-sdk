@@ -31,8 +31,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			ListPortalMenuAuthorizationResponse listPortalMenuAuthorizationResponse = new ListPortalMenuAuthorizationResponse();
 
 			listPortalMenuAuthorizationResponse.HttpResponse = _ctx.HttpResponse;
-			listPortalMenuAuthorizationResponse.RequestId = _ctx.StringValue("ListPortalMenuAuthorization.RequestId");
 			listPortalMenuAuthorizationResponse.Success = _ctx.BooleanValue("ListPortalMenuAuthorization.Success");
+			listPortalMenuAuthorizationResponse.RequestId = _ctx.StringValue("ListPortalMenuAuthorization.RequestId");
 
 			List<ListPortalMenuAuthorizationResponse.ListPortalMenuAuthorization_Data> listPortalMenuAuthorizationResponse_result = new List<ListPortalMenuAuthorizationResponse.ListPortalMenuAuthorization_Data>();
 			for (int i = 0; i < _ctx.Length("ListPortalMenuAuthorization.Result.Length"); i++) {

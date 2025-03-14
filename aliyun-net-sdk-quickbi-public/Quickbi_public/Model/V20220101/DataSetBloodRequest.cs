@@ -35,11 +35,24 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			Method = MethodType.POST;
         }
 
+		private string userId;
+
 		private string dataSetIds;
 
 		private string worksType;
 
-		private string userId;
+		public string UserId
+		{
+			get
+			{
+				return userId;
+			}
+			set	
+			{
+				userId = value;
+				DictionaryUtil.Add(QueryParameters, "UserId", value);
+			}
+		}
 
 		public string DataSetIds
 		{
@@ -64,19 +77,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				worksType = value;
 				DictionaryUtil.Add(QueryParameters, "WorksType", value);
-			}
-		}
-
-		public string UserId
-		{
-			get
-			{
-				return userId;
-			}
-			set	
-			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
 			}
 		}
 

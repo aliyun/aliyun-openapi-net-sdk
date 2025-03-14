@@ -35,22 +35,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			Method = MethodType.POST;
         }
 
-		private string userGroupId;
-
 		private string userId;
 
-		public string UserGroupId
-		{
-			get
-			{
-				return userGroupId;
-			}
-			set	
-			{
-				userGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "UserGroupId", value);
-			}
-		}
+		private string userGroupId;
 
 		public string UserId
 		{
@@ -62,6 +49,19 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				userId = value;
 				DictionaryUtil.Add(QueryParameters, "UserId", value);
+			}
+		}
+
+		public string UserGroupId
+		{
+			get
+			{
+				return userGroupId;
+			}
+			set	
+			{
+				userGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "UserGroupId", value);
 			}
 		}
 

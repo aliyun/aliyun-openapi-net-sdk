@@ -31,8 +31,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			QueryShareListResponse queryShareListResponse = new QueryShareListResponse();
 
 			queryShareListResponse.HttpResponse = _ctx.HttpResponse;
-			queryShareListResponse.RequestId = _ctx.StringValue("QueryShareList.RequestId");
 			queryShareListResponse.Success = _ctx.BooleanValue("QueryShareList.Success");
+			queryShareListResponse.RequestId = _ctx.StringValue("QueryShareList.RequestId");
 
 			List<QueryShareListResponse.QueryShareList_Data> queryShareListResponse_result = new List<QueryShareListResponse.QueryShareList_Data>();
 			for (int i = 0; i < _ctx.Length("QueryShareList.Result.Length"); i++) {

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			QueryUserGroupMemberResponse queryUserGroupMemberResponse = new QueryUserGroupMemberResponse();
 
 			queryUserGroupMemberResponse.HttpResponse = _ctx.HttpResponse;
-			queryUserGroupMemberResponse.RequestId = _ctx.StringValue("QueryUserGroupMember.RequestId");
 			queryUserGroupMemberResponse.Success = _ctx.BooleanValue("QueryUserGroupMember.Success");
+			queryUserGroupMemberResponse.RequestId = _ctx.StringValue("QueryUserGroupMember.RequestId");
 
 			List<QueryUserGroupMemberResponse.QueryUserGroupMember_Data> queryUserGroupMemberResponse_result = new List<QueryUserGroupMemberResponse.QueryUserGroupMember_Data>();
 			for (int i = 0; i < _ctx.Length("QueryUserGroupMember.Result.Length"); i++) {

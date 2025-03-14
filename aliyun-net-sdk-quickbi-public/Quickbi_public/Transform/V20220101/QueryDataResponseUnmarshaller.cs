@@ -31,8 +31,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			QueryDataResponse queryDataResponse = new QueryDataResponse();
 
 			queryDataResponse.HttpResponse = _ctx.HttpResponse;
-			queryDataResponse.RequestId = _ctx.StringValue("QueryData.RequestId");
 			queryDataResponse.Success = _ctx.BooleanValue("QueryData.Success");
+			queryDataResponse.RequestId = _ctx.StringValue("QueryData.RequestId");
 
 			QueryDataResponse.QueryData_Result result = new QueryDataResponse.QueryData_Result();
 			result.Sql = _ctx.StringValue("QueryData.Result.Sql");

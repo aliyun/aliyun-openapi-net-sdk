@@ -31,8 +31,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			ListCollectionsResponse listCollectionsResponse = new ListCollectionsResponse();
 
 			listCollectionsResponse.HttpResponse = _ctx.HttpResponse;
-			listCollectionsResponse.RequestId = _ctx.StringValue("ListCollections.RequestId");
 			listCollectionsResponse.Success = _ctx.BooleanValue("ListCollections.Success");
+			listCollectionsResponse.RequestId = _ctx.StringValue("ListCollections.RequestId");
 
 			List<ListCollectionsResponse.ListCollections_Data> listCollectionsResponse_result = new List<ListCollectionsResponse.ListCollections_Data>();
 			for (int i = 0; i < _ctx.Length("ListCollections.Result.Length"); i++) {

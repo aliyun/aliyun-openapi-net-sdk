@@ -31,8 +31,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			QueryUserListResponse queryUserListResponse = new QueryUserListResponse();
 
 			queryUserListResponse.HttpResponse = _ctx.HttpResponse;
-			queryUserListResponse.RequestId = _ctx.StringValue("QueryUserList.RequestId");
 			queryUserListResponse.Success = _ctx.BooleanValue("QueryUserList.Success");
+			queryUserListResponse.RequestId = _ctx.StringValue("QueryUserList.RequestId");
 
 			QueryUserListResponse.QueryUserList_Result result = new QueryUserListResponse.QueryUserList_Result();
 			result.PageNum = _ctx.IntegerValue("QueryUserList.Result.PageNum");
@@ -54,6 +54,7 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 				dataItem.Phone = _ctx.StringValue("QueryUserList.Result.Data["+ i +"].Phone");
 				dataItem.UserId = _ctx.StringValue("QueryUserList.Result.Data["+ i +"].UserId");
 				dataItem.UserType = _ctx.IntegerValue("QueryUserList.Result.Data["+ i +"].UserType");
+				dataItem.IsDeleted = _ctx.BooleanValue("QueryUserList.Result.Data["+ i +"].IsDeleted");
 
 				List<string> dataItem_roleIdList = new List<string>();
 				for (int j = 0; j < _ctx.Length("QueryUserList.Result.Data["+ i +"].RoleIdList.Length"); j++) {

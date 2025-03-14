@@ -31,8 +31,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			QueryWorksResponse queryWorksResponse = new QueryWorksResponse();
 
 			queryWorksResponse.HttpResponse = _ctx.HttpResponse;
-			queryWorksResponse.RequestId = _ctx.StringValue("QueryWorks.RequestId");
 			queryWorksResponse.Success = _ctx.BooleanValue("QueryWorks.Success");
+			queryWorksResponse.RequestId = _ctx.StringValue("QueryWorks.RequestId");
 
 			QueryWorksResponse.QueryWorks_Result result = new QueryWorksResponse.QueryWorks_Result();
 			result.Auth3rdFlag = _ctx.IntegerValue("QueryWorks.Result.Auth3rdFlag");

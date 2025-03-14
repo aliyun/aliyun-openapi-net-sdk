@@ -31,8 +31,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			QueryUserTagMetaListResponse queryUserTagMetaListResponse = new QueryUserTagMetaListResponse();
 
 			queryUserTagMetaListResponse.HttpResponse = _ctx.HttpResponse;
-			queryUserTagMetaListResponse.RequestId = _ctx.StringValue("QueryUserTagMetaList.RequestId");
 			queryUserTagMetaListResponse.Success = _ctx.BooleanValue("QueryUserTagMetaList.Success");
+			queryUserTagMetaListResponse.RequestId = _ctx.StringValue("QueryUserTagMetaList.RequestId");
 
 			List<QueryUserTagMetaListResponse.QueryUserTagMetaList_ResultItem> queryUserTagMetaListResponse_result = new List<QueryUserTagMetaListResponse.QueryUserTagMetaList_ResultItem>();
 			for (int i = 0; i < _ctx.Length("QueryUserTagMetaList.Result.Length"); i++) {

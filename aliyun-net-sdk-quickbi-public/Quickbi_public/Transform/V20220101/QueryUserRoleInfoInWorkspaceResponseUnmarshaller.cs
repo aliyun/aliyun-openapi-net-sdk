@@ -31,8 +31,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			QueryUserRoleInfoInWorkspaceResponse queryUserRoleInfoInWorkspaceResponse = new QueryUserRoleInfoInWorkspaceResponse();
 
 			queryUserRoleInfoInWorkspaceResponse.HttpResponse = _ctx.HttpResponse;
-			queryUserRoleInfoInWorkspaceResponse.RequestId = _ctx.StringValue("QueryUserRoleInfoInWorkspace.RequestId");
 			queryUserRoleInfoInWorkspaceResponse.Success = _ctx.BooleanValue("QueryUserRoleInfoInWorkspace.Success");
+			queryUserRoleInfoInWorkspaceResponse.RequestId = _ctx.StringValue("QueryUserRoleInfoInWorkspace.RequestId");
 
 			QueryUserRoleInfoInWorkspaceResponse.QueryUserRoleInfoInWorkspace_Result result = new QueryUserRoleInfoInWorkspaceResponse.QueryUserRoleInfoInWorkspace_Result();
 			result.RoleCode = _ctx.StringValue("QueryUserRoleInfoInWorkspace.Result.RoleCode");

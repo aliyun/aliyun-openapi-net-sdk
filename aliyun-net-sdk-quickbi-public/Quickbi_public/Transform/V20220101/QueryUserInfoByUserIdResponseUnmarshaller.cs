@@ -31,8 +31,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			QueryUserInfoByUserIdResponse queryUserInfoByUserIdResponse = new QueryUserInfoByUserIdResponse();
 
 			queryUserInfoByUserIdResponse.HttpResponse = _ctx.HttpResponse;
-			queryUserInfoByUserIdResponse.RequestId = _ctx.StringValue("QueryUserInfoByUserId.RequestId");
 			queryUserInfoByUserIdResponse.Success = _ctx.BooleanValue("QueryUserInfoByUserId.Success");
+			queryUserInfoByUserIdResponse.RequestId = _ctx.StringValue("QueryUserInfoByUserId.RequestId");
 
 			QueryUserInfoByUserIdResponse.QueryUserInfoByUserId_Result result = new QueryUserInfoByUserIdResponse.QueryUserInfoByUserId_Result();
 			result.AccountId = _ctx.StringValue("QueryUserInfoByUserId.Result.AccountId");
