@@ -93,6 +93,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string harmonyRemindTitle;
 
+		private string idempotentToken;
+
 		private string androidBadgeClass;
 
 		private int? smsDelaySecs;
@@ -572,6 +574,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				harmonyRemindTitle = value;
 				DictionaryUtil.Add(QueryParameters, "HarmonyRemindTitle", value);
+			}
+		}
+
+		public string IdempotentToken
+		{
+			get
+			{
+				return idempotentToken;
+			}
+			set	
+			{
+				idempotentToken = value;
+				DictionaryUtil.Add(QueryParameters, "IdempotentToken", value);
 			}
 		}
 

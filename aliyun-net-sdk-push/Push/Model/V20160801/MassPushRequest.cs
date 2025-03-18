@@ -41,9 +41,24 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			Method = MethodType.POST;
         }
 
+		private string idempotentToken;
+
 		private List<int?> pushTasks = new List<int?>(){ };
 
 		private long? appKey;
+
+		public string IdempotentToken
+		{
+			get
+			{
+				return idempotentToken;
+			}
+			set	
+			{
+				idempotentToken = value;
+				DictionaryUtil.Add(QueryParameters, "IdempotentToken", value);
+			}
+		}
 
 		public List<int?> PushTasks
 		{
