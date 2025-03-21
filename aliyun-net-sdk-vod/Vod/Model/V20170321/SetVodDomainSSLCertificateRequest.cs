@@ -37,7 +37,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointRegionalType, null);
             }
-			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 

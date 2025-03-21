@@ -27,10 +27,10 @@ using Aliyun.Acs.vod.Transform.V20170321;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class DescribeVodTieringStorageDataRequest : RpcAcsRequest<DescribeVodTieringStorageDataResponse>
+    public class GetDailyPlayRegionStatisRequest : RpcAcsRequest<GetDailyPlayRegionStatisResponse>
     {
-        public DescribeVodTieringStorageDataRequest()
-            : base("vod", "2017-03-21", "DescribeVodTieringStorageData", "vod", "openAPI")
+        public GetDailyPlayRegionStatisRequest()
+            : base("vod", "2017-03-21", "GetDailyPlayRegionStatis", "vod", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,93 +41,33 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			Method = MethodType.POST;
         }
 
-		private string startTime;
+		private string date;
 
-		private string endTime;
+		private string mediaRegion;
 
-		private long? ownerId;
-
-		private string storageClass;
-
-		private string appId;
-
-		private string region;
-
-		public string StartTime
+		public string Date
 		{
 			get
 			{
-				return startTime;
+				return date;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				date = value;
+				DictionaryUtil.Add(QueryParameters, "Date", value);
 			}
 		}
 
-		public string EndTime
+		public string MediaRegion
 		{
 			get
 			{
-				return endTime;
+				return mediaRegion;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string StorageClass
-		{
-			get
-			{
-				return storageClass;
-			}
-			set	
-			{
-				storageClass = value;
-				DictionaryUtil.Add(QueryParameters, "StorageClass", value);
-			}
-		}
-
-		public string AppId
-		{
-			get
-			{
-				return appId;
-			}
-			set	
-			{
-				appId = value;
-				DictionaryUtil.Add(QueryParameters, "AppId", value);
-			}
-		}
-
-		public string Region
-		{
-			get
-			{
-				return region;
-			}
-			set	
-			{
-				region = value;
-				DictionaryUtil.Add(QueryParameters, "Region", value);
+				mediaRegion = value;
+				DictionaryUtil.Add(QueryParameters, "MediaRegion", value);
 			}
 		}
 
@@ -136,9 +76,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			return false;
 		}
 
-        public override DescribeVodTieringStorageDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetDailyPlayRegionStatisResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeVodTieringStorageDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetDailyPlayRegionStatisResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

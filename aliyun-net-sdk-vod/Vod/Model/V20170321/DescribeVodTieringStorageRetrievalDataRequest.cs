@@ -49,6 +49,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string storageClass;
 
+		private string appId;
+
 		private string region;
 
 		public string StartTime
@@ -100,6 +102,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				storageClass = value;
 				DictionaryUtil.Add(QueryParameters, "StorageClass", value);
+			}
+		}
+
+		public string AppId
+		{
+			get
+			{
+				return appId;
+			}
+			set	
+			{
+				appId = value;
+				DictionaryUtil.Add(QueryParameters, "AppId", value);
 			}
 		}
 

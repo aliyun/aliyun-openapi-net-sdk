@@ -108,6 +108,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string restoreExpiration;
 
+			private string userData;
+
 			private List<string> snapshots;
 
 			public string StorageLocation
@@ -335,6 +337,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					restoreExpiration = value;
+				}
+			}
+
+			public string UserData
+			{
+				get
+				{
+					return userData;
+				}
+				set	
+				{
+					userData = value;
 				}
 			}
 

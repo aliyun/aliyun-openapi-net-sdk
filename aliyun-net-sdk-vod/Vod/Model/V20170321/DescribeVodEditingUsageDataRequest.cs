@@ -27,10 +27,10 @@ using Aliyun.Acs.vod.Transform.V20170321;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class DescribeVodSSLCertificateListRequest : RpcAcsRequest<DescribeVodSSLCertificateListResponse>
+    public class DescribeVodEditingUsageDataRequest : RpcAcsRequest<DescribeVodEditingUsageDataResponse>
     {
-        public DescribeVodSSLCertificateListRequest()
-            : base("vod", "2017-03-21", "DescribeVodSSLCertificateList", "vod", "openAPI")
+        public DescribeVodEditingUsageDataRequest()
+            : base("vod", "2017-03-21", "DescribeVodEditingUsageData", "vod", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,67 +40,54 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			Method = MethodType.POST;
         }
 
-		private long? pageNumber;
+		private string startTime;
 
-		private string securityToken;
+		private string endTime;
 
-		private long? pageSize;
-
-		private string domainName;
+		private string specification;
 
 		private long? ownerId;
 
-		private string searchKeyword;
+		private string appId;
 
-		public long? PageNumber
+		private string region;
+
+		public string StartTime
 		{
 			get
 			{
-				return pageNumber;
+				return startTime;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
-		public string SecurityToken
+		public string EndTime
 		{
 			get
 			{
-				return securityToken;
+				return endTime;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
-		public long? PageSize
+		public string Specification
 		{
 			get
 			{
-				return pageSize;
+				return specification;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				specification = value;
+				DictionaryUtil.Add(QueryParameters, "Specification", value);
 			}
 		}
 
@@ -117,22 +104,40 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string SearchKeyword
+		public string AppId
 		{
 			get
 			{
-				return searchKeyword;
+				return appId;
 			}
 			set	
 			{
-				searchKeyword = value;
-				DictionaryUtil.Add(QueryParameters, "SearchKeyword", value);
+				appId = value;
+				DictionaryUtil.Add(QueryParameters, "AppId", value);
 			}
 		}
 
-        public override DescribeVodSSLCertificateListResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Region
+		{
+			get
+			{
+				return region;
+			}
+			set	
+			{
+				region = value;
+				DictionaryUtil.Add(QueryParameters, "Region", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeVodEditingUsageDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeVodSSLCertificateListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeVodEditingUsageDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
