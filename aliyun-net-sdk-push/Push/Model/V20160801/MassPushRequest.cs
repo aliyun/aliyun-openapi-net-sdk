@@ -166,6 +166,13 @@ namespace Aliyun.Acs.Push.Model.V20160801
 						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
 						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
 						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
 					}
 				}
 			}
@@ -191,13 +198,99 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private int? androidMessageOppoNotifyLevel;
 
-			private string body;
-
 			private string deviceType;
 
 			private string pushTime;
 
 			private int? sendSpeed;
+
+			private string iOSRemindBody;
+
+			private bool? trim;
+
+			private string iOSLiveActivityAttributesType;
+
+			private string androidPopupTitle;
+
+			private string iOSApnsEnv;
+
+			private int? androidNotificationBarPriority;
+
+			private string expireTime;
+
+			private string androidImageUrl;
+
+			private string androidVivoReceiptId;
+
+			private string iOSNotificationCategory;
+
+			private string androidXiaomiBigPictureUrl;
+
+			private string harmonyCategory;
+
+			private bool? iOSRemind;
+
+			private string iOSNotificationThreadId;
+
+			private long? iOSLiveActivityStaleDate;
+
+			private int? androidHuaweiTargetUserType;
+
+			private string iOSLiveActivityContentState;
+
+			private string androidMessageHuaweiUrgency;
+
+			private string iOSInterruptionLevel;
+
+			private string androidExtParameters;
+
+			private int? iOSBadge;
+
+			private bool? iOSBadgeAutoIncrement;
+
+			private string androidOpenType;
+
+			private string harmonyRemindTitle;
+
+			private string androidBadgeClass;
+
+			private string androidRenderStyle;
+
+			private string iOSExtParameters;
+
+			private string iOSLiveActivityAttributes;
+
+			private string androidXiaomiImageUrl;
+
+			private string harmonyUri;
+
+			private string harmonyExtParameters;
+
+			private string androidBigPictureUrl;
+
+			private bool? iOSSilentNotification;
+
+			private string iOSLiveActivityEvent;
+
+			private string harmonyNotificationSlotType;
+
+			private string androidBigTitle;
+
+			private string androidNotificationChannel;
+
+			private bool? androidRemind;
+
+			private string androidActivity;
+
+			private int? androidNotificationNotifyId;
+
+			private string targetValue;
+
+			private int? harmonyBadgeSetNum;
+
+			private string androidXiaoMiNotifyTitle;
+
+			private string body;
 
 			private string androidNotificationHuaweiChannel;
 
@@ -207,29 +300,17 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string harmonyRenderStyle;
 
-			private string iOSRemindBody;
-
-			private bool? trim;
-
 			private string androidMessageVivoCategory;
 
 			private string androidNotifyType;
-
-			private string androidPopupTitle;
 
 			private string androidMessageHuaweiCategory;
 
 			private string iOSMusic;
 
-			private string iOSApnsEnv;
-
 			private bool? iOSMutableContent;
 
-			private int? androidNotificationBarPriority;
-
-			private string expireTime;
-
-			private string androidImageUrl;
+			private string iOSLiveActivityId;
 
 			private string androidNotificationThreadId;
 
@@ -238,10 +319,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			private string harmonyRemindBody;
 
 			private string androidNotificationVivoChannel;
-
-			private string androidVivoReceiptId;
-
-			private string iOSNotificationCategory;
 
 			private string androidNotificationXiaomiChannel;
 
@@ -259,6 +336,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string harmonyReceiptId;
 
+			private long? iOSLiveActivityDismissalDate;
+
 			private string androidOpenUrl;
 
 			private int? androidBadgeSetNum;
@@ -266,16 +345,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			private string androidXiaoMiNotifyBody;
 
 			private string iOSSubtitle;
-
-			private string androidXiaomiBigPictureUrl;
-
-			private string harmonyCategory;
-
-			private bool? iOSRemind;
-
-			private string iOSNotificationThreadId;
-
-			private int? androidHuaweiTargetUserType;
 
 			private bool? harmonyRemind;
 
@@ -285,39 +354,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string iOSNotificationCollapseId;
 
-			private string androidMessageHuaweiUrgency;
-
 			private string pushType;
-
-			private string iOSInterruptionLevel;
 
 			private string harmonyExtensionExtraData;
 
-			private string androidExtParameters;
-
 			private string harmonyImageUrl;
-
-			private int? iOSBadge;
 
 			private string androidBigBody;
 
-			private bool? iOSBadgeAutoIncrement;
-
-			private string androidOpenType;
-
-			private string harmonyRemindTitle;
-
 			private string title;
-
-			private string androidBadgeClass;
 
 			private int? harmonyBadgeAddNum;
 
 			private bool? harmonyTestMessage;
-
-			private string androidRenderStyle;
-
-			private string iOSExtParameters;
 
 			private int? androidBadgeAddNum;
 
@@ -325,19 +374,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string androidNotificationHonorChannel;
 
-			private string androidXiaomiImageUrl;
-
 			private int? androidTargetUserType;
 
-			private string harmonyUri;
-
 			private string androidPopupBody;
-
-			private string harmonyExtParameters;
-
-			private string androidBigPictureUrl;
-
-			private bool? iOSSilentNotification;
 
 			private string androidNotificationGroup;
 
@@ -347,27 +386,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string target;
 
-			private string harmonyNotificationSlotType;
-
-			private string androidBigTitle;
-
-			private string androidNotificationChannel;
-
-			private bool? androidRemind;
-
 			private string harmonyInboxContent;
 
-			private string androidActivity;
-
 			private string androidMessageOppoCategory;
-
-			private int? androidNotificationNotifyId;
-
-			private string targetValue;
-
-			private int? harmonyBadgeSetNum;
-
-			private string androidXiaoMiNotifyTitle;
 
 			private string androidXiaoMiActivity;
 
@@ -392,18 +413,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					androidMessageOppoNotifyLevel = value;
-				}
-			}
-
-			public string Body
-			{
-				get
-				{
-					return body;
-				}
-				set	
-				{
-					body = value;
 				}
 			}
 
@@ -440,6 +449,534 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					sendSpeed = value;
+				}
+			}
+
+			public string IOSRemindBody
+			{
+				get
+				{
+					return iOSRemindBody;
+				}
+				set	
+				{
+					iOSRemindBody = value;
+				}
+			}
+
+			public bool? Trim
+			{
+				get
+				{
+					return trim;
+				}
+				set	
+				{
+					trim = value;
+				}
+			}
+
+			public string IOSLiveActivityAttributesType
+			{
+				get
+				{
+					return iOSLiveActivityAttributesType;
+				}
+				set	
+				{
+					iOSLiveActivityAttributesType = value;
+				}
+			}
+
+			public string AndroidPopupTitle
+			{
+				get
+				{
+					return androidPopupTitle;
+				}
+				set	
+				{
+					androidPopupTitle = value;
+				}
+			}
+
+			public string IOSApnsEnv
+			{
+				get
+				{
+					return iOSApnsEnv;
+				}
+				set	
+				{
+					iOSApnsEnv = value;
+				}
+			}
+
+			public int? AndroidNotificationBarPriority
+			{
+				get
+				{
+					return androidNotificationBarPriority;
+				}
+				set	
+				{
+					androidNotificationBarPriority = value;
+				}
+			}
+
+			public string ExpireTime
+			{
+				get
+				{
+					return expireTime;
+				}
+				set	
+				{
+					expireTime = value;
+				}
+			}
+
+			public string AndroidImageUrl
+			{
+				get
+				{
+					return androidImageUrl;
+				}
+				set	
+				{
+					androidImageUrl = value;
+				}
+			}
+
+			public string AndroidVivoReceiptId
+			{
+				get
+				{
+					return androidVivoReceiptId;
+				}
+				set	
+				{
+					androidVivoReceiptId = value;
+				}
+			}
+
+			public string IOSNotificationCategory
+			{
+				get
+				{
+					return iOSNotificationCategory;
+				}
+				set	
+				{
+					iOSNotificationCategory = value;
+				}
+			}
+
+			public string AndroidXiaomiBigPictureUrl
+			{
+				get
+				{
+					return androidXiaomiBigPictureUrl;
+				}
+				set	
+				{
+					androidXiaomiBigPictureUrl = value;
+				}
+			}
+
+			public string HarmonyCategory
+			{
+				get
+				{
+					return harmonyCategory;
+				}
+				set	
+				{
+					harmonyCategory = value;
+				}
+			}
+
+			public bool? IOSRemind
+			{
+				get
+				{
+					return iOSRemind;
+				}
+				set	
+				{
+					iOSRemind = value;
+				}
+			}
+
+			public string IOSNotificationThreadId
+			{
+				get
+				{
+					return iOSNotificationThreadId;
+				}
+				set	
+				{
+					iOSNotificationThreadId = value;
+				}
+			}
+
+			public long? IOSLiveActivityStaleDate
+			{
+				get
+				{
+					return iOSLiveActivityStaleDate;
+				}
+				set	
+				{
+					iOSLiveActivityStaleDate = value;
+				}
+			}
+
+			public int? AndroidHuaweiTargetUserType
+			{
+				get
+				{
+					return androidHuaweiTargetUserType;
+				}
+				set	
+				{
+					androidHuaweiTargetUserType = value;
+				}
+			}
+
+			public string IOSLiveActivityContentState
+			{
+				get
+				{
+					return iOSLiveActivityContentState;
+				}
+				set	
+				{
+					iOSLiveActivityContentState = value;
+				}
+			}
+
+			public string AndroidMessageHuaweiUrgency
+			{
+				get
+				{
+					return androidMessageHuaweiUrgency;
+				}
+				set	
+				{
+					androidMessageHuaweiUrgency = value;
+				}
+			}
+
+			public string IOSInterruptionLevel
+			{
+				get
+				{
+					return iOSInterruptionLevel;
+				}
+				set	
+				{
+					iOSInterruptionLevel = value;
+				}
+			}
+
+			public string AndroidExtParameters
+			{
+				get
+				{
+					return androidExtParameters;
+				}
+				set	
+				{
+					androidExtParameters = value;
+				}
+			}
+
+			public int? IOSBadge
+			{
+				get
+				{
+					return iOSBadge;
+				}
+				set	
+				{
+					iOSBadge = value;
+				}
+			}
+
+			public bool? IOSBadgeAutoIncrement
+			{
+				get
+				{
+					return iOSBadgeAutoIncrement;
+				}
+				set	
+				{
+					iOSBadgeAutoIncrement = value;
+				}
+			}
+
+			public string AndroidOpenType
+			{
+				get
+				{
+					return androidOpenType;
+				}
+				set	
+				{
+					androidOpenType = value;
+				}
+			}
+
+			public string HarmonyRemindTitle
+			{
+				get
+				{
+					return harmonyRemindTitle;
+				}
+				set	
+				{
+					harmonyRemindTitle = value;
+				}
+			}
+
+			public string AndroidBadgeClass
+			{
+				get
+				{
+					return androidBadgeClass;
+				}
+				set	
+				{
+					androidBadgeClass = value;
+				}
+			}
+
+			public string AndroidRenderStyle
+			{
+				get
+				{
+					return androidRenderStyle;
+				}
+				set	
+				{
+					androidRenderStyle = value;
+				}
+			}
+
+			public string IOSExtParameters
+			{
+				get
+				{
+					return iOSExtParameters;
+				}
+				set	
+				{
+					iOSExtParameters = value;
+				}
+			}
+
+			public string IOSLiveActivityAttributes
+			{
+				get
+				{
+					return iOSLiveActivityAttributes;
+				}
+				set	
+				{
+					iOSLiveActivityAttributes = value;
+				}
+			}
+
+			public string AndroidXiaomiImageUrl
+			{
+				get
+				{
+					return androidXiaomiImageUrl;
+				}
+				set	
+				{
+					androidXiaomiImageUrl = value;
+				}
+			}
+
+			public string HarmonyUri
+			{
+				get
+				{
+					return harmonyUri;
+				}
+				set	
+				{
+					harmonyUri = value;
+				}
+			}
+
+			public string HarmonyExtParameters
+			{
+				get
+				{
+					return harmonyExtParameters;
+				}
+				set	
+				{
+					harmonyExtParameters = value;
+				}
+			}
+
+			public string AndroidBigPictureUrl
+			{
+				get
+				{
+					return androidBigPictureUrl;
+				}
+				set	
+				{
+					androidBigPictureUrl = value;
+				}
+			}
+
+			public bool? IOSSilentNotification
+			{
+				get
+				{
+					return iOSSilentNotification;
+				}
+				set	
+				{
+					iOSSilentNotification = value;
+				}
+			}
+
+			public string IOSLiveActivityEvent
+			{
+				get
+				{
+					return iOSLiveActivityEvent;
+				}
+				set	
+				{
+					iOSLiveActivityEvent = value;
+				}
+			}
+
+			public string HarmonyNotificationSlotType
+			{
+				get
+				{
+					return harmonyNotificationSlotType;
+				}
+				set	
+				{
+					harmonyNotificationSlotType = value;
+				}
+			}
+
+			public string AndroidBigTitle
+			{
+				get
+				{
+					return androidBigTitle;
+				}
+				set	
+				{
+					androidBigTitle = value;
+				}
+			}
+
+			public string AndroidNotificationChannel
+			{
+				get
+				{
+					return androidNotificationChannel;
+				}
+				set	
+				{
+					androidNotificationChannel = value;
+				}
+			}
+
+			public bool? AndroidRemind
+			{
+				get
+				{
+					return androidRemind;
+				}
+				set	
+				{
+					androidRemind = value;
+				}
+			}
+
+			public string AndroidActivity
+			{
+				get
+				{
+					return androidActivity;
+				}
+				set	
+				{
+					androidActivity = value;
+				}
+			}
+
+			public int? AndroidNotificationNotifyId
+			{
+				get
+				{
+					return androidNotificationNotifyId;
+				}
+				set	
+				{
+					androidNotificationNotifyId = value;
+				}
+			}
+
+			public string TargetValue
+			{
+				get
+				{
+					return targetValue;
+				}
+				set	
+				{
+					targetValue = value;
+				}
+			}
+
+			public int? HarmonyBadgeSetNum
+			{
+				get
+				{
+					return harmonyBadgeSetNum;
+				}
+				set	
+				{
+					harmonyBadgeSetNum = value;
+				}
+			}
+
+			public string AndroidXiaoMiNotifyTitle
+			{
+				get
+				{
+					return androidXiaoMiNotifyTitle;
+				}
+				set	
+				{
+					androidXiaoMiNotifyTitle = value;
+				}
+			}
+
+			public string Body
+			{
+				get
+				{
+					return body;
+				}
+				set	
+				{
+					body = value;
 				}
 			}
 
@@ -491,30 +1028,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public string IOSRemindBody
-			{
-				get
-				{
-					return iOSRemindBody;
-				}
-				set	
-				{
-					iOSRemindBody = value;
-				}
-			}
-
-			public bool? Trim
-			{
-				get
-				{
-					return trim;
-				}
-				set	
-				{
-					trim = value;
-				}
-			}
-
 			public string AndroidMessageVivoCategory
 			{
 				get
@@ -536,18 +1049,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					androidNotifyType = value;
-				}
-			}
-
-			public string AndroidPopupTitle
-			{
-				get
-				{
-					return androidPopupTitle;
-				}
-				set	
-				{
-					androidPopupTitle = value;
 				}
 			}
 
@@ -575,18 +1076,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public string IOSApnsEnv
-			{
-				get
-				{
-					return iOSApnsEnv;
-				}
-				set	
-				{
-					iOSApnsEnv = value;
-				}
-			}
-
 			public bool? IOSMutableContent
 			{
 				get
@@ -599,39 +1088,15 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public int? AndroidNotificationBarPriority
+			public string IOSLiveActivityId
 			{
 				get
 				{
-					return androidNotificationBarPriority;
+					return iOSLiveActivityId;
 				}
 				set	
 				{
-					androidNotificationBarPriority = value;
-				}
-			}
-
-			public string ExpireTime
-			{
-				get
-				{
-					return expireTime;
-				}
-				set	
-				{
-					expireTime = value;
-				}
-			}
-
-			public string AndroidImageUrl
-			{
-				get
-				{
-					return androidImageUrl;
-				}
-				set	
-				{
-					androidImageUrl = value;
+					iOSLiveActivityId = value;
 				}
 			}
 
@@ -680,30 +1145,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					androidNotificationVivoChannel = value;
-				}
-			}
-
-			public string AndroidVivoReceiptId
-			{
-				get
-				{
-					return androidVivoReceiptId;
-				}
-				set	
-				{
-					androidVivoReceiptId = value;
-				}
-			}
-
-			public string IOSNotificationCategory
-			{
-				get
-				{
-					return iOSNotificationCategory;
-				}
-				set	
-				{
-					iOSNotificationCategory = value;
 				}
 			}
 
@@ -803,6 +1244,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
+			public long? IOSLiveActivityDismissalDate
+			{
+				get
+				{
+					return iOSLiveActivityDismissalDate;
+				}
+				set	
+				{
+					iOSLiveActivityDismissalDate = value;
+				}
+			}
+
 			public string AndroidOpenUrl
 			{
 				get
@@ -848,66 +1301,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					iOSSubtitle = value;
-				}
-			}
-
-			public string AndroidXiaomiBigPictureUrl
-			{
-				get
-				{
-					return androidXiaomiBigPictureUrl;
-				}
-				set	
-				{
-					androidXiaomiBigPictureUrl = value;
-				}
-			}
-
-			public string HarmonyCategory
-			{
-				get
-				{
-					return harmonyCategory;
-				}
-				set	
-				{
-					harmonyCategory = value;
-				}
-			}
-
-			public bool? IOSRemind
-			{
-				get
-				{
-					return iOSRemind;
-				}
-				set	
-				{
-					iOSRemind = value;
-				}
-			}
-
-			public string IOSNotificationThreadId
-			{
-				get
-				{
-					return iOSNotificationThreadId;
-				}
-				set	
-				{
-					iOSNotificationThreadId = value;
-				}
-			}
-
-			public int? AndroidHuaweiTargetUserType
-			{
-				get
-				{
-					return androidHuaweiTargetUserType;
-				}
-				set	
-				{
-					androidHuaweiTargetUserType = value;
 				}
 			}
 
@@ -959,18 +1352,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public string AndroidMessageHuaweiUrgency
-			{
-				get
-				{
-					return androidMessageHuaweiUrgency;
-				}
-				set	
-				{
-					androidMessageHuaweiUrgency = value;
-				}
-			}
-
 			public string PushType
 			{
 				get
@@ -980,18 +1361,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					pushType = value;
-				}
-			}
-
-			public string IOSInterruptionLevel
-			{
-				get
-				{
-					return iOSInterruptionLevel;
-				}
-				set	
-				{
-					iOSInterruptionLevel = value;
 				}
 			}
 
@@ -1007,18 +1376,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public string AndroidExtParameters
-			{
-				get
-				{
-					return androidExtParameters;
-				}
-				set	
-				{
-					androidExtParameters = value;
-				}
-			}
-
 			public string HarmonyImageUrl
 			{
 				get
@@ -1028,18 +1385,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					harmonyImageUrl = value;
-				}
-			}
-
-			public int? IOSBadge
-			{
-				get
-				{
-					return iOSBadge;
-				}
-				set	
-				{
-					iOSBadge = value;
 				}
 			}
 
@@ -1055,42 +1400,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public bool? IOSBadgeAutoIncrement
-			{
-				get
-				{
-					return iOSBadgeAutoIncrement;
-				}
-				set	
-				{
-					iOSBadgeAutoIncrement = value;
-				}
-			}
-
-			public string AndroidOpenType
-			{
-				get
-				{
-					return androidOpenType;
-				}
-				set	
-				{
-					androidOpenType = value;
-				}
-			}
-
-			public string HarmonyRemindTitle
-			{
-				get
-				{
-					return harmonyRemindTitle;
-				}
-				set	
-				{
-					harmonyRemindTitle = value;
-				}
-			}
-
 			public string Title
 			{
 				get
@@ -1100,18 +1409,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					title = value;
-				}
-			}
-
-			public string AndroidBadgeClass
-			{
-				get
-				{
-					return androidBadgeClass;
-				}
-				set	
-				{
-					androidBadgeClass = value;
 				}
 			}
 
@@ -1136,30 +1433,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					harmonyTestMessage = value;
-				}
-			}
-
-			public string AndroidRenderStyle
-			{
-				get
-				{
-					return androidRenderStyle;
-				}
-				set	
-				{
-					androidRenderStyle = value;
-				}
-			}
-
-			public string IOSExtParameters
-			{
-				get
-				{
-					return iOSExtParameters;
-				}
-				set	
-				{
-					iOSExtParameters = value;
 				}
 			}
 
@@ -1199,18 +1472,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public string AndroidXiaomiImageUrl
-			{
-				get
-				{
-					return androidXiaomiImageUrl;
-				}
-				set	
-				{
-					androidXiaomiImageUrl = value;
-				}
-			}
-
 			public int? AndroidTargetUserType
 			{
 				get
@@ -1223,18 +1484,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public string HarmonyUri
-			{
-				get
-				{
-					return harmonyUri;
-				}
-				set	
-				{
-					harmonyUri = value;
-				}
-			}
-
 			public string AndroidPopupBody
 			{
 				get
@@ -1244,42 +1493,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					androidPopupBody = value;
-				}
-			}
-
-			public string HarmonyExtParameters
-			{
-				get
-				{
-					return harmonyExtParameters;
-				}
-				set	
-				{
-					harmonyExtParameters = value;
-				}
-			}
-
-			public string AndroidBigPictureUrl
-			{
-				get
-				{
-					return androidBigPictureUrl;
-				}
-				set	
-				{
-					androidBigPictureUrl = value;
-				}
-			}
-
-			public bool? IOSSilentNotification
-			{
-				get
-				{
-					return iOSSilentNotification;
-				}
-				set	
-				{
-					iOSSilentNotification = value;
 				}
 			}
 
@@ -1331,54 +1544,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public string HarmonyNotificationSlotType
-			{
-				get
-				{
-					return harmonyNotificationSlotType;
-				}
-				set	
-				{
-					harmonyNotificationSlotType = value;
-				}
-			}
-
-			public string AndroidBigTitle
-			{
-				get
-				{
-					return androidBigTitle;
-				}
-				set	
-				{
-					androidBigTitle = value;
-				}
-			}
-
-			public string AndroidNotificationChannel
-			{
-				get
-				{
-					return androidNotificationChannel;
-				}
-				set	
-				{
-					androidNotificationChannel = value;
-				}
-			}
-
-			public bool? AndroidRemind
-			{
-				get
-				{
-					return androidRemind;
-				}
-				set	
-				{
-					androidRemind = value;
-				}
-			}
-
 			public string HarmonyInboxContent
 			{
 				get
@@ -1391,18 +1556,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public string AndroidActivity
-			{
-				get
-				{
-					return androidActivity;
-				}
-				set	
-				{
-					androidActivity = value;
-				}
-			}
-
 			public string AndroidMessageOppoCategory
 			{
 				get
@@ -1412,54 +1565,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					androidMessageOppoCategory = value;
-				}
-			}
-
-			public int? AndroidNotificationNotifyId
-			{
-				get
-				{
-					return androidNotificationNotifyId;
-				}
-				set	
-				{
-					androidNotificationNotifyId = value;
-				}
-			}
-
-			public string TargetValue
-			{
-				get
-				{
-					return targetValue;
-				}
-				set	
-				{
-					targetValue = value;
-				}
-			}
-
-			public int? HarmonyBadgeSetNum
-			{
-				get
-				{
-					return harmonyBadgeSetNum;
-				}
-				set	
-				{
-					harmonyBadgeSetNum = value;
-				}
-			}
-
-			public string AndroidXiaoMiNotifyTitle
-			{
-				get
-				{
-					return androidXiaoMiNotifyTitle;
-				}
-				set	
-				{
-					androidXiaoMiNotifyTitle = value;
 				}
 			}
 

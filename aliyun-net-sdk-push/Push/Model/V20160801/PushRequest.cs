@@ -55,6 +55,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private bool? trim;
 
+		private string iOSLiveActivityAttributesType;
+
 		private string androidPopupTitle;
 
 		private string iOSApnsEnv;
@@ -77,7 +79,11 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string iOSNotificationThreadId;
 
+		private long? iOSLiveActivityStaleDate;
+
 		private int? androidHuaweiTargetUserType;
+
+		private string iOSLiveActivityContentState;
 
 		private string androidMessageHuaweiUrgency;
 
@@ -103,6 +109,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string iOSExtParameters;
 
+		private string iOSLiveActivityAttributes;
+
 		private string androidXiaomiImageUrl;
 
 		private string harmonyUri;
@@ -114,6 +122,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 		private string androidBigPictureUrl;
 
 		private bool? iOSSilentNotification;
+
+		private string iOSLiveActivityEvent;
 
 		private string harmonyNotificationSlotType;
 
@@ -159,6 +169,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private bool? iOSMutableContent;
 
+		private string iOSLiveActivityId;
+
 		private string androidNotificationThreadId;
 
 		private int? androidHonorTargetUserType;
@@ -184,6 +196,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 		private string jobKey;
 
 		private string harmonyReceiptId;
+
+		private long? iOSLiveActivityDismissalDate;
 
 		private string androidOpenUrl;
 
@@ -330,6 +344,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
+		public string IOSLiveActivityAttributesType
+		{
+			get
+			{
+				return iOSLiveActivityAttributesType;
+			}
+			set	
+			{
+				iOSLiveActivityAttributesType = value;
+				DictionaryUtil.Add(QueryParameters, "iOSLiveActivityAttributesType", value);
+			}
+		}
+
 		public string AndroidPopupTitle
 		{
 			get
@@ -473,6 +500,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
+		public long? IOSLiveActivityStaleDate
+		{
+			get
+			{
+				return iOSLiveActivityStaleDate;
+			}
+			set	
+			{
+				iOSLiveActivityStaleDate = value;
+				DictionaryUtil.Add(QueryParameters, "iOSLiveActivityStaleDate", value.ToString());
+			}
+		}
+
 		public int? AndroidHuaweiTargetUserType
 		{
 			get
@@ -483,6 +523,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				androidHuaweiTargetUserType = value;
 				DictionaryUtil.Add(QueryParameters, "AndroidHuaweiTargetUserType", value.ToString());
+			}
+		}
+
+		public string IOSLiveActivityContentState
+		{
+			get
+			{
+				return iOSLiveActivityContentState;
+			}
+			set	
+			{
+				iOSLiveActivityContentState = value;
+				DictionaryUtil.Add(QueryParameters, "iOSLiveActivityContentState", value);
 			}
 		}
 
@@ -642,6 +695,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
+		public string IOSLiveActivityAttributes
+		{
+			get
+			{
+				return iOSLiveActivityAttributes;
+			}
+			set	
+			{
+				iOSLiveActivityAttributes = value;
+				DictionaryUtil.Add(QueryParameters, "iOSLiveActivityAttributes", value);
+			}
+		}
+
 		public string AndroidXiaomiImageUrl
 		{
 			get
@@ -717,6 +783,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				iOSSilentNotification = value;
 				DictionaryUtil.Add(QueryParameters, "iOSSilentNotification", value.ToString());
+			}
+		}
+
+		public string IOSLiveActivityEvent
+		{
+			get
+			{
+				return iOSLiveActivityEvent;
+			}
+			set	
+			{
+				iOSLiveActivityEvent = value;
+				DictionaryUtil.Add(QueryParameters, "iOSLiveActivityEvent", value);
 			}
 		}
 
@@ -1006,6 +1085,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
+		public string IOSLiveActivityId
+		{
+			get
+			{
+				return iOSLiveActivityId;
+			}
+			set	
+			{
+				iOSLiveActivityId = value;
+				DictionaryUtil.Add(QueryParameters, "iOSLiveActivityId", value);
+			}
+		}
+
 		public string AndroidNotificationThreadId
 		{
 			get
@@ -1172,6 +1264,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				harmonyReceiptId = value;
 				DictionaryUtil.Add(QueryParameters, "HarmonyReceiptId", value);
+			}
+		}
+
+		public long? IOSLiveActivityDismissalDate
+		{
+			get
+			{
+				return iOSLiveActivityDismissalDate;
+			}
+			set	
+			{
+				iOSLiveActivityDismissalDate = value;
+				DictionaryUtil.Add(QueryParameters, "iOSLiveActivityDismissalDate", value.ToString());
 			}
 		}
 
