@@ -59,6 +59,7 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 				responseDataItem.PlaybookName = _ctx.StringValue("ListDisposeStrategy.Data.ResponseData["+ i +"].PlaybookName");
 				responseDataItem.PlaybookUuid = _ctx.StringValue("ListDisposeStrategy.Data.ResponseData["+ i +"].PlaybookUuid");
 				responseDataItem.PlaybookType = _ctx.StringValue("ListDisposeStrategy.Data.ResponseData["+ i +"].PlaybookType");
+				responseDataItem.TaskUrl = _ctx.StringValue("ListDisposeStrategy.Data.ResponseData["+ i +"].TaskUrl");
 				responseDataItem.EntityId = _ctx.LongValue("ListDisposeStrategy.Data.ResponseData["+ i +"].EntityId");
 				responseDataItem.EntityType = _ctx.StringValue("ListDisposeStrategy.Data.ResponseData["+ i +"].EntityType");
 				responseDataItem.TaskParam = _ctx.StringValue("ListDisposeStrategy.Data.ResponseData["+ i +"].TaskParam");

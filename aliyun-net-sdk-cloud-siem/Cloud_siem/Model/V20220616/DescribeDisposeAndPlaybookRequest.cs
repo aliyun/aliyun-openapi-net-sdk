@@ -35,13 +35,32 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			Method = MethodType.POST;
         }
 
+		private long? roleFor;
+
 		private int? pageSize;
+
+		private int? roleType;
 
 		private int? currentPage;
 
 		private string entityType;
 
+		private string entityUuid;
+
 		private string incidentUuid;
+
+		public long? RoleFor
+		{
+			get
+			{
+				return roleFor;
+			}
+			set	
+			{
+				roleFor = value;
+				DictionaryUtil.Add(BodyParameters, "RoleFor", value.ToString());
+			}
+		}
 
 		public int? PageSize
 		{
@@ -53,6 +72,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			{
 				pageSize = value;
 				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public int? RoleType
+		{
+			get
+			{
+				return roleType;
+			}
+			set	
+			{
+				roleType = value;
+				DictionaryUtil.Add(BodyParameters, "RoleType", value.ToString());
 			}
 		}
 
@@ -79,6 +111,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			{
 				entityType = value;
 				DictionaryUtil.Add(BodyParameters, "EntityType", value);
+			}
+		}
+
+		public string EntityUuid
+		{
+			get
+			{
+				return entityUuid;
+			}
+			set	
+			{
+				entityUuid = value;
+				DictionaryUtil.Add(BodyParameters, "EntityUuid", value);
 			}
 		}
 

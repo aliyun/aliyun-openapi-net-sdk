@@ -159,6 +159,8 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 				private string logTime;
 
+				private string verifyType;
+
 				public string Uuid
 				{
 					get
@@ -338,6 +340,18 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 						logTime = value;
 					}
 				}
+
+				public string VerifyType
+				{
+					get
+					{
+						return verifyType;
+					}
+					set	
+					{
+						verifyType = value;
+					}
+				}
 			}
 
 			public class ListCustomizeRuleTestResult_PageInfo
@@ -348,6 +362,8 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 				private int? pageSize;
 
 				private long? totalCount;
+
+				private long? verifiedCount;
 
 				public int? CurrentPage
 				{
@@ -382,6 +398,18 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 					set	
 					{
 						totalCount = value;
+					}
+				}
+
+				public long? VerifiedCount
+				{
+					get
+					{
+						return verifiedCount;
+					}
+					set	
+					{
+						verifiedCount = value;
 					}
 				}
 			}

@@ -45,6 +45,7 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 			data.CanBuy = _ctx.BooleanValue("DescribeUserBuyStatus.Data.CanBuy");
 			data.EndTime = _ctx.LongValue("DescribeUserBuyStatus.Data.EndTime");
 			data.DurationDays = _ctx.LongValue("DescribeUserBuyStatus.Data.DurationDays");
+			data.RdOrder = _ctx.IntegerValue("DescribeUserBuyStatus.Data.RdOrder");
 			describeUserBuyStatusResponse.Data = data;
         
 			return describeUserBuyStatusResponse;

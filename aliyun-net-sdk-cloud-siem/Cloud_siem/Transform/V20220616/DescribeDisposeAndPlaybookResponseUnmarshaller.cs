@@ -48,6 +48,7 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 			for (int i = 0; i < _ctx.Length("DescribeDisposeAndPlaybook.Data.ResponseData.Length"); i++) {
 				DescribeDisposeAndPlaybookResponse.DescribeDisposeAndPlaybook_Data.DescribeDisposeAndPlaybook_ResponseDataItem responseDataItem = new DescribeDisposeAndPlaybookResponse.DescribeDisposeAndPlaybook_Data.DescribeDisposeAndPlaybook_ResponseDataItem();
 				responseDataItem.EntityId = _ctx.LongValue("DescribeDisposeAndPlaybook.Data.ResponseData["+ i +"].EntityId");
+				responseDataItem.EntityType = _ctx.StringValue("DescribeDisposeAndPlaybook.Data.ResponseData["+ i +"].EntityType");
 				responseDataItem.OpcodeMap = _ctx.StringValue("DescribeDisposeAndPlaybook.Data.ResponseData["+ i +"].OpcodeMap");
 				responseDataItem.EntityInfo = _ctx.StringValue("DescribeDisposeAndPlaybook.Data.ResponseData["+ i +"].EntityInfo");
 				responseDataItem.Dispose = _ctx.StringValue("DescribeDisposeAndPlaybook.Data.ResponseData["+ i +"].Dispose");
@@ -74,7 +75,15 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 					playbookListItem.DisplayName = _ctx.StringValue("DescribeDisposeAndPlaybook.Data.ResponseData["+ i +"].PlaybookList["+ j +"].DisplayName");
 					playbookListItem.TaskConfig = _ctx.StringValue("DescribeDisposeAndPlaybook.Data.ResponseData["+ i +"].PlaybookList["+ j +"].TaskConfig");
 					playbookListItem.Name = _ctx.StringValue("DescribeDisposeAndPlaybook.Data.ResponseData["+ i +"].PlaybookList["+ j +"].Name");
+					playbookListItem.Uuid = _ctx.StringValue("DescribeDisposeAndPlaybook.Data.ResponseData["+ i +"].PlaybookList["+ j +"].Uuid");
 					playbookListItem.WafPlaybook = _ctx.BooleanValue("DescribeDisposeAndPlaybook.Data.ResponseData["+ i +"].PlaybookList["+ j +"].WafPlaybook");
+					playbookListItem.Available = _ctx.StringValue("DescribeDisposeAndPlaybook.Data.ResponseData["+ i +"].PlaybookList["+ j +"].Available");
+
+					List<string> playbookListItem_paramConfig = new List<string>();
+					for (int k = 0; k < _ctx.Length("DescribeDisposeAndPlaybook.Data.ResponseData["+ i +"].PlaybookList["+ j +"].ParamConfig.Length"); k++) {
+						playbookListItem_paramConfig.Add(_ctx.StringValue("DescribeDisposeAndPlaybook.Data.ResponseData["+ i +"].PlaybookList["+ j +"].ParamConfig["+ k +"]"));
+					}
+					playbookListItem.ParamConfig = playbookListItem_paramConfig;
 
 					responseDataItem_playbookList.Add(playbookListItem);
 				}

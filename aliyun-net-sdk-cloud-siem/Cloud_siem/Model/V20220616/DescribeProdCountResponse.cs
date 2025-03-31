@@ -62,6 +62,16 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 			private int? qcloudProdCount;
 
+			private int? idcProdCount;
+
+			private int? aliyunImportedCount;
+
+			private int? hcloudImportedCount;
+
+			private int? qcloudImportedCount;
+
+			private int? idcImportedCount;
+
 			public int? AliyunProdCount
 			{
 				get
@@ -95,6 +105,66 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 				set	
 				{
 					qcloudProdCount = value;
+				}
+			}
+
+			public int? IdcProdCount
+			{
+				get
+				{
+					return idcProdCount;
+				}
+				set	
+				{
+					idcProdCount = value;
+				}
+			}
+
+			public int? AliyunImportedCount
+			{
+				get
+				{
+					return aliyunImportedCount;
+				}
+				set	
+				{
+					aliyunImportedCount = value;
+				}
+			}
+
+			public int? HcloudImportedCount
+			{
+				get
+				{
+					return hcloudImportedCount;
+				}
+				set	
+				{
+					hcloudImportedCount = value;
+				}
+			}
+
+			public int? QcloudImportedCount
+			{
+				get
+				{
+					return qcloudImportedCount;
+				}
+				set	
+				{
+					qcloudImportedCount = value;
+				}
+			}
+
+			public int? IdcImportedCount
+			{
+				get
+				{
+					return idcImportedCount;
+				}
+				set	
+				{
+					idcImportedCount = value;
 				}
 			}
 		}

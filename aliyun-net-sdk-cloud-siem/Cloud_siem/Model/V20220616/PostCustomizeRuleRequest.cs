@@ -35,6 +35,10 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			Method = MethodType.POST;
         }
 
+		private long? roleFor;
+
+		private string attCk;
+
 		private string ruleDesc;
 
 		private string ruleName;
@@ -48,6 +52,8 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 		private string logType;
 
 		private string logTypeMds;
+
+		private int? roleType;
 
 		private long? id;
 
@@ -68,6 +74,32 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 		private string threatLevel;
 
 		private string ruleGroup;
+
+		public long? RoleFor
+		{
+			get
+			{
+				return roleFor;
+			}
+			set	
+			{
+				roleFor = value;
+				DictionaryUtil.Add(BodyParameters, "RoleFor", value.ToString());
+			}
+		}
+
+		public string AttCk
+		{
+			get
+			{
+				return attCk;
+			}
+			set	
+			{
+				attCk = value;
+				DictionaryUtil.Add(BodyParameters, "AttCk", value);
+			}
+		}
 
 		public string RuleDesc
 		{
@@ -157,6 +189,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			{
 				logTypeMds = value;
 				DictionaryUtil.Add(BodyParameters, "LogTypeMds", value);
+			}
+		}
+
+		public int? RoleType
+		{
+			get
+			{
+				return roleType;
+			}
+			set	
+			{
+				roleType = value;
+				DictionaryUtil.Add(BodyParameters, "RoleType", value.ToString());
 			}
 		}
 

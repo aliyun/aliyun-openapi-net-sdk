@@ -55,10 +55,12 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 			data.RuleGroup = _ctx.StringValue("PostCustomizeRule.Data.RuleGroup");
 			data.RuleThreshold = _ctx.StringValue("PostCustomizeRule.Data.RuleThreshold");
 			data.QueryCycle = _ctx.StringValue("PostCustomizeRule.Data.QueryCycle");
+			data.AttCk = _ctx.StringValue("PostCustomizeRule.Data.AttCk");
 			data.EventTransferSwitch = _ctx.IntegerValue("PostCustomizeRule.Data.EventTransferSwitch");
 			data.EventTransferType = _ctx.StringValue("PostCustomizeRule.Data.EventTransferType");
 			data.EventTransferExt = _ctx.StringValue("PostCustomizeRule.Data.EventTransferExt");
 			data.Status = _ctx.IntegerValue("PostCustomizeRule.Data.Status");
+			data.DataType = _ctx.IntegerValue("PostCustomizeRule.Data.DataType");
 			postCustomizeRuleResponse.Data = data;
         
 			return postCustomizeRuleResponse;

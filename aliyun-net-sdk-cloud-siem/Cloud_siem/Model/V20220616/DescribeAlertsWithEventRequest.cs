@@ -35,21 +35,106 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			Method = MethodType.POST;
         }
 
+		private long? roleFor;
+
+		private string alertName;
+
+		private string entityName;
+
+		private string assetName;
+
+		private string entityId;
+
 		private string source;
 
 		private string isDefend;
+
+		private long? startTime;
 
 		private long? subUserId;
 
 		private int? pageSize;
 
+		private int? roleType;
+
 		private List<string> levels = new List<string>(){ };
+
+		private long? endTime;
 
 		private string alertTitle;
 
 		private int? currentPage;
 
+		private string alertType;
+
+		private string assetId;
+
 		private string incidentUuid;
+
+		public long? RoleFor
+		{
+			get
+			{
+				return roleFor;
+			}
+			set	
+			{
+				roleFor = value;
+				DictionaryUtil.Add(BodyParameters, "RoleFor", value.ToString());
+			}
+		}
+
+		public string AlertName
+		{
+			get
+			{
+				return alertName;
+			}
+			set	
+			{
+				alertName = value;
+				DictionaryUtil.Add(BodyParameters, "AlertName", value);
+			}
+		}
+
+		public string EntityName
+		{
+			get
+			{
+				return entityName;
+			}
+			set	
+			{
+				entityName = value;
+				DictionaryUtil.Add(BodyParameters, "EntityName", value);
+			}
+		}
+
+		public string AssetName
+		{
+			get
+			{
+				return assetName;
+			}
+			set	
+			{
+				assetName = value;
+				DictionaryUtil.Add(BodyParameters, "AssetName", value);
+			}
+		}
+
+		public string EntityId
+		{
+			get
+			{
+				return entityId;
+			}
+			set	
+			{
+				entityId = value;
+				DictionaryUtil.Add(BodyParameters, "EntityId", value);
+			}
+		}
 
 		public string Source
 		{
@@ -74,6 +159,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			{
 				isDefend = value;
 				DictionaryUtil.Add(BodyParameters, "IsDefend", value);
+			}
+		}
+
+		public long? StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(BodyParameters, "StartTime", value.ToString());
 			}
 		}
 
@@ -103,6 +201,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			}
 		}
 
+		public int? RoleType
+		{
+			get
+			{
+				return roleType;
+			}
+			set	
+			{
+				roleType = value;
+				DictionaryUtil.Add(BodyParameters, "RoleType", value.ToString());
+			}
+		}
+
 		public List<string> Levels
 		{
 			get
@@ -113,6 +224,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			set
 			{
 				levels = value;
+			}
+		}
+
+		public long? EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(BodyParameters, "EndTime", value.ToString());
 			}
 		}
 
@@ -139,6 +263,32 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			{
 				currentPage = value;
 				DictionaryUtil.Add(BodyParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public string AlertType
+		{
+			get
+			{
+				return alertType;
+			}
+			set	
+			{
+				alertType = value;
+				DictionaryUtil.Add(BodyParameters, "AlertType", value);
+			}
+		}
+
+		public string AssetId
+		{
+			get
+			{
+				return assetId;
+			}
+			set	
+			{
+				assetId = value;
+				DictionaryUtil.Add(BodyParameters, "AssetId", value);
 			}
 		}
 

@@ -74,8 +74,10 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 				responseDataItem.AlertDescCode = _ctx.StringValue("DescribeAlerts.Data.ResponseData["+ i +"].AlertDescCode");
 				responseDataItem.AlertDetail = _ctx.StringValue("DescribeAlerts.Data.ResponseData["+ i +"].AlertDetail");
 				responseDataItem.LogUuid = _ctx.StringValue("DescribeAlerts.Data.ResponseData["+ i +"].LogUuid");
+				responseDataItem.EntityList = _ctx.StringValue("DescribeAlerts.Data.ResponseData["+ i +"].EntityList");
 				responseDataItem.AttCk = _ctx.StringValue("DescribeAlerts.Data.ResponseData["+ i +"].AttCk");
 				responseDataItem.SubUserId = _ctx.LongValue("DescribeAlerts.Data.ResponseData["+ i +"].SubUserId");
+				responseDataItem.SubUserName = _ctx.StringValue("DescribeAlerts.Data.ResponseData["+ i +"].SubUserName");
 				responseDataItem.CloudCode = _ctx.StringValue("DescribeAlerts.Data.ResponseData["+ i +"].CloudCode");
 				responseDataItem.IsDefend = _ctx.StringValue("DescribeAlerts.Data.ResponseData["+ i +"].IsDefend");
 

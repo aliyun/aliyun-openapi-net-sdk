@@ -37,6 +37,11 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 			data.AliyunProdCount = _ctx.IntegerValue("DescribeProdCount.Data.AliyunProdCount");
 			data.HcloudProdCount = _ctx.IntegerValue("DescribeProdCount.Data.HcloudProdCount");
 			data.QcloudProdCount = _ctx.IntegerValue("DescribeProdCount.Data.QcloudProdCount");
+			data.IdcProdCount = _ctx.IntegerValue("DescribeProdCount.Data.IdcProdCount");
+			data.AliyunImportedCount = _ctx.IntegerValue("DescribeProdCount.Data.AliyunImportedCount");
+			data.HcloudImportedCount = _ctx.IntegerValue("DescribeProdCount.Data.HcloudImportedCount");
+			data.QcloudImportedCount = _ctx.IntegerValue("DescribeProdCount.Data.QcloudImportedCount");
+			data.IdcImportedCount = _ctx.IntegerValue("DescribeProdCount.Data.IdcImportedCount");
 			describeProdCountResponse.Data = data;
         
 			return describeProdCountResponse;

@@ -25,6 +25,8 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 	public class DeleteCustomizeRuleResponse : AcsResponse
 	{
 
+		private int? data;
+
 		private bool? success;
 
 		private int? code;
@@ -33,7 +35,17 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 		private string requestId;
 
-		private int? data;
+		public int? Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
 
 		public bool? Success
 		{
@@ -80,18 +92,6 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
 			}
 		}
 	}

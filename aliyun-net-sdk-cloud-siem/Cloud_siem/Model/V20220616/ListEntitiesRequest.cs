@@ -27,31 +27,34 @@ using Aliyun.Acs.cloud_siem.Transform.V20220616;
 
 namespace Aliyun.Acs.cloud_siem.Model.V20220616
 {
-    public class ListCustomizeRuleTestResultRequest : RpcAcsRequest<ListCustomizeRuleTestResultResponse>
+    public class ListEntitiesRequest : RpcAcsRequest<ListEntitiesResponse>
     {
-        public ListCustomizeRuleTestResultRequest()
-            : base("cloud-siem", "2022-06-16", "ListCustomizeRuleTestResult", "cloud-siem", "openAPI")
+        public ListEntitiesRequest()
+            : base("cloud-siem", "2022-06-16", "ListEntities", "cloud-siem", "openAPI")
         {
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
 		private long? roleFor;
 
-		private long? startTime;
+		private string malwareType;
 
-		private string verifyType;
+		private string entityName;
 
 		private int? pageSize;
 
 		private int? roleType;
 
-		private long? id;
-
-		private long? endTime;
-
 		private int? currentPage;
 
-		private string detectionRuleId;
+		private string isMalwareEntity;
+
+		private string entityType;
+
+		private string entityUuid;
+
+		private string incidentUuid;
 
 		public long? RoleFor
 		{
@@ -66,29 +69,29 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			}
 		}
 
-		public long? StartTime
+		public string MalwareType
 		{
 			get
 			{
-				return startTime;
+				return malwareType;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(BodyParameters, "StartTime", value.ToString());
+				malwareType = value;
+				DictionaryUtil.Add(BodyParameters, "MalwareType", value);
 			}
 		}
 
-		public string VerifyType
+		public string EntityName
 		{
 			get
 			{
-				return verifyType;
+				return entityName;
 			}
 			set	
 			{
-				verifyType = value;
-				DictionaryUtil.Add(BodyParameters, "VerifyType", value);
+				entityName = value;
+				DictionaryUtil.Add(BodyParameters, "EntityName", value);
 			}
 		}
 
@@ -118,32 +121,6 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			}
 		}
 
-		public long? Id
-		{
-			get
-			{
-				return id;
-			}
-			set	
-			{
-				id = value;
-				DictionaryUtil.Add(BodyParameters, "Id", value.ToString());
-			}
-		}
-
-		public long? EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(BodyParameters, "EndTime", value.ToString());
-			}
-		}
-
 		public int? CurrentPage
 		{
 			get
@@ -157,16 +134,55 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			}
 		}
 
-		public string DetectionRuleId
+		public string IsMalwareEntity
 		{
 			get
 			{
-				return detectionRuleId;
+				return isMalwareEntity;
 			}
 			set	
 			{
-				detectionRuleId = value;
-				DictionaryUtil.Add(BodyParameters, "DetectionRuleId", value);
+				isMalwareEntity = value;
+				DictionaryUtil.Add(BodyParameters, "IsMalwareEntity", value);
+			}
+		}
+
+		public string EntityType
+		{
+			get
+			{
+				return entityType;
+			}
+			set	
+			{
+				entityType = value;
+				DictionaryUtil.Add(BodyParameters, "EntityType", value);
+			}
+		}
+
+		public string EntityUuid
+		{
+			get
+			{
+				return entityUuid;
+			}
+			set	
+			{
+				entityUuid = value;
+				DictionaryUtil.Add(BodyParameters, "EntityUuid", value);
+			}
+		}
+
+		public string IncidentUuid
+		{
+			get
+			{
+				return incidentUuid;
+			}
+			set	
+			{
+				incidentUuid = value;
+				DictionaryUtil.Add(BodyParameters, "IncidentUuid", value);
 			}
 		}
 
@@ -175,9 +191,9 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			return false;
 		}
 
-        public override ListCustomizeRuleTestResultResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListEntitiesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListCustomizeRuleTestResultResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListEntitiesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

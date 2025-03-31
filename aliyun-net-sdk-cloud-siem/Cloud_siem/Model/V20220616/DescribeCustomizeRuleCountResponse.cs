@@ -106,6 +106,22 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 			private int? lowRuleNum;
 
+			private int? totalRuleNum;
+
+			private int? customizeRuleNum;
+
+			private int? predefinedRuleNum;
+
+			private int? unEventRuleNum;
+
+			private int? expertRuleNum;
+
+			private int? graphComputingRuleNum;
+
+			private int? singleAlertRuleNum;
+
+			private int? aggregationRuleNum;
+
 			public int? InUseRuleNum
 			{
 				get
@@ -151,6 +167,102 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 				set	
 				{
 					lowRuleNum = value;
+				}
+			}
+
+			public int? TotalRuleNum
+			{
+				get
+				{
+					return totalRuleNum;
+				}
+				set	
+				{
+					totalRuleNum = value;
+				}
+			}
+
+			public int? CustomizeRuleNum
+			{
+				get
+				{
+					return customizeRuleNum;
+				}
+				set	
+				{
+					customizeRuleNum = value;
+				}
+			}
+
+			public int? PredefinedRuleNum
+			{
+				get
+				{
+					return predefinedRuleNum;
+				}
+				set	
+				{
+					predefinedRuleNum = value;
+				}
+			}
+
+			public int? UnEventRuleNum
+			{
+				get
+				{
+					return unEventRuleNum;
+				}
+				set	
+				{
+					unEventRuleNum = value;
+				}
+			}
+
+			public int? ExpertRuleNum
+			{
+				get
+				{
+					return expertRuleNum;
+				}
+				set	
+				{
+					expertRuleNum = value;
+				}
+			}
+
+			public int? GraphComputingRuleNum
+			{
+				get
+				{
+					return graphComputingRuleNum;
+				}
+				set	
+				{
+					graphComputingRuleNum = value;
+				}
+			}
+
+			public int? SingleAlertRuleNum
+			{
+				get
+				{
+					return singleAlertRuleNum;
+				}
+				set	
+				{
+					singleAlertRuleNum = value;
+				}
+			}
+
+			public int? AggregationRuleNum
+			{
+				get
+				{
+					return aggregationRuleNum;
+				}
+				set	
+				{
+					aggregationRuleNum = value;
 				}
 			}
 		}

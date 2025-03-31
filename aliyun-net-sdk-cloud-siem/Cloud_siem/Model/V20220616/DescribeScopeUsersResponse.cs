@@ -102,6 +102,10 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 			private string userName;
 
+			private string userId;
+
+			private string cloudCode;
+
 			private string instanceId;
 
 			private List<string> domains;
@@ -127,6 +131,30 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 				set	
 				{
 					userName = value;
+				}
+			}
+
+			public string UserId
+			{
+				get
+				{
+					return userId;
+				}
+				set	
+				{
+					userId = value;
+				}
+			}
+
+			public string CloudCode
+			{
+				get
+				{
+					return cloudCode;
+				}
+				set	
+				{
+					cloudCode = value;
 				}
 			}
 

@@ -41,6 +41,14 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 			data.HighRuleNum = _ctx.IntegerValue("DescribeCustomizeRuleCount.Data.HighRuleNum");
 			data.MediumRuleNum = _ctx.IntegerValue("DescribeCustomizeRuleCount.Data.MediumRuleNum");
 			data.LowRuleNum = _ctx.IntegerValue("DescribeCustomizeRuleCount.Data.LowRuleNum");
+			data.TotalRuleNum = _ctx.IntegerValue("DescribeCustomizeRuleCount.Data.TotalRuleNum");
+			data.CustomizeRuleNum = _ctx.IntegerValue("DescribeCustomizeRuleCount.Data.CustomizeRuleNum");
+			data.PredefinedRuleNum = _ctx.IntegerValue("DescribeCustomizeRuleCount.Data.PredefinedRuleNum");
+			data.UnEventRuleNum = _ctx.IntegerValue("DescribeCustomizeRuleCount.Data.UnEventRuleNum");
+			data.ExpertRuleNum = _ctx.IntegerValue("DescribeCustomizeRuleCount.Data.ExpertRuleNum");
+			data.GraphComputingRuleNum = _ctx.IntegerValue("DescribeCustomizeRuleCount.Data.GraphComputingRuleNum");
+			data.SingleAlertRuleNum = _ctx.IntegerValue("DescribeCustomizeRuleCount.Data.SingleAlertRuleNum");
+			data.AggregationRuleNum = _ctx.IntegerValue("DescribeCustomizeRuleCount.Data.AggregationRuleNum");
 			describeCustomizeRuleCountResponse.Data = data;
         
 			return describeCustomizeRuleCountResponse;

@@ -35,15 +35,34 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			Method = MethodType.POST;
         }
 
+		private long? roleFor;
+
 		private string remark;
 
 		private string eventDispose;
 
 		private string receiverInfo;
 
+		private int? roleType;
+
+		private string threatLevel;
+
 		private string incidentUuid;
 
 		private int? status;
+
+		public long? RoleFor
+		{
+			get
+			{
+				return roleFor;
+			}
+			set	
+			{
+				roleFor = value;
+				DictionaryUtil.Add(BodyParameters, "RoleFor", value.ToString());
+			}
+		}
 
 		public string Remark
 		{
@@ -81,6 +100,32 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			{
 				receiverInfo = value;
 				DictionaryUtil.Add(BodyParameters, "ReceiverInfo", value);
+			}
+		}
+
+		public int? RoleType
+		{
+			get
+			{
+				return roleType;
+			}
+			set	
+			{
+				roleType = value;
+				DictionaryUtil.Add(BodyParameters, "RoleType", value.ToString());
+			}
+		}
+
+		public string ThreatLevel
+		{
+			get
+			{
+				return threatLevel;
+			}
+			set	
+			{
+				threatLevel = value;
+				DictionaryUtil.Add(BodyParameters, "ThreatLevel", value);
 			}
 		}
 

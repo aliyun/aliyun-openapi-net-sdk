@@ -165,6 +165,8 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 				private string queryCycle;
 
+				private string attCk;
+
 				private int? eventTransferSwitch;
 
 				private string eventTransferType;
@@ -172,6 +174,8 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 				private string eventTransferExt;
 
 				private int? status;
+
+				private int? dataType;
 
 				public long? Id
 				{
@@ -389,6 +393,18 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 					}
 				}
 
+				public string AttCk
+				{
+					get
+					{
+						return attCk;
+					}
+					set	
+					{
+						attCk = value;
+					}
+				}
+
 				public int? EventTransferSwitch
 				{
 					get
@@ -434,6 +450,18 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 					set	
 					{
 						status = value;
+					}
+				}
+
+				public int? DataType
+				{
+					get
+					{
+						return dataType;
+					}
+					set	
+					{
+						dataType = value;
 					}
 				}
 			}

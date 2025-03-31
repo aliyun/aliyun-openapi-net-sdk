@@ -37,7 +37,11 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 		private string cloudCode;
 
+		private long? roleFor;
+
 		private string accountId;
+
+		private int? roleType;
 
 		private long? bindId;
 
@@ -56,6 +60,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			}
 		}
 
+		public long? RoleFor
+		{
+			get
+			{
+				return roleFor;
+			}
+			set	
+			{
+				roleFor = value;
+				DictionaryUtil.Add(BodyParameters, "RoleFor", value.ToString());
+			}
+		}
+
 		public string AccountId
 		{
 			get
@@ -66,6 +83,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			{
 				accountId = value;
 				DictionaryUtil.Add(BodyParameters, "AccountId", value);
+			}
+		}
+
+		public int? RoleType
+		{
+			get
+			{
+				return roleType;
+			}
+			set	
+			{
+				roleType = value;
+				DictionaryUtil.Add(BodyParameters, "RoleType", value.ToString());
 			}
 		}
 

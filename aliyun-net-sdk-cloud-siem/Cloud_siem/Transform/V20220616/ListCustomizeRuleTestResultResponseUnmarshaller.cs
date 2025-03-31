@@ -42,6 +42,7 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 			pageInfo.CurrentPage = _ctx.IntegerValue("ListCustomizeRuleTestResult.Data.PageInfo.CurrentPage");
 			pageInfo.PageSize = _ctx.IntegerValue("ListCustomizeRuleTestResult.Data.PageInfo.PageSize");
 			pageInfo.TotalCount = _ctx.LongValue("ListCustomizeRuleTestResult.Data.PageInfo.TotalCount");
+			pageInfo.VerifiedCount = _ctx.LongValue("ListCustomizeRuleTestResult.Data.PageInfo.VerifiedCount");
 			data.PageInfo = pageInfo;
 
 			List<ListCustomizeRuleTestResultResponse.ListCustomizeRuleTestResult_Data.ListCustomizeRuleTestResult_ResponseDataItem> data_responseData = new List<ListCustomizeRuleTestResultResponse.ListCustomizeRuleTestResult_Data.ListCustomizeRuleTestResult_ResponseDataItem>();
@@ -62,6 +63,7 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 				responseDataItem.EventType = _ctx.StringValue("ListCustomizeRuleTestResult.Data.ResponseData["+ i +"].EventType");
 				responseDataItem.AlertDetail = _ctx.StringValue("ListCustomizeRuleTestResult.Data.ResponseData["+ i +"].AlertDetail");
 				responseDataItem.LogTime = _ctx.StringValue("ListCustomizeRuleTestResult.Data.ResponseData["+ i +"].LogTime");
+				responseDataItem.VerifyType = _ctx.StringValue("ListCustomizeRuleTestResult.Data.ResponseData["+ i +"].VerifyType");
 
 				data_responseData.Add(responseDataItem);
 			}

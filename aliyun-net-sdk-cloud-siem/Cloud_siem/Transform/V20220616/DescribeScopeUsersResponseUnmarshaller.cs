@@ -41,6 +41,8 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 				DescribeScopeUsersResponse.DescribeScopeUsers_DataItem dataItem = new DescribeScopeUsersResponse.DescribeScopeUsers_DataItem();
 				dataItem.AliUid = _ctx.LongValue("DescribeScopeUsers.Data["+ i +"].AliUid");
 				dataItem.UserName = _ctx.StringValue("DescribeScopeUsers.Data["+ i +"].UserName");
+				dataItem.UserId = _ctx.StringValue("DescribeScopeUsers.Data["+ i +"].UserId");
+				dataItem.CloudCode = _ctx.StringValue("DescribeScopeUsers.Data["+ i +"].CloudCode");
 				dataItem.InstanceId = _ctx.StringValue("DescribeScopeUsers.Data["+ i +"].InstanceId");
 
 				List<string> dataItem_domains = new List<string>();

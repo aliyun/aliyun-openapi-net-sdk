@@ -35,11 +35,41 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			Method = MethodType.POST;
         }
 
+		private long? roleFor;
+
+		private int? roleType;
+
 		private long? id;
 
 		private string simulatedData;
 
 		private string testType;
+
+		public long? RoleFor
+		{
+			get
+			{
+				return roleFor;
+			}
+			set	
+			{
+				roleFor = value;
+				DictionaryUtil.Add(BodyParameters, "RoleFor", value.ToString());
+			}
+		}
+
+		public int? RoleType
+		{
+			get
+			{
+				return roleType;
+			}
+			set	
+			{
+				roleType = value;
+				DictionaryUtil.Add(BodyParameters, "RoleType", value.ToString());
+			}
+		}
 
 		public long? Id
 		{

@@ -183,9 +183,13 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 				private string logUuid;
 
+				private string entityList;
+
 				private string attCk;
 
 				private long? subUserId;
+
+				private string subUserName;
 
 				private string cloudCode;
 
@@ -517,6 +521,18 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 					}
 				}
 
+				public string EntityList
+				{
+					get
+					{
+						return entityList;
+					}
+					set	
+					{
+						entityList = value;
+					}
+				}
+
 				public string AttCk
 				{
 					get
@@ -538,6 +554,18 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 					set	
 					{
 						subUserId = value;
+					}
+				}
+
+				public string SubUserName
+				{
+					get
+					{
+						return subUserName;
+					}
+					set	
+					{
+						subUserName = value;
 					}
 				}
 

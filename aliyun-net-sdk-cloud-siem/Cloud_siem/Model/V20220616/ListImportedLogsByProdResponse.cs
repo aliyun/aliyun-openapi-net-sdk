@@ -74,6 +74,8 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 			private int? autoImported;
 
+			private int? logType;
+
 			private string cloudCode;
 
 			public string ProdCode
@@ -181,6 +183,18 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 				set	
 				{
 					autoImported = value;
+				}
+			}
+
+			public int? LogType
+			{
+				get
+				{
+					return logType;
+				}
+				set	
+				{
+					logType = value;
 				}
 			}
 

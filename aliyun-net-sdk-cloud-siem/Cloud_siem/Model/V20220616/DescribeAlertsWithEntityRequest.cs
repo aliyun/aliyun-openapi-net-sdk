@@ -35,15 +35,38 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			Method = MethodType.POST;
         }
 
+		private long? roleFor;
+
 		private long? entityId;
+
+		private long? startTime;
 
 		private int? pageSize;
 
+		private int? roleType;
+
 		private string sophonTaskId;
+
+		private long? endTime;
 
 		private int? currentPage;
 
+		private string entityUuid;
+
 		private string incidentUuid;
+
+		public long? RoleFor
+		{
+			get
+			{
+				return roleFor;
+			}
+			set	
+			{
+				roleFor = value;
+				DictionaryUtil.Add(BodyParameters, "RoleFor", value.ToString());
+			}
+		}
 
 		public long? EntityId
 		{
@@ -55,6 +78,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			{
 				entityId = value;
 				DictionaryUtil.Add(BodyParameters, "EntityId", value.ToString());
+			}
+		}
+
+		public long? StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(BodyParameters, "StartTime", value.ToString());
 			}
 		}
 
@@ -71,6 +107,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			}
 		}
 
+		public int? RoleType
+		{
+			get
+			{
+				return roleType;
+			}
+			set	
+			{
+				roleType = value;
+				DictionaryUtil.Add(BodyParameters, "RoleType", value.ToString());
+			}
+		}
+
 		public string SophonTaskId
 		{
 			get
@@ -84,6 +133,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			}
 		}
 
+		public long? EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(BodyParameters, "EndTime", value.ToString());
+			}
+		}
+
 		public int? CurrentPage
 		{
 			get
@@ -94,6 +156,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			{
 				currentPage = value;
 				DictionaryUtil.Add(BodyParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public string EntityUuid
+		{
+			get
+			{
+				return entityUuid;
+			}
+			set	
+			{
+				entityUuid = value;
+				DictionaryUtil.Add(BodyParameters, "EntityUuid", value);
 			}
 		}
 

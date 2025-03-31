@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.cloud_siem.Model.V20220616
 {
-	public class DescribeCloudSiemEventsResponse : AcsResponse
+	public class ListEntitiesResponse : AcsResponse
 	{
 
 		private bool? success;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 		private string requestId;
 
-		private DescribeCloudSiemEvents_Data data;
+		private ListEntities_Data data;
 
 		public bool? Success
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			}
 		}
 
-		public DescribeCloudSiemEvents_Data Data
+		public ListEntities_Data Data
 		{
 			get
 			{
@@ -95,14 +95,14 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			}
 		}
 
-		public class DescribeCloudSiemEvents_Data
+		public class ListEntities_Data
 		{
 
-			private List<DescribeCloudSiemEvents_ResponseDataItem> responseData;
+			private List<ListEntities_ResponseDataItem> responseData;
 
-			private DescribeCloudSiemEvents_PageInfo pageInfo;
+			private ListEntities_PageInfo pageInfo;
 
-			public List<DescribeCloudSiemEvents_ResponseDataItem> ResponseData
+			public List<ListEntities_ResponseDataItem> ResponseData
 			{
 				get
 				{
@@ -114,7 +114,7 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 				}
 			}
 
-			public DescribeCloudSiemEvents_PageInfo PageInfo
+			public ListEntities_PageInfo PageInfo
 			{
 				get
 				{
@@ -126,8 +126,10 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 				}
 			}
 
-			public class DescribeCloudSiemEvents_ResponseDataItem
+			public class ListEntities_ResponseDataItem
 			{
+
+				private long? id;
 
 				private string gmtCreate;
 
@@ -135,41 +137,41 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 				private long? aliuid;
 
-				private int? alertNum;
-
-				private int? assetNum;
-
 				private string incidentUuid;
 
-				private string incidentName;
+				private string alertUuid;
 
-				private string incidentNameEn;
+				private int? alertNum;
 
-				private string description;
+				private int? eventNum;
 
-				private string descriptionEn;
+				private string cloudCode;
 
-				private string threatLevel;
+				private string entityType;
 
-				private float? threatScore;
+				private string entityName;
 
-				private string extContent;
+				private string entityInfo;
 
-				private int? status;
+				private long? subUserId;
 
-				private string referAccount;
+				private string entityId;
 
-				private string incidentType;
+				private string entityUuid;
 
-				private string ruleId;
+				private string malwareType;
 
-				private string remark;
-
-				private List<DescribeCloudSiemEvents_AttckStage> attckStages;
-
-				private List<string> dataSources;
-
-				private List<string> attCkLabels;
+				public long? Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
+					}
+				}
 
 				public string GmtCreate
 				{
@@ -207,30 +209,6 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 					}
 				}
 
-				public int? AlertNum
-				{
-					get
-					{
-						return alertNum;
-					}
-					set	
-					{
-						alertNum = value;
-					}
-				}
-
-				public int? AssetNum
-				{
-					get
-					{
-						return assetNum;
-					}
-					set	
-					{
-						assetNum = value;
-					}
-				}
-
 				public string IncidentUuid
 				{
 					get
@@ -243,234 +221,140 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 					}
 				}
 
-				public string IncidentName
+				public string AlertUuid
 				{
 					get
 					{
-						return incidentName;
+						return alertUuid;
 					}
 					set	
 					{
-						incidentName = value;
+						alertUuid = value;
 					}
 				}
 
-				public string IncidentNameEn
+				public int? AlertNum
 				{
 					get
 					{
-						return incidentNameEn;
+						return alertNum;
 					}
 					set	
 					{
-						incidentNameEn = value;
+						alertNum = value;
 					}
 				}
 
-				public string Description
+				public int? EventNum
 				{
 					get
 					{
-						return description;
+						return eventNum;
 					}
 					set	
 					{
-						description = value;
+						eventNum = value;
 					}
 				}
 
-				public string DescriptionEn
+				public string CloudCode
 				{
 					get
 					{
-						return descriptionEn;
+						return cloudCode;
 					}
 					set	
 					{
-						descriptionEn = value;
+						cloudCode = value;
 					}
 				}
 
-				public string ThreatLevel
+				public string EntityType
 				{
 					get
 					{
-						return threatLevel;
+						return entityType;
 					}
 					set	
 					{
-						threatLevel = value;
+						entityType = value;
 					}
 				}
 
-				public float? ThreatScore
+				public string EntityName
 				{
 					get
 					{
-						return threatScore;
+						return entityName;
 					}
 					set	
 					{
-						threatScore = value;
+						entityName = value;
 					}
 				}
 
-				public string ExtContent
+				public string EntityInfo
 				{
 					get
 					{
-						return extContent;
+						return entityInfo;
 					}
 					set	
 					{
-						extContent = value;
+						entityInfo = value;
 					}
 				}
 
-				public int? Status
+				public long? SubUserId
 				{
 					get
 					{
-						return status;
+						return subUserId;
 					}
 					set	
 					{
-						status = value;
+						subUserId = value;
 					}
 				}
 
-				public string ReferAccount
+				public string EntityId
 				{
 					get
 					{
-						return referAccount;
+						return entityId;
 					}
 					set	
 					{
-						referAccount = value;
+						entityId = value;
 					}
 				}
 
-				public string IncidentType
+				public string EntityUuid
 				{
 					get
 					{
-						return incidentType;
+						return entityUuid;
 					}
 					set	
 					{
-						incidentType = value;
+						entityUuid = value;
 					}
 				}
 
-				public string RuleId
+				public string MalwareType
 				{
 					get
 					{
-						return ruleId;
+						return malwareType;
 					}
 					set	
 					{
-						ruleId = value;
-					}
-				}
-
-				public string Remark
-				{
-					get
-					{
-						return remark;
-					}
-					set	
-					{
-						remark = value;
-					}
-				}
-
-				public List<DescribeCloudSiemEvents_AttckStage> AttckStages
-				{
-					get
-					{
-						return attckStages;
-					}
-					set	
-					{
-						attckStages = value;
-					}
-				}
-
-				public List<string> DataSources
-				{
-					get
-					{
-						return dataSources;
-					}
-					set	
-					{
-						dataSources = value;
-					}
-				}
-
-				public List<string> AttCkLabels
-				{
-					get
-					{
-						return attCkLabels;
-					}
-					set	
-					{
-						attCkLabels = value;
-					}
-				}
-
-				public class DescribeCloudSiemEvents_AttckStage
-				{
-
-					private string tacticId;
-
-					private string tacticName;
-
-					private int? alertNum;
-
-					public string TacticId
-					{
-						get
-						{
-							return tacticId;
-						}
-						set	
-						{
-							tacticId = value;
-						}
-					}
-
-					public string TacticName
-					{
-						get
-						{
-							return tacticName;
-						}
-						set	
-						{
-							tacticName = value;
-						}
-					}
-
-					public int? AlertNum
-					{
-						get
-						{
-							return alertNum;
-						}
-						set	
-						{
-							alertNum = value;
-						}
+						malwareType = value;
 					}
 				}
 			}
 
-			public class DescribeCloudSiemEvents_PageInfo
+			public class ListEntities_PageInfo
 			{
 
 				private int? currentPage;

@@ -37,7 +37,11 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 		private string productCode;
 
+		private long? roleFor;
+
 		private string logCode;
+
+		private int? roleType;
 
 		public string ProductCode
 		{
@@ -52,6 +56,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			}
 		}
 
+		public long? RoleFor
+		{
+			get
+			{
+				return roleFor;
+			}
+			set	
+			{
+				roleFor = value;
+				DictionaryUtil.Add(BodyParameters, "RoleFor", value.ToString());
+			}
+		}
+
 		public string LogCode
 		{
 			get
@@ -62,6 +79,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			{
 				logCode = value;
 				DictionaryUtil.Add(BodyParameters, "LogCode", value);
+			}
+		}
+
+		public int? RoleType
+		{
+			get
+			{
+				return roleType;
+			}
+			set	
+			{
+				roleType = value;
+				DictionaryUtil.Add(BodyParameters, "RoleType", value.ToString());
 			}
 		}
 

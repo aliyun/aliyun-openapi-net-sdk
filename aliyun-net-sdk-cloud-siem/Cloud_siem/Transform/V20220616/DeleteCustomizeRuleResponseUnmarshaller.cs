@@ -31,11 +31,11 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 			DeleteCustomizeRuleResponse deleteCustomizeRuleResponse = new DeleteCustomizeRuleResponse();
 
 			deleteCustomizeRuleResponse.HttpResponse = _ctx.HttpResponse;
+			deleteCustomizeRuleResponse.Data = _ctx.IntegerValue("DeleteCustomizeRule.Data");
 			deleteCustomizeRuleResponse.Success = _ctx.BooleanValue("DeleteCustomizeRule.Success");
 			deleteCustomizeRuleResponse.Code = _ctx.IntegerValue("DeleteCustomizeRule.Code");
 			deleteCustomizeRuleResponse.Message = _ctx.StringValue("DeleteCustomizeRule.Message");
 			deleteCustomizeRuleResponse.RequestId = _ctx.StringValue("DeleteCustomizeRule.RequestId");
-			deleteCustomizeRuleResponse.Data = _ctx.IntegerValue("DeleteCustomizeRule.Data");
         
 			return deleteCustomizeRuleResponse;
         }

@@ -35,6 +35,36 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			Method = MethodType.POST;
         }
 
+		private string roleFor;
+
+		private string roleType;
+
+		public string RoleFor
+		{
+			get
+			{
+				return roleFor;
+			}
+			set	
+			{
+				roleFor = value;
+				DictionaryUtil.Add(BodyParameters, "RoleFor", value);
+			}
+		}
+
+		public string RoleType
+		{
+			get
+			{
+				return roleType;
+			}
+			set	
+			{
+				roleType = value;
+				DictionaryUtil.Add(BodyParameters, "RoleType", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;

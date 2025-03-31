@@ -37,7 +37,11 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 		private string entityIdentity;
 
+		private long? roleFor;
+
 		private long? entityId;
+
+		private int? roleType;
 
 		private string sophonTaskId;
 
@@ -56,6 +60,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			}
 		}
 
+		public long? RoleFor
+		{
+			get
+			{
+				return roleFor;
+			}
+			set	
+			{
+				roleFor = value;
+				DictionaryUtil.Add(BodyParameters, "RoleFor", value.ToString());
+			}
+		}
+
 		public long? EntityId
 		{
 			get
@@ -66,6 +83,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			{
 				entityId = value;
 				DictionaryUtil.Add(BodyParameters, "EntityId", value.ToString());
+			}
+		}
+
+		public int? RoleType
+		{
+			get
+			{
+				return roleType;
+			}
+			set	
+			{
+				roleType = value;
+				DictionaryUtil.Add(BodyParameters, "RoleType", value.ToString());
 			}
 		}
 
