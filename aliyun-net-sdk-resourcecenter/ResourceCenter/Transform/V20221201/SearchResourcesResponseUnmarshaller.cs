@@ -31,9 +31,9 @@ namespace Aliyun.Acs.ResourceCenter.Transform.V20221201
 			SearchResourcesResponse searchResourcesResponse = new SearchResourcesResponse();
 
 			searchResourcesResponse.HttpResponse = _ctx.HttpResponse;
+			searchResourcesResponse.MaxResults = _ctx.IntegerValue("SearchResources.MaxResults");
 			searchResourcesResponse.NextToken = _ctx.StringValue("SearchResources.NextToken");
 			searchResourcesResponse.RequestId = _ctx.StringValue("SearchResources.RequestId");
-			searchResourcesResponse.MaxResults = _ctx.IntegerValue("SearchResources.MaxResults");
 
 			List<SearchResourcesResponse.SearchResources_Filter> searchResourcesResponse_filters = new List<SearchResourcesResponse.SearchResources_Filter>();
 			for (int i = 0; i < _ctx.Length("SearchResources.Filters.Length"); i++) {
@@ -54,31 +54,21 @@ namespace Aliyun.Acs.ResourceCenter.Transform.V20221201
 			List<SearchResourcesResponse.SearchResources_Resource> searchResourcesResponse_resources = new List<SearchResourcesResponse.SearchResources_Resource>();
 			for (int i = 0; i < _ctx.Length("SearchResources.Resources.Length"); i++) {
 				SearchResourcesResponse.SearchResources_Resource resource = new SearchResourcesResponse.SearchResources_Resource();
-				resource.ResourceType = _ctx.StringValue("SearchResources.Resources["+ i +"].ResourceType");
-				resource.CreateTime = _ctx.StringValue("SearchResources.Resources["+ i +"].CreateTime");
-				resource.ResourceGroupId = _ctx.StringValue("SearchResources.Resources["+ i +"].ResourceGroupId");
-				resource.ZoneId = _ctx.StringValue("SearchResources.Resources["+ i +"].ZoneId");
 				resource.AccountId = _ctx.StringValue("SearchResources.Resources["+ i +"].AccountId");
+				resource.CreateTime = _ctx.StringValue("SearchResources.Resources["+ i +"].CreateTime");
+				resource.ExpireTime = _ctx.StringValue("SearchResources.Resources["+ i +"].ExpireTime");
+				resource.RegionId = _ctx.StringValue("SearchResources.Resources["+ i +"].RegionId");
+				resource.ResourceGroupId = _ctx.StringValue("SearchResources.Resources["+ i +"].ResourceGroupId");
 				resource.ResourceId = _ctx.StringValue("SearchResources.Resources["+ i +"].ResourceId");
 				resource.ResourceName = _ctx.StringValue("SearchResources.Resources["+ i +"].ResourceName");
-				resource.RegionId = _ctx.StringValue("SearchResources.Resources["+ i +"].RegionId");
-				resource.ExpireTime = _ctx.StringValue("SearchResources.Resources["+ i +"].ExpireTime");
+				resource.ResourceType = _ctx.StringValue("SearchResources.Resources["+ i +"].ResourceType");
+				resource.ZoneId = _ctx.StringValue("SearchResources.Resources["+ i +"].ZoneId");
 
 				List<string> resource_ipAddresses = new List<string>();
 				for (int j = 0; j < _ctx.Length("SearchResources.Resources["+ i +"].IpAddresses.Length"); j++) {
 					resource_ipAddresses.Add(_ctx.StringValue("SearchResources.Resources["+ i +"].IpAddresses["+ j +"]"));
 				}
 				resource.IpAddresses = resource_ipAddresses;
-
-				List<SearchResourcesResponse.SearchResources_Resource.SearchResources_Tag> resource_tags = new List<SearchResourcesResponse.SearchResources_Resource.SearchResources_Tag>();
-				for (int j = 0; j < _ctx.Length("SearchResources.Resources["+ i +"].Tags.Length"); j++) {
-					SearchResourcesResponse.SearchResources_Resource.SearchResources_Tag tag = new SearchResourcesResponse.SearchResources_Resource.SearchResources_Tag();
-					tag.Key = _ctx.StringValue("SearchResources.Resources["+ i +"].Tags["+ j +"].Key");
-					tag._Value = _ctx.StringValue("SearchResources.Resources["+ i +"].Tags["+ j +"].Value");
-
-					resource_tags.Add(tag);
-				}
-				resource.Tags = resource_tags;
 
 				List<SearchResourcesResponse.SearchResources_Resource.SearchResources_IpAddressAttribute> resource_ipAddressAttributes = new List<SearchResourcesResponse.SearchResources_Resource.SearchResources_IpAddressAttribute>();
 				for (int j = 0; j < _ctx.Length("SearchResources.Resources["+ i +"].IpAddressAttributes.Length"); j++) {
@@ -90,6 +80,16 @@ namespace Aliyun.Acs.ResourceCenter.Transform.V20221201
 					resource_ipAddressAttributes.Add(ipAddressAttribute);
 				}
 				resource.IpAddressAttributes = resource_ipAddressAttributes;
+
+				List<SearchResourcesResponse.SearchResources_Resource.SearchResources_Tag> resource_tags = new List<SearchResourcesResponse.SearchResources_Resource.SearchResources_Tag>();
+				for (int j = 0; j < _ctx.Length("SearchResources.Resources["+ i +"].Tags.Length"); j++) {
+					SearchResourcesResponse.SearchResources_Resource.SearchResources_Tag tag = new SearchResourcesResponse.SearchResources_Resource.SearchResources_Tag();
+					tag.Key = _ctx.StringValue("SearchResources.Resources["+ i +"].Tags["+ j +"].Key");
+					tag._Value = _ctx.StringValue("SearchResources.Resources["+ i +"].Tags["+ j +"].Value");
+
+					resource_tags.Add(tag);
+				}
+				resource.Tags = resource_tags;
 
 				searchResourcesResponse_resources.Add(resource);
 			}

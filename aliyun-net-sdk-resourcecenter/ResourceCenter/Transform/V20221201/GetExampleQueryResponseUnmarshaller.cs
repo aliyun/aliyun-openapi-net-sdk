@@ -34,10 +34,10 @@ namespace Aliyun.Acs.ResourceCenter.Transform.V20221201
 			getExampleQueryResponse.RequestId = _ctx.StringValue("GetExampleQuery.RequestId");
 
 			GetExampleQueryResponse.GetExampleQuery_ExampleQuery exampleQuery = new GetExampleQueryResponse.GetExampleQuery_ExampleQuery();
-			exampleQuery.QueryId = _ctx.StringValue("GetExampleQuery.ExampleQuery.QueryId");
+			exampleQuery.Description = _ctx.StringValue("GetExampleQuery.ExampleQuery.Description");
 			exampleQuery.Expression = _ctx.StringValue("GetExampleQuery.ExampleQuery.Expression");
 			exampleQuery.Name = _ctx.StringValue("GetExampleQuery.ExampleQuery.Name");
-			exampleQuery.Description = _ctx.StringValue("GetExampleQuery.ExampleQuery.Description");
+			exampleQuery.QueryId = _ctx.StringValue("GetExampleQuery.ExampleQuery.QueryId");
 			getExampleQueryResponse.ExampleQuery = exampleQuery;
         
 			return getExampleQueryResponse;

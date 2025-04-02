@@ -34,11 +34,11 @@ namespace Aliyun.Acs.ResourceCenter.Transform.V20221201
 			getSavedQueryResponse.RequestId = _ctx.StringValue("GetSavedQuery.RequestId");
 
 			GetSavedQueryResponse.GetSavedQuery_SavedQuery savedQuery = new GetSavedQueryResponse.GetSavedQuery_SavedQuery();
-			savedQuery.QueryId = _ctx.StringValue("GetSavedQuery.SavedQuery.QueryId");
+			savedQuery.CreateTime = _ctx.StringValue("GetSavedQuery.SavedQuery.CreateTime");
+			savedQuery.Description = _ctx.StringValue("GetSavedQuery.SavedQuery.Description");
 			savedQuery.Expression = _ctx.StringValue("GetSavedQuery.SavedQuery.Expression");
 			savedQuery.Name = _ctx.StringValue("GetSavedQuery.SavedQuery.Name");
-			savedQuery.Description = _ctx.StringValue("GetSavedQuery.SavedQuery.Description");
-			savedQuery.CreateTime = _ctx.StringValue("GetSavedQuery.SavedQuery.CreateTime");
+			savedQuery.QueryId = _ctx.StringValue("GetSavedQuery.SavedQuery.QueryId");
 			savedQuery.UpdateTime = _ctx.StringValue("GetSavedQuery.SavedQuery.UpdateTime");
 			getSavedQueryResponse.SavedQuery = savedQuery;
         

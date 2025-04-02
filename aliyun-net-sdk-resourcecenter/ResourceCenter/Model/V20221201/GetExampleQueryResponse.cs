@@ -56,23 +56,23 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 		public class GetExampleQuery_ExampleQuery
 		{
 
-			private string queryId;
+			private string description;
 
 			private string expression;
 
 			private string name;
 
-			private string description;
+			private string queryId;
 
-			public string QueryId
+			public string Description
 			{
 				get
 				{
-					return queryId;
+					return description;
 				}
 				set	
 				{
-					queryId = value;
+					description = value;
 				}
 			}
 
@@ -100,15 +100,15 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 				}
 			}
 
-			public string Description
+			public string QueryId
 			{
 				get
 				{
-					return description;
+					return queryId;
 				}
 				set	
 				{
-					description = value;
+					queryId = value;
 				}
 			}
 		}

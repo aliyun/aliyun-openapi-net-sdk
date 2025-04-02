@@ -25,21 +25,9 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 	public class EnableResourceCenterResponse : AcsResponse
 	{
 
-		private string status;
-
 		private string requestId;
 
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-			}
-		}
+		private string status;
 
 		public string RequestId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
 			}
 		}
 	}

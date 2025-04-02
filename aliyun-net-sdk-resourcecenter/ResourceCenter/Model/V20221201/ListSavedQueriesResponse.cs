@@ -25,25 +25,13 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 	public class ListSavedQueriesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string maxResults;
 
 		private string nextToken;
 
-		private List<ListSavedQueries_SavedQuery> savedQueries;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<ListSavedQueries_SavedQuery> savedQueries;
 
 		public string MaxResults
 		{
@@ -69,6 +57,18 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public List<ListSavedQueries_SavedQuery> SavedQueries
 		{
 			get
@@ -84,37 +84,25 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 		public class ListSavedQueries_SavedQuery
 		{
 
-			private string queryId;
-
-			private string name;
+			private string createTime;
 
 			private string description;
 
-			private string createTime;
+			private string name;
+
+			private string queryId;
 
 			private string updateTime;
 
-			public string QueryId
+			public string CreateTime
 			{
 				get
 				{
-					return queryId;
+					return createTime;
 				}
 				set	
 				{
-					queryId = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
+					createTime = value;
 				}
 			}
 
@@ -130,15 +118,27 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 				}
 			}
 
-			public string CreateTime
+			public string Name
 			{
 				get
 				{
-					return createTime;
+					return name;
 				}
 				set	
 				{
-					createTime = value;
+					name = value;
+				}
+			}
+
+			public string QueryId
+			{
+				get
+				{
+					return queryId;
+				}
+				set	
+				{
+					queryId = value;
 				}
 			}
 

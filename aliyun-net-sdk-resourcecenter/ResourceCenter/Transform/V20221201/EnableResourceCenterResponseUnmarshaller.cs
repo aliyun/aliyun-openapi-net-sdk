@@ -31,8 +31,8 @@ namespace Aliyun.Acs.ResourceCenter.Transform.V20221201
 			EnableResourceCenterResponse enableResourceCenterResponse = new EnableResourceCenterResponse();
 
 			enableResourceCenterResponse.HttpResponse = _ctx.HttpResponse;
-			enableResourceCenterResponse.Status = _ctx.StringValue("EnableResourceCenter.Status");
 			enableResourceCenterResponse.RequestId = _ctx.StringValue("EnableResourceCenter.RequestId");
+			enableResourceCenterResponse.Status = _ctx.StringValue("EnableResourceCenter.Status");
         
 			return enableResourceCenterResponse;
         }

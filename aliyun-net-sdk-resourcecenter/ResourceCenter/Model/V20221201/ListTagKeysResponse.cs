@@ -25,12 +25,6 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 	public class ListTagKeysResponse : AcsResponse
 	{
 
-		private string nextToken;
-
-		private string requestId;
-
-		private bool? success;
-
 		private string dynamicCode;
 
 		private string dynamicMessage;
@@ -39,43 +33,13 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 
 		private string errorMessage;
 
+		private string nextToken;
+
+		private string requestId;
+
+		private bool? success;
+
 		private List<string> tagKeys;
-
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string DynamicCode
 		{
@@ -122,6 +86,42 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 			set	
 			{
 				errorMessage = value;
+			}
+		}
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 

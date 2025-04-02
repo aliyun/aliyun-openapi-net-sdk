@@ -25,23 +25,11 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 	public class ListFiltersResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string defaultFilterName;
 
-		private List<ListFilters_Filter> filters;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<ListFilters_Filter> filters;
 
 		public string DefaultFilterName
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 			set	
 			{
 				defaultFilterName = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,21 +70,9 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 		public class ListFilters_Filter
 		{
 
-			private string filterName;
-
 			private string filterConfiguration;
 
-			public string FilterName
-			{
-				get
-				{
-					return filterName;
-				}
-				set	
-				{
-					filterName = value;
-				}
-			}
+			private string filterName;
 
 			public string FilterConfiguration
 			{
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 				set	
 				{
 					filterConfiguration = value;
+				}
+			}
+
+			public string FilterName
+			{
+				get
+				{
+					return filterName;
+				}
+				set	
+				{
+					filterName = value;
 				}
 			}
 		}

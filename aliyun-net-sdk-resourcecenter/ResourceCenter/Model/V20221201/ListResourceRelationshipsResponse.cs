@@ -22,12 +22,16 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 {
-	public class GetSavedQueryResponse : AcsResponse
+	public class ListResourceRelationshipsResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private GetSavedQuery_SavedQuery savedQuery;
+		private int? maxResults;
+
+		private string nextToken;
+
+		private List<ListResourceRelationships_ResourceRelationship> resourceRelationships;
 
 		public string RequestId
 		{
@@ -41,102 +45,126 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 			}
 		}
 
-		public GetSavedQuery_SavedQuery SavedQuery
+		public int? MaxResults
 		{
 			get
 			{
-				return savedQuery;
+				return maxResults;
 			}
 			set	
 			{
-				savedQuery = value;
+				maxResults = value;
 			}
 		}
 
-		public class GetSavedQuery_SavedQuery
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+			}
+		}
+
+		public List<ListResourceRelationships_ResourceRelationship> ResourceRelationships
+		{
+			get
+			{
+				return resourceRelationships;
+			}
+			set	
+			{
+				resourceRelationships = value;
+			}
+		}
+
+		public class ListResourceRelationships_ResourceRelationship
 		{
 
-			private string createTime;
+			private string regionId;
 
-			private string description;
+			private string resourceType;
 
-			private string expression;
+			private string resourceId;
 
-			private string name;
+			private string relatedResourceRegionId;
 
-			private string queryId;
+			private string relatedResourceType;
 
-			private string updateTime;
+			private string relatedResourceId;
 
-			public string CreateTime
+			public string RegionId
 			{
 				get
 				{
-					return createTime;
+					return regionId;
 				}
 				set	
 				{
-					createTime = value;
+					regionId = value;
 				}
 			}
 
-			public string Description
+			public string ResourceType
 			{
 				get
 				{
-					return description;
+					return resourceType;
 				}
 				set	
 				{
-					description = value;
+					resourceType = value;
 				}
 			}
 
-			public string Expression
+			public string ResourceId
 			{
 				get
 				{
-					return expression;
+					return resourceId;
 				}
 				set	
 				{
-					expression = value;
+					resourceId = value;
 				}
 			}
 
-			public string Name
+			public string RelatedResourceRegionId
 			{
 				get
 				{
-					return name;
+					return relatedResourceRegionId;
 				}
 				set	
 				{
-					name = value;
+					relatedResourceRegionId = value;
 				}
 			}
 
-			public string QueryId
+			public string RelatedResourceType
 			{
 				get
 				{
-					return queryId;
+					return relatedResourceType;
 				}
 				set	
 				{
-					queryId = value;
+					relatedResourceType = value;
 				}
 			}
 
-			public string UpdateTime
+			public string RelatedResourceId
 			{
 				get
 				{
-					return updateTime;
+					return relatedResourceId;
 				}
 				set	
 				{
-					updateTime = value;
+					relatedResourceId = value;
 				}
 			}
 		}

@@ -136,6 +136,8 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 
 			private List<string> filterKeys;
 
+			private List<string> relatedResourceTypes;
+
 			private ListResourceTypes_CodeMapping codeMapping;
 
 			private ListResourceTypes_Urls urls;
@@ -197,6 +199,18 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 				set	
 				{
 					filterKeys = value;
+				}
+			}
+
+			public List<string> RelatedResourceTypes
+			{
+				get
+				{
+					return relatedResourceTypes;
+				}
+				set	
+				{
+					relatedResourceTypes = value;
 				}
 			}
 

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.ResourceCenter.Transform.V20221201
 			CreateSavedQueryResponse createSavedQueryResponse = new CreateSavedQueryResponse();
 
 			createSavedQueryResponse.HttpResponse = _ctx.HttpResponse;
-			createSavedQueryResponse.RequestId = _ctx.StringValue("CreateSavedQuery.RequestId");
 			createSavedQueryResponse.QueryId = _ctx.StringValue("CreateSavedQuery.QueryId");
+			createSavedQueryResponse.RequestId = _ctx.StringValue("CreateSavedQuery.RequestId");
         
 			return createSavedQueryResponse;
         }

@@ -52,8 +52,8 @@ namespace Aliyun.Acs.ResourceCenter.Transform.V20221201
 			List<GetResourceCountsResponse.GetResourceCounts_ResourceCount> getResourceCountsResponse_resourceCounts = new List<GetResourceCountsResponse.GetResourceCounts_ResourceCount>();
 			for (int i = 0; i < _ctx.Length("GetResourceCounts.ResourceCounts.Length"); i++) {
 				GetResourceCountsResponse.GetResourceCounts_ResourceCount resourceCount = new GetResourceCountsResponse.GetResourceCounts_ResourceCount();
-				resourceCount.GroupName = _ctx.StringValue("GetResourceCounts.ResourceCounts["+ i +"].GroupName");
 				resourceCount.Count = _ctx.LongValue("GetResourceCounts.ResourceCounts["+ i +"].Count");
+				resourceCount.GroupName = _ctx.StringValue("GetResourceCounts.ResourceCounts["+ i +"].GroupName");
 
 				getResourceCountsResponse_resourceCounts.Add(resourceCount);
 			}

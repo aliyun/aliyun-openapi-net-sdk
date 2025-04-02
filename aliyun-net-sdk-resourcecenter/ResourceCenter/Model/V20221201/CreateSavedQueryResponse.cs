@@ -25,21 +25,9 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 	public class CreateSavedQueryResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string queryId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string QueryId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 			set	
 			{
 				queryId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

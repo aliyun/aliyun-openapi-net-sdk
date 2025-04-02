@@ -25,15 +25,27 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 	public class SearchResourcesResponse : AcsResponse
 	{
 
+		private int? maxResults;
+
 		private string nextToken;
 
 		private string requestId;
 
-		private int? maxResults;
-
 		private List<SearchResources_Filter> filters;
 
 		private List<SearchResources_Resource> resources;
+
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+			}
+		}
 
 		public string NextToken
 		{
@@ -56,18 +68,6 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
 			}
 		}
 
@@ -144,39 +144,39 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 		public class SearchResources_Resource
 		{
 
-			private string resourceType;
+			private string accountId;
 
 			private string createTime;
 
+			private string expireTime;
+
+			private string regionId;
+
 			private string resourceGroupId;
-
-			private string zoneId;
-
-			private string accountId;
 
 			private string resourceId;
 
 			private string resourceName;
 
-			private string regionId;
+			private string resourceType;
 
-			private string expireTime;
-
-			private List<SearchResources_Tag> tags;
+			private string zoneId;
 
 			private List<SearchResources_IpAddressAttribute> ipAddressAttributes;
 
+			private List<SearchResources_Tag> tags;
+
 			private List<string> ipAddresses;
 
-			public string ResourceType
+			public string AccountId
 			{
 				get
 				{
-					return resourceType;
+					return accountId;
 				}
 				set	
 				{
-					resourceType = value;
+					accountId = value;
 				}
 			}
 
@@ -192,6 +192,30 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 				}
 			}
 
+			public string ExpireTime
+			{
+				get
+				{
+					return expireTime;
+				}
+				set	
+				{
+					expireTime = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
 			public string ResourceGroupId
 			{
 				get
@@ -201,30 +225,6 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 				set	
 				{
 					resourceGroupId = value;
-				}
-			}
-
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
-
-			public string AccountId
-			{
-				get
-				{
-					return accountId;
-				}
-				set	
-				{
-					accountId = value;
 				}
 			}
 
@@ -252,39 +252,27 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 				}
 			}
 
-			public string RegionId
+			public string ResourceType
 			{
 				get
 				{
-					return regionId;
+					return resourceType;
 				}
 				set	
 				{
-					regionId = value;
+					resourceType = value;
 				}
 			}
 
-			public string ExpireTime
+			public string ZoneId
 			{
 				get
 				{
-					return expireTime;
+					return zoneId;
 				}
 				set	
 				{
-					expireTime = value;
-				}
-			}
-
-			public List<SearchResources_Tag> Tags
-			{
-				get
-				{
-					return tags;
-				}
-				set	
-				{
-					tags = value;
+					zoneId = value;
 				}
 			}
 
@@ -300,6 +288,18 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 				}
 			}
 
+			public List<SearchResources_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
 			public List<string> IpAddresses
 			{
 				get
@@ -309,38 +309,6 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 				set	
 				{
 					ipAddresses = value;
-				}
-			}
-
-			public class SearchResources_Tag
-			{
-
-				private string key;
-
-				private string _value;
-
-				public string Key
-				{
-					get
-					{
-						return key;
-					}
-					set	
-					{
-						key = value;
-					}
-				}
-
-				public string _Value
-				{
-					get
-					{
-						return _value;
-					}
-					set	
-					{
-						_value = value;
-					}
 				}
 			}
 
@@ -386,6 +354,38 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 					set	
 					{
 						version = value;
+					}
+				}
+			}
+
+			public class SearchResources_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
 					}
 				}
 			}

@@ -52,6 +52,12 @@ namespace Aliyun.Acs.ResourceCenter.Transform.V20221201
 				}
 				resourceType.FilterKeys = resourceType_filterKeys;
 
+				List<string> resourceType_relatedResourceTypes = new List<string>();
+				for (int j = 0; j < _ctx.Length("ListResourceTypes.ResourceTypes["+ i +"].RelatedResourceTypes.Length"); j++) {
+					resourceType_relatedResourceTypes.Add(_ctx.StringValue("ListResourceTypes.ResourceTypes["+ i +"].RelatedResourceTypes["+ j +"]"));
+				}
+				resourceType.RelatedResourceTypes = resourceType_relatedResourceTypes;
+
 				ListResourceTypesResponse.ListResourceTypes_ResourceType.ListResourceTypes_CodeMapping codeMapping = new ListResourceTypesResponse.ListResourceTypes_ResourceType.ListResourceTypes_CodeMapping();
 				codeMapping.ResourceGroup = _ctx.StringValue("ListResourceTypes.ResourceTypes["+ i +"].CodeMapping.ResourceGroup");
 				codeMapping.Tag = _ctx.StringValue("ListResourceTypes.ResourceTypes["+ i +"].CodeMapping.Tag");

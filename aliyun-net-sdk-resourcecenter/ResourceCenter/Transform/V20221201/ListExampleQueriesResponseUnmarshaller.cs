@@ -31,16 +31,16 @@ namespace Aliyun.Acs.ResourceCenter.Transform.V20221201
 			ListExampleQueriesResponse listExampleQueriesResponse = new ListExampleQueriesResponse();
 
 			listExampleQueriesResponse.HttpResponse = _ctx.HttpResponse;
-			listExampleQueriesResponse.RequestId = _ctx.StringValue("ListExampleQueries.RequestId");
 			listExampleQueriesResponse.MaxResults = _ctx.StringValue("ListExampleQueries.MaxResults");
 			listExampleQueriesResponse.NextToken = _ctx.StringValue("ListExampleQueries.NextToken");
+			listExampleQueriesResponse.RequestId = _ctx.StringValue("ListExampleQueries.RequestId");
 
 			List<ListExampleQueriesResponse.ListExampleQueries_ExampleQuery> listExampleQueriesResponse_exampleQueries = new List<ListExampleQueriesResponse.ListExampleQueries_ExampleQuery>();
 			for (int i = 0; i < _ctx.Length("ListExampleQueries.ExampleQueries.Length"); i++) {
 				ListExampleQueriesResponse.ListExampleQueries_ExampleQuery exampleQuery = new ListExampleQueriesResponse.ListExampleQueries_ExampleQuery();
-				exampleQuery.QueryId = _ctx.StringValue("ListExampleQueries.ExampleQueries["+ i +"].QueryId");
-				exampleQuery.Name = _ctx.StringValue("ListExampleQueries.ExampleQueries["+ i +"].Name");
 				exampleQuery.Description = _ctx.StringValue("ListExampleQueries.ExampleQueries["+ i +"].Description");
+				exampleQuery.Name = _ctx.StringValue("ListExampleQueries.ExampleQueries["+ i +"].Name");
+				exampleQuery.QueryId = _ctx.StringValue("ListExampleQueries.ExampleQueries["+ i +"].QueryId");
 
 				listExampleQueriesResponse_exampleQueries.Add(exampleQuery);
 			}
