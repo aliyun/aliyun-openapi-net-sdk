@@ -335,6 +335,10 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 				private double? standDiscountPrice;
 
+				private string priceUnit;
+
+				private string priceType;
+
 				private List<DescribePrice_PromDetail> promDetailList2;
 
 				private List<DescribePrice_ModuleAttr> moduleAttrs;
@@ -482,6 +486,30 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						standDiscountPrice = value;
+					}
+				}
+
+				public string PriceUnit
+				{
+					get
+					{
+						return priceUnit;
+					}
+					set	
+					{
+						priceUnit = value;
+					}
+				}
+
+				public string PriceType
+				{
+					get
+					{
+						return priceType;
+					}
+					set	
+					{
+						priceType = value;
 					}
 				}
 

@@ -27,40 +27,33 @@ using Aliyun.Acs.Dds.Transform.V20151201;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class DescribeHistoryTasksStatRequest : RpcAcsRequest<DescribeHistoryTasksStatResponse>
+    public class ModifyDBInstanceConfigRequest : RpcAcsRequest<ModifyDBInstanceConfigResponse>
     {
-        public DescribeHistoryTasksStatRequest()
-            : base("Dds", "2015-12-01", "DescribeHistoryTasksStat", "dds", "openAPI")
+        public ModifyDBInstanceConfigRequest()
+            : base("Dds", "2015-12-01", "ModifyDBInstanceConfig", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointRegionalType, null);
             }
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private string toStartTime;
+		private string configName;
 
-		private string resourceGroupId;
-
-		private string taskId;
-
-		private int? toExecTime;
-
-		private string taskType;
+		private string dBInstanceId;
 
 		private string resourceOwnerAccount;
 
-		private string fromStartTime;
+		private string ownerAccount;
 
-		private int? fromExecTime;
+		private string configValue;
 
-		private string instanceId;
-
-		private string status;
+		private long? ownerId;
 
 		public long? ResourceOwnerId
 		{
@@ -75,68 +68,29 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string ToStartTime
+		public string ConfigName
 		{
 			get
 			{
-				return toStartTime;
+				return configName;
 			}
 			set	
 			{
-				toStartTime = value;
-				DictionaryUtil.Add(QueryParameters, "ToStartTime", value);
+				configName = value;
+				DictionaryUtil.Add(QueryParameters, "ConfigName", value);
 			}
 		}
 
-		public string ResourceGroupId
+		public string DBInstanceId
 		{
 			get
 			{
-				return resourceGroupId;
+				return dBInstanceId;
 			}
 			set	
 			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
-		public string TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-				DictionaryUtil.Add(QueryParameters, "TaskId", value);
-			}
-		}
-
-		public int? ToExecTime
-		{
-			get
-			{
-				return toExecTime;
-			}
-			set	
-			{
-				toExecTime = value;
-				DictionaryUtil.Add(QueryParameters, "ToExecTime", value.ToString());
-			}
-		}
-
-		public string TaskType
-		{
-			get
-			{
-				return taskType;
-			}
-			set	
-			{
-				taskType = value;
-				DictionaryUtil.Add(QueryParameters, "TaskType", value);
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 
@@ -153,66 +107,48 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string FromStartTime
+		public string OwnerAccount
 		{
 			get
 			{
-				return fromStartTime;
+				return ownerAccount;
 			}
 			set	
 			{
-				fromStartTime = value;
-				DictionaryUtil.Add(QueryParameters, "FromStartTime", value);
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
-		public int? FromExecTime
+		public string ConfigValue
 		{
 			get
 			{
-				return fromExecTime;
+				return configValue;
 			}
 			set	
 			{
-				fromExecTime = value;
-				DictionaryUtil.Add(QueryParameters, "FromExecTime", value.ToString());
+				configValue = value;
+				DictionaryUtil.Add(QueryParameters, "ConfigValue", value);
 			}
 		}
 
-		public string InstanceId
+		public long? OwnerId
 		{
 			get
 			{
-				return instanceId;
+				return ownerId;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
-			}
-		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override DescribeHistoryTasksStatResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyDBInstanceConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeHistoryTasksStatResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyDBInstanceConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

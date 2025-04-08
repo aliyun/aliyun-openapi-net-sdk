@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds
             { "cn-beijing", "mongodb.aliyuncs.com" },
             { "cn-shanghai-inner", "mongodb.aliyuncs.com" },
             { "cn-hangzhou-internal-prod-1", "mongodb.aliyuncs.com" },
-            { "cn-north-2-gov-1", "mongodb.aliyuncs.com" },
+            { "cn-north-2-gov-1", "mongodb.cn-north-2-gov-1.aliyuncs.com" },
             { "cn-yushanfang", "mongodb.aliyuncs.com" },
             { "cn-qingdao-nebula", "mongodb.aliyuncs.com" },
             { "cn-heyuan", "mongodb.aliyuncs.com" },

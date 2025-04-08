@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
+		private bool? showTags;
+
 		private string networkType;
 
 		private string engineVersion;
@@ -80,6 +82,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public bool? ShowTags
+		{
+			get
+			{
+				return showTags;
+			}
+			set	
+			{
+				showTags = value;
+				DictionaryUtil.Add(QueryParameters, "ShowTags", value.ToString());
 			}
 		}
 

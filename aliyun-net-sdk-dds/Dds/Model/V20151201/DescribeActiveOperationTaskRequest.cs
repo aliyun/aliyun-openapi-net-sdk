@@ -27,10 +27,10 @@ using Aliyun.Acs.Dds.Transform.V20151201;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class DescribeActiveOperationTasksRequest : RpcAcsRequest<DescribeActiveOperationTasksResponse>
+    public class DescribeActiveOperationTaskRequest : RpcAcsRequest<DescribeActiveOperationTaskResponse>
     {
-        public DescribeActiveOperationTasksRequest()
-            : base("Dds", "2015-12-01", "DescribeActiveOperationTasks", "dds", "openAPI")
+        public DescribeActiveOperationTaskRequest()
+            : base("Dds", "2015-12-01", "DescribeActiveOperationTask", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,13 +44,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string productId;
 
-		private string changeLevel;
-
 		private int? pageNumber;
 
-		private string resourceGroupId;
-
-		private string insName;
+		private int? isHistory;
 
 		private int? pageSize;
 
@@ -60,17 +56,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string ownerAccount;
 
-		private int? allowCancel;
-
 		private long? ownerId;
 
-		private string dbType;
-
-		private int? allowChange;
-
 		private string region;
-
-		private int? status;
 
 		public long? ResourceOwnerId
 		{
@@ -98,19 +86,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string ChangeLevel
-		{
-			get
-			{
-				return changeLevel;
-			}
-			set	
-			{
-				changeLevel = value;
-				DictionaryUtil.Add(QueryParameters, "ChangeLevel", value);
-			}
-		}
-
 		public int? PageNumber
 		{
 			get
@@ -124,29 +99,16 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string ResourceGroupId
+		public int? IsHistory
 		{
 			get
 			{
-				return resourceGroupId;
+				return isHistory;
 			}
 			set	
 			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
-		public string InsName
-		{
-			get
-			{
-				return insName;
-			}
-			set	
-			{
-				insName = value;
-				DictionaryUtil.Add(QueryParameters, "InsName", value);
+				isHistory = value;
+				DictionaryUtil.Add(QueryParameters, "IsHistory", value.ToString());
 			}
 		}
 
@@ -202,19 +164,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public int? AllowCancel
-		{
-			get
-			{
-				return allowCancel;
-			}
-			set	
-			{
-				allowCancel = value;
-				DictionaryUtil.Add(QueryParameters, "AllowCancel", value.ToString());
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -225,32 +174,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string DbType
-		{
-			get
-			{
-				return dbType;
-			}
-			set	
-			{
-				dbType = value;
-				DictionaryUtil.Add(QueryParameters, "DbType", value);
-			}
-		}
-
-		public int? AllowChange
-		{
-			get
-			{
-				return allowChange;
-			}
-			set	
-			{
-				allowChange = value;
-				DictionaryUtil.Add(QueryParameters, "AllowChange", value.ToString());
 			}
 		}
 
@@ -267,27 +190,14 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public int? Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value.ToString());
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DescribeActiveOperationTasksResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeActiveOperationTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeActiveOperationTasksResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeActiveOperationTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

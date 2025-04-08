@@ -989,6 +989,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 				private string currentKernelVersion;
 
+				private string connectString;
+
 				public string VpcCloudInstanceId
 				{
 					get
@@ -1142,6 +1144,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						currentKernelVersion = value;
+					}
+				}
+
+				public string ConnectString
+				{
+					get
+					{
+						return connectString;
+					}
+					set	
+					{
+						connectString = value;
 					}
 				}
 			}

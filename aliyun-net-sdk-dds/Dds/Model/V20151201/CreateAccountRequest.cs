@@ -54,6 +54,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string accountPassword;
 
+		private string characterType;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -142,6 +144,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				accountPassword = value;
 				DictionaryUtil.Add(QueryParameters, "AccountPassword", value);
+			}
+		}
+
+		public string CharacterType
+		{
+			get
+			{
+				return characterType;
+			}
+			set	
+			{
+				characterType = value;
+				DictionaryUtil.Add(QueryParameters, "CharacterType", value);
 			}
 		}
 

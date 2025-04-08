@@ -27,10 +27,10 @@ using Aliyun.Acs.Dds.Transform.V20151201;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class ModifyAccountDescriptionRequest : RpcAcsRequest<ModifyAccountDescriptionResponse>
+    public class CheckServiceLinkedRoleRequest : RpcAcsRequest<CheckServiceLinkedRoleResponse>
     {
-        public ModifyAccountDescriptionRequest()
-            : base("Dds", "2015-12-01", "ModifyAccountDescription", "dds", "openAPI")
+        public CheckServiceLinkedRoleRequest()
+            : base("Dds", "2015-12-01", "CheckServiceLinkedRole", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,73 +40,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			Method = MethodType.POST;
         }
 
-		private long? resourceOwnerId;
-
-		private string accountDescription;
-
-		private string accountName;
-
-		private string dBInstanceId;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string characterType;
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string AccountDescription
-		{
-			get
-			{
-				return accountDescription;
-			}
-			set	
-			{
-				accountDescription = value;
-				DictionaryUtil.Add(QueryParameters, "AccountDescription", value);
-			}
-		}
-
-		public string AccountName
-		{
-			get
-			{
-				return accountName;
-			}
-			set	
-			{
-				accountName = value;
-				DictionaryUtil.Add(QueryParameters, "AccountName", value);
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
 
 		public string ResourceOwnerAccount
 		{
@@ -147,22 +85,14 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string CharacterType
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return characterType;
-			}
-			set	
-			{
-				characterType = value;
-				DictionaryUtil.Add(QueryParameters, "CharacterType", value);
-			}
+			return false;
 		}
 
-        public override ModifyAccountDescriptionResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CheckServiceLinkedRoleResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyAccountDescriptionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CheckServiceLinkedRoleResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

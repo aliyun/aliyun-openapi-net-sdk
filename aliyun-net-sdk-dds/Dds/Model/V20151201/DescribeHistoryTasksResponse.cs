@@ -98,7 +98,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		public class DescribeHistoryTasks_ItemsItem
 		{
 
-			private int? status;
+			private string status;
 
 			private string taskId;
 
@@ -138,7 +138,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string callerUid;
 
-			public int? Status
+			public string Status
 			{
 				get
 				{

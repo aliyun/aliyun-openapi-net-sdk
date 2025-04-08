@@ -27,34 +27,31 @@ using Aliyun.Acs.Dds.Transform.V20151201;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class ModifyAccountDescriptionRequest : RpcAcsRequest<ModifyAccountDescriptionResponse>
+    public class DescribeDBInstanceSpecInfoRequest : RpcAcsRequest<DescribeDBInstanceSpecInfoResponse>
     {
-        public ModifyAccountDescriptionRequest()
-            : base("Dds", "2015-12-01", "ModifyAccountDescription", "dds", "openAPI")
+        public DescribeDBInstanceSpecInfoRequest()
+            : base("Dds", "2015-12-01", "DescribeDBInstanceSpecInfo", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointRegionalType, null);
             }
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private string accountDescription;
+		private string instanceClass;
 
-		private string accountName;
-
-		private string dBInstanceId;
+		private string securityToken;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string characterType;
 
 		public long? ResourceOwnerId
 		{
@@ -69,42 +66,29 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string AccountDescription
+		public string InstanceClass
 		{
 			get
 			{
-				return accountDescription;
+				return instanceClass;
 			}
 			set	
 			{
-				accountDescription = value;
-				DictionaryUtil.Add(QueryParameters, "AccountDescription", value);
+				instanceClass = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceClass", value);
 			}
 		}
 
-		public string AccountName
+		public string SecurityToken
 		{
 			get
 			{
-				return accountName;
+				return securityToken;
 			}
 			set	
 			{
-				accountName = value;
-				DictionaryUtil.Add(QueryParameters, "AccountName", value);
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -147,22 +131,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string CharacterType
-		{
-			get
-			{
-				return characterType;
-			}
-			set	
-			{
-				characterType = value;
-				DictionaryUtil.Add(QueryParameters, "CharacterType", value);
-			}
-		}
-
-        public override ModifyAccountDescriptionResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeDBInstanceSpecInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyAccountDescriptionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDBInstanceSpecInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
