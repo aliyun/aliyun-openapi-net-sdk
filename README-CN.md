@@ -13,7 +13,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/aliyun/aliyun-openapi-net-sdk/blob/master/LICENSE)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Faliyun%2Faliyun-openapi-net-sdk.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Faliyun%2Faliyun-openapi-net-sdk?ref=badge_shield)
 
-欢迎使用 Alibaba Cloud SDK for .NET ，让您不用复杂编程即可访问云服务器、云监控等多个阿里云服务。
+阿里云 V1.0 SDK 即将进入基础安全维护阶段，不再建议使用，建议使用 V2.0 SDK。
 
 ## 使用诊断
 

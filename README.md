@@ -13,7 +13,7 @@ English | [简体中文](./README-CN.md)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/aliyun/aliyun-openapi-net-sdk/blob/master/LICENSE)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Faliyun%2Faliyun-openapi-net-sdk.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Faliyun%2Faliyun-openapi-net-sdk?ref=badge_shield)
 
-The Alibaba Cloud SDK for .NET allows you to access Alibaba Cloud services such as Elastic Compute Service (ECS), Server Load Balancer (SLB), CloudMonitor, etc. You can access Alibaba Cloud services without the need to handle API related tasks, such as signing and constructing your requests.
+The Alibaba Cloud V1.0 SDK will soon enter the Basic Security Maintenance phase and is no longer recommended for use. It is suggested to use the V2.0 SDK instead.
 
 ## Troubleshoot
 
