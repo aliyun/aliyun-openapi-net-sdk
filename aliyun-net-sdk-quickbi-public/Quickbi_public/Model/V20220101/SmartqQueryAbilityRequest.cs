@@ -32,7 +32,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
         public SmartqQueryAbilityRequest()
             : base("quickbi-public", "2022-01-01", "SmartqQueryAbility", "2.2.0", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 

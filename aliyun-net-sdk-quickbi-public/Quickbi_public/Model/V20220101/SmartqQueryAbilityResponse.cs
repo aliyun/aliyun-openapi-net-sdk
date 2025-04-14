@@ -72,6 +72,10 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 			private string chartType;
 
+			private string logicSql;
+
+			private string conclusionText;
+
 			private List<SmartqQueryAbility_MetaTypeItem> metaType;
 
 			private List<SmartqQueryAbility_ValuesItem> values;
@@ -85,6 +89,30 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					chartType = value;
+				}
+			}
+
+			public string LogicSql
+			{
+				get
+				{
+					return logicSql;
+				}
+				set	
+				{
+					logicSql = value;
+				}
+			}
+
+			public string ConclusionText
+			{
+				get
+				{
+					return conclusionText;
+				}
+				set	
+				{
+					conclusionText = value;
 				}
 			}
 
