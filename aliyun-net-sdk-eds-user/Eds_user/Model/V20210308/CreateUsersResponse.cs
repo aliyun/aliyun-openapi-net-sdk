@@ -27,6 +27,8 @@ namespace Aliyun.Acs.eds_user.Model.V20210308
 
 		private string requestId;
 
+		private bool? allSucceed;
+
 		private CreateUsers_CreateResult createResult;
 
 		public string RequestId
@@ -38,6 +40,18 @@ namespace Aliyun.Acs.eds_user.Model.V20210308
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? AllSucceed
+		{
+			get
+			{
+				return allSucceed;
+			}
+			set	
+			{
+				allSucceed = value;
 			}
 		}
 

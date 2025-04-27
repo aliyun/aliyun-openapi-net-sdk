@@ -32,6 +32,7 @@ namespace Aliyun.Acs.eds_user.Transform.V20210308
 
 			createUsersResponse.HttpResponse = _ctx.HttpResponse;
 			createUsersResponse.RequestId = _ctx.StringValue("CreateUsers.RequestId");
+			createUsersResponse.AllSucceed = _ctx.BooleanValue("CreateUsers.AllSucceed");
 
 			CreateUsersResponse.CreateUsers_CreateResult createResult = new CreateUsersResponse.CreateUsers_CreateResult();
 
