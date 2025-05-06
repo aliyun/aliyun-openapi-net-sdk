@@ -161,6 +161,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string osVersion;
 
+		private string autoUpgradeMinorVersion;
+
 		private string burstingEnabled;
 
 		private string rowCompression;
@@ -170,6 +172,10 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private int? cnNodeCount;
 
 		private int? dnNodeCount;
+
+		private string documentDB;
+
+		private string backupDowngradeLevel;
 
 		private List<DescribeDBClusterAttribute_DBNode> dBNodes;
 
@@ -993,6 +999,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string AutoUpgradeMinorVersion
+		{
+			get
+			{
+				return autoUpgradeMinorVersion;
+			}
+			set	
+			{
+				autoUpgradeMinorVersion = value;
+			}
+		}
+
 		public string BurstingEnabled
 		{
 			get
@@ -1050,6 +1068,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				dnNodeCount = value;
+			}
+		}
+
+		public string DocumentDB
+		{
+			get
+			{
+				return documentDB;
+			}
+			set	
+			{
+				documentDB = value;
+			}
+		}
+
+		public string BackupDowngradeLevel
+		{
+			get
+			{
+				return backupDowngradeLevel;
+			}
+			set	
+			{
+				backupDowngradeLevel = value;
 			}
 		}
 
@@ -1136,7 +1178,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string orca;
 
-			private string mirrorInsName;
+			private string osVersion;
 
 			private string multiMasterLocalStandby;
 
@@ -1163,6 +1205,12 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			private long? blktagTotal;
 
 			private long? blktagUsed;
+
+			private string subGroupDescription;
+
+			private string mirrorInsName;
+
+			private string architecture;
 
 			public string CreationTime
 			{
@@ -1428,15 +1476,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string MirrorInsName
+			public string OsVersion
 			{
 				get
 				{
-					return mirrorInsName;
+					return osVersion;
 				}
 				set	
 				{
-					mirrorInsName = value;
+					osVersion = value;
 				}
 			}
 
@@ -1593,6 +1641,42 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					blktagUsed = value;
+				}
+			}
+
+			public string SubGroupDescription
+			{
+				get
+				{
+					return subGroupDescription;
+				}
+				set	
+				{
+					subGroupDescription = value;
+				}
+			}
+
+			public string MirrorInsName
+			{
+				get
+				{
+					return mirrorInsName;
+				}
+				set	
+				{
+					mirrorInsName = value;
+				}
+			}
+
+			public string Architecture
+			{
+				get
+				{
+					return architecture;
+				}
+				set	
+				{
+					architecture = value;
 				}
 			}
 		}

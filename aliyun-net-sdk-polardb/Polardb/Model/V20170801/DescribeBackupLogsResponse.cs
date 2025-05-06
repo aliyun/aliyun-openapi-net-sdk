@@ -114,6 +114,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string backupLogName;
 
+			private string dBInstanceName;
+
 			public string BackupLogId
 			{
 				get
@@ -207,6 +209,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					backupLogName = value;
+				}
+			}
+
+			public string DBInstanceName
+			{
+				get
+				{
+					return dBInstanceName;
+				}
+				set	
+				{
+					dBInstanceName = value;
 				}
 			}
 		}

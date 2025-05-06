@@ -56,8 +56,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		public class DescribeDBClusterEndpoints_DBEndpoint
 		{
 
-			private string nodeWithRoles;
-
 			private string nodes;
 
 			private string readWriteMode;
@@ -80,19 +78,11 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string polarSccWaitTimeout;
 
-			private List<DescribeDBClusterEndpoints_Address> addressItems;
+			private string nodeWithRoles;
 
-			public string NodeWithRoles
-			{
-				get
-				{
-					return nodeWithRoles;
-				}
-				set	
-				{
-					nodeWithRoles = value;
-				}
-			}
+			private string consistLevelControlVersion;
+
+			private List<DescribeDBClusterEndpoints_Address> addressItems;
 
 			public string Nodes
 			{
@@ -223,6 +213,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					polarSccWaitTimeout = value;
+				}
+			}
+
+			public string NodeWithRoles
+			{
+				get
+				{
+					return nodeWithRoles;
+				}
+				set	
+				{
+					nodeWithRoles = value;
+				}
+			}
+
+			public string ConsistLevelControlVersion
+			{
+				get
+				{
+					return consistLevelControlVersion;
+				}
+				set	
+				{
+					consistLevelControlVersion = value;
 				}
 			}
 
