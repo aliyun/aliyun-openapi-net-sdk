@@ -195,6 +195,8 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 				private string isDefend;
 
+				private string extendContent;
+
 				private List<DescribeAlerts_AlertInfoListItem> alertInfoList;
 
 				public long? Id
@@ -590,6 +592,18 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 					set	
 					{
 						isDefend = value;
+					}
+				}
+
+				public string ExtendContent
+				{
+					get
+					{
+						return extendContent;
+					}
+					set	
+					{
+						extendContent = value;
 					}
 				}
 
