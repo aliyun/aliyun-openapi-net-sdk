@@ -141,6 +141,12 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 				private string timeExpression;
 
+				private string groupId;
+
+				private string _namespace;
+
+				private string maxConcurrency;
+
 				public long? WorkflowId
 				{
 					get
@@ -210,6 +216,42 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					set	
 					{
 						timeExpression = value;
+					}
+				}
+
+				public string GroupId
+				{
+					get
+					{
+						return groupId;
+					}
+					set	
+					{
+						groupId = value;
+					}
+				}
+
+				public string _Namespace
+				{
+					get
+					{
+						return _namespace;
+					}
+					set	
+					{
+						_namespace = value;
+					}
+				}
+
+				public string MaxConcurrency
+				{
+					get
+					{
+						return maxConcurrency;
+					}
+					set	
+					{
+						maxConcurrency = value;
 					}
 				}
 			}

@@ -45,6 +45,9 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			workFlowInfo.Status = _ctx.StringValue("GetWorkFlow.Data.WorkFlowInfo.Status");
 			workFlowInfo.TimeType = _ctx.StringValue("GetWorkFlow.Data.WorkFlowInfo.TimeType");
 			workFlowInfo.TimeExpression = _ctx.StringValue("GetWorkFlow.Data.WorkFlowInfo.TimeExpression");
+			workFlowInfo.GroupId = _ctx.StringValue("GetWorkFlow.Data.WorkFlowInfo.GroupId");
+			workFlowInfo._Namespace = _ctx.StringValue("GetWorkFlow.Data.WorkFlowInfo.Namespace");
+			workFlowInfo.MaxConcurrency = _ctx.StringValue("GetWorkFlow.Data.WorkFlowInfo.MaxConcurrency");
 			data.WorkFlowInfo = workFlowInfo;
 
 			GetWorkFlowResponse.GetWorkFlow_Data.GetWorkFlow_WorkFlowNodeInfo workFlowNodeInfo = new GetWorkFlowResponse.GetWorkFlow_Data.GetWorkFlow_WorkFlowNodeInfo();

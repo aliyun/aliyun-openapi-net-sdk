@@ -27,32 +27,38 @@ using Aliyun.Acs.schedulerx2.Transform.V20190430;
 
 namespace Aliyun.Acs.schedulerx2.Model.V20190430
 {
-    public class UpdateAppGroupRequest : RpcAcsRequest<UpdateAppGroupResponse>
+    public class UpdateNamespaceRequest : RpcAcsRequest<UpdateNamespaceResponse>
     {
-        public UpdateAppGroupRequest()
-            : base("schedulerx2", "2019-04-30", "UpdateAppGroup", "schedulerx2", "openAPI")
+        public UpdateNamespaceRequest()
+            : base("schedulerx2", "2019-04-30", "UpdateNamespace", "schedulerx2", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointRegionalType, null);
             }
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
+		private string namespaceName;
+
 		private string description;
-
-		private string monitorContactsJson;
-
-		private string groupId;
-
-		private int? appVersion;
-
-		private string monitorConfigJson;
 
 		private string _namespace;
 
-		private int? maxConcurrency;
+		public string NamespaceName
+		{
+			get
+			{
+				return namespaceName;
+			}
+			set	
+			{
+				namespaceName = value;
+				DictionaryUtil.Add(QueryParameters, "NamespaceName", value);
+			}
+		}
 
 		public string Description
 		{
@@ -64,58 +70,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string MonitorContactsJson
-		{
-			get
-			{
-				return monitorContactsJson;
-			}
-			set	
-			{
-				monitorContactsJson = value;
-				DictionaryUtil.Add(QueryParameters, "MonitorContactsJson", value);
-			}
-		}
-
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
-			}
-		}
-
-		public int? AppVersion
-		{
-			get
-			{
-				return appVersion;
-			}
-			set	
-			{
-				appVersion = value;
-				DictionaryUtil.Add(QueryParameters, "AppVersion", value.ToString());
-			}
-		}
-
-		public string MonitorConfigJson
-		{
-			get
-			{
-				return monitorConfigJson;
-			}
-			set	
-			{
-				monitorConfigJson = value;
-				DictionaryUtil.Add(QueryParameters, "MonitorConfigJson", value);
 			}
 		}
 
@@ -132,27 +86,14 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public int? MaxConcurrency
-		{
-			get
-			{
-				return maxConcurrency;
-			}
-			set	
-			{
-				maxConcurrency = value;
-				DictionaryUtil.Add(QueryParameters, "MaxConcurrency", value.ToString());
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override UpdateAppGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateNamespaceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateAppGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateNamespaceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

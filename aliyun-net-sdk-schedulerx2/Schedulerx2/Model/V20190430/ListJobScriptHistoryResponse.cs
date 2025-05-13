@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.schedulerx2.Model.V20190430
 {
-	public class ListGroupsResponse : AcsResponse
+	public class ListJobScriptHistoryResponse : AcsResponse
 	{
 
 		private int? code;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private bool? success;
 
-		private ListGroups_Data data;
+		private ListJobScriptHistory_Data data;
 
 		public int? Code
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public ListGroups_Data Data
+		public ListJobScriptHistory_Data Data
 		{
 			get
 			{
@@ -95,135 +95,79 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public class ListGroups_Data
+		public class ListJobScriptHistory_Data
 		{
 
-			private List<ListGroups_AppGroup> appGroups;
+			private List<ListJobScriptHistory_JobScriptHistoryInfo> jobScriptHistoryInfos;
 
-			public List<ListGroups_AppGroup> AppGroups
+			public List<ListJobScriptHistory_JobScriptHistoryInfo> JobScriptHistoryInfos
 			{
 				get
 				{
-					return appGroups;
+					return jobScriptHistoryInfos;
 				}
 				set	
 				{
-					appGroups = value;
+					jobScriptHistoryInfos = value;
 				}
 			}
 
-			public class ListGroups_AppGroup
+			public class ListJobScriptHistory_JobScriptHistoryInfo
 			{
 
-				private long? appGroupId;
+				private string versionesDescription;
 
-				private string appName;
+				private string creator;
 
-				private string appKey;
+				private string createTime;
 
-				private string description;
+				private string scriptContent;
 
-				private string groupId;
-
-				private string xattrs;
-
-				private int? appVersion;
-
-				private string _namespace;
-
-				public long? AppGroupId
+				public string VersionesDescription
 				{
 					get
 					{
-						return appGroupId;
+						return versionesDescription;
 					}
 					set	
 					{
-						appGroupId = value;
+						versionesDescription = value;
 					}
 				}
 
-				public string AppName
+				public string Creator
 				{
 					get
 					{
-						return appName;
+						return creator;
 					}
 					set	
 					{
-						appName = value;
+						creator = value;
 					}
 				}
 
-				public string AppKey
+				public string CreateTime
 				{
 					get
 					{
-						return appKey;
+						return createTime;
 					}
 					set	
 					{
-						appKey = value;
+						createTime = value;
 					}
 				}
 
-				public string Description
+				public string ScriptContent
 				{
 					get
 					{
-						return description;
+						return scriptContent;
 					}
 					set	
 					{
-						description = value;
-					}
-				}
-
-				public string GroupId
-				{
-					get
-					{
-						return groupId;
-					}
-					set	
-					{
-						groupId = value;
-					}
-				}
-
-				public string Xattrs
-				{
-					get
-					{
-						return xattrs;
-					}
-					set	
-					{
-						xattrs = value;
-					}
-				}
-
-				public int? AppVersion
-				{
-					get
-					{
-						return appVersion;
-					}
-					set	
-					{
-						appVersion = value;
-					}
-				}
-
-				public string _Namespace
-				{
-					get
-					{
-						return _namespace;
-					}
-					set	
-					{
-						_namespace = value;
+						scriptContent = value;
 					}
 				}
 			}

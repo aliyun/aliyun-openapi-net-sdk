@@ -128,6 +128,10 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 			private string appVersion;
 
+			private string _namespace;
+
+			private string monitorContactsJson;
+
 			public string AppName
 			{
 				get
@@ -305,6 +309,30 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 				set	
 				{
 					appVersion = value;
+				}
+			}
+
+			public string _Namespace
+			{
+				get
+				{
+					return _namespace;
+				}
+				set	
+				{
+					_namespace = value;
+				}
+			}
+
+			public string MonitorContactsJson
+			{
+				get
+				{
+					return monitorContactsJson;
+				}
+				set	
+				{
+					monitorContactsJson = value;
 				}
 			}
 		}

@@ -54,6 +54,8 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private int? dispatcherSize;
 
+		private int? priority;
+
 		private string jobType;
 
 		private int? taskAttemptInterval;
@@ -198,6 +200,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				dispatcherSize = value;
 				DictionaryUtil.Add(BodyParameters, "DispatcherSize", value.ToString());
+			}
+		}
+
+		public int? Priority
+		{
+			get
+			{
+				return priority;
+			}
+			set	
+			{
+				priority = value;
+				DictionaryUtil.Add(QueryParameters, "Priority", value.ToString());
 			}
 		}
 

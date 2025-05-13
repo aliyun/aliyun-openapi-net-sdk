@@ -27,56 +27,55 @@ using Aliyun.Acs.schedulerx2.Transform.V20190430;
 
 namespace Aliyun.Acs.schedulerx2.Model.V20190430
 {
-    public class UpdateAppGroupRequest : RpcAcsRequest<UpdateAppGroupResponse>
+    public class UpdateJobScriptRequest : RpcAcsRequest<UpdateJobScriptResponse>
     {
-        public UpdateAppGroupRequest()
-            : base("schedulerx2", "2019-04-30", "UpdateAppGroup", "schedulerx2", "openAPI")
+        public UpdateJobScriptRequest()
+            : base("schedulerx2", "2019-04-30", "UpdateJobScript", "schedulerx2", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointRegionalType, null);
             }
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private string description;
+		private string namespaceSource;
 
-		private string monitorContactsJson;
+		private long? jobId;
 
 		private string groupId;
 
-		private int? appVersion;
-
-		private string monitorConfigJson;
-
 		private string _namespace;
 
-		private int? maxConcurrency;
+		private string scriptContent;
 
-		public string Description
+		private string versionDescription;
+
+		public string NamespaceSource
 		{
 			get
 			{
-				return description;
+				return namespaceSource;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
+				namespaceSource = value;
+				DictionaryUtil.Add(BodyParameters, "NamespaceSource", value);
 			}
 		}
 
-		public string MonitorContactsJson
+		public long? JobId
 		{
 			get
 			{
-				return monitorContactsJson;
+				return jobId;
 			}
 			set	
 			{
-				monitorContactsJson = value;
-				DictionaryUtil.Add(QueryParameters, "MonitorContactsJson", value);
+				jobId = value;
+				DictionaryUtil.Add(BodyParameters, "JobId", value.ToString());
 			}
 		}
 
@@ -89,33 +88,7 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
-			}
-		}
-
-		public int? AppVersion
-		{
-			get
-			{
-				return appVersion;
-			}
-			set	
-			{
-				appVersion = value;
-				DictionaryUtil.Add(QueryParameters, "AppVersion", value.ToString());
-			}
-		}
-
-		public string MonitorConfigJson
-		{
-			get
-			{
-				return monitorConfigJson;
-			}
-			set	
-			{
-				monitorConfigJson = value;
-				DictionaryUtil.Add(QueryParameters, "MonitorConfigJson", value);
+				DictionaryUtil.Add(BodyParameters, "GroupId", value);
 			}
 		}
 
@@ -128,20 +101,33 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				_namespace = value;
-				DictionaryUtil.Add(QueryParameters, "Namespace", value);
+				DictionaryUtil.Add(BodyParameters, "Namespace", value);
 			}
 		}
 
-		public int? MaxConcurrency
+		public string ScriptContent
 		{
 			get
 			{
-				return maxConcurrency;
+				return scriptContent;
 			}
 			set	
 			{
-				maxConcurrency = value;
-				DictionaryUtil.Add(QueryParameters, "MaxConcurrency", value.ToString());
+				scriptContent = value;
+				DictionaryUtil.Add(BodyParameters, "ScriptContent", value);
+			}
+		}
+
+		public string VersionDescription
+		{
+			get
+			{
+				return versionDescription;
+			}
+			set	
+			{
+				versionDescription = value;
+				DictionaryUtil.Add(BodyParameters, "VersionDescription", value);
 			}
 		}
 
@@ -150,9 +136,9 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			return false;
 		}
 
-        public override UpdateAppGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateJobScriptResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateAppGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateJobScriptResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -52,6 +52,8 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			data.AppKey = _ctx.StringValue("GetAppGroup.Data.AppKey");
 			data.Xattrs = _ctx.StringValue("GetAppGroup.Data.Xattrs");
 			data.AppVersion = _ctx.StringValue("GetAppGroup.Data.AppVersion");
+			data._Namespace = _ctx.StringValue("GetAppGroup.Data.Namespace");
+			data.MonitorContactsJson = _ctx.StringValue("GetAppGroup.Data.MonitorContactsJson");
 			getAppGroupResponse.Data = data;
         
 			return getAppGroupResponse;

@@ -48,6 +48,7 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 				appGroup.GroupId = _ctx.StringValue("ListGroups.Data.AppGroups["+ i +"].GroupId");
 				appGroup.Xattrs = _ctx.StringValue("ListGroups.Data.AppGroups["+ i +"].Xattrs");
 				appGroup.AppVersion = _ctx.IntegerValue("ListGroups.Data.AppGroups["+ i +"].AppVersion");
+				appGroup._Namespace = _ctx.StringValue("ListGroups.Data.AppGroups["+ i +"].Namespace");
 
 				data_appGroups.Add(appGroup);
 			}
