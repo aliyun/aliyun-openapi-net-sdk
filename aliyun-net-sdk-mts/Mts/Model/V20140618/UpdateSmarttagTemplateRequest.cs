@@ -50,6 +50,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string scene;
 
+		private string templateConfig;
+
 		private string faceCustomParamsConfig;
 
 		private string templateName;
@@ -138,6 +140,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				scene = value;
 				DictionaryUtil.Add(QueryParameters, "Scene", value);
+			}
+		}
+
+		public string TemplateConfig
+		{
+			get
+			{
+				return templateConfig;
+			}
+			set	
+			{
+				templateConfig = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateConfig", value);
 			}
 		}
 

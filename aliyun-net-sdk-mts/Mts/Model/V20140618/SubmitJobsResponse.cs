@@ -56,25 +56,13 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		public class SubmitJobs_JobResult
 		{
 
-			private bool? success;
-
 			private string code;
 
 			private string message;
 
-			private SubmitJobs_Job job;
+			private bool? success;
 
-			public bool? Success
-			{
-				get
-				{
-					return success;
-				}
-				set	
-				{
-					success = value;
-				}
-			}
+			private SubmitJobs_Job job;
 
 			public string Code
 			{
@@ -100,6 +88,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
+			public bool? Success
+			{
+				get
+				{
+					return success;
+				}
+				set	
+				{
+					success = value;
+				}
+			}
+
 			public SubmitJobs_Job Job
 			{
 				get
@@ -115,27 +115,39 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			public class SubmitJobs_Job
 			{
 
-				private string creationTime;
+				private string code;
 
-				private long? percent;
+				private string creationTime;
 
 				private string finishTime;
 
-				private string state;
-
 				private string jobId;
-
-				private string code;
 
 				private string message;
 
+				private long? percent;
+
 				private string pipelineId;
 
-				private SubmitJobs_Output output;
+				private string state;
 
 				private SubmitJobs_Input input;
 
 				private SubmitJobs_MNSMessageResult mNSMessageResult;
+
+				private SubmitJobs_Output output;
+
+				public string Code
+				{
+					get
+					{
+						return code;
+					}
+					set	
+					{
+						code = value;
+					}
+				}
 
 				public string CreationTime
 				{
@@ -146,18 +158,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						creationTime = value;
-					}
-				}
-
-				public long? Percent
-				{
-					get
-					{
-						return percent;
-					}
-					set	
-					{
-						percent = value;
 					}
 				}
 
@@ -173,18 +173,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public string State
-				{
-					get
-					{
-						return state;
-					}
-					set	
-					{
-						state = value;
-					}
-				}
-
 				public string JobId
 				{
 					get
@@ -194,18 +182,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						jobId = value;
-					}
-				}
-
-				public string Code
-				{
-					get
-					{
-						return code;
-					}
-					set	
-					{
-						code = value;
 					}
 				}
 
@@ -221,6 +197,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
+				public long? Percent
+				{
+					get
+					{
+						return percent;
+					}
+					set	
+					{
+						percent = value;
+					}
+				}
+
 				public string PipelineId
 				{
 					get
@@ -233,15 +221,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public SubmitJobs_Output Output
+				public string State
 				{
 					get
 					{
-						return output;
+						return state;
 					}
 					set	
 					{
-						output = value;
+						state = value;
 					}
 				}
 
@@ -269,74 +257,178 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
+				public SubmitJobs_Output Output
+				{
+					get
+					{
+						return output;
+					}
+					set	
+					{
+						output = value;
+					}
+				}
+
+				public class SubmitJobs_Input
+				{
+
+					private string bucket;
+
+					private string location;
+
+					private string _object;
+
+					public string Bucket
+					{
+						get
+						{
+							return bucket;
+						}
+						set	
+						{
+							bucket = value;
+						}
+					}
+
+					public string Location
+					{
+						get
+						{
+							return location;
+						}
+						set	
+						{
+							location = value;
+						}
+					}
+
+					public string _Object
+					{
+						get
+						{
+							return _object;
+						}
+						set	
+						{
+							_object = value;
+						}
+					}
+				}
+
+				public class SubmitJobs_MNSMessageResult
+				{
+
+					private string errorCode;
+
+					private string errorMessage;
+
+					private string messageId;
+
+					public string ErrorCode
+					{
+						get
+						{
+							return errorCode;
+						}
+						set	
+						{
+							errorCode = value;
+						}
+					}
+
+					public string ErrorMessage
+					{
+						get
+						{
+							return errorMessage;
+						}
+						set	
+						{
+							errorMessage = value;
+						}
+					}
+
+					public string MessageId
+					{
+						get
+						{
+							return messageId;
+						}
+						set	
+						{
+							messageId = value;
+						}
+					}
+				}
+
 				public class SubmitJobs_Output
 				{
 
-					private string waterMarkConfigUrl;
+					private string audioStreamMap;
 
 					private string deWatermark;
 
+					private string mergeConfigUrl;
+
 					private string priority;
 
-					private string audioStreamMap;
+					private string rotate;
+
+					private string templateId;
 
 					private string userData;
 
 					private string videoStreamMap;
 
-					private string rotate;
-
-					private string mergeConfigUrl;
-
-					private string templateId;
-
-					private List<SubmitJobs_WaterMark> waterMarkList;
-
-					private List<SubmitJobs_Merge> mergeList;
-
-					private List<SubmitJobs_OutSubtitle> outSubtitleList;
+					private string waterMarkConfigUrl;
 
 					private List<SubmitJobs_Amix> amixList;
 
+					private List<SubmitJobs_Merge> mergeList;
+
 					private List<SubmitJobs_Opening> openingList;
+
+					private List<SubmitJobs_OutSubtitle> outSubtitleList;
 
 					private List<SubmitJobs_TailSlate> tailSlateList;
 
-					private SubmitJobs_Video video;
+					private List<SubmitJobs_WaterMark> waterMarkList;
 
-					private SubmitJobs_TransConfig transConfig;
+					private SubmitJobs_Audio audio;
+
+					private SubmitJobs_Clip clip;
+
+					private SubmitJobs_Container container;
+
+					private SubmitJobs_DigiWaterMark digiWaterMark;
 
 					private SubmitJobs_Encryption encryption;
 
 					private SubmitJobs_M3U8NonStandardSupport m3U8NonStandardSupport;
 
-					private SubmitJobs_Audio audio;
-
-					private SubmitJobs_SuperReso superReso;
-
-					private SubmitJobs_DigiWaterMark digiWaterMark;
+					private SubmitJobs_MuxConfig muxConfig;
 
 					private SubmitJobs_OutputFile outputFile;
 
-					private SubmitJobs_Container container;
-
-					private SubmitJobs_Clip clip;
-
-					private SubmitJobs_MuxConfig muxConfig;
+					private SubmitJobs_Properties properties;
 
 					private SubmitJobs_SubtitleConfig subtitleConfig;
 
-					private SubmitJobs_Properties properties;
+					private SubmitJobs_SuperReso superReso;
 
-					public string WaterMarkConfigUrl
+					private SubmitJobs_TransConfig transConfig;
+
+					private SubmitJobs_Video video;
+
+					public string AudioStreamMap
 					{
 						get
 						{
-							return waterMarkConfigUrl;
+							return audioStreamMap;
 						}
 						set	
 						{
-							waterMarkConfigUrl = value;
+							audioStreamMap = value;
 						}
 					}
 
@@ -352,6 +444,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
+					public string MergeConfigUrl
+					{
+						get
+						{
+							return mergeConfigUrl;
+						}
+						set	
+						{
+							mergeConfigUrl = value;
+						}
+					}
+
 					public string Priority
 					{
 						get
@@ -364,15 +468,27 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public string AudioStreamMap
+					public string Rotate
 					{
 						get
 						{
-							return audioStreamMap;
+							return rotate;
 						}
 						set	
 						{
-							audioStreamMap = value;
+							rotate = value;
+						}
+					}
+
+					public string TemplateId
+					{
+						get
+						{
+							return templateId;
+						}
+						set	
+						{
+							templateId = value;
 						}
 					}
 
@@ -400,75 +516,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public string Rotate
+					public string WaterMarkConfigUrl
 					{
 						get
 						{
-							return rotate;
+							return waterMarkConfigUrl;
 						}
 						set	
 						{
-							rotate = value;
-						}
-					}
-
-					public string MergeConfigUrl
-					{
-						get
-						{
-							return mergeConfigUrl;
-						}
-						set	
-						{
-							mergeConfigUrl = value;
-						}
-					}
-
-					public string TemplateId
-					{
-						get
-						{
-							return templateId;
-						}
-						set	
-						{
-							templateId = value;
-						}
-					}
-
-					public List<SubmitJobs_WaterMark> WaterMarkList
-					{
-						get
-						{
-							return waterMarkList;
-						}
-						set	
-						{
-							waterMarkList = value;
-						}
-					}
-
-					public List<SubmitJobs_Merge> MergeList
-					{
-						get
-						{
-							return mergeList;
-						}
-						set	
-						{
-							mergeList = value;
-						}
-					}
-
-					public List<SubmitJobs_OutSubtitle> OutSubtitleList
-					{
-						get
-						{
-							return outSubtitleList;
-						}
-						set	
-						{
-							outSubtitleList = value;
+							waterMarkConfigUrl = value;
 						}
 					}
 
@@ -484,6 +540,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
+					public List<SubmitJobs_Merge> MergeList
+					{
+						get
+						{
+							return mergeList;
+						}
+						set	
+						{
+							mergeList = value;
+						}
+					}
+
 					public List<SubmitJobs_Opening> OpeningList
 					{
 						get
@@ -493,6 +561,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						set	
 						{
 							openingList = value;
+						}
+					}
+
+					public List<SubmitJobs_OutSubtitle> OutSubtitleList
+					{
+						get
+						{
+							return outSubtitleList;
+						}
+						set	
+						{
+							outSubtitleList = value;
 						}
 					}
 
@@ -508,27 +588,63 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public SubmitJobs_Video Video
+					public List<SubmitJobs_WaterMark> WaterMarkList
 					{
 						get
 						{
-							return video;
+							return waterMarkList;
 						}
 						set	
 						{
-							video = value;
+							waterMarkList = value;
 						}
 					}
 
-					public SubmitJobs_TransConfig TransConfig
+					public SubmitJobs_Audio Audio
 					{
 						get
 						{
-							return transConfig;
+							return audio;
 						}
 						set	
 						{
-							transConfig = value;
+							audio = value;
+						}
+					}
+
+					public SubmitJobs_Clip Clip
+					{
+						get
+						{
+							return clip;
+						}
+						set	
+						{
+							clip = value;
+						}
+					}
+
+					public SubmitJobs_Container Container
+					{
+						get
+						{
+							return container;
+						}
+						set	
+						{
+							container = value;
+						}
+					}
+
+					public SubmitJobs_DigiWaterMark DigiWaterMark
+					{
+						get
+						{
+							return digiWaterMark;
+						}
+						set	
+						{
+							digiWaterMark = value;
 						}
 					}
 
@@ -556,39 +672,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public SubmitJobs_Audio Audio
+					public SubmitJobs_MuxConfig MuxConfig
 					{
 						get
 						{
-							return audio;
+							return muxConfig;
 						}
 						set	
 						{
-							audio = value;
-						}
-					}
-
-					public SubmitJobs_SuperReso SuperReso
-					{
-						get
-						{
-							return superReso;
-						}
-						set	
-						{
-							superReso = value;
-						}
-					}
-
-					public SubmitJobs_DigiWaterMark DigiWaterMark
-					{
-						get
-						{
-							return digiWaterMark;
-						}
-						set	
-						{
-							digiWaterMark = value;
+							muxConfig = value;
 						}
 					}
 
@@ -604,39 +696,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public SubmitJobs_Container Container
+					public SubmitJobs_Properties Properties
 					{
 						get
 						{
-							return container;
+							return properties;
 						}
 						set	
 						{
-							container = value;
-						}
-					}
-
-					public SubmitJobs_Clip Clip
-					{
-						get
-						{
-							return clip;
-						}
-						set	
-						{
-							clip = value;
-						}
-					}
-
-					public SubmitJobs_MuxConfig MuxConfig
-					{
-						get
-						{
-							return muxConfig;
-						}
-						set	
-						{
-							muxConfig = value;
+							properties = value;
 						}
 					}
 
@@ -652,396 +720,54 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public SubmitJobs_Properties Properties
+					public SubmitJobs_SuperReso SuperReso
 					{
 						get
 						{
-							return properties;
+							return superReso;
 						}
 						set	
 						{
-							properties = value;
+							superReso = value;
 						}
 					}
 
-					public class SubmitJobs_WaterMark
+					public SubmitJobs_TransConfig TransConfig
 					{
-
-						private string type;
-
-						private string referPos;
-
-						private string dx;
-
-						private string width;
-
-						private string height;
-
-						private string waterMarkTemplateId;
-
-						private string dy;
-
-						private SubmitJobs_InputFile inputFile;
-
-						public string Type
+						get
 						{
-							get
-							{
-								return type;
-							}
-							set	
-							{
-								type = value;
-							}
+							return transConfig;
 						}
-
-						public string ReferPos
+						set	
 						{
-							get
-							{
-								return referPos;
-							}
-							set	
-							{
-								referPos = value;
-							}
-						}
-
-						public string Dx
-						{
-							get
-							{
-								return dx;
-							}
-							set	
-							{
-								dx = value;
-							}
-						}
-
-						public string Width
-						{
-							get
-							{
-								return width;
-							}
-							set	
-							{
-								width = value;
-							}
-						}
-
-						public string Height
-						{
-							get
-							{
-								return height;
-							}
-							set	
-							{
-								height = value;
-							}
-						}
-
-						public string WaterMarkTemplateId
-						{
-							get
-							{
-								return waterMarkTemplateId;
-							}
-							set	
-							{
-								waterMarkTemplateId = value;
-							}
-						}
-
-						public string Dy
-						{
-							get
-							{
-								return dy;
-							}
-							set	
-							{
-								dy = value;
-							}
-						}
-
-						public SubmitJobs_InputFile InputFile
-						{
-							get
-							{
-								return inputFile;
-							}
-							set	
-							{
-								inputFile = value;
-							}
-						}
-
-						public class SubmitJobs_InputFile
-						{
-
-							private string _object;
-
-							private string location;
-
-							private string bucket;
-
-							public string _Object
-							{
-								get
-								{
-									return _object;
-								}
-								set	
-								{
-									_object = value;
-								}
-							}
-
-							public string Location
-							{
-								get
-								{
-									return location;
-								}
-								set	
-								{
-									location = value;
-								}
-							}
-
-							public string Bucket
-							{
-								get
-								{
-									return bucket;
-								}
-								set	
-								{
-									bucket = value;
-								}
-							}
+							transConfig = value;
 						}
 					}
 
-					public class SubmitJobs_Merge
+					public SubmitJobs_Video Video
 					{
-
-						private string start;
-
-						private string roleArn;
-
-						private string mergeURL;
-
-						private string duration;
-
-						public string Start
+						get
 						{
-							get
-							{
-								return start;
-							}
-							set	
-							{
-								start = value;
-							}
+							return video;
 						}
-
-						public string RoleArn
+						set	
 						{
-							get
-							{
-								return roleArn;
-							}
-							set	
-							{
-								roleArn = value;
-							}
-						}
-
-						public string MergeURL
-						{
-							get
-							{
-								return mergeURL;
-							}
-							set	
-							{
-								mergeURL = value;
-							}
-						}
-
-						public string Duration
-						{
-							get
-							{
-								return duration;
-							}
-							set	
-							{
-								duration = value;
-							}
-						}
-					}
-
-					public class SubmitJobs_OutSubtitle
-					{
-
-						private string map;
-
-						private bool? success;
-
-						private string message;
-
-						private SubmitJobs_OutSubtitleFile outSubtitleFile;
-
-						public string Map
-						{
-							get
-							{
-								return map;
-							}
-							set	
-							{
-								map = value;
-							}
-						}
-
-						public bool? Success
-						{
-							get
-							{
-								return success;
-							}
-							set	
-							{
-								success = value;
-							}
-						}
-
-						public string Message
-						{
-							get
-							{
-								return message;
-							}
-							set	
-							{
-								message = value;
-							}
-						}
-
-						public SubmitJobs_OutSubtitleFile OutSubtitleFile
-						{
-							get
-							{
-								return outSubtitleFile;
-							}
-							set	
-							{
-								outSubtitleFile = value;
-							}
-						}
-
-						public class SubmitJobs_OutSubtitleFile
-						{
-
-							private string roleArn;
-
-							private string _object;
-
-							private string location;
-
-							private string bucket;
-
-							public string RoleArn
-							{
-								get
-								{
-									return roleArn;
-								}
-								set	
-								{
-									roleArn = value;
-								}
-							}
-
-							public string _Object
-							{
-								get
-								{
-									return _object;
-								}
-								set	
-								{
-									_object = value;
-								}
-							}
-
-							public string Location
-							{
-								get
-								{
-									return location;
-								}
-								set	
-								{
-									location = value;
-								}
-							}
-
-							public string Bucket
-							{
-								get
-								{
-									return bucket;
-								}
-								set	
-								{
-									bucket = value;
-								}
-							}
+							video = value;
 						}
 					}
 
 					public class SubmitJobs_Amix
 					{
 
-						private string map;
-
-						private string start;
-
 						private string amixURL;
 
 						private string duration;
 
+						private string map;
+
 						private string mixDurMode;
 
-						public string Map
-						{
-							get
-							{
-								return map;
-							}
-							set	
-							{
-								map = value;
-							}
-						}
-
-						public string Start
-						{
-							get
-							{
-								return start;
-							}
-							set	
-							{
-								start = value;
-							}
-						}
+						private string start;
 
 						public string AmixURL
 						{
@@ -1067,6 +793,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
+						public string Map
+						{
+							get
+							{
+								return map;
+							}
+							set	
+							{
+								map = value;
+							}
+						}
+
 						public string MixDurMode
 						{
 							get
@@ -1078,18 +816,126 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 								mixDurMode = value;
 							}
 						}
+
+						public string Start
+						{
+							get
+							{
+								return start;
+							}
+							set	
+							{
+								start = value;
+							}
+						}
+					}
+
+					public class SubmitJobs_Merge
+					{
+
+						private string duration;
+
+						private string mergeURL;
+
+						private string roleArn;
+
+						private string start;
+
+						public string Duration
+						{
+							get
+							{
+								return duration;
+							}
+							set	
+							{
+								duration = value;
+							}
+						}
+
+						public string MergeURL
+						{
+							get
+							{
+								return mergeURL;
+							}
+							set	
+							{
+								mergeURL = value;
+							}
+						}
+
+						public string RoleArn
+						{
+							get
+							{
+								return roleArn;
+							}
+							set	
+							{
+								roleArn = value;
+							}
+						}
+
+						public string Start
+						{
+							get
+							{
+								return start;
+							}
+							set	
+							{
+								start = value;
+							}
+						}
 					}
 
 					public class SubmitJobs_Opening
 					{
 
-						private string openUrl;
+						private string height;
 
 						private string start;
 
 						private string width;
 
-						private string height;
+						private string openUrl;
+
+						public string Height
+						{
+							get
+							{
+								return height;
+							}
+							set	
+							{
+								height = value;
+							}
+						}
+
+						public string Start
+						{
+							get
+							{
+								return start;
+							}
+							set	
+							{
+								start = value;
+							}
+						}
+
+						public string Width
+						{
+							get
+							{
+								return width;
+							}
+							set	
+							{
+								width = value;
+							}
+						}
 
 						public string OpenUrl
 						{
@@ -1102,40 +948,124 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 								openUrl = value;
 							}
 						}
+					}
 
-						public string Start
+					public class SubmitJobs_OutSubtitle
+					{
+
+						private string map;
+
+						private string message;
+
+						private bool? success;
+
+						private SubmitJobs_OutSubtitleFile outSubtitleFile;
+
+						public string Map
 						{
 							get
 							{
-								return start;
+								return map;
 							}
 							set	
 							{
-								start = value;
+								map = value;
 							}
 						}
 
-						public string Width
+						public string Message
 						{
 							get
 							{
-								return width;
+								return message;
 							}
 							set	
 							{
-								width = value;
+								message = value;
 							}
 						}
 
-						public string Height
+						public bool? Success
 						{
 							get
 							{
-								return height;
+								return success;
 							}
 							set	
 							{
-								height = value;
+								success = value;
+							}
+						}
+
+						public SubmitJobs_OutSubtitleFile OutSubtitleFile
+						{
+							get
+							{
+								return outSubtitleFile;
+							}
+							set	
+							{
+								outSubtitleFile = value;
+							}
+						}
+
+						public class SubmitJobs_OutSubtitleFile
+						{
+
+							private string bucket;
+
+							private string location;
+
+							private string _object;
+
+							private string roleArn;
+
+							public string Bucket
+							{
+								get
+								{
+									return bucket;
+								}
+								set	
+								{
+									bucket = value;
+								}
+							}
+
+							public string Location
+							{
+								get
+								{
+									return location;
+								}
+								set	
+								{
+									location = value;
+								}
+							}
+
+							public string _Object
+							{
+								get
+								{
+									return _object;
+								}
+								set	
+								{
+									_object = value;
+								}
+							}
+
+							public string RoleArn
+							{
+								get
+								{
+									return roleArn;
+								}
+								set	
+								{
+									roleArn = value;
+								}
 							}
 						}
 					}
@@ -1143,31 +1073,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					public class SubmitJobs_TailSlate
 					{
 
-						private string start;
-
 						private string bgColor;
-
-						private bool? isMergeAudio;
-
-						private string width;
-
-						private string height;
 
 						private string blendDuration;
 
+						private string height;
+
+						private bool? isMergeAudio;
+
+						private string start;
+
 						private string tailUrl;
 
-						public string Start
-						{
-							get
-							{
-								return start;
-							}
-							set	
-							{
-								start = value;
-							}
-						}
+						private string width;
 
 						public string BgColor
 						{
@@ -1178,42 +1096,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							set	
 							{
 								bgColor = value;
-							}
-						}
-
-						public bool? IsMergeAudio
-						{
-							get
-							{
-								return isMergeAudio;
-							}
-							set	
-							{
-								isMergeAudio = value;
-							}
-						}
-
-						public string Width
-						{
-							get
-							{
-								return width;
-							}
-							set	
-							{
-								width = value;
-							}
-						}
-
-						public string Height
-						{
-							get
-							{
-								return height;
-							}
-							set	
-							{
-								height = value;
 							}
 						}
 
@@ -1229,6 +1111,42 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
+						public string Height
+						{
+							get
+							{
+								return height;
+							}
+							set	
+							{
+								height = value;
+							}
+						}
+
+						public bool? IsMergeAudio
+						{
+							get
+							{
+								return isMergeAudio;
+							}
+							set	
+							{
+								isMergeAudio = value;
+							}
+						}
+
+						public string Start
+						{
+							get
+							{
+								return start;
+							}
+							set	
+							{
+								start = value;
+							}
+						}
+
 						public string TailUrl
 						{
 							get
@@ -1240,108 +1158,60 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 								tailUrl = value;
 							}
 						}
+
+						public string Width
+						{
+							get
+							{
+								return width;
+							}
+							set	
+							{
+								width = value;
+							}
+						}
 					}
 
-					public class SubmitJobs_Video
+					public class SubmitJobs_WaterMark
 					{
 
-						private string bufsize;
+						private string dx;
 
-						private string degrain;
-
-						private string pixFmt;
-
-						private string pad;
-
-						private string codec;
+						private string dy;
 
 						private string height;
 
-						private string qscale;
+						private string referPos;
 
-						private string crop;
+						private string type;
 
-						private string bitrate;
-
-						private string maxrate;
-
-						private string maxFps;
-
-						private string profile;
-
-						private string crf;
-
-						private string gop;
+						private string waterMarkTemplateId;
 
 						private string width;
 
-						private string fps;
+						private SubmitJobs_InputFile inputFile;
 
-						private string preset;
-
-						private string scanMode;
-
-						private string resoPriority;
-
-						private SubmitJobs_BitrateBnd bitrateBnd;
-
-						public string Bufsize
+						public string Dx
 						{
 							get
 							{
-								return bufsize;
+								return dx;
 							}
 							set	
 							{
-								bufsize = value;
+								dx = value;
 							}
 						}
 
-						public string Degrain
+						public string Dy
 						{
 							get
 							{
-								return degrain;
+								return dy;
 							}
 							set	
 							{
-								degrain = value;
-							}
-						}
-
-						public string PixFmt
-						{
-							get
-							{
-								return pixFmt;
-							}
-							set	
-							{
-								pixFmt = value;
-							}
-						}
-
-						public string Pad
-						{
-							get
-							{
-								return pad;
-							}
-							set	
-							{
-								pad = value;
-							}
-						}
-
-						public string Codec
-						{
-							get
-							{
-								return codec;
-							}
-							set	
-							{
-								codec = value;
+								dy = value;
 							}
 						}
 
@@ -1357,99 +1227,39 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
-						public string Qscale
+						public string ReferPos
 						{
 							get
 							{
-								return qscale;
+								return referPos;
 							}
 							set	
 							{
-								qscale = value;
+								referPos = value;
 							}
 						}
 
-						public string Crop
+						public string Type
 						{
 							get
 							{
-								return crop;
+								return type;
 							}
 							set	
 							{
-								crop = value;
+								type = value;
 							}
 						}
 
-						public string Bitrate
+						public string WaterMarkTemplateId
 						{
 							get
 							{
-								return bitrate;
+								return waterMarkTemplateId;
 							}
 							set	
 							{
-								bitrate = value;
-							}
-						}
-
-						public string Maxrate
-						{
-							get
-							{
-								return maxrate;
-							}
-							set	
-							{
-								maxrate = value;
-							}
-						}
-
-						public string MaxFps
-						{
-							get
-							{
-								return maxFps;
-							}
-							set	
-							{
-								maxFps = value;
-							}
-						}
-
-						public string Profile
-						{
-							get
-							{
-								return profile;
-							}
-							set	
-							{
-								profile = value;
-							}
-						}
-
-						public string Crf
-						{
-							get
-							{
-								return crf;
-							}
-							set	
-							{
-								crf = value;
-							}
-						}
-
-						public string Gop
-						{
-							get
-							{
-								return gop;
-							}
-							set	
-							{
-								gop = value;
+								waterMarkTemplateId = value;
 							}
 						}
 
@@ -1465,229 +1275,287 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
-						public string Fps
+						public SubmitJobs_InputFile InputFile
 						{
 							get
 							{
-								return fps;
+								return inputFile;
 							}
 							set	
 							{
-								fps = value;
+								inputFile = value;
 							}
 						}
 
-						public string Preset
-						{
-							get
-							{
-								return preset;
-							}
-							set	
-							{
-								preset = value;
-							}
-						}
-
-						public string ScanMode
-						{
-							get
-							{
-								return scanMode;
-							}
-							set	
-							{
-								scanMode = value;
-							}
-						}
-
-						public string ResoPriority
-						{
-							get
-							{
-								return resoPriority;
-							}
-							set	
-							{
-								resoPriority = value;
-							}
-						}
-
-						public SubmitJobs_BitrateBnd BitrateBnd
-						{
-							get
-							{
-								return bitrateBnd;
-							}
-							set	
-							{
-								bitrateBnd = value;
-							}
-						}
-
-						public class SubmitJobs_BitrateBnd
+						public class SubmitJobs_InputFile
 						{
 
-							private string max;
+							private string bucket;
 
-							private string min;
+							private string location;
 
-							public string Max
+							private string _object;
+
+							public string Bucket
 							{
 								get
 								{
-									return max;
+									return bucket;
 								}
 								set	
 								{
-									max = value;
+									bucket = value;
 								}
 							}
 
-							public string Min
+							public string Location
 							{
 								get
 								{
-									return min;
+									return location;
 								}
 								set	
 								{
-									min = value;
+									location = value;
+								}
+							}
+
+							public string _Object
+							{
+								get
+								{
+									return _object;
+								}
+								set	
+								{
+									_object = value;
 								}
 							}
 						}
 					}
 
-					public class SubmitJobs_TransConfig
+					public class SubmitJobs_Audio
 					{
 
-						private string isCheckAudioBitrate;
+						private string bitrate;
 
-						private string transMode;
+						private string channels;
 
-						private string isCheckReso;
+						private string codec;
 
-						private string isCheckVideoBitrateFail;
+						private string profile;
 
-						private string adjDarMethod;
+						private string qscale;
 
-						private string isCheckVideoBitrate;
+						private string samplerate;
 
-						private string isCheckResoFail;
+						private SubmitJobs_Volume volume;
 
-						private string isCheckAudioBitrateFail;
-
-						public string IsCheckAudioBitrate
+						public string Bitrate
 						{
 							get
 							{
-								return isCheckAudioBitrate;
+								return bitrate;
 							}
 							set	
 							{
-								isCheckAudioBitrate = value;
+								bitrate = value;
 							}
 						}
 
-						public string TransMode
+						public string Channels
 						{
 							get
 							{
-								return transMode;
+								return channels;
 							}
 							set	
 							{
-								transMode = value;
+								channels = value;
 							}
 						}
 
-						public string IsCheckReso
+						public string Codec
 						{
 							get
 							{
-								return isCheckReso;
+								return codec;
 							}
 							set	
 							{
-								isCheckReso = value;
+								codec = value;
 							}
 						}
 
-						public string IsCheckVideoBitrateFail
+						public string Profile
 						{
 							get
 							{
-								return isCheckVideoBitrateFail;
+								return profile;
 							}
 							set	
 							{
-								isCheckVideoBitrateFail = value;
+								profile = value;
 							}
 						}
 
-						public string AdjDarMethod
+						public string Qscale
 						{
 							get
 							{
-								return adjDarMethod;
+								return qscale;
 							}
 							set	
 							{
-								adjDarMethod = value;
+								qscale = value;
 							}
 						}
 
-						public string IsCheckVideoBitrate
+						public string Samplerate
 						{
 							get
 							{
-								return isCheckVideoBitrate;
+								return samplerate;
 							}
 							set	
 							{
-								isCheckVideoBitrate = value;
+								samplerate = value;
 							}
 						}
 
-						public string IsCheckResoFail
+						public SubmitJobs_Volume Volume
 						{
 							get
 							{
-								return isCheckResoFail;
+								return volume;
 							}
 							set	
 							{
-								isCheckResoFail = value;
+								volume = value;
 							}
 						}
 
-						public string IsCheckAudioBitrateFail
+						public class SubmitJobs_Volume
 						{
-							get
+
+							private string level;
+
+							private string method;
+
+							public string Level
 							{
-								return isCheckAudioBitrateFail;
+								get
+								{
+									return level;
+								}
+								set	
+								{
+									level = value;
+								}
 							}
-							set	
+
+							public string Method
 							{
-								isCheckAudioBitrateFail = value;
+								get
+								{
+									return method;
+								}
+								set	
+								{
+									method = value;
+								}
 							}
 						}
 					}
 
-					public class SubmitJobs_Encryption
+					public class SubmitJobs_Clip
 					{
+
+						private SubmitJobs_TimeSpan timeSpan;
+
+						public SubmitJobs_TimeSpan TimeSpan
+						{
+							get
+							{
+								return timeSpan;
+							}
+							set	
+							{
+								timeSpan = value;
+							}
+						}
+
+						public class SubmitJobs_TimeSpan
+						{
+
+							private string duration;
+
+							private string seek;
+
+							public string Duration
+							{
+								get
+								{
+									return duration;
+								}
+								set	
+								{
+									duration = value;
+								}
+							}
+
+							public string Seek
+							{
+								get
+								{
+									return seek;
+								}
+								set	
+								{
+									seek = value;
+								}
+							}
+						}
+					}
+
+					public class SubmitJobs_Container
+					{
+
+						private string format;
+
+						public string Format
+						{
+							get
+							{
+								return format;
+							}
+							set	
+							{
+								format = value;
+							}
+						}
+					}
+
+					public class SubmitJobs_DigiWaterMark
+					{
+
+						private string alpha;
 
 						private string type;
 
-						private string key;
+						private SubmitJobs_InputFile1 inputFile1;
 
-						private string keyType;
-
-						private string id;
-
-						private string keyUri;
-
-						private string skipCnt;
+						public string Alpha
+						{
+							get
+							{
+								return alpha;
+							}
+							set	
+							{
+								alpha = value;
+							}
+						}
 
 						public string Type
 						{
@@ -1698,6 +1566,92 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							set	
 							{
 								type = value;
+							}
+						}
+
+						public SubmitJobs_InputFile1 InputFile1
+						{
+							get
+							{
+								return inputFile1;
+							}
+							set	
+							{
+								inputFile1 = value;
+							}
+						}
+
+						public class SubmitJobs_InputFile1
+						{
+
+							private string bucket;
+
+							private string location;
+
+							private string _object;
+
+							public string Bucket
+							{
+								get
+								{
+									return bucket;
+								}
+								set	
+								{
+									bucket = value;
+								}
+							}
+
+							public string Location
+							{
+								get
+								{
+									return location;
+								}
+								set	
+								{
+									location = value;
+								}
+							}
+
+							public string _Object
+							{
+								get
+								{
+									return _object;
+								}
+								set	
+								{
+									_object = value;
+								}
+							}
+						}
+					}
+
+					public class SubmitJobs_Encryption
+					{
+
+						private string id;
+
+						private string key;
+
+						private string keyType;
+
+						private string keyUri;
+
+						private string skipCnt;
+
+						private string type;
+
+						public string Id
+						{
+							get
+							{
+								return id;
+							}
+							set	
+							{
+								id = value;
 							}
 						}
 
@@ -1725,18 +1679,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
-						public string Id
-						{
-							get
-							{
-								return id;
-							}
-							set	
-							{
-								id = value;
-							}
-						}
-
 						public string KeyUri
 						{
 							get
@@ -1758,6 +1700,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							set	
 							{
 								skipCnt = value;
+							}
+						}
+
+						public string Type
+						{
+							get
+							{
+								return type;
+							}
+							set	
+							{
+								type = value;
 							}
 						}
 					}
@@ -1782,21 +1736,9 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						public class SubmitJobs_TS
 						{
 
-							private bool? sizeSupport;
-
 							private bool? md5Support;
 
-							public bool? SizeSupport
-							{
-								get
-								{
-									return sizeSupport;
-								}
-								set	
-								{
-									sizeSupport = value;
-								}
-							}
+							private bool? sizeSupport;
 
 							public bool? Md5Support
 							{
@@ -1809,376 +1751,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 									md5Support = value;
 								}
 							}
-						}
-					}
 
-					public class SubmitJobs_Audio
-					{
-
-						private string profile;
-
-						private string codec;
-
-						private string samplerate;
-
-						private string qscale;
-
-						private string channels;
-
-						private string bitrate;
-
-						private SubmitJobs_Volume volume;
-
-						public string Profile
-						{
-							get
-							{
-								return profile;
-							}
-							set	
-							{
-								profile = value;
-							}
-						}
-
-						public string Codec
-						{
-							get
-							{
-								return codec;
-							}
-							set	
-							{
-								codec = value;
-							}
-						}
-
-						public string Samplerate
-						{
-							get
-							{
-								return samplerate;
-							}
-							set	
-							{
-								samplerate = value;
-							}
-						}
-
-						public string Qscale
-						{
-							get
-							{
-								return qscale;
-							}
-							set	
-							{
-								qscale = value;
-							}
-						}
-
-						public string Channels
-						{
-							get
-							{
-								return channels;
-							}
-							set	
-							{
-								channels = value;
-							}
-						}
-
-						public string Bitrate
-						{
-							get
-							{
-								return bitrate;
-							}
-							set	
-							{
-								bitrate = value;
-							}
-						}
-
-						public SubmitJobs_Volume Volume
-						{
-							get
-							{
-								return volume;
-							}
-							set	
-							{
-								volume = value;
-							}
-						}
-
-						public class SubmitJobs_Volume
-						{
-
-							private string method;
-
-							private string level;
-
-							public string Method
+							public bool? SizeSupport
 							{
 								get
 								{
-									return method;
+									return sizeSupport;
 								}
 								set	
 								{
-									method = value;
-								}
-							}
-
-							public string Level
-							{
-								get
-								{
-									return level;
-								}
-								set	
-								{
-									level = value;
-								}
-							}
-						}
-					}
-
-					public class SubmitJobs_SuperReso
-					{
-
-						private string isHalfSample;
-
-						public string IsHalfSample
-						{
-							get
-							{
-								return isHalfSample;
-							}
-							set	
-							{
-								isHalfSample = value;
-							}
-						}
-					}
-
-					public class SubmitJobs_DigiWaterMark
-					{
-
-						private string type;
-
-						private string alpha;
-
-						private SubmitJobs_InputFile1 inputFile1;
-
-						public string Type
-						{
-							get
-							{
-								return type;
-							}
-							set	
-							{
-								type = value;
-							}
-						}
-
-						public string Alpha
-						{
-							get
-							{
-								return alpha;
-							}
-							set	
-							{
-								alpha = value;
-							}
-						}
-
-						public SubmitJobs_InputFile1 InputFile1
-						{
-							get
-							{
-								return inputFile1;
-							}
-							set	
-							{
-								inputFile1 = value;
-							}
-						}
-
-						public class SubmitJobs_InputFile1
-						{
-
-							private string _object;
-
-							private string location;
-
-							private string bucket;
-
-							public string _Object
-							{
-								get
-								{
-									return _object;
-								}
-								set	
-								{
-									_object = value;
-								}
-							}
-
-							public string Location
-							{
-								get
-								{
-									return location;
-								}
-								set	
-								{
-									location = value;
-								}
-							}
-
-							public string Bucket
-							{
-								get
-								{
-									return bucket;
-								}
-								set	
-								{
-									bucket = value;
-								}
-							}
-						}
-					}
-
-					public class SubmitJobs_OutputFile
-					{
-
-						private string roleArn;
-
-						private string _object;
-
-						private string location;
-
-						private string bucket;
-
-						public string RoleArn
-						{
-							get
-							{
-								return roleArn;
-							}
-							set	
-							{
-								roleArn = value;
-							}
-						}
-
-						public string _Object
-						{
-							get
-							{
-								return _object;
-							}
-							set	
-							{
-								_object = value;
-							}
-						}
-
-						public string Location
-						{
-							get
-							{
-								return location;
-							}
-							set	
-							{
-								location = value;
-							}
-						}
-
-						public string Bucket
-						{
-							get
-							{
-								return bucket;
-							}
-							set	
-							{
-								bucket = value;
-							}
-						}
-					}
-
-					public class SubmitJobs_Container
-					{
-
-						private string format;
-
-						public string Format
-						{
-							get
-							{
-								return format;
-							}
-							set	
-							{
-								format = value;
-							}
-						}
-					}
-
-					public class SubmitJobs_Clip
-					{
-
-						private SubmitJobs_TimeSpan timeSpan;
-
-						public SubmitJobs_TimeSpan TimeSpan
-						{
-							get
-							{
-								return timeSpan;
-							}
-							set	
-							{
-								timeSpan = value;
-							}
-						}
-
-						public class SubmitJobs_TimeSpan
-						{
-
-							private string seek;
-
-							private string duration;
-
-							public string Seek
-							{
-								get
-								{
-									return seek;
-								}
-								set	
-								{
-									seek = value;
-								}
-							}
-
-							public string Duration
-							{
-								get
-								{
-									return duration;
-								}
-								set	
-								{
-									duration = value;
+									sizeSupport = value;
 								}
 							}
 						}
@@ -2187,23 +1769,11 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					public class SubmitJobs_MuxConfig
 					{
 
-						private SubmitJobs_Webp webp;
-
 						private SubmitJobs_Gif gif;
 
 						private SubmitJobs_Segment segment;
 
-						public SubmitJobs_Webp Webp
-						{
-							get
-							{
-								return webp;
-							}
-							set	
-							{
-								webp = value;
-							}
-						}
+						private SubmitJobs_Webp webp;
 
 						public SubmitJobs_Gif Gif
 						{
@@ -2229,46 +1799,28 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
-						public class SubmitJobs_Webp
+						public SubmitJobs_Webp Webp
 						{
-
-							private string loop;
-
-							public string Loop
+							get
 							{
-								get
-								{
-									return loop;
-								}
-								set	
-								{
-									loop = value;
-								}
+								return webp;
+							}
+							set	
+							{
+								webp = value;
 							}
 						}
 
 						public class SubmitJobs_Gif
 						{
 
-							private string finalDelay;
-
 							private string ditherMode;
 
-							private string loop;
+							private string finalDelay;
 
 							private string isCustomPalette;
 
-							public string FinalDelay
-							{
-								get
-								{
-									return finalDelay;
-								}
-								set	
-								{
-									finalDelay = value;
-								}
-							}
+							private string loop;
 
 							public string DitherMode
 							{
@@ -2282,15 +1834,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 								}
 							}
 
-							public string Loop
+							public string FinalDelay
 							{
 								get
 								{
-									return loop;
+									return finalDelay;
 								}
 								set	
 								{
-									loop = value;
+									finalDelay = value;
 								}
 							}
 
@@ -2303,6 +1855,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 								set	
 								{
 									isCustomPalette = value;
+								}
+							}
+
+							public string Loop
+							{
+								get
+								{
+									return loop;
+								}
+								set	
+								{
+									loop = value;
 								}
 							}
 						}
@@ -2321,6 +1885,1008 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 								set	
 								{
 									duration = value;
+								}
+							}
+						}
+
+						public class SubmitJobs_Webp
+						{
+
+							private string loop;
+
+							public string Loop
+							{
+								get
+								{
+									return loop;
+								}
+								set	
+								{
+									loop = value;
+								}
+							}
+						}
+					}
+
+					public class SubmitJobs_OutputFile
+					{
+
+						private string bucket;
+
+						private string location;
+
+						private string _object;
+
+						private string roleArn;
+
+						public string Bucket
+						{
+							get
+							{
+								return bucket;
+							}
+							set	
+							{
+								bucket = value;
+							}
+						}
+
+						public string Location
+						{
+							get
+							{
+								return location;
+							}
+							set	
+							{
+								location = value;
+							}
+						}
+
+						public string _Object
+						{
+							get
+							{
+								return _object;
+							}
+							set	
+							{
+								_object = value;
+							}
+						}
+
+						public string RoleArn
+						{
+							get
+							{
+								return roleArn;
+							}
+							set	
+							{
+								roleArn = value;
+							}
+						}
+					}
+
+					public class SubmitJobs_Properties
+					{
+
+						private string bitrate;
+
+						private string duration;
+
+						private string fileFormat;
+
+						private string fileSize;
+
+						private string fps;
+
+						private string height;
+
+						private string width;
+
+						private SubmitJobs_Format format;
+
+						private SubmitJobs_Streams streams;
+
+						public string Bitrate
+						{
+							get
+							{
+								return bitrate;
+							}
+							set	
+							{
+								bitrate = value;
+							}
+						}
+
+						public string Duration
+						{
+							get
+							{
+								return duration;
+							}
+							set	
+							{
+								duration = value;
+							}
+						}
+
+						public string FileFormat
+						{
+							get
+							{
+								return fileFormat;
+							}
+							set	
+							{
+								fileFormat = value;
+							}
+						}
+
+						public string FileSize
+						{
+							get
+							{
+								return fileSize;
+							}
+							set	
+							{
+								fileSize = value;
+							}
+						}
+
+						public string Fps
+						{
+							get
+							{
+								return fps;
+							}
+							set	
+							{
+								fps = value;
+							}
+						}
+
+						public string Height
+						{
+							get
+							{
+								return height;
+							}
+							set	
+							{
+								height = value;
+							}
+						}
+
+						public string Width
+						{
+							get
+							{
+								return width;
+							}
+							set	
+							{
+								width = value;
+							}
+						}
+
+						public SubmitJobs_Format Format
+						{
+							get
+							{
+								return format;
+							}
+							set	
+							{
+								format = value;
+							}
+						}
+
+						public SubmitJobs_Streams Streams
+						{
+							get
+							{
+								return streams;
+							}
+							set	
+							{
+								streams = value;
+							}
+						}
+
+						public class SubmitJobs_Format
+						{
+
+							private string bitrate;
+
+							private string duration;
+
+							private string formatLongName;
+
+							private string formatName;
+
+							private string numPrograms;
+
+							private string numStreams;
+
+							private string size;
+
+							private string startTime;
+
+							public string Bitrate
+							{
+								get
+								{
+									return bitrate;
+								}
+								set	
+								{
+									bitrate = value;
+								}
+							}
+
+							public string Duration
+							{
+								get
+								{
+									return duration;
+								}
+								set	
+								{
+									duration = value;
+								}
+							}
+
+							public string FormatLongName
+							{
+								get
+								{
+									return formatLongName;
+								}
+								set	
+								{
+									formatLongName = value;
+								}
+							}
+
+							public string FormatName
+							{
+								get
+								{
+									return formatName;
+								}
+								set	
+								{
+									formatName = value;
+								}
+							}
+
+							public string NumPrograms
+							{
+								get
+								{
+									return numPrograms;
+								}
+								set	
+								{
+									numPrograms = value;
+								}
+							}
+
+							public string NumStreams
+							{
+								get
+								{
+									return numStreams;
+								}
+								set	
+								{
+									numStreams = value;
+								}
+							}
+
+							public string Size
+							{
+								get
+								{
+									return size;
+								}
+								set	
+								{
+									size = value;
+								}
+							}
+
+							public string StartTime
+							{
+								get
+								{
+									return startTime;
+								}
+								set	
+								{
+									startTime = value;
+								}
+							}
+						}
+
+						public class SubmitJobs_Streams
+						{
+
+							private List<SubmitJobs_AudioStream> audioStreamList;
+
+							private List<SubmitJobs_SubtitleStream> subtitleStreamList;
+
+							private List<SubmitJobs_VideoStream> videoStreamList;
+
+							public List<SubmitJobs_AudioStream> AudioStreamList
+							{
+								get
+								{
+									return audioStreamList;
+								}
+								set	
+								{
+									audioStreamList = value;
+								}
+							}
+
+							public List<SubmitJobs_SubtitleStream> SubtitleStreamList
+							{
+								get
+								{
+									return subtitleStreamList;
+								}
+								set	
+								{
+									subtitleStreamList = value;
+								}
+							}
+
+							public List<SubmitJobs_VideoStream> VideoStreamList
+							{
+								get
+								{
+									return videoStreamList;
+								}
+								set	
+								{
+									videoStreamList = value;
+								}
+							}
+
+							public class SubmitJobs_AudioStream
+							{
+
+								private string bitrate;
+
+								private string channelLayout;
+
+								private string channels;
+
+								private string codecLongName;
+
+								private string codecName;
+
+								private string codecTag;
+
+								private string codecTagString;
+
+								private string codecTimeBase;
+
+								private string duration;
+
+								private string index;
+
+								private string lang;
+
+								private string numFrames;
+
+								private string sampleFmt;
+
+								private string samplerate;
+
+								private string startTime;
+
+								private string timebase;
+
+								public string Bitrate
+								{
+									get
+									{
+										return bitrate;
+									}
+									set	
+									{
+										bitrate = value;
+									}
+								}
+
+								public string ChannelLayout
+								{
+									get
+									{
+										return channelLayout;
+									}
+									set	
+									{
+										channelLayout = value;
+									}
+								}
+
+								public string Channels
+								{
+									get
+									{
+										return channels;
+									}
+									set	
+									{
+										channels = value;
+									}
+								}
+
+								public string CodecLongName
+								{
+									get
+									{
+										return codecLongName;
+									}
+									set	
+									{
+										codecLongName = value;
+									}
+								}
+
+								public string CodecName
+								{
+									get
+									{
+										return codecName;
+									}
+									set	
+									{
+										codecName = value;
+									}
+								}
+
+								public string CodecTag
+								{
+									get
+									{
+										return codecTag;
+									}
+									set	
+									{
+										codecTag = value;
+									}
+								}
+
+								public string CodecTagString
+								{
+									get
+									{
+										return codecTagString;
+									}
+									set	
+									{
+										codecTagString = value;
+									}
+								}
+
+								public string CodecTimeBase
+								{
+									get
+									{
+										return codecTimeBase;
+									}
+									set	
+									{
+										codecTimeBase = value;
+									}
+								}
+
+								public string Duration
+								{
+									get
+									{
+										return duration;
+									}
+									set	
+									{
+										duration = value;
+									}
+								}
+
+								public string Index
+								{
+									get
+									{
+										return index;
+									}
+									set	
+									{
+										index = value;
+									}
+								}
+
+								public string Lang
+								{
+									get
+									{
+										return lang;
+									}
+									set	
+									{
+										lang = value;
+									}
+								}
+
+								public string NumFrames
+								{
+									get
+									{
+										return numFrames;
+									}
+									set	
+									{
+										numFrames = value;
+									}
+								}
+
+								public string SampleFmt
+								{
+									get
+									{
+										return sampleFmt;
+									}
+									set	
+									{
+										sampleFmt = value;
+									}
+								}
+
+								public string Samplerate
+								{
+									get
+									{
+										return samplerate;
+									}
+									set	
+									{
+										samplerate = value;
+									}
+								}
+
+								public string StartTime
+								{
+									get
+									{
+										return startTime;
+									}
+									set	
+									{
+										startTime = value;
+									}
+								}
+
+								public string Timebase
+								{
+									get
+									{
+										return timebase;
+									}
+									set	
+									{
+										timebase = value;
+									}
+								}
+							}
+
+							public class SubmitJobs_SubtitleStream
+							{
+
+								private string index;
+
+								private string lang;
+
+								public string Index
+								{
+									get
+									{
+										return index;
+									}
+									set	
+									{
+										index = value;
+									}
+								}
+
+								public string Lang
+								{
+									get
+									{
+										return lang;
+									}
+									set	
+									{
+										lang = value;
+									}
+								}
+							}
+
+							public class SubmitJobs_VideoStream
+							{
+
+								private string avgFPS;
+
+								private string bitrate;
+
+								private string codecLongName;
+
+								private string codecName;
+
+								private string codecTag;
+
+								private string codecTagString;
+
+								private string codecTimeBase;
+
+								private string dar;
+
+								private string duration;
+
+								private string fps;
+
+								private string hasBFrames;
+
+								private string height;
+
+								private string index;
+
+								private string lang;
+
+								private string level;
+
+								private string numFrames;
+
+								private string pixFmt;
+
+								private string profile;
+
+								private string sar;
+
+								private string startTime;
+
+								private string timebase;
+
+								private string width;
+
+								private SubmitJobs_NetworkCost networkCost;
+
+								public string AvgFPS
+								{
+									get
+									{
+										return avgFPS;
+									}
+									set	
+									{
+										avgFPS = value;
+									}
+								}
+
+								public string Bitrate
+								{
+									get
+									{
+										return bitrate;
+									}
+									set	
+									{
+										bitrate = value;
+									}
+								}
+
+								public string CodecLongName
+								{
+									get
+									{
+										return codecLongName;
+									}
+									set	
+									{
+										codecLongName = value;
+									}
+								}
+
+								public string CodecName
+								{
+									get
+									{
+										return codecName;
+									}
+									set	
+									{
+										codecName = value;
+									}
+								}
+
+								public string CodecTag
+								{
+									get
+									{
+										return codecTag;
+									}
+									set	
+									{
+										codecTag = value;
+									}
+								}
+
+								public string CodecTagString
+								{
+									get
+									{
+										return codecTagString;
+									}
+									set	
+									{
+										codecTagString = value;
+									}
+								}
+
+								public string CodecTimeBase
+								{
+									get
+									{
+										return codecTimeBase;
+									}
+									set	
+									{
+										codecTimeBase = value;
+									}
+								}
+
+								public string Dar
+								{
+									get
+									{
+										return dar;
+									}
+									set	
+									{
+										dar = value;
+									}
+								}
+
+								public string Duration
+								{
+									get
+									{
+										return duration;
+									}
+									set	
+									{
+										duration = value;
+									}
+								}
+
+								public string Fps
+								{
+									get
+									{
+										return fps;
+									}
+									set	
+									{
+										fps = value;
+									}
+								}
+
+								public string HasBFrames
+								{
+									get
+									{
+										return hasBFrames;
+									}
+									set	
+									{
+										hasBFrames = value;
+									}
+								}
+
+								public string Height
+								{
+									get
+									{
+										return height;
+									}
+									set	
+									{
+										height = value;
+									}
+								}
+
+								public string Index
+								{
+									get
+									{
+										return index;
+									}
+									set	
+									{
+										index = value;
+									}
+								}
+
+								public string Lang
+								{
+									get
+									{
+										return lang;
+									}
+									set	
+									{
+										lang = value;
+									}
+								}
+
+								public string Level
+								{
+									get
+									{
+										return level;
+									}
+									set	
+									{
+										level = value;
+									}
+								}
+
+								public string NumFrames
+								{
+									get
+									{
+										return numFrames;
+									}
+									set	
+									{
+										numFrames = value;
+									}
+								}
+
+								public string PixFmt
+								{
+									get
+									{
+										return pixFmt;
+									}
+									set	
+									{
+										pixFmt = value;
+									}
+								}
+
+								public string Profile
+								{
+									get
+									{
+										return profile;
+									}
+									set	
+									{
+										profile = value;
+									}
+								}
+
+								public string Sar
+								{
+									get
+									{
+										return sar;
+									}
+									set	
+									{
+										sar = value;
+									}
+								}
+
+								public string StartTime
+								{
+									get
+									{
+										return startTime;
+									}
+									set	
+									{
+										startTime = value;
+									}
+								}
+
+								public string Timebase
+								{
+									get
+									{
+										return timebase;
+									}
+									set	
+									{
+										timebase = value;
+									}
+								}
+
+								public string Width
+								{
+									get
+									{
+										return width;
+									}
+									set	
+									{
+										width = value;
+									}
+								}
+
+								public SubmitJobs_NetworkCost NetworkCost
+								{
+									get
+									{
+										return networkCost;
+									}
+									set	
+									{
+										networkCost = value;
+									}
+								}
+
+								public class SubmitJobs_NetworkCost
+								{
+
+									private string avgBitrate;
+
+									private string costBandwidth;
+
+									private string preloadTime;
+
+									public string AvgBitrate
+									{
+										get
+										{
+											return avgBitrate;
+										}
+										set	
+										{
+											avgBitrate = value;
+										}
+									}
+
+									public string CostBandwidth
+									{
+										get
+										{
+											return costBandwidth;
+										}
+										set	
+										{
+											costBandwidth = value;
+										}
+									}
+
+									public string PreloadTime
+									{
+										get
+										{
+											return preloadTime;
+										}
+										set	
+										{
+											preloadTime = value;
+										}
+									}
 								}
 							}
 						}
@@ -2405,21 +2971,21 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							public class SubmitJobs_Input2
 							{
 
-								private string _object;
+								private string bucket;
 
 								private string location;
 
-								private string bucket;
+								private string _object;
 
-								public string _Object
+								public string Bucket
 								{
 									get
 									{
-										return _object;
+										return bucket;
 									}
 									set	
 									{
-										_object = value;
+										bucket = value;
 									}
 								}
 
@@ -2435,15 +3001,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 									}
 								}
 
-								public string Bucket
+								public string _Object
 								{
 									get
 									{
-										return bucket;
+										return _object;
 									}
 									set	
 									{
-										bucket = value;
+										_object = value;
 									}
 								}
 							}
@@ -2468,60 +3034,252 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public class SubmitJobs_Properties
+					public class SubmitJobs_SuperReso
 					{
 
-						private string width;
+						private string isHalfSample;
 
-						private string height;
+						public string IsHalfSample
+						{
+							get
+							{
+								return isHalfSample;
+							}
+							set	
+							{
+								isHalfSample = value;
+							}
+						}
+					}
 
-						private string duration;
+					public class SubmitJobs_TransConfig
+					{
 
-						private string fps;
+						private string adjDarMethod;
+
+						private string isCheckAudioBitrate;
+
+						private string isCheckAudioBitrateFail;
+
+						private string isCheckReso;
+
+						private string isCheckResoFail;
+
+						private string isCheckVideoBitrate;
+
+						private string isCheckVideoBitrateFail;
+
+						private string transMode;
+
+						public string AdjDarMethod
+						{
+							get
+							{
+								return adjDarMethod;
+							}
+							set	
+							{
+								adjDarMethod = value;
+							}
+						}
+
+						public string IsCheckAudioBitrate
+						{
+							get
+							{
+								return isCheckAudioBitrate;
+							}
+							set	
+							{
+								isCheckAudioBitrate = value;
+							}
+						}
+
+						public string IsCheckAudioBitrateFail
+						{
+							get
+							{
+								return isCheckAudioBitrateFail;
+							}
+							set	
+							{
+								isCheckAudioBitrateFail = value;
+							}
+						}
+
+						public string IsCheckReso
+						{
+							get
+							{
+								return isCheckReso;
+							}
+							set	
+							{
+								isCheckReso = value;
+							}
+						}
+
+						public string IsCheckResoFail
+						{
+							get
+							{
+								return isCheckResoFail;
+							}
+							set	
+							{
+								isCheckResoFail = value;
+							}
+						}
+
+						public string IsCheckVideoBitrate
+						{
+							get
+							{
+								return isCheckVideoBitrate;
+							}
+							set	
+							{
+								isCheckVideoBitrate = value;
+							}
+						}
+
+						public string IsCheckVideoBitrateFail
+						{
+							get
+							{
+								return isCheckVideoBitrateFail;
+							}
+							set	
+							{
+								isCheckVideoBitrateFail = value;
+							}
+						}
+
+						public string TransMode
+						{
+							get
+							{
+								return transMode;
+							}
+							set	
+							{
+								transMode = value;
+							}
+						}
+					}
+
+					public class SubmitJobs_Video
+					{
 
 						private string bitrate;
 
-						private string fileFormat;
+						private string bufsize;
 
-						private string fileSize;
+						private string codec;
 
-						private SubmitJobs_Streams streams;
+						private string crf;
 
-						private SubmitJobs_Format format;
+						private string crop;
 
-						public string Width
+						private string degrain;
+
+						private string fps;
+
+						private string gop;
+
+						private string height;
+
+						private string maxFps;
+
+						private string maxrate;
+
+						private string pad;
+
+						private string pixFmt;
+
+						private string preset;
+
+						private string profile;
+
+						private string qscale;
+
+						private string resoPriority;
+
+						private string scanMode;
+
+						private string width;
+
+						private SubmitJobs_BitrateBnd bitrateBnd;
+
+						public string Bitrate
 						{
 							get
 							{
-								return width;
+								return bitrate;
 							}
 							set	
 							{
-								width = value;
+								bitrate = value;
 							}
 						}
 
-						public string Height
+						public string Bufsize
 						{
 							get
 							{
-								return height;
+								return bufsize;
 							}
 							set	
 							{
-								height = value;
+								bufsize = value;
 							}
 						}
 
-						public string Duration
+						public string Codec
 						{
 							get
 							{
-								return duration;
+								return codec;
 							}
 							set	
 							{
-								duration = value;
+								codec = value;
+							}
+						}
+
+						public string Crf
+						{
+							get
+							{
+								return crf;
+							}
+							set	
+							{
+								crf = value;
+							}
+						}
+
+						public string Crop
+						{
+							get
+							{
+								return crop;
+							}
+							set	
+							{
+								crop = value;
+							}
+						}
+
+						public string Degrain
+						{
+							get
+							{
+								return degrain;
+							}
+							set	
+							{
+								degrain = value;
 							}
 						}
 
@@ -2537,950 +3295,192 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
-						public string Bitrate
+						public string Gop
 						{
 							get
 							{
-								return bitrate;
+								return gop;
 							}
 							set	
 							{
-								bitrate = value;
+								gop = value;
 							}
 						}
 
-						public string FileFormat
+						public string Height
 						{
 							get
 							{
-								return fileFormat;
+								return height;
 							}
 							set	
 							{
-								fileFormat = value;
+								height = value;
 							}
 						}
 
-						public string FileSize
+						public string MaxFps
 						{
 							get
 							{
-								return fileSize;
+								return maxFps;
 							}
 							set	
 							{
-								fileSize = value;
+								maxFps = value;
 							}
 						}
 
-						public SubmitJobs_Streams Streams
+						public string Maxrate
 						{
 							get
 							{
-								return streams;
+								return maxrate;
 							}
 							set	
 							{
-								streams = value;
+								maxrate = value;
 							}
 						}
 
-						public SubmitJobs_Format Format
+						public string Pad
 						{
 							get
 							{
-								return format;
+								return pad;
 							}
 							set	
 							{
-								format = value;
+								pad = value;
 							}
 						}
 
-						public class SubmitJobs_Streams
+						public string PixFmt
+						{
+							get
+							{
+								return pixFmt;
+							}
+							set	
+							{
+								pixFmt = value;
+							}
+						}
+
+						public string Preset
+						{
+							get
+							{
+								return preset;
+							}
+							set	
+							{
+								preset = value;
+							}
+						}
+
+						public string Profile
+						{
+							get
+							{
+								return profile;
+							}
+							set	
+							{
+								profile = value;
+							}
+						}
+
+						public string Qscale
+						{
+							get
+							{
+								return qscale;
+							}
+							set	
+							{
+								qscale = value;
+							}
+						}
+
+						public string ResoPriority
+						{
+							get
+							{
+								return resoPriority;
+							}
+							set	
+							{
+								resoPriority = value;
+							}
+						}
+
+						public string ScanMode
+						{
+							get
+							{
+								return scanMode;
+							}
+							set	
+							{
+								scanMode = value;
+							}
+						}
+
+						public string Width
+						{
+							get
+							{
+								return width;
+							}
+							set	
+							{
+								width = value;
+							}
+						}
+
+						public SubmitJobs_BitrateBnd BitrateBnd
+						{
+							get
+							{
+								return bitrateBnd;
+							}
+							set	
+							{
+								bitrateBnd = value;
+							}
+						}
+
+						public class SubmitJobs_BitrateBnd
 						{
 
-							private List<SubmitJobs_VideoStream> videoStreamList;
+							private string max;
 
-							private List<SubmitJobs_AudioStream> audioStreamList;
+							private string min;
 
-							private List<SubmitJobs_SubtitleStream> subtitleStreamList;
-
-							public List<SubmitJobs_VideoStream> VideoStreamList
+							public string Max
 							{
 								get
 								{
-									return videoStreamList;
+									return max;
 								}
 								set	
 								{
-									videoStreamList = value;
+									max = value;
 								}
 							}
 
-							public List<SubmitJobs_AudioStream> AudioStreamList
+							public string Min
 							{
 								get
 								{
-									return audioStreamList;
+									return min;
 								}
 								set	
 								{
-									audioStreamList = value;
+									min = value;
 								}
 							}
-
-							public List<SubmitJobs_SubtitleStream> SubtitleStreamList
-							{
-								get
-								{
-									return subtitleStreamList;
-								}
-								set	
-								{
-									subtitleStreamList = value;
-								}
-							}
-
-							public class SubmitJobs_VideoStream
-							{
-
-								private string index;
-
-								private string timebase;
-
-								private string avgFPS;
-
-								private string pixFmt;
-
-								private string sar;
-
-								private string lang;
-
-								private string codecLongName;
-
-								private string height;
-
-								private string numFrames;
-
-								private string bitrate;
-
-								private string codecTagString;
-
-								private string hasBFrames;
-
-								private string profile;
-
-								private string startTime;
-
-								private string dar;
-
-								private string codecName;
-
-								private string width;
-
-								private string duration;
-
-								private string fps;
-
-								private string codecTag;
-
-								private string codecTimeBase;
-
-								private string level;
-
-								private SubmitJobs_NetworkCost networkCost;
-
-								public string Index
-								{
-									get
-									{
-										return index;
-									}
-									set	
-									{
-										index = value;
-									}
-								}
-
-								public string Timebase
-								{
-									get
-									{
-										return timebase;
-									}
-									set	
-									{
-										timebase = value;
-									}
-								}
-
-								public string AvgFPS
-								{
-									get
-									{
-										return avgFPS;
-									}
-									set	
-									{
-										avgFPS = value;
-									}
-								}
-
-								public string PixFmt
-								{
-									get
-									{
-										return pixFmt;
-									}
-									set	
-									{
-										pixFmt = value;
-									}
-								}
-
-								public string Sar
-								{
-									get
-									{
-										return sar;
-									}
-									set	
-									{
-										sar = value;
-									}
-								}
-
-								public string Lang
-								{
-									get
-									{
-										return lang;
-									}
-									set	
-									{
-										lang = value;
-									}
-								}
-
-								public string CodecLongName
-								{
-									get
-									{
-										return codecLongName;
-									}
-									set	
-									{
-										codecLongName = value;
-									}
-								}
-
-								public string Height
-								{
-									get
-									{
-										return height;
-									}
-									set	
-									{
-										height = value;
-									}
-								}
-
-								public string NumFrames
-								{
-									get
-									{
-										return numFrames;
-									}
-									set	
-									{
-										numFrames = value;
-									}
-								}
-
-								public string Bitrate
-								{
-									get
-									{
-										return bitrate;
-									}
-									set	
-									{
-										bitrate = value;
-									}
-								}
-
-								public string CodecTagString
-								{
-									get
-									{
-										return codecTagString;
-									}
-									set	
-									{
-										codecTagString = value;
-									}
-								}
-
-								public string HasBFrames
-								{
-									get
-									{
-										return hasBFrames;
-									}
-									set	
-									{
-										hasBFrames = value;
-									}
-								}
-
-								public string Profile
-								{
-									get
-									{
-										return profile;
-									}
-									set	
-									{
-										profile = value;
-									}
-								}
-
-								public string StartTime
-								{
-									get
-									{
-										return startTime;
-									}
-									set	
-									{
-										startTime = value;
-									}
-								}
-
-								public string Dar
-								{
-									get
-									{
-										return dar;
-									}
-									set	
-									{
-										dar = value;
-									}
-								}
-
-								public string CodecName
-								{
-									get
-									{
-										return codecName;
-									}
-									set	
-									{
-										codecName = value;
-									}
-								}
-
-								public string Width
-								{
-									get
-									{
-										return width;
-									}
-									set	
-									{
-										width = value;
-									}
-								}
-
-								public string Duration
-								{
-									get
-									{
-										return duration;
-									}
-									set	
-									{
-										duration = value;
-									}
-								}
-
-								public string Fps
-								{
-									get
-									{
-										return fps;
-									}
-									set	
-									{
-										fps = value;
-									}
-								}
-
-								public string CodecTag
-								{
-									get
-									{
-										return codecTag;
-									}
-									set	
-									{
-										codecTag = value;
-									}
-								}
-
-								public string CodecTimeBase
-								{
-									get
-									{
-										return codecTimeBase;
-									}
-									set	
-									{
-										codecTimeBase = value;
-									}
-								}
-
-								public string Level
-								{
-									get
-									{
-										return level;
-									}
-									set	
-									{
-										level = value;
-									}
-								}
-
-								public SubmitJobs_NetworkCost NetworkCost
-								{
-									get
-									{
-										return networkCost;
-									}
-									set	
-									{
-										networkCost = value;
-									}
-								}
-
-								public class SubmitJobs_NetworkCost
-								{
-
-									private string preloadTime;
-
-									private string avgBitrate;
-
-									private string costBandwidth;
-
-									public string PreloadTime
-									{
-										get
-										{
-											return preloadTime;
-										}
-										set	
-										{
-											preloadTime = value;
-										}
-									}
-
-									public string AvgBitrate
-									{
-										get
-										{
-											return avgBitrate;
-										}
-										set	
-										{
-											avgBitrate = value;
-										}
-									}
-
-									public string CostBandwidth
-									{
-										get
-										{
-											return costBandwidth;
-										}
-										set	
-										{
-											costBandwidth = value;
-										}
-									}
-								}
-							}
-
-							public class SubmitJobs_AudioStream
-							{
-
-								private string timebase;
-
-								private string index;
-
-								private string sampleFmt;
-
-								private string channelLayout;
-
-								private string lang;
-
-								private string samplerate;
-
-								private string codecLongName;
-
-								private string channels;
-
-								private string numFrames;
-
-								private string bitrate;
-
-								private string codecTagString;
-
-								private string startTime;
-
-								private string codecName;
-
-								private string duration;
-
-								private string codecTag;
-
-								private string codecTimeBase;
-
-								public string Timebase
-								{
-									get
-									{
-										return timebase;
-									}
-									set	
-									{
-										timebase = value;
-									}
-								}
-
-								public string Index
-								{
-									get
-									{
-										return index;
-									}
-									set	
-									{
-										index = value;
-									}
-								}
-
-								public string SampleFmt
-								{
-									get
-									{
-										return sampleFmt;
-									}
-									set	
-									{
-										sampleFmt = value;
-									}
-								}
-
-								public string ChannelLayout
-								{
-									get
-									{
-										return channelLayout;
-									}
-									set	
-									{
-										channelLayout = value;
-									}
-								}
-
-								public string Lang
-								{
-									get
-									{
-										return lang;
-									}
-									set	
-									{
-										lang = value;
-									}
-								}
-
-								public string Samplerate
-								{
-									get
-									{
-										return samplerate;
-									}
-									set	
-									{
-										samplerate = value;
-									}
-								}
-
-								public string CodecLongName
-								{
-									get
-									{
-										return codecLongName;
-									}
-									set	
-									{
-										codecLongName = value;
-									}
-								}
-
-								public string Channels
-								{
-									get
-									{
-										return channels;
-									}
-									set	
-									{
-										channels = value;
-									}
-								}
-
-								public string NumFrames
-								{
-									get
-									{
-										return numFrames;
-									}
-									set	
-									{
-										numFrames = value;
-									}
-								}
-
-								public string Bitrate
-								{
-									get
-									{
-										return bitrate;
-									}
-									set	
-									{
-										bitrate = value;
-									}
-								}
-
-								public string CodecTagString
-								{
-									get
-									{
-										return codecTagString;
-									}
-									set	
-									{
-										codecTagString = value;
-									}
-								}
-
-								public string StartTime
-								{
-									get
-									{
-										return startTime;
-									}
-									set	
-									{
-										startTime = value;
-									}
-								}
-
-								public string CodecName
-								{
-									get
-									{
-										return codecName;
-									}
-									set	
-									{
-										codecName = value;
-									}
-								}
-
-								public string Duration
-								{
-									get
-									{
-										return duration;
-									}
-									set	
-									{
-										duration = value;
-									}
-								}
-
-								public string CodecTag
-								{
-									get
-									{
-										return codecTag;
-									}
-									set	
-									{
-										codecTag = value;
-									}
-								}
-
-								public string CodecTimeBase
-								{
-									get
-									{
-										return codecTimeBase;
-									}
-									set	
-									{
-										codecTimeBase = value;
-									}
-								}
-							}
-
-							public class SubmitJobs_SubtitleStream
-							{
-
-								private string index;
-
-								private string lang;
-
-								public string Index
-								{
-									get
-									{
-										return index;
-									}
-									set	
-									{
-										index = value;
-									}
-								}
-
-								public string Lang
-								{
-									get
-									{
-										return lang;
-									}
-									set	
-									{
-										lang = value;
-									}
-								}
-							}
-						}
-
-						public class SubmitJobs_Format
-						{
-
-							private string startTime;
-
-							private string numPrograms;
-
-							private string size;
-
-							private string numStreams;
-
-							private string formatLongName;
-
-							private string duration;
-
-							private string bitrate;
-
-							private string formatName;
-
-							public string StartTime
-							{
-								get
-								{
-									return startTime;
-								}
-								set	
-								{
-									startTime = value;
-								}
-							}
-
-							public string NumPrograms
-							{
-								get
-								{
-									return numPrograms;
-								}
-								set	
-								{
-									numPrograms = value;
-								}
-							}
-
-							public string Size
-							{
-								get
-								{
-									return size;
-								}
-								set	
-								{
-									size = value;
-								}
-							}
-
-							public string NumStreams
-							{
-								get
-								{
-									return numStreams;
-								}
-								set	
-								{
-									numStreams = value;
-								}
-							}
-
-							public string FormatLongName
-							{
-								get
-								{
-									return formatLongName;
-								}
-								set	
-								{
-									formatLongName = value;
-								}
-							}
-
-							public string Duration
-							{
-								get
-								{
-									return duration;
-								}
-								set	
-								{
-									duration = value;
-								}
-							}
-
-							public string Bitrate
-							{
-								get
-								{
-									return bitrate;
-								}
-								set	
-								{
-									bitrate = value;
-								}
-							}
-
-							public string FormatName
-							{
-								get
-								{
-									return formatName;
-								}
-								set	
-								{
-									formatName = value;
-								}
-							}
-						}
-					}
-				}
-
-				public class SubmitJobs_Input
-				{
-
-					private string _object;
-
-					private string location;
-
-					private string bucket;
-
-					public string _Object
-					{
-						get
-						{
-							return _object;
-						}
-						set	
-						{
-							_object = value;
-						}
-					}
-
-					public string Location
-					{
-						get
-						{
-							return location;
-						}
-						set	
-						{
-							location = value;
-						}
-					}
-
-					public string Bucket
-					{
-						get
-						{
-							return bucket;
-						}
-						set	
-						{
-							bucket = value;
-						}
-					}
-				}
-
-				public class SubmitJobs_MNSMessageResult
-				{
-
-					private string messageId;
-
-					private string errorMessage;
-
-					private string errorCode;
-
-					public string MessageId
-					{
-						get
-						{
-							return messageId;
-						}
-						set	
-						{
-							messageId = value;
-						}
-					}
-
-					public string ErrorMessage
-					{
-						get
-						{
-							return errorMessage;
-						}
-						set	
-						{
-							errorMessage = value;
-						}
-					}
-
-					public string ErrorCode
-					{
-						get
-						{
-							return errorCode;
-						}
-						set	
-						{
-							errorCode = value;
 						}
 					}
 				}

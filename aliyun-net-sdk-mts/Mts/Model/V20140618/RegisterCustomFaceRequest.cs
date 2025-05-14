@@ -46,6 +46,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string categoryId;
 
+		private string personName;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -90,6 +92,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				categoryId = value;
 				DictionaryUtil.Add(QueryParameters, "CategoryId", value);
+			}
+		}
+
+		public string PersonName
+		{
+			get
+			{
+				return personName;
+			}
+			set	
+			{
+				personName = value;
+				DictionaryUtil.Add(QueryParameters, "PersonName", value);
 			}
 		}
 

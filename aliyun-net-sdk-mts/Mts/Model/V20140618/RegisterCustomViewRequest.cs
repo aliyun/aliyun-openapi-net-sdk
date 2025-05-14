@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private long? resourceOwnerId;
 
+		private string labelPrompt;
+
 		private string algorithm;
 
 		private string customGroupId;
@@ -66,6 +68,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string LabelPrompt
+		{
+			get
+			{
+				return labelPrompt;
+			}
+			set	
+			{
+				labelPrompt = value;
+				DictionaryUtil.Add(QueryParameters, "LabelPrompt", value);
 			}
 		}
 

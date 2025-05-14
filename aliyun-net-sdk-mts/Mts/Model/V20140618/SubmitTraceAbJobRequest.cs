@@ -40,7 +40,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			Method = MethodType.POST;
         }
 
-		private string startTime;
+		private long? startTime;
 
 		private string output;
 
@@ -54,11 +54,11 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string input;
 
-		private string totalTime;
+		private long? totalTime;
 
 		private string callBack;
 
-		public string StartTime
+		public long? StartTime
 		{
 			get
 			{
@@ -67,7 +67,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			set	
 			{
 				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
 			}
 		}
 
@@ -149,7 +149,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string TotalTime
+		public long? TotalTime
 		{
 			get
 			{
@@ -158,7 +158,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			set	
 			{
 				totalTime = value;
-				DictionaryUtil.Add(QueryParameters, "TotalTime", value);
+				DictionaryUtil.Add(QueryParameters, "TotalTime", value.ToString());
 			}
 		}
 

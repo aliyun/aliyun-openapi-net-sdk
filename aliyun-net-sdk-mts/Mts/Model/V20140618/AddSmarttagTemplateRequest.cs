@@ -48,7 +48,11 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string labelVersion;
 
+		private string labelCustomParamsConfig;
+
 		private string scene;
+
+		private string templateConfig;
 
 		private string faceCustomParamsConfig;
 
@@ -65,6 +69,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
+
+		private string labelCustomCategoryIds;
 
 		private string objectGroupIds;
 
@@ -126,6 +132,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
+		public string LabelCustomParamsConfig
+		{
+			get
+			{
+				return labelCustomParamsConfig;
+			}
+			set	
+			{
+				labelCustomParamsConfig = value;
+				DictionaryUtil.Add(QueryParameters, "LabelCustomParamsConfig", value);
+			}
+		}
+
 		public string Scene
 		{
 			get
@@ -136,6 +155,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				scene = value;
 				DictionaryUtil.Add(QueryParameters, "Scene", value);
+			}
+		}
+
+		public string TemplateConfig
+		{
+			get
+			{
+				return templateConfig;
+			}
+			set	
+			{
+				templateConfig = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateConfig", value);
 			}
 		}
 
@@ -240,6 +272,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string LabelCustomCategoryIds
+		{
+			get
+			{
+				return labelCustomCategoryIds;
+			}
+			set	
+			{
+				labelCustomCategoryIds = value;
+				DictionaryUtil.Add(QueryParameters, "LabelCustomCategoryIds", value);
 			}
 		}
 

@@ -27,6 +27,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string jobStatus;
 
+		private string message;
+
 		private string requestId;
 
 		private string userData;
@@ -42,6 +44,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			set	
 			{
 				jobStatus = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 
@@ -84,21 +98,9 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		public class QuerySmarttagJob_Result
 		{
 
-			private string type;
-
 			private string data;
 
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
+			private string type;
 
 			public string Data
 			{
@@ -109,6 +111,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					data = value;
+				}
+			}
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
 				}
 			}
 		}
