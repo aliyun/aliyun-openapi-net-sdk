@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -70,6 +71,7 @@ namespace Aliyun.Acs.mseap.Model.V20210118
 
 		private string bid;
 
+		[JsonProperty(PropertyName = "UserCallerParentId")]
 		public long? UserCallerParentId
 		{
 			get
@@ -83,6 +85,7 @@ namespace Aliyun.Acs.mseap.Model.V20210118
 			}
 		}
 
+		[JsonProperty(PropertyName = "ApiType")]
 		public string ApiType
 		{
 			get
@@ -96,6 +99,7 @@ namespace Aliyun.Acs.mseap.Model.V20210118
 			}
 		}
 
+		[JsonProperty(PropertyName = "Timeout")]
 		public long? Timeout
 		{
 			get
@@ -109,6 +113,7 @@ namespace Aliyun.Acs.mseap.Model.V20210118
 			}
 		}
 
+		[JsonProperty(PropertyName = "UserMfaPresent")]
 		public bool? UserMfaPresent
 		{
 			get
@@ -122,6 +127,7 @@ namespace Aliyun.Acs.mseap.Model.V20210118
 			}
 		}
 
+		[JsonProperty(PropertyName = "UserKp")]
 		public string UserKp
 		{
 			get
@@ -135,6 +141,7 @@ namespace Aliyun.Acs.mseap.Model.V20210118
 			}
 		}
 
+		[JsonProperty(PropertyName = "Lang")]
 		public string Lang
 		{
 			get
@@ -148,6 +155,7 @@ namespace Aliyun.Acs.mseap.Model.V20210118
 			}
 		}
 
+		[JsonProperty(PropertyName = "Value")]
 		public string _Value
 		{
 			get
@@ -161,6 +169,7 @@ namespace Aliyun.Acs.mseap.Model.V20210118
 			}
 		}
 
+		[JsonProperty(PropertyName = "Key")]
 		public string Key
 		{
 			get
@@ -174,6 +183,7 @@ namespace Aliyun.Acs.mseap.Model.V20210118
 			}
 		}
 
+		[JsonProperty(PropertyName = "UserCallerType")]
 		public string UserCallerType
 		{
 			get
@@ -187,6 +197,7 @@ namespace Aliyun.Acs.mseap.Model.V20210118
 			}
 		}
 
+		[JsonProperty(PropertyName = "UserSecurityToken")]
 		public string UserSecurityToken
 		{
 			get
@@ -200,6 +211,7 @@ namespace Aliyun.Acs.mseap.Model.V20210118
 			}
 		}
 
+		[JsonProperty(PropertyName = "UserAccessKeyId")]
 		public string UserAccessKeyId
 		{
 			get
@@ -213,6 +225,7 @@ namespace Aliyun.Acs.mseap.Model.V20210118
 			}
 		}
 
+		[JsonProperty(PropertyName = "AliyunKp")]
 		public string AliyunKp
 		{
 			get
@@ -226,6 +239,7 @@ namespace Aliyun.Acs.mseap.Model.V20210118
 			}
 		}
 
+		[JsonProperty(PropertyName = "UserBid")]
 		public string UserBid
 		{
 			get
@@ -239,6 +253,7 @@ namespace Aliyun.Acs.mseap.Model.V20210118
 			}
 		}
 
+		[JsonProperty(PropertyName = "OriginalRequest")]
 		public string OriginalRequest
 		{
 			get
@@ -252,6 +267,7 @@ namespace Aliyun.Acs.mseap.Model.V20210118
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -265,6 +281,7 @@ namespace Aliyun.Acs.mseap.Model.V20210118
 			}
 		}
 
+		[JsonProperty(PropertyName = "UserClientIp")]
 		public string UserClientIp
 		{
 			get
@@ -278,6 +295,7 @@ namespace Aliyun.Acs.mseap.Model.V20210118
 			}
 		}
 
+		[JsonProperty(PropertyName = "Bid")]
 		public string Bid
 		{
 			get

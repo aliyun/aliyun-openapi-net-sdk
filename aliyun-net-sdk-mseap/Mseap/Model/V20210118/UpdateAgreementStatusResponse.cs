@@ -27,6 +27,7 @@ namespace Aliyun.Acs.mseap.Model.V20210118
 
 		private string requestId;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get

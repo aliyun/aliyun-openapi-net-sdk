@@ -22,41 +22,16 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.mseap.Model.V20210118
 {
-	public class SetRedisValueResponse : AcsResponse
+	public class SendNotificationForPartnerResponse : AcsResponse
 	{
-
-		private bool? allowRetry;
 
 		private string requestId;
 
 		private string errorMsg;
 
-		private int? httpStatusCode;
-
-		private string dynamicCode;
-
-		private string errorCode;
-
-		private string dynamicMessage;
-
-		private bool? module;
-
 		private bool? success;
 
-		private string appName;
-
-		[JsonProperty(PropertyName = "AllowRetry")]
-		public bool? AllowRetry
-		{
-			get
-			{
-				return allowRetry;
-			}
-			set	
-			{
-				allowRetry = value;
-			}
-		}
+		private string msgId;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -84,71 +59,6 @@ namespace Aliyun.Acs.mseap.Model.V20210118
 			}
 		}
 
-		[JsonProperty(PropertyName = "HttpStatusCode")]
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "DynamicCode")]
-		public string DynamicCode
-		{
-			get
-			{
-				return dynamicCode;
-			}
-			set	
-			{
-				dynamicCode = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "ErrorCode")]
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "DynamicMessage")]
-		public string DynamicMessage
-		{
-			get
-			{
-				return dynamicMessage;
-			}
-			set	
-			{
-				dynamicMessage = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "Module")]
-		public bool? Module
-		{
-			get
-			{
-				return module;
-			}
-			set	
-			{
-				module = value;
-			}
-		}
-
 		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
@@ -162,16 +72,16 @@ namespace Aliyun.Acs.mseap.Model.V20210118
 			}
 		}
 
-		[JsonProperty(PropertyName = "AppName")]
-		public string AppName
+		[JsonProperty(PropertyName = "MsgId")]
+		public string MsgId
 		{
 			get
 			{
-				return appName;
+				return msgId;
 			}
 			set	
 			{
-				appName = value;
+				msgId = value;
 			}
 		}
 	}

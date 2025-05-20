@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -38,6 +39,7 @@ namespace Aliyun.Acs.mseap.Model.V20210118
 
 		private string agreementCode;
 
+		[JsonProperty(PropertyName = "AgreementCode")]
 		public string AgreementCode
 		{
 			get
