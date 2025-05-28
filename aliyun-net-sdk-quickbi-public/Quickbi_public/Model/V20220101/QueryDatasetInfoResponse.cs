@@ -461,6 +461,8 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 				private string uid;
 
+				private string expressionV2;
+
 				public string Caption
 				{
 					get
@@ -580,6 +582,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 						uid = value;
 					}
 				}
+
+				public string ExpressionV2
+				{
+					get
+					{
+						return expressionV2;
+					}
+					set	
+					{
+						expressionV2 = value;
+					}
+				}
 			}
 
 			public class QueryDatasetInfo_MeasureListItem
@@ -600,6 +614,8 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				private string tableUniqueId;
 
 				private string uid;
+
+				private string expressionV2;
 
 				public string Caption
 				{
@@ -694,6 +710,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						uid = value;
+					}
+				}
+
+				public string ExpressionV2
+				{
+					get
+					{
+						return expressionV2;
+					}
+					set	
+					{
+						expressionV2 = value;
 					}
 				}
 			}

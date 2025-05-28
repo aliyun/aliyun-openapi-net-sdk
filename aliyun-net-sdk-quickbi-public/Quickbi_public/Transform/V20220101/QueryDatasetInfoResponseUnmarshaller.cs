@@ -86,6 +86,7 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 				dimensionListItem.RefUid = _ctx.StringValue("QueryDatasetInfo.Result.DimensionList["+ i +"].RefUid");
 				dimensionListItem.TableUniqueId = _ctx.StringValue("QueryDatasetInfo.Result.DimensionList["+ i +"].TableUniqueId");
 				dimensionListItem.Uid = _ctx.StringValue("QueryDatasetInfo.Result.DimensionList["+ i +"].Uid");
+				dimensionListItem.ExpressionV2 = _ctx.StringValue("QueryDatasetInfo.Result.DimensionList["+ i +"].ExpressionV2");
 
 				result_dimensionList.Add(dimensionListItem);
 			}
@@ -102,6 +103,7 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 				measureListItem.MeasureType = _ctx.StringValue("QueryDatasetInfo.Result.MeasureList["+ i +"].MeasureType");
 				measureListItem.TableUniqueId = _ctx.StringValue("QueryDatasetInfo.Result.MeasureList["+ i +"].TableUniqueId");
 				measureListItem.Uid = _ctx.StringValue("QueryDatasetInfo.Result.MeasureList["+ i +"].Uid");
+				measureListItem.ExpressionV2 = _ctx.StringValue("QueryDatasetInfo.Result.MeasureList["+ i +"].ExpressionV2");
 
 				result_measureList.Add(measureListItem);
 			}

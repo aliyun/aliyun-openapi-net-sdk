@@ -147,6 +147,8 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 				private string _value;
 
+				private string type;
+
 				public string Key
 				{
 					get
@@ -168,6 +170,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						_value = value;
+					}
+				}
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
 					}
 				}
 			}

@@ -44,6 +44,7 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 				SmartqQueryAbilityResponse.SmartqQueryAbility_Result.SmartqQueryAbility_MetaTypeItem metaTypeItem = new SmartqQueryAbilityResponse.SmartqQueryAbility_Result.SmartqQueryAbility_MetaTypeItem();
 				metaTypeItem.Key = _ctx.StringValue("SmartqQueryAbility.Result.MetaType["+ i +"].Key");
 				metaTypeItem._Value = _ctx.StringValue("SmartqQueryAbility.Result.MetaType["+ i +"].Value");
+				metaTypeItem.Type = _ctx.StringValue("SmartqQueryAbility.Result.MetaType["+ i +"].Type");
 
 				result_metaType.Add(metaTypeItem);
 			}

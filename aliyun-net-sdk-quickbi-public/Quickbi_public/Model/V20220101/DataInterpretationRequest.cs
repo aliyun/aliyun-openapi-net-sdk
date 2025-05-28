@@ -27,102 +27,87 @@ using Aliyun.Acs.quickbi_public.Transform.V20220101;
 
 namespace Aliyun.Acs.quickbi_public.Model.V20220101
 {
-    public class SmartqAuthorizeRequest : RpcAcsRequest<SmartqAuthorizeResponse>
+    public class DataInterpretationRequest : RpcAcsRequest<DataInterpretationResponse>
     {
-        public SmartqAuthorizeRequest()
-            : base("quickbi-public", "2022-01-01", "SmartqAuthorize", "2.2.0", "openAPI")
+        public DataInterpretationRequest()
+            : base("quickbi-public", "2022-01-01", "DataInterpretation", "2.2.0", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private string llmCubeThemes;
+		private bool? promptForceOverride;
 
-		private string llmCubes;
+		private string data;
 
-		private string cubeIds;
+		private string userQuestion;
 
-		private int? operationType;
+		private string userPrompt;
 
-		private string expireDay;
+		private string modelCode;
 
-		private string userIds;
-
-		public string LlmCubeThemes
+		public bool? PromptForceOverride
 		{
 			get
 			{
-				return llmCubeThemes;
+				return promptForceOverride;
 			}
 			set	
 			{
-				llmCubeThemes = value;
-				DictionaryUtil.Add(QueryParameters, "LlmCubeThemes", value);
+				promptForceOverride = value;
+				DictionaryUtil.Add(QueryParameters, "PromptForceOverride", value.ToString());
 			}
 		}
 
-		public string LlmCubes
+		public string Data
 		{
 			get
 			{
-				return llmCubes;
+				return data;
 			}
 			set	
 			{
-				llmCubes = value;
-				DictionaryUtil.Add(QueryParameters, "LlmCubes", value);
+				data = value;
+				DictionaryUtil.Add(QueryParameters, "Data", value);
 			}
 		}
 
-		public string CubeIds
+		public string UserQuestion
 		{
 			get
 			{
-				return cubeIds;
+				return userQuestion;
 			}
 			set	
 			{
-				cubeIds = value;
-				DictionaryUtil.Add(QueryParameters, "CubeIds", value);
+				userQuestion = value;
+				DictionaryUtil.Add(QueryParameters, "UserQuestion", value);
 			}
 		}
 
-		public int? OperationType
+		public string UserPrompt
 		{
 			get
 			{
-				return operationType;
+				return userPrompt;
 			}
 			set	
 			{
-				operationType = value;
-				DictionaryUtil.Add(QueryParameters, "OperationType", value.ToString());
+				userPrompt = value;
+				DictionaryUtil.Add(QueryParameters, "UserPrompt", value);
 			}
 		}
 
-		public string ExpireDay
+		public string ModelCode
 		{
 			get
 			{
-				return expireDay;
+				return modelCode;
 			}
 			set	
 			{
-				expireDay = value;
-				DictionaryUtil.Add(QueryParameters, "ExpireDay", value);
-			}
-		}
-
-		public string UserIds
-		{
-			get
-			{
-				return userIds;
-			}
-			set	
-			{
-				userIds = value;
-				DictionaryUtil.Add(QueryParameters, "UserIds", value);
+				modelCode = value;
+				DictionaryUtil.Add(QueryParameters, "ModelCode", value);
 			}
 		}
 
@@ -131,9 +116,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			return false;
 		}
 
-        public override SmartqAuthorizeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DataInterpretationResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SmartqAuthorizeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DataInterpretationResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
