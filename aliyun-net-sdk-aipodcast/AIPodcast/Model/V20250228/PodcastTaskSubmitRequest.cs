@@ -39,6 +39,8 @@ namespace Aliyun.Acs.AIPodcast.Model.V20250228
 			Method = MethodType.POST;
         }
 
+		private string sourceLang;
+
 		private int? counts;
 
 		private List<string> fileUrls = new List<string>(){ };
@@ -50,6 +52,20 @@ namespace Aliyun.Acs.AIPodcast.Model.V20250228
 		private string topic;
 
 		private string workspaceId;
+
+		[JsonProperty(PropertyName = "sourceLang")]
+		public string SourceLang
+		{
+			get
+			{
+				return sourceLang;
+			}
+			set	
+			{
+				sourceLang = value;
+				DictionaryUtil.Add(BodyParameters, "sourceLang", value);
+			}
+		}
 
 		[JsonProperty(PropertyName = "counts")]
 		public int? Counts
