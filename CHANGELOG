@@ -1,3 +1,6 @@
+2025-06-13 Version: 1.8.28
+- Support DescribeHaLogs.
+
 2025-06-12 Version: 1.0.0
 - Support restart node list and re-elect zookeeper.
 

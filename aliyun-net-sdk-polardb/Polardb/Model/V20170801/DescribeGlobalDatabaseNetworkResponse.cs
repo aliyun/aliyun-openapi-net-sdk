@@ -49,6 +49,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private List<DescribeGlobalDatabaseNetwork_DBCluster> dBClusters;
 
+		private DescribeGlobalDatabaseNetwork_Labels labels;
+
 		public string GDNStatus
 		{
 			get
@@ -190,6 +192,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				dBClusters = value;
+			}
+		}
+
+		public DescribeGlobalDatabaseNetwork_Labels Labels
+		{
+			get
+			{
+				return labels;
+			}
+			set	
+			{
+				labels = value;
 			}
 		}
 
@@ -607,6 +621,24 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					{
 						dBNodeId = value;
 					}
+				}
+			}
+		}
+
+		public class DescribeGlobalDatabaseNetwork_Labels
+		{
+
+			private string gDNVersion;
+
+			public string GDNVersion
+			{
+				get
+				{
+					return gDNVersion;
+				}
+				set	
+				{
+					gDNVersion = value;
 				}
 			}
 		}

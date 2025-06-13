@@ -27,84 +27,96 @@ using Aliyun.Acs.polardb.Transform.V20170801;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class RemoveDBClusterFromGDNRequest : RpcAcsRequest<RemoveDBClusterFromGDNResponse>
+    public class DescribeHALogsRequest : RpcAcsRequest<DescribeHALogsResponse>
     {
-        public RemoveDBClusterFromGDNRequest()
-            : base("polardb", "2017-08-01", "RemoveDBClusterFromGDN", "polardb", "openAPI")
+        public DescribeHALogsRequest()
+            : base("polardb", "2017-08-01", "DescribeHALogs", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.polardb.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.polardb.Endpoint.endpointRegionalType, null);
             }
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private long? resourceOwnerId;
+		private string dBNodeId;
 
-		private string securityToken;
+		private string startTime;
 
-		private string gDNId;
+		private int? pageNumber;
 
-		private string resourceOwnerAccount;
+		private string logType;
+
+		private int? pageSize;
 
 		private string dBClusterId;
 
-		private string ownerAccount;
+		private string endTime;
 
-		private long? ownerId;
-
-		private bool? force;
-
-		public long? ResourceOwnerId
+		public string DBNodeId
 		{
 			get
 			{
-				return resourceOwnerId;
+				return dBNodeId;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				dBNodeId = value;
+				DictionaryUtil.Add(QueryParameters, "DBNodeId", value);
 			}
 		}
 
-		public string SecurityToken
+		public string StartTime
 		{
 			get
 			{
-				return securityToken;
+				return startTime;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
-		public string GDNId
+		public int? PageNumber
 		{
 			get
 			{
-				return gDNId;
+				return pageNumber;
 			}
 			set	
 			{
-				gDNId = value;
-				DictionaryUtil.Add(QueryParameters, "GDNId", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public string LogType
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return logType;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				logType = value;
+				DictionaryUtil.Add(QueryParameters, "LogType", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -121,42 +133,16 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string OwnerAccount
+		public string EndTime
 		{
 			get
 			{
-				return ownerAccount;
+				return endTime;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public bool? Force
-		{
-			get
-			{
-				return force;
-			}
-			set	
-			{
-				force = value;
-				DictionaryUtil.Add(QueryParameters, "Force", value.ToString());
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
@@ -165,9 +151,9 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			return false;
 		}
 
-        public override RemoveDBClusterFromGDNResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeHALogsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RemoveDBClusterFromGDNResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeHALogsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

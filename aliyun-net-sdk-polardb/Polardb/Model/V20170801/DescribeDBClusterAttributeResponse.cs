@@ -177,6 +177,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string backupDowngradeLevel;
 
+		private string relativeAICluster;
+
 		private List<DescribeDBClusterAttribute_DBNode> dBNodes;
 
 		private List<DescribeDBClusterAttribute_Tag> tags;
@@ -1092,6 +1094,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				backupDowngradeLevel = value;
+			}
+		}
+
+		public string RelativeAICluster
+		{
+			get
+			{
+				return relativeAICluster;
+			}
+			set	
+			{
+				relativeAICluster = value;
 			}
 		}
 

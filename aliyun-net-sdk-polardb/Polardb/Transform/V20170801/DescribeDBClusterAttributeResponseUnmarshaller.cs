@@ -107,6 +107,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeDBClusterAttributeResponse.DnNodeCount = _ctx.IntegerValue("DescribeDBClusterAttribute.DnNodeCount");
 			describeDBClusterAttributeResponse.DocumentDB = _ctx.StringValue("DescribeDBClusterAttribute.DocumentDB");
 			describeDBClusterAttributeResponse.BackupDowngradeLevel = _ctx.StringValue("DescribeDBClusterAttribute.BackupDowngradeLevel");
+			describeDBClusterAttributeResponse.RelativeAICluster = _ctx.StringValue("DescribeDBClusterAttribute.RelativeAICluster");
 
 			DescribeDBClusterAttributeResponse.DescribeDBClusterAttribute_RelatedAPInstance relatedAPInstance = new DescribeDBClusterAttributeResponse.DescribeDBClusterAttribute_RelatedAPInstance();
 			relatedAPInstance.Name = _ctx.StringValue("DescribeDBClusterAttribute.RelatedAPInstance.Name");

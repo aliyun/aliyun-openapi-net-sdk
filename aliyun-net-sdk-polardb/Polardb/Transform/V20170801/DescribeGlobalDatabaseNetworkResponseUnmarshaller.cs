@@ -42,6 +42,10 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeGlobalDatabaseNetworkResponse.DBClusterId = _ctx.StringValue("DescribeGlobalDatabaseNetwork.DBClusterId");
 			describeGlobalDatabaseNetworkResponse.ResourceGroupId = _ctx.StringValue("DescribeGlobalDatabaseNetwork.ResourceGroupId");
 
+			DescribeGlobalDatabaseNetworkResponse.DescribeGlobalDatabaseNetwork_Labels labels = new DescribeGlobalDatabaseNetworkResponse.DescribeGlobalDatabaseNetwork_Labels();
+			labels.GDNVersion = _ctx.StringValue("DescribeGlobalDatabaseNetwork.Labels.GDNVersion");
+			describeGlobalDatabaseNetworkResponse.Labels = labels;
+
 			List<DescribeGlobalDatabaseNetworkResponse.DescribeGlobalDatabaseNetwork_Connection> describeGlobalDatabaseNetworkResponse_connections = new List<DescribeGlobalDatabaseNetworkResponse.DescribeGlobalDatabaseNetwork_Connection>();
 			for (int i = 0; i < _ctx.Length("DescribeGlobalDatabaseNetwork.Connections.Length"); i++) {
 				DescribeGlobalDatabaseNetworkResponse.DescribeGlobalDatabaseNetwork_Connection connection = new DescribeGlobalDatabaseNetworkResponse.DescribeGlobalDatabaseNetwork_Connection();

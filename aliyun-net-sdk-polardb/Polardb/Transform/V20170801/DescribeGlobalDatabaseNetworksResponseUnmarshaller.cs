@@ -47,6 +47,10 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				globalDatabaseNetwork.GDNDescription = _ctx.StringValue("DescribeGlobalDatabaseNetworks.Items["+ i +"].GDNDescription");
 				globalDatabaseNetwork.ZoneId = _ctx.StringValue("DescribeGlobalDatabaseNetworks.Items["+ i +"].ZoneId");
 
+				DescribeGlobalDatabaseNetworksResponse.DescribeGlobalDatabaseNetworks_GlobalDatabaseNetwork.DescribeGlobalDatabaseNetworks_Labels labels = new DescribeGlobalDatabaseNetworksResponse.DescribeGlobalDatabaseNetworks_GlobalDatabaseNetwork.DescribeGlobalDatabaseNetworks_Labels();
+				labels.GDNVersion = _ctx.StringValue("DescribeGlobalDatabaseNetworks.Items["+ i +"].Labels.GDNVersion");
+				globalDatabaseNetwork.Labels = labels;
+
 				List<DescribeGlobalDatabaseNetworksResponse.DescribeGlobalDatabaseNetworks_GlobalDatabaseNetwork.DescribeGlobalDatabaseNetworks_DBCluster> globalDatabaseNetwork_dBClusters = new List<DescribeGlobalDatabaseNetworksResponse.DescribeGlobalDatabaseNetworks_GlobalDatabaseNetwork.DescribeGlobalDatabaseNetworks_DBCluster>();
 				for (int j = 0; j < _ctx.Length("DescribeGlobalDatabaseNetworks.Items["+ i +"].DBClusters.Length"); j++) {
 					DescribeGlobalDatabaseNetworksResponse.DescribeGlobalDatabaseNetworks_GlobalDatabaseNetwork.DescribeGlobalDatabaseNetworks_DBCluster dBCluster = new DescribeGlobalDatabaseNetworksResponse.DescribeGlobalDatabaseNetworks_GlobalDatabaseNetwork.DescribeGlobalDatabaseNetworks_DBCluster();

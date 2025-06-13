@@ -116,6 +116,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private List<DescribeGlobalDatabaseNetworks_OutCloudDBCluster> outCloudDBClusters;
 
+			private DescribeGlobalDatabaseNetworks_Labels labels;
+
 			public string DBVersion
 			{
 				get
@@ -224,6 +226,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
+			public DescribeGlobalDatabaseNetworks_Labels Labels
+			{
+				get
+				{
+					return labels;
+				}
+				set	
+				{
+					labels = value;
+				}
+			}
+
 			public class DescribeGlobalDatabaseNetworks_DBCluster
 			{
 
@@ -326,6 +340,24 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					set	
 					{
 						regionId = value;
+					}
+				}
+			}
+
+			public class DescribeGlobalDatabaseNetworks_Labels
+			{
+
+				private string gDNVersion;
+
+				public string GDNVersion
+				{
+					get
+					{
+						return gDNVersion;
+					}
+					set	
+					{
+						gDNVersion = value;
 					}
 				}
 			}
