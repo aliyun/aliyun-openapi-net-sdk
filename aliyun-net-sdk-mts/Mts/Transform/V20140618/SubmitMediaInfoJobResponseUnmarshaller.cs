@@ -95,6 +95,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				videoStream.ColorRange = _ctx.StringValue("SubmitMediaInfoJob.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].ColorRange");
 				videoStream.ColorTransfer = _ctx.StringValue("SubmitMediaInfoJob.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].ColorTransfer");
 				videoStream.ColorPrimaries = _ctx.StringValue("SubmitMediaInfoJob.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].ColorPrimaries");
+				videoStream.DurationInaccurate = _ctx.StringValue("SubmitMediaInfoJob.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].DurationInaccurate");
 
 				SubmitMediaInfoJobResponse.SubmitMediaInfoJob_MediaInfoJob.SubmitMediaInfoJob_Properties.SubmitMediaInfoJob_Streams.SubmitMediaInfoJob_VideoStream.SubmitMediaInfoJob_NetworkCost networkCost = new SubmitMediaInfoJobResponse.SubmitMediaInfoJob_MediaInfoJob.SubmitMediaInfoJob_Properties.SubmitMediaInfoJob_Streams.SubmitMediaInfoJob_VideoStream.SubmitMediaInfoJob_NetworkCost();
 				networkCost.PreloadTime = _ctx.StringValue("SubmitMediaInfoJob.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].NetworkCost.PreloadTime");
@@ -125,6 +126,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				audioStream.Duration = _ctx.StringValue("SubmitMediaInfoJob.MediaInfoJob.Properties.Streams.AudioStreamList["+ i +"].Duration");
 				audioStream.CodecTag = _ctx.StringValue("SubmitMediaInfoJob.MediaInfoJob.Properties.Streams.AudioStreamList["+ i +"].CodecTag");
 				audioStream.CodecTimeBase = _ctx.StringValue("SubmitMediaInfoJob.MediaInfoJob.Properties.Streams.AudioStreamList["+ i +"].CodecTimeBase");
+				audioStream.DurationInaccurate = _ctx.StringValue("SubmitMediaInfoJob.MediaInfoJob.Properties.Streams.AudioStreamList["+ i +"].DurationInaccurate");
 
 				streams_audioStreamList.Add(audioStream);
 			}

@@ -531,6 +531,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 						private string colorPrimaries;
 
+						private string durationInaccurate;
+
 						private SubmitMediaInfoJob_NetworkCost networkCost;
 
 						public string Sar
@@ -845,6 +847,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
+						public string DurationInaccurate
+						{
+							get
+							{
+								return durationInaccurate;
+							}
+							set	
+							{
+								durationInaccurate = value;
+							}
+						}
+
 						public SubmitMediaInfoJob_NetworkCost NetworkCost
 						{
 							get
@@ -938,6 +952,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						private string codecTag;
 
 						private string codecTimeBase;
+
+						private string durationInaccurate;
 
 						public string Timebase
 						{
@@ -1128,6 +1144,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							set	
 							{
 								codecTimeBase = value;
+							}
+						}
+
+						public string DurationInaccurate
+						{
+							get
+							{
+								return durationInaccurate;
+							}
+							set	
+							{
+								durationInaccurate = value;
 							}
 						}
 					}

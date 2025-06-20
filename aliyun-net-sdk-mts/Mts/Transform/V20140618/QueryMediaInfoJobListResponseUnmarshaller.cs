@@ -103,6 +103,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 					videoStream.ColorRange = _ctx.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].ColorRange");
 					videoStream.ColorTransfer = _ctx.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].ColorTransfer");
 					videoStream.ColorPrimaries = _ctx.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].ColorPrimaries");
+					videoStream.DurationInaccurate = _ctx.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].DurationInaccurate");
 
 					QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob.QueryMediaInfoJobList_Properties.QueryMediaInfoJobList_Streams.QueryMediaInfoJobList_VideoStream.QueryMediaInfoJobList_NetworkCost networkCost = new QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob.QueryMediaInfoJobList_Properties.QueryMediaInfoJobList_Streams.QueryMediaInfoJobList_VideoStream.QueryMediaInfoJobList_NetworkCost();
 					networkCost.PreloadTime = _ctx.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].NetworkCost.PreloadTime");
@@ -133,6 +134,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 					audioStream.Duration = _ctx.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].Duration");
 					audioStream.CodecTag = _ctx.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].CodecTag");
 					audioStream.CodecTimeBase = _ctx.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].CodecTimeBase");
+					audioStream.DurationInaccurate = _ctx.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].DurationInaccurate");
 
 					streams_audioStreamList.Add(audioStream);
 				}
