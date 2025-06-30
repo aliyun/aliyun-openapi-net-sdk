@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Sts;
 using Aliyun.Acs.Sts.Transform;
 using Aliyun.Acs.Sts.Transform.V20150401;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Sts.Model.V20150401
     public class AssumeRoleWithOIDCRequest : RpcAcsRequest<AssumeRoleWithOIDCResponse>
     {
         public AssumeRoleWithOIDCRequest()
-            : base("Sts", "2015-04-01", "AssumeRoleWithOIDC")
+            : base("Sts", "2015-04-01", "AssumeRoleWithOIDC", "sts", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
