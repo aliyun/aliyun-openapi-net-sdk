@@ -84,6 +84,8 @@ namespace Aliyun.Acs.eds_user.Model.V20210308
 
 			private List<DescribeResourceGroups_Timer> timers;
 
+			private List<DescribeResourceGroups_AppRule> appRules;
+
 			public string ResourceGroupId
 			{
 				get
@@ -168,6 +170,18 @@ namespace Aliyun.Acs.eds_user.Model.V20210308
 				}
 			}
 
+			public List<DescribeResourceGroups_AppRule> AppRules
+			{
+				get
+				{
+					return appRules;
+				}
+				set	
+				{
+					appRules = value;
+				}
+			}
+
 			public class DescribeResourceGroups_Policy
 			{
 
@@ -221,6 +235,10 @@ namespace Aliyun.Acs.eds_user.Model.V20210308
 
 				private string name;
 
+				private string timerStatus;
+
+				private string bindStatus;
+
 				public string Id
 				{
 					get
@@ -242,6 +260,76 @@ namespace Aliyun.Acs.eds_user.Model.V20210308
 					set	
 					{
 						name = value;
+					}
+				}
+
+				public string TimerStatus
+				{
+					get
+					{
+						return timerStatus;
+					}
+					set	
+					{
+						timerStatus = value;
+					}
+				}
+
+				public string BindStatus
+				{
+					get
+					{
+						return bindStatus;
+					}
+					set	
+					{
+						bindStatus = value;
+					}
+				}
+			}
+
+			public class DescribeResourceGroups_AppRule
+			{
+
+				private string id;
+
+				private string name;
+
+				private int? type;
+
+				public string Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public int? Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
 					}
 				}
 			}

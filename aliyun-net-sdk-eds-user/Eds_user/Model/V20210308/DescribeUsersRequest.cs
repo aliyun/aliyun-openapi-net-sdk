@@ -67,6 +67,8 @@ namespace Aliyun.Acs.eds_user.Model.V20210308
 
 		private string showExtras;
 
+		private int? status;
+
 		[JsonProperty(PropertyName = "IsQueryAllSubOrgs")]
 		public bool? IsQueryAllSubOrgs
 		{
@@ -246,6 +248,20 @@ namespace Aliyun.Acs.eds_user.Model.V20210308
 			{
 				showExtras = value;
 				DictionaryUtil.Add(BodyParameters, "ShowExtras", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "Status")]
+		public int? Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value.ToString());
 			}
 		}
 

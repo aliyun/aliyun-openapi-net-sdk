@@ -493,6 +493,8 @@ namespace Aliyun.Acs.eds_user.Model.V20210308
 
 				private string orgName;
 
+				private string orgNamePath;
+
 				[JsonProperty(PropertyName = "OrgId")]
 				public string OrgId
 				{
@@ -516,6 +518,19 @@ namespace Aliyun.Acs.eds_user.Model.V20210308
 					set	
 					{
 						orgName = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "OrgNamePath")]
+				public string OrgNamePath
+				{
+					get
+					{
+						return orgNamePath;
+					}
+					set	
+					{
+						orgNamePath = value;
 					}
 				}
 			}

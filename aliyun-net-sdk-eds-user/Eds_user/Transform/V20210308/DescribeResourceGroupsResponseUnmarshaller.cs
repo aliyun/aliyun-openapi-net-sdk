@@ -59,10 +59,23 @@ namespace Aliyun.Acs.eds_user.Transform.V20210308
 					DescribeResourceGroupsResponse.DescribeResourceGroups_ResourceGroupItem.DescribeResourceGroups_Timer timer = new DescribeResourceGroupsResponse.DescribeResourceGroups_ResourceGroupItem.DescribeResourceGroups_Timer();
 					timer.Id = _ctx.StringValue("DescribeResourceGroups.ResourceGroup["+ i +"].Timers["+ j +"].Id");
 					timer.Name = _ctx.StringValue("DescribeResourceGroups.ResourceGroup["+ i +"].Timers["+ j +"].Name");
+					timer.TimerStatus = _ctx.StringValue("DescribeResourceGroups.ResourceGroup["+ i +"].Timers["+ j +"].TimerStatus");
+					timer.BindStatus = _ctx.StringValue("DescribeResourceGroups.ResourceGroup["+ i +"].Timers["+ j +"].BindStatus");
 
 					resourceGroupItem_timers.Add(timer);
 				}
 				resourceGroupItem.Timers = resourceGroupItem_timers;
+
+				List<DescribeResourceGroupsResponse.DescribeResourceGroups_ResourceGroupItem.DescribeResourceGroups_AppRule> resourceGroupItem_appRules = new List<DescribeResourceGroupsResponse.DescribeResourceGroups_ResourceGroupItem.DescribeResourceGroups_AppRule>();
+				for (int j = 0; j < _ctx.Length("DescribeResourceGroups.ResourceGroup["+ i +"].AppRules.Length"); j++) {
+					DescribeResourceGroupsResponse.DescribeResourceGroups_ResourceGroupItem.DescribeResourceGroups_AppRule appRule = new DescribeResourceGroupsResponse.DescribeResourceGroups_ResourceGroupItem.DescribeResourceGroups_AppRule();
+					appRule.Id = _ctx.StringValue("DescribeResourceGroups.ResourceGroup["+ i +"].AppRules["+ j +"].Id");
+					appRule.Name = _ctx.StringValue("DescribeResourceGroups.ResourceGroup["+ i +"].AppRules["+ j +"].Name");
+					appRule.Type = _ctx.IntegerValue("DescribeResourceGroups.ResourceGroup["+ i +"].AppRules["+ j +"].Type");
+
+					resourceGroupItem_appRules.Add(appRule);
+				}
+				resourceGroupItem.AppRules = resourceGroupItem_appRules;
 
 				describeResourceGroupsResponse_resourceGroup.Add(resourceGroupItem);
 			}

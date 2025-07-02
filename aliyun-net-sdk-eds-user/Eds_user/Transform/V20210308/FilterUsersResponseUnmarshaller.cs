@@ -86,6 +86,7 @@ namespace Aliyun.Acs.eds_user.Transform.V20210308
 					FilterUsersResponse.FilterUsers_Data.FilterUsers_OrgListItem orgListItem = new FilterUsersResponse.FilterUsers_Data.FilterUsers_OrgListItem();
 					orgListItem.OrgId = _ctx.StringValue("FilterUsers.Users["+ i +"].OrgList["+ j +"].OrgId");
 					orgListItem.OrgName = _ctx.StringValue("FilterUsers.Users["+ i +"].OrgList["+ j +"].OrgName");
+					orgListItem.OrgNamePath = _ctx.StringValue("FilterUsers.Users["+ i +"].OrgList["+ j +"].OrgNamePath");
 
 					data_orgList.Add(orgListItem);
 				}

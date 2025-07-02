@@ -73,6 +73,7 @@ namespace Aliyun.Acs.eds_user.Transform.V20210308
 					DescribeUsersResponse.DescribeUsers_Data.DescribeUsers_Org org = new DescribeUsersResponse.DescribeUsers_Data.DescribeUsers_Org();
 					org.OrgId = _ctx.StringValue("DescribeUsers.Users["+ i +"].Orgs["+ j +"].OrgId");
 					org.OrgName = _ctx.StringValue("DescribeUsers.Users["+ i +"].Orgs["+ j +"].OrgName");
+					org.OrgNamePath = _ctx.StringValue("DescribeUsers.Users["+ i +"].Orgs["+ j +"].OrgNamePath");
 
 					data_orgs.Add(org);
 				}
