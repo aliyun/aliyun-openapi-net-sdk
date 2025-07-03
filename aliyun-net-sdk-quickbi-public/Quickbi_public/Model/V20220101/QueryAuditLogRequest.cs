@@ -35,6 +35,8 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			Method = MethodType.POST;
         }
 
+		private string accessSourceFlag;
+
 		private string startDate;
 
 		private string logType;
@@ -48,6 +50,21 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		private string operatorId;
 
 		private string workspaceId;
+
+		private string userAccessDevice;
+
+		public string AccessSourceFlag
+		{
+			get
+			{
+				return accessSourceFlag;
+			}
+			set	
+			{
+				accessSourceFlag = value;
+				DictionaryUtil.Add(QueryParameters, "AccessSourceFlag", value);
+			}
+		}
 
 		public string StartDate
 		{
@@ -137,6 +154,19 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				workspaceId = value;
 				DictionaryUtil.Add(QueryParameters, "WorkspaceId", value);
+			}
+		}
+
+		public string UserAccessDevice
+		{
+			get
+			{
+				return userAccessDevice;
+			}
+			set	
+			{
+				userAccessDevice = value;
+				DictionaryUtil.Add(QueryParameters, "UserAccessDevice", value);
 			}
 		}
 
