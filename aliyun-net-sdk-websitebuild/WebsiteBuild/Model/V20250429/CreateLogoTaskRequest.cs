@@ -39,11 +39,11 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 
 		private string negativePrompt;
 
-		private string version;
-
 		private string prompt;
 
 		private string parameters;
+
+		private string logoVersion;
 
 		public string NegativePrompt
 		{
@@ -55,19 +55,6 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			{
 				negativePrompt = value;
 				DictionaryUtil.Add(QueryParameters, "NegativePrompt", value);
-			}
-		}
-
-		public string Version
-		{
-			get
-			{
-				return version;
-			}
-			set	
-			{
-				version = value;
-				DictionaryUtil.Add(QueryParameters, "Version", value);
 			}
 		}
 
@@ -94,6 +81,19 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			{
 				parameters = value;
 				DictionaryUtil.Add(QueryParameters, "Parameters", value);
+			}
+		}
+
+		public string LogoVersion
+		{
+			get
+			{
+				return logoVersion;
+			}
+			set	
+			{
+				logoVersion = value;
+				DictionaryUtil.Add(QueryParameters, "LogoVersion", value);
 			}
 		}
 
