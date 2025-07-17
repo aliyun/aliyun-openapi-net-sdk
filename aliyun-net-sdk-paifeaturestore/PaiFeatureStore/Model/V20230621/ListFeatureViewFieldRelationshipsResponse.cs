@@ -119,6 +119,8 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 
 				private string modelName;
 
+				private string featureAliasName;
+
 				public string ModelId
 				{
 					get
@@ -140,6 +142,18 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 					set	
 					{
 						modelName = value;
+					}
+				}
+
+				public string FeatureAliasName
+				{
+					get
+					{
+						return featureAliasName;
+					}
+					set	
+					{
+						featureAliasName = value;
 					}
 				}
 			}

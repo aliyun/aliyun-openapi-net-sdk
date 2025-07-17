@@ -48,6 +48,10 @@ namespace Aliyun.Acs.PaiFeatureStore.Transform.V20230621
 				featureDBInstanceInfo.Status = _ctx.StringValue("ListInstances.Instances["+ i +"].FeatureDBInstanceInfo.Status");
 				instancesItem.FeatureDBInstanceInfo = featureDBInstanceInfo;
 
+				ListInstancesResponse.ListInstances_InstancesItem.ListInstances_FeatureDBInfo featureDBInfo = new ListInstancesResponse.ListInstances_InstancesItem.ListInstances_FeatureDBInfo();
+				featureDBInfo.Status = _ctx.StringValue("ListInstances.Instances["+ i +"].FeatureDBInfo.Status");
+				instancesItem.FeatureDBInfo = featureDBInfo;
+
 				listInstancesResponse_instances.Add(instancesItem);
 			}
 			listInstancesResponse.Instances = listInstancesResponse_instances;

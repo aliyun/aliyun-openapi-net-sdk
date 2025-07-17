@@ -22,28 +22,32 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 {
-	public class GetInstanceResponse : AcsResponse
+	public class GetLLMConfigResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string status;
+		private string lLMConfigId;
 
-		private string regionId;
+		private string name;
+
+		private string apiKey;
+
+		private string model;
+
+		private string baseUrl;
+
+		private int? rps;
+
+		private int? maxTokens;
 
 		private string gmtCreateTime;
 
 		private string gmtModifiedTime;
 
-		private double? progress;
+		private int? batchSize;
 
-		private string message;
-
-		private string type;
-
-		private GetInstance_FeatureDBInstanceInfo featureDBInstanceInfo;
-
-		private GetInstance_FeatureDBInfo featureDBInfo;
+		private string workspaceId;
 
 		public string RequestId
 		{
@@ -57,27 +61,87 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 			}
 		}
 
-		public string Status
+		public string LLMConfigId
 		{
 			get
 			{
-				return status;
+				return lLMConfigId;
 			}
 			set	
 			{
-				status = value;
+				lLMConfigId = value;
 			}
 		}
 
-		public string RegionId
+		public string Name
 		{
 			get
 			{
-				return regionId;
+				return name;
 			}
 			set	
 			{
-				regionId = value;
+				name = value;
+			}
+		}
+
+		public string ApiKey
+		{
+			get
+			{
+				return apiKey;
+			}
+			set	
+			{
+				apiKey = value;
+			}
+		}
+
+		public string Model
+		{
+			get
+			{
+				return model;
+			}
+			set	
+			{
+				model = value;
+			}
+		}
+
+		public string BaseUrl
+		{
+			get
+			{
+				return baseUrl;
+			}
+			set	
+			{
+				baseUrl = value;
+			}
+		}
+
+		public int? Rps
+		{
+			get
+			{
+				return rps;
+			}
+			set	
+			{
+				rps = value;
+			}
+		}
+
+		public int? MaxTokens
+		{
+			get
+			{
+				return maxTokens;
+			}
+			set	
+			{
+				maxTokens = value;
 			}
 		}
 
@@ -105,99 +169,27 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 			}
 		}
 
-		public double? Progress
+		public int? BatchSize
 		{
 			get
 			{
-				return progress;
+				return batchSize;
 			}
 			set	
 			{
-				progress = value;
+				batchSize = value;
 			}
 		}
 
-		public string Message
+		public string WorkspaceId
 		{
 			get
 			{
-				return message;
+				return workspaceId;
 			}
 			set	
 			{
-				message = value;
-			}
-		}
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-			}
-		}
-
-		public GetInstance_FeatureDBInstanceInfo FeatureDBInstanceInfo
-		{
-			get
-			{
-				return featureDBInstanceInfo;
-			}
-			set	
-			{
-				featureDBInstanceInfo = value;
-			}
-		}
-
-		public GetInstance_FeatureDBInfo FeatureDBInfo
-		{
-			get
-			{
-				return featureDBInfo;
-			}
-			set	
-			{
-				featureDBInfo = value;
-			}
-		}
-
-		public class GetInstance_FeatureDBInstanceInfo
-		{
-
-			private string status;
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-		}
-
-		public class GetInstance_FeatureDBInfo
-		{
-
-			private string status;
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
+				workspaceId = value;
 			}
 		}
 	}

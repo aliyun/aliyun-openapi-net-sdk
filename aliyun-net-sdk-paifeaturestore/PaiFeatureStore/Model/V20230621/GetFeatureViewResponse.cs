@@ -382,6 +382,8 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 
 			private string type;
 
+			private List<GetFeatureView_TransformItem> transform;
+
 			private List<string> attributes;
 
 			public string Name
@@ -408,6 +410,18 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 				}
 			}
 
+			public List<GetFeatureView_TransformItem> Transform
+			{
+				get
+				{
+					return transform;
+				}
+				set	
+				{
+					transform = value;
+				}
+			}
+
 			public List<string> Attributes
 			{
 				get
@@ -417,6 +431,84 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 				set	
 				{
 					attributes = value;
+				}
+			}
+
+			public class GetFeatureView_TransformItem
+			{
+
+				private string type;
+
+				private int? lLMConfigId;
+
+				private List<GetFeatureView_InputItem> input;
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
+					}
+				}
+
+				public int? LLMConfigId
+				{
+					get
+					{
+						return lLMConfigId;
+					}
+					set	
+					{
+						lLMConfigId = value;
+					}
+				}
+
+				public List<GetFeatureView_InputItem> Input
+				{
+					get
+					{
+						return input;
+					}
+					set	
+					{
+						input = value;
+					}
+				}
+
+				public class GetFeatureView_InputItem
+				{
+
+					private string name;
+
+					private string type;
+
+					public string Name
+					{
+						get
+						{
+							return name;
+						}
+						set	
+						{
+							name = value;
+						}
+					}
+
+					public string Type
+					{
+						get
+						{
+							return type;
+						}
+						set	
+						{
+							type = value;
+						}
+					}
 				}
 			}
 		}

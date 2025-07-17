@@ -45,6 +45,7 @@ namespace Aliyun.Acs.PaiFeatureStore.Transform.V20230621
 					ListFeatureViewFieldRelationshipsResponse.ListFeatureViewFieldRelationships_RelationshipsItem.ListFeatureViewFieldRelationships_ModelsItem modelsItem = new ListFeatureViewFieldRelationshipsResponse.ListFeatureViewFieldRelationships_RelationshipsItem.ListFeatureViewFieldRelationships_ModelsItem();
 					modelsItem.ModelId = _ctx.StringValue("ListFeatureViewFieldRelationships.Relationships["+ i +"].Models["+ j +"].ModelId");
 					modelsItem.ModelName = _ctx.StringValue("ListFeatureViewFieldRelationships.Relationships["+ i +"].Models["+ j +"].ModelName");
+					modelsItem.FeatureAliasName = _ctx.StringValue("ListFeatureViewFieldRelationships.Relationships["+ i +"].Models["+ j +"].FeatureAliasName");
 
 					relationshipsItem_models.Add(modelsItem);
 				}

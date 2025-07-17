@@ -43,6 +43,10 @@ namespace Aliyun.Acs.PaiFeatureStore.Transform.V20230621
 			GetInstanceResponse.GetInstance_FeatureDBInstanceInfo featureDBInstanceInfo = new GetInstanceResponse.GetInstance_FeatureDBInstanceInfo();
 			featureDBInstanceInfo.Status = _ctx.StringValue("GetInstance.FeatureDBInstanceInfo.Status");
 			getInstanceResponse.FeatureDBInstanceInfo = featureDBInstanceInfo;
+
+			GetInstanceResponse.GetInstance_FeatureDBInfo featureDBInfo = new GetInstanceResponse.GetInstance_FeatureDBInfo();
+			featureDBInfo.Status = _ctx.StringValue("GetInstance.FeatureDBInfo.Status");
+			getInstanceResponse.FeatureDBInfo = featureDBInfo;
         
 			return getInstanceResponse;
         }

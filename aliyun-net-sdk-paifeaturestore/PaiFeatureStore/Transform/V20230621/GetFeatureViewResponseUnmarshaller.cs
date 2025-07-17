@@ -73,6 +73,26 @@ namespace Aliyun.Acs.PaiFeatureStore.Transform.V20230621
 				}
 				fieldsItem.Attributes = fieldsItem_attributes;
 
+				List<GetFeatureViewResponse.GetFeatureView_FieldsItem.GetFeatureView_TransformItem> fieldsItem_transform = new List<GetFeatureViewResponse.GetFeatureView_FieldsItem.GetFeatureView_TransformItem>();
+				for (int j = 0; j < _ctx.Length("GetFeatureView.Fields["+ i +"].Transform.Length"); j++) {
+					GetFeatureViewResponse.GetFeatureView_FieldsItem.GetFeatureView_TransformItem transformItem = new GetFeatureViewResponse.GetFeatureView_FieldsItem.GetFeatureView_TransformItem();
+					transformItem.Type = _ctx.StringValue("GetFeatureView.Fields["+ i +"].Transform["+ j +"].Type");
+					transformItem.LLMConfigId = _ctx.IntegerValue("GetFeatureView.Fields["+ i +"].Transform["+ j +"].LLMConfigId");
+
+					List<GetFeatureViewResponse.GetFeatureView_FieldsItem.GetFeatureView_TransformItem.GetFeatureView_InputItem> transformItem_input = new List<GetFeatureViewResponse.GetFeatureView_FieldsItem.GetFeatureView_TransformItem.GetFeatureView_InputItem>();
+					for (int k = 0; k < _ctx.Length("GetFeatureView.Fields["+ i +"].Transform["+ j +"].Input.Length"); k++) {
+						GetFeatureViewResponse.GetFeatureView_FieldsItem.GetFeatureView_TransformItem.GetFeatureView_InputItem inputItem = new GetFeatureViewResponse.GetFeatureView_FieldsItem.GetFeatureView_TransformItem.GetFeatureView_InputItem();
+						inputItem.Name = _ctx.StringValue("GetFeatureView.Fields["+ i +"].Transform["+ j +"].Input["+ k +"].Name");
+						inputItem.Type = _ctx.StringValue("GetFeatureView.Fields["+ i +"].Transform["+ j +"].Input["+ k +"].Type");
+
+						transformItem_input.Add(inputItem);
+					}
+					transformItem.Input = transformItem_input;
+
+					fieldsItem_transform.Add(transformItem);
+				}
+				fieldsItem.Transform = fieldsItem_transform;
+
 				getFeatureViewResponse_fields.Add(fieldsItem);
 			}
 			getFeatureViewResponse.Fields = getFeatureViewResponse_fields;

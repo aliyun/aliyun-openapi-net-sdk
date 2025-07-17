@@ -22,14 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 {
-	public class ListInstancesResponse : AcsResponse
+	public class ListLLMConfigsResponse : AcsResponse
 	{
 
 		private string requestId;
 
 		private long? totalCount;
 
-		private List<ListInstances_InstancesItem> instances;
+		private string nextToken;
+
+		private int? maxResults;
+
+		private List<ListLLMConfigs_LlmConfigsItem> lLMConfigs;
 
 		public string RequestId
 		{
@@ -55,82 +59,150 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 			}
 		}
 
-		public List<ListInstances_InstancesItem> Instances
+		public string NextToken
 		{
 			get
 			{
-				return instances;
+				return nextToken;
 			}
 			set	
 			{
-				instances = value;
+				nextToken = value;
 			}
 		}
 
-		public class ListInstances_InstancesItem
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+			}
+		}
+
+		public List<ListLLMConfigs_LlmConfigsItem> LLMConfigs
+		{
+			get
+			{
+				return lLMConfigs;
+			}
+			set	
+			{
+				lLMConfigs = value;
+			}
+		}
+
+		public class ListLLMConfigs_LlmConfigsItem
 		{
 
-			private string instanceId;
+			private string lLMConfigId;
 
-			private string type;
+			private string name;
 
-			private string status;
+			private string apiKey;
 
-			private string regionId;
+			private string model;
+
+			private string baseUrl;
+
+			private int? rps;
+
+			private int? maxTokens;
 
 			private string gmtCreateTime;
 
 			private string gmtModifiedTime;
 
-			private ListInstances_FeatureDBInstanceInfo featureDBInstanceInfo;
+			private string resourceGroupId;
 
-			private ListInstances_FeatureDBInfo featureDBInfo;
+			private int? batchSize;
 
-			public string InstanceId
+			private string workspaceId;
+
+			public string LLMConfigId
 			{
 				get
 				{
-					return instanceId;
+					return lLMConfigId;
 				}
 				set	
 				{
-					instanceId = value;
+					lLMConfigId = value;
 				}
 			}
 
-			public string Type
+			public string Name
 			{
 				get
 				{
-					return type;
+					return name;
 				}
 				set	
 				{
-					type = value;
+					name = value;
 				}
 			}
 
-			public string Status
+			public string ApiKey
 			{
 				get
 				{
-					return status;
+					return apiKey;
 				}
 				set	
 				{
-					status = value;
+					apiKey = value;
 				}
 			}
 
-			public string RegionId
+			public string Model
 			{
 				get
 				{
-					return regionId;
+					return model;
 				}
 				set	
 				{
-					regionId = value;
+					model = value;
+				}
+			}
+
+			public string BaseUrl
+			{
+				get
+				{
+					return baseUrl;
+				}
+				set	
+				{
+					baseUrl = value;
+				}
+			}
+
+			public int? Rps
+			{
+				get
+				{
+					return rps;
+				}
+				set	
+				{
+					rps = value;
+				}
+			}
+
+			public int? MaxTokens
+			{
+				get
+				{
+					return maxTokens;
+				}
+				set	
+				{
+					maxTokens = value;
 				}
 			}
 
@@ -158,63 +230,39 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 				}
 			}
 
-			public ListInstances_FeatureDBInstanceInfo FeatureDBInstanceInfo
+			public string ResourceGroupId
 			{
 				get
 				{
-					return featureDBInstanceInfo;
+					return resourceGroupId;
 				}
 				set	
 				{
-					featureDBInstanceInfo = value;
+					resourceGroupId = value;
 				}
 			}
 
-			public ListInstances_FeatureDBInfo FeatureDBInfo
+			public int? BatchSize
 			{
 				get
 				{
-					return featureDBInfo;
+					return batchSize;
 				}
 				set	
 				{
-					featureDBInfo = value;
+					batchSize = value;
 				}
 			}
 
-			public class ListInstances_FeatureDBInstanceInfo
+			public string WorkspaceId
 			{
-
-				private string status;
-
-				public string Status
+				get
 				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
+					return workspaceId;
 				}
-			}
-
-			public class ListInstances_FeatureDBInfo
-			{
-
-				private string status;
-
-				public string Status
+				set	
 				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
+					workspaceId = value;
 				}
 			}
 		}
