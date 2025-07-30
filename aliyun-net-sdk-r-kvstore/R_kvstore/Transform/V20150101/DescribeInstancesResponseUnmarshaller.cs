@@ -79,8 +79,11 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				kVStoreInstance.ComputingType = _ctx.StringValue("DescribeInstances.Instances["+ i +"].ComputingType");
 				kVStoreInstance.CloudType = _ctx.StringValue("DescribeInstances.Instances["+ i +"].CloudType");
 				kVStoreInstance.EditionType = _ctx.StringValue("DescribeInstances.Instances["+ i +"].EditionType");
-				kVStoreInstance.ReadOnlyCount = _ctx.StringValue("DescribeInstances.Instances["+ i +"].ReadOnlyCount");
 				kVStoreInstance.ShardClass = _ctx.StringValue("DescribeInstances.Instances["+ i +"].ShardClass");
+				kVStoreInstance.ReplicaCount = _ctx.IntegerValue("DescribeInstances.Instances["+ i +"].ReplicaCount");
+				kVStoreInstance.SlaveReplicaCount = _ctx.IntegerValue("DescribeInstances.Instances["+ i +"].SlaveReplicaCount");
+				kVStoreInstance.ReadOnlyCount = _ctx.StringValue("DescribeInstances.Instances["+ i +"].ReadOnlyCount");
+				kVStoreInstance.SlaveReadOnlyCount = _ctx.IntegerValue("DescribeInstances.Instances["+ i +"].SlaveReadOnlyCount");
 
 				List<DescribeInstancesResponse.DescribeInstances_KVStoreInstance.DescribeInstances_Tag> kVStoreInstance_tags = new List<DescribeInstancesResponse.DescribeInstances_KVStoreInstance.DescribeInstances_Tag>();
 				for (int j = 0; j < _ctx.Length("DescribeInstances.Instances["+ i +"].Tags.Length"); j++) {

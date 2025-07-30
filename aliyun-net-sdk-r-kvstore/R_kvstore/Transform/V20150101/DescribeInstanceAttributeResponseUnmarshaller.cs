@@ -58,7 +58,10 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				dBInstanceAttribute.InstanceName = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].InstanceName");
 				dBInstanceAttribute.SecurityIPList = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].SecurityIPList");
 				dBInstanceAttribute.ShardCount = _ctx.IntegerValue("DescribeInstanceAttribute.Instances["+ i +"].ShardCount");
+				dBInstanceAttribute.ReplicaCount = _ctx.IntegerValue("DescribeInstanceAttribute.Instances["+ i +"].ReplicaCount");
+				dBInstanceAttribute.SlaveReplicaCount = _ctx.IntegerValue("DescribeInstanceAttribute.Instances["+ i +"].SlaveReplicaCount");
 				dBInstanceAttribute.ReadOnlyCount = _ctx.IntegerValue("DescribeInstanceAttribute.Instances["+ i +"].ReadOnlyCount");
+				dBInstanceAttribute.SlaveReadOnlyCount = _ctx.LongValue("DescribeInstanceAttribute.Instances["+ i +"].SlaveReadOnlyCount");
 				dBInstanceAttribute.GlobalInstanceId = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].GlobalInstanceId");
 				dBInstanceAttribute.QPS = _ctx.LongValue("DescribeInstanceAttribute.Instances["+ i +"].QPS");
 				dBInstanceAttribute.AuditLogRetention = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].AuditLogRetention");
@@ -79,7 +82,6 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				dBInstanceAttribute.NodeType = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].NodeType");
 				dBInstanceAttribute.Connections = _ctx.LongValue("DescribeInstanceAttribute.Instances["+ i +"].Connections");
 				dBInstanceAttribute.BackupLogStartTime = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].BackupLogStartTime");
-				dBInstanceAttribute.SlaveReadOnlyCount = _ctx.LongValue("DescribeInstanceAttribute.Instances["+ i +"].SlaveReadOnlyCount");
 				dBInstanceAttribute.ResourceGroupId = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].ResourceGroupId");
 				dBInstanceAttribute.ZoneId = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].ZoneId");
 				dBInstanceAttribute.InstanceStatus = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].InstanceStatus");
@@ -88,6 +90,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				dBInstanceAttribute.CloudType = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].CloudType");
 				dBInstanceAttribute.IsOrderCompleted = _ctx.BooleanValue("DescribeInstanceAttribute.Instances["+ i +"].IsOrderCompleted");
 				dBInstanceAttribute.IsSupportTDE = _ctx.BooleanValue("DescribeInstanceAttribute.Instances["+ i +"].IsSupportTDE");
+				dBInstanceAttribute.AutoSecondaryZone = _ctx.BooleanValue("DescribeInstanceAttribute.Instances["+ i +"].AutoSecondaryZone");
 
 				List<DescribeInstanceAttributeResponse.DescribeInstanceAttribute_DBInstanceAttribute.DescribeInstanceAttribute_Tag> dBInstanceAttribute_tags = new List<DescribeInstanceAttributeResponse.DescribeInstanceAttribute_DBInstanceAttribute.DescribeInstanceAttribute_Tag>();
 				for (int j = 0; j < _ctx.Length("DescribeInstanceAttribute.Instances["+ i +"].Tags.Length"); j++) {

@@ -27,10 +27,10 @@ using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class DescribeTasksRequest : RpcAcsRequest<DescribeTasksResponse>
+    public class ModifyBackupExpireTimeRequest : RpcAcsRequest<ModifyBackupExpireTimeResponse>
     {
-        public DescribeTasksRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeTasks", "redisa", "openAPI")
+        public ModifyBackupExpireTimeRequest()
+            : base("R-kvstore", "2015-01-01", "ModifyBackupExpireTime", "redisa", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,25 +42,17 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
-		private string startTime;
-
-		private int? pageNumber;
-
-		private string securityToken;
-
-		private int? pageSize;
+		private string expectExpireTime;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string endTime;
+		private string backupId;
 
 		private long? ownerId;
 
 		private string instanceId;
-
-		private string status;
 
 		public long? ResourceOwnerId
 		{
@@ -75,55 +67,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string StartTime
+		public string ExpectExpireTime
 		{
 			get
 			{
-				return startTime;
+				return expectExpireTime;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				expectExpireTime = value;
+				DictionaryUtil.Add(QueryParameters, "ExpectExpireTime", value);
 			}
 		}
 
@@ -153,16 +106,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string EndTime
+		public string BackupId
 		{
 			get
 			{
-				return endTime;
+				return backupId;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				backupId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupId", value);
 			}
 		}
 
@@ -192,27 +145,14 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DescribeTasksResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyBackupExpireTimeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeTasksResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyBackupExpireTimeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

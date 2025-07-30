@@ -46,6 +46,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string startTime;
 
+		private string type;
+
 		private string securityToken;
 
 		private string intervalForHistory;
@@ -100,6 +102,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
 			}
 		}
 

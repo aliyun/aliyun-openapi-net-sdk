@@ -98,6 +98,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string taskAction;
 
+			private string progress;
+
 			public string StartTime
 			{
 				get
@@ -179,6 +181,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					taskAction = value;
+				}
+			}
+
+			public string Progress
+			{
+				get
+				{
+					return progress;
+				}
+				set	
+				{
+					progress = value;
 				}
 			}
 		}

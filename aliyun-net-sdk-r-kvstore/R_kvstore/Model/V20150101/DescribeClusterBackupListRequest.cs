@@ -59,6 +59,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string instanceId;
 
+		private string noShardBackup;
+
 		private string clusterBackupId;
 
 		public long? ResourceOwnerId
@@ -188,6 +190,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string NoShardBackup
+		{
+			get
+			{
+				return noShardBackup;
+			}
+			set	
+			{
+				noShardBackup = value;
+				DictionaryUtil.Add(QueryParameters, "NoShardBackup", value);
 			}
 		}
 

@@ -90,6 +90,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string zoneId;
 
+		private int? replicaCount;
+
 		private string appendonly;
 
 		private string nodeType;
@@ -127,6 +129,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private int? readOnlyCount;
 
 		private string chargeType;
+
+		private int? slaveReplicaCount;
 
 		private string clusterBackupId;
 
@@ -463,6 +467,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public int? ReplicaCount
+		{
+			get
+			{
+				return replicaCount;
+			}
+			set	
+			{
+				replicaCount = value;
+				DictionaryUtil.Add(QueryParameters, "ReplicaCount", value.ToString());
+			}
+		}
+
 		public string Appendonly
 		{
 			get
@@ -707,6 +724,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				chargeType = value;
 				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
+			}
+		}
+
+		public int? SlaveReplicaCount
+		{
+			get
+			{
+				return slaveReplicaCount;
+			}
+			set	
+			{
+				slaveReplicaCount = value;
+				DictionaryUtil.Add(QueryParameters, "SlaveReplicaCount", value.ToString());
 			}
 		}
 

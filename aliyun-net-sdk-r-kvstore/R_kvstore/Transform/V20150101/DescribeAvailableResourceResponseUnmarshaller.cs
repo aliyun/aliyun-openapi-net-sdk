@@ -41,6 +41,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				availableZone.ZoneName = _ctx.StringValue("DescribeAvailableResource.AvailableZones["+ i +"].ZoneName");
 				availableZone.NetworkTypes = _ctx.StringValue("DescribeAvailableResource.AvailableZones["+ i +"].NetworkTypes");
 				availableZone.RegionId = _ctx.StringValue("DescribeAvailableResource.AvailableZones["+ i +"].RegionId");
+				availableZone.IsMainSale = _ctx.BooleanValue("DescribeAvailableResource.AvailableZones["+ i +"].IsMainSale");
 
 				List<DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableZone.DescribeAvailableResource_SupportedEngine> availableZone_supportedEngines = new List<DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableZone.DescribeAvailableResource_SupportedEngine>();
 				for (int j = 0; j < _ctx.Length("DescribeAvailableResource.AvailableZones["+ i +"].SupportedEngines.Length"); j++) {

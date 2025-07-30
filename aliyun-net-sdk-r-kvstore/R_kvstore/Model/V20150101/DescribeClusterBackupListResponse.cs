@@ -158,6 +158,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string progress;
 
+			private string expectExpireTime;
+
 			private List<DescribeClusterBackupList_Backup> backups;
 
 			private DescribeClusterBackupList_ExtraInfo extraInfo;
@@ -267,6 +269,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					progress = value;
+				}
+			}
+
+			public string ExpectExpireTime
+			{
+				get
+				{
+					return expectExpireTime;
+				}
+				set	
+				{
+					expectExpireTime = value;
 				}
 			}
 

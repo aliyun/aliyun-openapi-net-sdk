@@ -39,7 +39,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			List<DescribeHistoryTasksResponse.DescribeHistoryTasks_ItemsItem> describeHistoryTasksResponse_items = new List<DescribeHistoryTasksResponse.DescribeHistoryTasks_ItemsItem>();
 			for (int i = 0; i < _ctx.Length("DescribeHistoryTasks.Items.Length"); i++) {
 				DescribeHistoryTasksResponse.DescribeHistoryTasks_ItemsItem itemsItem = new DescribeHistoryTasksResponse.DescribeHistoryTasks_ItemsItem();
-				itemsItem.Status = _ctx.IntegerValue("DescribeHistoryTasks.Items["+ i +"].Status");
+				itemsItem.Status = _ctx.StringValue("DescribeHistoryTasks.Items["+ i +"].Status");
 				itemsItem.TaskId = _ctx.StringValue("DescribeHistoryTasks.Items["+ i +"].TaskId");
 				itemsItem.CurrentStepName = _ctx.StringValue("DescribeHistoryTasks.Items["+ i +"].CurrentStepName");
 				itemsItem.StartTime = _ctx.StringValue("DescribeHistoryTasks.Items["+ i +"].StartTime");

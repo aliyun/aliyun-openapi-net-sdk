@@ -184,6 +184,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string recoverConfigMode;
 
+			private string expectExpireTime;
+
 			public string BackupStatus
 			{
 				get
@@ -361,6 +363,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					recoverConfigMode = value;
+				}
+			}
+
+			public string ExpectExpireTime
+			{
+				get
+				{
+					return expectExpireTime;
+				}
+				set	
+				{
+					expectExpireTime = value;
 				}
 			}
 		}

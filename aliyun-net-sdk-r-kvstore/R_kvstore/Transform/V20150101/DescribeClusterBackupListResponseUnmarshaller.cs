@@ -51,6 +51,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				clusterBackup.ClusterBackupMode = _ctx.StringValue("DescribeClusterBackupList.ClusterBackups["+ i +"].ClusterBackupMode");
 				clusterBackup.ShardClassMemory = _ctx.IntegerValue("DescribeClusterBackupList.ClusterBackups["+ i +"].ShardClassMemory");
 				clusterBackup.Progress = _ctx.StringValue("DescribeClusterBackupList.ClusterBackups["+ i +"].Progress");
+				clusterBackup.ExpectExpireTime = _ctx.StringValue("DescribeClusterBackupList.ClusterBackups["+ i +"].ExpectExpireTime");
 
 				DescribeClusterBackupListResponse.DescribeClusterBackupList_ClusterBackup.DescribeClusterBackupList_ExtraInfo extraInfo = new DescribeClusterBackupListResponse.DescribeClusterBackupList_ClusterBackup.DescribeClusterBackupList_ExtraInfo();
 				extraInfo.RegistryFromHistory = _ctx.StringValue("DescribeClusterBackupList.ClusterBackups["+ i +"].ExtraInfo.RegistryFromHistory");

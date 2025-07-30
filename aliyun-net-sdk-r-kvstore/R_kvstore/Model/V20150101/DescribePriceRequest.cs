@@ -48,6 +48,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string couponNo;
 
+		private string engineVersion;
+
 		private string instanceClass;
 
 		private long? capacity;
@@ -55,6 +57,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private string securityToken;
 
 		private string businessInfo;
+
+		private int? shardCount;
 
 		private long? period;
 
@@ -130,6 +134,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string EngineVersion
+		{
+			get
+			{
+				return engineVersion;
+			}
+			set	
+			{
+				engineVersion = value;
+				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
+			}
+		}
+
 		public string InstanceClass
 		{
 			get
@@ -179,6 +196,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				businessInfo = value;
 				DictionaryUtil.Add(QueryParameters, "BusinessInfo", value);
+			}
+		}
+
+		public int? ShardCount
+		{
+			get
+			{
+				return shardCount;
+			}
+			set	
+			{
+				shardCount = value;
+				DictionaryUtil.Add(QueryParameters, "ShardCount", value.ToString());
 			}
 		}
 

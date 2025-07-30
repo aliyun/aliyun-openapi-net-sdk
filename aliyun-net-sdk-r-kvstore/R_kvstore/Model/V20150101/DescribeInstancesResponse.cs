@@ -178,9 +178,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string editionType;
 
+			private string shardClass;
+
+			private int? replicaCount;
+
+			private int? slaveReplicaCount;
+
 			private string readOnlyCount;
 
-			private string shardClass;
+			private int? slaveReadOnlyCount;
 
 			private List<DescribeInstances_Tag> tags;
 
@@ -664,6 +670,42 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
+			public string ShardClass
+			{
+				get
+				{
+					return shardClass;
+				}
+				set	
+				{
+					shardClass = value;
+				}
+			}
+
+			public int? ReplicaCount
+			{
+				get
+				{
+					return replicaCount;
+				}
+				set	
+				{
+					replicaCount = value;
+				}
+			}
+
+			public int? SlaveReplicaCount
+			{
+				get
+				{
+					return slaveReplicaCount;
+				}
+				set	
+				{
+					slaveReplicaCount = value;
+				}
+			}
+
 			public string ReadOnlyCount
 			{
 				get
@@ -676,15 +718,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string ShardClass
+			public int? SlaveReadOnlyCount
 			{
 				get
 				{
-					return shardClass;
+					return slaveReadOnlyCount;
 				}
 				set	
 				{
-					shardClass = value;
+					slaveReadOnlyCount = value;
 				}
 			}
 

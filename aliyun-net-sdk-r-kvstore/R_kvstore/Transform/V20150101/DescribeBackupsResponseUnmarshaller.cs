@@ -67,6 +67,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				backup.BackupMethod = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupMethod");
 				backup.BackupJobID = _ctx.LongValue("DescribeBackups.Backups["+ i +"].BackupJobID");
 				backup.RecoverConfigMode = _ctx.StringValue("DescribeBackups.Backups["+ i +"].RecoverConfigMode");
+				backup.ExpectExpireTime = _ctx.StringValue("DescribeBackups.Backups["+ i +"].ExpectExpireTime");
 
 				describeBackupsResponse_backups.Add(backup);
 			}

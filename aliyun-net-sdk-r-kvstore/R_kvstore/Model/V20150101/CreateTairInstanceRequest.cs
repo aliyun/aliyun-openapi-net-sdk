@@ -42,6 +42,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
+		private string connectionStringPrefix;
+
 		private string secondaryZoneId;
 
 		private int? slaveReadOnlyCount;
@@ -90,6 +92,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string zoneId;
 
+		private int? replicaCount;
+
 		private string clientToken;
 
 		private string autoUseCoupon;
@@ -122,6 +126,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string chargeType;
 
+		private int? slaveReplicaCount;
+
 		private string clusterBackupId;
 
 		public long? ResourceOwnerId
@@ -134,6 +140,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ConnectionStringPrefix
+		{
+			get
+			{
+				return connectionStringPrefix;
+			}
+			set	
+			{
+				connectionStringPrefix = value;
+				DictionaryUtil.Add(QueryParameters, "ConnectionStringPrefix", value);
 			}
 		}
 
@@ -457,6 +476,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public int? ReplicaCount
+		{
+			get
+			{
+				return replicaCount;
+			}
+			set	
+			{
+				replicaCount = value;
+				DictionaryUtil.Add(QueryParameters, "ReplicaCount", value.ToString());
+			}
+		}
+
 		public string ClientToken
 		{
 			get
@@ -662,6 +694,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				chargeType = value;
 				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
+			}
+		}
+
+		public int? SlaveReplicaCount
+		{
+			get
+			{
+				return slaveReplicaCount;
+			}
+			set	
+			{
+				slaveReplicaCount = value;
+				DictionaryUtil.Add(QueryParameters, "SlaveReplicaCount", value.ToString());
 			}
 		}
 

@@ -42,11 +42,23 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
+		private string paramSemisyncReplTimeout;
+
+		private string paramNoLooseSentinelPasswordFreeCommands;
+
+		private string paramNoLooseSentinelPasswordFreeAccess;
+
+		private string paramReplMode;
+
 		private string securityToken;
+
+		private string paramNoLooseSentinelEnabled;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
+
+		private string paramSentinelCompatEnable;
 
 		private long? ownerId;
 
@@ -67,6 +79,58 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string ParamSemisyncReplTimeout
+		{
+			get
+			{
+				return paramSemisyncReplTimeout;
+			}
+			set	
+			{
+				paramSemisyncReplTimeout = value;
+				DictionaryUtil.Add(QueryParameters, "ParamSemisyncReplTimeout", value);
+			}
+		}
+
+		public string ParamNoLooseSentinelPasswordFreeCommands
+		{
+			get
+			{
+				return paramNoLooseSentinelPasswordFreeCommands;
+			}
+			set	
+			{
+				paramNoLooseSentinelPasswordFreeCommands = value;
+				DictionaryUtil.Add(QueryParameters, "ParamNoLooseSentinelPasswordFreeCommands", value);
+			}
+		}
+
+		public string ParamNoLooseSentinelPasswordFreeAccess
+		{
+			get
+			{
+				return paramNoLooseSentinelPasswordFreeAccess;
+			}
+			set	
+			{
+				paramNoLooseSentinelPasswordFreeAccess = value;
+				DictionaryUtil.Add(QueryParameters, "ParamNoLooseSentinelPasswordFreeAccess", value);
+			}
+		}
+
+		public string ParamReplMode
+		{
+			get
+			{
+				return paramReplMode;
+			}
+			set	
+			{
+				paramReplMode = value;
+				DictionaryUtil.Add(QueryParameters, "ParamReplMode", value);
+			}
+		}
+
 		public string SecurityToken
 		{
 			get
@@ -77,6 +141,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string ParamNoLooseSentinelEnabled
+		{
+			get
+			{
+				return paramNoLooseSentinelEnabled;
+			}
+			set	
+			{
+				paramNoLooseSentinelEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "ParamNoLooseSentinelEnabled", value);
 			}
 		}
 
@@ -103,6 +180,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string ParamSentinelCompatEnable
+		{
+			get
+			{
+				return paramSentinelCompatEnable;
+			}
+			set	
+			{
+				paramSentinelCompatEnable = value;
+				DictionaryUtil.Add(QueryParameters, "ParamSentinelCompatEnable", value);
 			}
 		}
 
