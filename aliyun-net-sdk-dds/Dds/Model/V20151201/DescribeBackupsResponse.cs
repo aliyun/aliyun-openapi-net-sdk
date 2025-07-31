@@ -130,6 +130,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string engineVersion;
 
+			private string backupExpireTime;
+
 			public string BackupStatus
 			{
 				get
@@ -319,6 +321,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					engineVersion = value;
+				}
+			}
+
+			public string BackupExpireTime
+			{
+				get
+				{
+					return backupExpireTime;
+				}
+				set	
+				{
+					backupExpireTime = value;
 				}
 			}
 		}

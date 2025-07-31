@@ -49,6 +49,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			order.Code = _ctx.StringValue("DescribePrice.Order.Code");
 			order.Message = _ctx.StringValue("DescribePrice.Order.Message");
 			order.IsContractActivity = _ctx.BooleanValue("DescribePrice.Order.IsContractActivity");
+			order.TotalCostAmount = _ctx.DoubleValue("DescribePrice.Order.TotalCostAmount");
 
 			List<string> order_ruleIds4 = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribePrice.Order.RuleIds.Length"); i++) {

@@ -85,6 +85,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				dBInstance.UseClusterBackup = _ctx.BooleanValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].UseClusterBackup");
 				dBInstance.BurstingEnabled = _ctx.BooleanValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].BurstingEnabled");
 				dBInstance.ProvisionedIops = _ctx.LongValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ProvisionedIops");
+				dBInstance.DisasterRecoveryInfo = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].DisasterRecoveryInfo");
 
 				List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_ReplicaSet> dBInstance_replicaSets = new List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_ReplicaSet>();
 				for (int j = 0; j < _ctx.Length("DescribeDBInstanceAttribute.DBInstances["+ i +"].ReplicaSets.Length"); j++) {
@@ -149,6 +150,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 					shardAttribute.Status = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ShardList["+ j +"].Status");
 					shardAttribute.MaxDiskMbps = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ShardList["+ j +"].MaxDiskMbps");
 					shardAttribute.CurrentKernelVersion = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ShardList["+ j +"].CurrentKernelVersion");
+					shardAttribute.ReplicaSetName = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ShardList["+ j +"].ReplicaSetName");
 
 					dBInstance_shardList.Add(shardAttribute);
 				}

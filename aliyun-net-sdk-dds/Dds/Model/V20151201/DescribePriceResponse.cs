@@ -1452,6 +1452,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private bool? isContractActivity;
 
+			private double? totalCostAmount;
+
 			private List<DescribePrice_Coupon> coupons;
 
 			private List<string> ruleIds4;
@@ -1611,6 +1613,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					isContractActivity = value;
+				}
+			}
+
+			public double? TotalCostAmount
+			{
+				get
+				{
+					return totalCostAmount;
+				}
+				set	
+				{
+					totalCostAmount = value;
 				}
 			}
 

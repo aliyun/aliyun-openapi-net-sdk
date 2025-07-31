@@ -118,6 +118,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string engineVersion;
 
+			private string backupExpireTime;
+
 			private List<DescribeClusterBackups_Backup> backups;
 
 			private DescribeClusterBackups_ExtraInfo extraInfo;
@@ -239,6 +241,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					engineVersion = value;
+				}
+			}
+
+			public string BackupExpireTime
+			{
+				get
+				{
+					return backupExpireTime;
+				}
+				set	
+				{
+					backupExpireTime = value;
 				}
 			}
 

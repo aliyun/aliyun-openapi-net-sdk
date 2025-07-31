@@ -44,6 +44,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string roleId;
 
+		private string switchMode;
+
 		private string dBInstanceId;
 
 		private string nodeId;
@@ -77,6 +79,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				roleId = value;
 				DictionaryUtil.Add(QueryParameters, "RoleId", value);
+			}
+		}
+
+		public string SwitchMode
+		{
+			get
+			{
+				return switchMode;
+			}
+			set	
+			{
+				switchMode = value;
+				DictionaryUtil.Add(QueryParameters, "SwitchMode", value);
 			}
 		}
 

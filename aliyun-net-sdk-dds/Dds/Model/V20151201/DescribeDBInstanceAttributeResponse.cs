@@ -154,6 +154,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private long? provisionedIops;
 
+			private string disasterRecoveryInfo;
+
 			private List<DescribeDBInstanceAttribute_ReplicaSet> replicaSets;
 
 			private List<DescribeDBInstanceAttribute_Tag> tags;
@@ -754,6 +756,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
+			public string DisasterRecoveryInfo
+			{
+				get
+				{
+					return disasterRecoveryInfo;
+				}
+				set	
+				{
+					disasterRecoveryInfo = value;
+				}
+			}
+
 			public List<DescribeDBInstanceAttribute_ReplicaSet> ReplicaSets
 			{
 				get
@@ -1189,6 +1203,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 				private string currentKernelVersion;
 
+				private string replicaSetName;
+
 				public string LockMode
 				{
 					get
@@ -1342,6 +1358,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						currentKernelVersion = value;
+					}
+				}
+
+				public string ReplicaSetName
+				{
+					get
+					{
+						return replicaSetName;
+					}
+					set	
+					{
+						replicaSetName = value;
 					}
 				}
 			}

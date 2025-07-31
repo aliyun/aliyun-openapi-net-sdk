@@ -52,6 +52,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string backupMethod;
 
+		private long? backupRetentionPeriod;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -127,6 +129,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				backupMethod = value;
 				DictionaryUtil.Add(QueryParameters, "BackupMethod", value);
+			}
+		}
+
+		public long? BackupRetentionPeriod
+		{
+			get
+			{
+				return backupRetentionPeriod;
+			}
+			set	
+			{
+				backupRetentionPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "BackupRetentionPeriod", value.ToString());
 			}
 		}
 

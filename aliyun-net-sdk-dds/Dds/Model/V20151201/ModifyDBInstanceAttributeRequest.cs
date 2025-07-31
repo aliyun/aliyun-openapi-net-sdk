@@ -27,10 +27,10 @@ using Aliyun.Acs.Dds.Transform.V20151201;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class ModifyDBInstanceSSLRequest : RpcAcsRequest<ModifyDBInstanceSSLResponse>
+    public class ModifyDBInstanceAttributeRequest : RpcAcsRequest<ModifyDBInstanceAttributeResponse>
     {
-        public ModifyDBInstanceSSLRequest()
-            : base("Dds", "2015-12-01", "ModifyDBInstanceSSL", "dds", "openAPI")
+        public ModifyDBInstanceAttributeRequest()
+            : base("Dds", "2015-12-01", "ModifyDBInstanceAttribute", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,9 +40,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			Method = MethodType.POST;
         }
 
-		private long? resourceOwnerId;
+		private bool? dBInstanceReleaseProtection;
 
-		private string switchMode;
+		private long? resourceOwnerId;
 
 		private string dBInstanceId;
 
@@ -52,7 +52,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? ownerId;
 
-		private string sSLAction;
+		public bool? DBInstanceReleaseProtection
+		{
+			get
+			{
+				return dBInstanceReleaseProtection;
+			}
+			set	
+			{
+				dBInstanceReleaseProtection = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceReleaseProtection", value.ToString());
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -64,19 +75,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string SwitchMode
-		{
-			get
-			{
-				return switchMode;
-			}
-			set	
-			{
-				switchMode = value;
-				DictionaryUtil.Add(QueryParameters, "SwitchMode", value);
 			}
 		}
 
@@ -132,22 +130,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string SSLAction
-		{
-			get
-			{
-				return sSLAction;
-			}
-			set	
-			{
-				sSLAction = value;
-				DictionaryUtil.Add(QueryParameters, "SSLAction", value);
-			}
-		}
-
-        public override ModifyDBInstanceSSLResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyDBInstanceAttributeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyDBInstanceSSLResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyDBInstanceAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

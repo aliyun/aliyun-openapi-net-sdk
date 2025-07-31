@@ -50,6 +50,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			describeBackupPolicyResponse.EnableCrossLogBackup = _ctx.IntegerValue("DescribeBackupPolicy.EnableCrossLogBackup");
 			describeBackupPolicyResponse.CrossLogRetentionType = _ctx.StringValue("DescribeBackupPolicy.CrossLogRetentionType");
 			describeBackupPolicyResponse.CrossLogRetentionValue = _ctx.IntegerValue("DescribeBackupPolicy.CrossLogRetentionValue");
+			describeBackupPolicyResponse.PreserveOneEachHour = _ctx.BooleanValue("DescribeBackupPolicy.PreserveOneEachHour");
         
 			return describeBackupPolicyResponse;
         }
