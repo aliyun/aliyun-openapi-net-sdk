@@ -119,6 +119,8 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 				private int? receiverType;
 
+				private int? authPointsValue;
+
 				public string ReceiverId
 				{
 					get
@@ -140,6 +142,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						receiverType = value;
+					}
+				}
+
+				public int? AuthPointsValue
+				{
+					get
+					{
+						return authPointsValue;
+					}
+					set	
+					{
+						authPointsValue = value;
 					}
 				}
 			}

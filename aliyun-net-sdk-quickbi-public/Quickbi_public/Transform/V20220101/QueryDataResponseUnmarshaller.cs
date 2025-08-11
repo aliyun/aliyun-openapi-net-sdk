@@ -61,6 +61,7 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 				headersItem.Granularity = _ctx.StringValue("QueryData.Result.Headers["+ i +"].Granularity");
 				headersItem.Label = _ctx.StringValue("QueryData.Result.Headers["+ i +"].Label");
 				headersItem.Type = _ctx.StringValue("QueryData.Result.Headers["+ i +"].Type");
+				headersItem.OriginalColumn = _ctx.StringValue("QueryData.Result.Headers["+ i +"].OriginalColumn");
 
 				result_headers.Add(headersItem);
 			}

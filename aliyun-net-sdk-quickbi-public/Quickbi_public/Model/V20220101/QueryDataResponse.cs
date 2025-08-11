@@ -127,6 +127,8 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 				private string type;
 
+				private string originalColumn;
+
 				public string Aggregator
 				{
 					get
@@ -196,6 +198,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						type = value;
+					}
+				}
+
+				public string OriginalColumn
+				{
+					get
+					{
+						return originalColumn;
+					}
+					set	
+					{
+						originalColumn = value;
 					}
 				}
 			}

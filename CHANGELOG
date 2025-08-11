@@ -1,3 +1,6 @@
+2025-08-11 Version: 2.1.18
+- Add QueryDashboardNl2sql, QueryLastAccelerationEngineJob APIs.
+
 2025-08-01 Version: 1.0.5
 - Add image search api.
 

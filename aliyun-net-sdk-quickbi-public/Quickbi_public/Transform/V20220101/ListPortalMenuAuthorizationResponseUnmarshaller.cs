@@ -45,6 +45,7 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 					ListPortalMenuAuthorizationResponse.ListPortalMenuAuthorization_Data.ListPortalMenuAuthorization_ReceiversItem receiversItem = new ListPortalMenuAuthorizationResponse.ListPortalMenuAuthorization_Data.ListPortalMenuAuthorization_ReceiversItem();
 					receiversItem.ReceiverId = _ctx.StringValue("ListPortalMenuAuthorization.Result["+ i +"].Receivers["+ j +"].ReceiverId");
 					receiversItem.ReceiverType = _ctx.IntegerValue("ListPortalMenuAuthorization.Result["+ i +"].Receivers["+ j +"].ReceiverType");
+					receiversItem.AuthPointsValue = _ctx.IntegerValue("ListPortalMenuAuthorization.Result["+ i +"].Receivers["+ j +"].AuthPointsValue");
 
 					data_receivers.Add(receiversItem);
 				}
