@@ -27,10 +27,10 @@ using Aliyun.Acs.Dds.Transform.V20151201;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class DescribeUserEncryptionKeyListRequest : RpcAcsRequest<DescribeUserEncryptionKeyListResponse>
+    public class AllocateDBInstanceSrvNetworkAddressRequest : RpcAcsRequest<AllocateDBInstanceSrvNetworkAddressResponse>
     {
-        public DescribeUserEncryptionKeyListRequest()
-            : base("Dds", "2015-12-01", "DescribeUserEncryptionKeyList", "dds", "openAPI")
+        public AllocateDBInstanceSrvNetworkAddressRequest()
+            : base("Dds", "2015-12-01", "AllocateDBInstanceSrvNetworkAddress", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,15 +44,15 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string dBInstanceId;
 
+		private string nodeId;
+
 		private string resourceOwnerAccount;
+
+		private string srvConnectionType;
 
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string roleARN;
-
-		private string targetRegionId;
 
 		public long? ResourceOwnerId
 		{
@@ -80,6 +80,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string NodeId
+		{
+			get
+			{
+				return nodeId;
+			}
+			set	
+			{
+				nodeId = value;
+				DictionaryUtil.Add(QueryParameters, "NodeId", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -90,6 +103,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string SrvConnectionType
+		{
+			get
+			{
+				return srvConnectionType;
+			}
+			set	
+			{
+				srvConnectionType = value;
+				DictionaryUtil.Add(QueryParameters, "SrvConnectionType", value);
 			}
 		}
 
@@ -119,35 +145,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string RoleARN
-		{
-			get
-			{
-				return roleARN;
-			}
-			set	
-			{
-				roleARN = value;
-				DictionaryUtil.Add(QueryParameters, "RoleARN", value);
-			}
-		}
-
-		public string TargetRegionId
-		{
-			get
-			{
-				return targetRegionId;
-			}
-			set	
-			{
-				targetRegionId = value;
-				DictionaryUtil.Add(QueryParameters, "TargetRegionId", value);
-			}
-		}
-
-        public override DescribeUserEncryptionKeyListResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override AllocateDBInstanceSrvNetworkAddressResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeUserEncryptionKeyListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AllocateDBInstanceSrvNetworkAddressResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

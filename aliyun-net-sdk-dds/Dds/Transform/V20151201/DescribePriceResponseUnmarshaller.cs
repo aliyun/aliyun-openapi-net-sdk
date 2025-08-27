@@ -180,6 +180,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 					moduleInstanceItem.StandDiscountPrice = _ctx.DoubleValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].StandDiscountPrice");
 					moduleInstanceItem.PriceUnit = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].priceUnit");
 					moduleInstanceItem.PriceType = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].priceType");
+					moduleInstanceItem.UnitPriceUnit4Buy = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].UnitPriceUnit4Buy");
 
 					DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_ModuleInstanceItem.DescribePrice_DepreciateInfo1 depreciateInfo1 = new DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_ModuleInstanceItem.DescribePrice_DepreciateInfo1();
 					depreciateInfo1.ListPrice = _ctx.DoubleValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].DepreciateInfo.ListPrice");

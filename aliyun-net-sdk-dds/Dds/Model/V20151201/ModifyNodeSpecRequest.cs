@@ -46,9 +46,13 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private int? readonlyReplicas;
 
+		private string targetSecondaryZoneId;
+
 		private string couponNo;
 
 		private string nodeClass;
+
+		private string targetZoneId;
 
 		private string effectiveTime;
 
@@ -70,7 +74,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string ownerAccount;
 
+		private string targetVswitchId;
+
 		private long? ownerId;
+
+		private string targetHiddenZoneId;
 
 		private string orderType;
 
@@ -113,6 +121,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string TargetSecondaryZoneId
+		{
+			get
+			{
+				return targetSecondaryZoneId;
+			}
+			set	
+			{
+				targetSecondaryZoneId = value;
+				DictionaryUtil.Add(QueryParameters, "TargetSecondaryZoneId", value);
+			}
+		}
+
 		public string CouponNo
 		{
 			get
@@ -136,6 +157,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				nodeClass = value;
 				DictionaryUtil.Add(QueryParameters, "NodeClass", value);
+			}
+		}
+
+		public string TargetZoneId
+		{
+			get
+			{
+				return targetZoneId;
+			}
+			set	
+			{
+				targetZoneId = value;
+				DictionaryUtil.Add(QueryParameters, "TargetZoneId", value);
 			}
 		}
 
@@ -269,6 +303,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string TargetVswitchId
+		{
+			get
+			{
+				return targetVswitchId;
+			}
+			set	
+			{
+				targetVswitchId = value;
+				DictionaryUtil.Add(QueryParameters, "TargetVswitchId", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -279,6 +326,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string TargetHiddenZoneId
+		{
+			get
+			{
+				return targetHiddenZoneId;
+			}
+			set	
+			{
+				targetHiddenZoneId = value;
+				DictionaryUtil.Add(QueryParameters, "TargetHiddenZoneId", value);
 			}
 		}
 

@@ -27,16 +27,17 @@ using Aliyun.Acs.Dds.Transform.V20151201;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class DescribeUserEncryptionKeyListRequest : RpcAcsRequest<DescribeUserEncryptionKeyListResponse>
+    public class ModifySrvNetworkAddressRequest : RpcAcsRequest<ModifySrvNetworkAddressResponse>
     {
-        public DescribeUserEncryptionKeyListRequest()
-            : base("Dds", "2015-12-01", "DescribeUserEncryptionKeyList", "dds", "openAPI")
+        public ModifySrvNetworkAddressRequest()
+            : base("Dds", "2015-12-01", "ModifySrvNetworkAddress", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointRegionalType, null);
             }
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
@@ -44,15 +45,15 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string dBInstanceId;
 
+		private string connectionType;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
+		private string newConnectionString;
+
 		private long? ownerId;
-
-		private string roleARN;
-
-		private string targetRegionId;
 
 		public long? ResourceOwnerId
 		{
@@ -77,6 +78,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public string ConnectionType
+		{
+			get
+			{
+				return connectionType;
+			}
+			set	
+			{
+				connectionType = value;
+				DictionaryUtil.Add(QueryParameters, "ConnectionType", value);
 			}
 		}
 
@@ -106,6 +120,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string NewConnectionString
+		{
+			get
+			{
+				return newConnectionString;
+			}
+			set	
+			{
+				newConnectionString = value;
+				DictionaryUtil.Add(QueryParameters, "NewConnectionString", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -119,35 +146,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string RoleARN
-		{
-			get
-			{
-				return roleARN;
-			}
-			set	
-			{
-				roleARN = value;
-				DictionaryUtil.Add(QueryParameters, "RoleARN", value);
-			}
-		}
-
-		public string TargetRegionId
-		{
-			get
-			{
-				return targetRegionId;
-			}
-			set	
-			{
-				targetRegionId = value;
-				DictionaryUtil.Add(QueryParameters, "TargetRegionId", value);
-			}
-		}
-
-        public override DescribeUserEncryptionKeyListResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifySrvNetworkAddressResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeUserEncryptionKeyListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifySrvNetworkAddressResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

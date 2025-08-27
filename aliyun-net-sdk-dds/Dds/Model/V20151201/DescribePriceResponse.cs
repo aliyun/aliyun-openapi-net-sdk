@@ -339,6 +339,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 				private string priceType;
 
+				private string unitPriceUnit4Buy;
+
 				private List<DescribePrice_PromDetail> promDetailList2;
 
 				private List<DescribePrice_ModuleAttr> moduleAttrs;
@@ -510,6 +512,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						priceType = value;
+					}
+				}
+
+				public string UnitPriceUnit4Buy
+				{
+					get
+					{
+						return unitPriceUnit4Buy;
+					}
+					set	
+					{
+						unitPriceUnit4Buy = value;
 					}
 				}
 
