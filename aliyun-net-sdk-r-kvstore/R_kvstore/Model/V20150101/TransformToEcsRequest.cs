@@ -27,10 +27,10 @@ using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class DescribePriceRequest : RpcAcsRequest<DescribePriceResponse>
+    public class TransformToEcsRequest : RpcAcsRequest<TransformToEcsResponse>
     {
-        public DescribePriceRequest()
-            : base("R-kvstore", "2015-01-01", "DescribePrice", "redisa", "openAPI")
+        public TransformToEcsRequest()
+            : base("R-kvstore", "2015-01-01", "TransformToEcs", "redisa", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,47 +42,31 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
-		private string nodeType;
-
-		private string instances;
-
-		private string secondaryZoneId;
-
-		private string couponNo;
-
 		private string engineVersion;
 
 		private string instanceClass;
 
-		private long? capacity;
+		private string effectiveTime;
 
-		private string securityToken;
+		private long? shardCount;
 
-		private string businessInfo;
-
-		private int? shardCount;
+		private long? autoRenewPeriod;
 
 		private long? period;
 
-		private long? quantity;
+		private bool? dryRun;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string orderParamOut;
-
 		private long? ownerId;
 
 		private string instanceId;
 
-		private string zoneId;
+		private string autoRenew;
 
 		private string chargeType;
-
-		private bool? forceUpgrade;
-
-		private string orderType;
 
 		public long? ResourceOwnerId
 		{
@@ -94,58 +78,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string NodeType
-		{
-			get
-			{
-				return nodeType;
-			}
-			set	
-			{
-				nodeType = value;
-				DictionaryUtil.Add(QueryParameters, "NodeType", value);
-			}
-		}
-
-		public string Instances
-		{
-			get
-			{
-				return instances;
-			}
-			set	
-			{
-				instances = value;
-				DictionaryUtil.Add(QueryParameters, "Instances", value);
-			}
-		}
-
-		public string SecondaryZoneId
-		{
-			get
-			{
-				return secondaryZoneId;
-			}
-			set	
-			{
-				secondaryZoneId = value;
-				DictionaryUtil.Add(QueryParameters, "SecondaryZoneId", value);
-			}
-		}
-
-		public string CouponNo
-		{
-			get
-			{
-				return couponNo;
-			}
-			set	
-			{
-				couponNo = value;
-				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
 			}
 		}
 
@@ -175,46 +107,20 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public long? Capacity
+		public string EffectiveTime
 		{
 			get
 			{
-				return capacity;
+				return effectiveTime;
 			}
 			set	
 			{
-				capacity = value;
-				DictionaryUtil.Add(QueryParameters, "Capacity", value.ToString());
+				effectiveTime = value;
+				DictionaryUtil.Add(QueryParameters, "EffectiveTime", value);
 			}
 		}
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string BusinessInfo
-		{
-			get
-			{
-				return businessInfo;
-			}
-			set	
-			{
-				businessInfo = value;
-				DictionaryUtil.Add(QueryParameters, "BusinessInfo", value);
-			}
-		}
-
-		public int? ShardCount
+		public long? ShardCount
 		{
 			get
 			{
@@ -224,6 +130,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				shardCount = value;
 				DictionaryUtil.Add(QueryParameters, "ShardCount", value.ToString());
+			}
+		}
+
+		public long? AutoRenewPeriod
+		{
+			get
+			{
+				return autoRenewPeriod;
+			}
+			set	
+			{
+				autoRenewPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "AutoRenewPeriod", value.ToString());
 			}
 		}
 
@@ -240,16 +159,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public long? Quantity
+		public bool? DryRun
 		{
 			get
 			{
-				return quantity;
+				return dryRun;
 			}
 			set	
 			{
-				quantity = value;
-				DictionaryUtil.Add(QueryParameters, "Quantity", value.ToString());
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
 			}
 		}
 
@@ -279,19 +198,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string OrderParamOut
-		{
-			get
-			{
-				return orderParamOut;
-			}
-			set	
-			{
-				orderParamOut = value;
-				DictionaryUtil.Add(QueryParameters, "OrderParamOut", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -318,16 +224,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string ZoneId
+		public string AutoRenew
 		{
 			get
 			{
-				return zoneId;
+				return autoRenew;
 			}
 			set	
 			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+				autoRenew = value;
+				DictionaryUtil.Add(QueryParameters, "AutoRenew", value);
 			}
 		}
 
@@ -344,35 +250,14 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public bool? ForceUpgrade
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return forceUpgrade;
-			}
-			set	
-			{
-				forceUpgrade = value;
-				DictionaryUtil.Add(QueryParameters, "ForceUpgrade", value.ToString());
-			}
+			return false;
 		}
 
-		public string OrderType
-		{
-			get
-			{
-				return orderType;
-			}
-			set	
-			{
-				orderType = value;
-				DictionaryUtil.Add(QueryParameters, "OrderType", value);
-			}
-		}
-
-        public override DescribePriceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override TransformToEcsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribePriceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TransformToEcsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

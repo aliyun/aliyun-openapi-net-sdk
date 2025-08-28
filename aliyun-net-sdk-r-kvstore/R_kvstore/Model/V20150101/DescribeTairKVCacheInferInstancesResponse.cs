@@ -140,6 +140,10 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string vNodeName;
 
+			private string ackId;
+
+			private int? vNodeCount;
+
 			private List<DescribeTairKVCacheInferInstances_Tag> tags;
 
 			public string VpcId
@@ -391,6 +395,30 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					vNodeName = value;
+				}
+			}
+
+			public string AckId
+			{
+				get
+				{
+					return ackId;
+				}
+				set	
+				{
+					ackId = value;
+				}
+			}
+
+			public int? VNodeCount
+			{
+				get
+				{
+					return vNodeCount;
+				}
+				set	
+				{
+					vNodeCount = value;
 				}
 			}
 

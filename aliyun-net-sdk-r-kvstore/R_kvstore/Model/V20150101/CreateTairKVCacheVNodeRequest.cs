@@ -27,62 +27,65 @@ using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class DescribePriceRequest : RpcAcsRequest<DescribePriceResponse>
+    public class CreateTairKVCacheVNodeRequest : RpcAcsRequest<CreateTairKVCacheVNodeResponse>
     {
-        public DescribePriceRequest()
-            : base("R-kvstore", "2015-01-01", "DescribePrice", "redisa", "openAPI")
+        public CreateTairKVCacheVNodeRequest()
+            : base("R-kvstore", "2015-01-01", "CreateTairKVCacheVNode", "redisa", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.R_kvstore.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.R_kvstore.Endpoint.endpointRegionalType, null);
             }
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private string nodeType;
-
-		private string instances;
-
-		private string secondaryZoneId;
+		private string clientToken;
 
 		private string couponNo;
 
-		private string engineVersion;
+		private bool? autoUseCoupon;
 
 		private string instanceClass;
 
-		private long? capacity;
+		private string resourceGroupId;
 
 		private string securityToken;
 
+		private List<string> tags = new List<string>(){ };
+
 		private string businessInfo;
 
-		private int? shardCount;
+		private string autoRenewPeriod;
 
-		private long? period;
+		private int? period;
 
-		private long? quantity;
+		private bool? autoPay;
+
+		private bool? dryRun;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string orderParamOut;
-
 		private long? ownerId;
 
-		private string instanceId;
+		private string vSwitchId;
+
+		private string instanceName;
+
+		private string vkName;
+
+		private bool? autoRenew;
+
+		private int? computeUnitNum;
 
 		private string zoneId;
 
 		private string chargeType;
-
-		private bool? forceUpgrade;
-
-		private string orderType;
 
 		public long? ResourceOwnerId
 		{
@@ -97,42 +100,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string NodeType
+		public string ClientToken
 		{
 			get
 			{
-				return nodeType;
+				return clientToken;
 			}
 			set	
 			{
-				nodeType = value;
-				DictionaryUtil.Add(QueryParameters, "NodeType", value);
-			}
-		}
-
-		public string Instances
-		{
-			get
-			{
-				return instances;
-			}
-			set	
-			{
-				instances = value;
-				DictionaryUtil.Add(QueryParameters, "Instances", value);
-			}
-		}
-
-		public string SecondaryZoneId
-		{
-			get
-			{
-				return secondaryZoneId;
-			}
-			set	
-			{
-				secondaryZoneId = value;
-				DictionaryUtil.Add(QueryParameters, "SecondaryZoneId", value);
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -149,16 +126,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string EngineVersion
+		public bool? AutoUseCoupon
 		{
 			get
 			{
-				return engineVersion;
+				return autoUseCoupon;
 			}
 			set	
 			{
-				engineVersion = value;
-				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
+				autoUseCoupon = value;
+				DictionaryUtil.Add(QueryParameters, "AutoUseCoupon", value.ToString());
 			}
 		}
 
@@ -175,16 +152,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public long? Capacity
+		public string ResourceGroupId
 		{
 			get
 			{
-				return capacity;
+				return resourceGroupId;
 			}
 			set	
 			{
-				capacity = value;
-				DictionaryUtil.Add(QueryParameters, "Capacity", value.ToString());
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -201,6 +178,27 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public List<string> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				if(tags != null)
+				{
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
+				}
+			}
+		}
+
 		public string BusinessInfo
 		{
 			get
@@ -214,20 +212,20 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public int? ShardCount
+		public string AutoRenewPeriod
 		{
 			get
 			{
-				return shardCount;
+				return autoRenewPeriod;
 			}
 			set	
 			{
-				shardCount = value;
-				DictionaryUtil.Add(QueryParameters, "ShardCount", value.ToString());
+				autoRenewPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "AutoRenewPeriod", value);
 			}
 		}
 
-		public long? Period
+		public int? Period
 		{
 			get
 			{
@@ -240,16 +238,29 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public long? Quantity
+		public bool? AutoPay
 		{
 			get
 			{
-				return quantity;
+				return autoPay;
 			}
 			set	
 			{
-				quantity = value;
-				DictionaryUtil.Add(QueryParameters, "Quantity", value.ToString());
+				autoPay = value;
+				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
+			}
+		}
+
+		public bool? DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
 			}
 		}
 
@@ -279,19 +290,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string OrderParamOut
-		{
-			get
-			{
-				return orderParamOut;
-			}
-			set	
-			{
-				orderParamOut = value;
-				DictionaryUtil.Add(QueryParameters, "OrderParamOut", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -305,16 +303,68 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string InstanceId
+		public string VSwitchId
 		{
 			get
 			{
-				return instanceId;
+				return vSwitchId;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+			}
+		}
+
+		public string InstanceName
+		{
+			get
+			{
+				return instanceName;
+			}
+			set	
+			{
+				instanceName = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceName", value);
+			}
+		}
+
+		public string VkName
+		{
+			get
+			{
+				return vkName;
+			}
+			set	
+			{
+				vkName = value;
+				DictionaryUtil.Add(QueryParameters, "VkName", value);
+			}
+		}
+
+		public bool? AutoRenew
+		{
+			get
+			{
+				return autoRenew;
+			}
+			set	
+			{
+				autoRenew = value;
+				DictionaryUtil.Add(QueryParameters, "AutoRenew", value.ToString());
+			}
+		}
+
+		public int? ComputeUnitNum
+		{
+			get
+			{
+				return computeUnitNum;
+			}
+			set	
+			{
+				computeUnitNum = value;
+				DictionaryUtil.Add(QueryParameters, "ComputeUnitNum", value.ToString());
 			}
 		}
 
@@ -344,35 +394,41 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public bool? ForceUpgrade
+		public class Tag
 		{
-			get
+
+			private string value_;
+
+			private string key;
+
+			public string Value_
 			{
-				return forceUpgrade;
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
 			}
-			set	
+
+			public string Key
 			{
-				forceUpgrade = value;
-				DictionaryUtil.Add(QueryParameters, "ForceUpgrade", value.ToString());
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 
-		public string OrderType
-		{
-			get
-			{
-				return orderType;
-			}
-			set	
-			{
-				orderType = value;
-				DictionaryUtil.Add(QueryParameters, "OrderType", value);
-			}
-		}
-
-        public override DescribePriceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateTairKVCacheVNodeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribePriceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateTairKVCacheVNodeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

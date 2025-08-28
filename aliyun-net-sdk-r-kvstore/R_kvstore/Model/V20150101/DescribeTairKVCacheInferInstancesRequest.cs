@@ -37,7 +37,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.R_kvstore.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.R_kvstore.Endpoint.endpointRegionalType, null);
             }
-			Protocol = ProtocolType.HTTPS;
         }
 
 		private long? resourceOwnerId;

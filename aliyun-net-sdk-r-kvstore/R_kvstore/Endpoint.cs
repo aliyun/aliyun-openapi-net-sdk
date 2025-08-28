@@ -39,7 +39,6 @@ namespace Aliyun.Acs.R_kvstore
             { "cn-hongkong-finance-pop", "r-kvstore.aliyuncs.com" },
             { "cn-qingdao-nebula", "r-kvstore.aliyuncs.com" },
             { "cn-shanghai", "r-kvstore.aliyuncs.com" },
-            { "cn-shanghai-finance-1", "r-kvstore.aliyuncs.com" },
             { "cn-heyuan", "r-kvstore.aliyuncs.com" },
             { "cn-beijing-finance-pop", "r-kvstore.aliyuncs.com" },
             { "cn-wuhan", "r-kvstore.aliyuncs.com" },

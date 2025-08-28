@@ -60,6 +60,8 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				tairInferInstanceDTO.ModelServiceNum = _ctx.IntegerValue("DescribeTairKVCacheInferInstances.Instances["+ i +"].ModelServiceNum");
 				tairInferInstanceDTO.ComputeUnitNum = _ctx.IntegerValue("DescribeTairKVCacheInferInstances.Instances["+ i +"].ComputeUnitNum");
 				tairInferInstanceDTO.VNodeName = _ctx.StringValue("DescribeTairKVCacheInferInstances.Instances["+ i +"].VNodeName");
+				tairInferInstanceDTO.AckId = _ctx.StringValue("DescribeTairKVCacheInferInstances.Instances["+ i +"].AckId");
+				tairInferInstanceDTO.VNodeCount = _ctx.IntegerValue("DescribeTairKVCacheInferInstances.Instances["+ i +"].VNodeCount");
 
 				List<DescribeTairKVCacheInferInstancesResponse.DescribeTairKVCacheInferInstances_TairInferInstanceDTO.DescribeTairKVCacheInferInstances_Tag> tairInferInstanceDTO_tags = new List<DescribeTairKVCacheInferInstancesResponse.DescribeTairKVCacheInferInstances_TairInferInstanceDTO.DescribeTairKVCacheInferInstances_Tag>();
 				for (int j = 0; j < _ctx.Length("DescribeTairKVCacheInferInstances.Instances["+ i +"].Tags.Length"); j++) {
