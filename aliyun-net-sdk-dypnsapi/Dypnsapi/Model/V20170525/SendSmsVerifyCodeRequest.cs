@@ -50,6 +50,8 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 
 		private string signName;
 
+		private long? autoRetry;
+
 		private string resourceOwnerAccount;
 
 		private long? validTime;
@@ -136,6 +138,19 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			{
 				signName = value;
 				DictionaryUtil.Add(QueryParameters, "SignName", value);
+			}
+		}
+
+		public long? AutoRetry
+		{
+			get
+			{
+				return autoRetry;
+			}
+			set	
+			{
+				autoRetry = value;
+				DictionaryUtil.Add(QueryParameters, "AutoRetry", value.ToString());
 			}
 		}
 

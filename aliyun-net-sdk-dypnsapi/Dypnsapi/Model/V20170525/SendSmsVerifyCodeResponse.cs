@@ -29,6 +29,8 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 
 		private string message;
 
+		private string requestId;
+
 		private string code;
 
 		private bool? success;
@@ -56,6 +58,18 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
