@@ -28,25 +28,39 @@ using Aliyun.Acs.sophonsoar.Transform.V20220728;
 
 namespace Aliyun.Acs.sophonsoar.Model.V20220728
 {
-    public class DescribeSoarTaskAndActionsRequest : RpcAcsRequest<DescribeSoarTaskAndActionsResponse>
+    public class DescribeVendorApiListRequest : RpcAcsRequest<DescribeVendorApiListResponse>
     {
-        public DescribeSoarTaskAndActionsRequest()
-            : base("sophonsoar", "2022-07-28", "DescribeSoarTaskAndActions")
+        public DescribeVendorApiListRequest()
+            : base("sophonsoar", "2022-07-28", "DescribeVendorApiList")
         {
 			Protocol = ProtocolType.HTTPS;
+			Method = MethodType.POST;
         }
+
+		private string productCode;
 
 		private int? pageNumber;
 
-		private string requestUuid;
+		private string apiName;
 
-		private int? pageSize;
+		private long? pageSize;
 
-		private string lang;
+		private string keyWord;
 
-		private string queryValue;
+		private string vendorCode;
 
-		private string queryType;
+		public string ProductCode
+		{
+			get
+			{
+				return productCode;
+			}
+			set	
+			{
+				productCode = value;
+				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
+			}
+		}
 
 		public int? PageNumber
 		{
@@ -61,20 +75,20 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 			}
 		}
 
-		public string RequestUuid
+		public string ApiName
 		{
 			get
 			{
-				return requestUuid;
+				return apiName;
 			}
 			set	
 			{
-				requestUuid = value;
-				DictionaryUtil.Add(QueryParameters, "RequestUuid", value);
+				apiName = value;
+				DictionaryUtil.Add(QueryParameters, "ApiName", value);
 			}
 		}
 
-		public int? PageSize
+		public long? PageSize
 		{
 			get
 			{
@@ -87,42 +101,29 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 			}
 		}
 
-		public string Lang
+		public string KeyWord
 		{
 			get
 			{
-				return lang;
+				return keyWord;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				keyWord = value;
+				DictionaryUtil.Add(QueryParameters, "KeyWord", value);
 			}
 		}
 
-		public string QueryValue
+		public string VendorCode
 		{
 			get
 			{
-				return queryValue;
+				return vendorCode;
 			}
 			set	
 			{
-				queryValue = value;
-				DictionaryUtil.Add(QueryParameters, "QueryValue", value);
-			}
-		}
-
-		public string QueryType
-		{
-			get
-			{
-				return queryType;
-			}
-			set	
-			{
-				queryType = value;
-				DictionaryUtil.Add(QueryParameters, "QueryType", value);
+				vendorCode = value;
+				DictionaryUtil.Add(QueryParameters, "VendorCode", value);
 			}
 		}
 
@@ -131,9 +132,9 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 			return false;
 		}
 
-        public override DescribeSoarTaskAndActionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeVendorApiListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeSoarTaskAndActionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeVendorApiListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

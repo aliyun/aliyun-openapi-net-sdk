@@ -38,23 +38,31 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 
 		private string taskflowMd5;
 
-		private long? endMillis;
+		private long? completedEndTime;
 
-		private long? startMillis;
+		private string triggerType;
+
+		private long? endMillis;
 
 		private int? pageNumber;
 
 		private string taskStatus;
 
-		private string playbookUuid;
-
 		private string requestUuid;
 
 		private int? pageSize;
 
+		private string lang;
+
+		private string queryValue;
+
+		private long? startMillis;
+
+		private string playbookUuid;
+
 		private string triggerUser;
 
-		private string lang;
+		private long? completedBeginTime;
 
 		public string TaskflowMd5
 		{
@@ -69,6 +77,32 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 			}
 		}
 
+		public long? CompletedEndTime
+		{
+			get
+			{
+				return completedEndTime;
+			}
+			set	
+			{
+				completedEndTime = value;
+				DictionaryUtil.Add(QueryParameters, "CompletedEndTime", value.ToString());
+			}
+		}
+
+		public string TriggerType
+		{
+			get
+			{
+				return triggerType;
+			}
+			set	
+			{
+				triggerType = value;
+				DictionaryUtil.Add(QueryParameters, "TriggerType", value);
+			}
+		}
+
 		public long? EndMillis
 		{
 			get
@@ -79,19 +113,6 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 			{
 				endMillis = value;
 				DictionaryUtil.Add(QueryParameters, "EndMillis", value.ToString());
-			}
-		}
-
-		public long? StartMillis
-		{
-			get
-			{
-				return startMillis;
-			}
-			set	
-			{
-				startMillis = value;
-				DictionaryUtil.Add(QueryParameters, "StartMillis", value.ToString());
 			}
 		}
 
@@ -121,19 +142,6 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 			}
 		}
 
-		public string PlaybookUuid
-		{
-			get
-			{
-				return playbookUuid;
-			}
-			set	
-			{
-				playbookUuid = value;
-				DictionaryUtil.Add(QueryParameters, "PlaybookUuid", value);
-			}
-		}
-
 		public string RequestUuid
 		{
 			get
@@ -160,6 +168,58 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 			}
 		}
 
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public string QueryValue
+		{
+			get
+			{
+				return queryValue;
+			}
+			set	
+			{
+				queryValue = value;
+				DictionaryUtil.Add(QueryParameters, "QueryValue", value);
+			}
+		}
+
+		public long? StartMillis
+		{
+			get
+			{
+				return startMillis;
+			}
+			set	
+			{
+				startMillis = value;
+				DictionaryUtil.Add(QueryParameters, "StartMillis", value.ToString());
+			}
+		}
+
+		public string PlaybookUuid
+		{
+			get
+			{
+				return playbookUuid;
+			}
+			set	
+			{
+				playbookUuid = value;
+				DictionaryUtil.Add(QueryParameters, "PlaybookUuid", value);
+			}
+		}
+
 		public string TriggerUser
 		{
 			get
@@ -173,16 +233,16 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 			}
 		}
 
-		public string Lang
+		public long? CompletedBeginTime
 		{
 			get
 			{
-				return lang;
+				return completedBeginTime;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				completedBeginTime = value;
+				DictionaryUtil.Add(QueryParameters, "CompletedBeginTime", value.ToString());
 			}
 		}
 

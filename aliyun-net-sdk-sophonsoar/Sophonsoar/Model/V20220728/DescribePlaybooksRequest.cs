@@ -54,7 +54,7 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 
 		private string ownType;
 
-		private string sort;
+		private int? sort;
 
 		private long? startMillis;
 
@@ -179,7 +179,7 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 			}
 		}
 
-		public string Sort
+		public int? Sort
 		{
 			get
 			{
@@ -188,7 +188,7 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 			set	
 			{
 				sort = value;
-				DictionaryUtil.Add(QueryParameters, "Sort", value);
+				DictionaryUtil.Add(QueryParameters, "Sort", value.ToString());
 			}
 		}
 

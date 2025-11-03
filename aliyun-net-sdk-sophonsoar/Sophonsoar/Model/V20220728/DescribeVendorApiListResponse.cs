@@ -22,14 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sophonsoar.Model.V20220728
 {
-	public class DescribePlaybooksResponse : AcsResponse
+	public class DescribeVendorApiListResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribePlaybooks_Data> playbooks;
+		private List<DescribeVendorApiList_Data> apiList;
 
-		private DescribePlaybooks_Page page;
+		private DescribeVendorApiList_Page page;
 
 		public string RequestId
 		{
@@ -43,19 +43,19 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 			}
 		}
 
-		public List<DescribePlaybooks_Data> Playbooks
+		public List<DescribeVendorApiList_Data> ApiList
 		{
 			get
 			{
-				return playbooks;
+				return apiList;
 			}
 			set	
 			{
-				playbooks = value;
+				apiList = value;
 			}
 		}
 
-		public DescribePlaybooks_Page Page
+		public DescribeVendorApiList_Page Page
 		{
 			get
 			{
@@ -67,188 +67,202 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 			}
 		}
 
-		public class DescribePlaybooks_Data
+		public class DescribeVendorApiList_Data
 		{
 
-			private string displayName;
+			private string vendorCode;
 
-			private string playbookUuid;
+			private string productCode;
 
-			private string ownType;
+			private string productName;
 
-			private int? active;
+			private string parameter;
 
-			private long? lastRuntime;
+			private string productDomain;
 
-			private int? permission;
+			private string protocol;
 
-			private long? gmtCreate;
+			private string method;
 
-			private int? playbookStatus;
+			private string apiName;
 
-			private string gmtModified;
+			private bool? needPageInfo;
 
-			private string paramType;
+			private string pageInfo;
 
-			private string description;
+			private string apiVersion;
 
-			private string tenantId;
+			private bool? needAdvanceConfig;
 
-			public string DisplayName
+			private string advanceConfig;
+
+			public string VendorCode
 			{
 				get
 				{
-					return displayName;
+					return vendorCode;
 				}
 				set	
 				{
-					displayName = value;
+					vendorCode = value;
 				}
 			}
 
-			public string PlaybookUuid
+			public string ProductCode
 			{
 				get
 				{
-					return playbookUuid;
+					return productCode;
 				}
 				set	
 				{
-					playbookUuid = value;
+					productCode = value;
 				}
 			}
 
-			public string OwnType
+			public string ProductName
 			{
 				get
 				{
-					return ownType;
+					return productName;
 				}
 				set	
 				{
-					ownType = value;
+					productName = value;
 				}
 			}
 
-			public int? Active
+			public string Parameter
 			{
 				get
 				{
-					return active;
+					return parameter;
 				}
 				set	
 				{
-					active = value;
+					parameter = value;
 				}
 			}
 
-			public long? LastRuntime
+			public string ProductDomain
 			{
 				get
 				{
-					return lastRuntime;
+					return productDomain;
 				}
 				set	
 				{
-					lastRuntime = value;
+					productDomain = value;
 				}
 			}
 
-			public int? Permission
+			public string Protocol
 			{
 				get
 				{
-					return permission;
+					return protocol;
 				}
 				set	
 				{
-					permission = value;
+					protocol = value;
 				}
 			}
 
-			public long? GmtCreate
+			public string Method
 			{
 				get
 				{
-					return gmtCreate;
+					return method;
 				}
 				set	
 				{
-					gmtCreate = value;
+					method = value;
 				}
 			}
 
-			public int? PlaybookStatus
+			public string ApiName
 			{
 				get
 				{
-					return playbookStatus;
+					return apiName;
 				}
 				set	
 				{
-					playbookStatus = value;
+					apiName = value;
 				}
 			}
 
-			public string GmtModified
+			public bool? NeedPageInfo
 			{
 				get
 				{
-					return gmtModified;
+					return needPageInfo;
 				}
 				set	
 				{
-					gmtModified = value;
+					needPageInfo = value;
 				}
 			}
 
-			public string ParamType
+			public string PageInfo
 			{
 				get
 				{
-					return paramType;
+					return pageInfo;
 				}
 				set	
 				{
-					paramType = value;
+					pageInfo = value;
 				}
 			}
 
-			public string Description
+			public string ApiVersion
 			{
 				get
 				{
-					return description;
+					return apiVersion;
 				}
 				set	
 				{
-					description = value;
+					apiVersion = value;
 				}
 			}
 
-			public string TenantId
+			public bool? NeedAdvanceConfig
 			{
 				get
 				{
-					return tenantId;
+					return needAdvanceConfig;
 				}
 				set	
 				{
-					tenantId = value;
+					needAdvanceConfig = value;
+				}
+			}
+
+			public string AdvanceConfig
+			{
+				get
+				{
+					return advanceConfig;
+				}
+				set	
+				{
+					advanceConfig = value;
 				}
 			}
 		}
 
-		public class DescribePlaybooks_Page
+		public class DescribeVendorApiList_Page
 		{
 
-			private int? totalCount;
+			private long? totalCount;
 
-			private int? pageNumber;
+			private long? pageNumber;
 
 			private int? pageSize;
 
-			public int? TotalCount
+			public long? TotalCount
 			{
 				get
 				{
@@ -260,7 +274,7 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 				}
 			}
 
-			public int? PageNumber
+			public long? PageNumber
 			{
 				get
 				{

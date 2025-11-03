@@ -48,6 +48,7 @@ namespace Aliyun.Acs.sophonsoar.Transform.V20220728
 				openApiMetaListItem.Visibility = _ctx.StringValue("DescribePopApi.OpenApiMetaList["+ i +"].Visibility");
 				openApiMetaListItem.Type = _ctx.StringValue("DescribePopApi.OpenApiMetaList["+ i +"].Type");
 				openApiMetaListItem.IsRequired = _ctx.BooleanValue("DescribePopApi.OpenApiMetaList["+ i +"].IsRequired");
+				openApiMetaListItem.Style = _ctx.StringValue("DescribePopApi.OpenApiMetaList["+ i +"].Style");
 
 				describePopApiResponse_openApiMetaList.Add(openApiMetaListItem);
 			}

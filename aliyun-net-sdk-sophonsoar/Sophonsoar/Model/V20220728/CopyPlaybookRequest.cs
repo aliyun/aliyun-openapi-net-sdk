@@ -28,50 +28,52 @@ using Aliyun.Acs.sophonsoar.Transform.V20220728;
 
 namespace Aliyun.Acs.sophonsoar.Model.V20220728
 {
-    public class CreatePlaybookRequest : RpcAcsRequest<CreatePlaybookResponse>
+    public class CopyPlaybookRequest : RpcAcsRequest<CopyPlaybookResponse>
     {
-        public CreatePlaybookRequest()
-            : base("sophonsoar", "2022-07-28", "CreatePlaybook")
+        public CopyPlaybookRequest()
+            : base("sophonsoar", "2022-07-28", "CopyPlaybook")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private string inputParams;
+		private string sourcePlaybookUuid;
 
-		private string taskflowType;
+		private long? roleFor;
 
 		private string description;
 
-		private string outputParams;
+		private string releaseVersion;
 
 		private string displayName;
 
+		private string roleType;
+
 		private string lang;
 
-		public string InputParams
+		public string SourcePlaybookUuid
 		{
 			get
 			{
-				return inputParams;
+				return sourcePlaybookUuid;
 			}
 			set	
 			{
-				inputParams = value;
-				DictionaryUtil.Add(BodyParameters, "InputParams", value);
+				sourcePlaybookUuid = value;
+				DictionaryUtil.Add(BodyParameters, "SourcePlaybookUuid", value);
 			}
 		}
 
-		public string TaskflowType
+		public long? RoleFor
 		{
 			get
 			{
-				return taskflowType;
+				return roleFor;
 			}
 			set	
 			{
-				taskflowType = value;
-				DictionaryUtil.Add(BodyParameters, "TaskflowType", value);
+				roleFor = value;
+				DictionaryUtil.Add(QueryParameters, "RoleFor", value.ToString());
 			}
 		}
 
@@ -88,16 +90,16 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 			}
 		}
 
-		public string OutputParams
+		public string ReleaseVersion
 		{
 			get
 			{
-				return outputParams;
+				return releaseVersion;
 			}
 			set	
 			{
-				outputParams = value;
-				DictionaryUtil.Add(BodyParameters, "OutputParams", value);
+				releaseVersion = value;
+				DictionaryUtil.Add(BodyParameters, "ReleaseVersion", value);
 			}
 		}
 
@@ -114,6 +116,19 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 			}
 		}
 
+		public string RoleType
+		{
+			get
+			{
+				return roleType;
+			}
+			set	
+			{
+				roleType = value;
+				DictionaryUtil.Add(QueryParameters, "RoleType", value);
+			}
+		}
+
 		public string Lang
 		{
 			get
@@ -123,7 +138,7 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 			set	
 			{
 				lang = value;
-				DictionaryUtil.Add(BodyParameters, "Lang", value);
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
@@ -132,9 +147,9 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 			return false;
 		}
 
-        public override CreatePlaybookResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CopyPlaybookResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreatePlaybookResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CopyPlaybookResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

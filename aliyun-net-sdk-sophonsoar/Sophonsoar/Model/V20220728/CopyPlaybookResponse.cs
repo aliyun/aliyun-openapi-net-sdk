@@ -22,14 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sophonsoar.Model.V20220728
 {
-	public class DescribePlaybooksResponse : AcsResponse
+	public class CopyPlaybookResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribePlaybooks_Data> playbooks;
+		private CopyPlaybook_Data data;
 
-		private DescribePlaybooks_Page page;
+		private CopyPlaybook_Page page;
 
 		public string RequestId
 		{
@@ -43,19 +43,19 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 			}
 		}
 
-		public List<DescribePlaybooks_Data> Playbooks
+		public CopyPlaybook_Data Data
 		{
 			get
 			{
-				return playbooks;
+				return data;
 			}
 			set	
 			{
-				playbooks = value;
+				data = value;
 			}
 		}
 
-		public DescribePlaybooks_Page Page
+		public CopyPlaybook_Page Page
 		{
 			get
 			{
@@ -67,7 +67,7 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 			}
 		}
 
-		public class DescribePlaybooks_Data
+		public class CopyPlaybook_Data
 		{
 
 			private string displayName;
@@ -84,13 +84,25 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 
 			private long? gmtCreate;
 
-			private int? playbookStatus;
+			private long? gmtModified;
 
-			private string gmtModified;
+			private int? historyMd5;
 
-			private string paramType;
+			private int? succNum;
+
+			private int? failNum;
+
+			private double? failRate;
+
+			private string inputParams;
+
+			private string outputParams;
 
 			private string description;
+
+			private string logicReleaseTaskflowMd5;
+
+			private int? playbookStatus;
 
 			private string tenantId;
 
@@ -178,19 +190,7 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 				}
 			}
 
-			public int? PlaybookStatus
-			{
-				get
-				{
-					return playbookStatus;
-				}
-				set	
-				{
-					playbookStatus = value;
-				}
-			}
-
-			public string GmtModified
+			public long? GmtModified
 			{
 				get
 				{
@@ -202,15 +202,75 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 				}
 			}
 
-			public string ParamType
+			public int? HistoryMd5
 			{
 				get
 				{
-					return paramType;
+					return historyMd5;
 				}
 				set	
 				{
-					paramType = value;
+					historyMd5 = value;
+				}
+			}
+
+			public int? SuccNum
+			{
+				get
+				{
+					return succNum;
+				}
+				set	
+				{
+					succNum = value;
+				}
+			}
+
+			public int? FailNum
+			{
+				get
+				{
+					return failNum;
+				}
+				set	
+				{
+					failNum = value;
+				}
+			}
+
+			public double? FailRate
+			{
+				get
+				{
+					return failRate;
+				}
+				set	
+				{
+					failRate = value;
+				}
+			}
+
+			public string InputParams
+			{
+				get
+				{
+					return inputParams;
+				}
+				set	
+				{
+					inputParams = value;
+				}
+			}
+
+			public string OutputParams
+			{
+				get
+				{
+					return outputParams;
+				}
+				set	
+				{
+					outputParams = value;
 				}
 			}
 
@@ -223,6 +283,30 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 				set	
 				{
 					description = value;
+				}
+			}
+
+			public string LogicReleaseTaskflowMd5
+			{
+				get
+				{
+					return logicReleaseTaskflowMd5;
+				}
+				set	
+				{
+					logicReleaseTaskflowMd5 = value;
+				}
+			}
+
+			public int? PlaybookStatus
+			{
+				get
+				{
+					return playbookStatus;
+				}
+				set	
+				{
+					playbookStatus = value;
 				}
 			}
 
@@ -239,7 +323,7 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 			}
 		}
 
-		public class DescribePlaybooks_Page
+		public class CopyPlaybook_Page
 		{
 
 			private int? totalCount;

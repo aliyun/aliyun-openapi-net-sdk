@@ -22,12 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sophonsoar.Model.V20220728
 {
-	public class DescribeComponentPlaybookResponse : AcsResponse
+	public class DescribeNotifyTemplateListResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribeComponentPlaybook_Data> playbooks;
+		private List<DescribeNotifyTemplateList_DataItem> data;
+
+		private DescribeNotifyTemplateList_Page page;
 
 		public string RequestId
 		{
@@ -41,130 +43,146 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 			}
 		}
 
-		public List<DescribeComponentPlaybook_Data> Playbooks
+		public List<DescribeNotifyTemplateList_DataItem> Data
 		{
 			get
 			{
-				return playbooks;
+				return data;
 			}
 			set	
 			{
-				playbooks = value;
+				data = value;
 			}
 		}
 
-		public class DescribeComponentPlaybook_Data
+		public DescribeNotifyTemplateList_Page Page
+		{
+			get
+			{
+				return page;
+			}
+			set	
+			{
+				page = value;
+			}
+		}
+
+		public class DescribeNotifyTemplateList_DataItem
 		{
 
-			private string displayName;
+			private string templateName;
 
-			private string playbookUuid;
+			private string eventId;
 
-			private string ownType;
+			private string subject;
 
-			private string inputParams;
+			private string content;
 
-			private string outputParams;
+			private string _params;
 
-			private string description;
-
-			private string tenantId;
-
-			private string paramType;
-
-			public string DisplayName
+			public string TemplateName
 			{
 				get
 				{
-					return displayName;
+					return templateName;
 				}
 				set	
 				{
-					displayName = value;
+					templateName = value;
 				}
 			}
 
-			public string PlaybookUuid
+			public string EventId
 			{
 				get
 				{
-					return playbookUuid;
+					return eventId;
 				}
 				set	
 				{
-					playbookUuid = value;
+					eventId = value;
 				}
 			}
 
-			public string OwnType
+			public string Subject
 			{
 				get
 				{
-					return ownType;
+					return subject;
 				}
 				set	
 				{
-					ownType = value;
+					subject = value;
 				}
 			}
 
-			public string InputParams
+			public string Content
 			{
 				get
 				{
-					return inputParams;
+					return content;
 				}
 				set	
 				{
-					inputParams = value;
+					content = value;
 				}
 			}
 
-			public string OutputParams
+			public string _Params
 			{
 				get
 				{
-					return outputParams;
+					return _params;
 				}
 				set	
 				{
-					outputParams = value;
+					_params = value;
+				}
+			}
+		}
+
+		public class DescribeNotifyTemplateList_Page
+		{
+
+			private int? totalCount;
+
+			private int? pageNumber;
+
+			private int? pageSize;
+
+			public int? TotalCount
+			{
+				get
+				{
+					return totalCount;
+				}
+				set	
+				{
+					totalCount = value;
 				}
 			}
 
-			public string Description
+			public int? PageNumber
 			{
 				get
 				{
-					return description;
+					return pageNumber;
 				}
 				set	
 				{
-					description = value;
+					pageNumber = value;
 				}
 			}
 
-			public string TenantId
+			public int? PageSize
 			{
 				get
 				{
-					return tenantId;
+					return pageSize;
 				}
 				set	
 				{
-					tenantId = value;
-				}
-			}
-
-			public string ParamType
-			{
-				get
-				{
-					return paramType;
-				}
-				set	
-				{
-					paramType = value;
+					pageSize = value;
 				}
 			}
 		}

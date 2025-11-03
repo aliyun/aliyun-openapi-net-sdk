@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sophonsoar.Model.V20220728
 {
-	public class DescribeComponentPlaybookResponse : AcsResponse
+	public class DescribeProcessStatisticsResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribeComponentPlaybook_Data> playbooks;
+		private DescribeProcessStatistics_Metrics metrics;
 
 		public string RequestId
 		{
@@ -41,130 +41,74 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 			}
 		}
 
-		public List<DescribeComponentPlaybook_Data> Playbooks
+		public DescribeProcessStatistics_Metrics Metrics
 		{
 			get
 			{
-				return playbooks;
+				return metrics;
 			}
 			set	
 			{
-				playbooks = value;
+				metrics = value;
 			}
 		}
 
-		public class DescribeComponentPlaybook_Data
+		public class DescribeProcessStatistics_Metrics
 		{
 
-			private string displayName;
+			private int? taskNum;
 
-			private string playbookUuid;
+			private int? banIpNum;
 
-			private string ownType;
+			private int? banFileNum;
 
-			private string inputParams;
+			private int? banProcessNum;
 
-			private string outputParams;
-
-			private string description;
-
-			private string tenantId;
-
-			private string paramType;
-
-			public string DisplayName
+			public int? TaskNum
 			{
 				get
 				{
-					return displayName;
+					return taskNum;
 				}
 				set	
 				{
-					displayName = value;
+					taskNum = value;
 				}
 			}
 
-			public string PlaybookUuid
+			public int? BanIpNum
 			{
 				get
 				{
-					return playbookUuid;
+					return banIpNum;
 				}
 				set	
 				{
-					playbookUuid = value;
+					banIpNum = value;
 				}
 			}
 
-			public string OwnType
+			public int? BanFileNum
 			{
 				get
 				{
-					return ownType;
+					return banFileNum;
 				}
 				set	
 				{
-					ownType = value;
+					banFileNum = value;
 				}
 			}
 
-			public string InputParams
+			public int? BanProcessNum
 			{
 				get
 				{
-					return inputParams;
+					return banProcessNum;
 				}
 				set	
 				{
-					inputParams = value;
-				}
-			}
-
-			public string OutputParams
-			{
-				get
-				{
-					return outputParams;
-				}
-				set	
-				{
-					outputParams = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string TenantId
-			{
-				get
-				{
-					return tenantId;
-				}
-				set	
-				{
-					tenantId = value;
-				}
-			}
-
-			public string ParamType
-			{
-				get
-				{
-					return paramType;
-				}
-				set	
-				{
-					paramType = value;
+					banProcessNum = value;
 				}
 			}
 		}

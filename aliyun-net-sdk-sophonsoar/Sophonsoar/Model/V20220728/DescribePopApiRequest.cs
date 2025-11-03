@@ -40,8 +40,6 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 
 		private string apiVersion;
 
-		private string env;
-
 		private string apiName;
 
 		public string PopCode
@@ -67,19 +65,6 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 			{
 				apiVersion = value;
 				DictionaryUtil.Add(QueryParameters, "ApiVersion", value);
-			}
-		}
-
-		public string Env
-		{
-			get
-			{
-				return env;
-			}
-			set	
-			{
-				env = value;
-				DictionaryUtil.Add(QueryParameters, "Env", value);
 			}
 		}
 

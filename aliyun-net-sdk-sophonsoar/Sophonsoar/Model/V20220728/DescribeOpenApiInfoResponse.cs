@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sophonsoar.Model.V20220728
 {
-	public class DescribeComponentPlaybookResponse : AcsResponse
+	public class DescribeOpenApiInfoResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribeComponentPlaybook_Data> playbooks;
+		private DescribeOpenApiInfo_Data data;
 
 		public string RequestId
 		{
@@ -41,70 +41,42 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 			}
 		}
 
-		public List<DescribeComponentPlaybook_Data> Playbooks
+		public DescribeOpenApiInfo_Data Data
 		{
 			get
 			{
-				return playbooks;
+				return data;
 			}
 			set	
 			{
-				playbooks = value;
+				data = value;
 			}
 		}
 
-		public class DescribeComponentPlaybook_Data
+		public class DescribeOpenApiInfo_Data
 		{
-
-			private string displayName;
-
-			private string playbookUuid;
-
-			private string ownType;
-
-			private string inputParams;
 
 			private string outputParams;
 
+			private string inputParams;
+
+			private string responseDemo;
+
+			private string title;
+
+			private string summary;
+
 			private string description;
 
-			private string tenantId;
-
-			private string paramType;
-
-			public string DisplayName
+			public string OutputParams
 			{
 				get
 				{
-					return displayName;
+					return outputParams;
 				}
 				set	
 				{
-					displayName = value;
-				}
-			}
-
-			public string PlaybookUuid
-			{
-				get
-				{
-					return playbookUuid;
-				}
-				set	
-				{
-					playbookUuid = value;
-				}
-			}
-
-			public string OwnType
-			{
-				get
-				{
-					return ownType;
-				}
-				set	
-				{
-					ownType = value;
+					outputParams = value;
 				}
 			}
 
@@ -120,15 +92,39 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 				}
 			}
 
-			public string OutputParams
+			public string ResponseDemo
 			{
 				get
 				{
-					return outputParams;
+					return responseDemo;
 				}
 				set	
 				{
-					outputParams = value;
+					responseDemo = value;
+				}
+			}
+
+			public string Title
+			{
+				get
+				{
+					return title;
+				}
+				set	
+				{
+					title = value;
+				}
+			}
+
+			public string Summary
+			{
+				get
+				{
+					return summary;
+				}
+				set	
+				{
+					summary = value;
 				}
 			}
 
@@ -141,30 +137,6 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 				set	
 				{
 					description = value;
-				}
-			}
-
-			public string TenantId
-			{
-				get
-				{
-					return tenantId;
-				}
-				set	
-				{
-					tenantId = value;
-				}
-			}
-
-			public string ParamType
-			{
-				get
-				{
-					return paramType;
-				}
-				set	
-				{
-					paramType = value;
 				}
 			}
 		}

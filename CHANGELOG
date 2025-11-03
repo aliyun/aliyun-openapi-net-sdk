@@ -1,3 +1,7 @@
+2025-11-03 Version: 1.0.1
+- DescribeSoarRecords  remove the following fields,TriggerDataId Success DataSourceName ResultMessage ResultDetailInfo TaskTenantId TaskType FlowTag.
+- DescribeSoarTaskAndActions remove the following fields,TriggerDataId Sao Success All DataSourceName ResultLevel ResultMessage ResultDetailInfo TaskTenantId TaskType FlowTag.
+
 2025-11-03 Version: 3.7.24
 - Generated 2015-12-01 for `Dds`.
 

@@ -22,14 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sophonsoar.Model.V20220728
 {
-	public class VerifyPlaybookResponse : AcsResponse
+	public class RunNotifyComponentWithEmailResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<VerifyPlaybook_CheckTaskInfosItem> checkTaskInfos;
+		private string data;
 
-		private List<VerifyPlaybook_PrerequisitesItem> prerequisites;
+		private RunNotifyComponentWithEmail_Page page;
 
 		public string RequestId
 		{
@@ -43,104 +43,72 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 			}
 		}
 
-		public List<VerifyPlaybook_CheckTaskInfosItem> CheckTaskInfos
+		public string Data
 		{
 			get
 			{
-				return checkTaskInfos;
+				return data;
 			}
 			set	
 			{
-				checkTaskInfos = value;
+				data = value;
 			}
 		}
 
-		public List<VerifyPlaybook_PrerequisitesItem> Prerequisites
+		public RunNotifyComponentWithEmail_Page Page
 		{
 			get
 			{
-				return prerequisites;
+				return page;
 			}
 			set	
 			{
-				prerequisites = value;
+				page = value;
 			}
 		}
 
-		public class VerifyPlaybook_CheckTaskInfosItem
+		public class RunNotifyComponentWithEmail_Page
 		{
 
-			private string riskLevel;
+			private int? totalCount;
 
-			private string nodeName;
+			private int? pageNumber;
 
-			private string detail;
+			private int? pageSize;
 
-			public string RiskLevel
+			public int? TotalCount
 			{
 				get
 				{
-					return riskLevel;
+					return totalCount;
 				}
 				set	
 				{
-					riskLevel = value;
+					totalCount = value;
 				}
 			}
 
-			public string NodeName
+			public int? PageNumber
 			{
 				get
 				{
-					return nodeName;
+					return pageNumber;
 				}
 				set	
 				{
-					nodeName = value;
+					pageNumber = value;
 				}
 			}
 
-			public string Detail
+			public int? PageSize
 			{
 				get
 				{
-					return detail;
+					return pageSize;
 				}
 				set	
 				{
-					detail = value;
-				}
-			}
-		}
-
-		public class VerifyPlaybook_PrerequisitesItem
-		{
-
-			private string prerequisiteType;
-
-			private string prerequisiteValue;
-
-			public string PrerequisiteType
-			{
-				get
-				{
-					return prerequisiteType;
-				}
-				set	
-				{
-					prerequisiteType = value;
-				}
-			}
-
-			public string PrerequisiteValue
-			{
-				get
-				{
-					return prerequisiteValue;
-				}
-				set	
-				{
-					prerequisiteValue = value;
+					pageSize = value;
 				}
 			}
 		}

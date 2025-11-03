@@ -28,62 +28,88 @@ using Aliyun.Acs.sophonsoar.Transform.V20220728;
 
 namespace Aliyun.Acs.sophonsoar.Model.V20220728
 {
-    public class DescribeSoarTaskAndActionsRequest : RpcAcsRequest<DescribeSoarTaskAndActionsResponse>
+    public class DescribeOpenApiInfoRequest : RpcAcsRequest<DescribeOpenApiInfoResponse>
     {
-        public DescribeSoarTaskAndActionsRequest()
-            : base("sophonsoar", "2022-07-28", "DescribeSoarTaskAndActions")
+        public DescribeOpenApiInfoRequest()
+            : base("sophonsoar", "2022-07-28", "DescribeOpenApiInfo")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private int? pageNumber;
+		private string popCode;
 
-		private string requestUuid;
+		private long? roleFor;
 
-		private int? pageSize;
+		private string apiVersion;
+
+		private string apiName;
+
+		private string roleType;
 
 		private string lang;
 
-		private string queryValue;
-
-		private string queryType;
-
-		public int? PageNumber
+		public string PopCode
 		{
 			get
 			{
-				return pageNumber;
+				return popCode;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				popCode = value;
+				DictionaryUtil.Add(QueryParameters, "PopCode", value);
 			}
 		}
 
-		public string RequestUuid
+		public long? RoleFor
 		{
 			get
 			{
-				return requestUuid;
+				return roleFor;
 			}
 			set	
 			{
-				requestUuid = value;
-				DictionaryUtil.Add(QueryParameters, "RequestUuid", value);
+				roleFor = value;
+				DictionaryUtil.Add(QueryParameters, "RoleFor", value.ToString());
 			}
 		}
 
-		public int? PageSize
+		public string ApiVersion
 		{
 			get
 			{
-				return pageSize;
+				return apiVersion;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				apiVersion = value;
+				DictionaryUtil.Add(QueryParameters, "ApiVersion", value);
+			}
+		}
+
+		public string ApiName
+		{
+			get
+			{
+				return apiName;
+			}
+			set	
+			{
+				apiName = value;
+				DictionaryUtil.Add(QueryParameters, "ApiName", value);
+			}
+		}
+
+		public string RoleType
+		{
+			get
+			{
+				return roleType;
+			}
+			set	
+			{
+				roleType = value;
+				DictionaryUtil.Add(QueryParameters, "RoleType", value);
 			}
 		}
 
@@ -100,40 +126,14 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 			}
 		}
 
-		public string QueryValue
-		{
-			get
-			{
-				return queryValue;
-			}
-			set	
-			{
-				queryValue = value;
-				DictionaryUtil.Add(QueryParameters, "QueryValue", value);
-			}
-		}
-
-		public string QueryType
-		{
-			get
-			{
-				return queryType;
-			}
-			set	
-			{
-				queryType = value;
-				DictionaryUtil.Add(QueryParameters, "QueryType", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DescribeSoarTaskAndActionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeOpenApiInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeSoarTaskAndActionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeOpenApiInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

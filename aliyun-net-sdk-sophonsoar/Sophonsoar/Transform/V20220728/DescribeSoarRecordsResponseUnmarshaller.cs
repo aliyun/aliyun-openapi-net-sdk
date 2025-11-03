@@ -43,23 +43,26 @@ namespace Aliyun.Acs.sophonsoar.Transform.V20220728
 			for (int i = 0; i < _ctx.Length("DescribeSoarRecords.SoarExecuteRecords.Length"); i++) {
 				DescribeSoarRecordsResponse.DescribeSoarRecords_Data data = new DescribeSoarRecordsResponse.DescribeSoarRecords_Data();
 				data.TriggerType = _ctx.StringValue("DescribeSoarRecords.SoarExecuteRecords["+ i +"].TriggerType");
-				data.TriggerDataId = _ctx.StringValue("DescribeSoarRecords.SoarExecuteRecords["+ i +"].TriggerDataId");
 				data.TaskName = _ctx.StringValue("DescribeSoarRecords.SoarExecuteRecords["+ i +"].TaskName");
 				data.StartTime = _ctx.LongValue("DescribeSoarRecords.SoarExecuteRecords["+ i +"].StartTime");
 				data.EndTime = _ctx.LongValue("DescribeSoarRecords.SoarExecuteRecords["+ i +"].EndTime");
 				data.Status = _ctx.StringValue("DescribeSoarRecords.SoarExecuteRecords["+ i +"].Status");
-				data.Success = _ctx.IntegerValue("DescribeSoarRecords.SoarExecuteRecords["+ i +"].Success");
 				data.RequestUuid = _ctx.StringValue("DescribeSoarRecords.SoarExecuteRecords["+ i +"].RequestUuid");
 				data.TriggerUser = _ctx.StringValue("DescribeSoarRecords.SoarExecuteRecords["+ i +"].TriggerUser");
 				data.ErrorMsg = _ctx.StringValue("DescribeSoarRecords.SoarExecuteRecords["+ i +"].ErrorMsg");
-				data.DataSourceName = _ctx.StringValue("DescribeSoarRecords.SoarExecuteRecords["+ i +"].DataSourceName");
 				data.RawEventReq = _ctx.StringValue("DescribeSoarRecords.SoarExecuteRecords["+ i +"].RawEventReq");
-				data.ResultMessage = _ctx.StringValue("DescribeSoarRecords.SoarExecuteRecords["+ i +"].ResultMessage");
-				data.ResultDetailInfo = _ctx.StringValue("DescribeSoarRecords.SoarExecuteRecords["+ i +"].ResultDetailInfo");
-				data.TaskTenantId = _ctx.StringValue("DescribeSoarRecords.SoarExecuteRecords["+ i +"].TaskTenantId");
-				data.TaskType = _ctx.StringValue("DescribeSoarRecords.SoarExecuteRecords["+ i +"].TaskType");
 				data.TaskflowMd5 = _ctx.StringValue("DescribeSoarRecords.SoarExecuteRecords["+ i +"].TaskflowMd5");
-				data.FlowTag = _ctx.IntegerValue("DescribeSoarRecords.SoarExecuteRecords["+ i +"].FlowTag");
+
+				List<DescribeSoarRecordsResponse.DescribeSoarRecords_Data.DescribeSoarRecords_Output> data_outputList = new List<DescribeSoarRecordsResponse.DescribeSoarRecords_Data.DescribeSoarRecords_Output>();
+				for (int j = 0; j < _ctx.Length("DescribeSoarRecords.SoarExecuteRecords["+ i +"].OutputList.Length"); j++) {
+					DescribeSoarRecordsResponse.DescribeSoarRecords_Data.DescribeSoarRecords_Output output = new DescribeSoarRecordsResponse.DescribeSoarRecords_Data.DescribeSoarRecords_Output();
+					output.Content = _ctx.StringValue("DescribeSoarRecords.SoarExecuteRecords["+ i +"].OutputList["+ j +"].Content");
+					output.NodeName = _ctx.StringValue("DescribeSoarRecords.SoarExecuteRecords["+ i +"].OutputList["+ j +"].NodeName");
+					output.ActionUuid = _ctx.StringValue("DescribeSoarRecords.SoarExecuteRecords["+ i +"].OutputList["+ j +"].ActionUuid");
+
+					data_outputList.Add(output);
+				}
+				data.OutputList = data_outputList;
 
 				describeSoarRecordsResponse_soarExecuteRecords.Add(data);
 			}

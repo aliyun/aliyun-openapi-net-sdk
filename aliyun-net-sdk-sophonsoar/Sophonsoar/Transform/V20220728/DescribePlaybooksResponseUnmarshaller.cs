@@ -52,6 +52,8 @@ namespace Aliyun.Acs.sophonsoar.Transform.V20220728
 				data.PlaybookStatus = _ctx.IntegerValue("DescribePlaybooks.Playbooks["+ i +"].PlaybookStatus");
 				data.GmtModified = _ctx.StringValue("DescribePlaybooks.Playbooks["+ i +"].GmtModified");
 				data.ParamType = _ctx.StringValue("DescribePlaybooks.Playbooks["+ i +"].ParamType");
+				data.Description = _ctx.StringValue("DescribePlaybooks.Playbooks["+ i +"].Description");
+				data.TenantId = _ctx.StringValue("DescribePlaybooks.Playbooks["+ i +"].TenantId");
 
 				describePlaybooksResponse_playbooks.Add(data);
 			}

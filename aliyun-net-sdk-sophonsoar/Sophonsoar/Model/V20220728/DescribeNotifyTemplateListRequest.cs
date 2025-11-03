@@ -28,62 +28,43 @@ using Aliyun.Acs.sophonsoar.Transform.V20220728;
 
 namespace Aliyun.Acs.sophonsoar.Model.V20220728
 {
-    public class DescribeSoarTaskAndActionsRequest : RpcAcsRequest<DescribeSoarTaskAndActionsResponse>
+    public class DescribeNotifyTemplateListRequest : RpcAcsRequest<DescribeNotifyTemplateListResponse>
     {
-        public DescribeSoarTaskAndActionsRequest()
-            : base("sophonsoar", "2022-07-28", "DescribeSoarTaskAndActions")
+        public DescribeNotifyTemplateListRequest()
+            : base("sophonsoar", "2022-07-28", "DescribeNotifyTemplateList")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private int? pageNumber;
+		private long? roleFor;
 
-		private string requestUuid;
-
-		private int? pageSize;
+		private string roleType;
 
 		private string lang;
 
-		private string queryValue;
-
-		private string queryType;
-
-		public int? PageNumber
+		public long? RoleFor
 		{
 			get
 			{
-				return pageNumber;
+				return roleFor;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				roleFor = value;
+				DictionaryUtil.Add(QueryParameters, "RoleFor", value.ToString());
 			}
 		}
 
-		public string RequestUuid
+		public string RoleType
 		{
 			get
 			{
-				return requestUuid;
+				return roleType;
 			}
 			set	
 			{
-				requestUuid = value;
-				DictionaryUtil.Add(QueryParameters, "RequestUuid", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				roleType = value;
+				DictionaryUtil.Add(QueryParameters, "RoleType", value);
 			}
 		}
 
@@ -100,40 +81,14 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 			}
 		}
 
-		public string QueryValue
-		{
-			get
-			{
-				return queryValue;
-			}
-			set	
-			{
-				queryValue = value;
-				DictionaryUtil.Add(QueryParameters, "QueryValue", value);
-			}
-		}
-
-		public string QueryType
-		{
-			get
-			{
-				return queryType;
-			}
-			set	
-			{
-				queryType = value;
-				DictionaryUtil.Add(QueryParameters, "QueryType", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DescribeSoarTaskAndActionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeNotifyTemplateListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeSoarTaskAndActionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeNotifyTemplateListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

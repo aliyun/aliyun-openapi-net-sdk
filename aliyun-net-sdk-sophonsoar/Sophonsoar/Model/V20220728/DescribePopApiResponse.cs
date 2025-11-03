@@ -128,6 +128,8 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 
 			private bool? isRequired;
 
+			private string style;
+
 			public string Name
 			{
 				get
@@ -221,6 +223,18 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 				set	
 				{
 					isRequired = value;
+				}
+			}
+
+			public string Style
+			{
+				get
+				{
+					return style;
+				}
+				set	
+				{
+					style = value;
 				}
 			}
 		}

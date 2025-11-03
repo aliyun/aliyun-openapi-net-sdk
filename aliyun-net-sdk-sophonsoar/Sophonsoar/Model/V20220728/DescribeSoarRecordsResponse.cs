@@ -72,8 +72,6 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 
 			private string triggerType;
 
-			private string triggerDataId;
-
 			private string taskName;
 
 			private long? startTime;
@@ -82,29 +80,17 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 
 			private string status;
 
-			private int? success;
-
 			private string requestUuid;
 
 			private string triggerUser;
 
 			private string errorMsg;
 
-			private string dataSourceName;
-
 			private string rawEventReq;
-
-			private string resultMessage;
-
-			private string resultDetailInfo;
-
-			private string taskTenantId;
-
-			private string taskType;
 
 			private string taskflowMd5;
 
-			private int? flowTag;
+			private List<DescribeSoarRecords_Output> outputList;
 
 			public string TriggerType
 			{
@@ -115,18 +101,6 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 				set	
 				{
 					triggerType = value;
-				}
-			}
-
-			public string TriggerDataId
-			{
-				get
-				{
-					return triggerDataId;
-				}
-				set	
-				{
-					triggerDataId = value;
 				}
 			}
 
@@ -178,18 +152,6 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 				}
 			}
 
-			public int? Success
-			{
-				get
-				{
-					return success;
-				}
-				set	
-				{
-					success = value;
-				}
-			}
-
 			public string RequestUuid
 			{
 				get
@@ -226,18 +188,6 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 				}
 			}
 
-			public string DataSourceName
-			{
-				get
-				{
-					return dataSourceName;
-				}
-				set	
-				{
-					dataSourceName = value;
-				}
-			}
-
 			public string RawEventReq
 			{
 				get
@@ -247,54 +197,6 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 				set	
 				{
 					rawEventReq = value;
-				}
-			}
-
-			public string ResultMessage
-			{
-				get
-				{
-					return resultMessage;
-				}
-				set	
-				{
-					resultMessage = value;
-				}
-			}
-
-			public string ResultDetailInfo
-			{
-				get
-				{
-					return resultDetailInfo;
-				}
-				set	
-				{
-					resultDetailInfo = value;
-				}
-			}
-
-			public string TaskTenantId
-			{
-				get
-				{
-					return taskTenantId;
-				}
-				set	
-				{
-					taskTenantId = value;
-				}
-			}
-
-			public string TaskType
-			{
-				get
-				{
-					return taskType;
-				}
-				set	
-				{
-					taskType = value;
 				}
 			}
 
@@ -310,15 +212,61 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 				}
 			}
 
-			public int? FlowTag
+			public List<DescribeSoarRecords_Output> OutputList
 			{
 				get
 				{
-					return flowTag;
+					return outputList;
 				}
 				set	
 				{
-					flowTag = value;
+					outputList = value;
+				}
+			}
+
+			public class DescribeSoarRecords_Output
+			{
+
+				private string content;
+
+				private string nodeName;
+
+				private string actionUuid;
+
+				public string Content
+				{
+					get
+					{
+						return content;
+					}
+					set	
+					{
+						content = value;
+					}
+				}
+
+				public string NodeName
+				{
+					get
+					{
+						return nodeName;
+					}
+					set	
+					{
+						nodeName = value;
+					}
+				}
+
+				public string ActionUuid
+				{
+					get
+					{
+						return actionUuid;
+					}
+					set	
+					{
+						actionUuid = value;
+					}
 				}
 			}
 		}

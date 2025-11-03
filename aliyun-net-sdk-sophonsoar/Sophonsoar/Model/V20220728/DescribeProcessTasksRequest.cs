@@ -51,6 +51,8 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 
 		private string paramContent;
 
+		private string reqUuid;
+
 		private string scope;
 
 		private int? pageSize;
@@ -167,6 +169,19 @@ namespace Aliyun.Acs.sophonsoar.Model.V20220728
 			{
 				paramContent = value;
 				DictionaryUtil.Add(QueryParameters, "ParamContent", value);
+			}
+		}
+
+		public string ReqUuid
+		{
+			get
+			{
+				return reqUuid;
+			}
+			set	
+			{
+				reqUuid = value;
+				DictionaryUtil.Add(QueryParameters, "ReqUuid", value);
 			}
 		}
 

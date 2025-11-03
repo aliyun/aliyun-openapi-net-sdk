@@ -43,6 +43,7 @@ namespace Aliyun.Acs.sophonsoar.Transform.V20220728
 				data.OutputParams = _ctx.StringValue("DescribeComponentPlaybook.Playbooks["+ i +"].OutputParams");
 				data.Description = _ctx.StringValue("DescribeComponentPlaybook.Playbooks["+ i +"].Description");
 				data.TenantId = _ctx.StringValue("DescribeComponentPlaybook.Playbooks["+ i +"].TenantId");
+				data.ParamType = _ctx.StringValue("DescribeComponentPlaybook.Playbooks["+ i +"].ParamType");
 
 				describeComponentPlaybookResponse_playbooks.Add(data);
 			}
