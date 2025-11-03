@@ -156,6 +156,12 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string disasterRecoveryInfo;
 
+			private string searchNodeClass;
+
+			private int? searchNodeStorage;
+
+			private int? searchNodeCount;
+
 			private List<DescribeDBInstanceAttribute_ReplicaSet> replicaSets;
 
 			private List<DescribeDBInstanceAttribute_Tag> tags;
@@ -765,6 +771,42 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					disasterRecoveryInfo = value;
+				}
+			}
+
+			public string SearchNodeClass
+			{
+				get
+				{
+					return searchNodeClass;
+				}
+				set	
+				{
+					searchNodeClass = value;
+				}
+			}
+
+			public int? SearchNodeStorage
+			{
+				get
+				{
+					return searchNodeStorage;
+				}
+				set	
+				{
+					searchNodeStorage = value;
+				}
+			}
+
+			public int? SearchNodeCount
+			{
+				get
+				{
+					return searchNodeCount;
+				}
+				set	
+				{
+					searchNodeCount = value;
 				}
 			}
 

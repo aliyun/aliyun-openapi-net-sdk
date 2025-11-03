@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string srcRegion;
 
+		private string resourceGroupId;
+
 		private string dBInstanceId;
 
 		private string destRegion;
@@ -76,6 +78,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				srcRegion = value;
 				DictionaryUtil.Add(QueryParameters, "SrcRegion", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
