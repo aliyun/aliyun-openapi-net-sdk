@@ -43,16 +43,16 @@ namespace Aliyun.Acs.WebsiteBuild.Transform.V20250429
 			List<SearchImageResponse.SearchImage_ImageResponse.SearchImage_Image> imageResponse_imageList = new List<SearchImageResponse.SearchImage_ImageResponse.SearchImage_Image>();
 			for (int i = 0; i < _ctx.Length("SearchImage.ImageResponse.ImageList.Length"); i++) {
 				SearchImageResponse.SearchImage_ImageResponse.SearchImage_Image image = new SearchImageResponse.SearchImage_ImageResponse.SearchImage_Image();
-				image.ImageRatio = _ctx.StringValue("SearchImage.ImageResponse.ImageList["+ i +"].ImageRatio");
-				image.DescriptiveTones = _ctx.StringValue("SearchImage.ImageResponse.ImageList["+ i +"].DescriptiveTones");
-				image.OssKey = _ctx.StringValue("SearchImage.ImageResponse.ImageList["+ i +"].OssKey");
-				image.ImageCategory = _ctx.StringValue("SearchImage.ImageResponse.ImageList["+ i +"].ImageCategory");
-				image.Height = _ctx.IntegerValue("SearchImage.ImageResponse.ImageList["+ i +"].Height");
-				image.QuantitativePalette = _ctx.StringValue("SearchImage.ImageResponse.ImageList["+ i +"].QuantitativePalette");
 				image.ImageUuid = _ctx.StringValue("SearchImage.ImageResponse.ImageList["+ i +"].ImageUuid");
-				image.Width = _ctx.IntegerValue("SearchImage.ImageResponse.ImageList["+ i +"].Width");
+				image.OssKey = _ctx.StringValue("SearchImage.ImageResponse.ImageList["+ i +"].OssKey");
 				image.Url = _ctx.StringValue("SearchImage.ImageResponse.ImageList["+ i +"].Url");
+				image.Width = _ctx.IntegerValue("SearchImage.ImageResponse.ImageList["+ i +"].Width");
+				image.Height = _ctx.IntegerValue("SearchImage.ImageResponse.ImageList["+ i +"].Height");
+				image.ImageRatio = _ctx.StringValue("SearchImage.ImageResponse.ImageList["+ i +"].ImageRatio");
+				image.ImageCategory = _ctx.StringValue("SearchImage.ImageResponse.ImageList["+ i +"].ImageCategory");
 				image.TagsFromImage = _ctx.StringValue("SearchImage.ImageResponse.ImageList["+ i +"].TagsFromImage");
+				image.DescriptiveTones = _ctx.StringValue("SearchImage.ImageResponse.ImageList["+ i +"].DescriptiveTones");
+				image.QuantitativePalette = _ctx.StringValue("SearchImage.ImageResponse.ImageList["+ i +"].QuantitativePalette");
 
 				imageResponse_imageList.Add(image);
 			}

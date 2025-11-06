@@ -143,47 +143,35 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			public class SearchImage_Image
 			{
 
-				private string imageRatio;
-
-				private string descriptiveTones;
+				private string imageUuid;
 
 				private string ossKey;
 
-				private string imageCategory;
-
-				private int? height;
-
-				private string quantitativePalette;
-
-				private string imageUuid;
+				private string url;
 
 				private int? width;
 
-				private string url;
+				private int? height;
+
+				private string imageRatio;
+
+				private string imageCategory;
 
 				private string tagsFromImage;
 
-				public string ImageRatio
-				{
-					get
-					{
-						return imageRatio;
-					}
-					set	
-					{
-						imageRatio = value;
-					}
-				}
+				private string descriptiveTones;
 
-				public string DescriptiveTones
+				private string quantitativePalette;
+
+				public string ImageUuid
 				{
 					get
 					{
-						return descriptiveTones;
+						return imageUuid;
 					}
 					set	
 					{
-						descriptiveTones = value;
+						imageUuid = value;
 					}
 				}
 
@@ -199,51 +187,15 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 					}
 				}
 
-				public string ImageCategory
+				public string Url
 				{
 					get
 					{
-						return imageCategory;
+						return url;
 					}
 					set	
 					{
-						imageCategory = value;
-					}
-				}
-
-				public int? Height
-				{
-					get
-					{
-						return height;
-					}
-					set	
-					{
-						height = value;
-					}
-				}
-
-				public string QuantitativePalette
-				{
-					get
-					{
-						return quantitativePalette;
-					}
-					set	
-					{
-						quantitativePalette = value;
-					}
-				}
-
-				public string ImageUuid
-				{
-					get
-					{
-						return imageUuid;
-					}
-					set	
-					{
-						imageUuid = value;
+						url = value;
 					}
 				}
 
@@ -259,15 +211,39 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 					}
 				}
 
-				public string Url
+				public int? Height
 				{
 					get
 					{
-						return url;
+						return height;
 					}
 					set	
 					{
-						url = value;
+						height = value;
+					}
+				}
+
+				public string ImageRatio
+				{
+					get
+					{
+						return imageRatio;
+					}
+					set	
+					{
+						imageRatio = value;
+					}
+				}
+
+				public string ImageCategory
+				{
+					get
+					{
+						return imageCategory;
+					}
+					set	
+					{
+						imageCategory = value;
 					}
 				}
 
@@ -280,6 +256,30 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 					set	
 					{
 						tagsFromImage = value;
+					}
+				}
+
+				public string DescriptiveTones
+				{
+					get
+					{
+						return descriptiveTones;
+					}
+					set	
+					{
+						descriptiveTones = value;
+					}
+				}
+
+				public string QuantitativePalette
+				{
+					get
+					{
+						return quantitativePalette;
+					}
+					set	
+					{
+						quantitativePalette = value;
 					}
 				}
 			}
