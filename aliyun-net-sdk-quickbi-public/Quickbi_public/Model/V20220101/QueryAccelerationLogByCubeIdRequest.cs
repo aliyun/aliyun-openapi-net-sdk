@@ -27,45 +27,48 @@ using Aliyun.Acs.quickbi_public.Transform.V20220101;
 
 namespace Aliyun.Acs.quickbi_public.Model.V20220101
 {
-    public class SmartqQueryAbilityRequest : RpcAcsRequest<SmartqQueryAbilityResponse>
+    public class QueryAccelerationLogByCubeIdRequest : RpcAcsRequest<QueryAccelerationLogByCubeIdResponse>
     {
-        public SmartqQueryAbilityRequest()
-            : base("quickbi-public", "2022-01-01", "SmartqQueryAbility", "2.2.0", "openAPI")
+        public QueryAccelerationLogByCubeIdRequest()
+            : base("quickbi-public", "2022-01-01", "QueryAccelerationLogByCubeId", "2.2.0", "openAPI")
         {
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private string userId;
+		private string startDate;
 
-		private string userQuestion;
+		private int? pageSize;
 
 		private string cubeId;
 
-		private string multipleCubeIds;
+		private string endDate;
 
-		public string UserId
+		private int? pageNo;
+
+		public string StartDate
 		{
 			get
 			{
-				return userId;
+				return startDate;
 			}
 			set	
 			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
+				startDate = value;
+				DictionaryUtil.Add(QueryParameters, "StartDate", value);
 			}
 		}
 
-		public string UserQuestion
+		public int? PageSize
 		{
 			get
 			{
-				return userQuestion;
+				return pageSize;
 			}
 			set	
 			{
-				userQuestion = value;
-				DictionaryUtil.Add(QueryParameters, "UserQuestion", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -82,16 +85,29 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			}
 		}
 
-		public string MultipleCubeIds
+		public string EndDate
 		{
 			get
 			{
-				return multipleCubeIds;
+				return endDate;
 			}
 			set	
 			{
-				multipleCubeIds = value;
-				DictionaryUtil.Add(QueryParameters, "MultipleCubeIds", value);
+				endDate = value;
+				DictionaryUtil.Add(QueryParameters, "EndDate", value);
+			}
+		}
+
+		public int? PageNo
+		{
+			get
+			{
+				return pageNo;
+			}
+			set	
+			{
+				pageNo = value;
+				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
 			}
 		}
 
@@ -100,9 +116,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			return false;
 		}
 
-        public override SmartqQueryAbilityResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryAccelerationLogByCubeIdResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SmartqQueryAbilityResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryAccelerationLogByCubeIdResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

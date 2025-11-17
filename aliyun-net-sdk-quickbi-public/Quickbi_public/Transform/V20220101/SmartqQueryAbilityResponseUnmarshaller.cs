@@ -39,6 +39,12 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			result.LogicSql = _ctx.StringValue("SmartqQueryAbility.Result.LogicSql");
 			result.ConclusionText = _ctx.StringValue("SmartqQueryAbility.Result.ConclusionText");
 
+			List<string> result_dataList = new List<string>();
+			for (int i = 0; i < _ctx.Length("SmartqQueryAbility.Result.DataList.Length"); i++) {
+				result_dataList.Add(_ctx.StringValue("SmartqQueryAbility.Result.DataList["+ i +"]"));
+			}
+			result.DataList = result_dataList;
+
 			List<SmartqQueryAbilityResponse.SmartqQueryAbility_Result.SmartqQueryAbility_MetaTypeItem> result_metaType = new List<SmartqQueryAbilityResponse.SmartqQueryAbility_Result.SmartqQueryAbility_MetaTypeItem>();
 			for (int i = 0; i < _ctx.Length("SmartqQueryAbility.Result.MetaType.Length"); i++) {
 				SmartqQueryAbilityResponse.SmartqQueryAbility_Result.SmartqQueryAbility_MetaTypeItem metaTypeItem = new SmartqQueryAbilityResponse.SmartqQueryAbility_Result.SmartqQueryAbility_MetaTypeItem();

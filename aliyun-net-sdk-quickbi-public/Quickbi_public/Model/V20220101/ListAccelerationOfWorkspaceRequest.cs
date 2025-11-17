@@ -27,71 +27,87 @@ using Aliyun.Acs.quickbi_public.Transform.V20220101;
 
 namespace Aliyun.Acs.quickbi_public.Model.V20220101
 {
-    public class SmartqQueryAbilityRequest : RpcAcsRequest<SmartqQueryAbilityResponse>
+    public class ListAccelerationOfWorkspaceRequest : RpcAcsRequest<ListAccelerationOfWorkspaceResponse>
     {
-        public SmartqQueryAbilityRequest()
-            : base("quickbi-public", "2022-01-01", "SmartqQueryAbility", "2.2.0", "openAPI")
+        public ListAccelerationOfWorkspaceRequest()
+            : base("quickbi-public", "2022-01-01", "ListAccelerationOfWorkspace", "2.2.0", "openAPI")
         {
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private string userId;
+		private string cubeName;
 
-		private string userQuestion;
+		private int? pageSize;
 
-		private string cubeId;
+		private string creatorId;
 
-		private string multipleCubeIds;
+		private int? pageNo;
 
-		public string UserId
+		private string workspaceId;
+
+		public string CubeName
 		{
 			get
 			{
-				return userId;
+				return cubeName;
 			}
 			set	
 			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
+				cubeName = value;
+				DictionaryUtil.Add(QueryParameters, "CubeName", value);
 			}
 		}
 
-		public string UserQuestion
+		public int? PageSize
 		{
 			get
 			{
-				return userQuestion;
+				return pageSize;
 			}
 			set	
 			{
-				userQuestion = value;
-				DictionaryUtil.Add(QueryParameters, "UserQuestion", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public string CubeId
+		public string CreatorId
 		{
 			get
 			{
-				return cubeId;
+				return creatorId;
 			}
 			set	
 			{
-				cubeId = value;
-				DictionaryUtil.Add(QueryParameters, "CubeId", value);
+				creatorId = value;
+				DictionaryUtil.Add(QueryParameters, "CreatorId", value);
 			}
 		}
 
-		public string MultipleCubeIds
+		public int? PageNo
 		{
 			get
 			{
-				return multipleCubeIds;
+				return pageNo;
 			}
 			set	
 			{
-				multipleCubeIds = value;
-				DictionaryUtil.Add(QueryParameters, "MultipleCubeIds", value);
+				pageNo = value;
+				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
+			}
+		}
+
+		public string WorkspaceId
+		{
+			get
+			{
+				return workspaceId;
+			}
+			set	
+			{
+				workspaceId = value;
+				DictionaryUtil.Add(QueryParameters, "WorkspaceId", value);
 			}
 		}
 
@@ -100,9 +116,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			return false;
 		}
 
-        public override SmartqQueryAbilityResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListAccelerationOfWorkspaceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SmartqQueryAbilityResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListAccelerationOfWorkspaceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

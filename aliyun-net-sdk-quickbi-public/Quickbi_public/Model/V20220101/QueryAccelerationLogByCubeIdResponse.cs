@@ -22,14 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.quickbi_public.Model.V20220101
 {
-	public class SmartqQueryAbilityResponse : AcsResponse
+	public class QueryAccelerationLogByCubeIdResponse : AcsResponse
 	{
 
 		private string requestId;
 
 		private bool? success;
 
-		private SmartqQueryAbility_Result result;
+		private QueryAccelerationLogByCubeId_Result result;
 
 		public string RequestId
 		{
@@ -55,7 +55,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			}
 		}
 
-		public SmartqQueryAbility_Result Result
+		public QueryAccelerationLogByCubeId_Result Result
 		{
 			get
 			{
@@ -67,153 +67,191 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			}
 		}
 
-		public class SmartqQueryAbility_Result
+		public class QueryAccelerationLogByCubeId_Result
 		{
 
-			private string chartType;
+			private int? totalPages;
 
-			private string logicSql;
+			private int? totalNum;
 
-			private string conclusionText;
+			private int? pageNum;
 
-			private List<SmartqQueryAbility_MetaTypeItem> metaType;
+			private int? pageSize;
 
-			private List<SmartqQueryAbility_ValuesItem> values;
+			private int? pre;
 
-			private List<string> dataList;
+			private int? next;
 
-			public string ChartType
+			private List<QueryAccelerationLogByCubeId_DataItem> data;
+
+			public int? TotalPages
 			{
 				get
 				{
-					return chartType;
+					return totalPages;
 				}
 				set	
 				{
-					chartType = value;
+					totalPages = value;
 				}
 			}
 
-			public string LogicSql
+			public int? TotalNum
 			{
 				get
 				{
-					return logicSql;
+					return totalNum;
 				}
 				set	
 				{
-					logicSql = value;
+					totalNum = value;
 				}
 			}
 
-			public string ConclusionText
+			public int? PageNum
 			{
 				get
 				{
-					return conclusionText;
+					return pageNum;
 				}
 				set	
 				{
-					conclusionText = value;
+					pageNum = value;
 				}
 			}
 
-			public List<SmartqQueryAbility_MetaTypeItem> MetaType
+			public int? PageSize
 			{
 				get
 				{
-					return metaType;
+					return pageSize;
 				}
 				set	
 				{
-					metaType = value;
+					pageSize = value;
 				}
 			}
 
-			public List<SmartqQueryAbility_ValuesItem> Values
+			public int? Pre
 			{
 				get
 				{
-					return values;
+					return pre;
 				}
 				set	
 				{
-					values = value;
+					pre = value;
 				}
 			}
 
-			public List<string> DataList
+			public int? Next
 			{
 				get
 				{
-					return dataList;
+					return next;
 				}
 				set	
 				{
-					dataList = value;
+					next = value;
 				}
 			}
 
-			public class SmartqQueryAbility_MetaTypeItem
+			public List<QueryAccelerationLogByCubeId_DataItem> Data
+			{
+				get
+				{
+					return data;
+				}
+				set	
+				{
+					data = value;
+				}
+			}
+
+			public class QueryAccelerationLogByCubeId_DataItem
 			{
 
-				private string key;
+				private string jobId;
 
-				private string _value;
+				private string jobHistoryId;
 
-				private string type;
+				private string jonStartDate;
 
-				public string Key
+				private string jobStatus;
+
+				private string duration;
+
+				private string log;
+
+				public string JobId
 				{
 					get
 					{
-						return key;
+						return jobId;
 					}
 					set	
 					{
-						key = value;
+						jobId = value;
 					}
 				}
 
-				public string _Value
+				public string JobHistoryId
 				{
 					get
 					{
-						return _value;
+						return jobHistoryId;
 					}
 					set	
 					{
-						_value = value;
+						jobHistoryId = value;
 					}
 				}
 
-				public string Type
+				public string JonStartDate
 				{
 					get
 					{
-						return type;
+						return jonStartDate;
 					}
 					set	
 					{
-						type = value;
+						jonStartDate = value;
 					}
 				}
-			}
 
-			public class SmartqQueryAbility_ValuesItem
-			{
-
-				private List<string> row;
-
-				public List<string> Row
+				public string JobStatus
 				{
 					get
 					{
-						return row;
+						return jobStatus;
 					}
 					set	
 					{
-						row = value;
+						jobStatus = value;
+					}
+				}
+
+				public string Duration
+				{
+					get
+					{
+						return duration;
+					}
+					set	
+					{
+						duration = value;
+					}
+				}
+
+				public string Log
+				{
+					get
+					{
+						return log;
+					}
+					set	
+					{
+						log = value;
 					}
 				}
 			}

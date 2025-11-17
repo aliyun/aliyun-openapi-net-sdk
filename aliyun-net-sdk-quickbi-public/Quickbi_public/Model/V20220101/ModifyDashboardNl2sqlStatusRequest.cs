@@ -27,71 +27,42 @@ using Aliyun.Acs.quickbi_public.Transform.V20220101;
 
 namespace Aliyun.Acs.quickbi_public.Model.V20220101
 {
-    public class SmartqQueryAbilityRequest : RpcAcsRequest<SmartqQueryAbilityResponse>
+    public class ModifyDashboardNl2sqlStatusRequest : RpcAcsRequest<ModifyDashboardNl2sqlStatusResponse>
     {
-        public SmartqQueryAbilityRequest()
-            : base("quickbi-public", "2022-01-01", "SmartqQueryAbility", "2.2.0", "openAPI")
+        public ModifyDashboardNl2sqlStatusRequest()
+            : base("quickbi-public", "2022-01-01", "ModifyDashboardNl2sqlStatus", "2.2.0", "openAPI")
         {
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private string userId;
+		private string dashboardIds;
 
-		private string userQuestion;
+		private int? status;
 
-		private string cubeId;
-
-		private string multipleCubeIds;
-
-		public string UserId
+		public string DashboardIds
 		{
 			get
 			{
-				return userId;
+				return dashboardIds;
 			}
 			set	
 			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
+				dashboardIds = value;
+				DictionaryUtil.Add(QueryParameters, "DashboardIds", value);
 			}
 		}
 
-		public string UserQuestion
+		public int? Status
 		{
 			get
 			{
-				return userQuestion;
+				return status;
 			}
 			set	
 			{
-				userQuestion = value;
-				DictionaryUtil.Add(QueryParameters, "UserQuestion", value);
-			}
-		}
-
-		public string CubeId
-		{
-			get
-			{
-				return cubeId;
-			}
-			set	
-			{
-				cubeId = value;
-				DictionaryUtil.Add(QueryParameters, "CubeId", value);
-			}
-		}
-
-		public string MultipleCubeIds
-		{
-			get
-			{
-				return multipleCubeIds;
-			}
-			set	
-			{
-				multipleCubeIds = value;
-				DictionaryUtil.Add(QueryParameters, "MultipleCubeIds", value);
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value.ToString());
 			}
 		}
 
@@ -100,9 +71,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			return false;
 		}
 
-        public override SmartqQueryAbilityResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyDashboardNl2sqlStatusResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SmartqQueryAbilityResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyDashboardNl2sqlStatusResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
