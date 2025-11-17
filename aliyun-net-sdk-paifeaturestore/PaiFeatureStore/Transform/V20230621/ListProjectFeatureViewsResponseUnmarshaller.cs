@@ -40,6 +40,8 @@ namespace Aliyun.Acs.PaiFeatureStore.Transform.V20230621
 				featureViewsItem.Name = _ctx.StringValue("ListProjectFeatureViews.FeatureViews["+ i +"].Name");
 				featureViewsItem.FeatureViewId = _ctx.StringValue("ListProjectFeatureViews.FeatureViews["+ i +"].FeatureViewId");
 				featureViewsItem.Type = _ctx.StringValue("ListProjectFeatureViews.FeatureViews["+ i +"].Type");
+				featureViewsItem.JoinId = _ctx.StringValue("ListProjectFeatureViews.FeatureViews["+ i +"].JoinId");
+				featureViewsItem.ParentJoinId = _ctx.StringValue("ListProjectFeatureViews.FeatureViews["+ i +"].ParentJoinId");
 
 				List<ListProjectFeatureViewsResponse.ListProjectFeatureViews_FeatureViewsItem.ListProjectFeatureViews_FeaturesItem> featureViewsItem_features = new List<ListProjectFeatureViewsResponse.ListProjectFeatureViews_FeatureViewsItem.ListProjectFeatureViews_FeaturesItem>();
 				for (int j = 0; j < _ctx.Length("ListProjectFeatureViews.FeatureViews["+ i +"].Features.Length"); j++) {

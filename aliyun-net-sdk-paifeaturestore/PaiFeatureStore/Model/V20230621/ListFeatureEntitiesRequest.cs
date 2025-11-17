@@ -37,32 +37,34 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 			Method = MethodType.GET;
         }
 
-		private string owner;
+		private string parentFeatureEntityId;
 
 		private int? pageNumber;
 
-		private string instanceId;
-
-		private string name;
-
 		private int? pageSize;
-
-		private string sortBy;
 
 		private string projectId;
 
 		private string order;
 
-		public string Owner
+		private string owner;
+
+		private string instanceId;
+
+		private string name;
+
+		private string sortBy;
+
+		public string ParentFeatureEntityId
 		{
 			get
 			{
-				return owner;
+				return parentFeatureEntityId;
 			}
 			set	
 			{
-				owner = value;
-				DictionaryUtil.Add(QueryParameters, "Owner", value);
+				parentFeatureEntityId = value;
+				DictionaryUtil.Add(QueryParameters, "ParentFeatureEntityId", value);
 			}
 		}
 
@@ -76,6 +78,58 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string ProjectId
+		{
+			get
+			{
+				return projectId;
+			}
+			set	
+			{
+				projectId = value;
+				DictionaryUtil.Add(QueryParameters, "ProjectId", value);
+			}
+		}
+
+		public string Order
+		{
+			get
+			{
+				return order;
+			}
+			set	
+			{
+				order = value;
+				DictionaryUtil.Add(QueryParameters, "Order", value);
+			}
+		}
+
+		public string Owner
+		{
+			get
+			{
+				return owner;
+			}
+			set	
+			{
+				owner = value;
+				DictionaryUtil.Add(QueryParameters, "Owner", value);
 			}
 		}
 
@@ -105,19 +159,6 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
 		public string SortBy
 		{
 			get
@@ -128,32 +169,6 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 			{
 				sortBy = value;
 				DictionaryUtil.Add(QueryParameters, "SortBy", value);
-			}
-		}
-
-		public string ProjectId
-		{
-			get
-			{
-				return projectId;
-			}
-			set	
-			{
-				projectId = value;
-				DictionaryUtil.Add(QueryParameters, "ProjectId", value);
-			}
-		}
-
-		public string Order
-		{
-			get
-			{
-				return order;
-			}
-			set	
-			{
-				order = value;
-				DictionaryUtil.Add(QueryParameters, "Order", value);
 			}
 		}
 

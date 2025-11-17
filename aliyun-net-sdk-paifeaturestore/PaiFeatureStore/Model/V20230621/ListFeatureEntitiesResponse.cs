@@ -84,6 +84,12 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 
 			private string projectName;
 
+			private string parentFeatureEntityId;
+
+			private string parentFeatureEntityName;
+
+			private string parentJoinId;
+
 			public string FeatureEntityId
 			{
 				get
@@ -165,6 +171,42 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 				set	
 				{
 					projectName = value;
+				}
+			}
+
+			public string ParentFeatureEntityId
+			{
+				get
+				{
+					return parentFeatureEntityId;
+				}
+				set	
+				{
+					parentFeatureEntityId = value;
+				}
+			}
+
+			public string ParentFeatureEntityName
+			{
+				get
+				{
+					return parentFeatureEntityName;
+				}
+				set	
+				{
+					parentFeatureEntityName = value;
+				}
+			}
+
+			public string ParentJoinId
+			{
+				get
+				{
+					return parentJoinId;
+				}
+				set	
+				{
+					parentJoinId = value;
 				}
 			}
 		}

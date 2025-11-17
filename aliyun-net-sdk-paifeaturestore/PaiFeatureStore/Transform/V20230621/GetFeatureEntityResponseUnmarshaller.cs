@@ -38,6 +38,9 @@ namespace Aliyun.Acs.PaiFeatureStore.Transform.V20230621
 			getFeatureEntityResponse.JoinId = _ctx.StringValue("GetFeatureEntity.JoinId");
 			getFeatureEntityResponse.Owner = _ctx.StringValue("GetFeatureEntity.Owner");
 			getFeatureEntityResponse.GmtCreateTime = _ctx.StringValue("GetFeatureEntity.GmtCreateTime");
+			getFeatureEntityResponse.ParentFeatureEntityId = _ctx.StringValue("GetFeatureEntity.ParentFeatureEntityId");
+			getFeatureEntityResponse.ParentFeatureEntityName = _ctx.StringValue("GetFeatureEntity.ParentFeatureEntityName");
+			getFeatureEntityResponse.ParentJoinId = _ctx.StringValue("GetFeatureEntity.ParentJoinId");
         
 			return getFeatureEntityResponse;
         }

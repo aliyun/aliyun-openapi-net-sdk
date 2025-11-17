@@ -76,6 +76,10 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 
 			private string type;
 
+			private string joinId;
+
+			private string parentJoinId;
+
 			private List<ListProjectFeatureViews_FeaturesItem> features;
 
 			public string Name
@@ -111,6 +115,30 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 				set	
 				{
 					type = value;
+				}
+			}
+
+			public string JoinId
+			{
+				get
+				{
+					return joinId;
+				}
+				set	
+				{
+					joinId = value;
+				}
+			}
+
+			public string ParentJoinId
+			{
+				get
+				{
+					return parentJoinId;
+				}
+				set	
+				{
+					parentJoinId = value;
 				}
 			}
 

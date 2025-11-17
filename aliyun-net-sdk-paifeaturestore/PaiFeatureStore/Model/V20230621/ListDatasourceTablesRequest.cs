@@ -37,11 +37,26 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 			Method = MethodType.GET;
         }
 
+		private string schemaName;
+
 		private string instanceId;
 
 		private string datasourceId;
 
 		private string tableName;
+
+		public string SchemaName
+		{
+			get
+			{
+				return schemaName;
+			}
+			set	
+			{
+				schemaName = value;
+				DictionaryUtil.Add(QueryParameters, "SchemaName", value);
+			}
+		}
 
 		public string InstanceId
 		{

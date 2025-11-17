@@ -44,6 +44,9 @@ namespace Aliyun.Acs.PaiFeatureStore.Transform.V20230621
 				featureEntitiesItem.Owner = _ctx.StringValue("ListFeatureEntities.FeatureEntities["+ i +"].Owner");
 				featureEntitiesItem.ProjectId = _ctx.StringValue("ListFeatureEntities.FeatureEntities["+ i +"].ProjectId");
 				featureEntitiesItem.ProjectName = _ctx.StringValue("ListFeatureEntities.FeatureEntities["+ i +"].ProjectName");
+				featureEntitiesItem.ParentFeatureEntityId = _ctx.StringValue("ListFeatureEntities.FeatureEntities["+ i +"].ParentFeatureEntityId");
+				featureEntitiesItem.ParentFeatureEntityName = _ctx.StringValue("ListFeatureEntities.FeatureEntities["+ i +"].ParentFeatureEntityName");
+				featureEntitiesItem.ParentJoinId = _ctx.StringValue("ListFeatureEntities.FeatureEntities["+ i +"].ParentJoinId");
 
 				listFeatureEntitiesResponse_featureEntities.Add(featureEntitiesItem);
 			}
