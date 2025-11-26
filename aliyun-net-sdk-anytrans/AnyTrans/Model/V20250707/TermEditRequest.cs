@@ -29,13 +29,13 @@ using Aliyun.Acs.AnyTrans.Transform.V20250707;
 
 namespace Aliyun.Acs.AnyTrans.Model.V20250707
 {
-    public class SubmitDocTranslateTaskRequest : RoaAcsRequest<SubmitDocTranslateTaskResponse>
+    public class TermEditRequest : RoaAcsRequest<TermEditResponse>
     {
-        public SubmitDocTranslateTaskRequest()
-            : base("AnyTrans", "2025-07-07", "SubmitDocTranslateTask")
+        public TermEditRequest()
+            : base("AnyTrans", "2025-07-07", "TermEdit")
         {
 			Protocol = ProtocolType.HTTPS;
-			UriPattern = "/anytrans/translate/doc/submit";
+			UriPattern = "/anytrans/translate/intervene/edit";
 			Method = MethodType.POST;
         }
 
@@ -43,13 +43,9 @@ namespace Aliyun.Acs.AnyTrans.Model.V20250707
 
 		private string sourceLanguage;
 
-		private string format;
-
 		private string scene;
 
 		private string targetLanguage;
-
-		private string text;
 
 		private string workspaceId;
 
@@ -83,20 +79,6 @@ namespace Aliyun.Acs.AnyTrans.Model.V20250707
 			}
 		}
 
-		[JsonProperty(PropertyName = "format")]
-		public string Format
-		{
-			get
-			{
-				return format;
-			}
-			set	
-			{
-				format = value;
-				DictionaryUtil.Add(BodyParameters, "format", value);
-			}
-		}
-
 		[JsonProperty(PropertyName = "scene")]
 		public string Scene
 		{
@@ -125,20 +107,6 @@ namespace Aliyun.Acs.AnyTrans.Model.V20250707
 			}
 		}
 
-		[JsonProperty(PropertyName = "text")]
-		public string Text
-		{
-			get
-			{
-				return text;
-			}
-			set	
-			{
-				text = value;
-				DictionaryUtil.Add(BodyParameters, "text", value);
-			}
-		}
-
 		[JsonProperty(PropertyName = "workspaceId")]
 		public string WorkspaceId
 		{
@@ -156,55 +124,27 @@ namespace Aliyun.Acs.AnyTrans.Model.V20250707
 		public class Ext
 		{
 
-			private List<TerminologiesItem> terminologies = new List<TerminologiesItem>(){ };
+			private List<TermsItem> terms = new List<TermsItem>(){ };
 
-			private Config config_;
-
-			private string domainHint;
-
-			[JsonProperty(PropertyName = "terminologies")]
-			public List<TerminologiesItem> Terminologies
+			[JsonProperty(PropertyName = "terms")]
+			public List<TermsItem> Terms
 			{
 				get
 				{
-					return terminologies;
+					return terms;
 				}
 				set	
 				{
-					terminologies = value;
+					terms = value;
 				}
 			}
 
-			[JsonProperty(PropertyName = "config")]
-			public Config Config_
-			{
-				get
-				{
-					return config_;
-				}
-				set	
-				{
-					config_ = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "domainHint")]
-			public string DomainHint
-			{
-				get
-				{
-					return domainHint;
-				}
-				set	
-				{
-					domainHint = value;
-				}
-			}
-
-			public class TerminologiesItem
+			public class TermsItem
 			{
 
 				private string tgt;
+
+				private string termId;
 
 				private string src;
 
@@ -221,6 +161,19 @@ namespace Aliyun.Acs.AnyTrans.Model.V20250707
 					}
 				}
 
+				[JsonProperty(PropertyName = "termId")]
+				public string TermId
+				{
+					get
+					{
+						return termId;
+					}
+					set	
+					{
+						termId = value;
+					}
+				}
+
 				[JsonProperty(PropertyName = "src")]
 				public string Src
 				{
@@ -234,25 +187,6 @@ namespace Aliyun.Acs.AnyTrans.Model.V20250707
 					}
 				}
 			}
-
-			public class Config
-			{
-
-				private bool? skipImgTrans;
-
-				[JsonProperty(PropertyName = "skipImgTrans")]
-				public bool? SkipImgTrans
-				{
-					get
-					{
-						return skipImgTrans;
-					}
-					set	
-					{
-						skipImgTrans = value;
-					}
-				}
-			}
 		}
 
 		public override bool CheckShowJsonItemName()
@@ -260,9 +194,9 @@ namespace Aliyun.Acs.AnyTrans.Model.V20250707
 			return false;
 		}
 
-        public override SubmitDocTranslateTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override TermEditResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SubmitDocTranslateTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TermEditResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

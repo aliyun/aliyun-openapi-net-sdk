@@ -29,13 +29,13 @@ using Aliyun.Acs.AnyTrans.Transform.V20250707;
 
 namespace Aliyun.Acs.AnyTrans.Model.V20250707
 {
-    public class TextTranslateRequest : RoaAcsRequest<TextTranslateResponse>
+    public class BatchTranslateForHtmlRequest : RoaAcsRequest<BatchTranslateForHtmlResponse>
     {
-        public TextTranslateRequest()
-            : base("AnyTrans", "2025-07-07", "TextTranslate")
+        public BatchTranslateForHtmlRequest()
+            : base("AnyTrans", "2025-07-07", "BatchTranslateForHtml")
         {
 			Protocol = ProtocolType.HTTPS;
-			UriPattern = "/anytrans/translate/text";
+			UriPattern = "/anytrans/translate/batchForHtml";
 			Method = MethodType.POST;
         }
 
@@ -46,6 +46,8 @@ namespace Aliyun.Acs.AnyTrans.Model.V20250707
 		private string format;
 
 		private string scene;
+
+		private string appName;
 
 		private string targetLanguage;
 
@@ -111,6 +113,20 @@ namespace Aliyun.Acs.AnyTrans.Model.V20250707
 			}
 		}
 
+		[JsonProperty(PropertyName = "appName")]
+		public string AppName
+		{
+			get
+			{
+				return appName;
+			}
+			set	
+			{
+				appName = value;
+				DictionaryUtil.Add(BodyParameters, "appName", value);
+			}
+		}
+
 		[JsonProperty(PropertyName = "targetLanguage")]
 		public string TargetLanguage
 		{
@@ -135,7 +151,7 @@ namespace Aliyun.Acs.AnyTrans.Model.V20250707
 			set	
 			{
 				text = value;
-				DictionaryUtil.Add(BodyParameters, "text", value);
+				DictionaryUtil.Add(BodyParameters, "text", value.ToString());
 			}
 		}
 
@@ -161,8 +177,6 @@ namespace Aliyun.Acs.AnyTrans.Model.V20250707
 			private List<TerminologiesItem> terminologies = new List<TerminologiesItem>(){ };
 
 			private TextTransform textTransform_;
-
-			private string agent;
 
 			private List<ExamplesItem> examples = new List<ExamplesItem>(){ };
 
@@ -206,19 +220,6 @@ namespace Aliyun.Acs.AnyTrans.Model.V20250707
 				set	
 				{
 					textTransform_ = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "agent")]
-			public string Agent
-			{
-				get
-				{
-					return agent;
-				}
-				set	
-				{
-					agent = value;
 				}
 			}
 
@@ -403,9 +404,9 @@ namespace Aliyun.Acs.AnyTrans.Model.V20250707
 			return false;
 		}
 
-        public override TextTranslateResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override BatchTranslateForHtmlResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return TextTranslateResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return BatchTranslateForHtmlResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

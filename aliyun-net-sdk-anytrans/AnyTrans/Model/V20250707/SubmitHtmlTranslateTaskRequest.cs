@@ -164,6 +164,8 @@ namespace Aliyun.Acs.AnyTrans.Model.V20250707
 
 			private List<ExamplesItem> examples = new List<ExamplesItem>(){ };
 
+			private Config config_;
+
 			private string domainHint;
 
 			[JsonProperty(PropertyName = "sensitives")]
@@ -215,6 +217,19 @@ namespace Aliyun.Acs.AnyTrans.Model.V20250707
 				set	
 				{
 					examples = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "config")]
+			public Config Config_
+			{
+				get
+				{
+					return config_;
+				}
+				set	
+				{
+					config_ = value;
 				}
 			}
 
@@ -344,6 +359,40 @@ namespace Aliyun.Acs.AnyTrans.Model.V20250707
 					set	
 					{
 						src = value;
+					}
+				}
+			}
+
+			public class Config
+			{
+
+				private bool? skipCsiCheck;
+
+				private string callbackUrl;
+
+				[JsonProperty(PropertyName = "skipCsiCheck")]
+				public bool? SkipCsiCheck
+				{
+					get
+					{
+						return skipCsiCheck;
+					}
+					set	
+					{
+						skipCsiCheck = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "callbackUrl")]
+				public string CallbackUrl
+				{
+					get
+					{
+						return callbackUrl;
+					}
+					set	
+					{
+						callbackUrl = value;
 					}
 				}
 			}

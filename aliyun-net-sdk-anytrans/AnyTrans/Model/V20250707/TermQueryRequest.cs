@@ -29,21 +29,17 @@ using Aliyun.Acs.AnyTrans.Transform.V20250707;
 
 namespace Aliyun.Acs.AnyTrans.Model.V20250707
 {
-    public class SubmitDocTranslateTaskRequest : RoaAcsRequest<SubmitDocTranslateTaskResponse>
+    public class TermQueryRequest : RoaAcsRequest<TermQueryResponse>
     {
-        public SubmitDocTranslateTaskRequest()
-            : base("AnyTrans", "2025-07-07", "SubmitDocTranslateTask")
+        public TermQueryRequest()
+            : base("AnyTrans", "2025-07-07", "TermQuery")
         {
 			Protocol = ProtocolType.HTTPS;
-			UriPattern = "/anytrans/translate/doc/submit";
+			UriPattern = "/anytrans/translate/intervene/query";
 			Method = MethodType.POST;
         }
 
-		private Ext ext_;
-
 		private string sourceLanguage;
-
-		private string format;
 
 		private string scene;
 
@@ -52,22 +48,6 @@ namespace Aliyun.Acs.AnyTrans.Model.V20250707
 		private string text;
 
 		private string workspaceId;
-
-		[JsonProperty(PropertyName = "ext")]
-		public Ext Ext_
-		{
-			get
-			{
-				return ext_;
-			}
-
-			set
-			{
-				ext_ = value;
-				DictionaryUtil.Add(BodyParameters, "ext", JsonConvert.SerializeObject(value));
-
-			}
-		}
 
 		[JsonProperty(PropertyName = "sourceLanguage")]
 		public string SourceLanguage
@@ -80,20 +60,6 @@ namespace Aliyun.Acs.AnyTrans.Model.V20250707
 			{
 				sourceLanguage = value;
 				DictionaryUtil.Add(BodyParameters, "sourceLanguage", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "format")]
-		public string Format
-		{
-			get
-			{
-				return format;
-			}
-			set	
-			{
-				format = value;
-				DictionaryUtil.Add(BodyParameters, "format", value);
 			}
 		}
 
@@ -153,116 +119,14 @@ namespace Aliyun.Acs.AnyTrans.Model.V20250707
 			}
 		}
 
-		public class Ext
-		{
-
-			private List<TerminologiesItem> terminologies = new List<TerminologiesItem>(){ };
-
-			private Config config_;
-
-			private string domainHint;
-
-			[JsonProperty(PropertyName = "terminologies")]
-			public List<TerminologiesItem> Terminologies
-			{
-				get
-				{
-					return terminologies;
-				}
-				set	
-				{
-					terminologies = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "config")]
-			public Config Config_
-			{
-				get
-				{
-					return config_;
-				}
-				set	
-				{
-					config_ = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "domainHint")]
-			public string DomainHint
-			{
-				get
-				{
-					return domainHint;
-				}
-				set	
-				{
-					domainHint = value;
-				}
-			}
-
-			public class TerminologiesItem
-			{
-
-				private string tgt;
-
-				private string src;
-
-				[JsonProperty(PropertyName = "tgt")]
-				public string Tgt
-				{
-					get
-					{
-						return tgt;
-					}
-					set	
-					{
-						tgt = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "src")]
-				public string Src
-				{
-					get
-					{
-						return src;
-					}
-					set	
-					{
-						src = value;
-					}
-				}
-			}
-
-			public class Config
-			{
-
-				private bool? skipImgTrans;
-
-				[JsonProperty(PropertyName = "skipImgTrans")]
-				public bool? SkipImgTrans
-				{
-					get
-					{
-						return skipImgTrans;
-					}
-					set	
-					{
-						skipImgTrans = value;
-					}
-				}
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override SubmitDocTranslateTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override TermQueryResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SubmitDocTranslateTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TermQueryResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
