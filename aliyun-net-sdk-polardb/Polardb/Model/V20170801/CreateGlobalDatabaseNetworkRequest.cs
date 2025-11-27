@@ -54,7 +54,11 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string ownerAccount;
 
+		private bool? enableGlobalDomainName;
+
 		private long? ownerId;
+
+		private string gDNVersion;
 
 		public long? ResourceOwnerId
 		{
@@ -147,6 +151,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public bool? EnableGlobalDomainName
+		{
+			get
+			{
+				return enableGlobalDomainName;
+			}
+			set	
+			{
+				enableGlobalDomainName = value;
+				DictionaryUtil.Add(QueryParameters, "EnableGlobalDomainName", value.ToString());
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -157,6 +174,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string GDNVersion
+		{
+			get
+			{
+				return gDNVersion;
+			}
+			set	
+			{
+				gDNVersion = value;
+				DictionaryUtil.Add(QueryParameters, "GDNVersion", value);
 			}
 		}
 

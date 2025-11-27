@@ -46,6 +46,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			content.RouteType = _ctx.StringValue("GetErRouteEntry.Content.RouteType");
 			content.Status = _ctx.StringValue("GetErRouteEntry.Content.Status");
 			content.GmtModified = _ctx.StringValue("GetErRouteEntry.Content.GmtModified");
+			content.ResourceGroupId = _ctx.StringValue("GetErRouteEntry.Content.ResourceGroupId");
 			getErRouteEntryResponse.Content = content;
         
 			return getErRouteEntryResponse;

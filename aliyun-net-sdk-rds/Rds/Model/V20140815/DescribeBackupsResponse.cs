@@ -189,6 +189,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string resourceGroupId;
 
+			private string engine;
+
+			private string engineVersion;
+
 			private List<DescribeBackups_BackupDownloadLinkByDBItem> backupDownloadLinkByDB;
 
 			[JsonProperty(PropertyName = "StorageClass")]
@@ -552,6 +556,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					resourceGroupId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Engine")]
+			public string Engine
+			{
+				get
+				{
+					return engine;
+				}
+				set	
+				{
+					engine = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EngineVersion")]
+			public string EngineVersion
+			{
+				get
+				{
+					return engineVersion;
+				}
+				set	
+				{
+					engineVersion = value;
 				}
 			}
 

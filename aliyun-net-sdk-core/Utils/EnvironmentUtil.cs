@@ -28,6 +28,9 @@ namespace Aliyun.Acs.Core.Utils
         private static readonly string ENV_REGION_ID = "ALIBABA_CLOUD_REGION_ID";
         private static readonly string ENV_CREDENTIAL_FILE = "ALIBABA_CLOUD_CREDENTIALS_FILE";
         private static readonly string ENV_ROLE_NAME = "ALIBABA_CLOUD_ECS_METADATA";
+        private static readonly string ENV_ROLE_ARN = "ALIBABA_CLOUD_ROLE_ARN";
+        private static readonly string ENV_OIDC_PROVIDER_ARN = "ALIBABA_CLOUD_OIDC_PROVIDER_ARN";
+        private static readonly string ENV_OIDC_TOKEN_FILE = "ALIBABA_CLOUD_OIDC_TOKEN_FILE";
 
         public static string GetHomePath()
         {
@@ -66,6 +69,21 @@ namespace Aliyun.Acs.Core.Utils
         public static string GetEnvironmentRoleName()
         {
             return Environment.GetEnvironmentVariable(ENV_ROLE_NAME) ?? null;
+        }
+
+        public static string GetEnvironmentRoleArn()
+        {
+            return Environment.GetEnvironmentVariable(ENV_ROLE_ARN) ?? null;
+        }
+
+        public static string GetEnvironmentOIDCProviderArn()
+        {
+            return Environment.GetEnvironmentVariable(ENV_OIDC_PROVIDER_ARN) ?? null;
+        }
+
+        public static string GetEnvironmentOIDCTokenFile()
+        {
+            return Environment.GetEnvironmentVariable(ENV_OIDC_TOKEN_FILE) ?? null;
         }
 
         public static string GetComposedPath(string homePath, string slash)

@@ -26,33 +26,40 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 {
     public class SearchPipelineResponseUnmarshaller
     {
-        public static SearchPipelineResponse Unmarshall(UnmarshallerContext context)
+        public static SearchPipelineResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SearchPipelineResponse searchPipelineResponse = new SearchPipelineResponse();
 
-			searchPipelineResponse.HttpResponse = context.HttpResponse;
-			searchPipelineResponse.RequestId = context.StringValue("SearchPipeline.RequestId");
-			searchPipelineResponse.TotalCount = context.LongValue("SearchPipeline.TotalCount");
-			searchPipelineResponse.PageNumber = context.LongValue("SearchPipeline.PageNumber");
-			searchPipelineResponse.PageSize = context.LongValue("SearchPipeline.PageSize");
+			searchPipelineResponse.HttpResponse = _ctx.HttpResponse;
+			searchPipelineResponse.TotalCount = _ctx.LongValue("SearchPipeline.TotalCount");
+			searchPipelineResponse.PageSize = _ctx.LongValue("SearchPipeline.PageSize");
+			searchPipelineResponse.RequestId = _ctx.StringValue("SearchPipeline.RequestId");
+			searchPipelineResponse.PageNumber = _ctx.LongValue("SearchPipeline.PageNumber");
 
 			List<SearchPipelineResponse.SearchPipeline_Pipeline> searchPipelineResponse_pipelineList = new List<SearchPipelineResponse.SearchPipeline_Pipeline>();
-			for (int i = 0; i < context.Length("SearchPipeline.PipelineList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("SearchPipeline.PipelineList.Length"); i++) {
 				SearchPipelineResponse.SearchPipeline_Pipeline pipeline = new SearchPipelineResponse.SearchPipeline_Pipeline();
-				pipeline.Id = context.StringValue("SearchPipeline.PipelineList["+ i +"].Id");
-				pipeline.Name = context.StringValue("SearchPipeline.PipelineList["+ i +"].Name");
-				pipeline.State = context.StringValue("SearchPipeline.PipelineList["+ i +"].State");
-				pipeline.Speed = context.StringValue("SearchPipeline.PipelineList["+ i +"].Speed");
-				pipeline.SpeedLevel = context.LongValue("SearchPipeline.PipelineList["+ i +"].SpeedLevel");
-				pipeline.QuotaAllocate = context.LongValue("SearchPipeline.PipelineList["+ i +"].QuotaAllocate");
-				pipeline.Role = context.StringValue("SearchPipeline.PipelineList["+ i +"].Role");
+				pipeline.Speed = _ctx.StringValue("SearchPipeline.PipelineList["+ i +"].Speed");
+				pipeline.State = _ctx.StringValue("SearchPipeline.PipelineList["+ i +"].State");
+				pipeline.SpeedLevel = _ctx.LongValue("SearchPipeline.PipelineList["+ i +"].SpeedLevel");
+				pipeline.Role = _ctx.StringValue("SearchPipeline.PipelineList["+ i +"].Role");
+				pipeline.Name = _ctx.StringValue("SearchPipeline.PipelineList["+ i +"].Name");
+				pipeline.Id = _ctx.StringValue("SearchPipeline.PipelineList["+ i +"].Id");
+				pipeline.QuotaAllocate = _ctx.LongValue("SearchPipeline.PipelineList["+ i +"].QuotaAllocate");
+				pipeline.CreationTime = _ctx.StringValue("SearchPipeline.PipelineList["+ i +"].CreationTime");
 
 				SearchPipelineResponse.SearchPipeline_Pipeline.SearchPipeline_NotifyConfig notifyConfig = new SearchPipelineResponse.SearchPipeline_Pipeline.SearchPipeline_NotifyConfig();
-				notifyConfig.Topic = context.StringValue("SearchPipeline.PipelineList["+ i +"].NotifyConfig.Topic");
-				notifyConfig.QueueName = context.StringValue("SearchPipeline.PipelineList["+ i +"].NotifyConfig.QueueName");
-				notifyConfig.MqTopic = context.StringValue("SearchPipeline.PipelineList["+ i +"].NotifyConfig.MqTopic");
-				notifyConfig.MqTag = context.StringValue("SearchPipeline.PipelineList["+ i +"].NotifyConfig.MqTag");
+				notifyConfig.MqTopic = _ctx.StringValue("SearchPipeline.PipelineList["+ i +"].NotifyConfig.MqTopic");
+				notifyConfig.QueueName = _ctx.StringValue("SearchPipeline.PipelineList["+ i +"].NotifyConfig.QueueName");
+				notifyConfig.MqTag = _ctx.StringValue("SearchPipeline.PipelineList["+ i +"].NotifyConfig.MqTag");
+				notifyConfig.Topic = _ctx.StringValue("SearchPipeline.PipelineList["+ i +"].NotifyConfig.Topic");
 				pipeline.NotifyConfig = notifyConfig;
+
+				SearchPipelineResponse.SearchPipeline_Pipeline.SearchPipeline_ExtendConfig extendConfig = new SearchPipelineResponse.SearchPipeline_Pipeline.SearchPipeline_ExtendConfig();
+				extendConfig.IsBoostNew = _ctx.BooleanValue("SearchPipeline.PipelineList["+ i +"].ExtendConfig.IsBoostNew");
+				extendConfig.MaxMultiSpeed = _ctx.IntegerValue("SearchPipeline.PipelineList["+ i +"].ExtendConfig.MaxMultiSpeed");
+				extendConfig.MultiSpeedDowngradePolicy = _ctx.StringValue("SearchPipeline.PipelineList["+ i +"].ExtendConfig.MultiSpeedDowngradePolicy");
+				pipeline.ExtendConfig = extendConfig;
 
 				searchPipelineResponse_pipelineList.Add(pipeline);
 			}

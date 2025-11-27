@@ -26,45 +26,45 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 {
     public class AddMediaResponseUnmarshaller
     {
-        public static AddMediaResponse Unmarshall(UnmarshallerContext context)
+        public static AddMediaResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddMediaResponse addMediaResponse = new AddMediaResponse();
 
-			addMediaResponse.HttpResponse = context.HttpResponse;
-			addMediaResponse.RequestId = context.StringValue("AddMedia.RequestId");
+			addMediaResponse.HttpResponse = _ctx.HttpResponse;
+			addMediaResponse.RequestId = _ctx.StringValue("AddMedia.RequestId");
 
 			AddMediaResponse.AddMedia_Media media = new AddMediaResponse.AddMedia_Media();
-			media.MediaId = context.StringValue("AddMedia.Media.MediaId");
-			media.Title = context.StringValue("AddMedia.Media.Title");
-			media.Description = context.StringValue("AddMedia.Media.Description");
-			media.CoverURL = context.StringValue("AddMedia.Media.CoverURL");
-			media.CateId = context.LongValue("AddMedia.Media.CateId");
-			media.Duration = context.StringValue("AddMedia.Media.Duration");
-			media.Format = context.StringValue("AddMedia.Media.Format");
-			media.Size = context.StringValue("AddMedia.Media.Size");
-			media.Bitrate = context.StringValue("AddMedia.Media.Bitrate");
-			media.Width = context.StringValue("AddMedia.Media.Width");
-			media.Height = context.StringValue("AddMedia.Media.Height");
-			media.Fps = context.StringValue("AddMedia.Media.Fps");
-			media.PublishState = context.StringValue("AddMedia.Media.PublishState");
-			media.CensorState = context.StringValue("AddMedia.Media.CensorState");
-			media.CreationTime = context.StringValue("AddMedia.Media.CreationTime");
+			media.CreationTime = _ctx.StringValue("AddMedia.Media.CreationTime");
+			media.CateId = _ctx.LongValue("AddMedia.Media.CateId");
+			media.Height = _ctx.StringValue("AddMedia.Media.Height");
+			media.CensorState = _ctx.StringValue("AddMedia.Media.CensorState");
+			media.Bitrate = _ctx.StringValue("AddMedia.Media.Bitrate");
+			media.MediaId = _ctx.StringValue("AddMedia.Media.MediaId");
+			media.PublishState = _ctx.StringValue("AddMedia.Media.PublishState");
+			media.Description = _ctx.StringValue("AddMedia.Media.Description");
+			media.Width = _ctx.StringValue("AddMedia.Media.Width");
+			media.Size = _ctx.StringValue("AddMedia.Media.Size");
+			media.CoverURL = _ctx.StringValue("AddMedia.Media.CoverURL");
+			media.Duration = _ctx.StringValue("AddMedia.Media.Duration");
+			media.Fps = _ctx.StringValue("AddMedia.Media.Fps");
+			media.Title = _ctx.StringValue("AddMedia.Media.Title");
+			media.Format = _ctx.StringValue("AddMedia.Media.Format");
 
 			List<string> media_tags = new List<string>();
-			for (int i = 0; i < context.Length("AddMedia.Media.Tags.Length"); i++) {
-				media_tags.Add(context.StringValue("AddMedia.Media.Tags["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("AddMedia.Media.Tags.Length"); i++) {
+				media_tags.Add(_ctx.StringValue("AddMedia.Media.Tags["+ i +"]"));
 			}
 			media.Tags = media_tags;
 
 			List<string> media_runIdList = new List<string>();
-			for (int i = 0; i < context.Length("AddMedia.Media.RunIdList.Length"); i++) {
-				media_runIdList.Add(context.StringValue("AddMedia.Media.RunIdList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("AddMedia.Media.RunIdList.Length"); i++) {
+				media_runIdList.Add(_ctx.StringValue("AddMedia.Media.RunIdList["+ i +"]"));
 			}
 			media.RunIdList = media_runIdList;
 
 			AddMediaResponse.AddMedia_Media.AddMedia_File file = new AddMediaResponse.AddMedia_Media.AddMedia_File();
-			file.URL = context.StringValue("AddMedia.Media.File.URL");
-			file.State = context.StringValue("AddMedia.Media.File.State");
+			file.State = _ctx.StringValue("AddMedia.Media.File.State");
+			file.URL = _ctx.StringValue("AddMedia.Media.File.URL");
 			media.File = file;
 			addMediaResponse.Media = media;
         

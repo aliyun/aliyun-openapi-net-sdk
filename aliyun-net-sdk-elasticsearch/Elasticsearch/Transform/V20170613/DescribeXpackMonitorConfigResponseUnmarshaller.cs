@@ -34,8 +34,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			describeXpackMonitorConfigResponse.RequestId = _ctx.StringValue("DescribeXpackMonitorConfig.RequestId");
 
 			DescribeXpackMonitorConfigResponse.DescribeXpackMonitorConfig_Result result = new DescribeXpackMonitorConfigResponse.DescribeXpackMonitorConfig_Result();
-			result.EsInstanceId = _ctx.StringValue("DescribeXpackMonitorConfig.Result.esInstanceId");
 			result.UserName = _ctx.StringValue("DescribeXpackMonitorConfig.Result.userName");
+			result.EsInstanceId = _ctx.StringValue("DescribeXpackMonitorConfig.Result.esInstanceId");
 			result.Enable = _ctx.BooleanValue("DescribeXpackMonitorConfig.Result.enable");
 
 			List<string> result_endpoints = new List<string>();

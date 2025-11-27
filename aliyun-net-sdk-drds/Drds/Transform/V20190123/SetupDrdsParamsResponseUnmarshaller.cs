@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			SetupDrdsParamsResponse setupDrdsParamsResponse = new SetupDrdsParamsResponse();
 
 			setupDrdsParamsResponse.HttpResponse = _ctx.HttpResponse;
+			setupDrdsParamsResponse.Data = _ctx.BooleanValue("SetupDrdsParams.Data");
 			setupDrdsParamsResponse.RequestId = _ctx.StringValue("SetupDrdsParams.RequestId");
 			setupDrdsParamsResponse.Success = _ctx.BooleanValue("SetupDrdsParams.Success");
-			setupDrdsParamsResponse.Data = _ctx.BooleanValue("SetupDrdsParams.Data");
         
 			return setupDrdsParamsResponse;
         }

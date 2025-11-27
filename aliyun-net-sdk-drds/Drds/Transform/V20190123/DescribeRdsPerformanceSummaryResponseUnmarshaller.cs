@@ -31,17 +31,17 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			DescribeRdsPerformanceSummaryResponse describeRdsPerformanceSummaryResponse = new DescribeRdsPerformanceSummaryResponse();
 
 			describeRdsPerformanceSummaryResponse.HttpResponse = _ctx.HttpResponse;
-			describeRdsPerformanceSummaryResponse.RequestId = _ctx.StringValue("DescribeRdsPerformanceSummary.RequestId");
 			describeRdsPerformanceSummaryResponse.Success = _ctx.BooleanValue("DescribeRdsPerformanceSummary.Success");
+			describeRdsPerformanceSummaryResponse.RequestId = _ctx.StringValue("DescribeRdsPerformanceSummary.RequestId");
 
 			List<DescribeRdsPerformanceSummaryResponse.DescribeRdsPerformanceSummary_RdsPerformanceInfo> describeRdsPerformanceSummaryResponse_rdsPerformanceInfos = new List<DescribeRdsPerformanceSummaryResponse.DescribeRdsPerformanceSummary_RdsPerformanceInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeRdsPerformanceSummary.RdsPerformanceInfos.Length"); i++) {
 				DescribeRdsPerformanceSummaryResponse.DescribeRdsPerformanceSummary_RdsPerformanceInfo rdsPerformanceInfo = new DescribeRdsPerformanceSummaryResponse.DescribeRdsPerformanceSummary_RdsPerformanceInfo();
-				rdsPerformanceInfo.RdsId = _ctx.StringValue("DescribeRdsPerformanceSummary.RdsPerformanceInfos["+ i +"].RdsId");
 				rdsPerformanceInfo.Cpu = _ctx.FloatValue("DescribeRdsPerformanceSummary.RdsPerformanceInfos["+ i +"].Cpu");
-				rdsPerformanceInfo.Iops = _ctx.FloatValue("DescribeRdsPerformanceSummary.RdsPerformanceInfos["+ i +"].Iops");
 				rdsPerformanceInfo.ActiveSessions = _ctx.IntegerValue("DescribeRdsPerformanceSummary.RdsPerformanceInfos["+ i +"].ActiveSessions");
 				rdsPerformanceInfo.TotalSessions = _ctx.IntegerValue("DescribeRdsPerformanceSummary.RdsPerformanceInfos["+ i +"].TotalSessions");
+				rdsPerformanceInfo.RdsId = _ctx.StringValue("DescribeRdsPerformanceSummary.RdsPerformanceInfos["+ i +"].RdsId");
+				rdsPerformanceInfo.Iops = _ctx.FloatValue("DescribeRdsPerformanceSummary.RdsPerformanceInfos["+ i +"].Iops");
 				rdsPerformanceInfo.SpaceUsage = _ctx.LongValue("DescribeRdsPerformanceSummary.RdsPerformanceInfos["+ i +"].SpaceUsage");
 
 				describeRdsPerformanceSummaryResponse_rdsPerformanceInfos.Add(rdsPerformanceInfo);

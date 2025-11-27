@@ -34,10 +34,10 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			createVpcEndpointResponse.RequestId = _ctx.StringValue("CreateVpcEndpoint.RequestId");
 
 			CreateVpcEndpointResponse.CreateVpcEndpoint_Result result = new CreateVpcEndpointResponse.CreateVpcEndpoint_Result();
-			result.EndpointId = _ctx.StringValue("CreateVpcEndpoint.Result.endpointId");
-			result.EndpointName = _ctx.StringValue("CreateVpcEndpoint.Result.endpointName");
 			result.ServiceId = _ctx.StringValue("CreateVpcEndpoint.Result.serviceId");
 			result.EndpointDomain = _ctx.StringValue("CreateVpcEndpoint.Result.endpointDomain");
+			result.EndpointId = _ctx.StringValue("CreateVpcEndpoint.Result.endpointId");
+			result.EndpointName = _ctx.StringValue("CreateVpcEndpoint.Result.endpointName");
 			createVpcEndpointResponse.Result = result;
         
 			return createVpcEndpointResponse;

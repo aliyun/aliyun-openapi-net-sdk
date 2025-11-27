@@ -110,6 +110,10 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private int? mountTargetCount;
 
+			private string fileSystemType;
+
+			private string regionId;
+
 			private List<DescribeAccessGroups_Tag> tags;
 
 			public string AccessGroupName
@@ -181,6 +185,30 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					mountTargetCount = value;
+				}
+			}
+
+			public string FileSystemType
+			{
+				get
+				{
+					return fileSystemType;
+				}
+				set	
+				{
+					fileSystemType = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 

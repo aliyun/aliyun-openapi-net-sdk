@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			ValidateTransferableNodesResponse validateTransferableNodesResponse = new ValidateTransferableNodesResponse();
 
 			validateTransferableNodesResponse.HttpResponse = _ctx.HttpResponse;
-			validateTransferableNodesResponse.RequestId = _ctx.StringValue("ValidateTransferableNodes.RequestId");
 			validateTransferableNodesResponse.Result = _ctx.BooleanValue("ValidateTransferableNodes.Result");
+			validateTransferableNodesResponse.RequestId = _ctx.StringValue("ValidateTransferableNodes.RequestId");
         
 			return validateTransferableNodesResponse;
         }

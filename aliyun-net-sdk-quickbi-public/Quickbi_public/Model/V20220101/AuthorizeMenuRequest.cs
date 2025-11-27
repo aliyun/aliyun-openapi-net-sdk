@@ -37,13 +37,13 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 		private string dataPortalId;
 
-		private string userIds;
-
 		private int? authPointsValue;
+
+		private string menuIds;
 
 		private string userGroupIds;
 
-		private string menuIds;
+		private string userIds;
 
 		public string DataPortalId
 		{
@@ -55,19 +55,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				dataPortalId = value;
 				DictionaryUtil.Add(QueryParameters, "DataPortalId", value);
-			}
-		}
-
-		public string UserIds
-		{
-			get
-			{
-				return userIds;
-			}
-			set	
-			{
-				userIds = value;
-				DictionaryUtil.Add(QueryParameters, "UserIds", value);
 			}
 		}
 
@@ -84,6 +71,19 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			}
 		}
 
+		public string MenuIds
+		{
+			get
+			{
+				return menuIds;
+			}
+			set	
+			{
+				menuIds = value;
+				DictionaryUtil.Add(QueryParameters, "MenuIds", value);
+			}
+		}
+
 		public string UserGroupIds
 		{
 			get
@@ -97,16 +97,16 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			}
 		}
 
-		public string MenuIds
+		public string UserIds
 		{
 			get
 			{
-				return menuIds;
+				return userIds;
 			}
 			set	
 			{
-				menuIds = value;
-				DictionaryUtil.Add(QueryParameters, "MenuIds", value);
+				userIds = value;
+				DictionaryUtil.Add(QueryParameters, "UserIds", value);
 			}
 		}
 

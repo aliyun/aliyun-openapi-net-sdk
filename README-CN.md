@@ -1,42 +1,38 @@
 [English](./README.md) | 简体中文
 
-
 <p align="center">
 <a href=" https://www.alibabacloud.com"><img src="https://aliyunsdk-pages.alicdn.com/icons/Aliyun.svg"></a>
 </p>
 
 <h1 align="center">Alibaba Cloud SDK for .NET</h1>
 
-<p align="center">
-<a href="https://travis-ci.org/aliyun/aliyun-openapi-net-sdk"><img src="https://travis-ci.org/aliyun/aliyun-openapi-net-sdk.svg?branch=master" alt="Travis Build Status"></a>
-<a href="https://ci.appveyor.com/project/aliyun/aliyun-openapi-net-sdk"><img src="https://ci.appveyor.com/api/projects/status/32r7s2skrgm9ubva?svg=true" alt="Appveyor Build Status"></a>
-<a href="https://app.fossa.io/projects/git%2Bgithub.com%2Faliyun%2Faliyun-openapi-net-sdk?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Faliyun%2Faliyun-openapi-net-sdk.svg?type=shield"/></a>
-<a href="https://codecov.io/gh/aliyun/aliyun-openapi-net-sdk"><img src="https://codecov.io/gh/aliyun/aliyun-openapi-net-sdk/branch/master/graph/badge.svg" alt="Codecov"></a>
-<a href="https://badge.fury.io/nu/aliyun-net-sdk-core"><img src="https://badge.fury.io/nu/aliyun-net-sdk-core.svg" alt="Nuget Version"></a>
-<a href="https://www.nuget.org/packages/aliyun-net-sdk-core/"><img src="https://img.shields.io/nuget/dt/aliyun-net-sdk-core.svg?label=Nuget%20Download&style=flat" alt="Nuget Version"></a>
-<a href="https://github.com/aliyun/aliyun-openapi-net-sdk/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="Nuget Version"></a>
-</p>
+[![.NET CI](https://github.com/aliyun/aliyun-openapi-net-sdk/actions/workflows/ci.yml/badge.svg)](https://github.com/aliyun/aliyun-openapi-net-sdk/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/aliyun/aliyun-openapi-net-sdk/graph/badge.svg?token=TiTJg3ch1j)](https://codecov.io/gh/aliyun/aliyun-openapi-net-sdk)
+[![Nuget Version](https://badge.fury.io/nu/aliyun-net-sdk-core.svg)](https://www.nuget.org/packages/aliyun-net-sdk-core/)
+[![Nuget Download](https://img.shields.io/nuget/dt/aliyun-net-sdk-core.svg?label=Nuget%20Download&style=flat)](https://www.nuget.org/packages/aliyun-net-sdk-core/)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/aliyun/aliyun-openapi-net-sdk/blob/master/LICENSE)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Faliyun%2Faliyun-openapi-net-sdk.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Faliyun%2Faliyun-openapi-net-sdk?ref=badge_shield)
 
-
-欢迎使用 Alibaba Cloud SDK for .NET ，让您不用复杂编程即可访问云服务器、云监控等多个阿里云服务。
-
+阿里云 V1.0 SDK 即将进入基础安全维护阶段，不再建议使用，建议使用 V2.0 SDK。
 
 ## 使用诊断
-[Troubleshoot](https://troubleshoot.api.aliyun.com/?source=github_sdk) 提供 OpenAPI 使用诊断服务，通过 `RequestID` 或 `报错信息` ，帮助开发者快速定位，为开发者提供解决方案。
 
+[Troubleshoot](https://api.aliyun.com/troubleshoot?source=github_sdk) 提供 OpenAPI 使用诊断服务，通过 `RequestID` 或 `报错信息` ，帮助开发者快速定位，为开发者提供解决方案。
 
 ## 使用Demo及其示例
-您可以在 [阿里云 OpenAPI 开发者门户](https://next.api.aliyun.com) 中查看您所使用的产品代码示例。
 
+您可以在 [阿里云 OpenAPI 开发者门户](https://api.aliyun.com/) 中查看您所使用的产品代码示例。
 
 ## 环境要求
+
 Alibaba Cloud SDK for .NET 适用于:
+
 - **.NET Framework 4.5** 及其以上版本
 - **.NET Standard 2.0** 及其以上版本。
 - **C# 4.0** 及其以上版本
 
-
 ## 安装
+
 进入 [Alibaba Cloud SDK for .NET Nuget Package](https://www.nuget.org/profiles/aliyun-openapi-sdk) 页面，查看已发布的阿里云产品 SDK 模块列表。
 
 > **注意：** 部分阿里云产品的 SDK 未收录到这个列表中，例如对象存储（OSS），表格存储（Table Store），请前往这些产品的详情页获取相应的 SDK。
@@ -46,14 +42,14 @@ Alibaba Cloud SDK for .NET 适用于:
 
 您可以通过 NuGet 程序包管理器来安装：
 
-* 在 `解决方案资源管理器面板` 中右击您的项目选择 `管理 NuGet 程序包` 菜单，在打开的 `NuGet 管理面板` 中点击 `浏览` 选项卡输入 `aliyun-net-sdk`，在下方列表中选择 `Authors` 为 `Alibaba Cloud` 由官方发布的各产品模块，选择您期望的模块点击 **安装** 即可。
+- 在 `解决方案资源管理器面板` 中右击您的项目选择 `管理 NuGet 程序包` 菜单，在打开的 `NuGet 管理面板` 中点击 `浏览` 选项卡输入 `aliyun-net-sdk`，在下方列表中选择 `Authors` 为 `Alibaba Cloud` 由官方发布的各产品模块，选择您期望的模块点击 **安装** 即可。
 
 或者通过 .NET CLI 工具来安装（以安装 ECS为例）
 
     dotnet add package aliyun-net-sdk-ecs
 
-
 ## 快速开始
+
 - 要使用 Alibaba Cloud SDK for .NET，您需要一个云账号以及一对 Access Key ID 和 Access Key Secret。请在阿里云控制台中的 [AccessKey 管理页面](https://usercenter.console.aliyun.com/#/manage/ak) 上创建和查看您的 Access Key，或者联系您的系统管理员。
 
 - 要使用 Alibaba Cloud SDK for .NET 访问某个产品的 API，您需要事先在 [阿里云控制台](https://home.console.aliyun.com/new#/) 中开通这个产品。
@@ -147,33 +143,32 @@ class Program
 }
 ```
 
-
 ## 文档
-* [环境要求](docs/0-Requirements-CN.md)
-* [SSL 验证](docs/1-Verify-CN.md)
-* [调试](docs/2-Debug-CN.md)
-* [代理](docs/3-Proxy-CN.md)
-* [超时](docs/4-Timeout-CN.md)
-* [产品Nuget包](docs/5-Packages-CN.md)
-* [日志](docs/6-Log-CN.md)
-* [客户端与凭证](docs/7-Client-CN.md)
-* [Endpoint](docs/8-Endpoint-CN.md)
 
+- [环境要求](docs/0-Requirements-CN.md)
+- [SSL 验证](docs/1-Verify-CN.md)
+- [调试](docs/2-Debug-CN.md)
+- [代理](docs/3-Proxy-CN.md)
+- [超时](docs/4-Timeout-CN.md)
+- [产品Nuget包](docs/5-Packages-CN.md)
+- [日志](docs/6-Log-CN.md)
+- [客户端与凭证](docs/7-Client-CN.md)
+- [Endpoint](docs/8-Endpoint-CN.md)
 
 ## 问题
+
 [提交Issue](https://github.com/aliyun/aliyun-openapi-net-sdk/issues/new)，不符合指南的问题可能会立即关闭。
 
-
 ## 发行说明
+
 每个版本的详细更改记录在 [发行说明](aliyun-net-sdk-core/ChangeLog.md) 中。
 
-
 ## API参考
+
 要知道您想访问的产品提供的 API 以及它们的参数，请参考开放 API 的 [产品列表](https://develop.aliyun.com/tools/openapilist)。
 
-
 ## 许可证
-源码基于 [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.html) 许可协议开放授权
 
+源码基于 [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.html) 许可协议开放授权
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Faliyun%2Faliyun-openapi-net-sdk.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Faliyun%2Faliyun-openapi-net-sdk?ref=badge_large)

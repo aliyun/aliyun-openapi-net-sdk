@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			ModifyDrdsIpWhiteListResponse modifyDrdsIpWhiteListResponse = new ModifyDrdsIpWhiteListResponse();
 
 			modifyDrdsIpWhiteListResponse.HttpResponse = _ctx.HttpResponse;
-			modifyDrdsIpWhiteListResponse.RequestId = _ctx.StringValue("ModifyDrdsIpWhiteList.RequestId");
 			modifyDrdsIpWhiteListResponse.Success = _ctx.BooleanValue("ModifyDrdsIpWhiteList.Success");
+			modifyDrdsIpWhiteListResponse.RequestId = _ctx.StringValue("ModifyDrdsIpWhiteList.RequestId");
         
 			return modifyDrdsIpWhiteListResponse;
         }

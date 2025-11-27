@@ -33,6 +33,12 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private int? pageSize;
 
+		private long? fullStorageSize;
+
+		private long? logStorageSize;
+
+		private long? freeSize;
+
 		private List<DescribeClusterBackupList_ClusterBackup> clusterBackups;
 
 		public string RequestId
@@ -83,6 +89,42 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public long? FullStorageSize
+		{
+			get
+			{
+				return fullStorageSize;
+			}
+			set	
+			{
+				fullStorageSize = value;
+			}
+		}
+
+		public long? LogStorageSize
+		{
+			get
+			{
+				return logStorageSize;
+			}
+			set	
+			{
+				logStorageSize = value;
+			}
+		}
+
+		public long? FreeSize
+		{
+			get
+			{
+				return freeSize;
+			}
+			set	
+			{
+				freeSize = value;
+			}
+		}
+
 		public List<DescribeClusterBackupList_ClusterBackup> ClusterBackups
 		{
 			get
@@ -115,6 +157,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			private int? shardClassMemory;
 
 			private string progress;
+
+			private string expectExpireTime;
 
 			private List<DescribeClusterBackupList_Backup> backups;
 
@@ -228,6 +272,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
+			public string ExpectExpireTime
+			{
+				get
+				{
+					return expectExpireTime;
+				}
+				set	
+				{
+					expectExpireTime = value;
+				}
+			}
+
 			public List<DescribeClusterBackupList_Backup> Backups
 			{
 				get
@@ -262,6 +318,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				private string backupDownloadURL;
 
 				private string backupIntranetDownloadURL;
+
+				private string recoverConfigMode;
 
 				private string backupStartTime;
 
@@ -324,6 +382,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 					set	
 					{
 						backupIntranetDownloadURL = value;
+					}
+				}
+
+				public string RecoverConfigMode
+				{
+					get
+					{
+						return recoverConfigMode;
+					}
+					set	
+					{
+						recoverConfigMode = value;
 					}
 				}
 

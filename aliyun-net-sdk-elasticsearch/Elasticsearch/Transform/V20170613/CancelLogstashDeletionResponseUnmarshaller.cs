@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			CancelLogstashDeletionResponse cancelLogstashDeletionResponse = new CancelLogstashDeletionResponse();
 
 			cancelLogstashDeletionResponse.HttpResponse = _ctx.HttpResponse;
-			cancelLogstashDeletionResponse.RequestId = _ctx.StringValue("CancelLogstashDeletion.RequestId");
 			cancelLogstashDeletionResponse.Result = _ctx.BooleanValue("CancelLogstashDeletion.Result");
+			cancelLogstashDeletionResponse.RequestId = _ctx.StringValue("CancelLogstashDeletion.RequestId");
         
 			return cancelLogstashDeletionResponse;
         }

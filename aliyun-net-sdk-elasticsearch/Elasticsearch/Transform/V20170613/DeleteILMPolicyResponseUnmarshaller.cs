@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			DeleteILMPolicyResponse deleteILMPolicyResponse = new DeleteILMPolicyResponse();
 
 			deleteILMPolicyResponse.HttpResponse = _ctx.HttpResponse;
-			deleteILMPolicyResponse.RequestId = _ctx.StringValue("DeleteILMPolicy.RequestId");
 			deleteILMPolicyResponse.Result = _ctx.BooleanValue("DeleteILMPolicy.Result");
+			deleteILMPolicyResponse.RequestId = _ctx.StringValue("DeleteILMPolicy.RequestId");
         
 			return deleteILMPolicyResponse;
         }

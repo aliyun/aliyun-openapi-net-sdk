@@ -53,6 +53,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 				dataItem.Status = _ctx.StringValue("ListVccRouteEntries.Content.Data["+ i +"].Status");
 				dataItem.GmtModified = _ctx.StringValue("ListVccRouteEntries.Content.Data["+ i +"].GmtModified");
 				dataItem.Message = _ctx.StringValue("ListVccRouteEntries.Content.Data["+ i +"].Message");
+				dataItem.ResourceGroupId = _ctx.StringValue("ListVccRouteEntries.Content.Data["+ i +"].ResourceGroupId");
 
 				content_data.Add(dataItem);
 			}

@@ -183,13 +183,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 				private string logUuid;
 
+				private string entityList;
+
 				private string attCk;
 
 				private long? subUserId;
 
+				private string subUserName;
+
 				private string cloudCode;
 
 				private string isDefend;
+
+				private string extendContent;
 
 				private List<DescribeAlertsWithEvent_AlertInfoListItem> alertInfoList;
 
@@ -517,6 +523,18 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 					}
 				}
 
+				public string EntityList
+				{
+					get
+					{
+						return entityList;
+					}
+					set	
+					{
+						entityList = value;
+					}
+				}
+
 				public string AttCk
 				{
 					get
@@ -541,6 +559,18 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 					}
 				}
 
+				public string SubUserName
+				{
+					get
+					{
+						return subUserName;
+					}
+					set	
+					{
+						subUserName = value;
+					}
+				}
+
 				public string CloudCode
 				{
 					get
@@ -562,6 +592,18 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 					set	
 					{
 						isDefend = value;
+					}
+				}
+
+				public string ExtendContent
+				{
+					get
+					{
+						return extendContent;
+					}
+					set	
+					{
+						extendContent = value;
 					}
 				}
 

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private List<QueryFpShotJobList_FpShotJob> fpShotJobList;
 
-		private List<string> nonExistIds;
-
 		private List<string> nonExistPrimaryKeys;
+
+		private List<string> nonExistIds;
 
 		public string RequestId
 		{
@@ -71,18 +71,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public List<string> NonExistIds
-		{
-			get
-			{
-				return nonExistIds;
-			}
-			set	
-			{
-				nonExistIds = value;
-			}
-		}
-
 		public List<string> NonExistPrimaryKeys
 		{
 			get
@@ -95,144 +83,52 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
+		public List<string> NonExistIds
+		{
+			get
+			{
+				return nonExistIds;
+			}
+			set	
+			{
+				nonExistIds = value;
+			}
+		}
+
 		public class QueryFpShotJobList_FpShotJob
 		{
-
-			private string id;
-
-			private string userData;
-
-			private string pipelineId;
-
-			private string fileId;
-
-			private string transactionId;
-
-			private string txHash;
-
-			private string state;
-
-			private string code;
-
-			private string message;
 
 			private string creationTime;
 
 			private string finishTime;
 
-			private QueryFpShotJobList_InputFile inputFile;
+			private string state;
 
-			private QueryFpShotJobList_FpShotConfig fpShotConfig;
+			private string message;
+
+			private string txHash;
+
+			private string transactionId;
+
+			private string fileId;
+
+			private string userData;
+
+			private int? duration;
+
+			private string code;
+
+			private string pipelineId;
+
+			private string id;
+
+			private string input;
 
 			private QueryFpShotJobList_FpShotResult fpShotResult;
 
-			public string Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+			private QueryFpShotJobList_FpShotConfig fpShotConfig;
 
-			public string UserData
-			{
-				get
-				{
-					return userData;
-				}
-				set	
-				{
-					userData = value;
-				}
-			}
-
-			public string PipelineId
-			{
-				get
-				{
-					return pipelineId;
-				}
-				set	
-				{
-					pipelineId = value;
-				}
-			}
-
-			public string FileId
-			{
-				get
-				{
-					return fileId;
-				}
-				set	
-				{
-					fileId = value;
-				}
-			}
-
-			public string TransactionId
-			{
-				get
-				{
-					return transactionId;
-				}
-				set	
-				{
-					transactionId = value;
-				}
-			}
-
-			public string TxHash
-			{
-				get
-				{
-					return txHash;
-				}
-				set	
-				{
-					txHash = value;
-				}
-			}
-
-			public string State
-			{
-				get
-				{
-					return state;
-				}
-				set	
-				{
-					state = value;
-				}
-			}
-
-			public string Code
-			{
-				get
-				{
-					return code;
-				}
-				set	
-				{
-					code = value;
-				}
-			}
-
-			public string Message
-			{
-				get
-				{
-					return message;
-				}
-				set	
-				{
-					message = value;
-				}
-			}
+			private QueryFpShotJobList_InputFile inputFile;
 
 			public string CreationTime
 			{
@@ -258,27 +154,135 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public QueryFpShotJobList_InputFile InputFile
+			public string State
 			{
 				get
 				{
-					return inputFile;
+					return state;
 				}
 				set	
 				{
-					inputFile = value;
+					state = value;
 				}
 			}
 
-			public QueryFpShotJobList_FpShotConfig FpShotConfig
+			public string Message
 			{
 				get
 				{
-					return fpShotConfig;
+					return message;
 				}
 				set	
 				{
-					fpShotConfig = value;
+					message = value;
+				}
+			}
+
+			public string TxHash
+			{
+				get
+				{
+					return txHash;
+				}
+				set	
+				{
+					txHash = value;
+				}
+			}
+
+			public string TransactionId
+			{
+				get
+				{
+					return transactionId;
+				}
+				set	
+				{
+					transactionId = value;
+				}
+			}
+
+			public string FileId
+			{
+				get
+				{
+					return fileId;
+				}
+				set	
+				{
+					fileId = value;
+				}
+			}
+
+			public string UserData
+			{
+				get
+				{
+					return userData;
+				}
+				set	
+				{
+					userData = value;
+				}
+			}
+
+			public int? Duration
+			{
+				get
+				{
+					return duration;
+				}
+				set	
+				{
+					duration = value;
+				}
+			}
+
+			public string Code
+			{
+				get
+				{
+					return code;
+				}
+				set	
+				{
+					code = value;
+				}
+			}
+
+			public string PipelineId
+			{
+				get
+				{
+					return pipelineId;
+				}
+				set	
+				{
+					pipelineId = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public string Input
+			{
+				get
+				{
+					return input;
+				}
+				set	
+				{
+					input = value;
 				}
 			}
 
@@ -294,48 +298,366 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class QueryFpShotJobList_InputFile
+			public QueryFpShotJobList_FpShotConfig FpShotConfig
+			{
+				get
+				{
+					return fpShotConfig;
+				}
+				set	
+				{
+					fpShotConfig = value;
+				}
+			}
+
+			public QueryFpShotJobList_InputFile InputFile
+			{
+				get
+				{
+					return inputFile;
+				}
+				set	
+				{
+					inputFile = value;
+				}
+			}
+
+			public class QueryFpShotJobList_FpShotResult
 			{
 
-				private string bucket;
+				private List<QueryFpShotJobList_FpShot> audioFpShots;
 
-				private string location;
+				private List<QueryFpShotJobList_FpShot> fpShots;
 
-				private string _object;
+				private List<QueryFpShotJobList_TextFpShot> textFpShots;
 
-				public string Bucket
+				public List<QueryFpShotJobList_FpShot> AudioFpShots
 				{
 					get
 					{
-						return bucket;
+						return audioFpShots;
 					}
 					set	
 					{
-						bucket = value;
+						audioFpShots = value;
 					}
 				}
 
-				public string Location
+				public List<QueryFpShotJobList_FpShot> FpShots
 				{
 					get
 					{
-						return location;
+						return fpShots;
 					}
 					set	
 					{
-						location = value;
+						fpShots = value;
 					}
 				}
 
-				public string _Object
+				public List<QueryFpShotJobList_TextFpShot> TextFpShots
 				{
 					get
 					{
-						return _object;
+						return textFpShots;
 					}
 					set	
 					{
-						_object = value;
+						textFpShots = value;
+					}
+				}
+
+				public class QueryFpShotJobList_FpShot
+				{
+
+					private string primaryKey;
+
+					private string similarity;
+
+					private List<QueryFpShotJobList_FpShotSlice> fpShotSlices;
+
+					public string PrimaryKey
+					{
+						get
+						{
+							return primaryKey;
+						}
+						set	
+						{
+							primaryKey = value;
+						}
+					}
+
+					public string Similarity
+					{
+						get
+						{
+							return similarity;
+						}
+						set	
+						{
+							similarity = value;
+						}
+					}
+
+					public List<QueryFpShotJobList_FpShotSlice> FpShotSlices
+					{
+						get
+						{
+							return fpShotSlices;
+						}
+						set	
+						{
+							fpShotSlices = value;
+						}
+					}
+
+					public class QueryFpShotJobList_FpShotSlice
+					{
+
+						private string similarity;
+
+						private QueryFpShotJobList_Duplication duplication;
+
+						private QueryFpShotJobList_Input input;
+
+						public string Similarity
+						{
+							get
+							{
+								return similarity;
+							}
+							set	
+							{
+								similarity = value;
+							}
+						}
+
+						public QueryFpShotJobList_Duplication Duplication
+						{
+							get
+							{
+								return duplication;
+							}
+							set	
+							{
+								duplication = value;
+							}
+						}
+
+						public QueryFpShotJobList_Input Input
+						{
+							get
+							{
+								return input;
+							}
+							set	
+							{
+								input = value;
+							}
+						}
+
+						public class QueryFpShotJobList_Duplication
+						{
+
+							private string start;
+
+							private string duration;
+
+							public string Start
+							{
+								get
+								{
+									return start;
+								}
+								set	
+								{
+									start = value;
+								}
+							}
+
+							public string Duration
+							{
+								get
+								{
+									return duration;
+								}
+								set	
+								{
+									duration = value;
+								}
+							}
+						}
+
+						public class QueryFpShotJobList_Input
+						{
+
+							private string start;
+
+							private string duration;
+
+							public string Start
+							{
+								get
+								{
+									return start;
+								}
+								set	
+								{
+									start = value;
+								}
+							}
+
+							public string Duration
+							{
+								get
+								{
+									return duration;
+								}
+								set	
+								{
+									duration = value;
+								}
+							}
+						}
+					}
+				}
+
+				public class QueryFpShotJobList_TextFpShot
+				{
+
+					private string primaryKey;
+
+					private string similarity;
+
+					private List<QueryFpShotJobList_TextFpShotSlice> textFpShotSlices;
+
+					public string PrimaryKey
+					{
+						get
+						{
+							return primaryKey;
+						}
+						set	
+						{
+							primaryKey = value;
+						}
+					}
+
+					public string Similarity
+					{
+						get
+						{
+							return similarity;
+						}
+						set	
+						{
+							similarity = value;
+						}
+					}
+
+					public List<QueryFpShotJobList_TextFpShotSlice> TextFpShotSlices
+					{
+						get
+						{
+							return textFpShotSlices;
+						}
+						set	
+						{
+							textFpShotSlices = value;
+						}
+					}
+
+					public class QueryFpShotJobList_TextFpShotSlice
+					{
+
+						private string similarity;
+
+						private string inputText;
+
+						private string duplicationText;
+
+						private QueryFpShotJobList_InputFragment inputFragment;
+
+						public string Similarity
+						{
+							get
+							{
+								return similarity;
+							}
+							set	
+							{
+								similarity = value;
+							}
+						}
+
+						public string InputText
+						{
+							get
+							{
+								return inputText;
+							}
+							set	
+							{
+								inputText = value;
+							}
+						}
+
+						public string DuplicationText
+						{
+							get
+							{
+								return duplicationText;
+							}
+							set	
+							{
+								duplicationText = value;
+							}
+						}
+
+						public QueryFpShotJobList_InputFragment InputFragment
+						{
+							get
+							{
+								return inputFragment;
+							}
+							set	
+							{
+								inputFragment = value;
+							}
+						}
+
+						public class QueryFpShotJobList_InputFragment
+						{
+
+							private string start;
+
+							private string duration;
+
+							public string Start
+							{
+								get
+								{
+									return start;
+								}
+								set	
+								{
+									start = value;
+								}
+							}
+
+							public string Duration
+							{
+								get
+								{
+									return duration;
+								}
+								set	
+								{
+									duration = value;
+								}
+							}
+						}
 					}
 				}
 			}
@@ -400,190 +722,48 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class QueryFpShotJobList_FpShotResult
+			public class QueryFpShotJobList_InputFile
 			{
 
-				private List<QueryFpShotJobList_FpShot> fpShots;
+				private string _object;
 
-				private List<QueryFpShotJobList_FpShot> audioFpShots;
+				private string location;
 
-				public List<QueryFpShotJobList_FpShot> FpShots
+				private string bucket;
+
+				public string _Object
 				{
 					get
 					{
-						return fpShots;
+						return _object;
 					}
 					set	
 					{
-						fpShots = value;
+						_object = value;
 					}
 				}
 
-				public List<QueryFpShotJobList_FpShot> AudioFpShots
+				public string Location
 				{
 					get
 					{
-						return audioFpShots;
+						return location;
 					}
 					set	
 					{
-						audioFpShots = value;
+						location = value;
 					}
 				}
 
-				public class QueryFpShotJobList_FpShot
+				public string Bucket
 				{
-
-					private string primaryKey;
-
-					private string similarity;
-
-					private List<QueryFpShotJobList_FpShotSlice> fpShotSlices;
-
-					public string PrimaryKey
+					get
 					{
-						get
-						{
-							return primaryKey;
-						}
-						set	
-						{
-							primaryKey = value;
-						}
+						return bucket;
 					}
-
-					public string Similarity
+					set	
 					{
-						get
-						{
-							return similarity;
-						}
-						set	
-						{
-							similarity = value;
-						}
-					}
-
-					public List<QueryFpShotJobList_FpShotSlice> FpShotSlices
-					{
-						get
-						{
-							return fpShotSlices;
-						}
-						set	
-						{
-							fpShotSlices = value;
-						}
-					}
-
-					public class QueryFpShotJobList_FpShotSlice
-					{
-
-						private string similarity;
-
-						private QueryFpShotJobList_Input input;
-
-						private QueryFpShotJobList_Duplication duplication;
-
-						public string Similarity
-						{
-							get
-							{
-								return similarity;
-							}
-							set	
-							{
-								similarity = value;
-							}
-						}
-
-						public QueryFpShotJobList_Input Input
-						{
-							get
-							{
-								return input;
-							}
-							set	
-							{
-								input = value;
-							}
-						}
-
-						public QueryFpShotJobList_Duplication Duplication
-						{
-							get
-							{
-								return duplication;
-							}
-							set	
-							{
-								duplication = value;
-							}
-						}
-
-						public class QueryFpShotJobList_Input
-						{
-
-							private string start;
-
-							private string duration;
-
-							public string Start
-							{
-								get
-								{
-									return start;
-								}
-								set	
-								{
-									start = value;
-								}
-							}
-
-							public string Duration
-							{
-								get
-								{
-									return duration;
-								}
-								set	
-								{
-									duration = value;
-								}
-							}
-						}
-
-						public class QueryFpShotJobList_Duplication
-						{
-
-							private string start;
-
-							private string duration;
-
-							public string Start
-							{
-								get
-								{
-									return start;
-								}
-								set	
-								{
-									start = value;
-								}
-							}
-
-							public string Duration
-							{
-								get
-								{
-									return duration;
-								}
-								set	
-								{
-									duration = value;
-								}
-							}
-						}
+						bucket = value;
 					}
 				}
 			}

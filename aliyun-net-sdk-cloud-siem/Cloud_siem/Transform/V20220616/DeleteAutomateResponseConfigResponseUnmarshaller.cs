@@ -31,11 +31,11 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 			DeleteAutomateResponseConfigResponse deleteAutomateResponseConfigResponse = new DeleteAutomateResponseConfigResponse();
 
 			deleteAutomateResponseConfigResponse.HttpResponse = _ctx.HttpResponse;
+			deleteAutomateResponseConfigResponse.Data = _ctx.StringValue("DeleteAutomateResponseConfig.Data");
 			deleteAutomateResponseConfigResponse.Success = _ctx.BooleanValue("DeleteAutomateResponseConfig.Success");
 			deleteAutomateResponseConfigResponse.Code = _ctx.IntegerValue("DeleteAutomateResponseConfig.Code");
 			deleteAutomateResponseConfigResponse.Message = _ctx.StringValue("DeleteAutomateResponseConfig.Message");
 			deleteAutomateResponseConfigResponse.RequestId = _ctx.StringValue("DeleteAutomateResponseConfig.RequestId");
-			deleteAutomateResponseConfigResponse.Data = _ctx.StringValue("DeleteAutomateResponseConfig.Data");
         
 			return deleteAutomateResponseConfigResponse;
         }

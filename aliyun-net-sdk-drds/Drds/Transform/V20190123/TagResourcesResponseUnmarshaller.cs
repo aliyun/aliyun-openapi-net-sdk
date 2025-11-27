@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			TagResourcesResponse tagResourcesResponse = new TagResourcesResponse();
 
 			tagResourcesResponse.HttpResponse = _ctx.HttpResponse;
-			tagResourcesResponse.RequestId = _ctx.StringValue("TagResources.RequestId");
 			tagResourcesResponse.Success = _ctx.BooleanValue("TagResources.Success");
+			tagResourcesResponse.RequestId = _ctx.StringValue("TagResources.RequestId");
         
 			return tagResourcesResponse;
         }

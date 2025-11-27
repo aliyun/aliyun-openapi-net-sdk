@@ -65,10 +65,12 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 				responseDataItem.RuleGroup = _ctx.StringValue("ListCloudSiemCustomizeRules.Data.ResponseData["+ i +"].RuleGroup");
 				responseDataItem.RuleThreshold = _ctx.StringValue("ListCloudSiemCustomizeRules.Data.ResponseData["+ i +"].RuleThreshold");
 				responseDataItem.QueryCycle = _ctx.StringValue("ListCloudSiemCustomizeRules.Data.ResponseData["+ i +"].QueryCycle");
+				responseDataItem.AttCk = _ctx.StringValue("ListCloudSiemCustomizeRules.Data.ResponseData["+ i +"].AttCk");
 				responseDataItem.EventTransferSwitch = _ctx.IntegerValue("ListCloudSiemCustomizeRules.Data.ResponseData["+ i +"].EventTransferSwitch");
 				responseDataItem.EventTransferType = _ctx.StringValue("ListCloudSiemCustomizeRules.Data.ResponseData["+ i +"].EventTransferType");
 				responseDataItem.EventTransferExt = _ctx.StringValue("ListCloudSiemCustomizeRules.Data.ResponseData["+ i +"].EventTransferExt");
 				responseDataItem.Status = _ctx.IntegerValue("ListCloudSiemCustomizeRules.Data.ResponseData["+ i +"].Status");
+				responseDataItem.DataType = _ctx.IntegerValue("ListCloudSiemCustomizeRules.Data.ResponseData["+ i +"].DataType");
 
 				data_responseData.Add(responseDataItem);
 			}

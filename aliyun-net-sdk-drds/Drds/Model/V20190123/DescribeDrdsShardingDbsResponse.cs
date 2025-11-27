@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,11 +25,29 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribeDrdsShardingDbsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
+		private string requestId;
+
+		private string pageNumber;
+
+		private string pageSize;
+
+		private string total;
+
 		private List<DescribeDrdsShardingDbs_ShardingDb> shardingDbs;
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -43,15 +61,39 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			}
 		}
 
-		public bool? Success
+		public string PageNumber
 		{
 			get
 			{
-				return success;
+				return pageNumber;
 			}
 			set	
 			{
-				success = value;
+				pageNumber = value;
+			}
+		}
+
+		public string PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public string Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
 			}
 		}
 
@@ -70,91 +112,31 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class DescribeDrdsShardingDbs_ShardingDb
 		{
 
-			private string shardingDbName;
-
-			private string dbInstanceId;
-
-			private string groupName;
-
-			private string dbStatus;
-
-			private string dbType;
-
 			private int? minPoolSize;
 
 			private int? maxPoolSize;
 
-			private int? idleTimeOut;
-
-			private int? blockingTimeout;
-
-			private string connectionProperties;
-
-			private int? preparedStatementCacheSize;
-
-			private string userName;
+			private string dbInstanceId;
 
 			private string connectUrl;
 
-			public string ShardingDbName
-			{
-				get
-				{
-					return shardingDbName;
-				}
-				set	
-				{
-					shardingDbName = value;
-				}
-			}
+			private string groupName;
 
-			public string DbInstanceId
-			{
-				get
-				{
-					return dbInstanceId;
-				}
-				set	
-				{
-					dbInstanceId = value;
-				}
-			}
+			private string dbType;
 
-			public string GroupName
-			{
-				get
-				{
-					return groupName;
-				}
-				set	
-				{
-					groupName = value;
-				}
-			}
+			private int? idleTimeOut;
 
-			public string DbStatus
-			{
-				get
-				{
-					return dbStatus;
-				}
-				set	
-				{
-					dbStatus = value;
-				}
-			}
+			private string shardingDbName;
 
-			public string DbType
-			{
-				get
-				{
-					return dbType;
-				}
-				set	
-				{
-					dbType = value;
-				}
-			}
+			private int? blockingTimeout;
+
+			private int? preparedStatementCacheSize;
+
+			private string connectionProperties;
+
+			private string userName;
+
+			private string dbStatus;
 
 			public int? MinPoolSize
 			{
@@ -180,6 +162,54 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
+			public string DbInstanceId
+			{
+				get
+				{
+					return dbInstanceId;
+				}
+				set	
+				{
+					dbInstanceId = value;
+				}
+			}
+
+			public string ConnectUrl
+			{
+				get
+				{
+					return connectUrl;
+				}
+				set	
+				{
+					connectUrl = value;
+				}
+			}
+
+			public string GroupName
+			{
+				get
+				{
+					return groupName;
+				}
+				set	
+				{
+					groupName = value;
+				}
+			}
+
+			public string DbType
+			{
+				get
+				{
+					return dbType;
+				}
+				set	
+				{
+					dbType = value;
+				}
+			}
+
 			public int? IdleTimeOut
 			{
 				get
@@ -189,6 +219,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					idleTimeOut = value;
+				}
+			}
+
+			public string ShardingDbName
+			{
+				get
+				{
+					return shardingDbName;
+				}
+				set	
+				{
+					shardingDbName = value;
 				}
 			}
 
@@ -204,18 +246,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public string ConnectionProperties
-			{
-				get
-				{
-					return connectionProperties;
-				}
-				set	
-				{
-					connectionProperties = value;
-				}
-			}
-
 			public int? PreparedStatementCacheSize
 			{
 				get
@@ -225,6 +255,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					preparedStatementCacheSize = value;
+				}
+			}
+
+			public string ConnectionProperties
+			{
+				get
+				{
+					return connectionProperties;
+				}
+				set	
+				{
+					connectionProperties = value;
 				}
 			}
 
@@ -240,15 +282,15 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public string ConnectUrl
+			public string DbStatus
 			{
 				get
 				{
-					return connectUrl;
+					return dbStatus;
 				}
 				set	
 				{
-					connectUrl = value;
+					dbStatus = value;
 				}
 			}
 		}

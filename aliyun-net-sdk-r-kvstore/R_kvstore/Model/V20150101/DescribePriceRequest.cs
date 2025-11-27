@@ -46,7 +46,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string instances;
 
+		private string secondaryZoneId;
+
 		private string couponNo;
+
+		private string engineVersion;
 
 		private string instanceClass;
 
@@ -55,6 +59,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private string securityToken;
 
 		private string businessInfo;
+
+		private int? shardCount;
 
 		private long? period;
 
@@ -117,6 +123,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string SecondaryZoneId
+		{
+			get
+			{
+				return secondaryZoneId;
+			}
+			set	
+			{
+				secondaryZoneId = value;
+				DictionaryUtil.Add(QueryParameters, "SecondaryZoneId", value);
+			}
+		}
+
 		public string CouponNo
 		{
 			get
@@ -127,6 +146,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				couponNo = value;
 				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
+			}
+		}
+
+		public string EngineVersion
+		{
+			get
+			{
+				return engineVersion;
+			}
+			set	
+			{
+				engineVersion = value;
+				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
 			}
 		}
 
@@ -179,6 +211,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				businessInfo = value;
 				DictionaryUtil.Add(QueryParameters, "BusinessInfo", value);
+			}
+		}
+
+		public int? ShardCount
+		{
+			get
+			{
+				return shardCount;
+			}
+			set	
+			{
+				shardCount = value;
+				DictionaryUtil.Add(QueryParameters, "ShardCount", value.ToString());
 			}
 		}
 

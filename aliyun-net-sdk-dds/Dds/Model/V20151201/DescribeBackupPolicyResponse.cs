@@ -63,6 +63,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private int? crossLogRetentionValue;
 
+		private bool? preserveOneEachHour;
+
 		public string PreferredBackupPeriod
 		{
 			get
@@ -288,6 +290,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				crossLogRetentionValue = value;
+			}
+		}
+
+		public bool? PreserveOneEachHour
+		{
+			get
+			{
+				return preserveOneEachHour;
+			}
+			set	
+			{
+				preserveOneEachHour = value;
 			}
 		}
 	}

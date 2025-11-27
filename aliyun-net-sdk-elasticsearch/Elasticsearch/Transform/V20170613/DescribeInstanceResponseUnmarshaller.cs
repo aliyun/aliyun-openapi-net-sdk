@@ -34,72 +34,45 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			describeInstanceResponse.RequestId = _ctx.StringValue("DescribeInstance.RequestId");
 
 			DescribeInstanceResponse.DescribeInstance_Result result = new DescribeInstanceResponse.DescribeInstance_Result();
-			result.InstanceId = _ctx.StringValue("DescribeInstance.Result.instanceId");
-			result.Domain = _ctx.StringValue("DescribeInstance.Result.domain");
-			result.Description = _ctx.StringValue("DescribeInstance.Result.description");
-			result.NodeAmount = _ctx.IntegerValue("DescribeInstance.Result.nodeAmount");
-			result.PaymentType = _ctx.StringValue("DescribeInstance.Result.paymentType");
-			result.Status = _ctx.StringValue("DescribeInstance.Result.status");
-			result.EsVersion = _ctx.StringValue("DescribeInstance.Result.esVersion");
-			result.CreatedAt = _ctx.StringValue("DescribeInstance.Result.createdAt");
-			result.UpdatedAt = _ctx.StringValue("DescribeInstance.Result.updatedAt");
-			result.KibanaDomain = _ctx.StringValue("DescribeInstance.Result.kibanaDomain");
-			result.EnablePublic = _ctx.BooleanValue("DescribeInstance.Result.enablePublic");
-			result.DedicateMaster = _ctx.BooleanValue("DescribeInstance.Result.dedicateMaster");
 			result.AdvancedDedicateMaster = _ctx.BooleanValue("DescribeInstance.Result.advancedDedicateMaster");
-			result.PublicPort = _ctx.IntegerValue("DescribeInstance.Result.publicPort");
-			result.KibanaPort = _ctx.IntegerValue("DescribeInstance.Result.kibanaPort");
-			result.PublicDomain = _ctx.StringValue("DescribeInstance.Result.publicDomain");
-			result.VpcInstanceId = _ctx.StringValue("DescribeInstance.Result.vpcInstanceId");
-			result.Port = _ctx.IntegerValue("DescribeInstance.Result.port");
-			result.EsConfig = _ctx.StringValue("DescribeInstance.Result.esConfig");
-			result.ZoneCount = _ctx.IntegerValue("DescribeInstance.Result.zoneCount");
-			result.HaveClientNode = _ctx.BooleanValue("DescribeInstance.Result.haveClientNode");
-			result.WarmNode = _ctx.BooleanValue("DescribeInstance.Result.warmNode");
 			result.Protocol = _ctx.StringValue("DescribeInstance.Result.protocol");
 			result.EnableKibanaPublicNetwork = _ctx.BooleanValue("DescribeInstance.Result.enableKibanaPublicNetwork");
-			result.HaveKibana = _ctx.BooleanValue("DescribeInstance.Result.haveKibana");
-			result.ResourceGroupId = _ctx.StringValue("DescribeInstance.Result.resourceGroupId");
+			result.NodeAmount = _ctx.IntegerValue("DescribeInstance.Result.nodeAmount");
+			result.CreatedAt = _ctx.StringValue("DescribeInstance.Result.createdAt");
 			result.EnableKibanaPrivateNetwork = _ctx.BooleanValue("DescribeInstance.Result.enableKibanaPrivateNetwork");
-			result.IsNewDeployment = _ctx.BooleanValue("DescribeInstance.Result.isNewDeployment");
+			result.VpcInstanceId = _ctx.StringValue("DescribeInstance.Result.vpcInstanceId");
+			result.Port = _ctx.IntegerValue("DescribeInstance.Result.port");
+			result.EnablePublic = _ctx.BooleanValue("DescribeInstance.Result.enablePublic");
+			result.DedicateMaster = _ctx.BooleanValue("DescribeInstance.Result.dedicateMaster");
+			result.KibanaPort = _ctx.IntegerValue("DescribeInstance.Result.kibanaPort");
+			result.EsConfig = _ctx.StringValue("DescribeInstance.Result.esConfig");
+			result.ResourceGroupId = _ctx.StringValue("DescribeInstance.Result.resourceGroupId");
+			result.PaymentType = _ctx.StringValue("DescribeInstance.Result.paymentType");
 			result.PostpaidServiceStatus = _ctx.StringValue("DescribeInstance.Result.postpaidServiceStatus");
+			result.EsVersion = _ctx.StringValue("DescribeInstance.Result.esVersion");
+			result.HaveKibana = _ctx.BooleanValue("DescribeInstance.Result.haveKibana");
+			result.IsNewDeployment = _ctx.BooleanValue("DescribeInstance.Result.isNewDeployment");
+			result.WarmNode = _ctx.BooleanValue("DescribeInstance.Result.warmNode");
+			result.UpdatedAt = _ctx.StringValue("DescribeInstance.Result.updatedAt");
+			result.InstanceId = _ctx.StringValue("DescribeInstance.Result.instanceId");
+			result.ZoneCount = _ctx.IntegerValue("DescribeInstance.Result.zoneCount");
+			result.PublicDomain = _ctx.StringValue("DescribeInstance.Result.publicDomain");
+			result.Status = _ctx.StringValue("DescribeInstance.Result.status");
 			result.ServiceVpc = _ctx.BooleanValue("DescribeInstance.Result.serviceVpc");
+			result.PublicPort = _ctx.IntegerValue("DescribeInstance.Result.publicPort");
+			result.HaveClientNode = _ctx.BooleanValue("DescribeInstance.Result.haveClientNode");
+			result.Domain = _ctx.StringValue("DescribeInstance.Result.domain");
+			result.Description = _ctx.StringValue("DescribeInstance.Result.description");
+			result.KibanaDomain = _ctx.StringValue("DescribeInstance.Result.kibanaDomain");
+			result.InstanceCategory = _ctx.StringValue("DescribeInstance.Result.instanceCategory");
+			result.Endtime = _ctx.LongValue("DescribeInstance.Result.endtime");
+			result.ArchType = _ctx.StringValue("DescribeInstance.Result.archType");
 
 			List<string> result_esIPWhitelist = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeInstance.Result.EsIPWhitelist.Length"); i++) {
 				result_esIPWhitelist.Add(_ctx.StringValue("DescribeInstance.Result.EsIPWhitelist["+ i +"]"));
 			}
 			result.EsIPWhitelist = result_esIPWhitelist;
-
-			List<string> result_esIPBlacklist = new List<string>();
-			for (int i = 0; i < _ctx.Length("DescribeInstance.Result.EsIPBlacklist.Length"); i++) {
-				result_esIPBlacklist.Add(_ctx.StringValue("DescribeInstance.Result.EsIPBlacklist["+ i +"]"));
-			}
-			result.EsIPBlacklist = result_esIPBlacklist;
-
-			List<string> result_kibanaIPWhitelist = new List<string>();
-			for (int i = 0; i < _ctx.Length("DescribeInstance.Result.KibanaIPWhitelist.Length"); i++) {
-				result_kibanaIPWhitelist.Add(_ctx.StringValue("DescribeInstance.Result.KibanaIPWhitelist["+ i +"]"));
-			}
-			result.KibanaIPWhitelist = result_kibanaIPWhitelist;
-
-			List<string> result_publicIpWhitelist = new List<string>();
-			for (int i = 0; i < _ctx.Length("DescribeInstance.Result.PublicIpWhitelist.Length"); i++) {
-				result_publicIpWhitelist.Add(_ctx.StringValue("DescribeInstance.Result.PublicIpWhitelist["+ i +"]"));
-			}
-			result.PublicIpWhitelist = result_publicIpWhitelist;
-
-			List<string> result_privateNetworkIpWhiteList = new List<string>();
-			for (int i = 0; i < _ctx.Length("DescribeInstance.Result.PrivateNetworkIpWhiteList.Length"); i++) {
-				result_privateNetworkIpWhiteList.Add(_ctx.StringValue("DescribeInstance.Result.PrivateNetworkIpWhiteList["+ i +"]"));
-			}
-			result.PrivateNetworkIpWhiteList = result_privateNetworkIpWhiteList;
-
-			List<string> result_kibanaPrivateIPWhitelist = new List<string>();
-			for (int i = 0; i < _ctx.Length("DescribeInstance.Result.KibanaPrivateIPWhitelist.Length"); i++) {
-				result_kibanaPrivateIPWhitelist.Add(_ctx.StringValue("DescribeInstance.Result.KibanaPrivateIPWhitelist["+ i +"]"));
-			}
-			result.KibanaPrivateIPWhitelist = result_kibanaPrivateIPWhitelist;
 
 			List<Dictionary<string, string>> result_extendConfigs = new List<Dictionary<string, string>>();
 			for (int i = 0; i < _ctx.Length("DescribeInstance.Result.ExtendConfigs.Length"); i++) {
@@ -116,24 +89,56 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			}
 			result.ExtendConfigs = result_extendConfigs;
 
+			List<string> result_privateNetworkIpWhiteList = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeInstance.Result.PrivateNetworkIpWhiteList.Length"); i++) {
+				result_privateNetworkIpWhiteList.Add(_ctx.StringValue("DescribeInstance.Result.PrivateNetworkIpWhiteList["+ i +"]"));
+			}
+			result.PrivateNetworkIpWhiteList = result_privateNetworkIpWhiteList;
+
+			List<string> result_publicIpWhitelist = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeInstance.Result.PublicIpWhitelist.Length"); i++) {
+				result_publicIpWhitelist.Add(_ctx.StringValue("DescribeInstance.Result.PublicIpWhitelist["+ i +"]"));
+			}
+			result.PublicIpWhitelist = result_publicIpWhitelist;
+
+			List<string> result_kibanaPrivateIPWhitelist = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeInstance.Result.KibanaPrivateIPWhitelist.Length"); i++) {
+				result_kibanaPrivateIPWhitelist.Add(_ctx.StringValue("DescribeInstance.Result.KibanaPrivateIPWhitelist["+ i +"]"));
+			}
+			result.KibanaPrivateIPWhitelist = result_kibanaPrivateIPWhitelist;
+
+			List<string> result_esIPBlacklist = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeInstance.Result.EsIPBlacklist.Length"); i++) {
+				result_esIPBlacklist.Add(_ctx.StringValue("DescribeInstance.Result.EsIPBlacklist["+ i +"]"));
+			}
+			result.EsIPBlacklist = result_esIPBlacklist;
+
+			List<string> result_kibanaIPWhitelist = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeInstance.Result.KibanaIPWhitelist.Length"); i++) {
+				result_kibanaIPWhitelist.Add(_ctx.StringValue("DescribeInstance.Result.KibanaIPWhitelist["+ i +"]"));
+			}
+			result.KibanaIPWhitelist = result_kibanaIPWhitelist;
+
 			DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_NodeSpec nodeSpec = new DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_NodeSpec();
 			nodeSpec.Spec = _ctx.StringValue("DescribeInstance.Result.NodeSpec.spec");
 			nodeSpec.Disk = _ctx.IntegerValue("DescribeInstance.Result.NodeSpec.disk");
-			nodeSpec.DiskType = _ctx.StringValue("DescribeInstance.Result.NodeSpec.diskType");
 			nodeSpec.DiskEncryption = _ctx.BooleanValue("DescribeInstance.Result.NodeSpec.diskEncryption");
+			nodeSpec.DiskType = _ctx.StringValue("DescribeInstance.Result.NodeSpec.diskType");
+			nodeSpec.PerformanceLevel = _ctx.StringValue("DescribeInstance.Result.NodeSpec.performanceLevel");
+			nodeSpec.SpecInfo = _ctx.StringValue("DescribeInstance.Result.NodeSpec.specInfo");
 			result.NodeSpec = nodeSpec;
 
 			DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_NetworkConfig networkConfig = new DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_NetworkConfig();
-			networkConfig.Type = _ctx.StringValue("DescribeInstance.Result.NetworkConfig.type");
 			networkConfig.VpcId = _ctx.StringValue("DescribeInstance.Result.NetworkConfig.vpcId");
-			networkConfig.VswitchId = _ctx.StringValue("DescribeInstance.Result.NetworkConfig.vswitchId");
 			networkConfig.VsArea = _ctx.StringValue("DescribeInstance.Result.NetworkConfig.vsArea");
+			networkConfig.Type = _ctx.StringValue("DescribeInstance.Result.NetworkConfig.type");
+			networkConfig.VswitchId = _ctx.StringValue("DescribeInstance.Result.NetworkConfig.vswitchId");
 
 			List<DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_NetworkConfig.DescribeInstance_WhiteIpGroupListItem> networkConfig_whiteIpGroupList = new List<DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_NetworkConfig.DescribeInstance_WhiteIpGroupListItem>();
 			for (int i = 0; i < _ctx.Length("DescribeInstance.Result.NetworkConfig.WhiteIpGroupList.Length"); i++) {
 				DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_NetworkConfig.DescribeInstance_WhiteIpGroupListItem whiteIpGroupListItem = new DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_NetworkConfig.DescribeInstance_WhiteIpGroupListItem();
-				whiteIpGroupListItem.GroupName = _ctx.StringValue("DescribeInstance.Result.NetworkConfig.WhiteIpGroupList["+ i +"].groupName");
 				whiteIpGroupListItem.WhiteIpType = _ctx.StringValue("DescribeInstance.Result.NetworkConfig.WhiteIpGroupList["+ i +"].whiteIpType");
+				whiteIpGroupListItem.GroupName = _ctx.StringValue("DescribeInstance.Result.NetworkConfig.WhiteIpGroupList["+ i +"].groupName");
 
 				List<string> whiteIpGroupListItem_ips = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeInstance.Result.NetworkConfig.WhiteIpGroupList["+ i +"].Ips.Length"); j++) {
@@ -147,30 +152,35 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			result.NetworkConfig = networkConfig;
 
 			DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_KibanaConfiguration kibanaConfiguration = new DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_KibanaConfiguration();
-			kibanaConfiguration.Spec = _ctx.StringValue("DescribeInstance.Result.KibanaConfiguration.spec");
 			kibanaConfiguration.Amount = _ctx.IntegerValue("DescribeInstance.Result.KibanaConfiguration.amount");
+			kibanaConfiguration.Spec = _ctx.StringValue("DescribeInstance.Result.KibanaConfiguration.spec");
+			kibanaConfiguration.Disk = _ctx.IntegerValue("DescribeInstance.Result.KibanaConfiguration.disk");
+			kibanaConfiguration.SpecInfo = _ctx.StringValue("DescribeInstance.Result.KibanaConfiguration.specInfo");
 			result.KibanaConfiguration = kibanaConfiguration;
 
 			DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_MasterConfiguration masterConfiguration = new DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_MasterConfiguration();
 			masterConfiguration.Spec = _ctx.StringValue("DescribeInstance.Result.MasterConfiguration.spec");
 			masterConfiguration.Amount = _ctx.IntegerValue("DescribeInstance.Result.MasterConfiguration.amount");
-			masterConfiguration.DiskType = _ctx.StringValue("DescribeInstance.Result.MasterConfiguration.diskType");
 			masterConfiguration.Disk = _ctx.IntegerValue("DescribeInstance.Result.MasterConfiguration.disk");
+			masterConfiguration.DiskType = _ctx.StringValue("DescribeInstance.Result.MasterConfiguration.diskType");
+			masterConfiguration.SpecInfo = _ctx.StringValue("DescribeInstance.Result.MasterConfiguration.specInfo");
 			result.MasterConfiguration = masterConfiguration;
 
 			DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_ClientNodeConfiguration clientNodeConfiguration = new DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_ClientNodeConfiguration();
 			clientNodeConfiguration.Spec = _ctx.StringValue("DescribeInstance.Result.ClientNodeConfiguration.spec");
 			clientNodeConfiguration.Amount = _ctx.IntegerValue("DescribeInstance.Result.ClientNodeConfiguration.amount");
-			clientNodeConfiguration.DiskType = _ctx.StringValue("DescribeInstance.Result.ClientNodeConfiguration.diskType");
 			clientNodeConfiguration.Disk = _ctx.IntegerValue("DescribeInstance.Result.ClientNodeConfiguration.disk");
+			clientNodeConfiguration.DiskType = _ctx.StringValue("DescribeInstance.Result.ClientNodeConfiguration.diskType");
+			clientNodeConfiguration.SpecInfo = _ctx.StringValue("DescribeInstance.Result.ClientNodeConfiguration.specInfo");
 			result.ClientNodeConfiguration = clientNodeConfiguration;
 
 			DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_WarmNodeConfiguration warmNodeConfiguration = new DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_WarmNodeConfiguration();
-			warmNodeConfiguration.Spec = _ctx.StringValue("DescribeInstance.Result.WarmNodeConfiguration.spec");
 			warmNodeConfiguration.Amount = _ctx.IntegerValue("DescribeInstance.Result.WarmNodeConfiguration.amount");
-			warmNodeConfiguration.DiskType = _ctx.StringValue("DescribeInstance.Result.WarmNodeConfiguration.diskType");
+			warmNodeConfiguration.Spec = _ctx.StringValue("DescribeInstance.Result.WarmNodeConfiguration.spec");
 			warmNodeConfiguration.Disk = _ctx.IntegerValue("DescribeInstance.Result.WarmNodeConfiguration.disk");
 			warmNodeConfiguration.DiskEncryption = _ctx.BooleanValue("DescribeInstance.Result.WarmNodeConfiguration.diskEncryption");
+			warmNodeConfiguration.DiskType = _ctx.StringValue("DescribeInstance.Result.WarmNodeConfiguration.diskType");
+			warmNodeConfiguration.SpecInfo = _ctx.StringValue("DescribeInstance.Result.WarmNodeConfiguration.specInfo");
 			result.WarmNodeConfiguration = warmNodeConfiguration;
 
 			DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_AdvancedSetting advancedSetting = new DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_AdvancedSetting();
@@ -178,20 +188,21 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			result.AdvancedSetting = advancedSetting;
 
 			DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_ElasticDataNodeConfiguration elasticDataNodeConfiguration = new DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_ElasticDataNodeConfiguration();
-			elasticDataNodeConfiguration.Spec = _ctx.StringValue("DescribeInstance.Result.ElasticDataNodeConfiguration.spec");
 			elasticDataNodeConfiguration.Amount = _ctx.IntegerValue("DescribeInstance.Result.ElasticDataNodeConfiguration.amount");
-			elasticDataNodeConfiguration.DiskType = _ctx.StringValue("DescribeInstance.Result.ElasticDataNodeConfiguration.diskType");
+			elasticDataNodeConfiguration.Spec = _ctx.StringValue("DescribeInstance.Result.ElasticDataNodeConfiguration.spec");
 			elasticDataNodeConfiguration.Disk = _ctx.IntegerValue("DescribeInstance.Result.ElasticDataNodeConfiguration.disk");
 			elasticDataNodeConfiguration.DiskEncryption = _ctx.BooleanValue("DescribeInstance.Result.ElasticDataNodeConfiguration.diskEncryption");
+			elasticDataNodeConfiguration.DiskType = _ctx.StringValue("DescribeInstance.Result.ElasticDataNodeConfiguration.diskType");
+			elasticDataNodeConfiguration.SpecInfo = _ctx.StringValue("DescribeInstance.Result.ElasticDataNodeConfiguration.specInfo");
 			result.ElasticDataNodeConfiguration = elasticDataNodeConfiguration;
 
 			List<DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_DictListItem> result_dictList = new List<DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_DictListItem>();
 			for (int i = 0; i < _ctx.Length("DescribeInstance.Result.DictList.Length"); i++) {
 				DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_DictListItem dictListItem = new DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_DictListItem();
-				dictListItem.Name = _ctx.StringValue("DescribeInstance.Result.DictList["+ i +"].name");
 				dictListItem.FileSize = _ctx.LongValue("DescribeInstance.Result.DictList["+ i +"].fileSize");
-				dictListItem.Type = _ctx.StringValue("DescribeInstance.Result.DictList["+ i +"].type");
 				dictListItem.SourceType = _ctx.StringValue("DescribeInstance.Result.DictList["+ i +"].sourceType");
+				dictListItem.Name = _ctx.StringValue("DescribeInstance.Result.DictList["+ i +"].name");
+				dictListItem.Type = _ctx.StringValue("DescribeInstance.Result.DictList["+ i +"].type");
 
 				result_dictList.Add(dictListItem);
 			}
@@ -200,10 +211,10 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_SynonymsDictsItem> result_synonymsDicts = new List<DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_SynonymsDictsItem>();
 			for (int i = 0; i < _ctx.Length("DescribeInstance.Result.SynonymsDicts.Length"); i++) {
 				DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_SynonymsDictsItem synonymsDictsItem = new DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_SynonymsDictsItem();
-				synonymsDictsItem.Name = _ctx.StringValue("DescribeInstance.Result.SynonymsDicts["+ i +"].name");
 				synonymsDictsItem.FileSize = _ctx.LongValue("DescribeInstance.Result.SynonymsDicts["+ i +"].fileSize");
-				synonymsDictsItem.Type = _ctx.StringValue("DescribeInstance.Result.SynonymsDicts["+ i +"].type");
 				synonymsDictsItem.SourceType = _ctx.StringValue("DescribeInstance.Result.SynonymsDicts["+ i +"].sourceType");
+				synonymsDictsItem.Name = _ctx.StringValue("DescribeInstance.Result.SynonymsDicts["+ i +"].name");
+				synonymsDictsItem.Type = _ctx.StringValue("DescribeInstance.Result.SynonymsDicts["+ i +"].type");
 
 				result_synonymsDicts.Add(synonymsDictsItem);
 			}
@@ -212,8 +223,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_ZoneInfo> result_zoneInfos = new List<DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_ZoneInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeInstance.Result.ZoneInfos.Length"); i++) {
 				DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_ZoneInfo zoneInfo = new DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_ZoneInfo();
-				zoneInfo.ZoneId = _ctx.StringValue("DescribeInstance.Result.ZoneInfos["+ i +"].zoneId");
 				zoneInfo.Status = _ctx.StringValue("DescribeInstance.Result.ZoneInfos["+ i +"].status");
+				zoneInfo.ZoneId = _ctx.StringValue("DescribeInstance.Result.ZoneInfos["+ i +"].zoneId");
 
 				result_zoneInfos.Add(zoneInfo);
 			}
@@ -222,10 +233,10 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_Dict> result_aliwsDicts = new List<DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_Dict>();
 			for (int i = 0; i < _ctx.Length("DescribeInstance.Result.AliwsDicts.Length"); i++) {
 				DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_Dict dict = new DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_Dict();
-				dict.Name = _ctx.StringValue("DescribeInstance.Result.AliwsDicts["+ i +"].name");
 				dict.FileSize = _ctx.LongValue("DescribeInstance.Result.AliwsDicts["+ i +"].fileSize");
-				dict.Type = _ctx.StringValue("DescribeInstance.Result.AliwsDicts["+ i +"].type");
 				dict.SourceType = _ctx.StringValue("DescribeInstance.Result.AliwsDicts["+ i +"].sourceType");
+				dict.Name = _ctx.StringValue("DescribeInstance.Result.AliwsDicts["+ i +"].name");
+				dict.Type = _ctx.StringValue("DescribeInstance.Result.AliwsDicts["+ i +"].type");
 
 				result_aliwsDicts.Add(dict);
 			}
@@ -240,6 +251,18 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 				result_tags.Add(tag);
 			}
 			result.Tags = result_tags;
+
+			List<DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_IkHotDictsItem> result_ikHotDicts = new List<DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_IkHotDictsItem>();
+			for (int i = 0; i < _ctx.Length("DescribeInstance.Result.IkHotDicts.Length"); i++) {
+				DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_IkHotDictsItem ikHotDictsItem = new DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_IkHotDictsItem();
+				ikHotDictsItem.Type = _ctx.StringValue("DescribeInstance.Result.IkHotDicts["+ i +"].type");
+				ikHotDictsItem.SourceType = _ctx.StringValue("DescribeInstance.Result.IkHotDicts["+ i +"].sourceType");
+				ikHotDictsItem.FileSize = _ctx.IntegerValue("DescribeInstance.Result.IkHotDicts["+ i +"].fileSize");
+				ikHotDictsItem.Name = _ctx.StringValue("DescribeInstance.Result.IkHotDicts["+ i +"].name");
+
+				result_ikHotDicts.Add(ikHotDictsItem);
+			}
+			result.IkHotDicts = result_ikHotDicts;
 			describeInstanceResponse.Result = result;
         
 			return describeInstanceResponse;

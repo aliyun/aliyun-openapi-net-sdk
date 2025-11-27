@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			DeleteSnapshotRepoResponse deleteSnapshotRepoResponse = new DeleteSnapshotRepoResponse();
 
 			deleteSnapshotRepoResponse.HttpResponse = _ctx.HttpResponse;
-			deleteSnapshotRepoResponse.RequestId = _ctx.StringValue("DeleteSnapshotRepo.RequestId");
 			deleteSnapshotRepoResponse.Result = _ctx.BooleanValue("DeleteSnapshotRepo.Result");
+			deleteSnapshotRepoResponse.RequestId = _ctx.StringValue("DeleteSnapshotRepo.RequestId");
         
 			return deleteSnapshotRepoResponse;
         }

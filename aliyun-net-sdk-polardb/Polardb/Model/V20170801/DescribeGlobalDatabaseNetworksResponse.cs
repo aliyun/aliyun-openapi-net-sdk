@@ -110,7 +110,13 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string gDNDescription;
 
+			private string zoneId;
+
 			private List<DescribeGlobalDatabaseNetworks_DBCluster> dBClusters;
+
+			private List<DescribeGlobalDatabaseNetworks_OutCloudDBCluster> outCloudDBClusters;
+
+			private DescribeGlobalDatabaseNetworks_Labels labels;
 
 			public string DBVersion
 			{
@@ -184,6 +190,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
 			public List<DescribeGlobalDatabaseNetworks_DBCluster> DBClusters
 			{
 				get
@@ -193,6 +211,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					dBClusters = value;
+				}
+			}
+
+			public List<DescribeGlobalDatabaseNetworks_OutCloudDBCluster> OutCloudDBClusters
+			{
+				get
+				{
+					return outCloudDBClusters;
+				}
+				set	
+				{
+					outCloudDBClusters = value;
+				}
+			}
+
+			public DescribeGlobalDatabaseNetworks_Labels Labels
+			{
+				get
+				{
+					return labels;
+				}
+				set	
+				{
+					labels = value;
 				}
 			}
 
@@ -238,6 +280,84 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					set	
 					{
 						regionId = value;
+					}
+				}
+			}
+
+			public class DescribeGlobalDatabaseNetworks_OutCloudDBCluster
+			{
+
+				private string outCloudType;
+
+				private string dBClusterId;
+
+				private string role;
+
+				private string regionId;
+
+				public string OutCloudType
+				{
+					get
+					{
+						return outCloudType;
+					}
+					set	
+					{
+						outCloudType = value;
+					}
+				}
+
+				public string DBClusterId
+				{
+					get
+					{
+						return dBClusterId;
+					}
+					set	
+					{
+						dBClusterId = value;
+					}
+				}
+
+				public string Role
+				{
+					get
+					{
+						return role;
+					}
+					set	
+					{
+						role = value;
+					}
+				}
+
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
+					}
+				}
+			}
+
+			public class DescribeGlobalDatabaseNetworks_Labels
+			{
+
+				private string gDNVersion;
+
+				public string GDNVersion
+				{
+					get
+					{
+						return gDNVersion;
+					}
+					set	
+					{
+						gDNVersion = value;
 					}
 				}
 			}

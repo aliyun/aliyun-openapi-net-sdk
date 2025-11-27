@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 {
     public class AddMediaTagResponseUnmarshaller
     {
-        public static AddMediaTagResponse Unmarshall(UnmarshallerContext context)
+        public static AddMediaTagResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddMediaTagResponse addMediaTagResponse = new AddMediaTagResponse();
 
-			addMediaTagResponse.HttpResponse = context.HttpResponse;
-			addMediaTagResponse.RequestId = context.StringValue("AddMediaTag.RequestId");
+			addMediaTagResponse.HttpResponse = _ctx.HttpResponse;
+			addMediaTagResponse.RequestId = _ctx.StringValue("AddMediaTag.RequestId");
         
 			return addMediaTagResponse;
         }

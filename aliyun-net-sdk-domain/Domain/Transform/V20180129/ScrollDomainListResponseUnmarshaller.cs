@@ -59,12 +59,23 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 				domain.ProductId = _ctx.StringValue("ScrollDomainList.Data["+ i +"].ProductId");
 				domain.DomainStatus = _ctx.StringValue("ScrollDomainList.Data["+ i +"].DomainStatus");
 				domain.DomainType = _ctx.StringValue("ScrollDomainList.Data["+ i +"].DomainType");
+				domain.ResourceGroupId = _ctx.StringValue("ScrollDomainList.Data["+ i +"].ResourceGroupId");
 
 				List<string> domain_dnsList = new List<string>();
 				for (int j = 0; j < _ctx.Length("ScrollDomainList.Data["+ i +"].DnsList.Length"); j++) {
 					domain_dnsList.Add(_ctx.StringValue("ScrollDomainList.Data["+ i +"].DnsList["+ j +"]"));
 				}
 				domain.DnsList = domain_dnsList;
+
+				List<ScrollDomainListResponse.ScrollDomainList_Domain.ScrollDomainList_TagItem> domain_tag = new List<ScrollDomainListResponse.ScrollDomainList_Domain.ScrollDomainList_TagItem>();
+				for (int j = 0; j < _ctx.Length("ScrollDomainList.Data["+ i +"].Tag.Length"); j++) {
+					ScrollDomainListResponse.ScrollDomainList_Domain.ScrollDomainList_TagItem tagItem = new ScrollDomainListResponse.ScrollDomainList_Domain.ScrollDomainList_TagItem();
+					tagItem.Key = _ctx.StringValue("ScrollDomainList.Data["+ i +"].Tag["+ j +"].Key");
+					tagItem._Value = _ctx.StringValue("ScrollDomainList.Data["+ i +"].Tag["+ j +"].Value");
+
+					domain_tag.Add(tagItem);
+				}
+				domain.Tag = domain_tag;
 
 				scrollDomainListResponse_data.Add(domain);
 			}

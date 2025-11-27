@@ -72,25 +72,25 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 			private string accessTicket;
 
-			private string organizationId;
-
-			private string userId;
-
-			private int? usedTicketNum;
-
-			private int? maxTicketNum;
-
-			private string registerTime;
-
-			private string invalidTime;
-
-			private string worksId;
-
 			private string cmptId;
 
 			private string globalParam;
 
+			private string invalidTime;
+
+			private int? maxTicketNum;
+
+			private string organizationId;
+
+			private string registerTime;
+
+			private int? usedTicketNum;
+
+			private string userId;
+
 			private string watermarkParam;
+
+			private string worksId;
 
 			public string AccessTicket
 			{
@@ -101,90 +101,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					accessTicket = value;
-				}
-			}
-
-			public string OrganizationId
-			{
-				get
-				{
-					return organizationId;
-				}
-				set	
-				{
-					organizationId = value;
-				}
-			}
-
-			public string UserId
-			{
-				get
-				{
-					return userId;
-				}
-				set	
-				{
-					userId = value;
-				}
-			}
-
-			public int? UsedTicketNum
-			{
-				get
-				{
-					return usedTicketNum;
-				}
-				set	
-				{
-					usedTicketNum = value;
-				}
-			}
-
-			public int? MaxTicketNum
-			{
-				get
-				{
-					return maxTicketNum;
-				}
-				set	
-				{
-					maxTicketNum = value;
-				}
-			}
-
-			public string RegisterTime
-			{
-				get
-				{
-					return registerTime;
-				}
-				set	
-				{
-					registerTime = value;
-				}
-			}
-
-			public string InvalidTime
-			{
-				get
-				{
-					return invalidTime;
-				}
-				set	
-				{
-					invalidTime = value;
-				}
-			}
-
-			public string WorksId
-			{
-				get
-				{
-					return worksId;
-				}
-				set	
-				{
-					worksId = value;
 				}
 			}
 
@@ -212,6 +128,78 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
+			public string InvalidTime
+			{
+				get
+				{
+					return invalidTime;
+				}
+				set	
+				{
+					invalidTime = value;
+				}
+			}
+
+			public int? MaxTicketNum
+			{
+				get
+				{
+					return maxTicketNum;
+				}
+				set	
+				{
+					maxTicketNum = value;
+				}
+			}
+
+			public string OrganizationId
+			{
+				get
+				{
+					return organizationId;
+				}
+				set	
+				{
+					organizationId = value;
+				}
+			}
+
+			public string RegisterTime
+			{
+				get
+				{
+					return registerTime;
+				}
+				set	
+				{
+					registerTime = value;
+				}
+			}
+
+			public int? UsedTicketNum
+			{
+				get
+				{
+					return usedTicketNum;
+				}
+				set	
+				{
+					usedTicketNum = value;
+				}
+			}
+
+			public string UserId
+			{
+				get
+				{
+					return userId;
+				}
+				set	
+				{
+					userId = value;
+				}
+			}
+
 			public string WatermarkParam
 			{
 				get
@@ -221,6 +209,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					watermarkParam = value;
+				}
+			}
+
+			public string WorksId
+			{
+				get
+				{
+					return worksId;
+				}
+				set	
+				{
+					worksId = value;
 				}
 			}
 		}

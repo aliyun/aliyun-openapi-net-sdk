@@ -78,6 +78,8 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 			private string componentTypeName;
 
+			private string componentTypeCnName;
+
 			private string datasetId;
 
 			private List<QueryWorksBloodRelationship_QueryParam> queryParams;
@@ -130,6 +132,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
+			public string ComponentTypeCnName
+			{
+				get
+				{
+					return componentTypeCnName;
+				}
+				set	
+				{
+					componentTypeCnName = value;
+				}
+			}
+
 			public string DatasetId
 			{
 				get
@@ -157,9 +171,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class QueryWorksBloodRelationship_QueryParam
 			{
 
-				private string uid;
+				private string areaId;
 
-				private string pathId;
+				private string areaName;
 
 				private string caption;
 
@@ -167,31 +181,33 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 				private bool? isMeasure;
 
-				private string areaId;
+				private string pathId;
 
-				private string areaName;
+				private string uid;
 
-				public string Uid
+				private string expression;
+
+				public string AreaId
 				{
 					get
 					{
-						return uid;
+						return areaId;
 					}
 					set	
 					{
-						uid = value;
+						areaId = value;
 					}
 				}
 
-				public string PathId
+				public string AreaName
 				{
 					get
 					{
-						return pathId;
+						return areaName;
 					}
 					set	
 					{
-						pathId = value;
+						areaName = value;
 					}
 				}
 
@@ -231,27 +247,39 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string AreaId
+				public string PathId
 				{
 					get
 					{
-						return areaId;
+						return pathId;
 					}
 					set	
 					{
-						areaId = value;
+						pathId = value;
 					}
 				}
 
-				public string AreaName
+				public string Uid
 				{
 					get
 					{
-						return areaName;
+						return uid;
 					}
 					set	
 					{
-						areaName = value;
+						uid = value;
+					}
+				}
+
+				public string Expression
+				{
+					get
+					{
+						return expression;
+					}
+					set	
+					{
+						expression = value;
 					}
 				}
 			}

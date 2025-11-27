@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class SetDirQuotaRequest : RpcAcsRequest<SetDirQuotaResponse>
     {
         public SetDirQuotaRequest()
-            : base("NAS", "2017-06-26", "SetDirQuota", "NAS", "openAPI")
+            : base("NAS", "2017-06-26", "SetDirQuota", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -54,6 +55,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 		private string userType;
 
+		[JsonProperty(PropertyName = "QuotaType")]
 		public string QuotaType
 		{
 			get
@@ -67,6 +69,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
+		[JsonProperty(PropertyName = "UserId")]
 		public string UserId
 		{
 			get
@@ -80,6 +83,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
+		[JsonProperty(PropertyName = "FileCountLimit")]
 		public long? FileCountLimit
 		{
 			get
@@ -93,6 +97,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
+		[JsonProperty(PropertyName = "Path")]
 		public string Path
 		{
 			get
@@ -106,6 +111,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
+		[JsonProperty(PropertyName = "SizeLimit")]
 		public long? SizeLimit
 		{
 			get
@@ -119,6 +125,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
+		[JsonProperty(PropertyName = "FileSystemId")]
 		public string FileSystemId
 		{
 			get
@@ -132,6 +139,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
+		[JsonProperty(PropertyName = "UserType")]
 		public string UserType
 		{
 			get

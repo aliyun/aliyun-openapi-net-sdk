@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
@@ -28,6 +28,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		private string requestId;
 
 		private string jobId;
+
+		private string result;
 
 		public string RequestId
 		{
@@ -50,6 +52,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			set	
 			{
 				jobId = value;
+			}
+		}
+
+		public string Result
+		{
+			get
+			{
+				return result;
+			}
+			set	
+			{
+				result = value;
 			}
 		}
 	}

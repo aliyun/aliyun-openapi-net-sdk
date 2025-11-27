@@ -31,14 +31,14 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			DescribeBackMenuResponse describeBackMenuResponse = new DescribeBackMenuResponse();
 
 			describeBackMenuResponse.HttpResponse = _ctx.HttpResponse;
-			describeBackMenuResponse.RequestId = _ctx.StringValue("DescribeBackMenu.RequestId");
 			describeBackMenuResponse.Success = _ctx.BooleanValue("DescribeBackMenu.Success");
+			describeBackMenuResponse.RequestId = _ctx.StringValue("DescribeBackMenu.RequestId");
 
 			List<DescribeBackMenuResponse.DescribeBackMenu_ListItem> describeBackMenuResponse_list = new List<DescribeBackMenuResponse.DescribeBackMenu_ListItem>();
 			for (int i = 0; i < _ctx.Length("DescribeBackMenu.List.Length"); i++) {
 				DescribeBackMenuResponse.DescribeBackMenu_ListItem listItem = new DescribeBackMenuResponse.DescribeBackMenu_ListItem();
-				listItem.MenuName = _ctx.StringValue("DescribeBackMenu.List["+ i +"].MenuName");
 				listItem.Support = _ctx.BooleanValue("DescribeBackMenu.List["+ i +"].Support");
+				listItem.MenuName = _ctx.StringValue("DescribeBackMenu.List["+ i +"].MenuName");
 
 				describeBackMenuResponse_list.Add(listItem);
 			}

@@ -37,9 +37,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 		private string reportId;
 
-		private int? shareToType;
-
 		private string shareToIds;
+
+		private int? shareToType;
 
 		public string ReportId
 		{
@@ -54,19 +54,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			}
 		}
 
-		public int? ShareToType
-		{
-			get
-			{
-				return shareToType;
-			}
-			set	
-			{
-				shareToType = value;
-				DictionaryUtil.Add(QueryParameters, "ShareToType", value.ToString());
-			}
-		}
-
 		public string ShareToIds
 		{
 			get
@@ -77,6 +64,19 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				shareToIds = value;
 				DictionaryUtil.Add(QueryParameters, "ShareToIds", value);
+			}
+		}
+
+		public int? ShareToType
+		{
+			get
+			{
+				return shareToType;
+			}
+			set	
+			{
+				shareToType = value;
+				DictionaryUtil.Add(QueryParameters, "ShareToType", value.ToString());
 			}
 		}
 

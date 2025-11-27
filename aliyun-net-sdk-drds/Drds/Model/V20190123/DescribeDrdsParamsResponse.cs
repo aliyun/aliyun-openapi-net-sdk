@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribeDrdsParamsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private List<DescribeDrdsParams_ListItem> list;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeDrdsParams_ListItem> list;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,101 +70,29 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class DescribeDrdsParams_ListItem
 		{
 
-			private string paramName;
-
-			private string paramEnglishName;
-
-			private string paramVariableName;
-
-			private string paramDesc;
-
-			private string paramValue;
-
-			private string dbName;
-
 			private string paramDefaultValue;
-
-			private string paramRanges;
 
 			private string paramLevel;
 
+			private string paramName;
+
 			private string paramType;
+
+			private string paramValue;
 
 			private bool? needRestart;
 
+			private string paramRanges;
+
 			private bool? userVisible;
 
-			public string ParamName
-			{
-				get
-				{
-					return paramName;
-				}
-				set	
-				{
-					paramName = value;
-				}
-			}
+			private string dbName;
 
-			public string ParamEnglishName
-			{
-				get
-				{
-					return paramEnglishName;
-				}
-				set	
-				{
-					paramEnglishName = value;
-				}
-			}
+			private string paramEnglishName;
 
-			public string ParamVariableName
-			{
-				get
-				{
-					return paramVariableName;
-				}
-				set	
-				{
-					paramVariableName = value;
-				}
-			}
+			private string paramDesc;
 
-			public string ParamDesc
-			{
-				get
-				{
-					return paramDesc;
-				}
-				set	
-				{
-					paramDesc = value;
-				}
-			}
-
-			public string ParamValue
-			{
-				get
-				{
-					return paramValue;
-				}
-				set	
-				{
-					paramValue = value;
-				}
-			}
-
-			public string DbName
-			{
-				get
-				{
-					return dbName;
-				}
-				set	
-				{
-					dbName = value;
-				}
-			}
+			private string paramVariableName;
 
 			public string ParamDefaultValue
 			{
@@ -175,18 +103,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					paramDefaultValue = value;
-				}
-			}
-
-			public string ParamRanges
-			{
-				get
-				{
-					return paramRanges;
-				}
-				set	
-				{
-					paramRanges = value;
 				}
 			}
 
@@ -202,6 +118,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
+			public string ParamName
+			{
+				get
+				{
+					return paramName;
+				}
+				set	
+				{
+					paramName = value;
+				}
+			}
+
 			public string ParamType
 			{
 				get
@@ -211,6 +139,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					paramType = value;
+				}
+			}
+
+			public string ParamValue
+			{
+				get
+				{
+					return paramValue;
+				}
+				set	
+				{
+					paramValue = value;
 				}
 			}
 
@@ -226,6 +166,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
+			public string ParamRanges
+			{
+				get
+				{
+					return paramRanges;
+				}
+				set	
+				{
+					paramRanges = value;
+				}
+			}
+
 			public bool? UserVisible
 			{
 				get
@@ -235,6 +187,54 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					userVisible = value;
+				}
+			}
+
+			public string DbName
+			{
+				get
+				{
+					return dbName;
+				}
+				set	
+				{
+					dbName = value;
+				}
+			}
+
+			public string ParamEnglishName
+			{
+				get
+				{
+					return paramEnglishName;
+				}
+				set	
+				{
+					paramEnglishName = value;
+				}
+			}
+
+			public string ParamDesc
+			{
+				get
+				{
+					return paramDesc;
+				}
+				set	
+				{
+					paramDesc = value;
+				}
+			}
+
+			public string ParamVariableName
+			{
+				get
+				{
+					return paramVariableName;
+				}
+				set	
+				{
+					paramVariableName = value;
 				}
 			}
 		}

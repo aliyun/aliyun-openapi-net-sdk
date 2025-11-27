@@ -36,8 +36,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<ListConnectedClustersResponse.ListConnectedClusters_ResultItem> listConnectedClustersResponse_result = new List<ListConnectedClustersResponse.ListConnectedClusters_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListConnectedClusters.Result.Length"); i++) {
 				ListConnectedClustersResponse.ListConnectedClusters_ResultItem resultItem = new ListConnectedClustersResponse.ListConnectedClusters_ResultItem();
-				resultItem.Instances = _ctx.StringValue("ListConnectedClusters.Result["+ i +"].instances");
 				resultItem.NetworkType = _ctx.StringValue("ListConnectedClusters.Result["+ i +"].networkType");
+				resultItem.Instances = _ctx.StringValue("ListConnectedClusters.Result["+ i +"].instances");
 
 				listConnectedClustersResponse_result.Add(resultItem);
 			}

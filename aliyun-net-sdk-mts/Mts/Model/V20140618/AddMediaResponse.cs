@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
@@ -56,35 +56,35 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		public class AddMedia_Media
 		{
 
-			private string mediaId;
-
-			private string title;
-
-			private string description;
-
-			private string coverURL;
+			private string creationTime;
 
 			private long? cateId;
 
-			private string duration;
-
-			private string format;
-
-			private string size;
-
-			private string bitrate;
-
-			private string width;
-
 			private string height;
-
-			private string fps;
-
-			private string publishState;
 
 			private string censorState;
 
-			private string creationTime;
+			private string bitrate;
+
+			private string mediaId;
+
+			private string publishState;
+
+			private string description;
+
+			private string width;
+
+			private string size;
+
+			private string coverURL;
+
+			private string duration;
+
+			private string fps;
+
+			private string title;
+
+			private string format;
 
 			private List<string> tags;
 
@@ -92,51 +92,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private AddMedia_File file;
 
-			public string MediaId
+			public string CreationTime
 			{
 				get
 				{
-					return mediaId;
+					return creationTime;
 				}
 				set	
 				{
-					mediaId = value;
-				}
-			}
-
-			public string Title
-			{
-				get
-				{
-					return title;
-				}
-				set	
-				{
-					title = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string CoverURL
-			{
-				get
-				{
-					return coverURL;
-				}
-				set	
-				{
-					coverURL = value;
+					creationTime = value;
 				}
 			}
 
@@ -152,66 +116,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public string Duration
-			{
-				get
-				{
-					return duration;
-				}
-				set	
-				{
-					duration = value;
-				}
-			}
-
-			public string Format
-			{
-				get
-				{
-					return format;
-				}
-				set	
-				{
-					format = value;
-				}
-			}
-
-			public string Size
-			{
-				get
-				{
-					return size;
-				}
-				set	
-				{
-					size = value;
-				}
-			}
-
-			public string Bitrate
-			{
-				get
-				{
-					return bitrate;
-				}
-				set	
-				{
-					bitrate = value;
-				}
-			}
-
-			public string Width
-			{
-				get
-				{
-					return width;
-				}
-				set	
-				{
-					width = value;
-				}
-			}
-
 			public string Height
 			{
 				get
@@ -221,30 +125,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					height = value;
-				}
-			}
-
-			public string Fps
-			{
-				get
-				{
-					return fps;
-				}
-				set	
-				{
-					fps = value;
-				}
-			}
-
-			public string PublishState
-			{
-				get
-				{
-					return publishState;
-				}
-				set	
-				{
-					publishState = value;
 				}
 			}
 
@@ -260,15 +140,135 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public string CreationTime
+			public string Bitrate
 			{
 				get
 				{
-					return creationTime;
+					return bitrate;
 				}
 				set	
 				{
-					creationTime = value;
+					bitrate = value;
+				}
+			}
+
+			public string MediaId
+			{
+				get
+				{
+					return mediaId;
+				}
+				set	
+				{
+					mediaId = value;
+				}
+			}
+
+			public string PublishState
+			{
+				get
+				{
+					return publishState;
+				}
+				set	
+				{
+					publishState = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string Width
+			{
+				get
+				{
+					return width;
+				}
+				set	
+				{
+					width = value;
+				}
+			}
+
+			public string Size
+			{
+				get
+				{
+					return size;
+				}
+				set	
+				{
+					size = value;
+				}
+			}
+
+			public string CoverURL
+			{
+				get
+				{
+					return coverURL;
+				}
+				set	
+				{
+					coverURL = value;
+				}
+			}
+
+			public string Duration
+			{
+				get
+				{
+					return duration;
+				}
+				set	
+				{
+					duration = value;
+				}
+			}
+
+			public string Fps
+			{
+				get
+				{
+					return fps;
+				}
+				set	
+				{
+					fps = value;
+				}
+			}
+
+			public string Title
+			{
+				get
+				{
+					return title;
+				}
+				set	
+				{
+					title = value;
+				}
+			}
+
+			public string Format
+			{
+				get
+				{
+					return format;
+				}
+				set	
+				{
+					format = value;
 				}
 			}
 
@@ -311,21 +311,9 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			public class AddMedia_File
 			{
 
-				private string uRL;
-
 				private string state;
 
-				public string URL
-				{
-					get
-					{
-						return uRL;
-					}
-					set	
-					{
-						uRL = value;
-					}
-				}
+				private string uRL;
 
 				public string State
 				{
@@ -336,6 +324,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						state = value;
+					}
+				}
+
+				public string URL
+				{
+					get
+					{
+						return uRL;
+					}
+					set	
+					{
+						uRL = value;
 					}
 				}
 			}

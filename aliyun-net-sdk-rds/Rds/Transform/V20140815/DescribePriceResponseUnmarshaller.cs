@@ -31,69 +31,6 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DescribePriceResponse describePriceResponse = new DescribePriceResponse();
 
 			describePriceResponse.HttpResponse = _ctx.HttpResponse;
-			describePriceResponse.OrderParams = _ctx.StringValue("DescribePrice.OrderParams");
-			describePriceResponse.RequestId = _ctx.StringValue("DescribePrice.RequestId");
-			describePriceResponse.ShowDiscount = _ctx.BooleanValue("DescribePrice.ShowDiscount");
-			describePriceResponse.TradeMaxRCUAmount = _ctx.FloatValue("DescribePrice.TradeMaxRCUAmount");
-			describePriceResponse.TradeMinRCUAmount = _ctx.FloatValue("DescribePrice.TradeMinRCUAmount");
-
-			DescribePriceResponse.DescribePrice_PriceInfo priceInfo = new DescribePriceResponse.DescribePrice_PriceInfo();
-			priceInfo.OriginalPrice = _ctx.FloatValue("DescribePrice.PriceInfo.OriginalPrice");
-			priceInfo.DiscountPrice = _ctx.FloatValue("DescribePrice.PriceInfo.DiscountPrice");
-			priceInfo.Currency = _ctx.StringValue("DescribePrice.PriceInfo.Currency");
-			priceInfo.TradePrice = _ctx.FloatValue("DescribePrice.PriceInfo.TradePrice");
-			priceInfo.TradeMinRCUAmount = _ctx.FloatValue("DescribePrice.PriceInfo.TradeMinRCUAmount");
-			priceInfo.TradeMaxRCUAmount = _ctx.FloatValue("DescribePrice.PriceInfo.TradeMaxRCUAmount");
-			priceInfo.OrderLines = _ctx.StringValue("DescribePrice.PriceInfo.OrderLines");
-
-			List<string> priceInfo_ruleIds = new List<string>();
-			for (int i = 0; i < _ctx.Length("DescribePrice.PriceInfo.RuleIds.Length"); i++) {
-				priceInfo_ruleIds.Add(_ctx.StringValue("DescribePrice.PriceInfo.RuleIds["+ i +"]"));
-			}
-			priceInfo.RuleIds = priceInfo_ruleIds;
-
-			DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_ActivityInfo activityInfo = new DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_ActivityInfo();
-			activityInfo.CheckErrMsg = _ctx.StringValue("DescribePrice.PriceInfo.ActivityInfo.CheckErrMsg");
-			activityInfo.ErrorCode = _ctx.StringValue("DescribePrice.PriceInfo.ActivityInfo.ErrorCode");
-			activityInfo.Success = _ctx.StringValue("DescribePrice.PriceInfo.ActivityInfo.Success");
-			priceInfo.ActivityInfo = activityInfo;
-
-			List<DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Coupon> priceInfo_coupons = new List<DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Coupon>();
-			for (int i = 0; i < _ctx.Length("DescribePrice.PriceInfo.Coupons.Length"); i++) {
-				DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Coupon coupon = new DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Coupon();
-				coupon.IsSelected = _ctx.StringValue("DescribePrice.PriceInfo.Coupons["+ i +"].IsSelected");
-				coupon.CouponNo = _ctx.StringValue("DescribePrice.PriceInfo.Coupons["+ i +"].CouponNo");
-				coupon.Name = _ctx.StringValue("DescribePrice.PriceInfo.Coupons["+ i +"].Name");
-				coupon.Description = _ctx.StringValue("DescribePrice.PriceInfo.Coupons["+ i +"].Description");
-
-				priceInfo_coupons.Add(coupon);
-			}
-			priceInfo.Coupons = priceInfo_coupons;
-			describePriceResponse.PriceInfo = priceInfo;
-
-			DescribePriceResponse.DescribePrice_ServerlessPrice serverlessPrice = new DescribePriceResponse.DescribePrice_ServerlessPrice();
-			serverlessPrice.TotalOriginalMinAmount = _ctx.FloatValue("DescribePrice.ServerlessPrice.TotalOriginalMinAmount");
-			serverlessPrice.TotalOriginalMaxAmount = _ctx.FloatValue("DescribePrice.ServerlessPrice.TotalOriginalMaxAmount");
-			serverlessPrice.RCUOriginalMinAmount = _ctx.FloatValue("DescribePrice.ServerlessPrice.RCUOriginalMinAmount");
-			serverlessPrice.RCUOriginalMaxAmount = _ctx.FloatValue("DescribePrice.ServerlessPrice.RCUOriginalMaxAmount");
-			serverlessPrice.RCUDiscountMinAmount = _ctx.FloatValue("DescribePrice.ServerlessPrice.RCUDiscountMinAmount");
-			serverlessPrice.RCUDiscountMaxAmount = _ctx.FloatValue("DescribePrice.ServerlessPrice.RCUDiscountMaxAmount");
-			serverlessPrice.TradeMinRCUAmount = _ctx.FloatValue("DescribePrice.ServerlessPrice.TradeMinRCUAmount");
-			serverlessPrice.TradeMaxRCUAmount = _ctx.FloatValue("DescribePrice.ServerlessPrice.TradeMaxRCUAmount");
-			serverlessPrice.StorageOriginalAmount = _ctx.FloatValue("DescribePrice.ServerlessPrice.StorageOriginalAmount");
-			serverlessPrice.StorageDiscountAmount = _ctx.FloatValue("DescribePrice.ServerlessPrice.storageDiscountAmount");
-			describePriceResponse.ServerlessPrice = serverlessPrice;
-
-			List<DescribePriceResponse.DescribePrice_Rule> describePriceResponse_rules = new List<DescribePriceResponse.DescribePrice_Rule>();
-			for (int i = 0; i < _ctx.Length("DescribePrice.Rules.Length"); i++) {
-				DescribePriceResponse.DescribePrice_Rule rule = new DescribePriceResponse.DescribePrice_Rule();
-				rule.Name = _ctx.StringValue("DescribePrice.Rules["+ i +"].Name");
-				rule.Description = _ctx.StringValue("DescribePrice.Rules["+ i +"].Description");
-				rule.RuleId = _ctx.LongValue("DescribePrice.Rules["+ i +"].RuleId");
-
-				describePriceResponse_rules.Add(rule);
-			}
-			describePriceResponse.Rules = describePriceResponse_rules;
         
 			return describePriceResponse;
         }

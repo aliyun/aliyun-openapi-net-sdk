@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
     <RootNamespace>Aliyun.Acs.Core</RootNamespace>
-    <Version>1.5.11</Version>
+    <Version>1.6.2</Version>
     <Authors>Alibaba Cloud</Authors>
     <PackageTags>alibaba aliyun SDK core</PackageTags>
     <Copyright>©2009-2019 Alibaba Cloud</Copyright>
@@ -26,6 +26,9 @@
     <DefineConstants>NET45</DefineConstants>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="[13.0.1,)"/>
+  </ItemGroup>
   <!-- Conditionally obtain references for the .NET Framework 4.5 target -->
   <!-- .NET 4.5 references, compilation flags and build options -->
   <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">

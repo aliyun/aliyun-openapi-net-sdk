@@ -36,15 +36,21 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			List<DescribeVodDomainCertificateInfoResponse.DescribeVodDomainCertificateInfo_CertInfo> describeVodDomainCertificateInfoResponse_certInfos = new List<DescribeVodDomainCertificateInfoResponse.DescribeVodDomainCertificateInfo_CertInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeVodDomainCertificateInfo.CertInfos.Length"); i++) {
 				DescribeVodDomainCertificateInfoResponse.DescribeVodDomainCertificateInfo_CertInfo certInfo = new DescribeVodDomainCertificateInfoResponse.DescribeVodDomainCertificateInfo_CertInfo();
-				certInfo.Status = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].Status");
-				certInfo.CertLife = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].CertLife");
 				certInfo.CertExpireTime = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].CertExpireTime");
-				certInfo.CertType = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].CertType");
-				certInfo.ServerCertificateStatus = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].ServerCertificateStatus");
+				certInfo.CertLife = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].CertLife");
+				certInfo.Status = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].Status");
+				certInfo.CertUpdateTime = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].CertUpdateTime");
 				certInfo.CertDomainName = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].CertDomainName");
-				certInfo.CertName = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].CertName");
+				certInfo.ServerCertificateStatus = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].ServerCertificateStatus");
 				certInfo.CertOrg = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].CertOrg");
 				certInfo.DomainName = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].DomainName");
+				certInfo.CertStartTime = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].CertStartTime");
+				certInfo.CertType = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].CertType");
+				certInfo.CertName = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].CertName");
+				certInfo.DomainCnameStatus = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].DomainCnameStatus");
+				certInfo.ServerCertificate = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].ServerCertificate");
+				certInfo.CertId = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].CertId");
+				certInfo.CertRegion = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].CertRegion");
 
 				describeVodDomainCertificateInfoResponse_certInfos.Add(certInfo);
 			}

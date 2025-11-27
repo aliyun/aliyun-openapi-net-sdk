@@ -31,20 +31,20 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			GetEmonMonitorDataResponse getEmonMonitorDataResponse = new GetEmonMonitorDataResponse();
 
 			getEmonMonitorDataResponse.HttpResponse = _ctx.HttpResponse;
-			getEmonMonitorDataResponse.RequestId = _ctx.StringValue("GetEmonMonitorData.RequestId");
 			getEmonMonitorDataResponse.Code = _ctx.StringValue("GetEmonMonitorData.Code");
 			getEmonMonitorDataResponse.Message = _ctx.StringValue("GetEmonMonitorData.Message");
+			getEmonMonitorDataResponse.RequestId = _ctx.StringValue("GetEmonMonitorData.RequestId");
 			getEmonMonitorDataResponse.Success = _ctx.BooleanValue("GetEmonMonitorData.Success");
 
 			List<GetEmonMonitorDataResponse.GetEmonMonitorData_ResultItem> getEmonMonitorDataResponse_result = new List<GetEmonMonitorDataResponse.GetEmonMonitorData_ResultItem>();
 			for (int i = 0; i < _ctx.Length("GetEmonMonitorData.Result.Length"); i++) {
 				GetEmonMonitorDataResponse.GetEmonMonitorData_ResultItem resultItem = new GetEmonMonitorDataResponse.GetEmonMonitorData_ResultItem();
-				resultItem.Dps = _ctx.StringValue("GetEmonMonitorData.Result["+ i +"].dps");
 				resultItem.Integrity = _ctx.FloatValue("GetEmonMonitorData.Result["+ i +"].integrity");
-				resultItem.MessageWatermark = _ctx.LongValue("GetEmonMonitorData.Result["+ i +"].messageWatermark");
-				resultItem.Metric = _ctx.StringValue("GetEmonMonitorData.Result["+ i +"].metric");
 				resultItem.Summary = _ctx.FloatValue("GetEmonMonitorData.Result["+ i +"].summary");
+				resultItem.MessageWatermark = _ctx.LongValue("GetEmonMonitorData.Result["+ i +"].messageWatermark");
+				resultItem.Dps = _ctx.StringValue("GetEmonMonitorData.Result["+ i +"].dps");
 				resultItem.Tags = _ctx.StringValue("GetEmonMonitorData.Result["+ i +"].tags");
+				resultItem.Metric = _ctx.StringValue("GetEmonMonitorData.Result["+ i +"].metric");
 
 				getEmonMonitorDataResponse_result.Add(resultItem);
 			}

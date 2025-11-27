@@ -26,20 +26,20 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 {
     public class UpdateMediaWorkflowResponseUnmarshaller
     {
-        public static UpdateMediaWorkflowResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateMediaWorkflowResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateMediaWorkflowResponse updateMediaWorkflowResponse = new UpdateMediaWorkflowResponse();
 
-			updateMediaWorkflowResponse.HttpResponse = context.HttpResponse;
-			updateMediaWorkflowResponse.RequestId = context.StringValue("UpdateMediaWorkflow.RequestId");
+			updateMediaWorkflowResponse.HttpResponse = _ctx.HttpResponse;
+			updateMediaWorkflowResponse.RequestId = _ctx.StringValue("UpdateMediaWorkflow.RequestId");
 
 			UpdateMediaWorkflowResponse.UpdateMediaWorkflow_MediaWorkflow mediaWorkflow = new UpdateMediaWorkflowResponse.UpdateMediaWorkflow_MediaWorkflow();
-			mediaWorkflow.MediaWorkflowId = context.StringValue("UpdateMediaWorkflow.MediaWorkflow.MediaWorkflowId");
-			mediaWorkflow.Name = context.StringValue("UpdateMediaWorkflow.MediaWorkflow.Name");
-			mediaWorkflow.Topology = context.StringValue("UpdateMediaWorkflow.MediaWorkflow.Topology");
-			mediaWorkflow.TriggerMode = context.StringValue("UpdateMediaWorkflow.MediaWorkflow.TriggerMode");
-			mediaWorkflow.State = context.StringValue("UpdateMediaWorkflow.MediaWorkflow.State");
-			mediaWorkflow.CreationTime = context.StringValue("UpdateMediaWorkflow.MediaWorkflow.CreationTime");
+			mediaWorkflow.CreationTime = _ctx.StringValue("UpdateMediaWorkflow.MediaWorkflow.CreationTime");
+			mediaWorkflow.MediaWorkflowId = _ctx.StringValue("UpdateMediaWorkflow.MediaWorkflow.MediaWorkflowId");
+			mediaWorkflow.State = _ctx.StringValue("UpdateMediaWorkflow.MediaWorkflow.State");
+			mediaWorkflow.TriggerMode = _ctx.StringValue("UpdateMediaWorkflow.MediaWorkflow.TriggerMode");
+			mediaWorkflow.Name = _ctx.StringValue("UpdateMediaWorkflow.MediaWorkflow.Name");
+			mediaWorkflow.Topology = _ctx.StringValue("UpdateMediaWorkflow.MediaWorkflow.Topology");
 			updateMediaWorkflowResponse.MediaWorkflow = mediaWorkflow;
         
 			return updateMediaWorkflowResponse;

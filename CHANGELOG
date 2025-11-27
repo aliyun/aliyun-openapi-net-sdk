@@ -1,3 +1,438 @@
+2025-11-26 Version: 1.0.1
+- Generated 2025-07-07 for `AnyTrans`.
+
+2025-11-17 Version: 2.1.20
+- Add some APIs.
+
+2025-11-17 Version: 1.0.4
+- Add sub-feature entity support.
+
+2025-11-06 Version: 1.0.8
+- Generated 2025-04-29 for `WebsiteBuild`.
+
+2025-11-03 Version: 1.0.1
+- DescribeSoarRecords  remove the following fields,TriggerDataId Success DataSourceName ResultMessage ResultDetailInfo TaskTenantId TaskType FlowTag.
+- DescribeSoarTaskAndActions remove the following fields,TriggerDataId Sao Success All DataSourceName ResultLevel ResultMessage ResultDetailInfo TaskTenantId TaskType FlowTag.
+
+2025-11-03 Version: 3.7.24
+- Generated 2015-12-01 for `Dds`.
+
+2025-09-26 Version: 1.1.14
+- Publish sdk.
+
+2025-09-25 Version: 1.0.1
+- update dependency.
+
+2025-09-22 Version: 1.0.0
+- Generated 2025-07-07 for `AnyTrans`.
+
+2025-09-17 Version: 1.0.0
+- Generated 2022-12-30 for `marketplaceIntl`.
+
+2025-09-12 Version: 1.0.7
+- Add image search api.
+
+2025-09-11 Version: 2.1.19
+- Add some APIs.
+
+2025-09-09 Version: 1.0.6
+- Add image search api.
+
+2025-08-28 Version: 2.20.10
+- Generated 2015-01-01 for `R-kvstore`.
+
+2025-08-27 Version: 3.7.23
+- Generated 2015-12-01 for `Dds`.
+
+2025-08-20 Version: 1.0.1
+- Add Chat Session Query Support.
+- Add Chat Session Close Support.
+
+2025-08-20 Version: 1.0.0
+- Generated 2025-08-12 for `IntlMarket`.
+
+2025-08-11 Version: 2.1.18
+- Add QueryDashboardNl2sql, QueryLastAccelerationEngineJob APIs.
+
+2025-08-01 Version: 1.0.5
+- Add image search api.
+
+2025-07-31 Version: 3.7.22
+- Generated 2015-12-01 for `Dds`.
+
+2025-07-30 Version: 2.20.9
+- Backup OpenAPI update.
+
+2025-07-30 Version: 1.0.0
+- Generated 2025-07-09 for `CioMarketPop`.
+
+2025-07-24 Version: 1.0.3
+- Update GetInstance and ListInstances.
+
+2025-07-23 Version: 1.0.4
+- Generated 2025-04-29 for `WebsiteBuild`.
+
+2025-07-22 Version: 1.0.4
+- Added param for ActivateLicenseResponse .
+
+2025-07-17 Version: 1.0.2
+- Update GetInstance and ListInstances.
+
+2025-07-16 Version: 1.0.0
+- Add Support For Create Chat Session.
+
+2025-07-14 Version: 2.1.17
+- Add QueryReadableResourcesListByUserIdV2 API.
+
+2025-07-09 Version: 1.0.3
+- Generated 2025-04-29 for `WebsiteBuild`.
+
+2025-07-03 Version: 2.1.16
+- QueryAuditLog API add request parameters.
+
+2025-07-02 Version: 1.0.2
+- Generated 2021-03-08 for `eds-user`.
+
+2025-06-30 Version: 3.1.3
+- Public AssumeRole AssumeRoleWithSAML AssumeRoleWithOIDC for supporting sourceIdentity.
+
+2025-06-24 Version: 1.0.2
+- Generated 2025-04-29 for `WebsiteBuild`.
+
+2025-06-20 Version: 2.6.7
+- Add DurationInaccurate flag to SubmitMediaInfoJob and QueryMediaInfoJobList for media duration accuracy tracking.
+
+2025-06-20 Version: 2.6.6
+- Add DurationInaccurate flag to SubmitMediaInfoJob and QueryMediaInfoJobList for media duration accuracy tracking.
+
+2025-06-13 Version: 1.8.28
+- Support DescribeHaLogs.
+
+2025-06-12 Version: 1.0.0
+- Support restart node list and re-elect zookeeper.
+
+2025-06-12 Version: 1.0.1
+- Generated 2025-04-29 for `WebsiteBuild`.
+
+2025-06-10 Version: 1.1.14
+- Add API ReadSchedulerxDesignateInfo.
+
+2025-06-05 Version: 1.0.0
+- init sdk
+
+2025-05-30 Version: 1.0.2
+- Generated 2025-02-28 for `AIPodcast`.
+
+2025-05-30 Version: 1.0.1
+- Generated 2025-02-28 for `AIPodcast`.
+
+2025-05-28 Version: 2.1.15
+- Add api request parameters and error code.
+
+2025-05-24 Version: 1.0.0
+- Generated 2025-04-29 for `WebsiteBuild`.
+
+2025-05-21 Version: 1.0.3
+- Added param for ActivateLicenseResponse .
+
+2025-05-20 Version: 1.0.2
+- Added param for ActivateLicenseResponse .
+
+2025-05-20 Version: 1.0.1
+- Added param for ActivateLicenseResponse .
+
+2025-05-14 Version: 2.6.5
+- Update water-mark params.
+
+2025-05-13 Version: 1.1.13
+- Add Api ReadSchedulerxDesignateDetail.
+
+2025-05-13 Version: 1.0.4
+- Add parameters to control different role.
+
+2025-05-06 Version: 1.8.27
+- Generated 2017-08-01 for `polardb`.
+
+2025-04-27 Version: 1.0.1
+- Generated 2021-03-08 for `eds-user`.
+
+2025-04-23 Version: 1.0.0
+- Generated 2021-03-08 for `eds-user`.
+
+2025-04-14 Version: 1.0.0
+- PromptMaganer v1.0 sdk publish
+
+2025-04-14 Version: 2.1.14
+- Add SmartqQueryAbility api request parameters.
+
+2025-04-08 Version: 3.7.21
+- Generated 2015-12-01 for `Dds`.
+
+2025-04-02 Version: 1.0.6
+- Generated 2022-12-01 for `ResourceCenter`.
+
+2025-04-02 Version: 1.0.0
+- Generated 2025-02-28 for `AIPodcast`.
+
+2025-03-31 Version: 1.0.3
+- Add parameters to control different role.
+
+2025-03-21 Version: 3.13.21
+- Supported IdempotentToken for Push and MassPush.
+
+2025-03-21 Version: 2.16.32
+- GetDailyPlayRegionStatis
+
+2025-03-18 Version: 3.13.20
+- Supported IdempotentToken for Push and MassPush.
+
+2025-03-14 Version: 1.0.0
+- Generated 2022-07-28 for `sophonsoar`.
+
+2025-03-14 Version: 2.1.13
+- Add API errors.
+- QueryUserList API add return parameter.
+
+2025-03-13 Version: 1.8.26
+- DescribeLicenseCodes support filter by mac address or system id.
+
+2025-03-11 Version: 2.5.3
+- Generated 2019-01-23 for `Drds`.
+
+2025-03-07 Version: 1.0.0
+- first publish.
+- publish ssechat api.
+- update sse chat api.
+
+2025-02-07 Version: 1.0.1
+- Add ModifyInstanceProperties.
+
+2025-02-06 Version: 1.8.25
+- DescribeLicenseCodes support filter by mac address or system id.
+
+2025-01-24 Version: 1.0.1
+- Init.
+
+2025-01-20 Version: 1.8.24
+- Generated 2017-08-01 for `polardb`.
+
+2025-01-08 Version: 2.16.31
+- Modify BatchGetMediaInfos.
+
+2024-12-30 Version: 2.1.12
+- Add SmartQ APIs.
+- Add GetDataSourceConnectionInfo, QueryDatasetList APIs.
+
+2024-12-24 Version: 1.0.11
+- Supported Jumbo for HDENI and LENI.
+
+2024-12-19 Version: 1.8.23
+- Generated 2017-08-01 for `polardb`.
+
+2024-12-19 Version: 2.16.30
+- Add BatchGetMediaInfos.
+- Modify UploadStreamByURL.
+
+2024-12-18 Version: 1.0.1
+- Add Support Real time mock table.
+
+2024-12-13 Version: 1.8.22
+- Generated 2017-08-01 for `polardb`.
+
+2024-12-13 Version: 2.0.32
+- Update DescribeApiMetering API.
+
+2024-12-06 Version: 2.16.29
+-Release GetJobDetail, ListJobInfo.
+-Modify GetTranscodeTask.
+
+2024-12-02 Version: 1.0.0
+- Add LabelPriorityLevel in UpdateModelFeature API.
+
+2024-11-28 Version: 2.16.28
+- SubmitTranscodeJobs Add SessionId.
+
+2024-11-26 Version: 2.1.11
+- Add SmartqQueryAbility api.
+
+2024-11-26 Version: 2.0.31
+- Update DescribeApiMetering API.
+
+2024-11-26 Version: 2.0.30
+- Update DescribeApiMetering API.
+
+2024-11-19 Version: 1.0.0
+- Init.
+
+2024-11-18 Version: 1.8.21
+- Generated 2017-08-01 for `polardb`.
+
+2024-11-13 Version: 3.13.19
+- Supported AndroidMessageOppoCategory, AndroidMessageOppoNotifyLevel for Push and MassPush.
+
+2024-11-05 Version: 3.7.20
+- Generated 2015-12-01 for `Dds`.
+
+2024-10-28 Version: 1.0.2
+- Init.
+
+2024-10-28 Version: 1.0.1
+- Init.
+
+2024-10-28 Version: 3.2.6
+- Support Fileset for BmCPFS.
+- Support Fileset Quota for BmCPFS.
+
+2024-10-24 Version: 1.1.13
+- Publish sdk.
+
+2024-10-23 Version: 3.13.18
+- Update API Push and MassPush: add param AndroidNotificationThreadId
+
+2024-10-23 Version: 1.0.0
+ListUsers，ListUserBasicInfos api新增支持status字段
+
+2024-10-22 Version: 1.0.0
+- Init.
+
+2024-10-17 Version: 3.14.11
+- 基于转移码的转出接口
+- SaveSingleTaskForTransferOutByAuthorizationCode
+- SaveBatchTaskForTransferOutByAuthorizationCode
+
+2024-10-11 Version: 2.16.27
+- GetPlayInfo Add EncryptMode.
+
+2024-10-10 Version: 2.1.10
+- Add ManualRunMailTask, GetMailTaskStatus and GetWorksEmbedList apis.
+
+2024-10-10 Version: 1.0.5
+- Generated 2022-12-01 for `ResourceCenter`.
+
+2024-10-10 Version: 3.13.17
+- Support Android badge.
+- Support Harmony badge.
+- Support Harmony Extension Push Message.
+
+2024-10-08 Version: 1.0.4
+- Generated 2022-12-01 for `ResourceCenter`.
+
+2024-09-29 Version: 1.0.0
+- Generated 2021-12-21 for `wss`.
+
+2024-09-24 Version: 1.0.0
+- Generated 2024-02-22 for `OssSddp`.
+
+2024-09-18 Version: 2.1.9
+- Add API Ram meta.
+
+2024-08-30 Version: 2.15.5
+- Generated 2016-01-20 for `Kms`.
+
+2024-08-30 Version: 1.0.4
+- QuotaApplication Add QuotaCategory.
+
+2024-08-30 Version: 3.14.10
+- 增加国际一口价相关接口.
+- GetIntlFixPriceDomainListUrl.
+- CheckIntlFixPriceDomainStatus.
+- CreateIntlFixedPriceDomainOrder.
+- QueryIntlFixedPriceOrderList.
+
+2024-08-28 Version: 3.7.19
+- Generated 2015-12-01 for `Dds`.
+
+2024-08-20 Version: 2.16.26
+增加DescribeVodDomainMax95BpsData
+
+2024-08-13 Version: 3.0.9
+- Support RDS Custom.
+
+2024-08-13 Version: 2.15.4
+- Support DryRun parameter OpenAPI.
+
+2024-08-13 Version: 2.16.25
+-DescribeVodCertificateDetail, DescribeVodCertificateList增加返回参数
+
+2024-08-09 Version: 3.13.16
+- Support Android badge.
+
+2024-08-07 Version: 2.1.8
+- Add QueryData, ModifyCopilotEmbedConfig, QueryCopilotEmbedConfig and QueryDataRange APIs.
+
+2024-08-01 Version: 1.0.1
+- add openapi for Personalized Text to Image ablity init version.
+
+2024-08-01 Version: 3.7.18
+- Generated 2015-12-01 for `Dds`.
+
+2024-08-01 Version: 3.9.57
+- Update to support new apis.
+
+2024-07-29 Version: 2.0.29
+- Update DescribeApiMetering API.
+
+2024-07-23 Version: 3.0.8
+- Generated 2014-08-15 for `Rds`.
+
+2024-07-23 Version: 2.6.4
+- Update water-mark params
+
+2024-07-22 Version: 3.0.30
+- Support kibana Pvl private link operation.
+
+2024-07-19 Version: 2.20.8
+- Account management add SourceBiz parameters.
+
+2024-07-19 Version: 0.0.12
+- Update SegmentCloth.
+
+2024-07-18 Version: 1.0.0
+初始发布
+
+2024-07-10 Version: 1.0.0
+- Added param for ActivateLicenseResponse .
+
+2024-07-05 Version: 3.9.56
+- Update to support new apis.
+
+2024-07-03 Version: 3.0.7
+- Generated 2014-08-15 for `Rds`.
+
+2024-06-30 Version: 1.0.3
+- Add UsageMetric.
+
+2024-06-28 Version: 2.1.7
+- Add QueryAuditLog, QueryApprovalInfo, DataSourceBlood, DataSetBlood and QueryDataServiceList APIs.
+- QueryUserInfoByAccount API updates error code.
+
+2024-06-27 Version: 3.0.6
+- Generated 2014-08-15 for `Rds`.
+
+2024-06-26 Version: 3.13.15
+- Support harmony app.
+- QueryPushRecords API Source parameter support OpenAPIExplorer.
+
+2024-06-26 Version: 1.0.10
+- Supported AssumeRoleProxyChain for CreateHighDensityElasticNetworkInterface.
+
+2024-06-25 Version: 1.1.12
+- Create AppGroup Support Set AppVersion.
+- Update AppGroup Support Set AppVersion.
+- List AppGroup Support return AppVersion.
+
+2024-06-18 Version: 3.9.55
+- Update to support new apis.
+
+2024-06-18 Version: 1.0.9
+- Supported modification of securityGroupId for UpdateElasticNetworkInterface API.
+
+2024-06-18 Version: 1.1.5
+- Generated 2020-02-02 for `polardbx`.
+
+2024-06-17 Version: 1.1.4
+- CreateDBInstance add DNStorageSpace
+
 2024-06-14 Version: 3.9.54
 - Update to support new apis.
 

@@ -51,11 +51,15 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 				responseDataItem.GmtCreate = _ctx.StringValue("ListCloudSiemPredefinedRules.Data.ResponseData["+ i +"].GmtCreate");
 				responseDataItem.GmtModified = _ctx.StringValue("ListCloudSiemPredefinedRules.Data.ResponseData["+ i +"].GmtModified");
 				responseDataItem.RuleName = _ctx.StringValue("ListCloudSiemPredefinedRules.Data.ResponseData["+ i +"].RuleName");
+				responseDataItem.RuleNameCn = _ctx.StringValue("ListCloudSiemPredefinedRules.Data.ResponseData["+ i +"].RuleNameCn");
+				responseDataItem.RuleNameEn = _ctx.StringValue("ListCloudSiemPredefinedRules.Data.ResponseData["+ i +"].RuleNameEn");
 				responseDataItem.RuleNameMds = _ctx.StringValue("ListCloudSiemPredefinedRules.Data.ResponseData["+ i +"].RuleNameMds");
 				responseDataItem.RuleDescMds = _ctx.StringValue("ListCloudSiemPredefinedRules.Data.ResponseData["+ i +"].RuleDescMds");
 				responseDataItem.ThreatLevel = _ctx.StringValue("ListCloudSiemPredefinedRules.Data.ResponseData["+ i +"].ThreatLevel");
 				responseDataItem.AlertType = _ctx.StringValue("ListCloudSiemPredefinedRules.Data.ResponseData["+ i +"].AlertType");
 				responseDataItem.Source = _ctx.StringValue("ListCloudSiemPredefinedRules.Data.ResponseData["+ i +"].Source");
+				responseDataItem.EventTransferType = _ctx.StringValue("ListCloudSiemPredefinedRules.Data.ResponseData["+ i +"].EventTransferType");
+				responseDataItem.AttCk = _ctx.StringValue("ListCloudSiemPredefinedRules.Data.ResponseData["+ i +"].AttCk");
 				responseDataItem.Status = _ctx.IntegerValue("ListCloudSiemPredefinedRules.Data.ResponseData["+ i +"].Status");
 
 				data_responseData.Add(responseDataItem);

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			UpdateKibanaSettingsResponse updateKibanaSettingsResponse = new UpdateKibanaSettingsResponse();
 
 			updateKibanaSettingsResponse.HttpResponse = _ctx.HttpResponse;
-			updateKibanaSettingsResponse.RequestId = _ctx.StringValue("UpdateKibanaSettings.RequestId");
 			updateKibanaSettingsResponse.Result = _ctx.BooleanValue("UpdateKibanaSettings.Result");
+			updateKibanaSettingsResponse.RequestId = _ctx.StringValue("UpdateKibanaSettings.RequestId");
         
 			return updateKibanaSettingsResponse;
         }

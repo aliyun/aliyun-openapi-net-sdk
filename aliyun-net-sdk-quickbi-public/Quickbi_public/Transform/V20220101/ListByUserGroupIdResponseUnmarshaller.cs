@@ -45,15 +45,15 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			List<ListByUserGroupIdResponse.ListByUserGroupId_Result.ListByUserGroupId_UserGroupModelsItem> result_userGroupModels = new List<ListByUserGroupIdResponse.ListByUserGroupId_Result.ListByUserGroupId_UserGroupModelsItem>();
 			for (int i = 0; i < _ctx.Length("ListByUserGroupId.Result.UserGroupModels.Length"); i++) {
 				ListByUserGroupIdResponse.ListByUserGroupId_Result.ListByUserGroupId_UserGroupModelsItem userGroupModelsItem = new ListByUserGroupIdResponse.ListByUserGroupId_Result.ListByUserGroupId_UserGroupModelsItem();
-				userGroupModelsItem.IdentifiedPath = _ctx.StringValue("ListByUserGroupId.Result.UserGroupModels["+ i +"].IdentifiedPath");
-				userGroupModelsItem.ParentUsergroupId = _ctx.StringValue("ListByUserGroupId.Result.UserGroupModels["+ i +"].ParentUsergroupId");
-				userGroupModelsItem.ModifiedTime = _ctx.StringValue("ListByUserGroupId.Result.UserGroupModels["+ i +"].ModifiedTime");
-				userGroupModelsItem.CreateUser = _ctx.StringValue("ListByUserGroupId.Result.UserGroupModels["+ i +"].CreateUser");
-				userGroupModelsItem.UsergroupName = _ctx.StringValue("ListByUserGroupId.Result.UserGroupModels["+ i +"].UsergroupName");
 				userGroupModelsItem.CreateTime = _ctx.StringValue("ListByUserGroupId.Result.UserGroupModels["+ i +"].CreateTime");
+				userGroupModelsItem.CreateUser = _ctx.StringValue("ListByUserGroupId.Result.UserGroupModels["+ i +"].CreateUser");
+				userGroupModelsItem.IdentifiedPath = _ctx.StringValue("ListByUserGroupId.Result.UserGroupModels["+ i +"].IdentifiedPath");
+				userGroupModelsItem.ModifiedTime = _ctx.StringValue("ListByUserGroupId.Result.UserGroupModels["+ i +"].ModifiedTime");
+				userGroupModelsItem.ModifyUser = _ctx.StringValue("ListByUserGroupId.Result.UserGroupModels["+ i +"].ModifyUser");
+				userGroupModelsItem.ParentUsergroupId = _ctx.StringValue("ListByUserGroupId.Result.UserGroupModels["+ i +"].ParentUsergroupId");
 				userGroupModelsItem.UsergroupDesc = _ctx.StringValue("ListByUserGroupId.Result.UserGroupModels["+ i +"].UsergroupDesc");
 				userGroupModelsItem.UsergroupId = _ctx.StringValue("ListByUserGroupId.Result.UserGroupModels["+ i +"].UsergroupId");
-				userGroupModelsItem.ModifyUser = _ctx.StringValue("ListByUserGroupId.Result.UserGroupModels["+ i +"].ModifyUser");
+				userGroupModelsItem.UsergroupName = _ctx.StringValue("ListByUserGroupId.Result.UserGroupModels["+ i +"].UsergroupName");
 
 				result_userGroupModels.Add(userGroupModelsItem);
 			}

@@ -34,14 +34,17 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Mts.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Mts.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
 		private string jobParams;
+
+		private string output;
 
 		private string userData;
 
@@ -58,6 +61,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		private long? ownerId;
 
 		private string pipelineId;
+
+		private string input;
 
 		private string scheduleParams;
 
@@ -84,6 +89,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				jobParams = value;
 				DictionaryUtil.Add(QueryParameters, "JobParams", value);
+			}
+		}
+
+		public string Output
+		{
+			get
+			{
+				return output;
+			}
+			set	
+			{
+				output = value;
+				DictionaryUtil.Add(QueryParameters, "Output", value);
 			}
 		}
 
@@ -188,6 +206,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				pipelineId = value;
 				DictionaryUtil.Add(QueryParameters, "PipelineId", value);
+			}
+		}
+
+		public string Input
+		{
+			get
+			{
+				return input;
+			}
+			set	
+			{
+				input = value;
+				DictionaryUtil.Add(QueryParameters, "Input", value);
 			}
 		}
 

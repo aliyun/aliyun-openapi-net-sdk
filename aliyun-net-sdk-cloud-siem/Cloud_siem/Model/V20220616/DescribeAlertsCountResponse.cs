@@ -108,6 +108,8 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 			private int? productNum;
 
+			private string countMap;
+
 			public long? High
 			{
 				get
@@ -165,6 +167,18 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 				set	
 				{
 					productNum = value;
+				}
+			}
+
+			public string CountMap
+			{
+				get
+				{
+					return countMap;
+				}
+				set	
+				{
+					countMap = value;
 				}
 			}
 		}

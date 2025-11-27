@@ -70,35 +70,119 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QuerySharesToUserList_Data
 		{
 
+			private string createTime;
+
+			private string description;
+
+			private string modifyName;
+
+			private string modifyTime;
+
+			private string ownerId;
+
+			private string ownerName;
+
+			private string securityLevel;
+
 			private int? status;
 
 			private int? thirdPartAuthFlag;
 
-			private string worksId;
-
-			private string createTime;
+			private string workName;
 
 			private string workType;
 
-			private string ownerName;
-
-			private string workspaceName;
-
-			private string ownerId;
-
-			private string modifyName;
+			private string worksId;
 
 			private string workspaceId;
 
-			private string securityLevel;
-
-			private string description;
-
-			private string workName;
-
-			private string modifyTime;
+			private string workspaceName;
 
 			private QuerySharesToUserList_Directory directory;
+
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string ModifyName
+			{
+				get
+				{
+					return modifyName;
+				}
+				set	
+				{
+					modifyName = value;
+				}
+			}
+
+			public string ModifyTime
+			{
+				get
+				{
+					return modifyTime;
+				}
+				set	
+				{
+					modifyTime = value;
+				}
+			}
+
+			public string OwnerId
+			{
+				get
+				{
+					return ownerId;
+				}
+				set	
+				{
+					ownerId = value;
+				}
+			}
+
+			public string OwnerName
+			{
+				get
+				{
+					return ownerName;
+				}
+				set	
+				{
+					ownerName = value;
+				}
+			}
+
+			public string SecurityLevel
+			{
+				get
+				{
+					return securityLevel;
+				}
+				set	
+				{
+					securityLevel = value;
+				}
+			}
 
 			public int? Status
 			{
@@ -124,27 +208,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string WorksId
+			public string WorkName
 			{
 				get
 				{
-					return worksId;
+					return workName;
 				}
 				set	
 				{
-					worksId = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
+					workName = value;
 				}
 			}
 
@@ -160,51 +232,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string OwnerName
+			public string WorksId
 			{
 				get
 				{
-					return ownerName;
+					return worksId;
 				}
 				set	
 				{
-					ownerName = value;
-				}
-			}
-
-			public string WorkspaceName
-			{
-				get
-				{
-					return workspaceName;
-				}
-				set	
-				{
-					workspaceName = value;
-				}
-			}
-
-			public string OwnerId
-			{
-				get
-				{
-					return ownerId;
-				}
-				set	
-				{
-					ownerId = value;
-				}
-			}
-
-			public string ModifyName
-			{
-				get
-				{
-					return modifyName;
-				}
-				set	
-				{
-					modifyName = value;
+					worksId = value;
 				}
 			}
 
@@ -220,51 +256,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string SecurityLevel
+			public string WorkspaceName
 			{
 				get
 				{
-					return securityLevel;
+					return workspaceName;
 				}
 				set	
 				{
-					securityLevel = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string WorkName
-			{
-				get
-				{
-					return workName;
-				}
-				set	
-				{
-					workName = value;
-				}
-			}
-
-			public string ModifyTime
-			{
-				get
-				{
-					return modifyTime;
-				}
-				set	
-				{
-					modifyTime = value;
+					workspaceName = value;
 				}
 			}
 
@@ -283,13 +283,37 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class QuerySharesToUserList_Directory
 			{
 
+				private string id;
+
+				private string name;
+
 				private string pathId;
 
 				private string pathName;
 
-				private string name;
+				public string Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
+					}
+				}
 
-				private string id;
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
 
 				public string PathId
 				{
@@ -312,30 +336,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						pathName = value;
-					}
-				}
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
-
-				public string Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
 					}
 				}
 			}

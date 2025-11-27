@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			SetupTableResponse setupTableResponse = new SetupTableResponse();
 
 			setupTableResponse.HttpResponse = _ctx.HttpResponse;
+			setupTableResponse.Data = _ctx.BooleanValue("SetupTable.Data");
 			setupTableResponse.RequestId = _ctx.StringValue("SetupTable.RequestId");
 			setupTableResponse.Success = _ctx.BooleanValue("SetupTable.Success");
-			setupTableResponse.Data = _ctx.BooleanValue("SetupTable.Data");
         
 			return setupTableResponse;
         }

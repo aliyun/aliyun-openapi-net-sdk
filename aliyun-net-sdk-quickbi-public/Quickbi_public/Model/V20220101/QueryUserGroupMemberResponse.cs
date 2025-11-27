@@ -70,7 +70,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryUserGroupMember_Data
 		{
 
-			private string parentUserGroupName;
+			private string id;
 
 			private bool? isUserGroup;
 
@@ -78,17 +78,17 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 			private string parentUserGroupId;
 
-			private string id;
+			private string parentUserGroupName;
 
-			public string ParentUserGroupName
+			public string Id
 			{
 				get
 				{
-					return parentUserGroupName;
+					return id;
 				}
 				set	
 				{
-					parentUserGroupName = value;
+					id = value;
 				}
 			}
 
@@ -128,15 +128,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string Id
+			public string ParentUserGroupName
 			{
 				get
 				{
-					return id;
+					return parentUserGroupName;
 				}
 				set	
 				{
-					id = value;
+					parentUserGroupName = value;
 				}
 			}
 		}

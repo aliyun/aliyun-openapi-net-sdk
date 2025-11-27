@@ -61,6 +61,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 				dataItem.Action = _ctx.StringValue("ListErRouteMaps.Content.Data["+ i +"].Action");
 				dataItem.TransmissionInstanceOwner = _ctx.StringValue("ListErRouteMaps.Content.Data["+ i +"].TransmissionInstanceOwner");
 				dataItem.ReceptionInstanceOwner = _ctx.StringValue("ListErRouteMaps.Content.Data["+ i +"].ReceptionInstanceOwner");
+				dataItem.ResourceGroupId = _ctx.StringValue("ListErRouteMaps.Content.Data["+ i +"].ResourceGroupId");
 
 				content_data.Add(dataItem);
 			}

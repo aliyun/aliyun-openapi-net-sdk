@@ -31,23 +31,23 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			DescribeTablesResponse describeTablesResponse = new DescribeTablesResponse();
 
 			describeTablesResponse.HttpResponse = _ctx.HttpResponse;
-			describeTablesResponse.RequestId = _ctx.StringValue("DescribeTables.RequestId");
-			describeTablesResponse.Success = _ctx.BooleanValue("DescribeTables.Success");
-			describeTablesResponse.PageNumber = _ctx.IntegerValue("DescribeTables.PageNumber");
 			describeTablesResponse.PageSize = _ctx.IntegerValue("DescribeTables.PageSize");
+			describeTablesResponse.PageNumber = _ctx.IntegerValue("DescribeTables.PageNumber");
+			describeTablesResponse.RequestId = _ctx.StringValue("DescribeTables.RequestId");
 			describeTablesResponse.Total = _ctx.IntegerValue("DescribeTables.Total");
+			describeTablesResponse.Success = _ctx.BooleanValue("DescribeTables.Success");
 
 			List<DescribeTablesResponse.DescribeTables_ListItem> describeTablesResponse_list = new List<DescribeTablesResponse.DescribeTables_ListItem>();
 			for (int i = 0; i < _ctx.Length("DescribeTables.List.Length"); i++) {
 				DescribeTablesResponse.DescribeTables_ListItem listItem = new DescribeTablesResponse.DescribeTables_ListItem();
-				listItem.Table = _ctx.StringValue("DescribeTables.List["+ i +"].Table");
+				listItem.Status = _ctx.IntegerValue("DescribeTables.List["+ i +"].Status");
+				listItem.IsLocked = _ctx.BooleanValue("DescribeTables.List["+ i +"].IsLocked");
 				listItem.ShardKey = _ctx.StringValue("DescribeTables.List["+ i +"].ShardKey");
 				listItem.IsShard = _ctx.BooleanValue("DescribeTables.List["+ i +"].IsShard");
-				listItem.IsLocked = _ctx.BooleanValue("DescribeTables.List["+ i +"].IsLocked");
-				listItem.DbInstType = _ctx.IntegerValue("DescribeTables.List["+ i +"].DbInstType");
 				listItem.Broadcast = _ctx.BooleanValue("DescribeTables.List["+ i +"].Broadcast");
 				listItem.AllowFullTableScan = _ctx.BooleanValue("DescribeTables.List["+ i +"].AllowFullTableScan");
-				listItem.Status = _ctx.IntegerValue("DescribeTables.List["+ i +"].Status");
+				listItem.Table = _ctx.StringValue("DescribeTables.List["+ i +"].Table");
+				listItem.DbInstType = _ctx.IntegerValue("DescribeTables.List["+ i +"].DbInstType");
 
 				describeTablesResponse_list.Add(listItem);
 			}

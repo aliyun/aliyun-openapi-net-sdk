@@ -96,6 +96,16 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private string updateTime;
 
+			private bool? deletionProtection;
+
+			private long? fileCountUsage;
+
+			private long? spaceUsage;
+
+			private string fileSystemId;
+
+			private DescribeFilesets_Quota quota;
+
 			public string Description
 			{
 				get
@@ -165,6 +175,98 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					updateTime = value;
+				}
+			}
+
+			public bool? DeletionProtection
+			{
+				get
+				{
+					return deletionProtection;
+				}
+				set	
+				{
+					deletionProtection = value;
+				}
+			}
+
+			public long? FileCountUsage
+			{
+				get
+				{
+					return fileCountUsage;
+				}
+				set	
+				{
+					fileCountUsage = value;
+				}
+			}
+
+			public long? SpaceUsage
+			{
+				get
+				{
+					return spaceUsage;
+				}
+				set	
+				{
+					spaceUsage = value;
+				}
+			}
+
+			public string FileSystemId
+			{
+				get
+				{
+					return fileSystemId;
+				}
+				set	
+				{
+					fileSystemId = value;
+				}
+			}
+
+			public DescribeFilesets_Quota Quota
+			{
+				get
+				{
+					return quota;
+				}
+				set	
+				{
+					quota = value;
+				}
+			}
+
+			public class DescribeFilesets_Quota
+			{
+
+				private long? sizeLimit;
+
+				private long? fileCountLimit;
+
+				public long? SizeLimit
+				{
+					get
+					{
+						return sizeLimit;
+					}
+					set	
+					{
+						sizeLimit = value;
+					}
+				}
+
+				public long? FileCountLimit
+				{
+					get
+					{
+						return fileCountLimit;
+					}
+					set	
+					{
+						fileCountLimit = value;
+					}
 				}
 			}
 		}

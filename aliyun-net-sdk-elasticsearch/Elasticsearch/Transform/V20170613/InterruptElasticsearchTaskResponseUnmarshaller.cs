@@ -31,9 +31,9 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			InterruptElasticsearchTaskResponse interruptElasticsearchTaskResponse = new InterruptElasticsearchTaskResponse();
 
 			interruptElasticsearchTaskResponse.HttpResponse = _ctx.HttpResponse;
-			interruptElasticsearchTaskResponse.RequestId = _ctx.StringValue("InterruptElasticsearchTask.RequestId");
 			interruptElasticsearchTaskResponse.Code = _ctx.StringValue("InterruptElasticsearchTask.Code");
 			interruptElasticsearchTaskResponse.Message = _ctx.StringValue("InterruptElasticsearchTask.Message");
+			interruptElasticsearchTaskResponse.RequestId = _ctx.StringValue("InterruptElasticsearchTask.RequestId");
 			interruptElasticsearchTaskResponse.Result = _ctx.BooleanValue("InterruptElasticsearchTask.Result");
         
 			return interruptElasticsearchTaskResponse;

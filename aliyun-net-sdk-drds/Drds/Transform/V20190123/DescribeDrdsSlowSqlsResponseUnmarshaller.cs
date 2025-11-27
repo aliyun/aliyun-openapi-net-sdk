@@ -31,20 +31,20 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			DescribeDrdsSlowSqlsResponse describeDrdsSlowSqlsResponse = new DescribeDrdsSlowSqlsResponse();
 
 			describeDrdsSlowSqlsResponse.HttpResponse = _ctx.HttpResponse;
-			describeDrdsSlowSqlsResponse.RequestId = _ctx.StringValue("DescribeDrdsSlowSqls.RequestId");
-			describeDrdsSlowSqlsResponse.Success = _ctx.BooleanValue("DescribeDrdsSlowSqls.Success");
-			describeDrdsSlowSqlsResponse.Total = _ctx.IntegerValue("DescribeDrdsSlowSqls.Total");
-			describeDrdsSlowSqlsResponse.PageNumber = _ctx.IntegerValue("DescribeDrdsSlowSqls.PageNumber");
 			describeDrdsSlowSqlsResponse.PageSize = _ctx.IntegerValue("DescribeDrdsSlowSqls.PageSize");
+			describeDrdsSlowSqlsResponse.PageNumber = _ctx.IntegerValue("DescribeDrdsSlowSqls.PageNumber");
+			describeDrdsSlowSqlsResponse.RequestId = _ctx.StringValue("DescribeDrdsSlowSqls.RequestId");
+			describeDrdsSlowSqlsResponse.Total = _ctx.IntegerValue("DescribeDrdsSlowSqls.Total");
+			describeDrdsSlowSqlsResponse.Success = _ctx.BooleanValue("DescribeDrdsSlowSqls.Success");
 
 			List<DescribeDrdsSlowSqlsResponse.DescribeDrdsSlowSqls_Item> describeDrdsSlowSqlsResponse_items = new List<DescribeDrdsSlowSqlsResponse.DescribeDrdsSlowSqls_Item>();
 			for (int i = 0; i < _ctx.Length("DescribeDrdsSlowSqls.Items.Length"); i++) {
 				DescribeDrdsSlowSqlsResponse.DescribeDrdsSlowSqls_Item item = new DescribeDrdsSlowSqlsResponse.DescribeDrdsSlowSqls_Item();
-				item.Schema = _ctx.StringValue("DescribeDrdsSlowSqls.Items["+ i +"].Schema");
-				item.Sql = _ctx.StringValue("DescribeDrdsSlowSqls.Items["+ i +"].Sql");
 				item.SendTime = _ctx.LongValue("DescribeDrdsSlowSqls.Items["+ i +"].SendTime");
-				item.ResponseTime = _ctx.LongValue("DescribeDrdsSlowSqls.Items["+ i +"].ResponseTime");
 				item.Host = _ctx.StringValue("DescribeDrdsSlowSqls.Items["+ i +"].Host");
+				item.Sql = _ctx.StringValue("DescribeDrdsSlowSqls.Items["+ i +"].Sql");
+				item.ResponseTime = _ctx.LongValue("DescribeDrdsSlowSqls.Items["+ i +"].ResponseTime");
+				item.Schema = _ctx.StringValue("DescribeDrdsSlowSqls.Items["+ i +"].Schema");
 
 				describeDrdsSlowSqlsResponse_items.Add(item);
 			}

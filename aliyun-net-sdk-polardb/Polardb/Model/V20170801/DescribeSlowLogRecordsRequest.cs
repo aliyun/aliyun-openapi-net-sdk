@@ -48,6 +48,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private int? pageSize;
 
+		private string nodeId;
+
 		private string resourceOwnerAccount;
 
 		private string dBClusterId;
@@ -111,6 +113,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string NodeId
+		{
+			get
+			{
+				return nodeId;
+			}
+			set	
+			{
+				nodeId = value;
+				DictionaryUtil.Add(QueryParameters, "NodeId", value);
 			}
 		}
 

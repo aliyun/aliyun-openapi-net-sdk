@@ -117,9 +117,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 				private int? dashboardOfflineQuery;
 
-				private int? report;
-
 				private int? page;
+
+				private int? report;
 
 				public int? DashboardOfflineQuery
 				{
@@ -133,18 +133,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public int? Report
-				{
-					get
-					{
-						return report;
-					}
-					set	
-					{
-						report = value;
-					}
-				}
-
 				public int? Page
 				{
 					get
@@ -154,6 +142,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						page = value;
+					}
+				}
+
+				public int? Report
+				{
+					get
+					{
+						return report;
+					}
+					set	
+					{
+						report = value;
 					}
 				}
 			}

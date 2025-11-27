@@ -61,13 +61,24 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			queryDomainByDomainNameResponse.ExpirationDateStatus = _ctx.StringValue("QueryDomainByDomainName.ExpirationDateStatus");
 			queryDomainByDomainNameResponse.ExpirationCurrDateDiff = _ctx.IntegerValue("QueryDomainByDomainName.ExpirationCurrDateDiff");
 			queryDomainByDomainNameResponse.DomainType = _ctx.StringValue("QueryDomainByDomainName.DomainType");
-			queryDomainByDomainNameResponse.DomainStatus = _ctx.StringValue("QueryDomainByDomainName.domainStatus");
+			queryDomainByDomainNameResponse.DomainStatus = _ctx.StringValue("QueryDomainByDomainName.DomainStatus");
+			queryDomainByDomainNameResponse.ResourceGroupId = _ctx.StringValue("QueryDomainByDomainName.ResourceGroupId");
 
 			List<string> queryDomainByDomainNameResponse_dnsList = new List<string>();
 			for (int i = 0; i < _ctx.Length("QueryDomainByDomainName.DnsList.Length"); i++) {
 				queryDomainByDomainNameResponse_dnsList.Add(_ctx.StringValue("QueryDomainByDomainName.DnsList["+ i +"]"));
 			}
 			queryDomainByDomainNameResponse.DnsList = queryDomainByDomainNameResponse_dnsList;
+
+			List<QueryDomainByDomainNameResponse.QueryDomainByDomainName_TagItem> queryDomainByDomainNameResponse_tag = new List<QueryDomainByDomainNameResponse.QueryDomainByDomainName_TagItem>();
+			for (int i = 0; i < _ctx.Length("QueryDomainByDomainName.Tag.Length"); i++) {
+				QueryDomainByDomainNameResponse.QueryDomainByDomainName_TagItem tagItem = new QueryDomainByDomainNameResponse.QueryDomainByDomainName_TagItem();
+				tagItem.Key = _ctx.StringValue("QueryDomainByDomainName.Tag["+ i +"].Key");
+				tagItem.Vaue = _ctx.StringValue("QueryDomainByDomainName.Tag["+ i +"].Vaue");
+
+				queryDomainByDomainNameResponse_tag.Add(tagItem);
+			}
+			queryDomainByDomainNameResponse.Tag = queryDomainByDomainNameResponse_tag;
         
 			return queryDomainByDomainNameResponse;
         }

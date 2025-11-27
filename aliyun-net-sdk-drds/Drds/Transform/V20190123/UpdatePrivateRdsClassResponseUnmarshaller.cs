@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			UpdatePrivateRdsClassResponse updatePrivateRdsClassResponse = new UpdatePrivateRdsClassResponse();
 
 			updatePrivateRdsClassResponse.HttpResponse = _ctx.HttpResponse;
+			updatePrivateRdsClassResponse.Data = _ctx.StringValue("UpdatePrivateRdsClass.Data");
 			updatePrivateRdsClassResponse.RequestId = _ctx.StringValue("UpdatePrivateRdsClass.RequestId");
 			updatePrivateRdsClassResponse.Success = _ctx.BooleanValue("UpdatePrivateRdsClass.Success");
-			updatePrivateRdsClassResponse.Data = _ctx.StringValue("UpdatePrivateRdsClass.Data");
         
 			return updatePrivateRdsClassResponse;
         }

@@ -31,24 +31,24 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			DescribeDrdsParamsResponse describeDrdsParamsResponse = new DescribeDrdsParamsResponse();
 
 			describeDrdsParamsResponse.HttpResponse = _ctx.HttpResponse;
-			describeDrdsParamsResponse.RequestId = _ctx.StringValue("DescribeDrdsParams.RequestId");
 			describeDrdsParamsResponse.Success = _ctx.BooleanValue("DescribeDrdsParams.Success");
+			describeDrdsParamsResponse.RequestId = _ctx.StringValue("DescribeDrdsParams.RequestId");
 
 			List<DescribeDrdsParamsResponse.DescribeDrdsParams_ListItem> describeDrdsParamsResponse_list = new List<DescribeDrdsParamsResponse.DescribeDrdsParams_ListItem>();
 			for (int i = 0; i < _ctx.Length("DescribeDrdsParams.List.Length"); i++) {
 				DescribeDrdsParamsResponse.DescribeDrdsParams_ListItem listItem = new DescribeDrdsParamsResponse.DescribeDrdsParams_ListItem();
-				listItem.ParamName = _ctx.StringValue("DescribeDrdsParams.List["+ i +"].ParamName");
-				listItem.ParamEnglishName = _ctx.StringValue("DescribeDrdsParams.List["+ i +"].ParamEnglishName");
-				listItem.ParamVariableName = _ctx.StringValue("DescribeDrdsParams.List["+ i +"].ParamVariableName");
-				listItem.ParamDesc = _ctx.StringValue("DescribeDrdsParams.List["+ i +"].ParamDesc");
-				listItem.ParamValue = _ctx.StringValue("DescribeDrdsParams.List["+ i +"].ParamValue");
-				listItem.DbName = _ctx.StringValue("DescribeDrdsParams.List["+ i +"].DbName");
 				listItem.ParamDefaultValue = _ctx.StringValue("DescribeDrdsParams.List["+ i +"].ParamDefaultValue");
-				listItem.ParamRanges = _ctx.StringValue("DescribeDrdsParams.List["+ i +"].ParamRanges");
 				listItem.ParamLevel = _ctx.StringValue("DescribeDrdsParams.List["+ i +"].ParamLevel");
+				listItem.ParamName = _ctx.StringValue("DescribeDrdsParams.List["+ i +"].ParamName");
 				listItem.ParamType = _ctx.StringValue("DescribeDrdsParams.List["+ i +"].ParamType");
+				listItem.ParamValue = _ctx.StringValue("DescribeDrdsParams.List["+ i +"].ParamValue");
 				listItem.NeedRestart = _ctx.BooleanValue("DescribeDrdsParams.List["+ i +"].NeedRestart");
+				listItem.ParamRanges = _ctx.StringValue("DescribeDrdsParams.List["+ i +"].ParamRanges");
 				listItem.UserVisible = _ctx.BooleanValue("DescribeDrdsParams.List["+ i +"].UserVisible");
+				listItem.DbName = _ctx.StringValue("DescribeDrdsParams.List["+ i +"].DbName");
+				listItem.ParamEnglishName = _ctx.StringValue("DescribeDrdsParams.List["+ i +"].ParamEnglishName");
+				listItem.ParamDesc = _ctx.StringValue("DescribeDrdsParams.List["+ i +"].ParamDesc");
+				listItem.ParamVariableName = _ctx.StringValue("DescribeDrdsParams.List["+ i +"].ParamVariableName");
 
 				describeDrdsParamsResponse_list.Add(listItem);
 			}

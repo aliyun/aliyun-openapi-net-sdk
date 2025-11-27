@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribeDrdsSqlAuditStatusResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private List<DescribeDrdsSqlAuditStatus_DataItem> data;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeDrdsSqlAuditStatus_DataItem> data;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,19 +70,31 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class DescribeDrdsSqlAuditStatus_DataItem
 		{
 
-			private string dbName;
+			private string extraSlsLogStore;
 
-			private string enabled;
+			private string dbName;
 
 			private string detailed;
 
 			private bool? extraWriteEnabled;
 
+			private string enabled;
+
 			private long? extraAliUid;
 
 			private string extraSlsProject;
 
-			private string extraSlsLogStore;
+			public string ExtraSlsLogStore
+			{
+				get
+				{
+					return extraSlsLogStore;
+				}
+				set	
+				{
+					extraSlsLogStore = value;
+				}
+			}
 
 			public string DbName
 			{
@@ -93,18 +105,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					dbName = value;
-				}
-			}
-
-			public string Enabled
-			{
-				get
-				{
-					return enabled;
-				}
-				set	
-				{
-					enabled = value;
 				}
 			}
 
@@ -132,6 +132,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
+			public string Enabled
+			{
+				get
+				{
+					return enabled;
+				}
+				set	
+				{
+					enabled = value;
+				}
+			}
+
 			public long? ExtraAliUid
 			{
 				get
@@ -153,18 +165,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					extraSlsProject = value;
-				}
-			}
-
-			public string ExtraSlsLogStore
-			{
-				get
-				{
-					return extraSlsLogStore;
-				}
-				set	
-				{
-					extraSlsLogStore = value;
 				}
 			}
 		}

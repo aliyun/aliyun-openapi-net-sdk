@@ -41,12 +41,12 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			List<DescribeBroadcastTablesResponse.DescribeBroadcastTables_ListItem> describeBroadcastTablesResponse_list = new List<DescribeBroadcastTablesResponse.DescribeBroadcastTables_ListItem>();
 			for (int i = 0; i < _ctx.Length("DescribeBroadcastTables.List.Length"); i++) {
 				DescribeBroadcastTablesResponse.DescribeBroadcastTables_ListItem listItem = new DescribeBroadcastTablesResponse.DescribeBroadcastTables_ListItem();
-				listItem.Table = _ctx.StringValue("DescribeBroadcastTables.List["+ i +"].Table");
-				listItem.BroadcastType = _ctx.StringValue("DescribeBroadcastTables.List["+ i +"].BroadcastType");
-				listItem.IsShard = _ctx.BooleanValue("DescribeBroadcastTables.List["+ i +"].IsShard");
-				listItem.DbInstType = _ctx.IntegerValue("DescribeBroadcastTables.List["+ i +"].DbInstType");
-				listItem.Broadcast = _ctx.BooleanValue("DescribeBroadcastTables.List["+ i +"].Broadcast");
 				listItem.Status = _ctx.IntegerValue("DescribeBroadcastTables.List["+ i +"].Status");
+				listItem.IsShard = _ctx.BooleanValue("DescribeBroadcastTables.List["+ i +"].IsShard");
+				listItem.Broadcast = _ctx.BooleanValue("DescribeBroadcastTables.List["+ i +"].Broadcast");
+				listItem.Table = _ctx.StringValue("DescribeBroadcastTables.List["+ i +"].Table");
+				listItem.DbInstType = _ctx.IntegerValue("DescribeBroadcastTables.List["+ i +"].DbInstType");
+				listItem.BroadcastType = _ctx.StringValue("DescribeBroadcastTables.List["+ i +"].BroadcastType");
 
 				describeBroadcastTablesResponse_list.Add(listItem);
 			}

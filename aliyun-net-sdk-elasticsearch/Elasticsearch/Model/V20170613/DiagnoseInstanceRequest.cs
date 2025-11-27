@@ -47,6 +47,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private string lang;
 
+		private string body;
+
 		public string InstanceId
 		{
 			get
@@ -83,6 +85,19 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "lang", value);
+			}
+		}
+
+		public string Body
+		{
+			get
+			{
+				return body;
+			}
+			set	
+			{
+				body = value;
+				DictionaryUtil.Add(BodyParameters, "body", value);
 			}
 		}
 

@@ -31,6 +31,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private List<string> failList;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -43,6 +44,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "SuccessList")]
 		public List<string> SuccessList
 		{
 			get
@@ -55,6 +57,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "FailList")]
 		public List<string> FailList
 		{
 			get

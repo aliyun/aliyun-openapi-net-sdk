@@ -49,9 +49,23 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string srcDbType;
 
+		private string migrationSwitch;
+
+		private string migrationDtsJobEndpoint;
+
+		private string dstBinlogPosition;
+
+		private string srcBinlogPosition;
+
+		private string migrationProgress;
+
 		private List<DescribeDBClusterMigration_DBClusterEndpoint> dBClusterEndpointList;
 
 		private List<DescribeDBClusterMigration_RdsEndpoint> rdsEndpointList;
+
+		private List<DescribeDBClusterMigration_SrcDtsJob> srcDtsJobList;
+
+		private List<DescribeDBClusterMigration_DstDtsJob> dstDtsJobList;
 
 		public string Comment
 		{
@@ -197,6 +211,66 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string MigrationSwitch
+		{
+			get
+			{
+				return migrationSwitch;
+			}
+			set	
+			{
+				migrationSwitch = value;
+			}
+		}
+
+		public string MigrationDtsJobEndpoint
+		{
+			get
+			{
+				return migrationDtsJobEndpoint;
+			}
+			set	
+			{
+				migrationDtsJobEndpoint = value;
+			}
+		}
+
+		public string DstBinlogPosition
+		{
+			get
+			{
+				return dstBinlogPosition;
+			}
+			set	
+			{
+				dstBinlogPosition = value;
+			}
+		}
+
+		public string SrcBinlogPosition
+		{
+			get
+			{
+				return srcBinlogPosition;
+			}
+			set	
+			{
+				srcBinlogPosition = value;
+			}
+		}
+
+		public string MigrationProgress
+		{
+			get
+			{
+				return migrationProgress;
+			}
+			set	
+			{
+				migrationProgress = value;
+			}
+		}
+
 		public List<DescribeDBClusterMigration_DBClusterEndpoint> DBClusterEndpointList
 		{
 			get
@@ -218,6 +292,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				rdsEndpointList = value;
+			}
+		}
+
+		public List<DescribeDBClusterMigration_SrcDtsJob> SrcDtsJobList
+		{
+			get
+			{
+				return srcDtsJobList;
+			}
+			set	
+			{
+				srcDtsJobList = value;
+			}
+		}
+
+		public List<DescribeDBClusterMigration_DstDtsJob> DstDtsJobList
+		{
+			get
+			{
+				return dstDtsJobList;
+			}
+			set	
+			{
+				dstDtsJobList = value;
 			}
 		}
 
@@ -541,6 +639,210 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					{
 						sSLEnabled = value;
 					}
+				}
+			}
+		}
+
+		public class DescribeDBClusterMigration_SrcDtsJob
+		{
+
+			private string dtsJobId;
+
+			private string dtsJobName;
+
+			private string dtsInstanceID;
+
+			private string dtsJobDirection;
+
+			private string status;
+
+			private string sourceEndpoint;
+
+			private string destinationEndpoint;
+
+			public string DtsJobId
+			{
+				get
+				{
+					return dtsJobId;
+				}
+				set	
+				{
+					dtsJobId = value;
+				}
+			}
+
+			public string DtsJobName
+			{
+				get
+				{
+					return dtsJobName;
+				}
+				set	
+				{
+					dtsJobName = value;
+				}
+			}
+
+			public string DtsInstanceID
+			{
+				get
+				{
+					return dtsInstanceID;
+				}
+				set	
+				{
+					dtsInstanceID = value;
+				}
+			}
+
+			public string DtsJobDirection
+			{
+				get
+				{
+					return dtsJobDirection;
+				}
+				set	
+				{
+					dtsJobDirection = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public string SourceEndpoint
+			{
+				get
+				{
+					return sourceEndpoint;
+				}
+				set	
+				{
+					sourceEndpoint = value;
+				}
+			}
+
+			public string DestinationEndpoint
+			{
+				get
+				{
+					return destinationEndpoint;
+				}
+				set	
+				{
+					destinationEndpoint = value;
+				}
+			}
+		}
+
+		public class DescribeDBClusterMigration_DstDtsJob
+		{
+
+			private string dtsJobId;
+
+			private string dtsJobName;
+
+			private string dtsInstanceId;
+
+			private string dtsJobDirection;
+
+			private string status;
+
+			private string sourceEndpoint;
+
+			private string destinationEndpoint;
+
+			public string DtsJobId
+			{
+				get
+				{
+					return dtsJobId;
+				}
+				set	
+				{
+					dtsJobId = value;
+				}
+			}
+
+			public string DtsJobName
+			{
+				get
+				{
+					return dtsJobName;
+				}
+				set	
+				{
+					dtsJobName = value;
+				}
+			}
+
+			public string DtsInstanceId
+			{
+				get
+				{
+					return dtsInstanceId;
+				}
+				set	
+				{
+					dtsInstanceId = value;
+				}
+			}
+
+			public string DtsJobDirection
+			{
+				get
+				{
+					return dtsJobDirection;
+				}
+				set	
+				{
+					dtsJobDirection = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public string SourceEndpoint
+			{
+				get
+				{
+					return sourceEndpoint;
+				}
+				set	
+				{
+					sourceEndpoint = value;
+				}
+			}
+
+			public string DestinationEndpoint
+			{
+				get
+				{
+					return destinationEndpoint;
+				}
+				set	
+				{
+					destinationEndpoint = value;
 				}
 			}
 		}

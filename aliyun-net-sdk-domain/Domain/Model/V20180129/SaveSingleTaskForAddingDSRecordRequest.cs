@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Domain;
 using Aliyun.Acs.Domain.Transform;
 using Aliyun.Acs.Domain.Transform.V20180129;
 
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
     public class SaveSingleTaskForAddingDSRecordRequest : RpcAcsRequest<SaveSingleTaskForAddingDSRecordResponse>
     {
         public SaveSingleTaskForAddingDSRecordRequest()
-            : base("Domain", "2018-01-29", "SaveSingleTaskForAddingDSRecord")
+            : base("Domain", "2018-01-29", "SaveSingleTaskForAddingDSRecord", "domain", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -55,6 +55,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private int? algorithm;
 
+		[JsonProperty(PropertyName = "KeyTag")]
 		public int? KeyTag
 		{
 			get
@@ -68,6 +69,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "DomainName")]
 		public string DomainName
 		{
 			get
@@ -81,6 +83,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "UserClientIp")]
 		public string UserClientIp
 		{
 			get
@@ -94,6 +97,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "DigestType")]
 		public int? DigestType
 		{
 			get
@@ -107,6 +111,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "Digest")]
 		public string Digest
 		{
 			get
@@ -120,6 +125,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "Lang")]
 		public string Lang
 		{
 			get
@@ -133,6 +139,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "Algorithm")]
 		public int? Algorithm
 		{
 			get

@@ -66,6 +66,9 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 				registrantProfile.EmailVerificationStatus = _ctx.IntegerValue("QueryRegistrantProfiles.RegistrantProfiles["+ i +"].EmailVerificationStatus");
 				registrantProfile.ZhAddress = _ctx.StringValue("QueryRegistrantProfiles.RegistrantProfiles["+ i +"].ZhAddress");
 				registrantProfile.Province = _ctx.StringValue("QueryRegistrantProfiles.RegistrantProfiles["+ i +"].Province");
+				registrantProfile.CredentialNo = _ctx.StringValue("QueryRegistrantProfiles.RegistrantProfiles["+ i +"].CredentialNo");
+				registrantProfile.CredentialType = _ctx.StringValue("QueryRegistrantProfiles.RegistrantProfiles["+ i +"].CredentialType");
+				registrantProfile.Remark = _ctx.StringValue("QueryRegistrantProfiles.RegistrantProfiles["+ i +"].Remark");
 
 				queryRegistrantProfilesResponse_registrantProfiles.Add(registrantProfile);
 			}

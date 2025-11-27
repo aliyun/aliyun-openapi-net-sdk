@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
@@ -70,27 +70,51 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		public class QueryMediaInfoJobList_MediaInfoJob
 		{
 
+			private string creationTime;
+
+			private string state;
+
 			private string jobId;
 
 			private string userData;
-
-			private string pipelineId;
-
-			private bool? async;
-
-			private string state;
 
 			private string code;
 
 			private string message;
 
-			private string creationTime;
+			private string pipelineId;
+
+			private bool? async;
 
 			private QueryMediaInfoJobList_Input input;
 
+			private QueryMediaInfoJobList_MNSMessageResult mNSMessageResult;
+
 			private QueryMediaInfoJobList_Properties properties;
 
-			private QueryMediaInfoJobList_MNSMessageResult mNSMessageResult;
+			public string CreationTime
+			{
+				get
+				{
+					return creationTime;
+				}
+				set	
+				{
+					creationTime = value;
+				}
+			}
+
+			public string State
+			{
+				get
+				{
+					return state;
+				}
+				set	
+				{
+					state = value;
+				}
+			}
 
 			public string JobId
 			{
@@ -113,42 +137,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					userData = value;
-				}
-			}
-
-			public string PipelineId
-			{
-				get
-				{
-					return pipelineId;
-				}
-				set	
-				{
-					pipelineId = value;
-				}
-			}
-
-			public bool? Async
-			{
-				get
-				{
-					return async;
-				}
-				set	
-				{
-					async = value;
-				}
-			}
-
-			public string State
-			{
-				get
-				{
-					return state;
-				}
-				set	
-				{
-					state = value;
 				}
 			}
 
@@ -176,15 +164,27 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public string CreationTime
+			public string PipelineId
 			{
 				get
 				{
-					return creationTime;
+					return pipelineId;
 				}
 				set	
 				{
-					creationTime = value;
+					pipelineId = value;
+				}
+			}
+
+			public bool? Async
+			{
+				get
+				{
+					return async;
+				}
+				set	
+				{
+					async = value;
 				}
 			}
 
@@ -200,18 +200,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public QueryMediaInfoJobList_Properties Properties
-			{
-				get
-				{
-					return properties;
-				}
-				set	
-				{
-					properties = value;
-				}
-			}
-
 			public QueryMediaInfoJobList_MNSMessageResult MNSMessageResult
 			{
 				get
@@ -224,24 +212,36 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
+			public QueryMediaInfoJobList_Properties Properties
+			{
+				get
+				{
+					return properties;
+				}
+				set	
+				{
+					properties = value;
+				}
+			}
+
 			public class QueryMediaInfoJobList_Input
 			{
 
-				private string bucket;
+				private string _object;
 
 				private string location;
 
-				private string _object;
+				private string bucket;
 
-				public string Bucket
+				public string _Object
 				{
 					get
 					{
-						return bucket;
+						return _object;
 					}
 					set	
 					{
-						bucket = value;
+						_object = value;
 					}
 				}
 
@@ -257,15 +257,61 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public string _Object
+				public string Bucket
 				{
 					get
 					{
-						return _object;
+						return bucket;
 					}
 					set	
 					{
-						_object = value;
+						bucket = value;
+					}
+				}
+			}
+
+			public class QueryMediaInfoJobList_MNSMessageResult
+			{
+
+				private string messageId;
+
+				private string errorMessage;
+
+				private string errorCode;
+
+				public string MessageId
+				{
+					get
+					{
+						return messageId;
+					}
+					set	
+					{
+						messageId = value;
+					}
+				}
+
+				public string ErrorMessage
+				{
+					get
+					{
+						return errorMessage;
+					}
+					set	
+					{
+						errorMessage = value;
+					}
+				}
+
+				public string ErrorCode
+				{
+					get
+					{
+						return errorCode;
+					}
+					set	
+					{
+						errorCode = value;
 					}
 				}
 			}
@@ -277,15 +323,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string height;
 
-				private string bitrate;
-
 				private string duration;
 
 				private string fps;
 
-				private string fileSize;
+				private string bitrate;
 
 				private string fileFormat;
+
+				private string fileSize;
 
 				private QueryMediaInfoJobList_Streams streams;
 
@@ -315,18 +361,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public string Bitrate
-				{
-					get
-					{
-						return bitrate;
-					}
-					set	
-					{
-						bitrate = value;
-					}
-				}
-
 				public string Duration
 				{
 					get
@@ -351,15 +385,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public string FileSize
+				public string Bitrate
 				{
 					get
 					{
-						return fileSize;
+						return bitrate;
 					}
 					set	
 					{
-						fileSize = value;
+						bitrate = value;
 					}
 				}
 
@@ -372,6 +406,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						fileFormat = value;
+					}
+				}
+
+				public string FileSize
+				{
+					get
+					{
+						return fileSize;
+					}
+					set	
+					{
+						fileSize = value;
 					}
 				}
 
@@ -447,147 +493,71 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					public class QueryMediaInfoJobList_VideoStream
 					{
 
-						private string index;
-
-						private string codecName;
-
-						private string codecLongName;
-
-						private string profile;
-
-						private string codecTimeBase;
-
-						private string codecTagString;
-
-						private string codecTag;
-
-						private string width;
+						private string sar;
 
 						private string height;
 
-						private string hasBFrames;
+						private string codecTagString;
 
-						private string sar;
+						private string width;
 
-						private string dar;
-
-						private string pixFmt;
-
-						private string level;
-
-						private string fps;
-
-						private string avgFPS;
+						private string index;
 
 						private string timebase;
 
-						private string startTime;
+						private string avgFPS;
 
-						private string duration;
-
-						private string bitrate;
-
-						private string numFrames;
+						private string pixFmt;
 
 						private string lang;
 
+						private string codecLongName;
+
+						private string numFrames;
+
 						private string rotate;
+
+						private string bitrate;
+
+						private string hasBFrames;
+
+						private string profile;
+
+						private string startTime;
+
+						private string dar;
+
+						private string codecName;
+
+						private string duration;
+
+						private string fps;
+
+						private string codecTag;
+
+						private string codecTimeBase;
+
+						private string level;
+
+						private string colorRange;
+
+						private string colorTransfer;
+
+						private string colorPrimaries;
+
+						private string durationInaccurate;
 
 						private QueryMediaInfoJobList_NetworkCost networkCost;
 
-						public string Index
+						public string Sar
 						{
 							get
 							{
-								return index;
+								return sar;
 							}
 							set	
 							{
-								index = value;
-							}
-						}
-
-						public string CodecName
-						{
-							get
-							{
-								return codecName;
-							}
-							set	
-							{
-								codecName = value;
-							}
-						}
-
-						public string CodecLongName
-						{
-							get
-							{
-								return codecLongName;
-							}
-							set	
-							{
-								codecLongName = value;
-							}
-						}
-
-						public string Profile
-						{
-							get
-							{
-								return profile;
-							}
-							set	
-							{
-								profile = value;
-							}
-						}
-
-						public string CodecTimeBase
-						{
-							get
-							{
-								return codecTimeBase;
-							}
-							set	
-							{
-								codecTimeBase = value;
-							}
-						}
-
-						public string CodecTagString
-						{
-							get
-							{
-								return codecTagString;
-							}
-							set	
-							{
-								codecTagString = value;
-							}
-						}
-
-						public string CodecTag
-						{
-							get
-							{
-								return codecTag;
-							}
-							set	
-							{
-								codecTag = value;
-							}
-						}
-
-						public string Width
-						{
-							get
-							{
-								return width;
-							}
-							set	
-							{
-								width = value;
+								sar = value;
 							}
 						}
 
@@ -603,87 +573,39 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
-						public string HasBFrames
+						public string CodecTagString
 						{
 							get
 							{
-								return hasBFrames;
+								return codecTagString;
 							}
 							set	
 							{
-								hasBFrames = value;
+								codecTagString = value;
 							}
 						}
 
-						public string Sar
+						public string Width
 						{
 							get
 							{
-								return sar;
+								return width;
 							}
 							set	
 							{
-								sar = value;
+								width = value;
 							}
 						}
 
-						public string Dar
+						public string Index
 						{
 							get
 							{
-								return dar;
+								return index;
 							}
 							set	
 							{
-								dar = value;
-							}
-						}
-
-						public string PixFmt
-						{
-							get
-							{
-								return pixFmt;
-							}
-							set	
-							{
-								pixFmt = value;
-							}
-						}
-
-						public string Level
-						{
-							get
-							{
-								return level;
-							}
-							set	
-							{
-								level = value;
-							}
-						}
-
-						public string Fps
-						{
-							get
-							{
-								return fps;
-							}
-							set	
-							{
-								fps = value;
-							}
-						}
-
-						public string AvgFPS
-						{
-							get
-							{
-								return avgFPS;
-							}
-							set	
-							{
-								avgFPS = value;
+								index = value;
 							}
 						}
 
@@ -699,51 +621,27 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
-						public string StartTime
+						public string AvgFPS
 						{
 							get
 							{
-								return startTime;
+								return avgFPS;
 							}
 							set	
 							{
-								startTime = value;
+								avgFPS = value;
 							}
 						}
 
-						public string Duration
+						public string PixFmt
 						{
 							get
 							{
-								return duration;
+								return pixFmt;
 							}
 							set	
 							{
-								duration = value;
-							}
-						}
-
-						public string Bitrate
-						{
-							get
-							{
-								return bitrate;
-							}
-							set	
-							{
-								bitrate = value;
-							}
-						}
-
-						public string NumFrames
-						{
-							get
-							{
-								return numFrames;
-							}
-							set	
-							{
-								numFrames = value;
+								pixFmt = value;
 							}
 						}
 
@@ -759,6 +657,30 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
+						public string CodecLongName
+						{
+							get
+							{
+								return codecLongName;
+							}
+							set	
+							{
+								codecLongName = value;
+							}
+						}
+
+						public string NumFrames
+						{
+							get
+							{
+								return numFrames;
+							}
+							set	
+							{
+								numFrames = value;
+							}
+						}
+
 						public string Rotate
 						{
 							get
@@ -768,6 +690,186 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							set	
 							{
 								rotate = value;
+							}
+						}
+
+						public string Bitrate
+						{
+							get
+							{
+								return bitrate;
+							}
+							set	
+							{
+								bitrate = value;
+							}
+						}
+
+						public string HasBFrames
+						{
+							get
+							{
+								return hasBFrames;
+							}
+							set	
+							{
+								hasBFrames = value;
+							}
+						}
+
+						public string Profile
+						{
+							get
+							{
+								return profile;
+							}
+							set	
+							{
+								profile = value;
+							}
+						}
+
+						public string StartTime
+						{
+							get
+							{
+								return startTime;
+							}
+							set	
+							{
+								startTime = value;
+							}
+						}
+
+						public string Dar
+						{
+							get
+							{
+								return dar;
+							}
+							set	
+							{
+								dar = value;
+							}
+						}
+
+						public string CodecName
+						{
+							get
+							{
+								return codecName;
+							}
+							set	
+							{
+								codecName = value;
+							}
+						}
+
+						public string Duration
+						{
+							get
+							{
+								return duration;
+							}
+							set	
+							{
+								duration = value;
+							}
+						}
+
+						public string Fps
+						{
+							get
+							{
+								return fps;
+							}
+							set	
+							{
+								fps = value;
+							}
+						}
+
+						public string CodecTag
+						{
+							get
+							{
+								return codecTag;
+							}
+							set	
+							{
+								codecTag = value;
+							}
+						}
+
+						public string CodecTimeBase
+						{
+							get
+							{
+								return codecTimeBase;
+							}
+							set	
+							{
+								codecTimeBase = value;
+							}
+						}
+
+						public string Level
+						{
+							get
+							{
+								return level;
+							}
+							set	
+							{
+								level = value;
+							}
+						}
+
+						public string ColorRange
+						{
+							get
+							{
+								return colorRange;
+							}
+							set	
+							{
+								colorRange = value;
+							}
+						}
+
+						public string ColorTransfer
+						{
+							get
+							{
+								return colorTransfer;
+							}
+							set	
+							{
+								colorTransfer = value;
+							}
+						}
+
+						public string ColorPrimaries
+						{
+							get
+							{
+								return colorPrimaries;
+							}
+							set	
+							{
+								colorPrimaries = value;
+							}
+						}
+
+						public string DurationInaccurate
+						{
+							get
+							{
+								return durationInaccurate;
+							}
+							set	
+							{
+								durationInaccurate = value;
 							}
 						}
 
@@ -788,9 +890,9 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 							private string preloadTime;
 
-							private string costBandwidth;
-
 							private string avgBitrate;
+
+							private string costBandwidth;
 
 							public string PreloadTime
 							{
@@ -801,18 +903,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 								set	
 								{
 									preloadTime = value;
-								}
-							}
-
-							public string CostBandwidth
-							{
-								get
-								{
-									return costBandwidth;
-								}
-								set	
-								{
-									costBandwidth = value;
 								}
 							}
 
@@ -827,43 +917,69 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 									avgBitrate = value;
 								}
 							}
+
+							public string CostBandwidth
+							{
+								get
+								{
+									return costBandwidth;
+								}
+								set	
+								{
+									costBandwidth = value;
+								}
+							}
 						}
 					}
 
 					public class QueryMediaInfoJobList_AudioStream
 					{
 
+						private string timebase;
+
 						private string index;
-
-						private string codecName;
-
-						private string codecTimeBase;
-
-						private string codecLongName;
-
-						private string codecTagString;
-
-						private string codecTag;
 
 						private string sampleFmt;
 
+						private string channelLayout;
+
+						private string lang;
+
 						private string samplerate;
+
+						private string codecLongName;
 
 						private string channels;
 
-						private string channelLayout;
-
-						private string timebase;
-
-						private string startTime;
-
-						private string duration;
+						private string numFrames;
 
 						private string bitrate;
 
-						private string numFrames;
+						private string codecTagString;
 
-						private string lang;
+						private string startTime;
+
+						private string codecName;
+
+						private string duration;
+
+						private string codecTag;
+
+						private string codecTimeBase;
+
+						private string durationInaccurate;
+
+						public string Timebase
+						{
+							get
+							{
+								return timebase;
+							}
+							set	
+							{
+								timebase = value;
+							}
+						}
 
 						public string Index
 						{
@@ -874,66 +990,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							set	
 							{
 								index = value;
-							}
-						}
-
-						public string CodecName
-						{
-							get
-							{
-								return codecName;
-							}
-							set	
-							{
-								codecName = value;
-							}
-						}
-
-						public string CodecTimeBase
-						{
-							get
-							{
-								return codecTimeBase;
-							}
-							set	
-							{
-								codecTimeBase = value;
-							}
-						}
-
-						public string CodecLongName
-						{
-							get
-							{
-								return codecLongName;
-							}
-							set	
-							{
-								codecLongName = value;
-							}
-						}
-
-						public string CodecTagString
-						{
-							get
-							{
-								return codecTagString;
-							}
-							set	
-							{
-								codecTagString = value;
-							}
-						}
-
-						public string CodecTag
-						{
-							get
-							{
-								return codecTag;
-							}
-							set	
-							{
-								codecTag = value;
 							}
 						}
 
@@ -949,30 +1005,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
-						public string Samplerate
-						{
-							get
-							{
-								return samplerate;
-							}
-							set	
-							{
-								samplerate = value;
-							}
-						}
-
-						public string Channels
-						{
-							get
-							{
-								return channels;
-							}
-							set	
-							{
-								channels = value;
-							}
-						}
-
 						public string ChannelLayout
 						{
 							get
@@ -982,66 +1014,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							set	
 							{
 								channelLayout = value;
-							}
-						}
-
-						public string Timebase
-						{
-							get
-							{
-								return timebase;
-							}
-							set	
-							{
-								timebase = value;
-							}
-						}
-
-						public string StartTime
-						{
-							get
-							{
-								return startTime;
-							}
-							set	
-							{
-								startTime = value;
-							}
-						}
-
-						public string Duration
-						{
-							get
-							{
-								return duration;
-							}
-							set	
-							{
-								duration = value;
-							}
-						}
-
-						public string Bitrate
-						{
-							get
-							{
-								return bitrate;
-							}
-							set	
-							{
-								bitrate = value;
-							}
-						}
-
-						public string NumFrames
-						{
-							get
-							{
-								return numFrames;
-							}
-							set	
-							{
-								numFrames = value;
 							}
 						}
 
@@ -1056,64 +1028,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 								lang = value;
 							}
 						}
-					}
 
-					public class QueryMediaInfoJobList_SubtitleStream
-					{
-
-						private string index;
-
-						private string codecName;
-
-						private string codecTimeBase;
-
-						private string codecLongName;
-
-						private string codecTagString;
-
-						private string codecTag;
-
-						private string timebase;
-
-						private string startTime;
-
-						private string duration;
-
-						private string lang;
-
-						public string Index
+						public string Samplerate
 						{
 							get
 							{
-								return index;
+								return samplerate;
 							}
 							set	
 							{
-								index = value;
-							}
-						}
-
-						public string CodecName
-						{
-							get
-							{
-								return codecName;
-							}
-							set	
-							{
-								codecName = value;
-							}
-						}
-
-						public string CodecTimeBase
-						{
-							get
-							{
-								return codecTimeBase;
-							}
-							set	
-							{
-								codecTimeBase = value;
+								samplerate = value;
 							}
 						}
 
@@ -1129,6 +1053,42 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
+						public string Channels
+						{
+							get
+							{
+								return channels;
+							}
+							set	
+							{
+								channels = value;
+							}
+						}
+
+						public string NumFrames
+						{
+							get
+							{
+								return numFrames;
+							}
+							set	
+							{
+								numFrames = value;
+							}
+						}
+
+						public string Bitrate
+						{
+							get
+							{
+								return bitrate;
+							}
+							set	
+							{
+								bitrate = value;
+							}
+						}
+
 						public string CodecTagString
 						{
 							get
@@ -1138,30 +1098,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							set	
 							{
 								codecTagString = value;
-							}
-						}
-
-						public string CodecTag
-						{
-							get
-							{
-								return codecTag;
-							}
-							set	
-							{
-								codecTag = value;
-							}
-						}
-
-						public string Timebase
-						{
-							get
-							{
-								return timebase;
-							}
-							set	
-							{
-								timebase = value;
 							}
 						}
 
@@ -1177,6 +1113,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
+						public string CodecName
+						{
+							get
+							{
+								return codecName;
+							}
+							set	
+							{
+								codecName = value;
+							}
+						}
+
 						public string Duration
 						{
 							get
@@ -1186,6 +1134,114 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							set	
 							{
 								duration = value;
+							}
+						}
+
+						public string CodecTag
+						{
+							get
+							{
+								return codecTag;
+							}
+							set	
+							{
+								codecTag = value;
+							}
+						}
+
+						public string CodecTimeBase
+						{
+							get
+							{
+								return codecTimeBase;
+							}
+							set	
+							{
+								codecTimeBase = value;
+							}
+						}
+
+						public string DurationInaccurate
+						{
+							get
+							{
+								return durationInaccurate;
+							}
+							set	
+							{
+								durationInaccurate = value;
+							}
+						}
+					}
+
+					public class QueryMediaInfoJobList_SubtitleStream
+					{
+
+						private string timebase;
+
+						private string index;
+
+						private string startTime;
+
+						private string codecName;
+
+						private string lang;
+
+						private string codecLongName;
+
+						private string duration;
+
+						private string codecTag;
+
+						private string codecTimeBase;
+
+						private string codecTagString;
+
+						public string Timebase
+						{
+							get
+							{
+								return timebase;
+							}
+							set	
+							{
+								timebase = value;
+							}
+						}
+
+						public string Index
+						{
+							get
+							{
+								return index;
+							}
+							set	
+							{
+								index = value;
+							}
+						}
+
+						public string StartTime
+						{
+							get
+							{
+								return startTime;
+							}
+							set	
+							{
+								startTime = value;
+							}
+						}
+
+						public string CodecName
+						{
+							get
+							{
+								return codecName;
+							}
+							set	
+							{
+								codecName = value;
 							}
 						}
 
@@ -1200,37 +1256,97 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 								lang = value;
 							}
 						}
+
+						public string CodecLongName
+						{
+							get
+							{
+								return codecLongName;
+							}
+							set	
+							{
+								codecLongName = value;
+							}
+						}
+
+						public string Duration
+						{
+							get
+							{
+								return duration;
+							}
+							set	
+							{
+								duration = value;
+							}
+						}
+
+						public string CodecTag
+						{
+							get
+							{
+								return codecTag;
+							}
+							set	
+							{
+								codecTag = value;
+							}
+						}
+
+						public string CodecTimeBase
+						{
+							get
+							{
+								return codecTimeBase;
+							}
+							set	
+							{
+								codecTimeBase = value;
+							}
+						}
+
+						public string CodecTagString
+						{
+							get
+							{
+								return codecTagString;
+							}
+							set	
+							{
+								codecTagString = value;
+							}
+						}
 					}
 				}
 
 				public class QueryMediaInfoJobList_Format
 				{
 
-					private string numStreams;
+					private string startTime;
 
 					private string numPrograms;
 
-					private string formatName;
+					private string size;
+
+					private string numStreams;
 
 					private string formatLongName;
 
-					private string startTime;
-
 					private string duration;
-
-					private string size;
 
 					private string bitrate;
 
-					public string NumStreams
+					private string formatName;
+
+					public string StartTime
 					{
 						get
 						{
-							return numStreams;
+							return startTime;
 						}
 						set	
 						{
-							numStreams = value;
+							startTime = value;
 						}
 					}
 
@@ -1246,15 +1362,27 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public string FormatName
+					public string Size
 					{
 						get
 						{
-							return formatName;
+							return size;
 						}
 						set	
 						{
-							formatName = value;
+							size = value;
+						}
+					}
+
+					public string NumStreams
+					{
+						get
+						{
+							return numStreams;
+						}
+						set	
+						{
+							numStreams = value;
 						}
 					}
 
@@ -1270,18 +1398,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public string StartTime
-					{
-						get
-						{
-							return startTime;
-						}
-						set	
-						{
-							startTime = value;
-						}
-					}
-
 					public string Duration
 					{
 						get
@@ -1291,18 +1407,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						set	
 						{
 							duration = value;
-						}
-					}
-
-					public string Size
-					{
-						get
-						{
-							return size;
-						}
-						set	
-						{
-							size = value;
 						}
 					}
 
@@ -1317,51 +1421,17 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							bitrate = value;
 						}
 					}
-				}
-			}
 
-			public class QueryMediaInfoJobList_MNSMessageResult
-			{
-
-				private string messageId;
-
-				private string errorMessage;
-
-				private string errorCode;
-
-				public string MessageId
-				{
-					get
+					public string FormatName
 					{
-						return messageId;
-					}
-					set	
-					{
-						messageId = value;
-					}
-				}
-
-				public string ErrorMessage
-				{
-					get
-					{
-						return errorMessage;
-					}
-					set	
-					{
-						errorMessage = value;
-					}
-				}
-
-				public string ErrorCode
-				{
-					get
-					{
-						return errorCode;
-					}
-					set	
-					{
-						errorCode = value;
+						get
+						{
+							return formatName;
+						}
+						set	
+						{
+							formatName = value;
+						}
 					}
 				}
 			}

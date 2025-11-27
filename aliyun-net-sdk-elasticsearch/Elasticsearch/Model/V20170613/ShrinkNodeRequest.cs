@@ -49,6 +49,10 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private string clientToken;
 
+		private int? count;
+
+		private string body;
+
 		public bool? IgnoreStatus
 		{
 			get
@@ -98,6 +102,32 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "clientToken", value);
+			}
+		}
+
+		public int? Count
+		{
+			get
+			{
+				return count;
+			}
+			set	
+			{
+				count = value;
+				DictionaryUtil.Add(QueryParameters, "count", value.ToString());
+			}
+		}
+
+		public string Body
+		{
+			get
+			{
+				return body;
+			}
+			set	
+			{
+				body = value;
+				DictionaryUtil.Add(BodyParameters, "body", value);
 			}
 		}
 

@@ -36,10 +36,10 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<ListAckClustersResponse.ListAckClusters_ResultItem> listAckClustersResponse_result = new List<ListAckClustersResponse.ListAckClusters_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListAckClusters.Result.Length"); i++) {
 				ListAckClustersResponse.ListAckClusters_ResultItem resultItem = new ListAckClustersResponse.ListAckClusters_ResultItem();
-				resultItem.ClusterId = _ctx.StringValue("ListAckClusters.Result["+ i +"].clusterId");
-				resultItem.Name = _ctx.StringValue("ListAckClusters.Result["+ i +"].name");
 				resultItem.ClusterType = _ctx.StringValue("ListAckClusters.Result["+ i +"].clusterType");
 				resultItem.VpcId = _ctx.StringValue("ListAckClusters.Result["+ i +"].vpcId");
+				resultItem.Name = _ctx.StringValue("ListAckClusters.Result["+ i +"].name");
+				resultItem.ClusterId = _ctx.StringValue("ListAckClusters.Result["+ i +"].clusterId");
 
 				listAckClustersResponse_result.Add(resultItem);
 			}

@@ -61,6 +61,9 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 				responseDataItem.ThreatScore = _ctx.FloatValue("DescribeCloudSiemEvents.Data.ResponseData["+ i +"].ThreatScore");
 				responseDataItem.ExtContent = _ctx.StringValue("DescribeCloudSiemEvents.Data.ResponseData["+ i +"].ExtContent");
 				responseDataItem.Status = _ctx.IntegerValue("DescribeCloudSiemEvents.Data.ResponseData["+ i +"].Status");
+				responseDataItem.ReferAccount = _ctx.StringValue("DescribeCloudSiemEvents.Data.ResponseData["+ i +"].ReferAccount");
+				responseDataItem.IncidentType = _ctx.StringValue("DescribeCloudSiemEvents.Data.ResponseData["+ i +"].IncidentType");
+				responseDataItem.RuleId = _ctx.StringValue("DescribeCloudSiemEvents.Data.ResponseData["+ i +"].RuleId");
 				responseDataItem.Remark = _ctx.StringValue("DescribeCloudSiemEvents.Data.ResponseData["+ i +"].Remark");
 
 				List<string> responseDataItem_dataSources = new List<string>();
@@ -74,6 +77,17 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 					responseDataItem_attCkLabels.Add(_ctx.StringValue("DescribeCloudSiemEvents.Data.ResponseData["+ i +"].AttCkLabels["+ j +"]"));
 				}
 				responseDataItem.AttCkLabels = responseDataItem_attCkLabels;
+
+				List<DescribeCloudSiemEventsResponse.DescribeCloudSiemEvents_Data.DescribeCloudSiemEvents_ResponseDataItem.DescribeCloudSiemEvents_AttckStage> responseDataItem_attckStages = new List<DescribeCloudSiemEventsResponse.DescribeCloudSiemEvents_Data.DescribeCloudSiemEvents_ResponseDataItem.DescribeCloudSiemEvents_AttckStage>();
+				for (int j = 0; j < _ctx.Length("DescribeCloudSiemEvents.Data.ResponseData["+ i +"].AttckStages.Length"); j++) {
+					DescribeCloudSiemEventsResponse.DescribeCloudSiemEvents_Data.DescribeCloudSiemEvents_ResponseDataItem.DescribeCloudSiemEvents_AttckStage attckStage = new DescribeCloudSiemEventsResponse.DescribeCloudSiemEvents_Data.DescribeCloudSiemEvents_ResponseDataItem.DescribeCloudSiemEvents_AttckStage();
+					attckStage.TacticId = _ctx.StringValue("DescribeCloudSiemEvents.Data.ResponseData["+ i +"].AttckStages["+ j +"].TacticId");
+					attckStage.TacticName = _ctx.StringValue("DescribeCloudSiemEvents.Data.ResponseData["+ i +"].AttckStages["+ j +"].TacticName");
+					attckStage.AlertNum = _ctx.IntegerValue("DescribeCloudSiemEvents.Data.ResponseData["+ i +"].AttckStages["+ j +"].AlertNum");
+
+					responseDataItem_attckStages.Add(attckStage);
+				}
+				responseDataItem.AttckStages = responseDataItem_attckStages;
 
 				data_responseData.Add(responseDataItem);
 			}

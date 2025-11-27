@@ -44,6 +44,8 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string destinationEncryptionContext;
 
+		private string dryRun;
+
 		private string sourceKeyId;
 
 		private string sourceEncryptionAlgorithm;
@@ -67,6 +69,20 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				destinationEncryptionContext = value;
 				DictionaryUtil.Add(QueryParameters, "DestinationEncryptionContext", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DryRun")]
+		public string DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value);
 			}
 		}
 
@@ -152,11 +168,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 				ciphertextBlob = value;
 				DictionaryUtil.Add(QueryParameters, "CiphertextBlob", value);
 			}
-		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
 		}
 
         public override ReEncryptResponse GetResponse(UnmarshallerContext unmarshallerContext)

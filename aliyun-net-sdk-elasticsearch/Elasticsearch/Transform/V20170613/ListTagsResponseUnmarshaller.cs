@@ -36,8 +36,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<ListTagsResponse.ListTags_ResultItem> listTagsResponse_result = new List<ListTagsResponse.ListTags_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListTags.Result.Length"); i++) {
 				ListTagsResponse.ListTags_ResultItem resultItem = new ListTagsResponse.ListTags_ResultItem();
-				resultItem.TagKey = _ctx.StringValue("ListTags.Result["+ i +"].TagKey");
 				resultItem.TagValue = _ctx.StringValue("ListTags.Result["+ i +"].TagValue");
+				resultItem.TagKey = _ctx.StringValue("ListTags.Result["+ i +"].TagKey");
 
 				listTagsResponse_result.Add(resultItem);
 			}

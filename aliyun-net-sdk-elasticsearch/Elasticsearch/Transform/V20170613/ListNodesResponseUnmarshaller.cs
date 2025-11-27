@@ -40,11 +40,11 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<ListNodesResponse.ListNodes_ResultItem> listNodesResponse_result = new List<ListNodesResponse.ListNodes_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListNodes.Result.Length"); i++) {
 				ListNodesResponse.ListNodes_ResultItem resultItem = new ListNodesResponse.ListNodes_ResultItem();
-				resultItem.EcsInstanceId = _ctx.StringValue("ListNodes.Result["+ i +"].ecsInstanceId");
-				resultItem.EcsInstanceName = _ctx.StringValue("ListNodes.Result["+ i +"].ecsInstanceName");
-				resultItem.Status = _ctx.StringValue("ListNodes.Result["+ i +"].status");
-				resultItem.OsType = _ctx.StringValue("ListNodes.Result["+ i +"].osType");
 				resultItem.CloudAssistantStatus = _ctx.StringValue("ListNodes.Result["+ i +"].cloudAssistantStatus");
+				resultItem.EcsInstanceName = _ctx.StringValue("ListNodes.Result["+ i +"].ecsInstanceName");
+				resultItem.EcsInstanceId = _ctx.StringValue("ListNodes.Result["+ i +"].ecsInstanceId");
+				resultItem.OsType = _ctx.StringValue("ListNodes.Result["+ i +"].osType");
+				resultItem.Status = _ctx.StringValue("ListNodes.Result["+ i +"].status");
 				resultItem.AgentStatus = _ctx.StringValue("ListNodes.Result["+ i +"].agentStatus");
 
 				List<ListNodesResponse.ListNodes_ResultItem.ListNodes_TagsItem> resultItem_tags = new List<ListNodesResponse.ListNodes_ResultItem.ListNodes_TagsItem>();
@@ -60,8 +60,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 				List<ListNodesResponse.ListNodes_ResultItem.ListNodes_IpAddressItem> resultItem_ipAddress = new List<ListNodesResponse.ListNodes_ResultItem.ListNodes_IpAddressItem>();
 				for (int j = 0; j < _ctx.Length("ListNodes.Result["+ i +"].IpAddress.Length"); j++) {
 					ListNodesResponse.ListNodes_ResultItem.ListNodes_IpAddressItem ipAddressItem = new ListNodesResponse.ListNodes_ResultItem.ListNodes_IpAddressItem();
-					ipAddressItem.Host = _ctx.StringValue("ListNodes.Result["+ i +"].IpAddress["+ j +"].host");
 					ipAddressItem.IpType = _ctx.StringValue("ListNodes.Result["+ i +"].IpAddress["+ j +"].ipType");
+					ipAddressItem.Host = _ctx.StringValue("ListNodes.Result["+ i +"].IpAddress["+ j +"].host");
 
 					resultItem_ipAddress.Add(ipAddressItem);
 				}

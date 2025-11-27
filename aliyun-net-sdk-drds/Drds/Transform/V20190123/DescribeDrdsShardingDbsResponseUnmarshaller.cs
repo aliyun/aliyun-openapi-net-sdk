@@ -31,25 +31,28 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			DescribeDrdsShardingDbsResponse describeDrdsShardingDbsResponse = new DescribeDrdsShardingDbsResponse();
 
 			describeDrdsShardingDbsResponse.HttpResponse = _ctx.HttpResponse;
-			describeDrdsShardingDbsResponse.RequestId = _ctx.StringValue("DescribeDrdsShardingDbs.RequestId");
 			describeDrdsShardingDbsResponse.Success = _ctx.BooleanValue("DescribeDrdsShardingDbs.Success");
+			describeDrdsShardingDbsResponse.RequestId = _ctx.StringValue("DescribeDrdsShardingDbs.RequestId");
+			describeDrdsShardingDbsResponse.PageNumber = _ctx.StringValue("DescribeDrdsShardingDbs.PageNumber");
+			describeDrdsShardingDbsResponse.PageSize = _ctx.StringValue("DescribeDrdsShardingDbs.PageSize");
+			describeDrdsShardingDbsResponse.Total = _ctx.StringValue("DescribeDrdsShardingDbs.Total");
 
 			List<DescribeDrdsShardingDbsResponse.DescribeDrdsShardingDbs_ShardingDb> describeDrdsShardingDbsResponse_shardingDbs = new List<DescribeDrdsShardingDbsResponse.DescribeDrdsShardingDbs_ShardingDb>();
 			for (int i = 0; i < _ctx.Length("DescribeDrdsShardingDbs.ShardingDbs.Length"); i++) {
 				DescribeDrdsShardingDbsResponse.DescribeDrdsShardingDbs_ShardingDb shardingDb = new DescribeDrdsShardingDbsResponse.DescribeDrdsShardingDbs_ShardingDb();
-				shardingDb.ShardingDbName = _ctx.StringValue("DescribeDrdsShardingDbs.ShardingDbs["+ i +"].ShardingDbName");
-				shardingDb.DbInstanceId = _ctx.StringValue("DescribeDrdsShardingDbs.ShardingDbs["+ i +"].DbInstanceId");
-				shardingDb.GroupName = _ctx.StringValue("DescribeDrdsShardingDbs.ShardingDbs["+ i +"].GroupName");
-				shardingDb.DbStatus = _ctx.StringValue("DescribeDrdsShardingDbs.ShardingDbs["+ i +"].DbStatus");
-				shardingDb.DbType = _ctx.StringValue("DescribeDrdsShardingDbs.ShardingDbs["+ i +"].DbType");
 				shardingDb.MinPoolSize = _ctx.IntegerValue("DescribeDrdsShardingDbs.ShardingDbs["+ i +"].MinPoolSize");
 				shardingDb.MaxPoolSize = _ctx.IntegerValue("DescribeDrdsShardingDbs.ShardingDbs["+ i +"].MaxPoolSize");
-				shardingDb.IdleTimeOut = _ctx.IntegerValue("DescribeDrdsShardingDbs.ShardingDbs["+ i +"].IdleTimeOut");
-				shardingDb.BlockingTimeout = _ctx.IntegerValue("DescribeDrdsShardingDbs.ShardingDbs["+ i +"].BlockingTimeout");
-				shardingDb.ConnectionProperties = _ctx.StringValue("DescribeDrdsShardingDbs.ShardingDbs["+ i +"].ConnectionProperties");
-				shardingDb.PreparedStatementCacheSize = _ctx.IntegerValue("DescribeDrdsShardingDbs.ShardingDbs["+ i +"].PreparedStatementCacheSize");
-				shardingDb.UserName = _ctx.StringValue("DescribeDrdsShardingDbs.ShardingDbs["+ i +"].UserName");
+				shardingDb.DbInstanceId = _ctx.StringValue("DescribeDrdsShardingDbs.ShardingDbs["+ i +"].DbInstanceId");
 				shardingDb.ConnectUrl = _ctx.StringValue("DescribeDrdsShardingDbs.ShardingDbs["+ i +"].ConnectUrl");
+				shardingDb.GroupName = _ctx.StringValue("DescribeDrdsShardingDbs.ShardingDbs["+ i +"].GroupName");
+				shardingDb.DbType = _ctx.StringValue("DescribeDrdsShardingDbs.ShardingDbs["+ i +"].DbType");
+				shardingDb.IdleTimeOut = _ctx.IntegerValue("DescribeDrdsShardingDbs.ShardingDbs["+ i +"].IdleTimeOut");
+				shardingDb.ShardingDbName = _ctx.StringValue("DescribeDrdsShardingDbs.ShardingDbs["+ i +"].ShardingDbName");
+				shardingDb.BlockingTimeout = _ctx.IntegerValue("DescribeDrdsShardingDbs.ShardingDbs["+ i +"].BlockingTimeout");
+				shardingDb.PreparedStatementCacheSize = _ctx.IntegerValue("DescribeDrdsShardingDbs.ShardingDbs["+ i +"].PreparedStatementCacheSize");
+				shardingDb.ConnectionProperties = _ctx.StringValue("DescribeDrdsShardingDbs.ShardingDbs["+ i +"].ConnectionProperties");
+				shardingDb.UserName = _ctx.StringValue("DescribeDrdsShardingDbs.ShardingDbs["+ i +"].UserName");
+				shardingDb.DbStatus = _ctx.StringValue("DescribeDrdsShardingDbs.ShardingDbs["+ i +"].DbStatus");
 
 				describeDrdsShardingDbsResponse_shardingDbs.Add(shardingDb);
 			}

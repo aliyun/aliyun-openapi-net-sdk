@@ -171,6 +171,8 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 				private long? sizeReal;
 
+				private long? sizeRealInByte;
+
 				public long? FileCountReal
 				{
 					get
@@ -252,6 +254,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 					set	
 					{
 						sizeReal = value;
+					}
+				}
+
+				public long? SizeRealInByte
+				{
+					get
+					{
+						return sizeRealInByte;
+					}
+					set	
+					{
+						sizeRealInByte = value;
 					}
 				}
 			}

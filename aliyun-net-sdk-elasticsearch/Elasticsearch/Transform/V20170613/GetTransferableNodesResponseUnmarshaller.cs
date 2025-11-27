@@ -36,8 +36,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<GetTransferableNodesResponse.GetTransferableNodes_ResultItem> getTransferableNodesResponse_result = new List<GetTransferableNodesResponse.GetTransferableNodes_ResultItem>();
 			for (int i = 0; i < _ctx.Length("GetTransferableNodes.Result.Length"); i++) {
 				GetTransferableNodesResponse.GetTransferableNodes_ResultItem resultItem = new GetTransferableNodesResponse.GetTransferableNodes_ResultItem();
-				resultItem.Host = _ctx.StringValue("GetTransferableNodes.Result["+ i +"].host");
 				resultItem.Port = _ctx.IntegerValue("GetTransferableNodes.Result["+ i +"].port");
+				resultItem.Host = _ctx.StringValue("GetTransferableNodes.Result["+ i +"].host");
 
 				getTransferableNodesResponse_result.Add(resultItem);
 			}

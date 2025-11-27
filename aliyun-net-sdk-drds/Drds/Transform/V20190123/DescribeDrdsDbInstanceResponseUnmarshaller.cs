@@ -31,43 +31,43 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			DescribeDrdsDbInstanceResponse describeDrdsDbInstanceResponse = new DescribeDrdsDbInstanceResponse();
 
 			describeDrdsDbInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			describeDrdsDbInstanceResponse.RequestId = _ctx.StringValue("DescribeDrdsDbInstance.RequestId");
 			describeDrdsDbInstanceResponse.Success = _ctx.BooleanValue("DescribeDrdsDbInstance.Success");
+			describeDrdsDbInstanceResponse.RequestId = _ctx.StringValue("DescribeDrdsDbInstance.RequestId");
 
 			DescribeDrdsDbInstanceResponse.DescribeDrdsDbInstance_DbInstance dbInstance = new DescribeDrdsDbInstanceResponse.DescribeDrdsDbInstance_DbInstance();
-			dbInstance.DBInstanceId = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.DBInstanceId");
+			dbInstance.ExpireTime = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.ExpireTime");
+			dbInstance.PayType = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.PayType");
+			dbInstance.DBInstanceStatus = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.DBInstanceStatus");
+			dbInstance.NetworkType = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.NetworkType");
+			dbInstance.Port = _ctx.IntegerValue("DescribeDrdsDbInstance.DbInstance.Port");
+			dbInstance.EngineVersion = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.EngineVersion");
 			dbInstance.DmInstanceId = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.DmInstanceId");
 			dbInstance.ConnectUrl = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.ConnectUrl");
-			dbInstance.Port = _ctx.IntegerValue("DescribeDrdsDbInstance.DbInstance.Port");
-			dbInstance.DBInstanceStatus = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.DBInstanceStatus");
-			dbInstance.DbInstType = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.DbInstType");
 			dbInstance.ReadWeight = _ctx.IntegerValue("DescribeDrdsDbInstance.DbInstance.ReadWeight");
-			dbInstance.Engine = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.Engine");
-			dbInstance.EngineVersion = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.EngineVersion");
 			dbInstance.RdsInstType = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.RdsInstType");
-			dbInstance.PayType = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.PayType");
-			dbInstance.ExpireTime = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.ExpireTime");
 			dbInstance.RemainDays = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.RemainDays");
-			dbInstance.NetworkType = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.NetworkType");
+			dbInstance.DBInstanceId = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.DBInstanceId");
+			dbInstance.DbInstType = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.DbInstType");
+			dbInstance.Engine = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.Engine");
 
 			List<DescribeDrdsDbInstanceResponse.DescribeDrdsDbInstance_DbInstance.DescribeDrdsDbInstance_ReadOnlyInstance> dbInstance_readOnlyInstances = new List<DescribeDrdsDbInstanceResponse.DescribeDrdsDbInstance_DbInstance.DescribeDrdsDbInstance_ReadOnlyInstance>();
 			for (int i = 0; i < _ctx.Length("DescribeDrdsDbInstance.DbInstance.ReadOnlyInstances.Length"); i++) {
 				DescribeDrdsDbInstanceResponse.DescribeDrdsDbInstance_DbInstance.DescribeDrdsDbInstance_ReadOnlyInstance readOnlyInstance = new DescribeDrdsDbInstanceResponse.DescribeDrdsDbInstance_DbInstance.DescribeDrdsDbInstance_ReadOnlyInstance();
-				readOnlyInstance.DBInstanceId = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.ReadOnlyInstances["+ i +"].DBInstanceId");
+				readOnlyInstance.ExpireTime = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.ReadOnlyInstances["+ i +"].ExpireTime");
+				readOnlyInstance.PayType = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.ReadOnlyInstances["+ i +"].PayType");
+				readOnlyInstance.VersionAction = _ctx.IntegerValue("DescribeDrdsDbInstance.DbInstance.ReadOnlyInstances["+ i +"].VersionAction");
+				readOnlyInstance.DBInstanceStatus = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.ReadOnlyInstances["+ i +"].DBInstanceStatus");
+				readOnlyInstance.NetworkType = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.ReadOnlyInstances["+ i +"].NetworkType");
+				readOnlyInstance.Port = _ctx.IntegerValue("DescribeDrdsDbInstance.DbInstance.ReadOnlyInstances["+ i +"].Port");
+				readOnlyInstance.EngineVersion = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.ReadOnlyInstances["+ i +"].EngineVersion");
 				readOnlyInstance.DmInstanceId = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.ReadOnlyInstances["+ i +"].DmInstanceId");
 				readOnlyInstance.ConnectUrl = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.ReadOnlyInstances["+ i +"].ConnectUrl");
-				readOnlyInstance.Port = _ctx.IntegerValue("DescribeDrdsDbInstance.DbInstance.ReadOnlyInstances["+ i +"].Port");
-				readOnlyInstance.DBInstanceStatus = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.ReadOnlyInstances["+ i +"].DBInstanceStatus");
-				readOnlyInstance.DbInstType = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.ReadOnlyInstances["+ i +"].DbInstType");
 				readOnlyInstance.ReadWeight = _ctx.IntegerValue("DescribeDrdsDbInstance.DbInstance.ReadOnlyInstances["+ i +"].ReadWeight");
-				readOnlyInstance.Engine = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.ReadOnlyInstances["+ i +"].Engine");
-				readOnlyInstance.EngineVersion = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.ReadOnlyInstances["+ i +"].EngineVersion");
 				readOnlyInstance.RdsInstType = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.ReadOnlyInstances["+ i +"].RdsInstType");
-				readOnlyInstance.PayType = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.ReadOnlyInstances["+ i +"].PayType");
-				readOnlyInstance.ExpireTime = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.ReadOnlyInstances["+ i +"].ExpireTime");
 				readOnlyInstance.RemainDays = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.ReadOnlyInstances["+ i +"].RemainDays");
-				readOnlyInstance.NetworkType = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.ReadOnlyInstances["+ i +"].NetworkType");
-				readOnlyInstance.VersionAction = _ctx.IntegerValue("DescribeDrdsDbInstance.DbInstance.ReadOnlyInstances["+ i +"].VersionAction");
+				readOnlyInstance.DBInstanceId = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.ReadOnlyInstances["+ i +"].DBInstanceId");
+				readOnlyInstance.DbInstType = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.ReadOnlyInstances["+ i +"].DbInstType");
+				readOnlyInstance.Engine = _ctx.StringValue("DescribeDrdsDbInstance.DbInstance.ReadOnlyInstances["+ i +"].Engine");
 
 				dbInstance_readOnlyInstances.Add(readOnlyInstance);
 			}

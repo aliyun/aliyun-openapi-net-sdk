@@ -127,6 +127,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				extra.ReplicaGroupStatus = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].Extra.ReplicaGroupStatus");
 				extra.ActiveReplicaDBInstanceID = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].Extra.ActiveReplicaDBInstanceID");
 				extra.ReplicaGroupID = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].Extra.ReplicaGroupID");
+				extra.RecoveryModel = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].Extra.RecoveryModel");
 
 				List<string> extra_dBInstanceIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeDBInstanceAttribute.Items["+ i +"].Extra.DBInstanceIds.Length"); j++) {

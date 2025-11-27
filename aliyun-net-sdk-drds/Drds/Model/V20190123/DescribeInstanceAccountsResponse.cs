@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribeInstanceAccountsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private List<DescribeInstanceAccounts_InstanceAccount> instanceAccounts;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeInstanceAccounts_InstanceAccount> instanceAccounts;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,27 +70,15 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class DescribeInstanceAccounts_InstanceAccount
 		{
 
-			private string accountName;
-
 			private string host;
-
-			private int? accountType;
 
 			private string description;
 
-			private List<DescribeInstanceAccounts_DbPrivilege> dbPrivileges;
+			private int? accountType;
 
-			public string AccountName
-			{
-				get
-				{
-					return accountName;
-				}
-				set	
-				{
-					accountName = value;
-				}
-			}
+			private string accountName;
+
+			private List<DescribeInstanceAccounts_DbPrivilege> dbPrivileges;
 
 			public string Host
 			{
@@ -101,6 +89,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					host = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
 				}
 			}
 
@@ -116,15 +116,15 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public string Description
+			public string AccountName
 			{
 				get
 				{
-					return description;
+					return accountName;
 				}
 				set	
 				{
-					description = value;
+					accountName = value;
 				}
 			}
 

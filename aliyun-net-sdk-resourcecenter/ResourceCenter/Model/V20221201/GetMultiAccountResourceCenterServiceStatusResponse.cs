@@ -25,11 +25,23 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 	public class GetMultiAccountResourceCenterServiceStatusResponse : AcsResponse
 	{
 
+		private string initialStatus;
+
 		private string requestId;
 
 		private string serviceStatus;
 
-		private string initialStatus;
+		public string InitialStatus
+		{
+			get
+			{
+				return initialStatus;
+			}
+			set	
+			{
+				initialStatus = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -52,18 +64,6 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 			set	
 			{
 				serviceStatus = value;
-			}
-		}
-
-		public string InitialStatus
-		{
-			get
-			{
-				return initialStatus;
-			}
-			set	
-			{
-				initialStatus = value;
 			}
 		}
 	}

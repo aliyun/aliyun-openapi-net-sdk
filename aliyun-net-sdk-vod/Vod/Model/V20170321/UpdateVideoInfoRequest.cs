@@ -47,6 +47,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string coverURL;
 
+		private string userData;
+
 		private long? cateId;
 
 		private string videoId;
@@ -92,6 +94,20 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				coverURL = value;
 				DictionaryUtil.Add(QueryParameters, "CoverURL", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "UserData")]
+		public string UserData
+		{
+			get
+			{
+				return userData;
+			}
+			set	
+			{
+				userData = value;
+				DictionaryUtil.Add(QueryParameters, "UserData", value);
 			}
 		}
 

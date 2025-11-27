@@ -47,6 +47,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private string policyName;
 
+		private string body;
+
 		public string InstanceId
 		{
 			get
@@ -83,6 +85,19 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			{
 				policyName = value;
 				DictionaryUtil.Add(PathParameters, "PolicyName", value);
+			}
+		}
+
+		public string Body
+		{
+			get
+			{
+				return body;
+			}
+			set	
+			{
+				body = value;
+				DictionaryUtil.Add(BodyParameters, "body", value);
 			}
 		}
 

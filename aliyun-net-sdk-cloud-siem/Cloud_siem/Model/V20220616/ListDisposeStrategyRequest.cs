@@ -41,9 +41,13 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 		private string playbookTypes;
 
+		private long? roleFor;
+
 		private long? startTime;
 
 		private int? pageSize;
+
+		private int? roleType;
 
 		private string orderField;
 
@@ -60,6 +64,8 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 		private string playbookUuid;
 
 		private string entityType;
+
+		private string incidentUuid;
 
 		public string EntityIdentity
 		{
@@ -100,6 +106,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			}
 		}
 
+		public long? RoleFor
+		{
+			get
+			{
+				return roleFor;
+			}
+			set	
+			{
+				roleFor = value;
+				DictionaryUtil.Add(BodyParameters, "RoleFor", value.ToString());
+			}
+		}
+
 		public long? StartTime
 		{
 			get
@@ -123,6 +142,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			{
 				pageSize = value;
 				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public int? RoleType
+		{
+			get
+			{
+				return roleType;
+			}
+			set	
+			{
+				roleType = value;
+				DictionaryUtil.Add(BodyParameters, "RoleType", value.ToString());
 			}
 		}
 
@@ -227,6 +259,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			{
 				entityType = value;
 				DictionaryUtil.Add(BodyParameters, "EntityType", value);
+			}
+		}
+
+		public string IncidentUuid
+		{
+			get
+			{
+				return incidentUuid;
+			}
+			set	
+			{
+				incidentUuid = value;
+				DictionaryUtil.Add(BodyParameters, "IncidentUuid", value);
 			}
 		}
 

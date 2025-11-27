@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -70,27 +70,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class ListDicts_ResultItem
 		{
 
-			private string name;
-
 			private long? fileSize;
-
-			private string type;
-
-			private string sourceType;
 
 			private string downloadUrl;
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+			private string sourceType;
+
+			private string type;
+
+			private string name;
 
 			public long? FileSize
 			{
@@ -104,15 +92,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public string Type
+			public string DownloadUrl
 			{
 				get
 				{
-					return type;
+					return downloadUrl;
 				}
 				set	
 				{
-					type = value;
+					downloadUrl = value;
 				}
 			}
 
@@ -128,15 +116,27 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public string DownloadUrl
+			public string Type
 			{
 				get
 				{
-					return downloadUrl;
+					return type;
 				}
 				set	
 				{
-					downloadUrl = value;
+					type = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 		}

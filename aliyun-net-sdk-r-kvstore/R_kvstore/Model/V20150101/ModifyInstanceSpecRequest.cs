@@ -42,11 +42,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
+		private string nodeType;
+
 		private string clientToken;
+
+		private int? slaveReadOnlyCount;
 
 		private string couponNo;
 
+		private int? storage;
+
 		private string instanceClass;
+
+		private string storageType;
 
 		private string securityToken;
 
@@ -76,7 +84,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private bool? forceUpgrade;
 
+		private int? slaveReplicaCount;
+
 		private string orderType;
+
+		private int? replicaCount;
 
 		public long? ResourceOwnerId
 		{
@@ -88,6 +100,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string NodeType
+		{
+			get
+			{
+				return nodeType;
+			}
+			set	
+			{
+				nodeType = value;
+				DictionaryUtil.Add(QueryParameters, "NodeType", value);
 			}
 		}
 
@@ -104,6 +129,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public int? SlaveReadOnlyCount
+		{
+			get
+			{
+				return slaveReadOnlyCount;
+			}
+			set	
+			{
+				slaveReadOnlyCount = value;
+				DictionaryUtil.Add(QueryParameters, "SlaveReadOnlyCount", value.ToString());
+			}
+		}
+
 		public string CouponNo
 		{
 			get
@@ -117,6 +155,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public int? Storage
+		{
+			get
+			{
+				return storage;
+			}
+			set	
+			{
+				storage = value;
+				DictionaryUtil.Add(QueryParameters, "Storage", value.ToString());
+			}
+		}
+
 		public string InstanceClass
 		{
 			get
@@ -127,6 +178,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				instanceClass = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceClass", value);
+			}
+		}
+
+		public string StorageType
+		{
+			get
+			{
+				return storageType;
+			}
+			set	
+			{
+				storageType = value;
+				DictionaryUtil.Add(QueryParameters, "StorageType", value);
 			}
 		}
 
@@ -312,6 +376,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public int? SlaveReplicaCount
+		{
+			get
+			{
+				return slaveReplicaCount;
+			}
+			set	
+			{
+				slaveReplicaCount = value;
+				DictionaryUtil.Add(QueryParameters, "SlaveReplicaCount", value.ToString());
+			}
+		}
+
 		public string OrderType
 		{
 			get
@@ -322,6 +399,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				orderType = value;
 				DictionaryUtil.Add(QueryParameters, "OrderType", value);
+			}
+		}
+
+		public int? ReplicaCount
+		{
+			get
+			{
+				return replicaCount;
+			}
+			set	
+			{
+				replicaCount = value;
+				DictionaryUtil.Add(QueryParameters, "ReplicaCount", value.ToString());
 			}
 		}
 

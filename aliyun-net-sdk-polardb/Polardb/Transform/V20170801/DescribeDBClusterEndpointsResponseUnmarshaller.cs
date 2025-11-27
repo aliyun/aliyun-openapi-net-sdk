@@ -36,7 +36,6 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			List<DescribeDBClusterEndpointsResponse.DescribeDBClusterEndpoints_DBEndpoint> describeDBClusterEndpointsResponse_items = new List<DescribeDBClusterEndpointsResponse.DescribeDBClusterEndpoints_DBEndpoint>();
 			for (int i = 0; i < _ctx.Length("DescribeDBClusterEndpoints.Items.Length"); i++) {
 				DescribeDBClusterEndpointsResponse.DescribeDBClusterEndpoints_DBEndpoint dBEndpoint = new DescribeDBClusterEndpointsResponse.DescribeDBClusterEndpoints_DBEndpoint();
-				dBEndpoint.NodeWithRoles = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].NodeWithRoles");
 				dBEndpoint.Nodes = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].Nodes");
 				dBEndpoint.ReadWriteMode = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].ReadWriteMode");
 				dBEndpoint.DBEndpointId = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].DBEndpointId");
@@ -45,6 +44,11 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				dBEndpoint.EndpointType = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].EndpointType");
 				dBEndpoint.AutoAddNewNodes = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AutoAddNewNodes");
 				dBEndpoint.DBClusterId = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].DBClusterId");
+				dBEndpoint.SccMode = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].SccMode");
+				dBEndpoint.PolarSccTimeoutAction = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].PolarSccTimeoutAction");
+				dBEndpoint.PolarSccWaitTimeout = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].PolarSccWaitTimeout");
+				dBEndpoint.NodeWithRoles = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].NodeWithRoles");
+				dBEndpoint.ConsistLevelControlVersion = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].ConsistLevelControlVersion");
 
 				List<DescribeDBClusterEndpointsResponse.DescribeDBClusterEndpoints_DBEndpoint.DescribeDBClusterEndpoints_Address> dBEndpoint_addressItems = new List<DescribeDBClusterEndpointsResponse.DescribeDBClusterEndpoints_DBEndpoint.DescribeDBClusterEndpoints_Address>();
 				for (int j = 0; j < _ctx.Length("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems.Length"); j++) {
@@ -57,6 +61,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 					address.VpcInstanceId = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems["+ j +"].VpcInstanceId");
 					address.VPCId = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems["+ j +"].VPCId");
 					address.IPAddress = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems["+ j +"].IPAddress");
+					address.DashboardUsed = _ctx.BooleanValue("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems["+ j +"].DashboardUsed");
 
 					dBEndpoint_addressItems.Add(address);
 				}

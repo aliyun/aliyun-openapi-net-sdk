@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			ListTagResourcesResponse listTagResourcesResponse = new ListTagResourcesResponse();
 
 			listTagResourcesResponse.HttpResponse = _ctx.HttpResponse;
-			listTagResourcesResponse.RequestId = _ctx.StringValue("ListTagResources.RequestId");
 			listTagResourcesResponse.PageSize = _ctx.IntegerValue("ListTagResources.PageSize");
+			listTagResourcesResponse.RequestId = _ctx.StringValue("ListTagResources.RequestId");
 
 			ListTagResourcesResponse.ListTagResources_Headers headers = new ListTagResourcesResponse.ListTagResources_Headers();
 			headers.XTotalCount = _ctx.IntegerValue("ListTagResources.Headers.X-Total-Count");
@@ -43,10 +43,10 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<ListTagResourcesResponse.ListTagResources_TagResources.ListTagResources_TagResourceItem> tagResources_tagResource = new List<ListTagResourcesResponse.ListTagResources_TagResources.ListTagResources_TagResourceItem>();
 			for (int i = 0; i < _ctx.Length("ListTagResources.TagResources.TagResource.Length"); i++) {
 				ListTagResourcesResponse.ListTagResources_TagResources.ListTagResources_TagResourceItem tagResourceItem = new ListTagResourcesResponse.ListTagResources_TagResources.ListTagResources_TagResourceItem();
-				tagResourceItem.ResourceId = _ctx.StringValue("ListTagResources.TagResources.TagResource["+ i +"].ResourceId");
-				tagResourceItem.ResourceType = _ctx.StringValue("ListTagResources.TagResources.TagResource["+ i +"].ResourceType");
-				tagResourceItem.TagKey = _ctx.StringValue("ListTagResources.TagResources.TagResource["+ i +"].TagKey");
 				tagResourceItem.TagValue = _ctx.StringValue("ListTagResources.TagResources.TagResource["+ i +"].TagValue");
+				tagResourceItem.ResourceType = _ctx.StringValue("ListTagResources.TagResources.TagResource["+ i +"].ResourceType");
+				tagResourceItem.ResourceId = _ctx.StringValue("ListTagResources.TagResources.TagResource["+ i +"].ResourceId");
+				tagResourceItem.TagKey = _ctx.StringValue("ListTagResources.TagResources.TagResource["+ i +"].TagKey");
 
 				tagResources_tagResource.Add(tagResourceItem);
 			}

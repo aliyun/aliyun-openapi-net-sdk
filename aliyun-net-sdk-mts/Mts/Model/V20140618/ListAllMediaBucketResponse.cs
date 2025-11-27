@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
@@ -70,9 +70,23 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		public class ListAllMediaBucket_MediaBucket
 		{
 
+			private string type;
+
 			private string bucket;
 
-			private string type;
+			private string referer;
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
+				}
+			}
 
 			public string Bucket
 			{
@@ -86,15 +100,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public string Type
+			public string Referer
 			{
 				get
 				{
-					return type;
+					return referer;
 				}
 				set	
 				{
-					type = value;
+					referer = value;
 				}
 			}
 		}

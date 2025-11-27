@@ -88,6 +88,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? logBackupRetentionPeriod;
 
+		private bool? preserveOneEachHour;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -397,6 +399,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				logBackupRetentionPeriod = value;
 				DictionaryUtil.Add(QueryParameters, "LogBackupRetentionPeriod", value.ToString());
+			}
+		}
+
+		public bool? PreserveOneEachHour
+		{
+			get
+			{
+				return preserveOneEachHour;
+			}
+			set	
+			{
+				preserveOneEachHour = value;
+				DictionaryUtil.Add(QueryParameters, "PreserveOneEachHour", value.ToString());
 			}
 		}
 

@@ -96,6 +96,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string lowerCaseTableNames;
 
+		private bool? storageEncryption;
+
 		private string scaleRoNumMax;
 
 		private string standbyAZ;
@@ -105,6 +107,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private string defaultTimeZone;
 
 		private string clusterNetworkType;
+
+		private string storageEncryptionKey;
 
 		private string parameterGroupId;
 
@@ -123,6 +127,10 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private string looseXEngineUseMemoryPct;
 
 		private string usedTime;
+
+		private string burstingEnabled;
+
+		private string targetMinorVersion;
 
 		private int? dBNodeNum;
 
@@ -518,6 +526,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public bool? StorageEncryption
+		{
+			get
+			{
+				return storageEncryption;
+			}
+			set	
+			{
+				storageEncryption = value;
+				DictionaryUtil.Add(QueryParameters, "StorageEncryption", value.ToString());
+			}
+		}
+
 		public string ScaleRoNumMax
 		{
 			get
@@ -580,6 +601,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				clusterNetworkType = value;
 				DictionaryUtil.Add(QueryParameters, "ClusterNetworkType", value);
+			}
+		}
+
+		public string StorageEncryptionKey
+		{
+			get
+			{
+				return storageEncryptionKey;
+			}
+			set	
+			{
+				storageEncryptionKey = value;
+				DictionaryUtil.Add(QueryParameters, "StorageEncryptionKey", value);
 			}
 		}
 
@@ -697,6 +731,32 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				usedTime = value;
 				DictionaryUtil.Add(QueryParameters, "UsedTime", value);
+			}
+		}
+
+		public string BurstingEnabled
+		{
+			get
+			{
+				return burstingEnabled;
+			}
+			set	
+			{
+				burstingEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "BurstingEnabled", value);
+			}
+		}
+
+		public string TargetMinorVersion
+		{
+			get
+			{
+				return targetMinorVersion;
+			}
+			set	
+			{
+				targetMinorVersion = value;
+				DictionaryUtil.Add(QueryParameters, "TargetMinorVersion", value);
 			}
 		}
 

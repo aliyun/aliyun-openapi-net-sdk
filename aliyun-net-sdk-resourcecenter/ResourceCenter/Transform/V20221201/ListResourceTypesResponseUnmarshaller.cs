@@ -31,18 +31,19 @@ namespace Aliyun.Acs.ResourceCenter.Transform.V20221201
 			ListResourceTypesResponse listResourceTypesResponse = new ListResourceTypesResponse();
 
 			listResourceTypesResponse.HttpResponse = _ctx.HttpResponse;
-			listResourceTypesResponse.RequestId = _ctx.StringValue("ListResourceTypes.RequestId");
-			listResourceTypesResponse.Success = _ctx.BooleanValue("ListResourceTypes.Success");
-			listResourceTypesResponse.ErrorCode = _ctx.StringValue("ListResourceTypes.ErrorCode");
-			listResourceTypesResponse.ErrorMessage = _ctx.StringValue("ListResourceTypes.ErrorMessage");
 			listResourceTypesResponse.DynamicCode = _ctx.StringValue("ListResourceTypes.DynamicCode");
 			listResourceTypesResponse.DynamicMessage = _ctx.StringValue("ListResourceTypes.DynamicMessage");
+			listResourceTypesResponse.ErrorCode = _ctx.StringValue("ListResourceTypes.ErrorCode");
+			listResourceTypesResponse.ErrorMessage = _ctx.StringValue("ListResourceTypes.ErrorMessage");
+			listResourceTypesResponse.RequestId = _ctx.StringValue("ListResourceTypes.RequestId");
+			listResourceTypesResponse.Success = _ctx.BooleanValue("ListResourceTypes.Success");
 
 			List<ListResourceTypesResponse.ListResourceTypes_ResourceType> listResourceTypesResponse_resourceTypes = new List<ListResourceTypesResponse.ListResourceTypes_ResourceType>();
 			for (int i = 0; i < _ctx.Length("ListResourceTypes.ResourceTypes.Length"); i++) {
 				ListResourceTypesResponse.ListResourceTypes_ResourceType resourceType = new ListResourceTypesResponse.ListResourceTypes_ResourceType();
-				resourceType.ResourceType = _ctx.StringValue("ListResourceTypes.ResourceTypes["+ i +"].ResourceType");
+				resourceType.Authorized = _ctx.BooleanValue("ListResourceTypes.ResourceTypes["+ i +"].Authorized");
 				resourceType.ProductName = _ctx.StringValue("ListResourceTypes.ResourceTypes["+ i +"].ProductName");
+				resourceType.ResourceType = _ctx.StringValue("ListResourceTypes.ResourceTypes["+ i +"].ResourceType");
 				resourceType.ResourceTypeName = _ctx.StringValue("ListResourceTypes.ResourceTypes["+ i +"].ResourceTypeName");
 
 				List<string> resourceType_filterKeys = new List<string>();
@@ -50,6 +51,12 @@ namespace Aliyun.Acs.ResourceCenter.Transform.V20221201
 					resourceType_filterKeys.Add(_ctx.StringValue("ListResourceTypes.ResourceTypes["+ i +"].FilterKeys["+ j +"]"));
 				}
 				resourceType.FilterKeys = resourceType_filterKeys;
+
+				List<string> resourceType_relatedResourceTypes = new List<string>();
+				for (int j = 0; j < _ctx.Length("ListResourceTypes.ResourceTypes["+ i +"].RelatedResourceTypes.Length"); j++) {
+					resourceType_relatedResourceTypes.Add(_ctx.StringValue("ListResourceTypes.ResourceTypes["+ i +"].RelatedResourceTypes["+ j +"]"));
+				}
+				resourceType.RelatedResourceTypes = resourceType_relatedResourceTypes;
 
 				ListResourceTypesResponse.ListResourceTypes_ResourceType.ListResourceTypes_CodeMapping codeMapping = new ListResourceTypesResponse.ListResourceTypes_ResourceType.ListResourceTypes_CodeMapping();
 				codeMapping.ResourceGroup = _ctx.StringValue("ListResourceTypes.ResourceTypes["+ i +"].CodeMapping.ResourceGroup");

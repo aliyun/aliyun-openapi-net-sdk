@@ -51,6 +51,20 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             Assert.Equal("There is no credential chain can use.", exception.Message);
         }
 
+        [Fact]
+        public void GetCredentialWithException()
+        {
+            var provider = new Mock<DefaultCredentialProvider>();
+            var defaultProvider = provider.Object;
+
+            var exception = Assert.Throws<ClientException>(() =>
+            {
+                var credential = defaultProvider.GetCredentials();
+            });
+
+            Assert.Equal("There is no credential chain can use.", exception.Message);
+        }
+
         /*
         Case: Test Credential File With default Client Name and file exist with ak value and type
         Result: should return AccessKeyCredential
@@ -59,18 +73,29 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         [Fact]
         public void GetCredentialFileAlibabaCloudCredentialWithAKType()
         {
+            var cacheRoleArn = Environment.GetEnvironmentVariable("ALIBABA_CLOUD_ROLE_ARN");
+            var cacheProviderArn = Environment.GetEnvironmentVariable("ALIBABA_CLOUD_OIDC_PROVIDER_ARN");
+            var cacheFile = Environment.GetEnvironmentVariable("ALIBABA_CLOUD_OIDC_TOKEN_FILE");
+
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_ROLE_ARN", null);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_PROVIDER_ARN", null);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_TOKEN_FILE", null);
+
             var profile = DefaultProfile.GetProfile();
             profile.DefaultClientName = "default";
             var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
             TestHelper.CreateIniFileWithAkType();
 
-            var credential = (BasicCredentials) defaultCredentialProvider.GetAlibabaCloudClientCredential();
+            var credential = (BasicCredentials)defaultCredentialProvider.GetAlibabaCloudClientCredential();
 
             TestHelper.DeleteIniFile();
 
             Assert.NotNull(credential);
             Assert.NotNull(credential.GetAccessKeyId());
             Assert.NotNull(credential.GetAccessKeySecret());
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_ROLE_ARN", cacheRoleArn);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_PROVIDER_ARN", cacheProviderArn);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_TOKEN_FILE", cacheFile);
         }
 
         /*
@@ -81,6 +106,14 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         [Fact]
         public void GetCredentialFileAlibabaCloudCredentialWithAKTypeButAKIsEmpty()
         {
+            var cacheRoleArn = Environment.GetEnvironmentVariable("ALIBABA_CLOUD_ROLE_ARN");
+            var cacheProviderArn = Environment.GetEnvironmentVariable("ALIBABA_CLOUD_OIDC_PROVIDER_ARN");
+            var cacheFile = Environment.GetEnvironmentVariable("ALIBABA_CLOUD_OIDC_TOKEN_FILE");
+
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_ROLE_ARN", null);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_PROVIDER_ARN", null);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_TOKEN_FILE", null);
+
             var profile = DefaultProfile.GetProfile();
             profile.DefaultClientName = "default";
             var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
@@ -88,17 +121,28 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
 
             var exception = Assert.Throws<ClientException>(() =>
             {
-                var credential = (BasicCredentials) defaultCredentialProvider.GetAlibabaCloudClientCredential();
+                var credential = (BasicCredentials)defaultCredentialProvider.GetAlibabaCloudClientCredential();
             });
 
             TestHelper.DeleteIniFile();
 
-            Assert.Equal("Missing required variable option for 'default Client'", exception.Message);
+            Assert.Equal("Access key ID cannot be null.", exception.Message);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_ROLE_ARN", cacheRoleArn);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_PROVIDER_ARN", cacheProviderArn);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_TOKEN_FILE", cacheFile);
         }
 
         [Fact]
         public void GetCredentialFileAlibabaCloudCredentialWithDefaultSection()
         {
+            var cacheRoleArn = Environment.GetEnvironmentVariable("ALIBABA_CLOUD_ROLE_ARN");
+            var cacheProviderArn = Environment.GetEnvironmentVariable("ALIBABA_CLOUD_OIDC_PROVIDER_ARN");
+            var cacheFile = Environment.GetEnvironmentVariable("ALIBABA_CLOUD_OIDC_TOKEN_FILE");
+
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_ROLE_ARN", null);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_PROVIDER_ARN", null);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_TOKEN_FILE", null);
+
             TestHelper.CreateIniFileWithDefaultSection();
 
             var profile = DefaultProfile.GetProfile();
@@ -111,6 +155,37 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             TestHelper.DeleteIniFile();
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_CREDENTIALS_FILE", null);
             Assert.NotNull(credential);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_ROLE_ARN", cacheRoleArn);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_PROVIDER_ARN", cacheProviderArn);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_TOKEN_FILE", cacheFile);
+
+        }
+
+        [Fact]
+        public void GetOIDCAlibabaCloudCredentialTest()
+        {
+            var cacheRoleArn = Environment.GetEnvironmentVariable("ALIBABA_CLOUD_ROLE_ARN");
+            var cacheProviderArn = Environment.GetEnvironmentVariable("ALIBABA_CLOUD_OIDC_PROVIDER_ARN");
+            var cacheFile = Environment.GetEnvironmentVariable("ALIBABA_CLOUD_OIDC_TOKEN_FILE");
+            var cacheRegionId = Environment.GetEnvironmentVariable("ALIBABA_CLOUD_REGION_ID");
+
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_ROLE_ARN", "test");
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_PROVIDER_ARN", "test");
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_TOKEN_FILE", TestHelper.GetOIDCTokenFilePath());
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_REGION_ID", "us-west-1");
+            var profile = DefaultProfile.GetProfile();
+            profile.DefaultClientName = "default";
+            var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
+            var exception = Assert.Throws<ClientException>(() =>
+            {
+                var credential = defaultCredentialProvider.GetAlibabaCloudClientCredential();
+            });
+            Assert.Contains("Parameter OIDCProviderArn is not valid", exception.Message);
+
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_ROLE_ARN", cacheRoleArn);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_PROVIDER_ARN", cacheProviderArn);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_TOKEN_FILE", cacheFile);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_REGION_ID", cacheRegionId);
         }
 
         /*
@@ -121,6 +196,14 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         [Fact]
         public void GetCredentialFileAlibabaCloudCredentialWithEcsRamRole()
         {
+            var cacheRoleArn = Environment.GetEnvironmentVariable("ALIBABA_CLOUD_ROLE_ARN");
+            var cacheProviderArn = Environment.GetEnvironmentVariable("ALIBABA_CLOUD_OIDC_PROVIDER_ARN");
+            var cacheFile = Environment.GetEnvironmentVariable("ALIBABA_CLOUD_OIDC_TOKEN_FILE");
+
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_ROLE_ARN", null);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_PROVIDER_ARN", null);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_TOKEN_FILE", null);
+
             var ecsRamRoleCredential =
                 new InstanceProfileCredentials("fakeak", "fakeaks", "fakesession", DateTime.UtcNow.ToString(), 4000);
             var mockHomePath = EnvironmentUtil.GetHomePath();
@@ -136,10 +219,14 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             mockDefaultCredentialProvider.Setup(x => x.GetHomePath()).Returns(mockHomePath);
 
             var defaultCredentialProvider = mockDefaultCredentialProvider.Object;
-            var credential = (InstanceProfileCredentials) defaultCredentialProvider.GetAlibabaCloudClientCredential();
+            var credential = (InstanceProfileCredentials)defaultCredentialProvider.GetAlibabaCloudClientCredential();
 
             TestHelper.DeleteIniFile();
             Assert.NotNull(credential);
+
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_ROLE_ARN", cacheRoleArn);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_PROVIDER_ARN", cacheProviderArn);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_TOKEN_FILE", cacheFile);
         }
 
         /*
@@ -157,11 +244,9 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
 
             var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
 
-            var credential = (BasicCredentials) defaultCredentialProvider.GetCredentialFileAlibabaCloudCredential();
-
+            var ex = Assert.Throws<ClientException>(() => (BasicCredentials)defaultCredentialProvider.GetCredentialFileAlibabaCloudCredential());
+            Assert.Equal("The configured client type is empty", ex.Message);
             TestHelper.DeleteIniFile();
-            Assert.NotNull(credential);
-            Assert.Equal("foo", credential.GetAccessKeyId());
         }
 
         /*
@@ -178,10 +263,10 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
 
             var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
 
-            var credential = defaultCredentialProvider.GetCredentialFileAlibabaCloudCredential();
+            var ex = Assert.Throws<ClientException>(() => defaultCredentialProvider.GetCredentialFileAlibabaCloudCredential());
+            Assert.Equal("The configured client type is empty", ex.Message);
 
             TestHelper.DeleteIniFile();
-            Assert.Null(credential);
         }
 
         /*
@@ -225,7 +310,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
 
             var defaultCredentialProvider = mockDefaultCredentialProvider.Object;
 
-            var credential = (InstanceProfileCredentials) defaultCredentialProvider.GetAlibabaCloudClientCredential();
+            var credential = (InstanceProfileCredentials)defaultCredentialProvider.GetAlibabaCloudClientCredential();
 
             TestHelper.DeleteIniFile();
             Assert.NotNull(credential);
@@ -253,7 +338,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
 
             var defaultCredentialProvider = mockDefaultCredentialProvider.Object;
 
-            var credential = (BasicSessionCredentials) defaultCredentialProvider.GetAlibabaCloudClientCredential();
+            var credential = (BasicSessionCredentials)defaultCredentialProvider.GetAlibabaCloudClientCredential();
 
             TestHelper.DeleteIniFile();
             Assert.NotNull(credential);
@@ -272,7 +357,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             TestHelper.InitializeEnvironmentValue();
 
             var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
-            var credential = (BasicCredentials) defaultCredentialProvider.GetAlibabaCloudClientCredential();
+            var credential = (BasicCredentials)defaultCredentialProvider.GetAlibabaCloudClientCredential();
 
             Assert.NotNull(credential);
             Assert.Equal("ACCESS_KEY_ID", credential.GetAccessKeyId());
@@ -293,7 +378,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             TestHelper.InitializeEnvironmentValue();
 
             var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
-            var credential = (BasicCredentials) defaultCredentialProvider.GetEnvironmentAlibabaCloudCredential();
+            var credential = (BasicCredentials)defaultCredentialProvider.GetEnvironmentAlibabaCloudCredential();
 
             Assert.NotNull(credential);
             Assert.Equal("ACCESS_KEY_ID", credential.GetAccessKeyId());
@@ -309,7 +394,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         public void GetEnvironmentClientCredentialWithoutAKTest()
         {
             var defaultCredentialProvider = new DefaultCredentialProvider();
-            var credential = (BasicCredentials) defaultCredentialProvider.GetEnvironmentAlibabaCloudCredential();
+            var credential = (BasicCredentials)defaultCredentialProvider.GetEnvironmentAlibabaCloudCredential();
             Assert.Null(credential);
         }
 
@@ -324,15 +409,15 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
                 defaultCredentialProvider.GetInstanceRamRoleAlibabaCloudCredential();
             });
 
-            Assert.Equal("RegionID cannot be null or empty.", exception.Message);
+            Assert.Equal("Environment variable roleName('ALIBABA_CLOUD_ECS_METADATA') cannot be empty", exception.Message);
 
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_REGION_ID", "region_id");
             profile.DefaultClientName = "test";
             defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
-            var credentialProvider = defaultCredentialProvider.GetInstanceRamRoleAlibabaCloudCredential();
+            var ex = Assert.Throws<ClientException>(() => defaultCredentialProvider.GetInstanceRamRoleAlibabaCloudCredential());
 
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_REGION_ID", null);
-            Assert.Null(credentialProvider);
+            Assert.Equal("Environment variable roleName('ALIBABA_CLOUD_ECS_METADATA') cannot be empty", exception.Message);
         }
 
         [Fact]
@@ -365,13 +450,13 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_REGION_ID", "region_id");
             profile.DefaultClientName = "default";
             var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
-            var exception = Assert.Throws<ArgumentNullException>(() =>
+            var exception = Assert.Throws<ClientException>(() =>
             {
                 var credentialProvider = defaultCredentialProvider.GetInstanceRamRoleAlibabaCloudCredential();
             });
 
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_REGION_ID", null);
-            Assert.Equal("You must specifiy a valid role name.", exception.ParamName);
+            Assert.StartsWith("Environment variable roleName('ALIBABA_CLOUD_ECS_METADATA') cannot be empty", exception.Message);
         }
 
         [Fact]
@@ -461,11 +546,10 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             var defaultCredentialProvider =
                 new DefaultCredentialProvider(profile, "publicKeyId", "privateKeyFile", rsaProvider);
 
-            var actualCredentil = defaultCredentialProvider.GetRsaKeyPairAlibabaCloudCredential();
+            var ex = Assert.Throws<ClientException>(() => defaultCredentialProvider.GetRsaKeyPairAlibabaCloudCredential());
 
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_REGION_ID", null);
-            Assert.NotNull(actualCredentil);
-            Assert.Equal("aks", actualCredentil.GetAccessKeySecret());
+            Assert.Equal("The configured public_key_id or private_key_file is empty", ex.Message);
         }
 
         [Fact]
@@ -492,6 +576,14 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         [Fact]
         public void GetRsaKeyPairAlibabaCloudCredentialWithException()
         {
+            var cacheRoleArn = Environment.GetEnvironmentVariable("ALIBABA_CLOUD_ROLE_ARN");
+            var cacheProviderArn = Environment.GetEnvironmentVariable("ALIBABA_CLOUD_OIDC_PROVIDER_ARN");
+            var cacheFile = Environment.GetEnvironmentVariable("ALIBABA_CLOUD_OIDC_TOKEN_FILE");
+
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_ROLE_ARN", null);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_PROVIDER_ARN", null);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_TOKEN_FILE", null);
+
             var profile = DefaultProfile.GetProfile();
             var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
 
@@ -500,7 +592,45 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
                 var credential = defaultCredentialProvider.GetRsaKeyPairAlibabaCloudCredential();
             });
 
-            Assert.Equal("Missing required variable option for 'default Client'", exception.Message);
+            Assert.Equal("The configured private_key_file is empty", exception.Message);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_ROLE_ARN", cacheRoleArn);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_PROVIDER_ARN", cacheProviderArn);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_TOKEN_FILE", cacheFile);
+        }
+
+        [Fact]
+        public void GetOIDCAlibabaCloudCredential()
+        {
+            var cacheRoleArn = Environment.GetEnvironmentVariable("ALIBABA_CLOUD_ROLE_ARN");
+            var cacheProviderArn = Environment.GetEnvironmentVariable("ALIBABA_CLOUD_OIDC_PROVIDER_ARN");
+            var cacheFile = Environment.GetEnvironmentVariable("ALIBABA_CLOUD_OIDC_TOKEN_FILE");
+
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_ROLE_ARN", null);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_PROVIDER_ARN", null);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_TOKEN_FILE", null);
+
+            var profile = DefaultProfile.GetProfile();
+            var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
+            Assert.Null(defaultCredentialProvider.GetOIDCAlibabaCloudCredential());
+
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_ROLE_ARN", "role_arn");
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_PROVIDER_ARN", "oidc_provider_arn");
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_TOKEN_FILE", "oidc_token_file");
+
+            var mockDefaultCredentialProvider = new Mock<DefaultCredentialProvider>(profile, null);
+            var basicSessionCredential = new BasicSessionCredentials("fakeak", "fakeaks", "fakesessiontoken", 4000);
+            mockDefaultCredentialProvider.Setup(p => p.GetOIDCAlibabaCloudCredential()).Returns(basicSessionCredential);
+            defaultCredentialProvider = mockDefaultCredentialProvider.Object;
+            var credential = (BasicSessionCredentials)defaultCredentialProvider.GetAlibabaCloudClientCredential();
+            Assert.NotNull(credential);
+            Assert.Equal("fakeak", credential.GetAccessKeyId());
+            Assert.Equal("fakeaks", credential.GetAccessKeySecret());
+            Assert.Equal("fakesessiontoken", credential.GetSessionToken());
+            Assert.False(credential.WillSoonExpire());
+
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_ROLE_ARN", cacheRoleArn);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_PROVIDER_ARN", cacheProviderArn);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_TOKEN_FILE", cacheFile);
         }
     }
 }

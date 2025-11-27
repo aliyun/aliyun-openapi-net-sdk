@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class ModifyLifecyclePolicyRequest : RpcAcsRequest<ModifyLifecyclePolicyResponse>
     {
         public ModifyLifecyclePolicyRequest()
-            : base("NAS", "2017-06-26", "ModifyLifecyclePolicy", "NAS", "openAPI")
+            : base("NAS", "2017-06-26", "ModifyLifecyclePolicy", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -51,6 +52,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 		private string lifecycleRuleName;
 
+		[JsonProperty(PropertyName = "StorageType")]
 		public string StorageType
 		{
 			get
@@ -64,6 +66,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
+		[JsonProperty(PropertyName = "Path")]
 		public string Path
 		{
 			get
@@ -77,6 +80,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
+		[JsonProperty(PropertyName = "LifecyclePolicyName")]
 		public string LifecyclePolicyName
 		{
 			get
@@ -90,6 +94,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
+		[JsonProperty(PropertyName = "FileSystemId")]
 		public string FileSystemId
 		{
 			get
@@ -103,6 +108,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
+		[JsonProperty(PropertyName = "LifecycleRuleName")]
 		public string LifecycleRuleName
 		{
 			get

@@ -56,37 +56,37 @@ namespace Aliyun.Acs.Push.Model.V20160801
 		public class QueryPushStatByApp_AppPushStat
 		{
 
-			private string time;
+			private long? acceptCount;
 
 			private long? deletedCount;
 
 			private long? openedCount;
 
-			private long? smsReceiveSuccessCount;
-
-			private long? smsSkipCount;
-
-			private long? smsReceiveFailedCount;
-
-			private long? smsFailedCount;
-
 			private long? receivedCount;
 
 			private long? sentCount;
 
+			private long? smsFailedCount;
+
+			private long? smsReceiveFailedCount;
+
+			private long? smsReceiveSuccessCount;
+
 			private long? smsSentCount;
 
-			private long? acceptCount;
+			private long? smsSkipCount;
 
-			public string Time
+			private string time;
+
+			public long? AcceptCount
 			{
 				get
 				{
-					return time;
+					return acceptCount;
 				}
 				set	
 				{
-					time = value;
+					acceptCount = value;
 				}
 			}
 
@@ -114,54 +114,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public long? SmsReceiveSuccessCount
-			{
-				get
-				{
-					return smsReceiveSuccessCount;
-				}
-				set	
-				{
-					smsReceiveSuccessCount = value;
-				}
-			}
-
-			public long? SmsSkipCount
-			{
-				get
-				{
-					return smsSkipCount;
-				}
-				set	
-				{
-					smsSkipCount = value;
-				}
-			}
-
-			public long? SmsReceiveFailedCount
-			{
-				get
-				{
-					return smsReceiveFailedCount;
-				}
-				set	
-				{
-					smsReceiveFailedCount = value;
-				}
-			}
-
-			public long? SmsFailedCount
-			{
-				get
-				{
-					return smsFailedCount;
-				}
-				set	
-				{
-					smsFailedCount = value;
-				}
-			}
-
 			public long? ReceivedCount
 			{
 				get
@@ -186,6 +138,42 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
+			public long? SmsFailedCount
+			{
+				get
+				{
+					return smsFailedCount;
+				}
+				set	
+				{
+					smsFailedCount = value;
+				}
+			}
+
+			public long? SmsReceiveFailedCount
+			{
+				get
+				{
+					return smsReceiveFailedCount;
+				}
+				set	
+				{
+					smsReceiveFailedCount = value;
+				}
+			}
+
+			public long? SmsReceiveSuccessCount
+			{
+				get
+				{
+					return smsReceiveSuccessCount;
+				}
+				set	
+				{
+					smsReceiveSuccessCount = value;
+				}
+			}
+
 			public long? SmsSentCount
 			{
 				get
@@ -198,15 +186,27 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public long? AcceptCount
+			public long? SmsSkipCount
 			{
 				get
 				{
-					return acceptCount;
+					return smsSkipCount;
 				}
 				set	
 				{
-					acceptCount = value;
+					smsSkipCount = value;
+				}
+			}
+
+			public string Time
+			{
+				get
+				{
+					return time;
+				}
+				set	
+				{
+					time = value;
 				}
 			}
 		}

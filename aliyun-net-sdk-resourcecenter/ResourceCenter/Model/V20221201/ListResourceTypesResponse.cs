@@ -25,41 +25,41 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 	public class ListResourceTypesResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string dynamicCode;
 
-		private bool? success;
+		private string dynamicMessage;
 
 		private string errorCode;
 
 		private string errorMessage;
 
-		private string dynamicCode;
+		private string requestId;
 
-		private string dynamicMessage;
+		private bool? success;
 
 		private List<ListResourceTypes_ResourceType> resourceTypes;
 
-		public string RequestId
+		public string DynamicCode
 		{
 			get
 			{
-				return requestId;
+				return dynamicCode;
 			}
 			set	
 			{
-				requestId = value;
+				dynamicCode = value;
 			}
 		}
 
-		public bool? Success
+		public string DynamicMessage
 		{
 			get
 			{
-				return success;
+				return dynamicMessage;
 			}
 			set	
 			{
-				success = value;
+				dynamicMessage = value;
 			}
 		}
 
@@ -87,27 +87,27 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 			}
 		}
 
-		public string DynamicCode
+		public string RequestId
 		{
 			get
 			{
-				return dynamicCode;
+				return requestId;
 			}
 			set	
 			{
-				dynamicCode = value;
+				requestId = value;
 			}
 		}
 
-		public string DynamicMessage
+		public bool? Success
 		{
 			get
 			{
-				return dynamicMessage;
+				return success;
 			}
 			set	
 			{
-				dynamicMessage = value;
+				success = value;
 			}
 		}
 
@@ -126,27 +126,31 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 		public class ListResourceTypes_ResourceType
 		{
 
-			private string resourceType;
+			private bool? authorized;
 
 			private string productName;
+
+			private string resourceType;
 
 			private string resourceTypeName;
 
 			private List<string> filterKeys;
 
+			private List<string> relatedResourceTypes;
+
 			private ListResourceTypes_CodeMapping codeMapping;
 
 			private ListResourceTypes_Urls urls;
 
-			public string ResourceType
+			public bool? Authorized
 			{
 				get
 				{
-					return resourceType;
+					return authorized;
 				}
 				set	
 				{
-					resourceType = value;
+					authorized = value;
 				}
 			}
 
@@ -159,6 +163,18 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 				set	
 				{
 					productName = value;
+				}
+			}
+
+			public string ResourceType
+			{
+				get
+				{
+					return resourceType;
+				}
+				set	
+				{
+					resourceType = value;
 				}
 			}
 
@@ -183,6 +199,18 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 				set	
 				{
 					filterKeys = value;
+				}
+			}
+
+			public List<string> RelatedResourceTypes
+			{
+				get
+				{
+					return relatedResourceTypes;
+				}
+				set	
+				{
+					relatedResourceTypes = value;
 				}
 			}
 

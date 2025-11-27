@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -26,6 +26,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 	{
 
 		private string requestId;
+
+		private bool? result;
 
 		public string RequestId
 		{
@@ -36,6 +38,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Result
+		{
+			get
+			{
+				return result;
+			}
+			set	
+			{
+				result = value;
 			}
 		}
 	}

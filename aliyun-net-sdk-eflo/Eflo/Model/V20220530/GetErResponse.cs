@@ -104,6 +104,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 			private string description;
 
+			private string resourceGroupId;
+
 			private List<GetEr_ErAttachment> erAttachments;
 
 			private List<GetEr_ErRouteMap> erRouteMaps;
@@ -230,6 +232,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				}
 			}
 
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
 			public List<GetEr_ErAttachment> ErAttachments
 			{
 				get
@@ -298,6 +312,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				private bool? across;
 
 				private string resourceTenantId;
+
+				private string resourceGroupId;
 
 				public string CreateTime
 				{
@@ -478,6 +494,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 						resourceTenantId = value;
 					}
 				}
+
+				public string ResourceGroupId
+				{
+					get
+					{
+						return resourceGroupId;
+					}
+					set	
+					{
+						resourceGroupId = value;
+					}
+				}
 			}
 
 			public class GetEr_ErRouteMap
@@ -494,8 +522,6 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				private string message;
 
 				private string status;
-
-				private string erRouteMapName;
 
 				private string erRouteMapId;
 
@@ -524,6 +550,10 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				private string transmissionInstanceOwner;
 
 				private string receptionInstanceOwner;
+
+				private string resourceGroupId;
+
+				private string erRouteMapName;
 
 				public string RegionId
 				{
@@ -594,18 +624,6 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					set	
 					{
 						status = value;
-					}
-				}
-
-				public string ErRouteMapName
-				{
-					get
-					{
-						return erRouteMapName;
-					}
-					set	
-					{
-						erRouteMapName = value;
 					}
 				}
 
@@ -776,6 +794,30 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 						receptionInstanceOwner = value;
 					}
 				}
+
+				public string ResourceGroupId
+				{
+					get
+					{
+						return resourceGroupId;
+					}
+					set	
+					{
+						resourceGroupId = value;
+					}
+				}
+
+				public string ErRouteMapName
+				{
+					get
+					{
+						return erRouteMapName;
+					}
+					set	
+					{
+						erRouteMapName = value;
+					}
+				}
 			}
 
 			public class GetEr_ErRouteEntry
@@ -802,6 +844,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				private string status;
 
 				private string gmtModified;
+
+				private string resourceGroupId;
 
 				public string ErId
 				{
@@ -932,6 +976,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					set	
 					{
 						gmtModified = value;
+					}
+				}
+
+				public string ResourceGroupId
+				{
+					get
+					{
+						return resourceGroupId;
+					}
+					set	
+					{
+						resourceGroupId = value;
 					}
 				}
 			}

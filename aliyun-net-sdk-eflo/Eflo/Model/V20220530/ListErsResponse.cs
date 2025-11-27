@@ -139,6 +139,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 				private long? routeMaps;
 
+				private string resourceGroupId;
+
 				public string CreateTime
 				{
 					get
@@ -280,6 +282,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					set	
 					{
 						routeMaps = value;
+					}
+				}
+
+				public string ResourceGroupId
+				{
+					get
+					{
+						return resourceGroupId;
+					}
+					set	
+					{
+						resourceGroupId = value;
 					}
 				}
 			}

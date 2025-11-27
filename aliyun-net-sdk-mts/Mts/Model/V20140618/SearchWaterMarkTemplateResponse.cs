@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class SearchWaterMarkTemplateResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? totalCount;
-
-		private long? pageNumber;
 
 		private long? pageSize;
 
-		private List<SearchWaterMarkTemplate_WaterMarkTemplate> waterMarkTemplateList;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private long? pageNumber;
+
+		private List<SearchWaterMarkTemplate_WaterMarkTemplate> waterMarkTemplateList;
 
 		public long? TotalCount
 		{
@@ -59,18 +47,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public long? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
 		public long? PageSize
 		{
 			get
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			set	
 			{
 				pageSize = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public long? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
 			}
 		}
 
@@ -98,49 +98,73 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		public class SearchWaterMarkTemplate_WaterMarkTemplate
 		{
 
-			private string id;
+			private string type;
 
-			private string name;
+			private string referPos;
+
+			private string state;
+
+			private string dx;
 
 			private string width;
 
 			private string height;
 
-			private string dx;
+			private string name;
 
 			private string dy;
 
-			private string referPos;
-
-			private string type;
-
-			private string state;
-
-			private SearchWaterMarkTemplate_Timeline timeline;
+			private string id;
 
 			private SearchWaterMarkTemplate_RatioRefer ratioRefer;
 
-			public string Id
+			private SearchWaterMarkTemplate_Timeline timeline;
+
+			public string Type
 			{
 				get
 				{
-					return id;
+					return type;
 				}
 				set	
 				{
-					id = value;
+					type = value;
 				}
 			}
 
-			public string Name
+			public string ReferPos
 			{
 				get
 				{
-					return name;
+					return referPos;
 				}
 				set	
 				{
-					name = value;
+					referPos = value;
+				}
+			}
+
+			public string State
+			{
+				get
+				{
+					return state;
+				}
+				set	
+				{
+					state = value;
+				}
+			}
+
+			public string Dx
+			{
+				get
+				{
+					return dx;
+				}
+				set	
+				{
+					dx = value;
 				}
 			}
 
@@ -168,15 +192,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public string Dx
+			public string Name
 			{
 				get
 				{
-					return dx;
+					return name;
 				}
 				set	
 				{
-					dx = value;
+					name = value;
 				}
 			}
 
@@ -192,39 +216,27 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public string ReferPos
+			public string Id
 			{
 				get
 				{
-					return referPos;
+					return id;
 				}
 				set	
 				{
-					referPos = value;
+					id = value;
 				}
 			}
 
-			public string Type
+			public SearchWaterMarkTemplate_RatioRefer RatioRefer
 			{
 				get
 				{
-					return type;
+					return ratioRefer;
 				}
 				set	
 				{
-					type = value;
-				}
-			}
-
-			public string State
-			{
-				get
-				{
-					return state;
-				}
-				set	
-				{
-					state = value;
+					ratioRefer = value;
 				}
 			}
 
@@ -240,15 +252,63 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public SearchWaterMarkTemplate_RatioRefer RatioRefer
+			public class SearchWaterMarkTemplate_RatioRefer
 			{
-				get
+
+				private string dx;
+
+				private string width;
+
+				private string height;
+
+				private string dy;
+
+				public string Dx
 				{
-					return ratioRefer;
+					get
+					{
+						return dx;
+					}
+					set	
+					{
+						dx = value;
+					}
 				}
-				set	
+
+				public string Width
 				{
-					ratioRefer = value;
+					get
+					{
+						return width;
+					}
+					set	
+					{
+						width = value;
+					}
+				}
+
+				public string Height
+				{
+					get
+					{
+						return height;
+					}
+					set	
+					{
+						height = value;
+					}
+				}
+
+				public string Dy
+				{
+					get
+					{
+						return dy;
+					}
+					set	
+					{
+						dy = value;
+					}
 				}
 			}
 
@@ -280,66 +340,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						duration = value;
-					}
-				}
-			}
-
-			public class SearchWaterMarkTemplate_RatioRefer
-			{
-
-				private string dx;
-
-				private string dy;
-
-				private string width;
-
-				private string height;
-
-				public string Dx
-				{
-					get
-					{
-						return dx;
-					}
-					set	
-					{
-						dx = value;
-					}
-				}
-
-				public string Dy
-				{
-					get
-					{
-						return dy;
-					}
-					set	
-					{
-						dy = value;
-					}
-				}
-
-				public string Width
-				{
-					get
-					{
-						return width;
-					}
-					set	
-					{
-						width = value;
-					}
-				}
-
-				public string Height
-				{
-					get
-					{
-						return height;
-					}
-					set	
-					{
-						height = value;
 					}
 				}
 			}

@@ -31,9 +31,9 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			InterruptLogstashTaskResponse interruptLogstashTaskResponse = new InterruptLogstashTaskResponse();
 
 			interruptLogstashTaskResponse.HttpResponse = _ctx.HttpResponse;
-			interruptLogstashTaskResponse.RequestId = _ctx.StringValue("InterruptLogstashTask.RequestId");
 			interruptLogstashTaskResponse.Code = _ctx.StringValue("InterruptLogstashTask.Code");
 			interruptLogstashTaskResponse.Message = _ctx.StringValue("InterruptLogstashTask.Message");
+			interruptLogstashTaskResponse.RequestId = _ctx.StringValue("InterruptLogstashTask.RequestId");
 			interruptLogstashTaskResponse.Result = _ctx.BooleanValue("InterruptLogstashTask.Result");
         
 			return interruptLogstashTaskResponse;

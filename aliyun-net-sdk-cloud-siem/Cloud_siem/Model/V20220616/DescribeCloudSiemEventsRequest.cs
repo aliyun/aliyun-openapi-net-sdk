@@ -35,11 +35,15 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			Method = MethodType.POST;
         }
 
+		private long? roleFor;
+
 		private long? startTime;
 
 		private string eventName;
 
 		private int? pageSize;
+
+		private int? roleType;
 
 		private string orderField;
 
@@ -51,11 +55,26 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 		private List<string> threadLevels = new List<string>(){ };
 
+		private string entityUuid;
+
 		private string assetId;
 
 		private string incidentUuid;
 
 		private int? status;
+
+		public long? RoleFor
+		{
+			get
+			{
+				return roleFor;
+			}
+			set	
+			{
+				roleFor = value;
+				DictionaryUtil.Add(BodyParameters, "RoleFor", value.ToString());
+			}
+		}
 
 		public long? StartTime
 		{
@@ -93,6 +112,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			{
 				pageSize = value;
 				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public int? RoleType
+		{
+			get
+			{
+				return roleType;
+			}
+			set	
+			{
+				roleType = value;
+				DictionaryUtil.Add(BodyParameters, "RoleType", value.ToString());
 			}
 		}
 
@@ -158,6 +190,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			set
 			{
 				threadLevels = value;
+			}
+		}
+
+		public string EntityUuid
+		{
+			get
+			{
+				return entityUuid;
+			}
+			set	
+			{
+				entityUuid = value;
+				DictionaryUtil.Add(BodyParameters, "EntityUuid", value);
 			}
 		}
 

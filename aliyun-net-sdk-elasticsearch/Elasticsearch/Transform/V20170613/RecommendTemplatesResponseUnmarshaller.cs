@@ -36,8 +36,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<RecommendTemplatesResponse.RecommendTemplates_TemplateConfig> recommendTemplatesResponse_result = new List<RecommendTemplatesResponse.RecommendTemplates_TemplateConfig>();
 			for (int i = 0; i < _ctx.Length("RecommendTemplates.Result.Length"); i++) {
 				RecommendTemplatesResponse.RecommendTemplates_TemplateConfig templateConfig = new RecommendTemplatesResponse.RecommendTemplates_TemplateConfig();
-				templateConfig.TemplateName = _ctx.StringValue("RecommendTemplates.Result["+ i +"].templateName");
 				templateConfig.Content = _ctx.StringValue("RecommendTemplates.Result["+ i +"].content");
+				templateConfig.TemplateName = _ctx.StringValue("RecommendTemplates.Result["+ i +"].templateName");
 
 				recommendTemplatesResponse_result.Add(templateConfig);
 			}

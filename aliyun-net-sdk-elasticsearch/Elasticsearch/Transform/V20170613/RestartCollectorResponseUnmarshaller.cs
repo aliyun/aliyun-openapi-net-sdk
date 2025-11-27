@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			RestartCollectorResponse restartCollectorResponse = new RestartCollectorResponse();
 
 			restartCollectorResponse.HttpResponse = _ctx.HttpResponse;
-			restartCollectorResponse.RequestId = _ctx.StringValue("RestartCollector.RequestId");
 			restartCollectorResponse.Result = _ctx.BooleanValue("RestartCollector.Result");
+			restartCollectorResponse.RequestId = _ctx.StringValue("RestartCollector.RequestId");
         
 			return restartCollectorResponse;
         }

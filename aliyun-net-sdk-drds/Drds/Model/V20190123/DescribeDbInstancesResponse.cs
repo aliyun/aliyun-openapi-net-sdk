@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -56,47 +56,37 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class DescribeDbInstances_DBInstance
 		{
 
-			private string dBInstanceId;
-
-			private int? dBInstanceStatus;
+			private string instanceNetworkType;
 
 			private string dBInstanceType;
 
+			private string zoneId;
+
+			private int? dBInstanceStatus;
+
+			private string dBInstanceId;
+
 			private string engine;
+
+			private string dBInstanceDescription;
 
 			private string engineVersion;
 
 			private string regionId;
 
-			private string zoneId;
-
-			private string dBInstanceDescription;
-
-			private string instanceNetworkType;
+			private bool? allowAllCategory;
 
 			private List<string> readOnlyDBInstanceId;
 
-			public string DBInstanceId
+			public string InstanceNetworkType
 			{
 				get
 				{
-					return dBInstanceId;
+					return instanceNetworkType;
 				}
 				set	
 				{
-					dBInstanceId = value;
-				}
-			}
-
-			public int? DBInstanceStatus
-			{
-				get
-				{
-					return dBInstanceStatus;
-				}
-				set	
-				{
-					dBInstanceStatus = value;
+					instanceNetworkType = value;
 				}
 			}
 
@@ -112,6 +102,42 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
+			public int? DBInstanceStatus
+			{
+				get
+				{
+					return dBInstanceStatus;
+				}
+				set	
+				{
+					dBInstanceStatus = value;
+				}
+			}
+
+			public string DBInstanceId
+			{
+				get
+				{
+					return dBInstanceId;
+				}
+				set	
+				{
+					dBInstanceId = value;
+				}
+			}
+
 			public string Engine
 			{
 				get
@@ -121,6 +147,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					engine = value;
+				}
+			}
+
+			public string DBInstanceDescription
+			{
+				get
+				{
+					return dBInstanceDescription;
+				}
+				set	
+				{
+					dBInstanceDescription = value;
 				}
 			}
 
@@ -148,39 +186,15 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public string ZoneId
+			public bool? AllowAllCategory
 			{
 				get
 				{
-					return zoneId;
+					return allowAllCategory;
 				}
 				set	
 				{
-					zoneId = value;
-				}
-			}
-
-			public string DBInstanceDescription
-			{
-				get
-				{
-					return dBInstanceDescription;
-				}
-				set	
-				{
-					dBInstanceDescription = value;
-				}
-			}
-
-			public string InstanceNetworkType
-			{
-				get
-				{
-					return instanceNetworkType;
-				}
-				set	
-				{
-					instanceNetworkType = value;
+					allowAllCategory = value;
 				}
 			}
 

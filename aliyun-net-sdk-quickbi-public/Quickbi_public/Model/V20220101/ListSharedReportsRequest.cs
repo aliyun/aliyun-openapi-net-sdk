@@ -35,24 +35,24 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			Method = MethodType.POST;
         }
 
-		private string treeType;
+		private string userId;
 
 		private int? pageSize;
 
 		private string keyword;
 
-		private string userId;
+		private string treeType;
 
-		public string TreeType
+		public string UserId
 		{
 			get
 			{
-				return treeType;
+				return userId;
 			}
 			set	
 			{
-				treeType = value;
-				DictionaryUtil.Add(QueryParameters, "TreeType", value);
+				userId = value;
+				DictionaryUtil.Add(QueryParameters, "UserId", value);
 			}
 		}
 
@@ -82,16 +82,16 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			}
 		}
 
-		public string UserId
+		public string TreeType
 		{
 			get
 			{
-				return userId;
+				return treeType;
 			}
 			set	
 			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
+				treeType = value;
+				DictionaryUtil.Add(QueryParameters, "TreeType", value);
 			}
 		}
 

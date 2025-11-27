@@ -49,6 +49,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private int? pageSize;
 
+		private bool? isGetCurrentRate;
+
 		private string streamName;
 
 		private string queryType;
@@ -112,6 +114,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "IsGetCurrentRate")]
+		public bool? IsGetCurrentRate
+		{
+			get
+			{
+				return isGetCurrentRate;
+			}
+			set	
+			{
+				isGetCurrentRate = value;
+				DictionaryUtil.Add(QueryParameters, "IsGetCurrentRate", value.ToString());
 			}
 		}
 

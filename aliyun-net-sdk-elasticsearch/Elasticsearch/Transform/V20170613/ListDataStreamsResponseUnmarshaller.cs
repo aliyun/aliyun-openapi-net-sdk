@@ -34,29 +34,29 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			listDataStreamsResponse.RequestId = _ctx.StringValue("ListDataStreams.RequestId");
 
 			ListDataStreamsResponse.ListDataStreams_Headers headers = new ListDataStreamsResponse.ListDataStreams_Headers();
-			headers.XManagedCount = _ctx.IntegerValue("ListDataStreams.Headers.X-Managed-Count");
 			headers.XManagedStorageSize = _ctx.LongValue("ListDataStreams.Headers.X-Managed-StorageSize");
+			headers.XManagedCount = _ctx.IntegerValue("ListDataStreams.Headers.X-Managed-Count");
 			listDataStreamsResponse.Headers = headers;
 
 			List<ListDataStreamsResponse.ListDataStreams_ResultItem> listDataStreamsResponse_result = new List<ListDataStreamsResponse.ListDataStreams_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListDataStreams.Result.Length"); i++) {
 				ListDataStreamsResponse.ListDataStreams_ResultItem resultItem = new ListDataStreamsResponse.ListDataStreams_ResultItem();
-				resultItem.Health = _ctx.StringValue("ListDataStreams.Result["+ i +"].health");
 				resultItem.TotalStorageSize = _ctx.LongValue("ListDataStreams.Result["+ i +"].totalStorageSize");
-				resultItem.Name = _ctx.StringValue("ListDataStreams.Result["+ i +"].name");
-				resultItem.ManagedStorageSize = _ctx.LongValue("ListDataStreams.Result["+ i +"].managedStorageSize");
 				resultItem.IndexTemplateName = _ctx.StringValue("ListDataStreams.Result["+ i +"].indexTemplateName");
 				resultItem.IlmPolicyName = _ctx.StringValue("ListDataStreams.Result["+ i +"].ilmPolicyName");
+				resultItem.Name = _ctx.StringValue("ListDataStreams.Result["+ i +"].name");
+				resultItem.Health = _ctx.StringValue("ListDataStreams.Result["+ i +"].health");
+				resultItem.ManagedStorageSize = _ctx.LongValue("ListDataStreams.Result["+ i +"].managedStorageSize");
 
 				List<ListDataStreamsResponse.ListDataStreams_ResultItem.ListDataStreams_IndicesItem> resultItem_indices = new List<ListDataStreamsResponse.ListDataStreams_ResultItem.ListDataStreams_IndicesItem>();
 				for (int j = 0; j < _ctx.Length("ListDataStreams.Result["+ i +"].Indices.Length"); j++) {
 					ListDataStreamsResponse.ListDataStreams_ResultItem.ListDataStreams_IndicesItem indicesItem = new ListDataStreamsResponse.ListDataStreams_ResultItem.ListDataStreams_IndicesItem();
+					indicesItem.IsManaged = _ctx.BooleanValue("ListDataStreams.Result["+ i +"].Indices["+ j +"].isManaged");
+					indicesItem.CreateTime = _ctx.StringValue("ListDataStreams.Result["+ i +"].Indices["+ j +"].createTime");
+					indicesItem.Size = _ctx.LongValue("ListDataStreams.Result["+ i +"].Indices["+ j +"].size");
+					indicesItem.ManagedStatus = _ctx.StringValue("ListDataStreams.Result["+ i +"].Indices["+ j +"].managedStatus");
 					indicesItem.Name = _ctx.StringValue("ListDataStreams.Result["+ i +"].Indices["+ j +"].name");
 					indicesItem.Health = _ctx.StringValue("ListDataStreams.Result["+ i +"].Indices["+ j +"].health");
-					indicesItem.Size = _ctx.LongValue("ListDataStreams.Result["+ i +"].Indices["+ j +"].size");
-					indicesItem.CreateTime = _ctx.StringValue("ListDataStreams.Result["+ i +"].Indices["+ j +"].createTime");
-					indicesItem.IsManaged = _ctx.BooleanValue("ListDataStreams.Result["+ i +"].Indices["+ j +"].isManaged");
-					indicesItem.ManagedStatus = _ctx.StringValue("ListDataStreams.Result["+ i +"].Indices["+ j +"].managedStatus");
 
 					resultItem_indices.Add(indicesItem);
 				}

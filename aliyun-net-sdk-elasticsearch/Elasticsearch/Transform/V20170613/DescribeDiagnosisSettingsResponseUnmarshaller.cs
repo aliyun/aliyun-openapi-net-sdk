@@ -34,8 +34,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			describeDiagnosisSettingsResponse.RequestId = _ctx.StringValue("DescribeDiagnosisSettings.RequestId");
 
 			DescribeDiagnosisSettingsResponse.DescribeDiagnosisSettings_Result result = new DescribeDiagnosisSettingsResponse.DescribeDiagnosisSettings_Result();
-			result.Scene = _ctx.StringValue("DescribeDiagnosisSettings.Result.scene");
 			result.UpdateTime = _ctx.LongValue("DescribeDiagnosisSettings.Result.updateTime");
+			result.Scene = _ctx.StringValue("DescribeDiagnosisSettings.Result.scene");
 			describeDiagnosisSettingsResponse.Result = result;
         
 			return describeDiagnosisSettingsResponse;

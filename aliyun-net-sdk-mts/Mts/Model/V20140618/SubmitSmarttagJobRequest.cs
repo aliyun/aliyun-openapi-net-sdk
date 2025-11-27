@@ -34,9 +34,10 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Mts.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Mts.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -57,9 +58,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string _params;
 
+		private string templateId;
+
+		private string priority;
+
 		private string pipelineId;
 
 		private string contentType;
+
+		private string input;
 
 		private string contentAddr;
 
@@ -180,6 +187,32 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
+		public string TemplateId
+		{
+			get
+			{
+				return templateId;
+			}
+			set	
+			{
+				templateId = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateId", value);
+			}
+		}
+
+		public string Priority
+		{
+			get
+			{
+				return priority;
+			}
+			set	
+			{
+				priority = value;
+				DictionaryUtil.Add(QueryParameters, "Priority", value);
+			}
+		}
+
 		public string PipelineId
 		{
 			get
@@ -203,6 +236,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				contentType = value;
 				DictionaryUtil.Add(QueryParameters, "ContentType", value);
+			}
+		}
+
+		public string Input
+		{
+			get
+			{
+				return input;
+			}
+			set	
+			{
+				input = value;
+				DictionaryUtil.Add(QueryParameters, "Input", value);
 			}
 		}
 

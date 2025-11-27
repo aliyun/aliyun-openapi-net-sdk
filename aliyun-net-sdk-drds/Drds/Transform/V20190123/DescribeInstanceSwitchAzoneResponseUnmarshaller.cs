@@ -31,13 +31,13 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			DescribeInstanceSwitchAzoneResponse describeInstanceSwitchAzoneResponse = new DescribeInstanceSwitchAzoneResponse();
 
 			describeInstanceSwitchAzoneResponse.HttpResponse = _ctx.HttpResponse;
-			describeInstanceSwitchAzoneResponse.RequestId = _ctx.StringValue("DescribeInstanceSwitchAzone.RequestId");
 			describeInstanceSwitchAzoneResponse.Success = _ctx.BooleanValue("DescribeInstanceSwitchAzone.Success");
+			describeInstanceSwitchAzoneResponse.RequestId = _ctx.StringValue("DescribeInstanceSwitchAzone.RequestId");
 
 			DescribeInstanceSwitchAzoneResponse.DescribeInstanceSwitchAzone_Result result = new DescribeInstanceSwitchAzoneResponse.DescribeInstanceSwitchAzone_Result();
 			result.OriginAzoneId = _ctx.StringValue("DescribeInstanceSwitchAzone.Result.OriginAzoneId");
-			result.RegionId = _ctx.StringValue("DescribeInstanceSwitchAzone.Result.RegionId");
 			result.SwitchAble = _ctx.BooleanValue("DescribeInstanceSwitchAzone.Result.SwitchAble");
+			result.RegionId = _ctx.StringValue("DescribeInstanceSwitchAzone.Result.RegionId");
 
 			List<string> result_targetAzones = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeInstanceSwitchAzone.Result.TargetAzones.Length"); i++) {

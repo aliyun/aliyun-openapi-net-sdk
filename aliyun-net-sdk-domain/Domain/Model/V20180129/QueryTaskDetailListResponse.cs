@@ -166,6 +166,8 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 			private string errorMsg;
 
+			private string failReason;
+
 			public string UpdateTime
 			{
 				get
@@ -319,6 +321,18 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					errorMsg = value;
+				}
+			}
+
+			public string FailReason
+			{
+				get
+				{
+					return failReason;
+				}
+				set	
+				{
+					failReason = value;
 				}
 			}
 		}

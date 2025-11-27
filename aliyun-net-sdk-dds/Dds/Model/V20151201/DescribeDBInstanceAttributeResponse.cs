@@ -154,6 +154,14 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private long? provisionedIops;
 
+			private string disasterRecoveryInfo;
+
+			private string searchNodeClass;
+
+			private int? searchNodeStorage;
+
+			private int? searchNodeCount;
+
 			private List<DescribeDBInstanceAttribute_ReplicaSet> replicaSets;
 
 			private List<DescribeDBInstanceAttribute_Tag> tags;
@@ -754,6 +762,54 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
+			public string DisasterRecoveryInfo
+			{
+				get
+				{
+					return disasterRecoveryInfo;
+				}
+				set	
+				{
+					disasterRecoveryInfo = value;
+				}
+			}
+
+			public string SearchNodeClass
+			{
+				get
+				{
+					return searchNodeClass;
+				}
+				set	
+				{
+					searchNodeClass = value;
+				}
+			}
+
+			public int? SearchNodeStorage
+			{
+				get
+				{
+					return searchNodeStorage;
+				}
+				set	
+				{
+					searchNodeStorage = value;
+				}
+			}
+
+			public int? SearchNodeCount
+			{
+				get
+				{
+					return searchNodeCount;
+				}
+				set	
+				{
+					searchNodeCount = value;
+				}
+			}
+
 			public List<DescribeDBInstanceAttribute_ReplicaSet> ReplicaSets
 			{
 				get
@@ -965,6 +1021,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 				private string vpcCloudInstanceId;
 
+				private string lockMode;
+
 				private int? maxIOPS;
 
 				private string vSwitchId;
@@ -985,6 +1043,10 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 				private string status;
 
+				private string currentKernelVersion;
+
+				private string connectString;
+
 				public string VpcCloudInstanceId
 				{
 					get
@@ -994,6 +1056,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						vpcCloudInstanceId = value;
+					}
+				}
+
+				public string LockMode
+				{
+					get
+					{
+						return lockMode;
+					}
+					set	
+					{
+						lockMode = value;
 					}
 				}
 
@@ -1116,10 +1190,36 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 						status = value;
 					}
 				}
+
+				public string CurrentKernelVersion
+				{
+					get
+					{
+						return currentKernelVersion;
+					}
+					set	
+					{
+						currentKernelVersion = value;
+					}
+				}
+
+				public string ConnectString
+				{
+					get
+					{
+						return connectString;
+					}
+					set	
+					{
+						connectString = value;
+					}
+				}
 			}
 
 			public class DescribeDBInstanceAttribute_ShardAttribute
 			{
+
+				private string lockMode;
 
 				private int? maxIOPS;
 
@@ -1142,6 +1242,22 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				private string status;
 
 				private string maxDiskMbps;
+
+				private string currentKernelVersion;
+
+				private string replicaSetName;
+
+				public string LockMode
+				{
+					get
+					{
+						return lockMode;
+					}
+					set	
+					{
+						lockMode = value;
+					}
+				}
 
 				public int? MaxIOPS
 				{
@@ -1274,12 +1390,38 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 						maxDiskMbps = value;
 					}
 				}
+
+				public string CurrentKernelVersion
+				{
+					get
+					{
+						return currentKernelVersion;
+					}
+					set	
+					{
+						currentKernelVersion = value;
+					}
+				}
+
+				public string ReplicaSetName
+				{
+					get
+					{
+						return replicaSetName;
+					}
+					set	
+					{
+						replicaSetName = value;
+					}
+				}
 			}
 
 			public class DescribeDBInstanceAttribute_ConfigserverAttribute
 			{
 
 				private int? maxIOPS;
+
+				private string lockMode;
 
 				private string connectString;
 
@@ -1297,6 +1439,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 				private string status;
 
+				private string currentKernelVersion;
+
 				public int? MaxIOPS
 				{
 					get
@@ -1306,6 +1450,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						maxIOPS = value;
+					}
+				}
+
+				public string LockMode
+				{
+					get
+					{
+						return lockMode;
+					}
+					set	
+					{
+						lockMode = value;
 					}
 				}
 
@@ -1402,6 +1558,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						status = value;
+					}
+				}
+
+				public string CurrentKernelVersion
+				{
+					get
+					{
+						return currentKernelVersion;
+					}
+					set	
+					{
+						currentKernelVersion = value;
 					}
 				}
 			}

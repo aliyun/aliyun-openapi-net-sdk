@@ -144,6 +144,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 			private string cenOwnerId;
 
+			private string bgpAsn;
+
 			private List<GetVcc_ErInfo> erInfos;
 
 			private List<GetVcc_AliyunRouterInfoItem> aliyunRouterInfo;
@@ -513,6 +515,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				set	
 				{
 					cenOwnerId = value;
+				}
+			}
+
+			public string BgpAsn
+			{
+				get
+				{
+					return bgpAsn;
+				}
+				set	
+				{
+					bgpAsn = value;
 				}
 			}
 

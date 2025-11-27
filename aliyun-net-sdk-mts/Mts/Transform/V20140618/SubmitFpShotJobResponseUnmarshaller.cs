@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 {
     public class SubmitFpShotJobResponseUnmarshaller
     {
-        public static SubmitFpShotJobResponse Unmarshall(UnmarshallerContext context)
+        public static SubmitFpShotJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SubmitFpShotJobResponse submitFpShotJobResponse = new SubmitFpShotJobResponse();
 
-			submitFpShotJobResponse.HttpResponse = context.HttpResponse;
-			submitFpShotJobResponse.RequestId = context.StringValue("SubmitFpShotJob.RequestId");
-			submitFpShotJobResponse.JobId = context.StringValue("SubmitFpShotJob.JobId");
+			submitFpShotJobResponse.HttpResponse = _ctx.HttpResponse;
+			submitFpShotJobResponse.RequestId = _ctx.StringValue("SubmitFpShotJob.RequestId");
+			submitFpShotJobResponse.JobId = _ctx.StringValue("SubmitFpShotJob.JobId");
         
 			return submitFpShotJobResponse;
         }

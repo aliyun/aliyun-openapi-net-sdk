@@ -25,37 +25,13 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class CreateDBClusterResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string resourceGroupId;
-
 		private string dBClusterId;
 
 		private string orderId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-			}
-		}
+		private string resourceGroupId;
 
 		public string DBClusterId
 		{
@@ -78,6 +54,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				orderId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
 			}
 		}
 	}

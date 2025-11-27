@@ -26,20 +26,20 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 {
     public class AddMediaWorkflowResponseUnmarshaller
     {
-        public static AddMediaWorkflowResponse Unmarshall(UnmarshallerContext context)
+        public static AddMediaWorkflowResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddMediaWorkflowResponse addMediaWorkflowResponse = new AddMediaWorkflowResponse();
 
-			addMediaWorkflowResponse.HttpResponse = context.HttpResponse;
-			addMediaWorkflowResponse.RequestId = context.StringValue("AddMediaWorkflow.RequestId");
+			addMediaWorkflowResponse.HttpResponse = _ctx.HttpResponse;
+			addMediaWorkflowResponse.RequestId = _ctx.StringValue("AddMediaWorkflow.RequestId");
 
 			AddMediaWorkflowResponse.AddMediaWorkflow_MediaWorkflow mediaWorkflow = new AddMediaWorkflowResponse.AddMediaWorkflow_MediaWorkflow();
-			mediaWorkflow.MediaWorkflowId = context.StringValue("AddMediaWorkflow.MediaWorkflow.MediaWorkflowId");
-			mediaWorkflow.Name = context.StringValue("AddMediaWorkflow.MediaWorkflow.Name");
-			mediaWorkflow.Topology = context.StringValue("AddMediaWorkflow.MediaWorkflow.Topology");
-			mediaWorkflow.TriggerMode = context.StringValue("AddMediaWorkflow.MediaWorkflow.TriggerMode");
-			mediaWorkflow.State = context.StringValue("AddMediaWorkflow.MediaWorkflow.State");
-			mediaWorkflow.CreationTime = context.StringValue("AddMediaWorkflow.MediaWorkflow.CreationTime");
+			mediaWorkflow.CreationTime = _ctx.StringValue("AddMediaWorkflow.MediaWorkflow.CreationTime");
+			mediaWorkflow.MediaWorkflowId = _ctx.StringValue("AddMediaWorkflow.MediaWorkflow.MediaWorkflowId");
+			mediaWorkflow.State = _ctx.StringValue("AddMediaWorkflow.MediaWorkflow.State");
+			mediaWorkflow.TriggerMode = _ctx.StringValue("AddMediaWorkflow.MediaWorkflow.TriggerMode");
+			mediaWorkflow.Name = _ctx.StringValue("AddMediaWorkflow.MediaWorkflow.Name");
+			mediaWorkflow.Topology = _ctx.StringValue("AddMediaWorkflow.MediaWorkflow.Topology");
 			addMediaWorkflowResponse.MediaWorkflow = mediaWorkflow;
         
 			return addMediaWorkflowResponse;

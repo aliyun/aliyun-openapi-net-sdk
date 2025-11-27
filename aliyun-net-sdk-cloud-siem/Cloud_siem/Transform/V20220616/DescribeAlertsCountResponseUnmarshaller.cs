@@ -42,6 +42,7 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 			data.Low = _ctx.LongValue("DescribeAlertsCount.Data.Low");
 			data.All = _ctx.LongValue("DescribeAlertsCount.Data.All");
 			data.ProductNum = _ctx.IntegerValue("DescribeAlertsCount.Data.ProductNum");
+			data.CountMap = _ctx.StringValue("DescribeAlertsCount.Data.CountMap");
 			describeAlertsCountResponse.Data = data;
         
 			return describeAlertsCountResponse;

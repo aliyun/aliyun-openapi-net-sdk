@@ -18,6 +18,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 using System.Text;
 
 using Aliyun.Acs.Core.Http;
@@ -114,6 +115,21 @@ namespace Aliyun.Acs.Core.Tests.Units.Utils
             Assert.True(MethodType.HEAD == ParameterHelper.StringToMethodType("head"));
             Assert.True(MethodType.OPTIONS == ParameterHelper.StringToMethodType("options"));
             Assert.True(null == ParameterHelper.StringToMethodType("test"));
+        }
+
+        [Fact]
+        public void GetFormDataTest()
+        {
+            var parameters = new Dictionary<string, string>
+            {
+                { "key", "value" }
+            };
+            
+            var output = ParameterHelper.GetFormData(parameters);
+            Assert.Equal("key=value", Encoding.UTF8.GetString(output));
+            parameters.Add("key1", "value1");
+            output = ParameterHelper.GetFormData(parameters);
+            Assert.Equal("key=value&key1=value1", Encoding.UTF8.GetString(output));
         }
     }
 }

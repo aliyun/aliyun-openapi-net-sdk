@@ -31,36 +31,37 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 			ListQuotaApplicationsResponse listQuotaApplicationsResponse = new ListQuotaApplicationsResponse();
 
 			listQuotaApplicationsResponse.HttpResponse = _ctx.HttpResponse;
-			listQuotaApplicationsResponse.TotalCount = _ctx.IntegerValue("ListQuotaApplications.TotalCount");
+			listQuotaApplicationsResponse.MaxResults = _ctx.IntegerValue("ListQuotaApplications.MaxResults");
 			listQuotaApplicationsResponse.NextToken = _ctx.StringValue("ListQuotaApplications.NextToken");
 			listQuotaApplicationsResponse.RequestId = _ctx.StringValue("ListQuotaApplications.RequestId");
-			listQuotaApplicationsResponse.MaxResults = _ctx.IntegerValue("ListQuotaApplications.MaxResults");
+			listQuotaApplicationsResponse.TotalCount = _ctx.IntegerValue("ListQuotaApplications.TotalCount");
 
 			List<ListQuotaApplicationsResponse.ListQuotaApplications_QuotaApplicationsItem> listQuotaApplicationsResponse_quotaApplications = new List<ListQuotaApplicationsResponse.ListQuotaApplications_QuotaApplicationsItem>();
 			for (int i = 0; i < _ctx.Length("ListQuotaApplications.QuotaApplications.Length"); i++) {
 				ListQuotaApplicationsResponse.ListQuotaApplications_QuotaApplicationsItem quotaApplicationsItem = new ListQuotaApplicationsResponse.ListQuotaApplications_QuotaApplicationsItem();
-				quotaApplicationsItem.Status = _ctx.StringValue("ListQuotaApplications.QuotaApplications["+ i +"].Status");
-				quotaApplicationsItem.Comment = _ctx.StringValue("ListQuotaApplications.QuotaApplications["+ i +"].Comment");
-				quotaApplicationsItem.ExpireTime = _ctx.StringValue("ListQuotaApplications.QuotaApplications["+ i +"].ExpireTime");
-				quotaApplicationsItem.QuotaUnit = _ctx.StringValue("ListQuotaApplications.QuotaApplications["+ i +"].QuotaUnit");
-				quotaApplicationsItem.DesireValue = _ctx.FloatValue("ListQuotaApplications.QuotaApplications["+ i +"].DesireValue");
-				quotaApplicationsItem.NoticeType = _ctx.IntegerValue("ListQuotaApplications.QuotaApplications["+ i +"].NoticeType");
-				quotaApplicationsItem.QuotaActionCode = _ctx.StringValue("ListQuotaApplications.QuotaApplications["+ i +"].QuotaActionCode");
-				quotaApplicationsItem.Dimension = _ctx.StringValue("ListQuotaApplications.QuotaApplications["+ i +"].Dimension");
-				quotaApplicationsItem.QuotaDescription = _ctx.StringValue("ListQuotaApplications.QuotaApplications["+ i +"].QuotaDescription");
-				quotaApplicationsItem.QuotaArn = _ctx.StringValue("ListQuotaApplications.QuotaApplications["+ i +"].QuotaArn");
-				quotaApplicationsItem.EffectiveTime = _ctx.StringValue("ListQuotaApplications.QuotaApplications["+ i +"].EffectiveTime");
-				quotaApplicationsItem.ApproveValue = _ctx.FloatValue("ListQuotaApplications.QuotaApplications["+ i +"].ApproveValue");
-				quotaApplicationsItem.QuotaName = _ctx.StringValue("ListQuotaApplications.QuotaApplications["+ i +"].QuotaName");
 				quotaApplicationsItem.ApplicationId = _ctx.StringValue("ListQuotaApplications.QuotaApplications["+ i +"].ApplicationId");
-				quotaApplicationsItem.AuditReason = _ctx.StringValue("ListQuotaApplications.QuotaApplications["+ i +"].AuditReason");
-				quotaApplicationsItem.Reason = _ctx.StringValue("ListQuotaApplications.QuotaApplications["+ i +"].Reason");
 				quotaApplicationsItem.ApplyTime = _ctx.StringValue("ListQuotaApplications.QuotaApplications["+ i +"].ApplyTime");
+				quotaApplicationsItem.ApproveValue = _ctx.FloatValue("ListQuotaApplications.QuotaApplications["+ i +"].ApproveValue");
+				quotaApplicationsItem.AuditReason = _ctx.StringValue("ListQuotaApplications.QuotaApplications["+ i +"].AuditReason");
+				quotaApplicationsItem.Comment = _ctx.StringValue("ListQuotaApplications.QuotaApplications["+ i +"].Comment");
+				quotaApplicationsItem.DesireValue = _ctx.FloatValue("ListQuotaApplications.QuotaApplications["+ i +"].DesireValue");
+				quotaApplicationsItem.Dimension = _ctx.StringValue("ListQuotaApplications.QuotaApplications["+ i +"].Dimension");
+				quotaApplicationsItem.EffectiveTime = _ctx.StringValue("ListQuotaApplications.QuotaApplications["+ i +"].EffectiveTime");
+				quotaApplicationsItem.ExpireTime = _ctx.StringValue("ListQuotaApplications.QuotaApplications["+ i +"].ExpireTime");
+				quotaApplicationsItem.NoticeType = _ctx.IntegerValue("ListQuotaApplications.QuotaApplications["+ i +"].NoticeType");
 				quotaApplicationsItem.ProductCode = _ctx.StringValue("ListQuotaApplications.QuotaApplications["+ i +"].ProductCode");
+				quotaApplicationsItem.QuotaActionCode = _ctx.StringValue("ListQuotaApplications.QuotaApplications["+ i +"].QuotaActionCode");
+				quotaApplicationsItem.QuotaArn = _ctx.StringValue("ListQuotaApplications.QuotaApplications["+ i +"].QuotaArn");
+				quotaApplicationsItem.QuotaCategory = _ctx.StringValue("ListQuotaApplications.QuotaApplications["+ i +"].QuotaCategory");
+				quotaApplicationsItem.QuotaDescription = _ctx.StringValue("ListQuotaApplications.QuotaApplications["+ i +"].QuotaDescription");
+				quotaApplicationsItem.QuotaName = _ctx.StringValue("ListQuotaApplications.QuotaApplications["+ i +"].QuotaName");
+				quotaApplicationsItem.QuotaUnit = _ctx.StringValue("ListQuotaApplications.QuotaApplications["+ i +"].QuotaUnit");
+				quotaApplicationsItem.Reason = _ctx.StringValue("ListQuotaApplications.QuotaApplications["+ i +"].Reason");
+				quotaApplicationsItem.Status = _ctx.StringValue("ListQuotaApplications.QuotaApplications["+ i +"].Status");
 
 				ListQuotaApplicationsResponse.ListQuotaApplications_QuotaApplicationsItem.ListQuotaApplications_Period period = new ListQuotaApplicationsResponse.ListQuotaApplications_QuotaApplicationsItem.ListQuotaApplications_Period();
-				period.PeriodValue = _ctx.LongValue("ListQuotaApplications.QuotaApplications["+ i +"].Period.PeriodValue");
 				period.PeriodUnit = _ctx.StringValue("ListQuotaApplications.QuotaApplications["+ i +"].Period.PeriodUnit");
+				period.PeriodValue = _ctx.LongValue("ListQuotaApplications.QuotaApplications["+ i +"].Period.PeriodValue");
 				quotaApplicationsItem.Period = period;
 
 				listQuotaApplicationsResponse_quotaApplications.Add(quotaApplicationsItem);

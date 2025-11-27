@@ -37,11 +37,11 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			List<QueryUserGroupMemberResponse.QueryUserGroupMember_Data> queryUserGroupMemberResponse_result = new List<QueryUserGroupMemberResponse.QueryUserGroupMember_Data>();
 			for (int i = 0; i < _ctx.Length("QueryUserGroupMember.Result.Length"); i++) {
 				QueryUserGroupMemberResponse.QueryUserGroupMember_Data data = new QueryUserGroupMemberResponse.QueryUserGroupMember_Data();
-				data.ParentUserGroupName = _ctx.StringValue("QueryUserGroupMember.Result["+ i +"].ParentUserGroupName");
+				data.Id = _ctx.StringValue("QueryUserGroupMember.Result["+ i +"].Id");
 				data.IsUserGroup = _ctx.BooleanValue("QueryUserGroupMember.Result["+ i +"].IsUserGroup");
 				data.Name = _ctx.StringValue("QueryUserGroupMember.Result["+ i +"].Name");
 				data.ParentUserGroupId = _ctx.StringValue("QueryUserGroupMember.Result["+ i +"].ParentUserGroupId");
-				data.Id = _ctx.StringValue("QueryUserGroupMember.Result["+ i +"].Id");
+				data.ParentUserGroupName = _ctx.StringValue("QueryUserGroupMember.Result["+ i +"].ParentUserGroupName");
 
 				queryUserGroupMemberResponse_result.Add(data);
 			}

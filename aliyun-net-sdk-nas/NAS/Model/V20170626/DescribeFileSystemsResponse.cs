@@ -142,6 +142,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private string vpcId;
 
+			private int? nodeNum;
+
+			private string hpnZone;
+
+			private string accessPointCount;
+
+			private string resourceGroupId;
+
+			private long? meteredArchiveSize;
+
+			private string quorumVswId;
+
 			private List<DescribeFileSystems_Tag> tags;
 
 			private List<DescribeFileSystems_MountTarget> mountTargets;
@@ -153,6 +165,10 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			private List<string> vswIds;
 
 			private DescribeFileSystems_Ldap ldap;
+
+			private DescribeFileSystems_GuiInfo guiInfo;
+
+			private DescribeFileSystems_Options options;
 
 			public string Status
 			{
@@ -418,6 +434,78 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				}
 			}
 
+			public int? NodeNum
+			{
+				get
+				{
+					return nodeNum;
+				}
+				set	
+				{
+					nodeNum = value;
+				}
+			}
+
+			public string HpnZone
+			{
+				get
+				{
+					return hpnZone;
+				}
+				set	
+				{
+					hpnZone = value;
+				}
+			}
+
+			public string AccessPointCount
+			{
+				get
+				{
+					return accessPointCount;
+				}
+				set	
+				{
+					accessPointCount = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public long? MeteredArchiveSize
+			{
+				get
+				{
+					return meteredArchiveSize;
+				}
+				set	
+				{
+					meteredArchiveSize = value;
+				}
+			}
+
+			public string QuorumVswId
+			{
+				get
+				{
+					return quorumVswId;
+				}
+				set	
+				{
+					quorumVswId = value;
+				}
+			}
+
 			public List<DescribeFileSystems_Tag> Tags
 			{
 				get
@@ -490,6 +578,30 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				}
 			}
 
+			public DescribeFileSystems_GuiInfo GuiInfo
+			{
+				get
+				{
+					return guiInfo;
+				}
+				set	
+				{
+					guiInfo = value;
+				}
+			}
+
+			public DescribeFileSystems_Options Options
+			{
+				get
+				{
+					return options;
+				}
+				set	
+				{
+					options = value;
+				}
+			}
+
 			public class DescribeFileSystems_Tag
 			{
 
@@ -538,6 +650,8 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				private string vswId;
 
 				private string networkType;
+
+				private string mountTargetIp;
 
 				private List<DescribeFileSystems_ClientMasterNode> clientMasterNodes;
 
@@ -624,6 +738,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 					set	
 					{
 						networkType = value;
+					}
+				}
+
+				public string MountTargetIp
+				{
+					get
+					{
+						return mountTargetIp;
+					}
+					set	
+					{
+						mountTargetIp = value;
 					}
 				}
 
@@ -846,6 +972,70 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 					set	
 					{
 						uRI = value;
+					}
+				}
+			}
+
+			public class DescribeFileSystems_GuiInfo
+			{
+
+				private string endpoint;
+
+				private string password;
+
+				private string user;
+
+				public string Endpoint
+				{
+					get
+					{
+						return endpoint;
+					}
+					set	
+					{
+						endpoint = value;
+					}
+				}
+
+				public string Password
+				{
+					get
+					{
+						return password;
+					}
+					set	
+					{
+						password = value;
+					}
+				}
+
+				public string User
+				{
+					get
+					{
+						return user;
+					}
+					set	
+					{
+						user = value;
+					}
+				}
+			}
+
+			public class DescribeFileSystems_Options
+			{
+
+				private bool? enableOplock;
+
+				public bool? EnableOplock
+				{
+					get
+					{
+						return enableOplock;
+					}
+					set	
+					{
+						enableOplock = value;
 					}
 				}
 			}

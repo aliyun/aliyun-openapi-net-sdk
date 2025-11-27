@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Domain;
 using Aliyun.Acs.Domain.Transform;
 using Aliyun.Acs.Domain.Transform.V20180129;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
     public class ListServerLockRequest : RpcAcsRequest<ListServerLockResponse>
     {
         public ListServerLockRequest()
-            : base("Domain", "2018-01-29", "ListServerLock")
+            : base("Domain", "2018-01-29", "ListServerLock", "domain", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -49,6 +48,8 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private long? beginStartDate;
 
+		private string orderByType;
+
 		private int? serverLockStatus;
 
 		private long? startExpireDate;
@@ -58,6 +59,8 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 		private string lang;
 
 		private string domainName;
+
+		private string orderBy;
 
 		private long? endStartDate;
 
@@ -112,6 +115,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				beginStartDate = value;
 				DictionaryUtil.Add(QueryParameters, "BeginStartDate", value.ToString());
+			}
+		}
+
+		public string OrderByType
+		{
+			get
+			{
+				return orderByType;
+			}
+			set	
+			{
+				orderByType = value;
+				DictionaryUtil.Add(QueryParameters, "OrderByType", value);
 			}
 		}
 
@@ -177,6 +193,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string OrderBy
+		{
+			get
+			{
+				return orderBy;
+			}
+			set	
+			{
+				orderBy = value;
+				DictionaryUtil.Add(QueryParameters, "OrderBy", value);
 			}
 		}
 

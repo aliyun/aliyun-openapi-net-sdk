@@ -41,6 +41,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private string routeType;
 
+		private string resourceGroupId;
+
 		private int? pageSize;
 
 		private string nextHopId;
@@ -93,6 +95,19 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				routeType = value;
 				DictionaryUtil.Add(BodyParameters, "RouteType", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(BodyParameters, "ResourceGroupId", value);
 			}
 		}
 

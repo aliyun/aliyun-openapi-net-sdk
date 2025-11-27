@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,37 +25,13 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class SubmitSmoothExpandPreCheckResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string msg;
+
+		private string requestId;
 
 		private long? taskId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private bool? success;
 
 		public string Msg
 		{
@@ -69,6 +45,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public long? TaskId
 		{
 			get
@@ -78,6 +66,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				taskId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

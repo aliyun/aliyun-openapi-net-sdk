@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribeSqlFlashbakTaskResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private List<DescribeSqlFlashbakTask_SqlFlashbackTask> sqlFlashbackTasks;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeSqlFlashbakTask_SqlFlashbackTask> sqlFlashbackTasks;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,111 +70,51 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class DescribeSqlFlashbakTask_SqlFlashbackTask
 		{
 
-			private long? id;
-
-			private long? gmtCreate;
-
-			private long? gmtModified;
-
-			private string instId;
-
-			private string dbName;
-
-			private long? searchStartTime;
+			private string tableName;
 
 			private long? searchEndTime;
 
-			private string tableName;
-
-			private string traceId;
-
-			private string sqlType;
-
-			private string sqlPk;
-
-			private int? recallType;
-
-			private int? recallStatus;
-
-			private int? recallProgress;
-
-			private int? recallRestoreType;
+			private long? expireTime;
 
 			private string downloadUrl;
 
-			private long? expireTime;
+			private int? recallProgress;
+
+			private string sqlPk;
+
+			private string instId;
+
+			private int? recallType;
+
+			private long? searchStartTime;
+
+			private long? gmtModified;
 
 			private long? sqlCounter;
 
-			public long? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+			private string dbName;
 
-			public long? GmtCreate
-			{
-				get
-				{
-					return gmtCreate;
-				}
-				set	
-				{
-					gmtCreate = value;
-				}
-			}
+			private int? recallRestoreType;
 
-			public long? GmtModified
-			{
-				get
-				{
-					return gmtModified;
-				}
-				set	
-				{
-					gmtModified = value;
-				}
-			}
+			private long? gmtCreate;
 
-			public string InstId
-			{
-				get
-				{
-					return instId;
-				}
-				set	
-				{
-					instId = value;
-				}
-			}
+			private string traceId;
 
-			public string DbName
-			{
-				get
-				{
-					return dbName;
-				}
-				set	
-				{
-					dbName = value;
-				}
-			}
+			private long? id;
 
-			public long? SearchStartTime
+			private int? recallStatus;
+
+			private string sqlType;
+
+			public string TableName
 			{
 				get
 				{
-					return searchStartTime;
+					return tableName;
 				}
 				set	
 				{
-					searchStartTime = value;
+					tableName = value;
 				}
 			}
 
@@ -190,99 +130,15 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public string TableName
+			public long? ExpireTime
 			{
 				get
 				{
-					return tableName;
+					return expireTime;
 				}
 				set	
 				{
-					tableName = value;
-				}
-			}
-
-			public string TraceId
-			{
-				get
-				{
-					return traceId;
-				}
-				set	
-				{
-					traceId = value;
-				}
-			}
-
-			public string SqlType
-			{
-				get
-				{
-					return sqlType;
-				}
-				set	
-				{
-					sqlType = value;
-				}
-			}
-
-			public string SqlPk
-			{
-				get
-				{
-					return sqlPk;
-				}
-				set	
-				{
-					sqlPk = value;
-				}
-			}
-
-			public int? RecallType
-			{
-				get
-				{
-					return recallType;
-				}
-				set	
-				{
-					recallType = value;
-				}
-			}
-
-			public int? RecallStatus
-			{
-				get
-				{
-					return recallStatus;
-				}
-				set	
-				{
-					recallStatus = value;
-				}
-			}
-
-			public int? RecallProgress
-			{
-				get
-				{
-					return recallProgress;
-				}
-				set	
-				{
-					recallProgress = value;
-				}
-			}
-
-			public int? RecallRestoreType
-			{
-				get
-				{
-					return recallRestoreType;
-				}
-				set	
-				{
-					recallRestoreType = value;
+					expireTime = value;
 				}
 			}
 
@@ -298,15 +154,75 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public long? ExpireTime
+			public int? RecallProgress
 			{
 				get
 				{
-					return expireTime;
+					return recallProgress;
 				}
 				set	
 				{
-					expireTime = value;
+					recallProgress = value;
+				}
+			}
+
+			public string SqlPk
+			{
+				get
+				{
+					return sqlPk;
+				}
+				set	
+				{
+					sqlPk = value;
+				}
+			}
+
+			public string InstId
+			{
+				get
+				{
+					return instId;
+				}
+				set	
+				{
+					instId = value;
+				}
+			}
+
+			public int? RecallType
+			{
+				get
+				{
+					return recallType;
+				}
+				set	
+				{
+					recallType = value;
+				}
+			}
+
+			public long? SearchStartTime
+			{
+				get
+				{
+					return searchStartTime;
+				}
+				set	
+				{
+					searchStartTime = value;
+				}
+			}
+
+			public long? GmtModified
+			{
+				get
+				{
+					return gmtModified;
+				}
+				set	
+				{
+					gmtModified = value;
 				}
 			}
 
@@ -319,6 +235,90 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					sqlCounter = value;
+				}
+			}
+
+			public string DbName
+			{
+				get
+				{
+					return dbName;
+				}
+				set	
+				{
+					dbName = value;
+				}
+			}
+
+			public int? RecallRestoreType
+			{
+				get
+				{
+					return recallRestoreType;
+				}
+				set	
+				{
+					recallRestoreType = value;
+				}
+			}
+
+			public long? GmtCreate
+			{
+				get
+				{
+					return gmtCreate;
+				}
+				set	
+				{
+					gmtCreate = value;
+				}
+			}
+
+			public string TraceId
+			{
+				get
+				{
+					return traceId;
+				}
+				set	
+				{
+					traceId = value;
+				}
+			}
+
+			public long? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public int? RecallStatus
+			{
+				get
+				{
+					return recallStatus;
+				}
+				set	
+				{
+					recallStatus = value;
+				}
+			}
+
+			public string SqlType
+			{
+				get
+				{
+					return sqlType;
+				}
+				set	
+				{
+					sqlType = value;
 				}
 			}
 		}

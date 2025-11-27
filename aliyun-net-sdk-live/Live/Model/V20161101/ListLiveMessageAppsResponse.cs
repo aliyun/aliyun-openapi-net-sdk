@@ -104,6 +104,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private long? modifyTime;
 
+			private int? msgLifeCycle;
+
 			[JsonProperty(PropertyName = "AppId")]
 			public string AppId
 			{
@@ -205,6 +207,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					modifyTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MsgLifeCycle")]
+			public int? MsgLifeCycle
+			{
+				get
+				{
+					return msgLifeCycle;
+				}
+				set	
+				{
+					msgLifeCycle = value;
 				}
 			}
 		}

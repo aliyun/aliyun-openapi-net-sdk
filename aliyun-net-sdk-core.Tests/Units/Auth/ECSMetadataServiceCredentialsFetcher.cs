@@ -86,9 +86,38 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
                 () =>
                 {
                     var credentials = instance.Fetch();
-                    ;
                 }
             );
+        }
+        
+        [Fact]
+        public void FetchWithMetaDataToken()
+        {
+            var mock = new Mock<ECSMetadataServiceCredentialsFetcher>
+                {CallBase = true};
+            
+            var e = new ArgumentException("test");
+            mock.Setup(foo => foo.GetResponse(
+                It.IsAny<HttpRequest>()
+            )).Throws(e);
+            
+            var instance = mock.Object;
+            var ex = Assert.Throws<ClientException>(
+                () =>
+                {
+                    var credentials = instance.Fetch();
+                }
+            );
+            Assert.StartsWith("Failed to get RAM session credentials from ECS metadata service. Reason: System.ArgumentException: test", ex.Message);
+
+            var v2Fetcher = new ECSMetadataServiceCredentialsFetcher("", true, 900, 1200);
+            ex = Assert.Throws<ClientException>(
+                () =>
+                {
+                    var credentials = v2Fetcher.Fetch();
+                }
+            );
+            Assert.StartsWith("Failed to get RAM session credentials from ECS metadata service. Reason: Aliyun.Acs.Core.Exceptions.ClientException: Failed to get token from ECS Metadata Service, and fallback to IMDS v1 is disabled via the disableIMDSv1 configuration is turned on. Original error: Failed to connect ECS Metadata Service: ", ex.Message);
         }
 
         [Fact]

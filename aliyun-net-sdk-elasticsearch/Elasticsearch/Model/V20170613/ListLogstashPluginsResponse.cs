@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -56,25 +56,37 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class ListLogstashPlugins_ResultItem
 		{
 
-			private string name;
+			private string description;
+
+			private string specificationUrl;
 
 			private string state;
 
 			private string source;
 
-			private string description;
+			private string name;
 
-			private string specificationUrl;
-
-			public string Name
+			public string Description
 			{
 				get
 				{
-					return name;
+					return description;
 				}
 				set	
 				{
-					name = value;
+					description = value;
+				}
+			}
+
+			public string SpecificationUrl
+			{
+				get
+				{
+					return specificationUrl;
+				}
+				set	
+				{
+					specificationUrl = value;
 				}
 			}
 
@@ -102,27 +114,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public string Description
+			public string Name
 			{
 				get
 				{
-					return description;
+					return name;
 				}
 				set	
 				{
-					description = value;
-				}
-			}
-
-			public string SpecificationUrl
-			{
-				get
-				{
-					return specificationUrl;
-				}
-				set	
-				{
-					specificationUrl = value;
+					name = value;
 				}
 			}
 		}

@@ -31,9 +31,9 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			PostEmonTryAlarmRuleResponse postEmonTryAlarmRuleResponse = new PostEmonTryAlarmRuleResponse();
 
 			postEmonTryAlarmRuleResponse.HttpResponse = _ctx.HttpResponse;
-			postEmonTryAlarmRuleResponse.RequestId = _ctx.StringValue("PostEmonTryAlarmRule.RequestId");
 			postEmonTryAlarmRuleResponse.Code = _ctx.StringValue("PostEmonTryAlarmRule.Code");
 			postEmonTryAlarmRuleResponse.Message = _ctx.StringValue("PostEmonTryAlarmRule.Message");
+			postEmonTryAlarmRuleResponse.RequestId = _ctx.StringValue("PostEmonTryAlarmRule.RequestId");
 			postEmonTryAlarmRuleResponse.Success = _ctx.BooleanValue("PostEmonTryAlarmRule.Success");
         
 			return postEmonTryAlarmRuleResponse;

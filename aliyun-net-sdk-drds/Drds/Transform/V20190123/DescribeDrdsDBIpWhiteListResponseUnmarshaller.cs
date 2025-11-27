@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			DescribeDrdsDBIpWhiteListResponse describeDrdsDBIpWhiteListResponse = new DescribeDrdsDBIpWhiteListResponse();
 
 			describeDrdsDBIpWhiteListResponse.HttpResponse = _ctx.HttpResponse;
-			describeDrdsDBIpWhiteListResponse.RequestId = _ctx.StringValue("DescribeDrdsDBIpWhiteList.RequestId");
 			describeDrdsDBIpWhiteListResponse.Success = _ctx.BooleanValue("DescribeDrdsDBIpWhiteList.Success");
+			describeDrdsDBIpWhiteListResponse.RequestId = _ctx.StringValue("DescribeDrdsDBIpWhiteList.RequestId");
 
 			List<string> describeDrdsDBIpWhiteListResponse_ipWhiteList = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeDrdsDBIpWhiteList.IpWhiteList.Length"); i++) {

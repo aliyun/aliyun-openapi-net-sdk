@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Method = MethodType.POST;
         }
 
+		private string dryRun;
+
 		private string publicKeyBlob;
 
 		private string encryptionContext;
@@ -51,6 +53,20 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 		private string ciphertextBlob;
 
 		private string wrappingKeySpec;
+
+		[JsonProperty(PropertyName = "DryRun")]
+		public string DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value);
+			}
+		}
 
 		[JsonProperty(PropertyName = "PublicKeyBlob")]
 		public string PublicKeyBlob
@@ -120,11 +136,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 				wrappingKeySpec = value;
 				DictionaryUtil.Add(QueryParameters, "WrappingKeySpec", value);
 			}
-		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
 		}
 
         public override ExportDataKeyResponse GetResponse(UnmarshallerContext unmarshallerContext)

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 {
     public class DeleteMediaResponseUnmarshaller
     {
-        public static DeleteMediaResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteMediaResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteMediaResponse deleteMediaResponse = new DeleteMediaResponse();
 
-			deleteMediaResponse.HttpResponse = context.HttpResponse;
-			deleteMediaResponse.RequestId = context.StringValue("DeleteMedia.RequestId");
+			deleteMediaResponse.HttpResponse = _ctx.HttpResponse;
+			deleteMediaResponse.RequestId = _ctx.StringValue("DeleteMedia.RequestId");
         
 			return deleteMediaResponse;
         }

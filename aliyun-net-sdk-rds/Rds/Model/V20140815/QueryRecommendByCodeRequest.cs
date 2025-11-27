@@ -45,11 +45,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string code;
 
+		private string resourceGroupId;
+
 		private string resourceOwnerAccount;
 
 		private string ownerId;
-
-		private string resourceGroupId;
 
 		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public string ResourceOwnerId
@@ -79,6 +79,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceGroupId")]
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
 		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
@@ -104,20 +118,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "ResourceGroupId")]
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

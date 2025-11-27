@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -56,25 +56,13 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class ListSnapshotReposByInstanceId_Repo
 		{
 
-			private string instanceId;
-
 			private string snapWarehouse;
 
 			private string repoPath;
 
 			private string status;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+			private string instanceId;
 
 			public string SnapWarehouse
 			{
@@ -109,6 +97,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
 				}
 			}
 		}

@@ -31,12 +31,15 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			DescribeDBClusterTDEResponse describeDBClusterTDEResponse = new DescribeDBClusterTDEResponse();
 
 			describeDBClusterTDEResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBClusterTDEResponse.TDEStatus = _ctx.StringValue("DescribeDBClusterTDE.TDEStatus");
-			describeDBClusterTDEResponse.RequestId = _ctx.StringValue("DescribeDBClusterTDE.RequestId");
+			describeDBClusterTDEResponse.AutomaticRotation = _ctx.StringValue("DescribeDBClusterTDE.AutomaticRotation");
 			describeDBClusterTDEResponse.DBClusterId = _ctx.StringValue("DescribeDBClusterTDE.DBClusterId");
-			describeDBClusterTDEResponse.EncryptionKey = _ctx.StringValue("DescribeDBClusterTDE.EncryptionKey");
 			describeDBClusterTDEResponse.EncryptNewTables = _ctx.StringValue("DescribeDBClusterTDE.EncryptNewTables");
+			describeDBClusterTDEResponse.EncryptionKey = _ctx.StringValue("DescribeDBClusterTDE.EncryptionKey");
+			describeDBClusterTDEResponse.RequestId = _ctx.StringValue("DescribeDBClusterTDE.RequestId");
+			describeDBClusterTDEResponse.RotationInterval = _ctx.StringValue("DescribeDBClusterTDE.RotationInterval");
 			describeDBClusterTDEResponse.TDERegion = _ctx.StringValue("DescribeDBClusterTDE.TDERegion");
+			describeDBClusterTDEResponse.TDEStatus = _ctx.StringValue("DescribeDBClusterTDE.TDEStatus");
+			describeDBClusterTDEResponse.EncryptionKeyStatus = _ctx.StringValue("DescribeDBClusterTDE.EncryptionKeyStatus");
         
 			return describeDBClusterTDEResponse;
         }

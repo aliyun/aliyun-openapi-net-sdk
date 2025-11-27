@@ -48,9 +48,13 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string extraParam;
 
+		private string targetSecondaryZoneId;
+
 		private string couponNo;
 
 		private string replicationFactor;
+
+		private string targetZoneId;
 
 		private string effectiveTime;
 
@@ -58,15 +62,25 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string businessInfo;
 
+		private string searchNodeClass;
+
 		private bool? autoPay;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
+		private long? searchNodeStorage;
+
+		private string targetVswitchId;
+
 		private long? ownerId;
 
 		private string dBInstanceClass;
+
+		private long? searchNodeCount;
+
+		private string targetHiddenZoneId;
 
 		private string orderType;
 
@@ -122,6 +136,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string TargetSecondaryZoneId
+		{
+			get
+			{
+				return targetSecondaryZoneId;
+			}
+			set	
+			{
+				targetSecondaryZoneId = value;
+				DictionaryUtil.Add(QueryParameters, "TargetSecondaryZoneId", value);
+			}
+		}
+
 		public string CouponNo
 		{
 			get
@@ -145,6 +172,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				replicationFactor = value;
 				DictionaryUtil.Add(QueryParameters, "ReplicationFactor", value);
+			}
+		}
+
+		public string TargetZoneId
+		{
+			get
+			{
+				return targetZoneId;
+			}
+			set	
+			{
+				targetZoneId = value;
+				DictionaryUtil.Add(QueryParameters, "TargetZoneId", value);
 			}
 		}
 
@@ -187,6 +227,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string SearchNodeClass
+		{
+			get
+			{
+				return searchNodeClass;
+			}
+			set	
+			{
+				searchNodeClass = value;
+				DictionaryUtil.Add(QueryParameters, "SearchNodeClass", value);
+			}
+		}
+
 		public bool? AutoPay
 		{
 			get
@@ -226,6 +279,32 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public long? SearchNodeStorage
+		{
+			get
+			{
+				return searchNodeStorage;
+			}
+			set	
+			{
+				searchNodeStorage = value;
+				DictionaryUtil.Add(QueryParameters, "SearchNodeStorage", value.ToString());
+			}
+		}
+
+		public string TargetVswitchId
+		{
+			get
+			{
+				return targetVswitchId;
+			}
+			set	
+			{
+				targetVswitchId = value;
+				DictionaryUtil.Add(QueryParameters, "TargetVswitchId", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -249,6 +328,32 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				dBInstanceClass = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceClass", value);
+			}
+		}
+
+		public long? SearchNodeCount
+		{
+			get
+			{
+				return searchNodeCount;
+			}
+			set	
+			{
+				searchNodeCount = value;
+				DictionaryUtil.Add(QueryParameters, "SearchNodeCount", value.ToString());
+			}
+		}
+
+		public string TargetHiddenZoneId
+		{
+			get
+			{
+				return targetHiddenZoneId;
+			}
+			set	
+			{
+				targetHiddenZoneId = value;
+				DictionaryUtil.Add(QueryParameters, "TargetHiddenZoneId", value);
 			}
 		}
 

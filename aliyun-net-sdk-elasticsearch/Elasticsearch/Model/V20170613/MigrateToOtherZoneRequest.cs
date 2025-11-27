@@ -45,6 +45,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private bool? dryRun;
 
+		private string body;
+
 		public string InstanceId
 		{
 			get
@@ -68,6 +70,19 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			{
 				dryRun = value;
 				DictionaryUtil.Add(QueryParameters, "dryRun", value.ToString());
+			}
+		}
+
+		public string Body
+		{
+			get
+			{
+				return body;
+			}
+			set	
+			{
+				body = value;
+				DictionaryUtil.Add(BodyParameters, "body", value);
 			}
 		}
 

@@ -61,6 +61,8 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				networkAddress.NetworkAddress = _ctx.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].NetworkAddress");
 				networkAddress.NodeId = _ctx.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].NodeId");
 				networkAddress.IPAddress = _ctx.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].IPAddress");
+				networkAddress.ConnectionType = _ctx.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].ConnectionType");
+				networkAddress.TxtRecord = _ctx.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].TxtRecord");
 
 				describeShardingNetworkAddressResponse_networkAddresses.Add(networkAddress);
 			}

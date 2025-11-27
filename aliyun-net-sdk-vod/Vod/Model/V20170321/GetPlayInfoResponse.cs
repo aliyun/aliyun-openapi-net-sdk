@@ -96,6 +96,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string encryptType;
 
+			private string encryptMode;
+
 			private string preprocessStatus;
 
 			private string streamType;
@@ -123,6 +125,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			private int? jobType;
 
 			private string jobExt;
+
+			private string codecName;
 
 			public string CreationTime
 			{
@@ -277,6 +281,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					encryptType = value;
+				}
+			}
+
+			public string EncryptMode
+			{
+				get
+				{
+					return encryptMode;
+				}
+				set	
+				{
+					encryptMode = value;
 				}
 			}
 
@@ -445,6 +461,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					jobExt = value;
+				}
+			}
+
+			public string CodecName
+			{
+				get
+				{
+					return codecName;
+				}
+				set	
+				{
+					codecName = value;
 				}
 			}
 		}

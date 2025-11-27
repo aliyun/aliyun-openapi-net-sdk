@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
@@ -70,43 +70,33 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		public class QueryPipelineList_Pipeline
 		{
 
-			private string id;
-
-			private string name;
+			private string speed;
 
 			private string state;
 
-			private string speed;
-
 			private long? speedLevel;
-
-			private long? quotaAllocate;
 
 			private string role;
 
+			private string name;
+
+			private string id;
+
+			private long? quotaAllocate;
+
 			private QueryPipelineList_NotifyConfig notifyConfig;
 
-			public string Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+			private QueryPipelineList_ExtendConfig extendConfig;
 
-			public string Name
+			public string Speed
 			{
 				get
 				{
-					return name;
+					return speed;
 				}
 				set	
 				{
-					name = value;
+					speed = value;
 				}
 			}
 
@@ -122,18 +112,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public string Speed
-			{
-				get
-				{
-					return speed;
-				}
-				set	
-				{
-					speed = value;
-				}
-			}
-
 			public long? SpeedLevel
 			{
 				get
@@ -143,18 +121,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					speedLevel = value;
-				}
-			}
-
-			public long? QuotaAllocate
-			{
-				get
-				{
-					return quotaAllocate;
-				}
-				set	
-				{
-					quotaAllocate = value;
 				}
 			}
 
@@ -170,6 +136,42 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public long? QuotaAllocate
+			{
+				get
+				{
+					return quotaAllocate;
+				}
+				set	
+				{
+					quotaAllocate = value;
+				}
+			}
+
 			public QueryPipelineList_NotifyConfig NotifyConfig
 			{
 				get
@@ -182,26 +184,38 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
+			public QueryPipelineList_ExtendConfig ExtendConfig
+			{
+				get
+				{
+					return extendConfig;
+				}
+				set	
+				{
+					extendConfig = value;
+				}
+			}
+
 			public class QueryPipelineList_NotifyConfig
 			{
 
-				private string topic;
+				private string mqTopic;
 
 				private string queueName;
 
-				private string mqTopic;
-
 				private string mqTag;
 
-				public string Topic
+				private string topic;
+
+				public string MqTopic
 				{
 					get
 					{
-						return topic;
+						return mqTopic;
 					}
 					set	
 					{
-						topic = value;
+						mqTopic = value;
 					}
 				}
 
@@ -217,18 +231,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public string MqTopic
-				{
-					get
-					{
-						return mqTopic;
-					}
-					set	
-					{
-						mqTopic = value;
-					}
-				}
-
 				public string MqTag
 				{
 					get
@@ -238,6 +240,64 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						mqTag = value;
+					}
+				}
+
+				public string Topic
+				{
+					get
+					{
+						return topic;
+					}
+					set	
+					{
+						topic = value;
+					}
+				}
+			}
+
+			public class QueryPipelineList_ExtendConfig
+			{
+
+				private bool? isBoostNew;
+
+				private int? maxMultiSpeed;
+
+				private string multiSpeedDowngradePolicy;
+
+				public bool? IsBoostNew
+				{
+					get
+					{
+						return isBoostNew;
+					}
+					set	
+					{
+						isBoostNew = value;
+					}
+				}
+
+				public int? MaxMultiSpeed
+				{
+					get
+					{
+						return maxMultiSpeed;
+					}
+					set	
+					{
+						maxMultiSpeed = value;
+					}
+				}
+
+				public string MultiSpeedDowngradePolicy
+				{
+					get
+					{
+						return multiSpeedDowngradePolicy;
+					}
+					set	
+					{
+						multiSpeedDowngradePolicy = value;
 					}
 				}
 			}

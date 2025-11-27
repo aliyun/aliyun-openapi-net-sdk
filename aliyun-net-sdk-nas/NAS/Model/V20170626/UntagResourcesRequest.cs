@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class UntagResourcesRequest : RpcAcsRequest<UntagResourcesResponse>
     {
         public UntagResourcesRequest()
-            : base("NAS", "2017-06-26", "UntagResources", "NAS", "openAPI")
+            : base("NAS", "2017-06-26", "UntagResources", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -48,6 +49,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 		private List<string> tagKeys = new List<string>(){ };
 
+		[JsonProperty(PropertyName = "All")]
 		public bool? All
 		{
 			get
@@ -61,6 +63,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceId")]
 		public List<string> ResourceIds
 		{
 			get
@@ -74,6 +77,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceType")]
 		public string ResourceType
 		{
 			get
@@ -87,6 +91,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
+		[JsonProperty(PropertyName = "TagKey")]
 		public List<string> TagKeys
 		{
 			get

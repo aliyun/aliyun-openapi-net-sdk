@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Sts.Transform.V20150401
 
 			assumeRoleWithSAMLResponse.HttpResponse = _ctx.HttpResponse;
 			assumeRoleWithSAMLResponse.RequestId = _ctx.StringValue("AssumeRoleWithSAML.RequestId");
+			assumeRoleWithSAMLResponse.SourceIdentity = _ctx.StringValue("AssumeRoleWithSAML.SourceIdentity");
 
 			AssumeRoleWithSAMLResponse.AssumeRoleWithSAML_SAMLAssertionInfo sAMLAssertionInfo = new AssumeRoleWithSAMLResponse.AssumeRoleWithSAML_SAMLAssertionInfo();
 			sAMLAssertionInfo.SubjectType = _ctx.StringValue("AssumeRoleWithSAML.SAMLAssertionInfo.SubjectType");

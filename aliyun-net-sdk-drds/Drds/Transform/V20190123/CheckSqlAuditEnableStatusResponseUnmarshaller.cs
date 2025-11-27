@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			CheckSqlAuditEnableStatusResponse checkSqlAuditEnableStatusResponse = new CheckSqlAuditEnableStatusResponse();
 
 			checkSqlAuditEnableStatusResponse.HttpResponse = _ctx.HttpResponse;
+			checkSqlAuditEnableStatusResponse.Status = _ctx.StringValue("CheckSqlAuditEnableStatus.Status");
 			checkSqlAuditEnableStatusResponse.RequestId = _ctx.StringValue("CheckSqlAuditEnableStatus.RequestId");
 			checkSqlAuditEnableStatusResponse.Success = _ctx.BooleanValue("CheckSqlAuditEnableStatus.Success");
-			checkSqlAuditEnableStatusResponse.Status = _ctx.StringValue("CheckSqlAuditEnableStatus.Status");
         
 			return checkSqlAuditEnableStatusResponse;
         }

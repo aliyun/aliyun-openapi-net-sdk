@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribeDrdsInstanceVersionResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private DescribeDrdsInstanceVersion_Data data;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private DescribeDrdsInstanceVersion_Data data;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,21 +70,9 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class DescribeDrdsInstanceVersion_Data
 		{
 
-			private string instanceVersion;
-
 			private string newestVersion;
 
-			public string InstanceVersion
-			{
-				get
-				{
-					return instanceVersion;
-				}
-				set	
-				{
-					instanceVersion = value;
-				}
-			}
+			private string instanceVersion;
 
 			public string NewestVersion
 			{
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					newestVersion = value;
+				}
+			}
+
+			public string InstanceVersion
+			{
+				get
+				{
+					return instanceVersion;
+				}
+				set	
+				{
+					instanceVersion = value;
 				}
 			}
 		}

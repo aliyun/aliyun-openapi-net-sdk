@@ -25,21 +25,9 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class ModifyDBClusterServerlessConfResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string dBClusterId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string DBClusterId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				dBClusterId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

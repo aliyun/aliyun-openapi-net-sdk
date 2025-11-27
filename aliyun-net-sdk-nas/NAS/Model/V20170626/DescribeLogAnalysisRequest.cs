@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class DescribeLogAnalysisRequest : RpcAcsRequest<DescribeLogAnalysisResponse>
     {
         public DescribeLogAnalysisRequest()
-            : base("NAS", "2017-06-26", "DescribeLogAnalysis", "NAS", "openAPI")
+            : base("NAS", "2017-06-26", "DescribeLogAnalysis", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,9 +40,24 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			Method = MethodType.POST;
         }
 
+		private string fileSystemType;
+
 		private int? pageNumber;
 
 		private int? pageSize;
+
+		public string FileSystemType
+		{
+			get
+			{
+				return fileSystemType;
+			}
+			set	
+			{
+				fileSystemType = value;
+				DictionaryUtil.Add(QueryParameters, "FileSystemType", value);
+			}
+		}
 
 		public int? PageNumber
 		{

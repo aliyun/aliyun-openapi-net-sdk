@@ -36,8 +36,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<ListDefaultCollectorConfigurationsResponse.ListDefaultCollectorConfigurations_ResultItem> listDefaultCollectorConfigurationsResponse_result = new List<ListDefaultCollectorConfigurationsResponse.ListDefaultCollectorConfigurations_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListDefaultCollectorConfigurations.Result.Length"); i++) {
 				ListDefaultCollectorConfigurationsResponse.ListDefaultCollectorConfigurations_ResultItem resultItem = new ListDefaultCollectorConfigurationsResponse.ListDefaultCollectorConfigurations_ResultItem();
-				resultItem.FileName = _ctx.StringValue("ListDefaultCollectorConfigurations.Result["+ i +"].fileName");
 				resultItem.Content = _ctx.StringValue("ListDefaultCollectorConfigurations.Result["+ i +"].content");
+				resultItem.FileName = _ctx.StringValue("ListDefaultCollectorConfigurations.Result["+ i +"].fileName");
 
 				listDefaultCollectorConfigurationsResponse_result.Add(resultItem);
 			}

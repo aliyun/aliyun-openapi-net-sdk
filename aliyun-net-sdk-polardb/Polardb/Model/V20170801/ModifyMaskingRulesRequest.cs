@@ -40,28 +40,34 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			Method = MethodType.POST;
         }
 
-		private string dBClusterId;
+		private string maskingAlgo;
 
 		private string ruleName;
 
 		private string ruleVersion;
 
-		private string ruleConfig;
-
 		private string enable;
+
+		private string interfaceVersion;
+
+		private string dBClusterId;
+
+		private string defaultAlgo;
+
+		private string ruleConfig;
 
 		private string ruleNameList;
 
-		public string DBClusterId
+		public string MaskingAlgo
 		{
 			get
 			{
-				return dBClusterId;
+				return maskingAlgo;
 			}
 			set	
 			{
-				dBClusterId = value;
-				DictionaryUtil.Add(QueryParameters, "DBClusterId", value);
+				maskingAlgo = value;
+				DictionaryUtil.Add(QueryParameters, "MaskingAlgo", value);
 			}
 		}
 
@@ -91,19 +97,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string RuleConfig
-		{
-			get
-			{
-				return ruleConfig;
-			}
-			set	
-			{
-				ruleConfig = value;
-				DictionaryUtil.Add(QueryParameters, "RuleConfig", value);
-			}
-		}
-
 		public string Enable
 		{
 			get
@@ -114,6 +107,58 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				enable = value;
 				DictionaryUtil.Add(QueryParameters, "Enable", value);
+			}
+		}
+
+		public string InterfaceVersion
+		{
+			get
+			{
+				return interfaceVersion;
+			}
+			set	
+			{
+				interfaceVersion = value;
+				DictionaryUtil.Add(QueryParameters, "InterfaceVersion", value);
+			}
+		}
+
+		public string DBClusterId
+		{
+			get
+			{
+				return dBClusterId;
+			}
+			set	
+			{
+				dBClusterId = value;
+				DictionaryUtil.Add(QueryParameters, "DBClusterId", value);
+			}
+		}
+
+		public string DefaultAlgo
+		{
+			get
+			{
+				return defaultAlgo;
+			}
+			set	
+			{
+				defaultAlgo = value;
+				DictionaryUtil.Add(QueryParameters, "DefaultAlgo", value);
+			}
+		}
+
+		public string RuleConfig
+		{
+			get
+			{
+				return ruleConfig;
+			}
+			set	
+			{
+				ruleConfig = value;
+				DictionaryUtil.Add(QueryParameters, "RuleConfig", value);
 			}
 		}
 

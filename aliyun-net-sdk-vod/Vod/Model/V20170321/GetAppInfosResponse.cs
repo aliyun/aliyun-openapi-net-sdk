@@ -98,6 +98,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string modificationTime;
 
+			private string resourceGroupId;
+
 			public string Type
 			{
 				get
@@ -179,6 +181,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					modificationTime = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 		}

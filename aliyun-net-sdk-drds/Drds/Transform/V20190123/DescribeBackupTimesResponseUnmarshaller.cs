@@ -31,12 +31,12 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			DescribeBackupTimesResponse describeBackupTimesResponse = new DescribeBackupTimesResponse();
 
 			describeBackupTimesResponse.HttpResponse = _ctx.HttpResponse;
-			describeBackupTimesResponse.RequestId = _ctx.StringValue("DescribeBackupTimes.RequestId");
 			describeBackupTimesResponse.Success = _ctx.BooleanValue("DescribeBackupTimes.Success");
+			describeBackupTimesResponse.RequestId = _ctx.StringValue("DescribeBackupTimes.RequestId");
 
 			DescribeBackupTimesResponse.DescribeBackupTimes_RestoreTime restoreTime = new DescribeBackupTimesResponse.DescribeBackupTimes_RestoreTime();
-			restoreTime.StartTime = _ctx.StringValue("DescribeBackupTimes.RestoreTime.StartTime");
 			restoreTime.EndTime = _ctx.StringValue("DescribeBackupTimes.RestoreTime.EndTime");
+			restoreTime.StartTime = _ctx.StringValue("DescribeBackupTimes.RestoreTime.StartTime");
 			describeBackupTimesResponse.RestoreTime = restoreTime;
         
 			return describeBackupTimesResponse;

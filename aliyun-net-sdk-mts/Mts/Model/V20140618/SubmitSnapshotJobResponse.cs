@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
@@ -56,63 +56,39 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		public class SubmitSnapshotJob_SnapshotJob
 		{
 
-			private string id;
-
-			private string userData;
-
-			private string pipelineId;
+			private string creationTime;
 
 			private string state;
 
-			private string code;
+			private string message;
 
 			private string count;
 
 			private string tileCount;
 
-			private string message;
+			private string userData;
 
-			private string creationTime;
+			private string code;
 
-			private SubmitSnapshotJob_Input input;
+			private string pipelineId;
+
+			private string id;
 
 			private SubmitSnapshotJob_SnapshotConfig snapshotConfig;
 
 			private SubmitSnapshotJob_MNSMessageResult mNSMessageResult;
 
-			public string Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+			private SubmitSnapshotJob_Input input;
 
-			public string UserData
+			public string CreationTime
 			{
 				get
 				{
-					return userData;
+					return creationTime;
 				}
 				set	
 				{
-					userData = value;
-				}
-			}
-
-			public string PipelineId
-			{
-				get
-				{
-					return pipelineId;
-				}
-				set	
-				{
-					pipelineId = value;
+					creationTime = value;
 				}
 			}
 
@@ -128,15 +104,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public string Code
+			public string Message
 			{
 				get
 				{
-					return code;
+					return message;
 				}
 				set	
 				{
-					code = value;
+					message = value;
 				}
 			}
 
@@ -164,39 +140,51 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public string Message
+			public string UserData
 			{
 				get
 				{
-					return message;
+					return userData;
 				}
 				set	
 				{
-					message = value;
+					userData = value;
 				}
 			}
 
-			public string CreationTime
+			public string Code
 			{
 				get
 				{
-					return creationTime;
+					return code;
 				}
 				set	
 				{
-					creationTime = value;
+					code = value;
 				}
 			}
 
-			public SubmitSnapshotJob_Input Input
+			public string PipelineId
 			{
 				get
 				{
-					return input;
+					return pipelineId;
 				}
 				set	
 				{
-					input = value;
+					pipelineId = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
 				}
 			}
 
@@ -224,63 +212,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class SubmitSnapshotJob_Input
+			public SubmitSnapshotJob_Input Input
 			{
-
-				private string bucket;
-
-				private string location;
-
-				private string _object;
-
-				private string roleArn;
-
-				public string Bucket
+				get
 				{
-					get
-					{
-						return bucket;
-					}
-					set	
-					{
-						bucket = value;
-					}
+					return input;
 				}
-
-				public string Location
+				set	
 				{
-					get
-					{
-						return location;
-					}
-					set	
-					{
-						location = value;
-					}
-				}
-
-				public string _Object
-				{
-					get
-					{
-						return _object;
-					}
-					set	
-					{
-						_object = value;
-					}
-				}
-
-				public string RoleArn
-				{
-					get
-					{
-						return roleArn;
-					}
-					set	
-					{
-						roleArn = value;
-					}
+					input = value;
 				}
 			}
 
@@ -291,19 +231,21 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string interval;
 
-				private string num;
+				private string frameType;
 
 				private string width;
 
 				private string height;
 
-				private string frameType;
+				private string num;
+
+				private List<string> timeArray;
+
+				private SubmitSnapshotJob_TileOut tileOut;
 
 				private SubmitSnapshotJob_OutputFile outputFile;
 
 				private SubmitSnapshotJob_TileOutputFile tileOutputFile;
-
-				private SubmitSnapshotJob_TileOut tileOut;
 
 				public string Time
 				{
@@ -329,15 +271,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public string Num
+				public string FrameType
 				{
 					get
 					{
-						return num;
+						return frameType;
 					}
 					set	
 					{
-						num = value;
+						frameType = value;
 					}
 				}
 
@@ -365,15 +307,39 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public string FrameType
+				public string Num
 				{
 					get
 					{
-						return frameType;
+						return num;
 					}
 					set	
 					{
-						frameType = value;
+						num = value;
+					}
+				}
+
+				public List<string> TimeArray
+				{
+					get
+					{
+						return timeArray;
+					}
+					set	
+					{
+						timeArray = value;
+					}
+				}
+
+				public SubmitSnapshotJob_TileOut TileOut
+				{
+					get
+					{
+						return tileOut;
+					}
+					set	
+					{
+						tileOut = value;
 					}
 				}
 
@@ -401,218 +367,26 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public SubmitSnapshotJob_TileOut TileOut
-				{
-					get
-					{
-						return tileOut;
-					}
-					set	
-					{
-						tileOut = value;
-					}
-				}
-
-				public class SubmitSnapshotJob_OutputFile
-				{
-
-					private string bucket;
-
-					private string location;
-
-					private string _object;
-
-					private string roleArn;
-
-					public string Bucket
-					{
-						get
-						{
-							return bucket;
-						}
-						set	
-						{
-							bucket = value;
-						}
-					}
-
-					public string Location
-					{
-						get
-						{
-							return location;
-						}
-						set	
-						{
-							location = value;
-						}
-					}
-
-					public string _Object
-					{
-						get
-						{
-							return _object;
-						}
-						set	
-						{
-							_object = value;
-						}
-					}
-
-					public string RoleArn
-					{
-						get
-						{
-							return roleArn;
-						}
-						set	
-						{
-							roleArn = value;
-						}
-					}
-				}
-
-				public class SubmitSnapshotJob_TileOutputFile
-				{
-
-					private string bucket;
-
-					private string location;
-
-					private string _object;
-
-					private string roleArn;
-
-					public string Bucket
-					{
-						get
-						{
-							return bucket;
-						}
-						set	
-						{
-							bucket = value;
-						}
-					}
-
-					public string Location
-					{
-						get
-						{
-							return location;
-						}
-						set	
-						{
-							location = value;
-						}
-					}
-
-					public string _Object
-					{
-						get
-						{
-							return _object;
-						}
-						set	
-						{
-							_object = value;
-						}
-					}
-
-					public string RoleArn
-					{
-						get
-						{
-							return roleArn;
-						}
-						set	
-						{
-							roleArn = value;
-						}
-					}
-				}
-
 				public class SubmitSnapshotJob_TileOut
 				{
-
-					private string lines;
-
-					private string columns;
-
-					private string cellWidth;
-
-					private string cellHeight;
-
-					private string margin;
 
 					private string padding;
 
 					private string color;
 
-					private string isKeepCellPic;
-
 					private string cellSelStep;
 
-					public string Lines
-					{
-						get
-						{
-							return lines;
-						}
-						set	
-						{
-							lines = value;
-						}
-					}
+					private string cellHeight;
 
-					public string Columns
-					{
-						get
-						{
-							return columns;
-						}
-						set	
-						{
-							columns = value;
-						}
-					}
+					private string cellWidth;
 
-					public string CellWidth
-					{
-						get
-						{
-							return cellWidth;
-						}
-						set	
-						{
-							cellWidth = value;
-						}
-					}
+					private string margin;
 
-					public string CellHeight
-					{
-						get
-						{
-							return cellHeight;
-						}
-						set	
-						{
-							cellHeight = value;
-						}
-					}
+					private string columns;
 
-					public string Margin
-					{
-						get
-						{
-							return margin;
-						}
-						set	
-						{
-							margin = value;
-						}
-					}
+					private string isKeepCellPic;
+
+					private string lines;
 
 					public string Padding
 					{
@@ -638,6 +412,66 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
+					public string CellSelStep
+					{
+						get
+						{
+							return cellSelStep;
+						}
+						set	
+						{
+							cellSelStep = value;
+						}
+					}
+
+					public string CellHeight
+					{
+						get
+						{
+							return cellHeight;
+						}
+						set	
+						{
+							cellHeight = value;
+						}
+					}
+
+					public string CellWidth
+					{
+						get
+						{
+							return cellWidth;
+						}
+						set	
+						{
+							cellWidth = value;
+						}
+					}
+
+					public string Margin
+					{
+						get
+						{
+							return margin;
+						}
+						set	
+						{
+							margin = value;
+						}
+					}
+
+					public string Columns
+					{
+						get
+						{
+							return columns;
+						}
+						set	
+						{
+							columns = value;
+						}
+					}
+
 					public string IsKeepCellPic
 					{
 						get
@@ -650,15 +484,135 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public string CellSelStep
+					public string Lines
 					{
 						get
 						{
-							return cellSelStep;
+							return lines;
 						}
 						set	
 						{
-							cellSelStep = value;
+							lines = value;
+						}
+					}
+				}
+
+				public class SubmitSnapshotJob_OutputFile
+				{
+
+					private string roleArn;
+
+					private string _object;
+
+					private string location;
+
+					private string bucket;
+
+					public string RoleArn
+					{
+						get
+						{
+							return roleArn;
+						}
+						set	
+						{
+							roleArn = value;
+						}
+					}
+
+					public string _Object
+					{
+						get
+						{
+							return _object;
+						}
+						set	
+						{
+							_object = value;
+						}
+					}
+
+					public string Location
+					{
+						get
+						{
+							return location;
+						}
+						set	
+						{
+							location = value;
+						}
+					}
+
+					public string Bucket
+					{
+						get
+						{
+							return bucket;
+						}
+						set	
+						{
+							bucket = value;
+						}
+					}
+				}
+
+				public class SubmitSnapshotJob_TileOutputFile
+				{
+
+					private string roleArn;
+
+					private string _object;
+
+					private string location;
+
+					private string bucket;
+
+					public string RoleArn
+					{
+						get
+						{
+							return roleArn;
+						}
+						set	
+						{
+							roleArn = value;
+						}
+					}
+
+					public string _Object
+					{
+						get
+						{
+							return _object;
+						}
+						set	
+						{
+							_object = value;
+						}
+					}
+
+					public string Location
+					{
+						get
+						{
+							return location;
+						}
+						set	
+						{
+							location = value;
+						}
+					}
+
+					public string Bucket
+					{
+						get
+						{
+							return bucket;
+						}
+						set	
+						{
+							bucket = value;
 						}
 					}
 				}
@@ -706,6 +660,66 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						errorCode = value;
+					}
+				}
+			}
+
+			public class SubmitSnapshotJob_Input
+			{
+
+				private string roleArn;
+
+				private string _object;
+
+				private string location;
+
+				private string bucket;
+
+				public string RoleArn
+				{
+					get
+					{
+						return roleArn;
+					}
+					set	
+					{
+						roleArn = value;
+					}
+				}
+
+				public string _Object
+				{
+					get
+					{
+						return _object;
+					}
+					set	
+					{
+						_object = value;
+					}
+				}
+
+				public string Location
+				{
+					get
+					{
+						return location;
+					}
+					set	
+					{
+						location = value;
+					}
+				}
+
+				public string Bucket
+				{
+					get
+					{
+						return bucket;
+					}
+					set	
+					{
+						bucket = value;
 					}
 				}
 			}

@@ -54,6 +54,8 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				backup.BackupName = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupName");
 				backup.BackupScale = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupScale");
 				backup.IsAvail = _ctx.BooleanValue("DescribeBackups.Backups["+ i +"].IsAvail");
+				backup.EngineVersion = _ctx.StringValue("DescribeBackups.Backups["+ i +"].EngineVersion");
+				backup.BackupExpireTime = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupExpireTime");
 
 				describeBackupsResponse_backups.Add(backup);
 			}

@@ -26,28 +26,28 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 {
     public class QueryMediaWorkflowListResponseUnmarshaller
     {
-        public static QueryMediaWorkflowListResponse Unmarshall(UnmarshallerContext context)
+        public static QueryMediaWorkflowListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryMediaWorkflowListResponse queryMediaWorkflowListResponse = new QueryMediaWorkflowListResponse();
 
-			queryMediaWorkflowListResponse.HttpResponse = context.HttpResponse;
-			queryMediaWorkflowListResponse.RequestId = context.StringValue("QueryMediaWorkflowList.RequestId");
+			queryMediaWorkflowListResponse.HttpResponse = _ctx.HttpResponse;
+			queryMediaWorkflowListResponse.RequestId = _ctx.StringValue("QueryMediaWorkflowList.RequestId");
 
 			List<string> queryMediaWorkflowListResponse_nonExistMediaWorkflowIds = new List<string>();
-			for (int i = 0; i < context.Length("QueryMediaWorkflowList.NonExistMediaWorkflowIds.Length"); i++) {
-				queryMediaWorkflowListResponse_nonExistMediaWorkflowIds.Add(context.StringValue("QueryMediaWorkflowList.NonExistMediaWorkflowIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("QueryMediaWorkflowList.NonExistMediaWorkflowIds.Length"); i++) {
+				queryMediaWorkflowListResponse_nonExistMediaWorkflowIds.Add(_ctx.StringValue("QueryMediaWorkflowList.NonExistMediaWorkflowIds["+ i +"]"));
 			}
 			queryMediaWorkflowListResponse.NonExistMediaWorkflowIds = queryMediaWorkflowListResponse_nonExistMediaWorkflowIds;
 
 			List<QueryMediaWorkflowListResponse.QueryMediaWorkflowList_MediaWorkflow> queryMediaWorkflowListResponse_mediaWorkflowList = new List<QueryMediaWorkflowListResponse.QueryMediaWorkflowList_MediaWorkflow>();
-			for (int i = 0; i < context.Length("QueryMediaWorkflowList.MediaWorkflowList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryMediaWorkflowList.MediaWorkflowList.Length"); i++) {
 				QueryMediaWorkflowListResponse.QueryMediaWorkflowList_MediaWorkflow mediaWorkflow = new QueryMediaWorkflowListResponse.QueryMediaWorkflowList_MediaWorkflow();
-				mediaWorkflow.MediaWorkflowId = context.StringValue("QueryMediaWorkflowList.MediaWorkflowList["+ i +"].MediaWorkflowId");
-				mediaWorkflow.Name = context.StringValue("QueryMediaWorkflowList.MediaWorkflowList["+ i +"].Name");
-				mediaWorkflow.Topology = context.StringValue("QueryMediaWorkflowList.MediaWorkflowList["+ i +"].Topology");
-				mediaWorkflow.TriggerMode = context.StringValue("QueryMediaWorkflowList.MediaWorkflowList["+ i +"].TriggerMode");
-				mediaWorkflow.State = context.StringValue("QueryMediaWorkflowList.MediaWorkflowList["+ i +"].State");
-				mediaWorkflow.CreationTime = context.StringValue("QueryMediaWorkflowList.MediaWorkflowList["+ i +"].CreationTime");
+				mediaWorkflow.CreationTime = _ctx.StringValue("QueryMediaWorkflowList.MediaWorkflowList["+ i +"].CreationTime");
+				mediaWorkflow.MediaWorkflowId = _ctx.StringValue("QueryMediaWorkflowList.MediaWorkflowList["+ i +"].MediaWorkflowId");
+				mediaWorkflow.State = _ctx.StringValue("QueryMediaWorkflowList.MediaWorkflowList["+ i +"].State");
+				mediaWorkflow.TriggerMode = _ctx.StringValue("QueryMediaWorkflowList.MediaWorkflowList["+ i +"].TriggerMode");
+				mediaWorkflow.Name = _ctx.StringValue("QueryMediaWorkflowList.MediaWorkflowList["+ i +"].Name");
+				mediaWorkflow.Topology = _ctx.StringValue("QueryMediaWorkflowList.MediaWorkflowList["+ i +"].Topology");
 
 				queryMediaWorkflowListResponse_mediaWorkflowList.Add(mediaWorkflow);
 			}

@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 {
     public class SubmitSmarttagJobResponseUnmarshaller
     {
-        public static SubmitSmarttagJobResponse Unmarshall(UnmarshallerContext context)
+        public static SubmitSmarttagJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SubmitSmarttagJobResponse submitSmarttagJobResponse = new SubmitSmarttagJobResponse();
 
-			submitSmarttagJobResponse.HttpResponse = context.HttpResponse;
-			submitSmarttagJobResponse.RequestId = context.StringValue("SubmitSmarttagJob.RequestId");
-			submitSmarttagJobResponse.JobId = context.StringValue("SubmitSmarttagJob.JobId");
+			submitSmarttagJobResponse.HttpResponse = _ctx.HttpResponse;
+			submitSmarttagJobResponse.RequestId = _ctx.StringValue("SubmitSmarttagJob.RequestId");
+			submitSmarttagJobResponse.JobId = _ctx.StringValue("SubmitSmarttagJob.JobId");
         
 			return submitSmarttagJobResponse;
         }

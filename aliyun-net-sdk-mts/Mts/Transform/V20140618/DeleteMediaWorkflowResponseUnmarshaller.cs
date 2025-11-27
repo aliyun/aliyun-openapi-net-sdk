@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 {
     public class DeleteMediaWorkflowResponseUnmarshaller
     {
-        public static DeleteMediaWorkflowResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteMediaWorkflowResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteMediaWorkflowResponse deleteMediaWorkflowResponse = new DeleteMediaWorkflowResponse();
 
-			deleteMediaWorkflowResponse.HttpResponse = context.HttpResponse;
-			deleteMediaWorkflowResponse.RequestId = context.StringValue("DeleteMediaWorkflow.RequestId");
+			deleteMediaWorkflowResponse.HttpResponse = _ctx.HttpResponse;
+			deleteMediaWorkflowResponse.RequestId = _ctx.StringValue("DeleteMediaWorkflow.RequestId");
 
 			DeleteMediaWorkflowResponse.DeleteMediaWorkflow_MediaWorkflow mediaWorkflow = new DeleteMediaWorkflowResponse.DeleteMediaWorkflow_MediaWorkflow();
-			mediaWorkflow.MediaWorkflowId = context.StringValue("DeleteMediaWorkflow.MediaWorkflow.MediaWorkflowId");
-			mediaWorkflow.Name = context.StringValue("DeleteMediaWorkflow.MediaWorkflow.Name");
-			mediaWorkflow.Topology = context.StringValue("DeleteMediaWorkflow.MediaWorkflow.Topology");
-			mediaWorkflow.State = context.StringValue("DeleteMediaWorkflow.MediaWorkflow.State");
-			mediaWorkflow.CreationTime = context.StringValue("DeleteMediaWorkflow.MediaWorkflow.CreationTime");
+			mediaWorkflow.CreationTime = _ctx.StringValue("DeleteMediaWorkflow.MediaWorkflow.CreationTime");
+			mediaWorkflow.MediaWorkflowId = _ctx.StringValue("DeleteMediaWorkflow.MediaWorkflow.MediaWorkflowId");
+			mediaWorkflow.State = _ctx.StringValue("DeleteMediaWorkflow.MediaWorkflow.State");
+			mediaWorkflow.Name = _ctx.StringValue("DeleteMediaWorkflow.MediaWorkflow.Name");
+			mediaWorkflow.Topology = _ctx.StringValue("DeleteMediaWorkflow.MediaWorkflow.Topology");
 			deleteMediaWorkflowResponse.MediaWorkflow = mediaWorkflow;
         
 			return deleteMediaWorkflowResponse;

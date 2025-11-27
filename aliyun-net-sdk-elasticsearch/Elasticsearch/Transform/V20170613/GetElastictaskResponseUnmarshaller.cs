@@ -37,9 +37,9 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 
 			GetElastictaskResponse.GetElastictask_Result.GetElastictask_ElasticExpansionTask elasticExpansionTask = new GetElastictaskResponse.GetElastictask_Result.GetElastictask_ElasticExpansionTask();
 			elasticExpansionTask.TriggerType = _ctx.StringValue("GetElastictask.Result.ElasticExpansionTask.triggerType");
-			elasticExpansionTask.CronExpression = _ctx.StringValue("GetElastictask.Result.ElasticExpansionTask.cronExpression");
-			elasticExpansionTask.ElasticNodeCount = _ctx.IntegerValue("GetElastictask.Result.ElasticExpansionTask.elasticNodeCount");
 			elasticExpansionTask.ReplicaCount = _ctx.IntegerValue("GetElastictask.Result.ElasticExpansionTask.replicaCount");
+			elasticExpansionTask.ElasticNodeCount = _ctx.IntegerValue("GetElastictask.Result.ElasticExpansionTask.elasticNodeCount");
+			elasticExpansionTask.CronExpression = _ctx.StringValue("GetElastictask.Result.ElasticExpansionTask.cronExpression");
 
 			List<string> elasticExpansionTask_targetIndices = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetElastictask.Result.ElasticExpansionTask.TargetIndices.Length"); i++) {
@@ -50,9 +50,9 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 
 			GetElastictaskResponse.GetElastictask_Result.GetElastictask_ElasticShrinkTask elasticShrinkTask = new GetElastictaskResponse.GetElastictask_Result.GetElastictask_ElasticShrinkTask();
 			elasticShrinkTask.TriggerType = _ctx.StringValue("GetElastictask.Result.ElasticShrinkTask.triggerType");
-			elasticShrinkTask.CronExpression = _ctx.StringValue("GetElastictask.Result.ElasticShrinkTask.cronExpression");
-			elasticShrinkTask.ElasticNodeCount = _ctx.IntegerValue("GetElastictask.Result.ElasticShrinkTask.elasticNodeCount");
 			elasticShrinkTask.ReplicaCount = _ctx.IntegerValue("GetElastictask.Result.ElasticShrinkTask.replicaCount");
+			elasticShrinkTask.ElasticNodeCount = _ctx.IntegerValue("GetElastictask.Result.ElasticShrinkTask.elasticNodeCount");
+			elasticShrinkTask.CronExpression = _ctx.StringValue("GetElastictask.Result.ElasticShrinkTask.cronExpression");
 
 			List<string> elasticShrinkTask_targetIndices1 = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetElastictask.Result.ElasticShrinkTask.TargetIndices.Length"); i++) {

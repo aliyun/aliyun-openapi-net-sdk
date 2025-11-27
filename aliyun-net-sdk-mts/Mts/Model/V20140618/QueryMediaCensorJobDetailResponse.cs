@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
@@ -56,37 +56,99 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		public class QueryMediaCensorJobDetail_MediaCensorJobDetail
 		{
 
+			private string creationTime;
+
+			private string finishTime;
+
+			private string suggestion;
+
+			private string state;
+
+			private string message;
+
 			private string jobId;
 
 			private string userData;
 
-			private string pipelineId;
-
-			private string state;
-
 			private string code;
 
-			private string suggestion;
-
-			private string message;
-
-			private string creationTime;
-
-			private string finishTime;
+			private string pipelineId;
 
 			private List<QueryMediaCensorJobDetail_CoverImageCensorResult> coverImageCensorResults;
 
 			private QueryMediaCensorJobDetail_TitleCensorResult titleCensorResult;
 
-			private QueryMediaCensorJobDetail_DescCensorResult descCensorResult;
+			private QueryMediaCensorJobDetail_Input input;
 
 			private QueryMediaCensorJobDetail_BarrageCensorResult barrageCensorResult;
 
-			private QueryMediaCensorJobDetail_Input input;
+			private QueryMediaCensorJobDetail_DescCensorResult descCensorResult;
 
 			private QueryMediaCensorJobDetail_VideoCensorConfig videoCensorConfig;
 
 			private QueryMediaCensorJobDetail_VensorCensorResult vensorCensorResult;
+
+			private QueryMediaCensorJobDetail_AudioCensorResult audioCensorResult;
+
+			public string CreationTime
+			{
+				get
+				{
+					return creationTime;
+				}
+				set	
+				{
+					creationTime = value;
+				}
+			}
+
+			public string FinishTime
+			{
+				get
+				{
+					return finishTime;
+				}
+				set	
+				{
+					finishTime = value;
+				}
+			}
+
+			public string Suggestion
+			{
+				get
+				{
+					return suggestion;
+				}
+				set	
+				{
+					suggestion = value;
+				}
+			}
+
+			public string State
+			{
+				get
+				{
+					return state;
+				}
+				set	
+				{
+					state = value;
+				}
+			}
+
+			public string Message
+			{
+				get
+				{
+					return message;
+				}
+				set	
+				{
+					message = value;
+				}
+			}
 
 			public string JobId
 			{
@@ -112,30 +174,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public string PipelineId
-			{
-				get
-				{
-					return pipelineId;
-				}
-				set	
-				{
-					pipelineId = value;
-				}
-			}
-
-			public string State
-			{
-				get
-				{
-					return state;
-				}
-				set	
-				{
-					state = value;
-				}
-			}
-
 			public string Code
 			{
 				get
@@ -148,51 +186,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public string Suggestion
+			public string PipelineId
 			{
 				get
 				{
-					return suggestion;
+					return pipelineId;
 				}
 				set	
 				{
-					suggestion = value;
-				}
-			}
-
-			public string Message
-			{
-				get
-				{
-					return message;
-				}
-				set	
-				{
-					message = value;
-				}
-			}
-
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
-				}
-			}
-
-			public string FinishTime
-			{
-				get
-				{
-					return finishTime;
-				}
-				set	
-				{
-					finishTime = value;
+					pipelineId = value;
 				}
 			}
 
@@ -220,15 +222,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public QueryMediaCensorJobDetail_DescCensorResult DescCensorResult
+			public QueryMediaCensorJobDetail_Input Input
 			{
 				get
 				{
-					return descCensorResult;
+					return input;
 				}
 				set	
 				{
-					descCensorResult = value;
+					input = value;
 				}
 			}
 
@@ -244,15 +246,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public QueryMediaCensorJobDetail_Input Input
+			public QueryMediaCensorJobDetail_DescCensorResult DescCensorResult
 			{
 				get
 				{
-					return input;
+					return descCensorResult;
 				}
 				set	
 				{
-					input = value;
+					descCensorResult = value;
 				}
 			}
 
@@ -280,16 +282,40 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
+			public QueryMediaCensorJobDetail_AudioCensorResult AudioCensorResult
+			{
+				get
+				{
+					return audioCensorResult;
+				}
+				set	
+				{
+					audioCensorResult = value;
+				}
+			}
+
 			public class QueryMediaCensorJobDetail_CoverImageCensorResult
 			{
+
+				private string _object;
 
 				private string location;
 
 				private string bucket;
 
-				private string _object;
-
 				private List<QueryMediaCensorJobDetail_Result> results;
+
+				public string _Object
+				{
+					get
+					{
+						return _object;
+					}
+					set	
+					{
+						_object = value;
+					}
+				}
 
 				public string Location
 				{
@@ -312,18 +338,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						bucket = value;
-					}
-				}
-
-				public string _Object
-				{
-					get
-					{
-						return _object;
-					}
-					set	
-					{
-						_object = value;
 					}
 				}
 
@@ -342,35 +356,23 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				public class QueryMediaCensorJobDetail_Result
 				{
 
-					private string rate;
-
-					private string scene;
+					private string suggestion;
 
 					private string label;
 
-					private string suggestion;
+					private string scene;
 
-					public string Rate
+					private string rate;
+
+					public string Suggestion
 					{
 						get
 						{
-							return rate;
+							return suggestion;
 						}
 						set	
 						{
-							rate = value;
-						}
-					}
-
-					public string Scene
-					{
-						get
-						{
-							return scene;
-						}
-						set	
-						{
-							scene = value;
+							suggestion = value;
 						}
 					}
 
@@ -386,15 +388,27 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public string Suggestion
+					public string Scene
 					{
 						get
 						{
-							return suggestion;
+							return scene;
 						}
 						set	
 						{
-							suggestion = value;
+							scene = value;
+						}
+					}
+
+					public string Rate
+					{
+						get
+						{
+							return rate;
+						}
+						set	
+						{
+							rate = value;
 						}
 					}
 				}
@@ -403,35 +417,23 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			public class QueryMediaCensorJobDetail_TitleCensorResult
 			{
 
-				private string rate;
-
-				private string scene;
+				private string suggestion;
 
 				private string label;
 
-				private string suggestion;
+				private string scene;
 
-				public string Rate
+				private string rate;
+
+				public string Suggestion
 				{
 					get
 					{
-						return rate;
+						return suggestion;
 					}
 					set	
 					{
-						rate = value;
-					}
-				}
-
-				public string Scene
-				{
-					get
-					{
-						return scene;
-					}
-					set	
-					{
-						scene = value;
+						suggestion = value;
 					}
 				}
 
@@ -447,42 +449,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public string Suggestion
-				{
-					get
-					{
-						return suggestion;
-					}
-					set	
-					{
-						suggestion = value;
-					}
-				}
-			}
-
-			public class QueryMediaCensorJobDetail_DescCensorResult
-			{
-
-				private string rate;
-
-				private string scene;
-
-				private string label;
-
-				private string suggestion;
-
-				public string Rate
-				{
-					get
-					{
-						return rate;
-					}
-					set	
-					{
-						rate = value;
-					}
-				}
-
 				public string Scene
 				{
 					get
@@ -495,42 +461,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public string Label
-				{
-					get
-					{
-						return label;
-					}
-					set	
-					{
-						label = value;
-					}
-				}
-
-				public string Suggestion
-				{
-					get
-					{
-						return suggestion;
-					}
-					set	
-					{
-						suggestion = value;
-					}
-				}
-			}
-
-			public class QueryMediaCensorJobDetail_BarrageCensorResult
-			{
-
-				private string rate;
-
-				private string scene;
-
-				private string label;
-
-				private string suggestion;
-
 				public string Rate
 				{
 					get
@@ -540,42 +470,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						rate = value;
-					}
-				}
-
-				public string Scene
-				{
-					get
-					{
-						return scene;
-					}
-					set	
-					{
-						scene = value;
-					}
-				}
-
-				public string Label
-				{
-					get
-					{
-						return label;
-					}
-					set	
-					{
-						label = value;
-					}
-				}
-
-				public string Suggestion
-				{
-					get
-					{
-						return suggestion;
-					}
-					set	
-					{
-						suggestion = value;
 					}
 				}
 			}
@@ -583,21 +477,21 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			public class QueryMediaCensorJobDetail_Input
 			{
 
-				private string bucket;
+				private string _object;
 
 				private string location;
 
-				private string _object;
+				private string bucket;
 
-				public string Bucket
+				public string _Object
 				{
 					get
 					{
-						return bucket;
+						return _object;
 					}
 					set	
 					{
-						bucket = value;
+						_object = value;
 					}
 				}
 
@@ -613,15 +507,135 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public string _Object
+				public string Bucket
 				{
 					get
 					{
-						return _object;
+						return bucket;
 					}
 					set	
 					{
-						_object = value;
+						bucket = value;
+					}
+				}
+			}
+
+			public class QueryMediaCensorJobDetail_BarrageCensorResult
+			{
+
+				private string suggestion;
+
+				private string label;
+
+				private string scene;
+
+				private string rate;
+
+				public string Suggestion
+				{
+					get
+					{
+						return suggestion;
+					}
+					set	
+					{
+						suggestion = value;
+					}
+				}
+
+				public string Label
+				{
+					get
+					{
+						return label;
+					}
+					set	
+					{
+						label = value;
+					}
+				}
+
+				public string Scene
+				{
+					get
+					{
+						return scene;
+					}
+					set	
+					{
+						scene = value;
+					}
+				}
+
+				public string Rate
+				{
+					get
+					{
+						return rate;
+					}
+					set	
+					{
+						rate = value;
+					}
+				}
+			}
+
+			public class QueryMediaCensorJobDetail_DescCensorResult
+			{
+
+				private string suggestion;
+
+				private string label;
+
+				private string scene;
+
+				private string rate;
+
+				public string Suggestion
+				{
+					get
+					{
+						return suggestion;
+					}
+					set	
+					{
+						suggestion = value;
+					}
+				}
+
+				public string Label
+				{
+					get
+					{
+						return label;
+					}
+					set	
+					{
+						label = value;
+					}
+				}
+
+				public string Scene
+				{
+					get
+					{
+						return scene;
+					}
+					set	
+					{
+						scene = value;
+					}
+				}
+
+				public string Rate
+				{
+					get
+					{
+						return rate;
+					}
+					set	
+					{
+						rate = value;
 					}
 				}
 			}
@@ -629,23 +643,11 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			public class QueryMediaCensorJobDetail_VideoCensorConfig
 			{
 
-				private string bizType;
-
 				private string videoCensor;
 
-				private QueryMediaCensorJobDetail_OutputFile outputFile;
+				private string bizType;
 
-				public string BizType
-				{
-					get
-					{
-						return bizType;
-					}
-					set	
-					{
-						bizType = value;
-					}
-				}
+				private QueryMediaCensorJobDetail_OutputFile outputFile;
 
 				public string VideoCensor
 				{
@@ -656,6 +658,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						videoCensor = value;
+					}
+				}
+
+				public string BizType
+				{
+					get
+					{
+						return bizType;
+					}
+					set	
+					{
+						bizType = value;
 					}
 				}
 
@@ -674,21 +688,21 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				public class QueryMediaCensorJobDetail_OutputFile
 				{
 
-					private string bucket;
+					private string _object;
 
 					private string location;
 
-					private string _object;
+					private string bucket;
 
-					public string Bucket
+					public string _Object
 					{
 						get
 						{
-							return bucket;
+							return _object;
 						}
 						set	
 						{
-							bucket = value;
+							_object = value;
 						}
 					}
 
@@ -704,15 +718,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public string _Object
+					public string Bucket
 					{
 						get
 						{
-							return _object;
+							return bucket;
 						}
 						set	
 						{
-							_object = value;
+							bucket = value;
 						}
 					}
 				}
@@ -723,9 +737,9 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string nextPageToken;
 
-				private List<QueryMediaCensorJobDetail_CensorResult> censorResults;
-
 				private List<QueryMediaCensorJobDetail_VideoTimeline> videoTimelines;
+
+				private List<QueryMediaCensorJobDetail_CensorResult2> censorResults;
 
 				public string NextPageToken
 				{
@@ -736,18 +750,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						nextPageToken = value;
-					}
-				}
-
-				public List<QueryMediaCensorJobDetail_CensorResult> CensorResults
-				{
-					get
-					{
-						return censorResults;
-					}
-					set	
-					{
-						censorResults = value;
 					}
 				}
 
@@ -763,86 +765,26 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class QueryMediaCensorJobDetail_CensorResult
+				public List<QueryMediaCensorJobDetail_CensorResult2> CensorResults
 				{
-
-					private string rate;
-
-					private string scene;
-
-					private string label;
-
-					private string suggestion;
-
-					public string Rate
+					get
 					{
-						get
-						{
-							return rate;
-						}
-						set	
-						{
-							rate = value;
-						}
+						return censorResults;
 					}
-
-					public string Scene
+					set	
 					{
-						get
-						{
-							return scene;
-						}
-						set	
-						{
-							scene = value;
-						}
-					}
-
-					public string Label
-					{
-						get
-						{
-							return label;
-						}
-						set	
-						{
-							label = value;
-						}
-					}
-
-					public string Suggestion
-					{
-						get
-						{
-							return suggestion;
-						}
-						set	
-						{
-							suggestion = value;
-						}
+						censorResults = value;
 					}
 				}
 
 				public class QueryMediaCensorJobDetail_VideoTimeline
 				{
 
-					private string _object;
-
 					private string timestamp;
 
-					private List<QueryMediaCensorJobDetail_CensorResult2> censorResults1;
+					private string _object;
 
-					public string _Object
-					{
-						get
-						{
-							return _object;
-						}
-						set	
-						{
-							_object = value;
-						}
-					}
+					private List<QueryMediaCensorJobDetail_CensorResult> censorResults1;
 
 					public string Timestamp
 					{
@@ -856,7 +798,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public List<QueryMediaCensorJobDetail_CensorResult2> CensorResults1
+					public string _Object
+					{
+						get
+						{
+							return _object;
+						}
+						set	
+						{
+							_object = value;
+						}
+					}
+
+					public List<QueryMediaCensorJobDetail_CensorResult> CensorResults1
 					{
 						get
 						{
@@ -868,38 +822,26 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public class QueryMediaCensorJobDetail_CensorResult2
+					public class QueryMediaCensorJobDetail_CensorResult
 					{
-
-						private string rate;
-
-						private string scene;
-
-						private string label;
 
 						private string suggestion;
 
-						public string Rate
-						{
-							get
-							{
-								return rate;
-							}
-							set	
-							{
-								rate = value;
-							}
-						}
+						private string label;
 
-						public string Scene
+						private string scene;
+
+						private string rate;
+
+						public string Suggestion
 						{
 							get
 							{
-								return scene;
+								return suggestion;
 							}
 							set	
 							{
-								scene = value;
+								suggestion = value;
 							}
 						}
 
@@ -915,16 +857,194 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
-						public string Suggestion
+						public string Scene
 						{
 							get
 							{
-								return suggestion;
+								return scene;
 							}
 							set	
 							{
-								suggestion = value;
+								scene = value;
 							}
+						}
+
+						public string Rate
+						{
+							get
+							{
+								return rate;
+							}
+							set	
+							{
+								rate = value;
+							}
+						}
+					}
+				}
+
+				public class QueryMediaCensorJobDetail_CensorResult2
+				{
+
+					private string suggestion;
+
+					private string label;
+
+					private string scene;
+
+					private string rate;
+
+					public string Suggestion
+					{
+						get
+						{
+							return suggestion;
+						}
+						set	
+						{
+							suggestion = value;
+						}
+					}
+
+					public string Label
+					{
+						get
+						{
+							return label;
+						}
+						set	
+						{
+							label = value;
+						}
+					}
+
+					public string Scene
+					{
+						get
+						{
+							return scene;
+						}
+						set	
+						{
+							scene = value;
+						}
+					}
+
+					public string Rate
+					{
+						get
+						{
+							return rate;
+						}
+						set	
+						{
+							rate = value;
+						}
+					}
+				}
+			}
+
+			public class QueryMediaCensorJobDetail_AudioCensorResult
+			{
+
+				private string suggestion;
+
+				private string label;
+
+				private List<QueryMediaCensorJobDetail_AudioDetailResult> audioDetailResultList;
+
+				public string Suggestion
+				{
+					get
+					{
+						return suggestion;
+					}
+					set	
+					{
+						suggestion = value;
+					}
+				}
+
+				public string Label
+				{
+					get
+					{
+						return label;
+					}
+					set	
+					{
+						label = value;
+					}
+				}
+
+				public List<QueryMediaCensorJobDetail_AudioDetailResult> AudioDetailResultList
+				{
+					get
+					{
+						return audioDetailResultList;
+					}
+					set	
+					{
+						audioDetailResultList = value;
+					}
+				}
+
+				public class QueryMediaCensorJobDetail_AudioDetailResult
+				{
+
+					private int? startTime;
+
+					private int? endTime;
+
+					private string text;
+
+					private string label;
+
+					public int? StartTime
+					{
+						get
+						{
+							return startTime;
+						}
+						set	
+						{
+							startTime = value;
+						}
+					}
+
+					public int? EndTime
+					{
+						get
+						{
+							return endTime;
+						}
+						set	
+						{
+							endTime = value;
+						}
+					}
+
+					public string Text
+					{
+						get
+						{
+							return text;
+						}
+						set	
+						{
+							text = value;
+						}
+					}
+
+					public string Label
+					{
+						get
+						{
+							return label;
+						}
+						set	
+						{
+							label = value;
 						}
 					}
 				}

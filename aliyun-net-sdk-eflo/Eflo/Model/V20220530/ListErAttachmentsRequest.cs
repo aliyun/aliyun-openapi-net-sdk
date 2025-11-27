@@ -39,6 +39,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private string resourceTenantId;
 
+		private string resourceGroupId;
+
 		private bool? autoReceiveAllRoute;
 
 		private int? pageSize;
@@ -80,6 +82,19 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				resourceTenantId = value;
 				DictionaryUtil.Add(BodyParameters, "ResourceTenantId", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(BodyParameters, "ResourceGroupId", value);
 			}
 		}
 

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			RemoveInstanceAccountResponse removeInstanceAccountResponse = new RemoveInstanceAccountResponse();
 
 			removeInstanceAccountResponse.HttpResponse = _ctx.HttpResponse;
-			removeInstanceAccountResponse.RequestId = _ctx.StringValue("RemoveInstanceAccount.RequestId");
 			removeInstanceAccountResponse.Success = _ctx.BooleanValue("RemoveInstanceAccount.Success");
+			removeInstanceAccountResponse.RequestId = _ctx.StringValue("RemoveInstanceAccount.RequestId");
         
 			return removeInstanceAccountResponse;
         }

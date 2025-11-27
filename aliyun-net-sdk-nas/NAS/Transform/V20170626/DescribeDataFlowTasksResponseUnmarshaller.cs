@@ -52,6 +52,31 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 				task.StartTime = _ctx.StringValue("DescribeDataFlowTasks.TaskInfo["+ i +"].StartTime");
 				task.EndTime = _ctx.StringValue("DescribeDataFlowTasks.TaskInfo["+ i +"].EndTime");
 				task.FsPath = _ctx.StringValue("DescribeDataFlowTasks.TaskInfo["+ i +"].FsPath");
+				task.ConflictPolicy = _ctx.StringValue("DescribeDataFlowTasks.TaskInfo["+ i +"].ConflictPolicy");
+				task.Directory = _ctx.StringValue("DescribeDataFlowTasks.TaskInfo["+ i +"].Directory");
+				task.DstDirectory = _ctx.StringValue("DescribeDataFlowTasks.TaskInfo["+ i +"].DstDirectory");
+				task.ErrorMsg = _ctx.StringValue("DescribeDataFlowTasks.TaskInfo["+ i +"].ErrorMsg");
+
+				DescribeDataFlowTasksResponse.DescribeDataFlowTasks_Task.DescribeDataFlowTasks_ProgressStats progressStats = new DescribeDataFlowTasksResponse.DescribeDataFlowTasks_Task.DescribeDataFlowTasks_ProgressStats();
+				progressStats.FilesTotal = _ctx.LongValue("DescribeDataFlowTasks.TaskInfo["+ i +"].ProgressStats.FilesTotal");
+				progressStats.FilesDone = _ctx.LongValue("DescribeDataFlowTasks.TaskInfo["+ i +"].ProgressStats.FilesDone");
+				progressStats.ActualFiles = _ctx.LongValue("DescribeDataFlowTasks.TaskInfo["+ i +"].ProgressStats.ActualFiles");
+				progressStats.BytesTotal = _ctx.LongValue("DescribeDataFlowTasks.TaskInfo["+ i +"].ProgressStats.BytesTotal");
+				progressStats.BytesDone = _ctx.LongValue("DescribeDataFlowTasks.TaskInfo["+ i +"].ProgressStats.BytesDone");
+				progressStats.ActualBytes = _ctx.LongValue("DescribeDataFlowTasks.TaskInfo["+ i +"].ProgressStats.ActualBytes");
+				progressStats.RemainTime = _ctx.LongValue("DescribeDataFlowTasks.TaskInfo["+ i +"].ProgressStats.RemainTime");
+				progressStats.AverageSpeed = _ctx.LongValue("DescribeDataFlowTasks.TaskInfo["+ i +"].ProgressStats.AverageSpeed");
+				task.ProgressStats = progressStats;
+
+				List<DescribeDataFlowTasksResponse.DescribeDataFlowTasks_Task.DescribeDataFlowTasks_Report> task_reports = new List<DescribeDataFlowTasksResponse.DescribeDataFlowTasks_Task.DescribeDataFlowTasks_Report>();
+				for (int j = 0; j < _ctx.Length("DescribeDataFlowTasks.TaskInfo["+ i +"].Reports.Length"); j++) {
+					DescribeDataFlowTasksResponse.DescribeDataFlowTasks_Task.DescribeDataFlowTasks_Report report = new DescribeDataFlowTasksResponse.DescribeDataFlowTasks_Task.DescribeDataFlowTasks_Report();
+					report.Name = _ctx.StringValue("DescribeDataFlowTasks.TaskInfo["+ i +"].Reports["+ j +"].Name");
+					report.Path = _ctx.StringValue("DescribeDataFlowTasks.TaskInfo["+ i +"].Reports["+ j +"].Path");
+
+					task_reports.Add(report);
+				}
+				task.Reports = task_reports;
 
 				describeDataFlowTasksResponse_taskInfo.Add(task);
 			}

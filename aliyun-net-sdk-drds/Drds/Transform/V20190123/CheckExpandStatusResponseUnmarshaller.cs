@@ -31,12 +31,12 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			CheckExpandStatusResponse checkExpandStatusResponse = new CheckExpandStatusResponse();
 
 			checkExpandStatusResponse.HttpResponse = _ctx.HttpResponse;
-			checkExpandStatusResponse.RequestId = _ctx.StringValue("CheckExpandStatus.RequestId");
 			checkExpandStatusResponse.Success = _ctx.BooleanValue("CheckExpandStatus.Success");
+			checkExpandStatusResponse.RequestId = _ctx.StringValue("CheckExpandStatus.RequestId");
 
 			CheckExpandStatusResponse.CheckExpandStatus_Data data = new CheckExpandStatusResponse.CheckExpandStatus_Data();
-			data.IsActive = _ctx.BooleanValue("CheckExpandStatus.Data.IsActive");
 			data.Msg = _ctx.StringValue("CheckExpandStatus.Data.Msg");
+			data.IsActive = _ctx.BooleanValue("CheckExpandStatus.Data.IsActive");
 			checkExpandStatusResponse.Data = data;
         
 			return checkExpandStatusResponse;

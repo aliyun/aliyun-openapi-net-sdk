@@ -56,21 +56,21 @@ namespace Aliyun.Acs.Push.Model.V20160801
 		public class QueryDeviceStat_AppDeviceStat
 		{
 
-			private string time;
+			private long? count;
 
 			private string deviceType;
 
-			private long? count;
+			private string time;
 
-			public string Time
+			public long? Count
 			{
 				get
 				{
-					return time;
+					return count;
 				}
 				set	
 				{
-					time = value;
+					count = value;
 				}
 			}
 
@@ -86,15 +86,15 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public long? Count
+			public string Time
 			{
 				get
 				{
-					return count;
+					return time;
 				}
 				set	
 				{
-					count = value;
+					time = value;
 				}
 			}
 		}

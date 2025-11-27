@@ -61,6 +61,10 @@ namespace Aliyun.Acs.Market.Model.V20151101
 
 		private string autoRenewal;
 
+		private string activeAddress;
+
+		private string licenseCode;
+
 		private List<DescribeInstance_Module> modules;
 
 		private DescribeInstance_RelationalData relationalData;
@@ -296,6 +300,32 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			set	
 			{
 				autoRenewal = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ActiveAddress")]
+		public string ActiveAddress
+		{
+			get
+			{
+				return activeAddress;
+			}
+			set	
+			{
+				activeAddress = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "LicenseCode")]
+		public string LicenseCode
+		{
+			get
+			{
+				return licenseCode;
+			}
+			set	
+			{
+				licenseCode = value;
 			}
 		}
 

@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Sts.Transform.V20150401
 
 			assumeRoleWithOIDCResponse.HttpResponse = _ctx.HttpResponse;
 			assumeRoleWithOIDCResponse.RequestId = _ctx.StringValue("AssumeRoleWithOIDC.RequestId");
+			assumeRoleWithOIDCResponse.SourceIdentity = _ctx.StringValue("AssumeRoleWithOIDC.SourceIdentity");
 
 			AssumeRoleWithOIDCResponse.AssumeRoleWithOIDC_OIDCTokenInfo oIDCTokenInfo = new AssumeRoleWithOIDCResponse.AssumeRoleWithOIDC_OIDCTokenInfo();
 			oIDCTokenInfo.Subject = _ctx.StringValue("AssumeRoleWithOIDC.OIDCTokenInfo.Subject");

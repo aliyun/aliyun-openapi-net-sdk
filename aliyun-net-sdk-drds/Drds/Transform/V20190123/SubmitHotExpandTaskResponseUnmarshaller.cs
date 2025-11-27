@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			SubmitHotExpandTaskResponse submitHotExpandTaskResponse = new SubmitHotExpandTaskResponse();
 
 			submitHotExpandTaskResponse.HttpResponse = _ctx.HttpResponse;
-			submitHotExpandTaskResponse.RequestId = _ctx.StringValue("SubmitHotExpandTask.RequestId");
 			submitHotExpandTaskResponse.Success = _ctx.BooleanValue("SubmitHotExpandTask.Success");
+			submitHotExpandTaskResponse.RequestId = _ctx.StringValue("SubmitHotExpandTask.RequestId");
         
 			return submitHotExpandTaskResponse;
         }

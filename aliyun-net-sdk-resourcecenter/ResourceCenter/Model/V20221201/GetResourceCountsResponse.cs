@@ -116,21 +116,9 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 		public class GetResourceCounts_ResourceCount
 		{
 
-			private string groupName;
-
 			private long? count;
 
-			public string GroupName
-			{
-				get
-				{
-					return groupName;
-				}
-				set	
-				{
-					groupName = value;
-				}
-			}
+			private string groupName;
 
 			public long? Count
 			{
@@ -141,6 +129,18 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 				set	
 				{
 					count = value;
+				}
+			}
+
+			public string GroupName
+			{
+				get
+				{
+					return groupName;
+				}
+				set	
+				{
+					groupName = value;
 				}
 			}
 		}

@@ -46,6 +46,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				apps.DataCenter = _ctx.StringValue("ListLiveMessageApps.AppList["+ i +"].DataCenter");
 				apps.Disable = _ctx.StringValue("ListLiveMessageApps.AppList["+ i +"].Disable");
 				apps.ModifyTime = _ctx.LongValue("ListLiveMessageApps.AppList["+ i +"].ModifyTime");
+				apps.MsgLifeCycle = _ctx.IntegerValue("ListLiveMessageApps.AppList["+ i +"].MsgLifeCycle");
 
 				listLiveMessageAppsResponse_appList.Add(apps);
 			}

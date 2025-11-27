@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			UpdateIndexTemplateResponse updateIndexTemplateResponse = new UpdateIndexTemplateResponse();
 
 			updateIndexTemplateResponse.HttpResponse = _ctx.HttpResponse;
-			updateIndexTemplateResponse.RequestId = _ctx.StringValue("UpdateIndexTemplate.RequestId");
 			updateIndexTemplateResponse.Result = _ctx.StringValue("UpdateIndexTemplate.Result");
+			updateIndexTemplateResponse.RequestId = _ctx.StringValue("UpdateIndexTemplate.RequestId");
         
 			return updateIndexTemplateResponse;
         }

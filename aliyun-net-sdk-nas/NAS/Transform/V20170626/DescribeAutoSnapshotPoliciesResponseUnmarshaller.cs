@@ -48,6 +48,7 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 				autoSnapshotPolicy.RetentionDays = _ctx.IntegerValue("DescribeAutoSnapshotPolicies.AutoSnapshotPolicies["+ i +"].RetentionDays");
 				autoSnapshotPolicy.FileSystemNums = _ctx.IntegerValue("DescribeAutoSnapshotPolicies.AutoSnapshotPolicies["+ i +"].FileSystemNums");
 				autoSnapshotPolicy.RegionId = _ctx.StringValue("DescribeAutoSnapshotPolicies.AutoSnapshotPolicies["+ i +"].RegionId");
+				autoSnapshotPolicy.FileSystemType = _ctx.StringValue("DescribeAutoSnapshotPolicies.AutoSnapshotPolicies["+ i +"].FileSystemType");
 
 				describeAutoSnapshotPoliciesResponse_autoSnapshotPolicies.Add(autoSnapshotPolicy);
 			}

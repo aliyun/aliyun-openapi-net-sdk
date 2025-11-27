@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			ModifyDeployMachineResponse modifyDeployMachineResponse = new ModifyDeployMachineResponse();
 
 			modifyDeployMachineResponse.HttpResponse = _ctx.HttpResponse;
-			modifyDeployMachineResponse.RequestId = _ctx.StringValue("ModifyDeployMachine.RequestId");
 			modifyDeployMachineResponse.Result = _ctx.BooleanValue("ModifyDeployMachine.Result");
+			modifyDeployMachineResponse.RequestId = _ctx.StringValue("ModifyDeployMachine.RequestId");
         
 			return modifyDeployMachineResponse;
         }

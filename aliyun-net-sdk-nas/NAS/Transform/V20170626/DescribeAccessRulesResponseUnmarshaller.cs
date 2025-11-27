@@ -45,6 +45,9 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 				accessRule.RWAccess = _ctx.StringValue("DescribeAccessRules.AccessRules["+ i +"].RWAccess");
 				accessRule.UserAccess = _ctx.StringValue("DescribeAccessRules.AccessRules["+ i +"].UserAccess");
 				accessRule.Priority = _ctx.IntegerValue("DescribeAccessRules.AccessRules["+ i +"].Priority");
+				accessRule.FileSystemType = _ctx.StringValue("DescribeAccessRules.AccessRules["+ i +"].FileSystemType");
+				accessRule.AccessGroupName = _ctx.StringValue("DescribeAccessRules.AccessRules["+ i +"].AccessGroupName");
+				accessRule.RegionId = _ctx.StringValue("DescribeAccessRules.AccessRules["+ i +"].RegionId");
 
 				describeAccessRulesResponse_accessRules.Add(accessRule);
 			}

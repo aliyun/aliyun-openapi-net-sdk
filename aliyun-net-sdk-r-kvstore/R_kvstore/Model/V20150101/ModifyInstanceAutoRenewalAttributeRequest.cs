@@ -48,6 +48,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string dBInstanceId;
 
+		private string product;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -105,6 +107,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public string Product
+		{
+			get
+			{
+				return product;
+			}
+			set	
+			{
+				product = value;
+				DictionaryUtil.Add(QueryParameters, "Product", value);
 			}
 		}
 

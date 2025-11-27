@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			RenewInstanceResponse renewInstanceResponse = new RenewInstanceResponse();
 
 			renewInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			renewInstanceResponse.RequestId = _ctx.StringValue("RenewInstance.RequestId");
 			renewInstanceResponse.Result = _ctx.BooleanValue("RenewInstance.Result");
+			renewInstanceResponse.RequestId = _ctx.StringValue("RenewInstance.RequestId");
         
 			return renewInstanceResponse;
         }

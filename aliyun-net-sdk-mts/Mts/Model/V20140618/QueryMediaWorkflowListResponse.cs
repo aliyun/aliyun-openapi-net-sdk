@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
@@ -70,17 +70,29 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		public class QueryMediaWorkflowList_MediaWorkflow
 		{
 
+			private string creationTime;
+
 			private string mediaWorkflowId;
+
+			private string state;
+
+			private string triggerMode;
 
 			private string name;
 
 			private string topology;
 
-			private string triggerMode;
-
-			private string state;
-
-			private string creationTime;
+			public string CreationTime
+			{
+				get
+				{
+					return creationTime;
+				}
+				set	
+				{
+					creationTime = value;
+				}
+			}
 
 			public string MediaWorkflowId
 			{
@@ -91,6 +103,30 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					mediaWorkflowId = value;
+				}
+			}
+
+			public string State
+			{
+				get
+				{
+					return state;
+				}
+				set	
+				{
+					state = value;
+				}
+			}
+
+			public string TriggerMode
+			{
+				get
+				{
+					return triggerMode;
+				}
+				set	
+				{
+					triggerMode = value;
 				}
 			}
 
@@ -115,42 +151,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					topology = value;
-				}
-			}
-
-			public string TriggerMode
-			{
-				get
-				{
-					return triggerMode;
-				}
-				set	
-				{
-					triggerMode = value;
-				}
-			}
-
-			public string State
-			{
-				get
-				{
-					return state;
-				}
-				set	
-				{
-					state = value;
-				}
-			}
-
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
 				}
 			}
 		}

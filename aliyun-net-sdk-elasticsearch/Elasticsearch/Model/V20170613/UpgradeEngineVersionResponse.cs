@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -27,7 +27,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private string requestId;
 
-		private UpgradeEngineVersion_Result result;
+		private List<UpgradeEngineVersion_ResultItem> result;
 
 		public string RequestId
 		{
@@ -41,7 +41,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public UpgradeEngineVersion_Result Result
+		public List<UpgradeEngineVersion_ResultItem> Result
 		{
 			get
 			{
@@ -53,14 +53,14 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public class UpgradeEngineVersion_Result
+		public class UpgradeEngineVersion_ResultItem
 		{
 
 			private string validateType;
 
 			private string status;
 
-			private UpgradeEngineVersion_ValidateResult validateResult;
+			private List<UpgradeEngineVersion_ValidateResultItem> validateResult;
 
 			public string ValidateType
 			{
@@ -86,7 +86,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public UpgradeEngineVersion_ValidateResult ValidateResult
+			public List<UpgradeEngineVersion_ValidateResultItem> ValidateResult
 			{
 				get
 				{
@@ -98,7 +98,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public class UpgradeEngineVersion_ValidateResult
+			public class UpgradeEngineVersion_ValidateResultItem
 			{
 
 				private string errorType;

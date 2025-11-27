@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			SetupBroadcastTablesResponse setupBroadcastTablesResponse = new SetupBroadcastTablesResponse();
 
 			setupBroadcastTablesResponse.HttpResponse = _ctx.HttpResponse;
+			setupBroadcastTablesResponse.Data = _ctx.BooleanValue("SetupBroadcastTables.Data");
 			setupBroadcastTablesResponse.RequestId = _ctx.StringValue("SetupBroadcastTables.RequestId");
 			setupBroadcastTablesResponse.Success = _ctx.BooleanValue("SetupBroadcastTables.Success");
-			setupBroadcastTablesResponse.Data = _ctx.BooleanValue("SetupBroadcastTables.Data");
         
 			return setupBroadcastTablesResponse;
         }

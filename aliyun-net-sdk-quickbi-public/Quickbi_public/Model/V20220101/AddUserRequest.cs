@@ -37,7 +37,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 		private bool? adminUser;
 
-		private int? userType;
+		private string accountId;
 
 		private string roleIds;
 
@@ -46,6 +46,8 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		private string nickName;
 
 		private bool? authAdminUser;
+
+		private int? userType;
 
 		public bool? AdminUser
 		{
@@ -60,16 +62,16 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			}
 		}
 
-		public int? UserType
+		public string AccountId
 		{
 			get
 			{
-				return userType;
+				return accountId;
 			}
 			set	
 			{
-				userType = value;
-				DictionaryUtil.Add(QueryParameters, "UserType", value.ToString());
+				accountId = value;
+				DictionaryUtil.Add(QueryParameters, "AccountId", value);
 			}
 		}
 
@@ -122,6 +124,19 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				authAdminUser = value;
 				DictionaryUtil.Add(QueryParameters, "AuthAdminUser", value.ToString());
+			}
+		}
+
+		public int? UserType
+		{
+			get
+			{
+				return userType;
+			}
+			set	
+			{
+				userType = value;
+				DictionaryUtil.Add(QueryParameters, "UserType", value.ToString());
 			}
 		}
 

@@ -70,23 +70,47 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryUserGroupListByParentId_Data
 		{
 
-			private string identifiedPath;
-
-			private string modifiedTime;
+			private string createTime;
 
 			private string createUser;
 
-			private string createTime;
+			private string identifiedPath;
 
-			private string userGroupId;
-
-			private string userGroupName;
+			private string modifiedTime;
 
 			private string modifyUser;
 
 			private string parentUserGroupId;
 
 			private string userGroupDescription;
+
+			private string userGroupId;
+
+			private string userGroupName;
+
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public string CreateUser
+			{
+				get
+				{
+					return createUser;
+				}
+				set	
+				{
+					createUser = value;
+				}
+			}
 
 			public string IdentifiedPath
 			{
@@ -109,54 +133,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					modifiedTime = value;
-				}
-			}
-
-			public string CreateUser
-			{
-				get
-				{
-					return createUser;
-				}
-				set	
-				{
-					createUser = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public string UserGroupId
-			{
-				get
-				{
-					return userGroupId;
-				}
-				set	
-				{
-					userGroupId = value;
-				}
-			}
-
-			public string UserGroupName
-			{
-				get
-				{
-					return userGroupName;
-				}
-				set	
-				{
-					userGroupName = value;
 				}
 			}
 
@@ -193,6 +169,30 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					userGroupDescription = value;
+				}
+			}
+
+			public string UserGroupId
+			{
+				get
+				{
+					return userGroupId;
+				}
+				set	
+				{
+					userGroupId = value;
+				}
+			}
+
+			public string UserGroupName
+			{
+				get
+				{
+					return userGroupName;
+				}
+				set	
+				{
+					userGroupName = value;
 				}
 			}
 		}

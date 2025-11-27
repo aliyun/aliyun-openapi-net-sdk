@@ -26,27 +26,33 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 {
     public class UpdatePipelineResponseUnmarshaller
     {
-        public static UpdatePipelineResponse Unmarshall(UnmarshallerContext context)
+        public static UpdatePipelineResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdatePipelineResponse updatePipelineResponse = new UpdatePipelineResponse();
 
-			updatePipelineResponse.HttpResponse = context.HttpResponse;
-			updatePipelineResponse.RequestId = context.StringValue("UpdatePipeline.RequestId");
+			updatePipelineResponse.HttpResponse = _ctx.HttpResponse;
+			updatePipelineResponse.RequestId = _ctx.StringValue("UpdatePipeline.RequestId");
 
 			UpdatePipelineResponse.UpdatePipeline_Pipeline pipeline = new UpdatePipelineResponse.UpdatePipeline_Pipeline();
-			pipeline.Id = context.StringValue("UpdatePipeline.Pipeline.Id");
-			pipeline.Name = context.StringValue("UpdatePipeline.Pipeline.Name");
-			pipeline.State = context.StringValue("UpdatePipeline.Pipeline.State");
-			pipeline.Speed = context.StringValue("UpdatePipeline.Pipeline.Speed");
-			pipeline.QuotaAllocate = context.LongValue("UpdatePipeline.Pipeline.QuotaAllocate");
-			pipeline.Role = context.StringValue("UpdatePipeline.Pipeline.Role");
+			pipeline.Speed = _ctx.StringValue("UpdatePipeline.Pipeline.Speed");
+			pipeline.State = _ctx.StringValue("UpdatePipeline.Pipeline.State");
+			pipeline.Name = _ctx.StringValue("UpdatePipeline.Pipeline.Name");
+			pipeline.Role = _ctx.StringValue("UpdatePipeline.Pipeline.Role");
+			pipeline.Id = _ctx.StringValue("UpdatePipeline.Pipeline.Id");
+			pipeline.QuotaAllocate = _ctx.LongValue("UpdatePipeline.Pipeline.QuotaAllocate");
 
 			UpdatePipelineResponse.UpdatePipeline_Pipeline.UpdatePipeline_NotifyConfig notifyConfig = new UpdatePipelineResponse.UpdatePipeline_Pipeline.UpdatePipeline_NotifyConfig();
-			notifyConfig.Topic = context.StringValue("UpdatePipeline.Pipeline.NotifyConfig.Topic");
-			notifyConfig.QueueName = context.StringValue("UpdatePipeline.Pipeline.NotifyConfig.QueueName");
-			notifyConfig.MqTopic = context.StringValue("UpdatePipeline.Pipeline.NotifyConfig.MqTopic");
-			notifyConfig.MqTag = context.StringValue("UpdatePipeline.Pipeline.NotifyConfig.MqTag");
+			notifyConfig.MqTopic = _ctx.StringValue("UpdatePipeline.Pipeline.NotifyConfig.MqTopic");
+			notifyConfig.QueueName = _ctx.StringValue("UpdatePipeline.Pipeline.NotifyConfig.QueueName");
+			notifyConfig.MqTag = _ctx.StringValue("UpdatePipeline.Pipeline.NotifyConfig.MqTag");
+			notifyConfig.Topic = _ctx.StringValue("UpdatePipeline.Pipeline.NotifyConfig.Topic");
 			pipeline.NotifyConfig = notifyConfig;
+
+			UpdatePipelineResponse.UpdatePipeline_Pipeline.UpdatePipeline_ExtendConfig extendConfig = new UpdatePipelineResponse.UpdatePipeline_Pipeline.UpdatePipeline_ExtendConfig();
+			extendConfig.IsBoostNew = _ctx.BooleanValue("UpdatePipeline.Pipeline.ExtendConfig.IsBoostNew");
+			extendConfig.MaxMultiSpeed = _ctx.IntegerValue("UpdatePipeline.Pipeline.ExtendConfig.MaxMultiSpeed");
+			extendConfig.MultiSpeedDowngradePolicy = _ctx.StringValue("UpdatePipeline.Pipeline.ExtendConfig.MultiSpeedDowngradePolicy");
+			pipeline.ExtendConfig = extendConfig;
 			updatePipelineResponse.Pipeline = pipeline;
         
 			return updatePipelineResponse;

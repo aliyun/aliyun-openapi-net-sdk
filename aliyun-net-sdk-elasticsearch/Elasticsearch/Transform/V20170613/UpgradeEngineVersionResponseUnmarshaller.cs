@@ -33,16 +33,26 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			upgradeEngineVersionResponse.HttpResponse = _ctx.HttpResponse;
 			upgradeEngineVersionResponse.RequestId = _ctx.StringValue("UpgradeEngineVersion.RequestId");
 
-			UpgradeEngineVersionResponse.UpgradeEngineVersion_Result result = new UpgradeEngineVersionResponse.UpgradeEngineVersion_Result();
-			result.ValidateType = _ctx.StringValue("UpgradeEngineVersion.Result.validateType");
-			result.Status = _ctx.StringValue("UpgradeEngineVersion.Result.status");
+			List<UpgradeEngineVersionResponse.UpgradeEngineVersion_ResultItem> upgradeEngineVersionResponse_result = new List<UpgradeEngineVersionResponse.UpgradeEngineVersion_ResultItem>();
+			for (int i = 0; i < _ctx.Length("UpgradeEngineVersion.Result.Length"); i++) {
+				UpgradeEngineVersionResponse.UpgradeEngineVersion_ResultItem resultItem = new UpgradeEngineVersionResponse.UpgradeEngineVersion_ResultItem();
+				resultItem.ValidateType = _ctx.StringValue("UpgradeEngineVersion.Result["+ i +"].validateType");
+				resultItem.Status = _ctx.StringValue("UpgradeEngineVersion.Result["+ i +"].status");
 
-			UpgradeEngineVersionResponse.UpgradeEngineVersion_Result.UpgradeEngineVersion_ValidateResult validateResult = new UpgradeEngineVersionResponse.UpgradeEngineVersion_Result.UpgradeEngineVersion_ValidateResult();
-			validateResult.ErrorType = _ctx.StringValue("UpgradeEngineVersion.Result.ValidateResult.errorType");
-			validateResult.ErrorCode = _ctx.StringValue("UpgradeEngineVersion.Result.ValidateResult.errorCode");
-			validateResult.ErrorMsg = _ctx.StringValue("UpgradeEngineVersion.Result.ValidateResult.errorMsg");
-			result.ValidateResult = validateResult;
-			upgradeEngineVersionResponse.Result = result;
+				List<UpgradeEngineVersionResponse.UpgradeEngineVersion_ResultItem.UpgradeEngineVersion_ValidateResultItem> resultItem_validateResult = new List<UpgradeEngineVersionResponse.UpgradeEngineVersion_ResultItem.UpgradeEngineVersion_ValidateResultItem>();
+				for (int j = 0; j < _ctx.Length("UpgradeEngineVersion.Result["+ i +"].ValidateResult.Length"); j++) {
+					UpgradeEngineVersionResponse.UpgradeEngineVersion_ResultItem.UpgradeEngineVersion_ValidateResultItem validateResultItem = new UpgradeEngineVersionResponse.UpgradeEngineVersion_ResultItem.UpgradeEngineVersion_ValidateResultItem();
+					validateResultItem.ErrorType = _ctx.StringValue("UpgradeEngineVersion.Result["+ i +"].ValidateResult["+ j +"].errorType");
+					validateResultItem.ErrorCode = _ctx.StringValue("UpgradeEngineVersion.Result["+ i +"].ValidateResult["+ j +"].errorCode");
+					validateResultItem.ErrorMsg = _ctx.StringValue("UpgradeEngineVersion.Result["+ i +"].ValidateResult["+ j +"].errorMsg");
+
+					resultItem_validateResult.Add(validateResultItem);
+				}
+				resultItem.ValidateResult = resultItem_validateResult;
+
+				upgradeEngineVersionResponse_result.Add(resultItem);
+			}
+			upgradeEngineVersionResponse.Result = upgradeEngineVersionResponse_result;
         
 			return upgradeEngineVersionResponse;
         }

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 {
     public class UpdateMediaPublishStateResponseUnmarshaller
     {
-        public static UpdateMediaPublishStateResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateMediaPublishStateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateMediaPublishStateResponse updateMediaPublishStateResponse = new UpdateMediaPublishStateResponse();
 
-			updateMediaPublishStateResponse.HttpResponse = context.HttpResponse;
-			updateMediaPublishStateResponse.RequestId = context.StringValue("UpdateMediaPublishState.RequestId");
+			updateMediaPublishStateResponse.HttpResponse = _ctx.HttpResponse;
+			updateMediaPublishStateResponse.RequestId = _ctx.StringValue("UpdateMediaPublishState.RequestId");
         
 			return updateMediaPublishStateResponse;
         }

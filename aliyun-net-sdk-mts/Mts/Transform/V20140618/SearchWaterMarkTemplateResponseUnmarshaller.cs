@@ -26,40 +26,40 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 {
     public class SearchWaterMarkTemplateResponseUnmarshaller
     {
-        public static SearchWaterMarkTemplateResponse Unmarshall(UnmarshallerContext context)
+        public static SearchWaterMarkTemplateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SearchWaterMarkTemplateResponse searchWaterMarkTemplateResponse = new SearchWaterMarkTemplateResponse();
 
-			searchWaterMarkTemplateResponse.HttpResponse = context.HttpResponse;
-			searchWaterMarkTemplateResponse.RequestId = context.StringValue("SearchWaterMarkTemplate.RequestId");
-			searchWaterMarkTemplateResponse.TotalCount = context.LongValue("SearchWaterMarkTemplate.TotalCount");
-			searchWaterMarkTemplateResponse.PageNumber = context.LongValue("SearchWaterMarkTemplate.PageNumber");
-			searchWaterMarkTemplateResponse.PageSize = context.LongValue("SearchWaterMarkTemplate.PageSize");
+			searchWaterMarkTemplateResponse.HttpResponse = _ctx.HttpResponse;
+			searchWaterMarkTemplateResponse.TotalCount = _ctx.LongValue("SearchWaterMarkTemplate.TotalCount");
+			searchWaterMarkTemplateResponse.PageSize = _ctx.LongValue("SearchWaterMarkTemplate.PageSize");
+			searchWaterMarkTemplateResponse.RequestId = _ctx.StringValue("SearchWaterMarkTemplate.RequestId");
+			searchWaterMarkTemplateResponse.PageNumber = _ctx.LongValue("SearchWaterMarkTemplate.PageNumber");
 
 			List<SearchWaterMarkTemplateResponse.SearchWaterMarkTemplate_WaterMarkTemplate> searchWaterMarkTemplateResponse_waterMarkTemplateList = new List<SearchWaterMarkTemplateResponse.SearchWaterMarkTemplate_WaterMarkTemplate>();
-			for (int i = 0; i < context.Length("SearchWaterMarkTemplate.WaterMarkTemplateList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("SearchWaterMarkTemplate.WaterMarkTemplateList.Length"); i++) {
 				SearchWaterMarkTemplateResponse.SearchWaterMarkTemplate_WaterMarkTemplate waterMarkTemplate = new SearchWaterMarkTemplateResponse.SearchWaterMarkTemplate_WaterMarkTemplate();
-				waterMarkTemplate.Id = context.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].Id");
-				waterMarkTemplate.Name = context.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].Name");
-				waterMarkTemplate.Width = context.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].Width");
-				waterMarkTemplate.Height = context.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].Height");
-				waterMarkTemplate.Dx = context.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].Dx");
-				waterMarkTemplate.Dy = context.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].Dy");
-				waterMarkTemplate.ReferPos = context.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].ReferPos");
-				waterMarkTemplate.Type = context.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].Type");
-				waterMarkTemplate.State = context.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].State");
-
-				SearchWaterMarkTemplateResponse.SearchWaterMarkTemplate_WaterMarkTemplate.SearchWaterMarkTemplate_Timeline timeline = new SearchWaterMarkTemplateResponse.SearchWaterMarkTemplate_WaterMarkTemplate.SearchWaterMarkTemplate_Timeline();
-				timeline.Start = context.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].Timeline.Start");
-				timeline.Duration = context.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].Timeline.Duration");
-				waterMarkTemplate.Timeline = timeline;
+				waterMarkTemplate.Type = _ctx.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].Type");
+				waterMarkTemplate.ReferPos = _ctx.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].ReferPos");
+				waterMarkTemplate.State = _ctx.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].State");
+				waterMarkTemplate.Dx = _ctx.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].Dx");
+				waterMarkTemplate.Width = _ctx.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].Width");
+				waterMarkTemplate.Height = _ctx.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].Height");
+				waterMarkTemplate.Name = _ctx.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].Name");
+				waterMarkTemplate.Dy = _ctx.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].Dy");
+				waterMarkTemplate.Id = _ctx.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].Id");
 
 				SearchWaterMarkTemplateResponse.SearchWaterMarkTemplate_WaterMarkTemplate.SearchWaterMarkTemplate_RatioRefer ratioRefer = new SearchWaterMarkTemplateResponse.SearchWaterMarkTemplate_WaterMarkTemplate.SearchWaterMarkTemplate_RatioRefer();
-				ratioRefer.Dx = context.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].RatioRefer.Dx");
-				ratioRefer.Dy = context.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].RatioRefer.Dy");
-				ratioRefer.Width = context.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].RatioRefer.Width");
-				ratioRefer.Height = context.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].RatioRefer.Height");
+				ratioRefer.Dx = _ctx.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].RatioRefer.Dx");
+				ratioRefer.Width = _ctx.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].RatioRefer.Width");
+				ratioRefer.Height = _ctx.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].RatioRefer.Height");
+				ratioRefer.Dy = _ctx.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].RatioRefer.Dy");
 				waterMarkTemplate.RatioRefer = ratioRefer;
+
+				SearchWaterMarkTemplateResponse.SearchWaterMarkTemplate_WaterMarkTemplate.SearchWaterMarkTemplate_Timeline timeline = new SearchWaterMarkTemplateResponse.SearchWaterMarkTemplate_WaterMarkTemplate.SearchWaterMarkTemplate_Timeline();
+				timeline.Start = _ctx.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].Timeline.Start");
+				timeline.Duration = _ctx.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].Timeline.Duration");
+				waterMarkTemplate.Timeline = timeline;
 
 				searchWaterMarkTemplateResponse_waterMarkTemplateList.Add(waterMarkTemplate);
 			}

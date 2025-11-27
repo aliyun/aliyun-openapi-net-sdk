@@ -32,8 +32,8 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 
 			removeBackupsSetResponse.HttpResponse = _ctx.HttpResponse;
 			removeBackupsSetResponse.RequestId = _ctx.StringValue("RemoveBackupsSet.RequestId");
-			removeBackupsSetResponse.Success = _ctx.BooleanValue("RemoveBackupsSet.Success");
 			removeBackupsSetResponse.Result = _ctx.StringValue("RemoveBackupsSet.Result");
+			removeBackupsSetResponse.Success = _ctx.BooleanValue("RemoveBackupsSet.Success");
         
 			return removeBackupsSetResponse;
         }

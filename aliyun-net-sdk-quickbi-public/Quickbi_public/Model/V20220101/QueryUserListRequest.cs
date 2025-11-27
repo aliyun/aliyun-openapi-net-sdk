@@ -34,11 +34,24 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
         {
         }
 
+		private int? pageNum;
+
 		private int? pageSize;
 
 		private string keyword;
 
-		private int? pageNum;
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
 
 		public int? PageSize
 		{
@@ -63,19 +76,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				keyword = value;
 				DictionaryUtil.Add(QueryParameters, "Keyword", value);
-			}
-		}
-
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
 			}
 		}
 

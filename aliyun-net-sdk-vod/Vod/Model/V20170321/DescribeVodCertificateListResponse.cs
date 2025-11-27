@@ -99,6 +99,20 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 				private string common;
 
+				private long? createTime;
+
+				private long? endTime;
+
+				private string algorithm;
+
+				private string certIdentifier;
+
+				private bool? domainMatchCert;
+
+				private string instanceId;
+
+				private string signAlgorithm;
+
 				public long? LastTime
 				{
 					get
@@ -168,6 +182,90 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						common = value;
+					}
+				}
+
+				public long? CreateTime
+				{
+					get
+					{
+						return createTime;
+					}
+					set	
+					{
+						createTime = value;
+					}
+				}
+
+				public long? EndTime
+				{
+					get
+					{
+						return endTime;
+					}
+					set	
+					{
+						endTime = value;
+					}
+				}
+
+				public string Algorithm
+				{
+					get
+					{
+						return algorithm;
+					}
+					set	
+					{
+						algorithm = value;
+					}
+				}
+
+				public string CertIdentifier
+				{
+					get
+					{
+						return certIdentifier;
+					}
+					set	
+					{
+						certIdentifier = value;
+					}
+				}
+
+				public bool? DomainMatchCert
+				{
+					get
+					{
+						return domainMatchCert;
+					}
+					set	
+					{
+						domainMatchCert = value;
+					}
+				}
+
+				public string InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
+					}
+				}
+
+				public string SignAlgorithm
+				{
+					get
+					{
+						return signAlgorithm;
+					}
+					set	
+					{
+						signAlgorithm = value;
 					}
 				}
 			}

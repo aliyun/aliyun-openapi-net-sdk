@@ -31,13 +31,13 @@ namespace Aliyun.Acs.ResourceCenter.Transform.V20221201
 			ListTagKeysResponse listTagKeysResponse = new ListTagKeysResponse();
 
 			listTagKeysResponse.HttpResponse = _ctx.HttpResponse;
-			listTagKeysResponse.NextToken = _ctx.StringValue("ListTagKeys.NextToken");
-			listTagKeysResponse.RequestId = _ctx.StringValue("ListTagKeys.RequestId");
-			listTagKeysResponse.Success = _ctx.BooleanValue("ListTagKeys.Success");
 			listTagKeysResponse.DynamicCode = _ctx.StringValue("ListTagKeys.DynamicCode");
 			listTagKeysResponse.DynamicMessage = _ctx.StringValue("ListTagKeys.DynamicMessage");
 			listTagKeysResponse.ErrorCode = _ctx.StringValue("ListTagKeys.ErrorCode");
 			listTagKeysResponse.ErrorMessage = _ctx.StringValue("ListTagKeys.ErrorMessage");
+			listTagKeysResponse.NextToken = _ctx.StringValue("ListTagKeys.NextToken");
+			listTagKeysResponse.RequestId = _ctx.StringValue("ListTagKeys.RequestId");
+			listTagKeysResponse.Success = _ctx.BooleanValue("ListTagKeys.Success");
 
 			List<string> listTagKeysResponse_tagKeys = new List<string>();
 			for (int i = 0; i < _ctx.Length("ListTagKeys.TagKeys.Length"); i++) {

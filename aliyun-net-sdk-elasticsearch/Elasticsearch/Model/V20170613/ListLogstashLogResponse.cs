@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -56,39 +56,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class ListLogstashLog_ResultItem
 		{
 
-			private long? timestamp;
-
-			private string host;
-
 			private string level;
 
 			private string content;
 
+			private long? timestamp;
+
 			private string instanceId;
 
-			public long? Timestamp
-			{
-				get
-				{
-					return timestamp;
-				}
-				set	
-				{
-					timestamp = value;
-				}
-			}
-
-			public string Host
-			{
-				get
-				{
-					return host;
-				}
-				set	
-				{
-					host = value;
-				}
-			}
+			private string host;
 
 			public string Level
 			{
@@ -114,6 +90,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
+			public long? Timestamp
+			{
+				get
+				{
+					return timestamp;
+				}
+				set	
+				{
+					timestamp = value;
+				}
+			}
+
 			public string InstanceId
 			{
 				get
@@ -123,6 +111,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					instanceId = value;
+				}
+			}
+
+			public string Host
+			{
+				get
+				{
+					return host;
+				}
+				set	
+				{
+					host = value;
 				}
 			}
 		}

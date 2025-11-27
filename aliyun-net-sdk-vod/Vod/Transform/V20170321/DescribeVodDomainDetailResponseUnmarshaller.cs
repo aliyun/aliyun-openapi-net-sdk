@@ -54,6 +54,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				source.Port = _ctx.IntegerValue("DescribeVodDomainDetail.DomainDetail.Sources["+ i +"].Port");
 				source.Content = _ctx.StringValue("DescribeVodDomainDetail.DomainDetail.Sources["+ i +"].Content");
 				source.Enabled = _ctx.StringValue("DescribeVodDomainDetail.DomainDetail.Sources["+ i +"].Enabled");
+				source.Weight = _ctx.StringValue("DescribeVodDomainDetail.DomainDetail.Sources["+ i +"].Weight");
 
 				domainDetail_sources.Add(source);
 			}

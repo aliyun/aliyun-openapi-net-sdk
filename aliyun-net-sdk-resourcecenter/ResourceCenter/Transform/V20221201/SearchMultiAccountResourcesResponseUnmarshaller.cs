@@ -31,10 +31,10 @@ namespace Aliyun.Acs.ResourceCenter.Transform.V20221201
 			SearchMultiAccountResourcesResponse searchMultiAccountResourcesResponse = new SearchMultiAccountResourcesResponse();
 
 			searchMultiAccountResourcesResponse.HttpResponse = _ctx.HttpResponse;
-			searchMultiAccountResourcesResponse.RequestId = _ctx.StringValue("SearchMultiAccountResources.RequestId");
-			searchMultiAccountResourcesResponse.NextToken = _ctx.StringValue("SearchMultiAccountResources.NextToken");
-			searchMultiAccountResourcesResponse.Scope = _ctx.StringValue("SearchMultiAccountResources.Scope");
 			searchMultiAccountResourcesResponse.MaxResults = _ctx.IntegerValue("SearchMultiAccountResources.MaxResults");
+			searchMultiAccountResourcesResponse.NextToken = _ctx.StringValue("SearchMultiAccountResources.NextToken");
+			searchMultiAccountResourcesResponse.RequestId = _ctx.StringValue("SearchMultiAccountResources.RequestId");
+			searchMultiAccountResourcesResponse.Scope = _ctx.StringValue("SearchMultiAccountResources.Scope");
 
 			List<SearchMultiAccountResourcesResponse.SearchMultiAccountResources_Filter> searchMultiAccountResourcesResponse_filters = new List<SearchMultiAccountResourcesResponse.SearchMultiAccountResources_Filter>();
 			for (int i = 0; i < _ctx.Length("SearchMultiAccountResources.Filters.Length"); i++) {
@@ -55,20 +55,32 @@ namespace Aliyun.Acs.ResourceCenter.Transform.V20221201
 			List<SearchMultiAccountResourcesResponse.SearchMultiAccountResources_Resource> searchMultiAccountResourcesResponse_resources = new List<SearchMultiAccountResourcesResponse.SearchMultiAccountResources_Resource>();
 			for (int i = 0; i < _ctx.Length("SearchMultiAccountResources.Resources.Length"); i++) {
 				SearchMultiAccountResourcesResponse.SearchMultiAccountResources_Resource resource = new SearchMultiAccountResourcesResponse.SearchMultiAccountResources_Resource();
-				resource.ResourceType = _ctx.StringValue("SearchMultiAccountResources.Resources["+ i +"].ResourceType");
-				resource.CreateTime = _ctx.StringValue("SearchMultiAccountResources.Resources["+ i +"].CreateTime");
-				resource.ResourceGroupId = _ctx.StringValue("SearchMultiAccountResources.Resources["+ i +"].ResourceGroupId");
-				resource.ZoneId = _ctx.StringValue("SearchMultiAccountResources.Resources["+ i +"].ZoneId");
 				resource.AccountId = _ctx.StringValue("SearchMultiAccountResources.Resources["+ i +"].AccountId");
+				resource.CreateTime = _ctx.StringValue("SearchMultiAccountResources.Resources["+ i +"].CreateTime");
+				resource.ExpireTime = _ctx.StringValue("SearchMultiAccountResources.Resources["+ i +"].ExpireTime");
+				resource.RegionId = _ctx.StringValue("SearchMultiAccountResources.Resources["+ i +"].RegionId");
+				resource.ResourceGroupId = _ctx.StringValue("SearchMultiAccountResources.Resources["+ i +"].ResourceGroupId");
 				resource.ResourceId = _ctx.StringValue("SearchMultiAccountResources.Resources["+ i +"].ResourceId");
 				resource.ResourceName = _ctx.StringValue("SearchMultiAccountResources.Resources["+ i +"].ResourceName");
-				resource.RegionId = _ctx.StringValue("SearchMultiAccountResources.Resources["+ i +"].RegionId");
+				resource.ResourceType = _ctx.StringValue("SearchMultiAccountResources.Resources["+ i +"].ResourceType");
+				resource.ZoneId = _ctx.StringValue("SearchMultiAccountResources.Resources["+ i +"].ZoneId");
 
 				List<string> resource_ipAddresses = new List<string>();
 				for (int j = 0; j < _ctx.Length("SearchMultiAccountResources.Resources["+ i +"].IpAddresses.Length"); j++) {
 					resource_ipAddresses.Add(_ctx.StringValue("SearchMultiAccountResources.Resources["+ i +"].IpAddresses["+ j +"]"));
 				}
 				resource.IpAddresses = resource_ipAddresses;
+
+				List<SearchMultiAccountResourcesResponse.SearchMultiAccountResources_Resource.SearchMultiAccountResources_IpAddressAttribute> resource_ipAddressAttributes = new List<SearchMultiAccountResourcesResponse.SearchMultiAccountResources_Resource.SearchMultiAccountResources_IpAddressAttribute>();
+				for (int j = 0; j < _ctx.Length("SearchMultiAccountResources.Resources["+ i +"].IpAddressAttributes.Length"); j++) {
+					SearchMultiAccountResourcesResponse.SearchMultiAccountResources_Resource.SearchMultiAccountResources_IpAddressAttribute ipAddressAttribute = new SearchMultiAccountResourcesResponse.SearchMultiAccountResources_Resource.SearchMultiAccountResources_IpAddressAttribute();
+					ipAddressAttribute.IpAddress = _ctx.StringValue("SearchMultiAccountResources.Resources["+ i +"].IpAddressAttributes["+ j +"].IpAddress");
+					ipAddressAttribute.NetworkType = _ctx.StringValue("SearchMultiAccountResources.Resources["+ i +"].IpAddressAttributes["+ j +"].NetworkType");
+					ipAddressAttribute.Version = _ctx.StringValue("SearchMultiAccountResources.Resources["+ i +"].IpAddressAttributes["+ j +"].Version");
+
+					resource_ipAddressAttributes.Add(ipAddressAttribute);
+				}
+				resource.IpAddressAttributes = resource_ipAddressAttributes;
 
 				List<SearchMultiAccountResourcesResponse.SearchMultiAccountResources_Resource.SearchMultiAccountResources_Tag> resource_tags = new List<SearchMultiAccountResourcesResponse.SearchMultiAccountResources_Resource.SearchMultiAccountResources_Tag>();
 				for (int j = 0; j < _ctx.Length("SearchMultiAccountResources.Resources["+ i +"].Tags.Length"); j++) {

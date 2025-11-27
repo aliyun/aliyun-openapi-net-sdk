@@ -36,8 +36,8 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 			List<CheckDevicesResponse.CheckDevices_DeviceCheckInfo> checkDevicesResponse_deviceCheckInfos = new List<CheckDevicesResponse.CheckDevices_DeviceCheckInfo>();
 			for (int i = 0; i < _ctx.Length("CheckDevices.DeviceCheckInfos.Length"); i++) {
 				CheckDevicesResponse.CheckDevices_DeviceCheckInfo deviceCheckInfo = new CheckDevicesResponse.CheckDevices_DeviceCheckInfo();
-				deviceCheckInfo.DeviceId = _ctx.StringValue("CheckDevices.DeviceCheckInfos["+ i +"].DeviceId");
 				deviceCheckInfo.Available = _ctx.BooleanValue("CheckDevices.DeviceCheckInfos["+ i +"].Available");
+				deviceCheckInfo.DeviceId = _ctx.StringValue("CheckDevices.DeviceCheckInfos["+ i +"].DeviceId");
 
 				checkDevicesResponse_deviceCheckInfos.Add(deviceCheckInfo);
 			}

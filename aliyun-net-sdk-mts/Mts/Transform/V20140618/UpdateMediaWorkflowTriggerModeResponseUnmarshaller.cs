@@ -26,20 +26,20 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 {
     public class UpdateMediaWorkflowTriggerModeResponseUnmarshaller
     {
-        public static UpdateMediaWorkflowTriggerModeResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateMediaWorkflowTriggerModeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateMediaWorkflowTriggerModeResponse updateMediaWorkflowTriggerModeResponse = new UpdateMediaWorkflowTriggerModeResponse();
 
-			updateMediaWorkflowTriggerModeResponse.HttpResponse = context.HttpResponse;
-			updateMediaWorkflowTriggerModeResponse.RequestId = context.StringValue("UpdateMediaWorkflowTriggerMode.RequestId");
+			updateMediaWorkflowTriggerModeResponse.HttpResponse = _ctx.HttpResponse;
+			updateMediaWorkflowTriggerModeResponse.RequestId = _ctx.StringValue("UpdateMediaWorkflowTriggerMode.RequestId");
 
 			UpdateMediaWorkflowTriggerModeResponse.UpdateMediaWorkflowTriggerMode_MediaWorkflow mediaWorkflow = new UpdateMediaWorkflowTriggerModeResponse.UpdateMediaWorkflowTriggerMode_MediaWorkflow();
-			mediaWorkflow.MediaWorkflowId = context.StringValue("UpdateMediaWorkflowTriggerMode.MediaWorkflow.MediaWorkflowId");
-			mediaWorkflow.Name = context.StringValue("UpdateMediaWorkflowTriggerMode.MediaWorkflow.Name");
-			mediaWorkflow.Topology = context.StringValue("UpdateMediaWorkflowTriggerMode.MediaWorkflow.Topology");
-			mediaWorkflow.TriggerMode = context.StringValue("UpdateMediaWorkflowTriggerMode.MediaWorkflow.TriggerMode");
-			mediaWorkflow.State = context.StringValue("UpdateMediaWorkflowTriggerMode.MediaWorkflow.State");
-			mediaWorkflow.CreationTime = context.StringValue("UpdateMediaWorkflowTriggerMode.MediaWorkflow.CreationTime");
+			mediaWorkflow.CreationTime = _ctx.StringValue("UpdateMediaWorkflowTriggerMode.MediaWorkflow.CreationTime");
+			mediaWorkflow.MediaWorkflowId = _ctx.StringValue("UpdateMediaWorkflowTriggerMode.MediaWorkflow.MediaWorkflowId");
+			mediaWorkflow.State = _ctx.StringValue("UpdateMediaWorkflowTriggerMode.MediaWorkflow.State");
+			mediaWorkflow.TriggerMode = _ctx.StringValue("UpdateMediaWorkflowTriggerMode.MediaWorkflow.TriggerMode");
+			mediaWorkflow.Name = _ctx.StringValue("UpdateMediaWorkflowTriggerMode.MediaWorkflow.Name");
+			mediaWorkflow.Topology = _ctx.StringValue("UpdateMediaWorkflowTriggerMode.MediaWorkflow.Topology");
 			updateMediaWorkflowTriggerModeResponse.MediaWorkflow = mediaWorkflow;
         
 			return updateMediaWorkflowTriggerModeResponse;

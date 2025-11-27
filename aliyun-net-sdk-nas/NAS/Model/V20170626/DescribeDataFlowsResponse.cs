@@ -100,6 +100,8 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private string autoRefreshPolicy;
 
+			private string sourceStoragePath;
+
 			private List<DescribeDataFlows_AutoRefreshItem> autoRefresh;
 
 			public string FileSystemId
@@ -279,6 +281,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					autoRefreshPolicy = value;
+				}
+			}
+
+			public string SourceStoragePath
+			{
+				get
+				{
+					return sourceStoragePath;
+				}
+				set	
+				{
+					sourceStoragePath = value;
 				}
 			}
 

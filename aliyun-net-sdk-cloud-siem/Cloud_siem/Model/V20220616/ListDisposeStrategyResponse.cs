@@ -153,6 +153,8 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 				private string playbookType;
 
+				private string taskUrl;
+
 				private long? entityId;
 
 				private string entityType;
@@ -312,6 +314,18 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 					set	
 					{
 						playbookType = value;
+					}
+				}
+
+				public string TaskUrl
+				{
+					get
+					{
+						return taskUrl;
+					}
+					set	
+					{
+						taskUrl = value;
 					}
 				}
 

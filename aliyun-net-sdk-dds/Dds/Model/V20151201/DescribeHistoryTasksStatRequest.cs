@@ -44,6 +44,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string toStartTime;
 
+		private string resourceGroupId;
+
 		private string taskId;
 
 		private int? toExecTime;
@@ -83,6 +85,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				toStartTime = value;
 				DictionaryUtil.Add(QueryParameters, "ToStartTime", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

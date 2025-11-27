@@ -31,12 +31,12 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			DescribeDrdsInstanceVersionResponse describeDrdsInstanceVersionResponse = new DescribeDrdsInstanceVersionResponse();
 
 			describeDrdsInstanceVersionResponse.HttpResponse = _ctx.HttpResponse;
-			describeDrdsInstanceVersionResponse.RequestId = _ctx.StringValue("DescribeDrdsInstanceVersion.RequestId");
 			describeDrdsInstanceVersionResponse.Success = _ctx.BooleanValue("DescribeDrdsInstanceVersion.Success");
+			describeDrdsInstanceVersionResponse.RequestId = _ctx.StringValue("DescribeDrdsInstanceVersion.RequestId");
 
 			DescribeDrdsInstanceVersionResponse.DescribeDrdsInstanceVersion_Data data = new DescribeDrdsInstanceVersionResponse.DescribeDrdsInstanceVersion_Data();
-			data.InstanceVersion = _ctx.StringValue("DescribeDrdsInstanceVersion.Data.InstanceVersion");
 			data.NewestVersion = _ctx.StringValue("DescribeDrdsInstanceVersion.Data.NewestVersion");
+			data.InstanceVersion = _ctx.StringValue("DescribeDrdsInstanceVersion.Data.InstanceVersion");
 			describeDrdsInstanceVersionResponse.Data = data;
         
 			return describeDrdsInstanceVersionResponse;

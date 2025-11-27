@@ -37,6 +37,8 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 		private string actionType;
 
+		private long? roleFor;
+
 		private string ruleName;
 
 		private long? subUserId;
@@ -44,6 +46,8 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 		private int? pageSize;
 
 		private string autoResponseType;
+
+		private int? roleType;
 
 		private long? id;
 
@@ -63,6 +67,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			{
 				actionType = value;
 				DictionaryUtil.Add(BodyParameters, "ActionType", value);
+			}
+		}
+
+		public long? RoleFor
+		{
+			get
+			{
+				return roleFor;
+			}
+			set	
+			{
+				roleFor = value;
+				DictionaryUtil.Add(BodyParameters, "RoleFor", value.ToString());
 			}
 		}
 
@@ -115,6 +132,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			{
 				autoResponseType = value;
 				DictionaryUtil.Add(BodyParameters, "AutoResponseType", value);
+			}
+		}
+
+		public int? RoleType
+		{
+			get
+			{
+				return roleType;
+			}
+			set	
+			{
+				roleType = value;
+				DictionaryUtil.Add(BodyParameters, "RoleType", value.ToString());
 			}
 		}
 

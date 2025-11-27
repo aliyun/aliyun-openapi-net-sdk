@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			OpenHttpsResponse openHttpsResponse = new OpenHttpsResponse();
 
 			openHttpsResponse.HttpResponse = _ctx.HttpResponse;
-			openHttpsResponse.RequestId = _ctx.StringValue("OpenHttps.RequestId");
 			openHttpsResponse.Result = _ctx.BooleanValue("OpenHttps.Result");
+			openHttpsResponse.RequestId = _ctx.StringValue("OpenHttps.RequestId");
         
 			return openHttpsResponse;
         }

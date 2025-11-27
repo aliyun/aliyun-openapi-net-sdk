@@ -42,6 +42,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string description;
 
+		private string resourceGroupId;
+
 		private string appName;
 
 		public string Description
@@ -54,6 +56,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

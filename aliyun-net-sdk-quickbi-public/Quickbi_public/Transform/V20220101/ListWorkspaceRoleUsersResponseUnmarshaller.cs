@@ -35,18 +35,18 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			listWorkspaceRoleUsersResponse.Success = _ctx.BooleanValue("ListWorkspaceRoleUsers.Success");
 
 			ListWorkspaceRoleUsersResponse.ListWorkspaceRoleUsers_Result result = new ListWorkspaceRoleUsersResponse.ListWorkspaceRoleUsers_Result();
-			result.TotalNum = _ctx.IntegerValue("ListWorkspaceRoleUsers.Result.TotalNum");
-			result.TotalPages = _ctx.IntegerValue("ListWorkspaceRoleUsers.Result.TotalPages");
 			result.PageNum = _ctx.IntegerValue("ListWorkspaceRoleUsers.Result.PageNum");
 			result.PageSize = _ctx.IntegerValue("ListWorkspaceRoleUsers.Result.PageSize");
+			result.TotalNum = _ctx.IntegerValue("ListWorkspaceRoleUsers.Result.TotalNum");
+			result.TotalPages = _ctx.IntegerValue("ListWorkspaceRoleUsers.Result.TotalPages");
 
 			List<ListWorkspaceRoleUsersResponse.ListWorkspaceRoleUsers_Result.ListWorkspaceRoleUsers_DataItem> result_data = new List<ListWorkspaceRoleUsersResponse.ListWorkspaceRoleUsers_Result.ListWorkspaceRoleUsers_DataItem>();
 			for (int i = 0; i < _ctx.Length("ListWorkspaceRoleUsers.Result.Data.Length"); i++) {
 				ListWorkspaceRoleUsersResponse.ListWorkspaceRoleUsers_Result.ListWorkspaceRoleUsers_DataItem dataItem = new ListWorkspaceRoleUsersResponse.ListWorkspaceRoleUsers_Result.ListWorkspaceRoleUsers_DataItem();
-				dataItem.UserId = _ctx.StringValue("ListWorkspaceRoleUsers.Result.Data["+ i +"].UserId");
 				dataItem.NickName = _ctx.StringValue("ListWorkspaceRoleUsers.Result.Data["+ i +"].NickName");
-				dataItem.WorkspaceName = _ctx.StringValue("ListWorkspaceRoleUsers.Result.Data["+ i +"].WorkspaceName");
+				dataItem.UserId = _ctx.StringValue("ListWorkspaceRoleUsers.Result.Data["+ i +"].UserId");
 				dataItem.WorkspaceId = _ctx.StringValue("ListWorkspaceRoleUsers.Result.Data["+ i +"].WorkspaceId");
+				dataItem.WorkspaceName = _ctx.StringValue("ListWorkspaceRoleUsers.Result.Data["+ i +"].WorkspaceName");
 
 				result_data.Add(dataItem);
 			}

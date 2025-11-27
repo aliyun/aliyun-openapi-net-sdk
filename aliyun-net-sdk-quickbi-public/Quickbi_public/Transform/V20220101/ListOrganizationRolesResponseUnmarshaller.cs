@@ -37,9 +37,9 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			List<ListOrganizationRolesResponse.ListOrganizationRoles_Data> listOrganizationRolesResponse_result = new List<ListOrganizationRolesResponse.ListOrganizationRoles_Data>();
 			for (int i = 0; i < _ctx.Length("ListOrganizationRoles.Result.Length"); i++) {
 				ListOrganizationRolesResponse.ListOrganizationRoles_Data data = new ListOrganizationRolesResponse.ListOrganizationRoles_Data();
+				data.IsSystemRole = _ctx.BooleanValue("ListOrganizationRoles.Result["+ i +"].IsSystemRole");
 				data.RoleId = _ctx.LongValue("ListOrganizationRoles.Result["+ i +"].RoleId");
 				data.RoleName = _ctx.StringValue("ListOrganizationRoles.Result["+ i +"].RoleName");
-				data.IsSystemRole = _ctx.BooleanValue("ListOrganizationRoles.Result["+ i +"].IsSystemRole");
 
 				List<ListOrganizationRolesResponse.ListOrganizationRoles_Data.ListOrganizationRoles_AuthConfigListItem> data_authConfigList = new List<ListOrganizationRolesResponse.ListOrganizationRoles_Data.ListOrganizationRoles_AuthConfigListItem>();
 				for (int j = 0; j < _ctx.Length("ListOrganizationRoles.Result["+ i +"].AuthConfigList.Length"); j++) {

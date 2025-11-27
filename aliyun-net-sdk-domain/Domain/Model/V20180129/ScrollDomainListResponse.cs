@@ -35,6 +35,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private List<ScrollDomainList_Domain> data;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "ScrollId")]
 		public string ScrollId
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "TotalItemNum")]
 		public int? TotalItemNum
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "Data")]
 		public List<ScrollDomainList_Domain> Data
 		{
 			get
@@ -138,8 +143,13 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 			private string domainType;
 
+			private string resourceGroupId;
+
+			private List<ScrollDomainList_TagItem> tag;
+
 			private List<string> dnsList;
 
+			[JsonProperty(PropertyName = "DomainAuditStatus")]
 			public string DomainAuditStatus
 			{
 				get
@@ -152,6 +162,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			[JsonProperty(PropertyName = "DomainGroupId")]
 			public string DomainGroupId
 			{
 				get
@@ -164,6 +175,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			[JsonProperty(PropertyName = "Remark")]
 			public string Remark
 			{
 				get
@@ -176,6 +188,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			[JsonProperty(PropertyName = "DomainGroupName")]
 			public string DomainGroupName
 			{
 				get
@@ -188,6 +201,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			[JsonProperty(PropertyName = "ZhRegistrantOrganization")]
 			public string ZhRegistrantOrganization
 			{
 				get
@@ -200,6 +214,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			[JsonProperty(PropertyName = "RegistrantOrganization")]
 			public string RegistrantOrganization
 			{
 				get
@@ -212,6 +227,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			[JsonProperty(PropertyName = "RegistrationDate")]
 			public string RegistrationDate
 			{
 				get
@@ -224,6 +240,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			[JsonProperty(PropertyName = "InstanceId")]
 			public string InstanceId
 			{
 				get
@@ -236,6 +253,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			[JsonProperty(PropertyName = "DomainName")]
 			public string DomainName
 			{
 				get
@@ -248,6 +266,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			[JsonProperty(PropertyName = "ExpirationDateStatus")]
 			public string ExpirationDateStatus
 			{
 				get
@@ -260,6 +279,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			[JsonProperty(PropertyName = "ExpirationDate")]
 			public string ExpirationDate
 			{
 				get
@@ -272,6 +292,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			[JsonProperty(PropertyName = "Email")]
 			public string Email
 			{
 				get
@@ -284,6 +305,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			[JsonProperty(PropertyName = "RegistrantType")]
 			public string RegistrantType
 			{
 				get
@@ -296,6 +318,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			[JsonProperty(PropertyName = "ExpirationDateLong")]
 			public long? ExpirationDateLong
 			{
 				get
@@ -308,6 +331,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			[JsonProperty(PropertyName = "ExpirationCurrDateDiff")]
 			public int? ExpirationCurrDateDiff
 			{
 				get
@@ -320,6 +344,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			[JsonProperty(PropertyName = "Premium")]
 			public bool? Premium
 			{
 				get
@@ -332,6 +357,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			[JsonProperty(PropertyName = "RegistrationDateLong")]
 			public long? RegistrationDateLong
 			{
 				get
@@ -344,6 +370,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			[JsonProperty(PropertyName = "ProductId")]
 			public string ProductId
 			{
 				get
@@ -356,6 +383,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			[JsonProperty(PropertyName = "DomainStatus")]
 			public string DomainStatus
 			{
 				get
@@ -368,6 +396,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			[JsonProperty(PropertyName = "DomainType")]
 			public string DomainType
 			{
 				get
@@ -380,6 +409,33 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			[JsonProperty(PropertyName = "ResourceGroupId")]
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Tag")]
+			public List<ScrollDomainList_TagItem> Tag
+			{
+				get
+				{
+					return tag;
+				}
+				set	
+				{
+					tag = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DnsList")]
 			public List<string> DnsList
 			{
 				get
@@ -389,6 +445,40 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					dnsList = value;
+				}
+			}
+
+			public class ScrollDomainList_TagItem
+			{
+
+				private string key;
+
+				private string _value;
+
+				[JsonProperty(PropertyName = "Key")]
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "_Value")]
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}

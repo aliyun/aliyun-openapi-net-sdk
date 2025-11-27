@@ -43,9 +43,7 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private int? androidNotificationBarType;
 
-		private int? smsSendPolicy;
-
-		private string body;
+		private int? androidMessageOppoNotifyLevel;
 
 		private string deviceType;
 
@@ -53,27 +51,15 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private int? sendSpeed;
 
-		private string androidNotificationHuaweiChannel;
-
-		private string androidPopupActivity;
-
 		private string iOSRemindBody;
 
 		private bool? trim;
 
-		private string androidMessageVivoCategory;
-
-		private string androidNotifyType;
+		private string iOSLiveActivityAttributesType;
 
 		private string androidPopupTitle;
 
-		private string androidMessageHuaweiCategory;
-
-		private string iOSMusic;
-
 		private string iOSApnsEnv;
-
-		private bool? iOSMutableContent;
 
 		private int? androidNotificationBarPriority;
 
@@ -81,49 +67,25 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string androidImageUrl;
 
-		private int? androidHonorTargetUserType;
-
-		private string androidNotificationVivoChannel;
-
 		private string androidVivoReceiptId;
 
 		private string iOSNotificationCategory;
 
-		private string androidNotificationXiaomiChannel;
-
-		private bool? storeOffline;
-
-		private double? iOSRelevanceScore;
-
-		private string smsParams;
-
-		private int? androidVivoPushMode;
-
-		private string androidInboxBody;
-
-		private string jobKey;
-
-		private string androidOpenUrl;
-
-		private string androidXiaoMiNotifyBody;
-
-		private string iOSSubtitle;
-
 		private string androidXiaomiBigPictureUrl;
+
+		private string harmonyCategory;
 
 		private bool? iOSRemind;
 
 		private string iOSNotificationThreadId;
 
+		private long? iOSLiveActivityStaleDate;
+
 		private int? androidHuaweiTargetUserType;
 
-		private string androidMusic;
-
-		private string iOSNotificationCollapseId;
+		private string iOSLiveActivityContentState;
 
 		private string androidMessageHuaweiUrgency;
-
-		private string pushType;
 
 		private string iOSInterruptionLevel;
 
@@ -131,13 +93,15 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private int? iOSBadge;
 
-		private string androidBigBody;
-
 		private bool? iOSBadgeAutoIncrement;
 
 		private string androidOpenType;
 
-		private string title;
+		private string harmonyRemindTitle;
+
+		private string idempotentToken;
+
+		private string androidBadgeClass;
 
 		private int? smsDelaySecs;
 
@@ -145,27 +109,23 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string iOSExtParameters;
 
-		private string androidHuaweiReceiptId;
-
-		private string androidNotificationHonorChannel;
+		private string iOSLiveActivityAttributes;
 
 		private string androidXiaomiImageUrl;
 
-		private int? androidTargetUserType;
+		private string harmonyUri;
 
 		private string smsTemplateName;
 
-		private string androidPopupBody;
+		private string harmonyExtParameters;
 
 		private string androidBigPictureUrl;
 
 		private bool? iOSSilentNotification;
 
-		private string androidNotificationGroup;
+		private string iOSLiveActivityEvent;
 
-		private string sendChannels;
-
-		private string target;
+		private string harmonyNotificationSlotType;
 
 		private string androidBigTitle;
 
@@ -183,7 +143,113 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string targetValue;
 
+		private int? harmonyBadgeSetNum;
+
 		private string androidXiaoMiNotifyTitle;
+
+		private int? smsSendPolicy;
+
+		private string body;
+
+		private string androidNotificationHuaweiChannel;
+
+		private string androidPopupActivity;
+
+		private int? harmonyNotifyId;
+
+		private string harmonyRenderStyle;
+
+		private string androidMessageVivoCategory;
+
+		private string androidNotifyType;
+
+		private string androidMessageHuaweiCategory;
+
+		private string iOSMusic;
+
+		private bool? iOSMutableContent;
+
+		private string iOSLiveActivityId;
+
+		private string androidNotificationThreadId;
+
+		private int? androidHonorTargetUserType;
+
+		private string harmonyRemindBody;
+
+		private string androidNotificationVivoChannel;
+
+		private string androidNotificationXiaomiChannel;
+
+		private string harmonyAction;
+
+		private bool? storeOffline;
+
+		private double? iOSRelevanceScore;
+
+		private string smsParams;
+
+		private int? androidVivoPushMode;
+
+		private string androidInboxBody;
+
+		private string jobKey;
+
+		private string harmonyReceiptId;
+
+		private long? iOSLiveActivityDismissalDate;
+
+		private string androidOpenUrl;
+
+		private int? androidBadgeSetNum;
+
+		private string androidXiaoMiNotifyBody;
+
+		private string iOSSubtitle;
+
+		private bool? harmonyRemind;
+
+		private string androidMusic;
+
+		private bool? harmonyExtensionPush;
+
+		private string iOSNotificationCollapseId;
+
+		private string pushType;
+
+		private string harmonyExtensionExtraData;
+
+		private string harmonyImageUrl;
+
+		private string androidBigBody;
+
+		private string title;
+
+		private int? harmonyBadgeAddNum;
+
+		private bool? harmonyTestMessage;
+
+		private int? androidBadgeAddNum;
+
+		private string androidHuaweiReceiptId;
+
+		private string androidNotificationHonorChannel;
+
+		private int? androidTargetUserType;
+
+		private string androidPopupBody;
+
+		private string androidNotificationGroup;
+
+		private string sendChannels;
+
+		private string harmonyActionType;
+
+		private string target;
+
+		private string harmonyInboxContent;
+
+		private string androidMessageOppoCategory;
 
 		private string androidXiaoMiActivity;
 
@@ -200,29 +266,16 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public int? SmsSendPolicy
+		public int? AndroidMessageOppoNotifyLevel
 		{
 			get
 			{
-				return smsSendPolicy;
+				return androidMessageOppoNotifyLevel;
 			}
 			set	
 			{
-				smsSendPolicy = value;
-				DictionaryUtil.Add(QueryParameters, "SmsSendPolicy", value.ToString());
-			}
-		}
-
-		public string Body
-		{
-			get
-			{
-				return body;
-			}
-			set	
-			{
-				body = value;
-				DictionaryUtil.Add(QueryParameters, "Body", value);
+				androidMessageOppoNotifyLevel = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidMessageOppoNotifyLevel", value.ToString());
 			}
 		}
 
@@ -265,32 +318,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public string AndroidNotificationHuaweiChannel
-		{
-			get
-			{
-				return androidNotificationHuaweiChannel;
-			}
-			set	
-			{
-				androidNotificationHuaweiChannel = value;
-				DictionaryUtil.Add(QueryParameters, "AndroidNotificationHuaweiChannel", value);
-			}
-		}
-
-		public string AndroidPopupActivity
-		{
-			get
-			{
-				return androidPopupActivity;
-			}
-			set	
-			{
-				androidPopupActivity = value;
-				DictionaryUtil.Add(QueryParameters, "AndroidPopupActivity", value);
-			}
-		}
-
 		public string IOSRemindBody
 		{
 			get
@@ -317,29 +344,16 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public string AndroidMessageVivoCategory
+		public string IOSLiveActivityAttributesType
 		{
 			get
 			{
-				return androidMessageVivoCategory;
+				return iOSLiveActivityAttributesType;
 			}
 			set	
 			{
-				androidMessageVivoCategory = value;
-				DictionaryUtil.Add(QueryParameters, "AndroidMessageVivoCategory", value);
-			}
-		}
-
-		public string AndroidNotifyType
-		{
-			get
-			{
-				return androidNotifyType;
-			}
-			set	
-			{
-				androidNotifyType = value;
-				DictionaryUtil.Add(QueryParameters, "AndroidNotifyType", value);
+				iOSLiveActivityAttributesType = value;
+				DictionaryUtil.Add(QueryParameters, "iOSLiveActivityAttributesType", value);
 			}
 		}
 
@@ -356,32 +370,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public string AndroidMessageHuaweiCategory
-		{
-			get
-			{
-				return androidMessageHuaweiCategory;
-			}
-			set	
-			{
-				androidMessageHuaweiCategory = value;
-				DictionaryUtil.Add(QueryParameters, "AndroidMessageHuaweiCategory", value);
-			}
-		}
-
-		public string IOSMusic
-		{
-			get
-			{
-				return iOSMusic;
-			}
-			set	
-			{
-				iOSMusic = value;
-				DictionaryUtil.Add(QueryParameters, "iOSMusic", value);
-			}
-		}
-
 		public string IOSApnsEnv
 		{
 			get
@@ -392,19 +380,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				iOSApnsEnv = value;
 				DictionaryUtil.Add(QueryParameters, "iOSApnsEnv", value);
-			}
-		}
-
-		public bool? IOSMutableContent
-		{
-			get
-			{
-				return iOSMutableContent;
-			}
-			set	
-			{
-				iOSMutableContent = value;
-				DictionaryUtil.Add(QueryParameters, "iOSMutableContent", value.ToString());
 			}
 		}
 
@@ -447,32 +422,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public int? AndroidHonorTargetUserType
-		{
-			get
-			{
-				return androidHonorTargetUserType;
-			}
-			set	
-			{
-				androidHonorTargetUserType = value;
-				DictionaryUtil.Add(QueryParameters, "AndroidHonorTargetUserType", value.ToString());
-			}
-		}
-
-		public string AndroidNotificationVivoChannel
-		{
-			get
-			{
-				return androidNotificationVivoChannel;
-			}
-			set	
-			{
-				androidNotificationVivoChannel = value;
-				DictionaryUtil.Add(QueryParameters, "AndroidNotificationVivoChannel", value);
-			}
-		}
-
 		public string AndroidVivoReceiptId
 		{
 			get
@@ -499,136 +448,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public string AndroidNotificationXiaomiChannel
-		{
-			get
-			{
-				return androidNotificationXiaomiChannel;
-			}
-			set	
-			{
-				androidNotificationXiaomiChannel = value;
-				DictionaryUtil.Add(QueryParameters, "AndroidNotificationXiaomiChannel", value);
-			}
-		}
-
-		public bool? StoreOffline
-		{
-			get
-			{
-				return storeOffline;
-			}
-			set	
-			{
-				storeOffline = value;
-				DictionaryUtil.Add(QueryParameters, "StoreOffline", value.ToString());
-			}
-		}
-
-		public double? IOSRelevanceScore
-		{
-			get
-			{
-				return iOSRelevanceScore;
-			}
-			set	
-			{
-				iOSRelevanceScore = value;
-				DictionaryUtil.Add(QueryParameters, "iOSRelevanceScore", value.ToString());
-			}
-		}
-
-		public string SmsParams
-		{
-			get
-			{
-				return smsParams;
-			}
-			set	
-			{
-				smsParams = value;
-				DictionaryUtil.Add(QueryParameters, "SmsParams", value);
-			}
-		}
-
-		public int? AndroidVivoPushMode
-		{
-			get
-			{
-				return androidVivoPushMode;
-			}
-			set	
-			{
-				androidVivoPushMode = value;
-				DictionaryUtil.Add(QueryParameters, "AndroidVivoPushMode", value.ToString());
-			}
-		}
-
-		public string AndroidInboxBody
-		{
-			get
-			{
-				return androidInboxBody;
-			}
-			set	
-			{
-				androidInboxBody = value;
-				DictionaryUtil.Add(QueryParameters, "AndroidInboxBody", value);
-			}
-		}
-
-		public string JobKey
-		{
-			get
-			{
-				return jobKey;
-			}
-			set	
-			{
-				jobKey = value;
-				DictionaryUtil.Add(QueryParameters, "JobKey", value);
-			}
-		}
-
-		public string AndroidOpenUrl
-		{
-			get
-			{
-				return androidOpenUrl;
-			}
-			set	
-			{
-				androidOpenUrl = value;
-				DictionaryUtil.Add(QueryParameters, "AndroidOpenUrl", value);
-			}
-		}
-
-		public string AndroidXiaoMiNotifyBody
-		{
-			get
-			{
-				return androidXiaoMiNotifyBody;
-			}
-			set	
-			{
-				androidXiaoMiNotifyBody = value;
-				DictionaryUtil.Add(QueryParameters, "AndroidXiaoMiNotifyBody", value);
-			}
-		}
-
-		public string IOSSubtitle
-		{
-			get
-			{
-				return iOSSubtitle;
-			}
-			set	
-			{
-				iOSSubtitle = value;
-				DictionaryUtil.Add(QueryParameters, "iOSSubtitle", value);
-			}
-		}
-
 		public string AndroidXiaomiBigPictureUrl
 		{
 			get
@@ -639,6 +458,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				androidXiaomiBigPictureUrl = value;
 				DictionaryUtil.Add(QueryParameters, "AndroidXiaomiBigPictureUrl", value);
+			}
+		}
+
+		public string HarmonyCategory
+		{
+			get
+			{
+				return harmonyCategory;
+			}
+			set	
+			{
+				harmonyCategory = value;
+				DictionaryUtil.Add(QueryParameters, "HarmonyCategory", value);
 			}
 		}
 
@@ -668,6 +500,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
+		public long? IOSLiveActivityStaleDate
+		{
+			get
+			{
+				return iOSLiveActivityStaleDate;
+			}
+			set	
+			{
+				iOSLiveActivityStaleDate = value;
+				DictionaryUtil.Add(QueryParameters, "iOSLiveActivityStaleDate", value.ToString());
+			}
+		}
+
 		public int? AndroidHuaweiTargetUserType
 		{
 			get
@@ -681,29 +526,16 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public string AndroidMusic
+		public string IOSLiveActivityContentState
 		{
 			get
 			{
-				return androidMusic;
+				return iOSLiveActivityContentState;
 			}
 			set	
 			{
-				androidMusic = value;
-				DictionaryUtil.Add(QueryParameters, "AndroidMusic", value);
-			}
-		}
-
-		public string IOSNotificationCollapseId
-		{
-			get
-			{
-				return iOSNotificationCollapseId;
-			}
-			set	
-			{
-				iOSNotificationCollapseId = value;
-				DictionaryUtil.Add(QueryParameters, "iOSNotificationCollapseId", value);
+				iOSLiveActivityContentState = value;
+				DictionaryUtil.Add(QueryParameters, "iOSLiveActivityContentState", value);
 			}
 		}
 
@@ -717,19 +549,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				androidMessageHuaweiUrgency = value;
 				DictionaryUtil.Add(QueryParameters, "AndroidMessageHuaweiUrgency", value);
-			}
-		}
-
-		public string PushType
-		{
-			get
-			{
-				return pushType;
-			}
-			set	
-			{
-				pushType = value;
-				DictionaryUtil.Add(QueryParameters, "PushType", value);
 			}
 		}
 
@@ -772,19 +591,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public string AndroidBigBody
-		{
-			get
-			{
-				return androidBigBody;
-			}
-			set	
-			{
-				androidBigBody = value;
-				DictionaryUtil.Add(QueryParameters, "AndroidBigBody", value);
-			}
-		}
-
 		public bool? IOSBadgeAutoIncrement
 		{
 			get
@@ -811,16 +617,42 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public string Title
+		public string HarmonyRemindTitle
 		{
 			get
 			{
-				return title;
+				return harmonyRemindTitle;
 			}
 			set	
 			{
-				title = value;
-				DictionaryUtil.Add(QueryParameters, "Title", value);
+				harmonyRemindTitle = value;
+				DictionaryUtil.Add(QueryParameters, "HarmonyRemindTitle", value);
+			}
+		}
+
+		public string IdempotentToken
+		{
+			get
+			{
+				return idempotentToken;
+			}
+			set	
+			{
+				idempotentToken = value;
+				DictionaryUtil.Add(QueryParameters, "IdempotentToken", value);
+			}
+		}
+
+		public string AndroidBadgeClass
+		{
+			get
+			{
+				return androidBadgeClass;
+			}
+			set	
+			{
+				androidBadgeClass = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidBadgeClass", value);
 			}
 		}
 
@@ -863,29 +695,16 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public string AndroidHuaweiReceiptId
+		public string IOSLiveActivityAttributes
 		{
 			get
 			{
-				return androidHuaweiReceiptId;
+				return iOSLiveActivityAttributes;
 			}
 			set	
 			{
-				androidHuaweiReceiptId = value;
-				DictionaryUtil.Add(QueryParameters, "AndroidHuaweiReceiptId", value);
-			}
-		}
-
-		public string AndroidNotificationHonorChannel
-		{
-			get
-			{
-				return androidNotificationHonorChannel;
-			}
-			set	
-			{
-				androidNotificationHonorChannel = value;
-				DictionaryUtil.Add(QueryParameters, "AndroidNotificationHonorChannel", value);
+				iOSLiveActivityAttributes = value;
+				DictionaryUtil.Add(QueryParameters, "iOSLiveActivityAttributes", value);
 			}
 		}
 
@@ -902,16 +721,16 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public int? AndroidTargetUserType
+		public string HarmonyUri
 		{
 			get
 			{
-				return androidTargetUserType;
+				return harmonyUri;
 			}
 			set	
 			{
-				androidTargetUserType = value;
-				DictionaryUtil.Add(QueryParameters, "AndroidTargetUserType", value.ToString());
+				harmonyUri = value;
+				DictionaryUtil.Add(QueryParameters, "HarmonyUri", value);
 			}
 		}
 
@@ -928,16 +747,16 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public string AndroidPopupBody
+		public string HarmonyExtParameters
 		{
 			get
 			{
-				return androidPopupBody;
+				return harmonyExtParameters;
 			}
 			set	
 			{
-				androidPopupBody = value;
-				DictionaryUtil.Add(QueryParameters, "AndroidPopupBody", value);
+				harmonyExtParameters = value;
+				DictionaryUtil.Add(QueryParameters, "HarmonyExtParameters", value);
 			}
 		}
 
@@ -967,42 +786,29 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public string AndroidNotificationGroup
+		public string IOSLiveActivityEvent
 		{
 			get
 			{
-				return androidNotificationGroup;
+				return iOSLiveActivityEvent;
 			}
 			set	
 			{
-				androidNotificationGroup = value;
-				DictionaryUtil.Add(QueryParameters, "AndroidNotificationGroup", value);
+				iOSLiveActivityEvent = value;
+				DictionaryUtil.Add(QueryParameters, "iOSLiveActivityEvent", value);
 			}
 		}
 
-		public string SendChannels
+		public string HarmonyNotificationSlotType
 		{
 			get
 			{
-				return sendChannels;
+				return harmonyNotificationSlotType;
 			}
 			set	
 			{
-				sendChannels = value;
-				DictionaryUtil.Add(QueryParameters, "SendChannels", value);
-			}
-		}
-
-		public string Target
-		{
-			get
-			{
-				return target;
-			}
-			set	
-			{
-				target = value;
-				DictionaryUtil.Add(QueryParameters, "Target", value);
+				harmonyNotificationSlotType = value;
+				DictionaryUtil.Add(QueryParameters, "HarmonyNotificationSlotType", value);
 			}
 		}
 
@@ -1110,6 +916,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
+		public int? HarmonyBadgeSetNum
+		{
+			get
+			{
+				return harmonyBadgeSetNum;
+			}
+			set	
+			{
+				harmonyBadgeSetNum = value;
+				DictionaryUtil.Add(QueryParameters, "HarmonyBadgeSetNum", value.ToString());
+			}
+		}
+
 		public string AndroidXiaoMiNotifyTitle
 		{
 			get
@@ -1120,6 +939,682 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				androidXiaoMiNotifyTitle = value;
 				DictionaryUtil.Add(QueryParameters, "AndroidXiaoMiNotifyTitle", value);
+			}
+		}
+
+		public int? SmsSendPolicy
+		{
+			get
+			{
+				return smsSendPolicy;
+			}
+			set	
+			{
+				smsSendPolicy = value;
+				DictionaryUtil.Add(QueryParameters, "SmsSendPolicy", value.ToString());
+			}
+		}
+
+		public string Body
+		{
+			get
+			{
+				return body;
+			}
+			set	
+			{
+				body = value;
+				DictionaryUtil.Add(QueryParameters, "Body", value);
+			}
+		}
+
+		public string AndroidNotificationHuaweiChannel
+		{
+			get
+			{
+				return androidNotificationHuaweiChannel;
+			}
+			set	
+			{
+				androidNotificationHuaweiChannel = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidNotificationHuaweiChannel", value);
+			}
+		}
+
+		public string AndroidPopupActivity
+		{
+			get
+			{
+				return androidPopupActivity;
+			}
+			set	
+			{
+				androidPopupActivity = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidPopupActivity", value);
+			}
+		}
+
+		public int? HarmonyNotifyId
+		{
+			get
+			{
+				return harmonyNotifyId;
+			}
+			set	
+			{
+				harmonyNotifyId = value;
+				DictionaryUtil.Add(QueryParameters, "HarmonyNotifyId", value.ToString());
+			}
+		}
+
+		public string HarmonyRenderStyle
+		{
+			get
+			{
+				return harmonyRenderStyle;
+			}
+			set	
+			{
+				harmonyRenderStyle = value;
+				DictionaryUtil.Add(QueryParameters, "HarmonyRenderStyle", value);
+			}
+		}
+
+		public string AndroidMessageVivoCategory
+		{
+			get
+			{
+				return androidMessageVivoCategory;
+			}
+			set	
+			{
+				androidMessageVivoCategory = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidMessageVivoCategory", value);
+			}
+		}
+
+		public string AndroidNotifyType
+		{
+			get
+			{
+				return androidNotifyType;
+			}
+			set	
+			{
+				androidNotifyType = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidNotifyType", value);
+			}
+		}
+
+		public string AndroidMessageHuaweiCategory
+		{
+			get
+			{
+				return androidMessageHuaweiCategory;
+			}
+			set	
+			{
+				androidMessageHuaweiCategory = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidMessageHuaweiCategory", value);
+			}
+		}
+
+		public string IOSMusic
+		{
+			get
+			{
+				return iOSMusic;
+			}
+			set	
+			{
+				iOSMusic = value;
+				DictionaryUtil.Add(QueryParameters, "iOSMusic", value);
+			}
+		}
+
+		public bool? IOSMutableContent
+		{
+			get
+			{
+				return iOSMutableContent;
+			}
+			set	
+			{
+				iOSMutableContent = value;
+				DictionaryUtil.Add(QueryParameters, "iOSMutableContent", value.ToString());
+			}
+		}
+
+		public string IOSLiveActivityId
+		{
+			get
+			{
+				return iOSLiveActivityId;
+			}
+			set	
+			{
+				iOSLiveActivityId = value;
+				DictionaryUtil.Add(QueryParameters, "iOSLiveActivityId", value);
+			}
+		}
+
+		public string AndroidNotificationThreadId
+		{
+			get
+			{
+				return androidNotificationThreadId;
+			}
+			set	
+			{
+				androidNotificationThreadId = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidNotificationThreadId", value);
+			}
+		}
+
+		public int? AndroidHonorTargetUserType
+		{
+			get
+			{
+				return androidHonorTargetUserType;
+			}
+			set	
+			{
+				androidHonorTargetUserType = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidHonorTargetUserType", value.ToString());
+			}
+		}
+
+		public string HarmonyRemindBody
+		{
+			get
+			{
+				return harmonyRemindBody;
+			}
+			set	
+			{
+				harmonyRemindBody = value;
+				DictionaryUtil.Add(QueryParameters, "HarmonyRemindBody", value);
+			}
+		}
+
+		public string AndroidNotificationVivoChannel
+		{
+			get
+			{
+				return androidNotificationVivoChannel;
+			}
+			set	
+			{
+				androidNotificationVivoChannel = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidNotificationVivoChannel", value);
+			}
+		}
+
+		public string AndroidNotificationXiaomiChannel
+		{
+			get
+			{
+				return androidNotificationXiaomiChannel;
+			}
+			set	
+			{
+				androidNotificationXiaomiChannel = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidNotificationXiaomiChannel", value);
+			}
+		}
+
+		public string HarmonyAction
+		{
+			get
+			{
+				return harmonyAction;
+			}
+			set	
+			{
+				harmonyAction = value;
+				DictionaryUtil.Add(QueryParameters, "HarmonyAction", value);
+			}
+		}
+
+		public bool? StoreOffline
+		{
+			get
+			{
+				return storeOffline;
+			}
+			set	
+			{
+				storeOffline = value;
+				DictionaryUtil.Add(QueryParameters, "StoreOffline", value.ToString());
+			}
+		}
+
+		public double? IOSRelevanceScore
+		{
+			get
+			{
+				return iOSRelevanceScore;
+			}
+			set	
+			{
+				iOSRelevanceScore = value;
+				DictionaryUtil.Add(QueryParameters, "iOSRelevanceScore", value.ToString());
+			}
+		}
+
+		public string SmsParams
+		{
+			get
+			{
+				return smsParams;
+			}
+			set	
+			{
+				smsParams = value;
+				DictionaryUtil.Add(QueryParameters, "SmsParams", value);
+			}
+		}
+
+		public int? AndroidVivoPushMode
+		{
+			get
+			{
+				return androidVivoPushMode;
+			}
+			set	
+			{
+				androidVivoPushMode = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidVivoPushMode", value.ToString());
+			}
+		}
+
+		public string AndroidInboxBody
+		{
+			get
+			{
+				return androidInboxBody;
+			}
+			set	
+			{
+				androidInboxBody = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidInboxBody", value);
+			}
+		}
+
+		public string JobKey
+		{
+			get
+			{
+				return jobKey;
+			}
+			set	
+			{
+				jobKey = value;
+				DictionaryUtil.Add(QueryParameters, "JobKey", value);
+			}
+		}
+
+		public string HarmonyReceiptId
+		{
+			get
+			{
+				return harmonyReceiptId;
+			}
+			set	
+			{
+				harmonyReceiptId = value;
+				DictionaryUtil.Add(QueryParameters, "HarmonyReceiptId", value);
+			}
+		}
+
+		public long? IOSLiveActivityDismissalDate
+		{
+			get
+			{
+				return iOSLiveActivityDismissalDate;
+			}
+			set	
+			{
+				iOSLiveActivityDismissalDate = value;
+				DictionaryUtil.Add(QueryParameters, "iOSLiveActivityDismissalDate", value.ToString());
+			}
+		}
+
+		public string AndroidOpenUrl
+		{
+			get
+			{
+				return androidOpenUrl;
+			}
+			set	
+			{
+				androidOpenUrl = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidOpenUrl", value);
+			}
+		}
+
+		public int? AndroidBadgeSetNum
+		{
+			get
+			{
+				return androidBadgeSetNum;
+			}
+			set	
+			{
+				androidBadgeSetNum = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidBadgeSetNum", value.ToString());
+			}
+		}
+
+		public string AndroidXiaoMiNotifyBody
+		{
+			get
+			{
+				return androidXiaoMiNotifyBody;
+			}
+			set	
+			{
+				androidXiaoMiNotifyBody = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidXiaoMiNotifyBody", value);
+			}
+		}
+
+		public string IOSSubtitle
+		{
+			get
+			{
+				return iOSSubtitle;
+			}
+			set	
+			{
+				iOSSubtitle = value;
+				DictionaryUtil.Add(QueryParameters, "iOSSubtitle", value);
+			}
+		}
+
+		public bool? HarmonyRemind
+		{
+			get
+			{
+				return harmonyRemind;
+			}
+			set	
+			{
+				harmonyRemind = value;
+				DictionaryUtil.Add(QueryParameters, "HarmonyRemind", value.ToString());
+			}
+		}
+
+		public string AndroidMusic
+		{
+			get
+			{
+				return androidMusic;
+			}
+			set	
+			{
+				androidMusic = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidMusic", value);
+			}
+		}
+
+		public bool? HarmonyExtensionPush
+		{
+			get
+			{
+				return harmonyExtensionPush;
+			}
+			set	
+			{
+				harmonyExtensionPush = value;
+				DictionaryUtil.Add(QueryParameters, "HarmonyExtensionPush", value.ToString());
+			}
+		}
+
+		public string IOSNotificationCollapseId
+		{
+			get
+			{
+				return iOSNotificationCollapseId;
+			}
+			set	
+			{
+				iOSNotificationCollapseId = value;
+				DictionaryUtil.Add(QueryParameters, "iOSNotificationCollapseId", value);
+			}
+		}
+
+		public string PushType
+		{
+			get
+			{
+				return pushType;
+			}
+			set	
+			{
+				pushType = value;
+				DictionaryUtil.Add(QueryParameters, "PushType", value);
+			}
+		}
+
+		public string HarmonyExtensionExtraData
+		{
+			get
+			{
+				return harmonyExtensionExtraData;
+			}
+			set	
+			{
+				harmonyExtensionExtraData = value;
+				DictionaryUtil.Add(QueryParameters, "HarmonyExtensionExtraData", value);
+			}
+		}
+
+		public string HarmonyImageUrl
+		{
+			get
+			{
+				return harmonyImageUrl;
+			}
+			set	
+			{
+				harmonyImageUrl = value;
+				DictionaryUtil.Add(QueryParameters, "HarmonyImageUrl", value);
+			}
+		}
+
+		public string AndroidBigBody
+		{
+			get
+			{
+				return androidBigBody;
+			}
+			set	
+			{
+				androidBigBody = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidBigBody", value);
+			}
+		}
+
+		public string Title
+		{
+			get
+			{
+				return title;
+			}
+			set	
+			{
+				title = value;
+				DictionaryUtil.Add(QueryParameters, "Title", value);
+			}
+		}
+
+		public int? HarmonyBadgeAddNum
+		{
+			get
+			{
+				return harmonyBadgeAddNum;
+			}
+			set	
+			{
+				harmonyBadgeAddNum = value;
+				DictionaryUtil.Add(QueryParameters, "HarmonyBadgeAddNum", value.ToString());
+			}
+		}
+
+		public bool? HarmonyTestMessage
+		{
+			get
+			{
+				return harmonyTestMessage;
+			}
+			set	
+			{
+				harmonyTestMessage = value;
+				DictionaryUtil.Add(QueryParameters, "HarmonyTestMessage", value.ToString());
+			}
+		}
+
+		public int? AndroidBadgeAddNum
+		{
+			get
+			{
+				return androidBadgeAddNum;
+			}
+			set	
+			{
+				androidBadgeAddNum = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidBadgeAddNum", value.ToString());
+			}
+		}
+
+		public string AndroidHuaweiReceiptId
+		{
+			get
+			{
+				return androidHuaweiReceiptId;
+			}
+			set	
+			{
+				androidHuaweiReceiptId = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidHuaweiReceiptId", value);
+			}
+		}
+
+		public string AndroidNotificationHonorChannel
+		{
+			get
+			{
+				return androidNotificationHonorChannel;
+			}
+			set	
+			{
+				androidNotificationHonorChannel = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidNotificationHonorChannel", value);
+			}
+		}
+
+		public int? AndroidTargetUserType
+		{
+			get
+			{
+				return androidTargetUserType;
+			}
+			set	
+			{
+				androidTargetUserType = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidTargetUserType", value.ToString());
+			}
+		}
+
+		public string AndroidPopupBody
+		{
+			get
+			{
+				return androidPopupBody;
+			}
+			set	
+			{
+				androidPopupBody = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidPopupBody", value);
+			}
+		}
+
+		public string AndroidNotificationGroup
+		{
+			get
+			{
+				return androidNotificationGroup;
+			}
+			set	
+			{
+				androidNotificationGroup = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidNotificationGroup", value);
+			}
+		}
+
+		public string SendChannels
+		{
+			get
+			{
+				return sendChannels;
+			}
+			set	
+			{
+				sendChannels = value;
+				DictionaryUtil.Add(QueryParameters, "SendChannels", value);
+			}
+		}
+
+		public string HarmonyActionType
+		{
+			get
+			{
+				return harmonyActionType;
+			}
+			set	
+			{
+				harmonyActionType = value;
+				DictionaryUtil.Add(QueryParameters, "HarmonyActionType", value);
+			}
+		}
+
+		public string Target
+		{
+			get
+			{
+				return target;
+			}
+			set	
+			{
+				target = value;
+				DictionaryUtil.Add(QueryParameters, "Target", value);
+			}
+		}
+
+		public string HarmonyInboxContent
+		{
+			get
+			{
+				return harmonyInboxContent;
+			}
+			set	
+			{
+				harmonyInboxContent = value;
+				DictionaryUtil.Add(QueryParameters, "HarmonyInboxContent", value);
+			}
+		}
+
+		public string AndroidMessageOppoCategory
+		{
+			get
+			{
+				return androidMessageOppoCategory;
+			}
+			set	
+			{
+				androidMessageOppoCategory = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidMessageOppoCategory", value);
 			}
 		}
 

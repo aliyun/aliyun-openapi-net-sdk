@@ -147,6 +147,38 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string supportInstantSwitchWithImci;
 
+		private string orca;
+
+		private string sourceDBCluster;
+
+		private string restoreType;
+
+		private string restoreDataPoint;
+
+		private string sourceRegionId;
+
+		private string imciAutoIndex;
+
+		private string osVersion;
+
+		private string autoUpgradeMinorVersion;
+
+		private string burstingEnabled;
+
+		private string rowCompression;
+
+		private string imperceptibleSwitch;
+
+		private int? cnNodeCount;
+
+		private int? dnNodeCount;
+
+		private string documentDB;
+
+		private string backupDowngradeLevel;
+
+		private string relativeAICluster;
+
 		private List<DescribeDBClusterAttribute_DBNode> dBNodes;
 
 		private List<DescribeDBClusterAttribute_Tag> tags;
@@ -885,6 +917,198 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string Orca
+		{
+			get
+			{
+				return orca;
+			}
+			set	
+			{
+				orca = value;
+			}
+		}
+
+		public string SourceDBCluster
+		{
+			get
+			{
+				return sourceDBCluster;
+			}
+			set	
+			{
+				sourceDBCluster = value;
+			}
+		}
+
+		public string RestoreType
+		{
+			get
+			{
+				return restoreType;
+			}
+			set	
+			{
+				restoreType = value;
+			}
+		}
+
+		public string RestoreDataPoint
+		{
+			get
+			{
+				return restoreDataPoint;
+			}
+			set	
+			{
+				restoreDataPoint = value;
+			}
+		}
+
+		public string SourceRegionId
+		{
+			get
+			{
+				return sourceRegionId;
+			}
+			set	
+			{
+				sourceRegionId = value;
+			}
+		}
+
+		public string ImciAutoIndex
+		{
+			get
+			{
+				return imciAutoIndex;
+			}
+			set	
+			{
+				imciAutoIndex = value;
+			}
+		}
+
+		public string OsVersion
+		{
+			get
+			{
+				return osVersion;
+			}
+			set	
+			{
+				osVersion = value;
+			}
+		}
+
+		public string AutoUpgradeMinorVersion
+		{
+			get
+			{
+				return autoUpgradeMinorVersion;
+			}
+			set	
+			{
+				autoUpgradeMinorVersion = value;
+			}
+		}
+
+		public string BurstingEnabled
+		{
+			get
+			{
+				return burstingEnabled;
+			}
+			set	
+			{
+				burstingEnabled = value;
+			}
+		}
+
+		public string RowCompression
+		{
+			get
+			{
+				return rowCompression;
+			}
+			set	
+			{
+				rowCompression = value;
+			}
+		}
+
+		public string ImperceptibleSwitch
+		{
+			get
+			{
+				return imperceptibleSwitch;
+			}
+			set	
+			{
+				imperceptibleSwitch = value;
+			}
+		}
+
+		public int? CnNodeCount
+		{
+			get
+			{
+				return cnNodeCount;
+			}
+			set	
+			{
+				cnNodeCount = value;
+			}
+		}
+
+		public int? DnNodeCount
+		{
+			get
+			{
+				return dnNodeCount;
+			}
+			set	
+			{
+				dnNodeCount = value;
+			}
+		}
+
+		public string DocumentDB
+		{
+			get
+			{
+				return documentDB;
+			}
+			set	
+			{
+				documentDB = value;
+			}
+		}
+
+		public string BackupDowngradeLevel
+		{
+			get
+			{
+				return backupDowngradeLevel;
+			}
+			set	
+			{
+				backupDowngradeLevel = value;
+			}
+		}
+
+		public string RelativeAICluster
+		{
+			get
+			{
+				return relativeAICluster;
+			}
+			set	
+			{
+				relativeAICluster = value;
+			}
+		}
+
 		public List<DescribeDBClusterAttribute_DBNode> DBNodes
 		{
 			get
@@ -965,6 +1189,42 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			private string tair;
 
 			private string remoteMemorySize;
+
+			private string orca;
+
+			private string osVersion;
+
+			private string multiMasterLocalStandby;
+
+			private string multiMasterPrimaryNode;
+
+			private string dBNodeDescription;
+
+			private string subGroupType;
+
+			private string subGroupName;
+
+			private bool? isPrimaryCN;
+
+			private string standbyZoneIds;
+
+			private long? storageMax;
+
+			private long? storageUsed;
+
+			private long? inodeUsed;
+
+			private long? inodeTotal;
+
+			private long? blktagTotal;
+
+			private long? blktagUsed;
+
+			private string subGroupDescription;
+
+			private string mirrorInsName;
+
+			private string architecture;
 
 			public string CreationTime
 			{
@@ -1215,6 +1475,222 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					remoteMemorySize = value;
+				}
+			}
+
+			public string Orca
+			{
+				get
+				{
+					return orca;
+				}
+				set	
+				{
+					orca = value;
+				}
+			}
+
+			public string OsVersion
+			{
+				get
+				{
+					return osVersion;
+				}
+				set	
+				{
+					osVersion = value;
+				}
+			}
+
+			public string MultiMasterLocalStandby
+			{
+				get
+				{
+					return multiMasterLocalStandby;
+				}
+				set	
+				{
+					multiMasterLocalStandby = value;
+				}
+			}
+
+			public string MultiMasterPrimaryNode
+			{
+				get
+				{
+					return multiMasterPrimaryNode;
+				}
+				set	
+				{
+					multiMasterPrimaryNode = value;
+				}
+			}
+
+			public string DBNodeDescription
+			{
+				get
+				{
+					return dBNodeDescription;
+				}
+				set	
+				{
+					dBNodeDescription = value;
+				}
+			}
+
+			public string SubGroupType
+			{
+				get
+				{
+					return subGroupType;
+				}
+				set	
+				{
+					subGroupType = value;
+				}
+			}
+
+			public string SubGroupName
+			{
+				get
+				{
+					return subGroupName;
+				}
+				set	
+				{
+					subGroupName = value;
+				}
+			}
+
+			public bool? IsPrimaryCN
+			{
+				get
+				{
+					return isPrimaryCN;
+				}
+				set	
+				{
+					isPrimaryCN = value;
+				}
+			}
+
+			public string StandbyZoneIds
+			{
+				get
+				{
+					return standbyZoneIds;
+				}
+				set	
+				{
+					standbyZoneIds = value;
+				}
+			}
+
+			public long? StorageMax
+			{
+				get
+				{
+					return storageMax;
+				}
+				set	
+				{
+					storageMax = value;
+				}
+			}
+
+			public long? StorageUsed
+			{
+				get
+				{
+					return storageUsed;
+				}
+				set	
+				{
+					storageUsed = value;
+				}
+			}
+
+			public long? InodeUsed
+			{
+				get
+				{
+					return inodeUsed;
+				}
+				set	
+				{
+					inodeUsed = value;
+				}
+			}
+
+			public long? InodeTotal
+			{
+				get
+				{
+					return inodeTotal;
+				}
+				set	
+				{
+					inodeTotal = value;
+				}
+			}
+
+			public long? BlktagTotal
+			{
+				get
+				{
+					return blktagTotal;
+				}
+				set	
+				{
+					blktagTotal = value;
+				}
+			}
+
+			public long? BlktagUsed
+			{
+				get
+				{
+					return blktagUsed;
+				}
+				set	
+				{
+					blktagUsed = value;
+				}
+			}
+
+			public string SubGroupDescription
+			{
+				get
+				{
+					return subGroupDescription;
+				}
+				set	
+				{
+					subGroupDescription = value;
+				}
+			}
+
+			public string MirrorInsName
+			{
+				get
+				{
+					return mirrorInsName;
+				}
+				set	
+				{
+					mirrorInsName = value;
+				}
+			}
+
+			public string Architecture
+			{
+				get
+				{
+					return architecture;
+				}
+				set	
+				{
+					architecture = value;
 				}
 			}
 		}

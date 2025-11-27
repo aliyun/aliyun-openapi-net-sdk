@@ -56,87 +56,41 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 		public class GetQuotaApplication_QuotaApplication
 		{
 
-			private string status;
-
-			private int? desireValue;
-
-			private string quotaActionCode;
-
-			private string quotaName;
-
 			private string applicationId;
-
-			private string reason;
-
-			private string auditReason;
-
-			private string quotaDescription;
-
-			private string productCode;
-
-			private string quotaArn;
 
 			private string applyTime;
 
 			private float? approveValue;
 
-			private string dimension;
+			private string auditReason;
 
-			private long? noticeType;
+			private int? desireValue;
+
+			private string dimension;
 
 			private string effectiveTime;
 
 			private string expireTime;
 
+			private long? noticeType;
+
+			private string productCode;
+
+			private string quotaActionCode;
+
+			private string quotaArn;
+
+			private string quotaCategory;
+
+			private string quotaDescription;
+
+			private string quotaName;
+
 			private string quotaUnit;
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+			private string reason;
 
-			public int? DesireValue
-			{
-				get
-				{
-					return desireValue;
-				}
-				set	
-				{
-					desireValue = value;
-				}
-			}
-
-			public string QuotaActionCode
-			{
-				get
-				{
-					return quotaActionCode;
-				}
-				set	
-				{
-					quotaActionCode = value;
-				}
-			}
-
-			public string QuotaName
-			{
-				get
-				{
-					return quotaName;
-				}
-				set	
-				{
-					quotaName = value;
-				}
-			}
+			private string status;
 
 			public string ApplicationId
 			{
@@ -147,66 +101,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					applicationId = value;
-				}
-			}
-
-			public string Reason
-			{
-				get
-				{
-					return reason;
-				}
-				set	
-				{
-					reason = value;
-				}
-			}
-
-			public string AuditReason
-			{
-				get
-				{
-					return auditReason;
-				}
-				set	
-				{
-					auditReason = value;
-				}
-			}
-
-			public string QuotaDescription
-			{
-				get
-				{
-					return quotaDescription;
-				}
-				set	
-				{
-					quotaDescription = value;
-				}
-			}
-
-			public string ProductCode
-			{
-				get
-				{
-					return productCode;
-				}
-				set	
-				{
-					productCode = value;
-				}
-			}
-
-			public string QuotaArn
-			{
-				get
-				{
-					return quotaArn;
-				}
-				set	
-				{
-					quotaArn = value;
 				}
 			}
 
@@ -234,6 +128,30 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
+			public string AuditReason
+			{
+				get
+				{
+					return auditReason;
+				}
+				set	
+				{
+					auditReason = value;
+				}
+			}
+
+			public int? DesireValue
+			{
+				get
+				{
+					return desireValue;
+				}
+				set	
+				{
+					desireValue = value;
+				}
+			}
+
 			public string Dimension
 			{
 				get
@@ -243,18 +161,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					dimension = value;
-				}
-			}
-
-			public long? NoticeType
-			{
-				get
-				{
-					return noticeType;
-				}
-				set	
-				{
-					noticeType = value;
 				}
 			}
 
@@ -282,6 +188,90 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
+			public long? NoticeType
+			{
+				get
+				{
+					return noticeType;
+				}
+				set	
+				{
+					noticeType = value;
+				}
+			}
+
+			public string ProductCode
+			{
+				get
+				{
+					return productCode;
+				}
+				set	
+				{
+					productCode = value;
+				}
+			}
+
+			public string QuotaActionCode
+			{
+				get
+				{
+					return quotaActionCode;
+				}
+				set	
+				{
+					quotaActionCode = value;
+				}
+			}
+
+			public string QuotaArn
+			{
+				get
+				{
+					return quotaArn;
+				}
+				set	
+				{
+					quotaArn = value;
+				}
+			}
+
+			public string QuotaCategory
+			{
+				get
+				{
+					return quotaCategory;
+				}
+				set	
+				{
+					quotaCategory = value;
+				}
+			}
+
+			public string QuotaDescription
+			{
+				get
+				{
+					return quotaDescription;
+				}
+				set	
+				{
+					quotaDescription = value;
+				}
+			}
+
+			public string QuotaName
+			{
+				get
+				{
+					return quotaName;
+				}
+				set	
+				{
+					quotaName = value;
+				}
+			}
+
 			public string QuotaUnit
 			{
 				get
@@ -291,6 +281,30 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					quotaUnit = value;
+				}
+			}
+
+			public string Reason
+			{
+				get
+				{
+					return reason;
+				}
+				set	
+				{
+					reason = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 		}

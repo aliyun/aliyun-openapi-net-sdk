@@ -70,39 +70,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class ListWorkspaceRoleUsers_Result
 		{
 
-			private int? totalNum;
-
-			private int? totalPages;
-
 			private int? pageNum;
 
 			private int? pageSize;
 
+			private int? totalNum;
+
+			private int? totalPages;
+
 			private List<ListWorkspaceRoleUsers_DataItem> data;
-
-			public int? TotalNum
-			{
-				get
-				{
-					return totalNum;
-				}
-				set	
-				{
-					totalNum = value;
-				}
-			}
-
-			public int? TotalPages
-			{
-				get
-				{
-					return totalPages;
-				}
-				set	
-				{
-					totalPages = value;
-				}
-			}
 
 			public int? PageNum
 			{
@@ -128,6 +104,30 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
+			public int? TotalNum
+			{
+				get
+				{
+					return totalNum;
+				}
+				set	
+				{
+					totalNum = value;
+				}
+			}
+
+			public int? TotalPages
+			{
+				get
+				{
+					return totalPages;
+				}
+				set	
+				{
+					totalPages = value;
+				}
+			}
+
 			public List<ListWorkspaceRoleUsers_DataItem> Data
 			{
 				get
@@ -143,25 +143,13 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class ListWorkspaceRoleUsers_DataItem
 			{
 
-				private string userId;
-
 				private string nickName;
 
-				private string workspaceName;
+				private string userId;
 
 				private string workspaceId;
 
-				public string UserId
-				{
-					get
-					{
-						return userId;
-					}
-					set	
-					{
-						userId = value;
-					}
-				}
+				private string workspaceName;
 
 				public string NickName
 				{
@@ -175,15 +163,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string WorkspaceName
+				public string UserId
 				{
 					get
 					{
-						return workspaceName;
+						return userId;
 					}
 					set	
 					{
-						workspaceName = value;
+						userId = value;
 					}
 				}
 
@@ -196,6 +184,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						workspaceId = value;
+					}
+				}
+
+				public string WorkspaceName
+				{
+					get
+					{
+						return workspaceName;
+					}
+					set	
+					{
+						workspaceName = value;
 					}
 				}
 			}

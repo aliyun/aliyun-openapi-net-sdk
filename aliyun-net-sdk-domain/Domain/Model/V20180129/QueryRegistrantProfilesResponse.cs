@@ -188,6 +188,12 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 			private string province;
 
+			private string credentialNo;
+
+			private string credentialType;
+
+			private string remark;
+
 			public string TelExt
 			{
 				get
@@ -473,6 +479,42 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					province = value;
+				}
+			}
+
+			public string CredentialNo
+			{
+				get
+				{
+					return credentialNo;
+				}
+				set	
+				{
+					credentialNo = value;
+				}
+			}
+
+			public string CredentialType
+			{
+				get
+				{
+					return credentialType;
+				}
+				set	
+				{
+					credentialType = value;
+				}
+			}
+
+			public string Remark
+			{
+				get
+				{
+					return remark;
+				}
+				set	
+				{
+					remark = value;
 				}
 			}
 		}

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			ModifyDBClusterServerlessConfResponse modifyDBClusterServerlessConfResponse = new ModifyDBClusterServerlessConfResponse();
 
 			modifyDBClusterServerlessConfResponse.HttpResponse = _ctx.HttpResponse;
-			modifyDBClusterServerlessConfResponse.RequestId = _ctx.StringValue("ModifyDBClusterServerlessConf.RequestId");
 			modifyDBClusterServerlessConfResponse.DBClusterId = _ctx.StringValue("ModifyDBClusterServerlessConf.DBClusterId");
+			modifyDBClusterServerlessConfResponse.RequestId = _ctx.StringValue("ModifyDBClusterServerlessConf.RequestId");
         
 			return modifyDBClusterServerlessConfResponse;
         }

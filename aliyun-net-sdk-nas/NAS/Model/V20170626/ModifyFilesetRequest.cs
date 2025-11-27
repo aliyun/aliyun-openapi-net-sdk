@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class ModifyFilesetRequest : RpcAcsRequest<ModifyFilesetResponse>
     {
         public ModifyFilesetRequest()
-            : base("NAS", "2017-06-26", "ModifyFileset", "NAS", "openAPI")
+            : base("NAS", "2017-06-26", "ModifyFileset", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,6 +45,8 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 		private string clientToken;
 
 		private string description;
+
+		private bool? deletionProtection;
 
 		private string fileSystemId;
 
@@ -86,6 +88,19 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public bool? DeletionProtection
+		{
+			get
+			{
+				return deletionProtection;
+			}
+			set	
+			{
+				deletionProtection = value;
+				DictionaryUtil.Add(QueryParameters, "DeletionProtection", value.ToString());
 			}
 		}
 

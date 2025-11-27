@@ -25,25 +25,13 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class TempModifyDBNodeResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string dBClusterId;
 
 		private string orderId;
 
-		private List<string> dBNodeIds;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<string> dBNodeIds;
 
 		public string DBClusterId
 		{
@@ -66,6 +54,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				orderId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

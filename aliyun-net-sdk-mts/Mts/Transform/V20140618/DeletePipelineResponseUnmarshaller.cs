@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 {
     public class DeletePipelineResponseUnmarshaller
     {
-        public static DeletePipelineResponse Unmarshall(UnmarshallerContext context)
+        public static DeletePipelineResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeletePipelineResponse deletePipelineResponse = new DeletePipelineResponse();
 
-			deletePipelineResponse.HttpResponse = context.HttpResponse;
-			deletePipelineResponse.RequestId = context.StringValue("DeletePipeline.RequestId");
-			deletePipelineResponse.PipelineId = context.StringValue("DeletePipeline.PipelineId");
+			deletePipelineResponse.HttpResponse = _ctx.HttpResponse;
+			deletePipelineResponse.RequestId = _ctx.StringValue("DeletePipeline.RequestId");
+			deletePipelineResponse.PipelineId = _ctx.StringValue("DeletePipeline.PipelineId");
         
 			return deletePipelineResponse;
         }

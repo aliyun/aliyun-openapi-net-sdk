@@ -47,6 +47,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				backupLog.DownloadLink = _ctx.StringValue("DescribeBackupLogs.Items["+ i +"].DownloadLink");
 				backupLog.BackupLogSize = _ctx.StringValue("DescribeBackupLogs.Items["+ i +"].BackupLogSize");
 				backupLog.BackupLogName = _ctx.StringValue("DescribeBackupLogs.Items["+ i +"].BackupLogName");
+				backupLog.DBInstanceName = _ctx.StringValue("DescribeBackupLogs.Items["+ i +"].DBInstanceName");
 
 				describeBackupLogsResponse_items.Add(backupLog);
 			}

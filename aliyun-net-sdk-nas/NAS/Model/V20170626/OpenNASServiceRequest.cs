@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class OpenNASServiceRequest : RpcAcsRequest<OpenNASServiceResponse>
     {
         public OpenNASServiceRequest()
-            : base("NAS", "2017-06-26", "OpenNASService", "NAS", "openAPI")
+            : base("NAS", "2017-06-26", "OpenNASService", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

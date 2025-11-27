@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 {
     public class SubmitMediaCensorJobResponseUnmarshaller
     {
-        public static SubmitMediaCensorJobResponse Unmarshall(UnmarshallerContext context)
+        public static SubmitMediaCensorJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SubmitMediaCensorJobResponse submitMediaCensorJobResponse = new SubmitMediaCensorJobResponse();
 
-			submitMediaCensorJobResponse.HttpResponse = context.HttpResponse;
-			submitMediaCensorJobResponse.RequestId = context.StringValue("SubmitMediaCensorJob.RequestId");
-			submitMediaCensorJobResponse.JobId = context.StringValue("SubmitMediaCensorJob.JobId");
+			submitMediaCensorJobResponse.HttpResponse = _ctx.HttpResponse;
+			submitMediaCensorJobResponse.RequestId = _ctx.StringValue("SubmitMediaCensorJob.RequestId");
+			submitMediaCensorJobResponse.JobId = _ctx.StringValue("SubmitMediaCensorJob.JobId");
         
 			return submitMediaCensorJobResponse;
         }

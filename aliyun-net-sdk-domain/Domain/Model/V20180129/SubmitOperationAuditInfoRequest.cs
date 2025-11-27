@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Domain;
 using Aliyun.Acs.Domain.Transform;
 using Aliyun.Acs.Domain.Transform.V20180129;
 
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
     public class SubmitOperationAuditInfoRequest : RpcAcsRequest<SubmitOperationAuditInfoResponse>
     {
         public SubmitOperationAuditInfoRequest()
-            : base("Domain", "2018-01-29", "SubmitOperationAuditInfo")
+            : base("Domain", "2018-01-29", "SubmitOperationAuditInfo", "domain", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -51,6 +51,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string lang;
 
+		[JsonProperty(PropertyName = "DomainName")]
 		public string DomainName
 		{
 			get
@@ -64,6 +65,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "AuditInfo")]
 		public string AuditInfo
 		{
 			get
@@ -77,6 +79,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "AuditType")]
 		public int? AuditType
 		{
 			get
@@ -90,6 +93,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "Id")]
 		public long? Id
 		{
 			get
@@ -103,6 +107,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "Lang")]
 		public string Lang
 		{
 			get

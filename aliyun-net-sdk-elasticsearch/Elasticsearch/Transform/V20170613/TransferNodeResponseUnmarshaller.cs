@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			TransferNodeResponse transferNodeResponse = new TransferNodeResponse();
 
 			transferNodeResponse.HttpResponse = _ctx.HttpResponse;
-			transferNodeResponse.RequestId = _ctx.StringValue("TransferNode.RequestId");
 			transferNodeResponse.Result = _ctx.BooleanValue("TransferNode.Result");
+			transferNodeResponse.RequestId = _ctx.StringValue("TransferNode.RequestId");
         
 			return transferNodeResponse;
         }

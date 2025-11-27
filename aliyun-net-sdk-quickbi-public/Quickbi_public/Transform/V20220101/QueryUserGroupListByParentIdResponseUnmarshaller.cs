@@ -37,15 +37,15 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			List<QueryUserGroupListByParentIdResponse.QueryUserGroupListByParentId_Data> queryUserGroupListByParentIdResponse_result = new List<QueryUserGroupListByParentIdResponse.QueryUserGroupListByParentId_Data>();
 			for (int i = 0; i < _ctx.Length("QueryUserGroupListByParentId.Result.Length"); i++) {
 				QueryUserGroupListByParentIdResponse.QueryUserGroupListByParentId_Data data = new QueryUserGroupListByParentIdResponse.QueryUserGroupListByParentId_Data();
+				data.CreateTime = _ctx.StringValue("QueryUserGroupListByParentId.Result["+ i +"].CreateTime");
+				data.CreateUser = _ctx.StringValue("QueryUserGroupListByParentId.Result["+ i +"].CreateUser");
 				data.IdentifiedPath = _ctx.StringValue("QueryUserGroupListByParentId.Result["+ i +"].IdentifiedPath");
 				data.ModifiedTime = _ctx.StringValue("QueryUserGroupListByParentId.Result["+ i +"].ModifiedTime");
-				data.CreateUser = _ctx.StringValue("QueryUserGroupListByParentId.Result["+ i +"].CreateUser");
-				data.CreateTime = _ctx.StringValue("QueryUserGroupListByParentId.Result["+ i +"].CreateTime");
-				data.UserGroupId = _ctx.StringValue("QueryUserGroupListByParentId.Result["+ i +"].UserGroupId");
-				data.UserGroupName = _ctx.StringValue("QueryUserGroupListByParentId.Result["+ i +"].UserGroupName");
 				data.ModifyUser = _ctx.StringValue("QueryUserGroupListByParentId.Result["+ i +"].ModifyUser");
 				data.ParentUserGroupId = _ctx.StringValue("QueryUserGroupListByParentId.Result["+ i +"].ParentUserGroupId");
 				data.UserGroupDescription = _ctx.StringValue("QueryUserGroupListByParentId.Result["+ i +"].UserGroupDescription");
+				data.UserGroupId = _ctx.StringValue("QueryUserGroupListByParentId.Result["+ i +"].UserGroupId");
+				data.UserGroupName = _ctx.StringValue("QueryUserGroupListByParentId.Result["+ i +"].UserGroupName");
 
 				queryUserGroupListByParentIdResponse_result.Add(data);
 			}

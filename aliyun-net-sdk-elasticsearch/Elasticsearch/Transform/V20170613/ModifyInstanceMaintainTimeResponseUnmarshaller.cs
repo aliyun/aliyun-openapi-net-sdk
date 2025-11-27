@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			ModifyInstanceMaintainTimeResponse modifyInstanceMaintainTimeResponse = new ModifyInstanceMaintainTimeResponse();
 
 			modifyInstanceMaintainTimeResponse.HttpResponse = _ctx.HttpResponse;
-			modifyInstanceMaintainTimeResponse.RequestId = _ctx.StringValue("ModifyInstanceMaintainTime.RequestId");
 			modifyInstanceMaintainTimeResponse.Result = _ctx.BooleanValue("ModifyInstanceMaintainTime.Result");
+			modifyInstanceMaintainTimeResponse.RequestId = _ctx.StringValue("ModifyInstanceMaintainTime.RequestId");
         
 			return modifyInstanceMaintainTimeResponse;
         }

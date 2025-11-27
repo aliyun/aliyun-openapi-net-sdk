@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			ModifyWhiteIpsResponse modifyWhiteIpsResponse = new ModifyWhiteIpsResponse();
 
 			modifyWhiteIpsResponse.HttpResponse = _ctx.HttpResponse;
-			modifyWhiteIpsResponse.RequestId = _ctx.StringValue("ModifyWhiteIps.RequestId");
 			modifyWhiteIpsResponse.Result = _ctx.BooleanValue("ModifyWhiteIps.Result");
+			modifyWhiteIpsResponse.RequestId = _ctx.StringValue("ModifyWhiteIps.RequestId");
         
 			return modifyWhiteIpsResponse;
         }

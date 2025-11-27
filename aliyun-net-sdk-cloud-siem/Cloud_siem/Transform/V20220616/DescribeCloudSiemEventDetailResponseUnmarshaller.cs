@@ -51,6 +51,9 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 			data.ThreatScore = _ctx.FloatValue("DescribeCloudSiemEventDetail.Data.ThreatScore");
 			data.ExtContent = _ctx.StringValue("DescribeCloudSiemEventDetail.Data.ExtContent");
 			data.Status = _ctx.IntegerValue("DescribeCloudSiemEventDetail.Data.Status");
+			data.ReferAccount = _ctx.StringValue("DescribeCloudSiemEventDetail.Data.ReferAccount");
+			data.IncidentType = _ctx.StringValue("DescribeCloudSiemEventDetail.Data.IncidentType");
+			data.RuleId = _ctx.StringValue("DescribeCloudSiemEventDetail.Data.RuleId");
 			data.Remark = _ctx.StringValue("DescribeCloudSiemEventDetail.Data.Remark");
 
 			List<string> data_dataSources = new List<string>();
@@ -64,6 +67,17 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 				data_attCkLabels.Add(_ctx.StringValue("DescribeCloudSiemEventDetail.Data.AttCkLabels["+ i +"]"));
 			}
 			data.AttCkLabels = data_attCkLabels;
+
+			List<DescribeCloudSiemEventDetailResponse.DescribeCloudSiemEventDetail_Data.DescribeCloudSiemEventDetail_AttckStage> data_attckStages = new List<DescribeCloudSiemEventDetailResponse.DescribeCloudSiemEventDetail_Data.DescribeCloudSiemEventDetail_AttckStage>();
+			for (int i = 0; i < _ctx.Length("DescribeCloudSiemEventDetail.Data.AttckStages.Length"); i++) {
+				DescribeCloudSiemEventDetailResponse.DescribeCloudSiemEventDetail_Data.DescribeCloudSiemEventDetail_AttckStage attckStage = new DescribeCloudSiemEventDetailResponse.DescribeCloudSiemEventDetail_Data.DescribeCloudSiemEventDetail_AttckStage();
+				attckStage.TacticId = _ctx.StringValue("DescribeCloudSiemEventDetail.Data.AttckStages["+ i +"].TacticId");
+				attckStage.TacticName = _ctx.StringValue("DescribeCloudSiemEventDetail.Data.AttckStages["+ i +"].TacticName");
+				attckStage.AlertNum = _ctx.IntegerValue("DescribeCloudSiemEventDetail.Data.AttckStages["+ i +"].AlertNum");
+
+				data_attckStages.Add(attckStage);
+			}
+			data.AttckStages = data_attckStages;
 			describeCloudSiemEventDetailResponse.Data = data;
         
 			return describeCloudSiemEventDetailResponse;

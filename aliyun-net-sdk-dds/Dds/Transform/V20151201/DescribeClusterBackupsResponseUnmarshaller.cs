@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				clusterBackup.ClusterBackupMode = _ctx.StringValue("DescribeClusterBackups.ClusterBackups["+ i +"].ClusterBackupMode");
 				clusterBackup.Progress = _ctx.StringValue("DescribeClusterBackups.ClusterBackups["+ i +"].Progress");
 				clusterBackup.AttachLogStatus = _ctx.StringValue("DescribeClusterBackups.ClusterBackups["+ i +"].AttachLogStatus");
+				clusterBackup.EngineVersion = _ctx.StringValue("DescribeClusterBackups.ClusterBackups["+ i +"].EngineVersion");
+				clusterBackup.BackupExpireTime = _ctx.StringValue("DescribeClusterBackups.ClusterBackups["+ i +"].BackupExpireTime");
 
 				DescribeClusterBackupsResponse.DescribeClusterBackups_ClusterBackup.DescribeClusterBackups_ExtraInfo extraInfo = new DescribeClusterBackupsResponse.DescribeClusterBackups_ClusterBackup.DescribeClusterBackups_ExtraInfo();
 				extraInfo.RegistryFromHistory = _ctx.StringValue("DescribeClusterBackups.ClusterBackups["+ i +"].ExtraInfo.RegistryFromHistory");

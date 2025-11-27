@@ -48,6 +48,13 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 				quotaBatchApplicationsItem.DesireValue = _ctx.DoubleValue("ListQuotaApplicationsForTemplate.QuotaBatchApplications["+ i +"].DesireValue");
 				quotaBatchApplicationsItem.QuotaCategory = _ctx.StringValue("ListQuotaApplicationsForTemplate.QuotaBatchApplications["+ i +"].QuotaCategory");
 				quotaBatchApplicationsItem.Dimensions = _ctx.StringValue("ListQuotaApplicationsForTemplate.QuotaBatchApplications["+ i +"].Dimensions");
+				quotaBatchApplicationsItem.Reason = _ctx.StringValue("ListQuotaApplicationsForTemplate.QuotaBatchApplications["+ i +"].Reason");
+
+				List<string> quotaBatchApplicationsItem_aliyunUids = new List<string>();
+				for (int j = 0; j < _ctx.Length("ListQuotaApplicationsForTemplate.QuotaBatchApplications["+ i +"].AliyunUids.Length"); j++) {
+					quotaBatchApplicationsItem_aliyunUids.Add(_ctx.StringValue("ListQuotaApplicationsForTemplate.QuotaBatchApplications["+ i +"].AliyunUids["+ j +"]"));
+				}
+				quotaBatchApplicationsItem.AliyunUids = quotaBatchApplicationsItem_aliyunUids;
 
 				List<ListQuotaApplicationsForTemplateResponse.ListQuotaApplicationsForTemplate_QuotaBatchApplicationsItem.ListQuotaApplicationsForTemplate_AuditStatusVo> quotaBatchApplicationsItem_auditStatusVos = new List<ListQuotaApplicationsForTemplateResponse.ListQuotaApplicationsForTemplate_QuotaBatchApplicationsItem.ListQuotaApplicationsForTemplate_AuditStatusVo>();
 				for (int j = 0; j < _ctx.Length("ListQuotaApplicationsForTemplate.QuotaBatchApplications["+ i +"].AuditStatusVos.Length"); j++) {

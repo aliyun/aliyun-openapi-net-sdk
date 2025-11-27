@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			UpdateXpackMonitorConfigResponse updateXpackMonitorConfigResponse = new UpdateXpackMonitorConfigResponse();
 
 			updateXpackMonitorConfigResponse.HttpResponse = _ctx.HttpResponse;
-			updateXpackMonitorConfigResponse.RequestId = _ctx.StringValue("UpdateXpackMonitorConfig.RequestId");
 			updateXpackMonitorConfigResponse.Result = _ctx.BooleanValue("UpdateXpackMonitorConfig.Result");
+			updateXpackMonitorConfigResponse.RequestId = _ctx.StringValue("UpdateXpackMonitorConfig.RequestId");
         
 			return updateXpackMonitorConfigResponse;
         }

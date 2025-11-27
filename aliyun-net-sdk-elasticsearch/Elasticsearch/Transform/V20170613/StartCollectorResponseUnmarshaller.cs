@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			StartCollectorResponse startCollectorResponse = new StartCollectorResponse();
 
 			startCollectorResponse.HttpResponse = _ctx.HttpResponse;
-			startCollectorResponse.RequestId = _ctx.StringValue("StartCollector.RequestId");
 			startCollectorResponse.Result = _ctx.BooleanValue("StartCollector.Result");
+			startCollectorResponse.RequestId = _ctx.StringValue("StartCollector.RequestId");
         
 			return startCollectorResponse;
         }

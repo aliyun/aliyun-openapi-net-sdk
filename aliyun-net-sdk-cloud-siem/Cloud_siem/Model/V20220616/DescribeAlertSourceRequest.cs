@@ -35,11 +35,28 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			Method = MethodType.POST;
         }
 
+		private long? roleFor;
+
 		private long? startTime;
+
+		private int? roleType;
 
 		private List<string> levels = new List<string>(){ };
 
 		private long? endTime;
+
+		public long? RoleFor
+		{
+			get
+			{
+				return roleFor;
+			}
+			set	
+			{
+				roleFor = value;
+				DictionaryUtil.Add(BodyParameters, "RoleFor", value.ToString());
+			}
+		}
 
 		public long? StartTime
 		{
@@ -51,6 +68,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			{
 				startTime = value;
 				DictionaryUtil.Add(BodyParameters, "StartTime", value.ToString());
+			}
+		}
+
+		public int? RoleType
+		{
+			get
+			{
+				return roleType;
+			}
+			set	
+			{
+				roleType = value;
+				DictionaryUtil.Add(BodyParameters, "RoleType", value.ToString());
 			}
 		}
 

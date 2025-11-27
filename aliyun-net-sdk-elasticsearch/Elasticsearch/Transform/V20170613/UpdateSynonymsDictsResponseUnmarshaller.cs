@@ -36,10 +36,10 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<UpdateSynonymsDictsResponse.UpdateSynonymsDicts_DictList> updateSynonymsDictsResponse_result = new List<UpdateSynonymsDictsResponse.UpdateSynonymsDicts_DictList>();
 			for (int i = 0; i < _ctx.Length("UpdateSynonymsDicts.Result.Length"); i++) {
 				UpdateSynonymsDictsResponse.UpdateSynonymsDicts_DictList dictList = new UpdateSynonymsDictsResponse.UpdateSynonymsDicts_DictList();
-				dictList.Name = _ctx.StringValue("UpdateSynonymsDicts.Result["+ i +"].name");
 				dictList.FileSize = _ctx.LongValue("UpdateSynonymsDicts.Result["+ i +"].fileSize");
-				dictList.Type = _ctx.StringValue("UpdateSynonymsDicts.Result["+ i +"].type");
 				dictList.SourceType = _ctx.StringValue("UpdateSynonymsDicts.Result["+ i +"].sourceType");
+				dictList.Name = _ctx.StringValue("UpdateSynonymsDicts.Result["+ i +"].name");
+				dictList.Type = _ctx.StringValue("UpdateSynonymsDicts.Result["+ i +"].type");
 
 				updateSynonymsDictsResponse_result.Add(dictList);
 			}

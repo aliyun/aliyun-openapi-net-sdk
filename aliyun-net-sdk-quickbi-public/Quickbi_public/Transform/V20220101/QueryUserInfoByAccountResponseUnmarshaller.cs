@@ -31,19 +31,19 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			QueryUserInfoByAccountResponse queryUserInfoByAccountResponse = new QueryUserInfoByAccountResponse();
 
 			queryUserInfoByAccountResponse.HttpResponse = _ctx.HttpResponse;
-			queryUserInfoByAccountResponse.Success = _ctx.BooleanValue("QueryUserInfoByAccount.Success");
 			queryUserInfoByAccountResponse.RequestId = _ctx.StringValue("QueryUserInfoByAccount.RequestId");
+			queryUserInfoByAccountResponse.Success = _ctx.BooleanValue("QueryUserInfoByAccount.Success");
 
 			QueryUserInfoByAccountResponse.QueryUserInfoByAccount_Result result = new QueryUserInfoByAccountResponse.QueryUserInfoByAccount_Result();
-			result.UserType = _ctx.IntegerValue("QueryUserInfoByAccount.Result.UserType");
-			result.Email = _ctx.StringValue("QueryUserInfoByAccount.Result.Email");
-			result.UserId = _ctx.StringValue("QueryUserInfoByAccount.Result.UserId");
-			result.AuthAdminUser = _ctx.BooleanValue("QueryUserInfoByAccount.Result.AuthAdminUser");
 			result.AccountId = _ctx.StringValue("QueryUserInfoByAccount.Result.AccountId");
-			result.NickName = _ctx.StringValue("QueryUserInfoByAccount.Result.NickName");
-			result.AdminUser = _ctx.BooleanValue("QueryUserInfoByAccount.Result.AdminUser");
-			result.Phone = _ctx.StringValue("QueryUserInfoByAccount.Result.Phone");
 			result.AccountName = _ctx.StringValue("QueryUserInfoByAccount.Result.AccountName");
+			result.AdminUser = _ctx.BooleanValue("QueryUserInfoByAccount.Result.AdminUser");
+			result.AuthAdminUser = _ctx.BooleanValue("QueryUserInfoByAccount.Result.AuthAdminUser");
+			result.Email = _ctx.StringValue("QueryUserInfoByAccount.Result.Email");
+			result.NickName = _ctx.StringValue("QueryUserInfoByAccount.Result.NickName");
+			result.Phone = _ctx.StringValue("QueryUserInfoByAccount.Result.Phone");
+			result.UserId = _ctx.StringValue("QueryUserInfoByAccount.Result.UserId");
+			result.UserType = _ctx.IntegerValue("QueryUserInfoByAccount.Result.UserType");
 
 			List<string> result_roleIdList = new List<string>();
 			for (int i = 0; i < _ctx.Length("QueryUserInfoByAccount.Result.RoleIdList.Length"); i++) {

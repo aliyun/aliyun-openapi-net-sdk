@@ -31,20 +31,20 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			DescribeDrdsDBsResponse describeDrdsDBsResponse = new DescribeDrdsDBsResponse();
 
 			describeDrdsDBsResponse.HttpResponse = _ctx.HttpResponse;
-			describeDrdsDBsResponse.RequestId = _ctx.StringValue("DescribeDrdsDBs.RequestId");
-			describeDrdsDBsResponse.Success = _ctx.BooleanValue("DescribeDrdsDBs.Success");
-			describeDrdsDBsResponse.PageNumber = _ctx.StringValue("DescribeDrdsDBs.PageNumber");
 			describeDrdsDBsResponse.PageSize = _ctx.StringValue("DescribeDrdsDBs.PageSize");
+			describeDrdsDBsResponse.PageNumber = _ctx.StringValue("DescribeDrdsDBs.PageNumber");
+			describeDrdsDBsResponse.RequestId = _ctx.StringValue("DescribeDrdsDBs.RequestId");
 			describeDrdsDBsResponse.Total = _ctx.StringValue("DescribeDrdsDBs.Total");
+			describeDrdsDBsResponse.Success = _ctx.BooleanValue("DescribeDrdsDBs.Success");
 
 			List<DescribeDrdsDBsResponse.DescribeDrdsDBs_Db> describeDrdsDBsResponse_data = new List<DescribeDrdsDBsResponse.DescribeDrdsDBs_Db>();
 			for (int i = 0; i < _ctx.Length("DescribeDrdsDBs.Data.Length"); i++) {
 				DescribeDrdsDBsResponse.DescribeDrdsDBs_Db db = new DescribeDrdsDBsResponse.DescribeDrdsDBs_Db();
-				db.DbName = _ctx.StringValue("DescribeDrdsDBs.Data["+ i +"].DbName");
 				db.Status = _ctx.StringValue("DescribeDrdsDBs.Data["+ i +"].Status");
+				db.DbName = _ctx.StringValue("DescribeDrdsDBs.Data["+ i +"].DbName");
+				db.Schema = _ctx.StringValue("DescribeDrdsDBs.Data["+ i +"].Schema");
 				db.CreateTime = _ctx.StringValue("DescribeDrdsDBs.Data["+ i +"].CreateTime");
 				db.Mode = _ctx.StringValue("DescribeDrdsDBs.Data["+ i +"].Mode");
-				db.Schema = _ctx.StringValue("DescribeDrdsDBs.Data["+ i +"].Schema");
 				db.DbInstType = _ctx.StringValue("DescribeDrdsDBs.Data["+ i +"].DbInstType");
 
 				describeDrdsDBsResponse_data.Add(db);

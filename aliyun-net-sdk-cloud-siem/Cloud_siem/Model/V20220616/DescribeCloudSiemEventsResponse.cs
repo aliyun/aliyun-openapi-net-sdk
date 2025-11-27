@@ -157,7 +157,15 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 				private int? status;
 
+				private string referAccount;
+
+				private string incidentType;
+
+				private string ruleId;
+
 				private string remark;
+
+				private List<DescribeCloudSiemEvents_AttckStage> attckStages;
 
 				private List<string> dataSources;
 
@@ -331,6 +339,42 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 					}
 				}
 
+				public string ReferAccount
+				{
+					get
+					{
+						return referAccount;
+					}
+					set	
+					{
+						referAccount = value;
+					}
+				}
+
+				public string IncidentType
+				{
+					get
+					{
+						return incidentType;
+					}
+					set	
+					{
+						incidentType = value;
+					}
+				}
+
+				public string RuleId
+				{
+					get
+					{
+						return ruleId;
+					}
+					set	
+					{
+						ruleId = value;
+					}
+				}
+
 				public string Remark
 				{
 					get
@@ -340,6 +384,18 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 					set	
 					{
 						remark = value;
+					}
+				}
+
+				public List<DescribeCloudSiemEvents_AttckStage> AttckStages
+				{
+					get
+					{
+						return attckStages;
+					}
+					set	
+					{
+						attckStages = value;
 					}
 				}
 
@@ -364,6 +420,52 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 					set	
 					{
 						attCkLabels = value;
+					}
+				}
+
+				public class DescribeCloudSiemEvents_AttckStage
+				{
+
+					private string tacticId;
+
+					private string tacticName;
+
+					private int? alertNum;
+
+					public string TacticId
+					{
+						get
+						{
+							return tacticId;
+						}
+						set	
+						{
+							tacticId = value;
+						}
+					}
+
+					public string TacticName
+					{
+						get
+						{
+							return tacticName;
+						}
+						set	
+						{
+							tacticName = value;
+						}
+					}
+
+					public int? AlertNum
+					{
+						get
+						{
+							return alertNum;
+						}
+						set	
+						{
+							alertNum = value;
+						}
 					}
 				}
 			}

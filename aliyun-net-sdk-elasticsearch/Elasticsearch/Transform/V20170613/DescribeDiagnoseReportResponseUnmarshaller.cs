@@ -34,12 +34,12 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			describeDiagnoseReportResponse.RequestId = _ctx.StringValue("DescribeDiagnoseReport.RequestId");
 
 			DescribeDiagnoseReportResponse.DescribeDiagnoseReport_Result result = new DescribeDiagnoseReportResponse.DescribeDiagnoseReport_Result();
-			result.ReportId = _ctx.StringValue("DescribeDiagnoseReport.Result.reportId");
-			result.InstanceId = _ctx.StringValue("DescribeDiagnoseReport.Result.instanceId");
-			result.State = _ctx.StringValue("DescribeDiagnoseReport.Result.state");
-			result.CreateTime = _ctx.LongValue("DescribeDiagnoseReport.Result.createTime");
-			result.Health = _ctx.StringValue("DescribeDiagnoseReport.Result.health");
 			result.Trigger = _ctx.StringValue("DescribeDiagnoseReport.Result.trigger");
+			result.CreateTime = _ctx.LongValue("DescribeDiagnoseReport.Result.createTime");
+			result.ReportId = _ctx.StringValue("DescribeDiagnoseReport.Result.reportId");
+			result.State = _ctx.StringValue("DescribeDiagnoseReport.Result.state");
+			result.InstanceId = _ctx.StringValue("DescribeDiagnoseReport.Result.instanceId");
+			result.Health = _ctx.StringValue("DescribeDiagnoseReport.Result.health");
 
 			List<DescribeDiagnoseReportResponse.DescribeDiagnoseReport_Result.DescribeDiagnoseReport_DiagnoseItemsItem> result_diagnoseItems = new List<DescribeDiagnoseReportResponse.DescribeDiagnoseReport_Result.DescribeDiagnoseReport_DiagnoseItemsItem>();
 			for (int i = 0; i < _ctx.Length("DescribeDiagnoseReport.Result.DiagnoseItems.Length"); i++) {
@@ -48,11 +48,11 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 				diagnoseItemsItem.Health = _ctx.StringValue("DescribeDiagnoseReport.Result.DiagnoseItems["+ i +"].health");
 
 				DescribeDiagnoseReportResponse.DescribeDiagnoseReport_Result.DescribeDiagnoseReport_DiagnoseItemsItem.DescribeDiagnoseReport_Detail detail = new DescribeDiagnoseReportResponse.DescribeDiagnoseReport_Result.DescribeDiagnoseReport_DiagnoseItemsItem.DescribeDiagnoseReport_Detail();
+				detail.Type = _ctx.StringValue("DescribeDiagnoseReport.Result.DiagnoseItems["+ i +"].Detail.type");
 				detail.Name = _ctx.StringValue("DescribeDiagnoseReport.Result.DiagnoseItems["+ i +"].Detail.name");
 				detail.Desc = _ctx.StringValue("DescribeDiagnoseReport.Result.DiagnoseItems["+ i +"].Detail.desc");
-				detail.Type = _ctx.StringValue("DescribeDiagnoseReport.Result.DiagnoseItems["+ i +"].Detail.type");
-				detail.Suggest = _ctx.StringValue("DescribeDiagnoseReport.Result.DiagnoseItems["+ i +"].Detail.suggest");
 				detail.Result = _ctx.StringValue("DescribeDiagnoseReport.Result.DiagnoseItems["+ i +"].Detail.result");
+				detail.Suggest = _ctx.StringValue("DescribeDiagnoseReport.Result.DiagnoseItems["+ i +"].Detail.suggest");
 				diagnoseItemsItem.Detail = detail;
 
 				result_diagnoseItems.Add(diagnoseItemsItem);

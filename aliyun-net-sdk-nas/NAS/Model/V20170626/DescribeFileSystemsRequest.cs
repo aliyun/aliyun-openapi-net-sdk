@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class DescribeFileSystemsRequest : RpcAcsRequest<DescribeFileSystemsResponse>
     {
         public DescribeFileSystemsRequest()
-            : base("NAS", "2017-06-26", "DescribeFileSystems", "NAS", "openAPI")
+            : base("NAS", "2017-06-26", "DescribeFileSystems", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,6 +43,8 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 		private string fileSystemType;
 
 		private int? pageNumber;
+
+		private string resourceGroupId;
 
 		private int? pageSize;
 
@@ -75,6 +77,19 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

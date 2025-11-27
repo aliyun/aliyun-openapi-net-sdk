@@ -43,15 +43,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
+		private string dBInstanceId;
+
+		private string guardDBInstanceId;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string dBInstanceId;
-
-		private string guardDBInstanceId;
 
 		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
@@ -64,6 +64,34 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBInstanceId")]
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "GuardDBInstanceId")]
+		public string GuardDBInstanceId
+		{
+			get
+			{
+				return guardDBInstanceId;
+			}
+			set	
+			{
+				guardDBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "GuardDBInstanceId", value);
 			}
 		}
 
@@ -106,34 +134,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		[JsonProperty(PropertyName = "DBInstanceId")]
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "GuardDBInstanceId")]
-		public string GuardDBInstanceId
-		{
-			get
-			{
-				return guardDBInstanceId;
-			}
-			set	
-			{
-				guardDBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "GuardDBInstanceId", value);
 			}
 		}
 

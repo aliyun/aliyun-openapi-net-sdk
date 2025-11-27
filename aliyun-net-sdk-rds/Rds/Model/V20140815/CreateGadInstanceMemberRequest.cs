@@ -41,12 +41,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			Method = MethodType.POST;
         }
 
-		private string dBList;
-
-		private string centralDBInstanceId;
-
-		private string centralRdsDtsAdminPassword;
-
 		private string centralRdsDtsAdminAccount;
 
 		private string centralRegionId;
@@ -55,47 +49,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private List<long?> unitNodes = new List<long?>(){ };
 
-		[JsonProperty(PropertyName = "DBList")]
-		public string DBList
-		{
-			get
-			{
-				return dBList;
-			}
-			set	
-			{
-				dBList = value;
-				DictionaryUtil.Add(QueryParameters, "DBList", value);
-			}
-		}
+		private string dBList;
 
-		[JsonProperty(PropertyName = "CentralDBInstanceId")]
-		public string CentralDBInstanceId
-		{
-			get
-			{
-				return centralDBInstanceId;
-			}
-			set	
-			{
-				centralDBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "CentralDBInstanceId", value);
-			}
-		}
+		private string centralDBInstanceId;
 
-		[JsonProperty(PropertyName = "CentralRdsDtsAdminPassword")]
-		public string CentralRdsDtsAdminPassword
-		{
-			get
-			{
-				return centralRdsDtsAdminPassword;
-			}
-			set	
-			{
-				centralRdsDtsAdminPassword = value;
-				DictionaryUtil.Add(QueryParameters, "CentralRdsDtsAdminPassword", value);
-			}
-		}
+		private string centralRdsDtsAdminPassword;
 
 		[JsonProperty(PropertyName = "CentralRdsDtsAdminAccount")]
 		public string CentralRdsDtsAdminAccount
@@ -171,6 +129,48 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 						DictionaryUtil.Add(QueryParameters,"UnitNode." + (depth1 + 1), unitNodes[depth1]);
 					}
 				}
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBList")]
+		public string DBList
+		{
+			get
+			{
+				return dBList;
+			}
+			set	
+			{
+				dBList = value;
+				DictionaryUtil.Add(QueryParameters, "DBList", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "CentralDBInstanceId")]
+		public string CentralDBInstanceId
+		{
+			get
+			{
+				return centralDBInstanceId;
+			}
+			set	
+			{
+				centralDBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "CentralDBInstanceId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "CentralRdsDtsAdminPassword")]
+		public string CentralRdsDtsAdminPassword
+		{
+			get
+			{
+				return centralRdsDtsAdminPassword;
+			}
+			set	
+			{
+				centralRdsDtsAdminPassword = value;
+				DictionaryUtil.Add(QueryParameters, "CentralRdsDtsAdminPassword", value);
 			}
 		}
 

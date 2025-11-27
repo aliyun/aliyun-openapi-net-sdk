@@ -32,8 +32,8 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 
 			enableSqlFlashbackMatchSwitchResponse.HttpResponse = _ctx.HttpResponse;
 			enableSqlFlashbackMatchSwitchResponse.RequestId = _ctx.StringValue("EnableSqlFlashbackMatchSwitch.RequestId");
-			enableSqlFlashbackMatchSwitchResponse.Success = _ctx.BooleanValue("EnableSqlFlashbackMatchSwitch.Success");
 			enableSqlFlashbackMatchSwitchResponse.Result = _ctx.BooleanValue("EnableSqlFlashbackMatchSwitch.Result");
+			enableSqlFlashbackMatchSwitchResponse.Success = _ctx.BooleanValue("EnableSqlFlashbackMatchSwitch.Success");
         
 			return enableSqlFlashbackMatchSwitchResponse;
         }

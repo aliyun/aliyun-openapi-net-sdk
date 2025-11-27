@@ -34,10 +34,13 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Mts.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Mts.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
+
+		private string externalUrl;
 
 		private long? resourceOwnerId;
 
@@ -62,6 +65,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		private string input;
 
 		private string barrages;
+
+		public string ExternalUrl
+		{
+			get
+			{
+				return externalUrl;
+			}
+			set	
+			{
+				externalUrl = value;
+				DictionaryUtil.Add(QueryParameters, "ExternalUrl", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{

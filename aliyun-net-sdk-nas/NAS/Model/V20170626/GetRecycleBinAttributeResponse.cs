@@ -66,6 +66,8 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private string enableTime;
 
+			private long? archiveSize;
+
 			public long? Size
 			{
 				get
@@ -123,6 +125,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					enableTime = value;
+				}
+			}
+
+			public long? ArchiveSize
+			{
+				get
+				{
+					return archiveSize;
+				}
+				set	
+				{
+					archiveSize = value;
 				}
 			}
 		}

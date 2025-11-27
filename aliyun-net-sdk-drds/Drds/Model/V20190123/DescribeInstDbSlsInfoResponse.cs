@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribeInstDbSlsInfoResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private DescribeInstDbSlsInfo_AuditInfo auditInfo;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private DescribeInstDbSlsInfo_AuditInfo auditInfo;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,21 +70,9 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class DescribeInstDbSlsInfo_AuditInfo
 		{
 
-			private string project;
-
 			private string logStore;
 
-			public string Project
-			{
-				get
-				{
-					return project;
-				}
-				set	
-				{
-					project = value;
-				}
-			}
+			private string project;
 
 			public string LogStore
 			{
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					logStore = value;
+				}
+			}
+
+			public string Project
+			{
+				get
+				{
+					return project;
+				}
+				set	
+				{
+					project = value;
 				}
 			}
 		}

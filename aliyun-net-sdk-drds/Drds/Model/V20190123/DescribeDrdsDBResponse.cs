@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribeDrdsDBResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private DescribeDrdsDB_Data data;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private DescribeDrdsDB_Data data;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,19 +70,31 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class DescribeDrdsDB_Data
 		{
 
+			private string status;
+
 			private string dbName;
 
-			private string status;
+			private string schema;
 
 			private string createTime;
 
 			private string mode;
 
-			private string schema;
-
 			private string dbInstType;
 
 			private string instRole;
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
 
 			public string DbName
 			{
@@ -96,15 +108,15 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public string Status
+			public string Schema
 			{
 				get
 				{
-					return status;
+					return schema;
 				}
 				set	
 				{
-					status = value;
+					schema = value;
 				}
 			}
 
@@ -129,18 +141,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					mode = value;
-				}
-			}
-
-			public string Schema
-			{
-				get
-				{
-					return schema;
-				}
-				set	
-				{
-					schema = value;
 				}
 			}
 

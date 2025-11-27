@@ -148,6 +148,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private int? id;
 
+			private string taskParams;
+
 			private List<string> subInsNames;
 
 			public int? Status
@@ -447,6 +449,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					id = value;
+				}
+			}
+
+			public string TaskParams
+			{
+				get
+				{
+					return taskParams;
+				}
+				set	
+				{
+					taskParams = value;
 				}
 			}
 

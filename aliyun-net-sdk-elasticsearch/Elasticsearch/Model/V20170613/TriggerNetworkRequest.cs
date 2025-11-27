@@ -41,28 +41,11 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			Method = MethodType.POST;
         }
 
-		private string actionType;
-
 		private string instanceId;
-
-		private string nodeType;
 
 		private string clientToken;
 
-		private string networkType;
-
-		public string ActionType
-		{
-			get
-			{
-				return actionType;
-			}
-			set	
-			{
-				actionType = value;
-				DictionaryUtil.Add(BodyParameters, "actionType", value);
-			}
-		}
+		private string body;
 
 		public string InstanceId
 		{
@@ -74,19 +57,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			{
 				instanceId = value;
 				DictionaryUtil.Add(PathParameters, "InstanceId", value);
-			}
-		}
-
-		public string NodeType
-		{
-			get
-			{
-				return nodeType;
-			}
-			set	
-			{
-				nodeType = value;
-				DictionaryUtil.Add(BodyParameters, "nodeType", value);
 			}
 		}
 
@@ -103,16 +73,16 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public string NetworkType
+		public string Body
 		{
 			get
 			{
-				return networkType;
+				return body;
 			}
 			set	
 			{
-				networkType = value;
-				DictionaryUtil.Add(BodyParameters, "networkType", value);
+				body = value;
+				DictionaryUtil.Add(BodyParameters, "body", value);
 			}
 		}
 

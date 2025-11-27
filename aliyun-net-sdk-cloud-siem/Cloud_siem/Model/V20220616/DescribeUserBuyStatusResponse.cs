@@ -78,6 +78,8 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 			private long? durationDays;
 
+			private int? rdOrder;
+
 			public long? MasterUserId
 			{
 				get
@@ -207,6 +209,18 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 				set	
 				{
 					durationDays = value;
+				}
+			}
+
+			public int? RdOrder
+			{
+				get
+				{
+					return rdOrder;
+				}
+				set	
+				{
+					rdOrder = value;
 				}
 			}
 		}

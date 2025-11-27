@@ -29,6 +29,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string requestId;
 
+		private string backupJobId;
+
 		public string BackupId
 		{
 			get
@@ -50,6 +52,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string BackupJobId
+		{
+			get
+			{
+				return backupJobId;
+			}
+			set	
+			{
+				backupJobId = value;
 			}
 		}
 	}

@@ -70,57 +70,33 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class GetUserGroupInfo_Data
 		{
 
-			private string identifiedPath;
-
-			private string parentUsergroupId;
-
-			private string modifiedTime;
+			private string createTime;
 
 			private string createUser;
 
-			private string usergroupName;
+			private string identifiedPath;
 
-			private string createTime;
+			private string modifiedTime;
+
+			private string modifyUser;
+
+			private string parentUsergroupId;
 
 			private string usergroupDesc;
 
 			private string usergroupId;
 
-			private string modifyUser;
+			private string usergroupName;
 
-			public string IdentifiedPath
+			public string CreateTime
 			{
 				get
 				{
-					return identifiedPath;
+					return createTime;
 				}
 				set	
 				{
-					identifiedPath = value;
-				}
-			}
-
-			public string ParentUsergroupId
-			{
-				get
-				{
-					return parentUsergroupId;
-				}
-				set	
-				{
-					parentUsergroupId = value;
-				}
-			}
-
-			public string ModifiedTime
-			{
-				get
-				{
-					return modifiedTime;
-				}
-				set	
-				{
-					modifiedTime = value;
+					createTime = value;
 				}
 			}
 
@@ -136,27 +112,51 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string UsergroupName
+			public string IdentifiedPath
 			{
 				get
 				{
-					return usergroupName;
+					return identifiedPath;
 				}
 				set	
 				{
-					usergroupName = value;
+					identifiedPath = value;
 				}
 			}
 
-			public string CreateTime
+			public string ModifiedTime
 			{
 				get
 				{
-					return createTime;
+					return modifiedTime;
 				}
 				set	
 				{
-					createTime = value;
+					modifiedTime = value;
+				}
+			}
+
+			public string ModifyUser
+			{
+				get
+				{
+					return modifyUser;
+				}
+				set	
+				{
+					modifyUser = value;
+				}
+			}
+
+			public string ParentUsergroupId
+			{
+				get
+				{
+					return parentUsergroupId;
+				}
+				set	
+				{
+					parentUsergroupId = value;
 				}
 			}
 
@@ -184,15 +184,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string ModifyUser
+			public string UsergroupName
 			{
 				get
 				{
-					return modifyUser;
+					return usergroupName;
 				}
 				set	
 				{
-					modifyUser = value;
+					usergroupName = value;
 				}
 			}
 		}

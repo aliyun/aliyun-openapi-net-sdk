@@ -37,13 +37,13 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 		private string targetType;
 
+		private string cubeId;
+
 		private string targetIds;
 
 		private string ruleType;
 
 		private string operateType;
-
-		private string cubeId;
 
 		public string TargetType
 		{
@@ -55,6 +55,19 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				targetType = value;
 				DictionaryUtil.Add(QueryParameters, "TargetType", value);
+			}
+		}
+
+		public string CubeId
+		{
+			get
+			{
+				return cubeId;
+			}
+			set	
+			{
+				cubeId = value;
+				DictionaryUtil.Add(QueryParameters, "CubeId", value);
 			}
 		}
 
@@ -94,19 +107,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				operateType = value;
 				DictionaryUtil.Add(QueryParameters, "OperateType", value);
-			}
-		}
-
-		public string CubeId
-		{
-			get
-			{
-				return cubeId;
-			}
-			set	
-			{
-				cubeId = value;
-				DictionaryUtil.Add(QueryParameters, "CubeId", value);
 			}
 		}
 

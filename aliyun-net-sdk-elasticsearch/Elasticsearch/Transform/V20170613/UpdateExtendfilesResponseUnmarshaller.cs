@@ -36,8 +36,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<UpdateExtendfilesResponse.UpdateExtendfiles_ResultItem> updateExtendfilesResponse_result = new List<UpdateExtendfilesResponse.UpdateExtendfiles_ResultItem>();
 			for (int i = 0; i < _ctx.Length("UpdateExtendfiles.Result.Length"); i++) {
 				UpdateExtendfilesResponse.UpdateExtendfiles_ResultItem resultItem = new UpdateExtendfilesResponse.UpdateExtendfiles_ResultItem();
-				resultItem.Name = _ctx.StringValue("UpdateExtendfiles.Result["+ i +"].name");
 				resultItem.FileSize = _ctx.LongValue("UpdateExtendfiles.Result["+ i +"].fileSize");
+				resultItem.Name = _ctx.StringValue("UpdateExtendfiles.Result["+ i +"].name");
 				resultItem.SourceType = _ctx.StringValue("UpdateExtendfiles.Result["+ i +"].sourceType");
 
 				updateExtendfilesResponse_result.Add(resultItem);

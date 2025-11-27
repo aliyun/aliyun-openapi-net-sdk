@@ -42,9 +42,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string objectPath;
 
-		private long? ownerId;
-
 		private string securityToken;
+
+		private bool? l2Preload;
+
+		private string area;
+
+		private string withHeader;
+
+		private long? ownerId;
 
 		public string ObjectPath
 		{
@@ -59,19 +65,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
 		public string SecurityToken
 		{
 			get
@@ -82,6 +75,58 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public bool? L2Preload
+		{
+			get
+			{
+				return l2Preload;
+			}
+			set	
+			{
+				l2Preload = value;
+				DictionaryUtil.Add(QueryParameters, "L2Preload", value.ToString());
+			}
+		}
+
+		public string Area
+		{
+			get
+			{
+				return area;
+			}
+			set	
+			{
+				area = value;
+				DictionaryUtil.Add(QueryParameters, "Area", value);
+			}
+		}
+
+		public string WithHeader
+		{
+			get
+			{
+				return withHeader;
+			}
+			set	
+			{
+				withHeader = value;
+				DictionaryUtil.Add(QueryParameters, "WithHeader", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

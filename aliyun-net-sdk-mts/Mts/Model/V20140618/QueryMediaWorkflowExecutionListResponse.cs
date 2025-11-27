@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
@@ -70,31 +70,31 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		public class QueryMediaWorkflowExecutionList_MediaWorkflowExecution
 		{
 
-			private string runId;
+			private string creationTime;
 
 			private string mediaWorkflowId;
 
-			private string name;
-
 			private string state;
+
+			private string name;
 
 			private string mediaId;
 
-			private string creationTime;
+			private string runId;
 
 			private List<QueryMediaWorkflowExecutionList_Activity> activityList;
 
 			private QueryMediaWorkflowExecutionList_Input input;
 
-			public string RunId
+			public string CreationTime
 			{
 				get
 				{
-					return runId;
+					return creationTime;
 				}
 				set	
 				{
-					runId = value;
+					creationTime = value;
 				}
 			}
 
@@ -110,18 +110,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
 			public string State
 			{
 				get
@@ -131,6 +119,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					state = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 
@@ -146,15 +146,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public string CreationTime
+			public string RunId
 			{
 				get
 				{
-					return creationTime;
+					return runId;
 				}
 				set	
 				{
-					creationTime = value;
+					runId = value;
 				}
 			}
 
@@ -185,33 +185,33 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			public class QueryMediaWorkflowExecutionList_Activity
 			{
 
-				private string name;
+				private string endTime;
 
 				private string type;
 
-				private string jobId;
+				private string startTime;
 
 				private string state;
+
+				private string jobId;
 
 				private string code;
 
 				private string message;
 
-				private string startTime;
-
-				private string endTime;
+				private string name;
 
 				private QueryMediaWorkflowExecutionList_MNSMessageResult mNSMessageResult;
 
-				public string Name
+				public string EndTime
 				{
 					get
 					{
-						return name;
+						return endTime;
 					}
 					set	
 					{
-						name = value;
+						endTime = value;
 					}
 				}
 
@@ -227,15 +227,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public string JobId
+				public string StartTime
 				{
 					get
 					{
-						return jobId;
+						return startTime;
 					}
 					set	
 					{
-						jobId = value;
+						startTime = value;
 					}
 				}
 
@@ -248,6 +248,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						state = value;
+					}
+				}
+
+				public string JobId
+				{
+					get
+					{
+						return jobId;
+					}
+					set	
+					{
+						jobId = value;
 					}
 				}
 
@@ -275,27 +287,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public string StartTime
+				public string Name
 				{
 					get
 					{
-						return startTime;
+						return name;
 					}
 					set	
 					{
-						startTime = value;
-					}
-				}
-
-				public string EndTime
-				{
-					get
-					{
-						return endTime;
-					}
-					set	
-					{
-						endTime = value;
+						name = value;
 					}
 				}
 
@@ -392,21 +392,21 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				public class QueryMediaWorkflowExecutionList_InputFile
 				{
 
-					private string bucket;
+					private string _object;
 
 					private string location;
 
-					private string _object;
+					private string bucket;
 
-					public string Bucket
+					public string _Object
 					{
 						get
 						{
-							return bucket;
+							return _object;
 						}
 						set	
 						{
-							bucket = value;
+							_object = value;
 						}
 					}
 
@@ -422,15 +422,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public string _Object
+					public string Bucket
 					{
 						get
 						{
-							return _object;
+							return bucket;
 						}
 						set	
 						{
-							_object = value;
+							bucket = value;
 						}
 					}
 				}

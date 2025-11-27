@@ -25,27 +25,27 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 	public class SearchMultiAccountResourcesResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? maxResults;
 
 		private string nextToken;
 
-		private string scope;
+		private string requestId;
 
-		private int? maxResults;
+		private string scope;
 
 		private List<SearchMultiAccountResources_Filter> filters;
 
 		private List<SearchMultiAccountResources_Resource> resources;
 
-		public string RequestId
+		public int? MaxResults
 		{
 			get
 			{
-				return requestId;
+				return maxResults;
 			}
 			set	
 			{
-				requestId = value;
+				maxResults = value;
 			}
 		}
 
@@ -61,6 +61,18 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public string Scope
 		{
 			get
@@ -70,18 +82,6 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 			set	
 			{
 				scope = value;
-			}
-		}
-
-		public int? MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
 			}
 		}
 
@@ -158,35 +158,39 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 		public class SearchMultiAccountResources_Resource
 		{
 
-			private string resourceType;
+			private string accountId;
 
 			private string createTime;
 
+			private string expireTime;
+
+			private string regionId;
+
 			private string resourceGroupId;
-
-			private string zoneId;
-
-			private string accountId;
 
 			private string resourceId;
 
 			private string resourceName;
 
-			private string regionId;
+			private string resourceType;
+
+			private string zoneId;
+
+			private List<SearchMultiAccountResources_IpAddressAttribute> ipAddressAttributes;
 
 			private List<SearchMultiAccountResources_Tag> tags;
 
 			private List<string> ipAddresses;
 
-			public string ResourceType
+			public string AccountId
 			{
 				get
 				{
-					return resourceType;
+					return accountId;
 				}
 				set	
 				{
-					resourceType = value;
+					accountId = value;
 				}
 			}
 
@@ -202,6 +206,30 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 				}
 			}
 
+			public string ExpireTime
+			{
+				get
+				{
+					return expireTime;
+				}
+				set	
+				{
+					expireTime = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
 			public string ResourceGroupId
 			{
 				get
@@ -211,30 +239,6 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 				set	
 				{
 					resourceGroupId = value;
-				}
-			}
-
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
-
-			public string AccountId
-			{
-				get
-				{
-					return accountId;
-				}
-				set	
-				{
-					accountId = value;
 				}
 			}
 
@@ -262,15 +266,39 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 				}
 			}
 
-			public string RegionId
+			public string ResourceType
 			{
 				get
 				{
-					return regionId;
+					return resourceType;
 				}
 				set	
 				{
-					regionId = value;
+					resourceType = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
+			public List<SearchMultiAccountResources_IpAddressAttribute> IpAddressAttributes
+			{
+				get
+				{
+					return ipAddressAttributes;
+				}
+				set	
+				{
+					ipAddressAttributes = value;
 				}
 			}
 
@@ -295,6 +323,52 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 				set	
 				{
 					ipAddresses = value;
+				}
+			}
+
+			public class SearchMultiAccountResources_IpAddressAttribute
+			{
+
+				private string ipAddress;
+
+				private string networkType;
+
+				private string version;
+
+				public string IpAddress
+				{
+					get
+					{
+						return ipAddress;
+					}
+					set	
+					{
+						ipAddress = value;
+					}
+				}
+
+				public string NetworkType
+				{
+					get
+					{
+						return networkType;
+					}
+					set	
+					{
+						networkType = value;
+					}
+				}
+
+				public string Version
+				{
+					get
+					{
+						return version;
+					}
+					set	
+					{
+						version = value;
+					}
 				}
 			}
 

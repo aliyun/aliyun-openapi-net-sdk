@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			UpdateLogstashChargeTypeResponse updateLogstashChargeTypeResponse = new UpdateLogstashChargeTypeResponse();
 
 			updateLogstashChargeTypeResponse.HttpResponse = _ctx.HttpResponse;
-			updateLogstashChargeTypeResponse.RequestId = _ctx.StringValue("UpdateLogstashChargeType.RequestId");
 			updateLogstashChargeTypeResponse.Result = _ctx.BooleanValue("UpdateLogstashChargeType.Result");
+			updateLogstashChargeTypeResponse.RequestId = _ctx.StringValue("UpdateLogstashChargeType.RequestId");
         
 			return updateLogstashChargeTypeResponse;
         }

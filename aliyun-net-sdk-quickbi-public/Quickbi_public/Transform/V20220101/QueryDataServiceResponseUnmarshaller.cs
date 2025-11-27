@@ -55,12 +55,12 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			List<QueryDataServiceResponse.QueryDataService_Result.QueryDataService_HeadersItem> result_headers = new List<QueryDataServiceResponse.QueryDataService_Result.QueryDataService_HeadersItem>();
 			for (int i = 0; i < _ctx.Length("QueryDataService.Result.Headers.Length"); i++) {
 				QueryDataServiceResponse.QueryDataService_Result.QueryDataService_HeadersItem headersItem = new QueryDataServiceResponse.QueryDataService_Result.QueryDataService_HeadersItem();
-				headersItem.Type = _ctx.StringValue("QueryDataService.Result.Headers["+ i +"].Type");
+				headersItem.Aggregator = _ctx.StringValue("QueryDataService.Result.Headers["+ i +"].Aggregator");
+				headersItem.Column = _ctx.StringValue("QueryDataService.Result.Headers["+ i +"].Column");
 				headersItem.DataType = _ctx.StringValue("QueryDataService.Result.Headers["+ i +"].DataType");
 				headersItem.Granularity = _ctx.StringValue("QueryDataService.Result.Headers["+ i +"].Granularity");
 				headersItem.Label = _ctx.StringValue("QueryDataService.Result.Headers["+ i +"].Label");
-				headersItem.Column = _ctx.StringValue("QueryDataService.Result.Headers["+ i +"].Column");
-				headersItem.Aggregator = _ctx.StringValue("QueryDataService.Result.Headers["+ i +"].Aggregator");
+				headersItem.Type = _ctx.StringValue("QueryDataService.Result.Headers["+ i +"].Type");
 
 				result_headers.Add(headersItem);
 			}

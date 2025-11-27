@@ -40,7 +40,11 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			Method = MethodType.POST;
         }
 
+		private string modifyRowCompression;
+
 		private long? resourceOwnerId;
+
+		private string tableMeta;
 
 		private string standbyHAMode;
 
@@ -50,6 +54,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string ownerAccount;
 
+		private string dBNodeCrashList;
+
 		private string faultSimulateMode;
 
 		private long? ownerId;
@@ -58,9 +64,26 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? storageUpperBound;
 
+		private string imciAutoIndex;
+
 		private string storageAutoScale;
 
+		private string faultInjectionType;
+
 		private string dataSyncMode;
+
+		public string ModifyRowCompression
+		{
+			get
+			{
+				return modifyRowCompression;
+			}
+			set	
+			{
+				modifyRowCompression = value;
+				DictionaryUtil.Add(QueryParameters, "ModifyRowCompression", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -72,6 +95,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string TableMeta
+		{
+			get
+			{
+				return tableMeta;
+			}
+			set	
+			{
+				tableMeta = value;
+				DictionaryUtil.Add(QueryParameters, "TableMeta", value);
 			}
 		}
 
@@ -127,6 +163,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string DBNodeCrashList
+		{
+			get
+			{
+				return dBNodeCrashList;
+			}
+			set	
+			{
+				dBNodeCrashList = value;
+				DictionaryUtil.Add(QueryParameters, "DBNodeCrashList", value);
+			}
+		}
+
 		public string FaultSimulateMode
 		{
 			get
@@ -179,6 +228,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string ImciAutoIndex
+		{
+			get
+			{
+				return imciAutoIndex;
+			}
+			set	
+			{
+				imciAutoIndex = value;
+				DictionaryUtil.Add(QueryParameters, "ImciAutoIndex", value);
+			}
+		}
+
 		public string StorageAutoScale
 		{
 			get
@@ -189,6 +251,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				storageAutoScale = value;
 				DictionaryUtil.Add(QueryParameters, "StorageAutoScale", value);
+			}
+		}
+
+		public string FaultInjectionType
+		{
+			get
+			{
+				return faultInjectionType;
+			}
+			set	
+			{
+				faultInjectionType = value;
+				DictionaryUtil.Add(QueryParameters, "FaultInjectionType", value);
 			}
 		}
 

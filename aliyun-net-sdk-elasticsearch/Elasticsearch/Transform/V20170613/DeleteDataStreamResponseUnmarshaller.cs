@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			DeleteDataStreamResponse deleteDataStreamResponse = new DeleteDataStreamResponse();
 
 			deleteDataStreamResponse.HttpResponse = _ctx.HttpResponse;
-			deleteDataStreamResponse.RequestId = _ctx.StringValue("DeleteDataStream.RequestId");
 			deleteDataStreamResponse.Result = _ctx.BooleanValue("DeleteDataStream.Result");
+			deleteDataStreamResponse.RequestId = _ctx.StringValue("DeleteDataStream.RequestId");
         
 			return deleteDataStreamResponse;
         }

@@ -37,13 +37,13 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			List<ListCollectionsResponse.ListCollections_Data> listCollectionsResponse_result = new List<ListCollectionsResponse.ListCollections_Data>();
 			for (int i = 0; i < _ctx.Length("ListCollections.Result.Length"); i++) {
 				ListCollectionsResponse.ListCollections_Data data = new ListCollectionsResponse.ListCollections_Data();
-				data.WorkspaceId = _ctx.StringValue("ListCollections.Result["+ i +"].WorkspaceId");
-				data.WorksType = _ctx.StringValue("ListCollections.Result["+ i +"].WorksType");
 				data.FavoriteId = _ctx.IntegerValue("ListCollections.Result["+ i +"].FavoriteId");
+				data.OwnerId = _ctx.StringValue("ListCollections.Result["+ i +"].OwnerId");
 				data.WorksId = _ctx.StringValue("ListCollections.Result["+ i +"].WorksId");
 				data.WorksName = _ctx.StringValue("ListCollections.Result["+ i +"].WorksName");
+				data.WorksType = _ctx.StringValue("ListCollections.Result["+ i +"].WorksType");
+				data.WorkspaceId = _ctx.StringValue("ListCollections.Result["+ i +"].WorkspaceId");
 				data.WorkspaceName = _ctx.StringValue("ListCollections.Result["+ i +"].WorkspaceName");
-				data.OwnerId = _ctx.StringValue("ListCollections.Result["+ i +"].OwnerId");
 
 				listCollectionsResponse_result.Add(data);
 			}

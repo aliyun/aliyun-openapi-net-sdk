@@ -34,9 +34,10 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Mts.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Mts.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -48,8 +49,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		private long? ownerId;
 
 		private string bucket;
-
-		private string roleArn;
 
 		public long? ResourceOwnerId
 		{
@@ -113,19 +112,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				bucket = value;
 				DictionaryUtil.Add(QueryParameters, "Bucket", value);
-			}
-		}
-
-		public string RoleArn
-		{
-			get
-			{
-				return roleArn;
-			}
-			set	
-			{
-				roleArn = value;
-				DictionaryUtil.Add(QueryParameters, "RoleArn", value);
 			}
 		}
 

@@ -44,6 +44,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string secondaryZoneId;
 
+		private int? slaveReadOnlyCount;
+
 		private string securityToken;
 
 		private string effectiveTime;
@@ -59,6 +61,12 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private string vSwitchId;
 
 		private string zoneId;
+
+		private int? readOnlyCount;
+
+		private int? slaveReplicaCount;
+
+		private int? replicaCount;
 
 		public long? ResourceOwnerId
 		{
@@ -83,6 +91,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				secondaryZoneId = value;
 				DictionaryUtil.Add(QueryParameters, "SecondaryZoneId", value);
+			}
+		}
+
+		public int? SlaveReadOnlyCount
+		{
+			get
+			{
+				return slaveReadOnlyCount;
+			}
+			set	
+			{
+				slaveReadOnlyCount = value;
+				DictionaryUtil.Add(QueryParameters, "SlaveReadOnlyCount", value.ToString());
 			}
 		}
 
@@ -187,6 +208,45 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				zoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public int? ReadOnlyCount
+		{
+			get
+			{
+				return readOnlyCount;
+			}
+			set	
+			{
+				readOnlyCount = value;
+				DictionaryUtil.Add(QueryParameters, "ReadOnlyCount", value.ToString());
+			}
+		}
+
+		public int? SlaveReplicaCount
+		{
+			get
+			{
+				return slaveReplicaCount;
+			}
+			set	
+			{
+				slaveReplicaCount = value;
+				DictionaryUtil.Add(QueryParameters, "SlaveReplicaCount", value.ToString());
+			}
+		}
+
+		public int? ReplicaCount
+		{
+			get
+			{
+				return replicaCount;
+			}
+			set	
+			{
+				replicaCount = value;
+				DictionaryUtil.Add(QueryParameters, "ReplicaCount", value.ToString());
 			}
 		}
 

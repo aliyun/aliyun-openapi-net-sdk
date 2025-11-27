@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -98,125 +98,67 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class DescribeDrdsInstances_Instance
 		{
 
-			private string drdsInstanceId;
-
-			private string type;
-
-			private string regionId;
-
-			private string zoneId;
-
-			private string description;
-
-			private string networkType;
+			private string vpcId;
 
 			private string status;
 
-			private long? createTime;
-
-			private long? version;
+			private string type;
 
 			private string commodityCode;
 
-			private string instRole;
+			private string machineType;
 
-			private string instanceSeries;
-
-			private string instanceSpec;
-
-			private string masterInstanceId;
-
-			private string vpcCloudInstanceId;
-
-			private string vpcId;
-
-			private long? expireDate;
+			private long? createTime;
 
 			private string versionAction;
 
+			private string instanceSeries;
+
+			private string networkType;
+
 			private string label;
 
-			private string machineType;
+			private string productVersion;
 
-			private string orderInstanceId;
+			private string instanceSpec;
+
+			private string regionId;
+
+			private string vpcCloudInstanceId;
+
+			private string description;
+
+			private long? version;
 
 			private string resourceGroupId;
 
-			private string productVersion;
+			private string zoneId;
+
+			private string drdsInstanceId;
+
+			private long? expireDate;
+
+			private string masterInstanceId;
+
+			private string orderInstanceId;
+
+			private string instRole;
+
+			private string series;
 
 			private List<DescribeDrdsInstances_Vip> vips;
 
 			private List<string> readOnlyDBInstanceIds;
 
-			public string DrdsInstanceId
+			public string VpcId
 			{
 				get
 				{
-					return drdsInstanceId;
+					return vpcId;
 				}
 				set	
 				{
-					drdsInstanceId = value;
-				}
-			}
-
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string NetworkType
-			{
-				get
-				{
-					return networkType;
-				}
-				set	
-				{
-					networkType = value;
+					vpcId = value;
 				}
 			}
 
@@ -232,27 +174,15 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public long? CreateTime
+			public string Type
 			{
 				get
 				{
-					return createTime;
+					return type;
 				}
 				set	
 				{
-					createTime = value;
-				}
-			}
-
-			public long? Version
-			{
-				get
-				{
-					return version;
-				}
-				set	
-				{
-					version = value;
+					type = value;
 				}
 			}
 
@@ -268,87 +198,27 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public string InstRole
+			public string MachineType
 			{
 				get
 				{
-					return instRole;
+					return machineType;
 				}
 				set	
 				{
-					instRole = value;
+					machineType = value;
 				}
 			}
 
-			public string InstanceSeries
+			public long? CreateTime
 			{
 				get
 				{
-					return instanceSeries;
+					return createTime;
 				}
 				set	
 				{
-					instanceSeries = value;
-				}
-			}
-
-			public string InstanceSpec
-			{
-				get
-				{
-					return instanceSpec;
-				}
-				set	
-				{
-					instanceSpec = value;
-				}
-			}
-
-			public string MasterInstanceId
-			{
-				get
-				{
-					return masterInstanceId;
-				}
-				set	
-				{
-					masterInstanceId = value;
-				}
-			}
-
-			public string VpcCloudInstanceId
-			{
-				get
-				{
-					return vpcCloudInstanceId;
-				}
-				set	
-				{
-					vpcCloudInstanceId = value;
-				}
-			}
-
-			public string VpcId
-			{
-				get
-				{
-					return vpcId;
-				}
-				set	
-				{
-					vpcId = value;
-				}
-			}
-
-			public long? ExpireDate
-			{
-				get
-				{
-					return expireDate;
-				}
-				set	
-				{
-					expireDate = value;
+					createTime = value;
 				}
 			}
 
@@ -364,6 +234,30 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
+			public string InstanceSeries
+			{
+				get
+				{
+					return instanceSeries;
+				}
+				set	
+				{
+					instanceSeries = value;
+				}
+			}
+
+			public string NetworkType
+			{
+				get
+				{
+					return networkType;
+				}
+				set	
+				{
+					networkType = value;
+				}
+			}
+
 			public string Label
 			{
 				get
@@ -376,27 +270,75 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public string MachineType
+			public string ProductVersion
 			{
 				get
 				{
-					return machineType;
+					return productVersion;
 				}
 				set	
 				{
-					machineType = value;
+					productVersion = value;
 				}
 			}
 
-			public string OrderInstanceId
+			public string InstanceSpec
 			{
 				get
 				{
-					return orderInstanceId;
+					return instanceSpec;
 				}
 				set	
 				{
-					orderInstanceId = value;
+					instanceSpec = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public string VpcCloudInstanceId
+			{
+				get
+				{
+					return vpcCloudInstanceId;
+				}
+				set	
+				{
+					vpcCloudInstanceId = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public long? Version
+			{
+				get
+				{
+					return version;
+				}
+				set	
+				{
+					version = value;
 				}
 			}
 
@@ -412,15 +354,87 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public string ProductVersion
+			public string ZoneId
 			{
 				get
 				{
-					return productVersion;
+					return zoneId;
 				}
 				set	
 				{
-					productVersion = value;
+					zoneId = value;
+				}
+			}
+
+			public string DrdsInstanceId
+			{
+				get
+				{
+					return drdsInstanceId;
+				}
+				set	
+				{
+					drdsInstanceId = value;
+				}
+			}
+
+			public long? ExpireDate
+			{
+				get
+				{
+					return expireDate;
+				}
+				set	
+				{
+					expireDate = value;
+				}
+			}
+
+			public string MasterInstanceId
+			{
+				get
+				{
+					return masterInstanceId;
+				}
+				set	
+				{
+					masterInstanceId = value;
+				}
+			}
+
+			public string OrderInstanceId
+			{
+				get
+				{
+					return orderInstanceId;
+				}
+				set	
+				{
+					orderInstanceId = value;
+				}
+			}
+
+			public string InstRole
+			{
+				get
+				{
+					return instRole;
+				}
+				set	
+				{
+					instRole = value;
+				}
+			}
+
+			public string Series
+			{
+				get
+				{
+					return series;
+				}
+				set	
+				{
+					series = value;
 				}
 			}
 
@@ -451,37 +465,27 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			public class DescribeDrdsInstances_Vip
 			{
 
-				private string iP;
-
-				private string port;
+				private string vpcId;
 
 				private string type;
 
-				private string vpcId;
-
 				private string vswitchId;
 
-				public string IP
-				{
-					get
-					{
-						return iP;
-					}
-					set	
-					{
-						iP = value;
-					}
-				}
+				private string port;
 
-				public string Port
+				private string iP;
+
+				private string dns;
+
+				public string VpcId
 				{
 					get
 					{
-						return port;
+						return vpcId;
 					}
 					set	
 					{
-						port = value;
+						vpcId = value;
 					}
 				}
 
@@ -497,18 +501,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					}
 				}
 
-				public string VpcId
-				{
-					get
-					{
-						return vpcId;
-					}
-					set	
-					{
-						vpcId = value;
-					}
-				}
-
 				public string VswitchId
 				{
 					get
@@ -518,6 +510,42 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					set	
 					{
 						vswitchId = value;
+					}
+				}
+
+				public string Port
+				{
+					get
+					{
+						return port;
+					}
+					set	
+					{
+						port = value;
+					}
+				}
+
+				public string IP
+				{
+					get
+					{
+						return iP;
+					}
+					set	
+					{
+						iP = value;
+					}
+				}
+
+				public string Dns
+				{
+					get
+					{
+						return dns;
+					}
+					set	
+					{
+						dns = value;
 					}
 				}
 			}

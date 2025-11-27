@@ -37,13 +37,13 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			List<QueryShareListResponse.QueryShareList_Data> queryShareListResponse_result = new List<QueryShareListResponse.QueryShareList_Data>();
 			for (int i = 0; i < _ctx.Length("QueryShareList.Result.Length"); i++) {
 				QueryShareListResponse.QueryShareList_Data data = new QueryShareListResponse.QueryShareList_Data();
-				data.ShareId = _ctx.StringValue("QueryShareList.Result["+ i +"].ShareId");
-				data.ShareToId = _ctx.StringValue("QueryShareList.Result["+ i +"].ShareToId");
 				data.AuthPoint = _ctx.IntegerValue("QueryShareList.Result["+ i +"].AuthPoint");
 				data.ExpireDate = _ctx.LongValue("QueryShareList.Result["+ i +"].ExpireDate");
-				data.ShareToType = _ctx.IntegerValue("QueryShareList.Result["+ i +"].ShareToType");
 				data.ReportId = _ctx.StringValue("QueryShareList.Result["+ i +"].ReportId");
+				data.ShareId = _ctx.StringValue("QueryShareList.Result["+ i +"].ShareId");
+				data.ShareToId = _ctx.StringValue("QueryShareList.Result["+ i +"].ShareToId");
 				data.ShareToName = _ctx.StringValue("QueryShareList.Result["+ i +"].ShareToName");
+				data.ShareToType = _ctx.IntegerValue("QueryShareList.Result["+ i +"].ShareToType");
 				data.ShareType = _ctx.StringValue("QueryShareList.Result["+ i +"].ShareType");
 
 				queryShareListResponse_result.Add(data);

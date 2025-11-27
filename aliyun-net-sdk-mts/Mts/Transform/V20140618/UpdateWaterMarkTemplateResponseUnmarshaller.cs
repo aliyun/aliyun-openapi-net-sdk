@@ -26,35 +26,35 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 {
     public class UpdateWaterMarkTemplateResponseUnmarshaller
     {
-        public static UpdateWaterMarkTemplateResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateWaterMarkTemplateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateWaterMarkTemplateResponse updateWaterMarkTemplateResponse = new UpdateWaterMarkTemplateResponse();
 
-			updateWaterMarkTemplateResponse.HttpResponse = context.HttpResponse;
-			updateWaterMarkTemplateResponse.RequestId = context.StringValue("UpdateWaterMarkTemplate.RequestId");
+			updateWaterMarkTemplateResponse.HttpResponse = _ctx.HttpResponse;
+			updateWaterMarkTemplateResponse.RequestId = _ctx.StringValue("UpdateWaterMarkTemplate.RequestId");
 
 			UpdateWaterMarkTemplateResponse.UpdateWaterMarkTemplate_WaterMarkTemplate waterMarkTemplate = new UpdateWaterMarkTemplateResponse.UpdateWaterMarkTemplate_WaterMarkTemplate();
-			waterMarkTemplate.Id = context.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.Id");
-			waterMarkTemplate.Name = context.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.Name");
-			waterMarkTemplate.Width = context.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.Width");
-			waterMarkTemplate.Height = context.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.Height");
-			waterMarkTemplate.Dx = context.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.Dx");
-			waterMarkTemplate.Dy = context.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.Dy");
-			waterMarkTemplate.ReferPos = context.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.ReferPos");
-			waterMarkTemplate.Type = context.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.Type");
-			waterMarkTemplate.State = context.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.State");
-
-			UpdateWaterMarkTemplateResponse.UpdateWaterMarkTemplate_WaterMarkTemplate.UpdateWaterMarkTemplate_Timeline timeline = new UpdateWaterMarkTemplateResponse.UpdateWaterMarkTemplate_WaterMarkTemplate.UpdateWaterMarkTemplate_Timeline();
-			timeline.Start = context.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.Timeline.Start");
-			timeline.Duration = context.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.Timeline.Duration");
-			waterMarkTemplate.Timeline = timeline;
+			waterMarkTemplate.Type = _ctx.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.Type");
+			waterMarkTemplate.ReferPos = _ctx.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.ReferPos");
+			waterMarkTemplate.State = _ctx.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.State");
+			waterMarkTemplate.Dx = _ctx.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.Dx");
+			waterMarkTemplate.Width = _ctx.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.Width");
+			waterMarkTemplate.Height = _ctx.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.Height");
+			waterMarkTemplate.Name = _ctx.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.Name");
+			waterMarkTemplate.Dy = _ctx.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.Dy");
+			waterMarkTemplate.Id = _ctx.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.Id");
 
 			UpdateWaterMarkTemplateResponse.UpdateWaterMarkTemplate_WaterMarkTemplate.UpdateWaterMarkTemplate_RatioRefer ratioRefer = new UpdateWaterMarkTemplateResponse.UpdateWaterMarkTemplate_WaterMarkTemplate.UpdateWaterMarkTemplate_RatioRefer();
-			ratioRefer.Dx = context.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.RatioRefer.Dx");
-			ratioRefer.Dy = context.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.RatioRefer.Dy");
-			ratioRefer.Width = context.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.RatioRefer.Width");
-			ratioRefer.Height = context.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.RatioRefer.Height");
+			ratioRefer.Dx = _ctx.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.RatioRefer.Dx");
+			ratioRefer.Width = _ctx.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.RatioRefer.Width");
+			ratioRefer.Height = _ctx.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.RatioRefer.Height");
+			ratioRefer.Dy = _ctx.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.RatioRefer.Dy");
 			waterMarkTemplate.RatioRefer = ratioRefer;
+
+			UpdateWaterMarkTemplateResponse.UpdateWaterMarkTemplate_WaterMarkTemplate.UpdateWaterMarkTemplate_Timeline timeline = new UpdateWaterMarkTemplateResponse.UpdateWaterMarkTemplate_WaterMarkTemplate.UpdateWaterMarkTemplate_Timeline();
+			timeline.Start = _ctx.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.Timeline.Start");
+			timeline.Duration = _ctx.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.Timeline.Duration");
+			waterMarkTemplate.Timeline = timeline;
 			updateWaterMarkTemplateResponse.WaterMarkTemplate = waterMarkTemplate;
         
 			return updateWaterMarkTemplateResponse;

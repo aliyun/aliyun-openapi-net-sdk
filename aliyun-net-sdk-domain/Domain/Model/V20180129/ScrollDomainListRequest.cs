@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Domain;
 using Aliyun.Acs.Domain.Transform;
 using Aliyun.Acs.Domain.Transform.V20180129;
 
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
     public class ScrollDomainListRequest : RpcAcsRequest<ScrollDomainListResponse>
     {
         public ScrollDomainListRequest()
-            : base("Domain", "2018-01-29", "ScrollDomainList")
+            : base("Domain", "2018-01-29", "ScrollDomainList", "domain", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -46,6 +46,8 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 		private string excluded;
 
 		private int? startLength;
+
+		private string resourceGroupId;
 
 		private bool? excludedSuffix;
 
@@ -85,6 +87,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private int? endLength;
 
+		[JsonProperty(PropertyName = "ProductDomainType")]
 		public string ProductDomainType
 		{
 			get
@@ -98,6 +101,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "Excluded")]
 		public string Excluded
 		{
 			get
@@ -111,6 +115,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "StartLength")]
 		public int? StartLength
 		{
 			get
@@ -124,6 +129,21 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceGroupId")]
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ExcludedSuffix")]
 		public bool? ExcludedSuffix
 		{
 			get
@@ -137,6 +157,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get
@@ -150,6 +171,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "Lang")]
 		public string Lang
 		{
 			get
@@ -163,6 +185,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "ExcludedPrefix")]
 		public bool? ExcludedPrefix
 		{
 			get
@@ -176,6 +199,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "KeyWord")]
 		public string KeyWord
 		{
 			get
@@ -189,6 +213,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "EndExpirationDate")]
 		public long? EndExpirationDate
 		{
 			get
@@ -202,6 +227,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "Suffixs")]
 		public string Suffixs
 		{
 			get
@@ -215,6 +241,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "StartExpirationDate")]
 		public long? StartExpirationDate
 		{
 			get
@@ -228,6 +255,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "DomainStatus")]
 		public int? DomainStatus
 		{
 			get
@@ -241,6 +269,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "DomainGroupId")]
 		public long? DomainGroupId
 		{
 			get
@@ -254,6 +283,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "KeyWordSuffix")]
 		public bool? KeyWordSuffix
 		{
 			get
@@ -267,6 +297,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "ScrollId")]
 		public string ScrollId
 		{
 			get
@@ -280,6 +311,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "KeyWordPrefix")]
 		public bool? KeyWordPrefix
 		{
 			get
@@ -293,6 +325,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "TradeType")]
 		public int? TradeType
 		{
 			get
@@ -306,6 +339,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "EndRegistrationDate")]
 		public long? EndRegistrationDate
 		{
 			get
@@ -319,6 +353,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "Form")]
 		public int? Form
 		{
 			get
@@ -332,6 +367,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "UserClientIp")]
 		public string UserClientIp
 		{
 			get
@@ -345,6 +381,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "StartRegistrationDate")]
 		public long? StartRegistrationDate
 		{
 			get
@@ -358,6 +395,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		[JsonProperty(PropertyName = "EndLength")]
 		public int? EndLength
 		{
 			get

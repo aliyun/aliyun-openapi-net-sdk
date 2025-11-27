@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			DeletePipelinesResponse deletePipelinesResponse = new DeletePipelinesResponse();
 
 			deletePipelinesResponse.HttpResponse = _ctx.HttpResponse;
-			deletePipelinesResponse.RequestId = _ctx.StringValue("DeletePipelines.RequestId");
 			deletePipelinesResponse.Result = _ctx.BooleanValue("DeletePipelines.Result");
+			deletePipelinesResponse.RequestId = _ctx.StringValue("DeletePipelines.RequestId");
         
 			return deletePipelinesResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -126,39 +126,27 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class DescribeBroadcastTables_ListItem
 		{
 
-			private string table;
-
-			private string broadcastType;
+			private int? status;
 
 			private bool? isShard;
 
-			private int? dbInstType;
-
 			private bool? broadcast;
 
-			private int? status;
+			private string table;
 
-			public string Table
+			private int? dbInstType;
+
+			private string broadcastType;
+
+			public int? Status
 			{
 				get
 				{
-					return table;
+					return status;
 				}
 				set	
 				{
-					table = value;
-				}
-			}
-
-			public string BroadcastType
-			{
-				get
-				{
-					return broadcastType;
-				}
-				set	
-				{
-					broadcastType = value;
+					status = value;
 				}
 			}
 
@@ -174,18 +162,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public int? DbInstType
-			{
-				get
-				{
-					return dbInstType;
-				}
-				set	
-				{
-					dbInstType = value;
-				}
-			}
-
 			public bool? Broadcast
 			{
 				get
@@ -198,15 +174,39 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public int? Status
+			public string Table
 			{
 				get
 				{
-					return status;
+					return table;
 				}
 				set	
 				{
-					status = value;
+					table = value;
+				}
+			}
+
+			public int? DbInstType
+			{
+				get
+				{
+					return dbInstType;
+				}
+				set	
+				{
+					dbInstType = value;
+				}
+			}
+
+			public string BroadcastType
+			{
+				get
+				{
+					return broadcastType;
+				}
+				set	
+				{
+					broadcastType = value;
 				}
 			}
 		}

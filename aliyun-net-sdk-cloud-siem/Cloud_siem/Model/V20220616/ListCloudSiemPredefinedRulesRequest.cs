@@ -35,13 +35,23 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			Method = MethodType.POST;
         }
 
+		private long? roleFor;
+
+		private string attCk;
+
 		private string ruleName;
 
 		private long? startTime;
 
 		private int? pageSize;
 
+		private int? roleType;
+
 		private string id;
+
+		private string orderField;
+
+		private string order;
 
 		private string ruleType;
 
@@ -49,11 +59,41 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 		private int? currentPage;
 
+		private string logSource;
+
 		private string alertType;
+
+		private string eventTransferType;
 
 		private List<string> threatLevels = new List<string>(){ };
 
 		private int? status;
+
+		public long? RoleFor
+		{
+			get
+			{
+				return roleFor;
+			}
+			set	
+			{
+				roleFor = value;
+				DictionaryUtil.Add(BodyParameters, "RoleFor", value.ToString());
+			}
+		}
+
+		public string AttCk
+		{
+			get
+			{
+				return attCk;
+			}
+			set	
+			{
+				attCk = value;
+				DictionaryUtil.Add(BodyParameters, "AttCk", value);
+			}
+		}
 
 		public string RuleName
 		{
@@ -94,6 +134,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			}
 		}
 
+		public int? RoleType
+		{
+			get
+			{
+				return roleType;
+			}
+			set	
+			{
+				roleType = value;
+				DictionaryUtil.Add(BodyParameters, "RoleType", value.ToString());
+			}
+		}
+
 		public string Id
 		{
 			get
@@ -104,6 +157,32 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			{
 				id = value;
 				DictionaryUtil.Add(BodyParameters, "Id", value);
+			}
+		}
+
+		public string OrderField
+		{
+			get
+			{
+				return orderField;
+			}
+			set	
+			{
+				orderField = value;
+				DictionaryUtil.Add(BodyParameters, "OrderField", value);
+			}
+		}
+
+		public string Order
+		{
+			get
+			{
+				return order;
+			}
+			set	
+			{
+				order = value;
+				DictionaryUtil.Add(BodyParameters, "Order", value);
 			}
 		}
 
@@ -146,6 +225,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			}
 		}
 
+		public string LogSource
+		{
+			get
+			{
+				return logSource;
+			}
+			set	
+			{
+				logSource = value;
+				DictionaryUtil.Add(BodyParameters, "LogSource", value);
+			}
+		}
+
 		public string AlertType
 		{
 			get
@@ -156,6 +248,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			{
 				alertType = value;
 				DictionaryUtil.Add(BodyParameters, "AlertType", value);
+			}
+		}
+
+		public string EventTransferType
+		{
+			get
+			{
+				return eventTransferType;
+			}
+			set	
+			{
+				eventTransferType = value;
+				DictionaryUtil.Add(BodyParameters, "EventTransferType", value);
 			}
 		}
 

@@ -31,11 +31,11 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 			PostEventWhiteruleListResponse postEventWhiteruleListResponse = new PostEventWhiteruleListResponse();
 
 			postEventWhiteruleListResponse.HttpResponse = _ctx.HttpResponse;
+			postEventWhiteruleListResponse.Data = _ctx.StringValue("PostEventWhiteruleList.Data");
 			postEventWhiteruleListResponse.Success = _ctx.BooleanValue("PostEventWhiteruleList.Success");
 			postEventWhiteruleListResponse.Code = _ctx.IntegerValue("PostEventWhiteruleList.Code");
 			postEventWhiteruleListResponse.Message = _ctx.StringValue("PostEventWhiteruleList.Message");
 			postEventWhiteruleListResponse.RequestId = _ctx.StringValue("PostEventWhiteruleList.RequestId");
-			postEventWhiteruleListResponse.Data = _ctx.StringValue("PostEventWhiteruleList.Data");
         
 			return postEventWhiteruleListResponse;
         }

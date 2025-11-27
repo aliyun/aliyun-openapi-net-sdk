@@ -38,9 +38,9 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 
 		private string accountId;
 
-		private List<string> resourceGroupIdss = new List<string>(){ };
-
 		private string nextToken;
+
+		private List<string> resourceGroupIdss = new List<string>(){ };
 
 		private int? maxResults;
 
@@ -57,19 +57,6 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 			}
 		}
 
-		public List<string> ResourceGroupIdss
-		{
-			get
-			{
-				return resourceGroupIdss;
-			}
-
-			set
-			{
-				resourceGroupIdss = value;
-			}
-		}
-
 		public string NextToken
 		{
 			get
@@ -80,6 +67,19 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 			{
 				nextToken = value;
 				DictionaryUtil.Add(QueryParameters, "NextToken", value);
+			}
+		}
+
+		public List<string> ResourceGroupIdss
+		{
+			get
+			{
+				return resourceGroupIdss;
+			}
+
+			set
+			{
+				resourceGroupIdss = value;
 			}
 		}
 

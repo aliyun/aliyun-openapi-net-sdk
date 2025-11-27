@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			ValidateConnectionResponse validateConnectionResponse = new ValidateConnectionResponse();
 
 			validateConnectionResponse.HttpResponse = _ctx.HttpResponse;
-			validateConnectionResponse.RequestId = _ctx.StringValue("ValidateConnection.RequestId");
 			validateConnectionResponse.Result = _ctx.BooleanValue("ValidateConnection.Result");
+			validateConnectionResponse.RequestId = _ctx.StringValue("ValidateConnection.RequestId");
         
 			return validateConnectionResponse;
         }

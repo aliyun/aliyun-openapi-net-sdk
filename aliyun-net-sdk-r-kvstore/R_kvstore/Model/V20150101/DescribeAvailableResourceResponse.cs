@@ -66,6 +66,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string regionId;
 
+			private bool? isMainSale;
+
 			private List<DescribeAvailableResource_SupportedEngine> supportedEngines;
 
 			public string Status
@@ -125,6 +127,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					regionId = value;
+				}
+			}
+
+			public bool? IsMainSale
+			{
+				get
+				{
+					return isMainSale;
+				}
+				set	
+				{
+					isMainSale = value;
 				}
 			}
 

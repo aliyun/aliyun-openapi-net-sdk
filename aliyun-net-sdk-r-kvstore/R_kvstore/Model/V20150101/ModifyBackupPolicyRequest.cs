@@ -56,6 +56,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string preferredBackupTime;
 
+		private int? backupRetentionPeriod;
+
 		private string instanceId;
 
 		public long? ResourceOwnerId
@@ -159,6 +161,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				preferredBackupTime = value;
 				DictionaryUtil.Add(QueryParameters, "PreferredBackupTime", value);
+			}
+		}
+
+		public int? BackupRetentionPeriod
+		{
+			get
+			{
+				return backupRetentionPeriod;
+			}
+			set	
+			{
+				backupRetentionPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "BackupRetentionPeriod", value.ToString());
 			}
 		}
 

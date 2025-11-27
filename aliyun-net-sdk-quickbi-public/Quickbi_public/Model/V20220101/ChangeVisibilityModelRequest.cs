@@ -37,9 +37,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 		private string dataPortalId;
 
-		private bool? showOnlyWithAccess;
-
 		private string menuIds;
+
+		private bool? showOnlyWithAccess;
 
 		public string DataPortalId
 		{
@@ -54,19 +54,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			}
 		}
 
-		public bool? ShowOnlyWithAccess
-		{
-			get
-			{
-				return showOnlyWithAccess;
-			}
-			set	
-			{
-				showOnlyWithAccess = value;
-				DictionaryUtil.Add(QueryParameters, "ShowOnlyWithAccess", value.ToString());
-			}
-		}
-
 		public string MenuIds
 		{
 			get
@@ -77,6 +64,19 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				menuIds = value;
 				DictionaryUtil.Add(QueryParameters, "MenuIds", value);
+			}
+		}
+
+		public bool? ShowOnlyWithAccess
+		{
+			get
+			{
+				return showOnlyWithAccess;
+			}
+			set	
+			{
+				showOnlyWithAccess = value;
+				DictionaryUtil.Add(QueryParameters, "ShowOnlyWithAccess", value.ToString());
 			}
 		}
 

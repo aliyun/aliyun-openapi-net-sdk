@@ -70,21 +70,21 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryUserTagValueList_Data
 		{
 
-			private string tagValue;
+			private string tagId;
 
 			private string tagName;
 
-			private string tagId;
+			private string tagValue;
 
-			public string TagValue
+			public string TagId
 			{
 				get
 				{
-					return tagValue;
+					return tagId;
 				}
 				set	
 				{
-					tagValue = value;
+					tagId = value;
 				}
 			}
 
@@ -100,15 +100,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string TagId
+			public string TagValue
 			{
 				get
 				{
-					return tagId;
+					return tagValue;
 				}
 				set	
 				{
-					tagId = value;
+					tagValue = value;
 				}
 			}
 		}

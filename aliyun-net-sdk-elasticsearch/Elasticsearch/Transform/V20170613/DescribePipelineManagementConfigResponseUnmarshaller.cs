@@ -34,9 +34,9 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			describePipelineManagementConfigResponse.RequestId = _ctx.StringValue("DescribePipelineManagementConfig.RequestId");
 
 			DescribePipelineManagementConfigResponse.DescribePipelineManagementConfig_Result result = new DescribePipelineManagementConfigResponse.DescribePipelineManagementConfig_Result();
-			result.PipelineManagementType = _ctx.StringValue("DescribePipelineManagementConfig.Result.pipelineManagementType");
 			result.Endpoints = _ctx.StringValue("DescribePipelineManagementConfig.Result.endpoints");
 			result.UserName = _ctx.StringValue("DescribePipelineManagementConfig.Result.userName");
+			result.PipelineManagementType = _ctx.StringValue("DescribePipelineManagementConfig.Result.pipelineManagementType");
 			result.EsInstanceId = _ctx.StringValue("DescribePipelineManagementConfig.Result.esInstanceId");
 
 			List<string> result_pipelineIds = new List<string>();

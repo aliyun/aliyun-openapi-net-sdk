@@ -54,10 +54,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set
 			{
 				rdsInstanceIds = value;
-				for (int i = 0; i < rdsInstanceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"RdsInstanceId." + (i + 1) , rdsInstanceIds[i]);
-				}
 			}
 		}
 

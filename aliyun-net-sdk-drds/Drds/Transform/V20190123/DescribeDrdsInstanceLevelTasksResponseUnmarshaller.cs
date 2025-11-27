@@ -31,23 +31,23 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			DescribeDrdsInstanceLevelTasksResponse describeDrdsInstanceLevelTasksResponse = new DescribeDrdsInstanceLevelTasksResponse();
 
 			describeDrdsInstanceLevelTasksResponse.HttpResponse = _ctx.HttpResponse;
-			describeDrdsInstanceLevelTasksResponse.RequestId = _ctx.StringValue("DescribeDrdsInstanceLevelTasks.RequestId");
 			describeDrdsInstanceLevelTasksResponse.Success = _ctx.BooleanValue("DescribeDrdsInstanceLevelTasks.Success");
+			describeDrdsInstanceLevelTasksResponse.RequestId = _ctx.StringValue("DescribeDrdsInstanceLevelTasks.RequestId");
 
 			List<DescribeDrdsInstanceLevelTasksResponse.DescribeDrdsInstanceLevelTasks_Task> describeDrdsInstanceLevelTasksResponse_tasks = new List<DescribeDrdsInstanceLevelTasksResponse.DescribeDrdsInstanceLevelTasks_Task>();
 			for (int i = 0; i < _ctx.Length("DescribeDrdsInstanceLevelTasks.Tasks.Length"); i++) {
 				DescribeDrdsInstanceLevelTasksResponse.DescribeDrdsInstanceLevelTasks_Task task = new DescribeDrdsInstanceLevelTasksResponse.DescribeDrdsInstanceLevelTasks_Task();
-				task.TaskName = _ctx.StringValue("DescribeDrdsInstanceLevelTasks.Tasks["+ i +"].TaskName");
-				task.GmtCreate = _ctx.LongValue("DescribeDrdsInstanceLevelTasks.Tasks["+ i +"].GmtCreate");
 				task.TaskType = _ctx.IntegerValue("DescribeDrdsInstanceLevelTasks.Tasks["+ i +"].TaskType");
-				task.TargetId = _ctx.LongValue("DescribeDrdsInstanceLevelTasks.Tasks["+ i +"].TargetId");
-				task.TaskStatus = _ctx.IntegerValue("DescribeDrdsInstanceLevelTasks.Tasks["+ i +"].TaskStatus");
-				task.Progress = _ctx.IntegerValue("DescribeDrdsInstanceLevelTasks.Tasks["+ i +"].Progress");
-				task.ProgressDescription = _ctx.StringValue("DescribeDrdsInstanceLevelTasks.Tasks["+ i +"].ProgressDescription");
 				task.TaskPhase = _ctx.StringValue("DescribeDrdsInstanceLevelTasks.Tasks["+ i +"].TaskPhase");
-				task.ErrMsg = _ctx.StringValue("DescribeDrdsInstanceLevelTasks.Tasks["+ i +"].ErrMsg");
-				task.ShowProgress = _ctx.BooleanValue("DescribeDrdsInstanceLevelTasks.Tasks["+ i +"].ShowProgress");
+				task.Progress = _ctx.IntegerValue("DescribeDrdsInstanceLevelTasks.Tasks["+ i +"].Progress");
 				task.AllowCancel = _ctx.BooleanValue("DescribeDrdsInstanceLevelTasks.Tasks["+ i +"].AllowCancel");
+				task.TaskStatus = _ctx.IntegerValue("DescribeDrdsInstanceLevelTasks.Tasks["+ i +"].TaskStatus");
+				task.ShowProgress = _ctx.BooleanValue("DescribeDrdsInstanceLevelTasks.Tasks["+ i +"].ShowProgress");
+				task.TaskName = _ctx.StringValue("DescribeDrdsInstanceLevelTasks.Tasks["+ i +"].TaskName");
+				task.ProgressDescription = _ctx.StringValue("DescribeDrdsInstanceLevelTasks.Tasks["+ i +"].ProgressDescription");
+				task.GmtCreate = _ctx.LongValue("DescribeDrdsInstanceLevelTasks.Tasks["+ i +"].GmtCreate");
+				task.TargetId = _ctx.LongValue("DescribeDrdsInstanceLevelTasks.Tasks["+ i +"].TargetId");
+				task.ErrMsg = _ctx.StringValue("DescribeDrdsInstanceLevelTasks.Tasks["+ i +"].ErrMsg");
 
 				describeDrdsInstanceLevelTasksResponse_tasks.Add(task);
 			}

@@ -31,10 +31,11 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			DescribeAITaskStatusResponse describeAITaskStatusResponse = new DescribeAITaskStatusResponse();
 
 			describeAITaskStatusResponse.HttpResponse = _ctx.HttpResponse;
+			describeAITaskStatusResponse.DBClusterId = _ctx.StringValue("DescribeAITaskStatus.DBClusterId");
 			describeAITaskStatusResponse.RequestId = _ctx.StringValue("DescribeAITaskStatus.RequestId");
 			describeAITaskStatusResponse.Status = _ctx.StringValue("DescribeAITaskStatus.Status");
-			describeAITaskStatusResponse.DBClusterId = _ctx.StringValue("DescribeAITaskStatus.DBClusterId");
 			describeAITaskStatusResponse.StatusName = _ctx.StringValue("DescribeAITaskStatus.StatusName");
+			describeAITaskStatusResponse.AccountName = _ctx.StringValue("DescribeAITaskStatus.AccountName");
         
 			return describeAITaskStatusResponse;
         }

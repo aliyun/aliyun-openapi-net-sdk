@@ -151,6 +151,8 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 				private int? status;
 
+				private int? dataType;
+
 				public long? Id
 				{
 					get
@@ -280,6 +282,18 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 					set	
 					{
 						status = value;
+					}
+				}
+
+				public int? DataType
+				{
+					get
+					{
+						return dataType;
+					}
+					set	
+					{
+						dataType = value;
 					}
 				}
 			}

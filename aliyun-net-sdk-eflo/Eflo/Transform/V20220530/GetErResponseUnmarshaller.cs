@@ -46,6 +46,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			content.ErName = _ctx.StringValue("GetEr.Content.ErName");
 			content.MasterZoneId = _ctx.StringValue("GetEr.Content.MasterZoneId");
 			content.Description = _ctx.StringValue("GetEr.Content.Description");
+			content.ResourceGroupId = _ctx.StringValue("GetEr.Content.ResourceGroupId");
 
 			List<GetErResponse.GetEr_Content.GetEr_ErAttachment> content_erAttachments = new List<GetErResponse.GetEr_Content.GetEr_ErAttachment>();
 			for (int i = 0; i < _ctx.Length("GetEr.Content.ErAttachments.Length"); i++) {
@@ -65,6 +66,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 				erAttachment.AutoReceiveAllRoute = _ctx.BooleanValue("GetEr.Content.ErAttachments["+ i +"].AutoReceiveAllRoute");
 				erAttachment.Across = _ctx.BooleanValue("GetEr.Content.ErAttachments["+ i +"].Across");
 				erAttachment.ResourceTenantId = _ctx.StringValue("GetEr.Content.ErAttachments["+ i +"].ResourceTenantId");
+				erAttachment.ResourceGroupId = _ctx.StringValue("GetEr.Content.ErAttachments["+ i +"].ResourceGroupId");
 
 				content_erAttachments.Add(erAttachment);
 			}
@@ -79,7 +81,6 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 				erRouteMap.GmtModified = _ctx.StringValue("GetEr.Content.ErRouteMaps["+ i +"].GmtModified");
 				erRouteMap.Message = _ctx.StringValue("GetEr.Content.ErRouteMaps["+ i +"].Message");
 				erRouteMap.Status = _ctx.StringValue("GetEr.Content.ErRouteMaps["+ i +"].Status");
-				erRouteMap.ErRouteMapName = _ctx.StringValue("GetEr.Content.ErRouteMaps["+ i +"].ErRouteMapName");
 				erRouteMap.ErRouteMapId = _ctx.StringValue("GetEr.Content.ErRouteMaps["+ i +"].ErRouteMapId");
 				erRouteMap.ErId = _ctx.StringValue("GetEr.Content.ErRouteMaps["+ i +"].ErId");
 				erRouteMap.RouteMapNum = _ctx.IntegerValue("GetEr.Content.ErRouteMaps["+ i +"].RouteMapNum");
@@ -94,6 +95,8 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 				erRouteMap.Action = _ctx.StringValue("GetEr.Content.ErRouteMaps["+ i +"].Action");
 				erRouteMap.TransmissionInstanceOwner = _ctx.StringValue("GetEr.Content.ErRouteMaps["+ i +"].TransmissionInstanceOwner");
 				erRouteMap.ReceptionInstanceOwner = _ctx.StringValue("GetEr.Content.ErRouteMaps["+ i +"].ReceptionInstanceOwner");
+				erRouteMap.ResourceGroupId = _ctx.StringValue("GetEr.Content.ErRouteMaps["+ i +"].ResourceGroupId");
+				erRouteMap.ErRouteMapName = _ctx.StringValue("GetEr.Content.ErRouteMaps["+ i +"].ErRouteMapName");
 
 				content_erRouteMaps.Add(erRouteMap);
 			}
@@ -113,6 +116,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 				erRouteEntry.RouteType = _ctx.StringValue("GetEr.Content.ErRouteEntrys["+ i +"].RouteType");
 				erRouteEntry.Status = _ctx.StringValue("GetEr.Content.ErRouteEntrys["+ i +"].Status");
 				erRouteEntry.GmtModified = _ctx.StringValue("GetEr.Content.ErRouteEntrys["+ i +"].GmtModified");
+				erRouteEntry.ResourceGroupId = _ctx.StringValue("GetEr.Content.ErRouteEntrys["+ i +"].ResourceGroupId");
 
 				content_erRouteEntrys.Add(erRouteEntry);
 			}

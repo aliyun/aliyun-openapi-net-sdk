@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			InstallAckOperatorResponse installAckOperatorResponse = new InstallAckOperatorResponse();
 
 			installAckOperatorResponse.HttpResponse = _ctx.HttpResponse;
-			installAckOperatorResponse.RequestId = _ctx.StringValue("InstallAckOperator.RequestId");
 			installAckOperatorResponse.Result = _ctx.BooleanValue("InstallAckOperator.Result");
+			installAckOperatorResponse.RequestId = _ctx.StringValue("InstallAckOperator.RequestId");
         
 			return installAckOperatorResponse;
         }

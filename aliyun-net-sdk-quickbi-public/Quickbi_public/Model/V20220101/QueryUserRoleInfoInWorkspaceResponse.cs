@@ -72,9 +72,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 			private string roleCode;
 
-			private string roleName;
-
 			private long? roleId;
+
+			private string roleName;
 
 			public string RoleCode
 			{
@@ -88,18 +88,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string RoleName
-			{
-				get
-				{
-					return roleName;
-				}
-				set	
-				{
-					roleName = value;
-				}
-			}
-
 			public long? RoleId
 			{
 				get
@@ -109,6 +97,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					roleId = value;
+				}
+			}
+
+			public string RoleName
+			{
+				get
+				{
+					return roleName;
+				}
+				set	
+				{
+					roleName = value;
 				}
 			}
 		}

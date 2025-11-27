@@ -70,39 +70,27 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class ListRecentViewReports_Result
 		{
 
-			private int? totalNum;
-
-			private int? totalPages;
+			private string attention;
 
 			private int? pageNum;
 
 			private int? pageSize;
 
-			private string attention;
+			private int? totalNum;
+
+			private int? totalPages;
 
 			private List<ListRecentViewReports_DataItem> data;
 
-			public int? TotalNum
+			public string Attention
 			{
 				get
 				{
-					return totalNum;
+					return attention;
 				}
 				set	
 				{
-					totalNum = value;
-				}
-			}
-
-			public int? TotalPages
-			{
-				get
-				{
-					return totalPages;
-				}
-				set	
-				{
-					totalPages = value;
+					attention = value;
 				}
 			}
 
@@ -130,15 +118,27 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string Attention
+			public int? TotalNum
 			{
 				get
 				{
-					return attention;
+					return totalNum;
 				}
 				set	
 				{
-					attention = value;
+					totalNum = value;
+				}
+			}
+
+			public int? TotalPages
+			{
+				get
+				{
+					return totalPages;
+				}
+				set	
+				{
+					totalPages = value;
 				}
 			}
 
@@ -157,93 +157,45 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class ListRecentViewReports_DataItem
 			{
 
-				private string treeId;
-
-				private string type;
-
-				private string name;
-
-				private string ownerNum;
-
-				private string ownerName;
+				private bool? favorite;
 
 				private string gmtCreate;
 
 				private string gmtModified;
 
-				private int? publishStatus;
-
-				private bool? favorite;
+				private bool? hasEditAuth;
 
 				private bool? hasViewAuth;
 
-				private bool? hasEditAuth;
+				private string latestViewTime;
+
+				private string name;
+
+				private string ownerName;
+
+				private string ownerNum;
+
+				private int? publishStatus;
+
+				private string treeId;
+
+				private string type;
+
+				private long? viewCount;
 
 				private string workspaceId;
 
 				private string workspaceName;
 
-				private long? viewCount;
-
-				private string latestViewTime;
-
-				public string TreeId
+				public bool? Favorite
 				{
 					get
 					{
-						return treeId;
+						return favorite;
 					}
 					set	
 					{
-						treeId = value;
-					}
-				}
-
-				public string Type
-				{
-					get
-					{
-						return type;
-					}
-					set	
-					{
-						type = value;
-					}
-				}
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
-
-				public string OwnerNum
-				{
-					get
-					{
-						return ownerNum;
-					}
-					set	
-					{
-						ownerNum = value;
-					}
-				}
-
-				public string OwnerName
-				{
-					get
-					{
-						return ownerName;
-					}
-					set	
-					{
-						ownerName = value;
+						favorite = value;
 					}
 				}
 
@@ -271,27 +223,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public int? PublishStatus
+				public bool? HasEditAuth
 				{
 					get
 					{
-						return publishStatus;
+						return hasEditAuth;
 					}
 					set	
 					{
-						publishStatus = value;
-					}
-				}
-
-				public bool? Favorite
-				{
-					get
-					{
-						return favorite;
-					}
-					set	
-					{
-						favorite = value;
+						hasEditAuth = value;
 					}
 				}
 
@@ -307,15 +247,99 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public bool? HasEditAuth
+				public string LatestViewTime
 				{
 					get
 					{
-						return hasEditAuth;
+						return latestViewTime;
 					}
 					set	
 					{
-						hasEditAuth = value;
+						latestViewTime = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public string OwnerName
+				{
+					get
+					{
+						return ownerName;
+					}
+					set	
+					{
+						ownerName = value;
+					}
+				}
+
+				public string OwnerNum
+				{
+					get
+					{
+						return ownerNum;
+					}
+					set	
+					{
+						ownerNum = value;
+					}
+				}
+
+				public int? PublishStatus
+				{
+					get
+					{
+						return publishStatus;
+					}
+					set	
+					{
+						publishStatus = value;
+					}
+				}
+
+				public string TreeId
+				{
+					get
+					{
+						return treeId;
+					}
+					set	
+					{
+						treeId = value;
+					}
+				}
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
+					}
+				}
+
+				public long? ViewCount
+				{
+					get
+					{
+						return viewCount;
+					}
+					set	
+					{
+						viewCount = value;
 					}
 				}
 
@@ -340,30 +364,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						workspaceName = value;
-					}
-				}
-
-				public long? ViewCount
-				{
-					get
-					{
-						return viewCount;
-					}
-					set	
-					{
-						viewCount = value;
-					}
-				}
-
-				public string LatestViewTime
-				{
-					get
-					{
-						return latestViewTime;
-					}
-					set	
-					{
-						latestViewTime = value;
 					}
 				}
 			}

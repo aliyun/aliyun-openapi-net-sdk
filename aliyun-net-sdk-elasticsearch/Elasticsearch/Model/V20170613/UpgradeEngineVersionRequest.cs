@@ -47,9 +47,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private string clientToken;
 
-		private string type;
-
-		private string version;
+		private string body;
 
 		public string InstanceId
 		{
@@ -90,29 +88,16 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public string Type
+		public string Body
 		{
 			get
 			{
-				return type;
+				return body;
 			}
 			set	
 			{
-				type = value;
-				DictionaryUtil.Add(BodyParameters, "type", value);
-			}
-		}
-
-		public string Version
-		{
-			get
-			{
-				return version;
-			}
-			set	
-			{
-				version = value;
-				DictionaryUtil.Add(BodyParameters, "version", value);
+				body = value;
+				DictionaryUtil.Add(BodyParameters, "body", value);
 			}
 		}
 

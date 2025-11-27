@@ -36,15 +36,16 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			List<DescribeDbInstancesResponse.DescribeDbInstances_DBInstance> describeDbInstancesResponse_items = new List<DescribeDbInstancesResponse.DescribeDbInstances_DBInstance>();
 			for (int i = 0; i < _ctx.Length("DescribeDbInstances.Items.Length"); i++) {
 				DescribeDbInstancesResponse.DescribeDbInstances_DBInstance dBInstance = new DescribeDbInstancesResponse.DescribeDbInstances_DBInstance();
-				dBInstance.DBInstanceId = _ctx.StringValue("DescribeDbInstances.Items["+ i +"].DBInstanceId");
-				dBInstance.DBInstanceStatus = _ctx.IntegerValue("DescribeDbInstances.Items["+ i +"].DBInstanceStatus");
+				dBInstance.InstanceNetworkType = _ctx.StringValue("DescribeDbInstances.Items["+ i +"].InstanceNetworkType");
 				dBInstance.DBInstanceType = _ctx.StringValue("DescribeDbInstances.Items["+ i +"].DBInstanceType");
+				dBInstance.ZoneId = _ctx.StringValue("DescribeDbInstances.Items["+ i +"].ZoneId");
+				dBInstance.DBInstanceStatus = _ctx.IntegerValue("DescribeDbInstances.Items["+ i +"].DBInstanceStatus");
+				dBInstance.DBInstanceId = _ctx.StringValue("DescribeDbInstances.Items["+ i +"].DBInstanceId");
 				dBInstance.Engine = _ctx.StringValue("DescribeDbInstances.Items["+ i +"].Engine");
+				dBInstance.DBInstanceDescription = _ctx.StringValue("DescribeDbInstances.Items["+ i +"].DBInstanceDescription");
 				dBInstance.EngineVersion = _ctx.StringValue("DescribeDbInstances.Items["+ i +"].EngineVersion");
 				dBInstance.RegionId = _ctx.StringValue("DescribeDbInstances.Items["+ i +"].RegionId");
-				dBInstance.ZoneId = _ctx.StringValue("DescribeDbInstances.Items["+ i +"].ZoneId");
-				dBInstance.DBInstanceDescription = _ctx.StringValue("DescribeDbInstances.Items["+ i +"].DBInstanceDescription");
-				dBInstance.InstanceNetworkType = _ctx.StringValue("DescribeDbInstances.Items["+ i +"].InstanceNetworkType");
+				dBInstance.AllowAllCategory = _ctx.BooleanValue("DescribeDbInstances.Items["+ i +"].AllowAllCategory");
 
 				List<string> dBInstance_readOnlyDBInstanceId = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeDbInstances.Items["+ i +"].ReadOnlyDBInstanceId.Length"); j++) {

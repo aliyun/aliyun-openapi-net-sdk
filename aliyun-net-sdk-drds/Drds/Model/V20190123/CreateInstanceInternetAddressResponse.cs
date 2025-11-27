@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,23 +25,23 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class CreateInstanceInternetAddressResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? code;
 
 		private bool? data;
 
+		private string requestId;
+
 		private bool? success;
 
-		private int? code;
-
-		public string RequestId
+		public int? Code
 		{
 			get
 			{
-				return requestId;
+				return code;
 			}
 			set	
 			{
-				requestId = value;
+				code = value;
 			}
 		}
 
@@ -57,6 +57,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public bool? Success
 		{
 			get
@@ -66,18 +78,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public int? Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
 			}
 		}
 	}

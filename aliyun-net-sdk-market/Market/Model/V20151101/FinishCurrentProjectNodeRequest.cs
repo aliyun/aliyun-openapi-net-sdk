@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Market;
 using Aliyun.Acs.Market.Transform;
 using Aliyun.Acs.Market.Transform.V20151101;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
     public class FinishCurrentProjectNodeRequest : RpcAcsRequest<FinishCurrentProjectNodeResponse>
     {
         public FinishCurrentProjectNodeRequest()
-            : base("Market", "2015-11-01", "FinishCurrentProjectNode")
+            : base("Market", "2015-11-01", "FinishCurrentProjectNode", "yunmarket", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,9 +43,9 @@ namespace Aliyun.Acs.Market.Model.V20151101
 
 		private string templateForm;
 
-		private string instanceId;
-
 		private string remark;
+
+		private string instanceId;
 
 		private long? nodeId;
 
@@ -64,20 +63,6 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
-		[JsonProperty(PropertyName = "InstanceId")]
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
 		[JsonProperty(PropertyName = "Remark")]
 		public string Remark
 		{
@@ -89,6 +74,20 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			{
 				remark = value;
 				DictionaryUtil.Add(QueryParameters, "Remark", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "InstanceId")]
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

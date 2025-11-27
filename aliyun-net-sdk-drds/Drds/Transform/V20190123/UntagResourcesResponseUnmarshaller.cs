@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			UntagResourcesResponse untagResourcesResponse = new UntagResourcesResponse();
 
 			untagResourcesResponse.HttpResponse = _ctx.HttpResponse;
-			untagResourcesResponse.RequestId = _ctx.StringValue("UntagResources.RequestId");
 			untagResourcesResponse.Success = _ctx.BooleanValue("UntagResources.Success");
+			untagResourcesResponse.RequestId = _ctx.StringValue("UntagResources.RequestId");
         
 			return untagResourcesResponse;
         }

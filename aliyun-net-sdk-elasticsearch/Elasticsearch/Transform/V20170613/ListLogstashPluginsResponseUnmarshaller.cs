@@ -36,11 +36,11 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<ListLogstashPluginsResponse.ListLogstashPlugins_ResultItem> listLogstashPluginsResponse_result = new List<ListLogstashPluginsResponse.ListLogstashPlugins_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListLogstashPlugins.Result.Length"); i++) {
 				ListLogstashPluginsResponse.ListLogstashPlugins_ResultItem resultItem = new ListLogstashPluginsResponse.ListLogstashPlugins_ResultItem();
-				resultItem.Name = _ctx.StringValue("ListLogstashPlugins.Result["+ i +"].name");
-				resultItem.State = _ctx.StringValue("ListLogstashPlugins.Result["+ i +"].state");
-				resultItem.Source = _ctx.StringValue("ListLogstashPlugins.Result["+ i +"].source");
 				resultItem.Description = _ctx.StringValue("ListLogstashPlugins.Result["+ i +"].description");
 				resultItem.SpecificationUrl = _ctx.StringValue("ListLogstashPlugins.Result["+ i +"].specificationUrl");
+				resultItem.State = _ctx.StringValue("ListLogstashPlugins.Result["+ i +"].state");
+				resultItem.Source = _ctx.StringValue("ListLogstashPlugins.Result["+ i +"].source");
+				resultItem.Name = _ctx.StringValue("ListLogstashPlugins.Result["+ i +"].name");
 
 				listLogstashPluginsResponse_result.Add(resultItem);
 			}

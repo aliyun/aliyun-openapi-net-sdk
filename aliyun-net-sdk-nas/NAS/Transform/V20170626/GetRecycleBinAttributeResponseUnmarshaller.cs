@@ -39,6 +39,7 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 			recycleBinAttribute.Status = _ctx.StringValue("GetRecycleBinAttribute.RecycleBinAttribute.Status");
 			recycleBinAttribute.ReservedDays = _ctx.LongValue("GetRecycleBinAttribute.RecycleBinAttribute.ReservedDays");
 			recycleBinAttribute.EnableTime = _ctx.StringValue("GetRecycleBinAttribute.RecycleBinAttribute.EnableTime");
+			recycleBinAttribute.ArchiveSize = _ctx.LongValue("GetRecycleBinAttribute.RecycleBinAttribute.ArchiveSize");
 			getRecycleBinAttributeResponse.RecycleBinAttribute = recycleBinAttribute;
         
 			return getRecycleBinAttributeResponse;

@@ -56,6 +56,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 				dataItem.AutoReceiveAllRoute = _ctx.BooleanValue("ListErAttachments.Content.Data["+ i +"].AutoReceiveAllRoute");
 				dataItem.Across = _ctx.BooleanValue("ListErAttachments.Content.Data["+ i +"].Across");
 				dataItem.ResourceTenantId = _ctx.StringValue("ListErAttachments.Content.Data["+ i +"].ResourceTenantId");
+				dataItem.ResourceGroupId = _ctx.StringValue("ListErAttachments.Content.Data["+ i +"].ResourceGroupId");
 
 				content_data.Add(dataItem);
 			}

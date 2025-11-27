@@ -25,25 +25,25 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribeAutoRenewAttributeResponse : AcsResponse
 	{
 
-		private int? totalRecordCount;
+		private int? pageNumber;
 
 		private int? pageRecordCount;
 
 		private string requestId;
 
-		private int? pageNumber;
+		private int? totalRecordCount;
 
 		private List<DescribeAutoRenewAttribute_AutoRenewAttribute> items;
 
-		public int? TotalRecordCount
+		public int? PageNumber
 		{
 			get
 			{
-				return totalRecordCount;
+				return pageNumber;
 			}
 			set	
 			{
-				totalRecordCount = value;
+				pageNumber = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public int? PageNumber
+		public int? TotalRecordCount
 		{
 			get
 			{
-				return pageNumber;
+				return totalRecordCount;
 			}
 			set	
 			{
-				pageNumber = value;
+				totalRecordCount = value;
 			}
 		}
 
@@ -98,17 +98,29 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		public class DescribeAutoRenewAttribute_AutoRenewAttribute
 		{
 
-			private string dBClusterId;
+			private bool? autoRenewEnabled;
 
-			private string periodUnit;
+			private string dBClusterId;
 
 			private int? duration;
 
-			private string renewalStatus;
-
-			private bool? autoRenewEnabled;
+			private string periodUnit;
 
 			private string regionId;
+
+			private string renewalStatus;
+
+			public bool? AutoRenewEnabled
+			{
+				get
+				{
+					return autoRenewEnabled;
+				}
+				set	
+				{
+					autoRenewEnabled = value;
+				}
+			}
 
 			public string DBClusterId
 			{
@@ -119,18 +131,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					dBClusterId = value;
-				}
-			}
-
-			public string PeriodUnit
-			{
-				get
-				{
-					return periodUnit;
-				}
-				set	
-				{
-					periodUnit = value;
 				}
 			}
 
@@ -146,27 +146,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string RenewalStatus
+			public string PeriodUnit
 			{
 				get
 				{
-					return renewalStatus;
+					return periodUnit;
 				}
 				set	
 				{
-					renewalStatus = value;
-				}
-			}
-
-			public bool? AutoRenewEnabled
-			{
-				get
-				{
-					return autoRenewEnabled;
-				}
-				set	
-				{
-					autoRenewEnabled = value;
+					periodUnit = value;
 				}
 			}
 
@@ -179,6 +167,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					regionId = value;
+				}
+			}
+
+			public string RenewalStatus
+			{
+				get
+				{
+					return renewalStatus;
+				}
+				set	
+				{
+					renewalStatus = value;
 				}
 			}
 		}

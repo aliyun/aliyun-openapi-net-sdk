@@ -35,17 +35,17 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 
 			DescribePipelineResponse.DescribePipeline_Result result = new DescribePipelineResponse.DescribePipeline_Result();
 			result.PipelineId = _ctx.StringValue("DescribePipeline.Result.pipelineId");
-			result.Config = _ctx.StringValue("DescribePipeline.Result.config");
-			result.PipelineStatus = _ctx.StringValue("DescribePipeline.Result.pipelineStatus");
-			result.GmtCreatedTime = _ctx.StringValue("DescribePipeline.Result.gmtCreatedTime");
 			result.GmtUpdateTime = _ctx.StringValue("DescribePipeline.Result.gmtUpdateTime");
-			result.Workers = _ctx.IntegerValue("DescribePipeline.Result.workers");
-			result.BatchSize = _ctx.IntegerValue("DescribePipeline.Result.batchSize");
-			result.BatchDelay = _ctx.IntegerValue("DescribePipeline.Result.batchDelay");
-			result.Description = _ctx.StringValue("DescribePipeline.Result.description");
 			result.QueueType = _ctx.StringValue("DescribePipeline.Result.queueType");
-			result.QueueMaxBytes = _ctx.IntegerValue("DescribePipeline.Result.queueMaxBytes");
 			result.QueueCheckPointWrites = _ctx.IntegerValue("DescribePipeline.Result.queueCheckPointWrites");
+			result.QueueMaxBytes = _ctx.IntegerValue("DescribePipeline.Result.queueMaxBytes");
+			result.Config = _ctx.StringValue("DescribePipeline.Result.config");
+			result.BatchDelay = _ctx.IntegerValue("DescribePipeline.Result.batchDelay");
+			result.Workers = _ctx.IntegerValue("DescribePipeline.Result.workers");
+			result.Description = _ctx.StringValue("DescribePipeline.Result.description");
+			result.GmtCreatedTime = _ctx.StringValue("DescribePipeline.Result.gmtCreatedTime");
+			result.BatchSize = _ctx.IntegerValue("DescribePipeline.Result.batchSize");
+			result.PipelineStatus = _ctx.StringValue("DescribePipeline.Result.pipelineStatus");
 			describePipelineResponse.Result = result;
         
 			return describePipelineResponse;

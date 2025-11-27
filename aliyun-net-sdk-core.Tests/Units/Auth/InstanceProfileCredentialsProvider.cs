@@ -24,7 +24,7 @@ using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Tests.Mock;
-
+using Aliyun.Acs.Core.Utils;
 using Moq;
 
 using Xunit;
@@ -33,6 +33,21 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
 {
     public class InstanceProfileCredentialsProviderTest
     {
+        [Fact]
+        public void BuilderTest()
+        {
+            var cache = AuthUtils.DisableECSMetaData;
+            AuthUtils.DisableECSMetaData = true;
+            var ex = Assert.Throws<ArgumentException>(() => new InstanceProfileCredentialsProvider.Builder()
+                .RoleName("test")
+                .ReadTimeout(2000)
+                .ConnectTimeout(2000)
+                .DisableIMDSv1(false)
+                .Build());
+            Assert.Equal("IMDS credentials is disabled.", ex.Message);
+            AuthUtils.DisableECSIMDSv1 = cache;
+        }
+        
         [Fact]
         public void GetCredentials1()
         {

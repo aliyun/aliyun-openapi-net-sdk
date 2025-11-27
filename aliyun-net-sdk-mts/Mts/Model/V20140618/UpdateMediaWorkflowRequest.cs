@@ -34,9 +34,10 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Mts.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Mts.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -50,6 +51,10 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string triggerMode;
+
+		private string name;
 
 		public long? ResourceOwnerId
 		{
@@ -126,6 +131,32 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string TriggerMode
+		{
+			get
+			{
+				return triggerMode;
+			}
+			set	
+			{
+				triggerMode = value;
+				DictionaryUtil.Add(QueryParameters, "TriggerMode", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

@@ -56,8 +56,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		public class DescribeDBClusterEndpoints_DBEndpoint
 		{
 
-			private string nodeWithRoles;
-
 			private string nodes;
 
 			private string readWriteMode;
@@ -74,19 +72,17 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string dBClusterId;
 
-			private List<DescribeDBClusterEndpoints_Address> addressItems;
+			private string sccMode;
 
-			public string NodeWithRoles
-			{
-				get
-				{
-					return nodeWithRoles;
-				}
-				set	
-				{
-					nodeWithRoles = value;
-				}
-			}
+			private string polarSccTimeoutAction;
+
+			private string polarSccWaitTimeout;
+
+			private string nodeWithRoles;
+
+			private string consistLevelControlVersion;
+
+			private List<DescribeDBClusterEndpoints_Address> addressItems;
 
 			public string Nodes
 			{
@@ -184,6 +180,66 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
+			public string SccMode
+			{
+				get
+				{
+					return sccMode;
+				}
+				set	
+				{
+					sccMode = value;
+				}
+			}
+
+			public string PolarSccTimeoutAction
+			{
+				get
+				{
+					return polarSccTimeoutAction;
+				}
+				set	
+				{
+					polarSccTimeoutAction = value;
+				}
+			}
+
+			public string PolarSccWaitTimeout
+			{
+				get
+				{
+					return polarSccWaitTimeout;
+				}
+				set	
+				{
+					polarSccWaitTimeout = value;
+				}
+			}
+
+			public string NodeWithRoles
+			{
+				get
+				{
+					return nodeWithRoles;
+				}
+				set	
+				{
+					nodeWithRoles = value;
+				}
+			}
+
+			public string ConsistLevelControlVersion
+			{
+				get
+				{
+					return consistLevelControlVersion;
+				}
+				set	
+				{
+					consistLevelControlVersion = value;
+				}
+			}
+
 			public List<DescribeDBClusterEndpoints_Address> AddressItems
 			{
 				get
@@ -214,6 +270,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				private string vPCId;
 
 				private string iPAddress;
+
+				private bool? dashboardUsed;
 
 				public string VSwitchId
 				{
@@ -308,6 +366,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					set	
 					{
 						iPAddress = value;
+					}
+				}
+
+				public bool? DashboardUsed
+				{
+					get
+					{
+						return dashboardUsed;
+					}
+					set	
+					{
+						dashboardUsed = value;
 					}
 				}
 			}

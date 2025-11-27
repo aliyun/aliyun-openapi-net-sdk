@@ -37,9 +37,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 		private string missHitPolicy;
 
-		private string ruleType;
-
 		private string cubeId;
+
+		private string ruleType;
 
 		public string MissHitPolicy
 		{
@@ -54,19 +54,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			}
 		}
 
-		public string RuleType
-		{
-			get
-			{
-				return ruleType;
-			}
-			set	
-			{
-				ruleType = value;
-				DictionaryUtil.Add(QueryParameters, "RuleType", value);
-			}
-		}
-
 		public string CubeId
 		{
 			get
@@ -77,6 +64,19 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				cubeId = value;
 				DictionaryUtil.Add(QueryParameters, "CubeId", value);
+			}
+		}
+
+		public string RuleType
+		{
+			get
+			{
+				return ruleType;
+			}
+			set	
+			{
+				ruleType = value;
+				DictionaryUtil.Add(QueryParameters, "RuleType", value);
 			}
 		}
 

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 {
     public class BindInputBucketResponseUnmarshaller
     {
-        public static BindInputBucketResponse Unmarshall(UnmarshallerContext context)
+        public static BindInputBucketResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BindInputBucketResponse bindInputBucketResponse = new BindInputBucketResponse();
 
-			bindInputBucketResponse.HttpResponse = context.HttpResponse;
-			bindInputBucketResponse.RequestId = context.StringValue("BindInputBucket.RequestId");
+			bindInputBucketResponse.HttpResponse = _ctx.HttpResponse;
+			bindInputBucketResponse.RequestId = _ctx.StringValue("BindInputBucket.RequestId");
         
 			return bindInputBucketResponse;
         }

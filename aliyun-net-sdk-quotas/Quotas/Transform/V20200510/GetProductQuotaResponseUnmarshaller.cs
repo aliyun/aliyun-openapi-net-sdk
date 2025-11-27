@@ -52,6 +52,7 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 			quota.ExpireTime = _ctx.StringValue("GetProductQuota.Quota.ExpireTime");
 			quota.QuotaCategory = _ctx.StringValue("GetProductQuota.Quota.QuotaCategory");
 			quota.ApplyReasonTips = _ctx.StringValue("GetProductQuota.Quota.ApplyReasonTips");
+			quota.GlobalQuota = _ctx.BooleanValue("GetProductQuota.Quota.GlobalQuota");
 
 			List<string> quota_applicableRange = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetProductQuota.Quota.ApplicableRange.Length"); i++) {
@@ -69,6 +70,12 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 			period.PeriodValue = _ctx.IntegerValue("GetProductQuota.Quota.Period.PeriodValue");
 			period.PeriodUnit = _ctx.StringValue("GetProductQuota.Quota.Period.PeriodUnit");
 			quota.Period = period;
+
+			GetProductQuotaResponse.GetProductQuota_Quota.GetProductQuota_UsageMetric usageMetric = new GetProductQuotaResponse.GetProductQuota_Quota.GetProductQuota_UsageMetric();
+			usageMetric.MetricNamespace = _ctx.StringValue("GetProductQuota.Quota.UsageMetric.MetricNamespace");
+			usageMetric.MetricName = _ctx.StringValue("GetProductQuota.Quota.UsageMetric.MetricName");
+			usageMetric.MetricDimensions = _ctx.StringValue("GetProductQuota.Quota.UsageMetric.MetricDimensions");
+			quota.UsageMetric = usageMetric;
 
 			List<GetProductQuotaResponse.GetProductQuota_Quota.GetProductQuota_QuotaItemsItem> quota_quotaItems = new List<GetProductQuotaResponse.GetProductQuota_Quota.GetProductQuota_QuotaItemsItem>();
 			for (int i = 0; i < _ctx.Length("GetProductQuota.Quota.QuotaItems.Length"); i++) {

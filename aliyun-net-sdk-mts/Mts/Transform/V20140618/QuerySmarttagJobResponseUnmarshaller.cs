@@ -26,20 +26,21 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 {
     public class QuerySmarttagJobResponseUnmarshaller
     {
-        public static QuerySmarttagJobResponse Unmarshall(UnmarshallerContext context)
+        public static QuerySmarttagJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QuerySmarttagJobResponse querySmarttagJobResponse = new QuerySmarttagJobResponse();
 
-			querySmarttagJobResponse.HttpResponse = context.HttpResponse;
-			querySmarttagJobResponse.RequestId = context.StringValue("QuerySmarttagJob.RequestId");
-			querySmarttagJobResponse.JobStatus = context.StringValue("QuerySmarttagJob.JobStatus");
-			querySmarttagJobResponse.UserData = context.StringValue("QuerySmarttagJob.UserData");
+			querySmarttagJobResponse.HttpResponse = _ctx.HttpResponse;
+			querySmarttagJobResponse.JobStatus = _ctx.StringValue("QuerySmarttagJob.JobStatus");
+			querySmarttagJobResponse.Message = _ctx.StringValue("QuerySmarttagJob.Message");
+			querySmarttagJobResponse.RequestId = _ctx.StringValue("QuerySmarttagJob.RequestId");
+			querySmarttagJobResponse.UserData = _ctx.StringValue("QuerySmarttagJob.UserData");
 
 			List<QuerySmarttagJobResponse.QuerySmarttagJob_Result> querySmarttagJobResponse_results = new List<QuerySmarttagJobResponse.QuerySmarttagJob_Result>();
-			for (int i = 0; i < context.Length("QuerySmarttagJob.Results.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QuerySmarttagJob.Results.Length"); i++) {
 				QuerySmarttagJobResponse.QuerySmarttagJob_Result result = new QuerySmarttagJobResponse.QuerySmarttagJob_Result();
-				result.Type = context.StringValue("QuerySmarttagJob.Results["+ i +"].Type");
-				result.Data = context.StringValue("QuerySmarttagJob.Results["+ i +"].Data");
+				result.Data = _ctx.StringValue("QuerySmarttagJob.Results["+ i +"].Data");
+				result.Type = _ctx.StringValue("QuerySmarttagJob.Results["+ i +"].Type");
 
 				querySmarttagJobResponse_results.Add(result);
 			}

@@ -31,11 +31,11 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 			PostAutomateResponseConfigResponse postAutomateResponseConfigResponse = new PostAutomateResponseConfigResponse();
 
 			postAutomateResponseConfigResponse.HttpResponse = _ctx.HttpResponse;
+			postAutomateResponseConfigResponse.Data = _ctx.StringValue("PostAutomateResponseConfig.Data");
 			postAutomateResponseConfigResponse.Success = _ctx.BooleanValue("PostAutomateResponseConfig.Success");
 			postAutomateResponseConfigResponse.Code = _ctx.IntegerValue("PostAutomateResponseConfig.Code");
 			postAutomateResponseConfigResponse.Message = _ctx.StringValue("PostAutomateResponseConfig.Message");
 			postAutomateResponseConfigResponse.RequestId = _ctx.StringValue("PostAutomateResponseConfig.RequestId");
-			postAutomateResponseConfigResponse.Data = _ctx.StringValue("PostAutomateResponseConfig.Data");
         
 			return postAutomateResponseConfigResponse;
         }

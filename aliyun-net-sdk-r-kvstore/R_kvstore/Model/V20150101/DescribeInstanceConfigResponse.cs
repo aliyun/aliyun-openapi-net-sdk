@@ -29,6 +29,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string requestId;
 
+		private string paramReplMode;
+
+		private string paramReplTimeout;
+
+		private string paramNoLooseSentinelEnabled;
+
+		private string paramSentinelCompatEnable;
+
+		private string paramNoLooseSentinelPasswordFreeAccess;
+
+		private string paramNoLooseSentinelPasswordFreeCommands;
+
 		public string Config
 		{
 			get
@@ -50,6 +62,78 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ParamReplMode
+		{
+			get
+			{
+				return paramReplMode;
+			}
+			set	
+			{
+				paramReplMode = value;
+			}
+		}
+
+		public string ParamReplTimeout
+		{
+			get
+			{
+				return paramReplTimeout;
+			}
+			set	
+			{
+				paramReplTimeout = value;
+			}
+		}
+
+		public string ParamNoLooseSentinelEnabled
+		{
+			get
+			{
+				return paramNoLooseSentinelEnabled;
+			}
+			set	
+			{
+				paramNoLooseSentinelEnabled = value;
+			}
+		}
+
+		public string ParamSentinelCompatEnable
+		{
+			get
+			{
+				return paramSentinelCompatEnable;
+			}
+			set	
+			{
+				paramSentinelCompatEnable = value;
+			}
+		}
+
+		public string ParamNoLooseSentinelPasswordFreeAccess
+		{
+			get
+			{
+				return paramNoLooseSentinelPasswordFreeAccess;
+			}
+			set	
+			{
+				paramNoLooseSentinelPasswordFreeAccess = value;
+			}
+		}
+
+		public string ParamNoLooseSentinelPasswordFreeCommands
+		{
+			get
+			{
+				return paramNoLooseSentinelPasswordFreeCommands;
+			}
+			set	
+			{
+				paramNoLooseSentinelPasswordFreeCommands = value;
 			}
 		}
 	}

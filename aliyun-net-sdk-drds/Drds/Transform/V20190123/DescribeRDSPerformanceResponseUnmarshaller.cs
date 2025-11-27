@@ -31,22 +31,22 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			DescribeRDSPerformanceResponse describeRDSPerformanceResponse = new DescribeRDSPerformanceResponse();
 
 			describeRDSPerformanceResponse.HttpResponse = _ctx.HttpResponse;
-			describeRDSPerformanceResponse.RequestId = _ctx.StringValue("DescribeRDSPerformance.RequestId");
 			describeRDSPerformanceResponse.Success = _ctx.BooleanValue("DescribeRDSPerformance.Success");
+			describeRDSPerformanceResponse.RequestId = _ctx.StringValue("DescribeRDSPerformance.RequestId");
 
 			List<DescribeRDSPerformanceResponse.DescribeRDSPerformance_PartialPerformanceData> describeRDSPerformanceResponse_data = new List<DescribeRDSPerformanceResponse.DescribeRDSPerformance_PartialPerformanceData>();
 			for (int i = 0; i < _ctx.Length("DescribeRDSPerformance.Data.Length"); i++) {
 				DescribeRDSPerformanceResponse.DescribeRDSPerformance_PartialPerformanceData partialPerformanceData = new DescribeRDSPerformanceResponse.DescribeRDSPerformance_PartialPerformanceData();
 				partialPerformanceData.Key = _ctx.StringValue("DescribeRDSPerformance.Data["+ i +"].Key");
+				partialPerformanceData.NodeName = _ctx.StringValue("DescribeRDSPerformance.Data["+ i +"].NodeName");
 				partialPerformanceData.Unit = _ctx.StringValue("DescribeRDSPerformance.Data["+ i +"].Unit");
 				partialPerformanceData.NodeNum = _ctx.IntegerValue("DescribeRDSPerformance.Data["+ i +"].NodeNum");
-				partialPerformanceData.NodeName = _ctx.StringValue("DescribeRDSPerformance.Data["+ i +"].NodeName");
 
 				List<DescribeRDSPerformanceResponse.DescribeRDSPerformance_PartialPerformanceData.DescribeRDSPerformance_PerformanceValue> partialPerformanceData_values = new List<DescribeRDSPerformanceResponse.DescribeRDSPerformance_PartialPerformanceData.DescribeRDSPerformance_PerformanceValue>();
 				for (int j = 0; j < _ctx.Length("DescribeRDSPerformance.Data["+ i +"].Values.Length"); j++) {
 					DescribeRDSPerformanceResponse.DescribeRDSPerformance_PartialPerformanceData.DescribeRDSPerformance_PerformanceValue performanceValue = new DescribeRDSPerformanceResponse.DescribeRDSPerformance_PartialPerformanceData.DescribeRDSPerformance_PerformanceValue();
-					performanceValue._Value = _ctx.StringValue("DescribeRDSPerformance.Data["+ i +"].Values["+ j +"].Value");
 					performanceValue.Date = _ctx.LongValue("DescribeRDSPerformance.Data["+ i +"].Values["+ j +"].Date");
+					performanceValue._Value = _ctx.StringValue("DescribeRDSPerformance.Data["+ i +"].Values["+ j +"].Value");
 
 					partialPerformanceData_values.Add(performanceValue);
 				}

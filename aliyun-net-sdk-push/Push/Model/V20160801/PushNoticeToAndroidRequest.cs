@@ -41,13 +41,13 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			Method = MethodType.POST;
         }
 
-		private string extParameters;
-
-		private bool? storeOffline;
-
 		private string title;
 
 		private string body;
+
+		private string extParameters;
+
+		private bool? storeOffline;
 
 		private string jobKey;
 
@@ -56,32 +56,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 		private long? appKey;
 
 		private string targetValue;
-
-		public string ExtParameters
-		{
-			get
-			{
-				return extParameters;
-			}
-			set	
-			{
-				extParameters = value;
-				DictionaryUtil.Add(QueryParameters, "ExtParameters", value);
-			}
-		}
-
-		public bool? StoreOffline
-		{
-			get
-			{
-				return storeOffline;
-			}
-			set	
-			{
-				storeOffline = value;
-				DictionaryUtil.Add(QueryParameters, "StoreOffline", value.ToString());
-			}
-		}
 
 		public string Title
 		{
@@ -106,6 +80,32 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				body = value;
 				DictionaryUtil.Add(QueryParameters, "Body", value);
+			}
+		}
+
+		public string ExtParameters
+		{
+			get
+			{
+				return extParameters;
+			}
+			set	
+			{
+				extParameters = value;
+				DictionaryUtil.Add(QueryParameters, "ExtParameters", value);
+			}
+		}
+
+		public bool? StoreOffline
+		{
+			get
+			{
+				return storeOffline;
+			}
+			set	
+			{
+				storeOffline = value;
+				DictionaryUtil.Add(QueryParameters, "StoreOffline", value.ToString());
 			}
 		}
 

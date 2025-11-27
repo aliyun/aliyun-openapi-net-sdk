@@ -127,6 +127,10 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 				private string xattrs;
 
+				private int? appVersion;
+
+				private string _namespace;
+
 				public long? AppGroupId
 				{
 					get
@@ -196,6 +200,30 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					set	
 					{
 						xattrs = value;
+					}
+				}
+
+				public int? AppVersion
+				{
+					get
+					{
+						return appVersion;
+					}
+					set	
+					{
+						appVersion = value;
+					}
+				}
+
+				public string _Namespace
+				{
+					get
+					{
+						return _namespace;
+					}
+					set	
+					{
+						_namespace = value;
 					}
 				}
 			}

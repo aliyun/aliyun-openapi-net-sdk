@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribeBackMenuResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private List<DescribeBackMenu_ListItem> list;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeBackMenu_ListItem> list;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,21 +70,9 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class DescribeBackMenu_ListItem
 		{
 
-			private string menuName;
-
 			private bool? support;
 
-			public string MenuName
-			{
-				get
-				{
-					return menuName;
-				}
-				set	
-				{
-					menuName = value;
-				}
-			}
+			private string menuName;
 
 			public bool? Support
 			{
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					support = value;
+				}
+			}
+
+			public string MenuName
+			{
+				get
+				{
+					return menuName;
+				}
+				set	
+				{
+					menuName = value;
 				}
 			}
 		}

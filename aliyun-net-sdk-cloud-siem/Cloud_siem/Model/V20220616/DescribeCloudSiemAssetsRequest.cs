@@ -35,13 +35,47 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			Method = MethodType.POST;
         }
 
+		private long? roleFor;
+
+		private string assetName;
+
 		private int? pageSize;
 
+		private int? roleType;
+
 		private string assetType;
+
+		private string assetUuid;
 
 		private int? currentPage;
 
 		private string incidentUuid;
+
+		public long? RoleFor
+		{
+			get
+			{
+				return roleFor;
+			}
+			set	
+			{
+				roleFor = value;
+				DictionaryUtil.Add(BodyParameters, "RoleFor", value.ToString());
+			}
+		}
+
+		public string AssetName
+		{
+			get
+			{
+				return assetName;
+			}
+			set	
+			{
+				assetName = value;
+				DictionaryUtil.Add(BodyParameters, "AssetName", value);
+			}
+		}
 
 		public int? PageSize
 		{
@@ -56,6 +90,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			}
 		}
 
+		public int? RoleType
+		{
+			get
+			{
+				return roleType;
+			}
+			set	
+			{
+				roleType = value;
+				DictionaryUtil.Add(BodyParameters, "RoleType", value.ToString());
+			}
+		}
+
 		public string AssetType
 		{
 			get
@@ -66,6 +113,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			{
 				assetType = value;
 				DictionaryUtil.Add(BodyParameters, "AssetType", value);
+			}
+		}
+
+		public string AssetUuid
+		{
+			get
+			{
+				return assetUuid;
+			}
+			set	
+			{
+				assetUuid = value;
+				DictionaryUtil.Add(BodyParameters, "AssetUuid", value);
 			}
 		}
 

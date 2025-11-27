@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			DeleteConnectedClusterResponse deleteConnectedClusterResponse = new DeleteConnectedClusterResponse();
 
 			deleteConnectedClusterResponse.HttpResponse = _ctx.HttpResponse;
-			deleteConnectedClusterResponse.RequestId = _ctx.StringValue("DeleteConnectedCluster.RequestId");
 			deleteConnectedClusterResponse.Result = _ctx.BooleanValue("DeleteConnectedCluster.Result");
+			deleteConnectedClusterResponse.RequestId = _ctx.StringValue("DeleteConnectedCluster.RequestId");
         
 			return deleteConnectedClusterResponse;
         }

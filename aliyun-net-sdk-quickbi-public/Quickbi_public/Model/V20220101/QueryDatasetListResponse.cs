@@ -70,27 +70,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryDatasetList_Result
 		{
 
-			private int? totalPages;
-
 			private int? pageNum;
 
 			private int? pageSize;
 
 			private int? totalNum;
 
-			private List<QueryDatasetList_DataItem> data;
+			private int? totalPages;
 
-			public int? TotalPages
-			{
-				get
-				{
-					return totalPages;
-				}
-				set	
-				{
-					totalPages = value;
-				}
-			}
+			private List<QueryDatasetList_DataItem> data;
 
 			public int? PageNum
 			{
@@ -128,6 +116,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
+			public int? TotalPages
+			{
+				get
+				{
+					return totalPages;
+				}
+				set	
+				{
+					totalPages = value;
+				}
+			}
+
 			public List<QueryDatasetList_DataItem> Data
 			{
 				get
@@ -143,31 +143,127 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class QueryDatasetList_DataItem
 			{
 
+				private string createTime;
+
+				private string datasetId;
+
+				private string datasetName;
+
+				private string description;
+
+				private string modifyTime;
+
+				private bool? openOfflineAcceleration;
+
+				private string ownerId;
+
+				private string ownerName;
+
 				private bool? rowLevel;
 
 				private string workspaceId;
 
-				private string description;
-
-				private string createTime;
-
-				private string ownerName;
-
 				private string workspaceName;
-
-				private string ownerId;
-
-				private string modifyTime;
-
-				private string datasetName;
-
-				private string datasetId;
-
-				private bool? openOfflineAcceleration;
 
 				private QueryDatasetList_DataSource dataSource;
 
 				private QueryDatasetList_Directory directory;
+
+				public string CreateTime
+				{
+					get
+					{
+						return createTime;
+					}
+					set	
+					{
+						createTime = value;
+					}
+				}
+
+				public string DatasetId
+				{
+					get
+					{
+						return datasetId;
+					}
+					set	
+					{
+						datasetId = value;
+					}
+				}
+
+				public string DatasetName
+				{
+					get
+					{
+						return datasetName;
+					}
+					set	
+					{
+						datasetName = value;
+					}
+				}
+
+				public string Description
+				{
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
+					}
+				}
+
+				public string ModifyTime
+				{
+					get
+					{
+						return modifyTime;
+					}
+					set	
+					{
+						modifyTime = value;
+					}
+				}
+
+				public bool? OpenOfflineAcceleration
+				{
+					get
+					{
+						return openOfflineAcceleration;
+					}
+					set	
+					{
+						openOfflineAcceleration = value;
+					}
+				}
+
+				public string OwnerId
+				{
+					get
+					{
+						return ownerId;
+					}
+					set	
+					{
+						ownerId = value;
+					}
+				}
+
+				public string OwnerName
+				{
+					get
+					{
+						return ownerName;
+					}
+					set	
+					{
+						ownerName = value;
+					}
+				}
 
 				public bool? RowLevel
 				{
@@ -193,42 +289,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string Description
-				{
-					get
-					{
-						return description;
-					}
-					set	
-					{
-						description = value;
-					}
-				}
-
-				public string CreateTime
-				{
-					get
-					{
-						return createTime;
-					}
-					set	
-					{
-						createTime = value;
-					}
-				}
-
-				public string OwnerName
-				{
-					get
-					{
-						return ownerName;
-					}
-					set	
-					{
-						ownerName = value;
-					}
-				}
-
 				public string WorkspaceName
 				{
 					get
@@ -238,66 +298,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						workspaceName = value;
-					}
-				}
-
-				public string OwnerId
-				{
-					get
-					{
-						return ownerId;
-					}
-					set	
-					{
-						ownerId = value;
-					}
-				}
-
-				public string ModifyTime
-				{
-					get
-					{
-						return modifyTime;
-					}
-					set	
-					{
-						modifyTime = value;
-					}
-				}
-
-				public string DatasetName
-				{
-					get
-					{
-						return datasetName;
-					}
-					set	
-					{
-						datasetName = value;
-					}
-				}
-
-				public string DatasetId
-				{
-					get
-					{
-						return datasetId;
-					}
-					set	
-					{
-						datasetId = value;
-					}
-				}
-
-				public bool? OpenOfflineAcceleration
-				{
-					get
-					{
-						return openOfflineAcceleration;
-					}
-					set	
-					{
-						openOfflineAcceleration = value;
 					}
 				}
 
@@ -328,21 +328,21 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				public class QueryDatasetList_DataSource
 				{
 
-					private string dsType;
+					private string dsId;
 
 					private string dsName;
 
-					private string dsId;
+					private string dsType;
 
-					public string DsType
+					public string DsId
 					{
 						get
 						{
-							return dsType;
+							return dsId;
 						}
 						set	
 						{
-							dsType = value;
+							dsId = value;
 						}
 					}
 
@@ -358,15 +358,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 						}
 					}
 
-					public string DsId
+					public string DsType
 					{
 						get
 						{
-							return dsId;
+							return dsType;
 						}
 						set	
 						{
-							dsId = value;
+							dsType = value;
 						}
 					}
 				}
@@ -374,13 +374,37 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				public class QueryDatasetList_Directory
 				{
 
+					private string id;
+
+					private string name;
+
 					private string pathId;
 
 					private string pathName;
 
-					private string name;
+					public string Id
+					{
+						get
+						{
+							return id;
+						}
+						set	
+						{
+							id = value;
+						}
+					}
 
-					private string id;
+					public string Name
+					{
+						get
+						{
+							return name;
+						}
+						set	
+						{
+							name = value;
+						}
+					}
 
 					public string PathId
 					{
@@ -403,30 +427,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 						set	
 						{
 							pathName = value;
-						}
-					}
-
-					public string Name
-					{
-						get
-						{
-							return name;
-						}
-						set	
-						{
-							name = value;
-						}
-					}
-
-					public string Id
-					{
-						get
-						{
-							return id;
-						}
-						set	
-						{
-							id = value;
 						}
 					}
 				}

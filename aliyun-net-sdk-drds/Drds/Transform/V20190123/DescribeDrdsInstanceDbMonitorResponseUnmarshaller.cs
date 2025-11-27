@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			DescribeDrdsInstanceDbMonitorResponse describeDrdsInstanceDbMonitorResponse = new DescribeDrdsInstanceDbMonitorResponse();
 
 			describeDrdsInstanceDbMonitorResponse.HttpResponse = _ctx.HttpResponse;
-			describeDrdsInstanceDbMonitorResponse.RequestId = _ctx.StringValue("DescribeDrdsInstanceDbMonitor.RequestId");
 			describeDrdsInstanceDbMonitorResponse.Success = _ctx.BooleanValue("DescribeDrdsInstanceDbMonitor.Success");
+			describeDrdsInstanceDbMonitorResponse.RequestId = _ctx.StringValue("DescribeDrdsInstanceDbMonitor.RequestId");
 
 			List<DescribeDrdsInstanceDbMonitorResponse.DescribeDrdsInstanceDbMonitor_PartialPerformanceData> describeDrdsInstanceDbMonitorResponse_data = new List<DescribeDrdsInstanceDbMonitorResponse.DescribeDrdsInstanceDbMonitor_PartialPerformanceData>();
 			for (int i = 0; i < _ctx.Length("DescribeDrdsInstanceDbMonitor.Data.Length"); i++) {

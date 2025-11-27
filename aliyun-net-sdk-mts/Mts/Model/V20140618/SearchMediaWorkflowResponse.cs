@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class SearchMediaWorkflowResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? totalCount;
-
-		private long? pageNumber;
 
 		private long? pageSize;
 
-		private List<SearchMediaWorkflow_MediaWorkflow> mediaWorkflowList;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private long? pageNumber;
+
+		private List<SearchMediaWorkflow_MediaWorkflow> mediaWorkflowList;
 
 		public long? TotalCount
 		{
@@ -59,18 +47,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public long? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
 		public long? PageSize
 		{
 			get
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			set	
 			{
 				pageSize = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public long? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
 			}
 		}
 
@@ -98,17 +98,29 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		public class SearchMediaWorkflow_MediaWorkflow
 		{
 
+			private string creationTime;
+
 			private string mediaWorkflowId;
+
+			private string state;
+
+			private string triggerMode;
 
 			private string name;
 
 			private string topology;
 
-			private string triggerMode;
-
-			private string state;
-
-			private string creationTime;
+			public string CreationTime
+			{
+				get
+				{
+					return creationTime;
+				}
+				set	
+				{
+					creationTime = value;
+				}
+			}
 
 			public string MediaWorkflowId
 			{
@@ -119,6 +131,30 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					mediaWorkflowId = value;
+				}
+			}
+
+			public string State
+			{
+				get
+				{
+					return state;
+				}
+				set	
+				{
+					state = value;
+				}
+			}
+
+			public string TriggerMode
+			{
+				get
+				{
+					return triggerMode;
+				}
+				set	
+				{
+					triggerMode = value;
 				}
 			}
 
@@ -143,42 +179,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					topology = value;
-				}
-			}
-
-			public string TriggerMode
-			{
-				get
-				{
-					return triggerMode;
-				}
-				set	
-				{
-					triggerMode = value;
-				}
-			}
-
-			public string State
-			{
-				get
-				{
-					return state;
-				}
-				set	
-				{
-					state = value;
-				}
-			}
-
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
 				}
 			}
 		}

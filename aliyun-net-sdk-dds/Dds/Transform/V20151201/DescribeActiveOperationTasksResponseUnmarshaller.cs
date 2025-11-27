@@ -64,6 +64,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				itemsItem.TaskTypeEn = _ctx.StringValue("DescribeActiveOperationTasks.Items["+ i +"].TaskTypeEn");
 				itemsItem.ResultInfo = _ctx.StringValue("DescribeActiveOperationTasks.Items["+ i +"].ResultInfo");
 				itemsItem.Id = _ctx.IntegerValue("DescribeActiveOperationTasks.Items["+ i +"].Id");
+				itemsItem.TaskParams = _ctx.StringValue("DescribeActiveOperationTasks.Items["+ i +"].TaskParams");
 
 				List<string> itemsItem_subInsNames = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeActiveOperationTasks.Items["+ i +"].SubInsNames.Length"); j++) {

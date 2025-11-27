@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 {
     public class DeactivateMediaWorkflowResponseUnmarshaller
     {
-        public static DeactivateMediaWorkflowResponse Unmarshall(UnmarshallerContext context)
+        public static DeactivateMediaWorkflowResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeactivateMediaWorkflowResponse deactivateMediaWorkflowResponse = new DeactivateMediaWorkflowResponse();
 
-			deactivateMediaWorkflowResponse.HttpResponse = context.HttpResponse;
-			deactivateMediaWorkflowResponse.RequestId = context.StringValue("DeactivateMediaWorkflow.RequestId");
+			deactivateMediaWorkflowResponse.HttpResponse = _ctx.HttpResponse;
+			deactivateMediaWorkflowResponse.RequestId = _ctx.StringValue("DeactivateMediaWorkflow.RequestId");
 
 			DeactivateMediaWorkflowResponse.DeactivateMediaWorkflow_MediaWorkflow mediaWorkflow = new DeactivateMediaWorkflowResponse.DeactivateMediaWorkflow_MediaWorkflow();
-			mediaWorkflow.MediaWorkflowId = context.StringValue("DeactivateMediaWorkflow.MediaWorkflow.MediaWorkflowId");
-			mediaWorkflow.Name = context.StringValue("DeactivateMediaWorkflow.MediaWorkflow.Name");
-			mediaWorkflow.Topology = context.StringValue("DeactivateMediaWorkflow.MediaWorkflow.Topology");
-			mediaWorkflow.State = context.StringValue("DeactivateMediaWorkflow.MediaWorkflow.State");
-			mediaWorkflow.CreationTime = context.StringValue("DeactivateMediaWorkflow.MediaWorkflow.CreationTime");
+			mediaWorkflow.CreationTime = _ctx.StringValue("DeactivateMediaWorkflow.MediaWorkflow.CreationTime");
+			mediaWorkflow.MediaWorkflowId = _ctx.StringValue("DeactivateMediaWorkflow.MediaWorkflow.MediaWorkflowId");
+			mediaWorkflow.State = _ctx.StringValue("DeactivateMediaWorkflow.MediaWorkflow.State");
+			mediaWorkflow.Name = _ctx.StringValue("DeactivateMediaWorkflow.MediaWorkflow.Name");
+			mediaWorkflow.Topology = _ctx.StringValue("DeactivateMediaWorkflow.MediaWorkflow.Topology");
 			deactivateMediaWorkflowResponse.MediaWorkflow = mediaWorkflow;
         
 			return deactivateMediaWorkflowResponse;

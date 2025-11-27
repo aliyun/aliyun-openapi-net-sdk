@@ -100,6 +100,10 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string pl3MaxIOPS;
 
+			private string essdMaxStorageCapacity;
+
+			private string polarStoreMaxStorageCapacity;
+
 			public string Psl4MaxIOPS
 			{
 				get
@@ -277,6 +281,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					pl3MaxIOPS = value;
+				}
+			}
+
+			public string EssdMaxStorageCapacity
+			{
+				get
+				{
+					return essdMaxStorageCapacity;
+				}
+				set	
+				{
+					essdMaxStorageCapacity = value;
+				}
+			}
+
+			public string PolarStoreMaxStorageCapacity
+			{
+				get
+				{
+					return polarStoreMaxStorageCapacity;
+				}
+				set	
+				{
+					polarStoreMaxStorageCapacity = value;
 				}
 			}
 		}

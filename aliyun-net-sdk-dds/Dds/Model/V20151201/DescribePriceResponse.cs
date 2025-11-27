@@ -335,6 +335,12 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 				private double? standDiscountPrice;
 
+				private string priceUnit;
+
+				private string priceType;
+
+				private string unitPriceUnit4Buy;
+
 				private List<DescribePrice_PromDetail> promDetailList2;
 
 				private List<DescribePrice_ModuleAttr> moduleAttrs;
@@ -482,6 +488,42 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						standDiscountPrice = value;
+					}
+				}
+
+				public string PriceUnit
+				{
+					get
+					{
+						return priceUnit;
+					}
+					set	
+					{
+						priceUnit = value;
+					}
+				}
+
+				public string PriceType
+				{
+					get
+					{
+						return priceType;
+					}
+					set	
+					{
+						priceType = value;
+					}
+				}
+
+				public string UnitPriceUnit4Buy
+				{
+					get
+					{
+						return unitPriceUnit4Buy;
+					}
+					set	
+					{
+						unitPriceUnit4Buy = value;
 					}
 				}
 
@@ -1424,6 +1466,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private bool? isContractActivity;
 
+			private double? totalCostAmount;
+
 			private List<DescribePrice_Coupon> coupons;
 
 			private List<string> ruleIds4;
@@ -1583,6 +1627,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					isContractActivity = value;
+				}
+			}
+
+			public double? TotalCostAmount
+			{
+				get
+				{
+					return totalCostAmount;
+				}
+				set	
+				{
+					totalCostAmount = value;
 				}
 			}
 

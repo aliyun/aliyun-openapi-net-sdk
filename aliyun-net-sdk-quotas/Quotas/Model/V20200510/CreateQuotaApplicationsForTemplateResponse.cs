@@ -29,6 +29,8 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 
 		private string batchQuotaApplicationId;
 
+		private List<CreateQuotaApplicationsForTemplate_FailResultsItem> failResults;
+
 		private List<string> aliyunUids;
 
 		public string RequestId
@@ -55,6 +57,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			}
 		}
 
+		public List<CreateQuotaApplicationsForTemplate_FailResultsItem> FailResults
+		{
+			get
+			{
+				return failResults;
+			}
+			set	
+			{
+				failResults = value;
+			}
+		}
+
 		public List<string> AliyunUids
 		{
 			get
@@ -64,6 +78,38 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			set	
 			{
 				aliyunUids = value;
+			}
+		}
+
+		public class CreateQuotaApplicationsForTemplate_FailResultsItem
+		{
+
+			private string aliyunUid;
+
+			private string reason;
+
+			public string AliyunUid
+			{
+				get
+				{
+					return aliyunUid;
+				}
+				set	
+				{
+					aliyunUid = value;
+				}
+			}
+
+			public string Reason
+			{
+				get
+				{
+					return reason;
+				}
+				set	
+				{
+					reason = value;
+				}
 			}
 		}
 	}

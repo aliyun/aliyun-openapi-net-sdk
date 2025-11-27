@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,51 +25,27 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribeDrdsSlowSqlsResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
-		private int? total;
+		private int? pageSize;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private string requestId;
+
+		private int? total;
+
+		private bool? success;
 
 		private List<DescribeDrdsSlowSqls_Item> items;
 
-		public string RequestId
+		public int? PageSize
 		{
 			get
 			{
-				return requestId;
+				return pageSize;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public int? Total
-		{
-			get
-			{
-				return total;
-			}
-			set	
-			{
-				total = value;
+				pageSize = value;
 			}
 		}
 
@@ -85,15 +61,39 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			}
 		}
 
-		public int? PageSize
+		public string RequestId
 		{
 			get
 			{
-				return pageSize;
+				return requestId;
 			}
 			set	
 			{
-				pageSize = value;
+				requestId = value;
+			}
+		}
+
+		public int? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -112,25 +112,37 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class DescribeDrdsSlowSqls_Item
 		{
 
-			private string schema;
-
-			private string sql;
-
 			private long? sendTime;
-
-			private long? responseTime;
 
 			private string host;
 
-			public string Schema
+			private string sql;
+
+			private long? responseTime;
+
+			private string schema;
+
+			public long? SendTime
 			{
 				get
 				{
-					return schema;
+					return sendTime;
 				}
 				set	
 				{
-					schema = value;
+					sendTime = value;
+				}
+			}
+
+			public string Host
+			{
+				get
+				{
+					return host;
+				}
+				set	
+				{
+					host = value;
 				}
 			}
 
@@ -146,18 +158,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public long? SendTime
-			{
-				get
-				{
-					return sendTime;
-				}
-				set	
-				{
-					sendTime = value;
-				}
-			}
-
 			public long? ResponseTime
 			{
 				get
@@ -170,15 +170,15 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public string Host
+			public string Schema
 			{
 				get
 				{
-					return host;
+					return schema;
 				}
 				set	
 				{
-					host = value;
+					schema = value;
 				}
 			}
 		}

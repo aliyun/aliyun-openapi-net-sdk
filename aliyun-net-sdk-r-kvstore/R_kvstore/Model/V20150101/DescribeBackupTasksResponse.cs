@@ -90,13 +90,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string jobMode;
 
-			private int? backupJobID;
+			private long? backupJobID;
 
 			private string backupProgressStatus;
 
 			private string nodeId;
 
 			private string taskAction;
+
+			private string progress;
 
 			public string StartTime
 			{
@@ -134,7 +136,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public int? BackupJobID
+			public long? BackupJobID
 			{
 				get
 				{
@@ -179,6 +181,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					taskAction = value;
+				}
+			}
+
+			public string Progress
+			{
+				get
+				{
+					return progress;
+				}
+				set	
+				{
+					progress = value;
 				}
 			}
 		}

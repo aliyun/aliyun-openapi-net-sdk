@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 {
     public class DeleteWaterMarkTemplateResponseUnmarshaller
     {
-        public static DeleteWaterMarkTemplateResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteWaterMarkTemplateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteWaterMarkTemplateResponse deleteWaterMarkTemplateResponse = new DeleteWaterMarkTemplateResponse();
 
-			deleteWaterMarkTemplateResponse.HttpResponse = context.HttpResponse;
-			deleteWaterMarkTemplateResponse.RequestId = context.StringValue("DeleteWaterMarkTemplate.RequestId");
-			deleteWaterMarkTemplateResponse.WaterMarkTemplateId = context.StringValue("DeleteWaterMarkTemplate.WaterMarkTemplateId");
+			deleteWaterMarkTemplateResponse.HttpResponse = _ctx.HttpResponse;
+			deleteWaterMarkTemplateResponse.RequestId = _ctx.StringValue("DeleteWaterMarkTemplate.RequestId");
+			deleteWaterMarkTemplateResponse.WaterMarkTemplateId = _ctx.StringValue("DeleteWaterMarkTemplate.WaterMarkTemplateId");
         
 			return deleteWaterMarkTemplateResponse;
         }

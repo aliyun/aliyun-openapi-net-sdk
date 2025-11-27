@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -56,27 +56,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class DescribeXpackMonitorConfig_Result
 		{
 
-			private string esInstanceId;
-
 			private string userName;
+
+			private string esInstanceId;
 
 			private bool? enable;
 
 			private List<string> endpoints;
 
 			private List<string> pipelineIds;
-
-			public string EsInstanceId
-			{
-				get
-				{
-					return esInstanceId;
-				}
-				set	
-				{
-					esInstanceId = value;
-				}
-			}
 
 			public string UserName
 			{
@@ -87,6 +75,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					userName = value;
+				}
+			}
+
+			public string EsInstanceId
+			{
+				get
+				{
+					return esInstanceId;
+				}
+				set	
+				{
+					esInstanceId = value;
 				}
 			}
 

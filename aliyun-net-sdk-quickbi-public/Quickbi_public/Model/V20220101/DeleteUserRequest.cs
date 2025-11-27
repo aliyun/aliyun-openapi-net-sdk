@@ -35,22 +35,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			Method = MethodType.POST;
         }
 
-		private string transferUserId;
-
 		private string userId;
 
-		public string TransferUserId
-		{
-			get
-			{
-				return transferUserId;
-			}
-			set	
-			{
-				transferUserId = value;
-				DictionaryUtil.Add(QueryParameters, "TransferUserId", value);
-			}
-		}
+		private string transferUserId;
 
 		public string UserId
 		{
@@ -62,6 +49,19 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				userId = value;
 				DictionaryUtil.Add(QueryParameters, "UserId", value);
+			}
+		}
+
+		public string TransferUserId
+		{
+			get
+			{
+				return transferUserId;
+			}
+			set	
+			{
+				transferUserId = value;
+				DictionaryUtil.Add(QueryParameters, "TransferUserId", value);
 			}
 		}
 

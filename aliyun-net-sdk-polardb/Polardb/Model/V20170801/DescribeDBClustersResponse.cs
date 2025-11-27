@@ -160,6 +160,26 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string remoteMemorySize;
 
+			private string cpuArch;
+
+			private string deployUnit;
+
+			private string storageType;
+
+			private string hotStandbyCluster;
+
+			private string engineMigrationStatus;
+
+			private int? cnNodeCount;
+
+			private int? dnNodeCount;
+
+			private string cnClass;
+
+			private string dnClass;
+
+			private string cloudInstanceIp;
+
 			private string subCategory;
 
 			private List<DescribeDBClusters_Tag> tags;
@@ -535,6 +555,126 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					remoteMemorySize = value;
+				}
+			}
+
+			public string CpuArch
+			{
+				get
+				{
+					return cpuArch;
+				}
+				set	
+				{
+					cpuArch = value;
+				}
+			}
+
+			public string DeployUnit
+			{
+				get
+				{
+					return deployUnit;
+				}
+				set	
+				{
+					deployUnit = value;
+				}
+			}
+
+			public string StorageType
+			{
+				get
+				{
+					return storageType;
+				}
+				set	
+				{
+					storageType = value;
+				}
+			}
+
+			public string HotStandbyCluster
+			{
+				get
+				{
+					return hotStandbyCluster;
+				}
+				set	
+				{
+					hotStandbyCluster = value;
+				}
+			}
+
+			public string EngineMigrationStatus
+			{
+				get
+				{
+					return engineMigrationStatus;
+				}
+				set	
+				{
+					engineMigrationStatus = value;
+				}
+			}
+
+			public int? CnNodeCount
+			{
+				get
+				{
+					return cnNodeCount;
+				}
+				set	
+				{
+					cnNodeCount = value;
+				}
+			}
+
+			public int? DnNodeCount
+			{
+				get
+				{
+					return dnNodeCount;
+				}
+				set	
+				{
+					dnNodeCount = value;
+				}
+			}
+
+			public string CnClass
+			{
+				get
+				{
+					return cnClass;
+				}
+				set	
+				{
+					cnClass = value;
+				}
+			}
+
+			public string DnClass
+			{
+				get
+				{
+					return dnClass;
+				}
+				set	
+				{
+					dnClass = value;
+				}
+			}
+
+			public string CloudInstanceIp
+			{
+				get
+				{
+					return cloudInstanceIp;
+				}
+				set	
+				{
+					cloudInstanceIp = value;
 				}
 			}
 

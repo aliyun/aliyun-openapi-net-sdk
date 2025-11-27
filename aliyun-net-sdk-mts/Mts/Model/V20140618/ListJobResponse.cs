@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
@@ -70,37 +70,61 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		public class ListJob_Job
 		{
 
-			private string jobId;
+			private string creationTime;
+
+			private long? percent;
+
+			private string finishTime;
 
 			private string state;
+
+			private string jobId;
 
 			private string code;
 
 			private string message;
 
-			private long? percent;
-
 			private string pipelineId;
-
-			private string creationTime;
-
-			private string finishTime;
-
-			private ListJob_Input input;
 
 			private ListJob_Output output;
 
+			private ListJob_Input input;
+
 			private ListJob_MNSMessageResult mNSMessageResult;
 
-			public string JobId
+			public string CreationTime
 			{
 				get
 				{
-					return jobId;
+					return creationTime;
 				}
 				set	
 				{
-					jobId = value;
+					creationTime = value;
+				}
+			}
+
+			public long? Percent
+			{
+				get
+				{
+					return percent;
+				}
+				set	
+				{
+					percent = value;
+				}
+			}
+
+			public string FinishTime
+			{
+				get
+				{
+					return finishTime;
+				}
+				set	
+				{
+					finishTime = value;
 				}
 			}
 
@@ -113,6 +137,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					state = value;
+				}
+			}
+
+			public string JobId
+			{
+				get
+				{
+					return jobId;
+				}
+				set	
+				{
+					jobId = value;
 				}
 			}
 
@@ -140,18 +176,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public long? Percent
-			{
-				get
-				{
-					return percent;
-				}
-				set	
-				{
-					percent = value;
-				}
-			}
-
 			public string PipelineId
 			{
 				get
@@ -161,42 +185,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					pipelineId = value;
-				}
-			}
-
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
-				}
-			}
-
-			public string FinishTime
-			{
-				get
-				{
-					return finishTime;
-				}
-				set	
-				{
-					finishTime = value;
-				}
-			}
-
-			public ListJob_Input Input
-			{
-				get
-				{
-					return input;
-				}
-				set	
-				{
-					input = value;
 				}
 			}
 
@@ -212,6 +200,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
+			public ListJob_Input Input
+			{
+				get
+				{
+					return input;
+				}
+				set	
+				{
+					input = value;
+				}
+			}
+
 			public ListJob_MNSMessageResult MNSMessageResult
 			{
 				get
@@ -224,164 +224,70 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class ListJob_Input
-			{
-
-				private string bucket;
-
-				private string location;
-
-				private string _object;
-
-				public string Bucket
-				{
-					get
-					{
-						return bucket;
-					}
-					set	
-					{
-						bucket = value;
-					}
-				}
-
-				public string Location
-				{
-					get
-					{
-						return location;
-					}
-					set	
-					{
-						location = value;
-					}
-				}
-
-				public string _Object
-				{
-					get
-					{
-						return _object;
-					}
-					set	
-					{
-						_object = value;
-					}
-				}
-			}
-
 			public class ListJob_Output
 			{
 
-				private string templateId;
-
-				private string userData;
-
-				private string rotate;
-
-				private string videoStreamMap;
-
-				private string audioStreamMap;
+				private string waterMarkConfigUrl;
 
 				private string deWatermark;
 
 				private string priority;
 
-				private string waterMarkConfigUrl;
+				private string audioStreamMap;
+
+				private string userData;
+
+				private string videoStreamMap;
+
+				private string rotate;
 
 				private string mergeConfigUrl;
+
+				private string templateId;
 
 				private List<ListJob_WaterMark> waterMarkList;
 
 				private List<ListJob_Merge> mergeList;
 
+				private List<ListJob_OutSubtitle> outSubtitleList;
+
 				private List<ListJob_Opening> openingList;
 
 				private List<ListJob_TailSlate> tailSlateList;
 
-				private List<ListJob_OutSubtitle> outSubtitleList;
-
-				private ListJob_OutputFile outputFile;
-
-				private ListJob_M3U8NonStandardSupport m3U8NonStandardSupport;
-
-				private ListJob_Properties properties;
-
-				private ListJob_Clip clip;
-
-				private ListJob_SuperReso superReso;
-
-				private ListJob_SubtitleConfig subtitleConfig;
+				private ListJob_Video video;
 
 				private ListJob_TransConfig transConfig;
 
-				private ListJob_MuxConfig muxConfig;
+				private ListJob_Encryption encryption;
+
+				private ListJob_M3U8NonStandardSupport m3U8NonStandardSupport;
 
 				private ListJob_Audio audio;
 
-				private ListJob_Video video;
+				private ListJob_SuperReso superReso;
+
+				private ListJob_OutputFile outputFile;
 
 				private ListJob_Container container;
 
-				private ListJob_Encryption encryption;
+				private ListJob_Clip clip;
 
-				public string TemplateId
+				private ListJob_MuxConfig muxConfig;
+
+				private ListJob_SubtitleConfig subtitleConfig;
+
+				private ListJob_Properties properties;
+
+				public string WaterMarkConfigUrl
 				{
 					get
 					{
-						return templateId;
+						return waterMarkConfigUrl;
 					}
 					set	
 					{
-						templateId = value;
-					}
-				}
-
-				public string UserData
-				{
-					get
-					{
-						return userData;
-					}
-					set	
-					{
-						userData = value;
-					}
-				}
-
-				public string Rotate
-				{
-					get
-					{
-						return rotate;
-					}
-					set	
-					{
-						rotate = value;
-					}
-				}
-
-				public string VideoStreamMap
-				{
-					get
-					{
-						return videoStreamMap;
-					}
-					set	
-					{
-						videoStreamMap = value;
-					}
-				}
-
-				public string AudioStreamMap
-				{
-					get
-					{
-						return audioStreamMap;
-					}
-					set	
-					{
-						audioStreamMap = value;
+						waterMarkConfigUrl = value;
 					}
 				}
 
@@ -409,15 +315,51 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public string WaterMarkConfigUrl
+				public string AudioStreamMap
 				{
 					get
 					{
-						return waterMarkConfigUrl;
+						return audioStreamMap;
 					}
 					set	
 					{
-						waterMarkConfigUrl = value;
+						audioStreamMap = value;
+					}
+				}
+
+				public string UserData
+				{
+					get
+					{
+						return userData;
+					}
+					set	
+					{
+						userData = value;
+					}
+				}
+
+				public string VideoStreamMap
+				{
+					get
+					{
+						return videoStreamMap;
+					}
+					set	
+					{
+						videoStreamMap = value;
+					}
+				}
+
+				public string Rotate
+				{
+					get
+					{
+						return rotate;
+					}
+					set	
+					{
+						rotate = value;
 					}
 				}
 
@@ -430,6 +372,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						mergeConfigUrl = value;
+					}
+				}
+
+				public string TemplateId
+				{
+					get
+					{
+						return templateId;
+					}
+					set	
+					{
+						templateId = value;
 					}
 				}
 
@@ -457,6 +411,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
+				public List<ListJob_OutSubtitle> OutSubtitleList
+				{
+					get
+					{
+						return outSubtitleList;
+					}
+					set	
+					{
+						outSubtitleList = value;
+					}
+				}
+
 				public List<ListJob_Opening> OpeningList
 				{
 					get
@@ -481,87 +447,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public List<ListJob_OutSubtitle> OutSubtitleList
+				public ListJob_Video Video
 				{
 					get
 					{
-						return outSubtitleList;
+						return video;
 					}
 					set	
 					{
-						outSubtitleList = value;
-					}
-				}
-
-				public ListJob_OutputFile OutputFile
-				{
-					get
-					{
-						return outputFile;
-					}
-					set	
-					{
-						outputFile = value;
-					}
-				}
-
-				public ListJob_M3U8NonStandardSupport M3U8NonStandardSupport
-				{
-					get
-					{
-						return m3U8NonStandardSupport;
-					}
-					set	
-					{
-						m3U8NonStandardSupport = value;
-					}
-				}
-
-				public ListJob_Properties Properties
-				{
-					get
-					{
-						return properties;
-					}
-					set	
-					{
-						properties = value;
-					}
-				}
-
-				public ListJob_Clip Clip
-				{
-					get
-					{
-						return clip;
-					}
-					set	
-					{
-						clip = value;
-					}
-				}
-
-				public ListJob_SuperReso SuperReso
-				{
-					get
-					{
-						return superReso;
-					}
-					set	
-					{
-						superReso = value;
-					}
-				}
-
-				public ListJob_SubtitleConfig SubtitleConfig
-				{
-					get
-					{
-						return subtitleConfig;
-					}
-					set	
-					{
-						subtitleConfig = value;
+						video = value;
 					}
 				}
 
@@ -577,15 +471,27 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public ListJob_MuxConfig MuxConfig
+				public ListJob_Encryption Encryption
 				{
 					get
 					{
-						return muxConfig;
+						return encryption;
 					}
 					set	
 					{
-						muxConfig = value;
+						encryption = value;
+					}
+				}
+
+				public ListJob_M3U8NonStandardSupport M3U8NonStandardSupport
+				{
+					get
+					{
+						return m3U8NonStandardSupport;
+					}
+					set	
+					{
+						m3U8NonStandardSupport = value;
 					}
 				}
 
@@ -601,15 +507,27 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public ListJob_Video Video
+				public ListJob_SuperReso SuperReso
 				{
 					get
 					{
-						return video;
+						return superReso;
 					}
 					set	
 					{
-						video = value;
+						superReso = value;
+					}
+				}
+
+				public ListJob_OutputFile OutputFile
+				{
+					get
+					{
+						return outputFile;
+					}
+					set	
+					{
+						outputFile = value;
 					}
 				}
 
@@ -625,46 +543,106 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public ListJob_Encryption Encryption
+				public ListJob_Clip Clip
 				{
 					get
 					{
-						return encryption;
+						return clip;
 					}
 					set	
 					{
-						encryption = value;
+						clip = value;
+					}
+				}
+
+				public ListJob_MuxConfig MuxConfig
+				{
+					get
+					{
+						return muxConfig;
+					}
+					set	
+					{
+						muxConfig = value;
+					}
+				}
+
+				public ListJob_SubtitleConfig SubtitleConfig
+				{
+					get
+					{
+						return subtitleConfig;
+					}
+					set	
+					{
+						subtitleConfig = value;
+					}
+				}
+
+				public ListJob_Properties Properties
+				{
+					get
+					{
+						return properties;
+					}
+					set	
+					{
+						properties = value;
 					}
 				}
 
 				public class ListJob_WaterMark
 				{
 
-					private string waterMarkTemplateId;
+					private string type;
+
+					private string referPos;
+
+					private string dx;
 
 					private string width;
 
 					private string height;
 
-					private string dx;
+					private string waterMarkTemplateId;
 
 					private string dy;
 
-					private string referPos;
-
-					private string type;
-
 					private ListJob_InputFile inputFile;
 
-					public string WaterMarkTemplateId
+					public string Type
 					{
 						get
 						{
-							return waterMarkTemplateId;
+							return type;
 						}
 						set	
 						{
-							waterMarkTemplateId = value;
+							type = value;
+						}
+					}
+
+					public string ReferPos
+					{
+						get
+						{
+							return referPos;
+						}
+						set	
+						{
+							referPos = value;
+						}
+					}
+
+					public string Dx
+					{
+						get
+						{
+							return dx;
+						}
+						set	
+						{
+							dx = value;
 						}
 					}
 
@@ -692,15 +670,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public string Dx
+					public string WaterMarkTemplateId
 					{
 						get
 						{
-							return dx;
+							return waterMarkTemplateId;
 						}
 						set	
 						{
-							dx = value;
+							waterMarkTemplateId = value;
 						}
 					}
 
@@ -713,30 +691,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						set	
 						{
 							dy = value;
-						}
-					}
-
-					public string ReferPos
-					{
-						get
-						{
-							return referPos;
-						}
-						set	
-						{
-							referPos = value;
-						}
-					}
-
-					public string Type
-					{
-						get
-						{
-							return type;
-						}
-						set	
-						{
-							type = value;
 						}
 					}
 
@@ -755,21 +709,21 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					public class ListJob_InputFile
 					{
 
-						private string bucket;
+						private string _object;
 
 						private string location;
 
-						private string _object;
+						private string bucket;
 
-						public string Bucket
+						public string _Object
 						{
 							get
 							{
-								return bucket;
+								return _object;
 							}
 							set	
 							{
-								bucket = value;
+								_object = value;
 							}
 						}
 
@@ -785,15 +739,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
-						public string _Object
+						public string Bucket
 						{
 							get
 							{
-								return _object;
+								return bucket;
 							}
 							set	
 							{
-								_object = value;
+								bucket = value;
 							}
 						}
 					}
@@ -802,25 +756,13 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				public class ListJob_Merge
 				{
 
-					private string mergeURL;
-
 					private string start;
-
-					private string duration;
 
 					private string roleArn;
 
-					public string MergeURL
-					{
-						get
-						{
-							return mergeURL;
-						}
-						set	
-						{
-							mergeURL = value;
-						}
-					}
+					private string mergeURL;
+
+					private string duration;
 
 					public string Start
 					{
@@ -831,6 +773,30 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						set	
 						{
 							start = value;
+						}
+					}
+
+					public string RoleArn
+					{
+						get
+						{
+							return roleArn;
+						}
+						set	
+						{
+							roleArn = value;
+						}
+					}
+
+					public string MergeURL
+					{
+						get
+						{
+							return mergeURL;
+						}
+						set	
+						{
+							mergeURL = value;
 						}
 					}
 
@@ -845,16 +811,124 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							duration = value;
 						}
 					}
+				}
 
-					public string RoleArn
+				public class ListJob_OutSubtitle
+				{
+
+					private string map;
+
+					private bool? success;
+
+					private string message;
+
+					private ListJob_OutSubtitleFile outSubtitleFile;
+
+					public string Map
 					{
 						get
 						{
-							return roleArn;
+							return map;
 						}
 						set	
 						{
-							roleArn = value;
+							map = value;
+						}
+					}
+
+					public bool? Success
+					{
+						get
+						{
+							return success;
+						}
+						set	
+						{
+							success = value;
+						}
+					}
+
+					public string Message
+					{
+						get
+						{
+							return message;
+						}
+						set	
+						{
+							message = value;
+						}
+					}
+
+					public ListJob_OutSubtitleFile OutSubtitleFile
+					{
+						get
+						{
+							return outSubtitleFile;
+						}
+						set	
+						{
+							outSubtitleFile = value;
+						}
+					}
+
+					public class ListJob_OutSubtitleFile
+					{
+
+						private string roleArn;
+
+						private string _object;
+
+						private string location;
+
+						private string bucket;
+
+						public string RoleArn
+						{
+							get
+							{
+								return roleArn;
+							}
+							set	
+							{
+								roleArn = value;
+							}
+						}
+
+						public string _Object
+						{
+							get
+							{
+								return _object;
+							}
+							set	
+							{
+								_object = value;
+							}
+						}
+
+						public string Location
+						{
+							get
+							{
+								return location;
+							}
+							set	
+							{
+								location = value;
+							}
+						}
+
+						public string Bucket
+						{
+							get
+							{
+								return bucket;
+							}
+							set	
+							{
+								bucket = value;
+							}
 						}
 					}
 				}
@@ -922,31 +996,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				public class ListJob_TailSlate
 				{
 
-					private string tailUrl;
-
 					private string start;
 
-					private string blendDuration;
+					private string bgColor;
+
+					private bool? isMergeAudio;
 
 					private string width;
 
 					private string height;
 
-					private bool? isMergeAudio;
+					private string blendDuration;
 
-					private string bgColor;
-
-					public string TailUrl
-					{
-						get
-						{
-							return tailUrl;
-						}
-						set	
-						{
-							tailUrl = value;
-						}
-					}
+					private string tailUrl;
 
 					public string Start
 					{
@@ -960,15 +1022,27 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public string BlendDuration
+					public string BgColor
 					{
 						get
 						{
-							return blendDuration;
+							return bgColor;
 						}
 						set	
 						{
-							blendDuration = value;
+							bgColor = value;
+						}
+					}
+
+					public bool? IsMergeAudio
+					{
+						get
+						{
+							return isMergeAudio;
+						}
+						set	
+						{
+							isMergeAudio = value;
 						}
 					}
 
@@ -996,207 +1070,547 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public bool? IsMergeAudio
+					public string BlendDuration
 					{
 						get
 						{
-							return isMergeAudio;
+							return blendDuration;
 						}
 						set	
 						{
-							isMergeAudio = value;
+							blendDuration = value;
 						}
 					}
 
-					public string BgColor
+					public string TailUrl
 					{
 						get
 						{
-							return bgColor;
+							return tailUrl;
 						}
 						set	
 						{
-							bgColor = value;
-						}
-					}
-				}
-
-				public class ListJob_OutSubtitle
-				{
-
-					private string map;
-
-					private bool? success;
-
-					private string message;
-
-					private ListJob_OutSubtitleFile outSubtitleFile;
-
-					public string Map
-					{
-						get
-						{
-							return map;
-						}
-						set	
-						{
-							map = value;
-						}
-					}
-
-					public bool? Success
-					{
-						get
-						{
-							return success;
-						}
-						set	
-						{
-							success = value;
-						}
-					}
-
-					public string Message
-					{
-						get
-						{
-							return message;
-						}
-						set	
-						{
-							message = value;
-						}
-					}
-
-					public ListJob_OutSubtitleFile OutSubtitleFile
-					{
-						get
-						{
-							return outSubtitleFile;
-						}
-						set	
-						{
-							outSubtitleFile = value;
-						}
-					}
-
-					public class ListJob_OutSubtitleFile
-					{
-
-						private string bucket;
-
-						private string location;
-
-						private string _object;
-
-						private string roleArn;
-
-						public string Bucket
-						{
-							get
-							{
-								return bucket;
-							}
-							set	
-							{
-								bucket = value;
-							}
-						}
-
-						public string Location
-						{
-							get
-							{
-								return location;
-							}
-							set	
-							{
-								location = value;
-							}
-						}
-
-						public string _Object
-						{
-							get
-							{
-								return _object;
-							}
-							set	
-							{
-								_object = value;
-							}
-						}
-
-						public string RoleArn
-						{
-							get
-							{
-								return roleArn;
-							}
-							set	
-							{
-								roleArn = value;
-							}
+							tailUrl = value;
 						}
 					}
 				}
 
-				public class ListJob_OutputFile
+				public class ListJob_Video
 				{
 
-					private string bucket;
+					private string bufsize;
 
-					private string location;
+					private string degrain;
 
-					private string _object;
+					private string pixFmt;
 
-					private string roleArn;
+					private string pad;
 
-					public string Bucket
+					private string codec;
+
+					private string height;
+
+					private string qscale;
+
+					private string crop;
+
+					private string bitrate;
+
+					private string maxrate;
+
+					private string maxFps;
+
+					private string profile;
+
+					private string crf;
+
+					private string gop;
+
+					private string width;
+
+					private string fps;
+
+					private string preset;
+
+					private string scanMode;
+
+					private string resoPriority;
+
+					private ListJob_BitrateBnd bitrateBnd;
+
+					public string Bufsize
 					{
 						get
 						{
-							return bucket;
+							return bufsize;
 						}
 						set	
 						{
-							bucket = value;
+							bufsize = value;
 						}
 					}
 
-					public string Location
+					public string Degrain
 					{
 						get
 						{
-							return location;
+							return degrain;
 						}
 						set	
 						{
-							location = value;
+							degrain = value;
 						}
 					}
 
-					public string _Object
+					public string PixFmt
 					{
 						get
 						{
-							return _object;
+							return pixFmt;
 						}
 						set	
 						{
-							_object = value;
+							pixFmt = value;
 						}
 					}
 
-					public string RoleArn
+					public string Pad
 					{
 						get
 						{
-							return roleArn;
+							return pad;
 						}
 						set	
 						{
-							roleArn = value;
+							pad = value;
+						}
+					}
+
+					public string Codec
+					{
+						get
+						{
+							return codec;
+						}
+						set	
+						{
+							codec = value;
+						}
+					}
+
+					public string Height
+					{
+						get
+						{
+							return height;
+						}
+						set	
+						{
+							height = value;
+						}
+					}
+
+					public string Qscale
+					{
+						get
+						{
+							return qscale;
+						}
+						set	
+						{
+							qscale = value;
+						}
+					}
+
+					public string Crop
+					{
+						get
+						{
+							return crop;
+						}
+						set	
+						{
+							crop = value;
+						}
+					}
+
+					public string Bitrate
+					{
+						get
+						{
+							return bitrate;
+						}
+						set	
+						{
+							bitrate = value;
+						}
+					}
+
+					public string Maxrate
+					{
+						get
+						{
+							return maxrate;
+						}
+						set	
+						{
+							maxrate = value;
+						}
+					}
+
+					public string MaxFps
+					{
+						get
+						{
+							return maxFps;
+						}
+						set	
+						{
+							maxFps = value;
+						}
+					}
+
+					public string Profile
+					{
+						get
+						{
+							return profile;
+						}
+						set	
+						{
+							profile = value;
+						}
+					}
+
+					public string Crf
+					{
+						get
+						{
+							return crf;
+						}
+						set	
+						{
+							crf = value;
+						}
+					}
+
+					public string Gop
+					{
+						get
+						{
+							return gop;
+						}
+						set	
+						{
+							gop = value;
+						}
+					}
+
+					public string Width
+					{
+						get
+						{
+							return width;
+						}
+						set	
+						{
+							width = value;
+						}
+					}
+
+					public string Fps
+					{
+						get
+						{
+							return fps;
+						}
+						set	
+						{
+							fps = value;
+						}
+					}
+
+					public string Preset
+					{
+						get
+						{
+							return preset;
+						}
+						set	
+						{
+							preset = value;
+						}
+					}
+
+					public string ScanMode
+					{
+						get
+						{
+							return scanMode;
+						}
+						set	
+						{
+							scanMode = value;
+						}
+					}
+
+					public string ResoPriority
+					{
+						get
+						{
+							return resoPriority;
+						}
+						set	
+						{
+							resoPriority = value;
+						}
+					}
+
+					public ListJob_BitrateBnd BitrateBnd
+					{
+						get
+						{
+							return bitrateBnd;
+						}
+						set	
+						{
+							bitrateBnd = value;
+						}
+					}
+
+					public class ListJob_BitrateBnd
+					{
+
+						private string max;
+
+						private string min;
+
+						public string Max
+						{
+							get
+							{
+								return max;
+							}
+							set	
+							{
+								max = value;
+							}
+						}
+
+						public string Min
+						{
+							get
+							{
+								return min;
+							}
+							set	
+							{
+								min = value;
+							}
+						}
+					}
+				}
+
+				public class ListJob_TransConfig
+				{
+
+					private string isCheckAudioBitrate;
+
+					private string transMode;
+
+					private string isCheckReso;
+
+					private string isCheckVideoBitrateFail;
+
+					private string adjDarMethod;
+
+					private string isCheckVideoBitrate;
+
+					private string isCheckResoFail;
+
+					private string isCheckAudioBitrateFail;
+
+					public string IsCheckAudioBitrate
+					{
+						get
+						{
+							return isCheckAudioBitrate;
+						}
+						set	
+						{
+							isCheckAudioBitrate = value;
+						}
+					}
+
+					public string TransMode
+					{
+						get
+						{
+							return transMode;
+						}
+						set	
+						{
+							transMode = value;
+						}
+					}
+
+					public string IsCheckReso
+					{
+						get
+						{
+							return isCheckReso;
+						}
+						set	
+						{
+							isCheckReso = value;
+						}
+					}
+
+					public string IsCheckVideoBitrateFail
+					{
+						get
+						{
+							return isCheckVideoBitrateFail;
+						}
+						set	
+						{
+							isCheckVideoBitrateFail = value;
+						}
+					}
+
+					public string AdjDarMethod
+					{
+						get
+						{
+							return adjDarMethod;
+						}
+						set	
+						{
+							adjDarMethod = value;
+						}
+					}
+
+					public string IsCheckVideoBitrate
+					{
+						get
+						{
+							return isCheckVideoBitrate;
+						}
+						set	
+						{
+							isCheckVideoBitrate = value;
+						}
+					}
+
+					public string IsCheckResoFail
+					{
+						get
+						{
+							return isCheckResoFail;
+						}
+						set	
+						{
+							isCheckResoFail = value;
+						}
+					}
+
+					public string IsCheckAudioBitrateFail
+					{
+						get
+						{
+							return isCheckAudioBitrateFail;
+						}
+						set	
+						{
+							isCheckAudioBitrateFail = value;
+						}
+					}
+				}
+
+				public class ListJob_Encryption
+				{
+
+					private string type;
+
+					private string key;
+
+					private string keyType;
+
+					private string id;
+
+					private string keyUri;
+
+					private string skipCnt;
+
+					public string Type
+					{
+						get
+						{
+							return type;
+						}
+						set	
+						{
+							type = value;
+						}
+					}
+
+					public string Key
+					{
+						get
+						{
+							return key;
+						}
+						set	
+						{
+							key = value;
+						}
+					}
+
+					public string KeyType
+					{
+						get
+						{
+							return keyType;
+						}
+						set	
+						{
+							keyType = value;
+						}
+					}
+
+					public string Id
+					{
+						get
+						{
+							return id;
+						}
+						set	
+						{
+							id = value;
+						}
+					}
+
+					public string KeyUri
+					{
+						get
+						{
+							return keyUri;
+						}
+						set	
+						{
+							keyUri = value;
+						}
+					}
+
+					public string SkipCnt
+					{
+						get
+						{
+							return skipCnt;
+						}
+						set	
+						{
+							skipCnt = value;
 						}
 					}
 				}
@@ -1221,21 +1635,9 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					public class ListJob_TS
 					{
 
-						private bool? md5Support;
-
 						private bool? sizeSupport;
 
-						public bool? Md5Support
-						{
-							get
-							{
-								return md5Support;
-							}
-							set	
-							{
-								md5Support = value;
-							}
-						}
+						private bool? md5Support;
 
 						public bool? SizeSupport
 						{
@@ -1248,6 +1650,582 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 								sizeSupport = value;
 							}
 						}
+
+						public bool? Md5Support
+						{
+							get
+							{
+								return md5Support;
+							}
+							set	
+							{
+								md5Support = value;
+							}
+						}
+					}
+				}
+
+				public class ListJob_Audio
+				{
+
+					private string profile;
+
+					private string codec;
+
+					private string samplerate;
+
+					private string qscale;
+
+					private string channels;
+
+					private string bitrate;
+
+					private ListJob_Volume volume;
+
+					public string Profile
+					{
+						get
+						{
+							return profile;
+						}
+						set	
+						{
+							profile = value;
+						}
+					}
+
+					public string Codec
+					{
+						get
+						{
+							return codec;
+						}
+						set	
+						{
+							codec = value;
+						}
+					}
+
+					public string Samplerate
+					{
+						get
+						{
+							return samplerate;
+						}
+						set	
+						{
+							samplerate = value;
+						}
+					}
+
+					public string Qscale
+					{
+						get
+						{
+							return qscale;
+						}
+						set	
+						{
+							qscale = value;
+						}
+					}
+
+					public string Channels
+					{
+						get
+						{
+							return channels;
+						}
+						set	
+						{
+							channels = value;
+						}
+					}
+
+					public string Bitrate
+					{
+						get
+						{
+							return bitrate;
+						}
+						set	
+						{
+							bitrate = value;
+						}
+					}
+
+					public ListJob_Volume Volume
+					{
+						get
+						{
+							return volume;
+						}
+						set	
+						{
+							volume = value;
+						}
+					}
+
+					public class ListJob_Volume
+					{
+
+						private string method;
+
+						private string level;
+
+						public string Method
+						{
+							get
+							{
+								return method;
+							}
+							set	
+							{
+								method = value;
+							}
+						}
+
+						public string Level
+						{
+							get
+							{
+								return level;
+							}
+							set	
+							{
+								level = value;
+							}
+						}
+					}
+				}
+
+				public class ListJob_SuperReso
+				{
+
+					private string isHalfSample;
+
+					public string IsHalfSample
+					{
+						get
+						{
+							return isHalfSample;
+						}
+						set	
+						{
+							isHalfSample = value;
+						}
+					}
+				}
+
+				public class ListJob_OutputFile
+				{
+
+					private string roleArn;
+
+					private string _object;
+
+					private string location;
+
+					private string bucket;
+
+					public string RoleArn
+					{
+						get
+						{
+							return roleArn;
+						}
+						set	
+						{
+							roleArn = value;
+						}
+					}
+
+					public string _Object
+					{
+						get
+						{
+							return _object;
+						}
+						set	
+						{
+							_object = value;
+						}
+					}
+
+					public string Location
+					{
+						get
+						{
+							return location;
+						}
+						set	
+						{
+							location = value;
+						}
+					}
+
+					public string Bucket
+					{
+						get
+						{
+							return bucket;
+						}
+						set	
+						{
+							bucket = value;
+						}
+					}
+				}
+
+				public class ListJob_Container
+				{
+
+					private string format;
+
+					public string Format
+					{
+						get
+						{
+							return format;
+						}
+						set	
+						{
+							format = value;
+						}
+					}
+				}
+
+				public class ListJob_Clip
+				{
+
+					private ListJob_TimeSpan timeSpan;
+
+					public ListJob_TimeSpan TimeSpan
+					{
+						get
+						{
+							return timeSpan;
+						}
+						set	
+						{
+							timeSpan = value;
+						}
+					}
+
+					public class ListJob_TimeSpan
+					{
+
+						private string seek;
+
+						private string duration;
+
+						public string Seek
+						{
+							get
+							{
+								return seek;
+							}
+							set	
+							{
+								seek = value;
+							}
+						}
+
+						public string Duration
+						{
+							get
+							{
+								return duration;
+							}
+							set	
+							{
+								duration = value;
+							}
+						}
+					}
+				}
+
+				public class ListJob_MuxConfig
+				{
+
+					private ListJob_Webp webp;
+
+					private ListJob_Gif gif;
+
+					private ListJob_Segment segment;
+
+					public ListJob_Webp Webp
+					{
+						get
+						{
+							return webp;
+						}
+						set	
+						{
+							webp = value;
+						}
+					}
+
+					public ListJob_Gif Gif
+					{
+						get
+						{
+							return gif;
+						}
+						set	
+						{
+							gif = value;
+						}
+					}
+
+					public ListJob_Segment Segment
+					{
+						get
+						{
+							return segment;
+						}
+						set	
+						{
+							segment = value;
+						}
+					}
+
+					public class ListJob_Webp
+					{
+
+						private string loop;
+
+						public string Loop
+						{
+							get
+							{
+								return loop;
+							}
+							set	
+							{
+								loop = value;
+							}
+						}
+					}
+
+					public class ListJob_Gif
+					{
+
+						private string finalDelay;
+
+						private string ditherMode;
+
+						private string loop;
+
+						private string isCustomPalette;
+
+						public string FinalDelay
+						{
+							get
+							{
+								return finalDelay;
+							}
+							set	
+							{
+								finalDelay = value;
+							}
+						}
+
+						public string DitherMode
+						{
+							get
+							{
+								return ditherMode;
+							}
+							set	
+							{
+								ditherMode = value;
+							}
+						}
+
+						public string Loop
+						{
+							get
+							{
+								return loop;
+							}
+							set	
+							{
+								loop = value;
+							}
+						}
+
+						public string IsCustomPalette
+						{
+							get
+							{
+								return isCustomPalette;
+							}
+							set	
+							{
+								isCustomPalette = value;
+							}
+						}
+					}
+
+					public class ListJob_Segment
+					{
+
+						private string duration;
+
+						public string Duration
+						{
+							get
+							{
+								return duration;
+							}
+							set	
+							{
+								duration = value;
+							}
+						}
+					}
+				}
+
+				public class ListJob_SubtitleConfig
+				{
+
+					private List<ListJob_ExtSubtitle> extSubtitleList;
+
+					private List<ListJob_Subtitle> subtitleList;
+
+					public List<ListJob_ExtSubtitle> ExtSubtitleList
+					{
+						get
+						{
+							return extSubtitleList;
+						}
+						set	
+						{
+							extSubtitleList = value;
+						}
+					}
+
+					public List<ListJob_Subtitle> SubtitleList
+					{
+						get
+						{
+							return subtitleList;
+						}
+						set	
+						{
+							subtitleList = value;
+						}
+					}
+
+					public class ListJob_ExtSubtitle
+					{
+
+						private string charEnc;
+
+						private string fontName;
+
+						private ListJob_Input1 input1;
+
+						public string CharEnc
+						{
+							get
+							{
+								return charEnc;
+							}
+							set	
+							{
+								charEnc = value;
+							}
+						}
+
+						public string FontName
+						{
+							get
+							{
+								return fontName;
+							}
+							set	
+							{
+								fontName = value;
+							}
+						}
+
+						public ListJob_Input1 Input1
+						{
+							get
+							{
+								return input1;
+							}
+							set	
+							{
+								input1 = value;
+							}
+						}
+
+						public class ListJob_Input1
+						{
+
+							private string _object;
+
+							private string location;
+
+							private string bucket;
+
+							public string _Object
+							{
+								get
+								{
+									return _object;
+								}
+								set	
+								{
+									_object = value;
+								}
+							}
+
+							public string Location
+							{
+								get
+								{
+									return location;
+								}
+								set	
+								{
+									location = value;
+								}
+							}
+
+							public string Bucket
+							{
+								get
+								{
+									return bucket;
+								}
+								set	
+								{
+									bucket = value;
+								}
+							}
+						}
+					}
+
+					public class ListJob_Subtitle
+					{
+
+						private string map;
+
+						public string Map
+						{
+							get
+							{
+								return map;
+							}
+							set	
+							{
+								map = value;
+							}
+						}
 					}
 				}
 
@@ -1258,15 +2236,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 					private string height;
 
-					private string bitrate;
-
 					private string duration;
 
 					private string fps;
 
-					private string fileSize;
+					private string bitrate;
 
 					private string fileFormat;
+
+					private string fileSize;
 
 					private ListJob_Streams streams;
 
@@ -1296,18 +2274,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public string Bitrate
-					{
-						get
-						{
-							return bitrate;
-						}
-						set	
-						{
-							bitrate = value;
-						}
-					}
-
 					public string Duration
 					{
 						get
@@ -1332,15 +2298,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public string FileSize
+					public string Bitrate
 					{
 						get
 						{
-							return fileSize;
+							return bitrate;
 						}
 						set	
 						{
-							fileSize = value;
+							bitrate = value;
 						}
 					}
 
@@ -1353,6 +2319,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						set	
 						{
 							fileFormat = value;
+						}
+					}
+
+					public string FileSize
+					{
+						get
+						{
+							return fileSize;
+						}
+						set	
+						{
+							fileSize = value;
 						}
 					}
 
@@ -1430,47 +2408,47 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 							private string index;
 
-							private string codecName;
-
-							private string codecLongName;
-
-							private string profile;
-
-							private string codecTimeBase;
-
-							private string codecTagString;
-
-							private string codecTag;
-
-							private string width;
-
-							private string height;
-
-							private string hasBFrames;
-
-							private string sar;
-
-							private string dar;
-
-							private string pixFmt;
-
-							private string level;
-
-							private string fps;
+							private string timebase;
 
 							private string avgFPS;
 
-							private string timebase;
+							private string pixFmt;
 
-							private string startTime;
+							private string sar;
 
-							private string duration;
+							private string lang;
 
-							private string bitrate;
+							private string codecLongName;
+
+							private string height;
 
 							private string numFrames;
 
-							private string lang;
+							private string bitrate;
+
+							private string codecTagString;
+
+							private string hasBFrames;
+
+							private string profile;
+
+							private string startTime;
+
+							private string dar;
+
+							private string codecName;
+
+							private string width;
+
+							private string duration;
+
+							private string fps;
+
+							private string codecTag;
+
+							private string codecTimeBase;
+
+							private string level;
 
 							private ListJob_NetworkCost networkCost;
 
@@ -1486,171 +2464,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 								}
 							}
 
-							public string CodecName
+							public string Timebase
 							{
 								get
 								{
-									return codecName;
+									return timebase;
 								}
 								set	
 								{
-									codecName = value;
-								}
-							}
-
-							public string CodecLongName
-							{
-								get
-								{
-									return codecLongName;
-								}
-								set	
-								{
-									codecLongName = value;
-								}
-							}
-
-							public string Profile
-							{
-								get
-								{
-									return profile;
-								}
-								set	
-								{
-									profile = value;
-								}
-							}
-
-							public string CodecTimeBase
-							{
-								get
-								{
-									return codecTimeBase;
-								}
-								set	
-								{
-									codecTimeBase = value;
-								}
-							}
-
-							public string CodecTagString
-							{
-								get
-								{
-									return codecTagString;
-								}
-								set	
-								{
-									codecTagString = value;
-								}
-							}
-
-							public string CodecTag
-							{
-								get
-								{
-									return codecTag;
-								}
-								set	
-								{
-									codecTag = value;
-								}
-							}
-
-							public string Width
-							{
-								get
-								{
-									return width;
-								}
-								set	
-								{
-									width = value;
-								}
-							}
-
-							public string Height
-							{
-								get
-								{
-									return height;
-								}
-								set	
-								{
-									height = value;
-								}
-							}
-
-							public string HasBFrames
-							{
-								get
-								{
-									return hasBFrames;
-								}
-								set	
-								{
-									hasBFrames = value;
-								}
-							}
-
-							public string Sar
-							{
-								get
-								{
-									return sar;
-								}
-								set	
-								{
-									sar = value;
-								}
-							}
-
-							public string Dar
-							{
-								get
-								{
-									return dar;
-								}
-								set	
-								{
-									dar = value;
-								}
-							}
-
-							public string PixFmt
-							{
-								get
-								{
-									return pixFmt;
-								}
-								set	
-								{
-									pixFmt = value;
-								}
-							}
-
-							public string Level
-							{
-								get
-								{
-									return level;
-								}
-								set	
-								{
-									level = value;
-								}
-							}
-
-							public string Fps
-							{
-								get
-								{
-									return fps;
-								}
-								set	
-								{
-									fps = value;
+									timebase = value;
 								}
 							}
 
@@ -1666,51 +2488,63 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 								}
 							}
 
-							public string Timebase
+							public string PixFmt
 							{
 								get
 								{
-									return timebase;
+									return pixFmt;
 								}
 								set	
 								{
-									timebase = value;
+									pixFmt = value;
 								}
 							}
 
-							public string StartTime
+							public string Sar
 							{
 								get
 								{
-									return startTime;
+									return sar;
 								}
 								set	
 								{
-									startTime = value;
+									sar = value;
 								}
 							}
 
-							public string Duration
+							public string Lang
 							{
 								get
 								{
-									return duration;
+									return lang;
 								}
 								set	
 								{
-									duration = value;
+									lang = value;
 								}
 							}
 
-							public string Bitrate
+							public string CodecLongName
 							{
 								get
 								{
-									return bitrate;
+									return codecLongName;
 								}
 								set	
 								{
-									bitrate = value;
+									codecLongName = value;
+								}
+							}
+
+							public string Height
+							{
+								get
+								{
+									return height;
+								}
+								set	
+								{
+									height = value;
 								}
 							}
 
@@ -1726,15 +2560,159 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 								}
 							}
 
-							public string Lang
+							public string Bitrate
 							{
 								get
 								{
-									return lang;
+									return bitrate;
 								}
 								set	
 								{
-									lang = value;
+									bitrate = value;
+								}
+							}
+
+							public string CodecTagString
+							{
+								get
+								{
+									return codecTagString;
+								}
+								set	
+								{
+									codecTagString = value;
+								}
+							}
+
+							public string HasBFrames
+							{
+								get
+								{
+									return hasBFrames;
+								}
+								set	
+								{
+									hasBFrames = value;
+								}
+							}
+
+							public string Profile
+							{
+								get
+								{
+									return profile;
+								}
+								set	
+								{
+									profile = value;
+								}
+							}
+
+							public string StartTime
+							{
+								get
+								{
+									return startTime;
+								}
+								set	
+								{
+									startTime = value;
+								}
+							}
+
+							public string Dar
+							{
+								get
+								{
+									return dar;
+								}
+								set	
+								{
+									dar = value;
+								}
+							}
+
+							public string CodecName
+							{
+								get
+								{
+									return codecName;
+								}
+								set	
+								{
+									codecName = value;
+								}
+							}
+
+							public string Width
+							{
+								get
+								{
+									return width;
+								}
+								set	
+								{
+									width = value;
+								}
+							}
+
+							public string Duration
+							{
+								get
+								{
+									return duration;
+								}
+								set	
+								{
+									duration = value;
+								}
+							}
+
+							public string Fps
+							{
+								get
+								{
+									return fps;
+								}
+								set	
+								{
+									fps = value;
+								}
+							}
+
+							public string CodecTag
+							{
+								get
+								{
+									return codecTag;
+								}
+								set	
+								{
+									codecTag = value;
+								}
+							}
+
+							public string CodecTimeBase
+							{
+								get
+								{
+									return codecTimeBase;
+								}
+								set	
+								{
+									codecTimeBase = value;
+								}
+							}
+
+							public string Level
+							{
+								get
+								{
+									return level;
+								}
+								set	
+								{
+									level = value;
 								}
 							}
 
@@ -1755,9 +2733,9 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 								private string preloadTime;
 
-								private string costBandwidth;
-
 								private string avgBitrate;
+
+								private string costBandwidth;
 
 								public string PreloadTime
 								{
@@ -1768,18 +2746,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 									set	
 									{
 										preloadTime = value;
-									}
-								}
-
-								public string CostBandwidth
-								{
-									get
-									{
-										return costBandwidth;
-									}
-									set	
-									{
-										costBandwidth = value;
 									}
 								}
 
@@ -1794,43 +2760,67 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 										avgBitrate = value;
 									}
 								}
+
+								public string CostBandwidth
+								{
+									get
+									{
+										return costBandwidth;
+									}
+									set	
+									{
+										costBandwidth = value;
+									}
+								}
 							}
 						}
 
 						public class ListJob_AudioStream
 						{
 
+							private string timebase;
+
 							private string index;
-
-							private string codecName;
-
-							private string codecTimeBase;
-
-							private string codecLongName;
-
-							private string codecTagString;
-
-							private string codecTag;
 
 							private string sampleFmt;
 
+							private string channelLayout;
+
+							private string lang;
+
 							private string samplerate;
+
+							private string codecLongName;
 
 							private string channels;
 
-							private string channelLayout;
-
-							private string timebase;
-
-							private string startTime;
-
-							private string duration;
+							private string numFrames;
 
 							private string bitrate;
 
-							private string numFrames;
+							private string codecTagString;
 
-							private string lang;
+							private string startTime;
+
+							private string codecName;
+
+							private string duration;
+
+							private string codecTag;
+
+							private string codecTimeBase;
+
+							public string Timebase
+							{
+								get
+								{
+									return timebase;
+								}
+								set	
+								{
+									timebase = value;
+								}
+							}
 
 							public string Index
 							{
@@ -1841,66 +2831,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 								set	
 								{
 									index = value;
-								}
-							}
-
-							public string CodecName
-							{
-								get
-								{
-									return codecName;
-								}
-								set	
-								{
-									codecName = value;
-								}
-							}
-
-							public string CodecTimeBase
-							{
-								get
-								{
-									return codecTimeBase;
-								}
-								set	
-								{
-									codecTimeBase = value;
-								}
-							}
-
-							public string CodecLongName
-							{
-								get
-								{
-									return codecLongName;
-								}
-								set	
-								{
-									codecLongName = value;
-								}
-							}
-
-							public string CodecTagString
-							{
-								get
-								{
-									return codecTagString;
-								}
-								set	
-								{
-									codecTagString = value;
-								}
-							}
-
-							public string CodecTag
-							{
-								get
-								{
-									return codecTag;
-								}
-								set	
-								{
-									codecTag = value;
 								}
 							}
 
@@ -1916,6 +2846,30 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 								}
 							}
 
+							public string ChannelLayout
+							{
+								get
+								{
+									return channelLayout;
+								}
+								set	
+								{
+									channelLayout = value;
+								}
+							}
+
+							public string Lang
+							{
+								get
+								{
+									return lang;
+								}
+								set	
+								{
+									lang = value;
+								}
+							}
+
 							public string Samplerate
 							{
 								get
@@ -1925,6 +2879,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 								set	
 								{
 									samplerate = value;
+								}
+							}
+
+							public string CodecLongName
+							{
+								get
+								{
+									return codecLongName;
+								}
+								set	
+								{
+									codecLongName = value;
 								}
 							}
 
@@ -1940,51 +2906,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 								}
 							}
 
-							public string ChannelLayout
+							public string NumFrames
 							{
 								get
 								{
-									return channelLayout;
+									return numFrames;
 								}
 								set	
 								{
-									channelLayout = value;
-								}
-							}
-
-							public string Timebase
-							{
-								get
-								{
-									return timebase;
-								}
-								set	
-								{
-									timebase = value;
-								}
-							}
-
-							public string StartTime
-							{
-								get
-								{
-									return startTime;
-								}
-								set	
-								{
-									startTime = value;
-								}
-							}
-
-							public string Duration
-							{
-								get
-								{
-									return duration;
-								}
-								set	
-								{
-									duration = value;
+									numFrames = value;
 								}
 							}
 
@@ -2000,27 +2930,75 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 								}
 							}
 
-							public string NumFrames
+							public string CodecTagString
 							{
 								get
 								{
-									return numFrames;
+									return codecTagString;
 								}
 								set	
 								{
-									numFrames = value;
+									codecTagString = value;
 								}
 							}
 
-							public string Lang
+							public string StartTime
 							{
 								get
 								{
-									return lang;
+									return startTime;
 								}
 								set	
 								{
-									lang = value;
+									startTime = value;
+								}
+							}
+
+							public string CodecName
+							{
+								get
+								{
+									return codecName;
+								}
+								set	
+								{
+									codecName = value;
+								}
+							}
+
+							public string Duration
+							{
+								get
+								{
+									return duration;
+								}
+								set	
+								{
+									duration = value;
+								}
+							}
+
+							public string CodecTag
+							{
+								get
+								{
+									return codecTag;
+								}
+								set	
+								{
+									codecTag = value;
+								}
+							}
+
+							public string CodecTimeBase
+							{
+								get
+								{
+									return codecTimeBase;
+								}
+								set	
+								{
+									codecTimeBase = value;
 								}
 							}
 						}
@@ -2061,31 +3039,31 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					public class ListJob_Format
 					{
 
-						private string numStreams;
+						private string startTime;
 
 						private string numPrograms;
 
-						private string formatName;
+						private string size;
+
+						private string numStreams;
 
 						private string formatLongName;
 
-						private string startTime;
-
 						private string duration;
-
-						private string size;
 
 						private string bitrate;
 
-						public string NumStreams
+						private string formatName;
+
+						public string StartTime
 						{
 							get
 							{
-								return numStreams;
+								return startTime;
 							}
 							set	
 							{
-								numStreams = value;
+								startTime = value;
 							}
 						}
 
@@ -2101,15 +3079,27 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
-						public string FormatName
+						public string Size
 						{
 							get
 							{
-								return formatName;
+								return size;
 							}
 							set	
 							{
-								formatName = value;
+								size = value;
+							}
+						}
+
+						public string NumStreams
+						{
+							get
+							{
+								return numStreams;
+							}
+							set	
+							{
+								numStreams = value;
 							}
 						}
 
@@ -2125,18 +3115,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
-						public string StartTime
-						{
-							get
-							{
-								return startTime;
-							}
-							set	
-							{
-								startTime = value;
-							}
-						}
-
 						public string Duration
 						{
 							get
@@ -2146,18 +3124,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							set	
 							{
 								duration = value;
-							}
-						}
-
-						public string Size
-						{
-							get
-							{
-								return size;
-							}
-							set	
-							{
-								size = value;
 							}
 						}
 
@@ -2172,1030 +3138,64 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 								bitrate = value;
 							}
 						}
-					}
-				}
 
-				public class ListJob_Clip
-				{
-
-					private ListJob_TimeSpan timeSpan;
-
-					public ListJob_TimeSpan TimeSpan
-					{
-						get
-						{
-							return timeSpan;
-						}
-						set	
-						{
-							timeSpan = value;
-						}
-					}
-
-					public class ListJob_TimeSpan
-					{
-
-						private string seek;
-
-						private string duration;
-
-						public string Seek
+						public string FormatName
 						{
 							get
 							{
-								return seek;
+								return formatName;
 							}
 							set	
 							{
-								seek = value;
-							}
-						}
-
-						public string Duration
-						{
-							get
-							{
-								return duration;
-							}
-							set	
-							{
-								duration = value;
+								formatName = value;
 							}
 						}
 					}
 				}
+			}
 
-				public class ListJob_SuperReso
+			public class ListJob_Input
+			{
+
+				private string _object;
+
+				private string location;
+
+				private string bucket;
+
+				public string _Object
 				{
-
-					private string isHalfSample;
-
-					public string IsHalfSample
+					get
 					{
-						get
-						{
-							return isHalfSample;
-						}
-						set	
-						{
-							isHalfSample = value;
-						}
+						return _object;
+					}
+					set	
+					{
+						_object = value;
 					}
 				}
 
-				public class ListJob_SubtitleConfig
+				public string Location
 				{
-
-					private List<ListJob_Subtitle> subtitleList;
-
-					private List<ListJob_ExtSubtitle> extSubtitleList;
-
-					public List<ListJob_Subtitle> SubtitleList
+					get
 					{
-						get
-						{
-							return subtitleList;
-						}
-						set	
-						{
-							subtitleList = value;
-						}
+						return location;
 					}
-
-					public List<ListJob_ExtSubtitle> ExtSubtitleList
+					set	
 					{
-						get
-						{
-							return extSubtitleList;
-						}
-						set	
-						{
-							extSubtitleList = value;
-						}
-					}
-
-					public class ListJob_Subtitle
-					{
-
-						private string map;
-
-						public string Map
-						{
-							get
-							{
-								return map;
-							}
-							set	
-							{
-								map = value;
-							}
-						}
-					}
-
-					public class ListJob_ExtSubtitle
-					{
-
-						private string fontName;
-
-						private string charEnc;
-
-						private ListJob_Input1 input1;
-
-						public string FontName
-						{
-							get
-							{
-								return fontName;
-							}
-							set	
-							{
-								fontName = value;
-							}
-						}
-
-						public string CharEnc
-						{
-							get
-							{
-								return charEnc;
-							}
-							set	
-							{
-								charEnc = value;
-							}
-						}
-
-						public ListJob_Input1 Input1
-						{
-							get
-							{
-								return input1;
-							}
-							set	
-							{
-								input1 = value;
-							}
-						}
-
-						public class ListJob_Input1
-						{
-
-							private string bucket;
-
-							private string location;
-
-							private string _object;
-
-							public string Bucket
-							{
-								get
-								{
-									return bucket;
-								}
-								set	
-								{
-									bucket = value;
-								}
-							}
-
-							public string Location
-							{
-								get
-								{
-									return location;
-								}
-								set	
-								{
-									location = value;
-								}
-							}
-
-							public string _Object
-							{
-								get
-								{
-									return _object;
-								}
-								set	
-								{
-									_object = value;
-								}
-							}
-						}
+						location = value;
 					}
 				}
 
-				public class ListJob_TransConfig
+				public string Bucket
 				{
-
-					private string transMode;
-
-					private string isCheckReso;
-
-					private string isCheckResoFail;
-
-					private string isCheckVideoBitrate;
-
-					private string isCheckAudioBitrate;
-
-					private string adjDarMethod;
-
-					private string isCheckVideoBitrateFail;
-
-					private string isCheckAudioBitrateFail;
-
-					public string TransMode
+					get
 					{
-						get
-						{
-							return transMode;
-						}
-						set	
-						{
-							transMode = value;
-						}
+						return bucket;
 					}
-
-					public string IsCheckReso
+					set	
 					{
-						get
-						{
-							return isCheckReso;
-						}
-						set	
-						{
-							isCheckReso = value;
-						}
-					}
-
-					public string IsCheckResoFail
-					{
-						get
-						{
-							return isCheckResoFail;
-						}
-						set	
-						{
-							isCheckResoFail = value;
-						}
-					}
-
-					public string IsCheckVideoBitrate
-					{
-						get
-						{
-							return isCheckVideoBitrate;
-						}
-						set	
-						{
-							isCheckVideoBitrate = value;
-						}
-					}
-
-					public string IsCheckAudioBitrate
-					{
-						get
-						{
-							return isCheckAudioBitrate;
-						}
-						set	
-						{
-							isCheckAudioBitrate = value;
-						}
-					}
-
-					public string AdjDarMethod
-					{
-						get
-						{
-							return adjDarMethod;
-						}
-						set	
-						{
-							adjDarMethod = value;
-						}
-					}
-
-					public string IsCheckVideoBitrateFail
-					{
-						get
-						{
-							return isCheckVideoBitrateFail;
-						}
-						set	
-						{
-							isCheckVideoBitrateFail = value;
-						}
-					}
-
-					public string IsCheckAudioBitrateFail
-					{
-						get
-						{
-							return isCheckAudioBitrateFail;
-						}
-						set	
-						{
-							isCheckAudioBitrateFail = value;
-						}
-					}
-				}
-
-				public class ListJob_MuxConfig
-				{
-
-					private ListJob_Segment segment;
-
-					private ListJob_Gif gif;
-
-					private ListJob_Webp webp;
-
-					public ListJob_Segment Segment
-					{
-						get
-						{
-							return segment;
-						}
-						set	
-						{
-							segment = value;
-						}
-					}
-
-					public ListJob_Gif Gif
-					{
-						get
-						{
-							return gif;
-						}
-						set	
-						{
-							gif = value;
-						}
-					}
-
-					public ListJob_Webp Webp
-					{
-						get
-						{
-							return webp;
-						}
-						set	
-						{
-							webp = value;
-						}
-					}
-
-					public class ListJob_Segment
-					{
-
-						private string duration;
-
-						public string Duration
-						{
-							get
-							{
-								return duration;
-							}
-							set	
-							{
-								duration = value;
-							}
-						}
-					}
-
-					public class ListJob_Gif
-					{
-
-						private string loop;
-
-						private string finalDelay;
-
-						private string isCustomPalette;
-
-						private string ditherMode;
-
-						public string Loop
-						{
-							get
-							{
-								return loop;
-							}
-							set	
-							{
-								loop = value;
-							}
-						}
-
-						public string FinalDelay
-						{
-							get
-							{
-								return finalDelay;
-							}
-							set	
-							{
-								finalDelay = value;
-							}
-						}
-
-						public string IsCustomPalette
-						{
-							get
-							{
-								return isCustomPalette;
-							}
-							set	
-							{
-								isCustomPalette = value;
-							}
-						}
-
-						public string DitherMode
-						{
-							get
-							{
-								return ditherMode;
-							}
-							set	
-							{
-								ditherMode = value;
-							}
-						}
-					}
-
-					public class ListJob_Webp
-					{
-
-						private string loop;
-
-						public string Loop
-						{
-							get
-							{
-								return loop;
-							}
-							set	
-							{
-								loop = value;
-							}
-						}
-					}
-				}
-
-				public class ListJob_Audio
-				{
-
-					private string codec;
-
-					private string profile;
-
-					private string samplerate;
-
-					private string bitrate;
-
-					private string channels;
-
-					private string qscale;
-
-					private ListJob_Volume volume;
-
-					public string Codec
-					{
-						get
-						{
-							return codec;
-						}
-						set	
-						{
-							codec = value;
-						}
-					}
-
-					public string Profile
-					{
-						get
-						{
-							return profile;
-						}
-						set	
-						{
-							profile = value;
-						}
-					}
-
-					public string Samplerate
-					{
-						get
-						{
-							return samplerate;
-						}
-						set	
-						{
-							samplerate = value;
-						}
-					}
-
-					public string Bitrate
-					{
-						get
-						{
-							return bitrate;
-						}
-						set	
-						{
-							bitrate = value;
-						}
-					}
-
-					public string Channels
-					{
-						get
-						{
-							return channels;
-						}
-						set	
-						{
-							channels = value;
-						}
-					}
-
-					public string Qscale
-					{
-						get
-						{
-							return qscale;
-						}
-						set	
-						{
-							qscale = value;
-						}
-					}
-
-					public ListJob_Volume Volume
-					{
-						get
-						{
-							return volume;
-						}
-						set	
-						{
-							volume = value;
-						}
-					}
-
-					public class ListJob_Volume
-					{
-
-						private string level;
-
-						private string method;
-
-						public string Level
-						{
-							get
-							{
-								return level;
-							}
-							set	
-							{
-								level = value;
-							}
-						}
-
-						public string Method
-						{
-							get
-							{
-								return method;
-							}
-							set	
-							{
-								method = value;
-							}
-						}
-					}
-				}
-
-				public class ListJob_Video
-				{
-
-					private string codec;
-
-					private string profile;
-
-					private string bitrate;
-
-					private string crf;
-
-					private string width;
-
-					private string height;
-
-					private string fps;
-
-					private string gop;
-
-					private string preset;
-
-					private string scanMode;
-
-					private string bufsize;
-
-					private string maxrate;
-
-					private string pixFmt;
-
-					private string degrain;
-
-					private string qscale;
-
-					private string crop;
-
-					private string pad;
-
-					private string maxFps;
-
-					private string resoPriority;
-
-					private ListJob_BitrateBnd bitrateBnd;
-
-					public string Codec
-					{
-						get
-						{
-							return codec;
-						}
-						set	
-						{
-							codec = value;
-						}
-					}
-
-					public string Profile
-					{
-						get
-						{
-							return profile;
-						}
-						set	
-						{
-							profile = value;
-						}
-					}
-
-					public string Bitrate
-					{
-						get
-						{
-							return bitrate;
-						}
-						set	
-						{
-							bitrate = value;
-						}
-					}
-
-					public string Crf
-					{
-						get
-						{
-							return crf;
-						}
-						set	
-						{
-							crf = value;
-						}
-					}
-
-					public string Width
-					{
-						get
-						{
-							return width;
-						}
-						set	
-						{
-							width = value;
-						}
-					}
-
-					public string Height
-					{
-						get
-						{
-							return height;
-						}
-						set	
-						{
-							height = value;
-						}
-					}
-
-					public string Fps
-					{
-						get
-						{
-							return fps;
-						}
-						set	
-						{
-							fps = value;
-						}
-					}
-
-					public string Gop
-					{
-						get
-						{
-							return gop;
-						}
-						set	
-						{
-							gop = value;
-						}
-					}
-
-					public string Preset
-					{
-						get
-						{
-							return preset;
-						}
-						set	
-						{
-							preset = value;
-						}
-					}
-
-					public string ScanMode
-					{
-						get
-						{
-							return scanMode;
-						}
-						set	
-						{
-							scanMode = value;
-						}
-					}
-
-					public string Bufsize
-					{
-						get
-						{
-							return bufsize;
-						}
-						set	
-						{
-							bufsize = value;
-						}
-					}
-
-					public string Maxrate
-					{
-						get
-						{
-							return maxrate;
-						}
-						set	
-						{
-							maxrate = value;
-						}
-					}
-
-					public string PixFmt
-					{
-						get
-						{
-							return pixFmt;
-						}
-						set	
-						{
-							pixFmt = value;
-						}
-					}
-
-					public string Degrain
-					{
-						get
-						{
-							return degrain;
-						}
-						set	
-						{
-							degrain = value;
-						}
-					}
-
-					public string Qscale
-					{
-						get
-						{
-							return qscale;
-						}
-						set	
-						{
-							qscale = value;
-						}
-					}
-
-					public string Crop
-					{
-						get
-						{
-							return crop;
-						}
-						set	
-						{
-							crop = value;
-						}
-					}
-
-					public string Pad
-					{
-						get
-						{
-							return pad;
-						}
-						set	
-						{
-							pad = value;
-						}
-					}
-
-					public string MaxFps
-					{
-						get
-						{
-							return maxFps;
-						}
-						set	
-						{
-							maxFps = value;
-						}
-					}
-
-					public string ResoPriority
-					{
-						get
-						{
-							return resoPriority;
-						}
-						set	
-						{
-							resoPriority = value;
-						}
-					}
-
-					public ListJob_BitrateBnd BitrateBnd
-					{
-						get
-						{
-							return bitrateBnd;
-						}
-						set	
-						{
-							bitrateBnd = value;
-						}
-					}
-
-					public class ListJob_BitrateBnd
-					{
-
-						private string max;
-
-						private string min;
-
-						public string Max
-						{
-							get
-							{
-								return max;
-							}
-							set	
-							{
-								max = value;
-							}
-						}
-
-						public string Min
-						{
-							get
-							{
-								return min;
-							}
-							set	
-							{
-								min = value;
-							}
-						}
-					}
-				}
-
-				public class ListJob_Container
-				{
-
-					private string format;
-
-					public string Format
-					{
-						get
-						{
-							return format;
-						}
-						set	
-						{
-							format = value;
-						}
-					}
-				}
-
-				public class ListJob_Encryption
-				{
-
-					private string type;
-
-					private string id;
-
-					private string key;
-
-					private string keyUri;
-
-					private string keyType;
-
-					private string skipCnt;
-
-					public string Type
-					{
-						get
-						{
-							return type;
-						}
-						set	
-						{
-							type = value;
-						}
-					}
-
-					public string Id
-					{
-						get
-						{
-							return id;
-						}
-						set	
-						{
-							id = value;
-						}
-					}
-
-					public string Key
-					{
-						get
-						{
-							return key;
-						}
-						set	
-						{
-							key = value;
-						}
-					}
-
-					public string KeyUri
-					{
-						get
-						{
-							return keyUri;
-						}
-						set	
-						{
-							keyUri = value;
-						}
-					}
-
-					public string KeyType
-					{
-						get
-						{
-							return keyType;
-						}
-						set	
-						{
-							keyType = value;
-						}
-					}
-
-					public string SkipCnt
-					{
-						get
-						{
-							return skipCnt;
-						}
-						set	
-						{
-							skipCnt = value;
-						}
+						bucket = value;
 					}
 				}
 			}

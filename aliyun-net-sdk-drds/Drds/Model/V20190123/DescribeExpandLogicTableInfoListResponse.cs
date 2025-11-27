@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribeExpandLogicTableInfoListResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private List<DescribeExpandLogicTableInfoList_DataItem> data;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeExpandLogicTableInfoList_DataItem> data;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,11 +70,23 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 		public class DescribeExpandLogicTableInfoList_DataItem
 		{
 
+			private string shardTbKey;
+
 			private string tableName;
 
 			private string shardDbKey;
 
-			private string shardTbKey;
+			public string ShardTbKey
+			{
+				get
+				{
+					return shardTbKey;
+				}
+				set	
+				{
+					shardTbKey = value;
+				}
+			}
 
 			public string TableName
 			{
@@ -97,18 +109,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					shardDbKey = value;
-				}
-			}
-
-			public string ShardTbKey
-			{
-				get
-				{
-					return shardTbKey;
-				}
-				set	
-				{
-					shardTbKey = value;
 				}
 			}
 		}

@@ -63,6 +63,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string instanceNetworkType;
 
+		private string clientToken;
+
 		private string zoneIdSlave1;
 
 		private string zoneIdSlave2;
@@ -250,6 +252,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				instanceNetworkType = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceNetworkType", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ClientToken")]
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 

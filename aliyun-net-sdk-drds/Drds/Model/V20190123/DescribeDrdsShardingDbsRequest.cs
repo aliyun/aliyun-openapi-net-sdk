@@ -42,7 +42,11 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 
 		private string drdsInstanceId;
 
+		private long? pageNumber;
+
 		private string dbName;
+
+		private long? pageSize;
 
 		private string dbNamePattern;
 
@@ -59,6 +63,19 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			}
 		}
 
+		public long? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
 		public string DbName
 		{
 			get
@@ -69,6 +86,19 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			{
 				dbName = value;
 				DictionaryUtil.Add(QueryParameters, "DbName", value);
+			}
+		}
+
+		public long? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

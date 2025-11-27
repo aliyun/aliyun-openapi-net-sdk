@@ -53,6 +53,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string connectionString;
 
+		private bool? autoCreateProxy;
+
 		private string engineVersion;
 
 		private bool? deletionProtection;
@@ -232,6 +234,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				connectionString = value;
 				DictionaryUtil.Add(QueryParameters, "ConnectionString", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "AutoCreateProxy")]
+		public bool? AutoCreateProxy
+		{
+			get
+			{
+				return autoCreateProxy;
+			}
+			set	
+			{
+				autoCreateProxy = value;
+				DictionaryUtil.Add(QueryParameters, "AutoCreateProxy", value.ToString());
 			}
 		}
 

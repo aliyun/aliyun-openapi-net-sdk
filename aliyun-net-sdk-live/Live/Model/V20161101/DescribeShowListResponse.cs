@@ -75,6 +75,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string currentShowId;
 
+			private string background;
+
+			private string watermark;
+
 			private string highPriorityShowId;
 
 			private string highPriorityShowStartTime;
@@ -95,6 +99,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					currentShowId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Background")]
+			public string Background
+			{
+				get
+				{
+					return background;
+				}
+				set	
+				{
+					background = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Watermark")]
+			public string Watermark
+			{
+				get
+				{
+					return watermark;
+				}
+				set	
+				{
+					watermark = value;
 				}
 			}
 

@@ -42,6 +42,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string transcodeTaskId;
 
+		private string jobIds;
+
 		public string TranscodeTaskId
 		{
 			get
@@ -52,6 +54,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				transcodeTaskId = value;
 				DictionaryUtil.Add(QueryParameters, "TranscodeTaskId", value);
+			}
+		}
+
+		public string JobIds
+		{
+			get
+			{
+				return jobIds;
+			}
+			set	
+			{
+				jobIds = value;
+				DictionaryUtil.Add(QueryParameters, "JobIds", value);
 			}
 		}
 

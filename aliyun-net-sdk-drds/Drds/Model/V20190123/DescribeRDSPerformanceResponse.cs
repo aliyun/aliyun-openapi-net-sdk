@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribeRDSPerformanceResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private List<DescribeRDSPerformance_PartialPerformanceData> data;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeRDSPerformance_PartialPerformanceData> data;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -72,11 +72,11 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 
 			private string key;
 
+			private string nodeName;
+
 			private string unit;
 
 			private int? nodeNum;
-
-			private string nodeName;
 
 			private List<DescribeRDSPerformance_PerformanceValue> values;
 
@@ -89,6 +89,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				set	
 				{
 					key = value;
+				}
+			}
+
+			public string NodeName
+			{
+				get
+				{
+					return nodeName;
+				}
+				set	
+				{
+					nodeName = value;
 				}
 			}
 
@@ -116,18 +128,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 				}
 			}
 
-			public string NodeName
-			{
-				get
-				{
-					return nodeName;
-				}
-				set	
-				{
-					nodeName = value;
-				}
-			}
-
 			public List<DescribeRDSPerformance_PerformanceValue> Values
 			{
 				get
@@ -143,21 +143,9 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			public class DescribeRDSPerformance_PerformanceValue
 			{
 
-				private string _value;
-
 				private long? date;
 
-				public string _Value
-				{
-					get
-					{
-						return _value;
-					}
-					set	
-					{
-						_value = value;
-					}
-				}
+				private string _value;
 
 				public long? Date
 				{
@@ -168,6 +156,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					set	
 					{
 						date = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
 					}
 				}
 			}

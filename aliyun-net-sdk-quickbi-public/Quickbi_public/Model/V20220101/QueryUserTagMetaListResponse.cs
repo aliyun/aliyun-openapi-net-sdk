@@ -70,23 +70,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryUserTagMetaList_ResultItem
 		{
 
-			private string tagName;
-
 			private string tagDescription;
 
 			private string tagId;
 
-			public string TagName
-			{
-				get
-				{
-					return tagName;
-				}
-				set	
-				{
-					tagName = value;
-				}
-			}
+			private string tagName;
 
 			public string TagDescription
 			{
@@ -109,6 +97,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					tagId = value;
+				}
+			}
+
+			public string TagName
+			{
+				get
+				{
+					return tagName;
+				}
+				set	
+				{
+					tagName = value;
 				}
 			}
 		}

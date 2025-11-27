@@ -70,27 +70,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryUserList_Result
 		{
 
-			private int? totalPages;
-
 			private int? pageNum;
 
 			private int? pageSize;
 
 			private int? totalNum;
 
-			private List<QueryUserList_DataItem> data;
+			private int? totalPages;
 
-			public int? TotalPages
-			{
-				get
-				{
-					return totalPages;
-				}
-				set	
-				{
-					totalPages = value;
-				}
-			}
+			private List<QueryUserList_DataItem> data;
 
 			public int? PageNum
 			{
@@ -128,6 +116,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
+			public int? TotalPages
+			{
+				get
+				{
+					return totalPages;
+				}
+				set	
+				{
+					totalPages = value;
+				}
+			}
+
 			public List<QueryUserList_DataItem> Data
 			{
 				get
@@ -143,73 +143,31 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class QueryUserList_DataItem
 			{
 
-				private int? userType;
-
-				private string email;
-
-				private string userId;
-
-				private bool? authAdminUser;
-
 				private string accountId;
-
-				private string nickName;
-
-				private bool? adminUser;
-
-				private string phone;
 
 				private string accountName;
 
+				private bool? adminUser;
+
+				private bool? authAdminUser;
+
+				private string email;
+
+				private long? joinedDate;
+
+				private long? lastLoginTime;
+
+				private string nickName;
+
+				private string phone;
+
+				private string userId;
+
+				private int? userType;
+
+				private bool? isDeleted;
+
 				private List<string> roleIdList;
-
-				public int? UserType
-				{
-					get
-					{
-						return userType;
-					}
-					set	
-					{
-						userType = value;
-					}
-				}
-
-				public string Email
-				{
-					get
-					{
-						return email;
-					}
-					set	
-					{
-						email = value;
-					}
-				}
-
-				public string UserId
-				{
-					get
-					{
-						return userId;
-					}
-					set	
-					{
-						userId = value;
-					}
-				}
-
-				public bool? AuthAdminUser
-				{
-					get
-					{
-						return authAdminUser;
-					}
-					set	
-					{
-						authAdminUser = value;
-					}
-				}
 
 				public string AccountId
 				{
@@ -223,15 +181,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string NickName
+				public string AccountName
 				{
 					get
 					{
-						return nickName;
+						return accountName;
 					}
 					set	
 					{
-						nickName = value;
+						accountName = value;
 					}
 				}
 
@@ -247,6 +205,66 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
+				public bool? AuthAdminUser
+				{
+					get
+					{
+						return authAdminUser;
+					}
+					set	
+					{
+						authAdminUser = value;
+					}
+				}
+
+				public string Email
+				{
+					get
+					{
+						return email;
+					}
+					set	
+					{
+						email = value;
+					}
+				}
+
+				public long? JoinedDate
+				{
+					get
+					{
+						return joinedDate;
+					}
+					set	
+					{
+						joinedDate = value;
+					}
+				}
+
+				public long? LastLoginTime
+				{
+					get
+					{
+						return lastLoginTime;
+					}
+					set	
+					{
+						lastLoginTime = value;
+					}
+				}
+
+				public string NickName
+				{
+					get
+					{
+						return nickName;
+					}
+					set	
+					{
+						nickName = value;
+					}
+				}
+
 				public string Phone
 				{
 					get
@@ -259,15 +277,39 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string AccountName
+				public string UserId
 				{
 					get
 					{
-						return accountName;
+						return userId;
 					}
 					set	
 					{
-						accountName = value;
+						userId = value;
+					}
+				}
+
+				public int? UserType
+				{
+					get
+					{
+						return userType;
+					}
+					set	
+					{
+						userType = value;
+					}
+				}
+
+				public bool? IsDeleted
+				{
+					get
+					{
+						return isDeleted;
+					}
+					set	
+					{
+						isDeleted = value;
 					}
 				}
 

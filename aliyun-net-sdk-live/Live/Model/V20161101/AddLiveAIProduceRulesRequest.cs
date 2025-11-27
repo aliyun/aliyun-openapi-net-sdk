@@ -54,8 +54,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string domain;
 
-		private bool? isOrigin;
-
 		public string Description
 		{
 			get
@@ -144,19 +142,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				domain = value;
 				DictionaryUtil.Add(QueryParameters, "Domain", value);
-			}
-		}
-
-		public bool? IsOrigin
-		{
-			get
-			{
-				return isOrigin;
-			}
-			set	
-			{
-				isOrigin = value;
-				DictionaryUtil.Add(QueryParameters, "IsOrigin", value.ToString());
 			}
 		}
 

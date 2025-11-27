@@ -49,6 +49,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private long? modifyTime;
 
+		private int? msgLifeCycle;
+
 		private string dataCenter;
 
 		[JsonProperty(PropertyName = "RequestId")]
@@ -204,6 +206,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				modifyTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "MsgLifeCycle")]
+		public int? MsgLifeCycle
+		{
+			get
+			{
+				return msgLifeCycle;
+			}
+			set	
+			{
+				msgLifeCycle = value;
 			}
 		}
 

@@ -192,6 +192,10 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string iPAddress;
 
+			private string connectionType;
+
+			private string txtRecord;
+
 			public string NodeType
 			{
 				get
@@ -309,6 +313,30 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					iPAddress = value;
+				}
+			}
+
+			public string ConnectionType
+			{
+				get
+				{
+					return connectionType;
+				}
+				set	
+				{
+					connectionType = value;
+				}
+			}
+
+			public string TxtRecord
+			{
+				get
+				{
+					return txtRecord;
+				}
+				set	
+				{
+					txtRecord = value;
 				}
 			}
 		}

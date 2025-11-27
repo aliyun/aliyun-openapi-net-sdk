@@ -52,6 +52,8 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				itemsItem.Pl1MaxIOPS = _ctx.StringValue("DescribeClassList.Items["+ i +"].Pl1MaxIOPS");
 				itemsItem.Pl2MaxIOPS = _ctx.StringValue("DescribeClassList.Items["+ i +"].Pl2MaxIOPS");
 				itemsItem.Pl3MaxIOPS = _ctx.StringValue("DescribeClassList.Items["+ i +"].Pl3MaxIOPS");
+				itemsItem.EssdMaxStorageCapacity = _ctx.StringValue("DescribeClassList.Items["+ i +"].EssdMaxStorageCapacity");
+				itemsItem.PolarStoreMaxStorageCapacity = _ctx.StringValue("DescribeClassList.Items["+ i +"].PolarStoreMaxStorageCapacity");
 
 				describeClassListResponse_items.Add(itemsItem);
 			}

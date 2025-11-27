@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20190123
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 	public class DescribeRestoreOrderResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private DescribeRestoreOrder_RestoreOrderDO restoreOrderDO;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private DescribeRestoreOrder_RestoreOrderDO restoreOrderDO;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -115,39 +115,27 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			public class DescribeRestoreOrder_DrdsOrderDOListItem
 			{
 
-				private string regionId;
-
-				private string azoneId;
+				private string vpcId;
 
 				private string network;
-
-				private string vpcId;
 
 				private string vSwtichId;
 
 				private string instSpec;
 
-				public string RegionId
-				{
-					get
-					{
-						return regionId;
-					}
-					set	
-					{
-						regionId = value;
-					}
-				}
+				private string azoneId;
 
-				public string AzoneId
+				private string regionId;
+
+				public string VpcId
 				{
 					get
 					{
-						return azoneId;
+						return vpcId;
 					}
 					set	
 					{
-						azoneId = value;
+						vpcId = value;
 					}
 				}
 
@@ -160,18 +148,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					set	
 					{
 						network = value;
-					}
-				}
-
-				public string VpcId
-				{
-					get
-					{
-						return vpcId;
-					}
-					set	
-					{
-						vpcId = value;
 					}
 				}
 
@@ -198,38 +174,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 						instSpec = value;
 					}
 				}
-			}
-
-			public class DescribeRestoreOrder_RdsOrderDOListItem
-			{
-
-				private string regionId;
-
-				private string azoneId;
-
-				private string engine;
-
-				private string version;
-
-				private string instanceClass;
-
-				private string dbInstanceStorage;
-
-				private string network;
-
-				private long? num;
-
-				public string RegionId
-				{
-					get
-					{
-						return regionId;
-					}
-					set	
-					{
-						regionId = value;
-					}
-				}
 
 				public string AzoneId
 				{
@@ -243,15 +187,47 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					}
 				}
 
-				public string Engine
+				public string RegionId
 				{
 					get
 					{
-						return engine;
+						return regionId;
 					}
 					set	
 					{
-						engine = value;
+						regionId = value;
+					}
+				}
+			}
+
+			public class DescribeRestoreOrder_RdsOrderDOListItem
+			{
+
+				private string network;
+
+				private string version;
+
+				private string instanceClass;
+
+				private string dbInstanceStorage;
+
+				private long? num;
+
+				private string engine;
+
+				private string azoneId;
+
+				private string regionId;
+
+				public string Network
+				{
+					get
+					{
+						return network;
+					}
+					set	
+					{
+						network = value;
 					}
 				}
 
@@ -291,18 +267,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					}
 				}
 
-				public string Network
-				{
-					get
-					{
-						return network;
-					}
-					set	
-					{
-						network = value;
-					}
-				}
-
 				public long? Num
 				{
 					get
@@ -312,6 +276,42 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					set	
 					{
 						num = value;
+					}
+				}
+
+				public string Engine
+				{
+					get
+					{
+						return engine;
+					}
+					set	
+					{
+						engine = value;
+					}
+				}
+
+				public string AzoneId
+				{
+					get
+					{
+						return azoneId;
+					}
+					set	
+					{
+						azoneId = value;
+					}
+				}
+
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
 					}
 				}
 			}
@@ -319,11 +319,7 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			public class DescribeRestoreOrder_PolarOrderDOListItem
 			{
 
-				private string regionId;
-
-				private string azoneId;
-
-				private string engine;
+				private string network;
 
 				private string version;
 
@@ -331,43 +327,23 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 
 				private string dbInstanceStorage;
 
-				private string network;
-
 				private long? num;
 
-				public string RegionId
-				{
-					get
-					{
-						return regionId;
-					}
-					set	
-					{
-						regionId = value;
-					}
-				}
+				private string engine;
 
-				public string AzoneId
-				{
-					get
-					{
-						return azoneId;
-					}
-					set	
-					{
-						azoneId = value;
-					}
-				}
+				private string azoneId;
 
-				public string Engine
+				private string regionId;
+
+				public string Network
 				{
 					get
 					{
-						return engine;
+						return network;
 					}
 					set	
 					{
-						engine = value;
+						network = value;
 					}
 				}
 
@@ -407,18 +383,6 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					}
 				}
 
-				public string Network
-				{
-					get
-					{
-						return network;
-					}
-					set	
-					{
-						network = value;
-					}
-				}
-
 				public long? Num
 				{
 					get
@@ -428,6 +392,42 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 					set	
 					{
 						num = value;
+					}
+				}
+
+				public string Engine
+				{
+					get
+					{
+						return engine;
+					}
+					set	
+					{
+						engine = value;
+					}
+				}
+
+				public string AzoneId
+				{
+					get
+					{
+						return azoneId;
+					}
+					set	
+					{
+						azoneId = value;
+					}
+				}
+
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
 					}
 				}
 			}

@@ -49,6 +49,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			order.Code = _ctx.StringValue("DescribePrice.Order.Code");
 			order.Message = _ctx.StringValue("DescribePrice.Order.Message");
 			order.IsContractActivity = _ctx.BooleanValue("DescribePrice.Order.IsContractActivity");
+			order.TotalCostAmount = _ctx.DoubleValue("DescribePrice.Order.TotalCostAmount");
 
 			List<string> order_ruleIds4 = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribePrice.Order.RuleIds.Length"); i++) {
@@ -177,6 +178,9 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 					moduleInstanceItem.TotalProductFee = _ctx.DoubleValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].TotalProductFee");
 					moduleInstanceItem.ContractActivity = _ctx.BooleanValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].ContractActivity");
 					moduleInstanceItem.StandDiscountPrice = _ctx.DoubleValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].StandDiscountPrice");
+					moduleInstanceItem.PriceUnit = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].priceUnit");
+					moduleInstanceItem.PriceType = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].priceType");
+					moduleInstanceItem.UnitPriceUnit4Buy = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].UnitPriceUnit4Buy");
 
 					DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_ModuleInstanceItem.DescribePrice_DepreciateInfo1 depreciateInfo1 = new DescribePriceResponse.DescribePrice_SubOrder.DescribePrice_ModuleInstanceItem.DescribePrice_DepreciateInfo1();
 					depreciateInfo1.ListPrice = _ctx.DoubleValue("DescribePrice.SubOrders["+ i +"].ModuleInstance["+ j +"].DepreciateInfo.ListPrice");

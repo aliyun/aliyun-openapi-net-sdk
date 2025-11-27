@@ -36,10 +36,10 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<ListExtendfilesResponse.ListExtendfiles_ResultItem> listExtendfilesResponse_result = new List<ListExtendfilesResponse.ListExtendfiles_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListExtendfiles.Result.Length"); i++) {
 				ListExtendfilesResponse.ListExtendfiles_ResultItem resultItem = new ListExtendfilesResponse.ListExtendfiles_ResultItem();
-				resultItem.Name = _ctx.StringValue("ListExtendfiles.Result["+ i +"].name");
-				resultItem.FileSize = _ctx.LongValue("ListExtendfiles.Result["+ i +"].fileSize");
-				resultItem.SourceType = _ctx.StringValue("ListExtendfiles.Result["+ i +"].sourceType");
 				resultItem.FilePath = _ctx.StringValue("ListExtendfiles.Result["+ i +"].filePath");
+				resultItem.FileSize = _ctx.LongValue("ListExtendfiles.Result["+ i +"].fileSize");
+				resultItem.Name = _ctx.StringValue("ListExtendfiles.Result["+ i +"].name");
+				resultItem.SourceType = _ctx.StringValue("ListExtendfiles.Result["+ i +"].sourceType");
 
 				listExtendfilesResponse_result.Add(resultItem);
 			}

@@ -46,7 +46,7 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 
 		private string accountName;
 
-		private List<DbPrivilege> dbPrivileges = new List<DbPrivilege>(){ };
+		private List<string> dbPrivileges = new List<string>(){ };
 
 		public string DrdsInstanceId
 		{
@@ -87,7 +87,7 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			}
 		}
 
-		public List<DbPrivilege> DbPrivileges
+		public List<string> DbPrivileges
 		{
 			get
 			{
@@ -97,10 +97,13 @@ namespace Aliyun.Acs.Drds.Model.V20190123
 			set
 			{
 				dbPrivileges = value;
-				for (int i = 0; i < dbPrivileges.Count; i++)
+				if(dbPrivileges != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"DbPrivilege." + (i + 1) + ".DbName", dbPrivileges[i].DbName);
-					DictionaryUtil.Add(QueryParameters,"DbPrivilege." + (i + 1) + ".Privilege", dbPrivileges[i].Privilege);
+					for (int depth1 = 0; depth1 < dbPrivileges.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"DbPrivilege." + (depth1 + 1), dbPrivileges[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DbPrivilege." + (depth1 + 1), dbPrivileges[depth1]);
+					}
 				}
 			}
 		}

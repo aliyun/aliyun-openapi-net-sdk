@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			DeleteDataTaskResponse deleteDataTaskResponse = new DeleteDataTaskResponse();
 
 			deleteDataTaskResponse.HttpResponse = _ctx.HttpResponse;
-			deleteDataTaskResponse.RequestId = _ctx.StringValue("DeleteDataTask.RequestId");
 			deleteDataTaskResponse.Result = _ctx.BooleanValue("DeleteDataTask.Result");
+			deleteDataTaskResponse.RequestId = _ctx.StringValue("DeleteDataTask.RequestId");
         
 			return deleteDataTaskResponse;
         }

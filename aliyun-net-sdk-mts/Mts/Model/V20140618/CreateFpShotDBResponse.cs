@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
@@ -56,51 +56,29 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		public class CreateFpShotDB_FpShotDB
 		{
 
-			private string fpDBId;
-
-			private string name;
-
-			private int? modelId;
+			private string description;
 
 			private string state;
 
+			private string name;
+
+			private string fpDBId;
+
+			private int? modelId;
+
 			private string config;
 
-			private string description;
+			private string instanceId;
 
-			public string FpDBId
+			public string Description
 			{
 				get
 				{
-					return fpDBId;
+					return description;
 				}
 				set	
 				{
-					fpDBId = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public int? ModelId
-			{
-				get
-				{
-					return modelId;
-				}
-				set	
-				{
-					modelId = value;
+					description = value;
 				}
 			}
 
@@ -116,6 +94,42 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string FpDBId
+			{
+				get
+				{
+					return fpDBId;
+				}
+				set	
+				{
+					fpDBId = value;
+				}
+			}
+
+			public int? ModelId
+			{
+				get
+				{
+					return modelId;
+				}
+				set	
+				{
+					modelId = value;
+				}
+			}
+
 			public string Config
 			{
 				get
@@ -128,15 +142,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public string Description
+			public string InstanceId
 			{
 				get
 				{
-					return description;
+					return instanceId;
 				}
 				set	
 				{
-					description = value;
+					instanceId = value;
 				}
 			}
 		}

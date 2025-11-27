@@ -44,9 +44,9 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 
 		private string nextToken;
 
-		private int? maxResults;
-
 		private string quotaCategory;
+
+		private int? maxResults;
 
 		public string ProductCode
 		{
@@ -74,19 +74,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			}
 		}
 
-		public int? MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
-				DictionaryUtil.Add(BodyParameters, "MaxResults", value.ToString());
-			}
-		}
-
 		public string QuotaCategory
 		{
 			get
@@ -97,6 +84,19 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			{
 				quotaCategory = value;
 				DictionaryUtil.Add(BodyParameters, "QuotaCategory", value);
+			}
+		}
+
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+				DictionaryUtil.Add(BodyParameters, "MaxResults", value.ToString());
 			}
 		}
 

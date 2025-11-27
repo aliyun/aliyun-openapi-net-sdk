@@ -54,6 +54,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? ownerId;
 
+		private bool? force;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -142,6 +144,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public bool? Force
+		{
+			get
+			{
+				return force;
+			}
+			set	
+			{
+				force = value;
+				DictionaryUtil.Add(QueryParameters, "Force", value.ToString());
 			}
 		}
 

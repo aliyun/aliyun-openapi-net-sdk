@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.schedulerx2;
 using Aliyun.Acs.schedulerx2.Transform;
 using Aliyun.Acs.schedulerx2.Transform.V20190430;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
     public class GetJobInstanceListRequest : RpcAcsRequest<GetJobInstanceListResponse>
     {
         public GetJobInstanceListRequest()
-            : base("schedulerx2", "2019-04-30", "GetJobInstanceList")
+            : base("schedulerx2", "2019-04-30", "GetJobInstanceList", "schedulerx2", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,13 +41,17 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private string namespaceSource;
 
-		private string groupId;
-
 		private long? startTimestamp;
+
+		private int? pageNum;
 
 		private long? endTimestamp;
 
 		private long? jobId;
+
+		private int? pageSize;
+
+		private string groupId;
 
 		private string _namespace;
 
@@ -67,19 +70,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
-			}
-		}
-
 		public long? StartTimestamp
 		{
 			get
@@ -90,6 +80,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				startTimestamp = value;
 				DictionaryUtil.Add(QueryParameters, "StartTimestamp", value.ToString());
+			}
+		}
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
 			}
 		}
 
@@ -116,6 +119,32 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				jobId = value;
 				DictionaryUtil.Add(QueryParameters, "JobId", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
 			}
 		}
 

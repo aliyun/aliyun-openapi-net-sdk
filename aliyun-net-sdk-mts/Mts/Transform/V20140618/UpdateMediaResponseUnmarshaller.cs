@@ -26,45 +26,45 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 {
     public class UpdateMediaResponseUnmarshaller
     {
-        public static UpdateMediaResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateMediaResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateMediaResponse updateMediaResponse = new UpdateMediaResponse();
 
-			updateMediaResponse.HttpResponse = context.HttpResponse;
-			updateMediaResponse.RequestId = context.StringValue("UpdateMedia.RequestId");
+			updateMediaResponse.HttpResponse = _ctx.HttpResponse;
+			updateMediaResponse.RequestId = _ctx.StringValue("UpdateMedia.RequestId");
 
 			UpdateMediaResponse.UpdateMedia_Media media = new UpdateMediaResponse.UpdateMedia_Media();
-			media.MediaId = context.StringValue("UpdateMedia.Media.MediaId");
-			media.Title = context.StringValue("UpdateMedia.Media.Title");
-			media.Description = context.StringValue("UpdateMedia.Media.Description");
-			media.CoverURL = context.StringValue("UpdateMedia.Media.CoverURL");
-			media.CateId = context.LongValue("UpdateMedia.Media.CateId");
-			media.Duration = context.StringValue("UpdateMedia.Media.Duration");
-			media.Format = context.StringValue("UpdateMedia.Media.Format");
-			media.Size = context.StringValue("UpdateMedia.Media.Size");
-			media.Bitrate = context.StringValue("UpdateMedia.Media.Bitrate");
-			media.Width = context.StringValue("UpdateMedia.Media.Width");
-			media.Height = context.StringValue("UpdateMedia.Media.Height");
-			media.Fps = context.StringValue("UpdateMedia.Media.Fps");
-			media.PublishState = context.StringValue("UpdateMedia.Media.PublishState");
-			media.CensorState = context.StringValue("UpdateMedia.Media.CensorState");
-			media.CreationTime = context.StringValue("UpdateMedia.Media.CreationTime");
+			media.CreationTime = _ctx.StringValue("UpdateMedia.Media.CreationTime");
+			media.CateId = _ctx.LongValue("UpdateMedia.Media.CateId");
+			media.Height = _ctx.StringValue("UpdateMedia.Media.Height");
+			media.CensorState = _ctx.StringValue("UpdateMedia.Media.CensorState");
+			media.Bitrate = _ctx.StringValue("UpdateMedia.Media.Bitrate");
+			media.MediaId = _ctx.StringValue("UpdateMedia.Media.MediaId");
+			media.PublishState = _ctx.StringValue("UpdateMedia.Media.PublishState");
+			media.Description = _ctx.StringValue("UpdateMedia.Media.Description");
+			media.Width = _ctx.StringValue("UpdateMedia.Media.Width");
+			media.Size = _ctx.StringValue("UpdateMedia.Media.Size");
+			media.CoverURL = _ctx.StringValue("UpdateMedia.Media.CoverURL");
+			media.Duration = _ctx.StringValue("UpdateMedia.Media.Duration");
+			media.Fps = _ctx.StringValue("UpdateMedia.Media.Fps");
+			media.Title = _ctx.StringValue("UpdateMedia.Media.Title");
+			media.Format = _ctx.StringValue("UpdateMedia.Media.Format");
 
 			List<string> media_tags = new List<string>();
-			for (int i = 0; i < context.Length("UpdateMedia.Media.Tags.Length"); i++) {
-				media_tags.Add(context.StringValue("UpdateMedia.Media.Tags["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("UpdateMedia.Media.Tags.Length"); i++) {
+				media_tags.Add(_ctx.StringValue("UpdateMedia.Media.Tags["+ i +"]"));
 			}
 			media.Tags = media_tags;
 
 			List<string> media_runIdList = new List<string>();
-			for (int i = 0; i < context.Length("UpdateMedia.Media.RunIdList.Length"); i++) {
-				media_runIdList.Add(context.StringValue("UpdateMedia.Media.RunIdList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("UpdateMedia.Media.RunIdList.Length"); i++) {
+				media_runIdList.Add(_ctx.StringValue("UpdateMedia.Media.RunIdList["+ i +"]"));
 			}
 			media.RunIdList = media_runIdList;
 
 			UpdateMediaResponse.UpdateMedia_Media.UpdateMedia_File file = new UpdateMediaResponse.UpdateMedia_Media.UpdateMedia_File();
-			file.URL = context.StringValue("UpdateMedia.Media.File.URL");
-			file.State = context.StringValue("UpdateMedia.Media.File.State");
+			file.State = _ctx.StringValue("UpdateMedia.Media.File.State");
+			file.URL = _ctx.StringValue("UpdateMedia.Media.File.URL");
 			media.File = file;
 			updateMediaResponse.Media = media;
         

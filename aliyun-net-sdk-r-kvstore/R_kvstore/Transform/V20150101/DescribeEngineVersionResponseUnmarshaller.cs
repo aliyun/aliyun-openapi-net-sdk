@@ -45,6 +45,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			describeEngineVersionResponse.IsSSLEnable = _ctx.StringValue("DescribeEngineVersion.IsSSLEnable");
 			describeEngineVersionResponse.IsNewSSLMode = _ctx.StringValue("DescribeEngineVersion.IsNewSSLMode");
 			describeEngineVersionResponse.IsAutoUpgradeOpen = _ctx.StringValue("DescribeEngineVersion.IsAutoUpgradeOpen");
+			describeEngineVersionResponse.IsOpenNGLB = _ctx.StringValue("DescribeEngineVersion.IsOpenNGLB");
 
 			DescribeEngineVersionResponse.DescribeEngineVersion_DBLatestMinorVersion dBLatestMinorVersion = new DescribeEngineVersionResponse.DescribeEngineVersion_DBLatestMinorVersion();
 			dBLatestMinorVersion.MinorVersion = _ctx.StringValue("DescribeEngineVersion.DBLatestMinorVersion.MinorVersion");

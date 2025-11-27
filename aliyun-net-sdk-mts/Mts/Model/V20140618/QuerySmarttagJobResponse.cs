@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
@@ -25,25 +25,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class QuerySmarttagJobResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string jobStatus;
+
+		private string message;
+
+		private string requestId;
 
 		private string userData;
 
 		private List<QuerySmarttagJob_Result> results;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public string JobStatus
 		{
@@ -54,6 +44,30 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			set	
 			{
 				jobStatus = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -84,21 +98,9 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		public class QuerySmarttagJob_Result
 		{
 
-			private string type;
-
 			private string data;
 
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
+			private string type;
 
 			public string Data
 			{
@@ -109,6 +111,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					data = value;
+				}
+			}
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
 				}
 			}
 		}

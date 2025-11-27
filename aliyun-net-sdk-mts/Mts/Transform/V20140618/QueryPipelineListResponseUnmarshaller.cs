@@ -26,36 +26,42 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 {
     public class QueryPipelineListResponseUnmarshaller
     {
-        public static QueryPipelineListResponse Unmarshall(UnmarshallerContext context)
+        public static QueryPipelineListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryPipelineListResponse queryPipelineListResponse = new QueryPipelineListResponse();
 
-			queryPipelineListResponse.HttpResponse = context.HttpResponse;
-			queryPipelineListResponse.RequestId = context.StringValue("QueryPipelineList.RequestId");
+			queryPipelineListResponse.HttpResponse = _ctx.HttpResponse;
+			queryPipelineListResponse.RequestId = _ctx.StringValue("QueryPipelineList.RequestId");
 
 			List<string> queryPipelineListResponse_nonExistPids = new List<string>();
-			for (int i = 0; i < context.Length("QueryPipelineList.NonExistPids.Length"); i++) {
-				queryPipelineListResponse_nonExistPids.Add(context.StringValue("QueryPipelineList.NonExistPids["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("QueryPipelineList.NonExistPids.Length"); i++) {
+				queryPipelineListResponse_nonExistPids.Add(_ctx.StringValue("QueryPipelineList.NonExistPids["+ i +"]"));
 			}
 			queryPipelineListResponse.NonExistPids = queryPipelineListResponse_nonExistPids;
 
 			List<QueryPipelineListResponse.QueryPipelineList_Pipeline> queryPipelineListResponse_pipelineList = new List<QueryPipelineListResponse.QueryPipelineList_Pipeline>();
-			for (int i = 0; i < context.Length("QueryPipelineList.PipelineList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryPipelineList.PipelineList.Length"); i++) {
 				QueryPipelineListResponse.QueryPipelineList_Pipeline pipeline = new QueryPipelineListResponse.QueryPipelineList_Pipeline();
-				pipeline.Id = context.StringValue("QueryPipelineList.PipelineList["+ i +"].Id");
-				pipeline.Name = context.StringValue("QueryPipelineList.PipelineList["+ i +"].Name");
-				pipeline.State = context.StringValue("QueryPipelineList.PipelineList["+ i +"].State");
-				pipeline.Speed = context.StringValue("QueryPipelineList.PipelineList["+ i +"].Speed");
-				pipeline.SpeedLevel = context.LongValue("QueryPipelineList.PipelineList["+ i +"].SpeedLevel");
-				pipeline.QuotaAllocate = context.LongValue("QueryPipelineList.PipelineList["+ i +"].QuotaAllocate");
-				pipeline.Role = context.StringValue("QueryPipelineList.PipelineList["+ i +"].Role");
+				pipeline.Speed = _ctx.StringValue("QueryPipelineList.PipelineList["+ i +"].Speed");
+				pipeline.State = _ctx.StringValue("QueryPipelineList.PipelineList["+ i +"].State");
+				pipeline.SpeedLevel = _ctx.LongValue("QueryPipelineList.PipelineList["+ i +"].SpeedLevel");
+				pipeline.Role = _ctx.StringValue("QueryPipelineList.PipelineList["+ i +"].Role");
+				pipeline.Name = _ctx.StringValue("QueryPipelineList.PipelineList["+ i +"].Name");
+				pipeline.Id = _ctx.StringValue("QueryPipelineList.PipelineList["+ i +"].Id");
+				pipeline.QuotaAllocate = _ctx.LongValue("QueryPipelineList.PipelineList["+ i +"].QuotaAllocate");
 
 				QueryPipelineListResponse.QueryPipelineList_Pipeline.QueryPipelineList_NotifyConfig notifyConfig = new QueryPipelineListResponse.QueryPipelineList_Pipeline.QueryPipelineList_NotifyConfig();
-				notifyConfig.Topic = context.StringValue("QueryPipelineList.PipelineList["+ i +"].NotifyConfig.Topic");
-				notifyConfig.QueueName = context.StringValue("QueryPipelineList.PipelineList["+ i +"].NotifyConfig.QueueName");
-				notifyConfig.MqTopic = context.StringValue("QueryPipelineList.PipelineList["+ i +"].NotifyConfig.MqTopic");
-				notifyConfig.MqTag = context.StringValue("QueryPipelineList.PipelineList["+ i +"].NotifyConfig.MqTag");
+				notifyConfig.MqTopic = _ctx.StringValue("QueryPipelineList.PipelineList["+ i +"].NotifyConfig.MqTopic");
+				notifyConfig.QueueName = _ctx.StringValue("QueryPipelineList.PipelineList["+ i +"].NotifyConfig.QueueName");
+				notifyConfig.MqTag = _ctx.StringValue("QueryPipelineList.PipelineList["+ i +"].NotifyConfig.MqTag");
+				notifyConfig.Topic = _ctx.StringValue("QueryPipelineList.PipelineList["+ i +"].NotifyConfig.Topic");
 				pipeline.NotifyConfig = notifyConfig;
+
+				QueryPipelineListResponse.QueryPipelineList_Pipeline.QueryPipelineList_ExtendConfig extendConfig = new QueryPipelineListResponse.QueryPipelineList_Pipeline.QueryPipelineList_ExtendConfig();
+				extendConfig.IsBoostNew = _ctx.BooleanValue("QueryPipelineList.PipelineList["+ i +"].ExtendConfig.IsBoostNew");
+				extendConfig.MaxMultiSpeed = _ctx.IntegerValue("QueryPipelineList.PipelineList["+ i +"].ExtendConfig.MaxMultiSpeed");
+				extendConfig.MultiSpeedDowngradePolicy = _ctx.StringValue("QueryPipelineList.PipelineList["+ i +"].ExtendConfig.MultiSpeedDowngradePolicy");
+				pipeline.ExtendConfig = extendConfig;
 
 				queryPipelineListResponse_pipelineList.Add(pipeline);
 			}

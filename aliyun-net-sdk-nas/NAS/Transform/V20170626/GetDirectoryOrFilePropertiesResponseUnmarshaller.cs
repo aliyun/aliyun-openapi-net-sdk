@@ -44,6 +44,7 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 			entry.Name = _ctx.StringValue("GetDirectoryOrFileProperties.Entry.Name");
 			entry.RetrieveTime = _ctx.StringValue("GetDirectoryOrFileProperties.Entry.RetrieveTime");
 			entry.Inode = _ctx.StringValue("GetDirectoryOrFileProperties.Entry.Inode");
+			entry.HasArchiveFile = _ctx.BooleanValue("GetDirectoryOrFileProperties.Entry.HasArchiveFile");
 			getDirectoryOrFilePropertiesResponse.Entry = entry;
         
 			return getDirectoryOrFilePropertiesResponse;

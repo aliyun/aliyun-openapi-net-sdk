@@ -237,6 +237,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 				private string enabled;
 
+				private string weight;
+
 				public string Type
 				{
 					get
@@ -294,6 +296,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						enabled = value;
+					}
+				}
+
+				public string Weight
+				{
+					get
+					{
+						return weight;
+					}
+					set	
+					{
+						weight = value;
 					}
 				}
 			}

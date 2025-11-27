@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Sts.Transform.V20150401
 
 			assumeRoleResponse.HttpResponse = _ctx.HttpResponse;
 			assumeRoleResponse.RequestId = _ctx.StringValue("AssumeRole.RequestId");
+			assumeRoleResponse.SourceIdentity = _ctx.StringValue("AssumeRole.SourceIdentity");
 
 			AssumeRoleResponse.AssumeRole_AssumedRoleUser assumedRoleUser = new AssumeRoleResponse.AssumeRole_AssumedRoleUser();
 			assumedRoleUser.AssumedRoleId = _ctx.StringValue("AssumeRole.AssumedRoleUser.AssumedRoleId");

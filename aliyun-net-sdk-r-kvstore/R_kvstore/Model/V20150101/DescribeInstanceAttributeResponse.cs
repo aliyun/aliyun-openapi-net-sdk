@@ -100,7 +100,13 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private int? shardCount;
 
+			private int? replicaCount;
+
+			private int? slaveReplicaCount;
+
 			private int? readOnlyCount;
+
+			private long? slaveReadOnlyCount;
 
 			private string globalInstanceId;
 
@@ -142,8 +148,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string backupLogStartTime;
 
-			private long? slaveReadOnlyCount;
-
 			private string resourceGroupId;
 
 			private string zoneId;
@@ -159,6 +163,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			private bool? isOrderCompleted;
 
 			private bool? isSupportTDE;
+
+			private bool? autoSecondaryZone;
 
 			private List<DescribeInstanceAttribute_Tag> tags;
 
@@ -426,6 +432,30 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
+			public int? ReplicaCount
+			{
+				get
+				{
+					return replicaCount;
+				}
+				set	
+				{
+					replicaCount = value;
+				}
+			}
+
+			public int? SlaveReplicaCount
+			{
+				get
+				{
+					return slaveReplicaCount;
+				}
+				set	
+				{
+					slaveReplicaCount = value;
+				}
+			}
+
 			public int? ReadOnlyCount
 			{
 				get
@@ -435,6 +465,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					readOnlyCount = value;
+				}
+			}
+
+			public long? SlaveReadOnlyCount
+			{
+				get
+				{
+					return slaveReadOnlyCount;
+				}
+				set	
+				{
+					slaveReadOnlyCount = value;
 				}
 			}
 
@@ -678,18 +720,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public long? SlaveReadOnlyCount
-			{
-				get
-				{
-					return slaveReadOnlyCount;
-				}
-				set	
-				{
-					slaveReadOnlyCount = value;
-				}
-			}
-
 			public string ResourceGroupId
 			{
 				get
@@ -783,6 +813,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					isSupportTDE = value;
+				}
+			}
+
+			public bool? AutoSecondaryZone
+			{
+				get
+				{
+					return autoSecondaryZone;
+				}
+				set	
+				{
+					autoSecondaryZone = value;
 				}
 			}
 

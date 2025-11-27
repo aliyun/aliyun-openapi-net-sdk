@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
@@ -70,89 +70,41 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		public class QueryAnalysisJobList_AnalysisJob
 		{
 
-			private string id;
-
-			private string userData;
-
-			private string state;
-
-			private string code;
-
-			private string message;
+			private string creationTime;
 
 			private long? percent;
 
-			private string creationTime;
+			private string state;
 
-			private string pipelineId;
+			private string message;
 
 			private string priority;
 
-			private List<QueryAnalysisJobList_Template> templateList;
+			private string userData;
 
-			private QueryAnalysisJobList_InputFile inputFile;
+			private string code;
+
+			private string pipelineId;
+
+			private string id;
+
+			private List<QueryAnalysisJobList_Template> templateList;
 
 			private QueryAnalysisJobList_AnalysisConfig analysisConfig;
 
 			private QueryAnalysisJobList_MNSMessageResult mNSMessageResult;
 
-			public string Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+			private QueryAnalysisJobList_InputFile inputFile;
 
-			public string UserData
+			public string CreationTime
 			{
 				get
 				{
-					return userData;
+					return creationTime;
 				}
 				set	
 				{
-					userData = value;
-				}
-			}
-
-			public string State
-			{
-				get
-				{
-					return state;
-				}
-				set	
-				{
-					state = value;
-				}
-			}
-
-			public string Code
-			{
-				get
-				{
-					return code;
-				}
-				set	
-				{
-					code = value;
-				}
-			}
-
-			public string Message
-			{
-				get
-				{
-					return message;
-				}
-				set	
-				{
-					message = value;
+					creationTime = value;
 				}
 			}
 
@@ -168,27 +120,27 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public string CreationTime
+			public string State
 			{
 				get
 				{
-					return creationTime;
+					return state;
 				}
 				set	
 				{
-					creationTime = value;
+					state = value;
 				}
 			}
 
-			public string PipelineId
+			public string Message
 			{
 				get
 				{
-					return pipelineId;
+					return message;
 				}
 				set	
 				{
-					pipelineId = value;
+					message = value;
 				}
 			}
 
@@ -204,6 +156,54 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
+			public string UserData
+			{
+				get
+				{
+					return userData;
+				}
+				set	
+				{
+					userData = value;
+				}
+			}
+
+			public string Code
+			{
+				get
+				{
+					return code;
+				}
+				set	
+				{
+					code = value;
+				}
+			}
+
+			public string PipelineId
+			{
+				get
+				{
+					return pipelineId;
+				}
+				set	
+				{
+					pipelineId = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
 			public List<QueryAnalysisJobList_Template> TemplateList
 			{
 				get
@@ -213,18 +213,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					templateList = value;
-				}
-			}
-
-			public QueryAnalysisJobList_InputFile InputFile
-			{
-				get
-				{
-					return inputFile;
-				}
-				set	
-				{
-					inputFile = value;
 				}
 			}
 
@@ -252,34 +240,46 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
+			public QueryAnalysisJobList_InputFile InputFile
+			{
+				get
+				{
+					return inputFile;
+				}
+				set	
+				{
+					inputFile = value;
+				}
+			}
+
 			public class QueryAnalysisJobList_Template
 			{
 
-				private string id;
+				private string state;
 
 				private string name;
 
-				private string state;
-
-				private QueryAnalysisJobList_Container container;
+				private string id;
 
 				private QueryAnalysisJobList_Video video;
-
-				private QueryAnalysisJobList_Audio audio;
 
 				private QueryAnalysisJobList_TransConfig transConfig;
 
 				private QueryAnalysisJobList_MuxConfig muxConfig;
 
-				public string Id
+				private QueryAnalysisJobList_Audio audio;
+
+				private QueryAnalysisJobList_Container container;
+
+				public string State
 				{
 					get
 					{
-						return id;
+						return state;
 					}
 					set	
 					{
-						id = value;
+						state = value;
 					}
 				}
 
@@ -295,27 +295,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public string State
+				public string Id
 				{
 					get
 					{
-						return state;
+						return id;
 					}
 					set	
 					{
-						state = value;
-					}
-				}
-
-				public QueryAnalysisJobList_Container Container
-				{
-					get
-					{
-						return container;
-					}
-					set	
-					{
-						container = value;
+						id = value;
 					}
 				}
 
@@ -328,18 +316,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						video = value;
-					}
-				}
-
-				public QueryAnalysisJobList_Audio Audio
-				{
-					get
-					{
-						return audio;
-					}
-					set	
-					{
-						audio = value;
 					}
 				}
 
@@ -367,58 +343,100 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class QueryAnalysisJobList_Container
+				public QueryAnalysisJobList_Audio Audio
 				{
-
-					private string format;
-
-					public string Format
+					get
 					{
-						get
-						{
-							return format;
-						}
-						set	
-						{
-							format = value;
-						}
+						return audio;
+					}
+					set	
+					{
+						audio = value;
+					}
+				}
+
+				public QueryAnalysisJobList_Container Container
+				{
+					get
+					{
+						return container;
+					}
+					set	
+					{
+						container = value;
 					}
 				}
 
 				public class QueryAnalysisJobList_Video
 				{
 
+					private string bufsize;
+
+					private string degrain;
+
+					private string pixFmt;
+
 					private string codec;
-
-					private string profile;
-
-					private string bitrate;
-
-					private string crf;
-
-					private string width;
 
 					private string height;
 
-					private string fps;
+					private string qscale;
+
+					private string bitrate;
+
+					private string maxrate;
+
+					private string profile;
+
+					private string crf;
 
 					private string gop;
+
+					private string width;
+
+					private string fps;
 
 					private string preset;
 
 					private string scanMode;
 
-					private string bufsize;
-
-					private string maxrate;
-
-					private string pixFmt;
-
-					private string degrain;
-
-					private string qscale;
-
 					private QueryAnalysisJobList_BitrateBnd bitrateBnd;
+
+					public string Bufsize
+					{
+						get
+						{
+							return bufsize;
+						}
+						set	
+						{
+							bufsize = value;
+						}
+					}
+
+					public string Degrain
+					{
+						get
+						{
+							return degrain;
+						}
+						set	
+						{
+							degrain = value;
+						}
+					}
+
+					public string PixFmt
+					{
+						get
+						{
+							return pixFmt;
+						}
+						set	
+						{
+							pixFmt = value;
+						}
+					}
 
 					public string Codec
 					{
@@ -429,54 +447,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						set	
 						{
 							codec = value;
-						}
-					}
-
-					public string Profile
-					{
-						get
-						{
-							return profile;
-						}
-						set	
-						{
-							profile = value;
-						}
-					}
-
-					public string Bitrate
-					{
-						get
-						{
-							return bitrate;
-						}
-						set	
-						{
-							bitrate = value;
-						}
-					}
-
-					public string Crf
-					{
-						get
-						{
-							return crf;
-						}
-						set	
-						{
-							crf = value;
-						}
-					}
-
-					public string Width
-					{
-						get
-						{
-							return width;
-						}
-						set	
-						{
-							width = value;
 						}
 					}
 
@@ -492,15 +462,63 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public string Fps
+					public string Qscale
 					{
 						get
 						{
-							return fps;
+							return qscale;
 						}
 						set	
 						{
-							fps = value;
+							qscale = value;
+						}
+					}
+
+					public string Bitrate
+					{
+						get
+						{
+							return bitrate;
+						}
+						set	
+						{
+							bitrate = value;
+						}
+					}
+
+					public string Maxrate
+					{
+						get
+						{
+							return maxrate;
+						}
+						set	
+						{
+							maxrate = value;
+						}
+					}
+
+					public string Profile
+					{
+						get
+						{
+							return profile;
+						}
+						set	
+						{
+							profile = value;
+						}
+					}
+
+					public string Crf
+					{
+						get
+						{
+							return crf;
+						}
+						set	
+						{
+							crf = value;
 						}
 					}
 
@@ -513,6 +531,30 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						set	
 						{
 							gop = value;
+						}
+					}
+
+					public string Width
+					{
+						get
+						{
+							return width;
+						}
+						set	
+						{
+							width = value;
+						}
+					}
+
+					public string Fps
+					{
+						get
+						{
+							return fps;
+						}
+						set	
+						{
+							fps = value;
 						}
 					}
 
@@ -537,66 +579,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						set	
 						{
 							scanMode = value;
-						}
-					}
-
-					public string Bufsize
-					{
-						get
-						{
-							return bufsize;
-						}
-						set	
-						{
-							bufsize = value;
-						}
-					}
-
-					public string Maxrate
-					{
-						get
-						{
-							return maxrate;
-						}
-						set	
-						{
-							maxrate = value;
-						}
-					}
-
-					public string PixFmt
-					{
-						get
-						{
-							return pixFmt;
-						}
-						set	
-						{
-							pixFmt = value;
-						}
-					}
-
-					public string Degrain
-					{
-						get
-						{
-							return degrain;
-						}
-						set	
-						{
-							degrain = value;
-						}
-					}
-
-					public string Qscale
-					{
-						get
-						{
-							return qscale;
-						}
-						set	
-						{
-							qscale = value;
 						}
 					}
 
@@ -645,94 +627,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class QueryAnalysisJobList_Audio
-				{
-
-					private string codec;
-
-					private string profile;
-
-					private string samplerate;
-
-					private string bitrate;
-
-					private string channels;
-
-					private string qscale;
-
-					public string Codec
-					{
-						get
-						{
-							return codec;
-						}
-						set	
-						{
-							codec = value;
-						}
-					}
-
-					public string Profile
-					{
-						get
-						{
-							return profile;
-						}
-						set	
-						{
-							profile = value;
-						}
-					}
-
-					public string Samplerate
-					{
-						get
-						{
-							return samplerate;
-						}
-						set	
-						{
-							samplerate = value;
-						}
-					}
-
-					public string Bitrate
-					{
-						get
-						{
-							return bitrate;
-						}
-						set	
-						{
-							bitrate = value;
-						}
-					}
-
-					public string Channels
-					{
-						get
-						{
-							return channels;
-						}
-						set	
-						{
-							channels = value;
-						}
-					}
-
-					public string Qscale
-					{
-						get
-						{
-							return qscale;
-						}
-						set	
-						{
-							qscale = value;
-						}
-					}
-				}
-
 				public class QueryAnalysisJobList_TransConfig
 				{
 
@@ -754,9 +648,21 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				public class QueryAnalysisJobList_MuxConfig
 				{
 
+					private QueryAnalysisJobList_Gif gif;
+
 					private QueryAnalysisJobList_Segment segment;
 
-					private QueryAnalysisJobList_Gif gif;
+					public QueryAnalysisJobList_Gif Gif
+					{
+						get
+						{
+							return gif;
+						}
+						set	
+						{
+							gif = value;
+						}
+					}
 
 					public QueryAnalysisJobList_Segment Segment
 					{
@@ -770,15 +676,35 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public QueryAnalysisJobList_Gif Gif
+					public class QueryAnalysisJobList_Gif
 					{
-						get
+
+						private string finalDelay;
+
+						private string loop;
+
+						public string FinalDelay
 						{
-							return gif;
+							get
+							{
+								return finalDelay;
+							}
+							set	
+							{
+								finalDelay = value;
+							}
 						}
-						set	
+
+						public string Loop
 						{
-							gif = value;
+							get
+							{
+								return loop;
+							}
+							set	
+							{
+								loop = value;
+							}
 						}
 					}
 
@@ -799,83 +725,111 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 					}
+				}
 
-					public class QueryAnalysisJobList_Gif
+				public class QueryAnalysisJobList_Audio
+				{
+
+					private string profile;
+
+					private string codec;
+
+					private string samplerate;
+
+					private string qscale;
+
+					private string channels;
+
+					private string bitrate;
+
+					public string Profile
 					{
-
-						private string loop;
-
-						private string finalDelay;
-
-						public string Loop
+						get
 						{
-							get
-							{
-								return loop;
-							}
-							set	
-							{
-								loop = value;
-							}
+							return profile;
 						}
-
-						public string FinalDelay
+						set	
 						{
-							get
-							{
-								return finalDelay;
-							}
-							set	
-							{
-								finalDelay = value;
-							}
+							profile = value;
 						}
 					}
+
+					public string Codec
+					{
+						get
+						{
+							return codec;
+						}
+						set	
+						{
+							codec = value;
+						}
+					}
+
+					public string Samplerate
+					{
+						get
+						{
+							return samplerate;
+						}
+						set	
+						{
+							samplerate = value;
+						}
+					}
+
+					public string Qscale
+					{
+						get
+						{
+							return qscale;
+						}
+						set	
+						{
+							qscale = value;
+						}
+					}
+
+					public string Channels
+					{
+						get
+						{
+							return channels;
+						}
+						set	
+						{
+							channels = value;
+						}
+					}
+
+					public string Bitrate
+					{
+						get
+						{
+							return bitrate;
+						}
+						set	
+						{
+							bitrate = value;
+						}
+					}
 				}
-			}
 
-			public class QueryAnalysisJobList_InputFile
-			{
-
-				private string bucket;
-
-				private string location;
-
-				private string _object;
-
-				public string Bucket
+				public class QueryAnalysisJobList_Container
 				{
-					get
-					{
-						return bucket;
-					}
-					set	
-					{
-						bucket = value;
-					}
-				}
 
-				public string Location
-				{
-					get
-					{
-						return location;
-					}
-					set	
-					{
-						location = value;
-					}
-				}
+					private string format;
 
-				public string _Object
-				{
-					get
+					public string Format
 					{
-						return _object;
-					}
-					set	
-					{
-						_object = value;
+						get
+						{
+							return format;
+						}
+						set	
+						{
+							format = value;
+						}
 					}
 				}
 			}
@@ -914,21 +868,9 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				public class QueryAnalysisJobList_QualityControl
 				{
 
-					private string rateQuality;
-
 					private string methodStreaming;
 
-					public string RateQuality
-					{
-						get
-						{
-							return rateQuality;
-						}
-						set	
-						{
-							rateQuality = value;
-						}
-					}
+					private string rateQuality;
 
 					public string MethodStreaming
 					{
@@ -939,6 +881,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						set	
 						{
 							methodStreaming = value;
+						}
+					}
+
+					public string RateQuality
+					{
+						get
+						{
+							return rateQuality;
+						}
+						set	
+						{
+							rateQuality = value;
 						}
 					}
 				}
@@ -977,25 +931,25 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					public class QueryAnalysisJobList_Crop
 					{
 
-						private string mode;
+						private string top;
 
 						private string width;
 
 						private string height;
 
-						private string top;
-
 						private string left;
 
-						public string Mode
+						private string mode;
+
+						public string Top
 						{
 							get
 							{
-								return mode;
+								return top;
 							}
 							set	
 							{
-								mode = value;
+								top = value;
 							}
 						}
 
@@ -1023,18 +977,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
-						public string Top
-						{
-							get
-							{
-								return top;
-							}
-							set	
-							{
-								top = value;
-							}
-						}
-
 						public string Left
 						{
 							get
@@ -1044,6 +986,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							set	
 							{
 								left = value;
+							}
+						}
+
+						public string Mode
+						{
+							get
+							{
+								return mode;
+							}
+							set	
+							{
+								mode = value;
 							}
 						}
 					}
@@ -1092,6 +1046,52 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						errorCode = value;
+					}
+				}
+			}
+
+			public class QueryAnalysisJobList_InputFile
+			{
+
+				private string _object;
+
+				private string location;
+
+				private string bucket;
+
+				public string _Object
+				{
+					get
+					{
+						return _object;
+					}
+					set	
+					{
+						_object = value;
+					}
+				}
+
+				public string Location
+				{
+					get
+					{
+						return location;
+					}
+					set	
+					{
+						location = value;
+					}
+				}
+
+				public string Bucket
+				{
+					get
+					{
+						return bucket;
+					}
+					set	
+					{
+						bucket = value;
 					}
 				}
 			}

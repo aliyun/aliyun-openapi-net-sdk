@@ -55,6 +55,30 @@ namespace Aliyun.Acs.Core.Http
             ContentType = format;
         }
 
+        public string GetHttpContentString()
+        {
+            string stringContent = string.Empty;
+            if (this.Content != null)
+            {
+                try
+                {
+                    if (string.IsNullOrWhiteSpace(this.Encoding))
+                    {
+                        stringContent = Convert.ToBase64String(this.Content);
+                    }
+                    else
+                    {
+                        stringContent = System.Text.Encoding.GetEncoding(Encoding).GetString(this.Content);
+                    }
+                }
+                catch
+                {
+                    throw new ClientException("Can not parse response due to unsupported encoding.");
+                }
+            }
+            return stringContent;
+        }
+
         private static void ParseHttpResponse(HttpResponse httpResponse, HttpWebResponse httpWebResponse)
         {
             httpResponse.Content = ReadContent(httpResponse, httpWebResponse);

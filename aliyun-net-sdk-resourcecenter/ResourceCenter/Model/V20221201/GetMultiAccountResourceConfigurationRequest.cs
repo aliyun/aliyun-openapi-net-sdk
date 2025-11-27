@@ -36,39 +36,13 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 			Method = MethodType.POST;
         }
 
-		private string resourceId;
-
-		private string resourceType;
-
 		private string accountId;
 
 		private string resourceRegionId;
 
-		public string ResourceId
-		{
-			get
-			{
-				return resourceId;
-			}
-			set	
-			{
-				resourceId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
-			}
-		}
+		private string resourceId;
 
-		public string ResourceType
-		{
-			get
-			{
-				return resourceType;
-			}
-			set	
-			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
-			}
-		}
+		private string resourceType;
 
 		public string AccountId
 		{
@@ -93,6 +67,32 @@ namespace Aliyun.Acs.ResourceCenter.Model.V20221201
 			{
 				resourceRegionId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceRegionId", value);
+			}
+		}
+
+		public string ResourceId
+		{
+			get
+			{
+				return resourceId;
+			}
+			set	
+			{
+				resourceId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
+			}
+		}
+
+		public string ResourceType
+		{
+			get
+			{
+				return resourceType;
+			}
+			set	
+			{
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 

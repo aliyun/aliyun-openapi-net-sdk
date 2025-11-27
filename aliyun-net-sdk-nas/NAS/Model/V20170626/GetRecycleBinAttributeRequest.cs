@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class GetRecycleBinAttributeRequest : RpcAcsRequest<GetRecycleBinAttributeResponse>
     {
         public GetRecycleBinAttributeRequest()
-            : base("NAS", "2017-06-26", "GetRecycleBinAttribute", "NAS", "openAPI")
+            : base("NAS", "2017-06-26", "GetRecycleBinAttribute", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

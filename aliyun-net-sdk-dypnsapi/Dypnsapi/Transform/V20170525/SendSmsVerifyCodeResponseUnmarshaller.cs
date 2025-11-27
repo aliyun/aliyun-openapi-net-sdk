@@ -33,6 +33,7 @@ namespace Aliyun.Acs.Dypnsapi.Transform.V20170525
 			sendSmsVerifyCodeResponse.HttpResponse = _ctx.HttpResponse;
 			sendSmsVerifyCodeResponse.AccessDeniedDetail = _ctx.StringValue("SendSmsVerifyCode.AccessDeniedDetail");
 			sendSmsVerifyCodeResponse.Message = _ctx.StringValue("SendSmsVerifyCode.Message");
+			sendSmsVerifyCodeResponse.RequestId = _ctx.StringValue("SendSmsVerifyCode.RequestId");
 			sendSmsVerifyCodeResponse.Code = _ctx.StringValue("SendSmsVerifyCode.Code");
 			sendSmsVerifyCodeResponse.Success = _ctx.BooleanValue("SendSmsVerifyCode.Success");
 

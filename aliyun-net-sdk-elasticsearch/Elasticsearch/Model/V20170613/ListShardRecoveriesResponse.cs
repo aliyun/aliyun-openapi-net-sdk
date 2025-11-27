@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -60,15 +60,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private string sourceHost;
 
-			private string targetNode;
-
-			private string stage;
+			private string sourceNode;
 
 			private long? filesTotal;
-
-			private string filesPercent;
-
-			private long? bytesTotal;
 
 			private string bytesPercent;
 
@@ -76,9 +70,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private string translogOpsPercent;
 
-			private string sourceNode;
+			private long? bytesTotal;
 
 			private string targetHost;
+
+			private string targetNode;
+
+			private string filesPercent;
+
+			private string stage;
 
 			public string Index
 			{
@@ -104,27 +104,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public string TargetNode
+			public string SourceNode
 			{
 				get
 				{
-					return targetNode;
+					return sourceNode;
 				}
 				set	
 				{
-					targetNode = value;
-				}
-			}
-
-			public string Stage
-			{
-				get
-				{
-					return stage;
-				}
-				set	
-				{
-					stage = value;
+					sourceNode = value;
 				}
 			}
 
@@ -137,30 +125,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					filesTotal = value;
-				}
-			}
-
-			public string FilesPercent
-			{
-				get
-				{
-					return filesPercent;
-				}
-				set	
-				{
-					filesPercent = value;
-				}
-			}
-
-			public long? BytesTotal
-			{
-				get
-				{
-					return bytesTotal;
-				}
-				set	
-				{
-					bytesTotal = value;
 				}
 			}
 
@@ -200,15 +164,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public string SourceNode
+			public long? BytesTotal
 			{
 				get
 				{
-					return sourceNode;
+					return bytesTotal;
 				}
 				set	
 				{
-					sourceNode = value;
+					bytesTotal = value;
 				}
 			}
 
@@ -221,6 +185,42 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					targetHost = value;
+				}
+			}
+
+			public string TargetNode
+			{
+				get
+				{
+					return targetNode;
+				}
+				set	
+				{
+					targetNode = value;
+				}
+			}
+
+			public string FilesPercent
+			{
+				get
+				{
+					return filesPercent;
+				}
+				set	
+				{
+					filesPercent = value;
+				}
+			}
+
+			public string Stage
+			{
+				get
+				{
+					return stage;
+				}
+				set	
+				{
+					stage = value;
 				}
 			}
 		}

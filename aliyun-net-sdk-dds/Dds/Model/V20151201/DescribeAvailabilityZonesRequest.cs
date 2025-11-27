@@ -52,6 +52,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string excludeZoneId;
 
+		private string instanceType;
+
 		private string excludeSecondaryZoneId;
 
 		private string instanceChargeType;
@@ -149,6 +151,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				excludeZoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ExcludeZoneId", value);
+			}
+		}
+
+		public string InstanceType
+		{
+			get
+			{
+				return instanceType;
+			}
+			set	
+			{
+				instanceType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
 			}
 		}
 

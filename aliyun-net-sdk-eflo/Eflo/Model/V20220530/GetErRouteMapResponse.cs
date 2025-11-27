@@ -96,8 +96,6 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 			private string status;
 
-			private string erRouteMapName;
-
 			private string erRouteMapId;
 
 			private string erId;
@@ -125,6 +123,10 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			private string transmissionInstanceOwner;
 
 			private string receptionInstanceOwner;
+
+			private string resourceGroupId;
+
+			private string erRouteMapName;
 
 			public string RegionId
 			{
@@ -195,18 +197,6 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				set	
 				{
 					status = value;
-				}
-			}
-
-			public string ErRouteMapName
-			{
-				get
-				{
-					return erRouteMapName;
-				}
-				set	
-				{
-					erRouteMapName = value;
 				}
 			}
 
@@ -375,6 +365,30 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				set	
 				{
 					receptionInstanceOwner = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public string ErRouteMapName
+			{
+				get
+				{
+					return erRouteMapName;
+				}
+				set	
+				{
+					erRouteMapName = value;
 				}
 			}
 		}

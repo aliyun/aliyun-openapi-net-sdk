@@ -39,29 +39,30 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			List<DescribeDrdsInstancesResponse.DescribeDrdsInstances_Instance> describeDrdsInstancesResponse_instances = new List<DescribeDrdsInstancesResponse.DescribeDrdsInstances_Instance>();
 			for (int i = 0; i < _ctx.Length("DescribeDrdsInstances.Instances.Length"); i++) {
 				DescribeDrdsInstancesResponse.DescribeDrdsInstances_Instance instance = new DescribeDrdsInstancesResponse.DescribeDrdsInstances_Instance();
-				instance.DrdsInstanceId = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].DrdsInstanceId");
-				instance.Type = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].Type");
-				instance.RegionId = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].RegionId");
-				instance.ZoneId = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].ZoneId");
-				instance.Description = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].Description");
-				instance.NetworkType = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].NetworkType");
-				instance.Status = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].Status");
-				instance.CreateTime = _ctx.LongValue("DescribeDrdsInstances.Instances["+ i +"].CreateTime");
-				instance.Version = _ctx.LongValue("DescribeDrdsInstances.Instances["+ i +"].Version");
-				instance.CommodityCode = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].CommodityCode");
-				instance.InstRole = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].InstRole");
-				instance.InstanceSeries = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].InstanceSeries");
-				instance.InstanceSpec = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].InstanceSpec");
-				instance.MasterInstanceId = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].MasterInstanceId");
-				instance.VpcCloudInstanceId = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].VpcCloudInstanceId");
 				instance.VpcId = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].VpcId");
-				instance.ExpireDate = _ctx.LongValue("DescribeDrdsInstances.Instances["+ i +"].ExpireDate");
-				instance.VersionAction = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].VersionAction");
-				instance.Label = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].Label");
+				instance.Status = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].Status");
+				instance.Type = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].Type");
+				instance.CommodityCode = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].CommodityCode");
 				instance.MachineType = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].MachineType");
-				instance.OrderInstanceId = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].OrderInstanceId");
-				instance.ResourceGroupId = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].ResourceGroupId");
+				instance.CreateTime = _ctx.LongValue("DescribeDrdsInstances.Instances["+ i +"].CreateTime");
+				instance.VersionAction = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].VersionAction");
+				instance.InstanceSeries = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].InstanceSeries");
+				instance.NetworkType = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].NetworkType");
+				instance.Label = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].Label");
 				instance.ProductVersion = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].ProductVersion");
+				instance.InstanceSpec = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].InstanceSpec");
+				instance.RegionId = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].RegionId");
+				instance.VpcCloudInstanceId = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].VpcCloudInstanceId");
+				instance.Description = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].Description");
+				instance.Version = _ctx.LongValue("DescribeDrdsInstances.Instances["+ i +"].Version");
+				instance.ResourceGroupId = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].ResourceGroupId");
+				instance.ZoneId = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].ZoneId");
+				instance.DrdsInstanceId = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].DrdsInstanceId");
+				instance.ExpireDate = _ctx.LongValue("DescribeDrdsInstances.Instances["+ i +"].ExpireDate");
+				instance.MasterInstanceId = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].MasterInstanceId");
+				instance.OrderInstanceId = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].OrderInstanceId");
+				instance.InstRole = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].InstRole");
+				instance.Series = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].series");
 
 				List<string> instance_readOnlyDBInstanceIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeDrdsInstances.Instances["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {
@@ -72,11 +73,12 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 				List<DescribeDrdsInstancesResponse.DescribeDrdsInstances_Instance.DescribeDrdsInstances_Vip> instance_vips = new List<DescribeDrdsInstancesResponse.DescribeDrdsInstances_Instance.DescribeDrdsInstances_Vip>();
 				for (int j = 0; j < _ctx.Length("DescribeDrdsInstances.Instances["+ i +"].Vips.Length"); j++) {
 					DescribeDrdsInstancesResponse.DescribeDrdsInstances_Instance.DescribeDrdsInstances_Vip vip = new DescribeDrdsInstancesResponse.DescribeDrdsInstances_Instance.DescribeDrdsInstances_Vip();
-					vip.IP = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].Vips["+ j +"].IP");
-					vip.Port = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].Vips["+ j +"].Port");
-					vip.Type = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].Vips["+ j +"].Type");
 					vip.VpcId = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].Vips["+ j +"].VpcId");
+					vip.Type = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].Vips["+ j +"].Type");
 					vip.VswitchId = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].Vips["+ j +"].VswitchId");
+					vip.Port = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].Vips["+ j +"].Port");
+					vip.IP = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].Vips["+ j +"].IP");
+					vip.Dns = _ctx.StringValue("DescribeDrdsInstances.Instances["+ i +"].Vips["+ j +"].dns");
 
 					instance_vips.Add(vip);
 				}

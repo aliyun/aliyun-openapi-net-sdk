@@ -45,6 +45,7 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 				dataItem.ModifyTime = _ctx.StringValue("ListImportedLogsByProd.Data["+ i +"].ModifyTime");
 				dataItem.Imported = _ctx.IntegerValue("ListImportedLogsByProd.Data["+ i +"].Imported");
 				dataItem.AutoImported = _ctx.IntegerValue("ListImportedLogsByProd.Data["+ i +"].AutoImported");
+				dataItem.LogType = _ctx.IntegerValue("ListImportedLogsByProd.Data["+ i +"].LogType");
 				dataItem.CloudCode = _ctx.StringValue("ListImportedLogsByProd.Data["+ i +"].CloudCode");
 
 				listImportedLogsByProdResponse_data.Add(dataItem);

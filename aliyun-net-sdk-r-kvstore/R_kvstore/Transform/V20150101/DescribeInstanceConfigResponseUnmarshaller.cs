@@ -33,6 +33,12 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			describeInstanceConfigResponse.HttpResponse = _ctx.HttpResponse;
 			describeInstanceConfigResponse.Config = _ctx.StringValue("DescribeInstanceConfig.Config");
 			describeInstanceConfigResponse.RequestId = _ctx.StringValue("DescribeInstanceConfig.RequestId");
+			describeInstanceConfigResponse.ParamReplMode = _ctx.StringValue("DescribeInstanceConfig.ParamReplMode");
+			describeInstanceConfigResponse.ParamReplTimeout = _ctx.StringValue("DescribeInstanceConfig.ParamReplTimeout");
+			describeInstanceConfigResponse.ParamNoLooseSentinelEnabled = _ctx.StringValue("DescribeInstanceConfig.ParamNoLooseSentinelEnabled");
+			describeInstanceConfigResponse.ParamSentinelCompatEnable = _ctx.StringValue("DescribeInstanceConfig.ParamSentinelCompatEnable");
+			describeInstanceConfigResponse.ParamNoLooseSentinelPasswordFreeAccess = _ctx.StringValue("DescribeInstanceConfig.ParamNoLooseSentinelPasswordFreeAccess");
+			describeInstanceConfigResponse.ParamNoLooseSentinelPasswordFreeCommands = _ctx.StringValue("DescribeInstanceConfig.ParamNoLooseSentinelPasswordFreeCommands");
         
 			return describeInstanceConfigResponse;
         }

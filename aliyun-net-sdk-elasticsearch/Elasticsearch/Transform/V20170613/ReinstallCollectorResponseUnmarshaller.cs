@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			ReinstallCollectorResponse reinstallCollectorResponse = new ReinstallCollectorResponse();
 
 			reinstallCollectorResponse.HttpResponse = _ctx.HttpResponse;
-			reinstallCollectorResponse.RequestId = _ctx.StringValue("ReinstallCollector.RequestId");
 			reinstallCollectorResponse.Result = _ctx.BooleanValue("ReinstallCollector.Result");
+			reinstallCollectorResponse.RequestId = _ctx.StringValue("ReinstallCollector.RequestId");
         
 			return reinstallCollectorResponse;
         }

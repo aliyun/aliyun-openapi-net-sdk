@@ -38,18 +38,6 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			result.RegionId = _ctx.StringValue("GetRegionConfiguration.Result.regionId");
 			result.CreateUrl = _ctx.StringValue("GetRegionConfiguration.Result.createUrl");
 
-			List<string> result_zones = new List<string>();
-			for (int i = 0; i < _ctx.Length("GetRegionConfiguration.Result.Zones.Length"); i++) {
-				result_zones.Add(_ctx.StringValue("GetRegionConfiguration.Result.Zones["+ i +"]"));
-			}
-			result.Zones = result_zones;
-
-			List<string> result_esVersions = new List<string>();
-			for (int i = 0; i < _ctx.Length("GetRegionConfiguration.Result.EsVersions.Length"); i++) {
-				result_esVersions.Add(_ctx.StringValue("GetRegionConfiguration.Result.EsVersions["+ i +"]"));
-			}
-			result.EsVersions = result_esVersions;
-
 			List<string> result_masterSpec = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetRegionConfiguration.Result.MasterSpec.Length"); i++) {
 				result_masterSpec.Add(_ctx.StringValue("GetRegionConfiguration.Result.MasterSpec["+ i +"]"));
@@ -62,36 +50,48 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			}
 			result.ClientNodeSpec = result_clientNodeSpec;
 
+			List<string> result_zones = new List<string>();
+			for (int i = 0; i < _ctx.Length("GetRegionConfiguration.Result.Zones.Length"); i++) {
+				result_zones.Add(_ctx.StringValue("GetRegionConfiguration.Result.Zones["+ i +"]"));
+			}
+			result.Zones = result_zones;
+
 			List<string> result_instanceSupportNodes = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetRegionConfiguration.Result.InstanceSupportNodes.Length"); i++) {
 				result_instanceSupportNodes.Add(_ctx.StringValue("GetRegionConfiguration.Result.InstanceSupportNodes["+ i +"]"));
 			}
 			result.InstanceSupportNodes = result_instanceSupportNodes;
 
+			List<string> result_esVersions = new List<string>();
+			for (int i = 0; i < _ctx.Length("GetRegionConfiguration.Result.EsVersions.Length"); i++) {
+				result_esVersions.Add(_ctx.StringValue("GetRegionConfiguration.Result.EsVersions["+ i +"]"));
+			}
+			result.EsVersions = result_esVersions;
+
 			GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_Node node = new GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_Node();
-			node.MinAmount = _ctx.IntegerValue("GetRegionConfiguration.Result.Node.minAmount");
 			node.MaxAmount = _ctx.IntegerValue("GetRegionConfiguration.Result.Node.maxAmount");
+			node.MinAmount = _ctx.IntegerValue("GetRegionConfiguration.Result.Node.minAmount");
 			result.Node = node;
 
 			GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_JvmConfine jvmConfine = new GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_JvmConfine();
 			jvmConfine.Memory = _ctx.IntegerValue("GetRegionConfiguration.Result.JvmConfine.memory");
-
-			List<string> jvmConfine_supportGcs = new List<string>();
-			for (int i = 0; i < _ctx.Length("GetRegionConfiguration.Result.JvmConfine.SupportGcs.Length"); i++) {
-				jvmConfine_supportGcs.Add(_ctx.StringValue("GetRegionConfiguration.Result.JvmConfine.SupportGcs["+ i +"]"));
-			}
-			jvmConfine.SupportGcs = jvmConfine_supportGcs;
 
 			List<string> jvmConfine_supportEsVersions = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetRegionConfiguration.Result.JvmConfine.SupportEsVersions.Length"); i++) {
 				jvmConfine_supportEsVersions.Add(_ctx.StringValue("GetRegionConfiguration.Result.JvmConfine.SupportEsVersions["+ i +"]"));
 			}
 			jvmConfine.SupportEsVersions = jvmConfine_supportEsVersions;
+
+			List<string> jvmConfine_supportGcs = new List<string>();
+			for (int i = 0; i < _ctx.Length("GetRegionConfiguration.Result.JvmConfine.SupportGcs.Length"); i++) {
+				jvmConfine_supportGcs.Add(_ctx.StringValue("GetRegionConfiguration.Result.JvmConfine.SupportGcs["+ i +"]"));
+			}
+			jvmConfine.SupportGcs = jvmConfine_supportGcs;
 			result.JvmConfine = jvmConfine;
 
 			GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_ClientNodeAmountRange clientNodeAmountRange = new GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_ClientNodeAmountRange();
-			clientNodeAmountRange.MinAmount = _ctx.IntegerValue("GetRegionConfiguration.Result.ClientNodeAmountRange.minAmount");
 			clientNodeAmountRange.MaxAmount = _ctx.IntegerValue("GetRegionConfiguration.Result.ClientNodeAmountRange.maxAmount");
+			clientNodeAmountRange.MinAmount = _ctx.IntegerValue("GetRegionConfiguration.Result.ClientNodeAmountRange.minAmount");
 			result.ClientNodeAmountRange = clientNodeAmountRange;
 
 			GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_WarmNodeProperties warmNodeProperties = new GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_WarmNodeProperties();
@@ -110,11 +110,11 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_WarmNodeProperties.GetRegionConfiguration_Disk1> warmNodeProperties_diskList = new List<GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_WarmNodeProperties.GetRegionConfiguration_Disk1>();
 			for (int i = 0; i < _ctx.Length("GetRegionConfiguration.Result.WarmNodeProperties.DiskList.Length"); i++) {
 				GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_WarmNodeProperties.GetRegionConfiguration_Disk1 disk1 = new GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_WarmNodeProperties.GetRegionConfiguration_Disk1();
-				disk1.DiskType = _ctx.StringValue("GetRegionConfiguration.Result.WarmNodeProperties.DiskList["+ i +"].diskType");
-				disk1.MaxSize = _ctx.IntegerValue("GetRegionConfiguration.Result.WarmNodeProperties.DiskList["+ i +"].maxSize");
-				disk1.MinSize = _ctx.IntegerValue("GetRegionConfiguration.Result.WarmNodeProperties.DiskList["+ i +"].minSize");
 				disk1.ScaleLimit = _ctx.IntegerValue("GetRegionConfiguration.Result.WarmNodeProperties.DiskList["+ i +"].scaleLimit");
+				disk1.MinSize = _ctx.IntegerValue("GetRegionConfiguration.Result.WarmNodeProperties.DiskList["+ i +"].minSize");
 				disk1.DiskEncryption = _ctx.BooleanValue("GetRegionConfiguration.Result.WarmNodeProperties.DiskList["+ i +"].diskEncryption");
+				disk1.MaxSize = _ctx.IntegerValue("GetRegionConfiguration.Result.WarmNodeProperties.DiskList["+ i +"].maxSize");
+				disk1.DiskType = _ctx.StringValue("GetRegionConfiguration.Result.WarmNodeProperties.DiskList["+ i +"].diskType");
 
 				List<string> disk1_valueLimitSet2 = new List<string>();
 				for (int j = 0; j < _ctx.Length("GetRegionConfiguration.Result.WarmNodeProperties.DiskList["+ i +"].ValueLimitSet.Length"); j++) {
@@ -157,11 +157,11 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_ElasticNodeProperties.GetRegionConfiguration_Disk8> elasticNodeProperties_diskList7 = new List<GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_ElasticNodeProperties.GetRegionConfiguration_Disk8>();
 			for (int i = 0; i < _ctx.Length("GetRegionConfiguration.Result.ElasticNodeProperties.DiskList.Length"); i++) {
 				GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_ElasticNodeProperties.GetRegionConfiguration_Disk8 disk8 = new GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_ElasticNodeProperties.GetRegionConfiguration_Disk8();
-				disk8.DiskType = _ctx.StringValue("GetRegionConfiguration.Result.ElasticNodeProperties.DiskList["+ i +"].diskType");
-				disk8.MaxSize = _ctx.IntegerValue("GetRegionConfiguration.Result.ElasticNodeProperties.DiskList["+ i +"].maxSize");
-				disk8.MinSize = _ctx.IntegerValue("GetRegionConfiguration.Result.ElasticNodeProperties.DiskList["+ i +"].minSize");
 				disk8.ScaleLimit = _ctx.IntegerValue("GetRegionConfiguration.Result.ElasticNodeProperties.DiskList["+ i +"].scaleLimit");
+				disk8.MinSize = _ctx.IntegerValue("GetRegionConfiguration.Result.ElasticNodeProperties.DiskList["+ i +"].minSize");
 				disk8.DiskEncryption = _ctx.BooleanValue("GetRegionConfiguration.Result.ElasticNodeProperties.DiskList["+ i +"].diskEncryption");
+				disk8.MaxSize = _ctx.IntegerValue("GetRegionConfiguration.Result.ElasticNodeProperties.DiskList["+ i +"].maxSize");
+				disk8.DiskType = _ctx.StringValue("GetRegionConfiguration.Result.ElasticNodeProperties.DiskList["+ i +"].diskType");
 
 				List<string> disk8_valueLimitSet9 = new List<string>();
 				for (int j = 0; j < _ctx.Length("GetRegionConfiguration.Result.ElasticNodeProperties.DiskList["+ i +"].ValueLimitSet.Length"); j++) {
@@ -177,10 +177,10 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_DataDiskListItem> result_dataDiskList = new List<GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_DataDiskListItem>();
 			for (int i = 0; i < _ctx.Length("GetRegionConfiguration.Result.DataDiskList.Length"); i++) {
 				GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_DataDiskListItem dataDiskListItem = new GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_DataDiskListItem();
-				dataDiskListItem.DiskType = _ctx.StringValue("GetRegionConfiguration.Result.DataDiskList["+ i +"].diskType");
+				dataDiskListItem.ScaleLimit = _ctx.IntegerValue("GetRegionConfiguration.Result.DataDiskList["+ i +"].scaleLimit");
 				dataDiskListItem.MinSize = _ctx.IntegerValue("GetRegionConfiguration.Result.DataDiskList["+ i +"].minSize");
 				dataDiskListItem.MaxSize = _ctx.IntegerValue("GetRegionConfiguration.Result.DataDiskList["+ i +"].maxSize");
-				dataDiskListItem.ScaleLimit = _ctx.IntegerValue("GetRegionConfiguration.Result.DataDiskList["+ i +"].scaleLimit");
+				dataDiskListItem.DiskType = _ctx.StringValue("GetRegionConfiguration.Result.DataDiskList["+ i +"].diskType");
 
 				List<string> dataDiskListItem_valueLimitSet = new List<string>();
 				for (int j = 0; j < _ctx.Length("GetRegionConfiguration.Result.DataDiskList["+ i +"].ValueLimitSet.Length"); j++) {
@@ -205,13 +205,13 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_NodeSpecListItem> result_nodeSpecList = new List<GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_NodeSpecListItem>();
 			for (int i = 0; i < _ctx.Length("GetRegionConfiguration.Result.NodeSpecList.Length"); i++) {
 				GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_NodeSpecListItem nodeSpecListItem = new GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_NodeSpecListItem();
-				nodeSpecListItem.CpuCount = _ctx.IntegerValue("GetRegionConfiguration.Result.NodeSpecList["+ i +"].cpuCount");
 				nodeSpecListItem.MemorySize = _ctx.IntegerValue("GetRegionConfiguration.Result.NodeSpecList["+ i +"].memorySize");
-				nodeSpecListItem.Enable = _ctx.BooleanValue("GetRegionConfiguration.Result.NodeSpecList["+ i +"].enable");
-				nodeSpecListItem.Spec = _ctx.StringValue("GetRegionConfiguration.Result.NodeSpecList["+ i +"].spec");
+				nodeSpecListItem.CpuCount = _ctx.IntegerValue("GetRegionConfiguration.Result.NodeSpecList["+ i +"].cpuCount");
 				nodeSpecListItem.DiskType = _ctx.StringValue("GetRegionConfiguration.Result.NodeSpecList["+ i +"].diskType");
+				nodeSpecListItem.Spec = _ctx.StringValue("GetRegionConfiguration.Result.NodeSpecList["+ i +"].spec");
 				nodeSpecListItem.Disk = _ctx.IntegerValue("GetRegionConfiguration.Result.NodeSpecList["+ i +"].disk");
 				nodeSpecListItem.SpecGroupType = _ctx.StringValue("GetRegionConfiguration.Result.NodeSpecList["+ i +"].specGroupType");
+				nodeSpecListItem.Enable = _ctx.BooleanValue("GetRegionConfiguration.Result.NodeSpecList["+ i +"].enable");
 
 				result_nodeSpecList.Add(nodeSpecListItem);
 			}
@@ -220,10 +220,10 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_Disk> result_clientNodeDiskList = new List<GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_Disk>();
 			for (int i = 0; i < _ctx.Length("GetRegionConfiguration.Result.ClientNodeDiskList.Length"); i++) {
 				GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_Disk disk = new GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_Disk();
-				disk.DiskType = _ctx.StringValue("GetRegionConfiguration.Result.ClientNodeDiskList["+ i +"].diskType");
+				disk.ScaleLimit = _ctx.IntegerValue("GetRegionConfiguration.Result.ClientNodeDiskList["+ i +"].scaleLimit");
 				disk.MinSize = _ctx.IntegerValue("GetRegionConfiguration.Result.ClientNodeDiskList["+ i +"].minSize");
 				disk.MaxSize = _ctx.IntegerValue("GetRegionConfiguration.Result.ClientNodeDiskList["+ i +"].maxSize");
-				disk.ScaleLimit = _ctx.IntegerValue("GetRegionConfiguration.Result.ClientNodeDiskList["+ i +"].scaleLimit");
+				disk.DiskType = _ctx.StringValue("GetRegionConfiguration.Result.ClientNodeDiskList["+ i +"].diskType");
 
 				result_clientNodeDiskList.Add(disk);
 			}
@@ -232,10 +232,10 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_Disk> result_masterDiskList = new List<GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_Disk>();
 			for (int i = 0; i < _ctx.Length("GetRegionConfiguration.Result.MasterDiskList.Length"); i++) {
 				GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_Disk disk = new GetRegionConfigurationResponse.GetRegionConfiguration_Result.GetRegionConfiguration_Disk();
-				disk.DiskType = _ctx.StringValue("GetRegionConfiguration.Result.MasterDiskList["+ i +"].diskType");
+				disk.ScaleLimit = _ctx.IntegerValue("GetRegionConfiguration.Result.MasterDiskList["+ i +"].scaleLimit");
 				disk.MinSize = _ctx.IntegerValue("GetRegionConfiguration.Result.MasterDiskList["+ i +"].minSize");
 				disk.MaxSize = _ctx.IntegerValue("GetRegionConfiguration.Result.MasterDiskList["+ i +"].maxSize");
-				disk.ScaleLimit = _ctx.IntegerValue("GetRegionConfiguration.Result.MasterDiskList["+ i +"].scaleLimit");
+				disk.DiskType = _ctx.StringValue("GetRegionConfiguration.Result.MasterDiskList["+ i +"].diskType");
 
 				result_masterDiskList.Add(disk);
 			}

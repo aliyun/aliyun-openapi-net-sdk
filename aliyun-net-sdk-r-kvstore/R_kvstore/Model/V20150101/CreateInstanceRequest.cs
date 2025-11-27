@@ -46,6 +46,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string secondaryZoneId;
 
+		private int? slaveReadOnlyCount;
+
 		private string couponNo;
 
 		private string networkType;
@@ -88,6 +90,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string zoneId;
 
+		private int? replicaCount;
+
 		private string appendonly;
 
 		private string nodeType;
@@ -112,6 +116,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private bool? globalInstance;
 
+		private string recoverConfigMode;
+
 		private string token;
 
 		private string globalInstanceId;
@@ -123,6 +129,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private int? readOnlyCount;
 
 		private string chargeType;
+
+		private int? slaveReplicaCount;
 
 		private string clusterBackupId;
 
@@ -162,6 +170,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				secondaryZoneId = value;
 				DictionaryUtil.Add(QueryParameters, "SecondaryZoneId", value);
+			}
+		}
+
+		public int? SlaveReadOnlyCount
+		{
+			get
+			{
+				return slaveReadOnlyCount;
+			}
+			set	
+			{
+				slaveReadOnlyCount = value;
+				DictionaryUtil.Add(QueryParameters, "SlaveReadOnlyCount", value.ToString());
 			}
 		}
 
@@ -446,6 +467,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public int? ReplicaCount
+		{
+			get
+			{
+				return replicaCount;
+			}
+			set	
+			{
+				replicaCount = value;
+				DictionaryUtil.Add(QueryParameters, "ReplicaCount", value.ToString());
+			}
+		}
+
 		public string Appendonly
 		{
 			get
@@ -602,6 +636,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string RecoverConfigMode
+		{
+			get
+			{
+				return recoverConfigMode;
+			}
+			set	
+			{
+				recoverConfigMode = value;
+				DictionaryUtil.Add(QueryParameters, "RecoverConfigMode", value);
+			}
+		}
+
 		public string Token
 		{
 			get
@@ -677,6 +724,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				chargeType = value;
 				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
+			}
+		}
+
+		public int? SlaveReplicaCount
+		{
+			get
+			{
+				return slaveReplicaCount;
+			}
+			set	
+			{
+				slaveReplicaCount = value;
+				DictionaryUtil.Add(QueryParameters, "SlaveReplicaCount", value.ToString());
 			}
 		}
 

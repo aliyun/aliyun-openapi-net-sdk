@@ -174,6 +174,14 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 			private string domainType;
 
+			private string resourceGroupId;
+
+			private string ccompany;
+
+			private string chgholderStatus;
+
+			private List<QueryDomainList_TagItem> tag;
+
 			public string DomainAuditStatus
 			{
 				get
@@ -375,6 +383,86 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					domainType = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public string Ccompany
+			{
+				get
+				{
+					return ccompany;
+				}
+				set	
+				{
+					ccompany = value;
+				}
+			}
+
+			public string ChgholderStatus
+			{
+				get
+				{
+					return chgholderStatus;
+				}
+				set	
+				{
+					chgholderStatus = value;
+				}
+			}
+
+			public List<QueryDomainList_TagItem> Tag
+			{
+				get
+				{
+					return tag;
+				}
+				set	
+				{
+					tag = value;
+				}
+			}
+
+			public class QueryDomainList_TagItem
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}

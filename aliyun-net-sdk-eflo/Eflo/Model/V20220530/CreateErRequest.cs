@@ -41,6 +41,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private string masterZoneId;
 
+		private string resourceGroupId;
+
 		public string Description
 		{
 			get
@@ -77,6 +79,19 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				masterZoneId = value;
 				DictionaryUtil.Add(BodyParameters, "MasterZoneId", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(BodyParameters, "ResourceGroupId", value);
 			}
 		}
 

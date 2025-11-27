@@ -41,15 +41,15 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 
 		private string dBInstanceName;
 
-		private long? endTime;
-
 		private long? startTime;
-
-		private string destCrossRegion;
 
 		private int? pageNumber;
 
 		private int? pageSize;
+
+		private long? endTime;
+
+		private string destCrossRegion;
 
 		public string DBInstanceName
 		{
@@ -64,19 +64,6 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			}
 		}
 
-		public long? EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
-			}
-		}
-
 		public long? StartTime
 		{
 			get
@@ -87,19 +74,6 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
-			}
-		}
-
-		public string DestCrossRegion
-		{
-			get
-			{
-				return destCrossRegion;
-			}
-			set	
-			{
-				destCrossRegion = value;
-				DictionaryUtil.Add(QueryParameters, "DestCrossRegion", value);
 			}
 		}
 
@@ -126,6 +100,32 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public long? EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
+			}
+		}
+
+		public string DestCrossRegion
+		{
+			get
+			{
+				return destCrossRegion;
+			}
+			set	
+			{
+				destCrossRegion = value;
+				DictionaryUtil.Add(QueryParameters, "DestCrossRegion", value);
 			}
 		}
 

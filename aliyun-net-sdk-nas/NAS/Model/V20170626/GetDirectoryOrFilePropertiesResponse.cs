@@ -76,6 +76,8 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private string inode;
 
+			private bool? hasArchiveFile;
+
 			public string Type
 			{
 				get
@@ -193,6 +195,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					inode = value;
+				}
+			}
+
+			public bool? HasArchiveFile
+			{
+				get
+				{
+					return hasArchiveFile;
+				}
+				set	
+				{
+					hasArchiveFile = value;
 				}
 			}
 		}

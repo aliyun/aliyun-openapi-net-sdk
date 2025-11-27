@@ -30,6 +30,14 @@ namespace Aliyun.Acs.Core.Tests.Units
         private static readonly string slash = EnvironmentUtil.GetOSSlash();
         private static readonly string homePath = EnvironmentUtil.GetHomePath();
 
+        private static readonly string Slash = Environment.OSVersion.Platform == PlatformID.Unix ? "/" : "\\";
+        private static readonly string HomePath = Environment.CurrentDirectory;
+        
+        public static string GetOIDCTokenFilePath()
+        {
+            return HomePath + Slash + "OIDCToken.txt";
+        }
+
         public static void RemoveEnvironmentValue()
         {
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_ACCESS_KEY_ID", null);
@@ -64,6 +72,11 @@ namespace Aliyun.Acs.Core.Tests.Units
         public static string GetIniFilePath()
         {
             return Directory.GetCurrentDirectory() + slash + "credentials.ini";
+        }
+
+        public static string GetTestIniFilePath()
+        {
+            return HomePath + Slash + "configTest.ini";
         }
 
         public static void DeleteIniFile()

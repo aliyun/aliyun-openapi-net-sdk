@@ -131,6 +131,8 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 				private long? entityId;
 
+				private string entityType;
+
 				private string opcodeMap;
 
 				private string entityInfo;
@@ -154,6 +156,18 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 					set	
 					{
 						entityId = value;
+					}
+				}
+
+				public string EntityType
+				{
+					get
+					{
+						return entityType;
+					}
+					set	
+					{
+						entityType = value;
 					}
 				}
 
@@ -256,7 +270,13 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 					private string name;
 
+					private string uuid;
+
 					private bool? wafPlaybook;
+
+					private string available;
+
+					private List<string> paramConfig;
 
 					public string OpCode
 					{
@@ -330,6 +350,18 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 						}
 					}
 
+					public string Uuid
+					{
+						get
+						{
+							return uuid;
+						}
+						set	
+						{
+							uuid = value;
+						}
+					}
+
 					public bool? WafPlaybook
 					{
 						get
@@ -339,6 +371,30 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 						set	
 						{
 							wafPlaybook = value;
+						}
+					}
+
+					public string Available
+					{
+						get
+						{
+							return available;
+						}
+						set	
+						{
+							available = value;
+						}
+					}
+
+					public List<string> ParamConfig
+					{
+						get
+						{
+							return paramConfig;
+						}
+						set	
+						{
+							paramConfig = value;
 						}
 					}
 				}

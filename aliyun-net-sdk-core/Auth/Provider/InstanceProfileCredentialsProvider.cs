@@ -17,6 +17,7 @@
  * under the License.
  */
 
+using System;
 using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Utils;
 
@@ -38,6 +39,23 @@ namespace Aliyun.Acs.Core.Auth
             fetcher = new ECSMetadataServiceCredentialsFetcher();
             fetcher.SetRoleName(roleName);
         }
+
+        private InstanceProfileCredentialsProvider(Builder builder)
+        {
+            if (AuthUtils.DisableECSMetaData)
+            {
+                throw new ArgumentException("IMDS credentials is disabled.");
+            }
+
+            this.roleName = builder.roleName ?? AuthUtils.EnvironmentEcsMetaDataDisabled;
+            var disableIMDSv1 = builder.disableIMDSv1 ?? AuthUtils.DisableECSIMDSv1;
+            this.fetcher = new ECSMetadataServiceCredentialsFetcher(
+                roleName,
+                disableIMDSv1,
+                builder.connectTimeout,
+                builder.readTimeout);
+        }
+
 
         public virtual AlibabaCloudCredentials GetCredentials()
         {
@@ -63,15 +81,18 @@ namespace Aliyun.Acs.Core.Auth
             }
             catch (ClientException ex)
             {
-                if (ex.ErrorCode.Equals("SDK.SessionTokenExpired") &&
-                    ex.ErrorMessage.Equals("Current session token has expired."))
+                if (ex.ErrorCode != null && ex.ErrorCode.Equals("SDK.SessionTokenExpired") &&
+                    ex.ErrorMessage != null && ex.ErrorMessage.Equals("Current session token has expired."))
                 {
                     CommonLog.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
                     throw new ClientException(ex.ErrorCode, ex.ErrorMessage);
                 }
 
                 // Use the current expiring session token and wait for next round
-                credentials.SetLastFailedRefreshTime();
+                if (credentials != null)
+                {
+                    credentials.SetLastFailedRefreshTime();
+                }
             }
 
             return credentials;
@@ -81,6 +102,43 @@ namespace Aliyun.Acs.Core.Auth
         {
             this.fetcher = fetcher;
             this.fetcher.SetRoleName(roleName);
+        }
+
+        public class Builder
+        {
+            internal string roleName;
+            internal bool? disableIMDSv1;
+            internal int? connectTimeout;
+            internal int? readTimeout;
+
+            public Builder RoleName(string roleName)
+            {
+                this.roleName = roleName;
+                return this;
+            }
+
+            public Builder DisableIMDSv1(bool? disableIMDSv1)
+            {
+                this.disableIMDSv1 = disableIMDSv1;
+                return this;
+            }
+
+            public Builder ConnectTimeout(int? connectTimeout)
+            {
+                this.connectTimeout = connectTimeout;
+                return this;
+            }
+
+            public Builder ReadTimeout(int? readTimeout)
+            {
+                this.readTimeout = readTimeout;
+                return this;
+            }
+
+            public InstanceProfileCredentialsProvider Build()
+            {
+                return new InstanceProfileCredentialsProvider(this);
+            }
         }
     }
 }

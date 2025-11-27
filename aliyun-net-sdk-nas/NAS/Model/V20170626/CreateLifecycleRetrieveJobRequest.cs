@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class CreateLifecycleRetrieveJobRequest : RpcAcsRequest<CreateLifecycleRetrieveJobResponse>
     {
         public CreateLifecycleRetrieveJobRequest()
-            : base("NAS", "2017-06-26", "CreateLifecycleRetrieveJob", "NAS", "openAPI")
+            : base("NAS", "2017-06-26", "CreateLifecycleRetrieveJob", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,9 +40,24 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			Method = MethodType.POST;
         }
 
+		private string storageType;
+
 		private string fileSystemId;
 
 		private List<string> pathss = new List<string>(){ };
+
+		public string StorageType
+		{
+			get
+			{
+				return storageType;
+			}
+			set	
+			{
+				storageType = value;
+				DictionaryUtil.Add(QueryParameters, "StorageType", value);
+			}
+		}
 
 		public string FileSystemId
 		{

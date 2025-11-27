@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
@@ -56,41 +56,31 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		public class UpdatePipeline_Pipeline
 		{
 
-			private string id;
-
-			private string name;
+			private string speed;
 
 			private string state;
 
-			private string speed;
-
-			private long? quotaAllocate;
+			private string name;
 
 			private string role;
 
+			private string id;
+
+			private long? quotaAllocate;
+
 			private UpdatePipeline_NotifyConfig notifyConfig;
 
-			public string Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+			private UpdatePipeline_ExtendConfig extendConfig;
 
-			public string Name
+			public string Speed
 			{
 				get
 				{
-					return name;
+					return speed;
 				}
 				set	
 				{
-					name = value;
+					speed = value;
 				}
 			}
 
@@ -106,27 +96,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public string Speed
+			public string Name
 			{
 				get
 				{
-					return speed;
+					return name;
 				}
 				set	
 				{
-					speed = value;
-				}
-			}
-
-			public long? QuotaAllocate
-			{
-				get
-				{
-					return quotaAllocate;
-				}
-				set	
-				{
-					quotaAllocate = value;
+					name = value;
 				}
 			}
 
@@ -142,6 +120,30 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public long? QuotaAllocate
+			{
+				get
+				{
+					return quotaAllocate;
+				}
+				set	
+				{
+					quotaAllocate = value;
+				}
+			}
+
 			public UpdatePipeline_NotifyConfig NotifyConfig
 			{
 				get
@@ -154,26 +156,38 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
+			public UpdatePipeline_ExtendConfig ExtendConfig
+			{
+				get
+				{
+					return extendConfig;
+				}
+				set	
+				{
+					extendConfig = value;
+				}
+			}
+
 			public class UpdatePipeline_NotifyConfig
 			{
 
-				private string topic;
+				private string mqTopic;
 
 				private string queueName;
 
-				private string mqTopic;
-
 				private string mqTag;
 
-				public string Topic
+				private string topic;
+
+				public string MqTopic
 				{
 					get
 					{
-						return topic;
+						return mqTopic;
 					}
 					set	
 					{
-						topic = value;
+						mqTopic = value;
 					}
 				}
 
@@ -189,18 +203,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public string MqTopic
-				{
-					get
-					{
-						return mqTopic;
-					}
-					set	
-					{
-						mqTopic = value;
-					}
-				}
-
 				public string MqTag
 				{
 					get
@@ -210,6 +212,64 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						mqTag = value;
+					}
+				}
+
+				public string Topic
+				{
+					get
+					{
+						return topic;
+					}
+					set	
+					{
+						topic = value;
+					}
+				}
+			}
+
+			public class UpdatePipeline_ExtendConfig
+			{
+
+				private bool? isBoostNew;
+
+				private int? maxMultiSpeed;
+
+				private string multiSpeedDowngradePolicy;
+
+				public bool? IsBoostNew
+				{
+					get
+					{
+						return isBoostNew;
+					}
+					set	
+					{
+						isBoostNew = value;
+					}
+				}
+
+				public int? MaxMultiSpeed
+				{
+					get
+					{
+						return maxMultiSpeed;
+					}
+					set	
+					{
+						maxMultiSpeed = value;
+					}
+				}
+
+				public string MultiSpeedDowngradePolicy
+				{
+					get
+					{
+						return multiSpeedDowngradePolicy;
+					}
+					set	
+					{
+						multiSpeedDowngradePolicy = value;
 					}
 				}
 			}

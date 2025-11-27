@@ -82,6 +82,8 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 
 		private int? usedTime;
 
+		private string dnStorageSpace;
+
 		private string primaryZone;
 
 		private string series;
@@ -360,6 +362,19 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			{
 				usedTime = value;
 				DictionaryUtil.Add(QueryParameters, "UsedTime", value.ToString());
+			}
+		}
+
+		public string DnStorageSpace
+		{
+			get
+			{
+				return dnStorageSpace;
+			}
+			set	
+			{
+				dnStorageSpace = value;
+				DictionaryUtil.Add(QueryParameters, "DnStorageSpace", value);
 			}
 		}
 

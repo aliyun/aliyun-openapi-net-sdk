@@ -18,8 +18,11 @@
  */
 
 using System;
+using System.Web;
+using System.Text;
 using System.Globalization;
 using System.Security.Cryptography;
+using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Http;
 
@@ -42,12 +45,12 @@ namespace Aliyun.Acs.Core.Utils
                 datetime = DateTime.UtcNow;
             }
 
-            return datetime.ToUniversalTime().GetDateTimeFormats('r') [0];
+            return datetime.ToUniversalTime().GetDateTimeFormats('r')[0];
         }
 
         public static string Md5Sum(byte[] buff)
         {
-            using(MD5 md5 = new MD5CryptoServiceProvider())
+            using (MD5 md5 = new MD5CryptoServiceProvider())
             {
                 var output = md5.ComputeHash(buff);
                 return BitConverter.ToString(output).Replace("-", "");
@@ -56,7 +59,7 @@ namespace Aliyun.Acs.Core.Utils
 
         public static string Md5SumAndBase64(byte[] buff)
         {
-            using(MD5 md5 = new MD5CryptoServiceProvider())
+            using (MD5 md5 = new MD5CryptoServiceProvider())
             {
                 var output = md5.ComputeHash(buff);
                 // string md5Str = BitConverter.ToString(output).Replace("-", "");
@@ -141,6 +144,49 @@ namespace Aliyun.Acs.Core.Utils
                         return null;
                     }
             }
+        }
+
+        public static byte[] GetFormData(Dictionary<string, string> parameters)
+        {
+            var result = new StringBuilder();
+            var first = true;
+
+            foreach (var entry in parameters)
+            {
+                if (string.IsNullOrEmpty(entry.Value))
+                {
+                    continue;
+                }
+                if (first)
+                {
+                    first = false;
+                }
+                else
+                {
+                    result.Append("&");
+                }
+                result.Append(HttpUtility.UrlEncode(entry.Key));
+                result.Append("=");
+                result.Append(HttpUtility.UrlEncode(entry.Value));
+            }
+            return Encoding.UTF8.GetBytes(result.ToString());
+        }
+
+
+        public static string ValidateEnvNotNull(string obj, string envVariableName, string paramName, string message)
+        {
+            if (obj == null)
+            {
+                if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable(envVariableName)))
+                {
+                    throw new ArgumentNullException(paramName, message);
+                }
+                else
+                {
+                    return Environment.GetEnvironmentVariable(envVariableName);
+                }
+            }
+            return obj;
         }
     }
 }

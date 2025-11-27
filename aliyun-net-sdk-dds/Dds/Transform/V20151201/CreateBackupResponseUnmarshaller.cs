@@ -33,6 +33,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			createBackupResponse.HttpResponse = _ctx.HttpResponse;
 			createBackupResponse.BackupId = _ctx.StringValue("CreateBackup.BackupId");
 			createBackupResponse.RequestId = _ctx.StringValue("CreateBackup.RequestId");
+			createBackupResponse.BackupJobId = _ctx.StringValue("CreateBackup.BackupJobId");
         
 			return createBackupResponse;
         }

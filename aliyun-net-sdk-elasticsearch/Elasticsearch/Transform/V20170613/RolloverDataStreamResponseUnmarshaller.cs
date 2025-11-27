@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			RolloverDataStreamResponse rolloverDataStreamResponse = new RolloverDataStreamResponse();
 
 			rolloverDataStreamResponse.HttpResponse = _ctx.HttpResponse;
-			rolloverDataStreamResponse.RequestId = _ctx.StringValue("RolloverDataStream.RequestId");
 			rolloverDataStreamResponse.Result = _ctx.BooleanValue("RolloverDataStream.Result");
+			rolloverDataStreamResponse.RequestId = _ctx.StringValue("RolloverDataStream.RequestId");
         
 			return rolloverDataStreamResponse;
         }

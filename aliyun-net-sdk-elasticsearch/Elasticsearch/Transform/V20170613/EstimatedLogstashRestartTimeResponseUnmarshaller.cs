@@ -34,8 +34,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			estimatedLogstashRestartTimeResponse.RequestId = _ctx.StringValue("EstimatedLogstashRestartTime.RequestId");
 
 			EstimatedLogstashRestartTimeResponse.EstimatedLogstashRestartTime_Result result = new EstimatedLogstashRestartTimeResponse.EstimatedLogstashRestartTime_Result();
-			result._Value = _ctx.LongValue("EstimatedLogstashRestartTime.Result.value");
 			result.Unit = _ctx.StringValue("EstimatedLogstashRestartTime.Result.unit");
+			result._Value = _ctx.LongValue("EstimatedLogstashRestartTime.Result.value");
 			estimatedLogstashRestartTimeResponse.Result = result;
         
 			return estimatedLogstashRestartTimeResponse;

@@ -35,11 +35,62 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			Method = MethodType.POST;
         }
 
+		private long? roleFor;
+
+		private long? startTime;
+
+		private string verifyType;
+
 		private int? pageSize;
+
+		private int? roleType;
 
 		private long? id;
 
+		private long? endTime;
+
 		private int? currentPage;
+
+		private string detectionRuleId;
+
+		public long? RoleFor
+		{
+			get
+			{
+				return roleFor;
+			}
+			set	
+			{
+				roleFor = value;
+				DictionaryUtil.Add(BodyParameters, "RoleFor", value.ToString());
+			}
+		}
+
+		public long? StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(BodyParameters, "StartTime", value.ToString());
+			}
+		}
+
+		public string VerifyType
+		{
+			get
+			{
+				return verifyType;
+			}
+			set	
+			{
+				verifyType = value;
+				DictionaryUtil.Add(BodyParameters, "VerifyType", value);
+			}
+		}
 
 		public int? PageSize
 		{
@@ -51,6 +102,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			{
 				pageSize = value;
 				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public int? RoleType
+		{
+			get
+			{
+				return roleType;
+			}
+			set	
+			{
+				roleType = value;
+				DictionaryUtil.Add(BodyParameters, "RoleType", value.ToString());
 			}
 		}
 
@@ -67,6 +131,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			}
 		}
 
+		public long? EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(BodyParameters, "EndTime", value.ToString());
+			}
+		}
+
 		public int? CurrentPage
 		{
 			get
@@ -77,6 +154,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			{
 				currentPage = value;
 				DictionaryUtil.Add(BodyParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public string DetectionRuleId
+		{
+			get
+			{
+				return detectionRuleId;
+			}
+			set	
+			{
+				detectionRuleId = value;
+				DictionaryUtil.Add(BodyParameters, "DetectionRuleId", value);
 			}
 		}
 

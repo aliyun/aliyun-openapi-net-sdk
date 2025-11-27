@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class ListLifecycleRetrieveJobsRequest : RpcAcsRequest<ListLifecycleRetrieveJobsResponse>
     {
         public ListLifecycleRetrieveJobsRequest()
-            : base("NAS", "2017-06-26", "ListLifecycleRetrieveJobs", "NAS", "openAPI")
+            : base("NAS", "2017-06-26", "ListLifecycleRetrieveJobs", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,6 +41,8 @@ namespace Aliyun.Acs.NAS.Model.V20170626
         }
 
 		private int? pageNumber;
+
+		private string storageType;
 
 		private int? pageSize;
 
@@ -58,6 +60,19 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string StorageType
+		{
+			get
+			{
+				return storageType;
+			}
+			set	
+			{
+				storageType = value;
+				DictionaryUtil.Add(QueryParameters, "StorageType", value);
 			}
 		}
 

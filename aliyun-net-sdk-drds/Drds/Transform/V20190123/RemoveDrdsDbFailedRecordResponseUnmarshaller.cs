@@ -32,8 +32,8 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 
 			removeDrdsDbFailedRecordResponse.HttpResponse = _ctx.HttpResponse;
 			removeDrdsDbFailedRecordResponse.RequestId = _ctx.StringValue("RemoveDrdsDbFailedRecord.RequestId");
-			removeDrdsDbFailedRecordResponse.Success = _ctx.BooleanValue("RemoveDrdsDbFailedRecord.Success");
 			removeDrdsDbFailedRecordResponse.Result = _ctx.BooleanValue("RemoveDrdsDbFailedRecord.Result");
+			removeDrdsDbFailedRecordResponse.Success = _ctx.BooleanValue("RemoveDrdsDbFailedRecord.Success");
         
 			return removeDrdsDbFailedRecordResponse;
         }

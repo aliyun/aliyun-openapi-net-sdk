@@ -31,9 +31,9 @@ namespace Aliyun.Acs.ResourceCenter.Transform.V20221201
 			GetMultiAccountResourceCenterServiceStatusResponse getMultiAccountResourceCenterServiceStatusResponse = new GetMultiAccountResourceCenterServiceStatusResponse();
 
 			getMultiAccountResourceCenterServiceStatusResponse.HttpResponse = _ctx.HttpResponse;
+			getMultiAccountResourceCenterServiceStatusResponse.InitialStatus = _ctx.StringValue("GetMultiAccountResourceCenterServiceStatus.InitialStatus");
 			getMultiAccountResourceCenterServiceStatusResponse.RequestId = _ctx.StringValue("GetMultiAccountResourceCenterServiceStatus.RequestId");
 			getMultiAccountResourceCenterServiceStatusResponse.ServiceStatus = _ctx.StringValue("GetMultiAccountResourceCenterServiceStatus.ServiceStatus");
-			getMultiAccountResourceCenterServiceStatusResponse.InitialStatus = _ctx.StringValue("GetMultiAccountResourceCenterServiceStatus.InitialStatus");
         
 			return getMultiAccountResourceCenterServiceStatusResponse;
         }

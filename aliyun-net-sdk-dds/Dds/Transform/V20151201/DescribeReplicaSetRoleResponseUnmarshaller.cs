@@ -43,6 +43,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				replicaSet.ConnectionDomain = _ctx.StringValue("DescribeReplicaSetRole.ReplicaSets["+ i +"].ConnectionDomain");
 				replicaSet.NetworkType = _ctx.StringValue("DescribeReplicaSetRole.ReplicaSets["+ i +"].NetworkType");
 				replicaSet.RoleId = _ctx.StringValue("DescribeReplicaSetRole.ReplicaSets["+ i +"].RoleId");
+				replicaSet.ConnectionType = _ctx.StringValue("DescribeReplicaSetRole.ReplicaSets["+ i +"].ConnectionType");
 
 				describeReplicaSetRoleResponse_replicaSets.Add(replicaSet);
 			}

@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.schedulerx2;
 using Aliyun.Acs.schedulerx2.Transform;
 using Aliyun.Acs.schedulerx2.Transform.V20190430;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
     public class UpdateJobRequest : RpcAcsRequest<UpdateJobResponse>
     {
         public UpdateJobRequest()
-            : base("schedulerx2", "2019-04-30", "UpdateJob")
+            : base("schedulerx2", "2019-04-30", "UpdateJob", "schedulerx2", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -56,6 +55,8 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 		private int? dataOffset;
 
 		private int? dispatcherSize;
+
+		private int? priority;
 
 		private int? taskAttemptInterval;
 
@@ -214,6 +215,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				dispatcherSize = value;
 				DictionaryUtil.Add(BodyParameters, "DispatcherSize", value.ToString());
+			}
+		}
+
+		public int? Priority
+		{
+			get
+			{
+				return priority;
+			}
+			set	
+			{
+				priority = value;
+				DictionaryUtil.Add(QueryParameters, "Priority", value.ToString());
 			}
 		}
 

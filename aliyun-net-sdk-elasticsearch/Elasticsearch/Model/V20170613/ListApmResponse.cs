@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -27,7 +27,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private string requestId;
 
-		private List<ListApm_返回结果> result;
+		private List<ListApm__Object> result;
 
 		private ListApm_Headers headers;
 
@@ -43,7 +43,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public List<ListApm_返回结果> Result
+		public List<ListApm__Object> Result
 		{
 			get
 			{
@@ -67,7 +67,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public class ListApm_返回结果
+		public class ListApm__Object
 		{
 
 			private string createdAt;

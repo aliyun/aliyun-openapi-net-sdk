@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? dBInstanceStorage;
 
+		private bool? autoCreateProxy;
+
 		private string engineVersion;
 
 		private bool? deletionProtection;
@@ -134,6 +136,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceStorage = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceStorage", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "AutoCreateProxy")]
+		public bool? AutoCreateProxy
+		{
+			get
+			{
+				return autoCreateProxy;
+			}
+			set	
+			{
+				autoCreateProxy = value;
+				DictionaryUtil.Add(QueryParameters, "AutoCreateProxy", value.ToString());
 			}
 		}
 

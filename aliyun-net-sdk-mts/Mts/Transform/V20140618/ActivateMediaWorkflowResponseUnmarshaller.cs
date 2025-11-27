@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 {
     public class ActivateMediaWorkflowResponseUnmarshaller
     {
-        public static ActivateMediaWorkflowResponse Unmarshall(UnmarshallerContext context)
+        public static ActivateMediaWorkflowResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ActivateMediaWorkflowResponse activateMediaWorkflowResponse = new ActivateMediaWorkflowResponse();
 
-			activateMediaWorkflowResponse.HttpResponse = context.HttpResponse;
-			activateMediaWorkflowResponse.RequestId = context.StringValue("ActivateMediaWorkflow.RequestId");
+			activateMediaWorkflowResponse.HttpResponse = _ctx.HttpResponse;
+			activateMediaWorkflowResponse.RequestId = _ctx.StringValue("ActivateMediaWorkflow.RequestId");
 
 			ActivateMediaWorkflowResponse.ActivateMediaWorkflow_MediaWorkflow mediaWorkflow = new ActivateMediaWorkflowResponse.ActivateMediaWorkflow_MediaWorkflow();
-			mediaWorkflow.MediaWorkflowId = context.StringValue("ActivateMediaWorkflow.MediaWorkflow.MediaWorkflowId");
-			mediaWorkflow.Name = context.StringValue("ActivateMediaWorkflow.MediaWorkflow.Name");
-			mediaWorkflow.Topology = context.StringValue("ActivateMediaWorkflow.MediaWorkflow.Topology");
-			mediaWorkflow.State = context.StringValue("ActivateMediaWorkflow.MediaWorkflow.State");
-			mediaWorkflow.CreationTime = context.StringValue("ActivateMediaWorkflow.MediaWorkflow.CreationTime");
+			mediaWorkflow.CreationTime = _ctx.StringValue("ActivateMediaWorkflow.MediaWorkflow.CreationTime");
+			mediaWorkflow.MediaWorkflowId = _ctx.StringValue("ActivateMediaWorkflow.MediaWorkflow.MediaWorkflowId");
+			mediaWorkflow.State = _ctx.StringValue("ActivateMediaWorkflow.MediaWorkflow.State");
+			mediaWorkflow.Name = _ctx.StringValue("ActivateMediaWorkflow.MediaWorkflow.Name");
+			mediaWorkflow.Topology = _ctx.StringValue("ActivateMediaWorkflow.MediaWorkflow.Topology");
 			activateMediaWorkflowResponse.MediaWorkflow = mediaWorkflow;
         
 			return activateMediaWorkflowResponse;

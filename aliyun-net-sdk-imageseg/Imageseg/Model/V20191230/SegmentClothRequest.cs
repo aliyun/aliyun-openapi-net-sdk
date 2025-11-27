@@ -44,6 +44,8 @@ namespace Aliyun.Acs.imageseg.Model.V20191230
 
 		private string returnForm;
 
+		private long? outMode;
+
 		private string imageURL;
 
 		public List<string> ClothClasss
@@ -69,6 +71,19 @@ namespace Aliyun.Acs.imageseg.Model.V20191230
 			{
 				returnForm = value;
 				DictionaryUtil.Add(QueryParameters, "ReturnForm", value);
+			}
+		}
+
+		public long? OutMode
+		{
+			get
+			{
+				return outMode;
+			}
+			set	
+			{
+				outMode = value;
+				DictionaryUtil.Add(QueryParameters, "OutMode", value.ToString());
 			}
 		}
 

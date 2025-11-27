@@ -137,6 +137,10 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 				private string ruleName;
 
+				private string ruleNameCn;
+
+				private string ruleNameEn;
+
 				private string ruleNameMds;
 
 				private string ruleDescMds;
@@ -146,6 +150,10 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 				private string alertType;
 
 				private string source;
+
+				private string eventTransferType;
+
+				private string attCk;
 
 				private int? status;
 
@@ -194,6 +202,30 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 					set	
 					{
 						ruleName = value;
+					}
+				}
+
+				public string RuleNameCn
+				{
+					get
+					{
+						return ruleNameCn;
+					}
+					set	
+					{
+						ruleNameCn = value;
+					}
+				}
+
+				public string RuleNameEn
+				{
+					get
+					{
+						return ruleNameEn;
+					}
+					set	
+					{
+						ruleNameEn = value;
 					}
 				}
 
@@ -254,6 +286,30 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 					set	
 					{
 						source = value;
+					}
+				}
+
+				public string EventTransferType
+				{
+					get
+					{
+						return eventTransferType;
+					}
+					set	
+					{
+						eventTransferType = value;
+					}
+				}
+
+				public string AttCk
+				{
+					get
+					{
+						return attCk;
+					}
+					set	
+					{
+						attCk = value;
 					}
 				}
 

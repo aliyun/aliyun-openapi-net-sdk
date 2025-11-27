@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			DeleteIndexTemplateResponse deleteIndexTemplateResponse = new DeleteIndexTemplateResponse();
 
 			deleteIndexTemplateResponse.HttpResponse = _ctx.HttpResponse;
-			deleteIndexTemplateResponse.RequestId = _ctx.StringValue("DeleteIndexTemplate.RequestId");
 			deleteIndexTemplateResponse.Result = _ctx.BooleanValue("DeleteIndexTemplate.Result");
+			deleteIndexTemplateResponse.RequestId = _ctx.StringValue("DeleteIndexTemplate.RequestId");
         
 			return deleteIndexTemplateResponse;
         }

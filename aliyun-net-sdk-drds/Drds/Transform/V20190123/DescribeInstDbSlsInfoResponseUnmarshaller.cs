@@ -31,12 +31,12 @@ namespace Aliyun.Acs.Drds.Transform.V20190123
 			DescribeInstDbSlsInfoResponse describeInstDbSlsInfoResponse = new DescribeInstDbSlsInfoResponse();
 
 			describeInstDbSlsInfoResponse.HttpResponse = _ctx.HttpResponse;
-			describeInstDbSlsInfoResponse.RequestId = _ctx.StringValue("DescribeInstDbSlsInfo.RequestId");
 			describeInstDbSlsInfoResponse.Success = _ctx.BooleanValue("DescribeInstDbSlsInfo.Success");
+			describeInstDbSlsInfoResponse.RequestId = _ctx.StringValue("DescribeInstDbSlsInfo.RequestId");
 
 			DescribeInstDbSlsInfoResponse.DescribeInstDbSlsInfo_AuditInfo auditInfo = new DescribeInstDbSlsInfoResponse.DescribeInstDbSlsInfo_AuditInfo();
-			auditInfo.Project = _ctx.StringValue("DescribeInstDbSlsInfo.AuditInfo.Project");
 			auditInfo.LogStore = _ctx.StringValue("DescribeInstDbSlsInfo.AuditInfo.LogStore");
+			auditInfo.Project = _ctx.StringValue("DescribeInstDbSlsInfo.AuditInfo.Project");
 			describeInstDbSlsInfoResponse.AuditInfo = auditInfo;
         
 			return describeInstDbSlsInfoResponse;

@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Method = MethodType.POST;
         }
 
+		private string dryRun;
+
 		private string keyId;
 
 		private string keySpec;
@@ -49,6 +51,20 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 		private int? numberOfBytes;
 
 		private string encryptionContext;
+
+		[JsonProperty(PropertyName = "DryRun")]
+		public string DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value);
+			}
+		}
 
 		[JsonProperty(PropertyName = "KeyId")]
 		public string KeyId

@@ -31,9 +31,9 @@ namespace Aliyun.Acs.ResourceCenter.Transform.V20221201
 			GetResourceCenterServiceStatusResponse getResourceCenterServiceStatusResponse = new GetResourceCenterServiceStatusResponse();
 
 			getResourceCenterServiceStatusResponse.HttpResponse = _ctx.HttpResponse;
+			getResourceCenterServiceStatusResponse.InitialStatus = _ctx.StringValue("GetResourceCenterServiceStatus.InitialStatus");
 			getResourceCenterServiceStatusResponse.RequestId = _ctx.StringValue("GetResourceCenterServiceStatus.RequestId");
 			getResourceCenterServiceStatusResponse.ServiceStatus = _ctx.StringValue("GetResourceCenterServiceStatus.ServiceStatus");
-			getResourceCenterServiceStatusResponse.InitialStatus = _ctx.StringValue("GetResourceCenterServiceStatus.InitialStatus");
         
 			return getResourceCenterServiceStatusResponse;
         }

@@ -35,28 +35,28 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			queryOrganizationWorkspaceListResponse.RequestId = _ctx.StringValue("QueryOrganizationWorkspaceList.RequestId");
 
 			QueryOrganizationWorkspaceListResponse.QueryOrganizationWorkspaceList_Result result = new QueryOrganizationWorkspaceListResponse.QueryOrganizationWorkspaceList_Result();
-			result.TotalPages = _ctx.IntegerValue("QueryOrganizationWorkspaceList.Result.TotalPages");
 			result.PageNum = _ctx.IntegerValue("QueryOrganizationWorkspaceList.Result.PageNum");
 			result.PageSize = _ctx.IntegerValue("QueryOrganizationWorkspaceList.Result.PageSize");
 			result.TotalNum = _ctx.IntegerValue("QueryOrganizationWorkspaceList.Result.TotalNum");
+			result.TotalPages = _ctx.IntegerValue("QueryOrganizationWorkspaceList.Result.TotalPages");
 
 			List<QueryOrganizationWorkspaceListResponse.QueryOrganizationWorkspaceList_Result.QueryOrganizationWorkspaceList_DataItem> result_data = new List<QueryOrganizationWorkspaceListResponse.QueryOrganizationWorkspaceList_Result.QueryOrganizationWorkspaceList_DataItem>();
 			for (int i = 0; i < _ctx.Length("QueryOrganizationWorkspaceList.Result.Data.Length"); i++) {
 				QueryOrganizationWorkspaceListResponse.QueryOrganizationWorkspaceList_Result.QueryOrganizationWorkspaceList_DataItem dataItem = new QueryOrganizationWorkspaceListResponse.QueryOrganizationWorkspaceList_Result.QueryOrganizationWorkspaceList_DataItem();
-				dataItem.CreateUserAccountName = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].CreateUserAccountName");
-				dataItem.Owner = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].Owner");
-				dataItem.CreateTime = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].CreateTime");
-				dataItem.WorkspaceName = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].WorkspaceName");
-				dataItem.OrganizationId = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].OrganizationId");
-				dataItem.WorkspaceId = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].WorkspaceId");
-				dataItem.AllowShareOperation = _ctx.BooleanValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].AllowShareOperation");
-				dataItem.CreateUser = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].CreateUser");
-				dataItem.ModifiedTime = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].ModifiedTime");
-				dataItem.WorkspaceDescription = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].WorkspaceDescription");
-				dataItem.ModifyUser = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].ModifyUser");
 				dataItem.AllowPublishOperation = _ctx.BooleanValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].AllowPublishOperation");
-				dataItem.OwnerAccountName = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].OwnerAccountName");
+				dataItem.AllowShareOperation = _ctx.BooleanValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].AllowShareOperation");
+				dataItem.CreateTime = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].CreateTime");
+				dataItem.CreateUser = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].CreateUser");
+				dataItem.CreateUserAccountName = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].CreateUserAccountName");
+				dataItem.ModifiedTime = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].ModifiedTime");
+				dataItem.ModifyUser = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].ModifyUser");
 				dataItem.ModifyUserAccountName = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].ModifyUserAccountName");
+				dataItem.OrganizationId = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].OrganizationId");
+				dataItem.Owner = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].Owner");
+				dataItem.OwnerAccountName = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].OwnerAccountName");
+				dataItem.WorkspaceDescription = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].WorkspaceDescription");
+				dataItem.WorkspaceId = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].WorkspaceId");
+				dataItem.WorkspaceName = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].WorkspaceName");
 
 				result_data.Add(dataItem);
 			}

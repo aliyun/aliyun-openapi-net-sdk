@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class ResetFileSystemRequest : RpcAcsRequest<ResetFileSystemResponse>
     {
         public ResetFileSystemRequest()
-            : base("NAS", "2017-06-26", "ResetFileSystem", "NAS", "openAPI")
+            : base("NAS", "2017-06-26", "ResetFileSystem", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,6 +45,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 		private string fileSystemId;
 
+		[JsonProperty(PropertyName = "SnapshotId")]
 		public string SnapshotId
 		{
 			get
@@ -57,6 +59,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
+		[JsonProperty(PropertyName = "FileSystemId")]
 		public string FileSystemId
 		{
 			get

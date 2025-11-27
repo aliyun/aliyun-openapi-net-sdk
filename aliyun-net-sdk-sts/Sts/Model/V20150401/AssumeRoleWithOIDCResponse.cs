@@ -27,6 +27,8 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 
 		private string requestId;
 
+		private string sourceIdentity;
+
 		private AssumeRoleWithOIDC_OIDCTokenInfo oIDCTokenInfo;
 
 		private AssumeRoleWithOIDC_AssumedRoleUser assumedRoleUser;
@@ -42,6 +44,18 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string SourceIdentity
+		{
+			get
+			{
+				return sourceIdentity;
+			}
+			set	
+			{
+				sourceIdentity = value;
 			}
 		}
 

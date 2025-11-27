@@ -31,8 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			CloseDiagnosisResponse closeDiagnosisResponse = new CloseDiagnosisResponse();
 
 			closeDiagnosisResponse.HttpResponse = _ctx.HttpResponse;
-			closeDiagnosisResponse.RequestId = _ctx.StringValue("CloseDiagnosis.RequestId");
 			closeDiagnosisResponse.Result = _ctx.BooleanValue("CloseDiagnosis.Result");
+			closeDiagnosisResponse.RequestId = _ctx.StringValue("CloseDiagnosis.RequestId");
         
 			return closeDiagnosisResponse;
         }

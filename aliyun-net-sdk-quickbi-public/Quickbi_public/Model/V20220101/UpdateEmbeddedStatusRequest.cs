@@ -35,22 +35,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			Method = MethodType.POST;
         }
 
-		private string worksId;
-
 		private bool? thirdPartAuthFlag;
 
-		public string WorksId
-		{
-			get
-			{
-				return worksId;
-			}
-			set	
-			{
-				worksId = value;
-				DictionaryUtil.Add(QueryParameters, "WorksId", value);
-			}
-		}
+		private string worksId;
 
 		public bool? ThirdPartAuthFlag
 		{
@@ -62,6 +49,19 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				thirdPartAuthFlag = value;
 				DictionaryUtil.Add(QueryParameters, "ThirdPartAuthFlag", value.ToString());
+			}
+		}
+
+		public string WorksId
+		{
+			get
+			{
+				return worksId;
+			}
+			set	
+			{
+				worksId = value;
+				DictionaryUtil.Add(QueryParameters, "WorksId", value);
 			}
 		}
 

@@ -31,9 +31,9 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			GetEmonGrafanaAlertsResponse getEmonGrafanaAlertsResponse = new GetEmonGrafanaAlertsResponse();
 
 			getEmonGrafanaAlertsResponse.HttpResponse = _ctx.HttpResponse;
-			getEmonGrafanaAlertsResponse.RequestId = _ctx.StringValue("GetEmonGrafanaAlerts.RequestId");
 			getEmonGrafanaAlertsResponse.Code = _ctx.StringValue("GetEmonGrafanaAlerts.Code");
 			getEmonGrafanaAlertsResponse.Message = _ctx.StringValue("GetEmonGrafanaAlerts.Message");
+			getEmonGrafanaAlertsResponse.RequestId = _ctx.StringValue("GetEmonGrafanaAlerts.RequestId");
 			getEmonGrafanaAlertsResponse.Success = _ctx.BooleanValue("GetEmonGrafanaAlerts.Success");
         
 			return getEmonGrafanaAlertsResponse;

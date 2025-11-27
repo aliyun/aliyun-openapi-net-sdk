@@ -74,9 +74,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 			private string failureDetail;
 
-			private int? total;
-
 			private int? success;
+
+			private int? total;
 
 			public int? Failure
 			{
@@ -102,18 +102,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public int? Total
-			{
-				get
-				{
-					return total;
-				}
-				set	
-				{
-					total = value;
-				}
-			}
-
 			public int? Success
 			{
 				get
@@ -123,6 +111,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					success = value;
+				}
+			}
+
+			public int? Total
+			{
+				get
+				{
+					return total;
+				}
+				set	
+				{
+					total = value;
 				}
 			}
 		}

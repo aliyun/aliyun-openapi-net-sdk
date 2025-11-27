@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class ModifyFileSystemRequest : RpcAcsRequest<ModifyFileSystemResponse>
     {
         public ModifyFileSystemRequest()
-            : base("NAS", "2017-06-26", "ModifyFileSystem", "NAS", "openAPI")
+            : base("NAS", "2017-06-26", "ModifyFileSystem", "nas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,8 +43,11 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 		private string description;
 
+		private Options options_;
+
 		private string fileSystemId;
 
+		[JsonProperty(PropertyName = "Description")]
 		public string Description
 		{
 			get
@@ -57,6 +61,23 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
+		[JsonProperty(PropertyName = "Options")]
+		public Options Options_
+		{
+			get
+			{
+				return options_;
+			}
+
+			set
+			{
+				options_ = value;
+				DictionaryUtil.Add(QueryParameters, "Options", JsonConvert.SerializeObject(value));
+
+			}
+		}
+
+		[JsonProperty(PropertyName = "FileSystemId")]
 		public string FileSystemId
 		{
 			get
@@ -67,6 +88,25 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			{
 				fileSystemId = value;
 				DictionaryUtil.Add(QueryParameters, "FileSystemId", value);
+			}
+		}
+
+		public class Options
+		{
+
+			private bool? enableOplock;
+
+			[JsonProperty(PropertyName = "EnableOplock")]
+			public bool? EnableOplock
+			{
+				get
+				{
+					return enableOplock;
+				}
+				set	
+				{
+					enableOplock = value;
+				}
 			}
 		}
 

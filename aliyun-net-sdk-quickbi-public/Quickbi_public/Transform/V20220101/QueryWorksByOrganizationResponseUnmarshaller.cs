@@ -35,34 +35,36 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			queryWorksByOrganizationResponse.RequestId = _ctx.StringValue("QueryWorksByOrganization.RequestId");
 
 			QueryWorksByOrganizationResponse.QueryWorksByOrganization_Result result = new QueryWorksByOrganizationResponse.QueryWorksByOrganization_Result();
-			result.TotalPages = _ctx.IntegerValue("QueryWorksByOrganization.Result.TotalPages");
 			result.PageNum = _ctx.IntegerValue("QueryWorksByOrganization.Result.PageNum");
 			result.PageSize = _ctx.IntegerValue("QueryWorksByOrganization.Result.PageSize");
 			result.TotalNum = _ctx.IntegerValue("QueryWorksByOrganization.Result.TotalNum");
+			result.TotalPages = _ctx.IntegerValue("QueryWorksByOrganization.Result.TotalPages");
 
 			List<QueryWorksByOrganizationResponse.QueryWorksByOrganization_Result.QueryWorksByOrganization_DataItem> result_data = new List<QueryWorksByOrganizationResponse.QueryWorksByOrganization_Result.QueryWorksByOrganization_DataItem>();
 			for (int i = 0; i < _ctx.Length("QueryWorksByOrganization.Result.Data.Length"); i++) {
 				QueryWorksByOrganizationResponse.QueryWorksByOrganization_Result.QueryWorksByOrganization_DataItem dataItem = new QueryWorksByOrganizationResponse.QueryWorksByOrganization_Result.QueryWorksByOrganization_DataItem();
-				dataItem.Status = _ctx.IntegerValue("QueryWorksByOrganization.Result.Data["+ i +"].Status");
 				dataItem.Auth3rdFlag = _ctx.IntegerValue("QueryWorksByOrganization.Result.Data["+ i +"].Auth3rdFlag");
-				dataItem.GmtModify = _ctx.StringValue("QueryWorksByOrganization.Result.Data["+ i +"].GmtModify");
-				dataItem.WorksId = _ctx.StringValue("QueryWorksByOrganization.Result.Data["+ i +"].WorksId");
-				dataItem.WorkType = _ctx.StringValue("QueryWorksByOrganization.Result.Data["+ i +"].WorkType");
-				dataItem.OwnerName = _ctx.StringValue("QueryWorksByOrganization.Result.Data["+ i +"].OwnerName");
-				dataItem.WorkspaceName = _ctx.StringValue("QueryWorksByOrganization.Result.Data["+ i +"].WorkspaceName");
-				dataItem.OwnerId = _ctx.StringValue("QueryWorksByOrganization.Result.Data["+ i +"].OwnerId");
-				dataItem.ModifyName = _ctx.StringValue("QueryWorksByOrganization.Result.Data["+ i +"].ModifyName");
-				dataItem.WorkspaceId = _ctx.StringValue("QueryWorksByOrganization.Result.Data["+ i +"].WorkspaceId");
-				dataItem.SecurityLevel = _ctx.StringValue("QueryWorksByOrganization.Result.Data["+ i +"].SecurityLevel");
 				dataItem.Description = _ctx.StringValue("QueryWorksByOrganization.Result.Data["+ i +"].Description");
-				dataItem.WorkName = _ctx.StringValue("QueryWorksByOrganization.Result.Data["+ i +"].WorkName");
 				dataItem.GmtCreate = _ctx.StringValue("QueryWorksByOrganization.Result.Data["+ i +"].GmtCreate");
+				dataItem.GmtModify = _ctx.StringValue("QueryWorksByOrganization.Result.Data["+ i +"].GmtModify");
+				dataItem.ModifyName = _ctx.StringValue("QueryWorksByOrganization.Result.Data["+ i +"].ModifyName");
+				dataItem.OwnerId = _ctx.StringValue("QueryWorksByOrganization.Result.Data["+ i +"].OwnerId");
+				dataItem.OwnerName = _ctx.StringValue("QueryWorksByOrganization.Result.Data["+ i +"].OwnerName");
+				dataItem.PublicFlag = _ctx.BooleanValue("QueryWorksByOrganization.Result.Data["+ i +"].PublicFlag");
+				dataItem.PublicInvalidTime = _ctx.LongValue("QueryWorksByOrganization.Result.Data["+ i +"].PublicInvalidTime");
+				dataItem.SecurityLevel = _ctx.StringValue("QueryWorksByOrganization.Result.Data["+ i +"].SecurityLevel");
+				dataItem.Status = _ctx.IntegerValue("QueryWorksByOrganization.Result.Data["+ i +"].Status");
+				dataItem.WorkName = _ctx.StringValue("QueryWorksByOrganization.Result.Data["+ i +"].WorkName");
+				dataItem.WorkType = _ctx.StringValue("QueryWorksByOrganization.Result.Data["+ i +"].WorkType");
+				dataItem.WorksId = _ctx.StringValue("QueryWorksByOrganization.Result.Data["+ i +"].WorksId");
+				dataItem.WorkspaceId = _ctx.StringValue("QueryWorksByOrganization.Result.Data["+ i +"].WorkspaceId");
+				dataItem.WorkspaceName = _ctx.StringValue("QueryWorksByOrganization.Result.Data["+ i +"].WorkspaceName");
 
 				QueryWorksByOrganizationResponse.QueryWorksByOrganization_Result.QueryWorksByOrganization_DataItem.QueryWorksByOrganization_Directory directory = new QueryWorksByOrganizationResponse.QueryWorksByOrganization_Result.QueryWorksByOrganization_DataItem.QueryWorksByOrganization_Directory();
+				directory.Id = _ctx.StringValue("QueryWorksByOrganization.Result.Data["+ i +"].Directory.Id");
+				directory.Name = _ctx.StringValue("QueryWorksByOrganization.Result.Data["+ i +"].Directory.Name");
 				directory.PathId = _ctx.StringValue("QueryWorksByOrganization.Result.Data["+ i +"].Directory.PathId");
 				directory.PathName = _ctx.StringValue("QueryWorksByOrganization.Result.Data["+ i +"].Directory.PathName");
-				directory.Name = _ctx.StringValue("QueryWorksByOrganization.Result.Data["+ i +"].Directory.Name");
-				directory.Id = _ctx.StringValue("QueryWorksByOrganization.Result.Data["+ i +"].Directory.Id");
 				dataItem.Directory = directory;
 
 				result_data.Add(dataItem);

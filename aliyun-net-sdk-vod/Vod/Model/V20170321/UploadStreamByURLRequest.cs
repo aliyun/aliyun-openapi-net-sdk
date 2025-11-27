@@ -53,6 +53,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string mediaId;
 
+		private string uploadMetadata;
+
 		[JsonProperty(PropertyName = "FileExtension")]
 		public string FileExtension
 		{
@@ -134,6 +136,20 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				mediaId = value;
 				DictionaryUtil.Add(QueryParameters, "MediaId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "UploadMetadata")]
+		public string UploadMetadata
+		{
+			get
+			{
+				return uploadMetadata;
+			}
+			set	
+			{
+				uploadMetadata = value;
+				DictionaryUtil.Add(QueryParameters, "UploadMetadata", value);
 			}
 		}
 

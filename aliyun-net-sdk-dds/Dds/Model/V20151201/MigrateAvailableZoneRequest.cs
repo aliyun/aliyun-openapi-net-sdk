@@ -42,7 +42,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
+		private string secondaryZoneId;
+
 		private string effectiveTime;
+
+		private string hiddenZoneId;
 
 		private string dBInstanceId;
 
@@ -69,6 +73,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string SecondaryZoneId
+		{
+			get
+			{
+				return secondaryZoneId;
+			}
+			set	
+			{
+				secondaryZoneId = value;
+				DictionaryUtil.Add(QueryParameters, "SecondaryZoneId", value);
+			}
+		}
+
 		public string EffectiveTime
 		{
 			get
@@ -79,6 +96,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				effectiveTime = value;
 				DictionaryUtil.Add(QueryParameters, "EffectiveTime", value);
+			}
+		}
+
+		public string HiddenZoneId
+		{
+			get
+			{
+				return hiddenZoneId;
+			}
+			set	
+			{
+				hiddenZoneId = value;
+				DictionaryUtil.Add(QueryParameters, "HiddenZoneId", value);
 			}
 		}
 

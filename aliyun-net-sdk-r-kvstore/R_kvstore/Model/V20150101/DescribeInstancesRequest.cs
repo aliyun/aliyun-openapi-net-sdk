@@ -42,29 +42,39 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
-		private string searchKey;
-
 		private string networkType;
 
 		private string engineVersion;
+
+		private string resourceGroupId;
+
+		private string securityToken;
+
+		private List<string> tags = new List<string>(){ };
+
+		private long? ownerId;
+
+		private string vSwitchId;
+
+		private string instanceIds;
+
+		private string zoneId;
+
+		private string nodeType;
+
+		private string searchKey;
 
 		private string instanceClass;
 
 		private int? pageNumber;
 
-		private string resourceGroupId;
-
 		private string expired;
-
-		private string securityToken;
 
 		private int? pageSize;
 
 		private string instanceType;
 
 		private string editionType;
-
-		private List<string> tags = new List<string>(){ };
 
 		private string instanceStatus;
 
@@ -76,17 +86,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string privateIp;
 
-		private long? ownerId;
-
-		private string vSwitchId;
-
-		private string instanceIds;
-
 		private string architectureType;
 
 		private string vpcId;
-
-		private string zoneId;
 
 		private string chargeType;
 
@@ -100,19 +102,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string SearchKey
-		{
-			get
-			{
-				return searchKey;
-			}
-			set	
-			{
-				searchKey = value;
-				DictionaryUtil.Add(QueryParameters, "SearchKey", value);
 			}
 		}
 
@@ -142,6 +131,131 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public List<string> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				if(tags != null)
+				{
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
+				}
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string VSwitchId
+		{
+			get
+			{
+				return vSwitchId;
+			}
+			set	
+			{
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+			}
+		}
+
+		public string InstanceIds
+		{
+			get
+			{
+				return instanceIds;
+			}
+			set	
+			{
+				instanceIds = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceIds", value);
+			}
+		}
+
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public string NodeType
+		{
+			get
+			{
+				return nodeType;
+			}
+			set	
+			{
+				nodeType = value;
+				DictionaryUtil.Add(QueryParameters, "NodeType", value);
+			}
+		}
+
+		public string SearchKey
+		{
+			get
+			{
+				return searchKey;
+			}
+			set	
+			{
+				searchKey = value;
+				DictionaryUtil.Add(QueryParameters, "SearchKey", value);
+			}
+		}
+
 		public string InstanceClass
 		{
 			get
@@ -168,19 +282,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
 		public string Expired
 		{
 			get
@@ -191,19 +292,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				expired = value;
 				DictionaryUtil.Add(QueryParameters, "Expired", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -243,27 +331,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				editionType = value;
 				DictionaryUtil.Add(QueryParameters, "EditionType", value);
-			}
-		}
-
-		public List<string> Tags
-		{
-			get
-			{
-				return tags;
-			}
-
-			set
-			{
-				tags = value;
-				if(tags != null)
-				{
-					for (int depth1 = 0; depth1 < tags.Count; depth1++)
-					{
-						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
-						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
-					}
-				}
 			}
 		}
 
@@ -332,45 +399,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string VSwitchId
-		{
-			get
-			{
-				return vSwitchId;
-			}
-			set	
-			{
-				vSwitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
-			}
-		}
-
-		public string InstanceIds
-		{
-			get
-			{
-				return instanceIds;
-			}
-			set	
-			{
-				instanceIds = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceIds", value);
-			}
-		}
-
 		public string ArchitectureType
 		{
 			get
@@ -394,19 +422,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				vpcId = value;
 				DictionaryUtil.Add(QueryParameters, "VpcId", value);
-			}
-		}
-
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 

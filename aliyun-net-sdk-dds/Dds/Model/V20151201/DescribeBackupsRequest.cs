@@ -40,6 +40,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			Method = MethodType.POST;
         }
 
+		private string backupJobId;
+
 		private long? resourceOwnerId;
 
 		private string startTime;
@@ -47,6 +49,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string srcRegion;
 
 		private int? pageNumber;
+
+		private string resourceGroupId;
 
 		private int? pageSize;
 
@@ -65,6 +69,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string endTime;
 
 		private long? ownerId;
+
+		public string BackupJobId
+		{
+			get
+			{
+				return backupJobId;
+			}
+			set	
+			{
+				backupJobId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupJobId", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -115,6 +132,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
@@ -58,13 +58,13 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private string regionId;
 
+			private string status;
+
 			private string regionEndpoint;
 
 			private string localName;
 
 			private string consoleEndpoint;
-
-			private string status;
 
 			public string RegionId
 			{
@@ -75,6 +75,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					regionId = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 
@@ -111,18 +123,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					consoleEndpoint = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
 				}
 			}
 		}

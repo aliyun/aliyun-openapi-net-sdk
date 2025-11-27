@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 {
     public class CancelJobResponseUnmarshaller
     {
-        public static CancelJobResponse Unmarshall(UnmarshallerContext context)
+        public static CancelJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CancelJobResponse cancelJobResponse = new CancelJobResponse();
 
-			cancelJobResponse.HttpResponse = context.HttpResponse;
-			cancelJobResponse.RequestId = context.StringValue("CancelJob.RequestId");
-			cancelJobResponse.JobId = context.StringValue("CancelJob.JobId");
+			cancelJobResponse.HttpResponse = _ctx.HttpResponse;
+			cancelJobResponse.RequestId = _ctx.StringValue("CancelJob.RequestId");
+			cancelJobResponse.JobId = _ctx.StringValue("CancelJob.JobId");
         
 			return cancelJobResponse;
         }

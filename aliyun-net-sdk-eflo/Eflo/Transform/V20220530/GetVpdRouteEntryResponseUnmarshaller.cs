@@ -46,6 +46,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			content.RouteType = _ctx.StringValue("GetVpdRouteEntry.Content.RouteType");
 			content.Status = _ctx.StringValue("GetVpdRouteEntry.Content.Status");
 			content.GmtModified = _ctx.StringValue("GetVpdRouteEntry.Content.GmtModified");
+			content.ResourceGroupId = _ctx.StringValue("GetVpdRouteEntry.Content.ResourceGroupId");
 			getVpdRouteEntryResponse.Content = content;
         
 			return getVpdRouteEntryResponse;

@@ -41,8 +41,8 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				List<DescribeRegionsResponse.DescribeRegions_Region.DescribeRegions_Zone> region_zones = new List<DescribeRegionsResponse.DescribeRegions_Region.DescribeRegions_Zone>();
 				for (int j = 0; j < _ctx.Length("DescribeRegions.Regions["+ i +"].Zones.Length"); j++) {
 					DescribeRegionsResponse.DescribeRegions_Region.DescribeRegions_Zone zone = new DescribeRegionsResponse.DescribeRegions_Region.DescribeRegions_Zone();
-					zone.ZoneId = _ctx.StringValue("DescribeRegions.Regions["+ i +"].Zones["+ j +"].ZoneId");
 					zone.VpcEnabled = _ctx.BooleanValue("DescribeRegions.Regions["+ i +"].Zones["+ j +"].VpcEnabled");
+					zone.ZoneId = _ctx.StringValue("DescribeRegions.Regions["+ i +"].Zones["+ j +"].ZoneId");
 
 					region_zones.Add(zone);
 				}

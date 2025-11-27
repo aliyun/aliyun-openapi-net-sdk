@@ -47,6 +47,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private bool? force;
 
+		private string body;
+
 		public string InstanceId
 		{
 			get
@@ -83,6 +85,19 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			{
 				force = value;
 				DictionaryUtil.Add(QueryParameters, "force", value.ToString());
+			}
+		}
+
+		public string Body
+		{
+			get
+			{
+				return body;
+			}
+			set	
+			{
+				body = value;
+				DictionaryUtil.Add(BodyParameters, "body", value);
 			}
 		}
 

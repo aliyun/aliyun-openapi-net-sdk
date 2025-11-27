@@ -27,6 +27,10 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string requestId;
 
+		private string globalInstanceId;
+
+		private string instanceId;
+
 		public string RequestId
 		{
 			get
@@ -36,6 +40,30 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string GlobalInstanceId
+		{
+			get
+			{
+				return globalInstanceId;
+			}
+			set	
+			{
+				globalInstanceId = value;
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
 			}
 		}
 	}

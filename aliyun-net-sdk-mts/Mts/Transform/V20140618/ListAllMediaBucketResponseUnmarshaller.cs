@@ -26,19 +26,20 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 {
     public class ListAllMediaBucketResponseUnmarshaller
     {
-        public static ListAllMediaBucketResponse Unmarshall(UnmarshallerContext context)
+        public static ListAllMediaBucketResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListAllMediaBucketResponse listAllMediaBucketResponse = new ListAllMediaBucketResponse();
 
-			listAllMediaBucketResponse.HttpResponse = context.HttpResponse;
-			listAllMediaBucketResponse.RequestId = context.StringValue("ListAllMediaBucket.RequestId");
-			listAllMediaBucketResponse.NextPageToken = context.StringValue("ListAllMediaBucket.NextPageToken");
+			listAllMediaBucketResponse.HttpResponse = _ctx.HttpResponse;
+			listAllMediaBucketResponse.RequestId = _ctx.StringValue("ListAllMediaBucket.RequestId");
+			listAllMediaBucketResponse.NextPageToken = _ctx.StringValue("ListAllMediaBucket.NextPageToken");
 
 			List<ListAllMediaBucketResponse.ListAllMediaBucket_MediaBucket> listAllMediaBucketResponse_mediaBucketList = new List<ListAllMediaBucketResponse.ListAllMediaBucket_MediaBucket>();
-			for (int i = 0; i < context.Length("ListAllMediaBucket.MediaBucketList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListAllMediaBucket.MediaBucketList.Length"); i++) {
 				ListAllMediaBucketResponse.ListAllMediaBucket_MediaBucket mediaBucket = new ListAllMediaBucketResponse.ListAllMediaBucket_MediaBucket();
-				mediaBucket.Bucket = context.StringValue("ListAllMediaBucket.MediaBucketList["+ i +"].Bucket");
-				mediaBucket.Type = context.StringValue("ListAllMediaBucket.MediaBucketList["+ i +"].Type");
+				mediaBucket.Type = _ctx.StringValue("ListAllMediaBucket.MediaBucketList["+ i +"].Type");
+				mediaBucket.Bucket = _ctx.StringValue("ListAllMediaBucket.MediaBucketList["+ i +"].Bucket");
+				mediaBucket.Referer = _ctx.StringValue("ListAllMediaBucket.MediaBucketList["+ i +"].Referer");
 
 				listAllMediaBucketResponse_mediaBucketList.Add(mediaBucket);
 			}
