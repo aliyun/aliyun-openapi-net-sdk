@@ -62,6 +62,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string resultType;
 
+		private string referenceId;
+
 		private string additionType;
 
 		public string Formats
@@ -204,6 +206,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resultType = value;
 				DictionaryUtil.Add(QueryParameters, "ResultType", value);
+			}
+		}
+
+		public string ReferenceId
+		{
+			get
+			{
+				return referenceId;
+			}
+			set	
+			{
+				referenceId = value;
+				DictionaryUtil.Add(QueryParameters, "ReferenceId", value);
 			}
 		}
 

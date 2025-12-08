@@ -31,6 +31,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private List<string> nonExistVideoIds;
 
+		private List<string> nonExistReferenceIds;
+
 		public string RequestId
 		{
 			get
@@ -64,6 +66,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				nonExistVideoIds = value;
+			}
+		}
+
+		public List<string> NonExistReferenceIds
+		{
+			get
+			{
+				return nonExistReferenceIds;
+			}
+			set	
+			{
+				nonExistReferenceIds = value;
 			}
 		}
 
@@ -115,6 +129,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			private string restoreExpiration;
 
 			private string userData;
+
+			private string referenceId;
 
 			private List<GetVideoInfos_Thumbnail> thumbnailList;
 
@@ -393,6 +409,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					userData = value;
+				}
+			}
+
+			public string ReferenceId
+			{
+				get
+				{
+					return referenceId;
+				}
+				set	
+				{
+					referenceId = value;
 				}
 			}
 

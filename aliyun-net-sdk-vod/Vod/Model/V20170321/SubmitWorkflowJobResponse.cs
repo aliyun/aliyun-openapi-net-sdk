@@ -27,6 +27,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string requestId;
 
+		private string taskId;
+
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
@@ -37,6 +39,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TaskId")]
+		public string TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
 			}
 		}
 	}

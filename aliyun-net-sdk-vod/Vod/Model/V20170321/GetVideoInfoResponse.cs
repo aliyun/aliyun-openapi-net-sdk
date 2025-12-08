@@ -122,6 +122,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string userData;
 
+			private string referenceId;
+
 			private List<GetVideoInfo_Thumbnail> thumbnailList;
 
 			private List<string> snapshots;
@@ -435,6 +437,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					userData = value;
+				}
+			}
+
+			public string ReferenceId
+			{
+				get
+				{
+					return referenceId;
+				}
+				set	
+				{
+					referenceId = value;
 				}
 			}
 

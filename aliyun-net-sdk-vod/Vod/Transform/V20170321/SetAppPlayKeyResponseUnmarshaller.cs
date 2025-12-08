@@ -24,17 +24,16 @@ using Aliyun.Acs.vod.Model.V20170321;
 
 namespace Aliyun.Acs.vod.Transform.V20170321
 {
-    public class SubmitWorkflowJobResponseUnmarshaller
+    public class SetAppPlayKeyResponseUnmarshaller
     {
-        public static SubmitWorkflowJobResponse Unmarshall(UnmarshallerContext _ctx)
+        public static SetAppPlayKeyResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			SubmitWorkflowJobResponse submitWorkflowJobResponse = new SubmitWorkflowJobResponse();
+			SetAppPlayKeyResponse setAppPlayKeyResponse = new SetAppPlayKeyResponse();
 
-			submitWorkflowJobResponse.HttpResponse = _ctx.HttpResponse;
-			submitWorkflowJobResponse.RequestId = _ctx.StringValue("SubmitWorkflowJob.RequestId");
-			submitWorkflowJobResponse.TaskId = _ctx.StringValue("SubmitWorkflowJob.TaskId");
+			setAppPlayKeyResponse.HttpResponse = _ctx.HttpResponse;
+			setAppPlayKeyResponse.RequestId = _ctx.StringValue("SetAppPlayKey.RequestId");
         
-			return submitWorkflowJobResponse;
+			return setAppPlayKeyResponse;
         }
     }
 }

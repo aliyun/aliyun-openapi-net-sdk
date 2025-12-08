@@ -56,6 +56,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string workflowId;
 
+		private string referenceId;
+
 		private string tags;
 
 		private string fileName;
@@ -165,6 +167,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				workflowId = value;
 				DictionaryUtil.Add(QueryParameters, "WorkflowId", value);
+			}
+		}
+
+		public string ReferenceId
+		{
+			get
+			{
+				return referenceId;
+			}
+			set	
+			{
+				referenceId = value;
+				DictionaryUtil.Add(QueryParameters, "ReferenceId", value);
 			}
 		}
 

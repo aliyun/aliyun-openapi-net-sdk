@@ -24,17 +24,22 @@ using Aliyun.Acs.vod.Model.V20170321;
 
 namespace Aliyun.Acs.vod.Transform.V20170321
 {
-    public class SubmitWorkflowJobResponseUnmarshaller
+    public class DescribeVodPlayerDimensionDataResponseUnmarshaller
     {
-        public static SubmitWorkflowJobResponse Unmarshall(UnmarshallerContext _ctx)
+        public static DescribeVodPlayerDimensionDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			SubmitWorkflowJobResponse submitWorkflowJobResponse = new SubmitWorkflowJobResponse();
+			DescribeVodPlayerDimensionDataResponse describeVodPlayerDimensionDataResponse = new DescribeVodPlayerDimensionDataResponse();
 
-			submitWorkflowJobResponse.HttpResponse = _ctx.HttpResponse;
-			submitWorkflowJobResponse.RequestId = _ctx.StringValue("SubmitWorkflowJob.RequestId");
-			submitWorkflowJobResponse.TaskId = _ctx.StringValue("SubmitWorkflowJob.TaskId");
+			describeVodPlayerDimensionDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeVodPlayerDimensionDataResponse.RequestId = _ctx.StringValue("DescribeVodPlayerDimensionData.RequestId");
+
+			List<string> describeVodPlayerDimensionDataResponse_dataList = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeVodPlayerDimensionData.DataList.Length"); i++) {
+				describeVodPlayerDimensionDataResponse_dataList.Add(_ctx.StringValue("DescribeVodPlayerDimensionData.DataList["+ i +"]"));
+			}
+			describeVodPlayerDimensionDataResponse.DataList = describeVodPlayerDimensionDataResponse_dataList;
         
-			return submitWorkflowJobResponse;
+			return describeVodPlayerDimensionDataResponse;
         }
     }
 }

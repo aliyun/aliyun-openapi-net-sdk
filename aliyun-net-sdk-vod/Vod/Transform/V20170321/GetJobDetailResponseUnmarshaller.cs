@@ -68,6 +68,26 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			aIJobDetail.CreateTime = _ctx.StringValue("GetJobDetail.AIJobDetail.CreateTime");
 			aIJobDetail.CompleteTime = _ctx.StringValue("GetJobDetail.AIJobDetail.CompleteTime");
 			getJobDetailResponse.AIJobDetail = aIJobDetail;
+
+			GetJobDetailResponse.GetJobDetail_WorkflowTaskDetail workflowTaskDetail = new GetJobDetailResponse.GetJobDetail_WorkflowTaskDetail();
+			workflowTaskDetail.TaskId = _ctx.StringValue("GetJobDetail.WorkflowTaskDetail.TaskId");
+			workflowTaskDetail.Status = _ctx.StringValue("GetJobDetail.WorkflowTaskDetail.Status");
+			workflowTaskDetail.TaskInput = _ctx.StringValue("GetJobDetail.WorkflowTaskDetail.TaskInput");
+			workflowTaskDetail.CreateTime = _ctx.StringValue("GetJobDetail.WorkflowTaskDetail.CreateTime");
+			workflowTaskDetail.FinishTime = _ctx.StringValue("GetJobDetail.WorkflowTaskDetail.FinishTime");
+			workflowTaskDetail.ActivityResults = _ctx.StringValue("GetJobDetail.WorkflowTaskDetail.ActivityResults");
+			workflowTaskDetail.UserData = _ctx.StringValue("GetJobDetail.WorkflowTaskDetail.UserData");
+
+			GetJobDetailResponse.GetJobDetail_WorkflowTaskDetail.GetJobDetail_Workflow workflow = new GetJobDetailResponse.GetJobDetail_WorkflowTaskDetail.GetJobDetail_Workflow();
+			workflow.WorkflowId = _ctx.StringValue("GetJobDetail.WorkflowTaskDetail.Workflow.WorkflowId");
+			workflow.Name = _ctx.StringValue("GetJobDetail.WorkflowTaskDetail.Workflow.Name");
+			workflow.Status = _ctx.StringValue("GetJobDetail.WorkflowTaskDetail.Workflow.Status");
+			workflow.Type = _ctx.StringValue("GetJobDetail.WorkflowTaskDetail.Workflow.Type");
+			workflow.CreateTime = _ctx.StringValue("GetJobDetail.WorkflowTaskDetail.Workflow.CreateTime");
+			workflow.ModifiedTime = _ctx.StringValue("GetJobDetail.WorkflowTaskDetail.Workflow.ModifiedTime");
+			workflow.AppId = _ctx.StringValue("GetJobDetail.WorkflowTaskDetail.Workflow.AppId");
+			workflowTaskDetail.Workflow = workflow;
+			getJobDetailResponse.WorkflowTaskDetail = workflowTaskDetail;
         
 			return getJobDetailResponse;
         }

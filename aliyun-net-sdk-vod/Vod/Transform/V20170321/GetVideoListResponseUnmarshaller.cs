@@ -57,6 +57,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				video.RestoreStatus = _ctx.StringValue("GetVideoList.VideoList["+ i +"].RestoreStatus");
 				video.RestoreExpiration = _ctx.StringValue("GetVideoList.VideoList["+ i +"].RestoreExpiration");
 				video.UserData = _ctx.StringValue("GetVideoList.VideoList["+ i +"].UserData");
+				video.ReferenceId = _ctx.StringValue("GetVideoList.VideoList["+ i +"].ReferenceId");
 
 				List<string> video_snapshots = new List<string>();
 				for (int j = 0; j < _ctx.Length("GetVideoList.VideoList["+ i +"].Snapshots.Length"); j++) {

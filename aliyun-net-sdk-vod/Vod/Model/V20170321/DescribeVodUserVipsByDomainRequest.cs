@@ -27,87 +27,68 @@ using Aliyun.Acs.vod.Transform.V20170321;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class RegisterMediaRequest : RpcAcsRequest<RegisterMediaResponse>
+    public class DescribeVodUserVipsByDomainRequest : RpcAcsRequest<DescribeVodUserVipsByDomainResponse>
     {
-        public RegisterMediaRequest()
-            : base("vod", "2017-03-21", "RegisterMedia", "vod", "openAPI")
+        public DescribeVodUserVipsByDomainRequest()
+            : base("vod", "2017-03-21", "DescribeVodUserVipsByDomain", "vod", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointRegionalType, null);
             }
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private string userData;
+		private string available;
 
-		private string registerMetadatas;
+		private string domainName;
 
-		private string workflowId;
+		private long? ownerId;
 
-		private string templateGroupId;
-
-		public string UserData
+		public string Available
 		{
 			get
 			{
-				return userData;
+				return available;
 			}
 			set	
 			{
-				userData = value;
-				DictionaryUtil.Add(QueryParameters, "UserData", value);
+				available = value;
+				DictionaryUtil.Add(QueryParameters, "Available", value);
 			}
 		}
 
-		public string RegisterMetadatas
+		public string DomainName
 		{
 			get
 			{
-				return registerMetadatas;
+				return domainName;
 			}
 			set	
 			{
-				registerMetadatas = value;
-				DictionaryUtil.Add(QueryParameters, "RegisterMetadatas", value);
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
-		public string WorkflowId
+		public long? OwnerId
 		{
 			get
 			{
-				return workflowId;
+				return ownerId;
 			}
 			set	
 			{
-				workflowId = value;
-				DictionaryUtil.Add(QueryParameters, "WorkflowId", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
-		public string TemplateGroupId
-		{
-			get
-			{
-				return templateGroupId;
-			}
-			set	
-			{
-				templateGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateGroupId", value);
-			}
-		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override RegisterMediaResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeVodUserVipsByDomainResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RegisterMediaResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeVodUserVipsByDomainResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

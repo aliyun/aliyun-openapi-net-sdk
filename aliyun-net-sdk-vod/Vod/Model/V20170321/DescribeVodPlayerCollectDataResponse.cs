@@ -22,16 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-	public class DeleteMezzaninesResponse : AcsResponse
+	public class DescribeVodPlayerCollectDataResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<string> unRemoveableVideoIds;
-
-		private List<string> nonExistVideoIds;
-
-		private List<string> nonExistReferenceIds;
+		private List<DescribeVodPlayerCollectData_Datas> dataList;
 
 		public string RequestId
 		{
@@ -45,39 +41,75 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public List<string> UnRemoveableVideoIds
+		public List<DescribeVodPlayerCollectData_Datas> DataList
 		{
 			get
 			{
-				return unRemoveableVideoIds;
+				return dataList;
 			}
 			set	
 			{
-				unRemoveableVideoIds = value;
+				dataList = value;
 			}
 		}
 
-		public List<string> NonExistVideoIds
+		public class DescribeVodPlayerCollectData_Datas
 		{
-			get
-			{
-				return nonExistVideoIds;
-			}
-			set	
-			{
-				nonExistVideoIds = value;
-			}
-		}
 
-		public List<string> NonExistReferenceIds
-		{
-			get
+			private string metric;
+
+			private double? _value;
+
+			private double? valueRefer;
+
+			private double? valueRatio;
+
+			public string Metric
 			{
-				return nonExistReferenceIds;
+				get
+				{
+					return metric;
+				}
+				set	
+				{
+					metric = value;
+				}
 			}
-			set	
+
+			public double? _Value
 			{
-				nonExistReferenceIds = value;
+				get
+				{
+					return _value;
+				}
+				set	
+				{
+					_value = value;
+				}
+			}
+
+			public double? ValueRefer
+			{
+				get
+				{
+					return valueRefer;
+				}
+				set	
+				{
+					valueRefer = value;
+				}
+			}
+
+			public double? ValueRatio
+			{
+				get
+				{
+					return valueRatio;
+				}
+				set	
+				{
+					valueRatio = value;
+				}
 			}
 		}
 	}

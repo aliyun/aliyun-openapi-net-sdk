@@ -22,16 +22,10 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-	public class DeleteMezzaninesResponse : AcsResponse
+	public class SetAppPlayKeyResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private List<string> unRemoveableVideoIds;
-
-		private List<string> nonExistVideoIds;
-
-		private List<string> nonExistReferenceIds;
 
 		public string RequestId
 		{
@@ -42,42 +36,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public List<string> UnRemoveableVideoIds
-		{
-			get
-			{
-				return unRemoveableVideoIds;
-			}
-			set	
-			{
-				unRemoveableVideoIds = value;
-			}
-		}
-
-		public List<string> NonExistVideoIds
-		{
-			get
-			{
-				return nonExistVideoIds;
-			}
-			set	
-			{
-				nonExistVideoIds = value;
-			}
-		}
-
-		public List<string> NonExistReferenceIds
-		{
-			get
-			{
-				return nonExistReferenceIds;
-			}
-			set	
-			{
-				nonExistReferenceIds = value;
 			}
 		}
 	}

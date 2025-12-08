@@ -31,6 +31,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private List<string> nonExistVideoIds;
 
+		private List<string> nonExistReferenceIds;
+
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
@@ -67,6 +69,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				nonExistVideoIds = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "NonExistReferenceIds")]
+		public List<string> NonExistReferenceIds
+		{
+			get
+			{
+				return nonExistReferenceIds;
+			}
+			set	
+			{
+				nonExistReferenceIds = value;
 			}
 		}
 	}

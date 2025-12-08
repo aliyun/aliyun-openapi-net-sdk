@@ -40,26 +40,13 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			Method = MethodType.POST;
         }
 
-		private string identityType;
-
 		private string policyNames;
 
 		private string identityName;
 
-		private string appId;
+		private string identityType;
 
-		public string IdentityType
-		{
-			get
-			{
-				return identityType;
-			}
-			set	
-			{
-				identityType = value;
-				DictionaryUtil.Add(QueryParameters, "IdentityType", value);
-			}
-		}
+		private string appId;
 
 		public string PolicyNames
 		{
@@ -84,6 +71,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				identityName = value;
 				DictionaryUtil.Add(QueryParameters, "IdentityName", value);
+			}
+		}
+
+		public string IdentityType
+		{
+			get
+			{
+				return identityType;
+			}
+			set	
+			{
+				identityType = value;
+				DictionaryUtil.Add(QueryParameters, "IdentityType", value);
 			}
 		}
 

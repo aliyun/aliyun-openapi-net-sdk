@@ -88,7 +88,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string resourceGroupId;
 
-			private List<ListAppInfo_TagsItem> tags;
+			private List<ListAppInfo_Tag> tags;
 
 			public string Type
 			{
@@ -198,7 +198,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public List<ListAppInfo_TagsItem> Tags
+			public List<ListAppInfo_Tag> Tags
 			{
 				get
 				{
@@ -210,7 +210,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public class ListAppInfo_TagsItem
+			public class ListAppInfo_Tag
 			{
 
 				private string tagKey;

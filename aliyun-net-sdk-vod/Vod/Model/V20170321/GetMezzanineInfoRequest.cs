@@ -46,6 +46,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string videoId;
 
+		private string referenceId;
+
 		private string additionType;
 
 		public string OutputType
@@ -84,6 +86,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				videoId = value;
 				DictionaryUtil.Add(QueryParameters, "VideoId", value);
+			}
+		}
+
+		public string ReferenceId
+		{
+			get
+			{
+				return referenceId;
+			}
+			set	
+			{
+				referenceId = value;
+				DictionaryUtil.Add(QueryParameters, "ReferenceId", value);
 			}
 		}
 

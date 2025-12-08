@@ -44,6 +44,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				updateVideoInfosResponse_nonExistVideoIds.Add(_ctx.StringValue("UpdateVideoInfos.NonExistVideoIds["+ i +"]"));
 			}
 			updateVideoInfosResponse.NonExistVideoIds = updateVideoInfosResponse_nonExistVideoIds;
+
+			List<string> updateVideoInfosResponse_nonExistReferenceIds = new List<string>();
+			for (int i = 0; i < _ctx.Length("UpdateVideoInfos.NonExistReferenceIds.Length"); i++) {
+				updateVideoInfosResponse_nonExistReferenceIds.Add(_ctx.StringValue("UpdateVideoInfos.NonExistReferenceIds["+ i +"]"));
+			}
+			updateVideoInfosResponse.NonExistReferenceIds = updateVideoInfosResponse_nonExistReferenceIds;
         
 			return updateVideoInfosResponse;
         }

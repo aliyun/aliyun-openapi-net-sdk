@@ -39,6 +39,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			}
 			batchGetMediaInfosResponse.NonExistMediaIds = batchGetMediaInfosResponse_nonExistMediaIds;
 
+			List<string> batchGetMediaInfosResponse_nonExistReferenceIds = new List<string>();
+			for (int i = 0; i < _ctx.Length("BatchGetMediaInfos.NonExistReferenceIds.Length"); i++) {
+				batchGetMediaInfosResponse_nonExistReferenceIds.Add(_ctx.StringValue("BatchGetMediaInfos.NonExistReferenceIds["+ i +"]"));
+			}
+			batchGetMediaInfosResponse.NonExistReferenceIds = batchGetMediaInfosResponse_nonExistReferenceIds;
+
 			List<string> batchGetMediaInfosResponse_forbiddenMediaIds = new List<string>();
 			for (int i = 0; i < _ctx.Length("BatchGetMediaInfos.ForbiddenMediaIds.Length"); i++) {
 				batchGetMediaInfosResponse_forbiddenMediaIds.Add(_ctx.StringValue("BatchGetMediaInfos.ForbiddenMediaIds["+ i +"]"));
@@ -71,6 +77,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				mediaInfo.RestoreStatus = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].MediaInfo.RestoreStatus");
 				mediaInfo.RestoreExpiration = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].MediaInfo.RestoreExpiration");
 				mediaInfo.UserData = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].MediaInfo.UserData");
+				mediaInfo.ReferenceId = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].MediaInfo.ReferenceId");
 
 				List<string> mediaInfo_snapshots = new List<string>();
 				for (int j = 0; j < _ctx.Length("BatchGetMediaInfos.MediaInfos["+ i +"].MediaInfo.Snapshots.Length"); j++) {
@@ -92,6 +99,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				mezzanineInfo.CRC64 = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].MezzanineInfo.CRC64");
 				mezzanineInfo.Duration = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].MezzanineInfo.Duration");
 				mezzanineInfo.Fps = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].MezzanineInfo.Fps");
+				mezzanineInfo.FileMD5 = _ctx.StringValue("BatchGetMediaInfos.MediaInfos["+ i +"].MezzanineInfo.FileMD5");
 
 				List<BatchGetMediaInfosResponse.BatchGetMediaInfos_MediaBasicInfo.BatchGetMediaInfos_MezzanineInfo.BatchGetMediaInfos_AudioStream> mezzanineInfo_audioStreamList = new List<BatchGetMediaInfosResponse.BatchGetMediaInfos_MediaBasicInfo.BatchGetMediaInfos_MezzanineInfo.BatchGetMediaInfos_AudioStream>();
 				for (int j = 0; j < _ctx.Length("BatchGetMediaInfos.MediaInfos["+ i +"].MezzanineInfo.AudioStreamList.Length"); j++) {

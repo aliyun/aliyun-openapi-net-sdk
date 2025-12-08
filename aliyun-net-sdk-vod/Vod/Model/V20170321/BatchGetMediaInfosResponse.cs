@@ -31,6 +31,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private List<string> nonExistMediaIds;
 
+		private List<string> nonExistReferenceIds;
+
 		private List<string> forbiddenMediaIds;
 
 		public string RequestId
@@ -66,6 +68,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				nonExistMediaIds = value;
+			}
+		}
+
+		public List<string> NonExistReferenceIds
+		{
+			get
+			{
+				return nonExistReferenceIds;
+			}
+			set	
+			{
+				nonExistReferenceIds = value;
 			}
 		}
 
@@ -621,6 +635,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 				private string userData;
 
+				private string referenceId;
+
 				private List<string> snapshots;
 
 				public string StorageLocation
@@ -863,6 +879,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
+				public string ReferenceId
+				{
+					get
+					{
+						return referenceId;
+					}
+					set	
+					{
+						referenceId = value;
+					}
+				}
+
 				public List<string> Snapshots
 				{
 					get
@@ -902,6 +930,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				private string duration;
 
 				private string fps;
+
+				private string fileMD5;
 
 				private List<BatchGetMediaInfos_AudioStream> audioStreamList;
 
@@ -1048,6 +1078,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						fps = value;
+					}
+				}
+
+				public string FileMD5
+				{
+					get
+					{
+						return fileMD5;
+					}
+					set	
+					{
+						fileMD5 = value;
 					}
 				}
 

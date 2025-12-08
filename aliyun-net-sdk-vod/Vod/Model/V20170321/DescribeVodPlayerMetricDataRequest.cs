@@ -27,10 +27,10 @@ using Aliyun.Acs.vod.Transform.V20170321;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class GetVideoListRequest : RpcAcsRequest<GetVideoListResponse>
+    public class DescribeVodPlayerMetricDataRequest : RpcAcsRequest<DescribeVodPlayerMetricDataResponse>
     {
-        public GetVideoListRequest()
-            : base("vod", "2017-03-21", "GetVideoList", "vod", "openAPI")
+        public DescribeVodPlayerMetricDataRequest()
+            : base("vod", "2017-03-21", "DescribeVodPlayerMetricData", "vod", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,34 +40,40 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			Method = MethodType.POST;
         }
 
-		private string referenceIds;
+		private string language;
 
 		private string startTime;
 
-		private string storageLocation;
+		private long? pageNumber;
 
-		private long? cateId;
+		private long? top;
 
-		private int? pageSize;
+		private long? pageSize;
+
+		private string os;
 
 		private string endTime;
 
-		private int? pageNo;
+		private string filters;
 
-		private string sortBy;
+		private string appId;
 
-		private string status;
+		private string interval;
 
-		public string ReferenceIds
+		private string metrics;
+
+		private string terminalType;
+
+		public string Language
 		{
 			get
 			{
-				return referenceIds;
+				return language;
 			}
 			set	
 			{
-				referenceIds = value;
-				DictionaryUtil.Add(QueryParameters, "ReferenceIds", value);
+				language = value;
+				DictionaryUtil.Add(QueryParameters, "Language", value);
 			}
 		}
 
@@ -84,33 +90,33 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string StorageLocation
+		public long? PageNumber
 		{
 			get
 			{
-				return storageLocation;
+				return pageNumber;
 			}
 			set	
 			{
-				storageLocation = value;
-				DictionaryUtil.Add(QueryParameters, "StorageLocation", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
-		public long? CateId
+		public long? Top
 		{
 			get
 			{
-				return cateId;
+				return top;
 			}
 			set	
 			{
-				cateId = value;
-				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
+				top = value;
+				DictionaryUtil.Add(QueryParameters, "Top", value.ToString());
 			}
 		}
 
-		public int? PageSize
+		public long? PageSize
 		{
 			get
 			{
@@ -120,6 +126,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Os
+		{
+			get
+			{
+				return os;
+			}
+			set	
+			{
+				os = value;
+				DictionaryUtil.Add(QueryParameters, "Os", value);
 			}
 		}
 
@@ -136,48 +155,79 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public int? PageNo
+		public string Filters
 		{
 			get
 			{
-				return pageNo;
+				return filters;
 			}
 			set	
 			{
-				pageNo = value;
-				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
+				filters = value;
+				DictionaryUtil.Add(QueryParameters, "Filters", value);
 			}
 		}
 
-		public string SortBy
+		public string AppId
 		{
 			get
 			{
-				return sortBy;
+				return appId;
 			}
 			set	
 			{
-				sortBy = value;
-				DictionaryUtil.Add(QueryParameters, "SortBy", value);
+				appId = value;
+				DictionaryUtil.Add(QueryParameters, "AppId", value);
 			}
 		}
 
-		public string Status
+		public string Interval
 		{
 			get
 			{
-				return status;
+				return interval;
 			}
 			set	
 			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value);
 			}
 		}
 
-        public override GetVideoListResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Metrics
+		{
+			get
+			{
+				return metrics;
+			}
+			set	
+			{
+				metrics = value;
+				DictionaryUtil.Add(QueryParameters, "Metrics", value);
+			}
+		}
+
+		public string TerminalType
+		{
+			get
+			{
+				return terminalType;
+			}
+			set	
+			{
+				terminalType = value;
+				DictionaryUtil.Add(QueryParameters, "TerminalType", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeVodPlayerMetricDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetVideoListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeVodPlayerMetricDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

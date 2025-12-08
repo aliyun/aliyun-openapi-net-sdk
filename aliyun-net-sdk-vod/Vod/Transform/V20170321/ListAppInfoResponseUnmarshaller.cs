@@ -47,13 +47,13 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				appInfo.RegionId = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].RegionId");
 				appInfo.ResourceGroupId = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].ResourceGroupId");
 
-				List<ListAppInfoResponse.ListAppInfo_AppInfo.ListAppInfo_TagsItem> appInfo_tags = new List<ListAppInfoResponse.ListAppInfo_AppInfo.ListAppInfo_TagsItem>();
+				List<ListAppInfoResponse.ListAppInfo_AppInfo.ListAppInfo_Tag> appInfo_tags = new List<ListAppInfoResponse.ListAppInfo_AppInfo.ListAppInfo_Tag>();
 				for (int j = 0; j < _ctx.Length("ListAppInfo.AppInfoList["+ i +"].Tags.Length"); j++) {
-					ListAppInfoResponse.ListAppInfo_AppInfo.ListAppInfo_TagsItem tagsItem = new ListAppInfoResponse.ListAppInfo_AppInfo.ListAppInfo_TagsItem();
-					tagsItem.TagKey = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].Tags["+ j +"].TagKey");
-					tagsItem.TagValue = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].Tags["+ j +"].TagValue");
+					ListAppInfoResponse.ListAppInfo_AppInfo.ListAppInfo_Tag tag = new ListAppInfoResponse.ListAppInfo_AppInfo.ListAppInfo_Tag();
+					tag.TagKey = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].Tags["+ j +"].TagKey");
+					tag.TagValue = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].Tags["+ j +"].TagValue");
 
-					appInfo_tags.Add(tagsItem);
+					appInfo_tags.Add(tag);
 				}
 				appInfo.Tags = appInfo_tags;
 

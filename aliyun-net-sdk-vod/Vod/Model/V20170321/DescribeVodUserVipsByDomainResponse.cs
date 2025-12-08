@@ -22,16 +22,26 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-	public class DeleteMezzaninesResponse : AcsResponse
+	public class DescribeVodUserVipsByDomainResponse : AcsResponse
 	{
+
+		private string domainName;
 
 		private string requestId;
 
-		private List<string> unRemoveableVideoIds;
+		private List<string> vips;
 
-		private List<string> nonExistVideoIds;
-
-		private List<string> nonExistReferenceIds;
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -45,39 +55,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public List<string> UnRemoveableVideoIds
+		public List<string> Vips
 		{
 			get
 			{
-				return unRemoveableVideoIds;
+				return vips;
 			}
 			set	
 			{
-				unRemoveableVideoIds = value;
-			}
-		}
-
-		public List<string> NonExistVideoIds
-		{
-			get
-			{
-				return nonExistVideoIds;
-			}
-			set	
-			{
-				nonExistVideoIds = value;
-			}
-		}
-
-		public List<string> NonExistReferenceIds
-		{
-			get
-			{
-				return nonExistReferenceIds;
-			}
-			set	
-			{
-				nonExistReferenceIds = value;
+				vips = value;
 			}
 		}
 	}

@@ -39,6 +39,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			}
 			getVideoInfosResponse.NonExistVideoIds = getVideoInfosResponse_nonExistVideoIds;
 
+			List<string> getVideoInfosResponse_nonExistReferenceIds = new List<string>();
+			for (int i = 0; i < _ctx.Length("GetVideoInfos.NonExistReferenceIds.Length"); i++) {
+				getVideoInfosResponse_nonExistReferenceIds.Add(_ctx.StringValue("GetVideoInfos.NonExistReferenceIds["+ i +"]"));
+			}
+			getVideoInfosResponse.NonExistReferenceIds = getVideoInfosResponse_nonExistReferenceIds;
+
 			List<GetVideoInfosResponse.GetVideoInfos_Video> getVideoInfosResponse_videoList = new List<GetVideoInfosResponse.GetVideoInfos_Video>();
 			for (int i = 0; i < _ctx.Length("GetVideoInfos.VideoList.Length"); i++) {
 				GetVideoInfosResponse.GetVideoInfos_Video video = new GetVideoInfosResponse.GetVideoInfos_Video();
@@ -65,6 +71,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				video.RestoreStatus = _ctx.StringValue("GetVideoInfos.VideoList["+ i +"].RestoreStatus");
 				video.RestoreExpiration = _ctx.StringValue("GetVideoInfos.VideoList["+ i +"].RestoreExpiration");
 				video.UserData = _ctx.StringValue("GetVideoInfos.VideoList["+ i +"].UserData");
+				video.ReferenceId = _ctx.StringValue("GetVideoInfos.VideoList["+ i +"].ReferenceId");
 
 				List<string> video_snapshots = new List<string>();
 				for (int j = 0; j < _ctx.Length("GetVideoInfos.VideoList["+ i +"].Snapshots.Length"); j++) {

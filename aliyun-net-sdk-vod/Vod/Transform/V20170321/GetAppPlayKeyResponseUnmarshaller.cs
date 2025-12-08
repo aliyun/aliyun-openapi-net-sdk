@@ -24,17 +24,23 @@ using Aliyun.Acs.vod.Model.V20170321;
 
 namespace Aliyun.Acs.vod.Transform.V20170321
 {
-    public class SubmitWorkflowJobResponseUnmarshaller
+    public class GetAppPlayKeyResponseUnmarshaller
     {
-        public static SubmitWorkflowJobResponse Unmarshall(UnmarshallerContext _ctx)
+        public static GetAppPlayKeyResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			SubmitWorkflowJobResponse submitWorkflowJobResponse = new SubmitWorkflowJobResponse();
+			GetAppPlayKeyResponse getAppPlayKeyResponse = new GetAppPlayKeyResponse();
 
-			submitWorkflowJobResponse.HttpResponse = _ctx.HttpResponse;
-			submitWorkflowJobResponse.RequestId = _ctx.StringValue("SubmitWorkflowJob.RequestId");
-			submitWorkflowJobResponse.TaskId = _ctx.StringValue("SubmitWorkflowJob.TaskId");
+			getAppPlayKeyResponse.HttpResponse = _ctx.HttpResponse;
+			getAppPlayKeyResponse.RequestId = _ctx.StringValue("GetAppPlayKey.RequestId");
+
+			GetAppPlayKeyResponse.GetAppPlayKey_AppPlayKey appPlayKey = new GetAppPlayKeyResponse.GetAppPlayKey_AppPlayKey();
+			appPlayKey.AppId = _ctx.StringValue("GetAppPlayKey.AppPlayKey.AppId");
+			appPlayKey.PlayKey = _ctx.StringValue("GetAppPlayKey.AppPlayKey.PlayKey");
+			appPlayKey.CreationTime = _ctx.StringValue("GetAppPlayKey.AppPlayKey.CreationTime");
+			appPlayKey.ModificationTime = _ctx.StringValue("GetAppPlayKey.AppPlayKey.ModificationTime");
+			getAppPlayKeyResponse.AppPlayKey = appPlayKey;
         
-			return submitWorkflowJobResponse;
+			return getAppPlayKeyResponse;
         }
     }
 }

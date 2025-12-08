@@ -51,6 +51,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			mezzanine.StorageClass = _ctx.StringValue("GetMezzanineInfo.Mezzanine.StorageClass");
 			mezzanine.RestoreStatus = _ctx.StringValue("GetMezzanineInfo.Mezzanine.RestoreStatus");
 			mezzanine.RestoreExpiration = _ctx.StringValue("GetMezzanineInfo.Mezzanine.RestoreExpiration");
+			mezzanine.FileMD5 = _ctx.StringValue("GetMezzanineInfo.Mezzanine.FileMD5");
 
 			List<GetMezzanineInfoResponse.GetMezzanineInfo_Mezzanine.GetMezzanineInfo_AudioStream> mezzanine_audioStreamList = new List<GetMezzanineInfoResponse.GetMezzanineInfo_Mezzanine.GetMezzanineInfo_AudioStream>();
 			for (int i = 0; i < _ctx.Length("GetMezzanineInfo.Mezzanine.AudioStreamList.Length"); i++) {

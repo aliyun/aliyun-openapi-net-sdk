@@ -27,10 +27,10 @@ using Aliyun.Acs.vod.Transform.V20170321;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class RegisterMediaRequest : RpcAcsRequest<RegisterMediaResponse>
+    public class SetAppPlayKeyRequest : RpcAcsRequest<SetAppPlayKeyResponse>
     {
-        public RegisterMediaRequest()
-            : base("vod", "2017-03-21", "RegisterMedia", "vod", "openAPI")
+        public SetAppPlayKeyRequest()
+            : base("vod", "2017-03-21", "SetAppPlayKey", "vod", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,63 +40,78 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			Method = MethodType.POST;
         }
 
-		private string userData;
+		private long? resourceOwnerId;
 
-		private string registerMetadatas;
+		private string resourceOwnerAccount;
 
-		private string workflowId;
+		private long? ownerId;
 
-		private string templateGroupId;
+		private string appId;
 
-		public string UserData
+		private string playKey;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return userData;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				userData = value;
-				DictionaryUtil.Add(QueryParameters, "UserData", value);
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
-		public string RegisterMetadatas
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return registerMetadatas;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				registerMetadatas = value;
-				DictionaryUtil.Add(QueryParameters, "RegisterMetadatas", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
-		public string WorkflowId
+		public long? OwnerId
 		{
 			get
 			{
-				return workflowId;
+				return ownerId;
 			}
 			set	
 			{
-				workflowId = value;
-				DictionaryUtil.Add(QueryParameters, "WorkflowId", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
-		public string TemplateGroupId
+		public string AppId
 		{
 			get
 			{
-				return templateGroupId;
+				return appId;
 			}
 			set	
 			{
-				templateGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateGroupId", value);
+				appId = value;
+				DictionaryUtil.Add(QueryParameters, "AppId", value);
+			}
+		}
+
+		public string PlayKey
+		{
+			get
+			{
+				return playKey;
+			}
+			set	
+			{
+				playKey = value;
+				DictionaryUtil.Add(QueryParameters, "PlayKey", value);
 			}
 		}
 
@@ -105,9 +120,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			return false;
 		}
 
-        public override RegisterMediaResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SetAppPlayKeyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RegisterMediaResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetAppPlayKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

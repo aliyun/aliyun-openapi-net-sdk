@@ -74,6 +74,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				video.Size = _ctx.LongValue("SearchMedia.MediaList["+ i +"].Video.Size");
 				video.Duration = _ctx.FloatValue("SearchMedia.MediaList["+ i +"].Video.Duration");
 				video.Title = _ctx.StringValue("SearchMedia.MediaList["+ i +"].Video.Title");
+				video.ReferenceId = _ctx.StringValue("SearchMedia.MediaList["+ i +"].Video.ReferenceId");
 
 				List<string> video_spriteSnapshots = new List<string>();
 				for (int j = 0; j < _ctx.Length("SearchMedia.MediaList["+ i +"].Video.SpriteSnapshots.Length"); j++) {
@@ -140,6 +141,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				audio.Size = _ctx.LongValue("SearchMedia.MediaList["+ i +"].Audio.Size");
 				audio.Duration = _ctx.FloatValue("SearchMedia.MediaList["+ i +"].Audio.Duration");
 				audio.Title = _ctx.StringValue("SearchMedia.MediaList["+ i +"].Audio.Title");
+				audio.ReferenceId = _ctx.StringValue("SearchMedia.MediaList["+ i +"].Audio.ReferenceId");
 
 				List<string> audio_spriteSnapshots1 = new List<string>();
 				for (int j = 0; j < _ctx.Length("SearchMedia.MediaList["+ i +"].Audio.SpriteSnapshots.Length"); j++) {

@@ -35,6 +35,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private GetJobDetail_AIJobDetail aIJobDetail;
 
+		private GetJobDetail_WorkflowTaskDetail workflowTaskDetail;
+
 		public string RequestId
 		{
 			get
@@ -92,6 +94,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				aIJobDetail = value;
+			}
+		}
+
+		public GetJobDetail_WorkflowTaskDetail WorkflowTaskDetail
+		{
+			get
+			{
+				return workflowTaskDetail;
+			}
+			set	
+			{
+				workflowTaskDetail = value;
 			}
 		}
 
@@ -467,6 +481,224 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					completeTime = value;
+				}
+			}
+		}
+
+		public class GetJobDetail_WorkflowTaskDetail
+		{
+
+			private string taskId;
+
+			private string status;
+
+			private string taskInput;
+
+			private string createTime;
+
+			private string finishTime;
+
+			private string activityResults;
+
+			private string userData;
+
+			private GetJobDetail_Workflow workflow;
+
+			public string TaskId
+			{
+				get
+				{
+					return taskId;
+				}
+				set	
+				{
+					taskId = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public string TaskInput
+			{
+				get
+				{
+					return taskInput;
+				}
+				set	
+				{
+					taskInput = value;
+				}
+			}
+
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public string FinishTime
+			{
+				get
+				{
+					return finishTime;
+				}
+				set	
+				{
+					finishTime = value;
+				}
+			}
+
+			public string ActivityResults
+			{
+				get
+				{
+					return activityResults;
+				}
+				set	
+				{
+					activityResults = value;
+				}
+			}
+
+			public string UserData
+			{
+				get
+				{
+					return userData;
+				}
+				set	
+				{
+					userData = value;
+				}
+			}
+
+			public GetJobDetail_Workflow Workflow
+			{
+				get
+				{
+					return workflow;
+				}
+				set	
+				{
+					workflow = value;
+				}
+			}
+
+			public class GetJobDetail_Workflow
+			{
+
+				private string workflowId;
+
+				private string name;
+
+				private string status;
+
+				private string type;
+
+				private string createTime;
+
+				private string modifiedTime;
+
+				private string appId;
+
+				public string WorkflowId
+				{
+					get
+					{
+						return workflowId;
+					}
+					set	
+					{
+						workflowId = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
+					}
+				}
+
+				public string CreateTime
+				{
+					get
+					{
+						return createTime;
+					}
+					set	
+					{
+						createTime = value;
+					}
+				}
+
+				public string ModifiedTime
+				{
+					get
+					{
+						return modifiedTime;
+					}
+					set	
+					{
+						modifiedTime = value;
+					}
+				}
+
+				public string AppId
+				{
+					get
+					{
+						return appId;
+					}
+					set	
+					{
+						appId = value;
+					}
 				}
 			}
 		}

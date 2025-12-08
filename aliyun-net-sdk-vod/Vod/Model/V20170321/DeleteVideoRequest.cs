@@ -40,7 +40,22 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			Method = MethodType.POST;
         }
 
+		private string referenceIds;
+
 		private string videoIds;
+
+		public string ReferenceIds
+		{
+			get
+			{
+				return referenceIds;
+			}
+			set	
+			{
+				referenceIds = value;
+				DictionaryUtil.Add(QueryParameters, "ReferenceIds", value);
+			}
+		}
 
 		public string VideoIds
 		{

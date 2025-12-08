@@ -90,6 +90,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string restoreExpiration;
 
+			private string fileMD5;
+
 			private List<GetMezzanineInfo_AudioStream> audioStreamList;
 
 			private List<GetMezzanineInfo_VideoStream> videoStreamList;
@@ -295,6 +297,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					restoreExpiration = value;
+				}
+			}
+
+			public string FileMD5
+			{
+				get
+				{
+					return fileMD5;
+				}
+				set	
+				{
+					fileMD5 = value;
 				}
 			}
 

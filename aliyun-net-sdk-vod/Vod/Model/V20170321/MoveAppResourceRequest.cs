@@ -40,24 +40,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			Method = MethodType.POST;
         }
 
-		private string resourceType;
-
 		private string targetAppId;
 
-		private string resourceIds;
+		private string resourceType;
 
-		public string ResourceType
-		{
-			get
-			{
-				return resourceType;
-			}
-			set	
-			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
-			}
-		}
+		private string resourceIds;
 
 		public string TargetAppId
 		{
@@ -69,6 +56,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				targetAppId = value;
 				DictionaryUtil.Add(QueryParameters, "TargetAppId", value);
+			}
+		}
+
+		public string ResourceType
+		{
+			get
+			{
+				return resourceType;
+			}
+			set	
+			{
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 

@@ -44,6 +44,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				deleteMezzaninesResponse_nonExistVideoIds.Add(_ctx.StringValue("DeleteMezzanines.NonExistVideoIds["+ i +"]"));
 			}
 			deleteMezzaninesResponse.NonExistVideoIds = deleteMezzaninesResponse_nonExistVideoIds;
+
+			List<string> deleteMezzaninesResponse_nonExistReferenceIds = new List<string>();
+			for (int i = 0; i < _ctx.Length("DeleteMezzanines.NonExistReferenceIds.Length"); i++) {
+				deleteMezzaninesResponse_nonExistReferenceIds.Add(_ctx.StringValue("DeleteMezzanines.NonExistReferenceIds["+ i +"]"));
+			}
+			deleteMezzaninesResponse.NonExistReferenceIds = deleteMezzaninesResponse_nonExistReferenceIds;
         
 			return deleteMezzaninesResponse;
         }

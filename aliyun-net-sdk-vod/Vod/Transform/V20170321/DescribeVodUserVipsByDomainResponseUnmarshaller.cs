@@ -24,17 +24,23 @@ using Aliyun.Acs.vod.Model.V20170321;
 
 namespace Aliyun.Acs.vod.Transform.V20170321
 {
-    public class SubmitWorkflowJobResponseUnmarshaller
+    public class DescribeVodUserVipsByDomainResponseUnmarshaller
     {
-        public static SubmitWorkflowJobResponse Unmarshall(UnmarshallerContext _ctx)
+        public static DescribeVodUserVipsByDomainResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			SubmitWorkflowJobResponse submitWorkflowJobResponse = new SubmitWorkflowJobResponse();
+			DescribeVodUserVipsByDomainResponse describeVodUserVipsByDomainResponse = new DescribeVodUserVipsByDomainResponse();
 
-			submitWorkflowJobResponse.HttpResponse = _ctx.HttpResponse;
-			submitWorkflowJobResponse.RequestId = _ctx.StringValue("SubmitWorkflowJob.RequestId");
-			submitWorkflowJobResponse.TaskId = _ctx.StringValue("SubmitWorkflowJob.TaskId");
+			describeVodUserVipsByDomainResponse.HttpResponse = _ctx.HttpResponse;
+			describeVodUserVipsByDomainResponse.DomainName = _ctx.StringValue("DescribeVodUserVipsByDomain.DomainName");
+			describeVodUserVipsByDomainResponse.RequestId = _ctx.StringValue("DescribeVodUserVipsByDomain.RequestId");
+
+			List<string> describeVodUserVipsByDomainResponse_vips = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeVodUserVipsByDomain.Vips.Length"); i++) {
+				describeVodUserVipsByDomainResponse_vips.Add(_ctx.StringValue("DescribeVodUserVipsByDomain.Vips["+ i +"]"));
+			}
+			describeVodUserVipsByDomainResponse.Vips = describeVodUserVipsByDomainResponse_vips;
         
-			return submitWorkflowJobResponse;
+			return describeVodUserVipsByDomainResponse;
         }
     }
 }

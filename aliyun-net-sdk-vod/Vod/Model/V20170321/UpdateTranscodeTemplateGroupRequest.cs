@@ -43,11 +43,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string transcodeTemplateList;
 
+		private string locked;
+
 		private string transcodeTemplateGroupId;
 
 		private string name;
-
-		private string locked;
 
 		[JsonProperty(PropertyName = "TranscodeTemplateList")]
 		public string TranscodeTemplateList
@@ -60,6 +60,20 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				transcodeTemplateList = value;
 				DictionaryUtil.Add(QueryParameters, "TranscodeTemplateList", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Locked")]
+		public string Locked
+		{
+			get
+			{
+				return locked;
+			}
+			set	
+			{
+				locked = value;
+				DictionaryUtil.Add(QueryParameters, "Locked", value);
 			}
 		}
 
@@ -88,20 +102,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "Locked")]
-		public string Locked
-		{
-			get
-			{
-				return locked;
-			}
-			set	
-			{
-				locked = value;
-				DictionaryUtil.Add(QueryParameters, "Locked", value);
 			}
 		}
 

@@ -100,6 +100,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string resourceGroupId;
 
+			private List<GetAppInfos_Tag> tags;
+
 			public string Type
 			{
 				get
@@ -193,6 +195,50 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					resourceGroupId = value;
+				}
+			}
+
+			public List<GetAppInfos_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public class GetAppInfos_Tag
+			{
+
+				private string tagKey;
+
+				private string tagValue;
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
+					}
+				}
+
+				public string TagValue
+				{
+					get
+					{
+						return tagValue;
+					}
+					set	
+					{
+						tagValue = value;
+					}
 				}
 			}
 		}

@@ -275,6 +275,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 				private string title;
 
+				private string referenceId;
+
 				private List<SearchMedia_PlayInfo> playInfoList;
 
 				private List<string> spriteSnapshots;
@@ -653,6 +655,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
+				public string ReferenceId
+				{
+					get
+					{
+						return referenceId;
+					}
+					set	
+					{
+						referenceId = value;
+					}
+				}
+
 				public List<SearchMedia_PlayInfo> PlayInfoList
 				{
 					get
@@ -962,6 +976,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				private float? duration;
 
 				private string title;
+
+				private string referenceId;
 
 				private List<SearchMedia_PlayInfo4> playInfoList3;
 
@@ -1302,6 +1318,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						title = value;
+					}
+				}
+
+				public string ReferenceId
+				{
+					get
+					{
+						return referenceId;
+					}
+					set	
+					{
+						referenceId = value;
 					}
 				}
 

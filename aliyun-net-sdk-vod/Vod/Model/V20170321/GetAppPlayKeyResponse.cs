@@ -22,16 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-	public class DeleteMezzaninesResponse : AcsResponse
+	public class GetAppPlayKeyResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<string> unRemoveableVideoIds;
-
-		private List<string> nonExistVideoIds;
-
-		private List<string> nonExistReferenceIds;
+		private GetAppPlayKey_AppPlayKey appPlayKey;
 
 		public string RequestId
 		{
@@ -45,39 +41,75 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public List<string> UnRemoveableVideoIds
+		public GetAppPlayKey_AppPlayKey AppPlayKey
 		{
 			get
 			{
-				return unRemoveableVideoIds;
+				return appPlayKey;
 			}
 			set	
 			{
-				unRemoveableVideoIds = value;
+				appPlayKey = value;
 			}
 		}
 
-		public List<string> NonExistVideoIds
+		public class GetAppPlayKey_AppPlayKey
 		{
-			get
-			{
-				return nonExistVideoIds;
-			}
-			set	
-			{
-				nonExistVideoIds = value;
-			}
-		}
 
-		public List<string> NonExistReferenceIds
-		{
-			get
+			private string appId;
+
+			private string playKey;
+
+			private string creationTime;
+
+			private string modificationTime;
+
+			public string AppId
 			{
-				return nonExistReferenceIds;
+				get
+				{
+					return appId;
+				}
+				set	
+				{
+					appId = value;
+				}
 			}
-			set	
+
+			public string PlayKey
 			{
-				nonExistReferenceIds = value;
+				get
+				{
+					return playKey;
+				}
+				set	
+				{
+					playKey = value;
+				}
+			}
+
+			public string CreationTime
+			{
+				get
+				{
+					return creationTime;
+				}
+				set	
+				{
+					creationTime = value;
+				}
+			}
+
+			public string ModificationTime
+			{
+				get
+				{
+					return modificationTime;
+				}
+				set	
+				{
+					modificationTime = value;
+				}
 			}
 		}
 	}
