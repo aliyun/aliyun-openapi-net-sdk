@@ -45,6 +45,8 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 		private int? roleType;
 
+		private string owner;
+
 		private string threatLevel;
 
 		private string incidentUuid;
@@ -113,6 +115,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			{
 				roleType = value;
 				DictionaryUtil.Add(BodyParameters, "RoleType", value.ToString());
+			}
+		}
+
+		public string Owner
+		{
+			get
+			{
+				return owner;
+			}
+			set	
+			{
+				owner = value;
+				DictionaryUtil.Add(BodyParameters, "Owner", value);
 			}
 		}
 

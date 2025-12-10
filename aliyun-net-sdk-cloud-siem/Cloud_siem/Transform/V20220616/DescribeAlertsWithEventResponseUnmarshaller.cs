@@ -81,6 +81,9 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 				responseDataItem.CloudCode = _ctx.StringValue("DescribeAlertsWithEvent.Data.ResponseData["+ i +"].CloudCode");
 				responseDataItem.IsDefend = _ctx.StringValue("DescribeAlertsWithEvent.Data.ResponseData["+ i +"].IsDefend");
 				responseDataItem.ExtendContent = _ctx.StringValue("DescribeAlertsWithEvent.Data.ResponseData["+ i +"].ExtendContent");
+				responseDataItem.ProductId = _ctx.StringValue("DescribeAlertsWithEvent.Data.ResponseData["+ i +"].ProductId");
+				responseDataItem.VendorId = _ctx.StringValue("DescribeAlertsWithEvent.Data.ResponseData["+ i +"].VendorId");
+				responseDataItem.DetectionRuleId = _ctx.StringValue("DescribeAlertsWithEvent.Data.ResponseData["+ i +"].DetectionRuleId");
 
 				List<DescribeAlertsWithEventResponse.DescribeAlertsWithEvent_Data.DescribeAlertsWithEvent_ResponseDataItem.DescribeAlertsWithEvent_AlertInfoListItem> responseDataItem_alertInfoList = new List<DescribeAlertsWithEventResponse.DescribeAlertsWithEvent_Data.DescribeAlertsWithEvent_ResponseDataItem.DescribeAlertsWithEvent_AlertInfoListItem>();
 				for (int j = 0; j < _ctx.Length("DescribeAlertsWithEvent.Data.ResponseData["+ i +"].AlertInfoList.Length"); j++) {

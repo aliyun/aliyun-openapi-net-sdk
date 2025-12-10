@@ -59,6 +59,7 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 				responseDataItem.ActionConfig = _ctx.StringValue("ListAutomateResponseConfigs.Data.ResponseData["+ i +"].ActionConfig");
 				responseDataItem.Status = _ctx.IntegerValue("ListAutomateResponseConfigs.Data.ResponseData["+ i +"].Status");
 				responseDataItem.DataType = _ctx.IntegerValue("ListAutomateResponseConfigs.Data.ResponseData["+ i +"].DataType");
+				responseDataItem.ResponseRuleType = _ctx.StringValue("ListAutomateResponseConfigs.Data.ResponseData["+ i +"].ResponseRuleType");
 
 				data_responseData.Add(responseDataItem);
 			}

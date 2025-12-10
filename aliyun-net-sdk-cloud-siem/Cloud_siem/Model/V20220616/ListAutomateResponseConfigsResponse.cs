@@ -153,6 +153,8 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 				private int? dataType;
 
+				private string responseRuleType;
+
 				public long? Id
 				{
 					get
@@ -294,6 +296,18 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 					set	
 					{
 						dataType = value;
+					}
+				}
+
+				public string ResponseRuleType
+				{
+					get
+					{
+						return responseRuleType;
+					}
+					set	
+					{
+						responseRuleType = value;
 					}
 				}
 			}

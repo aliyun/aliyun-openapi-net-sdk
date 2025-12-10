@@ -191,9 +191,15 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 				private string subUserName;
 
+				private string isDefend;
+
 				private string cloudCode;
 
-				private string isDefend;
+				private string productId;
+
+				private string vendorId;
+
+				private string detectionRuleId;
 
 				private List<DescribeAlertsWithEntity_AlertInfoListItem> alertInfoList;
 
@@ -569,6 +575,18 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 					}
 				}
 
+				public string IsDefend
+				{
+					get
+					{
+						return isDefend;
+					}
+					set	
+					{
+						isDefend = value;
+					}
+				}
+
 				public string CloudCode
 				{
 					get
@@ -581,15 +599,39 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 					}
 				}
 
-				public string IsDefend
+				public string ProductId
 				{
 					get
 					{
-						return isDefend;
+						return productId;
 					}
 					set	
 					{
-						isDefend = value;
+						productId = value;
+					}
+				}
+
+				public string VendorId
+				{
+					get
+					{
+						return vendorId;
+					}
+					set	
+					{
+						vendorId = value;
+					}
+				}
+
+				public string DetectionRuleId
+				{
+					get
+					{
+						return detectionRuleId;
+					}
+					set	
+					{
+						detectionRuleId = value;
 					}
 				}
 

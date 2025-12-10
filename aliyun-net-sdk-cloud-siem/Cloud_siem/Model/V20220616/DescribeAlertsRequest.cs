@@ -39,6 +39,8 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 		private string alertName;
 
+		private List<string> alertStatuss = new List<string>(){ };
+
 		private string entityName;
 
 		private string assetName;
@@ -96,6 +98,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			{
 				alertName = value;
 				DictionaryUtil.Add(BodyParameters, "AlertName", value);
+			}
+		}
+
+		public List<string> AlertStatuss
+		{
+			get
+			{
+				return alertStatuss;
+			}
+
+			set
+			{
+				alertStatuss = value;
 			}
 		}
 

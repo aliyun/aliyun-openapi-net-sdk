@@ -63,6 +63,9 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 				responseDataItem.EntityId = _ctx.StringValue("ListEntities.Data.ResponseData["+ i +"].EntityId");
 				responseDataItem.EntityUuid = _ctx.StringValue("ListEntities.Data.ResponseData["+ i +"].EntityUuid");
 				responseDataItem.MalwareType = _ctx.StringValue("ListEntities.Data.ResponseData["+ i +"].MalwareType");
+				responseDataItem.IsAsset = _ctx.StringValue("ListEntities.Data.ResponseData["+ i +"].IsAsset");
+				responseDataItem.IsMalware = _ctx.StringValue("ListEntities.Data.ResponseData["+ i +"].IsMalware");
+				responseDataItem.Tags = _ctx.StringValue("ListEntities.Data.ResponseData["+ i +"].Tags");
 
 				data_responseData.Add(responseDataItem);
 			}

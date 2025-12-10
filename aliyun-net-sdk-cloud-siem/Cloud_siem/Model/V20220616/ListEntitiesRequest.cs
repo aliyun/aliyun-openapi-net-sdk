@@ -48,6 +48,8 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 		private int? currentPage;
 
+		private string tags;
+
 		private string isMalwareEntity;
 
 		private string entityType;
@@ -131,6 +133,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			{
 				currentPage = value;
 				DictionaryUtil.Add(BodyParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(BodyParameters, "Tags", value);
 			}
 		}
 

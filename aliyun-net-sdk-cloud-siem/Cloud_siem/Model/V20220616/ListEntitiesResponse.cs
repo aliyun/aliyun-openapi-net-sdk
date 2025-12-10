@@ -161,6 +161,12 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 				private string malwareType;
 
+				private string isAsset;
+
+				private string isMalware;
+
+				private string tags;
+
 				public long? Id
 				{
 					get
@@ -350,6 +356,42 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 					set	
 					{
 						malwareType = value;
+					}
+				}
+
+				public string IsAsset
+				{
+					get
+					{
+						return isAsset;
+					}
+					set	
+					{
+						isAsset = value;
+					}
+				}
+
+				public string IsMalware
+				{
+					get
+					{
+						return isMalware;
+					}
+					set	
+					{
+						isMalware = value;
+					}
+				}
+
+				public string Tags
+				{
+					get
+					{
+						return tags;
+					}
+					set	
+					{
+						tags = value;
 					}
 				}
 			}

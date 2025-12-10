@@ -197,6 +197,12 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 				private string extendContent;
 
+				private string productId;
+
+				private string vendorId;
+
+				private string detectionRuleId;
+
 				private List<DescribeAlertsWithEvent_AlertInfoListItem> alertInfoList;
 
 				public long? Id
@@ -604,6 +610,42 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 					set	
 					{
 						extendContent = value;
+					}
+				}
+
+				public string ProductId
+				{
+					get
+					{
+						return productId;
+					}
+					set	
+					{
+						productId = value;
+					}
+				}
+
+				public string VendorId
+				{
+					get
+					{
+						return vendorId;
+					}
+					set	
+					{
+						vendorId = value;
+					}
+				}
+
+				public string DetectionRuleId
+				{
+					get
+					{
+						return detectionRuleId;
+					}
+					set	
+					{
+						detectionRuleId = value;
 					}
 				}
 

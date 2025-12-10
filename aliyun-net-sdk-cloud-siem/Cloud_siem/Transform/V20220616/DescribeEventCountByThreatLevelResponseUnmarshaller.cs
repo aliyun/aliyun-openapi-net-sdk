@@ -42,6 +42,8 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 			data.HighLevelEventNum = _ctx.LongValue("DescribeEventCountByThreatLevel.Data.HighLevelEventNum");
 			data.MediumLevelEventNum = _ctx.LongValue("DescribeEventCountByThreatLevel.Data.MediumLevelEventNum");
 			data.LowLevelEventNum = _ctx.LongValue("DescribeEventCountByThreatLevel.Data.LowLevelEventNum");
+			data.SeriousLevelEventNum = _ctx.LongValue("DescribeEventCountByThreatLevel.Data.SeriousLevelEventNum");
+			data.InfoLevelEventNum = _ctx.LongValue("DescribeEventCountByThreatLevel.Data.InfoLevelEventNum");
 			describeEventCountByThreatLevelResponse.Data = data;
         
 			return describeEventCountByThreatLevelResponse;

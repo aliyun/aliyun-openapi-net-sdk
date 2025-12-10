@@ -108,6 +108,10 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 			private long? lowLevelEventNum;
 
+			private long? seriousLevelEventNum;
+
+			private long? infoLevelEventNum;
+
 			public long? EventNum
 			{
 				get
@@ -165,6 +169,30 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 				set	
 				{
 					lowLevelEventNum = value;
+				}
+			}
+
+			public long? SeriousLevelEventNum
+			{
+				get
+				{
+					return seriousLevelEventNum;
+				}
+				set	
+				{
+					seriousLevelEventNum = value;
+				}
+			}
+
+			public long? InfoLevelEventNum
+			{
+				get
+				{
+					return infoLevelEventNum;
+				}
+				set	
+				{
+					infoLevelEventNum = value;
 				}
 			}
 		}

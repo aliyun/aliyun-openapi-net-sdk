@@ -78,8 +78,11 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 				responseDataItem.AttCk = _ctx.StringValue("DescribeAlertsWithEntity.Data.ResponseData["+ i +"].AttCk");
 				responseDataItem.SubUserId = _ctx.LongValue("DescribeAlertsWithEntity.Data.ResponseData["+ i +"].SubUserId");
 				responseDataItem.SubUserName = _ctx.StringValue("DescribeAlertsWithEntity.Data.ResponseData["+ i +"].SubUserName");
-				responseDataItem.CloudCode = _ctx.StringValue("DescribeAlertsWithEntity.Data.ResponseData["+ i +"].CloudCode");
 				responseDataItem.IsDefend = _ctx.StringValue("DescribeAlertsWithEntity.Data.ResponseData["+ i +"].IsDefend");
+				responseDataItem.CloudCode = _ctx.StringValue("DescribeAlertsWithEntity.Data.ResponseData["+ i +"].CloudCode");
+				responseDataItem.ProductId = _ctx.StringValue("DescribeAlertsWithEntity.Data.ResponseData["+ i +"].ProductId");
+				responseDataItem.VendorId = _ctx.StringValue("DescribeAlertsWithEntity.Data.ResponseData["+ i +"].VendorId");
+				responseDataItem.DetectionRuleId = _ctx.StringValue("DescribeAlertsWithEntity.Data.ResponseData["+ i +"].DetectionRuleId");
 
 				List<DescribeAlertsWithEntityResponse.DescribeAlertsWithEntity_Data.DescribeAlertsWithEntity_ResponseDataItem.DescribeAlertsWithEntity_AlertInfoListItem> responseDataItem_alertInfoList = new List<DescribeAlertsWithEntityResponse.DescribeAlertsWithEntity_Data.DescribeAlertsWithEntity_ResponseDataItem.DescribeAlertsWithEntity_AlertInfoListItem>();
 				for (int j = 0; j < _ctx.Length("DescribeAlertsWithEntity.Data.ResponseData["+ i +"].AlertInfoList.Length"); j++) {

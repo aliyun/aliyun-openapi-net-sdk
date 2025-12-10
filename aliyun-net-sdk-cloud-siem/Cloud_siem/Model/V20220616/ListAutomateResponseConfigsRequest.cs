@@ -51,6 +51,8 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 		private long? id;
 
+		private string responseRuleType;
+
 		private int? currentPage;
 
 		private string playbookUuid;
@@ -158,6 +160,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			{
 				id = value;
 				DictionaryUtil.Add(BodyParameters, "Id", value.ToString());
+			}
+		}
+
+		public string ResponseRuleType
+		{
+			get
+			{
+				return responseRuleType;
+			}
+			set	
+			{
+				responseRuleType = value;
+				DictionaryUtil.Add(BodyParameters, "ResponseRuleType", value);
 			}
 		}
 
