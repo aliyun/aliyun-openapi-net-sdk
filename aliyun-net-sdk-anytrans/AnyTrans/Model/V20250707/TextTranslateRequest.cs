@@ -166,6 +166,8 @@ namespace Aliyun.Acs.AnyTrans.Model.V20250707
 
 			private List<ExamplesItem> examples = new List<ExamplesItem>(){ };
 
+			private string prefix;
+
 			private Config config_;
 
 			private string domainHint;
@@ -232,6 +234,19 @@ namespace Aliyun.Acs.AnyTrans.Model.V20250707
 				set	
 				{
 					examples = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "prefix")]
+			public string Prefix
+			{
+				get
+				{
+					return prefix;
+				}
+				set	
+				{
+					prefix = value;
 				}
 			}
 
