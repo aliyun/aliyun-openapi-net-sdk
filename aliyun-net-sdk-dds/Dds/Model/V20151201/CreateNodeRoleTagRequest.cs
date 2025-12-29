@@ -27,10 +27,10 @@ using Aliyun.Acs.Dds.Transform.V20151201;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class DescribeShardingNetworkAddressRequest : RpcAcsRequest<DescribeShardingNetworkAddressResponse>
+    public class CreateNodeRoleTagRequest : RpcAcsRequest<CreateNodeRoleTagResponse>
     {
-        public DescribeShardingNetworkAddressRequest()
-            : base("Dds", "2015-12-01", "DescribeShardingNetworkAddress", "dds", "openAPI")
+        public CreateNodeRoleTagRequest()
+            : base("Dds", "2015-12-01", "CreateNodeRoleTag", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,11 +42,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
-		private string networkType;
+		private string shardList;
 
 		private string dBInstanceId;
-
-		private string nodeId;
 
 		private string resourceOwnerAccount;
 
@@ -67,16 +65,16 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string NetworkType
+		public string ShardList
 		{
 			get
 			{
-				return networkType;
+				return shardList;
 			}
 			set	
 			{
-				networkType = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
+				shardList = value;
+				DictionaryUtil.Add(QueryParameters, "ShardList", value);
 			}
 		}
 
@@ -90,19 +88,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
-		public string NodeId
-		{
-			get
-			{
-				return nodeId;
-			}
-			set	
-			{
-				nodeId = value;
-				DictionaryUtil.Add(QueryParameters, "NodeId", value);
 			}
 		}
 
@@ -145,9 +130,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-        public override DescribeShardingNetworkAddressResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateNodeRoleTagResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeShardingNetworkAddressResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateNodeRoleTagResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

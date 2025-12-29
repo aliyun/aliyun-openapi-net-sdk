@@ -64,7 +64,7 @@ namespace Aliyun.Acs.Dds
             { "cn-shanghai-finance-1", "mongodb.cn-shanghai-finance-1.aliyuncs.com" },
             { "cn-hongkong", "mongodb.cn-hongkong.aliyuncs.com" },
             { "eu-central-1", "mongodb.eu-central-1.aliyuncs.com" },
-            { "cn-shenzhen", "mongodb.aliyuncs.com" },
+            { "cn-shenzhen", "mongodb.cn-shenzhen.aliyuncs.com" },
             { "cn-zhengzhou-nebula-1", "mongodb.aliyuncs.com" },
             { "eu-west-1", "mongodb.eu-west-1.aliyuncs.com" },
             { "cn-hangzhou-internal-test-1", "mongodb.aliyuncs.com" },

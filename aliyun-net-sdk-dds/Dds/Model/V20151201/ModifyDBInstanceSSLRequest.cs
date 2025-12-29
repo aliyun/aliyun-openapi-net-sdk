@@ -46,6 +46,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string dBInstanceId;
 
+		private string forceEncryption;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -90,6 +92,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public string ForceEncryption
+		{
+			get
+			{
+				return forceEncryption;
+			}
+			set	
+			{
+				forceEncryption = value;
+				DictionaryUtil.Add(QueryParameters, "ForceEncryption", value);
 			}
 		}
 

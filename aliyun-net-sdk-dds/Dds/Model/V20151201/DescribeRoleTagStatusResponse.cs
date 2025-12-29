@@ -22,42 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-	public class DescribeDBInstanceSSLResponse : AcsResponse
+	public class DescribeRoleTagStatusResponse : AcsResponse
 	{
-
-		private string sSLExpiredTime;
-
-		private string sSLStatus;
 
 		private string requestId;
 
-		private string certCommonName;
+		private string roleTagStatus;
 
-		private string forceEncryption;
-
-		public string SSLExpiredTime
-		{
-			get
-			{
-				return sSLExpiredTime;
-			}
-			set	
-			{
-				sSLExpiredTime = value;
-			}
-		}
-
-		public string SSLStatus
-		{
-			get
-			{
-				return sSLStatus;
-			}
-			set	
-			{
-				sSLStatus = value;
-			}
-		}
+		private string shardRoleTagStatus;
 
 		public string RequestId
 		{
@@ -71,27 +43,27 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string CertCommonName
+		public string RoleTagStatus
 		{
 			get
 			{
-				return certCommonName;
+				return roleTagStatus;
 			}
 			set	
 			{
-				certCommonName = value;
+				roleTagStatus = value;
 			}
 		}
 
-		public string ForceEncryption
+		public string ShardRoleTagStatus
 		{
 			get
 			{
-				return forceEncryption;
+				return shardRoleTagStatus;
 			}
 			set	
 			{
-				forceEncryption = value;
+				shardRoleTagStatus = value;
 			}
 		}
 	}

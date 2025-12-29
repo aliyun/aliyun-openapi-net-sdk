@@ -24,20 +24,16 @@ using Aliyun.Acs.Dds.Model.V20151201;
 
 namespace Aliyun.Acs.Dds.Transform.V20151201
 {
-    public class DescribeDBInstanceSSLResponseUnmarshaller
+    public class ModifyActiveOperationMaintenanceConfigResponseUnmarshaller
     {
-        public static DescribeDBInstanceSSLResponse Unmarshall(UnmarshallerContext _ctx)
+        public static ModifyActiveOperationMaintenanceConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			DescribeDBInstanceSSLResponse describeDBInstanceSSLResponse = new DescribeDBInstanceSSLResponse();
+			ModifyActiveOperationMaintenanceConfigResponse modifyActiveOperationMaintenanceConfigResponse = new ModifyActiveOperationMaintenanceConfigResponse();
 
-			describeDBInstanceSSLResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBInstanceSSLResponse.SSLExpiredTime = _ctx.StringValue("DescribeDBInstanceSSL.SSLExpiredTime");
-			describeDBInstanceSSLResponse.SSLStatus = _ctx.StringValue("DescribeDBInstanceSSL.SSLStatus");
-			describeDBInstanceSSLResponse.RequestId = _ctx.StringValue("DescribeDBInstanceSSL.RequestId");
-			describeDBInstanceSSLResponse.CertCommonName = _ctx.StringValue("DescribeDBInstanceSSL.CertCommonName");
-			describeDBInstanceSSLResponse.ForceEncryption = _ctx.StringValue("DescribeDBInstanceSSL.ForceEncryption");
+			modifyActiveOperationMaintenanceConfigResponse.HttpResponse = _ctx.HttpResponse;
+			modifyActiveOperationMaintenanceConfigResponse.RequestId = _ctx.StringValue("ModifyActiveOperationMaintenanceConfig.RequestId");
         
-			return describeDBInstanceSSLResponse;
+			return modifyActiveOperationMaintenanceConfigResponse;
         }
     }
 }

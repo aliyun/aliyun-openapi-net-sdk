@@ -27,10 +27,10 @@ using Aliyun.Acs.Dds.Transform.V20151201;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class DescribeShardingNetworkAddressRequest : RpcAcsRequest<DescribeShardingNetworkAddressResponse>
+    public class DescribeRoleTagStatusRequest : RpcAcsRequest<DescribeRoleTagStatusResponse>
     {
-        public DescribeShardingNetworkAddressRequest()
-            : base("Dds", "2015-12-01", "DescribeShardingNetworkAddress", "dds", "openAPI")
+        public DescribeRoleTagStatusRequest()
+            : base("Dds", "2015-12-01", "DescribeRoleTagStatus", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,11 +42,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
-		private string networkType;
-
 		private string dBInstanceId;
-
-		private string nodeId;
 
 		private string resourceOwnerAccount;
 
@@ -67,19 +63,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string NetworkType
-		{
-			get
-			{
-				return networkType;
-			}
-			set	
-			{
-				networkType = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
-			}
-		}
-
 		public string DBInstanceId
 		{
 			get
@@ -90,19 +73,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
-		public string NodeId
-		{
-			get
-			{
-				return nodeId;
-			}
-			set	
-			{
-				nodeId = value;
-				DictionaryUtil.Add(QueryParameters, "NodeId", value);
 			}
 		}
 
@@ -145,9 +115,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-        public override DescribeShardingNetworkAddressResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeRoleTagStatusResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeShardingNetworkAddressResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeRoleTagStatusResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

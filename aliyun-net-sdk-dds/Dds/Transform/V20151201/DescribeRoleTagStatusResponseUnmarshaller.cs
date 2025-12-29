@@ -24,20 +24,18 @@ using Aliyun.Acs.Dds.Model.V20151201;
 
 namespace Aliyun.Acs.Dds.Transform.V20151201
 {
-    public class DescribeDBInstanceSSLResponseUnmarshaller
+    public class DescribeRoleTagStatusResponseUnmarshaller
     {
-        public static DescribeDBInstanceSSLResponse Unmarshall(UnmarshallerContext _ctx)
+        public static DescribeRoleTagStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			DescribeDBInstanceSSLResponse describeDBInstanceSSLResponse = new DescribeDBInstanceSSLResponse();
+			DescribeRoleTagStatusResponse describeRoleTagStatusResponse = new DescribeRoleTagStatusResponse();
 
-			describeDBInstanceSSLResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBInstanceSSLResponse.SSLExpiredTime = _ctx.StringValue("DescribeDBInstanceSSL.SSLExpiredTime");
-			describeDBInstanceSSLResponse.SSLStatus = _ctx.StringValue("DescribeDBInstanceSSL.SSLStatus");
-			describeDBInstanceSSLResponse.RequestId = _ctx.StringValue("DescribeDBInstanceSSL.RequestId");
-			describeDBInstanceSSLResponse.CertCommonName = _ctx.StringValue("DescribeDBInstanceSSL.CertCommonName");
-			describeDBInstanceSSLResponse.ForceEncryption = _ctx.StringValue("DescribeDBInstanceSSL.ForceEncryption");
+			describeRoleTagStatusResponse.HttpResponse = _ctx.HttpResponse;
+			describeRoleTagStatusResponse.RequestId = _ctx.StringValue("DescribeRoleTagStatus.RequestId");
+			describeRoleTagStatusResponse.RoleTagStatus = _ctx.StringValue("DescribeRoleTagStatus.RoleTagStatus");
+			describeRoleTagStatusResponse.ShardRoleTagStatus = _ctx.StringValue("DescribeRoleTagStatus.ShardRoleTagStatus");
         
-			return describeDBInstanceSSLResponse;
+			return describeRoleTagStatusResponse;
         }
     }
 }

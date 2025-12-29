@@ -24,20 +24,17 @@ using Aliyun.Acs.Dds.Model.V20151201;
 
 namespace Aliyun.Acs.Dds.Transform.V20151201
 {
-    public class DescribeDBInstanceSSLResponseUnmarshaller
+    public class CancelActiveOperationTasksResponseUnmarshaller
     {
-        public static DescribeDBInstanceSSLResponse Unmarshall(UnmarshallerContext _ctx)
+        public static CancelActiveOperationTasksResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			DescribeDBInstanceSSLResponse describeDBInstanceSSLResponse = new DescribeDBInstanceSSLResponse();
+			CancelActiveOperationTasksResponse cancelActiveOperationTasksResponse = new CancelActiveOperationTasksResponse();
 
-			describeDBInstanceSSLResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBInstanceSSLResponse.SSLExpiredTime = _ctx.StringValue("DescribeDBInstanceSSL.SSLExpiredTime");
-			describeDBInstanceSSLResponse.SSLStatus = _ctx.StringValue("DescribeDBInstanceSSL.SSLStatus");
-			describeDBInstanceSSLResponse.RequestId = _ctx.StringValue("DescribeDBInstanceSSL.RequestId");
-			describeDBInstanceSSLResponse.CertCommonName = _ctx.StringValue("DescribeDBInstanceSSL.CertCommonName");
-			describeDBInstanceSSLResponse.ForceEncryption = _ctx.StringValue("DescribeDBInstanceSSL.ForceEncryption");
+			cancelActiveOperationTasksResponse.HttpResponse = _ctx.HttpResponse;
+			cancelActiveOperationTasksResponse.Ids = _ctx.StringValue("CancelActiveOperationTasks.Ids");
+			cancelActiveOperationTasksResponse.RequestId = _ctx.StringValue("CancelActiveOperationTasks.RequestId");
         
-			return describeDBInstanceSSLResponse;
+			return cancelActiveOperationTasksResponse;
         }
     }
 }

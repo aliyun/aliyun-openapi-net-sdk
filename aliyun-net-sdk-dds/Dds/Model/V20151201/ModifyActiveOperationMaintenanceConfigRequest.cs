@@ -27,10 +27,10 @@ using Aliyun.Acs.Dds.Transform.V20151201;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class DescribeShardingNetworkAddressRequest : RpcAcsRequest<DescribeShardingNetworkAddressResponse>
+    public class ModifyActiveOperationMaintenanceConfigRequest : RpcAcsRequest<ModifyActiveOperationMaintenanceConfigResponse>
     {
-        public DescribeShardingNetworkAddressRequest()
-            : base("Dds", "2015-12-01", "DescribeShardingNetworkAddress", "dds", "openAPI")
+        public ModifyActiveOperationMaintenanceConfigRequest()
+            : base("Dds", "2015-12-01", "ModifyActiveOperationMaintenanceConfig", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,17 +42,21 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
-		private string networkType;
+		private string cycleTime;
 
-		private string dBInstanceId;
+		private string maintainStartTime;
 
-		private string nodeId;
+		private string cycleType;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string maintainEndTime;
+
+		private int? status;
 
 		public long? ResourceOwnerId
 		{
@@ -67,42 +71,42 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string NetworkType
+		public string CycleTime
 		{
 			get
 			{
-				return networkType;
+				return cycleTime;
 			}
 			set	
 			{
-				networkType = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
+				cycleTime = value;
+				DictionaryUtil.Add(QueryParameters, "CycleTime", value);
 			}
 		}
 
-		public string DBInstanceId
+		public string MaintainStartTime
 		{
 			get
 			{
-				return dBInstanceId;
+				return maintainStartTime;
 			}
 			set	
 			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+				maintainStartTime = value;
+				DictionaryUtil.Add(QueryParameters, "MaintainStartTime", value);
 			}
 		}
 
-		public string NodeId
+		public string CycleType
 		{
 			get
 			{
-				return nodeId;
+				return cycleType;
 			}
 			set	
 			{
-				nodeId = value;
-				DictionaryUtil.Add(QueryParameters, "NodeId", value);
+				cycleType = value;
+				DictionaryUtil.Add(QueryParameters, "CycleType", value);
 			}
 		}
 
@@ -145,9 +149,40 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-        public override DescribeShardingNetworkAddressResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string MaintainEndTime
+		{
+			get
+			{
+				return maintainEndTime;
+			}
+			set	
+			{
+				maintainEndTime = value;
+				DictionaryUtil.Add(QueryParameters, "MaintainEndTime", value);
+			}
+		}
+
+		public int? Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value.ToString());
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override ModifyActiveOperationMaintenanceConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeShardingNetworkAddressResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyActiveOperationMaintenanceConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

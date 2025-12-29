@@ -27,10 +27,10 @@ using Aliyun.Acs.Dds.Transform.V20151201;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class DescribeShardingNetworkAddressRequest : RpcAcsRequest<DescribeShardingNetworkAddressResponse>
+    public class CancelActiveOperationTasksRequest : RpcAcsRequest<CancelActiveOperationTasksResponse>
     {
-        public DescribeShardingNetworkAddressRequest()
-            : base("Dds", "2015-12-01", "DescribeShardingNetworkAddress", "dds", "openAPI")
+        public CancelActiveOperationTasksRequest()
+            : base("Dds", "2015-12-01", "CancelActiveOperationTasks", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,17 +42,15 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
-		private string networkType;
-
-		private string dBInstanceId;
-
-		private string nodeId;
+		private string resourceGroupId;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string ids;
 
 		public long? ResourceOwnerId
 		{
@@ -67,42 +65,16 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string NetworkType
+		public string ResourceGroupId
 		{
 			get
 			{
-				return networkType;
+				return resourceGroupId;
 			}
 			set	
 			{
-				networkType = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
-		public string NodeId
-		{
-			get
-			{
-				return nodeId;
-			}
-			set	
-			{
-				nodeId = value;
-				DictionaryUtil.Add(QueryParameters, "NodeId", value);
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -145,9 +117,27 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-        public override DescribeShardingNetworkAddressResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Ids
+		{
+			get
+			{
+				return ids;
+			}
+			set	
+			{
+				ids = value;
+				DictionaryUtil.Add(QueryParameters, "Ids", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override CancelActiveOperationTasksResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeShardingNetworkAddressResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CancelActiveOperationTasksResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

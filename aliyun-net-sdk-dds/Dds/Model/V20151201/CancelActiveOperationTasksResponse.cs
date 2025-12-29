@@ -22,40 +22,22 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-	public class DescribeDBInstanceSSLResponse : AcsResponse
+	public class CancelActiveOperationTasksResponse : AcsResponse
 	{
 
-		private string sSLExpiredTime;
-
-		private string sSLStatus;
+		private string ids;
 
 		private string requestId;
 
-		private string certCommonName;
-
-		private string forceEncryption;
-
-		public string SSLExpiredTime
+		public string Ids
 		{
 			get
 			{
-				return sSLExpiredTime;
+				return ids;
 			}
 			set	
 			{
-				sSLExpiredTime = value;
-			}
-		}
-
-		public string SSLStatus
-		{
-			get
-			{
-				return sSLStatus;
-			}
-			set	
-			{
-				sSLStatus = value;
+				ids = value;
 			}
 		}
 
@@ -68,30 +50,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string CertCommonName
-		{
-			get
-			{
-				return certCommonName;
-			}
-			set	
-			{
-				certCommonName = value;
-			}
-		}
-
-		public string ForceEncryption
-		{
-			get
-			{
-				return forceEncryption;
-			}
-			set	
-			{
-				forceEncryption = value;
 			}
 		}
 	}

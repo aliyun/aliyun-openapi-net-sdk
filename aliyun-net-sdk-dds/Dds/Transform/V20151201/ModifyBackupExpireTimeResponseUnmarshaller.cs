@@ -24,20 +24,18 @@ using Aliyun.Acs.Dds.Model.V20151201;
 
 namespace Aliyun.Acs.Dds.Transform.V20151201
 {
-    public class DescribeDBInstanceSSLResponseUnmarshaller
+    public class ModifyBackupExpireTimeResponseUnmarshaller
     {
-        public static DescribeDBInstanceSSLResponse Unmarshall(UnmarshallerContext _ctx)
+        public static ModifyBackupExpireTimeResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			DescribeDBInstanceSSLResponse describeDBInstanceSSLResponse = new DescribeDBInstanceSSLResponse();
+			ModifyBackupExpireTimeResponse modifyBackupExpireTimeResponse = new ModifyBackupExpireTimeResponse();
 
-			describeDBInstanceSSLResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBInstanceSSLResponse.SSLExpiredTime = _ctx.StringValue("DescribeDBInstanceSSL.SSLExpiredTime");
-			describeDBInstanceSSLResponse.SSLStatus = _ctx.StringValue("DescribeDBInstanceSSL.SSLStatus");
-			describeDBInstanceSSLResponse.RequestId = _ctx.StringValue("DescribeDBInstanceSSL.RequestId");
-			describeDBInstanceSSLResponse.CertCommonName = _ctx.StringValue("DescribeDBInstanceSSL.CertCommonName");
-			describeDBInstanceSSLResponse.ForceEncryption = _ctx.StringValue("DescribeDBInstanceSSL.ForceEncryption");
+			modifyBackupExpireTimeResponse.HttpResponse = _ctx.HttpResponse;
+			modifyBackupExpireTimeResponse.RequestId = _ctx.StringValue("ModifyBackupExpireTime.RequestId");
+			modifyBackupExpireTimeResponse.BackupExpireTime = _ctx.StringValue("ModifyBackupExpireTime.BackupExpireTime");
+			modifyBackupExpireTimeResponse.BackupId = _ctx.StringValue("ModifyBackupExpireTime.BackupId");
         
-			return describeDBInstanceSSLResponse;
+			return modifyBackupExpireTimeResponse;
         }
     }
 }

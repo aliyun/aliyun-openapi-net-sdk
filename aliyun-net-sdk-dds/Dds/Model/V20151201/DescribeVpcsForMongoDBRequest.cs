@@ -27,10 +27,10 @@ using Aliyun.Acs.Dds.Transform.V20151201;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class DescribeShardingNetworkAddressRequest : RpcAcsRequest<DescribeShardingNetworkAddressResponse>
+    public class DescribeVpcsForMongoDBRequest : RpcAcsRequest<DescribeVpcsForMongoDBResponse>
     {
-        public DescribeShardingNetworkAddressRequest()
-            : base("Dds", "2015-12-01", "DescribeShardingNetworkAddress", "dds", "openAPI")
+        public DescribeVpcsForMongoDBRequest()
+            : base("Dds", "2015-12-01", "DescribeVpcsForMongoDB", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,17 +42,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
-		private string networkType;
+		private int? pageNumber;
 
-		private string dBInstanceId;
+		private string resourceGroupId;
 
-		private string nodeId;
+		private int? pageSize;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string zoneId;
 
 		public long? ResourceOwnerId
 		{
@@ -67,42 +69,42 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string NetworkType
+		public int? PageNumber
 		{
 			get
 			{
-				return networkType;
+				return pageNumber;
 			}
 			set	
 			{
-				networkType = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
-		public string DBInstanceId
+		public string ResourceGroupId
 		{
 			get
 			{
-				return dBInstanceId;
+				return resourceGroupId;
 			}
 			set	
 			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
-		public string NodeId
+		public int? PageSize
 		{
 			get
 			{
-				return nodeId;
+				return pageSize;
 			}
 			set	
 			{
-				nodeId = value;
-				DictionaryUtil.Add(QueryParameters, "NodeId", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -145,9 +147,27 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-        public override DescribeShardingNetworkAddressResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeVpcsForMongoDBResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeShardingNetworkAddressResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeVpcsForMongoDBResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

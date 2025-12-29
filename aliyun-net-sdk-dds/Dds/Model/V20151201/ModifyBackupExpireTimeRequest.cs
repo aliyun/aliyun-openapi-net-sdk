@@ -27,30 +27,31 @@ using Aliyun.Acs.Dds.Transform.V20151201;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class DescribeShardingNetworkAddressRequest : RpcAcsRequest<DescribeShardingNetworkAddressResponse>
+    public class ModifyBackupExpireTimeRequest : RpcAcsRequest<ModifyBackupExpireTimeResponse>
     {
-        public DescribeShardingNetworkAddressRequest()
-            : base("Dds", "2015-12-01", "DescribeShardingNetworkAddress", "dds", "openAPI")
+        public ModifyBackupExpireTimeRequest()
+            : base("Dds", "2015-12-01", "ModifyBackupExpireTime", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointRegionalType, null);
             }
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private string networkType;
-
 		private string dBInstanceId;
 
-		private string nodeId;
+		private string backupExpireTime;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
+
+		private string backupId;
 
 		private long? ownerId;
 
@@ -67,19 +68,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string NetworkType
-		{
-			get
-			{
-				return networkType;
-			}
-			set	
-			{
-				networkType = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
-			}
-		}
-
 		public string DBInstanceId
 		{
 			get
@@ -93,16 +81,16 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string NodeId
+		public string BackupExpireTime
 		{
 			get
 			{
-				return nodeId;
+				return backupExpireTime;
 			}
 			set	
 			{
-				nodeId = value;
-				DictionaryUtil.Add(QueryParameters, "NodeId", value);
+				backupExpireTime = value;
+				DictionaryUtil.Add(QueryParameters, "BackupExpireTime", value);
 			}
 		}
 
@@ -132,6 +120,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string BackupId
+		{
+			get
+			{
+				return backupId;
+			}
+			set	
+			{
+				backupId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupId", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -145,9 +146,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-        public override DescribeShardingNetworkAddressResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyBackupExpireTimeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeShardingNetworkAddressResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyBackupExpireTimeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

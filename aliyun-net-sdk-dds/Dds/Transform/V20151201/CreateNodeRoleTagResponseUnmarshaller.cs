@@ -24,20 +24,16 @@ using Aliyun.Acs.Dds.Model.V20151201;
 
 namespace Aliyun.Acs.Dds.Transform.V20151201
 {
-    public class DescribeDBInstanceSSLResponseUnmarshaller
+    public class CreateNodeRoleTagResponseUnmarshaller
     {
-        public static DescribeDBInstanceSSLResponse Unmarshall(UnmarshallerContext _ctx)
+        public static CreateNodeRoleTagResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			DescribeDBInstanceSSLResponse describeDBInstanceSSLResponse = new DescribeDBInstanceSSLResponse();
+			CreateNodeRoleTagResponse createNodeRoleTagResponse = new CreateNodeRoleTagResponse();
 
-			describeDBInstanceSSLResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBInstanceSSLResponse.SSLExpiredTime = _ctx.StringValue("DescribeDBInstanceSSL.SSLExpiredTime");
-			describeDBInstanceSSLResponse.SSLStatus = _ctx.StringValue("DescribeDBInstanceSSL.SSLStatus");
-			describeDBInstanceSSLResponse.RequestId = _ctx.StringValue("DescribeDBInstanceSSL.RequestId");
-			describeDBInstanceSSLResponse.CertCommonName = _ctx.StringValue("DescribeDBInstanceSSL.CertCommonName");
-			describeDBInstanceSSLResponse.ForceEncryption = _ctx.StringValue("DescribeDBInstanceSSL.ForceEncryption");
+			createNodeRoleTagResponse.HttpResponse = _ctx.HttpResponse;
+			createNodeRoleTagResponse.RequestId = _ctx.StringValue("CreateNodeRoleTag.RequestId");
         
-			return describeDBInstanceSSLResponse;
+			return createNodeRoleTagResponse;
         }
     }
 }
