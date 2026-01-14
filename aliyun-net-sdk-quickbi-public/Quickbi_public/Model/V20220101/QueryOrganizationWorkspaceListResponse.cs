@@ -171,6 +171,8 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 				private string workspaceName;
 
+				private string realOwnerAccountName;
+
 				public bool? AllowPublishOperation
 				{
 					get
@@ -336,6 +338,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						workspaceName = value;
+					}
+				}
+
+				public string RealOwnerAccountName
+				{
+					get
+					{
+						return realOwnerAccountName;
+					}
+					set	
+					{
+						realOwnerAccountName = value;
 					}
 				}
 			}

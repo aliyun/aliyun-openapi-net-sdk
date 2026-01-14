@@ -57,6 +57,7 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 				dataItem.WorkspaceDescription = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].WorkspaceDescription");
 				dataItem.WorkspaceId = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].WorkspaceId");
 				dataItem.WorkspaceName = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].WorkspaceName");
+				dataItem.RealOwnerAccountName = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].RealOwnerAccountName");
 
 				result_data.Add(dataItem);
 			}
