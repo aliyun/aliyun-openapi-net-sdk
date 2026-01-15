@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 {
-	public class SetAppDomainCertificateResponse : AcsResponse
+	public class ModifyAppInstanceSpecResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -45,7 +45,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 
 		private List<string> errorArgs;
 
-		private SetAppDomainCertificate_Module module;
+		private ModifyAppInstanceSpec_Module module;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -178,7 +178,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 		}
 
 		[JsonProperty(PropertyName = "Module")]
-		public SetAppDomainCertificate_Module Module
+		public ModifyAppInstanceSpec_Module Module
 		{
 			get
 			{
@@ -190,21 +190,21 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
-		public class SetAppDomainCertificate_Module
+		public class ModifyAppInstanceSpec_Module
 		{
 
-			private bool? success;
+			private string orderId;
 
-			[JsonProperty(PropertyName = "Success")]
-			public bool? Success
+			[JsonProperty(PropertyName = "OrderId")]
+			public string OrderId
 			{
 				get
 				{
-					return success;
+					return orderId;
 				}
 				set	
 				{
-					success = value;
+					orderId = value;
 				}
 			}
 		}

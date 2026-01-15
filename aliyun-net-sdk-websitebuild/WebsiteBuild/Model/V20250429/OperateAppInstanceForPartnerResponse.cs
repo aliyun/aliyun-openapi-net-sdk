@@ -33,6 +33,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 
 		private string errorCode;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -45,6 +46,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
+		[JsonProperty(PropertyName = "ErrorMsg")]
 		public string ErrorMsg
 		{
 			get
@@ -57,6 +59,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public string Success
 		{
 			get
@@ -69,6 +72,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
+		[JsonProperty(PropertyName = "ErrorCode")]
 		public string ErrorCode
 		{
 			get

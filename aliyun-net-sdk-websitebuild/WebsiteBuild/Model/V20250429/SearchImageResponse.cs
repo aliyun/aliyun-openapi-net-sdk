@@ -35,6 +35,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 
 		private SearchImage_ImageResponse imageResponse;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
+		[JsonProperty(PropertyName = "ErrorMsg")]
 		public string ErrorMsg
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public string Success
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
+		[JsonProperty(PropertyName = "ErrorCode")]
 		public string ErrorCode
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
+		[JsonProperty(PropertyName = "ImageResponse")]
 		public SearchImage_ImageResponse ImageResponse
 		{
 			get
@@ -104,6 +109,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 
 			private List<SearchImage_Image> imageList;
 
+			[JsonProperty(PropertyName = "MaxResults")]
 			public int? MaxResults
 			{
 				get
@@ -116,6 +122,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 				}
 			}
 
+			[JsonProperty(PropertyName = "NextToken")]
 			public string NextToken
 			{
 				get
@@ -128,6 +135,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 				}
 			}
 
+			[JsonProperty(PropertyName = "ImageList")]
 			public List<SearchImage_Image> ImageList
 			{
 				get
@@ -163,6 +171,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 
 				private string quantitativePalette;
 
+				[JsonProperty(PropertyName = "ImageUuid")]
 				public string ImageUuid
 				{
 					get
@@ -175,6 +184,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 					}
 				}
 
+				[JsonProperty(PropertyName = "OssKey")]
 				public string OssKey
 				{
 					get
@@ -187,6 +197,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 					}
 				}
 
+				[JsonProperty(PropertyName = "Url")]
 				public string Url
 				{
 					get
@@ -199,6 +210,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 					}
 				}
 
+				[JsonProperty(PropertyName = "Width")]
 				public int? Width
 				{
 					get
@@ -211,6 +223,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 					}
 				}
 
+				[JsonProperty(PropertyName = "Height")]
 				public int? Height
 				{
 					get
@@ -223,6 +236,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 					}
 				}
 
+				[JsonProperty(PropertyName = "ImageRatio")]
 				public string ImageRatio
 				{
 					get
@@ -235,6 +249,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 					}
 				}
 
+				[JsonProperty(PropertyName = "ImageCategory")]
 				public string ImageCategory
 				{
 					get
@@ -247,6 +262,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 					}
 				}
 
+				[JsonProperty(PropertyName = "TagsFromImage")]
 				public string TagsFromImage
 				{
 					get
@@ -259,6 +275,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 					}
 				}
 
+				[JsonProperty(PropertyName = "DescriptiveTones")]
 				public string DescriptiveTones
 				{
 					get
@@ -271,6 +288,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 					}
 				}
 
+				[JsonProperty(PropertyName = "QuantitativePalette")]
 				public string QuantitativePalette
 				{
 					get

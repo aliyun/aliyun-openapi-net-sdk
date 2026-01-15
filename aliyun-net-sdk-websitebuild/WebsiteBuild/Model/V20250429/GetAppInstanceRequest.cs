@@ -17,72 +17,49 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.WebsiteBuild;
+using Aliyun.Acs.WebsiteBuild.Transform;
+using Aliyun.Acs.WebsiteBuild.Transform.V20250429;
 
 namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 {
-	public class OperateAppServiceForPartnerResponse : AcsResponse
-	{
+    public class GetAppInstanceRequest : RpcAcsRequest<GetAppInstanceResponse>
+    {
+        public GetAppInstanceRequest()
+            : base("WebsiteBuild", "2025-04-29", "GetAppInstance")
+        {
+			Protocol = ProtocolType.HTTPS;
+			Method = MethodType.POST;
+        }
 
-		private string requestId;
+		private string bizId;
 
-		private string errorMsg;
-
-		private bool? success;
-
-		private string errorCode;
-
-		[JsonProperty(PropertyName = "RequestId")]
-		public string RequestId
+		public string BizId
 		{
 			get
 			{
-				return requestId;
+				return bizId;
 			}
 			set	
 			{
-				requestId = value;
+				bizId = value;
+				DictionaryUtil.Add(QueryParameters, "BizId", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "ErrorMsg")]
-		public string ErrorMsg
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return errorMsg;
-			}
-			set	
-			{
-				errorMsg = value;
-			}
+			return false;
 		}
 
-		[JsonProperty(PropertyName = "Success")]
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "ErrorCode")]
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-	}
+        public override GetAppInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        {
+            return GetAppInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+        }
+    }
 }

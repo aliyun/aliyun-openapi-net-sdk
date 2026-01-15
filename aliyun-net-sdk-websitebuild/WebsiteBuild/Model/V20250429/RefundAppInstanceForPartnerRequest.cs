@@ -29,44 +29,60 @@ using Aliyun.Acs.WebsiteBuild.Transform.V20250429;
 
 namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 {
-    public class OperateAppInstanceForPartnerRequest : RpcAcsRequest<OperateAppInstanceForPartnerResponse>
+    public class RefundAppInstanceForPartnerRequest : RpcAcsRequest<RefundAppInstanceForPartnerResponse>
     {
-        public OperateAppInstanceForPartnerRequest()
-            : base("WebsiteBuild", "2025-04-29", "OperateAppInstanceForPartner")
+        public RefundAppInstanceForPartnerRequest()
+            : base("WebsiteBuild", "2025-04-29", "RefundAppInstanceForPartner")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private string extend;
+		private string refundReason;
 
-		private string operateEvent;
+		private string userId;
 
-		[JsonProperty(PropertyName = "Extend")]
-		public string Extend
+		private string bizId;
+
+		[JsonProperty(PropertyName = "RefundReason")]
+		public string RefundReason
 		{
 			get
 			{
-				return extend;
+				return refundReason;
 			}
 			set	
 			{
-				extend = value;
-				DictionaryUtil.Add(QueryParameters, "Extend", value);
+				refundReason = value;
+				DictionaryUtil.Add(QueryParameters, "RefundReason", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "OperateEvent")]
-		public string OperateEvent
+		[JsonProperty(PropertyName = "UserId")]
+		public string UserId
 		{
 			get
 			{
-				return operateEvent;
+				return userId;
 			}
 			set	
 			{
-				operateEvent = value;
-				DictionaryUtil.Add(QueryParameters, "OperateEvent", value);
+				userId = value;
+				DictionaryUtil.Add(QueryParameters, "UserId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "BizId")]
+		public string BizId
+		{
+			get
+			{
+				return bizId;
+			}
+			set	
+			{
+				bizId = value;
+				DictionaryUtil.Add(QueryParameters, "BizId", value);
 			}
 		}
 
@@ -75,9 +91,9 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			return false;
 		}
 
-        public override OperateAppInstanceForPartnerResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override RefundAppInstanceForPartnerResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return OperateAppInstanceForPartnerResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RefundAppInstanceForPartnerResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

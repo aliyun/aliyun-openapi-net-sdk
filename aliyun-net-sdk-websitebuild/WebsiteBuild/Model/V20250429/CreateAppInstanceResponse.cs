@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 {
-	public class SetAppDomainCertificateResponse : AcsResponse
+	public class CreateAppInstanceResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -45,9 +45,8 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 
 		private List<string> errorArgs;
 
-		private SetAppDomainCertificate_Module module;
+		private CreateAppInstance_Module module;
 
-		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -60,7 +59,6 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
-		[JsonProperty(PropertyName = "DynamicCode")]
 		public string DynamicCode
 		{
 			get
@@ -73,7 +71,6 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
-		[JsonProperty(PropertyName = "DynamicMessage")]
 		public string DynamicMessage
 		{
 			get
@@ -86,7 +83,6 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
-		[JsonProperty(PropertyName = "Synchro")]
 		public bool? Synchro
 		{
 			get
@@ -99,7 +95,6 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
-		[JsonProperty(PropertyName = "AccessDeniedDetail")]
 		public string AccessDeniedDetail
 		{
 			get
@@ -112,7 +107,6 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
-		[JsonProperty(PropertyName = "RootErrorMsg")]
 		public string RootErrorMsg
 		{
 			get
@@ -125,7 +119,6 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
-		[JsonProperty(PropertyName = "RootErrorCode")]
 		public string RootErrorCode
 		{
 			get
@@ -138,7 +131,6 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
-		[JsonProperty(PropertyName = "AllowRetry")]
 		public bool? AllowRetry
 		{
 			get
@@ -151,7 +143,6 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
-		[JsonProperty(PropertyName = "AppName")]
 		public string AppName
 		{
 			get
@@ -164,7 +155,6 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
-		[JsonProperty(PropertyName = "ErrorArgs")]
 		public List<string> ErrorArgs
 		{
 			get
@@ -177,8 +167,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
-		[JsonProperty(PropertyName = "Module")]
-		public SetAppDomainCertificate_Module Module
+		public CreateAppInstance_Module Module
 		{
 			get
 			{
@@ -190,21 +179,62 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
-		public class SetAppDomainCertificate_Module
+		public class CreateAppInstance_Module
 		{
 
-			private bool? success;
+			private string bizId;
 
-			[JsonProperty(PropertyName = "Success")]
-			public bool? Success
+			private string instanceId;
+
+			private string orderId;
+
+			private string siteHost;
+
+			public string BizId
 			{
 				get
 				{
-					return success;
+					return bizId;
 				}
 				set	
 				{
-					success = value;
+					bizId = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string OrderId
+			{
+				get
+				{
+					return orderId;
+				}
+				set	
+				{
+					orderId = value;
+				}
+			}
+
+			public string SiteHost
+			{
+				get
+				{
+					return siteHost;
+				}
+				set	
+				{
+					siteHost = value;
 				}
 			}
 		}

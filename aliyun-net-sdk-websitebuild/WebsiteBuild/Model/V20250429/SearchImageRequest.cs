@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -67,6 +68,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 
 		private int? maxResults;
 
+		[JsonProperty(PropertyName = "HasPerson")]
 		public bool? HasPerson
 		{
 			get
@@ -80,6 +82,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
+		[JsonProperty(PropertyName = "MaxWidth")]
 		public int? MaxWidth
 		{
 			get
@@ -93,6 +96,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
+		[JsonProperty(PropertyName = "OssKey")]
 		public string OssKey
 		{
 			get
@@ -106,6 +110,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
+		[JsonProperty(PropertyName = "ImageCategory")]
 		public string ImageCategory
 		{
 			get
@@ -119,6 +124,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
+		[JsonProperty(PropertyName = "MaxHeight")]
 		public int? MaxHeight
 		{
 			get
@@ -132,6 +138,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
+		[JsonProperty(PropertyName = "ImageRatio")]
 		public string ImageRatio
 		{
 			get
@@ -145,6 +152,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
+		[JsonProperty(PropertyName = "NextToken")]
 		public string NextToken
 		{
 			get
@@ -158,6 +166,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
+		[JsonProperty(PropertyName = "Text")]
 		public string Text
 		{
 			get
@@ -171,6 +180,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
+		[JsonProperty(PropertyName = "ColorHex")]
 		public string ColorHex
 		{
 			get
@@ -184,6 +194,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
+		[JsonProperty(PropertyName = "MinHeight")]
 		public int? MinHeight
 		{
 			get
@@ -197,6 +208,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
+		[JsonProperty(PropertyName = "Start")]
 		public int? Start
 		{
 			get
@@ -210,6 +222,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tags")]
 		public List<string> Tags
 		{
 			get
@@ -230,6 +243,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
+		[JsonProperty(PropertyName = "Size")]
 		public int? Size
 		{
 			get
@@ -243,6 +257,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
+		[JsonProperty(PropertyName = "MinWidth")]
 		public int? MinWidth
 		{
 			get
@@ -256,6 +271,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
+		[JsonProperty(PropertyName = "MaxResults")]
 		public int? MaxResults
 		{
 			get

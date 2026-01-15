@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 {
-	public class SetAppDomainCertificateResponse : AcsResponse
+	public class RefreshAppInstanceTicketResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -45,7 +45,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 
 		private List<string> errorArgs;
 
-		private SetAppDomainCertificate_Module module;
+		private RefreshAppInstanceTicket_Module module;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -178,7 +178,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 		}
 
 		[JsonProperty(PropertyName = "Module")]
-		public SetAppDomainCertificate_Module Module
+		public RefreshAppInstanceTicket_Module Module
 		{
 			get
 			{
@@ -190,21 +190,186 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
-		public class SetAppDomainCertificate_Module
+		public class RefreshAppInstanceTicket_Module
 		{
 
-			private bool? success;
+			private string uuid;
 
-			[JsonProperty(PropertyName = "Success")]
-			public bool? Success
+			private string bid;
+
+			private string parentPk;
+
+			private string aliyunPk;
+
+			private string attributes;
+
+			private string authorizationGrantType;
+
+			private string accessTokenValue;
+
+			private string accessTokenIssuedAt;
+
+			private string accessTokenExpiresAt;
+
+			private string refreshTokenValue;
+
+			private string refreshTokenIssuedAt;
+
+			private string refreshTokenExpiresAt;
+
+			[JsonProperty(PropertyName = "Uuid")]
+			public string Uuid
 			{
 				get
 				{
-					return success;
+					return uuid;
 				}
 				set	
 				{
-					success = value;
+					uuid = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Bid")]
+			public string Bid
+			{
+				get
+				{
+					return bid;
+				}
+				set	
+				{
+					bid = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ParentPk")]
+			public string ParentPk
+			{
+				get
+				{
+					return parentPk;
+				}
+				set	
+				{
+					parentPk = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AliyunPk")]
+			public string AliyunPk
+			{
+				get
+				{
+					return aliyunPk;
+				}
+				set	
+				{
+					aliyunPk = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Attributes")]
+			public string Attributes
+			{
+				get
+				{
+					return attributes;
+				}
+				set	
+				{
+					attributes = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AuthorizationGrantType")]
+			public string AuthorizationGrantType
+			{
+				get
+				{
+					return authorizationGrantType;
+				}
+				set	
+				{
+					authorizationGrantType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AccessTokenValue")]
+			public string AccessTokenValue
+			{
+				get
+				{
+					return accessTokenValue;
+				}
+				set	
+				{
+					accessTokenValue = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AccessTokenIssuedAt")]
+			public string AccessTokenIssuedAt
+			{
+				get
+				{
+					return accessTokenIssuedAt;
+				}
+				set	
+				{
+					accessTokenIssuedAt = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AccessTokenExpiresAt")]
+			public string AccessTokenExpiresAt
+			{
+				get
+				{
+					return accessTokenExpiresAt;
+				}
+				set	
+				{
+					accessTokenExpiresAt = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RefreshTokenValue")]
+			public string RefreshTokenValue
+			{
+				get
+				{
+					return refreshTokenValue;
+				}
+				set	
+				{
+					refreshTokenValue = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RefreshTokenIssuedAt")]
+			public string RefreshTokenIssuedAt
+			{
+				get
+				{
+					return refreshTokenIssuedAt;
+				}
+				set	
+				{
+					refreshTokenIssuedAt = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RefreshTokenExpiresAt")]
+			public string RefreshTokenExpiresAt
+			{
+				get
+				{
+					return refreshTokenExpiresAt;
+				}
+				set	
+				{
+					refreshTokenExpiresAt = value;
 				}
 			}
 		}

@@ -29,44 +29,60 @@ using Aliyun.Acs.WebsiteBuild.Transform.V20250429;
 
 namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 {
-    public class OperateAppInstanceForPartnerRequest : RpcAcsRequest<OperateAppInstanceForPartnerResponse>
+    public class RefreshAppInstanceTicketRequest : RpcAcsRequest<RefreshAppInstanceTicketResponse>
     {
-        public OperateAppInstanceForPartnerRequest()
-            : base("WebsiteBuild", "2025-04-29", "OperateAppInstanceForPartner")
+        public RefreshAppInstanceTicketRequest()
+            : base("WebsiteBuild", "2025-04-29", "RefreshAppInstanceTicket")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private string extend;
+		private string uuid;
 
-		private string operateEvent;
+		private string token;
 
-		[JsonProperty(PropertyName = "Extend")]
-		public string Extend
+		private string bizId;
+
+		[JsonProperty(PropertyName = "Uuid")]
+		public string Uuid
 		{
 			get
 			{
-				return extend;
+				return uuid;
 			}
 			set	
 			{
-				extend = value;
-				DictionaryUtil.Add(QueryParameters, "Extend", value);
+				uuid = value;
+				DictionaryUtil.Add(QueryParameters, "Uuid", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "OperateEvent")]
-		public string OperateEvent
+		[JsonProperty(PropertyName = "Token")]
+		public string Token
 		{
 			get
 			{
-				return operateEvent;
+				return token;
 			}
 			set	
 			{
-				operateEvent = value;
-				DictionaryUtil.Add(QueryParameters, "OperateEvent", value);
+				token = value;
+				DictionaryUtil.Add(QueryParameters, "Token", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "BizId")]
+		public string BizId
+		{
+			get
+			{
+				return bizId;
+			}
+			set	
+			{
+				bizId = value;
+				DictionaryUtil.Add(QueryParameters, "BizId", value);
 			}
 		}
 
@@ -75,9 +91,9 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			return false;
 		}
 
-        public override OperateAppInstanceForPartnerResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override RefreshAppInstanceTicketResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return OperateAppInstanceForPartnerResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RefreshAppInstanceTicketResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

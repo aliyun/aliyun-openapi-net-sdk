@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 {
-	public class SetAppDomainCertificateResponse : AcsResponse
+	public class CreateAppInstanceTicketResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -45,9 +45,8 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 
 		private List<string> errorArgs;
 
-		private SetAppDomainCertificate_Module module;
+		private CreateAppInstanceTicket_Module module;
 
-		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -60,7 +59,6 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
-		[JsonProperty(PropertyName = "DynamicCode")]
 		public string DynamicCode
 		{
 			get
@@ -73,7 +71,6 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
-		[JsonProperty(PropertyName = "DynamicMessage")]
 		public string DynamicMessage
 		{
 			get
@@ -86,7 +83,6 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
-		[JsonProperty(PropertyName = "Synchro")]
 		public bool? Synchro
 		{
 			get
@@ -99,7 +95,6 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
-		[JsonProperty(PropertyName = "AccessDeniedDetail")]
 		public string AccessDeniedDetail
 		{
 			get
@@ -112,7 +107,6 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
-		[JsonProperty(PropertyName = "RootErrorMsg")]
 		public string RootErrorMsg
 		{
 			get
@@ -125,7 +119,6 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
-		[JsonProperty(PropertyName = "RootErrorCode")]
 		public string RootErrorCode
 		{
 			get
@@ -138,7 +131,6 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
-		[JsonProperty(PropertyName = "AllowRetry")]
 		public bool? AllowRetry
 		{
 			get
@@ -151,7 +143,6 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
-		[JsonProperty(PropertyName = "AppName")]
 		public string AppName
 		{
 			get
@@ -164,7 +155,6 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
-		[JsonProperty(PropertyName = "ErrorArgs")]
 		public List<string> ErrorArgs
 		{
 			get
@@ -177,8 +167,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
-		[JsonProperty(PropertyName = "Module")]
-		public SetAppDomainCertificate_Module Module
+		public CreateAppInstanceTicket_Module Module
 		{
 			get
 			{
@@ -190,21 +179,174 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
-		public class SetAppDomainCertificate_Module
+		public class CreateAppInstanceTicket_Module
 		{
 
-			private bool? success;
+			private string uuid;
 
-			[JsonProperty(PropertyName = "Success")]
-			public bool? Success
+			private string bid;
+
+			private string parentPk;
+
+			private string aliyunPk;
+
+			private string attributes;
+
+			private string authorizationGrantType;
+
+			private string accessTokenValue;
+
+			private string accessTokenIssuedAt;
+
+			private string accessTokenExpiresAt;
+
+			private string refreshTokenValue;
+
+			private string refreshTokenIssuedAt;
+
+			private string refreshTokenExpiresAt;
+
+			public string Uuid
 			{
 				get
 				{
-					return success;
+					return uuid;
 				}
 				set	
 				{
-					success = value;
+					uuid = value;
+				}
+			}
+
+			public string Bid
+			{
+				get
+				{
+					return bid;
+				}
+				set	
+				{
+					bid = value;
+				}
+			}
+
+			public string ParentPk
+			{
+				get
+				{
+					return parentPk;
+				}
+				set	
+				{
+					parentPk = value;
+				}
+			}
+
+			public string AliyunPk
+			{
+				get
+				{
+					return aliyunPk;
+				}
+				set	
+				{
+					aliyunPk = value;
+				}
+			}
+
+			public string Attributes
+			{
+				get
+				{
+					return attributes;
+				}
+				set	
+				{
+					attributes = value;
+				}
+			}
+
+			public string AuthorizationGrantType
+			{
+				get
+				{
+					return authorizationGrantType;
+				}
+				set	
+				{
+					authorizationGrantType = value;
+				}
+			}
+
+			public string AccessTokenValue
+			{
+				get
+				{
+					return accessTokenValue;
+				}
+				set	
+				{
+					accessTokenValue = value;
+				}
+			}
+
+			public string AccessTokenIssuedAt
+			{
+				get
+				{
+					return accessTokenIssuedAt;
+				}
+				set	
+				{
+					accessTokenIssuedAt = value;
+				}
+			}
+
+			public string AccessTokenExpiresAt
+			{
+				get
+				{
+					return accessTokenExpiresAt;
+				}
+				set	
+				{
+					accessTokenExpiresAt = value;
+				}
+			}
+
+			public string RefreshTokenValue
+			{
+				get
+				{
+					return refreshTokenValue;
+				}
+				set	
+				{
+					refreshTokenValue = value;
+				}
+			}
+
+			public string RefreshTokenIssuedAt
+			{
+				get
+				{
+					return refreshTokenIssuedAt;
+				}
+				set	
+				{
+					refreshTokenIssuedAt = value;
+				}
+			}
+
+			public string RefreshTokenExpiresAt
+			{
+				get
+				{
+					return refreshTokenExpiresAt;
+				}
+				set	
+				{
+					refreshTokenExpiresAt = value;
 				}
 			}
 		}

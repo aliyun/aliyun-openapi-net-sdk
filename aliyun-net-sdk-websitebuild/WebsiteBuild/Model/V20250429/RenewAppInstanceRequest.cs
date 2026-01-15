@@ -29,22 +29,54 @@ using Aliyun.Acs.WebsiteBuild.Transform.V20250429;
 
 namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 {
-    public class OperateAppServiceForPartnerRequest : RpcAcsRequest<OperateAppServiceForPartnerResponse>
+    public class RenewAppInstanceRequest : RpcAcsRequest<RenewAppInstanceResponse>
     {
-        public OperateAppServiceForPartnerRequest()
-            : base("WebsiteBuild", "2025-04-29", "OperateAppServiceForPartner")
+        public RenewAppInstanceRequest()
+            : base("WebsiteBuild", "2025-04-29", "RenewAppInstance")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private string extend;
+		private string clientToken;
 
-		private string serviceType;
+		private int? duration;
+
+		private string extend;
 
 		private string bizId;
 
-		private string operateEvent;
+		private string pricingCycle;
+
+		private string paymentType;
+
+		[JsonProperty(PropertyName = "ClientToken")]
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Duration")]
+		public int? Duration
+		{
+			get
+			{
+				return duration;
+			}
+			set	
+			{
+				duration = value;
+				DictionaryUtil.Add(QueryParameters, "Duration", value.ToString());
+			}
+		}
 
 		[JsonProperty(PropertyName = "Extend")]
 		public string Extend
@@ -57,20 +89,6 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			{
 				extend = value;
 				DictionaryUtil.Add(QueryParameters, "Extend", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "ServiceType")]
-		public string ServiceType
-		{
-			get
-			{
-				return serviceType;
-			}
-			set	
-			{
-				serviceType = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceType", value);
 			}
 		}
 
@@ -88,17 +106,31 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
-		[JsonProperty(PropertyName = "OperateEvent")]
-		public string OperateEvent
+		[JsonProperty(PropertyName = "PricingCycle")]
+		public string PricingCycle
 		{
 			get
 			{
-				return operateEvent;
+				return pricingCycle;
 			}
 			set	
 			{
-				operateEvent = value;
-				DictionaryUtil.Add(QueryParameters, "OperateEvent", value);
+				pricingCycle = value;
+				DictionaryUtil.Add(QueryParameters, "PricingCycle", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "PaymentType")]
+		public string PaymentType
+		{
+			get
+			{
+				return paymentType;
+			}
+			set	
+			{
+				paymentType = value;
+				DictionaryUtil.Add(QueryParameters, "PaymentType", value);
 			}
 		}
 
@@ -107,9 +139,9 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			return false;
 		}
 
-        public override OperateAppServiceForPartnerResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override RenewAppInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return OperateAppServiceForPartnerResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RenewAppInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

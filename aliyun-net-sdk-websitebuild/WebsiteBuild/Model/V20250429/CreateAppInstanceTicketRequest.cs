@@ -17,7 +17,6 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -29,44 +28,42 @@ using Aliyun.Acs.WebsiteBuild.Transform.V20250429;
 
 namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 {
-    public class OperateAppInstanceForPartnerRequest : RpcAcsRequest<OperateAppInstanceForPartnerResponse>
+    public class CreateAppInstanceTicketRequest : RpcAcsRequest<CreateAppInstanceTicketResponse>
     {
-        public OperateAppInstanceForPartnerRequest()
-            : base("WebsiteBuild", "2025-04-29", "OperateAppInstanceForPartner")
+        public CreateAppInstanceTicketRequest()
+            : base("WebsiteBuild", "2025-04-29", "CreateAppInstanceTicket")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private string extend;
+		private string clientId;
 
-		private string operateEvent;
+		private string bizId;
 
-		[JsonProperty(PropertyName = "Extend")]
-		public string Extend
+		public string ClientId
 		{
 			get
 			{
-				return extend;
+				return clientId;
 			}
 			set	
 			{
-				extend = value;
-				DictionaryUtil.Add(QueryParameters, "Extend", value);
+				clientId = value;
+				DictionaryUtil.Add(QueryParameters, "ClientId", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "OperateEvent")]
-		public string OperateEvent
+		public string BizId
 		{
 			get
 			{
-				return operateEvent;
+				return bizId;
 			}
 			set	
 			{
-				operateEvent = value;
-				DictionaryUtil.Add(QueryParameters, "OperateEvent", value);
+				bizId = value;
+				DictionaryUtil.Add(QueryParameters, "BizId", value);
 			}
 		}
 
@@ -75,9 +72,9 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			return false;
 		}
 
-        public override OperateAppInstanceForPartnerResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateAppInstanceTicketResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return OperateAppInstanceForPartnerResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateAppInstanceTicketResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

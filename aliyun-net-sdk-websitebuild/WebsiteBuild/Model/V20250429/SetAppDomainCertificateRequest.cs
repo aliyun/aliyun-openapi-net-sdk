@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -49,6 +50,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 
 		private string certificateName;
 
+		[JsonProperty(PropertyName = "DomainName")]
 		public string DomainName
 		{
 			get
@@ -62,6 +64,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
+		[JsonProperty(PropertyName = "PublicKey")]
 		public string PublicKey
 		{
 			get
@@ -75,6 +78,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
+		[JsonProperty(PropertyName = "CertificateType")]
 		public string CertificateType
 		{
 			get
@@ -88,6 +92,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
+		[JsonProperty(PropertyName = "PrivateKey")]
 		public string PrivateKey
 		{
 			get
@@ -101,6 +106,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
+		[JsonProperty(PropertyName = "BizId")]
 		public string BizId
 		{
 			get
@@ -114,6 +120,7 @@ namespace Aliyun.Acs.WebsiteBuild.Model.V20250429
 			}
 		}
 
+		[JsonProperty(PropertyName = "CertificateName")]
 		public string CertificateName
 		{
 			get
