@@ -13,7 +13,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/aliyun/aliyun-openapi-net-sdk/blob/master/LICENSE)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Faliyun%2Faliyun-openapi-net-sdk.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Faliyun%2Faliyun-openapi-net-sdk?ref=badge_shield)
 
-阿里云 V1.0 SDK 即将进入基础安全维护阶段，不再建议使用，建议使用 V2.0 SDK。
+阿里云 V1.0 .NET SDK 已进入终止支持状态，不再建议使用。新用户请直接使用 [V2.0 .NET SDK](https://github.com/aliyun/alibabacloud-csharp-sdk)；已经集成 V1.0 .NET SDK 的用户也建议迁移至 [V2.0 .NET SDK](https://github.com/aliyun/alibabacloud-csharp-sdk)。V2.0 .NET SDK 使用方式请参见[帮助中心文档](https://www.alibabacloud.com/help/zh/sdk/developer-reference/v2-net-integrated-sdk)以及[阿里云 OpenAPI 开发者门户](https://api.alibabacloud.com/)。
 
 ## 使用诊断
 
