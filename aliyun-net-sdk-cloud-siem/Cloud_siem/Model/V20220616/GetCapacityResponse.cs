@@ -62,6 +62,10 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 			private bool? existLogStore;
 
+			private long? agentManagedAssetQuota;
+
+			private long? agentManagedAssetUsed;
+
 			public double? UsedCapacity
 			{
 				get
@@ -95,6 +99,30 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 				set	
 				{
 					existLogStore = value;
+				}
+			}
+
+			public long? AgentManagedAssetQuota
+			{
+				get
+				{
+					return agentManagedAssetQuota;
+				}
+				set	
+				{
+					agentManagedAssetQuota = value;
+				}
+			}
+
+			public long? AgentManagedAssetUsed
+			{
+				get
+				{
+					return agentManagedAssetUsed;
+				}
+				set	
+				{
+					agentManagedAssetUsed = value;
 				}
 			}
 		}

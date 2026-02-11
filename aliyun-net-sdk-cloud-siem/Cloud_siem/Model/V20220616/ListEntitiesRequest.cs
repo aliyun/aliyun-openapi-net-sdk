@@ -42,6 +42,8 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 		private string entityName;
 
+		private string entityUuids;
+
 		private int? pageSize;
 
 		private int? roleType;
@@ -94,6 +96,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			{
 				entityName = value;
 				DictionaryUtil.Add(BodyParameters, "EntityName", value);
+			}
+		}
+
+		public string EntityUuids
+		{
+			get
+			{
+				return entityUuids;
+			}
+			set	
+			{
+				entityUuids = value;
+				DictionaryUtil.Add(BodyParameters, "EntityUuids", value);
 			}
 		}
 

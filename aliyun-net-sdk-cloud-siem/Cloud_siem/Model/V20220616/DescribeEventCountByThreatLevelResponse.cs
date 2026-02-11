@@ -112,6 +112,8 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 			private long? infoLevelEventNum;
 
+			private List<DescribeEventCountByThreatLevel_EventDailyNumItem> eventDailyNum;
+
 			public long? EventNum
 			{
 				get
@@ -193,6 +195,64 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 				set	
 				{
 					infoLevelEventNum = value;
+				}
+			}
+
+			public List<DescribeEventCountByThreatLevel_EventDailyNumItem> EventDailyNum
+			{
+				get
+				{
+					return eventDailyNum;
+				}
+				set	
+				{
+					eventDailyNum = value;
+				}
+			}
+
+			public class DescribeEventCountByThreatLevel_EventDailyNumItem
+			{
+
+				private string date;
+
+				private long? eventNum;
+
+				private long? undealEventNum;
+
+				public string Date
+				{
+					get
+					{
+						return date;
+					}
+					set	
+					{
+						date = value;
+					}
+				}
+
+				public long? EventNum
+				{
+					get
+					{
+						return eventNum;
+					}
+					set	
+					{
+						eventNum = value;
+					}
+				}
+
+				public long? UndealEventNum
+				{
+					get
+					{
+						return undealEventNum;
+					}
+					set	
+					{
+						undealEventNum = value;
+					}
 				}
 			}
 		}

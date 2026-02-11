@@ -44,6 +44,17 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 			data.LowLevelEventNum = _ctx.LongValue("DescribeEventCountByThreatLevel.Data.LowLevelEventNum");
 			data.SeriousLevelEventNum = _ctx.LongValue("DescribeEventCountByThreatLevel.Data.SeriousLevelEventNum");
 			data.InfoLevelEventNum = _ctx.LongValue("DescribeEventCountByThreatLevel.Data.InfoLevelEventNum");
+
+			List<DescribeEventCountByThreatLevelResponse.DescribeEventCountByThreatLevel_Data.DescribeEventCountByThreatLevel_EventDailyNumItem> data_eventDailyNum = new List<DescribeEventCountByThreatLevelResponse.DescribeEventCountByThreatLevel_Data.DescribeEventCountByThreatLevel_EventDailyNumItem>();
+			for (int i = 0; i < _ctx.Length("DescribeEventCountByThreatLevel.Data.EventDailyNum.Length"); i++) {
+				DescribeEventCountByThreatLevelResponse.DescribeEventCountByThreatLevel_Data.DescribeEventCountByThreatLevel_EventDailyNumItem eventDailyNumItem = new DescribeEventCountByThreatLevelResponse.DescribeEventCountByThreatLevel_Data.DescribeEventCountByThreatLevel_EventDailyNumItem();
+				eventDailyNumItem.Date = _ctx.StringValue("DescribeEventCountByThreatLevel.Data.EventDailyNum["+ i +"].Date");
+				eventDailyNumItem.EventNum = _ctx.LongValue("DescribeEventCountByThreatLevel.Data.EventDailyNum["+ i +"].EventNum");
+				eventDailyNumItem.UndealEventNum = _ctx.LongValue("DescribeEventCountByThreatLevel.Data.EventDailyNum["+ i +"].UndealEventNum");
+
+				data_eventDailyNum.Add(eventDailyNumItem);
+			}
+			data.EventDailyNum = data_eventDailyNum;
 			describeEventCountByThreatLevelResponse.Data = data;
         
 			return describeEventCountByThreatLevelResponse;

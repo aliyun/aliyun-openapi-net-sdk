@@ -167,6 +167,14 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 				private string tags;
 
+				private string agentDisposalMethod;
+
+				private string agentDisposalPlaybookUuid;
+
+				private string agentDisposalSuggestion;
+
+				private string agentConfidence;
+
 				public long? Id
 				{
 					get
@@ -392,6 +400,54 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 					set	
 					{
 						tags = value;
+					}
+				}
+
+				public string AgentDisposalMethod
+				{
+					get
+					{
+						return agentDisposalMethod;
+					}
+					set	
+					{
+						agentDisposalMethod = value;
+					}
+				}
+
+				public string AgentDisposalPlaybookUuid
+				{
+					get
+					{
+						return agentDisposalPlaybookUuid;
+					}
+					set	
+					{
+						agentDisposalPlaybookUuid = value;
+					}
+				}
+
+				public string AgentDisposalSuggestion
+				{
+					get
+					{
+						return agentDisposalSuggestion;
+					}
+					set	
+					{
+						agentDisposalSuggestion = value;
+					}
+				}
+
+				public string AgentConfidence
+				{
+					get
+					{
+						return agentConfidence;
+					}
+					set	
+					{
+						agentConfidence = value;
 					}
 				}
 			}

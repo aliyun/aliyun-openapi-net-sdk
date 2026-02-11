@@ -37,6 +37,8 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 			data.UsedCapacity = _ctx.DoubleValue("GetCapacity.Data.UsedCapacity");
 			data.PreservedCapacity = _ctx.LongValue("GetCapacity.Data.PreservedCapacity");
 			data.ExistLogStore = _ctx.BooleanValue("GetCapacity.Data.ExistLogStore");
+			data.AgentManagedAssetQuota = _ctx.LongValue("GetCapacity.Data.AgentManagedAssetQuota");
+			data.AgentManagedAssetUsed = _ctx.LongValue("GetCapacity.Data.AgentManagedAssetUsed");
 			getCapacityResponse.Data = data;
         
 			return getCapacityResponse;

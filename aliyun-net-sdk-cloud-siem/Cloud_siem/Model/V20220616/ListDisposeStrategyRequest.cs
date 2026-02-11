@@ -67,6 +67,8 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 
 		private string incidentUuid;
 
+		private int? status;
+
 		public string EntityIdentity
 		{
 			get
@@ -272,6 +274,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			{
 				incidentUuid = value;
 				DictionaryUtil.Add(BodyParameters, "IncidentUuid", value);
+			}
+		}
+
+		public int? Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(BodyParameters, "Status", value.ToString());
 			}
 		}
 

@@ -66,6 +66,10 @@ namespace Aliyun.Acs.cloud_siem.Transform.V20220616
 				responseDataItem.IsAsset = _ctx.StringValue("ListEntities.Data.ResponseData["+ i +"].IsAsset");
 				responseDataItem.IsMalware = _ctx.StringValue("ListEntities.Data.ResponseData["+ i +"].IsMalware");
 				responseDataItem.Tags = _ctx.StringValue("ListEntities.Data.ResponseData["+ i +"].Tags");
+				responseDataItem.AgentDisposalMethod = _ctx.StringValue("ListEntities.Data.ResponseData["+ i +"].AgentDisposalMethod");
+				responseDataItem.AgentDisposalPlaybookUuid = _ctx.StringValue("ListEntities.Data.ResponseData["+ i +"].AgentDisposalPlaybookUuid");
+				responseDataItem.AgentDisposalSuggestion = _ctx.StringValue("ListEntities.Data.ResponseData["+ i +"].AgentDisposalSuggestion");
+				responseDataItem.AgentConfidence = _ctx.StringValue("ListEntities.Data.ResponseData["+ i +"].AgentConfidence");
 
 				data_responseData.Add(responseDataItem);
 			}

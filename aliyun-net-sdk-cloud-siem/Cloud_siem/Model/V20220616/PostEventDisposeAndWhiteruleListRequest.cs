@@ -35,11 +35,15 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			Method = MethodType.POST;
         }
 
+		private string responseSource;
+
 		private long? roleFor;
 
 		private string remark;
 
 		private string eventDispose;
+
+		private string disposeStrategyIds;
 
 		private string receiverInfo;
 
@@ -52,6 +56,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 		private string incidentUuid;
 
 		private int? status;
+
+		public string ResponseSource
+		{
+			get
+			{
+				return responseSource;
+			}
+			set	
+			{
+				responseSource = value;
+				DictionaryUtil.Add(BodyParameters, "ResponseSource", value);
+			}
+		}
 
 		public long? RoleFor
 		{
@@ -89,6 +106,19 @@ namespace Aliyun.Acs.cloud_siem.Model.V20220616
 			{
 				eventDispose = value;
 				DictionaryUtil.Add(BodyParameters, "EventDispose", value);
+			}
+		}
+
+		public string DisposeStrategyIds
+		{
+			get
+			{
+				return disposeStrategyIds;
+			}
+			set	
+			{
+				disposeStrategyIds = value;
+				DictionaryUtil.Add(BodyParameters, "DisposeStrategyIds", value);
 			}
 		}
 
