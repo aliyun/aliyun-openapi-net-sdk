@@ -32,11 +32,113 @@ namespace Aliyun.Acs.Core.Utils
         private static volatile string disableECSIMDSv1;
         private static volatile string disableECSMetaData;
         private static volatile string environmentEcsMetaDataDisabled;
+        private static volatile string environmentCLIProfileDisabled;
+        private static volatile string environmentRoleSessionName;
+        private static volatile string environmentRoleArn;
+        private static volatile string enableVpcEndpoint;
+        private static volatile string environmentSTSRegion;
+        private static volatile string environmentOIDCProviderArn;
+        private static volatile string environmentOIDCTokenFilePath;
+        private static volatile string environmentCredentialsURI;
 
         AuthUtils()
         {
         }
         
+        public static string EnvironmentCredentialsURI
+        {
+            get
+            {
+                return AuthUtils.environmentCredentialsURI ?? Environment.GetEnvironmentVariable("ALIBABA_CLOUD_CREDENTIALS_URI");
+            }
+            
+            set { AuthUtils.environmentCredentialsURI = value; }
+        }
+
+        
+        public static string EnvironmentOIDCTokenFilePath
+        {
+            get
+            {
+                return AuthUtils.environmentOIDCTokenFilePath ?? Environment.GetEnvironmentVariable("ALIBABA_CLOUD_OIDC_TOKEN_FILE");
+            }
+            
+            set { AuthUtils.environmentOIDCTokenFilePath = value; }
+        }
+
+        
+        public static string EnvironmentOIDCProviderArn
+        {
+            get
+            {
+                return AuthUtils.environmentOIDCProviderArn ?? Environment.GetEnvironmentVariable("ALIBABA_CLOUD_OIDC_PROVIDER_ARN");
+            }
+            
+            set { AuthUtils.environmentOIDCProviderArn = value; }
+        }
+        
+        public static string EnvironmentSTSRegion
+        {
+            get
+            {
+                return AuthUtils.environmentSTSRegion ?? Environment.GetEnvironmentVariable("ALIBABA_CLOUD_STS_REGION");
+            }
+            
+            set { AuthUtils.environmentSTSRegion = value; }
+        }
+        
+        public static bool EnableVpcEndpoint
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(AuthUtils.enableVpcEndpoint))
+                {
+                    return bool.Parse(AuthUtils.enableVpcEndpoint);
+                }
+
+                var env = Environment.GetEnvironmentVariable("ALIBABA_CLOUD_VPC_ENDPOINT_ENABLED");
+                return !string.IsNullOrEmpty(env) && bool.Parse(env);
+            }
+
+            set { AuthUtils.environmentCLIProfileDisabled = value.ToString(); }
+        }
+
+        public static string EnvironmentRoleArn
+        {
+            get
+            {
+                return AuthUtils.environmentRoleArn ?? Environment.GetEnvironmentVariable("ALIBABA_CLOUD_ROLE_ARN");
+            }
+            
+            set { AuthUtils.environmentRoleArn = value; }
+        }
+        
+        public static string EnvironmentRoleSessionName
+        {
+            get
+            {
+                return AuthUtils.environmentRoleSessionName ?? Environment.GetEnvironmentVariable("ALIBABA_CLOUD_ROLE_SESSION_NAME");
+            }
+            
+            set { AuthUtils.environmentRoleSessionName = value; }
+        }
+        
+        public static bool EnvironmentDisableCLIProfile
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(AuthUtils.environmentCLIProfileDisabled))
+                {
+                    return bool.Parse(AuthUtils.environmentCLIProfileDisabled);
+                }
+
+                var env = Environment.GetEnvironmentVariable("ALIBABA_CLOUD_IMDSV1_DISABLED");
+                return !string.IsNullOrEmpty(env) && bool.Parse(env);
+            }
+
+            set { AuthUtils.environmentCLIProfileDisabled = value.ToString(); }
+        }
+
         public static string EnvironmentEcsMetaDataDisabled
         {
             get
@@ -122,6 +224,22 @@ namespace Aliyun.Acs.Core.Utils
             }
 
             return oidcToken;
+        }
+        
+        public static string GetStsRegionWithVpc(string stsRegionId, bool? enableVpc)
+        {
+            var prefix = enableVpc == null
+                ? (AuthUtils.EnableVpcEndpoint ? "sts-vpc" : "sts")
+                : (enableVpc == true ? "sts-vpc" : "sts");
+            if (!string.IsNullOrEmpty(stsRegionId))
+            {
+                return string.Format("https://{0}.{1}.aliyuncs.com", prefix, stsRegionId);
+            }
+            if (!string.IsNullOrEmpty(AuthUtils.EnvironmentSTSRegion))
+            {
+                return string.Format("https://{0}.{1}.aliyuncs.com", prefix, AuthUtils.EnvironmentSTSRegion);
+            }
+            return "https://sts.aliyuncs.com";
         }
     }
 }
