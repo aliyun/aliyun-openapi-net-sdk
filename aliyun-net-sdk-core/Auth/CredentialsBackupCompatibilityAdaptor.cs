@@ -17,8 +17,11 @@
  * under the License.
  */
 
+using System;
+
 namespace Aliyun.Acs.Core.Auth
 {
+    [Obsolete("This class is obsolete.")]
     public class CredentialsBackupCompatibilityAdaptor : Credential
     {
         private readonly AlibabaCloudCredentialsProvider provider;
