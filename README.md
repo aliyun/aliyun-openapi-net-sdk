@@ -13,7 +13,7 @@ English | [简体中文](./README-CN.md)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/aliyun/aliyun-openapi-net-sdk/blob/master/LICENSE)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Faliyun%2Faliyun-openapi-net-sdk.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Faliyun%2Faliyun-openapi-net-sdk?ref=badge_shield)
 
-The Alibaba Cloud V1.0 .NET SDK has entered End-of-Support and is no longer recommended for use. New users should directly use the V2.0 .NET SDK; users who have already integrated the V1.0 .NET SDK are also advised to migrate to the V2.0 .NET SDK. V2.0 .NET SDK is available here: https://github.com/aliyun/alibabacloud-csharp-sdk, for usage, please refer to [Help Center Documentation](https://www.alibabacloud.com/help/en/sdk/developer-reference/v2-net-integrated-sdk) and [Alibaba Cloud OpenAPI Developer Portal](https://api.alibabacloud.com/).
+The Alibaba Cloud V1.0 .NET SDK has entered the basic security maintenance phase and is no longer recommended for use. New users should directly use the V2.0 .NET SDK; users who have already integrated the V1.0 .NET SDK are also advised to migrate to the V2.0 .NET SDK. V2.0 .NET SDK is available here: https://github.com/aliyun/alibabacloud-csharp-sdk, for usage, please refer to [Help Center Documentation](https://www.alibabacloud.com/help/en/sdk/developer-reference/v2-net-integrated-sdk) and [Alibaba Cloud OpenAPI Developer Portal](https://api.alibabacloud.com/).
 
 ## Troubleshoot
 
