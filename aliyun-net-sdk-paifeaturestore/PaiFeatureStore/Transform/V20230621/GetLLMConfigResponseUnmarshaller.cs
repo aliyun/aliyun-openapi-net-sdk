@@ -43,6 +43,7 @@ namespace Aliyun.Acs.PaiFeatureStore.Transform.V20230621
 			getLLMConfigResponse.GmtModifiedTime = _ctx.StringValue("GetLLMConfig.GmtModifiedTime");
 			getLLMConfigResponse.BatchSize = _ctx.IntegerValue("GetLLMConfig.BatchSize");
 			getLLMConfigResponse.WorkspaceId = _ctx.StringValue("GetLLMConfig.WorkspaceId");
+			getLLMConfigResponse.EmbeddingDimension = _ctx.IntegerValue("GetLLMConfig.EmbeddingDimension");
         
 			return getLLMConfigResponse;
         }

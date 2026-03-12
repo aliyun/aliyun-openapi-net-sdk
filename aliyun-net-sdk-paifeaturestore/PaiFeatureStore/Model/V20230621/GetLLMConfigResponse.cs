@@ -49,6 +49,8 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 
 		private string workspaceId;
 
+		private int? embeddingDimension;
+
 		public string RequestId
 		{
 			get
@@ -190,6 +192,18 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 			set	
 			{
 				workspaceId = value;
+			}
+		}
+
+		public int? EmbeddingDimension
+		{
+			get
+			{
+				return embeddingDimension;
+			}
+			set	
+			{
+				embeddingDimension = value;
 			}
 		}
 	}
