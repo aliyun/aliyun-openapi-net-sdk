@@ -60,6 +60,10 @@ namespace Aliyun.Acs.Sts
             { "ap-northeast-2-pop", "sts.aliyuncs.com" },
             { "cn-shenzhen-inner", "sts.aliyuncs.com" },
             { "cn-zhangjiakou-na62-a01", "sts.aliyuncs.com" },
+            { "sts_cn-hongkong", "sts.cn-hongkong.aliyuncs.com" },
+            { "sts_eu-central-1", "sts.eu-central-1.aliyuncs.com" },
+            { "sts_cn-hangzhou", "sts.cn-hangzhou.aliyuncs.com" },
+            { "sts_ap-southeast-1", "sts.ap-southeast-1.aliyuncs.com" },
         };
 
         public static string endpointRegionalType = "regional";
