@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			createVccResponse.Code = _ctx.IntegerValue("CreateVcc.Code");
 			createVccResponse.Message = _ctx.StringValue("CreateVcc.Message");
 			createVccResponse.RequestId = _ctx.StringValue("CreateVcc.RequestId");
+			createVccResponse.AccessDeniedDetail = _ctx.StringValue("CreateVcc.AccessDeniedDetail");
 
 			CreateVccResponse.CreateVcc_Content content = new CreateVccResponse.CreateVcc_Content();
 			content.VccId = _ctx.StringValue("CreateVcc.Content.VccId");

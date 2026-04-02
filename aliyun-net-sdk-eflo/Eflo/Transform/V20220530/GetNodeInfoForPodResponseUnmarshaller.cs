@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			getNodeInfoForPodResponse.Code = _ctx.IntegerValue("GetNodeInfoForPod.Code");
 			getNodeInfoForPodResponse.Message = _ctx.StringValue("GetNodeInfoForPod.Message");
 			getNodeInfoForPodResponse.RequestId = _ctx.StringValue("GetNodeInfoForPod.RequestId");
+			getNodeInfoForPodResponse.AccessDeniedDetail = _ctx.StringValue("GetNodeInfoForPod.AccessDeniedDetail");
 
 			GetNodeInfoForPodResponse.GetNodeInfoForPod_Content content = new GetNodeInfoForPodResponse.GetNodeInfoForPod_Content();
 			content.RegionId = _ctx.StringValue("GetNodeInfoForPod.Content.RegionId");
@@ -45,6 +46,9 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			content.LniSipQuota = _ctx.IntegerValue("GetNodeInfoForPod.Content.LniSipQuota");
 			content.LeniSipQuota = _ctx.IntegerValue("GetNodeInfoForPod.Content.LeniSipQuota");
 			content.HdeniQuota = _ctx.IntegerValue("GetNodeInfoForPod.Content.HdeniQuota");
+			content.LeniIpv6SipQuota = _ctx.IntegerValue("GetNodeInfoForPod.Content.LeniIpv6SipQuota");
+			content.HdeniSipQuota = _ctx.IntegerValue("GetNodeInfoForPod.Content.HdeniSipQuota");
+			content.HdeniIpv6SipQuota = _ctx.IntegerValue("GetNodeInfoForPod.Content.HdeniIpv6SipQuota");
 
 			List<string> content_vSwitches = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetNodeInfoForPod.Content.VSwitches.Length"); i++) {

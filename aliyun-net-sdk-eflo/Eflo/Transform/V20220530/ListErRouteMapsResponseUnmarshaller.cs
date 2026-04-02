@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			listErRouteMapsResponse.Code = _ctx.IntegerValue("ListErRouteMaps.Code");
 			listErRouteMapsResponse.Message = _ctx.StringValue("ListErRouteMaps.Message");
 			listErRouteMapsResponse.RequestId = _ctx.StringValue("ListErRouteMaps.RequestId");
+			listErRouteMapsResponse.AccessDeniedDetail = _ctx.StringValue("ListErRouteMaps.AccessDeniedDetail");
 
 			ListErRouteMapsResponse.ListErRouteMaps_Content content = new ListErRouteMapsResponse.ListErRouteMaps_Content();
 			content.Total = _ctx.LongValue("ListErRouteMaps.Content.Total");

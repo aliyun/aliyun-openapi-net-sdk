@@ -37,6 +37,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private string erId;
 
+		private string erRouteMapId;
+
 		private List<string> erRouteMapIdss = new List<string>(){ };
 
 		public string ErId
@@ -49,6 +51,19 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				erId = value;
 				DictionaryUtil.Add(BodyParameters, "ErId", value);
+			}
+		}
+
+		public string ErRouteMapId
+		{
+			get
+			{
+				return erRouteMapId;
+			}
+			set	
+			{
+				erRouteMapId = value;
+				DictionaryUtil.Add(BodyParameters, "ErRouteMapId", value);
 			}
 		}
 

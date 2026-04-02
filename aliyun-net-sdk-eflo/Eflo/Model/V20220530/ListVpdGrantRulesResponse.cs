@@ -31,6 +31,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private string requestId;
 
+		private string accessDeniedDetail;
+
 		private ListVpdGrantRules_Content content;
 
 		public int? Code
@@ -66,6 +68,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string AccessDeniedDetail
+		{
+			get
+			{
+				return accessDeniedDetail;
+			}
+			set	
+			{
+				accessDeniedDetail = value;
 			}
 		}
 

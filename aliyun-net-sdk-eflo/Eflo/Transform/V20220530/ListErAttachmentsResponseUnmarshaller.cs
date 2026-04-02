@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			listErAttachmentsResponse.Code = _ctx.IntegerValue("ListErAttachments.Code");
 			listErAttachmentsResponse.Message = _ctx.StringValue("ListErAttachments.Message");
 			listErAttachmentsResponse.RequestId = _ctx.StringValue("ListErAttachments.RequestId");
+			listErAttachmentsResponse.AccessDeniedDetail = _ctx.StringValue("ListErAttachments.AccessDeniedDetail");
 
 			ListErAttachmentsResponse.ListErAttachments_Content content = new ListErAttachmentsResponse.ListErAttachments_Content();
 			content.Total = _ctx.LongValue("ListErAttachments.Content.Total");

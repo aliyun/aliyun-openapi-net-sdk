@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			getErAttachmentResponse.Code = _ctx.IntegerValue("GetErAttachment.Code");
 			getErAttachmentResponse.Message = _ctx.StringValue("GetErAttachment.Message");
 			getErAttachmentResponse.RequestId = _ctx.StringValue("GetErAttachment.RequestId");
+			getErAttachmentResponse.AccessDeniedDetail = _ctx.StringValue("GetErAttachment.AccessDeniedDetail");
 
 			GetErAttachmentResponse.GetErAttachment_Content content = new GetErAttachmentResponse.GetErAttachment_Content();
 			content.CreateTime = _ctx.StringValue("GetErAttachment.Content.CreateTime");

@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			getVccGrantRuleResponse.Code = _ctx.IntegerValue("GetVccGrantRule.Code");
 			getVccGrantRuleResponse.Message = _ctx.StringValue("GetVccGrantRule.Message");
 			getVccGrantRuleResponse.RequestId = _ctx.StringValue("GetVccGrantRule.RequestId");
+			getVccGrantRuleResponse.AccessDeniedDetail = _ctx.StringValue("GetVccGrantRule.AccessDeniedDetail");
 
 			GetVccGrantRuleResponse.GetVccGrantRule_Content content = new GetVccGrantRuleResponse.GetVccGrantRule_Content();
 			content.RegionId = _ctx.StringValue("GetVccGrantRule.Content.RegionId");

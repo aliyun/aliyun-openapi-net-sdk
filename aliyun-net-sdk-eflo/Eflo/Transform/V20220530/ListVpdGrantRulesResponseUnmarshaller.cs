@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			listVpdGrantRulesResponse.Code = _ctx.IntegerValue("ListVpdGrantRules.Code");
 			listVpdGrantRulesResponse.Message = _ctx.StringValue("ListVpdGrantRules.Message");
 			listVpdGrantRulesResponse.RequestId = _ctx.StringValue("ListVpdGrantRules.RequestId");
+			listVpdGrantRulesResponse.AccessDeniedDetail = _ctx.StringValue("ListVpdGrantRules.AccessDeniedDetail");
 
 			ListVpdGrantRulesResponse.ListVpdGrantRules_Content content = new ListVpdGrantRulesResponse.ListVpdGrantRules_Content();
 			content.Total = _ctx.LongValue("ListVpdGrantRules.Content.Total");

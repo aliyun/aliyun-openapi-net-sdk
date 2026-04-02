@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			updateElasticNetworkInterfaceResponse.Code = _ctx.IntegerValue("UpdateElasticNetworkInterface.Code");
 			updateElasticNetworkInterfaceResponse.Message = _ctx.StringValue("UpdateElasticNetworkInterface.Message");
 			updateElasticNetworkInterfaceResponse.RequestId = _ctx.StringValue("UpdateElasticNetworkInterface.RequestId");
+			updateElasticNetworkInterfaceResponse.AccessDeniedDetail = _ctx.StringValue("UpdateElasticNetworkInterface.AccessDeniedDetail");
 
 			UpdateElasticNetworkInterfaceResponse.UpdateElasticNetworkInterface_Content content = new UpdateElasticNetworkInterfaceResponse.UpdateElasticNetworkInterface_Content();
 			content.NodeId = _ctx.StringValue("UpdateElasticNetworkInterface.Content.NodeId");

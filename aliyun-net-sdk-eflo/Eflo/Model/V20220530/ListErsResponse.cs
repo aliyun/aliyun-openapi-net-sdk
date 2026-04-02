@@ -31,6 +31,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private string requestId;
 
+		private string accessDeniedDetail;
+
 		private ListErs_Content content;
 
 		public int? Code
@@ -66,6 +68,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string AccessDeniedDetail
+		{
+			get
+			{
+				return accessDeniedDetail;
+			}
+			set	
+			{
+				accessDeniedDetail = value;
 			}
 		}
 
@@ -115,31 +129,93 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			public class ListErs_DataItem
 			{
 
+				private string status;
+
+				private long? connections;
+
+				private string description;
+
+				private string message;
+
+				private string resourceGroupId;
+
 				private string createTime;
 
 				private string gmtModified;
 
-				private string message;
-
 				private string erId;
-
-				private string regionId;
-
-				private string tenantId;
-
-				private string status;
-
-				private string erName;
-
-				private string masterZoneId;
-
-				private string description;
-
-				private long? connections;
 
 				private long? routeMaps;
 
-				private string resourceGroupId;
+				private string erName;
+
+				private string tenantId;
+
+				private string regionId;
+
+				private string masterZoneId;
+
+				private List<ListErs_Tag> tags;
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public long? Connections
+				{
+					get
+					{
+						return connections;
+					}
+					set	
+					{
+						connections = value;
+					}
+				}
+
+				public string Description
+				{
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
+					}
+				}
+
+				public string Message
+				{
+					get
+					{
+						return message;
+					}
+					set	
+					{
+						message = value;
+					}
+				}
+
+				public string ResourceGroupId
+				{
+					get
+					{
+						return resourceGroupId;
+					}
+					set	
+					{
+						resourceGroupId = value;
+					}
+				}
 
 				public string CreateTime
 				{
@@ -165,18 +241,6 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					}
 				}
 
-				public string Message
-				{
-					get
-					{
-						return message;
-					}
-					set	
-					{
-						message = value;
-					}
-				}
-
 				public string ErId
 				{
 					get
@@ -186,90 +250,6 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					set	
 					{
 						erId = value;
-					}
-				}
-
-				public string RegionId
-				{
-					get
-					{
-						return regionId;
-					}
-					set	
-					{
-						regionId = value;
-					}
-				}
-
-				public string TenantId
-				{
-					get
-					{
-						return tenantId;
-					}
-					set	
-					{
-						tenantId = value;
-					}
-				}
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
-				}
-
-				public string ErName
-				{
-					get
-					{
-						return erName;
-					}
-					set	
-					{
-						erName = value;
-					}
-				}
-
-				public string MasterZoneId
-				{
-					get
-					{
-						return masterZoneId;
-					}
-					set	
-					{
-						masterZoneId = value;
-					}
-				}
-
-				public string Description
-				{
-					get
-					{
-						return description;
-					}
-					set	
-					{
-						description = value;
-					}
-				}
-
-				public long? Connections
-				{
-					get
-					{
-						return connections;
-					}
-					set	
-					{
-						connections = value;
 					}
 				}
 
@@ -285,15 +265,95 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					}
 				}
 
-				public string ResourceGroupId
+				public string ErName
 				{
 					get
 					{
-						return resourceGroupId;
+						return erName;
 					}
 					set	
 					{
-						resourceGroupId = value;
+						erName = value;
+					}
+				}
+
+				public string TenantId
+				{
+					get
+					{
+						return tenantId;
+					}
+					set	
+					{
+						tenantId = value;
+					}
+				}
+
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
+					}
+				}
+
+				public string MasterZoneId
+				{
+					get
+					{
+						return masterZoneId;
+					}
+					set	
+					{
+						masterZoneId = value;
+					}
+				}
+
+				public List<ListErs_Tag> Tags
+				{
+					get
+					{
+						return tags;
+					}
+					set	
+					{
+						tags = value;
+					}
+				}
+
+				public class ListErs_Tag
+				{
+
+					private string tagKey;
+
+					private string tagValue;
+
+					public string TagKey
+					{
+						get
+						{
+							return tagKey;
+						}
+						set	
+						{
+							tagKey = value;
+						}
+					}
+
+					public string TagValue
+					{
+						get
+						{
+							return tagValue;
+						}
+						set	
+						{
+							tagValue = value;
+						}
 					}
 				}
 			}

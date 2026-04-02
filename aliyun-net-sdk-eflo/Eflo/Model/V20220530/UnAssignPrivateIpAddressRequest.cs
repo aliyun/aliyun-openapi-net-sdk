@@ -35,28 +35,15 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			Method = MethodType.POST;
         }
 
-		private string subnetId;
-
 		private string clientToken;
+
+		private string subnetId;
 
 		private string privateIpAddress;
 
 		private string ipName;
 
 		private string networkInterfaceId;
-
-		public string SubnetId
-		{
-			get
-			{
-				return subnetId;
-			}
-			set	
-			{
-				subnetId = value;
-				DictionaryUtil.Add(BodyParameters, "SubnetId", value);
-			}
-		}
 
 		public string ClientToken
 		{
@@ -68,6 +55,19 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				clientToken = value;
 				DictionaryUtil.Add(BodyParameters, "ClientToken", value);
+			}
+		}
+
+		public string SubnetId
+		{
+			get
+			{
+				return subnetId;
+			}
+			set	
+			{
+				subnetId = value;
+				DictionaryUtil.Add(BodyParameters, "SubnetId", value);
 			}
 		}
 

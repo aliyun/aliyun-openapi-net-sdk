@@ -33,6 +33,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private string content;
 
+		private string accessDeniedDetail;
+
 		public int? Code
 		{
 			get
@@ -78,6 +80,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			set	
 			{
 				content = value;
+			}
+		}
+
+		public string AccessDeniedDetail
+		{
+			get
+			{
+				return accessDeniedDetail;
+			}
+			set	
+			{
+				accessDeniedDetail = value;
 			}
 		}
 	}

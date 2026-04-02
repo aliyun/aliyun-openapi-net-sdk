@@ -31,6 +31,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private string requestId;
 
+		private string accessDeniedDetail;
+
 		private ListElasticNetworkInterfaces_Content content;
 
 		public int? Code
@@ -66,6 +68,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string AccessDeniedDetail
+		{
+			get
+			{
+				return accessDeniedDetail;
+			}
+			set	
+			{
+				accessDeniedDetail = value;
 			}
 		}
 
@@ -148,6 +162,10 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				private string description;
 
 				private string securityGroupId;
+
+				private string resourceGroupId;
+
+				private List<ListElasticNetworkInterfaces_Tag> tags;
 
 				public string RegionId
 				{
@@ -350,6 +368,62 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					set	
 					{
 						securityGroupId = value;
+					}
+				}
+
+				public string ResourceGroupId
+				{
+					get
+					{
+						return resourceGroupId;
+					}
+					set	
+					{
+						resourceGroupId = value;
+					}
+				}
+
+				public List<ListElasticNetworkInterfaces_Tag> Tags
+				{
+					get
+					{
+						return tags;
+					}
+					set	
+					{
+						tags = value;
+					}
+				}
+
+				public class ListElasticNetworkInterfaces_Tag
+				{
+
+					private string tagKey;
+
+					private string tagValue;
+
+					public string TagKey
+					{
+						get
+						{
+							return tagKey;
+						}
+						set	
+						{
+							tagKey = value;
+						}
+					}
+
+					public string TagValue
+					{
+						get
+						{
+							return tagValue;
+						}
+						set	
+						{
+							tagValue = value;
+						}
 					}
 				}
 			}

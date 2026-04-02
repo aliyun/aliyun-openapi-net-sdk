@@ -35,6 +35,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			updateErResponse.Message = _ctx.StringValue("UpdateEr.Message");
 			updateErResponse.RequestId = _ctx.StringValue("UpdateEr.RequestId");
 			updateErResponse.Content = _ctx.StringValue("UpdateEr.Content");
+			updateErResponse.AccessDeniedDetail = _ctx.StringValue("UpdateEr.AccessDeniedDetail");
         
 			return updateErResponse;
         }

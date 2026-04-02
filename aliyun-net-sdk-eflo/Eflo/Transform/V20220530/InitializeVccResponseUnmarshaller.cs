@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			initializeVccResponse.Code = _ctx.IntegerValue("InitializeVcc.Code");
 			initializeVccResponse.Message = _ctx.StringValue("InitializeVcc.Message");
 			initializeVccResponse.RequestId = _ctx.StringValue("InitializeVcc.RequestId");
+			initializeVccResponse.AccessDeniedDetail = _ctx.StringValue("InitializeVcc.AccessDeniedDetail");
 
 			InitializeVccResponse.InitializeVcc_Content content = new InitializeVccResponse.InitializeVcc_Content();
 			content.RoleName = _ctx.StringValue("InitializeVcc.Content.RoleName");

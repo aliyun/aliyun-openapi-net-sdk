@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			listInstancesByNcdResponse.Code = _ctx.IntegerValue("ListInstancesByNcd.Code");
 			listInstancesByNcdResponse.Message = _ctx.StringValue("ListInstancesByNcd.Message");
 			listInstancesByNcdResponse.RequestId = _ctx.StringValue("ListInstancesByNcd.RequestId");
+			listInstancesByNcdResponse.AccessDeniedDetail = _ctx.StringValue("ListInstancesByNcd.AccessDeniedDetail");
 
 			ListInstancesByNcdResponse.ListInstancesByNcd_Content content = new ListInstancesByNcdResponse.ListInstancesByNcd_Content();
 			content.MaxNcd = _ctx.IntegerValue("ListInstancesByNcd.Content.MaxNcd");

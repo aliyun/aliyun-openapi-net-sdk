@@ -31,6 +31,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private string requestId;
 
+		private string accessDeniedDetail;
+
 		private ListLniPrivateIpAddress_Content content;
 
 		public int? Code
@@ -69,6 +71,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			}
 		}
 
+		public string AccessDeniedDetail
+		{
+			get
+			{
+				return accessDeniedDetail;
+			}
+			set	
+			{
+				accessDeniedDetail = value;
+			}
+		}
+
 		public ListLniPrivateIpAddress_Content Content
 		{
 			get
@@ -86,6 +100,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 			private long? total;
 
+			private string resourceGroupId;
+
 			private List<ListLniPrivateIpAddress_DataItem> data;
 
 			public long? Total
@@ -97,6 +113,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				set	
 				{
 					total = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 
@@ -132,6 +160,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				private string description;
 
 				private string message;
+
+				private string resourceGroupId;
 
 				public string RegionId
 				{
@@ -238,6 +268,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					set	
 					{
 						message = value;
+					}
+				}
+
+				public string ResourceGroupId
+				{
+					get
+					{
+						return resourceGroupId;
+					}
+					set	
+					{
+						resourceGroupId = value;
 					}
 				}
 			}

@@ -31,6 +31,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private string requestId;
 
+		private string accessDeniedDetail;
+
 		private GetElasticNetworkInterface_Content content;
 
 		public int? Code
@@ -66,6 +68,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string AccessDeniedDetail
+		{
+			get
+			{
+				return accessDeniedDetail;
+			}
+			set	
+			{
+				accessDeniedDetail = value;
 			}
 		}
 
@@ -116,9 +130,13 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 			private string description;
 
+			private string resourceGroupId;
+
 			private string securityGroupId;
 
 			private bool? enableJumboFrame;
+
+			private List<GetElasticNetworkInterface_Tag> tags;
 
 			private List<GetElasticNetworkInterface_PrivateIpAddress> privateIpAddresses;
 
@@ -316,6 +334,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				}
 			}
 
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
 			public string SecurityGroupId
 			{
 				get
@@ -337,6 +367,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				set	
 				{
 					enableJumboFrame = value;
+				}
+			}
+
+			public List<GetElasticNetworkInterface_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
 				}
 			}
 
@@ -364,26 +406,70 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				}
 			}
 
+			public class GetElasticNetworkInterface_Tag
+			{
+
+				private string tagKey;
+
+				private string tagValue;
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
+					}
+				}
+
+				public string TagValue
+				{
+					get
+					{
+						return tagValue;
+					}
+					set	
+					{
+						tagValue = value;
+					}
+				}
+			}
+
 			public class GetElasticNetworkInterface_PrivateIpAddress
 			{
 
+				private string status;
+
 				private string elasticNetworkInterfaceId;
 
-				private string regionId;
-
 				private string gmtCreate;
-
-				private string gmtModified;
 
 				private string ipName;
 
 				private string privateIpAddress;
 
-				private string status;
-
 				private string description;
 
 				private string message;
+
+				private string gmtModified;
+
+				private string regionId;
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
 
 				public string ElasticNetworkInterfaceId
 				{
@@ -397,18 +483,6 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					}
 				}
 
-				public string RegionId
-				{
-					get
-					{
-						return regionId;
-					}
-					set	
-					{
-						regionId = value;
-					}
-				}
-
 				public string GmtCreate
 				{
 					get
@@ -418,18 +492,6 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					set	
 					{
 						gmtCreate = value;
-					}
-				}
-
-				public string GmtModified
-				{
-					get
-					{
-						return gmtModified;
-					}
-					set	
-					{
-						gmtModified = value;
 					}
 				}
 
@@ -457,18 +519,6 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					}
 				}
 
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
-				}
-
 				public string Description
 				{
 					get
@@ -492,28 +542,64 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 						message = value;
 					}
 				}
+
+				public string GmtModified
+				{
+					get
+					{
+						return gmtModified;
+					}
+					set	
+					{
+						gmtModified = value;
+					}
+				}
+
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
+					}
+				}
 			}
 
 			public class GetElasticNetworkInterface_Ipv6Addresse
 			{
 
+				private string status;
+
 				private string elasticNetworkInterfaceId;
 
 				private string ipName;
 
-				private string ipv6Address;
-
-				private string status;
+				private string gmtCreate;
 
 				private string description;
 
 				private string message;
 
+				private string gmtModified;
+
 				private string regionId;
 
-				private string gmtCreate;
+				private string ipv6Address;
 
-				private string gmtModified;
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
 
 				public string ElasticNetworkInterfaceId
 				{
@@ -539,27 +625,15 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					}
 				}
 
-				public string Ipv6Address
+				public string GmtCreate
 				{
 					get
 					{
-						return ipv6Address;
+						return gmtCreate;
 					}
 					set	
 					{
-						ipv6Address = value;
-					}
-				}
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
+						gmtCreate = value;
 					}
 				}
 
@@ -587,6 +661,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					}
 				}
 
+				public string GmtModified
+				{
+					get
+					{
+						return gmtModified;
+					}
+					set	
+					{
+						gmtModified = value;
+					}
+				}
+
 				public string RegionId
 				{
 					get
@@ -599,27 +685,15 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					}
 				}
 
-				public string GmtCreate
+				public string Ipv6Address
 				{
 					get
 					{
-						return gmtCreate;
+						return ipv6Address;
 					}
 					set	
 					{
-						gmtCreate = value;
-					}
-				}
-
-				public string GmtModified
-				{
-					get
-					{
-						return gmtModified;
-					}
-					set	
-					{
-						gmtModified = value;
+						ipv6Address = value;
 					}
 				}
 			}

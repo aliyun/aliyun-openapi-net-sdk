@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			listVpdRouteEntriesResponse.Code = _ctx.IntegerValue("ListVpdRouteEntries.Code");
 			listVpdRouteEntriesResponse.Message = _ctx.StringValue("ListVpdRouteEntries.Message");
 			listVpdRouteEntriesResponse.RequestId = _ctx.StringValue("ListVpdRouteEntries.RequestId");
+			listVpdRouteEntriesResponse.AccessDeniedDetail = _ctx.StringValue("ListVpdRouteEntries.AccessDeniedDetail");
 
 			ListVpdRouteEntriesResponse.ListVpdRouteEntries_Content content = new ListVpdRouteEntriesResponse.ListVpdRouteEntries_Content();
 			content.Total = _ctx.LongValue("ListVpdRouteEntries.Content.Total");

@@ -37,13 +37,13 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private long? from;
 
-		private long? to;
-
 		private string vccId;
 
 		private string metricName;
 
 		private string direction;
+
+		private long? to;
 
 		public long? From
 		{
@@ -55,19 +55,6 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				from = value;
 				DictionaryUtil.Add(BodyParameters, "From", value.ToString());
-			}
-		}
-
-		public long? To
-		{
-			get
-			{
-				return to;
-			}
-			set	
-			{
-				to = value;
-				DictionaryUtil.Add(BodyParameters, "To", value.ToString());
 			}
 		}
 
@@ -107,6 +94,19 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				direction = value;
 				DictionaryUtil.Add(BodyParameters, "Direction", value);
+			}
+		}
+
+		public long? To
+		{
+			get
+			{
+				return to;
+			}
+			set	
+			{
+				to = value;
+				DictionaryUtil.Add(BodyParameters, "To", value.ToString());
 			}
 		}
 

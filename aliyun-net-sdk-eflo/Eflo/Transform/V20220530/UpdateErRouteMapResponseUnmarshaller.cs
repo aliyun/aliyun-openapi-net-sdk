@@ -35,6 +35,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			updateErRouteMapResponse.Message = _ctx.StringValue("UpdateErRouteMap.Message");
 			updateErRouteMapResponse.RequestId = _ctx.StringValue("UpdateErRouteMap.RequestId");
 			updateErRouteMapResponse.Content = _ctx.StringValue("UpdateErRouteMap.Content");
+			updateErRouteMapResponse.AccessDeniedDetail = _ctx.StringValue("UpdateErRouteMap.AccessDeniedDetail");
         
 			return updateErRouteMapResponse;
         }

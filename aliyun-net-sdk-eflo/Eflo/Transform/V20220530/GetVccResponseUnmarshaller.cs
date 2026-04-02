@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			getVccResponse.Code = _ctx.IntegerValue("GetVcc.Code");
 			getVccResponse.Message = _ctx.StringValue("GetVcc.Message");
 			getVccResponse.RequestId = _ctx.StringValue("GetVcc.RequestId");
+			getVccResponse.AccessDeniedDetail = _ctx.StringValue("GetVcc.AccessDeniedDetail");
 
 			GetVccResponse.GetVcc_Content content = new GetVccResponse.GetVcc_Content();
 			content.TenantId = _ctx.StringValue("GetVcc.Content.TenantId");
@@ -67,6 +68,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			content.ConnectionType = _ctx.StringValue("GetVcc.Content.ConnectionType");
 			content.CenOwnerId = _ctx.StringValue("GetVcc.Content.CenOwnerId");
 			content.BgpAsn = _ctx.StringValue("GetVcc.Content.BgpAsn");
+			content.Bandwidth = _ctx.IntegerValue("GetVcc.Content.Bandwidth");
 
 			GetVccResponse.GetVcc_Content.GetVcc_VpdBaseInfo vpdBaseInfo = new GetVccResponse.GetVcc_Content.GetVcc_VpdBaseInfo();
 			vpdBaseInfo.VpdId = _ctx.StringValue("GetVcc.Content.VpdBaseInfo.VpdId");

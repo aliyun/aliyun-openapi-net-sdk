@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			listVpdsResponse.Code = _ctx.IntegerValue("ListVpds.Code");
 			listVpdsResponse.Message = _ctx.StringValue("ListVpds.Message");
 			listVpdsResponse.RequestId = _ctx.StringValue("ListVpds.RequestId");
+			listVpdsResponse.AccessDeniedDetail = _ctx.StringValue("ListVpds.AccessDeniedDetail");
 
 			ListVpdsResponse.ListVpds_Content content = new ListVpdsResponse.ListVpds_Content();
 			content.Total = _ctx.LongValue("ListVpds.Content.Total");

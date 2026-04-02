@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			describeSlrResponse.Code = _ctx.IntegerValue("DescribeSlr.Code");
 			describeSlrResponse.Message = _ctx.StringValue("DescribeSlr.Message");
 			describeSlrResponse.RequestId = _ctx.StringValue("DescribeSlr.RequestId");
+			describeSlrResponse.AccessDeniedDetail = _ctx.StringValue("DescribeSlr.AccessDeniedDetail");
 
 			DescribeSlrResponse.DescribeSlr_Content content = new DescribeSlrResponse.DescribeSlr_Content();
 			content.HasRole = _ctx.BooleanValue("DescribeSlr.Content.HasRole");

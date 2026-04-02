@@ -31,6 +31,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private string requestId;
 
+		private string accessDeniedDetail;
+
 		private GetEr_Content content;
 
 		public int? Code
@@ -66,6 +68,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string AccessDeniedDetail
+		{
+			get
+			{
+				return accessDeniedDetail;
+			}
+			set	
+			{
+				accessDeniedDetail = value;
 			}
 		}
 
@@ -111,6 +125,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			private List<GetEr_ErRouteMap> erRouteMaps;
 
 			private List<GetEr_ErRouteEntry> erRouteEntrys;
+
+			private List<GetEr_Tag> tags;
 
 			public string CreateTime
 			{
@@ -280,40 +296,100 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				}
 			}
 
+			public List<GetEr_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
 			public class GetEr_ErAttachment
 			{
+
+				private string status;
+
+				private string message;
+
+				private string resourceGroupId;
+
+				private string instanceId;
 
 				private string createTime;
 
 				private string gmtModified;
 
-				private string message;
+				private string erId;
 
-				private string status;
+				private bool? across;
 
-				private string regionId;
+				private string instanceName;
 
 				private string tenantId;
+
+				private string resourceTenantId;
+
+				private bool? autoReceiveAllRoute;
 
 				private string erAttachmentName;
 
 				private string erAttachmentId;
 
-				private string erId;
+				private string regionId;
 
 				private string instanceType;
 
-				private string instanceId;
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
 
-				private string instanceName;
+				public string Message
+				{
+					get
+					{
+						return message;
+					}
+					set	
+					{
+						message = value;
+					}
+				}
 
-				private bool? autoReceiveAllRoute;
+				public string ResourceGroupId
+				{
+					get
+					{
+						return resourceGroupId;
+					}
+					set	
+					{
+						resourceGroupId = value;
+					}
+				}
 
-				private bool? across;
-
-				private string resourceTenantId;
-
-				private string resourceGroupId;
+				public string InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
+					}
+				}
 
 				public string CreateTime
 				{
@@ -339,39 +415,39 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					}
 				}
 
-				public string Message
+				public string ErId
 				{
 					get
 					{
-						return message;
+						return erId;
 					}
 					set	
 					{
-						message = value;
+						erId = value;
 					}
 				}
 
-				public string Status
+				public bool? Across
 				{
 					get
 					{
-						return status;
+						return across;
 					}
 					set	
 					{
-						status = value;
+						across = value;
 					}
 				}
 
-				public string RegionId
+				public string InstanceName
 				{
 					get
 					{
-						return regionId;
+						return instanceName;
 					}
 					set	
 					{
-						regionId = value;
+						instanceName = value;
 					}
 				}
 
@@ -384,6 +460,30 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					set	
 					{
 						tenantId = value;
+					}
+				}
+
+				public string ResourceTenantId
+				{
+					get
+					{
+						return resourceTenantId;
+					}
+					set	
+					{
+						resourceTenantId = value;
+					}
+				}
+
+				public bool? AutoReceiveAllRoute
+				{
+					get
+					{
+						return autoReceiveAllRoute;
+					}
+					set	
+					{
+						autoReceiveAllRoute = value;
 					}
 				}
 
@@ -411,15 +511,15 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					}
 				}
 
-				public string ErId
+				public string RegionId
 				{
 					get
 					{
-						return erId;
+						return regionId;
 					}
 					set	
 					{
-						erId = value;
+						regionId = value;
 					}
 				}
 
@@ -434,64 +534,148 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 						instanceType = value;
 					}
 				}
+			}
 
-				public string InstanceId
+			public class GetEr_ErRouteMap
+			{
+
+				private string status;
+
+				private string transmissionInstanceType;
+
+				private string action;
+
+				private string description;
+
+				private string receptionInstanceType;
+
+				private string message;
+
+				private string erRouteMapName;
+
+				private string receptionInstanceId;
+
+				private string resourceGroupId;
+
+				private string createTime;
+
+				private string gmtModified;
+
+				private string erId;
+
+				private string transmissionInstanceName;
+
+				private string destinationCidrBlock;
+
+				private string receptionInstanceOwner;
+
+				private string tenantId;
+
+				private string receptionInstanceName;
+
+				private string erRouteMapId;
+
+				private string transmissionInstanceOwner;
+
+				private string regionId;
+
+				private string transmissionInstanceId;
+
+				private int? routeMapNum;
+
+				public string Status
 				{
 					get
 					{
-						return instanceId;
+						return status;
 					}
 					set	
 					{
-						instanceId = value;
+						status = value;
 					}
 				}
 
-				public string InstanceName
+				public string TransmissionInstanceType
 				{
 					get
 					{
-						return instanceName;
+						return transmissionInstanceType;
 					}
 					set	
 					{
-						instanceName = value;
+						transmissionInstanceType = value;
 					}
 				}
 
-				public bool? AutoReceiveAllRoute
+				public string Action
 				{
 					get
 					{
-						return autoReceiveAllRoute;
+						return action;
 					}
 					set	
 					{
-						autoReceiveAllRoute = value;
+						action = value;
 					}
 				}
 
-				public bool? Across
+				public string Description
 				{
 					get
 					{
-						return across;
+						return description;
 					}
 					set	
 					{
-						across = value;
+						description = value;
 					}
 				}
 
-				public string ResourceTenantId
+				public string ReceptionInstanceType
 				{
 					get
 					{
-						return resourceTenantId;
+						return receptionInstanceType;
 					}
 					set	
 					{
-						resourceTenantId = value;
+						receptionInstanceType = value;
+					}
+				}
+
+				public string Message
+				{
+					get
+					{
+						return message;
+					}
+					set	
+					{
+						message = value;
+					}
+				}
+
+				public string ErRouteMapName
+				{
+					get
+					{
+						return erRouteMapName;
+					}
+					set	
+					{
+						erRouteMapName = value;
+					}
+				}
+
+				public string ReceptionInstanceId
+				{
+					get
+					{
+						return receptionInstanceId;
+					}
+					set	
+					{
+						receptionInstanceId = value;
 					}
 				}
 
@@ -504,78 +688,6 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					set	
 					{
 						resourceGroupId = value;
-					}
-				}
-			}
-
-			public class GetEr_ErRouteMap
-			{
-
-				private string regionId;
-
-				private string tenantId;
-
-				private string createTime;
-
-				private string gmtModified;
-
-				private string message;
-
-				private string status;
-
-				private string erRouteMapId;
-
-				private string erId;
-
-				private int? routeMapNum;
-
-				private string description;
-
-				private string destinationCidrBlock;
-
-				private string transmissionInstanceName;
-
-				private string transmissionInstanceId;
-
-				private string transmissionInstanceType;
-
-				private string receptionInstanceName;
-
-				private string receptionInstanceId;
-
-				private string receptionInstanceType;
-
-				private string action;
-
-				private string transmissionInstanceOwner;
-
-				private string receptionInstanceOwner;
-
-				private string resourceGroupId;
-
-				private string erRouteMapName;
-
-				public string RegionId
-				{
-					get
-					{
-						return regionId;
-					}
-					set	
-					{
-						regionId = value;
-					}
-				}
-
-				public string TenantId
-				{
-					get
-					{
-						return tenantId;
-					}
-					set	
-					{
-						tenantId = value;
 					}
 				}
 
@@ -603,42 +715,6 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					}
 				}
 
-				public string Message
-				{
-					get
-					{
-						return message;
-					}
-					set	
-					{
-						message = value;
-					}
-				}
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
-				}
-
-				public string ErRouteMapId
-				{
-					get
-					{
-						return erRouteMapId;
-					}
-					set	
-					{
-						erRouteMapId = value;
-					}
-				}
-
 				public string ErId
 				{
 					get
@@ -648,42 +724,6 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					set	
 					{
 						erId = value;
-					}
-				}
-
-				public int? RouteMapNum
-				{
-					get
-					{
-						return routeMapNum;
-					}
-					set	
-					{
-						routeMapNum = value;
-					}
-				}
-
-				public string Description
-				{
-					get
-					{
-						return description;
-					}
-					set	
-					{
-						description = value;
-					}
-				}
-
-				public string DestinationCidrBlock
-				{
-					get
-					{
-						return destinationCidrBlock;
-					}
-					set	
-					{
-						destinationCidrBlock = value;
 					}
 				}
 
@@ -699,87 +739,15 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					}
 				}
 
-				public string TransmissionInstanceId
+				public string DestinationCidrBlock
 				{
 					get
 					{
-						return transmissionInstanceId;
+						return destinationCidrBlock;
 					}
 					set	
 					{
-						transmissionInstanceId = value;
-					}
-				}
-
-				public string TransmissionInstanceType
-				{
-					get
-					{
-						return transmissionInstanceType;
-					}
-					set	
-					{
-						transmissionInstanceType = value;
-					}
-				}
-
-				public string ReceptionInstanceName
-				{
-					get
-					{
-						return receptionInstanceName;
-					}
-					set	
-					{
-						receptionInstanceName = value;
-					}
-				}
-
-				public string ReceptionInstanceId
-				{
-					get
-					{
-						return receptionInstanceId;
-					}
-					set	
-					{
-						receptionInstanceId = value;
-					}
-				}
-
-				public string ReceptionInstanceType
-				{
-					get
-					{
-						return receptionInstanceType;
-					}
-					set	
-					{
-						receptionInstanceType = value;
-					}
-				}
-
-				public string Action
-				{
-					get
-					{
-						return action;
-					}
-					set	
-					{
-						action = value;
-					}
-				}
-
-				public string TransmissionInstanceOwner
-				{
-					get
-					{
-						return transmissionInstanceOwner;
-					}
-					set	
-					{
-						transmissionInstanceOwner = value;
+						destinationCidrBlock = value;
 					}
 				}
 
@@ -795,27 +763,87 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					}
 				}
 
-				public string ResourceGroupId
+				public string TenantId
 				{
 					get
 					{
-						return resourceGroupId;
+						return tenantId;
 					}
 					set	
 					{
-						resourceGroupId = value;
+						tenantId = value;
 					}
 				}
 
-				public string ErRouteMapName
+				public string ReceptionInstanceName
 				{
 					get
 					{
-						return erRouteMapName;
+						return receptionInstanceName;
 					}
 					set	
 					{
-						erRouteMapName = value;
+						receptionInstanceName = value;
+					}
+				}
+
+				public string ErRouteMapId
+				{
+					get
+					{
+						return erRouteMapId;
+					}
+					set	
+					{
+						erRouteMapId = value;
+					}
+				}
+
+				public string TransmissionInstanceOwner
+				{
+					get
+					{
+						return transmissionInstanceOwner;
+					}
+					set	
+					{
+						transmissionInstanceOwner = value;
+					}
+				}
+
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
+					}
+				}
+
+				public string TransmissionInstanceId
+				{
+					get
+					{
+						return transmissionInstanceId;
+					}
+					set	
+					{
+						transmissionInstanceId = value;
+					}
+				}
+
+				public int? RouteMapNum
+				{
+					get
+					{
+						return routeMapNum;
+					}
+					set	
+					{
+						routeMapNum = value;
 					}
 				}
 			}
@@ -823,39 +851,51 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			public class GetEr_ErRouteEntry
 			{
 
-				private string erId;
+				private string status;
+
+				private string nextHopType;
 
 				private string tenantId;
 
 				private string resourceTenantId;
 
-				private string regionId;
+				private string routeType;
 
 				private string erRouteEntryId;
 
-				private string destinationCidrBlock;
-
-				private string nextHopType;
+				private string resourceGroupId;
 
 				private string nextHopId;
 
-				private string routeType;
-
-				private string status;
-
 				private string gmtModified;
 
-				private string resourceGroupId;
+				private string erId;
 
-				public string ErId
+				private string regionId;
+
+				private string destinationCidrBlock;
+
+				public string Status
 				{
 					get
 					{
-						return erId;
+						return status;
 					}
 					set	
 					{
-						erId = value;
+						status = value;
+					}
+				}
+
+				public string NextHopType
+				{
+					get
+					{
+						return nextHopType;
+					}
+					set	
+					{
+						nextHopType = value;
 					}
 				}
 
@@ -883,15 +923,15 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					}
 				}
 
-				public string RegionId
+				public string RouteType
 				{
 					get
 					{
-						return regionId;
+						return routeType;
 					}
 					set	
 					{
-						regionId = value;
+						routeType = value;
 					}
 				}
 
@@ -907,27 +947,15 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					}
 				}
 
-				public string DestinationCidrBlock
+				public string ResourceGroupId
 				{
 					get
 					{
-						return destinationCidrBlock;
+						return resourceGroupId;
 					}
 					set	
 					{
-						destinationCidrBlock = value;
-					}
-				}
-
-				public string NextHopType
-				{
-					get
-					{
-						return nextHopType;
-					}
-					set	
-					{
-						nextHopType = value;
+						resourceGroupId = value;
 					}
 				}
 
@@ -943,30 +971,6 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					}
 				}
 
-				public string RouteType
-				{
-					get
-					{
-						return routeType;
-					}
-					set	
-					{
-						routeType = value;
-					}
-				}
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
-				}
-
 				public string GmtModified
 				{
 					get
@@ -979,15 +983,71 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 					}
 				}
 
-				public string ResourceGroupId
+				public string ErId
 				{
 					get
 					{
-						return resourceGroupId;
+						return erId;
 					}
 					set	
 					{
-						resourceGroupId = value;
+						erId = value;
+					}
+				}
+
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
+					}
+				}
+
+				public string DestinationCidrBlock
+				{
+					get
+					{
+						return destinationCidrBlock;
+					}
+					set	
+					{
+						destinationCidrBlock = value;
+					}
+				}
+			}
+
+			public class GetEr_Tag
+			{
+
+				private string tagKey;
+
+				private string tagValue;
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
+					}
+				}
+
+				public string TagValue
+				{
+					get
+					{
+						return tagValue;
+					}
+					set	
+					{
+						tagValue = value;
 					}
 				}
 			}

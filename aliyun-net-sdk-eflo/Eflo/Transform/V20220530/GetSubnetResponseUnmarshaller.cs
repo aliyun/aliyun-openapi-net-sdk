@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			getSubnetResponse.Code = _ctx.IntegerValue("GetSubnet.Code");
 			getSubnetResponse.Message = _ctx.StringValue("GetSubnet.Message");
 			getSubnetResponse.RequestId = _ctx.StringValue("GetSubnet.RequestId");
+			getSubnetResponse.AccessDeniedDetail = _ctx.StringValue("GetSubnet.AccessDeniedDetail");
 
 			GetSubnetResponse.GetSubnet_Content content = new GetSubnetResponse.GetSubnet_Content();
 			content.CreateTime = _ctx.StringValue("GetSubnet.Content.CreateTime");

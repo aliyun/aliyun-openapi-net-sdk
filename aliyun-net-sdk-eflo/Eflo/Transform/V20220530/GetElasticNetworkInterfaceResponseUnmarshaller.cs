@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			getElasticNetworkInterfaceResponse.Code = _ctx.IntegerValue("GetElasticNetworkInterface.Code");
 			getElasticNetworkInterfaceResponse.Message = _ctx.StringValue("GetElasticNetworkInterface.Message");
 			getElasticNetworkInterfaceResponse.RequestId = _ctx.StringValue("GetElasticNetworkInterface.RequestId");
+			getElasticNetworkInterfaceResponse.AccessDeniedDetail = _ctx.StringValue("GetElasticNetworkInterface.AccessDeniedDetail");
 
 			GetElasticNetworkInterfaceResponse.GetElasticNetworkInterface_Content content = new GetElasticNetworkInterfaceResponse.GetElasticNetworkInterface_Content();
 			content.RegionId = _ctx.StringValue("GetElasticNetworkInterface.Content.RegionId");
@@ -52,21 +53,32 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			content.CreateTime = _ctx.StringValue("GetElasticNetworkInterface.Content.CreateTime");
 			content.GmtModified = _ctx.StringValue("GetElasticNetworkInterface.Content.GmtModified");
 			content.Description = _ctx.StringValue("GetElasticNetworkInterface.Content.Description");
+			content.ResourceGroupId = _ctx.StringValue("GetElasticNetworkInterface.Content.ResourceGroupId");
 			content.SecurityGroupId = _ctx.StringValue("GetElasticNetworkInterface.Content.SecurityGroupId");
 			content.EnableJumboFrame = _ctx.BooleanValue("GetElasticNetworkInterface.Content.EnableJumboFrame");
+
+			List<GetElasticNetworkInterfaceResponse.GetElasticNetworkInterface_Content.GetElasticNetworkInterface_Tag> content_tags = new List<GetElasticNetworkInterfaceResponse.GetElasticNetworkInterface_Content.GetElasticNetworkInterface_Tag>();
+			for (int i = 0; i < _ctx.Length("GetElasticNetworkInterface.Content.Tags.Length"); i++) {
+				GetElasticNetworkInterfaceResponse.GetElasticNetworkInterface_Content.GetElasticNetworkInterface_Tag tag = new GetElasticNetworkInterfaceResponse.GetElasticNetworkInterface_Content.GetElasticNetworkInterface_Tag();
+				tag.TagKey = _ctx.StringValue("GetElasticNetworkInterface.Content.Tags["+ i +"].TagKey");
+				tag.TagValue = _ctx.StringValue("GetElasticNetworkInterface.Content.Tags["+ i +"].TagValue");
+
+				content_tags.Add(tag);
+			}
+			content.Tags = content_tags;
 
 			List<GetElasticNetworkInterfaceResponse.GetElasticNetworkInterface_Content.GetElasticNetworkInterface_PrivateIpAddress> content_privateIpAddresses = new List<GetElasticNetworkInterfaceResponse.GetElasticNetworkInterface_Content.GetElasticNetworkInterface_PrivateIpAddress>();
 			for (int i = 0; i < _ctx.Length("GetElasticNetworkInterface.Content.PrivateIpAddresses.Length"); i++) {
 				GetElasticNetworkInterfaceResponse.GetElasticNetworkInterface_Content.GetElasticNetworkInterface_PrivateIpAddress privateIpAddress = new GetElasticNetworkInterfaceResponse.GetElasticNetworkInterface_Content.GetElasticNetworkInterface_PrivateIpAddress();
+				privateIpAddress.Status = _ctx.StringValue("GetElasticNetworkInterface.Content.PrivateIpAddresses["+ i +"].Status");
 				privateIpAddress.ElasticNetworkInterfaceId = _ctx.StringValue("GetElasticNetworkInterface.Content.PrivateIpAddresses["+ i +"].ElasticNetworkInterfaceId");
-				privateIpAddress.RegionId = _ctx.StringValue("GetElasticNetworkInterface.Content.PrivateIpAddresses["+ i +"].RegionId");
 				privateIpAddress.GmtCreate = _ctx.StringValue("GetElasticNetworkInterface.Content.PrivateIpAddresses["+ i +"].GmtCreate");
-				privateIpAddress.GmtModified = _ctx.StringValue("GetElasticNetworkInterface.Content.PrivateIpAddresses["+ i +"].GmtModified");
 				privateIpAddress.IpName = _ctx.StringValue("GetElasticNetworkInterface.Content.PrivateIpAddresses["+ i +"].IpName");
 				privateIpAddress.PrivateIpAddress = _ctx.StringValue("GetElasticNetworkInterface.Content.PrivateIpAddresses["+ i +"].PrivateIpAddress");
-				privateIpAddress.Status = _ctx.StringValue("GetElasticNetworkInterface.Content.PrivateIpAddresses["+ i +"].Status");
 				privateIpAddress.Description = _ctx.StringValue("GetElasticNetworkInterface.Content.PrivateIpAddresses["+ i +"].Description");
 				privateIpAddress.Message = _ctx.StringValue("GetElasticNetworkInterface.Content.PrivateIpAddresses["+ i +"].Message");
+				privateIpAddress.GmtModified = _ctx.StringValue("GetElasticNetworkInterface.Content.PrivateIpAddresses["+ i +"].GmtModified");
+				privateIpAddress.RegionId = _ctx.StringValue("GetElasticNetworkInterface.Content.PrivateIpAddresses["+ i +"].RegionId");
 
 				content_privateIpAddresses.Add(privateIpAddress);
 			}
@@ -75,15 +87,15 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			List<GetElasticNetworkInterfaceResponse.GetElasticNetworkInterface_Content.GetElasticNetworkInterface_Ipv6Addresse> content_ipv6Addresses = new List<GetElasticNetworkInterfaceResponse.GetElasticNetworkInterface_Content.GetElasticNetworkInterface_Ipv6Addresse>();
 			for (int i = 0; i < _ctx.Length("GetElasticNetworkInterface.Content.Ipv6Addresses.Length"); i++) {
 				GetElasticNetworkInterfaceResponse.GetElasticNetworkInterface_Content.GetElasticNetworkInterface_Ipv6Addresse ipv6Addresse = new GetElasticNetworkInterfaceResponse.GetElasticNetworkInterface_Content.GetElasticNetworkInterface_Ipv6Addresse();
+				ipv6Addresse.Status = _ctx.StringValue("GetElasticNetworkInterface.Content.Ipv6Addresses["+ i +"].Status");
 				ipv6Addresse.ElasticNetworkInterfaceId = _ctx.StringValue("GetElasticNetworkInterface.Content.Ipv6Addresses["+ i +"].ElasticNetworkInterfaceId");
 				ipv6Addresse.IpName = _ctx.StringValue("GetElasticNetworkInterface.Content.Ipv6Addresses["+ i +"].IpName");
-				ipv6Addresse.Ipv6Address = _ctx.StringValue("GetElasticNetworkInterface.Content.Ipv6Addresses["+ i +"].Ipv6Address");
-				ipv6Addresse.Status = _ctx.StringValue("GetElasticNetworkInterface.Content.Ipv6Addresses["+ i +"].Status");
+				ipv6Addresse.GmtCreate = _ctx.StringValue("GetElasticNetworkInterface.Content.Ipv6Addresses["+ i +"].GmtCreate");
 				ipv6Addresse.Description = _ctx.StringValue("GetElasticNetworkInterface.Content.Ipv6Addresses["+ i +"].Description");
 				ipv6Addresse.Message = _ctx.StringValue("GetElasticNetworkInterface.Content.Ipv6Addresses["+ i +"].Message");
-				ipv6Addresse.RegionId = _ctx.StringValue("GetElasticNetworkInterface.Content.Ipv6Addresses["+ i +"].RegionId");
-				ipv6Addresse.GmtCreate = _ctx.StringValue("GetElasticNetworkInterface.Content.Ipv6Addresses["+ i +"].GmtCreate");
 				ipv6Addresse.GmtModified = _ctx.StringValue("GetElasticNetworkInterface.Content.Ipv6Addresses["+ i +"].GmtModified");
+				ipv6Addresse.RegionId = _ctx.StringValue("GetElasticNetworkInterface.Content.Ipv6Addresses["+ i +"].RegionId");
+				ipv6Addresse.Ipv6Address = _ctx.StringValue("GetElasticNetworkInterface.Content.Ipv6Addresses["+ i +"].Ipv6Address");
 
 				content_ipv6Addresses.Add(ipv6Addresse);
 			}

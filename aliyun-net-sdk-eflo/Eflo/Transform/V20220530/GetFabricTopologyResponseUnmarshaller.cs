@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			getFabricTopologyResponse.Code = _ctx.IntegerValue("GetFabricTopology.Code");
 			getFabricTopologyResponse.Message = _ctx.StringValue("GetFabricTopology.Message");
 			getFabricTopologyResponse.RequestId = _ctx.StringValue("GetFabricTopology.RequestId");
+			getFabricTopologyResponse.AccessDeniedDetail = _ctx.StringValue("GetFabricTopology.AccessDeniedDetail");
 
 			GetFabricTopologyResponse.GetFabricTopology_Content content = new GetFabricTopologyResponse.GetFabricTopology_Content();
 			content.RegionId = _ctx.StringValue("GetFabricTopology.Content.RegionId");

@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			getLeniPrivateIpAddressResponse.Code = _ctx.IntegerValue("GetLeniPrivateIpAddress.Code");
 			getLeniPrivateIpAddressResponse.Message = _ctx.StringValue("GetLeniPrivateIpAddress.Message");
 			getLeniPrivateIpAddressResponse.RequestId = _ctx.StringValue("GetLeniPrivateIpAddress.RequestId");
+			getLeniPrivateIpAddressResponse.AccessDeniedDetail = _ctx.StringValue("GetLeniPrivateIpAddress.AccessDeniedDetail");
 
 			GetLeniPrivateIpAddressResponse.GetLeniPrivateIpAddress_Content content = new GetLeniPrivateIpAddressResponse.GetLeniPrivateIpAddress_Content();
 			content.ElasticNetworkInterfaceId = _ctx.StringValue("GetLeniPrivateIpAddress.Content.ElasticNetworkInterfaceId");
@@ -45,6 +46,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			content.Status = _ctx.StringValue("GetLeniPrivateIpAddress.Content.Status");
 			content.Description = _ctx.StringValue("GetLeniPrivateIpAddress.Content.Description");
 			content.Message = _ctx.StringValue("GetLeniPrivateIpAddress.Content.Message");
+			content.ResourceGroupId = _ctx.StringValue("GetLeniPrivateIpAddress.Content.ResourceGroupId");
 			getLeniPrivateIpAddressResponse.Content = content;
         
 			return getLeniPrivateIpAddressResponse;

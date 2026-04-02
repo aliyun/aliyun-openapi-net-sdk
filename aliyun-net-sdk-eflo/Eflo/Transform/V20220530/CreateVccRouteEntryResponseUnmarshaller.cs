@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			createVccRouteEntryResponse.Code = _ctx.IntegerValue("CreateVccRouteEntry.Code");
 			createVccRouteEntryResponse.Message = _ctx.StringValue("CreateVccRouteEntry.Message");
 			createVccRouteEntryResponse.RequestId = _ctx.StringValue("CreateVccRouteEntry.RequestId");
+			createVccRouteEntryResponse.AccessDeniedDetail = _ctx.StringValue("CreateVccRouteEntry.AccessDeniedDetail");
 
 			CreateVccRouteEntryResponse.CreateVccRouteEntry_Content content = new CreateVccRouteEntryResponse.CreateVccRouteEntry_Content();
 			content.VccRouteEntryId = _ctx.StringValue("CreateVccRouteEntry.Content.VccRouteEntryId");

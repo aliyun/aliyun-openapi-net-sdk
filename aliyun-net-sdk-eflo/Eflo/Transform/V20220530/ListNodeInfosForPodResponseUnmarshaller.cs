@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			listNodeInfosForPodResponse.Code = _ctx.IntegerValue("ListNodeInfosForPod.Code");
 			listNodeInfosForPodResponse.Message = _ctx.StringValue("ListNodeInfosForPod.Message");
 			listNodeInfosForPodResponse.RequestId = _ctx.StringValue("ListNodeInfosForPod.RequestId");
+			listNodeInfosForPodResponse.AccessDeniedDetail = _ctx.StringValue("ListNodeInfosForPod.AccessDeniedDetail");
 
 			List<ListNodeInfosForPodResponse.ListNodeInfosForPod_ContentItem> listNodeInfosForPodResponse_content = new List<ListNodeInfosForPodResponse.ListNodeInfosForPod_ContentItem>();
 			for (int i = 0; i < _ctx.Length("ListNodeInfosForPod.Content.Length"); i++) {

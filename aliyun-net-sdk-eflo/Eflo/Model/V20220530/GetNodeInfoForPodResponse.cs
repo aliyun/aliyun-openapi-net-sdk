@@ -31,6 +31,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private string requestId;
 
+		private string accessDeniedDetail;
+
 		private GetNodeInfoForPod_Content content;
 
 		public int? Code
@@ -69,6 +71,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			}
 		}
 
+		public string AccessDeniedDetail
+		{
+			get
+			{
+				return accessDeniedDetail;
+			}
+			set	
+			{
+				accessDeniedDetail = value;
+			}
+		}
+
 		public GetNodeInfoForPod_Content Content
 		{
 			get
@@ -101,6 +115,12 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			private int? leniSipQuota;
 
 			private int? hdeniQuota;
+
+			private int? leniIpv6SipQuota;
+
+			private int? hdeniSipQuota;
+
+			private int? hdeniIpv6SipQuota;
 
 			private List<string> vSwitches;
 
@@ -209,6 +229,42 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				set	
 				{
 					hdeniQuota = value;
+				}
+			}
+
+			public int? LeniIpv6SipQuota
+			{
+				get
+				{
+					return leniIpv6SipQuota;
+				}
+				set	
+				{
+					leniIpv6SipQuota = value;
+				}
+			}
+
+			public int? HdeniSipQuota
+			{
+				get
+				{
+					return hdeniSipQuota;
+				}
+				set	
+				{
+					hdeniSipQuota = value;
+				}
+			}
+
+			public int? HdeniIpv6SipQuota
+			{
+				get
+				{
+					return hdeniIpv6SipQuota;
+				}
+				set	
+				{
+					hdeniIpv6SipQuota = value;
 				}
 			}
 

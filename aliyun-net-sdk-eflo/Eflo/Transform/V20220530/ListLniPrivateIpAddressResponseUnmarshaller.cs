@@ -34,9 +34,11 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			listLniPrivateIpAddressResponse.Code = _ctx.IntegerValue("ListLniPrivateIpAddress.Code");
 			listLniPrivateIpAddressResponse.Message = _ctx.StringValue("ListLniPrivateIpAddress.Message");
 			listLniPrivateIpAddressResponse.RequestId = _ctx.StringValue("ListLniPrivateIpAddress.RequestId");
+			listLniPrivateIpAddressResponse.AccessDeniedDetail = _ctx.StringValue("ListLniPrivateIpAddress.AccessDeniedDetail");
 
 			ListLniPrivateIpAddressResponse.ListLniPrivateIpAddress_Content content = new ListLniPrivateIpAddressResponse.ListLniPrivateIpAddress_Content();
 			content.Total = _ctx.LongValue("ListLniPrivateIpAddress.Content.Total");
+			content.ResourceGroupId = _ctx.StringValue("ListLniPrivateIpAddress.Content.ResourceGroupId");
 
 			List<ListLniPrivateIpAddressResponse.ListLniPrivateIpAddress_Content.ListLniPrivateIpAddress_DataItem> content_data = new List<ListLniPrivateIpAddressResponse.ListLniPrivateIpAddress_Content.ListLniPrivateIpAddress_DataItem>();
 			for (int i = 0; i < _ctx.Length("ListLniPrivateIpAddress.Content.Data.Length"); i++) {
@@ -50,6 +52,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 				dataItem.Status = _ctx.StringValue("ListLniPrivateIpAddress.Content.Data["+ i +"].Status");
 				dataItem.Description = _ctx.StringValue("ListLniPrivateIpAddress.Content.Data["+ i +"].Description");
 				dataItem.Message = _ctx.StringValue("ListLniPrivateIpAddress.Content.Data["+ i +"].Message");
+				dataItem.ResourceGroupId = _ctx.StringValue("ListLniPrivateIpAddress.Content.Data["+ i +"].ResourceGroupId");
 
 				content_data.Add(dataItem);
 			}

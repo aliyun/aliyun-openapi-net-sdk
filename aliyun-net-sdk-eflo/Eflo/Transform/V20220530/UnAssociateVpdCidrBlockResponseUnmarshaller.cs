@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			unAssociateVpdCidrBlockResponse.Code = _ctx.IntegerValue("UnAssociateVpdCidrBlock.Code");
 			unAssociateVpdCidrBlockResponse.Message = _ctx.StringValue("UnAssociateVpdCidrBlock.Message");
 			unAssociateVpdCidrBlockResponse.RequestId = _ctx.StringValue("UnAssociateVpdCidrBlock.RequestId");
+			unAssociateVpdCidrBlockResponse.AccessDeniedDetail = _ctx.StringValue("UnAssociateVpdCidrBlock.AccessDeniedDetail");
 
 			UnAssociateVpdCidrBlockResponse.UnAssociateVpdCidrBlock_Content content = new UnAssociateVpdCidrBlockResponse.UnAssociateVpdCidrBlock_Content();
 			content.VpdId = _ctx.StringValue("UnAssociateVpdCidrBlock.Content.VpdId");

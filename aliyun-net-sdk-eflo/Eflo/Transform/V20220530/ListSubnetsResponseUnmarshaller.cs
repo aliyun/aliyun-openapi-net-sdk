@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			listSubnetsResponse.Code = _ctx.IntegerValue("ListSubnets.Code");
 			listSubnetsResponse.Message = _ctx.StringValue("ListSubnets.Message");
 			listSubnetsResponse.RequestId = _ctx.StringValue("ListSubnets.RequestId");
+			listSubnetsResponse.AccessDeniedDetail = _ctx.StringValue("ListSubnets.AccessDeniedDetail");
 
 			ListSubnetsResponse.ListSubnets_Content content = new ListSubnetsResponse.ListSubnets_Content();
 			content.Total = _ctx.LongValue("ListSubnets.Content.Total");

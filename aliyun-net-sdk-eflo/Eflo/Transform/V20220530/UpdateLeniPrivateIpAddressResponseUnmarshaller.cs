@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			updateLeniPrivateIpAddressResponse.Code = _ctx.IntegerValue("UpdateLeniPrivateIpAddress.Code");
 			updateLeniPrivateIpAddressResponse.Message = _ctx.StringValue("UpdateLeniPrivateIpAddress.Message");
 			updateLeniPrivateIpAddressResponse.RequestId = _ctx.StringValue("UpdateLeniPrivateIpAddress.RequestId");
+			updateLeniPrivateIpAddressResponse.AccessDeniedDetail = _ctx.StringValue("UpdateLeniPrivateIpAddress.AccessDeniedDetail");
 
 			UpdateLeniPrivateIpAddressResponse.UpdateLeniPrivateIpAddress_Content content = new UpdateLeniPrivateIpAddressResponse.UpdateLeniPrivateIpAddress_Content();
 			content.ElasticNetworkInterfaceId = _ctx.StringValue("UpdateLeniPrivateIpAddress.Content.ElasticNetworkInterfaceId");

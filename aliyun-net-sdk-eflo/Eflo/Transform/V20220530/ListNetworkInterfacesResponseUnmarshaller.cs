@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			listNetworkInterfacesResponse.Code = _ctx.IntegerValue("ListNetworkInterfaces.Code");
 			listNetworkInterfacesResponse.Message = _ctx.StringValue("ListNetworkInterfaces.Message");
 			listNetworkInterfacesResponse.RequestId = _ctx.StringValue("ListNetworkInterfaces.RequestId");
+			listNetworkInterfacesResponse.AccessDeniedDetail = _ctx.StringValue("ListNetworkInterfaces.AccessDeniedDetail");
 
 			ListNetworkInterfacesResponse.ListNetworkInterfaces_Content content = new ListNetworkInterfacesResponse.ListNetworkInterfaces_Content();
 			content.Total = _ctx.LongValue("ListNetworkInterfaces.Content.Total");
@@ -54,6 +55,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 				dataItem.Quota = _ctx.IntegerValue("ListNetworkInterfaces.Content.Data["+ i +"].Quota");
 				dataItem.NcType = _ctx.StringValue("ListNetworkInterfaces.Content.Data["+ i +"].NcType");
 				dataItem.NetworkInterfaceName = _ctx.StringValue("ListNetworkInterfaces.Content.Data["+ i +"].NetworkInterfaceName");
+				dataItem.ResourceGroupId = _ctx.StringValue("ListNetworkInterfaces.Content.Data["+ i +"].ResourceGroupId");
 
 				List<string> dataItem_ethernet = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListNetworkInterfaces.Content.Data["+ i +"].Ethernet.Length"); j++) {
@@ -88,6 +90,16 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 					dataItem_privateIpAddressMacGroup.Add(privateIpAddressMacGroupItem);
 				}
 				dataItem.PrivateIpAddressMacGroup = dataItem_privateIpAddressMacGroup;
+
+				List<ListNetworkInterfacesResponse.ListNetworkInterfaces_Content.ListNetworkInterfaces_DataItem.ListNetworkInterfaces_Tag> dataItem_tags = new List<ListNetworkInterfacesResponse.ListNetworkInterfaces_Content.ListNetworkInterfaces_DataItem.ListNetworkInterfaces_Tag>();
+				for (int j = 0; j < _ctx.Length("ListNetworkInterfaces.Content.Data["+ i +"].Tags.Length"); j++) {
+					ListNetworkInterfacesResponse.ListNetworkInterfaces_Content.ListNetworkInterfaces_DataItem.ListNetworkInterfaces_Tag tag = new ListNetworkInterfacesResponse.ListNetworkInterfaces_Content.ListNetworkInterfaces_DataItem.ListNetworkInterfaces_Tag();
+					tag.TagKey = _ctx.StringValue("ListNetworkInterfaces.Content.Data["+ i +"].Tags["+ j +"].TagKey");
+					tag.TagValue = _ctx.StringValue("ListNetworkInterfaces.Content.Data["+ i +"].Tags["+ j +"].TagValue");
+
+					dataItem_tags.Add(tag);
+				}
+				dataItem.Tags = dataItem_tags;
 
 				content_data.Add(dataItem);
 			}

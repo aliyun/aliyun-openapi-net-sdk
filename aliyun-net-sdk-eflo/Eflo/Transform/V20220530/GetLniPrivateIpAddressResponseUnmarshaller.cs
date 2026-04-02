@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			getLniPrivateIpAddressResponse.Code = _ctx.IntegerValue("GetLniPrivateIpAddress.Code");
 			getLniPrivateIpAddressResponse.Message = _ctx.StringValue("GetLniPrivateIpAddress.Message");
 			getLniPrivateIpAddressResponse.RequestId = _ctx.StringValue("GetLniPrivateIpAddress.RequestId");
+			getLniPrivateIpAddressResponse.AccessDeniedDetail = _ctx.StringValue("GetLniPrivateIpAddress.AccessDeniedDetail");
 
 			GetLniPrivateIpAddressResponse.GetLniPrivateIpAddress_Content content = new GetLniPrivateIpAddressResponse.GetLniPrivateIpAddress_Content();
 			content.RegionId = _ctx.StringValue("GetLniPrivateIpAddress.Content.RegionId");
@@ -45,6 +46,8 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			content.Status = _ctx.StringValue("GetLniPrivateIpAddress.Content.Status");
 			content.Description = _ctx.StringValue("GetLniPrivateIpAddress.Content.Description");
 			content.Message = _ctx.StringValue("GetLniPrivateIpAddress.Content.Message");
+			content.SubnetId = _ctx.StringValue("GetLniPrivateIpAddress.Content.SubnetId");
+			content.ResourceGroupId = _ctx.StringValue("GetLniPrivateIpAddress.Content.ResourceGroupId");
 			getLniPrivateIpAddressResponse.Content = content;
         
 			return getLniPrivateIpAddressResponse;

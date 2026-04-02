@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			getNetworkInterfaceResponse.Code = _ctx.IntegerValue("GetNetworkInterface.Code");
 			getNetworkInterfaceResponse.Message = _ctx.StringValue("GetNetworkInterface.Message");
 			getNetworkInterfaceResponse.RequestId = _ctx.StringValue("GetNetworkInterface.RequestId");
+			getNetworkInterfaceResponse.AccessDeniedDetail = _ctx.StringValue("GetNetworkInterface.AccessDeniedDetail");
 
 			GetNetworkInterfaceResponse.GetNetworkInterface_Content content = new GetNetworkInterfaceResponse.GetNetworkInterface_Content();
 			content.TenantId = _ctx.StringValue("GetNetworkInterface.Content.TenantId");
@@ -49,6 +50,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			content.Quota = _ctx.IntegerValue("GetNetworkInterface.Content.Quota");
 			content.NcType = _ctx.StringValue("GetNetworkInterface.Content.NcType");
 			content.NetworkInterfaceName = _ctx.StringValue("GetNetworkInterface.Content.NetworkInterfaceName");
+			content.ResourceGroupId = _ctx.StringValue("GetNetworkInterface.Content.ResourceGroupId");
 
 			List<string> content_ethernet = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetNetworkInterface.Content.Ethernet.Length"); i++) {
@@ -83,6 +85,16 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 				content_privateIpAddressMacGroup.Add(privateIpAddressMacGroupItem);
 			}
 			content.PrivateIpAddressMacGroup = content_privateIpAddressMacGroup;
+
+			List<GetNetworkInterfaceResponse.GetNetworkInterface_Content.GetNetworkInterface_Tag> content_tags = new List<GetNetworkInterfaceResponse.GetNetworkInterface_Content.GetNetworkInterface_Tag>();
+			for (int i = 0; i < _ctx.Length("GetNetworkInterface.Content.Tags.Length"); i++) {
+				GetNetworkInterfaceResponse.GetNetworkInterface_Content.GetNetworkInterface_Tag tag = new GetNetworkInterfaceResponse.GetNetworkInterface_Content.GetNetworkInterface_Tag();
+				tag.TagKey = _ctx.StringValue("GetNetworkInterface.Content.Tags["+ i +"].TagKey");
+				tag.TagValue = _ctx.StringValue("GetNetworkInterface.Content.Tags["+ i +"].TagValue");
+
+				content_tags.Add(tag);
+			}
+			content.Tags = content_tags;
 			getNetworkInterfaceResponse.Content = content;
         
 			return getNetworkInterfaceResponse;

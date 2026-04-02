@@ -45,6 +45,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private string instanceType;
 
+		private List<string> tags = new List<string>(){ };
+
 		private string erId;
 
 		private string erName;
@@ -118,6 +120,27 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			}
 		}
 
+		public List<string> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				if(tags != null)
+				{
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(BodyParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
+				}
+			}
+		}
+
 		public string ErId
 		{
 			get
@@ -167,6 +190,38 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				enablePage = value;
 				DictionaryUtil.Add(BodyParameters, "EnablePage", value.ToString());
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

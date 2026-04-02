@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			updateSubnetResponse.Code = _ctx.IntegerValue("UpdateSubnet.Code");
 			updateSubnetResponse.Message = _ctx.StringValue("UpdateSubnet.Message");
 			updateSubnetResponse.RequestId = _ctx.StringValue("UpdateSubnet.RequestId");
+			updateSubnetResponse.AccessDeniedDetail = _ctx.StringValue("UpdateSubnet.AccessDeniedDetail");
 
 			UpdateSubnetResponse.UpdateSubnet_Content content = new UpdateSubnetResponse.UpdateSubnet_Content();
 			content.SubnetId = _ctx.StringValue("UpdateSubnet.Content.SubnetId");

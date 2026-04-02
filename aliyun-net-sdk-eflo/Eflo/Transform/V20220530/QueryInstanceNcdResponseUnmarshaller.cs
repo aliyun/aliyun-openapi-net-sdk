@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			queryInstanceNcdResponse.Code = _ctx.IntegerValue("QueryInstanceNcd.Code");
 			queryInstanceNcdResponse.Message = _ctx.StringValue("QueryInstanceNcd.Message");
 			queryInstanceNcdResponse.RequestId = _ctx.StringValue("QueryInstanceNcd.RequestId");
+			queryInstanceNcdResponse.AccessDeniedDetail = _ctx.StringValue("QueryInstanceNcd.AccessDeniedDetail");
 
 			QueryInstanceNcdResponse.QueryInstanceNcd_Content content = new QueryInstanceNcdResponse.QueryInstanceNcd_Content();
 			content.Ncd = _ctx.IntegerValue("QueryInstanceNcd.Content.Ncd");

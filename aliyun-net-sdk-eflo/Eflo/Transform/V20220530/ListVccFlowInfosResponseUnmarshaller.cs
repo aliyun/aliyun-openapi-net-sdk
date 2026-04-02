@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			listVccFlowInfosResponse.Code = _ctx.IntegerValue("ListVccFlowInfos.Code");
 			listVccFlowInfosResponse.Message = _ctx.StringValue("ListVccFlowInfos.Message");
 			listVccFlowInfosResponse.RequestId = _ctx.StringValue("ListVccFlowInfos.RequestId");
+			listVccFlowInfosResponse.AccessDeniedDetail = _ctx.StringValue("ListVccFlowInfos.AccessDeniedDetail");
 
 			ListVccFlowInfosResponse.ListVccFlowInfos_Content content = new ListVccFlowInfosResponse.ListVccFlowInfos_Content();
 			content.Total = _ctx.LongValue("ListVccFlowInfos.Content.Total");

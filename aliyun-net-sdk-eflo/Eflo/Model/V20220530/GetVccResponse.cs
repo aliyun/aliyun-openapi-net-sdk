@@ -31,6 +31,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private string requestId;
 
+		private string accessDeniedDetail;
+
 		private GetVcc_Content content;
 
 		public int? Code
@@ -66,6 +68,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string AccessDeniedDetail
+		{
+			get
+			{
+				return accessDeniedDetail;
+			}
+			set	
+			{
+				accessDeniedDetail = value;
 			}
 		}
 
@@ -145,6 +159,8 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			private string cenOwnerId;
 
 			private string bgpAsn;
+
+			private int? bandwidth;
 
 			private List<GetVcc_ErInfo> erInfos;
 
@@ -527,6 +543,18 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 				set	
 				{
 					bgpAsn = value;
+				}
+			}
+
+			public int? Bandwidth
+			{
+				get
+				{
+					return bandwidth;
+				}
+				set	
+				{
+					bandwidth = value;
 				}
 			}
 

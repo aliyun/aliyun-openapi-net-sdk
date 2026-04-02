@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			createErResponse.Code = _ctx.IntegerValue("CreateEr.Code");
 			createErResponse.Message = _ctx.StringValue("CreateEr.Message");
 			createErResponse.RequestId = _ctx.StringValue("CreateEr.RequestId");
+			createErResponse.AccessDeniedDetail = _ctx.StringValue("CreateEr.AccessDeniedDetail");
 
 			CreateErResponse.CreateEr_Content content = new CreateErResponse.CreateEr_Content();
 			content.ErId = _ctx.StringValue("CreateEr.Content.ErId");

@@ -41,6 +41,10 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private string description;
 
+		private string resourceGroupId;
+
+		private List<string> tags = new List<string>(){ };
+
 		private string nodeId;
 
 		private bool? enableJumboFrame;
@@ -87,6 +91,40 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				description = value;
 				DictionaryUtil.Add(BodyParameters, "Description", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(BodyParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public List<string> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				if(tags != null)
+				{
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(BodyParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
+				}
 			}
 		}
 
@@ -152,6 +190,38 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				zoneId = value;
 				DictionaryUtil.Add(BodyParameters, "ZoneId", value);
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

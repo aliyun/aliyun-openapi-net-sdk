@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			listElasticNetworkInterfacesResponse.Code = _ctx.IntegerValue("ListElasticNetworkInterfaces.Code");
 			listElasticNetworkInterfacesResponse.Message = _ctx.StringValue("ListElasticNetworkInterfaces.Message");
 			listElasticNetworkInterfacesResponse.RequestId = _ctx.StringValue("ListElasticNetworkInterfaces.RequestId");
+			listElasticNetworkInterfacesResponse.AccessDeniedDetail = _ctx.StringValue("ListElasticNetworkInterfaces.AccessDeniedDetail");
 
 			ListElasticNetworkInterfacesResponse.ListElasticNetworkInterfaces_Content content = new ListElasticNetworkInterfacesResponse.ListElasticNetworkInterfaces_Content();
 			content.Total = _ctx.LongValue("ListElasticNetworkInterfaces.Content.Total");
@@ -58,6 +59,17 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 				dataItem.GmtModified = _ctx.StringValue("ListElasticNetworkInterfaces.Content.Data["+ i +"].GmtModified");
 				dataItem.Description = _ctx.StringValue("ListElasticNetworkInterfaces.Content.Data["+ i +"].Description");
 				dataItem.SecurityGroupId = _ctx.StringValue("ListElasticNetworkInterfaces.Content.Data["+ i +"].SecurityGroupId");
+				dataItem.ResourceGroupId = _ctx.StringValue("ListElasticNetworkInterfaces.Content.Data["+ i +"].ResourceGroupId");
+
+				List<ListElasticNetworkInterfacesResponse.ListElasticNetworkInterfaces_Content.ListElasticNetworkInterfaces_DataItem.ListElasticNetworkInterfaces_Tag> dataItem_tags = new List<ListElasticNetworkInterfacesResponse.ListElasticNetworkInterfaces_Content.ListElasticNetworkInterfaces_DataItem.ListElasticNetworkInterfaces_Tag>();
+				for (int j = 0; j < _ctx.Length("ListElasticNetworkInterfaces.Content.Data["+ i +"].Tags.Length"); j++) {
+					ListElasticNetworkInterfacesResponse.ListElasticNetworkInterfaces_Content.ListElasticNetworkInterfaces_DataItem.ListElasticNetworkInterfaces_Tag tag = new ListElasticNetworkInterfacesResponse.ListElasticNetworkInterfaces_Content.ListElasticNetworkInterfaces_DataItem.ListElasticNetworkInterfaces_Tag();
+					tag.TagKey = _ctx.StringValue("ListElasticNetworkInterfaces.Content.Data["+ i +"].Tags["+ j +"].TagKey");
+					tag.TagValue = _ctx.StringValue("ListElasticNetworkInterfaces.Content.Data["+ i +"].Tags["+ j +"].TagValue");
+
+					dataItem_tags.Add(tag);
+				}
+				dataItem.Tags = dataItem_tags;
 
 				content_data.Add(dataItem);
 			}

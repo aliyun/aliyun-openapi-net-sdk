@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			createVpdResponse.Code = _ctx.IntegerValue("CreateVpd.Code");
 			createVpdResponse.Message = _ctx.StringValue("CreateVpd.Message");
 			createVpdResponse.RequestId = _ctx.StringValue("CreateVpd.RequestId");
+			createVpdResponse.AccessDeniedDetail = _ctx.StringValue("CreateVpd.AccessDeniedDetail");
 
 			CreateVpdResponse.CreateVpd_Content content = new CreateVpdResponse.CreateVpd_Content();
 			content.VpdId = _ctx.StringValue("CreateVpd.Content.VpdId");

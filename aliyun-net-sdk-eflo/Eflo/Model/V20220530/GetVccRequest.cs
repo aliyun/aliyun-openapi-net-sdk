@@ -39,11 +39,11 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 
 		private int? pageNumber;
 
-		private bool? enablePage;
-
 		private int? pageSize;
 
 		private string vccId;
+
+		private bool? enablePage;
 
 		public string ClientToken
 		{
@@ -71,19 +71,6 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			}
 		}
 
-		public bool? EnablePage
-		{
-			get
-			{
-				return enablePage;
-			}
-			set	
-			{
-				enablePage = value;
-				DictionaryUtil.Add(BodyParameters, "EnablePage", value.ToString());
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -107,6 +94,19 @@ namespace Aliyun.Acs.eflo.Model.V20220530
 			{
 				vccId = value;
 				DictionaryUtil.Add(BodyParameters, "VccId", value);
+			}
+		}
+
+		public bool? EnablePage
+		{
+			get
+			{
+				return enablePage;
+			}
+			set	
+			{
+				enablePage = value;
+				DictionaryUtil.Add(BodyParameters, "EnablePage", value.ToString());
 			}
 		}
 

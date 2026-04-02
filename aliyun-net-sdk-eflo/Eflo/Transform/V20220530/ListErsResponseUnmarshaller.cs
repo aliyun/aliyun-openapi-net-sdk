@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			listErsResponse.Code = _ctx.IntegerValue("ListErs.Code");
 			listErsResponse.Message = _ctx.StringValue("ListErs.Message");
 			listErsResponse.RequestId = _ctx.StringValue("ListErs.RequestId");
+			listErsResponse.AccessDeniedDetail = _ctx.StringValue("ListErs.AccessDeniedDetail");
 
 			ListErsResponse.ListErs_Content content = new ListErsResponse.ListErs_Content();
 			content.Total = _ctx.LongValue("ListErs.Content.Total");
@@ -41,19 +42,29 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			List<ListErsResponse.ListErs_Content.ListErs_DataItem> content_data = new List<ListErsResponse.ListErs_Content.ListErs_DataItem>();
 			for (int i = 0; i < _ctx.Length("ListErs.Content.Data.Length"); i++) {
 				ListErsResponse.ListErs_Content.ListErs_DataItem dataItem = new ListErsResponse.ListErs_Content.ListErs_DataItem();
+				dataItem.Status = _ctx.StringValue("ListErs.Content.Data["+ i +"].Status");
+				dataItem.Connections = _ctx.LongValue("ListErs.Content.Data["+ i +"].Connections");
+				dataItem.Description = _ctx.StringValue("ListErs.Content.Data["+ i +"].Description");
+				dataItem.Message = _ctx.StringValue("ListErs.Content.Data["+ i +"].Message");
+				dataItem.ResourceGroupId = _ctx.StringValue("ListErs.Content.Data["+ i +"].ResourceGroupId");
 				dataItem.CreateTime = _ctx.StringValue("ListErs.Content.Data["+ i +"].CreateTime");
 				dataItem.GmtModified = _ctx.StringValue("ListErs.Content.Data["+ i +"].GmtModified");
-				dataItem.Message = _ctx.StringValue("ListErs.Content.Data["+ i +"].Message");
 				dataItem.ErId = _ctx.StringValue("ListErs.Content.Data["+ i +"].ErId");
-				dataItem.RegionId = _ctx.StringValue("ListErs.Content.Data["+ i +"].RegionId");
-				dataItem.TenantId = _ctx.StringValue("ListErs.Content.Data["+ i +"].TenantId");
-				dataItem.Status = _ctx.StringValue("ListErs.Content.Data["+ i +"].Status");
-				dataItem.ErName = _ctx.StringValue("ListErs.Content.Data["+ i +"].ErName");
-				dataItem.MasterZoneId = _ctx.StringValue("ListErs.Content.Data["+ i +"].MasterZoneId");
-				dataItem.Description = _ctx.StringValue("ListErs.Content.Data["+ i +"].Description");
-				dataItem.Connections = _ctx.LongValue("ListErs.Content.Data["+ i +"].Connections");
 				dataItem.RouteMaps = _ctx.LongValue("ListErs.Content.Data["+ i +"].RouteMaps");
-				dataItem.ResourceGroupId = _ctx.StringValue("ListErs.Content.Data["+ i +"].ResourceGroupId");
+				dataItem.ErName = _ctx.StringValue("ListErs.Content.Data["+ i +"].ErName");
+				dataItem.TenantId = _ctx.StringValue("ListErs.Content.Data["+ i +"].TenantId");
+				dataItem.RegionId = _ctx.StringValue("ListErs.Content.Data["+ i +"].RegionId");
+				dataItem.MasterZoneId = _ctx.StringValue("ListErs.Content.Data["+ i +"].MasterZoneId");
+
+				List<ListErsResponse.ListErs_Content.ListErs_DataItem.ListErs_Tag> dataItem_tags = new List<ListErsResponse.ListErs_Content.ListErs_DataItem.ListErs_Tag>();
+				for (int j = 0; j < _ctx.Length("ListErs.Content.Data["+ i +"].Tags.Length"); j++) {
+					ListErsResponse.ListErs_Content.ListErs_DataItem.ListErs_Tag tag = new ListErsResponse.ListErs_Content.ListErs_DataItem.ListErs_Tag();
+					tag.TagKey = _ctx.StringValue("ListErs.Content.Data["+ i +"].Tags["+ j +"].TagKey");
+					tag.TagValue = _ctx.StringValue("ListErs.Content.Data["+ i +"].Tags["+ j +"].TagValue");
+
+					dataItem_tags.Add(tag);
+				}
+				dataItem.Tags = dataItem_tags;
 
 				content_data.Add(dataItem);
 			}

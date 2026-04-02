@@ -34,6 +34,7 @@ namespace Aliyun.Acs.eflo.Transform.V20220530
 			getErRouteEntryResponse.Code = _ctx.IntegerValue("GetErRouteEntry.Code");
 			getErRouteEntryResponse.Message = _ctx.StringValue("GetErRouteEntry.Message");
 			getErRouteEntryResponse.RequestId = _ctx.StringValue("GetErRouteEntry.RequestId");
+			getErRouteEntryResponse.AccessDeniedDetail = _ctx.StringValue("GetErRouteEntry.AccessDeniedDetail");
 
 			GetErRouteEntryResponse.GetErRouteEntry_Content content = new GetErRouteEntryResponse.GetErRouteEntry_Content();
 			content.RegionId = _ctx.StringValue("GetErRouteEntry.Content.RegionId");
