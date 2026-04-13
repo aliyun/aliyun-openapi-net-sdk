@@ -162,6 +162,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private int? searchNodeCount;
 
+			private bool? coldDataEnabled;
+
 			private List<DescribeDBInstanceAttribute_ReplicaSet> replicaSets;
 
 			private List<DescribeDBInstanceAttribute_Tag> tags;
@@ -807,6 +809,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					searchNodeCount = value;
+				}
+			}
+
+			public bool? ColdDataEnabled
+			{
+				get
+				{
+					return coldDataEnabled;
+				}
+				set	
+				{
+					coldDataEnabled = value;
 				}
 			}
 

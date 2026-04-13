@@ -299,6 +299,10 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 				private string name;
 
+				private bool? effective;
+
+				private string activityExtInfo;
+
 				public string Description
 				{
 					get
@@ -344,6 +348,30 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						name = value;
+					}
+				}
+
+				public bool? Effective
+				{
+					get
+					{
+						return effective;
+					}
+					set	
+					{
+						effective = value;
+					}
+				}
+
+				public string ActivityExtInfo
+				{
+					get
+					{
+						return activityExtInfo;
+					}
+					set	
+					{
+						activityExtInfo = value;
 					}
 				}
 			}

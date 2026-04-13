@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 
 			describeShardingNetworkAddressResponse.HttpResponse = _ctx.HttpResponse;
 			describeShardingNetworkAddressResponse.RequestId = _ctx.StringValue("DescribeShardingNetworkAddress.RequestId");
+			describeShardingNetworkAddressResponse.ConnectionStringSuffix = _ctx.StringValue("DescribeShardingNetworkAddress.ConnectionStringSuffix");
 
 			List<DescribeShardingNetworkAddressResponse.DescribeShardingNetworkAddress_CompatibleConnection> describeShardingNetworkAddressResponse_compatibleConnections = new List<DescribeShardingNetworkAddressResponse.DescribeShardingNetworkAddress_CompatibleConnection>();
 			for (int i = 0; i < _ctx.Length("DescribeShardingNetworkAddress.CompatibleConnections.Length"); i++) {

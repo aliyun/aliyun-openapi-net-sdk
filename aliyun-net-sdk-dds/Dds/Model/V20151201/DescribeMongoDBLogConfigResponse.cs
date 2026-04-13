@@ -49,6 +49,10 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? preserveStorageForStandard;
 
+		private long? hotTtlForV2Standard;
+
+		private long? ttlForV2Standard;
+
 		public string UserProjectName
 		{
 			get
@@ -190,6 +194,30 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				preserveStorageForStandard = value;
+			}
+		}
+
+		public long? HotTtlForV2Standard
+		{
+			get
+			{
+				return hotTtlForV2Standard;
+			}
+			set	
+			{
+				hotTtlForV2Standard = value;
+			}
+		}
+
+		public long? TtlForV2Standard
+		{
+			get
+			{
+				return ttlForV2Standard;
+			}
+			set	
+			{
+				ttlForV2Standard = value;
 			}
 		}
 	}

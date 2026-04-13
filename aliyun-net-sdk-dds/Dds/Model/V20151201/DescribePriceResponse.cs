@@ -1703,6 +1703,10 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 				private string activityCategory;
 
+				private bool? effective;
+
+				private string activityExtInfo;
+
 				private List<string> promotionRuleIdList6;
 
 				private List<string> targetArticleItemCodes7;
@@ -1836,6 +1840,30 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						activityCategory = value;
+					}
+				}
+
+				public bool? Effective
+				{
+					get
+					{
+						return effective;
+					}
+					set	
+					{
+						effective = value;
+					}
+				}
+
+				public string ActivityExtInfo
+				{
+					get
+					{
+						return activityExtInfo;
+					}
+					set	
+					{
+						activityExtInfo = value;
 					}
 				}
 

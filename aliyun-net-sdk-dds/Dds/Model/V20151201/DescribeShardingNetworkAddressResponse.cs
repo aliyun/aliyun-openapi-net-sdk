@@ -27,6 +27,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string requestId;
 
+		private string connectionStringSuffix;
+
 		private List<DescribeShardingNetworkAddress_CompatibleConnection> compatibleConnections;
 
 		private List<DescribeShardingNetworkAddress_NetworkAddress> networkAddresses;
@@ -40,6 +42,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ConnectionStringSuffix
+		{
+			get
+			{
+				return connectionStringSuffix;
+			}
+			set	
+			{
+				connectionStringSuffix = value;
 			}
 		}
 

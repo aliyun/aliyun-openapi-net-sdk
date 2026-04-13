@@ -27,10 +27,10 @@ using Aliyun.Acs.Dds.Transform.V20151201;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class ModifyAuditPolicyRequest : RpcAcsRequest<ModifyAuditPolicyResponse>
+    public class DescribeBinlogFilesRequest : RpcAcsRequest<DescribeBinlogFilesResponse>
     {
-        public ModifyAuditPolicyRequest()
-            : base("Dds", "2015-12-01", "ModifyAuditPolicy", "dds", "openAPI")
+        public DescribeBinlogFilesRequest()
+            : base("Dds", "2015-12-01", "DescribeBinlogFiles", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,23 +42,31 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
-		private int? storagePeriod;
+		private string binlogId;
 
-		private int? hotStoragePeriod;
+		private string startTime;
 
-		private string auditLogSwitchSource;
+		private string srcRegion;
+
+		private long? pageNumber;
+
+		private string resourceGroupId;
+
+		private long? pageSize;
 
 		private string dBInstanceId;
 
-		private string auditStatus;
+		private string nodeId;
+
+		private string destRegion;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private long? ownerId;
+		private string endTime;
 
-		private string serviceType;
+		private long? ownerId;
 
 		public long? ResourceOwnerId
 		{
@@ -73,42 +81,81 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public int? StoragePeriod
+		public string BinlogId
 		{
 			get
 			{
-				return storagePeriod;
+				return binlogId;
 			}
 			set	
 			{
-				storagePeriod = value;
-				DictionaryUtil.Add(QueryParameters, "StoragePeriod", value.ToString());
+				binlogId = value;
+				DictionaryUtil.Add(QueryParameters, "BinlogId", value);
 			}
 		}
 
-		public int? HotStoragePeriod
+		public string StartTime
 		{
 			get
 			{
-				return hotStoragePeriod;
+				return startTime;
 			}
 			set	
 			{
-				hotStoragePeriod = value;
-				DictionaryUtil.Add(QueryParameters, "HotStoragePeriod", value.ToString());
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
-		public string AuditLogSwitchSource
+		public string SrcRegion
 		{
 			get
 			{
-				return auditLogSwitchSource;
+				return srcRegion;
 			}
 			set	
 			{
-				auditLogSwitchSource = value;
-				DictionaryUtil.Add(QueryParameters, "AuditLogSwitchSource", value);
+				srcRegion = value;
+				DictionaryUtil.Add(QueryParameters, "SrcRegion", value);
+			}
+		}
+
+		public long? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public long? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -125,16 +172,29 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string AuditStatus
+		public string NodeId
 		{
 			get
 			{
-				return auditStatus;
+				return nodeId;
 			}
 			set	
 			{
-				auditStatus = value;
-				DictionaryUtil.Add(QueryParameters, "AuditStatus", value);
+				nodeId = value;
+				DictionaryUtil.Add(QueryParameters, "NodeId", value);
+			}
+		}
+
+		public string DestRegion
+		{
+			get
+			{
+				return destRegion;
+			}
+			set	
+			{
+				destRegion = value;
+				DictionaryUtil.Add(QueryParameters, "DestRegion", value);
 			}
 		}
 
@@ -164,6 +224,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -177,22 +250,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string ServiceType
-		{
-			get
-			{
-				return serviceType;
-			}
-			set	
-			{
-				serviceType = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceType", value);
-			}
-		}
-
-        public override ModifyAuditPolicyResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeBinlogFilesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyAuditPolicyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeBinlogFilesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

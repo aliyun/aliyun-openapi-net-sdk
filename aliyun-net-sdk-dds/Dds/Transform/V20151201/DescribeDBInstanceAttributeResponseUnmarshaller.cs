@@ -89,6 +89,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				dBInstance.SearchNodeClass = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].SearchNodeClass");
 				dBInstance.SearchNodeStorage = _ctx.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].SearchNodeStorage");
 				dBInstance.SearchNodeCount = _ctx.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].SearchNodeCount");
+				dBInstance.ColdDataEnabled = _ctx.BooleanValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ColdDataEnabled");
 
 				List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_ReplicaSet> dBInstance_replicaSets = new List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_ReplicaSet>();
 				for (int j = 0; j < _ctx.Length("DescribeDBInstanceAttribute.DBInstances["+ i +"].ReplicaSets.Length"); j++) {

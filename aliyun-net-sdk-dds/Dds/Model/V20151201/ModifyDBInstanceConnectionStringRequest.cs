@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
+		private string networkType;
+
 		private string dBInstanceId;
 
 		private string nodeId;
@@ -58,6 +60,10 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string currentConnectionString;
 
+		private bool? portModifyOnly;
+
+		private bool? forceModifySuffix;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -68,6 +74,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string NetworkType
+		{
+			get
+			{
+				return networkType;
+			}
+			set	
+			{
+				networkType = value;
+				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
 			}
 		}
 
@@ -172,6 +191,32 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				currentConnectionString = value;
 				DictionaryUtil.Add(QueryParameters, "CurrentConnectionString", value);
+			}
+		}
+
+		public bool? PortModifyOnly
+		{
+			get
+			{
+				return portModifyOnly;
+			}
+			set	
+			{
+				portModifyOnly = value;
+				DictionaryUtil.Add(QueryParameters, "PortModifyOnly", value.ToString());
+			}
+		}
+
+		public bool? ForceModifySuffix
+		{
+			get
+			{
+				return forceModifySuffix;
+			}
+			set	
+			{
+				forceModifySuffix = value;
+				DictionaryUtil.Add(QueryParameters, "ForceModifySuffix", value.ToString());
 			}
 		}
 

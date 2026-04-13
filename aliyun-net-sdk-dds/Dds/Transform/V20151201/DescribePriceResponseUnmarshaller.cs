@@ -98,6 +98,8 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				coupon.PriceBreakReduceValue = _ctx.DoubleValue("DescribePrice.Order.Coupons["+ i +"].PriceBreakReduceValue");
 				coupon.OptionCode = _ctx.StringValue("DescribePrice.Order.Coupons["+ i +"].OptionCode");
 				coupon.ActivityCategory = _ctx.StringValue("DescribePrice.Order.Coupons["+ i +"].ActivityCategory");
+				coupon.Effective = _ctx.BooleanValue("DescribePrice.Order.Coupons["+ i +"].Effective");
+				coupon.ActivityExtInfo = _ctx.StringValue("DescribePrice.Order.Coupons["+ i +"].ActivityExtInfo");
 
 				List<string> coupon_promotionRuleIdList6 = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribePrice.Order.Coupons["+ i +"].PromotionRuleIdList.Length"); j++) {

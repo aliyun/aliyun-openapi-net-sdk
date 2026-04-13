@@ -33,6 +33,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			describeReplicaSetRoleResponse.HttpResponse = _ctx.HttpResponse;
 			describeReplicaSetRoleResponse.RequestId = _ctx.StringValue("DescribeReplicaSetRole.RequestId");
 			describeReplicaSetRoleResponse.DBInstanceId = _ctx.StringValue("DescribeReplicaSetRole.DBInstanceId");
+			describeReplicaSetRoleResponse.ConnectionStringSuffix = _ctx.StringValue("DescribeReplicaSetRole.ConnectionStringSuffix");
 
 			List<DescribeReplicaSetRoleResponse.DescribeReplicaSetRole_ReplicaSet> describeReplicaSetRoleResponse_replicaSets = new List<DescribeReplicaSetRoleResponse.DescribeReplicaSetRole_ReplicaSet>();
 			for (int i = 0; i < _ctx.Length("DescribeReplicaSetRole.ReplicaSets.Length"); i++) {

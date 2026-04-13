@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			describeMongoDBLogConfigResponse.TtlForStandard = _ctx.LongValue("DescribeMongoDBLogConfig.TtlForStandard");
 			describeMongoDBLogConfigResponse.UsedStorageForStandard = _ctx.LongValue("DescribeMongoDBLogConfig.UsedStorageForStandard");
 			describeMongoDBLogConfigResponse.PreserveStorageForStandard = _ctx.LongValue("DescribeMongoDBLogConfig.PreserveStorageForStandard");
+			describeMongoDBLogConfigResponse.HotTtlForV2Standard = _ctx.LongValue("DescribeMongoDBLogConfig.HotTtlForV2Standard");
+			describeMongoDBLogConfigResponse.TtlForV2Standard = _ctx.LongValue("DescribeMongoDBLogConfig.TtlForV2Standard");
         
 			return describeMongoDBLogConfigResponse;
         }

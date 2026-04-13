@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 
 			modifyDBInstanceConnectionStringResponse.HttpResponse = _ctx.HttpResponse;
 			modifyDBInstanceConnectionStringResponse.RequestId = _ctx.StringValue("ModifyDBInstanceConnectionString.RequestId");
+			modifyDBInstanceConnectionStringResponse.ModifiedConnectionString = _ctx.StringValue("ModifyDBInstanceConnectionString.ModifiedConnectionString");
         
 			return modifyDBInstanceConnectionStringResponse;
         }

@@ -27,6 +27,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string requestId;
 
+		private string modifiedConnectionString;
+
 		public string RequestId
 		{
 			get
@@ -36,6 +38,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ModifiedConnectionString
+		{
+			get
+			{
+				return modifiedConnectionString;
+			}
+			set	
+			{
+				modifiedConnectionString = value;
 			}
 		}
 	}

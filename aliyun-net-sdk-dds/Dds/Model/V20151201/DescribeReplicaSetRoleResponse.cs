@@ -29,6 +29,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string dBInstanceId;
 
+		private string connectionStringSuffix;
+
 		private List<DescribeReplicaSetRole_ReplicaSet> replicaSets;
 
 		public string RequestId
@@ -52,6 +54,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				dBInstanceId = value;
+			}
+		}
+
+		public string ConnectionStringSuffix
+		{
+			get
+			{
+				return connectionStringSuffix;
+			}
+			set	
+			{
+				connectionStringSuffix = value;
 			}
 		}
 

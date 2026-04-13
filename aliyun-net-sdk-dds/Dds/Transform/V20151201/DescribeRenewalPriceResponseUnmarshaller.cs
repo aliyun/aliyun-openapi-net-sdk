@@ -52,6 +52,8 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				coupon.IsSelected = _ctx.StringValue("DescribeRenewalPrice.Order.Coupons["+ i +"].IsSelected");
 				coupon.CouponNo = _ctx.StringValue("DescribeRenewalPrice.Order.Coupons["+ i +"].CouponNo");
 				coupon.Name = _ctx.StringValue("DescribeRenewalPrice.Order.Coupons["+ i +"].Name");
+				coupon.Effective = _ctx.BooleanValue("DescribeRenewalPrice.Order.Coupons["+ i +"].Effective");
+				coupon.ActivityExtInfo = _ctx.StringValue("DescribeRenewalPrice.Order.Coupons["+ i +"].ActivityExtInfo");
 
 				order_coupons.Add(coupon);
 			}
