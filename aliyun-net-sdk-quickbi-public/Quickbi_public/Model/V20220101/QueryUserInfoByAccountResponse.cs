@@ -90,6 +90,8 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 			private List<string> roleIdList;
 
+			private List<string> copilotModules;
+
 			public string AccountId
 			{
 				get
@@ -207,6 +209,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					roleIdList = value;
+				}
+			}
+
+			public List<string> CopilotModules
+			{
+				get
+				{
+					return copilotModules;
+				}
+				set	
+				{
+					copilotModules = value;
 				}
 			}
 		}

@@ -37,6 +37,8 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 		private bool? adminUser;
 
+		private string copilotModules;
+
 		private string accountId;
 
 		private string roleIds;
@@ -59,6 +61,19 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				adminUser = value;
 				DictionaryUtil.Add(QueryParameters, "AdminUser", value.ToString());
+			}
+		}
+
+		public string CopilotModules
+		{
+			get
+			{
+				return copilotModules;
+			}
+			set	
+			{
+				copilotModules = value;
+				DictionaryUtil.Add(QueryParameters, "CopilotModules", value);
 			}
 		}
 

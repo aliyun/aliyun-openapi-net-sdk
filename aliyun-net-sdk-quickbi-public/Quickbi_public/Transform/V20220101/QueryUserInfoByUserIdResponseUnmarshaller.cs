@@ -50,6 +50,12 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 				result_roleIdList.Add(_ctx.StringValue("QueryUserInfoByUserId.Result.RoleIdList["+ i +"]"));
 			}
 			result.RoleIdList = result_roleIdList;
+
+			List<string> result_copilotModules = new List<string>();
+			for (int i = 0; i < _ctx.Length("QueryUserInfoByUserId.Result.CopilotModules.Length"); i++) {
+				result_copilotModules.Add(_ctx.StringValue("QueryUserInfoByUserId.Result.CopilotModules["+ i +"]"));
+			}
+			result.CopilotModules = result_copilotModules;
 			queryUserInfoByUserIdResponse.Result = result;
         
 			return queryUserInfoByUserIdResponse;
