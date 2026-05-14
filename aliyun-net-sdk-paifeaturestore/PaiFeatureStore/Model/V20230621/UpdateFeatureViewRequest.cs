@@ -28,22 +28,34 @@ using Aliyun.Acs.PaiFeatureStore.Transform.V20230621;
 
 namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 {
-    public class ListFeatureViewOnlineFeaturesRequest : RoaAcsRequest<ListFeatureViewOnlineFeaturesResponse>
+    public class UpdateFeatureViewRequest : RoaAcsRequest<UpdateFeatureViewResponse>
     {
-        public ListFeatureViewOnlineFeaturesRequest()
-            : base("PaiFeatureStore", "2023-06-21", "ListFeatureViewOnlineFeatures")
+        public UpdateFeatureViewRequest()
+            : base("PaiFeatureStore", "2023-06-21", "UpdateFeatureView")
         {
-			UriPattern = "/api/v1/instances/[InstanceId]/featureviews/[FeatureViewId]/onlinefeatures";
-			Method = MethodType.GET;
+			Protocol = ProtocolType.HTTPS;
+			UriPattern = "/api/v1/instances/[InstanceId]/featureviews/[FeatureViewId]";
+			Method = MethodType.PUT;
         }
+
+		private string body;
 
 		private string instanceId;
 
-		private string joinIds;
-
 		private string featureViewId;
 
-		private string config;
+		public string Body
+		{
+			get
+			{
+				return body;
+			}
+			set	
+			{
+				body = value;
+				DictionaryUtil.Add(BodyParameters, "body", value);
+			}
+		}
 
 		public string InstanceId
 		{
@@ -55,19 +67,6 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 			{
 				instanceId = value;
 				DictionaryUtil.Add(PathParameters, "InstanceId", value);
-			}
-		}
-
-		public string JoinIds
-		{
-			get
-			{
-				return joinIds;
-			}
-			set	
-			{
-				joinIds = value;
-				DictionaryUtil.Add(QueryParameters, "JoinIds", value);
 			}
 		}
 
@@ -84,27 +83,14 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 			}
 		}
 
-		public string Config
-		{
-			get
-			{
-				return config;
-			}
-			set	
-			{
-				config = value;
-				DictionaryUtil.Add(QueryParameters, "Config", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override ListFeatureViewOnlineFeaturesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateFeatureViewResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListFeatureViewOnlineFeaturesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateFeatureViewResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

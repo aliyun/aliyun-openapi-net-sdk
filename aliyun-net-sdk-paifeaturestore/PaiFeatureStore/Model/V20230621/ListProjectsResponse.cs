@@ -102,6 +102,8 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 
 			private string gmtModifiedTime;
 
+			private string workspaceId;
+
 			public string ProjectId
 			{
 				get
@@ -291,6 +293,18 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 				set	
 				{
 					gmtModifiedTime = value;
+				}
+			}
+
+			public string WorkspaceId
+			{
+				get
+				{
+					return workspaceId;
+				}
+				set	
+				{
+					workspaceId = value;
 				}
 			}
 		}

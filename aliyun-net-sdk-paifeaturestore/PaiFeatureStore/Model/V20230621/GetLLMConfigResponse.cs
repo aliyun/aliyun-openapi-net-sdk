@@ -51,6 +51,10 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 
 		private int? embeddingDimension;
 
+		private string modelType;
+
+		private bool? enableFusion;
+
 		public string RequestId
 		{
 			get
@@ -204,6 +208,30 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 			set	
 			{
 				embeddingDimension = value;
+			}
+		}
+
+		public string ModelType
+		{
+			get
+			{
+				return modelType;
+			}
+			set	
+			{
+				modelType = value;
+			}
+		}
+
+		public bool? EnableFusion
+		{
+			get
+			{
+				return enableFusion;
+			}
+			set	
+			{
+				enableFusion = value;
 			}
 		}
 	}

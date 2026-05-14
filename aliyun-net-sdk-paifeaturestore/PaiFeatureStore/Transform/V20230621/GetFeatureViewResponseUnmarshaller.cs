@@ -84,6 +84,7 @@ namespace Aliyun.Acs.PaiFeatureStore.Transform.V20230621
 						GetFeatureViewResponse.GetFeatureView_FieldsItem.GetFeatureView_TransformItem.GetFeatureView_InputItem inputItem = new GetFeatureViewResponse.GetFeatureView_FieldsItem.GetFeatureView_TransformItem.GetFeatureView_InputItem();
 						inputItem.Name = _ctx.StringValue("GetFeatureView.Fields["+ i +"].Transform["+ j +"].Input["+ k +"].Name");
 						inputItem.Type = _ctx.StringValue("GetFeatureView.Fields["+ i +"].Transform["+ j +"].Input["+ k +"].Type");
+						inputItem.Modality = _ctx.StringValue("GetFeatureView.Fields["+ i +"].Transform["+ j +"].Input["+ k +"].Modality");
 
 						transformItem_input.Add(inputItem);
 					}

@@ -47,6 +47,7 @@ namespace Aliyun.Acs.PaiFeatureStore.Transform.V20230621
 			getProjectResponse.Owner = _ctx.StringValue("GetProject.Owner");
 			getProjectResponse.GmtCreateTime = _ctx.StringValue("GetProject.GmtCreateTime");
 			getProjectResponse.GmtModifiedTime = _ctx.StringValue("GetProject.GmtModifiedTime");
+			getProjectResponse.WorkspaceId = _ctx.StringValue("GetProject.WorkspaceId");
         
 			return getProjectResponse;
         }

@@ -486,6 +486,8 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 
 					private string type;
 
+					private string modality;
+
 					public string Name
 					{
 						get
@@ -507,6 +509,18 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 						set	
 						{
 							type = value;
+						}
+					}
+
+					public string Modality
+					{
+						get
+						{
+							return modality;
+						}
+						set	
+						{
+							modality = value;
 						}
 					}
 				}

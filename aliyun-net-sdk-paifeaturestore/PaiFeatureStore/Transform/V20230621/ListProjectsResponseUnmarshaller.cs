@@ -53,6 +53,7 @@ namespace Aliyun.Acs.PaiFeatureStore.Transform.V20230621
 				projectsItem.Owner = _ctx.StringValue("ListProjects.Projects["+ i +"].Owner");
 				projectsItem.GmtCreateTime = _ctx.StringValue("ListProjects.Projects["+ i +"].GmtCreateTime");
 				projectsItem.GmtModifiedTime = _ctx.StringValue("ListProjects.Projects["+ i +"].GmtModifiedTime");
+				projectsItem.WorkspaceId = _ctx.StringValue("ListProjects.Projects["+ i +"].WorkspaceId");
 
 				listProjectsResponse_projects.Add(projectsItem);
 			}

@@ -52,6 +52,8 @@ namespace Aliyun.Acs.PaiFeatureStore.Transform.V20230621
 				llmConfigsItem.BatchSize = _ctx.IntegerValue("ListLLMConfigs.LLMConfigs["+ i +"].BatchSize");
 				llmConfigsItem.WorkspaceId = _ctx.StringValue("ListLLMConfigs.LLMConfigs["+ i +"].WorkspaceId");
 				llmConfigsItem.EmbeddingDimension = _ctx.IntegerValue("ListLLMConfigs.LLMConfigs["+ i +"].EmbeddingDimension");
+				llmConfigsItem.ModelType = _ctx.StringValue("ListLLMConfigs.LLMConfigs["+ i +"].ModelType");
+				llmConfigsItem.EnableFusion = _ctx.BooleanValue("ListLLMConfigs.LLMConfigs["+ i +"].EnableFusion");
 
 				listLLMConfigsResponse_lLMConfigs.Add(llmConfigsItem);
 			}

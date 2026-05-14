@@ -44,6 +44,8 @@ namespace Aliyun.Acs.PaiFeatureStore.Transform.V20230621
 			getLLMConfigResponse.BatchSize = _ctx.IntegerValue("GetLLMConfig.BatchSize");
 			getLLMConfigResponse.WorkspaceId = _ctx.StringValue("GetLLMConfig.WorkspaceId");
 			getLLMConfigResponse.EmbeddingDimension = _ctx.IntegerValue("GetLLMConfig.EmbeddingDimension");
+			getLLMConfigResponse.ModelType = _ctx.StringValue("GetLLMConfig.ModelType");
+			getLLMConfigResponse.EnableFusion = _ctx.BooleanValue("GetLLMConfig.EnableFusion");
         
 			return getLLMConfigResponse;
         }
