@@ -52,6 +52,7 @@ namespace Aliyun.Acs.PaiFeatureStore.Transform.V20230621
 				GetLabelTableResponse.GetLabelTable_Field field = new GetLabelTableResponse.GetLabelTable_Field();
 				field.Name = _ctx.StringValue("GetLabelTable.Fields["+ i +"].Name");
 				field.Type = _ctx.StringValue("GetLabelTable.Fields["+ i +"].Type");
+				field.AlignedEntityName = _ctx.StringValue("GetLabelTable.Fields["+ i +"].AlignedEntityName");
 
 				List<string> field_attributes = new List<string>();
 				for (int j = 0; j < _ctx.Length("GetLabelTable.Fields["+ i +"].Attributes.Length"); j++) {

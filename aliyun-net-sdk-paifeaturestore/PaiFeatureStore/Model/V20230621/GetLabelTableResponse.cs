@@ -186,6 +186,8 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 
 			private string type;
 
+			private string alignedEntityName;
+
 			private List<string> attributes;
 
 			public string Name
@@ -209,6 +211,18 @@ namespace Aliyun.Acs.PaiFeatureStore.Model.V20230621
 				set	
 				{
 					type = value;
+				}
+			}
+
+			public string AlignedEntityName
+			{
+				get
+				{
+					return alignedEntityName;
+				}
+				set	
+				{
+					alignedEntityName = value;
 				}
 			}
 
