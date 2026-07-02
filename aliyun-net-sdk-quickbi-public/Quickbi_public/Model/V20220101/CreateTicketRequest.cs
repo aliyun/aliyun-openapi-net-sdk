@@ -127,7 +127,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			set	
 			{
 				globalParam = value;
-				DictionaryUtil.Add(QueryParameters, "GlobalParam", value);
+				DictionaryUtil.Add(BodyParameters, "GlobalParam", value);
 			}
 		}
 

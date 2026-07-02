@@ -38,6 +38,8 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 		private string dsId;
 
+		private string placeholders;
+
 		private string userId;
 
 		private string cubeId;
@@ -56,6 +58,19 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			{
 				dsId = value;
 				DictionaryUtil.Add(QueryParameters, "DsId", value);
+			}
+		}
+
+		public string Placeholders
+		{
+			get
+			{
+				return placeholders;
+			}
+			set	
+			{
+				placeholders = value;
+				DictionaryUtil.Add(QueryParameters, "Placeholders", value);
 			}
 		}
 
