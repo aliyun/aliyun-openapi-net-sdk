@@ -40,28 +40,15 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			Method = MethodType.POST;
         }
 
-		private string dagJson;
-
 		private string namespaceSource;
+
+		private string workflowId;
+
+		private string dagJson;
 
 		private string groupId;
 
 		private string _namespace;
-
-		private string workflowId;
-
-		public string DagJson
-		{
-			get
-			{
-				return dagJson;
-			}
-			set	
-			{
-				dagJson = value;
-				DictionaryUtil.Add(BodyParameters, "DagJson", value);
-			}
-		}
 
 		public string NamespaceSource
 		{
@@ -73,6 +60,32 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				namespaceSource = value;
 				DictionaryUtil.Add(BodyParameters, "NamespaceSource", value);
+			}
+		}
+
+		public string WorkflowId
+		{
+			get
+			{
+				return workflowId;
+			}
+			set	
+			{
+				workflowId = value;
+				DictionaryUtil.Add(BodyParameters, "WorkflowId", value);
+			}
+		}
+
+		public string DagJson
+		{
+			get
+			{
+				return dagJson;
+			}
+			set	
+			{
+				dagJson = value;
+				DictionaryUtil.Add(BodyParameters, "DagJson", value);
 			}
 		}
 
@@ -99,19 +112,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				_namespace = value;
 				DictionaryUtil.Add(BodyParameters, "Namespace", value);
-			}
-		}
-
-		public string WorkflowId
-		{
-			get
-			{
-				return workflowId;
-			}
-			set	
-			{
-				workflowId = value;
-				DictionaryUtil.Add(BodyParameters, "WorkflowId", value);
 			}
 		}
 

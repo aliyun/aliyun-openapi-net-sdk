@@ -32,9 +32,9 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 
 			createWorkflowResponse.HttpResponse = _ctx.HttpResponse;
 			createWorkflowResponse.RequestId = _ctx.StringValue("CreateWorkflow.RequestId");
+			createWorkflowResponse.Message = _ctx.StringValue("CreateWorkflow.Message");
 			createWorkflowResponse.Code = _ctx.StringValue("CreateWorkflow.Code");
 			createWorkflowResponse.Success = _ctx.BooleanValue("CreateWorkflow.Success");
-			createWorkflowResponse.Message = _ctx.StringValue("CreateWorkflow.Message");
 
 			CreateWorkflowResponse.CreateWorkflow_Data data = new CreateWorkflowResponse.CreateWorkflow_Data();
 			data.WorkflowId = _ctx.LongValue("CreateWorkflow.Data.WorkflowId");

@@ -32,9 +32,9 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 
 			getLogResponse.HttpResponse = _ctx.HttpResponse;
 			getLogResponse.RequestId = _ctx.StringValue("GetLog.RequestId");
+			getLogResponse.Message = _ctx.StringValue("GetLog.Message");
 			getLogResponse.Code = _ctx.IntegerValue("GetLog.Code");
 			getLogResponse.Success = _ctx.BooleanValue("GetLog.Success");
-			getLogResponse.Message = _ctx.StringValue("GetLog.Message");
 
 			GetLogResponse.GetLog_Data data = new GetLogResponse.GetLog_Data();
 

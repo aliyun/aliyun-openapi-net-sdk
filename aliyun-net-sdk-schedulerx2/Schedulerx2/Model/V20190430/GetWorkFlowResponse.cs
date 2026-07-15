@@ -27,9 +27,9 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private string requestId;
 
-		private int? code;
-
 		private string message;
+
+		private int? code;
 
 		private bool? success;
 
@@ -47,18 +47,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public int? Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
 		public string Message
 		{
 			get
@@ -68,6 +56,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public int? Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -98,21 +98,9 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 		public class GetWorkFlow_Data
 		{
 
-			private GetWorkFlow_WorkFlowInfo workFlowInfo;
-
 			private GetWorkFlow_WorkFlowNodeInfo workFlowNodeInfo;
 
-			public GetWorkFlow_WorkFlowInfo WorkFlowInfo
-			{
-				get
-				{
-					return workFlowInfo;
-				}
-				set	
-				{
-					workFlowInfo = value;
-				}
-			}
+			private GetWorkFlow_WorkFlowInfo workFlowInfo;
 
 			public GetWorkFlow_WorkFlowNodeInfo WorkFlowNodeInfo
 			{
@@ -126,154 +114,24 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 				}
 			}
 
-			public class GetWorkFlow_WorkFlowInfo
+			public GetWorkFlow_WorkFlowInfo WorkFlowInfo
 			{
-
-				private long? workflowId;
-
-				private string name;
-
-				private string description;
-
-				private string status;
-
-				private string timeType;
-
-				private string timeExpression;
-
-				private string groupId;
-
-				private string _namespace;
-
-				private string maxConcurrency;
-
-				public long? WorkflowId
+				get
 				{
-					get
-					{
-						return workflowId;
-					}
-					set	
-					{
-						workflowId = value;
-					}
+					return workFlowInfo;
 				}
-
-				public string Name
+				set	
 				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
-
-				public string Description
-				{
-					get
-					{
-						return description;
-					}
-					set	
-					{
-						description = value;
-					}
-				}
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
-				}
-
-				public string TimeType
-				{
-					get
-					{
-						return timeType;
-					}
-					set	
-					{
-						timeType = value;
-					}
-				}
-
-				public string TimeExpression
-				{
-					get
-					{
-						return timeExpression;
-					}
-					set	
-					{
-						timeExpression = value;
-					}
-				}
-
-				public string GroupId
-				{
-					get
-					{
-						return groupId;
-					}
-					set	
-					{
-						groupId = value;
-					}
-				}
-
-				public string _Namespace
-				{
-					get
-					{
-						return _namespace;
-					}
-					set	
-					{
-						_namespace = value;
-					}
-				}
-
-				public string MaxConcurrency
-				{
-					get
-					{
-						return maxConcurrency;
-					}
-					set	
-					{
-						maxConcurrency = value;
-					}
+					workFlowInfo = value;
 				}
 			}
 
 			public class GetWorkFlow_WorkFlowNodeInfo
 			{
 
-				private List<GetWorkFlow_Node> nodes;
-
 				private List<GetWorkFlow_Edge> edges;
 
-				public List<GetWorkFlow_Node> Nodes
-				{
-					get
-					{
-						return nodes;
-					}
-					set	
-					{
-						nodes = value;
-					}
-				}
+				private List<GetWorkFlow_Node> nodes;
 
 				public List<GetWorkFlow_Edge> Edges
 				{
@@ -287,24 +145,68 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					}
 				}
 
-				public class GetWorkFlow_Node
+				public List<GetWorkFlow_Node> Nodes
+				{
+					get
+					{
+						return nodes;
+					}
+					set	
+					{
+						nodes = value;
+					}
+				}
+
+				public class GetWorkFlow_Edge
 				{
 
-					private long? id;
+					private long? target;
 
-					private string label;
+					private long? source;
 
-					private int? status;
-
-					public long? Id
+					public long? Target
 					{
 						get
 						{
-							return id;
+							return target;
 						}
 						set	
 						{
-							id = value;
+							target = value;
+						}
+					}
+
+					public long? Source
+					{
+						get
+						{
+							return source;
+						}
+						set	
+						{
+							source = value;
+						}
+					}
+				}
+
+				public class GetWorkFlow_Node
+				{
+
+					private int? status;
+
+					private string label;
+
+					private long? id;
+
+					public int? Status
+					{
+						get
+						{
+							return status;
+						}
+						set	
+						{
+							status = value;
 						}
 					}
 
@@ -320,48 +222,146 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 						}
 					}
 
-					public int? Status
+					public long? Id
 					{
 						get
 						{
-							return status;
+							return id;
 						}
 						set	
 						{
-							status = value;
+							id = value;
 						}
 					}
 				}
+			}
 
-				public class GetWorkFlow_Edge
+			public class GetWorkFlow_WorkFlowInfo
+			{
+
+				private string status;
+
+				private string description;
+
+				private string maxConcurrency;
+
+				private string timeExpression;
+
+				private long? workflowId;
+
+				private string _namespace;
+
+				private string name;
+
+				private string timeType;
+
+				private string groupId;
+
+				public string Status
 				{
-
-					private long? source;
-
-					private long? target;
-
-					public long? Source
+					get
 					{
-						get
-						{
-							return source;
-						}
-						set	
-						{
-							source = value;
-						}
+						return status;
 					}
-
-					public long? Target
+					set	
 					{
-						get
-						{
-							return target;
-						}
-						set	
-						{
-							target = value;
-						}
+						status = value;
+					}
+				}
+
+				public string Description
+				{
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
+					}
+				}
+
+				public string MaxConcurrency
+				{
+					get
+					{
+						return maxConcurrency;
+					}
+					set	
+					{
+						maxConcurrency = value;
+					}
+				}
+
+				public string TimeExpression
+				{
+					get
+					{
+						return timeExpression;
+					}
+					set	
+					{
+						timeExpression = value;
+					}
+				}
+
+				public long? WorkflowId
+				{
+					get
+					{
+						return workflowId;
+					}
+					set	
+					{
+						workflowId = value;
+					}
+				}
+
+				public string _Namespace
+				{
+					get
+					{
+						return _namespace;
+					}
+					set	
+					{
+						_namespace = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public string TimeType
+				{
+					get
+					{
+						return timeType;
+					}
+					set	
+					{
+						timeType = value;
+					}
+				}
+
+				public string GroupId
+				{
+					get
+					{
+						return groupId;
+					}
+					set	
+					{
+						groupId = value;
 					}
 				}
 			}

@@ -25,27 +25,15 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 	public class DescribeRegionsResponse : AcsResponse
 	{
 
-		private int? code;
-
 		private string message;
 
 		private string requestId;
 
+		private int? code;
+
 		private bool? success;
 
 		private List<DescribeRegions_Region> regions;
-
-		public int? Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
 
 		public string Message
 		{
@@ -68,6 +56,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -98,11 +98,23 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 		public class DescribeRegions_Region
 		{
 
+			private string regionId;
+
 			private string regionEndpoint;
 
 			private string localName;
 
-			private string regionId;
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
 
 			public string RegionEndpoint
 			{
@@ -125,18 +137,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 				set	
 				{
 					localName = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
 				}
 			}
 		}

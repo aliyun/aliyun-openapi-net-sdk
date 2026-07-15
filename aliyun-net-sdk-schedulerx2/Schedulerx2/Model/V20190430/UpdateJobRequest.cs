@@ -44,6 +44,8 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private int? failTimes;
 
+		private long? startTime;
+
 		private long? jobId;
 
 		private int? consumerSize;
@@ -137,6 +139,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				failTimes = value;
 				DictionaryUtil.Add(BodyParameters, "FailTimes", value.ToString());
+			}
+		}
+
+		public long? StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(BodyParameters, "StartTime", value.ToString());
 			}
 		}
 

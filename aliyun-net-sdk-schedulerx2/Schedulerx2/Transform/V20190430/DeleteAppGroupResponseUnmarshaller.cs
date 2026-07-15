@@ -32,8 +32,8 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 
 			deleteAppGroupResponse.HttpResponse = _ctx.HttpResponse;
 			deleteAppGroupResponse.RequestId = _ctx.StringValue("DeleteAppGroup.RequestId");
-			deleteAppGroupResponse.Code = _ctx.IntegerValue("DeleteAppGroup.Code");
 			deleteAppGroupResponse.Message = _ctx.StringValue("DeleteAppGroup.Message");
+			deleteAppGroupResponse.Code = _ctx.IntegerValue("DeleteAppGroup.Code");
 			deleteAppGroupResponse.Success = _ctx.BooleanValue("DeleteAppGroup.Success");
         
 			return deleteAppGroupResponse;

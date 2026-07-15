@@ -25,27 +25,15 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 	public class ListGroupsResponse : AcsResponse
 	{
 
-		private int? code;
-
 		private string message;
 
 		private string requestId;
 
+		private int? code;
+
 		private bool? success;
 
 		private ListGroups_Data data;
-
-		public int? Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
 
 		public string Message
 		{
@@ -68,6 +56,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -115,55 +115,33 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			public class ListGroups_AppGroup
 			{
 
-				private long? appGroupId;
-
-				private string appName;
-
-				private string appKey;
+				private int? appVersion;
 
 				private string description;
 
-				private string groupId;
+				private long? appGroupId;
+
+				private string appKey;
+
+				private bool? enableLog;
 
 				private string xattrs;
 
-				private int? appVersion;
-
 				private string _namespace;
 
-				public long? AppGroupId
-				{
-					get
-					{
-						return appGroupId;
-					}
-					set	
-					{
-						appGroupId = value;
-					}
-				}
+				private string appName;
 
-				public string AppName
-				{
-					get
-					{
-						return appName;
-					}
-					set	
-					{
-						appName = value;
-					}
-				}
+				private string groupId;
 
-				public string AppKey
+				public int? AppVersion
 				{
 					get
 					{
-						return appKey;
+						return appVersion;
 					}
 					set	
 					{
-						appKey = value;
+						appVersion = value;
 					}
 				}
 
@@ -179,15 +157,39 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					}
 				}
 
-				public string GroupId
+				public long? AppGroupId
 				{
 					get
 					{
-						return groupId;
+						return appGroupId;
 					}
 					set	
 					{
-						groupId = value;
+						appGroupId = value;
+					}
+				}
+
+				public string AppKey
+				{
+					get
+					{
+						return appKey;
+					}
+					set	
+					{
+						appKey = value;
+					}
+				}
+
+				public bool? EnableLog
+				{
+					get
+					{
+						return enableLog;
+					}
+					set	
+					{
+						enableLog = value;
 					}
 				}
 
@@ -203,18 +205,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					}
 				}
 
-				public int? AppVersion
-				{
-					get
-					{
-						return appVersion;
-					}
-					set	
-					{
-						appVersion = value;
-					}
-				}
-
 				public string _Namespace
 				{
 					get
@@ -224,6 +214,30 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					set	
 					{
 						_namespace = value;
+					}
+				}
+
+				public string AppName
+				{
+					get
+					{
+						return appName;
+					}
+					set	
+					{
+						appName = value;
+					}
+				}
+
+				public string GroupId
+				{
+					get
+					{
+						return groupId;
+					}
+					set	
+					{
+						groupId = value;
 					}
 				}
 			}

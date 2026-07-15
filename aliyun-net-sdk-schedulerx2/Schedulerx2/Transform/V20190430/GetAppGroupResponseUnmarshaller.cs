@@ -32,28 +32,30 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 
 			getAppGroupResponse.HttpResponse = _ctx.HttpResponse;
 			getAppGroupResponse.RequestId = _ctx.StringValue("GetAppGroup.RequestId");
-			getAppGroupResponse.Code = _ctx.IntegerValue("GetAppGroup.Code");
 			getAppGroupResponse.Message = _ctx.StringValue("GetAppGroup.Message");
+			getAppGroupResponse.Code = _ctx.IntegerValue("GetAppGroup.Code");
 			getAppGroupResponse.Success = _ctx.BooleanValue("GetAppGroup.Success");
 
 			GetAppGroupResponse.GetAppGroup_Data data = new GetAppGroupResponse.GetAppGroup_Data();
-			data.AppName = _ctx.StringValue("GetAppGroup.Data.AppName");
 			data.Description = _ctx.StringValue("GetAppGroup.Data.Description");
-			data.MaxJobs = _ctx.IntegerValue("GetAppGroup.Data.MaxJobs");
-			data.GroupId = _ctx.StringValue("GetAppGroup.Data.GroupId");
-			data.AlarmJson = _ctx.StringValue("GetAppGroup.Data.AlarmJson");
-			data.MetricsThresholdJson = _ctx.StringValue("GetAppGroup.Data.MetricsThresholdJson");
-			data.MonitorConfigJson = _ctx.StringValue("GetAppGroup.Data.MonitorConfigJson");
-			data.MaxConcurrency = _ctx.IntegerValue("GetAppGroup.Data.MaxConcurrency");
 			data.CurJobs = _ctx.IntegerValue("GetAppGroup.Data.CurJobs");
-			data.RunningInstanceNum = _ctx.IntegerValue("GetAppGroup.Data.RunningInstanceNum");
+			data.MaxConcurrency = _ctx.IntegerValue("GetAppGroup.Data.MaxConcurrency");
+			data.MonitorContactsJson = _ctx.StringValue("GetAppGroup.Data.MonitorContactsJson");
+			data.EnableLog = _ctx.BooleanValue("GetAppGroup.Data.EnableLog");
+			data._Namespace = _ctx.StringValue("GetAppGroup.Data.Namespace");
+			data.AppName = _ctx.StringValue("GetAppGroup.Data.AppName");
+			data.GroupId = _ctx.StringValue("GetAppGroup.Data.GroupId");
+			data.AppVersion = _ctx.StringValue("GetAppGroup.Data.AppVersion");
+			data.MonitorConfigJson = _ctx.StringValue("GetAppGroup.Data.MonitorConfigJson");
 			data.ReadyInstanceNum = _ctx.IntegerValue("GetAppGroup.Data.ReadyInstanceNum");
 			data.AppGroupId = _ctx.LongValue("GetAppGroup.Data.AppGroupId");
 			data.AppKey = _ctx.StringValue("GetAppGroup.Data.AppKey");
+			data.MetricsThresholdJson = _ctx.StringValue("GetAppGroup.Data.MetricsThresholdJson");
+			data.NotificationPolicyName = _ctx.StringValue("GetAppGroup.Data.NotificationPolicyName");
+			data.RunningInstanceNum = _ctx.IntegerValue("GetAppGroup.Data.RunningInstanceNum");
 			data.Xattrs = _ctx.StringValue("GetAppGroup.Data.Xattrs");
-			data.AppVersion = _ctx.StringValue("GetAppGroup.Data.AppVersion");
-			data._Namespace = _ctx.StringValue("GetAppGroup.Data.Namespace");
-			data.MonitorContactsJson = _ctx.StringValue("GetAppGroup.Data.MonitorContactsJson");
+			data.MaxJobs = _ctx.IntegerValue("GetAppGroup.Data.MaxJobs");
+			data.AlarmJson = _ctx.StringValue("GetAppGroup.Data.AlarmJson");
 			getAppGroupResponse.Data = data;
         
 			return getAppGroupResponse;

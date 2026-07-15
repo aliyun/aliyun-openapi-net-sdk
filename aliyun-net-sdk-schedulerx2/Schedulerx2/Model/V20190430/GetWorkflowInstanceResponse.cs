@@ -27,11 +27,11 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private string requestId;
 
+		private string message;
+
 		private int? code;
 
 		private bool? success;
-
-		private string message;
 
 		private GetWorkflowInstance_Data data;
 
@@ -44,6 +44,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 
@@ -68,18 +80,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
 			}
 		}
 
@@ -131,11 +131,11 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 				private int? status;
 
-				private string startTime;
-
 				private string endTime;
 
 				private string scheduleTime;
+
+				private string startTime;
 
 				private string dataTime;
 
@@ -148,18 +148,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					set	
 					{
 						status = value;
-					}
-				}
-
-				public string StartTime
-				{
-					get
-					{
-						return startTime;
-					}
-					set	
-					{
-						startTime = value;
 					}
 				}
 
@@ -187,6 +175,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					}
 				}
 
+				public string StartTime
+				{
+					get
+					{
+						return startTime;
+					}
+					set	
+					{
+						startTime = value;
+					}
+				}
+
 				public string DataTime
 				{
 					get
@@ -203,21 +203,9 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			public class GetWorkflowInstance_WfInstanceDag
 			{
 
-				private List<GetWorkflowInstance_Node> nodes;
-
 				private List<GetWorkflowInstance_Edge> edges;
 
-				public List<GetWorkflowInstance_Node> Nodes
-				{
-					get
-					{
-						return nodes;
-					}
-					set	
-					{
-						nodes = value;
-					}
-				}
+				private List<GetWorkflowInstance_Node> nodes;
 
 				public List<GetWorkflowInstance_Edge> Edges
 				{
@@ -231,64 +219,84 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					}
 				}
 
+				public List<GetWorkflowInstance_Node> Nodes
+				{
+					get
+					{
+						return nodes;
+					}
+					set	
+					{
+						nodes = value;
+					}
+				}
+
+				public class GetWorkflowInstance_Edge
+				{
+
+					private long? target;
+
+					private long? source;
+
+					public long? Target
+					{
+						get
+						{
+							return target;
+						}
+						set	
+						{
+							target = value;
+						}
+					}
+
+					public long? Source
+					{
+						get
+						{
+							return source;
+						}
+						set	
+						{
+							source = value;
+						}
+					}
+				}
+
 				public class GetWorkflowInstance_Node
 				{
 
-					private long? jobInstanceId;
-
-					private long? jobId;
-
-					private string startTime;
+					private int? status;
 
 					private string endTime;
 
 					private string scheduleTime;
 
-					private string dataTime;
+					private int? attempt;
+
+					private long? jobInstanceId;
 
 					private string workAddr;
 
-					private string result;
-
-					private int? attempt;
-
-					private int? status;
+					private string startTime;
 
 					private string jobName;
 
-					public long? JobInstanceId
-					{
-						get
-						{
-							return jobInstanceId;
-						}
-						set	
-						{
-							jobInstanceId = value;
-						}
-					}
+					private string dataTime;
 
-					public long? JobId
-					{
-						get
-						{
-							return jobId;
-						}
-						set	
-						{
-							jobId = value;
-						}
-					}
+					private long? jobId;
 
-					public string StartTime
+					private string result;
+
+					public int? Status
 					{
 						get
 						{
-							return startTime;
+							return status;
 						}
 						set	
 						{
-							startTime = value;
+							status = value;
 						}
 					}
 
@@ -316,15 +324,27 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 						}
 					}
 
-					public string DataTime
+					public int? Attempt
 					{
 						get
 						{
-							return dataTime;
+							return attempt;
 						}
 						set	
 						{
-							dataTime = value;
+							attempt = value;
+						}
+					}
+
+					public long? JobInstanceId
+					{
+						get
+						{
+							return jobInstanceId;
+						}
+						set	
+						{
+							jobInstanceId = value;
 						}
 					}
 
@@ -340,39 +360,15 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 						}
 					}
 
-					public string Result
+					public string StartTime
 					{
 						get
 						{
-							return result;
+							return startTime;
 						}
 						set	
 						{
-							result = value;
-						}
-					}
-
-					public int? Attempt
-					{
-						get
-						{
-							return attempt;
-						}
-						set	
-						{
-							attempt = value;
-						}
-					}
-
-					public int? Status
-					{
-						get
-						{
-							return status;
-						}
-						set	
-						{
-							status = value;
+							startTime = value;
 						}
 					}
 
@@ -387,36 +383,40 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 							jobName = value;
 						}
 					}
-				}
 
-				public class GetWorkflowInstance_Edge
-				{
-
-					private long? source;
-
-					private long? target;
-
-					public long? Source
+					public string DataTime
 					{
 						get
 						{
-							return source;
+							return dataTime;
 						}
 						set	
 						{
-							source = value;
+							dataTime = value;
 						}
 					}
 
-					public long? Target
+					public long? JobId
 					{
 						get
 						{
-							return target;
+							return jobId;
 						}
 						set	
 						{
-							target = value;
+							jobId = value;
+						}
+					}
+
+					public string Result
+					{
+						get
+						{
+							return result;
+						}
+						set	
+						{
+							result = value;
 						}
 					}
 				}

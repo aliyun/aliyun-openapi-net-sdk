@@ -25,27 +25,15 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 	public class GetJobInstanceListResponse : AcsResponse
 	{
 
-		private int? code;
-
 		private string message;
 
 		private string requestId;
 
+		private int? code;
+
 		private bool? success;
 
 		private GetJobInstanceList_Data data;
-
-		public int? Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
 
 		public string Message
 		{
@@ -68,6 +56,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -117,29 +117,29 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 				private int? status;
 
-				private string progress;
-
-				private string result;
-
-				private long? instanceId;
-
-				private int? timeType;
-
 				private int? triggerType;
+
+				private string progress;
 
 				private string endTime;
 
+				private long? instanceId;
+
+				private string workAddr;
+
 				private string startTime;
-
-				private string executor;
-
-				private long? jobId;
-
-				private string scheduleTime;
 
 				private string dataTime;
 
-				private string workAddr;
+				private string result;
+
+				private int? timeType;
+
+				private string executor;
+
+				private string scheduleTime;
+
+				private long? jobId;
 
 				public int? Status
 				{
@@ -150,54 +150,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					set	
 					{
 						status = value;
-					}
-				}
-
-				public string Progress
-				{
-					get
-					{
-						return progress;
-					}
-					set	
-					{
-						progress = value;
-					}
-				}
-
-				public string Result
-				{
-					get
-					{
-						return result;
-					}
-					set	
-					{
-						result = value;
-					}
-				}
-
-				public long? InstanceId
-				{
-					get
-					{
-						return instanceId;
-					}
-					set	
-					{
-						instanceId = value;
-					}
-				}
-
-				public int? TimeType
-				{
-					get
-					{
-						return timeType;
-					}
-					set	
-					{
-						timeType = value;
 					}
 				}
 
@@ -213,6 +165,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					}
 				}
 
+				public string Progress
+				{
+					get
+					{
+						return progress;
+					}
+					set	
+					{
+						progress = value;
+					}
+				}
+
 				public string EndTime
 				{
 					get
@@ -222,6 +186,30 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					set	
 					{
 						endTime = value;
+					}
+				}
+
+				public long? InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
+					}
+				}
+
+				public string WorkAddr
+				{
+					get
+					{
+						return workAddr;
+					}
+					set	
+					{
+						workAddr = value;
 					}
 				}
 
@@ -237,6 +225,42 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					}
 				}
 
+				public string DataTime
+				{
+					get
+					{
+						return dataTime;
+					}
+					set	
+					{
+						dataTime = value;
+					}
+				}
+
+				public string Result
+				{
+					get
+					{
+						return result;
+					}
+					set	
+					{
+						result = value;
+					}
+				}
+
+				public int? TimeType
+				{
+					get
+					{
+						return timeType;
+					}
+					set	
+					{
+						timeType = value;
+					}
+				}
+
 				public string Executor
 				{
 					get
@@ -246,18 +270,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					set	
 					{
 						executor = value;
-					}
-				}
-
-				public long? JobId
-				{
-					get
-					{
-						return jobId;
-					}
-					set	
-					{
-						jobId = value;
 					}
 				}
 
@@ -273,27 +285,15 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					}
 				}
 
-				public string DataTime
+				public long? JobId
 				{
 					get
 					{
-						return dataTime;
+						return jobId;
 					}
 					set	
 					{
-						dataTime = value;
-					}
-				}
-
-				public string WorkAddr
-				{
-					get
-					{
-						return workAddr;
-					}
-					set	
-					{
-						workAddr = value;
+						jobId = value;
 					}
 				}
 			}

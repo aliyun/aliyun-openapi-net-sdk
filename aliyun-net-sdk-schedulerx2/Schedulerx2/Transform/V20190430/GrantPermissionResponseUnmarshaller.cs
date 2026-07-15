@@ -31,9 +31,9 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			GrantPermissionResponse grantPermissionResponse = new GrantPermissionResponse();
 
 			grantPermissionResponse.HttpResponse = _ctx.HttpResponse;
-			grantPermissionResponse.Code = _ctx.IntegerValue("GrantPermission.Code");
 			grantPermissionResponse.Message = _ctx.StringValue("GrantPermission.Message");
 			grantPermissionResponse.RequestId = _ctx.StringValue("GrantPermission.RequestId");
+			grantPermissionResponse.Code = _ctx.IntegerValue("GrantPermission.Code");
 			grantPermissionResponse.Success = _ctx.BooleanValue("GrantPermission.Success");
         
 			return grantPermissionResponse;

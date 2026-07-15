@@ -25,27 +25,15 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 	public class GetJobInstanceResponse : AcsResponse
 	{
 
-		private int? code;
-
 		private string message;
 
 		private string requestId;
 
+		private int? code;
+
 		private bool? success;
 
 		private GetJobInstance_Data data;
-
-		public int? Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
 
 		public string Message
 		{
@@ -68,6 +56,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -117,35 +117,35 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 				private int? status;
 
-				private string progress;
-
-				private string result;
-
-				private long? instanceId;
-
-				private int? timeType;
-
 				private int? triggerType;
 
-				private string endTime;
-
-				private string startTime;
-
-				private string executor;
-
-				private long? jobId;
-
-				private string scheduleTime;
-
-				private string dataTime;
-
-				private string workAddr;
+				private string progress;
 
 				private string parameters;
 
+				private string endTime;
+
+				private long? instanceId;
+
+				private string workAddr;
+
+				private string startTime;
+
 				private string jobName;
 
+				private string dataTime;
+
+				private string result;
+
+				private int? timeType;
+
+				private string executor;
+
+				private string scheduleTime;
+
 				private string traceId;
+
+				private long? jobId;
 
 				public int? Status
 				{
@@ -156,54 +156,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					set	
 					{
 						status = value;
-					}
-				}
-
-				public string Progress
-				{
-					get
-					{
-						return progress;
-					}
-					set	
-					{
-						progress = value;
-					}
-				}
-
-				public string Result
-				{
-					get
-					{
-						return result;
-					}
-					set	
-					{
-						result = value;
-					}
-				}
-
-				public long? InstanceId
-				{
-					get
-					{
-						return instanceId;
-					}
-					set	
-					{
-						instanceId = value;
-					}
-				}
-
-				public int? TimeType
-				{
-					get
-					{
-						return timeType;
-					}
-					set	
-					{
-						timeType = value;
 					}
 				}
 
@@ -219,87 +171,15 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					}
 				}
 
-				public string EndTime
+				public string Progress
 				{
 					get
 					{
-						return endTime;
+						return progress;
 					}
 					set	
 					{
-						endTime = value;
-					}
-				}
-
-				public string StartTime
-				{
-					get
-					{
-						return startTime;
-					}
-					set	
-					{
-						startTime = value;
-					}
-				}
-
-				public string Executor
-				{
-					get
-					{
-						return executor;
-					}
-					set	
-					{
-						executor = value;
-					}
-				}
-
-				public long? JobId
-				{
-					get
-					{
-						return jobId;
-					}
-					set	
-					{
-						jobId = value;
-					}
-				}
-
-				public string ScheduleTime
-				{
-					get
-					{
-						return scheduleTime;
-					}
-					set	
-					{
-						scheduleTime = value;
-					}
-				}
-
-				public string DataTime
-				{
-					get
-					{
-						return dataTime;
-					}
-					set	
-					{
-						dataTime = value;
-					}
-				}
-
-				public string WorkAddr
-				{
-					get
-					{
-						return workAddr;
-					}
-					set	
-					{
-						workAddr = value;
+						progress = value;
 					}
 				}
 
@@ -315,6 +195,54 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					}
 				}
 
+				public string EndTime
+				{
+					get
+					{
+						return endTime;
+					}
+					set	
+					{
+						endTime = value;
+					}
+				}
+
+				public long? InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
+					}
+				}
+
+				public string WorkAddr
+				{
+					get
+					{
+						return workAddr;
+					}
+					set	
+					{
+						workAddr = value;
+					}
+				}
+
+				public string StartTime
+				{
+					get
+					{
+						return startTime;
+					}
+					set	
+					{
+						startTime = value;
+					}
+				}
+
 				public string JobName
 				{
 					get
@@ -327,6 +255,66 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					}
 				}
 
+				public string DataTime
+				{
+					get
+					{
+						return dataTime;
+					}
+					set	
+					{
+						dataTime = value;
+					}
+				}
+
+				public string Result
+				{
+					get
+					{
+						return result;
+					}
+					set	
+					{
+						result = value;
+					}
+				}
+
+				public int? TimeType
+				{
+					get
+					{
+						return timeType;
+					}
+					set	
+					{
+						timeType = value;
+					}
+				}
+
+				public string Executor
+				{
+					get
+					{
+						return executor;
+					}
+					set	
+					{
+						executor = value;
+					}
+				}
+
+				public string ScheduleTime
+				{
+					get
+					{
+						return scheduleTime;
+					}
+					set	
+					{
+						scheduleTime = value;
+					}
+				}
+
 				public string TraceId
 				{
 					get
@@ -336,6 +324,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					set	
 					{
 						traceId = value;
+					}
+				}
+
+				public long? JobId
+				{
+					get
+					{
+						return jobId;
+					}
+					set	
+					{
+						jobId = value;
 					}
 				}
 			}

@@ -27,9 +27,9 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private string requestId;
 
-		private int? code;
-
 		private string message;
+
+		private int? code;
 
 		private bool? success;
 
@@ -47,18 +47,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public int? Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
 		public string Message
 		{
 			get
@@ -68,6 +56,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public int? Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -115,17 +115,29 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			public class GetWorkerList_WorkerInfo
 			{
 
+				private string version;
+
 				private string ip;
 
 				private int? port;
 
-				private string workerAddress;
-
 				private string label;
 
-				private string version;
+				private string workerAddress;
 
 				private string starter;
+
+				public string Version
+				{
+					get
+					{
+						return version;
+					}
+					set	
+					{
+						version = value;
+					}
+				}
 
 				public string Ip
 				{
@@ -151,18 +163,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					}
 				}
 
-				public string WorkerAddress
-				{
-					get
-					{
-						return workerAddress;
-					}
-					set	
-					{
-						workerAddress = value;
-					}
-				}
-
 				public string Label
 				{
 					get
@@ -175,15 +175,15 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					}
 				}
 
-				public string Version
+				public string WorkerAddress
 				{
 					get
 					{
-						return version;
+						return workerAddress;
 					}
 					set	
 					{
-						version = value;
+						workerAddress = value;
 					}
 				}
 

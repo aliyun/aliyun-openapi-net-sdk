@@ -25,27 +25,15 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 	public class ListNamespacesResponse : AcsResponse
 	{
 
-		private int? code;
-
 		private string message;
 
 		private string requestId;
 
+		private int? code;
+
 		private bool? success;
 
 		private ListNamespaces_Data data;
-
-		public int? Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
 
 		public string Message
 		{
@@ -68,6 +56,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -115,21 +115,21 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			public class ListNamespaces__Namespace
 			{
 
-				private string name;
+				private string uId;
 
 				private string description;
 
-				private string uId;
+				private string name;
 
-				public string Name
+				public string UId
 				{
 					get
 					{
-						return name;
+						return uId;
 					}
 					set	
 					{
-						name = value;
+						uId = value;
 					}
 				}
 
@@ -145,15 +145,15 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					}
 				}
 
-				public string UId
+				public string Name
 				{
 					get
 					{
-						return uId;
+						return name;
 					}
 					set	
 					{
-						uId = value;
+						name = value;
 					}
 				}
 			}

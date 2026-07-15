@@ -27,11 +27,11 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private string requestId;
 
+		private string message;
+
 		private int? code;
 
 		private bool? success;
-
-		private string message;
 
 		private ListWorkflowInstance_Data data;
 
@@ -44,6 +44,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 
@@ -68,18 +80,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
 			}
 		}
 
@@ -115,43 +115,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			public class ListWorkflowInstance_WfInstanceInfosItem
 			{
 
-				private long? wfInstanceId;
-
-				private long? workflowId;
-
 				private int? status;
-
-				private string startTime;
 
 				private string endTime;
 
 				private string scheduleTime;
 
+				private string startTime;
+
 				private string dataTime;
 
-				public long? WfInstanceId
-				{
-					get
-					{
-						return wfInstanceId;
-					}
-					set	
-					{
-						wfInstanceId = value;
-					}
-				}
+				private long? wfInstanceId;
 
-				public long? WorkflowId
-				{
-					get
-					{
-						return workflowId;
-					}
-					set	
-					{
-						workflowId = value;
-					}
-				}
+				private long? workflowId;
 
 				public int? Status
 				{
@@ -162,18 +138,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					set	
 					{
 						status = value;
-					}
-				}
-
-				public string StartTime
-				{
-					get
-					{
-						return startTime;
-					}
-					set	
-					{
-						startTime = value;
 					}
 				}
 
@@ -201,6 +165,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					}
 				}
 
+				public string StartTime
+				{
+					get
+					{
+						return startTime;
+					}
+					set	
+					{
+						startTime = value;
+					}
+				}
+
 				public string DataTime
 				{
 					get
@@ -210,6 +186,30 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					set	
 					{
 						dataTime = value;
+					}
+				}
+
+				public long? WfInstanceId
+				{
+					get
+					{
+						return wfInstanceId;
+					}
+					set	
+					{
+						wfInstanceId = value;
+					}
+				}
+
+				public long? WorkflowId
+				{
+					get
+					{
+						return workflowId;
+					}
+					set	
+					{
+						workflowId = value;
 					}
 				}
 			}

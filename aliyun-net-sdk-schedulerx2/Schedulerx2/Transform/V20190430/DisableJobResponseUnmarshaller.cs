@@ -31,9 +31,9 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			DisableJobResponse disableJobResponse = new DisableJobResponse();
 
 			disableJobResponse.HttpResponse = _ctx.HttpResponse;
-			disableJobResponse.Code = _ctx.IntegerValue("DisableJob.Code");
 			disableJobResponse.Message = _ctx.StringValue("DisableJob.Message");
 			disableJobResponse.RequestId = _ctx.StringValue("DisableJob.RequestId");
+			disableJobResponse.Code = _ctx.IntegerValue("DisableJob.Code");
 			disableJobResponse.Success = _ctx.BooleanValue("DisableJob.Success");
         
 			return disableJobResponse;

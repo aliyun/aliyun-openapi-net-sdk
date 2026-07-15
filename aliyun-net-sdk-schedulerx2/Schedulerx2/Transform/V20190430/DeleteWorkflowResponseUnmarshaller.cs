@@ -31,9 +31,9 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			DeleteWorkflowResponse deleteWorkflowResponse = new DeleteWorkflowResponse();
 
 			deleteWorkflowResponse.HttpResponse = _ctx.HttpResponse;
-			deleteWorkflowResponse.Code = _ctx.IntegerValue("DeleteWorkflow.Code");
 			deleteWorkflowResponse.Message = _ctx.StringValue("DeleteWorkflow.Message");
 			deleteWorkflowResponse.RequestId = _ctx.StringValue("DeleteWorkflow.RequestId");
+			deleteWorkflowResponse.Code = _ctx.IntegerValue("DeleteWorkflow.Code");
 			deleteWorkflowResponse.Success = _ctx.BooleanValue("DeleteWorkflow.Success");
         
 			return deleteWorkflowResponse;

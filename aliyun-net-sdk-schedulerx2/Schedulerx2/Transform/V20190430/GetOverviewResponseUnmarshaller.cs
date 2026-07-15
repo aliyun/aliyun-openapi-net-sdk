@@ -32,10 +32,10 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 
 			getOverviewResponse.HttpResponse = _ctx.HttpResponse;
 			getOverviewResponse.RequestId = _ctx.StringValue("GetOverview.RequestId");
-			getOverviewResponse.Code = _ctx.IntegerValue("GetOverview.Code");
-			getOverviewResponse.Success = _ctx.BooleanValue("GetOverview.Success");
 			getOverviewResponse.Message = _ctx.StringValue("GetOverview.Message");
 			getOverviewResponse.Data = _ctx.StringValue("GetOverview.Data");
+			getOverviewResponse.Code = _ctx.IntegerValue("GetOverview.Code");
+			getOverviewResponse.Success = _ctx.BooleanValue("GetOverview.Success");
         
 			return getOverviewResponse;
         }

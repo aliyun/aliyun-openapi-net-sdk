@@ -31,10 +31,20 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			ReadSchedulerxDesignateInfoResponse readSchedulerxDesignateInfoResponse = new ReadSchedulerxDesignateInfoResponse();
 
 			readSchedulerxDesignateInfoResponse.HttpResponse = _ctx.HttpResponse;
-			readSchedulerxDesignateInfoResponse.Code = _ctx.IntegerValue("ReadSchedulerxDesignateInfo.Code");
 			readSchedulerxDesignateInfoResponse.Message = _ctx.StringValue("ReadSchedulerxDesignateInfo.Message");
 			readSchedulerxDesignateInfoResponse.RequestId = _ctx.StringValue("ReadSchedulerxDesignateInfo.RequestId");
+			readSchedulerxDesignateInfoResponse.Code = _ctx.IntegerValue("ReadSchedulerxDesignateInfo.Code");
 			readSchedulerxDesignateInfoResponse.Success = _ctx.BooleanValue("ReadSchedulerxDesignateInfo.Success");
+
+			ReadSchedulerxDesignateInfoResponse.ReadSchedulerxDesignateInfo_AccessDeniedDetail accessDeniedDetail = new ReadSchedulerxDesignateInfoResponse.ReadSchedulerxDesignateInfo_AccessDeniedDetail();
+			accessDeniedDetail.PolicyType = _ctx.StringValue("ReadSchedulerxDesignateInfo.AccessDeniedDetail.PolicyType");
+			accessDeniedDetail.AuthPrincipalOwnerId = _ctx.StringValue("ReadSchedulerxDesignateInfo.AccessDeniedDetail.AuthPrincipalOwnerId");
+			accessDeniedDetail.EncodedDiagnosticMessage = _ctx.StringValue("ReadSchedulerxDesignateInfo.AccessDeniedDetail.EncodedDiagnosticMessage");
+			accessDeniedDetail.AuthPrincipalType = _ctx.StringValue("ReadSchedulerxDesignateInfo.AccessDeniedDetail.AuthPrincipalType");
+			accessDeniedDetail.AuthPrincipalDisplayName = _ctx.StringValue("ReadSchedulerxDesignateInfo.AccessDeniedDetail.AuthPrincipalDisplayName");
+			accessDeniedDetail.NoPermissionType = _ctx.StringValue("ReadSchedulerxDesignateInfo.AccessDeniedDetail.NoPermissionType");
+			accessDeniedDetail.AuthAction = _ctx.StringValue("ReadSchedulerxDesignateInfo.AccessDeniedDetail.AuthAction");
+			readSchedulerxDesignateInfoResponse.AccessDeniedDetail = accessDeniedDetail;
 
 			ReadSchedulerxDesignateInfoResponse.ReadSchedulerxDesignateInfo_Data data = new ReadSchedulerxDesignateInfoResponse.ReadSchedulerxDesignateInfo_Data();
 			data.DesignateType = _ctx.IntegerValue("ReadSchedulerxDesignateInfo.Data.DesignateType");
@@ -71,16 +81,6 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			}
 			data.DesignateDetailVos = data_designateDetailVos;
 			readSchedulerxDesignateInfoResponse.Data = data;
-
-			ReadSchedulerxDesignateInfoResponse.ReadSchedulerxDesignateInfo_AccessDeniedDetail accessDeniedDetail = new ReadSchedulerxDesignateInfoResponse.ReadSchedulerxDesignateInfo_AccessDeniedDetail();
-			accessDeniedDetail.AuthAction = _ctx.StringValue("ReadSchedulerxDesignateInfo.AccessDeniedDetail.AuthAction");
-			accessDeniedDetail.AuthPrincipalDisplayName = _ctx.StringValue("ReadSchedulerxDesignateInfo.AccessDeniedDetail.AuthPrincipalDisplayName");
-			accessDeniedDetail.AuthPrincipalOwnerId = _ctx.StringValue("ReadSchedulerxDesignateInfo.AccessDeniedDetail.AuthPrincipalOwnerId");
-			accessDeniedDetail.AuthPrincipalType = _ctx.StringValue("ReadSchedulerxDesignateInfo.AccessDeniedDetail.AuthPrincipalType");
-			accessDeniedDetail.EncodedDiagnosticMessage = _ctx.StringValue("ReadSchedulerxDesignateInfo.AccessDeniedDetail.EncodedDiagnosticMessage");
-			accessDeniedDetail.NoPermissionType = _ctx.StringValue("ReadSchedulerxDesignateInfo.AccessDeniedDetail.NoPermissionType");
-			accessDeniedDetail.PolicyType = _ctx.StringValue("ReadSchedulerxDesignateInfo.AccessDeniedDetail.PolicyType");
-			readSchedulerxDesignateInfoResponse.AccessDeniedDetail = accessDeniedDetail;
         
 			return readSchedulerxDesignateInfoResponse;
         }

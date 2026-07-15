@@ -32,9 +32,9 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 
 			rerunJobResponse.HttpResponse = _ctx.HttpResponse;
 			rerunJobResponse.RequestId = _ctx.StringValue("RerunJob.RequestId");
+			rerunJobResponse.Message = _ctx.StringValue("RerunJob.Message");
 			rerunJobResponse.Code = _ctx.IntegerValue("RerunJob.Code");
 			rerunJobResponse.Success = _ctx.BooleanValue("RerunJob.Success");
-			rerunJobResponse.Message = _ctx.StringValue("RerunJob.Message");
         
 			return rerunJobResponse;
         }

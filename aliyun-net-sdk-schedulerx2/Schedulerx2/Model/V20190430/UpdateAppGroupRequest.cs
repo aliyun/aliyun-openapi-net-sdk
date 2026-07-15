@@ -42,6 +42,8 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private string description;
 
+		private string notificationPolicyName;
+
 		private string monitorContactsJson;
 
 		private string groupId;
@@ -51,6 +53,8 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 		private string monitorConfigJson;
 
 		private string _namespace;
+
+		private bool? enableLog;
 
 		private int? maxConcurrency;
 
@@ -64,6 +68,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string NotificationPolicyName
+		{
+			get
+			{
+				return notificationPolicyName;
+			}
+			set	
+			{
+				notificationPolicyName = value;
+				DictionaryUtil.Add(QueryParameters, "NotificationPolicyName", value);
 			}
 		}
 
@@ -129,6 +146,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				_namespace = value;
 				DictionaryUtil.Add(QueryParameters, "Namespace", value);
+			}
+		}
+
+		public bool? EnableLog
+		{
+			get
+			{
+				return enableLog;
+			}
+			set	
+			{
+				enableLog = value;
+				DictionaryUtil.Add(QueryParameters, "EnableLog", value.ToString());
 			}
 		}
 

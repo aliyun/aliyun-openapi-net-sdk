@@ -25,29 +25,17 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 	public class ReadSchedulerxDesignateInfoResponse : AcsResponse
 	{
 
-		private int? code;
-
 		private string message;
 
 		private string requestId;
 
-		private bool? success;
+		private int? code;
 
-		private ReadSchedulerxDesignateInfo_Data data;
+		private bool? success;
 
 		private ReadSchedulerxDesignateInfo_AccessDeniedDetail accessDeniedDetail;
 
-		public int? Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+		private ReadSchedulerxDesignateInfo_Data data;
 
 		public string Message
 		{
@@ -73,6 +61,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
+		public int? Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
 		public bool? Success
 		{
 			get
@@ -82,6 +82,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public ReadSchedulerxDesignateInfo_AccessDeniedDetail AccessDeniedDetail
+		{
+			get
+			{
+				return accessDeniedDetail;
+			}
+			set	
+			{
+				accessDeniedDetail = value;
 			}
 		}
 
@@ -97,15 +109,105 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public ReadSchedulerxDesignateInfo_AccessDeniedDetail AccessDeniedDetail
+		public class ReadSchedulerxDesignateInfo_AccessDeniedDetail
 		{
-			get
+
+			private string policyType;
+
+			private string authPrincipalOwnerId;
+
+			private string encodedDiagnosticMessage;
+
+			private string authPrincipalType;
+
+			private string authPrincipalDisplayName;
+
+			private string noPermissionType;
+
+			private string authAction;
+
+			public string PolicyType
 			{
-				return accessDeniedDetail;
+				get
+				{
+					return policyType;
+				}
+				set	
+				{
+					policyType = value;
+				}
 			}
-			set	
+
+			public string AuthPrincipalOwnerId
 			{
-				accessDeniedDetail = value;
+				get
+				{
+					return authPrincipalOwnerId;
+				}
+				set	
+				{
+					authPrincipalOwnerId = value;
+				}
+			}
+
+			public string EncodedDiagnosticMessage
+			{
+				get
+				{
+					return encodedDiagnosticMessage;
+				}
+				set	
+				{
+					encodedDiagnosticMessage = value;
+				}
+			}
+
+			public string AuthPrincipalType
+			{
+				get
+				{
+					return authPrincipalType;
+				}
+				set	
+				{
+					authPrincipalType = value;
+				}
+			}
+
+			public string AuthPrincipalDisplayName
+			{
+				get
+				{
+					return authPrincipalDisplayName;
+				}
+				set	
+				{
+					authPrincipalDisplayName = value;
+				}
+			}
+
+			public string NoPermissionType
+			{
+				get
+				{
+					return noPermissionType;
+				}
+				set	
+				{
+					noPermissionType = value;
+				}
+			}
+
+			public string AuthAction
+			{
+				get
+				{
+					return authAction;
+				}
+				set	
+				{
+					authAction = value;
+				}
 			}
 		}
 
@@ -453,108 +555,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 							heap5Usage = value;
 						}
 					}
-				}
-			}
-		}
-
-		public class ReadSchedulerxDesignateInfo_AccessDeniedDetail
-		{
-
-			private string authAction;
-
-			private string authPrincipalDisplayName;
-
-			private string authPrincipalOwnerId;
-
-			private string authPrincipalType;
-
-			private string encodedDiagnosticMessage;
-
-			private string noPermissionType;
-
-			private string policyType;
-
-			public string AuthAction
-			{
-				get
-				{
-					return authAction;
-				}
-				set	
-				{
-					authAction = value;
-				}
-			}
-
-			public string AuthPrincipalDisplayName
-			{
-				get
-				{
-					return authPrincipalDisplayName;
-				}
-				set	
-				{
-					authPrincipalDisplayName = value;
-				}
-			}
-
-			public string AuthPrincipalOwnerId
-			{
-				get
-				{
-					return authPrincipalOwnerId;
-				}
-				set	
-				{
-					authPrincipalOwnerId = value;
-				}
-			}
-
-			public string AuthPrincipalType
-			{
-				get
-				{
-					return authPrincipalType;
-				}
-				set	
-				{
-					authPrincipalType = value;
-				}
-			}
-
-			public string EncodedDiagnosticMessage
-			{
-				get
-				{
-					return encodedDiagnosticMessage;
-				}
-				set	
-				{
-					encodedDiagnosticMessage = value;
-				}
-			}
-
-			public string NoPermissionType
-			{
-				get
-				{
-					return noPermissionType;
-				}
-				set	
-				{
-					noPermissionType = value;
-				}
-			}
-
-			public string PolicyType
-			{
-				get
-				{
-					return policyType;
-				}
-				set	
-				{
-					policyType = value;
 				}
 			}
 		}

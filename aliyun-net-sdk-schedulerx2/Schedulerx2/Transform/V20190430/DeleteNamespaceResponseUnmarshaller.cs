@@ -32,8 +32,8 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 
 			deleteNamespaceResponse.HttpResponse = _ctx.HttpResponse;
 			deleteNamespaceResponse.RequestId = _ctx.StringValue("DeleteNamespace.RequestId");
-			deleteNamespaceResponse.Code = _ctx.IntegerValue("DeleteNamespace.Code");
 			deleteNamespaceResponse.Message = _ctx.StringValue("DeleteNamespace.Message");
+			deleteNamespaceResponse.Code = _ctx.IntegerValue("DeleteNamespace.Code");
 			deleteNamespaceResponse.Success = _ctx.BooleanValue("DeleteNamespace.Success");
         
 			return deleteNamespaceResponse;

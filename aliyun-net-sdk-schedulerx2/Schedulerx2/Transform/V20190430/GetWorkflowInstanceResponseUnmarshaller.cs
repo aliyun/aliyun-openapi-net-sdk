@@ -32,50 +32,50 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 
 			getWorkflowInstanceResponse.HttpResponse = _ctx.HttpResponse;
 			getWorkflowInstanceResponse.RequestId = _ctx.StringValue("GetWorkflowInstance.RequestId");
+			getWorkflowInstanceResponse.Message = _ctx.StringValue("GetWorkflowInstance.Message");
 			getWorkflowInstanceResponse.Code = _ctx.IntegerValue("GetWorkflowInstance.Code");
 			getWorkflowInstanceResponse.Success = _ctx.BooleanValue("GetWorkflowInstance.Success");
-			getWorkflowInstanceResponse.Message = _ctx.StringValue("GetWorkflowInstance.Message");
 
 			GetWorkflowInstanceResponse.GetWorkflowInstance_Data data = new GetWorkflowInstanceResponse.GetWorkflowInstance_Data();
 
 			GetWorkflowInstanceResponse.GetWorkflowInstance_Data.GetWorkflowInstance_WfInstanceInfo wfInstanceInfo = new GetWorkflowInstanceResponse.GetWorkflowInstance_Data.GetWorkflowInstance_WfInstanceInfo();
 			wfInstanceInfo.Status = _ctx.IntegerValue("GetWorkflowInstance.Data.WfInstanceInfo.Status");
-			wfInstanceInfo.StartTime = _ctx.StringValue("GetWorkflowInstance.Data.WfInstanceInfo.StartTime");
 			wfInstanceInfo.EndTime = _ctx.StringValue("GetWorkflowInstance.Data.WfInstanceInfo.EndTime");
 			wfInstanceInfo.ScheduleTime = _ctx.StringValue("GetWorkflowInstance.Data.WfInstanceInfo.ScheduleTime");
+			wfInstanceInfo.StartTime = _ctx.StringValue("GetWorkflowInstance.Data.WfInstanceInfo.StartTime");
 			wfInstanceInfo.DataTime = _ctx.StringValue("GetWorkflowInstance.Data.WfInstanceInfo.DataTime");
 			data.WfInstanceInfo = wfInstanceInfo;
 
 			GetWorkflowInstanceResponse.GetWorkflowInstance_Data.GetWorkflowInstance_WfInstanceDag wfInstanceDag = new GetWorkflowInstanceResponse.GetWorkflowInstance_Data.GetWorkflowInstance_WfInstanceDag();
 
-			List<GetWorkflowInstanceResponse.GetWorkflowInstance_Data.GetWorkflowInstance_WfInstanceDag.GetWorkflowInstance_Node> wfInstanceDag_nodes = new List<GetWorkflowInstanceResponse.GetWorkflowInstance_Data.GetWorkflowInstance_WfInstanceDag.GetWorkflowInstance_Node>();
-			for (int i = 0; i < _ctx.Length("GetWorkflowInstance.Data.WfInstanceDag.Nodes.Length"); i++) {
-				GetWorkflowInstanceResponse.GetWorkflowInstance_Data.GetWorkflowInstance_WfInstanceDag.GetWorkflowInstance_Node node = new GetWorkflowInstanceResponse.GetWorkflowInstance_Data.GetWorkflowInstance_WfInstanceDag.GetWorkflowInstance_Node();
-				node.JobInstanceId = _ctx.LongValue("GetWorkflowInstance.Data.WfInstanceDag.Nodes["+ i +"].JobInstanceId");
-				node.JobId = _ctx.LongValue("GetWorkflowInstance.Data.WfInstanceDag.Nodes["+ i +"].JobId");
-				node.StartTime = _ctx.StringValue("GetWorkflowInstance.Data.WfInstanceDag.Nodes["+ i +"].StartTime");
-				node.EndTime = _ctx.StringValue("GetWorkflowInstance.Data.WfInstanceDag.Nodes["+ i +"].EndTime");
-				node.ScheduleTime = _ctx.StringValue("GetWorkflowInstance.Data.WfInstanceDag.Nodes["+ i +"].ScheduleTime");
-				node.DataTime = _ctx.StringValue("GetWorkflowInstance.Data.WfInstanceDag.Nodes["+ i +"].DataTime");
-				node.WorkAddr = _ctx.StringValue("GetWorkflowInstance.Data.WfInstanceDag.Nodes["+ i +"].WorkAddr");
-				node.Result = _ctx.StringValue("GetWorkflowInstance.Data.WfInstanceDag.Nodes["+ i +"].Result");
-				node.Attempt = _ctx.IntegerValue("GetWorkflowInstance.Data.WfInstanceDag.Nodes["+ i +"].Attempt");
-				node.Status = _ctx.IntegerValue("GetWorkflowInstance.Data.WfInstanceDag.Nodes["+ i +"].Status");
-				node.JobName = _ctx.StringValue("GetWorkflowInstance.Data.WfInstanceDag.Nodes["+ i +"].JobName");
-
-				wfInstanceDag_nodes.Add(node);
-			}
-			wfInstanceDag.Nodes = wfInstanceDag_nodes;
-
 			List<GetWorkflowInstanceResponse.GetWorkflowInstance_Data.GetWorkflowInstance_WfInstanceDag.GetWorkflowInstance_Edge> wfInstanceDag_edges = new List<GetWorkflowInstanceResponse.GetWorkflowInstance_Data.GetWorkflowInstance_WfInstanceDag.GetWorkflowInstance_Edge>();
 			for (int i = 0; i < _ctx.Length("GetWorkflowInstance.Data.WfInstanceDag.Edges.Length"); i++) {
 				GetWorkflowInstanceResponse.GetWorkflowInstance_Data.GetWorkflowInstance_WfInstanceDag.GetWorkflowInstance_Edge edge = new GetWorkflowInstanceResponse.GetWorkflowInstance_Data.GetWorkflowInstance_WfInstanceDag.GetWorkflowInstance_Edge();
-				edge.Source = _ctx.LongValue("GetWorkflowInstance.Data.WfInstanceDag.Edges["+ i +"].Source");
 				edge.Target = _ctx.LongValue("GetWorkflowInstance.Data.WfInstanceDag.Edges["+ i +"].Target");
+				edge.Source = _ctx.LongValue("GetWorkflowInstance.Data.WfInstanceDag.Edges["+ i +"].Source");
 
 				wfInstanceDag_edges.Add(edge);
 			}
 			wfInstanceDag.Edges = wfInstanceDag_edges;
+
+			List<GetWorkflowInstanceResponse.GetWorkflowInstance_Data.GetWorkflowInstance_WfInstanceDag.GetWorkflowInstance_Node> wfInstanceDag_nodes = new List<GetWorkflowInstanceResponse.GetWorkflowInstance_Data.GetWorkflowInstance_WfInstanceDag.GetWorkflowInstance_Node>();
+			for (int i = 0; i < _ctx.Length("GetWorkflowInstance.Data.WfInstanceDag.Nodes.Length"); i++) {
+				GetWorkflowInstanceResponse.GetWorkflowInstance_Data.GetWorkflowInstance_WfInstanceDag.GetWorkflowInstance_Node node = new GetWorkflowInstanceResponse.GetWorkflowInstance_Data.GetWorkflowInstance_WfInstanceDag.GetWorkflowInstance_Node();
+				node.Status = _ctx.IntegerValue("GetWorkflowInstance.Data.WfInstanceDag.Nodes["+ i +"].Status");
+				node.EndTime = _ctx.StringValue("GetWorkflowInstance.Data.WfInstanceDag.Nodes["+ i +"].EndTime");
+				node.ScheduleTime = _ctx.StringValue("GetWorkflowInstance.Data.WfInstanceDag.Nodes["+ i +"].ScheduleTime");
+				node.Attempt = _ctx.IntegerValue("GetWorkflowInstance.Data.WfInstanceDag.Nodes["+ i +"].Attempt");
+				node.JobInstanceId = _ctx.LongValue("GetWorkflowInstance.Data.WfInstanceDag.Nodes["+ i +"].JobInstanceId");
+				node.WorkAddr = _ctx.StringValue("GetWorkflowInstance.Data.WfInstanceDag.Nodes["+ i +"].WorkAddr");
+				node.StartTime = _ctx.StringValue("GetWorkflowInstance.Data.WfInstanceDag.Nodes["+ i +"].StartTime");
+				node.JobName = _ctx.StringValue("GetWorkflowInstance.Data.WfInstanceDag.Nodes["+ i +"].JobName");
+				node.DataTime = _ctx.StringValue("GetWorkflowInstance.Data.WfInstanceDag.Nodes["+ i +"].DataTime");
+				node.JobId = _ctx.LongValue("GetWorkflowInstance.Data.WfInstanceDag.Nodes["+ i +"].JobId");
+				node.Result = _ctx.StringValue("GetWorkflowInstance.Data.WfInstanceDag.Nodes["+ i +"].Result");
+
+				wfInstanceDag_nodes.Add(node);
+			}
+			wfInstanceDag.Nodes = wfInstanceDag_nodes;
 			data.WfInstanceDag = wfInstanceDag;
 			getWorkflowInstanceResponse.Data = data;
         

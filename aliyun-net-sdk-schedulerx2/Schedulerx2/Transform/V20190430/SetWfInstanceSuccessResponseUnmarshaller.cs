@@ -32,9 +32,9 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 
 			setWfInstanceSuccessResponse.HttpResponse = _ctx.HttpResponse;
 			setWfInstanceSuccessResponse.RequestId = _ctx.StringValue("SetWfInstanceSuccess.RequestId");
+			setWfInstanceSuccessResponse.Message = _ctx.StringValue("SetWfInstanceSuccess.Message");
 			setWfInstanceSuccessResponse.Code = _ctx.IntegerValue("SetWfInstanceSuccess.Code");
 			setWfInstanceSuccessResponse.Success = _ctx.BooleanValue("SetWfInstanceSuccess.Success");
-			setWfInstanceSuccessResponse.Message = _ctx.StringValue("SetWfInstanceSuccess.Message");
         
 			return setWfInstanceSuccessResponse;
         }

@@ -43,11 +43,11 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private string namespaceSource;
 
-		private string groupId;
-
 		private int? designateType;
 
 		private long? jobId;
+
+		private string groupId;
 
 		private string _namespace;
 
@@ -61,19 +61,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				namespaceSource = value;
 				DictionaryUtil.Add(QueryParameters, "NamespaceSource", value);
-			}
-		}
-
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
 			}
 		}
 
@@ -100,6 +87,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				jobId = value;
 				DictionaryUtil.Add(QueryParameters, "JobId", value.ToString());
+			}
+		}
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
 			}
 		}
 

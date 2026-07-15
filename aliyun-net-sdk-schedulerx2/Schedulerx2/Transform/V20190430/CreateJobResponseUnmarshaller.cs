@@ -31,9 +31,9 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			CreateJobResponse createJobResponse = new CreateJobResponse();
 
 			createJobResponse.HttpResponse = _ctx.HttpResponse;
-			createJobResponse.Code = _ctx.IntegerValue("CreateJob.Code");
 			createJobResponse.Message = _ctx.StringValue("CreateJob.Message");
 			createJobResponse.RequestId = _ctx.StringValue("CreateJob.RequestId");
+			createJobResponse.Code = _ctx.IntegerValue("CreateJob.Code");
 			createJobResponse.Success = _ctx.BooleanValue("CreateJob.Success");
 
 			CreateJobResponse.CreateJob_Data data = new CreateJobResponse.CreateJob_Data();

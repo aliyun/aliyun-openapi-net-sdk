@@ -31,9 +31,9 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			UpdateJobScriptResponse updateJobScriptResponse = new UpdateJobScriptResponse();
 
 			updateJobScriptResponse.HttpResponse = _ctx.HttpResponse;
-			updateJobScriptResponse.Code = _ctx.IntegerValue("UpdateJobScript.Code");
 			updateJobScriptResponse.Message = _ctx.StringValue("UpdateJobScript.Message");
 			updateJobScriptResponse.RequestId = _ctx.StringValue("UpdateJobScript.RequestId");
+			updateJobScriptResponse.Code = _ctx.IntegerValue("UpdateJobScript.Code");
 			updateJobScriptResponse.Success = _ctx.BooleanValue("UpdateJobScript.Success");
         
 			return updateJobScriptResponse;

@@ -31,9 +31,9 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			ListJobScriptHistoryResponse listJobScriptHistoryResponse = new ListJobScriptHistoryResponse();
 
 			listJobScriptHistoryResponse.HttpResponse = _ctx.HttpResponse;
-			listJobScriptHistoryResponse.Code = _ctx.IntegerValue("ListJobScriptHistory.Code");
 			listJobScriptHistoryResponse.Message = _ctx.StringValue("ListJobScriptHistory.Message");
 			listJobScriptHistoryResponse.RequestId = _ctx.StringValue("ListJobScriptHistory.RequestId");
+			listJobScriptHistoryResponse.Code = _ctx.IntegerValue("ListJobScriptHistory.Code");
 			listJobScriptHistoryResponse.Success = _ctx.BooleanValue("ListJobScriptHistory.Success");
 
 			ListJobScriptHistoryResponse.ListJobScriptHistory_Data data = new ListJobScriptHistoryResponse.ListJobScriptHistory_Data();
@@ -41,10 +41,10 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			List<ListJobScriptHistoryResponse.ListJobScriptHistory_Data.ListJobScriptHistory_JobScriptHistoryInfo> data_jobScriptHistoryInfos = new List<ListJobScriptHistoryResponse.ListJobScriptHistory_Data.ListJobScriptHistory_JobScriptHistoryInfo>();
 			for (int i = 0; i < _ctx.Length("ListJobScriptHistory.Data.JobScriptHistoryInfos.Length"); i++) {
 				ListJobScriptHistoryResponse.ListJobScriptHistory_Data.ListJobScriptHistory_JobScriptHistoryInfo jobScriptHistoryInfo = new ListJobScriptHistoryResponse.ListJobScriptHistory_Data.ListJobScriptHistory_JobScriptHistoryInfo();
+				jobScriptHistoryInfo.ScriptContent = _ctx.StringValue("ListJobScriptHistory.Data.JobScriptHistoryInfos["+ i +"].ScriptContent");
+				jobScriptHistoryInfo.CreateTime = _ctx.StringValue("ListJobScriptHistory.Data.JobScriptHistoryInfos["+ i +"].CreateTime");
 				jobScriptHistoryInfo.VersionesDescription = _ctx.StringValue("ListJobScriptHistory.Data.JobScriptHistoryInfos["+ i +"].VersionesDescription");
 				jobScriptHistoryInfo.Creator = _ctx.StringValue("ListJobScriptHistory.Data.JobScriptHistoryInfos["+ i +"].Creator");
-				jobScriptHistoryInfo.CreateTime = _ctx.StringValue("ListJobScriptHistory.Data.JobScriptHistoryInfos["+ i +"].CreateTime");
-				jobScriptHistoryInfo.ScriptContent = _ctx.StringValue("ListJobScriptHistory.Data.JobScriptHistoryInfos["+ i +"].ScriptContent");
 
 				data_jobScriptHistoryInfos.Add(jobScriptHistoryInfo);
 			}

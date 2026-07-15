@@ -25,25 +25,13 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 	public class GrantPermissionResponse : AcsResponse
 	{
 
-		private int? code;
-
 		private string message;
 
 		private string requestId;
 
-		private bool? success;
+		private int? code;
 
-		public int? Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+		private bool? success;
 
 		public string Message
 		{
@@ -66,6 +54,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 

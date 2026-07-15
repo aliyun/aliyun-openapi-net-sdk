@@ -31,9 +31,9 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			DisableWorkflowResponse disableWorkflowResponse = new DisableWorkflowResponse();
 
 			disableWorkflowResponse.HttpResponse = _ctx.HttpResponse;
-			disableWorkflowResponse.Code = _ctx.IntegerValue("DisableWorkflow.Code");
 			disableWorkflowResponse.Message = _ctx.StringValue("DisableWorkflow.Message");
 			disableWorkflowResponse.RequestId = _ctx.StringValue("DisableWorkflow.RequestId");
+			disableWorkflowResponse.Code = _ctx.IntegerValue("DisableWorkflow.Code");
 			disableWorkflowResponse.Success = _ctx.BooleanValue("DisableWorkflow.Success");
         
 			return disableWorkflowResponse;

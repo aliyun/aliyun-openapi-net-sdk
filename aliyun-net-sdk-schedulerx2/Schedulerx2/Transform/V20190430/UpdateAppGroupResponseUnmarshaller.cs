@@ -32,8 +32,8 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 
 			updateAppGroupResponse.HttpResponse = _ctx.HttpResponse;
 			updateAppGroupResponse.RequestId = _ctx.StringValue("UpdateAppGroup.RequestId");
-			updateAppGroupResponse.Code = _ctx.IntegerValue("UpdateAppGroup.Code");
 			updateAppGroupResponse.Message = _ctx.StringValue("UpdateAppGroup.Message");
+			updateAppGroupResponse.Code = _ctx.IntegerValue("UpdateAppGroup.Code");
 			updateAppGroupResponse.Success = _ctx.BooleanValue("UpdateAppGroup.Success");
         
 			return updateAppGroupResponse;

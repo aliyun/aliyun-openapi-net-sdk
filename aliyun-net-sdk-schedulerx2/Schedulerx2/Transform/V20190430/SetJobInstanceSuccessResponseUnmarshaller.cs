@@ -32,9 +32,9 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 
 			setJobInstanceSuccessResponse.HttpResponse = _ctx.HttpResponse;
 			setJobInstanceSuccessResponse.RequestId = _ctx.StringValue("SetJobInstanceSuccess.RequestId");
+			setJobInstanceSuccessResponse.Message = _ctx.StringValue("SetJobInstanceSuccess.Message");
 			setJobInstanceSuccessResponse.Code = _ctx.IntegerValue("SetJobInstanceSuccess.Code");
 			setJobInstanceSuccessResponse.Success = _ctx.BooleanValue("SetJobInstanceSuccess.Success");
-			setJobInstanceSuccessResponse.Message = _ctx.StringValue("SetJobInstanceSuccess.Message");
         
 			return setJobInstanceSuccessResponse;
         }

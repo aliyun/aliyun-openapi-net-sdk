@@ -31,9 +31,9 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			ListGroupsResponse listGroupsResponse = new ListGroupsResponse();
 
 			listGroupsResponse.HttpResponse = _ctx.HttpResponse;
-			listGroupsResponse.Code = _ctx.IntegerValue("ListGroups.Code");
 			listGroupsResponse.Message = _ctx.StringValue("ListGroups.Message");
 			listGroupsResponse.RequestId = _ctx.StringValue("ListGroups.RequestId");
+			listGroupsResponse.Code = _ctx.IntegerValue("ListGroups.Code");
 			listGroupsResponse.Success = _ctx.BooleanValue("ListGroups.Success");
 
 			ListGroupsResponse.ListGroups_Data data = new ListGroupsResponse.ListGroups_Data();
@@ -41,14 +41,15 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			List<ListGroupsResponse.ListGroups_Data.ListGroups_AppGroup> data_appGroups = new List<ListGroupsResponse.ListGroups_Data.ListGroups_AppGroup>();
 			for (int i = 0; i < _ctx.Length("ListGroups.Data.AppGroups.Length"); i++) {
 				ListGroupsResponse.ListGroups_Data.ListGroups_AppGroup appGroup = new ListGroupsResponse.ListGroups_Data.ListGroups_AppGroup();
-				appGroup.AppGroupId = _ctx.LongValue("ListGroups.Data.AppGroups["+ i +"].AppGroupId");
-				appGroup.AppName = _ctx.StringValue("ListGroups.Data.AppGroups["+ i +"].AppName");
-				appGroup.AppKey = _ctx.StringValue("ListGroups.Data.AppGroups["+ i +"].AppKey");
-				appGroup.Description = _ctx.StringValue("ListGroups.Data.AppGroups["+ i +"].Description");
-				appGroup.GroupId = _ctx.StringValue("ListGroups.Data.AppGroups["+ i +"].GroupId");
-				appGroup.Xattrs = _ctx.StringValue("ListGroups.Data.AppGroups["+ i +"].Xattrs");
 				appGroup.AppVersion = _ctx.IntegerValue("ListGroups.Data.AppGroups["+ i +"].AppVersion");
+				appGroup.Description = _ctx.StringValue("ListGroups.Data.AppGroups["+ i +"].Description");
+				appGroup.AppGroupId = _ctx.LongValue("ListGroups.Data.AppGroups["+ i +"].AppGroupId");
+				appGroup.AppKey = _ctx.StringValue("ListGroups.Data.AppGroups["+ i +"].AppKey");
+				appGroup.EnableLog = _ctx.BooleanValue("ListGroups.Data.AppGroups["+ i +"].EnableLog");
+				appGroup.Xattrs = _ctx.StringValue("ListGroups.Data.AppGroups["+ i +"].Xattrs");
 				appGroup._Namespace = _ctx.StringValue("ListGroups.Data.AppGroups["+ i +"].Namespace");
+				appGroup.AppName = _ctx.StringValue("ListGroups.Data.AppGroups["+ i +"].AppName");
+				appGroup.GroupId = _ctx.StringValue("ListGroups.Data.AppGroups["+ i +"].GroupId");
 
 				data_appGroups.Add(appGroup);
 			}

@@ -32,22 +32,22 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 
 			listWorkflowInstanceResponse.HttpResponse = _ctx.HttpResponse;
 			listWorkflowInstanceResponse.RequestId = _ctx.StringValue("ListWorkflowInstance.RequestId");
+			listWorkflowInstanceResponse.Message = _ctx.StringValue("ListWorkflowInstance.Message");
 			listWorkflowInstanceResponse.Code = _ctx.IntegerValue("ListWorkflowInstance.Code");
 			listWorkflowInstanceResponse.Success = _ctx.BooleanValue("ListWorkflowInstance.Success");
-			listWorkflowInstanceResponse.Message = _ctx.StringValue("ListWorkflowInstance.Message");
 
 			ListWorkflowInstanceResponse.ListWorkflowInstance_Data data = new ListWorkflowInstanceResponse.ListWorkflowInstance_Data();
 
 			List<ListWorkflowInstanceResponse.ListWorkflowInstance_Data.ListWorkflowInstance_WfInstanceInfosItem> data_wfInstanceInfos = new List<ListWorkflowInstanceResponse.ListWorkflowInstance_Data.ListWorkflowInstance_WfInstanceInfosItem>();
 			for (int i = 0; i < _ctx.Length("ListWorkflowInstance.Data.WfInstanceInfos.Length"); i++) {
 				ListWorkflowInstanceResponse.ListWorkflowInstance_Data.ListWorkflowInstance_WfInstanceInfosItem wfInstanceInfosItem = new ListWorkflowInstanceResponse.ListWorkflowInstance_Data.ListWorkflowInstance_WfInstanceInfosItem();
-				wfInstanceInfosItem.WfInstanceId = _ctx.LongValue("ListWorkflowInstance.Data.WfInstanceInfos["+ i +"].WfInstanceId");
-				wfInstanceInfosItem.WorkflowId = _ctx.LongValue("ListWorkflowInstance.Data.WfInstanceInfos["+ i +"].WorkflowId");
 				wfInstanceInfosItem.Status = _ctx.IntegerValue("ListWorkflowInstance.Data.WfInstanceInfos["+ i +"].Status");
-				wfInstanceInfosItem.StartTime = _ctx.StringValue("ListWorkflowInstance.Data.WfInstanceInfos["+ i +"].StartTime");
 				wfInstanceInfosItem.EndTime = _ctx.StringValue("ListWorkflowInstance.Data.WfInstanceInfos["+ i +"].EndTime");
 				wfInstanceInfosItem.ScheduleTime = _ctx.StringValue("ListWorkflowInstance.Data.WfInstanceInfos["+ i +"].ScheduleTime");
+				wfInstanceInfosItem.StartTime = _ctx.StringValue("ListWorkflowInstance.Data.WfInstanceInfos["+ i +"].StartTime");
 				wfInstanceInfosItem.DataTime = _ctx.StringValue("ListWorkflowInstance.Data.WfInstanceInfos["+ i +"].DataTime");
+				wfInstanceInfosItem.WfInstanceId = _ctx.LongValue("ListWorkflowInstance.Data.WfInstanceInfos["+ i +"].WfInstanceId");
+				wfInstanceInfosItem.WorkflowId = _ctx.LongValue("ListWorkflowInstance.Data.WfInstanceInfos["+ i +"].WorkflowId");
 
 				data_wfInstanceInfos.Add(wfInstanceInfosItem);
 			}

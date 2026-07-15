@@ -32,47 +32,47 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 
 			getWorkFlowResponse.HttpResponse = _ctx.HttpResponse;
 			getWorkFlowResponse.RequestId = _ctx.StringValue("GetWorkFlow.RequestId");
-			getWorkFlowResponse.Code = _ctx.IntegerValue("GetWorkFlow.Code");
 			getWorkFlowResponse.Message = _ctx.StringValue("GetWorkFlow.Message");
+			getWorkFlowResponse.Code = _ctx.IntegerValue("GetWorkFlow.Code");
 			getWorkFlowResponse.Success = _ctx.BooleanValue("GetWorkFlow.Success");
 
 			GetWorkFlowResponse.GetWorkFlow_Data data = new GetWorkFlowResponse.GetWorkFlow_Data();
 
-			GetWorkFlowResponse.GetWorkFlow_Data.GetWorkFlow_WorkFlowInfo workFlowInfo = new GetWorkFlowResponse.GetWorkFlow_Data.GetWorkFlow_WorkFlowInfo();
-			workFlowInfo.WorkflowId = _ctx.LongValue("GetWorkFlow.Data.WorkFlowInfo.WorkflowId");
-			workFlowInfo.Name = _ctx.StringValue("GetWorkFlow.Data.WorkFlowInfo.Name");
-			workFlowInfo.Description = _ctx.StringValue("GetWorkFlow.Data.WorkFlowInfo.Description");
-			workFlowInfo.Status = _ctx.StringValue("GetWorkFlow.Data.WorkFlowInfo.Status");
-			workFlowInfo.TimeType = _ctx.StringValue("GetWorkFlow.Data.WorkFlowInfo.TimeType");
-			workFlowInfo.TimeExpression = _ctx.StringValue("GetWorkFlow.Data.WorkFlowInfo.TimeExpression");
-			workFlowInfo.GroupId = _ctx.StringValue("GetWorkFlow.Data.WorkFlowInfo.GroupId");
-			workFlowInfo._Namespace = _ctx.StringValue("GetWorkFlow.Data.WorkFlowInfo.Namespace");
-			workFlowInfo.MaxConcurrency = _ctx.StringValue("GetWorkFlow.Data.WorkFlowInfo.MaxConcurrency");
-			data.WorkFlowInfo = workFlowInfo;
-
 			GetWorkFlowResponse.GetWorkFlow_Data.GetWorkFlow_WorkFlowNodeInfo workFlowNodeInfo = new GetWorkFlowResponse.GetWorkFlow_Data.GetWorkFlow_WorkFlowNodeInfo();
-
-			List<GetWorkFlowResponse.GetWorkFlow_Data.GetWorkFlow_WorkFlowNodeInfo.GetWorkFlow_Node> workFlowNodeInfo_nodes = new List<GetWorkFlowResponse.GetWorkFlow_Data.GetWorkFlow_WorkFlowNodeInfo.GetWorkFlow_Node>();
-			for (int i = 0; i < _ctx.Length("GetWorkFlow.Data.WorkFlowNodeInfo.Nodes.Length"); i++) {
-				GetWorkFlowResponse.GetWorkFlow_Data.GetWorkFlow_WorkFlowNodeInfo.GetWorkFlow_Node node = new GetWorkFlowResponse.GetWorkFlow_Data.GetWorkFlow_WorkFlowNodeInfo.GetWorkFlow_Node();
-				node.Id = _ctx.LongValue("GetWorkFlow.Data.WorkFlowNodeInfo.Nodes["+ i +"].Id");
-				node.Label = _ctx.StringValue("GetWorkFlow.Data.WorkFlowNodeInfo.Nodes["+ i +"].Label");
-				node.Status = _ctx.IntegerValue("GetWorkFlow.Data.WorkFlowNodeInfo.Nodes["+ i +"].Status");
-
-				workFlowNodeInfo_nodes.Add(node);
-			}
-			workFlowNodeInfo.Nodes = workFlowNodeInfo_nodes;
 
 			List<GetWorkFlowResponse.GetWorkFlow_Data.GetWorkFlow_WorkFlowNodeInfo.GetWorkFlow_Edge> workFlowNodeInfo_edges = new List<GetWorkFlowResponse.GetWorkFlow_Data.GetWorkFlow_WorkFlowNodeInfo.GetWorkFlow_Edge>();
 			for (int i = 0; i < _ctx.Length("GetWorkFlow.Data.WorkFlowNodeInfo.Edges.Length"); i++) {
 				GetWorkFlowResponse.GetWorkFlow_Data.GetWorkFlow_WorkFlowNodeInfo.GetWorkFlow_Edge edge = new GetWorkFlowResponse.GetWorkFlow_Data.GetWorkFlow_WorkFlowNodeInfo.GetWorkFlow_Edge();
-				edge.Source = _ctx.LongValue("GetWorkFlow.Data.WorkFlowNodeInfo.Edges["+ i +"].Source");
 				edge.Target = _ctx.LongValue("GetWorkFlow.Data.WorkFlowNodeInfo.Edges["+ i +"].Target");
+				edge.Source = _ctx.LongValue("GetWorkFlow.Data.WorkFlowNodeInfo.Edges["+ i +"].Source");
 
 				workFlowNodeInfo_edges.Add(edge);
 			}
 			workFlowNodeInfo.Edges = workFlowNodeInfo_edges;
+
+			List<GetWorkFlowResponse.GetWorkFlow_Data.GetWorkFlow_WorkFlowNodeInfo.GetWorkFlow_Node> workFlowNodeInfo_nodes = new List<GetWorkFlowResponse.GetWorkFlow_Data.GetWorkFlow_WorkFlowNodeInfo.GetWorkFlow_Node>();
+			for (int i = 0; i < _ctx.Length("GetWorkFlow.Data.WorkFlowNodeInfo.Nodes.Length"); i++) {
+				GetWorkFlowResponse.GetWorkFlow_Data.GetWorkFlow_WorkFlowNodeInfo.GetWorkFlow_Node node = new GetWorkFlowResponse.GetWorkFlow_Data.GetWorkFlow_WorkFlowNodeInfo.GetWorkFlow_Node();
+				node.Status = _ctx.IntegerValue("GetWorkFlow.Data.WorkFlowNodeInfo.Nodes["+ i +"].Status");
+				node.Label = _ctx.StringValue("GetWorkFlow.Data.WorkFlowNodeInfo.Nodes["+ i +"].Label");
+				node.Id = _ctx.LongValue("GetWorkFlow.Data.WorkFlowNodeInfo.Nodes["+ i +"].Id");
+
+				workFlowNodeInfo_nodes.Add(node);
+			}
+			workFlowNodeInfo.Nodes = workFlowNodeInfo_nodes;
 			data.WorkFlowNodeInfo = workFlowNodeInfo;
+
+			GetWorkFlowResponse.GetWorkFlow_Data.GetWorkFlow_WorkFlowInfo workFlowInfo = new GetWorkFlowResponse.GetWorkFlow_Data.GetWorkFlow_WorkFlowInfo();
+			workFlowInfo.Status = _ctx.StringValue("GetWorkFlow.Data.WorkFlowInfo.Status");
+			workFlowInfo.Description = _ctx.StringValue("GetWorkFlow.Data.WorkFlowInfo.Description");
+			workFlowInfo.MaxConcurrency = _ctx.StringValue("GetWorkFlow.Data.WorkFlowInfo.MaxConcurrency");
+			workFlowInfo.TimeExpression = _ctx.StringValue("GetWorkFlow.Data.WorkFlowInfo.TimeExpression");
+			workFlowInfo.WorkflowId = _ctx.LongValue("GetWorkFlow.Data.WorkFlowInfo.WorkflowId");
+			workFlowInfo._Namespace = _ctx.StringValue("GetWorkFlow.Data.WorkFlowInfo.Namespace");
+			workFlowInfo.Name = _ctx.StringValue("GetWorkFlow.Data.WorkFlowInfo.Name");
+			workFlowInfo.TimeType = _ctx.StringValue("GetWorkFlow.Data.WorkFlowInfo.TimeType");
+			workFlowInfo.GroupId = _ctx.StringValue("GetWorkFlow.Data.WorkFlowInfo.GroupId");
+			data.WorkFlowInfo = workFlowInfo;
 			getWorkFlowResponse.Data = data;
         
 			return getWorkFlowResponse;

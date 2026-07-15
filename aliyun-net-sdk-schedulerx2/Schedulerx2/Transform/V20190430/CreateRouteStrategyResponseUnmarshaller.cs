@@ -32,8 +32,8 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 
 			createRouteStrategyResponse.HttpResponse = _ctx.HttpResponse;
 			createRouteStrategyResponse.RequestId = _ctx.StringValue("CreateRouteStrategy.RequestId");
-			createRouteStrategyResponse.Code = _ctx.IntegerValue("CreateRouteStrategy.Code");
 			createRouteStrategyResponse.Message = _ctx.StringValue("CreateRouteStrategy.Message");
+			createRouteStrategyResponse.Code = _ctx.IntegerValue("CreateRouteStrategy.Code");
 			createRouteStrategyResponse.Success = _ctx.BooleanValue("CreateRouteStrategy.Success");
 
 			CreateRouteStrategyResponse.CreateRouteStrategy_Data data = new CreateRouteStrategyResponse.CreateRouteStrategy_Data();

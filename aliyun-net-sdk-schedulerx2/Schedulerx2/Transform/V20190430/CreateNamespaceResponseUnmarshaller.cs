@@ -32,8 +32,8 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 
 			createNamespaceResponse.HttpResponse = _ctx.HttpResponse;
 			createNamespaceResponse.RequestId = _ctx.StringValue("CreateNamespace.RequestId");
-			createNamespaceResponse.Code = _ctx.IntegerValue("CreateNamespace.Code");
 			createNamespaceResponse.Message = _ctx.StringValue("CreateNamespace.Message");
+			createNamespaceResponse.Code = _ctx.IntegerValue("CreateNamespace.Code");
 			createNamespaceResponse.Success = _ctx.BooleanValue("CreateNamespace.Success");
 
 			CreateNamespaceResponse.CreateNamespace_Data data = new CreateNamespaceResponse.CreateNamespace_Data();

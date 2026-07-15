@@ -27,13 +27,13 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private string requestId;
 
-		private int? code;
-
-		private bool? success;
-
 		private string message;
 
 		private string data;
+
+		private int? code;
+
+		private bool? success;
 
 		public string RequestId
 		{
@@ -44,30 +44,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
 			}
 		}
 
@@ -92,6 +68,30 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				data = value;
+			}
+		}
+
+		public int? Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

@@ -31,9 +31,9 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			BatchEnableJobsResponse batchEnableJobsResponse = new BatchEnableJobsResponse();
 
 			batchEnableJobsResponse.HttpResponse = _ctx.HttpResponse;
-			batchEnableJobsResponse.Code = _ctx.IntegerValue("BatchEnableJobs.Code");
 			batchEnableJobsResponse.Message = _ctx.StringValue("BatchEnableJobs.Message");
 			batchEnableJobsResponse.RequestId = _ctx.StringValue("BatchEnableJobs.RequestId");
+			batchEnableJobsResponse.Code = _ctx.IntegerValue("BatchEnableJobs.Code");
 			batchEnableJobsResponse.Success = _ctx.BooleanValue("BatchEnableJobs.Success");
         
 			return batchEnableJobsResponse;

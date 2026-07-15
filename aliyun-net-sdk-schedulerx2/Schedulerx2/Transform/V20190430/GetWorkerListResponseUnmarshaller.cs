@@ -32,8 +32,8 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 
 			getWorkerListResponse.HttpResponse = _ctx.HttpResponse;
 			getWorkerListResponse.RequestId = _ctx.StringValue("GetWorkerList.RequestId");
-			getWorkerListResponse.Code = _ctx.IntegerValue("GetWorkerList.Code");
 			getWorkerListResponse.Message = _ctx.StringValue("GetWorkerList.Message");
+			getWorkerListResponse.Code = _ctx.IntegerValue("GetWorkerList.Code");
 			getWorkerListResponse.Success = _ctx.BooleanValue("GetWorkerList.Success");
 
 			GetWorkerListResponse.GetWorkerList_Data data = new GetWorkerListResponse.GetWorkerList_Data();
@@ -41,11 +41,11 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			List<GetWorkerListResponse.GetWorkerList_Data.GetWorkerList_WorkerInfo> data_workerInfos = new List<GetWorkerListResponse.GetWorkerList_Data.GetWorkerList_WorkerInfo>();
 			for (int i = 0; i < _ctx.Length("GetWorkerList.Data.WorkerInfos.Length"); i++) {
 				GetWorkerListResponse.GetWorkerList_Data.GetWorkerList_WorkerInfo workerInfo = new GetWorkerListResponse.GetWorkerList_Data.GetWorkerList_WorkerInfo();
+				workerInfo.Version = _ctx.StringValue("GetWorkerList.Data.WorkerInfos["+ i +"].Version");
 				workerInfo.Ip = _ctx.StringValue("GetWorkerList.Data.WorkerInfos["+ i +"].Ip");
 				workerInfo.Port = _ctx.IntegerValue("GetWorkerList.Data.WorkerInfos["+ i +"].Port");
-				workerInfo.WorkerAddress = _ctx.StringValue("GetWorkerList.Data.WorkerInfos["+ i +"].WorkerAddress");
 				workerInfo.Label = _ctx.StringValue("GetWorkerList.Data.WorkerInfos["+ i +"].Label");
-				workerInfo.Version = _ctx.StringValue("GetWorkerList.Data.WorkerInfos["+ i +"].Version");
+				workerInfo.WorkerAddress = _ctx.StringValue("GetWorkerList.Data.WorkerInfos["+ i +"].WorkerAddress");
 				workerInfo.Starter = _ctx.StringValue("GetWorkerList.Data.WorkerInfos["+ i +"].Starter");
 
 				data_workerInfos.Add(workerInfo);

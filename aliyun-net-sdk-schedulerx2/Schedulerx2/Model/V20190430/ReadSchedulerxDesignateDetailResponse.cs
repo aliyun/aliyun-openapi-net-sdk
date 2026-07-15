@@ -25,29 +25,17 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 	public class ReadSchedulerxDesignateDetailResponse : AcsResponse
 	{
 
-		private int? code;
-
 		private string message;
 
 		private string requestId;
 
-		private bool? success;
+		private int? code;
 
-		private ReadSchedulerxDesignateDetail_Data data;
+		private bool? success;
 
 		private ReadSchedulerxDesignateDetail_AccessDeniedDetail accessDeniedDetail;
 
-		public int? Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+		private ReadSchedulerxDesignateDetail_Data data;
 
 		public string Message
 		{
@@ -73,6 +61,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
+		public int? Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
 		public bool? Success
 		{
 			get
@@ -82,6 +82,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public ReadSchedulerxDesignateDetail_AccessDeniedDetail AccessDeniedDetail
+		{
+			get
+			{
+				return accessDeniedDetail;
+			}
+			set	
+			{
+				accessDeniedDetail = value;
 			}
 		}
 
@@ -97,15 +109,105 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public ReadSchedulerxDesignateDetail_AccessDeniedDetail AccessDeniedDetail
+		public class ReadSchedulerxDesignateDetail_AccessDeniedDetail
 		{
-			get
+
+			private string policyType;
+
+			private string authPrincipalOwnerId;
+
+			private string encodedDiagnosticMessage;
+
+			private string authPrincipalType;
+
+			private string authPrincipalDisplayName;
+
+			private string noPermissionType;
+
+			private string authAction;
+
+			public string PolicyType
 			{
-				return accessDeniedDetail;
+				get
+				{
+					return policyType;
+				}
+				set	
+				{
+					policyType = value;
+				}
 			}
-			set	
+
+			public string AuthPrincipalOwnerId
 			{
-				accessDeniedDetail = value;
+				get
+				{
+					return authPrincipalOwnerId;
+				}
+				set	
+				{
+					authPrincipalOwnerId = value;
+				}
+			}
+
+			public string EncodedDiagnosticMessage
+			{
+				get
+				{
+					return encodedDiagnosticMessage;
+				}
+				set	
+				{
+					encodedDiagnosticMessage = value;
+				}
+			}
+
+			public string AuthPrincipalType
+			{
+				get
+				{
+					return authPrincipalType;
+				}
+				set	
+				{
+					authPrincipalType = value;
+				}
+			}
+
+			public string AuthPrincipalDisplayName
+			{
+				get
+				{
+					return authPrincipalDisplayName;
+				}
+				set	
+				{
+					authPrincipalDisplayName = value;
+				}
+			}
+
+			public string NoPermissionType
+			{
+				get
+				{
+					return noPermissionType;
+				}
+				set	
+				{
+					noPermissionType = value;
+				}
+			}
+
+			public string AuthAction
+			{
+				get
+				{
+					return authAction;
+				}
+				set	
+				{
+					authAction = value;
+				}
 			}
 		}
 
@@ -129,69 +231,21 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			public class ReadSchedulerxDesignateDetail_DesignateDetailVo
 			{
 
-				private bool? offline;
-
-				private int? size;
-
-				private string starter;
-
-				private string busy;
-
 				private bool? _checked;
 
 				private string version;
 
+				private int? size;
+
+				private string busy;
+
+				private bool? offline;
+
+				private string starter;
+
 				private string key;
 
 				private ReadSchedulerxDesignateDetail_Metrics metrics;
-
-				public bool? Offline
-				{
-					get
-					{
-						return offline;
-					}
-					set	
-					{
-						offline = value;
-					}
-				}
-
-				public int? Size
-				{
-					get
-					{
-						return size;
-					}
-					set	
-					{
-						size = value;
-					}
-				}
-
-				public string Starter
-				{
-					get
-					{
-						return starter;
-					}
-					set	
-					{
-						starter = value;
-					}
-				}
-
-				public string Busy
-				{
-					get
-					{
-						return busy;
-					}
-					set	
-					{
-						busy = value;
-					}
-				}
 
 				public bool? _Checked
 				{
@@ -214,6 +268,54 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					set	
 					{
 						version = value;
+					}
+				}
+
+				public int? Size
+				{
+					get
+					{
+						return size;
+					}
+					set	
+					{
+						size = value;
+					}
+				}
+
+				public string Busy
+				{
+					get
+					{
+						return busy;
+					}
+					set	
+					{
+						busy = value;
+					}
+				}
+
+				public bool? Offline
+				{
+					get
+					{
+						return offline;
+					}
+					set	
+					{
+						offline = value;
+					}
+				}
+
+				public string Starter
+				{
+					get
+					{
+						return starter;
+					}
+					set	
+					{
+						starter = value;
 					}
 				}
 
@@ -244,31 +346,91 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 				public class ReadSchedulerxDesignateDetail_Metrics
 				{
 
+					private int? sharePoolAvailableSize;
+
+					private double? heap1Usage;
+
+					private double? diskUsage;
+
+					private int? cpuProcessors;
+
+					private double? heap1Used;
+
 					private double? cpuLoad1;
 
 					private double? cpuLoad5;
 
-					private int? cpuProcessors;
+					private long? execCount;
 
-					private double? heap1Usage;
-
-					private double? heap5Usage;
-
-					private double? heap1Used;
+					private int? sharePoolQueueSize;
 
 					private int? heapMax;
-
-					private double? diskUsage;
 
 					private int? diskUsed;
 
 					private int? diskMax;
 
-					private int? sharePoolQueueSize;
+					private double? heap5Usage;
 
-					private int? sharePoolAvailableSize;
+					public int? SharePoolAvailableSize
+					{
+						get
+						{
+							return sharePoolAvailableSize;
+						}
+						set	
+						{
+							sharePoolAvailableSize = value;
+						}
+					}
 
-					private long? execCount;
+					public double? Heap1Usage
+					{
+						get
+						{
+							return heap1Usage;
+						}
+						set	
+						{
+							heap1Usage = value;
+						}
+					}
+
+					public double? DiskUsage
+					{
+						get
+						{
+							return diskUsage;
+						}
+						set	
+						{
+							diskUsage = value;
+						}
+					}
+
+					public int? CpuProcessors
+					{
+						get
+						{
+							return cpuProcessors;
+						}
+						set	
+						{
+							cpuProcessors = value;
+						}
+					}
+
+					public double? Heap1Used
+					{
+						get
+						{
+							return heap1Used;
+						}
+						set	
+						{
+							heap1Used = value;
+						}
+					}
 
 					public double? CpuLoad1
 					{
@@ -294,51 +456,27 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 						}
 					}
 
-					public int? CpuProcessors
+					public long? ExecCount
 					{
 						get
 						{
-							return cpuProcessors;
+							return execCount;
 						}
 						set	
 						{
-							cpuProcessors = value;
+							execCount = value;
 						}
 					}
 
-					public double? Heap1Usage
+					public int? SharePoolQueueSize
 					{
 						get
 						{
-							return heap1Usage;
+							return sharePoolQueueSize;
 						}
 						set	
 						{
-							heap1Usage = value;
-						}
-					}
-
-					public double? Heap5Usage
-					{
-						get
-						{
-							return heap5Usage;
-						}
-						set	
-						{
-							heap5Usage = value;
-						}
-					}
-
-					public double? Heap1Used
-					{
-						get
-						{
-							return heap1Used;
-						}
-						set	
-						{
-							heap1Used = value;
+							sharePoolQueueSize = value;
 						}
 					}
 
@@ -351,18 +489,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 						set	
 						{
 							heapMax = value;
-						}
-					}
-
-					public double? DiskUsage
-					{
-						get
-						{
-							return diskUsage;
-						}
-						set	
-						{
-							diskUsage = value;
 						}
 					}
 
@@ -390,143 +516,17 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 						}
 					}
 
-					public int? SharePoolQueueSize
+					public double? Heap5Usage
 					{
 						get
 						{
-							return sharePoolQueueSize;
+							return heap5Usage;
 						}
 						set	
 						{
-							sharePoolQueueSize = value;
+							heap5Usage = value;
 						}
 					}
-
-					public int? SharePoolAvailableSize
-					{
-						get
-						{
-							return sharePoolAvailableSize;
-						}
-						set	
-						{
-							sharePoolAvailableSize = value;
-						}
-					}
-
-					public long? ExecCount
-					{
-						get
-						{
-							return execCount;
-						}
-						set	
-						{
-							execCount = value;
-						}
-					}
-				}
-			}
-		}
-
-		public class ReadSchedulerxDesignateDetail_AccessDeniedDetail
-		{
-
-			private string authAction;
-
-			private string authPrincipalDisplayName;
-
-			private string authPrincipalOwnerId;
-
-			private string authPrincipalType;
-
-			private string encodedDiagnosticMessage;
-
-			private string noPermissionType;
-
-			private string policyType;
-
-			public string AuthAction
-			{
-				get
-				{
-					return authAction;
-				}
-				set	
-				{
-					authAction = value;
-				}
-			}
-
-			public string AuthPrincipalDisplayName
-			{
-				get
-				{
-					return authPrincipalDisplayName;
-				}
-				set	
-				{
-					authPrincipalDisplayName = value;
-				}
-			}
-
-			public string AuthPrincipalOwnerId
-			{
-				get
-				{
-					return authPrincipalOwnerId;
-				}
-				set	
-				{
-					authPrincipalOwnerId = value;
-				}
-			}
-
-			public string AuthPrincipalType
-			{
-				get
-				{
-					return authPrincipalType;
-				}
-				set	
-				{
-					authPrincipalType = value;
-				}
-			}
-
-			public string EncodedDiagnosticMessage
-			{
-				get
-				{
-					return encodedDiagnosticMessage;
-				}
-				set	
-				{
-					encodedDiagnosticMessage = value;
-				}
-			}
-
-			public string NoPermissionType
-			{
-				get
-				{
-					return noPermissionType;
-				}
-				set	
-				{
-					noPermissionType = value;
-				}
-			}
-
-			public string PolicyType
-			{
-				get
-				{
-					return policyType;
-				}
-				set	
-				{
-					policyType = value;
 				}
 			}
 		}

@@ -48,6 +48,8 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private string description;
 
+		private string notificationPolicyName;
+
 		private string appName;
 
 		private string monitorContactsJson;
@@ -117,6 +119,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string NotificationPolicyName
+		{
+			get
+			{
+				return notificationPolicyName;
+			}
+			set	
+			{
+				notificationPolicyName = value;
+				DictionaryUtil.Add(QueryParameters, "NotificationPolicyName", value);
 			}
 		}
 

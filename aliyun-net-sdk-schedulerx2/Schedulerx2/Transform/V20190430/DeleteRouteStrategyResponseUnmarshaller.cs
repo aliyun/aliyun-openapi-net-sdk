@@ -31,9 +31,9 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			DeleteRouteStrategyResponse deleteRouteStrategyResponse = new DeleteRouteStrategyResponse();
 
 			deleteRouteStrategyResponse.HttpResponse = _ctx.HttpResponse;
-			deleteRouteStrategyResponse.Code = _ctx.IntegerValue("DeleteRouteStrategy.Code");
 			deleteRouteStrategyResponse.Message = _ctx.StringValue("DeleteRouteStrategy.Message");
 			deleteRouteStrategyResponse.RequestId = _ctx.StringValue("DeleteRouteStrategy.RequestId");
+			deleteRouteStrategyResponse.Code = _ctx.IntegerValue("DeleteRouteStrategy.Code");
 			deleteRouteStrategyResponse.Success = _ctx.BooleanValue("DeleteRouteStrategy.Success");
         
 			return deleteRouteStrategyResponse;

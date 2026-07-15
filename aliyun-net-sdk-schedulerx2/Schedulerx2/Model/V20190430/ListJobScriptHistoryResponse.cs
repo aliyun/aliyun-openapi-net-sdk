@@ -25,27 +25,15 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 	public class ListJobScriptHistoryResponse : AcsResponse
 	{
 
-		private int? code;
-
 		private string message;
 
 		private string requestId;
 
+		private int? code;
+
 		private bool? success;
 
 		private ListJobScriptHistory_Data data;
-
-		public int? Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
 
 		public string Message
 		{
@@ -68,6 +56,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -115,13 +115,37 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			public class ListJobScriptHistory_JobScriptHistoryInfo
 			{
 
+				private string scriptContent;
+
+				private string createTime;
+
 				private string versionesDescription;
 
 				private string creator;
 
-				private string createTime;
+				public string ScriptContent
+				{
+					get
+					{
+						return scriptContent;
+					}
+					set	
+					{
+						scriptContent = value;
+					}
+				}
 
-				private string scriptContent;
+				public string CreateTime
+				{
+					get
+					{
+						return createTime;
+					}
+					set	
+					{
+						createTime = value;
+					}
+				}
 
 				public string VersionesDescription
 				{
@@ -144,30 +168,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					set	
 					{
 						creator = value;
-					}
-				}
-
-				public string CreateTime
-				{
-					get
-					{
-						return createTime;
-					}
-					set	
-					{
-						createTime = value;
-					}
-				}
-
-				public string ScriptContent
-				{
-					get
-					{
-						return scriptContent;
-					}
-					set	
-					{
-						scriptContent = value;
 					}
 				}
 			}

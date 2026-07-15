@@ -41,11 +41,15 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private string namespaceSource;
 
+		private int? pageNum;
+
+		private int? pageSize;
+
+		private string jobName;
+
 		private string groupId;
 
 		private string _namespace;
-
-		private string jobName;
 
 		private string status;
 
@@ -59,6 +63,45 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				namespaceSource = value;
 				DictionaryUtil.Add(QueryParameters, "NamespaceSource", value);
+			}
+		}
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string JobName
+		{
+			get
+			{
+				return jobName;
+			}
+			set	
+			{
+				jobName = value;
+				DictionaryUtil.Add(QueryParameters, "JobName", value);
 			}
 		}
 
@@ -85,19 +128,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				_namespace = value;
 				DictionaryUtil.Add(QueryParameters, "Namespace", value);
-			}
-		}
-
-		public string JobName
-		{
-			get
-			{
-				return jobName;
-			}
-			set	
-			{
-				jobName = value;
-				DictionaryUtil.Add(QueryParameters, "JobName", value);
 			}
 		}
 

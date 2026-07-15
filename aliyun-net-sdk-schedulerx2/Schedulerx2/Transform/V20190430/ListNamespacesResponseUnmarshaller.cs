@@ -31,9 +31,9 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			ListNamespacesResponse listNamespacesResponse = new ListNamespacesResponse();
 
 			listNamespacesResponse.HttpResponse = _ctx.HttpResponse;
-			listNamespacesResponse.Code = _ctx.IntegerValue("ListNamespaces.Code");
 			listNamespacesResponse.Message = _ctx.StringValue("ListNamespaces.Message");
 			listNamespacesResponse.RequestId = _ctx.StringValue("ListNamespaces.RequestId");
+			listNamespacesResponse.Code = _ctx.IntegerValue("ListNamespaces.Code");
 			listNamespacesResponse.Success = _ctx.BooleanValue("ListNamespaces.Success");
 
 			ListNamespacesResponse.ListNamespaces_Data data = new ListNamespacesResponse.ListNamespaces_Data();
@@ -41,9 +41,9 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			List<ListNamespacesResponse.ListNamespaces_Data.ListNamespaces__Namespace> data_namespaces = new List<ListNamespacesResponse.ListNamespaces_Data.ListNamespaces__Namespace>();
 			for (int i = 0; i < _ctx.Length("ListNamespaces.Data.Namespaces.Length"); i++) {
 				ListNamespacesResponse.ListNamespaces_Data.ListNamespaces__Namespace _namespace = new ListNamespacesResponse.ListNamespaces_Data.ListNamespaces__Namespace();
-				_namespace.Name = _ctx.StringValue("ListNamespaces.Data.Namespaces["+ i +"].Name");
-				_namespace.Description = _ctx.StringValue("ListNamespaces.Data.Namespaces["+ i +"].Description");
 				_namespace.UId = _ctx.StringValue("ListNamespaces.Data.Namespaces["+ i +"].UId");
+				_namespace.Description = _ctx.StringValue("ListNamespaces.Data.Namespaces["+ i +"].Description");
+				_namespace.Name = _ctx.StringValue("ListNamespaces.Data.Namespaces["+ i +"].Name");
 
 				data_namespaces.Add(_namespace);
 			}

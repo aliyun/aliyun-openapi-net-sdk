@@ -27,9 +27,9 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private string requestId;
 
-		private int? code;
-
 		private string message;
+
+		private int? code;
 
 		private bool? success;
 
@@ -47,18 +47,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public int? Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
 		public string Message
 		{
 			get
@@ -68,6 +56,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public int? Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -98,25 +98,25 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 		public class GetAppGroup_Data
 		{
 
-			private string appName;
-
 			private string description;
-
-			private int? maxJobs;
-
-			private string groupId;
-
-			private string alarmJson;
-
-			private string metricsThresholdJson;
-
-			private string monitorConfigJson;
-
-			private int? maxConcurrency;
 
 			private int? curJobs;
 
-			private int? runningInstanceNum;
+			private int? maxConcurrency;
+
+			private string monitorContactsJson;
+
+			private bool? enableLog;
+
+			private string _namespace;
+
+			private string appName;
+
+			private string groupId;
+
+			private string appVersion;
+
+			private string monitorConfigJson;
 
 			private int? readyInstanceNum;
 
@@ -124,25 +124,17 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 			private string appKey;
 
+			private string metricsThresholdJson;
+
+			private string notificationPolicyName;
+
+			private int? runningInstanceNum;
+
 			private string xattrs;
 
-			private string appVersion;
+			private int? maxJobs;
 
-			private string _namespace;
-
-			private string monitorContactsJson;
-
-			public string AppName
-			{
-				get
-				{
-					return appName;
-				}
-				set	
-				{
-					appName = value;
-				}
-			}
+			private string alarmJson;
 
 			public string Description
 			{
@@ -153,78 +145,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 				set	
 				{
 					description = value;
-				}
-			}
-
-			public int? MaxJobs
-			{
-				get
-				{
-					return maxJobs;
-				}
-				set	
-				{
-					maxJobs = value;
-				}
-			}
-
-			public string GroupId
-			{
-				get
-				{
-					return groupId;
-				}
-				set	
-				{
-					groupId = value;
-				}
-			}
-
-			public string AlarmJson
-			{
-				get
-				{
-					return alarmJson;
-				}
-				set	
-				{
-					alarmJson = value;
-				}
-			}
-
-			public string MetricsThresholdJson
-			{
-				get
-				{
-					return metricsThresholdJson;
-				}
-				set	
-				{
-					metricsThresholdJson = value;
-				}
-			}
-
-			public string MonitorConfigJson
-			{
-				get
-				{
-					return monitorConfigJson;
-				}
-				set	
-				{
-					monitorConfigJson = value;
-				}
-			}
-
-			public int? MaxConcurrency
-			{
-				get
-				{
-					return maxConcurrency;
-				}
-				set	
-				{
-					maxConcurrency = value;
 				}
 			}
 
@@ -240,15 +160,99 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 				}
 			}
 
-			public int? RunningInstanceNum
+			public int? MaxConcurrency
 			{
 				get
 				{
-					return runningInstanceNum;
+					return maxConcurrency;
 				}
 				set	
 				{
-					runningInstanceNum = value;
+					maxConcurrency = value;
+				}
+			}
+
+			public string MonitorContactsJson
+			{
+				get
+				{
+					return monitorContactsJson;
+				}
+				set	
+				{
+					monitorContactsJson = value;
+				}
+			}
+
+			public bool? EnableLog
+			{
+				get
+				{
+					return enableLog;
+				}
+				set	
+				{
+					enableLog = value;
+				}
+			}
+
+			public string _Namespace
+			{
+				get
+				{
+					return _namespace;
+				}
+				set	
+				{
+					_namespace = value;
+				}
+			}
+
+			public string AppName
+			{
+				get
+				{
+					return appName;
+				}
+				set	
+				{
+					appName = value;
+				}
+			}
+
+			public string GroupId
+			{
+				get
+				{
+					return groupId;
+				}
+				set	
+				{
+					groupId = value;
+				}
+			}
+
+			public string AppVersion
+			{
+				get
+				{
+					return appVersion;
+				}
+				set	
+				{
+					appVersion = value;
+				}
+			}
+
+			public string MonitorConfigJson
+			{
+				get
+				{
+					return monitorConfigJson;
+				}
+				set	
+				{
+					monitorConfigJson = value;
 				}
 			}
 
@@ -288,6 +292,42 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 				}
 			}
 
+			public string MetricsThresholdJson
+			{
+				get
+				{
+					return metricsThresholdJson;
+				}
+				set	
+				{
+					metricsThresholdJson = value;
+				}
+			}
+
+			public string NotificationPolicyName
+			{
+				get
+				{
+					return notificationPolicyName;
+				}
+				set	
+				{
+					notificationPolicyName = value;
+				}
+			}
+
+			public int? RunningInstanceNum
+			{
+				get
+				{
+					return runningInstanceNum;
+				}
+				set	
+				{
+					runningInstanceNum = value;
+				}
+			}
+
 			public string Xattrs
 			{
 				get
@@ -300,39 +340,27 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 				}
 			}
 
-			public string AppVersion
+			public int? MaxJobs
 			{
 				get
 				{
-					return appVersion;
+					return maxJobs;
 				}
 				set	
 				{
-					appVersion = value;
+					maxJobs = value;
 				}
 			}
 
-			public string _Namespace
+			public string AlarmJson
 			{
 				get
 				{
-					return _namespace;
+					return alarmJson;
 				}
 				set	
 				{
-					_namespace = value;
-				}
-			}
-
-			public string MonitorContactsJson
-			{
-				get
-				{
-					return monitorContactsJson;
-				}
-				set	
-				{
-					monitorContactsJson = value;
+					alarmJson = value;
 				}
 			}
 		}
