@@ -85,17 +85,16 @@ namespace Aliyun.Acs.Core.Auth
                     ex.ErrorMessage != null && ex.ErrorMessage.Equals("Current session token has expired."))
                 {
                     CommonLog.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
-                    throw new ClientException(ex.ErrorCode, ex.ErrorMessage);
                 }
-
+                
                 // Use the current expiring session token and wait for next round
                 if (credentials != null)
                 {
                     credentials.SetLastFailedRefreshTime();
+                    return credentials;
                 }
+                throw;
             }
-
-            return credentials;
         }
 
         public void withFetcher(ECSMetadataServiceCredentialsFetcher fetcher)
@@ -134,7 +133,7 @@ namespace Aliyun.Acs.Core.Auth
                 this.readTimeout = readTimeout;
                 return this;
             }
-
+            
             public InstanceProfileCredentialsProvider Build()
             {
                 return new InstanceProfileCredentialsProvider(this);

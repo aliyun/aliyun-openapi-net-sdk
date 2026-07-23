@@ -18,6 +18,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using Aliyun.Acs.Core.Exceptions;
@@ -43,6 +44,14 @@ namespace Aliyun.Acs.Core.Auth.Provider
         private string oidcProviderArn;
         private string oidcTokenFile;
 
+        private readonly List<AlibabaCloudCredentialsProvider> UserConfigurationProviders =
+            new List<AlibabaCloudCredentialsProvider>();
+
+
+        private volatile AlibabaCloudCredentialsProvider lastUsedCredentialsProvider;
+
+        private readonly bool reuseLastProviderEnabled;
+
         public DefaultCredentialProvider()
         {
             accessKeyId = EnvironmentUtil.GetEnvironmentAccessKeyId();
@@ -53,16 +62,42 @@ namespace Aliyun.Acs.Core.Auth.Provider
             roleArn = EnvironmentUtil.GetEnvironmentRoleArn();
             oidcProviderArn = EnvironmentUtil.GetEnvironmentOIDCProviderArn();
             oidcTokenFile = EnvironmentUtil.GetEnvironmentOIDCTokenFile();
+            this.reuseLastProviderEnabled = true;
+            CreateDefaultChain();
+        }
+        
+        public DefaultCredentialProvider(bool reuseLastProviderEnabled)
+        {
+            accessKeyId = EnvironmentUtil.GetEnvironmentAccessKeyId();
+            accessKeySecret = EnvironmentUtil.GetEnvironmentAccessKeySecret();
+            regionId = EnvironmentUtil.GetEnvironmentRegionId();
+            credentialFileLocation = EnvironmentUtil.GetEnvironmentCredentialFile();
+            roleName = EnvironmentUtil.GetEnvironmentRoleName();
+            roleArn = EnvironmentUtil.GetEnvironmentRoleArn();
+            oidcProviderArn = EnvironmentUtil.GetEnvironmentOIDCProviderArn();
+            oidcTokenFile = EnvironmentUtil.GetEnvironmentOIDCTokenFile();
+            this.reuseLastProviderEnabled = reuseLastProviderEnabled;
+            CreateDefaultChain();
         }
 
         [Obsolete]
         public DefaultCredentialProvider(
             IClientProfile profile,
             AlibabaCloudCredentialsProvider alibabaCloudCredentialProvider
-        ) : this()
+        )
         {
+            accessKeyId = EnvironmentUtil.GetEnvironmentAccessKeyId();
+            accessKeySecret = EnvironmentUtil.GetEnvironmentAccessKeySecret();
+            regionId = EnvironmentUtil.GetEnvironmentRegionId();
+            credentialFileLocation = EnvironmentUtil.GetEnvironmentCredentialFile();
+            roleName = EnvironmentUtil.GetEnvironmentRoleName();
+            roleArn = EnvironmentUtil.GetEnvironmentRoleArn();
+            oidcProviderArn = EnvironmentUtil.GetEnvironmentOIDCProviderArn();
+            oidcTokenFile = EnvironmentUtil.GetEnvironmentOIDCTokenFile();
+            this.reuseLastProviderEnabled = true;
             defaultProfile = profile;
             this.alibabaCloudCredentialProvider = alibabaCloudCredentialProvider;
+            CreateDefaultChain();
         }
 
         [Obsolete]
@@ -71,10 +106,86 @@ namespace Aliyun.Acs.Core.Auth.Provider
             string publicKeyId,
             string privateKeyFile,
             AlibabaCloudCredentialsProvider alibabaCloudCredentialsProvider
-        ) : this(profile, alibabaCloudCredentialsProvider)
+        )
         {
+            accessKeyId = EnvironmentUtil.GetEnvironmentAccessKeyId();
+            accessKeySecret = EnvironmentUtil.GetEnvironmentAccessKeySecret();
+            regionId = EnvironmentUtil.GetEnvironmentRegionId();
+            credentialFileLocation = EnvironmentUtil.GetEnvironmentCredentialFile();
+            roleName = EnvironmentUtil.GetEnvironmentRoleName();
+            roleArn = EnvironmentUtil.GetEnvironmentRoleArn();
+            oidcProviderArn = EnvironmentUtil.GetEnvironmentOIDCProviderArn();
+            oidcTokenFile = EnvironmentUtil.GetEnvironmentOIDCTokenFile();
+            this.reuseLastProviderEnabled = true;
+            defaultProfile = profile;
+            this.alibabaCloudCredentialProvider = alibabaCloudCredentialsProvider;
             this.privateKeyFile = privateKeyFile;
             this.publicKeyId = publicKeyId;
+            CreateDefaultChain();
+        }
+
+        private void CreateDefaultChain()
+        {
+            if (alibabaCloudCredentialProvider != null)
+            {
+                UserConfigurationProviders.Add(alibabaCloudCredentialProvider);
+            }
+            UserConfigurationProviders.Add(new EnvironmentVariableCredentialsProvider());
+            if (!string.IsNullOrEmpty(this.oidcProviderArn)
+                && !string.IsNullOrEmpty(this.roleArn)
+                && !string.IsNullOrEmpty(this.oidcTokenFile))
+            {
+                UserConfigurationProviders.Add(new OIDCCredentialsProvider.Builder()
+                    .RoleArn(this.roleArn)
+                    .OIDCProviderArn(this.oidcProviderArn)
+                    .OIDCTokenFilePath(this.oidcTokenFile)
+                    .Build());
+            }
+
+            UserConfigurationProviders.Add(new CLIProfileCredentialsProvider());
+            UserConfigurationProviders.Add(new ProfileCredentialsProvider(defaultProfile,
+                alibabaCloudCredentialProvider));
+            var metadataDisabled = AuthUtils.EnvironmentEcsMetaDataDisabled ?? "";
+            if (metadataDisabled.ToLower() != "true")
+            {
+                UserConfigurationProviders.Add(new InstanceProfileCredentialsProvider.Builder().RoleName(roleName)
+                    .Build());
+            }
+
+            var uri = AuthUtils.EnvironmentCredentialsURI;
+            if (!string.IsNullOrEmpty(uri))
+            {
+                UserConfigurationProviders.Add(new URLCredentialProvider.Builder().CredentialsURI(uri).Build());
+            }
+        }
+
+        public AlibabaCloudCredentials GetCredentials()
+        {
+            if (this.reuseLastProviderEnabled && this.lastUsedCredentialsProvider != null)
+            {
+                return this.lastUsedCredentialsProvider.GetCredentials();
+            }
+
+            AlibabaCloudCredentials credentials;
+            var errorMessages = new List<string>();
+            foreach (AlibabaCloudCredentialsProvider provider in UserConfigurationProviders)
+            {
+                try
+                {
+                    credentials = provider.GetCredentials();
+                    if (credentials != null)
+                    {
+                        this.lastUsedCredentialsProvider = provider;
+                        return credentials;
+                    }
+                }
+                catch (Exception e)
+                {
+                    errorMessages.Add( provider.GetType().Name + ": " + e.Message);
+                }
+            }
+
+            throw new ClientException("There is no credential chain can use: [" + string.Join(", ", errorMessages) + "]");
         }
 
         public AlibabaCloudCredentials GetAlibabaCloudClientCredential()
@@ -98,7 +209,13 @@ namespace Aliyun.Acs.Core.Auth.Provider
             {
                 return null;
             }
-            return new OIDCCredentialsProvider(roleArn, oidcProviderArn, oidcTokenFile, null, regionId).GetCredentials();
+
+            var provider = new OIDCCredentialsProvider.Builder()
+                .RoleArn(roleArn)
+                .OIDCProviderArn(oidcProviderArn)
+                .OIDCTokenFilePath(oidcTokenFile)
+                .Build();
+            return provider.GetCredentials();
         }
 
         public AlibabaCloudCredentials GetEnvironmentAlibabaCloudCredential()
@@ -316,21 +433,6 @@ namespace Aliyun.Acs.Core.Auth.Provider
         public virtual string GetHomePath()
         {
             return EnvironmentUtil.GetHomePath();
-        }
-
-        public AlibabaCloudCredentials GetCredentials()
-        {
-            var credential = GetEnvironmentAlibabaCloudCredential() ??
-                             GetOIDCAlibabaCloudCredential() ??
-                             GetCredentialFileAlibabaCloudCredential() ??
-                             GetInstanceRamRoleAlibabaCloudCredential();
-
-            if (credential == null)
-            {
-                throw new ClientException("There is no credential chain can use.");
-            }
-
-            return credential;
         }
     }
 }

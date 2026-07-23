@@ -34,6 +34,22 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
 {
     public class DefaultCredentialProviderTest
     {
+        [Fact]
+        public void GetCredentials()
+        {
+            var provider = new DefaultCredentialProvider(false);
+            Assert.NotNull(provider);
+            Assert.Throws<ClientException>(() => { provider.GetCredentials(); });
+
+            var testProvider = new STSAssumeRoleSessionCredentialsProvider.Builder()
+                .AccessKeyId("accessKeyId2")
+                .AccessKeySecret("accessKeySecret")
+                .RoleArn("roleArn")
+                .Build();
+
+            new DefaultCredentialProvider(null, testProvider);
+
+        }
         /*
         Case: Should throw ClientException("There is no credential chain can use")
          */
@@ -62,7 +78,11 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
                 var credential = defaultProvider.GetCredentials();
             });
 
-            Assert.Equal("There is no credential chain can use.", exception.Message);
+            var mes = exception.Message;
+            Assert.Contains("There is no credential chain can use: [EnvironmentVariableCredentialsProvider: Environment variable accessKeyId cannot be empty,", exception.Message);
+            Assert.Contains("CLIProfileCredentialsProvider: Unable to open credentials file: ", exception.Message);
+            Assert.Contains("ProfileCredentialsProvider: Unable to open credentials file: ", exception.Message);
+            Assert.Contains("InstanceProfileCredentialsProvider: Failed to get RAM session credentials from ECS metadata service. Reason: Aliyun.Acs.Core.Exceptions.ClientException: SDK.WebException : HttpWebRequest WebException occured, ", exception.Message);
         }
 
         /*
@@ -126,7 +146,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
 
             TestHelper.DeleteIniFile();
 
-            Assert.Equal("Access key ID cannot be null.", exception.Message);
+            Assert.Contains("Access key ID cannot be null.", exception.Message);
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_ROLE_ARN", cacheRoleArn);
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_PROVIDER_ARN", cacheProviderArn);
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_OIDC_TOKEN_FILE", cacheFile);
@@ -217,7 +237,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             mockDefaultCredentialProvider.Setup(x => x.GetInstanceRamRoleAlibabaCloudCredential())
                 .Returns(ecsRamRoleCredential);
             mockDefaultCredentialProvider.Setup(x => x.GetHomePath()).Returns(mockHomePath);
-
+            
             var defaultCredentialProvider = mockDefaultCredentialProvider.Object;
             var credential = (InstanceProfileCredentials)defaultCredentialProvider.GetAlibabaCloudClientCredential();
 
