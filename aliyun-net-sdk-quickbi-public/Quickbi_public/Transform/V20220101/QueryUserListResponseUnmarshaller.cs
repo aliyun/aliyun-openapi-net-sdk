@@ -31,42 +31,42 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			QueryUserListResponse queryUserListResponse = new QueryUserListResponse();
 
 			queryUserListResponse.HttpResponse = _ctx.HttpResponse;
-			queryUserListResponse.Success = _ctx.BooleanValue("QueryUserList.Success");
 			queryUserListResponse.RequestId = _ctx.StringValue("QueryUserList.RequestId");
+			queryUserListResponse.Success = _ctx.BooleanValue("QueryUserList.Success");
 
 			QueryUserListResponse.QueryUserList_Result result = new QueryUserListResponse.QueryUserList_Result();
+			result.TotalNum = _ctx.IntegerValue("QueryUserList.Result.TotalNum");
 			result.PageNum = _ctx.IntegerValue("QueryUserList.Result.PageNum");
 			result.PageSize = _ctx.IntegerValue("QueryUserList.Result.PageSize");
-			result.TotalNum = _ctx.IntegerValue("QueryUserList.Result.TotalNum");
 			result.TotalPages = _ctx.IntegerValue("QueryUserList.Result.TotalPages");
 
 			List<QueryUserListResponse.QueryUserList_Result.QueryUserList_DataItem> result_data = new List<QueryUserListResponse.QueryUserList_Result.QueryUserList_DataItem>();
 			for (int i = 0; i < _ctx.Length("QueryUserList.Result.Data.Length"); i++) {
 				QueryUserListResponse.QueryUserList_Result.QueryUserList_DataItem dataItem = new QueryUserListResponse.QueryUserList_Result.QueryUserList_DataItem();
+				dataItem.IsDeleted = _ctx.BooleanValue("QueryUserList.Result.Data["+ i +"].IsDeleted");
 				dataItem.AccountId = _ctx.StringValue("QueryUserList.Result.Data["+ i +"].AccountId");
-				dataItem.AccountName = _ctx.StringValue("QueryUserList.Result.Data["+ i +"].AccountName");
-				dataItem.AdminUser = _ctx.BooleanValue("QueryUserList.Result.Data["+ i +"].AdminUser");
-				dataItem.AuthAdminUser = _ctx.BooleanValue("QueryUserList.Result.Data["+ i +"].AuthAdminUser");
 				dataItem.Email = _ctx.StringValue("QueryUserList.Result.Data["+ i +"].Email");
-				dataItem.JoinedDate = _ctx.LongValue("QueryUserList.Result.Data["+ i +"].JoinedDate");
-				dataItem.LastLoginTime = _ctx.LongValue("QueryUserList.Result.Data["+ i +"].LastLoginTime");
 				dataItem.NickName = _ctx.StringValue("QueryUserList.Result.Data["+ i +"].NickName");
+				dataItem.LastLoginTime = _ctx.LongValue("QueryUserList.Result.Data["+ i +"].LastLoginTime");
 				dataItem.Phone = _ctx.StringValue("QueryUserList.Result.Data["+ i +"].Phone");
 				dataItem.UserId = _ctx.StringValue("QueryUserList.Result.Data["+ i +"].UserId");
+				dataItem.AdminUser = _ctx.BooleanValue("QueryUserList.Result.Data["+ i +"].AdminUser");
+				dataItem.JoinedDate = _ctx.LongValue("QueryUserList.Result.Data["+ i +"].JoinedDate");
 				dataItem.UserType = _ctx.IntegerValue("QueryUserList.Result.Data["+ i +"].UserType");
-				dataItem.IsDeleted = _ctx.BooleanValue("QueryUserList.Result.Data["+ i +"].IsDeleted");
-
-				List<string> dataItem_roleIdList = new List<string>();
-				for (int j = 0; j < _ctx.Length("QueryUserList.Result.Data["+ i +"].RoleIdList.Length"); j++) {
-					dataItem_roleIdList.Add(_ctx.StringValue("QueryUserList.Result.Data["+ i +"].RoleIdList["+ j +"]"));
-				}
-				dataItem.RoleIdList = dataItem_roleIdList;
+				dataItem.AuthAdminUser = _ctx.BooleanValue("QueryUserList.Result.Data["+ i +"].AuthAdminUser");
+				dataItem.AccountName = _ctx.StringValue("QueryUserList.Result.Data["+ i +"].AccountName");
 
 				List<string> dataItem_copilotModules = new List<string>();
 				for (int j = 0; j < _ctx.Length("QueryUserList.Result.Data["+ i +"].CopilotModules.Length"); j++) {
 					dataItem_copilotModules.Add(_ctx.StringValue("QueryUserList.Result.Data["+ i +"].CopilotModules["+ j +"]"));
 				}
 				dataItem.CopilotModules = dataItem_copilotModules;
+
+				List<string> dataItem_roleIdList = new List<string>();
+				for (int j = 0; j < _ctx.Length("QueryUserList.Result.Data["+ i +"].RoleIdList.Length"); j++) {
+					dataItem_roleIdList.Add(_ctx.StringValue("QueryUserList.Result.Data["+ i +"].RoleIdList["+ j +"]"));
+				}
+				dataItem.RoleIdList = dataItem_roleIdList;
 
 				result_data.Add(dataItem);
 			}

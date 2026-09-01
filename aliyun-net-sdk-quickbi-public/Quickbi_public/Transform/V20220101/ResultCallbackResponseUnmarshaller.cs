@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			resultCallbackResponse.HttpResponse = _ctx.HttpResponse;
 			resultCallbackResponse.RequestId = _ctx.StringValue("ResultCallback.RequestId");
-			resultCallbackResponse.Result = _ctx.BooleanValue("ResultCallback.Result");
 			resultCallbackResponse.Success = _ctx.BooleanValue("ResultCallback.Success");
+			resultCallbackResponse.Result = _ctx.BooleanValue("ResultCallback.Result");
         
 			return resultCallbackResponse;
         }

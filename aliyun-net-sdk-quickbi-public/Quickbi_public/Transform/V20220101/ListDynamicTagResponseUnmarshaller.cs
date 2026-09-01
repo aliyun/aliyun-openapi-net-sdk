@@ -37,13 +37,13 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			List<ListDynamicTagResponse.ListDynamicTag_Data> listDynamicTagResponse_result = new List<ListDynamicTagResponse.ListDynamicTag_Data>();
 			for (int i = 0; i < _ctx.Length("ListDynamicTag.Result.Length"); i++) {
 				ListDynamicTagResponse.ListDynamicTag_Data data = new ListDynamicTagResponse.ListDynamicTag_Data();
-				data.OrganizationId = _ctx.StringValue("ListDynamicTag.Result["+ i +"].OrganizationId");
-				data.ConfigId = _ctx.StringValue("ListDynamicTag.Result["+ i +"].ConfigId");
-				data.ConfigName = _ctx.StringValue("ListDynamicTag.Result["+ i +"].ConfigName");
-				data.DsId = _ctx.StringValue("ListDynamicTag.Result["+ i +"].DsId");
 				data.TableName = _ctx.StringValue("ListDynamicTag.Result["+ i +"].TableName");
 				data.ColumnName = _ctx.StringValue("ListDynamicTag.Result["+ i +"].ColumnName");
 				data.RelatedAttribute = _ctx.IntegerValue("ListDynamicTag.Result["+ i +"].RelatedAttribute");
+				data.ConfigName = _ctx.StringValue("ListDynamicTag.Result["+ i +"].ConfigName");
+				data.DsId = _ctx.StringValue("ListDynamicTag.Result["+ i +"].DsId");
+				data.OrganizationId = _ctx.StringValue("ListDynamicTag.Result["+ i +"].OrganizationId");
+				data.ConfigId = _ctx.StringValue("ListDynamicTag.Result["+ i +"].ConfigId");
 
 				listDynamicTagResponse_result.Add(data);
 			}

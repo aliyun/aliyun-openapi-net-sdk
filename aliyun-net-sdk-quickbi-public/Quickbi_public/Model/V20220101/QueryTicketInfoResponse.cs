@@ -70,39 +70,27 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryTicketInfo_Result
 		{
 
-			private string accessTicket;
-
 			private string cmptId;
-
-			private string globalParam;
-
-			private string invalidTime;
-
-			private int? maxTicketNum;
-
-			private string organizationId;
-
-			private string registerTime;
 
 			private int? usedTicketNum;
 
-			private string userId;
+			private int? maxTicketNum;
+
+			private string registerTime;
+
+			private string accessTicket;
 
 			private string watermarkParam;
 
+			private string userId;
+
+			private string organizationId;
+
+			private string invalidTime;
+
 			private string worksId;
 
-			public string AccessTicket
-			{
-				get
-				{
-					return accessTicket;
-				}
-				set	
-				{
-					accessTicket = value;
-				}
-			}
+			private string globalParam;
 
 			public string CmptId
 			{
@@ -113,66 +101,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					cmptId = value;
-				}
-			}
-
-			public string GlobalParam
-			{
-				get
-				{
-					return globalParam;
-				}
-				set	
-				{
-					globalParam = value;
-				}
-			}
-
-			public string InvalidTime
-			{
-				get
-				{
-					return invalidTime;
-				}
-				set	
-				{
-					invalidTime = value;
-				}
-			}
-
-			public int? MaxTicketNum
-			{
-				get
-				{
-					return maxTicketNum;
-				}
-				set	
-				{
-					maxTicketNum = value;
-				}
-			}
-
-			public string OrganizationId
-			{
-				get
-				{
-					return organizationId;
-				}
-				set	
-				{
-					organizationId = value;
-				}
-			}
-
-			public string RegisterTime
-			{
-				get
-				{
-					return registerTime;
-				}
-				set	
-				{
-					registerTime = value;
 				}
 			}
 
@@ -188,15 +116,39 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string UserId
+			public int? MaxTicketNum
 			{
 				get
 				{
-					return userId;
+					return maxTicketNum;
 				}
 				set	
 				{
-					userId = value;
+					maxTicketNum = value;
+				}
+			}
+
+			public string RegisterTime
+			{
+				get
+				{
+					return registerTime;
+				}
+				set	
+				{
+					registerTime = value;
+				}
+			}
+
+			public string AccessTicket
+			{
+				get
+				{
+					return accessTicket;
+				}
+				set	
+				{
+					accessTicket = value;
 				}
 			}
 
@@ -212,6 +164,42 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
+			public string UserId
+			{
+				get
+				{
+					return userId;
+				}
+				set	
+				{
+					userId = value;
+				}
+			}
+
+			public string OrganizationId
+			{
+				get
+				{
+					return organizationId;
+				}
+				set	
+				{
+					organizationId = value;
+				}
+			}
+
+			public string InvalidTime
+			{
+				get
+				{
+					return invalidTime;
+				}
+				set	
+				{
+					invalidTime = value;
+				}
+			}
+
 			public string WorksId
 			{
 				get
@@ -221,6 +209,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					worksId = value;
+				}
+			}
+
+			public string GlobalParam
+			{
+				get
+				{
+					return globalParam;
+				}
+				set	
+				{
+					globalParam = value;
 				}
 			}
 		}

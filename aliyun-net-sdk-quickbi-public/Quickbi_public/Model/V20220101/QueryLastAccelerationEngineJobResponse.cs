@@ -70,25 +70,13 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryLastAccelerationEngineJob_Result
 		{
 
-			private string jobHistoryId;
-
 			private string status;
 
 			private string gmtCreate;
 
 			private string gmtModified;
 
-			public string JobHistoryId
-			{
-				get
-				{
-					return jobHistoryId;
-				}
-				set	
-				{
-					jobHistoryId = value;
-				}
-			}
+			private string jobHistoryId;
 
 			public string Status
 			{
@@ -123,6 +111,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					gmtModified = value;
+				}
+			}
+
+			public string JobHistoryId
+			{
+				get
+				{
+					return jobHistoryId;
+				}
+				set	
+				{
+					jobHistoryId = value;
 				}
 			}
 		}

@@ -37,17 +37,17 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			List<QueryCopilotEmbedConfigResponse.QueryCopilotEmbedConfig_ResultItem> queryCopilotEmbedConfigResponse_result = new List<QueryCopilotEmbedConfigResponse.QueryCopilotEmbedConfig_ResultItem>();
 			for (int i = 0; i < _ctx.Length("QueryCopilotEmbedConfig.Result.Length"); i++) {
 				QueryCopilotEmbedConfigResponse.QueryCopilotEmbedConfig_ResultItem resultItem = new QueryCopilotEmbedConfigResponse.QueryCopilotEmbedConfig_ResultItem();
-				resultItem.AgentName = _ctx.StringValue("QueryCopilotEmbedConfig.Result["+ i +"].AgentName");
-				resultItem.CopilotId = _ctx.StringValue("QueryCopilotEmbedConfig.Result["+ i +"].CopilotId");
-				resultItem.CreateUser = _ctx.StringValue("QueryCopilotEmbedConfig.Result["+ i +"].CreateUser");
-				resultItem.CreateUserName = _ctx.StringValue("QueryCopilotEmbedConfig.Result["+ i +"].CreateUserName");
 				resultItem.ModifyUser = _ctx.StringValue("QueryCopilotEmbedConfig.Result["+ i +"].ModifyUser");
 				resultItem.ModuleName = _ctx.StringValue("QueryCopilotEmbedConfig.Result["+ i +"].ModuleName");
+				resultItem.CreateUser = _ctx.StringValue("QueryCopilotEmbedConfig.Result["+ i +"].CreateUser");
+				resultItem.AgentName = _ctx.StringValue("QueryCopilotEmbedConfig.Result["+ i +"].AgentName");
+				resultItem.CreateUserName = _ctx.StringValue("QueryCopilotEmbedConfig.Result["+ i +"].CreateUserName");
 				resultItem.ShowName = _ctx.StringValue("QueryCopilotEmbedConfig.Result["+ i +"].ShowName");
+				resultItem.CopilotId = _ctx.StringValue("QueryCopilotEmbedConfig.Result["+ i +"].CopilotId");
 
 				QueryCopilotEmbedConfigResponse.QueryCopilotEmbedConfig_ResultItem.QueryCopilotEmbedConfig_DataRange dataRange = new QueryCopilotEmbedConfigResponse.QueryCopilotEmbedConfig_ResultItem.QueryCopilotEmbedConfig_DataRange();
-				dataRange.AllCube = _ctx.BooleanValue("QueryCopilotEmbedConfig.Result["+ i +"].DataRange.AllCube");
 				dataRange.AllTheme = _ctx.BooleanValue("QueryCopilotEmbedConfig.Result["+ i +"].DataRange.AllTheme");
+				dataRange.AllCube = _ctx.BooleanValue("QueryCopilotEmbedConfig.Result["+ i +"].DataRange.AllCube");
 
 				List<string> dataRange_llmCubes = new List<string>();
 				for (int j = 0; j < _ctx.Length("QueryCopilotEmbedConfig.Result["+ i +"].DataRange.LlmCubes.Length"); j++) {

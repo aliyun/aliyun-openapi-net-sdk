@@ -25,23 +25,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 	public class QueryEmbeddedInfoResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private string requestId;
 
-		private QueryEmbeddedInfo_Result result;
+		private bool? success;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private QueryEmbeddedInfo_Result result;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -70,23 +70,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryEmbeddedInfo_Result
 		{
 
-			private int? embeddedCount;
-
 			private int? maxCount;
 
-			private QueryEmbeddedInfo_Detail detail;
+			private int? embeddedCount;
 
-			public int? EmbeddedCount
-			{
-				get
-				{
-					return embeddedCount;
-				}
-				set	
-				{
-					embeddedCount = value;
-				}
-			}
+			private QueryEmbeddedInfo_Detail detail;
 
 			public int? MaxCount
 			{
@@ -97,6 +85,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					maxCount = value;
+				}
+			}
+
+			public int? EmbeddedCount
+			{
+				get
+				{
+					return embeddedCount;
+				}
+				set	
+				{
+					embeddedCount = value;
 				}
 			}
 
@@ -115,11 +115,23 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class QueryEmbeddedInfo_Detail
 			{
 
+				private int? report;
+
 				private int? dashboardOfflineQuery;
 
 				private int? page;
 
-				private int? report;
+				public int? Report
+				{
+					get
+					{
+						return report;
+					}
+					set	
+					{
+						report = value;
+					}
+				}
 
 				public int? DashboardOfflineQuery
 				{
@@ -142,18 +154,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						page = value;
-					}
-				}
-
-				public int? Report
-				{
-					get
-					{
-						return report;
-					}
-					set	
-					{
-						report = value;
 					}
 				}
 			}

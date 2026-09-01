@@ -70,27 +70,27 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class ListRecentViewReports_Result
 		{
 
-			private string attention;
+			private int? totalNum;
 
 			private int? pageNum;
 
 			private int? pageSize;
 
-			private int? totalNum;
+			private string attention;
 
 			private int? totalPages;
 
 			private List<ListRecentViewReports_DataItem> data;
 
-			public string Attention
+			public int? TotalNum
 			{
 				get
 				{
-					return attention;
+					return totalNum;
 				}
 				set	
 				{
-					attention = value;
+					totalNum = value;
 				}
 			}
 
@@ -118,15 +118,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public int? TotalNum
+			public string Attention
 			{
 				get
 				{
-					return totalNum;
+					return attention;
 				}
 				set	
 				{
-					totalNum = value;
+					attention = value;
 				}
 			}
 
@@ -159,33 +159,33 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 				private bool? favorite;
 
-				private string gmtCreate;
-
-				private string gmtModified;
-
-				private bool? hasEditAuth;
-
-				private bool? hasViewAuth;
-
 				private string latestViewTime;
-
-				private string name;
 
 				private string ownerName;
 
+				private string gmtModified;
+
 				private string ownerNum;
-
-				private int? publishStatus;
-
-				private string treeId;
-
-				private string type;
-
-				private long? viewCount;
 
 				private string workspaceId;
 
+				private long? viewCount;
+
+				private string name;
+
+				private string gmtCreate;
+
+				private string type;
+
+				private string treeId;
+
 				private string workspaceName;
+
+				private bool? hasViewAuth;
+
+				private bool? hasEditAuth;
+
+				private int? publishStatus;
 
 				public bool? Favorite
 				{
@@ -196,54 +196,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						favorite = value;
-					}
-				}
-
-				public string GmtCreate
-				{
-					get
-					{
-						return gmtCreate;
-					}
-					set	
-					{
-						gmtCreate = value;
-					}
-				}
-
-				public string GmtModified
-				{
-					get
-					{
-						return gmtModified;
-					}
-					set	
-					{
-						gmtModified = value;
-					}
-				}
-
-				public bool? HasEditAuth
-				{
-					get
-					{
-						return hasEditAuth;
-					}
-					set	
-					{
-						hasEditAuth = value;
-					}
-				}
-
-				public bool? HasViewAuth
-				{
-					get
-					{
-						return hasViewAuth;
-					}
-					set	
-					{
-						hasViewAuth = value;
 					}
 				}
 
@@ -259,18 +211,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
-
 				public string OwnerName
 				{
 					get
@@ -280,6 +220,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						ownerName = value;
+					}
+				}
+
+				public string GmtModified
+				{
+					get
+					{
+						return gmtModified;
+					}
+					set	
+					{
+						gmtModified = value;
 					}
 				}
 
@@ -295,39 +247,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public int? PublishStatus
+				public string WorkspaceId
 				{
 					get
 					{
-						return publishStatus;
+						return workspaceId;
 					}
 					set	
 					{
-						publishStatus = value;
-					}
-				}
-
-				public string TreeId
-				{
-					get
-					{
-						return treeId;
-					}
-					set	
-					{
-						treeId = value;
-					}
-				}
-
-				public string Type
-				{
-					get
-					{
-						return type;
-					}
-					set	
-					{
-						type = value;
+						workspaceId = value;
 					}
 				}
 
@@ -343,15 +271,51 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string WorkspaceId
+				public string Name
 				{
 					get
 					{
-						return workspaceId;
+						return name;
 					}
 					set	
 					{
-						workspaceId = value;
+						name = value;
+					}
+				}
+
+				public string GmtCreate
+				{
+					get
+					{
+						return gmtCreate;
+					}
+					set	
+					{
+						gmtCreate = value;
+					}
+				}
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
+					}
+				}
+
+				public string TreeId
+				{
+					get
+					{
+						return treeId;
+					}
+					set	
+					{
+						treeId = value;
 					}
 				}
 
@@ -364,6 +328,42 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						workspaceName = value;
+					}
+				}
+
+				public bool? HasViewAuth
+				{
+					get
+					{
+						return hasViewAuth;
+					}
+					set	
+					{
+						hasViewAuth = value;
+					}
+				}
+
+				public bool? HasEditAuth
+				{
+					get
+					{
+						return hasEditAuth;
+					}
+					set	
+					{
+						hasEditAuth = value;
+					}
+				}
+
+				public int? PublishStatus
+				{
+					get
+					{
+						return publishStatus;
+					}
+					set	
+					{
+						publishStatus = value;
 					}
 				}
 			}

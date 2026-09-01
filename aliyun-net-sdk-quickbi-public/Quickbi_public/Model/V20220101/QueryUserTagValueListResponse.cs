@@ -25,23 +25,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 	public class QueryUserTagValueListResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private string requestId;
 
-		private List<QueryUserTagValueList_Data> result;
+		private bool? success;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private List<QueryUserTagValueList_Data> result;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -70,23 +70,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryUserTagValueList_Data
 		{
 
-			private string tagId;
-
 			private string tagName;
 
-			private string tagValue;
+			private string tagId;
 
-			public string TagId
-			{
-				get
-				{
-					return tagId;
-				}
-				set	
-				{
-					tagId = value;
-				}
-			}
+			private string tagValue;
 
 			public string TagName
 			{
@@ -97,6 +85,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					tagName = value;
+				}
+			}
+
+			public string TagId
+			{
+				get
+				{
+					return tagId;
+				}
+				set	
+				{
+					tagId = value;
 				}
 			}
 

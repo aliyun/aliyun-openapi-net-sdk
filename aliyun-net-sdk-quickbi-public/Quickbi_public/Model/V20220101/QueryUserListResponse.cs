@@ -25,23 +25,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 	public class QueryUserListResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private string requestId;
 
-		private QueryUserList_Result result;
+		private bool? success;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private QueryUserList_Result result;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -70,15 +70,27 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryUserList_Result
 		{
 
+			private int? totalNum;
+
 			private int? pageNum;
 
 			private int? pageSize;
 
-			private int? totalNum;
-
 			private int? totalPages;
 
 			private List<QueryUserList_DataItem> data;
+
+			public int? TotalNum
+			{
+				get
+				{
+					return totalNum;
+				}
+				set	
+				{
+					totalNum = value;
+				}
+			}
 
 			public int? PageNum
 			{
@@ -101,18 +113,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					pageSize = value;
-				}
-			}
-
-			public int? TotalNum
-			{
-				get
-				{
-					return totalNum;
-				}
-				set	
-				{
-					totalNum = value;
 				}
 			}
 
@@ -143,33 +143,45 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class QueryUserList_DataItem
 			{
 
+				private bool? isDeleted;
+
 				private string accountId;
-
-				private string accountName;
-
-				private bool? adminUser;
-
-				private bool? authAdminUser;
 
 				private string email;
 
-				private long? joinedDate;
+				private string nickName;
 
 				private long? lastLoginTime;
-
-				private string nickName;
 
 				private string phone;
 
 				private string userId;
 
+				private bool? adminUser;
+
+				private long? joinedDate;
+
 				private int? userType;
 
-				private bool? isDeleted;
+				private bool? authAdminUser;
+
+				private string accountName;
+
+				private List<string> copilotModules;
 
 				private List<string> roleIdList;
 
-				private List<string> copilotModules;
+				public bool? IsDeleted
+				{
+					get
+					{
+						return isDeleted;
+					}
+					set	
+					{
+						isDeleted = value;
+					}
+				}
 
 				public string AccountId
 				{
@@ -180,42 +192,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						accountId = value;
-					}
-				}
-
-				public string AccountName
-				{
-					get
-					{
-						return accountName;
-					}
-					set	
-					{
-						accountName = value;
-					}
-				}
-
-				public bool? AdminUser
-				{
-					get
-					{
-						return adminUser;
-					}
-					set	
-					{
-						adminUser = value;
-					}
-				}
-
-				public bool? AuthAdminUser
-				{
-					get
-					{
-						return authAdminUser;
-					}
-					set	
-					{
-						authAdminUser = value;
 					}
 				}
 
@@ -231,15 +207,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public long? JoinedDate
+				public string NickName
 				{
 					get
 					{
-						return joinedDate;
+						return nickName;
 					}
 					set	
 					{
-						joinedDate = value;
+						nickName = value;
 					}
 				}
 
@@ -252,18 +228,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						lastLoginTime = value;
-					}
-				}
-
-				public string NickName
-				{
-					get
-					{
-						return nickName;
-					}
-					set	
-					{
-						nickName = value;
 					}
 				}
 
@@ -291,6 +255,30 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
+				public bool? AdminUser
+				{
+					get
+					{
+						return adminUser;
+					}
+					set	
+					{
+						adminUser = value;
+					}
+				}
+
+				public long? JoinedDate
+				{
+					get
+					{
+						return joinedDate;
+					}
+					set	
+					{
+						joinedDate = value;
+					}
+				}
+
 				public int? UserType
 				{
 					get
@@ -303,27 +291,27 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public bool? IsDeleted
+				public bool? AuthAdminUser
 				{
 					get
 					{
-						return isDeleted;
+						return authAdminUser;
 					}
 					set	
 					{
-						isDeleted = value;
+						authAdminUser = value;
 					}
 				}
 
-				public List<string> RoleIdList
+				public string AccountName
 				{
 					get
 					{
-						return roleIdList;
+						return accountName;
 					}
 					set	
 					{
-						roleIdList = value;
+						accountName = value;
 					}
 				}
 
@@ -336,6 +324,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						copilotModules = value;
+					}
+				}
+
+				public List<string> RoleIdList
+				{
+					get
+					{
+						return roleIdList;
+					}
+					set	
+					{
+						roleIdList = value;
 					}
 				}
 			}

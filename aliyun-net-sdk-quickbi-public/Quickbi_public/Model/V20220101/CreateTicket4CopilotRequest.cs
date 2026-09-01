@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class CreateTicket4CopilotRequest : RpcAcsRequest<CreateTicket4CopilotResponse>
     {
         public CreateTicket4CopilotRequest()
-            : base("quickbi-public", "2022-01-01", "CreateTicket4Copilot", "2.2.0", "openAPI")
+            : base("quickbi-public", "2022-01-01", "CreateTicket4Copilot", "QuickBI", "openAPI")
         {
 			Method = MethodType.POST;
         }

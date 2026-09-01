@@ -70,13 +70,25 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class ListApiDatasource_Result
 		{
 
+			private int? totalNum;
+
 			private int? pageNum;
 
 			private int? pageSize;
 
-			private int? totalNum;
-
 			private List<ListApiDatasource_DataItem> data;
+
+			public int? TotalNum
+			{
+				get
+				{
+					return totalNum;
+				}
+				set	
+				{
+					totalNum = value;
+				}
+			}
 
 			public int? PageNum
 			{
@@ -102,18 +114,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public int? TotalNum
-			{
-				get
-				{
-					return totalNum;
-				}
-				set	
-				{
-					totalNum = value;
-				}
-			}
-
 			public List<ListApiDatasource_DataItem> Data
 			{
 				get
@@ -129,61 +129,25 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class ListApiDatasource_DataItem
 			{
 
-				private string apiId;
-
-				private string body;
-
-				private float? dataSize;
-
 				private string dateUpdateTime;
 
 				private string gmtCreate;
 
-				private string gmtModified;
-
-				private string jobId;
-
 				private string parameters;
-
-				private string showName;
 
 				private int? statusType;
 
-				public string ApiId
-				{
-					get
-					{
-						return apiId;
-					}
-					set	
-					{
-						apiId = value;
-					}
-				}
+				private float? dataSize;
 
-				public string Body
-				{
-					get
-					{
-						return body;
-					}
-					set	
-					{
-						body = value;
-					}
-				}
+				private string gmtModified;
 
-				public float? DataSize
-				{
-					get
-					{
-						return dataSize;
-					}
-					set	
-					{
-						dataSize = value;
-					}
-				}
+				private string apiId;
+
+				private string body;
+
+				private string showName;
+
+				private string jobId;
 
 				public string DateUpdateTime
 				{
@@ -209,6 +173,42 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
+				public string Parameters
+				{
+					get
+					{
+						return parameters;
+					}
+					set	
+					{
+						parameters = value;
+					}
+				}
+
+				public int? StatusType
+				{
+					get
+					{
+						return statusType;
+					}
+					set	
+					{
+						statusType = value;
+					}
+				}
+
+				public float? DataSize
+				{
+					get
+					{
+						return dataSize;
+					}
+					set	
+					{
+						dataSize = value;
+					}
+				}
+
 				public string GmtModified
 				{
 					get
@@ -221,27 +221,27 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string JobId
+				public string ApiId
 				{
 					get
 					{
-						return jobId;
+						return apiId;
 					}
 					set	
 					{
-						jobId = value;
+						apiId = value;
 					}
 				}
 
-				public string Parameters
+				public string Body
 				{
 					get
 					{
-						return parameters;
+						return body;
 					}
 					set	
 					{
-						parameters = value;
+						body = value;
 					}
 				}
 
@@ -257,15 +257,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public int? StatusType
+				public string JobId
 				{
 					get
 					{
-						return statusType;
+						return jobId;
 					}
 					set	
 					{
-						statusType = value;
+						jobId = value;
 					}
 				}
 			}

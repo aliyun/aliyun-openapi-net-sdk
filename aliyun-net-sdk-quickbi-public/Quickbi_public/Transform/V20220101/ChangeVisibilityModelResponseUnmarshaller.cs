@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			changeVisibilityModelResponse.HttpResponse = _ctx.HttpResponse;
 			changeVisibilityModelResponse.RequestId = _ctx.StringValue("ChangeVisibilityModel.RequestId");
-			changeVisibilityModelResponse.Result = _ctx.IntegerValue("ChangeVisibilityModel.Result");
 			changeVisibilityModelResponse.Success = _ctx.BooleanValue("ChangeVisibilityModel.Success");
+			changeVisibilityModelResponse.Result = _ctx.IntegerValue("ChangeVisibilityModel.Result");
         
 			return changeVisibilityModelResponse;
         }

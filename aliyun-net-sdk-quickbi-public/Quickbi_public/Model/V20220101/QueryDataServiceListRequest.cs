@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class QueryDataServiceListRequest : RpcAcsRequest<QueryDataServiceListResponse>
     {
         public QueryDataServiceListRequest()
-            : base("quickbi-public", "2022-01-01", "QueryDataServiceList", "2.2.0", "openAPI")
+            : base("quickbi-public", "2022-01-01", "QueryDataServiceList", "QuickBI", "openAPI")
         {
 			Method = MethodType.POST;
         }

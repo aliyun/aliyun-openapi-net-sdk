@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			delayTicketExpireTimeResponse.HttpResponse = _ctx.HttpResponse;
 			delayTicketExpireTimeResponse.RequestId = _ctx.StringValue("DelayTicketExpireTime.RequestId");
-			delayTicketExpireTimeResponse.Result = _ctx.BooleanValue("DelayTicketExpireTime.Result");
 			delayTicketExpireTimeResponse.Success = _ctx.BooleanValue("DelayTicketExpireTime.Success");
+			delayTicketExpireTimeResponse.Result = _ctx.BooleanValue("DelayTicketExpireTime.Result");
         
 			return delayTicketExpireTimeResponse;
         }

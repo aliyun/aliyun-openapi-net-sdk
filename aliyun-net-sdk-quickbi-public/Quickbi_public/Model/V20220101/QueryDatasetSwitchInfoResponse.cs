@@ -25,23 +25,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 	public class QueryDatasetSwitchInfoResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private string requestId;
 
-		private QueryDatasetSwitchInfo_Result result;
+		private bool? success;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private QueryDatasetSwitchInfo_Result result;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -72,9 +72,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 			private string cubeId;
 
-			private int? isOpenColumnLevelPermission;
-
 			private int? isOpenRowLevelPermission;
+
+			private int? isOpenColumnLevelPermission;
 
 			public string CubeId
 			{
@@ -88,18 +88,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public int? IsOpenColumnLevelPermission
-			{
-				get
-				{
-					return isOpenColumnLevelPermission;
-				}
-				set	
-				{
-					isOpenColumnLevelPermission = value;
-				}
-			}
-
 			public int? IsOpenRowLevelPermission
 			{
 				get
@@ -109,6 +97,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					isOpenRowLevelPermission = value;
+				}
+			}
+
+			public int? IsOpenColumnLevelPermission
+			{
+				get
+				{
+					return isOpenColumnLevelPermission;
+				}
+				set	
+				{
+					isOpenColumnLevelPermission = value;
 				}
 			}
 		}

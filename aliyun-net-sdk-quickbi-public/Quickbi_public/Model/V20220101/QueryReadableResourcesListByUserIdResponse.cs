@@ -25,23 +25,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 	public class QueryReadableResourcesListByUserIdResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private string requestId;
 
-		private List<QueryReadableResourcesListByUserId_Data> result;
+		private bool? success;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private List<QueryReadableResourcesListByUserId_Data> result;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -70,69 +70,45 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryReadableResourcesListByUserId_Data
 		{
 
-			private string createTime;
-
-			private string description;
-
-			private string modifyName;
+			private int? status;
 
 			private string modifyTime;
 
-			private string ownerId;
-
 			private string ownerName;
 
-			private string securityLevel;
-
-			private int? status;
-
-			private int? thirdPartAuthFlag;
-
-			private string workName;
+			private string description;
 
 			private string workType;
 
-			private string worksId;
+			private string modifyName;
+
+			private string createTime;
 
 			private string workspaceId;
 
+			private int? thirdPartAuthFlag;
+
+			private string ownerId;
+
+			private string securityLevel;
+
+			private string workName;
+
 			private string workspaceName;
+
+			private string worksId;
 
 			private QueryReadableResourcesListByUserId_Directory directory;
 
-			public string CreateTime
+			public int? Status
 			{
 				get
 				{
-					return createTime;
+					return status;
 				}
 				set	
 				{
-					createTime = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string ModifyName
-			{
-				get
-				{
-					return modifyName;
-				}
-				set	
-				{
-					modifyName = value;
+					status = value;
 				}
 			}
 
@@ -148,18 +124,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string OwnerId
-			{
-				get
-				{
-					return ownerId;
-				}
-				set	
-				{
-					ownerId = value;
-				}
-			}
-
 			public string OwnerName
 			{
 				get
@@ -172,51 +136,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string SecurityLevel
+			public string Description
 			{
 				get
 				{
-					return securityLevel;
+					return description;
 				}
 				set	
 				{
-					securityLevel = value;
-				}
-			}
-
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public int? ThirdPartAuthFlag
-			{
-				get
-				{
-					return thirdPartAuthFlag;
-				}
-				set	
-				{
-					thirdPartAuthFlag = value;
-				}
-			}
-
-			public string WorkName
-			{
-				get
-				{
-					return workName;
-				}
-				set	
-				{
-					workName = value;
+					description = value;
 				}
 			}
 
@@ -232,15 +160,27 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string WorksId
+			public string ModifyName
 			{
 				get
 				{
-					return worksId;
+					return modifyName;
 				}
 				set	
 				{
-					worksId = value;
+					modifyName = value;
+				}
+			}
+
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
 				}
 			}
 
@@ -256,6 +196,54 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
+			public int? ThirdPartAuthFlag
+			{
+				get
+				{
+					return thirdPartAuthFlag;
+				}
+				set	
+				{
+					thirdPartAuthFlag = value;
+				}
+			}
+
+			public string OwnerId
+			{
+				get
+				{
+					return ownerId;
+				}
+				set	
+				{
+					ownerId = value;
+				}
+			}
+
+			public string SecurityLevel
+			{
+				get
+				{
+					return securityLevel;
+				}
+				set	
+				{
+					securityLevel = value;
+				}
+			}
+
+			public string WorkName
+			{
+				get
+				{
+					return workName;
+				}
+				set	
+				{
+					workName = value;
+				}
+			}
+
 			public string WorkspaceName
 			{
 				get
@@ -265,6 +253,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					workspaceName = value;
+				}
+			}
+
+			public string WorksId
+			{
+				get
+				{
+					return worksId;
+				}
+				set	
+				{
+					worksId = value;
 				}
 			}
 
@@ -283,37 +283,13 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class QueryReadableResourcesListByUserId_Directory
 			{
 
-				private string id;
-
-				private string name;
-
 				private string pathId;
+
+				private string id;
 
 				private string pathName;
 
-				public string Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
-					}
-				}
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
+				private string name;
 
 				public string PathId
 				{
@@ -327,6 +303,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
+				public string Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
+					}
+				}
+
 				public string PathName
 				{
 					get
@@ -336,6 +324,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						pathName = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
 					}
 				}
 			}

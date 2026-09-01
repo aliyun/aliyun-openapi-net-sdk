@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class ModifyDashboardNl2sqlStatusRequest : RpcAcsRequest<ModifyDashboardNl2sqlStatusResponse>
     {
         public ModifyDashboardNl2sqlStatusRequest()
-            : base("quickbi-public", "2022-01-01", "ModifyDashboardNl2sqlStatus", "2.2.0", "openAPI")
+            : base("quickbi-public", "2022-01-01", "ModifyDashboardNl2sqlStatus", "QuickBI", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

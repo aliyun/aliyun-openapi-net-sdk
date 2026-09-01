@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			listCubeDataLevelPermissionConfigResponse.HttpResponse = _ctx.HttpResponse;
 			listCubeDataLevelPermissionConfigResponse.RequestId = _ctx.StringValue("ListCubeDataLevelPermissionConfig.RequestId");
-			listCubeDataLevelPermissionConfigResponse.Result = _ctx.StringValue("ListCubeDataLevelPermissionConfig.Result");
 			listCubeDataLevelPermissionConfigResponse.Success = _ctx.BooleanValue("ListCubeDataLevelPermissionConfig.Success");
+			listCubeDataLevelPermissionConfigResponse.Result = _ctx.StringValue("ListCubeDataLevelPermissionConfig.Result");
         
 			return listCubeDataLevelPermissionConfigResponse;
         }

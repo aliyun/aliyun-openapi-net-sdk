@@ -25,23 +25,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 	public class ListByUserGroupIdResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private string requestId;
 
-		private ListByUserGroupId_Result result;
+		private bool? success;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private ListByUserGroupId_Result result;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -101,57 +101,33 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class ListByUserGroupId_UserGroupModelsItem
 			{
 
-				private string createTime;
-
-				private string createUser;
-
-				private string identifiedPath;
+				private string modifyUser;
 
 				private string modifiedTime;
 
-				private string modifyUser;
+				private string usergroupDesc;
+
+				private string createTime;
+
+				private string identifiedPath;
+
+				private string createUser;
 
 				private string parentUsergroupId;
 
-				private string usergroupDesc;
+				private string usergroupName;
 
 				private string usergroupId;
 
-				private string usergroupName;
-
-				public string CreateTime
+				public string ModifyUser
 				{
 					get
 					{
-						return createTime;
+						return modifyUser;
 					}
 					set	
 					{
-						createTime = value;
-					}
-				}
-
-				public string CreateUser
-				{
-					get
-					{
-						return createUser;
-					}
-					set	
-					{
-						createUser = value;
-					}
-				}
-
-				public string IdentifiedPath
-				{
-					get
-					{
-						return identifiedPath;
-					}
-					set	
-					{
-						identifiedPath = value;
+						modifyUser = value;
 					}
 				}
 
@@ -167,15 +143,51 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string ModifyUser
+				public string UsergroupDesc
 				{
 					get
 					{
-						return modifyUser;
+						return usergroupDesc;
 					}
 					set	
 					{
-						modifyUser = value;
+						usergroupDesc = value;
+					}
+				}
+
+				public string CreateTime
+				{
+					get
+					{
+						return createTime;
+					}
+					set	
+					{
+						createTime = value;
+					}
+				}
+
+				public string IdentifiedPath
+				{
+					get
+					{
+						return identifiedPath;
+					}
+					set	
+					{
+						identifiedPath = value;
+					}
+				}
+
+				public string CreateUser
+				{
+					get
+					{
+						return createUser;
+					}
+					set	
+					{
+						createUser = value;
 					}
 				}
 
@@ -191,15 +203,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string UsergroupDesc
+				public string UsergroupName
 				{
 					get
 					{
-						return usergroupDesc;
+						return usergroupName;
 					}
 					set	
 					{
-						usergroupDesc = value;
+						usergroupName = value;
 					}
 				}
 
@@ -212,18 +224,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						usergroupId = value;
-					}
-				}
-
-				public string UsergroupName
-				{
-					get
-					{
-						return usergroupName;
-					}
-					set	
-					{
-						usergroupName = value;
 					}
 				}
 			}

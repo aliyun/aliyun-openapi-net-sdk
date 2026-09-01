@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			clearDynamicTagCacheResponse.HttpResponse = _ctx.HttpResponse;
 			clearDynamicTagCacheResponse.RequestId = _ctx.StringValue("ClearDynamicTagCache.RequestId");
-			clearDynamicTagCacheResponse.Result = _ctx.BooleanValue("ClearDynamicTagCache.Result");
 			clearDynamicTagCacheResponse.Success = _ctx.BooleanValue("ClearDynamicTagCache.Success");
+			clearDynamicTagCacheResponse.Result = _ctx.BooleanValue("ClearDynamicTagCache.Result");
         
 			return clearDynamicTagCacheResponse;
         }

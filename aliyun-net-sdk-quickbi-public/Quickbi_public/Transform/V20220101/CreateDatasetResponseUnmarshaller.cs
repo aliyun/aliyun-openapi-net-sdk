@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			createDatasetResponse.HttpResponse = _ctx.HttpResponse;
 			createDatasetResponse.RequestId = _ctx.StringValue("CreateDataset.RequestId");
-			createDatasetResponse.Result = _ctx.StringValue("CreateDataset.Result");
 			createDatasetResponse.Success = _ctx.BooleanValue("CreateDataset.Success");
+			createDatasetResponse.Result = _ctx.StringValue("CreateDataset.Result");
         
 			return createDatasetResponse;
         }

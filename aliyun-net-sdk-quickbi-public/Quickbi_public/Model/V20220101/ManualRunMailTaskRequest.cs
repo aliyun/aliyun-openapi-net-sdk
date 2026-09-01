@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class ManualRunMailTaskRequest : RpcAcsRequest<ManualRunMailTaskResponse>
     {
         public ManualRunMailTaskRequest()
-            : base("quickbi-public", "2022-01-01", "ManualRunMailTask", "2.2.0", "openAPI")
+            : base("quickbi-public", "2022-01-01", "ManualRunMailTask", "QuickBI", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

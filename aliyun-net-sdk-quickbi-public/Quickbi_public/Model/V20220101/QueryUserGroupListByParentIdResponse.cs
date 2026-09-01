@@ -25,23 +25,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 	public class QueryUserGroupListByParentIdResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private string requestId;
 
-		private List<QueryUserGroupListByParentId_Data> result;
+		private bool? success;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private List<QueryUserGroupListByParentId_Data> result;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -70,69 +70,33 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryUserGroupListByParentId_Data
 		{
 
-			private string createTime;
-
-			private string createUser;
-
-			private string identifiedPath;
-
-			private string modifiedTime;
+			private string parentUserGroupId;
 
 			private string modifyUser;
 
-			private string parentUserGroupId;
+			private string modifiedTime;
 
-			private string userGroupDescription;
+			private string createTime;
+
+			private string identifiedPath;
 
 			private string userGroupId;
 
 			private string userGroupName;
 
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
+			private string createUser;
 
-			public string CreateUser
-			{
-				get
-				{
-					return createUser;
-				}
-				set	
-				{
-					createUser = value;
-				}
-			}
+			private string userGroupDescription;
 
-			public string IdentifiedPath
+			public string ParentUserGroupId
 			{
 				get
 				{
-					return identifiedPath;
+					return parentUserGroupId;
 				}
 				set	
 				{
-					identifiedPath = value;
-				}
-			}
-
-			public string ModifiedTime
-			{
-				get
-				{
-					return modifiedTime;
-				}
-				set	
-				{
-					modifiedTime = value;
+					parentUserGroupId = value;
 				}
 			}
 
@@ -148,27 +112,39 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string ParentUserGroupId
+			public string ModifiedTime
 			{
 				get
 				{
-					return parentUserGroupId;
+					return modifiedTime;
 				}
 				set	
 				{
-					parentUserGroupId = value;
+					modifiedTime = value;
 				}
 			}
 
-			public string UserGroupDescription
+			public string CreateTime
 			{
 				get
 				{
-					return userGroupDescription;
+					return createTime;
 				}
 				set	
 				{
-					userGroupDescription = value;
+					createTime = value;
+				}
+			}
+
+			public string IdentifiedPath
+			{
+				get
+				{
+					return identifiedPath;
+				}
+				set	
+				{
+					identifiedPath = value;
 				}
 			}
 
@@ -193,6 +169,30 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					userGroupName = value;
+				}
+			}
+
+			public string CreateUser
+			{
+				get
+				{
+					return createUser;
+				}
+				set	
+				{
+					createUser = value;
+				}
+			}
+
+			public string UserGroupDescription
+			{
+				get
+				{
+					return userGroupDescription;
+				}
+				set	
+				{
+					userGroupDescription = value;
 				}
 			}
 		}

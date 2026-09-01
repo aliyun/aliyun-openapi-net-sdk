@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			cancelCollectionResponse.HttpResponse = _ctx.HttpResponse;
 			cancelCollectionResponse.RequestId = _ctx.StringValue("CancelCollection.RequestId");
-			cancelCollectionResponse.Result = _ctx.BooleanValue("CancelCollection.Result");
 			cancelCollectionResponse.Success = _ctx.BooleanValue("CancelCollection.Success");
+			cancelCollectionResponse.Result = _ctx.BooleanValue("CancelCollection.Result");
         
 			return cancelCollectionResponse;
         }

@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			saveFavoritesResponse.HttpResponse = _ctx.HttpResponse;
 			saveFavoritesResponse.RequestId = _ctx.StringValue("SaveFavorites.RequestId");
-			saveFavoritesResponse.Result = _ctx.BooleanValue("SaveFavorites.Result");
 			saveFavoritesResponse.Success = _ctx.BooleanValue("SaveFavorites.Success");
+			saveFavoritesResponse.Result = _ctx.BooleanValue("SaveFavorites.Result");
         
 			return saveFavoritesResponse;
         }

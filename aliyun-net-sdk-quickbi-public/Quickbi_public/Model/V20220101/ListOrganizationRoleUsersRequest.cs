@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class ListOrganizationRoleUsersRequest : RpcAcsRequest<ListOrganizationRoleUsersResponse>
     {
         public ListOrganizationRoleUsersRequest()
-            : base("quickbi-public", "2022-01-01", "ListOrganizationRoleUsers", "2.2.0", "openAPI")
+            : base("quickbi-public", "2022-01-01", "ListOrganizationRoleUsers", "QuickBI", "openAPI")
         {
 			Method = MethodType.POST;
         }

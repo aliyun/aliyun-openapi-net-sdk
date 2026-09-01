@@ -74,9 +74,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 			private string mailId;
 
-			private string status;
-
 			private long? taskId;
+
+			private string status;
 
 			public string ExecTime
 			{
@@ -102,18 +102,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
 			public long? TaskId
 			{
 				get
@@ -123,6 +111,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					taskId = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 		}

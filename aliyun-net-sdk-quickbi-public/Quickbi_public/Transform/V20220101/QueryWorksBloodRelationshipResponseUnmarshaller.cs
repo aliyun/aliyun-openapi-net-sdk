@@ -31,30 +31,30 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			QueryWorksBloodRelationshipResponse queryWorksBloodRelationshipResponse = new QueryWorksBloodRelationshipResponse();
 
 			queryWorksBloodRelationshipResponse.HttpResponse = _ctx.HttpResponse;
-			queryWorksBloodRelationshipResponse.Success = _ctx.BooleanValue("QueryWorksBloodRelationship.Success");
 			queryWorksBloodRelationshipResponse.RequestId = _ctx.StringValue("QueryWorksBloodRelationship.RequestId");
+			queryWorksBloodRelationshipResponse.Success = _ctx.BooleanValue("QueryWorksBloodRelationship.Success");
 
 			List<QueryWorksBloodRelationshipResponse.QueryWorksBloodRelationship_Item> queryWorksBloodRelationshipResponse_result = new List<QueryWorksBloodRelationshipResponse.QueryWorksBloodRelationship_Item>();
 			for (int i = 0; i < _ctx.Length("QueryWorksBloodRelationship.Result.Length"); i++) {
 				QueryWorksBloodRelationshipResponse.QueryWorksBloodRelationship_Item item = new QueryWorksBloodRelationshipResponse.QueryWorksBloodRelationship_Item();
-				item.ComponentId = _ctx.StringValue("QueryWorksBloodRelationship.Result["+ i +"].ComponentId");
-				item.ComponentName = _ctx.StringValue("QueryWorksBloodRelationship.Result["+ i +"].ComponentName");
 				item.ComponentType = _ctx.IntegerValue("QueryWorksBloodRelationship.Result["+ i +"].ComponentType");
 				item.ComponentTypeName = _ctx.StringValue("QueryWorksBloodRelationship.Result["+ i +"].ComponentTypeName");
+				item.ComponentName = _ctx.StringValue("QueryWorksBloodRelationship.Result["+ i +"].ComponentName");
 				item.ComponentTypeCnName = _ctx.StringValue("QueryWorksBloodRelationship.Result["+ i +"].ComponentTypeCnName");
+				item.ComponentId = _ctx.StringValue("QueryWorksBloodRelationship.Result["+ i +"].ComponentId");
 				item.DatasetId = _ctx.StringValue("QueryWorksBloodRelationship.Result["+ i +"].DatasetId");
 
 				List<QueryWorksBloodRelationshipResponse.QueryWorksBloodRelationship_Item.QueryWorksBloodRelationship_QueryParam> item_queryParams = new List<QueryWorksBloodRelationshipResponse.QueryWorksBloodRelationship_Item.QueryWorksBloodRelationship_QueryParam>();
 				for (int j = 0; j < _ctx.Length("QueryWorksBloodRelationship.Result["+ i +"].QueryParams.Length"); j++) {
 					QueryWorksBloodRelationshipResponse.QueryWorksBloodRelationship_Item.QueryWorksBloodRelationship_QueryParam queryParam = new QueryWorksBloodRelationshipResponse.QueryWorksBloodRelationship_Item.QueryWorksBloodRelationship_QueryParam();
-					queryParam.AreaId = _ctx.StringValue("QueryWorksBloodRelationship.Result["+ i +"].QueryParams["+ j +"].AreaId");
 					queryParam.AreaName = _ctx.StringValue("QueryWorksBloodRelationship.Result["+ i +"].QueryParams["+ j +"].AreaName");
-					queryParam.Caption = _ctx.StringValue("QueryWorksBloodRelationship.Result["+ i +"].QueryParams["+ j +"].Caption");
-					queryParam.DataType = _ctx.StringValue("QueryWorksBloodRelationship.Result["+ i +"].QueryParams["+ j +"].DataType");
-					queryParam.IsMeasure = _ctx.BooleanValue("QueryWorksBloodRelationship.Result["+ i +"].QueryParams["+ j +"].IsMeasure");
 					queryParam.PathId = _ctx.StringValue("QueryWorksBloodRelationship.Result["+ i +"].QueryParams["+ j +"].PathId");
 					queryParam.Uid = _ctx.StringValue("QueryWorksBloodRelationship.Result["+ i +"].QueryParams["+ j +"].Uid");
+					queryParam.IsMeasure = _ctx.BooleanValue("QueryWorksBloodRelationship.Result["+ i +"].QueryParams["+ j +"].IsMeasure");
 					queryParam.Expression = _ctx.StringValue("QueryWorksBloodRelationship.Result["+ i +"].QueryParams["+ j +"].Expression");
+					queryParam.AreaId = _ctx.StringValue("QueryWorksBloodRelationship.Result["+ i +"].QueryParams["+ j +"].AreaId");
+					queryParam.DataType = _ctx.StringValue("QueryWorksBloodRelationship.Result["+ i +"].QueryParams["+ j +"].DataType");
+					queryParam.Caption = _ctx.StringValue("QueryWorksBloodRelationship.Result["+ i +"].QueryParams["+ j +"].Caption");
 
 					item_queryParams.Add(queryParam);
 				}

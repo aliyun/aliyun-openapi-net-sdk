@@ -70,15 +70,27 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class ListOrganizationRoleUsers_Result
 		{
 
+			private int? totalNum;
+
 			private int? pageNum;
 
 			private int? pageSize;
 
-			private int? totalNum;
-
 			private int? totalPages;
 
 			private List<ListOrganizationRoleUsers_DataItem> data;
+
+			public int? TotalNum
+			{
+				get
+				{
+					return totalNum;
+				}
+				set	
+				{
+					totalNum = value;
+				}
+			}
 
 			public int? PageNum
 			{
@@ -101,18 +113,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					pageSize = value;
-				}
-			}
-
-			public int? TotalNum
-			{
-				get
-				{
-					return totalNum;
-				}
-				set	
-				{
-					totalNum = value;
 				}
 			}
 
@@ -143,21 +143,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class ListOrganizationRoleUsers_DataItem
 			{
 
-				private string nickName;
-
 				private string userId;
 
-				public string NickName
-				{
-					get
-					{
-						return nickName;
-					}
-					set	
-					{
-						nickName = value;
-					}
-				}
+				private string nickName;
 
 				public string UserId
 				{
@@ -168,6 +156,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						userId = value;
+					}
+				}
+
+				public string NickName
+				{
+					get
+					{
+						return nickName;
+					}
+					set	
+					{
+						nickName = value;
 					}
 				}
 			}

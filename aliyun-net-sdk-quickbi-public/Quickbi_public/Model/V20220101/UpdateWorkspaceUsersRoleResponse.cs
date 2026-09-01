@@ -25,23 +25,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 	public class UpdateWorkspaceUsersRoleResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private string requestId;
 
-		private UpdateWorkspaceUsersRole_Result result;
+		private bool? success;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private UpdateWorkspaceUsersRole_Result result;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -70,25 +70,13 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class UpdateWorkspaceUsersRole_Result
 		{
 
-			private int? failure;
-
 			private string failureDetail;
-
-			private int? success;
 
 			private int? total;
 
-			public int? Failure
-			{
-				get
-				{
-					return failure;
-				}
-				set	
-				{
-					failure = value;
-				}
-			}
+			private int? failure;
+
+			private int? success;
 
 			public string FailureDetail
 			{
@@ -102,18 +90,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public int? Success
-			{
-				get
-				{
-					return success;
-				}
-				set	
-				{
-					success = value;
-				}
-			}
-
 			public int? Total
 			{
 				get
@@ -123,6 +99,30 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					total = value;
+				}
+			}
+
+			public int? Failure
+			{
+				get
+				{
+					return failure;
+				}
+				set	
+				{
+					failure = value;
+				}
+			}
+
+			public int? Success
+			{
+				get
+				{
+					return success;
+				}
+				set	
+				{
+					success = value;
 				}
 			}
 		}

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class QueryReportPerformanceRequest : RpcAcsRequest<QueryReportPerformanceResponse>
     {
         public QueryReportPerformanceRequest()
-            : base("quickbi-public", "2022-01-01", "QueryReportPerformance", "2.2.0", "openAPI")
+            : base("quickbi-public", "2022-01-01", "QueryReportPerformance", "QuickBI", "openAPI")
         {
 			Method = MethodType.POST;
         }

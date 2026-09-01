@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class QueryDataRangeRequest : RpcAcsRequest<QueryDataRangeResponse>
     {
         public QueryDataRangeRequest()
-            : base("quickbi-public", "2022-01-01", "QueryDataRange", "2.2.0", "openAPI")
+            : base("quickbi-public", "2022-01-01", "QueryDataRange", "QuickBI", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

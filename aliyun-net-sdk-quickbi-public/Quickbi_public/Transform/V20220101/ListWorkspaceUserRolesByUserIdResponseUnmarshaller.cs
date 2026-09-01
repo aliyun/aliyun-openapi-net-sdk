@@ -41,9 +41,9 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 				data.WorkspaceName = _ctx.StringValue("ListWorkspaceUserRolesByUserId.Result["+ i +"].WorkspaceName");
 
 				ListWorkspaceUserRolesByUserIdResponse.ListWorkspaceUserRolesByUserId_Data.ListWorkspaceUserRolesByUserId_RoleModel roleModel = new ListWorkspaceUserRolesByUserIdResponse.ListWorkspaceUserRolesByUserId_Data.ListWorkspaceUserRolesByUserId_RoleModel();
+				roleModel.RoleName = _ctx.StringValue("ListWorkspaceUserRolesByUserId.Result["+ i +"].RoleModel.RoleName");
 				roleModel.RoleId = _ctx.StringValue("ListWorkspaceUserRolesByUserId.Result["+ i +"].RoleModel.RoleId");
 				roleModel.RoleCode = _ctx.StringValue("ListWorkspaceUserRolesByUserId.Result["+ i +"].RoleModel.RoleCode");
-				roleModel.RoleName = _ctx.StringValue("ListWorkspaceUserRolesByUserId.Result["+ i +"].RoleModel.RoleName");
 				data.RoleModel = roleModel;
 
 				listWorkspaceUserRolesByUserIdResponse_result.Add(data);

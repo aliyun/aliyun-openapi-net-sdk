@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			addUserTagMetaResponse.HttpResponse = _ctx.HttpResponse;
 			addUserTagMetaResponse.RequestId = _ctx.StringValue("AddUserTagMeta.RequestId");
-			addUserTagMetaResponse.Result = _ctx.StringValue("AddUserTagMeta.Result");
 			addUserTagMetaResponse.Success = _ctx.BooleanValue("AddUserTagMeta.Success");
+			addUserTagMetaResponse.Result = _ctx.StringValue("AddUserTagMeta.Result");
         
 			return addUserTagMetaResponse;
         }

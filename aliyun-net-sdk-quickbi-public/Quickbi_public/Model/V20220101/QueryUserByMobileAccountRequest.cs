@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class QueryUserByMobileAccountRequest : RpcAcsRequest<QueryUserByMobileAccountResponse>
     {
         public QueryUserByMobileAccountRequest()
-            : base("quickbi-public", "2022-01-01", "QueryUserByMobileAccount", "2.2.0", "openAPI")
+            : base("quickbi-public", "2022-01-01", "QueryUserByMobileAccount", "QuickBI", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

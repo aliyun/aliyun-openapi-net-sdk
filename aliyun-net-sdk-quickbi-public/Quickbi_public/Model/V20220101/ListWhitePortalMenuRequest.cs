@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class ListWhitePortalMenuRequest : RpcAcsRequest<ListWhitePortalMenuResponse>
     {
         public ListWhitePortalMenuRequest()
-            : base("quickbi-public", "2022-01-01", "ListWhitePortalMenu", "2.2.0", "openAPI")
+            : base("quickbi-public", "2022-01-01", "ListWhitePortalMenu", "QuickBI", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

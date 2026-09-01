@@ -70,7 +70,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class ListAccelerationOfWorkspace_Result
 		{
 
-			private int? totalPages;
+			private int? pre;
 
 			private int? totalNum;
 
@@ -78,21 +78,21 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 			private int? pageSize;
 
-			private int? pre;
-
 			private int? next;
+
+			private int? totalPages;
 
 			private List<ListAccelerationOfWorkspace_DataItem> data;
 
-			public int? TotalPages
+			public int? Pre
 			{
 				get
 				{
-					return totalPages;
+					return pre;
 				}
 				set	
 				{
-					totalPages = value;
+					pre = value;
 				}
 			}
 
@@ -132,18 +132,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public int? Pre
-			{
-				get
-				{
-					return pre;
-				}
-				set	
-				{
-					pre = value;
-				}
-			}
-
 			public int? Next
 			{
 				get
@@ -153,6 +141,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					next = value;
+				}
+			}
+
+			public int? TotalPages
+			{
+				get
+				{
+					return totalPages;
+				}
+				set	
+				{
+					totalPages = value;
 				}
 			}
 
@@ -171,23 +171,35 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class ListAccelerationOfWorkspace_DataItem
 			{
 
+				private int? jobStatus;
+
 				private string cubeId;
 
 				private string cubeName;
 
-				private string creatorName;
-
 				private string size;
+
+				private string jobHistoryId;
 
 				private string lastModifyTime;
 
-				private string enableQuickindexTime;
+				private string creatorName;
 
 				private string jobId;
 
-				private int? jobStatus;
+				private string enableQuickindexTime;
 
-				private string jobHistoryId;
+				public int? JobStatus
+				{
+					get
+					{
+						return jobStatus;
+					}
+					set	
+					{
+						jobStatus = value;
+					}
+				}
 
 				public string CubeId
 				{
@@ -213,18 +225,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string CreatorName
-				{
-					get
-					{
-						return creatorName;
-					}
-					set	
-					{
-						creatorName = value;
-					}
-				}
-
 				public string Size
 				{
 					get
@@ -234,6 +234,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						size = value;
+					}
+				}
+
+				public string JobHistoryId
+				{
+					get
+					{
+						return jobHistoryId;
+					}
+					set	
+					{
+						jobHistoryId = value;
 					}
 				}
 
@@ -249,15 +261,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string EnableQuickindexTime
+				public string CreatorName
 				{
 					get
 					{
-						return enableQuickindexTime;
+						return creatorName;
 					}
 					set	
 					{
-						enableQuickindexTime = value;
+						creatorName = value;
 					}
 				}
 
@@ -273,27 +285,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public int? JobStatus
+				public string EnableQuickindexTime
 				{
 					get
 					{
-						return jobStatus;
+						return enableQuickindexTime;
 					}
 					set	
 					{
-						jobStatus = value;
-					}
-				}
-
-				public string JobHistoryId
-				{
-					get
-					{
-						return jobHistoryId;
-					}
-					set	
-					{
-						jobHistoryId = value;
+						enableQuickindexTime = value;
 					}
 				}
 			}

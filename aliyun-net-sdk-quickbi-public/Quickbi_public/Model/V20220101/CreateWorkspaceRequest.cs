@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class CreateWorkspaceRequest : RpcAcsRequest<CreateWorkspaceResponse>
     {
         public CreateWorkspaceRequest()
-            : base("quickbi-public", "2022-01-01", "CreateWorkspace", "2.2.0", "openAPI")
+            : base("quickbi-public", "2022-01-01", "CreateWorkspace", "QuickBI", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

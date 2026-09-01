@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			createUserGroupResponse.HttpResponse = _ctx.HttpResponse;
 			createUserGroupResponse.RequestId = _ctx.StringValue("CreateUserGroup.RequestId");
-			createUserGroupResponse.Result = _ctx.StringValue("CreateUserGroup.Result");
 			createUserGroupResponse.Success = _ctx.BooleanValue("CreateUserGroup.Success");
+			createUserGroupResponse.Result = _ctx.StringValue("CreateUserGroup.Result");
         
 			return createUserGroupResponse;
         }

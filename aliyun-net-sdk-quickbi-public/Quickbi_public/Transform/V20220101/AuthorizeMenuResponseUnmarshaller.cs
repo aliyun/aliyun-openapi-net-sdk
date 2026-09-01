@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			authorizeMenuResponse.HttpResponse = _ctx.HttpResponse;
 			authorizeMenuResponse.RequestId = _ctx.StringValue("AuthorizeMenu.RequestId");
-			authorizeMenuResponse.Result = _ctx.IntegerValue("AuthorizeMenu.Result");
 			authorizeMenuResponse.Success = _ctx.BooleanValue("AuthorizeMenu.Success");
+			authorizeMenuResponse.Result = _ctx.IntegerValue("AuthorizeMenu.Result");
         
 			return authorizeMenuResponse;
         }

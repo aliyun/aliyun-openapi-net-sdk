@@ -115,11 +115,23 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class ListWorkspaceUserRolesByUserId_RoleModel
 			{
 
+				private string roleName;
+
 				private string roleId;
 
 				private string roleCode;
 
-				private string roleName;
+				public string RoleName
+				{
+					get
+					{
+						return roleName;
+					}
+					set	
+					{
+						roleName = value;
+					}
+				}
 
 				public string RoleId
 				{
@@ -142,18 +154,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						roleCode = value;
-					}
-				}
-
-				public string RoleName
-				{
-					get
-					{
-						return roleName;
-					}
-					set	
-					{
-						roleName = value;
 					}
 				}
 			}

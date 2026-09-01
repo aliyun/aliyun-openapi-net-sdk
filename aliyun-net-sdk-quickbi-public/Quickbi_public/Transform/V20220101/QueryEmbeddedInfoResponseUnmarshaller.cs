@@ -31,17 +31,17 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			QueryEmbeddedInfoResponse queryEmbeddedInfoResponse = new QueryEmbeddedInfoResponse();
 
 			queryEmbeddedInfoResponse.HttpResponse = _ctx.HttpResponse;
-			queryEmbeddedInfoResponse.Success = _ctx.BooleanValue("QueryEmbeddedInfo.Success");
 			queryEmbeddedInfoResponse.RequestId = _ctx.StringValue("QueryEmbeddedInfo.RequestId");
+			queryEmbeddedInfoResponse.Success = _ctx.BooleanValue("QueryEmbeddedInfo.Success");
 
 			QueryEmbeddedInfoResponse.QueryEmbeddedInfo_Result result = new QueryEmbeddedInfoResponse.QueryEmbeddedInfo_Result();
-			result.EmbeddedCount = _ctx.IntegerValue("QueryEmbeddedInfo.Result.EmbeddedCount");
 			result.MaxCount = _ctx.IntegerValue("QueryEmbeddedInfo.Result.MaxCount");
+			result.EmbeddedCount = _ctx.IntegerValue("QueryEmbeddedInfo.Result.EmbeddedCount");
 
 			QueryEmbeddedInfoResponse.QueryEmbeddedInfo_Result.QueryEmbeddedInfo_Detail detail = new QueryEmbeddedInfoResponse.QueryEmbeddedInfo_Result.QueryEmbeddedInfo_Detail();
+			detail.Report = _ctx.IntegerValue("QueryEmbeddedInfo.Result.Detail.Report");
 			detail.DashboardOfflineQuery = _ctx.IntegerValue("QueryEmbeddedInfo.Result.Detail.DashboardOfflineQuery");
 			detail.Page = _ctx.IntegerValue("QueryEmbeddedInfo.Result.Detail.Page");
-			detail.Report = _ctx.IntegerValue("QueryEmbeddedInfo.Result.Detail.Report");
 			result.Detail = detail;
 			queryEmbeddedInfoResponse.Result = result;
         

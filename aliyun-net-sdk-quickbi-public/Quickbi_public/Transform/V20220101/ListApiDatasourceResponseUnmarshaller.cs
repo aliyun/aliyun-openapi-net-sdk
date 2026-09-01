@@ -35,23 +35,23 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			listApiDatasourceResponse.Success = _ctx.BooleanValue("ListApiDatasource.Success");
 
 			ListApiDatasourceResponse.ListApiDatasource_Result result = new ListApiDatasourceResponse.ListApiDatasource_Result();
+			result.TotalNum = _ctx.IntegerValue("ListApiDatasource.Result.TotalNum");
 			result.PageNum = _ctx.IntegerValue("ListApiDatasource.Result.PageNum");
 			result.PageSize = _ctx.IntegerValue("ListApiDatasource.Result.PageSize");
-			result.TotalNum = _ctx.IntegerValue("ListApiDatasource.Result.TotalNum");
 
 			List<ListApiDatasourceResponse.ListApiDatasource_Result.ListApiDatasource_DataItem> result_data = new List<ListApiDatasourceResponse.ListApiDatasource_Result.ListApiDatasource_DataItem>();
 			for (int i = 0; i < _ctx.Length("ListApiDatasource.Result.Data.Length"); i++) {
 				ListApiDatasourceResponse.ListApiDatasource_Result.ListApiDatasource_DataItem dataItem = new ListApiDatasourceResponse.ListApiDatasource_Result.ListApiDatasource_DataItem();
-				dataItem.ApiId = _ctx.StringValue("ListApiDatasource.Result.Data["+ i +"].ApiId");
-				dataItem.Body = _ctx.StringValue("ListApiDatasource.Result.Data["+ i +"].Body");
-				dataItem.DataSize = _ctx.FloatValue("ListApiDatasource.Result.Data["+ i +"].DataSize");
 				dataItem.DateUpdateTime = _ctx.StringValue("ListApiDatasource.Result.Data["+ i +"].DateUpdateTime");
 				dataItem.GmtCreate = _ctx.StringValue("ListApiDatasource.Result.Data["+ i +"].GmtCreate");
-				dataItem.GmtModified = _ctx.StringValue("ListApiDatasource.Result.Data["+ i +"].GmtModified");
-				dataItem.JobId = _ctx.StringValue("ListApiDatasource.Result.Data["+ i +"].JobId");
 				dataItem.Parameters = _ctx.StringValue("ListApiDatasource.Result.Data["+ i +"].Parameters");
-				dataItem.ShowName = _ctx.StringValue("ListApiDatasource.Result.Data["+ i +"].ShowName");
 				dataItem.StatusType = _ctx.IntegerValue("ListApiDatasource.Result.Data["+ i +"].StatusType");
+				dataItem.DataSize = _ctx.FloatValue("ListApiDatasource.Result.Data["+ i +"].DataSize");
+				dataItem.GmtModified = _ctx.StringValue("ListApiDatasource.Result.Data["+ i +"].GmtModified");
+				dataItem.ApiId = _ctx.StringValue("ListApiDatasource.Result.Data["+ i +"].ApiId");
+				dataItem.Body = _ctx.StringValue("ListApiDatasource.Result.Data["+ i +"].Body");
+				dataItem.ShowName = _ctx.StringValue("ListApiDatasource.Result.Data["+ i +"].ShowName");
+				dataItem.JobId = _ctx.StringValue("ListApiDatasource.Result.Data["+ i +"].JobId");
 
 				result_data.Add(dataItem);
 			}

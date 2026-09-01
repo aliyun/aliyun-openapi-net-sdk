@@ -25,23 +25,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 	public class QueryUserGroupMemberResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private string requestId;
 
-		private List<QueryUserGroupMember_Data> result;
+		private bool? success;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private List<QueryUserGroupMember_Data> result;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -70,49 +70,25 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryUserGroupMember_Data
 		{
 
-			private string id;
-
-			private bool? isUserGroup;
-
-			private string name;
+			private string parentUserGroupName;
 
 			private string parentUserGroupId;
 
-			private string parentUserGroupName;
+			private bool? isUserGroup;
 
-			public string Id
+			private string id;
+
+			private string name;
+
+			public string ParentUserGroupName
 			{
 				get
 				{
-					return id;
+					return parentUserGroupName;
 				}
 				set	
 				{
-					id = value;
-				}
-			}
-
-			public bool? IsUserGroup
-			{
-				get
-				{
-					return isUserGroup;
-				}
-				set	
-				{
-					isUserGroup = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
+					parentUserGroupName = value;
 				}
 			}
 
@@ -128,15 +104,39 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string ParentUserGroupName
+			public bool? IsUserGroup
 			{
 				get
 				{
-					return parentUserGroupName;
+					return isUserGroup;
 				}
 				set	
 				{
-					parentUserGroupName = value;
+					isUserGroup = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 		}

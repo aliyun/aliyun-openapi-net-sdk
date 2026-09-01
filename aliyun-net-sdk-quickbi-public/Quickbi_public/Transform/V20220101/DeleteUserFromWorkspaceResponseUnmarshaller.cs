@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			deleteUserFromWorkspaceResponse.HttpResponse = _ctx.HttpResponse;
 			deleteUserFromWorkspaceResponse.RequestId = _ctx.StringValue("DeleteUserFromWorkspace.RequestId");
-			deleteUserFromWorkspaceResponse.Result = _ctx.BooleanValue("DeleteUserFromWorkspace.Result");
 			deleteUserFromWorkspaceResponse.Success = _ctx.BooleanValue("DeleteUserFromWorkspace.Success");
+			deleteUserFromWorkspaceResponse.Result = _ctx.BooleanValue("DeleteUserFromWorkspace.Result");
         
 			return deleteUserFromWorkspaceResponse;
         }

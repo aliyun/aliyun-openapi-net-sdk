@@ -31,32 +31,32 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			QueryReadableResourcesListByUserIdResponse queryReadableResourcesListByUserIdResponse = new QueryReadableResourcesListByUserIdResponse();
 
 			queryReadableResourcesListByUserIdResponse.HttpResponse = _ctx.HttpResponse;
-			queryReadableResourcesListByUserIdResponse.Success = _ctx.BooleanValue("QueryReadableResourcesListByUserId.Success");
 			queryReadableResourcesListByUserIdResponse.RequestId = _ctx.StringValue("QueryReadableResourcesListByUserId.RequestId");
+			queryReadableResourcesListByUserIdResponse.Success = _ctx.BooleanValue("QueryReadableResourcesListByUserId.Success");
 
 			List<QueryReadableResourcesListByUserIdResponse.QueryReadableResourcesListByUserId_Data> queryReadableResourcesListByUserIdResponse_result = new List<QueryReadableResourcesListByUserIdResponse.QueryReadableResourcesListByUserId_Data>();
 			for (int i = 0; i < _ctx.Length("QueryReadableResourcesListByUserId.Result.Length"); i++) {
 				QueryReadableResourcesListByUserIdResponse.QueryReadableResourcesListByUserId_Data data = new QueryReadableResourcesListByUserIdResponse.QueryReadableResourcesListByUserId_Data();
-				data.CreateTime = _ctx.StringValue("QueryReadableResourcesListByUserId.Result["+ i +"].CreateTime");
-				data.Description = _ctx.StringValue("QueryReadableResourcesListByUserId.Result["+ i +"].Description");
-				data.ModifyName = _ctx.StringValue("QueryReadableResourcesListByUserId.Result["+ i +"].ModifyName");
-				data.ModifyTime = _ctx.StringValue("QueryReadableResourcesListByUserId.Result["+ i +"].ModifyTime");
-				data.OwnerId = _ctx.StringValue("QueryReadableResourcesListByUserId.Result["+ i +"].OwnerId");
-				data.OwnerName = _ctx.StringValue("QueryReadableResourcesListByUserId.Result["+ i +"].OwnerName");
-				data.SecurityLevel = _ctx.StringValue("QueryReadableResourcesListByUserId.Result["+ i +"].SecurityLevel");
 				data.Status = _ctx.IntegerValue("QueryReadableResourcesListByUserId.Result["+ i +"].Status");
-				data.ThirdPartAuthFlag = _ctx.IntegerValue("QueryReadableResourcesListByUserId.Result["+ i +"].ThirdPartAuthFlag");
-				data.WorkName = _ctx.StringValue("QueryReadableResourcesListByUserId.Result["+ i +"].WorkName");
+				data.ModifyTime = _ctx.StringValue("QueryReadableResourcesListByUserId.Result["+ i +"].ModifyTime");
+				data.OwnerName = _ctx.StringValue("QueryReadableResourcesListByUserId.Result["+ i +"].OwnerName");
+				data.Description = _ctx.StringValue("QueryReadableResourcesListByUserId.Result["+ i +"].Description");
 				data.WorkType = _ctx.StringValue("QueryReadableResourcesListByUserId.Result["+ i +"].WorkType");
-				data.WorksId = _ctx.StringValue("QueryReadableResourcesListByUserId.Result["+ i +"].WorksId");
+				data.ModifyName = _ctx.StringValue("QueryReadableResourcesListByUserId.Result["+ i +"].ModifyName");
+				data.CreateTime = _ctx.StringValue("QueryReadableResourcesListByUserId.Result["+ i +"].CreateTime");
 				data.WorkspaceId = _ctx.StringValue("QueryReadableResourcesListByUserId.Result["+ i +"].WorkspaceId");
+				data.ThirdPartAuthFlag = _ctx.IntegerValue("QueryReadableResourcesListByUserId.Result["+ i +"].ThirdPartAuthFlag");
+				data.OwnerId = _ctx.StringValue("QueryReadableResourcesListByUserId.Result["+ i +"].OwnerId");
+				data.SecurityLevel = _ctx.StringValue("QueryReadableResourcesListByUserId.Result["+ i +"].SecurityLevel");
+				data.WorkName = _ctx.StringValue("QueryReadableResourcesListByUserId.Result["+ i +"].WorkName");
 				data.WorkspaceName = _ctx.StringValue("QueryReadableResourcesListByUserId.Result["+ i +"].WorkspaceName");
+				data.WorksId = _ctx.StringValue("QueryReadableResourcesListByUserId.Result["+ i +"].WorksId");
 
 				QueryReadableResourcesListByUserIdResponse.QueryReadableResourcesListByUserId_Data.QueryReadableResourcesListByUserId_Directory directory = new QueryReadableResourcesListByUserIdResponse.QueryReadableResourcesListByUserId_Data.QueryReadableResourcesListByUserId_Directory();
-				directory.Id = _ctx.StringValue("QueryReadableResourcesListByUserId.Result["+ i +"].Directory.Id");
-				directory.Name = _ctx.StringValue("QueryReadableResourcesListByUserId.Result["+ i +"].Directory.Name");
 				directory.PathId = _ctx.StringValue("QueryReadableResourcesListByUserId.Result["+ i +"].Directory.PathId");
+				directory.Id = _ctx.StringValue("QueryReadableResourcesListByUserId.Result["+ i +"].Directory.Id");
 				directory.PathName = _ctx.StringValue("QueryReadableResourcesListByUserId.Result["+ i +"].Directory.PathName");
+				directory.Name = _ctx.StringValue("QueryReadableResourcesListByUserId.Result["+ i +"].Directory.Name");
 				data.Directory = directory;
 
 				queryReadableResourcesListByUserIdResponse_result.Add(data);

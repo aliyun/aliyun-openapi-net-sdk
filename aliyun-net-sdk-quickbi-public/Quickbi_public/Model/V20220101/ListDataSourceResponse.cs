@@ -70,43 +70,31 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class ListDataSource_Data
 		{
 
-			private string creatorId;
-
-			private string creatorName;
+			private string gmtCreate;
 
 			private string datasourceId;
 
-			private string gmtCreate;
+			private string creatorId;
 
 			private string gmtModified;
 
+			private string parentDsType;
+
 			private string showName;
+
+			private string creatorName;
 
 			private string dsType;
 
-			private string parentDsType;
-
-			public string CreatorId
+			public string GmtCreate
 			{
 				get
 				{
-					return creatorId;
+					return gmtCreate;
 				}
 				set	
 				{
-					creatorId = value;
-				}
-			}
-
-			public string CreatorName
-			{
-				get
-				{
-					return creatorName;
-				}
-				set	
-				{
-					creatorName = value;
+					gmtCreate = value;
 				}
 			}
 
@@ -122,15 +110,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string GmtCreate
+			public string CreatorId
 			{
 				get
 				{
-					return gmtCreate;
+					return creatorId;
 				}
 				set	
 				{
-					gmtCreate = value;
+					creatorId = value;
 				}
 			}
 
@@ -146,6 +134,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
+			public string ParentDsType
+			{
+				get
+				{
+					return parentDsType;
+				}
+				set	
+				{
+					parentDsType = value;
+				}
+			}
+
 			public string ShowName
 			{
 				get
@@ -158,6 +158,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
+			public string CreatorName
+			{
+				get
+				{
+					return creatorName;
+				}
+				set	
+				{
+					creatorName = value;
+				}
+			}
+
 			public string DsType
 			{
 				get
@@ -167,18 +179,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					dsType = value;
-				}
-			}
-
-			public string ParentDsType
-			{
-				get
-				{
-					return parentDsType;
-				}
-				set	
-				{
-					parentDsType = value;
 				}
 			}
 		}

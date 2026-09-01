@@ -31,33 +31,45 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			QueryOrganizationWorkspaceListResponse queryOrganizationWorkspaceListResponse = new QueryOrganizationWorkspaceListResponse();
 
 			queryOrganizationWorkspaceListResponse.HttpResponse = _ctx.HttpResponse;
-			queryOrganizationWorkspaceListResponse.Success = _ctx.BooleanValue("QueryOrganizationWorkspaceList.Success");
 			queryOrganizationWorkspaceListResponse.RequestId = _ctx.StringValue("QueryOrganizationWorkspaceList.RequestId");
+			queryOrganizationWorkspaceListResponse.Success = _ctx.BooleanValue("QueryOrganizationWorkspaceList.Success");
 
 			QueryOrganizationWorkspaceListResponse.QueryOrganizationWorkspaceList_Result result = new QueryOrganizationWorkspaceListResponse.QueryOrganizationWorkspaceList_Result();
+			result.TotalNum = _ctx.IntegerValue("QueryOrganizationWorkspaceList.Result.TotalNum");
 			result.PageNum = _ctx.IntegerValue("QueryOrganizationWorkspaceList.Result.PageNum");
 			result.PageSize = _ctx.IntegerValue("QueryOrganizationWorkspaceList.Result.PageSize");
-			result.TotalNum = _ctx.IntegerValue("QueryOrganizationWorkspaceList.Result.TotalNum");
 			result.TotalPages = _ctx.IntegerValue("QueryOrganizationWorkspaceList.Result.TotalPages");
 
 			List<QueryOrganizationWorkspaceListResponse.QueryOrganizationWorkspaceList_Result.QueryOrganizationWorkspaceList_DataItem> result_data = new List<QueryOrganizationWorkspaceListResponse.QueryOrganizationWorkspaceList_Result.QueryOrganizationWorkspaceList_DataItem>();
 			for (int i = 0; i < _ctx.Length("QueryOrganizationWorkspaceList.Result.Data.Length"); i++) {
 				QueryOrganizationWorkspaceListResponse.QueryOrganizationWorkspaceList_Result.QueryOrganizationWorkspaceList_DataItem dataItem = new QueryOrganizationWorkspaceListResponse.QueryOrganizationWorkspaceList_Result.QueryOrganizationWorkspaceList_DataItem();
-				dataItem.AllowPublishOperation = _ctx.BooleanValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].AllowPublishOperation");
-				dataItem.AllowShareOperation = _ctx.BooleanValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].AllowShareOperation");
-				dataItem.CreateTime = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].CreateTime");
-				dataItem.CreateUser = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].CreateUser");
-				dataItem.CreateUserAccountName = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].CreateUserAccountName");
-				dataItem.ModifiedTime = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].ModifiedTime");
-				dataItem.ModifyUser = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].ModifyUser");
-				dataItem.ModifyUserAccountName = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].ModifyUserAccountName");
-				dataItem.OrganizationId = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].OrganizationId");
-				dataItem.Owner = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].Owner");
-				dataItem.OwnerAccountName = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].OwnerAccountName");
 				dataItem.WorkspaceDescription = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].WorkspaceDescription");
-				dataItem.WorkspaceId = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].WorkspaceId");
-				dataItem.WorkspaceName = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].WorkspaceName");
 				dataItem.RealOwnerAccountName = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].RealOwnerAccountName");
+				dataItem.Owner = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].Owner");
+				dataItem.ModifyUser = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].ModifyUser");
+				dataItem.CreateTime = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].CreateTime");
+				dataItem.OwnerAccountName = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].OwnerAccountName");
+				dataItem.WorkspaceId = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].WorkspaceId");
+				dataItem.CreateUser = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].CreateUser");
+				dataItem.OrganizationId = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].OrganizationId");
+				dataItem.ModifyUserAccountName = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].ModifyUserAccountName");
+				dataItem.ModifiedTime = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].ModifiedTime");
+				dataItem.AllowShareOperation = _ctx.BooleanValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].AllowShareOperation");
+				dataItem.WorkspaceName = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].WorkspaceName");
+				dataItem.AllowPublishOperation = _ctx.BooleanValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].AllowPublishOperation");
+				dataItem.CreateUserAccountName = _ctx.StringValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].CreateUserAccountName");
+
+				QueryOrganizationWorkspaceListResponse.QueryOrganizationWorkspaceList_Result.QueryOrganizationWorkspaceList_DataItem.QueryOrganizationWorkspaceList_WorkspaceExportConfig workspaceExportConfig = new QueryOrganizationWorkspaceListResponse.QueryOrganizationWorkspaceList_Result.QueryOrganizationWorkspaceList_DataItem.QueryOrganizationWorkspaceList_WorkspaceExportConfig();
+				workspaceExportConfig.DefaultExportType = _ctx.BooleanValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].WorkspaceExportConfig.DefaultExportType");
+				workspaceExportConfig.PdfExport = _ctx.BooleanValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].WorkspaceExportConfig.PdfExport");
+				workspaceExportConfig.ImageExport = _ctx.BooleanValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].WorkspaceExportConfig.ImageExport");
+				workspaceExportConfig.ExportToServer = _ctx.BooleanValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].WorkspaceExportConfig.ExportToServer");
+				workspaceExportConfig.ExportToLocal = _ctx.BooleanValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].WorkspaceExportConfig.ExportToLocal");
+				workspaceExportConfig.ExportMainSwitch = _ctx.BooleanValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].WorkspaceExportConfig.ExportMainSwitch");
+				workspaceExportConfig.AllowExcelImageFile = _ctx.BooleanValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].WorkspaceExportConfig.AllowExcelImageFile");
+				workspaceExportConfig.DataExport = _ctx.BooleanValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].WorkspaceExportConfig.DataExport");
+				workspaceExportConfig.ExportToPublicWork = _ctx.BooleanValue("QueryOrganizationWorkspaceList.Result.Data["+ i +"].WorkspaceExportConfig.ExportToPublicWork");
+				dataItem.WorkspaceExportConfig = workspaceExportConfig;
 
 				result_data.Add(dataItem);
 			}

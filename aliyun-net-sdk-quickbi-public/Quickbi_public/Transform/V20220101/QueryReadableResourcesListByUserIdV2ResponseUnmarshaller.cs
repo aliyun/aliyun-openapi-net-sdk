@@ -31,8 +31,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			QueryReadableResourcesListByUserIdV2Response queryReadableResourcesListByUserIdV2Response = new QueryReadableResourcesListByUserIdV2Response();
 
 			queryReadableResourcesListByUserIdV2Response.HttpResponse = _ctx.HttpResponse;
-			queryReadableResourcesListByUserIdV2Response.Success = _ctx.BooleanValue("QueryReadableResourcesListByUserIdV2.Success");
 			queryReadableResourcesListByUserIdV2Response.RequestId = _ctx.StringValue("QueryReadableResourcesListByUserIdV2.RequestId");
+			queryReadableResourcesListByUserIdV2Response.Success = _ctx.BooleanValue("QueryReadableResourcesListByUserIdV2.Success");
 
 			List<QueryReadableResourcesListByUserIdV2Response.QueryReadableResourcesListByUserIdV2_Data> queryReadableResourcesListByUserIdV2Response_result = new List<QueryReadableResourcesListByUserIdV2Response.QueryReadableResourcesListByUserIdV2_Data>();
 			for (int i = 0; i < _ctx.Length("QueryReadableResourcesListByUserIdV2.Result.Length"); i++) {

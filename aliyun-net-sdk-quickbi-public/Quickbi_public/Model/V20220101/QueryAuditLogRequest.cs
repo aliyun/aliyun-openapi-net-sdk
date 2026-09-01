@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class QueryAuditLogRequest : RpcAcsRequest<QueryAuditLogResponse>
     {
         public QueryAuditLogRequest()
-            : base("quickbi-public", "2022-01-01", "QueryAuditLog", "2.2.0", "openAPI")
+            : base("quickbi-public", "2022-01-01", "QueryAuditLog", "QuickBI", "openAPI")
         {
 			Method = MethodType.POST;
         }

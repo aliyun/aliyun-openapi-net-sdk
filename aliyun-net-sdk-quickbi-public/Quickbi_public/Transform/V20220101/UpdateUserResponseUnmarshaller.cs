@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			updateUserResponse.HttpResponse = _ctx.HttpResponse;
 			updateUserResponse.RequestId = _ctx.StringValue("UpdateUser.RequestId");
-			updateUserResponse.Result = _ctx.BooleanValue("UpdateUser.Result");
 			updateUserResponse.Success = _ctx.BooleanValue("UpdateUser.Success");
+			updateUserResponse.Result = _ctx.BooleanValue("UpdateUser.Result");
         
 			return updateUserResponse;
         }

@@ -35,8 +35,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			batchAddFeishuUsersResponse.Success = _ctx.BooleanValue("BatchAddFeishuUsers.Success");
 
 			BatchAddFeishuUsersResponse.BatchAddFeishuUsers_Result result = new BatchAddFeishuUsersResponse.BatchAddFeishuUsers_Result();
-			result.FailCount = _ctx.IntegerValue("BatchAddFeishuUsers.Result.FailCount");
 			result.OkCount = _ctx.IntegerValue("BatchAddFeishuUsers.Result.OkCount");
+			result.FailCount = _ctx.IntegerValue("BatchAddFeishuUsers.Result.FailCount");
 
 			List<BatchAddFeishuUsersResponse.BatchAddFeishuUsers_Result.BatchAddFeishuUsers_FailResultsItem> result_failResults = new List<BatchAddFeishuUsersResponse.BatchAddFeishuUsers_Result.BatchAddFeishuUsers_FailResultsItem>();
 			for (int i = 0; i < _ctx.Length("BatchAddFeishuUsers.Result.FailResults.Length"); i++) {
@@ -45,9 +45,9 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 				List<BatchAddFeishuUsersResponse.BatchAddFeishuUsers_Result.BatchAddFeishuUsers_FailResultsItem.BatchAddFeishuUsers_FailInfosItem> failResultsItem_failInfos = new List<BatchAddFeishuUsersResponse.BatchAddFeishuUsers_Result.BatchAddFeishuUsers_FailResultsItem.BatchAddFeishuUsers_FailInfosItem>();
 				for (int j = 0; j < _ctx.Length("BatchAddFeishuUsers.Result.FailResults["+ i +"].FailInfos.Length"); j++) {
 					BatchAddFeishuUsersResponse.BatchAddFeishuUsers_Result.BatchAddFeishuUsers_FailResultsItem.BatchAddFeishuUsers_FailInfosItem failInfosItem = new BatchAddFeishuUsersResponse.BatchAddFeishuUsers_Result.BatchAddFeishuUsers_FailResultsItem.BatchAddFeishuUsers_FailInfosItem();
-					failInfosItem.Code = _ctx.StringValue("BatchAddFeishuUsers.Result.FailResults["+ i +"].FailInfos["+ j +"].Code");
-					failInfosItem.CodeDesc = _ctx.StringValue("BatchAddFeishuUsers.Result.FailResults["+ i +"].FailInfos["+ j +"].CodeDesc");
 					failInfosItem.Input = _ctx.StringValue("BatchAddFeishuUsers.Result.FailResults["+ i +"].FailInfos["+ j +"].Input");
+					failInfosItem.CodeDesc = _ctx.StringValue("BatchAddFeishuUsers.Result.FailResults["+ i +"].FailInfos["+ j +"].CodeDesc");
+					failInfosItem.Code = _ctx.StringValue("BatchAddFeishuUsers.Result.FailResults["+ i +"].FailInfos["+ j +"].Code");
 
 					failResultsItem_failInfos.Add(failInfosItem);
 				}

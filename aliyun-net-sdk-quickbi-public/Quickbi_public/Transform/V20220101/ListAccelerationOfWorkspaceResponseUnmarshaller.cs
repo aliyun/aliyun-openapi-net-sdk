@@ -35,25 +35,25 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			listAccelerationOfWorkspaceResponse.Success = _ctx.BooleanValue("ListAccelerationOfWorkspace.Success");
 
 			ListAccelerationOfWorkspaceResponse.ListAccelerationOfWorkspace_Result result = new ListAccelerationOfWorkspaceResponse.ListAccelerationOfWorkspace_Result();
-			result.TotalPages = _ctx.IntegerValue("ListAccelerationOfWorkspace.Result.TotalPages");
+			result.Pre = _ctx.IntegerValue("ListAccelerationOfWorkspace.Result.Pre");
 			result.TotalNum = _ctx.IntegerValue("ListAccelerationOfWorkspace.Result.TotalNum");
 			result.PageNum = _ctx.IntegerValue("ListAccelerationOfWorkspace.Result.PageNum");
 			result.PageSize = _ctx.IntegerValue("ListAccelerationOfWorkspace.Result.PageSize");
-			result.Pre = _ctx.IntegerValue("ListAccelerationOfWorkspace.Result.Pre");
 			result.Next = _ctx.IntegerValue("ListAccelerationOfWorkspace.Result.Next");
+			result.TotalPages = _ctx.IntegerValue("ListAccelerationOfWorkspace.Result.TotalPages");
 
 			List<ListAccelerationOfWorkspaceResponse.ListAccelerationOfWorkspace_Result.ListAccelerationOfWorkspace_DataItem> result_data = new List<ListAccelerationOfWorkspaceResponse.ListAccelerationOfWorkspace_Result.ListAccelerationOfWorkspace_DataItem>();
 			for (int i = 0; i < _ctx.Length("ListAccelerationOfWorkspace.Result.Data.Length"); i++) {
 				ListAccelerationOfWorkspaceResponse.ListAccelerationOfWorkspace_Result.ListAccelerationOfWorkspace_DataItem dataItem = new ListAccelerationOfWorkspaceResponse.ListAccelerationOfWorkspace_Result.ListAccelerationOfWorkspace_DataItem();
+				dataItem.JobStatus = _ctx.IntegerValue("ListAccelerationOfWorkspace.Result.Data["+ i +"].JobStatus");
 				dataItem.CubeId = _ctx.StringValue("ListAccelerationOfWorkspace.Result.Data["+ i +"].CubeId");
 				dataItem.CubeName = _ctx.StringValue("ListAccelerationOfWorkspace.Result.Data["+ i +"].CubeName");
-				dataItem.CreatorName = _ctx.StringValue("ListAccelerationOfWorkspace.Result.Data["+ i +"].CreatorName");
 				dataItem.Size = _ctx.StringValue("ListAccelerationOfWorkspace.Result.Data["+ i +"].Size");
-				dataItem.LastModifyTime = _ctx.StringValue("ListAccelerationOfWorkspace.Result.Data["+ i +"].LastModifyTime");
-				dataItem.EnableQuickindexTime = _ctx.StringValue("ListAccelerationOfWorkspace.Result.Data["+ i +"].EnableQuickindexTime");
-				dataItem.JobId = _ctx.StringValue("ListAccelerationOfWorkspace.Result.Data["+ i +"].JobId");
-				dataItem.JobStatus = _ctx.IntegerValue("ListAccelerationOfWorkspace.Result.Data["+ i +"].JobStatus");
 				dataItem.JobHistoryId = _ctx.StringValue("ListAccelerationOfWorkspace.Result.Data["+ i +"].JobHistoryId");
+				dataItem.LastModifyTime = _ctx.StringValue("ListAccelerationOfWorkspace.Result.Data["+ i +"].LastModifyTime");
+				dataItem.CreatorName = _ctx.StringValue("ListAccelerationOfWorkspace.Result.Data["+ i +"].CreatorName");
+				dataItem.JobId = _ctx.StringValue("ListAccelerationOfWorkspace.Result.Data["+ i +"].JobId");
+				dataItem.EnableQuickindexTime = _ctx.StringValue("ListAccelerationOfWorkspace.Result.Data["+ i +"].EnableQuickindexTime");
 
 				result_data.Add(dataItem);
 			}

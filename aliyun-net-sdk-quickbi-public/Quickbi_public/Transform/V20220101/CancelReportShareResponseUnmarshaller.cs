@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			cancelReportShareResponse.HttpResponse = _ctx.HttpResponse;
 			cancelReportShareResponse.RequestId = _ctx.StringValue("CancelReportShare.RequestId");
-			cancelReportShareResponse.Result = _ctx.BooleanValue("CancelReportShare.Result");
 			cancelReportShareResponse.Success = _ctx.BooleanValue("CancelReportShare.Success");
+			cancelReportShareResponse.Result = _ctx.BooleanValue("CancelReportShare.Result");
         
 			return cancelReportShareResponse;
         }

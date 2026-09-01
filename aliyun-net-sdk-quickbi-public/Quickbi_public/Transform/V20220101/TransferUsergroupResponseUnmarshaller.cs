@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			transferUsergroupResponse.HttpResponse = _ctx.HttpResponse;
 			transferUsergroupResponse.RequestId = _ctx.StringValue("TransferUsergroup.RequestId");
-			transferUsergroupResponse.Result = _ctx.BooleanValue("TransferUsergroup.Result");
 			transferUsergroupResponse.Success = _ctx.BooleanValue("TransferUsergroup.Success");
+			transferUsergroupResponse.Result = _ctx.BooleanValue("TransferUsergroup.Result");
         
 			return transferUsergroupResponse;
         }

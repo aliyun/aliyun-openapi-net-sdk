@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			manualRunMailTaskResponse.HttpResponse = _ctx.HttpResponse;
 			manualRunMailTaskResponse.RequestId = _ctx.StringValue("ManualRunMailTask.RequestId");
-			manualRunMailTaskResponse.Result = _ctx.BooleanValue("ManualRunMailTask.Result");
 			manualRunMailTaskResponse.Success = _ctx.BooleanValue("ManualRunMailTask.Success");
+			manualRunMailTaskResponse.Result = _ctx.BooleanValue("ManualRunMailTask.Result");
         
 			return manualRunMailTaskResponse;
         }

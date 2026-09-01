@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class SmartqAuthTransferRequest : RpcAcsRequest<SmartqAuthTransferResponse>
     {
         public SmartqAuthTransferRequest()
-            : base("quickbi-public", "2022-01-01", "SmartqAuthTransfer", "2.2.0", "openAPI")
+            : base("quickbi-public", "2022-01-01", "SmartqAuthTransfer", "QuickBI", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

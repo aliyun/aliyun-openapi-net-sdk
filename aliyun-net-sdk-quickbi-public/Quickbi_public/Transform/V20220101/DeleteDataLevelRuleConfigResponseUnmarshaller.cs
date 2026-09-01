@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			deleteDataLevelRuleConfigResponse.HttpResponse = _ctx.HttpResponse;
 			deleteDataLevelRuleConfigResponse.RequestId = _ctx.StringValue("DeleteDataLevelRuleConfig.RequestId");
-			deleteDataLevelRuleConfigResponse.Result = _ctx.BooleanValue("DeleteDataLevelRuleConfig.Result");
 			deleteDataLevelRuleConfigResponse.Success = _ctx.BooleanValue("DeleteDataLevelRuleConfig.Success");
+			deleteDataLevelRuleConfigResponse.Result = _ctx.BooleanValue("DeleteDataLevelRuleConfig.Result");
         
 			return deleteDataLevelRuleConfigResponse;
         }

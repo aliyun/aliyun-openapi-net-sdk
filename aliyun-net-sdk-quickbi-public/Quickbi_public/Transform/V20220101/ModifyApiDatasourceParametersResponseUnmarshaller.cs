@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			modifyApiDatasourceParametersResponse.HttpResponse = _ctx.HttpResponse;
 			modifyApiDatasourceParametersResponse.RequestId = _ctx.StringValue("ModifyApiDatasourceParameters.RequestId");
-			modifyApiDatasourceParametersResponse.Result = _ctx.BooleanValue("ModifyApiDatasourceParameters.Result");
 			modifyApiDatasourceParametersResponse.Success = _ctx.BooleanValue("ModifyApiDatasourceParameters.Success");
+			modifyApiDatasourceParametersResponse.Result = _ctx.BooleanValue("ModifyApiDatasourceParameters.Result");
         
 			return modifyApiDatasourceParametersResponse;
         }

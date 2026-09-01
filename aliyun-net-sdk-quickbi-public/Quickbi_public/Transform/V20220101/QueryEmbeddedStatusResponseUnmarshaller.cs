@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			queryEmbeddedStatusResponse.HttpResponse = _ctx.HttpResponse;
 			queryEmbeddedStatusResponse.RequestId = _ctx.StringValue("QueryEmbeddedStatus.RequestId");
-			queryEmbeddedStatusResponse.Result = _ctx.BooleanValue("QueryEmbeddedStatus.Result");
 			queryEmbeddedStatusResponse.Success = _ctx.BooleanValue("QueryEmbeddedStatus.Success");
+			queryEmbeddedStatusResponse.Result = _ctx.BooleanValue("QueryEmbeddedStatus.Result");
         
 			return queryEmbeddedStatusResponse;
         }

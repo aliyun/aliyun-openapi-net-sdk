@@ -37,14 +37,14 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			List<ListDataSourceResponse.ListDataSource_Data> listDataSourceResponse_result = new List<ListDataSourceResponse.ListDataSource_Data>();
 			for (int i = 0; i < _ctx.Length("ListDataSource.Result.Length"); i++) {
 				ListDataSourceResponse.ListDataSource_Data data = new ListDataSourceResponse.ListDataSource_Data();
-				data.CreatorId = _ctx.StringValue("ListDataSource.Result["+ i +"].CreatorId");
-				data.CreatorName = _ctx.StringValue("ListDataSource.Result["+ i +"].CreatorName");
-				data.DatasourceId = _ctx.StringValue("ListDataSource.Result["+ i +"].DatasourceId");
 				data.GmtCreate = _ctx.StringValue("ListDataSource.Result["+ i +"].GmtCreate");
+				data.DatasourceId = _ctx.StringValue("ListDataSource.Result["+ i +"].DatasourceId");
+				data.CreatorId = _ctx.StringValue("ListDataSource.Result["+ i +"].CreatorId");
 				data.GmtModified = _ctx.StringValue("ListDataSource.Result["+ i +"].GmtModified");
-				data.ShowName = _ctx.StringValue("ListDataSource.Result["+ i +"].ShowName");
-				data.DsType = _ctx.StringValue("ListDataSource.Result["+ i +"].DsType");
 				data.ParentDsType = _ctx.StringValue("ListDataSource.Result["+ i +"].ParentDsType");
+				data.ShowName = _ctx.StringValue("ListDataSource.Result["+ i +"].ShowName");
+				data.CreatorName = _ctx.StringValue("ListDataSource.Result["+ i +"].CreatorName");
+				data.DsType = _ctx.StringValue("ListDataSource.Result["+ i +"].DsType");
 
 				listDataSourceResponse_result.Add(data);
 			}

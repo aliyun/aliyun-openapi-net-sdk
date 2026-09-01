@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			deleteDataLevelPermissionRuleUsersResponse.HttpResponse = _ctx.HttpResponse;
 			deleteDataLevelPermissionRuleUsersResponse.RequestId = _ctx.StringValue("DeleteDataLevelPermissionRuleUsers.RequestId");
-			deleteDataLevelPermissionRuleUsersResponse.Result = _ctx.BooleanValue("DeleteDataLevelPermissionRuleUsers.Result");
 			deleteDataLevelPermissionRuleUsersResponse.Success = _ctx.BooleanValue("DeleteDataLevelPermissionRuleUsers.Success");
+			deleteDataLevelPermissionRuleUsersResponse.Result = _ctx.BooleanValue("DeleteDataLevelPermissionRuleUsers.Result");
         
 			return deleteDataLevelPermissionRuleUsersResponse;
         }

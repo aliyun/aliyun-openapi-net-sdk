@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			withdrawAllUserGroupsResponse.HttpResponse = _ctx.HttpResponse;
 			withdrawAllUserGroupsResponse.RequestId = _ctx.StringValue("WithdrawAllUserGroups.RequestId");
-			withdrawAllUserGroupsResponse.Result = _ctx.BooleanValue("WithdrawAllUserGroups.Result");
 			withdrawAllUserGroupsResponse.Success = _ctx.BooleanValue("WithdrawAllUserGroups.Success");
+			withdrawAllUserGroupsResponse.Result = _ctx.BooleanValue("WithdrawAllUserGroups.Result");
         
 			return withdrawAllUserGroupsResponse;
         }

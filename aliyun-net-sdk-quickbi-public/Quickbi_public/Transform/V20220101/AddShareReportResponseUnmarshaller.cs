@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			addShareReportResponse.HttpResponse = _ctx.HttpResponse;
 			addShareReportResponse.RequestId = _ctx.StringValue("AddShareReport.RequestId");
-			addShareReportResponse.Result = _ctx.BooleanValue("AddShareReport.Result");
 			addShareReportResponse.Success = _ctx.BooleanValue("AddShareReport.Success");
+			addShareReportResponse.Result = _ctx.BooleanValue("AddShareReport.Result");
         
 			return addShareReportResponse;
         }

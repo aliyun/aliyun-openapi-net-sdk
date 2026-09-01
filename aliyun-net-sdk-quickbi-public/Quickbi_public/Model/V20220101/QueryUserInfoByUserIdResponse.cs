@@ -25,23 +25,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 	public class QueryUserInfoByUserIdResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private string requestId;
 
-		private QueryUserInfoByUserId_Result result;
+		private bool? success;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private QueryUserInfoByUserId_Result result;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -70,27 +70,41 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryUserInfoByUserId_Result
 		{
 
+			private bool? isDeleted;
+
 			private string accountId;
 
-			private string accountName;
-
-			private bool? adminUser;
-
-			private bool? authAdminUser;
-
 			private string email;
-
-			private string nickName;
 
 			private string phone;
 
 			private string userId;
 
+			private bool? adminUser;
+
+			private string nickName;
+
 			private int? userType;
+
+			private bool? authAdminUser;
+
+			private string accountName;
 
 			private List<string> roleIdList;
 
 			private List<string> copilotModules;
+
+			public bool? IsDeleted
+			{
+				get
+				{
+					return isDeleted;
+				}
+				set	
+				{
+					isDeleted = value;
+				}
+			}
 
 			public string AccountId
 			{
@@ -104,42 +118,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string AccountName
-			{
-				get
-				{
-					return accountName;
-				}
-				set	
-				{
-					accountName = value;
-				}
-			}
-
-			public bool? AdminUser
-			{
-				get
-				{
-					return adminUser;
-				}
-				set	
-				{
-					adminUser = value;
-				}
-			}
-
-			public bool? AuthAdminUser
-			{
-				get
-				{
-					return authAdminUser;
-				}
-				set	
-				{
-					authAdminUser = value;
-				}
-			}
-
 			public string Email
 			{
 				get
@@ -149,18 +127,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					email = value;
-				}
-			}
-
-			public string NickName
-			{
-				get
-				{
-					return nickName;
-				}
-				set	
-				{
-					nickName = value;
 				}
 			}
 
@@ -188,6 +154,30 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
+			public bool? AdminUser
+			{
+				get
+				{
+					return adminUser;
+				}
+				set	
+				{
+					adminUser = value;
+				}
+			}
+
+			public string NickName
+			{
+				get
+				{
+					return nickName;
+				}
+				set	
+				{
+					nickName = value;
+				}
+			}
+
 			public int? UserType
 			{
 				get
@@ -197,6 +187,30 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					userType = value;
+				}
+			}
+
+			public bool? AuthAdminUser
+			{
+				get
+				{
+					return authAdminUser;
+				}
+				set	
+				{
+					authAdminUser = value;
+				}
+			}
+
+			public string AccountName
+			{
+				get
+				{
+					return accountName;
+				}
+				set	
+				{
+					accountName = value;
 				}
 			}
 

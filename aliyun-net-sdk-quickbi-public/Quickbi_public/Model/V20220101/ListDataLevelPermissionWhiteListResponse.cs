@@ -115,21 +115,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class ListDataLevelPermissionWhiteList_UsersModel
 			{
 
-				private List<string> userGroups;
-
 				private List<string> users;
 
-				public List<string> UserGroups
-				{
-					get
-					{
-						return userGroups;
-					}
-					set	
-					{
-						userGroups = value;
-					}
-				}
+				private List<string> userGroups;
 
 				public List<string> Users
 				{
@@ -140,6 +128,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						users = value;
+					}
+				}
+
+				public List<string> UserGroups
+				{
+					get
+					{
+						return userGroups;
+					}
+					set	
+					{
+						userGroups = value;
 					}
 				}
 			}

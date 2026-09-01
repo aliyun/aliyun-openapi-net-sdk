@@ -35,22 +35,22 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			queryAccelerationLogByCubeIdResponse.Success = _ctx.BooleanValue("QueryAccelerationLogByCubeId.Success");
 
 			QueryAccelerationLogByCubeIdResponse.QueryAccelerationLogByCubeId_Result result = new QueryAccelerationLogByCubeIdResponse.QueryAccelerationLogByCubeId_Result();
-			result.TotalPages = _ctx.IntegerValue("QueryAccelerationLogByCubeId.Result.TotalPages");
+			result.Pre = _ctx.IntegerValue("QueryAccelerationLogByCubeId.Result.Pre");
 			result.TotalNum = _ctx.IntegerValue("QueryAccelerationLogByCubeId.Result.TotalNum");
 			result.PageNum = _ctx.IntegerValue("QueryAccelerationLogByCubeId.Result.PageNum");
 			result.PageSize = _ctx.IntegerValue("QueryAccelerationLogByCubeId.Result.PageSize");
-			result.Pre = _ctx.IntegerValue("QueryAccelerationLogByCubeId.Result.Pre");
 			result.Next = _ctx.IntegerValue("QueryAccelerationLogByCubeId.Result.Next");
+			result.TotalPages = _ctx.IntegerValue("QueryAccelerationLogByCubeId.Result.TotalPages");
 
 			List<QueryAccelerationLogByCubeIdResponse.QueryAccelerationLogByCubeId_Result.QueryAccelerationLogByCubeId_DataItem> result_data = new List<QueryAccelerationLogByCubeIdResponse.QueryAccelerationLogByCubeId_Result.QueryAccelerationLogByCubeId_DataItem>();
 			for (int i = 0; i < _ctx.Length("QueryAccelerationLogByCubeId.Result.Data.Length"); i++) {
 				QueryAccelerationLogByCubeIdResponse.QueryAccelerationLogByCubeId_Result.QueryAccelerationLogByCubeId_DataItem dataItem = new QueryAccelerationLogByCubeIdResponse.QueryAccelerationLogByCubeId_Result.QueryAccelerationLogByCubeId_DataItem();
-				dataItem.JobId = _ctx.StringValue("QueryAccelerationLogByCubeId.Result.Data["+ i +"].JobId");
-				dataItem.JobHistoryId = _ctx.StringValue("QueryAccelerationLogByCubeId.Result.Data["+ i +"].JobHistoryId");
-				dataItem.JonStartDate = _ctx.StringValue("QueryAccelerationLogByCubeId.Result.Data["+ i +"].JonStartDate");
 				dataItem.JobStatus = _ctx.StringValue("QueryAccelerationLogByCubeId.Result.Data["+ i +"].JobStatus");
-				dataItem.Duration = _ctx.StringValue("QueryAccelerationLogByCubeId.Result.Data["+ i +"].Duration");
+				dataItem.JonStartDate = _ctx.StringValue("QueryAccelerationLogByCubeId.Result.Data["+ i +"].JonStartDate");
 				dataItem.Log = _ctx.StringValue("QueryAccelerationLogByCubeId.Result.Data["+ i +"].Log");
+				dataItem.JobHistoryId = _ctx.StringValue("QueryAccelerationLogByCubeId.Result.Data["+ i +"].JobHistoryId");
+				dataItem.Duration = _ctx.StringValue("QueryAccelerationLogByCubeId.Result.Data["+ i +"].Duration");
+				dataItem.JobId = _ctx.StringValue("QueryAccelerationLogByCubeId.Result.Data["+ i +"].JobId");
 
 				result_data.Add(dataItem);
 			}

@@ -39,8 +39,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 				SmartqAuthorizeResponse.SmartqAuthorize_Data data = new SmartqAuthorizeResponse.SmartqAuthorize_Data();
 				data.UserId = _ctx.StringValue("SmartqAuthorize.Result["+ i +"].UserId");
 				data.LlmCube = _ctx.StringValue("SmartqAuthorize.Result["+ i +"].LlmCube");
-				data.LlmCubeTheme = _ctx.StringValue("SmartqAuthorize.Result["+ i +"].LlmCubeTheme");
 				data.DetailMessage = _ctx.StringValue("SmartqAuthorize.Result["+ i +"].DetailMessage");
+				data.LlmCubeTheme = _ctx.StringValue("SmartqAuthorize.Result["+ i +"].LlmCubeTheme");
 
 				smartqAuthorizeResponse_result.Add(data);
 			}

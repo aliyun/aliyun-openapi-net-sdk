@@ -27,9 +27,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 		private string requestId;
 
-		private bool? result;
-
 		private bool? success;
+
+		private bool? result;
 
 		public string RequestId
 		{
@@ -43,18 +43,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			}
 		}
 
-		public bool? Result
-		{
-			get
-			{
-				return result;
-			}
-			set	
-			{
-				result = value;
-			}
-		}
-
 		public bool? Success
 		{
 			get
@@ -64,6 +52,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public bool? Result
+		{
+			get
+			{
+				return result;
+			}
+			set	
+			{
+				result = value;
 			}
 		}
 	}

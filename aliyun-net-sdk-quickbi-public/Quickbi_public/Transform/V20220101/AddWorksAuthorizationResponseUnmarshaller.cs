@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			addWorksAuthorizationResponse.HttpResponse = _ctx.HttpResponse;
 			addWorksAuthorizationResponse.RequestId = _ctx.StringValue("AddWorksAuthorization.RequestId");
-			addWorksAuthorizationResponse.Result = _ctx.StringValue("AddWorksAuthorization.Result");
 			addWorksAuthorizationResponse.Success = _ctx.BooleanValue("AddWorksAuthorization.Success");
+			addWorksAuthorizationResponse.Result = _ctx.StringValue("AddWorksAuthorization.Result");
         
 			return addWorksAuthorizationResponse;
         }

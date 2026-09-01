@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class IpWhiteListConfigRequest : RpcAcsRequest<IpWhiteListConfigResponse>
     {
         public IpWhiteListConfigRequest()
-            : base("quickbi-public", "2022-01-01", "IpWhiteListConfig", "2.2.0", "openAPI")
+            : base("quickbi-public", "2022-01-01", "IpWhiteListConfig", "QuickBI", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

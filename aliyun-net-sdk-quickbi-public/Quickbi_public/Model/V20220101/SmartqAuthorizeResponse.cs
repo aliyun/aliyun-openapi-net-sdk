@@ -74,9 +74,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 			private string llmCube;
 
-			private string llmCubeTheme;
-
 			private string detailMessage;
+
+			private string llmCubeTheme;
 
 			public string UserId
 			{
@@ -102,18 +102,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string LlmCubeTheme
-			{
-				get
-				{
-					return llmCubeTheme;
-				}
-				set	
-				{
-					llmCubeTheme = value;
-				}
-			}
-
 			public string DetailMessage
 			{
 				get
@@ -123,6 +111,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					detailMessage = value;
+				}
+			}
+
+			public string LlmCubeTheme
+			{
+				get
+				{
+					return llmCubeTheme;
+				}
+				set	
+				{
+					llmCubeTheme = value;
 				}
 			}
 		}

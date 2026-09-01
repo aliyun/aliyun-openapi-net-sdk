@@ -35,28 +35,28 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			listFavoriteReportsResponse.Success = _ctx.BooleanValue("ListFavoriteReports.Success");
 
 			ListFavoriteReportsResponse.ListFavoriteReports_Result result = new ListFavoriteReportsResponse.ListFavoriteReports_Result();
+			result.TotalNum = _ctx.IntegerValue("ListFavoriteReports.Result.TotalNum");
 			result.PageNum = _ctx.IntegerValue("ListFavoriteReports.Result.PageNum");
 			result.PageSize = _ctx.IntegerValue("ListFavoriteReports.Result.PageSize");
-			result.TotalNum = _ctx.IntegerValue("ListFavoriteReports.Result.TotalNum");
 			result.TotalPages = _ctx.IntegerValue("ListFavoriteReports.Result.TotalPages");
 
 			List<ListFavoriteReportsResponse.ListFavoriteReports_Result.ListFavoriteReports_DataItem> result_data = new List<ListFavoriteReportsResponse.ListFavoriteReports_Result.ListFavoriteReports_DataItem>();
 			for (int i = 0; i < _ctx.Length("ListFavoriteReports.Result.Data.Length"); i++) {
 				ListFavoriteReportsResponse.ListFavoriteReports_Result.ListFavoriteReports_DataItem dataItem = new ListFavoriteReportsResponse.ListFavoriteReports_Result.ListFavoriteReports_DataItem();
 				dataItem.Favorite = _ctx.BooleanValue("ListFavoriteReports.Result.Data["+ i +"].Favorite");
-				dataItem.FavoriteDate = _ctx.StringValue("ListFavoriteReports.Result.Data["+ i +"].FavoriteDate");
-				dataItem.GmtCreate = _ctx.StringValue("ListFavoriteReports.Result.Data["+ i +"].GmtCreate");
-				dataItem.GmtModified = _ctx.StringValue("ListFavoriteReports.Result.Data["+ i +"].GmtModified");
-				dataItem.HasEditAuth = _ctx.BooleanValue("ListFavoriteReports.Result.Data["+ i +"].HasEditAuth");
-				dataItem.HasViewAuth = _ctx.BooleanValue("ListFavoriteReports.Result.Data["+ i +"].HasViewAuth");
-				dataItem.Name = _ctx.StringValue("ListFavoriteReports.Result.Data["+ i +"].Name");
 				dataItem.OwnerName = _ctx.StringValue("ListFavoriteReports.Result.Data["+ i +"].OwnerName");
+				dataItem.GmtModified = _ctx.StringValue("ListFavoriteReports.Result.Data["+ i +"].GmtModified");
 				dataItem.OwnerNum = _ctx.StringValue("ListFavoriteReports.Result.Data["+ i +"].OwnerNum");
-				dataItem.PublishStatus = _ctx.IntegerValue("ListFavoriteReports.Result.Data["+ i +"].PublishStatus");
-				dataItem.TreeId = _ctx.StringValue("ListFavoriteReports.Result.Data["+ i +"].TreeId");
-				dataItem.Type = _ctx.StringValue("ListFavoriteReports.Result.Data["+ i +"].Type");
 				dataItem.WorkspaceId = _ctx.StringValue("ListFavoriteReports.Result.Data["+ i +"].WorkspaceId");
+				dataItem.Name = _ctx.StringValue("ListFavoriteReports.Result.Data["+ i +"].Name");
+				dataItem.GmtCreate = _ctx.StringValue("ListFavoriteReports.Result.Data["+ i +"].GmtCreate");
+				dataItem.Type = _ctx.StringValue("ListFavoriteReports.Result.Data["+ i +"].Type");
+				dataItem.TreeId = _ctx.StringValue("ListFavoriteReports.Result.Data["+ i +"].TreeId");
 				dataItem.WorkspaceName = _ctx.StringValue("ListFavoriteReports.Result.Data["+ i +"].WorkspaceName");
+				dataItem.HasViewAuth = _ctx.BooleanValue("ListFavoriteReports.Result.Data["+ i +"].HasViewAuth");
+				dataItem.FavoriteDate = _ctx.StringValue("ListFavoriteReports.Result.Data["+ i +"].FavoriteDate");
+				dataItem.HasEditAuth = _ctx.BooleanValue("ListFavoriteReports.Result.Data["+ i +"].HasEditAuth");
+				dataItem.PublishStatus = _ctx.IntegerValue("ListFavoriteReports.Result.Data["+ i +"].PublishStatus");
 
 				result_data.Add(dataItem);
 			}

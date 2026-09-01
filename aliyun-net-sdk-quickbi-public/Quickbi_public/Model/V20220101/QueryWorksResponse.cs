@@ -25,23 +25,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 	public class QueryWorksResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private string requestId;
 
-		private QueryWorks_Result result;
+		private bool? success;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private QueryWorks_Result result;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -70,109 +70,51 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryWorks_Result
 		{
 
-			private int? auth3rdFlag;
-
-			private string description;
-
-			private string gmtCreate;
-
-			private string gmtModify;
-
-			private string modifyName;
-
-			private string ownerId;
+			private int? status;
 
 			private string ownerName;
 
-			private bool? publicFlag;
-
 			private long? publicInvalidTime;
 
-			private string securityLevel;
-
-			private int? status;
-
-			private string workName;
+			private string description;
 
 			private string workType;
 
-			private string worksId;
+			private string modifyName;
 
 			private string workspaceId;
 
+			private int? auth3rdFlag;
+
+			private string gmtCreate;
+
+			private string ownerId;
+
+			private string gmtModify;
+
+			private string securityLevel;
+
+			private string workName;
+
 			private string workspaceName;
+
+			private bool? publicFlag;
+
+			private string worksId;
+
+			private List<QueryWorks_GlobalParamVoListItem> globalParamVoList;
 
 			private QueryWorks_Directory directory;
 
-			public int? Auth3rdFlag
+			public int? Status
 			{
 				get
 				{
-					return auth3rdFlag;
+					return status;
 				}
 				set	
 				{
-					auth3rdFlag = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string GmtCreate
-			{
-				get
-				{
-					return gmtCreate;
-				}
-				set	
-				{
-					gmtCreate = value;
-				}
-			}
-
-			public string GmtModify
-			{
-				get
-				{
-					return gmtModify;
-				}
-				set	
-				{
-					gmtModify = value;
-				}
-			}
-
-			public string ModifyName
-			{
-				get
-				{
-					return modifyName;
-				}
-				set	
-				{
-					modifyName = value;
-				}
-			}
-
-			public string OwnerId
-			{
-				get
-				{
-					return ownerId;
-				}
-				set	
-				{
-					ownerId = value;
+					status = value;
 				}
 			}
 
@@ -188,18 +130,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public bool? PublicFlag
-			{
-				get
-				{
-					return publicFlag;
-				}
-				set	
-				{
-					publicFlag = value;
-				}
-			}
-
 			public long? PublicInvalidTime
 			{
 				get
@@ -212,39 +142,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string SecurityLevel
+			public string Description
 			{
 				get
 				{
-					return securityLevel;
+					return description;
 				}
 				set	
 				{
-					securityLevel = value;
-				}
-			}
-
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string WorkName
-			{
-				get
-				{
-					return workName;
-				}
-				set	
-				{
-					workName = value;
+					description = value;
 				}
 			}
 
@@ -260,15 +166,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string WorksId
+			public string ModifyName
 			{
 				get
 				{
-					return worksId;
+					return modifyName;
 				}
 				set	
 				{
-					worksId = value;
+					modifyName = value;
 				}
 			}
 
@@ -284,6 +190,78 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
+			public int? Auth3rdFlag
+			{
+				get
+				{
+					return auth3rdFlag;
+				}
+				set	
+				{
+					auth3rdFlag = value;
+				}
+			}
+
+			public string GmtCreate
+			{
+				get
+				{
+					return gmtCreate;
+				}
+				set	
+				{
+					gmtCreate = value;
+				}
+			}
+
+			public string OwnerId
+			{
+				get
+				{
+					return ownerId;
+				}
+				set	
+				{
+					ownerId = value;
+				}
+			}
+
+			public string GmtModify
+			{
+				get
+				{
+					return gmtModify;
+				}
+				set	
+				{
+					gmtModify = value;
+				}
+			}
+
+			public string SecurityLevel
+			{
+				get
+				{
+					return securityLevel;
+				}
+				set	
+				{
+					securityLevel = value;
+				}
+			}
+
+			public string WorkName
+			{
+				get
+				{
+					return workName;
+				}
+				set	
+				{
+					workName = value;
+				}
+			}
+
 			public string WorkspaceName
 			{
 				get
@@ -293,6 +271,42 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					workspaceName = value;
+				}
+			}
+
+			public bool? PublicFlag
+			{
+				get
+				{
+					return publicFlag;
+				}
+				set	
+				{
+					publicFlag = value;
+				}
+			}
+
+			public string WorksId
+			{
+				get
+				{
+					return worksId;
+				}
+				set	
+				{
+					worksId = value;
+				}
+			}
+
+			public List<QueryWorks_GlobalParamVoListItem> GlobalParamVoList
+			{
+				get
+				{
+					return globalParamVoList;
+				}
+				set	
+				{
+					globalParamVoList = value;
 				}
 			}
 
@@ -308,40 +322,76 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
+			public class QueryWorks_GlobalParamVoListItem
+			{
+
+				private bool? required;
+
+				private string dataType;
+
+				private string paramAlias;
+
+				private string paramName;
+
+				public bool? Required
+				{
+					get
+					{
+						return required;
+					}
+					set	
+					{
+						required = value;
+					}
+				}
+
+				public string DataType
+				{
+					get
+					{
+						return dataType;
+					}
+					set	
+					{
+						dataType = value;
+					}
+				}
+
+				public string ParamAlias
+				{
+					get
+					{
+						return paramAlias;
+					}
+					set	
+					{
+						paramAlias = value;
+					}
+				}
+
+				public string ParamName
+				{
+					get
+					{
+						return paramName;
+					}
+					set	
+					{
+						paramName = value;
+					}
+				}
+			}
+
 			public class QueryWorks_Directory
 			{
 
-				private string id;
-
-				private string name;
-
 				private string pathId;
+
+				private string id;
 
 				private string pathName;
 
-				public string Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
-					}
-				}
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
+				private string name;
 
 				public string PathId
 				{
@@ -355,6 +405,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
+				public string Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
+					}
+				}
+
 				public string PathName
 				{
 					get
@@ -364,6 +426,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						pathName = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
 					}
 				}
 			}

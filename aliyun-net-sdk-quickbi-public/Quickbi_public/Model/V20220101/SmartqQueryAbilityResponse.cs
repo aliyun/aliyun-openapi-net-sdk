@@ -70,27 +70,27 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class SmartqQueryAbility_Result
 		{
 
-			private string chartType;
+			private string conclusionText;
 
 			private string logicSql;
 
-			private string conclusionText;
-
-			private List<SmartqQueryAbility_MetaTypeItem> metaType;
+			private string chartType;
 
 			private List<SmartqQueryAbility_ValuesItem> values;
 
+			private List<SmartqQueryAbility_MetaTypeItem> metaType;
+
 			private List<string> dataList;
 
-			public string ChartType
+			public string ConclusionText
 			{
 				get
 				{
-					return chartType;
+					return conclusionText;
 				}
 				set	
 				{
-					chartType = value;
+					conclusionText = value;
 				}
 			}
 
@@ -106,27 +106,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string ConclusionText
+			public string ChartType
 			{
 				get
 				{
-					return conclusionText;
+					return chartType;
 				}
 				set	
 				{
-					conclusionText = value;
-				}
-			}
-
-			public List<SmartqQueryAbility_MetaTypeItem> MetaType
-			{
-				get
-				{
-					return metaType;
-				}
-				set	
-				{
-					metaType = value;
+					chartType = value;
 				}
 			}
 
@@ -142,6 +130,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
+			public List<SmartqQueryAbility_MetaTypeItem> MetaType
+			{
+				get
+				{
+					return metaType;
+				}
+				set	
+				{
+					metaType = value;
+				}
+			}
+
 			public List<string> DataList
 			{
 				get
@@ -151,52 +151,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					dataList = value;
-				}
-			}
-
-			public class SmartqQueryAbility_MetaTypeItem
-			{
-
-				private string key;
-
-				private string _value;
-
-				private string type;
-
-				public string Key
-				{
-					get
-					{
-						return key;
-					}
-					set	
-					{
-						key = value;
-					}
-				}
-
-				public string _Value
-				{
-					get
-					{
-						return _value;
-					}
-					set	
-					{
-						_value = value;
-					}
-				}
-
-				public string Type
-				{
-					get
-					{
-						return type;
-					}
-					set	
-					{
-						type = value;
-					}
 				}
 			}
 
@@ -214,6 +168,52 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						row = value;
+					}
+				}
+			}
+
+			public class SmartqQueryAbility_MetaTypeItem
+			{
+
+				private string type;
+
+				private string _value;
+
+				private string key;
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
+				}
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
 					}
 				}
 			}

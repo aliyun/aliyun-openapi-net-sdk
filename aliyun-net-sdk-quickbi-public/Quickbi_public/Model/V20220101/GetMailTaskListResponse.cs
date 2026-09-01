@@ -70,19 +70,43 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class GetMailTaskList_Result
 		{
 
+			private int? pre;
+
+			private int? totalNum;
+
 			private int? pageNum;
 
 			private int? pageSize;
 
-			private int? totalNum;
+			private int? next;
 
 			private int? totalPages;
 
-			private int? pre;
-
-			private int? next;
-
 			private List<GetMailTaskList_DataItem> data;
+
+			public int? Pre
+			{
+				get
+				{
+					return pre;
+				}
+				set	
+				{
+					pre = value;
+				}
+			}
+
+			public int? TotalNum
+			{
+				get
+				{
+					return totalNum;
+				}
+				set	
+				{
+					totalNum = value;
+				}
+			}
 
 			public int? PageNum
 			{
@@ -108,15 +132,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public int? TotalNum
+			public int? Next
 			{
 				get
 				{
-					return totalNum;
+					return next;
 				}
 				set	
 				{
-					totalNum = value;
+					next = value;
 				}
 			}
 
@@ -129,30 +153,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					totalPages = value;
-				}
-			}
-
-			public int? Pre
-			{
-				get
-				{
-					return pre;
-				}
-				set	
-				{
-					pre = value;
-				}
-			}
-
-			public int? Next
-			{
-				get
-				{
-					return next;
-				}
-				set	
-				{
-					next = value;
 				}
 			}
 
@@ -171,37 +171,25 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class GetMailTaskList_DataItem
 			{
 
-				private string mailId;
-
-				private bool? paused;
+				private string subscribeName;
 
 				private string bizOwnerUserId;
 
 				private string bizOwnerName;
 
-				private string subscribeName;
+				private string mailId;
 
-				public string MailId
+				private bool? paused;
+
+				public string SubscribeName
 				{
 					get
 					{
-						return mailId;
+						return subscribeName;
 					}
 					set	
 					{
-						mailId = value;
-					}
-				}
-
-				public bool? Paused
-				{
-					get
-					{
-						return paused;
-					}
-					set	
-					{
-						paused = value;
+						subscribeName = value;
 					}
 				}
 
@@ -229,15 +217,27 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string SubscribeName
+				public string MailId
 				{
 					get
 					{
-						return subscribeName;
+						return mailId;
 					}
 					set	
 					{
-						subscribeName = value;
+						mailId = value;
+					}
+				}
+
+				public bool? Paused
+				{
+					get
+					{
+						return paused;
+					}
+					set	
+					{
+						paused = value;
 					}
 				}
 			}

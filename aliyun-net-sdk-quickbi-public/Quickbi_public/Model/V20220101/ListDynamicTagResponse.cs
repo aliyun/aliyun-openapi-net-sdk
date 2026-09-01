@@ -70,67 +70,19 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class ListDynamicTag_Data
 		{
 
-			private string organizationId;
-
-			private string configId;
-
-			private string configName;
-
-			private string dsId;
-
 			private string tableName;
 
 			private string columnName;
 
 			private int? relatedAttribute;
 
-			public string OrganizationId
-			{
-				get
-				{
-					return organizationId;
-				}
-				set	
-				{
-					organizationId = value;
-				}
-			}
+			private string configName;
 
-			public string ConfigId
-			{
-				get
-				{
-					return configId;
-				}
-				set	
-				{
-					configId = value;
-				}
-			}
+			private string dsId;
 
-			public string ConfigName
-			{
-				get
-				{
-					return configName;
-				}
-				set	
-				{
-					configName = value;
-				}
-			}
+			private string organizationId;
 
-			public string DsId
-			{
-				get
-				{
-					return dsId;
-				}
-				set	
-				{
-					dsId = value;
-				}
-			}
+			private string configId;
 
 			public string TableName
 			{
@@ -165,6 +117,54 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					relatedAttribute = value;
+				}
+			}
+
+			public string ConfigName
+			{
+				get
+				{
+					return configName;
+				}
+				set	
+				{
+					configName = value;
+				}
+			}
+
+			public string DsId
+			{
+				get
+				{
+					return dsId;
+				}
+				set	
+				{
+					dsId = value;
+				}
+			}
+
+			public string OrganizationId
+			{
+				get
+				{
+					return organizationId;
+				}
+				set	
+				{
+					organizationId = value;
+				}
+			}
+
+			public string ConfigId
+			{
+				get
+				{
+					return configId;
+				}
+				set	
+				{
+					configId = value;
 				}
 			}
 		}

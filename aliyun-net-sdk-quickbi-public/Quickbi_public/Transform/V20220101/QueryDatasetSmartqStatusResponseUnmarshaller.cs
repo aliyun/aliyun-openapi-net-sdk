@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			queryDatasetSmartqStatusResponse.HttpResponse = _ctx.HttpResponse;
 			queryDatasetSmartqStatusResponse.RequestId = _ctx.StringValue("QueryDatasetSmartqStatus.RequestId");
-			queryDatasetSmartqStatusResponse.Result = _ctx.BooleanValue("QueryDatasetSmartqStatus.Result");
 			queryDatasetSmartqStatusResponse.Success = _ctx.BooleanValue("QueryDatasetSmartqStatus.Success");
+			queryDatasetSmartqStatusResponse.Result = _ctx.BooleanValue("QueryDatasetSmartqStatus.Result");
         
 			return queryDatasetSmartqStatusResponse;
         }

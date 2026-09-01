@@ -35,10 +35,10 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			queryLastAccelerationEngineJobResponse.Success = _ctx.BooleanValue("QueryLastAccelerationEngineJob.Success");
 
 			QueryLastAccelerationEngineJobResponse.QueryLastAccelerationEngineJob_Result result = new QueryLastAccelerationEngineJobResponse.QueryLastAccelerationEngineJob_Result();
-			result.JobHistoryId = _ctx.StringValue("QueryLastAccelerationEngineJob.Result.JobHistoryId");
 			result.Status = _ctx.StringValue("QueryLastAccelerationEngineJob.Result.Status");
 			result.GmtCreate = _ctx.StringValue("QueryLastAccelerationEngineJob.Result.GmtCreate");
 			result.GmtModified = _ctx.StringValue("QueryLastAccelerationEngineJob.Result.GmtModified");
+			result.JobHistoryId = _ctx.StringValue("QueryLastAccelerationEngineJob.Result.JobHistoryId");
 			queryLastAccelerationEngineJobResponse.Result = result;
         
 			return queryLastAccelerationEngineJobResponse;

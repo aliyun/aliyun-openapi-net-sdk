@@ -70,21 +70,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryDataRange_Result
 		{
 
-			private List<QueryDataRange_ApiCopilotLlmCubeModelsItem> apiCopilotLlmCubeModels;
-
 			private List<QueryDataRange_ApiCopilotThemeModelsItem> apiCopilotThemeModels;
 
-			public List<QueryDataRange_ApiCopilotLlmCubeModelsItem> ApiCopilotLlmCubeModels
-			{
-				get
-				{
-					return apiCopilotLlmCubeModels;
-				}
-				set	
-				{
-					apiCopilotLlmCubeModels = value;
-				}
-			}
+			private List<QueryDataRange_ApiCopilotLlmCubeModelsItem2> apiCopilotLlmCubeModels;
 
 			public List<QueryDataRange_ApiCopilotThemeModelsItem> ApiCopilotThemeModels
 			{
@@ -98,74 +86,28 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public class QueryDataRange_ApiCopilotLlmCubeModelsItem
+			public List<QueryDataRange_ApiCopilotLlmCubeModelsItem2> ApiCopilotLlmCubeModels
 			{
-
-				private string alias;
-
-				private string createUser;
-
-				private string llmCubeId;
-
-				public string Alias
+				get
 				{
-					get
-					{
-						return alias;
-					}
-					set	
-					{
-						alias = value;
-					}
+					return apiCopilotLlmCubeModels;
 				}
-
-				public string CreateUser
+				set	
 				{
-					get
-					{
-						return createUser;
-					}
-					set	
-					{
-						createUser = value;
-					}
-				}
-
-				public string LlmCubeId
-				{
-					get
-					{
-						return llmCubeId;
-					}
-					set	
-					{
-						llmCubeId = value;
-					}
+					apiCopilotLlmCubeModels = value;
 				}
 			}
 
 			public class QueryDataRange_ApiCopilotThemeModelsItem
 			{
 
-				private string createUser;
-
 				private string themeId;
+
+				private string createUser;
 
 				private string themeName;
 
-				private List<QueryDataRange_ApiCopilotLlmCubeModelsItem2> apiCopilotLlmCubeModels1;
-
-				public string CreateUser
-				{
-					get
-					{
-						return createUser;
-					}
-					set	
-					{
-						createUser = value;
-					}
-				}
+				private List<QueryDataRange_ApiCopilotLlmCubeModelsItem> apiCopilotLlmCubeModels1;
 
 				public string ThemeId
 				{
@@ -176,6 +118,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						themeId = value;
+					}
+				}
+
+				public string CreateUser
+				{
+					get
+					{
+						return createUser;
+					}
+					set	
+					{
+						createUser = value;
 					}
 				}
 
@@ -191,7 +145,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public List<QueryDataRange_ApiCopilotLlmCubeModelsItem2> ApiCopilotLlmCubeModels1
+				public List<QueryDataRange_ApiCopilotLlmCubeModelsItem> ApiCopilotLlmCubeModels1
 				{
 					get
 					{
@@ -203,14 +157,14 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public class QueryDataRange_ApiCopilotLlmCubeModelsItem2
+				public class QueryDataRange_ApiCopilotLlmCubeModelsItem
 				{
 
 					private string alias;
 
-					private string createUser;
-
 					private string llmCubeId;
+
+					private string createUser;
 
 					public string Alias
 					{
@@ -221,6 +175,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 						set	
 						{
 							alias = value;
+						}
+					}
+
+					public string LlmCubeId
+					{
+						get
+						{
+							return llmCubeId;
+						}
+						set	
+						{
+							llmCubeId = value;
 						}
 					}
 
@@ -235,17 +201,51 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 							createUser = value;
 						}
 					}
+				}
+			}
 
-					public string LlmCubeId
+			public class QueryDataRange_ApiCopilotLlmCubeModelsItem2
+			{
+
+				private string alias;
+
+				private string llmCubeId;
+
+				private string createUser;
+
+				public string Alias
+				{
+					get
 					{
-						get
-						{
-							return llmCubeId;
-						}
-						set	
-						{
-							llmCubeId = value;
-						}
+						return alias;
+					}
+					set	
+					{
+						alias = value;
+					}
+				}
+
+				public string LlmCubeId
+				{
+					get
+					{
+						return llmCubeId;
+					}
+					set	
+					{
+						llmCubeId = value;
+					}
+				}
+
+				public string CreateUser
+				{
+					get
+					{
+						return createUser;
+					}
+					set	
+					{
+						createUser = value;
 					}
 				}
 			}

@@ -25,23 +25,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 	public class ListCollectionsResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private string requestId;
 
-		private List<ListCollections_Data> result;
+		private bool? success;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private List<ListCollections_Data> result;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -72,17 +72,17 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 			private int? favoriteId;
 
+			private string worksType;
+
 			private string ownerId;
 
-			private string worksId;
-
 			private string worksName;
-
-			private string worksType;
 
 			private string workspaceId;
 
 			private string workspaceName;
+
+			private string worksId;
 
 			public int? FavoriteId
 			{
@@ -93,6 +93,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					favoriteId = value;
+				}
+			}
+
+			public string WorksType
+			{
+				get
+				{
+					return worksType;
+				}
+				set	
+				{
+					worksType = value;
 				}
 			}
 
@@ -108,18 +120,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string WorksId
-			{
-				get
-				{
-					return worksId;
-				}
-				set	
-				{
-					worksId = value;
-				}
-			}
-
 			public string WorksName
 			{
 				get
@@ -129,18 +129,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					worksName = value;
-				}
-			}
-
-			public string WorksType
-			{
-				get
-				{
-					return worksType;
-				}
-				set	
-				{
-					worksType = value;
 				}
 			}
 
@@ -165,6 +153,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					workspaceName = value;
+				}
+			}
+
+			public string WorksId
+			{
+				get
+				{
+					return worksId;
+				}
+				set	
+				{
+					worksId = value;
 				}
 			}
 		}

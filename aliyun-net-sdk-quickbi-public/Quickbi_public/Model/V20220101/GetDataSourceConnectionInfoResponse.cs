@@ -70,37 +70,49 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class GetDataSourceConnectionInfo_Result
 		{
 
+			private string modifyUser;
+
 			private string address;
-
-			private string authLevel;
-
-			private string creatorId;
-
-			private string dsId;
-
-			private string dsType;
-
-			private string dsVersion;
 
 			private string instance;
 
 			private string instanceId;
 
-			private string modifyUser;
-
-			private bool? noSasl;
-
-			private string parentDsType;
+			private string creatorId;
 
 			private string port;
 
-			private string project;
-
 			private string schema;
+
+			private string workspaceId;
+
+			private string dsId;
+
+			private string parentDsType;
+
+			private string dsVersion;
 
 			private string showName;
 
-			private string workspaceId;
+			private string authLevel;
+
+			private string dsType;
+
+			private string project;
+
+			private bool? noSasl;
+
+			public string ModifyUser
+			{
+				get
+				{
+					return modifyUser;
+				}
+				set	
+				{
+					modifyUser = value;
+				}
+			}
 
 			public string Address
 			{
@@ -111,66 +123,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					address = value;
-				}
-			}
-
-			public string AuthLevel
-			{
-				get
-				{
-					return authLevel;
-				}
-				set	
-				{
-					authLevel = value;
-				}
-			}
-
-			public string CreatorId
-			{
-				get
-				{
-					return creatorId;
-				}
-				set	
-				{
-					creatorId = value;
-				}
-			}
-
-			public string DsId
-			{
-				get
-				{
-					return dsId;
-				}
-				set	
-				{
-					dsId = value;
-				}
-			}
-
-			public string DsType
-			{
-				get
-				{
-					return dsType;
-				}
-				set	
-				{
-					dsType = value;
-				}
-			}
-
-			public string DsVersion
-			{
-				get
-				{
-					return dsVersion;
-				}
-				set	
-				{
-					dsVersion = value;
 				}
 			}
 
@@ -198,39 +150,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string ModifyUser
+			public string CreatorId
 			{
 				get
 				{
-					return modifyUser;
+					return creatorId;
 				}
 				set	
 				{
-					modifyUser = value;
-				}
-			}
-
-			public bool? NoSasl
-			{
-				get
-				{
-					return noSasl;
-				}
-				set	
-				{
-					noSasl = value;
-				}
-			}
-
-			public string ParentDsType
-			{
-				get
-				{
-					return parentDsType;
-				}
-				set	
-				{
-					parentDsType = value;
+					creatorId = value;
 				}
 			}
 
@@ -246,18 +174,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string Project
-			{
-				get
-				{
-					return project;
-				}
-				set	
-				{
-					project = value;
-				}
-			}
-
 			public string Schema
 			{
 				get
@@ -267,6 +183,54 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					schema = value;
+				}
+			}
+
+			public string WorkspaceId
+			{
+				get
+				{
+					return workspaceId;
+				}
+				set	
+				{
+					workspaceId = value;
+				}
+			}
+
+			public string DsId
+			{
+				get
+				{
+					return dsId;
+				}
+				set	
+				{
+					dsId = value;
+				}
+			}
+
+			public string ParentDsType
+			{
+				get
+				{
+					return parentDsType;
+				}
+				set	
+				{
+					parentDsType = value;
+				}
+			}
+
+			public string DsVersion
+			{
+				get
+				{
+					return dsVersion;
+				}
+				set	
+				{
+					dsVersion = value;
 				}
 			}
 
@@ -282,15 +246,51 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string WorkspaceId
+			public string AuthLevel
 			{
 				get
 				{
-					return workspaceId;
+					return authLevel;
 				}
 				set	
 				{
-					workspaceId = value;
+					authLevel = value;
+				}
+			}
+
+			public string DsType
+			{
+				get
+				{
+					return dsType;
+				}
+				set	
+				{
+					dsType = value;
+				}
+			}
+
+			public string Project
+			{
+				get
+				{
+					return project;
+				}
+				set	
+				{
+					project = value;
+				}
+			}
+
+			public bool? NoSasl
+			{
+				get
+				{
+					return noSasl;
+				}
+				set	
+				{
+					noSasl = value;
 				}
 			}
 		}

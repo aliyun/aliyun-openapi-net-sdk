@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			checkOrganizationMemberResponse.HttpResponse = _ctx.HttpResponse;
 			checkOrganizationMemberResponse.RequestId = _ctx.StringValue("CheckOrganizationMember.RequestId");
-			checkOrganizationMemberResponse.Result = _ctx.BooleanValue("CheckOrganizationMember.Result");
 			checkOrganizationMemberResponse.Success = _ctx.BooleanValue("CheckOrganizationMember.Success");
+			checkOrganizationMemberResponse.Result = _ctx.BooleanValue("CheckOrganizationMember.Result");
         
 			return checkOrganizationMemberResponse;
         }

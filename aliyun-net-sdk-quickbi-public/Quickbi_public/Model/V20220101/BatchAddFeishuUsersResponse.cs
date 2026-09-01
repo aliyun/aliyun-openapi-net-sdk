@@ -70,23 +70,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class BatchAddFeishuUsers_Result
 		{
 
-			private int? failCount;
-
 			private int? okCount;
 
-			private List<BatchAddFeishuUsers_FailResultsItem> failResults;
+			private int? failCount;
 
-			public int? FailCount
-			{
-				get
-				{
-					return failCount;
-				}
-				set	
-				{
-					failCount = value;
-				}
-			}
+			private List<BatchAddFeishuUsers_FailResultsItem> failResults;
 
 			public int? OkCount
 			{
@@ -97,6 +85,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					okCount = value;
+				}
+			}
+
+			public int? FailCount
+			{
+				get
+				{
+					return failCount;
+				}
+				set	
+				{
+					failCount = value;
 				}
 			}
 
@@ -132,21 +132,21 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				public class BatchAddFeishuUsers_FailInfosItem
 				{
 
-					private string code;
+					private string input;
 
 					private string codeDesc;
 
-					private string input;
+					private string code;
 
-					public string Code
+					public string Input
 					{
 						get
 						{
-							return code;
+							return input;
 						}
 						set	
 						{
-							code = value;
+							input = value;
 						}
 					}
 
@@ -162,15 +162,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 						}
 					}
 
-					public string Input
+					public string Code
 					{
 						get
 						{
-							return input;
+							return code;
 						}
 						set	
 						{
-							input = value;
+							code = value;
 						}
 					}
 				}

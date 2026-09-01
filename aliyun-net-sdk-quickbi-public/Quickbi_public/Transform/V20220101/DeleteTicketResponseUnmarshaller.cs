@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			deleteTicketResponse.HttpResponse = _ctx.HttpResponse;
 			deleteTicketResponse.RequestId = _ctx.StringValue("DeleteTicket.RequestId");
-			deleteTicketResponse.Result = _ctx.BooleanValue("DeleteTicket.Result");
 			deleteTicketResponse.Success = _ctx.BooleanValue("DeleteTicket.Success");
+			deleteTicketResponse.Result = _ctx.BooleanValue("DeleteTicket.Result");
         
 			return deleteTicketResponse;
         }

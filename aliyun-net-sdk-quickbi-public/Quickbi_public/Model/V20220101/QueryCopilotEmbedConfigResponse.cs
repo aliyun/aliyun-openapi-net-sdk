@@ -70,69 +70,21 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryCopilotEmbedConfig_ResultItem
 		{
 
-			private string agentName;
-
-			private string copilotId;
-
-			private string createUser;
-
-			private string createUserName;
-
 			private string modifyUser;
 
 			private string moduleName;
 
+			private string createUser;
+
+			private string agentName;
+
+			private string createUserName;
+
 			private string showName;
 
+			private string copilotId;
+
 			private QueryCopilotEmbedConfig_DataRange dataRange;
-
-			public string AgentName
-			{
-				get
-				{
-					return agentName;
-				}
-				set	
-				{
-					agentName = value;
-				}
-			}
-
-			public string CopilotId
-			{
-				get
-				{
-					return copilotId;
-				}
-				set	
-				{
-					copilotId = value;
-				}
-			}
-
-			public string CreateUser
-			{
-				get
-				{
-					return createUser;
-				}
-				set	
-				{
-					createUser = value;
-				}
-			}
-
-			public string CreateUserName
-			{
-				get
-				{
-					return createUserName;
-				}
-				set	
-				{
-					createUserName = value;
-				}
-			}
 
 			public string ModifyUser
 			{
@@ -158,6 +110,42 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
+			public string CreateUser
+			{
+				get
+				{
+					return createUser;
+				}
+				set	
+				{
+					createUser = value;
+				}
+			}
+
+			public string AgentName
+			{
+				get
+				{
+					return agentName;
+				}
+				set	
+				{
+					agentName = value;
+				}
+			}
+
+			public string CreateUserName
+			{
+				get
+				{
+					return createUserName;
+				}
+				set	
+				{
+					createUserName = value;
+				}
+			}
+
 			public string ShowName
 			{
 				get
@@ -167,6 +155,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					showName = value;
+				}
+			}
+
+			public string CopilotId
+			{
+				get
+				{
+					return copilotId;
+				}
+				set	
+				{
+					copilotId = value;
 				}
 			}
 
@@ -185,25 +185,13 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class QueryCopilotEmbedConfig_DataRange
 			{
 
-				private bool? allCube;
-
 				private bool? allTheme;
+
+				private bool? allCube;
 
 				private List<string> llmCubes;
 
 				private List<string> themes;
-
-				public bool? AllCube
-				{
-					get
-					{
-						return allCube;
-					}
-					set	
-					{
-						allCube = value;
-					}
-				}
 
 				public bool? AllTheme
 				{
@@ -214,6 +202,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						allTheme = value;
+					}
+				}
+
+				public bool? AllCube
+				{
+					get
+					{
+						return allCube;
+					}
+					set	
+					{
+						allCube = value;
 					}
 				}
 

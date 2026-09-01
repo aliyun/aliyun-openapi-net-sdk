@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class TransferUsergroupRequest : RpcAcsRequest<TransferUsergroupResponse>
     {
         public TransferUsergroupRequest()
-            : base("quickbi-public", "2022-01-01", "TransferUsergroup", "2.2.0", "openAPI")
+            : base("quickbi-public", "2022-01-01", "TransferUsergroup", "QuickBI", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

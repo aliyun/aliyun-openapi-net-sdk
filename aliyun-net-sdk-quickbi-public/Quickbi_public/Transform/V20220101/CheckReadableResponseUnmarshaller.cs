@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			checkReadableResponse.HttpResponse = _ctx.HttpResponse;
 			checkReadableResponse.RequestId = _ctx.StringValue("CheckReadable.RequestId");
-			checkReadableResponse.Result = _ctx.BooleanValue("CheckReadable.Result");
 			checkReadableResponse.Success = _ctx.BooleanValue("CheckReadable.Success");
+			checkReadableResponse.Result = _ctx.BooleanValue("CheckReadable.Result");
         
 			return checkReadableResponse;
         }

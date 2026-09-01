@@ -25,23 +25,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 	public class QueryOrganizationWorkspaceListResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private string requestId;
 
-		private QueryOrganizationWorkspaceList_Result result;
+		private bool? success;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private QueryOrganizationWorkspaceList_Result result;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -70,15 +70,27 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryOrganizationWorkspaceList_Result
 		{
 
+			private int? totalNum;
+
 			private int? pageNum;
 
 			private int? pageSize;
 
-			private int? totalNum;
-
 			private int? totalPages;
 
 			private List<QueryOrganizationWorkspaceList_DataItem> data;
+
+			public int? TotalNum
+			{
+				get
+				{
+					return totalNum;
+				}
+				set	
+				{
+					totalNum = value;
+				}
+			}
 
 			public int? PageNum
 			{
@@ -101,18 +113,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					pageSize = value;
-				}
-			}
-
-			public int? TotalNum
-			{
-				get
-				{
-					return totalNum;
-				}
-				set	
-				{
-					totalNum = value;
 				}
 			}
 
@@ -143,141 +143,59 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class QueryOrganizationWorkspaceList_DataItem
 			{
 
-				private bool? allowPublishOperation;
-
-				private bool? allowShareOperation;
-
-				private string createTime;
-
-				private string createUser;
-
-				private string createUserAccountName;
-
-				private string modifiedTime;
-
-				private string modifyUser;
-
-				private string modifyUserAccountName;
-
-				private string organizationId;
-
-				private string owner;
-
-				private string ownerAccountName;
-
 				private string workspaceDescription;
-
-				private string workspaceId;
-
-				private string workspaceName;
 
 				private string realOwnerAccountName;
 
-				public bool? AllowPublishOperation
+				private string owner;
+
+				private string modifyUser;
+
+				private string createTime;
+
+				private string ownerAccountName;
+
+				private string workspaceId;
+
+				private string createUser;
+
+				private string organizationId;
+
+				private string modifyUserAccountName;
+
+				private string modifiedTime;
+
+				private bool? allowShareOperation;
+
+				private string workspaceName;
+
+				private bool? allowPublishOperation;
+
+				private string createUserAccountName;
+
+				private QueryOrganizationWorkspaceList_WorkspaceExportConfig workspaceExportConfig;
+
+				public string WorkspaceDescription
 				{
 					get
 					{
-						return allowPublishOperation;
+						return workspaceDescription;
 					}
 					set	
 					{
-						allowPublishOperation = value;
+						workspaceDescription = value;
 					}
 				}
 
-				public bool? AllowShareOperation
+				public string RealOwnerAccountName
 				{
 					get
 					{
-						return allowShareOperation;
+						return realOwnerAccountName;
 					}
 					set	
 					{
-						allowShareOperation = value;
-					}
-				}
-
-				public string CreateTime
-				{
-					get
-					{
-						return createTime;
-					}
-					set	
-					{
-						createTime = value;
-					}
-				}
-
-				public string CreateUser
-				{
-					get
-					{
-						return createUser;
-					}
-					set	
-					{
-						createUser = value;
-					}
-				}
-
-				public string CreateUserAccountName
-				{
-					get
-					{
-						return createUserAccountName;
-					}
-					set	
-					{
-						createUserAccountName = value;
-					}
-				}
-
-				public string ModifiedTime
-				{
-					get
-					{
-						return modifiedTime;
-					}
-					set	
-					{
-						modifiedTime = value;
-					}
-				}
-
-				public string ModifyUser
-				{
-					get
-					{
-						return modifyUser;
-					}
-					set	
-					{
-						modifyUser = value;
-					}
-				}
-
-				public string ModifyUserAccountName
-				{
-					get
-					{
-						return modifyUserAccountName;
-					}
-					set	
-					{
-						modifyUserAccountName = value;
-					}
-				}
-
-				public string OrganizationId
-				{
-					get
-					{
-						return organizationId;
-					}
-					set	
-					{
-						organizationId = value;
+						realOwnerAccountName = value;
 					}
 				}
 
@@ -293,6 +211,30 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
+				public string ModifyUser
+				{
+					get
+					{
+						return modifyUser;
+					}
+					set	
+					{
+						modifyUser = value;
+					}
+				}
+
+				public string CreateTime
+				{
+					get
+					{
+						return createTime;
+					}
+					set	
+					{
+						createTime = value;
+					}
+				}
+
 				public string OwnerAccountName
 				{
 					get
@@ -302,18 +244,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						ownerAccountName = value;
-					}
-				}
-
-				public string WorkspaceDescription
-				{
-					get
-					{
-						return workspaceDescription;
-					}
-					set	
-					{
-						workspaceDescription = value;
 					}
 				}
 
@@ -329,6 +259,66 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
+				public string CreateUser
+				{
+					get
+					{
+						return createUser;
+					}
+					set	
+					{
+						createUser = value;
+					}
+				}
+
+				public string OrganizationId
+				{
+					get
+					{
+						return organizationId;
+					}
+					set	
+					{
+						organizationId = value;
+					}
+				}
+
+				public string ModifyUserAccountName
+				{
+					get
+					{
+						return modifyUserAccountName;
+					}
+					set	
+					{
+						modifyUserAccountName = value;
+					}
+				}
+
+				public string ModifiedTime
+				{
+					get
+					{
+						return modifiedTime;
+					}
+					set	
+					{
+						modifiedTime = value;
+					}
+				}
+
+				public bool? AllowShareOperation
+				{
+					get
+					{
+						return allowShareOperation;
+					}
+					set	
+					{
+						allowShareOperation = value;
+					}
+				}
+
 				public string WorkspaceName
 				{
 					get
@@ -341,15 +331,169 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string RealOwnerAccountName
+				public bool? AllowPublishOperation
 				{
 					get
 					{
-						return realOwnerAccountName;
+						return allowPublishOperation;
 					}
 					set	
 					{
-						realOwnerAccountName = value;
+						allowPublishOperation = value;
+					}
+				}
+
+				public string CreateUserAccountName
+				{
+					get
+					{
+						return createUserAccountName;
+					}
+					set	
+					{
+						createUserAccountName = value;
+					}
+				}
+
+				public QueryOrganizationWorkspaceList_WorkspaceExportConfig WorkspaceExportConfig
+				{
+					get
+					{
+						return workspaceExportConfig;
+					}
+					set	
+					{
+						workspaceExportConfig = value;
+					}
+				}
+
+				public class QueryOrganizationWorkspaceList_WorkspaceExportConfig
+				{
+
+					private bool? defaultExportType;
+
+					private bool? pdfExport;
+
+					private bool? imageExport;
+
+					private bool? exportToServer;
+
+					private bool? exportToLocal;
+
+					private bool? exportMainSwitch;
+
+					private bool? allowExcelImageFile;
+
+					private bool? dataExport;
+
+					private bool? exportToPublicWork;
+
+					public bool? DefaultExportType
+					{
+						get
+						{
+							return defaultExportType;
+						}
+						set	
+						{
+							defaultExportType = value;
+						}
+					}
+
+					public bool? PdfExport
+					{
+						get
+						{
+							return pdfExport;
+						}
+						set	
+						{
+							pdfExport = value;
+						}
+					}
+
+					public bool? ImageExport
+					{
+						get
+						{
+							return imageExport;
+						}
+						set	
+						{
+							imageExport = value;
+						}
+					}
+
+					public bool? ExportToServer
+					{
+						get
+						{
+							return exportToServer;
+						}
+						set	
+						{
+							exportToServer = value;
+						}
+					}
+
+					public bool? ExportToLocal
+					{
+						get
+						{
+							return exportToLocal;
+						}
+						set	
+						{
+							exportToLocal = value;
+						}
+					}
+
+					public bool? ExportMainSwitch
+					{
+						get
+						{
+							return exportMainSwitch;
+						}
+						set	
+						{
+							exportMainSwitch = value;
+						}
+					}
+
+					public bool? AllowExcelImageFile
+					{
+						get
+						{
+							return allowExcelImageFile;
+						}
+						set	
+						{
+							allowExcelImageFile = value;
+						}
+					}
+
+					public bool? DataExport
+					{
+						get
+						{
+							return dataExport;
+						}
+						set	
+						{
+							dataExport = value;
+						}
+					}
+
+					public bool? ExportToPublicWork
+					{
+						get
+						{
+							return exportToPublicWork;
+						}
+						set	
+						{
+							exportToPublicWork = value;
+						}
 					}
 				}
 			}

@@ -70,13 +70,25 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryWorkspaceRoleConfig_Result
 		{
 
+			private string roleName;
+
 			private bool? isSystemRole;
 
 			private long? roleId;
 
-			private string roleName;
-
 			private List<QueryWorkspaceRoleConfig_AuthConfigListItem> authConfigList;
+
+			public string RoleName
+			{
+				get
+				{
+					return roleName;
+				}
+				set	
+				{
+					roleName = value;
+				}
+			}
 
 			public bool? IsSystemRole
 			{
@@ -99,18 +111,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					roleId = value;
-				}
-			}
-
-			public string RoleName
-			{
-				get
-				{
-					return roleName;
-				}
-				set	
-				{
-					roleName = value;
 				}
 			}
 

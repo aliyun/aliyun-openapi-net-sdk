@@ -70,7 +70,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryAccelerationLogByCubeId_Result
 		{
 
-			private int? totalPages;
+			private int? pre;
 
 			private int? totalNum;
 
@@ -78,21 +78,21 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 			private int? pageSize;
 
-			private int? pre;
-
 			private int? next;
+
+			private int? totalPages;
 
 			private List<QueryAccelerationLogByCubeId_DataItem> data;
 
-			public int? TotalPages
+			public int? Pre
 			{
 				get
 				{
-					return totalPages;
+					return pre;
 				}
 				set	
 				{
-					totalPages = value;
+					pre = value;
 				}
 			}
 
@@ -132,18 +132,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public int? Pre
-			{
-				get
-				{
-					return pre;
-				}
-				set	
-				{
-					pre = value;
-				}
-			}
-
 			public int? Next
 			{
 				get
@@ -153,6 +141,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					next = value;
+				}
+			}
+
+			public int? TotalPages
+			{
+				get
+				{
+					return totalPages;
+				}
+				set	
+				{
+					totalPages = value;
 				}
 			}
 
@@ -171,39 +171,27 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class QueryAccelerationLogByCubeId_DataItem
 			{
 
-				private string jobId;
-
-				private string jobHistoryId;
+				private string jobStatus;
 
 				private string jonStartDate;
 
-				private string jobStatus;
+				private string log;
+
+				private string jobHistoryId;
 
 				private string duration;
 
-				private string log;
+				private string jobId;
 
-				public string JobId
+				public string JobStatus
 				{
 					get
 					{
-						return jobId;
+						return jobStatus;
 					}
 					set	
 					{
-						jobId = value;
-					}
-				}
-
-				public string JobHistoryId
-				{
-					get
-					{
-						return jobHistoryId;
-					}
-					set	
-					{
-						jobHistoryId = value;
+						jobStatus = value;
 					}
 				}
 
@@ -219,15 +207,27 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string JobStatus
+				public string Log
 				{
 					get
 					{
-						return jobStatus;
+						return log;
 					}
 					set	
 					{
-						jobStatus = value;
+						log = value;
+					}
+				}
+
+				public string JobHistoryId
+				{
+					get
+					{
+						return jobHistoryId;
+					}
+					set	
+					{
+						jobHistoryId = value;
 					}
 				}
 
@@ -243,15 +243,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
-				public string Log
+				public string JobId
 				{
 					get
 					{
-						return log;
+						return jobId;
 					}
 					set	
 					{
-						log = value;
+						jobId = value;
 					}
 				}
 			}

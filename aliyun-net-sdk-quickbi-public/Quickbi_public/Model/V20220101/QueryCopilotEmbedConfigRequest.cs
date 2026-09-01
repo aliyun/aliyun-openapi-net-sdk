@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class QueryCopilotEmbedConfigRequest : RpcAcsRequest<QueryCopilotEmbedConfigResponse>
     {
         public QueryCopilotEmbedConfigRequest()
-            : base("quickbi-public", "2022-01-01", "QueryCopilotEmbedConfig", "2.2.0", "openAPI")
+            : base("quickbi-public", "2022-01-01", "QueryCopilotEmbedConfig", "QuickBI", "openAPI")
         {
 			Method = MethodType.POST;
         }

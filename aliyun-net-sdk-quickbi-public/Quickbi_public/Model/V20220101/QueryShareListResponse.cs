@@ -25,23 +25,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 	public class QueryShareListResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private string requestId;
 
-		private List<QueryShareList_Data> result;
+		private bool? success;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private List<QueryShareList_Data> result;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -70,57 +70,21 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryShareList_Data
 		{
 
-			private int? authPoint;
-
-			private long? expireDate;
-
-			private string reportId;
-
 			private string shareId;
 
 			private string shareToId;
 
-			private string shareToName;
+			private long? expireDate;
 
 			private int? shareToType;
 
+			private int? authPoint;
+
+			private string shareToName;
+
+			private string reportId;
+
 			private string shareType;
-
-			public int? AuthPoint
-			{
-				get
-				{
-					return authPoint;
-				}
-				set	
-				{
-					authPoint = value;
-				}
-			}
-
-			public long? ExpireDate
-			{
-				get
-				{
-					return expireDate;
-				}
-				set	
-				{
-					expireDate = value;
-				}
-			}
-
-			public string ReportId
-			{
-				get
-				{
-					return reportId;
-				}
-				set	
-				{
-					reportId = value;
-				}
-			}
 
 			public string ShareId
 			{
@@ -146,15 +110,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string ShareToName
+			public long? ExpireDate
 			{
 				get
 				{
-					return shareToName;
+					return expireDate;
 				}
 				set	
 				{
-					shareToName = value;
+					expireDate = value;
 				}
 			}
 
@@ -167,6 +131,42 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					shareToType = value;
+				}
+			}
+
+			public int? AuthPoint
+			{
+				get
+				{
+					return authPoint;
+				}
+				set	
+				{
+					authPoint = value;
+				}
+			}
+
+			public string ShareToName
+			{
+				get
+				{
+					return shareToName;
+				}
+				set	
+				{
+					shareToName = value;
+				}
+			}
+
+			public string ReportId
+			{
+				get
+				{
+					return reportId;
+				}
+				set	
+				{
+					reportId = value;
 				}
 			}
 

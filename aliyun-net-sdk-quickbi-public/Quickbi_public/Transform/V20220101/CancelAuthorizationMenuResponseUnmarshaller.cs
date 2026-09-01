@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			cancelAuthorizationMenuResponse.HttpResponse = _ctx.HttpResponse;
 			cancelAuthorizationMenuResponse.RequestId = _ctx.StringValue("CancelAuthorizationMenu.RequestId");
-			cancelAuthorizationMenuResponse.Result = _ctx.IntegerValue("CancelAuthorizationMenu.Result");
 			cancelAuthorizationMenuResponse.Success = _ctx.BooleanValue("CancelAuthorizationMenu.Success");
+			cancelAuthorizationMenuResponse.Result = _ctx.IntegerValue("CancelAuthorizationMenu.Result");
         
 			return cancelAuthorizationMenuResponse;
         }

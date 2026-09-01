@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			createTicket4CopilotResponse.HttpResponse = _ctx.HttpResponse;
 			createTicket4CopilotResponse.RequestId = _ctx.StringValue("CreateTicket4Copilot.RequestId");
-			createTicket4CopilotResponse.Result = _ctx.StringValue("CreateTicket4Copilot.Result");
 			createTicket4CopilotResponse.Success = _ctx.BooleanValue("CreateTicket4Copilot.Success");
+			createTicket4CopilotResponse.Result = _ctx.StringValue("CreateTicket4Copilot.Result");
         
 			return createTicket4CopilotResponse;
         }

@@ -35,15 +35,16 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			queryUserInfoByAccountResponse.Success = _ctx.BooleanValue("QueryUserInfoByAccount.Success");
 
 			QueryUserInfoByAccountResponse.QueryUserInfoByAccount_Result result = new QueryUserInfoByAccountResponse.QueryUserInfoByAccount_Result();
+			result.IsDeleted = _ctx.BooleanValue("QueryUserInfoByAccount.Result.IsDeleted");
 			result.AccountId = _ctx.StringValue("QueryUserInfoByAccount.Result.AccountId");
-			result.AccountName = _ctx.StringValue("QueryUserInfoByAccount.Result.AccountName");
-			result.AdminUser = _ctx.BooleanValue("QueryUserInfoByAccount.Result.AdminUser");
-			result.AuthAdminUser = _ctx.BooleanValue("QueryUserInfoByAccount.Result.AuthAdminUser");
 			result.Email = _ctx.StringValue("QueryUserInfoByAccount.Result.Email");
-			result.NickName = _ctx.StringValue("QueryUserInfoByAccount.Result.NickName");
 			result.Phone = _ctx.StringValue("QueryUserInfoByAccount.Result.Phone");
 			result.UserId = _ctx.StringValue("QueryUserInfoByAccount.Result.UserId");
+			result.AdminUser = _ctx.BooleanValue("QueryUserInfoByAccount.Result.AdminUser");
+			result.NickName = _ctx.StringValue("QueryUserInfoByAccount.Result.NickName");
 			result.UserType = _ctx.IntegerValue("QueryUserInfoByAccount.Result.UserType");
+			result.AuthAdminUser = _ctx.BooleanValue("QueryUserInfoByAccount.Result.AuthAdminUser");
+			result.AccountName = _ctx.StringValue("QueryUserInfoByAccount.Result.AccountName");
 
 			List<string> result_roleIdList = new List<string>();
 			for (int i = 0; i < _ctx.Length("QueryUserInfoByAccount.Result.RoleIdList.Length"); i++) {

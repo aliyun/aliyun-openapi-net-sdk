@@ -35,21 +35,21 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			getMailTaskListResponse.Success = _ctx.BooleanValue("GetMailTaskList.Success");
 
 			GetMailTaskListResponse.GetMailTaskList_Result result = new GetMailTaskListResponse.GetMailTaskList_Result();
+			result.Pre = _ctx.IntegerValue("GetMailTaskList.Result.Pre");
+			result.TotalNum = _ctx.IntegerValue("GetMailTaskList.Result.TotalNum");
 			result.PageNum = _ctx.IntegerValue("GetMailTaskList.Result.PageNum");
 			result.PageSize = _ctx.IntegerValue("GetMailTaskList.Result.PageSize");
-			result.TotalNum = _ctx.IntegerValue("GetMailTaskList.Result.TotalNum");
-			result.TotalPages = _ctx.IntegerValue("GetMailTaskList.Result.TotalPages");
-			result.Pre = _ctx.IntegerValue("GetMailTaskList.Result.Pre");
 			result.Next = _ctx.IntegerValue("GetMailTaskList.Result.Next");
+			result.TotalPages = _ctx.IntegerValue("GetMailTaskList.Result.TotalPages");
 
 			List<GetMailTaskListResponse.GetMailTaskList_Result.GetMailTaskList_DataItem> result_data = new List<GetMailTaskListResponse.GetMailTaskList_Result.GetMailTaskList_DataItem>();
 			for (int i = 0; i < _ctx.Length("GetMailTaskList.Result.Data.Length"); i++) {
 				GetMailTaskListResponse.GetMailTaskList_Result.GetMailTaskList_DataItem dataItem = new GetMailTaskListResponse.GetMailTaskList_Result.GetMailTaskList_DataItem();
-				dataItem.MailId = _ctx.StringValue("GetMailTaskList.Result.Data["+ i +"].MailId");
-				dataItem.Paused = _ctx.BooleanValue("GetMailTaskList.Result.Data["+ i +"].Paused");
+				dataItem.SubscribeName = _ctx.StringValue("GetMailTaskList.Result.Data["+ i +"].SubscribeName");
 				dataItem.BizOwnerUserId = _ctx.StringValue("GetMailTaskList.Result.Data["+ i +"].BizOwnerUserId");
 				dataItem.BizOwnerName = _ctx.StringValue("GetMailTaskList.Result.Data["+ i +"].BizOwnerName");
-				dataItem.SubscribeName = _ctx.StringValue("GetMailTaskList.Result.Data["+ i +"].SubscribeName");
+				dataItem.MailId = _ctx.StringValue("GetMailTaskList.Result.Data["+ i +"].MailId");
+				dataItem.Paused = _ctx.BooleanValue("GetMailTaskList.Result.Data["+ i +"].Paused");
 
 				result_data.Add(dataItem);
 			}

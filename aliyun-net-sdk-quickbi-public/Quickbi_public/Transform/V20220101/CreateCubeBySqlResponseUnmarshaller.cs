@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			createCubeBySqlResponse.HttpResponse = _ctx.HttpResponse;
 			createCubeBySqlResponse.RequestId = _ctx.StringValue("CreateCubeBySql.RequestId");
-			createCubeBySqlResponse.Result = _ctx.StringValue("CreateCubeBySql.Result");
 			createCubeBySqlResponse.Success = _ctx.BooleanValue("CreateCubeBySql.Success");
+			createCubeBySqlResponse.Result = _ctx.StringValue("CreateCubeBySql.Result");
         
 			return createCubeBySqlResponse;
         }

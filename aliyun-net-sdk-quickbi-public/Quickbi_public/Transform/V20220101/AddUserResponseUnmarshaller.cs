@@ -35,14 +35,14 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			addUserResponse.Success = _ctx.BooleanValue("AddUser.Success");
 
 			AddUserResponse.AddUser_Result result = new AddUserResponse.AddUser_Result();
-			result.AccountName = _ctx.StringValue("AddUser.Result.AccountName");
-			result.AdminUser = _ctx.BooleanValue("AddUser.Result.AdminUser");
-			result.AuthAdminUser = _ctx.BooleanValue("AddUser.Result.AuthAdminUser");
 			result.Email = _ctx.StringValue("AddUser.Result.Email");
-			result.NickName = _ctx.StringValue("AddUser.Result.NickName");
 			result.Phone = _ctx.StringValue("AddUser.Result.Phone");
 			result.UserId = _ctx.StringValue("AddUser.Result.UserId");
+			result.AdminUser = _ctx.BooleanValue("AddUser.Result.AdminUser");
+			result.NickName = _ctx.StringValue("AddUser.Result.NickName");
 			result.UserType = _ctx.IntegerValue("AddUser.Result.UserType");
+			result.AuthAdminUser = _ctx.BooleanValue("AddUser.Result.AuthAdminUser");
+			result.AccountName = _ctx.StringValue("AddUser.Result.AccountName");
 
 			List<string> result_roleIdList = new List<string>();
 			for (int i = 0; i < _ctx.Length("AddUser.Result.RoleIdList.Length"); i++) {

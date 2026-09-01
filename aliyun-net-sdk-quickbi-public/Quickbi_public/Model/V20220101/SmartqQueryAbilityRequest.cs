@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class SmartqQueryAbilityRequest : RpcAcsRequest<SmartqQueryAbilityResponse>
     {
         public SmartqQueryAbilityRequest()
-            : base("quickbi-public", "2022-01-01", "SmartqQueryAbility", "2.2.0", "openAPI")
+            : base("quickbi-public", "2022-01-01", "SmartqQueryAbility", "QuickBI", "openAPI")
         {
 			Method = MethodType.POST;
         }

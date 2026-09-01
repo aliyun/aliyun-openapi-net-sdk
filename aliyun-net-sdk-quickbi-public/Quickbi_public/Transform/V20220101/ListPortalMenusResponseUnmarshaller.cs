@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			listPortalMenusResponse.HttpResponse = _ctx.HttpResponse;
 			listPortalMenusResponse.RequestId = _ctx.StringValue("ListPortalMenus.RequestId");
-			listPortalMenusResponse.Result = _ctx.StringValue("ListPortalMenus.Result");
 			listPortalMenusResponse.Success = _ctx.BooleanValue("ListPortalMenus.Success");
+			listPortalMenusResponse.Result = _ctx.StringValue("ListPortalMenus.Result");
         
 			return listPortalMenusResponse;
         }

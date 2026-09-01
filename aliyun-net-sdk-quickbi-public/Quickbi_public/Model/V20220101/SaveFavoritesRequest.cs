@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class SaveFavoritesRequest : RpcAcsRequest<SaveFavoritesResponse>
     {
         public SaveFavoritesRequest()
-            : base("quickbi-public", "2022-01-01", "SaveFavorites", "2.2.0", "openAPI")
+            : base("quickbi-public", "2022-01-01", "SaveFavorites", "QuickBI", "openAPI")
         {
 			Method = MethodType.POST;
         }

@@ -70,21 +70,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryLlmCubeWithThemeListByUserId_Result
 		{
 
-			private string cubeIds;
-
 			private string themeIds;
 
-			public string CubeIds
-			{
-				get
-				{
-					return cubeIds;
-				}
-				set	
-				{
-					cubeIds = value;
-				}
-			}
+			private string cubeIds;
 
 			public string ThemeIds
 			{
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					themeIds = value;
+				}
+			}
+
+			public string CubeIds
+			{
+				get
+				{
+					return cubeIds;
+				}
+				set	
+				{
+					cubeIds = value;
 				}
 			}
 		}

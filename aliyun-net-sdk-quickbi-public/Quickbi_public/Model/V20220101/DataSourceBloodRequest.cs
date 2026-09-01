@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class DataSourceBloodRequest : RpcAcsRequest<DataSourceBloodResponse>
     {
         public DataSourceBloodRequest()
-            : base("quickbi-public", "2022-01-01", "DataSourceBlood", "2.2.0", "openAPI")
+            : base("quickbi-public", "2022-01-01", "DataSourceBlood", "QuickBI", "openAPI")
         {
 			Method = MethodType.POST;
         }

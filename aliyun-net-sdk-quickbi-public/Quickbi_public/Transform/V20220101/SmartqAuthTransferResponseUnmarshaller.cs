@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			smartqAuthTransferResponse.HttpResponse = _ctx.HttpResponse;
 			smartqAuthTransferResponse.RequestId = _ctx.StringValue("SmartqAuthTransfer.RequestId");
-			smartqAuthTransferResponse.Result = _ctx.BooleanValue("SmartqAuthTransfer.Result");
 			smartqAuthTransferResponse.Success = _ctx.BooleanValue("SmartqAuthTransfer.Success");
+			smartqAuthTransferResponse.Result = _ctx.BooleanValue("SmartqAuthTransfer.Result");
         
 			return smartqAuthTransferResponse;
         }

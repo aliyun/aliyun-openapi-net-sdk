@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class UpdateUserTagMetaRequest : RpcAcsRequest<UpdateUserTagMetaResponse>
     {
         public UpdateUserTagMetaRequest()
-            : base("quickbi-public", "2022-01-01", "UpdateUserTagMeta", "2.2.0", "openAPI")
+            : base("quickbi-public", "2022-01-01", "UpdateUserTagMeta", "QuickBI", "openAPI")
         {
 			Method = MethodType.POST;
         }

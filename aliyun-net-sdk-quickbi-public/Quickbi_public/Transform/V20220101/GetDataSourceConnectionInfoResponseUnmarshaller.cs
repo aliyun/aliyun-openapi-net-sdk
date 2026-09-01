@@ -35,22 +35,22 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			getDataSourceConnectionInfoResponse.Success = _ctx.BooleanValue("GetDataSourceConnectionInfo.Success");
 
 			GetDataSourceConnectionInfoResponse.GetDataSourceConnectionInfo_Result result = new GetDataSourceConnectionInfoResponse.GetDataSourceConnectionInfo_Result();
+			result.ModifyUser = _ctx.StringValue("GetDataSourceConnectionInfo.Result.ModifyUser");
 			result.Address = _ctx.StringValue("GetDataSourceConnectionInfo.Result.Address");
-			result.AuthLevel = _ctx.StringValue("GetDataSourceConnectionInfo.Result.AuthLevel");
-			result.CreatorId = _ctx.StringValue("GetDataSourceConnectionInfo.Result.CreatorId");
-			result.DsId = _ctx.StringValue("GetDataSourceConnectionInfo.Result.DsId");
-			result.DsType = _ctx.StringValue("GetDataSourceConnectionInfo.Result.DsType");
-			result.DsVersion = _ctx.StringValue("GetDataSourceConnectionInfo.Result.DsVersion");
 			result.Instance = _ctx.StringValue("GetDataSourceConnectionInfo.Result.Instance");
 			result.InstanceId = _ctx.StringValue("GetDataSourceConnectionInfo.Result.InstanceId");
-			result.ModifyUser = _ctx.StringValue("GetDataSourceConnectionInfo.Result.ModifyUser");
-			result.NoSasl = _ctx.BooleanValue("GetDataSourceConnectionInfo.Result.NoSasl");
-			result.ParentDsType = _ctx.StringValue("GetDataSourceConnectionInfo.Result.ParentDsType");
+			result.CreatorId = _ctx.StringValue("GetDataSourceConnectionInfo.Result.CreatorId");
 			result.Port = _ctx.StringValue("GetDataSourceConnectionInfo.Result.Port");
-			result.Project = _ctx.StringValue("GetDataSourceConnectionInfo.Result.Project");
 			result.Schema = _ctx.StringValue("GetDataSourceConnectionInfo.Result.Schema");
-			result.ShowName = _ctx.StringValue("GetDataSourceConnectionInfo.Result.ShowName");
 			result.WorkspaceId = _ctx.StringValue("GetDataSourceConnectionInfo.Result.WorkspaceId");
+			result.DsId = _ctx.StringValue("GetDataSourceConnectionInfo.Result.DsId");
+			result.ParentDsType = _ctx.StringValue("GetDataSourceConnectionInfo.Result.ParentDsType");
+			result.DsVersion = _ctx.StringValue("GetDataSourceConnectionInfo.Result.DsVersion");
+			result.ShowName = _ctx.StringValue("GetDataSourceConnectionInfo.Result.ShowName");
+			result.AuthLevel = _ctx.StringValue("GetDataSourceConnectionInfo.Result.AuthLevel");
+			result.DsType = _ctx.StringValue("GetDataSourceConnectionInfo.Result.DsType");
+			result.Project = _ctx.StringValue("GetDataSourceConnectionInfo.Result.Project");
+			result.NoSasl = _ctx.BooleanValue("GetDataSourceConnectionInfo.Result.NoSasl");
 			getDataSourceConnectionInfoResponse.Result = result;
         
 			return getDataSourceConnectionInfoResponse;

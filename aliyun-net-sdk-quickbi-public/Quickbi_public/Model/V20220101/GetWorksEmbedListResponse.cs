@@ -70,25 +70,25 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class GetWorksEmbedList_Result
 		{
 
-			private long? pageNo;
+			private long? totalNum;
 
 			private long? pageSize;
 
-			private long? totalNum;
+			private long? pageNo;
 
 			private long? totalPages;
 
 			private List<GetWorksEmbedList_DataItem> data;
 
-			public long? PageNo
+			public long? TotalNum
 			{
 				get
 				{
-					return pageNo;
+					return totalNum;
 				}
 				set	
 				{
-					pageNo = value;
+					totalNum = value;
 				}
 			}
 
@@ -104,15 +104,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public long? TotalNum
+			public long? PageNo
 			{
 				get
 				{
-					return totalNum;
+					return pageNo;
 				}
 				set	
 				{
-					totalNum = value;
+					pageNo = value;
 				}
 			}
 
@@ -145,13 +145,13 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 				private string embedTime;
 
-				private string worksId;
+				private string worksType;
 
 				private string worksName;
 
-				private string worksType;
-
 				private string workspaceId;
+
+				private string worksId;
 
 				public string EmbedTime
 				{
@@ -162,30 +162,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						embedTime = value;
-					}
-				}
-
-				public string WorksId
-				{
-					get
-					{
-						return worksId;
-					}
-					set	
-					{
-						worksId = value;
-					}
-				}
-
-				public string WorksName
-				{
-					get
-					{
-						return worksName;
-					}
-					set	
-					{
-						worksName = value;
 					}
 				}
 
@@ -201,6 +177,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
+				public string WorksName
+				{
+					get
+					{
+						return worksName;
+					}
+					set	
+					{
+						worksName = value;
+					}
+				}
+
 				public string WorkspaceId
 				{
 					get
@@ -210,6 +198,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						workspaceId = value;
+					}
+				}
+
+				public string WorksId
+				{
+					get
+					{
+						return worksId;
+					}
+					set	
+					{
+						worksId = value;
 					}
 				}
 			}

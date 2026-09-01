@@ -31,14 +31,14 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			AddWorkspaceUsersResponse addWorkspaceUsersResponse = new AddWorkspaceUsersResponse();
 
 			addWorkspaceUsersResponse.HttpResponse = _ctx.HttpResponse;
-			addWorkspaceUsersResponse.Success = _ctx.BooleanValue("AddWorkspaceUsers.Success");
 			addWorkspaceUsersResponse.RequestId = _ctx.StringValue("AddWorkspaceUsers.RequestId");
+			addWorkspaceUsersResponse.Success = _ctx.BooleanValue("AddWorkspaceUsers.Success");
 
 			AddWorkspaceUsersResponse.AddWorkspaceUsers_Result result = new AddWorkspaceUsersResponse.AddWorkspaceUsers_Result();
-			result.Failure = _ctx.IntegerValue("AddWorkspaceUsers.Result.Failure");
 			result.FailureDetail = _ctx.StringValue("AddWorkspaceUsers.Result.FailureDetail");
-			result.Success = _ctx.IntegerValue("AddWorkspaceUsers.Result.Success");
 			result.Total = _ctx.IntegerValue("AddWorkspaceUsers.Result.Total");
+			result.Failure = _ctx.IntegerValue("AddWorkspaceUsers.Result.Failure");
+			result.Success = _ctx.IntegerValue("AddWorkspaceUsers.Result.Success");
 			addWorkspaceUsersResponse.Result = result;
         
 			return addWorkspaceUsersResponse;

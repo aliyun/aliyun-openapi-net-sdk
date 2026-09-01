@@ -31,14 +31,14 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			QueryUserTagValueListResponse queryUserTagValueListResponse = new QueryUserTagValueListResponse();
 
 			queryUserTagValueListResponse.HttpResponse = _ctx.HttpResponse;
-			queryUserTagValueListResponse.Success = _ctx.BooleanValue("QueryUserTagValueList.Success");
 			queryUserTagValueListResponse.RequestId = _ctx.StringValue("QueryUserTagValueList.RequestId");
+			queryUserTagValueListResponse.Success = _ctx.BooleanValue("QueryUserTagValueList.Success");
 
 			List<QueryUserTagValueListResponse.QueryUserTagValueList_Data> queryUserTagValueListResponse_result = new List<QueryUserTagValueListResponse.QueryUserTagValueList_Data>();
 			for (int i = 0; i < _ctx.Length("QueryUserTagValueList.Result.Length"); i++) {
 				QueryUserTagValueListResponse.QueryUserTagValueList_Data data = new QueryUserTagValueListResponse.QueryUserTagValueList_Data();
-				data.TagId = _ctx.StringValue("QueryUserTagValueList.Result["+ i +"].TagId");
 				data.TagName = _ctx.StringValue("QueryUserTagValueList.Result["+ i +"].TagName");
+				data.TagId = _ctx.StringValue("QueryUserTagValueList.Result["+ i +"].TagId");
 				data.TagValue = _ctx.StringValue("QueryUserTagValueList.Result["+ i +"].TagValue");
 
 				queryUserTagValueListResponse_result.Add(data);

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class SmartqAuthorizeRequest : RpcAcsRequest<SmartqAuthorizeResponse>
     {
         public SmartqAuthorizeRequest()
-            : base("quickbi-public", "2022-01-01", "SmartqAuthorize", "2.2.0", "openAPI")
+            : base("quickbi-public", "2022-01-01", "SmartqAuthorize", "QuickBI", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

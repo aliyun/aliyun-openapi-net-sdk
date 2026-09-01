@@ -37,27 +37,27 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			List<QueryCubePerformanceResponse.QueryCubePerformance_Data> queryCubePerformanceResponse_result = new List<QueryCubePerformanceResponse.QueryCubePerformance_Data>();
 			for (int i = 0; i < _ctx.Length("QueryCubePerformance.Result.Length"); i++) {
 				QueryCubePerformanceResponse.QueryCubePerformance_Data data = new QueryCubePerformanceResponse.QueryCubePerformance_Data();
-				data.CacheCostTimeAvg = _ctx.DoubleValue("QueryCubePerformance.Result["+ i +"].CacheCostTimeAvg");
-				data.CacheQueryCount = _ctx.IntegerValue("QueryCubePerformance.Result["+ i +"].CacheQueryCount");
-				data.CostTimeAvg = _ctx.DoubleValue("QueryCubePerformance.Result["+ i +"].CostTimeAvg");
-				data.CubeId = _ctx.StringValue("QueryCubePerformance.Result["+ i +"].CubeId");
-				data.CubeName = _ctx.StringValue("QueryCubePerformance.Result["+ i +"].CubeName");
-				data.QueryCount = _ctx.IntegerValue("QueryCubePerformance.Result["+ i +"].QueryCount");
-				data.QueryCountAvg = _ctx.DoubleValue("QueryCubePerformance.Result["+ i +"].QueryCountAvg");
-				data.QueryOverFivePercentNum = _ctx.DoubleValue("QueryCubePerformance.Result["+ i +"].QueryOverFivePercentNum");
-				data.QueryOverFiveSecPercent = _ctx.StringValue("QueryCubePerformance.Result["+ i +"].QueryOverFiveSecPercent");
-				data.QueryOverTenSecPercent = _ctx.StringValue("QueryCubePerformance.Result["+ i +"].QueryOverTenSecPercent");
-				data.QueryOverTenSecPercentNum = _ctx.DoubleValue("QueryCubePerformance.Result["+ i +"].QueryOverTenSecPercentNum");
-				data.QueryTimeoutCount = _ctx.IntegerValue("QueryCubePerformance.Result["+ i +"].QueryTimeoutCount");
 				data.QueryTimeoutCountPercent = _ctx.DoubleValue("QueryCubePerformance.Result["+ i +"].QueryTimeoutCountPercent");
-				data.QuickIndexCostTimeAvg = _ctx.DoubleValue("QueryCubePerformance.Result["+ i +"].QuickIndexCostTimeAvg");
-				data.QuickIndexQueryCount = _ctx.IntegerValue("QueryCubePerformance.Result["+ i +"].QuickIndexQueryCount");
-				data.RepeatQueryPercent = _ctx.StringValue("QueryCubePerformance.Result["+ i +"].RepeatQueryPercent");
-				data.RepeatQueryPercentNum = _ctx.DoubleValue("QueryCubePerformance.Result["+ i +"].RepeatQueryPercentNum");
-				data.RepeatSqlQueryCount = _ctx.IntegerValue("QueryCubePerformance.Result["+ i +"].RepeatSqlQueryCount");
+				data.CubeId = _ctx.StringValue("QueryCubePerformance.Result["+ i +"].CubeId");
+				data.QueryOverTenSecPercentNum = _ctx.DoubleValue("QueryCubePerformance.Result["+ i +"].QueryOverTenSecPercentNum");
 				data.RepeatSqlQueryPercent = _ctx.StringValue("QueryCubePerformance.Result["+ i +"].RepeatSqlQueryPercent");
 				data.WorkspaceId = _ctx.StringValue("QueryCubePerformance.Result["+ i +"].WorkspaceId");
+				data.QueryOverTenSecPercent = _ctx.StringValue("QueryCubePerformance.Result["+ i +"].QueryOverTenSecPercent");
+				data.QuickIndexQueryCount = _ctx.IntegerValue("QueryCubePerformance.Result["+ i +"].QuickIndexQueryCount");
+				data.QueryTimeoutCount = _ctx.IntegerValue("QueryCubePerformance.Result["+ i +"].QueryTimeoutCount");
+				data.CacheQueryCount = _ctx.IntegerValue("QueryCubePerformance.Result["+ i +"].CacheQueryCount");
+				data.CacheCostTimeAvg = _ctx.DoubleValue("QueryCubePerformance.Result["+ i +"].CacheCostTimeAvg");
+				data.QueryCountAvg = _ctx.DoubleValue("QueryCubePerformance.Result["+ i +"].QueryCountAvg");
+				data.QuickIndexCostTimeAvg = _ctx.DoubleValue("QueryCubePerformance.Result["+ i +"].QuickIndexCostTimeAvg");
+				data.CubeName = _ctx.StringValue("QueryCubePerformance.Result["+ i +"].CubeName");
+				data.CostTimeAvg = _ctx.DoubleValue("QueryCubePerformance.Result["+ i +"].CostTimeAvg");
+				data.QueryCount = _ctx.IntegerValue("QueryCubePerformance.Result["+ i +"].QueryCount");
 				data.WorkspaceName = _ctx.StringValue("QueryCubePerformance.Result["+ i +"].WorkspaceName");
+				data.QueryOverFivePercentNum = _ctx.DoubleValue("QueryCubePerformance.Result["+ i +"].QueryOverFivePercentNum");
+				data.QueryOverFiveSecPercent = _ctx.StringValue("QueryCubePerformance.Result["+ i +"].QueryOverFiveSecPercent");
+				data.RepeatQueryPercentNum = _ctx.DoubleValue("QueryCubePerformance.Result["+ i +"].RepeatQueryPercentNum");
+				data.RepeatSqlQueryCount = _ctx.IntegerValue("QueryCubePerformance.Result["+ i +"].RepeatSqlQueryCount");
+				data.RepeatQueryPercent = _ctx.StringValue("QueryCubePerformance.Result["+ i +"].RepeatQueryPercent");
 
 				queryCubePerformanceResponse_result.Add(data);
 			}

@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			allotDatasetAccelerationTaskResponse.HttpResponse = _ctx.HttpResponse;
 			allotDatasetAccelerationTaskResponse.RequestId = _ctx.StringValue("AllotDatasetAccelerationTask.RequestId");
-			allotDatasetAccelerationTaskResponse.Result = _ctx.BooleanValue("AllotDatasetAccelerationTask.Result");
 			allotDatasetAccelerationTaskResponse.Success = _ctx.BooleanValue("AllotDatasetAccelerationTask.Success");
+			allotDatasetAccelerationTaskResponse.Result = _ctx.BooleanValue("AllotDatasetAccelerationTask.Result");
         
 			return allotDatasetAccelerationTaskResponse;
         }

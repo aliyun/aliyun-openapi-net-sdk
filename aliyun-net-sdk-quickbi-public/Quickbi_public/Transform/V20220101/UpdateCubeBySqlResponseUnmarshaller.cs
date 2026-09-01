@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			updateCubeBySqlResponse.HttpResponse = _ctx.HttpResponse;
 			updateCubeBySqlResponse.RequestId = _ctx.StringValue("UpdateCubeBySql.RequestId");
-			updateCubeBySqlResponse.Result = _ctx.BooleanValue("UpdateCubeBySql.Result");
 			updateCubeBySqlResponse.Success = _ctx.BooleanValue("UpdateCubeBySql.Success");
+			updateCubeBySqlResponse.Result = _ctx.BooleanValue("UpdateCubeBySql.Result");
         
 			return updateCubeBySqlResponse;
         }

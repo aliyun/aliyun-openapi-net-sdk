@@ -35,9 +35,9 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			querySmartqPermissionByCubeIdResponse.Success = _ctx.BooleanValue("QuerySmartqPermissionByCubeId.Success");
 
 			QuerySmartqPermissionByCubeIdResponse.QuerySmartqPermissionByCubeId_Result result = new QuerySmartqPermissionByCubeIdResponse.QuerySmartqPermissionByCubeId_Result();
-			result.HasPerssion = _ctx.BooleanValue("QuerySmartqPermissionByCubeId.Result.HasPerssion");
 			result.CubeId = _ctx.StringValue("QuerySmartqPermissionByCubeId.Result.CubeId");
 			result.CubeName = _ctx.StringValue("QuerySmartqPermissionByCubeId.Result.CubeName");
+			result.HasPerssion = _ctx.BooleanValue("QuerySmartqPermissionByCubeId.Result.HasPerssion");
 			querySmartqPermissionByCubeIdResponse.Result = result;
         
 			return querySmartqPermissionByCubeIdResponse;

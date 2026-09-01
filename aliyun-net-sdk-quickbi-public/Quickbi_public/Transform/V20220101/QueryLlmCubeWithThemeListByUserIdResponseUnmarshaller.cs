@@ -35,8 +35,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			queryLlmCubeWithThemeListByUserIdResponse.Success = _ctx.BooleanValue("QueryLlmCubeWithThemeListByUserId.Success");
 
 			QueryLlmCubeWithThemeListByUserIdResponse.QueryLlmCubeWithThemeListByUserId_Result result = new QueryLlmCubeWithThemeListByUserIdResponse.QueryLlmCubeWithThemeListByUserId_Result();
-			result.CubeIds = _ctx.StringValue("QueryLlmCubeWithThemeListByUserId.Result.CubeIds");
 			result.ThemeIds = _ctx.StringValue("QueryLlmCubeWithThemeListByUserId.Result.ThemeIds");
+			result.CubeIds = _ctx.StringValue("QueryLlmCubeWithThemeListByUserId.Result.CubeIds");
 			queryLlmCubeWithThemeListByUserIdResponse.Result = result;
         
 			return queryLlmCubeWithThemeListByUserIdResponse;

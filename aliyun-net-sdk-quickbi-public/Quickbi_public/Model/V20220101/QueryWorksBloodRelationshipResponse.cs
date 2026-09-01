@@ -25,23 +25,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 	public class QueryWorksBloodRelationshipResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private string requestId;
 
-		private List<QueryWorksBloodRelationship_Item> result;
+		private bool? success;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private List<QueryWorksBloodRelationship_Item> result;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -70,43 +70,19 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryWorksBloodRelationship_Item
 		{
 
-			private string componentId;
-
-			private string componentName;
-
 			private int? componentType;
 
 			private string componentTypeName;
 
+			private string componentName;
+
 			private string componentTypeCnName;
+
+			private string componentId;
 
 			private string datasetId;
 
 			private List<QueryWorksBloodRelationship_QueryParam> queryParams;
-
-			public string ComponentId
-			{
-				get
-				{
-					return componentId;
-				}
-				set	
-				{
-					componentId = value;
-				}
-			}
-
-			public string ComponentName
-			{
-				get
-				{
-					return componentName;
-				}
-				set	
-				{
-					componentName = value;
-				}
-			}
 
 			public int? ComponentType
 			{
@@ -132,6 +108,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
+			public string ComponentName
+			{
+				get
+				{
+					return componentName;
+				}
+				set	
+				{
+					componentName = value;
+				}
+			}
+
 			public string ComponentTypeCnName
 			{
 				get
@@ -141,6 +129,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					componentTypeCnName = value;
+				}
+			}
+
+			public string ComponentId
+			{
+				get
+				{
+					return componentId;
+				}
+				set	
+				{
+					componentId = value;
 				}
 			}
 
@@ -171,33 +171,21 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class QueryWorksBloodRelationship_QueryParam
 			{
 
-				private string areaId;
-
 				private string areaName;
-
-				private string caption;
-
-				private string dataType;
-
-				private bool? isMeasure;
 
 				private string pathId;
 
 				private string uid;
 
+				private bool? isMeasure;
+
 				private string expression;
 
-				public string AreaId
-				{
-					get
-					{
-						return areaId;
-					}
-					set	
-					{
-						areaId = value;
-					}
-				}
+				private string areaId;
+
+				private string dataType;
+
+				private string caption;
 
 				public string AreaName
 				{
@@ -208,42 +196,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						areaName = value;
-					}
-				}
-
-				public string Caption
-				{
-					get
-					{
-						return caption;
-					}
-					set	
-					{
-						caption = value;
-					}
-				}
-
-				public string DataType
-				{
-					get
-					{
-						return dataType;
-					}
-					set	
-					{
-						dataType = value;
-					}
-				}
-
-				public bool? IsMeasure
-				{
-					get
-					{
-						return isMeasure;
-					}
-					set	
-					{
-						isMeasure = value;
 					}
 				}
 
@@ -271,6 +223,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					}
 				}
 
+				public bool? IsMeasure
+				{
+					get
+					{
+						return isMeasure;
+					}
+					set	
+					{
+						isMeasure = value;
+					}
+				}
+
 				public string Expression
 				{
 					get
@@ -280,6 +244,42 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						expression = value;
+					}
+				}
+
+				public string AreaId
+				{
+					get
+					{
+						return areaId;
+					}
+					set	
+					{
+						areaId = value;
+					}
+				}
+
+				public string DataType
+				{
+					get
+					{
+						return dataType;
+					}
+					set	
+					{
+						dataType = value;
+					}
+				}
+
+				public string Caption
+				{
+					get
+					{
+						return caption;
+					}
+					set	
+					{
+						caption = value;
 					}
 				}
 			}

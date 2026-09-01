@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			deleteUserTagMetaResponse.HttpResponse = _ctx.HttpResponse;
 			deleteUserTagMetaResponse.RequestId = _ctx.StringValue("DeleteUserTagMeta.RequestId");
-			deleteUserTagMetaResponse.Result = _ctx.BooleanValue("DeleteUserTagMeta.Result");
 			deleteUserTagMetaResponse.Success = _ctx.BooleanValue("DeleteUserTagMeta.Success");
+			deleteUserTagMetaResponse.Result = _ctx.BooleanValue("DeleteUserTagMeta.Result");
         
 			return deleteUserTagMetaResponse;
         }

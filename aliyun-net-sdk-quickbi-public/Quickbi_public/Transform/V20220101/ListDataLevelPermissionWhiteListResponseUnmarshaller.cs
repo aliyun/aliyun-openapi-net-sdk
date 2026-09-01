@@ -40,17 +40,17 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			ListDataLevelPermissionWhiteListResponse.ListDataLevelPermissionWhiteList_Result.ListDataLevelPermissionWhiteList_UsersModel usersModel = new ListDataLevelPermissionWhiteListResponse.ListDataLevelPermissionWhiteList_Result.ListDataLevelPermissionWhiteList_UsersModel();
 
-			List<string> usersModel_userGroups = new List<string>();
-			for (int i = 0; i < _ctx.Length("ListDataLevelPermissionWhiteList.Result.UsersModel.UserGroups.Length"); i++) {
-				usersModel_userGroups.Add(_ctx.StringValue("ListDataLevelPermissionWhiteList.Result.UsersModel.UserGroups["+ i +"]"));
-			}
-			usersModel.UserGroups = usersModel_userGroups;
-
 			List<string> usersModel_users = new List<string>();
 			for (int i = 0; i < _ctx.Length("ListDataLevelPermissionWhiteList.Result.UsersModel.Users.Length"); i++) {
 				usersModel_users.Add(_ctx.StringValue("ListDataLevelPermissionWhiteList.Result.UsersModel.Users["+ i +"]"));
 			}
 			usersModel.Users = usersModel_users;
+
+			List<string> usersModel_userGroups = new List<string>();
+			for (int i = 0; i < _ctx.Length("ListDataLevelPermissionWhiteList.Result.UsersModel.UserGroups.Length"); i++) {
+				usersModel_userGroups.Add(_ctx.StringValue("ListDataLevelPermissionWhiteList.Result.UsersModel.UserGroups["+ i +"]"));
+			}
+			usersModel.UserGroups = usersModel_userGroups;
 			result.UsersModel = usersModel;
 			listDataLevelPermissionWhiteListResponse.Result = result;
         

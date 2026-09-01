@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			queryDatasetDetailInfoResponse.HttpResponse = _ctx.HttpResponse;
 			queryDatasetDetailInfoResponse.RequestId = _ctx.StringValue("QueryDatasetDetailInfo.RequestId");
-			queryDatasetDetailInfoResponse.Result = _ctx.StringValue("QueryDatasetDetailInfo.Result");
 			queryDatasetDetailInfoResponse.Success = _ctx.BooleanValue("QueryDatasetDetailInfo.Success");
+			queryDatasetDetailInfoResponse.Result = _ctx.StringValue("QueryDatasetDetailInfo.Result");
         
 			return queryDatasetDetailInfoResponse;
         }

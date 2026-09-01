@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			addUserToWorkspaceResponse.HttpResponse = _ctx.HttpResponse;
 			addUserToWorkspaceResponse.RequestId = _ctx.StringValue("AddUserToWorkspace.RequestId");
-			addUserToWorkspaceResponse.Result = _ctx.BooleanValue("AddUserToWorkspace.Result");
 			addUserToWorkspaceResponse.Success = _ctx.BooleanValue("AddUserToWorkspace.Success");
+			addUserToWorkspaceResponse.Result = _ctx.BooleanValue("AddUserToWorkspace.Result");
         
 			return addUserToWorkspaceResponse;
         }

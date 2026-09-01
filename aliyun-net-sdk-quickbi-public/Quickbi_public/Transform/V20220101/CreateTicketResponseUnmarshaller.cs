@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			createTicketResponse.HttpResponse = _ctx.HttpResponse;
 			createTicketResponse.RequestId = _ctx.StringValue("CreateTicket.RequestId");
-			createTicketResponse.Result = _ctx.StringValue("CreateTicket.Result");
 			createTicketResponse.Success = _ctx.BooleanValue("CreateTicket.Success");
+			createTicketResponse.Result = _ctx.StringValue("CreateTicket.Result");
         
 			return createTicketResponse;
         }

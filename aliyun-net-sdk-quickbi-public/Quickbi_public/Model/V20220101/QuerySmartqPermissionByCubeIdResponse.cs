@@ -70,23 +70,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QuerySmartqPermissionByCubeId_Result
 		{
 
-			private bool? hasPerssion;
-
 			private string cubeId;
 
 			private string cubeName;
 
-			public bool? HasPerssion
-			{
-				get
-				{
-					return hasPerssion;
-				}
-				set	
-				{
-					hasPerssion = value;
-				}
-			}
+			private bool? hasPerssion;
 
 			public string CubeId
 			{
@@ -109,6 +97,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					cubeName = value;
+				}
+			}
+
+			public bool? HasPerssion
+			{
+				get
+				{
+					return hasPerssion;
+				}
+				set	
+				{
+					hasPerssion = value;
 				}
 			}
 		}

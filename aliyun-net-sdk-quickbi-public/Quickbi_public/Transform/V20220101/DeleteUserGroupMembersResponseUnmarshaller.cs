@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			deleteUserGroupMembersResponse.HttpResponse = _ctx.HttpResponse;
 			deleteUserGroupMembersResponse.RequestId = _ctx.StringValue("DeleteUserGroupMembers.RequestId");
-			deleteUserGroupMembersResponse.Result = _ctx.BooleanValue("DeleteUserGroupMembers.Result");
 			deleteUserGroupMembersResponse.Success = _ctx.BooleanValue("DeleteUserGroupMembers.Success");
+			deleteUserGroupMembersResponse.Result = _ctx.BooleanValue("DeleteUserGroupMembers.Result");
         
 			return deleteUserGroupMembersResponse;
         }

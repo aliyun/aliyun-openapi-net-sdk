@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class DeleteUserGroupRequest : RpcAcsRequest<DeleteUserGroupResponse>
     {
         public DeleteUserGroupRequest()
-            : base("quickbi-public", "2022-01-01", "DeleteUserGroup", "2.2.0", "openAPI")
+            : base("quickbi-public", "2022-01-01", "DeleteUserGroup", "QuickBI", "openAPI")
         {
 			Method = MethodType.POST;
         }

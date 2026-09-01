@@ -70,21 +70,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class DataSetBlood_WorksModels
 		{
 
-			private string worksId;
-
 			private string worksType;
 
-			public string WorksId
-			{
-				get
-				{
-					return worksId;
-				}
-				set	
-				{
-					worksId = value;
-				}
-			}
+			private string worksId;
 
 			public string WorksType
 			{
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					worksType = value;
+				}
+			}
+
+			public string WorksId
+			{
+				get
+				{
+					return worksId;
+				}
+				set	
+				{
+					worksId = value;
 				}
 			}
 		}

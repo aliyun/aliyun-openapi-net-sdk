@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			addDataLevelPermissionRuleUsersResponse.HttpResponse = _ctx.HttpResponse;
 			addDataLevelPermissionRuleUsersResponse.RequestId = _ctx.StringValue("AddDataLevelPermissionRuleUsers.RequestId");
-			addDataLevelPermissionRuleUsersResponse.Result = _ctx.BooleanValue("AddDataLevelPermissionRuleUsers.Result");
 			addDataLevelPermissionRuleUsersResponse.Success = _ctx.BooleanValue("AddDataLevelPermissionRuleUsers.Success");
+			addDataLevelPermissionRuleUsersResponse.Result = _ctx.BooleanValue("AddDataLevelPermissionRuleUsers.Result");
         
 			return addDataLevelPermissionRuleUsersResponse;
         }

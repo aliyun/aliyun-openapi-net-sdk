@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class QueryDatasetSmartqStatusRequest : RpcAcsRequest<QueryDatasetSmartqStatusResponse>
     {
         public QueryDatasetSmartqStatusRequest()
-            : base("quickbi-public", "2022-01-01", "QueryDatasetSmartqStatus", "2.2.0", "openAPI")
+            : base("quickbi-public", "2022-01-01", "QueryDatasetSmartqStatus", "QuickBI", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

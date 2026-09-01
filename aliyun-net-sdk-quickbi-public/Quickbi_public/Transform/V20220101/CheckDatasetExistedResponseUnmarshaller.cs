@@ -32,8 +32,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 
 			checkDatasetExistedResponse.HttpResponse = _ctx.HttpResponse;
 			checkDatasetExistedResponse.RequestId = _ctx.StringValue("CheckDatasetExisted.RequestId");
-			checkDatasetExistedResponse.Result = _ctx.BooleanValue("CheckDatasetExisted.Result");
 			checkDatasetExistedResponse.Success = _ctx.BooleanValue("CheckDatasetExisted.Success");
+			checkDatasetExistedResponse.Result = _ctx.BooleanValue("CheckDatasetExisted.Result");
         
 			return checkDatasetExistedResponse;
         }

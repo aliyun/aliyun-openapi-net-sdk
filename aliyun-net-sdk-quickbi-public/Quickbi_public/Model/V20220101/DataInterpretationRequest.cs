@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class DataInterpretationRequest : RpcAcsRequest<DataInterpretationResponse>
     {
         public DataInterpretationRequest()
-            : base("quickbi-public", "2022-01-01", "DataInterpretation", "2.2.0", "openAPI")
+            : base("quickbi-public", "2022-01-01", "DataInterpretation", "QuickBI", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

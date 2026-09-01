@@ -70,81 +70,57 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class QueryCubePerformance_Data
 		{
 
-			private double? cacheCostTimeAvg;
-
-			private int? cacheQueryCount;
-
-			private double? costTimeAvg;
+			private double? queryTimeoutCountPercent;
 
 			private string cubeId;
 
-			private string cubeName;
-
-			private int? queryCount;
-
-			private double? queryCountAvg;
-
-			private double? queryOverFivePercentNum;
-
-			private string queryOverFiveSecPercent;
-
-			private string queryOverTenSecPercent;
-
 			private double? queryOverTenSecPercentNum;
-
-			private int? queryTimeoutCount;
-
-			private double? queryTimeoutCountPercent;
-
-			private double? quickIndexCostTimeAvg;
-
-			private int? quickIndexQueryCount;
-
-			private string repeatQueryPercent;
-
-			private double? repeatQueryPercentNum;
-
-			private int? repeatSqlQueryCount;
 
 			private string repeatSqlQueryPercent;
 
 			private string workspaceId;
 
+			private string queryOverTenSecPercent;
+
+			private int? quickIndexQueryCount;
+
+			private int? queryTimeoutCount;
+
+			private int? cacheQueryCount;
+
+			private double? cacheCostTimeAvg;
+
+			private double? queryCountAvg;
+
+			private double? quickIndexCostTimeAvg;
+
+			private string cubeName;
+
+			private double? costTimeAvg;
+
+			private int? queryCount;
+
 			private string workspaceName;
 
-			public double? CacheCostTimeAvg
-			{
-				get
-				{
-					return cacheCostTimeAvg;
-				}
-				set	
-				{
-					cacheCostTimeAvg = value;
-				}
-			}
+			private double? queryOverFivePercentNum;
 
-			public int? CacheQueryCount
-			{
-				get
-				{
-					return cacheQueryCount;
-				}
-				set	
-				{
-					cacheQueryCount = value;
-				}
-			}
+			private string queryOverFiveSecPercent;
 
-			public double? CostTimeAvg
+			private double? repeatQueryPercentNum;
+
+			private int? repeatSqlQueryCount;
+
+			private string repeatQueryPercent;
+
+			public double? QueryTimeoutCountPercent
 			{
 				get
 				{
-					return costTimeAvg;
+					return queryTimeoutCountPercent;
 				}
 				set	
 				{
-					costTimeAvg = value;
+					queryTimeoutCountPercent = value;
 				}
 			}
 
@@ -160,78 +136,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
-			public string CubeName
-			{
-				get
-				{
-					return cubeName;
-				}
-				set	
-				{
-					cubeName = value;
-				}
-			}
-
-			public int? QueryCount
-			{
-				get
-				{
-					return queryCount;
-				}
-				set	
-				{
-					queryCount = value;
-				}
-			}
-
-			public double? QueryCountAvg
-			{
-				get
-				{
-					return queryCountAvg;
-				}
-				set	
-				{
-					queryCountAvg = value;
-				}
-			}
-
-			public double? QueryOverFivePercentNum
-			{
-				get
-				{
-					return queryOverFivePercentNum;
-				}
-				set	
-				{
-					queryOverFivePercentNum = value;
-				}
-			}
-
-			public string QueryOverFiveSecPercent
-			{
-				get
-				{
-					return queryOverFiveSecPercent;
-				}
-				set	
-				{
-					queryOverFiveSecPercent = value;
-				}
-			}
-
-			public string QueryOverTenSecPercent
-			{
-				get
-				{
-					return queryOverTenSecPercent;
-				}
-				set	
-				{
-					queryOverTenSecPercent = value;
-				}
-			}
-
 			public double? QueryOverTenSecPercentNum
 			{
 				get
@@ -241,90 +145,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					queryOverTenSecPercentNum = value;
-				}
-			}
-
-			public int? QueryTimeoutCount
-			{
-				get
-				{
-					return queryTimeoutCount;
-				}
-				set	
-				{
-					queryTimeoutCount = value;
-				}
-			}
-
-			public double? QueryTimeoutCountPercent
-			{
-				get
-				{
-					return queryTimeoutCountPercent;
-				}
-				set	
-				{
-					queryTimeoutCountPercent = value;
-				}
-			}
-
-			public double? QuickIndexCostTimeAvg
-			{
-				get
-				{
-					return quickIndexCostTimeAvg;
-				}
-				set	
-				{
-					quickIndexCostTimeAvg = value;
-				}
-			}
-
-			public int? QuickIndexQueryCount
-			{
-				get
-				{
-					return quickIndexQueryCount;
-				}
-				set	
-				{
-					quickIndexQueryCount = value;
-				}
-			}
-
-			public string RepeatQueryPercent
-			{
-				get
-				{
-					return repeatQueryPercent;
-				}
-				set	
-				{
-					repeatQueryPercent = value;
-				}
-			}
-
-			public double? RepeatQueryPercentNum
-			{
-				get
-				{
-					return repeatQueryPercentNum;
-				}
-				set	
-				{
-					repeatQueryPercentNum = value;
-				}
-			}
-
-			public int? RepeatSqlQueryCount
-			{
-				get
-				{
-					return repeatSqlQueryCount;
-				}
-				set	
-				{
-					repeatSqlQueryCount = value;
 				}
 			}
 
@@ -352,6 +172,126 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
+			public string QueryOverTenSecPercent
+			{
+				get
+				{
+					return queryOverTenSecPercent;
+				}
+				set	
+				{
+					queryOverTenSecPercent = value;
+				}
+			}
+
+			public int? QuickIndexQueryCount
+			{
+				get
+				{
+					return quickIndexQueryCount;
+				}
+				set	
+				{
+					quickIndexQueryCount = value;
+				}
+			}
+
+			public int? QueryTimeoutCount
+			{
+				get
+				{
+					return queryTimeoutCount;
+				}
+				set	
+				{
+					queryTimeoutCount = value;
+				}
+			}
+
+			public int? CacheQueryCount
+			{
+				get
+				{
+					return cacheQueryCount;
+				}
+				set	
+				{
+					cacheQueryCount = value;
+				}
+			}
+
+			public double? CacheCostTimeAvg
+			{
+				get
+				{
+					return cacheCostTimeAvg;
+				}
+				set	
+				{
+					cacheCostTimeAvg = value;
+				}
+			}
+
+			public double? QueryCountAvg
+			{
+				get
+				{
+					return queryCountAvg;
+				}
+				set	
+				{
+					queryCountAvg = value;
+				}
+			}
+
+			public double? QuickIndexCostTimeAvg
+			{
+				get
+				{
+					return quickIndexCostTimeAvg;
+				}
+				set	
+				{
+					quickIndexCostTimeAvg = value;
+				}
+			}
+
+			public string CubeName
+			{
+				get
+				{
+					return cubeName;
+				}
+				set	
+				{
+					cubeName = value;
+				}
+			}
+
+			public double? CostTimeAvg
+			{
+				get
+				{
+					return costTimeAvg;
+				}
+				set	
+				{
+					costTimeAvg = value;
+				}
+			}
+
+			public int? QueryCount
+			{
+				get
+				{
+					return queryCount;
+				}
+				set	
+				{
+					queryCount = value;
+				}
+			}
+
 			public string WorkspaceName
 			{
 				get
@@ -361,6 +301,66 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					workspaceName = value;
+				}
+			}
+
+			public double? QueryOverFivePercentNum
+			{
+				get
+				{
+					return queryOverFivePercentNum;
+				}
+				set	
+				{
+					queryOverFivePercentNum = value;
+				}
+			}
+
+			public string QueryOverFiveSecPercent
+			{
+				get
+				{
+					return queryOverFiveSecPercent;
+				}
+				set	
+				{
+					queryOverFiveSecPercent = value;
+				}
+			}
+
+			public double? RepeatQueryPercentNum
+			{
+				get
+				{
+					return repeatQueryPercentNum;
+				}
+				set	
+				{
+					repeatQueryPercentNum = value;
+				}
+			}
+
+			public int? RepeatSqlQueryCount
+			{
+				get
+				{
+					return repeatSqlQueryCount;
+				}
+				set	
+				{
+					repeatSqlQueryCount = value;
+				}
+			}
+
+			public string RepeatQueryPercent
+			{
+				get
+				{
+					return repeatQueryPercent;
+				}
+				set	
+				{
+					repeatQueryPercent = value;
 				}
 			}
 		}

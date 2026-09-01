@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class UpdateDataSourceRequest : RpcAcsRequest<UpdateDataSourceResponse>
     {
         public UpdateDataSourceRequest()
-            : base("quickbi-public", "2022-01-01", "UpdateDataSource", "2.2.0", "openAPI")
+            : base("quickbi-public", "2022-01-01", "UpdateDataSource", "QuickBI", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

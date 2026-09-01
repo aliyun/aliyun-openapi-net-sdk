@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class GetDataSourceConnectionInfoRequest : RpcAcsRequest<GetDataSourceConnectionInfoResponse>
     {
         public GetDataSourceConnectionInfoRequest()
-            : base("quickbi-public", "2022-01-01", "GetDataSourceConnectionInfo", "2.2.0", "openAPI")
+            : base("quickbi-public", "2022-01-01", "GetDataSourceConnectionInfo", "QuickBI", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

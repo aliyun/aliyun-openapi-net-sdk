@@ -39,8 +39,8 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 				GetMailTaskStatusResponse.GetMailTaskStatus_DATA dATA = new GetMailTaskStatusResponse.GetMailTaskStatus_DATA();
 				dATA.ExecTime = _ctx.StringValue("GetMailTaskStatus.Result["+ i +"].execTime");
 				dATA.MailId = _ctx.StringValue("GetMailTaskStatus.Result["+ i +"].mailId");
-				dATA.Status = _ctx.StringValue("GetMailTaskStatus.Result["+ i +"].status");
 				dATA.TaskId = _ctx.LongValue("GetMailTaskStatus.Result["+ i +"].taskId");
+				dATA.Status = _ctx.StringValue("GetMailTaskStatus.Result["+ i +"].status");
 
 				getMailTaskStatusResponse_result.Add(dATA);
 			}

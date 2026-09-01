@@ -35,26 +35,15 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			smartqQueryAbilityResponse.Success = _ctx.BooleanValue("SmartqQueryAbility.Success");
 
 			SmartqQueryAbilityResponse.SmartqQueryAbility_Result result = new SmartqQueryAbilityResponse.SmartqQueryAbility_Result();
-			result.ChartType = _ctx.StringValue("SmartqQueryAbility.Result.ChartType");
-			result.LogicSql = _ctx.StringValue("SmartqQueryAbility.Result.LogicSql");
 			result.ConclusionText = _ctx.StringValue("SmartqQueryAbility.Result.ConclusionText");
+			result.LogicSql = _ctx.StringValue("SmartqQueryAbility.Result.LogicSql");
+			result.ChartType = _ctx.StringValue("SmartqQueryAbility.Result.ChartType");
 
 			List<string> result_dataList = new List<string>();
 			for (int i = 0; i < _ctx.Length("SmartqQueryAbility.Result.DataList.Length"); i++) {
 				result_dataList.Add(_ctx.StringValue("SmartqQueryAbility.Result.DataList["+ i +"]"));
 			}
 			result.DataList = result_dataList;
-
-			List<SmartqQueryAbilityResponse.SmartqQueryAbility_Result.SmartqQueryAbility_MetaTypeItem> result_metaType = new List<SmartqQueryAbilityResponse.SmartqQueryAbility_Result.SmartqQueryAbility_MetaTypeItem>();
-			for (int i = 0; i < _ctx.Length("SmartqQueryAbility.Result.MetaType.Length"); i++) {
-				SmartqQueryAbilityResponse.SmartqQueryAbility_Result.SmartqQueryAbility_MetaTypeItem metaTypeItem = new SmartqQueryAbilityResponse.SmartqQueryAbility_Result.SmartqQueryAbility_MetaTypeItem();
-				metaTypeItem.Key = _ctx.StringValue("SmartqQueryAbility.Result.MetaType["+ i +"].Key");
-				metaTypeItem._Value = _ctx.StringValue("SmartqQueryAbility.Result.MetaType["+ i +"].Value");
-				metaTypeItem.Type = _ctx.StringValue("SmartqQueryAbility.Result.MetaType["+ i +"].Type");
-
-				result_metaType.Add(metaTypeItem);
-			}
-			result.MetaType = result_metaType;
 
 			List<SmartqQueryAbilityResponse.SmartqQueryAbility_Result.SmartqQueryAbility_ValuesItem> result_values = new List<SmartqQueryAbilityResponse.SmartqQueryAbility_Result.SmartqQueryAbility_ValuesItem>();
 			for (int i = 0; i < _ctx.Length("SmartqQueryAbility.Result.Values.Length"); i++) {
@@ -69,6 +58,17 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 				result_values.Add(valuesItem);
 			}
 			result.Values = result_values;
+
+			List<SmartqQueryAbilityResponse.SmartqQueryAbility_Result.SmartqQueryAbility_MetaTypeItem> result_metaType = new List<SmartqQueryAbilityResponse.SmartqQueryAbility_Result.SmartqQueryAbility_MetaTypeItem>();
+			for (int i = 0; i < _ctx.Length("SmartqQueryAbility.Result.MetaType.Length"); i++) {
+				SmartqQueryAbilityResponse.SmartqQueryAbility_Result.SmartqQueryAbility_MetaTypeItem metaTypeItem = new SmartqQueryAbilityResponse.SmartqQueryAbility_Result.SmartqQueryAbility_MetaTypeItem();
+				metaTypeItem.Type = _ctx.StringValue("SmartqQueryAbility.Result.MetaType["+ i +"].Type");
+				metaTypeItem._Value = _ctx.StringValue("SmartqQueryAbility.Result.MetaType["+ i +"].Value");
+				metaTypeItem.Key = _ctx.StringValue("SmartqQueryAbility.Result.MetaType["+ i +"].Key");
+
+				result_metaType.Add(metaTypeItem);
+			}
+			result.MetaType = result_metaType;
 			smartqQueryAbilityResponse.Result = result;
         
 			return smartqQueryAbilityResponse;

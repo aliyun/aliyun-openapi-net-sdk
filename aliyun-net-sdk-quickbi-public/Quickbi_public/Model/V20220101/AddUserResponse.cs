@@ -70,61 +70,25 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 		public class AddUser_Result
 		{
 
-			private string accountName;
-
-			private bool? adminUser;
-
-			private bool? authAdminUser;
-
 			private string email;
-
-			private string nickName;
 
 			private string phone;
 
 			private string userId;
 
+			private bool? adminUser;
+
+			private string nickName;
+
 			private int? userType;
+
+			private bool? authAdminUser;
+
+			private string accountName;
 
 			private List<string> roleIdList;
 
 			private List<string> copilotModules;
-
-			public string AccountName
-			{
-				get
-				{
-					return accountName;
-				}
-				set	
-				{
-					accountName = value;
-				}
-			}
-
-			public bool? AdminUser
-			{
-				get
-				{
-					return adminUser;
-				}
-				set	
-				{
-					adminUser = value;
-				}
-			}
-
-			public bool? AuthAdminUser
-			{
-				get
-				{
-					return authAdminUser;
-				}
-				set	
-				{
-					authAdminUser = value;
-				}
-			}
 
 			public string Email
 			{
@@ -135,18 +99,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					email = value;
-				}
-			}
-
-			public string NickName
-			{
-				get
-				{
-					return nickName;
-				}
-				set	
-				{
-					nickName = value;
 				}
 			}
 
@@ -174,6 +126,30 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				}
 			}
 
+			public bool? AdminUser
+			{
+				get
+				{
+					return adminUser;
+				}
+				set	
+				{
+					adminUser = value;
+				}
+			}
+
+			public string NickName
+			{
+				get
+				{
+					return nickName;
+				}
+				set	
+				{
+					nickName = value;
+				}
+			}
+
 			public int? UserType
 			{
 				get
@@ -183,6 +159,30 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					userType = value;
+				}
+			}
+
+			public bool? AuthAdminUser
+			{
+				get
+				{
+					return authAdminUser;
+				}
+				set	
+				{
+					authAdminUser = value;
+				}
+			}
+
+			public string AccountName
+			{
+				get
+				{
+					return accountName;
+				}
+				set	
+				{
+					accountName = value;
 				}
 			}
 

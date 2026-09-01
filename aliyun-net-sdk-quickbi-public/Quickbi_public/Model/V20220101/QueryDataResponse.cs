@@ -25,23 +25,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 	public class QueryDataResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private string requestId;
 
-		private QueryData_Result result;
+		private bool? success;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private QueryData_Result result;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -115,29 +115,29 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			public class QueryData_HeadersItem
 			{
 
-				private string aggregator;
+				private string type;
 
 				private string column;
+
+				private string label;
+
+				private string aggregator;
 
 				private string dataType;
 
 				private string granularity;
 
-				private string label;
-
-				private string type;
-
 				private string originalColumn;
 
-				public string Aggregator
+				public string Type
 				{
 					get
 					{
-						return aggregator;
+						return type;
 					}
 					set	
 					{
-						aggregator = value;
+						type = value;
 					}
 				}
 
@@ -150,6 +150,30 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						column = value;
+					}
+				}
+
+				public string Label
+				{
+					get
+					{
+						return label;
+					}
+					set	
+					{
+						label = value;
+					}
+				}
+
+				public string Aggregator
+				{
+					get
+					{
+						return aggregator;
+					}
+					set	
+					{
+						aggregator = value;
 					}
 				}
 
@@ -174,30 +198,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						granularity = value;
-					}
-				}
-
-				public string Label
-				{
-					get
-					{
-						return label;
-					}
-					set	
-					{
-						label = value;
-					}
-				}
-
-				public string Type
-				{
-					get
-					{
-						return type;
-					}
-					set	
-					{
-						type = value;
 					}
 				}
 
