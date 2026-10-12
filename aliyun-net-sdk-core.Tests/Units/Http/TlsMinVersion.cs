@@ -161,12 +161,14 @@ namespace Aliyun.Acs.Core.Tests.Units.Http
             using (var proxy = new LoopbackServer(stream => WriteResponse(stream, 200, "proxied")))
             using (var client = new DefaultAcsClient { TlsMinVersion = "TLSv1.2" })
             {
-                var request = CreateRequest("http://127.0.0.1:1/");
+                // .NET Framework always bypasses proxies for loopback destinations.
+                var request = CreateRequest("http://sdk-proxy-target.invalid/");
                 request.WebProxy = new WebProxy(proxy.Url) { BypassProxyOnLocal = false };
+                Assert.False(request.WebProxy.IsBypassed(new Uri(request.Url)));
 
                 Assert.Equal("proxied", client.GetResponse(request).GetHttpContentString());
                 proxy.Complete();
-                Assert.Equal("GET http://127.0.0.1:1/ HTTP/1.1", proxy.RequestLine);
+                Assert.Equal("GET http://sdk-proxy-target.invalid/ HTTP/1.1", proxy.RequestLine);
             }
         }
 
