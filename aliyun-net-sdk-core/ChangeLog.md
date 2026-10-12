@@ -1,3 +1,7 @@
+### Unreleased
+* Add an optional client-level TlsMinVersion setting for .NET Framework 4.7.2+ and .NET Standard 2.0 consumers.
+* Add a net472 package asset while retaining net45 and netstandard2.0. Requests without TlsMinVersion retain their existing transport and TLS behavior.
+
 ### 2024-09-25 Version 1.6.2
 * Refactor default credentials provider
 
