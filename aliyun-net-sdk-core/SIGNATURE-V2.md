@@ -1,5 +1,7 @@
 # Signature V2 signing
 
+[中文复测说明](SIGNATURE-V2-zh-CN.md)
+
 AccessKey and STS credentials now use `HMAC-SHA256` by default for both RPC and ROA requests. The protocol field `SignatureVersion` (and ROA `x-acs-signature-version`) remains `1.0`. Canonicalization, UTF-8 encoding, Base64, RPC's `&` key suffix and ROA body MD5 are unchanged. RSA and bearer token signers are unchanged.
 
 To send a compatibility request using SHA1, pass the existing signer overload on `DefaultAcsClient`:
