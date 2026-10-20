@@ -41,6 +41,29 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             var bearerTokenCredential = new BearerTokenCredential("FakeBearerToken");
             Assert.IsType<BearerTokenSigner>(Signer.GetSigner(bearerTokenCredential));
         }
+
+        [Theory]
+        [InlineData(false)]
+        [InlineData(true)]
+        public void HmacFallbackPreservesCredentialRouting(bool useHmacSHA1)
+        {
+            var credentials = new AlibabaCloudCredentials[]
+            {
+                new BasicCredentials("test-id", "test-secret"),
+                new BasicSessionCredentials("test-id", "test-secret", "test-token"),
+                new LegacyCredentials(new Credential("test-id", "test-secret"))
+            };
+            foreach (var credential in credentials)
+            {
+                Assert.IsType<HmacSHA256Signer>(Signer.GetSigner(credential));
+                Assert.Equal(useHmacSHA1 ? typeof(HmacSHA1Signer) : typeof(HmacSHA256Signer),
+                    Signer.GetSigner(credential, useHmacSHA1).GetType());
+            }
+
+            Assert.IsType<SHA256withRSASigner>(Signer.GetSigner(
+                new KeyPairCredentials("public-key-id", "private-key-secret"), useHmacSHA1));
+            Assert.IsType<BearerTokenSigner>(Signer.GetSigner(new BearerTokenCredential("test-token"), useHmacSHA1));
+        }
     }
 
     public class MockSigner : Signer
