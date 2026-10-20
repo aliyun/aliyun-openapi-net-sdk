@@ -183,128 +183,6 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             Assert.Equal("HMAC-SHA256", client.Sent.Headers["x-acs-signature-method"]);
         }
 
-        [Theory]
-        [InlineData(0, false)]
-        [InlineData(0, true)]
-        [InlineData(1, false)]
-        [InlineData(1, true)]
-        [InlineData(2, false)]
-        [InlineData(2, true)]
-        public void ClientSignerIsUsedByGetAcsResponse(int credentialSource, bool sha1)
-        {
-            var client = Client(credentialSource, sha1 ? new HmacSHA1Signer() : null);
-            var accessKeyId = credentialSource == 0 ? "profile-id" : "test-id";
-            var session = credentialSource != 0;
-            Assert.NotNull(client.GetAcsResponse(RpcRequest()));
-            AssertClientRpcSignature(client.Sent, sha1, accessKeyId, session);
-
-            var roa = new MockRoaAcsRequest("Cs", "2015-12-15", "DescribeClusters")
-            {
-                Method = MethodType.GET,
-                ProductDomain = new ProductDomain("Cs", "example.invalid"),
-                UriPattern = "/clusters"
-            };
-            Assert.NotNull(client.GetAcsResponse(roa));
-            AssertClientRoaSignature(client.Sent, sha1, accessKeyId, session);
-        }
-
-        [Theory]
-        [InlineData(false)]
-        [InlineData(true)]
-        public void ClientSignerIsUsedByGetCommonResponse(bool sha1)
-        {
-            var client = Client(2, sha1 ? new HmacSHA1Signer() : null);
-            foreach (var roa in new[] { false, true })
-            {
-                var request = new CommonRequest
-                {
-                    Product = "Ecs",
-                    Version = "2014-05-26",
-                    Action = "DescribeRegions",
-                    RegionId = "cn-hangzhou",
-                    Domain = "example.invalid",
-                    Method = MethodType.GET,
-                    UriPattern = roa ? "/clusters" : null
-                };
-                var response = client.GetCommonResponse(request);
-                Assert.Equal(200, response.HttpStatus);
-                Assert.Equal("{}", response.Data);
-                if (roa)
-                {
-                    AssertClientRoaSignature(client.Sent, sha1, "test-id", true);
-                }
-                else
-                {
-                    AssertClientRpcSignature(client.Sent, sha1, "test-id", true);
-                }
-            }
-        }
-
-        [Fact]
-        public void ClientSignerSupportsLegacyCredentialsAndPerRequestOverride()
-        {
-            var client = Client(0, new HmacSHA1Signer());
-            Assert.NotNull(client.GetAcsResponse(RpcRequest(), "cn-hangzhou", new Credential("legacy-id", "test-secret")));
-            AssertClientRpcSignature(client.Sent, true, "legacy-id", false);
-
-            client.DoAction(RpcRequest(), false, 0, "cn-hangzhou", Credentials(false), new HmacSHA256Signer(), FormatType.JSON, null);
-            AssertClientRpcSignature(client.Sent, false, "test-id", false);
-
-            Assert.NotNull(client.GetAcsResponse(RpcRequest()));
-            AssertClientRpcSignature(client.Sent, true, "profile-id", false);
-        }
-
-        private static CapturingClient Client(int credentialSource, Signer signer)
-        {
-            var profile = DefaultProfile.GetProfile("cn-hangzhou", "profile-id", "test-secret");
-            if (credentialSource == 0)
-            {
-                return new CapturingClient(profile, signer);
-            }
-            if (credentialSource == 1)
-            {
-                return new CapturingClient(profile, Credentials(true), signer);
-            }
-            return new CapturingClient(profile, new StaticCredentialsProvider(Credentials(true)), signer);
-        }
-
-        private static MockRpcAcsRequest RpcRequest()
-        {
-            return new MockRpcAcsRequest("Ecs", "2014-05-26", "DescribeRegions")
-            {
-                Method = MethodType.GET,
-                ProductDomain = new ProductDomain("Ecs", "example.invalid")
-            };
-        }
-
-        private static void AssertClientRpcSignature(HttpRequest request, bool sha1, string accessKeyId, bool session)
-        {
-            var parameters = Parse(new Uri(request.Url).Query.TrimStart('?'));
-            Assert.Equal(sha1 ? "HMAC-SHA1" : "HMAC-SHA256", parameters["SignatureMethod"]);
-            Assert.Equal("1.0", parameters["SignatureVersion"]);
-            Assert.Equal(accessKeyId, parameters["AccessKeyId"]);
-            Assert.Equal(session, parameters.ContainsKey("SecurityToken"));
-            var signature = parameters["Signature"];
-            parameters.Remove("Signature");
-            var canonical = string.Join("&", parameters.OrderBy(p => p.Key, StringComparer.Ordinal)
-                .Select(p => Uri.EscapeDataString(p.Key) + "=" + Uri.EscapeDataString(p.Value)));
-            Assert.Equal(Hash(request.Method + "&%2F&" + Uri.EscapeDataString(canonical), "test-secret&", sha1), signature);
-        }
-
-        private static void AssertClientRoaSignature(HttpRequest request, bool sha1, string accessKeyId, bool session)
-        {
-            var headers = request.Headers;
-            Assert.Equal(sha1 ? "HMAC-SHA1" : "HMAC-SHA256", headers["x-acs-signature-method"]);
-            Assert.Equal("1.0", headers["x-acs-signature-version"]);
-            Assert.Equal(session, headers.ContainsKey("x-acs-security-token"));
-            var canonicalHeaders = string.Concat(headers.Where(h => h.Key.StartsWith("x-acs-", StringComparison.OrdinalIgnoreCase))
-                .OrderBy(h => h.Key.ToLowerInvariant(), StringComparer.Ordinal)
-                .Select(h => h.Key.ToLowerInvariant() + ":" + h.Value + "\n"));
-            var stringToSign = request.Method + "\n" + headers["Accept"] + "\n\n\n" + headers["Date"] + "\n" +
-                canonicalHeaders + "/clusters";
-            Assert.Equal("acs " + accessKeyId + ":" + Hash(stringToSign, "test-secret", sha1), headers["Authorization"]);
-        }
-
         private class CapturingClient : DefaultAcsClient
         {
             internal HttpRequest Sent;
@@ -313,30 +191,10 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             {
             }
 
-            internal CapturingClient(IClientProfile profile, Signer signer) : base(profile, signer)
-            {
-            }
-
-            internal CapturingClient(IClientProfile profile, AlibabaCloudCredentials credentials, Signer signer)
-                : base(profile, credentials, signer)
-            {
-            }
-
-            internal CapturingClient(IClientProfile profile, AlibabaCloudCredentialsProvider credentialsProvider, Signer signer)
-                : base(profile, credentialsProvider, signer)
-            {
-            }
-
             public override HttpResponse GetResponse(HttpRequest request)
             {
                 Sent = request;
-                return new HttpResponse
-                {
-                    Status = 200,
-                    Headers = new Dictionary<string, string>(),
-                    ContentType = FormatType.JSON,
-                    Content = Encoding.UTF8.GetBytes("{}")
-                };
+                return new HttpResponse { Status = 200, Headers = new Dictionary<string, string>() };
             }
         }
 

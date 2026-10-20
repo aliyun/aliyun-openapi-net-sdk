@@ -45,7 +45,6 @@ namespace Aliyun.Acs.Core
         private static readonly HttpWebProxy WebProxy = new HttpWebProxy();
         private readonly IClientProfile clientProfile;
         private readonly AlibabaCloudCredentialsProvider credentialsProvider;
-        private readonly Signer signer;
         private readonly RetryPolicy retryPolicy;
         private readonly UserAgent userAgentConfig = new UserAgent();
 
@@ -77,23 +76,6 @@ namespace Aliyun.Acs.Core
             clientProfile = profile;
             this.credentialsProvider = credentialsProvider;
             clientProfile.SetCredentialsProvider(this.credentialsProvider);
-        }
-
-        public DefaultAcsClient(IClientProfile profile, Signer signer) : this(profile)
-        {
-            this.signer = signer;
-        }
-
-        public DefaultAcsClient(IClientProfile profile, AlibabaCloudCredentials credentials, Signer signer)
-            : this(profile, credentials)
-        {
-            this.signer = signer;
-        }
-
-        public DefaultAcsClient(IClientProfile profile, AlibabaCloudCredentialsProvider credentialsProvider, Signer signer)
-            : this(profile, credentialsProvider)
-        {
-            this.signer = signer;
         }
 
         [Obsolete("readTimeout is deprecated as does not match Properties rule, please use readTimeout instead.")]
@@ -189,7 +171,7 @@ namespace Aliyun.Acs.Core
         public HttpResponse DoAction<T>(AcsRequest<T> request, string regionId, Credential credential)
         where T : AcsResponse
         {
-            var signer = this.signer ?? Signer.GetSigner(new LegacyCredentials(credential));
+            var signer = Signer.GetSigner(new LegacyCredentials(credential));
             FormatType? format = null;
             if (null == request.RegionId)
             {
@@ -249,7 +231,7 @@ namespace Aliyun.Acs.Core
                 credentials = new DefaultCredentialProvider().GetAlibabaCloudClientCredential();
             }
 
-            var signer = this.signer ?? Signer.GetSigner(credentials);
+            var signer = Signer.GetSigner(credentials);
             var format = profile.GetFormat();
             List<Endpoint> endpoints = null;
 
