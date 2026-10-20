@@ -53,14 +53,16 @@ namespace Aliyun.Acs.Core.Utils
             {
                 var requestHeader = request.Headers == null
                     ? ""
-                    : DictionaryUtil.TransformDicToString(request.Headers);
+                    : DictionaryUtil.TransformDicToString(request.Headers.ToDictionary(
+                        header => header.Key, header => LogRedactor.RedactHeader(header.Key, header.Value)));
                 var requestContent = request.Content == null
                     ? ""
                     : Encoding.Default.GetString(request.Content);
 
                 var responseHeader = response.Headers == null
                     ? ""
-                    : DictionaryUtil.TransformDicToString(response.Headers);
+                    : DictionaryUtil.TransformDicToString(response.Headers.ToDictionary(
+                        header => header.Key, header => LogRedactor.RedactHeader(header.Key, header.Value)));
                 var responseContent = response.Content == null
                     ? ""
                     : Encoding.Default.GetString(response.Content);
@@ -90,6 +92,7 @@ namespace Aliyun.Acs.Core.Utils
 
                 LoggerMessageMap.Add("pid", Process.GetCurrentProcess().Id.ToString());
                 LoggerMessageMap.Add("cost", executeTime + "ms");
+                LoggerMessageMap = LoggerMessageMap.ToDictionary(item => item.Key, item => LogRedactor.Redact(item.Value));
             }
             catch (Exception ex)
             {
@@ -158,9 +161,9 @@ namespace Aliyun.Acs.Core.Utils
                 return;
             }
 
-            Logger.Error(ex,
-                string.Format("AlibabaCloud. ExceptionMessage: ErrorCode:{0}, ErrorMessage:{1},", errorCode,
-                    errorMessage));
+            Logger.Error(new Exception(LogRedactor.Redact(ex.ToString())),
+                LogRedactor.Redact(string.Format("AlibabaCloud. ExceptionMessage: ErrorCode:{0}, ErrorMessage:{1},",
+                    errorCode, errorMessage)));
         }
     }
 }

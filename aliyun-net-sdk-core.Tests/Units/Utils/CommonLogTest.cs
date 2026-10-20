@@ -18,6 +18,9 @@
  */
 
 using System;
+using System.Collections.Generic;
+using System.Reflection;
+using System.Text;
 
 using Aliyun.Acs.Core.Auth.Sts;
 using Aliyun.Acs.Core.Exceptions;
@@ -28,8 +31,49 @@ using Xunit;
 
 namespace Aliyun.Acs.Core.Tests.Units.Utils
 {
+    [Collection("SDK diagnostic state")]
     public class CommonLogTest
     {
+        [Fact]
+        public void SensitiveLogFieldsAreRedactedWithoutChangingMessages()
+        {
+            var request = new AssumeRoleRequest
+            {
+                Url = "https://example.invalid/?Signature=synthetic-signature&SecurityToken=synthetic-token"
+            };
+            request.Headers.Add("Authorization", "acs test-id:synthetic-signature&synthetic-suffix");
+            request.Content = Encoding.UTF8.GetBytes("AccessKeySecret=synthetic-secret&Action=AssumeRole");
+            var response = new HttpResponse
+            {
+                Headers = new Dictionary<string, string> { { "SecurityToken", "synthetic-token;synthetic-suffix" } },
+                Content = Encoding.UTF8.GetBytes("{\"Credentials\":{\"AccessKeySecret\":\"synthetic-secret\",\"SecurityToken\":\"synthetic-token\"}}")
+            };
+            var log = typeof(CommonLog);
+            var mapField = log.GetField("LoggerMessageMap", BindingFlags.Static | BindingFlags.NonPublic);
+            mapField.SetValue(null, new Dictionary<string, string>());
+            try
+            {
+                log.GetMethod("BuildKeyValueMap", BindingFlags.Static | BindingFlags.NonPublic)
+                    .MakeGenericMethod(typeof(AssumeRoleResponse)).Invoke(null, new object[] { request, response, 100L });
+                var values = (IDictionary<string, string>)mapField.GetValue(null);
+                foreach (var value in values.Values)
+                {
+                    if (value != null)
+                    {
+                        Assert.DoesNotContain("synthetic", value);
+                    }
+                }
+                Assert.Contains("[REDACTED]", values["uri"]);
+                Assert.Contains("synthetic-signature", request.Url);
+                Assert.Contains("synthetic-secret", Encoding.UTF8.GetString(request.Content));
+                Assert.Contains("synthetic-secret", Encoding.UTF8.GetString(response.Content));
+            }
+            finally
+            {
+                mapField.SetValue(null, new Dictionary<string, string>());
+            }
+        }
+
         [Fact]
         public void OutputLogException()
         {
