@@ -18,31 +18,30 @@
  */
 
 using System;
-using Aliyun.Acs.Core.Utils;
 
 namespace Aliyun.Acs.Core.Exceptions
 {
     public class ClientException : Exception
     {
         public ClientException(string errCode, string errMsg, string requestId) : base(
-            string.Format("{0} : {1} + [ RequestId : {2} ]", errCode, LogRedactor.Redact(errMsg), requestId))
+            string.Format("{0} : {1} + [ RequestId : {2} ]", errCode, errMsg, requestId))
         {
             ErrorType = ErrorType.Client;
-            ErrorMessage = LogRedactor.Redact(errMsg);
+            ErrorMessage = errMsg;
             RequestId = requestId;
             ErrorCode = errCode;
         }
 
-        public ClientException(string errCode, string errMsg) : base(errCode + " : " + LogRedactor.Redact(errMsg))
+        public ClientException(string errCode, string errMsg) : base(errCode + " : " + errMsg)
         {
             ErrorCode = errCode;
-            ErrorMessage = LogRedactor.Redact(errMsg);
+            ErrorMessage = errMsg;
             ErrorType = ErrorType.Client;
         }
 
-        public ClientException(string message) : base(LogRedactor.Redact(message))
+        public ClientException(string message) : base(message)
         {
-            ErrorMessage = LogRedactor.Redact(message);
+            ErrorMessage = message;
         }
 
         public string ErrorCode { get; set; }

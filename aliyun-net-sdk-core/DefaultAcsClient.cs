@@ -390,33 +390,18 @@ namespace Aliyun.Acs.Core
                 {
                     Console.WriteLine(
                         "> " + request.Method + "\n" +
-                        "> " + LogRedactor.Redact(request.Url) + "\n"
+                        "> " + request.Url + "\n"
                     );
-                    PrintDebugHeaders(request.Headers, '>');
+                    DictionaryUtil.Print(request.Headers, '>');
 
                     Console.WriteLine(
                         "< " + response.Status
                     );
-                    PrintDebugHeaders(response.Headers, '<');
+                    DictionaryUtil.Print(response.Headers, '<');
                 }
 
                 Environment.SetEnvironmentVariable("DEBUG", null);
             }
-        }
-
-        private static void PrintDebugHeaders(Dictionary<string, string> headers, char prefix)
-        {
-            if (headers == null)
-            {
-                return;
-            }
-
-            foreach (var header in headers)
-            {
-                Console.WriteLine("{0} {1}: {2}", prefix, header.Key, LogRedactor.RedactHeader(header.Key, header.Value));
-            }
-
-            Console.WriteLine();
         }
 
         private T ReadResponse<T>(AcsRequest<T> request, HttpResponse httpResponse, FormatType? format)
