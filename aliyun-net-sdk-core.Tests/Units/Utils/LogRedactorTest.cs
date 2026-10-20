@@ -87,6 +87,28 @@ namespace Aliyun.Acs.Core.Tests.Units.Utils
         }
 
         [Fact]
+        public void ExceptionRedactionPreservesErrorCodeAndRequestId()
+        {
+            foreach (var field in new[] { "AccessKeySecret", "SecurityToken", "Signature" })
+            {
+                var message = field + "=synthetic-value";
+                var redacted = field + "=[REDACTED]";
+                var exceptions = new ClientException[]
+                {
+                    new ClientException("TestError", message, "request-id"),
+                    new ServerException("TestError", message, "request-id")
+                };
+                foreach (var exception in exceptions)
+                {
+                    Assert.Equal("TestError : " + redacted + " + [ RequestId : request-id ]", exception.Message);
+                    Assert.Equal(redacted, exception.ErrorMessage);
+                    Assert.Equal("TestError", exception.ErrorCode);
+                    Assert.Equal("request-id", exception.RequestId);
+                }
+            }
+        }
+
+        [Fact]
         public void DebugOutputDoesNotMutateTheRequestOrResponse()
         {
             var originalConsole = Console.Out;

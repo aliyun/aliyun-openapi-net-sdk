@@ -25,7 +25,7 @@ namespace Aliyun.Acs.Core.Exceptions
     public class ClientException : Exception
     {
         public ClientException(string errCode, string errMsg, string requestId) : base(
-            LogRedactor.Redact(string.Format("{0} : {1} + [ RequestId : {2} ]", errCode, errMsg, requestId)))
+            string.Format("{0} : {1} + [ RequestId : {2} ]", errCode, LogRedactor.Redact(errMsg), requestId))
         {
             ErrorType = ErrorType.Client;
             ErrorMessage = LogRedactor.Redact(errMsg);
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Core.Exceptions
             ErrorCode = errCode;
         }
 
-        public ClientException(string errCode, string errMsg) : base(LogRedactor.Redact(errCode + " : " + errMsg))
+        public ClientException(string errCode, string errMsg) : base(errCode + " : " + LogRedactor.Redact(errMsg))
         {
             ErrorCode = errCode;
             ErrorMessage = LogRedactor.Redact(errMsg);
