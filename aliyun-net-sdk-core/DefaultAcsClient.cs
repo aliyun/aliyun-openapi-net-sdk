@@ -96,6 +96,11 @@ namespace Aliyun.Acs.Core
 
         public bool IgnoreCertificate { get; private set; }
 
+        /// <summary>
+        /// Enables HMAC-SHA1 compatibility for AccessKey and STS requests only.
+        /// </summary>
+        public bool UseHmacSHA1 { get; set; }
+
         public int MaxRetryNumber
         {
             get { return maxRetryNumber; }
@@ -171,7 +176,7 @@ namespace Aliyun.Acs.Core
         public HttpResponse DoAction<T>(AcsRequest<T> request, string regionId, Credential credential)
         where T : AcsResponse
         {
-            var signer = Signer.GetSigner(new LegacyCredentials(credential));
+            var signer = Signer.GetSigner(new LegacyCredentials(credential), UseHmacSHA1);
             FormatType? format = null;
             if (null == request.RegionId)
             {
@@ -231,7 +236,7 @@ namespace Aliyun.Acs.Core
                 credentials = new DefaultCredentialProvider().GetAlibabaCloudClientCredential();
             }
 
-            var signer = Signer.GetSigner(credentials);
+            var signer = Signer.GetSigner(credentials, UseHmacSHA1);
             var format = profile.GetFormat();
             List<Endpoint> endpoints = null;
 
