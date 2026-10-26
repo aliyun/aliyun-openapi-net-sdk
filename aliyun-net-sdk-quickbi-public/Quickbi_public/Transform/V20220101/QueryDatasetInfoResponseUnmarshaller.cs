@@ -105,6 +105,22 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 				cubeTableListItem.DsType = _ctx.StringValue("QueryDatasetInfo.Result.CubeTableList["+ i +"].DsType");
 				cubeTableListItem.Sql = _ctx.StringValue("QueryDatasetInfo.Result.CubeTableList["+ i +"].Sql");
 
+				List<QueryDatasetInfoResponse.QueryDatasetInfo_Result.QueryDatasetInfo_CubeTableListItem.QueryDatasetInfo_ChildTablesItem> cubeTableListItem_childTables = new List<QueryDatasetInfoResponse.QueryDatasetInfo_Result.QueryDatasetInfo_CubeTableListItem.QueryDatasetInfo_ChildTablesItem>();
+				for (int j = 0; j < _ctx.Length("QueryDatasetInfo.Result.CubeTableList["+ i +"].ChildTables.Length"); j++) {
+					QueryDatasetInfoResponse.QueryDatasetInfo_Result.QueryDatasetInfo_CubeTableListItem.QueryDatasetInfo_ChildTablesItem childTablesItem = new QueryDatasetInfoResponse.QueryDatasetInfo_Result.QueryDatasetInfo_CubeTableListItem.QueryDatasetInfo_ChildTablesItem();
+					childTablesItem.TableName = _ctx.StringValue("QueryDatasetInfo.Result.CubeTableList["+ i +"].ChildTables["+ j +"].TableName");
+					childTablesItem.UniqueId = _ctx.StringValue("QueryDatasetInfo.Result.CubeTableList["+ i +"].ChildTables["+ j +"].UniqueId");
+					childTablesItem.FactTable = _ctx.BooleanValue("QueryDatasetInfo.Result.CubeTableList["+ i +"].ChildTables["+ j +"].FactTable");
+					childTablesItem.DatasourceId = _ctx.StringValue("QueryDatasetInfo.Result.CubeTableList["+ i +"].ChildTables["+ j +"].DatasourceId");
+					childTablesItem.Customsql = _ctx.BooleanValue("QueryDatasetInfo.Result.CubeTableList["+ i +"].ChildTables["+ j +"].Customsql");
+					childTablesItem.Caption = _ctx.StringValue("QueryDatasetInfo.Result.CubeTableList["+ i +"].ChildTables["+ j +"].Caption");
+					childTablesItem.DsType = _ctx.StringValue("QueryDatasetInfo.Result.CubeTableList["+ i +"].ChildTables["+ j +"].DsType");
+					childTablesItem.Sql = _ctx.StringValue("QueryDatasetInfo.Result.CubeTableList["+ i +"].ChildTables["+ j +"].Sql");
+
+					cubeTableListItem_childTables.Add(childTablesItem);
+				}
+				cubeTableListItem.ChildTables = cubeTableListItem_childTables;
+
 				result_cubeTableList.Add(cubeTableListItem);
 			}
 			result.CubeTableList = result_cubeTableList;

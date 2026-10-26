@@ -629,6 +629,8 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 				private string sql;
 
+				private List<QueryDatasetInfo_ChildTablesItem> childTables;
+
 				public string TableName
 				{
 					get
@@ -722,6 +724,134 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 					set	
 					{
 						sql = value;
+					}
+				}
+
+				public List<QueryDatasetInfo_ChildTablesItem> ChildTables
+				{
+					get
+					{
+						return childTables;
+					}
+					set	
+					{
+						childTables = value;
+					}
+				}
+
+				public class QueryDatasetInfo_ChildTablesItem
+				{
+
+					private string tableName;
+
+					private string uniqueId;
+
+					private bool? factTable;
+
+					private string datasourceId;
+
+					private bool? customsql;
+
+					private string caption;
+
+					private string dsType;
+
+					private string sql;
+
+					public string TableName
+					{
+						get
+						{
+							return tableName;
+						}
+						set	
+						{
+							tableName = value;
+						}
+					}
+
+					public string UniqueId
+					{
+						get
+						{
+							return uniqueId;
+						}
+						set	
+						{
+							uniqueId = value;
+						}
+					}
+
+					public bool? FactTable
+					{
+						get
+						{
+							return factTable;
+						}
+						set	
+						{
+							factTable = value;
+						}
+					}
+
+					public string DatasourceId
+					{
+						get
+						{
+							return datasourceId;
+						}
+						set	
+						{
+							datasourceId = value;
+						}
+					}
+
+					public bool? Customsql
+					{
+						get
+						{
+							return customsql;
+						}
+						set	
+						{
+							customsql = value;
+						}
+					}
+
+					public string Caption
+					{
+						get
+						{
+							return caption;
+						}
+						set	
+						{
+							caption = value;
+						}
+					}
+
+					public string DsType
+					{
+						get
+						{
+							return dsType;
+						}
+						set	
+						{
+							dsType = value;
+						}
+					}
+
+					public string Sql
+					{
+						get
+						{
+							return sql;
+						}
+						set	
+						{
+							sql = value;
+						}
 					}
 				}
 			}
