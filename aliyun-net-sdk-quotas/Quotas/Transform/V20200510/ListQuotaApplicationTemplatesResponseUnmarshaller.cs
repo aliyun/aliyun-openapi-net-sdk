@@ -31,27 +31,27 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 			ListQuotaApplicationTemplatesResponse listQuotaApplicationTemplatesResponse = new ListQuotaApplicationTemplatesResponse();
 
 			listQuotaApplicationTemplatesResponse.HttpResponse = _ctx.HttpResponse;
+			listQuotaApplicationTemplatesResponse.TotalCount = _ctx.IntegerValue("ListQuotaApplicationTemplates.TotalCount");
+			listQuotaApplicationTemplatesResponse.NextToken = _ctx.StringValue("ListQuotaApplicationTemplates.NextToken");
 			listQuotaApplicationTemplatesResponse.RequestId = _ctx.StringValue("ListQuotaApplicationTemplates.RequestId");
 			listQuotaApplicationTemplatesResponse.MaxResults = _ctx.IntegerValue("ListQuotaApplicationTemplates.MaxResults");
-			listQuotaApplicationTemplatesResponse.NextToken = _ctx.StringValue("ListQuotaApplicationTemplates.NextToken");
-			listQuotaApplicationTemplatesResponse.TotalCount = _ctx.IntegerValue("ListQuotaApplicationTemplates.TotalCount");
 
 			List<ListQuotaApplicationTemplatesResponse.ListQuotaApplicationTemplates_QuotaApplicationTemplatesItem> listQuotaApplicationTemplatesResponse_quotaApplicationTemplates = new List<ListQuotaApplicationTemplatesResponse.ListQuotaApplicationTemplates_QuotaApplicationTemplatesItem>();
 			for (int i = 0; i < _ctx.Length("ListQuotaApplicationTemplates.QuotaApplicationTemplates.Length"); i++) {
 				ListQuotaApplicationTemplatesResponse.ListQuotaApplicationTemplates_QuotaApplicationTemplatesItem quotaApplicationTemplatesItem = new ListQuotaApplicationTemplatesResponse.ListQuotaApplicationTemplates_QuotaApplicationTemplatesItem();
-				quotaApplicationTemplatesItem.Id = _ctx.StringValue("ListQuotaApplicationTemplates.QuotaApplicationTemplates["+ i +"].Id");
-				quotaApplicationTemplatesItem.ProductCode = _ctx.StringValue("ListQuotaApplicationTemplates.QuotaApplicationTemplates["+ i +"].ProductCode");
-				quotaApplicationTemplatesItem.Dimensions = _ctx.StringValue("ListQuotaApplicationTemplates.QuotaApplicationTemplates["+ i +"].Dimensions");
-				quotaApplicationTemplatesItem.DesireValue = _ctx.FloatValue("ListQuotaApplicationTemplates.QuotaApplicationTemplates["+ i +"].DesireValue");
-				quotaApplicationTemplatesItem.NoticeType = _ctx.IntegerValue("ListQuotaApplicationTemplates.QuotaApplicationTemplates["+ i +"].NoticeType");
-				quotaApplicationTemplatesItem.QuotaActionCode = _ctx.StringValue("ListQuotaApplicationTemplates.QuotaApplicationTemplates["+ i +"].QuotaActionCode");
-				quotaApplicationTemplatesItem.ApplicableType = _ctx.StringValue("ListQuotaApplicationTemplates.QuotaApplicationTemplates["+ i +"].ApplicableType");
-				quotaApplicationTemplatesItem.EnvLanguage = _ctx.StringValue("ListQuotaApplicationTemplates.QuotaApplicationTemplates["+ i +"].EnvLanguage");
-				quotaApplicationTemplatesItem.QuotaName = _ctx.StringValue("ListQuotaApplicationTemplates.QuotaApplicationTemplates["+ i +"].QuotaName");
 				quotaApplicationTemplatesItem.QuotaDescription = _ctx.StringValue("ListQuotaApplicationTemplates.QuotaApplicationTemplates["+ i +"].QuotaDescription");
 				quotaApplicationTemplatesItem.EffectiveTime = _ctx.StringValue("ListQuotaApplicationTemplates.QuotaApplicationTemplates["+ i +"].EffectiveTime");
-				quotaApplicationTemplatesItem.ExpireTime = _ctx.StringValue("ListQuotaApplicationTemplates.QuotaApplicationTemplates["+ i +"].ExpireTime");
+				quotaApplicationTemplatesItem.ProductCode = _ctx.StringValue("ListQuotaApplicationTemplates.QuotaApplicationTemplates["+ i +"].ProductCode");
+				quotaApplicationTemplatesItem.Dimensions = _ctx.StringValue("ListQuotaApplicationTemplates.QuotaApplicationTemplates["+ i +"].Dimensions");
+				quotaApplicationTemplatesItem.EnvLanguage = _ctx.StringValue("ListQuotaApplicationTemplates.QuotaApplicationTemplates["+ i +"].EnvLanguage");
+				quotaApplicationTemplatesItem.QuotaActionCode = _ctx.StringValue("ListQuotaApplicationTemplates.QuotaApplicationTemplates["+ i +"].QuotaActionCode");
+				quotaApplicationTemplatesItem.QuotaName = _ctx.StringValue("ListQuotaApplicationTemplates.QuotaApplicationTemplates["+ i +"].QuotaName");
 				quotaApplicationTemplatesItem.QuotaCategory = _ctx.StringValue("ListQuotaApplicationTemplates.QuotaApplicationTemplates["+ i +"].QuotaCategory");
+				quotaApplicationTemplatesItem.NoticeType = _ctx.IntegerValue("ListQuotaApplicationTemplates.QuotaApplicationTemplates["+ i +"].NoticeType");
+				quotaApplicationTemplatesItem.Id = _ctx.StringValue("ListQuotaApplicationTemplates.QuotaApplicationTemplates["+ i +"].Id");
+				quotaApplicationTemplatesItem.DesireValue = _ctx.FloatValue("ListQuotaApplicationTemplates.QuotaApplicationTemplates["+ i +"].DesireValue");
+				quotaApplicationTemplatesItem.ExpireTime = _ctx.StringValue("ListQuotaApplicationTemplates.QuotaApplicationTemplates["+ i +"].ExpireTime");
+				quotaApplicationTemplatesItem.ApplicableType = _ctx.StringValue("ListQuotaApplicationTemplates.QuotaApplicationTemplates["+ i +"].ApplicableType");
 
 				List<string> quotaApplicationTemplatesItem_applicableRange = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListQuotaApplicationTemplates.QuotaApplicationTemplates["+ i +"].ApplicableRange.Length"); j++) {

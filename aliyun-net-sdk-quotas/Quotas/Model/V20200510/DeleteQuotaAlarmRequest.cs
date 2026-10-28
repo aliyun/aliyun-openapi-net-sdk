@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quotas.Model.V20200510
     public class DeleteQuotaAlarmRequest : RpcAcsRequest<DeleteQuotaAlarmResponse>
     {
         public DeleteQuotaAlarmRequest()
-            : base("quotas", "2020-05-10", "DeleteQuotaAlarm", "quotas", "openAPI")
+            : base("quotas", "2020-05-10", "DeleteQuotaAlarm", "Quotas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

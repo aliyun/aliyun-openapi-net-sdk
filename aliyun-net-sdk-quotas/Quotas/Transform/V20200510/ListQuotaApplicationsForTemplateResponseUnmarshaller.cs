@@ -31,23 +31,23 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 			ListQuotaApplicationsForTemplateResponse listQuotaApplicationsForTemplateResponse = new ListQuotaApplicationsForTemplateResponse();
 
 			listQuotaApplicationsForTemplateResponse.HttpResponse = _ctx.HttpResponse;
-			listQuotaApplicationsForTemplateResponse.RequestId = _ctx.StringValue("ListQuotaApplicationsForTemplate.RequestId");
-			listQuotaApplicationsForTemplateResponse.NextToken = _ctx.StringValue("ListQuotaApplicationsForTemplate.NextToken");
 			listQuotaApplicationsForTemplateResponse.TotalCount = _ctx.IntegerValue("ListQuotaApplicationsForTemplate.TotalCount");
+			listQuotaApplicationsForTemplateResponse.NextToken = _ctx.StringValue("ListQuotaApplicationsForTemplate.NextToken");
+			listQuotaApplicationsForTemplateResponse.RequestId = _ctx.StringValue("ListQuotaApplicationsForTemplate.RequestId");
 			listQuotaApplicationsForTemplateResponse.MaxResults = _ctx.IntegerValue("ListQuotaApplicationsForTemplate.MaxResults");
 
 			List<ListQuotaApplicationsForTemplateResponse.ListQuotaApplicationsForTemplate_QuotaBatchApplicationsItem> listQuotaApplicationsForTemplateResponse_quotaBatchApplications = new List<ListQuotaApplicationsForTemplateResponse.ListQuotaApplicationsForTemplate_QuotaBatchApplicationsItem>();
 			for (int i = 0; i < _ctx.Length("ListQuotaApplicationsForTemplate.QuotaBatchApplications.Length"); i++) {
 				ListQuotaApplicationsForTemplateResponse.ListQuotaApplicationsForTemplate_QuotaBatchApplicationsItem quotaBatchApplicationsItem = new ListQuotaApplicationsForTemplateResponse.ListQuotaApplicationsForTemplate_QuotaBatchApplicationsItem();
-				quotaBatchApplicationsItem.ProductCode = _ctx.StringValue("ListQuotaApplicationsForTemplate.QuotaBatchApplications["+ i +"].ProductCode");
 				quotaBatchApplicationsItem.QuotaActionCode = _ctx.StringValue("ListQuotaApplicationsForTemplate.QuotaBatchApplications["+ i +"].QuotaActionCode");
+				quotaBatchApplicationsItem.ApplyTime = _ctx.StringValue("ListQuotaApplicationsForTemplate.QuotaBatchApplications["+ i +"].ApplyTime");
 				quotaBatchApplicationsItem.BatchQuotaApplicationId = _ctx.StringValue("ListQuotaApplicationsForTemplate.QuotaBatchApplications["+ i +"].BatchQuotaApplicationId");
 				quotaBatchApplicationsItem.EffectiveTime = _ctx.StringValue("ListQuotaApplicationsForTemplate.QuotaBatchApplications["+ i +"].EffectiveTime");
-				quotaBatchApplicationsItem.ExpireTime = _ctx.StringValue("ListQuotaApplicationsForTemplate.QuotaBatchApplications["+ i +"].ExpireTime");
-				quotaBatchApplicationsItem.ApplyTime = _ctx.StringValue("ListQuotaApplicationsForTemplate.QuotaBatchApplications["+ i +"].ApplyTime");
-				quotaBatchApplicationsItem.DesireValue = _ctx.DoubleValue("ListQuotaApplicationsForTemplate.QuotaBatchApplications["+ i +"].DesireValue");
+				quotaBatchApplicationsItem.ProductCode = _ctx.StringValue("ListQuotaApplicationsForTemplate.QuotaBatchApplications["+ i +"].ProductCode");
 				quotaBatchApplicationsItem.QuotaCategory = _ctx.StringValue("ListQuotaApplicationsForTemplate.QuotaBatchApplications["+ i +"].QuotaCategory");
 				quotaBatchApplicationsItem.Dimensions = _ctx.StringValue("ListQuotaApplicationsForTemplate.QuotaBatchApplications["+ i +"].Dimensions");
+				quotaBatchApplicationsItem.DesireValue = _ctx.DoubleValue("ListQuotaApplicationsForTemplate.QuotaBatchApplications["+ i +"].DesireValue");
+				quotaBatchApplicationsItem.ExpireTime = _ctx.StringValue("ListQuotaApplicationsForTemplate.QuotaBatchApplications["+ i +"].ExpireTime");
 				quotaBatchApplicationsItem.Reason = _ctx.StringValue("ListQuotaApplicationsForTemplate.QuotaBatchApplications["+ i +"].Reason");
 
 				List<string> quotaBatchApplicationsItem_aliyunUids = new List<string>();

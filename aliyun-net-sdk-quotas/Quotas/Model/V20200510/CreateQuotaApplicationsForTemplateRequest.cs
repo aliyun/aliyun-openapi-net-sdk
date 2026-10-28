@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quotas.Model.V20200510
     public class CreateQuotaApplicationsForTemplateRequest : RpcAcsRequest<CreateQuotaApplicationsForTemplateResponse>
     {
         public CreateQuotaApplicationsForTemplateRequest()
-            : base("quotas", "2020-05-10", "CreateQuotaApplicationsForTemplate", "quotas", "openAPI")
+            : base("quotas", "2020-05-10", "CreateQuotaApplicationsForTemplate", "Quotas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -216,21 +216,9 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 		public class Dimensions
 		{
 
-			private string key;
-
 			private string value_;
 
-			public string Key
-			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
-			}
+			private string key;
 
 			public string Value_
 			{
@@ -241,6 +229,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
 				}
 			}
 		}

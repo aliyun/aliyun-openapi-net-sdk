@@ -25,7 +25,11 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 	public class GetQuotaApplicationApprovalResponse : AcsResponse
 	{
 
+		private bool? allowRetry;
+
 		private string requestId;
+
+		private string errorMsg;
 
 		private int? httpStatusCode;
 
@@ -33,17 +37,25 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 
 		private string dynamicMessage;
 
-		private string errorMsg;
-
 		private string errorCode;
 
 		private bool? success;
 
-		private bool? allowRetry;
-
 		private List<string> errorArgs;
 
 		private GetQuotaApplicationApproval_Module module;
+
+		public bool? AllowRetry
+		{
+			get
+			{
+				return allowRetry;
+			}
+			set	
+			{
+				allowRetry = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -54,6 +66,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ErrorMsg
+		{
+			get
+			{
+				return errorMsg;
+			}
+			set	
+			{
+				errorMsg = value;
 			}
 		}
 
@@ -93,18 +117,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			}
 		}
 
-		public string ErrorMsg
-		{
-			get
-			{
-				return errorMsg;
-			}
-			set	
-			{
-				errorMsg = value;
-			}
-		}
-
 		public string ErrorCode
 		{
 			get
@@ -126,18 +138,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public bool? AllowRetry
-		{
-			get
-			{
-				return allowRetry;
-			}
-			set	
-			{
-				allowRetry = value;
 			}
 		}
 
@@ -168,13 +168,37 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 		public class GetQuotaApplicationApproval_Module
 		{
 
+			private int? reminderIntervalHours;
+
+			private string unsupportReminderReason;
+
 			private int? approvalHours;
 
 			private bool? supportReminder;
 
-			private string unsupportReminderReason;
+			public int? ReminderIntervalHours
+			{
+				get
+				{
+					return reminderIntervalHours;
+				}
+				set	
+				{
+					reminderIntervalHours = value;
+				}
+			}
 
-			private int? reminderIntervalHours;
+			public string UnsupportReminderReason
+			{
+				get
+				{
+					return unsupportReminderReason;
+				}
+				set	
+				{
+					unsupportReminderReason = value;
+				}
+			}
 
 			public int? ApprovalHours
 			{
@@ -197,30 +221,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					supportReminder = value;
-				}
-			}
-
-			public string UnsupportReminderReason
-			{
-				get
-				{
-					return unsupportReminderReason;
-				}
-				set	
-				{
-					unsupportReminderReason = value;
-				}
-			}
-
-			public int? ReminderIntervalHours
-			{
-				get
-				{
-					return reminderIntervalHours;
-				}
-				set	
-				{
-					reminderIntervalHours = value;
 				}
 			}
 		}

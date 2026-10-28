@@ -98,29 +98,17 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 		public class ListProductQuotaDimensions_QuotaDimensionsItem
 		{
 
-			private bool? requisite;
-
 			private string dimensionKey;
 
 			private string name;
 
-			private List<ListProductQuotaDimensions_DimensionValueDetailItem> dimensionValueDetail;
+			private bool? requisite;
 
-			private List<string> dependentDimensions;
+			private List<ListProductQuotaDimensions_DimensionValueDetailItem> dimensionValueDetail;
 
 			private List<string> dimensionValues;
 
-			public bool? Requisite
-			{
-				get
-				{
-					return requisite;
-				}
-				set	
-				{
-					requisite = value;
-				}
-			}
+			private List<string> dependentDimensions;
 
 			public string DimensionKey
 			{
@@ -146,6 +134,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
+			public bool? Requisite
+			{
+				get
+				{
+					return requisite;
+				}
+				set	
+				{
+					requisite = value;
+				}
+			}
+
 			public List<ListProductQuotaDimensions_DimensionValueDetailItem> DimensionValueDetail
 			{
 				get
@@ -155,18 +155,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					dimensionValueDetail = value;
-				}
-			}
-
-			public List<string> DependentDimensions
-			{
-				get
-				{
-					return dependentDimensions;
-				}
-				set	
-				{
-					dependentDimensions = value;
 				}
 			}
 
@@ -182,26 +170,26 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
+			public List<string> DependentDimensions
+			{
+				get
+				{
+					return dependentDimensions;
+				}
+				set	
+				{
+					dependentDimensions = value;
+				}
+			}
+
 			public class ListProductQuotaDimensions_DimensionValueDetailItem
 			{
 
-				private string name;
-
 				private string _value;
 
-				private List<ListProductQuotaDimensions_DependentDimension> dependentDimensions1;
+				private string name;
 
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
+				private List<ListProductQuotaDimensions_DependentDimension> dependentDimensions1;
 
 				public string _Value
 				{
@@ -212,6 +200,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 					set	
 					{
 						_value = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
 					}
 				}
 
@@ -230,21 +230,9 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				public class ListProductQuotaDimensions_DependentDimension
 				{
 
-					private string key;
-
 					private string _value;
 
-					public string Key
-					{
-						get
-						{
-							return key;
-						}
-						set	
-						{
-							key = value;
-						}
-					}
+					private string key;
 
 					public string _Value
 					{
@@ -255,6 +243,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 						set	
 						{
 							_value = value;
+						}
+					}
+
+					public string Key
+					{
+						get
+						{
+							return key;
+						}
+						set	
+						{
+							key = value;
 						}
 					}
 				}

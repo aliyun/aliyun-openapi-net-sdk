@@ -25,25 +25,25 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 	public class ListQuotaApplicationsForTemplateResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? totalCount;
 
 		private string nextToken;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? maxResults;
 
 		private List<ListQuotaApplicationsForTemplate_QuotaBatchApplicationsItem> quotaBatchApplications;
 
-		public string RequestId
+		public int? TotalCount
 		{
 			get
 			{
-				return requestId;
+				return totalCount;
 			}
 			set	
 			{
-				requestId = value;
+				totalCount = value;
 			}
 		}
 
@@ -59,15 +59,15 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			}
 		}
 
-		public int? TotalCount
+		public string RequestId
 		{
 			get
 			{
-				return totalCount;
+				return requestId;
 			}
 			set	
 			{
-				totalCount = value;
+				requestId = value;
 			}
 		}
 
@@ -98,41 +98,29 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 		public class ListQuotaApplicationsForTemplate_QuotaBatchApplicationsItem
 		{
 
-			private string productCode;
-
 			private string quotaActionCode;
+
+			private string applyTime;
 
 			private string batchQuotaApplicationId;
 
 			private string effectiveTime;
 
-			private string expireTime;
-
-			private string applyTime;
-
-			private double? desireValue;
+			private string productCode;
 
 			private string quotaCategory;
 
 			private string dimensions;
+
+			private double? desireValue;
+
+			private string expireTime;
 
 			private string reason;
 
 			private List<ListQuotaApplicationsForTemplate_AuditStatusVo> auditStatusVos;
 
 			private List<string> aliyunUids;
-
-			public string ProductCode
-			{
-				get
-				{
-					return productCode;
-				}
-				set	
-				{
-					productCode = value;
-				}
-			}
 
 			public string QuotaActionCode
 			{
@@ -143,6 +131,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					quotaActionCode = value;
+				}
+			}
+
+			public string ApplyTime
+			{
+				get
+				{
+					return applyTime;
+				}
+				set	
+				{
+					applyTime = value;
 				}
 			}
 
@@ -170,39 +170,15 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
-			public string ExpireTime
+			public string ProductCode
 			{
 				get
 				{
-					return expireTime;
+					return productCode;
 				}
 				set	
 				{
-					expireTime = value;
-				}
-			}
-
-			public string ApplyTime
-			{
-				get
-				{
-					return applyTime;
-				}
-				set	
-				{
-					applyTime = value;
-				}
-			}
-
-			public double? DesireValue
-			{
-				get
-				{
-					return desireValue;
-				}
-				set	
-				{
-					desireValue = value;
+					productCode = value;
 				}
 			}
 
@@ -227,6 +203,30 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					dimensions = value;
+				}
+			}
+
+			public double? DesireValue
+			{
+				get
+				{
+					return desireValue;
+				}
+				set	
+				{
+					desireValue = value;
+				}
+			}
+
+			public string ExpireTime
+			{
+				get
+				{
+					return expireTime;
+				}
+				set	
+				{
+					expireTime = value;
 				}
 			}
 

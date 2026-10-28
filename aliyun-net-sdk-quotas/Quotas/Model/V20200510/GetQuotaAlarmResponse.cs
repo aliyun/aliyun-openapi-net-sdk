@@ -56,33 +56,45 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 		public class GetQuotaAlarm_QuotaAlarm
 		{
 
+			private string alarmId;
+
 			private float? thresholdPercent;
 
-			private string thresholdType;
-
-			private string quotaDimension;
+			private string productCode;
 
 			private string createTime;
 
+			private float? quotaUsage;
+
 			private string quotaActionCode;
+
+			private float? quotaValue;
 
 			private string alarmName;
 
 			private string notifyTarget;
 
-			private float? quotaUsage;
-
-			private float? quotaValue;
-
-			private string alarmId;
-
-			private float? threshold;
-
-			private string productCode;
+			private string quotaDimension;
 
 			private string webhook;
 
+			private float? threshold;
+
+			private string thresholdType;
+
 			private List<string> notifyChannels;
+
+			public string AlarmId
+			{
+				get
+				{
+					return alarmId;
+				}
+				set	
+				{
+					alarmId = value;
+				}
+			}
 
 			public float? ThresholdPercent
 			{
@@ -96,27 +108,15 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
-			public string ThresholdType
+			public string ProductCode
 			{
 				get
 				{
-					return thresholdType;
+					return productCode;
 				}
 				set	
 				{
-					thresholdType = value;
-				}
-			}
-
-			public string QuotaDimension
-			{
-				get
-				{
-					return quotaDimension;
-				}
-				set	
-				{
-					quotaDimension = value;
+					productCode = value;
 				}
 			}
 
@@ -132,6 +132,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
+			public float? QuotaUsage
+			{
+				get
+				{
+					return quotaUsage;
+				}
+				set	
+				{
+					quotaUsage = value;
+				}
+			}
+
 			public string QuotaActionCode
 			{
 				get
@@ -141,6 +153,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					quotaActionCode = value;
+				}
+			}
+
+			public float? QuotaValue
+			{
+				get
+				{
+					return quotaValue;
+				}
+				set	
+				{
+					quotaValue = value;
 				}
 			}
 
@@ -168,39 +192,27 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
-			public float? QuotaUsage
+			public string QuotaDimension
 			{
 				get
 				{
-					return quotaUsage;
+					return quotaDimension;
 				}
 				set	
 				{
-					quotaUsage = value;
+					quotaDimension = value;
 				}
 			}
 
-			public float? QuotaValue
+			public string Webhook
 			{
 				get
 				{
-					return quotaValue;
+					return webhook;
 				}
 				set	
 				{
-					quotaValue = value;
-				}
-			}
-
-			public string AlarmId
-			{
-				get
-				{
-					return alarmId;
-				}
-				set	
-				{
-					alarmId = value;
+					webhook = value;
 				}
 			}
 
@@ -216,27 +228,15 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
-			public string ProductCode
+			public string ThresholdType
 			{
 				get
 				{
-					return productCode;
+					return thresholdType;
 				}
 				set	
 				{
-					productCode = value;
-				}
-			}
-
-			public string Webhook
-			{
-				get
-				{
-					return webhook;
-				}
-				set	
-				{
-					webhook = value;
+					thresholdType = value;
 				}
 			}
 

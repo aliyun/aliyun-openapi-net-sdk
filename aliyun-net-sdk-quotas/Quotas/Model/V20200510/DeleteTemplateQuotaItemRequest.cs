@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quotas.Model.V20200510
     public class DeleteTemplateQuotaItemRequest : RpcAcsRequest<DeleteTemplateQuotaItemResponse>
     {
         public DeleteTemplateQuotaItemRequest()
-            : base("quotas", "2020-05-10", "DeleteTemplateQuotaItem", "quotas", "openAPI")
+            : base("quotas", "2020-05-10", "DeleteTemplateQuotaItem", "Quotas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

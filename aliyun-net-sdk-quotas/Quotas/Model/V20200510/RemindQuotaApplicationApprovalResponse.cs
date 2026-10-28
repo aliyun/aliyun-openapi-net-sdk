@@ -25,7 +25,11 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 	public class RemindQuotaApplicationApprovalResponse : AcsResponse
 	{
 
+		private bool? allowRetry;
+
 		private string requestId;
+
+		private string errorMsg;
 
 		private int? httpStatusCode;
 
@@ -33,17 +37,25 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 
 		private string dynamicMessage;
 
-		private string errorMsg;
-
 		private string errorCode;
-
-		private bool? success;
 
 		private string module;
 
-		private bool? allowRetry;
+		private bool? success;
 
 		private List<string> errorArgs;
+
+		public bool? AllowRetry
+		{
+			get
+			{
+				return allowRetry;
+			}
+			set	
+			{
+				allowRetry = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -54,6 +66,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ErrorMsg
+		{
+			get
+			{
+				return errorMsg;
+			}
+			set	
+			{
+				errorMsg = value;
 			}
 		}
 
@@ -93,18 +117,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			}
 		}
 
-		public string ErrorMsg
-		{
-			get
-			{
-				return errorMsg;
-			}
-			set	
-			{
-				errorMsg = value;
-			}
-		}
-
 		public string ErrorCode
 		{
 			get
@@ -114,18 +126,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			set	
 			{
 				errorCode = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
 			}
 		}
 
@@ -141,15 +141,15 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			}
 		}
 
-		public bool? AllowRetry
+		public bool? Success
 		{
 			get
 			{
-				return allowRetry;
+				return success;
 			}
 			set	
 			{
-				allowRetry = value;
+				success = value;
 			}
 		}
 

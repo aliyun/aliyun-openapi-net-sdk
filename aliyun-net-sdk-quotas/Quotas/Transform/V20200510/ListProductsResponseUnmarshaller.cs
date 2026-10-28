@@ -39,16 +39,16 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 			List<ListProductsResponse.ListProducts_ProductInfos> listProductsResponse_productInfo = new List<ListProductsResponse.ListProducts_ProductInfos>();
 			for (int i = 0; i < _ctx.Length("ListProducts.ProductInfo.Length"); i++) {
 				ListProductsResponse.ListProducts_ProductInfos productInfos = new ListProductsResponse.ListProducts_ProductInfos();
-				productInfos.ProductName = _ctx.StringValue("ListProducts.ProductInfo["+ i +"].ProductName");
-				productInfos.SecondCategoryId = _ctx.LongValue("ListProducts.ProductInfo["+ i +"].SecondCategoryId");
-				productInfos.ProductNameEn = _ctx.StringValue("ListProducts.ProductInfo["+ i +"].ProductNameEn");
 				productInfos._Dynamic = _ctx.BooleanValue("ListProducts.ProductInfo["+ i +"].Dynamic");
 				productInfos.SecondCategoryNameEn = _ctx.StringValue("ListProducts.ProductInfo["+ i +"].SecondCategoryNameEn");
-				productInfos.SecondCategoryName = _ctx.StringValue("ListProducts.ProductInfo["+ i +"].SecondCategoryName");
-				productInfos.ProductCode = _ctx.StringValue("ListProducts.ProductInfo["+ i +"].ProductCode");
-				productInfos.FlowControlSupport = _ctx.StringValue("ListProducts.ProductInfo["+ i +"].FlowControlSupport");
 				productInfos.CommonQuotaSupport = _ctx.StringValue("ListProducts.ProductInfo["+ i +"].CommonQuotaSupport");
+				productInfos.ProductName = _ctx.StringValue("ListProducts.ProductInfo["+ i +"].ProductName");
+				productInfos.ProductCode = _ctx.StringValue("ListProducts.ProductInfo["+ i +"].ProductCode");
+				productInfos.SecondCategoryName = _ctx.StringValue("ListProducts.ProductInfo["+ i +"].SecondCategoryName");
+				productInfos.FlowControlSupport = _ctx.StringValue("ListProducts.ProductInfo["+ i +"].FlowControlSupport");
 				productInfos.WhiteListLabelQuotaSupport = _ctx.StringValue("ListProducts.ProductInfo["+ i +"].WhiteListLabelQuotaSupport");
+				productInfos.SecondCategoryId = _ctx.LongValue("ListProducts.ProductInfo["+ i +"].SecondCategoryId");
+				productInfos.ProductNameEn = _ctx.StringValue("ListProducts.ProductInfo["+ i +"].ProductNameEn");
 
 				listProductsResponse_productInfo.Add(productInfos);
 			}

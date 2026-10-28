@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quotas.Model.V20200510
     public class GetQuotaAlarmRequest : RpcAcsRequest<GetQuotaAlarmResponse>
     {
         public GetQuotaAlarmRequest()
-            : base("quotas", "2020-05-10", "GetQuotaAlarm", "quotas", "openAPI")
+            : base("quotas", "2020-05-10", "GetQuotaAlarm", "Quotas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -39,14 +39,14 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 			List<ListAlarmHistoriesResponse.ListAlarmHistories_AlarmHistory> listAlarmHistoriesResponse_alarmHistories = new List<ListAlarmHistoriesResponse.ListAlarmHistories_AlarmHistory>();
 			for (int i = 0; i < _ctx.Length("ListAlarmHistories.AlarmHistories.Length"); i++) {
 				ListAlarmHistoriesResponse.ListAlarmHistories_AlarmHistory alarmHistory = new ListAlarmHistoriesResponse.ListAlarmHistories_AlarmHistory();
-				alarmHistory.QuotaUsage = _ctx.FloatValue("ListAlarmHistories.AlarmHistories["+ i +"].QuotaUsage");
-				alarmHistory.ThresholdPercent = _ctx.FloatValue("ListAlarmHistories.AlarmHistories["+ i +"].ThresholdPercent");
-				alarmHistory.CreateTime = _ctx.StringValue("ListAlarmHistories.AlarmHistories["+ i +"].CreateTime");
 				alarmHistory.QuotaActionCode = _ctx.StringValue("ListAlarmHistories.AlarmHistories["+ i +"].QuotaActionCode");
+				alarmHistory.ThresholdPercent = _ctx.FloatValue("ListAlarmHistories.AlarmHistories["+ i +"].ThresholdPercent");
 				alarmHistory.AlarmName = _ctx.StringValue("ListAlarmHistories.AlarmHistories["+ i +"].AlarmName");
 				alarmHistory.NotifyTarget = _ctx.StringValue("ListAlarmHistories.AlarmHistories["+ i +"].NotifyTarget");
-				alarmHistory.Threshold = _ctx.FloatValue("ListAlarmHistories.AlarmHistories["+ i +"].Threshold");
 				alarmHistory.ProductCode = _ctx.StringValue("ListAlarmHistories.AlarmHistories["+ i +"].ProductCode");
+				alarmHistory.CreateTime = _ctx.StringValue("ListAlarmHistories.AlarmHistories["+ i +"].CreateTime");
+				alarmHistory.QuotaUsage = _ctx.FloatValue("ListAlarmHistories.AlarmHistories["+ i +"].QuotaUsage");
+				alarmHistory.Threshold = _ctx.FloatValue("ListAlarmHistories.AlarmHistories["+ i +"].Threshold");
 
 				List<string> alarmHistory_notifyChannels = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListAlarmHistories.AlarmHistories["+ i +"].NotifyChannels.Length"); j++) {

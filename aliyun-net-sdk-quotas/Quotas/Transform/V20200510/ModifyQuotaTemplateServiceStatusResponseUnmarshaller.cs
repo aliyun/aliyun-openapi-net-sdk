@@ -34,8 +34,8 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 			modifyQuotaTemplateServiceStatusResponse.RequestId = _ctx.StringValue("ModifyQuotaTemplateServiceStatus.RequestId");
 
 			ModifyQuotaTemplateServiceStatusResponse.ModifyQuotaTemplateServiceStatus_TemplateServiceStatus templateServiceStatus = new ModifyQuotaTemplateServiceStatusResponse.ModifyQuotaTemplateServiceStatus_TemplateServiceStatus();
-			templateServiceStatus.ServiceStatus = _ctx.IntegerValue("ModifyQuotaTemplateServiceStatus.TemplateServiceStatus.ServiceStatus");
 			templateServiceStatus.ResourceDirectoryId = _ctx.StringValue("ModifyQuotaTemplateServiceStatus.TemplateServiceStatus.ResourceDirectoryId");
+			templateServiceStatus.ServiceStatus = _ctx.IntegerValue("ModifyQuotaTemplateServiceStatus.TemplateServiceStatus.ServiceStatus");
 			modifyQuotaTemplateServiceStatusResponse.TemplateServiceStatus = templateServiceStatus;
         
 			return modifyQuotaTemplateServiceStatusResponse;

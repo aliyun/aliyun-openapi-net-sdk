@@ -25,27 +25,15 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 	public class ListQuotaApplicationsDetailForTemplateResponse : AcsResponse
 	{
 
-		private string nextToken;
-
 		private int? totalCount;
 
-		private int? maxResults;
+		private string nextToken;
 
 		private string requestId;
 
-		private List<ListQuotaApplicationsDetailForTemplate_QuotaBatchApplicationDetailVos> quotaApplications;
+		private int? maxResults;
 
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
-			}
-		}
+		private List<ListQuotaApplicationsDetailForTemplate_QuotaBatchApplicationDetailVos> quotaApplications;
 
 		public int? TotalCount
 		{
@@ -59,15 +47,15 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			}
 		}
 
-		public int? MaxResults
+		public string NextToken
 		{
 			get
 			{
-				return maxResults;
+				return nextToken;
 			}
 			set	
 			{
-				maxResults = value;
+				nextToken = value;
 			}
 		}
 
@@ -80,6 +68,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
 			}
 		}
 
@@ -98,19 +98,39 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 		public class ListQuotaApplicationsDetailForTemplate_QuotaBatchApplicationDetailVos
 		{
 
+			private string status;
+
+			private string applyTime;
+
+			private string quotaDescription;
+
 			private string batchQuotaApplicationId;
 
+			private string effectiveTime;
+
 			private string productCode;
+
+			private string auditReason;
+
+			private string quotaUnit;
+
+			private double? approveValue;
+
+			private string reason;
+
+			private string envLanguage;
 
 			private string quotaActionCode;
 
 			private string quotaName;
 
-			private string quotaDescription;
-
-			private string quotaUnit;
-
 			private string quotaArn;
+
+			private string aliyunUid;
+
+			private string quotaCategory;
+
+			private int? noticeType;
 
 			private string quotaDimension;
 
@@ -118,29 +138,45 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 
 			private double? desireValue;
 
-			private string reason;
-
-			private string status;
-
-			private double? approveValue;
-
-			private string effectiveTime;
-
 			private string expireTime;
 
-			private string applyTime;
-
-			private string auditReason;
-
-			private int? noticeType;
-
-			private string aliyunUid;
-
-			private string quotaCategory;
-
-			private string envLanguage;
-
 			private ListQuotaApplicationsDetailForTemplate_Period period;
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public string ApplyTime
+			{
+				get
+				{
+					return applyTime;
+				}
+				set	
+				{
+					applyTime = value;
+				}
+			}
+
+			public string QuotaDescription
+			{
+				get
+				{
+					return quotaDescription;
+				}
+				set	
+				{
+					quotaDescription = value;
+				}
+			}
 
 			public string BatchQuotaApplicationId
 			{
@@ -154,6 +190,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
+			public string EffectiveTime
+			{
+				get
+				{
+					return effectiveTime;
+				}
+				set	
+				{
+					effectiveTime = value;
+				}
+			}
+
 			public string ProductCode
 			{
 				get
@@ -163,6 +211,66 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					productCode = value;
+				}
+			}
+
+			public string AuditReason
+			{
+				get
+				{
+					return auditReason;
+				}
+				set	
+				{
+					auditReason = value;
+				}
+			}
+
+			public string QuotaUnit
+			{
+				get
+				{
+					return quotaUnit;
+				}
+				set	
+				{
+					quotaUnit = value;
+				}
+			}
+
+			public double? ApproveValue
+			{
+				get
+				{
+					return approveValue;
+				}
+				set	
+				{
+					approveValue = value;
+				}
+			}
+
+			public string Reason
+			{
+				get
+				{
+					return reason;
+				}
+				set	
+				{
+					reason = value;
+				}
+			}
+
+			public string EnvLanguage
+			{
+				get
+				{
+					return envLanguage;
+				}
+				set	
+				{
+					envLanguage = value;
 				}
 			}
 
@@ -190,30 +298,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
-			public string QuotaDescription
-			{
-				get
-				{
-					return quotaDescription;
-				}
-				set	
-				{
-					quotaDescription = value;
-				}
-			}
-
-			public string QuotaUnit
-			{
-				get
-				{
-					return quotaUnit;
-				}
-				set	
-				{
-					quotaUnit = value;
-				}
-			}
-
 			public string QuotaArn
 			{
 				get
@@ -223,6 +307,42 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					quotaArn = value;
+				}
+			}
+
+			public string AliyunUid
+			{
+				get
+				{
+					return aliyunUid;
+				}
+				set	
+				{
+					aliyunUid = value;
+				}
+			}
+
+			public string QuotaCategory
+			{
+				get
+				{
+					return quotaCategory;
+				}
+				set	
+				{
+					quotaCategory = value;
+				}
+			}
+
+			public int? NoticeType
+			{
+				get
+				{
+					return noticeType;
+				}
+				set	
+				{
+					noticeType = value;
 				}
 			}
 
@@ -262,54 +382,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
-			public string Reason
-			{
-				get
-				{
-					return reason;
-				}
-				set	
-				{
-					reason = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public double? ApproveValue
-			{
-				get
-				{
-					return approveValue;
-				}
-				set	
-				{
-					approveValue = value;
-				}
-			}
-
-			public string EffectiveTime
-			{
-				get
-				{
-					return effectiveTime;
-				}
-				set	
-				{
-					effectiveTime = value;
-				}
-			}
-
 			public string ExpireTime
 			{
 				get
@@ -319,78 +391,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					expireTime = value;
-				}
-			}
-
-			public string ApplyTime
-			{
-				get
-				{
-					return applyTime;
-				}
-				set	
-				{
-					applyTime = value;
-				}
-			}
-
-			public string AuditReason
-			{
-				get
-				{
-					return auditReason;
-				}
-				set	
-				{
-					auditReason = value;
-				}
-			}
-
-			public int? NoticeType
-			{
-				get
-				{
-					return noticeType;
-				}
-				set	
-				{
-					noticeType = value;
-				}
-			}
-
-			public string AliyunUid
-			{
-				get
-				{
-					return aliyunUid;
-				}
-				set	
-				{
-					aliyunUid = value;
-				}
-			}
-
-			public string QuotaCategory
-			{
-				get
-				{
-					return quotaCategory;
-				}
-				set	
-				{
-					quotaCategory = value;
-				}
-			}
-
-			public string EnvLanguage
-			{
-				get
-				{
-					return envLanguage;
-				}
-				set	
-				{
-					envLanguage = value;
 				}
 			}
 
@@ -409,21 +409,9 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			public class ListQuotaApplicationsDetailForTemplate_Period
 			{
 
-				private string periodUnit;
-
 				private int? periodValue;
 
-				public string PeriodUnit
-				{
-					get
-					{
-						return periodUnit;
-					}
-					set	
-					{
-						periodUnit = value;
-					}
-				}
+				private string periodUnit;
 
 				public int? PeriodValue
 				{
@@ -434,6 +422,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 					set	
 					{
 						periodValue = value;
+					}
+				}
+
+				public string PeriodUnit
+				{
+					get
+					{
+						return periodUnit;
+					}
+					set	
+					{
+						periodUnit = value;
 					}
 				}
 			}

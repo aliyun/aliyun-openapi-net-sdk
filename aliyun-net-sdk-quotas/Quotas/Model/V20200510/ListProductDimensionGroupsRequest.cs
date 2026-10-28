@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quotas.Model.V20200510
     public class ListProductDimensionGroupsRequest : RpcAcsRequest<ListProductDimensionGroupsResponse>
     {
         public ListProductDimensionGroupsRequest()
-            : base("quotas", "2020-05-10", "ListProductDimensionGroups", "quotas", "openAPI")
+            : base("quotas", "2020-05-10", "ListProductDimensionGroups", "Quotas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

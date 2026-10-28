@@ -31,15 +31,15 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 			RemindQuotaApplicationApprovalResponse remindQuotaApplicationApprovalResponse = new RemindQuotaApplicationApprovalResponse();
 
 			remindQuotaApplicationApprovalResponse.HttpResponse = _ctx.HttpResponse;
+			remindQuotaApplicationApprovalResponse.AllowRetry = _ctx.BooleanValue("RemindQuotaApplicationApproval.AllowRetry");
 			remindQuotaApplicationApprovalResponse.RequestId = _ctx.StringValue("RemindQuotaApplicationApproval.RequestId");
+			remindQuotaApplicationApprovalResponse.ErrorMsg = _ctx.StringValue("RemindQuotaApplicationApproval.ErrorMsg");
 			remindQuotaApplicationApprovalResponse.HttpStatusCode = _ctx.IntegerValue("RemindQuotaApplicationApproval.HttpStatusCode");
 			remindQuotaApplicationApprovalResponse.DynamicCode = _ctx.StringValue("RemindQuotaApplicationApproval.DynamicCode");
 			remindQuotaApplicationApprovalResponse.DynamicMessage = _ctx.StringValue("RemindQuotaApplicationApproval.DynamicMessage");
-			remindQuotaApplicationApprovalResponse.ErrorMsg = _ctx.StringValue("RemindQuotaApplicationApproval.ErrorMsg");
 			remindQuotaApplicationApprovalResponse.ErrorCode = _ctx.StringValue("RemindQuotaApplicationApproval.ErrorCode");
-			remindQuotaApplicationApprovalResponse.Success = _ctx.BooleanValue("RemindQuotaApplicationApproval.Success");
 			remindQuotaApplicationApprovalResponse.Module = _ctx.StringValue("RemindQuotaApplicationApproval.Module");
-			remindQuotaApplicationApprovalResponse.AllowRetry = _ctx.BooleanValue("RemindQuotaApplicationApproval.AllowRetry");
+			remindQuotaApplicationApprovalResponse.Success = _ctx.BooleanValue("RemindQuotaApplicationApproval.Success");
 
 			List<string> remindQuotaApplicationApprovalResponse_errorArgs = new List<string>();
 			for (int i = 0; i < _ctx.Length("RemindQuotaApplicationApproval.ErrorArgs.Length"); i++) {

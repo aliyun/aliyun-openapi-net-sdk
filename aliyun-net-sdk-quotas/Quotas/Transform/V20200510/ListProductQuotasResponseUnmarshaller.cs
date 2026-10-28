@@ -39,31 +39,25 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 			List<ListProductQuotasResponse.ListProductQuotas_QuotasItem> listProductQuotasResponse_quotas = new List<ListProductQuotasResponse.ListProductQuotas_QuotasItem>();
 			for (int i = 0; i < _ctx.Length("ListProductQuotas.Quotas.Length"); i++) {
 				ListProductQuotasResponse.ListProductQuotas_QuotasItem quotasItem = new ListProductQuotasResponse.ListProductQuotas_QuotasItem();
-				quotasItem.QuotaUnit = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].QuotaUnit");
-				quotasItem.QuotaActionCode = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].QuotaActionCode");
+				quotasItem.QuotaDescription = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].QuotaDescription");
+				quotasItem.Consumable = _ctx.BooleanValue("ListProductQuotas.Quotas["+ i +"].Consumable");
+				quotasItem.UnadjustableDetail = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].UnadjustableDetail");
+				quotasItem.EffectiveTime = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].EffectiveTime");
+				quotasItem.ProductCode = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].ProductCode");
 				quotasItem.TotalUsage = _ctx.FloatValue("ListProductQuotas.Quotas["+ i +"].TotalUsage");
 				quotasItem.QuotaType = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].QuotaType");
-				quotasItem.QuotaDescription = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].QuotaDescription");
-				quotasItem.QuotaArn = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].QuotaArn");
-				quotasItem.ApplicableType = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].ApplicableType");
 				quotasItem.Dimensions = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].Dimensions");
-				quotasItem.Adjustable = _ctx.BooleanValue("ListProductQuotas.Quotas["+ i +"].Adjustable");
-				quotasItem.QuotaName = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].QuotaName");
-				quotasItem.UnadjustableDetail = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].UnadjustableDetail");
-				quotasItem.Consumable = _ctx.BooleanValue("ListProductQuotas.Quotas["+ i +"].Consumable");
-				quotasItem.TotalQuota = _ctx.FloatValue("ListProductQuotas.Quotas["+ i +"].TotalQuota");
-				quotasItem.ProductCode = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].ProductCode");
-				quotasItem.EffectiveTime = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].EffectiveTime");
-				quotasItem.ExpireTime = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].ExpireTime");
-				quotasItem.QuotaCategory = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].QuotaCategory");
-				quotasItem.ApplyReasonTips = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].ApplyReasonTips");
 				quotasItem.GlobalQuota = _ctx.BooleanValue("ListProductQuotas.Quotas["+ i +"].GlobalQuota");
-
-				List<string> quotasItem_applicableRange = new List<string>();
-				for (int j = 0; j < _ctx.Length("ListProductQuotas.Quotas["+ i +"].ApplicableRange.Length"); j++) {
-					quotasItem_applicableRange.Add(_ctx.StringValue("ListProductQuotas.Quotas["+ i +"].ApplicableRange["+ j +"]"));
-				}
-				quotasItem.ApplicableRange = quotasItem_applicableRange;
+				quotasItem.QuotaUnit = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].QuotaUnit");
+				quotasItem.Adjustable = _ctx.BooleanValue("ListProductQuotas.Quotas["+ i +"].Adjustable");
+				quotasItem.QuotaActionCode = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].QuotaActionCode");
+				quotasItem.QuotaName = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].QuotaName");
+				quotasItem.QuotaArn = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].QuotaArn");
+				quotasItem.ApplyReasonTips = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].ApplyReasonTips");
+				quotasItem.TotalQuota = _ctx.FloatValue("ListProductQuotas.Quotas["+ i +"].TotalQuota");
+				quotasItem.QuotaCategory = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].QuotaCategory");
+				quotasItem.ExpireTime = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].ExpireTime");
+				quotasItem.ApplicableType = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].ApplicableType");
 
 				List<string> quotasItem_supportedRange = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListProductQuotas.Quotas["+ i +"].SupportedRange.Length"); j++) {
@@ -71,24 +65,30 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 				}
 				quotasItem.SupportedRange = quotasItem_supportedRange;
 
+				List<string> quotasItem_applicableRange = new List<string>();
+				for (int j = 0; j < _ctx.Length("ListProductQuotas.Quotas["+ i +"].ApplicableRange.Length"); j++) {
+					quotasItem_applicableRange.Add(_ctx.StringValue("ListProductQuotas.Quotas["+ i +"].ApplicableRange["+ j +"]"));
+				}
+				quotasItem.ApplicableRange = quotasItem_applicableRange;
+
+				ListProductQuotasResponse.ListProductQuotas_QuotasItem.ListProductQuotas_UsageMetric usageMetric = new ListProductQuotasResponse.ListProductQuotas_QuotasItem.ListProductQuotas_UsageMetric();
+				usageMetric.MetricName = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].UsageMetric.MetricName");
+				usageMetric.MetricDimensions = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].UsageMetric.MetricDimensions");
+				usageMetric.MetricNamespace = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].UsageMetric.MetricNamespace");
+				quotasItem.UsageMetric = usageMetric;
+
 				ListProductQuotasResponse.ListProductQuotas_QuotasItem.ListProductQuotas_Period period = new ListProductQuotasResponse.ListProductQuotas_QuotasItem.ListProductQuotas_Period();
 				period.PeriodValue = _ctx.IntegerValue("ListProductQuotas.Quotas["+ i +"].Period.PeriodValue");
 				period.PeriodUnit = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].Period.PeriodUnit");
 				quotasItem.Period = period;
 
-				ListProductQuotasResponse.ListProductQuotas_QuotasItem.ListProductQuotas_UsageMetric usageMetric = new ListProductQuotasResponse.ListProductQuotas_QuotasItem.ListProductQuotas_UsageMetric();
-				usageMetric.MetricNamespace = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].UsageMetric.MetricNamespace");
-				usageMetric.MetricName = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].UsageMetric.MetricName");
-				usageMetric.MetricDimensions = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].UsageMetric.MetricDimensions");
-				quotasItem.UsageMetric = usageMetric;
-
 				List<ListProductQuotasResponse.ListProductQuotas_QuotasItem.ListProductQuotas_QuotaItemsItem> quotasItem_quotaItems = new List<ListProductQuotasResponse.ListProductQuotas_QuotasItem.ListProductQuotas_QuotaItemsItem>();
 				for (int j = 0; j < _ctx.Length("ListProductQuotas.Quotas["+ i +"].QuotaItems.Length"); j++) {
 					ListProductQuotasResponse.ListProductQuotas_QuotasItem.ListProductQuotas_QuotaItemsItem quotaItemsItem = new ListProductQuotasResponse.ListProductQuotas_QuotasItem.ListProductQuotas_QuotaItemsItem();
 					quotaItemsItem.Type = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].QuotaItems["+ j +"].Type");
+					quotaItemsItem.Usage = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].QuotaItems["+ j +"].Usage");
 					quotaItemsItem.Quota = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].QuotaItems["+ j +"].Quota");
 					quotaItemsItem.QuotaUnit = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].QuotaItems["+ j +"].QuotaUnit");
-					quotaItemsItem.Usage = _ctx.StringValue("ListProductQuotas.Quotas["+ i +"].QuotaItems["+ j +"].Usage");
 
 					quotasItem_quotaItems.Add(quotaItemsItem);
 				}

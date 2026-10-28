@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quotas.Model.V20200510
     public class ListQuotaApplicationsForTemplateRequest : RpcAcsRequest<ListQuotaApplicationsForTemplateResponse>
     {
         public ListQuotaApplicationsForTemplateRequest()
-            : base("quotas", "2020-05-10", "ListQuotaApplicationsForTemplate", "quotas", "openAPI")
+            : base("quotas", "2020-05-10", "ListQuotaApplicationsForTemplate", "Quotas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

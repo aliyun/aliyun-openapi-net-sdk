@@ -34,31 +34,25 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 			getProductQuotaResponse.RequestId = _ctx.StringValue("GetProductQuota.RequestId");
 
 			GetProductQuotaResponse.GetProductQuota_Quota quota = new GetProductQuotaResponse.GetProductQuota_Quota();
-			quota.QuotaUnit = _ctx.StringValue("GetProductQuota.Quota.QuotaUnit");
-			quota.QuotaActionCode = _ctx.StringValue("GetProductQuota.Quota.QuotaActionCode");
+			quota.QuotaDescription = _ctx.StringValue("GetProductQuota.Quota.QuotaDescription");
+			quota.Consumable = _ctx.BooleanValue("GetProductQuota.Quota.Consumable");
+			quota.UnadjustableDetail = _ctx.StringValue("GetProductQuota.Quota.UnadjustableDetail");
+			quota.EffectiveTime = _ctx.StringValue("GetProductQuota.Quota.EffectiveTime");
+			quota.ProductCode = _ctx.StringValue("GetProductQuota.Quota.ProductCode");
 			quota.TotalUsage = _ctx.FloatValue("GetProductQuota.Quota.TotalUsage");
 			quota.QuotaType = _ctx.StringValue("GetProductQuota.Quota.QuotaType");
-			quota.QuotaDescription = _ctx.StringValue("GetProductQuota.Quota.QuotaDescription");
-			quota.QuotaArn = _ctx.StringValue("GetProductQuota.Quota.QuotaArn");
-			quota.ApplicableType = _ctx.StringValue("GetProductQuota.Quota.ApplicableType");
 			quota.Dimensions = _ctx.StringValue("GetProductQuota.Quota.Dimensions");
-			quota.Adjustable = _ctx.BooleanValue("GetProductQuota.Quota.Adjustable");
-			quota.QuotaName = _ctx.StringValue("GetProductQuota.Quota.QuotaName");
-			quota.UnadjustableDetail = _ctx.StringValue("GetProductQuota.Quota.UnadjustableDetail");
-			quota.Consumable = _ctx.BooleanValue("GetProductQuota.Quota.Consumable");
-			quota.TotalQuota = _ctx.FloatValue("GetProductQuota.Quota.TotalQuota");
-			quota.ProductCode = _ctx.StringValue("GetProductQuota.Quota.ProductCode");
-			quota.EffectiveTime = _ctx.StringValue("GetProductQuota.Quota.EffectiveTime");
-			quota.ExpireTime = _ctx.StringValue("GetProductQuota.Quota.ExpireTime");
-			quota.QuotaCategory = _ctx.StringValue("GetProductQuota.Quota.QuotaCategory");
-			quota.ApplyReasonTips = _ctx.StringValue("GetProductQuota.Quota.ApplyReasonTips");
 			quota.GlobalQuota = _ctx.BooleanValue("GetProductQuota.Quota.GlobalQuota");
-
-			List<string> quota_applicableRange = new List<string>();
-			for (int i = 0; i < _ctx.Length("GetProductQuota.Quota.ApplicableRange.Length"); i++) {
-				quota_applicableRange.Add(_ctx.StringValue("GetProductQuota.Quota.ApplicableRange["+ i +"]"));
-			}
-			quota.ApplicableRange = quota_applicableRange;
+			quota.QuotaUnit = _ctx.StringValue("GetProductQuota.Quota.QuotaUnit");
+			quota.Adjustable = _ctx.BooleanValue("GetProductQuota.Quota.Adjustable");
+			quota.QuotaActionCode = _ctx.StringValue("GetProductQuota.Quota.QuotaActionCode");
+			quota.QuotaName = _ctx.StringValue("GetProductQuota.Quota.QuotaName");
+			quota.QuotaArn = _ctx.StringValue("GetProductQuota.Quota.QuotaArn");
+			quota.ApplyReasonTips = _ctx.StringValue("GetProductQuota.Quota.ApplyReasonTips");
+			quota.TotalQuota = _ctx.FloatValue("GetProductQuota.Quota.TotalQuota");
+			quota.QuotaCategory = _ctx.StringValue("GetProductQuota.Quota.QuotaCategory");
+			quota.ExpireTime = _ctx.StringValue("GetProductQuota.Quota.ExpireTime");
+			quota.ApplicableType = _ctx.StringValue("GetProductQuota.Quota.ApplicableType");
 
 			List<string> quota_supportedRange = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetProductQuota.Quota.SupportedRange.Length"); i++) {
@@ -66,24 +60,30 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 			}
 			quota.SupportedRange = quota_supportedRange;
 
+			List<string> quota_applicableRange = new List<string>();
+			for (int i = 0; i < _ctx.Length("GetProductQuota.Quota.ApplicableRange.Length"); i++) {
+				quota_applicableRange.Add(_ctx.StringValue("GetProductQuota.Quota.ApplicableRange["+ i +"]"));
+			}
+			quota.ApplicableRange = quota_applicableRange;
+
+			GetProductQuotaResponse.GetProductQuota_Quota.GetProductQuota_UsageMetric usageMetric = new GetProductQuotaResponse.GetProductQuota_Quota.GetProductQuota_UsageMetric();
+			usageMetric.MetricName = _ctx.StringValue("GetProductQuota.Quota.UsageMetric.MetricName");
+			usageMetric.MetricDimensions = _ctx.StringValue("GetProductQuota.Quota.UsageMetric.MetricDimensions");
+			usageMetric.MetricNamespace = _ctx.StringValue("GetProductQuota.Quota.UsageMetric.MetricNamespace");
+			quota.UsageMetric = usageMetric;
+
 			GetProductQuotaResponse.GetProductQuota_Quota.GetProductQuota_Period period = new GetProductQuotaResponse.GetProductQuota_Quota.GetProductQuota_Period();
 			period.PeriodValue = _ctx.IntegerValue("GetProductQuota.Quota.Period.PeriodValue");
 			period.PeriodUnit = _ctx.StringValue("GetProductQuota.Quota.Period.PeriodUnit");
 			quota.Period = period;
 
-			GetProductQuotaResponse.GetProductQuota_Quota.GetProductQuota_UsageMetric usageMetric = new GetProductQuotaResponse.GetProductQuota_Quota.GetProductQuota_UsageMetric();
-			usageMetric.MetricNamespace = _ctx.StringValue("GetProductQuota.Quota.UsageMetric.MetricNamespace");
-			usageMetric.MetricName = _ctx.StringValue("GetProductQuota.Quota.UsageMetric.MetricName");
-			usageMetric.MetricDimensions = _ctx.StringValue("GetProductQuota.Quota.UsageMetric.MetricDimensions");
-			quota.UsageMetric = usageMetric;
-
 			List<GetProductQuotaResponse.GetProductQuota_Quota.GetProductQuota_QuotaItemsItem> quota_quotaItems = new List<GetProductQuotaResponse.GetProductQuota_Quota.GetProductQuota_QuotaItemsItem>();
 			for (int i = 0; i < _ctx.Length("GetProductQuota.Quota.QuotaItems.Length"); i++) {
 				GetProductQuotaResponse.GetProductQuota_Quota.GetProductQuota_QuotaItemsItem quotaItemsItem = new GetProductQuotaResponse.GetProductQuota_Quota.GetProductQuota_QuotaItemsItem();
 				quotaItemsItem.Type = _ctx.StringValue("GetProductQuota.Quota.QuotaItems["+ i +"].Type");
+				quotaItemsItem.Usage = _ctx.StringValue("GetProductQuota.Quota.QuotaItems["+ i +"].Usage");
 				quotaItemsItem.Quota = _ctx.StringValue("GetProductQuota.Quota.QuotaItems["+ i +"].Quota");
 				quotaItemsItem.QuotaUnit = _ctx.StringValue("GetProductQuota.Quota.QuotaItems["+ i +"].QuotaUnit");
-				quotaItemsItem.Usage = _ctx.StringValue("GetProductQuota.Quota.QuotaItems["+ i +"].Usage");
 
 				quota_quotaItems.Add(quotaItemsItem);
 			}

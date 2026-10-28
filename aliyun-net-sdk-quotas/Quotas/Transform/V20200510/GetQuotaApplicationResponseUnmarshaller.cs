@@ -34,24 +34,24 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 			getQuotaApplicationResponse.RequestId = _ctx.StringValue("GetQuotaApplication.RequestId");
 
 			GetQuotaApplicationResponse.GetQuotaApplication_QuotaApplication quotaApplication = new GetQuotaApplicationResponse.GetQuotaApplication_QuotaApplication();
-			quotaApplication.ApplicationId = _ctx.StringValue("GetQuotaApplication.QuotaApplication.ApplicationId");
+			quotaApplication.Status = _ctx.StringValue("GetQuotaApplication.QuotaApplication.Status");
 			quotaApplication.ApplyTime = _ctx.StringValue("GetQuotaApplication.QuotaApplication.ApplyTime");
-			quotaApplication.ApproveValue = _ctx.FloatValue("GetQuotaApplication.QuotaApplication.ApproveValue");
-			quotaApplication.AuditReason = _ctx.StringValue("GetQuotaApplication.QuotaApplication.AuditReason");
-			quotaApplication.DesireValue = _ctx.IntegerValue("GetQuotaApplication.QuotaApplication.DesireValue");
-			quotaApplication.Dimension = _ctx.StringValue("GetQuotaApplication.QuotaApplication.Dimension");
+			quotaApplication.QuotaDescription = _ctx.StringValue("GetQuotaApplication.QuotaApplication.QuotaDescription");
 			quotaApplication.EffectiveTime = _ctx.StringValue("GetQuotaApplication.QuotaApplication.EffectiveTime");
-			quotaApplication.ExpireTime = _ctx.StringValue("GetQuotaApplication.QuotaApplication.ExpireTime");
-			quotaApplication.NoticeType = _ctx.LongValue("GetQuotaApplication.QuotaApplication.NoticeType");
 			quotaApplication.ProductCode = _ctx.StringValue("GetQuotaApplication.QuotaApplication.ProductCode");
+			quotaApplication.AuditReason = _ctx.StringValue("GetQuotaApplication.QuotaApplication.AuditReason");
+			quotaApplication.QuotaUnit = _ctx.StringValue("GetQuotaApplication.QuotaApplication.QuotaUnit");
+			quotaApplication.Dimension = _ctx.StringValue("GetQuotaApplication.QuotaApplication.Dimension");
+			quotaApplication.ApproveValue = _ctx.FloatValue("GetQuotaApplication.QuotaApplication.ApproveValue");
+			quotaApplication.Reason = _ctx.StringValue("GetQuotaApplication.QuotaApplication.Reason");
 			quotaApplication.QuotaActionCode = _ctx.StringValue("GetQuotaApplication.QuotaApplication.QuotaActionCode");
+			quotaApplication.QuotaName = _ctx.StringValue("GetQuotaApplication.QuotaApplication.QuotaName");
 			quotaApplication.QuotaArn = _ctx.StringValue("GetQuotaApplication.QuotaApplication.QuotaArn");
 			quotaApplication.QuotaCategory = _ctx.StringValue("GetQuotaApplication.QuotaApplication.QuotaCategory");
-			quotaApplication.QuotaDescription = _ctx.StringValue("GetQuotaApplication.QuotaApplication.QuotaDescription");
-			quotaApplication.QuotaName = _ctx.StringValue("GetQuotaApplication.QuotaApplication.QuotaName");
-			quotaApplication.QuotaUnit = _ctx.StringValue("GetQuotaApplication.QuotaApplication.QuotaUnit");
-			quotaApplication.Reason = _ctx.StringValue("GetQuotaApplication.QuotaApplication.Reason");
-			quotaApplication.Status = _ctx.StringValue("GetQuotaApplication.QuotaApplication.Status");
+			quotaApplication.NoticeType = _ctx.LongValue("GetQuotaApplication.QuotaApplication.NoticeType");
+			quotaApplication.ApplicationId = _ctx.StringValue("GetQuotaApplication.QuotaApplication.ApplicationId");
+			quotaApplication.DesireValue = _ctx.IntegerValue("GetQuotaApplication.QuotaApplication.DesireValue");
+			quotaApplication.ExpireTime = _ctx.StringValue("GetQuotaApplication.QuotaApplication.ExpireTime");
 			getQuotaApplicationResponse.QuotaApplication = quotaApplication;
         
 			return getQuotaApplicationResponse;

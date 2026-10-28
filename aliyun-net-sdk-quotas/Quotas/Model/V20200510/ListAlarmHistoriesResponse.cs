@@ -98,33 +98,33 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 		public class ListAlarmHistories_AlarmHistory
 		{
 
-			private float? quotaUsage;
+			private string quotaActionCode;
 
 			private float? thresholdPercent;
-
-			private string createTime;
-
-			private string quotaActionCode;
 
 			private string alarmName;
 
 			private string notifyTarget;
 
-			private float? threshold;
-
 			private string productCode;
+
+			private string createTime;
+
+			private float? quotaUsage;
+
+			private float? threshold;
 
 			private List<string> notifyChannels;
 
-			public float? QuotaUsage
+			public string QuotaActionCode
 			{
 				get
 				{
-					return quotaUsage;
+					return quotaActionCode;
 				}
 				set	
 				{
-					quotaUsage = value;
+					quotaActionCode = value;
 				}
 			}
 
@@ -137,30 +137,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					thresholdPercent = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public string QuotaActionCode
-			{
-				get
-				{
-					return quotaActionCode;
-				}
-				set	
-				{
-					quotaActionCode = value;
 				}
 			}
 
@@ -188,18 +164,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
-			public float? Threshold
-			{
-				get
-				{
-					return threshold;
-				}
-				set	
-				{
-					threshold = value;
-				}
-			}
-
 			public string ProductCode
 			{
 				get
@@ -209,6 +173,42 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					productCode = value;
+				}
+			}
+
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public float? QuotaUsage
+			{
+				get
+				{
+					return quotaUsage;
+				}
+				set	
+				{
+					quotaUsage = value;
+				}
+			}
+
+			public float? Threshold
+			{
+				get
+				{
+					return threshold;
+				}
+				set	
+				{
+					threshold = value;
 				}
 			}
 

@@ -98,57 +98,45 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 		public class ListQuotaAlarms_QuotaAlarm
 		{
 
-			private float? thresholdPercent;
-
-			private string thresholdType;
+			private string alarmId;
 
 			private string quotaDimensions;
 
+			private float? thresholdPercent;
+
+			private string productCode;
+
 			private string createTime;
 
+			private string webHook;
+
+			private float? quotaUsage;
+
+			private bool? exceedThreshold;
+
 			private string quotaActionCode;
+
+			private float? quotaValue;
 
 			private string alarmName;
 
 			private string notifyTarget;
 
-			private float? quotaUsage;
-
-			private float? quotaValue;
-
-			private string alarmId;
-
 			private float? threshold;
 
-			private string productCode;
-
-			private string webHook;
-
-			private bool? exceedThreshold;
+			private string thresholdType;
 
 			private List<string> notifyChannels;
 
-			public float? ThresholdPercent
+			public string AlarmId
 			{
 				get
 				{
-					return thresholdPercent;
+					return alarmId;
 				}
 				set	
 				{
-					thresholdPercent = value;
-				}
-			}
-
-			public string ThresholdType
-			{
-				get
-				{
-					return thresholdType;
-				}
-				set	
-				{
-					thresholdType = value;
+					alarmId = value;
 				}
 			}
 
@@ -164,6 +152,30 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
+			public float? ThresholdPercent
+			{
+				get
+				{
+					return thresholdPercent;
+				}
+				set	
+				{
+					thresholdPercent = value;
+				}
+			}
+
+			public string ProductCode
+			{
+				get
+				{
+					return productCode;
+				}
+				set	
+				{
+					productCode = value;
+				}
+			}
+
 			public string CreateTime
 			{
 				get
@@ -176,6 +188,42 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
+			public string WebHook
+			{
+				get
+				{
+					return webHook;
+				}
+				set	
+				{
+					webHook = value;
+				}
+			}
+
+			public float? QuotaUsage
+			{
+				get
+				{
+					return quotaUsage;
+				}
+				set	
+				{
+					quotaUsage = value;
+				}
+			}
+
+			public bool? ExceedThreshold
+			{
+				get
+				{
+					return exceedThreshold;
+				}
+				set	
+				{
+					exceedThreshold = value;
+				}
+			}
+
 			public string QuotaActionCode
 			{
 				get
@@ -185,6 +233,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					quotaActionCode = value;
+				}
+			}
+
+			public float? QuotaValue
+			{
+				get
+				{
+					return quotaValue;
+				}
+				set	
+				{
+					quotaValue = value;
 				}
 			}
 
@@ -212,42 +272,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
-			public float? QuotaUsage
-			{
-				get
-				{
-					return quotaUsage;
-				}
-				set	
-				{
-					quotaUsage = value;
-				}
-			}
-
-			public float? QuotaValue
-			{
-				get
-				{
-					return quotaValue;
-				}
-				set	
-				{
-					quotaValue = value;
-				}
-			}
-
-			public string AlarmId
-			{
-				get
-				{
-					return alarmId;
-				}
-				set	
-				{
-					alarmId = value;
-				}
-			}
-
 			public float? Threshold
 			{
 				get
@@ -260,39 +284,15 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
-			public string ProductCode
+			public string ThresholdType
 			{
 				get
 				{
-					return productCode;
+					return thresholdType;
 				}
 				set	
 				{
-					productCode = value;
-				}
-			}
-
-			public string WebHook
-			{
-				get
-				{
-					return webHook;
-				}
-				set	
-				{
-					webHook = value;
-				}
-			}
-
-			public bool? ExceedThreshold
-			{
-				get
-				{
-					return exceedThreshold;
-				}
-				set	
-				{
-					exceedThreshold = value;
+					thresholdType = value;
 				}
 			}
 

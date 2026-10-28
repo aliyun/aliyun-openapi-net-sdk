@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quotas.Model.V20200510
     public class RemindQuotaApplicationApprovalRequest : RpcAcsRequest<RemindQuotaApplicationApprovalResponse>
     {
         public RemindQuotaApplicationApprovalRequest()
-            : base("quotas", "2020-05-10", "RemindQuotaApplicationApproval", "quotas", "openAPI")
+            : base("quotas", "2020-05-10", "RemindQuotaApplicationApproval", "Quotas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

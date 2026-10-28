@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quotas.Model.V20200510
     public class GetProductQuotaDimensionRequest : RpcAcsRequest<GetProductQuotaDimensionResponse>
     {
         public GetProductQuotaDimensionRequest()
-            : base("quotas", "2020-05-10", "GetProductQuotaDimension", "quotas", "openAPI")
+            : base("quotas", "2020-05-10", "GetProductQuotaDimension", "Quotas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,9 +42,9 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 
 		private string productCode;
 
-		private List<string> dependentDimensionss = new List<string>(){ };
-
 		private string dimensionKey;
+
+		private List<string> dependentDimensionss = new List<string>(){ };
 
 		public string ProductCode
 		{
@@ -56,6 +56,19 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			{
 				productCode = value;
 				DictionaryUtil.Add(BodyParameters, "ProductCode", value);
+			}
+		}
+
+		public string DimensionKey
+		{
+			get
+			{
+				return dimensionKey;
+			}
+			set	
+			{
+				dimensionKey = value;
+				DictionaryUtil.Add(BodyParameters, "DimensionKey", value);
 			}
 		}
 
@@ -80,37 +93,12 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			}
 		}
 
-		public string DimensionKey
-		{
-			get
-			{
-				return dimensionKey;
-			}
-			set	
-			{
-				dimensionKey = value;
-				DictionaryUtil.Add(BodyParameters, "DimensionKey", value);
-			}
-		}
-
 		public class DependentDimensions
 		{
 
-			private string key;
-
 			private string value_;
 
-			public string Key
-			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
-			}
+			private string key;
 
 			public string Value_
 			{
@@ -121,6 +109,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
 				}
 			}
 		}

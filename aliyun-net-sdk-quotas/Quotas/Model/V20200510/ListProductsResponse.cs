@@ -98,61 +98,25 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 		public class ListProducts_ProductInfos
 		{
 
-			private string productName;
-
-			private long? secondCategoryId;
-
-			private string productNameEn;
-
 			private bool? _dynamic;
 
 			private string secondCategoryNameEn;
 
-			private string secondCategoryName;
+			private string commonQuotaSupport;
+
+			private string productName;
 
 			private string productCode;
 
-			private string flowControlSupport;
+			private string secondCategoryName;
 
-			private string commonQuotaSupport;
+			private string flowControlSupport;
 
 			private string whiteListLabelQuotaSupport;
 
-			public string ProductName
-			{
-				get
-				{
-					return productName;
-				}
-				set	
-				{
-					productName = value;
-				}
-			}
+			private long? secondCategoryId;
 
-			public long? SecondCategoryId
-			{
-				get
-				{
-					return secondCategoryId;
-				}
-				set	
-				{
-					secondCategoryId = value;
-				}
-			}
-
-			public string ProductNameEn
-			{
-				get
-				{
-					return productNameEn;
-				}
-				set	
-				{
-					productNameEn = value;
-				}
-			}
+			private string productNameEn;
 
 			public bool? _Dynamic
 			{
@@ -178,15 +142,27 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
-			public string SecondCategoryName
+			public string CommonQuotaSupport
 			{
 				get
 				{
-					return secondCategoryName;
+					return commonQuotaSupport;
 				}
 				set	
 				{
-					secondCategoryName = value;
+					commonQuotaSupport = value;
+				}
+			}
+
+			public string ProductName
+			{
+				get
+				{
+					return productName;
+				}
+				set	
+				{
+					productName = value;
 				}
 			}
 
@@ -202,6 +178,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
+			public string SecondCategoryName
+			{
+				get
+				{
+					return secondCategoryName;
+				}
+				set	
+				{
+					secondCategoryName = value;
+				}
+			}
+
 			public string FlowControlSupport
 			{
 				get
@@ -214,18 +202,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
-			public string CommonQuotaSupport
-			{
-				get
-				{
-					return commonQuotaSupport;
-				}
-				set	
-				{
-					commonQuotaSupport = value;
-				}
-			}
-
 			public string WhiteListLabelQuotaSupport
 			{
 				get
@@ -235,6 +211,30 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					whiteListLabelQuotaSupport = value;
+				}
+			}
+
+			public long? SecondCategoryId
+			{
+				get
+				{
+					return secondCategoryId;
+				}
+				set	
+				{
+					secondCategoryId = value;
+				}
+			}
+
+			public string ProductNameEn
+			{
+				get
+				{
+					return productNameEn;
+				}
+				set	
+				{
+					productNameEn = value;
 				}
 			}
 		}

@@ -25,15 +25,39 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 	public class ListQuotaApplicationTemplatesResponse : AcsResponse
 	{
 
+		private int? totalCount;
+
+		private string nextToken;
+
 		private string requestId;
 
 		private int? maxResults;
 
-		private string nextToken;
-
-		private int? totalCount;
-
 		private List<ListQuotaApplicationTemplates_QuotaApplicationTemplatesItem> quotaApplicationTemplates;
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -59,30 +83,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			}
 		}
 
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
-
 		public List<ListQuotaApplicationTemplates_QuotaApplicationTemplatesItem> QuotaApplicationTemplates
 		{
 			get
@@ -98,45 +98,57 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 		public class ListQuotaApplicationTemplates_QuotaApplicationTemplatesItem
 		{
 
-			private string id;
+			private string quotaDescription;
+
+			private string effectiveTime;
 
 			private string productCode;
 
 			private string dimensions;
 
-			private float? desireValue;
-
-			private int? noticeType;
+			private string envLanguage;
 
 			private string quotaActionCode;
 
-			private string applicableType;
-
-			private string envLanguage;
-
 			private string quotaName;
 
-			private string quotaDescription;
+			private string quotaCategory;
 
-			private string effectiveTime;
+			private int? noticeType;
+
+			private string id;
+
+			private float? desireValue;
 
 			private string expireTime;
 
-			private string quotaCategory;
+			private string applicableType;
 
 			private List<string> applicableRange;
 
 			private ListQuotaApplicationTemplates_Period period;
 
-			public string Id
+			public string QuotaDescription
 			{
 				get
 				{
-					return id;
+					return quotaDescription;
 				}
 				set	
 				{
-					id = value;
+					quotaDescription = value;
+				}
+			}
+
+			public string EffectiveTime
+			{
+				get
+				{
+					return effectiveTime;
+				}
+				set	
+				{
+					effectiveTime = value;
 				}
 			}
 
@@ -164,27 +176,15 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
-			public float? DesireValue
+			public string EnvLanguage
 			{
 				get
 				{
-					return desireValue;
+					return envLanguage;
 				}
 				set	
 				{
-					desireValue = value;
-				}
-			}
-
-			public int? NoticeType
-			{
-				get
-				{
-					return noticeType;
-				}
-				set	
-				{
-					noticeType = value;
+					envLanguage = value;
 				}
 			}
 
@@ -200,30 +200,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
-			public string ApplicableType
-			{
-				get
-				{
-					return applicableType;
-				}
-				set	
-				{
-					applicableType = value;
-				}
-			}
-
-			public string EnvLanguage
-			{
-				get
-				{
-					return envLanguage;
-				}
-				set	
-				{
-					envLanguage = value;
-				}
-			}
-
 			public string QuotaName
 			{
 				get
@@ -236,27 +212,51 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
-			public string QuotaDescription
+			public string QuotaCategory
 			{
 				get
 				{
-					return quotaDescription;
+					return quotaCategory;
 				}
 				set	
 				{
-					quotaDescription = value;
+					quotaCategory = value;
 				}
 			}
 
-			public string EffectiveTime
+			public int? NoticeType
 			{
 				get
 				{
-					return effectiveTime;
+					return noticeType;
 				}
 				set	
 				{
-					effectiveTime = value;
+					noticeType = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public float? DesireValue
+			{
+				get
+				{
+					return desireValue;
+				}
+				set	
+				{
+					desireValue = value;
 				}
 			}
 
@@ -272,15 +272,15 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				}
 			}
 
-			public string QuotaCategory
+			public string ApplicableType
 			{
 				get
 				{
-					return quotaCategory;
+					return applicableType;
 				}
 				set	
 				{
-					quotaCategory = value;
+					applicableType = value;
 				}
 			}
 

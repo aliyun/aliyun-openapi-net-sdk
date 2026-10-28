@@ -31,14 +31,14 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 			GetQuotaApplicationApprovalResponse getQuotaApplicationApprovalResponse = new GetQuotaApplicationApprovalResponse();
 
 			getQuotaApplicationApprovalResponse.HttpResponse = _ctx.HttpResponse;
+			getQuotaApplicationApprovalResponse.AllowRetry = _ctx.BooleanValue("GetQuotaApplicationApproval.AllowRetry");
 			getQuotaApplicationApprovalResponse.RequestId = _ctx.StringValue("GetQuotaApplicationApproval.RequestId");
+			getQuotaApplicationApprovalResponse.ErrorMsg = _ctx.StringValue("GetQuotaApplicationApproval.ErrorMsg");
 			getQuotaApplicationApprovalResponse.HttpStatusCode = _ctx.IntegerValue("GetQuotaApplicationApproval.HttpStatusCode");
 			getQuotaApplicationApprovalResponse.DynamicCode = _ctx.StringValue("GetQuotaApplicationApproval.DynamicCode");
 			getQuotaApplicationApprovalResponse.DynamicMessage = _ctx.StringValue("GetQuotaApplicationApproval.DynamicMessage");
-			getQuotaApplicationApprovalResponse.ErrorMsg = _ctx.StringValue("GetQuotaApplicationApproval.ErrorMsg");
 			getQuotaApplicationApprovalResponse.ErrorCode = _ctx.StringValue("GetQuotaApplicationApproval.ErrorCode");
 			getQuotaApplicationApprovalResponse.Success = _ctx.BooleanValue("GetQuotaApplicationApproval.Success");
-			getQuotaApplicationApprovalResponse.AllowRetry = _ctx.BooleanValue("GetQuotaApplicationApproval.AllowRetry");
 
 			List<string> getQuotaApplicationApprovalResponse_errorArgs = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetQuotaApplicationApproval.ErrorArgs.Length"); i++) {
@@ -47,10 +47,10 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 			getQuotaApplicationApprovalResponse.ErrorArgs = getQuotaApplicationApprovalResponse_errorArgs;
 
 			GetQuotaApplicationApprovalResponse.GetQuotaApplicationApproval_Module module = new GetQuotaApplicationApprovalResponse.GetQuotaApplicationApproval_Module();
+			module.ReminderIntervalHours = _ctx.IntegerValue("GetQuotaApplicationApproval.Module.ReminderIntervalHours");
+			module.UnsupportReminderReason = _ctx.StringValue("GetQuotaApplicationApproval.Module.UnsupportReminderReason");
 			module.ApprovalHours = _ctx.IntegerValue("GetQuotaApplicationApproval.Module.ApprovalHours");
 			module.SupportReminder = _ctx.BooleanValue("GetQuotaApplicationApproval.Module.SupportReminder");
-			module.UnsupportReminderReason = _ctx.StringValue("GetQuotaApplicationApproval.Module.UnsupportReminderReason");
-			module.ReminderIntervalHours = _ctx.IntegerValue("GetQuotaApplicationApproval.Module.ReminderIntervalHours");
 			getQuotaApplicationApprovalResponse.Module = module;
         
 			return getQuotaApplicationApprovalResponse;

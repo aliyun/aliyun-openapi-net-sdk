@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quotas.Model.V20200510
     public class ListDependentQuotasRequest : RpcAcsRequest<ListDependentQuotasResponse>
     {
         public ListDependentQuotasRequest()
-            : base("quotas", "2020-05-10", "ListDependentQuotas", "quotas", "openAPI")
+            : base("quotas", "2020-05-10", "ListDependentQuotas", "Quotas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

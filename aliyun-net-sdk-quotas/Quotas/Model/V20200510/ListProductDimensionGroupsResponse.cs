@@ -98,13 +98,25 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 		public class ListProductDimensionGroups_DimensionGroupsItem
 		{
 
+			private string groupName;
+
 			private string productCode;
 
 			private string groupCode;
 
-			private string groupName;
-
 			private List<string> dimensionKeys;
+
+			public string GroupName
+			{
+				get
+				{
+					return groupName;
+				}
+				set	
+				{
+					groupName = value;
+				}
+			}
 
 			public string ProductCode
 			{
@@ -127,18 +139,6 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					groupCode = value;
-				}
-			}
-
-			public string GroupName
-			{
-				get
-				{
-					return groupName;
-				}
-				set	
-				{
-					groupName = value;
 				}
 			}
 

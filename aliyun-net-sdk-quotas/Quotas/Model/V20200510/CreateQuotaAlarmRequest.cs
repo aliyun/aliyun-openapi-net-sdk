@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quotas.Model.V20200510
     public class CreateQuotaAlarmRequest : RpcAcsRequest<CreateQuotaAlarmResponse>
     {
         public CreateQuotaAlarmRequest()
-            : base("quotas", "2020-05-10", "CreateQuotaAlarm", "quotas", "openAPI")
+            : base("quotas", "2020-05-10", "CreateQuotaAlarm", "Quotas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -51,6 +51,8 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 		private string thresholdType;
 
 		private List<string> quotaDimensionss = new List<string>(){ };
+
+		private string originalContext;
 
 		private float? thresholdPercent;
 
@@ -142,6 +144,19 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 			}
 		}
 
+		public string OriginalContext
+		{
+			get
+			{
+				return originalContext;
+			}
+			set	
+			{
+				originalContext = value;
+				DictionaryUtil.Add(BodyParameters, "OriginalContext", value);
+			}
+		}
+
 		public float? ThresholdPercent
 		{
 			get
@@ -171,21 +186,9 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 		public class QuotaDimensions
 		{
 
-			private string key;
-
 			private string value_;
 
-			public string Key
-			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
-			}
+			private string key;
 
 			public string Value_
 			{
@@ -196,6 +199,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
 				}
 			}
 		}

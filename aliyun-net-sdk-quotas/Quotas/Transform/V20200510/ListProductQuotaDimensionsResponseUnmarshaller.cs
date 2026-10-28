@@ -39,15 +39,9 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 			List<ListProductQuotaDimensionsResponse.ListProductQuotaDimensions_QuotaDimensionsItem> listProductQuotaDimensionsResponse_quotaDimensions = new List<ListProductQuotaDimensionsResponse.ListProductQuotaDimensions_QuotaDimensionsItem>();
 			for (int i = 0; i < _ctx.Length("ListProductQuotaDimensions.QuotaDimensions.Length"); i++) {
 				ListProductQuotaDimensionsResponse.ListProductQuotaDimensions_QuotaDimensionsItem quotaDimensionsItem = new ListProductQuotaDimensionsResponse.ListProductQuotaDimensions_QuotaDimensionsItem();
-				quotaDimensionsItem.Requisite = _ctx.BooleanValue("ListProductQuotaDimensions.QuotaDimensions["+ i +"].Requisite");
 				quotaDimensionsItem.DimensionKey = _ctx.StringValue("ListProductQuotaDimensions.QuotaDimensions["+ i +"].DimensionKey");
 				quotaDimensionsItem.Name = _ctx.StringValue("ListProductQuotaDimensions.QuotaDimensions["+ i +"].Name");
-
-				List<string> quotaDimensionsItem_dependentDimensions = new List<string>();
-				for (int j = 0; j < _ctx.Length("ListProductQuotaDimensions.QuotaDimensions["+ i +"].DependentDimensions.Length"); j++) {
-					quotaDimensionsItem_dependentDimensions.Add(_ctx.StringValue("ListProductQuotaDimensions.QuotaDimensions["+ i +"].DependentDimensions["+ j +"]"));
-				}
-				quotaDimensionsItem.DependentDimensions = quotaDimensionsItem_dependentDimensions;
+				quotaDimensionsItem.Requisite = _ctx.BooleanValue("ListProductQuotaDimensions.QuotaDimensions["+ i +"].Requisite");
 
 				List<string> quotaDimensionsItem_dimensionValues = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListProductQuotaDimensions.QuotaDimensions["+ i +"].DimensionValues.Length"); j++) {
@@ -55,17 +49,23 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 				}
 				quotaDimensionsItem.DimensionValues = quotaDimensionsItem_dimensionValues;
 
+				List<string> quotaDimensionsItem_dependentDimensions = new List<string>();
+				for (int j = 0; j < _ctx.Length("ListProductQuotaDimensions.QuotaDimensions["+ i +"].DependentDimensions.Length"); j++) {
+					quotaDimensionsItem_dependentDimensions.Add(_ctx.StringValue("ListProductQuotaDimensions.QuotaDimensions["+ i +"].DependentDimensions["+ j +"]"));
+				}
+				quotaDimensionsItem.DependentDimensions = quotaDimensionsItem_dependentDimensions;
+
 				List<ListProductQuotaDimensionsResponse.ListProductQuotaDimensions_QuotaDimensionsItem.ListProductQuotaDimensions_DimensionValueDetailItem> quotaDimensionsItem_dimensionValueDetail = new List<ListProductQuotaDimensionsResponse.ListProductQuotaDimensions_QuotaDimensionsItem.ListProductQuotaDimensions_DimensionValueDetailItem>();
 				for (int j = 0; j < _ctx.Length("ListProductQuotaDimensions.QuotaDimensions["+ i +"].DimensionValueDetail.Length"); j++) {
 					ListProductQuotaDimensionsResponse.ListProductQuotaDimensions_QuotaDimensionsItem.ListProductQuotaDimensions_DimensionValueDetailItem dimensionValueDetailItem = new ListProductQuotaDimensionsResponse.ListProductQuotaDimensions_QuotaDimensionsItem.ListProductQuotaDimensions_DimensionValueDetailItem();
-					dimensionValueDetailItem.Name = _ctx.StringValue("ListProductQuotaDimensions.QuotaDimensions["+ i +"].DimensionValueDetail["+ j +"].Name");
 					dimensionValueDetailItem._Value = _ctx.StringValue("ListProductQuotaDimensions.QuotaDimensions["+ i +"].DimensionValueDetail["+ j +"].Value");
+					dimensionValueDetailItem.Name = _ctx.StringValue("ListProductQuotaDimensions.QuotaDimensions["+ i +"].DimensionValueDetail["+ j +"].Name");
 
 					List<ListProductQuotaDimensionsResponse.ListProductQuotaDimensions_QuotaDimensionsItem.ListProductQuotaDimensions_DimensionValueDetailItem.ListProductQuotaDimensions_DependentDimension> dimensionValueDetailItem_dependentDimensions1 = new List<ListProductQuotaDimensionsResponse.ListProductQuotaDimensions_QuotaDimensionsItem.ListProductQuotaDimensions_DimensionValueDetailItem.ListProductQuotaDimensions_DependentDimension>();
 					for (int k = 0; k < _ctx.Length("ListProductQuotaDimensions.QuotaDimensions["+ i +"].DimensionValueDetail["+ j +"].DependentDimensions.Length"); k++) {
 						ListProductQuotaDimensionsResponse.ListProductQuotaDimensions_QuotaDimensionsItem.ListProductQuotaDimensions_DimensionValueDetailItem.ListProductQuotaDimensions_DependentDimension dependentDimension = new ListProductQuotaDimensionsResponse.ListProductQuotaDimensions_QuotaDimensionsItem.ListProductQuotaDimensions_DimensionValueDetailItem.ListProductQuotaDimensions_DependentDimension();
-						dependentDimension.Key = _ctx.StringValue("ListProductQuotaDimensions.QuotaDimensions["+ i +"].DimensionValueDetail["+ j +"].DependentDimensions["+ k +"].Key");
 						dependentDimension._Value = _ctx.StringValue("ListProductQuotaDimensions.QuotaDimensions["+ i +"].DimensionValueDetail["+ j +"].DependentDimensions["+ k +"].Value");
+						dependentDimension.Key = _ctx.StringValue("ListProductQuotaDimensions.QuotaDimensions["+ i +"].DimensionValueDetail["+ j +"].DependentDimensions["+ k +"].Key");
 
 						dimensionValueDetailItem_dependentDimensions1.Add(dependentDimension);
 					}

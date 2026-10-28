@@ -34,19 +34,19 @@ namespace Aliyun.Acs.quotas.Transform.V20200510
 			getQuotaAlarmResponse.RequestId = _ctx.StringValue("GetQuotaAlarm.RequestId");
 
 			GetQuotaAlarmResponse.GetQuotaAlarm_QuotaAlarm quotaAlarm = new GetQuotaAlarmResponse.GetQuotaAlarm_QuotaAlarm();
+			quotaAlarm.AlarmId = _ctx.StringValue("GetQuotaAlarm.QuotaAlarm.AlarmId");
 			quotaAlarm.ThresholdPercent = _ctx.FloatValue("GetQuotaAlarm.QuotaAlarm.ThresholdPercent");
-			quotaAlarm.ThresholdType = _ctx.StringValue("GetQuotaAlarm.QuotaAlarm.ThresholdType");
-			quotaAlarm.QuotaDimension = _ctx.StringValue("GetQuotaAlarm.QuotaAlarm.QuotaDimension");
+			quotaAlarm.ProductCode = _ctx.StringValue("GetQuotaAlarm.QuotaAlarm.ProductCode");
 			quotaAlarm.CreateTime = _ctx.StringValue("GetQuotaAlarm.QuotaAlarm.CreateTime");
+			quotaAlarm.QuotaUsage = _ctx.FloatValue("GetQuotaAlarm.QuotaAlarm.QuotaUsage");
 			quotaAlarm.QuotaActionCode = _ctx.StringValue("GetQuotaAlarm.QuotaAlarm.QuotaActionCode");
+			quotaAlarm.QuotaValue = _ctx.FloatValue("GetQuotaAlarm.QuotaAlarm.QuotaValue");
 			quotaAlarm.AlarmName = _ctx.StringValue("GetQuotaAlarm.QuotaAlarm.AlarmName");
 			quotaAlarm.NotifyTarget = _ctx.StringValue("GetQuotaAlarm.QuotaAlarm.NotifyTarget");
-			quotaAlarm.QuotaUsage = _ctx.FloatValue("GetQuotaAlarm.QuotaAlarm.QuotaUsage");
-			quotaAlarm.QuotaValue = _ctx.FloatValue("GetQuotaAlarm.QuotaAlarm.QuotaValue");
-			quotaAlarm.AlarmId = _ctx.StringValue("GetQuotaAlarm.QuotaAlarm.AlarmId");
-			quotaAlarm.Threshold = _ctx.FloatValue("GetQuotaAlarm.QuotaAlarm.Threshold");
-			quotaAlarm.ProductCode = _ctx.StringValue("GetQuotaAlarm.QuotaAlarm.ProductCode");
+			quotaAlarm.QuotaDimension = _ctx.StringValue("GetQuotaAlarm.QuotaAlarm.QuotaDimension");
 			quotaAlarm.Webhook = _ctx.StringValue("GetQuotaAlarm.QuotaAlarm.Webhook");
+			quotaAlarm.Threshold = _ctx.FloatValue("GetQuotaAlarm.QuotaAlarm.Threshold");
+			quotaAlarm.ThresholdType = _ctx.StringValue("GetQuotaAlarm.QuotaAlarm.ThresholdType");
 
 			List<string> quotaAlarm_notifyChannels = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetQuotaAlarm.QuotaAlarm.NotifyChannels.Length"); i++) {

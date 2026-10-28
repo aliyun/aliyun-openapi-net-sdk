@@ -56,21 +56,9 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 		public class ModifyQuotaTemplateServiceStatus_TemplateServiceStatus
 		{
 
-			private int? serviceStatus;
-
 			private string resourceDirectoryId;
 
-			public int? ServiceStatus
-			{
-				get
-				{
-					return serviceStatus;
-				}
-				set	
-				{
-					serviceStatus = value;
-				}
-			}
+			private int? serviceStatus;
 
 			public string ResourceDirectoryId
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.quotas.Model.V20200510
 				set	
 				{
 					resourceDirectoryId = value;
+				}
+			}
+
+			public int? ServiceStatus
+			{
+				get
+				{
+					return serviceStatus;
+				}
+				set	
+				{
+					serviceStatus = value;
 				}
 			}
 		}
