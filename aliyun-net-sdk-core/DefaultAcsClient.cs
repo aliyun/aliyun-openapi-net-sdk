@@ -97,7 +97,7 @@ namespace Aliyun.Acs.Core
         public bool IgnoreCertificate { get; private set; }
 
         /// <summary>
-        /// Only Signature V2 supports SHA1 fallback. SHA1 is less secure; fallback is not recommended.
+        /// For AccessKey and STS Signature V2 requests only. SHA1 is less secure; fallback is not recommended.
         /// </summary>
         public bool BackToHmacSHA1 { get; set; }
 

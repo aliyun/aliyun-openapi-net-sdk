@@ -37,7 +37,7 @@ namespace Aliyun.Acs.Core.Auth
         }
 
         /// <summary>
-        /// Only Signature V2 supports SHA1 fallback. SHA1 is less secure; fallback is not recommended.
+        /// For AccessKey and STS Signature V2 requests only. SHA1 is less secure; fallback is not recommended.
         /// </summary>
         public static Signer GetSigner(AlibabaCloudCredentials credentials, bool backToHmacSHA1)
         {
