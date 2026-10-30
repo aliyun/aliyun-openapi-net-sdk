@@ -45,7 +45,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
         [Theory]
         [InlineData(false)]
         [InlineData(true)]
-        public void HmacFallbackPreservesCredentialRouting(bool useHmacSHA1)
+        public void HmacFallbackPreservesCredentialRouting(bool backToHmacSHA1)
         {
             var credentials = new AlibabaCloudCredentials[]
             {
@@ -56,13 +56,13 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             foreach (var credential in credentials)
             {
                 Assert.IsType<HmacSHA256Signer>(Signer.GetSigner(credential));
-                Assert.Equal(useHmacSHA1 ? typeof(HmacSHA1Signer) : typeof(HmacSHA256Signer),
-                    Signer.GetSigner(credential, useHmacSHA1).GetType());
+                Assert.Equal(backToHmacSHA1 ? typeof(HmacSHA1Signer) : typeof(HmacSHA256Signer),
+                    Signer.GetSigner(credential, backToHmacSHA1).GetType());
             }
 
             Assert.IsType<SHA256withRSASigner>(Signer.GetSigner(
-                new KeyPairCredentials("public-key-id", "private-key-secret"), useHmacSHA1));
-            Assert.IsType<BearerTokenSigner>(Signer.GetSigner(new BearerTokenCredential("test-token"), useHmacSHA1));
+                new KeyPairCredentials("public-key-id", "private-key-secret"), backToHmacSHA1));
+            Assert.IsType<BearerTokenSigner>(Signer.GetSigner(new BearerTokenCredential("test-token"), backToHmacSHA1));
         }
     }
 

@@ -36,7 +36,10 @@ namespace Aliyun.Acs.Core.Auth
             return GetSigner(credentials, false);
         }
 
-        public static Signer GetSigner(AlibabaCloudCredentials credentials, bool useHmacSHA1)
+        /// <summary>
+        /// Only Signature V2 supports SHA1 fallback. SHA1 is less secure; fallback is not recommended.
+        /// </summary>
+        public static Signer GetSigner(AlibabaCloudCredentials credentials, bool backToHmacSHA1)
         {
             if (credentials is BearerTokenCredential)
             {
@@ -48,7 +51,7 @@ namespace Aliyun.Acs.Core.Auth
                 return sha256withRSASigner;
             }
 
-            return useHmacSHA1 ? hmacSHA1Signer : hmacSHA256Signer;
+            return backToHmacSHA1 ? hmacSHA1Signer : hmacSHA256Signer;
         }
     }
 }
