@@ -41,6 +41,9 @@ using Aliyun.Acs.Core.Utils;
 namespace Aliyun.Acs.Core
 {
     public class DefaultAcsClient : IAcsClient
+#if NET472 || NETSTANDARD2_0
+        , IDisposable
+#endif
     {
         private static readonly HttpWebProxy WebProxy = new HttpWebProxy();
         private readonly IClientProfile clientProfile;
@@ -51,6 +54,30 @@ namespace Aliyun.Acs.Core
         private bool autoRetry = true;
 
         private int maxRetryNumber = 3;
+
+#if NET472 || NETSTANDARD2_0
+        private readonly TlsHttpClient tlsHttpClient = new TlsHttpClient();
+        private string tlsMinVersion;
+        private bool disposed;
+
+        /// <summary>
+        /// Minimum TLS version: TLSv1, TLSv1.1, TLSv1.2 or TLSv1.3.
+        /// Leave null to retain the existing HTTP transport and TLS settings.
+        /// </summary>
+        public string TlsMinVersion
+        {
+            get { return tlsMinVersion; }
+            set
+            {
+                if (value != null)
+                {
+                    TlsHttpClient.GetProtocols(value);
+                }
+
+                tlsMinVersion = value;
+            }
+        }
+#endif
 
         public DefaultAcsClient()
         {
@@ -434,8 +461,29 @@ namespace Aliyun.Acs.Core
 
         public virtual HttpResponse GetResponse(HttpRequest httpRequest)
         {
+#if NET472 || NETSTANDARD2_0
+            if (disposed)
+            {
+                throw new ObjectDisposedException(GetType().FullName);
+            }
+
+            var minimumVersion = TlsMinVersion;
+            if (minimumVersion != null)
+            {
+                return tlsHttpClient.GetResponse(httpRequest, minimumVersion,
+                    IgnoreCertificate || httpRequest.IgnoreCertificate);
+            }
+#endif
             return HttpResponse.GetResponse(httpRequest);
         }
+
+#if NET472 || NETSTANDARD2_0
+        public void Dispose()
+        {
+            disposed = true;
+            tlsHttpClient.Dispose();
+        }
+#endif
 
         public void AppendUserAgent(string key, string value)
         {

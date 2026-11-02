@@ -143,6 +143,25 @@ class Program
 }
 ```
 
+### 设置最低 TLS 版本
+
+目标为 .NET Framework 4.7.2 及以上的项目，以及使用 `netstandard2.0` 产物的项目，可以设置 `DefaultAcsClient.TlsMinVersion`：
+
+```csharp
+using (var client = new DefaultAcsClient(profile))
+{
+    client.TlsMinVersion = "TLSv1.2";
+    request.Protocol = Aliyun.Acs.Core.Http.ProtocolType.HTTPS;
+    var response = client.GetAcsResponse(request);
+}
+```
+
+支持的值为 `TLSv1`、`TLSv1.1`、`TLSv1.2` 和 `TLSv1.3`。例如 `TLSv1.2` 允许协商 TLS 1.2 或 TLS 1.3，具体取决于运行时、操作系统和服务端支持的协议；不会允许 TLS 1.0 或 1.1。要求 TLS 1.3 但环境不支持时，请求会失败，不会降级到 TLS 1.2。未知值会抛出 `ArgumentException`。
+
+该设置仅作用于当前客户端，不修改 `ServicePointManager.SecurityProtocol`。未设置（默认 `null`）时，继续使用原有 HTTP 请求路径和 TLS 配置。启用该设置后，客户端复用自己的 HTTP 连接；应复用客户端，并在不再使用时调用 `Dispose()`。
+
+NuGet 包保留 `net45`、`netstandard2.0`，并新增 `net472` 产物。目标为 Framework 4.5～4.7.1 的项目继续使用不公开此属性的 `net45` 产物；目标为 Framework 4.7.2 及以上的项目选择 `net472`。此选择依据项目的目标框架，而非机器安装的 Framework 版本。
+
 ## 文档
 
 - [环境要求](docs/0-Requirements-CN.md)

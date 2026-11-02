@@ -1,0 +1,51 @@
+name: TLS compatibility
+
+on:
+  pull_request:
+    branches: [master]
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  tls:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            framework: net8.0
+          - os: windows-latest
+            framework: net472
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            aliyun-net-sdk-core
+            aliyun-net-sdk-core.Tests
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Build all package targets
+        run: dotnet build aliyun-net-sdk-core/aliyun-net-sdk-core.vs2017.csproj -c Release
+      - name: Enable legacy TLS only for the rejection test
+        if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          cat > "$RUNNER_TEMP/tls-test.cnf" <<'EOF'
+          openssl_conf = openssl_init
+          [openssl_init]
+          ssl_conf = ssl_configuration
+          [ssl_configuration]
+          system_default = tls_defaults
+          [tls_defaults]
+          MinProtocol = TLSv1
+          CipherString = DEFAULT:@SECLEVEL=0
+          EOF
+          echo "OPENSSL_CONF=$RUNNER_TEMP/tls-test.cnf" >> "$GITHUB_ENV"
+          echo "RUN_LEGACY_TLS_TESTS=1" >> "$GITHUB_ENV"
+      - name: Test TLS behavior
+        run: dotnet test aliyun-net-sdk-core.Tests/Tls/aliyun-net-sdk-core-tls-tests.csproj -c Release -f ${{ matrix.framework }} --logger trx
