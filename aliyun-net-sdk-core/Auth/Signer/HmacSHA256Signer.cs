@@ -17,10 +17,6 @@
  * under the License.
  */
 
-using System;
-using System.Security.Cryptography;
-using System.Text;
-
 using Aliyun.Acs.Core.Auth;
 
 namespace Aliyun.Acs.Core
@@ -28,14 +24,11 @@ namespace Aliyun.Acs.Core
     public class HmacSHA256Signer : Signer
     {
         public const string ENCODING = "UTF-8";
+        private readonly ShaHmac256 signer = new ShaHmac256();
 
         public override string SignString(string stringToSign, string accessKeySecret)
         {
-            using (var hmac = new HMACSHA256(Encoding.UTF8.GetBytes(accessKeySecret)))
-            {
-                var hashValue = hmac.ComputeHash(Encoding.UTF8.GetBytes(stringToSign));
-                return Convert.ToBase64String(hashValue);
-            }
+            return signer.SignString(stringToSign, accessKeySecret);
         }
 
         public override string SignString(string stringToSign, AlibabaCloudCredentials credentials)
@@ -45,12 +38,12 @@ namespace Aliyun.Acs.Core
 
         public override string GetSignerName()
         {
-            return "HMAC-SHA256";
+            return signer.SignerName;
         }
 
         public override string GetSignerVersion()
         {
-            return "1.0";
+            return signer.SignerVersion;
         }
 
         public override string GetSignerType()
