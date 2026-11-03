@@ -22,7 +22,6 @@ namespace Aliyun.Acs.Core.Auth
     public abstract class Signer
     {
         private static readonly Signer hmacSHA256Signer = new HmacSHA256Signer();
-        private static readonly Signer hmacSHA1Signer = new HmacSHA1Signer();
         private static readonly Signer sha256withRSASigner = new SHA256withRSASigner();
         private static readonly Signer bearerTokenSigner = new BearerTokenSigner();
         public abstract string SignString(string stringToSign, AlibabaCloudCredentials credentials);
@@ -33,25 +32,12 @@ namespace Aliyun.Acs.Core.Auth
 
         public static Signer GetSigner(AlibabaCloudCredentials credentials)
         {
-            return GetSigner(credentials, false);
-        }
-
-        /// <summary>
-        /// For AccessKey and STS Signature V2 requests only. SHA1 is less secure; fallback is not recommended.
-        /// </summary>
-        public static Signer GetSigner(AlibabaCloudCredentials credentials, bool backToHmacSHA1)
-        {
             if (credentials is BearerTokenCredential)
             {
                 return bearerTokenSigner;
             }
 
-            if (credentials is KeyPairCredentials)
-            {
-                return sha256withRSASigner;
-            }
-
-            return backToHmacSHA1 ? hmacSHA1Signer : hmacSHA256Signer;
+            return credentials is KeyPairCredentials ? sha256withRSASigner : hmacSHA256Signer;
         }
     }
 }

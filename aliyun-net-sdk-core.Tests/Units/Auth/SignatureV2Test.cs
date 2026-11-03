@@ -184,21 +184,15 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
         }
 
         [Theory]
-        [InlineData(0, false)]
-        [InlineData(0, true)]
-        [InlineData(1, false)]
-        [InlineData(1, true)]
-        [InlineData(2, false)]
-        [InlineData(2, true)]
-        public void ClientHmacConfigurationAppliesToOrdinaryRequests(int credentialSource, bool backToHmacSHA1)
+        [InlineData(0)]
+        [InlineData(1)]
+        [InlineData(2)]
+        public void ClientUsesSha256ForOrdinaryRequests(int credentialSource)
         {
             var client = Client(credentialSource);
             var session = credentialSource != 0;
-            Assert.False(client.BackToHmacSHA1);
-            client.BackToHmacSHA1 = backToHmacSHA1;
-
             Assert.NotNull(client.GetAcsResponse(RpcRequest()));
-            AssertClientRpcSignature(client.Sent, backToHmacSHA1, "test-id", session);
+            AssertClientRpcSignature(client.Sent, false, "test-id", session);
 
             var roaRequest = new MockRoaAcsRequest("Cs", "2015-12-15", "DescribeClusters")
             {
@@ -207,7 +201,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
                 UriPattern = "/clusters"
             };
             Assert.NotNull(client.GetAcsResponse(roaRequest));
-            AssertClientRoaSignature(client.Sent, backToHmacSHA1, session);
+            AssertClientRoaSignature(client.Sent, false, session);
 
             foreach (var roa in new[] { false, true })
             {
@@ -226,32 +220,21 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
                 Assert.Equal("{}", response.Data);
                 if (roa)
                 {
-                    AssertClientRoaSignature(client.Sent, backToHmacSHA1, session);
+                    AssertClientRoaSignature(client.Sent, false, session);
                 }
                 else
                 {
-                    AssertClientRpcSignature(client.Sent, backToHmacSHA1, "test-id", session);
+                    AssertClientRpcSignature(client.Sent, false, "test-id", session);
                 }
             }
         }
 
         [Fact]
-        public void HmacFallbackSupportsLegacyCredentialsAndExplicitSignerPriority()
+        public void LegacyCredentialsUseSha256()
         {
             var client = Client(0);
-            client.BackToHmacSHA1 = true;
             Assert.NotNull(client.GetAcsResponse(RpcRequest(), "cn-hangzhou", new Credential("legacy-id", "test-secret")));
-            AssertClientRpcSignature(client.Sent, true, "legacy-id", false);
-
-            client.DoAction(RpcRequest(), false, 0, "cn-hangzhou", Credentials(false), new HmacSHA256Signer(), FormatType.JSON, null);
-            AssertClientRpcSignature(client.Sent, false, "test-id", false);
-
-            Assert.NotNull(client.GetAcsResponse(RpcRequest()));
-            AssertClientRpcSignature(client.Sent, true, "test-id", false);
-
-            client.BackToHmacSHA1 = false;
-            Assert.NotNull(client.GetAcsResponse(RpcRequest()));
-            AssertClientRpcSignature(client.Sent, false, "test-id", false);
+            AssertClientRpcSignature(client.Sent, false, "legacy-id", false);
         }
 
         private static CapturingClient Client(int credentialSource)

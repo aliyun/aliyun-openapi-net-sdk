@@ -96,11 +96,6 @@ namespace Aliyun.Acs.Core
 
         public bool IgnoreCertificate { get; private set; }
 
-        /// <summary>
-        /// For AccessKey and STS Signature V2 requests only. SHA1 is less secure; fallback is not recommended.
-        /// </summary>
-        public bool BackToHmacSHA1 { get; set; }
-
         public int MaxRetryNumber
         {
             get { return maxRetryNumber; }
@@ -176,7 +171,7 @@ namespace Aliyun.Acs.Core
         public HttpResponse DoAction<T>(AcsRequest<T> request, string regionId, Credential credential)
         where T : AcsResponse
         {
-            var signer = Signer.GetSigner(new LegacyCredentials(credential), BackToHmacSHA1);
+            var signer = Signer.GetSigner(new LegacyCredentials(credential));
             FormatType? format = null;
             if (null == request.RegionId)
             {
@@ -236,7 +231,7 @@ namespace Aliyun.Acs.Core
                 credentials = new DefaultCredentialProvider().GetAlibabaCloudClientCredential();
             }
 
-            var signer = Signer.GetSigner(credentials, BackToHmacSHA1);
+            var signer = Signer.GetSigner(credentials);
             var format = profile.GetFormat();
             List<Endpoint> endpoints = null;
 
