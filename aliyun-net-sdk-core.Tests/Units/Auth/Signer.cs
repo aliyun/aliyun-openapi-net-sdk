@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             var instance = new MockSigner();
             var mock = new Mock<AlibabaCloudCredentials>();
             var credentials = mock.Object;
-            Assert.IsType<HmacSHA1Signer>(Signer.GetSigner(credentials));
+            Assert.IsType<HmacSHA256Signer>(Signer.GetSigner(credentials));
 
             var KeyPairCredentials = new KeyPairCredentials("publicKeyId", "privateKeySecret");
             Assert.IsType<SHA256withRSASigner>(Signer.GetSigner(KeyPairCredentials));

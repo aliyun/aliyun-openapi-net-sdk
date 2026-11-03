@@ -41,9 +41,9 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             };
             var method = MethodType.GET;
             Signer signer = new HmacSHA1Signer();
-            var instance = RoaSignatureComposer.GetComposer();
+            var instance = RpcSignatureComposer.GetComposer();
             var result = instance.ComposeStringToSign(method, "uriPattern", signer, tmp, tmp, tmp);
-            Assert.Equal("GET\n\n\n\n\nuriPattern?a=A&b=B&foo=bar", result);
+            Assert.Equal("GET&%2F&a%3DA%26b%3DB%26foo%3Dbar", result);
         }
 
         [Fact]
@@ -64,11 +64,12 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
 
             // Override FormatType is not null, GetSignerType callback is null
             var hmacSHA1Signer = new HmacSHA1Signer();
-            signatureComposer = RoaSignatureComposer.GetComposer();
+            signatureComposer = RpcSignatureComposer.GetComposer();
             context = new UnmarshallerContext();
             context.ResponseDictionary =
                 signatureComposer.RefreshSignParameters(parameters, hmacSHA1Signer, "accessKeyId", formatType);
-            Assert.Equal("HMAC-SHA1", context.StringValue("x-acs-signature-method"));
+            Assert.Equal("HMAC-SHA1", context.StringValue("SignatureMethod"));
+            Assert.Equal("1.0", context.StringValue("SignatureVersion"));
 
             // Override FormatType is not null, GetSignerType callback is not null
             var SHA256withRSASigner = new SHA256withRSASigner();
@@ -76,7 +77,8 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             signatureComposer = new RpcSignatureComposer();
             context.ResponseDictionary =
                 signatureComposer.RefreshSignParameters(parameters, SHA256withRSASigner, "accessKeyId", null);
-            Assert.Null(context.StringValue("x-acs-signature-method"));
+            Assert.Equal("SHA256withRSA", context.StringValue("SignatureMethod"));
+            Assert.Equal("PRIVATEKEY", context.StringValue("SignatureType"));
         }
     }
 }
