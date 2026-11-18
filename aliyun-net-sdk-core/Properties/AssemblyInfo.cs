@@ -31,4 +31,4 @@ using System.Runtime.CompilerServices;
 //
 [assembly: AssemblyVersion("1.6.2.0")]
 [assembly: AssemblyFileVersion("1.6.2.0")]
-[assembly: InternalsVisibleTo("Aliyun.Net.Credentials.UnitTests")]
+[assembly: InternalsVisibleTo("aliyun-net-sdk-core.Tests")]

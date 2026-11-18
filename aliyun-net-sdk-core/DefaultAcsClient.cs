@@ -228,7 +228,7 @@ namespace Aliyun.Acs.Core
             var credentials = credentialsProvider.GetCredentials();
             if (credentials == null)
             {
-                credentials = new DefaultCredentialProvider().GetAlibabaCloudClientCredential();
+                credentials = new DefaultCredentialProvider().GetCredentials();
             }
 
             var signer = Signer.GetSigner(credentials);
