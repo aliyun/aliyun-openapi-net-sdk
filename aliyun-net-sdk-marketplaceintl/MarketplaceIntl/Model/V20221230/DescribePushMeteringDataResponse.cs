@@ -126,19 +126,43 @@ namespace Aliyun.Acs.marketplaceIntl.Model.V20221230
 		public class DescribePushMeteringData_Result
 		{
 
+			private bool? isPushBilling;
+
+			private string meteringEntity;
+
 			private long? endTime;
 
 			private string instanceId;
 
-			private bool? isPushBilling;
-
-			private string meteringAssist;
-
-			private string meteringEntity;
+			private long? startTime;
 
 			private string pushOrderBizId;
 
-			private long? startTime;
+			private string meteringAssist;
+
+			public bool? IsPushBilling
+			{
+				get
+				{
+					return isPushBilling;
+				}
+				set	
+				{
+					isPushBilling = value;
+				}
+			}
+
+			public string MeteringEntity
+			{
+				get
+				{
+					return meteringEntity;
+				}
+				set	
+				{
+					meteringEntity = value;
+				}
+			}
 
 			public long? EndTime
 			{
@@ -164,39 +188,15 @@ namespace Aliyun.Acs.marketplaceIntl.Model.V20221230
 				}
 			}
 
-			public bool? IsPushBilling
+			public long? StartTime
 			{
 				get
 				{
-					return isPushBilling;
+					return startTime;
 				}
 				set	
 				{
-					isPushBilling = value;
-				}
-			}
-
-			public string MeteringAssist
-			{
-				get
-				{
-					return meteringAssist;
-				}
-				set	
-				{
-					meteringAssist = value;
-				}
-			}
-
-			public string MeteringEntity
-			{
-				get
-				{
-					return meteringEntity;
-				}
-				set	
-				{
-					meteringEntity = value;
+					startTime = value;
 				}
 			}
 
@@ -212,15 +212,15 @@ namespace Aliyun.Acs.marketplaceIntl.Model.V20221230
 				}
 			}
 
-			public long? StartTime
+			public string MeteringAssist
 			{
 				get
 				{
-					return startTime;
+					return meteringAssist;
 				}
 				set	
 				{
-					startTime = value;
+					meteringAssist = value;
 				}
 			}
 		}

@@ -25,53 +25,17 @@ namespace Aliyun.Acs.marketplaceIntl.Model.V20221230
 	public class NoticeInstanceUserResponse : AcsResponse
 	{
 
-		private bool? result;
-
-		private bool? success;
-
-		private string code;
-
 		private string message;
 
 		private string requestId;
 
+		private string code;
+
+		private bool? success;
+
+		private bool? result;
+
 		private NoticeInstanceUser_AccessDeniedDetail accessDeniedDetail;
-
-		public bool? Result
-		{
-			get
-			{
-				return result;
-			}
-			set	
-			{
-				result = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
 
 		public string Message
 		{
@@ -97,6 +61,42 @@ namespace Aliyun.Acs.marketplaceIntl.Model.V20221230
 			}
 		}
 
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public bool? Result
+		{
+			get
+			{
+				return result;
+			}
+			set	
+			{
+				result = value;
+			}
+		}
+
 		public NoticeInstanceUser_AccessDeniedDetail AccessDeniedDetail
 		{
 			get
@@ -112,41 +112,29 @@ namespace Aliyun.Acs.marketplaceIntl.Model.V20221230
 		public class NoticeInstanceUser_AccessDeniedDetail
 		{
 
-			private string authAction;
-
-			private string authPrincipalDisplayName;
+			private string policyType;
 
 			private string authPrincipalOwnerId;
 
+			private string encodedDiagnosticMessage;
+
 			private string authPrincipalType;
 
-			private string encodedDiagnosticMessage;
+			private string authPrincipalDisplayName;
 
 			private string noPermissionType;
 
-			private string policyType;
+			private string authAction;
 
-			public string AuthAction
+			public string PolicyType
 			{
 				get
 				{
-					return authAction;
+					return policyType;
 				}
 				set	
 				{
-					authAction = value;
-				}
-			}
-
-			public string AuthPrincipalDisplayName
-			{
-				get
-				{
-					return authPrincipalDisplayName;
-				}
-				set	
-				{
-					authPrincipalDisplayName = value;
+					policyType = value;
 				}
 			}
 
@@ -162,6 +150,18 @@ namespace Aliyun.Acs.marketplaceIntl.Model.V20221230
 				}
 			}
 
+			public string EncodedDiagnosticMessage
+			{
+				get
+				{
+					return encodedDiagnosticMessage;
+				}
+				set	
+				{
+					encodedDiagnosticMessage = value;
+				}
+			}
+
 			public string AuthPrincipalType
 			{
 				get
@@ -174,15 +174,15 @@ namespace Aliyun.Acs.marketplaceIntl.Model.V20221230
 				}
 			}
 
-			public string EncodedDiagnosticMessage
+			public string AuthPrincipalDisplayName
 			{
 				get
 				{
-					return encodedDiagnosticMessage;
+					return authPrincipalDisplayName;
 				}
 				set	
 				{
-					encodedDiagnosticMessage = value;
+					authPrincipalDisplayName = value;
 				}
 			}
 
@@ -198,15 +198,15 @@ namespace Aliyun.Acs.marketplaceIntl.Model.V20221230
 				}
 			}
 
-			public string PolicyType
+			public string AuthAction
 			{
 				get
 				{
-					return policyType;
+					return authAction;
 				}
 				set	
 				{
-					policyType = value;
+					authAction = value;
 				}
 			}
 		}

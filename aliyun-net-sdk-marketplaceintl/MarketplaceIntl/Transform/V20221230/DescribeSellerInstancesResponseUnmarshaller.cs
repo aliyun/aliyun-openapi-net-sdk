@@ -44,15 +44,15 @@ namespace Aliyun.Acs.marketplaceIntl.Transform.V20221230
 			List<DescribeSellerInstancesResponse.DescribeSellerInstances_ResultItem> describeSellerInstancesResponse_result = new List<DescribeSellerInstancesResponse.DescribeSellerInstances_ResultItem>();
 			for (int i = 0; i < _ctx.Length("DescribeSellerInstances.Result.Length"); i++) {
 				DescribeSellerInstancesResponse.DescribeSellerInstances_ResultItem resultItem = new DescribeSellerInstancesResponse.DescribeSellerInstances_ResultItem();
-				resultItem.AppInfo = _ctx.StringValue("DescribeSellerInstances.Result["+ i +"].AppInfo");
-				resultItem.CommodityCode = _ctx.StringValue("DescribeSellerInstances.Result["+ i +"].CommodityCode");
-				resultItem.CreatedOn = _ctx.LongValue("DescribeSellerInstances.Result["+ i +"].CreatedOn");
 				resultItem.InstanceId = _ctx.LongValue("DescribeSellerInstances.Result["+ i +"].InstanceId");
 				resultItem.InstanceStatus = _ctx.StringValue("DescribeSellerInstances.Result["+ i +"].InstanceStatus");
 				resultItem.UserId = _ctx.LongValue("DescribeSellerInstances.Result["+ i +"].UserId");
-				resultItem.HostInfo = _ctx.StringValue("DescribeSellerInstances.Result["+ i +"].HostInfo");
-				resultItem.Info = _ctx.StringValue("DescribeSellerInstances.Result["+ i +"].Info");
 				resultItem.ChargeType = _ctx.IntegerValue("DescribeSellerInstances.Result["+ i +"].ChargeType");
+				resultItem.CommodityCode = _ctx.StringValue("DescribeSellerInstances.Result["+ i +"].CommodityCode");
+				resultItem.CreatedOn = _ctx.LongValue("DescribeSellerInstances.Result["+ i +"].CreatedOn");
+				resultItem.Info = _ctx.StringValue("DescribeSellerInstances.Result["+ i +"].Info");
+				resultItem.HostInfo = _ctx.StringValue("DescribeSellerInstances.Result["+ i +"].HostInfo");
+				resultItem.AppInfo = _ctx.StringValue("DescribeSellerInstances.Result["+ i +"].AppInfo");
 
 				describeSellerInstancesResponse_result.Add(resultItem);
 			}

@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.marketplaceIntl;
 using Aliyun.Acs.marketplaceIntl.Transform;
 using Aliyun.Acs.marketplaceIntl.Transform.V20221230;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.marketplaceIntl.Model.V20221230
     public class DescribePushMeteringDataRequest : RpcAcsRequest<DescribePushMeteringDataResponse>
     {
         public DescribePushMeteringDataRequest()
-            : base("marketplaceIntl", "2022-12-30", "DescribePushMeteringData")
+            : base("marketplaceIntl", "2022-12-30", "DescribePushMeteringData", "MarketplaceIntl", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

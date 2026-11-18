@@ -31,20 +31,20 @@ namespace Aliyun.Acs.marketplaceIntl.Transform.V20221230
 			NoticeInstanceUserResponse noticeInstanceUserResponse = new NoticeInstanceUserResponse();
 
 			noticeInstanceUserResponse.HttpResponse = _ctx.HttpResponse;
-			noticeInstanceUserResponse.Result = _ctx.BooleanValue("NoticeInstanceUser.Result");
-			noticeInstanceUserResponse.Success = _ctx.BooleanValue("NoticeInstanceUser.Success");
-			noticeInstanceUserResponse.Code = _ctx.StringValue("NoticeInstanceUser.Code");
 			noticeInstanceUserResponse.Message = _ctx.StringValue("NoticeInstanceUser.Message");
 			noticeInstanceUserResponse.RequestId = _ctx.StringValue("NoticeInstanceUser.RequestId");
+			noticeInstanceUserResponse.Code = _ctx.StringValue("NoticeInstanceUser.Code");
+			noticeInstanceUserResponse.Success = _ctx.BooleanValue("NoticeInstanceUser.Success");
+			noticeInstanceUserResponse.Result = _ctx.BooleanValue("NoticeInstanceUser.Result");
 
 			NoticeInstanceUserResponse.NoticeInstanceUser_AccessDeniedDetail accessDeniedDetail = new NoticeInstanceUserResponse.NoticeInstanceUser_AccessDeniedDetail();
-			accessDeniedDetail.AuthAction = _ctx.StringValue("NoticeInstanceUser.AccessDeniedDetail.AuthAction");
-			accessDeniedDetail.AuthPrincipalDisplayName = _ctx.StringValue("NoticeInstanceUser.AccessDeniedDetail.AuthPrincipalDisplayName");
-			accessDeniedDetail.AuthPrincipalOwnerId = _ctx.StringValue("NoticeInstanceUser.AccessDeniedDetail.AuthPrincipalOwnerId");
-			accessDeniedDetail.AuthPrincipalType = _ctx.StringValue("NoticeInstanceUser.AccessDeniedDetail.AuthPrincipalType");
-			accessDeniedDetail.EncodedDiagnosticMessage = _ctx.StringValue("NoticeInstanceUser.AccessDeniedDetail.EncodedDiagnosticMessage");
-			accessDeniedDetail.NoPermissionType = _ctx.StringValue("NoticeInstanceUser.AccessDeniedDetail.NoPermissionType");
 			accessDeniedDetail.PolicyType = _ctx.StringValue("NoticeInstanceUser.AccessDeniedDetail.PolicyType");
+			accessDeniedDetail.AuthPrincipalOwnerId = _ctx.StringValue("NoticeInstanceUser.AccessDeniedDetail.AuthPrincipalOwnerId");
+			accessDeniedDetail.EncodedDiagnosticMessage = _ctx.StringValue("NoticeInstanceUser.AccessDeniedDetail.EncodedDiagnosticMessage");
+			accessDeniedDetail.AuthPrincipalType = _ctx.StringValue("NoticeInstanceUser.AccessDeniedDetail.AuthPrincipalType");
+			accessDeniedDetail.AuthPrincipalDisplayName = _ctx.StringValue("NoticeInstanceUser.AccessDeniedDetail.AuthPrincipalDisplayName");
+			accessDeniedDetail.NoPermissionType = _ctx.StringValue("NoticeInstanceUser.AccessDeniedDetail.NoPermissionType");
+			accessDeniedDetail.AuthAction = _ctx.StringValue("NoticeInstanceUser.AccessDeniedDetail.AuthAction");
 			noticeInstanceUserResponse.AccessDeniedDetail = accessDeniedDetail;
         
 			return noticeInstanceUserResponse;

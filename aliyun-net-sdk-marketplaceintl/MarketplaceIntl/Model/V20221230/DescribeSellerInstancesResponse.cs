@@ -168,59 +168,23 @@ namespace Aliyun.Acs.marketplaceIntl.Model.V20221230
 		public class DescribeSellerInstances_ResultItem
 		{
 
-			private string appInfo;
-
-			private string commodityCode;
-
-			private long? createdOn;
-
 			private long? instanceId;
 
 			private string instanceStatus;
 
 			private long? userId;
 
-			private string hostInfo;
+			private int? chargeType;
+
+			private string commodityCode;
+
+			private long? createdOn;
 
 			private string info;
 
-			private int? chargeType;
+			private string hostInfo;
 
-			public string AppInfo
-			{
-				get
-				{
-					return appInfo;
-				}
-				set	
-				{
-					appInfo = value;
-				}
-			}
-
-			public string CommodityCode
-			{
-				get
-				{
-					return commodityCode;
-				}
-				set	
-				{
-					commodityCode = value;
-				}
-			}
-
-			public long? CreatedOn
-			{
-				get
-				{
-					return createdOn;
-				}
-				set	
-				{
-					createdOn = value;
-				}
-			}
+			private string appInfo;
 
 			public long? InstanceId
 			{
@@ -258,15 +222,39 @@ namespace Aliyun.Acs.marketplaceIntl.Model.V20221230
 				}
 			}
 
-			public string HostInfo
+			public int? ChargeType
 			{
 				get
 				{
-					return hostInfo;
+					return chargeType;
 				}
 				set	
 				{
-					hostInfo = value;
+					chargeType = value;
+				}
+			}
+
+			public string CommodityCode
+			{
+				get
+				{
+					return commodityCode;
+				}
+				set	
+				{
+					commodityCode = value;
+				}
+			}
+
+			public long? CreatedOn
+			{
+				get
+				{
+					return createdOn;
+				}
+				set	
+				{
+					createdOn = value;
 				}
 			}
 
@@ -282,15 +270,27 @@ namespace Aliyun.Acs.marketplaceIntl.Model.V20221230
 				}
 			}
 
-			public int? ChargeType
+			public string HostInfo
 			{
 				get
 				{
-					return chargeType;
+					return hostInfo;
 				}
 				set	
 				{
-					chargeType = value;
+					hostInfo = value;
+				}
+			}
+
+			public string AppInfo
+			{
+				get
+				{
+					return appInfo;
+				}
+				set	
+				{
+					appInfo = value;
 				}
 			}
 		}

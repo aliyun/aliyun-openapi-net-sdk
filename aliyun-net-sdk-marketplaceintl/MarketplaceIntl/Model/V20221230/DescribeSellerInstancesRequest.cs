@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.marketplaceIntl;
 using Aliyun.Acs.marketplaceIntl.Transform;
 using Aliyun.Acs.marketplaceIntl.Transform.V20221230;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.marketplaceIntl.Model.V20221230
     public class DescribeSellerInstancesRequest : RpcAcsRequest<DescribeSellerInstancesResponse>
     {
         public DescribeSellerInstancesRequest()
-            : base("marketplaceIntl", "2022-12-30", "DescribeSellerInstances")
+            : base("marketplaceIntl", "2022-12-30", "DescribeSellerInstances", "MarketplaceIntl", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

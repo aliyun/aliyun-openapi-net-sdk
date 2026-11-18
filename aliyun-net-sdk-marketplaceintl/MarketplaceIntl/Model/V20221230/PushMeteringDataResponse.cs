@@ -25,12 +25,6 @@ namespace Aliyun.Acs.marketplaceIntl.Model.V20221230
 	public class PushMeteringDataResponse : AcsResponse
 	{
 
-		private bool? result;
-
-		private bool? success;
-
-		private string code;
-
 		private string message;
 
 		private string requestId;
@@ -39,41 +33,11 @@ namespace Aliyun.Acs.marketplaceIntl.Model.V20221230
 
 		private string dynamicMessage;
 
-		public bool? Result
-		{
-			get
-			{
-				return result;
-			}
-			set	
-			{
-				result = value;
-			}
-		}
+		private string code;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private bool? success;
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+		private bool? result;
 
 		public string Message
 		{
@@ -120,6 +84,42 @@ namespace Aliyun.Acs.marketplaceIntl.Model.V20221230
 			set	
 			{
 				dynamicMessage = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public bool? Result
+		{
+			get
+			{
+				return result;
+			}
+			set	
+			{
+				result = value;
 			}
 		}
 	}

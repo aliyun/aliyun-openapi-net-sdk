@@ -31,13 +31,13 @@ namespace Aliyun.Acs.marketplaceIntl.Transform.V20221230
 			PushMeteringDataResponse pushMeteringDataResponse = new PushMeteringDataResponse();
 
 			pushMeteringDataResponse.HttpResponse = _ctx.HttpResponse;
-			pushMeteringDataResponse.Result = _ctx.BooleanValue("PushMeteringData.Result");
-			pushMeteringDataResponse.Success = _ctx.BooleanValue("PushMeteringData.Success");
-			pushMeteringDataResponse.Code = _ctx.StringValue("PushMeteringData.Code");
 			pushMeteringDataResponse.Message = _ctx.StringValue("PushMeteringData.Message");
 			pushMeteringDataResponse.RequestId = _ctx.StringValue("PushMeteringData.RequestId");
 			pushMeteringDataResponse.ForceFatal = _ctx.BooleanValue("PushMeteringData.ForceFatal");
 			pushMeteringDataResponse.DynamicMessage = _ctx.StringValue("PushMeteringData.DynamicMessage");
+			pushMeteringDataResponse.Code = _ctx.StringValue("PushMeteringData.Code");
+			pushMeteringDataResponse.Success = _ctx.BooleanValue("PushMeteringData.Success");
+			pushMeteringDataResponse.Result = _ctx.BooleanValue("PushMeteringData.Result");
         
 			return pushMeteringDataResponse;
         }

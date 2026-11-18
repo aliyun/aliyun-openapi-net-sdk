@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.marketplaceIntl;
 using Aliyun.Acs.marketplaceIntl.Transform;
 using Aliyun.Acs.marketplaceIntl.Transform.V20221230;
 
@@ -31,12 +30,14 @@ namespace Aliyun.Acs.marketplaceIntl.Model.V20221230
     public class PushMeteringDataRequest : RpcAcsRequest<PushMeteringDataResponse>
     {
         public PushMeteringDataRequest()
-            : base("marketplaceIntl", "2022-12-30", "PushMeteringData")
+            : base("marketplaceIntl", "2022-12-30", "PushMeteringData", "MarketplaceIntl", "openAPI")
         {
 			Method = MethodType.POST;
         }
 
 		private List<string> meteringDatas = new List<string>(){ };
+
+		private string metering;
 
 		private string gmtCreate;
 
@@ -65,6 +66,19 @@ namespace Aliyun.Acs.marketplaceIntl.Model.V20221230
 			}
 		}
 
+		public string Metering
+		{
+			get
+			{
+				return metering;
+			}
+			set	
+			{
+				metering = value;
+				DictionaryUtil.Add(QueryParameters, "Metering", value);
+			}
+		}
+
 		public string GmtCreate
 		{
 			get
@@ -81,9 +95,9 @@ namespace Aliyun.Acs.marketplaceIntl.Model.V20221230
 		public class MeteringData
 		{
 
-			private string meteringAssist;
-
 			private string pushOrderBizId;
+
+			private string meteringAssist;
 
 			private string instanceId;
 
@@ -92,18 +106,6 @@ namespace Aliyun.Acs.marketplaceIntl.Model.V20221230
 			private long? startTime;
 
 			private string meteringEntity;
-
-			public string MeteringAssist
-			{
-				get
-				{
-					return meteringAssist;
-				}
-				set	
-				{
-					meteringAssist = value;
-				}
-			}
 
 			public string PushOrderBizId
 			{
@@ -114,6 +116,18 @@ namespace Aliyun.Acs.marketplaceIntl.Model.V20221230
 				set	
 				{
 					pushOrderBizId = value;
+				}
+			}
+
+			public string MeteringAssist
+			{
+				get
+				{
+					return meteringAssist;
+				}
+				set	
+				{
+					meteringAssist = value;
 				}
 			}
 

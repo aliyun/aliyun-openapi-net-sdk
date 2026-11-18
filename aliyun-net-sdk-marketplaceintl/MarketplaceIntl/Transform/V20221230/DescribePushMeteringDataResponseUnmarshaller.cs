@@ -39,13 +39,13 @@ namespace Aliyun.Acs.marketplaceIntl.Transform.V20221230
 			describePushMeteringDataResponse.Success = _ctx.BooleanValue("DescribePushMeteringData.Success");
 
 			DescribePushMeteringDataResponse.DescribePushMeteringData_Result result = new DescribePushMeteringDataResponse.DescribePushMeteringData_Result();
+			result.IsPushBilling = _ctx.BooleanValue("DescribePushMeteringData.Result.IsPushBilling");
+			result.MeteringEntity = _ctx.StringValue("DescribePushMeteringData.Result.MeteringEntity");
 			result.EndTime = _ctx.LongValue("DescribePushMeteringData.Result.EndTime");
 			result.InstanceId = _ctx.StringValue("DescribePushMeteringData.Result.InstanceId");
-			result.IsPushBilling = _ctx.BooleanValue("DescribePushMeteringData.Result.IsPushBilling");
-			result.MeteringAssist = _ctx.StringValue("DescribePushMeteringData.Result.MeteringAssist");
-			result.MeteringEntity = _ctx.StringValue("DescribePushMeteringData.Result.MeteringEntity");
-			result.PushOrderBizId = _ctx.StringValue("DescribePushMeteringData.Result.PushOrderBizId");
 			result.StartTime = _ctx.LongValue("DescribePushMeteringData.Result.StartTime");
+			result.PushOrderBizId = _ctx.StringValue("DescribePushMeteringData.Result.PushOrderBizId");
+			result.MeteringAssist = _ctx.StringValue("DescribePushMeteringData.Result.MeteringAssist");
 			describePushMeteringDataResponse.Result = result;
         
 			return describePushMeteringDataResponse;
