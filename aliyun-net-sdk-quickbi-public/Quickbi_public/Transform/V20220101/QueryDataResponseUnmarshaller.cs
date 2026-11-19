@@ -52,6 +52,25 @@ namespace Aliyun.Acs.quickbi_public.Transform.V20220101
 			}
 			result.Values = result_values;
 
+			List<QueryDataResponse.QueryData_Result.QueryData_ValuesV2Item> result_valuesV2 = new List<QueryDataResponse.QueryData_Result.QueryData_ValuesV2Item>();
+			for (int i = 0; i < _ctx.Length("QueryData.Result.ValuesV2.Length"); i++) {
+				QueryDataResponse.QueryData_Result.QueryData_ValuesV2Item valuesV2Item = new QueryDataResponse.QueryData_Result.QueryData_ValuesV2Item();
+
+				List<QueryDataResponse.QueryData_Result.QueryData_ValuesV2Item.QueryData_RowValueItem> valuesV2Item_rowValue = new List<QueryDataResponse.QueryData_Result.QueryData_ValuesV2Item.QueryData_RowValueItem>();
+				for (int j = 0; j < _ctx.Length("QueryData.Result.ValuesV2["+ i +"].RowValue.Length"); j++) {
+					QueryDataResponse.QueryData_Result.QueryData_ValuesV2Item.QueryData_RowValueItem rowValueItem = new QueryDataResponse.QueryData_Result.QueryData_ValuesV2Item.QueryData_RowValueItem();
+					rowValueItem.R = _ctx.StringValue("QueryData.Result.ValuesV2["+ i +"].RowValue["+ j +"].R");
+					rowValueItem.V = _ctx.StringValue("QueryData.Result.ValuesV2["+ i +"].RowValue["+ j +"].V");
+					rowValueItem.L = _ctx.StringValue("QueryData.Result.ValuesV2["+ i +"].RowValue["+ j +"].L");
+
+					valuesV2Item_rowValue.Add(rowValueItem);
+				}
+				valuesV2Item.RowValue = valuesV2Item_rowValue;
+
+				result_valuesV2.Add(valuesV2Item);
+			}
+			result.ValuesV2 = result_valuesV2;
+
 			List<QueryDataResponse.QueryData_Result.QueryData_HeadersItem> result_headers = new List<QueryDataResponse.QueryData_Result.QueryData_HeadersItem>();
 			for (int i = 0; i < _ctx.Length("QueryData.Result.Headers.Length"); i++) {
 				QueryDataResponse.QueryData_Result.QueryData_HeadersItem headersItem = new QueryDataResponse.QueryData_Result.QueryData_HeadersItem();

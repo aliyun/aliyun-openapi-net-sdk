@@ -72,6 +72,8 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 
 			private string sql;
 
+			private List<QueryData_ValuesV2Item> valuesV2;
+
 			private List<QueryData_HeadersItem> headers;
 
 			private List<Dictionary<string, string>> values;
@@ -85,6 +87,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					sql = value;
+				}
+			}
+
+			public List<QueryData_ValuesV2Item> ValuesV2
+			{
+				get
+				{
+					return valuesV2;
+				}
+				set	
+				{
+					valuesV2 = value;
 				}
 			}
 
@@ -109,6 +123,70 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 				set	
 				{
 					values = value;
+				}
+			}
+
+			public class QueryData_ValuesV2Item
+			{
+
+				private List<QueryData_RowValueItem> rowValue;
+
+				public List<QueryData_RowValueItem> RowValue
+				{
+					get
+					{
+						return rowValue;
+					}
+					set	
+					{
+						rowValue = value;
+					}
+				}
+
+				public class QueryData_RowValueItem
+				{
+
+					private string r;
+
+					private string v;
+
+					private string l;
+
+					public string R
+					{
+						get
+						{
+							return r;
+						}
+						set	
+						{
+							r = value;
+						}
+					}
+
+					public string V
+					{
+						get
+						{
+							return v;
+						}
+						set	
+						{
+							v = value;
+						}
+					}
+
+					public string L
+					{
+						get
+						{
+							return l;
+						}
+						set	
+						{
+							l = value;
+						}
+					}
 				}
 			}
 
