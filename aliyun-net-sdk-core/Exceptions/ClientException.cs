@@ -32,7 +32,7 @@ namespace Aliyun.Acs.Core.Exceptions
             ErrorCode = errCode;
         }
 
-        public ClientException(string errCode, string errMsg) : base(errCode + " : " + errMsg)
+        public ClientException(string errCode, string errMsg) : base(string.IsNullOrEmpty(errCode) ? errMsg : errCode + " : " + errMsg)
         {
             ErrorCode = errCode;
             ErrorMessage = errMsg;

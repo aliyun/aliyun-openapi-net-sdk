@@ -63,7 +63,7 @@ namespace Aliyun.Acs.Core.Auth
             this.readTimeout = readTimeout == null ? 1000 : readTimeout.Value;
         }
 
-        public AlibabaCloudCredentials GetCredentials()
+        public virtual AlibabaCloudCredentials GetCredentials()
         {
             return Fetch();
         }
