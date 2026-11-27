@@ -27,6 +27,7 @@ namespace Aliyun.Acs.Core.Auth.Sts
         {
             var assumeRoleResponse = new AssumeRoleResponse();
 
+            assumeRoleResponse.HttpResponse = context.HttpResponse;
             assumeRoleResponse.RequestId = context.StringValue("AssumeRole.RequestId");
 
             var credentials = new AssumeRoleResponse.AssumeRole_Credentials();
